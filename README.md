@@ -9,4 +9,3 @@
  - ["text"](text/)
  - ["http"](http/)
  - ["local-settings"](local-settings/)
- - ["ui/dialogs"](ui/dialogs/)
