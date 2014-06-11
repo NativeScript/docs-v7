@@ -7,15 +7,13 @@
 ### Writing Apps
 * [NativeScript Android Application Initialization with JavaScript](https://github.com/NativeScript/docs/wiki/NativeScript-Android-Application-Initialization-with-JavaScript)
 * [NativeScript Android Application Initialization with TypeScript](https://github.com/NativeScript/docs/wiki/NativeScript-Android-Application-Initialization-with-TypeScript)
+* [NativeScript Modules (NSM)](https://github.com/NativeScript/docs/wiki/NativeScript-Modules-%28NSM%29)
 
 ### Advanced topcis
 * [Advanced NativeScript Topics for iOS](https://github.com/NativeScript/docs/wiki/Advanced-NativeScript-Topics-for-iOS)
 
 
 ## NativeScript API Reference.
-
-### Overview
-* [NativeScript Modules (NSM)](https://github.com/NativeScript/docs/wiki/NativeScript-Modules-%28NSM%29)
 
 ### Modules
 * ["application"](application/)
