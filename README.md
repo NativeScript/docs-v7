@@ -14,6 +14,9 @@
 
 ## NativeScript API Reference.
 
+### Overview
+* [NativeScript Modules (NSM)](https://github.com/NativeScript/docs/wiki/NativeScript-Modules-%28NSM%29)
+
 ### Modules
 * ["application"](application/)
 * ["file-system"](file-system/)
