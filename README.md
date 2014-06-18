@@ -1,6 +1,7 @@
 ## Articles
 
 ### Getting started
+* [Getting Started with NativeScript in AppBuilder](http://docs.telerik.com/platform/appbuilder/nativescript/index)
 * [Getting Started with NativeScript for Android](https://github.com/NativeScript/docs/wiki/Getting-Started-with-NativeScript-for-Android)
 * [Getting Started with NativeScript for iOS](https://github.com/NativeScript/docs/wiki/Getting-started-with-NativeScript-for-iOS)
 
