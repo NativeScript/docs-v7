@@ -1,4 +1,9 @@
-﻿## Object: "promises".PromiseState  
+---
+nav-title: "Class promises.PromiseState"
+title: "Class promises.PromiseState"
+description: "Class promises.PromiseState"
+---
+## Object: "promises".PromiseState  
 _Type parameters:_ _**Value**_  
 Both Promise&lt;T&gt; and Deferred&lt;T&gt; share these properties.
 

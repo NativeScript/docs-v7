@@ -1,4 +1,9 @@
-﻿## Namespace: "text".encoding
+---
+nav-title: "Class text.encoding"
+title: "Class text.encoding"
+description: "Class text.encoding"
+---
+## Namespace: "text".encoding
 
 ##### Variables
  - **ISO_8859_1** - _Object_.

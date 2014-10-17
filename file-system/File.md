@@ -1,4 +1,9 @@
-﻿## Class: "file-system".File  
+---
+nav-title: "Class file-system.File"
+title: "Class file-system.File"
+description: "Class file-system.File"
+---
+## Class: "file-system".File  
 _Inherits:_ [_FileSystemEntity_](../file-system/FileSystemEntity.md)  
 Represents a File entity on the file system.
 

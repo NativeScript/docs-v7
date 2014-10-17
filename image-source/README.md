@@ -1,12 +1,14 @@
-﻿# Module: "image-source"
+---
+nav-title: "Class image-source"
+title: "Class image-source"
+description: "Class image-source"
+---
+# Module: "image-source"
 
 ``` JavaScript
 // To import the "image-source" module:
 var image_source = require("image-source");
 ```
-
-**[How to "image-source"](HOW-TO.md)**
-
 
 Class | Description
 ------|------------

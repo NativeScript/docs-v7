@@ -1,3 +1,8 @@
+---
+nav-title: "image-source How-To"
+title: "image-source How-To"
+description: "Examples for using image-source"
+---
 # Image source
 Using the image source requires the image-source module.
 ``` JavaScript

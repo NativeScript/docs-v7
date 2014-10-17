@@ -1,4 +1,9 @@
-﻿## Class: "location".Location  
+---
+nav-title: "Class location.Location"
+title: "Class location.Location"
+description: "Class location.Location"
+---
+## Class: "location".Location  
 A data class that encapsulates common properties for a geolocation.
 
 ##### Instance Properties

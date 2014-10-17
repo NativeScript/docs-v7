@@ -1,12 +1,14 @@
-﻿# Module: "file-system"
+---
+nav-title: "Class file-system"
+title: "Class file-system"
+description: "Class file-system"
+---
+# Module: "file-system"
 
 ``` JavaScript
 // To import the "file-system" module:
 var file_system = require("file-system");
 ```
-
-**[How to "file-system"](HOW-TO.md)**
-
 
 Class | Description
 ------|------------

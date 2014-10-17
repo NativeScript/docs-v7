@@ -1,3 +1,8 @@
+---
+nav-title: "local-settings How-To"
+title: "local-settings How-To"
+description: "Examples for using local-settings"
+---
 # Local Settings
 ``` JavaScript
 var LocalSettings = require("local-settings");
@@ -21,7 +26,7 @@ We use `toFixed()` here in order to avoid floating point errors - ex: `54.321` b
 Beware the result of `toFixed()` is a string not a number therefore you cannot use `===` or `!==` when comparing with a number.
 ``` JavaScript
 LocalSettings.setNumber("numberKey", 54.321);
-var value = LocalSettings.getNumber("numberKey").toFixed(3);
+var value = parseFloat(LocalSettings.getNumber("numberKey").toFixed(3));
 
 ```
 ### Reading values that are not set before while providing default value
