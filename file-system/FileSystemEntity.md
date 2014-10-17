@@ -1,4 +1,9 @@
-﻿## Class: "file-system".FileSystemEntity  
+---
+nav-title: "Class file-system.FileSystemEntity"
+title: "Class file-system.FileSystemEntity"
+description: "Class file-system.FileSystemEntity"
+---
+## Class: "file-system".FileSystemEntity  
 Represents a single entity on the file system.
 
 ##### Instance Properties

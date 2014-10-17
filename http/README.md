@@ -1,12 +1,14 @@
-﻿# Module: "http"
+---
+nav-title: "Class http"
+title: "Class http"
+description: "Class http"
+---
+# Module: "http"
 
 ``` JavaScript
 // To import the "http" module:
 var http = require("http");
 ```
-
-**[How to "http"](HOW-TO.md)**
-
 
 Object | Description
 ------|------------

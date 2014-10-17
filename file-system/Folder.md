@@ -1,4 +1,9 @@
-﻿## Class: "file-system".Folder  
+---
+nav-title: "Class file-system.Folder"
+title: "Class file-system.Folder"
+description: "Class file-system.Folder"
+---
+## Class: "file-system".Folder  
 _Inherits:_ [_FileSystemEntity_](../file-system/FileSystemEntity.md)  
 Represents a Folder (directory) entity on the file system.
 

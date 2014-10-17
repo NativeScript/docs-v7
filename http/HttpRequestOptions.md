@@ -1,4 +1,9 @@
-﻿## Object: "http".HttpRequestOptions  
+---
+nav-title: "Class http.HttpRequestOptions"
+title: "Class http.HttpRequestOptions"
+description: "Class http.HttpRequestOptions"
+---
+## Object: "http".HttpRequestOptions  
 Provides options for the http requests.
 
 ##### Properties

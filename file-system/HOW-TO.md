@@ -1,3 +1,8 @@
+---
+nav-title: "file-system How-To"
+title: "file-system How-To"
+description: "Examples for using file-system"
+---
 # File System
 Using the file system requires the FileSystem module.
 ``` JavaScript
@@ -16,7 +21,7 @@ var normalizedPath = fs.path.normalize(documents.path + testPath);
 
 ```
 ### Path Join
-Concatinate a path to a file by providing multiple path arguments.
+Concatenate a path to a file by providing multiple path arguments.
 ``` JavaScript
 var documents = fs.knownFolders.documents();
 
@@ -26,7 +31,7 @@ var path = fs.path.join(documents.path, "myFiles", "test.txt");
 ```
 ### Get the Path Separator
 ``` JavaScript
-// An OS dependant path separator, "\" or "/".
+// An OS dependent path separator, "\" or "/".
 var separator = fs.path.separator;
 
 ```
@@ -128,14 +133,14 @@ documents.getEntities().then(function (entities) {
 ```
 ### Enumerating Folder Contents
 Getting all folder entities in array may be slow with large number of files.
-Enumerating the folder entities would itterate the files one by one without blocking the UI.
+Enumerating the folder entities would iterate the files one by one without blocking the UI.
 ``` JavaScript
 var documents = fs.knownFolders.documents();
 
 documents.eachEntity(function (entity) {
     console.log(entity.name);
 
-    // Return true to continue, or return false to stop the itteration.
+    // Return true to continue, or return false to stop the iteration.
     return true;
 });
 

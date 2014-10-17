@@ -1,5 +1,9 @@
-﻿## Object: "application".iOSApplication  
-The abstraction of an iOS-specific application object.
+---
+nav-title: "Class application.iOSApplication"
+title: "Class application.iOSApplication"
+description: "Class application.iOSApplication"
+---
+## Object: "application".iOSApplication
 
 ##### Properties
  - **rootController** - _UIViewController_.    

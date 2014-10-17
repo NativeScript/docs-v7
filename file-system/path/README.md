@@ -1,4 +1,9 @@
-﻿## Namespace: "file-system".path
+---
+nav-title: "Class file-system.path"
+title: "Class file-system.path"
+description: "Class file-system.path"
+---
+## Namespace: "file-system".path
 Enables path-specific operations like join, extension, etc.
 
 ##### Variables

@@ -1,4 +1,9 @@
-﻿## Class: "image-source".ImageSource  
+---
+nav-title: "Class image-source.ImageSource"
+title: "Class image-source.ImageSource"
+description: "Class image-source.ImageSource"
+---
+## Class: "image-source".ImageSource  
 Encapsulates the common abstraction behind a platform specific object (typically a Bitmap) that is used as a source for images.
 
 ##### Instance Properties

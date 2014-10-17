@@ -1,12 +1,14 @@
-﻿# Module: "local-settings"
+---
+nav-title: "Class local-settings"
+title: "Class local-settings"
+description: "Class local-settings"
+---
+# Module: "local-settings"
 
 ``` JavaScript
 // To import the "local-settings" module:
 var local_settings = require("local-settings");
 ```
-
-**[How to "local-settings"](HOW-TO.md)**
-
 
 ##### Functions
  - **hasKey(** key _String_ **)** _Boolean_  

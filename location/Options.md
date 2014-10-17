@@ -1,4 +1,9 @@
-﻿## Object: "location".Options  
+---
+nav-title: "Class location.Options"
+title: "Class location.Options"
+description: "Class location.Options"
+---
+## Object: "location".Options  
 Provides options for location monitoring.
 
 ##### Properties

@@ -1,4 +1,9 @@
-﻿## Object: "http".HttpResponse  
+---
+nav-title: "Class http.HttpResponse"
+title: "Class http.HttpResponse"
+description: "Class http.HttpResponse"
+---
+## Object: "http".HttpResponse  
 Encapsulates HTTP-response information from an HTTP-request.
 
 ##### Properties

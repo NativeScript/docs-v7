@@ -1,4 +1,9 @@
-﻿# Module: "promises"
+---
+nav-title: "Class promises"
+title: "Class promises"
+description: "Class promises"
+---
+# Module: "promises"
 
 ``` JavaScript
 // To import the "promises" module:

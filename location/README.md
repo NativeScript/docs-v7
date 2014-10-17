@@ -1,12 +1,14 @@
-﻿# Module: "location"
+---
+nav-title: "Class location"
+title: "Class location"
+description: "Class location"
+---
+# Module: "location"
 
 ``` JavaScript
 // To import the "location" module:
 var location = require("location");
 ```
-
-**[How to "location"](HOW-TO.md)**
-
 
 Class | Description
 ------|------------

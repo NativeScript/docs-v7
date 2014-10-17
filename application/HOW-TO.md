@@ -1,3 +1,8 @@
+---
+nav-title: "application How-To"
+title: "application How-To"
+description: "Examples for using application"
+---
 # Application
 The Application module provides abstraction over the platform-specific Application implementations.
 It is the main BCL module and is required for other BCL modules to work properly.
@@ -7,13 +12,6 @@ var app = require("application");
 
 ```
 The pre-required `app` module is used throughout the following code snippets.
-### Initialization
-``` JavaScript
-// The native app instance depends on the target platform
-var nativeAppInstance;
-app.init(nativeAppInstance);
-
-```
 ### Checking the target platform
 Use the following code in case you need to check somewhere in your code the platform you are running against:
 ``` JavaScript
@@ -40,7 +38,7 @@ var dir = context.getFilesDir();
 ```
 Tracking the current Activity
 ``` JavaScript
-if (androidApp.currentActivity === androidApp.startActivity) {
+if (androidApp.foregroundActivity === androidApp.foregroundActivity) {
     // We are currently in the main (start) activity of the application
 }
 

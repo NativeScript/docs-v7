@@ -1,4 +1,9 @@
-﻿## Class: Console  
+---
+nav-title: "Class console.Console"
+title: "Class console.Console"
+description: "Class console.Console"
+---
+## Class: "console".Console  
 Encapsulates methods used to print some information in the console.
 Instance of this class is declared in the global JavaScript context and is accessible by directly calling console.[xxx] methods.
 

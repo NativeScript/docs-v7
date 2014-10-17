@@ -1,4 +1,9 @@
-﻿## Class: "location".LocationManager  
+---
+nav-title: "Class location.LocationManager"
+title: "Class location.LocationManager"
+description: "Class location.LocationManager"
+---
+## Class: "location".LocationManager  
 Provides methods for querying geolocation (in case available) on the target platform.
 
 ##### Static Functions

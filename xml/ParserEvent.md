@@ -1,0 +1,22 @@
+---
+nav-title: "Class xml.ParserEvent"
+title: "Class xml.ParserEvent"
+description: "Class xml.ParserEvent"
+---
+## Object: "xml".ParserEvent  
+Provides information for a parser event.
+
+##### Properties
+ - **eventType** - _String_.    
+  Returns the type of the parser event. This is one of the ParserEventType static members.
+ - **elementName** - _(optional)_ - _String_.    
+  Returns the name of the element in case the eventType is ParserEventType.StartElement or ParserEventType.EndElement.
+ - **attributes** - _(optional)_ - _Object_.    
+  Returns a JSON object with the attributes of an element in case the eventType is ParserEventType.StartElement.
+ - **data** - _(optional)_ - _String_.    
+  Returns the relevant data in case the eventType is ParserEventType.Text, ParserEventType.CDATA or ParserEventType.Comment.
+
+##### Functions
+ - **toString()** _String_  
+     Returns a JSON string representation of this instance.
+   - _**return**_ - _String_

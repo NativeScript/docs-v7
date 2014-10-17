@@ -1,4 +1,9 @@
-﻿## Object: "promises".Deferred  
+---
+nav-title: "Class promises.Deferred"
+title: "Class promises.Deferred"
+description: "Class promises.Deferred"
+---
+## Object: "promises".Deferred  
 _Type parameters:_ _**Value**_  
 _Extends:_ [_PromiseState_](../promises/PromiseState.md) of _Value_  
 Deferred&lt;Value&gt; supports the explicit resolving and rejecting of the

@@ -1,3 +1,8 @@
+---
+nav-title: "http How-To"
+title: "http How-To"
+description: "Examples for using http"
+---
 # Http module
 ``` JavaScript
 var http = require("http");

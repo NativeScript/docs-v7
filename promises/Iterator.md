@@ -1,4 +1,9 @@
-﻿## Object: "promises".Iterator  
+---
+nav-title: "Class promises.Iterator"
+title: "Class promises.Iterator"
+description: "Class promises.Iterator"
+---
+## Object: "promises".Iterator  
 _Type parameters:_ _**E**_
 
 ##### Properties

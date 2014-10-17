@@ -1,4 +1,9 @@
-﻿## Object: "promises".Promise  
+---
+nav-title: "Class promises.Promise"
+title: "Class promises.Promise"
+description: "Class promises.Promise"
+---
+## Object: "promises".Promise  
 _Type parameters:_ _**Value**_  
 _Extends:_ [_PromiseState_](../promises/PromiseState.md) of _Value_  
 A Promise&lt;Value&gt; supports basic composition and registration of handlers that are called when the

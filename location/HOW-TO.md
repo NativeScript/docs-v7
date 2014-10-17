@@ -1,3 +1,8 @@
+---
+nav-title: "location How-To"
+title: "location How-To"
+description: "Examples for using location"
+---
 # Location
 Using the location requires the Location module.
 ``` JavaScript
