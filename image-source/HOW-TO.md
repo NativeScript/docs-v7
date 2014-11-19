@@ -18,29 +18,25 @@ var fs = require("file-system");
 This is similar to loading Bitmap from `R.drawable.logo` on Android or calling `[UIImage imageNamed@"logo"]` on iOS
 ``` JavaScript
 var img = imageSource.fromResource("logo");
-
 ```
 ### Load image from URL
 ``` JavaScript
 imageSource.fromUrl("http://www.google.com/images/errors/logo_sm_2.png").then(function (res) {
     console.log("Image successfully loaded");
-}).fail(function (error) {
+}, function (error) {
     console.log("Error loading image: " + error);
 });
-
 ```
 ### Save image source to PNG or JPG file
 ``` JavaScript
-var img = imageSource.fromResource("logo");
+var img = imageSource.fromFile(imagePath);
 var folder = fs.knownFolders.documents();
 var path = fs.path.join(folder.path, "Test.png");
 var saved = img.saveToFile(path, imageSource.ImageFormat.PNG);
-
 ```
 ### Load image from a local file
 ``` JavaScript
 var folder = fs.knownFolders.documents();
 var path = fs.path.join(folder.path, "Test.png");
 var img = imageSource.fromFile(path);
-
 ```

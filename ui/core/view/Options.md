@@ -18,9 +18,9 @@ description: "Class ui/core/view.Options"
   Gets or sets the minimum width the view may grow to.
  - **minHeight** - _(optional)_ - _Number_.    
   Gets or sets the minimum height the view may grow to.
- - **horizontalAlignment** - _(optional)_ - _Object_.    
+ - **horizontalAlignment** - _(optional)_ - _String_.    
   Gets or sets the alignment of this view within its parent along the Horizontal axis.
- - **verticalAlignment** - _(optional)_ - _Object_.    
+ - **verticalAlignment** - _(optional)_ - _String_.    
   Gets or sets the alignment of this view within its parent along the Vertical axis.
  - **margin** - _(optional)_ - _Object_.    
   Gets or sets the margin of this view within its parent.

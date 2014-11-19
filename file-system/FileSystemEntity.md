@@ -19,11 +19,11 @@ Will be null for a root folder like Documents or Temporary.
 This property is readonly.
 
 ##### Instance Functions
- - **remove()** [_Promise_](../promises/Promise.md)...  
+ - **remove()** _Promise_...  
      Removes (deletes) the current Entity from the file system.
-   - _**return**_ - [_Promise_](../promises/Promise.md) of _Object_
- - **rename(** newName _String_ **)** [_Promise_](../promises/Promise.md)...  
+   - _**return**_ - _Promise_ of _Object_
+ - **rename(** newName _String_ **)** _Promise_...  
      Renames the current entity using the specified name.
    - **newName** - _String_  
      The new name to be applied to the entity.
-   - _**return**_ - [_Promise_](../promises/Promise.md) of _Object_
+   - _**return**_ - _Promise_ of _Object_

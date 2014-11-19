@@ -12,4 +12,4 @@ var uitext_view = require("ui/text-view");
 
 Class | Description
 ------|------------
-[TextView](../../ui/text-view/TextView.md) | 
+[TextView](../../ui/text-view/TextView.md) | Represents an editable multiline text view.

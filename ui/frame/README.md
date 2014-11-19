@@ -19,8 +19,6 @@ Nested frames are supported, enabling hierarchical navigation scenarios.
 Object | Description
 ------|------------
 [NavigationEntry](../../ui/frame/NavigationEntry.md) | Represents an entry in the back stack of a Frame object.
-[NavigationOptions](../../ui/frame/NavigationOptions.md) | The options available for the NavigationEntry interface.
-[iOSNavigationOptions](../../ui/frame/iOSNavigationOptions.md) | The iOS specific options.
 [AndroidOptionEventData](../../ui/frame/AndroidOptionEventData.md) | Represents the data passed to the knownEvents.android.optionSelected event. 
 This event is raised by the Android OS when an option in the Activity's action bar has been selected.
 [AndroidFrame](../../ui/frame/AndroidFrame.md) | Represents the Android-specific Frame object, aggregated within the common Frame one.
@@ -42,5 +40,5 @@ Namespace | Description
      Navigates back using the navigation hierarchy (if any). Updates the Frame stack as needed.
 This method will start from the topmost Frame and will recursively search for an instance that has the canGoBack operation available.
  - **stack()** _Array_...  
-     Gets the iOSFrame object that represents the iOS-specific APIs for this Frame.
+     Gets the frames stack.
    - _**return**_ - _Array_ of [_Frame_](../../ui/frame/Frame.md)

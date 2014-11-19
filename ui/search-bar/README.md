@@ -14,5 +14,9 @@ Class | Description
 ------|------------
 [SearchBar](../../ui/search-bar/SearchBar.md) | Represents a search bar component.
 
+Namespace | Description
+------|------------
+[knownEvents](../../ui/search-bar/knownEvents/) | Known event names.
+
 ##### Variables
  - **textProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
