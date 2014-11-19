@@ -26,15 +26,15 @@ Represents a File entity on the file system.
   Gets a value indicating whether the file is currently locked, meaning a background operation associated with this file is running.
 
 ##### Instance Functions
- - **readText(** encoding? _String_ **)** [_Promise_](../promises/Promise.md)...  
+ - **readText(** encoding? _String_ **)** _Promise_...  
      Reads the content of the file as a string using the specified encoding (defaults to UTF-8).
    - **encoding** - _(optional)_ - _String_  
      An optional value specifying the preferred encoding (defaults to UTF-8).
-   - _**return**_ - [_Promise_](../promises/Promise.md) of _String_
- - **writeText(** content _String_, encoding? _String_ **)** [_Promise_](../promises/Promise.md)...  
+   - _**return**_ - _Promise_ of _String_
+ - **writeText(** content _String_, encoding? _String_ **)** _Promise_...  
      Writes the provided string to the file, using the specified encoding (defaults to UTF-8).
    - **content** - _String_  
      The content to be saved to the file.
    - **encoding** - _(optional)_ - _String_  
      An optional value specifying the preferred encoding (defaults to UTF-8).
-   - _**return**_ - [_Promise_](../promises/Promise.md) of _Object_
+   - _**return**_ - _Promise_ of _Object_

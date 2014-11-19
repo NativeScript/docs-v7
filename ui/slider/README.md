@@ -16,4 +16,5 @@ Class | Description
 
 ##### Variables
  - **valueProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
+ - **minValueProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
  - **maxValueProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).

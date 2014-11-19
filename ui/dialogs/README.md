@@ -27,21 +27,21 @@ Object | Description
  - **InputType** - _Object_.
 
 ##### Functions
- - **alert(** message _String_, options? [_AlertOptions_](../../ui/dialogs/AlertOptions.md) **)** [_Promise_](../../promises/Promise.md)  
+ - **alert(** message _String_, options? [_AlertOptions_](../../ui/dialogs/AlertOptions.md) **)** _Promise_  
      The alert() method displays an alert box with a specified message.
    - **message** - _String_  
      Specifies the text to display in the alert box.
    - **options** - _(optional)_ - [_AlertOptions_](../../ui/dialogs/AlertOptions.md)  
      Specifies the options for the alert box. Optional.
-   - _**return**_ - [_Promise_](../../promises/Promise.md)
- - **confirm(** message _String_, options? [_DialogButtonsOptions_](../../ui/dialogs/DialogButtonsOptions.md) **)** [_Promise_](../../promises/Promise.md)...  
+   - _**return**_ - _Promise_
+ - **confirm(** message _String_, options? [_DialogButtonsOptions_](../../ui/dialogs/DialogButtonsOptions.md) **)** _Promise_...  
      The confirm() method displays a dialog box with a specified message.
    - **message** - _String_  
      Specifies the text to display in the confirm box.
    - **options** - _(optional)_ - [_DialogButtonsOptions_](../../ui/dialogs/DialogButtonsOptions.md)  
      Specifies the options for the confirm box. Optional.
-   - _**return**_ - [_Promise_](../../promises/Promise.md) of _Boolean_
- - **prompt(** message _String_, defaultText? _String_, options? [_PromptOptions_](../../ui/dialogs/PromptOptions.md) **)** [_Promise_](../../promises/Promise.md)...  
+   - _**return**_ - _Promise_ of _Boolean_
+ - **prompt(** message _String_, defaultText? _String_, options? [_PromptOptions_](../../ui/dialogs/PromptOptions.md) **)** _Promise_...  
      The prompt() method displays a dialog box that prompts the visitor for input.
    - **message** - _String_  
      The text to display in the dialog box.
@@ -49,8 +49,8 @@ Object | Description
      The default text to display in the input box.
    - **options** - _(optional)_ - [_PromptOptions_](../../ui/dialogs/PromptOptions.md)  
      The options for the dialog box. Optional.
-   - _**return**_ - [_Promise_](../../promises/Promise.md) of [_PromptResult_](../../ui/dialogs/PromptResult.md)
- - **login(** message _String_, userName? _String_, password? _String_, options? [_DialogButtonsOptions_](../../ui/dialogs/DialogButtonsOptions.md) **)** [_Promise_](../../promises/Promise.md)...  
+   - _**return**_ - _Promise_ of [_PromptResult_](../../ui/dialogs/PromptResult.md)
+ - **login(** message _String_, userName? _String_, password? _String_, options? [_DialogButtonsOptions_](../../ui/dialogs/DialogButtonsOptions.md) **)** _Promise_...  
      The login() method displays a login dialog box that prompts the visitor for user name and password.
    - **message** - _String_  
      The text to display in the dialog box.
@@ -60,4 +60,4 @@ Object | Description
      The default text to display in the password input box.
    - **options** - _(optional)_ - [_DialogButtonsOptions_](../../ui/dialogs/DialogButtonsOptions.md)  
      The options for the dialog box. Optional.
-   - _**return**_ - [_Promise_](../../promises/Promise.md) of [_LoginResult_](../../ui/dialogs/LoginResult.md)
+   - _**return**_ - _Promise_ of [_LoginResult_](../../ui/dialogs/LoginResult.md)

@@ -13,3 +13,6 @@ Namespace | Description
  - **getColor(** uiColor _UIColor_ **)** [_Color_](../../../color/Color.md)
    - **uiColor** - _UIColor_
    - _**return**_ - [_Color_](../../../color/Color.md)
+ - **getActualHeight(** uiView _UIView_ **)** _Number_
+   - **uiView** - _UIView_
+   - _**return**_ - _Number_

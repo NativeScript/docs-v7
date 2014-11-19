@@ -17,7 +17,7 @@ Advanced array like class used when you want to be notified when a change occurs
    - **event** - _String_
    - **callback** - _Function_(data [_EventData_](../../data/observable/EventData.md))
  - **on(** event , callback _Function_... **)**  
-     Reised when a change occurs.
+     Raised when a change occurs.
    - **event**
    - **callback** - _Function_(args [_ChangedData_](../../data/observable-array/ChangedData.md) of _T_)
  - **getItem(** index _Number_ **)** _T_  

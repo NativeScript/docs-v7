@@ -7,33 +7,28 @@ description: "Examples for using Label"
 Using a label requires the Label module.
 ``` JavaScript
 var LabelModule = require("ui/label");
-
 ```
 ### How to set label text content
 ``` JavaScript
 var label = new LabelModule.Label();
 var expectedValue = "Expected Value";
 label.text = expectedValue;
-
 ```
 ### How to turn on text wrapping for a label
 ``` JavaScript
 var label = new LabelModule.Label();
 label.textWrap = true;
-
 ```
 ### How to style a label via css class
 ``` JavaScript
 label.text = "The quick brown fox jumps over the lazy dog.";
 label.cssClass = "title";
-
 // after that all we have to do is to set a similar css entry within parent page css property
 // label.parentPage.css = ".title {background-color: #C6C6C6; color: #10C2B0; font-size: 14;}";
 ```
 ### How to style a label via css type
 ``` JavaScript
 testLabel.text = "The quick brown fox jumps over the lazy dog.";
-
 // in order to style label with a "type style scope" just put a similar css entry
 // testLabel.parentPage.css = "label {background-color: #C6C6C6; color: #10C2B0; font-size: 14;}";
 // all labels within the parent page will be styled according to css values
@@ -42,7 +37,6 @@ testLabel.text = "The quick brown fox jumps over the lazy dog.";
 ``` JavaScript
 label.text = "The quick brown fox jumps over the lazy dog.";
 label.id = "testLabel";
-
 // after that all we have to do is to set a similar css entry within parent page css property
 // label.parentPage.css = "#testLabel {background-color: #C6C6C6; color: #10C2B0; font-size: 14;}";
 ```
@@ -57,6 +51,5 @@ var bindingOptions = {
 };
 label.bind(bindingOptions, sourceModel);
 sourceModel.set("sourceProperty", expValue);
-
 // console.log(label.text); --> prints: "Expected Value"
 ```

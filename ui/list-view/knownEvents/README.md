@@ -4,6 +4,7 @@ title: "Class ui/list-view.knownEvents"
 description: "Class ui/list-view.knownEvents"
 ---
 ## Namespace: "ui/list-view".knownEvents
+Known event names.
 
 ##### Variables
  - **itemLoading** - _String_.

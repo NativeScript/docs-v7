@@ -11,6 +11,7 @@ description: "Class trace.categories"
  - **Style** - _String_.
  - **ViewHierarchy** - _String_.
  - **NativeLifecycle** - _String_.
+ - **Debug** - _String_.
  - **Navigation** - _String_.
  - **Test** - _String_.
  - **All** - _String_.

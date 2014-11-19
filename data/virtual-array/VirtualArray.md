@@ -43,10 +43,10 @@ virtualArray.on("itemsLoading", (args: virtualArrayDef.ItemsLoading) =&gt; {
    - **event** - _String_
    - **callback** - _Function_(data [_EventData_](../../data/observable/EventData.md))
  - **on(** event , callback _Function_... **)**  
-     Reised when still not loaded items are requested.
+     Raised when still not loaded items are requested.
    - **event**
    - **callback** - _Function_(args [_ItemsLoading_](../../data/virtual-array/ItemsLoading.md))
  - **on(** event , callback _Function_... **)**  
-     Reised when a change occurs.
+     Raised when a change occurs.
    - **event**
    - **callback** - _Function_(args [_ChangedData_](../../data/virtual-array/ChangedData.md) of _T_)

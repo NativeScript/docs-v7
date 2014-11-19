@@ -40,8 +40,8 @@ The native source object will update either the android or ios properties, depen
    - **source** - _Object_  
      The native image object. Will be either a Bitmap for Android or a UIImage for iOS.
    - _**return**_ - [_ImageSource_](../image-source/ImageSource.md)
- - **fromUrl(** url _String_ **)** [_Promise_](../promises/Promise.md)...  
+ - **fromUrl(** url _String_ **)** _Promise_...  
      Downloads the image from the provided Url and creates a new ImageSource instance from it.
    - **url** - _String_  
      The link to the remote image object. This operation will download and decode the image.
-   - _**return**_ - [_Promise_](../promises/Promise.md) of [_ImageSource_](../image-source/ImageSource.md)
+   - _**return**_ - _Promise_ of [_ImageSource_](../image-source/ImageSource.md)
