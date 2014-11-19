@@ -14,6 +14,9 @@ Class | Description
 ------|------------
 [StackPanel](../../../ui/panels/stack-panel/StackPanel.md) | StackPanel is used to arrange children into single line.
 
-Enum | Description
+Namespace | Description
 ------|------------
-[Orientation](../../../ui/panels/stack-panel/Orientation.md) | Orientation indicates a direction of a layout that can exist in a horizontal or vertical state.
+[orientation](../../../ui/panels/stack-panel/orientation/) | Orientation indicates a direction of a layout that can exist in a horizontal or vertical state.
+
+##### Variables
+ - **orientationProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).

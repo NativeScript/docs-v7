@@ -22,25 +22,19 @@ var onEventCallback = function (event) {
                     }
                 }
             }
-
             break;
-
         case xmlModule.ParserEventType.EndElement:
             break;
-
         case xmlModule.ParserEventType.Text:
             var significantText = event.data.trim();
             if (significantText !== "") {
-                console.log(event.eventType + "=\"" + significantText + "\"");
             }
             break;
     }
 };
-
 var onErrorCallback = function (error) {
     console.log("Error: " + error.message);
 };
-
 var xmlParser = new xmlModule.XmlParser(onEventCallback, onErrorCallback);
 xmlParser.parse("<Document><First attr1=\"attribute1\" attr2=\"attribute2\">I am first</First><Second>I am second</Second></Document>");
 ```

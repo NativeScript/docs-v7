@@ -13,6 +13,8 @@ Represents a slider component.
  - **ios** - _UISlider_.    
   Gets the native iOS UIView that represents the user interface for this component. Valid only when running on iOS.
  - **value** - _Number_.    
-  Gets or sets a slider current value.
+  Gets or sets a slider current value. The default value is 0.
+ - **minValue** - _Number_.    
+  Gets or sets a slider min value. The default value is 0.
  - **maxValue** - _Number_.    
-  Gets or sets a slider max value.
+  Gets or sets a slider max value. The default value is 100.

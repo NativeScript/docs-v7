@@ -20,10 +20,10 @@ Represents a search bar component.
    - **event** - _String_
    - **callback** - _Function_(data [_EventData_](../../data/observable/EventData.md))
  - **on(** event , callback _Function_... **)**  
-     Reised when a search bar search is submitted.
+     Raised when a search bar search is submitted.
    - **event**
    - **callback** - _Function_(args [_EventData_](../../data/observable/EventData.md))
  - **on(** event , callback _Function_... **)**  
-     Reised when a search bar search is closed.
+     Raised when a search bar search is closed.
    - **event**
    - **callback** - _Function_(args [_EventData_](../../data/observable/EventData.md))

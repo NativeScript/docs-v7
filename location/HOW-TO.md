@@ -12,7 +12,6 @@ var LocationManager = require("location").LocationManager;
 ### Test are location services available for this device
 ``` JavaScript
 var isEnabled = LocationManager.isEnabled();
-
 ```
 ### Get distance between two locations
 ``` JavaScript
@@ -24,25 +23,21 @@ var locNewYork = new Location();
 locNewYork.longitude = 40.71448;
 locNewYork.latitude = -74.00598;
 var distance = LocationManager.distance(locSofia, locNewYork);
-
 ```
 ## Getting location
 ### Receive continuous location updates
 ``` JavaScript
 var locationManager = new LocationManager();
-
 locationManager.startLocationMonitoring(function (location) {
     console.log('Location received: ' + location);
 }, function (error) {
     console.log('Location error received: ' + error);
 });
-
 ```
 ### Get last known location
 ``` JavaScript
 var locationManager = new LocationManager();
 var lastKnownLocation = locationManager.lastKnownLocation;
-
 ```
 ### Get location once
 if there is `options.timeout` you will receive error on timeout. If `options.timeout` is 0 then the result is the same as the result from `LocationManager.lastKnownLocation`
@@ -53,8 +48,7 @@ var locationModule = require("location");
 // options can also look like { maximumAge: 2000, timeout: 20 }
 locationModule.getLocation({ maximumAge: 30000, timeout: 0 }).then(function (location) {
     console.log('Location received: ' + location);
-}).fail(function (error) {
+}, function (error) {
     console.log('Location error received: ' + error);
 });
-
 ```

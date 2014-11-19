@@ -7,19 +7,16 @@ description: "Examples for using stack-panel"
 ``` JavaScript
 var stackPanel = new panel.StackPanel();
 var btn = new button.Button();
-
 ```
 ### Add child view to panel
 ``` JavaScript
 stackPanel.addChild(btn);
-
 ```
 ### Remove child view from panel
 ``` JavaScript
 stackPanel.removeChild(btn);
-
 ```
 ### Change panel orientation to Horizontal
 ``` JavaScript
-stackPanel.orientation = 0 /* Horizontal */;
+stackPanel.orientation = panel.orientation.horizontal;
 ```

@@ -4,7 +4,9 @@ title: "Class ui/core/view.View"
 description: "Class ui/core/view.View"
 ---
 ## Class: "ui/core/view".View  
-_Inherits:_ _Object_
+_Inherits:_ _Object_  
+This class is the base class for all UI components. 
+A View occupies a rectangular area on the screen and is responsible for drawing (measure and arrange) of all UI components within. 
 
 ##### Instance Properties
  - **width** - _Number_.    
@@ -19,9 +21,9 @@ _Inherits:_ _Object_
   Gets or sets the minimum width the view may grow to.
  - **minHeight** - _Number_.    
   Gets or sets the minimum height the view may grow to.
- - **horizontalAlignment** - _Object_.    
+ - **horizontalAlignment** - _String_.    
   Gets or sets the alignment of this view within its parent along the Horizontal axis.
- - **verticalAlignment** - _Object_.    
+ - **verticalAlignment** - _String_.    
   Gets or sets the alignment of this view within its parent along the Vertical axis.
  - **margin** - _Object_.    
   Gets or sets the margin of this view within its parent.

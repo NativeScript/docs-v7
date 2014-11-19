@@ -8,5 +8,5 @@ _Inherits:_ [_Panel_](../../../ui/panels/panel/Panel.md)
 StackPanel is used to arrange children into single line.
 
 ##### Instance Properties
- - **orientation** - _Number_.    
+ - **orientation** - _String_.    
   Specifies dimension of children stacking.

@@ -12,11 +12,14 @@ var uicoreview = require("ui/core/view");
 
 Class | Description
 ------|------------
-[View](../../../ui/core/view/View.md) | 
+[View](../../../ui/core/view/View.md) | This class is the base class for all UI components. 
+A View occupies a rectangular area on the screen and is responsible for drawing (measure and arrange) of all UI components within. 
 
 Object | Description
 ------|------------
 [Options](../../../ui/core/view/Options.md) | 
+[AddArrayFromBuilder](../../../ui/core/view/AddArrayFromBuilder.md) | 
+[AddChildFromBuilder](../../../ui/core/view/AddChildFromBuilder.md) | 
 
 Namespace | Description
 ------|------------
