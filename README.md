@@ -1,55 +1,18 @@
-# NativeScript API Reference.
+NativeScript Documentation
+----
 
-### Modules
- - ["application"](application/)
- - ["color"](color/)
- - ["fps-meter"](fps-meter/)
- - ["http"](http/)
- - ["image-source"](image-source/)
- - ["location"](location/)
- - ["promises"](promises/)
- - ["text"](text/)
- - ["trace"](trace/)
- - ["ui/content-view"](ui/content-view/)
- - ["ui/core/bindable"](ui/core/bindable/)
- - ["ui/core/bindable"](ui/core/bindable/)
- - ["ui/content-view"](ui/content-view/)
- - ["ui/core/bindable"](ui/core/bindable/)
- - ["ui/core/bindable"](ui/core/bindable/)
- - ["ui/core/dependency-observable"](ui/core/dependency-observable/)
- - ["ui/panels/panel"](ui/panels/panel/)
- - ["ui/core/view"](ui/core/view/)
- - ["ui/frame"](ui/frame/)
- - ["ui/image"](ui/image/)
- - ["ui/label"](ui/label/)
- - ["ui/pagesNew"](ui/pagesNew/)
- - ["ui/pages"](ui/pages/)
- - ["ui/panels/grid-panel"](ui/panels/grid-panel/)
- - ["ui/panels/stack-panel"](ui/panels/stack-panel/)
- - ["ui/slide-out"](ui/slide-out/)
- - ["ui/tab-view"](ui/tab-view/)
- - ["ui/text-field"](ui/text-field/)
- - ["ui/text-view"](ui/text-view/)
- - ["utils/containers"](utils/containers/)
- - ["utils/utils"](utils/utils/)
- - ["console"](console/)
- - ["timer"](timer/)
- - ["local-settings"](local-settings/)
- - ["ui/dialogs"](ui/dialogs/)
- - ["ui/button"](ui/button/)
- - ["ui/slider"](ui/slider/)
- - ["ui/switch"](ui/switch/)
- - ["ui/activity-indicator"](ui/activity-indicator/)
- - ["ui/progress"](ui/progress/)
- - ["ui/search-bar"](ui/search-bar/)
- - ["ui/list-view"](ui/list-view/)
- - ["ui/scroll-view"](ui/scroll-view/)
- - ["ui/web-view"](ui/web-view/)
- - ["media-player"](media-player/)
- - ["file-system"](file-system/)
- - ["data/observable"](data/observable/)
- - ["xml"](xml/)
- - ["data/observable-array"](data/observable-array/)
- - ["data/virtual-array"](data/virtual-array/)
- - ["ui/gestures"](ui/gestures/)
- - ["ui/styling"](ui/styling/)
+NativeScript enables developers to build native application for iOS and Android while sharing the application code across the platforms. NativeScript aims to provide the highest amount of code reuse across platforms while delivering outstanding user experience and performance. With NativeScript, you will save significant effort when building rich native apps across multiple platforms.
+
+A NativeScript application consists of pure JavaScript code, executing within native android and ios runtimes. NativeScript includes purposely built JavaScript modules, i.e. a NativeScript UI framework to enable cross-platform code.
+
+Use the [NativeScript CLI](http://www.telerik.com/forums/using-the-cli-to-build-a-nativescript-application-f3de79aa6c37) to create an application.
+
+Read the advanced topics below or refer to the [Api Reference](apireference/) to build a powerful NativeScript application:
+
+- [Application](application.md)
+- [Layouts](layouts.md)
+- [Navigation](navigation.md)
+- [Styling](styling.md)
+- [Binding](bindings.md)
+
+The [Styling Native Apps with CSS](http://developer.telerik.com/featured/styling-native-apps-css/) post contains more information about the NativeScript application styling.
