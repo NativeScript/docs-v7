@@ -7,7 +7,7 @@ A NativeScript application consists of pure JavaScript code, executing within na
 
 Use the [NativeScript CLI](http://www.telerik.com/forums/using-the-cli-to-build-a-nativescript-application-f3de79aa6c37) to create an application.
 
-Read the advanced topics below or refer to the [Api Reference](apireference/) to build a powerful NativeScript application:
+Read the advanced topics below or refer to the [Api Reference](ApiReference/) to build a powerful NativeScript application:
 
 - [Application](application.md)
 - [Layouts](layouts.md)
