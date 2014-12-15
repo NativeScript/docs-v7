@@ -1,8 +1,9 @@
 ---
-nav-title: "Navigation How-To"
-title: "Navigation How-To"
-description: "General info about Navigation in NativeScript"
+nav-title: "NativeScript Navigation"
+title: "NativeScript Navigation"
+description: "NativeScript Documentation: Navigation"
 ---
+
 # Navigation
 A NativeScript application is built around the concept of Pages. Pages are the different screens of your application. Each Page has a **content** property which holds the root visual element of the page UI. Navigating between different pages is done with methods of the Frame object.
 

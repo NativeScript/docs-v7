@@ -1,4 +1,10 @@
-# Styling in NativeScript
+---
+nav-title: "NativeScript Styling"
+title: "NativeScript Styling"
+description: "NativeScript Documentation: Styling"
+---
+
+# Styling
 In this article we are going to explain how to change the looks and appearance of the views (elements) in a NativeScript application. Styling in NativeScript is done in a similar fashion as in a web application - using CSS or changing the style object of the elements in JS code.
 
 ## The Style Object

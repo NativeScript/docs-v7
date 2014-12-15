@@ -1,4 +1,10 @@
-# Application in NativeScript
+---
+nav-title: "NativeScript Application"
+title: "NativeScript Application"
+description: "NativeScript Documentation: Application"
+---
+
+# Application
 
 Application module in NativeScript framework is the main module that must be required in order to have working application. This module provides several callback functions to notify developer when specific event occurred.
 

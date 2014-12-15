@@ -1,4 +1,10 @@
-# Layouts in NativeScript
+---
+nav-title: "NativeScript Layouts"
+title: "NativeScript Layouts"
+description: "NativeScript Documentation: Layouts"
+---
+
+# Layouts
 
 NativeScript framework comes with its own layout system. All **View** classes expose several properties that affects the layout. For example minWidth, width, maxWidth, minHeight, height, maxHeight and margin all affects layout.
 

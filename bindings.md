@@ -1,8 +1,9 @@
 ---
-nav-title: "Bindings How-To"
-title: "Bindings How-To"
-description: "General info about Bindings in NativeScript"
+nav-title: "NativeScript Bindings"
+title: "NativeScript Bindings"
+description: "NativeScript Documentation: Bindings"
 ---
+
 # Binding
 Within NativeScript we refer to term Binding as "Data Binding" (according to Wikipedia this is a technique to connect two data elements together). A connection between two elements means that when a property value of the first element changes then the bound property of the second object is changed accordingly. Later in this document we will refer to the first object as "source" and the second object as "target".
 In order to have a real binding (which changes a property on the target everytime when source is changed) we need a way to understand when source object is changed. NativeScript provides such base class called Observable which emits "property changed event" everytime when a property value is changed. For creating an Observable class instance we need to require "observable" module:

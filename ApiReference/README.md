@@ -1,4 +1,10 @@
-# NativeScript API Reference
+---
+nav-title: "Table of Contents"
+title: "Table of Contents"
+description: "NativeScript ApiReference Table of Contents"
+---
+
+# Table of Contents
 
 ### Modules
  - ["application"](application/)
