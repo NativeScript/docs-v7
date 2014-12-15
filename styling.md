@@ -17,7 +17,7 @@ page.css = "button { color: red }";
 *__Note__: Currently the CSS support is limited only to the selectors and properties listed in this article*
 
 ### Supported selectors
-Native script supports a subset of [CSS selector syntax](http://www.w3schools.com/cssref/css_selectors.asp). We will look trough the supported selecors.
+Native script supports a subset of [CSS selector syntax](http://www.w3schools.com/cssref/css_selectors.asp). We will look trough the supported selectors.
 
 #### Type selector
 Like [CSS element selectors](http://www.w3schools.com/cssref/sel_element.asp), type selectors in NativeScript select all views of a given type.
@@ -64,9 +64,20 @@ button:pressed { background-color: blue }
 ## Supported properties
 Here is list of the properties, that can be set in CSS or through the style property of each View:
 
-| CSS Property    | JS property     | Description |
-|:----------------|:----------------|:----------------|
-| color           | color           | Allows for solid-color modification of the matched View’s foreground.|
-| background-color| backgroundColor | Allows for solid-color modification of the matched View’s background.|
-| font-size       | fontSize        | Allows for modification of the matched View’s font size (works in Device-independent units only).|
-
+| CSS Property    | JS property        | Description |
+|:----------------|:-------------------|:----------------|
+| color           | color              | Sets a solid-color value of the matched view’s foreground. |
+| background-color | backgroundColor    | Sets a solid-color value of the matched view’s background. |
+| font-size       | fontSize           | Sets the font size of the matched View (works in Device-independent units only). |
+| text-align      | textAlignment      | Sets the alignment of the text in the matched view. Available values: "left" , "center", "right". |
+| vertical-align  | verticalAlignment  | Sets the alignment of this view within its parent along the vertical axis. Available values: "top", "center", "bottom", "stretch". |
+| horizontal-align | horizontalAlignment| Sets the alignment of this view within its parent along the horizontal axis. Available values: "left", "center", "right", "stretch". |
+| margin          | margin             | Sets the margin of the view within its parent. |
+| width           | width              | Sets the width of the view. |
+| height          | height             | Sets the height of the view. |
+| min-width       | minWidth           | Sets the minimum width of the view. |
+| min-height      | minHeight          | Sets the minimum height of the view. |
+| max-width       | maxWidth           | Sets the maximum width of the view. |
+| max-height      | maxHeight          | Sets the maximum height of the view. |
+| visibility      | visibility         | Sets the visibility of the view. Available values: "visible", "collapsed". |
+| opacity         | opacity            | Sets the of the view. Value can be in the [0, 1] range |

@@ -7,7 +7,8 @@ description: "Class file-system.path"
 Enables path-specific operations like join, extension, etc.
 
 ##### Variables
- - **separator** - _String_.
+ - **separator** - _String_.    
+  Gets the string used to separate file paths.
 
 ##### Functions
  - **normalize(** path _String_ **)** _String_  

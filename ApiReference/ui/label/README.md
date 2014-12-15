@@ -19,5 +19,4 @@ Object | Description
 [Options](../../ui/label/Options.md) | 
 
 ##### Variables
- - **textProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
  - **textWrapProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).

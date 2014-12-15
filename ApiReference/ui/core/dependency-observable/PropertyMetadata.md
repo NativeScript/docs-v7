@@ -25,3 +25,5 @@ Represents an Object that describes a Property instance.
   Checks whether the PropertyMetadataOptions.AffectsParentArrange bit is present in the options value.
  - **inheritable** - _Boolean_.    
   Checks whether the PropertyMetadataOptions.Inheritable bit is present in the options value.
+ - **affectsStyle** - _Boolean_.    
+  Checks whether the PropertyMetadataOptions.AffectsStyle bit is present in the options value.

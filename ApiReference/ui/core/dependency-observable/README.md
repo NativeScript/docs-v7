@@ -23,6 +23,7 @@ Object | Description
 [PropertyChangeData](../../../ui/core/dependency-observable/PropertyChangeData.md) | The data for the event raised when a value of a Property changes for a DependencyObservable instance.
 [PropertyChangedCallback](../../../ui/core/dependency-observable/PropertyChangedCallback.md) | Defines the signature of the function that handles the propertyChanged event.
 [PropertyValidateValueCallback](../../../ui/core/dependency-observable/PropertyValidateValueCallback.md) | Defines the signature of the function that handles the validateValue event.
+[PropertyEqualityComparer](../../../ui/core/dependency-observable/PropertyEqualityComparer.md) | Defines the signature of the function that compares if two property values are equal.
 
 Namespace | Description
 ------|------------

@@ -23,8 +23,9 @@ Object | Description
 [PromptResult](../../ui/dialogs/PromptResult.md) | Provides result data from the prompt dialog.
 [LoginResult](../../ui/dialogs/LoginResult.md) | Provides result data from the login dialog.
 
-##### Variables
- - **InputType** - _Object_.
+Namespace | Description
+------|------------
+[inputType](../../ui/dialogs/inputType/) | Defines the input type for prompt dialog.
 
 ##### Functions
  - **alert(** message _String_, options? [_AlertOptions_](../../ui/dialogs/AlertOptions.md) **)** _Promise_  

@@ -7,4 +7,5 @@ description: "Class data/observable.knownEvents"
 Known event names.
 
 ##### Variables
- - **propertyChange** - _String_.
+ - **propertyChange** - _String_.    
+  The name of the property changed event.
