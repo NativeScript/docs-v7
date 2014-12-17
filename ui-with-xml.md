@@ -265,4 +265,4 @@ Examples:
 <Label text="{{ author ? 'by ' + author : '[no author]' }}" />
 <Label text="{{ author || '[no author]' }}" />
 ```
-*__Important__: Expressions are re-evaluated on every property change of the object set for bindingContext!*
+*__Important__: Expressions are re-evaluated on every property change of the object set for bindingContext! In this case the binding is one way (from model to UI)*
