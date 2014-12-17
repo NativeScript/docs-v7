@@ -20,6 +20,6 @@ Read the advanced topics below or refer to the [Api Reference](ApiReference/) to
 - [Navigation](navigation.md)
 - [Styling](styling.md)
 - [Binding](bindings.md)
-- [UI from XML](ui-from-xml.md)
+- [UI with XML](ui-with-xml.md)
 
 The [Styling Native Apps with CSS](http://developer.telerik.com/featured/styling-native-apps-css/) post contains more information about the NativeScript application styling.
