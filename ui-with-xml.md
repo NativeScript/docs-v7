@@ -12,9 +12,7 @@ application.start();
 ###### Navigate to page using Frame navigate() method
 ```JS
 // Navigate to page called “my-page”
-frames.topmost().navigate({
-    moduleName: "app/my-page"
-})
+frames.topmost().navigate("app/my-page")
 ```
 *__Important__: Paths are relative to the application root! In this case NativeScript will look for the following XML file within your application (app/my-page.xml in this case)!*
 ###### XML declaration
