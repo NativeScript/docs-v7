@@ -171,7 +171,7 @@ exports.pageLoaded = pageLoaded;
   </CanvasPanel>
 </Page>
 ```
-### Custom components
+### Custom/user components 
 Using **xmlns** you can refer to your own custom components declared in your application. For example
 ###### XML
 ```XML
