@@ -93,18 +93,18 @@ exports.pageLoaded = pageLoaded;
 ```XML
 <Page loaded="pageLoaded">
   <TabView id="tabView1">
-       <TabView.items>
-  	<TabEntry title="Tab 1">
-    	     <TabEntry.view>
-      	         <Label text="This is Label in Tab 1" />
-    	      </TabEntry.view>
-  	</TabEntry>
-  	<TabEntry title="Tab 2">
-    	      <TabEntry.view>
-      	         <Label text="This is Label in Tab 2" />
-    	       </TabEntry.view>
-  	  </TabEntry>
-       </TabView.items>
+    <TabView.items>
+      <TabEntry title="Tab 1">
+        <TabEntry.view>
+          <Label text="This is Label in Tab 1" />
+        </TabEntry.view>
+      </TabEntry>
+      <TabEntry title="Tab 2">
+        <TabEntry.view>
+          <Label text="This is Label in Tab 2" />
+        </TabEntry.view>
+      </TabEntry>
+    </TabView.items>
   </TabView>
 </Page>
 ```
@@ -132,8 +132,8 @@ exports.pageLoaded = pageLoaded;
 ```XML
 <Page>
   <StackPanel orientation="horizontal">
-      <Label text="This is Label 1" />
-      <Label text="This is Label 2" />
+    <Label text="This is Label 1" />
+    <Label text="This is Label 2" />
   </StackPanel>
 </Page>
 ```
@@ -142,18 +142,18 @@ exports.pageLoaded = pageLoaded;
 ```XML
 <Page>
   <GridPanel>
-	<GridPanel.rowDefinitions>
-  		<RowDefinition height="*" />
-  		<RowDefinition height="auto" />
-	</GridPanel.rowDefinitions>
-	<GridPanel.columnDefinitions>
-  		<ColumnDefinition width="250" />
-  		<ColumnDefinition width="*" />
-	</GridPanel.columnDefinitions>
-	<Label text="This is Label in row 0, col 0" />
-	<Label text="This is Label in row 0, col 1" col="1" />
-	<Label text="This is Label in row 1, col 0" row="1" />
-	<Label text="This is Label in row 1, col 1" row="1" col="1" />
+    <GridPanel.rowDefinitions>
+      <RowDefinition height="*" />
+      <RowDefinition height="auto" />
+    </GridPanel.rowDefinitions>
+    <GridPanel.columnDefinitions>
+      <ColumnDefinition width="250" />
+      <ColumnDefinition width="*" />
+    </GridPanel.columnDefinitions>
+    <Label text="This is Label in row 0, col 0" />
+    <Label text="This is Label in row 0, col 1" col="1" />
+    <Label text="This is Label in row 1, col 0" row="1" />
+    <Label text="This is Label in row 1, col 1" row="1" col="1" />
   </GridPanel>
 </Page>
 ```
@@ -162,10 +162,10 @@ exports.pageLoaded = pageLoaded;
 ```XML
 <Page>
   <WrapPanel>
-	<Label text="This is Label 1" />
-	<Label text="This is Label 2" />
-	<Label text="This is Label 3" />
-	<Label text="This is Label 4" />
+    <Label text="This is Label 1" />
+    <Label text="This is Label 2" />
+    <Label text="This is Label 3" />
+    <Label text="This is Label 4" />
   </WrapPanel>
 </Page>
 ```
@@ -174,7 +174,7 @@ exports.pageLoaded = pageLoaded;
 ```XML
 <Page>
   <CanvasPanel>
-	<Label text="This is Label 1" left="30" top="70" />
+    <Label text="This is Label 1" left="30" top="70" />
   </CanvasPanel>
 </Page>
 ```
@@ -182,12 +182,12 @@ exports.pageLoaded = pageLoaded;
 Using **xmlns** you can refer to your own custom components declared in your application. For example
 ###### XML
 ```XML
-<Page 
+<Page
   	xmlns:customControls="app/xml-declaration/mymodule"
   	xmlns:customOtherControls="app/xml-declaration/mymodulewithxml">
-    <WrapPanel>
-      <customControls:MyControl />
-      <customOtherControls:MyControl />
+  <WrapPanel>
+    <customControls:MyControl />
+    <customOtherControls:MyControl />
   </WrapPanel>
 </Page>
 ```
