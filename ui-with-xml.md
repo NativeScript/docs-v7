@@ -266,3 +266,29 @@ Examples:
 <Label text="{{ author || '[no author]' }}" />
 ```
 *__Important__: Expressions are re-evaluated on every property change of the Observable object set for bindingContext! In this case the binding is one way (from model to UI)*
+### Templates and scope
+UI components like **ListView** will create items in runtime by parsing and loading content from **itemTemplate** property if specified.
+```XML
+<Page loaded="pageLoaded">
+  <ListView id="listView1" items="{{ myItems }}">
+    <ListView.itemTemplate>
+      <Label id="label1" text="{{ name }}"  />
+    </ListView.itemTemplate>
+  </ListView>
+</Page>
+```
+While you can access **ListView** (listView1) by **id** from the **Page** you cannot access the **Label** (label1) in the same way since this component (label1) is in a different scope and the **ListView** will create such Label for every item.
+```JS
+var view = require("ui/core/view");
+
+function pageLoaded(args) {
+    var page = args.object;
+
+    page.bindingContext = { myItems: [{ name: "Name1" }, { name: "Name2" }, { name: "Name3" }] };
+
+    var listView1 = view.getViewById(page, "listView1");
+
+    var label1 = view.getViewById(page, "label1");
+}
+exports.pageLoaded = pageLoaded;
+```
