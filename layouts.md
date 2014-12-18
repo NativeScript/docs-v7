@@ -1,5 +1,5 @@
 ---
-nav-title: "NativeScript Layouts"
+nav-title: "Layouts"
 title: "NativeScript Layouts"
 description: "NativeScript Documentation: Layouts"
 position: 3
