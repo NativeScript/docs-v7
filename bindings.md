@@ -2,7 +2,7 @@
 nav-title: "Bindings"
 title: "NativeScript Bindings"
 description: "NativeScript Documentation: Bindings"
-position: 5
+position: 6
 ---
 
 # Binding
