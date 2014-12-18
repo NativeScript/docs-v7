@@ -1,5 +1,11 @@
-NativeScript Documentation
-----
+---
+nav-title: "Welcome to NativeScript"
+title: "Welcome to NativeScript"
+description: "NativeScript Documentation introduction"
+position: 1
+---
+
+# Welcome to NativeScript
 
 NativeScript enables developers to build native application for iOS and Android while sharing the application code across the platforms. NativeScript aims to provide the highest amount of code reuse across platforms while delivering outstanding user experience and performance. With NativeScript, you will save significant effort when building rich native apps across multiple platforms.
 

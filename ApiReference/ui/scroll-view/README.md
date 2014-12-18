@@ -12,4 +12,4 @@ var uiscroll_view = require("ui/scroll-view");
 
 Class | Description
 ------|------------
-[ScrollView](../../ui/scroll-view/ScrollView.md) | 
+[ScrollView](../../ui/scroll-view/ScrollView.md) | Represents a scrollable area that can have content that is larger than its bounds.

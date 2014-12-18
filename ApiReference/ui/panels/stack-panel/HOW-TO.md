@@ -18,5 +18,5 @@ stackPanel.removeChild(btn);
 ```
 ### Change panel orientation to Horizontal
 ``` JavaScript
-stackPanel.orientation = panel.orientation.horizontal;
+stackPanel.orientation = enums.Orientation.horizontal;
 ```

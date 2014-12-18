@@ -37,7 +37,10 @@ Nested frames are supported, enabling hierarchical navigation scenarios.
      Navigates to a Page instance as described by the module name. 
 This method will require the module and will check for a Page property in the exports of the module.
    - **pageModuleName** - _String_  
-     The name of the module to require.
+     The name of the module to require starting from the application root.
+For example if you want to navigate to page called "myPage.js" in a folder called "subFolder" and your root folder is "app" you can call navigate method like this:
+var frames = require("ui/frame");
+frames.topmost().navigate("app/subFolder/myPage");
  - **navigate(** page [_Page_](../../ui/page/Page.md) **)**  
      Navigates to the specified Page instance.
    - **page** - [_Page_](../../ui/page/Page.md)  

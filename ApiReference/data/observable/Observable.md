@@ -26,13 +26,16 @@ Observable is used when you want to be notified when a change occurs. Use on/off
      Comma delimited names of the events to attach the listener to.
    - **callback** - _Function_(data [_EventData_](../../data/observable/EventData.md))  
      A function to be called when some of the specified event(s) is raised.
-   - **thisArg** - _(optional)_ - _Object_
- - **removeEventListener(** eventNames _String_, callback? _Object_ **)**  
+   - **thisArg** - _(optional)_ - _Object_  
+     An optional parameter which when set will be used as "this" in callback method call.
+ - **removeEventListener(** eventNames _String_, callback? _Object_, thisArg? _Object_ **)**  
      Removes listener(s) for the specified event name.
    - **eventNames** - _String_  
      Comma delimited names of the events the specified listener is associated with.
    - **callback** - _(optional)_ - _Object_  
      An optional parameter pointing to a specific listener. If not defined, all listeners for the event names will be removed.
+   - **thisArg** - _(optional)_ - _Object_  
+     An optional parameter which when set will be used to refine search of the correct callback which will be removed as event listener.
  - **set(** name _String_, value _Object_ **)**  
      Updates the specified property with the provided value.
    - **name** - _String_

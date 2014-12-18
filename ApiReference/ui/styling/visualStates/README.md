@@ -7,6 +7,9 @@ description: "Class ui/styling.visualStates"
 Encapsulates visual states names.
 
 ##### Variables
- - **Normal** - _String_.
- - **Hovered** - _String_.
- - **Pressed** - _String_.
+ - **Normal** - _String_.    
+  The normal visual state.
+ - **Hovered** - _String_.    
+  The hovered visual state.
+ - **Pressed** - _String_.    
+  The pressed visual state.

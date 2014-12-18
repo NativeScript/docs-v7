@@ -12,7 +12,12 @@ var uitext_base = require("ui/text-base");
 
 Class | Description
 ------|------------
-[TextBase](../../ui/text-base/TextBase.md) | Represents the base class for all text widgets.
+[TextBase](../../ui/text-base/TextBase.md) | Represents the base class for all text views.
+
+Object | Description
+------|------------
+[Options](../../ui/text-base/Options.md) | 
 
 ##### Variables
  - **textProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
+ - **formattedTextProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).

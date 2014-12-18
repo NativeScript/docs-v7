@@ -15,6 +15,9 @@ Class | Description
 [Slider](../../ui/slider/Slider.md) | Represents a slider component.
 
 ##### Variables
- - **valueProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
- - **minValueProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
- - **maxValueProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
+ - **valueProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the value property of each Slider instance.
+ - **minValueProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the minValue property of each Slider instance.
+ - **maxValueProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the maxValue property of each Slider instance.

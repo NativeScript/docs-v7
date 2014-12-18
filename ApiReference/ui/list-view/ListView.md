@@ -17,6 +17,8 @@ Represents a view that shows items in a vertically scrolling list.
  - **items** - _Object_.    
   Gets or set the items collection of the ListView. 
 The items property can be set to an array or an object defining length and getItem(index) method.
+ - **itemTemplate** - _String_.    
+  Gets or set the item template of the ListView. 
 
 ##### Instance Functions
  - **refresh()**  

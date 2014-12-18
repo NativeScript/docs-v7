@@ -14,6 +14,7 @@ description: "Class trace.categories"
  - **Debug** - _String_.
  - **Navigation** - _String_.
  - **Test** - _String_.
+ - **Binding** - _String_.
  - **All** - _String_.
  - **separator** - _String_.
 

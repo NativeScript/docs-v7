@@ -22,8 +22,8 @@ description: "Class ui/core/view.Options"
   Gets or sets the alignment of this view within its parent along the Horizontal axis.
  - **verticalAlignment** - _(optional)_ - _String_.    
   Gets or sets the alignment of this view within its parent along the Vertical axis.
- - **margin** - _(optional)_ - _Object_.    
+ - **margin** - _(optional)_ - [_Thickness_](../../../utils/geometry/Thickness.md).    
   Gets or sets the margin of this view within its parent.
- - **isVisible** - _(optional)_ - _Boolean_.
+ - **visibility** - _(optional)_ - _String_.
  - **cssClass** - _(optional)_ - _String_.
  - **id** - _(optional)_ - _String_.

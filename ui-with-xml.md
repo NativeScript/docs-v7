@@ -1,3 +1,10 @@
+---
+nav-title: "UI with XML"
+title: "UI with XML"
+description: "NativeScript Documentation: UI with XML"
+position: 5
+---
+
 # UI with XML
 ### How it works?
 When you trigger navigation in your application (either by setting a value to the **mainModule** property of the **application** object, or by passing an argument to the **navigate()** method of the **Frame** class), the **NativeScript** navigation framework will look for an XML-extension-file with the same path to load and navigate to the respective **Page**. For example:
