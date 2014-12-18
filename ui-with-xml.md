@@ -292,9 +292,9 @@ function pageLoaded(args) {
     var page = args.object;
 
     page.bindingContext = { myItems: [{ name: "Name1" }, { name: "Name2" }, { name: "Name3" }] };
-
+    // Will work!
     var listView1 = view.getViewById(page, "listView1");
-
+    // Will not work!
     var label1 = view.getViewById(page, "label1");
 }
 exports.pageLoaded = pageLoaded;
