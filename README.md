@@ -2,6 +2,7 @@
 nav-title: "Welcome to NativeScript"
 title: "Welcome to NativeScript"
 description: "NativeScript Documentation introduction"
+position: 1
 ---
 
 # Welcome to NativeScript

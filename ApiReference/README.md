@@ -2,6 +2,7 @@
 nav-title: "Table of Contents"
 title: "Table of Contents"
 description: "NativeScript ApiReference Table of Contents"
+position: 1
 ---
 
 # Table of Contents

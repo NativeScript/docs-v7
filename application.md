@@ -2,6 +2,7 @@
 nav-title: "NativeScript Application"
 title: "NativeScript Application"
 description: "NativeScript Documentation: Application"
+position: 2
 ---
 
 # Application

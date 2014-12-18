@@ -2,6 +2,7 @@
 nav-title: "NativeScript Layouts"
 title: "NativeScript Layouts"
 description: "NativeScript Documentation: Layouts"
+position: 3
 ---
 
 # Layouts
