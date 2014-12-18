@@ -292,3 +292,4 @@ function pageLoaded(args) {
 }
 exports.pageLoaded = pageLoaded;
 ```
+*__Important__: Accessing directly components by id is not recomended (especially when the component is part of template). Please use bindings to specify component properties!*
