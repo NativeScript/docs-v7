@@ -7,4 +7,5 @@ description: "Class ui/frameknownEvents.android"
 Encapsulates the events raised by the android part of the Frame.
 
 ##### Variables
- - **optionSelected** - _String_.
+ - **optionSelected** - _String_.    
+  Raised when the native android.app.Activity.onOptionsItemSelected method is called.

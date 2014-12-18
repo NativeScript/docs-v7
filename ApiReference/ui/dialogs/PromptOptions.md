@@ -8,5 +8,5 @@ _Extends:_ [_DialogButtonsOptions_](../../ui/dialogs/DialogButtonsOptions.md)
 Provides options for the prompt dialog.
 
 ##### Properties
- - **inputType** - _(optional)_ - _Object_.    
+ - **inputType** - _(optional)_ - _String_.    
   Gets or sets the prompt input type (plain text or password).

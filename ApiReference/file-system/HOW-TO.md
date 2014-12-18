@@ -84,7 +84,7 @@ myFile.writeText("Something").then(function () {
     // Succeeded writing to the file.
     // Getting back the contents of the file.
     myFile.readText().then(function (content) {
-        // Successfuly read the file's content.
+        // Successfully read the file's content.
     }, function (error) {
         // Failed to read from the file.
     });

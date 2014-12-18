@@ -17,7 +17,3 @@ Class | Description
 Object | Description
 ------|------------
 [Options](../../ui/image/Options.md) | 
-
-Namespace | Description
-------|------------
-[stretch](../../ui/image/stretch/) | 

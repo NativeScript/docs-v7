@@ -33,3 +33,12 @@ description: "Class utils/utilsad.layout"
    - **devicePixels** - _Number_
    - **context** - _Context_
    - _**return**_ - _Number_
+ - **onMeasureNative(** widthMeasureSpec _Number_, heightMeasureSpec _Number_ **)**
+   - **widthMeasureSpec** - _Number_
+   - **heightMeasureSpec** - _Number_
+ - **onLayoutNative(** changed _Boolean_, left _Number_, top _Number_, right _Number_, bottom _Number_ **)**
+   - **changed** - _Boolean_
+   - **left** - _Number_
+   - **top** - _Number_
+   - **right** - _Number_
+   - **bottom** - _Number_

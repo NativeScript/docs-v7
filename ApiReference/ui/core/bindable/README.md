@@ -19,4 +19,5 @@ Object | Description
 [BindingOptions](../../../ui/core/bindable/BindingOptions.md) | The options object used in the Bindable.bind method.
 
 ##### Variables
- - **bindingContextProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).
+ - **bindingContextProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
+  Represents the dependency Property used to back the bindingContext value.
