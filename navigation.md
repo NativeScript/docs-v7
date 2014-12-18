@@ -1,6 +1,6 @@
 ---
-nav-title: "Navigation"
-title: "NativeScript Navigation"
+nav-title: "NativeScript Navigation"
+title: "Navigation"
 description: "NativeScript Documentation: Navigation"
 position: 4
 ---

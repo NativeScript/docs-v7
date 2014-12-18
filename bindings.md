@@ -1,6 +1,6 @@
 ---
-nav-title: "Bindings"
-title: "NativeScript Bindings"
+nav-title: "NativeScript Bindings"
+title: "Bindings"
 description: "NativeScript Documentation: Bindings"
 position: 6
 ---

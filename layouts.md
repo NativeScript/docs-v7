@@ -1,6 +1,6 @@
 ---
-nav-title: "Layouts"
-title: "NativeScript Layouts"
+nav-title: "NativeScript Layouts"
+title: "Layouts"
 description: "NativeScript Documentation: Layouts"
 position: 3
 ---
