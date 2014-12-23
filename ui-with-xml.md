@@ -480,4 +480,5 @@ export function pageLoaded(args: observable.EventData) {
     var label1 = <label.Label>view.getViewById(page, "label1");
 }
 ```
-*__Important__: Accessing directly components by id is not recomended (especially when the component is part of template). Please use bindings to specify component properties!*
+*__Important__: Accessing directly components by id is not recommended (especially when the component is part of template). Please use bindings to specify component properties!*
+
