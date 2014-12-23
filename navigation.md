@@ -69,4 +69,4 @@ To go back to the previous page you should use the **goBackMethod**:
 topmost.goBack();
 ```
 ##Alternatives
-Alternatively, if you do not want to have different pages and navigate beteen them, you can have a single page with a TabView. You can define a different UI for each tab and when the user selects a certain tab he will be presented with this UI.
+Alternatively, if you do not want to have different pages and navigate between them, you can have a single page with a TabView. You can define a different UI for each tab and when the user selects a certain tab he will be presented with this UI.
