@@ -19,7 +19,7 @@ In this topic we will to go trough the following views available in NativeScript
 * [TabView](#tabview)
 * [Dialogs](#listview)
 
-Defining the layout of the application is also an important part of the application development. You can refer to the [ layout article ](layout.md) for more information about the different layout containers that are available in NativeScript.
+Defining the layout of the application is also an important part of the application development. You can refer to the [ layouts article ](layouts.md) for more information about the different layout containers that are available in NativeScript.
 
 **Note**: The underlying native widget for each view can be accessed runtime using the following properties:
 
