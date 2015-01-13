@@ -14,7 +14,7 @@ dialogs.alert("Your message");
 ```
 Available dialogs are: **alert**, **confirm**, **prompt**, **login** and **action**.
 
-*__Important__: Dialog functions can be called with parameters similar to the web browser API or *options* object. All dialog functions will return Promise<T>!*
+*__Important__: Dialog functions can be called with parameters similar to the web browser API or options object. All dialog functions will return Promise<T>!*
 
 ### Alert
 ```JS
