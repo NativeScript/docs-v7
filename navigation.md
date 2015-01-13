@@ -124,6 +124,25 @@ var navigationEntry = {
 };
 topmost.navigate(navigationEntry);
 ```
+#Navigating to another page and passing context
+Sometimes, the page being navigated to would have to receive information about the context in which this navigation happened. The bese example would be a master-details scenario where there are two pages -- the main page containing a list of some entities and a details page which provides details about a particular entity. In this case, when navigating to the details page it is mandatory to transfer some primary key or ID information about the entity the details page should show. This is done with the help of the **context** property of a NavigationEntry:
+``` JavaScript
+function listViewItemTap(args) {
+    frames.topmost().navigate({
+        moduleName: "app/cuteness.io/details-page",
+        context: appViewModel.redditItems.getItem(args.index)
+    });
+}
+```
+``` TypeScript
+export function listViewItemTap(args: listView.ItemEventData) {
+    // Navigate to the details page with context set to the data item for specified index
+    frames.topmost().navigate({
+        moduleName: "app/details-page",
+        context: appViewModel.redditItems.getItem(args.index)
+    });
+}
+```
 #Navigating Back
 The topmost frame keeps track of the pages the user has visited in a navigation stack. To go back to a previous page you should use the **goBackMethod** of the topmost frame instance:
 ``` JavaScript
@@ -134,3 +153,4 @@ topmost.goBack();
 ```
 #Alternatives
 Alternatively, if you do not want to have different pages and navigate beteen them, you can have a single page with a TabView. You can define a different UI for each tab and when the user selects a certain tab he will be presented with this UI.
+
