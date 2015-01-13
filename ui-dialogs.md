@@ -29,7 +29,7 @@ dialogs.alert("Your message").then(function() {
 ```
 ```TypeScript
 import dialogs = require("ui/dialogs");
-dialogs.alert("Your message").then(r => { 
+dialogs.alert("Your message").then(()=> { 
   console.log("Dialog closed!");
 });
 ```
