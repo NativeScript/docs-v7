@@ -25,7 +25,11 @@ dialogs.alert("Your message").then(function() {
 OR
 ```JS
 var dialogs = require("ui/dialogs");
-dialogs.alert({ title: "Your title", message: "Your message", okButtonText: "Your button text" }).then(function () {
+dialogs.alert({ 
+  title: "Your title", 
+  message: "Your message",
+  okButtonText: "Your button text" 
+}).then(function () {
   console.log("Dialog closed!");
 });
 ```
