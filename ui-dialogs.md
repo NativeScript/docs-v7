@@ -113,6 +113,7 @@ dialogs.prompt("Your message", "Default text").then(r => {
 ```
 OR
 ```JavaScript
+var dialogs = require("ui/dialogs");
 // inputType property can be dialogs.inputType.password or dialogs.inputType.text.
 dialogs.prompt({
   title: "Your title",
@@ -127,6 +128,7 @@ dialogs.prompt({
 });
 ```
 ```TypeScript
+import dialogs = require("ui/dialogs");
 // inputType property can be dialogs.inputType.password or dialogs.inputType.text.
 dialogs.prompt({
   title: "Your title",
@@ -159,6 +161,7 @@ dialogs.login("Your message", "User name", "Password").then(r => {
 ```
 OR
 ```JavaScript
+var dialogs = require("ui/dialogs");
 dialogs.login({
   title: "Your title",
   message: "Your message",
@@ -172,6 +175,7 @@ dialogs.login({
 });
 ```
 ```TypeScript
+import dialogs = require("ui/dialogs");
 dialogs.login({
   title: "Your title",
   message: "Your message",
@@ -201,6 +205,7 @@ dialogs.action("Your message", "Cancel button text", ["Option1", "Option2"]).the
 ```
 OR
 ```JavaScript
+var dialogs = require("ui/dialogs");
 dialogs.action({
   message: "Your message",
   cancelButtonText: "Cancel text",
@@ -210,6 +215,7 @@ dialogs.action({
 });
 ```
 ```TypeScript
+import dialogs = require("ui/dialogs");
 dialogs.action({
   message: "Your message",
   cancelButtonText: "Cancel text",
