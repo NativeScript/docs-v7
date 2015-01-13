@@ -14,10 +14,10 @@ In this topic we will to go trough the following views available in NativeScript
 * [Progress ](#progress)
 * [ActivityIndicator](#activityindicator)
 * [Image](#image)
-* [ListView](#dialogs)
+* [ListView](#listview)
 * [WebView](#webview)
 * [TabView](#tabview)
-* [Dialogs](#listview)
+* [Dialogs](#dialogs)
 
 Defining the layout of the application is also an important part of the application development. You can refer to the [ layouts article ](layouts.md) for more information about the different layout containers that are available in NativeScript.
 
