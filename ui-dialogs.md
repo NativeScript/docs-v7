@@ -105,7 +105,7 @@ dialogs.login({
   console.log("Dialog result: " + r.result + ", user: " + r.userName + ", pwd: " + r.password);
 });
 ```
-*__Important__: Dialog result argument is object with three properties: result, userName and password (entered user name and password) . Result property is true if the dialog is closed with OK button, false if closed with Cancel button, undefined if closed with neutral button.*
+*__Important__: Dialog result argument is object with three properties: result, userName and password (entered user name and password). Result property is true if the dialog is closed with OK button, false if closed with Cancel button, undefined if closed with neutral button.*
 
 ### Action
 ```JS
