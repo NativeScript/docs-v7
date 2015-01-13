@@ -12,7 +12,8 @@ You can show native platform dialogs using API similar to the web browser. For e
 var dialogs = require("ui/dialogs");
 dialogs.alert("Your message");
 ```
-Available dialogs are: *alert*, *confirm*, *prompt*, *login* and *action*.
+Available dialogs are: **alert**, **confirm**, **prompt**, **login** and **action**.
+
 *__Important__: Dialog functions can be called with parameters similar to the web browser API or *options* object. All dialog functions will return Promise<T>!*
 
 ### Alert
