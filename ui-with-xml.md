@@ -224,7 +224,8 @@ function buttonClick(args) {
 exports.buttonClick = buttonClick;
 ```
 ### Bindings & expressions
-To specify binding or expression for some property in the XML you can use double curly brackets syntax. For example:
+To specify binding or expression for some property in the XML you can use double curly brackets syntax. 
+#### Property binding
 ###### XML
 ```XML
 <Page loaded="pageLoaded">
@@ -242,7 +243,7 @@ exports.pageLoaded = pageLoaded;
 ```
 *__Important__: NativeScript will look for this property in the component bindingContext or bindingContext of the component parents. All bindings are two way by default!*
 
-You can bind also events:
+#### Event binding:
 ###### XML
 ```XML
 <Page loaded="pageLoaded">
@@ -264,7 +265,7 @@ function pageLoaded(args) {
 exports.pageLoaded = pageLoaded;
 ```
 
-Complex expressions instead of simple property names can be used as well:
+#### Expressions
 ###### Complex property paths
 ```JS
 your.sub.property[name]
