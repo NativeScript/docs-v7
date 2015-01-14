@@ -16,8 +16,19 @@ application.mainModule = "app/my-page";
 // Start the application
 application.start();
 ```
+```TypeScript
+import application = require("application");
+// Set the start module for the application
+application.mainModule = "app/my-page";
+// Start the application
+application.start();
+```
 ###### Navigate to page using Frame navigate() method
 ```JavaScript
+// Navigate to page called “my-page”
+frames.topmost().navigate("app/my-page")
+```
+```TypeScript
 // Navigate to page called “my-page”
 frames.topmost().navigate("app/my-page")
 ```
@@ -34,22 +45,38 @@ frames.topmost().navigate("app/my-page")
 If you have a **JavaScript-extension-file** with the same path (app/my-page.js), this file will be loaded together with the XML and will serve as a code-behind for the page where you can specify **event handlers, binding context and/or any other additional code**. In order to be accessible from the UI you need to declare your variables or functions in the module **exports**.
 ###### Code behind
 ```JavaScript
-var observable = require("data/observable");
 var view = require("ui/core/view");
-var label = require("ui/label");
-
 var count = 0;
 function buttonClick(args) {
-      count++;
-      var parent =  args.object.parent;
-      if (parent) {
+    count++;
+    var sender = args.object;
+    var parent = sender.parent;
+    if (parent) {
         var lbl = view.getViewById(parent, "Label1");
-      	if (lbl) {
-          lbl.text = "You clicked " + count + " times!";
+        if (lbl) {
+            lbl.text = "You clicked " + count + " times!";
         }
-      }
+    }
 }
 exports.buttonClick = buttonClick;
+```
+```TypeScript
+import observable = require("data/observable");
+import view = require("ui/core/view");
+import label = require("ui/label");
+
+var count = 0;
+export function buttonClick(args: observable.EventData) {
+    count++;
+    var sender = <view.View>args.object;
+    var parent = sender.parent;
+    if (parent) {
+        var lbl = <label.Label>view.getViewById(parent, "Label1");
+        if (lbl) {
+            lbl.text = "You clicked " + count + " times!";
+        }
+    }
+}
 ```
 *__Important__: Each attribute value in the XML declaration will be set to respective property of the component, if there is no such property the value will be set as an expando.!*
 ### Using Built-in components in an XML
@@ -76,17 +103,22 @@ exports.Button = Button;
  …
 </Page>
 ```
-###### JS
+###### Code
 ```JavaScript
-var observable = require("data/observable");
-var pages = require("ui/page");
- 
-// Event handler for Page "loaded" event attached in main-page.xml
 function pageLoaded(args) {
-	// Get the event sender
-	var page = args.object;
+    var page = args.object;
 }
 exports.pageLoaded = pageLoaded;
+```
+```TypeScript
+import observable = require("data/observable");
+import pages = require("ui/page");
+
+// Event handler for Page "loaded" event attached in main-page.xml
+export function pageLoaded(args: observable.EventData) {
+    // Get the event sender
+    var page = <pages.Page>args.object;
+}
 ```
 ### TabView
 ###### XML
@@ -108,15 +140,29 @@ exports.pageLoaded = pageLoaded;
   </TabView>
 </Page>
 ```
-###### JS
+###### Code
 ```JavaScript
 var view = require("ui/core/view");
 function pageLoaded(args) {
-	var page = args.object;
-	var tabView1 = view.getViewById(page, "tabView1");
-	tabView1.selectedIndex = 1;
+    var page = args.object;
+    var tabView1 = view.getViewById(page, "tabView1");
+    tabView1.selectedIndex = 1;
 }
 exports.pageLoaded = pageLoaded;
+```
+```TypeScript
+import observable = require("data/observable");
+import view = require("ui/core/view");
+import pages = require("ui/page");
+import tab = require("ui/tab-view");
+
+// Event handler for Page "loaded" event attached in main-page.xml
+export function pageLoaded(args: observable.EventData) {
+    // Get the event sender
+    var page = <pages.Page>args.object;
+    var tabView1 = <tab.TabView>view.getViewById(page, "tabView1");
+    tabView1.selectedIndex = 1;
+}
 ```
 ### ScrollView
 ###### XML
@@ -192,7 +238,7 @@ Using **xmlns** you can refer to your own custom components declared in your app
 </Page>
 ```
 ### Code-only custom component (app/xml-declaration/mymodule)
-###### JS
+###### Code
 ```JavaScript
 var MyControl = ...
 ...
@@ -206,7 +252,7 @@ exports.MyControl = MyControl;
   <Button text="Click!" click="buttonClick" />
 </StackPanel>
 ```
-###### JS
+###### Code
 ```JavaScript
 var view = require("ui/core/view");
  
@@ -232,7 +278,7 @@ To specify binding or expression for some property in the XML you can use double
   <Label text="{{ name }}" />
 </Page>
 ```
-###### JS
+###### Code
 ```JavaScript
 function pageLoaded(args) {
 	var page = args.object;
@@ -250,7 +296,7 @@ exports.pageLoaded = pageLoaded;
   <Button text="{{ myProperty }}" tap="{{ myFunction }}" />
 </Page>
 ```
-###### JS
+###### Code
 ```JavaScript
 function pageLoaded(args) {
 	var page = args.object;
