@@ -2,7 +2,7 @@
 nav-title: "UI with XML"
 title: "UI with XML"
 description: "NativeScript Documentation: UI with XML"
-position: 5
+position: 7
 ---
 
 # UI with XML

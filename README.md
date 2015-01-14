@@ -16,8 +16,8 @@ Use the [NativeScript CLI](http://www.telerik.com/forums/using-the-cli-to-build-
 Read the advanced topics below or refer to the [Api Reference](ApiReference/) to build a powerful NativeScript application:
 
 - [Application](application-management.md)
-- [Layouts](layouts.md)
 - [Navigation](navigation.md)
+- [Layouts](layouts.md)
 - [Styling](styling.md)
 - [Binding](bindings.md)
 - [UI with XML](ui-with-xml.md)

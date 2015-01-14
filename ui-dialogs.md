@@ -2,7 +2,7 @@
 nav-title: "UI Dialogs"
 title: "UI Dialogs"
 description: "NativeScript Documentation: UI Dialogs"
-position: 101
+position: 9
 ---
 
 # UI Dialogs

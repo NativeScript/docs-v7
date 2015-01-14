@@ -1,4 +1,9 @@
-#UI Views
+---
+nav-title: "UI Views"
+title: "UI Views"
+description: "UI Views"
+position: 8
+---
 
 NativeScript ships with set of UI Views which can be used for building the UI of a mobile application. Most of these views wrap the corresponding native view for each platform, while providing a common API for working with them. For example the `Button` view renders an `android.widget.Button` on Android and `UIButton` on iOS. 
 

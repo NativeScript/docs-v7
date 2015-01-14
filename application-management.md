@@ -3,41 +3,19 @@ nav-title: "Application Management"
 title: "Application Management"
 description: "Application Management"
 position: 2
----
 
-# Persist and Restore Application Settings
-To persist settings that the user has defined you have to use the local-settings module. The local-settings module is a static singleton hash table that stores key-value pairs for the application. The getter methods have two parameters -- a key and an optional default value to return if the specified key does not exist. The setter methods also have two parameters -- key and value. Here is an example of using the local settings-module and all of its available methods:
+---
+# Application Start
+You are required to call the **start** method of the application module once you are ready with its initialization. This method doesn't do anything for an Android application at the moment but may do in the future. In an iOS application this call will start the UIApplication and will trigger its UI message loop.:
 ``` JavaScript
-var localSettings = require("local-settings");
-// Event handler for Page "loaded" event attached in main-page.xml
-function pageLoaded(args) {
-    localSettings.setString("Name", "John Doe");
-    console.log(localSettings.getString("Name")); // Prints "John Doe"
-    localSettings.setBoolean("Married", false);
-    console.log(localSettings.getBoolean("Married")); // Prints false
-    localSettings.setNumber("Age", 42);
-    console.log(localSettings.getNumber("Age")); // Prints 42
-    console.log(localSettings.hasKey("Name")); // Prints true
-    localSettings.remove("Name"); // Removes the Name entry.
-    console.log(localSettings.hasKey("Name")); // Prints false
-}
-exports.pageLoaded = pageLoaded;
+var application = require("application");
+application.mainModule = "app/template-settings/main-page";
+application.start();
 ```
 ``` TypeScript
-import observable = require("data/observable");
-import localSettings = require("local-settings");
-// Event handler for Page "loaded" event attached in main-page.xml
-export function pageLoaded(args: observable.EventData) {
-    localSettings.setString("Name", "John Doe");
-    console.log(localSettings.getString("Name"));// Prints "John Doe"
-    localSettings.setBoolean("Married", false);
-    console.log(localSettings.getBoolean("Married"));// Prints false
-    localSettings.setNumber("Age", 42);
-    console.log(localSettings.getNumber("Age"));// Prints 42
-    console.log(localSettings.hasKey("Name"));// Prints true
-    localSettings.remove("Name");// Removes the Name entry.
-    console.log(localSettings.hasKey("Name"));// Prints false
-}
+import application = require("application");
+application.mainModule = "app/main-page";
+application.start();
 ```
 # Using Application Callbacks
 Each NativeScript application has several important lifecycle events. You can use those events to perform all kinds of needed maintanance and housekeeping:
@@ -107,4 +85,38 @@ application.onUncaughtError = function (error: application.NativeScriptError) {
     console.log("Application error: " + error.name + "; " + error.message + "; " + error.nativeError);
 }
 application.start();
+```
+# Persist and Restore Application Settings
+To persist settings that the user has defined you have to use the local-settings module. The local-settings module is a static singleton hash table that stores key-value pairs for the application. The getter methods have two parameters -- a key and an optional default value to return if the specified key does not exist. The setter methods also have two parameters -- key and value. Here is an example of using the local settings-module and all of its available methods:
+``` JavaScript
+var localSettings = require("local-settings");
+// Event handler for Page "loaded" event attached in main-page.xml
+function pageLoaded(args) {
+    localSettings.setString("Name", "John Doe");
+    console.log(localSettings.getString("Name")); // Prints "John Doe"
+    localSettings.setBoolean("Married", false);
+    console.log(localSettings.getBoolean("Married")); // Prints false
+    localSettings.setNumber("Age", 42);
+    console.log(localSettings.getNumber("Age")); // Prints 42
+    console.log(localSettings.hasKey("Name")); // Prints true
+    localSettings.remove("Name"); // Removes the Name entry.
+    console.log(localSettings.hasKey("Name")); // Prints false
+}
+exports.pageLoaded = pageLoaded;
+```
+``` TypeScript
+import observable = require("data/observable");
+import localSettings = require("local-settings");
+// Event handler for Page "loaded" event attached in main-page.xml
+export function pageLoaded(args: observable.EventData) {
+    localSettings.setString("Name", "John Doe");
+    console.log(localSettings.getString("Name"));// Prints "John Doe"
+    localSettings.setBoolean("Married", false);
+    console.log(localSettings.getBoolean("Married"));// Prints false
+    localSettings.setNumber("Age", 42);
+    console.log(localSettings.getNumber("Age"));// Prints 42
+    console.log(localSettings.hasKey("Name"));// Prints true
+    localSettings.remove("Name");// Removes the Name entry.
+    console.log(localSettings.hasKey("Name"));// Prints false
+}
 ```
