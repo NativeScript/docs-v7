@@ -200,6 +200,7 @@ export function pageLoaded(args: observable.EventData) {
     <Label text="This is Label in row 0, col 1" col="1" />
     <Label text="This is Label in row 1, col 0" row="1" />
     <Label text="This is Label in row 1, col 1" row="1" col="1" />
+    <Label text="This is Label in row 0, col 0" rowSpan="2" colSpan="2" />
   </GridPanel>
 </Page>
 ```
