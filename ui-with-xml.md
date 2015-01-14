@@ -442,16 +442,28 @@ UI components like **ListView** will create items in runtime by parsing and load
 While you can access **ListView** (listView1) by **id** from the **Page** you cannot access the **Label** (label1) in the same way since this component (label1) is in a different scope and the **ListView** will create such Label for every item.
 ```JavaScript
 var view = require("ui/core/view");
-
 function pageLoaded(args) {
     var page = args.object;
-
     page.bindingContext = { myItems: [{ name: "Name1" }, { name: "Name2" }, { name: "Name3" }] };
-    // Will work!
     var listView1 = view.getViewById(page, "listView1");
-    // Will not work!
     var label1 = view.getViewById(page, "label1");
 }
 exports.pageLoaded = pageLoaded;
+```
+```TypeScript
+import observable = require("data/observable");
+import pages = require("ui/page");
+import view = require("ui/core/view");
+import listView = require("ui/list-view");
+import label = require("ui/label");
+
+export function pageLoaded(args: observable.EventData) {
+    var page = <pages.Page>args.object;
+    page.bindingContext = { myItems: [{ name: "Name1" }, { name: "Name2" }, { name: "Name3" }] };
+    // Will work!
+    var listView1 = <listView.ListView>view.getViewById(page, "listView1");
+    // Will not work!
+    var label1 = <label.Label>view.getViewById(page, "label1");
+}
 ```
 *__Important__: Accessing directly components by id is not recomended (especially when the component is part of template). Please use bindings to specify component properties!*
