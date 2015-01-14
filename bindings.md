@@ -92,7 +92,9 @@ This example will update targetTextField.text property with a "Text set via bind
 		``` XML
 		<Page>
 			<StackPanel>
+{%raw%}
 				<TextField text= {{ textSource }} />
+{%endraw%}
 			</StackPanel>
 		</Page>
 		```
@@ -138,7 +140,9 @@ and how xml will look like:
 ``` XML
 <Page>
 	<StackPanel>
+{%raw%}
 		<Button text="Test Button For Binding" tap={{ onTap }}
+{%endraw%}
 	</StackPanel>
 </Page>
 ```
