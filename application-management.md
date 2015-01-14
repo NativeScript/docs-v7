@@ -46,7 +46,7 @@ Each NativeScript application has several important lifecycle events. You can us
 + onResume() - method called when the application is resumed after it has been suspended.
 + onExit() - method called when the application is about to exit.
 + onLowMemory() - method called when there is low memory on the target device.
-+ onLowMemory(error) - method called when there is an uncaught application error.
++ onUncaughtError(error) - method called when there is an uncaught application error.
 Here is a code example that demonstrates how too use those callback functions:
 ``` JavaScript
 var application = require("application");
