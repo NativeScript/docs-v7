@@ -241,9 +241,56 @@ Using **xmlns** you can refer to your own custom components declared in your app
 ### Code-only custom component (app/xml-declaration/mymodule)
 ###### Code
 ```JavaScript
-var MyControl = ...
-...
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+var stackPanel = require("ui/panels/stack-panel");
+var label = require("ui/label");
+var button = require("ui/button");
+var MyControl = (function (_super) {
+    __extends(MyControl, _super);
+    function MyControl() {
+        _super.call(this);
+        var counter = 0;
+        var lbl = new label.Label();
+        var btn = new button.Button();
+        btn.text = "Tap me!";
+        btn.on(button.knownEvents.tap, function (args) {
+            lbl.text = "Tap " + counter++;
+        });
+        this.addChild(lbl);
+        this.addChild(btn);
+    }
+    return MyControl;
+})(stackPanel.StackPanel);
 exports.MyControl = MyControl;
+```
+```TypeScript
+import observable = require("data/observable");
+import stackPanel = require("ui/panels/stack-panel");
+import label = require("ui/label");
+import button = require("ui/button");
+
+export class MyControl extends stackPanel.StackPanel {
+    constructor() {
+        super();
+
+        var counter: number = 0;
+
+        var lbl = new label.Label();
+        var btn = new button.Button();
+        btn.text = "Tap me!";
+        btn.on(button.knownEvents.tap, (args: observable.EventData) => {
+            lbl.text = "Tap " + counter++;
+        });
+
+        this.addChild(lbl);
+        this.addChild(btn);
+    }
+}
 ```
 ### Custom component with XML (app/xml-declaration/mymodulewithxml)
 ###### XML
@@ -256,19 +303,36 @@ exports.MyControl = MyControl;
 ###### Code
 ```JavaScript
 var view = require("ui/core/view");
- 
 var count = 0;
 function buttonTap(args) {
-	count++;
- 	var parent = args.object.parent;
-	if (parent) {
-    	var lbl = view.getViewById(parent, "Label1");
-    	if (lbl) {
-        	lbl.text = "You tapped " + count + " times!";
-      }
+    count++;
+    var parent = args.object.parent;
+    if (parent) {
+        var lbl = view.getViewById(parent, "Label1");
+        if (lbl) {
+            lbl.text = "You tapped " + count + " times!";
+        }
     }
 }
 exports.buttonTap = buttonTap;
+```
+```TypeScript
+import observable = require("data/observable");
+import view = require("ui/core/view");
+import label = require("ui/label");
+
+var count = 0;
+export function buttonTap(args: observable.EventData) {
+    count++;
+
+    var parent = (<view.View>args.object).parent;
+    if (parent) {
+        var lbl = <label.Label>view.getViewById(parent, "Label1");
+        if (lbl) {
+            lbl.text = "You tapped " + count + " times!";
+        }
+    }
+}
 ```
 ### Bindings & expressions
 To specify binding or expression for some property in the XML you can use double curly brackets syntax. 
