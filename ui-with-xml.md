@@ -9,7 +9,7 @@ position: 5
 ### How it works?
 When you trigger navigation in your application (either by setting a value to the **mainModule** property of the **application** object, or by passing an argument to the **navigate()** method of the **Frame** class), the **NativeScript** navigation framework will look for an XML-extension-file with the same path to load and navigate to the respective **Page**. For example:
 ###### Declaring application mainModule and start the application
-```JS
+```JavaScript
 var application = require("application");
 // Set the start module for the application
 application.mainModule = "app/my-page";
@@ -17,7 +17,7 @@ application.mainModule = "app/my-page";
 application.start();
 ```
 ###### Navigate to page using Frame navigate() method
-```JS
+```JavaScript
 // Navigate to page called “my-page”
 frames.topmost().navigate("app/my-page")
 ```
@@ -33,7 +33,7 @@ frames.topmost().navigate("app/my-page")
 ```
 If you have a **JavaScript-extension-file** with the same path (app/my-page.js), this file will be loaded together with the XML and will serve as a code-behind for the page where you can specify **event handlers, binding context and/or any other additional code**. In order to be accessible from the UI you need to declare your variables or functions in the module **exports**.
 ###### Code behind
-```JS
+```JavaScript
 var observable = require("data/observable");
 var view = require("ui/core/view");
 var label = require("ui/label");
@@ -55,14 +55,14 @@ exports.buttonClick = buttonClick;
 ### Using Built-in components in an XML
 Default *NativeScript* components can be found under the *tns_modules/ui* subfolder. Each component is located in a separate folder with a *package.json* file where the main component/file is specified
 ###### Button package.json
-```JS
+```JavaScript
 { 
     "name" : "button",
     "main" : "button.js" 
 }
 ```
 ###### button.js
-```JS
+```JavaScript
 var Button = ...
     ...
 exports.Button = Button;
@@ -77,7 +77,7 @@ exports.Button = Button;
 </Page>
 ```
 ###### JS
-```JS
+```JavaScript
 var observable = require("data/observable");
 var pages = require("ui/page");
  
@@ -109,7 +109,7 @@ exports.pageLoaded = pageLoaded;
 </Page>
 ```
 ###### JS
-```JS
+```JavaScript
 var view = require("ui/core/view");
 function pageLoaded(args) {
 	var page = args.object;
@@ -193,7 +193,7 @@ Using **xmlns** you can refer to your own custom components declared in your app
 ```
 ### Code-only custom component (app/xml-declaration/mymodule)
 ###### JS
-```JS
+```JavaScript
 var MyControl = ...
 ...
 exports.MyControl = MyControl;
@@ -207,7 +207,7 @@ exports.MyControl = MyControl;
 </StackPanel>
 ```
 ###### JS
-```JS
+```JavaScript
 var view = require("ui/core/view");
  
 var count = 0;
@@ -233,7 +233,7 @@ To specify binding or expression for some property in the XML you can use double
 </Page>
 ```
 ###### JS
-```JS
+```JavaScript
 function pageLoaded(args) {
 	var page = args.object;
  
@@ -251,7 +251,7 @@ exports.pageLoaded = pageLoaded;
 </Page>
 ```
 ###### JS
-```JS
+```JavaScript
 function pageLoaded(args) {
 	var page = args.object;
  
@@ -267,27 +267,27 @@ exports.pageLoaded = pageLoaded;
 
 #### Expressions
 ###### Complex property paths
-```JS
+```JavaScript
 your.sub.property[name]
 ```
 ###### Logical not operator and comparators
-```JS
+```JavaScript
 !,<, >, <=, >=, ==, !=, ===, !==,||, &&
 ```
 ###### Unary and binary operators
-```JS
+```JavaScript
 +, -, *, /, %
 ```
 ###### Ternary operator
-```JS
+```JavaScript
 a ? b : c
 ```
 ###### Grouping
-```JS
+```JavaScript
 (a + b) * (c + d)
 ```
 ###### Constants
-```JS
+```JavaScript
 numbers, strings, null, undefined
 ```
 Examples:
@@ -309,7 +309,7 @@ UI components like **ListView** will create items in runtime by parsing and load
 </Page>
 ```
 While you can access **ListView** (listView1) by **id** from the **Page** you cannot access the **Label** (label1) in the same way since this component (label1) is in a different scope and the **ListView** will create such Label for every item.
-```JS
+```JavaScript
 var view = require("ui/core/view");
 
 function pageLoaded(args) {
