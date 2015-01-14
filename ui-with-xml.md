@@ -352,6 +352,15 @@ function pageLoaded(args) {
 }
 exports.pageLoaded = pageLoaded;
 ```
+```TypeScript
+import observable = require("data/observable");
+import pages = require("ui/page");
+
+export function pageLoaded(args: observable.EventData) {
+    var page = <pages.Page>args.object;
+    page.bindingContext = { name: "Some name" };
+}
+```
 *__Important__: NativeScript will look for this property in the component bindingContext or bindingContext of the component parents. All bindings are two way by default!*
 
 #### Event binding
@@ -364,18 +373,29 @@ exports.pageLoaded = pageLoaded;
 ###### Code
 ```JavaScript
 function pageLoaded(args) {
-	var page = args.object;
- 
-	page.bindingContext = { 
-		myProperty: "Some text",
-		myFunction: function() {
-			// Your code
-		},
-	};
+    var page = args.object;
+    page.bindingContext = {
+        myProperty: "Some text",
+        myFunction: function () {
+        }
+    };
 }
 exports.pageLoaded = pageLoaded;
 ```
+```TypeScript
+import observable = require("data/observable");
+import pages = require("ui/page");
 
+export function pageLoaded(args: observable.EventData) {
+    var page = <pages.Page>args.object;
+    page.bindingContext = {
+        myProperty: "Some text",
+        myFunction: () => {
+            // Your code
+        }
+    };
+}
+```
 #### Expressions
 ###### Complex property paths
 ```JavaScript
