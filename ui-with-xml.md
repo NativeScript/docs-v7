@@ -243,7 +243,7 @@ exports.pageLoaded = pageLoaded;
 ```
 *__Important__: NativeScript will look for this property in the component bindingContext or bindingContext of the component parents. All bindings are two way by default!*
 
-#### Event binding:
+#### Event binding
 ###### XML
 ```XML
 <Page loaded="pageLoaded">
