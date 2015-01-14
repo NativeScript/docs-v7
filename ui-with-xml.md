@@ -38,7 +38,7 @@ frames.topmost().navigate("app/my-page")
 <Page>
   <StackPanel>
      <Label id="Label1" text="This is Label!" />
-     <Button text="This is Button!" click="buttonClick" />
+     <Button text="This is Button!" tap="buttonTap" />
    </StackPanel>
 </Page>
 ```
@@ -47,18 +47,18 @@ If you have a **JavaScript-extension-file** with the same path (app/my-page.js),
 ```JavaScript
 var view = require("ui/core/view");
 var count = 0;
-function buttonClick(args) {
+function buttonTap(args) {
     count++;
     var sender = args.object;
     var parent = sender.parent;
     if (parent) {
         var lbl = view.getViewById(parent, "Label1");
         if (lbl) {
-            lbl.text = "You clicked " + count + " times!";
+            lbl.text = "You tapped " + count + " times!";
         }
     }
 }
-exports.buttonClick = buttonClick;
+exports.buttonTap = buttonTap;
 ```
 ```TypeScript
 import observable = require("data/observable");
@@ -66,14 +66,14 @@ import view = require("ui/core/view");
 import label = require("ui/label");
 
 var count = 0;
-export function buttonClick(args: observable.EventData) {
+export function buttonTap(args: observable.EventData) {
     count++;
     var sender = <view.View>args.object;
     var parent = sender.parent;
     if (parent) {
         var lbl = <label.Label>view.getViewById(parent, "Label1");
         if (lbl) {
-            lbl.text = "You clicked " + count + " times!";
+            lbl.text = "You tapped " + count + " times!";
         }
     }
 }
@@ -249,7 +249,7 @@ exports.MyControl = MyControl;
 ```XML
 <StackPanel>
   <Label id="Label1" />
-  <Button text="Click!" click="buttonClick" />
+  <Button text="Tap!" tap="buttonTap" />
 </StackPanel>
 ```
 ###### Code
@@ -257,17 +257,17 @@ exports.MyControl = MyControl;
 var view = require("ui/core/view");
  
 var count = 0;
-function buttonClick(args) {
+function buttonTap(args) {
 	count++;
  	var parent = args.object.parent;
 	if (parent) {
     	var lbl = view.getViewById(parent, "Label1");
     	if (lbl) {
-        	lbl.text = "You clicked " + count + " times!";
+        	lbl.text = "You tapped " + count + " times!";
       }
     }
 }
-exports.buttonClick = buttonClick;
+exports.buttonTap = buttonTap;
 ```
 ### Bindings & expressions
 To specify binding or expression for some property in the XML you can use double curly brackets syntax. 
