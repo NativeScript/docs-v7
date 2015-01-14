@@ -445,7 +445,11 @@ var view = require("ui/core/view");
 function pageLoaded(args) {
     var page = args.object;
     page.bindingContext = { myItems: [{ name: "Name1" }, { name: "Name2" }, { name: "Name3" }] };
+    
+    // Will work!
     var listView1 = view.getViewById(page, "listView1");
+    
+    // Will not work!
     var label1 = view.getViewById(page, "label1");
 }
 exports.pageLoaded = pageLoaded;
@@ -460,8 +464,10 @@ import label = require("ui/label");
 export function pageLoaded(args: observable.EventData) {
     var page = <pages.Page>args.object;
     page.bindingContext = { myItems: [{ name: "Name1" }, { name: "Name2" }, { name: "Name3" }] };
+    
     // Will work!
     var listView1 = <listView.ListView>view.getViewById(page, "listView1");
+    
     // Will not work!
     var label1 = <label.Label>view.getViewById(page, "label1");
 }
