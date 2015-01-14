@@ -128,6 +128,7 @@ topmost.navigate(navigationEntry);
 Sometimes, the page being navigated to would have to receive information about the context in which this navigation happened. The best example would be a master-details scenario where there are two pages -- the main page containing a list of some entities and a details page which provides details about a particular entity. In this case, when navigating to the details page it is mandatory to transfer some primary key or ID information about the entity the details page should show. This is done with the help of the **context** property of a NavigationEntry:
 ``` JavaScript
 function listViewItemTap(args) {
+    // Navigate to the details page with context set to the data item for specified index
     frames.topmost().navigate({
         moduleName: "app/cuteness.io/details-page",
         context: appViewModel.redditItems.getItem(args.index)
