@@ -241,7 +241,30 @@ function pageLoaded(args) {
 exports.pageLoaded = pageLoaded;
 ```
 *__Important__: NativeScript will look for this property in the component bindingContext or bindingContext of the component parents. All bindings are two way by default!*
-You can use also complex expressions instead of simple property name for your bindings:
+
+You can bind also events:
+###### XML
+```XML
+<Page loaded="pageLoaded">
+  <Button text="{{ myProperty }}" tap="{{ myFunction }}" />
+</Page>
+```
+###### JS
+```JS
+function pageLoaded(args) {
+	var page = args.object;
+ 
+	page.bindingContext = { 
+		myProperty: "Some text",
+		myFunction: function() {
+			// Your code
+		},
+	};
+}
+exports.pageLoaded = pageLoaded;
+```
+
+Complex expressions instead of simple property names can be used as well:
 ###### Complex property paths
 ```JS
 your.sub.property[name]
