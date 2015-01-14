@@ -1,3 +1,10 @@
+---
+nav-title: "Getting Started With NativeScript"
+title: "Getting Started With NativeScript"
+description: "NativeScript Documentation: Getting Started"
+position: 11
+---
+
 # Getting Started With NativeScript
 NativeScript framework enable developers to use pure JavaScript language to build native mobile applications running on the major mobile platforms - Apple iOS, Google Android. The applications UI stack is built using native UI components and because of that no compromises with the User Experience with the applications is done.
 
