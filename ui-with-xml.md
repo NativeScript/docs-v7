@@ -340,7 +340,9 @@ To specify binding or expression for some property in the XML you can use double
 ###### XML
 ```XML
 <Page loaded="pageLoaded">
+{%raw%}
   <Label text="{{ name }}" />
+{%endraw%}
 </Page>
 ```
 ###### Code
@@ -367,7 +369,9 @@ export function pageLoaded(args: observable.EventData) {
 ###### XML
 ```XML
 <Page loaded="pageLoaded">
+{%raw%}
   <Button text="{{ myProperty }}" tap="{{ myFunction }}" />
+{%endraw%}
 </Page>
 ```
 ###### Code
@@ -424,19 +428,23 @@ numbers, strings, null, undefined
 Examples:
 ###### XML
 ```XML
+{%raw%}
 <Label text="{{ author ? 'by ' + author : '[no author]' }}" />
 <Label text="{{ author || '[no author]' }}" />
+{%endraw%}
 ```
 *__Important__: Expressions are re-evaluated on every property change of the Observable object set for bindingContext! In this case the binding is one way (from model to UI)*
 ### Templates and scope
 UI components like **ListView** will create items in runtime by parsing and loading content from **itemTemplate** property if specified.
 ```XML
 <Page loaded="pageLoaded">
+{%raw%}
   <ListView id="listView1" items="{{ myItems }}">
     <ListView.itemTemplate>
       <Label id="label1" text="{{ name }}"  />
     </ListView.itemTemplate>
   </ListView>
+{%endraw%}
 </Page>
 ```
 While you can access **ListView** (listView1) by **id** from the **Page** you cannot access the **Label** (label1) in the same way since this component (label1) is in a different scope and the **ListView** will create such Label for every item.
