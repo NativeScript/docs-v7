@@ -33,7 +33,7 @@ frames.topmost().navigate("app/my-page")
 frames.topmost().navigate("app/my-page")
 ```
 *__Important__: Paths are relative to the application root! In this case NativeScript will look for the following XML file within your application (app/my-page.xml in this case)!*
-###### XML declaration
+###### XML
 ```XML
 <Page>
   <StackPanel>
@@ -43,7 +43,7 @@ frames.topmost().navigate("app/my-page")
 </Page>
 ```
 If you have a **JavaScript-extension-file** with the same path (app/my-page.js), this file will be loaded together with the XML and will serve as a code-behind for the page where you can specify **event handlers, binding context and/or any other additional code**. In order to be accessible from the UI you need to declare your variables or functions in the module **exports**.
-###### Code behind
+###### Code
 ```JavaScript
 var view = require("ui/core/view");
 var count = 0;
