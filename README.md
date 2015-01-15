@@ -24,5 +24,6 @@ Read the advanced topics below or refer to the [Api Reference](ApiReference/) to
 - [UI Views](ui-views.md)
 - [UI Dialogs](ui-dialogs.md)
 - [Location](location.md)
+- [Modules](modules.md)
 
 The [Styling Native Apps with CSS](http://developer.telerik.com/featured/styling-native-apps-css/) post contains more information about the NativeScript application styling.
