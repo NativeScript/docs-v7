@@ -19,7 +19,7 @@ Generally almost every UI control (since all controls are created with data bind
 
 * Target object should be a successor of **Bindable** class.
 * Target property should be a **dependency property** in order to use data binding from target to source (or two way data binding). A plain property could be used if there is no need of **twoWay** binding.
-* Data (business) object should raise **propertyChanged** event for every change in the value of the property.
+* Data (business) object should raise **propertyChange** event for every change in the value of the property.
 
 ##Direction of data flow
 
@@ -34,7 +34,7 @@ In order to use this option binding options should set **twoWay as true**. Follo
 
 * Creating binding in code.
 
-	1. In order to create a working binding first we should have a source object. Source object should raise **propertyChanged** event for every change of any property. NativeScript has a built-in class that fulfils that requirement (Observable). Following is a code snippet that creates an observable object instance.
+	1. In order to create a working binding first we should have a source object. Source object should raise **propertyChange** event for every change of any property. NativeScript has a built-in class that fulfils that requirement (Observable). Following is a code snippet that creates an observable object instance.
 
 		``` JavaScript
 		var observableModule = require("data/observable");
@@ -105,7 +105,7 @@ With an xml declaration we set only properies names both for target (text) and s
 
 ##Binding source
 
-The important part of the data binding is setting the source object. NativeScript data binding works with any object that emits a **propertyChanged** event. On the process of creating binding source can be set as second parameter of the bind(bindingOptions, source) or could be omitted. In that case for source is used a special property named **bindingContext** of the Bindable class. The special about this property is that it is inheritable across the visual tree. This means that control can use the **bindingContext** (as source) of the first **parent** element with a explicitly set **bindingContext**. With the previous example **bindingContext** can be set either on Page instance or StackPanel instance and TextField will have a proper source for its "text" property binding.
+The important part of the data binding is setting the source object. NativeScript data binding works with any object that emits a **propertyChange** event. On the process of creating binding source can be set as second parameter of the bind(bindingOptions, source) or could be omitted. In that case for source is used a special property named **bindingContext** of the Bindable class. The special about this property is that it is inheritable across the visual tree. This means that control can use the **bindingContext** (as source) of the first **parent** element with a explicitly set **bindingContext**. With the previous example **bindingContext** can be set either on Page instance or StackPanel instance and TextField will have a proper source for its "text" property binding.
 
 ``` JavaScript
 page.bindingContext = source;
