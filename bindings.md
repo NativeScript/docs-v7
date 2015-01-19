@@ -19,7 +19,7 @@ Generally almost every UI control (since all controls are created with data bind
 
 * Target object should be a successor of **Bindable** class.
 * Target property should be a **dependency property** in order to use data binding from target to source (or two way data binding). A plain property could be used if there is no need of **twoWay** binding.
-* Data (business) object should raise **propertyChange** event for every change in the value of the property.
+* Data (business) object should raise `propertyChange` event for every change in the value of the property.
 
 ##Direction of data flow
 
