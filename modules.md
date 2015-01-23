@@ -12,7 +12,7 @@ NativeScript uses a modular design pattern. All functionality that NativeScript 
 + [application](./ApiReference/application/HOW-TO.md) - contains the application abstraction with all related methods.
 + [console](./ApiReference/console/HOW-TO.md) - allows printing messages to the device's console.
 + [local-settings](./ApiReference/local-settings/HOW-TO.md) - allows you to save and restore any kind of information related to your application.
-+ color - allows creating colors to be used when styling the UI.
++ [color](./ApiReference/color/HOW-TO.md) - allows creating colors to be used when styling the UI.
 + [http](./ApiReference/http/HOW-TO.md) - allows you to send web requests and receive the responses.
 + [image-source](./ApiReference/image-source/HOW-TO.md) - contains the ImageSource class, which encapsulates the common abstraction behind a platform specific object (typically a Bitmap) that is used as a source for images.
 + [timer](./ApiReference/timer/HOW-TO.md) - allows you to create, start, stop and react to timers.
@@ -22,7 +22,7 @@ NativeScript uses a modular design pattern. All functionality that NativeScript 
 + camera - allows you to take pictrues with the device's camera.
 + [location](./ApiReference/location/HOW-TO.md) - allows you to use the geolocation of the device.
 + [platform](./ApiReference/platform/HOW-TO.md) - contains all kinds of information about the device, its operating system and software.
-+ fps-meter - allows you to capture the frames-per-second metrics of your application.
++ [fps-meter](./ApiReference/fps-meter/HOW-TO.md) - allows you to capture the frames-per-second metrics of your application.
 
 # File System Modules
 + [file-system](./ApiReference/file-system/HOW-TO.md) - contains classes for file system entities such as files and folders.
