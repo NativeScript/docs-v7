@@ -16,12 +16,12 @@ NativeScript uses a modular design pattern. All functionality that NativeScript 
 + [http](./ApiReference/http/HOW-TO.md) - allows you to send web requests and receive the responses.
 + [image-source](./ApiReference/image-source/HOW-TO.md) - contains the ImageSource class, which encapsulates the common abstraction behind a platform specific object (typically a Bitmap) that is used as a source for images.
 + [timer](./ApiReference/timer/HOW-TO.md) - allows you to create, start, stop and react to timers.
-+ trace - allows you to trace and print specific information based on categories.
++ [trace](./ApiReference/trace/HOW-TO.md) - allows you to trace and print specific information based on categories.
 
 # Sensors and Hardware
 + camera - allows you to take pictrues with the device's camera.
 + [location](./ApiReference/location/HOW-TO.md) - allows you to use the geolocation of the device.
-+ platform - contains all kinds of information about the device, its operating system and software.
++ [platform](./ApiReference/platform/HOW-TO.md) - contains all kinds of information about the device, its operating system and software.
 + fps-meter - allows you to capture the frames-per-second metrics of your application.
 
 # File System Modules
@@ -70,7 +70,7 @@ NativeScript uses a modular design pattern. All functionality that NativeScript 
 + [ui/slider](./ApiReference/ui/slider/HOW-TO.md) - contains the Slider class, which represents a standard slider component.
 + [ui/switch](./ApiReference/ui/switch/HOW-TO.md) - contains the Switch class, which represents a standard switch component.
 + [ui/tab-view](./ApiReference/ui/tab-view/HOW-TO.md) - contains the TabView class, which represents a standard content component with tabs.
-+ ui/wev-view - contains the WebView class, which represents a standard browser widget.
++ [ui/web-view](./ApiReference/ui/web-view/HOW-TO.md) - contains the WebView class, which represents a standard browser widget.
 
 # Other UI Modules
 + [ui/styling](./ApiReference/ui/styling/HOW-TO.md) - contains the Style class, which is resposndible for the visual appearance of elements.

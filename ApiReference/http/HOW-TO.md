@@ -48,8 +48,9 @@ http.request({ url: "https://httpbin.org/get", method: "GET" }).then(function (r
 ### Get response headers
 ``` JavaScript
 http.request({ url: "https://httpbin.org/get", method: "GET" }).then(function (response) {
+    // Argument (response) is HttpResponse!
     for (var header in response.headers) {
-        console.log(header + ":" + response.headers[header]);
+       console.log(header + ":" + response.headers[header]);
     }
 }, function (e) {
     // Argument (e) is Error!

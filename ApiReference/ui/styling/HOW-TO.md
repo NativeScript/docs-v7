@@ -14,31 +14,31 @@ page.css = ".title { font-size: 20 }";
 ``` JavaScript
 page.css = "button { color: red; }";
 // Will be styled
-var btn = new buttonModule.Button();
+btn = new buttonModule.Button();
 // Won't be styled
-var label = new labelModule.Label();
+label = new labelModule.Label();
 ```
 ### Using class selector
 ``` JavaScript
 page.css = ".test { color: red; }";
 // Will be styled
-var btnWithClass = new buttonModule.Button();
+btnWithClass = new buttonModule.Button();
 btnWithClass.cssClass = "test";
 // Won't be styled
-var btnWithNoClass = new buttonModule.Button();
+btnWithNoClass = new buttonModule.Button();
 ```
 ### Using id selector
 ``` JavaScript
 page.css = "#myButton { color: red; }";
 // Will be styled
-var btnWithId = new buttonModule.Button();
+btnWithId = new buttonModule.Button();
 btnWithId.id = "myButton";
 // Won't be styled
-var btnWithNoId = new buttonModule.Button();
+btnWithNoId = new buttonModule.Button();
 ```
 ### Using state selector
 ``` JavaScript
 page.css = "button:pressed { color: red; }";
 // Will be red when pressed
-var btn = new buttonModule.Button();
+btn = new buttonModule.Button();
 ```

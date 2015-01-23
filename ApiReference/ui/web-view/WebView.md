@@ -4,22 +4,31 @@ title: "Class ui/web-view.WebView"
 description: "Class ui/web-view.WebView"
 ---
 ## Class: "ui/web-view".WebView  
-_Inherits:_ [_View_](../../ui/core/view/View.md)
+_Inherits:_ [_View_](../../ui/core/view/View.md)  
+Represents a standard WebView widget.
 
 ##### Instance Properties
- - **android** - _WebView_.
- - **ios** - _UIWebView_.
- - **url** - _String_.
- - **canGoBack** - _Boolean_.
- - **canGoForward** - _Boolean_.
+ - **android** - _WebView_.    
+  Gets the native android widget that represents the user interface for this component. Valid only when running on Android OS.
+ - **ios** - _UIWebView_.    
+  Gets the native UIButton that represents the user interface for this component. Valid only when running on iOS.
+ - **url** - _String_.    
+  Gets or sets the url displayed by this instance.
+ - **canGoBack** - _Boolean_.    
+  Gets a value indicating whether the WebView can navigate back.
+ - **canGoForward** - _Boolean_.    
+  Gets a value indicating whether the WebView can navigate forward.
 
 ##### Instance Functions
- - **goBack()**
- - **goForward()**
- - **eval(** script _String_ **)**
-   - **script** - _String_
- - **loadData(** data _String_, baseURL? _String_, mimeType? _String_, encoding? _String_ **)**
-   - **data** - _String_
-   - **baseURL** - _(optional)_ - _String_
-   - **mimeType** - _(optional)_ - _String_
-   - **encoding** - _(optional)_ - _String_
+ - **goBack()**  
+     Navigates back.
+ - **goForward()**  
+     Navigates forward.
+ - **reload()**  
+     Reload the current url.
+ - **on(** event _String_, callback _Function_... **)**
+   - **event** - _String_
+   - **callback** - _Function_(data [_EventData_](../../data/observable/EventData.md))
+ - **on(** event , callback _Function_... **)**
+   - **event**
+   - **callback** - _Function_(args [_FinishedEventData_](../../ui/web-view/FinishedEventData.md))

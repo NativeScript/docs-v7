@@ -4,6 +4,24 @@ title: "TextField How-To"
 description: "Examples for using TextField"
 ---
 # TextField
+Binding two TextFields text property to observable view-model property.
+```XML
+<Page loaded="pageLoaded">
+ <StackPanel orientation="vertical">
+   <TextField text="{{ someProperty }}" />
+   <TextField text="{{ someProperty }}" />
+ </StackPanel>
+</Page>
+```
+```JS
+function pageLoaded(args) {
+  var page = args.object;
+  var obj = new observable.Observable();
+  obj.set("someProperty", "Please change this text!");
+  page.bindingContext = obj;
+}
+exports.pageLoaded = pageLoaded;
+```
 Using a TextField requires the text-field module.
 ``` JavaScript
 var textFieldModule = require("ui/text-field");

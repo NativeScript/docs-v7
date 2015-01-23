@@ -14,7 +14,7 @@ Nested frames are supported, enabling hierarchical navigation scenarios.
   Gets or sets if navigation transitions should be animated globally.
 
 ##### Instance Properties
- - **backStack** - _Array_ of [_NavigationEntry_](../../ui/frame/NavigationEntry.md).    
+ - **backStack** - _Array_ of [_BackstackEntry_](../../ui/frame/BackstackEntry.md).    
   Gets the back stack of this instance.
  - **currentPage** - [_Page_](../../ui/page/Page.md).    
   Gets the Page instance the Frame is currently navigated to.
@@ -41,21 +41,16 @@ This method will require the module and will check for a Page property in the ex
 For example if you want to navigate to page called "myPage.js" in a folder called "subFolder" and your root folder is "app" you can call navigate method like this:
 var frames = require("ui/frame");
 frames.topmost().navigate("app/subFolder/myPage");
- - **navigate(** page [_Page_](../../ui/page/Page.md) **)**  
-     Navigates to the specified Page instance.
-   - **page** - [_Page_](../../ui/page/Page.md)  
-     The Page to navigate to.
  - **navigate(** create _Function_... **)**  
      Creates a new Page instance using the provided callback and navigates to that Page.
    - **create** - _Function_() [_Page_](../../ui/page/Page.md)  
      The function to be used to create the new Page instance.
  - **navigate(** entry [_NavigationEntry_](../../ui/frame/NavigationEntry.md) **)**  
      Navigates to a Page resolved by the provided NavigationEntry object.
-Since there are several ways to specify a Page instance through an entry, there is a resolution priority:
-    1. entry.page
-    2. entry.moduleName
-    3. entry.create()
+Since there are a couple of  ways to specify a Page instance through an entry, there is a resolution priority:
+    1. entry.moduleName
+    2. entry.create()
    - **entry** - [_NavigationEntry_](../../ui/frame/NavigationEntry.md)  
      The NavigationEntry instance.
- - **_processNavigationStack(** page [_Page_](../../ui/page/Page.md) **)**
+ - **_processNavigationQueue(** page [_Page_](../../ui/page/Page.md) **)**
    - **page** - [_Page_](../../ui/page/Page.md)

@@ -6,6 +6,7 @@ description: "Class utils/utilsad.layout"
 ## Namespace: "utils/utils"ad.layout
 
 ##### Variables
+ - **MEASURED_STATE_TOO_SMALL** - _Number_.
  - **UNSPECIFIED** - _Number_.
  - **EXACTLY** - _Number_.
  - **AT_MOST** - _Number_.

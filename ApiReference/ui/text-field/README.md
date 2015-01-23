@@ -12,7 +12,7 @@ var uitext_field = require("ui/text-field");
 
 Class | Description
 ------|------------
-[TextField](../../ui/text-field/TextField.md) | Represents a editable text field.
+[TextField](../../ui/text-field/TextField.md) | Represents an editable text field.
 
 Object | Description
 ------|------------

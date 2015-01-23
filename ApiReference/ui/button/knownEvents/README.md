@@ -7,4 +7,4 @@ description: "Class ui/button.knownEvents"
 Known event names.
 
 ##### Variables
- - **click** - _String_.
+ - **tap** - _String_.

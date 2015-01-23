@@ -47,3 +47,10 @@ This will update either the android or ios properties, depending on the target o
    - **quality** - _(optional)_ - _Number_  
      Optional parameter, specifying the quality of the encoding. Defaults to the maximum available quality.
    - _**return**_ - _Boolean_
+ - **toBase64String(** format [_ImageFormat_](../image-source/ImageFormat.md), quality? _Number_ **)** _String_  
+     Converts the image to base64 encoded string, using the provided image format and quality.
+   - **format** - [_ImageFormat_](../image-source/ImageFormat.md)  
+     The format (encoding) of the image.
+   - **quality** - _(optional)_ - _Number_  
+     Optional parameter, specifying the quality of the encoding. Defaults to the maximum available quality.
+   - _**return**_ - _String_

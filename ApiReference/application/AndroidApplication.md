@@ -33,6 +33,8 @@ The abstraction of an Android-specific application object.
   Direct handler of the android.app.Application.ActivityLifecycleCallbacks.onActivityStopped method.
  - **onSaveActivityState** - _Function_(activity _Activity_, bundle _Bundle_).    
   Direct handler of the android.app.Application.ActivityLifecycleCallbacks.onSaveActivityState method.
+ - **onActivityResult** - _Function_(requestCode _Number_, resultCode _Number_, data _Intent_).    
+  Direct handler of the onActivityResult method.
 
 ##### Functions
  - **getActivity(** intent _Intent_ **)** _Object_  

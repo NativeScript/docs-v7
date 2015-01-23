@@ -15,10 +15,6 @@ Class | Description
 [Location](../location/Location.md) | A data class that encapsulates common properties for a geolocation.
 [LocationManager](../location/LocationManager.md) | Provides methods for querying geolocation (in case available) on the target platform.
 
-Enum | Description
-------|------------
-[Accuracy](../location/Accuracy.md) | Specifies common accuracy values.
-
 Object | Description
 ------|------------
 [Options](../location/Options.md) | Provides options for location monitoring.

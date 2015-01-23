@@ -30,7 +30,9 @@ A View occupies a rectangular area on the screen and is responsible for drawing 
  - **visibility** - _String_.    
   Gets or sets the visibility of the view.
  - **isEnabled** - _Boolean_.    
-  Gets or sets a value indicating whether the user can interact with the control.
+  Gets or sets a value indicating whether the the view is enabled. This affects the appearance of the view.
+ - **isUserInteractionEnabled** - _Boolean_.    
+  Gets or sets a value indicating whether the user can interact with the view. This does not affect the appearance of the view.
  - **id** - _String_.    
   Gets or sets the id for this view.
  - **cssClass** - _String_.    
@@ -39,6 +41,8 @@ A View occupies a rectangular area on the screen and is responsible for drawing 
   Gets the style object associated to this view.
  - **parent** - [_View_](../../../ui/core/view/View.md).    
   Gets the View instance that parents this view. This property is read-only.
+ - **clipToBounds** - _Boolean_.    
+  Gets or sets whether children are clipped or not to bounds of this view.
  - **cssType** - _String_.
  - **visualState** - _String_.
  - **isLoaded** - _Boolean_.

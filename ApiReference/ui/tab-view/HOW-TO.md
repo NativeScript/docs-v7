@@ -4,6 +4,25 @@ title: "TabView How-To"
 description: "Examples for using TabView"
 ---
 # TabView
+Declaring the TabView.
+```XML
+<Page>
+ <TabView>
+   <TabView.items>
+     <TabEntry title="Tab 1">
+       <TabEntry.view>
+          <Label text="Label in Tab1" />
+       </TabEntry.view>
+     </TabEntry>
+     <TabEntry title="Tab 2">
+       <TabEntry.view>
+          <Label text="Label in Tab2" />
+       </TabEntry.view>
+     </TabEntry>
+   </TabView.items>
+ </TabView>
+</Page>
+```
 Using a TabView requires the "ui/tab-view" module.
 ``` JavaScript
 var tabViewModule = require("ui/tab-view");

@@ -1,14 +1,8 @@
----
-nav-title: "Table of Contents"
-title: "Table of Contents"
-description: "NativeScript ApiReference Table of Contents"
-position: 1
----
-
-# Table of Contents
+# NativeScript API Reference
 
 ### Modules
  - ["application"](application/)
+ - ["camera"](camera/)
  - ["color"](color/)
  - ["console"](console/)
  - ["data/observable"](data/observable/)
@@ -24,13 +18,14 @@ position: 1
  - ["js-libs/reworkcss"](js-libs/reworkcss/)
  - ["local-settings"](local-settings/)
  - ["location"](location/)
- - ["media-player"](media-player/)
+ - ["platform"](platform/)
  - ["text"](text/)
  - ["text/formatted-string"](text/formatted-string/)
  - ["text/span"](text/span/)
  - ["timer"](timer/)
  - ["trace"](trace/)
  - ["ui/activity-indicator"](ui/activity-indicator/)
+ - ["ui/border"](ui/border/)
  - ["ui/builder"](ui/builder/)
  - ["ui/builder/component-builder"](ui/builder/component-builder/)
  - ["ui/builder/template-builder"](ui/builder/template-builder/)
@@ -41,8 +36,9 @@ position: 1
  - ["ui/core/dependency-observable"](ui/core/dependency-observable/)
  - ["ui/core/proxy"](ui/core/proxy/)
  - ["ui/core/view"](ui/core/view/)
- - ["ui/core/weakEventListener"](ui/core/weakEventListener/)
+ - ["ui/core/weak-event-listener"](ui/core/weak-event-listener/)
  - ["ui/dialogs"](ui/dialogs/)
+ - ["ui/editable-text-base"](ui/editable-text-base/)
  - ["ui/enums"](ui/enums/)
  - ["ui/frame"](ui/frame/)
  - ["ui/gestures"](ui/gestures/)
