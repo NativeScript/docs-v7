@@ -14,7 +14,7 @@ _Inherits:_ [_Page_](../../ui/pagesNew/Page.md)
  - **goBack()**
  - **canGoBack()** _Boolean_
    - _**return**_ - _Boolean_
- - **navigateTo(** moudleName _String_ **)**
-   - **moudleName** - _String_
+ - **navigateTo(** moduleName _String_ **)**
+   - **moduleName** - _String_
  - **navigate(** entry [_NavigationEntry_](../../ui/pagesNew/NavigationEntry.md) **)**
    - **entry** - [_NavigationEntry_](../../ui/pagesNew/NavigationEntry.md)

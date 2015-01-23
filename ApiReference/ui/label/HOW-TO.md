@@ -3,10 +3,16 @@ nav-title: "Label How-To"
 title: "Label How-To"
 description: "Examples for using Label"
 ---
-#Label
-UsingalabelrequirestheLabelmodule.
-```JavaScript
+# Label
+Using a label requires the Label module.
+``` JavaScript
 var LabelModule = require("ui/label");
+```
+Binding the Label text property to a view-model property.
+```XML
+<Page>
+  <Label text="{{ title }}" />
+</Page>
 ```
 ### How to set label text content
 ``` JavaScript

@@ -9,6 +9,12 @@ Using a button requires the Button module.
 var buttonModule = require("ui/button");
 var observable = require("data/observable");
 ```
+Attaching event handler for the button tap event.
+```XML
+<Page>
+  <Button tap="buttonTap" />
+</Page>
+```
 ## Creating a button
 ``` JavaScript
 var button = new buttonModule.Button();
@@ -17,9 +23,9 @@ var button = new buttonModule.Button();
 ``` JavaScript
 button.text = "Hello, world!";
 ```
-## Responding to the click event
+## Responding to the tap event
 ``` JavaScript
-button.on("click", function (args) {
+button.on(buttonModule.knownEvents.tap, function (args) {
     // Do something
 });
 ```

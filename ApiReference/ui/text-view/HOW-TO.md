@@ -4,6 +4,24 @@ title: "TextView How-To"
 description: "Examples for using TextView"
 ---
 # TextView
+Binding two TextViews text property to observable view-model property.
+```XML
+<Page loaded="pageLoaded">
+ <StackPanel orientation="vertical">
+   <TextView text="{{ someProperty }}" />
+   <TextView text="{{ someProperty }}" />
+ </StackPanel>
+</Page>
+```
+```JS
+function pageLoaded(args) {
+  var page = args.object;
+  var obj = new observable.Observable();
+  obj.set("someProperty", "Please change this text!");
+  page.bindingContext = obj;
+}
+exports.pageLoaded = pageLoaded;
+```
 Using a TextView requires the text-view module.
 ``` JavaScript
 var textViewModule = require("ui/text-view");

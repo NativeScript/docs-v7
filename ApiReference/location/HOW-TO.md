@@ -6,7 +6,7 @@ description: "Examples for using location"
 # Location
 Using the location requires the Location module.
 ``` JavaScript
-var LocationManager = require("location").LocationManager;
+var locationModule = require("location");
 ```
 ## Other functions
 ### Test are location services available for this device

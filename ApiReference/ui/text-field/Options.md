@@ -4,7 +4,7 @@ title: "Class ui/text-field.Options"
 description: "Class ui/text-field.Options"
 ---
 ## Object: "ui/text-field".Options  
-_Extends:_ [_Options_](../../ui/text-base/Options.md)
+_Extends:_ [_Options_](../../ui/editable-text-base/Options.md)
 
 ##### Properties
  - **hint** - _(optional)_ - _String_.    

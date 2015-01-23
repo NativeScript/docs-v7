@@ -13,6 +13,46 @@ Other modules which will be used in the code samples in this article:
 var observableArray = require("data/observable-array");
 var labelModule = require("ui/label");
 ```
+Binding the ListView items property to collection in the view-model.
+```XML
+<Page>
+  <ListView items="{{ myItems }}" />
+</Page>
+```
+Attaching event handler for the ListView itemTap event.
+```XML
+<Page>
+  <ListView items="{{ myItems }}" itemTap="listViewItemTap" />
+</Page>
+```
+```JS
+function listViewItemTap(args) {
+  var itemIndex = args.index;
+}
+exports.listViewItemTap = listViewItemTap;
+```
+Attaching event handler for the ListView loadMoreItems event.
+```XML
+<Page>
+ <ListView items="{{ myItems }}" loadMoreItems="listViewLoadMoreItems" />
+</Page>
+```
+```JS
+function listViewLoadMoreItems(args) {
+  // Expand your collection bound to the ListView with more items here!
+}
+exports.listViewLoadMoreItems = listViewLoadMoreItems;
+```
+Define the ListView itemTemplate property.
+```XML
+<Page>
+ <ListView items="{{ myItems }}">
+    <ListView.itemTemplate>
+       <Label text="{{ title || 'Downloading...' }}" textWrap="true" cssClass="title" />
+    </ListView.itemTemplate>
+ </ListView>
+</Page>
+```
 ## Creating a ListView
 ``` JavaScript
 var listView = new listViewModule.ListView();

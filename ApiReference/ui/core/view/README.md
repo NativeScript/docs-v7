@@ -20,6 +20,7 @@ Object | Description
 [Options](../../../ui/core/view/Options.md) | 
 [AddArrayFromBuilder](../../../ui/core/view/AddArrayFromBuilder.md) | 
 [AddChildFromBuilder](../../../ui/core/view/AddChildFromBuilder.md) | 
+[ApplyXmlAttributes](../../../ui/core/view/ApplyXmlAttributes.md) | 
 
 Namespace | Description
 ------|------------

@@ -11,14 +11,14 @@ var btn1 = new button.Button();
 var btn2 = new button.Button();
 var btn3 = new button.Button();
 var btn4 = new button.Button();
-```
+ ```
 ### Add views to panel
 ``` JavaScript
 gridPanel.addChild(btn1);
 gridPanel.addChild(btn2);
 gridPanel.addChild(btn3);
 gridPanel.addChild(btn4);
-```
+ ```
 ### Set column property on views - btn1 in first column, btn2 is second and btn3 in third
 ``` JavaScript
 panel.GridPanel.setColumn(btn1, 0);

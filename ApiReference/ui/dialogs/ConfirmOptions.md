@@ -1,9 +1,9 @@
 ---
-nav-title: "Class ui/dialogs.DialogButtonsOptions"
-title: "Class ui/dialogs.DialogButtonsOptions"
-description: "Class ui/dialogs.DialogButtonsOptions"
+nav-title: "Class ui/dialogs.ConfirmOptions"
+title: "Class ui/dialogs.ConfirmOptions"
+description: "Class ui/dialogs.ConfirmOptions"
 ---
-## Object: "ui/dialogs".DialogButtonsOptions  
+## Object: "ui/dialogs".ConfirmOptions  
 _Extends:_ [_AlertOptions_](../../ui/dialogs/AlertOptions.md)  
 Provides options for the confirm dialog.
 

@@ -8,6 +8,24 @@ Using a switch requires the Switch module.
 ``` JavaScript
 var switchModule = require("ui/switch");
 ```
+Binding the Switch checked property and Button isEanbled property to a observable view-model property.
+```XML
+<Page loaded="pageLoaded">
+ <StackPanel orientation="vertical">
+   <Switch checked="{{ someProperty }}" />
+   <Button isEanbled="{{ someProperty }}" text="This is a Button!" />
+ </StackPanel>
+</Page>
+```
+```JS
+function pageLoaded(args) {
+  var page = args.object;
+  var obj = new observable.Observable();
+  obj.set("someProperty", false);
+  page.bindingContext = obj;
+}
+exports.pageLoaded = pageLoaded;
+```
 ## Creating a switch
 ``` JavaScript
 var mySwitch = new switchModule.Switch();

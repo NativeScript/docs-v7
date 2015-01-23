@@ -27,10 +27,13 @@ It could be set to more than one value e.g. (Bold | Italic).
   A collection of modifiers build upon all text related properties.
  - **text** - _String_.    
   Gets or sets the text for the span.
+ - **parentFormattedString** - [_FormattedString_](../../text/formatted-string/FormattedString.md).    
+  An instance of the parent formatted string (used internally to support some short hand property settings).
 
 ##### Instance Functions
- - **updateSpanModifiers()**  
+ - **updateSpanModifiers(** parent [_FormattedString_](../../text/formatted-string/FormattedString.md) **)**  
      Updates all span modifiers according to current values of all text related properties.
+   - **parent** - [_FormattedString_](../../text/formatted-string/FormattedString.md)
  - **beginEdit()**  
      Initializes a process of updating a span (text related property(s)).
  - **endEdit()**  

@@ -13,7 +13,7 @@ Provides options for the http requests.
   Gets or sets the request method.
  - **headers** - _(optional)_ - _Object_.    
   Gets or sets the request headers in JSON format.
- - **content** - _(optional)_ - _Object_.    
+ - **content** - _(optional)_ - _String_.    
   Gets or sets the request body.
  - **timeout** - _(optional)_ - _Number_.    
   Gets or sets the request timeout.

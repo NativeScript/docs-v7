@@ -4,8 +4,8 @@ title: "Class ui/text-field.TextField"
 description: "Class ui/text-field.TextField"
 ---
 ## Class: "ui/text-field".TextField  
-_Inherits:_ [_TextBase_](../../ui/text-base/TextBase.md)  
-Represents a editable text field.
+_Inherits:_ [_EditableTextBase_](../../ui/editable-text-base/EditableTextBase.md)  
+Represents an editable text field.
 
 ##### Instance Properties
  - **android** - _EditText_.    

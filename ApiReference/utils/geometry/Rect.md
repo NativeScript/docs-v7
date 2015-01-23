@@ -41,6 +41,15 @@ A class that describes the width, height, and location of a rectangle.
    - **value** - [_Rect_](../../utils/geometry/Rect.md)  
      A Rect instance to test.
    - _**return**_ - _Boolean_
+ - **intersectsWith(** rect [_Rect_](../../utils/geometry/Rect.md) **)** _Boolean_  
+     Returns true if the Rect intersects with this rectangle, otherwise false otherwise.
+If one edge is coincident, this is considered an intersection.
+   - **rect** - [_Rect_](../../utils/geometry/Rect.md)
+   - _**return**_ - _Boolean_
+ - **intersect(** rect [_Rect_](../../utils/geometry/Rect.md) **)**  
+     Update this rectangle to be the intersection of this and rect.
+If either this or rect are Empty, the result is Empty as well.
+   - **rect** - [_Rect_](../../utils/geometry/Rect.md)
  - **toString()** _String_  
      Returns a string representation of this Size instance.
    - _**return**_ - _String_
