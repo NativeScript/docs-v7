@@ -18,23 +18,15 @@ NativeScript uses a modular design pattern. All functionality that NativeScript 
 + [timer](./ApiReference/timer/HOW-TO.md) - allows you to create, start, stop and react to timers.
 + [trace](./ApiReference/trace/HOW-TO.md) - allows you to trace and print specific information based on categories.
 
-# Sensors and Hardware
-+ camera - allows you to take pictrues with the device's camera.
+# Device Modules
++ [camera](./ApiReference/camera/HOW-TO.md) - allows you to take pictrues with the device's camera.
 + [location](./ApiReference/location/HOW-TO.md) - allows you to use the geolocation of the device.
 + [platform](./ApiReference/platform/HOW-TO.md) - contains all kinds of information about the device, its operating system and software.
 + [fps-meter](./ApiReference/fps-meter/HOW-TO.md) - allows you to capture the frames-per-second metrics of your application.
-
-# File System Modules
-+ [file-system](./ApiReference/file-system/HOW-TO.md) - contains classes for file system entities such as files and folders.
-+ file-system/file-system-access - contains the FileSystemAccess class, which is an utility class used to provide methods to access and work with the file system.
-
-# Text Modules
-+ text - contains text utilities, such as encoding.
-+ [text/formatted-string](./ApiReference/text/formatted-string/HOW-TO.md) - contains the FormattedString class, which is used to create a formatted (rich text) strings.
-+ text/span - contains the Span class, which is used to create a single part of formatted string with a common text properties.
++ [file-system](./ApiReference/file-system/HOW-TO.md) - provides high-level abstractions for file system entities such as files, folders, known folders, paths, separators, etc.
 
 # Data Modules
-+ data/observable - contains the Observable class, which represents an observable object, or "data" in the model-view paradigm.
++ [data/observable](./ApiReference/data/observable/HOW-TO.md) - contains the Observable class, which represents an observable object, or "data" in the model-view paradigm.
 + [data/observable-array](./ApiReference/data/observable-array/HOW-TO.md) - contains the ObservableArray<T> class, which is capable of detecting and responding to changes of a collection of objects.
 + [data/virtual-array](./ApiReference/data/virtual-array/HOW-TO.md) - contains the VirtualArray<T> class, which is an advanced array like class that helps loading items on demand.
 
@@ -43,23 +35,21 @@ NativeScript uses a modular design pattern. All functionality that NativeScript 
 + ui/core/bindable - contains the Bindable class, which represents an extended DependencyObservable object that supports data-binding.
 + ui/core/proxy - contains the Proxy class, which is an extended Bindable class that that serves as a proxy between a JavaScript object and a native object.
 + ui/core/view - contains the View class, which is the base class for all UI components. 
++ [text/formatted-string](./ApiReference/text/formatted-string/HOW-TO.md) - contains the FormattedString and Span classes, which are used to create a formatted (rich text) strings.
 
-# Panel Modules
-+ ui/panels/panel - contains the Panel class, which is the base class for all panels.
+# Panels
 + [ui/panels/stack-panel](./ApiReference/ui/stack-panel/HOW-TO.md) - contains the StackPanel class, which is used to arrange children into single line.
 + [ui/panels/grid-panel](./ApiReference/ui/grid-panel/HOW-TO.md) - contains the GridPanel class, which represents a flexible grid area that consists of columns and rows.
 + [ui/panels/canvas-panel](./ApiReference/ui/canvas-panel/HOW-TO.md) - contains the CanvasPanel class, which is used to place child elements at arbitrary positions or to draw children in multiple layers.
 + [ui/panels/wrap-panel](./ApiReference/ui/wrap-panel/HOW-TO.md) - contains the WrapPanel class, which is used to place child elements at sequential positions from left to the right and then "wrap" the lines of children from top to the bottom.
 
-# Widget Modules
+# Widgets
 + ui/content-view - represents a View that has a single child - content.
 + [ui/page](./ApiReference/ui/page/HOW-TO.md) - contains the Page class, which represents a logical unit for navigation inside a Frame.
 + ui/frame - contains the Frame class, which represents the logical View unit that is responsible for navigation within an application.
 + [ui/activity-indicator](./ApiReference/ui/activity-indicator/HOW-TO.md) - contains the ActivityIndicator class, which represents a widget for showing that something is currently busy.
 + [ui/button](./ApiReference/ui/button/HOW-TO.md) - contains the Button class, which represents a standard button widget.
-+ ui/text-base - contains the TextBase class, which is the base class for all textual widgets.
 + [ui/label](./ApiReference/ui/label/HOW-TO.md) - contains the Label class, which represents a standard label widget.
-+ ui/editable-text-base - contains the EditableTextBase class, which is the base class for the TextField and TextView editable widgets.
 + [ui/text-field](./ApiReference/ui/text-field/HOW-TO.md) - contains the TextField class, which represents an editable single-line box.
 + [ui/text-view](./ApiReference/ui/text-view/HOW-TO.md) - contains the TextField class, which represents an editable multi-line line box.
 + [ui/list-view](./ApiReference/ui/list-view/HOW-TO.md) - contains the ListView class, which represents a standard list view widget.
