@@ -3,9 +3,9 @@ nav-title: "Formatted String How-To"
 title: "Formatted String How-To"
 description: "Examples for using Formatted String"
 ---
-# Formatted String
-Using a formatted string requires loading formatted-string and span module.
-``` JavaScript
+# Formatted String
+Using a formatted string requires loading formatted-string and span module.
+``` JavaScript
 var formattedStringModule = require("text/formatted-string");
 var spanModule = require("text/span");
 ```
