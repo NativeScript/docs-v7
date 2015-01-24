@@ -7,7 +7,7 @@ position: 77
 
 #Properties
 
-Being a TypeScript framework NativeScript uses TypeScript properties which after transpilation produces ES5 complient JavaScript (with **setter** and **getter** methods) to support working with class members which ensures more readable and manageable code. Check the following example for more details.
+Being a TypeScript framework NativeScript uses TypeScript properties. After transpilation these result in ES5 compliant JavaScript (with **setter** and **getter** methods) to support working with class members, thus ensuring readable and manageable code. Check the following example for more details:
 
 ``` JavaScript
 var MyClass = (function () {
@@ -40,26 +40,26 @@ export class MyClass {
 }
 ```
 
-TypeScript code will generate the JavaScript counterpart.
+Running the TypeScript compiler through the grunt script, that code will generate the JavaScript counterpart.
 
 #Dependency properties
 
 ##Overview
 Dependency properties are special kind of properties that provides some more interesting and valuable, simplifying creation of a rich User Interface, features like:
 
-* Memory optimization - Creation of a rich UI custom control is connected with creating a huge number of properties. A very significant part of these properties are used with their default values. However with the traditional approach we will end with a **private field** for every property. With the dependency property we store only modified properties for an instance, while default values are stored within the dependency property. Also dependency properties are declared outside the class (static), which is another point for optimizing memory footprint.
+* Memory optimization - The creation of a rich UI custom control is connected to creating a huge number of properties. A very significant part of these properties are used with their default values. With the traditional approach we would end with a **private field** for every property. With the dependency property we only store the modified properties of an instance, while the default values are stored within the dependency property. Additionally, dependency properties are declared outside the class (static), which is another point of optimizing the memory footprint.
 
-* Value validation - By value validation we refer to a business logic validation (type validation is not the best selling point of JavaScript). The validation is achieved via a special validation callback - a function that will be called with the **newValue** as parameter and should return true or false if a value is valid or not accordingly.
+* Value validation - By value validation we refer to a business logic validation (type validation is not the best selling point of JavaScript anyways). The validation is achieved via a special validation callback - a function that will be called with the **newValue** as parameter and should return true or false if a value is valid or not respectively.
 
-* Change notification - There is another callback which will be called when the value of the property is changed. It will be called with an [EventData](./ApiReference/data/observable/EventData.md) as parameter.
+* Change notification - There is another callback which will be called when the value of the property is changed. It will be called with an [EventData](./ApiReference/data/observable/EventData.md) as a parameter.
 
-* Inheritance - One of the most important features of dependency properties is inheritance. By inheritance we refer to a special option for UI elements (such as Button) to get values for its properties from a parent (on the visual tree) element. For example button could inherit its style (or theme) property value from the parent Window, Panel or other container. This gives the end user an option to change a single setting (Window.theme) and entire application will look totally different.
+* Inheritance - One of the most important features of dependency properties is inheritance. By inheritance we refer to a special option for UI elements (such as Button) to get its property from a parent (on the visual tree) element. For example button could inherit its style (or theme) property value from the parent Window, Panel or other container. This gives the end user the option to dramatically change the look of the entire application by only changing a single setting (Window.theme).
 
 ##Working with dependency properties
 
 * Declaring a dependency property
 
-Only classes that derives from [DependencyObservable](./ApiReference/ui/core/dependency-observable/DependencyObservable.md) class could have a dependency property. This class have some built-in methods that support the entire infrastructure of dependency properties.
+Only classes that derives from the [DependencyObservable](./ApiReference/ui/core/dependency-observable/DependencyObservable.md) class can have a dependency property. This class has some built-in methods that support the entire infrastructure of dependency properties.
 
 ``` JavaScript
 var dependencyObservable = require("ui/core/dependency-observable");
@@ -105,9 +105,9 @@ export class MyClass extends dependencyObservable.DependencyObservable {
 }
 ```
 
-With the above code we just have almost (except the static part) a plain property with some different syntax. So following examples will show how to add some other features.
+With the above code we almost created a plain property with a different syntax (we only need to add the static part). With that, the following examples will demonstrate the addition of other features.
 
-* Adding a changed callback
+* Adding a changed callback:
 
 ``` JavaScript
 var dependencyObservable = require("ui/core/dependency-observable");
@@ -169,7 +169,7 @@ export class MyClass extends dependencyObservable.DependencyObservable {
 }
 ```
 
-* Adding a validation callback
+* Adding a validation callback:
 
 ``` JavaScript
 var dependencyObservable = require("ui/core/dependency-observable");
@@ -251,4 +251,4 @@ export class MyClass extends dependencyObservable.DependencyObservable {
 }
 ```
 
-> Creating an inheritable property is relatively simple (as previous example show). However keep in mind that **inheritance** magic happens only through the **visual tree**. So setting such property to a non visual element will not work as expected.
+> Creating an inheritable property is relatively simple (as seen in the previous example). However keep in mind that the **inheritance** magic only happens through the **visual tree**. Thus, setting such a property to a non visual element will not work as expected.
