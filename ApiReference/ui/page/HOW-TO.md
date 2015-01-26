@@ -3,9 +3,9 @@ nav-title: "Page How-To"
 title: "Page How-To"
 description: "Examples for using Page"
 ---
-# Page
-Using a page requires the Page module.
-``` JavaScript
+# Page
+Using a page requires the Page module.
+``` JavaScript
 var PageModule = require("ui/page");
 // FrameModule is needed in order to have an option to navigate to the new page.
 var FrameModule = require("ui/frame");
@@ -23,9 +23,9 @@ function pageLoaded(args) {
 }
 exports.pageLoaded = pageLoaded;
 ```
-# Page
+# Page
 Creating and navigating to the created page.
-``` JavaScript
+``` JavaScript
 var testPage;
 var pageFactory = function () {
     testPage = new PageModule.Page();
@@ -41,14 +41,14 @@ var navEntry = {
 var topFrame = FrameModule.topmost();
 topFrame.navigate(navEntry);
 ```
-# Page
+# Page
 Navigating backward is as simple as calling a single method.
-``` JavaScript
+``` JavaScript
 topFrame.goBack();
 ```
-# Page
+# Page
 Pass data to the new page.
-``` JavaScript
+``` JavaScript
 var testPage;
 var pageFactory = function () {
     testPage = new PageModule.Page();
@@ -65,8 +65,8 @@ var navEntry = {
 var topFrame = FrameModule.topmost();
 topFrame.navigate(navEntry);
 ```
-# Page
+# Page
 Adding a css that affects all nested UI components.
-``` JavaScript
+``` JavaScript
 testPage.css = "stackPanel {background-color: #ffff0000;} label {background-color: #ff00ff00;}";
 ```
