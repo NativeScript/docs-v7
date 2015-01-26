@@ -32,9 +32,6 @@ NativeScript uses a modular design pattern. All functionality that NativeScript 
 
 # Core UI Modules
 + [ui/core/dependency-observable](./ApiReference/ui/core/dependency-observable/HOW-TO.md) - contains the DependencyObservable class, which represents an extended Observable object that uses Property instances for value backing mechanism.
-+ ui/core/bindable - contains the Bindable class, which represents an extended DependencyObservable object that supports data-binding.
-+ ui/core/proxy - contains the Proxy class, which is an extended Bindable class that that serves as a proxy between a JavaScript object and a native object.
-+ ui/core/view - contains the View class, which is the base class for all UI components. 
 + [text/formatted-string](./ApiReference/text/formatted-string/HOW-TO.md) - contains the FormattedString and Span classes, which are used to create a formatted (rich text) strings.
 
 # Panels
@@ -44,9 +41,8 @@ NativeScript uses a modular design pattern. All functionality that NativeScript 
 + [ui/panels/wrap-panel](./ApiReference/ui/wrap-panel/HOW-TO.md) - contains the WrapPanel class, which is used to place child elements at sequential positions from left to the right and then "wrap" the lines of children from top to the bottom.
 
 # Widgets
-+ ui/content-view - represents a View that has a single child - content.
 + [ui/page](./ApiReference/ui/page/HOW-TO.md) - contains the Page class, which represents a logical unit for navigation inside a Frame.
-+ ui/frame - contains the Frame class, which represents the logical View unit that is responsible for navigation within an application.
++ [ui/frame](./ApiReference/ui/frame/HOW-TO.md) - contains the Frame class, which represents the logical View unit that is responsible for navigation within an application.
 + [ui/activity-indicator](./ApiReference/ui/activity-indicator/HOW-TO.md) - contains the ActivityIndicator class, which represents a widget for showing that something is currently busy.
 + [ui/button](./ApiReference/ui/button/HOW-TO.md) - contains the Button class, which represents a standard button widget.
 + [ui/label](./ApiReference/ui/label/HOW-TO.md) - contains the Label class, which represents a standard label widget.
@@ -62,16 +58,9 @@ NativeScript uses a modular design pattern. All functionality that NativeScript 
 + [ui/tab-view](./ApiReference/ui/tab-view/HOW-TO.md) - contains the TabView class, which represents a standard content component with tabs.
 + [ui/web-view](./ApiReference/ui/web-view/HOW-TO.md) - contains the WebView class, which represents a standard browser widget.
 
-# Other UI Modules
+# Other Modules
 + [ui/styling](./ApiReference/ui/styling/HOW-TO.md) - contains the Style class, which is resposndible for the visual appearance of elements.
-+ ui/enums - contains the possible values for all kinds of enumerations used throughout NativeScript.
 + ui/gestures - contains the GesturesObserver class, which lets you observe and respond to user gestures.
 + ui/image-cache - contains the Cache class, which handles image download requests and caches the already downloaded images.
 + ui/dialogs - allows you to show different dialogs such as alerts, prompts, etc.
-
-# Utility Modules
-+ utils/containers - holds different utilities for object comparisons.
-+ utils/geometry - holds different structures such as Poinst, Size, etc.
-+ utils/types - holds different utilites for working with types.
-+ utils/utils - various other utilities.
 + [xml](./ApiReference/xml/HOW-TO.md) - contains the XmlParser class, which is a SAX parser using the easysax implementation
