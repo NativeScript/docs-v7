@@ -3,9 +3,9 @@ nav-title: "Label How-To"
 title: "Label How-To"
 description: "Examples for using Label"
 ---
-# Label
-Using a label requires the Label module.
-``` JavaScript
+# Label
+Using a label requires the Label module.
+``` JavaScript
 var LabelModule = require("ui/label");
 ```
 Binding the Label text property to a view-model property.

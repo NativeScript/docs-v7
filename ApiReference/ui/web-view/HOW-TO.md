@@ -3,9 +3,9 @@ nav-title: "WebView How-To"
 title: "WebView How-To"
 description: "Examples for using WebView"
 ---
-# WebView
-Using a WebView requires the web-view module.
-``` JavaScript
+# WebView
+Using a WebView requires the web-view module.
+``` JavaScript
 var webViewModule = require("ui/web-view");
 ```
 ## Creating a WebView

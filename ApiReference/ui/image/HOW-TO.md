@@ -3,9 +3,9 @@ nav-title: "Image How-To"
 title: "Image How-To"
 description: "Examples for using Image"
 ---
-# Image
-Using an image requires the Image module to be loaded.
-``` JavaScript
+# Image
+Using an image requires the Image module to be loaded.
+``` JavaScript
 var ImageModule = require("ui/image");
 ```
 Binding the image source property to a view-model property.
@@ -14,21 +14,21 @@ Binding the image source property to a view-model property.
   <Image source="{{ thumbnailImageSource }}" />
 </Page>
 ```
-# Image
+# Image
 How to create an image and set its source.
-``` JavaScript
+``` JavaScript
 var image = new ImageModule.Image();
 image.source = ImageSourceModule.fromResource("logo");
 ```
-# Image
+# Image
 How to create an image and set its url.
-``` JavaScript
+``` JavaScript
 var image = new ImageModule.Image();
 image.url = "https://www.google.bg/images/srpr/logo11w.png";
 ```
-# Image
+# Image
 How to set image stretching.
-``` JavaScript
+``` JavaScript
 var image = new ImageModule.Image();
 image.source = ImageSourceModule.fromFile(imagePath);
 // There are 4 modes of stretching none, fill, aspectFill, aspectFit
