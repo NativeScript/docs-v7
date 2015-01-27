@@ -8,7 +8,7 @@ Using the SearchBar requires the "ui/search-bar" module.
 ``` JavaScript
 var searchBarModule = require("ui/search-bar");
 ```
-## Events
+## Searching
 ``` JavaScript
 var searchBar = new searchBarModule.SearchBar();
 searchBar.on(searchBarModule.knownEvents.submit, function (args) {

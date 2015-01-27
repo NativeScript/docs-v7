@@ -61,6 +61,6 @@ NativeScript uses a modular design pattern. All functionality that NativeScript 
 # Other Modules
 + [ui/styling](./ApiReference/ui/styling/HOW-TO.md) - contains the Style class, which is resposndible for the visual appearance of elements.
 + [ui/gestures](./ApiReference/ui/gestures/HOW-TO.md) - contains the GesturesObserver class, which lets you observe and respond to user gestures
-+ ui/image-cache - contains the Cache class, which handles image download requests and caches the already downloaded images.
++ [ui/image-cache](./ApiReference/ui/image-cache/HOW-TO.md) - contains the Cache class, which handles image download requests and caches the already downloaded images.
 + ui/dialogs - allows you to show different dialogs such as alerts, prompts, etc.
 + [xml](./ApiReference/xml/HOW-TO.md) - contains the XmlParser class, which is a SAX parser using the easysax implementation
