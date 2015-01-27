@@ -52,7 +52,7 @@ NativeScript uses a modular design pattern. All functionality that NativeScript 
 + [ui/image](./ApiReference/ui/image/HOW-TO.md) - contains the Image class, which represents an image widget.
 + [ui/progress](./ApiReference/ui/progress/HOW-TO.md) - contains the Progress class, which represents a component capable of showing progress.
 + [ui/scroll-view](./ApiReference/ui/scroll-view/HOW-TO.md) - contains the ScrollView class, which represents a scrollable area that can have content that is larger than its bounds.
-+ ui/search-bar - contains the SearchBar class, which represents a standard search bar component.
++ [ui/search-bar](./ApiReference/ui/search-bar/HOW-TO.md) - contains the SearchBar class, which represents a standard search bar component.
 + [ui/slider](./ApiReference/ui/slider/HOW-TO.md) - contains the Slider class, which represents a standard slider component.
 + [ui/switch](./ApiReference/ui/switch/HOW-TO.md) - contains the Switch class, which represents a standard switch component.
 + [ui/tab-view](./ApiReference/ui/tab-view/HOW-TO.md) - contains the TabView class, which represents a standard content component with tabs.
