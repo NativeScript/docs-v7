@@ -140,7 +140,7 @@ and how xml will look like:
 ``` XML
 <Page>
 	<StackPanel>{%raw%}
-		<Button text="Test Button For Binding" tap={{ onTap }} />
+		<Button text="Test Button For Binding" tap="{{ onTap }}" />
 {%endraw%}	</StackPanel>
 </Page>
 ```
