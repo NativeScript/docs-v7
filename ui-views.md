@@ -36,7 +36,7 @@ Accessing the native widgets can be useful when you want to use some platform sp
 ##Button
 A standard Button widget that reacts to a 'tap' event.
 
-![button android](.\img\gallery\android\buttonPage.png "button android")![button ios](.\img\gallery\ios\buttonPage.png "button ios")
+![button android](img/gallery/android/buttonPage.png "button android")![button ios](img/gallery/ios/buttonPage.png "button ios")
 
 Native component:
 
@@ -47,7 +47,7 @@ Native component:
 ##Label
 A text label used for displaying read-only text.
 
-![label android](.\img\gallery\android\labelPage.png "label android")![label ios](.\img\gallery\ios\labelPage.png "label ios")
+![label android](img/gallery/android/labelPage.png "label android")![label ios](img/gallery/ios/labelPage.png "label ios")
 
 Native component:
 
@@ -58,7 +58,7 @@ Native component:
 ##TextField
 An editable **single-line** text field.
 
-![text-field android](.\img\gallery\android\textFieldPage.png "text-field android")![text-field ios](.\img\gallery\ios\textFieldPage.png "text-field ios")
+![text-field android](img/gallery/android/textFieldPage.png "text-field android")![text-field ios](img/gallery/ios/textFieldPage.png "text-field ios")
 
 Native component:
 
@@ -69,7 +69,7 @@ Native component:
 ##TextView
 An editable **multi-line** text view. It is typically used multi-lines text content and also supports text editing.
 
-![text-view android](.\img\gallery\android\textViewPage.png "text-view android")![text-view ios](.\img\gallery\ios\textViewPage.png "text-view ios")
+![text-view android](img/gallery/android/textViewPage.png "text-view android")![text-view ios](img/gallery/ios/textViewPage.png "text-view ios")
 
 Native component:
 
@@ -80,7 +80,7 @@ Native component:
 ##SearchBar
 A view that provides a user interface for the user to enter a search query and submit a request to a search provider.
 
-![search-bar android](.\img\gallery\android\searchBarPage.png "search-bar android")![search-bar ios](.\img\gallery\ios\searchBarPage.png "search-bar ios")
+![search-bar android](img/gallery/android/searchBarPage.png "search-bar android")![search-bar ios](img/gallery/ios/searchBarPage.png "search-bar ios")
 
 Native component:
 
@@ -91,7 +91,7 @@ Native component:
 ##Switch
 The Switch view is a two-state toggle switch widget that can select between two options. 
 
-![switch android](.\img\gallery\android\switchPage.png "switch android")![switch ios](.\img\gallery\ios\switchPage.png "switch ios")
+![switch android](img/gallery/android/switchPage.png "switch android")![switch ios](img/gallery/ios/switchPage.png "switch ios")
 
 Native component:
 
@@ -102,7 +102,7 @@ Native component:
 ##Slider
 Represents as slider component the can be used to pick a numeric value between a configurable range.
 
-![slider android](.\img\gallery\android\sliderPage.png "slider android")![slider ios](.\img\gallery\ios\sliderPage.png "slider ios")
+![slider android](img/gallery/android/sliderPage.png "slider android")![slider ios](img/gallery/ios/sliderPage.png "slider ios")
 
 Native component:
 
@@ -113,7 +113,7 @@ Native component:
 ##Progress
 A visual indicator of a progress in some operation. Displays a bar representing how far the operation has progressed and the amount of progress can be changed by the application logic.
 
-![progress android](.\img\gallery\android\progressPage.png "progress android")![progress ios](.\img\gallery\ios\progressPage.png "progress ios")
+![progress android](img/gallery/android/progressPage.png "progress android")![progress ios](img/gallery/ios/progressPage.png "progress ios")
 
 Native component:
 
@@ -124,7 +124,7 @@ Native component:
 ##ActivityIndicator
 A visual indicator(a.k.a. spinner) showing that a task is in progress.
 
-![activity-indicator android](.\img\gallery\android\activityIndicatorPage.png "activity-indicator android")![activity-indicator ios](.\img\gallery\ios\activityIndicatorPage.png "activity-indicator ios")
+![activity-indicator android](img/gallery/android/activityIndicatorPage.png "activity-indicator android")![activity-indicator ios](img/gallery/ios/activityIndicatorPage.png "activity-indicator ios")
 
 Native component:
 
@@ -135,7 +135,7 @@ Native component:
 ##Image
 A view used for displaying an image. The image can be loaded either form [ImageSource]() or form url.
 
-![image android](.\img\gallery\android\imagePage.png "image android")![image ios](.\img\gallery\ios\imagePage.png "image ios")
+![image android](img/gallery/android/imagePage.png "image android")![image ios](img/gallery/ios/imagePage.png "image ios")
 
 Native component:
 
@@ -146,7 +146,7 @@ Native component:
 ##ListView
 A view that shows items in a vertically scrolling list. An itemTemplate can be set on the ListView to specify how each item in the list should be displayed.
 
-![list-view android](.\img\gallery\android\listViewPage.png "list-view android")![list-view ios](.\img\gallery\ios\listViewPage.png "list-view ios")
+![list-view android](img/gallery/android/listViewPage.png "list-view android")![list-view ios](img/gallery/ios/listViewPage.png "list-view ios")
 
 Native component:
 
@@ -157,7 +157,7 @@ Native component:
 ##WebView
 A View that displays web pages. It supports loading pages from URL and navigating back and forward.
 
-![web-view android](.\img\gallery\android\webViewPage.png "web-view android")![web-view ios](.\img\gallery\ios\webViewPage.png "web-view ios")
+![web-view android](img/gallery/android/webViewPage.png "web-view android")![web-view ios](img/gallery/ios/webViewPage.png "web-view ios")
 
 Native component:
 
@@ -168,7 +168,7 @@ Native component:
 ##TabView
 The TabView control is used for implementing tab navigation.
 
-![tab-view android](.\img\gallery\android\tabViewPage.png "tab-view android")![tab-view ios](.\img\gallery\ios\tabViewPage.png "tab-view ios")
+![tab-view android](img/gallery/android/tabViewPage.png "tab-view android")![tab-view ios](img/gallery/ios/tabViewPage.png "tab-view ios")
 
 Native component:
 
@@ -179,5 +179,5 @@ Native component:
 ##Dialogs
 The dialogs module contains function for displaying dialog windows. 
 
-![dialog-confirm android](.\img\gallery\android\dialogsPage_confirm.png "dialog-confirm android")![dialog-confirm ios](.\img\gallery\ios\dialogsPage_confirm.png "dialog-confirm ios")
+![dialog-confirm android](img/gallery/android/dialogsPage_confirm.png "dialog-confirm android")![dialog-confirm ios](img/gallery/ios/dialogsPage_confirm.png "dialog-confirm ios")
 
