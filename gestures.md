@@ -84,6 +84,7 @@ var observer = label.observe(gestures.GestureTypes.Swipe, function (args: gestur
 
 ## Pan
 Scrolls overflowing content. Pans are slower and more precise, and the screen stops responding when the finger is picked up.
+
 **Action: Press, move, lift**
 
 ``` JavaScript
@@ -101,7 +102,9 @@ var observer = label.observe(gestures.GestureTypes.Pan, function (args: gestures
 
 ## Pinch
 Zooms into content or out of content.
+
 **Action: 2-finger press, move outwards, lift**
+
 **Action: 2-finger press, move inwards, lift**
 
 ``` JavaScript
@@ -119,6 +122,7 @@ var observer = label.observe(gestures.GestureTypes.Pinch, function (args: gestur
 
 ## Rotation
 Rotates content clockwise or counter clockwise.
+
 **Action: 2-finger press, draw circle with fingers, lift**
 
 ``` JavaScript
