@@ -8,7 +8,7 @@ _Inherits:_ [_View_](../../ui/core/view/View.md)
 Represents a standard Button widget.
 
 ##### Instance Properties
- - **android** - _Button_.    
+ - **android** - _Object_.    
   Gets the native android widget that represents the user interface for this component. Valid only when running on Android OS.
  - **ios** - _UIButton_.    
   Gets the native UIButton that represents the user interface for this component. Valid only when running on iOS.

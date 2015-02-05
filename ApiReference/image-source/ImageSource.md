@@ -13,7 +13,7 @@ Encapsulates the common abstraction behind a platform specific object (typically
   Gets the width of this instance. This is a read-only property.
  - **ios** - _UIImage_.    
   The iOS-specific image instance. Will be undefined when running on Android.
- - **android** - _Bitmap_.    
+ - **android** - _Object_.    
   The Android-specific image instance. Will be undefined when running on iOS.
 
 ##### Instance Functions

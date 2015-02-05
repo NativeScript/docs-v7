@@ -47,9 +47,10 @@ A View occupies a rectangular area on the screen and is responsible for drawing 
  - **visualState** - _String_.
  - **isLoaded** - _Boolean_.
  - **_domId** - _Number_.
+ - **_cssClasses** - _Array_ of _String_.
  - **_isAddedToNativeVisualTree** - _Boolean_.
  - **_childrenCount** - _Number_.
- - **_context** - _Context_.
+ - **_context** - _Object_.
  - **_nativeView** - _Object_.
  - **_isVisible** - _Boolean_.
 
@@ -79,8 +80,8 @@ A View occupies a rectangular area on the screen and is responsible for drawing 
    - **view** - [_View_](../../../ui/core/view/View.md)
  - **_eachChildView(** callback _Function_... **)**
    - **callback** - _Function_(child [_View_](../../../ui/core/view/View.md)) _Boolean_
- - **_onAttached(** context _Context_ **)**
-   - **context** - _Context_
+ - **_onAttached(** context _Object_ **)**
+   - **context** - _Object_
  - **_onContextChanged()**
  - **_onDetached(** force? _Boolean_ **)**
    - **force** - _(optional)_ - _Boolean_

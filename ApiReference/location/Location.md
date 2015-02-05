@@ -23,7 +23,7 @@ A data class that encapsulates common properties for a geolocation.
   The direction (course), in degrees.
  - **timestamp** - _Date_.    
   The time at which this location was determined.
- - **android** - _Location_.    
+ - **android** - _Object_.    
   The android-specific location object.
  - **ios** - _CLLocation_.    
   The ios-specific location object.

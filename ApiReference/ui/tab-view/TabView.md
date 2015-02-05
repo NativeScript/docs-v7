@@ -12,7 +12,7 @@ Represents a tab view.
   Gets or sets the items of the TabView.
  - **selectedIndex** - _Number_.    
   Gets or sets the selectedIndex of the TabView.
- - **android** - _ViewPager_.    
+ - **android** - _Object_.    
   Gets the native android widget that represents the user interface for this component. Valid only when running on Android OS.
  - **ios** - _UITabBarController_.    
   Gets the native iOS UIView that represents the user interface for this component. Valid only when running on iOS.
