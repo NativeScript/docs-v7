@@ -13,9 +13,3 @@ camera.takePicture().then(function (result) {
     result is ImageSource
 });
 ```
-### Takes picture with options.
-``` JavaScript
-camera.takePicture({ cameraPosition: camera.CameraPosition.front, flashMode: camera.FlashMode.off }).then(function (result) {
-    result is ImageSource
-});
-```

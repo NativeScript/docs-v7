@@ -8,7 +8,7 @@ _Inherits:_ [_EditableTextBase_](../../ui/editable-text-base/EditableTextBase.md
 Represents an editable multiline text view.
 
 ##### Instance Properties
- - **android** - _EditText_.    
+ - **android** - _Object_.    
   Gets the native android widget that represents the user interface for this component. Valid only when running on Android OS.
  - **ios** - _UITextView_.    
   Gets the native iOS UIView that represents the user interface for this component. Valid only when running on iOS.

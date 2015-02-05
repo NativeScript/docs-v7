@@ -8,7 +8,7 @@ _Inherits:_ [_View_](../../ui/core/view/View.md)
 Represents a view that shows items in a vertically scrolling list.
 
 ##### Instance Properties
- - **android** - _ListView_.    
+ - **android** - _Object_.    
   Gets the native android widget (android.widget.ListView) that represents the user interface for this component. Valid only when running on Android OS.
  - **ios** - _UITableView_.    
   Gets the native iOS view (UITableView) that represents the user interface for this component. Valid only when running on iOS.

@@ -8,7 +8,7 @@ _Inherits:_ [_View_](../../ui/core/view/View.md)
 Represents a progress component.
 
 ##### Instance Properties
- - **android** - _ProgressBar_.    
+ - **android** - _Object_.    
   Gets the native android widget that represents the user interface for this component. Valid only when running on Android OS.
  - **ios** - _UIProgressView_.    
   Gets the native iOS UIView that represents the user interface for this component. Valid only when running on iOS.

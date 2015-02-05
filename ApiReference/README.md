@@ -47,7 +47,6 @@
  - ["ui/label"](ui/label/)
  - ["ui/list-view"](ui/list-view/)
  - ["ui/page"](ui/page/)
- - ["ui/pagesNew"](ui/pagesNew/)
  - ["ui/panels/canvas-panel"](ui/panels/canvas-panel/)
  - ["ui/panels/grid-panel"](ui/panels/grid-panel/)
  - ["ui/panels/panel"](ui/panels/panel/)

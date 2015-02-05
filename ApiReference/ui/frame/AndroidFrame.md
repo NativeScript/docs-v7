@@ -10,13 +10,13 @@ In Android there are two types of navigation - using new Activity instances or u
 To start a new Activity, a new Frame instance should be created and navigated to the desired Page.
 
 ##### Properties
- - **rootViewGroup** - _ViewGroup_.    
+ - **rootViewGroup** - _Object_.    
   Gets the native android.view.ViewGroup instance that represents the root layout part of the Frame.
- - **activity** - _Activity_.    
+ - **activity** - _Object_.    
   Gets the native android.app.Activity instance associated with this Frame. In case of nested Frame objects, this property points to the activity of the root Frame.
- - **currentActivity** - _Activity_.    
+ - **currentActivity** - _Object_.    
   Gets the current (foreground) activity for the application. This property will recursively traverse all existing Frame objects and check for own Activity property.
- - **actionBar** - _ActionBar_.    
+ - **actionBar** - _Object_.    
   Gets the actionBar property of the currentActivity.
  - **showActionBar** - _Boolean_.    
   Determines whether the Activity associated with this Frame will display an action bar or not.
@@ -24,8 +24,8 @@ To start a new Activity, a new Frame instance should be created and navigated to
   Gets or sets whether the page UI will be cached when navigating away from the page.
 
 ##### Functions
- - **onActivityRequested(** intent _Intent_ **)** _Object_  
+ - **onActivityRequested(** intent _Object_ **)** _Object_  
      A function called by the Runtime whenever a new Activity is about to be opened.
-   - **intent** - _Intent_  
+   - **intent** - _Object_  
      The native android.content.Intent object passed to the Activity's onCreate method.
    - _**return**_ - _Object_

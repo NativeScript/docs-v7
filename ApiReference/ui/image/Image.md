@@ -8,7 +8,7 @@ _Inherits:_ [_View_](../../ui/core/view/View.md)
 Represents a class that provides functionality for loading and streching image(s).
 
 ##### Instance Properties
- - **android** - _ImageView_.    
+ - **android** - _Object_.    
   Gets the native android widget (android.widget.ImageView) that represents the user interface for this component. Valid only when running on Android OS.
  - **ios** - _UIImageView_.    
   Gets the native iOS UIImageView that represents the user interface for this component. Valid only when running on iOS.

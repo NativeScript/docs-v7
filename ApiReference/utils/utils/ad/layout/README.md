@@ -22,17 +22,17 @@ description: "Class utils/utilsad.layout"
    - **size** - _Number_
    - **mode** - _Number_
    - _**return**_ - _Number_
- - **getDisplayMetrics()** _DisplayMetrics_
-   - _**return**_ - _DisplayMetrics_
+ - **getDisplayMetrics()** _Object_
+   - _**return**_ - _Object_
  - **getDisplayDensity()** _Number_
    - _**return**_ - _Number_
- - **getDevicePixels(** independentPixels _Number_, context _Context_ **)** _Number_
+ - **getDevicePixels(** independentPixels _Number_, context _Object_ **)** _Number_
    - **independentPixels** - _Number_
-   - **context** - _Context_
+   - **context** - _Object_
    - _**return**_ - _Number_
- - **getDeviceIndependentPixels(** devicePixels _Number_, context _Context_ **)** _Number_
+ - **getDeviceIndependentPixels(** devicePixels _Number_, context _Object_ **)** _Number_
    - **devicePixels** - _Number_
-   - **context** - _Context_
+   - **context** - _Object_
    - _**return**_ - _Number_
  - **onMeasureNative(** widthMeasureSpec _Number_, heightMeasureSpec _Number_ **)**
    - **widthMeasureSpec** - _Number_

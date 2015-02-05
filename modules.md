@@ -47,7 +47,7 @@ NativeScript uses a modular design pattern. All functionality that NativeScript 
 + [ui/button](./ApiReference/ui/button/HOW-TO.md) - contains the Button class, which represents a standard button widget.
 + [ui/label](./ApiReference/ui/label/HOW-TO.md) - contains the Label class, which represents a standard label widget.
 + [ui/text-field](./ApiReference/ui/text-field/HOW-TO.md) - contains the TextField class, which represents an editable single-line box.
-+ [ui/text-view](./ApiReference/ui/text-view/HOW-TO.md) - contains the TextField class, which represents an editable multi-line line box.
++ [ui/text-view](./ApiReference/ui/text-view/HOW-TO.md) - contains the TextView class, which represents an editable multi-line line box.
 + [ui/list-view](./ApiReference/ui/list-view/HOW-TO.md) - contains the ListView class, which represents a standard list view widget.
 + [ui/image](./ApiReference/ui/image/HOW-TO.md) - contains the Image class, which represents an image widget.
 + [ui/progress](./ApiReference/ui/progress/HOW-TO.md) - contains the Progress class, which represents a component capable of showing progress.

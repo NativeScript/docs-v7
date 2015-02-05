@@ -8,7 +8,7 @@ _Inherits:_ [_View_](../../ui/core/view/View.md)
 Represents a switch component.
 
 ##### Instance Properties
- - **android** - _Switch_.    
+ - **android** - _Object_.    
   Gets the native android widget that represents the user interface for this component. Valid only when running on Android OS.
  - **ios** - _UISwitch_.    
   Gets the native iOS UIView that represents the user interface for this component. Valid only when running on iOS.
