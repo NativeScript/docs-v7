@@ -74,6 +74,10 @@ Navigates between views in the same hierarchy. Swipes are quick and affect the s
 **Action: Press, move, lift**
 
 ``` JavaScript
+var label = new labelModule.Label();
+var observer = label.observe(gestures.GestureTypes.Swipe, function (args) {
+    console.log("Swipe Direction: " + args.direction);
+});
 ```
 ``` TypeScript
 var label = new labelModule.Label();
