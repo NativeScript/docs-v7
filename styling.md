@@ -84,7 +84,5 @@ Here is list of the properties, that can be set in CSS or through the style prop
 | height          | height             | Sets the height of the view. |
 | min-width       | minWidth           | Sets the minimum width of the view. |
 | min-height      | minHeight          | Sets the minimum height of the view. |
-| max-width       | maxWidth           | Sets the maximum width of the view. |
-| max-height      | maxHeight          | Sets the maximum height of the view. |
 | visibility      | visibility         | Sets the visibility of the view. Available values: "visible", "collapsed". |
 | opacity         | opacity            | Sets the of the view. Value can be in the [0, 1] range |
