@@ -10,7 +10,7 @@ NativeScript framework enable developers to use pure JavaScript language to buil
 
 ## How It Works
 The native script architectures can be generally explained with this diagram:
-![architecture diagram]( .\img\architecture.png "architecture diagram")
+![architecture diagram]( img/architecture.png "architecture diagram")
 
 * **Native OS** - At the bottom level is the native OS (Android, iOS and soon Windows).
 * **NativeScript runtime** runs the JavaScript code of your application. The runtime also provides a way to call all the native APIs of the platform the app is running on. This means that you have access to all the native capabilities of the platform. 
