@@ -18,12 +18,7 @@ in the native view/widget. This value will be passed to resetCallback in case th
 [Styler](../../../ui/styling/stylers/Styler.md) | Represents an objects that holds all StylePropertyChangedHandlers for a given view type.
 
 ##### Functions
- - **registerStyler(** viewType _String_, styler [_Styler_](../../../ui/styling/stylers/Styler.md) **)**  
-     Registers a styler that will be used for all views of particular type.
-   - **viewType** - _String_
-   - **styler** - [_Styler_](../../../ui/styling/stylers/Styler.md)
- - **getStyler(** view [_View_](../../../ui/core/view/View.md) **)** [_Styler_](../../../ui/styling/stylers/Styler.md)  
-     Gets a styler to be used for a particular view.
-   - **view** - [_View_](../../../ui/core/view/View.md)  
-     The view.
-   - _**return**_ - [_Styler_](../../../ui/styling/stylers/Styler.md)
+ - **registerHandler(** property [_Property_](../../../ui/core/dependency-observable/Property.md), handler [_StylePropertyChangedHandler_](../../../ui/styling/stylers/StylePropertyChangedHandler.md), className? _String_ **)**
+   - **property** - [_Property_](../../../ui/core/dependency-observable/Property.md)
+   - **handler** - [_StylePropertyChangedHandler_](../../../ui/styling/stylers/StylePropertyChangedHandler.md)
+   - **className** - _(optional)_ - _String_

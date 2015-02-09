@@ -94,13 +94,12 @@ Scrolls overflowing content. Pans are slower and more precise, and the screen st
 ``` JavaScript
 var label = new labelModule.Label();
 var observer = label.observe(gestures.GestureTypes.Pan, function (args) {
-    console.log("Pan");
+    console.log("Pan deltaX:" + args.deltaX + "; deltaY:" + args.deltaY + ";");
 });
 ```
 ``` TypeScript
-var label = new labelModule.Label();
-var observer = label.observe(gestures.GestureTypes.Pan, function (args: gestures.GestureEventData) {
-    console.log("Pan");
+var observer = label.observe(gestures.GestureTypes.Pan, function (args: gestures.PanGestureEventData) {
+    console.log("Pan deltaX:" + args.deltaX + "; deltaY:" + args.deltaY + ";");
 });
 ```
 

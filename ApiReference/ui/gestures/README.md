@@ -24,6 +24,7 @@ Object | Description
 [GestureEventData](../../ui/gestures/GestureEventData.md) | 
 [PinchGestureEventData](../../ui/gestures/PinchGestureEventData.md) | 
 [SwipeGestureEventData](../../ui/gestures/SwipeGestureEventData.md) | 
+[PanGestureEventData](../../ui/gestures/PanGestureEventData.md) | 
 [RotationGestureEventData](../../ui/gestures/RotationGestureEventData.md) | 
 
 ##### Functions
