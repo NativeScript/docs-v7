@@ -18,7 +18,7 @@ Read the advanced topics below or refer to the [Api Reference](ApiReference/) to
 - [Application](application-management.md)
 - [Navigation](navigation.md)
 - [Layouts](layouts.md)
-- [Styling](styling.md)
+- [Styling with CSS](styling.md)
 - [Binding](bindings.md)
 - [UI with XML](ui-with-xml.md)
 - [UI Views](ui-views.md)
@@ -26,5 +26,3 @@ Read the advanced topics below or refer to the [Api Reference](ApiReference/) to
 - [Location](location.md)
 - [Modules](modules.md)
 - [Gestures](gestures.md)
-
-The [Styling Native Apps with CSS](http://developer.telerik.com/featured/styling-native-apps-css/) post contains more information about the NativeScript application styling.
