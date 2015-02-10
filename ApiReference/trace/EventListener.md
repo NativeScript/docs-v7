@@ -3,7 +3,8 @@ nav-title: "Class trace.EventListener"
 title: "Class trace.EventListener"
 description: "Class trace.EventListener"
 ---
-## Object: "trace".EventListener
+## Object: "trace".EventListener  
+An interface used to trace information about specific event.  
 
 ##### Properties
  - **filter** - _String_.

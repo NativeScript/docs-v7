@@ -5,4 +5,4 @@ description: "Class data/virtual-array.ChangeType"
 ---
 ## Class: "data/virtual-array".ChangeType  
 _Inherits:_ [_ChangeType_](../../data/observable-array/ChangeType.md)  
-Change types.
+Change types (Add, Delete, Update, Splice).

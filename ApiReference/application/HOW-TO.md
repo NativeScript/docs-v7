@@ -32,6 +32,6 @@ var dir = context.getFilesDir();
 ```
 Tracking the current Activity
 ``` JavaScript
-if (androidApp.foregroundActivity === androidApp.foregroundActivity) {
+if (androidApp.foregroundActivity === androidApp.startActivity) {
 }
 ```

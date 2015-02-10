@@ -3,7 +3,8 @@ nav-title: "Class ui/core/view.Options"
 title: "Class ui/core/view.Options"
 description: "Class ui/core/view.Options"
 ---
-## Object: "ui/core/view".Options
+## Object: "ui/core/view".Options  
+Defines interface for an optional parameter used to create a view.
 
 ##### Properties
  - **width** - _(optional)_ - _Number_.    
@@ -24,6 +25,9 @@ description: "Class ui/core/view.Options"
   Gets or sets the alignment of this view within its parent along the Vertical axis.
  - **margin** - _(optional)_ - [_Thickness_](../../../utils/geometry/Thickness.md).    
   Gets or sets the margin of this view within its parent.
- - **visibility** - _(optional)_ - _String_.
- - **cssClass** - _(optional)_ - _String_.
- - **id** - _(optional)_ - _String_.
+ - **visibility** - _(optional)_ - _String_.    
+  Gets or sets the visibility of this view.
+ - **cssClass** - _(optional)_ - _String_.    
+  Gets or sets the css class of this view.
+ - **id** - _(optional)_ - _String_.    
+  Gets or sets the id of this view.

@@ -12,8 +12,8 @@ var uicoreweak_event_listener = require("ui/core/weak-event-listener");
 
 Class | Description
 ------|------------
-[WeakEventListener](../../../ui/core/weak-event-listener/WeakEventListener.md) | 
+[WeakEventListener](../../../ui/core/weak-event-listener/WeakEventListener.md) | Represents a class that utilize work with weak event listeners.
 
 Object | Description
 ------|------------
-[WeakEventListenerOptions](../../../ui/core/weak-event-listener/WeakEventListenerOptions.md) | 
+[WeakEventListenerOptions](../../../ui/core/weak-event-listener/WeakEventListenerOptions.md) | An interface with options needed for creating weak event listener.

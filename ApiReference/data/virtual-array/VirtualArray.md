@@ -6,19 +6,7 @@ description: "Class data/virtual-array.VirtualArray"
 ## Class: "data/virtual-array".VirtualArray  
 _Type parameters:_ _**T**_  
 _Inherits:_ [_Observable_](../../data/observable/Observable.md)  
-Advanced array like class that helps loading items on demand. Use "length" property to specify total number of items, 
-"loadSize" to specify number of items to be requested in a single request, "itemsLoading" event to handle items request and 
-"load()" method to copy items into the array. All already loaded items are cached in-memory and when "getItem()" method is called 
-the array will raise "itemsLoading" event for still not loaded items. Example:
-var virtualArray = new VirtualArray&lt;number&gt;(100);
-virtualArray.loadSize = 15;
-virtualArray.on("itemsLoading", (args: virtualArrayDef.ItemsLoading) =&gt; {
-    var itemsToLoad = new Array&lt;number&gt;();
-    for (var i = 0; i &lt; args.count; i++) {
-        itemsToLoad.push(args.index + i);
-    }
-    virtualArray.load(args.index, itemsToLoad);
-});
+Advanced array like class that helps loading items on demand.
 
 ##### Instance Properties
  - **length** - _Number_.    

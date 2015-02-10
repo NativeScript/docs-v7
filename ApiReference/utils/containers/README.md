@@ -12,10 +12,10 @@ var utilscontainers = require("utils/containers");
 
 Class | Description
 ------|------------
-[ArraySortHelper](../../utils/containers/ArraySortHelper.md) | 
-[Dictionary](../../utils/containers/Dictionary.md) | 
-[StringComparer](../../utils/containers/StringComparer.md) | 
+[ArraySortHelper](../../utils/containers/ArraySortHelper.md) | Helper class used to sort arrays.
+[Dictionary](../../utils/containers/Dictionary.md) | Represents a collection of keys and values.
+[StringComparer](../../utils/containers/StringComparer.md) | An implementation of IEqualityComparer that works with strings.
 
 Object | Description
 ------|------------
-[IEqualityComparer](../../utils/containers/IEqualityComparer.md) | 
+[IEqualityComparer](../../utils/containers/IEqualityComparer.md) | An interface used to compare two instances of a same class.

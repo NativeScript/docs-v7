@@ -8,7 +8,7 @@ Logging frames-per-second statistics for your app requires the "fps-meter" modul
 ``` JavaScript
 var fpsMeter = require("fps-meter");
 ```
-# Start and stop logging
+### Start and stop logging
 ``` JavaScript
 var callbackId = fpsMeter.addCallback(function (fps, minFps) {
     console.info("fps=" + fps + " minFps=" + minFps);

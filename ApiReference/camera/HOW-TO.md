@@ -11,6 +11,6 @@ var camera = require("camera");
 ### Taking a picture.
 ``` JavaScript
 camera.takePicture().then(function (result) {
-    result is ImageSource
+    // result is ImageSource
 });
 ```
