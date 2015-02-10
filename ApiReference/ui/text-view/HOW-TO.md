@@ -26,6 +26,7 @@ Using a TextView requires the text-view module.
 ``` JavaScript
 var textViewModule = require("ui/text-view");
 var observable = require("data/observable");
+var enums = require("ui/enums");
 ```
 ## Creating a TextView
 ``` JavaScript
@@ -64,4 +65,12 @@ textView.bind(options, model);
 // textView.editable is now false
 model.set("editable", true);
 // textView.editable is now true
+```
+## Setting the keyboard type
+``` JavaScript
+textView.keyboardType = enums.KeyboardType.email;
+```
+## Setting the return key type
+``` JavaScript
+textView.returnKeyType = enums.ReturnKeyType.search;
 ```

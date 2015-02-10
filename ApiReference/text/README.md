@@ -12,4 +12,4 @@ var text = require("text");
 
 Namespace | Description
 ------|------------
-[encoding](../text/encoding/) | Defines the supported character encodings.
+[encoding](../text/encoding/) | 
