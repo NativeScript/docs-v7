@@ -42,7 +42,7 @@ Native component:
 
 | Android               | iOS      |
 |:----------------------|:---------|
-| android.widget.Button | UIButton |
+| [android.widget.Button](http://developer.android.com/reference/android/widget/Button.html) | [UIButton](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/) |
 
 ##Label
 A text label used for displaying read-only text.
@@ -53,7 +53,7 @@ Native component:
 
 | Android               | iOS      |
 |:----------------------|:---------|
-| android.widget.TextView | UILabel |
+| [android.widget.TextView](http://developer.android.com/reference/android/widget/TextView.html) | [UILabel](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/) |
 
 ##TextField
 An editable **single-line** text field.
@@ -64,7 +64,7 @@ Native component:
 
 | Android               | iOS      |
 |:----------------------|:---------|
-| android.widget.EditText | UITextField |
+| [android.widget.EditText](http://developer.android.com/reference/android/widget/EditText.html) | [UITextField](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/) |
 
 ##TextView
 An editable **multi-line** text view. It is typically used multi-lines text content and also supports text editing.
@@ -75,7 +75,7 @@ Native component:
 
 | Android               | iOS      |
 |:----------------------|:---------|
-| android.widget.EditText | UITextView |
+| [android.widget.EditText](http://developer.android.com/reference/android/widget/EditText.html) | [UITextView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextView_Class/) |
 
 ##SearchBar
 A view that provides a user interface for the user to enter a search query and submit a request to a search provider.
@@ -86,7 +86,7 @@ Native component:
 
 | Android               | iOS      |
 |:----------------------|:---------|
-| android.widget.SearchView | UISearchBar |
+| [android.widget.SearchView](http://developer.android.com/reference/android/widget/SearchView.html) | [UISearchBar](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/) |
 
 ##Switch
 The Switch view is a two-state toggle switch widget that can select between two options. 
@@ -97,7 +97,7 @@ Native component:
 
 | Android               | iOS      |
 |:----------------------|:---------|
-| android.widget.Switch | UISwitch |
+| [android.widget.Switch](http://developer.android.com/reference/android/widget/Switch.html) | [UISwitch](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/) |
 
 ##Slider
 Represents as slider component the can be used to pick a numeric value between a configurable range.
@@ -108,7 +108,7 @@ Native component:
 
 | Android                | iOS      |
 |:-----------------------|:---------|
-| android.widget.SeekBar | UISlider |
+| [android.widget.SeekBar](http://developer.android.com/reference/android/widget/SeekBar.html) | [UISlider](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/) |
 
 ##Progress
 A visual indicator of a progress in some operation. Displays a bar representing how far the operation has progressed and the amount of progress can be changed by the application logic.
@@ -119,7 +119,7 @@ Native component:
 
 | Android                | iOS      |
 |:-----------------------|:---------|
-| android.widget.ProgressBar (indeterminate = false) | UIProgressView |
+| [android.widget.ProgressBar](http://developer.android.com/reference/android/widget/ProgressBar.html) (indeterminate = false) | [UIProgressView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/) |
 
 ##ActivityIndicator
 A visual indicator(a.k.a. spinner) showing that a task is in progress.
@@ -130,7 +130,7 @@ Native component:
 
 | Android                | iOS      |
 |:-----------------------|:---------|
-| android.widget.ProgressBar (indeterminate = true) | UIActivityIndicatorView |
+| [android.widget.ProgressBar](http://developer.android.com/reference/android/widget/ProgressBar.html) (indeterminate = true) | [UIActivityIndicatorView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/) |
 
 ##Image
 A view used for displaying an image. The image can be loaded either form [ImageSource]() or form url.
@@ -141,7 +141,7 @@ Native component:
 
 | Android                | iOS      |
 |:-----------------------|:---------|
-| android.widget.ImageView | UIImageView |
+| [android.widget.ImageView](http://developer.android.com/reference/android/widget/ImageView.html) | [UIImageView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/) |
 
 ##ListView
 A view that shows items in a vertically scrolling list. An itemTemplate can be set on the ListView to specify how each item in the list should be displayed.
@@ -152,7 +152,7 @@ Native component:
 
 | Android                | iOS      |
 |:-----------------------|:---------|
-| android.widget.ListView | UITableView |
+| [android.widget.ListView](http://developer.android.com/reference/android/widget/ListView.html) | [UITableView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableView_Class/) |
 
 ##WebView
 A View that displays web pages. It supports loading pages from URL and navigating back and forward.
@@ -163,7 +163,7 @@ Native component:
 
 | Android                | iOS      |
 |:-----------------------|:---------|
-| android.webkit.WebView | UIWebView |
+| [android.webkit.WebView](http://developer.android.com/reference/android/webkit/WebView.html) | [UIWebView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/) |
 
 ##TabView
 The TabView control is used for implementing tab navigation.
@@ -174,7 +174,7 @@ Native component:
 
 | Android                | iOS      |
 |:-----------------------|:---------|
-| android.support.v4.view.ViewPager | UITabBarController |
+| [android.support.v4.view.ViewPager](http://developer.android.com/reference/android/support/v4/view/ViewPager.html) | [UITabBarController](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/) |
 
 ##Dialogs
 The dialogs module contains function for displaying dialog windows. 
