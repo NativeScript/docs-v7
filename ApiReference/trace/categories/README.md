@@ -4,6 +4,7 @@ title: "Class trace.categories"
 description: "Class trace.categories"
 ---
 ## Namespace: "trace".categories
+An enum that defines all predefined categories.
 
 ##### Variables
  - **VisualTreeEvents** - _String_.

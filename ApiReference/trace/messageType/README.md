@@ -4,6 +4,7 @@ title: "Class trace.messageType"
 description: "Class trace.messageType"
 ---
 ## Namespace: "trace".messageType
+An enum that defines all predefined message types.
 
 ##### Variables
  - **log** - _Number_.

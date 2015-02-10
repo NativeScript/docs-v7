@@ -8,56 +8,56 @@ Detecting user gestures requires the "ui/gestures" module.
 ``` JavaScript
 var gestures = require("ui/gestures");
 ```
-# Double Tap
+### Double Tap
 ``` JavaScript
 var label = new labelModule.Label();
 var observer = label.observe(gestures.GestureTypes.DoubleTap, function (args) {
     console.log("Double Tap");
 });
 ```
-# Long Press
+### Long Press
 ``` JavaScript
 var label = new labelModule.Label();
 var observer = label.observe(gestures.GestureTypes.LongPress, function (args) {
     console.log("Long Press");
 });
 ```
-# Pan
+### Pan
 ``` JavaScript
 var label = new labelModule.Label();
 var observer = label.observe(gestures.GestureTypes.Pan, function (args) {
     console.log("Pan deltaX:" + args.deltaX + "; deltaY:" + args.deltaY + ";");
 });
 ```
-# Pinch
+### Pinch
 ``` JavaScript
 var label = new labelModule.Label();
 var observer = label.observe(gestures.GestureTypes.Pinch, function (args) {
     console.log("Pinch scale: " + args.scale);
 });
 ```
-# Rotation
+### Rotation
 ``` JavaScript
 var label = new labelModule.Label();
 var observer = label.observe(gestures.GestureTypes.Rotation, function (args) {
     console.log("Rotation: " + args.rotation);
 });
 ```
-# Swipe
+### Swipe
 ``` JavaScript
 var label = new labelModule.Label();
 var observer = label.observe(gestures.GestureTypes.Swipe, function (args) {
     console.log("Swipe direction: " + args.direction);
 });
 ```
-# Tap
+### Tap
 ``` JavaScript
 var label = new labelModule.Label();
 var observer = label.observe(gestures.GestureTypes.Tap, function (args) {
     console.log("Tap");
 });
 ```
-# Stop observing
+### Stop observing
 ``` JavaScript
 var label = new labelModule.Label();
 var observer = label.observe(gestures.GestureTypes.Tap, function (args) {

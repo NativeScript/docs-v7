@@ -8,7 +8,7 @@ Using Observable objects requires the "data/observable" module.
 ``` JavaScript
 var observable = require("data/observable");
 ```
-# Responding to property changes
+### Responding to property changes
 ``` JavaScript
 var person = new observable.Observable();
 person.set("Name", "John");

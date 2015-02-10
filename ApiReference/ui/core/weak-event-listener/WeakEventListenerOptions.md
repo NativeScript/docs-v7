@@ -3,7 +3,8 @@ nav-title: "Class ui/core/weak-event-listener.WeakEventListenerOptions"
 title: "Class ui/core/weak-event-listener.WeakEventListenerOptions"
 description: "Class ui/core/weak-event-listener.WeakEventListenerOptions"
 ---
-## Object: "ui/core/weak-event-listener".WeakEventListenerOptions
+## Object: "ui/core/weak-event-listener".WeakEventListenerOptions  
+An interface with options needed for creating weak event listener.
 
 ##### Properties
  - **targetWeakRef** - _WeakRef_ of _Object_.    

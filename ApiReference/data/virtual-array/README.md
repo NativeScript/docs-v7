@@ -12,24 +12,12 @@ var datavirtual_array = require("data/virtual-array");
 
 Class | Description
 ------|------------
-[ChangeType](../../data/virtual-array/ChangeType.md) | Change types.
-[VirtualArray](../../data/virtual-array/VirtualArray.md) | Advanced array like class that helps loading items on demand. Use "length" property to specify total number of items, 
-"loadSize" to specify number of items to be requested in a single request, "itemsLoading" event to handle items request and 
-"load()" method to copy items into the array. All already loaded items are cached in-memory and when "getItem()" method is called 
-the array will raise "itemsLoading" event for still not loaded items. Example:
-var virtualArray = new VirtualArray&lt;number&gt;(100);
-virtualArray.loadSize = 15;
-virtualArray.on("itemsLoading", (args: virtualArrayDef.ItemsLoading) =&gt; {
-    var itemsToLoad = new Array&lt;number&gt;();
-    for (var i = 0; i &lt; args.count; i++) {
-        itemsToLoad.push(args.index + i);
-    }
-    virtualArray.load(args.index, itemsToLoad);
-});
+[ChangeType](../../data/virtual-array/ChangeType.md) | Change types (Add, Delete, Update, Splice).
+[VirtualArray](../../data/virtual-array/VirtualArray.md) | Advanced array like class that helps loading items on demand.
 
 Object | Description
 ------|------------
-[ChangedData](../../data/virtual-array/ChangedData.md) | 
+[ChangedData](../../data/virtual-array/ChangedData.md) | Defines an interface providing event args for "changed" event.
 [ItemsLoading](../../data/virtual-array/ItemsLoading.md) | Event args for "itemsLoading" event.
 
 Namespace | Description

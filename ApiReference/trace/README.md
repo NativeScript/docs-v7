@@ -12,13 +12,13 @@ var trace = require("trace");
 
 Object | Description
 ------|------------
-[TraceWriter](../trace/TraceWriter.md) | 
-[EventListener](../trace/EventListener.md) | 
+[TraceWriter](../trace/TraceWriter.md) | An interface used to define a writer used by trace to print (log).
+[EventListener](../trace/EventListener.md) | An interface used to trace information about specific event.  
 
 Namespace | Description
 ------|------------
-[categories](../trace/categories/) | 
-[messageType](../trace/messageType/) | 
+[categories](../trace/categories/) | An enum that defines all predefined categories.
+[messageType](../trace/messageType/) | An enum that defines all predefined message types.
 
 ##### Functions
  - **enable()**  

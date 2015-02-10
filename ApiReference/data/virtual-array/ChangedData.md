@@ -5,4 +5,5 @@ description: "Class data/virtual-array.ChangedData"
 ---
 ## Object: "data/virtual-array".ChangedData  
 _Type parameters:_ _**T**_  
-_Extends:_ [_ChangedData_](../../data/observable-array/ChangedData.md) of _T_
+_Extends:_ [_ChangedData_](../../data/observable-array/ChangedData.md) of _T_  
+Defines an interface providing event args for "changed" event.

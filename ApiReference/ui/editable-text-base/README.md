@@ -16,7 +16,7 @@ Class | Description
 
 Object | Description
 ------|------------
-[Options](../../ui/editable-text-base/Options.md) | 
+[Options](../../ui/editable-text-base/Options.md) | An interface for common options when creating an editable text component.
 
 ##### Variables
  - **keyboardTypeProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).

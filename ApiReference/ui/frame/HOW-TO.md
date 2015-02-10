@@ -9,11 +9,11 @@ To perform navigation, you will need a reference to the topmost frame of the app
 var frameModule = require("ui/frame");
 var topmost = frameModule.topmost();
 ```
-# Navigating to a Module
+### Navigating to a Module
 ``` JavaScript
 topmost.navigate("app/details-page");
 ```
-# Navigating with a Factory Function
+### Navigating with a Factory Function
 ``` JavaScript
 var factoryFunc = function () {
     var label = new labelModule.Label();
@@ -24,7 +24,7 @@ var factoryFunc = function () {
 };
 topmost.navigate(factoryFunc);
 ```
-# Navigating with NavigationEntry
+### Navigating with NavigationEntry
 ``` JavaScript
 var navigationEntry = {
     moduleName: "app/details-page",
@@ -33,7 +33,7 @@ var navigationEntry = {
 };
 topmost.navigate(navigationEntry);
 ```
-# Navigating Back
+### Navigating Back
 ``` JavaScript
 topmost.goBack();
 ```

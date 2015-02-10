@@ -55,6 +55,7 @@
  - ["ui/progress"](ui/progress/)
  - ["ui/scroll-view"](ui/scroll-view/)
  - ["ui/search-bar"](ui/search-bar/)
+ - ["ui/segmented-bar"](ui/segmented-bar/)
  - ["ui/slide-out"](ui/slide-out/)
  - ["ui/slider"](ui/slider/)
  - ["ui/styling"](ui/styling/)

@@ -4,6 +4,7 @@ title: "Class ui/enums.Stretch"
 description: "Class ui/enums.Stretch"
 ---
 ## Namespace: "ui/enums".Stretch
+Describes how content is resized to fill its allocated space.
 
 ##### Variables
  - **none** - _String_.    

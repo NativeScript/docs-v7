@@ -8,7 +8,7 @@ Displaying dialogs requires the "ui/dialogs" module.
 ``` JavaScript
 var dialogs = require("ui/dialogs");
 ```
-## Action
+### Action
 ``` JavaScript
 var options = {
     title: "Race Selection",
@@ -20,7 +20,7 @@ dialogs.action(options).then(function (result) {
     console.log(result);
 });
 ```
-## Confirm
+### Confirm
 ``` JavaScript
 var options = {
     title: "Race Selection",
@@ -34,7 +34,7 @@ dialogs.confirm(options).then(function (result) {
     console.log(result);
 });
 ```
-## Alert
+### Alert
 ``` JavaScript
 var options = {
     title: "Race Selection",
@@ -45,7 +45,7 @@ dialogs.alert(options).then(function () {
     console.log("Race Chosen!");
 });
 ```
-## Login
+### Login
 ``` JavaScript
 var options = {
     title: "Login",
@@ -58,7 +58,7 @@ dialogs.login(options).then(function (loginResult) {
     console.log(loginResult.result);
 });
 ```
-## Prompt
+### Prompt
 ``` JavaScript
 var options = {
     title: "Name",
