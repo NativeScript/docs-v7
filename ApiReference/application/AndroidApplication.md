@@ -39,6 +39,7 @@ The abstraction of an Android-specific application object.
 ##### Functions
  - **getActivity(** intent _Object_ **)** _Object_  
      This method is called by the JavaScript Bridge when navigation to a new activity is triggered.
-The return value of this method should be com.tns.NativeScriptActivity.extend implementation.
-   - **intent** - _Object_
+   - **intent** - _Object_  
+     - Native (android) intent used to create the activity.
+Returns com.tns.NativeScriptActivity.extend implementation.
    - _**return**_ - _Object_

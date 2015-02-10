@@ -13,15 +13,15 @@ The native script architectures can be generally explained with this diagram:
 ![architecture diagram]( img/architecture.png "architecture diagram")
 
 * **Native OS** - At the bottom level is the native OS (Android, iOS and soon Windows).
-* **NativeScript runtime** runs the JavaScript code of your application. The runtime also provides a way to call all the native APIs of the platform the app is running on. This means that you have access to all the native capabilities of the platform. 
+* **NativeScript runtime** runs the JavaScript code of your application. The runtime also provides a way to call all the native APIs of the platform the app is running on. This means that you have access to all the native capabilities of the platform.
 * **NativeScript Modules** are a set of platform-agnostic libraries that are build on top of the runtime. These modules are wrap the platform specific code, providing a common API.
 * **Application Code** - your application's code. Building an application on top of the NativeScript modules means that you will not have write platform-specific code. This should be the case most of the time. However, you still have the option to reach the native API trough the NativeSctipt runtime.
 
-## Requirements 
+## Requirements
 Currently NativeScript can run on the following platforms:
 
 * Android 4.2+ (equivalent to Android API level 17+)
-* iOS 7.1+ 
+* iOS 7.1+
 
 For NativeScript development you have the following options:
 
@@ -33,11 +33,11 @@ with a IDE or text editor of your choice.
 In the following example we will start with a empty NativeScript project and build a simple hello word sample application.
 
 ### Creating Blank Project
-Let's start by creating a blank project. As we mentioned you can either use the [NativeScript CLI](https://github.com/NativeScript/nativescript-cli) or NativeScript Blank project template in AppBuilder(available for JavaScript or TypeScript). 
-Form here on we will be working in the `App` folder inside the project. 
+Let's start by creating a blank project. As we mentioned you can either use the [NativeScript CLI](https://github.com/NativeScript/nativescript-cli) or NativeScript Blank project template in AppBuilder(available for JavaScript or TypeScript).
+Form here on we will be working in the `App` folder inside the project.
 
 ### Adding UI
-The project we just created has a single empty page. The UI of the page is defined declaratively in the 'main-page.xml' file. In the project there are also `main-page.js` (or `main-page.ts`) and `main-page.css` files that will hold applications code and styles for this page. 
+The project we just created has a single empty page. The UI of the page is defined declaratively in the 'main-page.xml' file. In the project there are also `main-page.js` (or `main-page.ts`) and `main-page.css` files that will hold applications code and styles for this page.
 
 Let's add some UI in `main-page.xml`:
 ```XML
@@ -50,14 +50,14 @@ Let's add some UI in `main-page.xml`:
   </StackPanel>
 </Page>
 ```
-We have added a title label, a button and a message label that we are going to use in the next section. 
+We have added a title label, a button and a message label that we are going to use in the next section.
 Here is the result:
 ![step1 android](img/getting-started/step1-android.png "step1 android")![step1 ios](img/getting-started/step1-ios.png "step1 ios")
 
 *Note: UI declaration is covered in depth in the [UI with XML](ui-with-xml.md) article.*
 
 ### Creating a View-Model
-[MVVM](http://en.wikipedia.org/wiki/Model_View_ViewModel) pattern is the preferred approach when developing mobile applications with NativeScript. In this section we will create and bind a view-model to the page we already have. 
+[MVVM](http://en.wikipedia.org/wiki/Model_View_ViewModel) pattern is the preferred approach when developing mobile applications with NativeScript. In this section we will create and bind a view-model to the page we already have.
 The view-model will hold simple counter which will be used to update a message each time the user taps on the button.  
 
 Create a `view-models` folder and `main-view-model.js` ( or `main-view-model.ts` if you are using TypeScript) file in it:
@@ -144,8 +144,8 @@ main-page.xml
 <Page loaded="pageLoaded">
   <StackPanel>
     <Label text="Tap the button" style="horizontal-align: center"/>
-    <Button text="TAP" tap="{{ tapAction }}"/>
-    <Label text="{{ message }}" textWrap="true" style="horizontal-align: center"/>
+    {%raw%}<Button text="TAP" tap="{{ tapAction }}"/>
+    <Label text="{{ message }}" textWrap="true" style="horizontal-align: center"/>{%endraw%}
   </StackPanel>
 </Page>
 ```

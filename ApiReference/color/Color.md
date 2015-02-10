@@ -3,7 +3,8 @@ nav-title: "Class color.Color"
 title: "Class color.Color"
 description: "Class color.Color"
 ---
-## Class: "color".Color
+## Class: "color".Color  
+Represents a color object. Stores all color components (alpha (opacity), red, green, blue) in a [0..255] range.
 
 ##### Static Functions
  - **equals(** value1 [_Color_](../color/Color.md), value2 [_Color_](../color/Color.md) **)** _Boolean_  

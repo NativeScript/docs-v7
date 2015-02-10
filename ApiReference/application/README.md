@@ -14,7 +14,7 @@ Object | Description
 ------|------------
 [NativeScriptError](../application/NativeScriptError.md) | An extended JavaScript Error which will have the nativeError property initialized in case the error is caused by executing platform-specific code.
 [AndroidApplication](../application/AndroidApplication.md) | The abstraction of an Android-specific application object.
-[iOSApplication](../application/iOSApplication.md) | 
+[iOSApplication](../application/iOSApplication.md) | The abstraction of an iOS-specific application object.
 
 ##### Variables
  - **mainModule** - _String_.    

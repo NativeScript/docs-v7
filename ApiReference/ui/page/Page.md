@@ -23,8 +23,10 @@ _Inherits:_ [_ContentView_](../../ui/content-view/ContentView.md)
      - The data passed to the page through the NavigationEntry.context property.
  - **onNavigatingFrom()**  
      A method called before navigating from the page.
- - **onNavigatedFrom()**  
+ - **onNavigatedFrom(** isBackNavigation _Boolean_ **)**  
      A method called after navigated from the page.
+   - **isBackNavigation** - _Boolean_  
+     - True if the Page is being navigated from using the Frame.goBack() method, false otherwise.
  - **_getStyleScope()** _Object_
    - _**return**_ - _Object_
  - **on(** event _String_, callback _Function_... **)**

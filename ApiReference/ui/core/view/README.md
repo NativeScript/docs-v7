@@ -20,7 +20,7 @@ Object | Description
 [Options](../../../ui/core/view/Options.md) | 
 [AddArrayFromBuilder](../../../ui/core/view/AddArrayFromBuilder.md) | 
 [AddChildFromBuilder](../../../ui/core/view/AddChildFromBuilder.md) | 
-[ApplyXmlAttributes](../../../ui/core/view/ApplyXmlAttributes.md) | 
+[ApplyXmlAttributes](../../../ui/core/view/ApplyXmlAttributes.md) | Defines an interface used to create a member of a class from string representation (used in xml declaration).
 
 Namespace | Description
 ------|------------
