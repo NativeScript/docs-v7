@@ -4,7 +4,6 @@ title: "http How-To"
 description: "Examples for using http"
 ---
 # Http module
-Using http methods requires to load "http" module.
 ``` JavaScript
 var http = require("http");
 ```

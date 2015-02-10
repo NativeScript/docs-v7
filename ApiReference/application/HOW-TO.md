@@ -24,13 +24,13 @@ Accessing the Android-specific object instance (will be undefined if running on 
 ``` JavaScript
 var androidApp = app.android;
 ```
-### Using the Android Application context
+Using the Android Application context
 ``` JavaScript
 var context = app.android.context;
 // get the Files (Documents) folder (directory)
 var dir = context.getFilesDir();
 ```
-### Tracking the current Activity
+Tracking the current Activity
 ``` JavaScript
 if (androidApp.foregroundActivity === androidApp.foregroundActivity) {
 }

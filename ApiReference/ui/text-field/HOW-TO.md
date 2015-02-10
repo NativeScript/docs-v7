@@ -26,6 +26,7 @@ Using a TextField requires the text-field module.
 ``` JavaScript
 var textFieldModule = require("ui/text-field");
 var observable = require("data/observable");
+var enums = require("ui/enums");
 ```
 ## Creating a TextField
 ``` JavaScript
@@ -81,4 +82,12 @@ textField.bind(options, model);
 // textField.secure is now true
 model.set("secure", false);
 // textField.secure is now false
+```
+## Setting the keyboard type
+``` JavaScript
+textField.keyboardType = enums.KeyboardType.email;
+```
+## Setting the return key type
+``` JavaScript
+textField.returnKeyType = enums.ReturnKeyType.search;
 ```

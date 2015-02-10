@@ -8,7 +8,7 @@ Using a CanvasPanel requires the CanvasPanel module.
 ``` JavaScript
 var canvasPanelModule = require("ui/panels/canvas-panel");
 ```
-### Creating and populating a CanvasPanel with children
+## Creating and populating a CanvasPanel with children
 ``` JavaScript
 var canvasPanel = new canvasPanelModule.CanvasPanel();
 canvasPanel.width = 230;
