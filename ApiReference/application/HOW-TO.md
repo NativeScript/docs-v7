@@ -5,7 +5,7 @@ description: "Examples for using application"
 ---
 # Application
 The Application module provides abstraction over the platform-specific Application implementations.
-It is the main NativeScript module and is required for other NativeScript modules to work properly.
+It is the main BCL module and is required for other BCL modules to work properly.
 The default bootstrap.js implementation for each platform loads and initializes this module.
 ``` JavaScript
 var app = require("application");
@@ -24,13 +24,13 @@ Accessing the Android-specific object instance (will be undefined if running on 
 ``` JavaScript
 var androidApp = app.android;
 ```
-Using the Android Application context
+### Using the Android Application context
 ``` JavaScript
 var context = app.android.context;
 // get the Files (Documents) folder (directory)
 var dir = context.getFilesDir();
 ```
-Tracking the current Activity
+### Tracking the current Activity
 ``` JavaScript
 if (androidApp.foregroundActivity === androidApp.foregroundActivity) {
 }

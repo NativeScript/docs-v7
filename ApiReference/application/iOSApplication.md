@@ -3,7 +3,8 @@ nav-title: "Class application.iOSApplication"
 title: "Class application.iOSApplication"
 description: "Class application.iOSApplication"
 ---
-## Object: "application".iOSApplication
+## Object: "application".iOSApplication  
+The abstraction of an iOS-specific application object.
 
 ##### Properties
  - **rootController** - _UIViewController_.    

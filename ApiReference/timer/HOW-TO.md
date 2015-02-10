@@ -4,6 +4,7 @@ title: "timer How-To"
 description: "Examples for using timer"
 ---
 # Timer module
+### How to require timer module
 ``` JavaScript
 require("globals");
 // OR
