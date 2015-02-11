@@ -5,7 +5,7 @@ description: "Class ui/editable-text-base.Options"
 ---
 ## Object: "ui/editable-text-base".Options  
 _Extends:_ [_Options_](../../ui/text-base/Options.md)  
-An interface for common options when creating an editable text component.
+An interface for common options used to create an editable text component.
 
 ##### Properties
  - **keyboardType** - _(optional)_ - _String_.    

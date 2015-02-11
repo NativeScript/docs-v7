@@ -8,7 +8,7 @@ Using a label requires the Label module.
 ``` JavaScript
 var LabelModule = require("ui/label");
 ```
-Binding the Label text property to a view-model property.
+### Binding the Label text property to a view-model property.
 ```XML
 <Page>
   <Label text="{{ title }}" />

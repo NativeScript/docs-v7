@@ -187,8 +187,8 @@ Finally - replace the inline styles in the `main-page.xml` with `cssClass` attri
 <Page loaded="pageLoaded">
   <StackPanel>
     <Label text="Tap the button" cssClass="title"/>
-    <Button text="TAP" tap="{{ tapAction }}" />
-    <Label text="{{ message }}" cssClass="message" textWrap="true"/>
+    {%raw%}<Button text="TAP" tap="{{ tapAction }}" />
+    <Label text="{{ message }}" cssClass="message" textWrap="true"/>{%endraw%}
   </StackPanel>
 </Page>
 ```

@@ -19,4 +19,5 @@ Namespace | Description
 [knownEvents](../../ui/search-bar/knownEvents/) | Known event names.
 
 ##### Variables
- - **textProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
+ - **textProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Dependency property used to support binding operations related to search-bar text.

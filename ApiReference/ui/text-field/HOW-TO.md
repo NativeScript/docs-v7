@@ -4,12 +4,17 @@ title: "TextField How-To"
 description: "Examples for using TextField"
 ---
 # TextField
-Binding two TextFields text property to observable view-model property.
+Using a TextField requires the text-field module.
+``` JavaScript
+var textFieldModule = require("ui/text-field");
+var observable = require("data/observable");
+```
+### Binding two TextFields text property to observable view-model property.
 ```XML
 <Page loaded="pageLoaded">
  <StackPanel orientation="vertical">
-   <TextField text="{{ someProperty }}" />
-   <TextField text="{{ someProperty }}" />
+   {%raw%}<TextField text="{{ someProperty }}" />
+   <TextField text="{{ someProperty }}" />{%endraw%}
  </StackPanel>
 </Page>
 ```
@@ -22,21 +27,15 @@ function pageLoaded(args) {
 }
 exports.pageLoaded = pageLoaded;
 ```
-Using a TextField requires the text-field module.
-``` JavaScript
-var textFieldModule = require("ui/text-field");
-var observable = require("data/observable");
-var enums = require("ui/enums");
-```
 ## Creating a TextField
 ``` JavaScript
 var textField = new textFieldModule.TextField();
 ```
-## Setting the text of a TextField
+### Setting the text of a TextField
 ``` JavaScript
 textField.text = "Hello, world!";
 ```
-## Binding text property directly to model
+### Binding text property directly to model
 ``` JavaScript
 var model = new observable.Observable();
 model.set("username", "john");
@@ -49,11 +48,11 @@ textField.bind(options, model);
 model.set("username", "mary");
 // textField.text is now "mary"
 ```
-## Setting the hint of a TextField
+### Setting the hint of a TextField
 ``` JavaScript
 textField.hint = "type your username here";
 ```
-## Binding hint property directly to model
+### Binding hint property directly to model
 ``` JavaScript
 var model = new observable.Observable();
 model.set("hint", "type your username here");
@@ -66,11 +65,11 @@ textField.bind(options, model);
 model.set("hint", "type your password here");
 // textField.hint is now "type your password here"
 ```
-## Setting the secure property of a TextField
+### Setting the secure property of a TextField
 ``` JavaScript
 textField.secure = true;
 ```
-## Binding secure property directly to model
+### Binding secure property directly to model
 ``` JavaScript
 var model = new observable.Observable();
 model.set("secure", true);
@@ -82,12 +81,4 @@ textField.bind(options, model);
 // textField.secure is now true
 model.set("secure", false);
 // textField.secure is now false
-```
-## Setting the keyboard type
-``` JavaScript
-textField.keyboardType = enums.KeyboardType.email;
-```
-## Setting the return key type
-``` JavaScript
-textField.returnKeyType = enums.ReturnKeyType.search;
 ```

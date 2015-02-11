@@ -37,13 +37,13 @@ var onErrorCallback = function (error) {
 };
 var xmlParser = new xmlModule.XmlParser(onEventCallback, onErrorCallback);
 xmlParser.parse("<Document><First attr1=\"attribute1\" attr2=\"attribute2\">I am first</First><Second>I am second</Second></Document>");
+// Calling parse will produce the following console output:
+// StartElement Document
+// StartElement First, Attributes: attr1 = "attribute1" attr2 = "attribute2"
+// Text = "I am first"
+// EndElement First
+// StartElement Second
+// Text = "I am second"
+// EndElement Second
+// EndElement Document
 ```
-Calling parse will produce the following console output:
-StartElement Document
-StartElement First, Attributes: attr1 = "attribute1" attr2 = "attribute2"
-Text = "I am first"
-EndElement First
-StartElement Second
-Text = "I am second"
-EndElement Second
-EndElement Document

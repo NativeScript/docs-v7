@@ -14,20 +14,17 @@ Binding the image source property to a view-model property.
   <Image source="{{ thumbnailImageSource }}" />
 </Page>
 ```
-# Image
-How to create an image and set its source.
+### How to create an image and set its source.
 ``` JavaScript
 var image = new ImageModule.Image();
 image.source = ImageSourceModule.fromResource("logo");
 ```
-# Image
-How to create an image and set its url.
+### How to create an image and set its url.
 ``` JavaScript
 var image = new ImageModule.Image();
 image.url = "https://www.google.bg/images/srpr/logo11w.png";
 ```
-# Image
-How to set image stretching.
+### How to set image stretching.
 ``` JavaScript
 var image = new ImageModule.Image();
 image.source = ImageSourceModule.fromFile(imagePath);

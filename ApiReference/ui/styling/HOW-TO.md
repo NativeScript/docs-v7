@@ -4,7 +4,7 @@ title: "styling How-To"
 description: "Examples for using styling"
 ---
 # Styling
-## Setting CSS to a page
+### Setting CSS to a page
 ``` JavaScript
 var page = new pageModule.Page();
 page.css = ".title { font-size: 20 }";
@@ -42,3 +42,4 @@ page.css = "button:pressed { color: red; }";
 // Will be red when pressed
 btn = new buttonModule.Button();
 ```
+For information and example how to use style properties please refer to special [**Styling**](../../../styling.md) topic. 

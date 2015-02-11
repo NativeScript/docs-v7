@@ -4,6 +4,7 @@ title: "local-settings How-To"
 description: "Examples for using local-settings"
 ---
 # Local Settings
+Using local settings methods requires to load "local settings" module.
 ``` JavaScript
 var LocalSettings = require("local-settings");
 ```

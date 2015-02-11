@@ -15,8 +15,10 @@ The pre-required `app` module is used throughout the following code snippets.
 Use the following code in case you need to check somewhere in your code the platform you are running against:
 ``` JavaScript
 if (app.android) {
+    console.log("We are running on Android device!");
 }
 else if (app.ios) {
+    console.log("We are running on iOS device");
 }
 ```
 ### Using the Android-specific implementation
@@ -24,14 +26,15 @@ Accessing the Android-specific object instance (will be undefined if running on 
 ``` JavaScript
 var androidApp = app.android;
 ```
-Using the Android Application context
+### Using the Android Application context
 ``` JavaScript
 var context = app.android.context;
 // get the Files (Documents) folder (directory)
 var dir = context.getFilesDir();
 ```
-Tracking the current Activity
+### Tracking the current Activity
 ``` JavaScript
 if (androidApp.foregroundActivity === androidApp.startActivity) {
+    console.log("We are currently in the main (start) activity of the application");
 }
 ```

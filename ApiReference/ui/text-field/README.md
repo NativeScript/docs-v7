@@ -16,4 +16,4 @@ Class | Description
 
 Object | Description
 ------|------------
-[Options](../../ui/text-field/Options.md) | 
+[Options](../../ui/text-field/Options.md) | Defines interface for an optional parameter used to create a editable-text-base component.

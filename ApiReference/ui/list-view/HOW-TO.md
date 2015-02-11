@@ -13,13 +13,13 @@ Other modules which will be used in the code samples in this article:
 var observableArray = require("data/observable-array");
 var labelModule = require("ui/label");
 ```
-Binding the ListView items property to collection in the view-model.
+### Binding the ListView items property to collection in the view-model.
 ```XML
 <Page>
   <ListView items="{{ myItems }}" />
 </Page>
 ```
-Attaching event handler for the ListView itemTap event.
+### Attaching event handler for the ListView itemTap event.
 ```XML
 <Page>
   <ListView items="{{ myItems }}" itemTap="listViewItemTap" />
@@ -31,7 +31,7 @@ function listViewItemTap(args) {
 }
 exports.listViewItemTap = listViewItemTap;
 ```
-Attaching event handler for the ListView loadMoreItems event.
+### Attaching event handler for the ListView loadMoreItems event.
 ```XML
 <Page>
  <ListView items="{{ myItems }}" loadMoreItems="listViewLoadMoreItems" />
@@ -43,7 +43,7 @@ function listViewLoadMoreItems(args) {
 }
 exports.listViewLoadMoreItems = listViewLoadMoreItems;
 ```
-Define the ListView itemTemplate property.
+### Define the ListView itemTemplate property.
 ```XML
 <Page>
  <ListView items="{{ myItems }}">
@@ -53,11 +53,11 @@ Define the ListView itemTemplate property.
  </ListView>
 </Page>
 ```
-## Creating a ListView
+### Creating a ListView
 ``` JavaScript
 var listView = new listViewModule.ListView();
 ```
-## Using ListView with Array
+### Using ListView with Array
 The itemLoading event is used to create the UI for each item that is shown in the ListView.
 ``` JavaScript
 var colors = ["red", "green", "blue"];
@@ -70,14 +70,14 @@ listView.on("itemLoading", function (args) {
     args.view.text = colors[args.index];
 });
 ```
-Note, that changing the array after the list view is shown will not update the UI.
+> Note, that changing the array after the list view is shown will not update the UI.
 You can force-update the UI using the refresh() method.
 ``` JavaScript
 colors.push("yellow");
 // Manually trigger the update so that the new color is shown.
 listView.refresh();
 ```
-## Using ListView with ObservableArray
+### Using ListView with ObservableArray
 ``` JavaScript
 var colors = new observableArray.ObservableArray(["red", "green", "blue"]);
 listView.items = colors;
@@ -90,7 +90,7 @@ listView.on("itemLoading", function (args) {
     indexes[args.index] = true;
 });
 ```
-When using ObservableArray the list view will be automatically updated when items are added or removed form the array.
+> When using ObservableArray the list view will be automatically updated when items are added or removed form the array.
 ``` JavaScript
 colors.push("yellow");
 // The ListView will be updated automatically.

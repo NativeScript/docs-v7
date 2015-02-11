@@ -4,7 +4,7 @@ title: "TabView How-To"
 description: "Examples for using TabView"
 ---
 # TabView
-Declaring the TabView.
+### Declaring the TabView in xml.
 ```XML
 <Page>
  <TabView>
@@ -32,7 +32,7 @@ function _createTabView() {
     ``` JavaScript
     var tabView = new tabViewModule.TabView();
     ```
-## Binding TabView.items
+### Binding TabView.items
 ``` JavaScript
 var items = [];
 var stackPanel0 = new stackPanelModule.StackPanel();
@@ -55,7 +55,7 @@ var tabEntry1 = {
 items.push(tabEntry1);
 tabView.items = items;
 ```
-## Selecting a tab programmatically
+### Selecting a tab programmatically
 ``` JavaScript
 tabView.selectedIndex = 9;
 ```
