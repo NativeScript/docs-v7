@@ -4,32 +4,33 @@ title: "button How-To"
 description: "Examples for using button"
 ---
 # Button
-Using a button requires the Button module.
+### Declaring button module
+Button module is required to use any button feature.
 ``` JavaScript
 var buttonModule = require("ui/button");
 var observable = require("data/observable");
 ```
-Attaching event handler for the button tap event.
+### Attaching event handler for the button tap event.
 ```XML
 <Page>
   <Button tap="buttonTap" />
 </Page>
 ```
-## Creating a button
+### Creating a button
 ``` JavaScript
 var button = new buttonModule.Button();
 ```
-## Setting the text of a button
+### Setting the text of a button
 ``` JavaScript
 button.text = "Hello, world!";
 ```
-## Responding to the tap event
+### Responding to the tap event
 ``` JavaScript
 button.on(buttonModule.knownEvents.tap, function (args) {
     // Do something
 });
 ```
-## Binding text property directly to model
+### Binding text property directly to model
 ``` JavaScript
 var model = new observable.Observable();
 model.set("buttonTitle", "OK");

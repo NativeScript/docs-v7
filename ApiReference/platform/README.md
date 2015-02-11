@@ -12,9 +12,9 @@ var platform = require("platform");
 
 Class | Description
 ------|------------
-[device](../platform/device.md) | 
-[screen](../platform/screen.md) | 
+[device](../platform/device.md) | An object containing device specific information.
+[screen](../platform/screen.md) | An object describing general information about a display.
 
 Object | Description
 ------|------------
-[ScreenMetrics](../platform/ScreenMetrics.md) | 
+[ScreenMetrics](../platform/ScreenMetrics.md) | An object containing screen information.

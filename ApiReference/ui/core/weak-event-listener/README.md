@@ -16,4 +16,4 @@ Class | Description
 
 Object | Description
 ------|------------
-[WeakEventListenerOptions](../../../ui/core/weak-event-listener/WeakEventListenerOptions.md) | An interface with options needed for creating weak event listener.
+[WeakEventListenerOptions](../../../ui/core/weak-event-listener/WeakEventListenerOptions.md) | An interface that defines all options needed for creating weak event listener.

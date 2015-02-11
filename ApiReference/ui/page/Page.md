@@ -4,11 +4,14 @@ title: "Class ui/page.Page"
 description: "Class ui/page.Page"
 ---
 ## Class: "ui/page".Page  
-_Inherits:_ [_ContentView_](../../ui/content-view/ContentView.md)
+_Inherits:_ [_ContentView_](../../ui/content-view/ContentView.md)  
+Represents a logical unit for navigation (inside Frame).
 
 ##### Instance Properties
- - **css** - _String_.
- - **navigationContext** - _Object_.
+ - **css** - _String_.    
+  A valid css string which will be applied for all nested UI components (based on css rules).
+ - **navigationContext** - _Object_.    
+  A property that is used to pass a data from another page (while navigate to).
  - **frame** - [_Frame_](../../ui/frame/Frame.md).    
   Gets the Frame object controlling this instance.
 

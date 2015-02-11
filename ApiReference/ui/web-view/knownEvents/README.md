@@ -7,4 +7,5 @@ description: "Class ui/web-view.knownEvents"
 Known event names.
 
 ##### Variables
- - **finished** - _String_.
+ - **finished** - _String_.    
+  Raised when web-view is completely loaded.

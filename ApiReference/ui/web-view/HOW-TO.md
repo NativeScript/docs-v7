@@ -8,11 +8,11 @@ Using a WebView requires the web-view module.
 ``` JavaScript
 var webViewModule = require("ui/web-view");
 ```
-## Creating a WebView
+### Creating a WebView
 ``` JavaScript
 var webView = new webViewModule.WebView();
 ```
-## Using WebView,
+### Using WebView,
 ``` JavaScript
 webView.on(webViewModule.knownEvents.finished, function (args) {
     var message;

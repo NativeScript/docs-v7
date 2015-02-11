@@ -4,7 +4,8 @@ title: "Class ui/stylingstylers.Styler"
 description: "Class ui/stylingstylers.Styler"
 ---
 ## Class: "ui/styling"stylers.Styler  
-Represents an objects that holds all StylePropertyChangedHandlers for a given view type.
+Represents a sceleton for an object that holds all style related callbacks and registers handlers.
+Used for better code readability.
 
 ##### Static Functions
  - **registerHandlers()**

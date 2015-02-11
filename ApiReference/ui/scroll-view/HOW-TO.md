@@ -8,15 +8,15 @@ Using a ScrollView requires the ScrollView module.
 ``` JavaScript
 var scrollViewModule = require("ui/scroll-view");
 ```
-Declaring the ScrollView.
+### Declaring the ScrollView.
 ```XML
 <Page>
  <ScrollView>
-   <Image source="{{ someBigImage }}" />
+   {%raw%}<Image source="{{ someBigImage }}" />{%endraw%}
  </ScrollView>
 </Page>
 ```
-## Creating a ScrollView
+### Creating a ScrollView
 ``` JavaScript
 var scrollView = new scrollViewModule.ScrollView();
 ```

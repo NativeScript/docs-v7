@@ -4,7 +4,8 @@ title: "Class ui/image.Options"
 description: "Class ui/image.Options"
 ---
 ## Object: "ui/image".Options  
-_Extends:_ [_Options_](../../ui/core/view/Options.md)
+_Extends:_ [_Options_](../../ui/core/view/Options.md)  
+Provides common options for creating an image.
 
 ##### Properties
  - **source** - [_ImageSource_](../../image-source/ImageSource.md).    

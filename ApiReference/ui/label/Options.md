@@ -4,7 +4,8 @@ title: "Class ui/label.Options"
 description: "Class ui/label.Options"
 ---
 ## Object: "ui/label".Options  
-_Extends:_ [_Options_](../../ui/core/view/Options.md)
+_Extends:_ [_Options_](../../ui/core/view/Options.md)  
+Provides a set of most common options for creating a label.
 
 ##### Properties
  - **text** - _(optional)_ - _String_.    

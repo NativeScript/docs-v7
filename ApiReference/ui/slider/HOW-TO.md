@@ -8,12 +8,12 @@ Using a slider requires the Slider module.
 ``` JavaScript
 var sliderModule = require("ui/slider");
 ```
-Binding the Progress and Slider value properties to a observable view-model property.
+### Binding the Progress and Slider value properties to a observable view-model property.
 ```XML
 <Page loaded="pageLoaded">
  <StackPanel orientation="vertical">
-   <Progress value="{{ someProperty }}" />
-   <Slider value="{{ someProperty }}" />
+   {%raw%}<Progress value="{{ someProperty }}" />
+   <Slider value="{{ someProperty }}" />{%endraw%}
  </StackPanel>
 </Page>
 ```
@@ -26,17 +26,17 @@ function pageLoaded(args) {
 }
 exports.pageLoaded = pageLoaded;
 ```
-## Creating a slider
+### Creating a slider
 ``` JavaScript
 var slider = new sliderModule.Slider();
 ```
-## Setting the slider value and bounds
+### Setting the slider value and bounds
 ``` JavaScript
 slider.maxValue = 120;
 slider.value = 80;
 slider.minValue = 50;
 ```
-## Binding value property to a model
+### Binding value property to a model
 ``` JavaScript
 var model = new observable.Observable();
 model.set("age", 21);

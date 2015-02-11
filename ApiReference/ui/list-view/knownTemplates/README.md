@@ -4,7 +4,7 @@ title: "Class ui/list-view.knownTemplates"
 description: "Class ui/list-view.knownTemplates"
 ---
 ## Namespace: "ui/list-view".knownTemplates
-Known event names.
+Known template names.
 
 ##### Variables
  - **itemTemplate** - _String_.    

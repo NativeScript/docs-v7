@@ -12,11 +12,11 @@ Other frequently used modules when working with a WrapPanel include:
 ``` JavaScript
 var enums = require("ui/enums");
 ```
-## Creating a WrapPanel
+### Creating a WrapPanel
 ``` JavaScript
 var wrapPanel = new wrapPanelModule.WrapPanel();
 ```
-## Setting the orientation of a wrap-panel.
+### Setting the orientation of a wrap-panel.
 ``` JavaScript
 wrapPanel.orientation = enums.Orientation.vertical;
 ```

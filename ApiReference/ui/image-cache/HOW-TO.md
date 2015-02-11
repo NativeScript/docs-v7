@@ -10,7 +10,7 @@ var imageCacheModule = require("ui/image-cache");
 var imageSource = require("image-source");
 var fs = require("file-system");
 ```
-## Requesting Images
+### Requesting Images
 ``` JavaScript
 var cache = new imageCacheModule.Cache();
 cache.invalid = imageSource.fromFile(fs.path.join(__dirname, "res/reddit-logo.png"));

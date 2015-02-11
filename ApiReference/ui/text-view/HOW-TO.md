@@ -4,12 +4,17 @@ title: "TextView How-To"
 description: "Examples for using TextView"
 ---
 # TextView
-Binding two TextViews text property to observable view-model property.
+Using a TextView requires the text-view module.
+``` JavaScript
+var textViewModule = require("ui/text-view");
+var observable = require("data/observable");
+```
+### Binding two TextViews text property to observable view-model property.
 ```XML
 <Page loaded="pageLoaded">
  <StackPanel orientation="vertical">
-   <TextView text="{{ someProperty }}" />
-   <TextView text="{{ someProperty }}" />
+   {%raw%}<TextView text="{{ someProperty }}" />
+   <TextView text="{{ someProperty }}" />{%endraw%}
  </StackPanel>
 </Page>
 ```
@@ -22,21 +27,15 @@ function pageLoaded(args) {
 }
 exports.pageLoaded = pageLoaded;
 ```
-Using a TextView requires the text-view module.
-``` JavaScript
-var textViewModule = require("ui/text-view");
-var observable = require("data/observable");
-var enums = require("ui/enums");
-```
-## Creating a TextView
+### Creating a TextView
 ``` JavaScript
 var textView = new textViewModule.TextView();
 ```
-## Setting the text of a TextView
+### Setting the text of a TextView
 ``` JavaScript
 textView.text = "Hello, world!";
 ```
-## Binding text property directly to model
+### Binding text property directly to model
 ``` JavaScript
 var model = new observable.Observable();
 model.set("username", "john");
@@ -49,11 +48,11 @@ textView.bind(options, model);
 model.set("username", "mary");
 // textView.text is now "mary"
 ```
-## Setting the editable property of a TextView
+### Setting the editable property of a TextView
 ``` JavaScript
 textView.editable = false;
 ```
-## Binding editable property directly to model
+### Binding editable property directly to model
 ``` JavaScript
 var model = new observable.Observable();
 model.set("editable", false);
@@ -65,12 +64,4 @@ textView.bind(options, model);
 // textView.editable is now false
 model.set("editable", true);
 // textView.editable is now true
-```
-## Setting the keyboard type
-``` JavaScript
-textView.keyboardType = enums.KeyboardType.email;
-```
-## Setting the return key type
-``` JavaScript
-textView.returnKeyType = enums.ReturnKeyType.search;
 ```

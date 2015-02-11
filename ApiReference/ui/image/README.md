@@ -16,4 +16,4 @@ Class | Description
 
 Object | Description
 ------|------------
-[Options](../../ui/image/Options.md) | 
+[Options](../../ui/image/Options.md) | Provides common options for creating an image.

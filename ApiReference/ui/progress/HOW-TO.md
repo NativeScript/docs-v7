@@ -11,7 +11,7 @@ var progressModule = require("ui/progress");
 Binding the Progress value property to a view-model property.
 ```XML
 <Page loaded="pageLoaded">
-  <Progress value="{{ someProperty }}" />
+  {%raw%}<Progress value="{{ someProperty }}" />{%endraw%}
 </Page>
 ```
 ```JS
@@ -21,11 +21,11 @@ function pageLoaded(args) {
 }
 exports.pageLoaded = pageLoaded;
 ```
-## Creating a progress view
+### Creating a progress view
 ``` JavaScript
 var progress = new progressModule.Progress();
 ```
-## Setting up the progress view
+### Setting up the progress view
 ``` JavaScript
 progress.maxValue = 255;
 progress.value = 16;

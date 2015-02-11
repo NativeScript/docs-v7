@@ -8,17 +8,17 @@ Using the activity indicator requires the ActivityIndicator module.
 ``` JavaScript
 var activityIndicatorModule = require("ui/activity-indicator");
 ```
-Binding the activity indicator busy property to a view-model property.
+### Binding the activity indicator busy property to a view-model property.
 ```XML
 <Page>
-  <ActivityIndicator busy="{{ isLoading }}" />
+  {%raw%}<ActivityIndicator busy="{{ isLoading }}" />{%endraw%}
 </Page>
 ```
-## Creating an activity indicator
+### Creating an activity indicator
 ``` JavaScript
 var indicator = new activityIndicatorModule.ActivityIndicator();
 ```
-## Showing activity indicator while image is loading
+### Showing activity indicator while image is loading
 ``` JavaScript
 var image = new imageModule.Image();
 var indicator = new activityIndicatorModule.ActivityIndicator();

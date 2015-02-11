@@ -5,10 +5,11 @@ description: "Examples for using platform"
 ---
 # Platform
 Information about the current device and screen are defined in the platform module
+### Declaring platform module to be available for further usage.
 ``` JavaScript
 var platformModule = require("platform");
 ```
-Getting information about the current device:
+### Getting information about the current device:
 ``` JavaScript
 console.log("Device model: " + platformModule.device.model);
 console.log("Device type: " + platformModule.device.deviceType);
