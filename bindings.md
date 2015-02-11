@@ -34,7 +34,7 @@ In order to use this option binding options should set **twoWay as true**. Follo
 
 * Creating binding in code.
 
-	1. In order to create a working binding first we should have a source object. Source object should raise **propertyChange** event for every change of any property. NativeScript has a built-in class that fulfils that requirement (Observable). Following is a code snippet that creates an observable object instance.
+	1. In order to create a working binding first we should have a source object. Source object should raise **propertyChange** event for every change of any property. NativeScript has a built-in class that fulfills that requirement (Observable). Following is a code snippet that creates an observable object instance.
 
 		``` JavaScript
 		var observableModule = require("data/observable");
@@ -101,7 +101,7 @@ This example will update **targetTextField.text** property with a *"Text set via
 
 > Note: For an UI elements created with an xml declaration when data binding is set **twoWay** option is **true** by default.
 
-With an xml declaration we set only properies names both for target (text) and source (textSource). The interesting thing here is that there is no source of the binding (actually it is not set directly).
+With an xml declaration we set only properties names both for target (text) and source (textSource). The interesting thing here is that there is no source of the binding (actually it is not set directly).
 
 ##Binding source
 

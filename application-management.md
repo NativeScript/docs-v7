@@ -18,7 +18,7 @@ application.mainModule = "app/main-page";
 application.start();
 ```
 # Using Application Callbacks
-Each NativeScript application has several important lifecycle events. You can use those events to perform all kinds of needed maintanance and housekeeping:
+Each NativeScript application has several important lifecycle events. You can use those events to perform all kinds of needed maintenance and housekeeping:
 + onLaunch(context) - method called when application launch.
 + onSuspend() - method called when the application is suspended.
 + onResume() - method called when the application is resumed after it has been suspended.
