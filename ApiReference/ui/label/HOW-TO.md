@@ -11,7 +11,7 @@ var LabelModule = require("ui/label");
 ### Binding the Label text property to a view-model property.
 ```XML
 <Page>
-  <Label text="{{ title }}" />
+  {%raw%}<Label text="{{ title }}" />{%endraw%}
 </Page>
 ```
 ### How to set label text content

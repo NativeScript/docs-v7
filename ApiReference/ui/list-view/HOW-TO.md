@@ -16,13 +16,13 @@ var labelModule = require("ui/label");
 ### Binding the ListView items property to collection in the view-model.
 ```XML
 <Page>
-  <ListView items="{{ myItems }}" />
+  {%raw%}<ListView items="{{ myItems }}" />{%endraw%}
 </Page>
 ```
 ### Attaching event handler for the ListView itemTap event.
 ```XML
 <Page>
-  <ListView items="{{ myItems }}" itemTap="listViewItemTap" />
+  {%raw%}<ListView items="{{ myItems }}" itemTap="listViewItemTap" />{%endraw%}
 </Page>
 ```
 ```JS
@@ -34,7 +34,7 @@ exports.listViewItemTap = listViewItemTap;
 ### Attaching event handler for the ListView loadMoreItems event.
 ```XML
 <Page>
- <ListView items="{{ myItems }}" loadMoreItems="listViewLoadMoreItems" />
+ {%raw%}<ListView items="{{ myItems }}" loadMoreItems="listViewLoadMoreItems" />{%endraw%}
 </Page>
 ```
 ```JS
@@ -46,11 +46,11 @@ exports.listViewLoadMoreItems = listViewLoadMoreItems;
 ### Define the ListView itemTemplate property.
 ```XML
 <Page>
- <ListView items="{{ myItems }}">
+ {%raw%}<ListView items="{{ myItems }}">
     <ListView.itemTemplate>
        <Label text="{{ title || 'Downloading...' }}" textWrap="true" cssClass="title" />
     </ListView.itemTemplate>
- </ListView>
+ </ListView>{%endraw%}
 </Page>
 ```
 ### Creating a ListView

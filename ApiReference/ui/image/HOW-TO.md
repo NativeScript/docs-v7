@@ -11,7 +11,7 @@ var ImageModule = require("ui/image");
 Binding the image source property to a view-model property.
 ```XML
 <Page>
-  <Image source="{{ thumbnailImageSource }}" />
+  {%raw%}<Image source="{{ thumbnailImageSource }}" />{%endraw%}
 </Page>
 ```
 ### How to create an image and set its source.
