@@ -5,7 +5,7 @@ description: "UI Views"
 position: 8
 ---
 
-NativeScript ships with set of UI Views which can be used for building the UI of a mobile application. Most of these views wrap the corresponding native view for each platform, while providing a common API for working with them. For example the `Button` view renders an `android.widget.Button` on Android and `UIButton` on iOS. 
+NativeScript ships with set of UI Views which can be used for building the UI of a mobile application. Most of these views wrap the corresponding native view for each platform, while providing a common API for working with them. For example the `Button` view renders an [`android.widget.Button`](http://developer.android.com/reference/android/widget/Button.html) on Android and [`UIButton`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/) on iOS.
 
 In this topic we will to go trough the following views available in NativeScript platform:
 
@@ -89,7 +89,7 @@ Native component:
 | [android.widget.SearchView](http://developer.android.com/reference/android/widget/SearchView.html) | [UISearchBar](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/) |
 
 ##Switch
-The Switch view is a two-state toggle switch widget that can select between two options. 
+The Switch view is a two-state toggle switch widget that can select between two options.
 
 ![switch android](img/gallery/android/switchPage.png "switch android")![switch ios](img/gallery/ios/switchPage.png "switch ios")
 
@@ -177,7 +177,6 @@ Native component:
 | [android.support.v4.view.ViewPager](http://developer.android.com/reference/android/support/v4/view/ViewPager.html) | [UITabBarController](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/) |
 
 ##Dialogs
-The dialogs module contains function for displaying dialog windows. 
+The dialogs module contains function for displaying dialog windows.
 
 ![dialog-confirm android](img/gallery/android/dialogsPage_confirm.png "dialog-confirm android")![dialog-confirm ios](img/gallery/ios/dialogsPage_confirm.png "dialog-confirm ios")
-

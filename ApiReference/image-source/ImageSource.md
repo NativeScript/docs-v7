@@ -12,9 +12,9 @@ Encapsulates the common abstraction behind a platform specific object (typically
  - **width** - _Number_.    
   Gets the width of this instance. This is a read-only property.
  - **ios** - _UIImage_.    
-  The iOS-specific image instance. Will be undefined when running on Android.
+  The iOS-specific [UIImage](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/) instance. Will be undefined when running on Android.
  - **android** - _Object_.    
-  The Android-specific image instance. Will be undefined when running on iOS.
+  The Android-specific [image](http://developer.android.com/reference/android/graphics/Bitmap.html) instance. Will be undefined when running on iOS.
 
 ##### Instance Functions
  - **loadFromResource(** name _String_ **)** _Boolean_  

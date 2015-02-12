@@ -8,7 +8,7 @@ Utility module dealing with some iOS collections.
 
 ##### Functions
  - **jsArrayToNSArray(** str Array of _String_ **)** _Object_  
-     Converts java script array to NSArray.
+     Converts java script array to [NSArray](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/).
    - **str** - Array of _String_  
      - Java script string array to convert.
    - _**return**_ - _Object_

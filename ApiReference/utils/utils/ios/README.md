@@ -16,12 +16,12 @@ Namespace | Description
 
 ##### Functions
  - **getColor(** uiColor _UIColor_ **)** [_Color_](../../../color/Color.md)  
-     Gets NativeScript color from UIColor.
+     Gets NativeScript color from [UIColor](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/).
    - **uiColor** - _UIColor_  
      - UIColor instance used to create a NativeScript color.
    - _**return**_ - [_Color_](../../../color/Color.md)
  - **getActualHeight(** uiView _UIView_ **)** _Number_  
-     Gets actual height of a UIView widget.
+     Gets actual height of a [UIView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/) widget.
    - **uiView** - _UIView_  
      - An instance of UIView.
    - _**return**_ - _Number_

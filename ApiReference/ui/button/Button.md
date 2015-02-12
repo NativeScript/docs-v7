@@ -9,9 +9,9 @@ Represents a standard Button widget.
 
 ##### Instance Properties
  - **android** - _Object_.    
-  Gets the native android widget that represents the user interface for this component. Valid only when running on Android OS.
+  Gets the native [android widget](http://developer.android.com/reference/android/widget/Button.html) that represents the user interface for this component. Valid only when running on Android OS.
  - **ios** - _UIButton_.    
-  Gets the native UIButton that represents the user interface for this component. Valid only when running on iOS.
+  Gets the native [UIButton](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/) that represents the user interface for this component. Valid only when running on iOS.
  - **text** - _String_.    
   Gets or sets the text (label) displayed by this instance.
  - **formattedText** - [_FormattedString_](../../text/formatted-string/FormattedString.md).    

@@ -8,7 +8,7 @@ Utility module dealing with some android collections.
 
 ##### Functions
  - **stringArrayToStringSet(** str Array of _String_ **)** _Object_  
-     Converts string array into a String hash set.
+     Converts string array into a String [hash set](http://developer.android.com/reference/java/util/HashSet.html).
    - **str** - Array of _String_  
      - An array of strings to convert.
    - _**return**_ - _Object_

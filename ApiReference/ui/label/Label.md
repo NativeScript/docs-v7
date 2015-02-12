@@ -9,8 +9,8 @@ Represents a text label.
 
 ##### Instance Properties
  - **android** - _Object_.    
-  Gets the native android widget (android.widget.TextView) that represents the user interface for this component. Valid only when running on Android OS.
+  Gets the native [android widget](http://developer.android.com/reference/android/widget/TextView.html) that represents the user interface for this component. Valid only when running on Android OS.
  - **ios** - _UILabel_.    
-  Gets the native UILabel that represents the user interface for this component. Valid only when running on iOS.
+  Gets the native [UILabel](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/) that represents the user interface for this component. Valid only when running on iOS.
  - **textWrap** - _Boolean_.    
   Gets or sets whether the Label wraps text or not.

@@ -9,9 +9,9 @@ Represents a view that shows items in a vertically scrolling list.
 
 ##### Instance Properties
  - **android** - _Object_.    
-  Gets the native android widget (android.widget.ListView) that represents the user interface for this component. Valid only when running on Android OS.
+  Gets the native [android widget](http://developer.android.com/reference/android/widget/ListView.html) that represents the user interface for this component. Valid only when running on Android OS.
  - **ios** - _UITableView_.    
-  Gets the native iOS view (UITableView) that represents the user interface for this component. Valid only when running on iOS.
+  Gets the native [iOS view](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableView_Class/) that represents the user interface for this component. Valid only when running on iOS.
  - **isScrolling** - _Boolean_.    
   Gets a value indicating whether the ListView is currently scrolling.
  - **items** - _Object_.    

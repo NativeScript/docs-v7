@@ -9,9 +9,9 @@ Represents a search bar component.
 
 ##### Instance Properties
  - **android** - _Object_.    
-  Gets the native android widget that represents the user interface for this component. Valid only when running on Android OS.
+  Gets the native [android widget](http://developer.android.com/reference/android/widget/SearchView.html) that represents the user interface for this component. Valid only when running on Android OS.
  - **ios** - _UISearchBar_.    
-  Gets the native iOS UIView that represents the user interface for this component. Valid only when running on iOS.
+  Gets the native iOS [UISearchBar](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/) that represents the user interface for this component. Valid only when running on iOS.
  - **text** - _String_.    
   Gets or sets a search bar text.
 

@@ -9,8 +9,8 @@ Represents a UI widget which displays a progress indicator hinting the user for 
 
 ##### Instance Properties
  - **android** - _Object_.    
-  Gets the native android widget that represents the user interface for this component. Valid only when running on Android OS.
+  Gets the native [android widget](http://developer.android.com/reference/android/widget/ProgressBar.html) that represents the user interface for this component. Valid only when running on Android OS.
  - **ios** - _UIActivityIndicatorView_.    
-  Gets the native iOS UIActivityIndicatorView that represents the user interface for this component. Valid only when running on iOS.
+  Gets the native iOS [UIActivityIndicatorView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html) that represents the user interface for this component. Valid only when running on iOS.
  - **busy** - _Boolean_.    
   Gets or sets a value indicating whether the widget is currently displaying progress.

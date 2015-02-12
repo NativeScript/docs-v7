@@ -24,6 +24,6 @@ A data class that encapsulates common properties for a geolocation.
  - **timestamp** - _Date_.    
   The time at which this location was determined.
  - **android** - _Object_.    
-  The android-specific location object.
+  The android-specific [location](http://developer.android.com/reference/android/location/Location.html) object.
  - **ios** - _CLLocation_.    
-  The ios-specific location object.
+  The ios-specific [CLLocation](https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocation_Class/) object.

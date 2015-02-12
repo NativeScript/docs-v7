@@ -9,9 +9,9 @@ Represents a standard WebView widget.
 
 ##### Instance Properties
  - **android** - _Object_.    
-  Gets the native android widget that represents the user interface for this component. Valid only when running on Android OS.
+  Gets the native [android widget](http://developer.android.com/reference/android/webkit/WebView.html) that represents the user interface for this component. Valid only when running on Android OS.
  - **ios** - _UIWebView_.    
-  Gets the native UIButton that represents the user interface for this component. Valid only when running on iOS.
+  Gets the native [UIWebView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/) that represents the user interface for this component. Valid only when running on iOS.
  - **url** - _String_.    
   Gets or sets the url displayed by this instance.
  - **canGoBack** - _Boolean_.    

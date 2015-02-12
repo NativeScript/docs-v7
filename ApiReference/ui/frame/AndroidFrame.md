@@ -11,9 +11,9 @@ To start a new Activity, a new Frame instance should be created and navigated to
 
 ##### Properties
  - **rootViewGroup** - _Object_.    
-  Gets the native android.view.ViewGroup instance that represents the root layout part of the Frame.
+  Gets the native [android ViewGroup](http://developer.android.com/reference/android/view/ViewGroup.html) instance that represents the root layout part of the Frame.
  - **activity** - _Object_.    
-  Gets the native android.app.Activity instance associated with this Frame. In case of nested Frame objects, this property points to the activity of the root Frame.
+  Gets the native [android Activity](http://developer.android.com/reference/android/app/Activity.html) instance associated with this Frame. In case of nested Frame objects, this property points to the activity of the root Frame.
  - **currentActivity** - _Object_.    
   Gets the current (foreground) activity for the application. This property will recursively traverse all existing Frame objects and check for own Activity property.
  - **actionBar** - _Object_.    
@@ -27,5 +27,5 @@ To start a new Activity, a new Frame instance should be created and navigated to
  - **onActivityRequested(** intent _Object_ **)** _Object_  
      A function called by the Runtime whenever a new Activity is about to be opened.
    - **intent** - _Object_  
-     The native android.content.Intent object passed to the Activity's onCreate method.
+     The native [android Intent](http://developer.android.com/reference/android/content/Intent.html) object passed to the Activity's onCreate method.
    - _**return**_ - _Object_
