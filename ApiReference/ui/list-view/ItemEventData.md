@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface ui/list-view.ItemEventData"
-title: "Interface ui/list-view.ItemEventData"
-description: "Interface ui/list-view.ItemEventData"
+nav-title: "Object ui/list-view.ItemEventData"
+title: "Object ui/list-view.ItemEventData"
+description: "Object ui/list-view.ItemEventData"
 ---
 ## Object: "ui/list-view".ItemEventData  
 _Extends:_ [_EventData_](../../data/observable/EventData.md)  

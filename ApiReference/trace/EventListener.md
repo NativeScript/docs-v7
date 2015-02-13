@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface trace.EventListener"
-title: "Interface trace.EventListener"
-description: "Interface trace.EventListener"
+nav-title: "Object trace.EventListener"
+title: "Object trace.EventListener"
+description: "Object trace.EventListener"
 ---
 ## Object: "trace".EventListener  
 An interface used to trace information about specific event.  

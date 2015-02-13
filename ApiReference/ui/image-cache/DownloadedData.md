@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface ui/image-cache.DownloadedData"
-title: "Interface ui/image-cache.DownloadedData"
-description: "Interface ui/image-cache.DownloadedData"
+nav-title: "Object ui/image-cache.DownloadedData"
+title: "Object ui/image-cache.DownloadedData"
+description: "Object ui/image-cache.DownloadedData"
 ---
 ## Object: "ui/image-cache".DownloadedData  
 _Extends:_ [_EventData_](../../data/observable/EventData.md)  

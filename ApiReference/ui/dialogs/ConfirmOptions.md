@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface ui/dialogs.ConfirmOptions"
-title: "Interface ui/dialogs.ConfirmOptions"
-description: "Interface ui/dialogs.ConfirmOptions"
+nav-title: "Object ui/dialogs.ConfirmOptions"
+title: "Object ui/dialogs.ConfirmOptions"
+description: "Object ui/dialogs.ConfirmOptions"
 ---
 ## Object: "ui/dialogs".ConfirmOptions  
 _Extends:_ [_AlertOptions_](../../ui/dialogs/AlertOptions.md)  

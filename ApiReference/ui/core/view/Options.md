@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface ui/core/view.Options"
-title: "Interface ui/core/view.Options"
-description: "Interface ui/core/view.Options"
+nav-title: "Object ui/core/view.Options"
+title: "Object ui/core/view.Options"
+description: "Object ui/core/view.Options"
 ---
 ## Object: "ui/core/view".Options  
 Defines interface for an optional parameter used to create a view.

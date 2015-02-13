@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface ui/frame.iOSFrame"
-title: "Interface ui/frame.iOSFrame"
-description: "Interface ui/frame.iOSFrame"
+nav-title: "Object ui/frame.iOSFrame"
+title: "Object ui/frame.iOSFrame"
+description: "Object ui/frame.iOSFrame"
 ---
 ## Object: "ui/frame".iOSFrame  
 Represents the iOS-specific Frame object, aggregated within the common Frame one.

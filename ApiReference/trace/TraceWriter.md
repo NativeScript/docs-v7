@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface trace.TraceWriter"
-title: "Interface trace.TraceWriter"
-description: "Interface trace.TraceWriter"
+nav-title: "Object trace.TraceWriter"
+title: "Object trace.TraceWriter"
+description: "Object trace.TraceWriter"
 ---
 ## Object: "trace".TraceWriter  
 An interface used to define a writer used by trace to print (log).

@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface ui/frame.AndroidFrame"
-title: "Interface ui/frame.AndroidFrame"
-description: "Interface ui/frame.AndroidFrame"
+nav-title: "Object ui/frame.AndroidFrame"
+title: "Object ui/frame.AndroidFrame"
+description: "Object ui/frame.AndroidFrame"
 ---
 ## Object: "ui/frame".AndroidFrame  
 _Extends:_ [_Observable_](../../data/observable/Observable.md)  

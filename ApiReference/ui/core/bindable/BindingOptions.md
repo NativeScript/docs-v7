@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface ui/core/bindable.BindingOptions"
-title: "Interface ui/core/bindable.BindingOptions"
-description: "Interface ui/core/bindable.BindingOptions"
+nav-title: "Object ui/core/bindable.BindingOptions"
+title: "Object ui/core/bindable.BindingOptions"
+description: "Object ui/core/bindable.BindingOptions"
 ---
 ## Object: "ui/core/bindable".BindingOptions  
 The options object used in the Bindable.bind method.

@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface ui/page.NavigatedData"
-title: "Interface ui/page.NavigatedData"
-description: "Interface ui/page.NavigatedData"
+nav-title: "Object ui/page.NavigatedData"
+title: "Object ui/page.NavigatedData"
+description: "Object ui/page.NavigatedData"
 ---
 ## Object: "ui/page".NavigatedData  
 _Extends:_ [_EventData_](../../data/observable/EventData.md)  

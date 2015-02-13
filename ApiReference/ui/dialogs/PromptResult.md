@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface ui/dialogs.PromptResult"
-title: "Interface ui/dialogs.PromptResult"
-description: "Interface ui/dialogs.PromptResult"
+nav-title: "Object ui/dialogs.PromptResult"
+title: "Object ui/dialogs.PromptResult"
+description: "Object ui/dialogs.PromptResult"
 ---
 ## Object: "ui/dialogs".PromptResult  
 Provides result data from the prompt dialog.

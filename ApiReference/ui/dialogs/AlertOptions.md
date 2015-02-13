@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface ui/dialogs.AlertOptions"
-title: "Interface ui/dialogs.AlertOptions"
-description: "Interface ui/dialogs.AlertOptions"
+nav-title: "Object ui/dialogs.AlertOptions"
+title: "Object ui/dialogs.AlertOptions"
+description: "Object ui/dialogs.AlertOptions"
 ---
 ## Object: "ui/dialogs".AlertOptions  
 _Extends:_ [_DialogOptions_](../../ui/dialogs/DialogOptions.md)  

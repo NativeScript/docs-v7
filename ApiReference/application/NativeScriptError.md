@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface application.NativeScriptError"
-title: "Interface application.NativeScriptError"
-description: "Interface application.NativeScriptError"
+nav-title: "Object application.NativeScriptError"
+title: "Object application.NativeScriptError"
+description: "Object application.NativeScriptError"
 ---
 ## Object: "application".NativeScriptError  
 _Extends:_ _Error_  

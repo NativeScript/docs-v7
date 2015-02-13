@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface http.HttpContent"
-title: "Interface http.HttpContent"
-description: "Interface http.HttpContent"
+nav-title: "Object http.HttpContent"
+title: "Object http.HttpContent"
+description: "Object http.HttpContent"
 ---
 ## Object: "http".HttpContent  
 Encapsulates the content of an HttpResponse.

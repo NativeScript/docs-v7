@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface ui/core/view.AddChildFromBuilder"
-title: "Interface ui/core/view.AddChildFromBuilder"
-description: "Interface ui/core/view.AddChildFromBuilder"
+nav-title: "Object ui/core/view.AddChildFromBuilder"
+title: "Object ui/core/view.AddChildFromBuilder"
+description: "Object ui/core/view.AddChildFromBuilder"
 ---
 ## Object: "ui/core/view".AddChildFromBuilder  
 Defines an interface for adding a child element declared in xml.

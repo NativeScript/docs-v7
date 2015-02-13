@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface location.Options"
-title: "Interface location.Options"
-description: "Interface location.Options"
+nav-title: "Object location.Options"
+title: "Object location.Options"
+description: "Object location.Options"
 ---
 ## Object: "location".Options  
 Provides options for location monitoring.

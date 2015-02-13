@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface ui/image.Options"
-title: "Interface ui/image.Options"
-description: "Interface ui/image.Options"
+nav-title: "Object ui/image.Options"
+title: "Object ui/image.Options"
+description: "Object ui/image.Options"
 ---
 ## Object: "ui/image".Options  
 _Extends:_ [_Options_](../../ui/core/view/Options.md)  

@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface platform.ScreenMetrics"
-title: "Interface platform.ScreenMetrics"
-description: "Interface platform.ScreenMetrics"
+nav-title: "Object platform.ScreenMetrics"
+title: "Object platform.ScreenMetrics"
+description: "Object platform.ScreenMetrics"
 ---
 ## Object: "platform".ScreenMetrics  
 An object containing screen information.

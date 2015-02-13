@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface data/virtual-array.ItemsLoading"
-title: "Interface data/virtual-array.ItemsLoading"
-description: "Interface data/virtual-array.ItemsLoading"
+nav-title: "Object data/virtual-array.ItemsLoading"
+title: "Object data/virtual-array.ItemsLoading"
+description: "Object data/virtual-array.ItemsLoading"
 ---
 ## Object: "data/virtual-array".ItemsLoading  
 _Extends:_ [_EventData_](../../data/observable/EventData.md)  

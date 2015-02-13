@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface ui/frame.BackstackEntry"
-title: "Interface ui/frame.BackstackEntry"
-description: "Interface ui/frame.BackstackEntry"
+nav-title: "Object ui/frame.BackstackEntry"
+title: "Object ui/frame.BackstackEntry"
+description: "Object ui/frame.BackstackEntry"
 ---
 ## Object: "ui/frame".BackstackEntry  
 Represents an entry in the back stack of a Frame object.

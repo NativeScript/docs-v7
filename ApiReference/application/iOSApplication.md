@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface application.iOSApplication"
-title: "Interface application.iOSApplication"
-description: "Interface application.iOSApplication"
+nav-title: "Object application.iOSApplication"
+title: "Object application.iOSApplication"
+description: "Object application.iOSApplication"
 ---
 ## Object: "application".iOSApplication  
 The abstraction of an iOS-specific application object.

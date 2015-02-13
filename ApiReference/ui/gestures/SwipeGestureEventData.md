@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface ui/gestures.SwipeGestureEventData"
-title: "Interface ui/gestures.SwipeGestureEventData"
-description: "Interface ui/gestures.SwipeGestureEventData"
+nav-title: "Object ui/gestures.SwipeGestureEventData"
+title: "Object ui/gestures.SwipeGestureEventData"
+description: "Object ui/gestures.SwipeGestureEventData"
 ---
 ## Object: "ui/gestures".SwipeGestureEventData  
 _Extends:_ [_GestureEventData_](../../ui/gestures/GestureEventData.md)  

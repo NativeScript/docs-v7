@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface ui/core/dependency-observable.PropertyChangeData"
-title: "Interface ui/core/dependency-observable.PropertyChangeData"
-description: "Interface ui/core/dependency-observable.PropertyChangeData"
+nav-title: "Object ui/core/dependency-observable.PropertyChangeData"
+title: "Object ui/core/dependency-observable.PropertyChangeData"
+description: "Object ui/core/dependency-observable.PropertyChangeData"
 ---
 ## Object: "ui/core/dependency-observable".PropertyChangeData  
 _Extends:_ [_EventData_](../../../data/observable/EventData.md)  

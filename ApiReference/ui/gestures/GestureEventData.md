@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface ui/gestures.GestureEventData"
-title: "Interface ui/gestures.GestureEventData"
-description: "Interface ui/gestures.GestureEventData"
+nav-title: "Object ui/gestures.GestureEventData"
+title: "Object ui/gestures.GestureEventData"
+description: "Object ui/gestures.GestureEventData"
 ---
 ## Object: "ui/gestures".GestureEventData  
 Provides gesture event data.

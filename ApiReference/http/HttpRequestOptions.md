@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface http.HttpRequestOptions"
-title: "Interface http.HttpRequestOptions"
-description: "Interface http.HttpRequestOptions"
+nav-title: "Object http.HttpRequestOptions"
+title: "Object http.HttpRequestOptions"
+description: "Object http.HttpRequestOptions"
 ---
 ## Object: "http".HttpRequestOptions  
 Provides options for the http requests.

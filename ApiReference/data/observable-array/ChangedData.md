@@ -1,7 +1,7 @@
 ---
-nav-title: "Interface data/observable-array.ChangedData"
-title: "Interface data/observable-array.ChangedData"
-description: "Interface data/observable-array.ChangedData"
+nav-title: "Object data/observable-array.ChangedData"
+title: "Object data/observable-array.ChangedData"
+description: "Object data/observable-array.ChangedData"
 ---
 ## Object: "data/observable-array".ChangedData  
 _Type parameters:_ _**T**_  
