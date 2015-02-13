@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/styling"
-title: "Class ui/styling"
-description: "Class ui/styling"
+nav-title: "Module ui/styling"
+title: "Module ui/styling"
+description: "Module ui/styling"
 ---
 # Module: "ui/styling"
 

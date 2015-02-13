@@ -1,7 +1,7 @@
 ---
-nav-title: "Class image-source.ImageFormat"
-title: "Class image-source.ImageFormat"
-description: "Class image-source.ImageFormat"
+nav-title: "Enum image-source.ImageFormat"
+title: "Enum image-source.ImageFormat"
+description: "Enum image-source.ImageFormat"
 ---
 ## Enum: "image-source".ImageFormat
 Defines the recognized image formats.

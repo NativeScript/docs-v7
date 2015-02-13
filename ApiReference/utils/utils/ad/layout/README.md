@@ -1,7 +1,7 @@
 ---
-nav-title: "Class utils/utilsad.layout"
-title: "Class utils/utilsad.layout"
-description: "Class utils/utilsad.layout"
+nav-title: "Module utils/utilsad.layout"
+title: "Module utils/utilsad.layout"
+description: "Module utils/utilsad.layout"
 ---
 ## Namespace: "utils/utils"ad.layout
 Utility module related to android layout.

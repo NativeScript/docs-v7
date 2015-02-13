@@ -1,6 +1,6 @@
 ---
 nav-title: "WrapPanel How-To"
-title: "WrapPanel How-To"
+title: "How-To"
 description: "Examples for using WrapPanel"
 ---
 # WrapPanel

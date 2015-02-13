@@ -1,6 +1,6 @@
 ---
 nav-title: "CanvasPanel How-To"
-title: "CanvasPanel How-To"
+title: "How-To"
 description: "Examples for using CanvasPanel"
 ---
 # CanvasPanel

@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/label.Options"
-title: "Class ui/label.Options"
-description: "Class ui/label.Options"
+nav-title: "Interface ui/label.Options"
+title: "Interface ui/label.Options"
+description: "Interface ui/label.Options"
 ---
 ## Object: "ui/label".Options  
 _Extends:_ [_Options_](../../ui/core/view/Options.md)  

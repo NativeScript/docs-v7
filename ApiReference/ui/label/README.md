@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/label"
-title: "Class ui/label"
-description: "Class ui/label"
+nav-title: "Module ui/label"
+title: "Module ui/label"
+description: "Module ui/label"
 ---
 # Module: "ui/label"
 

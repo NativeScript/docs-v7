@@ -1,7 +1,7 @@
 ---
-nav-title: "Class application"
-title: "Class application"
-description: "Class application"
+nav-title: "Module application"
+title: "Module application"
+description: "Module application"
 ---
 # Module: "application"
 

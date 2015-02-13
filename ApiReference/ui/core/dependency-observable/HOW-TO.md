@@ -1,6 +1,6 @@
 ---
 nav-title: "dependency-observable How-To"
-title: "dependency-observable How-To"
+title: "How-To"
 description: "Examples for using dependency-observable"
 ---
 # DependencyObservable

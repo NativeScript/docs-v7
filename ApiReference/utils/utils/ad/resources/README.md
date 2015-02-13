@@ -1,7 +1,7 @@
 ---
-nav-title: "Class utils/utilsad.resources"
-title: "Class utils/utilsad.resources"
-description: "Class utils/utilsad.resources"
+nav-title: "Module utils/utilsad.resources"
+title: "Module utils/utilsad.resources"
+description: "Module utils/utilsad.resources"
 ---
 ## Namespace: "utils/utils"ad.resources
 Utility module related to android resources.

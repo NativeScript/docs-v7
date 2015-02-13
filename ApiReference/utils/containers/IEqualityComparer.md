@@ -1,7 +1,7 @@
 ---
-nav-title: "Class utils/containers.IEqualityComparer"
-title: "Class utils/containers.IEqualityComparer"
-description: "Class utils/containers.IEqualityComparer"
+nav-title: "Interface utils/containers.IEqualityComparer"
+title: "Interface utils/containers.IEqualityComparer"
+description: "Interface utils/containers.IEqualityComparer"
 ---
 ## Object: "utils/containers".IEqualityComparer  
 _Type parameters:_ _**T**_  

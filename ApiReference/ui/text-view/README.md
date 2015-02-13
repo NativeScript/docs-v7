@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/text-view"
-title: "Class ui/text-view"
-description: "Class ui/text-view"
+nav-title: "Module ui/text-view"
+title: "Module ui/text-view"
+description: "Module ui/text-view"
 ---
 # Module: "ui/text-view"
 

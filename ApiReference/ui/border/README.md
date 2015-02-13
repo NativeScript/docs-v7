@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/border"
-title: "Class ui/border"
-description: "Class ui/border"
+nav-title: "Module ui/border"
+title: "Module ui/border"
+description: "Module ui/border"
 ---
 # Module: "ui/border"
 

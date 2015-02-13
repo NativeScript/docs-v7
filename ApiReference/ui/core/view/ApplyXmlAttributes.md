@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/core/view.ApplyXmlAttributes"
-title: "Class ui/core/view.ApplyXmlAttributes"
-description: "Class ui/core/view.ApplyXmlAttributes"
+nav-title: "Interface ui/core/view.ApplyXmlAttributes"
+title: "Interface ui/core/view.ApplyXmlAttributes"
+description: "Interface ui/core/view.ApplyXmlAttributes"
 ---
 ## Object: "ui/core/view".ApplyXmlAttributes  
 Defines an interface used to create a member of a class from string representation (used in xml declaration).

@@ -1,6 +1,6 @@
 ---
 nav-title: "stack-panel How-To"
-title: "stack-panel How-To"
+title: "How-To"
 description: "Examples for using stack-panel"
 ---
 ### Create StackPanel

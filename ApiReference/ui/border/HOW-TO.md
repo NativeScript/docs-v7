@@ -1,6 +1,6 @@
 ---
 nav-title: "Border How-To"
-title: "Border How-To"
+title: "How-To"
 description: "Examples for using Border"
 ---
 # Border

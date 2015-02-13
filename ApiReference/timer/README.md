@@ -1,7 +1,7 @@
 ---
-nav-title: "Class timer"
-title: "Class timer"
-description: "Class timer"
+nav-title: "Module timer"
+title: "Module timer"
+description: "Module timer"
 ---
 # Module: "timer"
 

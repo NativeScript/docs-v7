@@ -1,7 +1,7 @@
 ---
-nav-title: "Class utils/utils.platform"
-title: "Class utils/utils.platform"
-description: "Class utils/utils.platform"
+nav-title: "Module utils/utils.platform"
+title: "Module utils/utils.platform"
+description: "Module utils/utils.platform"
 ---
 ## Namespace: "utils/utils".platform
 Provides information about the current running platform.

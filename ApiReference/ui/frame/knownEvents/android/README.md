@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/frameknownEvents.android"
-title: "Class ui/frameknownEvents.android"
-description: "Class ui/frameknownEvents.android"
+nav-title: "Module ui/frameknownEvents.android"
+title: "Module ui/frameknownEvents.android"
+description: "Module ui/frameknownEvents.android"
 ---
 ## Namespace: "ui/frame"knownEvents.android
 Encapsulates the events raised by the android part of the Frame.

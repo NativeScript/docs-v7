@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/core/dependency-observable.ValueSource"
-title: "Class ui/core/dependency-observable.ValueSource"
-description: "Class ui/core/dependency-observable.ValueSource"
+nav-title: "Module ui/core/dependency-observable.ValueSource"
+title: "Module ui/core/dependency-observable.ValueSource"
+description: "Module ui/core/dependency-observable.ValueSource"
 ---
 ## Namespace: "ui/core/dependency-observable".ValueSource
 Lists the possible values for the PropertyEntry.valueSource property.

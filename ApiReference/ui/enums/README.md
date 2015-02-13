@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/enums"
-title: "Class ui/enums"
-description: "Class ui/enums"
+nav-title: "Module ui/enums"
+title: "Module ui/enums"
+description: "Module ui/enums"
 ---
 # Module: "ui/enums"
 

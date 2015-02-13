@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/text-field.Options"
-title: "Class ui/text-field.Options"
-description: "Class ui/text-field.Options"
+nav-title: "Interface ui/text-field.Options"
+title: "Interface ui/text-field.Options"
+description: "Interface ui/text-field.Options"
 ---
 ## Object: "ui/text-field".Options  
 _Extends:_ [_Options_](../../ui/editable-text-base/Options.md)  

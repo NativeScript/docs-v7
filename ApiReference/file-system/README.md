@@ -1,7 +1,7 @@
 ---
-nav-title: "Class file-system"
-title: "Class file-system"
-description: "Class file-system"
+nav-title: "Module file-system"
+title: "Module file-system"
+description: "Module file-system"
 ---
 # Module: "file-system"
 

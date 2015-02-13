@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/slider"
-title: "Class ui/slider"
-description: "Class ui/slider"
+nav-title: "Module ui/slider"
+title: "Module ui/slider"
+description: "Module ui/slider"
 ---
 # Module: "ui/slider"
 

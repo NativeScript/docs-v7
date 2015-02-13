@@ -1,7 +1,7 @@
 ---
-nav-title: "Class local-settings"
-title: "Class local-settings"
-description: "Class local-settings"
+nav-title: "Module local-settings"
+title: "Module local-settings"
+description: "Module local-settings"
 ---
 # Module: "local-settings"
 

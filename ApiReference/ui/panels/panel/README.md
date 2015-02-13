@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/panels/panel"
-title: "Class ui/panels/panel"
-description: "Class ui/panels/panel"
+nav-title: "Module ui/panels/panel"
+title: "Module ui/panels/panel"
+description: "Module ui/panels/panel"
 ---
 # Module: "ui/panels/panel"
 

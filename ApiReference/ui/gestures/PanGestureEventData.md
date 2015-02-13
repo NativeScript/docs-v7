@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/gestures.PanGestureEventData"
-title: "Class ui/gestures.PanGestureEventData"
-description: "Class ui/gestures.PanGestureEventData"
+nav-title: "Interface ui/gestures.PanGestureEventData"
+title: "Interface ui/gestures.PanGestureEventData"
+description: "Interface ui/gestures.PanGestureEventData"
 ---
 ## Object: "ui/gestures".PanGestureEventData  
 _Extends:_ [_GestureEventData_](../../ui/gestures/GestureEventData.md)  

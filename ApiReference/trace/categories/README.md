@@ -1,7 +1,7 @@
 ---
-nav-title: "Class trace.categories"
-title: "Class trace.categories"
-description: "Class trace.categories"
+nav-title: "Module trace.categories"
+title: "Module trace.categories"
+description: "Module trace.categories"
 ---
 ## Namespace: "trace".categories
 An enum that defines all predefined categories.

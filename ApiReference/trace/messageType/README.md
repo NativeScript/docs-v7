@@ -1,7 +1,7 @@
 ---
-nav-title: "Class trace.messageType"
-title: "Class trace.messageType"
-description: "Class trace.messageType"
+nav-title: "Module trace.messageType"
+title: "Module trace.messageType"
+description: "Module trace.messageType"
 ---
 ## Namespace: "trace".messageType
 An enum that defines all predefined message types.

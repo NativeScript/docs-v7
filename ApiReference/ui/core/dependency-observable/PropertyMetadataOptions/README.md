@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/core/dependency-observable.PropertyMetadataOptions"
-title: "Class ui/core/dependency-observable.PropertyMetadataOptions"
-description: "Class ui/core/dependency-observable.PropertyMetadataOptions"
+nav-title: "Module ui/core/dependency-observable.PropertyMetadataOptions"
+title: "Module ui/core/dependency-observable.PropertyMetadataOptions"
+description: "Module ui/core/dependency-observable.PropertyMetadataOptions"
 ---
 ## Namespace: "ui/core/dependency-observable".PropertyMetadataOptions
 Lists the possible values for the PropertyMetadata.options property. Each actual numeric value is a power of two allowing for bitwise operations.

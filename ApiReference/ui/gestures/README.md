@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/gestures"
-title: "Class ui/gestures"
-description: "Class ui/gestures"
+nav-title: "Module ui/gestures"
+title: "Module ui/gestures"
+description: "Module ui/gestures"
 ---
 # Module: "ui/gestures"
 

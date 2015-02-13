@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/core/view.AddArrayFromBuilder"
-title: "Class ui/core/view.AddArrayFromBuilder"
-description: "Class ui/core/view.AddArrayFromBuilder"
+nav-title: "Interface ui/core/view.AddArrayFromBuilder"
+title: "Interface ui/core/view.AddArrayFromBuilder"
+description: "Interface ui/core/view.AddArrayFromBuilder"
 ---
 ## Object: "ui/core/view".AddArrayFromBuilder  
 Defines an interface for adding arrays declared in xml.

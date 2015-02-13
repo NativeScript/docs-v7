@@ -1,7 +1,7 @@
 ---
-nav-title: "Class data/observable"
-title: "Class data/observable"
-description: "Class data/observable"
+nav-title: "Module data/observable"
+title: "Module data/observable"
+description: "Module data/observable"
 ---
 # Module: "data/observable"
 

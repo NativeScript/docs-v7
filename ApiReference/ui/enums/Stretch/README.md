@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/enums.Stretch"
-title: "Class ui/enums.Stretch"
-description: "Class ui/enums.Stretch"
+nav-title: "Module ui/enums.Stretch"
+title: "Module ui/enums.Stretch"
+description: "Module ui/enums.Stretch"
 ---
 ## Namespace: "ui/enums".Stretch
 Describes how content is resized to fill its allocated space.

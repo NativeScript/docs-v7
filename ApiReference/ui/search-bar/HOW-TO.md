@@ -1,6 +1,6 @@
 ---
 nav-title: "search-bar How-To"
-title: "search-bar How-To"
+title: "How-To"
 description: "Examples for using search-bar"
 ---
 # SearchBar

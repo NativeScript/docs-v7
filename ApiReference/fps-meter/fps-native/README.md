@@ -1,7 +1,7 @@
 ---
-nav-title: "Class fps-meter/fps-native"
-title: "Class fps-meter/fps-native"
-description: "Class fps-meter/fps-native"
+nav-title: "Module fps-meter/fps-native"
+title: "Module fps-meter/fps-native"
+description: "Module fps-meter/fps-native"
 ---
 # Module: "fps-meter/fps-native"
 

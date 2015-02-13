@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/text-base.Options"
-title: "Class ui/text-base.Options"
-description: "Class ui/text-base.Options"
+nav-title: "Interface ui/text-base.Options"
+title: "Interface ui/text-base.Options"
+description: "Interface ui/text-base.Options"
 ---
 ## Object: "ui/text-base".Options  
 _Extends:_ [_Options_](../../ui/core/view/Options.md)  

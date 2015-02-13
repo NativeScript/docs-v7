@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/enums.KeyboardType"
-title: "Class ui/enums.KeyboardType"
-description: "Class ui/enums.KeyboardType"
+nav-title: "Module ui/enums.KeyboardType"
+title: "Module ui/enums.KeyboardType"
+description: "Module ui/enums.KeyboardType"
 ---
 ## Namespace: "ui/enums".KeyboardType
 Represents a soft keyboard flavor.

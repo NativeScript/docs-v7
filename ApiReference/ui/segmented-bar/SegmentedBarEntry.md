@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/segmented-bar.SegmentedBarEntry"
-title: "Class ui/segmented-bar.SegmentedBarEntry"
-description: "Class ui/segmented-bar.SegmentedBarEntry"
+nav-title: "Interface ui/segmented-bar.SegmentedBarEntry"
+title: "Interface ui/segmented-bar.SegmentedBarEntry"
+description: "Interface ui/segmented-bar.SegmentedBarEntry"
 ---
 ## Object: "ui/segmented-bar".SegmentedBarEntry  
 Represents a SegmentedBar entry.

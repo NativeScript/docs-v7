@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/dialogs"
-title: "Class ui/dialogs"
-description: "Class ui/dialogs"
+nav-title: "Module ui/dialogs"
+title: "Module ui/dialogs"
+description: "Module ui/dialogs"
 ---
 # Module: "ui/dialogs"
 

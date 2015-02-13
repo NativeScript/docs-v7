@@ -1,6 +1,6 @@
 ---
 nav-title: "xml How-To"
-title: "xml How-To"
+title: "How-To"
 description: "Examples for using xml"
 ---
 # Xml module

@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/scroll-view"
-title: "Class ui/scroll-view"
-description: "Class ui/scroll-view"
+nav-title: "Module ui/scroll-view"
+title: "Module ui/scroll-view"
+description: "Module ui/scroll-view"
 ---
 # Module: "ui/scroll-view"
 

@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/styling.properties"
-title: "Class ui/styling.properties"
-description: "Class ui/styling.properties"
+nav-title: "Module ui/styling.properties"
+title: "Module ui/styling.properties"
+description: "Module ui/styling.properties"
 ---
 ## Namespace: "ui/styling".properties
 Encapsulates the style properties definitions and utility methods.

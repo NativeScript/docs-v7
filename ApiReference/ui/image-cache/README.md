@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/image-cache"
-title: "Class ui/image-cache"
-description: "Class ui/image-cache"
+nav-title: "Module ui/image-cache"
+title: "Module ui/image-cache"
+description: "Module ui/image-cache"
 ---
 # Module: "ui/image-cache"
 

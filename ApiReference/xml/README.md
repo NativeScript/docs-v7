@@ -1,7 +1,7 @@
 ---
-nav-title: "Class xml"
-title: "Class xml"
-description: "Class xml"
+nav-title: "Module xml"
+title: "Module xml"
+description: "Module xml"
 ---
 # Module: "xml"
 

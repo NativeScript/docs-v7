@@ -1,7 +1,7 @@
 ---
-nav-title: "Class color"
-title: "Class color"
-description: "Class color"
+nav-title: "Module color"
+title: "Module color"
+description: "Module color"
 ---
 # Module: "color"
 

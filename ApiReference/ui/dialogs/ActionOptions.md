@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/dialogs.ActionOptions"
-title: "Class ui/dialogs.ActionOptions"
-description: "Class ui/dialogs.ActionOptions"
+nav-title: "Interface ui/dialogs.ActionOptions"
+title: "Interface ui/dialogs.ActionOptions"
+description: "Interface ui/dialogs.ActionOptions"
 ---
 ## Object: "ui/dialogs".ActionOptions  
 Provides options for the dialog.

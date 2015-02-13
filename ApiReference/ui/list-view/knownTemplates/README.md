@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/list-view.knownTemplates"
-title: "Class ui/list-view.knownTemplates"
-description: "Class ui/list-view.knownTemplates"
+nav-title: "Module ui/list-view.knownTemplates"
+title: "Module ui/list-view.knownTemplates"
+description: "Module ui/list-view.knownTemplates"
 ---
 ## Namespace: "ui/list-view".knownTemplates
 Known template names.

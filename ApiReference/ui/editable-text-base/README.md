@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/editable-text-base"
-title: "Class ui/editable-text-base"
-description: "Class ui/editable-text-base"
+nav-title: "Module ui/editable-text-base"
+title: "Module ui/editable-text-base"
+description: "Module ui/editable-text-base"
 ---
 # Module: "ui/editable-text-base"
 

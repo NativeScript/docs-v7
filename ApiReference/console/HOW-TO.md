@@ -1,6 +1,6 @@
 ---
 nav-title: "console How-To"
-title: "console How-To"
+title: "How-To"
 description: "Examples for using console"
 ---
 # Console

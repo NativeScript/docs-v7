@@ -1,7 +1,7 @@
 ---
-nav-title: "Class utils/geometry"
-title: "Class utils/geometry"
-description: "Class utils/geometry"
+nav-title: "Module utils/geometry"
+title: "Module utils/geometry"
+description: "Module utils/geometry"
 ---
 # Module: "utils/geometry"
 

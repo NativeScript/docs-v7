@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/enums.VerticalAlignment"
-title: "Class ui/enums.VerticalAlignment"
-description: "Class ui/enums.VerticalAlignment"
+nav-title: "Module ui/enums.VerticalAlignment"
+title: "Module ui/enums.VerticalAlignment"
+description: "Module ui/enums.VerticalAlignment"
 ---
 ## Namespace: "ui/enums".VerticalAlignment
 VerticalAlignment indicates where an element should be displayed on the horizontal axis relative to the allocated layout slot of the parent element.

@@ -1,6 +1,6 @@
 ---
 nav-title: "local-settings How-To"
-title: "local-settings How-To"
+title: "How-To"
 description: "Examples for using local-settings"
 ---
 # Local Settings

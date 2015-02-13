@@ -1,7 +1,7 @@
 ---
-nav-title: "Class text/formatted-string"
-title: "Class text/formatted-string"
-description: "Class text/formatted-string"
+nav-title: "Module text/formatted-string"
+title: "Module text/formatted-string"
+description: "Module text/formatted-string"
 ---
 # Module: "text/formatted-string"
 

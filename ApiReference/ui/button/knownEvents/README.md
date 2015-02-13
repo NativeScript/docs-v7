@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/button.knownEvents"
-title: "Class ui/button.knownEvents"
-description: "Class ui/button.knownEvents"
+nav-title: "Module ui/button.knownEvents"
+title: "Module ui/button.knownEvents"
+description: "Module ui/button.knownEvents"
 ---
 ## Namespace: "ui/button".knownEvents
 Known event names.

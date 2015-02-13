@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/styling.stylers"
-title: "Class ui/styling.stylers"
-description: "Class ui/styling.stylers"
+nav-title: "Module ui/styling.stylers"
+title: "Module ui/styling.stylers"
+description: "Module ui/styling.stylers"
 ---
 ## Namespace: "ui/styling".stylers
 Encapsulates styler classes used for converting NativeScript properties to properties of the native views/widgets.

@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/styling.converters"
-title: "Class ui/styling.converters"
-description: "Class ui/styling.converters"
+nav-title: "Module ui/styling.converters"
+title: "Module ui/styling.converters"
+description: "Module ui/styling.converters"
 ---
 ## Namespace: "ui/styling".converters
 Encapsulates CSS converter methods.

@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/core/weak-event-listener"
-title: "Class ui/core/weak-event-listener"
-description: "Class ui/core/weak-event-listener"
+nav-title: "Module ui/core/weak-event-listener"
+title: "Module ui/core/weak-event-listener"
+description: "Module ui/core/weak-event-listener"
 ---
 # Module: "ui/core/weak-event-listener"
 

@@ -1,6 +1,6 @@
 ---
 nav-title: "grid-panel How-To"
-title: "grid-panel How-To"
+title: "How-To"
 description: "Examples for using grid-panel"
 ---
 ## GridPanel sample

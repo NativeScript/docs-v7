@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/button"
-title: "Class ui/button"
-description: "Class ui/button"
+nav-title: "Module ui/button"
+title: "Module ui/button"
+description: "Module ui/button"
 ---
 # Module: "ui/button"
 

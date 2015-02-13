@@ -1,7 +1,7 @@
 ---
-nav-title: "Class console"
-title: "Class console"
-description: "Class console"
+nav-title: "Module console"
+title: "Module console"
+description: "Module console"
 ---
 # Module: "console"
 

@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/core/view.knownEvents"
-title: "Class ui/core/view.knownEvents"
-description: "Class ui/core/view.knownEvents"
+nav-title: "Module ui/core/view.knownEvents"
+title: "Module ui/core/view.knownEvents"
+description: "Module ui/core/view.knownEvents"
 ---
 ## Namespace: "ui/core/view".knownEvents
 Defines an enum with events for view class.

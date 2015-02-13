@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/image-cache.DownloadRequest"
-title: "Class ui/image-cache.DownloadRequest"
-description: "Class ui/image-cache.DownloadRequest"
+nav-title: "Interface ui/image-cache.DownloadRequest"
+title: "Interface ui/image-cache.DownloadRequest"
+description: "Interface ui/image-cache.DownloadRequest"
 ---
 ## Object: "ui/image-cache".DownloadRequest  
 Represents a single download request.

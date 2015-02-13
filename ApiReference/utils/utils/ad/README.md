@@ -1,7 +1,7 @@
 ---
-nav-title: "Class utils/utils.ad"
-title: "Class utils/utils.ad"
-description: "Class utils/utils.ad"
+nav-title: "Module utils/utils.ad"
+title: "Module utils/utils.ad"
+description: "Module utils/utils.ad"
 ---
 ## Namespace: "utils/utils".ad
 Module with android specific utilities.

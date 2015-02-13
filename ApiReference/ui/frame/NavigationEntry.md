@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/frame.NavigationEntry"
-title: "Class ui/frame.NavigationEntry"
-description: "Class ui/frame.NavigationEntry"
+nav-title: "Interface ui/frame.NavigationEntry"
+title: "Interface ui/frame.NavigationEntry"
+description: "Interface ui/frame.NavigationEntry"
 ---
 ## Object: "ui/frame".NavigationEntry  
 Represents an entry in passed to navigate method.

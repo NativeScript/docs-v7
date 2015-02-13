@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/activity-indicator"
-title: "Class ui/activity-indicator"
-description: "Class ui/activity-indicator"
+nav-title: "Module ui/activity-indicator"
+title: "Module ui/activity-indicator"
+description: "Module ui/activity-indicator"
 ---
 # Module: "ui/activity-indicator"
 

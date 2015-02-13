@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/panels/grid-panel.Options"
-title: "Class ui/panels/grid-panel.Options"
-description: "Class ui/panels/grid-panel.Options"
+nav-title: "Interface ui/panels/grid-panel.Options"
+title: "Interface ui/panels/grid-panel.Options"
+description: "Interface ui/panels/grid-panel.Options"
 ---
 ## Object: "ui/panels/grid-panel".Options
 

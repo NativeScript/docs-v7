@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/progress"
-title: "Class ui/progress"
-description: "Class ui/progress"
+nav-title: "Module ui/progress"
+title: "Module ui/progress"
+description: "Module ui/progress"
 ---
 # Module: "ui/progress"
 

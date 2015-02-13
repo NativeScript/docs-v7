@@ -1,7 +1,7 @@
 ---
-nav-title: "Class utils/utilsad.collections"
-title: "Class utils/utilsad.collections"
-description: "Class utils/utilsad.collections"
+nav-title: "Module utils/utilsad.collections"
+title: "Module utils/utilsad.collections"
+description: "Module utils/utilsad.collections"
 ---
 ## Namespace: "utils/utils"ad.collections
 Utility module dealing with some android collections.

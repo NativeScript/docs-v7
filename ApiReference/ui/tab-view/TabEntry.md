@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/tab-view.TabEntry"
-title: "Class ui/tab-view.TabEntry"
-description: "Class ui/tab-view.TabEntry"
+nav-title: "Interface ui/tab-view.TabEntry"
+title: "Interface ui/tab-view.TabEntry"
+description: "Interface ui/tab-view.TabEntry"
 ---
 ## Object: "ui/tab-view".TabEntry  
 Represents a tab view entry.

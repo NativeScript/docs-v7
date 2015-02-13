@@ -1,7 +1,7 @@
 ---
-nav-title: "Class utils/utils.ios"
-title: "Class utils/utils.ios"
-description: "Class utils/utils.ios"
+nav-title: "Module utils/utils.ios"
+title: "Module utils/utils.ios"
+description: "Module utils/utils.ios"
 ---
 ## Namespace: "utils/utils".ios
 Module with ios specific utilities.

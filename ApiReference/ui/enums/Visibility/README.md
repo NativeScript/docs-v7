@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/enums.Visibility"
-title: "Class ui/enums.Visibility"
-description: "Class ui/enums.Visibility"
+nav-title: "Module ui/enums.Visibility"
+title: "Module ui/enums.Visibility"
+description: "Module ui/enums.Visibility"
 ---
 ## Namespace: "ui/enums".Visibility
 Represents the visibility mode of a view.

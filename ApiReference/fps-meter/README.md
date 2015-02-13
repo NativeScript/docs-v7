@@ -1,7 +1,7 @@
 ---
-nav-title: "Class fps-meter"
-title: "Class fps-meter"
-description: "Class fps-meter"
+nav-title: "Module fps-meter"
+title: "Module fps-meter"
+description: "Module fps-meter"
 ---
 # Module: "fps-meter"
 

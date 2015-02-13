@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/enums.ReturnKeyType"
-title: "Class ui/enums.ReturnKeyType"
-description: "Class ui/enums.ReturnKeyType"
+nav-title: "Module ui/enums.ReturnKeyType"
+title: "Module ui/enums.ReturnKeyType"
+description: "Module ui/enums.ReturnKeyType"
 ---
 ## Namespace: "ui/enums".ReturnKeyType
 Represents the flavor of the return key on the soft keyboard.

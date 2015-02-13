@@ -1,7 +1,7 @@
 ---
-nav-title: "Class trace"
-title: "Class trace"
-description: "Class trace"
+nav-title: "Module trace"
+title: "Module trace"
+description: "Module trace"
 ---
 # Module: "trace"
 

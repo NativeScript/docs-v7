@@ -1,7 +1,7 @@
 ---
-nav-title: "Class data/observable-array.knownEvents"
-title: "Class data/observable-array.knownEvents"
-description: "Class data/observable-array.knownEvents"
+nav-title: "Module data/observable-array.knownEvents"
+title: "Module data/observable-array.knownEvents"
+description: "Module data/observable-array.knownEvents"
 ---
 ## Namespace: "data/observable-array".knownEvents
 Known event names.

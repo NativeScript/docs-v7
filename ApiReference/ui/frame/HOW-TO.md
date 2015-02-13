@@ -1,6 +1,6 @@
 ---
 nav-title: "frame How-To"
-title: "frame How-To"
+title: "How-To"
 description: "Examples for using frame"
 ---
 # Frame

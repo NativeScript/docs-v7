@@ -1,7 +1,7 @@
 ---
-nav-title: "Class application.AndroidApplication"
-title: "Class application.AndroidApplication"
-description: "Class application.AndroidApplication"
+nav-title: "Interface application.AndroidApplication"
+title: "Interface application.AndroidApplication"
+description: "Interface application.AndroidApplication"
 ---
 ## Object: "application".AndroidApplication  
 The abstraction of an Android-specific application object.

@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/segmented-bar"
-title: "Class ui/segmented-bar"
-description: "Class ui/segmented-bar"
+nav-title: "Module ui/segmented-bar"
+title: "Module ui/segmented-bar"
+description: "Module ui/segmented-bar"
 ---
 # Module: "ui/segmented-bar"
 

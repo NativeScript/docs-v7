@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/enums.Accuracy"
-title: "Class ui/enums.Accuracy"
-description: "Class ui/enums.Accuracy"
+nav-title: "Module ui/enums.Accuracy"
+title: "Module ui/enums.Accuracy"
+description: "Module ui/enums.Accuracy"
 ---
 ## Namespace: "ui/enums".Accuracy
 Specifies common accuracy values.

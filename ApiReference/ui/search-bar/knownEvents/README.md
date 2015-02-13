@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/search-bar.knownEvents"
-title: "Class ui/search-bar.knownEvents"
-description: "Class ui/search-bar.knownEvents"
+nav-title: "Module ui/search-bar.knownEvents"
+title: "Module ui/search-bar.knownEvents"
+description: "Module ui/search-bar.knownEvents"
 ---
 ## Namespace: "ui/search-bar".knownEvents
 Known event names.

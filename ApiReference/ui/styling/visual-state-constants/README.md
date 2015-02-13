@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/styling/visual-state-constants"
-title: "Class ui/styling/visual-state-constants"
-description: "Class ui/styling/visual-state-constants"
+nav-title: "Module ui/styling/visual-state-constants"
+title: "Module ui/styling/visual-state-constants"
+description: "Module ui/styling/visual-state-constants"
 ---
 # Module: "ui/styling/visual-state-constants"
 

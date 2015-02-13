@@ -1,7 +1,7 @@
 ---
-nav-title: "Class camera"
-title: "Class camera"
-description: "Class camera"
+nav-title: "Module camera"
+title: "Module camera"
+description: "Module camera"
 ---
 # Module: "camera"
 

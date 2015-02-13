@@ -1,7 +1,7 @@
 ---
-nav-title: "Class http.HttpResponse"
-title: "Class http.HttpResponse"
-description: "Class http.HttpResponse"
+nav-title: "Interface http.HttpResponse"
+title: "Interface http.HttpResponse"
+description: "Interface http.HttpResponse"
 ---
 ## Object: "http".HttpResponse  
 Encapsulates HTTP-response information from an HTTP-request.

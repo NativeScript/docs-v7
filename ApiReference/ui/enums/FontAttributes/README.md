@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/enums.FontAttributes"
-title: "Class ui/enums.FontAttributes"
-description: "Class ui/enums.FontAttributes"
+nav-title: "Module ui/enums.FontAttributes"
+title: "Module ui/enums.FontAttributes"
+description: "Module ui/enums.FontAttributes"
 ---
 ## Namespace: "ui/enums".FontAttributes
 A flag enum that represents common font attributes.

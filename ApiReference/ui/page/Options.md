@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/page.Options"
-title: "Class ui/page.Options"
-description: "Class ui/page.Options"
+nav-title: "Interface ui/page.Options"
+title: "Interface ui/page.Options"
+description: "Interface ui/page.Options"
 ---
 ## Object: "ui/page".Options  
 _Extends:_ [_Options_](../../ui/core/view/Options.md)  

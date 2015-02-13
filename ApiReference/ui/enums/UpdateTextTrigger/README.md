@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/enums.UpdateTextTrigger"
-title: "Class ui/enums.UpdateTextTrigger"
-description: "Class ui/enums.UpdateTextTrigger"
+nav-title: "Module ui/enums.UpdateTextTrigger"
+title: "Module ui/enums.UpdateTextTrigger"
+description: "Module ui/enums.UpdateTextTrigger"
 ---
 ## Namespace: "ui/enums".UpdateTextTrigger
 Represents an enumeration specifying when the text property of an EditableTextBase will be updated.

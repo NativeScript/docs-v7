@@ -1,7 +1,7 @@
 ---
-nav-title: "Class file-system.path"
-title: "Class file-system.path"
-description: "Class file-system.path"
+nav-title: "Module file-system.path"
+title: "Module file-system.path"
+description: "Module file-system.path"
 ---
 ## Namespace: "file-system".path
 Enables path-specific operations like join, extension, etc.

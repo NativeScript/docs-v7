@@ -1,7 +1,7 @@
 ---
-nav-title: "Class location"
-title: "Class location"
-description: "Class location"
+nav-title: "Module location"
+title: "Module location"
+description: "Module location"
 ---
 # Module: "location"
 

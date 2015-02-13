@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/search-bar"
-title: "Class ui/search-bar"
-description: "Class ui/search-bar"
+nav-title: "Module ui/search-bar"
+title: "Module ui/search-bar"
+description: "Module ui/search-bar"
 ---
 # Module: "ui/search-bar"
 

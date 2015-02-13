@@ -1,7 +1,7 @@
 ---
-nav-title: "Class http"
-title: "Class http"
-description: "Class http"
+nav-title: "Module http"
+title: "Module http"
+description: "Module http"
 ---
 # Module: "http"
 

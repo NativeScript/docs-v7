@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/frame.AndroidOptionEventData"
-title: "Class ui/frame.AndroidOptionEventData"
-description: "Class ui/frame.AndroidOptionEventData"
+nav-title: "Interface ui/frame.AndroidOptionEventData"
+title: "Interface ui/frame.AndroidOptionEventData"
+description: "Interface ui/frame.AndroidOptionEventData"
 ---
 ## Object: "ui/frame".AndroidOptionEventData  
 _Extends:_ [_EventData_](../../data/observable/EventData.md)  

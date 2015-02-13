@@ -1,7 +1,7 @@
 ---
-nav-title: "Class data/observable.PropertyChangeData"
-title: "Class data/observable.PropertyChangeData"
-description: "Class data/observable.PropertyChangeData"
+nav-title: "Interface data/observable.PropertyChangeData"
+title: "Interface data/observable.PropertyChangeData"
+description: "Interface data/observable.PropertyChangeData"
 ---
 ## Object: "data/observable".PropertyChangeData  
 _Extends:_ [_EventData_](../../data/observable/EventData.md)  

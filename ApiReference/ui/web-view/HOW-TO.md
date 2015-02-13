@@ -1,6 +1,6 @@
 ---
 nav-title: "WebView How-To"
-title: "WebView How-To"
+title: "How-To"
 description: "Examples for using WebView"
 ---
 # WebView

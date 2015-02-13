@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/enums.DeviceType"
-title: "Class ui/enums.DeviceType"
-description: "Class ui/enums.DeviceType"
+nav-title: "Module ui/enums.DeviceType"
+title: "Module ui/enums.DeviceType"
+description: "Module ui/enums.DeviceType"
 ---
 ## Namespace: "ui/enums".DeviceType
 Describes the type of a device

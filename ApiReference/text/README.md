@@ -1,7 +1,7 @@
 ---
-nav-title: "Class text"
-title: "Class text"
-description: "Class text"
+nav-title: "Module text"
+title: "Module text"
+description: "Module text"
 ---
 # Module: "text"
 

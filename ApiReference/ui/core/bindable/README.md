@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/core/bindable"
-title: "Class ui/core/bindable"
-description: "Class ui/core/bindable"
+nav-title: "Module ui/core/bindable"
+title: "Module ui/core/bindable"
+description: "Module ui/core/bindable"
 ---
 # Module: "ui/core/bindable"
 

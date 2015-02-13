@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/enums.TextAlignment"
-title: "Class ui/enums.TextAlignment"
-description: "Class ui/enums.TextAlignment"
+nav-title: "Module ui/enums.TextAlignment"
+title: "Module ui/enums.TextAlignment"
+description: "Module ui/enums.TextAlignment"
 ---
 ## Namespace: "ui/enums".TextAlignment
 Represents a text-align enumeration.

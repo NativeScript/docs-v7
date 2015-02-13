@@ -1,7 +1,7 @@
 ---
-nav-title: "Class data/virtual-array"
-title: "Class data/virtual-array"
-description: "Class data/virtual-array"
+nav-title: "Module data/virtual-array"
+title: "Module data/virtual-array"
+description: "Module data/virtual-array"
 ---
 # Module: "data/virtual-array"
 

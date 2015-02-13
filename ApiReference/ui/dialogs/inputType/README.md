@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/dialogs.inputType"
-title: "Class ui/dialogs.inputType"
-description: "Class ui/dialogs.inputType"
+nav-title: "Module ui/dialogs.inputType"
+title: "Module ui/dialogs.inputType"
+description: "Module ui/dialogs.inputType"
 ---
 ## Namespace: "ui/dialogs".inputType
 Defines the input type for prompt dialog.

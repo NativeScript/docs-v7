@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/panels/grid-panel.IRowDefinition"
-title: "Class ui/panels/grid-panel.IRowDefinition"
-description: "Class ui/panels/grid-panel.IRowDefinition"
+nav-title: "Interface ui/panels/grid-panel.IRowDefinition"
+title: "Interface ui/panels/grid-panel.IRowDefinition"
+description: "Interface ui/panels/grid-panel.IRowDefinition"
 ---
 ## Object: "ui/panels/grid-panel".IRowDefinition
 

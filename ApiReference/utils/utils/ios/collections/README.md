@@ -1,7 +1,7 @@
 ---
-nav-title: "Class utils/utilsios.collections"
-title: "Class utils/utilsios.collections"
-description: "Class utils/utilsios.collections"
+nav-title: "Module utils/utilsios.collections"
+title: "Module utils/utilsios.collections"
+description: "Module utils/utilsios.collections"
 ---
 ## Namespace: "utils/utils"ios.collections
 Utility module dealing with some iOS collections.

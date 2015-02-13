@@ -1,6 +1,6 @@
 ---
 nav-title: "timer How-To"
-title: "timer How-To"
+title: "How-To"
 description: "Examples for using timer"
 ---
 # Timer module

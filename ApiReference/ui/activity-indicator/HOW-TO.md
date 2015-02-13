@@ -1,6 +1,6 @@
 ---
 nav-title: "activity-indicator How-To"
-title: "activity-indicator How-To"
+title: "How-To"
 description: "Examples for using activity-indicator"
 ---
 # ActivityIndicator

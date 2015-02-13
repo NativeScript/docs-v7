@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/gestures.GestureTypes"
-title: "Class ui/gestures.GestureTypes"
-description: "Class ui/gestures.GestureTypes"
+nav-title: "Enum ui/gestures.GestureTypes"
+title: "Enum ui/gestures.GestureTypes"
+description: "Enum ui/gestures.GestureTypes"
 ---
 ## Enum: "ui/gestures".GestureTypes
 Defines an enum with supported gesture types.

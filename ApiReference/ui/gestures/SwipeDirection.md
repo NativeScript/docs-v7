@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/gestures.SwipeDirection"
-title: "Class ui/gestures.SwipeDirection"
-description: "Class ui/gestures.SwipeDirection"
+nav-title: "Enum ui/gestures.SwipeDirection"
+title: "Enum ui/gestures.SwipeDirection"
+description: "Enum ui/gestures.SwipeDirection"
 ---
 ## Enum: "ui/gestures".SwipeDirection
 Defines an enum for swipe gesture direction.

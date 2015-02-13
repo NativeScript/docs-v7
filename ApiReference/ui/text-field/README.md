@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/text-field"
-title: "Class ui/text-field"
-description: "Class ui/text-field"
+nav-title: "Module ui/text-field"
+title: "Module ui/text-field"
+description: "Module ui/text-field"
 ---
 # Module: "ui/text-field"
 

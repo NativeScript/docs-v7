@@ -1,7 +1,7 @@
 ---
-nav-title: "Class platform"
-title: "Class platform"
-description: "Class platform"
+nav-title: "Module platform"
+title: "Module platform"
+description: "Module platform"
 ---
 # Module: "platform"
 

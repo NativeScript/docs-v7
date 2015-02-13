@@ -1,6 +1,6 @@
 ---
 nav-title: "TextField How-To"
-title: "TextField How-To"
+title: "How-To"
 description: "Examples for using TextField"
 ---
 # TextField

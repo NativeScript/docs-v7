@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/text-base"
-title: "Class ui/text-base"
-description: "Class ui/text-base"
+nav-title: "Module ui/text-base"
+title: "Module ui/text-base"
+description: "Module ui/text-base"
 ---
 # Module: "ui/text-base"
 

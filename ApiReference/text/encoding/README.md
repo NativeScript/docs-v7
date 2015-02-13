@@ -1,7 +1,7 @@
 ---
-nav-title: "Class text.encoding"
-title: "Class text.encoding"
-description: "Class text.encoding"
+nav-title: "Module text.encoding"
+title: "Module text.encoding"
+description: "Module text.encoding"
 ---
 ## Namespace: "text".encoding
 Defines the supported character encodings.

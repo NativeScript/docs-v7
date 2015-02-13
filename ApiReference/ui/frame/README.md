@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/frame"
-title: "Class ui/frame"
-description: "Class ui/frame"
+nav-title: "Module ui/frame"
+title: "Module ui/frame"
+description: "Module ui/frame"
 ---
 # Module: "ui/frame"
 

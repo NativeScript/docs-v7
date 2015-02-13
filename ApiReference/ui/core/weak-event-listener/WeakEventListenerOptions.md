@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/core/weak-event-listener.WeakEventListenerOptions"
-title: "Class ui/core/weak-event-listener.WeakEventListenerOptions"
-description: "Class ui/core/weak-event-listener.WeakEventListenerOptions"
+nav-title: "Interface ui/core/weak-event-listener.WeakEventListenerOptions"
+title: "Interface ui/core/weak-event-listener.WeakEventListenerOptions"
+description: "Interface ui/core/weak-event-listener.WeakEventListenerOptions"
 ---
 ## Object: "ui/core/weak-event-listener".WeakEventListenerOptions  
 An interface that defines all options needed for creating weak event listener.

@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/core/dependency-observable"
-title: "Class ui/core/dependency-observable"
-description: "Class ui/core/dependency-observable"
+nav-title: "Module ui/core/dependency-observable"
+title: "Module ui/core/dependency-observable"
+description: "Module ui/core/dependency-observable"
 ---
 # Module: "ui/core/dependency-observable"
 

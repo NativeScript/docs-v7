@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/list-view.knownEvents"
-title: "Class ui/list-view.knownEvents"
-description: "Class ui/list-view.knownEvents"
+nav-title: "Module ui/list-view.knownEvents"
+title: "Module ui/list-view.knownEvents"
+description: "Module ui/list-view.knownEvents"
 ---
 ## Namespace: "ui/list-view".knownEvents
 Known event names.

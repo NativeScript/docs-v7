@@ -1,7 +1,7 @@
 ---
-nav-title: "Class xml.ParserEvent"
-title: "Class xml.ParserEvent"
-description: "Class xml.ParserEvent"
+nav-title: "Interface xml.ParserEvent"
+title: "Interface xml.ParserEvent"
+description: "Interface xml.ParserEvent"
 ---
 ## Object: "xml".ParserEvent  
 Provides information for a parser event.

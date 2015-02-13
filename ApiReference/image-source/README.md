@@ -1,7 +1,7 @@
 ---
-nav-title: "Class image-source"
-title: "Class image-source"
-description: "Class image-source"
+nav-title: "Module image-source"
+title: "Module image-source"
+description: "Module image-source"
 ---
 # Module: "image-source"
 

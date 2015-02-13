@@ -1,7 +1,7 @@
 ---
-nav-title: "Class file-system.knownFolders"
-title: "Class file-system.knownFolders"
-description: "Class file-system.knownFolders"
+nav-title: "Module file-system.knownFolders"
+title: "Module file-system.knownFolders"
+description: "Module file-system.knownFolders"
 ---
 ## Namespace: "file-system".knownFolders
 Provides access to the top-level Folders instances that are accessible from the application. Use these as entry points to access the FileSystem.

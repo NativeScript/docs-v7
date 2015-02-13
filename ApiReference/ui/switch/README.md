@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/switch"
-title: "Class ui/switch"
-description: "Class ui/switch"
+nav-title: "Module ui/switch"
+title: "Module ui/switch"
+description: "Module ui/switch"
 ---
 # Module: "ui/switch"
 

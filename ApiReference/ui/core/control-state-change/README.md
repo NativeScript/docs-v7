@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/core/control-state-change"
-title: "Class ui/core/control-state-change"
-description: "Class ui/core/control-state-change"
+nav-title: "Module ui/core/control-state-change"
+title: "Module ui/core/control-state-change"
+description: "Module ui/core/control-state-change"
 ---
 # Module: "ui/core/control-state-change"
 

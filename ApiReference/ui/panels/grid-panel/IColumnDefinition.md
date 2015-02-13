@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/panels/grid-panel.IColumnDefinition"
-title: "Class ui/panels/grid-panel.IColumnDefinition"
-description: "Class ui/panels/grid-panel.IColumnDefinition"
+nav-title: "Interface ui/panels/grid-panel.IColumnDefinition"
+title: "Interface ui/panels/grid-panel.IColumnDefinition"
+description: "Interface ui/panels/grid-panel.IColumnDefinition"
 ---
 ## Object: "ui/panels/grid-panel".IColumnDefinition
 

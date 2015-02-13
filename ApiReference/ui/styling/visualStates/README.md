@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/styling.visualStates"
-title: "Class ui/styling.visualStates"
-description: "Class ui/styling.visualStates"
+nav-title: "Module ui/styling.visualStates"
+title: "Module ui/styling.visualStates"
+description: "Module ui/styling.visualStates"
 ---
 ## Namespace: "ui/styling".visualStates
 Encapsulates visual states names.

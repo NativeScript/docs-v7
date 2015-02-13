@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/frame.knownEvents"
-title: "Class ui/frame.knownEvents"
-description: "Class ui/frame.knownEvents"
+nav-title: "Module ui/frame.knownEvents"
+title: "Module ui/frame.knownEvents"
+description: "Module ui/frame.knownEvents"
 ---
 ## Namespace: "ui/frame".knownEvents
 Encapsulates the events raised by the Frame object.

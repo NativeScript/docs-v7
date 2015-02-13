@@ -1,7 +1,7 @@
 ---
-nav-title: "Class utils/containers"
-title: "Class utils/containers"
-description: "Class utils/containers"
+nav-title: "Module utils/containers"
+title: "Module utils/containers"
+description: "Module utils/containers"
 ---
 # Module: "utils/containers"
 

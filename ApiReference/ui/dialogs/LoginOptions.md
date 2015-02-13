@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/dialogs.LoginOptions"
-title: "Class ui/dialogs.LoginOptions"
-description: "Class ui/dialogs.LoginOptions"
+nav-title: "Interface ui/dialogs.LoginOptions"
+title: "Interface ui/dialogs.LoginOptions"
+description: "Interface ui/dialogs.LoginOptions"
 ---
 ## Object: "ui/dialogs".LoginOptions  
 _Extends:_ [_ConfirmOptions_](../../ui/dialogs/ConfirmOptions.md)  

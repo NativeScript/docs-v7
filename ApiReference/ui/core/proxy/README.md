@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/core/proxy"
-title: "Class ui/core/proxy"
-description: "Class ui/core/proxy"
+nav-title: "Module ui/core/proxy"
+title: "Module ui/core/proxy"
+description: "Module ui/core/proxy"
 ---
 # Module: "ui/core/proxy"
 

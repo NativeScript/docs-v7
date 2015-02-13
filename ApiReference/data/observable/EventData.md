@@ -1,7 +1,7 @@
 ---
-nav-title: "Class data/observable.EventData"
-title: "Class data/observable.EventData"
-description: "Class data/observable.EventData"
+nav-title: "Interface data/observable.EventData"
+title: "Interface data/observable.EventData"
+description: "Interface data/observable.EventData"
 ---
 ## Object: "data/observable".EventData  
 Base event data.

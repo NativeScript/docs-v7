@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/web-view.FinishedEventData"
-title: "Class ui/web-view.FinishedEventData"
-description: "Class ui/web-view.FinishedEventData"
+nav-title: "Interface ui/web-view.FinishedEventData"
+title: "Interface ui/web-view.FinishedEventData"
+description: "Interface ui/web-view.FinishedEventData"
 ---
 ## Object: "ui/web-view".FinishedEventData  
 _Extends:_ [_EventData_](../../data/observable/EventData.md)  

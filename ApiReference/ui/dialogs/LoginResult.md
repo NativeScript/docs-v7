@@ -1,7 +1,7 @@
 ---
-nav-title: "Class ui/dialogs.LoginResult"
-title: "Class ui/dialogs.LoginResult"
-description: "Class ui/dialogs.LoginResult"
+nav-title: "Interface ui/dialogs.LoginResult"
+title: "Interface ui/dialogs.LoginResult"
+description: "Interface ui/dialogs.LoginResult"
 ---
 ## Object: "ui/dialogs".LoginResult  
 Provides result data from the login dialog.
