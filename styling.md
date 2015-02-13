@@ -2,7 +2,7 @@
 nav-title: "NativeScript Styling"
 title: "Styling"
 description: "NativeScript Documentation: Styling"
-position: 5
+position: 11
 ---
 
 # Styling
@@ -18,7 +18,7 @@ Example:
 ```CSS
 var pages = require("ui/pages");
 var page = new pages.Page();
-page.css = "button { color: red }"; 
+page.css = "button { color: red }";
 ```
 
 *__Note__: Currently the CSS support is limited only to the selectors and properties listed in this article*
@@ -35,7 +35,7 @@ button { background-color: gray }
 ```
 
 #### Class selector
-[Class selectors](http://www.w3schools.com/cssref/sel_class.asp) select all views with a given class. 
+[Class selectors](http://www.w3schools.com/cssref/sel_class.asp) select all views with a given class.
 The class is set using the `cssClass` property of the view.
 
 CSS:
@@ -49,7 +49,7 @@ label.cssClass = "title"
 ```
 
 #### ID selector
-[Id selectors](http://www.w3schools.com/cssref/sel_id.asp) select all views with a given id. 
+[Id selectors](http://www.w3schools.com/cssref/sel_id.asp) select all views with a given id.
 The id is set using the `id` property of the view.
 
 CSS:

@@ -2,7 +2,7 @@
 nav-title: "Location"
 title: "Location"
 description: "NativeScript Documentation: Location"
-position: 10
+position: 15
 ---
 
 # Location

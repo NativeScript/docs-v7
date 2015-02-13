@@ -2,7 +2,7 @@
 nav-title: "NativeScript Layouts"
 title: "Layouts"
 description: "NativeScript Documentation: Layouts"
-position: 4
+position: 6
 ---
 
 # Layouts
@@ -76,7 +76,7 @@ panel.GridPanel.setRow(btn4, 1);
 // Specify in how much columns button should spans.
 panel.GridPanel.setColumnSpan(btn4, 3);
 
-// Create GridLengt object with fixed size 80px (device independent pixels) 
+// Create GridLengt object with fixed size 80px (device independent pixels)
 var pixelGridLength = new panel.GridLength(80, panel.GridUnitType.pixel);
 
 // Create GridLengt object with star size (take remaining space)

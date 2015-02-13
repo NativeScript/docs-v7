@@ -2,7 +2,7 @@
 nav-title: "Getting Started With NativeScript"
 title: "Getting Started With NativeScript"
 description: "NativeScript Documentation: Getting Started"
-position: 12
+position: 2
 ---
 
 # Getting Started With NativeScript

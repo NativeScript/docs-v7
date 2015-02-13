@@ -1,7 +1,7 @@
 ---
-nav-title: "UI Views"
-title: "UI Views"
-description: "UI Views"
+nav-title: "Views"
+title: "Views"
+description: "Views"
 position: 8
 ---
 

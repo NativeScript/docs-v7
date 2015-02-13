@@ -1,11 +1,11 @@
 ---
-nav-title: "UI Dialogs"
-title: "UI Dialogs"
-description: "NativeScript Documentation: UI Dialogs"
+nav-title: "Dialogs"
+title: "Dialogs"
+description: "NativeScript Documentation: Dialogs"
 position: 9
 ---
 
-# UI Dialogs
+# Dialogs
 ### How it works?
 You can show native platform dialogs using API similar to the web browser. For example:
 ```JavaScript
@@ -23,33 +23,33 @@ Available dialogs are: **alert**, **confirm**, **prompt**, **login** and **actio
 ### Alert
 ```JavaScript
 var dialogs = require("ui/dialogs");
-dialogs.alert("Your message").then(function() { 
+dialogs.alert("Your message").then(function() {
   console.log("Dialog closed!");
 });
 ```
 ```TypeScript
 import dialogs = require("ui/dialogs");
-dialogs.alert("Your message").then(()=> { 
+dialogs.alert("Your message").then(()=> {
   console.log("Dialog closed!");
 });
 ```
 OR
 ```JavaScript
 var dialogs = require("ui/dialogs");
-dialogs.alert({ 
-  title: "Your title", 
+dialogs.alert({
+  title: "Your title",
   message: "Your message",
-  okButtonText: "Your button text" 
+  okButtonText: "Your button text"
 }).then(function () {
   console.log("Dialog closed!");
 });
 ```
 ```TypeScript
 import dialogs = require("ui/dialogs");
-dialogs.alert({ 
-  title: "Your title", 
+dialogs.alert({
+  title: "Your title",
   message: "Your message",
-  okButtonText: "Your button text" 
+  okButtonText: "Your button text"
 }).then(()=> {
   console.log("Dialog closed!");
 });
@@ -225,4 +225,3 @@ dialogs.action({
 });
 ```
 *__Important__: Dialog result argument is string (clicked option text or cancel button text).*
-
