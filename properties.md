@@ -2,7 +2,7 @@
 nav-title: "NativeScript Properties"
 title: "Properties"
 description: "NativeScript Documentation: Properties"
-position: 77
+position: 13
 ---
 
 #Properties

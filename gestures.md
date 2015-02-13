@@ -2,7 +2,7 @@
 nav-title: "Gestures"
 title: "Gestures"
 description: "Gestures"
-position: 12
+position: 14
 
 ---
 # Overview
@@ -12,7 +12,7 @@ People use gestures—such as tap, drag, and pinch—to interact with apps and t
 - **observe(** type _Number_, callback _Function_... **)** _GesturesObserver_
    - **type** - _Number_
    - **callback** - _Function_(args _GestureEventData_)
-   - _**return**_ - _GesturesObserver_   
+   - _**return**_ - _GesturesObserver_
 
 ## Tap
 Triggers the default functionality for a given item.
@@ -45,7 +45,7 @@ var observer = label.observe(gestures.GestureTypes.DoubleTap, function (args) {
 ```
 ``` TypeScript
 var label = new labelModule.Label();
-var observer = label.observe(gestures.GestureTypes.DoubleTap, function (args: gestures.GestureEventData) { 
+var observer = label.observe(gestures.GestureTypes.DoubleTap, function (args: gestures.GestureEventData) {
     console.log("Double Tap");
 });
 ```

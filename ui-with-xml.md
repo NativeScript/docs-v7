@@ -83,9 +83,9 @@ export function buttonTap(args: observable.EventData) {
 Default *NativeScript* components can be found under the *tns_modules/ui* subfolder. Each component is located in a separate folder with a *package.json* file where the main component/file is specified
 ###### Button package.json
 ```JavaScript
-{ 
+{
     "name" : "button",
-    "main" : "button.js" 
+    "main" : "button.js"
 }
 ```
 ###### button.js
@@ -225,7 +225,7 @@ export function pageLoaded(args: observable.EventData) {
   </CanvasPanel>
 </Page>
 ```
-### Custom/user components 
+### Custom/user components
 Using **xmlns** you can refer to your own custom components declared in your application. For example
 ###### XML
 ```XML
@@ -335,7 +335,7 @@ export function buttonTap(args: observable.EventData) {
 }
 ```
 ### Bindings & expressions
-To specify binding or expression for some property in the XML you can use double curly brackets syntax. 
+To specify binding or expression for some property in the XML you can use double curly brackets syntax.
 #### Property binding
 ###### XML
 ```XML
@@ -349,7 +349,7 @@ To specify binding or expression for some property in the XML you can use double
 ```JavaScript
 function pageLoaded(args) {
 	var page = args.object;
- 
+
 	page.bindingContext = { name: "Some name" };
 }
 exports.pageLoaded = pageLoaded;
@@ -453,10 +453,10 @@ var view = require("ui/core/view");
 function pageLoaded(args) {
     var page = args.object;
     page.bindingContext = { myItems: [{ name: "Name1" }, { name: "Name2" }, { name: "Name3" }] };
-    
+
     // Will work!
     var listView1 = view.getViewById(page, "listView1");
-    
+
     // Will not work!
     var label1 = view.getViewById(page, "label1");
 }
@@ -472,13 +472,12 @@ import label = require("ui/label");
 export function pageLoaded(args: observable.EventData) {
     var page = <pages.Page>args.object;
     page.bindingContext = { myItems: [{ name: "Name1" }, { name: "Name2" }, { name: "Name3" }] };
-    
+
     // Will work!
     var listView1 = <listView.ListView>view.getViewById(page, "listView1");
-    
+
     // Will not work!
     var label1 = <label.Label>view.getViewById(page, "label1");
 }
 ```
 *__Important__: Accessing directly components by id is not recommended (especially when the component is part of template). Please use bindings to specify component properties!*
-

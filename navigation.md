@@ -2,7 +2,7 @@
 nav-title: "Navigation"
 title: "Navigation"
 description: "Navigation"
-position: 3
+position: 5
 
 ---
 # Overview
@@ -25,7 +25,7 @@ Pages can be defined in two different ways. If you decide to separate the user i
 <Page loaded="onPageLoaded">
   <Label text="Hello, world!"/>
 </Page>
-``` 
+```
 If you need to have additional logic (event handlers for example), you can also create a code-behind file with the same name as the XML file. After the XML file is parsed, NativeScript will look for this optional code-behind file:
 ``` JavaScript
 function onPageLoaded(args) {
@@ -170,4 +170,3 @@ topmost.goBack();
 ```
 #Alternatives
 Alternatively, if you do not want to have different pages and navigate between them, you can have a single page with a TabView. You can define a different UI for each tab and when the user selects a certain tab he will be presented with this UI.
-

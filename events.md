@@ -2,7 +2,7 @@
 nav-title: "NativeScript Events"
 title: "Events"
 description: "NativeScript Documentation: Events"
-position: 66
+position: 12
 ---
 
 #Events
