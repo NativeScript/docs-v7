@@ -8,7 +8,7 @@ Defines an interface used to create a member of a class from string representati
 
 ##### Functions
  - **applyXmlAttribute(** attributeName _String_, attrValue _Object_ **)** _Boolean_  
-     Called for every attribute in xml declaration. &lt;... fontAttributes="bold" ../&gt;
+     Called for every attribute in xml declaration. <... fontAttributes="bold" ../>
    - **attributeName** - _String_  
      - the name of the attribute (fontAttributes)
    - **attrValue** - _Object_  
