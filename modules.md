@@ -59,6 +59,7 @@ NativeScript uses a modular design pattern. All functionality that NativeScript 
 + [ui/web-view](./ApiReference/ui/web-view/HOW-TO.md) - contains the WebView class, which represents a standard browser widget.
 
 # Other Modules
++ [ui/border](./ApiReference/ui/border/HOW-TO.md) - contains the Border class, which allows drawing borders around other elements.
 + [ui/styling](./ApiReference/ui/styling/HOW-TO.md) - contains the Style class, which is resposndible for the visual appearance of elements.
 + [ui/gestures](./ApiReference/ui/gestures/HOW-TO.md) - contains the GesturesObserver class, which lets you observe and respond to user gestures
 + [ui/image-cache](./ApiReference/ui/image-cache/HOW-TO.md) - contains the Cache class, which handles image download requests and caches the already downloaded images.
