@@ -1,3 +1,12 @@
+---
+nav-title: "NativeScript CLI"
+title: "CLI"
+description: "NativeScript Documentation: Command-line Interface"
+position: 16
+---
+
+# Command-line Interface
+
 Using a command line interface (CLI) is a very productive and simple way to use a developer framework. That is why this is one of the first things we implemented as part of the NativeScript tools. By having a powerful CLI we also enable several key scenarios for you. One of them is that you now can use any IDE to edit the application code and use the CLI to build and deploy the application to an emulator or on a real device.
 
 
