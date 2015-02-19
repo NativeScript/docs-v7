@@ -76,9 +76,9 @@ Another option to set an event handler is via an xml declaration.
 
 ``` XML
 <Page>
-  <StackPanel>
+  <StackLayout>
     <Button tap="onTap" />
-  </StackPanel>
+  </StackLayout>
 </Page>
 ```
 Of course we need a code behind file in order to write the body of the function. (Code behind file has same name as **xml** with **js** or **ts** extension).
