@@ -34,11 +34,11 @@ NativeScript uses a modular design pattern. All functionality that NativeScript 
 + [ui/core/dependency-observable](./ApiReference/ui/core/dependency-observable/HOW-TO.md) - contains the DependencyObservable class, which represents an extended Observable object that uses Property instances for value backing mechanism.
 + [text/formatted-string](./ApiReference/text/formatted-string/HOW-TO.md) - contains the FormattedString and Span classes, which are used to create a formatted (rich text) strings.
 
-# Panels
-+ [ui/panels/stack-panel](./ApiReference/ui/stack-panel/HOW-TO.md) - contains the StackPanel class, which is used to arrange children into single line.
-+ [ui/panels/grid-panel](./ApiReference/ui/grid-panel/HOW-TO.md) - contains the GridPanel class, which represents a flexible grid area that consists of columns and rows.
-+ [ui/panels/canvas-panel](./ApiReference/ui/canvas-panel/HOW-TO.md) - contains the CanvasPanel class, which is used to place child elements at arbitrary positions or to draw children in multiple layers.
-+ [ui/panels/wrap-panel](./ApiReference/ui/wrap-panel/HOW-TO.md) - contains the WrapPanel class, which is used to place child elements at sequential positions from left to the right and then "wrap" the lines of children from top to the bottom.
+# Layouts
++ [ui/layouts/stack-layout](./ApiReference/ui/stack-layout/HOW-TO.md) - contains the StackLayout class, which is used to arrange children into single line.
++ [ui/layouts/grid-layout](./ApiReference/ui/grid-layout/HOW-TO.md) - contains the GridLayout class, which represents a flexible grid area that consists of columns and rows.
++ [ui/layouts/absolute-layout](./ApiReference/ui/absolute-layout/HOW-TO.md) - contains the AbsoluteLayout class, which is used to place child elements at arbitrary positions or to draw children in multiple layers.
++ [ui/layouts/wrap-layout](./ApiReference/ui/wrap-layout/HOW-TO.md) - contains the WrapLayout class, which is used to place child elements at sequential positions from left to the right and then "wrap" the lines of children from top to the bottom.
 
 # Widgets
 + [ui/page](./ApiReference/ui/page/HOW-TO.md) - contains the Page class, which represents a logical unit for navigation inside a Frame.
