@@ -93,9 +93,9 @@ This example will update **targetTextField.text** property with a *"Text set via
 
 		``` XML
 		<Page>
-			<StackPanel>{%raw%}
+			<StackLayout>{%raw%}
 				<TextField text= {{ textSource }} />
-{%endraw%}			</StackPanel>
+{%endraw%}		</StackLayout>
 		</Page>
 		```
 
@@ -105,17 +105,17 @@ With an xml declaration we set only properties names both for target (text) and 
 
 ##Binding source
 
-The important part of the data binding is setting the source object. NativeScript data binding works with any object that emits a **propertyChange** event. On the process of creating binding source can be set as second parameter of the bind(bindingOptions, source) or could be omitted. In that case for source is used a special property named **bindingContext** of the Bindable class. The special about this property is that it is inheritable across the visual tree. This means that control can use the **bindingContext** (as source) of the first **parent** element with a explicitly set **bindingContext**. With the previous example **bindingContext** can be set either on Page instance or StackPanel instance and TextField will have a proper source for its "text" property binding.
+The important part of the data binding is setting the source object. NativeScript data binding works with any object that emits a **propertyChange** event. On the process of creating binding source can be set as second parameter of the bind(bindingOptions, source) or could be omitted. In that case for source is used a special property named **bindingContext** of the Bindable class. The special about this property is that it is inheritable across the visual tree. This means that control can use the **bindingContext** (as source) of the first **parent** element with a explicitly set **bindingContext**. With the previous example **bindingContext** can be set either on Page instance or StackLayout instance and TextField will have a proper source for its "text" property binding.
 
 ``` JavaScript
 page.bindingContext = source;
 //or
-stackPanel.bindingContext = source;
+stackLayout.bindingContext = source;
 ```
 ``` TypeScript
 page.bindingContext = source;
 //or
-stackPanel.bindingContext = source;
+stackLayout.bindingContext = source;
 ```
 
 * Create a data binding to an event in xml
@@ -139,9 +139,9 @@ and how xml will look like:
 
 ``` XML
 <Page>
-	<StackPanel>{%raw%}
+	<StackLayout>{%raw%}
 		<Button text="Test Button For Binding" tap="{{ onTap }}" />
-{%endraw%}	</StackPanel>
+{%endraw%}	</StackLayout>
 </Page>
 ```
 
