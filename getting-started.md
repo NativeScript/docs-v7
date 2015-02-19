@@ -43,11 +43,11 @@ Let's add some UI in `main-page.xml`:
 ```XML
 <?xml version="1.0" encoding="UTF-8" ?>
 <Page>
-  <StackPanel>
+  <StackLayout>
     <Label text="Tap the button" style="horizontal-align: center"/>
     <Button text="TAP" />
     <Label text="message" textWrap="true" style="horizontal-align: center"/>
-  </StackPanel>
+  </StackLayout>
 </Page>
 ```
 We have added a title label, a button and a message label that we are going to use in the next section.
@@ -142,11 +142,11 @@ main-page.xml
 ``` XML
 <?xml version="1.0" encoding="UTF-8" ?>
 <Page loaded="pageLoaded">
-  <StackPanel>
+  <StackLayout>
     <Label text="Tap the button" style="horizontal-align: center"/>
     {%raw%}<Button text="TAP" tap="{{ tapAction }}"/>
     <Label text="{{ message }}" textWrap="true" style="horizontal-align: center"/>{%endraw%}
-  </StackPanel>
+  </StackLayout>
 </Page>
 ```
 
@@ -185,11 +185,11 @@ Finally - replace the inline styles in the `main-page.xml` with `cssClass` attri
 ```XML
 <?xml version="1.0" encoding="UTF-8" ?>
 <Page loaded="pageLoaded">
-  <StackPanel>
+  <StackLayout>
     <Label text="Tap the button" cssClass="title"/>
     {%raw%}<Button text="TAP" tap="{{ tapAction }}" />
     <Label text="{{ message }}" cssClass="message" textWrap="true"/>{%endraw%}
-  </StackPanel>
+  </StackLayout>
 </Page>
 ```
 
