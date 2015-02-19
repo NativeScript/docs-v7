@@ -36,10 +36,10 @@ frames.topmost().navigate("app/my-page")
 ###### XML
 ```XML
 <Page>
-  <StackPanel>
+  <StackLayout>
      <Label id="Label1" text="This is Label!" />
      <Button text="This is Button!" tap="buttonTap" />
-   </StackPanel>
+   </StackLayout>
 </Page>
 ```
 If you have a **JavaScript-extension-file** with the same path (app/my-page.js), this file will be loaded together with the XML and will serve as a code-behind for the page where you can specify **event handlers, binding context and/or any other additional code**. In order to be accessible from the UI you need to declare your variables or functions in the module **exports**.
@@ -95,7 +95,7 @@ var Button = ...
 exports.Button = Button;
 ```
 *__Important__: When parsing the XML, NativeScript will look for a component which has a matching name in the module exports!*
-## Content components/panels
+## Content components
 ### Page
 ###### XML
 ```XML
@@ -173,56 +173,48 @@ export function pageLoaded(args: observable.EventData) {
   </ScrollView>
 </Page>
 ```
-### StackPanel
+### StackLayout
 ###### XML
 ```XML
 <Page>
-  <StackPanel orientation="horizontal">
+  <StackLayout orientation="horizontal">
     <Label text="This is Label 1" />
     <Label text="This is Label 2" />
-  </StackPanel>
+  </StackLayout>
 </Page>
 ```
-### GridPanel
+### GridLayout
 ###### XML
 ```XML
 <Page>
-  <GridPanel>
-    <GridPanel.rowDefinitions>
-      <RowDefinition height="*" />
-      <RowDefinition height="auto" />
-    </GridPanel.rowDefinitions>
-    <GridPanel.columnDefinitions>
-      <ColumnDefinition width="250" />
-      <ColumnDefinition width="*" />
-    </GridPanel.columnDefinitions>
+  <GridLayout rows="*, auto" columns="250, *">
     <Label text="This is Label in row 0, col 0" />
     <Label text="This is Label in row 0, col 1" col="1" />
     <Label text="This is Label in row 1, col 0" row="1" />
     <Label text="This is Label in row 1, col 1" row="1" col="1" />
     <Label text="This is Label in row 0, col 0" rowSpan="2" colSpan="2" />
-  </GridPanel>
+  </GridLayout>
 </Page>
 ```
-### WrapPanel
+### WrapLayout
 ###### XML
 ```XML
 <Page>
-  <WrapPanel>
+  <WrapLayout>
     <Label text="This is Label 1" />
     <Label text="This is Label 2" />
     <Label text="This is Label 3" />
     <Label text="This is Label 4" />
-  </WrapPanel>
+  </WrapLayout>
 </Page>
 ```
-### CanvasPanel
+### AbsoluteLayout
 ###### XML
 ```XML
 <Page>
-  <CanvasPanel>
+  <AbsoluteLayout>
     <Label text="This is Label 1" left="30" top="70" />
-  </CanvasPanel>
+  </AbsoluteLayout>
 </Page>
 ```
 ### Custom/user components
@@ -232,10 +224,10 @@ Using **xmlns** you can refer to your own custom components declared in your app
 <Page
   	xmlns:customControls="app/xml-declaration/mymodule"
   	xmlns:customOtherControls="app/xml-declaration/mymodulewithxml">
-  <WrapPanel>
+  <WrapLayout>
     <customControls:MyControl />
     <customOtherControls:MyControl />
-  </WrapPanel>
+  </WrapLayout>
 </Page>
 ```
 ### Code-only custom component (app/xml-declaration/mymodule)
@@ -247,7 +239,7 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var stackPanel = require("ui/panels/stack-panel");
+var stackLayout = require("ui/layouts/stack-layout");
 var label = require("ui/label");
 var button = require("ui/button");
 var MyControl = (function (_super) {
@@ -265,16 +257,16 @@ var MyControl = (function (_super) {
         this.addChild(btn);
     }
     return MyControl;
-})(stackPanel.StackPanel);
+})(stackLayout.StackLayout);
 exports.MyControl = MyControl;
 ```
 ```TypeScript
 import observable = require("data/observable");
-import stackPanel = require("ui/panels/stack-panel");
+import stackLayout = require("ui/layouts/stack-layout");
 import label = require("ui/label");
 import button = require("ui/button");
 
-export class MyControl extends stackPanel.StackPanel {
+export class MyControl extends stackLayout.StackLayout {
     constructor() {
         super();
 
@@ -295,10 +287,10 @@ export class MyControl extends stackPanel.StackPanel {
 ### Custom component with XML (app/xml-declaration/mymodulewithxml)
 ###### XML
 ```XML
-<StackPanel>
+<StackLayout>
   <Label id="Label1" />
   <Button text="Tap!" tap="buttonTap" />
-</StackPanel>
+</StackLayout>
 ```
 ###### Code
 ```JavaScript
