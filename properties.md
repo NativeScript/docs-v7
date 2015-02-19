@@ -53,7 +53,7 @@ Dependency properties are special kind of properties that provides some more int
 
 * Change notification - There is another callback which will be called when the value of the property is changed. It will be called with an [EventData](./ApiReference/data/observable/EventData.md) as a parameter.
 
-* Inheritance - One of the most important features of dependency properties is inheritance. By inheritance we refer to a special option for UI elements (such as Button) to get its property from a parent (on the visual tree) element. For example button could inherit its style (or theme) property value from the parent Window, Panel or other container. This gives the end user the option to dramatically change the look of the entire application by only changing a single setting (Window.theme).
+* Inheritance - One of the most important features of dependency properties is inheritance. By inheritance we refer to a special option for UI elements (such as Button) to get its property from a parent (on the visual tree) element. For example button could inherit its style (or theme) property value from the parent Window, Layout or other container. This gives the end user the option to dramatically change the look of the entire application by only changing a single setting (Window.theme).
 
 ##Working with dependency properties
 
@@ -409,7 +409,7 @@ The important part of this class is the call to the static method **styles.style
 * Using the new custom property
 
 ``` JavaScript
-var stackPanelDef = require("ui/panels/stack-panel");
+var stackLayoutDef = require("ui/layouts/stack-layout");
 var buttonModule = require("ui/button");
 var pages = require("ui/page");
 
@@ -423,7 +423,7 @@ var MyButton = (function (_super) {
 exports.MyButton = MyButton;
 MyTextViewStyler.registerHandlers();
 function createPage() {
-    var panel = new stackPanelDef.StackPanel();
+    var layout = new stackLayoutDef.StackLayout();
     var btn = new MyButton();
     btn.text = "The quick brown fox jumps over the lazy dog.";
     btn.id = "btn";
@@ -432,18 +432,18 @@ function createPage() {
     btn1.id = "btn1";
     var btn2 = new buttonModule.Button();
     btn2.text = "The quick brown fox jumps over the lazy dog.";
-    panel.addChild(btn);
-    panel.addChild(btn1);
-    panel.addChild(btn2);
+    layout.addChild(btn);
+    layout.addChild(btn1);
+    layout.addChild(btn2);
     var page = new pages.Page();
     page.css = "#btn {font-family: Courier New} #btn1 {font-family: Times New Roman} #btn2 {color: yellow}";
-    page.content = panel;
+    page.content = layout;
     return page;
 }
 exports.createPage = createPage;
 ```
 ``` TypeScript
-import stackPanelDef = require("ui/panels/stack-panel");
+import stackLayoutDef = require("ui/layouts/stack-layout");
 import buttonModule = require("ui/button");
 import pages = require("ui/page");
 
@@ -454,7 +454,7 @@ export class MyButton extends buttonModule.Button {
 MyTextViewStyler.registerHandlers();
 
 export function createPage() {
-    var panel = new stackPanelDef.StackPanel();
+    var layout = new stackLayoutDef.StackLayout();
 
     var btn = new MyButton();
     btn.text = "The quick brown fox jumps over the lazy dog.";
@@ -467,13 +467,13 @@ export function createPage() {
     var btn2 = new buttonModule.Button();
     btn2.text = "The quick brown fox jumps over the lazy dog.";
 
-    panel.addChild(btn);
-    panel.addChild(btn1);
-    panel.addChild(btn2);
+    layout.addChild(btn);
+    layout.addChild(btn1);
+    layout.addChild(btn2);
 
     var page = new pages.Page();
     page.css = "#btn {font-family: Courier New} #btn1 {font-family: Times New Roman} #btn2 {color: yellow}";
-    page.content = panel;
+    page.content = layout;
     return page;
 }
 ```
