@@ -11,12 +11,12 @@ var PageModule = require("ui/page");
 var FrameModule = require("ui/frame");
 ```
 ### Attaching event handler for the Page loaded event to set bindingContext.
-```XML
+``` XML
 <Page loaded="pageLoaded">
   {%raw%}<Label text="{{ name }}" />{%endraw%}
 </Page>
 ```
-```JS
+``` JavaScript
 function pageLoaded(args) {
   var page = args.object;
   page.bindingContext = { name : "Some name" };
@@ -62,8 +62,7 @@ var navEntry = {
 var topFrame = FrameModule.topmost();
 topFrame.navigate(navEntry);
 ```
-# Page
-Adding a css that affects all nested UI components.
-``` JavaScript
+### Adding a css that affects all nested UI components.
+``` JavaScript
 testPage.css = "stackLayout {background-color: #ffff0000;} label {background-color: #ff00ff00;}";
 ```
