@@ -21,7 +21,7 @@ var page = new pages.Page();
 page.css = "button { color: red }";
 ```
 
-*__Note__: Currently the CSS support is limited only to the selectors and properties listed in this article*
+> __Note__: Currently the CSS support is limited only to the selectors and properties listed in this article*
 
 ### Supported selectors
 Native script supports a subset of [CSS selector syntax](http://www.w3schools.com/cssref/css_selectors.asp). We will look trough the supported selectors.
@@ -67,6 +67,48 @@ State selectors (a.k.a [Pseudo-classes selectors](https://developer.mozilla.org/
 ```CSS
 button:pressed { background-color: blue }
 ```
+
+#### Adding a css selectors
+There are two options for adding a css selectors to an already existing selectors.
+- Adding a valid css
+``` JavaScript
+page.addCss("button {background-color: blue}");
+```
+``` TypeScript
+page.addCss("button {background-color: blue}");
+```
+
+This snippets adds the new selectors to the current selectors. Very useful in cases when a small css should be added to an element (for example using in some test purposes).
+
+- Adding a valid css from a file
+``` JavaScript
+page.addCssFile(cssFileName);
+```
+``` TypeScript
+page.addCssFile(cssFileName);
+```
+
+This snippet again adds new css selectors to the current. However this methods uses a file with css content. This gives an option to load different separated css styles.
+
+> __Note__: The cssFileName parameter should be a file path related to the application current folder.
+
+- Adding an application wide css
+Another very helpful feature is the ability to set an application level css which will be applied before each page css.
+``` JavaScript
+var application = require("application");
+application.mainModule = "main-page";
+application.cssFile = "style.css";
+
+application.start();
+```
+``` TypeScript
+import application = require("application");
+application.mainModule = "main-page";
+application.cssFile = "style.css";
+
+application.start();
+```
+> __Note__: Again the path to style.css file should be related to the application root folder.
 
 ## Supported properties
 Here is list of the properties, that can be set in CSS or through the style property of each View:
