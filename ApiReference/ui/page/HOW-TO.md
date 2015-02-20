@@ -62,7 +62,8 @@ var navEntry = {
 var topFrame = FrameModule.topmost();
 topFrame.navigate(navEntry);
 ```
-### Adding a css that affects all nested UI components.
-``` JavaScript
-testPage.css = "stackPanel {background-color: #ffff0000;} label {background-color: #ff00ff00;}";
+# Page
+Adding a css that affects all nested UI components.
+``` JavaScript
+testPage.css = "stackLayout {background-color: #ffff0000;} label {background-color: #ff00ff00;}";
 ```

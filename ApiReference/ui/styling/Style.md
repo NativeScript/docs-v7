@@ -24,12 +24,26 @@ Represents as style object containing all the style properties for a particular 
   Gets or sets width style property.
  - **height** - _Number_.    
   Gets or sets height style property.
- - **maxWidth** - _Number_.    
-  Gets or sets max-width style property.
- - **maxHeight** - _Number_.    
-  Gets or sets max-height style property.
- - **margin** - [_Thickness_](../../utils/geometry/Thickness.md).    
+ - **margin** - _String_.    
   Gets or sets margin style property.
+ - **marginLeft** - _Number_.    
+  Specifies extra space on the left side of this view.
+ - **marginTop** - _Number_.    
+  Specifies extra space on the top side of this view.
+ - **marginRight** - _Number_.    
+  Specifies extra space on the right side of this view.
+ - **marginBottom** - _Number_.    
+  Specifies extra space on the bottom side of this view.
+ - **padding** - _String_.    
+  Gets or sets padding style property.
+ - **paddingBottom** - _Number_.    
+  Specify the bottom padding of this view.
+ - **paddingLeft** - _Number_.    
+  Specify the left padding of this view.
+ - **paddingRight** - _Number_.    
+  Specify the right padding of this view.
+ - **paddingTop** - _Number_.    
+  Specify the top padding of this view.
  - **horizontalAlignment** - _String_.    
   Gets or sets horizontal-alignment style property.
  - **verticalAlignment** - _String_.    

@@ -9,7 +9,6 @@ Module with android specific utilities.
 Namespace | Description
 ------|------------
 [collections](../../../utils/utils/ad/collections/) | Utility module dealing with some android collections.
-[layout](../../../utils/utils/ad/layout/) | Utility module related to android layout.
 [resources](../../../utils/utils/ad/resources/) | Utility module related to android resources.
 
 ##### Functions

@@ -11,10 +11,10 @@ var switchModule = require("ui/switch");
 ### Binding the Switch checked property and Button isEanbled property to a observable view-model property.
 ```XML
 <Page loaded="pageLoaded">
- <StackPanel orientation="vertical">
+ <StackLayout orientation="vertical">
    {%raw%}<Switch checked="{{ someProperty }}" />
    <Button isEanbled="{{ someProperty }}" text="This is a Button!" />{%endraw%}
- </StackPanel>
+ </StackLayout>
 </Page>
 ```
 ```JS

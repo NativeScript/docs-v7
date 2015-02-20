@@ -13,7 +13,9 @@ var uicoreview = require("ui/core/view");
 Class | Description
 ------|------------
 [View](../../../ui/core/view/View.md) | This class is the base class for all UI components. 
-A View occupies a rectangular area on the screen and is responsible for drawing (measure and arrange) of all UI components within. 
+A View occupies a rectangular area on the screen and is responsible for drawing and layouting of all UI components within. 
+[CustomLayoutView](../../../ui/core/view/CustomLayoutView.md) | Base class for all UI components that implements custom layouts. 
+[NativeViewGroup](../../../ui/core/view/NativeViewGroup.md) | 
 
 Object | Description
 ------|------------

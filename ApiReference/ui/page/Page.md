@@ -16,6 +16,16 @@ Represents a logical unit for navigation (inside Frame).
   Gets the Frame object controlling this instance.
 
 ##### Instance Functions
+ - **addCss(** cssString _String_ **)**  
+     Adds a new values to current css.
+   - **cssString** - _String_  
+     - A valid css which will be added to current css. 
+ - **addCssFile(** cssFileName _String_, isAbsolutePath? _Boolean_ **)**  
+     Adds the content of the file to the current css.
+   - **cssFileName** - _String_  
+     - A valid file name which contains a valid css.
+   - **isAbsolutePath** - _(optional)_ - _Boolean_  
+     - Indicates if a specified cssFileName is absolute or start from the application root.
  - **onNavigatingTo(** context _Object_ **)**  
      A method called before navigating to the page.
    - **context** - _Object_  

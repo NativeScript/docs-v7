@@ -12,10 +12,10 @@ var observable = require("data/observable");
 ### Binding two TextFields text property to observable view-model property.
 ```XML
 <Page loaded="pageLoaded">
- <StackPanel orientation="vertical">
+ <StackLayout orientation="vertical">
    {%raw%}<TextField text="{{ someProperty }}" />
    <TextField text="{{ someProperty }}" />{%endraw%}
- </StackPanel>
+ </StackLayout>
 </Page>
 ```
 ```JS

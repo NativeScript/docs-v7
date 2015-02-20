@@ -12,9 +12,9 @@ var utilsutils = require("utils/utils");
 
 Namespace | Description
 ------|------------
+[layout](../../utils/utils/layout/) | Utility module related to layout.
 [ad](../../utils/utils/ad/) | Module with android specific utilities.
 [ios](../../utils/utils/ios/) | Module with ios specific utilities.
-[platform](../../utils/utils/platform/) | Provides information about the current running platform.
 
 ##### Functions
  - **copyFrom(** source _Object_, target _Object_ **)**  
@@ -25,6 +25,3 @@ Namespace | Description
      - The target object.
  - **GC()**  
      An utility function that invokes garbage collection on the java script side.
- - **targetPlatform()** _String_  
-     An utility function that returns current running platform.
-   - _**return**_ - _String_

@@ -24,3 +24,4 @@ Namespace | Description
 [DeviceType](../../ui/enums/DeviceType/) | Describes the type of a device
 [UpdateTextTrigger](../../ui/enums/UpdateTextTrigger/) | Represents an enumeration specifying when the text property of an EditableTextBase will be updated.
 [Accuracy](../../ui/enums/Accuracy/) | Specifies common accuracy values.
+[Dock](../../ui/enums/Dock/) | Specifies the Dock position of a child element that is inside a DockLayout.

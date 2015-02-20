@@ -3,8 +3,7 @@ nav-title: "Class platform.device"
 title: "Class platform.device"
 description: "Class platform.device"
 ---
-## Class: "platform".device  
-An object containing device specific information.
+## Class: "platform".device
 
 ##### Static Properties
  - **model** - _String_.    

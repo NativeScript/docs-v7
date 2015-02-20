@@ -11,10 +11,10 @@ var sliderModule = require("ui/slider");
 ### Binding the Progress and Slider value properties to a observable view-model property.
 ```XML
 <Page loaded="pageLoaded">
- <StackPanel orientation="vertical">
+ <StackLayout orientation="vertical">
    {%raw%}<Progress value="{{ someProperty }}" />
    <Slider value="{{ someProperty }}" />{%endraw%}
- </StackPanel>
+ </StackLayout>
 </Page>
 ```
 ```JS

@@ -22,10 +22,10 @@ Object | Description
 ------|------------
 [PropertyChangeData](../../../ui/core/dependency-observable/PropertyChangeData.md) | The data for the event raised when a value of a Property changes for a DependencyObservable instance.
 [PropertyChangedCallback](../../../ui/core/dependency-observable/PropertyChangedCallback.md) | Defines the signature of the function that handles the propertyChanged event.
-[PropertyValidateValueCallback](../../../ui/core/dependency-observable/PropertyValidateValueCallback.md) | Defines the signature of the function that handles the validateValue event.
+[PropertyValidationCallback](../../../ui/core/dependency-observable/PropertyValidationCallback.md) | Defines the signature of the function that handles the validateValue event.
 [PropertyEqualityComparer](../../../ui/core/dependency-observable/PropertyEqualityComparer.md) | Defines the signature of the function that compares if two property values are equal.
 
 Namespace | Description
 ------|------------
-[PropertyMetadataOptions](../../../ui/core/dependency-observable/PropertyMetadataOptions/) | Lists the possible values for the PropertyMetadata.options property. Each actual numeric value is a power of two allowing for bitwise operations.
+[PropertyMetadataSettings](../../../ui/core/dependency-observable/PropertyMetadataSettings/) | Lists the possible values for the PropertyMetadata.options property. Each actual numeric value is a power of two allowing for bitwise operations.
 [ValueSource](../../../ui/core/dependency-observable/ValueSource/) | Lists the possible values for the PropertyEntry.valueSource property.
