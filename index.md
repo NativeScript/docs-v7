@@ -29,3 +29,5 @@ Read the advanced topics below or refer to the [Api Reference](ApiReference/) to
 - [Properties](properties.md)
 - [Gestures](gestures.md)
 - [Location](location.md)
+
+To develop even more advanced applications or your own modules, platform-specific JavaScript is available. See more in the [android](runtimes/android) and [ios](runtimes/ios) topics
