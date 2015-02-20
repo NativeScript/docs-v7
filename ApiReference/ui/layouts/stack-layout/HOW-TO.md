@@ -8,15 +8,15 @@ description: "Examples for using stack-layout"
 var stackLayout = new layout.StackLayout();
 var btn = new button.Button();
  ```
-### Add child view to panel
+### Add child view to layout
 ``` JavaScript
 stackLayout.addChild(btn);
  ```
-### Remove child view from panel
+### Remove child view from layout
 ``` JavaScript
 stackLayout.removeChild(btn);
 ```
-### Change panel orientation to Horizontal
+### Change layout orientation to Horizontal
 ``` JavaScript
 stackLayout.orientation = enums.Orientation.horizontal;
 ```

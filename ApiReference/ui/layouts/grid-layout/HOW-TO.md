@@ -12,7 +12,7 @@ var btn2 = new button.Button();
 var btn3 = new button.Button();
 var btn4 = new button.Button();
  ```
-### Add views to panel
+### Add views to layout
 ``` JavaScript
 gridLayout.addChild(btn1);
 gridLayout.addChild(btn2);
