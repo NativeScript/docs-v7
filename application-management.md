@@ -1,55 +1,80 @@
 ---
-nav-title: "Application Management"
-title: "Application Management"
-description: "Application Management"
+nav-title: Application Management
+title: Application Management
+description: Learn how to manage the life cycle of NativeScript applications from application start to storing user-defined settings.
 position: 4
-
 ---
-# Application Start
-You are required to call the **start** method of the application module once you are ready with its initialization. This method doesn't do anything for an Android application at the moment but may do in the future. In an iOS application this call will start the UIApplication and will trigger its UI message loop.:
+
+# Application Management
+
+* [Start Application](#start-application)
+* [Use Application Callbacks](#use-application-callbacks)
+* [Persist and Restore Application Settings](#persist-and-restore-application-settings)
+
+## Start Application
+
+You must call the **start** method of the application module after the module initialization. 
+
+This method is required for iOS application. 
+
+### Example
+
 ``` JavaScript
+/*
+iOS calls UIApplication and triggers the application main event loop.
+*/
+
 var application = require("application");
 application.mainModule = "app/template-settings/main-page";
 application.start();
 ```
 ``` TypeScript
+/*
+iOS calls UIApplication and triggers the application main event loop.
+*/
+
 import application = require("application");
 application.mainModule = "app/main-page";
 application.start();
 ```
-# Using Application Callbacks
-Each NativeScript application has several important lifecycle events. You can use those events to perform all kinds of needed maintenance and housekeeping:
-+ onLaunch(context) - method called when application launch.
-+ onSuspend() - method called when the application is suspended.
-+ onResume() - method called when the application is resumed after it has been suspended.
-+ onExit() - method called when the application is about to exit.
-+ onLowMemory() - method called when there is low memory on the target device.
-+ onUncaughtError(error) - method called when there is an uncaught application error.
-Here is a code example that demonstrates how too use those callback functions:
+
+## Use Application Callbacks
+
+NativeScript applications have the following life cycle events.
+
++ `onLaunch(context)`: This method is called when application launch.
++ `onSuspend()`: This method is called when the application is suspended.
++ `onResume()`: This method is called when the application is resumed after it has been suspended.
++ `onExit()`: This method is called when the application is about to exit.
++ `onLowMemory()`: This method is called when the memory on the target device is low.
++ `onUncaughtError(error)`: This method is called when an uncaught application error is present.
+
+### Example
+
 ``` JavaScript
 var application = require("application");
 application.mainModule = "app/template-settings/main-page";
 application.onLaunch = function (context) {
-    // For Android applications the context is an android.content.Intent.
-    // For iOS applications the context is undefined, i.e. there is no available context.
+    // For Android applications, the context is an android.content.Intent class.
+    // For iOS applications, the context is undefined.
     if (application.android) {
-        console.log("Launched Android application with intent: " + context);
+        console.log("Launched Android application with the following intent: " + context + ".");
     }
     else if (application.ios) {
-        console.log("Launched iOS application");
+        console.log("Launched iOS application.");
     }
 };
 application.onSuspend = function () {
-    console.log("Application suspended");
+    console.log("Application suspended.");
 };
 application.onResume = function () {
-    console.log("Application resumed");
+    console.log("Application resumed.");
 };
 application.onExit = function () {
-    console.log("Application exit");
+    console.log("Application will exit.");
 };
 application.onLowMemory = function () {
-    console.log("Application low memory");
+    console.log("Memory is low.");
 };
 application.onUncaughtError = function (error) {
     console.log("Application error: " + error.name + "; " + error.message + "; " + error.nativeError);
@@ -60,63 +85,71 @@ application.start();
 import application = require("application");
 application.mainModule = "app/main-page";
 application.onLaunch = function (context: any) {
-    // For Android applications the context is an android.content.Intent.
-    // For iOS applications the context is undefined, i.e. there is no available context.
+    // For Android applications, the context is an android.content.Intent class.
+    // For iOS applications, the context is undefined.
     if (application.android) {
-        console.log("Launched Android application with intent: " + context);
+        console.log("Launched Android application with the following intent: " + context + ".");
     }
     else if (application.ios) {
-        console.log("Launched iOS application");
+        console.log("Launched iOS application.");
     }
 }
 application.onSuspend = function () {
-    console.log("Application suspended");
+    console.log("Application suspended.");
 }
 application.onResume = function () {
-    console.log("Application resumed");
+    console.log("Application resumed.");
 }
 application.onExit = function () {
-    console.log("Application exit");
+    console.log("Application will exit.");
 }
 application.onLowMemory = function () {
-    console.log("Application low memory");
+    console.log("Memory is low.");
 }
 application.onUncaughtError = function (error: application.NativeScriptError) {
     console.log("Application error: " + error.name + "; " + error.message + "; " + error.nativeError);
 }
 application.start();
 ```
-# Persist and Restore Application Settings
-To persist settings that the user has defined you have to use the local-settings module. The local-settings module is a static singleton hash table that stores key-value pairs for the application. The getter methods have two parameters -- a key and an optional default value to return if the specified key does not exist. The setter methods also have two parameters -- key and value. Here is an example of using the local settings-module and all of its available methods:
+
+## Persist and Restore Application Settings
+
+To persist user-defined settings, you need to use the `local-settings` module. The `local-settings` module is a static singleton hash table that stores key-value pairs for the application. 
+
+The getter methods have two parameters: a key and an optional default value to return if the specified key does not exist.
+The setter methods have two required parameters: a key and value. 
+
+### Example
+
 ``` JavaScript
 var localSettings = require("local-settings");
-// Event handler for Page "loaded" event attached in main-page.xml
+// Event handler for Page "loaded" event attached in main-page.xml.
 function pageLoaded(args) {
     localSettings.setString("Name", "John Doe");
-    console.log(localSettings.getString("Name")); // Prints "John Doe"
+    console.log(localSettings.getString("Name")); // Prints "John Doe".
     localSettings.setBoolean("Married", false);
-    console.log(localSettings.getBoolean("Married")); // Prints false
+    console.log(localSettings.getBoolean("Married")); // Prints false.
     localSettings.setNumber("Age", 42);
-    console.log(localSettings.getNumber("Age")); // Prints 42
-    console.log(localSettings.hasKey("Name")); // Prints true
+    console.log(localSettings.getNumber("Age")); // Prints 42.
+    console.log(localSettings.hasKey("Name")); // Prints true.
     localSettings.remove("Name"); // Removes the Name entry.
-    console.log(localSettings.hasKey("Name")); // Prints false
+    console.log(localSettings.hasKey("Name")); // Prints false.
 }
 exports.pageLoaded = pageLoaded;
 ```
 ``` TypeScript
 import observable = require("data/observable");
 import localSettings = require("local-settings");
-// Event handler for Page "loaded" event attached in main-page.xml
+// Event handler for Page "loaded" event attached in main-page.xml.
 export function pageLoaded(args: observable.EventData) {
     localSettings.setString("Name", "John Doe");
-    console.log(localSettings.getString("Name"));// Prints "John Doe"
+    console.log(localSettings.getString("Name"));// Prints "John Doe".
     localSettings.setBoolean("Married", false);
-    console.log(localSettings.getBoolean("Married"));// Prints false
+    console.log(localSettings.getBoolean("Married"));// Prints false.
     localSettings.setNumber("Age", 42);
-    console.log(localSettings.getNumber("Age"));// Prints 42
-    console.log(localSettings.hasKey("Name"));// Prints true
+    console.log(localSettings.getNumber("Age"));// Prints 42.
+    console.log(localSettings.hasKey("Name"));// Prints true.
     localSettings.remove("Name");// Removes the Name entry.
-    console.log(localSettings.hasKey("Name"));// Prints false
+    console.log(localSettings.hasKey("Name"));// Prints false.
 }
 ```
