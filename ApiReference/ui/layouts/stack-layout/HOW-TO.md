@@ -6,10 +6,10 @@ description: "Examples for using stack-layout"
 ### Create StackLayout
 ``` JavaScript
 var stackLayout = new layout.StackLayout();
-var btn = new button.Button();
  ```
 ### Add child view to layout
 ``` JavaScript
+var btn = new button.Button();
 stackLayout.addChild(btn);
  ```
 ### Remove child view from layout

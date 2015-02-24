@@ -24,4 +24,4 @@ Namespace | Description
    - **target** - _Object_  
      - The target object.
  - **GC()**  
-     An utility function that invokes garbage collection on the java script side.
+     An utility function that invokes garbage collection on the JavaScript side.

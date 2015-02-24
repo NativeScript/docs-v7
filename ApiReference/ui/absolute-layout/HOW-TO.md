@@ -1,7 +1,7 @@
 ---
-nav-title: "AbsoluteLayout How-To"
+nav-title: "absolute-layout How-To"
 title: "How-To"
-description: "Examples for using AbsoluteLayout"
+description: "Examples for using absolute-layout"
 ---
 # AbsoluteLayout
 Using a AbsoluteLayout requires the AbsoluteLayout module.

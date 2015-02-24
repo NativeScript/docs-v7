@@ -141,6 +141,10 @@ When overriding this method, you must call setMeasuredDimension(int, int) to sto
      Returns the child view with the specified id.
    - **id** - _String_
    - _**return**_ - _T_
+ - **focus()** _Boolean_  
+     Tries to focus the view.
+Returns a value indicating whether this view or one of its descendants actually took focus.
+   - _**return**_ - _Boolean_
  - **observe(** type _Number_, callback _Function_... **)** [_GesturesObserver_](../../../ui/gestures/GesturesObserver.md)
    - **type** - _Number_
    - **callback** - _Function_(args [_GestureEventData_](../../../ui/gestures/GestureEventData.md))
