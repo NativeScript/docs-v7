@@ -1,32 +1,53 @@
 ---
-nav-title: "Navigation"
-title: "Navigation"
-description: "Navigation"
+nav-title: Application Architecture and Navigation
+title: Application Architecture and Navigation
+description: Learn the basic application structure of NativeScript apps and how to navigate inside your app.
 position: 5
-
 ---
-# Overview
-Each NativeScript application is built upon the concept of pages (represented by the **Page** class). Pages are the different screens that your application offers. Each page has a **content** property which holds the root visual element of the page UI. Navigating between different pages is done with methods of the **Frame** class. The Frame class represents the logical unit that is responsible for navigation between different pages, i.e. going from one page to another, keeping a history stack for going back and so on.
-#Main Module
-Each application must have a single entry point, that is, the first screen that the user will see after starting the app. Specifying the main module of an application is done through the **mainModule** property of the Application class:
-``` JavaScript
-var application = require("application");
-application.mainModule = "app/main-page";
-application.start();
-```
-``` TypeScript
-import application = require("application");
-application.mainModule = "app/main-page";
-application.start();
-```
-#Pages
-Pages can be defined in two different ways. If you decide to separate the user interface from the logic, you can create an XML file containing the layout of your page. When you specify **application.mainModule**, NativeScript will first look for an XML file with that name. If it finds such a file, it will parse it and create the UI described in it:
+
+# Application Architecture and Navigation
+
+NativeScript apps consist of pages which represent the separate application screens. Pages are instances of the [`page`](ApiReference/ui/page/Page.md) class of the [`Page`](ApiReference/ui/page/README.md) module. To navigate between pages, use the methods of the [`Frame`](ApiReference/ui/frame/Frame.md) class of the [`Frame`](ApiReference/ui/frame/README.md) sub-module of the UI module.
+
+> **TIP:** Instead of multiple pages, you can have a single page with a [tab view](ApiReference/ui/tab-view/README.md) and different UIs for each tab.
+
+* [Page Management](#page-management)
+    * [Define Page](#define-page)
+    * [Set Home Page](#set-home-page)
+* [Navigation](#navigation)
+    * [Set Topmost Frame](#topmost-frame)
+    * [Navigate by Page Name](#navigate-by-page-name)
+    * [Navigate with Factory Function](#navigate-with-factory-function)
+    * [Navigate and Pass Context](#navigate-and-pass-context)
+    * [Navigate Back](#navigate-back)
+* [Alternative App Architecture](#alternative-app-architecture)
+
+## Page Management
+
+### Define Page
+
+Pages represent the separate screens of your application. Each page is an instance of the [`page`](ApiReference/ui/page/Page.md) class of the [`Page`](ApiReference/ui/page/README.md) module. Each class instance inherits the [`content`](ApiReference/ui/content-view/ContentView.md) property which holds the root visual element of the UI.
+
+NativeScript provides three approaches to instantiating your pages.
+
+**Create the UI separately from the business logic**
+
+You can create the pages for your user interface separately from your business logic. 
+
+To apply this approach, you need to create a separate `XML` file for each page to hold the layout of the page.
+
 ``` XML
 <Page loaded="onPageLoaded">
   <Label text="Hello, world!"/>
 </Page>
 ```
-If you need to have additional logic (event handlers for example), you can also create a code-behind file with the same name as the XML file. After the XML file is parsed, NativeScript will look for this optional code-behind file:
+
+**Execute additional business logic on page load**
+
+NativeScript can automatically execute business code logic on page load.
+
+To apply this approach, you need to have a separate `XML` file for your page and a `JS` or a `TS` file which holds the business logic. The names of the `XML` and the `JS` or `TS` file must match.
+
 ``` JavaScript
 function onPageLoaded(args) {
     console.log("Page Loaded");
@@ -40,7 +61,12 @@ export function onPageLoaded(args: observableModule.EventData) {
     console.log("Page Loaded");
 }
 ```
-Alternatively, you can create the page entirely in the code-behind file:
+**Create page when executing business logic**
+
+You can create the page inside your business logic.
+
+To apply this approach, you need to create a function named `createPage` which will return an instance of your page. NativeScript considers `createPage` a factory function.
+
 ``` JavaScript
 var pagesModule = require("ui/page");
 var labelModule = require("ui/label");
@@ -65,9 +91,34 @@ export function createPage() {
     return page;
 }
 ```
-If creating the page entirely in code-behind, it is important that you create a function named exactly **createPage** which returns an instance of the page you created. By convention, NativeScript will look for a factory function called **createPage**.
-#Topmost Frame
-To perform navigation, you will need a reference to the topmost frame of the application:
+
+### Set Home Page
+
+Each application must have a single entry point - the home page.
+
+To set the home page for your app, you need to use the `mainModule` member of the [`Application`](ApiReference/application/README.md) module. When you define `application.mainModule`, NativeScript looks for an XML file with the specified name, parses it and draws the UI described in the file. Afterwards, if NativeScript finds a `JS` or a `TS` file with the same name, it executes the business logic in the file.
+
+``` JavaScript
+var application = require("application");
+application.mainModule = "app/main-page";
+application.start();
+```
+``` TypeScript
+import application = require("application");
+application.mainModule = "app/main-page";
+application.start();
+```
+
+## Navigation
+
+The [`Frame`](ApiReference/ui/frame/Frame.md) class represents the logical unit that is responsible for navigation between different pages. Typically, each app has one frame at the root level - the topmost frame.
+
+To navigate between pages, you can use the [`navigate`](ApiReference/ui/frame/README.md) method of the topmost frame instance.
+
+### Set Topmost Frame
+
+The topmost frame is the frame at the root level. Before you can perform any navigation in your app, you need to set the topmost frame.
+
 ``` JavaScript
 var frameModule = require("ui/frame");
 var topmost = frameModule.topmost();
@@ -76,16 +127,22 @@ var topmost = frameModule.topmost();
 import frameModule = require("ui/frame");
 var topmost = frameModule.topmost();
 ```
-#Navigating to a Module
-You can navigate to another page by using the **navigate** method of the topmost frame instance. The navigate method has different overloads which let you navigate to a page module by specifying its name (just like you specify application.mainModule):
+
+### Navigate by Page Name
+
+You can specify the page to which you want to navigate by its file name.
+
 ``` JavaScript
 topmost.navigate("app/details-page");
 ```
 ``` TypeScript
 topmost.navigate("app/details-page");
 ```
-#Navigating with a Factory Function
-Another overload which you can use to navigate is the one which accepts a factory function returning a page instance:
+
+### Navigate with Factory Function
+
+You can specify the page to which you want to navigate by a factory function which returns the page instance.
+
 ``` JavaScript
 var factoryFunc = function () {
     var label = new labelModule.Label();
@@ -107,8 +164,11 @@ var factoryFunc = function () {
 };
 topmost.navigate(factoryFunc);
 ```
-#Navigating with NavigationEntry
-In case you want to pass some state information, i.e. some kind of context, to the page you are navigating to, you should use the overload which accepts a NavigationEntry object. You can specify the page you want to navigate to by using either the **moduleName** string property or the *create* factory function property of the NavigationEntry class. You can also specify whether you want the transition to be animated. The overload that accepts a NavigationEntry is the one that gives you the finest control over navigation. In fact, all other overloads will ultimately call this one after constructing the appropriate NavigationEntry.
+
+### Navigate and Pass Context
+
+When you navigate to another page, you can pass context to the page with a [`NavigationEntry`](ApiReference/ui/frame/NavigationEntry.md) object. This approach provides finer control over navigation compared to other navigation approaches. For example, with `NavigationEntry` you can also animate the navigation.
+
 ``` JavaScript
 var navigationEntry = {
     moduleName: "app/details-page",
@@ -125,8 +185,15 @@ var navigationEntry = {
 };
 topmost.navigate(navigationEntry);
 ```
-#Navigating to another page and passing context
-Sometimes, the page being navigated to would have to receive information about the context in which this navigation happened. The best example would be a master-details scenario where there are two pages -- the main page containing a list of some entities and a details page which provides details about a particular entity. In this case, when navigating to the details page it is mandatory to transfer some primary key or ID information about the entity the details page should show. This is done with the help of the **context** property of a NavigationEntry:
+
+After you pass the context, you can implement additional business logic with the `onNavigatedTo` callback.
+
+#### Example
+
+In this example, this master-details app consists of two pages. The main page contains a list of entities. The details page shows information about the currently selected entity.
+
+When you navigate to the details page, you transfer a primary key or ID information about the selected entity. 
+
 ``` JavaScript
 function listViewItemTap(args) {
     // Navigate to the details page with context set to the data item for specified index
@@ -145,7 +212,9 @@ export function listViewItemTap(args: listView.ItemEventData) {
     });
 }
 ```
-Once you pass this information, the best place to retrieve it and act accordingly is in the **onNavigatedTo** callback of the details page:
+
+With the **onNavigatedTo** callback, you show the details for the entity.
+
 ``` JavaScript
 function pageNavigatedTo(args) {
     var page = args.object;
@@ -160,13 +229,14 @@ export function pageNavigatedTo(args: observable.EventData) {
     page.bindingContext = page.navigationContext;
 }
 ```
-#Navigating Back
-The topmost frame keeps track of the pages the user has visited in a navigation stack. To go back to a previous page you should use the **goBackMethod** of the topmost frame instance:
+
+### Navigate Back
+
+The topmost frame tracks the pages the user has visited in a navigation stack. To go back to a previous page, you need to use the **goBackMethod** of the topmost frame instance.
+
 ``` JavaScript
 topmost.goBack();
 ```
 ``` TypeScript
 topmost.goBack();
 ```
-#Alternatives
-Alternatively, if you do not want to have different pages and navigate between them, you can have a single page with a TabView. You can define a different UI for each tab and when the user selects a certain tab he will be presented with this UI.
