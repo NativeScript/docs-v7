@@ -90,7 +90,7 @@ page.addCssFile(cssFileName);
 
 This snippet again adds new css selectors to the current. However this methods uses a file with css content. This gives an option to load different separated css styles.
 
-> __Note__: The cssFileName parameter should be a file path related to the application current folder.
+> __Note__: The cssFileName parameter should be a file path related to the application root folder.
 
 - Adding an application wide css
 Another very helpful feature is the ability to set an application level css which will be applied before each page css.
@@ -108,7 +108,7 @@ application.cssFile = "style.css";
 
 application.start();
 ```
-> __Note__: Again the path to style.css file should be related to the application root folder.
+> __Note__: Again, the path to style.css file should be related to the application root folder.
 
 ## Supported properties
 Here is list of the properties, that can be set in CSS or through the style property of each View:
