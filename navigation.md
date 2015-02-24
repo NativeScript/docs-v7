@@ -8,7 +8,7 @@ position: 5
 # Overview
 Each NativeScript application is built upon the concept of pages (represented by the **Page** class). Pages are the different screens that your application offers. Each page has a **content** property which holds the root visual element of the page UI. Navigating between different pages is done with methods of the **Frame** class. The Frame class represents the logical unit that is responsible for navigation between different pages, i.e. going from one page to another, keeping a history stack for going back and so on.
 #Main Module
-Each application must have a single entry point, that is, the first screen that the user will see after starting the app. Specifying the main module of an application is done through the **mainModule** property of the Application class:
+Each application must have a single entry point, that is, the first screen that the user will see after starting the app. Specifying the main module of an application is done through the **mainModule** member of the application module:
 ``` JavaScript
 var application = require("application");
 application.mainModule = "app/main-page";
