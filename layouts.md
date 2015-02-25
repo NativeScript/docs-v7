@@ -5,112 +5,74 @@ description: "NativeScript Documentation: Layouts"
 position: 6
 ---
 
-# Layouts
+[View]: ./ApiReference/ui/core/view/View.md
+[Layout]: ./ApiReference/ui/layouts/layout/Layout.md
+[AbsoluteLayout]: ./ApiReference/ui/layouts/absolute-layout/HOW-TO.md
+[DockLayout]: ./ApiReference/ui/layouts/dock-layout/HOW-TO.md
+[GridLayout]: ./ApiReference/ui/layouts/grid-layout/HOW-TO.md
+[StackLayout]: ./ApiReference/ui/layouts/stack-layout/HOW-TO.md
+[WrapLayout]: ./ApiReference/ui/layouts/wrap-layout/HOW-TO.md
 
-NativeScript framework comes with its own layout system. All **View** classes expose several properties that affects the layout. For example minWidth, width, maxWidth, minHeight, height, maxHeight and margin all affects layout.
+# Layout System
 
-NativeScript also provides few predefined layouts and allows for defining custom layouts.
+NativeScript framework comes with its own recursive layout system which size and position views on the screen. Layout is the process of measure and position the child views of a [Layout][Layout] container. Layout process is intensive and depends on the count of the children and the complexity of the layout container. The simple layout container as [AbsoluteLayout][AbsoluteLayout] can have better performance than more complex [Layout][Layout], such as [GridLayout][GridLayout].
+Layout system completes in two passes - measure pass and layout pass. Every [Layout][Layout] provides its own `onMeasure()` and `onLayout()` methods to achieve its own specific layout.
+In the measure pass each [View][View] is measured to get its desired size. Measure pass evaluates width, height, minWidth, minHeight, visibility and margins properties.
+In the second pass (layout pass) each [View][View] is placed in specific layout slot which is determined by view desired size, margins, horizontal and vertical alignments.
+
+All [View][View] classes expose several properties that affects the layout:
+
+- minWidth
+- minHeight
+- width
+- height
+- marginTop
+- marginRight
+- marginBottom
+- marginLeft
+- horizontalAlignment
+- verticalAlignment
+- visibility
+
+## Alignment Properties
+
+Horizontal and vertical alignments takes effect only when element is given more size than it needs.
+
+The following table shows each value of `horizontalAlignment`:
+
+| Member  | Description   |
+| ------- | ------------- |
+| left    | View is aligned to the left of the parent element's layout slot.|
+| center  | View is aligned to the center of the parent element's layout slot. |
+| right   | View is aligned to the right of the parent element's layout slot. |
+| stretch | View is stretched to fill the parent element's layout slot. Explicit `width` take precedence. |
+
+The following table shows each value of `verticalAlignment`:
+
+| Member  | Description |
+| ------- | ----------- |
+| top     | View is aligned to the top of the parent element's layout slot. |
+| center  | View is aligned to the center of the parent element's layout slot. |
+| bottom  | View is aligned to the bottom of the parent element's layout slot. |
+| stretch | View is stretched to fill the parent element's layout slot. Explicit `height` take precedence. |
+
+## Margins Property
+There are four margin properties - `marginTop`, `marginRight`, `marginBottom` and `marginLeft`. They describe the distance between a view and its parent. When set through XML values can be uniformed meaning that value will be applied on all four side of the view, two values which is applied to (top, right) and (bottom, left) in that order or it could take the form of four distinct values, each value describing a distinct margin to apply to top, right, bottom and left (in that order).
+
+# Layout
+Layout is the base class for all views that provide layout. Inherited [Layout][Layout] classes are used to position elements. They support the base properties of [View][View] such as width, height, minWidth, alignments, etc. In addition layout class expose four padding properties which affects the size of the layout. Derived classes expose additional properties that enables most user interface scenarios.
+
+## Paddings Property
+There are four padding properties - `paddingTop`, `paddingRight`, `paddingBottom` and `paddingLeft`. They describe the distance between the layout container and its children. When set through XML values can be uniformed meaning that value will be applied on all four side of the view, two values which is applied to (top, right) and (bottom, left) in that order or it could take the form of four distinct values, each value describing a distinct padding to apply to top, right, bottom and left (in that order).
+
+## Layout Containers
+NativeScript provides few predefined layouts and allows for defining custom layouts.
 The predefined layouts are:
 
-* StackLayout - Arranges child elements into a single line that can be oriented horizontally or vertically.
-* GridLayout - Defines a flexible grid area consisting of columns and rows. Child elements of a GridLayout can be positioned precisely using the margin property.
-
-## StackLayout
-
-A **StackLayout** enables "stacking" elements in horizontal or vertical orientation. The default stack direction is vertical. The **orientation** property can be used to control content flow.
-
-One thing to note is that StackLayout measure its children with infinity on the stack direction (e.g. when vertical will measure its children with infinity height). Placing virtualizing controls (like ListView) inside StackLayout will break their virtualization so this should be avoided.
-
-### Define and use StackLayout
-
-``` JavaScript
-var layoutModule = require("ui/layouts/stack-layout");
-var buttonModule = require("ui/button");
-
-var stackLayout = new layoutModule.StackLayout();
-
-var btn1 = new buttonModule.Button();
-btn1.text = "Button 1";
-stackLayout.addChild(btn1);
-
-var btn2 = new buttonModule.Button();
-var btn2.text = "Button 2";
-stackLayout.addChild(btn2);
-```
-
-## GridLayout
-**GridLayout** allows you to define flexible row and column groupings.
-
-### Sizing behavior of columns and rows
-Columns and rows defined within a GridLayout can take advantage of Star sizing in order to distribute remaining space proportionally. When Star is selected as the height or width of a row or column, that column or row receives a weighted proportion of remaining available space. This is in contrast to auto, which will distribute space evenly based on the size of the content within a column or row. This value is expressed as **new GridLength(1, GridUnitType.star)** or **new GridLength(2, GridUnitType.star)**. In the first case, the row or column would receive one times the available space, in the second case, two times, and so on. By combining this technique to proportionally distribute space with a horizontalAlignment and verticalAlignment value of stretch it is possible to partition layout space by percentage of screen space. Grid is the only layout layout that can distribute space in this manner.
-
-### Define and use GridLayout
-
-``` JavaScript
-var layout = require("ui/layouts/grid-layout");
-var button = require("ui/button");
-
-// Create gridLayout.
-var gridLayout = new layout.GridLayout();
-
-// Create buttons.
-var btn1 = new button.Button();
-var btn2 = new button.Button();
-var btn3 = new button.Button();
-var btn4 = new button.Button();
-
-// Add buttons to gridLayout.
-gridLayout.addChild(btn1);
-gridLayout.addChild(btn2);
-gridLayout.addChild(btn3);
-gridLayout.addChild(btn4);
-
-// Specify in which column button should be placed.
-layout.GridLayout.setColumn(btn1, 0);
-layout.GridLayout.setColumn(btn2, 1);
-layout.GridLayout.setColumn(btn3, 2);
-
-// Specify in which row button should be placed.
-layout.GridLayout.setRow(btn4, 1);
-
-// Specify in how much columns button should spans.
-layout.GridLayout.setColumnSpan(btn4, 3);
-
-// Create GridLengt object with fixed size 80px (device independent pixels)
-var pixelGridLength = new layout.GridLength(80, layout.GridUnitType.pixel);
-
-// Create GridLengt object with star size (take remaining space)
-var starGridLength = new layout.GridLength(1, layout.GridUnitType.star);
-
-// Create GridLengt object with auto size (size to content)
-var autoGridLength = layout.GridLength.auto;
-
-// Create ColumnDefiniton object and set its width to fixed width.
-var firstColumnDefinition = new layout.ColumnDefinition();
-firstColumnDefinition.width = pixelGridLength;
-
-// Create ColumnDefiniton object and set its width to star width.
-var secondColumnDefinition = new layout.ColumnDefinition();
-secondColumnDefinition.width = starGridLength;
-
-// Create ColumnDefiniton object and set its width to auto width.
-var thirdColumnDefinition = new layout.ColumnDefinition();
-thirdColumnDefinition.width = autoGridLength;
-
-// Add columnDefiniton objects to gridLayout.
-gridLayout.addColumnDefinition(firstColumnDefinition);
-gridLayout.addColumnDefinition(secondColumnDefinition);
-gridLayout.addColumnDefinition(thirdColumnDefinition);
-
-// Create RowDefiniton object and set its height to auto width.
-var firstRowDefinition = new layout.RowDefinition();
-firstRowDefinition.height = autoGridLength;
-
-// Create RowDefiniton object and set its height to star width.
-var secondRowDefinition = new layout.RowDefinition();
-secondRowDefinition.height = starGridLength;
-
-// Add rowDefiniton objects to gridLayout.
-gridLayout.addRowDefinition(firstRowDefinition);
-gridLayout.addRowDefinition(secondRowDefinition);
-```
+| Layouts  | Description  | Screenshot |
+| -------- | ------------ | ---------- | 
+| [AbsoluteLayout][AbsoluteLayout] | Layout that lets you specify exact locations (left/top coordinates) of its children. | ![AbsoluteLayout android](img/gallery/android/absoluteLayoutPage.png "AbsoluteLayout android")|
+| [DockLayout][DockLayout] | Layout that arranges its children at its outer edges, and allows its last child to take up the remaining space. | ![DockLayout android](img/gallery/android/dockLayoutPage.png "DockLayout android")|
+| [GridLayout][GridLayout] | Defines a rectangular layout area that consists of columns and rows. | ![GridLayout android](img/gallery/android/gridLayoutPage.png "GridLayout android")|
+| [StackLayout][StackLayout] | Layout that arranges its children horizontally or vertically. The direction can be set by orientation property. | ![StackLayout android](img/gallery/android/stackLayoutPage.png "StackLayout android")|
+| [WrapLayout][WrapLayout] | Position children in rows or columns depending on orientation property until space is filled and then wraps them on new row or column. | ![WrapLayout android](img/gallery/android/wrapLayoutPage.png "WrapLayout android")|
