@@ -5,7 +5,7 @@ description: Begin NativeScript development in a few minutes in your preferred I
 position: 4
 ---
 
-# Set Up the AppBuilder Extension for Visual Studio
+# Set Up the AppBuilder Command-Line Interface
 
 With the [AppBuilder command-line interface](http://www.telerik.com/appbuilder/command-line-interface) you can use the cloud services provided by AppBuilder paired with an IDE or text editor of your choice. If you are an avid Sublime Text user, you can pair the AppBuilder CLI with the [AppBuilder package for Sublime Text](http://www.telerik.com/appbuilder/sublime-text-package).
 
@@ -19,6 +19,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 
 **System Requirements**
 
+* Telerik account
 * Windows 7 or later
 * .NET 4.0 or later
 * Node.js 0.10.26 or a later stable official release except Node.js 0.10.34
@@ -33,6 +34,8 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 
 **Setup**
 
+1. In your browser, navigate to [https://platform.telerik.com](https://platform.telerik.com) and log in.
+1. If you do not have a Telerik account, you can log in with a social provider of your choice and begin a Telerik Platform trial.<br/>With the Telerik Platform trial, you can use the AppBuilder CLI.
 1. Install [Node.js](http://nodejs.org).
     1. Go to [http://nodejs.org](http://nodejs.org) and click **Install**.
     1. If prompted, confirm the download.
@@ -94,6 +97,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 
 **System Requirements**
 
+* Telerik account
 * OS X Mavericks or later
 * Node.js 0.10.26 or a later stable official release except Node.js 0.10.34
 * (Optional) Homebrew to simplify the installation of dependencies
@@ -107,6 +111,8 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 
 **Setup**
 
+1. In your browser, navigate to [https://platform.telerik.com](https://platform.telerik.com) and log in.
+1. If you do not have a Telerik account, you can log in with a social provider of your choice and begin a Telerik Platform trial.<br/>With the Telerik Platform trial, you can use the AppBuilder CLI.
 1. Install [Homebrew](http://brew.sh) to simplify the installation process.
     
     ```Shell
@@ -182,6 +188,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 
 **System Requirements**
 
+* Telerik account
 * Ubuntu 14.04 LTS
 * Node.js 0.10.26 or a later stable official release except Node.js 0.10.34
 * G++ compiler
@@ -192,6 +199,8 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 
 **Setup**
 
+1. In your browser, navigate to [https://platform.telerik.com](https://platform.telerik.com) and log in.
+1. If you do not have a Telerik account, you can log in with a social provider of your choice and begin a Telerik Platform trial.<br/>With the Telerik Platform trial, you can use the AppBuilder CLI.
 1. Run the terminal.
 1. Install [Node.js](http://nodejs.org).
     

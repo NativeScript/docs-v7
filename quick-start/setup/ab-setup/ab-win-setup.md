@@ -34,6 +34,8 @@ With this IDE, you can develop for Android and iOS on Windows systems.
 
 ## Setup
 
+1. In your browser, navigate to [https://platform.telerik.com](https://platform.telerik.com) and log in.
+1. If you do not have a Telerik account, you can log in with a social provider of your choice and begin a Telerik Platform trial.<br/>With the Telerik Platform trial, you can use the AppBuilder Windows client.
 1. Install [iTunes](http://www.apple.com/itunes/).
     1. Go to [Download iTunes](http://www.apple.com/itunes/download/), fill in the form and click **Download Now**.
     1. If prompted, confirm the download.
@@ -81,7 +83,6 @@ With this IDE, you can develop for Android and iOS on Windows systems.
     1. Select all packages for the Android 19 SDK and any other SDKs that you want to install and click **Install**.
 1. Install the [AppBuilder Windows client](http://www.telerik.com/appbuilder/windows-client).
     1. In your browser, navigate to [https://platform.telerik.com](https://platform.telerik.com) and log in.
-    1. If you do not have a Telerik account, you can log in with a social provider of your choice and begin a Telerik Platform trial.<br/>With the Telerik Platform trial, you can use the AppBuilder Windows client.
     1. In the title bar, click **Getting Started** and select **Downloads**.
     1. Click **AppBuilder NativeScript**.
     1. Click **Download** for AppBuilder Windows client.
