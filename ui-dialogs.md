@@ -1,26 +1,26 @@
 ---
-nav-title: "Dialogs"
-title: "Dialogs"
-description: "NativeScript Documentation: Dialogs"
+nav-title: Dialogs
+title: Dialogs
+description: Learn how to create alerts, confirmations, prompts, logins and other dialogs in your NativeScript apps.
 position: 9
 ---
 
 # Dialogs
-### How it works?
-You can show native platform dialogs using API similar to the web browser. For example:
-```JavaScript
-var dialogs = require("ui/dialogs");
-dialogs.alert("Your message");
-```
-```TypeScript
-import dialogs = require("ui/dialogs");
-dialogs.alert("Your message");
-```
-Available dialogs are: **alert**, **confirm**, **prompt**, **login** and **action**.
 
-*__Important__: Dialog functions can be called with parameters similar to the web browser API or options object. All dialog functions will return Promise<T>!*
+NativeScript lets you create dialogs in your app in a manner similar to the web browser. You can create alerts, confirmations, prompts, logins and dialogs that require action.
+
+* [Alert](#alert)
+* [Confirm](#confirm)
+* [Prompt](#prompt)
+* [Login](#login)
+* [Action](#action)
+
+> You can call dialog functions with parameters similar to the web browser API or the `options` object. All dialog functions return a `Promise` object.
 
 ### Alert
+
+**Web-Browser Style** 
+
 ```JavaScript
 var dialogs = require("ui/dialogs");
 dialogs.alert("Your message").then(function() {
@@ -33,7 +33,9 @@ dialogs.alert("Your message").then(()=> {
   console.log("Dialog closed!");
 });
 ```
-OR
+
+**Using an Options Object**
+
 ```JavaScript
 var dialogs = require("ui/dialogs");
 dialogs.alert({
@@ -54,7 +56,11 @@ dialogs.alert({
   console.log("Dialog closed!");
 });
 ```
+
 ### Confirm
+
+**Web-Browser Style**
+
 ```JavaScript
 var dialogs = require("ui/dialogs");
 dialogs.confirm("Your message").then(function (result) {
@@ -67,7 +73,9 @@ dialogs.confirm("Your message").then(result => {
   console.log("Dialog result: " + result);
 });
 ```
-OR
+
+**Using an Options Object**
+
 ```JavaScript
 var dialogs = require("ui/dialogs");
 dialogs.confirm({
@@ -94,9 +102,13 @@ dialogs.confirm({
   console.log("Dialog result: " + result);
 });
 ```
-*__Important__: Dialog result argument is boolean. True if the dialog is closed with OK button, false if closed with Cancel button, undefined if closed with neutral button.*
+
+> The dialog result argument is boolean. The result is true if the dialog is closed with the OK button. The result is false if closed with the Cancel button. The result is undefined if closed with a neutral button.
 
 ### Prompt
+
+**Web-Browser Style**
+
 ```JavaScript
 var dialogs = require("ui/dialogs");
 // Second argument is optional.
@@ -111,7 +123,9 @@ dialogs.prompt("Your message", "Default text").then(r => {
   console.log("Dialog result: " + r.result + ", text: " + r.text);
 });
 ```
-OR
+
+**Using an Options Object**
+
 ```JavaScript
 var dialogs = require("ui/dialogs");
 // inputType property can be dialogs.inputType.password or dialogs.inputType.text.
@@ -142,9 +156,12 @@ dialogs.prompt({
   console.log("Dialog result: " + r.result + ", text: " + r.text);
 });
 ```
-*__Important__: Dialog result argument is object with two properties: result and text (entered text). Result property is true if the dialog is closed with OK button, false if closed with Cancel button, undefined if closed with neutral button.*
+> The dialog result argument is an object with two properties: result and text (entered text). The result property is true if the dialog is closed with the OK button, false if closed with the Cancel button or undefined if closed with a neutral button.
 
 ### Login
+
+**Web-Browser Style**
+
 ```JavaScript
 var dialogs = require("ui/dialogs");
 // User name and password arguments are optional.
@@ -159,7 +176,9 @@ dialogs.login("Your message", "User name", "Password").then(r => {
   console.log("Dialog result: " + r.result + ", user: " + r.userName + ", pwd: " + r.password);
 });
 ```
-OR
+
+**Using an Options Object**
+
 ```JavaScript
 var dialogs = require("ui/dialogs");
 dialogs.login({
@@ -188,9 +207,13 @@ dialogs.login({
   console.log("Dialog result: " + r.result + ", user: " + r.userName + ", pwd: " + r.password);
 });
 ```
-*__Important__: Dialog result argument is object with three properties: result, userName and password (entered user name and password). Result property is true if the dialog is closed with OK button, false if closed with Cancel button, undefined if closed with neutral button.*
+
+> The dialog result argument is an object with three properties: result, userName and password (entered user name and password). The result property is true if the dialog is closed with the OK button, false if closed with the Cancel button or undefined if closed with a neutral button.
 
 ### Action
+
+**Web-Browser Style**
+
 ```JavaScript
 var dialogs = require("ui/dialogs");
 dialogs.action("Your message", "Cancel button text", ["Option1", "Option2"]).then(function (result) {
@@ -203,7 +226,9 @@ dialogs.action("Your message", "Cancel button text", ["Option1", "Option2"]).the
   console.log("Dialog result: " + result)
 });
 ```
-OR
+
+**Using an Options Object**
+
 ```JavaScript
 var dialogs = require("ui/dialogs");
 dialogs.action({
@@ -224,4 +249,4 @@ dialogs.action({
   console.log("Dialog result: " + result)
 });
 ```
-*__Important__: Dialog result argument is string (clicked option text or cancel button text).*
+> The dialog result argument is a string (the text of the clicked option or the text of the cancel button).
