@@ -1,14 +1,45 @@
 ---
-nav-title: "UI with XML"
-title: "UI with XML"
-description: "NativeScript Documentation: UI with XML"
-position: 7
+nav-title: XML-Based User Interface
+title: XML-Based User Interface
+description: Learn the basic principles of designing a user interface with NativeScript. In NativeScript, you can design the UI using XML and CSS.
+position: 6
 ---
 
-# UI with XML
-### How it works?
-When you trigger navigation in your application (either by setting a value to the **mainModule** property of the **application** object, or by passing an argument to the **navigate()** method of the **Frame** class), the **NativeScript** navigation framework will look for an XML-extension-file with the same path to load and navigate to the respective **Page**. For example:
-###### Declaring application mainModule and start the application
+# XML-Based User Interface
+
+The user interface of NativeScript mobile apps consists of pages. Typically, the design of the user interface is developed and stored in `XML` files, styling is done via CSS and the business logic is developed and stored in `JavaScript` or `TypeScript` files. 
+
+* [The Basics](#the-basics)
+  * [Declare the Home Page](#declare-the-home-page)
+  * [Navigate to Page](#navigate-to-page)
+  * [Execute Business Logic](#execute-business-logic)
+
+
+* [Using UI Components](#using-ui-components)
+* [The Built-In UI Components](the-built-in-ui-components)
+  * [Page](#page)
+  * [TabView](#tabview)
+  * [ScrollView](#scrollview)
+  * [StackLayout](#stacklayout)
+  * [GridLayout](#gridlayout)
+  * [WrapLayout](#wraplayout)
+  * [AbsoluteLayout](#absolutelayout)
+* [Custom UI Components](#custom-ui-components)
+
+## The Basics
+
+When you develop the user interface of you app, you can implement each application screen in a separate page or implement your application screens on a single page with a tab view. 
+
+For each page, you need to have a separate `XML` file which holds the layout of the page. For each `XML` file that NativeScript parses, the framework also looks for a `JavaScript` or `TypeScript` file with the same name and executes the business logic inside it.
+
+### Declare the Home Page
+
+Each NativeScript app must have a home page - the page that loads when you launch the app.
+
+You need to explicitly set the home page for your app. You can do this by setting the `mainModule` member of the [`Application`](ApiReference/application/README.md) module.
+
+When you set the `mainModule`, the NativeScript navigation framework looks for an `XML` file with the specified name, loads it and navigates to the respective page. If NativeScript discovers a `JavaScript` or `TypeScript` file with the same name, it executes the code inside it.
+
 ```JavaScript
 var application = require("application");
 // Set the start module for the application
@@ -23,7 +54,13 @@ application.mainModule = "app/my-page";
 // Start the application
 application.start();
 ```
-###### Navigate to page using Frame navigate() method
+
+### Navigate to Page
+
+You can navigate between pages with the `navigate` method of the [`Frame`](./ApiReference/ui/frame/Frame.md) class. The [`Frame`](ApiReference/ui/frame/Frame.md) class represents the logical unit that is responsible for navigation between different pages. Typically, each app has one frame at the root level - the topmost frame.
+
+When you trigger navigation, NativeScript looks for an `XML` file with the specified name, loads it and navigates to the respective page. If NativeScript discovers a `JavaScript` or `TypeScript` file with the same name, it executes the code inside it.
+
 ```JavaScript
 // Navigate to page called “my-page”
 frames.topmost().navigate("app/my-page")
@@ -32,8 +69,17 @@ frames.topmost().navigate("app/my-page")
 // Navigate to page called “my-page”
 frames.topmost().navigate("app/my-page")
 ```
-*__Important__: Paths are relative to the application root! In this case NativeScript will look for the following XML file within your application (app/my-page.xml in this case)!*
-###### XML
+
+> Paths are relative to the application root. In the example above, NativeScript looks for a my-page.xml file in the app directory of your project.
+
+### Execute Business Logic
+
+When you have a `JavaScript` or a `TypeScript` file in the same location with the same name as your `XML` file, NativeScript loads it together with the `XML` file. In this `JavaScript` or `TypeScript` file you can manage event handlers, bind context or execute additional business logic.
+
+#### Example
+
+In this example of `main-page.xml`, your page consists of a button. When you tap the button, the `buttonTap` function triggers.  
+
 ```XML
 <Page>
   <StackLayout>
@@ -42,8 +88,9 @@ frames.topmost().navigate("app/my-page")
    </StackLayout>
 </Page>
 ```
-If you have a **JavaScript-extension-file** with the same path (app/my-page.js), this file will be loaded together with the XML and will serve as a code-behind for the page where you can specify **event handlers, binding context and/or any other additional code**. In order to be accessible from the UI you need to declare your variables or functions in the module **exports**.
-###### Code
+
+This example app is a simple counter app. The logic for the counter is implemented in a `main-page.js` or `main-page.ts` file.
+
 ```JavaScript
 var view = require("ui/core/view");
 var count = 0;
@@ -78,32 +125,47 @@ export function buttonTap(args: observable.EventData) {
     }
 }
 ```
-*__Important__: Each attribute value in the XML declaration will be set to respective property of the component, if there is no such property the value will be set as an expando.!*
-### Using Built-in components in an XML
-Default *NativeScript* components can be found under the *tns_modules/ui* subfolder. Each component is located in a separate folder with a *package.json* file where the main component/file is specified
-###### Button package.json
-```JavaScript
-{
-    "name" : "button",
-    "main" : "button.js"
-}
-```
-###### button.js
+
+> To access variables or functions from the user interface, you need to declare them im the `exports` module.
+>
+> NativeScript sets each attribute value in the XML declaration to a respective property of the component. If a respective property does not exist, NativeScript sets the attribute value as an expando object.
+
+## User Interface Components
+
+NativeScript provides a wide range of built-in user interface components - layouts and widgets. You can also create your own custom user interface components. 
+
+When NativeScript parses your `XML` files, it looks for components which match a name in the module exports.
+
+For example, when you have a `Button` declaration in your `XML` file, NativeScript looks for a `Button` name in the module exports.
+
 ```JavaScript
 var Button = ...
     ...
 exports.Button = Button;
 ```
-*__Important__: When parsing the XML, NativeScript will look for a component which has a matching name in the module exports!*
-## Content components
-### Page
-###### XML
+
+### The Default Content Components
+
+The top-level user interface components are content components - pages and layouts. These content components let you arrange your interactive user interface components in specific ways.
+
+#### Page
+
+Your application pages (or screens) are instances of the [`page`](ApiReference/ui/page/Page.md) class of the [`Page`](ApiReference/ui/page/README.md) module. Typically, our app will consist of multiple application screens.
+
+##### Example
+
+You can execute some business login when your page loads using the `pageLoaded` event.
+
+You need to set the `loaded` attribute for your page in your `main-page.xml`.
+
 ```XML
 <Page loaded="pageLoaded">
  …
 </Page>
 ```
-###### Code
+
+You need to handle the business logic that loads in a `main-page.js` or `main-page.ts` file.
+
 ```JavaScript
 function pageLoaded(args) {
     var page = args.object;
@@ -120,8 +182,15 @@ export function pageLoaded(args: observable.EventData) {
     var page = <pages.Page>args.object;
 }
 ```
-### TabView
-###### XML
+
+#### TabView
+
+With a [`tabview`](./ApiReference/ui/tab-view/README.md), you can avoid spreading your user interface across multiple pages. Instead, you can have one page with multiple tabs.
+
+##### Example
+
+The following sample `main-page.xml` contains two tabs with labels.
+
 ```XML
 <Page loaded="pageLoaded">
   <TabView id="tabView1">
@@ -140,7 +209,9 @@ export function pageLoaded(args: observable.EventData) {
   </TabView>
 </Page>
 ```
-###### Code
+
+The respective `main-page.js` or `main-page.ts` loads the first tab by its ID and shows its contents.
+
 ```JavaScript
 var view = require("ui/core/view");
 function pageLoaded(args) {
@@ -164,8 +235,15 @@ export function pageLoaded(args: observable.EventData) {
     tabView1.selectedIndex = 1;
 }
 ```
-### ScrollView
-###### XML
+
+#### ScrollView
+
+You can insert a [`scrollView`](./ApiReference/ui/scroll-view/README.html) inside your page to make the page or the content enclosed in the `scrollView` scrollable.
+
+##### Example
+
+This sample `main-page.xml` shows how to insert a `scrollView` inside your page.
+
 ```XML
 <Page>
   <ScrollView>
@@ -173,8 +251,15 @@ export function pageLoaded(args: observable.EventData) {
   </ScrollView>
 </Page>
 ```
-### StackLayout
-###### XML
+
+#### StackLayout
+
+You can arrange the user interface components in your page in a horizontal or vertical stack using [`stackLayout`](./ApiReference/ui/layouts/stack-layout/README.html).
+
+##### Example
+
+This sample `main-page.xml` shows how to arrange the labels in a page in a horizontal stack.
+
 ```XML
 <Page>
   <StackLayout orientation="horizontal">
@@ -183,8 +268,15 @@ export function pageLoaded(args: observable.EventData) {
   </StackLayout>
 </Page>
 ```
-### GridLayout
-###### XML
+
+#### GridLayout
+
+You can arrange the user interface components in your page in a flexible grid area using [`gridLayout`](./ApiReference/ui/layouts/grid-layout/README.html).
+
+##### Example
+
+This sample `main-page.xml` shows how to arrange labels inside a table by setting their position by row or column. stack.
+
 ```XML
 <Page>
   <GridLayout rows="*, auto" columns="250, *">
@@ -196,8 +288,15 @@ export function pageLoaded(args: observable.EventData) {
   </GridLayout>
 </Page>
 ```
-### WrapLayout
-###### XML
+
+#### WrapLayout
+
+You can arrange your user interface components in rows or columns until the space is filled and then wrap them on a new row or column using [`wrapLayout`](./ApiReference/ui/layouts/wrap-layout/README.html). By default, if orientation is not specified, `wrapLayout` arranges items horizontally.
+
+##### Example
+
+This sample `main-page.xml` provides four labels wrapped horizontally within the visible space of the page.
+
 ```XML
 <Page>
   <WrapLayout>
@@ -208,8 +307,15 @@ export function pageLoaded(args: observable.EventData) {
   </WrapLayout>
 </Page>
 ```
-### AbsoluteLayout
-###### XML
+
+#### AbsoluteLayout
+
+You can arrange your user interface components by left/top coordinates using [`absoluteLayout`](./ApiReference/ui/layouts/absolute-layout/README.html).
+
+##### Example
+
+The following `main-page.xml` contains a page with a single label positioned at the specified coordinates.
+
 ```XML
 <Page>
   <AbsoluteLayout>
@@ -217,21 +323,28 @@ export function pageLoaded(args: observable.EventData) {
   </AbsoluteLayout>
 </Page>
 ```
-### Custom/user components
-Using **xmlns** you can refer to your own custom components declared in your application. For example
-###### XML
+
+### Custom Components
+
+You can define your own XML namespaces to create custom user interface components.
+
+#### Example: Code-Only Custom Component
+
+This sample `main-page.xml` uses two custom components defined in separate declarations in the `xml-declaration` directory. The custom controls are wrapped horizontally.
+
 ```XML
 <Page
-  	xmlns:customControls="app/xml-declaration/mymodule"
-  	xmlns:customOtherControls="app/xml-declaration/mymodulewithxml">
+    xmlns:customControls="app/xml-declaration/mymodule"
+    xmlns:customOtherControls="app/xml-declaration/mymodulewithxml">
   <WrapLayout>
     <customControls:MyControl />
     <customOtherControls:MyControl />
   </WrapLayout>
 </Page>
 ```
-### Code-only custom component (app/xml-declaration/mymodule)
-###### Code
+
+This sample custom component declared in `app/xml-declaration/mymodule.js` or `app/xml-declaration/mymodule.ts` exports the `MyControl` variable which creates a simple counter inside your `main-page.xml` page.
+
 ```JavaScript
 var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -284,15 +397,27 @@ export class MyControl extends stackLayout.StackLayout {
     }
 }
 ```
-### Custom component with XML (app/xml-declaration/mymodulewithxml)
-###### XML
+
+### Example: Custom XML-Based Component 
+
+This sample `main-page.xml` uses a custom component defined in a `app/xml-declaration/mymodulewithxml.js` or `app/xml-declaration/mymodulewithxml.ts` file. This page contains a label and button.
+
 ```XML
-<StackLayout>
-  <Label id="Label1" />
-  <Button text="Tap!" tap="buttonTap" />
-</StackLayout>
+<Page
+    xmlns:customControls="app/xml-declaration/mymodule"
+    xmlns:customOtherControls="app/xml-declaration/mymodulewithxml">
+  <WrapLayout>
+    <customOtherControls:MyControl />
+  </WrapLayout>
+  <StackLayout>
+    <Label id="Label1" />
+    <Button text="Tap!" tap="buttonTap" />
+  </StackLayout>
+</Page>
 ```
-###### Code
+
+The custom component in `app/xml-declaration/mymodulewithxml.js` or `app/xml-declaration/mymodulewithxml.ts` exports the `buttonTap` function which changes the label on every tap of the button in `main-page.xml`.
+
 ```JavaScript
 var view = require("ui/core/view");
 var count = 0;
@@ -326,10 +451,17 @@ export function buttonTap(args: observable.EventData) {
     }
 }
 ```
-### Bindings & expressions
-To specify binding or expression for some property in the XML you can use double curly brackets syntax.
-#### Property binding
-###### XML
+
+## Bindings
+
+To set a binding for a property in the `XML`, you can use double curly brackets syntax.
+
+### Property Binding
+
+> NativeScript looks for the custom property in the `bindingContext` of the current component or the `bindingContext` of its parents. By default, all bindings are two-way bindings.
+
+This sample `main-page.xml` contains a simple label whose text will be populated when the page loads.
+
 ```XML
 <Page loaded="pageLoaded">
 {%raw%}
@@ -337,7 +469,9 @@ To specify binding or expression for some property in the XML you can use double
 {%endraw%}
 </Page>
 ```
-###### Code
+
+This sample `main-page.js` or `main-page.ts` file sets a `bindingContext` for the page. The `bindingContext` contains the custom property and its value. When NativeScript parses `main-page.xml`, it will populate the custom name property with the value in the `bindingContext`.
+
 ```JavaScript
 function pageLoaded(args) {
 	var page = args.object;
@@ -355,10 +489,11 @@ export function pageLoaded(args: observable.EventData) {
     page.bindingContext = { name: "Some name" };
 }
 ```
-*__Important__: NativeScript will look for this property in the component bindingContext or bindingContext of the component parents. All bindings are two way by default!*
 
-#### Event binding
-###### XML
+### Event Binding
+
+This sample `main-page.xml` contains a button. The text for the button and the event that the button triggers are determined when the page loads from the matching `main-page.js` or `main-page.ts` file.
+
 ```XML
 <Page loaded="pageLoaded">
 {%raw%}
@@ -366,13 +501,16 @@ export function pageLoaded(args: observable.EventData) {
 {%endraw%}
 </Page>
 ```
-###### Code
+
+This sample `main-page.js` or `main-page.ts` sets a `bindingContext` for the page. The `bindingContext` contains the custom property for the button text and its value and the custom function that will be triggered when the button is tapped. When NativeScript parses `main-page.xml`, it will populate the button text with the value in the `bindingContext` and will bind the custom function to the tap event.
+
 ```JavaScript
 function pageLoaded(args) {
     var page = args.object;
     page.bindingContext = {
         myProperty: "Some text",
         myFunction: function () {
+          // Your code
         }
     };
 }
@@ -392,42 +530,23 @@ export function pageLoaded(args: observable.EventData) {
     };
 }
 ```
-#### Expressions
-###### Complex property paths
-```JavaScript
-your.sub.property[name]
-```
-###### Logical not operator and comparators
-```JavaScript
-!,<, >, <=, >=, ==, !=, ===, !==,||, &&
-```
-###### Unary and binary operators
-```JavaScript
-+, -, *, /, %
-```
-###### Ternary operator
-```JavaScript
-a ? b : c
-```
-###### Grouping
-```JavaScript
-(a + b) * (c + d)
-```
-###### Constants
-```JavaScript
-numbers, strings, null, undefined
-```
-Examples:
-###### XML
-```XML
-{%raw%}
-<Label text="{{ author ? 'by ' + author : '[no author]' }}" />
-<Label text="{{ author || '[no author]' }}" />
-{%endraw%}
-```
-*__Important__: Expressions are re-evaluated on every property change of the Observable object set for bindingContext! In this case the binding is one way (from model to UI)*
-### Templates and scope
+
+### ListView Bindings
+
+You can use the double curly brackets syntax to bind the items to a [`listView`](./ApiReference/ui/list-view/README.md). You can also define a template with the `itemTemplate` property from which NativeScript will create the items for your `listView`.
+
+> Avoid accessing components by ID, especially when the component is part of a template. It is recommended to use bindings to specify component properties. 
+
+NativeScript can create the items in a  from template when the `listView` loads inside your page. When you work with templates and a `listView`, keep in mind the scope of the `listView` and its items.
+
+
+
 UI components like **ListView** will create items in runtime by parsing and loading content from **itemTemplate** property if specified.
+
+While you can access **ListView** (listView1) by **id** from the **Page** you cannot access the **Label** (label1) in the same way since this component (label1) is in a different scope and the **ListView** will create such Label for every item.
+
+In this sample `main-page.xml`, the ListView consists of labels and each item will be created from template. The text for each label is the value of the name property for the corresponding item. 
+
 ```XML
 <Page loaded="pageLoaded">
 {%raw%}
@@ -439,7 +558,9 @@ UI components like **ListView** will create items in runtime by parsing and load
 {%endraw%}
 </Page>
 ```
-While you can access **ListView** (listView1) by **id** from the **Page** you cannot access the **Label** (label1) in the same way since this component (label1) is in a different scope and the **ListView** will create such Label for every item.
+
+The sample `main-page.js` or `main-page.ts` populates the `bindingContext` for the page. In this case, the code sets values for the name property for each label. Note that because the `ListView` and the Label have different scopes, you can access ListView by ID from the page but you cannot access the Label by ID. The `ListView` creates a new `Label` for every item.
+
 ```JavaScript
 var view = require("ui/core/view");
 function pageLoaded(args) {
@@ -472,4 +593,54 @@ export function pageLoaded(args: observable.EventData) {
     var label1 = <label.Label>view.getViewById(page, "label1");
 }
 ```
-*__Important__: Accessing directly components by id is not recommended (especially when the component is part of template). Please use bindings to specify component properties!*
+
+### Expressions
+
+To set an expression as the value for a property in the `XML`, you can use double curly brackets syntax.
+
+> NativeScript reevaluates your expression on every property change of the `Observable` object set for `bindingContext`. This binding is a one-way binding - from the view model to the user interface.
+
+The following sample `main-page.xml` shows how to set an expression as the value for a label.
+
+```XML
+{%raw%}
+<Label text="{{ author ? 'by ' + author : '[no author]' }}" />
+<Label text="{{ author || '[no author]' }}" />
+{%endraw%}
+```
+
+**Complex Property Paths**
+
+```JavaScript
+your.sub.property[name]
+```
+
+**Logical Not operator and Comparators**
+
+```JavaScript
+!,<, >, <=, >=, ==, !=, ===, !==,||, &&
+```
+
+**Unary and Binary Operators**
+
+```JavaScript
++, -, *, /, %
+```
+
+**Ternary Operator**
+
+```JavaScript
+a ? b : c
+```
+
+**Grouping**
+
+```JavaScript
+(a + b) * (c + d)
+```
+
+**Constants**
+
+```JavaScript
+numbers, strings, null, undefined
+```

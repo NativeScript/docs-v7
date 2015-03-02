@@ -2,7 +2,7 @@
 nav-title: The NativeScript Layout System
 title: The NativeScript Layout System
 description: Learn the basic principles of designing and positioning the UI elements inside your apps.
-position: 6
+position: 7
 ---
 
 # The NativeScript Layout System
