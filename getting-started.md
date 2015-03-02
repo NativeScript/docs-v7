@@ -1,87 +1,146 @@
 ---
-nav-title: "Getting Started With NativeScript"
-title: "Getting Started With NativeScript"
+nav-title: "Getting Started with NativeScript"
+title: "Getting Started with NativeScript"
 description: "NativeScript Documentation: Getting Started"
 position: 2
 ---
 
-# Getting Started With NativeScript
-NativeScript framework enable developers to use pure JavaScript language to build native mobile applications running on the major mobile platforms - Apple iOS, Google Android. The applications UI stack is built using native UI components and because of that no compromises with the User Experience of the applications are done.
-
-## How It Works
-The native script architectures can be generally explained with this diagram:
-![architecture diagram]( img/architecture.png "architecture diagram")
-
-* **Native OS** - At the bottom level is the native OS (Android, iOS and soon Windows).
-* **NativeScript runtime** runs the JavaScript code of your application. The runtime also provides a way to call all the native APIs of the platform the app is running on. This means that you have access to all the native capabilities of the platform.
-* **NativeScript Modules** are a set of platform-agnostic libraries that are build on top of the runtime. These modules are wrap the platform specific code, providing a common API.
-* **Application Code** - your application's code. Building an application on top of the NativeScript modules means that you will not have write platform-specific code. This should be the case most of the time. However, you still have the option to reach the native API trough the NativeSctipt runtime.
-
 ## Requirements
-Currently NativeScript can run on the following platforms:
+
+Currently NativeScript runs on the following platforms:
 
 * Android 4.2+ (equivalent to Android API level 17+)
 * iOS 7.1+
 
-For NativeScript development you have the following options:
+## Step 1: Install NativeScript
 
-* Using the [NativeScript Command-Line Interface](https://github.com/NativeScript/nativescript-cli)
-with a IDE or text editor of your choice.
-* Using [AppBuilder](http://docs.telerik.com/platform/appbuilder/nativescript/index) where you have all the features of [Telerik Platform](http://www.telerik.com/platform) at your disposal.
+The first thing you need is the [NativeScript CLI](https://github.com/NativeScript/nativescript-cli), which runs on the Node.js platform, and which you can install using npm:
 
-## Example
-In the following example we will start with a empty NativeScript project and build a simple hello word sample application.
+```
+$ npm install -g nativescript
+```
 
-### Creating Blank Project
-Let's start by creating a blank project. As we mentioned you can either use the [NativeScript CLI](https://github.com/NativeScript/nativescript-cli) or NativeScript Blank project template in AppBuilder(available for JavaScript or TypeScript).
-Form here on we will be working in the `App` folder inside the project.
+## Step 2: Create a project
 
-### Adding UI
-The project we just created has a single empty page. The UI of the page is defined declaratively in the 'main-page.xml' file. In the project there are also `main-page.js` (or `main-page.ts`) and `main-page.css` files that will hold applications code and styles for this page.
+The CLI install creates two commands, `nativescript` and `tns`, that you use to create, build, and run your NativeScript projects. Running `tns create` (or `nativescript create`) creates a new project:
 
-Let's add some UI in `main-page.xml`:
+```
+$ tns create hello-world
+```
+
+## Step 3: Add platforms
+
+NativeScript needs to know which platforms you intend to target to do some one-time initialization. You add each platform with the `tns platform add` command:
+
+```
+$ cd hello-world
+$ tns platform add ios
+$ tns platform add android
+```
+
+> **Warning**: NativeScript has system requirements for each platform. Most notably you need to have Xcode installed to build iOS apps, and you need to have an Android SDK installed to build Android apps. If the `tns platform add` command fails, refer to [CLI's system requirement documentation](https://github.com/NativeScript/nativescript-cli#system-requirements).
+
+## Step 4: Run your app
+
+After adding platform(s), you use the `tns run` command to run your app. For example, the following runs your app in the iOS emulator:
+
+```
+$ npm install -g ios-sim-portable  # Needed to launch the iOS emulator from the CLI
+$ tns run ios --emulator
+```
+
+The following runs your app in the Android emulator (specifically an [Android AVD](http://developer.telerik.com/featured/using-android-emulator-hybrid-mobile-apps-telerik-appbuilder/) configured on your machine):
+
+```
+$ tns run android --emulator
+```
+
+You can deploy your app to physical, USB-connected devices by omitting the `--emulator` flag. The following deploys your app to a USB-connected Android device:
+
+```
+$ tns run android
+```
+
+And the following does the same for iOS:
+
+```
+$ tns run ios
+```
+
+> **Warning**: Deploying your app to iOS devices requires that a valid iOS certificate and provisioning profile pair are configured on your development machine. For more information see [iOS Code Signing - A Complete Walkthrough](http://seventhsoulmountain.blogspot.com/2013/09/ios-code-sign-in-complete-walkthrough.html).
+
+## Step 5: Build something awesome
+
+The project you just created has a single empty page, and that's no fun. Let's look at what NativeScript makes possible.
+
+### Adding a UI
+
+Your app has one page, and it's defined in the `main-page.xml` file. The project also has a `main-page.js` file that contains the page's logic, and a `main-page.css` file that contains the page's styling.
+
+Let's make this app more interesting. Paste the following code in your `main-page.xml`:
+
 ```XML
-<?xml version="1.0" encoding="UTF-8" ?>
 <Page>
   <StackLayout>
-    <Label text="Tap the button" style="horizontal-align: center"/>
+    <Label text="Tap the button" style="horizontal-align: center" />
     <Button text="TAP" />
-    <Label text="message" textWrap="true" style="horizontal-align: center"/>
+    <Label text="message" textWrap="true" style="horizontal-align: center" />
   </StackLayout>
 </Page>
 ```
-We have added a title label, a button and a message label that we are going to use in the next section.
-Here is the result:
+
+These few lines of code are all you need to add three native UI components (two labels and a button) to your app. Here's what your UI looks like on an Android and iOS device:
+
 ![step1 android](img/getting-started/step1-android.png "step1 android")![step1 ios](img/getting-started/step1-ios.png "step1 ios")
 
-*Note: UI declaration is covered in depth in the [UI with XML](ui-with-xml.md) article.*
+To make this app actually do something, let's look at how we can bind an event handler to the app's button, and a string to the app's “message” label.
+
+> **Note**: For more on what you can do with UIs in NativeScript, check out the [UI with XML](ui-with-xml.md) article.
 
 ### Creating a View-Model
-[MVVM](http://en.wikipedia.org/wiki/Model_View_ViewModel) pattern is the preferred approach when developing mobile applications with NativeScript. In this section we will create and bind a view-model to the page we already have.
-The view-model will hold simple counter which will be used to update a message each time the user taps on the button.  
 
-Create a `view-models` folder and `main-view-model.js` ( or `main-view-model.ts` if you are using TypeScript) file in it:
+The [MVVM](http://en.wikipedia.org/wiki/Model_View_ViewModel) pattern is the preferred approach for building NativeScript apps, as it provides an elegant approach to keeping your model data in sync with your UI. To see how it works let's create a view model (the VM in MVVM), and bind it to your page.
+
+Create a `view-models` folder and create a new `count-model.js` file within it. Your folder structure should look like this:
+
+```
+.
+└── hello-world
+    ├── app
+    │   ├── app.js
+    │   ├── main-page.css
+    │   ├── main-page.js
+    │   ├── main-page.xml
+    │   └── view-models
+    │       └── count-model.js
+    └── platforms
+        └── ...
+```
+
+> **Note**: TypeScript is a first-class citizen in NativeScript. If you'd like to use TypeScript, create .ts files instead of .js files (so `main-page.ts` and `count-model.ts`), and copy and paste code from the TypeScript tabs instead of the JavaScript tabs below. That's it!
+
+With that structure in place, next open your `count-model.js` file and paste in the following code:
+
 ``` JavaScript
 var observable = require("data/observable");
 
 var counter = 42;
-var mainViewModel = new observable.Observable();
-mainViewModel.set("message", counter + " taps left");
-mainViewModel.tapAction = function () {
+var countModel = new observable.Observable();
+countModel.set("message", counter + " taps left");
+countModel.tapAction = function () {
     counter--;
     if (counter <= 0) {
-        mainViewModel.set("message", "Hoorraaay! You unlocked the NativeScript clicker achievement!");
-    }
-    else {
-        mainViewModel.set("message", counter + " taps left");
+        countModel.set("message", "Hoorraaay! You unlocked the NativeScript clicker achievement!");
+    } else {
+        countModel.set("message", counter + " taps left");
     }
 };
-exports.mainViewModel = mainViewModel;
+module.exports = countModel;
 ```
-``` TypeScript
+```TypeScript
 import observable = require("data/observable");
 
-export class HelloWorldModel extends observable.Observable {
+export class CountModel extends observable.Observable {
     private counter: number;
     constructor() {
         super();
@@ -100,106 +159,109 @@ export class HelloWorldModel extends observable.Observable {
         }
     }
 }
-export var mainViewModel = new HelloWorldModel();
+export new CountModel();
 ```
 
-The view-model is an instance of `Observable` type so that the UI can receive notification whenever the `message` property is set.
+This view-model exposes two things: a `message` property (created by the call to `.set()`), and a `tapAction` function. The `tapAction` function decrements a counter and updates the `message` property to reflect the change.
 
-Now that we have the main-view-model we will set it as a `bindingContext` of the main-page. We will do this by handling the `pageLoaded` event:
+Now that you have this view-model in place you need to use it in your UI—specifically, you need to bind your `<Label>`'s text to the view-model's `message` property, and you need to invoke the view-model's `tapAction()` method on each tap of your app's `<Button>`.
 
-main-page.xml:
-```XML
-<Page loaded="pageLoaded"/>
-    ...
-</Page>
-```
+Start by opening your `main-page.js` file and pasting in the following code:
 
-main-page.js (or main-page.ts):
 ```JavaScript
-var vmModule = require("./view-models/main-view-model");
+var countModel = require("./view-models/count-model");
 function pageLoaded(args) {
     var page = args.object;
-    page.bindingContext = vmModule.mainViewModel;
+    page.bindingContext = countModel;
 }
 exports.pageLoaded = pageLoaded;
-
 ```
 ```TypeScript
 import observable = require("data/observable");
 import pages = require("ui/page");
-import vmModule = require("./view-models/main-view-model");
+import countModel = require("./view-models/count-model");
 
 // Event handler for Page "loaded" event attached in main-page.xml
 export function pageLoaded(args: observable.EventData) {
     // Get the event sender
     var page = <pages.Page>args.object;
-    page.bindingContext = vmModule.mainViewModel;
+    page.bindingContext = countModel;
 }
 ```
 
-The last thing we need to do is to bind the UI elements in the XML to the view-model:
-main-page.xml
+The `require()` call imports your count model, and the `pageLoaded` function sets it as the page's “bindingContext”, with the “bindingContext” just meaning that your model's properties and functions will now be available in your page's XML using NativeScript's data-binding syntax.
+
+To see how it works, let's return to your `main-page.xml` file. Open it and paste in the following code:
+
 ``` XML
-<?xml version="1.0" encoding="UTF-8" ?>
 <Page loaded="pageLoaded">
   <StackLayout>
-    <Label text="Tap the button" style="horizontal-align: center"/>
-    {%raw%}<Button text="TAP" tap="{{ tapAction }}"/>
-    <Label text="{{ message }}" textWrap="true" style="horizontal-align: center"/>{%endraw%}
+    <Label text="Tap the button" style="horizontal-align: center" />
+    <Button text="TAP" tap="{{ tapAction }}"/>
+    <Label text="{{ message }}" textWrap="true" style="horizontal-align: center" />
   </StackLayout>
 </Page>
 ```
 
-Here is the result:
+There are a couple of things to note here. The first is the new `loaded` attribute on the `<Page>` element. The value of the `loaded` attribute, `"pageLoaded"`, mirrors the `exports.pageLoaded` function you defined in `main-page.js`. This causes the `pageLoaded` function to run when this page loads, which sets the count model as this page's binding context, and makes the model's properties available for data binding.
+
+The data binding is used in two places: in the button's `tap` attribute, `tap="{{ tapAction }}"`, and the second label's `text` attribute, `text="{{ message }}"`. With this change, taps on the button invoke the count model's `tapAction()` method, and the second label displays the count model's `message` property.
+
+Here's what your app looks like now:
+
 ![step2 android](img/getting-started/step2-android.png "step2 android")![step2 ios](img/getting-started/step2-ios.png "step2 ios")
 
-We used data-binding for the `tap` event of the button and the `text` of the message-label.
-*Note: Binding is covered in depth in the [Data Binding](bindings.md) article.*
+The power of an MVVM approach is that not only do you get to bind properties to UI elements, but that those UI elements automatically update as the model's properties changes. In your app not only is the initial state correct, but every time you tap the button, the `tapAction()` method runs, the model's `message` property gets updated, and your app's UI reflects that change—automatically!
+
+> **Note**: For more details on how NativeScript's data binding works, checkout out our [Data Binding](bindings.md) documentation.
 
 ### Adding Styles
-The final step in this tutorial will be to style the application. Styling in NativeScript is done with a subset of the CSS syntax.
-For each page, the NativeScript runtime will automatically load and apply the CSS file that has the same name as the XML file for the page.
 
-We will add the CSS in `main-page.css`:
+Now that you have a small functioning app, let's look at how at you can change how your app looks. Styling in NativeScript is done with a subset of the CSS syntax.
+
+For each page, the NativeScript runtime automatically loads and applies any CSS file that has the same name as the XML file for the page. Therefore, in this example, NativeScript automatically knows to use your `main-page.css` file to style your `main-page.xml` page. As an example of what you can do, paste the following code in your `main-page.css` file:
+
 ```CSS
 .title {
     font-size: 30;
     horizontal-align: center;
-    margin:20;
+    margin: 20;
 }
-
 button {
     font-size: 42;
     horizontal-align: center;
 }
-
 .message {
     font-size: 20;
     color: #284848;
-    margin:10 40;
+    margin: 10 40;
     horizontal-align: center;
 }
 ```
 
-Finally - replace the inline styles in the `main-page.xml` with `cssClass` attribute, so that the CSS classes we defined are applied:
+This CSS adjusts the font size and text alignment of button elements, and also defines two new CSS class names, `title` and `message`. You can apply those class names to elements using the `cssClass` attribute in your XML pages.
+
+To try that out, paste the following code in your `main-page.xml` file, which includes two new `cssClass` attributes that map to the class names defined in your `main-page.css` file.
+
 ```XML
-<?xml version="1.0" encoding="UTF-8" ?>
 <Page loaded="pageLoaded">
   <StackLayout>
-    <Label text="Tap the button" cssClass="title"/>
-    {%raw%}<Button text="TAP" tap="{{ tapAction }}" />
-    <Label text="{{ message }}" cssClass="message" textWrap="true"/>{%endraw%}
+    <Label text="Tap the button" cssClass="title" />
+    <Button text="TAP" tap="{{ tapAction }}" />
+    <Label text="{{ message }}" cssClass="message" textWrap="true" />
   </StackLayout>
 </Page>
 ```
 
-Here is the result:
+With the addition of some CSS styling here's what the app looks like now:
+
 ![step3 android](img/getting-started/step3-android.png "step3 android")![step3 ios](img/getting-started/step3-ios.png "step3 ios")
 
-*Note: CSS Styling is covered in depth in the [Styling](styling.md) article.*
+> **Note**: CSS Styling is covered in depth in the [Styling](styling.md) article.
 
 ## Next Steps
-Read the advanced topics below or refer to the [Api Reference](ApiReference/) to continue wit NativeScript development:
+
+NativeScript does a whole lot, and you're just getting started! As a next step, feel free to peruse our [API reference](ApiReference/) to see what NativeScript has to offer. You can also learn more about NativeScript features in the following articles:
 
 * [Application](application-management.md)
 * [Navigation](navigation.md)
