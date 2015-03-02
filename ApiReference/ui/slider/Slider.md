@@ -7,6 +7,14 @@ description: "Class ui/slider.Slider"
 _Inherits:_ [_View_](../../ui/core/view/View.md)  
 Represents a slider component.
 
+##### Static Properties
+ - **valueProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the value property of each Slider instance.
+ - **minValueProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the minValue property of each Slider instance.
+ - **maxValueProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the maxValue property of each Slider instance.
+
 ##### Instance Properties
  - **android** - _Object_.    
   Gets the native [android widget](http://developer.android.com/reference/android/widget/SeekBar.html) that represents the user interface for this component. Valid only when running on Android OS.

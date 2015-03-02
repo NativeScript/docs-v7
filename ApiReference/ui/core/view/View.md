@@ -9,6 +9,14 @@ _Conform to:_ [_ApplyXmlAttributes_](../../../ui/core/view/ApplyXmlAttributes.md
 This class is the base class for all UI components. 
 A View occupies a rectangular area on the screen and is responsible for drawing and layouting of all UI components within. 
 
+##### Static Properties
+ - **idProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the id property of each View.
+ - **cssClassProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the cssClass property of each View.
+ - **isEnabledProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).
+ - **isUserInteractionEnabledProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).
+
 ##### Static Functions
  - **measureChild(** parent [_View_](../../../ui/core/view/View.md), child [_View_](../../../ui/core/view/View.md), widthMeasureSpec _Number_, heightMeasureSpec _Number_ **)** {}...
    - **parent** - [_View_](../../../ui/core/view/View.md)

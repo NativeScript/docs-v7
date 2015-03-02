@@ -28,12 +28,6 @@ Namespace | Description
 ------|------------
 [knownEvents](../../../ui/core/view/knownEvents/) | Defines an enum with events for view class.
 
-##### Variables
- - **idProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
-  Represents the observable property backing the id property of each View.
- - **cssClassProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
-  Represents the observable property backing the cssClass property of each View.
-
 ##### Functions
  - **getViewById(** view [_View_](../../../ui/core/view/View.md), id _String_ **)** [_View_](../../../ui/core/view/View.md)  
      Gets a child view by id.

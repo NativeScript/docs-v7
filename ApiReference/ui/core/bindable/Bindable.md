@@ -7,6 +7,10 @@ description: "Class ui/core/bindable.Bindable"
 _Inherits:_ [_DependencyObservable_](../../../ui/core/dependency-observable/DependencyObservable.md)  
 Represents an extended DependencyObservable object that supports data-binding.
 
+##### Static Properties
+ - **bindingContextProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
+  Represents the dependency Property used to back the bindingContext value.
+
 ##### Instance Properties
  - **bindingContext** - _Object_.    
   Gets or sets the binding context of this instance. This object is used as a source for each Binding that does not have a source object specified.

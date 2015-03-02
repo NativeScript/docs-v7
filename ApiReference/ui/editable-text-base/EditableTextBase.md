@@ -7,6 +7,12 @@ description: "Class ui/editable-text-base.EditableTextBase"
 _Inherits:_ [_TextBase_](../../ui/text-base/TextBase.md)  
 Represents the base class for all editable text views.
 
+##### Static Properties
+ - **keyboardTypeProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
+ - **returnKeyTypeProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
+ - **editableProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
+ - **updateTextTriggerProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
+
 ##### Instance Properties
  - **keyboardType** - _String_.    
   Gets or sets the soft keyboard type.

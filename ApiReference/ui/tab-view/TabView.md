@@ -7,6 +7,10 @@ description: "Class ui/tab-view.TabView"
 _Inherits:_ [_View_](../../ui/core/view/View.md)  
 Represents a tab view.
 
+##### Static Properties
+ - **itemsProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
+ - **selectedIndexProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
+
 ##### Instance Properties
  - **items** - _Array_ of [_TabEntry_](../../ui/tab-view/TabEntry.md).    
   Gets or sets the items of the TabView.

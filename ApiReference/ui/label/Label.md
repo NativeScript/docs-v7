@@ -7,6 +7,10 @@ description: "Class ui/label.Label"
 _Inherits:_ [_TextBase_](../../ui/text-base/TextBase.md)  
 Represents a text label.
 
+##### Static Properties
+ - **textWrapProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Dependency property used to support binding operations for the text wrapping of the current label instance.
+
 ##### Instance Properties
  - **android** - _Object_.    
   Gets the native [android widget](http://developer.android.com/reference/android/widget/TextView.html) that represents the user interface for this component. Valid only when running on Android OS.

@@ -7,6 +7,14 @@ description: "Class ui/list-view.ListView"
 _Inherits:_ [_View_](../../ui/core/view/View.md)  
 Represents a view that shows items in a vertically scrolling list.
 
+##### Static Properties
+ - **itemsProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the items property of each ListView instance.
+ - **itemTemplateProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Represents the item template property of each ListView instance.
+ - **isScrollingProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the isScrolling property of each ListView instance.
+
 ##### Instance Properties
  - **android** - _Object_.    
   Gets the native [android widget](http://developer.android.com/reference/android/widget/ListView.html) that represents the user interface for this component. Valid only when running on Android OS.

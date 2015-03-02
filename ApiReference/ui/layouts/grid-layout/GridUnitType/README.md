@@ -4,7 +4,7 @@ title: "Module ui/layouts/grid-layout.GridUnitType"
 description: "Module ui/layouts/grid-layout.GridUnitType"
 ---
 ## Namespace: "ui/layouts/grid-layout".GridUnitType
-GridUnitType enum is used to indicate what kind of value the GridLength is holding.
+GridUnitType enum is used to indicate what kind of value the ItemSpec is holding.
 
 ##### Variables
  - **auto** - _String_.    

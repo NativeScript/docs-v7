@@ -7,6 +7,10 @@ description: "Class ui/switch.Switch"
 _Inherits:_ [_View_](../../ui/core/view/View.md)  
 Represents a switch component.
 
+##### Static Properties
+ - **checkedProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the checked property of each Switch instance.
+
 ##### Instance Properties
  - **android** - _Object_.    
   Gets the native [android widget](http://developer.android.com/reference/android/widget/Switch.html) that represents the user interface for this component. Valid only when running on Android OS.

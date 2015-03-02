@@ -7,6 +7,10 @@ description: "Class ui/activity-indicator.ActivityIndicator"
 _Inherits:_ [_View_](../../ui/core/view/View.md)  
 Represents a UI widget which displays a progress indicator hinting the user for some background operation running.
 
+##### Static Properties
+ - **busyProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Represents the busy property of the ActivityIndicator class.
+
 ##### Instance Properties
  - **android** - _Object_.    
   Gets the native [android widget](http://developer.android.com/reference/android/widget/ProgressBar.html) that represents the user interface for this component. Valid only when running on Android OS.

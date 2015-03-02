@@ -7,6 +7,10 @@ description: "Class ui/search-bar.SearchBar"
 _Inherits:_ [_View_](../../ui/core/view/View.md)  
 Represents a search bar component.
 
+##### Static Properties
+ - **textProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Dependency property used to support binding operations related to search-bar text.
+
 ##### Instance Properties
  - **android** - _Object_.    
   Gets the native [android widget](http://developer.android.com/reference/android/widget/SearchView.html) that represents the user interface for this component. Valid only when running on Android OS.

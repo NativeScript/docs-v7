@@ -7,6 +7,10 @@ description: "Class ui/button.Button"
 _Inherits:_ [_View_](../../ui/core/view/View.md)  
 Represents a standard Button widget.
 
+##### Static Properties
+ - **textProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the text property of each Button instance.
+
 ##### Instance Properties
  - **android** - _Object_.    
   Gets the native [android widget](http://developer.android.com/reference/android/widget/Button.html) that represents the user interface for this component. Valid only when running on Android OS.

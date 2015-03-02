@@ -17,7 +17,3 @@ Class | Description
 Object | Description
 ------|------------
 [Options](../../ui/label/Options.md) | Provides a set of most common options for creating a label.
-
-##### Variables
- - **textWrapProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
-  Dependency property used to support binding operations for the text wrapping of the current label instance.

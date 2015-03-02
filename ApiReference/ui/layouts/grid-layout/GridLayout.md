@@ -5,7 +5,7 @@ description: "Class ui/layouts/grid-layout.GridLayout"
 ---
 ## Class: "ui/layouts/grid-layout".GridLayout  
 _Inherits:_ [_Layout_](../../../ui/layouts/layout/Layout.md)  
-Defines a flexible grid area that consists of columns and rows.
+Defines a rectangular layout area that consists of columns and rows.
 
 ##### Static Functions
  - **getColumn(** view [_View_](../../../ui/core/view/View.md) **)** _Number_  

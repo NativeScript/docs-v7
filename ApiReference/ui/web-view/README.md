@@ -21,7 +21,3 @@ Object | Description
 Namespace | Description
 ------|------------
 [knownEvents](../../ui/web-view/knownEvents/) | Known event names.
-
-##### Variables
- - **urlProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
-  Represents the observable property backing the Url property of each WebView instance.

@@ -7,6 +7,12 @@ description: "Class ui/image.Image"
 _Inherits:_ [_View_](../../ui/core/view/View.md)  
 Represents a class that provides functionality for loading and streching image(s).
 
+##### Static Properties
+ - **urlProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
+ - **sourceProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
+ - **isLoadingProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
+ - **stretchProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
+
 ##### Instance Properties
  - **android** - _Object_.    
   Gets the native [android widget](http://developer.android.com/reference/android/widget/ImageView.html) that represents the user interface for this component. Valid only when running on Android OS.

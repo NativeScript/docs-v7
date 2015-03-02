@@ -7,6 +7,10 @@ description: "Class ui/web-view.WebView"
 _Inherits:_ [_View_](../../ui/core/view/View.md)  
 Represents a standard WebView widget.
 
+##### Static Properties
+ - **urlProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the Url property of each WebView instance.
+
 ##### Instance Properties
  - **android** - _Object_.    
   Gets the native [android widget](http://developer.android.com/reference/android/webkit/WebView.html) that represents the user interface for this component. Valid only when running on Android OS.

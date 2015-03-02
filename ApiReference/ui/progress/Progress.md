@@ -7,6 +7,12 @@ description: "Class ui/progress.Progress"
 _Inherits:_ [_View_](../../ui/core/view/View.md)  
 Represents a progress component.
 
+##### Static Properties
+ - **valueProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the value property of each Progress instance.
+ - **maxValueProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the maxValue property of each Progress instance.
+
 ##### Instance Properties
  - **android** - _Object_.    
   Gets the native [android widget](http://developer.android.com/reference/android/widget/ProgressBar.html) that represents the user interface for this component. Valid only when running on Android OS.

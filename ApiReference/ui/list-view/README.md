@@ -22,9 +22,3 @@ Namespace | Description
 ------|------------
 [knownEvents](../../ui/list-view/knownEvents/) | Known event names.
 [knownTemplates](../../ui/list-view/knownTemplates/) | Known template names.
-
-##### Variables
- - **itemsProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
-  Represents the observable property backing the items property of each ListView instance.
- - **isScrollingProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
-  Represents the observable property backing the isScrolling property of each ListView instance.

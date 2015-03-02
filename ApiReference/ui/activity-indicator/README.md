@@ -13,7 +13,3 @@ var uiactivity_indicator = require("ui/activity-indicator");
 Class | Description
 ------|------------
 [ActivityIndicator](../../ui/activity-indicator/ActivityIndicator.md) | Represents a UI widget which displays a progress indicator hinting the user for some background operation running.
-
-##### Variables
- - **busyProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
-  Represents the busy property of the ActivityIndicator class.

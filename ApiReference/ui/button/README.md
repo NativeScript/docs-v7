@@ -17,7 +17,3 @@ Class | Description
 Namespace | Description
 ------|------------
 [knownEvents](../../ui/button/knownEvents/) | Known event names.
-
-##### Variables
- - **textProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
-  Represents the observable property backing the text property of each Button instance.
