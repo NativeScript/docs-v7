@@ -1,116 +1,99 @@
 ---
-nav-title: Hello World from AppBuilder
-title: Hello World from AppBuilder
-description: Create your first NativeScript Hello World app in a few minutes with AppBuilder. See it in action on your device.
+nav-title: Hello World from the NativeScript CLI
+title: Hello World from the NativeScript CLI
+description: Create your first NativeScript Hello World app in a few minutes with the NativeScript CLI. See it in action on your device.
 position: 1
 ---
 
-# Hello World from AppBuilder
+# Hello World from the NativeScript CLI
 
-Have you set up your system to develop NativeScript apps with the AppBuilder tool set? 
+Have you set up your system to develop NativeScript apps with the NativeScript CLI local tool set? 
 
 If the answer is yes, you are ready to create your first Hello World app with NativeScript. Your first Hello World will be a simple counter. You will learn:
 
-* [How To Create a Blank Project](#crate-blank-project)
+* [How To Create a New Project](#crate-new-project)
 * [How To Add User Interface](#add-user-interface)
 * [How To Create a View Model](#create-a-view-model)
 * [How To Style Your App](#style-your-app)
 
 > If your system is not already configured, you can check the [Set Up Your System](./quick-setup/setup/quick-setup.md) guide, pick your tools and configure them.
 
-## Create Blank Project
+## Create New Project
 
 The first step to any development is to create your first project.
 
-### 1. Run your AppBuilder IDE option and log in.
+### 1. Create your project.
 
-IDE Option | Operation
------------|----------
-In-browser client | When prompted, fill in the form.
-Windows client | When prompted, fill in the form.
-Extension for Visual Studio | In the menu bar, select **AppBuilder** &#8594; **Log in** and fill in the form.
-CLI | Run `appbuilder login`, fill in the form in the browser window, close it and return to the command prompt.
+1. Get the Blank template locally from [https://github.com/NativeScript/docs.git](https://github.com/NativeScript/docs.git).
+    * If you have configured git version control on your system, navigate to an empty directory and run this command.
 
-### 2. Create your project.
-
-You can choose between creating a blank JavaScript or TypeScript project.
-
-IDE Option | Operation
------------|----------
-In-browser client | <ol><li>Click <b>Create app</b>.<br/>Apps are the top-level containers for development with the Telerik Platform. In an app, you can host multiple projects that complement each other to create a fully-fledged mobile solution.</li><li>Select <b>Start from a blank app</b>, provide name for the app and click <b>Create app</b>.</li><li>Click <b>Create project</b> and select <b>AppBuilder Native project</b>.</li><li>Verify that <b>Choose project template</b> is selected, select <b>NativeScript Blank (JavaScript)</b> or <b>NativeScript Blank (TypeScript)</b>, provide name for the project and click <b>Create project</b>.</li></ol>
-Windows client | <ol><li>Click <b>New</b> and select <b>Native</b>.</li><li>Select <b>NativeScript Blank (JavaScript)</b> or <b>NativeScript Blank (TypeScript)</b>, provide name for the project and click <b>Create</b>.</li></ol>
-Extension for Visual Studio | <ol><li>In the menu bar, select <b>File</b> &#8594; <b>New</b> &#8594; <b>Project</b>.</li><li>In the sidebar, select <b>Templates</b> &#8594; <b>Telerik</b> &#8594; <b>AppBuilder </b>.</li><li>In the list of templates, select <b>NativeScript Blank (JavaScript)</b> or <b>NativeScript Blank (TypeScript)</b>, provide a name for your project and click <b>OK</b>.</li></ol>
-CLI | Run `appbuilder create native HelloWorld --template Blank` or `appbuilder create native HelloWorld --template TypeScript.Blank`. Run `cd HelloWorld`
-
-### 3. Explore the newly created project.
-
-Expand your project structure in your AppBuilder IDE or run a quick directory listing command.
-
-Your first project has the following structure in the in-browser client, the Windows client and the extension for Visual Studio.
+        ```
+        git clone https://github.com/NativeScript/docs.git
+        ```
+    * If you have not configured git version control, navigate to [https://github.com/NativeScript/docs.git](https://github.com/NativeScript/docs.git), click **Download ZIP**, wait for the download to complete and extract the archive.
+1. In the command prompt, run the following command.
 
 ```
-Solution 'Hello World'/ 
-|-- Hello World/
-|-- Properties
-|-- app/
-|-- App_Resources/
-|-- |-- Android/
-|-- `-- iOS/
-|-- tns_modules/
-|-- `-- ...
-|-- .abignore
+tns create HelloWorld --copy-from <Directory where you cloned or extracted the Blank template>
 ```
 
-The solution node, the project node and the **Properties** node are virtual nodes. The first two are containers for your development. The **Properties** node is a shortcut to opening the project configuration dialog.
+### 2. Explore the newly created project.
 
-In the CLI, the project structure is more simplified and does not contain virtual nodes. Instead, it exposes the `.abproject` file which contains configuration data about your project. Do not modify it manually.
+Explore the newly created directory in a file explorer. At first, your project has the following structure.
 
-```
 Hello World/ 
-|-- .abignore
-|-- .abproject
 |-- app/
-|-- App_Resources/
-|-- |-- Android/
-|-- `-- iOS/
-|-- hooks
-|-- tns_modules/
-`-- `-- ...
+|-- |-- app/
+|-- |-- App_Resources/
+|-- |-- |-- Android/
+|-- |-- `-- iOS/
+|-- |-- LICENSE
+|-- |-- package.json
+|-- |-- README.md
+|-- `-- tns_modules/
+`-- platforms
 ```
 
 Your NativeScript project consists of the following basic directories and files.
 
-* The `app` directory is the **development space for your application**. You need to modify all common and platform-specific code within this directory. 
-* The `App_Resources` directory is the directory that contains **platform-specific resources** such as icons, splash screens and platform-specific configuration files like `AndroidManifest.xml` and `Info.plist`.<br/>When you create a new project, only icons and splash screens are present in this directory.
-* The `tns_modules` directory contains the NativeScript modules. Each module exposes a device or platform functionality such as the camera, location services or the user interface.
-* The `hooks` directory is empty and is not respected by AppBuilder.
-* The `.abignore` file is an AppBuilder-specific file which lets you determine which files and directories to include or exclude from your application package when you build your project.
+* The `app` directory is the **development space for your application**. You need to modify all common and platform-specific code within the `app` subdirectory in this directory. 
+* The `platforms` directory is created empty. When you add a target platform to your project, the NativeScript CLI creates a new subdirectory with the platform name. The subdirectory contains the ready-to-build platform-specific resources of your app. 
+* The `App_Resources` subdirectory is the directory that contains **platform-specific resources** such as icons, splash screens and platform-specific configuration files like `AndroidManifest.xml` and `Info.plist`.<br/>When you create a new project, only icons and splash screens are present in this directory.
+* The `tns_modules` subdirectory contains the NativeScript modules. Each module exposes a device or platform functionality such as the camera, location services or the user interface.
 
-> **IMPORTANT:** This project structure is uniform across all NativeScript projects created with AppBuilder. Do not change your basic project structure.
+> **IMPORTANT:** This project structure is uniform across all NativeScript projects created with the NativeScript CLI. Do not change your basic project structure.
 
-### 4. You can quickly check how your blank project looks like on device.
+### 3. Add target development platforms.
 
-1. Install the companion app on your device by scanning the QR code below.<br/>The companion app is a testing utility that lets you load your project on device without building an actual application package.
+Currently, the `platforms` directory is empty. This means that your project is not ready for development yet. Before you can continue, you need to add your desired platform as a target platform.
 
-    iOS | Android
-    ----|--------
-    ![QR code for installing the companion app](./img/companions/ios-code.png) | ![QR code for installing the companion app](./img/companions/android-code.png)
+```iOS
+tns add platform ios
+```
+```Android
+tns add platform android
+```
 
-2. Prepare your project for the companion app.
+This operation creates the `android` and the `ios` subdirectories in the `platforms` directory. Each of these subdirectories now contain a project for native development with the respective SDKs.
 
-    IDE Option | Operation
-    -----------|---------- 
-    In-browser client | <ol><li>In the main menu bar, select <b>Run</b>.</li><li>Select your target platform, select to build for the companion app and click <b>Next</b>.</li></ol>
-    Windows client | <ol><li>In the main menu bar, select <b>Run</b>.</li><li>Select your target platform, select to build for the companion app and click <b>Next</b>.</li></ol>
-    Extension for Visual Studio | <ol><li>In the main menu bar, select <b>AppBuilder</b> &#8594; <b>Build in Cloud</b>.</li><li>Select your target platform, select to build for the companion app and click <b>Next</b>.</li></ol>
-    CLI | Run `appbuilder build android --companion` or `appbuilder build ios --companion`
+Later on, the NativeScript CLI will call the tools of the native SDK to build these platform-specific projects into a truly native application package. During this process, the NativeScript CLI will automatically transfer your cross-platform code  and resources from the `app` directory into the `platforms` directory.
 
-3. Run your project in the companion app.
-    1. Unlock your device.
-    1. Run a QR code scanner.
-    1. Scan the QR code that AppBuilder produced in **Step 2**.
+> **IMPORTANT:** Avoid modifying your projects inside the `platforms` directory. During build-related operations, your changes will be overridden by your code and resources from the `app` directory.
 
-Your project is truly blank and this is why it appears empty or even black on the device screen. To change this, you need to add user interface to your app.
+### 4. You can quickly check how your blank project looks like in the emulator.
+
+Run the following command.
+
+```iOS
+tns run ios --emulator
+```
+```Android
+tns run android --emulator
+```
+
+> **TIP:** If you have configured Genymotion, you can run `tns run android --emulator --geny <Genymotion Device Name>`<br/>This runs your project in the Genymotion emulator.
+
+Your project is truly blank and this is why it appears empty or even black on the emulator screen. To change this, you need to add user interface to your app.
 
 ## Add User Interface
 
@@ -129,11 +112,16 @@ You can add a simple title, a button and a message to your home page by replacin
 </Page>
 ```
 
-Save your changes and synchronize them to the companion app.
+Save your changes and rerun your app.
 
-iOS | Android
-----|--------
-Tap and hold with three fingers until a download dialog appears. | Expand the notification center and tap **Sync**.
+```iOS
+tns run ios --emulator
+```
+```Android
+tns run android --emulator
+```
+
+> **TIP:** If you have configured Genymotion, you can run `tns run android --emulator --geny <Genymotion Device Name>`<br/>This runs your project in the Genymotion emulator.
 
 On your device, your app should appear similar to the screen shots below.
 
@@ -207,7 +195,7 @@ In `app` &#8594; `main-page.xml`, add a `loaded` attribute to the `Page` element
 
 NativeScript automatically looks for JavaScript or TypeScript files which have the same name as your `XML` file. When NativeScript identifies such a file, it executes the logic inside it. So, NativeScript will automatically execute any business logic in the `main-page.js` or `main-page.ts` file you already have in your project.
 
-To bind your view model to the home page, in your `main-page.js` or `main-page.ts` add the following code. This code handles the `pageLoaded` event.
+To bind your view model to the home page, in your `app` &#8594; `main-page.js` or `app` &#8594; `main-page.ts` add the following code. This code handles the `pageLoaded` event.
 
 ```JavaScript
 var vmModule = require("./view-models/main-view-model");
@@ -216,7 +204,6 @@ function pageLoaded(args) {
     page.bindingContext = vmModule.mainViewModel;
 }
 exports.pageLoaded = pageLoaded;
-
 ```
 ```TypeScript
 import observable = require("data/observable");
@@ -231,7 +218,7 @@ export function pageLoaded(args: observable.EventData) {
 }
 ```
 
-Finally, you can bind the user interface of the home page to the view model you created. In your `main-page.xml` add the following code.
+Finally, you can bind the user interface of the home page to the view model you created. In your `app` &#8594; `main-page.xml` add the following code.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -244,11 +231,16 @@ Finally, you can bind the user interface of the home page to the view model you 
 </Page>
 ```
 
-Save your changes and synchronize them to the companion app.
+Save your changes and rerun your app.
 
-iOS | Android
-----|--------
-Tap and hold with three fingers until a download dialog appears. | Expand the notification center and tap **Sync**.
+```iOS
+tns run ios --emulator
+```
+```Android
+tns run android --emulator
+```
+
+> **TIP:** If you have configured Genymotion, you can run `tns run android --emulator --geny <Genymotion Device Name>`<br/>This runs your project in the Genymotion emulator.
 
 On your device, your app should appear similar to the screen shots below.
 
@@ -259,6 +251,8 @@ On your device, your app should appear similar to the screen shots below.
 You can style your app using CSS. In this version of NativeScript, you can only use a [subset of the CSS language](./styling.md).
 
 For each page, NativeScript automatically loads and applies the `CSS` file with the same name as the `XML` file for the page. Under the hood, the runtime parses the CSS, evaluates the selectors and applies the properties to the style object of the selected view.
+
+> **TIP:** You can also set global CSS rules. Any CSS declarations in `app.css` will apply to all content that can be styled.
 
 First, add a `main-page.css` to your `app` directory. 
 
@@ -297,11 +291,16 @@ Finally, add the `cssClass` attribute to your user interface elements in `main-p
 </Page>
 ```
 
-Save your changes and synchronize them to the companion app.
+Save your changes and rerun your app.
 
-iOS | Android
-----|--------
-Tap and hold with three fingers until a download dialog appears. | Expand the notification center and tap **Sync**.
+```iOS
+tns run ios --emulator
+```
+```Android
+tns run android --emulator
+```
+
+> **TIP:** If you have configured Genymotion, you can run `tns run android --emulator --geny <Genymotion Device Name>`<br/>This runs your project in the Genymotion emulator.
 
 On your device, your app should appear similar to the screen shots below.
 
