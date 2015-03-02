@@ -13,18 +13,21 @@ The user interface of NativeScript mobile apps consists of pages. Typically, the
   * [Declare the Home Page](#declare-the-home-page)
   * [Navigate to Page](#navigate-to-page)
   * [Execute Business Logic](#execute-business-logic)
-
-
-* [Using UI Components](#using-ui-components)
-* [The Built-In UI Components](the-built-in-ui-components)
-  * [Page](#page)
-  * [TabView](#tabview)
-  * [ScrollView](#scrollview)
-  * [StackLayout](#stacklayout)
-  * [GridLayout](#gridlayout)
-  * [WrapLayout](#wraplayout)
-  * [AbsoluteLayout](#absolutelayout)
-* [Custom UI Components](#custom-ui-components)
+* [User Interface Components](#user-interface-components)
+  * [The Default Content Components](#the-default-content-components)
+    * [Page](#page)
+    * [TabView](#tabview)
+    * [ScrollView](#scrollview)
+    * [StackLayout](#stacklayout)
+    * [GridLayout](#gridlayout)
+    * [WrapLayout](#wraplayout)
+    * [AbsoluteLayout](#absolutelayout)
+  * [Custom Components](#custom-components)
+* [Bindings](#bindings)
+  * [Property Binding](#property-binding)
+  * [Event Binding](#event-binding)
+  * [ListView Binding](#listview-binding)
+  * [Expressions](#expressions)
 
 ## The Basics
 
@@ -531,19 +534,13 @@ export function pageLoaded(args: observable.EventData) {
 }
 ```
 
-### ListView Bindings
+### ListView Binding
 
 You can use the double curly brackets syntax to bind the items to a [`listView`](./ApiReference/ui/list-view/README.md). You can also define a template with the `itemTemplate` property from which NativeScript will create the items for your `listView`.
 
 > Avoid accessing components by ID, especially when the component is part of a template. It is recommended to use bindings to specify component properties. 
 
 NativeScript can create the items in a  from template when the `listView` loads inside your page. When you work with templates and a `listView`, keep in mind the scope of the `listView` and its items.
-
-
-
-UI components like **ListView** will create items in runtime by parsing and loading content from **itemTemplate** property if specified.
-
-While you can access **ListView** (listView1) by **id** from the **Page** you cannot access the **Label** (label1) in the same way since this component (label1) is in a different scope and the **ListView** will create such Label for every item.
 
 In this sample `main-page.xml`, the ListView consists of labels and each item will be created from template. The text for each label is the value of the name property for the corresponding item. 
 
