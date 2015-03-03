@@ -5,7 +5,18 @@ description: Create your first NativeScript Hello World app in a few minutes wit
 position: 1
 ---
 
-## Step 0: Install system requirements
+## Contents
+
+* [Step 0: Install system requirements](#step-0)
+* [Step 1: Install NativeScript](#step-1)
+* [Step 2: Create a project](#step-2)
+* [Step 3: Add platforms](#step-3)
+* [Step 4: Run your app](#step-4)
+* [Step 5: Explore the sample app](#step-5)
+* [Step 6: Build something awesome](#step-6)
+* [Step 7: Move beyond the basics](#step-7)
+
+<h2 id="step-0">Step 0: Install system requirements</h2>
 
 The NativeScript CLI has a handful of system requirements to build and run NativeScript apps. Most notably you need to have Xcode installed to build iOS apps, and you need to have an Android SDK installed to build Android apps. Review the setup documentation below to make sure your development machine is all set:
 
@@ -15,7 +26,7 @@ The NativeScript CLI has a handful of system requirements to build and run Nativ
 
 > **TIP**: If you're looking for a NativeScript environment that removes the need to do this local setup, and/or if you're a Windows user that wants to use NativeScript to build iOS apps, try [using NativeScript in Telerik AppBuilder](./quick-start/hello-world/hello-world-appbuilder.md).
 
-## Step 1: Install NativeScript
+<h2 id="step-1">Step 1: Install NativeScript</h2>
 
 Next you need to install the [NativeScript CLI](https://github.com/NativeScript/nativescript-cli) itself; the CLI runs on the Node.js platform and you can install it using npm:
 
@@ -23,7 +34,7 @@ Next you need to install the [NativeScript CLI](https://github.com/NativeScript/
 npm install -g nativescript
 ```
 
-## Step 2: Create a project
+<h2 id="step-2">Step 2: Create a project</h2>
 
 The installation of the NativeScript CLI creates two commands, `nativescript` and `tns`, that you use to create, build and run your NativeScript projects. Running `tns create` (or `nativescript create`) creates a new project:
 
@@ -31,7 +42,7 @@ The installation of the NativeScript CLI creates two commands, `nativescript` an
 tns create hello-world
 ```
 
-## Step 3: Add platforms
+<h2 id="step-3">Step 3: Add platforms</h2>
 
 Before you run your code, NativeScript needs to initialize a platform-specific native project for each platform you intend to target.
 
@@ -45,7 +56,7 @@ This operation uses the native SDKs to initialize the platform-specific projects
 
 You'll see a more detailed breakdown of a NativeScript app's directory structure momentarily, but first let's get your new app up and running.
 
-## Step 4: Run your app
+<h2 id="step-4">Step 4: Run your app</h2>
 
 After adding platform(s), you use the `tns run` command to run your app. For example, the following runs your app in the iOS simulator, and/or Android emulator (specifically an [Android AVD](http://developer.telerik.com/featured/using-android-emulator-hybrid-mobile-apps-telerik-appbuilder/) configured on your machine):
 
@@ -73,7 +84,7 @@ By default `tns create` command scaffolds a small sample project; therefore if a
 
 ![step3 android](img/getting-started/step3-android.png "step3 android")![step3 ios](img/getting-started/step3-ios.png "step3 ios")
 
-## Step 5: Explore the sample app
+<h2 id="step-5">Step 5: Explore the sample app</h2>
 
 Your first NativeScript project uses the following basic directories and files:
 
@@ -106,7 +117,7 @@ Here's a guide to what these files do:
 
 > **IMPORTANT**: Avoid modifying your projects inside the `platforms` directory. During build-related operations, your changes will be overridden by your code and resources from the `app` directory.
 
-## Step 6: Build something awesome
+<h2 id="step-6">Step 6: Build something awesome</h2>
 
 Now that you have an app running, let's switch up the NativeScript-generated sample to introduce some of NativeScript's features. In this step you'll build a simple task manager. Although simple, this app provides a simple introduction to building UIs, implementing MVVM, and styling NativeScript apps with CSS. Let's get started.
 
@@ -233,9 +244,9 @@ This time you should see an app that looks like this:
 
 ![](img/getting-started/android-tasks.gif)
 
-## Step 7: Move beyond the basics
+<h2 id="step-7">Step 7: Move beyond the basics</h2>
 
-Congratulations! You have just completed your first app with NativeScript. NativeScript does a whole lot, and you're just getting started. As a next step, try adding a delete button to your lists app, or tying the list to a backend using the NativeScript http module.
+Congratulations! You have just completed your first app with NativeScript. NativeScript does a whole lot, and you're just getting started. As a next step, try adding a delete button to your lists app, or tying the list to a backend using the NativeScript [http module](./ApiReference/http/HOW-TO.md).
 
 Feel free to explore our [API reference](ApiReference/) to see all of what NativeScript has to offer. You can also learn more about NativeScript features in the following articles:
 
