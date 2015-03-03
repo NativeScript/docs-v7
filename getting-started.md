@@ -112,10 +112,10 @@ Now that you have an app running, let's switch up the NativeScript-generated sam
 
 ### Step 6.1: Adding a UI
 
-NativeScript uses an XML structure to define UI components. Your app has one page, which has its UI defined in `app/main-page.xml`. In the same `app` directory, create a sibling file named `list.xml`, and paste in the following contents:
+NativeScript uses an XML structure to define UI components. Your app has one page, which has its UI defined in `app/main-page.xml`. In the same `app` directory, create a sibling file named `tasks.xml`, and paste in the following contents:
 
 ```XML
-<Page loaded="loaded">
+<Page loaded="onPageLoaded">
     <GridLayout rows="auto, *">
         <StackLayout orientation="horizontal" row="0">
             <TextField width="200" text="{{ task }}" hint="Enter a task" id="task" />
@@ -141,7 +141,7 @@ One last thing to note: did you notice the double curly brace syntax used in the
 
 ### Step 6.2: Implementing MVVM
 
-The [MVVM](http://en.wikipedia.org/wiki/Model_View_ViewModel) pattern is the preferred approach for building NativeScript apps, as it provides an elegant approach to keeping your model data in sync with your UI. To see how it works, create a `list.js` file in the same directory as your existing `list.xml` file, and paste in the following code:
+The [MVVM](http://en.wikipedia.org/wiki/Model_View_ViewModel) pattern is the preferred approach for building NativeScript apps, as it provides an elegant approach to keeping your model data in sync with your UI. To see how it works, create a `tasks.js` file in the same directory as your existing `tasks.xml` file, and paste in the following code:
 
 ```JavaScript
 var observableModule = require("data/observable");
@@ -152,7 +152,7 @@ var tasks = new observableArray.ObservableArray([]);
 var pageData = new observableModule.Observable();
 var page;
 
-exports.loaded = function(args) {
+exports.onPageLoaded = function(args) {
     page = args.object;
     pageData.set("task", "");
     pageData.set("tasks", tasks);
@@ -168,20 +168,19 @@ exports.add = function() {
 
 > **Tip**: Although this article doesn't include it, TypeScript is a first-class citizen in NativeScript. If you'd like to use TypeScript, create .ts files instead of .js files. NativeScript takes care of compiling them to JavaScript and using them automatically. You'll find sample TypeScript code provided throughout our documentation.
 
-The first thing to notice here is the use of the `exports` keyword. If you're familiar with Node.js this might look familiar, as NativeScript modules adhere to the [CommonJS](http://wiki.commonjs.org/wiki/CommonJS) spec. If you're not familiar with Node, all you need to know is that the `exports` keyword is used to expose a JavaScript module's public API. In this case, the `exports` keyword is used to expose two functions to this page's view: `loaded` and `add`. The view's `<Page>` binds to the `loaded` function with `<Page loaded="loaded">`, and the view's `<Button>` bind to the `add` function with `<Button tap="add"></Button>`.
+The first thing to notice here is the use of the `exports` keyword. If you're familiar with Node.js this might look familiar, as NativeScript modules adhere to the [CommonJS](http://wiki.commonjs.org/wiki/CommonJS) spec. If you're not familiar with Node, all you need to know is that the `exports` keyword is used to expose a JavaScript module's public API. In this case, the `exports` keyword is used to expose two functions to this page's view: `onPageLoaded` and `add`. The view's `<Page>` binds to the `onPageLoaded` function with `<Page loaded="onPageLoaded">`, and the view's `<Button>` bind to the `add` function with `<Button tap="add"></Button>`.
 
-The other thing to note is the `page.bindingContent = pageData` assignment in the `loaded` function. This line sets the `pageData` `Observable` object as the *binding content* of this page. Simply put, this line means that properties of the `pageData` object are accessible in the UI components using the `{{ }}` syntax. For example, the page's `<ListView>` binds to the `pageData` object's `tasks` property using `<ListView items="{{ tasks }}">`.
+The other thing to note is the `page.bindingContext = pageData` assignment in the `onPageLoaded` function. This line sets the `pageData` `Observable` object as the *binding context* of this page. Simply put, this line means that properties of the `pageData` object are accessible in the UI components using the `{{ }}` syntax. For example, the page's `<ListView>` binds to the `pageData` object's `tasks` property using `<ListView items="{{ tasks }}">`.
 
-The power of using an MVVM approach is best seen in the first line of the `add()` function:
+The biggest benefit of this MVVM approach is that NativeScript keeps your user interface up to date as your data changes. For example consider the first line of the `add()` function:
 
 ```JavaScript
 tasks.push({ name: pageData.get("task") });
 ```
 
-This line of code adds the user-provided task to the `tasks` array, but it doesn't only do that. Because the `tasks` array is setup as an `ObservableArray`, and because the `tasks` array is bound to the page's `<ListView>` (`<ListView items="{{ tasks }}">`), this call also adds the user-provided value to the list shown on the screen—automatically!
+Because the `tasks` array is set up as an `ObservableArray`, and because the `tasks` array is bound to the page's `<ListView>` (`<ListView items="{{ tasks }}">`), this call adds the user-provided value to the list shown on the screen—automatically.
 
-
-This code is not only clean, it also helps to decouple your XML UI declaration from your JavaScript logic. In this case, your JavaScript doesn't need to know which UI components are bound to this data; it is just managing JavaScript objects and letting the XML take care of the rest. NativeScript fully embraces this separation-of-concerns-based approach to building apps. This approach extends to how you style your apps.
+This code is not only clean, it also helps to decouple your XML UI declaration from your JavaScript logic. In this case, your JavaScript doesn't need to know which UI components are bound to this data; it just manages JavaScript objects and lets the XML take care of the rest. NativeScript fully embraces this separation-of-concerns-based approach to building apps, and this approach extends to how you style your apps.
 
 > **TIP**: For more details on how NativeScript's data binding works, check out out our [Data Binding](bindings.md) documentation.
 
@@ -191,7 +190,7 @@ Now that you have a small functioning app, let's look at how at you can change h
 
 For each page, the NativeScript runtime automatically loads and applies any CSS file that has the same name as the XML file for the page. Under the hood, the runtime parses the CSS, evaluates the selectors and applies the properties to the style object of the selected view.
 
-NativeScript also provides an `app.css` file that contains global CSS rules that apply to each page. To add a little spacing to your tasks app open up `app.css` and replace its contents with the following code:
+NativeScript also provides an `app.css` file that contains global CSS rules that apply to each page. To add a little spacing to your tasks app open `app.css` and replace its contents with the following code:
 
 ```CSS
 label {
@@ -210,7 +209,7 @@ To switch your app to use the new tasks page, open `app/app.js` and replace its 
 
 ```JavaScript
 var application = require("application");
-application.mainModule = "app/main-page";
+application.mainModule = "app/tasks";
 application.start();
 ```
 
@@ -238,7 +237,7 @@ This time you should see an app that looks like this:
 
 Congratulations! You have just completed your first app with NativeScript. NativeScript does a whole lot, and you're just getting started. As a next step, try adding a delete button to your lists app, or tying the list to a backend using the NativeScript http module.
 
-Feel free to peruse our [API reference](ApiReference/) to see all of what NativeScript has to offer. You can also learn more about NativeScript features in the following articles:
+Feel free to explore our [API reference](ApiReference/) to see all of what NativeScript has to offer. You can also learn more about NativeScript features in the following articles:
 
 * [Application](application-management.md)
 * [Navigation](navigation.md)
