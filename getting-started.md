@@ -7,13 +7,13 @@ position: 2
 
 ## Step 0: Install system requirements
 
-The NativeScript CLI has a handful of system requirements necessary to build and run NativeScript apps. Most notably you need to have Xcode installed to build iOS apps, and you need to have an Android SDK installed to build Android apps. Review our setup documentation to make sure your development machine is all set:
+The NativeScript CLI has a handful of system requirements to build and run NativeScript apps. Most notably you need to have Xcode installed to build iOS apps, and you need to have an Android SDK installed to build Android apps. Review the setup documentation below to make sure your development machine is all set:
 
-* [Windows](/quick-start/setup/ns-setup-win)
-* [OS X](/quick-start/setup/ns-setup-os-x)
-* [Linux](/quick-start/setup/ns-setup-linux)
+* [Windows](./quick-start/setup/ns-cli-setup/ns-setup-win.md)
+* [OS X](./quick-start/setup/ns-cli-setup/ns-setup-os-x.md)
+* [Linux](./quick-start/setup/ns-cli-setup/ns-setup-linux.md)
 
-> **Tip**: If you're looking for a NativeScript environment that removes the need to do this local setup, and/or if you're a Windows user that wants to use NativeScript to build iOS apps, try [using NativeScript in Telerik AppBuilder](http://telerik.com/nativescript).
+> **TIP**: If you're looking for a NativeScript environment that removes the need to do this local setup, and/or if you're a Windows user that wants to use NativeScript to build iOS apps, try [using NativeScript in Telerik AppBuilder](./quick-start/hello-world/hello-world-appbuilder.md).
 
 ## Step 1: Install NativeScript
 
@@ -41,7 +41,7 @@ $ tns platform add ios
 $ tns platform add android
 ```
 
-> **Warning**: If you have not completed the NativeScript CLI system requirements you will receive an error when you try to run the `platform add` command.
+> **WARNING**: If you have not completed the NativeScript CLI system requirements you will receive an error when you try to run the `platform add` command.
 
 ## Step 4: Run your app
 
@@ -72,7 +72,7 @@ And the following does the same for iOS:
 $ tns run ios
 ```
 
-> **Warning**: Deploying your app to iOS devices requires that a valid iOS certificate and provisioning profile pair are configured on your development machine. For more information see [iOS Code Signing - A Complete Walkthrough](http://seventhsoulmountain.blogspot.com/2013/09/ios-code-sign-in-complete-walkthrough.html).
+> **WARNING**: Deploying your app to iOS devices requires that a valid iOS certificate and provisioning profile pair are configured on your development machine. For more information see [iOS Code Signing - A Complete Walkthrough](http://seventhsoulmountain.blogspot.com/2013/09/ios-code-sign-in-complete-walkthrough.html).
 
 By default `tns create` command scaffolds a small sample project; therefore if all went well you should see the following:
 
@@ -140,7 +140,7 @@ The `StackLayout` is simpler, as it does as its name implies—stack things, eit
 
 One last thing to note: did you notice the double curly brace syntax used in the XML (e.g. `text="{{ name }}"`)? This is used to configure NativeScript's data binding syntax. Let's see how it works.
 
-> **Note**: For more on what you can do with UIs in NativeScript, check out the [UI with XML](./ui-with-xml.md) article.
+> **TIP**: For more on what you can do with UIs in NativeScript, check out the [UI with XML](./ui-with-xml.md) article.
 
 ### Step 6.2: Implementing MVVM
 
@@ -186,7 +186,7 @@ This line of code adds the user-provided task to the `tasks` array, but it doesn
 
 This code is not only clean, it also helps to decouple your XML UI declaration from your JavaScript logic. In this case, your JavaScript doesn't need to know which UI components are bound to this data; it is just managing JavaScript objects and letting the XML take care of the rest. NativeScript fully embraces this separation-of-concerns-based approach to building apps. This approach extends to how you style your apps.
 
-> **Note**: For more details on how NativeScript's data binding works, check out out our [Data Binding](bindings.md) documentation.
+> **TIP**: For more details on how NativeScript's data binding works, check out out our [Data Binding](bindings.md) documentation.
 
 ### Step 6.3: Adding Styles
 
@@ -205,7 +205,7 @@ textfield {
 }
 ```
 
-> **Note**: For a more in-depth look at styling NativeScript apps, including a list of support CSS properties, check out our [styling](styling.md) article.
+> **TIP**: For a more in-depth look at styling NativeScript apps, including a list of support CSS properties, check out our [styling](styling.md) article.
 
 ## Step 6.4: Run your updated app
 
