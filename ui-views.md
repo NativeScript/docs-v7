@@ -155,7 +155,7 @@ This widget shows an image. You can load the image can be from [`ImageSource`](.
 
 ## ListView
 
-This is a view that shows items in a vertically scrolling list. You can set an [`itemTemplate`](/ApiReference/ui/list-view/knownTemplates/README.md) to specify how each item in the list should be displayed.
+This is a view that shows items in a vertically scrolling list. You can set an [`itemTemplate`](ApiReference/ui/list-view/knownTemplates/README.md) to specify how each item in the list should be displayed.
 
 ![list-view android](img/gallery/android/listViewPage.png "list-view android")![list-view ios](img/gallery/ios/listViewPage.png "list-view ios")
 
