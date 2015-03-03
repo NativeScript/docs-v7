@@ -1,7 +1,7 @@
 ---
-nav-title: Getting Started
-title: Getting Started
-description: Learn the basics of of how NativeScript work, how to set up your system and how to create your first Hello World app.
+nav-title: "Getting Started"
+title: "Getting Started"
+description: "Learn the basics of of how NativeScript work, how to set up your system and how to create your first Hello World app"
 position: 2
 ---
 
