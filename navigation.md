@@ -9,7 +9,8 @@ position: 5
 
 NativeScript apps consist of pages which represent the separate application screens. Pages are instances of the [`page`](ApiReference/ui/page/Page.md) class of the [`Page`](ApiReference/ui/page/README.md) module. To navigate between pages, you can use the methods of the [`Frame`](ApiReference/ui/frame/Frame.md) class of the [`Frame`](ApiReference/ui/frame/README.md) sub-module of the UI module.
 
-> **TIP:** Instead of multiple pages, you can have a single page with a [tab view](ApiReference/ui/tab-view/README.md) and different UIs for each tab.
+> **TIP:** Instead of multiple pages, you can have a single page with a [tab view](ApiReference/ui/tab-view/README.md) and different user interfaces for each tab.
+
 
 * [Page Management](#page-management)
     * [Define Page](#define-page)

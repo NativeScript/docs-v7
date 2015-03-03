@@ -94,7 +94,7 @@ Your NativeScript project consists of the following basic directories and files.
 
     iOS | Android
     ----|--------
-    ![QR code for installing the companion app](./img/companions/ios-code.png) | ![QR code for installing the companion app](./img/companions/android-code.png)
+    ![QR code for installing the companion app](http://docs.nativescript.org/img/companions/ios-code.png) | ![QR code for installing the companion app](http://docs.nativescript.org/img/companions/android-code.png)
 
 2. Prepare your project for the companion app.
 
@@ -137,7 +137,7 @@ Tap and hold with three fingers until a download dialog appears. | Expand the no
 
 On your device, your app should appear similar to the screen shots below.
 
-![step1 ios](./img/getting-started/step1-ios.png "step1 ios")![step1 android](./img/getting-started/step1-android.png "step1 android")
+![step1 ios](http://docs.nativescript.org/img/getting-started/step1-ios.png "step1 ios")![step1 android](http://docs.nativescript.org/img/getting-started/step1-android.png "step1 android")
 
 ## Create a View Model
 

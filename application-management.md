@@ -7,6 +7,8 @@ position: 4
 
 # Application Management
 
+The `application` module lets you manage the life cycle of your NativeScript apps from starting the application to storing user-defined settings.
+
 * [Start Application](#start-application)
 * [Use Application Callbacks](#use-application-callbacks)
 * [Persist and Restore Application Settings](#persist-and-restore-application-settings)
@@ -15,7 +17,7 @@ position: 4
 
 You must call the **start** method of the application module after the module initialization. 
 
-This method is required for iOS application. 
+This method is required for iOS applications. 
 
 ### Example
 

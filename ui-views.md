@@ -1,9 +1,11 @@
 ---
-nav-title: Views
+nav-title: User Interface Widgets
 title: Views
 description: Get familiar with the default user interface elements (widgets) in NativeScript.
 position: 8
 ---
+
+# User Interface Widgets
 
 NativeScript ships with a set of user interface [`Views`](./ApiReference/ui/core/view/README.md) (also known as widgets) which you can use to build the user interface of a mobile application. Most of these views wrap the corresponding native view for each platform while providing a common API for working with it. For example the `Button` view renders an [`android.widget.Button`](http://developer.android.com/reference/android/widget/Button.html) on Android and [`UIButton`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/) on iOS.
 

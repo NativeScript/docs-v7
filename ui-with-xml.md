@@ -1,11 +1,11 @@
 ---
-nav-title: XML-Based User Interface
+nav-title: The User Interface
 title: XML-Based User Interface
 description: Learn the basic principles of designing a user interface with NativeScript. In NativeScript, you can design the UI using XML and CSS.
 position: 6
 ---
 
-# XML-Based User Interface
+# The User Interface
 
 The user interface of NativeScript mobile apps consists of pages. Typically, the design of the user interface is developed and stored in `XML` files, styling is done via CSS and the business logic is developed and stored in `JavaScript` or `TypeScript` files. 
 
@@ -73,7 +73,7 @@ frames.topmost().navigate("app/my-page")
 frames.topmost().navigate("app/my-page")
 ```
 
-> Paths are relative to the application root. In the example above, NativeScript looks for a my-page.xml file in the app directory of your project.
+> Paths are relative to the application root. In the example above, NativeScript looks for a `my-page.xml` file in the app directory of your project.
 
 ### Execute Business Logic
 

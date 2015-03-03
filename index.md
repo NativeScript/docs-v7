@@ -1,5 +1,5 @@
 ---
-nav-title: Welcome to NativeScript
+nav-title: Welcome
 title: Welcome to NativeScript
 description: Meet NativeScript - an open-source framework for the cross-platform development of truly native apps.
 position: 1

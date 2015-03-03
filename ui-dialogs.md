@@ -1,11 +1,11 @@
 ---
-nav-title: Dialogs
+nav-title: User Interface Dialogs
 title: Dialogs
 description: Learn how to create alerts, confirmations, prompts, logins and other dialogs in your NativeScript apps.
 position: 9
 ---
 
-# Dialogs
+# User Interface Dialogs
 
 NativeScript lets you create dialogs in your app in a manner similar to the web browser. You can create alerts, confirmations, prompts, logins and dialogs that require action.
 

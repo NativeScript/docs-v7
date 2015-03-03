@@ -1,11 +1,11 @@
 ---
-nav-title: The NativeScript Layout System
+nav-title: User Interface Layouts
 title: The NativeScript Layout System
 description: Learn the basic principles of designing and positioning the UI elements inside your apps.
 position: 7
 ---
 
-# The NativeScript Layout System
+# User Interface Layouts
 
 NativeScript provides a recursive layout system which sizes and positions [views][views] on the screen.
 
