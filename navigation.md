@@ -1,11 +1,11 @@
 ---
-nav-title: Application Architecture and Navigation
-title: Application Architecture and Navigation
+nav-title: Architecture and Navigation
+title: Architecture and Navigation
 description: Learn the basic application structure of NativeScript apps and how to navigate inside your app.
 position: 5
 ---
 
-# Application Architecture and Navigation
+# Architecture and Navigation
 
 NativeScript apps consist of pages which represent the separate application screens. Pages are instances of the [`page`](ApiReference/ui/page/Page.md) class of the [`Page`](ApiReference/ui/page/README.md) module. To navigate between pages, you can use the methods of the [`Frame`](ApiReference/ui/frame/Frame.md) class of the [`Frame`](ApiReference/ui/frame/README.md) sub-module of the UI module.
 

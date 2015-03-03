@@ -16,7 +16,7 @@ If the answer is yes, you are ready to create your first Hello World app with Na
 * [How To Create a View Model](#create-a-view-model)
 * [How To Style Your App](#style-your-app)
 
-> If your system is not already configured, you can check the [Set Up Your System](./quick-setup/setup/quick-setup.md) guide, pick your tools and configure them.
+> If your system is not already configured, you can check the [Set Up Your System](./setup/quick-setup.md) guide, pick your tools and configure them.
 
 ## Create New Project
 
@@ -41,6 +41,7 @@ tns create HelloWorld --copy-from <Directory where you cloned or extracted the B
 
 Explore the newly created directory in a file explorer. At first, your project has the following structure.
 
+```
 Hello World/ 
 |-- app/
 |-- |-- app/
@@ -125,7 +126,7 @@ tns run android --emulator
 
 On your device, your app should appear similar to the screen shots below.
 
-![step1 ios](./img/getting-started/step1-ios.png "step1 ios")![step1 android](./img/getting-started/step1-android.png "step1 android")
+![step1 ios](http://docs.nativescript.org/img/getting-started/step1-ios.png "step1 ios")![step1 android](http://docs.nativescript.org/img/getting-started/step1-android.png "step1 android")
 
 ## Create a View Model
 
@@ -321,4 +322,4 @@ Congratulations! You have just completed your first "Hello, World!" app with Nat
 * [Location](location.md)
 * [Modules](modules.md)
 
-[1]: ./quick-start/setup/ab-setup
+[1]: ./setup/ab-setup

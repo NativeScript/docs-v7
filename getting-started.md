@@ -31,10 +31,10 @@ To get started, you need JavaScript or TypeScript knowledge to implement your bu
 
 Once you have your app idea, you can get started in three simple steps.
 
-1. Choose your tools and **[set up your system](quick-start/setup/quick-setup.md)**.
-	* If you are familiar with the Cordova CLI or if you want to develop and build your apps locally and free of charge, you can set up your system with the [NativeScript CLI](quick-start/setup/ns-cli-setup).
-	* If you prefer to concentrate on development and build your apps with a third-party build service, you can use the [Telerik AppBuilder tools](quick-start/setup/ab-setup).
+1. Choose your tools and **[set up your system](setup/quick-setup.md)**.
+	* If you are familiar with the Cordova CLI or if you want to develop and build your apps locally and free of charge, you can set up your system with the [NativeScript CLI](setup/ns-cli-setup).
+	* If you prefer to concentrate on development and build your apps with a third-party build service, you can use the [Telerik AppBuilder tools](setup/ab-setup).
 1. Go through the **Hello World** tutorial for your preferred tool set.<br/>This quick start development guide will introduce you to the basic architecture of a NativeScript app, data binding and how to implement user interfaces and styling.
-	* [Hello World from the NativeScript CLI](quick-start/hello-world/hello-world-ns-cli.md)
-	* [Hello World from AppBuilder](quick-start/hello-world/hello-world-appbuilder.md)
+	* [Hello World from the NativeScript CLI](hello-world/hello-world-ns-cli.md)
+	* [Hello World from AppBuilder](hello-world/hello-world-appbuilder.md)
 1. Explore the **[modules overview](modules.md)** and the **[API Reference](ApiReference/application/README.md)**.<br/>The extensive overview and API reference will introduce to the how-tos of NativeScript development. You will learn how to tap into the native capabilities that you want to implement inside your app.
