@@ -1,7 +1,7 @@
 ---
-nav-title: "Getting Started with NativeScript"
-title: "Getting Started with NativeScript"
-description: "NativeScript Documentation: Getting Started"
+nav-title: "Getting Started"
+title: "Getting Started"
+description: "Learn the basics of how NativeScript works, how to set up your system, and how to create your first app"
 position: 2
 ---
 
