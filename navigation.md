@@ -1,8 +1,8 @@
 ---
 nav-title: Architecture and Navigation
-title: Architecture and Navigation
+title: "App: Architecture and Navigation"
 description: Learn the basic application structure of NativeScript apps and how to navigate inside your app.
-position: 5
+position: 6
 ---
 
 # Architecture and Navigation

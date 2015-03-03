@@ -252,7 +252,7 @@ Tap and hold with three fingers until a download dialog appears. | Expand the no
 
 On your device, your app should appear similar to the screen shots below.
 
-![step2 ios](img/getting-started/step2-ios.png "step2 ios")![step2 android](img/getting-started/step2-android.png "step2 android")
+![step2 ios](http://docs.nativescript.org/img/getting-started/step2-ios.png "step2 ios")![step2 android](http://docs.nativescript.org/img/getting-started/step2-android.png "step2 android")
 
 ## Style Your App
 
@@ -305,7 +305,7 @@ Tap and hold with three fingers until a download dialog appears. | Expand the no
 
 On your device, your app should appear similar to the screen shots below.
 
-![step3 ios](img/getting-started/step3-ios.png "step3 ios")![step3 android](img/getting-started/step3-android.png "step3 android")
+![step3 ios](http://docs.nativescript.org/img/getting-started/step3-ios.png "step3 ios")![step3 android](http://docs.nativescript.org/img/getting-started/step3-android.png "step3 android")
 
 ## What's Next
 

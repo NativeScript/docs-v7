@@ -1,6 +1,6 @@
 ---
 nav-title: User Interface Layouts
-title: User Interface Layouts
+title: "UI: Layouts"
 description: Learn the basic principles of designing and positioning the UI elements inside your apps.
 position: 7
 ---
@@ -103,11 +103,11 @@ The following table shows predefined layouts that NativeScript provides.
 
 | Layouts  | Description  | Screenshot |
 | -------- | ------------ | ---------- | 
-| [AbsoluteLayout][AbsoluteLayout] | This layout lets you set exact locations (left/top coordinates) for its children. | ![AbsoluteLayout android](img/gallery/android/absoluteLayoutPage.png "AbsoluteLayout android")|
-| [DockLayout][DockLayout] | This layout arranges its children at its outer edges and allows its last child to take up the remaining space. | ![DockLayout android](img/gallery/android/dockLayoutPage.png "DockLayout android")|
-| [GridLayout][GridLayout] | This layout defines a rectangular layout area that consists of columns and rows. | ![GridLayout android](img/gallery/android/gridLayoutPage.png "GridLayout android")|
-| [StackLayout][StackLayout] | This layout arranges its children horizontally or vertically. The direction is set with the orientation property. | ![StackLayout android](img/gallery/android/stackLayoutPage.png "StackLayout android")|
-| [WrapLayout][WrapLayout] | This layout positions its children in rows or columns, based on the orientation property, until the space is filled and then wraps them on a new row or column. | ![WrapLayout android](img/gallery/android/wrapLayoutPage.png "WrapLayout android")|
+| [AbsoluteLayout][AbsoluteLayout] | This layout lets you set exact locations (left/top coordinates) for its children. | ![AbsoluteLayout android](http://docs.nativescript.org/img/gallery/android/absoluteLayoutPage.png "AbsoluteLayout android")|
+| [DockLayout][DockLayout] | This layout arranges its children at its outer edges and allows its last child to take up the remaining space. | ![DockLayout android](http://docs.nativescript.org/img/gallery/android/dockLayoutPage.png "DockLayout android")|
+| [GridLayout][GridLayout] | This layout defines a rectangular layout area that consists of columns and rows. | ![GridLayout android](http://docs.nativescript.org/img/gallery/android/gridLayoutPage.png "GridLayout android")|
+| [StackLayout][StackLayout] | This layout arranges its children horizontally or vertically. The direction is set with the orientation property. | ![StackLayout android](http://docs.nativescript.org/img/gallery/android/stackLayoutPage.png "StackLayout android")|
+| [WrapLayout][WrapLayout] | This layout positions its children in rows or columns, based on the orientation property, until the space is filled and then wraps them on a new row or column. | ![WrapLayout android](http://docs.nativescript.org/img/gallery/android/wrapLayoutPage.png "WrapLayout android")|
 
 [views]: ui-views.md
 [View]: ./ApiReference/ui/core/view/View.md

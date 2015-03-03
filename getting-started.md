@@ -16,7 +16,7 @@ NativeScript lets you develop truly native apps for iOS and Android from a singl
 
 ## How Does It Work
 
-![architecture diagram](img/architecture.png "architecture diagram")
+![architecture diagram](http://docs.nativescript.org/img/architecture.png "architecture diagram")
 
 1. Write your **application code** once using the **NativeScript modules** and the **NativeScript runtimes**.<br/>The modules expose the native device and platform capabilities of Android and iOS in a consistent manner and let you access them via non-platform-specific code.<br/>The modules let you access some native capabilities via platform-specific JavaScript code.
 1. Customize your app with platform-specific assets such as icons and splash screens.
