@@ -2,7 +2,7 @@
 nav-title: User Interface Widgets
 title: "UI: Widgets"
 description: Get familiar with the default user interface elements (widgets) in NativeScript.
-position: 8
+position: 14
 ---
 
 # User Interface Widgets

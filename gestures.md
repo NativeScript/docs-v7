@@ -1,8 +1,8 @@
 ---
 nav-title: "Gestures"
-title: "Gestures"
+title: "UI: Gestures"
 description: "Gestures"
-position: 14
+position: 16
 
 ---
 # Overview

@@ -1,8 +1,8 @@
 ---
 nav-title: "NativeScript Events"
-title: "Events"
+title: "App: Events"
 description: "NativeScript Documentation: Events"
-position: 12
+position: 9
 ---
 
 #Events

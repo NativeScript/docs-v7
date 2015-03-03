@@ -2,7 +2,7 @@
 nav-title: User Interface Layouts
 title: "UI: Layouts"
 description: Learn the basic principles of designing and positioning the UI elements inside your apps.
-position: 7
+position: 13
 ---
 
 # User Interface Layouts

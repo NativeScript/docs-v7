@@ -1,8 +1,8 @@
 ---
 nav-title: "NativeScript Styling"
-title: "Styling"
+title: "UI: Styling"
 description: "NativeScript Documentation: Styling"
-position: 11
+position: 17
 ---
 
 # Styling

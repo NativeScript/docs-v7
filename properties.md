@@ -1,8 +1,8 @@
 ---
 nav-title: "NativeScript Properties"
-title: "Properties"
+title: "App: Properties"
 description: "NativeScript Documentation: Properties"
-position: 13
+position: 10
 ---
 
 #Properties
