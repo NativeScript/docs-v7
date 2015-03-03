@@ -1,8 +1,8 @@
 ---
-nav-title: "Getting Started"
-title: "Getting Started"
-description: "Learn the basics of how NativeScript works, how to set up your system, and how to create your first app"
-position: 2
+nav-title: Getting Started with the NativeScript CLI
+title: Getting Started with the NativeScript CLI
+description: Create your first NativeScript Hello World app in a few minutes with the NativeScript CLI. See it in action on your device.
+position: 1
 ---
 
 ## Step 0: Install system requirements
@@ -20,56 +20,51 @@ The NativeScript CLI has a handful of system requirements to build and run Nativ
 Next you need to install the [NativeScript CLI](https://github.com/NativeScript/nativescript-cli) itself; the CLI runs on the Node.js platform and you can install it using npm:
 
 ```
-$ npm install -g nativescript
+npm install -g nativescript
 ```
 
 ## Step 2: Create a project
 
-The installation of the NativeScript CLI creates two commands, `nativescript` and `tns`, that you use to create, build, and run your NativeScript projects. Running `tns create` (or `nativescript create`) creates a new project:
+The installation of the NativeScript CLI creates two commands, `nativescript` and `tns`, that you use to create, build and run your NativeScript projects. Running `tns create` (or `nativescript create`) creates a new project:
 
 ```
-$ tns create hello-world
+tns create hello-world
 ```
 
 ## Step 3: Add platforms
 
-NativeScript needs to know which platforms you intend to target to do some one-time initialization. You add each platform with the `tns platform add` command:
+Before you run your code, NativeScript needs to initialize a platform-specific native project for each platform you intend to target.
 
 ```
-$ cd hello-world
-$ tns platform add ios
-$ tns platform add android
+cd hello-world
+tns platform add ios
+tns platform add android
 ```
 
-> **WARNING**: If you have not completed the NativeScript CLI system requirements you will receive an error when you try to run the `platform add` command.
+This operation uses the native SDKs to initialize the platform-specific projects and places the generated contents in your app's `platforms` directory. Later on, the NativeScript CLI will use the tools of the native SDKs to build these platform-specific projects into truly native application packages. During the process, the NativeScript CLI will automatically transfer your cross-platform code and resources from your project's `app` directory into its `platforms` directory.
+
+You'll see a more detailed breakdown of a NativeScript app's directory structure momentarily, but first let's get your new app up and running.
 
 ## Step 4: Run your app
 
-After adding platform(s), you use the `tns run` command to run your app. For example, the following runs your app in the iOS emulator:
+After adding platform(s), you use the `tns run` command to run your app. For example, the following runs your app in the iOS simulator, and/or Android emulator (specifically an [Android AVD](http://developer.telerik.com/featured/using-android-emulator-hybrid-mobile-apps-telerik-appbuilder/) configured on your machine):
 
+```iOS
+tns run ios --emulator
 ```
-$ npm install -g ios-sim-portable  # Needed to launch the iOS emulator from the CLI
-$ tns run ios --emulator
-```
-
-The following runs your app in the Android emulator (specifically an [Android AVD](http://developer.telerik.com/featured/using-android-emulator-hybrid-mobile-apps-telerik-appbuilder/) configured on your machine):
-
-```
-$ tns run android --emulator
+```Android
+tns run android --emulator
 ```
 
 > **Tip:** If you have configured Genymotion on your development machine, you can run `tns run android --emulator --geny <Genymotion Device Name>`. This runs your project in the Genymotion emulator.
 
-You can deploy your app to physical, USB-connected devices by omitting the `--emulator` flag. The following deploys your app to a USB-connected Android device:
+You can deploy your app to physical, USB-connected devices by omitting the `--emulator` flag. The following deploys your app to USB-connected iOS/Android device:
 
+```iOS
+tns run ios
 ```
-$ tns run android
-```
-
-And the following does the same for iOS:
-
-```
-$ tns run ios
+```Android
+tns run android
 ```
 
 > **WARNING**: Deploying your app to iOS devices requires that a valid iOS certificate and provisioning profile pair are configured on your development machine. For more information see [iOS Code Signing - A Complete Walkthrough](http://seventhsoulmountain.blogspot.com/2013/09/ios-code-sign-in-complete-walkthrough.html).
@@ -78,7 +73,7 @@ By default `tns create` command scaffolds a small sample project; therefore if a
 
 ![step3 android](img/getting-started/step3-android.png "step3 android")![step3 ios](img/getting-started/step3-ios.png "step3 ios")
 
-## Step 5: Peruse the sample app
+## Step 5: Explore the sample app
 
 Your first NativeScript project uses the following basic directories and files:
 
@@ -103,19 +98,21 @@ Your first NativeScript project uses the following basic directories and files:
 
 Here's a guide to what these files do:
 
-* The outer `app` directory is the **development space for your application**.
+* The inner `app` directory is the **development space for your application**.
 * The `platforms` directory is created empty. When you add a target platform to your project, the NativeScript CLI creates a new subdirectory with the platform name. The subdirectory contains the ready-to-build platform-specific resources of your app. 
-* The `App_Resources` subdirectory is the directory that contains **platform-specific resources** such as icons, splash screens and platform-specific configuration files like `AndroidManifest.xml` and `Info.plist`.<br/>When you create a new project, only icons and splash screens are present in this directory.
+* The `App_Resources` subdirectory is the directory that contains **platform-specific resources** such as icons, splash screens and platform-specific configuration files like `AndroidManifest.xml` and `Info.plist`. When you create a new project, only icons and splash screens are present in this directory.
 * The `tns_modules` subdirectory contains the NativeScript modules. Each module exposes a device or platform functionality such as the camera, location services or the user interface.
 * `app.js` is the starting point for the logic of your app. In the sample app, `app.js` sets the app's `mainModule`, or the first page in your sample app, to `app/main-page`, which effectively gives control to the `app/main-page.js` and `app/main-page.xml` files.
 
+> **IMPORTANT**: Avoid modifying your projects inside the `platforms` directory. During build-related operations, your changes will be overridden by your code and resources from the `app` directory.
+
 ## Step 6: Build something awesome
 
-Now that you have an app running, let's switch up the NativeScript-generated sample to introduce some of NativeScript's features.
+Now that you have an app running, let's switch up the NativeScript-generated sample to introduce some of NativeScript's features. In this step you'll build a simple task manager. Although simple, this app provides a simple introduction to building UIs, implementing MVVM, and styling NativeScript apps with CSS. Let's get started.
 
 ### Step 6.1: Adding a UI
 
-NativeScript uses an XML structure to define UI component. Your app has one page, which has its UI defined in `app/main-page.xml`. In the same `app` directory, create a sibling file named `list.xml`, and paste in the following contents:
+NativeScript uses an XML structure to define UI components. Your app has one page, which has its UI defined in `app/main-page.xml`. In the same `app` directory, create a sibling file named `list.xml`, and paste in the following contents:
 
 ```XML
 <Page loaded="loaded">
@@ -134,7 +131,7 @@ NativeScript uses an XML structure to define UI component. Your app has one page
 </Page>
 ```
 
-Take note of a few things here. The first is that this uses two of [NativeScript's layout mechanisms](/layouts): `GridLayout` and `StackLayout`. The `GridLayout` provides an elegant way to divide an area of the screen into rows and columns. In this case you divide the screen into two rows: a `StackLayout` on top and a `ListView` on the bottom.
+Take note of a few things here. The first is that this uses two of [NativeScript's layout mechanisms](./layouts.md): `GridLayout` and `StackLayout`. The `GridLayout` provides an elegant way to divide an area of the screen into rows and columns. In this case you divide the screen into two rows: a `StackLayout` at the top and a `ListView` at the bottom.
 
 The `StackLayout` is simpler, as it does as its name implies—stack things, either horizontally or vertically. In this example you override the default orientation, vertical, to display a `TextField` and a `Button` next to each other.
 
@@ -169,9 +166,9 @@ exports.add = function() {
 };
 ```
 
-> **Tip**: Although this article doesn't include it, TypeScript is a first-class citizen in NativeScript. If you'd like to use TypeScript, create .ts files instead of .js files. NativeScript takes care of compiling them to JavaScript and using them automatically. You'll find sample sample TypeScript code provided throughout our documentation.
+> **Tip**: Although this article doesn't include it, TypeScript is a first-class citizen in NativeScript. If you'd like to use TypeScript, create .ts files instead of .js files. NativeScript takes care of compiling them to JavaScript and using them automatically. You'll find sample TypeScript code provided throughout our documentation.
 
-The first thing to notice here is the use of the `exports` keyword. NativeScript modules adhere to the [CommonJS](http://wiki.commonjs.org/wiki/CommonJS) spec, much like Node.js modules do. In this case the `exports` keyword is used to expose two functions to this page's view: `loaded` and `add`. The view's `<Page>` binds to the `loaded` function with `<Page loaded="loaded">`, and the view's `<Button>` bind to the `add` function with `<Button tap="add"></Button>`.
+The first thing to notice here is the use of the `exports` keyword. If you're familiar with Node.js this might look familiar, as NativeScript modules adhere to the [CommonJS](http://wiki.commonjs.org/wiki/CommonJS) spec. If you're not familiar with Node, all you need to know is that the `exports` keyword is used to expose a JavaScript module's public API. In this case, the `exports` keyword is used to expose two functions to this page's view: `loaded` and `add`. The view's `<Page>` binds to the `loaded` function with `<Page loaded="loaded">`, and the view's `<Button>` bind to the `add` function with `<Button tap="add"></Button>`.
 
 The other thing to note is the `page.bindingContent = pageData` assignment in the `loaded` function. This line sets the `pageData` `Observable` object as the *binding content* of this page. Simply put, this line means that properties of the `pageData` object are accessible in the UI components using the `{{ }}` syntax. For example, the page's `<ListView>` binds to the `pageData` object's `tasks` property using `<ListView items="{{ tasks }}">`.
 
