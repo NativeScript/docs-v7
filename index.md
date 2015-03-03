@@ -1,33 +1,31 @@
 ---
-nav-title: "Welcome to NativeScript"
-title: "Welcome to NativeScript"
-description: "NativeScript Documentation introduction"
+nav-title: Welcome to NativeScript
+title: Welcome to NativeScript
+description: Meet NativeScript - an open-source framework for the cross-platform development of truly native apps.
 position: 1
 ---
 
 # Welcome to NativeScript
 
-NativeScript enables developers to build native application for iOS and Android while sharing the application code across the platforms. NativeScript aims to provide the highest amount of code reuse across platforms while delivering outstanding user experience and performance. With NativeScript, you will save significant effort when building rich native apps across multiple platforms.
+Develop your business logic with **JavaScript** or **TypeScript**, design and style your user interface using **XML** and **CSS** and let NativeScript translate your single-source application code into truly native apps for iOS or Android.
 
-A NativeScript application consists of pure JavaScript code, executing within native android and ios runtimes. NativeScript includes purposely built JavaScript modules, i.e. a NativeScript UI framework to enable cross-platform code.
+You can develop for **Android 4.2 or later** and **iOS 7.1 or later**.
 
-Use the [NativeScript CLI](cli.md) to create an application.
+* [How To Get Started](getting-started.md)
+* [API Reference](ApiReference/application/README.md)
+* [Application Management](application-management.md)
+* [Application Architecture and Navigation](navigation.md)
+* [Handle Events](events.md)
+* [Implement Gestures](gestures.md)
+* [Work With Location Services](location.md)
+* [Bind Data](bindings.md)
+* [Design the UI](ui-with-xml.md)
+* [Apply Layouts](layouts.md)
+* [Add Alerts and Notifications](ui-dialogs.html)
+* [Style Your App](styling.md)
 
-Read the advanced topics below or refer to the [Api Reference](ApiReference/) to build a powerful NativeScript application:
+If you need even more native capabilities than the NativeScript modules provide, you can expand your development with any of the following options.
 
-- [Getting started with NativeScript](getting-started.md)
-- [Modules](modules.md)
-- [Application Management](application-management.md)
-- [Navigation](navigation.md)
-- [Layouts](layouts.md)
-- [UI with XML](ui-with-xml.md)
-- [Views](ui-views.md)
-- [Dialogs](ui-dialogs.md)
-- [Data Binding](bindings.md)
-- [Styling](styling.md)
-- [Events](events.md)
-- [Properties](properties.md)
-- [Gestures](gestures.md)
-- [Location](location.md)
-
-To develop even more advanced applications or your own modules, platform-specific JavaScript is available. See more in the [android](runtimes/android) and [ios](runtimes/ios) topics
+* [iOS-Specific JavaScript Development](runtimes/ios/README.md)
+* [Android-Specific JavaScript Development](runtimes/android/README.md)
+* [Development with Native Libraries](https://github.com/NativeScript/nativescript-cli)

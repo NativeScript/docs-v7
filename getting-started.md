@@ -1,213 +1,61 @@
 ---
-nav-title: "Getting Started With NativeScript"
-title: "Getting Started With NativeScript"
-description: "NativeScript Documentation: Getting Started"
+nav-title: Getting Started
+title: Getting Started
+description: Learn the basics of of how NativeScript work, how to set up your system and how to create your first Hello World app.
 position: 2
 ---
 
-# Getting Started With NativeScript
-NativeScript framework enable developers to use pure JavaScript language to build native mobile applications running on the major mobile platforms - Apple iOS, Google Android. The applications UI stack is built using native UI components and because of that no compromises with the User Experience of the applications are done.
+# Getting Started with NativeScript
 
-## How It Works
-The native script architectures can be generally explained with this diagram:
-![architecture diagram]( img/architecture.png "architecture diagram")
+Are you a hybrid app developer looking for a way to create truly native apps? Are you a native app developer wondering how to expand the scope of his apps to the other popular platforms? Or perhaps you are a web developer searching for a way to transfer your existing skills to the world of mobile development?
 
-* **Native OS** - At the bottom level is the native OS (Android, iOS and soon Windows).
-* **NativeScript runtime** runs the JavaScript code of your application. The runtime also provides a way to call all the native APIs of the platform the app is running on. This means that you have access to all the native capabilities of the platform.
-* **NativeScript Modules** are a set of platform-agnostic libraries that are build on top of the runtime. These modules are wrap the platform specific code, providing a common API.
-* **Application Code** - your application's code. Building an application on top of the NativeScript modules means that you will not have write platform-specific code. This should be the case most of the time. However, you still have the option to reach the native API trough the NativeSctipt runtime.
+NativeScript lets you develop truly native apps for iOS and Android from a single code base of JavaScript or TypeScript, XML and CSS. NativeScript takes your cross-platform code and translates it into the language that your target platform speaks. 
 
-## Requirements
-Currently NativeScript can run on the following platforms:
+* [How Does It Work](#how-does-it-work)
+* [How To Get Started](#how-to-get-started)
+* [What's Next](#whats-next)
 
-* Android 4.2+ (equivalent to Android API level 17+)
-* iOS 7.1+
+## How Does It Work
 
-For NativeScript development you have the following options:
+![architecture diagram](img/architecture.png "architecture diagram")
 
-* Using the [NativeScript Command-Line Interface](https://github.com/NativeScript/nativescript-cli)
-with a IDE or text editor of your choice.
-* Using [AppBuilder](http://docs.telerik.com/platform/appbuilder/nativescript/index) where you have all the features of [Telerik Platform](http://www.telerik.com/platform) at your disposal.
+1. Write your **application code** once using the **NativeScript modules** and the **NativeScript runtimes**.<br/>The modules expose the native device and platform capabilities of Android and iOS in a consistent manner and let you access them via non-platform-specific code.<br/>The modules let you access some native capabilities via platform-specific JavaScript code.
+1. Customize your app with platform-specific assets such as icons and splash screens.
+1. Build your app.<br/>When you build your app, the **NativeScript runtime** translates your non-platform specific code to the native language of your target platform and the **NativeScript tools** use the native platform SDKs and tools to build a native application package.
+1. Run your cross-platform native apps in the native emulators, on real devices or distribute them to testers and end users.
 
-## Example
-In the following example we will start with a empty NativeScript project and build a simple hello word sample application.
+## How To Get Started
 
-### Creating Blank Project
-Let's start by creating a blank project. As we mentioned you can either use the [NativeScript CLI](https://github.com/NativeScript/nativescript-cli) or NativeScript Blank project template in AppBuilder(available for JavaScript or TypeScript).
-Form here on we will be working in the `App` folder inside the project.
+NativeScript strips the complexity from native development both in terms of required coding skills and system setup. 
 
-### Adding UI
-The project we just created has a single empty page. The UI of the page is defined declaratively in the 'main-page.xml' file. In the project there are also `main-page.js` (or `main-page.ts`) and `main-page.css` files that will hold applications code and styles for this page.
+To get started, you need JavaScript or TypeScript knowledge to implement your business logic, XML and CSS knowledge to design your UI and an idea for a mobile app. You do not need Java or Objective-C knowledge.
 
-Let's add some UI in `main-page.xml`:
-```XML
-<?xml version="1.0" encoding="UTF-8" ?>
-<Page>
-  <StackLayout>
-    <Label text="Tap the button" style="horizontal-align: center"/>
-    <Button text="TAP" />
-    <Label text="message" textWrap="true" style="horizontal-align: center"/>
-  </StackLayout>
-</Page>
-```
-We have added a title label, a button and a message label that we are going to use in the next section.
-Here is the result:
-![step1 android](img/getting-started/step1-android.png "step1 android")![step1 ios](img/getting-started/step1-ios.png "step1 ios")
+Once you have your app idea, you can get started in three simple steps.
 
-*Note: UI declaration is covered in depth in the [UI with XML](ui-with-xml.md) article.*
+1. Choose your tools and **[set up your system](quick-start/setup/quick-setup.md)**.
+	* If you are familiar with the Cordova CLI or if you want to develop and build your apps locally and free of charge, you can set up your system with the [NativeScript CLI](https://github.com/NativeScript/nativescript-cli).
+	* If you prefer to concentrate on development and build your apps with a third-party build service, you can use the [Telerik AppBuilder tools](http://www.telerik.com/appbuilder).
+1. Go through the **Hello World** tutorial for your preferred tool set.<br/>This quick start development guide will introduce you to the basic architecture of a NativeScript app, data binding and how to implement user interfaces and styling.
+	* [Hello World from the NativeScript CLI](/quick-start/hello-world/hello-world-ns-cli.md)
+	* [Hello World from AppBuilder](/quick-start/hello-world/hello-world-appbuilder.md)
+1. Explore the **[modules overview](modules.md)** and the **[API Reference](ApiReference/application/README.md)**.<br/>The extensive overview and API reference will introduce to the how-tos of NativeScript development. You will learn how to tap into the native capabilities that you want to implement inside your app.
 
-### Creating a View-Model
-[MVVM](http://en.wikipedia.org/wiki/Model_View_ViewModel) pattern is the preferred approach when developing mobile applications with NativeScript. In this section we will create and bind a view-model to the page we already have.
-The view-model will hold simple counter which will be used to update a message each time the user taps on the button.  
+## What's Next
 
-Create a `view-models` folder and `main-view-model.js` ( or `main-view-model.ts` if you are using TypeScript) file in it:
-``` JavaScript
-var observable = require("data/observable");
+When you become familiar with the basics, you can tackle any of the more advanced tasks.
 
-var counter = 42;
-var mainViewModel = new observable.Observable();
-mainViewModel.set("message", counter + " taps left");
-mainViewModel.tapAction = function () {
-    counter--;
-    if (counter <= 0) {
-        mainViewModel.set("message", "Hoorraaay! You unlocked the NativeScript clicker achievement!");
-    }
-    else {
-        mainViewModel.set("message", counter + " taps left");
-    }
-};
-exports.mainViewModel = mainViewModel;
-```
-``` TypeScript
-import observable = require("data/observable");
+* [Application Management](application-management.md)
+* [Application Architecture and Navigation](navigation.md)
+* [Add Alerts and Notifications](ui-dialogs.html)
+* [Handle Events](events.md)
+* [Implement Gestures](gestures.md)
+* [Work With Location Services](location.md)
+* [Bind Data](bindings.md)
+* [Design the UI](ui-with-xml.md)
+* [Style Your App](styling.md)
 
-export class HelloWorldModel extends observable.Observable {
-    private counter: number;
-    constructor() {
-        super();
+If you need even more native capabilities than the NativeScript modules provide, you can expand your development with any of the following options.
 
-        this.counter = 42;
-        this.set("message", this.counter + " taps left");
-    }
-
-    public tapAction() {
-        this.counter--;
-        if (this.counter <= 0) {
-            this.set("message", "Hoorraaay! You unlocked the NativeScript clicker achievement!");
-        }
-        else {
-            this.set("message", this.counter + " taps left")
-        }
-    }
-}
-export var mainViewModel = new HelloWorldModel();
-```
-
-The view-model is an instance of `Observable` type so that the UI can receive notification whenever the `message` property is set.
-
-Now that we have the main-view-model we will set it as a `bindingContext` of the main-page. We will do this by handling the `pageLoaded` event:
-
-main-page.xml:
-```XML
-<Page loaded="pageLoaded"/>
-    ...
-</Page>
-```
-
-main-page.js (or main-page.ts):
-```JavaScript
-var vmModule = require("./view-models/main-view-model");
-function pageLoaded(args) {
-    var page = args.object;
-    page.bindingContext = vmModule.mainViewModel;
-}
-exports.pageLoaded = pageLoaded;
-
-```
-```TypeScript
-import observable = require("data/observable");
-import pages = require("ui/page");
-import vmModule = require("./view-models/main-view-model");
-
-// Event handler for Page "loaded" event attached in main-page.xml
-export function pageLoaded(args: observable.EventData) {
-    // Get the event sender
-    var page = <pages.Page>args.object;
-    page.bindingContext = vmModule.mainViewModel;
-}
-```
-
-The last thing we need to do is to bind the UI elements in the XML to the view-model:
-main-page.xml
-``` XML
-<?xml version="1.0" encoding="UTF-8" ?>
-<Page loaded="pageLoaded">
-  <StackLayout>
-    <Label text="Tap the button" style="horizontal-align: center"/>
-    {%raw%}<Button text="TAP" tap="{{ tapAction }}"/>
-    <Label text="{{ message }}" textWrap="true" style="horizontal-align: center"/>{%endraw%}
-  </StackLayout>
-</Page>
-```
-
-Here is the result:
-![step2 android](img/getting-started/step2-android.png "step2 android")![step2 ios](img/getting-started/step2-ios.png "step2 ios")
-
-We used data-binding for the `tap` event of the button and the `text` of the message-label.
-*Note: Binding is covered in depth in the [Data Binding](bindings.md) article.*
-
-### Adding Styles
-The final step in this tutorial will be to style the application. Styling in NativeScript is done with a subset of the CSS syntax.
-For each page, the NativeScript runtime will automatically load and apply the CSS file that has the same name as the XML file for the page.
-
-We will add the CSS in `main-page.css`:
-```CSS
-.title {
-    font-size: 30;
-    horizontal-align: center;
-    margin:20;
-}
-
-button {
-    font-size: 42;
-    horizontal-align: center;
-}
-
-.message {
-    font-size: 20;
-    color: #284848;
-    margin:10 40;
-    horizontal-align: center;
-}
-```
-
-Finally - replace the inline styles in the `main-page.xml` with `cssClass` attribute, so that the CSS classes we defined are applied:
-```XML
-<?xml version="1.0" encoding="UTF-8" ?>
-<Page loaded="pageLoaded">
-  <StackLayout>
-    <Label text="Tap the button" cssClass="title"/>
-    {%raw%}<Button text="TAP" tap="{{ tapAction }}" />
-    <Label text="{{ message }}" cssClass="message" textWrap="true"/>{%endraw%}
-  </StackLayout>
-</Page>
-```
-
-Here is the result:
-![step3 android](img/getting-started/step3-android.png "step3 android")![step3 ios](img/getting-started/step3-ios.png "step3 ios")
-
-*Note: CSS Styling is covered in depth in the [Styling](styling.md) article.*
-
-## Next Steps
-Read the advanced topics below or refer to the [Api Reference](ApiReference/) to continue wit NativeScript development:
-
-* [Application](application-management.md)
-* [Navigation](navigation.md)
-* [Layouts](layouts.md)
-* [Styling](styling.md)
-* [Binding](bindings.md)
-* [UI with XML](ui-with-xml.md)
-* [UI Views](ui-views.md)
-* [UI Dialogs](ui-dialogs.md)
-* [Location](location.md)
-* [Modules](modules.md)
+* [iOS-Specific JavaScript Development](runtimes/ios/README.md)
+* [Android-Specific JavaScript Development](runtimes/android/README.md)
+* [Development with Native Libraries](https://github.com/NativeScript/nativescript-cli)
