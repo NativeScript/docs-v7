@@ -1,315 +1,254 @@
 ---
-nav-title: Hello World from the NativeScript CLI
-title: Hello World from the NativeScript CLI
-description: Create your first NativeScript Hello World app in a few minutes with the NativeScript CLI. See it in action on your device.
+nav-title: Getting Started with the NativeScript CLI
+title: Getting Started with the NativeScript CLI
+description: Create your first NativeScript app in a few minutes with the NativeScript CLI. See it in action on your device.
 position: 1
 ---
 
-# Hello World from the NativeScript CLI
+## Contents
 
-Have you set up your system to develop NativeScript apps with the NativeScript CLI local tool set? 
+* [Step 0: Install system requirements](#step-0)
+* [Step 1: Install NativeScript](#step-1)
+* [Step 2: Create a project](#step-2)
+* [Step 3: Add platforms](#step-3)
+* [Step 4: Run your app](#step-4)
+* [Step 5: Explore the sample app](#step-5)
+* [Step 6: Build something awesome](#step-6)
+* [Step 7: Move beyond the basics](#step-7)
 
-If the answer is yes, you are ready to create your first Hello World app with NativeScript. Your first Hello World will be a simple counter. You will learn:
+<h2 id="step-0">Step 0: Install system requirements</h2>
 
-* [How To Create a New Project](#crate-new-project)
-* [How To Add User Interface](#add-user-interface)
-* [How To Create a View Model](#create-a-view-model)
-* [How To Style Your App](#style-your-app)
+The NativeScript CLI has a handful of system requirements to build and run NativeScript apps. Most notably you need to have Xcode installed to build iOS apps, and you need to have an Android SDK installed to build Android apps. Review the setup documentation below to make sure your development machine is all set:
 
-> If your system is not already configured, you can check the [Set Up Your System](./setup/quick-setup.md) guide, pick your tools and configure them.
+* [Windows](./quick-start/setup/ns-cli-setup/ns-setup-win.md)
+* [OS X](./quick-start/setup/ns-cli-setup/ns-setup-os-x.md)
+* [Linux](./quick-start/setup/ns-cli-setup/ns-setup-linux.md)
 
-## Create New Project
+> **TIP**: If you're looking for a NativeScript environment that removes the need to do this local setup, and/or if you're a Windows user that wants to use NativeScript to build iOS apps, try [using NativeScript in Telerik AppBuilder](./quick-start/hello-world/hello-world-appbuilder.md).
 
-The first step to any development is to create your first project.
+<h2 id="step-1">Step 1: Install NativeScript</h2>
 
-### 1. Create your project.
-
-1. Get the Blank template locally from [https://github.com/NativeScript/docs.git](https://github.com/NativeScript/docs.git).
-    * If you have configured git version control on your system, navigate to an empty directory and run this command.
-
-        ```
-        git clone https://github.com/NativeScript/docs.git
-        ```
-    * If you have not configured git version control, navigate to [https://github.com/NativeScript/docs.git](https://github.com/NativeScript/docs.git), click **Download ZIP**, wait for the download to complete and extract the archive.
-1. In the command prompt, run the following command.
+Next you need to install the [NativeScript CLI](https://github.com/NativeScript/nativescript-cli) itself; the CLI runs on the Node.js platform and you can install it using npm:
 
 ```
-tns create HelloWorld --copy-from <Directory where you cloned or extracted the Blank template>
+npm install -g nativescript
 ```
 
-### 2. Explore the newly created project.
+<h2 id="step-2">Step 2: Create a project</h2>
 
-Explore the newly created directory in a file explorer. At first, your project has the following structure.
+The installation of the NativeScript CLI creates two commands, `nativescript` and `tns`, that you use to create, build and run your NativeScript projects. Running `tns create` (or `nativescript create`) creates a new project:
 
 ```
-Hello World/ 
-|-- app/
-|-- |-- app/
-|-- |-- App_Resources/
-|-- |-- |-- Android/
-|-- |-- `-- iOS/
-|-- |-- LICENSE
-|-- |-- package.json
-|-- |-- README.md
-|-- `-- tns_modules/
-`-- platforms
+tns create hello-world
 ```
 
-Your NativeScript project consists of the following basic directories and files.
+<h2 id="step-3">Step 3: Add platforms</h2>
 
-* The `app` directory is the **development space for your application**. You need to modify all common and platform-specific code within the `app` subdirectory in this directory. 
+Before you run your code, NativeScript needs to initialize a platform-specific native project for each platform you intend to target.
+
+```
+cd hello-world
+tns platform add ios
+tns platform add android
+```
+
+This operation uses the native SDKs to initialize the platform-specific projects and places the generated contents in your app's `platforms` directory. Later on, the NativeScript CLI will use the tools of the native SDKs to build these platform-specific projects into truly native application packages. During the process, the NativeScript CLI will automatically transfer your cross-platform code and resources from your project's `app` directory into its `platforms` directory.
+
+You'll see a more detailed breakdown of a NativeScript app's directory structure momentarily, but first let's get your new app up and running.
+
+<h2 id="step-4">Step 4: Run your app</h2>
+
+After adding platform(s), you use the `tns run` command to run your app. For example, the following runs your app in the iOS simulator, and/or Android emulator (specifically an [Android AVD](http://developer.telerik.com/featured/using-android-emulator-hybrid-mobile-apps-telerik-appbuilder/) configured on your machine):
+
+```iOS
+tns run ios --emulator
+```
+```Android
+tns run android --emulator
+```
+
+> **Tip:** If you have configured Genymotion on your development machine, you can run `tns run android --emulator --geny <Genymotion Device Name>`. This runs your project in the Genymotion emulator.
+
+You can deploy your app to physical, USB-connected devices by omitting the `--emulator` flag. The following deploys your app to USB-connected iOS/Android device:
+
+```iOS
+tns run ios
+```
+```Android
+tns run android
+```
+
+> **WARNING**: Deploying your app to iOS devices requires that a valid iOS certificate and provisioning profile pair are configured on your development machine. For more information see [iOS Code Signing - A Complete Walkthrough](http://seventhsoulmountain.blogspot.com/2013/09/ios-code-sign-in-complete-walkthrough.html).
+
+By default `tns create` command scaffolds a small sample project; therefore if all went well you should see the following:
+
+![step3 android](img/getting-started/step3-android.png "step3 android")![step3 ios](img/getting-started/step3-ios.png "step3 ios")
+
+<h2 id="step-5">Step 5: Explore the sample app</h2>
+
+Your first NativeScript project uses the following basic directories and files:
+
+```
+.
+└── hello-world
+    ├── app
+    │   ├── app
+    │   │   ├── app.css
+    │   │   ├── app.js
+    │   │   ├── bootstrap.js
+    │   │   ├── main-page.js
+    │   │   └── main-page.xml
+    │   ├── App_Resources
+    │   │   └── ...
+    │   └── tns_modules
+    │       └── ...
+    └── platforms
+        └── ...
+
+```
+
+Here's a guide to what these files do:
+
+* The inner `app` directory is the **development space for your application**.
 * The `platforms` directory is created empty. When you add a target platform to your project, the NativeScript CLI creates a new subdirectory with the platform name. The subdirectory contains the ready-to-build platform-specific resources of your app. 
-* The `App_Resources` subdirectory is the directory that contains **platform-specific resources** such as icons, splash screens and platform-specific configuration files like `AndroidManifest.xml` and `Info.plist`.<br/>When you create a new project, only icons and splash screens are present in this directory.
+* The `App_Resources` subdirectory is the directory that contains **platform-specific resources** such as icons, splash screens and platform-specific configuration files like `AndroidManifest.xml` and `Info.plist`. When you create a new project, only icons and splash screens are present in this directory.
 * The `tns_modules` subdirectory contains the NativeScript modules. Each module exposes a device or platform functionality such as the camera, location services or the user interface.
+* `app.js` is the starting point for the logic of your app. In the sample app, `app.js` sets the app's `mainModule`, or the first page in your sample app, to `app/main-page`, which effectively gives control to the `app/main-page.js` and `app/main-page.xml` files.
 
-> **IMPORTANT:** This project structure is uniform across all NativeScript projects created with the NativeScript CLI. Do not change your basic project structure.
+> **IMPORTANT**: Avoid modifying your projects inside the `platforms` directory. During build-related operations, your changes will be overridden by your code and resources from the `app` directory.
 
-### 3. Add target development platforms.
+<h2 id="step-6">Step 6: Build something awesome</h2>
 
-Currently, the `platforms` directory is empty. This means that your project is not ready for development yet. Before you can continue, you need to add your desired platform as a target platform.
+Now that you have an app running, let's switch up the NativeScript-generated sample to introduce some of NativeScript's features. In this step you'll build a simple task manager. Although simple, this app provides a simple introduction to building UIs, implementing MVVM, and styling NativeScript apps with CSS. Let's get started.
 
-```iOS
-tns add platform ios
-```
-```Android
-tns add platform android
-```
+### Step 6.1: Adding a UI
 
-This operation creates the `android` and the `ios` subdirectories in the `platforms` directory. Each of these subdirectories now contain a project for native development with the respective SDKs.
-
-Later on, the NativeScript CLI will call the tools of the native SDK to build these platform-specific projects into a truly native application package. During this process, the NativeScript CLI will automatically transfer your cross-platform code  and resources from the `app` directory into the `platforms` directory.
-
-> **IMPORTANT:** Avoid modifying your projects inside the `platforms` directory. During build-related operations, your changes will be overridden by your code and resources from the `app` directory.
-
-### 4. You can quickly check how your blank project looks like in the emulator.
-
-Run the following command.
-
-```iOS
-tns run ios --emulator
-```
-```Android
-tns run android --emulator
-```
-
-> **TIP:** If you have configured Genymotion, you can run `tns run android --emulator --geny <Genymotion Device Name>`<br/>This runs your project in the Genymotion emulator.
-
-Your project is truly blank and this is why it appears empty or even black on the emulator screen. To change this, you need to add user interface to your app.
-
-## Add User Interface
-
-NativeScript projects consist of pages. In this project, your home page is declared in `app` &#8594; `main-page.xml`. 
-
-You can add a simple title, a button and a message to your home page by replacing the contents of `main-page.xml` with the following code.
+NativeScript uses an XML structure to define UI components. Your app has one page, which has its UI defined in `app/main-page.xml`. In the same `app` directory, create a sibling file named `tasks.xml`, and paste in the following contents:
 
 ```XML
-<?xml version="1.0" encoding="UTF-8" ?>
-<Page>
-  <StackLayout>
-    <Label text="Tap the button" style="horizontal-align: center"/>
-    <Button text="TAP" />
-    <Label text="message" textWrap="true" style="horizontal-align: center"/>
-  </StackLayout>
+<Page loaded="onPageLoaded">
+    <GridLayout rows="auto, *">
+        <StackLayout orientation="horizontal" row="0">
+            <TextField width="200" text="{{ task }}" hint="Enter a task" id="task" />
+            <Button text="Add" tap="add"></Button>
+        </StackLayout>
+
+        <ListView items="{{ tasks }}" row="1">
+            <ListView.itemTemplate>
+                <Label text="{{ name }}" />
+            </ListView.itemTemplate>
+        </ListView>
+    </GridLayout>
 </Page>
 ```
 
-Save your changes and rerun your app.
+Take note of a few things here. The first is that this uses two of [NativeScript's layout mechanisms](./layouts.md): `GridLayout` and `StackLayout`. The `GridLayout` provides an elegant way to divide an area of the screen into rows and columns. In this case you divide the screen into two rows: a `StackLayout` at the top and a `ListView` at the bottom.
 
-```iOS
-tns run ios --emulator
-```
-```Android
-tns run android --emulator
-```
+The `StackLayout` is simpler, as it does as its name implies—stack things, either horizontally or vertically. In this example you override the default orientation, vertical, to display a `TextField` and a `Button` next to each other.
 
-> **TIP:** If you have configured Genymotion, you can run `tns run android --emulator --geny <Genymotion Device Name>`<br/>This runs your project in the Genymotion emulator.
+One last thing to note: did you notice the double curly brace syntax used in the XML (e.g. `text="{{ name }}"`)? This is used to configure NativeScript's data binding syntax. Let's see how it works.
 
-On your device, your app should appear similar to the screen shots below.
+> **TIP**: For more on what you can do with UIs in NativeScript, check out the [UI with XML](./ui-with-xml.md) article.
 
-![step1 ios](http://docs.nativescript.org/img/getting-started/step1-ios.png "step1 ios")![step1 android](http://docs.nativescript.org/img/getting-started/step1-android.png "step1 android")
+### Step 6.2: Implementing MVVM
 
-## Create a View Model
-
-The NativeScript framework is optimized for mobile development which follows the [MVVM](http://en.wikipedia.org/wiki/Model_View_ViewModel) pattern.
-
-### 1. Create the view model file.
-
-In your `app` directory, create a new folder named `view-models`. In the newly created folder, add a new file named `main-view-model.js` or `main-view-model.ts` if your project is a JavaScript or a TypeScript project, respectively.
-
-Replace any default contents of the newly added file with the following code.
-
-``` JavaScript
-var observable = require("data/observable");
-
-var counter = 42;
-var mainViewModel = new observable.Observable();
-mainViewModel.set("message", counter + " taps left");
-mainViewModel.tapAction = function () {
-    counter--;
-    if (counter <= 0) {
-        mainViewModel.set("message", "Hurrah! You unlocked the NativeScript clicker achievement!");
-    }
-    else {
-        mainViewModel.set("message", counter + " taps left");
-    }
-};
-exports.mainViewModel = mainViewModel;
-```
-``` TypeScript
-import observable = require("data/observable");
-
-export class HelloWorldModel extends observable.Observable {
-    private counter: number;
-    constructor() {
-        super();
-
-        this.counter = 42;
-        this.set("message", this.counter + " taps left");
-    }
-
-    public tapAction() {
-        this.counter--;
-        if (this.counter <= 0) {
-            this.set("message", "Hurrah! You unlocked the NativeScript clicker achievement!");
-        }
-        else {
-            this.set("message", this.counter + " taps left")
-        }
-    }
-}
-export var mainViewModel = new HelloWorldModel();
-```
-
-The view model is an instance of the `Observable` type. This lets your user interface receive a notification when the `message` property is set.
-
-### 2. Bind the view model to the home page
-
-You can use a `pageLoaded` event to load your app functionality when the home page loads.
-
-In `app` &#8594; `main-page.xml`, add a `loaded` attribute to the `Page` element.
-
-```XML
-<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
-    ...
-</Page>
-```
-
-NativeScript automatically looks for JavaScript or TypeScript files which have the same name as your `XML` file. When NativeScript identifies such a file, it executes the logic inside it. So, NativeScript will automatically execute any business logic in the `main-page.js` or `main-page.ts` file you already have in your project.
-
-To bind your view model to the home page, in your `app` &#8594; `main-page.js` or `app` &#8594; `main-page.ts` add the following code. This code handles the `pageLoaded` event.
+The [MVVM](http://en.wikipedia.org/wiki/Model_View_ViewModel) pattern is the preferred approach for building NativeScript apps, as it provides an elegant approach to keeping your model data in sync with your UI. To see how it works, create a `tasks.js` file in the same directory as your existing `tasks.xml` file, and paste in the following code:
 
 ```JavaScript
-var vmModule = require("./view-models/main-view-model");
-function pageLoaded(args) {
-    var page = args.object;
-    page.bindingContext = vmModule.mainViewModel;
-}
-exports.pageLoaded = pageLoaded;
-```
-```TypeScript
-import observable = require("data/observable");
-import pages = require("ui/page");
-import vmModule = require("./view-models/main-view-model");
+var observableModule = require("data/observable");
+var observableArray = require("data/observable-array");
+var viewModule = require("ui/core/view");
 
-// Event handler for Page "loaded" event attached in main-page.xml
-export function pageLoaded(args: observable.EventData) {
-    // Get the event sender
-    var page = <pages.Page>args.object;
-    page.bindingContext = vmModule.mainViewModel;
-}
-```
+var tasks = new observableArray.ObservableArray([]);
+var pageData = new observableModule.Observable();
+var page;
 
-Finally, you can bind the user interface of the home page to the view model you created. In your `app` &#8594; `main-page.xml` add the following code.
+exports.onPageLoaded = function(args) {
+    page = args.object;
+    pageData.set("task", "");
+    pageData.set("tasks", tasks);
+    page.bindingContext = pageData;
+};
 
-```XML
-<?xml version="1.0" encoding="UTF-8" ?>
-<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <StackLayout>
-    <Label text="Tap the button" style="horizontal-align: center"/>
-    <Button text="TAP" tap="{{ tapAction }}"/>
-    <Label text="{{ message }}" textWrap="true" style="horizontal-align: center"/>
-  </StackLayout>
-</Page>
+exports.add = function() {
+    tasks.push({ name: pageData.get("task") });
+    pageData.set("task", "");
+    viewModule.getViewById( page, "task" ).dismissSoftInput();
+};
 ```
 
-Save your changes and rerun your app.
+> **Tip**: Although this article doesn't include it, TypeScript is a first-class citizen in NativeScript. If you'd like to use TypeScript, create .ts files instead of .js files. NativeScript takes care of compiling them to JavaScript and using them automatically. You'll find sample TypeScript code provided throughout our documentation.
 
-```iOS
-tns run ios --emulator
+The first thing to notice here is the use of the `exports` keyword. If you're familiar with Node.js this might look familiar, as NativeScript modules adhere to the [CommonJS](http://wiki.commonjs.org/wiki/CommonJS) spec. If you're not familiar with Node, all you need to know is that the `exports` keyword is used to expose a JavaScript module's public API. In this case, the `exports` keyword is used to expose two functions to this page's view: `onPageLoaded` and `add`. The view's `<Page>` binds to the `onPageLoaded` function with `<Page loaded="onPageLoaded">`, and the view's `<Button>` bind to the `add` function with `<Button tap="add"></Button>`.
+
+The other thing to note is the `page.bindingContext = pageData` assignment in the `onPageLoaded` function. This line sets the `pageData` `Observable` object as the *binding context* of this page. Simply put, this line means that properties of the `pageData` object are accessible in the UI components using the `{{ }}` syntax. For example, the page's `<ListView>` binds to the `pageData` object's `tasks` property using `<ListView items="{{ tasks }}">`.
+
+The biggest benefit of this MVVM approach is that NativeScript keeps your user interface up to date as your data changes. For example consider the first line of the `add()` function:
+
+```JavaScript
+tasks.push({ name: pageData.get("task") });
 ```
-```Android
-tns run android --emulator
-```
 
-> **TIP:** If you have configured Genymotion, you can run `tns run android --emulator --geny <Genymotion Device Name>`<br/>This runs your project in the Genymotion emulator.
+Because the `tasks` array is set up as an `ObservableArray`, and because the `tasks` array is bound to the page's `<ListView>` (`<ListView items="{{ tasks }}">`), this call adds the user-provided value to the list shown on the screen—automatically.
 
-On your device, your app should appear similar to the screen shots below.
+This code is not only clean, it also helps to decouple your XML UI declaration from your JavaScript logic. In this case, your JavaScript doesn't need to know which UI components are bound to this data; it just manages JavaScript objects and lets the XML take care of the rest. NativeScript fully embraces this separation-of-concerns-based approach to building apps, and this approach extends to how you style your apps.
 
-![step2 ios](http://docs.nativescript.org/img/getting-started/step2-ios.png "step2 ios")![step2 android](http://docs.nativescript.org/img/getting-started/step2-android.png "step2 android")
+> **TIP**: For more details on how NativeScript's data binding works, check out out our [Data Binding](bindings.md) documentation.
 
-## Style Your App
+### Step 6.3: Adding Styles
 
-You can style your app using CSS. In this version of NativeScript, you can only use a [subset of the CSS language](./styling.md).
+Now that you have a small functioning app, let's look at how at you can change how your app looks. Styling in NativeScript is done with a [subset of the CSS syntax](./styling.md).
 
-For each page, NativeScript automatically loads and applies the `CSS` file with the same name as the `XML` file for the page. Under the hood, the runtime parses the CSS, evaluates the selectors and applies the properties to the style object of the selected view.
+For each page, the NativeScript runtime automatically loads and applies any CSS file that has the same name as the XML file for the page. Under the hood, the runtime parses the CSS, evaluates the selectors and applies the properties to the style object of the selected view.
 
-> **TIP:** You can also set global CSS rules. Any CSS declarations in `app.css` will apply to all content that can be styled.
-
-First, add a `main-page.css` to your `app` directory. 
-
-Next, you can style your user interface by setting alignment, font size and color for your title, button and text. Insert the following code in your `main-page.css`.
+NativeScript also provides an `app.css` file that contains global CSS rules that apply to each page. To add a little spacing to your tasks app open `app.css` and replace its contents with the following code:
 
 ```CSS
-.title {
-    font-size: 30;
-    horizontal-align: center;
-    margin:20;
+label {
+    margin: 15;
 }
-
-button {
-    font-size: 42;
-    horizontal-align: center;
-}
-
-.message {
-    font-size: 20;
-    color: #284848;
-    margin:10 40;
-    horizontal-align: center;
+textfield {
+    margin: 15;
 }
 ```
 
-Finally, add the `cssClass` attribute to your user interface elements in `main-page.xml`. This applies the styling rules to your user interface elements.
+> **TIP**: For a more in-depth look at styling NativeScript apps, including a list of support CSS properties, check out our [styling](styling.md) article.
 
-```XML
-<?xml version="1.0" encoding="UTF-8" ?>
-<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <StackLayout>
-    <Label text="Tap the button" cssClass="title"/>
-    <Button text="TAP" cssClass="button" tap="{{ tapAction }}"/>
-    <Label text="{{ message }}" cssClass="message" textWrap="true"/>
-  </StackLayout>
-</Page>
+## Step 6.4: Run your updated app
+
+To switch your app to use the new tasks page, open `app/app.js` and replace its contents with the following code:
+
+```JavaScript
+var application = require("application");
+application.mainModule = "app/tasks";
+application.start();
 ```
 
-Save your changes and rerun your app.
+With this change in place, make sure to save all your changed files, including the updated `app.js`, `app.css`, `tasks.js`, and `tasks.xml` files, and then rerun your app with the `tns run` command. The following runs the project on the iOS simulator:
 
 ```iOS
 tns run ios --emulator
 ```
+
+You should see something that looks like this:
+
+![](img/getting-started/ios-tasks.gif)
+
+And the following runs the project on an Android simulator:
+
 ```Android
 tns run android --emulator
 ```
 
-> **TIP:** If you have configured Genymotion, you can run `tns run android --emulator --geny <Genymotion Device Name>`<br/>This runs your project in the Genymotion emulator.
+This time you should see an app that looks like this:
 
-On your device, your app should appear similar to the screen shots below.
+![](img/getting-started/android-tasks.gif)
 
-![step3 ios](http://docs.nativescript.org/img/getting-started/step3-ios.png "step3 ios")![step3 android](http://docs.nativescript.org/img/getting-started/step3-android.png "step3 android")
+<h2 id="step-7">Step 7: Move beyond the basics</h2>
 
-## What's Next
+Congratulations! You have just completed your first app with NativeScript. NativeScript does a whole lot, and you're just getting started. As a next step, try adding a delete button to your lists app, or tying the list to a backend using the NativeScript [http module](./ApiReference/http/HOW-TO.md).
 
-Congratulations! You have just completed your first "Hello, World!" app with NativeScript. Next, you can explore the [Api Reference](./ApiReference/) or start tackling more complex tasks. 
+Feel free to explore our [API reference](ApiReference/) to see all of what NativeScript has to offer. You can also learn more about NativeScript features in the following articles:
 
 * [Application](application-management.md)
 * [Navigation](navigation.md)
@@ -321,5 +260,3 @@ Congratulations! You have just completed your first "Hello, World!" app with Nat
 * [UI Dialogs](ui-dialogs.md)
 * [Location](location.md)
 * [Modules](modules.md)
-
-[1]: ./setup/ab-setup
