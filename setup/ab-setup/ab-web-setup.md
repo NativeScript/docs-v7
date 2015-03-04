@@ -33,3 +33,7 @@ With this IDE, you can develop for Android and iOS in the most popular browsers 
 
 1. Navigate to [https://platform.telerik.com](https://platform.telerik.com) in your preferred browser.
 1. If you do not have a Telerik account, you can log in with a social provider of your choice and begin a Telerik Platform trial.<br/>With the Telerik Platform trial, you can use the AppBuilder in-browser client.
+
+## What's Next
+
+Create your first [Hello World app with AppBuilder](./hello-world/hello-world-appbuilder.md).

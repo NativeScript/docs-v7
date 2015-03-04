@@ -87,3 +87,7 @@ With this IDE, you can develop for Android and iOS on Windows systems.
     1. Click **Download** for AppBuilder extension for Visual Studio.
     1. Double-click the downloaded <code>AppBuilder.vsix</code>and wait for the installer to verify that your system meets the system requirements.
     1. Click **Install** and wait for the installation to complete.
+
+## What's Next
+
+Create your first [Hello World app with AppBuilder](./hello-world/hello-world-appbuilder.md).

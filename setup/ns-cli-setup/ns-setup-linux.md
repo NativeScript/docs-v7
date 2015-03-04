@@ -81,4 +81,8 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
         ```
     1. Restart the command prompt.
 
+## What's Next
+
+Create your first [Hello World app with the NativeScript CLI](./hello-world/hello-world-ns-cli.md).
+
 [NativeScript CLI]: https://www.npmjs.com/package/nativescript
