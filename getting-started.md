@@ -1,5 +1,5 @@
 ---
-nav-title: "Getting Started"
+nav-title: "Getting Started with NativeScript"
 title: "Getting Started"
 description: "Learn the basics of of how NativeScript work, how to set up your system and how to create your first Hello World app"
 position: 2
