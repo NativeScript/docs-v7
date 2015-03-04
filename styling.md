@@ -1,130 +1,144 @@
 ---
-nav-title: "NativeScript Styling"
-title: "UI: Styling"
-description: "NativeScript Documentation: Styling"
+nav-title: Styling in NativeScript
+title: Styling
+description: How to use Cascading Style Sheets (CSS) in NativeScript to change the appearance of GUI elements. 
 position: 17
 ---
 
 # Styling
-In this article we are going to explain how to change the looks and appearance of the views (elements) in a NativeScript application. Styling in NativeScript is done in a similar fashion as in a web application - using CSS or changing the style object of the elements in JS code.
+
+You change the looks and appearance of views (elements) in a NativeScript application similarly to how you do it in a web application&mdash;using Cascading Style Sheets (CSS) or changing the style object of the elements in JavaScript.
 
 ## The Style Object
-Like the [DOM Style Object](http://www.w3schools.com/jsref/dom_obj_style.asp), each View instance exposes a **style** property, which holds all the style properties for the view. When the view is shown all style properties are applied to the underlying native widget.
 
-## Styling with CSS
-NativeScript applications can also be styled by using subset of the CSS language. This is done by setting the `css` property of the pages in the application. Actually, what happens under the hood is that the CSS is parsed, selectors are evaluated and properties are applied to the `style` object of each selected view.
+Similarly to the [DOM Style Object](http://www.w3schools.com/jsref/dom_obj_style.asp), each View instance exposes a **style** property, which holds all the style properties for the view. When the view is displayed, all its style properties are applied to the underlying native widget.
+
+## Styling Using CSS
+
+NativeScript applications can be styled by using subset of the CSS language. This is done by setting the `css` property of an application page. Under the hood, the CSS code is parsed, selectors are evaluated, and properties are applied to the `style` object of each selected view.
 
 Example:
+
 ```CSS
 var pages = require("ui/pages");
 var page = new pages.Page();
 page.css = "button { color: red }";
 ```
 
-> __Note__: Currently the CSS support is limited only to the selectors and properties listed in this article*
+### Supported Selectors
 
-### Supported selectors
-Native script supports a subset of [CSS selector syntax](http://www.w3schools.com/cssref/css_selectors.asp). We will look trough the supported selectors.
+> Currently the CSS support is limited only to the selectors and properties listed in the current article.
 
-#### Type selector
-Like [CSS element selectors](http://www.w3schools.com/cssref/sel_element.asp), type selectors in NativeScript select all views of a given type.
-Type selectors are case-insensitive, so you can use both `button` and `Button`.
+NativeScript supports a subset of the [CSS selector syntax](http://www.w3schools.com/cssref/css_selectors.asp). Let's go trough the supported selectors.
+
+#### Type Selector
+Like [CSS element selectors](http://www.w3schools.com/cssref/sel_element.asp), type selectors in NativeScript select all views of a given type. Type selectors are case-insensitive, so you can use both `button` and `Button`.
 
 ```CSS
 button { background-color: gray }
 ```
 
-#### Class selector
+#### Class Selector
 [Class selectors](http://www.w3schools.com/cssref/sel_class.asp) select all views with a given class.
 The class is set using the `cssClass` property of the view.
 
-CSS:
+
 ```CSS
 .title { font-size: 32 }
 ```
-JavaScript:
 ```JS
 var label = new labelModule.Label();
 label.cssClass = "title"
 ```
 
-#### ID selector
+#### ID Selector
 [Id selectors](http://www.w3schools.com/cssref/sel_id.asp) select all views with a given id.
 The id is set using the `id` property of the view.
 
-CSS:
-```
+
+```CSS
 #login-button { background-color: blue }
 ```
-JavaScript:
 ```JS
 var btn = new buttonModule.Button();
 btn.id = "login-button"
 ```
 
-#### State selector
-State selectors (a.k.a [Pseudo-classes selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)) select views that are in specified state.
+#### State Selector
+State selectors (a.k.a [Pseudo-classes selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)) select views that are in a specified state.
+
 ```CSS
 button:pressed { background-color: blue }
 ```
 
-#### Adding a css selectors
-There are two options for adding a css selectors to an already existing selectors.
-- Adding a valid css
-``` JavaScript
-page.addCss("button {background-color: blue}");
-```
-``` TypeScript
-page.addCss("button {background-color: blue}");
-```
+### Adding a CSS Selector
 
-This snippets adds the new selectors to the current selectors. Very useful in cases when a small css should be added to an element (for example using in some test purposes).
+There are two options for adding a CSS selector to an already existing selector.
 
-- Adding a valid css from a file
-``` JavaScript
-page.addCssFile(cssFileName);
-```
-``` TypeScript
-page.addCssFile(cssFileName);
-```
+- Adding valid CSS inline.
+ 
+	This snippet adds a new selector to the current set of selectors. This is quite useful when you need to add a small CSS chunk to an element (one example is for testing purposes).
 
-This snippet again adds new css selectors to the current. However this methods uses a file with css content. This gives an option to load different separated css styles.
+	``` JavaScript
+	page.addCss("button {background-color: blue}");
+	```
+	``` TypeScript
+	page.addCss("button {background-color: blue}");
+	```
 
-> __Note__: The cssFileName parameter should be a file path related to the application root folder.
+> The cssFileName parameter is a file path relative to the application root folder.
 
-- Adding an application wide css
-Another very helpful feature is the ability to set an application level css which will be applied before each page css.
-``` JavaScript
-var application = require("application");
-application.mainModule = "main-page";
-application.cssFile = "style.css";
+- Adding valid CSS from a file.
+	
+	This snippet again adds new CSS selectors to the current set. However, this methods reads them from a file.
 
-application.start();
-```
-``` TypeScript
-import application = require("application");
-application.mainModule = "main-page";
-application.cssFile = "style.css";
+	``` JavaScript
+	page.addCssFile(cssFileName);
+	```
+	``` TypeScript
+	page.addCssFile(cssFileName);
+	```
 
-application.start();
-```
-> __Note__: Again, the path to style.css file should be related to the application root folder.
+> The path to the CSS file is relative to the application root folder.
 
-## Supported properties
-Here is list of the properties, that can be set in CSS or through the style property of each View:
+	> The `cssFileName` parameter is a file path relative to the application root folder.
 
-| CSS Property    | JS property        | Description |
+- Adding application-wide CSS
+ 
+	Another very helpful feature is the ability to set application level CSS which will be applied before each page's CSS.
+
+	``` JavaScript
+	var application = require("application");
+	application.mainModule = "main-page";
+	application.cssFile = "style.css";
+	
+	application.start();
+	```
+	``` TypeScript
+	import application = require("application");
+	application.mainModule = "main-page";
+	application.cssFile = "style.css";
+	
+	application.start();
+	```
+	> The path to the CSS file is relative to the application root folder.
+
+## Supported Properties
+
+This is the list of the properties that can be set in CSS or through the style property of each View:
+
+| CSS Property    | JS Property        | Description |
 |:----------------|:-------------------|:----------------|
-| color           | color              | Sets a solid-color value of the matched view’s foreground. |
-| background-color | backgroundColor    | Sets a solid-color value of the matched view’s background. |
-| font-size       | fontSize           | Sets the font size of the matched View (works in Device-independent units only). |
-| text-align      | textAlignment      | Sets the alignment of the text in the matched view. Available values: "left" , "center", "right". |
-| vertical-align  | verticalAlignment  | Sets the alignment of this view within its parent along the vertical axis. Available values: "top", "center", "bottom", "stretch". |
-| horizontal-align | horizontalAlignment| Sets the alignment of this view within its parent along the horizontal axis. Available values: "left", "center", "right", "stretch". |
+| color           | color              | Sets a solid-color value to the matched view’s foreground. |
+| background-color | backgroundColor    | Sets a solid-color value to the matched view’s background. |
+| font-size       | fontSize           | Sets the font size of the matched view (only supports device-independent units). |
+| text-align      | textAlignment      | Sets text alignment in the matched view. Possible values: "left" , "center", "right". |
+| vertical-align  | verticalAlignment  | Sets the vertical alignment of the current view within its parent. Possible values: "top", "center", "bottom", "stretch". |
+| horizontal-align | horizontalAlignment| Sets the horizontal alignment of the current view within its parent. Possible values: "left", "center", "right", "stretch". |
 | margin          | margin             | Sets the margin of the view within its parent. |
-| width           | width              | Sets the width of the view. |
-| height          | height             | Sets the height of the view. |
-| min-width       | minWidth           | Sets the minimum width of the view. |
-| min-height      | minHeight          | Sets the minimum height of the view. |
-| visibility      | visibility         | Sets the visibility of the view. Available values: "visible", "collapsed". |
-| opacity         | opacity            | Sets the of the view. Value can be in the [0, 1] range |
+| width           | width              | Sets the view width. |
+| height          | height             | Sets the view height. |
+| min-width       | minWidth           | Sets the minimal view width. |
+| min-height      | minHeight          | Sets the minimal view height. |
+| visibility      | visibility         | Sets the view visibility. Possible values: "visible" or "collapsed". |
+| opacity         | opacity            | Sets the view opacity. The value is in the [0, 1] range. |

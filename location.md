@@ -1,12 +1,14 @@
 ---
-nav-title: "Location"
-title: "App: Location"
-description: "NativeScript Documentation: Location"
+nav-title: Location in NativeScript 
+title: Location 
+description: How to work with geographical location data in NativeScript.
 position: 11
 ---
 
 # Location
 
-NativeScript location module uses an accuracy criteria approach to deliver locations. Which means that getting a location (or monitoring locations) is powered by the best appropriate location provider (for example if GPS signal is available and GPS provider is enabled then it will be used). However under some circumstances (for example GPS does not work indoor), device will use all available providers (Wi-Fi network or cell towers) to determine location. In all cases device will return the best possible location with a given accuracy. This approach does not limit the location monitoring only to a specific location provider, but works with all of them.
+The NativeScript location module uses an accuracy criteria approach to deliver geolocation. This means that getting (or monitoring) a location is powered by the most accurate location provider that is available (for example if GPS signal is available and the GPS provider is enabled, then it will be used; if GPS is not connected, the device falls back to other available providers such as Wi-Fi networks or cell towers). 
 
-More information about location module can be found in [API-Ref](./ApiReference/location/location.md) and [How-to](./ApiReference/location/HOW-TO.md) pages.
+This approach does not limit location monitoring only to a specific location provider; it can still work with all of them.
+
+More information about the NativeScript location module can be found in the [API Reference](./ApiReference/location/location.md). You are advised to start with the [How-to](./ApiReference/location/HOW-TO.md) article.
