@@ -16,7 +16,7 @@ If the answer is yes, you are ready to create your first Hello World app with Na
 * [How To Create a View Model](#2-create-the-view-model)
 * [How To Style Your App](#3-style-your-app)
 
-> If your system is not already configured, you can check the [Set Up Your System](./setup/quick-setup.md) guide, pick your tools and configure them.
+> If your system is not already configured, you can check the [Set Up Your System](../setup/quick-setup.md) guide, pick your tools and configure them.
 
 ## Create New Project
 

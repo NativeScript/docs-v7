@@ -36,4 +36,4 @@ With this IDE, you can develop for Android and iOS in the most popular browsers 
 
 ## What's Next
 
-Create your first [Hello World app with AppBuilder](../hello-world/hello-world-appbuilder.md).
+Create your first [Hello World app with AppBuilder](../../hello-world/hello-world-appbuilder.md).

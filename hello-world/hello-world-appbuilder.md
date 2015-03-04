@@ -16,7 +16,7 @@ If the answer is yes, you are ready to create your first Hello World app with Na
 * [How To Create a View Model](#create-a-view-model)
 * [How To Style Your App](#style-your-app)
 
-> If your system is not already configured, you can check the [Set Up Your System](./setup/quick-setup.md) guide, pick your tools and configure them.
+> If your system is not already configured, you can check the [Set Up Your System](../setup/quick-setup.md) guide, pick your tools and configure them.
 
 ## Create Blank Project
 
@@ -256,7 +256,7 @@ On your device, your app should appear similar to the screen shots below.
 
 ## Style Your App
 
-You can style your app using CSS. In this version of NativeScript, you can only use a [subset of the CSS language](./styling.md).
+You can style your app using CSS. In this version of NativeScript, you can only use a [subset of the CSS language](../styling.md).
 
 For each page, NativeScript automatically loads and applies the `CSS` file with the same name as the `XML` file for the page. Under the hood, the runtime parses the CSS, evaluates the selectors and applies the properties to the style object of the selected view.
 
@@ -313,19 +313,19 @@ Congratulations! You have just completed your first app with NativeScript. Nativ
 
 Feel free to explore the [API reference](../ApiReference/) to see all of what NativeScript has to offer. You can also learn more about NativeScript features in the following articles.
 
-* [Getting Started](./getting-started.md)
-* [App: Management](./application-management.md)
-* [App: Architecture and Navigation](./navigation.md)
-* [App: Bind Data](./bindings.md)
-* [App: Handle Events](./events.md)
-* [App: Properties](./properties.md)
-* [App: Location](./location.md)
-* [UI: The Basics](./ui-with-xml.md)
-* [UI: Layouts](./layouts.md)
-* [UI: Widgets](widgets.md)
-* [UI: Dialogs](dialogs.md)
-* [UI: Gestures](gestures.md)
-* [UI: Styling](styling.md)
+* [Getting Started](../getting-started.md)
+* [App: Management](../application-management.md)
+* [App: Architecture and Navigation](../navigation.md)
+* [App: Bind Data](../bindings.md)
+* [App: Handle Events](../events.md)
+* [App: Properties](../properties.md)
+* [App: Location](../location.md)
+* [UI: The Basics](../ui-with-xml.md)
+* [UI: Layouts](../layouts.md)
+* [UI: Widgets](../modules.md)
+* [UI: Dialogs](../ui-dialogs.md)
+* [UI: Gestures](../gestures.md)
+* [UI: Styling](../styling.md)
 
 If you need even more native capabilities than the NativeScript modules provide, you can expand your development with any of the following options.
 
