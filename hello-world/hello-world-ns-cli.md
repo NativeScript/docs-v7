@@ -247,7 +247,7 @@ Feel free to explore the [API reference](../ApiReference/) to see all of what Na
 * [App: Location](../location.md)
 * [UI: The Basics](../ui-with-xml.md)
 * [UI: Layouts](../layouts.md)
-* [UI: Widgets](../ui-views.md)
+* [UI: Widgets](../modules.md)
 * [UI: Dialogs](../ui-dialogs.md)
 * [UI: Gestures](../gestures.md)
 * [UI: Styling](../styling.md)
