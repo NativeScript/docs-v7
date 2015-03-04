@@ -465,7 +465,7 @@ All [UI Gestures](gestures.md) can be defined in XML. For example:
 function myTapHandler(args) {
     var context = args.view.bindingContext;
 }
-exports.myTapHandler = pageLoaded;
+exports.myTapHandler = myTapHandler;
 ```
 ```TypeScript
 import gestures = require("ui/gestures");
