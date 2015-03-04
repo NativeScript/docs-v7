@@ -1,23 +1,41 @@
 ---
-nav-title: "Gestures"
+nav-title: Gestures in NativeScript 
 title: "UI: Gestures"
-description: "Gestures"
+description: Learn what are the touch gestures that NativeScript supports and how to make use of them.
 position: 16
 
 ---
+
 # Overview
-People use gestures—such as tap, drag, and pinch—to interact with apps and their devices. People generally expect gestures to work the same in all the apps they use. Gestures allow users to interact with your app by manipulating widgets on the screen.
-*View*, which is the base class for all NativeScript widgets, has an **observe** method which lets you subscribe to gestures recognized by the widget. The first parameter of the *observe* method is the type of gesture you are interested in and the second is a function which will be called each time this particular gesture is recognized. The function arguments contain additional information about the gesture if applicable. Calling the **observe** method will return a **GestureObserver** object which you will need later to stop detecting gestures.
+
+Gestures, such as tap, slide, and pinch, allow users to interact with your app by manipulating UI elements on the screen.
+
+In NativeScript, `View`&mdash;the base class for all NativeScript UI elements&mdash;has an `observe` method that lets you subscribe to gestures recognized by the UI element.
+
+As first parameter of the `observe` method you pass the type of gesture you are interested in. The second  parameter is a function that is called each time the specified gesture is recognized. The function arguments contain additional information about the gesture, if applicable. Calling the `observe` method returns a `GestureObserver` object that you will need later to stop detecting gestures.
 
 - **observe(** type _Number_, callback _Function_... **)** _GesturesObserver_
    - **type** - _Number_
    - **callback** - _Function_(args _GestureEventData_)
    - _**return**_ - _GesturesObserver_
 
+The next sections introduce you to all the gestures recognized by NativeScript:
+
+* [Tap](#tap)
+* [Double Tap](#double-tap)
+* [Long Press](#long-press)
+* [Swipe](#swipe)
+* [Pan](#pan)
+* [Pinch](#pinch)
+* [Rotation](#rotation)
+
+To learn how to stop receiving information about gestures, go to [Stop Detecting Gestures](#stop-detecting-gestures).
+
 ## Tap
+
 Triggers the default functionality for a given item.
 
-**Action: Press, lift**
+**Action: Briefly touch the screen**
 
 ``` JavaScript
 var label = new labelModule.Label();
@@ -33,9 +51,14 @@ var observer = label.observe(gestures.GestureTypes.Tap, function (args: gestures
 ```
 
 ## Double Tap
-Scales up a standard amount around the target with each repeated gesture until reaching maximum scale. For nested views, scales up the smallest targetable view, or returns it to its original scale. Also used as a secondary gesture for text selection.
 
-**Action: Two taps in quick succession**
+Scales up the object with a predefined percentage, centered around the double-tapped region. Keeping repeating the gesture continues to scale up until the maximum scale is reached.
+
+In nested views, the gesture scales up the smallest targetable view or returns it to its original scale. 
+
+Also used for text selection.
+
+**Action: Two taps in a quick succession**
 
 ``` JavaScript
 var label = new labelModule.Label();
@@ -51,9 +74,10 @@ var observer = label.observe(gestures.GestureTypes.DoubleTap, function (args: ge
 ```
 
 ## Long Press
-Enters data selection mode. Allows you to select one or more items in a view and act upon the data using a contextual action bar. Avoid using long press for showing contextual menus.
 
-**Action: Press, wait, lift**
+Enters data selection mode. Allows you to select one or more items in a view and act upon the data using a contextual action bar. Avoid using long press for displaying contextual menus.
+
+**Action: Press you finger against the screen for a few moments**
 
 ``` JavaScript
 var label = new labelModule.Label();
@@ -69,9 +93,10 @@ var observer = label.observe(gestures.GestureTypes.LongPress, function (args: ge
 ```
 
 ## Swipe
-Navigates between views in the same hierarchy. Swipes are quick and affect the screen even after the finger is picked up.
 
-**Action: Press, move, lift**
+Navigates between views in the same hierarchy. Swipes are quick and affect the screen even after the finger is lifted off the screen.
+
+**Action: Swiftly slide your finger across the screen**
 
 ``` JavaScript
 var label = new labelModule.Label();
@@ -87,9 +112,10 @@ var observer = label.observe(gestures.GestureTypes.Swipe, function (args: gestur
 ```
 
 ## Pan
-Scrolls overflowing content. Pans are slower and more precise, and the screen stops responding when the finger is picked up.
 
-**Action: Press, move, lift**
+Scrolls overflowing content. Pans are executed more slowly and allow for more precision and the screen stops responding as soon as the finger is lifted off it.
+
+**Action: Press your finger down and immediately start moving it around**
 
 ``` JavaScript
 var label = new labelModule.Label();
@@ -104,11 +130,12 @@ var observer = label.observe(gestures.GestureTypes.Pan, function (args: gestures
 ```
 
 ## Pinch
+
 Zooms into content or out of content.
 
-**Action: 2-finger press, move outwards, lift**
+**Action 1: Touch using two of your fingers, then move them towards each other**
+**Action 2: Touch using two of your fingers, then move them away of each other**
 
-**Action: 2-finger press, move inwards, lift**
 
 ``` JavaScript
 var label = new labelModule.Label();
@@ -124,9 +151,10 @@ var observer = label.observe(gestures.GestureTypes.Pinch, function (args: gestur
 ```
 
 ## Rotation
-Rotates content clockwise or counter clockwise.
 
-**Action: 2-finger press, draw circle with fingers, lift**
+Rotates content clockwise or counterclockwise.
+
+**Action: Touch using two of your fingers, then rotate them simultaneously left or right**
 
 ``` JavaScript
 var label = new labelModule.Label();
@@ -142,7 +170,8 @@ var observer = label.observe(gestures.GestureTypes.Rotation, function (args: ges
 ```
 
 ## Stop Detecting Gestures
-To stop receiving information about gestures, simply call the **disconnect** method of the observer object you received when you called the **observe** method.
+
+To stop receiving information about gestures, simply call the `disconnect` method of the observer object  that you received when you called the `observe` method.
 
 ``` JavaScript
 var label = new labelModule.Label();

@@ -1,13 +1,23 @@
 ---
-nav-title: "NativeScript Properties"
+nav-title: Properties in NativeScript 
 title: "App: Properties"
-description: "NativeScript Documentation: Properties"
+description: What is a property in NativeScript, what types of properties are available, and how to use them.
 position: 10
 ---
 
-#Properties
+# Properties
 
-Being a TypeScript framework NativeScript uses TypeScript properties. After transpilation these result in ES5 compliant JavaScript (with **setter** and **getter** methods) to support working with class members, thus ensuring readable and manageable code. Check the following example for more details:
+
+This article contents:
+
+* [Introduction](#introduction)
+* [Dependency Properties](#dependency-properties)
+* [Style properties](#style-properties)
+
+
+## Introduction
+
+Being a TypeScript framework, NativeScript uses TypeScript properties. After transpilation, these result in ECMAScript v.5 compliant JavaScript with setter and getter methods to support working with class members, thus ensuring readable and manageable code. The following code example demonstrates how the TypeScript is transformed to JavaScript:
 
 ``` JavaScript
 var MyClass = (function () {
@@ -17,7 +27,7 @@ var MyClass = (function () {
     get: function () {
       return this._myProperty;
     },
-    set: function (value) {
+    set: function (value) {2/25/2015 9:53:17 AM 
       this._myProperty = value;
     },
     enumerable: true,
@@ -40,26 +50,36 @@ export class MyClass {
 }
 ```
 
-Running the TypeScript compiler through the grunt script, that code will generate the JavaScript counterpart.
+The TypeScript transpiler is run by a grunt script.
 
-#Dependency properties
+NativeScript features two types of properties: **dependency properties** and **style properties**. Each type is described in the next sections.
 
-##Overview
-Dependency properties are special kind of properties that provides some more interesting and valuable, simplifying creation of a rich User Interface, features like:
 
-* Memory optimization - The creation of a rich UI custom control is connected to creating a huge number of properties. A very significant part of these properties are used with their default values. With the traditional approach we would end with a **private field** for every property. With the dependency property we only store the modified properties of an instance, while the default values are stored within the dependency property. Additionally, dependency properties are declared outside the class (static), which is another point of optimizing the memory footprint.
+## Dependency Properties
 
-* Value validation - By value validation we refer to a business logic validation (type validation is not the best selling point of JavaScript anyways). The validation is achieved via a special validation callback - a function that will be called with the **newValue** as parameter and should return true or false if a value is valid or not respectively.
+This sections includes these topics:
 
-* Change notification - There is another callback which will be called when the value of the property is changed. It will be called with an [EventData](./ApiReference/data/observable/EventData.md) as a parameter.
+* [Introduction](#introduction)
+* [Declaring a Dependency Property](#declaring-a-dependency-property)
+* [Adding a Changed Callback](#adding-a-changed-callback)
+* [Adding a Validation Callback](#adding-a-validation-callback)
+* [Adding a Validation Callback](#adding-a-validation-callback)
+* [Creating an Inheritable Dependency Property](#creating-an-inheritable-dependency-property)
 
-* Inheritance - One of the most important features of dependency properties is inheritance. By inheritance we refer to a special option for UI elements (such as Button) to get its property from a parent (on the visual tree) element. For example button could inherit its style (or theme) property value from the parent Window, Layout or other container. This gives the end user the option to dramatically change the look of the entire application by only changing a single setting (Window.theme).
+### Introduction
 
-##Working with dependency properties
+Dependency properties provide valuable features that simplify the creation of a rich User Interface (UI), including: 
 
-* Declaring a dependency property
+* Memory optimization&mdash;The creation of a rich custom UI control is bound to creating a huge number of properties most of which are used with default values. With the traditional approach you end up with a **private field** for every property. With dependency properties, you only store the instance properties that you modified. The default values are stored within the dependency property. Additionally, dependency properties are declared statically outside the class, which further helps optimize the memory footprint.
+* Value validation&mdash;Dependency properties offer business logic validation. It is implemented as a dedicated validation callback function that takes `newValue` as parameter and returns true or false if the value is valid or not respectively.
+* Change notification&mdash;Another callback function is called when the property value changes. It is called with an [EventData](./ApiReference/data/observable/EventData.md) as parameter.
+* Inheritance&mdash;One of the most important features of dependency properties is inheritance. It is implemented through a dedicated UI element (such as Button) option that allows it to get its property from a parent element in the visual tree. For example a button can inherit its style (or theme) property value from the parent Window, Layout, or another container. This gives you the option to dramatically change the look of your entire application by only changing a single setting (Window.theme).
 
-Only classes that derives from the [DependencyObservable](./ApiReference/ui/core/dependency-observable/DependencyObservable.md) class can have a dependency property. This class has some built-in methods that support the entire infrastructure of dependency properties.
+### Declaring a Dependency Property
+
+Only classes that derive from [DependencyObservable](./ApiReference/ui/core/dependency-observable/DependencyObservable.md) can have a dependency property. This class has built-in methods that support the entire infrastructure of dependency properties.
+
+The code that follows creates a bare-bones property which adds a static part compared to a standard property implementation.
 
 ``` JavaScript
 var dependencyObservable = require("ui/core/dependency-observable");
@@ -105,9 +125,11 @@ export class MyClass extends dependencyObservable.DependencyObservable {
 }
 ```
 
-With the above code we almost created a plain property with a different syntax (we only need to add the static part). With that, the following examples will demonstrate the addition of other features.
 
-* Adding a changed callback:
+
+### Adding a Changed Callback
+
+The following code example demonstrates how to implement change notification. It adds a callback function `onMyPropertyChanged` that prints a message about a change in a property.
 
 ``` JavaScript
 var dependencyObservable = require("ui/core/dependency-observable");
@@ -169,7 +191,11 @@ export class MyClass extends dependencyObservable.DependencyObservable {
 }
 ```
 
-* Adding a validation callback:
+### Adding a Validation Callback
+
+The following code example demonstrates how to implement Value validation. It adds a callback function `validateMyProperty` that takes the new property value and validates it using a simple rule.
+
+
 
 ``` JavaScript
 var dependencyObservable = require("ui/core/dependency-observable");
@@ -208,7 +234,9 @@ export var myPropertyProperty = new dependencyObservable.Property(
 ...
 ```
 
-* Creating an inheritable dependency property
+### Creating an Inheritable Dependency Property
+
+The following code example demonstrates how to create an inheritable dependency property:
 
 ``` JavaScript
 var dependencyObservable = require("ui/core/dependency-observable");
@@ -255,17 +283,26 @@ export class MyClass extends dependencyObservable.DependencyObservable {
 }
 ```
 
-> Creating an inheritable property is relatively simple (as seen in the previous example). However keep in mind that the **inheritance** magic only happens through the **visual tree**. Thus, setting such a property to a non visual element will not work as expected.
+> Creating an inheritable property is relatively simple (as seen in the example). However keep in mind that inheritance only occurs down the visual tree. Setting a property to a non-visual element does not allow for inheritance.
 
-#Style properties
+## Style Properties
 
-Maybe the best use case of inheritable properties is applying different styles and themes. The task is limited to setting a property (theme or style) of the most base container and every single UI component will inherit it via visual tree.
+This sections includes these topics:
 
-##Setting a style property
+* [Setting a Style Property](#setting-a-style-property)
+* [Creating a custom style property](#creating-a-custom-style-property)
 
-Setting style properties is no different than setting a regular property, just use the nested **style** object (within View class which means that every UI component has style).
+### Introduction
 
-* Via code
+Probably the best use case for inheritable properties is applying different styles and themes to UI components. You only need to set a property (theme or style) to the base-most container and every single UI component inherits it through the visual tree.
+
+### Setting a Style Property
+
+Setting a style property is similar to setting a regular property but you use the nested `style` object (that is a property of the View class which means that every UI component has style).
+
+#### Setting in Code
+
+To set a style property in your code:
 
 ``` JavaScript
 var color = require("color");
@@ -276,7 +313,9 @@ import color = require("color");
 someButton.style.backgroundColor = new color.Color("red");
 ```
 
-* Via css
+#### Setting in CSS
+
+To set a style property in your CSS:
 
 ``` JavaScript
 someButton.id = "someButton";
@@ -287,11 +326,11 @@ someButton.id = "someButton";
 someButton.css = "#someButtton {background-color: red}";
 ```
 
-##Creating a custom style property
+### Creating a Custom Style Property
 
-Even that setting a custom value to a style property is not a big deal, creating a custom style property is a little bit more complicated. The process of creation of a custom style property contains several easy steps.
+If you ever need to create a custom style property you can do so by taking these steps:
 
-* Declaring a custom style property
+#### Declare the Custom Style Property
 
 ``` JavaScript
 var styleProperty = require("ui/styling/style-property");
@@ -310,9 +349,14 @@ export var fontFamilyProperty = new styleProperty.Property("fontFamily", "font-f
     null);
 ```
 
-Careful reader will notice that style properties are special kind of properties. In fact **styleProperty.Property** class inherits from **depObservable.Property** class and adds the option for setting this property via css (second parameter in constructor). Second step is to register hadler (StylePropertyChangedHandler) object which will take care about synchronization of the property value with the underlying native object. In order to create such handler we should provide methods for **setting**, **resetting** and **getting the native**. First method will be used to set a value to the native object, reset method will be used to restore the default value of the native object and this default value is taken by the third method. For convinience this code could be wrapped in a class called **Styler**. NativeScript provides interface (for now only for better readability) called **Styler**. This interface has only one method to implement **registerHandlers** - here handlers for all properties defined in this Styler should be registered.
+Notice that style properties differ from normal properties. In fact the `styleProperty.Property` class inherits from `depObservable.Property` and adds the option for setting the property using CSS (the constructor's second parameter).
 
-* Register a handler for the custom property
+
+#### Register a Handler for the Custom Property
+
+The second step is to register a handler object (`StylePropertyChangedHandler`) that synchronizes the property value and the underlying native object. To create the handler you provide methods for **setting**, **resetting**, and **getting the native object**. The set method sets a value to the native object. The reset method restores the default value of the native object. The final method takes the default value.
+
+For convenience, the code can be wrapped in a class called `Styler` that inherits an interface (currently solely for better readability) also called `Styler`. It has a single method that implements `registerHandlers`, where you register handlers for all properties defined in Styler.
 
 ``` JavaScript
 var styles = require("ui/styling");
@@ -404,9 +448,9 @@ export class MyTextViewStyler implements styles.stylers.Styler {
 }
 ```
 
-The important part of this class is the call to the static method **styles.stylers.registerHandler** which registeres **styles.stylers.StylePropertyChangedHandler** with a property. The third optional parameter indicates which class should react on a change of the new property value (in fact every inheritor class will react on changes).
+Important part of this class is the call to the static method `styles.stylers.registerHandler` which registers `styles.stylers.StylePropertyChangedHandler` with a property. The third optional parameter indicates objects of what class is to react to a change in the property value. Derived classes also receive the same behaviour.
 
-* Using the new custom property
+#### Use the New Custom Property
 
 ``` JavaScript
 var stackLayoutDef = require("ui/layouts/stack-layout");
