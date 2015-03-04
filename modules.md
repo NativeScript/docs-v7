@@ -62,10 +62,10 @@ In your project, the files for each module reside in a dedicated subdirectory in
 
 #### Layouts
 
-+ [ui/layouts/stack-layout](./ApiReference/ui/stack-layout/HOW-TO.md): Provides the `StackLayout` class which lets you arrange the children of the layout in single line.
-+ [ui/layouts/grid-layout](./ApiReference/ui/grid-layout/HOW-TO.md): Provides the `GridLayout` class which lets you arrange the children of the layout in a flexible grid area with columns and rows.
-+ [ui/layouts/absolute-layout](./ApiReference/ui/absolute-layout/HOW-TO.md): Provides the `AbsoluteLayout` class which lets you arrange the children of the layout at arbitrary positions or draw them in multiple layers.
-+ [ui/layouts/wrap-layout](./ApiReference/ui/wrap-layout/HOW-TO.md): Provides the `WrapLayout` class which lets you arrange the children of the layout at sequential positions from left to right and then wrap the lines of children from top to bottom.
++ [ui/layouts/stack-layout](./ApiReference/ui/layouts/stack-layout/HOW-TO.md): Provides the `StackLayout` class which lets you arrange the children of the layout in single line.
++ [ui/layouts/grid-layout](./ApiReference/ui/layouts/grid-layout/HOW-TO.md): Provides the `GridLayout` class which lets you arrange the children of the layout in a flexible grid area with columns and rows.
++ [ui/layouts/absolute-layout](./ApiReference/ui/layouts/absolute-layout/HOW-TO.md): Provides the `AbsoluteLayout` class which lets you arrange the children of the layout at arbitrary positions or draw them in multiple layers.
++ [ui/layouts/wrap-layout](./ApiReference/ui/layouts/wrap-layout/HOW-TO.md): Provides the `WrapLayout` class which lets you arrange the children of the layout at sequential positions from left to right and then wrap the lines of children from top to bottom.
 
 #### Widgets
 

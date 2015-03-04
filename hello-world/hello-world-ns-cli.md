@@ -234,23 +234,23 @@ This time you should see an app that looks like this.
 
 ## Move Beyond the Basics
 
-Congratulations! You have just completed your first app with NativeScript. NativeScript does a whole lot, and you're just getting started. As a next step, try adding a delete button to your lists app, or tying the list to a backend using the NativeScript [http module](./ApiReference/http/HOW-TO.md).
+Congratulations! You have just completed your first app with NativeScript. NativeScript does a whole lot, and you're just getting started. As a next step, try adding a delete button to your lists app, or tying the list to a backend using the NativeScript [http module](../ApiReference/http/HOW-TO.md).
 
-Feel free to explore the [API reference](ApiReference/) to see all of what NativeScript has to offer. You can also learn more about NativeScript features in the following articles.
+Feel free to explore the [API reference](../ApiReference/) to see all of what NativeScript has to offer. You can also learn more about NativeScript features in the following articles.
 
-* [Getting Started](./getting-started.md)
-* [App: Management](./application-management.md)
-* [App: Architecture and Navigation](./navigation.md)
-* [App: Bind Data](./bindings.md)
-* [App: Handle Events](./events.md)
-* [App: Properties](./properties.md)
-* [App: Location](./location.md)
-* [UI: The Basics](./ui-with-xml.md)
-* [UI: Layouts](./layouts.md)
-* [UI: Widgets](widgets.md)
-* [UI: Dialogs](dialogs.md)
-* [UI: Gestures](gestures.md)
-* [UI: Styling](styling.md)
+* [Getting Started](../getting-started.md)
+* [App: Management](../application-management.md)
+* [App: Architecture and Navigation](../navigation.md)
+* [App: Bind Data](../bindings.md)
+* [App: Handle Events](../events.md)
+* [App: Properties](../properties.md)
+* [App: Location](../location.md)
+* [UI: The Basics](../ui-with-xml.md)
+* [UI: Layouts](../layouts.md)
+* [UI: Widgets](../ui-views.md)
+* [UI: Dialogs](../ui-dialogs.md)
+* [UI: Gestures](../gestures.md)
+* [UI: Styling](../styling.md)
 
 If you need even more native capabilities than the NativeScript modules provide, you can expand your development with any of the following options.
 

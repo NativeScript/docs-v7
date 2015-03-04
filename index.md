@@ -39,7 +39,7 @@ Start exploring the documentation resources for NativeScript.
 * [UI: The Basics](ui-with-xml.md)
 * [UI: Layouts](layouts.md)
 * [UI: Widgets](widgets.md)
-* [UI: Dialogs](dialogs.md)
+* [UI: Dialogs](ui-dialogs.md)
 * [UI: Gestures](gestures.md)
 * [UI: Styling](styling.md)
 

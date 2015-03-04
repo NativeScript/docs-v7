@@ -309,9 +309,9 @@ On your device, your app should appear similar to the screen shots below.
 
 ## Move Beyond the Basics
 
-Congratulations! You have just completed your first app with NativeScript. NativeScript does a whole lot, and you're just getting started. As a next step, try adding a delete button to your lists app, or tying the list to a backend using the NativeScript [http module](./ApiReference/http/HOW-TO.md).
+Congratulations! You have just completed your first app with NativeScript. NativeScript does a whole lot, and you're just getting started. As a next step, try adding a delete button to your lists app, or tying the list to a backend using the NativeScript [http module](../ApiReference/http/HOW-TO.md).
 
-Feel free to explore the [API reference](ApiReference/) to see all of what NativeScript has to offer. You can also learn more about NativeScript features in the following articles.
+Feel free to explore the [API reference](../ApiReference/) to see all of what NativeScript has to offer. You can also learn more about NativeScript features in the following articles.
 
 * [Getting Started](./getting-started.md)
 * [App: Management](./application-management.md)
