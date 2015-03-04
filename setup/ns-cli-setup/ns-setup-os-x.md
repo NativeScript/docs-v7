@@ -20,7 +20,7 @@ On OS X systems, you can use the NativeScript CLI to develop Android and iOS app
 * Node.js 0.10.26 or a later stable official release except Node.js 0.10.34
 * (Optional) Homebrew to simplify the installation of dependencies
 * For iOS development
-    * Xcode 6 or later
+    * Latest Xcode
     * Command-line tools for Xcode
     * (Optional) Mono to be able to integrate third-party libraries in your project
 * For Android development
