@@ -78,14 +78,14 @@ The four margin properties (`marginTop`, `marginRight`, `marginBottom` and `marg
 When you set margins through XML, you can choose between the following approaches.
 
 * **Set one value**: Provide a single value which will be applied on all sides of the view.
-* **Set two values**: Provide two values. The first value is applied to the top and the right side, the second value is applied to the bottom and the left side (in that order).
+* **Set two values**: Provide two values. The first value is applied to the top side, the second value is applied to the right side. Next, the first value is applied to the bottom and the second value - the left side (in that order).
 * **Set four values**: Provide four values for each margin. The first value is applied to the top, the second value is applied to the right, the third value is applied to the bottom and the fourth value is applied to the left side (in that order).
 
 ## Layouts
 
 `Layout` is the base class for all views that provide positioning of child elements. 
 
-You can use inherited [Layout][Layout] classes to position elements. They accept the base properties of [View][View] such as `width`, `height`, `minWidth`, alignments and others. In addition, `layout` exposes four padding properties which affect the size of the layout. Derived classes expose additional properties that enable most user interface scenarios.
+You can use the various layout containers to position elements. They evaluate the base properties of [View][View] such as `width`, `height`, `minWidth` and alignments, and expose additional properties for positioning child views (such as the four paddings).
 
 ### Layout Paddings
 
@@ -94,7 +94,7 @@ The four padding properties (`paddingTop`, `paddingRight`, `paddingBottom` and `
 When set paddings through XML, you can choose between the following approaches. 
 
 * **Set one value**: Provide a single value which will be applied on all sides of the view.
-* **Set two values**: Provide two values. The first value is applied to the top and the right side, the second value is applied to the bottom and the left side (in that order).
+* **Set two values**: Provide two values. The first value is applied to the top side, the second value is applied to the right side. Next, the first value is applied to the bottom and the second value - the left side (in that order).
 * **Set four values**: Provide four values for each padding. The first value is applied to the top, the second value is applied to the right, the third value is applied to the bottom and the fourth value is applied to the left side (in that order).
 
 ### Predefined Layouts
