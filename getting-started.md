@@ -16,15 +16,17 @@ Once you have your app idea, you can get started in three simple steps.
 ### 1. Choose your tools and **[set up your system](setup/quick-setup.md)**.
 
 If you are familiar with the Cordova CLI or if you want to develop and build your apps locally and free of charge, you can set up your system with the **NativeScript CLI**.
-	* [Windows setup](setup/ns-cli-setup/ns-setup-win.md)
-	* [OS X setup](setup/ns-cli-setup/ns-setup-os-x.md)
-	* [Linux setup](setup/ns-cli-setup/ns-setup-linux.md)
+	
+* [Windows setup](setup/ns-cli-setup/ns-setup-win.md)
+* [OS X setup](setup/ns-cli-setup/ns-setup-os-x.md)
+* [Linux setup](setup/ns-cli-setup/ns-setup-linux.md)
 
 If you prefer to concentrate on development and build your apps with a third-party build service, you can use the [Telerik AppBuilder tools](setup/ab-setup/ab-web-setup.md).
-	* [In-browser IDE](setup/ab-setup/ab-web-setup.md)
-	* [Windows IDE](setup/ab-setup/ab-win-setup.md)
-	* [Extension for Visual Studio](setup/ab-setup/ab-vse-setup.md)
-	* [CLI](setup/ab-setup/ab-cli-setup.md)
+	
+* [In-browser IDE](setup/ab-setup/ab-web-setup.md)
+* [Windows IDE](setup/ab-setup/ab-win-setup.md)
+* [Extension for Visual Studio](setup/ab-setup/ab-vse-setup.md)
+* [CLI](setup/ab-setup/ab-cli-setup.md)
 
 ### 2. Go through the **Hello World** tutorial for your preferred tool set.
 
