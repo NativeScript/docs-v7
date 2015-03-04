@@ -454,6 +454,26 @@ export function buttonTap(args: observable.EventData) {
     }
 }
 ```
+## Gestures
+All [UI Gestures](gestures.md) can be defined in XML. For example:
+```XML
+<Page>
+  <Label text="Some text" tap="myTapHandler" />
+</Page>
+```
+```JavaScript
+function myTapHandler(args) {
+    var context = args.view.bindingContext;
+}
+exports.myTapHandler = pageLoaded;
+```
+```TypeScript
+import gestures = require("ui/gestures");
+
+export function myTapHandler(args: gestures.GestureEventData) {
+    var context = args.view.bindingContext;
+}
+```
 
 ## Bindings
 
