@@ -46,5 +46,5 @@ Start exploring the documentation resources for NativeScript.
 If you need even more native capabilities than the NativeScript modules provide, you can expand your development with any of the following options.
 
 * [iOS-Specific JavaScript Development](runtimes/ios/README.md)
-* [Android-Specific JavaScript Development](runtimes/android/README.md)
+* [Android-Specific JavaScript Development](runtimes/android/overview.md)
 * [Development with Native Libraries](https://github.com/NativeScript/nativescript-cli)
