@@ -238,8 +238,8 @@ Finally, you can bind the user interface of the home page to the view model you 
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
   <StackLayout>
     <Label text="Tap the button" style="horizontal-align: center"/>
-    <Button text="TAP" tap="{{ tapAction }}"/>
-    <Label text="{{ message }}" textWrap="true" style="horizontal-align: center"/>
+    {%raw%}<Button text="TAP" tap="{{ tapAction }}"/>
+    <Label text="{{ message }}" textWrap="true" style="horizontal-align: center"/>{%endraw%}
   </StackLayout>
 </Page>
 ```
@@ -291,8 +291,8 @@ Finally, add the `cssClass` attribute to your user interface elements in `main-p
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
   <StackLayout>
     <Label text="Tap the button" cssClass="title"/>
-    <Button text="TAP" cssClass="button" tap="{{ tapAction }}"/>
-    <Label text="{{ message }}" cssClass="message" textWrap="true"/>
+    {%raw%}<Button text="TAP" cssClass="button" tap="{{ tapAction }}"/>
+    <Label text="{{ message }}" cssClass="message" textWrap="true"/>{%endraw%}
   </StackLayout>
 </Page>
 ```

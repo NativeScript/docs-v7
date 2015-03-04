@@ -117,13 +117,13 @@ NativeScript uses an XML structure to define UI components. Your app has one pag
 <Page loaded="onPageLoaded">
     <GridLayout rows="auto, *">
         <StackLayout orientation="horizontal" row="0">
-            <TextField width="200" text="{{ task }}" hint="Enter a task" id="task" />
+            {%raw%}<TextField width="200" text="{{ task }}" hint="Enter a task" id="task" />
             <Button text="Add" tap="add"></Button>
         </StackLayout>
 
         <ListView items="{{ tasks }}" row="1">
             <ListView.itemTemplate>
-                <Label text="{{ name }}" />
+                <Label text="{{ name }}" />{%endraw%}
             </ListView.itemTemplate>
         </ListView>
     </GridLayout>
@@ -134,7 +134,7 @@ Take note of a few things here. The first is that this uses two of [NativeScript
 
 The `StackLayout` is simpler — it stacks things horizontally or vertically. In this example you override the default orientation, vertical, to display a `TextField` and a `Button` next to each other.
 
-Did you notice the double curly brace syntax used in the XML (e.g. `text="{{ name }}"`)? This configures NativeScript's data binding syntax. Let's see how it works.
+Did you notice the double curly brace syntax used in the XML (e.g. `text="{%raw%}{{ name }}{%endraw%}"`)? This configures NativeScript's data binding syntax. Let's see how it works.
 
 > **TIP**: For more on what you can do with UIs in NativeScript, check out [UI: The Basics](../ui-with-xml.md) article.
 
@@ -169,7 +169,7 @@ exports.add = function() {
 
 The first thing to notice here is the use of the `exports` keyword. If you are familiar with Node.js, you have probably noticed that NativeScript modules adhere to the [CommonJS](http://wiki.commonjs.org/wiki/CommonJS) spec. If you are not familiar with Node.js, all you need to know is that the `exports` keyword exposes a JavaScript module's public API. In this case, the `exports` keyword exposes two functions to this page's view: `onPageLoaded` and `add`. The view's `<Page>` binds to the `onPageLoaded` function with `<Page loaded="onPageLoaded">`, and the view's `<Button>` binds to the `add` function with `<Button tap="add"></Button>`.
 
-The other thing to note is the `page.bindingContext = pageData` assignment in the `onPageLoaded` function. This line sets the `pageData` `Observable` object as the *binding context* of this page. Simply put, this line means that properties of the `pageData` object are accessible in the UI components using the `{{ }}` syntax. For example, the page's `<ListView>` binds to the `pageData` object's `tasks` property using `<ListView items="{{ tasks }}">`.
+The other thing to note is the `page.bindingContext = pageData` assignment in the `onPageLoaded` function. This line sets the `pageData` `Observable` object as the *binding context* of this page. Simply put, this line means that properties of the `pageData` object are accessible in the UI components using the `{%raw%}{{ }}{%endraw%}` syntax. For example, the page's `<ListView>` binds to the `pageData` object's `tasks` property using `{%raw%}<ListView items="{{ tasks }}">{%endraw%}`.
 
 The biggest benefit of this MVVM approach is that NativeScript keeps your user interface up-to-date as your data changes. For example, consider the first line of the `add()` function:
 
@@ -177,7 +177,7 @@ The biggest benefit of this MVVM approach is that NativeScript keeps your user i
 tasks.push({ name: pageData.get("task") });
 ```
 
-Because the `tasks` array is set up as an `ObservableArray` and because the `tasks` array is bound to the page's `<ListView>` (`<ListView items="{{ tasks }}">`), this call adds the user-provided value to the list shown on the screen automatically.
+Because the `tasks` array is set up as an `ObservableArray` and because the `tasks` array is bound to the page's `<ListView>` (`{%raw%}<ListView items="{{ tasks }}">{%endraw%}`), this call adds the user-provided value to the list shown on the screen automatically.
 
 This code is not only clean, it also helps to decouple your XML UI declaration from your JavaScript logic. In this case, your JavaScript does not need to know which UI components are bound to this data; it just manages JavaScript objects and lets the XML take care of the rest. NativeScript fully embraces this separation-of-concerns-based approach to building apps and this approach extends to how you style your apps.
 
