@@ -7,7 +7,7 @@ position: 7
 
 # Architecture and Navigation
 
-NativeScript apps consist of pages which represent the separate application screens. Pages are instances of the [`page`](ApiReference/ui/page/Page.md) class of the [`Page`](ApiReference/ui/page/README.md) module. To navigate between pages, you can use the methods of the [`Frame`](ApiReference/ui/frame/Frame.md) class of the [`Frame`](ApiReference/ui/frame/README.md) sub-module of the UI module.
+NativeScript apps consist of pages which represent the separate application screens. Pages are instances of the [`page`](ApiReference/ui/page/Page.md) class of the [`Page`](ApiReference/ui/page/README.md) module. To navigate between pages, you can use the methods of the [`Frame`](ApiReference/ui/frame/Frame.md) class of the [`Frame`](ApiReference/ui/frame/README.md) module.
 
 > **TIP:** Instead of multiple pages, you can have a single page with a [tab view](ApiReference/ui/tab-view/README.md) and different user interfaces for each tab.
 
@@ -16,7 +16,7 @@ NativeScript apps consist of pages which represent the separate application scre
     * [Define Page](#define-page)
     * [Set Home Page](#set-home-page)
 * [Navigation](#navigation)
-    * [Set Topmost Frame](#topmost-frame)
+    * [The Topmost Frame](#the-topmost-frame)
     * [Navigate by Page Name](#navigate-by-page-name)
     * [Navigate with Factory Function](#navigate-with-factory-function)
     * [Navigate and Pass Context](#navigate-and-pass-context)
@@ -116,9 +116,13 @@ The [`Frame`](ApiReference/ui/frame/Frame.md) class represents the logical unit 
 
 To navigate between pages, you can use the [`navigate`](ApiReference/ui/frame/README.md) method of the topmost frame instance.
 
-### Set Topmost Frame
+In addition, each `Page` instance carries information about the frame object which navigated to it in the `frame` property. This lets you navigate with the `frame` property as well. 
 
-The topmost frame is the frame at the root level. Before you can perform any navigation in your app, you need to set the topmost frame.
+### The Topmost Frame
+
+The topmost frame is the frame at the root level. When navigating inside your app, you can do it with the topmost frame.
+
+You can get the topmost frame with the `topmost()` method of the Frame module.
 
 ``` JavaScript
 var frameModule = require("ui/frame");
@@ -131,7 +135,7 @@ var topmost = frameModule.topmost();
 
 ### Navigate by Page Name
 
-You can specify the page to which you want to navigate by its file name.
+You can navigate to the topmost frame of a page specified by its file name.
 
 ``` JavaScript
 topmost.navigate("app/details-page");
