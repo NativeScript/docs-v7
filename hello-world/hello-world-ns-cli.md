@@ -130,13 +130,13 @@ NativeScript uses an XML structure to define UI components. Your app has one pag
 </Page>
 ```
 
-Take note of a few things here. The first is that this uses two of [NativeScript's layout mechanisms](./layouts.md): `GridLayout` and `StackLayout`. The `GridLayout` provides an elegant way to divide an area of the screen into rows and columns. In this case you divide the screen into two rows: a `StackLayout` at the top and a `ListView` at the bottom.
+Take note of a few things here. The first is that this uses two of [NativeScript's layout mechanisms](../layouts.md): `GridLayout` and `StackLayout`. The `GridLayout` provides an elegant way to divide an area of the screen into rows and columns. In this case you divide the screen into two rows: a `StackLayout` at the top and a `ListView` at the bottom.
 
 The `StackLayout` is simpler — it stacks things horizontally or vertically. In this example you override the default orientation, vertical, to display a `TextField` and a `Button` next to each other.
 
 Did you notice the double curly brace syntax used in the XML (e.g. `text="{{ name }}"`)? This configures NativeScript's data binding syntax. Let's see how it works.
 
-> **TIP**: For more on what you can do with UIs in NativeScript, check out [UI: The Basics](./ui-with-xml.md) article.
+> **TIP**: For more on what you can do with UIs in NativeScript, check out [UI: The Basics](../ui-with-xml.md) article.
 
 ### 2. Create the view model
 
@@ -181,11 +181,11 @@ Because the `tasks` array is set up as an `ObservableArray` and because the `tas
 
 This code is not only clean, it also helps to decouple your XML UI declaration from your JavaScript logic. In this case, your JavaScript does not need to know which UI components are bound to this data; it just manages JavaScript objects and lets the XML take care of the rest. NativeScript fully embraces this separation-of-concerns-based approach to building apps and this approach extends to how you style your apps.
 
-> **TIP**: For more details on how NativeScript's data binding works, check out our [Data Binding](bindings.md) documentation.
+> **TIP**: For more details on how NativeScript's data binding works, check out our [Data Binding](../bindings.md) documentation.
 
 ### 3. Style your app
 
-Now that you have a small functioning app, let's see how you can change the looks of your app. Styling in NativeScript is done with a [subset of the CSS syntax](./styling.md).
+Now that you have a small functioning app, let's see how you can change the looks of your app. Styling in NativeScript is done with a [subset of the CSS syntax](../styling.md).
 
 For each page, the NativeScript runtime automatically loads and applies any CSS file that has the same name as the XML file for the page. Under the hood, the runtime parses the CSS, evaluates the selectors and applies the properties to the style object of the selected view.
 
@@ -200,7 +200,7 @@ textfield {
 }
 ```
 
-> **TIP**: For a more in-depth look at styling NativeScript apps, including a list of support CSS properties, check out our [styling](styling.md) article.
+> **TIP**: For a more in-depth look at styling NativeScript apps, including a list of support CSS properties, check out our [styling](../styling.md) article.
 
 ### 4. The finishing touches
 
@@ -254,8 +254,8 @@ Feel free to explore the [API reference](../ApiReference/) to see all of what Na
 
 If you need even more native capabilities than the NativeScript modules provide, you can expand your development with any of the following options.
 
-* [iOS-Specific JavaScript Development](runtimes/ios/README.md)
-* [Android-Specific JavaScript Development](runtimes/android/README.md)
+* [iOS-Specific JavaScript Development](../runtimes/ios/README.md)
+* [Android-Specific JavaScript Development](../runtimes/android/overview.md)
 * [Development with Native Libraries](https://github.com/NativeScript/nativescript-cli)
 
 [1]: ./setup/ab-setup
