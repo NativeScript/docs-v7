@@ -1,6 +1,6 @@
 ---
 nav-title: Data Binding in NativeScript
-title: App: Data Binding
+title: "App: Data Binding"
 description: How to bind a data source to a GUI control.
 position: 8
 ---
