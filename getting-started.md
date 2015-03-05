@@ -13,9 +13,9 @@ To get started, you need JavaScript or TypeScript knowledge to implement your bu
 
 Once you have your app idea, you can get started in a few minutes.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rsCT5fpES4Q?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/rsCT5fpES4Q?rel=0" frameborder="0" allowfullscreen></iframe>
 
-Basically, to get started, you need to go through these simple steps. You can find even more details at the referenced pages of the documentation.
+You can find more details about each step of the setup and project creation process below and at the referenced pages of the documentation.
 
 ### 1. Choose your tools and **[set up your system](setup/quick-setup.md)**.
 
