@@ -27,7 +27,7 @@ var MyClass = (function () {
     get: function () {
       return this._myProperty;
     },
-    set: function (value) {2/25/2015 9:53:17 AM 
+    set: function (value) {
       this._myProperty = value;
     },
     enumerable: true,
