@@ -37,19 +37,6 @@ array.setItem(1, 5);
 var array = new observableArrayModule.ObservableArray([1, 2, 3]);
 var result = array.concat([4, 5, 6]);
 ```
-### Use concat() method to append array to ObservableArray and handle "change" event.
-``` JavaScript
-var array = new observableArrayModule.ObservableArray([1, 2, 3]);
-array.on(observableArrayModule.knownEvents.change, function (args) {
-    // Argument (args) is ChangedData<T>.
-    // args.eventName is "change".
-    // args.action is "add".
-    // args.index is equal to the array length.
-    // args.removed.length is 0.
-    // args.addedCount is equal to number of added items.
-});
-array.concat([4, 5, 6]);
-```
 ### Use join() method to convert ObservableArray to comma separated string.
 ``` JavaScript
 var array = new observableArrayModule.ObservableArray([1, 2, 3]);
