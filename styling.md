@@ -10,10 +10,9 @@ position: 17
 This article includes the following topics:
 
 * [Introduction](#introduction)
+* [Applying CSS Styles](#applying-css-styles)
 * [Supported Selectors](#supported-selectors)
-* [Adding a CSS Selector](#adding-a-css-selector)
 * [Supported Properties](#supported-properties)
-
 
 ## Introduction
 
@@ -21,14 +20,76 @@ You change the looks and appearance of views (elements) in a NativeScript applic
 
 Similarly to the [DOM Style Object](http://www.w3schools.com/jsref/dom_obj_style.asp), each View instance exposes a **style** property, which holds all the style properties for the view. When the view is displayed, all its style properties are applied to the underlying native widget.
 
-To apply a CSS style, you set the `css` property of the application page. Under the hood, your CSS code is parsed, selectors are evaluated, and properties are applied to the `style` object of each selected view.
+## Applying CSS Styles
+The CSS styles can be set on 3 different 'levels':
 
-Example:
+* [Application-wide CSS](#application-wide-css) - will be applied on every page in the application
+* [Page CSS](#page-css) - will be applied to the UI views in the page
+* [Inline CSS](#inline-css) - will be applied directly to a UI view
 
-```CSS
-var pages = require("ui/pages");
-var page = new pages.Page();
+When the CSS is set in any of the above ways the CSS is parsed, selectors are evaluated and properties are applied to the `style` object of each selected view.
+
+### Application-Wide CSS
+On application startup, the CSS from `app.css` file (if such exists) will be loaded and it will be used across all pages in the application. It is a convenient place to store styles that will be used in multiple pages. 
+The name file from which the application-wide CSS is loaded can be changed. This should be done before the application is started (usually in the app.js or app.ts file).
+
+``` JavaScript
+var application = require("application");
+application.mainModule = "main-page";
+application.cssFile = "style.css";
+
+application.start();
+```
+``` TypeScript
+import application = require("application");
+application.mainModule = "main-page";
+application.cssFile = "style.css";
+
+application.start();
+```
+> The path to the CSS file is relative to the application root folder.
+
+### Page CSS
+When the XML declaration of a page is loaded the CSS file with the same name (if such exists) will be automatically loaded and applied to the page. The CSS can also be set manually using the `css` property of the page:
+
+```JavaScript
 page.css = "button { color: red }";
+```
+```TypeScript
+page.css = "button { color: red }";
+```
+
+There are two options for adding additional CSS to a page.
+
+#### Adding CSS From String
+
+This snippet adds a new styles to the current set of styles. This is quite useful when you need to add a small CSS chunk to an element (one example is for testing purposes).
+
+``` JavaScript
+page.addCss("button {background-color: blue}");
+```
+``` TypeScript
+page.addCss("button {background-color: blue}");
+```
+
+#### Adding CSS From File
+
+This snippet again adds new CSS styles to the current set. However, this methods reads them from a file. This is useful for organizing styles in files and reuse them across multiple pages.
+
+``` JavaScript
+page.addCssFile(cssFileName);
+```
+``` TypeScript
+page.addCssFile(cssFileName);
+```
+
+> The path to the CSS file is relative to the application root folder.
+
+### Inline CSS
+Similarly to HTML, CSS can be defined inline to view in the XML markup:
+
+```XML
+<Button text="inline style" style="background-color: green;"/>
 ```
 
 ## Supported Selectors
@@ -89,60 +150,6 @@ State selectors (a.k.a [Pseudo-classes selectors](https://developer.mozilla.org/
 ```CSS
 button:pressed { background-color: blue }
 ```
-
-## Adding a CSS Selector
-
-There are several options for adding a CSS selector to an already existing selector:
-
-* [Adding valid CSS inline](#adding-valid-css-inline)
-* [Adding Valid CSS From a File](#adding-valid-css-from-a-file)
-* [Adding Application-Wide CSS](#adding-application-wide-css)
-
-### Adding Valid CSS Inline
- 
-This snippet adds a new selector to the current set of selectors. This is quite useful when you need to add a small CSS chunk to an element (one example is for testing purposes).
-
-``` JavaScript
-page.addCss("button {background-color: blue}");
-```
-``` TypeScript
-page.addCss("button {background-color: blue}");
-```
-
-> The cssFileName parameter is a file path relative to the application root folder.
-
-### Adding Valid CSS From a File
-	
-This snippet again adds new CSS selectors to the current set. However, this methods reads them from a file.
-
-``` JavaScript
-page.addCssFile(cssFileName);
-```
-``` TypeScript
-page.addCssFile(cssFileName);
-```
-
-> The path to the CSS file is relative to the application root folder.
-
-### Adding Application-Wide CSS
- 
-Another very helpful feature is the ability to set application level CSS which will be applied before each page's CSS.
-
-``` JavaScript
-var application = require("application");
-application.mainModule = "main-page";
-application.cssFile = "style.css";
-
-application.start();
-```
-``` TypeScript
-import application = require("application");
-application.mainModule = "main-page";
-application.cssFile = "style.css";
-
-application.start();
-```
-> The path to the CSS file is relative to the application root folder.
 
 ## Supported Properties
 
