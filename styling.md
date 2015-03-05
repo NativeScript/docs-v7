@@ -57,7 +57,11 @@ The class is set using the `cssClass` property of the view.
 ```CSS
 .title { font-size: 32 }
 ```
-```JS
+```JavaScript
+var label = new labelModule.Label();
+label.cssClass = "title"
+```
+```TypeScript
 var label = new labelModule.Label();
 label.cssClass = "title"
 ```
@@ -70,7 +74,11 @@ The id is set using the `id` property of the view.
 ```CSS
 #login-button { background-color: blue }
 ```
-```JS
+```JavaScript
+var btn = new buttonModule.Button();
+btn.id = "login-button"
+```
+```TypeScript
 var btn = new buttonModule.Button();
 btn.id = "login-button"
 ```
@@ -140,7 +148,7 @@ application.start();
 
 This is the list of the properties that can be set in CSS or through the style property of each View:
 
-| CSS Property    | JS Property        | Description |
+| CSS Property    | JavaScript Property | Description |
 |:----------------|:-------------------|:----------------|
 | color           | color              | Sets a solid-color value to the matched view’s foreground. |
 | background-color | backgroundColor    | Sets a solid-color value to the matched view’s background. |
@@ -149,9 +157,18 @@ This is the list of the properties that can be set in CSS or through the style p
 | vertical-align  | verticalAlignment  | Sets the vertical alignment of the current view within its parent. Possible values: "top", "center", "bottom", "stretch". |
 | horizontal-align | horizontalAlignment| Sets the horizontal alignment of the current view within its parent. Possible values: "left", "center", "right", "stretch". |
 | margin          | margin             | Sets the margin of the view within its parent. |
+| margin-top      | marginTop          | Sets the top margin of the view within its parent. |
+| margin-right    | marginRight        | Sets the right margin of the view within its parent. |
+| margin-bottom   | marginBottom       | Sets the bottom margin of the view within its parent. |
+| margin-left     | marginLeft         | Sets the left margin of the view within its parent. |
 | width           | width              | Sets the view width. |
 | height          | height             | Sets the view height. |
 | min-width       | minWidth           | Sets the minimal view width. |
 | min-height      | minHeight          | Sets the minimal view height. |
+| padding         | padding            | Sets the distance between the boundaries of layout container and its children. |
+| padding-top     | paddingTop         | Sets the top padding of a layout container. |
+| padding-right   | paddingRight       | Sets the right padding of a layout container. |
+| padding-bottom  | paddingBottom      | Sets the bottom padding of a layout container. |
+| padding-left    | paddingLeft        | Sets the left padding of a layout container. |
 | visibility      | visibility         | Sets the view visibility. Possible values: "visible" or "collapsed". |
 | opacity         | opacity            | Sets the view opacity. The value is in the [0, 1] range. |
