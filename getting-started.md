@@ -11,7 +11,11 @@ NativeScript strips the complexity from native development both in terms of requ
 
 To get started, you need JavaScript or TypeScript knowledge to implement your business logic, XML and CSS knowledge to design your UI and an idea for a mobile app. You do not need Java or Objective-C knowledge.
 
-Once you have your app idea, you can get started in three simple steps.
+Once you have your app idea, you can get started in a few minutes.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rsCT5fpES4Q?rel=0" frameborder="0" allowfullscreen></iframe>
+
+Basically, to get started, you need to go through these simple steps. You can find even more details at the referenced pages of the documentation.
 
 ### 1. Choose your tools and **[set up your system](setup/quick-setup.md)**.
 
