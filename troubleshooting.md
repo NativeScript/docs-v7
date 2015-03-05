@@ -1,5 +1,5 @@
 ﻿---
-nav-title: Troubleshooting
+nav-title: "Troubleshooting"
 title: "Troubleshooting"
 description: Troubleshooting NativeScript errors.
 position: 18
@@ -43,5 +43,5 @@ We are using the [opener package](https://www.npmjs.com/package/opener) to open 
 ### Problem
 First time an Android application is started, it may take several seconds to load and there is no visual indication that the application is alive and loading. This will happen each time the application is redeployed.
 
-###Workaround
+### Workaround
 A second start will be much faster. We are aware of this limitation and we are already working on a prototype, which improves things significantly.
