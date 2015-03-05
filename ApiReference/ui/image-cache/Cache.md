@@ -39,8 +39,3 @@ Represents a class that stores handles image download requests and caches the al
    - **key** - _String_
  - **clear()**  
      Removes all the previously cached images.
- - **_downloadCore(** request [_DownloadRequest_](../../ui/image-cache/DownloadRequest.md) **)**
-   - **request** - [_DownloadRequest_](../../ui/image-cache/DownloadRequest.md)
- - **_onDownloadCompleted(** key _String_, result [_ImageSource_](../../image-source/ImageSource.md) **)**
-   - **key** - _String_
-   - **result** - [_ImageSource_](../../image-source/ImageSource.md)

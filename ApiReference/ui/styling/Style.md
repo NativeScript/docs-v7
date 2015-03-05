@@ -52,10 +52,3 @@ Represents as style object containing all the style properties for a particular 
   Gets or sets the visibility style property.
  - **opacity** - _Number_.    
   Gets or sets the opacity style property.
-
-##### Instance Functions
- - **_resetCssValues()**
- - **_syncNativeProperties()**
- - **_inheritStyleProperty(** property [_Property_](../../ui/core/dependency-observable/Property.md) **)**
-   - **property** - [_Property_](../../ui/core/dependency-observable/Property.md)
- - **_inheritStyleProperties()**

@@ -26,9 +26,3 @@ Represents an extended DependencyObservable object that supports data-binding.
      Removes the existing binding (if any) for the specified property.
    - **property** - _String_  
      The name of the property to unbind.
- - **_updateTwoWayBinding(** propertyName _String_, value _Object_ **)**
-   - **propertyName** - _String_
-   - **value** - _Object_
- - **_onBindingContextChanged(** oldValue _Object_, newValue _Object_ **)**
-   - **oldValue** - _Object_
-   - **newValue** - _Object_

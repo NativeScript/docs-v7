@@ -38,8 +38,6 @@ Represents a logical unit for navigation (inside Frame).
      A method called after navigated from the page.
    - **isBackNavigation** - _Boolean_  
      - True if the Page is being navigated from using the Frame.goBack() method, false otherwise.
- - **_getStyleScope()** _Object_
-   - _**return**_ - _Object_
  - **on(** event _String_, callback _Function_... **)**
    - **event** - _String_
    - **callback** - _Function_(data [_EventData_](../../data/observable/EventData.md))
