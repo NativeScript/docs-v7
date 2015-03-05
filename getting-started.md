@@ -42,3 +42,6 @@ This quick start development guide will introduce you to the basic architecture 
 ### 3. Explore the **[modules overview](modules.md)** and the **[API Reference](ApiReference/application/README.md)**.
 
 The extensive overview and API reference will introduce to the how-tos of NativeScript development. You will learn how to tap into the native capabilities that you want to implement inside your app.
+
+# Remarks
+If you hit some unexpected behavior please check the [Troubleshooting](./troubleshooting.md) article.
