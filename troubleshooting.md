@@ -1,7 +1,7 @@
 ﻿---
 nav-title: Troubleshooting
 title: Troubleshooting
-description: Troubleshooting NativeScript errors.
+description: Troubleshooting NativeScript errors
 position: 18
 ---
 
