@@ -5,3 +5,4 @@
 [submodule "runtimes/ios"]
 	path = runtimes/ios
 	url = git@github.com:NativeScript/ios-runtime-docs.git
+	branch = production
