@@ -21,17 +21,19 @@ You change the looks and appearance of views (elements) in a NativeScript applic
 Similarly to the [DOM Style Object](http://www.w3schools.com/jsref/dom_obj_style.asp), each View instance exposes a **style** property, which holds all the style properties for the view. When the view is displayed, all its style properties are applied to the underlying native widget.
 
 ## Applying CSS Styles
-The CSS styles can be set on 3 different 'levels':
+The CSS styles can be set on 3 different levels:
 
-* [Application-wide CSS](#application-wide-css) - will be applied on every page in the application
-* [Page CSS](#page-css) - will be applied to the UI views in the page
-* [Inline CSS](#inline-css) - will be applied directly to a UI view
+* [Application-wide CSS](#application-wide-css)&mdash;applies to every application page
+* [PageSpecific CSS](#page-specific-css)&mdash;applies to the page's UI views
+* [Inline CSS](#inline-css)&mdash;applies directly to a UI view
 
-When the CSS is set in any of the above ways the CSS is parsed, selectors are evaluated and properties are applied to the `style` object of each selected view.
+Regardless of what level you apply the CSS on, it is parsed, its selectors are evaluated, and its properties are applied to the `style` object of each selected view.
 
 ### Application-Wide CSS
-On application startup, the CSS from `app.css` file (if such exists) will be loaded and it will be used across all pages in the application. It is a convenient place to store styles that will be used in multiple pages. 
-The name file from which the application-wide CSS is loaded can be changed. This should be done before the application is started (usually in the app.js or app.ts file).
+
+When the  application starts, NativeScript checks if the file `app.css` exists. If it does, any CSS styles that it contains are loaded and used across all applicaion pages. This file is a convenient place to store styles that will be used on multiple pages.
+
+You can change the name of the file from which the application-wide CSS is loaded. You need to do the change before the application is started, uusually in the app.js or app.ts file as shown below:
 
 ``` JavaScript
 var application = require("application");
@@ -49,8 +51,11 @@ application.start();
 ```
 > The path to the CSS file is relative to the application root folder.
 
-### Page CSS
-When the XML declaration of a page is loaded the CSS file with the same name (if such exists) will be automatically loaded and applied to the page. The CSS can also be set manually using the `css` property of the page:
+### Page-Specific CSS
+
+When the page's XML declaration file is loaded, NativeScript looks for a CSS file with the same name (if such exists), reads any CSS styles that it finds and automatically loads and applies them to the page.
+
+You can override CSS styles specified in the file by using the page's `css` property:
 
 ```JavaScript
 page.css = "button { color: red }";
@@ -59,11 +64,11 @@ page.css = "button { color: red }";
 page.css = "button { color: red }";
 ```
 
-There are two options for adding additional CSS to a page.
+After you have set the default CSS for the page, you can add to it using two methods: adding CSS from a string and adding CSS from a file.
 
-#### Adding CSS From String
+#### Adding CSS From a String
 
-This snippet adds a new styles to the current set of styles. This is quite useful when you need to add a small CSS chunk to an element (one example is for testing purposes).
+This snippet adds a new style to the current set of styles. This is quite useful when you need to add a small CSS chunk to an element (one example is for testing purposes):
 
 ``` JavaScript
 page.addCss("button {background-color: blue}");
@@ -72,9 +77,9 @@ page.addCss("button {background-color: blue}");
 page.addCss("button {background-color: blue}");
 ```
 
-#### Adding CSS From File
+#### Adding CSS From a File
 
-This snippet again adds new CSS styles to the current set. However, this methods reads them from a file. This is useful for organizing styles in files and reuse them across multiple pages.
+This snippet again adds new CSS styles to the current set. However, this method reads them from a file. It is useful for organizing styles in files and reusing them across multiple pages.
 
 ``` JavaScript
 page.addCssFile(cssFileName);
@@ -86,7 +91,8 @@ page.addCssFile(cssFileName);
 > The path to the CSS file is relative to the application root folder.
 
 ### Inline CSS
-Similarly to HTML, CSS can be defined inline to view in the XML markup:
+
+Similarly to HTML, CSS can be defined inline for a UI view in the XML markup:
 
 ```XML
 <Button text="inline style" style="background-color: green;"/>
