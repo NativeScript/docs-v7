@@ -1,6 +1,7 @@
 [submodule "runtimes/android"]
 	path = runtimes/android
 	url = git@github.com:NativeScript/android-runtime-docs.git
+	branch = production
 [submodule "runtimes/ios"]
 	path = runtimes/ios
 	url = git@github.com:NativeScript/ios-runtime-docs.git
