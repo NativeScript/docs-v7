@@ -7,16 +7,11 @@ description: "Examples for using stack-layout"
 ``` JavaScript
 var stackLayout = new layout.StackLayout();
  ```
-### Add child view to layout
-``` JavaScript
-var btn = new button.Button();
-stackLayout.addChild(btn);
- ```
-### Remove child view from layout
-``` JavaScript
-stackLayout.removeChild(btn);
-```
-### Change layout orientation to Horizontal
-``` JavaScript
-stackLayout.orientation = enums.Orientation.horizontal;
+### Declaring a StackLayout.
+```XML
+<Page>
+  <StackLayout orientation="horizontal">
+    <Label text="This is Label 1" />
+  </StackLayout>
+</Page>
 ```

@@ -8,9 +8,17 @@ Using a DockLayout requires the DockLayout module.
 ``` JavaScript
 var dockModule = require("ui/layouts/dock-layout");
 ```
-Other frequently used modules when working with a DockLayout include:
-``` JavaScript
-var enums = require("ui/enums");
+### Declaring a DockLayout.
+```XML
+<Page>
+ <DockLayout stretchLastChild="true" >
+   <Button dock="left" text = "left" style ="background-color: red; margin: 5;"/ >/ >
+   <Button dock="top" text = "top" style ="background-color: lightblue; margin: 5;"/ >
+   <Button dock="right" text = "right" style ="background-color: lightgreen; margin: 5;"/ >
+   <Button dock="bottom" text = "bottom" style ="background-color: lightpink; margin: 5;"/ >
+   <Button text="fill" style ="background-color: wheat; margin: 5;"/ >
+ < / DockLayout >
+< / Page>
 ```
 ## Create DockLayout
 ``` JavaScript
