@@ -33,7 +33,7 @@ Regardless of what level you apply the CSS on, it is parsed, its selectors are e
 
 When the  application starts, NativeScript checks if the file `app.css` exists. If it does, any CSS styles that it contains are loaded and used across all applicaion pages. This file is a convenient place to store styles that will be used on multiple pages.
 
-You can change the name of the file from which the application-wide CSS is loaded. You need to do the change before the application is started, uusually in the app.js or app.ts file as shown below:
+You can change the name of the file from which the application-wide CSS is loaded. You need to do the change before the application is started, usually in the app.js or app.ts file as shown below:
 
 ``` JavaScript
 var application = require("application");
