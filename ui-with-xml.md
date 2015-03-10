@@ -278,7 +278,7 @@ You can arrange the user interface components in your page in a flexible grid ar
 
 ##### Example
 
-This sample `main-page.xml` shows how to arrange labels inside a table by setting their position by row or column. stack.
+This sample `main-page.xml` shows how to arrange labels inside a table by setting their position by row or column.
 
 ```XML
 <Page>
