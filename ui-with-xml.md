@@ -198,16 +198,16 @@ The following sample `main-page.xml` contains two tabs with labels.
 <Page loaded="pageLoaded">
   <TabView id="tabView1">
     <TabView.items>
-      <TabEntry title="Tab 1">
-        <TabEntry.view>
+      <TabViewItem title="Tab 1">
+        <TabViewItem.view>
           <Label text="This is Label in Tab 1" />
-        </TabEntry.view>
-      </TabEntry>
-      <TabEntry title="Tab 2">
-        <TabEntry.view>
+        </TabViewItem.view>
+      </TabViewItem>
+      <TabViewItem title="Tab 2">
+        <TabViewItem.view>
           <Label text="This is Label in Tab 2" />
-        </TabEntry.view>
-      </TabEntry>
+        </TabViewItem.view>
+      </TabViewItem>
     </TabView.items>
   </TabView>
 </Page>
