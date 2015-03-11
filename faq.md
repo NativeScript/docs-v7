@@ -36,11 +36,15 @@ exports.pageLoaded = function(args) {
     if (applicationModule.ios) {
         page.ios.title = "My App";
 
+        // Get access to the native iOS UINavigationController and UINavigationBar
         var controller = frameModule.topmost().ios.controller;
         var navBar = controller.navigationBar;
 
+        // Set the UINavigationBar's tintColor and barStyle
         navBar.tintColor = new colorModule.Color("#FFFF00").ios;
         navBar.barStyle = UIBarStyle.UIBarStyleBlack;
+
+        // Call the UINavigationController's setNavigationBarHidden method
         controller.navigationBarHidden = false;
     }
 };
