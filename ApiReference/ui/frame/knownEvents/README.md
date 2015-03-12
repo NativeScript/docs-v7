@@ -8,4 +8,4 @@ Encapsulates the events raised by the Frame object.
 
 Namespace | Description
 ------|------------
-[android](../../../../ui/frame/knownEvents/android/) | Encapsulates the events raised by the android part of the Frame.
+[android](../../../ui/frame/knownEvents/android/) | Encapsulates the events raised by the android part of the Frame.
