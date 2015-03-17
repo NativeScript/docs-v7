@@ -13,11 +13,11 @@ function _createListPicker() {
     ``` JavaScript
     var listPicker = new listPickerModule.ListPicker();
     ```
-### Binding listPicker.items
+## Binding listPicker.items
 ``` JavaScript
 listPicker.items = [1, 2, 3];
 ```
-### Selecting an item programmatically
+## Selecting an item programmatically
 ``` JavaScript
 listPicker.selectedIndex = 9;
 ```

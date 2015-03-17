@@ -7,9 +7,14 @@ description: "Examples for using DatePicker"
 Using a DatePicker requires the "ui/date-picker" module.
 ``` JavaScript
 var datePickerModule = require("ui/date-picker");
-function _createDatePicker() {
-    <snippet module="ui/date-picker" title="DatePicker">
-    ## Creating a DatePicker
-    ``` JavaScript
-    var datePicker = new datePickerModule.DatePicker();
-    ```
+```
+## Creating a DatePicker
+``` JavaScript
+var datePicker = new datePickerModule.DatePicker();
+```
+## Configuring a DatePicker
+``` JavaScript
+datePicker.year = 1980;
+datePicker.month = 2;
+datePicker.day = 9;
+```
