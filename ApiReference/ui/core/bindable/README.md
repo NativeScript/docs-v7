@@ -17,3 +17,4 @@ Class | Description
 Object | Description
 ------|------------
 [BindingOptions](../../../ui/core/bindable/BindingOptions.md) | The options object used in the Bindable.bind method.
+[ValueConverter](../../../ui/core/bindable/ValueConverter.md) | An interface which defines methods need to create binding value converter.

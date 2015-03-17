@@ -16,4 +16,4 @@ Class | Description
 
 Object | Description
 ------|------------
-[TabEntry](../../ui/tab-view/TabEntry.md) | Represents a tab view entry.
+[TabViewItem](../../ui/tab-view/TabViewItem.md) | Represents a tab view entry.

@@ -18,9 +18,9 @@ Represents a class that provides functionality for loading and streching image(s
   Gets the native [android widget](http://developer.android.com/reference/android/widget/ImageView.html) that represents the user interface for this component. Valid only when running on Android OS.
  - **ios** - _UIImageView_.    
   Gets the native iOS [UIImageView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImageView_Class/) that represents the user interface for this component. Valid only when running on iOS.
- - **source** - [_ImageSource_](../../image-source/ImageSource.md).    
+ - **imageSource** - [_ImageSource_](../../image-source/ImageSource.md).    
   Gets or sets the image source of the image.
- - **url** - _String_.    
+ - **src** - _String_.    
   Gets or sets the URL of the image.
  - **isLoading** - _Boolean_.    
   Gets a value indicating if the image is currently loading

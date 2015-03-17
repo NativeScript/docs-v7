@@ -32,7 +32,7 @@ imageSource.fromUrl("http://www.google.com/images/errors/logo_sm_2.png").then(fu
 var img = imageSource.fromFile(imagePath);
 var folder = fs.knownFolders.documents();
 var path = fs.path.join(folder.path, "Test.png");
-var saved = img.saveToFile(path, imageSource.ImageFormat.PNG);
+var saved = img.saveToFile(path, enums.ImageFormat.png);
 ```
 ### Load image from a local file
 ``` JavaScript

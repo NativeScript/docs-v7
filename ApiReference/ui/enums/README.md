@@ -25,3 +25,5 @@ Namespace | Description
 [UpdateTextTrigger](../../ui/enums/UpdateTextTrigger/) | Represents an enumeration specifying when the text property of an EditableTextBase will be updated.
 [Accuracy](../../ui/enums/Accuracy/) | Specifies common accuracy values.
 [Dock](../../ui/enums/Dock/) | Specifies the Dock position of a child element that is inside a DockLayout.
+[AutocapitalizationType](../../ui/enums/AutocapitalizationType/) | Represents the auto-capitalization style for a text input.
+[ImageFormat](../../ui/enums/ImageFormat/) | Defines the recognized image formats.

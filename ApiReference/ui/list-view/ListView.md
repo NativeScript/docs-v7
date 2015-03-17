@@ -27,6 +27,8 @@ Represents a view that shows items in a vertically scrolling list.
 The items property can be set to an array or an object defining length and getItem(index) method.
  - **itemTemplate** - _String_.    
   Gets or set the item template of the ListView. 
+ - **separatorColor** - [_Color_](../../color/Color.md).    
+  Gets or set the items separator line color of the ListView. 
 
 ##### Instance Functions
  - **refresh()**  

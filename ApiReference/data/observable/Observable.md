@@ -53,3 +53,12 @@ Observable is used when you want to be notified when a change occurs. Use on/off
    - **eventName** - _String_  
      The name of the event to check for.
    - _**return**_ - _Boolean_
+ - **_setCore(** data [_PropertyChangeData_](../../data/observable/PropertyChangeData.md) **)**  
+     This method is intended to be overriden by inheritors to provide additional implementation.
+   - **data** - [_PropertyChangeData_](../../data/observable/PropertyChangeData.md)
+ - **_createPropertyChangeData(** name _String_, value _Object_ **)** [_PropertyChangeData_](../../data/observable/PropertyChangeData.md)
+   - **name** - _String_
+   - **value** - _Object_
+   - _**return**_ - [_PropertyChangeData_](../../data/observable/PropertyChangeData.md)
+ - **_emit(** eventNames _String_ **)**
+   - **eventNames** - _String_

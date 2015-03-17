@@ -9,16 +9,16 @@ description: "Examples for using TabView"
 <Page>
  <TabView>
    <TabView.items>
-     <TabEntry title="Tab 1">
-       <TabEntry.view>
+     <TabViewItem title="Tab 1">
+       <TabViewItem.view>
           <Label text="Label in Tab1" />
-       </TabEntry.view>
-     </TabEntry>
-     <TabEntry title="Tab 2">
-       <TabEntry.view>
+       </TabViewItem.view>
+     </TabViewItem>
+     <TabViewItem title="Tab 2">
+       <TabViewItem.view>
           <Label text="Label in Tab2" />
-       </TabEntry.view>
-     </TabEntry>
+       </TabViewItem.view>
+     </TabViewItem>
    </TabView.items>
  </TabView>
 </Page>
