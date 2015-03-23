@@ -50,7 +50,7 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
         JAVA_HOME=Path to the jdk* install folder
         ```
 
-        For example: `JAVA_HOME=C:\Program Files\Java\jdk1.8.0_11`
+        For example: `SET JAVA_HOME=C:\Program Files\Java\jdk1.8.0_11`
 1. Install [Apache Ant 1.8](http://ant.apache.org/bindownload.cgi) or a later stable official release.
     1. In the command prompt, run the following command.
 
