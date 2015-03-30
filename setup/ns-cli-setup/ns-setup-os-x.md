@@ -80,7 +80,7 @@ On OS X systems, you can use the NativeScript CLI to develop Android and iOS app
             Path to the platform-tools subdirectory in the Android SDK installation directory
             ```
 
-            For example: Run the following command `export PATH=${PATH}:/Applications/Android Studio.app/sdk/tools:/Applications/Android Studio.app/sdk/platform-tools`
+            For example: Run the following command `export PATH="$PATH:/usr/local/Cellar/android-sdk/24/tools:/usr/local/Cellar/android-sdk/24/platform-tools"`
         1. Run the following command.
 
             ```
