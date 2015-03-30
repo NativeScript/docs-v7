@@ -42,7 +42,7 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
     1. In the command prompt, run the following command. 
         
         ```Shell
-        choco install java
+        choco install jdk8
         ```
     1. If not present, create the following environment variable.
 
