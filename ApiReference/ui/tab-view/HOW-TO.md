@@ -26,12 +26,11 @@ description: "Examples for using TabView"
 Using a TabView requires the "ui/tab-view" module.
 ``` JavaScript
 var tabViewModule = require("ui/tab-view");
-function _createTabView() {
-    <snippet module="ui/tab-view" title="TabView">
-    ## Creating a TabView
-    ``` JavaScript
-    var tabView = new tabViewModule.TabView();
-    ```
+```
+## Creating a TabView
+``` JavaScript
+var tabView = new tabViewModule.TabView();
+```
 ### Binding TabView.items
 ``` JavaScript
 var items = [];
