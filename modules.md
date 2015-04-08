@@ -87,3 +87,4 @@ In your project, the files for each module reside in a dedicated subdirectory in
 + [ui/list-picker](./ApiReference/ui/list-picker/HOW-TO.md): Provides the `ListPicker` class which represents a standard list picker component.
 + [ui/date-picker](./ApiReference/ui/date-picker/HOW-TO.md): Provides the `DatePicker` class which represents a standard date picker component.
 + [ui/time-picker](./ApiReference/ui/time-picker/HOW-TO.md): Provides the `TimePicker` class which represents a standard time picker component.
++ [ui/placeholder](./placeholder.md): Provides the `Placeholder` class which lets you add a native widget to the visual tree.
