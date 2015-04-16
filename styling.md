@@ -107,7 +107,6 @@ NativeScript supports a subset of the [CSS selector syntax](http://www.w3schools
 * [Type Selector](#type-selector)
 * [Class Selector](#class-selector)
 * [ID Selector](#id-selector)
-* [State Selector](#state-selector)
 
 ### Type Selector
 Like [CSS element selectors](http://www.w3schools.com/cssref/sel_element.asp), type selectors in NativeScript select all views of a given type. Type selectors are case-insensitive, so you can use both `button` and `Button`.
@@ -148,13 +147,6 @@ btn.id = "login-button"
 ```TypeScript
 var btn = new buttonModule.Button();
 btn.id = "login-button"
-```
-
-### State Selector
-State selectors (a.k.a [Pseudo-classes selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)) select views that are in a specified state.
-
-```CSS
-button:pressed { background-color: blue }
 ```
 
 ## Supported Properties
