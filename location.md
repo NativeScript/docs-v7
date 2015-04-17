@@ -2,7 +2,7 @@
 nav-title: Location in NativeScript
 title: "App: Location"
 description: How to work with geographical location data in NativeScript.
-position: 11
+position: 9
 ---
 
 # Location

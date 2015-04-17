@@ -2,7 +2,7 @@
 nav-title: Application Management in NativeScript
 title: "App: Management"
 description: Learn how to manage the life cycle of NativeScript applications from application start to storing user-defined settings.
-position: 6
+position: 4
 ---
 
 # Application Management

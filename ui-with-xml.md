@@ -2,7 +2,7 @@
 nav-title: The User Interface in NativeScript
 title: "UI: The Basics"
 description: Learn the basic principles of designing a user interface with NativeScript. In NativeScript, you can design the UI using XML and CSS.
-position: 12
+position: 11
 ---
 
 # The User Interface

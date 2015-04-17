@@ -36,6 +36,7 @@ Start exploring the documentation resources for NativeScript.
 * [App: Handle Events](events.md)
 * [App: Properties](properties.md)
 * [App: Location](location.md)
+* [App: Camera](camera.md)
 * [UI: The Basics](ui-with-xml.md)
 * [UI: Layouts](layouts.md)
 * [UI: Widgets](modules.md)
