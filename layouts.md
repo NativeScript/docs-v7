@@ -2,7 +2,7 @@
 nav-title: User Interface Layouts in NativeScript
 title: "UI: Layouts"
 description: Learn the basic principles of designing and positioning the UI elements inside your apps.
-position: 13
+position: 12
 ---
 
 # User Interface Layouts
