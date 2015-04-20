@@ -105,7 +105,7 @@ Naturally, you need a code behind file to write the function body (the code behi
 function onTap(eventData) {
   console.log("Hello World!");
 }
-exports.listViewItemTap = listViewItemTap;
+exports.onTap = onTap;
 ```
 ``` TypeScript
 export function onTap(eventData) {

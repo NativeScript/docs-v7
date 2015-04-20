@@ -157,7 +157,7 @@ Your application pages (or screens) are instances of the [`page`](ApiReference/u
 
 ##### Example
 
-You can execute some business login when your page loads using the `pageLoaded` event.
+You can execute some business logic when your page loads using the `pageLoaded` event.
 
 You need to set the `loaded` attribute for your page in your `main-page.xml`.
 
