@@ -412,8 +412,8 @@ The custom component in `app/xml-declaration/MyControl.xml` defines button and a
 
 ```XML
 <StackLayout>
-  <Button tap="buttonTap" />
   <Label id="Label1" />
+  <Button text="Click!" tap="buttonTap" /> 
 </StackLayout>
 ```
 
