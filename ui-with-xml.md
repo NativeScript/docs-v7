@@ -333,16 +333,12 @@ You can define your own XML namespaces to create custom user interface component
 
 #### Example: Code-Only Custom Component
 
-This sample `main-page.xml` uses two custom components defined in separate declarations in the `xml-declaration` directory. The custom controls are wrapped horizontally.
+This sample `main-page.xml` is using custom component defined in separate declarations in the `xml-declaration/mymodule` directory. 
 
 ```XML
 <Page
-    xmlns:customControls="app/xml-declaration/mymodule"
-    xmlns:customOtherControls="app/xml-declaration/mymodulewithxml">
-  <WrapLayout>
-    <customControls:MyControl />
-    <customOtherControls:MyControl />
-  </WrapLayout>
+    xmlns:customControls="app/xml-declaration/mymodule">
+  <customControls:MyControl />
 </Page>
 ```
 
@@ -401,25 +397,27 @@ export class MyControl extends stackLayout.StackLayout {
 }
 ```
 
-### Example: Custom XML-Based Component 
+### Example: Custom XML-Based Component with code file
 
-This sample `main-page.xml` uses a custom component defined in a `app/xml-declaration/mymodulewithxml.js` or `app/xml-declaration/mymodulewithxml.ts` file. This page contains a label and button.
+This sample `main-page.xml` uses a custom component defined in a `app/xml-declaration/mymodulewithxml/MyControl.xml`file together with `app/xml-declaration/mymodulewithxml/MyControl.js` or `app/xml-declaration/mymodulewithxml/MyControl.ts` file. 
 
 ```XML
 <Page
-    xmlns:customControls="app/xml-declaration/mymodule"
     xmlns:customOtherControls="app/xml-declaration/mymodulewithxml">
-  <WrapLayout>
     <customOtherControls:MyControl />
-  </WrapLayout>
-  <StackLayout>
-    <Label id="Label1" />
-    <Button text="Tap!" tap="buttonTap" />
-  </StackLayout>
 </Page>
 ```
 
-The custom component in `app/xml-declaration/mymodulewithxml.js` or `app/xml-declaration/mymodulewithxml.ts` exports the `buttonTap` function which changes the label on every tap of the button in `main-page.xml`.
+The custom component in `app/xml-declaration/MyControl.xml` defines button and a label and `buttonTap` function located in the code file which changes the label on every tap of the button in `MyControl.xml`.
+
+```XML
+<Page>
+    <StackLayout>
+      <Button tap="buttonTap" />
+      <Label id="Label1" />
+    </StackLayout>
+</Page>
+```
 
 ```JavaScript
 var view = require("ui/core/view");
