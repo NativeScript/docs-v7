@@ -411,12 +411,10 @@ This sample `main-page.xml` uses a custom component defined in a `app/xml-declar
 The custom component in `app/xml-declaration/MyControl.xml` defines button and a label and `buttonTap` function located in the code file which changes the label on every tap of the button in `MyControl.xml`.
 
 ```XML
-<Page>
-    <StackLayout>
-      <Button tap="buttonTap" />
-      <Label id="Label1" />
-    </StackLayout>
-</Page>
+<StackLayout>
+  <Button tap="buttonTap" />
+  <Label id="Label1" />
+</StackLayout>
 ```
 
 ```JavaScript
