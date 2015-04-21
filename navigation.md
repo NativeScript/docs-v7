@@ -21,7 +21,6 @@ NativeScript apps consist of pages which represent the separate application scre
     * [Navigate with Factory Function](#navigate-with-factory-function)
     * [Navigate and Pass Context](#navigate-and-pass-context)
     * [Navigate Back](#navigate-back)
-* [Alternative App Architecture](#alternative-app-architecture)
 
 ## Page Management
 
