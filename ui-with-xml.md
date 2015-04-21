@@ -23,6 +23,8 @@ The user interface of NativeScript mobile apps consists of pages. Typically, the
     * [WrapLayout](#wraplayout)
     * [AbsoluteLayout](#absolutelayout)
   * [Custom Components](#custom-components)
+    * [Code only component](#example-code-only-custom-component)
+    * [XML-Based component with code file](#example-custom-xml-based-component-with-code-file)
 * [Bindings](#bindings)
   * [Property Binding](#property-binding)
   * [Event Binding](#event-binding)
