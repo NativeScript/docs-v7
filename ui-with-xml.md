@@ -399,7 +399,7 @@ export class MyControl extends stackLayout.StackLayout {
 
 ### Example: Custom XML-Based Component with code file
 
-This sample `main-page.xml` uses a custom component defined in a `app/xml-declaration/mymodulewithxml/MyControl.xml`file together with `app/xml-declaration/mymodulewithxml/MyControl.js` or `app/xml-declaration/mymodulewithxml/MyControl.ts` file. 
+This sample `main-page.xml` uses a custom component defined in a `app/xml-declaration/mymodulewithxml/MyControl.xml`file together with `app/xml-declaration/mymodulewithxml/MyControl.js` or `app/xml-declaration/mymodulewithxml/MyControl.ts` code file. 
 
 ```XML
 <Page
