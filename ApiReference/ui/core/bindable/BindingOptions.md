@@ -13,3 +13,5 @@ The options object used in the Bindable.bind method.
   The property name of the target object (that is the Bindable instance) to bind the source property to.
  - **twoWay** - _(optional)_ - _Boolean_.    
   True to establish a two-way binding, false otherwise. A two-way binding will synchronize both the source and the target property values regardless of which one initiated the change.
+ - **expression** - _(optional)_ - _String_.    
+  An expression used for calculations (convertions) based on the value of the property.

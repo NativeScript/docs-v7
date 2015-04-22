@@ -52,3 +52,5 @@ Since there are a couple of  ways to specify a Page instance through an entry, t
     2. entry.create()
    - **entry** - [_NavigationEntry_](../../ui/frame/NavigationEntry.md)  
      The NavigationEntry instance.
+ - **_processNavigationQueue(** page [_Page_](../../ui/page/Page.md) **)**
+   - **page** - [_Page_](../../ui/page/Page.md)

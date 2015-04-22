@@ -2,7 +2,7 @@
 nav-title: The User Interface in NativeScript
 title: "UI: The Basics"
 description: Learn the basic principles of designing a user interface with NativeScript. In NativeScript, you can design the UI using XML and CSS.
-position: 12
+position: 11
 ---
 
 # The User Interface
@@ -23,6 +23,8 @@ The user interface of NativeScript mobile apps consists of pages. Typically, the
     * [WrapLayout](#wraplayout)
     * [AbsoluteLayout](#absolutelayout)
   * [Custom Components](#custom-components)
+    * [Code only component](#example-code-only-custom-component)
+    * [XML-Based component with code file](#example-custom-xml-based-component-with-code-file)
 * [Bindings](#bindings)
   * [Property Binding](#property-binding)
   * [Event Binding](#event-binding)
@@ -157,7 +159,7 @@ Your application pages (or screens) are instances of the [`page`](ApiReference/u
 
 ##### Example
 
-You can execute some business login when your page loads using the `pageLoaded` event.
+You can execute some business logic when your page loads using the `pageLoaded` event.
 
 You need to set the `loaded` attribute for your page in your `main-page.xml`.
 
@@ -198,16 +200,16 @@ The following sample `main-page.xml` contains two tabs with labels.
 <Page loaded="pageLoaded">
   <TabView id="tabView1">
     <TabView.items>
-      <TabEntry title="Tab 1">
-        <TabEntry.view>
+      <TabViewItem title="Tab 1">
+        <TabViewItem.view>
           <Label text="This is Label in Tab 1" />
-        </TabEntry.view>
-      </TabEntry>
-      <TabEntry title="Tab 2">
-        <TabEntry.view>
+        </TabViewItem.view>
+      </TabViewItem>
+      <TabViewItem title="Tab 2">
+        <TabViewItem.view>
           <Label text="This is Label in Tab 2" />
-        </TabEntry.view>
-      </TabEntry>
+        </TabViewItem.view>
+      </TabViewItem>
     </TabView.items>
   </TabView>
 </Page>
@@ -278,7 +280,7 @@ You can arrange the user interface components in your page in a flexible grid ar
 
 ##### Example
 
-This sample `main-page.xml` shows how to arrange labels inside a table by setting their position by row or column. stack.
+This sample `main-page.xml` shows how to arrange labels inside a table by setting their position by row or column.
 
 ```XML
 <Page>
@@ -333,16 +335,12 @@ You can define your own XML namespaces to create custom user interface component
 
 #### Example: Code-Only Custom Component
 
-This sample `main-page.xml` uses two custom components defined in separate declarations in the `xml-declaration` directory. The custom controls are wrapped horizontally.
+This sample `main-page.xml` is using custom component defined in separate declarations in the `xml-declaration/mymodule` directory. 
 
 ```XML
 <Page
-    xmlns:customControls="app/xml-declaration/mymodule"
-    xmlns:customOtherControls="app/xml-declaration/mymodulewithxml">
-  <WrapLayout>
-    <customControls:MyControl />
-    <customOtherControls:MyControl />
-  </WrapLayout>
+    xmlns:customControls="app/xml-declaration/mymodule">
+  <customControls:MyControl />
 </Page>
 ```
 
@@ -401,25 +399,25 @@ export class MyControl extends stackLayout.StackLayout {
 }
 ```
 
-### Example: Custom XML-Based Component 
+### Example: Custom XML-Based Component with code file
 
-This sample `main-page.xml` uses a custom component defined in a `app/xml-declaration/mymodulewithxml.js` or `app/xml-declaration/mymodulewithxml.ts` file. This page contains a label and button.
+This sample `main-page.xml` uses a custom component defined in a `app/xml-declaration/mymodulewithxml/MyControl.xml`file together with `app/xml-declaration/mymodulewithxml/MyControl.js` or `app/xml-declaration/mymodulewithxml/MyControl.ts` code file. 
 
 ```XML
 <Page
-    xmlns:customControls="app/xml-declaration/mymodule"
     xmlns:customOtherControls="app/xml-declaration/mymodulewithxml">
-  <WrapLayout>
     <customOtherControls:MyControl />
-  </WrapLayout>
-  <StackLayout>
-    <Label id="Label1" />
-    <Button text="Tap!" tap="buttonTap" />
-  </StackLayout>
 </Page>
 ```
 
-The custom component in `app/xml-declaration/mymodulewithxml.js` or `app/xml-declaration/mymodulewithxml.ts` exports the `buttonTap` function which changes the label on every tap of the button in `main-page.xml`.
+The custom component in `app/xml-declaration/MyControl.xml` defines button and a label and `buttonTap` function located in the code file which changes the label on every tap of the button in `MyControl.xml`.
+
+```XML
+<StackLayout>
+  <Label id="Label1" />
+  <Button text="Click!" tap="buttonTap" /> 
+</StackLayout>
+```
 
 ```JavaScript
 var view = require("ui/core/view");

@@ -1,48 +1,52 @@
 ---
 nav-title: Troubleshooting
 title: Troubleshooting
-description: Troubleshooting NativeScript errors
-position: 18
+description: Known issues with NativeScript and their workarounds
+position: 17
 ---
 
-# Issues/Limitations
-Following is a list with known issues, most of which may be easily worked-around, in the current Beta (0.9.0) version of NativeScript.
+# Known Issues and Limitations
+
+NativeScript {{site.current-version}} is known to have the following issues and limitations.
+
+* [CLI](#cli)
+* [User Experience](#user-experience)
 
 ## CLI
 
 ### Problem
-[OSX issue with node 0.12.0](https://github.com/NativeScript/nativescript-cli/issues/268)
 
-### Workarounds
-* Install nativescript-cli 0.9.1.
+On OS X systems with Node.js 0.12.0 installed, you cannot work with the NativeScript CLI 0.9.0.<br/>For additional information, see [GitHub Issue #268: OSX issue with node 0.12.0](https://github.com/NativeScript/nativescript-cli/issues/268).
 
-OR
+**Workaround:**<br/>You can choose between the following workarounds.
 
-* Use node 0.10.36
-
-### Problem
-Unable to run or debug iOS applications if Xcode 6.1 and target iOS is 8.1.3. This is caused by the fact that the developer disk image we are trying to load on the device from XCode 6.1 iOS SDK is not compatible with iOS 8.1.3.
-
-### Workaround
-Install Xcode 6.1.1.
+* Update the NativeScript CLI to 0.9.1.
+* Revert Node.js to 0.10.36.
 
 ### Problem
-Currently there is a hard-coded 30 seconds timeout for establishing connection between the CLI and the Android device/emulator. On slow computers and/or devices/emulators it is possible that the timeout is not enough for establishing a connection. Therefore the debugger is not started on the device/emulator.
 
-### Workaround
-Retry the debugger.
+On OS X systems with Xcode 6.1 installed, you cannot run or debug apps on iOS 8.1.3 devices.<br/>The developer disk images provided with the iOS SDK in Xcode 6.1 are not compatible with iOS 8.1.3. The NativeScript CLI uses these disk images to work with your attached iOS devices.
+
+**Workaround:**<br/>Update to Xcode 6.1.1 or later.
 
 ### Problem
-On Mac OSX the final step of `tns debug android` command, which attempts to open an instance of Chrome browser, does not work.
 
-### Workaround
-We are using the [opener package](https://www.npmjs.com/package/opener) to open the browser. Possible workarounds are to either fix the module or try a newer version.
+The `debug` command times out when you attempt to debug on Android devices or emulators and the debug tools do not start.<br/>The `debug` command is configured with a 30-second timeout. On slower computer configurations, the CLI might exceed this timeout when connecting to your Android devices or emulators.
+
+**Workaround:**<br/>Re-run the `debug` command.
+
+### Problem
+
+On OS X systems, the debug tools for Android never launch.<br/>The NativeScript CLI uses the [opener npm package](https://www.npmjs.com/package/opener) to open Chrome. The current version of the package that the CLI uses cannot open the browser.
+
+**Workaround:**<br/>Update the opener package to a newer version. If this does not resolve the issue, try modifying your local copy of the package.
 
 ## User Experience
 
 ### Problem
-First time an Android application is started, it may take several seconds to load and there is no visual indication that the application is alive and loading. This will happen each time the application is redeployed.
 
-### Workaround
-A second start will be much faster. We are aware of this limitation and we are already working on a prototype, which improves things significantly.
+When you run your app on Android device for the first time, the app loads very slowly and might appear to be unresponsive.<br/>The issue reoccurs on every redeployment.
 
+**Workaround:**<br/>None. Wait for the app to load.
+
+The NativeScript team is working on improving the performance of Android apps on initial run.

@@ -11,6 +11,12 @@ Represents an extended DependencyObservable object that supports data-binding.
  - **bindingContextProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
   Represents the dependency Property used to back the bindingContext value.
 
+##### Static Functions
+ - **_getBindingOptions(** name _String_, bindingExpression _String_ **)** [_BindingOptions_](../../../ui/core/bindable/BindingOptions.md)
+   - **name** - _String_
+   - **bindingExpression** - _String_
+   - _**return**_ - [_BindingOptions_](../../../ui/core/bindable/BindingOptions.md)
+
 ##### Instance Properties
  - **bindingContext** - _Object_.    
   Gets or sets the binding context of this instance. This object is used as a source for each Binding that does not have a source object specified.
@@ -26,3 +32,9 @@ Represents an extended DependencyObservable object that supports data-binding.
      Removes the existing binding (if any) for the specified property.
    - **property** - _String_  
      The name of the property to unbind.
+ - **_updateTwoWayBinding(** propertyName _String_, value _Object_ **)**
+   - **propertyName** - _String_
+   - **value** - _Object_
+ - **_onBindingContextChanged(** oldValue _Object_, newValue _Object_ **)**
+   - **oldValue** - _Object_
+   - **newValue** - _Object_

@@ -16,4 +16,7 @@ An interface for common options used to create an editable text component.
   Gets or sets whether the instance is editable.
  - **updateTextTrigger** - _(optional)_ - _String_.    
   Gets or sets a value indicating when the text property will be updated. 
-Possible values are contained in the UpdateTextTrigger enumeration located in "ui/enums" module.
+ - **autocapitalizationType** - _(optional)_ - _String_.    
+  Gets or sets the autocapitalization type.
+ - **autocorrect** - _(optional)_ - _Boolean_.    
+  Enables or disables autocorrection.

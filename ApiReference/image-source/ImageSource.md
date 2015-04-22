@@ -38,18 +38,18 @@ This will update either the android or ios properties, depending on the target o
    - **source** - _Object_  
      The native image object. Will be either a Bitmap for Android or a UIImage for iOS.
    - _**return**_ - _Boolean_
- - **saveToFile(** path _String_, format [_ImageFormat_](../image-source/ImageFormat.md), quality? _Number_ **)** _Boolean_  
+ - **saveToFile(** path _String_, format _String_, quality? _Number_ **)** _Boolean_  
      Saves this instance to the specified file, using the provided image format and quality.
    - **path** - _String_  
      The path of the file on the file system to save to.
-   - **format** - [_ImageFormat_](../image-source/ImageFormat.md)  
+   - **format** - _String_  
      The format (encoding) of the image.
    - **quality** - _(optional)_ - _Number_  
      Optional parameter, specifying the quality of the encoding. Defaults to the maximum available quality.
    - _**return**_ - _Boolean_
- - **toBase64String(** format [_ImageFormat_](../image-source/ImageFormat.md), quality? _Number_ **)** _String_  
+ - **toBase64String(** format _String_, quality? _Number_ **)** _String_  
      Converts the image to base64 encoded string, using the provided image format and quality.
-   - **format** - [_ImageFormat_](../image-source/ImageFormat.md)  
+   - **format** - _String_  
      The format (encoding) of the image.
    - **quality** - _(optional)_ - _Number_  
      Optional parameter, specifying the quality of the encoding. Defaults to the maximum available quality.

@@ -16,6 +16,7 @@ An enum that defines all predefined categories.
  - **Navigation** - _String_.
  - **Test** - _String_.
  - **Binding** - _String_.
+ - **Error** - _String_.
  - **All** - _String_.
  - **separator** - _String_.
 

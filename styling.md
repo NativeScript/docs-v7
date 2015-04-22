@@ -2,7 +2,7 @@
 nav-title: Styling in NativeScript
 title: "UI: Styling"
 description: How to use Cascading Style Sheets (CSS) in NativeScript to change the appearance of GUI elements
-position: 17
+position: 16
 ---
 
 # Styling
@@ -31,9 +31,9 @@ Regardless of what level you apply the CSS on, it is parsed, its selectors are e
 
 ### Application-Wide CSS
 
-When the  application starts, NativeScript checks if the file `app.css` exists. If it does, any CSS styles that it contains are loaded and used across all applicaion pages. This file is a convenient place to store styles that will be used on multiple pages.
+When the  application starts, NativeScript checks if the file `app.css` exists. If it does, any CSS styles that it contains are loaded and used across all application pages. This file is a convenient place to store styles that will be used on multiple pages.
 
-You can change the name of the file from which the application-wide CSS is loaded. You need to do the change before the application is started, uusually in the app.js or app.ts file as shown below:
+You can change the name of the file from which the application-wide CSS is loaded. You need to do the change before the application is started, usually in the app.js or app.ts file as shown below:
 
 ``` JavaScript
 var application = require("application");
@@ -102,7 +102,7 @@ Similarly to HTML, CSS can be defined inline for a UI view in the XML markup:
 
 > Currently the CSS support is limited only to the selectors and properties listed in the current article.
 
-NativeScript supports a subset of the [CSS selector syntax](http://www.w3schools.com/cssref/css_selectors.asp). Let's go trough the supported selectors:
+NativeScript supports a subset of the [CSS selector syntax](http://www.w3schools.com/cssref/css_selectors.asp). Let's go through the supported selectors:
 
 * [Type Selector](#type-selector)
 * [Class Selector](#class-selector)

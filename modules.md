@@ -2,7 +2,7 @@
 nav-title: Modules in NativeScript
 title: Modules
 description: You can access the native device and platform capabilities of your target platform with the help of the NativeScript modules.
-position: 5
+position: 3
 ---
 
 # Modules
@@ -84,3 +84,7 @@ In your project, the files for each module reside in a dedicated subdirectory in
 + [ui/tab-view](./ApiReference/ui/tab-view/HOW-TO.md): Provides the `TabView` class which represents a standard content component with tabs.
 + [ui/web-view](./ApiReference/ui/web-view/HOW-TO.md): Provides the `WebView` class which represents a standard browser widget.
 + [ui/dialogs](./ApiReference/ui/dialogs/HOW-TO.md): Lets you show various dialogs such as alerts, prompts, confirmations and others.
++ [ui/list-picker](./ApiReference/ui/list-picker/HOW-TO.md): Provides the `ListPicker` class which represents a standard list picker component.
++ [ui/date-picker](./ApiReference/ui/date-picker/HOW-TO.md): Provides the `DatePicker` class which represents a standard date picker component.
++ [ui/time-picker](./ApiReference/ui/time-picker/HOW-TO.md): Provides the `TimePicker` class which represents a standard time picker component.
++ [ui/placeholder](./placeholder.md): Provides the `Placeholder` class which lets you add a native widget to the visual tree.

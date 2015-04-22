@@ -2,7 +2,7 @@
 nav-title: Architecture and Navigation in NativeScript
 title: "App: Architecture and Navigation"
 description: Learn the basic application structure of NativeScript apps and how to navigate inside your app.
-position: 7
+position: 5
 ---
 
 # Architecture and Navigation
@@ -21,7 +21,10 @@ NativeScript apps consist of pages which represent the separate application scre
     * [Navigate with Factory Function](#navigate-with-factory-function)
     * [Navigate and Pass Context](#navigate-and-pass-context)
     * [Navigate Back](#navigate-back)
-* [Alternative App Architecture](#alternative-app-architecture)
+* [Supporting Multiple Screens](#supporting-multiple-screens)
+    * [Screen Size Qualifiers](#screen-size-qualifiers)
+    * [Platform Qualifiers](#platform-qualifiers)
+    * [Orientation Qualifiers](#orientation-qualifiers)
 
 ## Page Management
 
@@ -245,3 +248,40 @@ topmost.goBack();
 ``` TypeScript
 topmost.goBack();
 ```
+
+## Supporting Multiple Screens
+Mobile application run on different devices with different screen sizes and form factors. NativeScript provides a way to define different files(.js, .css, .xml etc.) to be loaded based on the screens size, platform and orientation of the current device. The approach is somewhat similar to [multi screen support in android](http://developer.android.com/guide/practices/screens_support.html). There is a set of *qualifiers* that can be added inside the file that will be respected when the file is loaded. Here is how the file should look like:
+
+`<file-name>[.<qualifier>]*.<extension>`
+
+We will go trough the list of supported qualifiers.
+
+### Screen Size Qualifiers
+All the values in screen size qualifiers are in density independent pixels(dp) - meaning it corresponds to the physical dimensions of the screen. The assumptions is that there are ~160 dp per inch. For example, according to android guidelines if the device's smaller dimension is more than 600dp(~3.75 inches) it is probably tablet.
+
+* `minWH<X>` - The smaller dimension(width or height) should be at least **X** dp.
+* `minW<X>` - Width should be at least **X** dp.
+* `minH<X>` - Height should be at least **X** dp.
+
+*Example(separate XML file for tablet and phone)*:
+
+* `main-page.minWH600.xml` - XML file to be used for tablet devices.
+* `main-page.xml` - XML to be used for phones 
+
+### Platform Qualifiers
+
+* `android` – android platform
+* `ios` – iOS platform
+* `windows` (coming soon) – windows platform
+
+*Example(platform specific files)*:
+
+* `app.android.css` - CSS styles for Android.
+* `app.ios.css` - CSS styles for iOS. 
+
+We already have this functionality in place through the CLI prepare command. However, from native-script developer perspective - it is the same.
+
+### Orientation Qualifiers
+* `land` - orientation is in landscape mode
+* `port` - orientation is in portrait mode
+

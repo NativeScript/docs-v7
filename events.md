@@ -2,7 +2,7 @@
 nav-title: Events in NativeScript
 title: "App: Events"
 description: How to handle events in NativeScript.
-position: 9
+position: 7
 ---
 
 # Events
@@ -105,7 +105,7 @@ Naturally, you need a code behind file to write the function body (the code behi
 function onTap(eventData) {
   console.log("Hello World!");
 }
-exports.listViewItemTap = listViewItemTap;
+exports.onTap = onTap;
 ```
 ``` TypeScript
 export function onTap(eventData) {
@@ -236,7 +236,7 @@ Though the radio station comparison is convenient for understanding the concept,
 
 Consider this scenario: A UI element creates a lot of child controls, each of which hooks to an event of the parent. Then a child control is released (during a list view scrolling for instance), causing a memory leak.
 
-To prevent these memory leaks, it is good practice to remove your event listener handler before releasing the listener object. Unfortunately, sometimes you can't determine the exact time to call the `off` or `removeEventListener` function. In such cases use another option of the NativeScript framework: Week Events.
+To prevent these memory leaks, it is good practice to remove your event listener handler before releasing the listener object. Unfortunately, sometimes you can't determine the exact time to call the `off` or `removeEventListener` function. In such cases use another option of the NativeScript framework: Weak Events.
 
 ## Working with Weak Events
 

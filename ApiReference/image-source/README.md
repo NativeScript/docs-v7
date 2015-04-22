@@ -14,10 +14,6 @@ Class | Description
 ------|------------
 [ImageSource](../image-source/ImageSource.md) | Encapsulates the common abstraction behind a platform specific object (typically a Bitmap) that is used as a source for images.
 
-Enum | Description
-------|------------
-[ImageFormat](../image-source/ImageFormat.md) | Defines the recognized image formats.
-
 ##### Functions
  - **fromResource(** name _String_ **)** [_ImageSource_](../image-source/ImageSource.md)  
      Creates a new ImageSource instance and loads it from the specified resource name.
@@ -45,3 +41,13 @@ The native source object will update either the android or ios properties, depen
    - **url** - _String_  
      The link to the remote image object. This operation will download and decode the image.
    - _**return**_ - _Promise_ of [_ImageSource_](../image-source/ImageSource.md)
+ - **fromFileOrResource(** path _String_ **)** [_ImageSource_](../image-source/ImageSource.md)  
+     Creates a new ImageSource instance and loads it from the specified local file or resource(if spexified with "res://" prefix)
+   - **path** - _String_  
+     The location of the file on the file system.
+   - _**return**_ - [_ImageSource_](../image-source/ImageSource.md)
+ - **isFileOrResourcePath(** path _String_ **)** _Boolean_  
+     Returns true if the specified path points to a resource or local file.
+   - **path** - _String_  
+     The path.
+   - _**return**_ - _Boolean_

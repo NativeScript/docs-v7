@@ -10,6 +10,8 @@ Represents a search bar component.
 ##### Static Properties
  - **textProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
   Dependency property used to support binding operations related to search-bar text.
+ - **textFieldBackgroundColorProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Gets or sets the TextField background color of the SearchBar component.
 
 ##### Instance Properties
  - **android** - _Object_.    
@@ -18,6 +20,10 @@ Represents a search bar component.
   Gets the native iOS [UISearchBar](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/) that represents the user interface for this component. Valid only when running on iOS.
  - **text** - _String_.    
   Gets or sets a search bar text.
+ - **hint** - _String_.    
+  Gets or sets the text of the search bar text field hint/placeholder.
+ - **textFieldBackgroundColor** - [_Color_](../../color/Color.md).    
+  Gets or sets the TextField background color of the SearchBar component.
 
 ##### Instance Functions
  - **on(** event _String_, callback _Function_... **)**

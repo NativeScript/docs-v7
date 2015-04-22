@@ -12,7 +12,7 @@ Represents a tab view.
  - **selectedIndexProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
 
 ##### Instance Properties
- - **items** - _Array_ of [_TabEntry_](../../ui/tab-view/TabEntry.md).    
+ - **items** - _Array_ of [_TabViewItem_](../../ui/tab-view/TabViewItem.md).    
   Gets or sets the items of the TabView.
  - **selectedIndex** - _Number_.    
   Gets or sets the selectedIndex of the TabView.

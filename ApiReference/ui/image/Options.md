@@ -13,4 +13,4 @@ Provides common options for creating an image.
  - **url** - _String_.    
   Gets or sets the URL of the image.
  - **stretch** - _String_.    
-  Gets or sets the image stretch mode.
+  Gets or sets the image stretch mode. Possible values are contained in the [Stretch enumeration](../enums/Stretch/README.md).
