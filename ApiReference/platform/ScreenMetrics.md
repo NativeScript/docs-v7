@@ -11,5 +11,9 @@ An object containing screen information.
   Gets the absolute width of the screen in pixels.
  - **heightPixels** - _Number_.    
   Gets the absolute height of the screen in pixels.
+ - **widthDIPs** - _Number_.    
+  Gets the absolute width of the screen in density independent pixels.
+ - **heightDIPs** - _Number_.    
+  Gets the absolute height of the screen in density independent pixels.
  - **scale** - _Number_.    
   The logical density of the display. This is a scaling factor for the Density Independent Pixel unit.

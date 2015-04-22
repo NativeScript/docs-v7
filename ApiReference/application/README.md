@@ -23,10 +23,12 @@ For example if you have page called "main.js" in a folder called "subFolder" and
 var application = require("application");
 application.mainModule = "app/subFolder/main";
 application.start();
+ - **resources** - _Object_.    
+  An application level static resources.
  - **cssFile** - _String_.    
   The application level css file name (starting from the application root). Used to set css across all pages.
 Css will be applied for every page and page css will be applied after.
- - **cssSelectorsCache** - _Array_ of _Object_.    
+ - **cssSelectorsCache** - _Array_ of [_CssSelector_](../ui/styling/css-selector/CssSelector.md).    
   Cached css selectors created from the content of the css file.
  - **android** - [_AndroidApplication_](../application/AndroidApplication.md).    
   This is the Android-specific application object instance.

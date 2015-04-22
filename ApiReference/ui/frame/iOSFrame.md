@@ -11,3 +11,6 @@ The navigation controller will automatically hide/show its navigation bar depend
 ##### Properties
  - **controller** - _UINavigationController_.    
   Gets the native [UINavigationController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UINavigationController_Class/index.html) instance associated with this Frame.
+ - **navBarVisibility** - _String_.    
+  Gets or sets the visibility of navigationBar.
+Use NavBarVisibility enumeration - auto, never, always

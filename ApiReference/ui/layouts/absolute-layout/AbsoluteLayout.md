@@ -7,6 +7,12 @@ description: "Class ui/layouts/absolute-layout.AbsoluteLayout"
 _Inherits:_ [_Layout_](../../../ui/layouts/layout/Layout.md)  
 A layout that lets you specify exact locations (left/top coordinates) of its children.
 
+##### Static Properties
+ - **leftProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the left property.
+ - **topProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the top property.
+
 ##### Static Functions
  - **getLeft(** view [_View_](../../../ui/core/view/View.md) **)** _Number_  
      Gets the value of the Left property from a given View.

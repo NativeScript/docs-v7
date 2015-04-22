@@ -1,14 +1,14 @@
 ---
-nav-title: "timePicker How-To"
+nav-title: "TimePicker How-To"
 title: "How-To"
-description: "Examples for using timePicker"
+description: "Examples for using TimePicker"
 ---
 # TimePicker
-Using a timePicker requires the "ui/time-picker" module.
+Using a TimePicker requires the "ui/time-picker" module.
 ``` JavaScript
 var timePickerModule = require("ui/time-picker");
 ```
-## Creating a timePicker
+## Creating a TimePicker
 ``` JavaScript
 var timePicker = new timePickerModule.TimePicker();
 ```

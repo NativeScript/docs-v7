@@ -8,8 +8,8 @@ _Inherits:_ [_View_](../../ui/core/view/View.md)
 Represents a class that provides functionality for loading and streching image(s).
 
 ##### Static Properties
- - **urlProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
- - **sourceProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
+ - **srcProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
+ - **imageSourceProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
  - **isLoadingProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
  - **stretchProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
 

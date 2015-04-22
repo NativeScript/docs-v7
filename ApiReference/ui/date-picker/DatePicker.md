@@ -23,3 +23,7 @@ Represents an date picker.
   Gets or sets the month. The months start from 1.
  - **day** - _Number_.    
   Gets or sets the day. The days start from 1.
+ - **maxDate** - _Date_.    
+  Gets or sets the max date.
+ - **minDate** - _Date_.    
+  Gets or sets the min date.

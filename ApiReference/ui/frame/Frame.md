@@ -54,3 +54,4 @@ Since there are a couple of  ways to specify a Page instance through an entry, t
      The NavigationEntry instance.
  - **_processNavigationQueue(** page [_Page_](../../ui/page/Page.md) **)**
    - **page** - [_Page_](../../ui/page/Page.md)
+ - **_invalidateOptionsMenu()**

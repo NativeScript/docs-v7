@@ -35,4 +35,7 @@ Represents a standard WebView widget.
    - **callback** - _Function_(data [_EventData_](../../data/observable/EventData.md))
  - **on(** event , callback _Function_... **)**
    - **event**
-   - **callback** - _Function_(args [_FinishedEventData_](../../ui/web-view/FinishedEventData.md))
+   - **callback** - _Function_(args [_LoadEventData_](../../ui/web-view/LoadEventData.md))
+ - **on(** event , callback _Function_... **)**
+   - **event**
+   - **callback** - _Function_(args [_LoadEventData_](../../ui/web-view/LoadEventData.md))

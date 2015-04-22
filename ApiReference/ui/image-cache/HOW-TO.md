@@ -13,7 +13,6 @@ var fs = require("file-system");
 ### Requesting Images
 ``` JavaScript
 var cache = new imageCacheModule.Cache();
-cache.invalid = imageSource.fromFile(fs.path.join(__dirname, "res/reddit-logo.png"));
 cache.placeholder = imageSource.fromFile(fs.path.join(__dirname, "res/no-image.png"));
 cache.maxRequests = 5;
 // Enable download while not scrolling

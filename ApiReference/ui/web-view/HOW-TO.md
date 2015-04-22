@@ -12,17 +12,3 @@ var webViewModule = require("ui/web-view");
 ``` JavaScript
 var webView = new webViewModule.WebView();
 ```
-### Using WebView,
-``` JavaScript
-webView.on(webViewModule.knownEvents.finished, function (args) {
-    var message;
-    if (!args.error) {
-        message = "WebView finished loading " + args.url;
-    }
-    else {
-        message = "Error loading " + args.url + ": " + args.error;
-    }
-    console.log(message);
-});
-webView.url = "https://httpbin.org/html";
-```

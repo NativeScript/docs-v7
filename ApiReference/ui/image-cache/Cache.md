@@ -8,8 +8,6 @@ _Inherits:_ [_Observable_](../../data/observable/Observable.md)
 Represents a class that stores handles image download requests and caches the already downloaded images.
 
 ##### Instance Properties
- - **invalid** - [_ImageSource_](../../image-source/ImageSource.md).    
-  The image to be used when the requested url is invalid or the result may not be decoded.
  - **placeholder** - [_ImageSource_](../../image-source/ImageSource.md).    
   The image to be used to notify for a pending download request - e.g. loading indicator.
  - **maxRequests** - _Number_.    

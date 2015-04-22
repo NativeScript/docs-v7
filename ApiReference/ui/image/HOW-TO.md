@@ -15,9 +15,9 @@ Binding the image source property to a view-model property.
      <!--Bind the image source property to view-model property -->
      {%raw%}<Image src="{{ thumbnailImageUrl }}" />{%endraw%}
      <!--Load form image from application -->
-     <Image source="~/app/logo.png" stretch ="none" / > 
+     <Image source="~/logo.png" stretch ="none" / > 
      <!--Load form image resource -->
-     <Image source="res://app/logo.png" stretch ="none" / > 
+     <Image source="res://logo.png" stretch ="none" / > 
      <!--Load form image URL-->
      <Image source="http://www.google.com/images/errors/logo_sm_2.png" stretch ="none" /> 
   </StackLayout>
@@ -36,7 +36,7 @@ image.src = "https://www.google.bg/images/srpr/logo11w.png";
 ### How to create an image and set its src to file within the application.
 ``` JavaScript
 var image = new ImageModule.Image();
-image.src = "~/app/logo.png";
+image.src = "~/logo.png";
 ```
 ### How to set image stretching.
 ``` JavaScript

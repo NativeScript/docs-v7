@@ -7,5 +7,7 @@ description: "Module ui/web-view.knownEvents"
 Known event names.
 
 ##### Variables
- - **finished** - _String_.    
-  Raised when web-view is completely loaded.
+ - **loadFinished** - _String_.    
+  Raised when the web-view has completely loaded an url.
+ - **loadStarted** - _String_.    
+  Raised when the web-view starts loading an url.
