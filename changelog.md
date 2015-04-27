@@ -1,13 +1,13 @@
 ---
-nav-title: Changelog
-title: "Changelog"
+nav-title: Breaking Changes
+title: "Breaking Changes"
 description: A list of breaking changes across the releases of the NativeScript framework and its tools.
 position: 19
 ---
 
 # NativeScript Changelog
 
-The document lists the major breaking changes in the NativeScript framework.
+This document describes the critical breaking changes and suggested workarounds, if any, in the NativeScript framework. The complete list with all the changes may be found on the respective [Github repositories](#see-also).
 
 ### 0.10.0 (2015, April 17)
 
@@ -54,7 +54,7 @@ Starting with version 0.10, the inner app folder has been removed. Newly created
 >1. Manually move all files and folders from the inner app folder one level up inside the outer app folder.
 >2. Remove the now empty inner app folder.
 
-# See Also
+#See Also
 
 * [Cross-platform Modules Changelog](https://github.com/NativeScript/NativeScript/blob/master/CHANGELOG.md)
 * [Android Runtime Changelog](https://github.com/NativeScript/android-runtime/blob/master/CHANGELOG.md)
