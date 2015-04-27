@@ -39,6 +39,10 @@ Namespace | Description
      Sets the categories the module will trace.
    - **categories** - _String_  
      The comma-separated list of categories. If not specified all messages from all categories will be traced.
+ - **addCategories(** categories _String_ **)**  
+     Adds categories to existing categories the module will trace.
+   - **categories** - _String_  
+     The comma-separated list of categories. If not specified all messages from all categories will be traced.
  - **write(** message _Object_, category _String_, type? _Number_ **)**  
      Writes a message using the available writers.
    - **message** - _Object_  

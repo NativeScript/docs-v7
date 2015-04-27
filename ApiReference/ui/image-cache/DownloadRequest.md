@@ -11,5 +11,5 @@ Represents a single download request.
   The url of the image.
  - **key** - _String_.    
   The key used to cache the image.
- - **completed** - _(optional)_ - _Function_(result [_ImageSource_](../../image-source/ImageSource.md), key _String_).    
+ - **completed** - _(optional)_ - _Function_(image _Object_, key _String_).    
   An optional function to be called when the download is complete.

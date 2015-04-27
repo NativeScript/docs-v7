@@ -17,4 +17,6 @@ var datePicker = new datePickerModule.DatePicker();
 datePicker.year = 1980;
 datePicker.month = 2;
 datePicker.day = 9;
+datePicker.minDate = new Date(1975, 0, 29);
+datePicker.maxDate = new Date(2045, 4, 12);
 ```

@@ -46,7 +46,7 @@ var buttonModule = require("ui/button");
 var testButton = new buttonModule.Button();
 testButton.text = "Test";
 
-testButton.on(buttonModule.knownEvents.tap, function (eventData) {
+testButton.on(buttonModule.Button.tapEvent, function (eventData) {
   console.log("Hello World!");
 });
 ```
@@ -55,7 +55,7 @@ import buttonModule = require("ui/button");
 var testButton = new buttonModule.Button();
 testButton.text = "Test";
 
-testButton.on(buttonModule.knownEvents.tap, function (eventData) {
+testButton.on(buttonModule.Button.tapEvent, function (eventData) {
   console.log("Hello World!");
   });
 ```
@@ -74,7 +74,7 @@ var onTap = function (eventData) {
   console.log("Hello World!");
 };
 
-testButton.addEventListener(buttonModule.knownEvents.tap, onTap, this);
+testButton.addEventListener(buttonModule.Button.tapEvent, onTap, this);
 ```
 ``` TypeScript
 import buttonModule = require("ui/button");
@@ -85,7 +85,7 @@ var onTap = function (eventData) {
   console.log("Hello World!");
 };
 
-testButton.addEventListener(buttonModule.knownEvents.tap, onTap, this);
+testButton.addEventListener(buttonModule.Button.tapEvent, onTap, this);
 ```
 
 ### Adding an Event Handler in an XML Declaration
@@ -124,10 +124,10 @@ Under most circumstances you don't need to remove the event listener. If you do,
 The following example uses the shorthand syntax to remove all listeners for the tap event of the testButton instance. If there are more than one event listener objects, you can set a second parameter with the name of the callback function. This way only the referenced event listener is removed.
 
 ``` JavaScript
-testButton.off(buttonModule.knownEvents.tap);
+testButton.off(buttonModule.Button.tapEvent);
 ```
 ``` TypeScript
-testButton.off(buttonModule.knownEvents.tap);
+testButton.off(buttonModule.Button.tapEvent);
 ```
 
 
@@ -136,10 +136,10 @@ testButton.off(buttonModule.knownEvents.tap);
 The full syntax builds on top of the shorthand syntax by adding the `this` argument similarly to the full syntax for adding an event listener. It is useful when multiple event listeners with different `this` arguments are available.
 
 ``` JavaScript
-testButton.removeEventListener(buttonModule.knownEvents.tap, onTap);
+testButton.removeEventListener(buttonModule.Button.tapEvent, onTap);
 ```
 ``` TypeScript
-testButton.removeEventListener(buttonModule.knownEvents.tap, onTap);
+testButton.removeEventListener(buttonModule.Button.tapEvent, onTap);
 ```
 
 ## PropertyChange Event
@@ -150,7 +150,7 @@ The `Observable` class provides a built-in event called `propertyChange` which i
 var observableModule = require("data/observable");
 var observableObject = new observableModule.Observable();
 
-observableObject.on(observableModule.knownEvents.propertyChange, function(propertyChangeData){
+observableObject.on(observableModule.Observable.propertyChangeEvent, function(propertyChangeData){
   console.log(propertyChangeData.propertyName + " has been changed and the new value is: " + propertyChangeData.value);
 });
 ```
@@ -158,7 +158,7 @@ observableObject.on(observableModule.knownEvents.propertyChange, function(proper
 import observableModule = require("data/observable");
 var observableObject = new observableModule.Observable();
 
-observableObject.on(observableModule.knownEvents.propertyChange, function(propertyChangeData){
+observableObject.on(observableModule.Observable.propertyChangeEvent, function(propertyChangeData){
   console.log(propertyChangeData.propertyName + " has been changed and the new value is: " + propertyChangeData.value);
 });
 ```
@@ -198,7 +198,7 @@ export class MyClass extends observableModule.Observable {
   }
 }
 ```
-The pervious code snippet fires the `propertyChange` event when the property value is changed.
+The previous code snippet fires the `propertyChange` event when the property value is changed.
 
 ## Creating a Custom Event
 
@@ -253,7 +253,7 @@ var observableModule = require("data/observable");
 
 var testButton = new buttonModule.Button();
 testButton.text = "Test";
-testButton.on(buttonModule.knownEvents.tap, function () {
+testButton.on(buttonModule.Button.tapEvent, function () {
   source.set("testProperty", "change" + counter);
   });
 
@@ -272,7 +272,7 @@ testButton.on(buttonModule.knownEvents.tap, function () {
     // create a weak reference to the event sender object
     sourceWeakRef: new WeakRef(this.source),
     // set the name of the event
-    eventName: observable.knownEvents.propertyChange,
+    eventName: observable.Observable.propertyChangeEvent,
     // set the event handler
     handler: handlePropertyChange,
     // (optional) set the context in which to execute the handler 
@@ -289,7 +289,7 @@ import observableModule = require("data/observable");
 
 var testButton = new buttonModule.Button();
 testButton.text = "Test";
-testButton.on(buttonModule.knownEvents.tap, function () {
+testButton.on(buttonModule.Button.tapEvent, function () {
   source.set("testProperty", "change" + counter);
 });
 
@@ -308,7 +308,7 @@ var weakEventListenerOptions: weakEventListenerModule.WeakEventListenerOptions =
   // create a weak reference to the event sender object
   sourceWeakRef: new WeakRef(this.source),
   // set the name of the event
-  eventName: observable.knownEvents.propertyChange,
+  eventName: observable.Observable.propertyChangeEvent,
   // set the event handler
   handler: handlePropertyChange,
   // (optional) set the context in which to execute the handler

@@ -13,3 +13,5 @@ Represents a special Property which supports changed callback, metadata and valu
   Gets the id of the property. This is used for fast lookup. This is a read-only property.
  - **metadata** - [_PropertyMetadata_](../../../ui/core/dependency-observable/PropertyMetadata.md).    
   Gets the PropertyMetadata object associated with the property. This is a read-only property.
+ - **valueConverter** - _Function_(value _String_) _Object_.    
+  Gets the valueConverter function associated with the property. This is a read-only property.

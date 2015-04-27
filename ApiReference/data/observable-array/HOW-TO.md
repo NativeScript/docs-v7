@@ -55,8 +55,7 @@ var result = array.pop();
 ### Handle "change" event to know more info about the change after calling pop() method.
 ``` JavaScript
 var array = new observableArrayModule.ObservableArray([1, 2, 3]);
-var index = array.length - 1;
-array.on("change", function (args) {
+array.on(observableArrayModule.ObservableArray.changeEvent, function (args) {
     // Argument (args) is ChangedData<T>.
     // args.eventName is "change".
     // args.action is "delete".
@@ -74,7 +73,7 @@ var result = array.push(4);
 ### Handle "change" event to know more info about the change after calling push() method with single element.
 ``` JavaScript
 var array = new observableArrayModule.ObservableArray([1, 2, 3]);
-array.on("change", function (args) {
+array.on(observableArrayModule.ObservableArray.changeEvent, function (args) {
     // Argument (args) is ChangedData<T>.
     // args.eventName is "change".
     // args.action is "add".
@@ -92,7 +91,7 @@ var result = array.push(4, 5, 6);
 ### Handle "change" event to know more info about the change after calling push() method with multiple elements.
 ``` JavaScript
 var array = new observableArrayModule.ObservableArray([1, 2, 3]);
-array.on("change", function (args) {
+array.on(observableArrayModule.ObservableArray.changeEvent, function (args) {
     // Argument (args) is ChangedData<T>.
     // args.eventName is "change".
     // args.action is "add".
@@ -110,7 +109,7 @@ var result = array.push([4, 5, 6]);
 ### Handle "change" event to know more info about the change after calling push() method with multiple elements from source array.
 ``` JavaScript
 var array = new observableArrayModule.ObservableArray([1, 2, 3]);
-array.on("change", function (args) {
+array.on(observableArrayModule.ObservableArray.changeEvent, function (args) {
     // Argument (args) is ChangedData<T>.
     // args.eventName is "change".
     // args.action is "add".
@@ -133,7 +132,7 @@ var result = array.shift();
 ### Handle "change" event to know more info about the change after calling shift() method.
 ``` JavaScript
 var array = new observableArrayModule.ObservableArray([1, 2, 3]);
-array.on("change", function (args) {
+array.on(observableArrayModule.ObservableArray.changeEvent, function (args) {
     // Argument (args) is ChangedData<T>.
     // args.eventName is "change".
     // args.action is "delete".
@@ -173,7 +172,7 @@ var result = array.splice(1, 2);
 ### Handle "change" event to know more info about the change after calling splice(start, deleteCount) method.
 ``` JavaScript
 var array = new observableArrayModule.ObservableArray([1, 2, 3]);
-array.on("change", function (args) {
+array.on(observableArrayModule.ObservableArray.changeEvent, function (args) {
     // Argument (args) is ChangedData<T>.
     // args.eventName is "change".
     // args.action is "splice".
@@ -191,7 +190,7 @@ var result = array.splice(1, 2, "six", "seven");
 ### Handle "change" event to know more info about the change after calling splice(start, deleteCount, ...arguments) method.
 ``` JavaScript
 var array = new observableArrayModule.ObservableArray(["one", "two", "three"]);
-array.on("change", function (args) {
+array.on(observableArrayModule.ObservableArray.changeEvent, function (args) {
     // Argument (args) is ChangedData<T>.
     // args.eventName is "change".
     // args.action is "splice".
@@ -209,7 +208,7 @@ var result = array.unshift(4, 5);
 ### Handle "change" event to know more info about the change after calling unshift(item1, item2... itemN) method.
 ``` JavaScript
 var array = new observableArrayModule.ObservableArray([1, 2, 3]);
-array.on("change", function (args) {
+array.on(observableArrayModule.ObservableArray.changeEvent, function (args) {
     // Argument (args) is ChangedData<T>.
     // args.eventName is "change".
     // args.action is "add".

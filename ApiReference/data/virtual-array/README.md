@@ -19,7 +19,3 @@ Object | Description
 ------|------------
 [ChangedData](../../data/virtual-array/ChangedData.md) | Provides event args for "changed" event.
 [ItemsLoading](../../data/virtual-array/ItemsLoading.md) | Event args for "itemsLoading" event.
-
-Namespace | Description
-------|------------
-[knownEvents](../../data/virtual-array/knownEvents/) | Known event names.

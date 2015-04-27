@@ -24,10 +24,6 @@ Object | Description
 [AddChildFromBuilder](../../../ui/core/view/AddChildFromBuilder.md) | Defines an interface for adding a child element declared in xml.
 [ApplyXmlAttributes](../../../ui/core/view/ApplyXmlAttributes.md) | Defines an interface used to create a member of a class from string representation (used in xml declaration).
 
-Namespace | Description
-------|------------
-[knownEvents](../../../ui/core/view/knownEvents/) | Defines an enum with events for view class.
-
 ##### Functions
  - **getViewById(** view [_View_](../../../ui/core/view/View.md), id _String_ **)** [_View_](../../../ui/core/view/View.md)  
      Gets a child view by id.

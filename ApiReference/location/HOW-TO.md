@@ -45,7 +45,7 @@ and there will be no wait. You can use `options.maximumAge` to specify you don't
 
 ``` JavaScript
 var locationModule = require("location");
-// options can also look like { maximumAge: 2000, timeout: 20 }
+// options can also look like { maximumAge: 2000, timeout: 20 * 1000 }
 locationModule.getLocation({ maximumAge: 30000, timeout: 0 }).then(function (location) {
     console.log('Location received: ' + location);
 }, function (error) {

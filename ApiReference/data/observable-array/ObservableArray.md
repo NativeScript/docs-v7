@@ -8,18 +8,28 @@ _Type parameters:_ _**T**_
 _Inherits:_ [_Observable_](../../data/observable/Observable.md)  
 Advanced array like class used when you want to be notified when a change occurs.
 
+##### Static Properties
+ - **changeEvent** - _String_.    
+  String value used when hooking to change event.
+
 ##### Instance Properties
  - **length** - _Number_.    
   Gets or sets the length of the array. This is a number one higher than the highest element defined in an array.
 
 ##### Instance Functions
- - **on(** event _String_, callback _Function_... **)**
-   - **event** - _String_
-   - **callback** - _Function_(data [_EventData_](../../data/observable/EventData.md))
- - **on(** event , callback _Function_... **)**  
+ - **on(** eventNames _String_, callback _Function_..., thisArg? _Object_ **)**  
+     A basic method signature to hook an event listener (shortcut alias to the addEventListener method).
+   - **eventNames** - _String_  
+     - String corresponding to events (e.g. "propertyChange"). Optionally could be used more events separated by `,` (e.g. "propertyChange", "change"). 
+   - **callback** - _Function_(data [_EventData_](../../data/observable/EventData.md))  
+     - Callback function which will be executed when event is raised.
+   - **thisArg** - _(optional)_ - _Object_  
+     - An optional parameter which will be used as `this` context for callback execution.
+ - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
      Raised when a change occurs.
    - **event**
    - **callback** - _Function_(args [_ChangedData_](../../data/observable-array/ChangedData.md) of _T_)
+   - **thisArg** - _(optional)_ - _Object_
  - **getItem(** index _Number_ **)** _T_  
      Returns item at specified index.
    - **index** - _Number_

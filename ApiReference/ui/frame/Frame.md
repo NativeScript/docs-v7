@@ -10,6 +10,8 @@ Typically an application will have a Frame object at a root level.
 Nested frames are supported, enabling hierarchical navigation scenarios.
 
 ##### Static Properties
+ - **androidOptionSelectedEvent** - _String_.    
+  String value used when hooking to androidOptionSelected event (prefix `android` states that this event is available only in Android).
  - **defaultAnimatedNavigation** - _Boolean_.    
   Gets or sets if navigation transitions should be animated globally.
 
@@ -54,3 +56,17 @@ Since there are a couple of  ways to specify a Page instance through an entry, t
      The NavigationEntry instance.
  - **_processNavigationQueue(** page [_Page_](../../ui/page/Page.md) **)**
    - **page** - [_Page_](../../ui/page/Page.md)
+ - **_invalidateOptionsMenu()**
+ - **on(** eventNames _String_, callback _Function_..., thisArg? _Object_ **)**  
+     A basic method signature to hook an event listener (shortcut alias to the addEventListener method).
+   - **eventNames** - _String_  
+     - String corresponding to events (e.g. "propertyChange"). Optionally could be used more events separated by `,` (e.g. "propertyChange", "change"). 
+   - **callback** - _Function_(args [_EventData_](../../data/observable/EventData.md))  
+     - Callback function which will be executed when event is raised.
+   - **thisArg** - _(optional)_ - _Object_  
+     - An optional parameter which will be used as `this` context for callback execution.
+ - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
+     Raised when native android [onOptionsItemSelected method](http://developer.android.com/reference/android/app/Activity.html#onOptionsItemSelected(android.view.MenuItem)) is called.
+   - **event**
+   - **callback** - _Function_(args [_EventData_](../../data/observable/EventData.md))
+   - **thisArg** - _(optional)_ - _Object_

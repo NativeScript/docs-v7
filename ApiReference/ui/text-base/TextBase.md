@@ -16,5 +16,9 @@ Represents the base class for all text views.
 ##### Instance Properties
  - **text** - _String_.    
   Gets or sets the text.
+ - **textAlignment** - _String_.    
+  Gets or sets text-alignment style property.
+ - **fontSize** - _Number_.    
+  Gets or sets font-size style property.
  - **formattedText** - [_FormattedString_](../../text/formatted-string/FormattedString.md).    
   Gets or sets a formatted string.

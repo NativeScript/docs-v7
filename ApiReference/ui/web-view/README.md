@@ -16,8 +16,4 @@ Class | Description
 
 Object | Description
 ------|------------
-[FinishedEventData](../../ui/web-view/FinishedEventData.md) | Event data containing information for the finished event.
-
-Namespace | Description
-------|------------
-[knownEvents](../../ui/web-view/knownEvents/) | Known event names.
+[LoadEventData](../../ui/web-view/LoadEventData.md) | Event data containing information for the loading events of a WebView.
