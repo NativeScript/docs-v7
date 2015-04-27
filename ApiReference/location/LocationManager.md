@@ -23,12 +23,14 @@ Provides methods for querying geolocation (in case available) on the target plat
   The desired accuracy in meters. Defaults to DesiredAccuracy.HIGH
  - **updateDistance** - _Number_.    
   The update distance filter in meters. Specifies how often to update. Default on iOS is no filter, on Android it is 0 meters.
- - **minimumUpdateTime** - _Number_.    
-  The minimum time interval between subsequent location updates, in milliseconds (ignored on iOS).
  - **isStarted** - _Boolean_.    
   True if the location listener is already started. In this case all other start requests will be ignored.
  - **lastKnownLocation** - [_Location_](../location/Location.md).    
   Returns last known location from device's location services or null of no known last location.
+ - **android** - [_AndroidLocationManager_](../location/AndroidLocationManager.md).    
+  An android-specific data for location.
+ - **ios** - [_iOSLocationManager_](../location/iOSLocationManager.md).    
+  An ios-specific data for location.
 
 ##### Instance Functions
  - **startLocationMonitoring(** onLocation _Function_..., onError? _Function_..., options? [_Options_](../location/Options.md) **)**  

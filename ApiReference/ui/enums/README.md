@@ -27,3 +27,5 @@ Namespace | Description
 [Dock](../../ui/enums/Dock/) | Specifies the Dock position of a child element that is inside a DockLayout.
 [AutocapitalizationType](../../ui/enums/AutocapitalizationType/) | Represents the auto-capitalization style for a text input.
 [ImageFormat](../../ui/enums/ImageFormat/) | Defines the recognized image formats.
+[NavigationBarVisibility](../../ui/enums/NavigationBarVisibility/) | Specifies NavigationBar visibility mode.
+[MenuItemPosition](../../ui/enums/MenuItemPosition/) | Specifies android MenuItem position.

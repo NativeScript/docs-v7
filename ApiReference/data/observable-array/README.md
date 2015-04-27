@@ -18,7 +18,3 @@ Class | Description
 Object | Description
 ------|------------
 [ChangedData](../../data/observable-array/ChangedData.md) | Event args for "changed" event.
-
-Namespace | Description
-------|------------
-[knownEvents](../../data/observable-array/knownEvents/) | Known event names.

@@ -5,17 +5,22 @@ description: "Class ui/core/view.View"
 ---
 ## Class: "ui/core/view".View  
 _Inherits:_ [_ProxyObject_](../../../ui/core/proxy/ProxyObject.md)  
-_Conform to:_ [_ApplyXmlAttributes_](../../../ui/core/view/ApplyXmlAttributes.md)  
 This class is the base class for all UI components. 
 A View occupies a rectangular area on the screen and is responsible for drawing and layouting of all UI components within. 
 
 ##### Static Properties
+ - **loadedEvent** - _String_.    
+  String value used when hooking to loaded event.
+ - **unloadedEvent** - _String_.    
+  String value used when hooking to unloaded event.
  - **idProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
   Represents the observable property backing the id property of each View.
  - **cssClassProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
   Represents the observable property backing the cssClass property of each View.
- - **isEnabledProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).
- - **isUserInteractionEnabledProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).
+ - **isEnabledProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the isEnabled property of each View.
+ - **isUserInteractionEnabledProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the isUserInteractionEnabled property of each View.
 
 ##### Static Functions
  - **measureChild(** parent [_View_](../../../ui/core/view/View.md), child [_View_](../../../ui/core/view/View.md), widthMeasureSpec _Number_, heightMeasureSpec _Number_ **)** {}...
@@ -45,18 +50,20 @@ size is smaller than the size the view wants to be.
    - _**return**_ - _Number_
 
 ##### Instance Properties
- - **width** - _Number_.    
-  Gets or sets the desired width of the view.
- - **height** - _Number_.    
-  Gets or sets the desired height of the view.
+ - **color** - [_Color_](../../../color/Color.md).    
+  Gets or sets the color of the view.
+ - **backgroundColor** - [_Color_](../../../color/Color.md).    
+  Gets or sets the background color of the view.
  - **minWidth** - _Number_.    
   Gets or sets the minimum width the view may grow to.
  - **minHeight** - _Number_.    
   Gets or sets the minimum height the view may grow to.
- - **horizontalAlignment** - _String_.    
-  Gets or sets the alignment of this view within its parent along the Horizontal axis.
- - **verticalAlignment** - _String_.    
-  Gets or sets the alignment of this view within its parent along the Vertical axis.
+ - **width** - _Number_.    
+  Gets or sets the desired width of the view.
+ - **height** - _Number_.    
+  Gets or sets the desired height of the view.
+ - **margin** - _String_.    
+  Gets or sets margin style property.
  - **marginLeft** - _Number_.    
   Specifies extra space on the left side of this view.
  - **marginTop** - _Number_.    
@@ -65,8 +72,24 @@ size is smaller than the size the view wants to be.
   Specifies extra space on the right side of this view.
  - **marginBottom** - _Number_.    
   Specifies extra space on the bottom side of this view.
+ - **padding** - _String_.    
+  Gets or sets padding style property.
+ - **paddingLeft** - _Number_.    
+  Specify the left padding of this view.
+ - **paddingTop** - _Number_.    
+  Specify the top padding of this view.
+ - **paddingRight** - _Number_.    
+  Specify the right padding of this view.
+ - **paddingBottom** - _Number_.    
+  Specify the bottom padding of this view.
+ - **horizontalAlignment** - _String_.    
+  Gets or sets the alignment of this view within its parent along the Horizontal axis.
+ - **verticalAlignment** - _String_.    
+  Gets or sets the alignment of this view within its parent along the Vertical axis.
  - **visibility** - _String_.    
   Gets or sets the visibility of the view.
+ - **opacity** - _Number_.    
+  Gets or sets the opacity style property.
  - **isEnabled** - _Boolean_.    
   Gets or sets a value indicating whether the the view is enabled. This affects the appearance of the view.
  - **isUserInteractionEnabled** - _Boolean_.    
@@ -84,11 +107,11 @@ size is smaller than the size the view wants to be.
  - **cssType** - _String_.
  - **visualState** - _String_.
  - **isLoaded** - _Boolean_.
+ - **_context** - _Object_.
  - **_domId** - _Number_.
  - **_cssClasses** - _Array_ of _String_.
  - **_isAddedToNativeVisualTree** - _Boolean_.
  - **_childrenCount** - _Number_.
- - **_context** - _Object_.
  - **_nativeView** - _Object_.
  - **_isVisible** - _Boolean_.
 
@@ -157,16 +180,26 @@ Returns a value indicating whether this view or one of its descendants actually 
    - **type** - _Number_
    - **callback** - _Function_(args [_GestureEventData_](../../../ui/gestures/GestureEventData.md))
    - _**return**_ - [_GesturesObserver_](../../../ui/gestures/GesturesObserver.md)
+ - **on(** eventNames _String_, callback _Function_..., thisArg? _Object_ **)**  
+     A basic method signature to hook an event listener (shortcut alias to the addEventListener method).
+   - **eventNames** - _String_  
+     - String corresponding to events (e.g. "propertyChange"). Optionally could be used more events separated by `,` (e.g. "propertyChange", "change"). 
+   - **callback** - _Function_(data [_EventData_](../../../data/observable/EventData.md))  
+     - Callback function which will be executed when event is raised.
+   - **thisArg** - _(optional)_ - _Object_  
+     - An optional parameter which will be used as `this` context for callback execution.
+ - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
+     Raised when a loaded event occurs.
+   - **event**
+   - **callback** - _Function_(args [_EventData_](../../../data/observable/EventData.md))
+   - **thisArg** - _(optional)_ - _Object_
+ - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
+     Raised when an unloaded event occurs.
+   - **event**
+   - **callback** - _Function_(args [_EventData_](../../../data/observable/EventData.md))
+   - **thisArg** - _(optional)_ - _Object_
  - **onLoaded()**
  - **onUnloaded()**
- - **applyXmlAttribute(** attributeName _String_, attrValue _Object_ **)** _Boolean_  
-     Called for every attribute in xml declaration. <... fontAttributes="bold" ../>
-   - **attributeName** - _String_  
-     - the name of the attribute (fontAttributes)
-   - **attrValue** - _Object_  
-     - the value of the attribute (bold)
-Should return true if this attribute is handled and there is no need default handler to process it.
-   - _**return**_ - _Boolean_
  - **_addView(** view [_View_](../../../ui/core/view/View.md) **)**
    - **view** - [_View_](../../../ui/core/view/View.md)
  - **_removeView(** view [_View_](../../../ui/core/view/View.md) **)**

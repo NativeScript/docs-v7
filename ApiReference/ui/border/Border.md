@@ -19,3 +19,6 @@ Represents a UI border component.
   Gets or sets the border width of the border component.
  - **borderColor** - [_Color_](../../color/Color.md).    
   Gets or sets the border color of the border component.
+
+##### Instance Functions
+ - **_updateAndroidBorder()**

@@ -18,7 +18,3 @@ Object | Description
 ------|------------
 [EventData](../../data/observable/EventData.md) | Base event data.
 [PropertyChangeData](../../data/observable/PropertyChangeData.md) | Data for the "propertyChange" event.
-
-Namespace | Description
-------|------------
-[knownEvents](../../data/observable/knownEvents/) | Known event names.

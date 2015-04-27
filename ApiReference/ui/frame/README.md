@@ -29,10 +29,6 @@ To start a new Activity, a new Frame instance should be created and navigated to
 In iOS the native controller, associated with a Frame object is UINavigationController.
 The navigation controller will automatically hide/show its navigation bar depending on the back stack of the Frame.
 
-Namespace | Description
-------|------------
-[knownEvents](../../ui/frame/knownEvents/) | Encapsulates the events raised by the Frame object.
-
 ##### Functions
  - **topmost()** [_Frame_](../../ui/frame/Frame.md)  
      Gets the topmost frame in the frames stack. An application will typically has one frame instance. Multiple frames handle nested (hierarchical) navigation scenarios.

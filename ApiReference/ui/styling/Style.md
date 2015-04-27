@@ -36,14 +36,14 @@ Represents as style object containing all the style properties for a particular 
   Specifies extra space on the bottom side of this view.
  - **padding** - _String_.    
   Gets or sets padding style property.
- - **paddingBottom** - _Number_.    
-  Specify the bottom padding of this view.
  - **paddingLeft** - _Number_.    
   Specify the left padding of this view.
- - **paddingRight** - _Number_.    
-  Specify the right padding of this view.
  - **paddingTop** - _Number_.    
   Specify the top padding of this view.
+ - **paddingRight** - _Number_.    
+  Specify the right padding of this view.
+ - **paddingBottom** - _Number_.    
+  Specify the bottom padding of this view.
  - **horizontalAlignment** - _String_.    
   Gets or sets horizontal-alignment style property.
  - **verticalAlignment** - _String_.    

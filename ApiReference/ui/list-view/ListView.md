@@ -8,6 +8,12 @@ _Inherits:_ [_View_](../../ui/core/view/View.md)
 Represents a view that shows items in a vertically scrolling list.
 
 ##### Static Properties
+ - **itemLoadingEvent** - _String_.    
+  String value used when hooking to itemLoading event.
+ - **itemTapEvent** - _String_.    
+  String value used when hooking to itemTap event.
+ - **loadMoreItemsEvent** - _String_.    
+  String value used when hooking to loadMoreItems event.
  - **itemsProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
   Represents the observable property backing the items property of each ListView instance.
  - **itemTemplateProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
@@ -33,21 +39,29 @@ The items property can be set to an array or an object defining length and getIt
 ##### Instance Functions
  - **refresh()**  
      Forces the ListView to reload all its items.
- - **on(** event _String_, callback _Function_... **)**
-   - **event** - _String_
-   - **callback** - _Function_(data [_EventData_](../../data/observable/EventData.md))
- - **on(** event , callback _Function_... **)**  
+ - **on(** eventNames _String_, callback _Function_..., thisArg? _Object_ **)**  
+     A basic method signature to hook an event listener (shortcut alias to the addEventListener method).
+   - **eventNames** - _String_  
+     - String corresponding to events (e.g. "propertyChange"). Optionally could be used more events separated by `,` (e.g. "propertyChange", "change"). 
+   - **callback** - _Function_(data [_EventData_](../../data/observable/EventData.md))  
+     - Callback function which will be executed when event is raised.
+   - **thisArg** - _(optional)_ - _Object_  
+     - An optional parameter which will be used as `this` context for callback execution.
+ - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
      Raised when a View for the data at the specified index should be created. 
 The result should be returned trough the view property of the event data.
 Note, that the view property of the event data can be pre-initialized with 
 an old instance of a view, so that it can be reused. 
    - **event**
    - **callback** - _Function_(args [_ItemEventData_](../../ui/list-view/ItemEventData.md))
- - **on(** event , callback _Function_... **)**  
+   - **thisArg** - _(optional)_ - _Object_
+ - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
      Raised when an item inside the ListView is tapped.
    - **event**
    - **callback** - _Function_(args [_ItemEventData_](../../ui/list-view/ItemEventData.md))
- - **on(** event , callback _Function_... **)**  
+   - **thisArg** - _(optional)_ - _Object_
+ - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
      Raised when the ListView is scrolled so that its last item is visible.
    - **event**
    - **callback** - _Function_(args [_EventData_](../../data/observable/EventData.md))
+   - **thisArg** - _(optional)_ - _Object_

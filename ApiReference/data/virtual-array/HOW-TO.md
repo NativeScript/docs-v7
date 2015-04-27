@@ -16,7 +16,7 @@ the array will raise "itemsLoading" event for still not loaded items.
 ``` JavaScript
 var array = new virtualArrayModule.VirtualArray(100);
 array.loadSize = 15;
-array.on(virtualArrayModule.knownEvents.itemsLoading, function (args) {
+array.on(virtualArrayModule.VirtualArray.itemsLoadingEvent, function (args) {
     // Argument (args) is ItemsLoading.
     // args.index is start index of the page where the requested index is located.
     // args.count number of requested items.
@@ -38,7 +38,7 @@ array.on(virtualArrayModule.knownEvents.itemsLoading, function (args) {
 ``` JavaScript
 var array = new virtualArrayModule.VirtualArray(100);
 array.loadSize = 15;
-array.on(virtualArrayModule.knownEvents.change, function (args) {
+array.on(virtualArrayModule.VirtualArray.changeEvent, function (args) {
     // Argument (args) is ChangedData<T>.
     // args.eventName is "change".
     // args.action is "update".
@@ -51,7 +51,7 @@ array.load(index, itemsToLoad);
 ``` JavaScript
 var array = new virtualArrayModule.VirtualArray(100);
 array.loadSize = 15;
-array.on(virtualArrayModule.knownEvents.change, function (args) {
+array.on(virtualArrayModule.VirtualArray.changeEvent, function (args) {
     // Argument (args) is ChangedData<T>.
     // args.eventName is "change".
     // args.action is "add".

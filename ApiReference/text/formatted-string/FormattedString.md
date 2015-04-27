@@ -24,6 +24,8 @@ A class used to create a formatted (rich text) string.
   Gets or sets underline which will be used for all spans that not have a specific value for underline.
  - **strikethrough** - _Number_.    
   Gets or sets strikethrough which will be used for all spans that not have a specific value for strikethrough.
+ - **parent** - [_View_](../../ui/core/view/View.md).    
+  Gets the parent view of the formatted string.
 
 ##### Instance Functions
  - **toString()** _String_  

@@ -11,10 +11,10 @@ var searchBarModule = require("ui/search-bar");
 ### Searching
 ``` JavaScript
 var searchBar = new searchBarModule.SearchBar();
-searchBar.on(searchBarModule.knownEvents.submit, function (args) {
+searchBar.on(searchBarModule.SearchBar.submitEvent, function (args) {
     console.log("Search for " + args.object.text);
 });
-searchBar.on(searchBarModule.knownEvents.clear, function (args) {
+searchBar.on(searchBarModule.SearchBar.clearEvent, function (args) {
     console.log("Clear");
 });
 ```

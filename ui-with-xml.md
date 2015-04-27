@@ -364,7 +364,7 @@ var MyControl = (function (_super) {
         var lbl = new label.Label();
         var btn = new button.Button();
         btn.text = "Tap me!";
-        btn.on(button.knownEvents.tap, function (args) {
+        btn.on(button.Button.tapEvent, function (args) {
             lbl.text = "Tap " + counter++;
         });
         this.addChild(lbl);
@@ -389,7 +389,7 @@ export class MyControl extends stackLayout.StackLayout {
         var lbl = new label.Label();
         var btn = new button.Button();
         btn.text = "Tap me!";
-        btn.on(button.knownEvents.tap, (args: observable.EventData) => {
+        btn.on(button.Button.tapEvent, (args: observable.EventData) => {
             lbl.text = "Tap " + counter++;
         });
 

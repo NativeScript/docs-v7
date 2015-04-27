@@ -6,20 +6,33 @@ description: "Class data/observable.Observable"
 ## Class: "data/observable".Observable  
 Observable is used when you want to be notified when a change occurs. Use on/off methods to add/remove listener.
 
+##### Static Properties
+ - **propertyChangeEvent** - _String_.    
+  String value used when hooking to propertyChange event.
+
 ##### Instance Properties
  - **typeName** - _String_.    
   Gets the name of the constructor function for this instance. E.g. for a Button class this will return "Button".
 
 ##### Instance Functions
  - **on(** eventNames _String_, callback _Function_..., thisArg? _Object_ **)**  
-     Shortcut alias to the addEventListener method.
-   - **eventNames** - _String_
+     A basic method signature to hook an event listener (shortcut alias to the addEventListener method).
+   - **eventNames** - _String_  
+     - String corresponding to events (e.g. "propertyChange"). Optionally could be used more events separated by `,` (e.g. "propertyChange", "change"). 
+   - **callback** - _Function_(data [_EventData_](../../data/observable/EventData.md))  
+     - Callback function which will be executed when event is raised.
+   - **thisArg** - _(optional)_ - _Object_  
+     - An optional parameter which will be used as `this` context for callback execution.
+ - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
+     Raised when a propertyChange occurs.
+   - **event**
    - **callback** - _Function_(data [_EventData_](../../data/observable/EventData.md))
    - **thisArg** - _(optional)_ - _Object_
- - **off(** eventNames _String_, callback? _Object_ **)**  
+ - **off(** eventNames _String_, callback? _Object_, thisArg? _Object_ **)**  
      Shortcut alias to the removeEventListener method.
    - **eventNames** - _String_
    - **callback** - _(optional)_ - _Object_
+   - **thisArg** - _(optional)_ - _Object_
  - **addEventListener(** eventNames _String_, callback _Function_..., thisArg? _Object_ **)**  
      Adds a listener for the specified event name.
    - **eventNames** - _String_  

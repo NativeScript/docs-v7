@@ -11,7 +11,7 @@ var topmost = frameModule.topmost();
 ```
 ### Navigating to a Module
 ``` JavaScript
-topmost.navigate("app/details-page");
+topmost.navigate("details-page");
 ```
 ### Navigating with a Factory Function
 ``` JavaScript
@@ -27,7 +27,7 @@ topmost.navigate(factoryFunc);
 ### Navigating with NavigationEntry
 ``` JavaScript
 var navigationEntry = {
-    moduleName: "app/details-page",
+    moduleName: "details-page",
     context: { info: "something you want to pass to your page" },
     animated: false
 };

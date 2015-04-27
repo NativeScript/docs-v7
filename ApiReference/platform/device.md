@@ -6,9 +6,12 @@ description: "Class platform.device"
 ## Class: "platform".device
 
 ##### Static Properties
+ - **manufacturer** - _String_.    
+  Gets the manufacturer of the device.
+For example: "Apple" or "HTC" or "Samsung".
  - **model** - _String_.    
   Gets the model of the device.
-For example: "Nexus 5" or "iPhone.
+For example: "Nexus 5" or "iPhone".
  - **os** - _String_.    
   Gets the model of the device.
 For example: "Android" or "iOS".
@@ -21,3 +24,5 @@ For example: 19(android), 8.1(ios).
  - **deviceType** - _String_.    
   Gets the type current device.
 Available values: "phone", "tablet".
+ - **uuid** - _String_.    
+  Gets the uuid

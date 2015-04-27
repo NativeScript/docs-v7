@@ -26,7 +26,7 @@ button.text = "Hello, world!";
 ```
 ### Responding to the tap event
 ``` JavaScript
-button.on(buttonModule.knownEvents.tap, function (args) {
+button.on(buttonModule.Button.tapEvent, function (args) {
     // Do something
 });
 ```

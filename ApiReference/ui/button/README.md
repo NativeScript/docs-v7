@@ -13,7 +13,3 @@ var uibutton = require("ui/button");
 Class | Description
 ------|------------
 [Button](../../ui/button/Button.md) | Represents a standard Button widget.
-
-Namespace | Description
-------|------------
-[knownEvents](../../ui/button/knownEvents/) | Known event names.

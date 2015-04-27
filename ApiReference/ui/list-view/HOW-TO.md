@@ -62,7 +62,7 @@ The itemLoading event is used to create the UI for each item that is shown in th
 ``` JavaScript
 var colors = ["red", "green", "blue"];
 listView.items = colors;
-listView.on("itemLoading", function (args) {
+listView.on(listViewModule.ListView.itemLoadingEvent, function (args) {
     if (!args.view) {
         // Create label if it is not already created.
         args.view = new labelModule.Label();
@@ -81,7 +81,7 @@ listView.refresh();
 ``` JavaScript
 var colors = new observableArray.ObservableArray(["red", "green", "blue"]);
 listView.items = colors;
-listView.on("itemLoading", function (args) {
+listView.on(listViewModule.ListView.itemLoadingEvent, function (args) {
     if (!args.view) {
         // Create label if it is not already created.
         args.view = new labelModule.Label();
@@ -99,7 +99,7 @@ colors.push("yellow");
 ### ItemTap event
 The event will be raise when an item inside the ListView is tapped.
 ``` JavaScript
-listView.on(listViewModule.knownEvents.itemTap, function (args) {
+listView.on(listViewModule.ListView.itemTapEvent, function (args) {
     var tappedItemIndex = args.index;
     var tappedItemView = args.view;
     // Do someting
@@ -109,7 +109,7 @@ listView.on(listViewModule.knownEvents.itemTap, function (args) {
 The event will be raised when the ListView is scrolled so that the last item is visible.
 This even is intended to be used to add additional data in the ListView.
 ``` JavaScript
-listView.on("loadMoreItems", function (data) {
+listView.on(listViewModule.ListView.loadMoreItemsEvent, function (data) {
     // Do something.
 });
 ```

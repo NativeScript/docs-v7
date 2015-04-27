@@ -34,7 +34,7 @@ label.cssClass = "title";
 ```
 ### How to style a label via css type
 ``` JavaScript
-testLabel.text = "The quick brown fox jumps over the lazy dog.";
+label.text = "The quick brown fox jumps over the lazy dog.";
 // in order to style label with a "type style scope" just put a similar css entry
 // testLabel.parentPage.css = "label {background-color: #C6C6C6; color: #10C2B0; font-size: 14;}";
 // all labels within the parent page will be styled according to css values

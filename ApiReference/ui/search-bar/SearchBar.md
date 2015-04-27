@@ -8,6 +8,10 @@ _Inherits:_ [_View_](../../ui/core/view/View.md)
 Represents a search bar component.
 
 ##### Static Properties
+ - **submitEvent** - _String_.    
+  String value used when hooking to submit event.
+ - **clearEvent** - _String_.    
+  String value used when hooking to clear event.
  - **textProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
   Dependency property used to support binding operations related to search-bar text.
  - **textFieldBackgroundColorProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
@@ -26,14 +30,21 @@ Represents a search bar component.
   Gets or sets the TextField background color of the SearchBar component.
 
 ##### Instance Functions
- - **on(** event _String_, callback _Function_... **)**
-   - **event** - _String_
-   - **callback** - _Function_(data [_EventData_](../../data/observable/EventData.md))
- - **on(** event , callback _Function_... **)**  
+ - **on(** eventNames _String_, callback _Function_..., thisArg? _Object_ **)**  
+     A basic method signature to hook an event listener (shortcut alias to the addEventListener method).
+   - **eventNames** - _String_  
+     - String corresponding to events (e.g. "propertyChange"). Optionally could be used more events separated by `,` (e.g. "propertyChange", "change"). 
+   - **callback** - _Function_(data [_EventData_](../../data/observable/EventData.md))  
+     - Callback function which will be executed when event is raised.
+   - **thisArg** - _(optional)_ - _Object_  
+     - An optional parameter which will be used as `this` context for callback execution.
+ - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
      Raised when a search bar search is submitted.
    - **event**
    - **callback** - _Function_(args [_EventData_](../../data/observable/EventData.md))
- - **on(** event , callback _Function_... **)**  
+   - **thisArg** - _(optional)_ - _Object_
+ - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
      Raised when a search bar search is closed.
    - **event**
    - **callback** - _Function_(args [_EventData_](../../data/observable/EventData.md))
+   - **thisArg** - _(optional)_ - _Object_

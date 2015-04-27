@@ -36,10 +36,16 @@ Returns true if value is a function.
 Returns true if value is "undefined".
    - _**return**_ - _Boolean_
  - **isDefined(** value _Object_ **)** _Boolean_  
-     A function that checks if something is defined (not null and not undefined).
+     A function that checks if something is defined (not undefined).
    - **value** - _Object_  
      The value which will be checked.
 Returns true if value is defined.
+   - _**return**_ - _Boolean_
+ - **isNullOrUndefined(** value _Object_ **)** _Boolean_  
+     A function that checks if something is not defined (null or undefined).
+   - **value** - _Object_  
+     The value which will be checked.
+Returns true if value is null or undefined.
    - _**return**_ - _Boolean_
  - **verifyCallback(** value _Object_ **)**  
      A function that checks if something is a valid function.
