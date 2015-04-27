@@ -80,12 +80,11 @@ Your first NativeScript project uses the following basic directories and files.
 .
 └── hello-world
     ├── app
-    │   ├── app
-    │   │   ├── app.css
-    │   │   ├── app.js
-    │   │   ├── bootstrap.js
-    │   │   ├── main-page.js
-    │   │   └── main-page.xml
+    │   ├── app.css
+    │   ├── app.js
+    │   ├── bootstrap.js
+    │   ├── main-page.js
+    │   ├── main-page.xml
     │   ├── App_Resources
     │   │   └── ...
     │   └── tns_modules
@@ -97,11 +96,11 @@ Your first NativeScript project uses the following basic directories and files.
 
 Here's a guide to what these files do:
 
-* The inner `app` directory is the **development space for your application**.
+* The `app` directory is the **development space for your application**.
 * The `platforms` directory is created empty. When you add a target platform to your project, the NativeScript CLI creates a new subdirectory with the platform name. The subdirectory contains the ready-to-build platform-specific resources of your app. 
 * The `App_Resources` subdirectory is the directory that contains **platform-specific resources** such as icons, splash screens and platform-specific configuration files like `AndroidManifest.xml` and `Info.plist`. When you create a new project, only icons and splash screens are present in this directory.
 * The `tns_modules` subdirectory contains the NativeScript modules. Each module exposes a device or platform functionality such as the camera, location services or the user interface.
-* `app.js` is the starting point for the logic of your app. In the sample app, `app.js` sets the app's `mainModule`, or the first page in your sample app, to `app/main-page`, which effectively gives control to the `app/main-page.js` and `app/main-page.xml` files.
+* `app.js` is the starting point for the logic of your app. In the sample app, `app.js` sets the app's `mainModule`, or the first page in your sample app, to `main-page`, which effectively gives control to the `main-page.js` and `main-page.xml` files.
 
 > **IMPORTANT**: Avoid modifying your projects inside the `platforms` directory. During build-related operations, your changes will be overridden by your code and resources from the `app` directory.
 
@@ -111,7 +110,7 @@ Now that you have an app running, let's switch up the NativeScript-generated sam
 
 ### 1. Add user interface
 
-NativeScript uses an XML structure to define UI components. Your app has one page, which has its UI defined in `app/main-page.xml`. In the same `app` directory, create a sibling file named `tasks.xml` and paste in the following contents. 
+NativeScript uses an XML structure to define UI components. Your app has one page, which has its UI defined in `main-page.xml`. In the same `app` directory, create a sibling file named `tasks.xml` and paste in the following contents. 
 
 ```XML
 <Page loaded="onPageLoaded">
@@ -204,11 +203,11 @@ textfield {
 
 ### 4. The finishing touches
 
-To switch your app to use the new tasks page as a home page, open `app/app.js` and replace its contents with the following code.
+To switch your app to use the new tasks page as a home page, open `app.js` and replace its contents with the following code.
 
 ```JavaScript
 var application = require("application");
-application.mainModule = "app/tasks";
+application.mainModule = "tasks";
 application.start();
 ```
 

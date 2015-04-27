@@ -48,14 +48,14 @@ When you set the `mainModule`, the NativeScript navigation framework looks for a
 ```JavaScript
 var application = require("application");
 // Set the start module for the application
-application.mainModule = "app/my-page";
+application.mainModule = "my-page";
 // Start the application
 application.start();
 ```
 ```TypeScript
 import application = require("application");
 // Set the start module for the application
-application.mainModule = "app/my-page";
+application.mainModule = "my-page";
 // Start the application
 application.start();
 ```
@@ -68,11 +68,11 @@ When you trigger navigation, NativeScript looks for an `XML` file with the speci
 
 ```JavaScript
 // Navigate to page called “my-page”
-frames.topmost().navigate("app/my-page")
+frames.topmost().navigate("my-page")
 ```
 ```TypeScript
 // Navigate to page called “my-page”
-frames.topmost().navigate("app/my-page")
+frames.topmost().navigate("my-page")
 ```
 
 > Paths are relative to the application root. In the example above, NativeScript looks for a `my-page.xml` file in the app directory of your project.
@@ -339,12 +339,12 @@ This sample `main-page.xml` is using custom component defined in separate declar
 
 ```XML
 <Page
-    xmlns:customControls="app/xml-declaration/mymodule">
+    xmlns:customControls="xml-declaration/mymodule">
   <customControls:MyControl />
 </Page>
 ```
 
-This sample custom component declared in `app/xml-declaration/mymodule.js` or `app/xml-declaration/mymodule.ts` exports the `MyControl` variable which creates a simple counter inside your `main-page.xml` page.
+This sample custom component declared in `xml-declaration/mymodule.js` or `xml-declaration/mymodule.ts` exports the `MyControl` variable which creates a simple counter inside your `main-page.xml` page.
 
 ```JavaScript
 var __extends = this.__extends || function (d, b) {
@@ -401,16 +401,16 @@ export class MyControl extends stackLayout.StackLayout {
 
 ### Example: Custom XML-Based Component with code file
 
-This sample `main-page.xml` uses a custom component defined in a `app/xml-declaration/mymodulewithxml/MyControl.xml`file together with `app/xml-declaration/mymodulewithxml/MyControl.js` or `app/xml-declaration/mymodulewithxml/MyControl.ts` code file. 
+This sample `main-page.xml` uses a custom component defined in a `xml-declaration/mymodulewithxml/MyControl.xml`file together with `xml-declaration/mymodulewithxml/MyControl.js` or `xml-declaration/mymodulewithxml/MyControl.ts` code file. 
 
 ```XML
 <Page
-    xmlns:customOtherControls="app/xml-declaration/mymodulewithxml">
+    xmlns:customOtherControls="xml-declaration/mymodulewithxml">
     <customOtherControls:MyControl />
 </Page>
 ```
 
-The custom component in `app/xml-declaration/MyControl.xml` defines button and a label and `buttonTap` function located in the code file which changes the label on every tap of the button in `MyControl.xml`.
+The custom component in `xml-declaration/MyControl.xml` defines button and a label and `buttonTap` function located in the code file which changes the label on every tap of the button in `MyControl.xml`.
 
 ```XML
 <StackLayout>

@@ -27,7 +27,7 @@ iOS calls UIApplication and triggers the application main event loop.
 */
 
 var application = require("application");
-application.mainModule = "app/main-page";
+application.mainModule = "main-page";
 application.start();
 ```
 ``` TypeScript
@@ -36,7 +36,7 @@ iOS calls UIApplication and triggers the application main event loop.
 */
 
 import application = require("application");
-application.mainModule = "app/main-page";
+application.mainModule = "main-page";
 application.start();
 ```
 
@@ -55,7 +55,7 @@ NativeScript applications have the following life cycle events.
 
 ``` JavaScript
 var application = require("application");
-application.mainModule = "app/main-page";
+application.mainModule = "main-page";
 application.onLaunch = function (context) {
     // For Android applications, the context is an android.content.Intent class.
     // For iOS applications, the context is undefined.
@@ -85,7 +85,7 @@ application.start();
 ```
 ``` TypeScript
 import application = require("application");
-application.mainModule = "app/main-page";
+application.mainModule = "main-page";
 application.onLaunch = function (context: any) {
     // For Android applications, the context is an android.content.Intent class.
     // For iOS applications, the context is undefined.
