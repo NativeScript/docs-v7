@@ -1,7 +1,7 @@
 ---
 nav-title: Changelog
 title: "Changelog"
-description: A list describing changed through the different versions
+description: A list of breaking changes across the releases of the NativeScript framework and its tools.
 position: 19
 ---
 
@@ -11,7 +11,7 @@ The document lists the major breaking changes in the NativeScript framework.
 
 ### 0.10.0 (2015, April 17)
 
-The project directory structure in the CLI has changed. The previous structure looks like:
+This release introduces a new project directory structure. Projects from earlier releases have the following structure:
 
 ```
 .
@@ -30,7 +30,7 @@ The project directory structure in the CLI has changed. The previous structure l
     └── platforms
         └── ...
 ```
-With the new version the inner `app` folder has been removed and the project structure now looks like:
+Starting with version 0.10, the inner app folder has been removed. Newly created projects have the following structure:
 
 ```
 .
@@ -49,7 +49,10 @@ With the new version the inner `app` folder has been removed and the project str
         └── ...
 ```
 
->To migrate to the new structure you will need to manually move the files within the inner `app` folder one level up and then delete the already empty inner `app` folder.
+>To migrate to the new structure, complete the following steps:
+
+>1. Manually move all files and folders from the inner app folder one level up inside the outer app folder.
+>2. Remove the now empty inner app folder.
 
 # See Also
 
