@@ -204,9 +204,8 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 1. Run the terminal.
 1. Install [Node.js](http://nodejs.org).
     
-    ```Shell
-    sudo apt-get install nodejs-legacy
-    ```
+    > **TIP:** You can follow the instructions provided [here](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager) to install Node.js on your system.
+    
 1. If you are running on a 64-bit system, install the runtime libraries for the ia32/i386 architecture.
 
     ```Shell
