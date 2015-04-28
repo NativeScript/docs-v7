@@ -5,7 +5,7 @@ description: A list of breaking changes across the releases of the NativeScript 
 position: 19
 ---
 
-# NativeScript Changelog
+# NativeScript Framework Breaking Changes
 
 This document describes the critical breaking changes and suggested workarounds, if any, in the NativeScript framework. The complete list with all the changes may be found on the respective [Github repositories](#see-also).
 
