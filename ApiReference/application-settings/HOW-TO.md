@@ -3,8 +3,8 @@ nav-title: "application-settings How-To"
 title: "How-To"
 description: "Examples for using application-settings"
 ---
-# Local Settings
-Using local settings methods requires to load "local settings" module.
+# Application Settings
+Using application settings methods requires to load "application settings" module.
 ``` JavaScript
 var appSettings = require("application-settings");
 ```
