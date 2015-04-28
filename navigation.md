@@ -104,12 +104,12 @@ To set the home page for your app, you need to use the `mainModule` member of th
 
 ``` JavaScript
 var application = require("application");
-application.mainModule = "app/main-page";
+application.mainModule = "main-page";
 application.start();
 ```
 ``` TypeScript
 import application = require("application");
-application.mainModule = "app/main-page";
+application.mainModule = "main-page";
 application.start();
 ```
 
@@ -141,10 +141,10 @@ var topmost = frameModule.topmost();
 You can navigate to the topmost frame of a page specified by its file name.
 
 ``` JavaScript
-topmost.navigate("app/details-page");
+topmost.navigate("details-page");
 ```
 ``` TypeScript
-topmost.navigate("app/details-page");
+topmost.navigate("details-page");
 ```
 
 ### Navigate with Factory Function
@@ -179,7 +179,7 @@ When you navigate to another page, you can pass context to the page with a [`Nav
 
 ``` JavaScript
 var navigationEntry = {
-    moduleName: "app/details-page",
+    moduleName: "details-page",
     context: {info: "something you want to pass to your page"},
     animated: false
 };
@@ -187,7 +187,7 @@ topmost.navigate(navigationEntry);
 ```
 ``` TypeScript
 var navigationEntry = {
-    moduleName: "app/details-page",
+    moduleName: "details-page",
     context: {info: "something you want to pass to your page"},
     animated: false
 };
@@ -206,7 +206,7 @@ When you navigate to the details page, you transfer a primary key or ID informat
 function listViewItemTap(args) {
     // Navigate to the details page with context set to the data item for specified index
     frames.topmost().navigate({
-        moduleName: "app/cuteness.io/details-page",
+        moduleName: "cuteness.io/details-page",
         context: appViewModel.redditItems.getItem(args.index)
     });
 }
@@ -215,7 +215,7 @@ function listViewItemTap(args) {
 export function listViewItemTap(args: listView.ItemEventData) {
     // Navigate to the details page with context set to the data item for specified index
     frames.topmost().navigate({
-        moduleName: "app/details-page",
+        moduleName: "details-page",
         context: appViewModel.redditItems.getItem(args.index)
     });
 }
