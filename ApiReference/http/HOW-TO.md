@@ -71,3 +71,18 @@ http.request({ url: "https://httpbin.org/get", method: "GET" }).then(function (r
     done(e);
 });
 ```
+### Post JSON
+``` JavaScript
+var result;
+http.request({
+    url: "https://httpbin.org/post",
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    content: JSON.stringify({ MyVariableOne: "ValueOne", MyVariableTwo: "ValueTwo" })
+}).then(function (response) {
+    result = response.content.toJSON();
+    console.log(result);
+}, function (e) {
+    console.log("Error occurred " + e);
+});
+```

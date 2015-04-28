@@ -26,3 +26,5 @@ For example: 19(android), 8.1(ios).
 Available values: "phone", "tablet".
  - **uuid** - _String_.    
   Gets the uuid
+ - **language** - _String_.    
+  Gets the preferred language. For example "en" or "en_US"

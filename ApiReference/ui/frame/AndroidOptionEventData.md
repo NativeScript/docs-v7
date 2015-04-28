@@ -5,7 +5,7 @@ description: "Object ui/frame.AndroidOptionEventData"
 ---
 ## Object: "ui/frame".AndroidOptionEventData  
 _Extends:_ [_EventData_](../../data/observable/EventData.md)  
-Represents the data passed to the knownEvents.android.optionSelected event. 
+Represents the data passed to the androidOptionSelected event. 
 This event is raised by the Android OS when an option in the Activity's action bar has been selected.
 
 ##### Properties

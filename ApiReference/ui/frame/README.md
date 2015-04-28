@@ -20,7 +20,7 @@ Object | Description
 ------|------------
 [NavigationEntry](../../ui/frame/NavigationEntry.md) | Represents an entry in passed to navigate method.
 [BackstackEntry](../../ui/frame/BackstackEntry.md) | Represents an entry in the back stack of a Frame object.
-[AndroidOptionEventData](../../ui/frame/AndroidOptionEventData.md) | Represents the data passed to the knownEvents.android.optionSelected event. 
+[AndroidOptionEventData](../../ui/frame/AndroidOptionEventData.md) | Represents the data passed to the androidOptionSelected event. 
 This event is raised by the Android OS when an option in the Activity's action bar has been selected.
 [AndroidFrame](../../ui/frame/AndroidFrame.md) | Represents the Android-specific Frame object, aggregated within the common Frame one.
 In Android there are two types of navigation - using new Activity instances or using Fragments within the main Activity.

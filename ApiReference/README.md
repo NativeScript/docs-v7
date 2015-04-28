@@ -68,7 +68,6 @@
  - ["ui/text-field"](ui/text-field/)
  - ["ui/text-view"](ui/text-view/)
  - ["ui/time-picker"](ui/time-picker/)
- - ["ui/tool-bar"](ui/tool-bar/)
  - ["ui/web-view"](ui/web-view/)
  - ["utils/types"](utils/types/)
  - ["utils/utils"](utils/utils/)
