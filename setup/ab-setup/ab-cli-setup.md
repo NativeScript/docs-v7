@@ -248,7 +248,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
     1. Run the following command. 
     
         ```Shell
-        sudo npm i -g appbuilder
+        sudo npm install nativescript -g --unsafe-perm
         ```
     1. Restart the command prompt.
 
