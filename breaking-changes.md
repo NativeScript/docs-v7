@@ -57,6 +57,6 @@ Starting with version 0.10, the inner app folder has been removed. Newly created
 #See Also
 
 * [Cross-platform Modules Changelog](./Changelogs/Cross-Platform Modules.md)
-* [Cross-platform Modules Changelog](./Changelogs/CLI.md)
+* [Command-line Interface Changelog](./Changelogs/CLI.md)
 * [iOS Runtime Changelog](./Changelogs/iOS Runtime.md)
 * [Android Runtime Changelog](./Changelogs/Android Runtime.md)
