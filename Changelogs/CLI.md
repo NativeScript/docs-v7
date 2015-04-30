@@ -1,3 +1,9 @@
+---
+nav-title: CLI Changelog
+title: CLI
+description: NativeScript Command-Line Interface Changelog
+position: 2
+---
 NativeScript CLI Changelog
 ================
 
