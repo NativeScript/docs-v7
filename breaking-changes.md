@@ -56,6 +56,7 @@ Starting with version 0.10, the inner app folder has been removed. Newly created
 
 #See Also
 
-* [Cross-platform Modules Changelog](https://github.com/NativeScript/NativeScript/blob/master/CHANGELOG.md)
-* [Android Runtime Changelog](https://github.com/NativeScript/android-runtime/blob/master/CHANGELOG.md)
-* [iOS Runtime Changelog](https://github.com/NativeScript/ios-runtime/blob/master/CHANGELOG.md)
+* [Cross-platform Modules Changelog](./Changelogs/Cross-Platform Modules.md)
+* [Cross-platform Modules Changelog](./Changelogs/CLI.md)
+* [iOS Runtime Changelog](./Changelogs/iOS Runtime.md)
+* [Android Runtime Changelog](./Changelogs/Android Runtime.md)
