@@ -311,10 +311,10 @@ var weakEventListenerOptions: weakEventListenerModule.WeakEventListenerOptions =
   eventName: observable.Observable.propertyChangeEvent,
   // set the event handler
   handler: handlePropertyChange,
+  // specialized property used for extra event recognition
+  key: this.options.targetProperty,
   // (optional) set the context in which to execute the handler
-  handlerContext: testButton,
-  // (optional) set a specialized property used for extra event recognition
-  key: this.options.targetProperty
+  handlerContext: testButton
 }
 weakEL.addWeakEventListener(this.weakEventListenerOptions);
 ```
