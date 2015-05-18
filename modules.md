@@ -27,7 +27,7 @@ In your project, the files for each module reside in a dedicated subdirectory in
 
 + [application](./ApiReference/application/HOW-TO.md): Provides the application abstraction with all related methods.
 + [console](./ApiReference/console/HOW-TO.md): Lets you print messages to the device console.
-+ [local-settings](./ApiReference/local-settings/HOW-TO.md): Lets you save and restore any information related to your application.
++ [application-settings](./ApiReference/application-settings/HOW-TO.md): Lets you save and restore any information related to your application.
 + [http](./ApiReference/http/HOW-TO.md): Lets you send web requests and receive the responses.
 + [image-source](./ApiReference/image-source/HOW-TO.md): Provides the `ImageSource` class which encapsulates the common abstraction behind a platform-specific object that is used as a source for images (typically a Bitmap).
 + [timer](./ApiReference/timer/HOW-TO.md): Lets you to create, start, stop and react to timers.

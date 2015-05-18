@@ -25,7 +25,7 @@ With this IDE, you can develop for Android and iOS in the most popular browsers 
     * (Latest official) Mozilla Firefox
 * Recommended browsers
     * (Latest official) Google Chrome
-    * (latest official) Safari
+    * (Latest official) Safari
 * 1366 x 768 pixels or a higher display resolution
 * Enabled third-party cookies in your browser
 
