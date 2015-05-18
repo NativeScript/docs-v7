@@ -41,7 +41,7 @@ Defining the layout of the application is also an important part of the applicat
 
 This widget provides a standard button widget that reacts to a `tap` event.
 
-![button android](http://docs.nativescript.org/img/gallery/android/buttonPage.png "button android")![button ios](http://docs.nativescript.org/img/gallery/ios/buttonPage.png "button ios")
+![button android](img/gallery/android/buttonPage.png "button android")![button ios](img/gallery/ios/buttonPage.png "button ios")
 
 **Native Component**
 
@@ -53,7 +53,7 @@ This widget provides a standard button widget that reacts to a `tap` event.
 
 This widget provides a text label that shows read-only text.
 
-![label android](http://docs.nativescript.org/img/gallery/android/labelPage.png "label android")![label ios](http://docs.nativescript.org/img/gallery/ios/labelPage.png "label ios")
+![label android](img/gallery/android/labelPage.png "label android")![label ios](img/gallery/ios/labelPage.png "label ios")
 
 **Native Component**
 
@@ -65,7 +65,7 @@ This widget provides a text label that shows read-only text.
 
 This widget provides an editable **single-line** text field.
 
-![text-field android](http://docs.nativescript.org/img/gallery/android/textFieldPage.png "text-field android")![text-field ios](http://docs.nativescript.org/img/gallery/ios/textFieldPage.png "text-field ios")
+![text-field android](img/gallery/android/textFieldPage.png "text-field android")![text-field ios](img/gallery/ios/textFieldPage.png "text-field ios")
 
 **Native Component**
 
@@ -79,7 +79,7 @@ This widget provides an editable **multi-line** text view.
 
 You can use it to show multi-line text and implement text editing.
 
-![text-view android](http://docs.nativescript.org/img/gallery/android/textViewPage.png "text-view android")![text-view ios](http://docs.nativescript.org/img/gallery/ios/textViewPage.png "text-view ios")
+![text-view android](img/gallery/android/textViewPage.png "text-view android")![text-view ios](img/gallery/ios/textViewPage.png "text-view ios")
 
 **Native Component**
 
@@ -91,7 +91,7 @@ You can use it to show multi-line text and implement text editing.
 
 This view provides a user interface for entering search queries and submitting requests to search provider.
 
-![search-bar android](http://docs.nativescript.org/img/gallery/android/searchBarPage.png "search-bar android")![search-bar ios](http://docs.nativescript.org/img/gallery/ios/searchBarPage.png "search-bar ios")
+![search-bar android](img/gallery/android/searchBarPage.png "search-bar android")![search-bar ios](img/gallery/ios/searchBarPage.png "search-bar ios")
 
 **Native Component**
 
@@ -103,7 +103,7 @@ This view provides a user interface for entering search queries and submitting r
 
 This widget provides a two-state toggle switch with which you can choose between two options.
 
-![switch android](http://docs.nativescript.org/img/gallery/android/switchPage.png "switch android")![switch ios](http://docs.nativescript.org/img/gallery/ios/switchPage.png "switch ios")
+![switch android](img/gallery/android/switchPage.png "switch android")![switch ios](img/gallery/ios/switchPage.png "switch ios")
 
 **Native Component**
 
@@ -115,7 +115,7 @@ This widget provides a two-state toggle switch with which you can choose between
 
 This widget provides a slider which you can use to pick a numeric value within a configurable range.
 
-![slider android](http://docs.nativescript.org/img/gallery/android/sliderPage.png "slider android")![slider ios](http://docs.nativescript.org/img/gallery/ios/sliderPage.png "slider ios")
+![slider android](img/gallery/android/sliderPage.png "slider android")![slider ios](img/gallery/ios/sliderPage.png "slider ios")
 
 **Native Component**
 
@@ -127,7 +127,7 @@ This widget provides a slider which you can use to pick a numeric value within a
 
 This widget is a visual bar indicator of a progress in a operation. Shows a bar representing the current progress of the operation.
 
-![progress android](http://docs.nativescript.org/img/gallery/android/progressPage.png "progress android")![progress ios](http://docs.nativescript.org/img/gallery/ios/progressPage.png "progress ios")
+![progress android](img/gallery/android/progressPage.png "progress android")![progress ios](img/gallery/ios/progressPage.png "progress ios")
 
 **Native Component**
 
@@ -139,7 +139,7 @@ This widget is a visual bar indicator of a progress in a operation. Shows a bar 
 
 This widget is a visual spinner indicator which shows that a task is in progress.
 
-![activity-indicator android](http://docs.nativescript.org/img/gallery/android/activityIndicatorPage.png "activity-indicator android")![activity-indicator ios](http://docs.nativescript.org/img/gallery/ios/activityIndicatorPage.png "activity-indicator ios")
+![activity-indicator android](img/gallery/android/activityIndicatorPage.png "activity-indicator android")![activity-indicator ios](img/gallery/ios/activityIndicatorPage.png "activity-indicator ios")
 
 **Native Component**
 
@@ -151,7 +151,7 @@ This widget is a visual spinner indicator which shows that a task is in progress
 
 This widget shows an image. You can load the image can be from [`ImageSource`](./ApiReference/image-source/ImageSource.md) or from URL.
 
-![image android](http://docs.nativescript.org/img/gallery/android/imagePage.png "image android")![image ios](http://docs.nativescript.org/img/gallery/ios/imagePage.png "image ios")
+![image android](img/gallery/android/imagePage.png "image android")![image ios](img/gallery/ios/imagePage.png "image ios")
 
 **Native Component**
 
@@ -163,7 +163,7 @@ This widget shows an image. You can load the image can be from [`ImageSource`](.
 
 This is a view that shows items in a vertically scrolling list. You can set an [`itemTemplate`](ApiReference/ui/list-view/knownTemplates/README.md) to specify how each item in the list should be displayed.
 
-![list-view android](http://docs.nativescript.org/img/gallery/android/listViewPage.png "list-view android")![list-view ios](http://docs.nativescript.org/img/gallery/ios/listViewPage.png "list-view ios")
+![list-view android](img/gallery/android/listViewPage.png "list-view android")![list-view ios](img/gallery/ios/listViewPage.png "list-view ios")
 
 **Native Component**
 
@@ -175,7 +175,7 @@ This is a view that shows items in a vertically scrolling list. You can set an [
 
 This is a view that shows web pages. You can load a page from URL or by navigating back and forward.
 
-![web-view android](http://docs.nativescript.org/img/gallery/android/webViewPage.png "web-view android")![web-view ios](http://docs.nativescript.org/img/gallery/ios/webViewPage.png "web-view ios")
+![web-view android](img/gallery/android/webViewPage.png "web-view android")![web-view ios](img/gallery/ios/webViewPage.png "web-view ios")
 
 **Native Component**
 
@@ -187,7 +187,7 @@ This is a view that shows web pages. You can load a page from URL or by navigati
 
 With the `TabView` control, you can implement tab navigation.
 
-![tab-view android](http://docs.nativescript.org/img/gallery/android/tabViewPage.png "tab-view android")![tab-view ios](http://docs.nativescript.org/img/gallery/ios/tabViewPage.png "tab-view ios")
+![tab-view android](img/gallery/android/tabViewPage.png "tab-view android")![tab-view ios](img/gallery/ios/tabViewPage.png "tab-view ios")
 
 **Native Component**
 
@@ -199,7 +199,7 @@ With the `TabView` control, you can implement tab navigation.
 
 With the `SegmentedBar` control, you can implement discrete selection.
 
-![segmented-bar android](http://docs.nativescript.org/img/gallery/android/segmentedBarPage.png "segmented-bar android")![segmented-bar ios](http://docs.nativescript.org/img/gallery/ios/segmentedBarPage.png "segmented-bar ios")
+![segmented-bar android](img/gallery/android/segmentedBarPage.png "segmented-bar android")![segmented-bar ios](img/gallery/ios/segmentedBarPage.png "segmented-bar ios")
 
 **Native Component**
 
@@ -211,7 +211,7 @@ With the `SegmentedBar` control, you can implement discrete selection.
 
 With the `DatePicker` control, you can pick date.
 
-![date-picker android](http://docs.nativescript.org/img/gallery/android/datePickerPage.png "date-picker android")![date-picker ios](http://docs.nativescript.org/img/gallery/ios/datePickerPage.png "date-picker ios")
+![date-picker android](img/gallery/android/datePickerPage.png "date-picker android")![date-picker ios](img/gallery/ios/datePickerPage.png "date-picker ios")
 
 **Native Component**
 
@@ -223,7 +223,7 @@ With the `DatePicker` control, you can pick date.
 
 With the `TimePicker` control, you can pick time.
 
-![time-picker android](http://docs.nativescript.org/img/gallery/android/timePickerPage.png "time-picker android")![time-picker ios](http://docs.nativescript.org/img/gallery/ios/timePickerPage.png "time-picker ios")
+![time-picker android](img/gallery/android/timePickerPage.png "time-picker android")![time-picker ios](img/gallery/ios/timePickerPage.png "time-picker ios")
 
 **Native Component**
 
@@ -235,7 +235,7 @@ With the `TimePicker` control, you can pick time.
 
 With the `ListPicker` control, you can pick value from a list.
 
-![list-picker android](http://docs.nativescript.org/img/gallery/android/listPickerPage.png "list-picker android")![list-picker ios](http://docs.nativescript.org/img/gallery/ios/timePickerPage.png "list-picker ios")
+![list-picker android](img/gallery/android/listPickerPage.png "list-picker android")![list-picker ios](img/gallery/ios/timePickerPage.png "list-picker ios")
 
 **Native Component**
 
@@ -247,4 +247,4 @@ With the `ListPicker` control, you can pick value from a list.
 
 The dialogs module lets you create and show dialog windows.
 
-![dialog-confirm android](http://docs.nativescript.org/img/gallery/android/dialogsPage_confirm.png "dialog-confirm android")![dialog-confirm ios](http://docs.nativescript.org/img/gallery/ios/dialogsPage_confirm.png "dialog-confirm ios")
+![dialog-confirm android](img/gallery/android/dialogsPage_confirm.png "dialog-confirm android")![dialog-confirm ios](img/gallery/ios/dialogsPage_confirm.png "dialog-confirm ios")
