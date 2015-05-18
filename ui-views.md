@@ -23,6 +23,9 @@ NativeScript ships with a set of user interface [`Views`](./ApiReference/ui/core
 * [WebView](#webview)
 * [TabView](#tabview)
 * [SegmentedBar](#segmentedbar)
+* [DatePicker](#datepicker)
+* [TimePicker](#timepicker)
+* [ListPicker](#listpicker)
 * [Dialogs](#dialogs)
 
 Defining the layout of the application is also an important part of the application development. For more information about the different layout containers that are available in NativeScript, see [The NativeScript Layout System](layouts.md).
@@ -203,6 +206,42 @@ With the `SegmentedBar` control, you can implement discrete selection.
 | Android                | iOS      |
 |:-----------------------|:---------|
 | [android.widget.TabHost](http://developer.android.com/reference/android/widget/TabHost.html) | [UISegmentedControl](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html) |
+
+## DatePicker
+
+With the `DatePicker` control, you can pick date.
+
+![date-picker android](http://docs.nativescript.org/img/gallery/android/datePickerPage.png "date-picker android")![date-picker ios](http://docs.nativescript.org/img/gallery/ios/datePickerPage.png "date-picker ios")
+
+**Native Component**
+
+| Android                | iOS      |
+|:-----------------------|:---------|
+| [android.widget.DatePicker](http://developer.android.com/reference/android/widget/DatePicker.html) | [UIDatePicker](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html) |
+
+## TimePicker
+
+With the `TimePicker` control, you can pick time.
+
+![time-picker android](http://docs.nativescript.org/img/gallery/android/timePickerPage.png "time-picker android")![time-picker ios](http://docs.nativescript.org/img/gallery/ios/timePickerPage.png "time-picker ios")
+
+**Native Component**
+
+| Android                | iOS      |
+|:-----------------------|:---------|
+| [android.widget.TimePicker](http://developer.android.com/reference/android/widget/TimePicker.html) | [UIDatePicker](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html) |
+
+## ListPicker
+
+With the `ListPicker` control, you can pick value from a list.
+
+![list-picker android](http://docs.nativescript.org/img/gallery/android/listPickerPage.png "list-picker android")![list-picker ios](http://docs.nativescript.org/img/gallery/ios/timePickerPage.png "list-picker ios")
+
+**Native Component**
+
+| Android                | iOS      |
+|:-----------------------|:---------|
+| [android.widget.NumberPicker](http://developer.android.com/reference/android/widget/NumberPicker.html) | [UIPickerView](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPickerView_Class/index.html) |
 
 ## Dialogs
 
