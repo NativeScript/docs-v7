@@ -22,6 +22,7 @@ NativeScript ships with a set of user interface [`Views`](./ApiReference/ui/core
 * [ListView](#listview)
 * [WebView](#webview)
 * [TabView](#tabview)
+* [SegmentedBar](#segmentedbar)
 * [Dialogs](#dialogs)
 
 Defining the layout of the application is also an important part of the application development. For more information about the different layout containers that are available in NativeScript, see [The NativeScript Layout System](layouts.md).
@@ -190,6 +191,18 @@ With the `TabView` control, you can implement tab navigation.
 | Android                | iOS      |
 |:-----------------------|:---------|
 | [android.support.v4.view.ViewPager](http://developer.android.com/reference/android/support/v4/view/ViewPager.html) | [UITabBarController](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/) |
+
+## SegmentedBar
+
+With the `SegmentedBar` control, you can implement discrete selection.
+
+![segmented-bar android](http://docs.nativescript.org/img/gallery/android/segmentedBarPage.png "segmented-bar android")![segmented-bar ios](http://docs.nativescript.org/img/gallery/ios/segmentedBarPage.png "segmented-bar ios")
+
+**Native Component**
+
+| Android                | iOS      |
+|:-----------------------|:---------|
+| [android.widget.TabHost](http://developer.android.com/reference/android/widget/TabHost.html) | [UISegmentedControl](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISegmentedControl_Class/index.html) |
 
 ## Dialogs
 
