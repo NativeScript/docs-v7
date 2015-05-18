@@ -245,6 +245,6 @@ With the [ListPicker](ApiReference/ui/list-picker/how-to.md) widget, you can pic
 
 ## Dialogs
 
-The dialogs module lets you create and show dialog windows.
+The [dialogs module](ui-dialogs.md) lets you create and show dialog windows.
 
 ![dialog-confirm android](img/gallery/android/dialogsPage_confirm.png "dialog-confirm android")![dialog-confirm ios](img/gallery/ios/dialogsPage_confirm.png "dialog-confirm ios")
