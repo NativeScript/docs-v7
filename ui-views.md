@@ -39,7 +39,7 @@ Defining the layout of the application is also an important part of the applicat
 
 ## Button
 
-This widget provides a standard button widget that reacts to a `tap` event.
+The [Button](ApiReference/ui/button/how-to.md) widget provides a standard button widget that reacts to a `tap` event.
 
 ![button android](img/gallery/android/buttonPage.png "button android")![button ios](img/gallery/ios/buttonPage.png "button ios")
 
@@ -51,7 +51,7 @@ This widget provides a standard button widget that reacts to a `tap` event.
 
 ## Label
 
-This widget provides a text label that shows read-only text.
+The [Label](ApiReference/ui/label/how-to.md) widget provides a text label that shows read-only text.
 
 ![label android](img/gallery/android/labelPage.png "label android")![label ios](img/gallery/ios/labelPage.png "label ios")
 
@@ -63,7 +63,7 @@ This widget provides a text label that shows read-only text.
 
 ## TextField
 
-This widget provides an editable **single-line** text field.
+The [TextField](ApiReference/ui/text-field/how-to.md) widget provides an editable **single-line** text field.
 
 ![text-field android](img/gallery/android/textFieldPage.png "text-field android")![text-field ios](img/gallery/ios/textFieldPage.png "text-field ios")
 
@@ -75,7 +75,7 @@ This widget provides an editable **single-line** text field.
 
 ## TextView
 
-This widget provides an editable **multi-line** text view. 
+The [TextView](ApiReference/ui/text-view/how-to.md) widget provides an editable **multi-line** text view. 
 
 You can use it to show multi-line text and implement text editing.
 
@@ -89,7 +89,7 @@ You can use it to show multi-line text and implement text editing.
 
 ## SearchBar
 
-This view provides a user interface for entering search queries and submitting requests to search provider.
+The [SearchBar](ApiReference/ui/search-bar/how-to.md) widget provides a user interface for entering search queries and submitting requests to search provider.
 
 ![search-bar android](img/gallery/android/searchBarPage.png "search-bar android")![search-bar ios](img/gallery/ios/searchBarPage.png "search-bar ios")
 
@@ -101,7 +101,7 @@ This view provides a user interface for entering search queries and submitting r
 
 ## Switch
 
-This widget provides a two-state toggle switch with which you can choose between two options.
+The [Switch](ApiReference/ui/switch/how-to.md) widget provides a two-state toggle switch with which you can choose between two options.
 
 ![switch android](img/gallery/android/switchPage.png "switch android")![switch ios](img/gallery/ios/switchPage.png "switch ios")
 
@@ -113,7 +113,7 @@ This widget provides a two-state toggle switch with which you can choose between
 
 ## Slider
 
-This widget provides a slider which you can use to pick a numeric value within a configurable range.
+The [Slider](ApiReference/ui/slider/how-to.md) widget provides a slider which you can use to pick a numeric value within a configurable range.
 
 ![slider android](img/gallery/android/sliderPage.png "slider android")![slider ios](img/gallery/ios/sliderPage.png "slider ios")
 
@@ -125,7 +125,7 @@ This widget provides a slider which you can use to pick a numeric value within a
 
 ## Progress
 
-This widget is a visual bar indicator of a progress in a operation. Shows a bar representing the current progress of the operation.
+The [Progress](ApiReference/ui/progress/how-to.md) widget is a visual bar indicator of a progress in a operation. Shows a bar representing the current progress of the operation.
 
 ![progress android](img/gallery/android/progressPage.png "progress android")![progress ios](img/gallery/ios/progressPage.png "progress ios")
 
@@ -137,7 +137,7 @@ This widget is a visual bar indicator of a progress in a operation. Shows a bar 
 
 ## ActivityIndicator
 
-This widget is a visual spinner indicator which shows that a task is in progress.
+The [ActivityIndicator](ApiReference/ui/activity-indicator/how-to.md) widget is a visual spinner indicator which shows that a task is in progress.
 
 ![activity-indicator android](img/gallery/android/activityIndicatorPage.png "activity-indicator android")![activity-indicator ios](img/gallery/ios/activityIndicatorPage.png "activity-indicator ios")
 
@@ -149,7 +149,7 @@ This widget is a visual spinner indicator which shows that a task is in progress
 
 ## Image
 
-This widget shows an image. You can load the image can be from [`ImageSource`](./ApiReference/image-source/ImageSource.md) or from URL.
+The [Image](ApiReference/ui/image/how-to.md) widget shows an image. You can load the image can be from [`ImageSource`](./ApiReference/image-source/ImageSource.md) or from URL.
 
 ![image android](img/gallery/android/imagePage.png "image android")![image ios](img/gallery/ios/imagePage.png "image ios")
 
@@ -161,7 +161,7 @@ This widget shows an image. You can load the image can be from [`ImageSource`](.
 
 ## ListView
 
-This is a view that shows items in a vertically scrolling list. You can set an [`itemTemplate`](ApiReference/ui/list-view/knownTemplates/README.md) to specify how each item in the list should be displayed.
+The [ListView](ApiReference/ui/list-view/how-to.md) shows items in a vertically scrolling list. You can set an [`itemTemplate`](ApiReference/ui/list-view/knownTemplates/README.md) to specify how each item in the list should be displayed.
 
 ![list-view android](img/gallery/android/listViewPage.png "list-view android")![list-view ios](img/gallery/ios/listViewPage.png "list-view ios")
 
@@ -173,7 +173,7 @@ This is a view that shows items in a vertically scrolling list. You can set an [
 
 ## WebView
 
-This is a view that shows web pages. You can load a page from URL or by navigating back and forward.
+The [WebView](ApiReference/ui/web-view/how-to.md) shows web pages. You can load a page from URL or by navigating back and forward.
 
 ![web-view android](img/gallery/android/webViewPage.png "web-view android")![web-view ios](img/gallery/ios/webViewPage.png "web-view ios")
 
@@ -185,7 +185,7 @@ This is a view that shows web pages. You can load a page from URL or by navigati
 
 ## TabView
 
-With the `TabView` control, you can implement tab navigation.
+With the [TabView](ApiReference/ui/tab-view/how-to.md) control, you can implement tab navigation.
 
 ![tab-view android](img/gallery/android/tabViewPage.png "tab-view android")![tab-view ios](img/gallery/ios/tabViewPage.png "tab-view ios")
 
@@ -197,7 +197,7 @@ With the `TabView` control, you can implement tab navigation.
 
 ## SegmentedBar
 
-With the `SegmentedBar` control, you can implement discrete selection.
+With the [SegmentedBar](ApiReference/ui/segmented-bar/how-to.md) control, you can implement discrete selection.
 
 ![segmented-bar android](img/gallery/android/segmentedBarPage.png "segmented-bar android")![segmented-bar ios](img/gallery/ios/segmentedBarPage.png "segmented-bar ios")
 
@@ -209,7 +209,7 @@ With the `SegmentedBar` control, you can implement discrete selection.
 
 ## DatePicker
 
-With the `DatePicker` control, you can pick date.
+With the [DatePicker](ApiReference/ui/date-picker/how-to.md) control, you can pick date.
 
 ![date-picker android](img/gallery/android/datePickerPage.png "date-picker android")![date-picker ios](img/gallery/ios/datePickerPage.png "date-picker ios")
 
@@ -221,7 +221,7 @@ With the `DatePicker` control, you can pick date.
 
 ## TimePicker
 
-With the `TimePicker` control, you can pick time.
+With the [TimePicker](ApiReference/ui/time-picker/how-to.md) widget, you can pick time.
 
 ![time-picker android](img/gallery/android/timePickerPage.png "time-picker android")![time-picker ios](img/gallery/ios/timePickerPage.png "time-picker ios")
 
@@ -233,7 +233,7 @@ With the `TimePicker` control, you can pick time.
 
 ## ListPicker
 
-With the `ListPicker` control, you can pick value from a list.
+With the [ListPicker](ApiReference/ui/list-picker/how-to.md) widget, you can pick value from a list.
 
 ![list-picker android](img/gallery/android/listPickerPage.png "list-picker android")![list-picker ios](img/gallery/ios/timePickerPage.png "list-picker ios")
 
