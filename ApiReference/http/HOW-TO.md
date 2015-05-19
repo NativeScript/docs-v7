@@ -14,7 +14,6 @@ http.getString("https://httpbin.org/get").then(function (r) {
     // Argument (r) is string!
 }, function (e) {
     // Argument (e) is Error!
-    done(e);
 });
 ```
 ### Get JSON from URL
@@ -24,7 +23,6 @@ http.getJSON("https://httpbin.org/get").then(function (r) {
 }, function (e) {
     // Argument (e) is Error!
     console.log(e);
-    done(e);
 });
 ```
 ### Get Image from URL
@@ -33,7 +31,6 @@ http.getImage("http://www.google.com/images/errors/logo_sm_2.png").then(function
     // Argument (r) is Image!
 }, function (e) {
     // Argument (e) is Error!
-    done(e);
 });
 ```
 ### Get response status code
@@ -43,7 +40,6 @@ http.request({ url: "https://httpbin.org/get", method: "GET" }).then(function (r
     var statusCode = response.statusCode;
 }, function (e) {
     // Argument (e) is Error!
-    done(e);
 });
 ```
 ### Get response headers
@@ -55,7 +51,6 @@ http.request({ url: "https://httpbin.org/get", method: "GET" }).then(function (r
     }
 }, function (e) {
     // Argument (e) is Error!
-    done(e);
 });
 ```
 ### Get response content
@@ -68,7 +63,6 @@ http.request({ url: "https://httpbin.org/get", method: "GET" }).then(function (r
     var img = response.content.toImage();
 }, function (e) {
     // Argument (e) is Error!
-    done(e);
 });
 ```
 ### Post JSON

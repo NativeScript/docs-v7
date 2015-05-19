@@ -16,4 +16,4 @@ Provides options for the http requests.
  - **content** - _(optional)_ - _String_.    
   Gets or sets the request body.
  - **timeout** - _(optional)_ - _Number_.    
-  Gets or sets the request timeout.
+  Gets or sets the request timeout in milliseconds.
