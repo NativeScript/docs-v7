@@ -157,6 +157,7 @@ This is the list of the properties that can be set in CSS or through the style p
 |:----------------|:-------------------|:----------------|
 | color           | color              | Sets a solid-color value to the matched view’s foreground. |
 | background-color | backgroundColor    | Sets a solid-color value to the matched view’s background. |
+| background-image | backgroundImage    | Sets a image url to the matched view’s background image. |
 | font-size       | fontSize           | Sets the font size of the matched view (only supports device-independent units). |
 | text-align      | textAlignment      | Sets text alignment in the matched view. Possible values: "left" , "center", "right". |
 | vertical-align  | verticalAlignment  | Sets the vertical alignment of the current view within its parent. Possible values: "top", "center", "bottom", "stretch". |
