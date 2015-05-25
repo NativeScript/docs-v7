@@ -111,7 +111,7 @@ The following table shows predefined layouts that NativeScript provides.
 
 ### Repeating layout children
 
-In this sample `main-page.xml`, the Repeater with WrapLayout inside ScrollView will create Label from template for each item in `myItems` array.
+In this sample `main-page.xml`, the [Repeater](./ApiReference/ui/repeater/HOW-TO.md) with [WrapLayout](./ApiReference/ui/layouts/wrap-layout/HOW-TO.md) inside [ScrollView](./ApiReference/ui/scroll-view/HOW-TO.md) will create [Label](./ApiReference/ui/label/HOW-TO.md) from template for each item in `myItems` array.
 
 ```XML
  <Page>
