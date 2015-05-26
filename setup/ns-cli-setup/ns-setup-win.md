@@ -19,7 +19,7 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
 * Windows Vista or later
 * Node.js 0.10.26 or a later stable official release except Node.js 0.10.34
 * (Optional) Chocolatey to simplify the installation of dependencies
-* JDK 7 or a later stable official release
+* JDK 8 or a later stable official release
 * Apache Ant 1.8 or later
 * Android SDK 19 or later
 * (Optional) Genymotion to expand your testing options
@@ -38,7 +38,7 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
         @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
         ```
     1. Restart the command prompt.
-1. Install [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
+1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
     1. In the command prompt, run the following command. 
         
         ```Shell

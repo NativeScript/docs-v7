@@ -19,7 +19,7 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 * Ubuntu 14.04 LTS
 * Node.js 0.10.26 or a later stable official release except Node.js 0.10.34
 * G++ compiler
-* JDK 7 or a later stable official release
+* JDK 8 or a later stable official release
 * Apache Ant 1.8 or later
 * Android SDK 19 or later
 * (Optional) Genymotion to expand your testing options
@@ -41,7 +41,7 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
     ```Shell
     sudo apt-get install g++
     ```
-1. Install [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
+1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
     
     ```Shell
     sudo apt-get install oracle-java8-installer
