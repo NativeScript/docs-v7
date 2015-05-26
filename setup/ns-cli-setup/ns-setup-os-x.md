@@ -23,7 +23,7 @@ On OS X systems, you can use the NativeScript CLI to develop Android and iOS app
     * Latest Xcode
     * Command-line tools for Xcode
 * For Android development
-    * JDK 7 or a later stable official release
+    * JDK 8 or a later stable official release
     * Apache Ant 1.8 or later
     * Android SDK 19 or later
     * (Optional) Genymotion to expand your testing options
@@ -44,7 +44,7 @@ On OS X systems, you can use the NativeScript CLI to develop Android and iOS app
     1. Run the App Store and download and install Xcode 5 or later.
     1. Go to [Downloads for Apple Developers](https://developer.apple.com/downloads/index.action), log in and download and install the **Command Line Tools for Xcode** for your version of OS X and Xcode.
 1. Install the dependencies for Android development.
-    1. Install [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
+    1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
         1. Go to [Java SE Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and click **Download** for JDK.
         1. In the **Java SE Development Kit** section, accept the license agreement and click the download link for Mac OS X.
         1. Wait for the download to complete and install the JDK.

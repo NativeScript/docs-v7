@@ -30,7 +30,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 * (Optional) For Android development with the native emulators
     * (Optional) Chocolatey to simplify the installation of dependencies
     * Android device drivers for your device
-    * JDK 7 or a later stable official release
+    * JDK 8 or a later stable official release
     * Android SDK 19 or later
     * (Optional) Genymotion
 
@@ -50,11 +50,11 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
         @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
         ```
     1. Restart the command prompt.
-1. Install [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
+1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
     1. In the command prompt, run the following command. 
         
         ```Shell
-        choco install java
+        choco install jdk8
         ```
     1. If not present, create the following environment variable.
 
@@ -107,7 +107,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
     * Xcode 5 or later
     * (Latest official) iTunes
 * For Android development
-    * JDK 7 or a later stable official release
+    * JDK 8 or a later stable official release
     * Android SDK 19 or later
     * (Optional) Genymotion to expand your testing options
 
@@ -129,7 +129,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
     1. Run the App Store and download and install Xcode 5 or later.
     1. Verify that you have updated iTunes to the latest version.
 1. Install the dependencies for Android development.
-    1. Install [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
+    1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
         1. Go to [Java SE Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and click **Download** for JDK.
         1. In the **Java SE Development Kit** section, accept the license agreement and click the download link for Mac OS X.
         1. Wait for the download to complete and install the JDK.
@@ -195,7 +195,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 * Node.js 0.10.26 or a later stable official release except Node.js 0.10.34
 * G++ compiler
 * (Optional) For Android development with the native emulators
-    * JDK 7 or a later stable official release
+    * JDK 8 or a later stable official release
     * Android SDK 19 or later
     * (Optional) Genymotion to expand your testing options
 
@@ -218,7 +218,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
     ```Shell
     sudo apt-get install g++
     ```
-1. Install [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
+1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
     
     ```Shell
     sudo apt-get install oracle-java8-installer

@@ -28,7 +28,7 @@ With this IDE, you can develop for Android and iOS on Windows systems.
 * (Optional) For Android development with the native emulators
     * (Optional) Chocolatey to simplify the installation of dependencies
     * Android device drivers for your device
-    * JDK 7 or a later stable official release
+    * JDK 8 or a later stable official release
     * Android SDK 19 or later
 
 ## Setup
@@ -47,11 +47,11 @@ With this IDE, you can develop for Android and iOS on Windows systems.
         @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
         ```
     1. Restart the command prompt.
-1. Install [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
+1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
     1. In the command prompt, run the following command. 
         
         ```Shell
-        choco install java
+        choco install jdk8
         ```
     1. If not present, create the following environment variable.
 
