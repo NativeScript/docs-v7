@@ -39,7 +39,7 @@ npm install
 grunt
 ```
 
-## Using the latest tns_modules
+## Using the Latest tns_modules
 
 To use the latest tns_modules, simply
 - build the repo
@@ -47,24 +47,24 @@ To use the latest tns_modules, simply
 - delete the `tns_modules` folder there
 - rename the extracted `package` folder to `tns_modules`
 
-## Handling internal breaking changes
+## Handling Internal Breaking Changes
 
 It is possible that an internal breaking change gets introduced, involving an update to both the runtimes and the modules. An internal breaking change would mean that the public API of the tns_modules does not get affected, but a work in progress change in the runtimes requires a change in the internal code of the tns_modules themselves.
 
 When such a case happens, the [ios](https://github.com/NativeScript/ios-runtime) and [android](https://github.com/NativeScript/android-runtime) runtimes must be built and updated via the CLI command of:
 `tns platform update android/ios --frameworkPath=[Path-to-Runtime-Package]`
 
-## Building the runtimes
+## Building the Runtimes
 As the NativeScript framework gets distributed via npm, the runtimes are also packed as npm packages. For consistency reasons, the native builds (ant/xcode-build) are wrapped by grunt builds, that do the job.
 
-## Building the android runtime
+### Building the Android Runtime
 The [android runtime](https://github.com/NativeScript/android-runtime) depends on the [android-metadata-generator](https://github.com/NativeScript/android-metadata-generator).
 
 Provided you have all the dependencies set, the easiest way to have the android runtime built is clone the two repos to a single folder, so that the two are sibling folders, `cd` into the `android-runtime` folder and run `grunt`.
 
 The resulting tns-android-x.x.x.tgz package will get created in the `dist` folder.
 
-# Building the ios runtime
+### Building the iOS Runtime
 
 Follow the instructions on setting up the dependencies for building the [ios runtime](https://github.com/NativeScript/ios-runtime) in the repository README, then run `grunt package`.
 
