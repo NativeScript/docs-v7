@@ -8,7 +8,7 @@ position: 21
 #Using Latest Code
 
 ## Reasoning
-It is often working with open-source projects, that one needs a functionality that has not yet passed the full release cycle, or even that is not yet implemented. Building the source code is essential for the purpose. The statement is applicable for NativeScript 
+Often, working with open-source projects, one needs functionality that has not yet passed the full release cycle, or even functionality that is not yet implemented. Building the source code is essential for the purpose. The statement is applicable for NativeScript as well. Accordng to the [Contribution Guidelines](https://github.com/NativeScript/NativeScript/blob/master/CONTRIBUTING.md), suggesting a fix involves testing the latest code.
 
 ## Behind the Curtains of Running a NativeScript Application
 
@@ -53,3 +53,19 @@ It is possible that an internal breaking change gets introduced, involving an up
 
 When such a case happens, the [ios](https://github.com/NativeScript/ios-runtime) and [android](https://github.com/NativeScript/android-runtime) runtimes must be built and updated via the CLI command of:
 `tns platform update android/ios --frameworkPath=[Path-to-Runtime-Package]`
+
+## Building the runtimes
+As the NativeScript framework gets distributed via npm, the runtimes are also packed as npm packages. For consistency reasons, the native builds (ant/xcode-build) are wrapped by grunt builds, that do the job.
+
+## Building the android runtime
+The [android runtime](https://github.com/NativeScript/android-runtime) depends on the [android-metadata-generator](https://github.com/NativeScript/android-metadata-generator).
+
+Provided you have all the dependencies set, the easiest way to have the android runtime built is clone the two repos to a single folder, so that the two are sibling folders, `cd` into the `android-runtime` folder and run `grunt`.
+
+The resulting tns-android-x.x.x.tgz package will get created in the `dist` folder.
+
+# Building the ios runtime
+
+Follow the instructions on setting up the dependencies for building the [ios runtime](https://github.com/NativeScript/ios-runtime) in the repository README, then run `grunt package`.
+
+The built tns-ios-x.x.x.tgx package will get created in the `dist` folder.
