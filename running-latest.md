@@ -1,11 +1,11 @@
 ---
-nav-title: "Using Latest Code"
-title: "Using Latest Code"
-description: "NativeScript Documentation: Using Latest Code"
+nav-title: "Running Latest Code"
+title: "Running Latest Code"
+description: "NativeScript Documentation: Running Latest Code"
 position: 21
 ---
 
-#Using Latest Code
+#Running Latest Code
 
 ## Reasoning
 Often, working with open-source projects, one needs functionality that has not yet passed the full release cycle, or even functionality that is not yet implemented. Building the source code is essential for the purpose. The statement is applicable for NativeScript as well. Accordng to the [Contribution Guidelines](https://github.com/NativeScript/NativeScript/blob/master/CONTRIBUTING.md), suggesting a fix involves testing the latest code.
