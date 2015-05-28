@@ -164,8 +164,6 @@ exports.add = function() {
 };
 ```
 
-> **TIP**: TypeScript is a first-class citizen in NativeScript. If you'd like to use TypeScript, create .ts files instead of .js files. NativeScript takes care of compiling them to JavaScript and using them automatically. You'll find sample TypeScript code provided throughout the documentation.
-
 The first thing to notice here is the use of the `exports` keyword. If you are familiar with Node.js, you have probably noticed that NativeScript modules adhere to the [CommonJS](http://wiki.commonjs.org/wiki/CommonJS) spec. If you are not familiar with Node.js, all you need to know is that the `exports` keyword exposes a JavaScript module's public API. In this case, the `exports` keyword exposes two functions to this page's view: `onPageLoaded` and `add`. The view's `<Page>` binds to the `onPageLoaded` function with `<Page loaded="onPageLoaded">`, and the view's `<Button>` binds to the `add` function with `<Button tap="add"></Button>`.
 
 The other thing to note is the `page.bindingContext = pageData` assignment in the `onPageLoaded` function. This line sets the `pageData` `Observable` object as the *binding context* of this page. Simply put, this line means that properties of the `pageData` object are accessible in the UI components using the `{%raw%}{{ }}{%endraw%}` syntax. For example, the page's `<ListView>` binds to the `pageData` object's `tasks` property using `{%raw%}<ListView items="{{ tasks }}">{%endraw%}`.
