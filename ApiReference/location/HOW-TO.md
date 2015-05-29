@@ -27,7 +27,8 @@ var distance = LocationManager.distance(locSofia, locNewYork);
 ## Getting location
 ### Receive continuous location updates
 ``` JavaScript
-var locationManager = new LocationManager();
+var locationModule = require("location");
+var locationManager = new locationModule.LocationManager();
 locationManager.startLocationMonitoring(function (location) {
     console.log('Location received: ' + location);
 }, function (error) {
