@@ -44,13 +44,13 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
         ```Shell
         choco install jdk8
         ```
-    1. If not present, create the following environment variable.
+    1. If not present, create the following environment variable from a command-prompt, started as administrator.
 
         ```
-        JAVA_HOME=Path to the jdk* install folder
+        SETX JAVA_HOME "Path to the jdk* install folder" /M
         ```
 
-        For example: `JAVA_HOME=C:\Program Files\Java\jdk1.8.0_11`
+        For example: `SETX JAVA_HOME C:\Program Files\Java\jdk1.8.0_11 /M`
 1. Install [Apache Ant 1.8](http://ant.apache.org/bindownload.cgi) or a later stable official release.
     1. In the command prompt, run the following command.
 
