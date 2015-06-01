@@ -40,7 +40,7 @@ application.mainModule = "main-page";
 application.start();
 ```
 
-## Use Application Callbacks
+## Use Application Events
 
 NativeScript applications have the following life cycle events.
 
@@ -56,61 +56,131 @@ NativeScript applications have the following life cycle events.
 ``` JavaScript
 var application = require("application");
 application.mainModule = "main-page";
-application.onLaunch = function (context) {
-    // For Android applications, the context is an android.content.Intent class.
-    // For iOS applications, the context is undefined.
-    if (application.android) {
-        console.log("Launched Android application with the following intent: " + context + ".");
+
+application.on(application.launchEvent, function (args) {
+    if (args.android) {
+        // For Android applications, args.android is an android.content.Intent class.
+        console.log("Launched Android application with the following intent: " + args.android + ".");
+    } else if (args.ios !== undefined) {
+        // For iOS applications, args.ios is NSDictionary (launchOptions).
+        console.log("Launched iOS application with options: " + args.ios);
     }
-    else if (application.ios) {
-        console.log("Launched iOS application.");
+});
+
+application.on(application.suspendEvent, function (args) {
+    if (args.android) {
+        // For Android applications, args.android is an android activity class.
+        console.log("Activity: " + args.android);
+    } else if (args.ios) {
+        // For iOS applications, args.ios is UIApplication.
+        console.log("UIApplication: " + args.ios);
     }
-};
-application.onSuspend = function () {
-    console.log("Application suspended.");
-};
-application.onResume = function () {
-    console.log("Application resumed.");
-};
-application.onExit = function () {
-    console.log("Application will exit.");
-};
-application.onLowMemory = function () {
-    console.log("Memory is low.");
-};
-application.onUncaughtError = function (error) {
-    console.log("Application error: " + error.name + "; " + error.message + "; " + error.nativeError);
-};
+});
+
+application.on(application.resumeEvent, function (args) {
+    if (args.android) {
+        // For Android applications, args.android is an android activity class.
+        console.log("Activity: " + args.android);
+    } else if (args.ios) {
+        // For iOS applications, args.ios is UIApplication.
+        console.log("UIApplication: " + args.ios);
+    }
+});
+
+application.on(application.exitEvent, function (args) {
+    if (args.android) {
+        // For Android applications, args.android is an android activity class.
+        console.log("Activity: " + args.android);
+    } else if (args.ios) {
+        // For iOS applications, args.ios is UIApplication.
+        console.log("UIApplication: " + args.ios);
+    }
+});
+
+application.on(application.lowMemoryEvent, function (args) {
+    if (args.android) {
+        // For Android applications, args.android is an android activity class.
+        console.log("Activity: " + args.android);
+    } else if (args.ios) {
+        // For iOS applications, args.ios is UIApplication.
+        console.log("UIApplication: " + args.ios);
+    }
+});
+
+application.on(application.uncaughtErrorEvent, function (args) {
+    if (args.android) {
+        // For Android applications, args.android is an NativeScriptError.
+        console.log("NativeScriptError: " + args.android);
+    } else if (args.ios) {
+        // For iOS applications, args.ios is NativeScriptError.
+        console.log("NativeScriptError: " + args.ios);
+    }
+});
+
 application.start();
 ```
 ``` TypeScript
 import application = require("application");
 application.mainModule = "main-page";
-application.onLaunch = function (context: any) {
-    // For Android applications, the context is an android.content.Intent class.
-    // For iOS applications, the context is undefined.
-    if (application.android) {
-        console.log("Launched Android application with the following intent: " + context + ".");
+application.on(application.launchEvent, function (args: application.ApplicationEventData) {
+    if (args.android) {
+        // For Android applications, args.android is an android.content.Intent class.
+        console.log("Launched Android application with the following intent: " + args.android + ".");
+    } else if (args.ios !== undefined) {
+        // For iOS applications, args.ios is NSDictionary (launchOptions).
+        console.log("Launched iOS application with options: " + args.ios);
     }
-    else if (application.ios) {
-        console.log("Launched iOS application.");
+});
+
+application.on(application.suspendEvent, function (args: application.ApplicationEventData) {
+    if (args.android) {
+        // For Android applications, args.android is an android activity class.
+        console.log("Activity: " + args.android);
+    } else if (args.ios) {
+        // For iOS applications, args.ios is UIApplication.
+        console.log("UIApplication: " + args.ios);
     }
-}
-application.onSuspend = function () {
-    console.log("Application suspended.");
-}
-application.onResume = function () {
-    console.log("Application resumed.");
-}
-application.onExit = function () {
-    console.log("Application will exit.");
-}
-application.onLowMemory = function () {
-    console.log("Memory is low.");
-}
-application.onUncaughtError = function (error: application.NativeScriptError) {
-    console.log("Application error: " + error.name + "; " + error.message + "; " + error.nativeError);
-}
+});
+
+application.on(application.resumeEvent, function (args: application.ApplicationEventData) {
+    if (args.android) {
+        // For Android applications, args.android is an android activity class.
+        console.log("Activity: " + args.android);
+    } else if (args.ios) {
+        // For iOS applications, args.ios is UIApplication.
+        console.log("UIApplication: " + args.ios);
+    }
+});
+
+application.on(application.exitEvent, function (args: application.ApplicationEventData) {
+    if (args.android) {
+        // For Android applications, args.android is an android activity class.
+        console.log("Activity: " + args.android);
+    } else if (args.ios) {
+        // For iOS applications, args.ios is UIApplication.
+        console.log("UIApplication: " + args.ios);
+    }
+});
+
+application.on(application.lowMemoryEvent, function (args: application.ApplicationEventData) {
+    if (args.android) {
+        // For Android applications, args.android is an android activity class.
+        console.log("Activity: " + args.android);
+    } else if (args.ios) {
+        // For iOS applications, args.ios is UIApplication.
+        console.log("UIApplication: " + args.ios);
+    }
+});
+
+application.on(application.uncaughtErrorEvent, function (args: application.ApplicationEventData) {
+    if (args.android) {
+        // For Android applications, args.android is an NativeScriptError.
+        console.log("NativeScriptError: " + args.android);
+    } else if (args.ios) {
+        // For iOS applications, args.ios is NativeScriptError.
+        console.log("NativeScriptError: " + args.ios);
+    }
+});
 application.start();
 ```
 
