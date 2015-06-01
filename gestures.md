@@ -39,13 +39,13 @@ Triggers the default functionality for a given item.
 
 ``` JavaScript
 var label = new labelModule.Label();
-var observer = label.observe(gestures.GestureTypes.Tap, function (args) {
+label.observe(gestures.GestureTypes.tap, function (args) {
     console.log("Tap");
 });
 ```
 ``` TypeScript
 var label = new labelModule.Label();
-var observer = label.observe(gestures.GestureTypes.Tap, function (args: gestures.GestureEventData) {
+label.observe(gestures.GestureTypes.tap, function (args: gestures.GestureEventData) {
     console.log("Tap");
 });
 ```
@@ -62,13 +62,13 @@ Also used for text selection.
 
 ``` JavaScript
 var label = new labelModule.Label();
-var observer = label.observe(gestures.GestureTypes.DoubleTap, function (args) {
+label.observe(gestures.GestureTypes.doubleTap, function (args) {
     console.log("Double Tap");
 });
 ```
 ``` TypeScript
 var label = new labelModule.Label();
-var observer = label.observe(gestures.GestureTypes.DoubleTap, function (args: gestures.GestureEventData) {
+label.observe(gestures.GestureTypes.doubleTap, function (args: gestures.GestureEventData) {
     console.log("Double Tap");
 });
 ```
@@ -81,13 +81,13 @@ Enters data selection mode. Allows you to select one or more items in a view and
 
 ``` JavaScript
 var label = new labelModule.Label();
-var observer = label.observe(gestures.GestureTypes.LongPress, function (args) {
+label.observe(gestures.GestureTypes.longPress, function (args) {
     console.log("Long Press");
 });
 ```
 ``` TypeScript
 var label = new labelModule.Label();
-var observer = label.observe(gestures.GestureTypes.LongPress, function (args: gestures.GestureEventData) {
+label.observe(gestures.GestureTypes.longPress, function (args: gestures.GestureEventData) {
     console.log("Long Press");
 });
 ```
@@ -100,13 +100,13 @@ Navigates between views in the same hierarchy. Swipes are quick and affect the s
 
 ``` JavaScript
 var label = new labelModule.Label();
-var observer = label.observe(gestures.GestureTypes.Swipe, function (args) {
+label.observe(gestures.GestureTypes.swipe, function (args) {
     console.log("Swipe Direction: " + args.direction);
 });
 ```
 ``` TypeScript
 var label = new labelModule.Label();
-var observer = label.observe(gestures.GestureTypes.Swipe, function (args: gestures.SwipeGestureEventData) {
+label.observe(gestures.GestureTypes.swipe, function (args: gestures.SwipeGestureEventData) {
     console.log("Swipe Direction: " + args.direction);
 });
 ```
@@ -119,12 +119,12 @@ Scrolls overflowing content. Pans are executed more slowly and allow for more pr
 
 ``` JavaScript
 var label = new labelModule.Label();
-var observer = label.observe(gestures.GestureTypes.Pan, function (args) {
+label.observe(gestures.GestureTypes.pan, function (args) {
     console.log("Pan deltaX:" + args.deltaX + "; deltaY:" + args.deltaY + ";");
 });
 ```
 ``` TypeScript
-var observer = label.observe(gestures.GestureTypes.Pan, function (args: gestures.PanGestureEventData) {
+label.observe(gestures.GestureTypes.pan, function (args: gestures.PanGestureEventData) {
     console.log("Pan deltaX:" + args.deltaX + "; deltaY:" + args.deltaY + ";");
 });
 ```
@@ -139,13 +139,13 @@ Zooms into content or out of content.
 
 ``` JavaScript
 var label = new labelModule.Label();
-var observer = label.observe(gestures.GestureTypes.Pinch, function (args) {
+label.observe(gestures.GestureTypes.pinch, function (args) {
     console.log("Pinch Scale: " + args.scale);
 });
 ```
 ``` TypeScript
 var label = new labelModule.Label();
-var observer = label.observe(gestures.GestureTypes.Pinch, function (args: gestures.PinchGestureEventData) {
+label.observe(gestures.GestureTypes.pinch, function (args: gestures.PinchGestureEventData) {
     console.log("Pinch Scale: " + args.scale);
 });
 ```
@@ -158,32 +158,34 @@ Rotates content clockwise or counterclockwise.
 
 ``` JavaScript
 var label = new labelModule.Label();
-var observer = label.observe(gestures.GestureTypes.Rotation, function (args) {
+label.observe(gestures.GestureTypes.rotation, function (args) {
     console.log("Rotation: " + args.rotation);
 });
 ```
 ``` TypeScript
 var label = new labelModule.Label();
-var observer = label.observe(gestures.GestureTypes.Rotation, function (args: gestures.RotationGestureEventData) {
+label.observe(gestures.GestureTypes.rotation, function (args: gestures.RotationGestureEventData) {
     console.log("Rotation: " + args.rotation);
 });
 ```
 
 ## Stop Detecting Gestures
 
-To stop receiving information about gestures, simply call the `disconnect` method of the observer object  that you received when you called the `observe` method.
+To stop receiving information about gestures, simply call the `disconnect` method of the observer object that you created when `observe` method is called. The tricky part here is that the gesture observer is stored in a map object which key is the gesture type and value is an array of gesture observers. This structure assumes (and actually supports) more than one callback for a given gesture (indeed not the most common scenario).
 
 ``` JavaScript
 var label = new labelModule.Label();
-var observer = label.observe(gestures.GestureTypes.Tap, function (args) {
+label.observe(gestures.GestureTypes.tap, function (args) {
     console.log("Tap");
 });
-observer.disconnect();
+var tapObserver = label.gestureObservers.get(gestures.GestureTypes.tap)[0];
+tapObserver.disconnect();
 ```
 ``` TypeScript
 var label = new labelModule.Label();
-var observer = label.observe(gestures.GestureTypes.Tap, function (args: gestures.GestureEventData) {
+label.observe(gestures.GestureTypes.tap, function (args: gestures.GestureEventData) {
     console.log("Tap");
 });
-observer.disconnect();
+var tapObserver = label.gestureObservers.get(gestures.GestureTypes.tap)[0];
+tapObserver.disconnect();
 ```
