@@ -171,14 +171,14 @@ label.observe(gestures.GestureTypes.rotation, function (args: gestures.RotationG
 
 ## Stop Detecting Gestures
 
-To stop receiving information about gestures, simply call the `disconnect` method of the observer object that you created when `observe` method is called. The tricky part here is that the gesture observer is stored in a map object which key is the gesture type and value is an array of gesture observers. This structure assumes (and actually supports) more than one callback for a given gesture (indeed not the most common scenario).
+To stop receiving information about gestures, simply call the `disconnect` method of the observer object that you created when `observe` method is called. The tricky part here is that the gesture observer is stored in a map object which key is the gesture type and value is an array of gesture observers. This structure assumes (and actually supports) more than one callback for a given gesture (indeed not the most common scenario). To access this structure view has a method getGestureObservers(gestureType) which returns an array of gesture observers for that gesture type.
 
 ``` JavaScript
 var label = new labelModule.Label();
 label.observe(gestures.GestureTypes.tap, function (args) {
     console.log("Tap");
 });
-var tapObserver = label.gestureObservers.get(gestures.GestureTypes.tap)[0];
+var tapObserver = label.getGestureObservers(gestures.GestureTypes.tap)[0];
 tapObserver.disconnect();
 ```
 ``` TypeScript
@@ -186,6 +186,6 @@ var label = new labelModule.Label();
 label.observe(gestures.GestureTypes.tap, function (args: gestures.GestureEventData) {
     console.log("Tap");
 });
-var tapObserver = label.gestureObservers.get(gestures.GestureTypes.tap)[0];
+var tapObserver = label.getGestureObservers(gestures.GestureTypes.tap)[0];
 tapObserver.disconnect();
 ```
