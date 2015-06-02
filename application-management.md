@@ -186,7 +186,7 @@ application.start();
 
 ## Persist and Restore Application Settings
 
-To persist user-defined settings, you need to use the `local-settings` module. The `local-settings` module is a static singleton hash table that stores key-value pairs for the application. 
+To persist user-defined settings, you need to use the `application-settings` module. The `application-settings` module is a static singleton hash table that stores key-value pairs for the application. 
 
 The getter methods have two parameters: a key and an optional default value to return if the specified key does not exist.
 The setter methods have two required parameters: a key and value. 
@@ -194,34 +194,34 @@ The setter methods have two required parameters: a key and value.
 ### Example
 
 ``` JavaScript
-var localSettings = require("local-settings");
+var applicationSettings = require("application-settings");
 // Event handler for Page "loaded" event attached in main-page.xml.
 function pageLoaded(args) {
-    localSettings.setString("Name", "John Doe");
-    console.log(localSettings.getString("Name")); // Prints "John Doe".
-    localSettings.setBoolean("Married", false);
-    console.log(localSettings.getBoolean("Married")); // Prints false.
-    localSettings.setNumber("Age", 42);
-    console.log(localSettings.getNumber("Age")); // Prints 42.
-    console.log(localSettings.hasKey("Name")); // Prints true.
-    localSettings.remove("Name"); // Removes the Name entry.
-    console.log(localSettings.hasKey("Name")); // Prints false.
+    applicationSettings.setString("Name", "John Doe");
+    console.log(applicationSettings.getString("Name")); // Prints "John Doe".
+    applicationSettings.setBoolean("Married", false);
+    console.log(applicationSettings.getBoolean("Married")); // Prints false.
+    applicationSettings.setNumber("Age", 42);
+    console.log(applicationSettings.getNumber("Age")); // Prints 42.
+    console.log(applicationSettings.hasKey("Name")); // Prints true.
+    applicationSettings.remove("Name"); // Removes the Name entry.
+    console.log(applicationSettings.hasKey("Name")); // Prints false.
 }
 exports.pageLoaded = pageLoaded;
 ```
 ``` TypeScript
 import observable = require("data/observable");
-import localSettings = require("local-settings");
+import applicationSettings = require("application-settings");
 // Event handler for Page "loaded" event attached in main-page.xml.
 export function pageLoaded(args: observable.EventData) {
-    localSettings.setString("Name", "John Doe");
-    console.log(localSettings.getString("Name"));// Prints "John Doe".
-    localSettings.setBoolean("Married", false);
-    console.log(localSettings.getBoolean("Married"));// Prints false.
-    localSettings.setNumber("Age", 42);
-    console.log(localSettings.getNumber("Age"));// Prints 42.
-    console.log(localSettings.hasKey("Name"));// Prints true.
-    localSettings.remove("Name");// Removes the Name entry.
-    console.log(localSettings.hasKey("Name"));// Prints false.
+    applicationSettings.setString("Name", "John Doe");
+    console.log(applicationSettings.getString("Name"));// Prints "John Doe".
+    applicationSettings.setBoolean("Married", false);
+    console.log(applicationSettings.getBoolean("Married"));// Prints false.
+    applicationSettings.setNumber("Age", 42);
+    console.log(applicationSettings.getNumber("Age"));// Prints 42.
+    console.log(applicationSettings.hasKey("Name"));// Prints true.
+    applicationSettings.remove("Name");// Removes the Name entry.
+    console.log(applicationSettings.hasKey("Name"));// Prints false.
 }
 ```
