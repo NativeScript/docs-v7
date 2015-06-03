@@ -49,3 +49,7 @@ exports.pageLoaded = function(args) {
     }
 };
 ```
+
+### How do I check which version of NativeScript does my project use?
+
+Open the `app/tns_modules/package.json` file and check the `version` attribute. This defines the version of the cross-platform modules.
