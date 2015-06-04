@@ -235,7 +235,7 @@ With the [TimePicker](ApiReference/ui/time-picker/how-to.md) widget, you can pic
 
 With the [ListPicker](ApiReference/ui/list-picker/how-to.md) widget, you can pick value from a list.
 
-![list-picker android](img/gallery/android/listPickerPage.png "list-picker android")![list-picker ios](img/gallery/ios/timePickerPage.png "list-picker ios")
+![list-picker android](img/gallery/android/listPickerPage.png "list-picker android")![list-picker ios](img/gallery/ios/listPickerPage.png "list-picker ios")
 
 **Native Component**
 
