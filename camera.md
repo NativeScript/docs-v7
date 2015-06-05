@@ -28,7 +28,7 @@ Then we are ready to use it:
 
 ``` JavaScript
 var imageModule = require("ui/image");
-camera.takePicture().then(picture => {
+cameraModule.takePicture().then(function(picture) {
 	console.log("Result is an image source instance");
 	var image = new imageModule.Image();
 	image.imageSource = picture;
@@ -36,7 +36,7 @@ camera.takePicture().then(picture => {
 ```
 ``` TypeScript
 import imageModule = require("ui/image");
-camera.takePicture().then(picture => {
+cameraModule.takePicture().then(picture => {
 	console.log("Result is an image source instance");
 	var image = new imageModule.Image();
 	image.imageSource = picture;
@@ -62,7 +62,7 @@ Using the options parameter:
 
 ``` JavaScript
 var imageModule = require("ui/image");
-camera.takePicture({width: 300, height: 300, keepAspectRatio: true}).then(picture => {
+cameraModule.takePicture({width: 300, height: 300, keepAspectRatio: true}).then(function(picture) {
 	console.log("Result is an image source instance");
 	var image = new imageModule.Image();
 	image.imageSource = picture;
@@ -70,7 +70,7 @@ camera.takePicture({width: 300, height: 300, keepAspectRatio: true}).then(pictur
 ```
 ``` TypeScript
 import imageModule = require("ui/image");
-camera.takePicture({width: 300, height: 300, keepAspectRatio: true}).then(picture => {
+cameraModule.takePicture({width: 300, height: 300, keepAspectRatio: true}).then(picture => {
 	console.log("Result is an image source instance");
 	var image = new imageModule.Image();
 	image.imageSource = picture;
