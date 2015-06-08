@@ -285,3 +285,4 @@ We already have this functionality in place through the CLI prepare command. How
 * `land` - orientation is in landscape mode
 * `port` - orientation is in portrait mode
 
+> Note: All qualifiers are taken into account when the page is loading. However, changing the device orientation will not trigger page reload and will not change the current page.
