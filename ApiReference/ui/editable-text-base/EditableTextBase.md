@@ -29,6 +29,8 @@ Possible values are contained in the [UpdateTextTrigger enumeration](../enums/Up
   Gets or sets the autocapitalization type. Possible values are contained in the [AutocapitalizationType enumeration](../enums/AutocapitalizationType/README.md).
  - **autocorrect** - _Boolean_.    
   Enables or disables autocorrection.
+ - **hint** - _String_.    
+  Gets or sets the placeholder text.
 
 ##### Instance Functions
  - **dismissSoftInput()**  

@@ -30,6 +30,11 @@ Class | Description
    - **data** - _Object_  
      The native data (byte array) to load the image from. This will be either Stream for Android or NSData for iOS.
    - _**return**_ - [_ImageSource_](../image-source/ImageSource.md)
+ - **fromBase64(** source _String_ **)** [_ImageSource_](../image-source/ImageSource.md)  
+     Creates a new ImageSource instance and loads it from the specified resource name.
+   - **source** - _String_  
+     The Base64 string to load the image from.
+   - _**return**_ - [_ImageSource_](../image-source/ImageSource.md)
  - **fromNativeSource(** source _Object_ **)** [_ImageSource_](../image-source/ImageSource.md)  
      Creates a new ImageSource instance and sets the provided native source object (typically a Bitmap).
 The native source object will update either the android or ios properties, depending on the target os.
@@ -47,7 +52,7 @@ The native source object will update either the android or ios properties, depen
      The location of the file on the file system.
    - _**return**_ - [_ImageSource_](../image-source/ImageSource.md)
  - **isFileOrResourcePath(** path _String_ **)** _Boolean_  
-     Returns true if the specified path points to a resource or local file.
+     [Obsolete. Please use utils.isFileOrResourcePath instead!] Returns true if the specified path points to a resource or local file.
    - **path** - _String_  
      The path.
    - _**return**_ - _Boolean_

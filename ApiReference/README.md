@@ -53,6 +53,7 @@
  - ["ui/page"](ui/page/)
  - ["ui/placeholder"](ui/placeholder/)
  - ["ui/progress"](ui/progress/)
+ - ["ui/repeater"](ui/repeater/)
  - ["ui/scroll-view"](ui/scroll-view/)
  - ["ui/search-bar"](ui/search-bar/)
  - ["ui/segmented-bar"](ui/segmented-bar/)

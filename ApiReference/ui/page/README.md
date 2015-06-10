@@ -18,7 +18,8 @@ Class | Description
 
 Object | Description
 ------|------------
-[NavigatedData](../../ui/page/NavigatedData.md) | Defines the data for the Page.navigatedTo event.
+[NavigatedData](../../ui/page/NavigatedData.md) | Defines the data for the page navigation events.
+[ShownModallyData](../../ui/page/ShownModallyData.md) | Defines the data for the Page.shownModally event.
 [Options](../../ui/page/Options.md) | Provides a set with most common option used to create a page instance.
 [AndroidMenuItemOptions](../../ui/page/AndroidMenuItemOptions.md) | 
 

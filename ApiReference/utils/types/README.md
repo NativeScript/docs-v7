@@ -10,6 +10,10 @@ description: "Module utils/types"
 var utilstypes = require("utils/types");
 ```
 
+Class | Description
+------|------------
+[ClassInfo](../../utils/types/ClassInfo.md) | A Class holding information about a class
+
 ##### Functions
  - **isString(** value _Object_ **)** _Boolean_  
      A function that checks if something is a valid string.
@@ -64,3 +68,9 @@ Returns a string with the name of the class.
      The object which class hierarchy will be get.
 Return an array of strings with the name of all classes.
    - _**return**_ - _Array_ of _String_
+ - **getClassInfo(** object _Object_ **)** [_ClassInfo_](../../utils/types/ClassInfo.md)  
+     A function that gets the ClassInfo for an object.
+   - **object** - _Object_  
+     The object for which the ClassInfo will be get.
+Returns a ClassInfo for the object.
+   - _**return**_ - [_ClassInfo_](../../utils/types/ClassInfo.md)

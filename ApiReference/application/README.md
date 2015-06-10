@@ -13,10 +13,23 @@ var application = require("application");
 Object | Description
 ------|------------
 [NativeScriptError](../application/NativeScriptError.md) | An extended JavaScript Error which will have the nativeError property initialized in case the error is caused by executing platform-specific code.
+[ApplicationEventData](../application/ApplicationEventData.md) | Event data containing information for the application events.
 [AndroidApplication](../application/AndroidApplication.md) | The abstraction of an Android-specific application object.
 [iOSApplication](../application/iOSApplication.md) | The abstraction of an iOS-specific application object.
 
 ##### Variables
+ - **launchEvent** - _String_.    
+  String value used when hooking to launch event.
+ - **uncaughtErrorEvent** - _String_.    
+  String value used when hooking to uncaughtError event.
+ - **suspendEvent** - _String_.    
+  String value used when hooking to suspend event.
+ - **resumeEvent** - _String_.    
+  String value used when hooking to resume event.
+ - **exitEvent** - _String_.    
+  String value used when hooking to exitevent.
+ - **lowMemoryEvent** - _String_.    
+  String value used when hooking to lowMemory event.
  - **mainModule** - _String_.    
   The main page path (without the file extension) for the application starting from the application root. 
 For example if you have page called "main.js" in a folder called "subFolder" and your root folder is "app" you can specify mainModule like this:
@@ -58,6 +71,53 @@ The method is intended to be used for crash reports and/or application restart.
  - **onResume()**  
      This method will be called when the Application is resumed after it has been suspended.
  - **onExit()**  
-     This method will be called when the Application is about to exit.
+     This method will be called when the Application is about to exitEvent.
  - **onLowMemory()**  
      This method will be called when there is low memory on the target device.
+ - **on(** eventNames _String_, callback _Function_..., thisArg? _Object_ **)**  
+     A basic method signature to hook an event listener (shortcut alias to the addEventListener method).
+   - **eventNames** - _String_  
+     - String corresponding to events (e.g. "onLaunch"). Optionally could be used more events separated by `,` (e.g. "onLaunch", "onSuspend"). 
+   - **callback** - _Function_(data _Object_)  
+     - Callback function which will be executed when event is raised.
+   - **thisArg** - _(optional)_ - _Object_  
+     - An optional parameter which will be used as `this` context for callback execution.
+ - **notify(** data [_ApplicationEventData_](../application/ApplicationEventData.md) **)**  
+     Notifies all the registered listeners for the event provided in the data.eventName.
+   - **data** - [_ApplicationEventData_](../application/ApplicationEventData.md)  
+     The data associated with the event.
+ - **hasListeners(** eventName _String_ **)** _Boolean_  
+     Checks whether a listener is registered for the specified event name.
+   - **eventName** - _String_  
+     The name of the event to check for.
+   - _**return**_ - _Boolean_
+ - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
+     This event is raised on application launchEvent.
+   - **event**
+   - **callback** - _Function_(args _Object_)
+   - **thisArg** - _(optional)_ - _Object_
+ - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
+     This event is raised when an uncaught error occurs while the application is running.
+   - **event**
+   - **callback** - _Function_(args _Object_)
+   - **thisArg** - _(optional)_ - _Object_
+ - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
+     This event is raised when the Application is suspended.
+   - **event**
+   - **callback** - _Function_(args _Object_)
+   - **thisArg** - _(optional)_ - _Object_
+ - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
+     This event is raised when the Application is resumed after it has been suspended.
+   - **event**
+   - **callback** - _Function_(args _Object_)
+   - **thisArg** - _(optional)_ - _Object_
+ - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
+     This event is raised when the Application is about to exitEvent.
+   - **event**
+   - **callback** - _Function_(args _Object_)
+   - **thisArg** - _(optional)_ - _Object_
+ - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
+     This event is raised when there is low memory on the target device.
+   - **event**
+   - **callback** - _Function_(args _Object_)
+   - **thisArg** - _(optional)_ - _Object_

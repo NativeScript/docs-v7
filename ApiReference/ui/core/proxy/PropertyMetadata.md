@@ -9,4 +9,4 @@ A class that describes dependency property metadata.
 
 ##### Instance Properties
  - **onSetNativeValue** - [_PropertyChangedCallback_](../../../ui/core/dependency-observable/PropertyChangedCallback.md).    
-  Gets or sets a dependencyObservable.PropertyChangedCallback which is used to react after changing value on native side.
+  Gets or sets a dependencyObservable.PropertyChangedCallback which is used to set the value on native side.

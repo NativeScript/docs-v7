@@ -22,8 +22,10 @@ var onEventCallback = function (event) {
                     }
                 }
             }
+            console.log(message);
             break;
         case xmlModule.ParserEventType.EndElement:
+            console.log(event.eventType + " " + event.elementName);
             break;
         case xmlModule.ParserEventType.Text:
             var significantText = event.data.trim();

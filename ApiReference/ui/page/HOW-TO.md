@@ -49,9 +49,9 @@ topFrame.goBack();
 var testPage;
 var pageFactory = function () {
     testPage = new PageModule.Page();
-    testPage.onNavigatedTo = function (context) {
+    testPage.on(PageModule.Page.navigatedToEvent, function () {
         //console.log(JSON.stringify(context));
-    };
+    });
     return testPage;
 };
 var navEntry = {

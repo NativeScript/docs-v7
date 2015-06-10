@@ -48,6 +48,23 @@ textView.bind(options, model);
 model.set("username", "mary");
 // textView.text is now "mary"
 ```
+### Setting the hint of a TextView
+``` JavaScript
+textView.hint = "type your username here";
+```
+### Binding hint property directly to model
+``` JavaScript
+var model = new observable.Observable();
+model.set("hint", "type your username here");
+var options = {
+    sourceProperty: "hint",
+    targetProperty: "hint"
+};
+textView.bind(options, model);
+// TextView.hint is now "type your username here"
+model.set("hint", "type your password here");
+// TextView.hint is now "type your password here"
+```
 ### Setting the editable property of a TextView
 ``` JavaScript
 textView.editable = false;

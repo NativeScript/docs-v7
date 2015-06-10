@@ -11,6 +11,7 @@ var locationModule = require("location");
 ## Other functions
 ### Test are location services available for this device
 ``` JavaScript
+var LocationManager = require("location").LocationManager;
 var isEnabled = LocationManager.isEnabled();
 ```
 ### Get distance between two locations
@@ -27,6 +28,7 @@ var distance = LocationManager.distance(locSofia, locNewYork);
 ## Getting location
 ### Receive continuous location updates
 ``` JavaScript
+var LocationManager = require("location").LocationManager;
 var locationManager = new LocationManager();
 locationManager.startLocationMonitoring(function (location) {
     console.log('Location received: ' + location);
@@ -36,6 +38,7 @@ locationManager.startLocationMonitoring(function (location) {
 ```
 ### Get last known location
 ``` JavaScript
+var LocationManager = require("location").LocationManager;
 var locationManager = new LocationManager();
 var lastKnownLocation = locationManager.lastKnownLocation;
 ```

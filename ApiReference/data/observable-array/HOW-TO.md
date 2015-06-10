@@ -20,6 +20,11 @@ var array = new observableArrayModule.ObservableArray(1, 2, 3);
 ``` JavaScript
 var array = new observableArrayModule.ObservableArray(100);
 ```
+### Set ObservableArray length to new value.
+``` JavaScript
+var array = new observableArrayModule.ObservableArray(100);
+array.length = 50;
+```
 ### Get item at specified index using getItem(index) method.
 ``` JavaScript
 var array = new observableArrayModule.ObservableArray([1, 2, 3]);
@@ -160,9 +165,7 @@ var result = array.sort();
 ### Use sort(compareFunction) method to sort the array with your own comparing logic. 
 ``` JavaScript
 var array = new observableArrayModule.ObservableArray([10, 100, 1]);
-var result = array.sort(function (a, b) {
-    return a - b;
-});
+var result = array.sort(function (a, b) { return a - b; });
 ```
 ### Use splice(start, deleteCount) method to delete elements in the array. 
 ``` JavaScript

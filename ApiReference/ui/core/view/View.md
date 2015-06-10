@@ -108,6 +108,7 @@ size is smaller than the size the view wants to be.
  - **visualState** - _String_.
  - **isLoaded** - _Boolean_.
  - **_context** - _Object_.
+ - **_gestureObservers** - _Map_ of  **<** _Number_, _Array_ of [_GesturesObserver_](../../../ui/gestures/GesturesObserver.md) **>** .
  - **_domId** - _Number_.
  - **_cssClasses** - _Array_ of _String_.
  - **_isAddedToNativeVisualTree** - _Boolean_.
@@ -176,10 +177,17 @@ When overriding this method, you must call setMeasuredDimension(int, int) to sto
      Tries to focus the view.
 Returns a value indicating whether this view or one of its descendants actually took focus.
    - _**return**_ - _Boolean_
- - **observe(** type _Number_, callback _Function_... **)** [_GesturesObserver_](../../../ui/gestures/GesturesObserver.md)
-   - **type** - _Number_
-   - **callback** - _Function_(args [_GestureEventData_](../../../ui/gestures/GestureEventData.md))
-   - _**return**_ - [_GesturesObserver_](../../../ui/gestures/GesturesObserver.md)
+ - **getGestureObservers(** type [_GestureTypes_](../../../ui/gestures/GestureTypes.md) **)** _Array_...
+   - **type** - [_GestureTypes_](../../../ui/gestures/GestureTypes.md)
+   - _**return**_ - _Array_ of [_GesturesObserver_](../../../ui/gestures/GesturesObserver.md)
+ - **observe(** type [_GestureTypes_](../../../ui/gestures/GestureTypes.md), callback _Function_..., thisArg? _Object_ **)**  
+     Adds a gesture observer.
+   - **type** - [_GestureTypes_](../../../ui/gestures/GestureTypes.md)  
+     - Type of the gesture.
+   - **callback** - _Function_(args [_GestureEventData_](../../../ui/gestures/GestureEventData.md))  
+     - A function that will be executed when gesture is received.
+   - **thisArg** - _(optional)_ - _Object_  
+     - An optional parameter which will be used as `this` context for callback execution. 
  - **on(** eventNames _String_, callback _Function_..., thisArg? _Object_ **)**  
      A basic method signature to hook an event listener (shortcut alias to the addEventListener method).
    - **eventNames** - _String_  
@@ -204,6 +212,8 @@ Returns a value indicating whether this view or one of its descendants actually 
    - **view** - [_View_](../../../ui/core/view/View.md)
  - **_removeView(** view [_View_](../../../ui/core/view/View.md) **)**
    - **view** - [_View_](../../../ui/core/view/View.md)
+ - **_isInheritedChange()** _Boolean_
+   - _**return**_ - _Boolean_
  - **_addViewToNativeVisualTree(** view [_View_](../../../ui/core/view/View.md) **)** _Boolean_  
      Performs the core logic of adding a child view to the native visual tree. Returns true if the view's native representation has been successfully added, false otherwise.
    - **view** - [_View_](../../../ui/core/view/View.md)

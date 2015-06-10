@@ -10,10 +10,24 @@ description: "Module ui/core/weak-event-listener"
 var uicoreweak_event_listener = require("ui/core/weak-event-listener");
 ```
 
-Class | Description
-------|------------
-[WeakEventListener](../../../ui/core/weak-event-listener/WeakEventListener.md) | Represents a class that utilize work with weak event listeners.
-
-Object | Description
-------|------------
-[WeakEventListenerOptions](../../../ui/core/weak-event-listener/WeakEventListenerOptions.md) | An interface that defines all options needed for creating weak event listener.
+##### Functions
+ - **addWeakEventListener(** source [_Observable_](../../../data/observable/Observable.md), eventName _String_, handler _Function_..., target _Object_ **)**  
+     Attaches a WeakEventListener.
+   - **source** - [_Observable_](../../../data/observable/Observable.md)  
+     Observable class which emits the event.
+   - **eventName** - _String_  
+     The event name.
+   - **handler** - _Function_(eventData [_EventData_](../../../data/observable/EventData.md))  
+     The function which should be called when event occurs.
+   - **target** - _Object_  
+     Subscriber (target) of the event listener. It will be used as a thisArg in the handler function.
+ - **removeWeakEventListener(** source [_Observable_](../../../data/observable/Observable.md), eventName _String_, handler _Function_..., target _Object_ **)**  
+     Removes a WeakEventListener.
+   - **source** - [_Observable_](../../../data/observable/Observable.md)  
+     Observable class which emits the event.
+   - **eventName** - _String_  
+     The event name.
+   - **handler** - _Function_(eventData [_EventData_](../../../data/observable/EventData.md))  
+     The function which should be called when event occurs.
+   - **target** - _Object_  
+     Subscriber (target) of the event listener. It will be used as a thisArg in the handler function.

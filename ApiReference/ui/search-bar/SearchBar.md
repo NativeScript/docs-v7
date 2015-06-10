@@ -28,6 +28,8 @@ Represents a search bar component.
   Gets or sets the text of the search bar text field hint/placeholder.
  - **textFieldBackgroundColor** - [_Color_](../../color/Color.md).    
   Gets or sets the TextField background color of the SearchBar component.
+ - **textFieldHintColor** - [_Color_](../../color/Color.md).    
+  Gets or sets the TextField Hint color of the SearchBar component.
 
 ##### Instance Functions
  - **on(** eventNames _String_, callback _Function_..., thisArg? _Object_ **)**  

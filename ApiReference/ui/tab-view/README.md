@@ -17,3 +17,4 @@ Class | Description
 Object | Description
 ------|------------
 [TabViewItem](../../ui/tab-view/TabViewItem.md) | Represents a tab view entry.
+[SelectedIndexChangedEventData](../../ui/tab-view/SelectedIndexChangedEventData.md) | Defines the data for the TabView.selectedIndexChanged event.

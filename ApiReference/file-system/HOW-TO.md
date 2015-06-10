@@ -37,7 +37,8 @@ var documents = fs.knownFolders.documents();
 var path = fs.path.join(documents.path, "FileFromPath.txt");
 var file = fs.File.fromPath(path);
 // Writing text to the file.
-file.writeText("Something").then(function () {
+file.writeText("Something")
+    .then(function () {
     // Succeeded writing to the file.
 }, function (error) {
     // Failed to write to the file.
@@ -56,7 +57,8 @@ It will create a new file or overwrite an existing file.
 var documents = fs.knownFolders.documents();
 var file = documents.getFile("Test_Write.txt");
 // Writing text to the file.
-file.writeText("Something").then(function () {
+file.writeText("Something")
+    .then(function () {
     // Succeeded writing to the file.
 }, function (error) {
     // Failed to write to the file.
@@ -80,10 +82,12 @@ var documents = fs.knownFolders.documents();
 var myFile = documents.getFile("Test_Write.txt");
 var written;
 // Writing text to the file.
-myFile.writeText("Something").then(function () {
+myFile.writeText("Something")
+    .then(function () {
     // Succeeded writing to the file.
     // Getting back the contents of the file.
-    myFile.readText().then(function (content) {
+    myFile.readText()
+        .then(function (content) {
         // Successfully read the file's content.
     }, function (error) {
         // Failed to read from the file.
@@ -104,7 +108,8 @@ var temp = fs.knownFolders.temp();
 Getting all files and folders within a folder:
 ``` JavaScript
 var documents = fs.knownFolders.documents();
-documents.getEntities().then(function (entities) {
+documents.getEntities()
+    .then(function (entities) {
     // entities is array with the document's files and folders.
     entities.forEach(function (entity) {
         console.log(entity.name);
@@ -157,7 +162,8 @@ var exists = fs.Folder.exists(documents.path);
 ``` JavaScript
 var documents = fs.knownFolders.documents();
 var file = documents.getFile("Test.txt");
-file.rename("Test_renamed.txt").then(function (result) {
+file.rename("Test_renamed.txt")
+    .then(function (result) {
     // Successfully Renamed.
 }, function (error) {
     // Failed to rename the file.
@@ -167,7 +173,8 @@ file.rename("Test_renamed.txt").then(function (result) {
 ``` JavaScript
 var folder = fs.knownFolders.documents();
 var myFolder = folder.getFolder("Test__");
-myFolder.rename("Something").then(function (result) {
+myFolder.rename("Something")
+    .then(function (result) {
     // Successfully Renamed.
 }, function (error) {
     // Failed to rename the folder.
@@ -179,7 +186,8 @@ To 'delete', 'remove' or 'unlink' a file use the file's remove method:
 ``` JavaScript
 var documents = fs.knownFolders.documents();
 var file = documents.getFile("AFileToRemove.txt");
-file.remove().then(function (result) {
+file.remove()
+    .then(function (result) {
     // Success removing the file.
 }, function (error) {
     // Failed to remove the file.
@@ -190,7 +198,8 @@ file.remove().then(function (result) {
 var documents = fs.knownFolders.documents();
 var file = documents.getFolder("AFolderToRemove");
 // Remove a folder and recursively its content.
-file.remove().then(function (result) {
+file.remove()
+    .then(function (result) {
     // Success removing the folder.
 }, function (error) {
     // Failed to remove the folder.
@@ -201,7 +210,8 @@ The clear method removes all files within a folder.
 ``` JavaScript
 var documents = fs.knownFolders.documents();
 var folder = documents.getFolder("testFolderEmpty");
-folder.clear().then(function () {
+folder.clear()
+    .then(function () {
     // Successfully cleared the folder.
 }, function (error) {
     // Failed to clear the folder.

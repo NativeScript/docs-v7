@@ -15,4 +15,5 @@ Provides access to the top-level Folders instances that are accessible from the 
    - _**return**_ - [_Folder_](../../file-system/Folder.md)
  - **currentApp()** [_Folder_](../../file-system/Folder.md)  
      Gets the root folder for the current application. This Folder is private for the application and not accessible from Users/External apps.
+iOS - this folder is read-only and contains the app and all its resources.
    - _**return**_ - [_Folder_](../../file-system/Folder.md)

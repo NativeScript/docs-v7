@@ -18,5 +18,7 @@ An interface for common options used to create an editable text component.
   Gets or sets a value indicating when the text property will be updated. 
  - **autocapitalizationType** - _(optional)_ - _String_.    
   Gets or sets the autocapitalization type.
+ - **hint** - _(optional)_ - _String_.    
+  Gets or sets the placeholder text.
  - **autocorrect** - _(optional)_ - _Boolean_.    
   Enables or disables autocorrection.

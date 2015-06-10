@@ -32,6 +32,11 @@ Encapsulates the common abstraction behind a platform specific object (typically
    - **data** - _Object_  
      The native data (byte array) to load the image from. This will be either Stream for Android or NSData for iOS.
    - _**return**_ - _Boolean_
+ - **loadFromBase64(** source _String_ **)** _Boolean_  
+     Loads this instance from the specified native image data.
+   - **source** - _String_  
+     The Base64 string to load the image from.
+   - _**return**_ - _Boolean_
  - **setNativeSource(** source _Object_ **)** _Boolean_  
      Sets the provided native source object (typically a Bitmap).
 This will update either the android or ios properties, depending on the target os.

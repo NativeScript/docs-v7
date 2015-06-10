@@ -28,7 +28,7 @@ Object | Description
 [RotationGestureEventData](../../ui/gestures/RotationGestureEventData.md) | Provides gesture event data for rotation gesture.
 
 ##### Functions
- - **observe(** target [_View_](../../ui/core/view/View.md), type [_GestureTypes_](../../ui/gestures/GestureTypes.md), callback _Function_... **)** [_GesturesObserver_](../../ui/gestures/GesturesObserver.md)  
+ - **observe(** target [_View_](../../ui/core/view/View.md), type [_GestureTypes_](../../ui/gestures/GestureTypes.md), callback _Function_..., thisArg? _Object_ **)** [_GesturesObserver_](../../ui/gestures/GesturesObserver.md)  
      A short-hand function that is used to create a gesture observer for a view and gesture.
    - **target** - [_View_](../../ui/core/view/View.md)  
      - View which will be watched for originating a specific gesture.
@@ -36,6 +36,7 @@ Object | Description
      - Type of the gesture.
    - **callback** - _Function_(args [_GestureEventData_](../../ui/gestures/GestureEventData.md))  
      - A function that will be executed when a gesture is received.
+   - **thisArg** - _(optional)_ - _Object_
    - _**return**_ - [_GesturesObserver_](../../ui/gestures/GesturesObserver.md)
  - **toString(** type [_GestureTypes_](../../ui/gestures/GestureTypes.md), separator? _String_ **)** _String_  
      Returns a string representation of a gesture type.

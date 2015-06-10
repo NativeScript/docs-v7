@@ -15,11 +15,11 @@ Binding the image source property to a view-model property.
      <!--Bind the image source property to view-model property -->
      {%raw%}<Image src="{{ thumbnailImageUrl }}" />{%endraw%}
      <!--Load form image from application -->
-     <Image src="~/logo.png" stretch="none" / > 
+     <Image src="~/logo.png" stretch ="none" / > 
      <!--Load form image resource -->
-     <Image src="res://logo.png" stretch="none" / > 
+     <Image src="res://logo.png" stretch ="none" / > 
      <!--Load form image URL-->
-     <Image src="http://www.google.com/images/errors/logo_sm_2.png" stretch="none" /> 
+     <Image src="http://www.google.com/images/errors/logo_sm_2.png" stretch ="none" /> 
   </StackLayout>
 </Page>
 ```

@@ -22,3 +22,7 @@ Represents the base class for all text views.
   Gets or sets font-size style property.
  - **formattedText** - [_FormattedString_](../../text/formatted-string/FormattedString.md).    
   Gets or sets a formatted string.
+
+##### Instance Functions
+ - **_onTextPropertyChanged(** data [_PropertyChangeData_](../../ui/core/dependency-observable/PropertyChangeData.md) **)**
+   - **data** - [_PropertyChangeData_](../../ui/core/dependency-observable/PropertyChangeData.md)

@@ -6,11 +6,19 @@ description: "Class ui/gestures.GesturesObserver"
 ## Class: "ui/gestures".GesturesObserver  
 Provides options for the GesturesObserver.
 
+##### Instance Properties
+ - **type** - [_GestureTypes_](../../ui/gestures/GestureTypes.md).    
+  Gesture type attached to the observer.
+ - **callback** - _Function_(args [_GestureEventData_](../../ui/gestures/GestureEventData.md)).    
+  A function that will be executed when a gesture is received.
+ - **context** - _Object_.    
+  A context which will be used as `this` in callback execution.
+ - **androidOnTouchEvent** - _Function_(motionEvent _Object_).    
+  An internal Android specific method used to pass the motion event to the correct gesture observer.
+
 ##### Instance Functions
- - **observe(** target [_View_](../../ui/core/view/View.md), type [_GestureTypes_](../../ui/gestures/GestureTypes.md) **)**  
+ - **observe(** type [_GestureTypes_](../../ui/gestures/GestureTypes.md) **)**  
      Registers a gesture observer to a view and gesture.
-   - **target** - [_View_](../../ui/core/view/View.md)  
-     - View which will be watched for originating a specific gesture.
    - **type** - [_GestureTypes_](../../ui/gestures/GestureTypes.md)  
      - Type of the gesture.
  - **disconnect()**  

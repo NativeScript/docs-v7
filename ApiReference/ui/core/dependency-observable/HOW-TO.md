@@ -15,5 +15,5 @@ var dependencyObservableModule = require("ui/core/dependency-observable");
 The property backing mechanism in each DependencyObservable instance is implemented via the Property class.
 Basically you create a new Property for a class (type):
 ``` JavaScript
-var testProperty = new dependencyObservableModule.Property("test", "TestDO", new dependencyObservableModule.PropertyMetadata(false, dependencyObservableModule.PropertyMetadataSettings.None, onTestPropertyChanged));
+var testProperty = new dependencyObservableModule.Property("test", "TestDO", new dependencyObservableModule.PropertyMetadata(false, dependencyObservableModule.PropertyMetadataSettings.None /*0*/, onTestPropertyChanged));
 ```

@@ -8,6 +8,10 @@ Using the SearchBar requires the "ui/search-bar" module.
 ``` JavaScript
 var searchBarModule = require("ui/search-bar");
 ```
+### Creating a SearchBar
+``` JavaScript
+var searchBar = new searchBarModule.SearchBar();
+```
 ### Searching
 ``` JavaScript
 var searchBar = new searchBarModule.SearchBar();
