@@ -165,14 +165,14 @@ dialogs.prompt({
 ```JavaScript
 var dialogs = require("ui/dialogs");
 // User name and password arguments are optional.
-dialogs.login("Your message", "User name", "Password").then(function (r) {
+dialogs.login("Your message", "User name label text", "Password label text").then(function (r) {
   console.log("Dialog result: " + r.result + ", user: " + r.userName + ", pwd: " + r.password);
 });
 ```
 ```TypeScript
 import dialogs = require("ui/dialogs");
 // User name and password arguments are optional.
-dialogs.login("Your message", "User name", "Password").then(r => {
+dialogs.login("Your message", "User name label text", "Password label text").then(r => {
   console.log("Dialog result: " + r.result + ", user: " + r.userName + ", pwd: " + r.password);
 });
 ```
@@ -185,10 +185,10 @@ dialogs.login({
   title: "Your title",
   message: "Your message",
   okButtonText: "Your button text",
-  cancelButtonText: "Cancel text",
-  neutralButtonText: "Neutral text",
-  userName: "User name",
-  password: "Password"
+  cancelButtonText: "Cancel button text",
+  neutralButtonText: "Neutral button text",
+  userName: "User name label text",
+  password: "Password label text"
 }).then(function (r) {
   console.log("Dialog result: " + r.result + ", user: " + r.userName + ", pwd: " + r.password);
 });
@@ -199,10 +199,10 @@ dialogs.login({
   title: "Your title",
   message: "Your message",
   okButtonText: "Your button text",
-  cancelButtonText: "Cancel text",
-  neutralButtonText: "Neutral text",
-  userName: "User name",
-  password: "Password"
+  cancelButtonText: "Cancel button text",
+  neutralButtonText: "Neutral button text",
+  userName: "User name label text",
+  password: "Password label text"
 }).then(r => {
   console.log("Dialog result: " + r.result + ", user: " + r.userName + ", pwd: " + r.password);
 });
