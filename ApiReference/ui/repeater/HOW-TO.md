@@ -28,7 +28,7 @@ var observableArray = require("data/observable-array");
  </Repeater>{%endraw%}
 </Page>
 ```
-### Define the Repeater itemsLayout property. Default is <StackLayout orientation="vertical" />.
+### Define the Repeater itemsLayout property. Default is StackLayout with orientation="vertical".
 ```XML
 <Page>
  {%raw%}<Repeater items="{{ myItems }}">
