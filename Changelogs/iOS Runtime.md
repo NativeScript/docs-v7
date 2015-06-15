@@ -7,6 +7,37 @@ position: 3
 iOS Runtime Changelog
 =====================
 
+1.1.0
+==
+[Milestone 1.1.0](https://github.com/NativeScript/ios-runtime/issues?q=milestone%3A1.1.0), [Release v1.1.0](https://github.com/NativeScript/ios-runtime/releases/tag/v1.1.0).
+
+### Fixed
+* The NativeScript CLI iOS template project now strips non-device architectures from embedded frameworks
+* You can now require paths with .js extension
+* Fixed issue where invoking an Objective-C class cluster as a JavaScript constructor with `new` would cause memory leaks
+* Fixed issue where an inspector frontend connecting to the same app multiple times in a single session would not display sources
+* Accessing JavaScript from multiple threads is properly synchronized
+* The `tns-ios` package is versioned
+
+### New
+* NativeScript for iOS is now built using CMake
+* The runtime is now distributed as a static library and a Cocoa Framework
+* API Metadata now includes information about Clang modules
+* NativeScript apps for iOS no longer ship with a WebSocket server for debugging, but rely on a plain TCP socket instead
+* Removed backwards compatibility for the pre-0.10 behavior when looking for *tns_modules*
+
+1.0.1
+==
+* Escape header and framework search paths in metadata generator
+
+1.0.0
+==
+[Milestone 1.0.0](https://github.com/NativeScript/ios-runtime/issues?q=milestone%3A1.0.0), [Release v1.0.0](https://github.com/NativeScript/ios-runtime/releases/tag/v1.0.0).
+* New metadata generator using Clang
+* Fix some threading issues
+* C enumeration syntax changed
+* Remove visibility warnings when linking
+
 0.10.0 (2015, April 17)
 ==
 [Milestone 0.10.0](https://github.com/NativeScript/ios-runtime/issues?q=milestone%3A0.10.0), [Release v0.10.0](https://github.com/NativeScript/ios-runtime/releases/tag/v0.10.0).
