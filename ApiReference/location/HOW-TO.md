@@ -9,7 +9,7 @@ Using the location requires the Location module.
 var locationModule = require("location");
 ```
 ## Other functions
-### Test are location services available for this device
+### Test location services available for this device
 ``` JavaScript
 var LocationManager = require("location").LocationManager;
 var isEnabled = LocationManager.isEnabled();
