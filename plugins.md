@@ -1,9 +1,10 @@
 ---
- nav-title: NativeScript Plugins
- title: Plugins
- description: When the NativeScript modules do not provide the native device or platform capability that you need, you can use NativeScript plugins.
- position: 3
- ---
+nav-title: NativeScript Plugins
+title: Plugins
+description: When the NativeScript modules do not provide the native device or platform capability that you need, you can use NativeScript plugins.
+position: 3
+---
+
 PLUGINS
 =========
 
