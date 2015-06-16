@@ -12,6 +12,7 @@ This article includes the following topics:
 * [Introduction](#introduction)
 * [Applying CSS Styles](#applying-css-styles)
 * [Supported Selectors](#supported-selectors)
+* [Import external CSS](#import-external-css)
 * [Supported Properties](#supported-properties)
 
 ## Introduction
@@ -178,3 +179,12 @@ This is the list of the properties that can be set in CSS or through the style p
 | padding-left    | paddingLeft        | Sets the left padding of a layout container. |
 | visibility      | visibility         | Sets the view visibility. Possible values: "visible" or "collapsed". |
 | opacity         | opacity            | Sets the view opacity. The value is in the [0, 1] range. |
+
+### Import external CSS
+The @import CSS rule allows you to import external CSS from local file, resource or url. These rules must precede all other types of rules.
+
+```CSS
+@import { url('http://some-domain.com/your-style.css') }
+@import { url('res://your-style.css') }
+@import { url('~/your-style.css') }
+```
