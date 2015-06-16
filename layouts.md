@@ -17,6 +17,7 @@ NativeScript provides a recursive layout system which sizes and positions [views
 * [Layouts](#layouts)
 	* [Layout Paddings](#layout-paddings)
 	* [Layout Containers](#layout-containers)
+	* [Repeating layout children](#repeating-layout-children)
  
 ## Layouting
 
