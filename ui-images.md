@@ -30,7 +30,7 @@ var imageSource = imageSourceModule.fromResource("logo");
 image.imageSource = imageSource;
 ```
 
-You can also use the [image-source API](/ApiReference/image-source/ImageSource.html) to save and load images form base64 encoded string.
+You can also use the [image-source API](./ApiReference/image-source/ImageSource.html) to save and load images form base64 encoded string.
 
 ## Load Images from URL
 Web images have `http://` or `https://` prefix. When such image is loaded an asynchronous http request will be sent and the image will be shown if the request is successful.
