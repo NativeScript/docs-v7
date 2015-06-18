@@ -20,9 +20,9 @@ dockLayout.addChild(image);
 
 The prefix of the `src` value specify where the image will be loaded form. The possible options are:
 
-* From URL (`http://` or `https://` prefix)
-* From local file system (`~/` prefix)
-* From resource (`res://` prefix)
+* [From URL (`http://` or `https://` prefix)](#load-images-from-url)
+* [From local file system (`~/` prefix)](#load-images-from-local-file-system)
+* [From resource (`res://` prefix)](#load-images-from-resource)
 
 You can also use the [image-source](./ApiReference/image-source/HOW-TO.html) module to create an image source an manually set it to the image:
 ```JavaScript
