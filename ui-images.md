@@ -50,6 +50,8 @@ Using the `~/` prefix you can load images relative to the `App` folder inside yo
 
 You can manually create an [ImageSource instance from local file](./ApiReference/image-source/HOW-TO.html#load-image-from-a-local-file)
 
+> Currently loading images form the file system does not respect file-name qualifiers as described [here](./navigation.html#supporting-multiple-screens). We have plans to implement that along with [density-specific qualifiers support.](https://github.com/NativeScript/NativeScript/issues/276).
+
 ## Load Images from Resource
 Using the `res://` prefix you can load resource image. This is the suggested approach, as it uses the native methods for loading the best image for the current device screen density.
 
