@@ -67,12 +67,16 @@ You can navigate between pages with the `navigate` method of the [`Frame`](./Api
 When you trigger navigation, NativeScript looks for an `XML` file with the specified name, loads it and navigates to the respective page. If NativeScript discovers a `JavaScript` or `TypeScript` file with the same name, it executes the code inside it.
 
 ```JavaScript
+// To import the "ui/frame" module:
+var frames = require("ui/frame");
 // Navigate to page called “my-page”
-frames.topmost().navigate("my-page")
+frames.topmost().navigate("my-page");
 ```
 ```TypeScript
+// To import the "ui/frame" module:
+import frames = require("ui/frame");
 // Navigate to page called “my-page”
-frames.topmost().navigate("my-page")
+frames.topmost().navigate("my-page");
 ```
 
 > Paths are relative to the application root. In the example above, NativeScript looks for a `my-page.xml` file in the app directory of your project.
