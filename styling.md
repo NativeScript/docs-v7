@@ -12,8 +12,9 @@ This article includes the following topics:
 * [Introduction](#introduction)
 * [Applying CSS Styles](#applying-css-styles)
 * [Supported Selectors](#supported-selectors)
-* [Import external CSS](#import-external-css)
 * [Supported Properties](#supported-properties)
+* [Using Fonts](#using-fonts)
+* [Import External CSS](#import-external-css)
 
 ## Introduction
 
@@ -159,7 +160,11 @@ This is the list of the properties that can be set in CSS or through the style p
 | color           | color              | Sets a solid-color value to the matched view’s foreground. |
 | background-color | backgroundColor    | Sets a solid-color value to the matched view’s background. |
 | background-image | backgroundImage    | Sets a image url to the matched view’s background image. |
+| font            | font               | Sets the font properties(this includes font-family, font-size, font-style and font-weight)  of the matched view. |
+| font-family     | fontFamily         | Sets the font family of the matched view |
 | font-size       | fontSize           | Sets the font size of the matched view (only supports device-independent units). |
+| font-style      | fontStyle          | Sets the font style of the matched view. Possible values: "italic", "normal". |
+| font-weight     | fontWeight         | Sets the font weight of the matched view Possible values: "bold", "normal". |
 | text-align      | textAlignment      | Sets text alignment in the matched view. Possible values: "left" , "center", "right". |
 | vertical-align  | verticalAlignment  | Sets the vertical alignment of the current view within its parent. Possible values: "top", "center", "bottom", "stretch". |
 | horizontal-align | horizontalAlignment| Sets the horizontal alignment of the current view within its parent. Possible values: "left", "center", "right", "stretch". |
@@ -177,10 +182,34 @@ This is the list of the properties that can be set in CSS or through the style p
 | padding-right   | paddingRight       | Sets the right padding of a layout container. |
 | padding-bottom  | paddingBottom      | Sets the bottom padding of a layout container. |
 | padding-left    | paddingLeft        | Sets the left padding of a layout container. |
-| visibility      | visibility         | Sets the view visibility. Possible values: "visible" or "collapsed". |
+| visibility      | visibility         | Sets the view visibility. Possible values: "visible", "collapse" (or"collapsed"). |
 | opacity         | opacity            | Sets the view opacity. The value is in the [0, 1] range. |
 
-### Import external CSS
+## Using Fonts
+The `font-family` property can hold several values. The first supported font in the list will be used. There is also support for the following generic font-families:
+* serif (ex. Times New Roman)
+* sans-serif (ex. Helvetica)
+* monospace (ex. Courier New)
+
+Platform specifics:
+* Android: The supported fonts depend very much on the system thus using the generic font-families or [custom-fonts](#custom-fonts) is recommended. 
+* iOS: You can check the [supported fonts in iOS 7](https://support.apple.com/en-us/HT202771).
+
+### Custom Fonts
+You can use custom fonts in you app(in .TTF or .OTF format). The NativeScript runtime will look for the font files under the `app/fonts/` directory and load them automatically.
+
+Note: In iOS you should also do one-time registration of the font to be able to use it(usually in the app.ts/app.js file):
+
+```JavaScript
+var fontModule = require("ui/styling/font");
+fontModule.ios("MyFont.ttf");
+```
+```TypeScript
+import fontModule = require("ui/styling/font");
+fontModule.ios("MyFont.ttf");
+```
+
+## Import External CSS
 The @import CSS rule allows you to import external CSS from local file, resource or url. These rules must precede all other types of rules.
 
 ```CSS
