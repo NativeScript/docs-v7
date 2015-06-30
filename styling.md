@@ -202,11 +202,11 @@ Note: In iOS you should also do one-time registration of the font to be able to 
 
 ```JavaScript
 var fontModule = require("ui/styling/font");
-fontModule.ios("MyFont.ttf");
+fontModule.ios.registerFont("MyFont.ttf");
 ```
 ```TypeScript
 import fontModule = require("ui/styling/font");
-fontModule.ios("MyFont.ttf");
+fontModule.ios.registerFont("MyFont.ttf");
 ```
 
 ## Import External CSS
