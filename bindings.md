@@ -127,14 +127,14 @@ There is an option to bind a function to execute on a specific event (MVVM comma
 
 ``` JavaScript
 source.set("onTap", function(eventData) {
-		console.log("button is tapped!");
+	console.log("button is tapped!");
 });
 page.bindingContext = source;
 ```
 ``` TypeScript
 source.set("onTap", function(eventData) {
 	console.log("button is tapped!");
-	});
+});
 page.bindingContext = source;
 ```
 
@@ -202,6 +202,33 @@ source.set("dateConverter", dateConverter);
 source.set("testDate", new Date());
 page.bindingContext = source;
 ```
+``` TypeScript
+var dateConverter = {
+	toView: function (value, format) {
+		var result = format;
+		var day = value.getDate();
+		result = result.replace("DD", month < 10 ? "0" + day : day);
+		var month = value.getMonth() + 1;
+		result = result.replace("MM", month < 10 ? "0" + month : month);
+		result = result.replace("YYYY", value.getFullYear());
+		return result;
+	},
+	toModel: function (value, format) {
+		var ddIndex = format.indexOf("DD");
+		var day = parseInt(value.substr(ddIndex, 2));
+		var mmIndex = format.indexOf("MM");
+		var month = parseInt(value.substr(mmIndex, 2));
+		var yyyyIndex = format.indexOf("YYYY");
+		var year = parseInt(value.substr(yyyyIndex, 4));
+		var result = new Date(year, month - 1, day);
+		return result;
+	}
+}
+
+source.set("dateConverter", dateConverter);
+source.set("testDate", new Date());
+page.bindingContext = source;
+```
 
 Note the special operator (|) within the expression. The above code snippet (both XML and JavaScript part) will display a date in a `DD.MM.YYYY` format (`toView` function), and when a new date is entered with the same format is converted to a valid `Date` object (`toModel` function). `Converter` object should have one or two functions (`toView` and `toModel`) executed every time when a data should be converted. `toView` function is called when data will be displayed to the end user as value of any UI view, and `toModel` function will be called when we have an editable element (like TextField) and user enters a new value. In case of one way binding `Converter` object could have only `toView` function or to be a function. All convert functions have an array of parameters where the first parameter is the value which will be converted and all other parameters are custom parameters defined in the converter definition.
 
@@ -217,6 +244,11 @@ Converter can accept not only static custom parameters, but any value from the `
 </Page>
 ```
 ``` JavaScript
+...
+source.set("dateFormat", "DD.MM.YYYY");
+page.bindingContext = source;
+```
+``` TypeScript
 ...
 source.set("dateFormat", "DD.MM.YYYY");
 page.bindingContext = source;
@@ -237,6 +269,28 @@ Setting a converter function and parameter within the bindingContext is very use
 ```
 ``` JavaScript
 var appModule = require("application");
+var list = [];
+var i;
+for(i = 0; i < 5; i++) {
+	list.push({ itemDate: new Date()});
+}
+source.set("items", list);
+
+var dateConverter = function(value, format) {
+	var result = format;
+	var day = value.getDate();
+	result = result.replace("DD", month < 10 ? "0" + day : day);
+	var month = value.getMonth() + 1;
+	result = result.replace("MM", month < 10 ? "0" + month : month);
+	result = result.replace("YYYY", value.getFullYear());
+	return result;
+};
+
+appModule.resources["dateConverter"] = dateConverter;
+appModule.resources["dateFormat"] = "DD.MM.YYYY";
+```
+``` TypeScript
+import appModule = require("application");
 var list = [];
 var i;
 for(i = 0; i < 5; i++) {
@@ -297,9 +351,79 @@ var dateConverter = function(value, format) {
 appModule.resources["dateConverter"] = dateConverter;
 appModule.resources["dateFormat"] = "DD.MM.YYYY";
 ```
+``` TypeScript
+import appModule = require("application");
+var list = [];
+var i;
+for(i = 0; i < 5; i++) {
+	list.push(new Date());
+}
+source.set("items", list);
+
+var dateConverter = function(value, format) {
+	var result = format;
+	var day = value.getDate();
+	result = result.replace("DD", month < 10 ? "0" + day : day);
+	var month = value.getMonth() + 1;
+	result = result.replace("MM", month < 10 ? "0" + month : month);
+	result = result.replace("YYYY", value.getFullYear());
+	return result;
+};
+
+appModule.resources["dateConverter"] = dateConverter;
+appModule.resources["dateFormat"] = "DD.MM.YYYY";
+```
 
 > Note: The **items list** now contains pure Date() objects (not a wrapper with an **itemDate** property), and Label binding using **$value** instead of **itemDate**. In cases when an object is supplied (not a plain element) then the entire object will be returned by **$value**.
 
+##Using a parent binding context as binding source
+
+Another common case in working with bindings is access to parent binding context. The problem comes with dynamically created elements (items) based on some data source. For example `ListView` creates its child items based on an item template, which describes how ListView element will look like. When this element is added to visual tree it gets for binding context an element from ListView `items` array (with the corresponding index). This process actually creates a new binding context chain for child item and its inner UI elements. So any inner UI element cannot access binding context of the `ListView`. In order to solve this problem NativeScript binding infrastructure has two special keywords `$parent` and `$parents`. While the first one denotes the binding context of the direct parent visual element, the second one can be used as an array (with number or string index). This gives the option to choose either `N` levels of UI nesting or get a parent UI element with a given type. Lets see how this works in a real case example.
+
+``` XML
+<Page loaded="pageLoaded">
+	<GridLayout rows="*" >{%raw%}
+		<ListView items="{{ items }}">
+			<ListView.itemTemplate>
+				<GridLayout columns="auto, *">
+					<Label text="{{ $value }}" col="0"/>
+					<TextField text="{{ $parents['ListView'].test, $parents['ListView'].test }}" col="1"/>
+				</GridLayout>
+			</ListView.itemTemplate>
+		</ListView>
+	{%endraw%}</GridLayout>
+</Page>
+```
+``` JavaScript
+var observable = require("data/observable");
+var pageModule = require("ui/page");
+
+var viewModel = new observable.Observable();
+
+function pageLoaded(args) {
+    var page = args.object;
+    viewModel.set("items", [1, 2, 3]);
+    viewModel.set("test", "Test for parent binding!");
+    page.bindingContext = viewModel;
+}
+exports.pageLoaded = pageLoaded;
+```
+``` TypeScript
+import observable = require("data/observable");
+import pageModule = require("ui/page");
+
+var viewModel = new observable.Observable();
+
+export function pageLoaded(args: observable.EventData) {
+    var page = <pageModule.Page>args.object;
+    viewModel.set("items", [1, 2, 3]);
+    viewModel.set("test", "Test for parent binding!");
+    page.bindingContext = viewModel;
+}
+```
+
+The previous example shows how to access parent binding context of the first `ListView` element. Since the binding context of the Page, GridLayout and ListView is the same (inherited from Page), replacing `$parents['ListView']` with `$parents['GridLayout']` or `$parents['Page']` will not change the result. Also same result will be achieved with `$parents[1].test` instead of `$parents['ListView'].test`. However string index syntax is better. It will work even when a new UI hierarchy level is introduced (by surrounding TextField in a another panel).
+The other keyword `$parent` is actually just a short-cut for `$parents[0]` and will return the direct UI predecessor's binding context.
 
 ##Stop binding
 
