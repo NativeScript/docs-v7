@@ -459,6 +459,8 @@ export function buttonTap(args: observable.EventData) {
     }
 }
 ```
+> The UI builder will search the specified component path (xmlns:customControls="xml-declaration/mymodule") first in the *tns_modules* folder and than in the root folder of the application. If your component is inside *tns_modules* folder you do not need to specify *tns_modules* in the path.
+
 ## Gestures
 All [UI Gestures](gestures.md) can be defined in XML. For example:
 ```XML
