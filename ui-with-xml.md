@@ -30,6 +30,9 @@ The user interface of NativeScript mobile apps consists of pages. Typically, the
   * [Event Binding](#event-binding)
   * [ListView Binding](#listview-binding)
   * [Expressions](#expressions)
+* [Platform specific declarations](#platform-specific-declarations)
+  * [Platform specific property value](#platform-specific-property-value)
+  * [Platform specific component declaration](#platform-specific-component-declaration)
 
 ## The Basics
 
@@ -663,3 +666,25 @@ a ? b : c
 ```JavaScript
 numbers, strings, null, undefined
 ```
+## Platform specific declarations
+
+To declare a platform specific property value or platform specific component in the `XML`, you can use following syntax:
+
+### Platform specific property value
+```XML
+<Page>
+  <TextField ios:editable='False' android:editable='True' />
+</Page>
+```
+### Platform specific component declaration
+```XML
+<Page>
+  <ios>
+    <TextField />
+  </ios>
+  <android>
+    <Label />
+  </android>
+</Page>
+```
+> You cannot nest plaftorm tags!
