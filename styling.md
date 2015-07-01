@@ -160,6 +160,9 @@ This is the list of the properties that can be set in CSS or through the style p
 | color           | color              | Sets a solid-color value to the matched view’s foreground. |
 | background-color | backgroundColor    | Sets a solid-color value to the matched view’s background. |
 | background-image | backgroundImage    | Sets a image url to the matched view’s background image. |
+| border-color | borderColor    | Sets a border color to the matched view’s. |
+| border-width | borderWidth    | Sets a border width to the matched view’s. |
+| border-radius | borderRadius    | Sets a border radius to the matched view’s. |
 | font            | font               | Sets the font properties(this includes font-family, font-size, font-style and font-weight)  of the matched view. |
 | font-family     | fontFamily         | Sets the font family of the matched view |
 | font-size       | fontSize           | Sets the font size of the matched view (only supports device-independent units). |
