@@ -46,8 +46,8 @@ NativeScript applications have the following life cycle events.
 
 + `launch`: This event is called when application launch.
 + `suspend`: This event is called when the application is suspended.
-+ `oresume`: This event is called when the application is resumed after it has been suspended.
-+ `exit()`: This event is called when the application is about to exit.
++ `resume`: This event is called when the application is resumed after it has been suspended.
++ `exit`: This event is called when the application is about to exit.
 + `lowMemory`: This event is called when the memory on the target device is low.
 + `uncaughtError`: This event is called when an uncaught application error is present.
 
