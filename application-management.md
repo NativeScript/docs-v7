@@ -10,7 +10,7 @@ position: 4
 The `application` module lets you manage the life cycle of your NativeScript apps from starting the application to storing user-defined settings.
 
 * [Start Application](#start-application)
-* [Use Application Callbacks](#use-application-callbacks)
+* [Use Application Events](#use-application-events)
 * [Persist and Restore Application Settings](#persist-and-restore-application-settings)
 
 ## Start Application
@@ -44,12 +44,12 @@ application.start();
 
 NativeScript applications have the following life cycle events.
 
-+ `onLaunch(context)`: This method is called when application launch.
-+ `onSuspend()`: This method is called when the application is suspended.
-+ `onResume()`: This method is called when the application is resumed after it has been suspended.
-+ `onExit()`: This method is called when the application is about to exit.
-+ `onLowMemory()`: This method is called when the memory on the target device is low.
-+ `onUncaughtError(error)`: This method is called when an uncaught application error is present.
++ `launch`: This event is called when application launch.
++ `suspend`: This event is called when the application is suspended.
++ `oresume`: This event is called when the application is resumed after it has been suspended.
++ `exit()`: This event is called when the application is about to exit.
++ `lowMemory`: This event is called when the memory on the target device is low.
++ `uncaughtError`: This event is called when an uncaught application error is present.
 
 ### Example
 
