@@ -9,8 +9,6 @@ Provides options for location monitoring.
 ##### Properties
  - **desiredAccuracy** - _(optional)_ - _Number_.    
   Specifies desired accuracy
-  - 1 = Low (greater than 500 meters)
-  - 2 = Medium (between 100 and 500 meters)
   - 3 = High (less than 100 meters)
  - **updateDistance** - _(optional)_ - _Number_.    
   Update distance filter in meters. Specifies how often to update. Default on iOS is no filter, on Android it is 0 meters
