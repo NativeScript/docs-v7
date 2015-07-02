@@ -79,6 +79,11 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
         sudo npm install nativescript -g --unsafe-perm
         ```
     1. Restart the command prompt.
+1. To check if your system is configured properly, run the following command.
+
+    ```Shell
+    tns doctor
+    ```
 
 ## What's Next
 

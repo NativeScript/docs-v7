@@ -94,6 +94,11 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
         npm i -g appbuilder
         ```
     1. Restart the command prompt.
+1. To check if your system is configured properly, run the following command.
+
+    ```Shell
+    appbuilder doctor
+    ```
 
 ## Set Up on OS X
 
@@ -185,6 +190,11 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
         npm i -g appbuilder
         ```
     1. Restart the command prompt.
+1. To check if your system is configured properly, run the following command.
+
+    ```Shell
+    appbuilder doctor
+    ```
 
 ## Set Up on Linux
 
@@ -251,6 +261,11 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
         sudo npm install nativescript -g --unsafe-perm
         ```
     1. Restart the command prompt.
+1. To check if your system is configured properly, run the following command.
+
+    ```Shell
+    appbuilder doctor
+    ```
 
 ## What's Next
 
