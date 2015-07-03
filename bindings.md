@@ -314,6 +314,23 @@ appModule.resources["dateFormat"] = "DD.MM.YYYY";
 
 > Note: Application module is static and could be reached within the entire application just need to be required. Another difference here is that `dateConverter` is a function instead of an object with two functions `toView` and `toModel`. Since the usual operation is converting data from model to view therefore if a function is provided as converter it acts as `toView` function.
 
+##Supported expressions
+NativeScript binding infrastructure supports different kind of expressions including:
+
+| Feature | Example | Description |
+|:--------|:--------|:------------|
+| property access | `obj1.obj2.prop1` | The result will be the value of the `prop1` property of the object `obj2`. Despite the fact expressions in binding are based on `polymer expressions`, which supports re-evaluation of expression when any value within the dot (.) chain is changed. NativeScript uses expressions only in context of bindings (for now), so binding expression will be re-evaluated only when binding's `sourceProperty` is changed (due to performance considerations). Expression part will not observe and therefore will not initiate re-evaluation. |
+| array access | `arrayVar[indexVar]` | Where arrayVar is an array and indexVar is a valid index for that array. |
+| logical operators | `!var1` | Logical not. |
+| unary operators | `+var1`, `-var2` | Converts var1 into a number. Converts var2 to number and negates it. |
+| binary operators | `var1 + var2` | Supported operators - `+, -, *, /, %`. |
+| comparison operators | `var1 > var2` | Supported operators - `<, >, <=, >=, ==, !=, ===, !==`. |
+| logical comparison operators | `var1 && var2 || var3`. | Supported operators - `&&, ||`. |
+| ternary operator | `var1 ? var2 : var3` | Evaluates value of `var1` and if truly returns `var2` else `var3` |
+| grouping parenthesis | `(a + b) * (c + d)` | |
+| function calls | `myFunc(var1, var2, ..., varN)`| Where myFunc is a function available in binding context (used as context for expression) or within `application level resources` and value of the `var1` and `varN` will be used as parameter(s). |
+| filters | `expression | filter1(param1, ...) | filter 2` | Filters actually is an object or a function that is applied to the value of the expression. Within the context of binding this feature is used as converters. For more information see dedicated topic for converters.|
+
 ##Using plain object as binding context (source)
 
 Very common case is to provide a list (array) of plain elements (numbers, dates, strings) to `listview` items collection. All example above demonstrated how to bind an UI element to a property of the bindingContext. In case with plain data there is no property to bind instead the entire object should be used. Here comes in place another feature of NativeScript binding - object or value binding. To refer to the entire object `$value` keyword should be used.
