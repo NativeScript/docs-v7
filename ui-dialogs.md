@@ -15,7 +15,7 @@ NativeScript lets you create dialogs in your app in a manner similar to the web 
 * [Login](#login)
 * [Action](#action)
 
-> You can call dialog functions with parameters similar to the web browser API or the `options` object. All dialog functions return a `Promise` object.
+> You can call dialog functions with parameters similar to the web browser API or the `options` object. All dialog functions return a `Promise` object. In both iOS and Android dialogs will not block your code execution!
 
 ### Alert
 
