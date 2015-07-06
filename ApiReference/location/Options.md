@@ -8,7 +8,8 @@ Provides options for location monitoring.
 
 ##### Properties
  - **desiredAccuracy** - _(optional)_ - _Number_.    
-  Specifies desired accuracy in meters. Defaults to DesiredAccuracy.HIGH
+  Specifies desired accuracy
+  - 3 = High (less than 100 meters)
  - **updateDistance** - _(optional)_ - _Number_.    
   Update distance filter in meters. Specifies how often to update. Default on iOS is no filter, on Android it is 0 meters
  - **minimumUpdateTime** - _(optional)_ - _Number_.    
