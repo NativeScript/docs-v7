@@ -97,7 +97,7 @@ source.get("textSource");
 ``` XML
 <Page>
 	<StackLayout>{%raw%}
-		<TextField text= "{{ textSource }}" />
+		<TextField text="{{ textSource }}" />
 {%endraw%}	</StackLayout>
 </Page>
 ```
