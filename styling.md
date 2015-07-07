@@ -133,6 +133,9 @@ label.cssClass = "title"
 var label = new labelModule.Label();
 label.cssClass = "title"
 ```
+```XML
+<Label cssClass="title" />
+```
 
 ### ID Selector
 [Id selectors](http://www.w3schools.com/cssref/sel_id.asp) select all views with a given id.
@@ -149,6 +152,9 @@ btn.id = "login-button"
 ```TypeScript
 var btn = new buttonModule.Button();
 btn.id = "login-button"
+```
+```XML
+<Button id="login-button" />
 ```
 
 ## Supported Properties
