@@ -45,12 +45,12 @@ application.start();
 
 NativeScript applications have the following life cycle events.
 
-+ `launch`: This event is called when application launch.
-+ `suspend`: This event is called when the application is suspended.
-+ `resume`: This event is called when the application is resumed after it has been suspended.
-+ `exit`: This event is called when the application is about to exit.
-+ `lowMemory`: This event is called when the memory on the target device is low.
-+ `uncaughtError`: This event is called when an uncaught application error is present.
++ `launch`: This event is raised when application launch.
++ `suspend`: This event is raised when the application is suspended.
++ `resume`: This event is raised when the application is resumed after it has been suspended.
++ `exit`: This event is raised when the application is about to exit.
++ `lowMemory`: This event is raised when the memory on the target device is low.
++ `uncaughtError`: This event is raised when an uncaught application error is present.
 
 ### Example
 
@@ -188,14 +188,15 @@ application.start();
 
 NativeScript applications have the following Android specific activity events:
 
-+ `activityCreated`: This event is called when activity is created.
-+ `activityDestroyed`: This event is called when activity is destroyed.
-+ `activityStarted`: This event is called when activity is started.
-+ `activityPaused`: This event is called when activity is paused.
-+ `activityResumed`: This event is called when activity is resumed.
-+ `activityStopped`: This event is called when activity is stopped.
-+ `saveActivityState`: This event is called to retrieve per-instance state from an activity before being killed so that the state can be restored.
-+ `activityResult`: This event is called when an activity you launched exits, giving you the requestCode you started it with, the resultCode it returned, and any additional data from it.
++ `activityCreated`: This event is raised when activity is created.
++ `activityDestroyed`: This event is raised when activity is destroyed.
++ `activityStarted`: This event is raised when activity is started.
++ `activityPaused`: This event is raised when activity is paused.
++ `activityResumed`: This event is raised when activity is resumed.
++ `activityStopped`: This event is raised when activity is stopped.
++ `saveActivityState`: This event is raised to retrieve per-instance state from an activity before being killed so that the state can be restored.
++ `activityResult`: This event is raised when an activity you launched exits, giving you the requestCode you started it with, the resultCode it returned, and any additional data from it.
++ `activityBackPressed`: This event is raised when the activity has detected the user's press of the back key.
 
 ### Example
 ``` JavaScript
@@ -203,38 +204,45 @@ var application = require("application");
 
 application.mainModule = "app/mainPage";
 
-application.on(application.androidActivityCreatedEvent, function (args) {
-    console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
-});
-
-application.on(application.androidActivityDestroyedEvent, function (args) {
-    console.log("Event: " + args.eventName + ", Activity: " + args.activity);
-});
-
-application.on(application.androidActivityPausedEvent, function (args) {
-    console.log("Event: " + args.eventName + ", Activity: " + args.activity);
-});
-
-application.on(application.androidActivityResultEvent, function (args) {
-    console.log("Event: " + args.eventName + ", Activity: " + args.activity +
-        ", requestCode: " + args.requestCode + ", resultCode: " + args.resultCode + ", Intent: " + args.intent);
-});
-
-application.on(application.androidActivityResumedEvent, function (args) {
-    console.log("Event: " + args.eventName + ", Activity: " + args.activity);
-});
-
-application.on(application.androidActivityStartedEvent, function (args) {
-    console.log("Event: " + args.eventName + ", Activity: " + args.activity);
-});
-
-application.on(application.androidActivityStoppedEvent, function (args) {
-    console.log("Event: " + args.eventName + ", Activity: " + args.activity);
-});
-
-application.on(application.androidSaveActivityStateEvent, function (args) {
-    console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
-});
+if (application.android) {
+    application.android.on(application.AndroidApplication.activityCreatedEvent, function (args) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
+    });
+    
+    application.android.on(application.AndroidApplication.activityDestroyedEvent, function (args) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity);
+    });
+    
+    application.android.on(application.AndroidApplication.activityStartedEvent, function (args) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity);
+    });
+    
+    application.android.on(application.AndroidApplication.activityPausedEvent, function (args) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity);
+    });
+    
+    application.android.on(application.AndroidApplication.activityResumedEvent, function (args) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity);
+    });
+    
+    application.android.on(application.AndroidApplication.activityStoppedEvent, function (args) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity);
+    });
+    
+    application.android.on(application.AndroidApplication.saveActivityStateEvent, function (args) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
+    });
+    
+    application.android.on(application.AndroidApplication.activityResultEvent, function (args) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity +
+            ", requestCode: " + args.requestCode + ", resultCode: " + args.resultCode + ", Intent: " + args.intent);
+    });
+    
+    application.android.on(application.AndroidApplication.activityBackPressedEvent, function (args) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity);
+        // Set args.cancel = true to cancel back navigation and do something custom.
+    });
+}
 
 application.start();
 ```
@@ -243,38 +251,45 @@ import application = require("application");
 application.mainModule = "app/mainPage";
 
 // Android activity events
-application.on(application.androidActivityCreatedEvent, function (args: application.AndroidActivityBundleEventData) {
-    console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
-});
+if (application.android) {
+    application.android.on(application.AndroidApplication.activityCreatedEvent, function (args: application.AndroidActivityBundleEventData) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
+    });
 
-application.on(application.androidActivityDestroyedEvent, function (args: application.AndroidActivityEventData) {
-    console.log("Event: " + args.eventName + ", Activity: " + args.activity);
-});
+    application.android.on(application.AndroidApplication.activityDestroyedEvent, function (args: application.AndroidActivityEventData) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity);
+    });
 
-application.on(application.androidActivityPausedEvent, function (args: application.AndroidActivityEventData) {
-    console.log("Event: " + args.eventName + ", Activity: " + args.activity);
-});
+    application.android.on(application.AndroidApplication.activityStartedEvent, function (args: application.AndroidActivityEventData) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity);
+    });
 
-application.on(application.androidActivityResultEvent, function (args: application.AndroidActivityResultEventData) {
-    console.log("Event: " + args.eventName + ", Activity: " + args.activity +
-        ", requestCode: " + args.requestCode + ", resultCode: " + args.resultCode + ", Intent: " + args.intent);
-});
+    application.android.on(application.AndroidApplication.activityPausedEvent, function (args: application.AndroidActivityEventData) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity);
+    });
 
-application.on(application.androidActivityResumedEvent, function (args: application.AndroidActivityEventData) {
-    console.log("Event: " + args.eventName + ", Activity: " + args.activity);
-});
+    application.android.on(application.AndroidApplication.activityResumedEvent, function (args: application.AndroidActivityEventData) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity);
+    });
 
-application.on(application.androidActivityStartedEvent, function (args: application.AndroidActivityEventData) {
-    console.log("Event: " + args.eventName + ", Activity: " + args.activity);
-});
+    application.android.on(application.AndroidApplication.activityStoppedEvent, function (args: application.AndroidActivityEventData) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity);
+    });
 
-application.on(application.androidActivityStoppedEvent, function (args: application.AndroidActivityEventData) {
-    console.log("Event: " + args.eventName + ", Activity: " + args.activity);
-});
+    application.android.on(application.AndroidApplication.saveActivityStateEvent, function (args: application.AndroidActivityBundleEventData) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
+    });
 
-application.on(application.androidSaveActivityStateEvent, function (args: application.AndroidActivityBundleEventData) {
-    console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
-});
+    application.android.on(application.AndroidApplication.activityResultEvent, function (args: application.AndroidActivityResultEventData) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity +
+            ", requestCode: " + args.requestCode + ", resultCode: " + args.resultCode + ", Intent: " + args.intent);
+    });
+
+    application.android.on(application.AndroidApplication.activityBackPressedEvent, function (args: application.AndroidActivityBackPressedEventData) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity);
+        // Set args.cancel = true to cancel back navigation and do something custom.
+    });
+}
 
 application.start();
 ```
