@@ -25,6 +25,7 @@ The user interface of NativeScript mobile apps consists of pages. Typically, the
   * [Custom Components](#custom-components)
     * [Code only component](#example-code-only-custom-component)
     * [XML-Based component with code file](#example-custom-xml-based-component-with-code-file)
+    * [Dynamicaly loading custom components](#dynamicaly-loading-custom-components)
 * [Bindings](#bindings)
   * [Property Binding](#property-binding)
   * [Event Binding](#event-binding)
@@ -459,7 +460,38 @@ export function buttonTap(args: observable.EventData) {
     }
 }
 ```
+### Dynamicaly loading custom components
+##### Load pure JavaScript component (*require() the specified path and look for specified component name in the require() exports*):
+```JavaScript
+var myComponentInstance = builder.load({
+        path: "~/xml-declaration/mymodule",
+        name: "MyControl"
+});
+```
+```TypeScript
+var myComponentInstance = builder.load({
+        path: "~/xml-declaration/mymodule",
+        name: "MyControl"
+});
+```
+or
+##### Load XML file with JavaScript code-behind (*Load the specified XML file name in the  specified path. JavaScript file with the same name will be required() and served as code-behind of the XML.*):
+```JavaScript
+var myComponentInstance = builder.load({
+        path: "~/xml-declaration/mymodulewithxml",
+        name: "MyControl"
+});
+```
+```TypeScript
+var myComponentInstance = builder.load({
+        path: "~/xml-declaration/mymodulewithxml",
+        name: "MyControl"
+});
+```
+
 > The UI builder will search the specified component path (xmlns:customControls="xml-declaration/mymodule") first in the *tns_modules* folder and than in the root folder of the application. If your component is inside *tns_modules* folder you do not need to specify *tns_modules* in the path.
+
+> The UI builder will load automatically CSS file with the same name as the component name.
 
 ## Gestures
 All [UI Gestures](gestures.md) can be defined in XML. For example:
