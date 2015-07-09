@@ -491,7 +491,21 @@ var myComponentInstance = builder.load({
 
 > The UI builder will search the specified component path (xmlns:customControls="xml-declaration/mymodule") first in the *tns_modules* folder and than in the root folder of the application. If your component is inside *tns_modules* folder you do not need to specify *tns_modules* in the path.
 
-> The UI builder will load automatically CSS file with the same name as the component name.
+> The UI builder will add automatically CSS file with the same name as the component name in the specified page:
+```JavaScript
+var myComponentInstance = builder.load({
+        path: "~/xml-declaration/mymodulewithxml",
+        name: "MyControl",
+        page: yourPageInstance
+});
+```
+```TypeScript
+var myComponentInstance = builder.load({
+        path: "~/xml-declaration/mymodulewithxml",
+        name: "MyControl",
+        page: yourPageInstance
+});
+```
 
 ## Gestures
 All [UI Gestures](gestures.md) can be defined in XML. For example:
