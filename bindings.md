@@ -180,7 +180,7 @@ var dateConverter = {
 	toView: function (value, format) {
 		var result = format;
 		var day = value.getDate();
-		result = result.replace("DD", month < 10 ? "0" + day : day);
+		result = result.replace("DD", day < 10 ? "0" + day : day);
 		var month = value.getMonth() + 1;
 		result = result.replace("MM", month < 10 ? "0" + month : month);
 		result = result.replace("YYYY", value.getFullYear());
