@@ -95,6 +95,11 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
         npm i -g nativescript
         ```
     1. Restart the command prompt.
+1. To check if your system is configured properly, run the following command.
+
+    ```Shell
+    tns doctor
+    ```
 
 ## What's Next
 
