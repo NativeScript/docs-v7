@@ -22,7 +22,8 @@ In your project, the files for each module reside in a dedicated subdirectory in
 * [User Interface Modules](#user-interface-modules)
 	* [Layouts](#layouts)
 	* [Widgets](#widgets)
-
+* [WHATWG Polyfills](#whatwg-polyfills)
+* 
 ### Core Modules
 
 + [application](./ApiReference/application/HOW-TO.md): Provides the application abstraction with all related methods.
@@ -58,7 +59,6 @@ In your project, the files for each module reside in a dedicated subdirectory in
 + [text/formatted-string](./ApiReference/text/formatted-string/HOW-TO.md): Provides the `FormattedString` and `Span` classes which you can use to create rich text formatted strings.
 + [xml](./ApiReference/xml/HOW-TO.md): Provides the `XmlParser` class which is a SAX parser using the easysax implementation.
 + [ui/styling](./ApiReference/ui/styling/HOW-TO.md): Provides the `Style` class which is responsible for the visual appearance of elements.
-+ [ui/border](./ApiReference/ui/border/HOW-TO.md): Provides the `Border` class which lets you draw borders around other elements.
 
 #### Layouts
 
@@ -83,8 +83,14 @@ In your project, the files for each module reside in a dedicated subdirectory in
 + [ui/switch](./ApiReference/ui/switch/HOW-TO.md): Provides the `Switch` class which represents a standard switch component.
 + [ui/tab-view](./ApiReference/ui/tab-view/HOW-TO.md): Provides the `TabView` class which represents a standard content component with tabs.
 + [ui/web-view](./ApiReference/ui/web-view/HOW-TO.md): Provides the `WebView` class which represents a standard browser widget.
++ [ui/html-view](./ApiReference/ui/html-view/HOW-TO.md): Provides the `HtmlView` class which represents a standard html view widget.
 + [ui/dialogs](./ApiReference/ui/dialogs/HOW-TO.md): Lets you show various dialogs such as alerts, prompts, confirmations and others.
 + [ui/list-picker](./ApiReference/ui/list-picker/HOW-TO.md): Provides the `ListPicker` class which represents a standard list picker component.
 + [ui/date-picker](./ApiReference/ui/date-picker/HOW-TO.md): Provides the `DatePicker` class which represents a standard date picker component.
 + [ui/time-picker](./ApiReference/ui/time-picker/HOW-TO.md): Provides the `TimePicker` class which represents a standard time picker component.
 + [ui/placeholder](./placeholder.md): Provides the `Placeholder` class which lets you add a native widget to the visual tree.
+
+### WHATWG Polyfills
+
++ [xhr](./ApiReference/xhr/HOW-TO.md): The `XMLHttpRequest` polyfill that provides scripted client functionality for transferring data between a client and a server. https://xhr.spec.whatwg.org/
++ [fetch](./ApiReference/fetch/HOW-TO.md): The `Fetch` polyfill that provides requests, responses, and the process that binds them: fetching. https://fetch.spec.whatwg.org/
