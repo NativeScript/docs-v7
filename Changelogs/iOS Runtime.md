@@ -27,28 +27,6 @@ position: 3
  - [Recursive calls from JavaScript to Objective-C method receiving a block argument (#199)](https://github.com/NativeScript/ios-runtime/issues/199)
  - [Fix TypeScript extends (#178)](https://github.com/NativeScript/ios-runtime/issues/178)
 
-1.2.0
-==
-
-### What's New
-
- - [Implement and consume NSFastEnumeration (#222)](https://github.com/NativeScript/ios-runtime/pull/222)
- - [Memory management of class clusters (#214)](https://github.com/NativeScript/ios-runtime/issues/214)
- - [Update to the latest JavaScriptCore (#211)](https://github.com/NativeScript/ios-runtime/pull/211)
- - [Add application that uses the updated webkit webview to show web inspector frontend (#201)](https://github.com/NativeScript/ios-runtime/pull/201)
- - [Transform (NSError **) parameters to JavaScript error throw (#186)](https://github.com/NativeScript/ios-runtime/issues/186)
- - [CMake the JSC: Performance and memory diffs (#185)](https://github.com/NativeScript/ios-runtime/issues/185)
- - [iOS 9 Support: Metadata for Objective-C Generics (#177)](https://github.com/NativeScript/ios-runtime/issues/177)
- - [WebInspector: Enable WebInspector Performance Profiler (#164)](https://github.com/NativeScript/ios-runtime/issues/164)
- - [Optimize require of JavaScript modules (#139)](https://github.com/NativeScript/ios-runtime/issues/139)
-
-### Bug Fixes
-
- - [Recursive calls from Objective-C to a method returning JavaScript function as block (#210)](https://github.com/NativeScript/ios-runtime/pull/210)
- - [Enums which has no common prefix are not exposed correctly (#205)](https://github.com/NativeScript/ios-runtime/issues/205)
- - [Recursive calls from JavaScript to Objective-C method receiving a block argument (#199)](https://github.com/NativeScript/ios-runtime/issues/199)
- - [Fix TypeScript extends (#178)](https://github.com/NativeScript/ios-runtime/issues/178)
-
 1.1.0
 ==
 [Milestone 1.1.0](https://github.com/NativeScript/ios-runtime/issues?q=milestone%3A1.1.0), [Release v1.1.0](https://github.com/NativeScript/ios-runtime/releases/tag/v1.1.0).
