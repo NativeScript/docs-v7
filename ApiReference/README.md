@@ -4,7 +4,6 @@
  - ["application"](application/)
  - ["application-settings"](application-settings/)
  - ["camera"](camera/)
- - ["chai"](chai/)
  - ["color"](color/)
  - ["console"](console/)
  - ["data/observable"](data/observable/)
@@ -79,4 +78,3 @@
  - ["utils/types"](utils/types/)
  - ["utils/utils"](utils/utils/)
  - ["xml"](xml/)
- - [chai](chai/)
