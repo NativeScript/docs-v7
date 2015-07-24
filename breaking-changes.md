@@ -9,6 +9,10 @@ position: 20
 
 This document describes the critical breaking changes and suggested workarounds, if any, in the NativeScript framework. The complete list with all the changes may be found on the respective [Github repositories](#see-also).
 
+### 1.2.0 (2015, July 24)
+
+There are changes in how the **Android ActionBar/IOS NavigationBar** is configured. Ut is now defined with `page.actionBar` instead of `page.optionsMenu`. [See an example...](./ApiReference/ui/action-bar/HOW-TO.md) 
+
 ### 0.10.0 (2015, April 17)
 
 This release introduces a new project directory structure. Projects from earlier releases have the following structure:
