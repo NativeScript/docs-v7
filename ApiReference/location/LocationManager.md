@@ -37,7 +37,7 @@ Provides methods for querying geolocation (in case available) on the target plat
      Starts location monitoring.
    - **onLocation** - _Function_(location [_Location_](../location/Location.md)) _Object_  
      A function that will be called upon every location update received.
-   - **onError** - _(optional)_ - _Function_(error _Error_) _Object_  
+   - **onError** - _(optional)_ - _Function_(error _Object_) _Object_  
      An optional error callback.
    - **options** - _(optional)_ - [_Options_](../location/Options.md)  
      An optional object specifying location update settings.

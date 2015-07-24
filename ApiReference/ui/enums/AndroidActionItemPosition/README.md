@@ -1,9 +1,9 @@
 ---
-nav-title: "Module ui/enums.MenuItemPosition"
-title: "Module ui/enums.MenuItemPosition"
-description: "Module ui/enums.MenuItemPosition"
+nav-title: "Module ui/enums.AndroidActionItemPosition"
+title: "Module ui/enums.AndroidActionItemPosition"
+description: "Module ui/enums.AndroidActionItemPosition"
 ---
-## Namespace: "ui/enums".MenuItemPosition
+## Namespace: "ui/enums".AndroidActionItemPosition
 Specifies android MenuItem position.
 
 ##### Variables

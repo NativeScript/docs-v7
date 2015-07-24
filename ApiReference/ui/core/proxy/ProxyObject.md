@@ -25,4 +25,4 @@ Used in cases when native instance is not avaibale yet (stores all properties).
    - **property** - [_Property_](../../../ui/core/dependency-observable/Property.md)
    - **newValue** - _Object_
  - **_syncNativeProperties()**  
-     Syncronizes all properties with native values.
+     Synchronizes all properties with native values.

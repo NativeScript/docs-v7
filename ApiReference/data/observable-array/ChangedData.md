@@ -13,7 +13,7 @@ Event args for "changed" event.
   Change type.
  - **index** - _Number_.    
   Start index.
- - **removed** - _Array_ of _T_.    
+ - **removed** - __ of _T_.    
   Removed items.
  - **addedCount** - _Number_.    
   Number of added items.

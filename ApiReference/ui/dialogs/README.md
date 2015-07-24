@@ -72,13 +72,13 @@ Namespace | Description
    - **options** - [_LoginOptions_](../../ui/dialogs/LoginOptions.md)  
      The options for the dialog box. 
    - _**return**_ - _Promise_ of [_LoginResult_](../../ui/dialogs/LoginResult.md)
- - **action(** message _String_, cancelButtonText _String_, actions _Array_... **)** _Promise_...  
+ - **action(** message _String_, cancelButtonText _String_, actions __... **)** _Promise_...  
      The action() method displays a action box that prompts the visitor to choose some action.
    - **message** - _String_  
      The text to display in the dialog box.
    - **cancelButtonText** - _String_  
      The text to display in the cancel button.
-   - **actions** - _Array_ of _String_  
+   - **actions** - __ of _String_  
      List of available actions.
    - _**return**_ - _Promise_ of _String_
  - **action(** options [_ActionOptions_](../../ui/dialogs/ActionOptions.md) **)** _Promise_...  

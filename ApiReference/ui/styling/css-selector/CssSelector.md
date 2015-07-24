@@ -10,8 +10,8 @@ description: "Class ui/styling/css-selector.CssSelector"
  - **specificity** - _Number_.
 
 ##### Instance Functions
- - **declarations()** _Array_...
-   - _**return**_ - _Array_ of { property: _String_, value: _Object_ }
+ - **declarations()** __...
+   - _**return**_ - __ of { property: _String_, value: _Object_ }
  - **matches(** view [_View_](../../../ui/core/view/View.md) **)** _Boolean_
    - **view** - [_View_](../../../ui/core/view/View.md)
    - _**return**_ - _Boolean_

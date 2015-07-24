@@ -21,7 +21,7 @@ A data class that encapsulates common properties for a geolocation.
   The speed, in meters/second over ground.
  - **direction** - _Number_.    
   The direction (course), in degrees.
- - **timestamp** - _Date_.    
+ - **timestamp** - _Object_.    
   The time at which this location was determined.
  - **android** - _Object_.    
   The android-specific [location](http://developer.android.com/reference/android/location/Location.html) object.

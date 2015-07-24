@@ -15,6 +15,8 @@ Represents an Object that describes a Property instance.
   Gets or sets the callback to be raised whenever the associated property changes for any DependencyObservable instance that uses the property to store a value.
  - **onValidateValue** - [_PropertyValidationCallback_](../../../ui/core/dependency-observable/PropertyValidationCallback.md).    
   Gets or sets the callback to be raised whenever the associated property is about to change for any DependencyObservable instance that uses the property to store a value.
+ - **equalityComparer** - [_PropertyEqualityComparer_](../../../ui/core/dependency-observable/PropertyEqualityComparer.md).    
+  Gets function that used to compare if two property values are equal.
  - **affectsLayout** - _Boolean_.    
   Checks whether the PropertyMetadataSettings.affectsLayout bit is present in the options value.
  - **inheritable** - _Boolean_.    

@@ -4,7 +4,6 @@ title: "Object application.ApplicationEventData"
 description: "Object application.ApplicationEventData"
 ---
 ## Object: "application".ApplicationEventData  
-_Extends:_ [_EventData_](../data/observable/EventData.md)  
 Event data containing information for the application events.
 
 ##### Properties
@@ -12,3 +11,7 @@ Event data containing information for the application events.
   Gets the native iOS event arguments. Valid only when running on iOS.
  - **android** - _(optional)_ - _Object_.    
   Gets the native Android event arguments. Valid only when running on Android.
+ - **eventName** - _String_.    
+  The name of the event.
+ - **object** - _Object_.    
+  The instance that has raised the event.

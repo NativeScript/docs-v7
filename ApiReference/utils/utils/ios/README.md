@@ -28,5 +28,6 @@ Namespace | Description
  - **isLandscape()** _Boolean_  
      Gets an information about if current mode is Landscape.
    - _**return**_ - _Boolean_
- - **_layoutRootView(** rootView [_View_](../../../ui/core/view/View.md) **)**
+ - **_layoutRootView(** rootView [_View_](../../../ui/core/view/View.md), parentBounds _CGRect_ **)**
    - **rootView** - [_View_](../../../ui/core/view/View.md)
+   - **parentBounds** - _CGRect_

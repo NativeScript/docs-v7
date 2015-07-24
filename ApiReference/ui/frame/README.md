@@ -36,6 +36,6 @@ The navigation controller will automatically hide/show its navigation bar depend
  - **goBack()**  
      Navigates back using the navigation hierarchy (if any). Updates the Frame stack as needed.
 This method will start from the topmost Frame and will recursively search for an instance that has the canGoBack operation available.
- - **stack()** _Array_...  
+ - **stack()** __...  
      Gets the frames stack.
-   - _**return**_ - _Array_ of [_Frame_](../../ui/frame/Frame.md)
+   - _**return**_ - __ of [_Frame_](../../ui/frame/Frame.md)

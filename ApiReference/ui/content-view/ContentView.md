@@ -5,6 +5,7 @@ description: "Class ui/content-view.ContentView"
 ---
 ## Class: "ui/content-view".ContentView  
 _Inherits:_ [_View_](../../ui/core/view/View.md)  
+_Conform to:_ [_AddChildFromBuilder_](../../ui/core/view/AddChildFromBuilder.md)  
 Represents a View that has a single child - content.
 The View itself does not have visual representation and serves as a placeholder for its content in the logical tree.
 
@@ -19,3 +20,6 @@ The View itself does not have visual representation and serves as a placeholder 
      The previous content.
    - **newView** - [_View_](../../ui/core/view/View.md)  
      The new content.
+ - **_addChildFromBuilder(** name _String_, value _Object_ **)**
+   - **name** - _String_
+   - **value** - _Object_

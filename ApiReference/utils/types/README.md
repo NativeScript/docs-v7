@@ -62,12 +62,12 @@ Throws exception if passed value is not a valid function.
      The object which class will be get.
 Returns a string with the name of the class.
    - _**return**_ - _String_
- - **getBaseClasses(** object **)** _Array_...  
+ - **getBaseClasses(** object **)** __...  
      A function that gets the entire class hierarchy of an object.
    - **object**  
      The object which class hierarchy will be get.
 Return an array of strings with the name of all classes.
-   - _**return**_ - _Array_ of _String_
+   - _**return**_ - __ of _String_
  - **getClassInfo(** object _Object_ **)** [_ClassInfo_](../../utils/types/ClassInfo.md)  
      A function that gets the ClassInfo for an object.
    - **object** - _Object_  

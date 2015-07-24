@@ -1,10 +1,11 @@
 ---
-nav-title: "Class ui/page.MenuItem"
-title: "Class ui/page.MenuItem"
-description: "Class ui/page.MenuItem"
+nav-title: "Class ui/action-bar.ActionItemBase"
+title: "Class ui/action-bar.ActionItemBase"
+description: "Class ui/action-bar.ActionItemBase"
 ---
-## Class: "ui/page".MenuItem  
-_Inherits:_ [_Bindable_](../../ui/core/bindable/Bindable.md)
+## Class: "ui/action-bar".ActionItemBase  
+_Inherits:_ [_Bindable_](../../ui/core/bindable/Bindable.md)  
+Base class for action items.
 
 ##### Static Properties
  - **tapEvent** - _String_.    
@@ -15,9 +16,12 @@ _Inherits:_ [_Bindable_](../../ui/core/bindable/Bindable.md)
   Represents the observable property backing the icon property.
 
 ##### Instance Properties
- - **text** - _String_.
- - **icon** - _String_.
- - **android** - [_AndroidMenuItemOptions_](../../ui/page/AndroidMenuItemOptions.md).
+ - **text** - _String_.    
+  Gets or sets the text of the action item.
+ - **icon** - _String_.    
+  Gets or sets the icon of the action item.
+ - **actionBar** - [_ActionBar_](../../ui/action-bar/ActionBar.md).    
+  Gets the action bar that contains the action item.
 
 ##### Instance Functions
  - **on(** eventNames _String_, callback _Function_... **)**  

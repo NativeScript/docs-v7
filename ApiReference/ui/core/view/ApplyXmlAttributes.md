@@ -7,7 +7,7 @@ description: "Object ui/core/view.ApplyXmlAttributes"
 Defines an interface used to create a member of a class from string representation (used in xml declaration).
 
 ##### Functions
- - **applyXmlAttribute(** attributeName _String_, attrValue _Object_ **)** _Boolean_  
+ - **_applyXmlAttribute(** attributeName _String_, attrValue _Object_ **)** _Boolean_  
      Called for every attribute in xml declaration. <... fontAttributes="bold" ../>
    - **attributeName** - _String_  
      - the name of the attribute (fontAttributes)

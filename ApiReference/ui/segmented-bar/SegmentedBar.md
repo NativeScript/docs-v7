@@ -20,5 +20,5 @@ Represents a UI SegmentedBar component.
   Gets or sets the selected index of the SegmentedBar component.
  - **selectedBackgroundColor** - [_Color_](../../color/Color.md).    
   Gets or sets the selected background color of the SegmentedBar component.
- - **items** - _Array_ of [_SegmentedBarItem_](../../ui/segmented-bar/SegmentedBarItem.md).    
+ - **items** - __ of [_SegmentedBarItem_](../../ui/segmented-bar/SegmentedBarItem.md).    
   Gets or sets the items of the SegmentedBar.

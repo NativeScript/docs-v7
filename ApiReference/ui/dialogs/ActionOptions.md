@@ -11,5 +11,5 @@ Provides options for the dialog.
   Gets or sets the dialog message.
  - **cancelButtonText** - _(optional)_ - _String_.    
   Gets or sets the Cancel button text.
- - **actions** - _(optional)_ - _Array_ of _String_.    
+ - **actions** - _(optional)_ - __ of _String_.    
   Gets or sets the list of available actions.

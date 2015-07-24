@@ -6,4 +6,4 @@ description: "Module ui/page.knownCollections"
 ## Namespace: "ui/page".knownCollections
 
 ##### Variables
- - **optionsMenu** - _String_.
+ - **actionItems** - _String_.

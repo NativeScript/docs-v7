@@ -16,7 +16,7 @@ Nested frames are supported, enabling hierarchical navigation scenarios.
   Gets or sets if navigation transitions should be animated globally.
 
 ##### Instance Properties
- - **backStack** - _Array_ of [_BackstackEntry_](../../ui/frame/BackstackEntry.md).    
+ - **backStack** - __ of [_BackstackEntry_](../../ui/frame/BackstackEntry.md).    
   Gets the back stack of this instance.
  - **currentPage** - [_Page_](../../ui/page/Page.md).    
   Gets the Page instance the Frame is currently navigated to.

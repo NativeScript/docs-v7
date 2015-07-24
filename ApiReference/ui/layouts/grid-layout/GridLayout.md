@@ -54,9 +54,9 @@ Defines a rectangular layout area that consists of columns and rows.
  - **removeRow(** itemSpec [_ItemSpec_](../../../ui/layouts/grid-layout/ItemSpec.md) **)**  
      Removes a row specification from a GridLayout.
    - **itemSpec** - [_ItemSpec_](../../../ui/layouts/grid-layout/ItemSpec.md)
- - **getColumns()** _Array_...  
+ - **getColumns()** __...  
      Gets array of column specifications defined on this instance of GridLayout. 
-   - _**return**_ - _Array_ of [_ItemSpec_](../../../ui/layouts/grid-layout/ItemSpec.md)
- - **getRows()** _Array_...  
+   - _**return**_ - __ of [_ItemSpec_](../../../ui/layouts/grid-layout/ItemSpec.md)
+ - **getRows()** __...  
      Gets array of row specifications defined on this instance of GridLayout.
-   - _**return**_ - _Array_ of [_ItemSpec_](../../../ui/layouts/grid-layout/ItemSpec.md)
+   - _**return**_ - __ of [_ItemSpec_](../../../ui/layouts/grid-layout/ItemSpec.md)

@@ -5,10 +5,11 @@ description: "Class ui/page.Page"
 ---
 ## Class: "ui/page".Page  
 _Inherits:_ [_ContentView_](../../ui/content-view/ContentView.md)  
-_Conform to:_ [_AddArrayFromBuilder_](../../ui/core/view/AddArrayFromBuilder.md)  
 Represents a logical unit for navigation (inside Frame).
 
 ##### Static Properties
+ - **actionBarHiddenProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Dependency property used to hide the Navigation Bar in iOS and the Action Bar in Android.
  - **shownModallyEvent** - _String_.    
   String value used when hooking to shownModally event.
  - **navigatingToEvent** - _String_.    
@@ -21,14 +22,16 @@ Represents a logical unit for navigation (inside Frame).
   String value used when hooking to navigatedFrom event.
 
 ##### Instance Properties
+ - **actionBarHidden** - _Boolean_.    
+  Used to hide the Navigation Bar in iOS and the Action Bar in Android.
  - **css** - _String_.    
   A valid css string which will be applied for all nested UI components (based on css rules).
  - **navigationContext** - _Object_.    
   A property that is used to pass a data from another page (while navigate to).
  - **frame** - [_Frame_](../../ui/frame/Frame.md).    
   Gets the Frame object controlling this instance.
- - **optionsMenu** - [_OptionsMenu_](../../ui/page/OptionsMenu.md).    
-  Gets the OptionsMenu for this page.
+ - **actionBar** - [_ActionBar_](../../ui/action-bar/ActionBar.md).    
+  Gets the ActionBar for this page.
 
 ##### Instance Functions
  - **addCss(** cssString _String_ **)**  
@@ -72,17 +75,16 @@ Represents a logical unit for navigation (inside Frame).
    - **event**
    - **callback** - _Function_(args [_ShownModallyData_](../../ui/page/ShownModallyData.md))
    - **thisArg** - _(optional)_ - _Object_
- - **showModal(** moduleName _String_, context _Object_, closeCallback _Function_ **)**  
+ - **showModal(** moduleName _String_, context _Object_, closeCallback _Object_, fullscreen? _Boolean_ **)**  
      Shows the page contained in moduleName as a modal view.
    - **moduleName** - _String_  
      - The name of the page module to load starting from the application root.
    - **context** - _Object_  
      - Any context you want to pass to the modally shown page. This same context will be available in the arguments of the Page.shownModally event handler.
-   - **closeCallback** - _Function_  
+   - **closeCallback** - _Object_  
      - A function that will be called when the page is closed. Any arguments provided when calling ShownModallyData.closeCallback will be available here.
- - **_addArrayFromBuilder(** name _String_, value _Array_... **)**
-   - **name** - _String_
-   - **value** - _Array_ of _Object_
+   - **fullscreen** - _(optional)_ - _Boolean_  
+     - An optional parameter specifying whether to show the modal page in full-screen mode.
  - **onNavigatingTo(** context _Object_ **)**  
      A method called before navigating to the page.
    - **context** - _Object_  
@@ -97,4 +99,3 @@ Represents a logical unit for navigation (inside Frame).
      - True if the Page is being navigated from using the Frame.goBack() method, false otherwise.
  - **_getStyleScope()** _Object_
    - _**return**_ - _Object_
- - **_invalidateOptionsMenu()**

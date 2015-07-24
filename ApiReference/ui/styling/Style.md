@@ -12,8 +12,22 @@ Represents as style object containing all the style properties for a particular 
   Gets or sets the color style property.
  - **backgroundColor** - [_Color_](../../color/Color.md).    
   Gets or sets the background-color style property.
+ - **backgroundImage** - _String_.    
+  Gets or sets the background-image style property.
+ - **backgroundSize** - _String_.    
+  Gets or sets the background-size style property.
+ - **backgroundPosition** - _String_.    
+  Gets or sets the background-position style property.
+ - **backgroundRepeat** - _String_.    
+  Gets or sets the background-repeat style property.
  - **fontSize** - _Number_.    
   Gets or sets font-size style property.
+ - **fontFamily** - _String_.    
+  Gets or sets font-family style property.
+ - **fontStyle** - _String_.    
+  Gets or sets font-style style property.
+ - **fontWeight** - _String_.    
+  Gets or sets font-weight style property.
  - **textAlignment** - _String_.    
   Gets or sets text-alignment style property.
  - **minWidth** - _Number_.    
@@ -54,6 +68,8 @@ Represents as style object containing all the style properties for a particular 
   Gets or sets the opacity style property.
 
 ##### Instance Functions
+ - **_beginUpdate()**
+ - **_endUpdate()**
  - **_resetCssValues()**
  - **_syncNativeProperties()**
  - **_inheritStyleProperty(** property [_Property_](../../ui/core/dependency-observable/Property.md) **)**

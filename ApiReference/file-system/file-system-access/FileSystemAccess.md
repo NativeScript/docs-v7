@@ -7,11 +7,11 @@ description: "Class file-system/file-system-access.FileSystemAccess"
 An utility class used to provide methods to access and work with the file system.
 
 ##### Instance Functions
- - **getLastModified(** path _String_ **)** _Date_  
+ - **getLastModified(** path _String_ **)** _Object_  
      Gets the last modified date of a file with a given path.
    - **path** - _String_  
      Path to the file.
-   - _**return**_ - _Date_
+   - _**return**_ - _Object_
  - **getParent(** path _String_, onError? _Function_... **)** {}...  
      Gets the parent folder of a file with a given path.
    - **path** - _String_  
@@ -39,7 +39,7 @@ Returns path Absolute path of the folder, name Name of the folder.
  - **getEntities(** path _String_, onSuccess _Function_..., onError? _Function_... **)**  
      Gets all entities of a given path (folder)
    - **path** - _String_
-   - **onSuccess** - _Function_(files _Array_ of { path: _String_, name: _String_, extension: _String_ }) _Object_  
+   - **onSuccess** - _Function_(files __ of { path: _String_, name: _String_, extension: _String_ }) _Object_  
      A callback function to call if operation is successful
    - **onError** - _(optional)_ - _Function_(error _Object_) _Object_  
      (optional) A callback function to use if any error occurs.

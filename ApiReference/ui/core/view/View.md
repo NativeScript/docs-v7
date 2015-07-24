@@ -5,6 +5,7 @@ description: "Class ui/core/view.View"
 ---
 ## Class: "ui/core/view".View  
 _Inherits:_ [_ProxyObject_](../../../ui/core/proxy/ProxyObject.md)  
+_Conform to:_ [_ApplyXmlAttributes_](../../../ui/core/view/ApplyXmlAttributes.md)  
 This class is the base class for all UI components. 
 A View occupies a rectangular area on the screen and is responsible for drawing and layouting of all UI components within. 
 
@@ -50,10 +51,18 @@ size is smaller than the size the view wants to be.
    - _**return**_ - _Number_
 
 ##### Instance Properties
+ - **borderRadius** - _Number_.    
+  Gets or sets the corner radius of the view.
+ - **borderWidth** - _Number_.    
+  Gets or sets the border width of the view.
+ - **borderColor** - [_Color_](../../../color/Color.md).    
+  Gets or sets the border color of the view.
  - **color** - [_Color_](../../../color/Color.md).    
   Gets or sets the color of the view.
  - **backgroundColor** - [_Color_](../../../color/Color.md).    
   Gets or sets the background color of the view.
+ - **backgroundImage** - _String_.    
+  Gets or sets the background image of the view.
  - **minWidth** - _Number_.    
   Gets or sets the minimum width the view may grow to.
  - **minHeight** - _Number_.    
@@ -108,9 +117,9 @@ size is smaller than the size the view wants to be.
  - **visualState** - _String_.
  - **isLoaded** - _Boolean_.
  - **_context** - _Object_.
- - **_gestureObservers** - _Map_ of  **<** _Number_, _Array_ of [_GesturesObserver_](../../../ui/gestures/GesturesObserver.md) **>** .
+ - **_gestureObservers** - _Map_ of  **<** _Number_, __ of [_GesturesObserver_](../../../ui/gestures/GesturesObserver.md) **>** .
  - **_domId** - _Number_.
- - **_cssClasses** - _Array_ of _String_.
+ - **_cssClasses** - __ of _String_.
  - **_isAddedToNativeVisualTree** - _Boolean_.
  - **_childrenCount** - _Number_.
  - **_nativeView** - _Object_.
@@ -177,9 +186,9 @@ When overriding this method, you must call setMeasuredDimension(int, int) to sto
      Tries to focus the view.
 Returns a value indicating whether this view or one of its descendants actually took focus.
    - _**return**_ - _Boolean_
- - **getGestureObservers(** type [_GestureTypes_](../../../ui/gestures/GestureTypes.md) **)** _Array_...
+ - **getGestureObservers(** type [_GestureTypes_](../../../ui/gestures/GestureTypes.md) **)** __...
    - **type** - [_GestureTypes_](../../../ui/gestures/GestureTypes.md)
-   - _**return**_ - _Array_ of [_GesturesObserver_](../../../ui/gestures/GesturesObserver.md)
+   - _**return**_ - __ of [_GesturesObserver_](../../../ui/gestures/GesturesObserver.md)
  - **observe(** type [_GestureTypes_](../../../ui/gestures/GestureTypes.md), callback _Function_..., thisArg? _Object_ **)**  
      Adds a gesture observer.
    - **type** - [_GestureTypes_](../../../ui/gestures/GestureTypes.md)  
@@ -210,8 +219,16 @@ Returns a value indicating whether this view or one of its descendants actually 
  - **onUnloaded()**
  - **_addView(** view [_View_](../../../ui/core/view/View.md) **)**
    - **view** - [_View_](../../../ui/core/view/View.md)
+ - **_propagateInheritableProperties(** view [_View_](../../../ui/core/view/View.md) **)**
+   - **view** - [_View_](../../../ui/core/view/View.md)
+ - **_inheritProperties(** parentView [_View_](../../../ui/core/view/View.md) **)**
+   - **parentView** - [_View_](../../../ui/core/view/View.md)
  - **_removeView(** view [_View_](../../../ui/core/view/View.md) **)**
    - **view** - [_View_](../../../ui/core/view/View.md)
+ - **_applyXmlAttribute(** attribute _String_, value _Object_ **)** _Boolean_
+   - **attribute** - _String_
+   - **value** - _Object_
+   - _**return**_ - _Boolean_
  - **_isInheritedChange()** _Boolean_
    - _**return**_ - _Boolean_
  - **_addViewToNativeVisualTree(** view [_View_](../../../ui/core/view/View.md) **)** _Boolean_  

@@ -11,9 +11,9 @@ var timer = require("timer");
 ```
 
 ##### Functions
- - **setTimeout(** callback _Function_, milliseconds? _Number_ **)** _Number_  
+ - **setTimeout(** callback _Object_, milliseconds? _Number_ **)** _Number_  
      Calls a function after a specified delay.
-   - **callback** - _Function_  
+   - **callback** - _Object_  
      The function to be called.
    - **milliseconds** - _(optional)_ - _Number_  
      The time to wait before the function is called. Defaults to 0.
@@ -22,9 +22,9 @@ var timer = require("timer");
      Clears the delay set by a call to the setTimeout function.
    - **id** - _Number_  
      The identifier returned by the previously called setTimeout() method.
- - **setInterval(** callback _Function_, milliseconds? _Number_ **)** _Number_  
+ - **setInterval(** callback _Object_, milliseconds? _Number_ **)** _Number_  
      Calls a function repeatedly with a delay between each call.
-   - **callback** - _Function_  
+   - **callback** - _Object_  
      The function to be called.
    - **milliseconds** - _(optional)_ - _Number_  
      The delay between each function call.

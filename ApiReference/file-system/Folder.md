@@ -45,7 +45,7 @@ The path of the folder is added to the name to resolve the complete path to chec
    - _**return**_ - [_Folder_](../file-system/Folder.md)
  - **getEntities()** _Promise_...  
      Gets all the top-level entities residing within this folder.
-   - _**return**_ - _Promise_ of _Array_ of [_FileSystemEntity_](../file-system/FileSystemEntity.md)
+   - _**return**_ - _Promise_ of __ of [_FileSystemEntity_](../file-system/FileSystemEntity.md)
  - **eachEntity(** onEntity _Function_... **)**  
      Enumerates all the top-level FileSystem entities residing within this folder.
    - **onEntity** - _Function_(entity [_FileSystemEntity_](../file-system/FileSystemEntity.md)) _Boolean_  

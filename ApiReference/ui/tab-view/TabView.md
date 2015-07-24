@@ -14,7 +14,7 @@ Represents a tab view.
   String value used when hooking to the selectedIndexChanged event.
 
 ##### Instance Properties
- - **items** - _Array_ of [_TabViewItem_](../../ui/tab-view/TabViewItem.md).    
+ - **items** - __ of [_TabViewItem_](../../ui/tab-view/TabViewItem.md).    
   Gets or sets the items of the TabView.
  - **selectedIndex** - _Number_.    
   Gets or sets the selectedIndex of the TabView.

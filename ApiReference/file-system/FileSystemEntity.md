@@ -7,7 +7,7 @@ description: "Class file-system.FileSystemEntity"
 Represents a single entity on the file system.
 
 ##### Instance Properties
- - **lastModified** - _Date_.    
+ - **lastModified** - _Object_.    
   Gets the Date object specifying the last time this entity was modified.
  - **name** - _String_.    
   Gets the name of the entity.

@@ -10,4 +10,6 @@ Represents the visibility mode of a view.
  - **visible** - _String_.    
   The view is visible.
  - **collapsed** - _String_.    
+  Obsolete. Please use 'collapse' instead!
+ - **collapse** - _String_.    
   The view is not visible and won't take place in the layout.

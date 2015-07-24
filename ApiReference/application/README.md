@@ -10,11 +10,18 @@ description: "Module application"
 var application = require("application");
 ```
 
+Class | Description
+------|------------
+[AndroidApplication](../application/AndroidApplication.md) | The abstraction of an Android-specific application object.
+
 Object | Description
 ------|------------
 [NativeScriptError](../application/NativeScriptError.md) | An extended JavaScript Error which will have the nativeError property initialized in case the error is caused by executing platform-specific code.
 [ApplicationEventData](../application/ApplicationEventData.md) | Event data containing information for the application events.
-[AndroidApplication](../application/AndroidApplication.md) | The abstraction of an Android-specific application object.
+[AndroidActivityEventData](../application/AndroidActivityEventData.md) | Data for the Android activity events.
+[AndroidActivityBundleEventData](../application/AndroidActivityBundleEventData.md) | Data for the Android activity events with bundle.
+[AndroidActivityResultEventData](../application/AndroidActivityResultEventData.md) | Data for the Android activity result event.
+[AndroidActivityBackPressedEventData](../application/AndroidActivityBackPressedEventData.md) | Data for the Android activity back pressed event.
 [iOSApplication](../application/iOSApplication.md) | The abstraction of an iOS-specific application object.
 
 ##### Variables
@@ -41,7 +48,7 @@ application.start();
  - **cssFile** - _String_.    
   The application level css file name (starting from the application root). Used to set css across all pages.
 Css will be applied for every page and page css will be applied after.
- - **cssSelectorsCache** - _Array_ of [_CssSelector_](../ui/styling/css-selector/CssSelector.md).    
+ - **cssSelectorsCache** - __ of [_CssSelector_](../ui/styling/css-selector/CssSelector.md).    
   Cached css selectors created from the content of the css file.
  - **android** - [_AndroidApplication_](../application/AndroidApplication.md).    
   This is the Android-specific application object instance.
@@ -82,9 +89,9 @@ The method is intended to be used for crash reports and/or application restart.
      - Callback function which will be executed when event is raised.
    - **thisArg** - _(optional)_ - _Object_  
      - An optional parameter which will be used as `this` context for callback execution.
- - **notify(** data [_ApplicationEventData_](../application/ApplicationEventData.md) **)**  
+ - **notify(** data _Object_ **)**  
      Notifies all the registered listeners for the event provided in the data.eventName.
-   - **data** - [_ApplicationEventData_](../application/ApplicationEventData.md)  
+   - **data** - _Object_  
      The data associated with the event.
  - **hasListeners(** eventName _String_ **)** _Boolean_  
      Checks whether a listener is registered for the specified event name.
@@ -94,30 +101,30 @@ The method is intended to be used for crash reports and/or application restart.
  - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
      This event is raised on application launchEvent.
    - **event**
-   - **callback** - _Function_(args _Object_)
-   - **thisArg** - _(optional)_ - _Object_
- - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
-     This event is raised when an uncaught error occurs while the application is running.
-   - **event**
-   - **callback** - _Function_(args _Object_)
+   - **callback** - _Function_(args [_ApplicationEventData_](../application/ApplicationEventData.md))
    - **thisArg** - _(optional)_ - _Object_
  - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
      This event is raised when the Application is suspended.
    - **event**
-   - **callback** - _Function_(args _Object_)
+   - **callback** - _Function_(args [_ApplicationEventData_](../application/ApplicationEventData.md))
    - **thisArg** - _(optional)_ - _Object_
  - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
      This event is raised when the Application is resumed after it has been suspended.
    - **event**
-   - **callback** - _Function_(args _Object_)
+   - **callback** - _Function_(args [_ApplicationEventData_](../application/ApplicationEventData.md))
    - **thisArg** - _(optional)_ - _Object_
  - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
      This event is raised when the Application is about to exitEvent.
    - **event**
-   - **callback** - _Function_(args _Object_)
+   - **callback** - _Function_(args [_ApplicationEventData_](../application/ApplicationEventData.md))
    - **thisArg** - _(optional)_ - _Object_
  - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
      This event is raised when there is low memory on the target device.
    - **event**
-   - **callback** - _Function_(args _Object_)
+   - **callback** - _Function_(args [_ApplicationEventData_](../application/ApplicationEventData.md))
+   - **thisArg** - _(optional)_ - _Object_
+ - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
+     This event is raised when an uncaught error occurs while the application is running.
+   - **event**
+   - **callback** - _Function_(args [_ApplicationEventData_](../application/ApplicationEventData.md))
    - **thisArg** - _(optional)_ - _Object_

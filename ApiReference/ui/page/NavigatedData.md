@@ -9,4 +9,4 @@ Defines the data for the page navigation events.
 
 ##### Properties
  - **context** - _Object_.    
-  The navigation context (optional, may be undefined) passed to the page navigation evetns method.
+  The navigation context (optional, may be undefined) passed to the page navigation events method.

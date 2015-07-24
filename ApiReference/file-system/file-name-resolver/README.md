@@ -19,9 +19,9 @@ Object | Description
 [PlatformContext](../../file-system/file-name-resolver/PlatformContext.md) | 
 
 ##### Functions
- - **findFileMatch(** path _String_, ext _String_, candidates _Array_..., context [_PlatformContext_](../../file-system/file-name-resolver/PlatformContext.md) **)** _String_
+ - **findFileMatch(** path _String_, ext _String_, candidates __..., context [_PlatformContext_](../../file-system/file-name-resolver/PlatformContext.md) **)** _String_
    - **path** - _String_
    - **ext** - _String_
-   - **candidates** - _Array_ of _String_
+   - **candidates** - __ of _String_
    - **context** - [_PlatformContext_](../../file-system/file-name-resolver/PlatformContext.md)
    - _**return**_ - _String_

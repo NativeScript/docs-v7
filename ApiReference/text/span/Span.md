@@ -23,7 +23,7 @@ It could be set to more than one value e.g. (Bold | Italic).
   Gets or sets underline for the span.
  - **strikethrough** - _Number_.    
   Gets or sets strikethrough for the span.
- - **spanModifiers** - _Array_ of _Object_.    
+ - **spanModifiers** - __ of _Object_.    
   A collection of modifiers build upon all text related properties.
  - **text** - _String_.    
   Gets or sets the text for the span.
