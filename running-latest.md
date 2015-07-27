@@ -28,7 +28,7 @@ Having said that, each subfolder of the [apps](https://github.com/NativeScript/N
 When the repo gets built, it outputs a bunch of packages (stripping the version- and extension- part of the filename for clarity):
 - tns-core - the package, containing the core modules, currently distributed with applications under the name of `tns_modules`. Once the  [module/template](https://github.com/NativeScript/nativescript-cli/issues/390) [separation](https://github.com/NativeScript/nativescript-cli/issues/362) gets implemented, these will be distributed via npm.
 - tns-sample-* contain some test/demo applications the team use internally for testing
-- ths-template-* have templates that will get used once we have the [template-selection functionality](https://github.com/NativeScript/nativescript-cli/issues/374) implemented in the command-line interface
+- tns-template-* have templates that will get used once we have the [template-selection functionality](https://github.com/NativeScript/nativescript-cli/issues/374) implemented in the command-line interface
 - tns-definitions - contains the TypeScript declaration files for use when writing a TypeScript application you would further either manually compile to JavaScript, or use the [transpilation feature](https://github.com/NativeScript/nativescript-cli/issues/493) of the NativeScript CLI (*to be implemented*)
 
 The repo gets built via the commands:
