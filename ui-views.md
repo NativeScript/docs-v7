@@ -20,6 +20,7 @@ NativeScript ships with a set of user interface [`Views`](./ApiReference/ui/core
 * [ActivityIndicator](#activityindicator)
 * [Image](#image)
 * [ListView](#listview)
+* [HtmlView](#htmlview)
 * [WebView](#webview)
 * [TabView](#tabview)
 * [SegmentedBar](#segmentedbar)
@@ -170,6 +171,18 @@ The [ListView](ApiReference/ui/list-view/how-to.md) shows items in a vertically 
 | Android                | iOS      |
 |:-----------------------|:---------|
 | [android.widget.ListView](http://developer.android.com/reference/android/widget/ListView.html) | [UITableView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableView_Class/) |
+
+## HtmlView
+
+The [HtmlView](ApiReference/ui/html-view/how-to.md) represents a view with html content. Use this component instead WebView when you want to show just static HTML content.
+
+![html-view android](img/gallery/android/htmlViewPage.png "html-view android")![web-view ios](img/gallery/ios/htmlViewPage.png "html-view ios")
+
+**Native Component**
+
+| Android                | iOS      |
+|:-----------------------|:---------|
+| [android.widget.TextView](http://developer.android.com/reference/android/widget/TextView.html) | [UILabel](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/) |
 
 ## WebView
 
