@@ -407,6 +407,8 @@ export class MyControl extends stackLayout.StackLayout {
 }
 ```
 
+When refering to code-only components in your pages with an `xmlns` declaration yo should point it either to the code file with the component implementation or to the folder containing the files. In the latter case you will have to add a `package.json` file in the folder so that the file can be required properly.
+
 ### Example: Custom XML-Based Component with code file
 
 This sample `main-page.xml` uses a custom component defined in a `xml-declaration/mymodulewithxml/MyControl.xml`file together with `xml-declaration/mymodulewithxml/MyControl.js` or `xml-declaration/mymodulewithxml/MyControl.ts` code file. 
