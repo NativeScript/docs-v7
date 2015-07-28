@@ -666,6 +666,19 @@ export function pageLoaded(args: observable.EventData) {
 }
 ```
 
+If you want to show some inner collection items inside ListView.itemTemplate you can use [Repeater](layouts.md#repeating-layout-children):
+```XML
+<Page>
+{%raw%}
+  <ListView items="{{ myItems }}">
+    <ListView.itemTemplate>
+      <Repeater items="{{ mySubItems }}"  />
+    </ListView.itemTemplate>
+  </ListView>
+{%endraw%}
+</Page>
+```
+
 ### Expressions
 
 To set an expression as the value for a property in the `XML`, you can use double curly brackets syntax.
