@@ -666,7 +666,7 @@ export function pageLoaded(args: observable.EventData) {
 }
 ```
 
-If you want to show some inner collection items inside ListView.itemTemplate you can use [Repeater](layouts.md#repeating-layout-children):
+If you want to show some inner collection items inside ```ListView.itemTemplate``` you can use [Repeater](layouts.md#repeating-layout-children):
 ```XML
 <Page>
 {%raw%}
