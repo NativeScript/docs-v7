@@ -7,6 +7,14 @@ position: 19
 
 # NativeScript FAQ
 
+### How to upgrade to latest version of NativeScript?
+
+[NativeScript Upgrade Instructions](./upgrade-instructions) will help you to upgrade your project to latest version of NativeScript.
+
+### How do I check which version of NativeScript does my project use?
+
+Open the `app/tns_modules/package.json` file and check the `version` attribute. This defines the version of the cross-platform modules.
+
 ### What Android API level does NativeScript target?
 
 The NativeScript Android runtime is built against Android API level 17; therefore APIs from higher API levels are not supported through JavaScript. The NativeScript team is [updating the Android runtime to API level 21](https://github.com/NativeScript/android-runtime/issues/39) soon.
@@ -49,7 +57,3 @@ exports.pageLoaded = function(args) {
     }
 };
 ```
-
-### How do I check which version of NativeScript does my project use?
-
-Open the `app/tns_modules/package.json` file and check the `version` attribute. This defines the version of the cross-platform modules.
