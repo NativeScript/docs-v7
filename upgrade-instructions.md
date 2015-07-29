@@ -53,4 +53,4 @@ mv TempApp/app/tns_modules <yourapp>/app
 rm -rf TempApp
 ```
 
-Another way to achieve this is to go to [NativeScript Releases](https://github.com/NativeScript/NativeScript/releases/), download tns-core-*.tgz containing the cross-platform modules from the respective release, unpack them and replace the content of the **tns_modules** folder in your project with them.
+Another way to achieve this is to go to [NativeScript Releases](https://github.com/NativeScript/NativeScript/releases/), download tns-core-\*.tgz containing the cross-platform modules from the respective release, unpack them and replace the content of the **tns_modules** folder in your project with them.
