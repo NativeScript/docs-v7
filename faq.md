@@ -9,7 +9,7 @@ position: 19
 
 ### How to upgrade to latest version of NativeScript?
 
-[NativeScript Upgrade Instructions](https://docs.nativescript.org/upgrade-instructions) will help you to upgrade your project to latest version of NativeScript.
+[NativeScript Upgrade Instructions](./upgrade-instructions) will help you to upgrade your project to latest version of NativeScript.
 
 ### How do I check which version of NativeScript does my project use?
 
