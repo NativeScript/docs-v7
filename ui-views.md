@@ -176,7 +176,7 @@ The [ListView](ApiReference/ui/list-view/how-to.md) shows items in a vertically 
 
 The [HtmlView](ApiReference/ui/html-view/how-to.md) represents a view with html content. Use this component instead WebView when you want to show just static HTML content.
 
-![html-view android](img/gallery/android/htmlViewPage.png "html-view android")![web-view ios](img/gallery/ios/htmlViewPage.png "html-view ios")
+![html-view android](img/gallery/android/htmlViewPage.png "html-view android")![html-view ios](img/gallery/ios/htmlViewPage.png "html-view ios")
 
 **Native Component**
 
