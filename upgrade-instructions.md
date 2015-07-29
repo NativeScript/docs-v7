@@ -9,17 +9,17 @@ position: 20
 
 ### Upgrading the NativeScript Tools
 
-First thing to do is upgrade your TNS (or NativeScript) command, so go to a command prompt or bash/terminal prompt and type:
+First thing to do is upgrade your `tns` (or `nativescript`) command, so go to a command prompt or bash/terminal prompt and type:
 ```
 npm update -g nativescript
 ```
 
 This will update you to the latest version of the nativescript command line.  
-You can type **tns --version** to verify new version is installed.
+You can type `tns --version` to verify new version is installed.
 
 ### Upgrading the Platforms
 
-Next thing you will need to upgrade is your **platforms**, so navigate to the root level folder where your project is; and then if you are working on a Android project type:
+Next thing you will need to upgrade is your **platforms** in order to get the latest enhancements of the Android and/or iOS runtimes. So navigate to the root level folder where your project is; and then if you are working on a Android project type:
 ```
 tns platform update android
 ```
@@ -31,7 +31,7 @@ tns platform update ios
 
 ### Upgrading TNS Modules
 
-Unfortunately the next piece is a bit more tricky as it requires more steps. The easiest method is to create a new project and then copy the **tns_modules** out of the new project into your existing project and then delete the dummy project.
+Тhe next piece is a bit more tricky as it requires more steps. The easiest method is to create a new project and then copy the **tns_modules** out of the new project into your existing project and then delete the dummy project.
 
 So at a command line do the following (assuming you are still in your main app project folder from the steps above). Please remember to replace **<yourapp>** with whatever folder name your app is in.
 
@@ -52,3 +52,5 @@ rm -rf **<yourapp>**/app/tns_modules
 mv TempApp/app/tns_modules **<yourapp>**/app
 rm -rf TempApp
 ```
+
+Another way to achieve this is to go to [NativeScript Releases](https://github.com/NativeScript/NativeScript/releases/), download tns-core-**<version>**.tgz containing the cross-platform modules from the respective release, unpack them and replace the content of **tns_modules** folder in your project with them.
