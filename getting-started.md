@@ -41,7 +41,7 @@ This quick start development guide will introduce you to the basic architecture 
 
 ### 3. Learn from the full app samples prepared by the NativeScript team.
 
-[Sample apps with open source code](https://www.nativescript.org/app-samples-with-code)
+[Sample apps with open source code](samples.md)
 
 ### 4. Explore the **[modules overview](modules.md)** and the **[API Reference](ApiReference/application/README.md)**.
 
