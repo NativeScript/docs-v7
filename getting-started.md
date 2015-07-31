@@ -39,7 +39,11 @@ This quick start development guide will introduce you to the basic architecture 
 * [Hello World from the NativeScript CLI](hello-world/hello-world-ns-cli.md)
 * [Hello World from AppBuilder](hello-world/hello-world-appbuilder.md)
 
-### 3. Explore the **[modules overview](modules.md)** and the **[API Reference](ApiReference/application/README.md)**.
+### 3. Learn from the full app samples prepared by the NativeScript team.
+
+[Sample apps with open source code](https://www.nativescript.org/app-samples-with-code)
+
+### 4. Explore the **[modules overview](modules.md)** and the **[API Reference](ApiReference/application/README.md)**.
 
 The extensive overview and API reference will introduce to the how-tos of NativeScript development. You will learn how to tap into the native capabilities that you want to implement inside your app.
 
