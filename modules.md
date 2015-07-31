@@ -34,6 +34,7 @@ In your project, the files for each module reside in a dedicated subdirectory in
 + [timer](./ApiReference/timer/HOW-TO.md): Lets you to create, start, stop and react to timers.
 + [trace](./ApiReference/trace/HOW-TO.md): Lets you trace and print specific information based on categories.
 + [ui/image-cache](./ApiReference/ui/image-cache/HOW-TO.md): Provides the `Cache` class which handles image download requests and caches the already downloaded images.
++ [connectivity](./ApiReference/connectivity/HOW-TO.md): Let's you check the type of internet connection and monitor its state changes.
 
 ### Device Functionality Modules
 
@@ -59,6 +60,8 @@ In your project, the files for each module reside in a dedicated subdirectory in
 + [text/formatted-string](./ApiReference/text/formatted-string/HOW-TO.md): Provides the `FormattedString` and `Span` classes which you can use to create rich text formatted strings.
 + [xml](./ApiReference/xml/HOW-TO.md): Provides the `XmlParser` class which is a SAX parser using the easysax implementation.
 + [ui/styling](./ApiReference/ui/styling/HOW-TO.md): Provides the `Style` class which is responsible for the visual appearance of elements.
++ [ui/animation](./ApiReference/ui/animation/HOW-TO.md): Provides the `Animation` class which lets you animate view properties.
+
 
 #### Layouts
 
