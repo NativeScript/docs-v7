@@ -7,7 +7,7 @@ position: 20
 
 # Upgrade Instructions
 
-To upgrade a NativeScript application we need to upgrade several things: NativeScript CLI Tooling, the iOS and Android runtimes and the cross-platform modules. In the steps below you will see how to do this. Please also keep in mind that you should read the [breaking changes] (./breaking-changes) for each release.
+To upgrade a NativeScript application you need to upgrade several things: NativeScript CLI Tooling, the iOS and Android runtimes and the cross-platform modules. In the steps below you will see how to do this. Please also keep in mind that you should read the [breaking changes] (./breaking-changes) for each release.
 
 ### Upgrading the NativeScript Tools
 
