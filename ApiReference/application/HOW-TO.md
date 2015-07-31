@@ -35,6 +35,36 @@ var dir = context.getFilesDir();
 ### Tracking the current Activity
 ``` JavaScript
 if (androidApp.foregroundActivity === androidApp.startActivity) {
-    console.log("We are currently in the main (start) activity of the application");
+}
+```
+### Registering a Broadcast Receiver (Android)
+``` JavaScript
+// Register the broadcast receiver
+if (app.android) {
+    app.android.registerBroadcastReceiver(android.content.Intent.ACTION_BATTERY_CHANGED, function onReceiveCallback(context, intent) {
+        var level = intent.getIntExtra(android.os.BatteryManager.EXTRA_LEVEL, -1);
+        var scale = intent.getIntExtra(android.os.BatteryManager.EXTRA_SCALE, -1);
+        var percent = (level / scale) * 100.0;
+        //console.log("Battery: " + percent + "%");
+    });
+}
+// When no longer needed, unregister the broadcast receiver
+if (app.android) {
+    app.android.unregisterBroadcastReceiver(android.content.Intent.ACTION_BATTERY_CHANGED);
+}
+```
+### Adding a Notification Observer (iOS)
+``` JavaScript
+// Add the notification observer
+if (app.ios) {
+    app.ios.addNotificationObserver(UIDeviceBatteryLevelDidChangeNotification, function onReceiveCallback(notification) {
+        var percent = UIDevice.currentDevice().batteryLevel * 100;
+        var message = "Battery: " + percent + "%";
+        //console.log(message);
+    });
+}
+// When no longer needed, remove the notification observer
+if (app.ios) {
+    app.ios.removeNotificationObserver(UIDeviceBatteryLevelDidChangeNotification);
 }
 ```
