@@ -24,7 +24,7 @@ The prefix of the `src` value specify where the image will be loaded form. The p
 * [From local file system (`~/` prefix)](#load-images-from-local-file-system)
 * [From resource (`res://` prefix)](#load-images-from-resource)
 
-You can also use the [image-source](./ApiReference/image-source/HOW-TO.html) module to create an image source an manually set it to the image:
+You can also use the [image-source](./ApiReference/image-source/HOW-TO.html) module to create an image source and manually set it to the image:
 ```JavaScript
 var image = new imageModule.Image();
 var imageSource = imageSourceModule.fromResource("logo");
