@@ -1,8 +1,8 @@
 ---
-nav-title: User Interface Layouts in NativeScript
+nav-title: UI Plugin with NativeScript
 title: "UI: Layouts"
-description: Learn the basic principles of designing and positioning the UI elements inside your apps.
-position: 12
+description: Learn how to create a new User Interface plugin for NativeScript.
+position: 20
 ---
 
 # Overview
@@ -71,7 +71,7 @@ declare module "number-picker" {
 } 
 ```
 
-> In the NativeScript modules we are using TypeScript's [ambient modules](http://www.typescriptlang.org/Handbook#modules-working-with-other-javascript-libraries), which tell the language service that this module will be available at runtime and it is our responsibility to load it.
+> The NativeScript modules use TypeScript's [ambient modules declaration](http://www.typescriptlang.org/Handbook#modules-working-with-other-javascript-libraries), which tell the language service that this module will be available at runtime and it is our responsibility to load it.
 
 To enable features like data-binding and styling for the widget, you need to use dependency properties to back the instance properties as described [here](http://docs.nativescript.org/bindings.html).
 
@@ -227,10 +227,12 @@ The XML is parsed and the Visual Tree, including native widgets, is created
 The minimalistic implementation is ready and the widget is ready to be tested. You need to package the files as a valid plugin, as described in the [documentation](http://docs.nativescript.org/plugins). Here are the steps:
 
 1. Create a new sample project named *myApp*
-   ```Shell
+
+   ```shell
    tns create myApp
    ```
 1. Navigate to the new folder
+
    ```Shell
    cd myApp
    ```
@@ -240,6 +242,7 @@ The minimalistic implementation is ready and the widget is ready to be tested. Y
    * `number-picker.android.js`
    * `number-picker.ios.js`
 1. Add a new `package.json` file in `number-picker` with the following content:
+
    ```json
    {
        "name": "number-picker",
@@ -253,11 +256,13 @@ The minimalistic implementation is ready and the widget is ready to be tested. Y
        }
    }
    ```
-1. Run the following command
+1. Run the following command:
+
    ```Shell
    tns plugin add number-picker
    ```
 1. Modify the `app/main-page.js` file to create the new widget:
+
    ```javascript
    var vmModule = require("./main-view-model");
    var pickerModule = require("number-picker");
@@ -272,7 +277,8 @@ The minimalistic implementation is ready and the widget is ready to be tested. Y
    }
    exports.pageLoaded = pageLoaded;
    ```
-1. Run the application
+1. Run the application:
+   
    ```Shell
     tns run android (or tns emulate ios)
    ```
@@ -410,7 +416,7 @@ var changedHandler = new style.stylers.StylePropertyChangedHandler(setColor, res
 style.stylers.registerHandler(style.properties.colorProperty, changedHandler, "NumberPicker");
 ```
 
->In Android the `color` property would be mapped to the text color of the labels within the native widget, however this cannot be easily achieved programmatically but rather through the Android-specific XML styles. That's why the article will not cover the `color` property for Android but the concept there is identical to the one in iOS.
+>In Android the `color` property would be mapped to the text color of the labels within the native widget, however this cannot be easily achieved programmatically but rather through the Android-specific XML styles. That's why the article will not cover the `color` property for Android. Still, the concept there is identical to the one described for iOS.
 
 # XML-Ready
 Making the component visible to the XML parser is as easy as adding a custom namespace at [Page level](http://docs.nativescript.org/ui-with-xml#custom-components). The following code illustrates this:
