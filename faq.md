@@ -15,6 +15,16 @@ position: 19
 
 Open the `app/tns_modules/package.json` file and check the `version` attribute. This defines the version of the cross-platform modules.
 
+### How do I check whether my JavaScript runs in NativeScript?
+
+NativeScript registers some objects on the global context. The simplest way to detect whether your code runs within a NativeScript context is the following check:
+
+```javascript
+if (typeof global !== 'undefined' && (global.android || global.NSObject)) {
+    // This is NativeScript!
+}
+```
+
 ### What Android API level does NativeScript target?
 
 The NativeScript Android runtime is built against Android API level 17; therefore APIs from higher API levels are not supported through JavaScript. The NativeScript team is [updating the Android runtime to API level 21](https://github.com/NativeScript/android-runtime/issues/39) soon.
