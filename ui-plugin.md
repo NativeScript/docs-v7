@@ -373,7 +373,7 @@ The `DefaultStyler` handles the following [properties](http://uatdocs.nativescri
 * borderColor
 * borderRadius
 
-When you create a new widget and you do not need support for other specific properties, there is no need to specify custom `Styler` as the default one will handle these for you. In this particular case, the article will walk you through handling the `color` property as well, to demonstrate the work flow and the steps needed to enable widget-specific properties. The following three entry points are needed by a `Styler` to reflect a JavaScript style property change:
+When you create a new widget and you do not need support for other specific properties, there is no need to specify custom `Styler` because the default one will handle these for you. In this particular case, the article will walk you through handling the `color` property as well, to demonstrate the workflow and the steps needed to enable widget-specific properties. The following three entry points are needed by a `Styler` to reflect a JavaScript style property change:
 
 * setPropertyValue <br/>
   *Applies the property-specific logic to the native widget.*
