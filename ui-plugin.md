@@ -1,6 +1,6 @@
 ---
 nav-title: UI Plugin with NativeScript
-title: "UI: Layouts"
+title: "UI: Plugins"
 description: Learn how to create a new User Interface plugin for NativeScript.
 position: 20
 ---
