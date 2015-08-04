@@ -6,7 +6,11 @@ position: 20
 ---
 
 # Overview
-This article covers the basics of creating a NativeScript User Interface plugin that integrates with the existing [cross-platform](https://github.com/NativeScript/NativeScript) modules. Although the cross-platform part of NativeScript is entirely written in [TypeScript](http://www.typescriptlang.org/), the provided code samples are in plain JavaScript and are created with Sublime Text 2 as the preferred IDE. You can achieve the same with any transpiler tool that produces valid ES5 JavaScript and an IDE of your choice. The widget to enable is [NumberPicker](http://developer.android.com/reference/android/widget/NumberPicker.html) / [UIStepper](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/cl/UIStepper) as this component is currently not available in the NativeScript UI modules and (a very important note) - semantically similar widgets are available in both Android and iOS. The suggested way for building the plugin will follow the guidelines the NativeScript team uses when creating cross-platform modules and will emphasize on major concepts like observables, bindable properties, abstract View hierarchy (or Visual Tree) and CSS styling.
+This article covers the basics of creating a NativeScript User Interface plugin that integrates with the existing [cross-platform](https://github.com/NativeScript/NativeScript) modules.
+
+Although the cross-platform part of NativeScript is entirely written in [TypeScript](http://www.typescriptlang.org/), the provided code samples are in plain JavaScript and are created with Sublime Text 2 as the preferred IDE. You can achieve the same with any transpiler tool that produces valid ES5 JavaScript and an IDE of your choice.
+
+The widget to enable is [NumberPicker](http://developer.android.com/reference/android/widget/NumberPicker.html) / [UIStepper](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/cl/UIStepper) as this component is currently not available in the NativeScript UI modules and (a very important note) - semantically similar widgets are available in both Android and iOS. The suggested way for building the plugin will follow the guidelines the NativeScript team uses when creating cross-platform modules and will emphasize on major concepts like observables, bindable properties, abstract View hierarchy (or Visual Tree) and CSS styling.
 
 > The article assumes that you are already familiar with developing [applications with NativeScript](http://docs.nativescript.org/getting-started).
 
@@ -43,13 +47,13 @@ The NativeScript documentation portal has some great content to walk you through
 
 * [Events](http://docs.nativescript.org/events.html)
 * [Properties](http://docs.nativescript.org/properties.html)
-* [Data-binding](http://docs.nativescript.org/bindings.html)
+* [Data-Binding](http://docs.nativescript.org/bindings.html)
   
 # File Structure
 Having in mind the class hierarchy, the obvious choice for the base class of the widget will be `View`. Following is the structure of a typical NativeScript [UI module](https://github.com/NativeScript/NativeScript/tree/master/ui/button):
 
 ### Definition File (number-picker.d.ts)
-This is the TypeScript way to describe all the publicly available APIs within a module. Typically, the creation of a NativeScript module starts with the API first (or defining what a widget should do) and then move to the actual implementation. Taking a close look at [NumberPicker](http://developer.android.com/reference/android/widget/NumberPicker.html) and [UIStepper](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/cl/UIStepper) you can easily come up with the API definition (we are looking for an API that is cross-platform and each method/property is available for each native platform). For the sake of simplicity the article will cover only one property (you can examine the sample Github repository [TODO: Link]package for the complete implementation):
+This is the TypeScript way to describe all the publicly available APIs within a module. Typically, the creation of a NativeScript module starts with the API first (or defining what a widget should do) and then move to the actual implementation. Taking a close look at [NumberPicker](http://developer.android.com/reference/android/widget/NumberPicker.html) and [UIStepper](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/cl/UIStepper) you can easily come up with the API definition (we are looking for an API that is cross-platform and each method/property is available for each native platform). For the sake of simplicity the article will cover only one property (you can examine the sample [GitHub repository](https://github.com/atanasovg/nativescript-number-picker) for the complete implementation):
 
 > This file is not mandatory and if you do not use TypeScript you may simply skip this step. Still, defining the public API one way or another will be useful for the users of the plugin.
 
@@ -71,7 +75,7 @@ declare module "number-picker" {
 } 
 ```
 
-> The NativeScript modules use TypeScript's [ambient modules declaration](http://www.typescriptlang.org/Handbook#modules-working-with-other-javascript-libraries), which tell the language service that this module will be available at runtime and it is our responsibility to load it.
+> Each NativeScript module uses TypeScript's [ambient module declaration](http://www.typescriptlang.org/Handbook#modules-working-with-other-javascript-libraries), which tell the language service that this module will be available at runtime and it is our responsibility to load it.
 
 To enable features like data-binding and styling for the widget, you need to use dependency properties to back the instance properties as described [here](http://docs.nativescript.org/bindings.html).
 
@@ -278,7 +282,7 @@ The minimalistic implementation is ready and the widget is ready to be tested. Y
    exports.pageLoaded = pageLoaded;
    ```
 1. Run the application:
-   
+
    ```Shell
     tns run android (or tns emulate ios)
    ```
@@ -289,7 +293,7 @@ The new widget should be successfully displayed on the page.
 The widget is already successfully visualized but it is in a very basic state - for example it does not reflect changes, coming from the Native side when the user interacts with the widget. In other words, the `value` property on the JavaScript side will not be updated after user interaction.
 
 ### Android
-The Android's general way of handling change notifications is via *Listeners* - in the current scenario this is the [OnValueChangeListener](http://developer.android.com/reference/android/widget/NumberPicker.OnValueChangeListener.html).You need to create a new interface implementation and register it on the native picker instance to receive updates coming from the Android world. Because this implementation is instance-related, we want to put it in the `_createUI` method:
+The Android general way of handling change notifications is via *Listeners* - in the current scenario this is the [OnValueChangeListener](http://developer.android.com/reference/android/widget/NumberPicker.OnValueChangeListener.html).You need to create a new interface implementation and register it on the native picker instance to receive updates coming from the Android world. Because this implementation is instance-related, we want to put it in the `_createUI` method:
 
 ```javascript
 NumberPicker.prototype._createUI = function () {
@@ -311,7 +315,7 @@ NumberPicker.prototype._createUI = function () {
 
 >Note the `WeakRef` wrapper of the `this` argument. This is an important part of the listener implementation as it prevents circular references (resulting in a memory leak) between the JavaScript implementation Object literal, which is statically cached per `extend` call and the outer JavaScript instance.
 
-Here the NativeScript's Android Bridge is used to create a new [interface implementation in JavaScript](http://docs.nativescript.org/runtimes/android/generator/extend-class-interface) and to handle the `onValueChange` method. When a notification from the native Picker is received, the JavaScript object, associated with the event is retrieved and the special method `_onPropertyChangedFromNative` is called on it. This is a method on the `Proxy` class which synchronizes properties from both JavaScript and Native in a way that prevents circular updates, which may result in a StackOverflow Exception.
+Here the NativeScript Android Bridge is used to create a new [interface implementation in JavaScript](http://docs.nativescript.org/runtimes/android/generator/extend-class-interface) and to handle the `onValueChange` method. When a notification from the native Picker is received, the JavaScript object, associated with the event is retrieved and the special method `_onPropertyChangedFromNative` is called on it. This is a method on the `Proxy` class which synchronizes properties from both JavaScript and Native in a way that prevents circular updates, which may result in a StackOverflow Exception.
 
 ### iOS
 On iOS the generic event [UIControlEventValueChanged](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/c/econst/UIControlEventValueChanged) raised by the `UIStepper` widget is used. So, the approach will be to extend the base `NSObject` class, to expose a handler method and register a new instance of the extended object using the [addTargetActionForControlEvents](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/#//apple_ref/occ/instm/UIControl/addTarget:action:forControlEvents:) method. According to the [Extending Classes in NativeScript for iOS](http://docs.nativescript.org/runtimes/ios/how-to/ObjC-Subclassing#calling-base-methods-Exposed) article, the following code enables value change notifications:
@@ -346,17 +350,17 @@ function NumberPicker() {
 
 >Note the assignment of the `listener` object to the `this` argument (`this._listener = new ListenerClass()`) in the constructor. This is needed to prevent the native class deallocation because the `addTargetActionForControlEvents` method uses `Weak` references when adding listeners.
 
-### Data-binding Ready
+### Data-Binding Ready
 With gluing the Native-to-JavaScript and JavaScript-to-Native flow of changes, the `value` property is completely [data-binding](http://docs.nativescript.org/bindings) ready and calling the [Bindable.bind](http://docs.nativescript.org/ApiReference/ui/core/bindable/Bindable) method on the widget will work as expected, both in one-way and two-way cases.
 
-# Css Support
+# CSS Support
 The styling support in the NativeScript modules is built on top of three major layers:
 
 * The [Style](http://docs.nativescript.org/ApiReference/ui/styling/Style.html) object on a per `View` instance, which allows programmatic styling.
 * The Css parser that reads `*.css` files and updates the `Style` object of each matched `View`.
 * The *Styler* concept - the mapping of a JavaScript value to the corresponding native widget's property is delegated to an external object, named `Styler`.
 
-> Because there are properties common for each native widget, there is the `DefaultStyler` that handles these properties. Other properties are specific per widget type - for example the [TextView](http://developer.android.com/reference/android/widget/TextView.html) ones - and these are handled by the specific `TextViewStyler`.
+> The properties, common for each native widget, are handled by the `DefaultStyler`. Other properties are specific on a per widget type - for example the [TextView](http://developer.android.com/reference/android/widget/TextView.html) ones - and these are handled by the specific `TextViewStyler`.
 
 The `DefaultStyler` handles the following [properties](http://uatdocs.nativescript.org/styling#supported-properties):
 
@@ -436,3 +440,8 @@ Making the component visible to the XML parser is as easy as adding a custom nam
 ```
 
 > The CLI will copy the JavaScript part of the plugin within the tns_modules folder. The XML parser will automatically check for `tns_modules/number-picker` folder to load the widget.
+
+# See Also
+
+* [Plugins](http://docs.nativescript.org/plugins).
+* [UI - The Basics](http://docs.nativescript.org/ui-with-xml)
