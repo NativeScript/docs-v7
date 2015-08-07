@@ -2,7 +2,7 @@
 nav-title: UI Plugin with NativeScript
 title: "UI: Plugins"
 description: Learn how to create a new User Interface plugin for NativeScript.
-position: 20
+position: 18
 ---
 
 # Overview
@@ -156,7 +156,8 @@ What the above code does is:
 1. Create a new `NumberPicker` class that inherits the common one and its functionality.
 1. Override the `_createUI` method and instantiate the `_android` field.
 1. Define a public getter property for the native Android instance.
-   > The `iOS` property, as declared in the definition (API) file, remains `undefined` when running on Android.
+ 
+> The `iOS` property, as declared in the definition (API) file, remains `undefined` when running on Android.
 
 The `_createUI` method is part of the Visual Tree instantiation pass for Android. Because every native Android UI widget requires a valid [Context](http://developer.android.com/reference/android/content/Context.html) as a constructor parameter, the UI is lazy initialized when we have such `Context` available. This happens when the main [Activity](http://developer.android.com/reference/android/app/Activity.html) is created. The following scheme briefly summarizes the steps during the UI initialization pass within the Visual Tree:
 
