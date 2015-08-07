@@ -2,7 +2,7 @@
 nav-title: UI Plugin with NativeScript
 title: "UI: Plugins"
 description: Learn how to create a new User Interface plugin for NativeScript.
-position: 18
+position: 17
 ---
 
 # Overview
