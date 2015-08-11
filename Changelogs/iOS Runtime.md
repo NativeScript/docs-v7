@@ -5,6 +5,16 @@ description: NativeScript iOS Runtime Changelog
 position: 3
 ---
 
+1.2.1
+==
+
+## Bug Fixes
+
+ - [Timelines recording sends some long messages that hit the buffer limit of write method, so fallback to dispatch_io_write (#255)](https://github.com/NativeScript/ios-runtime/pull/255)
+ - [Fix TypeScript inheritance of Objective-C classes (#252)](https://github.com/NativeScript/ios-runtime/pull/252)
+ - [Work around crash when logging warnings (#248)](https://github.com/NativeScript/ios-runtime/pull/248)
+ - [Do not register the instance structure (#247)](https://github.com/NativeScript/ios-runtime/pull/247)
+
 1.2.0
 ==
 
