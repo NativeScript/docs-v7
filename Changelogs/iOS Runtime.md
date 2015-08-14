@@ -5,6 +5,13 @@ description: NativeScript iOS Runtime Changelog
 position: 3
 ---
 
+1.2.2
+==
+
+## Bug Fixes
+
+- [Call Block_copy in ObjCBlockCall::finishCreation #264](https://github.com/NativeScript/ios-runtime/pull/264)
+
 1.2.1
 ==
 
