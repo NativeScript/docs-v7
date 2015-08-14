@@ -11,7 +11,7 @@ Have you set up your system to develop NativeScript apps with the NativeScript C
 
 If the answer is yes, you are ready to create your first Hello World app with NativeScript. Your first Hello World will be a simple counter. You will learn:
 
-* [How To Create a New Project](#crate-new-project)
+* [How To Create a New Project](#create-new-project)
 * [How To Add User Interface](#1-add-user-interface)
 * [How To Create a View Model](#2-create-the-view-model)
 * [How To Style Your App](#3-style-your-app)
