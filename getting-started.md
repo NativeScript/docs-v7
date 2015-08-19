@@ -9,6 +9,7 @@ position: 2
 	.exercise {
 		border: 1px solid #ccc;
 		border-radius: 0.3em;
+		margin-bottom: 1em;
 	}
 	.exercise p, .exercise pre {
 		margin-left: 1em;
@@ -16,10 +17,11 @@ position: 2
 	}
 	.exercise h4 {
 		margin-top: 0;
-		padding: 1em;
+		padding: 0.8em;
 		border-bottom: 1px solid #eee;
+		font-size: 1.1em;
 	}
-	pre {
+	.prettyprint {
 		position: relative;
 		overflow: visible;
 	}
@@ -29,15 +31,45 @@ position: 2
 		right: 0;
 		height: 1.5em;
 		padding: 0 0.5em;
-		background: white;
-		border: solid #CCC;
+		background: #fbfdfe;
+		border: 2px solid #dbe3e4;
 		border-width: 1px 1px 0 1px;
-		font-size: 0.9em;
+		font-size: 1.3em;
 	}
 	.copy-button:active, .copy-button:focus {
 		background: #5854F8;
-		color: white;
 		outline: 0;
+	}
+	.copy-button:active .typ, .copy-button:focus .typ {
+		color: white;
+	}
+
+	/* Add the section counters */
+	body {
+		counter-reset: h2counter;
+	}
+	h2 {
+		counter-reset: h3counter;
+	}
+	h2::before {
+		content: counter(h2counter) ".\0000a0\0000a0";
+		counter-increment: h2counter;
+	}
+	h3::before {
+		content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
+		counter-increment: h3counter;
+	}
+
+	/* Account for the different nav */
+	#page-nav {
+		padding: 45px 20px 60px 4px;
+	}
+	#page-nav > ul > li > a {
+		color: #141e2f;
+		font-weight: bold;
+	}
+	#page-nav > ul > li > ul a {
+		color: #556;
 	}
 </style>
 
@@ -376,7 +408,7 @@ NativeScript provides several different layout containers that allow you to plac
 In the case of your login screen, all you need is a simple `<StackLayout>` to stack the UI components on top of each other. In later sections, you'll use some of the more advanced layouts.
 
 <h4 class="exercise-start">
-    <b>Exercise</b>: Add a stack layout to the login screen</code>
+    <b>Exercise</b>: Add a stack layout to the login screen
 </h4>
 
 In your `login.xml`, add the `<StackLayout>` component below directly within the `<Page>` component. Your `login.xml` should look like this:
@@ -728,8 +760,8 @@ The Observable is the view model in the MVVM design pattern. It provides a mecha
 To allow for two-way data binding using an Observable, open `login.xml`, and replace the two existing TextField UI components with the two shown below, which each include a new `text` attribute:
 
 ```
-<TextField id="email_address" text="{{ email }}" hint="Email Address" keyboardType="email" />
-<TextField secure="true" text="{{ password }}" hint="Password" />
+<TextField id="email_address" text="{% raw %}{{ email }}{% endraw %}" hint="Email Address" keyboardType="email" />
+<TextField secure="true" text="{% raw %}{{ password }}{% endraw %}" hint="Password" />
 ```
 
 > **Note**: The use of two curly brackets surrounding the `text` attribute's value delineates a data-bound value. You will be setting corresponding properties with the same name in the view model.
@@ -761,7 +793,7 @@ What's going on here?
 - First, you're creating a `user` view model that is based on the NativeScript Observable module. You create the view model with two properties, `email` and `password`, that are pre-populated with some dummy values.
 - Next, you bind the page to the `user` view model by setting it as the page's `bindingContext` property. This is specifically what makes the curly bracket syntax work.
 
-Simply put, properties placed on a page's binding context are available to XML elements using the `{{ propertyName }}` syntax. In this case, because JavaScript sets the view model's `email` to `"user@domain.com"`, and because you bound the email address textfield to that property using `<TextField text="{{ email }}">`, when you run this app you'll see “user@domain.com” appear on the front end.
+Simply put, properties placed on a page's binding context are available to XML elements using the `{% raw %}{{ propertyName }}{% endraw %}` syntax. In this case, because JavaScript sets the view model's `email` to `"user@domain.com"`, and because you bound the email address textfield to that property using `<TextField text="{% raw %}{{ email }}{% endraw %}">`, when you run this app you'll see "user@domain.com" appear on the front end.
 
 ![](img/cli-getting-started/chapter3/ios/3.png)
 ![](img/cli-getting-started/chapter3/android/3.png)
@@ -905,7 +937,7 @@ exports.signIn = function() {
 
 <div class="exercise-end"></div>
 
-Take a moment to look at just how clean your code-behind file is now. The code-behind instantiates a view model (`UserViewModel`), and calls its `signIn()` method when the user taps the view's sign in button. Because the view model is bound to the page's two textfields (remember `{{ email }}` and `{{ password }}`), the view model already has the data it needs to perform the actual login.
+Take a moment to look at just how clean your code-behind file is now. The code-behind instantiates a view model (`UserViewModel`), and calls its `signIn()` method when the user taps the view's sign in button. Because the view model is bound to the page's two textfields (remember `{% raw %}{{ email }}{% endraw %}` and `{% raw %}{{ password }}{% endraw %}`), the view model already has the data it needs to perform the actual login.
 
 And if you try running your app, and input your account's credentials, you can indeed now login, but... you don't see anything. That's because view models aren't responsible for updating the UI. Instead the view model returns a `Promise` to let the code behind handle the UI. Let's see how you can use that `Promise`, and introduce a new NativeScript module in the process.
 
@@ -973,9 +1005,9 @@ Open `app/views/list/list.xml` and paste in the code below, which creates the li
 ```
 <Page loaded="load">
     <GridLayout>
-        <ListView items="{{ groceryList }}">
+        <ListView items="{% raw %}{{ groceryList }}{% endraw %}">
             <ListView.itemTemplate>
-                <Label text="{{ name }}" horizontalAlignment="left" verticalAlignment="center"/>
+                <Label text="{% raw %}{{ name }}{% endraw %}" horizontalAlignment="left" verticalAlignment="center"/>
             </ListView.itemTemplate>
         </ListView>
     </GridLayout>
@@ -987,7 +1019,7 @@ Open `app/views/list/list.xml` and paste in the code below, which creates the li
 
 As discussed earlier, even though you're using `<ListView>` in XML, the ListView module is still a NativeScript module. You can find its implementation in the `tns_modules/ui/list-view` folder. If you wanted to, you could construct a ListView in pure JavaScript code in the code-behind file as shown in [this example](http://docs.nativescript.org/ApiReference/ui/list-view/HOW-TO.html). However for most situations, using the NativeScript UI modules in XML is easier, so we'll be sticking with XML usage throughout this tutorial.
 
-The last thing to note here is the use of `<ListView.itemTemplate>`. This tag gives you the ability to control how each of the ListView's items displays within the list. For now you're using a simple `<Label>` UI component to display the `{{ name }}` of each grocery.
+The last thing to note here is the use of `<ListView.itemTemplate>`. This tag gives you the ability to control how each of the ListView's items displays within the list. For now you're using a simple `<Label>` UI component to display the `{% raw %}{{ name }}{% endraw %}` of each grocery.
 
 If you were to run this code as it stands, you wouldn't see any items in the grocery list. You need to build out a way to manage data within the ListView module, and to do that you're going to need a new NativeScript module: the ObservableArray.
 
@@ -996,7 +1028,7 @@ If you were to run this code as it stands, you wouldn't see any items in the gro
 In previous section of this guide you saw how to create observables and how to use them to connect XML views with code behind files and view models. You're going to do the same thing in this section with one additional twist, and it involves making this `items` attribute work:
 
 ```
-<ListView items="{{ groceryList }}">
+<ListView items="{% raw %}{{ groceryList }}{% endraw %}">
 ```
 
 The ListView module's `items` attribute takes an array, and to create that array on the view model, NativeScript provides a special ObservableArray module. To see how it works, let's start building the list page's code behind file.
@@ -1030,7 +1062,7 @@ exports.load = function(args) {
 
 <div class="exercise-end"></div>
 
-Here, you're creating a new Observable object called `pageData`, which you set as the page's `bindingContext` in the `load()` function. Inside the Observable, you set a single `"groceryList"` property to be a new instance of the ObservableArray module. Notice how the `"groceryList"` property corresponds to `<ListView items="{{ groceryList }}">`, and each array entry's `"name"` property corresponds to `<Label text="{{ name }}">`. If you run your app you'll see the list screen now shows the hardcoded data:
+Here, you're creating a new Observable object called `pageData`, which you set as the page's `bindingContext` in the `load()` function. Inside the Observable, you set a single `"groceryList"` property to be a new instance of the ObservableArray module. Notice how the `"groceryList"` property corresponds to `<ListView items="{% raw %}{{ groceryList }}{% endraw %}">`, and each array entry's `"name"` property corresponds to `<Label text="{% raw %}{{ name }}{% endraw %}">`. If you run your app you'll see the list screen now shows the hardcoded data:
 
 ![list 1](img/cli-getting-started/chapter4/ios/2.png)
 ![list 1](img/cli-getting-started/chapter4/android/2.png)
@@ -1133,7 +1165,7 @@ viewModel.empty = function() {
 
 The code to do an HTTP call should look familiar, as it's using the same http module you used in the previous section. Here, you're using the http module's `getJSON()` method, which automatically takes care of formatting the backend's response as JSON.
 
-If you load the app and login with email address “tj.vantoll@gmail.com” and password “password”, you should see a list of groceries that looks something like this:
+If you load the app and login with email address "tj.vantoll@gmail.com" and password "password", you should see a list of groceries that looks something like this:
 
 ![list 2](img/cli-getting-started/chapter4/ios/3.png)
 ![list 2](img/cli-getting-started/chapter4/android/3.png)
@@ -1163,18 +1195,18 @@ The `rows` attribute divides the screen into two rows, the first auto-sized acco
 Next, to give the user a means of adding groceries to the list, add a text field and a button to the page. Add these two lines of code directly after the initial `<GridLayout>` tag:
 
 ```
-<TextField id="grocery" text="{{ grocery }}" hint="Enter a grocery item" row="0" col="0" />
+<TextField id="grocery" text="{% raw %}{{ grocery }}{% endraw %}" hint="Enter a grocery item" row="0" col="0" />
 <Button text="Add" tap="add" row="0" col="1"></Button>
 ```
 
-The text field has an id attribute of `"grocery"`, and is bound to the `{{ grocery }}` property of the page's binding context. The button's `tap` event refers to an `add()` function, that you'll add to the code-behind file momentarily.
+The text field has an id attribute of `"grocery"`, and is bound to the `{% raw %}{{ grocery }}{% endraw %}` property of the page's binding context. The button's `tap` event refers to an `add()` function, that you'll add to the code-behind file momentarily.
 
 But the most important thing to note here is the use of the `row` and `col` attributes. These attributes are zero-based, so the text field's `row="0" col="0"` attributes place it in the first row and first column, whereas the button's `row="0" col="1"` attributes place it in the first row and second column.
 
 Finally, replace the `<ListView>` tag with the code below to place it in the second row, to have it span both columns, and also to give it an `id` attribute that you'll need later.
 
 ```
-<ListView items="{{ groceryList }}" id="groceryList" row="1" colSpan="2">
+<ListView items="{% raw %}{{ groceryList }}{% endraw %}" id="groceryList" row="1" colSpan="2">
 ```
 
 Now you just need to make the necessary changes to the code behind file to support these XML changes. Open `list.js` and start by adding a new `"grocery"` property to the `pageData` Observable. The `pageData` assignment should now look like this:
@@ -1509,7 +1541,7 @@ Open `app/views/list/list.xml`, find the `<ListView.itemTemplate>` tag, and repl
 ```
 <ListView.itemTemplate>
     <GridLayout columns="*, auto">
-        <Label text="{{ name }}"/>
+        <Label text="{% raw %}{{ name }}{% endraw %}"/>
         <Image src="res://ic_menu_delete" ios:visibility="collapsed" col="1" tap="delete" />
     </GridLayout>
 </ListView.itemTemplate>
@@ -1665,4 +1697,31 @@ Finally, if you find an error in this guide, or have suggestions about how we ca
 		window.getSelection().removeAllRanges();
 		$(this).blur();
 	});
+
+	// Replace the docs' nav with the quick-start nav
+	var sideNav = $("#page-nav").empty();
+	var html = "<ul>";
+	var chapterCount = 0;
+	var sectionCount = 0;
+	$("h2").each(function() {
+		chapterCount++;
+		html += "<li>" +
+			"<a href='" + $(this).find("a").attr("href") + "'>" +
+				chapterCount + ": " + $(this).text() +
+			"</a>";
+
+		// Add the subsections to the nav
+		html += "<ul>";
+		$(this).nextUntil("h2", "h3").each(function() {
+			sectionCount++;
+			html += "<li>" +
+				"<a href='" + $(this).find("a").attr("href") + "'>" +
+					chapterCount + "." + sectionCount + ": " + $(this).text() +
+				"</a></li>";
+		});
+		html += "</ul></li>";
+		sectionCount = 0;
+	});
+	html += "</ul>";
+	sideNav.html(html);
 </script>
