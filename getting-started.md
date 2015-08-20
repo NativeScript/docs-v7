@@ -63,15 +63,14 @@ position: 2
 		counter-increment: h3counter;
 	}
 
-	/* Account for the different nav */
-	#page-nav {
-		padding: 45px 20px 60px 4px;
+	#page-tree > ul {
+		margin-left: 0;
 	}
-	#page-nav > ul > li > a {
+	#page-tree > ul > li > a {
 		color: #141e2f;
 		font-weight: bold;
 	}
-	#page-nav > ul > li > ul a {
+	#page-tree > ul > li > ul a {
 		color: #556;
 	}
 </style>
@@ -1705,7 +1704,8 @@ Finally, if you find an error in this guide, or have suggestions about how we ca
 	});
 
 	// Replace the docs' nav with the quick-start nav
-	var sideNav = $("#page-nav").empty();
+	$("#page-tree").data("kendoTreeView").destroy();
+	var sideNav = $("#page-tree").empty();
 	var html = "<ul>";
 	var chapterCount = 0;
 	var sectionCount = 0;
