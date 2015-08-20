@@ -6,6 +6,7 @@ position: 2
 ---
 
 <style>
+	/* Style the code exercise boxes */
 	.exercise {
 		border: 1px solid #ccc;
 		border-radius: 0.3em;
@@ -21,6 +22,8 @@ position: 2
 		border-bottom: 1px solid #eee;
 		font-size: 1.1em;
 	}
+
+	/* Style the copy-to-clipboard buttons */
 	.prettyprint {
 		position: relative;
 		overflow: visible;
@@ -46,10 +49,10 @@ position: 2
 
 	/* Add the section counters */
 	body {
-		counter-reset: h2counter;
+		counter-reset: h2counter -1;
 	}
 	h2 {
-		counter-reset: h3counter;
+		counter-reset: h3counter -1;
 	}
 	h2::before {
 		content: counter(h2counter) ".\0000a0\0000a0";
@@ -115,7 +118,7 @@ The NativeScript CLI has a few system requirements you must have in place before
 
 > **Tip**: If you're a bit overwhelmed by these requirements, or if you're looking for a way to build iOS apps on Windows, you might be interested in [using NativeScript through Telerik AppBuilder](http://docs.nativescript.org/setup/quick-setup#the-appbuilder-tool-set). Telerik AppBuilder provides tooling for NativeScript apps, including the ability to perform iOS and Android builds in the cloud, which removes the need to complete these system requirements.
 
-After completing the setup you should have two commands available from your terminal: `tns`—which is short for **T**elerik **N**ative**S**cript—and `nativescript`. The two commands are equivalent, so we'll stick with the shorter `tns` command throughout this guide.
+After completing the setup you should have two commands available from your terminal: `tns`—which is short for <b>T</b>elerik <b>N</b>ative<b>S</b>cript—and `nativescript`. The two commands are equivalent, so we'll stick with the shorter `tns` command throughout this guide.
 
 You can verify the installation was successful by running `tns` in your terminal. You should see something like this:
 
@@ -187,7 +190,7 @@ tns platform add android
 
 <div class="exercise-end"></div>
 
->**Note:** You can only add platforms for SDKs that you already have installed on your development machine. If you get errors running `tns platform add`, refer back to the section on [setting up your development environment](#chapter1.0).
+>**Note:** You can only add platforms for SDKs that you already have installed on your development machine. If you get errors running `tns platform add`, refer back to the section on [setting up your development environment](#install-nativescript-and-configure-your-environment).
 
 The `platform add` command adds a folder called `platforms` to your project, and copies all of the required native SDKs into this folder. When you eventually build the application, the NativeScript CLI will copy your application code into the `platforms` folder so that a native binary can be created.
 
@@ -244,7 +247,7 @@ If your previous `tns run ios` or `tns run android` task is still running, type 
 
 Open your app's `app/views/login/login.xml` file in your text editor of choice and change `<Label text="hello world" />` to `<Label text="hello NativeScript" />`.
 
-Return to your terminal and run `tns run ios --emulator` if you're on a Mac, or `tns run android --emulator` if you're on Windows. You should the app relaunch and the updated text displayed.
+Return to your terminal and run either `tns run ios --emulator` (if you're on a Mac), or `tns run android --emulator`. You should see the app relaunch and the updated text displayed.
 
 <div class="exercise-end"></div>
 
@@ -298,7 +301,7 @@ To keep things simple, let's start by looking at the outer structure of the Groc
 Here's what these various files and folders do:
 
 - **app**: This folder contains all the development resources you need to build your app. You'll be spending most of your time editing the files in here.
-- **package.json**: This file contains configuration about your app, such as your app id, the version of NativeScript you're using, and also which npm modules your app uses. We'll take a closer look at how to use this file when we talk about using npm modules in [chapter 5](#chapter5).
+- **package.json**: This file contains configuration about your app, such as your app id, the version of NativeScript you're using, and also which npm modules your app uses. We'll take a closer look at how to use this file when we talk about using npm modules in [chapter 5](#plugins-and-npm-modules).
 - **platforms**: This folder contains the platform-specific code NativeScript needs to build native iOS and Android apps. For instance in the `android` folder you'll find things like your project's `AndroidManifest.xml` and .apk executable files. Similarly, the `ios` folder contains the Groceries' Xcode project and .ipa executables.
 
 The NativeScript CLI manages the `platforms` folder for you as you develop and run your app; therefore it's a best practice to treat the `platforms` folder as generated code. The Groceries app includes the `platforms` folder in its `.gitignore` to exclude its files from source control.
@@ -332,7 +335,7 @@ Here's what these various files and folders do:
 - **shared**: This folder contains any files you need to share across views in your app. In the Groceries app, you'll find a few view model objects and a `config.js` file used to share configuration variables like API keys.
 - **tns_modules**: This folder contains the NativeScript-provided modules you'll use to build your app. Each module contains the platform-specific code needed to implement some feature—the camera, http calls, the file system, and so forth—exposed through a platform-agnostic API (e.g. ```http.getJSON()```). We'll look at some examples momentarily.
 - **views**: This folder contains the code to build your app's views, each of which will have a subfolder in `views`. Each view is made up of an XML file, a JavaScript file, and an optional CSS file. The groceries app contains three folders for its three views.
-- **app.css**: This file contains global styles for your app. We'll dig into app styling in [section 2.3](#chapter2.3).
+- **app.css**: This file contains global styles for your app. We'll dig into app styling in [section 2.3](#css).
 - **app.js**: This file sets up your application's starting module and initializes the app.
 
 Let's start with `app/app.js`, as it's the starting point for NativeScript apps. Your `app.js` contains the three lines below: 
@@ -386,7 +389,7 @@ NativeScript UI components provide attributes to let you configure their behavio
 - `<Button>`
     - `text`: Controls the text displayed within the button.
 
-After you run your app with this change (refer back to [section 1.4](#chapter1.4) if you need to remember how to run NativeScript apps), you might not see what you expect, as only a single `<Button>` component shows on the screen:
+After you run your app with this change (refer back to [section 1.4](#development-workflow) if you need to remember how to run NativeScript apps), you might not see what you expect, as only a single `<Button>` component shows on the screen:
 
 ![login 1](img/cli-getting-started/chapter2/ios/1.png)
 ![login 1](img/cli-getting-started/chapter2/android/1.png)
@@ -813,7 +816,9 @@ If you dig into `tns_modules` you can get an idea of how these modules work. Sta
 - a file containing module's iOS implementation (`http-request.ios.js`);
 - a generic file (`http.js`) that abstracts the platform-specific code above into a platform-agnostic API, so that you can make HTTP calls on both platforms using a single JavaScript API.
 
-The \*.ios.\* and \*.android.\* naming should look familiar, as it's the exact same convention we used to include Android- and iOS-specific styling in [chapter 2.3](#chapter2.3). NativeScript uses this same convention to implement its modules on iOS and Android. Now that you know where these modules are, let's take a closer look at what else they can do for your app.
+> **Note**: You can refer to the [Node.js documentation on folders as modules](https://nodejs.org/api/modules.html#modules_folders_as_modules) for more detailed information on how NativeScript organizes its modules. (Remember that NativeScript modules adhere to the same CommonJS specification that Node.js modules do.)
+
+The \*.ios.\* and \*.android.\* naming convention should look familiar, as it's the exact same convention we used to include Android- and iOS-specific styling in [chapter 2.3](#css). NativeScript uses this same convention to implement its modules on iOS and Android. Now that you know where these modules are, let's take a closer look at what else they can do for your app.
 
 ### Connecting to a backend with the http module
 
@@ -835,7 +840,7 @@ Next, take a look in the `app/shared/view-models` folder, which contains a few v
 
 > **Note**: In a larger app, it's pretty common to place code that interacts with the backend in separate files, and not directly in the view models. But in our case, the connection code lives directly in the view model for simplicity—which is perfectly reasonable for small apps. 
 
-Note the that `register()` function makes use of the config module to get the path to the backend, as well as the [http module](http://docs.nativescript.org/ApiReference/http/README.html) that you examined in the `tns_modules` folder earlier.
+Note that the `register()` function makes use of the config module to get the path to the backend, as well as the [http module](http://docs.nativescript.org/ApiReference/http/README.html) that you examined in the `tns_modules` folder earlier.
 
 ```
 var httpModule = require("http");
@@ -943,7 +948,7 @@ And if you try running your app, and input your account's credentials, you can i
 
 ### Dialog module
 
-To utilize the `Promise` that the view model's `login()` function returns, you need to handle two scenarios: what do do when the login works, and what to do when it doesn't.
+To utilize the `Promise` that the view model's `login()` function returns, you need to handle two scenarios: what to do when the login works, and what to do when it doesn't.
 
 In the case of Groceries, when the login works you're going to navigate the user to the list page, which you'll be building momentarily, and which will let the user add and remove groceries from a list. To do the navigation you'll use the same frame module you used earlier in this guide.
 
@@ -1704,7 +1709,6 @@ Finally, if you find an error in this guide, or have suggestions about how we ca
 	var chapterCount = 0;
 	var sectionCount = 0;
 	$("h2").each(function() {
-		chapterCount++;
 		html += "<li>" +
 			"<a href='" + $(this).find("a").attr("href") + "'>" +
 				chapterCount + ": " + $(this).text() +
@@ -1713,13 +1717,14 @@ Finally, if you find an error in this guide, or have suggestions about how we ca
 		// Add the subsections to the nav
 		html += "<ul>";
 		$(this).nextUntil("h2", "h3").each(function() {
-			sectionCount++;
 			html += "<li>" +
 				"<a href='" + $(this).find("a").attr("href") + "'>" +
 					chapterCount + "." + sectionCount + ": " + $(this).text() +
 				"</a></li>";
+			sectionCount++;
 		});
 		html += "</ul></li>";
+		chapterCount++;
 		sectionCount = 0;
 	});
 	html += "</ul>";
