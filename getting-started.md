@@ -1,6 +1,6 @@
 ---
-nav-title: "Getting Started with NativeScript"
-title: "Getting Started"
+nav-title: "Getting Started Guide"
+title: "Getting Started Guide"
 description: "Learn the basics of how NativeScript works, how to set up your system, and how to create your first app"
 position: 2
 ---
@@ -51,14 +51,14 @@ position: 2
 	body {
 		counter-reset: h2counter -1;
 	}
-	h2 {
+	#page-article h2 {
 		counter-reset: h3counter -1;
 	}
-	h2::before {
+	#page-article h2::before {
 		content: counter(h2counter) ".\0000a0\0000a0";
 		counter-increment: h2counter;
 	}
-	h3::before {
+	#page-article h3::before {
 		content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
 		counter-increment: h3counter;
 	}
@@ -76,9 +76,9 @@ position: 2
 	}
 </style>
 
-## Getting Started with NativeScript
+## NativeScript Getting Started Guide
 
-Welcome to the [NativeScript](https://nativescript.org) quick-start guide. In this guided tutorial you'll use NativeScript, a cross-platform JavaScript framework for building native mobile apps, to build an iOS and Android app from scratch.
+Welcome to the [NativeScript](https://nativescript.org) getting started guide. In this guided tutorial you'll use NativeScript, a cross-platform JavaScript framework for building native mobile apps, to build an iOS and Android app from scratch.
 
 > **Note**: If you'd prefer a video introduction to NativeScript, check out our [getting started guide on YouTube](https://www.youtube.com/watch?v=rsCT5fpES4Q).
 
@@ -1690,6 +1690,7 @@ Finally, if you find an error in this guide, or have suggestions about how we ca
 			$(this).prepend("<button class='copy-button' title='Copy to clipboard'>Copy</button>");
 		});
 	}
+
 	// Add copy-to-clipboard behavior to the copy buttons.
 	// See https://developers.google.com/web/updates/2015/04/cut-and-copy-commands?hl=en
 	$(".copy-button").on("click", function() {
