@@ -63,6 +63,7 @@ position: 2
 		counter-increment: h3counter;
 	}
 
+	/* Customize the nav for the getting started page */
 	#page-tree > ul {
 		margin-left: 0;
 	}
@@ -72,6 +73,25 @@ position: 2
 	}
 	#page-tree > ul > li > ul a {
 		color: #556;
+	}
+
+	/* Make the nav sticky on larger screens */
+	@media (min-width: 1010px) {
+		#page-tree {
+			position: fixed;
+			overflow: auto;
+			max-width: calc((1280px - 120px) * .25);
+			width: calc(25% - (40px * 2) - (20px * 2));
+			height: 100%;
+			top: 80px;
+		}
+		#page-tree > ul {
+			padding-bottom: 150px;
+		}
+	}
+	.Footer {
+		position: relative;
+		z-index: 2;
 	}
 </style>
 
@@ -1730,4 +1750,12 @@ Finally, if you find an error in this guide, or have suggestions about how we ca
 	});
 	html += "</ul>";
 	sideNav.html(html);
+
+	// Make the nav sticky
+	function stickyNav() {
+		sideNav[0].style.top = (window.pageYOffset > 80) ? 0 :
+			(80 - window.pageYOffset) + "px";
+	}
+	stickyNav();
+	$(window).on("scroll", stickyNav);
 </script>
