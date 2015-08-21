@@ -231,13 +231,15 @@ If all went well, you should see something like this:
 
 ![iOS login](img/cli-getting-started/chapter1/ios/1.png)
 
-Likewise, you can run your app in the Android emulator with the following command:
+Next, run your app on an Android emulator with the following command:
 
 ```
 tns run android --emulator
 ```
 
-> **Warning**: You must have at least one Android AVD (Android Virtual Device) configured for this command to work. If you get an error, try [setting up an AVD](https://www.genymotion.com/#!/) and then run the command again.
+> **Warnings**:
+* 1) You must have at least one Android AVD (Android Virtual Device) configured for this command to work. If you get an error, try [setting up an AVD](https://www.genymotion.com/#!/) and then run the command again.
+* 2) If you're using Genymotion, launch your Genymotion virtual device, and then run `tns run android` *without* the `--emulator` flag. The flag is unnecessary because the Android command-line tools see Genymotion virtual devices as physical devices, not emulators.
 
 If all went well, you should see your app running in an Android emulator:
 
@@ -249,8 +251,7 @@ Here are a few other tips for running NativeScript apps.
 
 > **Tips**:
 > * 1) To run on a USB-connected Android or iOS device, use the same `run` command with the `--emulator` flag omitted—i.e. `tns run android` and `tns run ios`.
-> * 2) NativeScript supports running NativeScript apps in [Genymotion](https://www.genymotion.com/#!/) emulators. To deploy to a Genymotion virtual device, launch your Genymotion virtual device and run `tns run android`.
-> * 3) The `tns device` command list all USB-connected iOS devices, USB-connected Android devices, and Genymotion virtual devices that `tns run` can deploy to. Note that `tns device` does not list iOS simulators or Android AVDs.
+> * 2) The `tns device` command list all USB-connected iOS devices, USB-connected Android devices, and Genymotion virtual devices that `tns run` can deploy to. Note that `tns device` does not list iOS simulators or Android AVDs.
 
 ### Development workflow
 
@@ -872,17 +873,7 @@ Let's look at how the http module works by adding another method to the user vie
     <b>Exercise</b>: Complete the login in the view model
 </h4>
 
-Open `app/shared/view-models/user-view-model.js` and find the empty `login()` function:
-
-<div class="no-copy-button"></div>
-
-```
-viewModel.login = function() {
-
-};
-```
-
-Replace the empty `viewModel.login()` function with the code below:
+Open `app/shared/view-models/user-view-model.js` and paste the following code directly above the existing `viewModel.register()` function:
 
 ```
 viewModel.login = function() {
