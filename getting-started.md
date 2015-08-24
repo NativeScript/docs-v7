@@ -3,97 +3,8 @@ nav-title: "Getting Started Guide"
 title: "Getting Started Guide"
 description: "Learn the basics of how NativeScript works, how to set up your system, and how to create your first app"
 position: 2
+guide: true
 ---
-
-<style>
-	/* Style the code exercise boxes */
-	.exercise {
-		border: 1px solid #ccc;
-		border-radius: 0.3em;
-		margin-bottom: 1em;
-	}
-	.exercise p, .exercise pre {
-		margin-left: 1em;
-		margin-right: 1em;
-	}
-	.exercise h4 {
-		margin-top: 0;
-		padding: 0.8em;
-		border-bottom: 1px solid #eee;
-		font-size: 1.1em;
-	}
-
-	/* Style the copy-to-clipboard buttons */
-	.prettyprint {
-		position: relative;
-		overflow: visible;
-	}
-	.copy-button {
-		position: absolute;
-		top: -1.5em;
-		right: 0;
-		height: 1.5em;
-		padding: 0 0.5em;
-		background: #fbfdfe;
-		border: 2px solid #dbe3e4;
-		border-width: 1px 1px 0 1px;
-		font-size: 1.3em;
-	}
-	.copy-button:active, .copy-button:focus {
-		background: #5854F8;
-		outline: 0;
-	}
-	.copy-button:active .typ, .copy-button:focus .typ {
-		color: white;
-	}
-
-	/* Add the section counters */
-	body {
-		counter-reset: h2counter -1;
-	}
-	#page-article h2 {
-		counter-reset: h3counter -1;
-	}
-	#page-article h2::before {
-		content: counter(h2counter) ".\0000a0\0000a0";
-		counter-increment: h2counter;
-	}
-	#page-article h3::before {
-		content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
-		counter-increment: h3counter;
-	}
-
-	/* Customize the nav for the getting started page */
-	#page-tree > ul {
-		margin-left: 0;
-	}
-	#page-tree > ul > li > a {
-		color: #141e2f;
-		font-weight: bold;
-	}
-	#page-tree > ul > li > ul a {
-		color: #556;
-	}
-
-	/* Make the nav sticky on larger screens */
-	@media (min-width: 1010px) {
-		#page-tree {
-			position: fixed;
-			overflow: auto;
-			max-width: calc((1280px - 120px) * .25);
-			width: calc(25% - (40px * 2) - (20px * 2));
-			height: 100%;
-			top: 80px;
-		}
-		#page-tree > ul {
-			padding-bottom: 150px;
-		}
-	}
-	.Footer {
-		position: relative;
-		z-index: 2;
-	}
-</style>
 
 ## NativeScript Getting Started Guide
 
@@ -360,7 +271,7 @@ Here's what these various files and folders do:
 
 Let's start with `app/app.js`, as it's the starting point for NativeScript apps. Your `app.js` contains the three lines below: 
 
-```
+``` JavaScript
 var applicationModule = require("application");
 applicationModule.mainModule = "./views/login/login";
 applicationModule.start();
@@ -376,7 +287,7 @@ Now that your app is ready for development, let's add some UI components to make
 
 Let's dig into the files used to create your app's UI, which reside in the `app/views` folder. Each folder in `app/views` contains the code for one of the three pages in Groceries: `list`, `login`, and `register`. If you look in the `app/views/login` folder, you'll see three files: `login.css`, `login.js`, and the `login.xml` file we updated in the previous chapter. If you open `login.xml` again you should see the following code:
 
-```
+``` XML
 <Page>
     <Label text="hello NativeScript" />
 </Page>
@@ -390,7 +301,7 @@ This page currently contains two UI components: a `<Page>` and a `<Label>`. To m
 
 Open `app/views/login/login.xml` and replace the existing `<Label>` with the following code:
 
-```
+``` XML
 <TextField hint="Email Address" keyboardType="email" />
 <TextField secure="true" hint="Password" />
 
@@ -436,7 +347,7 @@ In the case of your login screen, all you need is a simple `<StackLayout>` to st
 
 In your `login.xml`, add the `<StackLayout>` component below directly within the `<Page>` component. Your `login.xml` should look like this:
 
-```
+``` XML
 <Page>
     <StackLayout orientation="vertical">
 
@@ -479,7 +390,7 @@ Let's start by adding a few application-wide CSS rules.
 
 Paste the following code in your app's `app.css` file:
 
-```
+``` CSS
 Page {
     background-color: white;
     font-size: 17;
@@ -512,13 +423,13 @@ Let's make one more change. Although oftentimes you want CSS rules to apply equa
 
 Add the following as the first line of your app's `app.css` file:
 
-```
+``` CSS
 @import { url('~/platform.css') };
 ```
 
 Next, add a `cssClass="link"` attribute to the sign up button in `login.xml`. The button's markup should look like this:
 
-```
+``` XML
 <Button text="Sign up for Groceries" cssClass="link" />
 ```
 
@@ -538,7 +449,7 @@ There's one other change here we need to discuss, and that's the `cssClass` attr
 
 NativeScript uses the `cssClass` attribute for adding CSS class names to UI components. In this case the class name is used to give the sign up button a slightly different look than the sign in button. You can find the CSS rules associated with this class name in `platform.android.css` and `platform.ios.css`:
 
-```
+``` CSS
 /* From platform.android.css */
 .link {
     background-color: transparent;
@@ -563,13 +474,13 @@ Feel free to take some time to play with the look of this app before moving on. 
 
 In NativeScript you use the `<Image>` UI component and its `src` attribute to add images to your pages. The `src` attribute allows you to specify your image in three ways. The first (and simplest) way is to point at the URL of an image:
 
-```
+``` XML
 <Image src="https://www.nativescript.org/images/default-source/landingpages/logo.png" />
 ```
 
 The second way is to point at an image that lives within your app's `app` folder. For instance if you have an image at `app/images/logo.png`, you can use it with:
 
-```
+``` XML
 <Image src="~/images/logo.png" />
 ```
 
@@ -581,7 +492,7 @@ The third way, and the one Groceries uses, is to use platform-specific image res
 
 In `login.xml`, add the `<Image>` below as the first child of the existing `<StackLayout>` tag:
 
-```
+``` XML
 <Image src="res://logo" stretch="none" horizontalAlignment="center" />
 ```
 
@@ -622,13 +533,13 @@ Let's look at what you can do in a code-behind file with a simple example.
 
 Open `login.xml` and add a `loaded` attribute to the `<Page>` UI component at the top. It should look like this:
 
-```
+``` XML
 <Page loaded="load">
 ```
 
 Next, paste the code below in `app/views/login/login.js` to define a `load()` function:
 
-```
+``` JavaScript
 exports.load = function() {
     console.log("hello");
 };
@@ -649,14 +560,14 @@ This simple example shows you how you can append attributes to UI components to 
 
 You can add a `tap` attribute that will fire when the user taps or touches a button. In `app/views/login/login.xml`, switch the two buttons at the bottom of the screen to use this markup:
 
-```
+``` XML
 <Button text="Sign in" tap="signIn" />
 <Button text="Sign up for Groceries" cssClass="link" tap="register" />
 ```
 
 Then, at the bottom of the `app/views/login/login.js` file, paste in the following `signIn()` and `register()` functions:
 
-```
+``` JavaScript
 exports.signIn = function() {
     alert("Signing in");
 };
@@ -684,13 +595,13 @@ When you tap the “Sign Up for Groceries” button, you would expect a navigati
 
 In `app/views/login/login.js`, add this line to the top of the file:
 
-```
+``` JavaScript
 var frameModule = require("ui/frame");
 ```
 
 Then, replace the current `register()` function with the version shown below:
 
-```
+``` JavaScript
 exports.register = function() {
     var topmost = frameModule.topmost();
     topmost.navigate("./views/register/register");
@@ -729,13 +640,13 @@ Since you have been working with forms in NativeScript, you need to understand h
 
 Open `login.xml` and add an `id="email_address"` attribute to the email textfield. Its markup should now look like this:
 
-```
+``` XML
 <TextField id="email_address" hint="Email Address" keyboardType="email" />
 ```
 
 With an `id` attribute in place, you can now access this textfield in your code-behind file. To do that, start by opening `app/views/login/login.js` back up, and adding the code below at the top, underneath the `frameModule` variable.
 
-```
+``` JavaScript
 var viewModule = require("ui/core/view");
 var email;
 ```
@@ -744,7 +655,7 @@ var email;
 
 Next, edit the `load()` function in `login.js` to get a reference to the email address text field:
 
-```
+``` JavaScript
 exports.load = function(args) {
     var page = args.object;
     email = viewModule.getViewById(page, "email_address");
@@ -757,7 +668,7 @@ There are two things to note here. First, because the `load()` function handles 
 
 Finally, edit the `signIn()` function to log the contents of the textfield:
 
-```
+``` JavaScript
 exports.signIn = function() {
     console.log(email.text);
 };
@@ -782,7 +693,7 @@ The Observable is the view model in the MVVM design pattern. It provides a mecha
 
 To allow for two-way data binding using an Observable, open `login.xml`, and replace the two existing TextField UI components with the two shown below, which each include a new `text` attribute:
 
-```
+``` XML
 <TextField id="email_address" text="{% raw %}{{ email }}{% endraw %}" hint="Email Address" keyboardType="email" />
 <TextField secure="true" text="{% raw %}{{ password }}{% endraw %}" hint="Password" />
 ```
@@ -791,7 +702,7 @@ To allow for two-way data binding using an Observable, open `login.xml`, and rep
 
 Add the following code to the top of `app/views/login/login.js`, which includes the observable module, and defines a new `user` object, which you'll be using as this page's view model:
 
-```
+``` JavaScript
 var observableModule = require("data/observable");
 
 var user = new observableModule.Observable({
@@ -802,7 +713,7 @@ var user = new observableModule.Observable({
 
 Now, replace the existing `load()` function with the one below, which sets `user` as the binding context for the page.
 
-```
+``` JavaScript
 exports.load = function(args) {
     var page = args.object;
     page.bindingContext = user;
@@ -848,7 +759,7 @@ When you created your own account on the registration page, you probably noticed
 
 Take a look at `app/shared/config.js`. There's only a small code snippet there, but it includes a hardcoded root path to the Groceries backend that the register page uses, and that you'll be using momentarily:
 
-```
+``` JavaScript
 module.exports = {
     apiUrl: "http://api.everlive.com/v1/GWfRtXi1Lwt4jcqK/"
 };
@@ -862,7 +773,7 @@ Next, take a look in the `app/shared/view-models` folder, which contains a few v
 
 Note that the `register()` function makes use of the config module to get the path to the backend, as well as the [http module](http://docs.nativescript.org/ApiReference/http/README.html) that you examined in the `tns_modules` folder earlier.
 
-```
+``` JavaScript
 var httpModule = require("http");
 var config = require("../../shared/config");
 ```
@@ -875,7 +786,7 @@ Let's look at how the http module works by adding another method to the user vie
 
 Open `app/shared/view-models/user-view-model.js` and paste the following code directly above the existing `viewModel.register()` function:
 
-```
+``` JavaScript
 viewModel.login = function() {
     return new Promise(function(resolve, reject) {
         httpModule.request({
@@ -920,7 +831,7 @@ With this code in place let's return to `login.js` to use this new function.
 
 In `login.js`, include a reference to the `shared/view-models/user-view-model` file.
 
-```
+``` JavaScript
 var UserViewModel = require("../../shared/view-models/user-view-model");
 ```
 
@@ -928,7 +839,7 @@ Remove the following four lines of code, as you'll be using the `UserViewModel` 
 
 <div class="no-copy-button"></div>
 
-```
+``` JavaScript
 var observableModule = require("data/observable");
 var user = new observableModule.Observable({
     email: "user@domain.com",
@@ -938,13 +849,13 @@ var user = new observableModule.Observable({
 
 Next, add the following line of code after the `var UserViewModel = require(...)` line:
 
-```
+``` JavaScript
 var user = new UserViewModel();
 ```
 
 Finally, replace the `exports.signIn()` function with the code below:
 
-```
+``` JavaScript
 exports.signIn = function() {
     user.login();
 };
@@ -970,13 +881,13 @@ The trickier situation is handling when the login fails, and for that you're goi
 
 Add the following line to the top of `login.js` to import the dialog module:
 
-```
+``` JavaScript
 var dialogsModule = require("ui/dialogs");
 ```
 
 Next, re-write your `signIn()` function to look like this:
 
-```
+``` JavaScript
 exports.signIn = function() {
     user.login()
         .then(function() {
@@ -1000,7 +911,7 @@ With that, the login page is now completely functional! Now that you have user m
 
 > **Tip**: From this point forward in the guide you'll have to login a lot, so you may find it helpful to hardcode your credentials in the app during development. The easiest way to do that is pass an email address and password to the `UserViewModel()` constructor, for example:
 
-> ```
+> ``` JavaScript
 > var user = new UserViewModel({
 >     email: "username@domain.com",
 >     password: "password"
@@ -1017,7 +928,7 @@ As its name implies, the ListView widget lets you show a list of things on the s
 
 Open `app/views/list/list.xml` and paste in the code below, which creates the list where your groceries will reside:
 
-```
+``` XML
 <Page loaded="load">
     <GridLayout>
         <ListView items="{% raw %}{{ groceryList }}{% endraw %}">
@@ -1042,7 +953,7 @@ If you were to run this code as it stands, you wouldn't see any items in the gro
 
 In previous section of this guide you saw how to create observables and how to use them to connect XML views with code behind files and view models. You're going to do the same thing in this section with one additional twist, and it involves making this `items` attribute work:
 
-```
+``` XML
 <ListView items="{% raw %}{{ groceryList }}{% endraw %}">
 ```
 
@@ -1054,7 +965,7 @@ The ListView module's `items` attribute takes an array, and to create that array
 
 Open `app/views/list/list.js` and paste in the following code:
 
-```
+``` JavaScript
 var dialogsModule = require("ui/dialogs");
 var observableModule = require("data/observable");
 var observableArrayModule = require("data/observable-array");
@@ -1086,7 +997,7 @@ Now that we have items on the screen let's look at how you can tie this list to 
 
 A starting view model for this page is already in the file at `app/shared/view-models/grocery-list-view-model.js`, which you can see contains the code that looks a lot like you already have in `list.js`:
 
-```
+``` JavaScript
 var config = require("../../shared/config");
 var httpModule = require("http");
 var observableArrayModule = require("data/observable-array");
@@ -1107,7 +1018,7 @@ Let's expand on this to tie this view model to a backend.
 
 You're going to start by changing `list.js` to use the `GroceryListViewModel`. First, `require()` the `GroceryListViewModel` so you can use it:
 
-```
+``` JavaScript
 var GroceryListViewModel = require("../../shared/view-models/grocery-list-view-model");
 ```
 
@@ -1115,7 +1026,7 @@ Next, remove the existing `var pageData` assignment:
 
 <div class="no-copy-button"></div>
 
-```
+``` JavaScript
 // Remove these seven lines of code
 var pageData = new observableModule.Observable({
     groceryList: new observableArrayModule.ObservableArray([
@@ -1128,7 +1039,7 @@ var pageData = new observableModule.Observable({
 
 And add the code below in the same location:
 
-```
+``` JavaScript
 var groceryList = new GroceryListViewModel([]);
 var pageData = new observableModule.Observable({
     groceryList: groceryList
@@ -1137,7 +1048,7 @@ var pageData = new observableModule.Observable({
 
 Finally, replace the existing `exports.load()` function with the one below, which calls two new methods on the view model—`empty()` and `load()`.
 
-```
+``` JavaScript
 exports.load = function(args) {
     page = args.object;
     page.bindingContext = pageData;
@@ -1151,7 +1062,7 @@ In this code, `groceryList` is now referencing the grocery list model, and the `
 
 The last piece to make this work is actually implementing the `empty()` and `load()` functions in the view model. Open `app/shared/view-models/grocery-list-view-model.js`, and paste the following code between the `var viewModel` assignment, and the `return viewModel` statement.
 
-```
+``` JavaScript
 viewModel.load = function() {
     httpModule.getJSON({
         url: config.apiUrl + "Groceries",
@@ -1201,7 +1112,7 @@ But, to give the user the ability to add items to this list you're going to have
 
 Open `app/views/list/list.xml` and change the `<GridLayout>` tag to use the code below:
 
-```
+``` XML
 <GridLayout rows="auto, *" columns="2*, *">
 ```
 
@@ -1209,7 +1120,7 @@ The `rows` attribute divides the screen into two rows, the first auto-sized acco
 
 Next, to give the user a means of adding groceries to the list, add a text field and a button to the page. Add these two lines of code directly after the initial `<GridLayout>` tag:
 
-```
+``` XML
 <TextField id="grocery" text="{% raw %}{{ grocery }}{% endraw %}" hint="Enter a grocery item" row="0" col="0" />
 <Button text="Add" tap="add" row="0" col="1"></Button>
 ```
@@ -1220,13 +1131,13 @@ But the most important thing to note here is the use of the `row` and `col` attr
 
 Finally, replace the `<ListView>` tag with the code below to place it in the second row, to have it span both columns, and also to give it an `id` attribute that you'll need later.
 
-```
+``` XML
 <ListView items="{% raw %}{{ groceryList }}{% endraw %}" id="groceryList" row="1" colSpan="2">
 ```
 
 Now you just need to make the necessary changes to the code behind file to support these XML changes. Open `list.js` and start by adding a new `"grocery"` property to the `pageData` Observable. The `pageData` assignment should now look like this:
 
-```
+``` JavaScript
 var pageData = new observableModule.Observable({
     groceryList: groceryList,
     grocery: ""
@@ -1235,7 +1146,7 @@ var pageData = new observableModule.Observable({
 
 Next, you need to add an `add()` function to handle the button tap event. Paste in the following code at the bottom of `list.js`:
 
-```
+``` JavaScript
 exports.add = function() {
     // Check for empty submissions
     if (pageData.get("grocery").trim() !== "") {
@@ -1263,7 +1174,7 @@ In this function, you first ensure the user didn't submit without typing a groce
 
 Therefore the last thing you need to do is define that `add()` function. To do so, open `app/shared/view-models/grocery-list-view-model.js` and paste the following function under the `empty()` function, but before the `return viewModel` statement.
 
-```
+``` JavaScript
 viewModel.add = function(grocery) {
     return new Promise(function(resolve, reject) {
         httpModule.request({
@@ -1335,7 +1246,7 @@ npm install email-validator --save
 
 The install process does a few things in the background. First, because you added the `--save` flag, npm records this dependency in your app's `package.json`. If you open your `package.json` you should now see `"email-validator"` in your app's `"dependencies"` array.
 
-```
+``` JavaScript
 "dependencies": {
   "email-validator": "^1.0.2"
 }
@@ -1353,7 +1264,7 @@ Now that you have the module installed let's look at how to use it.
 
 Open `/app/shared/view-models/user-view-model.js` and add the following line at the top of the file:
 
-```
+``` JavaScript
 var validator = require("email-validator/index");
 ```
 
@@ -1361,7 +1272,7 @@ var validator = require("email-validator/index");
 
 To make use of this validator, add a function to `user-view-model.js`, right above the line `return viewModel`:
 
-```
+``` JavaScript
 viewModel.isValidEmail = function() {
     var email = this.get("email");
     return validator.validate(email);
@@ -1370,7 +1281,7 @@ viewModel.isValidEmail = function() {
 
 Then, edit the registration function in `app/views/register/register.js` to trap any malformed email addresses:
 
-```
+``` JavaScript
 exports.register = function() {
     if (user.isValidEmail()) {
         completeRegistration();
@@ -1422,13 +1333,13 @@ Now that you've installed the social share plugin, let's look at how to use it.
 
 Open `app/views/list/list.js` and add the following line at the top of the file, which requires the social share module you just installed:
 
-```
+``` JavaScript
 var socialShare = require("nativescript-social-share");
 ```
 
 Next you have to add some UI that lets the user share their grocery list. To do so, open `app/views/list/list.xml` and add the following code below the opening `<Page>` tag, and above the opening `<GridLayout>` tag.
 
-```
+``` XML
 <Page.actionBar>
     <ActionBar title="Groceries">
         <ActionBar.actionItems>
@@ -1446,7 +1357,7 @@ With the module installed and required, and the UI in place, the last thing you 
 
 To do so, return to `list.js` and paste the following code at the bottom of the file:
 
-```
+``` JavaScript
 exports.share = function() {
     var list = [];
     var finalList = "";
@@ -1493,7 +1404,7 @@ Before you start tinkering with the `UINavigationBar` let's add an `<ActionBar>`
 
 Open `app/views/register/register.xml` and paste the following code in directly after the opening `<Page>` tag:
 
-```
+``` XML
 <Page.actionBar>
     <ActionBar title="Sign up"></ActionBar>
 </Page.actionBar>
@@ -1501,7 +1412,7 @@ Open `app/views/register/register.xml` and paste the following code in directly 
 
 Next, open `app/views/login/login.xml` and paste in the following code, again directly after the opening `<Page>` tag:
 
-```
+``` XML
 <Page.actionBar>
     <ActionBar title="Sign in"></ActionBar>
 </Page.actionBar>
@@ -1509,7 +1420,7 @@ Next, open `app/views/login/login.xml` and paste in the following code, again di
 
 With the ActionBar in place, let's look at how to customize its look with some native iOS APIs. Open `app/views/login/login.js` and paste the following code in the `exports.load()` function, directly after the `var page = args.object;` assignment:
 
-```
+``` JavaScript
 if (page.ios) {
     var navigationBar = frameModule.topmost().ios.controller.navigationBar;
     navigationBar.barTintColor = UIColor.colorWithRedGreenBlueAlpha(0.011, 0.278, 0.576, 1);
@@ -1541,7 +1452,7 @@ For Android you're going to add tappable trash cans to each item in the grocery 
 
 To do so you'll use a new bit of syntax in your XML. NativeScript allows you to set an attribute for only one platform using the `platform:attributeName` syntax. For instance the following sets a button's text to “foo” on iOS, and “bar” on Android:
 
-```
+``` XML
 <Button ios:text="foo" android:text="bar" />
 ```
 
@@ -1553,7 +1464,7 @@ This same syntax is available for all attributes for all UI components, and this
 
 Open `app/views/list/list.xml`, find the `<ListView.itemTemplate>` tag, and replace it with the code below:
 
-```
+``` XML
 <ListView.itemTemplate>
     <GridLayout columns="*, auto">
         <Label text="{% raw %}{{ name }}{% endraw %}"/>
@@ -1578,7 +1489,7 @@ The last thing to do is make the trash actually delete items, and to do that you
 
 Open `app/views/list/list.js` and paste the following code at the bottom of the file:
 
-```
+``` JavaScript
 exports.delete = function(args) {
     var item = args.view.bindingContext;
     var index = groceryList.indexOf(item);
@@ -1590,7 +1501,7 @@ This code reads gets the index of the grocery the user tapped, matches that to c
 
 Open `app/shared/view-models/grocery-list-view-model.js` and paste in the code below. Remember to add this function toward the end of the file, right above the `return viewModel` line:
 
-```
+``` JavaScript
 viewModel.delete = function(index) {
     return new Promise(function(resolve, reject) {
         httpModule.request({
@@ -1635,13 +1546,13 @@ Don't worry too much about exactly what this code is doing, as it involves a bit
 
 Add the following line of code to the top of `app/views/list/list.js`:
 
-```
+``` JavaScript
 var swipeDelete = require("../../shared/utils/ios-swipe-delete");
 ```
 
 Then, add the following code to the `exports.load()` function, directly under the `page = args.object;` assignment:
 
-```
+``` JavaScript
 if (page.ios) {
     var listView = viewModule.getViewById(page, "groceryList");
     swipeDelete.enable(listView, function(index) {
@@ -1675,78 +1586,3 @@ Your journey with NativeScript is just beginning. Here are some resources to hel
 - Look through the NativeScript [sample apps](https://www.nativescript.org/app-samples-with-code) to get an idea of what people are building.
 
 Finally, if you find an error in this guide, or have suggestions about how we can make it better, please file those ideas in [this guide's issue tracker](https://github.com/NativeScript/quick-start/issues) on GitHub.
-
-<script>
-	// Build the exercise sections
-	$(".exercise-start").each(function() {
-		var exerciseDiv = $("<div class='exercise'></div>");
-		$(this).before(exerciseDiv);
-		$(this).nextUntil(".exercise-end").addBack().appendTo(exerciseDiv);
-	});
-	$(".exercise-end").remove();
-
-	// Detecting clipboard support without UA sniffing is basically impossible
-	// at the moment. We can (hopefully) whitelist Firefox after the upcoming
-	// Firefox 41 release.
-	// See https://gist.github.com/jonrohan/81085b119d16cdd7868a
-	if (navigator.userAgent.match(/Chrome/)) {
-		// Add copy buttons to all pre tags in exercises
-		$(".exercise pre").each(function() {
-			// Pre tags in exercises can remove the code button by including a div
-			// with the no-copy-button class name before them.
-			if ($(this).prev().hasClass("no-copy-button")) {
-				return;
-			}
-			$(this).prepend("<button class='copy-button' title='Copy to clipboard'>Copy</button>");
-		});
-	}
-
-	// Add copy-to-clipboard behavior to the copy buttons.
-	// See https://developers.google.com/web/updates/2015/04/cut-and-copy-commands?hl=en
-	$(".copy-button").on("click", function() {
-		window.getSelection().removeAllRanges();
-		var codeElement = $(this).parent().find("code")[0];
-		var range = document.createRange();
-		range.selectNode(codeElement);
-		window.getSelection().addRange(range);
-		document.execCommand("copy");
-		window.getSelection().removeAllRanges();
-		$(this).blur();
-	});
-
-	// Replace the docs' nav with the quick-start nav
-	$("#page-tree").data("kendoTreeView").destroy();
-	var sideNav = $("#page-tree").empty();
-	var html = "<ul>";
-	var chapterCount = 0;
-	var sectionCount = 0;
-	$("h2").each(function() {
-		html += "<li>" +
-			"<a href='" + $(this).find("a").attr("href") + "'>" +
-				chapterCount + ": " + $(this).text() +
-			"</a>";
-
-		// Add the subsections to the nav
-		html += "<ul>";
-		$(this).nextUntil("h2", "h3").each(function() {
-			html += "<li>" +
-				"<a href='" + $(this).find("a").attr("href") + "'>" +
-					chapterCount + "." + sectionCount + ": " + $(this).text() +
-				"</a></li>";
-			sectionCount++;
-		});
-		html += "</ul></li>";
-		chapterCount++;
-		sectionCount = 0;
-	});
-	html += "</ul>";
-	sideNav.html(html);
-
-	// Make the nav sticky
-	function stickyNav() {
-		sideNav[0].style.top = (window.pageYOffset > 80) ? 0 :
-			(80 - window.pageYOffset) + "px";
-	}
-	stickyNav();
-	$(window).on("scroll", stickyNav);
-</script>
