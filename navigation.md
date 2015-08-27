@@ -18,7 +18,7 @@ NativeScript apps consist of pages which represent the separate application scre
 * [Navigation](#navigation)
     * [The Topmost Frame](#the-topmost-frame)
     * [Navigate by Page Name](#navigate-by-page-name)
-    * [Navigate with Factory Function](#navigate-with-factory-function)
+    * [Navigate Using a Function](#navigate-using-a-function)
     * [Navigate and Pass Context](#navigate-and-pass-context)
     * [Navigate Back](#navigate-back)
 * [Supporting Multiple Screens](#supporting-multiple-screens)
@@ -124,7 +124,7 @@ In addition, each `Page` instance carries information about the frame object whi
 
 ### The Topmost Frame
 
-The topmost frame is the root-level container for your app's UI and it can be used to navigate inside of your app. You can get a reference to this frame by using the `topmost()` method of the `Frame` module.
+The topmost frame is the root-level container for your app's UI and it can be used to navigate inside of your app. You can get a reference to this frame by using the `topmost()` method of the Frame module.
 
 
 ``` JavaScript
@@ -136,7 +136,7 @@ import frameModule = require("ui/frame");
 var topmost = frameModule.topmost();
 ```
 
-There are several ways to perform navigation and which one to use depends on the needs of your app.
+There are several ways to perform navigation, which one to use depends on the needs of your app.
 
 
 ### Navigate by Page Name
@@ -150,7 +150,7 @@ topmost.navigate("details-page");
 topmost.navigate("details-page");
 ```
 
-### Navigate with a Function
+### Navigate Using a Function
 
 A more dynamic way of navigating can be done by providing a function that returns the instance of the page to which you want to navigate.
 
