@@ -514,10 +514,10 @@ At this point your UI looks good, but the app still doesn't actually do anything
 In this chapter, you'll learn how to add JavaScript logic to your NativeScript app, and you'll be doing so using the base pattern on which the NativeScript framework is built, MVVM, or "model, view, view model". Here's what those words mean:
 
 - **Model**: The model defines and represents the data. Separating the model from the various views that may use it allows for code reuse.
-- **View**: The view represents the UI, which in NativeScript is written in XML. The view is often data-bound to the view model so that changes made to the view model in JavaScript instantly triggers visual changes to UI components.
+- **View**: The view represents the UI, which in NativeScript is written in XML. The view is often data-bound to the view model so that changes made to the view model in JavaScript instantly trigger visual changes to UI components.
 - **View Model**: The view model contains the application logic (often including the model), and exposes the data to the view. NativeScript provides a module called 'Observable', which facilitates creating a view model object that can be bound to the view. We'll discuss that shortly.
 
-The biggest benefit of separating models, views, and view models, is that you are able to use two-way data binding; that is, changes to data in the model gets instantly reflected on the view, and vice versa. The other big benefit is code reuse, as you're often able to reuse models and view models across views.
+The biggest benefit of separating models, views, and view models, is that you are able to use two-way data binding; that is, changes to data in the model get instantly reflected on the view, and vice versa. The other big benefit is code reuse, as you're often able to reuse models and view models across views.
 
 In Groceries, so far you've only touched the view (`login.xml`), and in this chapter you'll be creating a view model. To do so, we first need to introduce one other type of file: the code-behind.
 
@@ -546,9 +546,9 @@ exports.load = function() {
 ```
 <div class="exercise-end"></div>
 
-> **Note**: The keyword `exports` is part of [CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1), the standard on which both NativeScript and Node.js' implementations of modules are based. In CommonJS-based JavaScript modules, a free variable called `exports` is an object to which a module may add properties and methods to configure its external API. In this case, using `exports` in a code-behind file exposes the function for use in the view, or XML file. That is, the `exports.load` assignment in the code-behind file is what makes `loaded="load"` in the view work.
+> **NOTE**: The keyword `exports` is part of [CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1), the standard on which both NativeScript and Node.js' implementations of modules are based. In CommonJS-based JavaScript modules, a free variable called `exports` is an object to which a module may add properties and methods to configure its external API. In this case, using `exports` in a code-behind file exposes the function for use in the view, or XML file. That is, the `exports.load` assignment in the code-behind file is what makes `loaded="load"` in the view work.
 
-When you run the app with this change, NativeScript will trigger the `load()` function you created in the code-behind file, and you should see the word “hello” logged in your terminal.
+When you run the app with this change, NativeScript triggers the `load()` function you created in the code-behind file, and you should see the word “hello” logged in your terminal.
 
 ![](img/cli-getting-started/chapter3/terminal-1.png)
 
@@ -578,7 +578,7 @@ exports.register = function() {
 ```
 <div class="exercise-end"></div>
 
-At this point, if you run your app and tap either of the buttons in your simulator, you will see the appropriate alerts pop up. 
+At this point, if you run your app and tap either of the buttons, you will see the appropriate alerts pop up. 
 
 ![login 5](img/cli-getting-started/chapter3/ios/1.png)
 ![login 5](img/cli-getting-started/chapter3/android/1.png)
@@ -609,9 +609,9 @@ exports.register = function() {
 ```
 <div class="exercise-end"></div>
 
-This function makes use of the [frame module](http://docs.nativescript.org/ApiReference/ui/frame/README.html), which is the NativeScript module responsible for navigation in your app. Here, you tell the topmost frame, or the frame the user actually sees, to navigate to the register view. 
+This function uses the [frame module](http://docs.nativescript.org/ApiReference/ui/frame/README.html), which is the NativeScript module responsible for navigation in your app. Here, you tell the topmost frame, or the frame the user actually sees, to navigate to the register view. 
 
-If you run your app and click this button, you will be sent to the registration screen, which we have pre-built for you.
+If you run your app and click the “Sign up for Groceries” button, you will be sent to the registration screen, which we have pre-built for you.
 
 ![navigate](img/cli-getting-started/chapter3/ios/2.gif)
 ![navigate](img/cli-getting-started/chapter3/android/2.gif)
@@ -628,30 +628,30 @@ Feel free to use a fake email address and “password” for your password, just
 
 <div class="exercise-end"></div>
 
-> **Tip**: Although our Groceries app doesn't use complex navigation strategies, you have several available to you out of the box, such as the [TabView](http://docs.nativescript.org/ui-views#tabview) and the [SegmentedBar](http://docs.nativescript.org/ui-views#segmentedbar). A SideDrawer component is also available for free via Telerik's [UI for NativeScript](https://www.nativescript.org/blog/welcome-to-telerik-ui-for-nativescript) product.
+> **TIP**: Although our Groceries app doesn't use complex navigation strategies, you have several available to you out of the box, such as the [TabView](http://docs.nativescript.org/ui-views#tabview) and the [SegmentedBar](http://docs.nativescript.org/ui-views#segmentedbar). A SideDrawer component is also available for free via Telerik's [UI for NativeScript](https://www.nativescript.org/blog/welcome-to-telerik-ui-for-nativescript) product.
 
 ### Accessing UI components
 
-Since you have been working with forms in NativeScript, you need to understand how data flows back and forth between the front end and back end. Specifically, you have created a login form, but you need to able to know what the user types into the fields in order to log them in to your app.
+Since you have been working with forms in NativeScript, you need to understand how data flows back and forth between the front end and back end. Specifically, you have created a login form, but you need to be able to know what the user types into the fields in order to log them in to your app.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Send data from the front end to the view model
 </h4>
 
-Open `login.xml` and add an `id="email_address"` attribute to the email textfield. Its markup should now look like this:
+Open `login.xml` and add an `id="email_address"` attribute to the email text field. Its markup should now look like this:
 
 ``` XML
 <TextField id="email_address" hint="Email Address" keyboardType="email" />
 ```
 
-With an `id` attribute in place, you can now access this textfield in your code-behind file. To do that, start by opening `app/views/login/login.js` back up, and adding the code below at the top, underneath the `frameModule` variable.
+With an `id` attribute in place, you can now access this text field in your code-behind file. To do that, start by opening `app/views/login/login.js` and adding the code below at the top, underneath the `frameModule` variable.
 
 ``` JavaScript
 var viewModule = require("ui/core/view");
 var email;
 ```
 
-> **Note**: This line of code imports the [view module](https://docs.nativescript.org/ApiReference/ui/core/view/View.html), which is the base class for all UI components. The module provides a lot of functionality, including that ability to control properties of a view and its children. You're going to use it to get access to the email textfield.
+> **NOTE**: This line of code imports the [view module](https://docs.nativescript.org/ApiReference/ui/core/view/View.html), which is the base class for all UI components. The module provides a lot of functionality, including the ability to control properties of a view and its children. You're going to use it to get access to the email text field.
 
 Next, edit the `load()` function in `login.js` to get a reference to the email address text field:
 
@@ -662,11 +662,9 @@ exports.load = function(args) {
 };
 ```
 
-There are two things to note here. First, because the `load()` function handles the page's `loaded` event, NativeScript passes it a reference to the `<Page>` in the function's argument, which is named `args` by convention. Second, you use the view module's `getViewById()` function to get a reference to the textfield component.
+There are two things to note here. First, because the `load()` function handles the page's `loaded` event, NativeScript passes it a reference to the `<Page>` in the function's argument, which is named `args` by convention. Second, you use the view module's [`getViewById()`](http://docs.nativescript.org/ApiReference/ui/core/view/View.html) function to get a reference to the text field component.
 
-> **Tip**: You can read more about `getViewById()`, and the other things you can do with the view module on [its API reference page](http://docs.nativescript.org/ApiReference/ui/core/view/View.html).
-
-Finally, edit the `signIn()` function to log the contents of the textfield:
+Finally, edit the `signIn()` function to log the contents of the text field:
 
 ``` JavaScript
 exports.signIn = function() {
@@ -675,7 +673,7 @@ exports.signIn = function() {
 ```
 <div class="exercise-end"></div>
 
-To see how this works in action, run the app, type some text in the email address text field, and tap the sign in button. If all went well, you should see the text you typed logged in your terminal.
+To see how this works in action, run the app, type some text in the email address text field, and tap the “Sign in” button. If all went well, you should see the text you typed logged in your terminal.
 
 ![](img/cli-getting-started/chapter3/terminal-2.png)
 
@@ -685,20 +683,20 @@ By accessing UI elements in JavaScript, you can control how those elements look 
 
 NativeScript provides view model functionality in the form of a module called 'Observable'.
 
-The Observable is the view model in the MVVM design pattern. It provides a mechanism used for two-way data binding, so as to enable direct communication between the UI and code-behind file. This means that if the user updates the data in the UI, the change will be automatically reflected in the view model, and vice versa. 
+The Observable is the view model in the MVVM design pattern. It provides a mechanism used for two-way data binding, to enable direct communication between the UI and code-behind file. This means that if the user updates the data in the UI, the change will be automatically reflected in the view model, and vice versa. 
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Create a view model and bind it to the view
 </h4>
 
-To allow for two-way data binding using an Observable, open `login.xml`, and replace the two existing TextField UI components with the two shown below, which each include a new `text` attribute:
+To allow for two-way data binding using an Observable, open `login.xml`, and replace the two existing TextField UI components with the two shown below, each including a new `text` attribute:
 
 ``` XML
 <TextField id="email_address" text="{% raw %}{{ email }}{% endraw %}" hint="Email Address" keyboardType="email" />
 <TextField secure="true" text="{% raw %}{{ password }}{% endraw %}" hint="Password" />
 ```
 
-> **Note**: The use of two curly brackets surrounding the `text` attribute's value delineates a data-bound value. You will be setting corresponding properties with the same name in the view model.
+> **NOTE**: The use of two curly brackets surrounding the `text` attribute's value delineates a data-bound value. You will be setting corresponding properties with the same name in the view model.
 
 Add the following code to the top of `app/views/login/login.js`, which includes the observable module, and defines a new `user` object, which you'll be using as this page's view model:
 
@@ -727,16 +725,16 @@ What's going on here?
 - First, you're creating a `user` view model that is based on the NativeScript Observable module. You create the view model with two properties, `email` and `password`, that are pre-populated with some dummy values.
 - Next, you bind the page to the `user` view model by setting it as the page's `bindingContext` property. This is specifically what makes the curly bracket syntax work.
 
-Simply put, properties placed on a page's binding context are available to XML elements using the `{% raw %}{{ propertyName }}{% endraw %}` syntax. In this case, because JavaScript sets the view model's `email` to `"user@domain.com"`, and because you bound the email address textfield to that property using `<TextField text="{% raw %}{{ email }}{% endraw %}">`, when you run this app you'll see "user@domain.com" appear on the front end.
+Simply put, properties placed on a page's binding context are available to XML elements using the `{% raw %}{{ propertyName }}{% endraw %}` syntax. In this case, because JavaScript sets the view model's `email` to `"user@domain.com"`, and because you bound the email address text field to that property using `<TextField text="{% raw %}{{ email }}{% endraw %}">`, when you run this app you'll see "user@domain.com" appear on the front end.
 
 ![](img/cli-getting-started/chapter3/ios/3.png)
 ![](img/cli-getting-started/chapter3/android/3.png)
 
-What's really cool is that the binding is two way. Meaning, when the user types text in these textfields, those changes are immediately made to your view model. Let's look at how to use these values to make this login functional, and how to tie your app into a backend service.
+What's really cool is that the binding is two-way. Meaning, when the user types text in these text fields, those changes are immediately made to your view model.
+
+In order to use these values, and to make this login functional by tying the your app into a backend service, you're going to need the ability to make HTTP calls. And to make HTTP calls in NativeScript you use the NativeScript http module. Let's look at how NativeScript modules work.
 
 ## NativeScript modules
-
-In the previous chapter, you saw how NativeScript leverages the concept of 'modules' to include bits of reusable JavaScript code. Using `require()`, you can include these snippets ad-hoc in your code when you need to use them—similarly to the way you use npm to import Node.js libraries. 
 
 In this chapter you'll learn about NativeScript modules, which are the JavaScript modules in your app's `tns_modules` folder. Whether you've realized it or not, you've already used several NativeScript modules. This includes the modules you've brought in via `require()`—the view module, the frame module, the observable module, and so forth—and also the UI components you've been using in XML, as `<Page>`, `<Image>`, `<TextField>`, and `<Button>` are all just NativeScript modules.
 
@@ -744,10 +742,10 @@ If you dig into `tns_modules` you can get an idea of how these modules work. Sta
 
 - a `package.json` file that sets the name of the module;
 - a file containing the module's Android implementation (`http-request.android.js`);
-- a file containing module's iOS implementation (`http-request.ios.js`);
+- a file containing the module's iOS implementation (`http-request.ios.js`);
 - a generic file (`http.js`) that abstracts the platform-specific code above into a platform-agnostic API, so that you can make HTTP calls on both platforms using a single JavaScript API.
 
-> **Note**: You can refer to the [Node.js documentation on folders as modules](https://nodejs.org/api/modules.html#modules_folders_as_modules) for more detailed information on how NativeScript organizes its modules. (Remember that NativeScript modules adhere to the same CommonJS specification that Node.js modules do.)
+> **NOTE**: You can refer to the [Node.js documentation on folders as modules](https://nodejs.org/api/modules.html#modules_folders_as_modules) for more detailed information on how NativeScript organizes its modules. (Remember that NativeScript modules adhere to the same CommonJS specification that Node.js modules do.)
 
 The \*.ios.\* and \*.android.\* naming convention should look familiar, as it's the exact same convention we used to include Android- and iOS-specific styling in [chapter 2.3](#css). NativeScript uses this same convention to implement its modules on iOS and Android. Now that you know where these modules are, let's take a closer look at what else they can do for your app.
 
@@ -755,7 +753,7 @@ The \*.ios.\* and \*.android.\* naming convention should look familiar, as it's 
 
 When you created your own account on the registration page, you probably noticed that data was magically going... somewhere. But there's actually no magic involved; the register page invokes a RESTful API provided by [Telerik Backend Services](http://www.telerik.com/backend-services) to register the user for the Groceries service.
 
-> **Note**: You don't have to use Telerik Backend Services to hit your backend service; you can use any HTTP API in a NativeScript app. Telerik Backend Services is convenient for us to use for this tutorial because it lets us spin up HTTP endpoints quickly.
+> **NOTE**: You don't have to use Telerik Backend Services to hit your backend service; you can use any HTTP API in a NativeScript app. Telerik Backend Services is convenient for us to use for this tutorial because it lets us spin up HTTP endpoints quickly.
 
 Take a look at `app/shared/config.js`. There's only a small code snippet there, but it includes a hardcoded root path to the Groceries backend that the register page uses, and that you'll be using momentarily:
 
@@ -765,13 +763,13 @@ module.exports = {
 };
 ```
 
-> **Tip**: `config.js` also shows a convenient pattern you can use for sharing configuration variables throughout your app.
+> **TIP**: `config.js` also shows a convenient pattern you can use for sharing configuration variables throughout your app.
 
 Next, take a look in the `app/shared/view-models` folder, which contains a few view models that we've pre-packaged into Groceries, and those view models contain the code to hit our backend. You can see this demonstrated in the `user-view-model.js` file's `register()` function.
 
-> **Note**: In a larger app, it's pretty common to place code that interacts with the backend in separate files, and not directly in the view models. But in our case, the connection code lives directly in the view model for simplicity—which is perfectly reasonable for small apps. 
+> **NOTE**: In a larger app, it's pretty common to place code that interacts with the backend in separate files, and not directly in the view models. But in our case, the connection code lives directly in the view model for simplicity—which is perfectly reasonable for small apps. 
 
-Note that the `register()` function makes use of the config module to get the path to the backend, as well as the [http module](http://docs.nativescript.org/ApiReference/http/README.html) that you examined in the `tns_modules` folder earlier.
+Note that the `register()` function uses the config module to get the path to the backend, as well as the [http module](http://docs.nativescript.org/ApiReference/http/README.html) that you examined in the `tns_modules` folder earlier.
 
 ``` JavaScript
 var httpModule = require("http");
@@ -817,11 +815,11 @@ Let's break down what the code you just pasted in does.
 
 - You return a new `Promise`, which allows the caller of this function to execute code after the asynchronous login either completes successfully or fails. You'll see how this works when you add code that calls `login()` momentarily.
 
-> **Tip**: [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) are a part of ECMAScript 6 (the scripting language of which JavaScript is an implementation). Because Promises have been implemented in the two JavaScript engines NativeScript uses—V8 for Android and JavaScriptCore for iOS—Promises are available for use in NativeScript apps.
+> **TIP**: [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) are a part of ECMAScript 6 (the scripting language of which JavaScript is an implementation). Because Promises have been implemented in the two JavaScript engines NativeScript uses—V8 for Android and JavaScriptCore for iOS—Promises are available for use in NativeScript apps.
 
 - Next, you use the http module's [`request()` method](http://docs.nativescript.org/ApiReference/http/HttpRequestOptions.html) to POST data to the `apiUrl` from config that we looked at earlier. The username, password and grant_type are sent to this endpoint as a JSON string. (Telerik Backend Services [requires a grant_type parameter](http://docs.telerik.com/platform/backend-services/development/rest-api/users/authenticate-user) for logins.)
 
-- Finally, the endpoint's response is handled. `httpModule.request()` returns a `Promise`, which this code uses to either resolve or reject its own `Promise`. When the request is successful (the `then()` handler), the code saves a reference to the user's authentication token to be used on subsequent requests.
+- Finally, the endpoint's response is handled. `httpModule.request()` returns a `Promise`, which this code uses to resolve or reject its own `Promise`. When the request is successful (the `then()` handler), the code saves a reference to the user's authentication token to be used on subsequent requests.
 
 With this code in place let's return to `login.js` to use this new function.
 
@@ -829,7 +827,7 @@ With this code in place let's return to `login.js` to use this new function.
     <b>Exercise: Add UserViewModel to the login code-behind</b>
 </h4>
 
-In `login.js`, include a reference to the `shared/view-models/user-view-model` file.
+In `login.js`, at the top of the file, add the following reference to `shared/view-models/user-view-model`:
 
 ``` JavaScript
 var UserViewModel = require("../../shared/view-models/user-view-model");
@@ -863,7 +861,7 @@ exports.signIn = function() {
 
 <div class="exercise-end"></div>
 
-Take a moment to look at just how clean your code-behind file is now. The code-behind instantiates a view model (`UserViewModel`), and calls its `signIn()` method when the user taps the view's sign in button. Because the view model is bound to the page's two textfields (remember `{% raw %}{{ email }}{% endraw %}` and `{% raw %}{{ password }}{% endraw %}`), the view model already has the data it needs to perform the actual login.
+Take a moment to look at just how clean your code-behind file is now. The code-behind instantiates a view model (`UserViewModel`), and calls its `signIn()` method when the user taps the view's sign in button. Because the view model is bound to the page's two text fields (remember `{% raw %}{{ email }}{% endraw %}` and `{% raw %}{{ password }}{% endraw %}`), the view model already has the data it needs to perform the actual login.
 
 And if you try running your app, and input your account's credentials, you can indeed now login, but... you don't see anything. That's because view models aren't responsible for updating the UI. Instead the view model returns a `Promise` to let the code behind handle the UI. Let's see how you can use that `Promise`, and introduce a new NativeScript module in the process.
 
@@ -907,9 +905,9 @@ This code uses the `Promise` to handle both a successful and unsuccessful login.
 ![login 8](img/cli-getting-started/chapter4/ios/1.png)
 ![login 8](img/cli-getting-started/chapter4/android/1.png)
 
-With that, the login page is now completely functional! Now that you have user management working in your NativeScript app, let's move onto the page that users will use to manage their grocery list. To do that, you need a module that shows items in a list, which is exactly what the ListView module does.
+With that, the login page is now completely functional. Now that you have user management working in your NativeScript app, let's move onto the page that users will use to manage their grocery list. To do that, you need a module that shows items in a list, which is exactly what the ListView module does.
 
-> **Tip**: From this point forward in the guide you'll have to login a lot, so you may find it helpful to hardcode your credentials in the app during development. The easiest way to do that is pass an email address and password to the `UserViewModel()` constructor, for example:
+> **TIP**: From this point forward in the guide you'll have to log in a lot, so you may find it helpful to hardcode your credentials in the app during development. The easiest way to do that is to pass an email address and password to the `UserViewModel()` constructor, for example:
 
 > ``` JavaScript
 > var user = new UserViewModel({
@@ -941,23 +939,23 @@ Open `app/views/list/list.xml` and paste in the code below, which creates the li
 ```
 <div class="exercise-end"></div>
 
-> **Note**: Notice that this page is going to use a `<GridLayout>` to layout the UI components on the screen. As you add more UI components, you'll start dividing the screen into rows and columns, but for now you're just going to let the `<ListView>` take up the full screen (which is the default behavior of a `<GridLayout>` with no attributes).
+> **NOTE**: Notice that this page is going to use a `<GridLayout>` to layout the UI components on the screen. As you add more UI components, you'll start dividing the screen into rows and columns, but for now you're just going to let the `<ListView>` take up the full screen (which is the default behavior of a `<GridLayout>` with no attributes).
 
-As discussed earlier, even though you're using `<ListView>` in XML, the ListView module is still a NativeScript module. You can find its implementation in the `tns_modules/ui/list-view` folder. If you wanted to, you could construct a ListView in pure JavaScript code in the code-behind file as shown in [this example](http://docs.nativescript.org/ApiReference/ui/list-view/HOW-TO.html). However for most situations, using the NativeScript UI modules in XML is easier, so we'll be sticking with XML usage throughout this tutorial.
+As discussed earlier, even though you're using `<ListView>` in XML, the ListView module is still a NativeScript module. You can find its implementation in the `tns_modules/ui/list-view` folder. If you want to, you could construct a ListView in pure JavaScript code in the code-behind file as shown in [this example](http://docs.nativescript.org/ApiReference/ui/list-view/HOW-TO.html). For most situations using the NativeScript UI modules in XML is easier, so we'll be sticking with XML usage throughout this tutorial.
 
 The last thing to note here is the use of `<ListView.itemTemplate>`. This tag gives you the ability to control how each of the ListView's items displays within the list. For now you're using a simple `<Label>` UI component to display the `{% raw %}{{ name }}{% endraw %}` of each grocery.
 
-If you were to run this code as it stands, you wouldn't see any items in the grocery list. You need to build out a way to manage data within the ListView module, and to do that you're going to need a new NativeScript module: the ObservableArray.
+If you run this code as is, you won't see any items in the grocery list. First you need to build out a way to manage data within the ListView module, and to do that you're going to need a new NativeScript module: the ObservableArray.
 
 ### Working with arrays
 
-In previous section of this guide you saw how to create observables and how to use them to connect XML views with code behind files and view models. You're going to do the same thing in this section with one additional twist, and it involves making this `items` attribute work:
+In the previous section of this guide you saw how to create observables and how to use them to connect XML views with code-behind files and view models. You're going to do the same thing in this section with one additional twist, and it involves making this `items` attribute work:
 
 ``` XML
 <ListView items="{% raw %}{{ groceryList }}{% endraw %}">
 ```
 
-The ListView module's `items` attribute takes an array, and to create that array on the view model, NativeScript provides a special ObservableArray module. To see how it works, let's start building the list page's code behind file.
+The ListView module's `items` attribute takes an array, and to create that array on the view model, NativeScript provides a special ObservableArray module. To see how it works, let's start building the list page's code-behind file.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Populate the list view
@@ -1206,7 +1204,7 @@ If you build and rerun your app now, you'll find that you can add a grocery item
 
 Now that you have the login, registration, and list pages complete, you can enhance the app's functionality as a grocery list management tool. In the next chapters you'll add functionality such as email validation, social sharing, and more. And you'll use one of NativeScript's most useful feature to do so: npm modules.
 
-> **Tip**: There are several modules that come out of the box with your NativeScript install that we did not have time to cover in this guide—including a [location service](http://docs.nativescript.org/ApiReference/location/HOW-TO), a [file-system helper](http://docs.nativescript.org/ApiReference/file-system/HOW-TO), a [timer module](http://docs.nativescript.org/ApiReference/timer/HOW-TO), a [camera module](http://docs.nativescript.org/ApiReference/camera/HOW-TO), a [color module](http://docs.nativescript.org/ApiReference/color/HOW-TO), and a whole lot more. Make sure to peruse the “API Reference” of the docs, or just look around `tns_modules` to see all of what's available.
+> **TIP**: There are several modules that come out of the box with your NativeScript install that we did not have time to cover in this guide—including a [location service](http://docs.nativescript.org/ApiReference/location/HOW-TO), a [file-system helper](http://docs.nativescript.org/ApiReference/file-system/HOW-TO), a [timer module](http://docs.nativescript.org/ApiReference/timer/HOW-TO), a [camera module](http://docs.nativescript.org/ApiReference/camera/HOW-TO), a [color module](http://docs.nativescript.org/ApiReference/color/HOW-TO), and a whole lot more. Make sure to peruse the “API Reference” of the docs, or just look around `tns_modules` to see all of what's available.
 
 ## Plugins and npm modules
 
@@ -1254,7 +1252,7 @@ The install process does a few things in the background. First, because you adde
 
 The npm CLI also creates a `node_modules` folder in the root of your app. This folder contains the code for the email-validator module, which in this case is a bit of validation logic in `node_modules/email_validator/index.js`. 
 
-> **Tip**: By saving your app's npm dependencies in your `package.json` file, you can always regenerate your `node_modules` folder by running `npm install`. Because of this, it's a common practice to exclude the `node_modules` folder from source control. The Groceries app uses git for source control, and as such includes `node_modules/` in its `.gitignore`.
+> **TIP**: By saving your app's npm dependencies in your `package.json` file, you can always regenerate your `node_modules` folder by running `npm install`. Because of this, it's a common practice to exclude the `node_modules` folder from source control. The Groceries app uses git for source control, and as such includes `node_modules/` in its `.gitignore`.
 
 Now that you have the module installed let's look at how to use it.
 
@@ -1268,7 +1266,7 @@ Open `/app/shared/view-models/user-view-model.js` and add the following line at 
 var validator = require("email-validator/index");
 ```
 
-> **Note**: In this case, you need to explicitly point to the validator module's `index.js` file. The NativeScript framework is configured to look at the `"main"` value in an npm module's `package.json` file. In the case of this particular module, the `"main"` value is simply `"index"` (rather than `"index.js"`) so you need to reference the index file directly. If this package's `"main"` were set to `"index.js"`, you could use the simpler `require("email-validator")`.
+> **NOTE**: In this case, you need to explicitly point to the validator module's `index.js` file. The NativeScript framework is configured to look at the `"main"` value in an npm module's `package.json` file. In the case of this particular module, the `"main"` value is simply `"index"` (rather than `"index.js"`) so you need to reference the index file directly. If this package's `"main"` were set to `"index.js"`, you could use the simpler `require("email-validator")`.
 
 To make use of this validator, add a function to `user-view-model.js`, right above the line `return viewModel`:
 
@@ -1303,7 +1301,7 @@ In this function, the user submits an email and password, and the value is sent 
 
 In general npm modules greatly expand the number of things you're able to do in your NativeScript apps. Need to do date and time formatting? Use [moment](https://www.npmjs.com/package/moment). Need utility functions for objects and arrays? Use [lodash](https://www.npmjs.com/package/lodash) or [underscore](https://www.npmjs.com/package/underscore). This code reuse benefit gets even more powerful when you bring NativeScript plugins into the picture.
 
-> **Warning**: Not all npm modules work in NativeScript apps. Specifically, modules that depend on Node.js or browser APIs will not work, as those APIs do not exist in NativeScript. The NativeScript wiki contains a [list of some of the more popular npm modules that have been verified to work in NativeScript apps](https://github.com/NativeScript/NativeScript/wiki/supported-npm-modules).
+> **WARNING**: Not all npm modules work in NativeScript apps. Specifically, modules that depend on Node.js or browser APIs will not work, as those APIs do not exist in NativeScript. The NativeScript wiki contains a [list of some of the more popular npm modules that have been verified to work in NativeScript apps](https://github.com/NativeScript/NativeScript/wiki/supported-npm-modules).
 
 ### Using a NativeScript plugin in your app
 
@@ -1351,7 +1349,7 @@ Next you have to add some UI that lets the user share their grocery list. To do 
 
 This code defines an [ActionBar](https://docs.nativescript.org/ApiReference/ui/action-bar/ActionBar), which is a UI component that includes various menu items, enclosed in the `<ActionBar.actionItems>` tag. The `title` of the ActionBar allows you to show page-specific titles.
 
-> **Note**: On iOS devices, `<ActionItem>`s are placed from left to right in sequence; you can override that (as the code above does) by providing an `ios.position` attribute.
+> **NOTE**: On iOS devices, `<ActionItem>`s are placed from left to right in sequence; you can override that (as the code above does) by providing an `ios.position` attribute.
 
 With the module installed and required, and the UI in place, the last thing you need to do is implement the `<ActionItem>`'s tap handler (`share()`) in the list page's code-behind file.
 
@@ -1440,7 +1438,7 @@ Within the if block, you start by getting a reference to the `UINavigationBar`, 
 
 Learning how to transfer iOS and Android APIs into valid NativeScript code can take a little trial and error to get the hang of. You can always refer to the NativeScript docs for detailed discussions of how to handle the code conversion. Here are the [docs for Android](http://docs.nativescript.org/runtimes/android/marshalling/java-to-js.html), and here are the [docs for iOS](http://docs.nativescript.org/runtimes/ios/marshalling/Marshalling-Overview.html).
 
-> **Tip**: NativeScript provides TypeScript declaration files for all iOS and Android APIs. If you're using TypeScript you can reference these declaration files to enable code completion in your editor. Even if you're not using TypeScript, these declaration files can be invaluable references when you're transferring native APIs to NativeScript code. For instance try searching for “UINavigationBar” in the iOS declaration file below to see which other properties are available.
+> **TIP**: NativeScript provides TypeScript declaration files for all iOS and Android APIs. If you're using TypeScript you can reference these declaration files to enable code completion in your editor. Even if you're not using TypeScript, these declaration files can be invaluable references when you're transferring native APIs to NativeScript code. For instance try searching for “UINavigationBar” in the iOS declaration file below to see which other properties are available.
 > - [iOS TypeScript declaration file](https://raw.githubusercontent.com/NativeScript/NativeScript/master/ios.d.ts)
 > - [Android TypeScript declaration file](https://raw.githubusercontent.com/NativeScript/NativeScript/master/android17.d.ts)
 
@@ -1573,7 +1571,7 @@ And... that's it! You've created a functional, cross-platform, backend-driven ap
 
 Congratulations!
 
-> **Tip**: If you're curious about how NativeScript makes it possible to directly invoke iOS and Android APIs, you can read about [“How NativeScript Works”](http://developer.telerik.com/featured/nativescript-works/) on our blog.
+> **TIP**: If you're curious about how NativeScript makes it possible to directly invoke iOS and Android APIs, you can read about [“How NativeScript Works”](http://developer.telerik.com/featured/nativescript-works/) on our blog.
 
 ## Next steps
 
