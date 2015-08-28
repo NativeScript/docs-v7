@@ -10,16 +10,16 @@ guide: true
 
 Welcome to the [NativeScript](https://nativescript.org) getting started guide. In this guided tutorial you'll use NativeScript, a cross-platform JavaScript framework for building native mobile apps, to build an iOS and Android app from scratch.
 
-> **Note**: If you'd prefer a video introduction to NativeScript, check out our [getting started guide on YouTube](https://www.youtube.com/watch?v=rsCT5fpES4Q).
+> **TIP:** For a video introduction to NativeScript, see the [getting started guide on YouTube](https://www.youtube.com/watch?v=rsCT5fpES4Q).
 
-### What you're building
+## What you're building
 
-This guide will walk you through building [Groceries](https://github.com/NativeScript/sample-Groceries), a groceries-management app that does the following things:
+This guide will walk you through building [Groceries](https://github.com/NativeScript/sample-Groceries), a groceries management app that does the following things:
 
 - Connects to an existing RESTful service.
-- Allows users to register and login.
-- Allows authenticated users to add and delete groceries from a list.
-- Runs cross-platform—i.e. iOS and Android.
+- Lets users to register and login.
+- Lets authenticated users to add and delete groceries from a list.
+- Runs cross-platform (iOS and Android).
 
 If you follow along to the end, here's what the finished app will look like on iOS:
 
@@ -40,15 +40,15 @@ In this chapter you're going to start with the basics, including installing the 
 
 ### Install NativeScript and configure your environment
 
-The NativeScript CLI has a few system requirements you must have in place before building NativeScript apps. As a first step, start by going through the appropriate instructions below depending on your development machine's operating system:
+The NativeScript CLI has a few system requirements you must have in place before building NativeScript apps. As a first step, start by going through the instructions for your operating system:
 
 - [Windows](http://docs.nativescript.org/setup/ns-cli-setup/ns-setup-win.html)
 - [OS X](http://docs.nativescript.org/setup/ns-cli-setup/ns-setup-os-x.html)
 - [Linux](http://docs.nativescript.org/setup/ns-cli-setup/ns-setup-linux.html)
 
-> **Tip**: If you're a bit overwhelmed by these requirements, or if you're looking for a way to build iOS apps on Windows, you might be interested in [using NativeScript through Telerik AppBuilder](http://docs.nativescript.org/setup/quick-setup#the-appbuilder-tool-set). Telerik AppBuilder provides tooling for NativeScript apps, including the ability to perform iOS and Android builds in the cloud, which removes the need to complete these system requirements.
+> **TIP**: If you're a bit overwhelmed by these requirements, or if you're looking for a way to build iOS apps on Windows, you might be interested in [using NativeScript with Telerik AppBuilder](http://docs.nativescript.org/setup/quick-setup#the-appbuilder-tool-set). Telerik AppBuilder provides tooling for NativeScript apps, including the ability to perform iOS and Android builds in the cloud, which removes the need to complete these system requirements.
 
-After completing the setup you should have two commands available from your terminal: `tns`—which is short for <b>T</b>elerik <b>N</b>ative<b>S</b>cript—and `nativescript`. The two commands are equivalent, so we'll stick with the shorter `tns` command throughout this guide.
+After completing the setup you should have two commands available from your terminal: `tns`—which is short for **T**elerik **N**ative**S**cript—and `nativescript`. The two commands are equivalent, so we'll stick with the shorter `tns`.
 
 You can verify the installation was successful by running `tns` in your terminal. You should see something like this:
 
@@ -64,13 +64,13 @@ $ tns
 
 ### Start your app
 
-With the NativeScript CLI installed, it's time to start building your app. Normally, you would [use the `tns create` command to create an empty NativeScript application](https://github.com/NativeScript/NativeScript-cli#create-project)—e.g. `tns create hello-world`—but for this guide we've scaffolded out a boilerplate project to act as a starting point for [Groceries](https://github.com/NativeScript/sample-Groceries).
+With the NativeScript CLI installed, it's time to start building your app. Normally, you would [use the `tns create` command to create an empty NativeScript application](https://github.com/NativeScript/NativeScript-cli#create-project). For this guide, we've scaffolded out a boilerplate project to act as a starting point for [Groceries](https://github.com/NativeScript/sample-Groceries).
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Get the Groceries starting point
 </h4>
 
-Navigate to a folder where you want to keep your app's code:
+Navigate to a folder where you want to keep your app code:
 
 <div class="no-copy-button"></div>
 
@@ -78,7 +78,7 @@ Navigate to a folder where you want to keep your app's code:
 cd the-folder-you-want-groceries-to-be-in
 ```
 
-Next, clone the Groceries repo from GitHub:
+Next, assuming you have [git installed](http://www.git-scm.com/), clone the Groceries repo from GitHub:
 
 ```
 git clone https://github.com/NativeScript/sample-Groceries.git
@@ -100,7 +100,7 @@ git checkout start
 
 ### Add target development platforms
 
-Your app is now setup, but before you run it, you need to initialize a platform-specific native project for each platform you intend to target—i.e. iOS and Android.
+Your app is now set up, but before you run it, you need to initialize a platform-specific native project for each platform you intend to target.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Add the iOS and Android platforms
@@ -120,9 +120,9 @@ tns platform add android
 
 <div class="exercise-end"></div>
 
->**Note:** You can only add platforms for SDKs that you already have installed on your development machine. If you get errors running `tns platform add`, refer back to the section on [setting up your development environment](#install-nativescript-and-configure-your-environment).
+>**NOTE:** You can add platforms only for SDKs that you already have installed on your development machine. If you get errors running `tns platform add`, refer back to the section on [setting up your development environment](#install-nativescript-and-configure-your-environment).
 
-The `platform add` command adds a folder called `platforms` to your project, and copies all of the required native SDKs into this folder. When you eventually build the application, the NativeScript CLI will copy your application code into the `platforms` folder so that a native binary can be created.
+The `platform add` command adds a folder called `platforms` to your project, and copies all of the required native SDKs into this folder. When you build the application, the NativeScript CLI will copy your application code into the `platforms` folder so that a native binary can be created.
 
 ### Running your app
 
@@ -148,9 +148,9 @@ Next, run your app on an Android emulator with the following command:
 tns run android --emulator
 ```
 
-> **Warnings**:
-* 1) You must have at least one Android AVD (Android Virtual Device) configured for this command to work. If you get an error, try [setting up an AVD](https://www.genymotion.com/#!/) and then run the command again.
-* 2) If you're using Genymotion, launch your Genymotion virtual device, and then run `tns run android` *without* the `--emulator` flag. The flag is unnecessary because the Android command-line tools see Genymotion virtual devices as physical devices, not emulators.
+> **WARNING**:
+> * You must have at least one Android AVD (Android Virtual Device) configured for this command to work. If you get an error, try [setting up an AVD](https://www.genymotion.com/#!/) and then run the command again.
+> * If you're using Genymotion, launch your Genymotion virtual device, and then run `tns run android --emulator --geny`. 
 
 If all went well, you should see your app running in an Android emulator:
 
@@ -160,9 +160,9 @@ If all went well, you should see your app running in an Android emulator:
 
 Here are a few other tips for running NativeScript apps.
 
-> **Tips**:
-> * 1) To run on a USB-connected Android or iOS device, use the same `run` command with the `--emulator` flag omitted—i.e. `tns run android` and `tns run ios`.
-> * 2) The `tns device` command list all USB-connected iOS devices, USB-connected Android devices, and Genymotion virtual devices that `tns run` can deploy to. Note that `tns device` does not list iOS simulators or Android AVDs.
+> **TIP**:
+> * To run on a USB-connected Android or iOS device, use the same `run` command without the `--emulator` flag—i.e. `tns run android` and `tns run ios`.
+> * The `tns device` command lists all USB-connected iOS devices, USB-connected Android devices, and Genymotion virtual devices that `tns run` can deploy to. Note that `tns device` does not list iOS simulators or Android AVDs.
 
 ### Development workflow
 
@@ -174,7 +174,7 @@ The simplest way to see your changes is to execute `tns run ios` or `tns run and
     <b>Exercise</b>: Your first NativeScript change
 </h4>
 
-If your previous `tns run ios` or `tns run android` task is still running, type `Ctrl` + `C` in your terminal to kill it.
+If your previous `tns run ios` or `tns run android` task is still running, type `Ctrl+C` in your terminal to kill it.
 
 Open your app's `app/views/login/login.xml` file in your text editor of choice and change `<Label text="hello world" />` to `<Label text="hello NativeScript" />`.
 
@@ -184,7 +184,7 @@ Return to your terminal and run either `tns run ios --emulator` (if you're on a 
 
 As you might have noticed, the `tns run` command blocks your terminal while your app is running (it's the task you had to use `Ctrl` + `C` to kill). The `tns run` command sticks around because the task is a console of sorts. The task shows both the output of `console.log()` statements as your app executes, as well as stack traces when things go wrong. So if your app crashes at any time during this guide, look to the terminal for a detailed report of the problem.
 
-The iOS and Android logs can be a bit noisy, so you might have to scroll up a bit to find the actual problem. For instance if I try to call `foo.bar()` when `foo` does not exist, here's the pertinent information I get on iOS:
+The iOS and Android logs can be a bit noisy, so you might have to scroll up a bit to find the actual problem. For example if I try to call `foo.bar()` when `foo` does not exist, here's the pertinent information I get on iOS:
 
 ```
 /app/path/to/file.js:14:8: JS ERROR ReferenceError: Can't find variable: foo
@@ -198,21 +198,21 @@ E/TNS.Native( 2063): ReferenceError: foo is not defined
 E/TNS.Native( 2063): File: "/data/data/org.nativescript.groceries/files/app/./views/login/login.js, line: 13, column: 4
 ```
 
-> **Tip**: When you're trying to debug a problem, you can also try adding `console.log()` statements in your JavaScript code—exactly as you would in a browser-based application.
+> **TIP**: When you're trying to debug a problem, you can also try adding `console.log()` statements in your JavaScript code—exactly as you would in a browser-based application.
 
-If you find continuously running `tns run` from the terminal to be a bit manual, you may be interested in trying one of the following workflows:
+If you find continuously running `tns run` from the terminal to be tedious, you may be interested in trying one of the following workflows:
 
 * The `tns livesync` command instantly transfers XML, CSS, and JavaScript files to a running NativeScript app. If you set the command's `--watch` flag (`tns livesync ios --emulator --watch` or `tns livesync android --emulator --watch`), the NativeScript CLI will watch your app for changes, and apply those changes automatically after you save files. Be warned, however, that the `livesync` command currently does not show `console.log()` output or stack traces. So during debugging you may want to switch back to `tns run`.
-* For Sublime Text users, [this build script](http://developer.telerik.com/featured/a-nativescript-development-workflow-for-sublime-text/) lets you type `Cmd`/`Ctrl` + `B` to start a build without returning to the terminal. (This is the workflow the authors of this guide use.)
-* Emil Öberg's [nativescript-emulator-reload npm module](https://github.com/emiloberg/nativescript-emulator-reload) adds a Gulp watcher that relaunches an emulator after every change you make.
+* For Sublime Text users, [this build script](http://developer.telerik.com/featured/a-nativescript-development-workflow-for-sublime-text/) lets you type `Cmd`/`Ctrl` + `B` to start a build without returning to the terminal. (This is the workflow used for this guide.)
+* Emil Öberg's [nativescript-emulator-reload npm module](https://github.com/emiloberg/nativescript-emulator-reload) adds a Gulp watcher that relaunches the emulator after every change you make.
 
-Now that you have created an app, configured your environment, and setup your app to run on iOS and Android, you're ready to start digging into code.
+Now that you have created an app, configured your environment, and set up your app to run on iOS and Android, you're ready to start digging into code.
 
 ## Building the UI
 
-Before you start coding the Groceries app it's important to understand a NativeScript app's folder structure. It'll help you understand where to place new files, as well as a bit of what's going with NativeScript on under the hood.
+Before you start coding the Groceries app it's important to understand a NativeScript app's folder structure. It'll help you understand where to place new files, as well as a bit of what's going on with NativeScript under the hood.
 
-Go ahead and open your app's `sample-Groceries` folder up in your text editor of choice and let's dig in.
+Go ahead and open your app's `sample-Groceries` folder in your text editor of choice and let's dig in.
 
 ### Directory structure
 
@@ -232,12 +232,12 @@ To keep things simple, let's start by looking at the outer structure of the Groc
 Here's what these various files and folders do:
 
 - **app**: This folder contains all the development resources you need to build your app. You'll be spending most of your time editing the files in here.
-- **package.json**: This file contains configuration about your app, such as your app id, the version of NativeScript you're using, and also which npm modules your app uses. We'll take a closer look at how to use this file when we talk about using npm modules in [chapter 5](#plugins-and-npm-modules).
-- **platforms**: This folder contains the platform-specific code NativeScript needs to build native iOS and Android apps. For instance in the `android` folder you'll find things like your project's `AndroidManifest.xml` and .apk executable files. Similarly, the `ios` folder contains the Groceries' Xcode project and .ipa executables.
+- **package.json**: This file contains your app's configuration details, such as your app id, the version of NativeScript you're using, and also which npm modules your app uses. We'll take a closer look at how to use this file when we talk about using npm modules in [chapter 5](#plugins-and-npm-modules).
+- **platforms**: This folder contains the platform-specific code NativeScript needs to build native iOS and Android apps. For example in the `android` folder you'll find things like your project's `AndroidManifest.xml` and .apk executable files. Similarly, the `ios` folder contains the Groceries' Xcode project and .ipa executables.
 
 The NativeScript CLI manages the `platforms` folder for you as you develop and run your app; therefore it's a best practice to treat the `platforms` folder as generated code. The Groceries app includes the `platforms` folder in its `.gitignore` to exclude its files from source control.
 
-Next, let's dig into the ```app``` folder, as that's where you'll be spending the majority of your time.
+Next, let's dig into the `app` folder, as that's where you'll be spending the majority of your time.
 
 ```
 .
@@ -259,12 +259,11 @@ Next, let's dig into the ```app``` folder, as that's where you'll be spending th
     │   └── ...
     └── ...
 ```
-
 Here's what these various files and folders do:
 
 - **App_Resources**: This folder contains platform-specific resources such as icons, splash screens, and configuration files. The NativeScript CLI takes care of injecting these resources into the appropriate places in the `platforms` folder when you execute `tns run`.
-- **shared**: This folder contains any files you need to share across views in your app. In the Groceries app, you'll find a few view model objects and a `config.js` file used to share configuration variables like API keys.
-- **tns_modules**: This folder contains the NativeScript-provided modules you'll use to build your app. Each module contains the platform-specific code needed to implement some feature—the camera, http calls, the file system, and so forth—exposed through a platform-agnostic API (e.g. ```http.getJSON()```). We'll look at some examples momentarily.
+- **shared**: This folder, specific to the Groceries app, contains any files you need to share across views in your app. In the Groceries app, you'll find a few view model objects and a `config.js` file used to share configuration variables like API keys.
+- **tns_modules**: This folder contains the NativeScript-provided modules you'll use to build your app. Each module contains the platform-specific code needed to implement some feature—the camera, http calls, the file system, and so forth—exposed through a platform-agnostic API (e.g. `http.getJSON()`). We'll look at some examples momentarily.
 - **views**: This folder contains the code to build your app's views, each of which will have a subfolder in `views`. Each view is made up of an XML file, a JavaScript file, and an optional CSS file. The groceries app contains three folders for its three views.
 - **app.css**: This file contains global styles for your app. We'll dig into app styling in [section 2.3](#css).
 - **app.js**: This file sets up your application's starting module and initializes the app.
@@ -279,13 +278,13 @@ applicationModule.start();
 
 Here, you're requiring, or importing, the [NativeScript application module](http://docs.nativescript.org/ApiReference/application/HOW-TO). Then, you set its `mainModule`, or the starting screen of your app to be the login screen, which lives in your app's `views/login` folder.
 
-> **Tip**: JavaScript modules in NativeScript follow the [CommonJS specification](http://wiki.commonjs.org/wiki/CommonJS). This means you can use the [`require()` method](http://wiki.commonjs.org/wiki/Modules/1.1#Module_Context) to import modules, as is done above, as well as use the `export` keyword to expose a module's properties and methods, which we'll look at later in this chapter. These are the same constructs Node.js uses for JavaScript modules, so if you already know how to use Node.js modules, you already know how to use NativeScript modules!
+> **TIP**: JavaScript modules in NativeScript follow the [CommonJS specification](http://wiki.commonjs.org/wiki/CommonJS). This means you can use the [`require()` method](http://wiki.commonjs.org/wiki/Modules/1.1#Module_Context) to import modules, as is done above, as well as use the `export` keyword to expose a module's properties and methods, which we'll look at later in this chapter. These are the same constructs Node.js uses for JavaScript modules, so if you already know how to use Node.js modules, you already know how to use NativeScript modules.
 
 Now that your app is ready for development, let's add some UI components to make your login screen show more than some basic text.
 
 ### Adding UI components
 
-Let's dig into the files used to create your app's UI, which reside in the `app/views` folder. Each folder in `app/views` contains the code for one of the three pages in Groceries: `list`, `login`, and `register`. If you look in the `app/views/login` folder, you'll see three files: `login.css`, `login.js`, and the `login.xml` file we updated in the previous chapter. If you open `login.xml` again you should see the following code:
+Let's dig into the files used to create your app's UI, which reside in the `app/views` folder. Each folder in `app/views` contains the code for one of the three pages in Groceries: `list`, `login`, and `register`. If you look in the `app/views/login` folder, you'll see three files: `login.css`, `login.js`, and the `login.xml` file we updated in the previous chapter. When you open `login.xml` again you should see the following code:
 
 ``` XML
 <Page>
@@ -316,36 +315,36 @@ NativeScript UI components provide attributes to let you configure their behavio
 - `<TextField>`
     - `hint`: Used to show placeholder text in the TextField to tell the user what to type.
     - `secure`: A boolean attribute that determines whether the TextField's text should be masked, which is commonly done on password fields.
-    - `keyboardType`: The type of keyboard to present to the user for input. In this case, `keyboardType="email"` shows a keyboard optimized for entering email addresses. NativeScript currently supports [five types of keyboards](http://docs.nativescript.org/ApiReference/ui/enums/KeyboardType/README) for textfields.
+    - `keyboardType`: The type of keyboard to present to the user for input. In this case, `keyboardType="email"` shows a keyboard optimized for entering email addresses. NativeScript currently supports [five types of keyboards](http://docs.nativescript.org/ApiReference/ui/enums/KeyboardType/README) for text fields.
 - `<Button>`
     - `text`: Controls the text displayed within the button.
 
-After you run your app with this change (refer back to [section 1.4](#development-workflow) if you need to remember how to run NativeScript apps), you might not see what you expect, as only a single `<Button>` component shows on the screen:
+After you [run your app](#development-workflow) with this change, you will see a single `<Button>` component on the screen:
 
 ![login 1](img/cli-getting-started/chapter2/ios/1.png)
 ![login 1](img/cli-getting-started/chapter2/android/1.png)
 
-This app looks off because you need to tell NativeScript how to layout the UI components you place in your page, which the current code does not do. Let's look at how to use NativeScript layouts to arrange these components on the screen.
+You need to tell NativeScript how to layout the UI components in your page. Let's look at how to use NativeScript layouts to arrange these components on the screen.
 
-> **Tip**: The NativeScript docs include a [full list of the UI components and attributes](http://docs.nativescript.org/ui-with-xml) you can use to build your apps with. You can even [build your own, custom UI components](https://docs.nativescript.org/ui-with-xml#custom-components).
+> **TIP**: The NativeScript docs include a [full list of the UI components and attributes](http://docs.nativescript.org/ui-with-xml) with which you can build your apps. You can even [build your own, custom UI components](https://docs.nativescript.org/ui-with-xml#custom-components).
 
 ### Layouts 
 
 NativeScript provides several different layout containers that allow you to place UI components precisely where you want them to appear. 
 
-- The [Absolute Layout](https://docs.nativescript.org/ApiReference/ui/layouts/absolute-layout/HOW-TO.html) lets you position elements using explicit x and y coordinates. This is useful when you need to place elements in exact locations, for instance showing an activity indicator widget in the top-left corner of your app.
+- The [Absolute Layout](https://docs.nativescript.org/ApiReference/ui/layouts/absolute-layout/HOW-TO.html) lets you position elements using explicit x and y coordinates. This is useful when you need to place elements in exact locations, for example showing an activity indicator widget in the top-left corner of your app.
 - The [Dock Layout](https://docs.nativescript.org/ApiReference/ui/layouts/dock-layout/HOW-TO.html) is useful for placing UI elements at the outer edges of your app. For example, a container docked at the bottom of the screen would be a good location for an ad.
 - The [Grid Layout](https://docs.nativescript.org/ApiReference/ui/layouts/grid-layout/HOW-TO.html) lets you divide your interface into a series of rows and columns, much like a `<table>` in HTML markup.
 - The [Stack Layout](https://docs.nativescript.org/ApiReference/ui/layouts/stack-layout/HOW-TO.html) lets you stack child UI components either vertically or horizontally.
 - The [Wrap Layout](https://docs.nativescript.org/ApiReference/ui/layouts/wrap-layout/HOW-TO.html) allows child UI components to flow from one row or column to the next when space is filled.
 
-In the case of your login screen, all you need is a simple `<StackLayout>` to stack the UI components on top of each other. In later sections, you'll use some of the more advanced layouts.
+For your login screen, all you need is a simple `<StackLayout>` to stack the UI components on top of each other. In later sections, you'll use some of the more advanced layouts.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Add a stack layout to the login screen
 </h4>
 
-In your `login.xml`, add the `<StackLayout>` component below directly within the `<Page>` component. Your `login.xml` should look like this:
+In `login.xml`, add the `<StackLayout>` component below directly within the `<Page>` component. `login.xml` should look like this:
 
 ``` XML
 <Page>
@@ -363,24 +362,26 @@ In your `login.xml`, add the `<StackLayout>` component below directly within the
 
 <div class="exercise-end"></div>
 
-The stack layout is a UI component, and as such, it that has attributes just like the `<TextField>` and `<Button>` components you used in the previous section. Here, the `orientation="vertical"` attribute tells the Stack Layout to arrange its child components vertically.
+The stack layout is a UI component, and as such, it has attributes just like the `<TextField>` and `<Button>` components you used in the previous section. Here, the `orientation="vertical"` attribute tells the stack layout to arrange its child components vertically.
 
-After you run your app with this change, you'll see that that your login page's UI components now stack up as expected:
+After you run your app with this change, you'll see that your login page's UI components now stack up:
 
 ![login 2](img/cli-getting-started/chapter2/ios/2.png)
 ![login 2](img/cli-getting-started/chapter2/android/2.png)
 
-However, although the UI components are in the correct order, they could use some spacing and a bit of color to make the app look a bit nicer. To do that let's look at another NativeScript feature: CSS.
+Although the UI components are in the correct order, they could use some spacing and a bit of color to make the app look a bit nicer. To do that let's look at another NativeScript feature: CSS.
 
-> **Tips**:
+> **TIP**:
 > * For a simple introduction to the other NativeScript layout elements, check out Jen Looper's article on [demystifying NativeScript layouts](https://www.nativescript.org/blog/demystifying-nativescript-layouts).
-> * Refer to the NativeScript docs for a [far more detailed look at how NativeScript layouts work](http://docs.nativescript.org/layouts), and the various things you can do to configure them.
+> * Refer to the NativeScript docs for a [more detailed look at how NativeScript layouts work](http://docs.nativescript.org/layouts) and the various things you can do to configure them.
 
 ### CSS
 
-NativeScript uses a [subset of CSS](http://docs.nativescript.org/styling) to change the visual appearance of your app. There are three mechanisms you can use to add CSS properties to UI components: [application-wide CSS](http://docs.nativescript.org/styling#application-wide-css) (`app.css`), [page-specific CSS](http://docs.nativescript.org/styling#page-specific-css), and an [inline `style` attribute](http://docs.nativescript.org/styling#inline-css).
+NativeScript uses a [subset of CSS](http://docs.nativescript.org/styling) to change the visual appearance of your app. You can use three mechanisms to add CSS properties to UI components: [application-wide CSS](http://docs.nativescript.org/styling#application-wide-css) (`app.css`), [page-specific CSS](http://docs.nativescript.org/styling#page-specific-css), and an [inline `style` attribute](http://docs.nativescript.org/styling#inline-css).
 
-As a best practice, place CSS rules that should apply to all pages in your `app.css`, and CSS rules that apply to a single page in a page-specific CSS file (e.g. `login.css`). Inline styles are great for quick testing—e.g. `<Page style="background-color: green;">`—but should be avoided in general, as the `style` attributes tend to clutter up XML files—especially once you need to apply multiple rules.
+> **TIP**:
+> * Place CSS rules that should apply to all pages in your `app.css`, and CSS rules that apply to a single page in a page-specific CSS file (e.g. `login.css`). 
+> * Although inline styles are great for quick testing—e.g. `<Page style="background-color: green;">` you should avoid them in general because the `style` attributes tend to clutter up XML files especially if/when you need to apply multiple rules.
 
 Let's start by adding a few application-wide CSS rules.
 
@@ -388,7 +389,7 @@ Let's start by adding a few application-wide CSS rules.
     <b>Exercise</b>: Create global styles
 </h4>
 
-Paste the following code in your app's `app.css` file:
+Paste the following code in `app.css` file:
 
 ``` CSS
 Page {
@@ -413,9 +414,9 @@ Button {
 
 <div class="exercise-end"></div>
 
-If you've done any web development before, the syntax should feel familiar here; you select four UI components (Page, TextField, Image, and Button) by their tag name, and then apply a handful of CSS rules as name/value pairs. Not all web CSS properties are supported, as some aren't possible to replicate in native apps without incurring prohibitive performance penalties. A [full list of the CSS properties that are supported](http://docs.nativescript.org/styling#supported-properties) are listed in the NativeScript docs.
+If you've done any web development before, the syntax should feel familiar here. You select four UI components (Page, TextField, Image, and Button) by their tag name, and then apply a handful of CSS rules as name/value pairs. NativeScript does not support all CSS properties because it is not possible to replicate some of them in native apps without causing performance issues. A [full list of the CSS properties that are supported](http://docs.nativescript.org/styling#supported-properties) are listed in the NativeScript docs.
 
-Let's make one more change. Although oftentimes you want CSS rules to apply equally to your iOS and Android app, occasionally it makes sense to apply a CSS rule to only one platform. For instance, iOS textfields frequently have borders around them, but Android textfields do not. Let's look at how to make platform-specific style changes in NativeScript.
+Let's make one more change. Although oftentimes you want CSS rules to apply equally to your iOS and Android app, occasionally it makes sense to apply a CSS rule to only one platform. For example, iOS text fields frequently have borders around them, but Android text fields do not. Let's look at how to make platform-specific style changes in NativeScript.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Add platform-specific CSS
@@ -426,6 +427,7 @@ Add the following as the first line of your app's `app.css` file:
 ``` CSS
 @import { url('~/platform.css') };
 ```
+> **IMPORTANT**: NativeScript is consistent with browser implementations, in that `@import` statements must precede all other CSS rules in a file.
 
 Next, add a `cssClass="link"` attribute to the sign up button in `login.xml`. The button's markup should look like this:
 
@@ -437,9 +439,7 @@ Next, add a `cssClass="link"` attribute to the sign up button in `login.xml`. Th
 
 Let's break down what just happened. First, NativeScript supports CSS's `@import` statement for importing one CSS file into another. So this new line of code imports the CSS rules from `platform.css` into `app.css`. But, you might have noticed that Groceries does not have a file named `platform.css`—only `app/platform.android.css` and `app/platform.ios.css` exist. So what's going on here?
 
-> **Warning**: NativeScript is consistent with browser implementations, in that `@import` statements must precede all other CSS rules in a file.
-
-Recall that when you execute `tns run`, or `tns livesync`, the NativeScript CLI takes your code from the `app` folder and places it in the native projects located in the `platforms/ios` and `platforms/android` folders. But here's where the naming convention comes in: in the process of moving files, the CLI intelligently selects `.android.*` and `.ios.*` files. To give a specific example, in this case the CLI moves `platform.ios.css` into `platforms/ios` and renames it `platform.css`; similarly, the CLI moves `platform.android.css` into `platforms/android`, and again renames it `platform.css`. This convention provides a convenient way to branch your code to handle iOS and Android separately, and it's supported for any type of file in NativeScript—not just CSS files. You'll see a few more examples of this convention later in this guide.
+When you execute `tns run`, or `tns livesync`, the NativeScript CLI takes your code from the `app` folder and places it in the native projects located in the `platforms/ios` and `platforms/android` folders. Here the naming convention comes in: while moving files, the CLI intelligently selects `.android.*` and `.ios.*` files. To give a specific example, in this case the CLI moves `platform.ios.css` into `platforms/ios` and renames it to `platform.css`; similarly, the CLI moves `platform.android.css` into `platforms/android`, and again renames it to `platform.css`. This convention provides a convenient way to branch your code to handle iOS and Android separately, and it's supported for any type of file in NativeScript—not just CSS files. You'll see a few more examples of this convention later in this guide.
 
 There's one other change here we need to discuss, and that's the `cssClass` attribute you added to this button:
 
@@ -478,7 +478,7 @@ In NativeScript you use the `<Image>` UI component and its `src` attribute to ad
 <Image src="https://www.nativescript.org/images/default-source/landingpages/logo.png" />
 ```
 
-The second way is to point at an image that lives within your app's `app` folder. For instance if you have an image at `app/images/logo.png`, you can use it with:
+The second way is to point at an image that lives within your app's `app` folder. For example if you have an image at `app/images/logo.png`, you can use it with:
 
 ``` XML
 <Image src="~/images/logo.png" />
@@ -500,7 +500,7 @@ In `login.xml`, add the `<Image>` below as the first child of the existing `<Sta
 
 The `res://` syntax tells NativeScript to use a platform-specific resource, in this case an image. You might recall from before that platform-specific resources go in your app's `app/App_Resources` folder, and if you look there you'll find a few different image files, several of which are named `logo.png`.
 
-Although more complex than putting an image directly in the `app` folder, using platform-specific images gives you more control over image display on different device dimensions. For instance iOS lets you use provide three different image files for devices with different pixel densities. As such you'll find logos named `logo.png`, `logo@2x.png`, and `logo@3x.png` in your `App_Resources/iOS` folder. For Android you'll find similar image files in `App_Resources/Android/drawable-hdpi` (for "high" dpi, or high dots-per-inch), `App_Resources/Android/drawable-mdpi` (for medium-dpi), and `App_Resources/Android/drawable-ldpi` (for low-dpi).
+Although more complex than putting an image directly in the `app` folder, using platform-specific images gives you more control over image display on different device dimensions. For example iOS lets you use provide three different image files for devices with different pixel densities. As such you'll find logos named `logo.png`, `logo@2x.png`, and `logo@3x.png` in your `App_Resources/iOS` folder. For Android you'll find similar image files in `App_Resources/Android/drawable-hdpi` (for "high" dpi, or high dots-per-inch), `App_Resources/Android/drawable-mdpi` (for medium-dpi), and `App_Resources/Android/drawable-ldpi` (for low-dpi).
 
 Once these files are in place the NativeScript framework knows how to pick the correct file; all you have to do is reference the image using `res://` and its base file name—i.e. `res://logo`. With this change in place here's what your login screen should look like on iOS and Android:
 
@@ -523,7 +523,7 @@ In Groceries, so far you've only touched the view (`login.xml`), and in this cha
 
 ### The code-behind
 
-In NativeScript a code-behind file is a JavaScript file that shares the same name as the view. For instance, the login page's view is named `login.xml`, so its code-behind file is named `login.js`. The code-behind file is where you put all code that interacts with the view itself.
+In NativeScript a code-behind file is a JavaScript file that shares the same name as the view. For example, the login page's view is named `login.xml`, so its code-behind file is named `login.js`. The code-behind file is where you put all code that interacts with the view itself.
 
 Let's look at what you can do in a code-behind file with a simple example.
 
@@ -727,7 +727,7 @@ What's going on here?
 - First, you're creating a `user` view model that is based on the NativeScript Observable module. You create the view model with two properties, `email` and `password`, that are pre-populated with some dummy values.
 - Next, you bind the page to the `user` view model by setting it as the page's `bindingContext` property. This is specifically what makes the curly bracket syntax work.
 
-Simply put, properties placed on a page's binding context are available to XML elements using the `{% raw %}{{ propertyName }}{% endraw %}` syntax. In this case, because JavaScript sets the view model's `email` to `"user@domain.com"`, and because you bound the email address textfield to that property using `<TextField text="{% raw %}{{ email }}{% endraw %}">`, when you run this app you'll see "user@domain.com" appear on the front end.
+Simply put, properties placed on a page's binding context are available to XML elements using the `{% raw %}{{ propertyName }}{% endraw %}` syntax. In this case, because JavaScript sets the view model's `email` to `"user@domain.com"`, and because you bound the email address text field to that property using `<TextField text="{% raw %}{{ email }}{% endraw %}">`, when you run this app you'll see "user@domain.com" appear on the front end.
 
 ![](img/cli-getting-started/chapter3/ios/3.png)
 ![](img/cli-getting-started/chapter3/android/3.png)
@@ -1323,7 +1323,7 @@ tns plugin add nativescript-social-share
 
 The install process does the same thing that the `npm install` command does—including retrieving the module from npm, installing the module in `node_modules`, and saving the module as a dependency in your app's `package.json`—but the `tns plugin add` command additionally configures any native code that the plugin needs to use.
 
-For instance the [NativeScript push plugin](https://github.com/NativeScript/push-plugin) uses both iOS and Android SDKs, and the `tns plugin add` command takes care of installing those. The [NativeScript flashlight plugin](https://github.com/tjvantoll/nativescript-flashlight) needs permissions to use the camera on Android, and the `tns plugin add` command takes care of setting that up too.
+For example the [NativeScript push plugin](https://github.com/NativeScript/push-plugin) uses both iOS and Android SDKs, and the `tns plugin add` command takes care of installing those. The [NativeScript flashlight plugin](https://github.com/tjvantoll/nativescript-flashlight) needs permissions to use the camera on Android, and the `tns plugin add` command takes care of setting that up too.
 
 Now that you've installed the social share plugin, let's look at how to use it.
 
@@ -1394,7 +1394,7 @@ NativeScript gives you the option to dig into native code as needed, and to do s
 
 When you use the ActionBar UI component in a NativeScript app, NativeScript is actually creating and managing an iOS `UINavigationController` for you. You can confirm this by digging into the implementation code, specifically `tns_modules/ui/action-bar/action-bar.ios.js`, and `tns_modules/ui/frame/frame.ios.js`.
 
-What you might not realize is the the code that you see in these NativeScript modules, the code that looks like Objective-C-ified or Java-ified JavaScript code, is available for you to use in your own JavaScript modules. For instance, you can easily get a reference to the `UINavigationBar` and simply call its [documented methods](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UINavigationBar_Class/index.html) to change its look and feel. Let's look at how to do that.
+What you might not realize is the the code that you see in these NativeScript modules, the code that looks like Objective-C-ified or Java-ified JavaScript code, is available for you to use in your own JavaScript modules. For example, you can easily get a reference to the `UINavigationBar` and simply call its [documented methods](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UINavigationBar_Class/index.html) to change its look and feel. Let's look at how to do that.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Modify the ActionBar
@@ -1440,17 +1440,17 @@ Within the if block, you start by getting a reference to the `UINavigationBar`, 
 
 Learning how to transfer iOS and Android APIs into valid NativeScript code can take a little trial and error to get the hang of. You can always refer to the NativeScript docs for detailed discussions of how to handle the code conversion. Here are the [docs for Android](http://docs.nativescript.org/runtimes/android/marshalling/java-to-js.html), and here are the [docs for iOS](http://docs.nativescript.org/runtimes/ios/marshalling/Marshalling-Overview.html).
 
-> **Tip**: NativeScript provides TypeScript declaration files for all iOS and Android APIs. If you're using TypeScript you can reference these declaration files to enable code completion in your editor. Even if you're not using TypeScript, these declaration files can be invaluable references when you're transferring native APIs to NativeScript code. For instance try searching for “UINavigationBar” in the iOS declaration file below to see which other properties are available.
+> **Tip**: NativeScript provides TypeScript declaration files for all iOS and Android APIs. If you're using TypeScript you can reference these declaration files to enable code completion in your editor. Even if you're not using TypeScript, these declaration files can be invaluable references when you're transferring native APIs to NativeScript code. For example try searching for “UINavigationBar” in the iOS declaration file below to see which other properties are available.
 > - [iOS TypeScript declaration file](https://raw.githubusercontent.com/NativeScript/NativeScript/master/ios.d.ts)
 > - [Android TypeScript declaration file](https://raw.githubusercontent.com/NativeScript/NativeScript/master/android17.d.ts)
 
-Forking the user experience can entail more than just changing some colors. For instance, sliding to delete list items is a common UI interaction on iOS, but not Android. But as you've seen, NativeScript makes it relatively easy to fork your code to provide a more platform-specific experience. So to allow a user to delete an item from a list, let's create a slide-to-delete UI for iOS, and use a more-Android-friendly trash can icon to let the user delete items from our Android app.
+Forking the user experience can entail more than just changing some colors. For example, sliding to delete list items is a common UI interaction on iOS, but not Android. But as you've seen, NativeScript makes it relatively easy to fork your code to provide a more platform-specific experience. So to allow a user to delete an item from a list, let's create a slide-to-delete UI for iOS, and use a more-Android-friendly trash can icon to let the user delete items from our Android app.
 
 ### Deleting from a list - Android
 
 For Android you're going to add tappable trash cans to each item in the grocery list; therefore the first challenge is figuring out how to show these images only for Android, as you'll be using a completely different UI on iOS.
 
-To do so you'll use a new bit of syntax in your XML. NativeScript allows you to set an attribute for only one platform using the `platform:attributeName` syntax. For instance the following sets a button's text to “foo” on iOS, and “bar” on Android:
+To do so you'll use a new bit of syntax in your XML. NativeScript allows you to set an attribute for only one platform using the `platform:attributeName` syntax. For example the following sets a button's text to “foo” on iOS, and “bar” on Android:
 
 ``` XML
 <Button ios:text="foo" android:text="bar" />
