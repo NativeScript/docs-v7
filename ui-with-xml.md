@@ -53,14 +53,14 @@ When you set the `mainModule`, the NativeScript navigation framework looks for a
 var application = require("application");
 // Set the start module for the application
 application.mainModule = "my-page";
-// Start the application
+// Start the application. Don't place any code after this line.
 application.start();
 ```
 ```TypeScript
 import application = require("application");
 // Set the start module for the application
 application.mainModule = "my-page";
-// Start the application
+// Start the application. Don't place any code after this line.
 application.start();
 ```
 
