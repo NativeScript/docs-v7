@@ -4,7 +4,7 @@ Welcome to the [NativeScript](https://nativescript.org) getting started guide. I
 
 > **TIP:** For a video introduction to NativeScript, see the [getting started guide on YouTube](https://www.youtube.com/watch?v=rsCT5fpES4Q).
 
-## What you're building
+### What you're building
 
 This guide will walk you through building [Groceries](https://github.com/NativeScript/sample-Groceries), a groceries management app that does the following things:
 
