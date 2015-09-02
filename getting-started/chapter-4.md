@@ -97,7 +97,7 @@ In `login.js`, at the top of the file, add the following reference to `shared/vi
 var UserViewModel = require("../../shared/view-models/user-view-model");
 ```
 
-Remove the following four lines of code, as you'll be using the `UserViewModel` instead of the `user` you added in the previous chapter.
+Remove the following five lines of code, as you'll be using the `UserViewModel` instead of the `user` you added in the previous chapter.
 
 <div class="no-copy-button"></div>
 
