@@ -38,7 +38,7 @@ The install process does a few things in the background. First, because you adde
 
 ``` JavaScript
 "dependencies": {
-  "email-validator": "^1.0.2"
+  "email-validator": "^1.0.3"
 }
 ```
 
