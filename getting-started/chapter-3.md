@@ -1,10 +1,10 @@
 ## Application logic
 
-In this chapter, you'll learn how to add JavaScript logic to your NativeScript app, and you'll be doing so using the base pattern on which the NativeScript framework is built, MVVM, or "model, view, view model". Here's what those words mean:
+In this chapter, you'll learn how to add JavaScript logic to your NativeScript app, and you'll be doing so using the base pattern on which the NativeScript framework is built, MVVM, or "model view view model". Here's what those words mean:
 
-- **Model**: The model defines and represents the data. Separating the model from the various views that may use it allows for code reuse.
+- **Model**: The model defines and represents the data. Separating the model from the various views that might use it allows for code reuse.
 - **View**: The view represents the UI, which in NativeScript is written in XML. The view is often data-bound to the view model so that changes made to the view model in JavaScript instantly trigger visual changes to UI components.
-- **View Model**: The view model contains the application logic (often including the model), and exposes the data to the view. NativeScript provides a module called 'Observable', which facilitates creating a view model object that can be bound to the view. We'll discuss that shortly.
+- **View Model**: The view model contains the application logic (often including the model), and exposes the data to the view. NativeScript provides a module called 'Observable', which facilitates creating a view model object that can be bound to the view.
 
 The biggest benefit of separating models, views, and view models, is that you are able to use two-way data binding; that is, changes to data in the model get instantly reflected on the view, and vice versa. The other big benefit is code reuse, as you're often able to reuse models and view models across views.
 
@@ -35,7 +35,7 @@ exports.load = function() {
 ```
 <div class="exercise-end"></div>
 
-> **NOTE**: The keyword `exports` is part of [CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1), the standard on which both NativeScript and Node.js' implementations of modules are based. In CommonJS-based JavaScript modules, a free variable called `exports` is an object to which a module may add properties and methods to configure its external API. Using `exports` in a code-behind file exposes the function for use in the view, or XML file. That is, the `exports.load` assignment in the code-behind file is what makes `loaded="load"` in the view work.
+> **NOTE**: The keyword `exports` is part of [CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1), the standard on which both NativeScript and Node.js' implementations of modules are based. In CommonJS-based JavaScript modules, a free variable called `exports` is an object to which a module might add properties and methods to configure its external API. Using `exports` in a code-behind file exposes the function for use in the view, or XML file. That is, the `exports.load` assignment in the code-behind file is what makes `loaded="load"` in the view work.
 
 When you run the app with this change, NativeScript triggers the `load()` function you created in the code-behind file, and you should see the word “hello” logged in your terminal.
 
@@ -44,7 +44,7 @@ When you run the app with this change, NativeScript triggers the `load()` functi
 This simple example shows you how you can append attributes to UI components to run functions in the view's accompanying JavaScript file. Let's use another one of these attributes: `tap`.
 
 <h4 class="exercise-start">
-    <b>Exercise</b>: Add tap attributes to the login buttons and add their functions
+    <b>Exercise</b>: Enable the buttons
 </h4>
 
 You can add a `tap` attribute that will fire when the user taps or touches a button. In `app/views/login/login.xml`, switch the two buttons at the bottom of the screen to use this markup:
@@ -76,10 +76,10 @@ Now that you can see tap gestures working, let's make them do something more int
 
 ### Navigating screens
 
-When you tap the “Sign Up for Groceries” button, you would expect a navigational change to a registration screen. This is very easy to do in NativeScript.
+When you tap the “Sign up for Groceries” button, you would expect a navigational change to a registration screen. This is very easy to do in NativeScript.
 
 <h4 class="exercise-start">
-    <b>Exercise</b>: Enable the “Sign Up” button on the login screen with a navigational change
+    <b>Exercise</b>: Enable the “Sign up” button on the login screen with a navigational change
 </h4>
 
 In `app/views/login/login.js`, add this line to the top of the file:
@@ -111,9 +111,9 @@ Now that you can access the registration page, go ahead and sign up for an accou
     <b>Exercise</b>: Register for an account
 </h4>
 
-Open Groceries and click on the “Sign up for Groceries” button to access the registration page. From there, provide an email address and password, and click the “Sign Up” button to create an account.
+Open Groceries and tap “Sign up for Groceries” to access the registration page. From there, provide an email address and password, and click the “Sign up” button to create an account.
 
-Feel free to use a fake email address and “password” for your password, just remember to write down the credentials you enter as you'll need them later.
+You can use a fake email address and password, just remember your credentials as you'll need them later.
 
 <div class="exercise-end"></div>
 
@@ -121,7 +121,7 @@ Feel free to use a fake email address and “password” for your password, just
 
 ### Accessing UI components
 
-Since you have been working with forms in NativeScript, you need to understand how data flows back and forth between the front end and back end. Specifically, you have created a login form, but you need to be able to know what the user types into the fields in order to log them in to your app.
+It's time to see how data flows back and forth between the front end and back end in forms.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Send data from the front end to the view model
@@ -140,7 +140,7 @@ var viewModule = require("ui/core/view");
 var email;
 ```
 
-> **NOTE**: This line of code imports the [view module](https://docs.nativescript.org/ApiReference/ui/core/view/View.html), which is the base class for all UI components. The module provides a lot of functionality, including the ability to control properties of a view and its children. You're going to use it to get access to the email text field.
+> **NOTE**: This line of code imports the [view module](/ApiReference/ui/core/view/View.html), which is the base class for all UI components. The module provides a lot of functionality, including the ability to control properties of a view and its children. You're going to use it to get access to the email text field.
 
 Next, edit the `load()` function in `login.js` to get a reference to the email address text field:
 
@@ -211,14 +211,14 @@ exports.load = function(args) {
 
 What's going on here?
 
-- First, you're creating a `user` view model that is based on the NativeScript Observable module. You create the view model with two properties, `email` and `password`, that are pre-populated with some dummy values.
-- Next, you bind the page to the `user` view model by setting it as the page's `bindingContext` property. This is specifically what makes the curly bracket syntax work.
+1. You're creating a `user` view model that is based on the NativeScript Observable module. You create the view model with two properties, `email` and `password`, that are pre-populated with some dummy values.
+2. You bind the page to the `user` view model by setting it as the page's `bindingContext` property. This is specifically what makes the curly bracket syntax work.
 
 Simply put, properties placed on a page's binding context are available to XML elements using the `{% raw %}{{ propertyName }}{% endraw %}` syntax. Because JavaScript sets the view model's `email` to `"user@domain.com"`, and because you bound the email address text field to that property using `<TextField text="{% raw %}{{ email }}{% endraw %}">`, when you run this app you'll see "user@domain.com" appear on the front end.
 
 ![](img/cli-getting-started/chapter3/ios/3.png)
 ![](img/cli-getting-started/chapter3/android/3.png)
 
-What's really cool is that the binding is two-way. Meaning, when the user types text in these text fields, those changes are immediately made to your view model.
+What's really cool is that the binding is two-way. Meaning, when the user types text in these text fields, those changes are immediately applied to your view model.
 
-In order to use these values, and to make this login functional by tying the your app into a backend service, you're going to need the ability to make HTTP calls. And to make HTTP calls in NativeScript you use the NativeScript http module. Let's look at how NativeScript modules work.
+To use these values, and to make this login functional by tying the your app into a backend service, you're going to need the ability to make HTTP calls. And to make HTTP calls in NativeScript you use the NativeScript http module. Let's look at how NativeScript modules work.

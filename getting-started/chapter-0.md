@@ -9,8 +9,8 @@ Welcome to the [NativeScript](https://nativescript.org) getting started guide. I
 This guide will walk you through building [Groceries](https://github.com/NativeScript/sample-Groceries), a groceries management app that does the following things:
 
 - Connects to an existing RESTful service.
-- Lets users to register and login.
-- Lets authenticated users to add and delete groceries from a list.
+- Provides user registration and login.
+- Lets authenticated users add and delete groceries from a list.
 - Runs cross-platform (iOS and Android).
 
 If you follow along to the end, here's what the finished app will look like on iOS:

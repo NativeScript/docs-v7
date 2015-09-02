@@ -1,8 +1,8 @@
 ## Plugins and npm modules
 
-Often, you need functionality that is not implemented in the NativeScript modules. But no worries, as NativeScript allows you to leverage [npm](https://www.npmjs.com/) (node package manager) to import npm modules into your apps. Alternately, you can install NativeScript plugins, which are simply npm modules that can access native code and leverage Android and iOS SDKs, if required. 
+Often, you need functionality that is not implemented in the NativeScript modules. But no worries, as NativeScript lets you leverage [npm](https://www.npmjs.com/) (node package manager) to import npm modules into your apps. Alternately, you can install NativeScript plugins, which are simply npm modules that can access native code and use Android and iOS SDKs, if required. 
 
-In this chapter, you'll install and use an external module, an email validator, so that you can check email addresses for validity as they are entered on the registration screen. Then, you'll add a NativeScript plugin, the [NativeScript social share widget](https://www.npmjs.com/package/nativescript-social-share), to allow users to share their grocery lists using their device's native sharing widget.
+In this chapter, you'll install and use and external email validator module to verify the format of email addresses as they are entered on the registration screen. Then, you'll add a NativeScript plugin, the [NativeScript social share widget](https://www.npmjs.com/package/nativescript-social-share), to let users share their grocery lists using their device's native sharing widget.
 
 ### Using an npm module in your app
 
@@ -58,7 +58,7 @@ Open `/app/shared/view-models/user-view-model.js` and add the following line at 
 var validator = require("email-validator/index");
 ```
 
-> **NOTE**: You need to explicitly point to the validator module's `index.js` file. The NativeScript framework is configured to look at the `"main"` value in an npm module's `package.json` file. In the case of this particular module, the `"main"` value is simply `"index"` (rather than `"index.js"`) so you need to reference the index file directly. If this package's `"main"` were set to `"index.js"`, you could use the simpler `require("email-validator")`.
+> **NOTE**: You need to explicitly point to the validator module's `index.js` file. The NativeScript framework is configured to look at the `"main"` value in an npm module's `package.json` file. In the case of this module, the `"main"` value is simply `"index"` (rather than `"index.js"`) so you need to reference the index file directly. If this package's `"main"` were set to `"index.js"`, you could use the simpler `require("email-validator")`.
 
 To make use of this validator, add a function to `user-view-model.js`, right above the line `return viewModel`:
 
@@ -91,7 +91,7 @@ In this function, the user submits an email and password, and the value is sent 
 ![](img/cli-getting-started/chapter5/ios/1.png)
 ![](img/cli-getting-started/chapter5/android/1.png)
 
-In general npm modules greatly expand the number of things you're able to do in your NativeScript apps. Need to do date and time formatting? Use [moment](https://www.npmjs.com/package/moment). Need utility functions for objects and arrays? Use [lodash](https://www.npmjs.com/package/lodash) or [underscore](https://www.npmjs.com/package/underscore). This code reuse benefit gets even more powerful when you bring NativeScript plugins into the picture.
+In general npm modules greatly expand the number of things you're able to do in your NativeScript apps. Need date and time formatting? Use [moment](https://www.npmjs.com/package/moment). Need utility functions for objects and arrays? Use [lodash](https://www.npmjs.com/package/lodash) or [underscore](https://www.npmjs.com/package/underscore). This code reuse benefit gets even more powerful when you bring NativeScript plugins into the picture.
 
 > **WARNING**: Not all npm modules work in NativeScript apps. Specifically, modules that depend on Node.js or browser APIs will not work, as those APIs do not exist in NativeScript. The NativeScript wiki contains a [list of some of the more popular npm modules that have been verified to work in NativeScript apps](https://github.com/NativeScript/NativeScript/wiki/supported-npm-modules).
 
@@ -139,7 +139,7 @@ Next you have to build some UI that lets you share a grocery list. To do so, ope
 </Page.actionBar>
 ```
 
-This code defines an [ActionBar](https://docs.nativescript.org/ApiReference/ui/action-bar/ActionBar), which is a UI component that includes various menu items, enclosed in the `<ActionBar.actionItems>` tag. The `title` of the ActionBar allows you to show page-specific titles.
+This code defines an [ActionBar](https://docs.nativescript.org/ApiReference/ui/action-bar/ActionBar), which is a UI component that includes various menu items, enclosed in the `<ActionBar.actionItems>` tag. The `title` of the ActionBar lets you show page-specific titles.
 
 > **NOTE**: On iOS devices, `<ActionItem>`s are placed from left to right in sequence; you can override that (as the code above does) by providing an `ios.position` attribute.
 
@@ -170,6 +170,6 @@ Now when you run the app, you'll see a Share button at the top of the screen, wh
 
 Pretty cool, huh? The ability to use npm modules greatly expands the number of things you're able to do in a NativeScript app. Need to compose emails in your app? Try out the [NativeScript email plugin](https://www.npmjs.com/package/nativescript-email). Need to use the clipboard in your app? Try out the [NativeScript clipboard plugin](https://www.npmjs.com/package/nativescript-clipboard).
 
-If you're looking for NativeScript plugins start by doing a [search for “NativeScript” on npm](https://www.npmjs.com/search?q=nativescript). If you don't find the plugin you need, you can [request the plugin on our ideas portal](https://nativescript.ideas.aha.io/), or you can take a stab at [creating the plugin yourself](https://docs.nativescript.org/plugins).
+If you're looking for NativeScript plugins start by [searching for NativeScript on npm](https://www.npmjs.com/search?q=nativescript). If you don't find the plugin you need, you can [request the plugin on our ideas portal](https://nativescript.ideas.aha.io/), or you can take a stab at [creating the plugin yourself](https://docs.nativescript.org/plugins).
 
 Between NativeScript modules, npm modules, and NativeScript plugins, the NativeScript framework provides a lot of functionality you can use to build your next app. However, we've yet to talk about NativeScript's most powerful feature: the ability to directly access iOS and Android APIs in JavaScript. Let's look at how it works.

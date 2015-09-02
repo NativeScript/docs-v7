@@ -1,15 +1,15 @@
 ## NativeScript modules
 
-In this chapter you'll learn about NativeScript modules, which are the JavaScript modules in your app's `tns_modules` folder. Whether you've realized it or not, you've already used several NativeScript modules. This includes the modules you've brought in via `require()`—the view module, the frame module, the observable module, and so forth—and also the UI components you've been using in XML, as `<Page>`, `<Image>`, `<TextField>`, and `<Button>` are all just NativeScript modules.
+In this chapter you'll learn about NativeScript modules, which are the JavaScript modules in your app's `tns_modules` folder. Whether you've realized it or not, you've already used several NativeScript modules. This includes the modules you've brought in via require() (the view, frame and observable modules) and also the UI components you've been using in XML (the page, image, text field and button modules).
 
 If you dig into `tns_modules` you can get an idea of how these modules work. Start by finding the `app/tns_modules/http` folder, which includes the implementation of the http module. It includes:
 
 - a `package.json` file that sets the name of the module;
 - a file containing the module's Android implementation (`http-request.android.js`);
 - a file containing the module's iOS implementation (`http-request.ios.js`);
-- a generic file (`http.js`) that abstracts the platform-specific code above into a platform-agnostic API, so that you can make HTTP calls on both platforms using a single JavaScript API.
+- a generic file (`http.js`) that abstracts the platform-specific code into a platform-agnostic API, so that you can make HTTP calls on both platforms using a single JavaScript API.
 
-> **NOTE**: You can refer to the [Node.js documentation on folders as modules](https://nodejs.org/api/modules.html#modules_folders_as_modules) for more detailed information on how NativeScript organizes its modules. (Remember that NativeScript modules adhere to the same CommonJS specification that Node.js modules do.)
+> **NOTE**: You can refer to the [Node.js documentation on folders as modules](https://nodejs.org/api/modules.html#modules_folders_as_modules) for more detailed information on how NativeScript organizes its modules.
 
 The \*.ios.\* and \*.android.\* naming convention should look familiar, as it's the exact same convention we used to include Android- and iOS-specific styling in [chapter 2.3](#css). NativeScript uses this same convention to implement its modules on iOS and Android. Now that you know where these modules are, let's take a closer look at what else they can do for your app.
 
@@ -129,7 +129,7 @@ exports.signIn = function() {
 
 Take a moment to look at just how clean your code-behind file is now. The code-behind instantiates a view model (`UserViewModel`), and calls its `signIn()` method when the user taps the view's sign in button. Because the view model is bound to the page's two text fields (remember `{% raw %}{{ email }}{% endraw %}` and `{% raw %}{{ password }}{% endraw %}`), the view model already has the data it needs to perform the actual login.
 
-And if you try running your app, and input your account's credentials, you can indeed login, but... you don't see anything. That's because view models aren't responsible for updating the UI. Instead the view model returns a `Promise` to let the code behind handle the UI. Let's see how you can use that `Promise`, and introduce a new NativeScript module in the process.
+And if you try running your app, and input your account's credentials, you can indeed login, but... you don't see anything. That's because view models aren't responsible for updating the UI. Instead the view model returns a `Promise` to let the code-behind handle the UI. Let's see how you can use that `Promise`, and introduce a new NativeScript module in the process.
 
 ### Dialog module
 
@@ -171,7 +171,7 @@ This code handles both a successful and unsuccessful login. On success, you call
 ![login 8](img/cli-getting-started/chapter4/ios/1.png)
 ![login 8](img/cli-getting-started/chapter4/android/1.png)
 
-With that, the login page is completely functional. Now that you have user management working in your NativeScript app, let's move onto the page that users will use to manage their grocery list. To do that, you need a module that shows items in a list, which is exactly what the ListView module does.
+With that, the login page is completely functional. Now that you have user management working in your NativeScript app, let's move onto the page where users will manage their grocery list. To do that, you need a module that shows items in a list, which is exactly what the ListView module does.
 
 > **TIP**: From this point forward in the guide you'll have to log in a lot, so you may find it helpful to hardcode your credentials in the app during development. The easiest way to do that is to pass an email address and password to the `UserViewModel()` constructor, for example:
 
@@ -184,7 +184,7 @@ With that, the login page is completely functional. Now that you have user manag
 
 ### ListView
 
-As its name implies, the ListView widget lets you show a list of things on the screen, which is exactly what you need for showing a list of groceries. Before tying the grocery list to a backend API, let's start by seeing how to show a hardcoded list of items on the screen.
+The ListView widget lets you show a list of things on the screen, which is exactly what you need for showing a list of groceries. Before tying the grocery list to a backend API, let's start by seeing how to show a hardcoded list of items on the screen.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Construct the list view
@@ -209,7 +209,7 @@ Open `app/views/list/list.xml` and paste in the code below, which creates the li
 
 As discussed earlier, even though you're using `<ListView>` in XML, the ListView module is still a NativeScript module. You can find its implementation in the `tns_modules/ui/list-view` folder. If you want to, you could construct a ListView in pure JavaScript code in the code-behind file as shown in [this example](http://docs.nativescript.org/ApiReference/ui/list-view/HOW-TO.html). For most situations using the NativeScript UI modules in XML is easier, so we'll be sticking with XML usage throughout this tutorial.
 
-One thing to note here is the use of `<ListView.itemTemplate>`. This tag gives you the ability to control how each of the ListView's items displays within the list. For now you're using a simple `<Label>` UI component to display the `{% raw %}{{ name }}{% endraw %}` of each grocery.
+Note the use of `<ListView.itemTemplate>`. This tag gives you the ability to control how each of the ListView's items displays within the list. For now you're using a simple `<Label>` UI component to display the `{% raw %}{{ name }}{% endraw %}` of each grocery.
 
 If you run this code as is, you won't see any items in the grocery list. First you need to build out a way to manage data within the ListView module, and to do that you're going to need a new NativeScript module: the ObservableArray.
 
@@ -353,7 +353,7 @@ viewModel.empty = function() {
 
 <div class="exercise-end"></div>
 
-The code to make an HTTP call should look familiar, as it's using the same http module you used in the previous section. Here, you're using the http module's `getJSON()` method, which automatically takes care of formatting the backend's response as JSON.
+The code to make an HTTP call should look familiar, as it leverages the same http module you used in the previous section. Here, the http module's `getJSON()` method automatically takes care of formatting the backend's response as JSON.
 
 If you load the app and log in with email address "tj.vantoll@gmail.com" and password "password", you should see a list of groceries that looks something like this:
 
@@ -380,7 +380,7 @@ Open `app/views/list/list.xml` and change the `<GridLayout>` tag to use the code
 <GridLayout rows="auto, \*" columns="2\*, \*">
 ```
 
-The `rows` attribute divides the screen into two rows, the first auto-sized according to its childrens' height, and the other to contain *, or the remaining height of the screen. The `columns` attribute divides the screen into two columns, where the first column takes up 2/3 of the screen, and the second takes up the remaining third.
+The `rows` attribute divides the screen into two rows, the first auto-sized according to its childrens' height, and the other to contain \*, or the remaining height of the screen. The `columns` attribute divides the screen into two columns, where the first column takes up 2/3 of the screen, and the second takes up the remaining third.
 
 Next, to give the user a means of adding groceries to the list, add a text field and a button to the page. Add these two lines of code directly after the initial `<GridLayout>` tag:
 
@@ -399,7 +399,7 @@ Finally, replace the `<ListView>` tag with the code below to place it in the sec
 <ListView items="{% raw %}{{ groceryList }}{% endraw %}" id="groceryList" row="1" colSpan="2">
 ```
 
-Now you just need to make the necessary changes to the code behind file to support these XML changes. Open `list.js` and start by adding a new `"grocery"` property to the `pageData` Observable. The `pageData` assignment should look like this:
+Now you just need to make the necessary changes to the code-behind file to support these XML changes. Open `list.js` and start by adding a new `"grocery"` property to the `pageData` Observable. The `pageData` assignment should look like this:
 
 ``` JavaScript
 var pageData = new observableModule.Observable({

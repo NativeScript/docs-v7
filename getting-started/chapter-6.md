@@ -6,7 +6,7 @@ NativeScript gives you the option to dig into native code as needed, and to do s
 
 ### Customize the ActionBar - iOS
 
-When you use the ActionBar UI component in a NativeScript app, NativeScript is actually creating and managing an iOS `UINavigationController` for you. You can confirm this by digging into the implementation code, specifically `tns_modules/ui/action-bar/action-bar.ios.js`, and `tns_modules/ui/frame/frame.ios.js`.
+When you use the ActionBar UI component, NativeScript is actually creating and managing an iOS `UINavigationController` for you. You can confirm this by digging into the implementation code, specifically `tns_modules/ui/action-bar/action-bar.ios.js`, and `tns_modules/ui/frame/frame.ios.js`.
 
 What you might not realize is that the code that you see in these NativeScript modules, the code that looks like Objective-C-ified or Java-ified JavaScript code, is available for you to use in your own JavaScript modules. For example, you can easily get a reference to the `UINavigationBar` and simply call its [documented methods](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UINavigationBar_Class/index.html) to change its look and feel. Let's look at how to do that.
 
@@ -91,7 +91,7 @@ Open `app/views/list/list.xml`, find the `<ListView.itemTemplate>` tag, and repl
 
 With this code you're primarily adding an `<Image>` to the existing ListView template. But now that you have multiple UI components in this template, you have to tell NativeScript how to layout these two components, which is what the `<GridLayout>` handles. By specifying `columns="*, auto"` you divide each item into two columns: the first containing the label and the second containing the new image.
 
-For the image itself, the `ios:visibility="collapsed"` attribute sets the image's `visibility` CSS property to `"collapsed"`, which hides it. Because the attribute was prefixed with `ios:`, that CSS property is only applied on iOS; therefore the button displays on Android devices, but not on iOS ones. The trash can image itself has already been placed in the app for you, and can be found in appropriate sizes in the four drawable folders in `/app/App_Resources/Android/drawable-*dpi`. Here's what the trash can UI looks like on Android:
+For the image itself, the `ios:visibility="collapsed"` attribute sets the image's `visibility` CSS property to `"collapsed"`, which hides it. Because the attribute was prefixed with `ios:`, that CSS property is only applied on iOS; therefore the button displays on Android devices, but not on iOS ones. The trash can image itself has already been placed in the app for you, and can be found in appropriate sizes in the four drawable folders in `/app/App_Resources/Android`. Here's what the trash can UI looks like on Android:
 
 ![Trash can icons on Android](img/cli-getting-started/chapter6/android/1.png)
 
@@ -138,9 +138,9 @@ viewModel.delete = function(index) {
 
 <div class="exercise-end"></div>
 
-This code probably looks fairly familiar by now. You're again calling the http module's `request()` method, this time specifying a `method` of `"DELETE"` to delete a grocery from the backend. You again return a `Promise` so the calling function has the opportunity to handle successful and unsuccessful calls. Note again the power of using the MVVM approach of building your app. To update the grocery list UI, all you have to do is remove the item from the ObservableArray (`viewModel.splice(index, 1)`), and let the list's presentation take care of itself.
+This code probably looks fairly familiar by now. You're again calling the http module's `request()` method, this time specifying a `method` of `"DELETE"` to delete a grocery from the backend. You again return a `Promise` so the calling function has the opportunity to handle successful and unsuccessful calls. Note again the power of using the MVVM approach for building your app. To update the grocery list UI, all you have to do is remove the item from the ObservableArray (`viewModel.splice(index, 1)`), and let the list's presentation take care of itself.
 
-If you run your app on Android you should have the ability to delete items from the list.
+If you run your app on Android you should be able to delete items from the list.
 
 ![deleting from a list on Android](img/cli-getting-started/chapter6/android/2.gif)
 
@@ -152,7 +152,7 @@ If you're an iOS user you're probably familiar with the slide-to-delete gesture 
 
 The code to do so is a little trickier than our previous example for Android, so we've provided a ready-built module to implement this functionality in the `shared/utils/ios-swipe-delete.js` file. In this file you'll find a custom implementation of a data source that adheres to the `UITableViewDataSource` protocol. The file exports a single `enable()` function, which takes a reference to a ListView, and injects that ListView with the custom data source behavior.
 
-Don't worry too much about exactly what this code is doing, as it involves a bit of understand of how iOS APIs works. What is cool is that you *can* implement this relatively advanced iOS API in a few dozen lines of code, and that it's really easy to wrap this code with a very simple JavaScript API. This ease of use is exactly why NativeScript modules and NativeScript plugins are so easy to consume. Let's look at how to use this module.
+Don't worry too much about exactly what this code is doing, as it involves a bit of understanding of how iOS APIs works. What is cool is that you *can* implement this relatively advanced iOS API in a few dozen lines of code, and that it's really easy to wrap this code with a very simple JavaScript API. This ease of use is exactly why NativeScript modules and NativeScript plugins are so easy to consume. Let's look at how to use this module.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Edit the ListView
