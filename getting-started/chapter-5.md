@@ -1,6 +1,6 @@
 ## Plugins and npm modules
 
-Often, you need functionality that is not implemented in the NativeScript modules. But no worries, as NativeScript lets you leverage [npm](https://www.npmjs.com/) (node package manager) to import npm modules into your apps. Alternately, you can install NativeScript plugins, which are simply npm modules that can access native code and use Android and iOS SDKs, if required. 
+As you build more complex apps, you'll likely run into functionality that is not implemented in the NativeScript modules. But no worries, as NativeScript lets you leverage [npm](https://www.npmjs.com/) (node package manager) to import npm modules into your apps. Alternately, you can install NativeScript plugins, which are simply npm modules that can access native code and use Android and iOS SDKs, if required. 
 
 In this chapter, you'll install and use and external email validator module to verify the format of email addresses as they are entered on the registration screen. Then, you'll add a NativeScript plugin, the [NativeScript social share widget](https://www.npmjs.com/package/nativescript-social-share), to let users share their grocery lists using their device's native sharing widget.
 
