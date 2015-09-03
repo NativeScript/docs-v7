@@ -94,7 +94,7 @@ Your NativeScript project consists of the following basic directories and files.
 
     iOS | Android
     ----|--------
-    ![QR code for installing the companion app](http://docs.nativescript.org/img/companions/ios-code.png) | ![QR code for installing the companion app](http://docs.nativescript.org/img/companions/android-code.png)
+    ![QR code for installing the companion app](/img/companions/ios-code.png) | ![QR code for installing the companion app](/img/companions/android-code.png)
 
 2. Prepare your project for the companion app.
 
@@ -137,7 +137,7 @@ Tap and hold with three fingers until a download dialog appears. | Expand the no
 
 On your device, your app should appear similar to the screen shots below.
 
-![step1 ios](http://docs.nativescript.org/img/getting-started/step1-ios.png "step1 ios")![step1 android](http://docs.nativescript.org/img/getting-started/step1-android.png "step1 android")
+![step1 ios](/img/ab-getting-started/step1-ios.png "step1 ios")![step1 android](/img/ab-getting-started/step1-android.png "step1 android")
 
 ## Create a View Model
 
@@ -252,7 +252,7 @@ Tap and hold with three fingers until a download dialog appears. | Expand the no
 
 On your device, your app should appear similar to the screen shots below.
 
-![step2 ios](http://docs.nativescript.org/img/getting-started/step2-ios.png "step2 ios")![step2 android](http://docs.nativescript.org/img/getting-started/step2-android.png "step2 android")
+![step2 ios](/img/ab-getting-started/step2-ios.png "step2 ios")![step2 android](/img/ab-getting-started/step2-android.png "step2 android")
 
 ## Style Your App
 
@@ -305,7 +305,7 @@ Tap and hold with three fingers until a download dialog appears. | Expand the no
 
 On your device, your app should appear similar to the screen shots below.
 
-![step3 ios](http://docs.nativescript.org/img/getting-started/step3-ios.png "step3 ios")![step3 android](http://docs.nativescript.org/img/getting-started/step3-android.png "step3 android")
+![step3 ios](/img/ab-getting-started/step3-ios.png "step3 ios")![step3 android](/img/ab-getting-started/step3-android.png "step3 android")
 
 ## Move Beyond the Basics
 
