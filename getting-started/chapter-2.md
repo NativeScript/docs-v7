@@ -25,7 +25,7 @@ Here's what these various files and folders do:
 - **package.json**: This file contains your app's configuration details, such as your app id, the version of NativeScript you're using, and also which npm modules your app uses. We'll take a closer look at how to use this file when we talk about using npm modules in [chapter 5](#plugins-and-npm-modules).
 - **platforms**: This folder contains the platform-specific code NativeScript needs to build native iOS and Android apps. For example in the `android` folder you'll find things like your project's `AndroidManifest.xml` and .apk executable files. Similarly, the `ios` folder contains the Groceries' Xcode project and .ipa executables. Note, users on Windows machines will not have an `ios` folder.
 
-The NativeScript CLI manages the `platforms` folder for you as you develop and run your app; it's a best practice to treat the `platforms` folder as generated code. The Groceries app includes the `platforms` folder in its `.gitignore` to exclude its files from source control.
+The NativeScript CLI manages the `platforms` folder for you as you develop and run your app; therefore it's a best practice to treat the `platforms` folder as generated code. The Groceries app includes the `platforms` folder in [its `.gitignore`](https://github.com/NativeScript/sample-Groceries/blob/master/.gitignore) to exclude its files from source control.
 
 Next, let's dig into the `app` folder, as that's where you'll be spending the majority of your time.
 
@@ -179,7 +179,7 @@ Let's start by adding a few application-wide CSS rules.
     <b>Exercise</b>: Create global styles
 </h4>
 
-Paste the following code in `app.css` file:
+Paste the following code in the `app.css` file:
 
 ``` CSS
 Page {
@@ -233,7 +233,7 @@ Let's break down what just happened. First, NativeScript supports CSS's `@import
 
 There's one other change here we need to discuss, and that's the `cssClass` attribute you added to this button:
 
-```
+``` XML
 <Button text="Sign up for Groceries" cssClass="link" />
 ```
 

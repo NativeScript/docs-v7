@@ -23,21 +23,21 @@ Let's look at what you can do in a code-behind file with a simple example.
 Open `login.xml` and add a `loaded` attribute to the `<Page>` UI component at the top. It should look like this:
 
 ``` XML
-<Page loaded="load">
+<Page loaded="loaded">
 ```
 
-Next, paste the code below in `app/views/login/login.js` to define a `load()` function:
+Next, paste the code below in `app/views/login/login.js` to define a `loaded()` function:
 
 ``` JavaScript
-exports.load = function() {
+exports.loaded = function() {
     console.log("hello");
 };
 ```
 <div class="exercise-end"></div>
 
-> **NOTE**: The keyword `exports` is part of [CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1), the standard on which both NativeScript and Node.js' implementations of modules are based. In CommonJS-based JavaScript modules, a free variable called `exports` is an object to which a module might add properties and methods to configure its external API. Using `exports` in a code-behind file exposes the function for use in the view, or XML file. That is, the `exports.load` assignment in the code-behind file is what makes `loaded="load"` in the view work.
+> **NOTE**: The keyword `exports` is part of [CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1), the standard on which both NativeScript and Node.js' implementations of modules are based. In CommonJS-based JavaScript modules, a free variable called `exports` is an object to which a module might add properties and methods to configure its external API. Using `exports` in a code-behind file exposes the function for use in the view, or XML file. That is, the `exports.loaded` assignment in the code-behind file is what makes `loaded="loaded"` in the view work.
 
-When you run the app with this change, NativeScript triggers the `load()` function you created in the code-behind file, and you should see the word “hello” logged in your terminal.
+When you run the app with this change, NativeScript triggers the `loaded()` function you created in the code-behind file, and you should see the word “hello” logged in your terminal.
 
 ![](img/cli-getting-started/chapter3/terminal-1.png)
 
@@ -142,16 +142,16 @@ var email;
 
 > **NOTE**: This line of code imports the [view module](/ApiReference/ui/core/view/View.html), which is the base class for all UI components. The module provides a lot of functionality, including the ability to control properties of a view and its children. You're going to use it to get access to the email text field.
 
-Next, edit the `load()` function in `login.js` to get a reference to the email address text field:
+Next, edit the `loaded()` function in `login.js` to get a reference to the email address text field:
 
 ``` JavaScript
-exports.load = function(args) {
+exports.loaded = function(args) {
     var page = args.object;
     email = viewModule.getViewById(page, "email_address");
 };
 ```
 
-There are two things to note here. First, because the `load()` function handles the page's `loaded` event, NativeScript passes it a reference to the `<Page>` in the function's argument, which is named `args` by convention. Second, you use the view module's [`getViewById()`](/ApiReference/ui/core/view/View.html) function to get a reference to the text field component.
+There are two things to note here. First, because the `loaded()` function handles the page's `loaded` event, NativeScript passes it a reference to the `<Page>` in the function's argument, which is named `args` by convention. Second, you use the view module's [`getViewById()`](/ApiReference/ui/core/view/View.html) function to get a reference to the text field component.
 
 Finally, edit the `signIn()` function to log the contents of the text field:
 
@@ -198,10 +198,10 @@ var user = new observableModule.Observable({
 });
 ```
 
-Now, replace the existing `load()` function with the one below, which sets `user` as the binding context for the page.
+Now, replace the existing `loaded()` function with the one below, which sets `user` as the binding context for the page.
 
 ``` JavaScript
-exports.load = function(args) {
+exports.loaded = function(args) {
     var page = args.object;
     page.bindingContext = user;
 };
@@ -221,4 +221,4 @@ Simply put, properties placed on a page's binding context are available to XML e
 
 What's really cool is that the binding is two-way. Meaning, when the user types text in these text fields, those changes are immediately applied to your view model.
 
-To use these values, and to make this login functional by tying the your app into a backend service, you're going to need the ability to make HTTP calls. And to make HTTP calls in NativeScript you use the NativeScript http module. Let's look at how NativeScript modules work.
+To use these values, and to make this login functional by tying the your app into a backend service, you're going to need the ability to make HTTP calls. And to make HTTP calls in NativeScript you use the NativeScript fetch module. Let's look at how NativeScript modules work.

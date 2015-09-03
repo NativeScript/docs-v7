@@ -167,7 +167,7 @@ E/TNS.Native( 2063): File: "/data/data/org.nativescript.groceries/files/app/./vi
 If you find continuously running `tns run` from the terminal to be tedious, you may be interested in trying one of the following workflows:
 
 * The `tns livesync` command instantly transfers XML, CSS, and JavaScript files to a running NativeScript app. If you set the command's `--watch` flag (`tns livesync ios --emulator --watch` or `tns livesync android --emulator --watch`), the NativeScript CLI will watch your app for changes, and apply those changes automatically after you save files. Be warned, however, that the `livesync` command currently does not show `console.log()` output or stack traces. So during debugging you may want to switch back to `tns run`.
-* For Sublime Text users, [this build script](http://developer.telerik.com/featured/a-nativescript-development-workflow-for-sublime-text/) lets you type `Cmd`/`Ctrl` + `B` to start a build without returning to the terminal. (This is the workflow used for this guide.)
+* For Sublime Text users, [this build script](http://developer.telerik.com/featured/a-nativescript-development-workflow-for-sublime-text/) lets you type `Cmd`/`Ctrl` + `B` to start a build without returning to the terminal.
 * Emil Öberg's [nativescript-emulator-reload npm module](https://github.com/emiloberg/nativescript-emulator-reload) adds a Gulp watcher that relaunches the emulator after every change you make.
 
-Now that you have created an app, configured your environment, and set up your app to run on iOS and Android, you're ready to start digging into code.
+Now that you've created an app, configured your environment, and set up your app to run on iOS and Android, you're ready to start digging into the files that make up a NativeScript app.

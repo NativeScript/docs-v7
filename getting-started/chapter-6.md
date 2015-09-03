@@ -32,7 +32,7 @@ Next, open `app/views/login/login.xml` and paste in the following code, again di
 </Page.actionBar>
 ```
 
-With the ActionBar in place, let's look at how to customize its look with some native iOS APIs. Open `app/views/login/login.js` and paste the following code in the `exports.load()` function, directly after the `var page = args.object;` assignment:
+With the ActionBar in place, let's look at how to customize its look with some native iOS APIs. Open `app/views/login/login.js` and paste the following code in the `exports.loaded()` function, directly after the `var page = args.object;` assignment:
 
 ``` JavaScript
 if (page.ios) {
@@ -120,14 +120,13 @@ Open `app/shared/view-models/grocery-list-view-model.js` and paste in the code b
 ``` JavaScript
 viewModel.delete = function(index) {
     return new Promise(function(resolve, reject) {
-        httpModule.request({
-            url: config.apiUrl + "Groceries/" + viewModel.getItem(index).id,
+        fetchModule.fetch(config.apiUrl + "Groceries/" + viewModel.getItem(index).id, {
             method: "DELETE",
             headers: {
                 "Authorization": "Bearer " + config.token,
                 "Content-Type": "application/json"
             }
-        }).then(function(data) {
+        }).then(function() {
             viewModel.splice(index, 1);
             resolve();
         }).catch(function(error) {
@@ -140,7 +139,7 @@ viewModel.delete = function(index) {
 
 <div class="exercise-end"></div>
 
-This code probably looks fairly familiar by now. You're again calling the http module's `request()` method, this time specifying a `method` of `"DELETE"` to delete a grocery from the backend. You again return a `Promise` so the calling function has the opportunity to handle successful and unsuccessful calls. Note again the power of using the MVVM approach for building your app. To update the grocery list UI, all you have to do is remove the item from the ObservableArray (`viewModel.splice(index, 1)`), and let the list's presentation take care of itself.
+This code probably looks fairly familiar by now. You're again calling the fetch module's `fetch()` method, this time specifying a `method` of `"DELETE"` to delete a grocery from the backend. You again return a `Promise` so the calling function has the opportunity to handle successful and unsuccessful calls. Note again the power of using the MVVM approach for building your app. To update the grocery list UI, all you have to do is remove the item from the ObservableArray (`viewModel.splice(index, 1)`), and let the list's presentation take care of itself.
 
 If you run your app on Android you should be able to delete items from the list.
 
@@ -166,7 +165,7 @@ Add the following line of code to the top of `app/views/list/list.js`:
 var swipeDelete = require("../../shared/utils/ios-swipe-delete");
 ```
 
-Then, add the following code to the `exports.load()` function, directly under the `page = args.object;` assignment:
+Then, add the following code to the `exports.loaded()` function, directly under the `page = args.object;` assignment:
 
 ``` JavaScript
 if (page.ios) {
