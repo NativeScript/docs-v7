@@ -7,6 +7,18 @@ position: 1
 
 Cross Platform Modules Changelog
 ==============================
+##1.3.0 (2015, September ?)
+
+### Breaking changes
+-  [(#473)](https://github.com/NativeScript/NativeScript/issues/473) The `application.ios.removeNotificationObserver` method now requires an observer instance to be supplied as the first argument. The observer instance is obtained from the `application.ios.addNotificationObserver` method:
+
+```JavaScript
+var observer = application.ios.addNotificationObserver(UIDeviceBatteryLevelDidChangeNotification,
+    function (notification) {
+        console.log(notification);
+    });
+application.ios.removeNotificationObserver(observer, UIDeviceBatteryLevelDidChangeNotification);
+```
 
 ##1.2.1 (2015, August 18)
 
