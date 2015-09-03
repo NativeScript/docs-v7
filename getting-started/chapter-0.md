@@ -1,6 +1,6 @@
 ## NativeScript Getting Started Guide
 
-Welcome to the [NativeScript](https://nativescript.org) getting started guide. In this guided tutorial you'll use NativeScript, a cross-platform JavaScript framework for building native mobile apps, to build an iOS and Android app from scratch.
+Welcome to the [NativeScript](https://nativescript.org) getting started guide. In this tutorial you'll use NativeScript, a cross-platform JavaScript framework for building native mobile apps, to build an iOS and Android app from scratch.
 
 > **TIP:** For a video introduction to NativeScript, see the [getting started guide on YouTube](https://www.youtube.com/watch?v=rsCT5fpES4Q).
 

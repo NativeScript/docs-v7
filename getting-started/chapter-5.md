@@ -163,7 +163,7 @@ exports.share = function() {
 
 This code takes the groceries from the grocery list view model, converts the data into a comma-separated string, and passes that string to the social share module's `shareText()` method.
 
-Now when you run the app, you'll see a Share button at the top of the screen, which lets you share the list of groceries via the native iOS and Android sharing widgets.
+Now when you run the app, you'll see a new button at the top of the screen. When you tap it, the native iOS or Android sharing widget will show to let you post your groceries to your social networks, or send them via email, message, or any other method you prefer.
 
 ![Social sharing widget on iOS](img/cli-getting-started/chapter5/ios/2.gif)
 ![Social sharing widget on Android](img/cli-getting-started/chapter5/android/2.gif)
