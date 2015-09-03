@@ -22,6 +22,7 @@ NativeScript apps consist of pages which represent the separate application scre
     * [Navigate and Pass Context](#navigate-and-pass-context)
     * [Navigate without History](#navigate-without-history)
     * [Navigate Back](#navigate-back)
+    * [Modal Pages](#modal-pages)
 * [Supporting Multiple Screens](#supporting-multiple-screens)
     * [Screen Size Qualifiers](#screen-size-qualifiers)
     * [Platform Qualifiers](#platform-qualifiers)
@@ -266,6 +267,57 @@ topmost.goBack();
 ``` TypeScript
 topmost.goBack();
 ```
+
+### Modal Pages
+
+Use the **showModal** method of the page class to show another page as a modal dialog. You must specify the location of the modal page module. You can provide a context and a callback function which will be called when the modal page is closed. You can also optionally specify whether to show the modal page in fullscreen or no. To close the modal page you need to subscribe to its `shownModally` event and store a reference to a close callback function provided through the event arguments. Call this function when you are ready to close the modal page optionally passing some results to the master page. Here is an example with two pages -- a main page and a login page. The main page shows the login page modally, the user enters his username and password and when ready clicks the Login button. This closes the modal login page and returns the username/password to the main page which can then log the user in.
+
+**main-page**
+``` JavaScript
+ var modalPageModule = "./modal-views-demo/login-page";
+ var context = "some custom context";
+ var fullscreen = true;
+ mainPage.showModal(modalPageModule, context, function closeCallback(username, password) {
+     // Log the user in...
+ }, fullscreen);
+```
+``` TypeScript
+ var modalPageModule = "./modal-views-demo/login-page";
+ var context = "some custom context";
+ var fullscreen = true;
+ mainPage.showModal(modalPageModule, context, function closeCallback (username: string, password: string) {
+     // Log the user in...
+ }, fullscreen);
+```
+
+**login-page**
+``` JavaScript
+var context;
+var closeCallback;
+function onShownModally(args) {
+    context = args.context;
+    closeCallback = args.closeCallback;
+}
+exports.onShownModally = onShownModally;
+function onLoginButtonTap() {
+    closeCallback(usernameTextField.text, passwordTextField.text);
+}
+exports.onLoginButtonTap = onLoginButtonTap;
+```
+``` TypeScript
+var context: any;
+var closeCallback: Function;
+export function onShownModally(args: pages.ShownModallyData) {
+    context = args.context;
+    closeCallback = args.closeCallback;
+}
+
+export function onLoginButtonTap() {
+    closeCallback(usernameTextField.text, passwordTextField.text);
+}
+```
+
+Complete source code can be found [here](https://github.com/NativeScript/NativeScript/tree/master/apps/modal-views-demo).
 
 ## Supporting Multiple Screens
 Mobile application run on different devices with different screen sizes and form factors. NativeScript provides a way to define different files(.js, .css, .xml etc.) to be loaded based on the screens size, platform and orientation of the current device. The approach is somewhat similar to [multi screen support in android](http://developer.android.com/guide/practices/screens_support.html). There is a set of *qualifiers* that can be added inside the file that will be respected when the file is loaded. Here is how the file should look like:
