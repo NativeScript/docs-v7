@@ -20,6 +20,7 @@ NativeScript apps consist of pages which represent the separate application scre
     * [Navigate by Page Name](#navigate-by-page-name)
     * [Navigate with Factory Function](#navigate-with-factory-function)
     * [Navigate and Pass Context](#navigate-and-pass-context)
+    * [Navigate without History](#navigate-without-history)
     * [Navigate Back](#navigate-back)
 * [Supporting Multiple Screens](#supporting-multiple-screens)
     * [Screen Size Qualifiers](#screen-size-qualifiers)
@@ -194,8 +195,6 @@ var navigationEntry = {
 topmost.navigate(navigationEntry);
 ```
 
-After you pass the context, you can implement additional business logic with the `onNavigatedTo` callback.
-
 #### Example
 
 In this example, this master-details app consists of two pages. The main page contains a list of entities. The details page shows information about the currently selected entity.
@@ -236,6 +235,25 @@ export function pageNavigatedTo(args: observable.EventData) {
     var page = <pages.Page>args.object;
     page.bindingContext = page.navigationContext;
 }
+```
+
+### Navigate without history
+
+You can navigate to a page without adding this navigation to the history. Set the `backstackVisible` property of the [`NavigationEntry`](ApiReference/ui/frame/NavigationEntry.md) to `false`. If this property is set to false then the Page will be displayed but once navigated from it will not be able to be navigated back to.
+
+``` JavaScript
+var navigationEntry = {
+    moduleName: "login-page",
+    backstackVisible: false
+};
+topmost.navigate(navigationEntry);
+```
+``` TypeScript
+var navigationEntry = {
+    moduleName: "login-page",
+    backstackVisible: false
+};
+topmost.navigate(navigationEntry);
 ```
 
 ### Navigate Back
