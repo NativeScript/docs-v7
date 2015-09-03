@@ -237,7 +237,7 @@ export function pageNavigatedTo(args: observable.EventData) {
 }
 ```
 
-### Navigate without history
+### Navigate without History
 
 You can navigate to a page without adding this navigation to the history. Set the `backstackVisible` property of the [`NavigationEntry`](ApiReference/ui/frame/NavigationEntry.md) to `false`. If this property is set to false then the Page will be displayed but once navigated from it will not be able to be navigated back to.
 
