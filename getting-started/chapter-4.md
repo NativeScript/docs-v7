@@ -1,19 +1,19 @@
 ## NativeScript modules
 
-In this chapter you'll learn about NativeScript modules, which are the JavaScript modules in your app's `tns_modules` folder. Whether you've realized it or not, you've already used several NativeScript modules. This includes the modules you've brought in via require() (the view, frame and observable modules) and also the UI components you've been using in XML (the page, image, text field and button modules).
+In this chapter you'll learn about NativeScript modules, which are the JavaScript modules in your app's `node_modules/tns-core-modules` folder. Whether you've realized it or not, you've already used several NativeScript modules. This includes the modules you've brought in via require() (the view, frame and observable modules) and also the UI components you've been using in XML (the page, image, text field and button modules).
 
-If you dig into `tns_modules` you can get an idea of how these modules work. Start by finding the `app/tns_modules/http` folder, which includes the implementation of the http module. It includes:
+If you dig into `node_modules/tns-core-modules` you can get an idea of how these modules work. Start by finding the `node_modules/tns-core-modules/camera` folder, which includes the implementation of the camera module. It includes:
 
 - a `package.json` file that sets the name of the module;
-- a file containing the module's Android implementation (`http-request.android.js`);
-- a file containing the module's iOS implementation (`http-request.ios.js`);
-- a generic file (`http.js`) that abstracts the platform-specific code into a platform-agnostic API, so that you can make HTTP calls on both platforms using a single JavaScript API.
+- a file containing the module's Android implementation (`camera.android.js`);
+- a file containing the module's iOS implementation (`camera.ios.js`);
+- a file containing code shared by the Android and iOS implementations (`camera-common.js`)
 
 > **NOTE**: You can refer to the [Node.js documentation on folders as modules](https://nodejs.org/api/modules.html#modules_folders_as_modules) for more detailed information on how NativeScript organizes its modules.
 
 The \*.ios.\* and \*.android.\* naming convention should look familiar, as it's the exact same convention we used to include Android- and iOS-specific styling in [chapter 2.3](#css). NativeScript uses this same convention to implement its modules on iOS and Android. Now that you know where these modules are, let's take a closer look at what else they can do for your app.
 
-### Connecting to a backend with the http module
+### Connecting to a backend with the fetch module
 
 When you created your own account on the registration page, you probably noticed that data was magically going... somewhere. But there's actually no magic involved; the register page invokes a RESTful API provided by [Telerik Backend Services](http://www.telerik.com/backend-services) to register the user for the Groceries service.
 
@@ -33,14 +33,14 @@ Next, take a look in the `app/shared/view-models` folder, which contains a few v
 
 > **NOTE**: In a larger app, it's pretty common to place code that interacts with the backend in separate files, and not directly in the view models. But in our case, the connection code lives directly in the view model for simplicity—which is perfectly reasonable for small apps. 
 
-Note that the `register()` function uses the config module to get the path to the backend, as well as the [http module](/ApiReference/http/README.html) that you examined in the `tns_modules` folder earlier.
+Note that the `register()` function uses the config module to get the path to the backend, as well as the [fetch module](/ApiReference/fetch/HOW-TO.html) to make HTTP calls.
 
 ``` JavaScript
-var httpModule = require("http");
 var config = require("../../shared/config");
+var fetchModule = require("fetch");
 ```
 
-Let's look at how the http module works by adding another method to the user view model.
+NativeScript's fetch module uses the same API as the [browser's new fetch() API](https://fetch.spec.whatwg.org/). Therefore, if you already know how to use the web's `fetch()` method, you already know how to make HTTP calls in NativeScript. Let's look at how the fetch module works by adding another method to the user view model.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Complete the login in the view model
@@ -51,10 +51,9 @@ Open `app/shared/view-models/user-view-model.js` and paste the following code di
 ``` JavaScript
 viewModel.login = function() {
     return new Promise(function(resolve, reject) {
-        httpModule.request({
-            url: config.apiUrl + "oauth/token",
+        fetchModule.fetch(config.apiUrl + "oauth/token", {
             method: "POST",
-            content: JSON.stringify({
+            body: JSON.stringify({
                 username: viewModel.get("email"),
                 password: viewModel.get("password"),
                 grant_type: "password"
@@ -62,8 +61,11 @@ viewModel.login = function() {
             headers: {
                 "Content-Type": "application/json"
             }
+        }).then(function(response) {
+            // Convert the data returned into JSON format
+            return response.json();
         }).then(function(data) {
-            config.token = data.content.toJSON().Result.access_token;
+            config.token = data.Result.access_token;
             resolve();
         }).catch(function(error) {
             console.log(error);
@@ -81,9 +83,9 @@ Let's break down what the code you just pasted in does.
 
 > **TIP**: [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) are a part of ECMAScript 6 (the scripting language of which JavaScript is an implementation). Because Promises have been implemented in the two JavaScript engines NativeScript uses—V8 for Android and JavaScriptCore for iOS—Promises are available for use in NativeScript apps.
 
-- Next, you use the http module's [`request()` method](/ApiReference/http/HttpRequestOptions.html) to POST data to the `apiUrl` stored in `shared/config.js`. The username, password and grant_type are sent to this endpoint as a JSON string. (Telerik Backend Services [requires a grant_type parameter](http://docs.telerik.com/platform/backend-services/development/rest-api/users/authenticate-user) for logins.)
+- Next, you use the fetch module's `fetch()` method to POST data to the `apiUrl` stored in `shared/config.js`. The username, password and grant_type are sent to this endpoint as a JSON string. (Telerik Backend Services [requires a grant_type parameter](http://docs.telerik.com/platform/backend-services/development/rest-api/users/authenticate-user) for logins.)
 
-- Finally, the endpoint's response is handled. `httpModule.request()` returns a `Promise`, which this code uses to resolve or reject its own `Promise`. When the request is successful (the `then()` handler), the code saves a reference to the user's authentication token to be used on subsequent requests.
+- Finally, the endpoint's response is handled. `fetchModule.fetch()` returns a `Promise`, which this code uses to resolve or reject its own `Promise`. When the request is successful (the second `then()` handler), the code saves a reference to the user's authentication token to be used on subsequent requests.
 
 With this code in place let's return to `login.js` to use this new function.
 
@@ -137,7 +139,7 @@ To utilize the `Promise` that the view model's `login()` function returns, you n
 
 In the case of Groceries, when the login works you're going to navigate the user to the list page, which you'll be building momentarily, and which will let the user add and remove groceries from a list. To do the navigation you'll use the same frame module you used earlier in this guide.
 
-The trickier situation is handling login failures, and for that you're going to use the dialog module. The dialog module can be used to show [several types](/ApiReference/ui/dialogs/HOW-TO.html) of popup UIs in your app, including action sheets, confirmation boxes, alert boxes, and prompts. It is a highly customizable module, and it allows you to control the buttons you include in your alerts, their text, and the messaging in the alert itself. The dialog module's code is in the `tns_modules/ui` folder with other UI widgets. Let's see how to use this widget on the login page.
+The trickier situation is handling login failures, and for that you're going to use the dialog module. You can use this module to show [several types](/ApiReference/ui/dialogs/HOW-TO.html) of popup UIs in your app, including action sheets, confirmation boxes, alert boxes, and prompts. It is a highly customizable module, and it lets you control the buttons in your alerts, their text, and the messaging in the alert itself. The dialog module's code is in the `node_modules/tns-core-modules/ui` folder with other UI widgets. Let's see how to use this widget on the login page.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Handle an error with a dialog window
@@ -193,7 +195,7 @@ The ListView widget lets you show a list of things on the screen, which is exact
 Open `app/views/list/list.xml` and paste in the code below, which creates the list where your groceries will reside:
 
 ``` XML
-<Page loaded="load">
+<Page loaded="loaded">
     <GridLayout>
         <ListView items="{% raw %}{{ groceryList }}{% endraw %}">
             <ListView.itemTemplate>
@@ -207,7 +209,7 @@ Open `app/views/list/list.xml` and paste in the code below, which creates the li
 
 > **NOTE**: Notice that this page is going to use a `<GridLayout>` to layout the UI components on the screen. As you add more UI components, you'll start dividing the screen into rows and columns, but for now you're just going to let the `<ListView>` take up the full screen (which is the default behavior of a `<GridLayout>` with no attributes).
 
-As discussed earlier, even though you're using `<ListView>` in XML, the ListView module is still a NativeScript module. You can find its implementation in the `tns_modules/ui/list-view` folder. If you want to, you could construct a ListView in pure JavaScript code in the code-behind file as shown in [this example](/ApiReference/ui/list-view/HOW-TO.html). For most situations using the NativeScript UI modules in XML is easier, so we'll be sticking with XML usage throughout this tutorial.
+As discussed earlier, even though you're using `<ListView>` in XML, the ListView module is still a NativeScript module. You can find its implementation in the `node_modules/tns-core-modules/ui/list-view` folder. If you want to, you could construct a ListView in pure JavaScript code in the code-behind file as shown in [this example](/ApiReference/ui/list-view/HOW-TO.html). For most situations using the NativeScript UI modules in XML is easier, so we'll be sticking with XML usage throughout this tutorial.
 
 Note the use of `<ListView.itemTemplate>`. This tag gives you the ability to control how each of the ListView's items displays within the list. For now you're using a simple `<Label>` UI component to display the `{% raw %}{{ name }}{% endraw %}` of each grocery.
 
@@ -244,7 +246,7 @@ var pageData = new observableModule.Observable({
     ])
 });
 
-exports.load = function(args) {
+exports.loaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
 };
@@ -263,7 +265,7 @@ A starting view model for this page is already in the file at `app/shared/view-m
 
 ``` JavaScript
 var config = require("../../shared/config");
-var httpModule = require("http");
+var fetchModule = require("fetch");
 var observableArrayModule = require("data/observable-array");
 
 function GroceryListViewModel(items) {
@@ -310,10 +312,10 @@ var pageData = new observableModule.Observable({
 });
 ```
 
-Finally, replace the existing `exports.load()` function with the one below, which calls two new methods on the view model—`empty()` and `load()`.
+Finally, replace the existing `exports.loaded()` function with the one below, which calls two new methods on the view model—`empty()` and `load()`.
 
 ``` JavaScript
-exports.load = function(args) {
+exports.loaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
 
@@ -328,18 +330,24 @@ The last piece to make this work is actually implementing the `empty()` and `loa
 
 ``` JavaScript
 viewModel.load = function() {
-    httpModule.getJSON({
-        url: config.apiUrl + "Groceries",
-        method: "GET",
-        headers: {
-            "Authorization": "Bearer " + config.token
-        }
-    }).then(function(data) {
-        data.Result.forEach(function(grocery) {
-            viewModel.push({
-                name: grocery.Name,
-                id: grocery.Id
+    return new Promise(function(resolve, reject) {
+        fetchModule.fetch(config.apiUrl + "Groceries", {
+            headers: {
+                "Authorization": "Bearer " + config.token
+            }
+        }).then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            data.Result.forEach(function(grocery) {
+                viewModel.push({
+                    name: grocery.Name,
+                    id: grocery.Id
+                });
             });
+            resolve();
+        }).catch(function(error) {
+            console.log(error);
+            reject();
         });
     });
 };
@@ -353,7 +361,7 @@ viewModel.empty = function() {
 
 <div class="exercise-end"></div>
 
-The code to make an HTTP call should look familiar, as it leverages the same http module you used in the previous section. Here, the http module's `getJSON()` method automatically takes care of formatting the backend's response as JSON.
+The code to make an HTTP call should look familiar, as it leverages the same fetch module you used in the previous section. Here, the fetch module's first `then()` handler converts the data from the response into JSON format, and the second `then()` handler pushes each grocery item from the response into the ObservableArray.
 
 If you load the app and log in with email address "tj.vantoll@gmail.com" and password "password", you should see a list of groceries that looks something like this:
 
@@ -386,7 +394,7 @@ Next, to give the user a means of adding groceries to the list, add a text field
 
 ``` XML
 <TextField id="grocery" text="{% raw %}{{ grocery }}{% endraw %}" hint="Enter a grocery item" row="0" col="0" />
-<Button text="Add" tap="add" row="0" col="1"></Button>
+<Button text="Add" tap="add" row="0" col="1" />
 ```
 
 The text field has an id attribute of `"grocery"`, and is bound to the `{% raw %}{{ grocery }}{% endraw %}` property of the page's binding context. The button's `tap` event refers to an `add()` function, that you'll add to the code-behind file momentarily.
@@ -441,10 +449,9 @@ Finally, define that `add()` function. To do so, open `app/shared/view-models/gr
 ``` JavaScript
 viewModel.add = function(grocery) {
     return new Promise(function(resolve, reject) {
-        httpModule.request({
-            url: config.apiUrl + "Groceries",
+        fetchModule.fetch(config.apiUrl + "Groceries", {
             method: "POST",
-            content: JSON.stringify({
+            body: JSON.stringify({
                 Name: grocery
             }),
             headers: {
@@ -468,6 +475,42 @@ If you build and rerun your app, you'll find that you can add a grocery item and
 ![list 3](img/cli-getting-started/chapter4/ios/4.gif)
 ![list 3](img/cli-getting-started/chapter4/android/4.gif)
 
+Let's look at how you can polish this page with a NativeScript module for showing activity indicators.
+
+### ActivityIndicator
+
+Currently there's a bit of a delay when you first visit the list page before groceries appear. This delay could confuse a new user, who might think the app is stuck rather than retrieving data from a backend.
+
+In NativeScript apps you can use the ActivityIndicator module to show a spinner icon in your UI while your app is busy performing actions. The ActivityIndicator is a relatively simple UI element as it primarily uses one attribute—`busy`. When an ActivityIndicator's `busy` attribute is set to `true` the ActivityIndicator shows, and when its `busy` attribute is set to `false` it doesn't. Let's see how the module works by adding an ActivityIndicator to the list page.
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Add an ActivityIndicator
+</h4>
+
+Open `app/views/list/list.js` and add the following element directly before the closing `</GridLayout>` tag.
+
+``` XML
+<ActivityIndicator busy="{% raw %}{{ isLoading }}{% endraw %}" rowSpan="2" colSpan="2" />
+```
+
+Then, in `app/views/list/list.js`, replace the existing `groceryList.load()` call in `loaded()` with the following four lines of code:
+
+``` JavaScript
+pageData.set("isLoading", true);
+groceryList.load().then(function() {
+    pageData.set("isLoading", false);
+});
+```
+
+<div class="exercise-end"></div>
+
+In the code above you add a new `"isLoading"` flag to the list page's Observable, and then bind the ActivityIndicator's `busy` attribute to that value. You set the initial value of the `"isLoading"` flag to `true` in the list page's `loaded()` function, which shows the ActivityIndicator. When the grocery list finishes loading, you flip the `"isLoading"` flag back to `false`, which hides the ActivityIndicator.
+
+You control where the ActivityIndicator displays by setting its `rowSpan` and `colSpan` attributes. In this case `rowSpan="2" colSpan="2"` makes the ActivityIndicator take up both rows and both columns of its parent GridLayout. Here's what the new ActivityIndicator looks like:
+
+![ActivityIndicator on iOS](img/cli-getting-started/chapter4/ios/5.gif)
+![ActivityIndicator on Android](img/cli-getting-started/chapter4/android/5.gif)
+
 Now that you have the login, registration, and list pages complete, you can enhance the app's functionality as a grocery list management tool. In the next chapters you'll add functionality such as email validation, social sharing, and more. And you'll use one of NativeScript's most useful feature to do so: npm modules.
 
-> **TIP**: There are several modules that come out of the box with your NativeScript install that we did not have time to cover in this guide—including a [location service](/ApiReference/location/HOW-TO), a [file-system helper](/ApiReference/file-system/HOW-TO), a [timer module](/ApiReference/timer/HOW-TO), a [camera module](/ApiReference/camera/HOW-TO), a [color module](/ApiReference/color/HOW-TO), and a whole lot more. Make sure to peruse the “API Reference” of the docs, or just look around `tns_modules` to see all of what's available.
+> **TIP**: There are several modules that come out of the box with your NativeScript install that we did not have time to cover in this guide—including a [location service](/ApiReference/location/HOW-TO), a [file-system helper](/ApiReference/file-system/HOW-TO), a [timer module](/ApiReference/timer/HOW-TO), a [camera module](/ApiReference/camera/HOW-TO), a [color module](/ApiReference/color/HOW-TO), and a whole lot more. Make sure to peruse the “API Reference” of the docs, or just look around `node_modules/tns-core-modules` to see all of what's available.
