@@ -33,7 +33,7 @@ Next, take a look in the `app/shared/view-models` folder, which contains a few v
 
 > **NOTE**: In a larger app, it's pretty common to place code that interacts with the backend in separate files, and not directly in the view models. But in our case, the connection code lives directly in the view model for simplicity—which is perfectly reasonable for small apps. 
 
-Note that the `register()` function uses the config module to get the path to the backend, as well as the [http module](http://docs.nativescript.org/ApiReference/http/README.html) that you examined in the `tns_modules` folder earlier.
+Note that the `register()` function uses the config module to get the path to the backend, as well as the [http module](/ApiReference/http/README.html) that you examined in the `tns_modules` folder earlier.
 
 ``` JavaScript
 var httpModule = require("http");
@@ -81,7 +81,7 @@ Let's break down what the code you just pasted in does.
 
 > **TIP**: [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) are a part of ECMAScript 6 (the scripting language of which JavaScript is an implementation). Because Promises have been implemented in the two JavaScript engines NativeScript uses—V8 for Android and JavaScriptCore for iOS—Promises are available for use in NativeScript apps.
 
-- Next, you use the http module's [`request()` method](http://docs.nativescript.org/ApiReference/http/HttpRequestOptions.html) to POST data to the `apiUrl` stored in `shared/config.js`. The username, password and grant_type are sent to this endpoint as a JSON string. (Telerik Backend Services [requires a grant_type parameter](http://docs.telerik.com/platform/backend-services/development/rest-api/users/authenticate-user) for logins.)
+- Next, you use the http module's [`request()` method](/ApiReference/http/HttpRequestOptions.html) to POST data to the `apiUrl` stored in `shared/config.js`. The username, password and grant_type are sent to this endpoint as a JSON string. (Telerik Backend Services [requires a grant_type parameter](http://docs.telerik.com/platform/backend-services/development/rest-api/users/authenticate-user) for logins.)
 
 - Finally, the endpoint's response is handled. `httpModule.request()` returns a `Promise`, which this code uses to resolve or reject its own `Promise`. When the request is successful (the `then()` handler), the code saves a reference to the user's authentication token to be used on subsequent requests.
 
@@ -137,7 +137,7 @@ To utilize the `Promise` that the view model's `login()` function returns, you n
 
 In the case of Groceries, when the login works you're going to navigate the user to the list page, which you'll be building momentarily, and which will let the user add and remove groceries from a list. To do the navigation you'll use the same frame module you used earlier in this guide.
 
-The trickier situation is handling login failures, and for that you're going to use the dialog module. The dialog module can be used to show [several types](http://docs.nativescript.org/ApiReference/ui/dialogs/HOW-TO.html) of popup UIs in your app, including action sheets, confirmation boxes, alert boxes, and prompts. It is a highly customizable module, and it allows you to control the buttons you include in your alerts, their text, and the messaging in the alert itself. The dialog module's code is in the `tns_modules/ui` folder with other UI widgets. Let's see how to use this widget on the login page.
+The trickier situation is handling login failures, and for that you're going to use the dialog module. The dialog module can be used to show [several types](/ApiReference/ui/dialogs/HOW-TO.html) of popup UIs in your app, including action sheets, confirmation boxes, alert boxes, and prompts. It is a highly customizable module, and it allows you to control the buttons you include in your alerts, their text, and the messaging in the alert itself. The dialog module's code is in the `tns_modules/ui` folder with other UI widgets. Let's see how to use this widget on the login page.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Handle an error with a dialog window
@@ -207,7 +207,7 @@ Open `app/views/list/list.xml` and paste in the code below, which creates the li
 
 > **NOTE**: Notice that this page is going to use a `<GridLayout>` to layout the UI components on the screen. As you add more UI components, you'll start dividing the screen into rows and columns, but for now you're just going to let the `<ListView>` take up the full screen (which is the default behavior of a `<GridLayout>` with no attributes).
 
-As discussed earlier, even though you're using `<ListView>` in XML, the ListView module is still a NativeScript module. You can find its implementation in the `tns_modules/ui/list-view` folder. If you want to, you could construct a ListView in pure JavaScript code in the code-behind file as shown in [this example](http://docs.nativescript.org/ApiReference/ui/list-view/HOW-TO.html). For most situations using the NativeScript UI modules in XML is easier, so we'll be sticking with XML usage throughout this tutorial.
+As discussed earlier, even though you're using `<ListView>` in XML, the ListView module is still a NativeScript module. You can find its implementation in the `tns_modules/ui/list-view` folder. If you want to, you could construct a ListView in pure JavaScript code in the code-behind file as shown in [this example](/ApiReference/ui/list-view/HOW-TO.html). For most situations using the NativeScript UI modules in XML is easier, so we'll be sticking with XML usage throughout this tutorial.
 
 Note the use of `<ListView.itemTemplate>`. This tag gives you the ability to control how each of the ListView's items displays within the list. For now you're using a simple `<Label>` UI component to display the `{% raw %}{{ name }}{% endraw %}` of each grocery.
 
@@ -470,4 +470,4 @@ If you build and rerun your app, you'll find that you can add a grocery item and
 
 Now that you have the login, registration, and list pages complete, you can enhance the app's functionality as a grocery list management tool. In the next chapters you'll add functionality such as email validation, social sharing, and more. And you'll use one of NativeScript's most useful feature to do so: npm modules.
 
-> **TIP**: There are several modules that come out of the box with your NativeScript install that we did not have time to cover in this guide—including a [location service](http://docs.nativescript.org/ApiReference/location/HOW-TO), a [file-system helper](http://docs.nativescript.org/ApiReference/file-system/HOW-TO), a [timer module](http://docs.nativescript.org/ApiReference/timer/HOW-TO), a [camera module](http://docs.nativescript.org/ApiReference/camera/HOW-TO), a [color module](http://docs.nativescript.org/ApiReference/color/HOW-TO), and a whole lot more. Make sure to peruse the “API Reference” of the docs, or just look around `tns_modules` to see all of what's available.
+> **TIP**: There are several modules that come out of the box with your NativeScript install that we did not have time to cover in this guide—including a [location service](/ApiReference/location/HOW-TO), a [file-system helper](/ApiReference/file-system/HOW-TO), a [timer module](/ApiReference/timer/HOW-TO), a [camera module](/ApiReference/camera/HOW-TO), a [color module](/ApiReference/color/HOW-TO), and a whole lot more. Make sure to peruse the “API Reference” of the docs, or just look around `tns_modules` to see all of what's available.

@@ -6,11 +6,11 @@ In this chapter you're going to start with the basics, including installing the 
 
 The NativeScript CLI has a few system requirements you must have in place before building NativeScript apps. As a first step, start by going through the instructions for your operating system:
 
-- [Windows](http://docs.nativescript.org/setup/ns-cli-setup/ns-setup-win.html)
-- [OS X](http://docs.nativescript.org/setup/ns-cli-setup/ns-setup-os-x.html)
-- [Linux](http://docs.nativescript.org/setup/ns-cli-setup/ns-setup-linux.html)
+- [Windows](/setup/ns-cli-setup/ns-setup-win.html)
+- [OS X](/setup/ns-cli-setup/ns-setup-os-x.html)
+- [Linux](/setup/ns-cli-setup/ns-setup-linux.html)
 
-> **TIP**: If you're a bit overwhelmed by these requirements, or if you're looking for a way to build iOS apps on Windows, you might be interested in [using NativeScript with Telerik AppBuilder](http://docs.nativescript.org/setup/quick-setup#the-appbuilder-tool-set). Telerik AppBuilder provides tooling for NativeScript apps, including the ability to perform iOS and Android builds in the cloud, which removes the need to complete these system requirements.
+> **TIP**: If you're a bit overwhelmed by these requirements, or if you're looking for a way to build iOS apps on Windows, you might be interested in [using NativeScript with Telerik AppBuilder](/setup/quick-setup#the-appbuilder-tool-set). Telerik AppBuilder provides tooling for NativeScript apps, including the ability to perform iOS and Android builds in the cloud, which removes the need to complete these system requirements.
 
 After completing the setup you should have two commands available from your terminal: `tns`—which is short for **T**elerik **N**ative**S**cript—and `nativescript`. The two commands are equivalent, so we'll stick with the shorter `tns`.
 

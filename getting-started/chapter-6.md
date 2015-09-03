@@ -52,7 +52,7 @@ Within the if block, you start by getting a reference to the `UINavigationBar`, 
 
 ![The iOS actionbar with updated colors](img/cli-getting-started/chapter6/ios/1.png)
 
-Learning how to transfer iOS and Android APIs into valid NativeScript code can take a little trial and error to get right. You can always refer to the NativeScript docs for detailed discussions of how to handle the code conversion. Here are the [docs for Android](http://docs.nativescript.org/runtimes/android/marshalling/java-to-js.html), and here are the [docs for iOS](http://docs.nativescript.org/runtimes/ios/marshalling/Marshalling-Overview.html).
+Learning how to transfer iOS and Android APIs into valid NativeScript code can take a little trial and error to get right. You can always refer to the NativeScript docs for detailed discussions of how to handle the code conversion. Here are the [docs for Android](/runtimes/android/marshalling/java-to-js.html), and here are the [docs for iOS](/runtimes/ios/marshalling/Marshalling-Overview.html).
 
 > **TIP**: NativeScript provides TypeScript declaration files for all iOS and Android APIs. If you're using TypeScript you can reference these declaration files to enable code completion in your editor. Even if you're not using TypeScript, these declaration files can be invaluable references when you're transferring native APIs to NativeScript code. For instance try searching for “UINavigationBar” in the iOS declaration file below to see which other properties are available.
 > - [iOS TypeScript declaration file](https://raw.githubusercontent.com/NativeScript/NativeScript/master/ios.d.ts)

@@ -66,7 +66,7 @@ applicationModule.mainModule = "./views/login/login";
 applicationModule.start();
 ```
 
-Here, you're requiring, or importing, the [NativeScript application module](http://docs.nativescript.org/ApiReference/application/HOW-TO). Then, you set its `mainModule`, or the starting screen of your app to be the login screen, which lives in your app's `views/login` folder.
+Here, you're requiring, or importing, the [NativeScript application module](/ApiReference/application/HOW-TO). Then, you set its `mainModule`, or the starting screen of your app to be the login screen, which lives in your app's `views/login` folder.
 
 > **TIP**: JavaScript modules in NativeScript follow the [CommonJS specification](http://wiki.commonjs.org/wiki/CommonJS). This means you can use the [`require()` method](http://wiki.commonjs.org/wiki/Modules/1.1#Module_Context) to import modules, as is done above, as well as use the `export` keyword to expose a module's properties and methods, which we'll look at later in this chapter. These are the same constructs Node.js uses for JavaScript modules, so if you know how to use Node.js modules, you already know how to use NativeScript modules.
 
@@ -105,7 +105,7 @@ NativeScript UI components provide attributes to let you configure their behavio
 - `<TextField>`
     - `hint`: Used to show placeholder text in the TextField to tell the user what to type.
     - `secure`: A boolean attribute that determines whether the TextField's text should be masked, which is commonly done on password fields.
-    - `keyboardType`: The type of keyboard to present to the user for input. `keyboardType="email"` shows a keyboard optimized for entering email addresses. NativeScript currently supports [five types of keyboards](http://docs.nativescript.org/ApiReference/ui/enums/KeyboardType/README) for text fields.
+    - `keyboardType`: The type of keyboard to present to the user for input. `keyboardType="email"` shows a keyboard optimized for entering email addresses. NativeScript currently supports [five types of keyboards](/ApiReference/ui/enums/KeyboardType/README) for text fields.
 - `<Button>`
     - `text`: Controls the text displayed within the button.
 
@@ -116,7 +116,7 @@ After you [run your app](#development-workflow) with this change, you will see a
 
 You need to tell NativeScript how to layout the UI components in your page. Let's look at how to use NativeScript layouts to arrange these components on the screen.
 
-> **TIP**: The NativeScript docs include a [full list of the UI components and attributes](http://docs.nativescript.org/ui-with-xml) with which you can build your apps. You can even [build your own, custom UI components](https://docs.nativescript.org/ui-with-xml#custom-components).
+> **TIP**: The NativeScript docs include a [full list of the UI components and attributes](/ui-with-xml) with which you can build your apps. You can even [build your own, custom UI components](https://docs.nativescript.org/ui-with-xml#custom-components).
 
 ### Layouts 
 
@@ -130,7 +130,7 @@ NativeScript provides several different layout containers that allow you to plac
 
 > **TIP**:
 > * For an introduction to the other NativeScript layout elements, check out Jen Looper's article on [demystifying NativeScript layouts](https://www.nativescript.org/blog/demystifying-nativescript-layouts).
-> * Refer to the NativeScript docs for a [more detailed look at how NativeScript layouts work](http://docs.nativescript.org/layouts) and the various things you can do to configure them.
+> * Refer to the NativeScript docs for a [more detailed look at how NativeScript layouts work](/layouts) and the various things you can do to configure them.
 
 For your login screen, all you need is a simple `<StackLayout>` to stack the UI components on top of each other. In later sections, you'll use some of the more advanced layouts.
 
@@ -167,7 +167,7 @@ Although the UI components are in the correct order, they could use some spacing
 
 ### CSS
 
-NativeScript uses a [subset of CSS](http://docs.nativescript.org/styling) to change the visual appearance of your app. You can use three mechanisms to add CSS properties to UI components: [application-wide CSS](http://docs.nativescript.org/styling#application-wide-css) (`app.css`), [page-specific CSS](http://docs.nativescript.org/styling#page-specific-css), and an [inline `style` attribute](http://docs.nativescript.org/styling#inline-css).
+NativeScript uses a [subset of CSS](/styling) to change the visual appearance of your app. You can use three mechanisms to add CSS properties to UI components: [application-wide CSS](/styling#application-wide-css) (`app.css`), [page-specific CSS](/styling#page-specific-css), and an [inline `style` attribute](/styling#inline-css).
 
 > **TIP**:
 > * Place CSS rules that should apply to all pages in your `app.css`, and CSS rules that apply to a single page in a page-specific CSS file (e.g. `login.css`). 
@@ -204,7 +204,7 @@ Button {
 
 <div class="exercise-end"></div>
 
-If you've done any web development before, the syntax should feel familiar here. You select four UI components (Page, TextField, Image, and Button) by their tag name, and then apply a handful of CSS rules as name/value pairs. NativeScript does not support all CSS properties because it is not possible to replicate some of them in native apps without causing performance issues. A [full list of the CSS properties that are supported](http://docs.nativescript.org/styling#supported-properties) are listed in the NativeScript docs.
+If you've done any web development before, the syntax should feel familiar here. You select four UI components (Page, TextField, Image, and Button) by their tag name, and then apply a handful of CSS rules as name/value pairs. NativeScript does not support all CSS properties because it is not possible to replicate some of them in native apps without causing performance issues. A [full list of the CSS properties that are supported](/styling#supported-properties) are listed in the NativeScript docs.
 
 Let's make one more change. Although often you want CSS rules to apply equally to your iOS and Android app, occasionally it makes sense to apply a CSS rule to only one platform. For example, iOS text fields frequently have borders around them, but Android text fields do not. Let's look at how to make platform-specific style changes in NativeScript.
 
@@ -251,7 +251,7 @@ NativeScript uses the `cssClass` attribute for adding CSS class names to UI comp
 }
 ```
 
-> **TIP**: NativeScript also supports selecting elements by the `id` attribute. Refer to the docs for [a full list of the supported selectors](http://docs.nativescript.org/styling#supported-selectors).
+> **TIP**: NativeScript also supports selecting elements by the `id` attribute. Refer to the docs for [a full list of the supported selectors](/styling#supported-selectors).
 
 With these changes in place, you'll notice that the app looks halfway decent now, and also has a distinctly different look on iOS and Android:
 

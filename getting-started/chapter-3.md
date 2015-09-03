@@ -98,7 +98,7 @@ exports.register = function() {
 ```
 <div class="exercise-end"></div>
 
-This function uses the [frame module](http://docs.nativescript.org/ApiReference/ui/frame/README.html), which is the NativeScript module responsible for navigation in your app. Here, you tell the topmost frame, or the frame the user actually sees, to navigate to the register view. 
+This function uses the [frame module](/ApiReference/ui/frame/README.html), which is the NativeScript module responsible for navigation in your app. Here, you tell the topmost frame, or the frame the user actually sees, to navigate to the register view. 
 
 If you run your app and click the “Sign up for Groceries” button, you will be sent to the registration screen, which we have pre-built for you.
 
@@ -117,7 +117,7 @@ You can use a fake email address and password, just remember your credentials as
 
 <div class="exercise-end"></div>
 
-> **TIP**: Although our Groceries app doesn't use complex navigation strategies, you have several available to you out of the box, such as the [TabView](http://docs.nativescript.org/ui-views#tabview) and the [SegmentedBar](http://docs.nativescript.org/ui-views#segmentedbar). A SideDrawer component is also available for free via Telerik's [UI for NativeScript](https://www.nativescript.org/blog/welcome-to-telerik-ui-for-nativescript) product.
+> **TIP**: Although our Groceries app doesn't use complex navigation strategies, you have several available to you out of the box, such as the [TabView](/ui-views#tabview) and the [SegmentedBar](/ui-views#segmentedbar). A SideDrawer component is also available for free via Telerik's [UI for NativeScript](https://www.nativescript.org/blog/welcome-to-telerik-ui-for-nativescript) product.
 
 ### Accessing UI components
 
@@ -151,7 +151,7 @@ exports.load = function(args) {
 };
 ```
 
-There are two things to note here. First, because the `load()` function handles the page's `loaded` event, NativeScript passes it a reference to the `<Page>` in the function's argument, which is named `args` by convention. Second, you use the view module's [`getViewById()`](http://docs.nativescript.org/ApiReference/ui/core/view/View.html) function to get a reference to the text field component.
+There are two things to note here. First, because the `load()` function handles the page's `loaded` event, NativeScript passes it a reference to the `<Page>` in the function's argument, which is named `args` by convention. Second, you use the view module's [`getViewById()`](/ApiReference/ui/core/view/View.html) function to get a reference to the text field component.
 
 Finally, edit the `signIn()` function to log the contents of the text field:
 
