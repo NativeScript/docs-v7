@@ -48,6 +48,8 @@ if (page.ios) {
 
 Ok, let's break down what just happened, starting with the `if (page.ios)` check. NativeScript modules, in general, follow the pattern of exposing their native implementations through `ios` and `android` properties. You can see this in the if check (`page.ios`), and also on the first line within the if check, as `frameModule.topMost().ios` is used to retrieve a reference to the underlying `UINavigationController`. Testing for the existence of these properties (e.g. `if (page.ios)`) is a convenient way to fork your code, to ensure that iOS-specific code only runs on iOS, and Android-specific code only runs on Android.
 
+> **TIP**: As a best practice, testing for a platform with an if check is the way to go when you have a small number of platform-specific changes to make. If, on the contrary, you have big, entirely different chunks of code for iOS and Android, you might want to go with [platform-specific code-behind files](#platform-specific-files)—e.g. `login.ios.js` and `login.android.js`.
+
 Within the if block, you start by getting a reference to the `UINavigationBar`, and then you set four of its properties—`barTintColor`, `titleTextAttributes`, `barStyle`, and `tintColor`. This produces the look shown below:
 
 ![The iOS actionbar with updated colors](img/cli-getting-started/chapter6/ios/1.png)
