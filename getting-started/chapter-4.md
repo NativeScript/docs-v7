@@ -475,6 +475,42 @@ If you build and rerun your app, you'll find that you can add a grocery item and
 ![list 3](img/cli-getting-started/chapter4/ios/4.gif)
 ![list 3](img/cli-getting-started/chapter4/android/4.gif)
 
+Let's look at how you can add a little polish to this page with a NativeScript module for showing activity indicators.
+
+### ActivityIndicator
+
+Currently there's a bit of a delay when you first visit the list page before groceries appear. This delay could be potentially confusing to a new user, who might think the app is stuck rather than retrieving data from a backend.
+
+In NativeScript apps you can use the ActivityIndicator module to show a spinner icon in your UI while your app is busy performing actions. The ActivityIndicator is a relatively simple UI element as it primarily uses one attribute—`busy`. When an ActivityIndicator's `busy` attribute is set to `true` the ActivityIndicator shows, and when its `busy` attribute is set to `false` it doesn't. Let's see how the module works by adding an ActivityIndicator to the list page.
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Add an ActivityIndicator
+</h4>
+
+Open `app/views/list/list.js` and add the following element directly before the closing `</GridLayout>` tag.
+
+``` XML
+<ActivityIndicator busy="{% raw %}{{ isLoading }}{% endraw %}" rowSpan="2" colSpan="2" />
+```
+
+Then, in `app/views/list/list.js`, replace the existing `groceryList.load()` call in `loaded()` with the following four lines of code:
+
+``` JavaScript
+pageData.set("isLoading", true);
+groceryList.load().then(function() {
+    pageData.set("isLoading", false);
+});
+```
+
+<div class="exercise-end"></div>
+
+In the code above you add a new `"isLoading"` flag to the list page's Observable, and then bind the ActivityIndicator's `busy` attribute to that value. You set the initial value of the `"isLoading"` flag to `true` in the list page's `loaded()` function, which shows the ActivityIndicator. When the grocery list finishes loading, you flip the `"isLoading"` flag back to `false`, which hides the ActivityIndicator.
+
+You control where the ActivityIndicator displays by setting its `rowSpan` and `colSpan` attributes. In this case `rowSpan="2" colSpan="2"` makes the ActivityIndicator take up both rows and both columns of its parent GridLayout. Here's what the new ActivityIndicator looks like:
+
+![ActivityIndicator on iOS](img/cli-getting-started/chapter4/ios/5.gif)
+![ActivityIndicator on Android](img/cli-getting-started/chapter4/android/5.gif)
+
 Now that you have the login, registration, and list pages complete, you can enhance the app's functionality as a grocery list management tool. In the next chapters you'll add functionality such as email validation, social sharing, and more. And you'll use one of NativeScript's most useful feature to do so: npm modules.
 
 > **TIP**: There are several modules that come out of the box with your NativeScript install that we did not have time to cover in this guide—including a [location service](/ApiReference/location/HOW-TO), a [file-system helper](/ApiReference/file-system/HOW-TO), a [timer module](/ApiReference/timer/HOW-TO), a [camera module](/ApiReference/camera/HOW-TO), a [color module](/ApiReference/color/HOW-TO), and a whole lot more. Make sure to peruse the “API Reference” of the docs, or just look around `tns_modules` to see all of what's available.
