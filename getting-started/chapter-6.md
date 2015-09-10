@@ -6,7 +6,7 @@ NativeScript gives you the option to dig into native code as needed, and to do s
 
 ### Customize the ActionBar - iOS
 
-When you use the ActionBar UI component, NativeScript is actually creating and managing an iOS `UINavigationController` for you. You can confirm this by digging into the implementation code, specifically `tns_modules/ui/action-bar/action-bar.ios.js`, and `tns_modules/ui/frame/frame.ios.js`.
+When you use the ActionBar UI component, NativeScript is actually creating and managing an iOS `UINavigationController` for you. You can confirm this by digging into the implementation code, specifically `node_modules/tns-core-modules/ui/action-bar/action-bar.ios.js`, and `node_modules/tns-core-modules/ui/frame/frame.ios.js`.
 
 What you might not realize is that the code that you see in these NativeScript modules, the code that looks like Objective-C-ified or Java-ified JavaScript code, is available for you to use in your own JavaScript modules. For example, you can easily get a reference to the `UINavigationBar` and simply call its [documented methods](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UINavigationBar_Class/index.html) to change its look and feel. Let's look at how to do that.
 

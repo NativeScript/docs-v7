@@ -1,8 +1,8 @@
 ## NativeScript modules
 
-In this chapter you'll learn about NativeScript modules, which are the JavaScript modules in your app's `tns_modules` folder. Whether you've realized it or not, you've already used several NativeScript modules. This includes the modules you've brought in via require() (the view, frame and observable modules) and also the UI components you've been using in XML (the page, image, text field and button modules).
+In this chapter you'll learn about NativeScript modules, which are the JavaScript modules in your app's `node_modules/tns-core-modules` folder. Whether you've realized it or not, you've already used several NativeScript modules. This includes the modules you've brought in via require() (the view, frame and observable modules) and also the UI components you've been using in XML (the page, image, text field and button modules).
 
-If you dig into `tns_modules` you can get an idea of how these modules work. Start by finding the `app/tns_modules/camera` folder, which includes the implementation of the camera module. It includes:
+If you dig into `node_modules/tns-core-modules` you can get an idea of how these modules work. Start by finding the `node_modules/tns-core-modules/camera` folder, which includes the implementation of the camera module. It includes:
 
 - a `package.json` file that sets the name of the module;
 - a file containing the module's Android implementation (`camera.android.js`);
@@ -139,7 +139,7 @@ To utilize the `Promise` that the view model's `login()` function returns, you n
 
 In the case of Groceries, when the login works you're going to navigate the user to the list page, which you'll be building momentarily, and which will let the user add and remove groceries from a list. To do the navigation you'll use the same frame module you used earlier in this guide.
 
-The trickier situation is handling login failures, and for that you're going to use the dialog module. The dialog module can be used to show [several types](/ApiReference/ui/dialogs/HOW-TO.html) of popup UIs in your app, including action sheets, confirmation boxes, alert boxes, and prompts. It is a highly customizable module, and it allows you to control the buttons you include in your alerts, their text, and the messaging in the alert itself. The dialog module's code is in the `tns_modules/ui` folder with other UI widgets. Let's see how to use this widget on the login page.
+The trickier situation is handling login failures, and for that you're going to use the dialog module. The dialog module can be used to show [several types](/ApiReference/ui/dialogs/HOW-TO.html) of popup UIs in your app, including action sheets, confirmation boxes, alert boxes, and prompts. It is a highly customizable module, and it allows you to control the buttons you include in your alerts, their text, and the messaging in the alert itself. The dialog module's code is in the `node_modules/tns-core-modules/ui` folder with other UI widgets. Let's see how to use this widget on the login page.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Handle an error with a dialog window
@@ -209,7 +209,7 @@ Open `app/views/list/list.xml` and paste in the code below, which creates the li
 
 > **NOTE**: Notice that this page is going to use a `<GridLayout>` to layout the UI components on the screen. As you add more UI components, you'll start dividing the screen into rows and columns, but for now you're just going to let the `<ListView>` take up the full screen (which is the default behavior of a `<GridLayout>` with no attributes).
 
-As discussed earlier, even though you're using `<ListView>` in XML, the ListView module is still a NativeScript module. You can find its implementation in the `tns_modules/ui/list-view` folder. If you want to, you could construct a ListView in pure JavaScript code in the code-behind file as shown in [this example](/ApiReference/ui/list-view/HOW-TO.html). For most situations using the NativeScript UI modules in XML is easier, so we'll be sticking with XML usage throughout this tutorial.
+As discussed earlier, even though you're using `<ListView>` in XML, the ListView module is still a NativeScript module. You can find its implementation in the `node_modules/tns-core-modules/ui/list-view` folder. If you want to, you could construct a ListView in pure JavaScript code in the code-behind file as shown in [this example](/ApiReference/ui/list-view/HOW-TO.html). For most situations using the NativeScript UI modules in XML is easier, so we'll be sticking with XML usage throughout this tutorial.
 
 Note the use of `<ListView.itemTemplate>`. This tag gives you the ability to control how each of the ListView's items displays within the list. For now you're using a simple `<Label>` UI component to display the `{% raw %}{{ name }}{% endraw %}` of each grocery.
 
@@ -513,4 +513,4 @@ You control where the ActivityIndicator displays by setting its `rowSpan` and `c
 
 Now that you have the login, registration, and list pages complete, you can enhance the app's functionality as a grocery list management tool. In the next chapters you'll add functionality such as email validation, social sharing, and more. And you'll use one of NativeScript's most useful feature to do so: npm modules.
 
-> **TIP**: There are several modules that come out of the box with your NativeScript install that we did not have time to cover in this guide—including a [location service](/ApiReference/location/HOW-TO), a [file-system helper](/ApiReference/file-system/HOW-TO), a [timer module](/ApiReference/timer/HOW-TO), a [camera module](/ApiReference/camera/HOW-TO), a [color module](/ApiReference/color/HOW-TO), and a whole lot more. Make sure to peruse the “API Reference” of the docs, or just look around `tns_modules` to see all of what's available.
+> **TIP**: There are several modules that come out of the box with your NativeScript install that we did not have time to cover in this guide—including a [location service](/ApiReference/location/HOW-TO), a [file-system helper](/ApiReference/file-system/HOW-TO), a [timer module](/ApiReference/timer/HOW-TO), a [camera module](/ApiReference/camera/HOW-TO), a [color module](/ApiReference/color/HOW-TO), and a whole lot more. Make sure to peruse the “API Reference” of the docs, or just look around `node_modules/tns-core-modules` to see all of what's available.
