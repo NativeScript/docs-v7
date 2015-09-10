@@ -114,7 +114,7 @@ tns run android --emulator
 
 > **WARNING**:
 > * You must have at least one Android AVD (Android Virtual Device) configured for this command to work. If you get an error, try [setting up an AVD](https://www.genymotion.com/#!/) and then run the command again.
-> * If you're using Genymotion, launch your Genymotion virtual device, and then run `tns run android --emulator --geny`. 
+> * If you're using Genymotion, launch your Genymotion virtual device, and then run `tns run android`.
 
 If all went well, you should see your app running in an Android emulator:
 
