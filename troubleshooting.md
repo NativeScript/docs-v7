@@ -16,6 +16,20 @@ NativeScript {{site.current-version}} is known to have the following issues and 
 
 ### Problem
 
+When trying to run an android project with cli an error commes up:
+
+```Shell
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'some_name_of_app'.
+> Could not resolve all dependencies for configuration ':_debugCompile'.
+```
+
+**Workaround** <br/>You should open android sdk manager and download Android Support Repository located in Extras section at the bottom. See [Set up windows](setup/ns-cli-setup/ns-setup-win.md)
+
+### Problem
+
 On OS X systems with Node.js 0.12.0 installed, you cannot work with the NativeScript CLI 0.9.0.<br/>For additional information, see [GitHub Issue #268: OSX issue with node 0.12.0](https://github.com/NativeScript/nativescript-cli/issues/268).
 
 **Workaround:**<br/>You can choose between the following workarounds.
