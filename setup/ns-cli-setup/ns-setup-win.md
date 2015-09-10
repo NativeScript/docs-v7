@@ -17,7 +17,7 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
 ## System Requirements
 
 * Windows Vista or later
-* Node.js 0.10.26 or a later stable official release except Node.js 0.10.34
+* Node.js 0.10.35 or a later stable 0.x release
 * (Optional) Chocolatey to simplify the installation of dependencies
 * JDK 8 or a later stable official release
 * Apache Ant 1.8 or later

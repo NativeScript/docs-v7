@@ -17,7 +17,7 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 ## System Requirements
 
 * Ubuntu 14.04 LTS
-* Node.js 0.10.26 or a later stable official release except Node.js 0.10.34
+* Node.js 0.10.35 or a later stable 0.x release
 * G++ compiler
 * JDK 8 or a later stable official release
 * Apache Ant 1.8 or later
