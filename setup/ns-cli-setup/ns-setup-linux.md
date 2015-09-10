@@ -42,15 +42,34 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
     sudo apt-get install g++
     ```
 1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
-    
+    1. Normal installation
     ```Shell
     sudo apt-get install oracle-java8-installer
     ```
-1. Install [Apache Ant 1.8](http://ant.apache.org/bindownload.cgi) or a later stable official release.
-    
-    ```Shell
-    sudo apt-get install ant
+	1.If you have problems installing oracle-java8-installer you can take a look here:
+	```Shell
+    sudo apt-get install python-software-properties
+	sudo add-apt-repository ppa:webupd8team/java
+	sudo apt-get update
+	
+	sudo apt-get install oracle-java8-installer
     ```
+	After installation if you have multiple installations of java you can choose which to use:
+	```Shell
+	sudo update-alternatives --config java
+	```
+1. Install [Gradle 2.3](https://docs.gradle.org/current/userguide/installation.html) or a later stable official release.
+    1.Normal installation.
+	```Sell
+	sudo wget https://services.gradle.org/distributions/gradle-2.3-bin.zip
+	sudo unzip gradle-2.3-bin.zip
+	```
+	1. If not present, add the following file path to the `PATH` system environment variable.
+
+		```
+		Path to the bin directory in the Gradle installation folder
+		```
+		For example: `PATH=...:...:/usr/tools/gradle-2.3/bin`
 1. Install the [Android SDK](http://developer.android.com/sdk/index.html).<br/>If you experience issues with the installation, go to [Installing the Android SDK](https://developer.android.com/sdk/installing/index.html?pkg=tools), expand the **Show instructions for all platforms** section, expand the **Troubleshooting Ubuntu** section and review the troubleshooting guide.
     1. Go to [Android Studio and SDK Downloads](https://developer.android.com/sdk/index.html#Other) and in the **SDK Tools Only** section download the package for Linux.
     1. After the download completes, unpack the downloaded archive.
@@ -68,6 +87,10 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
         android update sdk
         ```
     1. Select all packages for the Android 19 SDK and any other SDKs that you want to install and click **Install**.
+1. Install Android Support Repository through the android sdk manager.
+    1. If you have installed the android sdk manager correctly you can open up command prompt and run the "android" command.
+		The android sdk manager windows should pop up and there you can find the Android Support Repository at the bottom and install it.
+	1. If you cannot run the android sdk manager with the "android" command, you can find the installation folder of android sdk. From there navigate to "tools" folder, open a terminal and run command "sudo ./android".
 1. (Optional) Install Genymotion.<br/>Genymotion is a third-party native emulator.
     1. Go to [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads) and download and install VirtualBox for Linux.
     1. Go to [Get Genymotion](https://www.genymotion.com/#!/download), select Linux and click the download link for Ubuntu.
