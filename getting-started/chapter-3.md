@@ -151,7 +151,7 @@ exports.loaded = function(args) {
 };
 ```
 
-There are two things to note here. First, because the `loaded()` function handles the page's `loaded` event, NativeScript passes it a reference to the `<Page>` in the function's argument, which is named `args` by convention. Second, you use the view module's [`getViewById()`](/ApiReference/ui/core/view/View.html) function to get a reference to the text field component.
+There are two things to note here. First, NativeScript passes `loaded` event handlers a reference to the `<Page>` in the function's argument, which is named `args` by convention. Second, you use the view module's [`getViewById()`](/ApiReference/ui/core/view/View.html) function to get a reference to the text field component.
 
 Finally, edit the `signIn()` function to log the contents of the text field:
 
@@ -221,4 +221,4 @@ Simply put, properties placed on a page's binding context are available to XML e
 
 What's really cool is that the binding is two-way. Meaning, when the user types text in these text fields, those changes are immediately applied to your view model.
 
-To use these values, and to make this login functional by tying the your app into a backend service, you're going to need the ability to make HTTP calls. And to make HTTP calls in NativeScript you use the NativeScript fetch module. Let's look at how NativeScript modules work.
+To use these values, and to make this login functional by tying your app into a backend service, you're going to need the ability to make HTTP calls. And to make HTTP calls in NativeScript you use the NativeScript fetch module. Let's look at how NativeScript modules work.

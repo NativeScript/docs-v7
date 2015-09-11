@@ -40,7 +40,7 @@ var config = require("../../shared/config");
 var fetchModule = require("fetch");
 ```
 
-NativeScript's fetch module uses the same API as the [browser's new fetch() API](https://fetch.spec.whatwg.org/). Therefore if you already know how to use the web's `fetch()` method, you already know how to make HTTP calls in NativeScript. Let's look at how the fetch module works by adding another method to the user view model.
+NativeScript's fetch module uses the same API as the [browser's new fetch() API](https://fetch.spec.whatwg.org/). Therefore, if you already know how to use the web's `fetch()` method, you already know how to make HTTP calls in NativeScript. Let's look at how the fetch module works by adding another method to the user view model.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Complete the login in the view model
@@ -139,7 +139,7 @@ To utilize the `Promise` that the view model's `login()` function returns, you n
 
 In the case of Groceries, when the login works you're going to navigate the user to the list page, which you'll be building momentarily, and which will let the user add and remove groceries from a list. To do the navigation you'll use the same frame module you used earlier in this guide.
 
-The trickier situation is handling login failures, and for that you're going to use the dialog module. The dialog module can be used to show [several types](/ApiReference/ui/dialogs/HOW-TO.html) of popup UIs in your app, including action sheets, confirmation boxes, alert boxes, and prompts. It is a highly customizable module, and it allows you to control the buttons you include in your alerts, their text, and the messaging in the alert itself. The dialog module's code is in the `node_modules/tns-core-modules/ui` folder with other UI widgets. Let's see how to use this widget on the login page.
+The trickier situation is handling login failures, and for that you're going to use the dialog module. You can use this module to show [several types](/ApiReference/ui/dialogs/HOW-TO.html) of popup UIs in your app, including action sheets, confirmation boxes, alert boxes, and prompts. It is a highly customizable module, and it lets you control the buttons in your alerts, their text, and the messaging in the alert itself. The dialog module's code is in the `node_modules/tns-core-modules/ui` folder with other UI widgets. Let's see how to use this widget on the login page.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Handle an error with a dialog window
@@ -475,11 +475,11 @@ If you build and rerun your app, you'll find that you can add a grocery item and
 ![list 3](img/cli-getting-started/chapter4/ios/4.gif)
 ![list 3](img/cli-getting-started/chapter4/android/4.gif)
 
-Let's look at how you can add a little polish to this page with a NativeScript module for showing activity indicators.
+Let's look at how you can polish this page with a NativeScript module for showing activity indicators.
 
 ### ActivityIndicator
 
-Currently there's a bit of a delay when you first visit the list page before groceries appear. This delay could be potentially confusing to a new user, who might think the app is stuck rather than retrieving data from a backend.
+Currently there's a bit of a delay when you first visit the list page before groceries appear. This delay could confuse a new user, who might think the app is stuck rather than retrieving data from a backend.
 
 In NativeScript apps you can use the ActivityIndicator module to show a spinner icon in your UI while your app is busy performing actions. The ActivityIndicator is a relatively simple UI element as it primarily uses one attribute—`busy`. When an ActivityIndicator's `busy` attribute is set to `true` the ActivityIndicator shows, and when its `busy` attribute is set to `false` it doesn't. Let's see how the module works by adding an ActivityIndicator to the list page.
 

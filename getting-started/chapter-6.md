@@ -6,7 +6,7 @@ NativeScript gives you the option to dig into native code as needed, and to do s
 
 ### Customize the ActionBar - iOS
 
-When you use the ActionBar UI component, NativeScript is actually creating and managing an iOS `UINavigationController` for you. You can confirm this by digging into the implementation code, specifically `node_modules/tns-core-modules/ui/action-bar/action-bar.ios.js`, and `node_modules/tns-core-modules/ui/frame/frame.ios.js`.
+When you use the ActionBar UI component, NativeScript is actually creating and managing an iOS `UINavigationController` for you. You can see this for yourself by digging into the implementation code, specifically `node_modules/tns-core-modules/ui/action-bar/action-bar.ios.js`, and `node_modules/tns-core-modules/ui/frame/frame.ios.js`.
 
 What you might not realize is that the code that you see in these NativeScript modules, the code that looks like Objective-C-ified or Java-ified JavaScript code, is available for you to use in your own JavaScript modules. For example, you can easily get a reference to the `UINavigationBar` and simply call its [documented methods](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UINavigationBar_Class/index.html) to change its look and feel. Let's look at how to do that.
 
@@ -139,7 +139,7 @@ viewModel.delete = function(index) {
 
 <div class="exercise-end"></div>
 
-This code probably looks fairly familiar by now. You're again calling the fetch module's `fetch()` method, this time specifying a `method` of `"DELETE"` to delete a grocery from the backend. You again return a `Promise` so the calling function has the opportunity to handle successful and unsuccessful calls. Note again the power of using the MVVM approach for building your app. To update the grocery list UI, all you have to do is remove the item from the ObservableArray (`viewModel.splice(index, 1)`), and let the list's presentation take care of itself.
+This code probably looks fairly familiar by now. You're again calling the fetch module's `fetch()` method, this time specifying a `method` of `"DELETE"` to delete a grocery from the backend. You again return a `Promise` so the calling function can handle successful and unsuccessful calls. Note again the power of using the MVVM approach for building your app. To update the grocery list UI, all you have to do is remove the item from the ObservableArray (`viewModel.splice(index, 1)`), and let the list's presentation take care of itself.
 
 If you run your app on Android you should be able to delete items from the list.
 
