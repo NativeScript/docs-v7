@@ -49,7 +49,7 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
         ```
 
         For example: `SETX JAVA_HOME C:\Program Files\Java\jdk1.8.0_11 /M`
-1. Install [Gradle 2.3](https://docs.gradle.org/current/userguide/installation.html) or a later stable official release.
+1. Download and install [Gradle 2.3](https://docs.gradle.org/current/userguide/installation.html) or a later stable official release.
 1. If not present, add the following file path to the `PATH` system environment variable.
 
 	```
@@ -57,11 +57,6 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
 	```
 
 	For example: `PATH=...;...;C:\tools\gradle-2.3\bin`
-1. Instead of installing Android SDK and Android Support Repository manually, you can run this command:
-	```Shell
-	echo yes | android update sdk --filter tools,platform-tools,android-22,android-17,build-tools-22.0.1,sys-img-x86-android-22,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
-	```
-	It will give you an initial set up of tools, SDKs and images for emulator.
 1. Install the [Android SDK](http://developer.android.com/sdk/index.html).
     1. In the command prompt, run the following command.
 
@@ -76,18 +71,12 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
         ```
 
         For example: `PATH=...;...;C:\Users\MyUser\AppData\Local\Android\android-sdk\tools;C:\Users\MyUser\AppData\Local\Android\android-sdk\platform-tools`
-    1. Restart the command prompt and run the following command.
+    1. Restart the command prompt.
+1. Install the required Android SDKs and the Android Support Repository.
 
-        ```Shell
-        android update sdk
-        ```
-    1. Select all packages for the Android 22 SDK and any other SDKs that you want to install and click **Install**.
-1. Run the following command to launch the Android SDK Manager.
 	```Shell
-    android
-    ```
-	1. Locate the Extras section
-	1. Locate the Android Support Repository and install it.
+	echo yes | android update sdk --filter tools,platform-tools,android-22,android-17,build-tools-22.0.1,sys-img-x86-android-22,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
+	```
 1. (Optional) Install Genymotion.<br/>Genymotion is a third-party native emulator.
     1. Go to [Get Genymotion](https://www.genymotion.com/#!/download), select Windows and click **Get Genymotion**.<br/>You might want to download the larger archive which contains VirtualBox.
     1. If prompted, confirm the download.
