@@ -27,10 +27,7 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
 
 ## Setup
 
-1. Install [Node.js](http://nodejs.org).
-    1. Go to [http://nodejs.org](http://nodejs.org) and click **Install**.
-    1. If prompted, confirm the download.
-    1. After the download completes, run the installer and complete the installation.
+1. Install [Node.js](https://nodejs.org/dist/latest-v0.12.x/).
 1. Install [Chocolatey](https://chocolatey.org) to simplify the installation and configuration of the Android tools and SDKs.
     1. Run the command prompt as an Administrator.
     1. Copy and paste the following script in the command prompt.
@@ -60,6 +57,11 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
 	```
 
 	For example: `PATH=...;...;C:\tools\gradle-2.3\bin`
+1. Instead of installing Android SDK and Android Support Repository manually, you can run this command:
+	```Shell
+	echo yes | android update sdk --filter tools,platform-tools,android-22,android-17,build-tools-22.0.1,sys-img-x86-android-22,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
+	```
+	It will give you an initial set up of tools, SDKs and images for emulator.
 1. Install the [Android SDK](http://developer.android.com/sdk/index.html).
     1. In the command prompt, run the following command.
 

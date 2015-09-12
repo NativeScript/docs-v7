@@ -28,10 +28,7 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 ## Setup
 
 1. Run the terminal.
-1. Install [Node.js](http://nodejs.org).
-
-    > **TIP:** You can follow the instructions provided [here](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager) to install Node.js on your system.
-    
+1. Install [Node.js](https://nodejs.org/dist/latest-v0.12.x/).
 1. If you are running on a 64-bit system, install the runtime libraries for the ia32/i386 architecture.
 
     ```Shell
@@ -71,6 +68,11 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 		Path to the bin directory in the Gradle installation folder
 		```
 		For example: `PATH=...:...:/usr/tools/gradle-2.3/bin`
+1. Instead of installing Android SDK and Android Support Repository manually, you can run this command:
+	```Shell
+	sudo android update sdk --filter tools,platform-tools,android-22,android-17,build-tools-22.0.1,sys-img-x86-android-22,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
+	```
+	It will give you an initial set up of tools, SDKs and images for emulator.
 1. Install the [Android SDK](http://developer.android.com/sdk/index.html).<br/>If you experience issues with the installation, go to [Installing the Android SDK](https://developer.android.com/sdk/installing/index.html?pkg=tools), expand the **Show instructions for all platforms** section, expand the **Troubleshooting Ubuntu** section and review the troubleshooting guide.
     1. Go to [Android Studio and SDK Downloads](https://developer.android.com/sdk/index.html#Other) and in the **SDK Tools Only** section download the package for Linux.
     1. After the download completes, unpack the downloaded archive.
