@@ -16,17 +16,17 @@ NativeScript {{site.current-version}} is known to have the following issues and 
 
 ### Problem
 
-When trying to run an android project with cli an error commes up:
+When you attempt to run any build-related operations for Android in the NativeScript CLI, the following message appears.:
 
 ```Shell
 FAILURE: Build failed with an exception.
 
 * What went wrong:
-A problem occurred configuring root project 'some_name_of_app'.
+A problem occurred configuring root project 'app_name'.
 > Could not resolve all dependencies for configuration ':_debugCompile'.
 ```
 
-**Workaround** <br/>You should open android sdk manager and download Android Support Repository located in Extras section at the bottom. See [Set up windows](setup/ns-cli-setup/ns-setup-win.md)
+**Workaround:** Run `$ android` to launch the Android SDK Manager and download the Android Support Repository 21.0.0.
 
 ### Problem
 
