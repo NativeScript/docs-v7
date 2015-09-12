@@ -20,8 +20,9 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 * Node.js 0.10.26 or a later stable official release except Node.js 0.10.34
 * G++ compiler
 * JDK 8 or a later stable official release
-* Apache Ant 1.8 or later
-* Android SDK 19 or later
+* Android SDK 22 or a later stable official release
+* Gradle 2.3 or a later stable official release
+* Android Support Repository 21.0.0
 * (Optional) Genymotion to expand your testing options
 
 ## Setup
@@ -59,7 +60,7 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 	sudo update-alternatives --config java
 	```
 1. Install [Gradle 2.3](https://docs.gradle.org/current/userguide/installation.html) or a later stable official release.
-    1.Normal installation.
+    1. Run the following commands.
 	```Sell
 	sudo wget https://services.gradle.org/distributions/gradle-2.3-bin.zip
 	sudo unzip gradle-2.3-bin.zip
@@ -83,24 +84,25 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
         For example: Run the following command `export PATH=${PATH}:/android/sdk/tools:/android/sdk/platform-tools`
     1. Restart the command prompt and run the following command.
 
-        ```
+        ```Shell
         android update sdk
         ```
-    1. Select all packages for the Android 19 SDK and any other SDKs that you want to install and click **Install**.
-1. Install Android Support Repository through the android sdk manager.
-    1. If you have installed the android sdk manager correctly you can open up command prompt and run the "android" command.
-		The android sdk manager windows should pop up and there you can find the Android Support Repository at the bottom and install it.
-	1. If you cannot run the android sdk manager with the "android" command, you can find the installation folder of android sdk. From there navigate to "tools" folder, open a terminal and run command "sudo ./android".
+    1. Select all packages for the Android 22 SDK and any other SDKs that you want to install and click **Install**.
+1. Run the following command to launch the Android SDK Manager.
+	```Shell
+    android
+    ```
+	1. Locate the Android Support Repository and install it.
 1. (Optional) Install Genymotion.<br/>Genymotion is a third-party native emulator.
     1. Go to [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads) and download and install VirtualBox for Linux.
     1. Go to [Get Genymotion](https://www.genymotion.com/#!/download), select Linux and click the download link for Ubuntu.
-    1. After the download completes, run the installer and complete the installation.
+	1. After the download completes, run the installer and complete the installation.
 1. Install the NativeScript CLI.
     1. Run the following command. 
     
-        ```Shell
-        sudo npm install nativescript -g --unsafe-perm
-        ```
+	```Shell
+	sudo npm install nativescript -g --unsafe-perm
+	```
     1. Restart the command prompt.
 1. To check if your system is configured properly, run the following command.
 
