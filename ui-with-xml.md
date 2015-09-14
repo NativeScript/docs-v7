@@ -34,6 +34,7 @@ The user interface of NativeScript mobile apps consists of pages. Typically, the
 * [Platform specific declarations](#platform-specific-declarations)
   * [Platform specific property value](#platform-specific-property-value)
   * [Platform specific component declaration](#platform-specific-component-declaration)
+* [Lower-case-dashed component declaration](#lower-case-dashed-component-declaration)
 
 ## The Basics
 
@@ -760,3 +761,14 @@ To declare a platform specific property value or platform specific component in 
 </Page>
 ```
 > You cannot nest plaftorm tags!
+
+## Lower-case-dashed component declaration
+Since NativeScript 1.3 you can declare your UI using lower-case-dashed syntax:
+```XML
+<page>
+  <scroll-view>
+    <stack-layout>
+      <label ctext="Label" />
+      <button text="Button" tap="tap" />
+      ...
+```
