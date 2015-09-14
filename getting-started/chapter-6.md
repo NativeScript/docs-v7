@@ -119,20 +119,16 @@ Open `app/shared/view-models/grocery-list-view-model.js` and paste in the code b
 
 ``` JavaScript
 viewModel.delete = function(index) {
-    return new Promise(function(resolve, reject) {
-        fetchModule.fetch(config.apiUrl + "Groceries/" + viewModel.getItem(index).id, {
-            method: "DELETE",
-            headers: {
-                "Authorization": "Bearer " + config.token,
-                "Content-Type": "application/json"
-            }
-        }).then(function() {
-            viewModel.splice(index, 1);
-            resolve();
-        }).catch(function(error) {
-            console.log(error);
-            reject();
-        });
+    return fetch(config.apiUrl + "Groceries/" + viewModel.getItem(index).id, {
+        method: "DELETE",
+        headers: {
+            "Authorization": "Bearer " + config.token,
+            "Content-Type": "application/json"
+        }
+    })
+    .then(handleErrors)
+    .then(function() {
+        viewModel.splice(index, 1);
     });
 };
 ```
