@@ -50,27 +50,23 @@ Open `app/shared/view-models/user-view-model.js` and paste the following code di
 
 ``` JavaScript
 viewModel.login = function() {
-    return new Promise(function(resolve, reject) {
-        fetchModule.fetch(config.apiUrl + "oauth/token", {
-            method: "POST",
-            body: JSON.stringify({
-                username: viewModel.get("email"),
-                password: viewModel.get("password"),
-                grant_type: "password"
-            }),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).then(function(response) {
-            // Convert the data returned into JSON format
-            return response.json();
-        }).then(function(data) {
-            config.token = data.Result.access_token;
-            resolve();
-        }).catch(function(error) {
-            console.log(error);
-            reject();
-        });
+    return fetchModule.fetch(config.apiUrl + "oauth/token", {
+        method: "POST",
+        body: JSON.stringify({
+            username: viewModel.get("email"),
+            password: viewModel.get("password"),
+            grant_type: "password"
+        }),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(handleErrors)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        config.token = data.Result.access_token;
     });
 };
 ```
@@ -79,13 +75,16 @@ viewModel.login = function() {
 
 Let's break down what the code you just pasted in does.
 
-- You return a new `Promise`, which allows the caller of this function to execute code after the asynchronous login either completes successfully or fails. You'll see how this works when you add code that calls `login()` momentarily.
+- You use the fetch module's `fetch()` method to POST data to the `apiUrl` stored in `shared/config.js`. The username, password and grant_type are sent to this endpoint as a JSON string. (Telerik Backend Services [requires a grant_type parameter](http://docs.telerik.com/platform/backend-services/development/rest-api/users/authenticate-user) for logins.)
 
-> **TIP**: [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) are a part of ECMAScript 6 (the scripting language of which JavaScript is an implementation). Because Promises have been implemented in the two JavaScript engines NativeScript uses—V8 for Android and JavaScriptCore for iOS—Promises are available for use in NativeScript apps.
+- The `fetch()` method returns a `Promise`, which allows you to execute code after the asynchronous login either completes successfully or fails. You use this functionality to do three things (the three `then()` handlers).
+    - First, you handle any errors in the HTTP response with a `handleErrors()` function defined at the bottom of `user-view-model.js`. (If you want more details on how handling HTTP response errors with `fetch()` works check out [this article](http://tjvantoll.com/2015/09/13/fetch-and-errors/).)
+    - Next, you convert the returned data into JSON by calling the [`Response`](https://developer.mozilla.org/en-US/docs/Web/API/Response) object's `json()` method.
+    - Finally, you save a reference to the user's authentication token in the config module. You'll use that token on subsequent HTTP requests later in this guide.
 
-- Next, you use the fetch module's `fetch()` method to POST data to the `apiUrl` stored in `shared/config.js`. The username, password and grant_type are sent to this endpoint as a JSON string. (Telerik Backend Services [requires a grant_type parameter](http://docs.telerik.com/platform/backend-services/development/rest-api/users/authenticate-user) for logins.)
-
-- Finally, the endpoint's response is handled. `fetchModule.fetch()` returns a `Promise`, which this code uses to resolve or reject its own `Promise`. When the request is successful (the second `then()` handler), the code saves a reference to the user's authentication token to be used on subsequent requests.
+> **TIP**:
+> * [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) are a part of ECMAScript 6 (the scripting language of which JavaScript is an implementation). Because Promises have been implemented in the two JavaScript engines NativeScript uses—V8 for Android and JavaScriptCore for iOS—Promises are available for use in NativeScript apps.
+> * NativeScript makes `fetch()` available as a global variable for convenience. This means you can replace `fetchModule.fetch()` with `fetch()`. The global `fetch()` shortcut will be used for the remainder of this guide.
 
 With this code in place let's return to `login.js` to use this new function.
 
@@ -131,7 +130,7 @@ exports.signIn = function() {
 
 Take a moment to look at just how clean your code-behind file is now. The code-behind instantiates a view model (`UserViewModel`), and calls its `signIn()` method when the user taps the view's sign in button. Because the view model is bound to the page's two text fields (remember `{% raw %}{{ email }}{% endraw %}` and `{% raw %}{{ password }}{% endraw %}`), the view model already has the data it needs to perform the actual login.
 
-And if you try running your app, and input your account's credentials, you can indeed login, but... you don't see anything. That's because view models aren't responsible for updating the UI. Instead the view model returns a `Promise` to let the code-behind handle the UI. Let's see how you can use that `Promise`, and introduce a new NativeScript module in the process.
+And if you try running your app, and input your account's credentials, you can indeed login, but... you don't see anything. That's because view models aren't responsible for updating the UI. Instead the view model returns a `Promise` to let the code-behind handle the UI. (Remember that `fetch()` returns a `Promise`.) Let's see how you can use that `Promise`, and introduce a new NativeScript module in the process.
 
 ### Dialog module
 
@@ -158,7 +157,8 @@ exports.signIn = function() {
     user.login()
         .then(function() {
             frameModule.topmost().navigate("views/list/list");
-        }).catch(function() {
+        }).catch(function(error) {
+            console.log(error);
             dialogsModule.alert({
                 message: "Unfortunately we could not find your account.",
                 okButtonText: "OK"
@@ -330,24 +330,20 @@ The last piece to make this work is actually implementing the `empty()` and `loa
 
 ``` JavaScript
 viewModel.load = function() {
-    return new Promise(function(resolve, reject) {
-        fetchModule.fetch(config.apiUrl + "Groceries", {
-            headers: {
-                "Authorization": "Bearer " + config.token
-            }
-        }).then(function(response) {
-            return response.json();
-        }).then(function(data) {
-            data.Result.forEach(function(grocery) {
-                viewModel.push({
-                    name: grocery.Name,
-                    id: grocery.Id
-                });
+    return fetch(config.apiUrl + "Groceries", {
+        headers: {
+            "Authorization": "Bearer " + config.token
+        }
+    })
+    .then(handleErrors)
+    .then(function(response) {
+        return response.json();
+    }).then(function(data) {
+        data.Result.forEach(function(grocery) {
+            viewModel.push({
+                name: grocery.Name,
+                id: grocery.Id
             });
-            resolve();
-        }).catch(function(error) {
-            console.log(error);
-            reject();
         });
     });
 };
@@ -361,7 +357,7 @@ viewModel.empty = function() {
 
 <div class="exercise-end"></div>
 
-The code to make an HTTP call should look familiar, as it leverages the same fetch module you used in the previous section. Here, the fetch module's first `then()` handler converts the data from the response into JSON format, and the second `then()` handler pushes each grocery item from the response into the ObservableArray.
+The code to make an HTTP call should look familiar, as it leverages the same fetch module you used in the previous section. Here, the fetch module's first `then()` handler checks for HTTP errors, the second `then()` handler converts the data from the response into JSON format, and the third handler pushes each grocery item from the response into the ObservableArray.
 
 If you load the app and log in with email address "tj.vantoll@gmail.com" and password "password", you should see a list of groceries that looks something like this:
 
@@ -448,23 +444,22 @@ Finally, define that `add()` function. To do so, open `app/shared/view-models/gr
 
 ``` JavaScript
 viewModel.add = function(grocery) {
-    return new Promise(function(resolve, reject) {
-        fetchModule.fetch(config.apiUrl + "Groceries", {
-            method: "POST",
-            body: JSON.stringify({
-                Name: grocery
-            }),
-            headers: {
-                "Authorization": "Bearer " + config.token,
-                "Content-Type": "application/json"
-            }
-        }).then(function() {
-            viewModel.push({ name: grocery });
-            resolve();
-        }).catch(function(error) {
-            console.log(error);
-            reject();
-        });
+    return fetch(config.apiUrl + "Groceries", {
+        method: "POST",
+        body: JSON.stringify({
+            Name: grocery
+        }),
+        headers: {
+            "Authorization": "Bearer " + config.token,
+            "Content-Type": "application/json"
+        }
+    })
+    .then(handleErrors)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        viewModel.push({ name: grocery, id: data.Result.Id });
     });
 };
 ```
