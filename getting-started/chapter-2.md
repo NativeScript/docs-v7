@@ -63,7 +63,7 @@ Let's start with `app/app.js`, as it's the starting point for NativeScript apps.
 
 ``` JavaScript
 var applicationModule = require("application");
-applicationModule.mainModule = "./views/login/login";
+applicationModule.mainModule = "views/login/login";
 applicationModule.start();
 ```
 

@@ -157,7 +157,7 @@ Next, re-write your `signIn()` function to look like this:
 exports.signIn = function() {
     user.login()
         .then(function() {
-            frameModule.topmost().navigate("./views/list/list");
+            frameModule.topmost().navigate("views/list/list");
         }).catch(function() {
             dialogsModule.alert({
                 message: "Unfortunately we could not find your account.",

@@ -93,7 +93,7 @@ Then, replace the current `register()` function with the version shown below:
 ``` JavaScript
 exports.register = function() {
     var topmost = frameModule.topmost();
-    topmost.navigate("./views/register/register");
+    topmost.navigate("views/register/register");
 };
 ```
 <div class="exercise-end"></div>
