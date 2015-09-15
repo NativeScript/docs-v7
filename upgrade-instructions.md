@@ -33,7 +33,7 @@ tns platform update ios
 
 ### Upgrading TNS Modules
 
-Starting with NativeScript 1.3.0, the **tns_modules** are available as a npm package named [tns-core-modules] (https://www.npmjs.com/package/tns-core-modules).
+Starting with NativeScript 1.3.0, the cross-platform modules are available as a npm package named [tns-core-modules] (https://www.npmjs.com/package/tns-core-modules).
 
 In order to use them in your old project, you will have to explicitly install the package, for example (assuming you are still in your main app project folder from the steps above):
 
