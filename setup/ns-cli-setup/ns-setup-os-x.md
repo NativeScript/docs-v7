@@ -17,7 +17,7 @@ On OS X systems, you can use the NativeScript CLI to develop Android and iOS app
 ## System Requirements
 
 * OS X Mavericks or later
-* Node.js 0.10.26 or a later stable official release except Node.js 0.10.34
+* Node.js 0.10.35 or a later stable 0.x release
 * (Optional) Homebrew to simplify the installation of dependencies
 * For iOS development
     * Latest Xcode
@@ -35,7 +35,7 @@ On OS X systems, you can use the NativeScript CLI to develop Android and iOS app
     ```Shell
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     ```
-1. Install [Node.js 0.10.26](http://nodejs.org) or a later stable official release.
+1. Install [Node.js 0.10.35](http://nodejs.org) or a later 0.12 official release.
 
     ```Shell
     brew install node

@@ -23,8 +23,8 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 * Windows 7 or later
 * .NET 4.0 or later
 * Node.js
-    * (Windows 7 systems): Node.js 0.10.26 or a later stable official release except 0.10.34<br/>A [known issue](https://github.com/joyent/node/issues/8894) prevents the {{site.ab-cli}} from working properly with Node.js 0.10.34.
-    * (Windows 8 and later systems): Node.js 0.12.0 or a later stable official release<br/>A [known issue](https://github.com/SBoudrias/Inquirer.js/issues/235) in Inquirer.js prevents the interactive prompts from working properly in `cmd` shells on Windows 8 or later systems with Node.js 0.10.x.
+    * (Windows 7 systems): Node.js 0.10.35 or a later stable 0.x release.<br/>
+    * (Windows 8 and later systems): Node.js 0.12.7 or a later stable 0.x release<br/>A [known issue](https://github.com/SBoudrias/Inquirer.js/issues/235) in Inquirer.js prevents the interactive prompts from working properly in `cmd` shells on Windows 8 or later systems with Node.js 0.10.x.
 * (Optional) For iOS development
     * (Latest official) iTunes<br/>The bitness of Node.js and iTunes must match.
 * (Optional) For Android development with the native emulators
@@ -106,7 +106,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 
 * Telerik account
 * OS X Mavericks or later
-* Node.js 0.10.26 or a later stable official release except Node.js 0.10.34
+* Node.js 0.10.35 or a later stable 0.x release
 * (Optional) Homebrew to simplify the installation of dependencies
 * For iOS development
     * Xcode 5 or later
@@ -125,7 +125,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
     ```Shell
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     ```
-1. Install [Node.js 0.10.26](http://nodejs.org) or a later stable official release.
+1. Install [Node.js 0.10.35](http://nodejs.org) or a later stable 0.x official release.
 
     ```Shell
     brew install node
@@ -202,7 +202,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 
 * Telerik account
 * Ubuntu 14.04 LTS
-* Node.js 0.10.26 or a later stable official release except Node.js 0.10.34
+* Node.js 0.10.35 or a later stable 0.x release
 * G++ compiler
 * (Optional) For Android development with the native emulators
     * JDK 8 or a later stable official release
