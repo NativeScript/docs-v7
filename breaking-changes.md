@@ -9,6 +9,10 @@ position: 21
 
 This document describes the critical breaking changes and suggested workarounds, if any, in the NativeScript framework. The complete list with all the changes may be found on the respective [Github repositories](#see-also).
 
+### 1.3.0 (2015, September 16)
+
+With this release native-script modules use and depend on the app-compatibility library(android-support-v7-appcompat) for Android. To work properly the theme of the application should inherit from **Theme.AppCompat.Light.NoActionBar**. If you have defined custom Android `stlye.xml` files in the `App_Resources\Android\values[-v21]` folders, you will have to change the parent theme of the `AppTheme` definition to **Theme.AppCompat.Light.NoActionBar** (in both `values` and `values-v21` folders). For reference the default content of those files can be found in the [default project template for android](https://github.com/NativeScript/android-runtime/tree/master/build/project-template-gradle/src/main/res).
+
 ### 1.2.0 (2015, July 24)
 
 There are changes in how the **Android ActionBar/IOS NavigationBar** is configured. Ut is now defined with `page.actionBar` instead of `page.optionsMenu`. [See an example...](./ApiReference/ui/action-bar/HOW-TO.md) 
