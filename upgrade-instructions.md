@@ -33,26 +33,18 @@ tns platform update ios
 
 ### Upgrading TNS Modules
 
-Тhe next piece is a bit more tricky as it requires more steps. The easiest method is to create a new project and then copy the **tns_modules** out of the new project into your existing project and then delete the dummy project.
+Since 1.3.0 release **tns_modules** are available as a npm package named [tns-core-modules] (https://www.npmjs.com/package/tns-core-modules).
 
-So at a command line do the following (assuming you are still in your main app project folder from the steps above). Please remember to replace **<yourapp>** with whatever folder name your app is in.
+In order to use them in your old project, you will have to explicitly install the package, for example (assuming you are still in your main app project folder from the steps above):
 
-Windows:
 ```
-cd ..
-tns create TempApp
-rd /S /Q <yourapp>\app\tns_modules
-move TempApp\app\tns_modules <yourapp>\app
-rd /S /Q TempApp
+npm install --save tns-core-modules
 ```
 
-Linux/Macintosh:
-```
-cd ..
-tns create TempApp
-rm -rf <yourapp>/app/tns_modules
-mv TempApp/app/tns_modules <yourapp>/app
-rm -rf TempApp
-```
+This command will install **tns-core-modules** package into node_modules folder and update package.json of the project by adding it as a dependency.
 
-Another way to achieve this is to go to [NativeScript Releases](https://github.com/NativeScript/NativeScript/releases/), download tns-core-\*.tgz containing the cross-platform modules from the respective release, unpack them and replace the content of the **tns_modules** folder in your project with them.
+> **NOTE:** tns_modules directory in your app folder will not be used anymore and you can safely remove it.
+
+Another place to find **tns-core-modules** package is [NativeScript Releases](https://github.com/NativeScript/NativeScript/releases/), where you can download tns-core-modules-\*.tgz containing the cross-platform modules from the respective release and execute the command above as giving it the local path of the package: `npm install --save <path to tns-core-modules-*.tgz>`.
+
+> **IMPORTANT:** Since 1.3.0 release `tns create` command will create a new project, add **tns-core-modules** package as a dependency to its package.json and install it, so each new project you create will have the **tns-core-modules** package installed and you do not have to install it explicitly.
