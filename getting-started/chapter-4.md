@@ -385,7 +385,7 @@ To give the user the ability to manage their grocery list you're going to have t
 Open `app/views/list/list.xml` and change the `<GridLayout>` tag to use the code below:
 
 ``` XML
-<GridLayout rows="auto, \*" columns="2\*, \*">
+<GridLayout rows="auto, *" columns="2*, *">
 ```
 
 The `rows` attribute divides the screen into two rows, the first auto-sized according to its childrens' height, and the other to contain \*, or the remaining height of the screen. The `columns` attribute divides the screen into two columns, where the first column takes up 2/3 of the screen, and the second takes up the remaining third.
