@@ -22,7 +22,9 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 * JDK 8 or a later stable official release
 * Android SDK 22 or a later stable official release
 * Gradle 2.3 or a later stable official release
-* Android Support Repository 21.0.0
+* Android Support Repository
+* Android SDK Build-tools 22.0.0 or a later stable official release
+* ANDROID_HOME environment variable must be set
 * (Optional) Genymotion to expand your testing options
 
 ## Setup
@@ -49,7 +51,7 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
     	sudo apt-get install oracle-java8-installer
         ```
     1. After installation if you have multiple installations of java you can choose which to use:
-    
+
     	```Shell
     	sudo update-alternatives --config java
     	```
@@ -83,13 +85,19 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 	```Shell
 	sudo android update sdk --filter tools,platform-tools,android-22,android-17,build-tools-22.0.1,sys-img-x86-android-22,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
 	```
+1. Set ANDROID_HOME system environment variable
+    ```
+    export ANDROID_HOME=Path to Android installation directory
+    ```
+    For example: ANDROID_HOME=/android/sdk/
+    > NOTE: The home directory is the one that contains `tools` and `platform-tools` directories.
 1. (Optional) Install Genymotion.<br/>Genymotion is a third-party native emulator.
     1. Go to [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads) and download and install VirtualBox for Linux.
     1. Go to [Get Genymotion](https://www.genymotion.com/#!/download), select Linux and click the download link for Ubuntu.
 	1. After the download completes, run the installer and complete the installation.
 1. Install the NativeScript CLI.
-    1. Run the following command. 
-    
+    1. Run the following command.
+
 	```Shell
 	sudo npm install nativescript -g --unsafe-perm
 	```
