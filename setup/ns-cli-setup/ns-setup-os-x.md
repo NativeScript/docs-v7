@@ -108,6 +108,5 @@ On OS X systems, you can use the NativeScript CLI to develop Android and iOS app
 
 ## What's Next
 
-Create your first [Hello World app with the NativeScript CLI](../../hello-world/hello-world-ns-cli.md).
+Return to the [getting started guide](/getting-started).
 
-[NativeScript CLI]: https://www.npmjs.com/package/nativescript
