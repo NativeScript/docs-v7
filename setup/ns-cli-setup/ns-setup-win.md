@@ -96,6 +96,4 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
 
 ## What's Next
 
-Create your first [Hello World app with the NativeScript CLI](../../hello-world/hello-world-ns-cli.md).
-
-[NativeScript CLI]: https://www.npmjs.com/package/nativescript
+Return to the [getting started guide](/getting-started).
