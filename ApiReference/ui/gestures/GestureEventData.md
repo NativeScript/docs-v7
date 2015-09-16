@@ -4,6 +4,7 @@ title: "Object ui/gestures.GestureEventData"
 description: "Object ui/gestures.GestureEventData"
 ---
 ## Object: "ui/gestures".GestureEventData  
+_Extends:_ [_EventData_](../../data/observable/EventData.md)  
 Provides gesture event data.
 
 ##### Properties

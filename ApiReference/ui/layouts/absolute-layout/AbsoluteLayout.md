@@ -4,7 +4,7 @@ title: "Class ui/layouts/absolute-layout.AbsoluteLayout"
 description: "Class ui/layouts/absolute-layout.AbsoluteLayout"
 ---
 ## Class: "ui/layouts/absolute-layout".AbsoluteLayout  
-_Inherits:_ [_Layout_](../../../ui/layouts/layout/Layout.md)  
+_Inherits:_ [_LayoutBase_](../../../ui/layouts/layout-base/LayoutBase.md)  
 A layout that lets you specify exact locations (left/top coordinates) of its children.
 
 ##### Static Properties

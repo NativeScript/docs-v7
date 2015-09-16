@@ -22,8 +22,16 @@ This property is readonly.
  - **remove()** _Promise_...  
      Removes (deletes) the current Entity from the file system.
    - _**return**_ - _Promise_ of _Object_
+ - **removeSync(** onError? _Function_... **)**  
+     Removes (deletes) the current Entity from the file system synchronously.
+   - **onError** - _(optional)_ - _Function_(error _Object_) _Object_
  - **rename(** newName _String_ **)** _Promise_...  
      Renames the current entity using the specified name.
    - **newName** - _String_  
      The new name to be applied to the entity.
    - _**return**_ - _Promise_ of _Object_
+ - **renameSync(** newName _String_, onError? _Function_... **)**  
+     Renames the current entity synchronously, using the specified name.
+   - **newName** - _String_  
+     The new name to be applied to the entity.
+   - **onError** - _(optional)_ - _Function_(error _Object_) _Object_

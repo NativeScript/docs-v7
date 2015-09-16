@@ -7,6 +7,8 @@ description: "Object ui/dialogs.ActionOptions"
 Provides options for the dialog.
 
 ##### Properties
+ - **title** - _(optional)_ - _String_.    
+  Gets or sets the dialog title.
  - **message** - _(optional)_ - _String_.    
   Gets or sets the dialog message.
  - **cancelButtonText** - _(optional)_ - _String_.    

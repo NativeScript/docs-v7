@@ -20,6 +20,8 @@ This routine allows for various value modifiers per Property, which is used for 
 
 Object | Description
 ------|------------
+[NativeValueResult](../../../ui/core/dependency-observable/NativeValueResult.md) | Interface used by Propery 'defaultValueGetter' function to specify if the default value returned by the native instance can be cached or not.
+One example is - android.widget.Button background. It is state drawable so it cannot be reused/cached.
 [PropertyChangeData](../../../ui/core/dependency-observable/PropertyChangeData.md) | The data for the event raised when a value of a Property changes for a DependencyObservable instance.
 [PropertyChangedCallback](../../../ui/core/dependency-observable/PropertyChangedCallback.md) | Defines the signature of the function that handles the propertyChanged event.
 [PropertyValidationCallback](../../../ui/core/dependency-observable/PropertyValidationCallback.md) | Defines the signature of the function that handles the validateValue event.

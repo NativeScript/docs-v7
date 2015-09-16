@@ -61,6 +61,10 @@ Observable is used when you want to be notified when a change occurs. Use on/off
      Notifies all the registered listeners for the event provided in the data.eventName.
    - **data** - [_EventData_](../../data/observable/EventData.md)  
      The data associated with the event.
+ - **notifyPropertyChange(** propertyName _String_, newValue _Object_ **)**  
+     Notifies all the registered listeners for the property change event.
+   - **propertyName** - _String_
+   - **newValue** - _Object_
  - **hasListeners(** eventName _String_ **)** _Boolean_  
      Checks whether a listener is registered for the specified event name.
    - **eventName** - _String_  

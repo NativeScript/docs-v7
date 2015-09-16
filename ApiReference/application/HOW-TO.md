@@ -57,7 +57,7 @@ if (app.android) {
 ``` JavaScript
 // Add the notification observer
 if (app.ios) {
-    app.ios.addNotificationObserver(UIDeviceBatteryLevelDidChangeNotification, function onReceiveCallback(notification) {
+    var observer = app.ios.addNotificationObserver(UIDeviceBatteryLevelDidChangeNotification, function onReceiveCallback(notification) {
         var percent = UIDevice.currentDevice().batteryLevel * 100;
         var message = "Battery: " + percent + "%";
         //console.log(message);
@@ -65,6 +65,6 @@ if (app.ios) {
 }
 // When no longer needed, remove the notification observer
 if (app.ios) {
-    app.ios.removeNotificationObserver(UIDeviceBatteryLevelDidChangeNotification);
+    app.ios.removeNotificationObserver(observer, UIDeviceBatteryLevelDidChangeNotification);
 }
 ```

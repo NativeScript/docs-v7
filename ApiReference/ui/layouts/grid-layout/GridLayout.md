@@ -4,7 +4,7 @@ title: "Class ui/layouts/grid-layout.GridLayout"
 description: "Class ui/layouts/grid-layout.GridLayout"
 ---
 ## Class: "ui/layouts/grid-layout".GridLayout  
-_Inherits:_ [_Layout_](../../../ui/layouts/layout/Layout.md)  
+_Inherits:_ [_LayoutBase_](../../../ui/layouts/layout-base/LayoutBase.md)  
 Defines a rectangular layout area that consists of columns and rows.
 
 ##### Static Functions

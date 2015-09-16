@@ -12,4 +12,4 @@ var uilayoutslayout = require("ui/layouts/layout");
 
 Class | Description
 ------|------------
-[Layout](../../../ui/layouts/layout/Layout.md) | Base class for all views that supports children positioning.
+[Layout](../../../ui/layouts/layout/Layout.md) | Base class for all views that supports children positioning in cross platform manner.

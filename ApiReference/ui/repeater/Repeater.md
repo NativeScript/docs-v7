@@ -21,7 +21,7 @@ Represents a UI Repeater component.
 The items property can be set to an array or an object defining length and getItem(index) method.
  - **itemTemplate** - _String_.    
   Gets or set the item template of the Repeater. 
- - **itemsLayout** - [_Layout_](../../ui/layouts/layout/Layout.md).    
+ - **itemsLayout** - [_LayoutBase_](../../ui/layouts/layout-base/LayoutBase.md).    
   Gets or set the items layout of the Repeater. Default value is StackLayout with orientation="vertical".
 
 ##### Instance Functions

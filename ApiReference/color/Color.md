@@ -14,6 +14,11 @@ Represents a color object. Stores all color components (alpha (opacity), red, gr
    - **value2** - [_Color_](../color/Color.md)  
      A Color to compare.
    - _**return**_ - _Boolean_
+ - **isValid(** value _Object_ **)** _Boolean_  
+     Validates if a value can be converted to color.
+   - **value** - _Object_  
+     Input string.
+   - _**return**_ - _Boolean_
 
 ##### Instance Properties
  - **a** - _Number_.    

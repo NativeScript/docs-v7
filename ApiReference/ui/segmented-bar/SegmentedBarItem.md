@@ -1,11 +1,12 @@
 ---
-nav-title: "Object ui/segmented-bar.SegmentedBarItem"
-title: "Object ui/segmented-bar.SegmentedBarItem"
-description: "Object ui/segmented-bar.SegmentedBarItem"
+nav-title: "Class ui/segmented-bar.SegmentedBarItem"
+title: "Class ui/segmented-bar.SegmentedBarItem"
+description: "Class ui/segmented-bar.SegmentedBarItem"
 ---
-## Object: "ui/segmented-bar".SegmentedBarItem  
+## Class: "ui/segmented-bar".SegmentedBarItem  
+_Inherits:_ [_Bindable_](../../ui/core/bindable/Bindable.md)  
 Represents a SegmentedBar item.
 
-##### Properties
+##### Instance Properties
  - **title** - _String_.    
   Gets or sets the title of the SegmentedBarItem.

@@ -81,16 +81,6 @@ size is smaller than the size the view wants to be.
   Specifies extra space on the right side of this view.
  - **marginBottom** - _Number_.    
   Specifies extra space on the bottom side of this view.
- - **padding** - _String_.    
-  Gets or sets padding style property.
- - **paddingLeft** - _Number_.    
-  Specify the left padding of this view.
- - **paddingTop** - _Number_.    
-  Specify the top padding of this view.
- - **paddingRight** - _Number_.    
-  Specify the right padding of this view.
- - **paddingBottom** - _Number_.    
-  Specify the bottom padding of this view.
  - **horizontalAlignment** - _String_.    
   Gets or sets the alignment of this view within its parent along the Horizontal axis.
  - **verticalAlignment** - _String_.    
@@ -99,6 +89,16 @@ size is smaller than the size the view wants to be.
   Gets or sets the visibility of the view.
  - **opacity** - _Number_.    
   Gets or sets the opacity style property.
+ - **translateX** - _Number_.    
+  Gets or sets the translateX affine transform of the view.
+ - **translateY** - _Number_.    
+  Gets or sets the translateY affine transform of the view.
+ - **scaleX** - _Number_.    
+  Gets or sets the scaleX affine transform of the view.
+ - **scaleY** - _Number_.    
+  Gets or sets the scaleY affine transform of the view.
+ - **rotate** - _Number_.    
+  Gets or sets the rotate affine transform of the view.
  - **isEnabled** - _Boolean_.    
   Gets or sets a value indicating whether the the view is enabled. This affects the appearance of the view.
  - **isUserInteractionEnabled** - _Boolean_.    
@@ -112,12 +112,14 @@ size is smaller than the size the view wants to be.
  - **parent** - [_View_](../../../ui/core/view/View.md).    
   Gets the View instance that parents this view. This property is read-only.
  - **isLayoutValid** - _Boolean_.    
-  Gets is layout is valid. This is read-only property.
+  Gets is layout is valid. This is a read-only property.
  - **cssType** - _String_.
  - **visualState** - _String_.
+ - **page** - [_View_](../../../ui/core/view/View.md).    
+  Gets owner page. This is a read-only property.
  - **isLoaded** - _Boolean_.
  - **_context** - _Object_.
- - **_gestureObservers** - _Map_ of  **<** _Number_, __ of [_GesturesObserver_](../../../ui/gestures/GesturesObserver.md) **>** .
+ - **_gestureObservers** - _Object_.
  - **_domId** - _Number_.
  - **_cssClasses** - __ of _String_.
  - **_isAddedToNativeVisualTree** - _Boolean_.
@@ -186,25 +188,41 @@ When overriding this method, you must call setMeasuredDimension(int, int) to sto
      Tries to focus the view.
 Returns a value indicating whether this view or one of its descendants actually took focus.
    - _**return**_ - _Boolean_
+ - **setInlineStyle(** style _String_ **)**  
+     Sets in-line CSS string as style.
+   - **style** - _String_  
+     - In-line CSS string. 
  - **getGestureObservers(** type [_GestureTypes_](../../../ui/gestures/GestureTypes.md) **)** __...
    - **type** - [_GestureTypes_](../../../ui/gestures/GestureTypes.md)
    - _**return**_ - __ of [_GesturesObserver_](../../../ui/gestures/GesturesObserver.md)
  - **observe(** type [_GestureTypes_](../../../ui/gestures/GestureTypes.md), callback _Function_..., thisArg? _Object_ **)**  
-     Adds a gesture observer.
+     [Deprecated. Please use the on() instead.] Adds a gesture observer.
    - **type** - [_GestureTypes_](../../../ui/gestures/GestureTypes.md)  
      - Type of the gesture.
    - **callback** - _Function_(args [_GestureEventData_](../../../ui/gestures/GestureEventData.md))  
      - A function that will be executed when gesture is received.
    - **thisArg** - _(optional)_ - _Object_  
      - An optional parameter which will be used as `this` context for callback execution. 
- - **on(** eventNames _String_, callback _Function_..., thisArg? _Object_ **)**  
+ - **on(** eventNames _String_, gestures, GestureTypes, callback _Function_..., thisArg? _Object_ **)**  
      A basic method signature to hook an event listener (shortcut alias to the addEventListener method).
    - **eventNames** - _String_  
-     - String corresponding to events (e.g. "propertyChange"). Optionally could be used more events separated by `,` (e.g. "propertyChange", "change"). 
+     - String corresponding to events (e.g. "propertyChange"). Optionally could be used more events separated by `,` (e.g. "propertyChange", "change") or you can use gesture types. 
+   - **gestures**
+   - **GestureTypes**
    - **callback** - _Function_(data [_EventData_](../../../data/observable/EventData.md))  
      - Callback function which will be executed when event is raised.
    - **thisArg** - _(optional)_ - _Object_  
      - An optional parameter which will be used as `this` context for callback execution.
+ - **off(** eventNames _String_, gestures, GestureTypes, callback? _Object_, thisArg? _Object_ **)**  
+     Removes listener(s) for the specified event name.
+   - **eventNames** - _String_  
+     Comma delimited names of the events or gesture types the specified listener is associated with.
+   - **gestures**
+   - **GestureTypes**
+   - **callback** - _(optional)_ - _Object_  
+     An optional parameter pointing to a specific listener. If not defined, all listeners for the event names will be removed.
+   - **thisArg** - _(optional)_ - _Object_  
+     An optional parameter which when set will be used to refine search of the correct callback which will be removed as event listener.
  - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
      Raised when a loaded event occurs.
    - **event**
@@ -215,10 +233,17 @@ Returns a value indicating whether this view or one of its descendants actually 
    - **event**
    - **callback** - _Function_(args [_EventData_](../../../data/observable/EventData.md))
    - **thisArg** - _(optional)_ - _Object_
+ - **animate(** options [_AnimationDefinition_](../../../ui/animation/AnimationDefinition.md) **)** _Promise_
+   - **options** - [_AnimationDefinition_](../../../ui/animation/AnimationDefinition.md)
+   - _**return**_ - _Promise_
+ - **createAnimation(** options [_AnimationDefinition_](../../../ui/animation/AnimationDefinition.md) **)** [_Animation_](../../../ui/animation/Animation.md)
+   - **options** - [_AnimationDefinition_](../../../ui/animation/AnimationDefinition.md)
+   - _**return**_ - [_Animation_](../../../ui/animation/Animation.md)
  - **onLoaded()**
  - **onUnloaded()**
- - **_addView(** view [_View_](../../../ui/core/view/View.md) **)**
+ - **_addView(** view [_View_](../../../ui/core/view/View.md), atIndex? _Number_ **)**
    - **view** - [_View_](../../../ui/core/view/View.md)
+   - **atIndex** - _(optional)_ - _Number_
  - **_propagateInheritableProperties(** view [_View_](../../../ui/core/view/View.md) **)**
    - **view** - [_View_](../../../ui/core/view/View.md)
  - **_inheritProperties(** parentView [_View_](../../../ui/core/view/View.md) **)**
@@ -231,9 +256,10 @@ Returns a value indicating whether this view or one of its descendants actually 
    - _**return**_ - _Boolean_
  - **_isInheritedChange()** _Boolean_
    - _**return**_ - _Boolean_
- - **_addViewToNativeVisualTree(** view [_View_](../../../ui/core/view/View.md) **)** _Boolean_  
+ - **_addViewToNativeVisualTree(** view [_View_](../../../ui/core/view/View.md), atIndex? _Number_ **)** _Boolean_  
      Performs the core logic of adding a child view to the native visual tree. Returns true if the view's native representation has been successfully added, false otherwise.
    - **view** - [_View_](../../../ui/core/view/View.md)
+   - **atIndex** - _(optional)_ - _Number_
    - _**return**_ - _Boolean_
  - **_removeViewFromNativeVisualTree(** view [_View_](../../../ui/core/view/View.md) **)**
    - **view** - [_View_](../../../ui/core/view/View.md)
@@ -245,21 +271,16 @@ Returns a value indicating whether this view or one of its descendants actually 
  - **_onDetached(** force? _Boolean_ **)**
    - **force** - _(optional)_ - _Boolean_
  - **_createUI()**
- - **_prepareNativeView(** view _UIView_ **)**
-   - **view** - _UIView_
  - **_checkMetadataOnPropertyChanged(** metadata [_PropertyMetadata_](../../../ui/core/dependency-observable/PropertyMetadata.md) **)**
    - **metadata** - [_PropertyMetadata_](../../../ui/core/dependency-observable/PropertyMetadata.md)
  - **_updateLayout()**
  - **_setCurrentMeasureSpecs(** widthMeasureSpec _Number_, heightMeasureSpec _Number_ **)** _Boolean_  
-     Called my measure method to cache measureSpecs.
+     Called by measure method to cache measureSpecs.
    - **widthMeasureSpec** - _Number_
    - **heightMeasureSpec** - _Number_
    - _**return**_ - _Boolean_
- - **_getCurrentMeasureSpecs()** {}...  
-     Returns view measureSpecs.
-   - _**return**_ - { widthMeasureSpec: _Number_, heightMeasureSpec: _Number_ }
  - **_setCurrentLayoutBounds(** left _Number_, top _Number_, right _Number_, bottom _Number_ **)**  
-     Called my layout method to cache view bounds.
+     Called by layout method to cache view bounds.
    - **left** - _Number_
    - **top** - _Number_
    - **right** - _Number_

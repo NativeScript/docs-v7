@@ -18,6 +18,7 @@ Object | Description
 ------|------------
 [NativeScriptError](../application/NativeScriptError.md) | An extended JavaScript Error which will have the nativeError property initialized in case the error is caused by executing platform-specific code.
 [ApplicationEventData](../application/ApplicationEventData.md) | Event data containing information for the application events.
+[OrientationChangedEventData](../application/OrientationChangedEventData.md) | Event data containing information for orientation changed event.
 [AndroidActivityEventData](../application/AndroidActivityEventData.md) | Data for the Android activity events.
 [AndroidActivityBundleEventData](../application/AndroidActivityBundleEventData.md) | Data for the Android activity events with bundle.
 [AndroidActivityResultEventData](../application/AndroidActivityResultEventData.md) | Data for the Android activity result event.
@@ -37,12 +38,16 @@ Object | Description
   String value used when hooking to exitevent.
  - **lowMemoryEvent** - _String_.    
   String value used when hooking to lowMemory event.
+ - **orientationChangedEvent** - _String_.    
+  String value used when hooking to orientationChanged event.
  - **mainModule** - _String_.    
   The main page path (without the file extension) for the application starting from the application root. 
 For example if you have page called "main.js" in a folder called "subFolder" and your root folder is "app" you can specify mainModule like this:
 var application = require("application");
 application.mainModule = "app/subFolder/main";
 application.start();
+ - **mainEntry** - [_NavigationEntry_](../ui/frame/NavigationEntry.md).    
+  The main navigation entry to be used when loading the main Page.
  - **resources** - _Object_.    
   An application level static resources.
  - **cssFile** - _String_.    
@@ -89,6 +94,14 @@ The method is intended to be used for crash reports and/or application restart.
      - Callback function which will be executed when event is raised.
    - **thisArg** - _(optional)_ - _Object_  
      - An optional parameter which will be used as `this` context for callback execution.
+ - **off(** eventNames _String_, callback? _Object_, thisArg? _Object_ **)**  
+     Shortcut alias to the removeEventListener method.
+   - **eventNames** - _String_  
+     - String corresponding to events (e.g. "onLaunch").
+   - **callback** - _(optional)_ - _Object_  
+     - Callback function which will be removed.
+   - **thisArg** - _(optional)_ - _Object_  
+     - An optional parameter which will be used as `this` context for callback execution.
  - **notify(** data _Object_ **)**  
      Notifies all the registered listeners for the event provided in the data.eventName.
    - **data** - _Object_  
@@ -127,4 +140,9 @@ The method is intended to be used for crash reports and/or application restart.
      This event is raised when an uncaught error occurs while the application is running.
    - **event**
    - **callback** - _Function_(args [_ApplicationEventData_](../application/ApplicationEventData.md))
+   - **thisArg** - _(optional)_ - _Object_
+ - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
+     This event is raised the orientation of the current device has changed.
+   - **event**
+   - **callback** - _Function_(args [_OrientationChangedEventData_](../application/OrientationChangedEventData.md))
    - **thisArg** - _(optional)_ - _Object_

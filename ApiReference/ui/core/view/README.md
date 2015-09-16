@@ -39,11 +39,12 @@ Returns an instance of a view (if found), otherwise undefined.
      - Starting view (parent container).
    - **callback** - _Function_(child [_View_](../../../ui/core/view/View.md)) _Boolean_  
      - A function to execute on every child. If function returns false it breaks the iteration.
- - **getAncestor(** view [_View_](../../../ui/core/view/View.md), typeName _String_ **)** [_View_](../../../ui/core/view/View.md)  
+ - **getAncestor(** view [_View_](../../../ui/core/view/View.md), criterion _String_, Function **)** [_View_](../../../ui/core/view/View.md)  
      Gets an ancestor from a given type.
    - **view** - [_View_](../../../ui/core/view/View.md)  
      - Starting view (child view).
-   - **typeName** - _String_  
-     - The type name of the parent container which is looking for.
+   - **criterion** - _String_  
+     - The type of ancestor view we are looking for. Could be a string containing a class name or an actual type.
 Returns an instance of a view (if found), otherwise undefined.
+   - **Function**
    - _**return**_ - [_View_](../../../ui/core/view/View.md)

@@ -38,3 +38,13 @@ Namespace | Description
    - **uri** - _String_  
      The URI.
    - _**return**_ - _Boolean_
+ - **parseJSON(** source _String_ **)** _Object_  
+     Returns object from JSON or JSONP string.
+   - **source** - _String_  
+     The JSON or JSONP string.
+   - _**return**_ - _Object_
+ - **openUrl(** url _String_ **)** _Boolean_  
+     Opens url.
+   - **url** - _String_  
+     The url.
+   - _**return**_ - _Boolean_
