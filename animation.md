@@ -11,7 +11,7 @@ position: 18
 The [`AnimationDefinition`](ApiReference/ui/animation/AnimationDefinition.md) interface is central for defining an animation for **one or more properties** of a **single** [`View`](ApiReference/ui/core/View.md). The animatable properties are:
  - opacity
  - backgroundColor
- - translateX and translateY 
+ - translateX and translateY
  - scaleX and scaleY
  - rotate
 
