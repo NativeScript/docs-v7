@@ -9,7 +9,7 @@ position: 1
 
 *Are you a hybrid app developer looking for a way to create truly native apps? Are you a native app developer wondering how to expand the scope of his apps to the other popular platforms? Or perhaps you are a web developer searching for a way to transfer your existing skills to the world of mobile development?*
 
-NativeScript lets you develop truly native apps for iOS and Android from a single code base of JavaScript or TypeScript, XML and CSS. NativeScript takes your cross-platform code and translates it into the language that your target platform speaks. 
+NativeScript lets you develop truly native apps for iOS and Android from a single code base of JavaScript or TypeScript, XML and CSS. NativeScript takes your cross-platform code and translates it into the language that your target platform speaks.
 
 ## How Does It Work
 
@@ -43,6 +43,7 @@ Start exploring the documentation resources for NativeScript.
 * [UI: Dialogs](ui-dialogs.md)
 * [UI: Gestures](gestures.md)
 * [UI: Styling](styling.md)
+* [UI: Animation](animation.md)
 
 If you need even more native capabilities than the NativeScript modules provide, you can expand your development with any of the following options.
 
