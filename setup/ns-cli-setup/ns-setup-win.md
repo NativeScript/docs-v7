@@ -22,7 +22,7 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
 * JDK 8 or a later stable official release
 * Android SDK 22 or a later stable official release
 * Gradle 2.3 or a later stable official release
-* Android Support Repository 21.0.0
+* Android Support Repository
 * (Optional) Genymotion to expand your testing options
 
 ## Setup
@@ -37,8 +37,8 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
         ```
     1. Restart the command prompt.
 1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
-    1. In the command prompt, run the following command. 
-        
+    1. In the command prompt, run the following command.
+
         ```Shell
         choco install jdk8
         ```
@@ -82,8 +82,8 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
     1. If prompted, confirm the download.
     1. After the download completes, run the installer and complete the installation.
 1. Install the NativeScript CLI.
-    1. Run the following command. 
-    
+    1. Run the following command.
+
         ```Shell
         npm i -g nativescript
         ```
