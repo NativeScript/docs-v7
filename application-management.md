@@ -12,6 +12,7 @@ The `application` module lets you manage the life cycle of your NativeScript app
 * [Start Application](#start-application)
 * [Use Application Events](#use-application-events)
 * [Android Activity Events](#android-activity-events)
+* [iOS UIApplicationDelegate](#ios-uiapplicationdelegate)
 * [Persist and Restore Application Settings](#persist-and-restore-application-settings)
 
 ## Start Application
@@ -291,6 +292,49 @@ if (application.android) {
     });
 }
 
+application.start();
+```
+## iOS UIApplicationDelegate
+
+Since NativeScript 1.3 you can specify custom UIApplicationDelegate for the iOS application:
+
+### Example
+``` JavaScript
+var application = require("application");
+var MyDelegate = (function (_super) {
+    __extends(MyDelegate, _super);
+    function MyDelegate() {
+        _super.apply(this, arguments);
+    }
+    MyDelegate.prototype.applicationDidFinishLaunchingWithOptions = function (application, launchOptions) {
+        console.log("applicationWillFinishLaunchingWithOptions: " + launchOptions);
+        return true;
+    };
+    MyDelegate.prototype.applicationDidBecomeActive = function (application) {
+        console.log("applicationDidBecomeActive: " + application);
+    };
+    MyDelegate.ObjCProtocols = [UIApplicationDelegate];
+    return MyDelegate;
+})(UIResponder);
+application.ios.delegate = MyDelegate;
+application.start();
+```
+``` TypeScript
+import application = require("application");
+class MyDelegate extends UIResponder implements UIApplicationDelegate {
+    public static ObjCProtocols = [UIApplicationDelegate];
+
+    applicationDidFinishLaunchingWithOptions(application: UIApplication, launchOptions: NSDictionary): boolean {
+        console.log("applicationWillFinishLaunchingWithOptions: " + launchOptions)
+
+        return true;
+    }
+
+    applicationDidBecomeActive(application: UIApplication): void {
+        console.log("applicationDidBecomeActive: " + application)
+    }
+}
+application.ios.delegate = MyDelegate;
 application.start();
 ```
 

@@ -20,3 +20,9 @@ Utility module related to android resources.
    - **name** - _String_  
      - Name of the resource.
    - _**return**_ - _Number_
+ - **getPalleteColor(** name _String_, context _Object_ **)** _Number_  
+     Gets a color from the current theme.
+   - **name** - _String_  
+     - Name of the color resource.
+   - **context** - _Object_
+   - _**return**_ - _Number_

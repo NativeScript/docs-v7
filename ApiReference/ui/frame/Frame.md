@@ -56,6 +56,8 @@ Since there are a couple of  ways to specify a Page instance through an entry, t
      The NavigationEntry instance.
  - **_processNavigationQueue(** page [_Page_](../../ui/page/Page.md) **)**
    - **page** - [_Page_](../../ui/page/Page.md)
+ - **_updateActionBar(** page? [_Page_](../../ui/page/Page.md) **)**
+   - **page** - _(optional)_ - [_Page_](../../ui/page/Page.md)
  - **on(** eventNames _String_, callback _Function_..., thisArg? _Object_ **)**  
      A basic method signature to hook an event listener (shortcut alias to the addEventListener method).
    - **eventNames** - _String_  

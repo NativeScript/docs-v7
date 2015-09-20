@@ -4,7 +4,7 @@ title: "Class ui/layouts/dock-layout.DockLayout"
 description: "Class ui/layouts/dock-layout.DockLayout"
 ---
 ## Class: "ui/layouts/dock-layout".DockLayout  
-_Inherits:_ [_Layout_](../../../ui/layouts/layout/Layout.md)  
+_Inherits:_ [_LayoutBase_](../../../ui/layouts/layout-base/LayoutBase.md)  
 A Layout that arranges its children at its outer edges, and allows its last child to take up the remaining space. 
 
 ##### Static Properties

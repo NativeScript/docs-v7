@@ -34,12 +34,13 @@ The user interface of NativeScript mobile apps consists of pages. Typically, the
 * [Platform specific declarations](#platform-specific-declarations)
   * [Platform specific property value](#platform-specific-property-value)
   * [Platform specific component declaration](#platform-specific-component-declaration)
+* [Lower-case-dashed component declaration](#lower-case-dashed-component-declaration)
 
 ## The Basics
 
 When you develop the user interface of you app, you can implement each application screen in a separate page or implement your application screens on a single page with a tab view. 
 
-For each page, you need to have a separate `XML` file which holds the layout of the page. For each `XML` file that NativeScript parses, the framework also looks for a `JavaScript` or `TypeScript` file with the same name and executes the business logic inside it.
+For each page, you need to have a separate `XML` file which holds the layout of the page. For each `XML` file that NativeScript parses, the framework also looks for a `JavaScript` or `TypeScript` file with the same name and executes the business logic inside it. 
 
 ### Declare the Home Page
 
@@ -142,6 +143,15 @@ export function buttonTap(args: observable.EventData) {
 > To access variables or functions from the user interface, you need to declare them im the `exports` module.
 >
 > NativeScript sets each attribute value in the XML declaration to a respective property of the component. If a respective property does not exist, NativeScript sets the attribute value as an expando object.
+>
+> Since NativeScript 1.3 you can specify code and CSS files for your Page XML using `codeFile` and `cssFile` attributes:
+> ```XML
+> <Page codeFile="~/your-code-file" cssFile="~/your-styles.css">
+>   <StackLayout>
+>      ...
+>    </StackLayout>
+> </Page>
+> ```
 
 ## User Interface Components
 
@@ -751,3 +761,14 @@ To declare a platform specific property value or platform specific component in 
 </Page>
 ```
 > You cannot nest plaftorm tags!
+
+## Lower-case-dashed component declaration
+Since NativeScript 1.3 you can declare your UI using lower-case-dashed syntax:
+```XML
+<page>
+  <scroll-view>
+    <stack-layout>
+      <label ctext="Label" />
+      <button text="Button" tap="tap" />
+      ...
+```

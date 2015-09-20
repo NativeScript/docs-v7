@@ -21,10 +21,10 @@ var gridLayout = new layout.GridLayout();
 ```
 ### Add views to grid layout
 ``` JavaScript
-var btn1 = new button.Button();
-var btn2 = new button.Button();
-var btn3 = new button.Button();
-var btn4 = new button.Button();
+var btn1 = new button_1.Button();
+var btn2 = new button_1.Button();
+var btn3 = new button_1.Button();
+var btn4 = new button_1.Button();
 gridLayout.addChild(btn1);
 gridLayout.addChild(btn2);
 gridLayout.addChild(btn3);

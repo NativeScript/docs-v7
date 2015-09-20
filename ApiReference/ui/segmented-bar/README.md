@@ -12,8 +12,9 @@ var uisegmented_bar = require("ui/segmented-bar");
 
 Class | Description
 ------|------------
+[SegmentedBarItem](../../ui/segmented-bar/SegmentedBarItem.md) | Represents a SegmentedBar item.
 [SegmentedBar](../../ui/segmented-bar/SegmentedBar.md) | Represents a UI SegmentedBar component.
 
 Object | Description
 ------|------------
-[SegmentedBarItem](../../ui/segmented-bar/SegmentedBarItem.md) | Represents a SegmentedBar item.
+[SelectedIndexChangedEventData](../../ui/segmented-bar/SelectedIndexChangedEventData.md) | Defines the data for the SegmentedBar.selectedIndexChanged event.

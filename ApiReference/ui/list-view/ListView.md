@@ -39,6 +39,12 @@ The items property can be set to an array or an object defining length and getIt
 ##### Instance Functions
  - **refresh()**  
      Forces the ListView to reload all its items.
+ - **scrollToIndex(** index _Number_ **)**  
+     Scrolls the specified item with index into view. 
+[iOS](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITableView_Class/#//apple_ref/occ/instm/UITableView/scrollToRowAtIndexPath:atScrollPosition:animated:)
+[Android](http://developer.android.com/reference/android/widget/ListView.html#setSelection(int))
+   - **index** - _Number_  
+     - Item index. 
  - **on(** eventNames _String_, callback _Function_..., thisArg? _Object_ **)**  
      A basic method signature to hook an event listener (shortcut alias to the addEventListener method).
    - **eventNames** - _String_  

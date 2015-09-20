@@ -15,3 +15,6 @@ Represents a special Property which supports changed callback, metadata and valu
   Gets the PropertyMetadata object associated with the property. This is a read-only property.
  - **valueConverter** - _Function_(value _String_) _Object_.    
   Gets the valueConverter function associated with the property. This is a read-only property.
+ - **defaultValueGetter** - _Function_(instance [_DependencyObservable_](../../../ui/core/dependency-observable/DependencyObservable.md)) [_NativeValueResult_](../../../ui/core/dependency-observable/NativeValueResult.md).    
+  Gets or sets the defaultValueGetter function used to get the default value for this property.
+If default value is 'undefined' and this property is set this function will be used to extract the default value from the native instance.

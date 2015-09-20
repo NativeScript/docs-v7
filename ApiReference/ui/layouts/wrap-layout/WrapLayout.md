@@ -4,7 +4,7 @@ title: "Class ui/layouts/wrap-layout.WrapLayout"
 description: "Class ui/layouts/wrap-layout.WrapLayout"
 ---
 ## Class: "ui/layouts/wrap-layout".WrapLayout  
-_Inherits:_ [_Layout_](../../../ui/layouts/layout/Layout.md)  
+_Inherits:_ [_LayoutBase_](../../../ui/layouts/layout-base/LayoutBase.md)  
 WrapLayout position children in rows or columns depending on orientation property
 until space is filled and then wraps them on new row or column.
 

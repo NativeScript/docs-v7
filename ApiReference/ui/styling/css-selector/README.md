@@ -20,10 +20,10 @@ Class | Description
 [InlineStyleSelector](../../../ui/styling/css-selector/InlineStyleSelector.md) | 
 
 ##### Functions
- - **createSelector(** expression _String_, declarations Array of _Object_ **)** [_CssSelector_](../../../ui/styling/css-selector/CssSelector.md)
+ - **createSelector(** expression _String_, declarations Array of [_Declaration_](../../../css/Declaration.md) **)** [_CssSelector_](../../../ui/styling/css-selector/CssSelector.md)
    - **expression** - _String_
-   - **declarations** - Array of _Object_
+   - **declarations** - Array of [_Declaration_](../../../css/Declaration.md)
    - _**return**_ - [_CssSelector_](../../../ui/styling/css-selector/CssSelector.md)
- - **applyInlineSyle(** view [_View_](../../../ui/core/view/View.md), declarations Array of _Object_ **)**
+ - **applyInlineSyle(** view [_View_](../../../ui/core/view/View.md), declarations Array of [_Declaration_](../../../css/Declaration.md) **)**
    - **view** - [_View_](../../../ui/core/view/View.md)
-   - **declarations** - Array of _Object_
+   - **declarations** - Array of [_Declaration_](../../../css/Declaration.md)

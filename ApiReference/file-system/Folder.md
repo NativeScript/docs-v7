@@ -33,6 +33,10 @@ The path of the folder is added to the name to resolve the complete path to chec
  - **clear()** _Promise_...  
      Deletes all the files and folders (recursively), contained within this Folder.
    - _**return**_ - _Promise_ of _Object_
+ - **clearSync(** onError? _Function_... **)**  
+     Deletes all the files and folders (recursively), contained within this Folder synchronously.
+   - **onError** - _(optional)_ - _Function_(error _Object_)  
+     An optional function to be called if some error occurs.
  - **getFile(** name _String_ **)** [_File_](../file-system/File.md)  
      Gets or creates a File entity with the specified name within this Folder.
    - **name** - _String_  
@@ -45,6 +49,11 @@ The path of the folder is added to the name to resolve the complete path to chec
    - _**return**_ - [_Folder_](../file-system/Folder.md)
  - **getEntities()** _Promise_...  
      Gets all the top-level entities residing within this folder.
+   - _**return**_ - _Promise_ of __ of [_FileSystemEntity_](../file-system/FileSystemEntity.md)
+ - **getEntitiesSync(** onError? _Function_... **)** _Promise_...  
+     Gets all the top-level entities residing within this folder synchronously.
+   - **onError** - _(optional)_ - _Function_(error _Object_) _Object_  
+     An optional function to be called if some error occurs.
    - _**return**_ - _Promise_ of __ of [_FileSystemEntity_](../file-system/FileSystemEntity.md)
  - **eachEntity(** onEntity _Function_... **)**  
      Enumerates all the top-level FileSystem entities residing within this folder.

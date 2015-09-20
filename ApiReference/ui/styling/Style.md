@@ -20,6 +20,12 @@ Represents as style object containing all the style properties for a particular 
   Gets or sets the background-position style property.
  - **backgroundRepeat** - _String_.    
   Gets or sets the background-repeat style property.
+ - **borderColor** - [_Color_](../../color/Color.md).    
+  Gets or sets the border-color style property.
+ - **borderWidth** - _Number_.    
+  Gets or sets the border-width style property.
+ - **borderRadius** - _Number_.    
+  Gets or sets the border-radius style property.
  - **fontSize** - _Number_.    
   Gets or sets font-size style property.
  - **fontFamily** - _String_.    

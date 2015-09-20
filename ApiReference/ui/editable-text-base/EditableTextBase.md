@@ -34,4 +34,4 @@ Possible values are contained in the [UpdateTextTrigger enumeration](../enums/Up
 
 ##### Instance Functions
  - **dismissSoftInput()**  
-     Hides the soft input method, usually a soft keyboard.
+     Hides the soft input method, ususally a soft keyboard.

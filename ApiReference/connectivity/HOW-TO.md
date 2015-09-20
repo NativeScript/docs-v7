@@ -25,7 +25,7 @@ switch (connectionType) {
 ```
 ### Monitoring connection type.
 ``` JavaScript
-connectivity.starMonitoring(function onConnectionTypeChanged(newConnectionType) {
+connectivity.startMonitoring(function onConnectionTypeChanged(newConnectionType) {
     switch (newConnectionType) {
         case connectivity.connectionType.none:
             //console.log("Connection type changed to none.");

@@ -29,11 +29,6 @@ Provides an abstraction over the ActionBar (android) and NavigationBar (iOS).
      Updates the action bar.
  - **_isEmpty()** _Boolean_
    - _**return**_ - _Boolean_
- - **_updateAndroid(** menu _Object_ **)**
-   - **menu** - _Object_
- - **_onAndroidItemSelected(** itemId _Number_ **)** _Boolean_
-   - **itemId** - _Number_
-   - _**return**_ - _Boolean_
  - **_addArrayFromBuilder(** name _String_, value __... **)**
    - **name** - _String_
    - **value** - __ of _Object_

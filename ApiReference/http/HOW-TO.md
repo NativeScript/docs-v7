@@ -27,7 +27,7 @@ http.getJSON("https://httpbin.org/get").then(function (r) {
 ```
 ### Get Image from URL
 ``` JavaScript
-http.getImage("http://www.google.com/images/errors/logo_sm_2.png").then(function (r) {
+http.getImage("https://httpbin.org/image/png").then(function (r) {
     // Argument (r) is Image!
 }, function (e) {
     // Argument (e) is Error!

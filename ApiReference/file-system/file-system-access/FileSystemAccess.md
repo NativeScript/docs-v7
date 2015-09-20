@@ -36,18 +36,17 @@ Returns path Absolute path of the file, name Name of the file, extension Extensi
      A callback function to use if any error occurs.
 Returns path Absolute path of the folder, name Name of the folder.
    - _**return**_ - { path: _String_, name: _String_ }
- - **getEntities(** path _String_, onSuccess _Function_..., onError? _Function_... **)**  
+ - **getEntities(** path _String_, onError? _Function_... **)** __...  
      Gets all entities of a given path (folder)
    - **path** - _String_
-   - **onSuccess** - _Function_(files __ of { path: _String_, name: _String_, extension: _String_ }) _Object_  
-     A callback function to call if operation is successful
    - **onError** - _(optional)_ - _Function_(error _Object_) _Object_  
      (optional) A callback function to use if any error occurs.
- - **eachEntity(** path _String_, onSuccess _Function_..., onError? _Function_... **)**  
+   - _**return**_ - __ of { path: _String_, name: _String_, extension: _String_ }
+ - **eachEntity(** path _String_, onEntity _Function_..., onError? _Function_... **)**  
      Performs an action onSuccess for every entity in a folder with a given path.
 Breaks the loop if onSuccess function returns false
    - **path** - _String_
-   - **onSuccess** - _Function_(entity { path: _String_, name: _String_, extension: _String_ }) _Boolean_  
+   - **onEntity** - _Function_(entity { path: _String_, name: _String_, extension: _String_ }) _Boolean_  
      A callback function which is called for each entity.
    - **onError** - _(optional)_ - _Function_(error _Object_) _Object_  
      (optional) A callback function to use if any error occurs.
@@ -59,39 +58,30 @@ Breaks the loop if onSuccess function returns false
      Checks if a folder with a given path exist.
    - **path** - _String_
    - _**return**_ - _Boolean_
- - **deleteFile(** path _String_, onSuccess? _Function_..., onError? _Function_... **)**  
+ - **deleteFile(** path _String_, onError? _Function_... **)**  
      Deletes a file with a given path.
    - **path** - _String_  
      Path of the file.
-   - **onSuccess** - _(optional)_ - _Function_() _Object_  
-     (optional) A callback function which will be executed if the deletion is successful.
    - **onError** - _(optional)_ - _Function_(error _Object_) _Object_  
      (optional) A callback function to use if any error occurs.
- - **deleteFolder(** path _String_, isKnown _Boolean_, onSuccess? _Function_..., onError? _Function_... **)**  
+ - **deleteFolder(** path _String_, onError? _Function_... **)**  
      Deletes a folder with a given path.
    - **path** - _String_  
      Path of the folder.
-   - **isKnown** - _Boolean_
-   - **onSuccess** - _(optional)_ - _Function_() _Object_  
-     (optional) A callback function which will be executed if the deletion is successful.
    - **onError** - _(optional)_ - _Function_(error _Object_) _Object_  
      (optional) A callback function to use if any error occurs.
- - **emptyFolder(** path _String_, onSuccess? _Function_..., onError? _Function_... **)**  
+ - **emptyFolder(** path _String_, onError? _Function_... **)**  
      Deletes a content of a folder with a given path.
    - **path** - _String_  
      Path of the folder.
-   - **onSuccess** - _(optional)_ - _Function_() _Object_  
-     (optional) A callback function which will be executed if the deletion is successful.
    - **onError** - _(optional)_ - _Function_(error _Object_) _Object_  
      (optional) A callback function to use if any error occurs.
- - **rename(** path _String_, newPath _String_, onSuccess? _Function_..., onError? _Function_... **)**  
+ - **rename(** path _String_, newPath _String_, onError? _Function_... **)**  
      Rename a file or a folder with a given path.
    - **path** - _String_  
      Current path of the entity which should be renamed.
    - **newPath** - _String_  
      The new path which will be asigned of the entity.
-   - **onSuccess** - _(optional)_ - _Function_() _Object_  
-     (optional) A callback function which will be executed if the deletion is successful.
    - **onError** - _(optional)_ - _Function_(error _Object_) _Object_  
      (optional) A callback function to use if any error occurs.
  - **getDocumentsFolderPath()** _String_  
@@ -102,24 +92,21 @@ Returns for Android: "/data/data/applicationPackageName/files", iOS: "/var/mobil
      Gets the special documents folder.
 Returns for Android: "/data/data/applicationPackageName/cache", iOS: "/var/mobile/Applications/appID/Library/Caches"
    - _**return**_ - _String_
- - **readText(** path _String_, onSuccess _Function_..., onError? _Function_..., encoding? _Object_ **)**  
+ - **readText(** path _String_, onError? _Function_..., encoding? _Object_ **)** _String_  
      Reads a text from a file with a given path.
    - **path** - _String_  
      The path to the source file.
-   - **onSuccess** - _Function_(content _String_) _Object_  
-     A callback function which is called when a text is red.
    - **onError** - _(optional)_ - _Function_(error _Object_) _Object_  
      (optional) A callback function to use if any error occurs.
    - **encoding** - _(optional)_ - _Object_  
      (optional) If set reads the text with the specified encoding (default UTF-8).
- - **writeText(** path _String_, content _String_, onSuccess? _Function_..., onError? _Function_..., encoding? _Object_ **)**  
+   - _**return**_ - _String_
+ - **writeText(** path _String_, content _String_, onError? _Function_..., encoding? _Object_ **)**  
      Writes a text to a file with a given path.
    - **path** - _String_  
      The path to the source file.
    - **content** - _String_  
      The content which will be written to the file.
-   - **onSuccess** - _(optional)_ - _Function_() _Object_  
-     (optional) A callback function which is called when a text is written.
    - **onError** - _(optional)_ - _Function_(error _Object_) _Object_  
      (optional) A callback function to use if any error occurs.
    - **encoding** - _(optional)_ - _Object_  

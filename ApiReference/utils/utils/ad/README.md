@@ -12,6 +12,12 @@ Namespace | Description
 [resources](../../../utils/utils/ad/resources/) | Utility module related to android resources.
 
 ##### Functions
+ - **getApplication()** _Object_  
+     Gets the native Android application instance.
+   - _**return**_ - _Object_
+ - **getApplicationContext()** _Object_  
+     Gets the Android application context.
+   - _**return**_ - _Object_
  - **async(** doInBackground _Function_..., callback _Function_... **)**    
      _Types Parameters:_ _**T**_
    - **doInBackground** - _Function_() _T_

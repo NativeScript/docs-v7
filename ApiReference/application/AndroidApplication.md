@@ -41,21 +41,21 @@ The abstraction of an Android-specific application object.
  - **packageName** - _String_.    
   The name of the application package.
  - **onActivityCreated** - _Function_(activity _Object_, bundle _Object_).    
-  Direct handler of the [onActivityCreated method](http://developer.android.com/reference/android/app/Application.ActivityLifecycleCallbacks.html).
+  [Deprecated. Please use the respective event instead.] Direct handler of the [onActivityCreated method](http://developer.android.com/reference/android/app/Application.ActivityLifecycleCallbacks.html).
  - **onActivityDestroyed** - _Function_(activity _Object_).    
-  Direct handler of the [onActivityDestroyed method](http://developer.android.com/reference/android/app/Application.ActivityLifecycleCallbacks.html).
+  [Deprecated. Please use the respective event instead.] Direct handler of the [onActivityDestroyed method](http://developer.android.com/reference/android/app/Application.ActivityLifecycleCallbacks.html).
  - **onActivityStarted** - _Function_(activity _Object_).    
-  Direct handler of the [onActivityDestroyed method](http://developer.android.com/reference/android/app/Application.ActivityLifecycleCallbacks.html).
+  [Deprecated. Please use the respective event instead.] Direct handler of the [onActivityDestroyed method](http://developer.android.com/reference/android/app/Application.ActivityLifecycleCallbacks.html).
  - **onActivityPaused** - _Function_(activity _Object_).    
-  Direct handler of the [onActivityPaused method](http://developer.android.com/reference/android/app/Application.ActivityLifecycleCallbacks.html).
+  [Deprecated. Please use the respective event instead.] Direct handler of the [onActivityPaused method](http://developer.android.com/reference/android/app/Application.ActivityLifecycleCallbacks.html).
  - **onActivityResumed** - _Function_(activity _Object_).    
-  Direct handler of the [onActivityResumed method](http://developer.android.com/reference/android/app/Application.ActivityLifecycleCallbacks.html).
+  [Deprecated. Please use the respective event instead.] Direct handler of the [onActivityResumed method](http://developer.android.com/reference/android/app/Application.ActivityLifecycleCallbacks.html).
  - **onActivityStopped** - _Function_(activity _Object_).    
-  Direct handler of the [onActivityStopped method](http://developer.android.com/reference/android/app/Application.ActivityLifecycleCallbacks.html).
+  [Deprecated. Please use the respective event instead.] Direct handler of the [onActivityStopped method](http://developer.android.com/reference/android/app/Application.ActivityLifecycleCallbacks.html).
  - **onSaveActivityState** - _Function_(activity _Object_, bundle _Object_).    
-  Direct handler of the [onActivitySaveInstanceState method](http://developer.android.com/reference/android/app/Application.ActivityLifecycleCallbacks.html).
+  [Deprecated. Please use the respective event instead.] Direct handler of the [onActivitySaveInstanceState method](http://developer.android.com/reference/android/app/Application.ActivityLifecycleCallbacks.html).
  - **onActivityResult** - _Function_(requestCode _Number_, resultCode _Number_, data _Object_).    
-  Direct handler of the onActivityResult method.
+  [Deprecated. Please use the respective event instead.] Direct handler of the onActivityResult method.
 
 ##### Instance Functions
  - **getActivity(** intent _Object_ **)** _Object_  
@@ -117,3 +117,15 @@ Returns com.tns.NativeScriptActivity.extend implementation.
    - **event**
    - **callback** - _Function_(args [_AndroidActivityBackPressedEventData_](../application/AndroidActivityBackPressedEventData.md))
    - **thisArg** - _(optional)_ - _Object_
+ - **registerBroadcastReceiver(** intentFilter _String_, onReceiveCallback _Function_... **)**  
+     Register a BroadcastReceiver to be run in the main activity thread. The receiver will be called with any broadcast Intent that matches filter, in the main application thread. 
+For more information, please visit 'http://developer.android.com/reference/android/content/Context.html#registerReceiver%28android.content.BroadcastReceiver,%20android.content.IntentFilter%29'
+   - **intentFilter** - _String_  
+     A string containing the intent filter.
+   - **onReceiveCallback** - _Function_(context _Object_, intent _Object_)  
+     A callback function that will be called each time the receiver receives a broadcast.
+ - **unregisterBroadcastReceiver(** intentFilter _String_ **)**  
+     Unregister a previously registered BroadcastReceiver. 
+For more information, please visit 'http://developer.android.com/reference/android/content/Context.html#unregisterReceiver(android.content.BroadcastReceiver)'
+   - **intentFilter** - _String_  
+     A string containing the intent filter with which the receiver was originally registered.

@@ -5,7 +5,7 @@ description: "Examples for using stack-layout"
 ---
 ### Create StackLayout
 ``` JavaScript
-var stackLayout = new layout.StackLayout();
+var stackLayout = new stack_layout_1.StackLayout();
  ```
 ### Declaring a StackLayout.
 ```XML

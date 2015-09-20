@@ -16,6 +16,7 @@ Namespace | Description
 [ReturnKeyType](../../ui/enums/ReturnKeyType/) | Represents the flavor of the return key on the soft keyboard.
 [TextAlignment](../../ui/enums/TextAlignment/) | Represents a text-align enumeration.
 [Orientation](../../ui/enums/Orientation/) | Orientation indicates a direction of a layout that can exist in a horizontal or vertical state.
+[DeviceOrientation](../../ui/enums/DeviceOrientation/) | Orientation of a device.
 [HorizontalAlignment](../../ui/enums/HorizontalAlignment/) | HorizontalAlignment indicates where an element should be displayed on the horizontal axis relative to the allocated layout slot of the parent element.
 [VerticalAlignment](../../ui/enums/VerticalAlignment/) | VerticalAlignment indicates where an element should be displayed on the horizontal axis relative to the allocated layout slot of the parent element.
 [Stretch](../../ui/enums/Stretch/) | Describes how content is resized to fill its allocated space.

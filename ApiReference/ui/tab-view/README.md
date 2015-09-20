@@ -12,9 +12,9 @@ var uitab_view = require("ui/tab-view");
 
 Class | Description
 ------|------------
+[TabViewItem](../../ui/tab-view/TabViewItem.md) | Represents a tab view entry.
 [TabView](../../ui/tab-view/TabView.md) | Represents a tab view.
 
 Object | Description
 ------|------------
-[TabViewItem](../../ui/tab-view/TabViewItem.md) | Represents a tab view entry.
 [SelectedIndexChangedEventData](../../ui/tab-view/SelectedIndexChangedEventData.md) | Defines the data for the TabView.selectedIndexChanged event.

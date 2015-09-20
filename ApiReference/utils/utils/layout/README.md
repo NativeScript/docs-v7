@@ -7,6 +7,8 @@ description: "Module utils/utils.layout"
 Utility module related to layout.
 
 ##### Variables
+ - **MEASURED_SIZE_MASK** - _Number_.    
+  Bits that provide the actual measured size.
  - **MEASURED_STATE_MASK** - _Number_.
  - **MEASURED_STATE_TOO_SMALL** - _Number_.
  - **UNSPECIFIED** - _Number_.

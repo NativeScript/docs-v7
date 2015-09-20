@@ -31,6 +31,13 @@ Represents a File entity on the file system.
    - **encoding** - _(optional)_ - _String_  
      An optional value specifying the preferred encoding (defaults to UTF-8).
    - _**return**_ - _Promise_ of _String_
+ - **readTextSync(** onError? _Function_..., encoding? _String_ **)** _String_  
+     Reads the content of the file as a string synchronously, using the specified encoding (defaults to UTF-8).
+   - **onError** - _(optional)_ - _Function_(error _Object_) _Object_  
+     An optional function to be called if some IO-error occurs.
+   - **encoding** - _(optional)_ - _String_  
+     An optional value specifying the preferred encoding (defaults to UTF-8).
+   - _**return**_ - _String_
  - **writeText(** content _String_, encoding? _String_ **)** _Promise_...  
      Writes the provided string to the file, using the specified encoding (defaults to UTF-8).
    - **content** - _String_  
@@ -38,3 +45,11 @@ Represents a File entity on the file system.
    - **encoding** - _(optional)_ - _String_  
      An optional value specifying the preferred encoding (defaults to UTF-8).
    - _**return**_ - _Promise_ of _Object_
+ - **writeTextSync(** content _String_, onError? _Function_..., encoding? _String_ **)**  
+     Writes the provided string to the file synchronously, using the specified encoding (defaults to UTF-8).
+   - **content** - _String_  
+     The content to be saved to the file.
+   - **onError** - _(optional)_ - _Function_(error _Object_) _Object_  
+     An optional function to be called if some IO-error occurs.
+   - **encoding** - _(optional)_ - _String_  
+     An optional value specifying the preferred encoding (defaults to UTF-8).

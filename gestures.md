@@ -10,14 +10,17 @@ position: 15
 
 Gestures, such as tap, slide, and pinch, allow users to interact with your app by manipulating UI elements on the screen.
 
-In NativeScript, `View`&mdash;the base class for all NativeScript UI elements&mdash;has an `observe` method that lets you subscribe to gestures recognized by the UI element.
+In NativeScript, `View`&mdash;the base class for all NativeScript UI elements&mdash;has an `on` and `off` methods that lets you subscribe or unsubscribe to all events and gestures recognized by the UI element.  
 
-As first parameter of the `observe` method you pass the type of gesture you are interested in. The second  parameter is a function that is called each time the specified gesture is recognized. The function arguments contain additional information about the gesture, if applicable. Calling the `observe` method returns a `GestureObserver` object that you will need later to stop detecting gestures.
+As first parameter of the `on` and `off` methods you pass the type of gesture you are interested in. The second  parameter is a function that is called each time the specified gesture is recognized. The function arguments contain additional information about the gesture, if applicable.
 
-- **observe(** type _Number_, callback _Function_... **)** _GesturesObserver_
-   - **type** - _Number_
+- **on(** type _Number_ | name _String_ | names Comma separated _String_, callback _Function_... **)
+   - **type** - _Number_ | **name** - _String_ | **names** - Comma separated _String_
    - **callback** - _Function_(args _GestureEventData_)
-   - _**return**_ - _GesturesObserver_
+
+- **off(** type _Number_ | name _String_ | names Comma separated _String_, callback _Function_... **)
+   - **type** - _Number_ | **name** - _String_ | **names** - Comma separated _String_
+   - **callback** - _Function_(args _GestureEventData_)
 
 The next sections introduce you to all the gestures recognized by NativeScript:
 
@@ -29,8 +32,6 @@ The next sections introduce you to all the gestures recognized by NativeScript:
 * [Pinch](#pinch)
 * [Rotation](#rotation)
 
-To learn how to stop receiving information about gestures, go to [Stop Detecting Gestures](#stop-detecting-gestures).
-
 ## Tap
 
 Triggers the default functionality for a given item.
@@ -39,13 +40,13 @@ Triggers the default functionality for a given item.
 
 ``` JavaScript
 var label = new labelModule.Label();
-label.observe(gestures.GestureTypes.tap, function (args) {
+label.on(gestures.GestureTypes.tap, function (args) {
     console.log("Tap");
 });
 ```
 ``` TypeScript
 var label = new labelModule.Label();
-label.observe(gestures.GestureTypes.tap, function (args: gestures.GestureEventData) {
+label.on(gestures.GestureTypes.tap, function (args: gestures.GestureEventData) {
     console.log("Tap");
 });
 ```
@@ -62,13 +63,13 @@ Also used for text selection.
 
 ``` JavaScript
 var label = new labelModule.Label();
-label.observe(gestures.GestureTypes.doubleTap, function (args) {
+label.on(gestures.GestureTypes.doubleTap, function (args) {
     console.log("Double Tap");
 });
 ```
 ``` TypeScript
 var label = new labelModule.Label();
-label.observe(gestures.GestureTypes.doubleTap, function (args: gestures.GestureEventData) {
+label.on(gestures.GestureTypes.doubleTap, function (args: gestures.GestureEventData) {
     console.log("Double Tap");
 });
 ```
@@ -81,13 +82,13 @@ Enters data selection mode. Allows you to select one or more items in a view and
 
 ``` JavaScript
 var label = new labelModule.Label();
-label.observe(gestures.GestureTypes.longPress, function (args) {
+label.on(gestures.GestureTypes.longPress, function (args) {
     console.log("Long Press");
 });
 ```
 ``` TypeScript
 var label = new labelModule.Label();
-label.observe(gestures.GestureTypes.longPress, function (args: gestures.GestureEventData) {
+label.on(gestures.GestureTypes.longPress, function (args: gestures.GestureEventData) {
     console.log("Long Press");
 });
 ```
@@ -100,13 +101,13 @@ Navigates between views in the same hierarchy. Swipes are quick and affect the s
 
 ``` JavaScript
 var label = new labelModule.Label();
-label.observe(gestures.GestureTypes.swipe, function (args) {
+label.on(gestures.GestureTypes.swipe, function (args) {
     console.log("Swipe Direction: " + args.direction);
 });
 ```
 ``` TypeScript
 var label = new labelModule.Label();
-label.observe(gestures.GestureTypes.swipe, function (args: gestures.SwipeGestureEventData) {
+label.on(gestures.GestureTypes.swipe, function (args: gestures.SwipeGestureEventData) {
     console.log("Swipe Direction: " + args.direction);
 });
 ```
@@ -119,12 +120,12 @@ Scrolls overflowing content. Pans are executed more slowly and allow for more pr
 
 ``` JavaScript
 var label = new labelModule.Label();
-label.observe(gestures.GestureTypes.pan, function (args) {
+label.on(gestures.GestureTypes.pan, function (args) {
     console.log("Pan deltaX:" + args.deltaX + "; deltaY:" + args.deltaY + ";");
 });
 ```
 ``` TypeScript
-label.observe(gestures.GestureTypes.pan, function (args: gestures.PanGestureEventData) {
+label.on(gestures.GestureTypes.pan, function (args: gestures.PanGestureEventData) {
     console.log("Pan deltaX:" + args.deltaX + "; deltaY:" + args.deltaY + ";");
 });
 ```
@@ -139,13 +140,13 @@ Zooms into content or out of content.
 
 ``` JavaScript
 var label = new labelModule.Label();
-label.observe(gestures.GestureTypes.pinch, function (args) {
+label.on(gestures.GestureTypes.pinch, function (args) {
     console.log("Pinch Scale: " + args.scale);
 });
 ```
 ``` TypeScript
 var label = new labelModule.Label();
-label.observe(gestures.GestureTypes.pinch, function (args: gestures.PinchGestureEventData) {
+label.on(gestures.GestureTypes.pinch, function (args: gestures.PinchGestureEventData) {
     console.log("Pinch Scale: " + args.scale);
 });
 ```
@@ -158,34 +159,31 @@ Rotates content clockwise or counterclockwise.
 
 ``` JavaScript
 var label = new labelModule.Label();
-label.observe(gestures.GestureTypes.rotation, function (args) {
+label.on(gestures.GestureTypes.rotation, function (args) {
     console.log("Rotation: " + args.rotation);
 });
 ```
 ``` TypeScript
 var label = new labelModule.Label();
-label.observe(gestures.GestureTypes.rotation, function (args: gestures.RotationGestureEventData) {
+label.on(gestures.GestureTypes.rotation, function (args: gestures.RotationGestureEventData) {
     console.log("Rotation: " + args.rotation);
 });
 ```
 
-## Stop Detecting Gestures
+# Subscribing to multiple gestures and events
 
-To stop receiving information about gestures, simply call the `disconnect` method of the observer object that you created when `observe` method is called. The tricky part here is that the gesture observer is stored in a map object which key is the gesture type and value is an array of gesture observers. This structure assumes (and actually supports) more than one callback for a given gesture (indeed not the most common scenario). To access this structure view has a method getGestureObservers(gestureType) which returns an array of gesture observers for that gesture type.
+Since NativeScript 1.3 when subscribing you can use gestures names, comma separated gestures names and/or even mix with events.
+
 
 ``` JavaScript
 var label = new labelModule.Label();
-label.observe(gestures.GestureTypes.tap, function (args) {
-    console.log("Tap");
+label.on("loaded, tap, doubleTap, longPress", function (args) {
+    console.log("Event: " + args.eventName + ", sender: " + args.object);
 });
-var tapObserver = label.getGestureObservers(gestures.GestureTypes.tap)[0];
-tapObserver.disconnect();
 ```
 ``` TypeScript
 var label = new labelModule.Label();
-label.observe(gestures.GestureTypes.tap, function (args: gestures.GestureEventData) {
-    console.log("Tap");
+label.on("loaded, tap, doubleTap, longPress", function (args: gestures.GestureEventData) {
+    console.log("Event: " + args.eventName + ", sender: " + args.object);
 });
-var tapObserver = label.getGestureObservers(gestures.GestureTypes.tap)[0];
-tapObserver.disconnect();
 ```

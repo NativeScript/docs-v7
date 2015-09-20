@@ -5,6 +5,32 @@ description: NativeScript iOS Runtime Changelog
 position: 3
 ---
 
+1.3.0
+==
+
+## What's New
+
+ - [Embed metadata in binary so it can be stripped by App Thinning (#275)](https://github.com/NativeScript/ios-runtime/pull/275)
+ - [Swift modules use mangled name which is different than the klassName so get the name from the metadata (#274)](https://github.com/NativeScript/ios-runtime/pull/274)
+ - [Require with tilde (~) should resolve to the app folder (#254)](https://github.com/NativeScript/ios-runtime/pull/254)
+ - [Pause the debugger on startup with --debug-brk (#245)](https://github.com/NativeScript/ios-runtime/pull/245)
+ - [Web Inspector Page Agent (#240)](https://github.com/NativeScript/ios-runtime/pull/240)
+ - [Two-way marshaling between NSData and ArrayBuffer (#235)](https://github.com/NativeScript/ios-runtime/pull/235)
+ - [JavaScript functions, when passed to Objective-C as blocks, will now round-trip back to JavaScript, as the initial function object. (#234)](https://github.com/NativeScript/ios-runtime/pull/234)
+ - [Create a global require function (#84)](https://github.com/NativeScript/ios-runtime/issues/84)
+
+## Bug Fixes
+
+ - [Error when file ends with a commented line (#288)](https://github.com/NativeScript/ios-runtime/issues/288)
+ - [NativeScript::SymbolLoader incorrectly caches framework bundles (#273)](https://github.com/NativeScript/ios-runtime/issues/273)
+ - [Better handling of package.json main configuration (#270)](https://github.com/NativeScript/ios-runtime/issues/270)
+ - [Expose a conversion between ArrayBuffers and NSData (#231)](https://github.com/NativeScript/ios-runtime/issues/231)
+ - [Require doesn't look for index.js in main folder (#112)](https://github.com/NativeScript/ios-runtime/issues/112)
+ - [Delete the module cache when a module throws an exception (#20)](https://github.com/NativeScript/ios-runtime/issues/20)
+ - [NSDecimalNumber marshalling (#14)](https://github.com/NativeScript/ios-runtime/issues/14)
+ - [Explicitly set the metadata generator's OS X deployment target (#285)](https://github.com/NativeScript/ios-runtime/pull/285)
+ - [-[TNSValueWrapper value] can return null (#262)](https://github.com/NativeScript/ios-runtime/pull/262)
+
 1.2.2
 ==
 
