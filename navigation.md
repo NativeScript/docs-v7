@@ -126,7 +126,7 @@ In addition, each `Page` instance carries information about the frame object whi
 
 ### The Topmost Frame
 
-The topmost frame is the root-level container for your app's UI and it can be used to navigate inside of your app. You can get a reference to this frame by using the `topmost()` method of the Frame module.
+The topmost frame is the root-level container for your app's UI and you can use it to navigate inside of your app. You can get a reference to this frame by using the `topmost()` method of the Frame module.
 
 
 ``` JavaScript
