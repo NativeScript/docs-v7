@@ -57,23 +57,6 @@ label.animate({ opacity: 0 })
     console.log(e.message);
 });
 ```
-# Reusing animations
-``` JavaScript
-var animation1 = label.createAnimation({ translate: { x: 100, y: 100 } });
-var animation2 = label.createAnimation({ translate: { x: 0, y: 0 } });
-animation1.play().finished
-    .then(function () { return animation1.play().finished; })
-    .then(function () { return animation1.play().finished; })
-    .then(function () { return animation2.play().finished; })
-    .then(function () { return animation1.play().finished; })
-    .then(function () { return animation2.play().finished; })
-    .then(function () {
-    //console.log("Animation finished");
-})
-    .catch(function (e) {
-    console.log(e.message);
-});
-```
 # Animating multiple views simultaneously
 ``` JavaScript
 var animations = [
