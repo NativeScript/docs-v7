@@ -131,7 +131,7 @@ NativeScript provides several different layout containers that allow you to plac
 
 > **TIP**:
 > * For an introduction to the other NativeScript layout elements, check out Jen Looper's article on [demystifying NativeScript layouts](https://www.nativescript.org/blog/demystifying-nativescript-layouts).
-> * Refer to the NativeScript docs for a [more detailed look at how NativeScript layouts work](/layouts/) and the various things you can do to configure them.
+> * Refer to the NativeScript docs for a [more detailed look at how NativeScript layouts work](/layouts) and the various things you can do to configure them.
 
 For your login screen, all you need is a simple `<StackLayout>` to stack the UI components on top of each other. In later sections, you'll use some of the more advanced layouts.
 
