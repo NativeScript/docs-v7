@@ -31,7 +31,7 @@ label.animate({
 # Cancelling animation
 ``` JavaScript
 var animation1 = label.createAnimation({ translate: { x: 100, y: 100 } });
-animation1.play().finished
+animation1.play()
     .then(function () {
     //console.log("Animation finished");
 })
@@ -61,12 +61,12 @@ label.animate({ opacity: 0 })
 ``` JavaScript
 var animation1 = label.createAnimation({ translate: { x: 100, y: 100 } });
 var animation2 = label.createAnimation({ translate: { x: 0, y: 0 } });
-animation1.play().finished
-    .then(function () { return animation1.play().finished; })
-    .then(function () { return animation1.play().finished; })
-    .then(function () { return animation2.play().finished; })
-    .then(function () { return animation1.play().finished; })
-    .then(function () { return animation2.play().finished; })
+animation1.play()
+    .then(function () { return animation1.play(); })
+    .then(function () { return animation1.play(); })
+    .then(function () { return animation2.play(); })
+    .then(function () { return animation1.play(); })
+    .then(function () { return animation2.play(); })
     .then(function () {
     //console.log("Animation finished");
 })
@@ -82,7 +82,7 @@ var animations = [
     { target: label3, translate: { x: 200, y: 200 }, duration: 1000, delay: 666 },
 ];
 var a = new animation.Animation(animations);
-a.play().finished
+a.play()
     .then(function () {
     //console.log("Animations finished");
 })

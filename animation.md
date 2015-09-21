@@ -1,6 +1,6 @@
 ---
 nav-title: Animation
-title: "Animation"
+title: "UI: Animation"
 description: Learn how to animate view properties.
 position: 18
 ---
@@ -186,7 +186,7 @@ definitions.push({ target: view3, translate: { x: -200, y: 0 }, duration: 3000 }
 definitions.push({ target: view4, translate: { x: 0, y: -200 }, duration: 3000 });
 var playSequentially = true;
 var animationSet = new animationModule.Animation(definitions, playSequentially);
-animationSet.play().finished.then(function () {
+animationSet.play().then(function () {
     console.log("Animation finished");
 })
     .catch(function (e) {
@@ -201,7 +201,7 @@ definitions.push({target: view3, translate: {x: -200, y: 0}, duration: 3000 });
 definitions.push({target: view4, translate: {x: 0, y: -200}, duration: 3000 });
 var playSequentially = true;
 var animationSet = new animationModule.Animation(definitions, playSequentially);
-animationSet.play().finished.then(() => {
+animationSet.play().then(() => {
     console.log("Animation finished");
 })
 .catch((e) => {
@@ -238,7 +238,7 @@ var a4 = {
 };
 definitions.push(a4);
 var animationSet = new animationModule.Animation(definitions);
-animationSet.play().finished.then(function () {
+animationSet.play().then(function () {
     console.log("Animation finished");
 })
     .catch(function (e) {
@@ -277,7 +277,43 @@ definitions.push(a4);
 
 var animationSet = new animationModule.Animation(definitions);
 
-animationSet.play().finished.then(() => {
+animationSet.play().then(() => {
+    console.log("Animation finished");
+})
+.catch((e) => {
+    console.log(e.message);
+});
+```
+
+## Reusing Animations
+![reusing](img/modules/animation/reusing.gif "Reusing Animations")
+``` JavaScript
+var animation1 = view.createAnimation({ opacity: 0 });
+var animation2 = view.createAnimation({ opacity: 1 });
+animation1.play()
+    .then(function () { return animation2.play(); })
+    .then(function () { return animation1.play(); })
+    .then(function () { return animation2.play(); })
+    .then(function () { return animation1.play(); })
+    .then(function () { return animation2.play(); })
+    .then(function () {
+    console.log("Animation finished");
+})
+    .catch(function (e) {
+    console.log(e.message);
+});
+```
+``` TypeScript
+var animation1 = view.createAnimation({opacity: 0});
+var animation2 = view.createAnimation({opacity: 1});
+
+animation1.play()
+.then(()=>animation2.play())
+.then(()=>animation1.play())
+.then(()=>animation2.play())
+.then(()=>animation1.play())
+.then(()=>animation2.play())
+.then(() => {
     console.log("Animation finished");
 })
 .catch((e) => {
@@ -324,7 +360,7 @@ animationSet = new animationModule.Animation([{
         iterations: Number.POSITIVE_INFINITY,
         curve: view.ios ? UIViewAnimationCurve.UIViewAnimationCurveLinear : new android.view.animation.LinearInterpolator
     }]);
-animationSet.play().finished.catch(function (e) {
+animationSet.play().catch(function (e) {
     console.log("Animation stoppped!");
 });
 // Call animationSet.cancel() to stop it;
@@ -337,7 +373,7 @@ animationSet = new animationModule.Animation([{
     iterations: Number.POSITIVE_INFINITY,
     curve: view.ios ? UIViewAnimationCurve.UIViewAnimationCurveLinear : new android.view.animation.LinearInterpolator
 }]);
-animationSet.play().finished.catch((e) => {
+animationSet.play().catch((e) => {
     console.log("Animation stoppped!");
 });
 // Call animationSet.cancel() to stop it;
