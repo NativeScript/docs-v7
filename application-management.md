@@ -17,9 +17,9 @@ The `application` module lets you manage the life cycle of your NativeScript app
 
 ## Start Application
 
-You must call the **start** method of the application module after the module initialization. 
+This method is required only for iOS applications. 
 
-This method is required for iOS applications. 
+> **IMPORTANT:** You must call the `start` method of the application module **after** the module initialization. Any code after the `start` call will not be executed.
 
 ### Example
 

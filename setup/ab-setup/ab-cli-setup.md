@@ -23,8 +23,8 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 * Windows 7 or later
 * .NET 4.0 or later
 * Node.js
-    * (Windows 7 systems): Node.js 0.10.35 or a later stable 0.x release.<br/>
-    * (Windows 8 and later systems): Node.js 0.12.7 or a later stable 0.x release<br/>A [known issue](https://github.com/SBoudrias/Inquirer.js/issues/235) in Inquirer.js prevents the interactive prompts from working properly in `cmd` shells on Windows 8 or later systems with Node.js 0.10.x.
+    * (Windows 7 systems): The latest Node.js 0.10.x or 0.12.x stable official release
+    * (Windows 8 and later systems): The latest Node.js 0.12.x stable official release
 * (Optional) For iOS development
     * (Latest official) iTunes<br/>The bitness of Node.js and iTunes must match.
 * (Optional) For Android development with the native emulators
@@ -38,10 +38,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 
 1. In your browser, navigate to [https://platform.telerik.com](https://platform.telerik.com) and log in.
 1. If you do not have a Telerik account, you can log in with a social provider of your choice and begin a Telerik Platform trial.<br/>With the Telerik Platform trial, you can use the AppBuilder CLI.
-1. Install [Node.js](http://nodejs.org).
-    1. Go to [http://nodejs.org](http://nodejs.org) and click **Install**.
-    1. If prompted, confirm the download.
-    1. After the download completes, run the installer and complete the installation.
+1. Download and install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/) or [0.12.x](https://nodejs.org/dist/latest-v0.12.x/) stable official release.
 1. Install [Chocolatey](https://chocolatey.org) to simplify the installation and configuration of the Android tools and SDKs.
     1. Run the command prompt as an Administrator.
     1. Copy and paste the following script in the command prompt.
@@ -106,7 +103,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 
 * Telerik account
 * OS X Mavericks or later
-* Node.js 0.10.35 or a later stable 0.x release
+* The latest Node.js 0.10.x or 0.12.x stable official release
 * (Optional) Homebrew to simplify the installation of dependencies
 * For iOS development
     * Xcode 5 or later
@@ -125,7 +122,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
     ```Shell
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     ```
-1. Install [Node.js 0.10.35](http://nodejs.org) or a later stable 0.x official release.
+1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/) or [0.12.x](https://nodejs.org/dist/latest-v0.12.x/) stable official release.
 
     ```Shell
     brew install node
@@ -202,7 +199,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 
 * Telerik account
 * Ubuntu 14.04 LTS
-* Node.js 0.10.35 or a later stable 0.x release
+* The latest Node.js 0.10.x or 0.12.x stable official release
 * G++ compiler
 * (Optional) For Android development with the native emulators
     * JDK 8 or a later stable official release
@@ -214,7 +211,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 1. In your browser, navigate to [https://platform.telerik.com](https://platform.telerik.com) and log in.
 1. If you do not have a Telerik account, you can log in with a social provider of your choice and begin a Telerik Platform trial.<br/>With the Telerik Platform trial, you can use the AppBuilder CLI.
 1. Run the terminal.
-1. Install [Node.js](http://nodejs.org).
+1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/) or [0.12.x](https://nodejs.org/dist/latest-v0.12.x/) stable official release.
     
     > **TIP:** You can follow the instructions provided [here](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager) to install Node.js on your system.
     

@@ -17,7 +17,7 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
 ## System Requirements
 
 * Windows Vista or later
-* Node.js 0.10.35 or a later stable 0.x release
+* The latest Node.js 0.10.x or 0.12.x stable official release
 * (Optional) Chocolatey to simplify the installation of dependencies
 * JDK 8 or a later stable official release
 * Android SDK 22 or a later stable official release
@@ -27,7 +27,7 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
 
 ## Setup
 
-1. Install [Node.js](https://nodejs.org/dist/latest-v0.12.x/).
+1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/) or [0.12.x](https://nodejs.org/dist/latest-v0.12.x/) stable official release.
 1. Install [Chocolatey](https://chocolatey.org) to simplify the installation and configuration of the Android tools and SDKs.
     1. Run the command prompt as an Administrator.
     1. Copy and paste the following script in the command prompt.
