@@ -18,7 +18,7 @@ NativeScript apps consist of pages which represent the separate application scre
 * [Navigation](#navigation)
     * [The Topmost Frame](#the-topmost-frame)
     * [Navigate by Page Name](#navigate-by-page-name)
-    * [Navigate with Factory Function](#navigate-with-factory-function)
+    * [Navigate Using a Function](#navigate-using-a-function)
     * [Navigate and Pass Context](#navigate-and-pass-context)
     * [Navigate without History](#navigate-without-history)
     * [Navigate Back](#navigate-back)
@@ -123,11 +123,11 @@ To navigate between pages, you can use the [`navigate`](ApiReference/ui/frame/RE
 
 In addition, each `Page` instance carries information about the frame object which navigated to it in the `frame` property. This lets you navigate with the `frame` property as well. 
 
+
 ### The Topmost Frame
 
-The topmost frame is the frame at the root level. When navigating inside your app, you can do it with the topmost frame.
+The topmost frame is the root-level container for your app's UI and you can use it to navigate inside of your app. You can get a reference to this frame by using the `topmost()` method of the Frame module.
 
-You can get the topmost frame with the `topmost()` method of the Frame module.
 
 ``` JavaScript
 var frameModule = require("ui/frame");
@@ -138,9 +138,12 @@ import frameModule = require("ui/frame");
 var topmost = frameModule.topmost();
 ```
 
+There are several ways to perform navigation, which one to use depends on the needs of your app.
+
+
 ### Navigate by Page Name
 
-You can navigate to the topmost frame of a page specified by its file name.
+Perhaps the simplest way to navigate is by specifying the file name of the page to which you want to navigate.
 
 ``` JavaScript
 topmost.navigate("details-page");
@@ -149,9 +152,9 @@ topmost.navigate("details-page");
 topmost.navigate("details-page");
 ```
 
-### Navigate with Factory Function
+### Navigate Using a Function
 
-You can specify the page to which you want to navigate by a factory function which returns the page instance.
+A more dynamic way of navigating can be done by providing a function that returns the instance of the page to which you want to navigate.
 
 ``` JavaScript
 var factoryFunc = function () {
