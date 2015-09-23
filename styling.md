@@ -119,7 +119,7 @@ button { background-color: gray }
 
 ### Class Selector
 [Class selectors](http://www.w3schools.com/cssref/sel_class.asp) select all views with a given class.
-The class is set using the `cssClass` property of the view.
+The class is set using the `cssClass` property of the view or `class` attribute in XML.
 
 
 ```CSS
@@ -134,7 +134,7 @@ var label = new labelModule.Label();
 label.cssClass = "title"
 ```
 ```XML
-<Label cssClass="title" />
+<Label class="title" />
 ```
 
 ### ID Selector
