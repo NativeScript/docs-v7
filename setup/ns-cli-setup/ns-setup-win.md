@@ -49,14 +49,19 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
         ```
 
         For example: `SETX JAVA_HOME C:\Program Files\Java\jdk1.8.0_11 /M`
-1. Download and install [Gradle 2.3](https://docs.gradle.org/current/userguide/installation.html) or a later stable official release.
-1. If not present, add the following file path to the `PATH` system environment variable.
+1. Install [Gradle 2.2](https://docs.gradle.org/current/userguide/installation.html) or a later stable release.
+    1. In the command prompt, run the following command.
 
-	```
-	Path to the bin directory in the Gradle installation folder
-	```
+        ```Shell
+        choco install gradle
+        ```
+    1. If not present, add the following file path to the `PATH` system environment variable.
 
-	For example: `PATH=...;...;C:\tools\gradle-2.3\bin`
+        ```
+        Path to the bin directory in the Gradle installation folder
+        ```
+
+        For example: `PATH=...;...;C:\ProgramData\chocolatey\lib\gradle\tools\gradle-2.2.1\bin\`
 1. Install the [Android SDK](http://developer.android.com/sdk/index.html).
     1. In the command prompt, run the following command.
 
@@ -70,7 +75,7 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
         Path to platform-tools directory in the Android SDK installation folder
         ```
 
-        For example: `PATH=...;...;C:\Users\MyUser\AppData\Local\Android\android-sdk\tools;C:\Users\MyUser\AppData\Local\Android\android-sdk\platform-tools`
+        For example: `PATH=...;...;C:\Program Files (x86)\Android\android-sdk\tools;C:\Program Files (x86)\Android\android-sdk\platform-tools`
     1. Restart the command prompt.
 1. Install the required Android SDKs and the Android Support Repository.
 
