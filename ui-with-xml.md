@@ -35,6 +35,7 @@ The user interface of NativeScript mobile apps consists of pages. Typically, the
   * [Platform specific property value](#platform-specific-property-value)
   * [Platform specific component declaration](#platform-specific-component-declaration)
 * [Lower-case-dashed component declaration](#lower-case-dashed-component-declaration)
+* [HTML like syntax](#html-like-syntax)
 
 ## The Basics
 
@@ -768,7 +769,16 @@ Since NativeScript 1.3 you can declare your UI using lower-case-dashed syntax:
 <page>
   <scroll-view>
     <stack-layout>
-      <label ctext="Label" />
+      <label text="Label" />
       <button text="Button" tap="tap" />
+      ...
+```
+
+## HTML like syntax
+Since NativeScript 1.4 you can use familiar HTML syntax like `class` for CSS class and events with `on` prefix:
+```XML
+<page>
+    <stack-layout>
+      <button text="Button" ontap="tap" class="myButton" />
       ...
 ```
