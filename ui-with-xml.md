@@ -473,28 +473,32 @@ export function buttonTap(args: observable.EventData) {
 }
 ```
 ### Dynamicaly loading custom components
-##### Load pure JavaScript component (*require() the specified path and look for specified component name in the require() exports*):
+Load pure JavaScript component (*require() the specified path and look for specified component name in the require() exports*):
 ```JavaScript
+var builder = require("ui/builder");
 var myComponentInstance = builder.load({
         path: "~/xml-declaration/mymodule",
         name: "MyControl"
 });
 ```
 ```TypeScript
+import builder = require("ui/builder");
 var myComponentInstance = builder.load({
         path: "~/xml-declaration/mymodule",
         name: "MyControl"
 });
 ```
-or
-##### Load XML file with JavaScript code-behind (*Load the specified XML file name in the  specified path. JavaScript file with the same name will be required() and served as code-behind of the XML.*):
+
+Load XML file with JavaScript code-behind (*Load the specified XML file name in the  specified path. JavaScript file with the same name will be required() and served as code-behind of the XML.*):
 ```JavaScript
+var builder = require("ui/builder");
 var myComponentInstance = builder.load({
         path: "~/xml-declaration/mymodulewithxml",
         name: "MyControl"
 });
 ```
 ```TypeScript
+import builder = require("ui/builder");
 var myComponentInstance = builder.load({
         path: "~/xml-declaration/mymodulewithxml",
         name: "MyControl"
