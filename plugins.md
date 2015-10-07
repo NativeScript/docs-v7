@@ -99,12 +99,16 @@ my-plugin/
     │   └── AndroidManifest.xml
     └── ios/
         ├── MyiOSLibrary.framework
-        └── Info.plist
+        ├── Info.plist
+        ├── MyStaticiOSLibrary.a
+        └── include/
+            └── MyStaticiOSLibrary/
+                └── ...
 ```
 
 * `platforms\android\libs`: This directory contains any native Android libraries packaged as `*.jar` packages. During the plugin installation, the NativeScript CLI will copy these files to `lib\Android` in your project and will configure the Android project in `platforms\android` to work with the library.
 * `platforms\android\MyAndroidLibrary`: This directory contains a native Android library with a `project.properties` file. During the plugin installation, the NativeScript CLI will copy these files to `lib\Android` in your project and will configure the Android project in `platforms\android` to work with the library.
-* `platforms\ios`: This directory contains native iOS dynamic libraries (`.framework`). During the plugin installation, the NativeScript CLI will copy these files to `lib\iOS` in your project and will configure the Android project in `platforms\ios` to work with the library.
+* `platforms\ios`: This directory contains native dynamic iOS Cocoa Touch Frameworks (`.framework`) and Cocoa Touch Static Libraries (`.a`). During the plugin installation, the NativeScript CLI will copy these files to `lib\iOS` in your project and will configure the iOS project in `platforms\ios` to work with the libraries. In case the plugin contains a Cocoa Touch Static Library (`.a`), you must place all public headers (`.h`) under `include\<Static Library Name>\`. Make sure that the static libraries are built at least for the following processor architectures - armv7, arm64, i386.
 
 ### Package.json Specification
 
