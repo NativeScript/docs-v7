@@ -54,11 +54,13 @@ After that, change to the newly cloned repo's folder:
 cd sample-Groceries
 ```
 
-The master branch has the final state of the Groceries app. Feel free to [refer back to it](https://github.com/NativeScript/sample-Groceries) at any time, but for now, switch over to the “start” branch for this guide's starting point:
+Finally, switch to the “start” branch for this guide's starting point:
 
 ```
 git checkout start
 ```
+
+>**TIP:** The “end” branch has the final state of this guide's tutorial. Feel free to [refer to the branch on GitHub](https://github.com/NativeScript/sample-Groceries/tree/end) if you get stuck.
 
 <div class="exercise-end"></div>
 

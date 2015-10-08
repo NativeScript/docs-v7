@@ -124,7 +124,7 @@ exports.signIn = function() {
 };
 ```
 
-> **TIP**: You can always view the completed codebase in the 'master' branch of the [sample-Groceries repo](https://github.com/NativeScript/sample-Groceries.git).
+> **TIP**: You can always view the completed codebase in the “end” branch of the [sample-Groceries repo](https://github.com/NativeScript/sample-Groceries/tree/end).
 
 <div class="exercise-end"></div>
 
