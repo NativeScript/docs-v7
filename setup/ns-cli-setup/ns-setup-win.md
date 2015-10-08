@@ -21,7 +21,7 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
 * (Optional) Chocolatey to simplify the installation of dependencies
 * JDK 8 or a later stable official release
 * Android SDK 22 or a later stable official release
-* Gradle 2.2 or a later stable official release
+* Gradle 2.3 or a later stable official release
 * Android Support Repository
 * (Optional) Genymotion to expand your testing options
 
@@ -49,11 +49,11 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
         ```
 
         For example: `SETX JAVA_HOME C:\Program Files\Java\jdk1.8.0_11 /M`
-1. Install [Gradle 2.2](https://docs.gradle.org/current/userguide/installation.html) or a later stable release.
+1. Install [Gradle 2.3](https://docs.gradle.org/current/userguide/installation.html) or a later stable release.
     1. In the command prompt, run the following command.
 
         ```Shell
-        choco install gradle
+        choco install gradle -version 2.3
         ```
     1. If not present, add the following file path to the `PATH` system environment variable.
 
@@ -61,7 +61,7 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
         Path to the bin directory in the Gradle installation folder
         ```
 
-        For example: `PATH=...;...;C:\ProgramData\chocolatey\lib\gradle\tools\gradle-2.2.1\bin\`
+        For example: `PATH=...;...;C:\ProgramData\chocolatey\lib\gradle\tools\gradle-2.3\bin\`
 1. Install the [Android SDK](http://developer.android.com/sdk/index.html).
     1. In the command prompt, run the following command.
 
