@@ -48,7 +48,7 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
         SETX JAVA_HOME "Path to the jdk* install folder" /M
         ```
 
-        For example: `SETX JAVA_HOME C:\Program Files\Java\jdk1.8.0_11 /M`
+        For example: `SETX JAVA_HOME "C:\Program Files\Java\jdk1.8.0_11" /M`
 1. Install [Gradle 2.3](https://docs.gradle.org/current/userguide/installation.html) or a later stable release.
     1. In the command prompt, run the following command.
 
@@ -82,7 +82,7 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
         SETX JAVA_HOME "Path to the Android SDK install folder" /M
         ```
 
-        For example: `SETX ANDROID_HOME C:\Program Files (x86)\Android\android-sdk /M`
+        For example: `SETX ANDROID_HOME "C:\Program Files (x86)\Android\android-sdk" /M`
     1. Restart the command prompt.
 1. Install the required Android SDKs and the Android Support Repository.
 
