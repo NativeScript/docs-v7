@@ -5,6 +5,30 @@ description: NativeScript iOS Runtime Changelog
 position: 3
 ---
 
+1.4.0
+==
+
+## What's New
+
+ - [iOS 9 Support: Introduce generic information in typescript definitions (#341)](https://github.com/NativeScript/ios-runtime/pull/341)
+ - [Add async method to FFICall (#339)](https://github.com/NativeScript/ios-runtime/pull/339)
+ - [Migrate to Clang 3.7 (#332)](https://github.com/NativeScript/ios-runtime/pull/332)
+ - [Move project template files in internal folder (#325)](https://github.com/NativeScript/ios-runtime/pull/325)
+ - [Expose compile-time constants (#329)](https://github.com/NativeScript/ios-runtime/pull/329)
+ - [Schedule the runtime on the runloop of its owner thread (#323)](https://github.com/NativeScript/ios-runtime/pull/323)
+ - [Inject InspectorFrontendHost in the Inspector frontend and communicate over raw sockets (#317)](https://github.com/NativeScript/ios-runtime/pull/317)
+ - [Improved CocoaPods support by passing more Xcode build settings to metadata generator (#314)](https://github.com/NativeScript/ios-runtime/pull/314)
+ - [Add option in template xcconfig to generate TypeScript declarations and debug metadata (#311)](https://github.com/NativeScript/ios-runtime/pull/311)
+ - [Disambiguate native APIs with name collisions (#299)](https://github.com/NativeScript/ios-runtime/pull/299)
+ - [Call global.__onUncaughtError if a fatal exception is thrown (#78)](https://github.com/NativeScript/ios-runtime/issues/78)
+
+## Bug Fixes
+
+- [Fix mangling of utf8 characters in module code (#334)](https://github.com/NativeScript/ios-runtime/pull/334)
+- [Require file when there is a directory with same name (#287)](https://github.com/NativeScript/ios-runtime/pull/287)
+- [ReferenceConstructor should accept a single type argument (#284)](https://github.com/NativeScript/ios-runtime/pull/284)
+- [Rename some enums to be consistent with how Swift exposes Objective-C enums (#318)](https://github.com/NativeScript/ios-runtime/issues/318)
+
 1.3.0
 ==
 
