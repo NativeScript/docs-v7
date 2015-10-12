@@ -7,7 +7,7 @@ position: 1
 
 Cross Platform Modules Changelog
 ==============================
-##1.4.0 (planned for 2015, October 7)
+##1.4.0 (2015, October 12)
 
 ### Breaking changes
 -  [(#774)](https://github.com/NativeScript/NativeScript/issues/774) Animation class no longer has a **finished** property because an animation can be played multiple times. The **play** method now returns a new Promise each time it is invoked. Use this to listen for the animation finishing or being cancelled. When upgrading to version 1.4.0 or above simply remove **.finished** from your code.
