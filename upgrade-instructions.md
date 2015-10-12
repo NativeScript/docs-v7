@@ -23,12 +23,14 @@ You can type `tns --version` to verify new version is installed.
 
 Next thing you will need to upgrade is your **platforms** in order to get the latest enhancements of the Android and/or iOS runtimes. So navigate to the root level folder where your project is; and then if you are working on a Android project type:
 ```
-tns platform update android
+tns platform remove android
+tns platform add android
 ```
 
 and/or (if you are working on a iOS version on a Macintosh):
 ```
-tns platform update ios
+tns platform remove ios
+tns platform add ios
 ```
 
 ### Upgrading TNS Modules
@@ -38,7 +40,7 @@ Starting with NativeScript 1.3.0, the cross-platform modules are available as a 
 In order to use them in your old project, you will have to explicitly install the package, for example (assuming you are still in your main app project folder from the steps above):
 
 ```
-npm install tns-core-modules --save
+npm install tns-core-modules@latest --save
 ```
 
 This installs the **tns-core-modules** package to the node_modules folder and adds it as a dependency to the package.json of the project.
