@@ -23,7 +23,7 @@ label = new labelModule.Label();
 page.css = ".test { color: red; }";
 // Will be styled
 btnWithClass = new buttonModule.Button();
-btnWithClass.cssClass = "test";
+btnWithClass.className = "test";
 // Won't be styled
 btnWithNoClass = new buttonModule.Button();
 ```

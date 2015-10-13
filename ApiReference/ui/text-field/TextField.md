@@ -7,6 +7,9 @@ description: "Class ui/text-field.TextField"
 _Inherits:_ [_EditableTextBase_](../../ui/editable-text-base/EditableTextBase.md)  
 Represents an editable text field.
 
+##### Static Properties
+ - **returnPressEvent** - _String_.
+
 ##### Instance Properties
  - **android** - _Object_.    
   Gets the native [android widget](http://developer.android.com/reference/android/widget/EditText.html) that represents the user interface for this component. Valid only when running on Android OS.

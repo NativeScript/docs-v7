@@ -8,6 +8,8 @@ _Inherits:_ [_ContentView_](../../ui/content-view/ContentView.md)
 Represents a logical unit for navigation (inside Frame).
 
 ##### Static Properties
+ - **backgroundSpanUnderStatusBarProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Dependency property that specify if page background should span under status bar.
  - **actionBarHiddenProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
   Dependency property used to hide the Navigation Bar in iOS and the Action Bar in Android.
  - **shownModallyEvent** - _String_.    
@@ -22,6 +24,8 @@ Represents a logical unit for navigation (inside Frame).
   String value used when hooking to navigatedFrom event.
 
 ##### Instance Properties
+ - **backgroundSpanUnderStatusBar** - _Boolean_.    
+  Gets or sets whether page background spans under status bar.
  - **actionBarHidden** - _Boolean_.    
   Used to hide the Navigation Bar in iOS and the Action Bar in Android.
  - **css** - _String_.    
@@ -85,6 +89,8 @@ Represents a logical unit for navigation (inside Frame).
      - A function that will be called when the page is closed. Any arguments provided when calling ShownModallyData.closeCallback will be available here.
    - **fullscreen** - _(optional)_ - _Boolean_  
      - An optional parameter specifying whether to show the modal page in full-screen mode.
+ - **closeModal()**  
+     Closes the current modal dialog that this page is showing.
  - **onNavigatingTo(** context _Object_ **)**  
      A method called before navigating to the page.
    - **context** - _Object_  

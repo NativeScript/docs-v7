@@ -18,7 +18,3 @@ Namespace | Description
  - **getApplicationContext()** _Object_  
      Gets the Android application context.
    - _**return**_ - _Object_
- - **async(** doInBackground _Function_..., callback _Function_... **)**    
-     _Types Parameters:_ _**T**_
-   - **doInBackground** - _Function_() _T_
-   - **callback** - _Function_(result _T_)

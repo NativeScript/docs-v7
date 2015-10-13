@@ -48,3 +48,7 @@ Returns an instance of a view (if found), otherwise undefined.
 Returns an instance of a view (if found), otherwise undefined.
    - **Function**
    - _**return**_ - [_View_](../../../ui/core/view/View.md)
+ - **isEventOrGesture(** name _String_, view [_View_](../../../ui/core/view/View.md) **)** _Boolean_
+   - **name** - _String_
+   - **view** - [_View_](../../../ui/core/view/View.md)
+   - _**return**_ - _Boolean_

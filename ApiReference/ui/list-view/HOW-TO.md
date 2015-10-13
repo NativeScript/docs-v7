@@ -48,7 +48,7 @@ exports.listViewLoadMoreItems = listViewLoadMoreItems;
 <Page>
  {%raw%}<ListView items="{{ myItems }}">
     <ListView.itemTemplate>
-       <Label text="{{ title || 'Downloading...' }}" textWrap="true" cssClass="title" />
+       <Label text="{{ title || 'Downloading...' }}" textWrap="true" class="title" />
     </ListView.itemTemplate>
  </ListView>{%endraw%}
 </Page>

@@ -11,6 +11,7 @@ var repeaterModule = require("ui/repeater");
 Other modules which will be used in the code samples in this article:
 ``` JavaScript
 var observableArray = require("data/observable-array");
+var labelModule = require("ui/label");
 ```
 ### Binding the Repeater items property to collection in the view-model.
 ```XML
@@ -23,7 +24,7 @@ var observableArray = require("data/observable-array");
 <Page>
  {%raw%}<Repeater items="{{ myItems }}">
     <Repeater.itemTemplate>
-       <Label text="{{ title || 'Downloading...' }}" textWrap="true" cssClass="title" />
+       <Label text="{{ title || 'Downloading...' }}" textWrap="true" class="title" />
     </Repeater.itemTemplate>
  </Repeater>{%endraw%}
 </Page>

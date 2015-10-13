@@ -62,7 +62,7 @@ label.animate({ opacity: 0 })
 var animation1 = label.createAnimation({ translate: { x: 100, y: 100 } });
 var animation2 = label.createAnimation({ translate: { x: 0, y: 0 } });
 animation1.play()
-    .then(function () { return animation1.play(); })
+    .then(function () { return animation2.play(); })
     .then(function () { return animation1.play(); })
     .then(function () { return animation2.play(); })
     .then(function () { return animation1.play(); })

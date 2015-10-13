@@ -18,3 +18,5 @@ Represents an entry in passed to navigate method.
  - **backstackVisible** - _(optional)_ - _Boolean_.    
   True to record the navigation in the backstack, false otherwise. 
 If the parameter is set to false then the Page will be displayed but once navigated from it will not be able to be navigated back to.
+ - **clearHistory** - _(optional)_ - _Boolean_.    
+  True to clear the navigation history, false otherwise. Very useful when navigating away from login pages.

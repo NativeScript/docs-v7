@@ -30,6 +30,8 @@ Defines interface for an optional parameter used to create a view.
  - **visibility** - _(optional)_ - _String_.    
   Gets or sets the visibility of this view.
  - **cssClass** - _(optional)_ - _String_.    
-  Gets or sets the CSS class of this view.
+  [Deprecated. Please use className instead] Gets or sets the CSS class of this view.
+ - **className** - _(optional)_ - _String_.    
+  Gets or sets the CSS class name of this view.
  - **id** - _(optional)_ - _String_.    
   Gets or sets the id of this view.
