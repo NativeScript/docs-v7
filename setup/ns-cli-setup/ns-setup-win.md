@@ -79,7 +79,7 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
     1. If not present, create the following environment variable from a command-prompt, started as an administrator.
 
         ```
-        SETX JAVA_HOME "Path to the Android SDK install folder" /M
+        SETX ANDROID_HOME "Path to the Android SDK install folder" /M
         ```
 
         For example: `SETX ANDROID_HOME "C:\Program Files (x86)\Android\android-sdk" /M`
