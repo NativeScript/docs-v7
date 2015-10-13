@@ -14,9 +14,6 @@ Object | Description
 ------|------------
 [ComponentModule](../../../ui/builder/component-builder/ComponentModule.md) | 
 
-##### Variables
- - **specialProperties** - __ of _String_.
-
 ##### Functions
  - **getComponentModule(** elementName _String_, namespace _String_, attributes _Object_, exports _Object_ **)** [_ComponentModule_](../../../ui/builder/component-builder/ComponentModule.md)
    - **elementName** - _String_
@@ -30,8 +27,3 @@ Object | Description
    - **pageExports** - _Object_
    - **propertyName** - _String_
    - **propertyValue** - _String_
- - **setSpecialPropertyValue(** instance [_View_](../../../ui/core/view/View.md), propertyName _String_, propertyValue _String_ **)** _Boolean_
-   - **instance** - [_View_](../../../ui/core/view/View.md)
-   - **propertyName** - _String_
-   - **propertyValue** - _String_
-   - _**return**_ - _Boolean_

@@ -35,6 +35,10 @@ var textField = new textFieldModule.TextField();
 ``` JavaScript
 textField.text = "Hello, world!";
 ```
+### Setting the text of a TextField
+``` JavaScript
+textField.hint = expectedValue;
+```
 ### Binding text property directly to model
 ``` JavaScript
 var model = new observable.Observable();

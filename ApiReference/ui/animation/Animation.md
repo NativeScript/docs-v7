@@ -7,7 +7,6 @@ description: "Class ui/animation.Animation"
 Defines a animation set.
 
 ##### Instance Properties
- - **play** - _Function_() [_Animation_](../../ui/animation/Animation.md).
+ - **play** - _Function_() _Promise_.
  - **cancel** - _Function_().
- - **finished** - _Promise_.
  - **isPlaying** - _Boolean_.

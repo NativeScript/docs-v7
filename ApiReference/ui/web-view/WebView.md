@@ -30,6 +30,8 @@ Represents a standard WebView widget.
   Gets a value indicating whether the WebView can navigate forward.
 
 ##### Instance Functions
+ - **stopLoading()**  
+     Stops loading the current content (if any).
  - **goBack()**  
      Navigates back.
  - **goForward()**  

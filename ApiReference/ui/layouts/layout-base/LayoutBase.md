@@ -49,3 +49,5 @@ Base class for all views that supports children positioning.
      Removes the specified view from the children array.
    - **view** - [_View_](../../../ui/core/view/View.md)  
      The view to remove from the children array.
+ - **removeChildren()**  
+     Removes all views in this layout.

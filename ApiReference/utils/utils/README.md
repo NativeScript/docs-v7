@@ -10,6 +10,10 @@ description: "Module utils/utils"
 var utilsutils = require("utils/utils");
 ```
 
+Object | Description
+------|------------
+[Owned](../../utils/utils/Owned.md) | Used by various android event listener implementations
+
 Namespace | Description
 ------|------------
 [layout](../../utils/utils/layout/) | Utility module related to layout.

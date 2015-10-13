@@ -17,7 +17,9 @@ A View occupies a rectangular area on the screen and is responsible for drawing 
  - **idProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
   Represents the observable property backing the id property of each View.
  - **cssClassProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
-  Represents the observable property backing the cssClass property of each View.
+  [Deprecated. Please use className instead.] Represents the observable property backing the cssClass property of each View.
+ - **classNameProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the className property of each View.
  - **isEnabledProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
   Represents the observable property backing the isEnabled property of each View.
  - **isUserInteractionEnabledProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
@@ -106,7 +108,9 @@ size is smaller than the size the view wants to be.
  - **id** - _String_.    
   Gets or sets the id for this view.
  - **cssClass** - _String_.    
-  Gets or sets the CSS class for this view.
+  [Deprecated. Please use className instead.] Gets or sets the CSS class for this view.
+ - **className** - _String_.    
+  Gets or sets the CSS class name for this view.
  - **style** - [_Style_](../../../ui/styling/Style.md).    
   Gets the style object associated to this view.
  - **parent** - [_View_](../../../ui/core/view/View.md).    

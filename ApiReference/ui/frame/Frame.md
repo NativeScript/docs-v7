@@ -28,6 +28,7 @@ Nested frames are supported, enabling hierarchical navigation scenarios.
   Gets the AndroidFrame object that represents the Android-specific APIs for this Frame. Valid when running on Android OS.
  - **ios** - [_iOSFrame_](../../ui/frame/iOSFrame.md).    
   Gets the iOSFrame object that represents the iOS-specific APIs for this Frame. Valid when running on iOS.
+ - **navigationBarHeight** - _Number_.
 
 ##### Instance Functions
  - **goBack()**  
@@ -58,6 +59,9 @@ Since there are a couple of  ways to specify a Page instance through an entry, t
    - **page** - [_Page_](../../ui/page/Page.md)
  - **_updateActionBar(** page? [_Page_](../../ui/page/Page.md) **)**
    - **page** - _(optional)_ - [_Page_](../../ui/page/Page.md)
+ - **_getNavBarVisible(** page [_Page_](../../ui/page/Page.md) **)** _Boolean_
+   - **page** - [_Page_](../../ui/page/Page.md)
+   - _**return**_ - _Boolean_
  - **on(** eventNames _String_, callback _Function_..., thisArg? _Object_ **)**  
      A basic method signature to hook an event listener (shortcut alias to the addEventListener method).
    - **eventNames** - _String_  
