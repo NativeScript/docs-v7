@@ -19,7 +19,7 @@ Pick one of the supported testing frameworks. When the command completes, your p
 
 ## Running your tests
 
-If you're running your tests on a physical device, it has to be in the same network subnet as the developer machine. The test run will fail if the device cannot resolve the developer machine's IP, or if the Karma port (usually 9876) is blocked by the firewall, or if the device is not connected to a local WiFi network, or if the device is in a separate VLAN. It is not currently enough for the device to be tethered to the developer machine.
+If you're running your tests on a physical device, it has to be in the same network subnet as the developer machine. The test run will fail if the device cannot resolve the developer machine's IP, or if the Karma port (usually 9876) is blocked by the firewall, typically if the device is not connected to a local network, or if the device is in a separate VLAN. To ensure that the device can access the Karma server, either connect the device to a WiFi network that is connected to the developer machine, or establish USB tethering or Bluetooth tethering between the device and the computer.
 
 Run your tests using one of the two commands, depending on the platform:
  ```Shell
