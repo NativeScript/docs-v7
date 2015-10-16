@@ -34,42 +34,37 @@ NativeScript apps consist of pages which represent the separate application scre
 
 Pages represent the separate screens of your application. Each page is an instance of the [`page`](ApiReference/ui/page/Page.md) class of the [`Page`](ApiReference/ui/page/README.md) module. Each class instance inherits the [`content`](ApiReference/ui/content-view/ContentView.md) property which holds the root visual element of the UI.
 
-NativeScript provides three approaches to instantiating your pages.
+NativeScript provides two approaches to instantiating your pages.
 
-**Create the UI separately from the business logic**
+**Create a page in XML**
 
-You can create the pages for your user interface separately from your business logic. 
+You can define the UI declaration and the code for the page separately.
 
-To apply this approach, you need to create a separate `XML` file for each page to hold the layout of the page.
+To apply this approach, create a `XML` file for each page to hold the layout of the page. Thus your code will be in a `JS` or a `TS` file. The names of the `XML` and the `JS` or `TS` file must match.
+
 
 ``` XML
+<!-- main-page.xml-->
 <Page loaded="onPageLoaded">
   <Label text="Hello, world!"/>
 </Page>
 ```
-
-**Execute additional business logic on page load**
-
-NativeScript can automatically execute business code logic on page load.
-
-To apply this approach, you need to have a separate `XML` file for your page and a `JS` or a `TS` file which holds the business logic. The names of the `XML` and the `JS` or `TS` file must match.
-
 ``` JavaScript
+// main-page.js
 function onPageLoaded(args) {
     console.log("Page Loaded");
 }
 exports.onPageLoaded = onPageLoaded;
 ```
 ``` TypeScript
+// main-page.ts
 import observableModule = require("data/observable");
 
 export function onPageLoaded(args: observableModule.EventData) {
     console.log("Page Loaded");
 }
 ```
-**Create page when executing business logic**
-
-You can create the page inside your business logic.
+**Create a page in code**
 
 To apply this approach, you need to create a function named `createPage` which will return an instance of your page. NativeScript considers `createPage` a factory function.
 
@@ -352,7 +347,7 @@ All the values in screen size qualifiers are in density independent pixels(dp) -
 * `app.android.css` - CSS styles for Android.
 * `app.ios.css` - CSS styles for iOS. 
 
-We already have this functionality in place through the CLI prepare command. However, from native-script developer perspective - it is the same.
+The platform qualifiers are executed during build time, while the others - during run time. For example, the app.ios.css file will not be taken in consideration when building for android platform. Contrary, the screen size qualifiers will be considered just after the application runs on a device with specific screen size.
 
 ### Orientation Qualifiers
 * `land` - orientation is in landscape mode
