@@ -38,9 +38,9 @@ NativeScript provides two approaches to instantiating your pages.
 
 **Create a page in XML**
 
-You can create the pages for your user interface separately from your code. 
+You can define the UI declaration and the code for the page separately.
 
-To apply this approach, you need to create a separate `XML` file for each page to hold the layout of the page. Thus your code will be in a `JS` or a `TS` file. The names of the `XML` and the `JS` or `TS` file must match.
+To apply this approach, create a `XML` file for each page to hold the layout of the page. Thus your code will be in a `JS` or a `TS` file. The names of the `XML` and the `JS` or `TS` file must match.
 
 
 ``` XML
@@ -65,8 +65,6 @@ export function onPageLoaded(args: observableModule.EventData) {
 }
 ```
 **Create a page in code**
-
-You can create the page inside your business logic.
 
 To apply this approach, you need to create a function named `createPage` which will return an instance of your page. NativeScript considers `createPage` a factory function.
 
