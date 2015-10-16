@@ -21,6 +21,7 @@ position: 3
  - [Add option in template xcconfig to generate TypeScript declarations and debug metadata (#311)](https://github.com/NativeScript/ios-runtime/pull/311)
  - [Disambiguate native APIs with name collisions (#299)](https://github.com/NativeScript/ios-runtime/pull/299)
  - [Call global.__onUncaughtError if a fatal exception is thrown (#78)](https://github.com/NativeScript/ios-runtime/issues/78)
+ - [Throw error if there is a metadata for a symbol, but it's not available at runtime (#349)](https://github.com/NativeScript/ios-runtime/pull/349)
 
 ## Bug Fixes
 
