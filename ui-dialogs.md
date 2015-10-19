@@ -278,5 +278,5 @@ ai.busy = true
 p.content = ai;
 p.showModal();
 
-setTimeout(function () { p.closeModal(); }, 1000);
+setTimeout(()=> { p.closeModal(); }, 1000);
 ```
