@@ -14,7 +14,8 @@ NativeScript lets you create dialogs in your app in a manner similar to the web 
 * [Prompt](#prompt)
 * [Login](#login)
 * [Action](#action)
-
+* [Page as custom modal dialog](#page-as-custom-modal-dialog)
+* 
 > You can call dialog functions with parameters similar to the web browser API or the `options` object. All dialog functions return a `Promise` object. **In both iOS and Android dialogs will not block your code execution!**
 
 ### Alert
@@ -250,3 +251,32 @@ dialogs.action({
 });
 ```
 > The dialog result argument is a string (the text of the clicked option or the text of the cancel button).
+
+### Page as custom modal dialog
+
+**Custom loading dialog**
+
+```JavaScript
+var pages = require("ui/page");
+var activityIndicator = require("ui/activity-indicator");
+
+var p = new pages.Page();
+var ai = new activityIndicator.ActivityIndicator();
+ai.busy = true
+p.content = ai;
+p.showModal();
+
+setTimeout(function () { p.closeModal(); }, 1000);
+```
+```TypeScript
+import pages = require("ui/page");
+import activityIndicator = require("ui/activity-indicator");
+
+var p = new pages.Page();
+var ai = new activityIndicator.ActivityIndicator();
+ai.busy = true
+p.content = ai;
+p.showModal();
+
+setTimeout(function () { p.closeModal(); }, 1000);
+```
