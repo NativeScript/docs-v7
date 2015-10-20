@@ -23,6 +23,8 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
 * Android SDK 22 or a later stable official release
 * Gradle 2.3 or a later stable official release
 * Android Support Repository
+* Android SDK Build-tools 22.0.0 or a later stable official release
+* ANDROID_HOME environment variable must be set
 * (Optional) Genymotion to expand your testing options
 
 ## Setup
