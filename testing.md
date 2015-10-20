@@ -12,17 +12,19 @@ position: 5
 Running unit tests requires a bit of preparation. You need to select a JavaScript unit testing framework and install the necessary dependencies into your project.
 
 Start by executing the following in your project:
- ```Shell
+```Shell
 tns test init
 ```
-Pick one of the supported testing frameworks. When the command completes, your project will be set up for writing tests. All test files go into the `app/tests/` folder in your project. All files in that folder are excluded in release builds. The above command creates that folder for you and places a sample test file there containing a sample unit test just to give you an idea of what tests should look like. Look at the documentation of [Jasmine](http://jasmine.github.io/2.3/introduction.html) or [Mocha](https://mochajs.org/#assertions). For Mocha, the [Chai](http://chaijs.com/) module is automatically made available.
+Pick one of the supported testing frameworks. When the command completes, your project will be set up for writing tests. All test files go into the `app/tests/` folder in your project. All files in that folder are excluded in release builds. The above command creates that folder for you and places a sample test file there containing a sample unit test just to give you an idea of what tests should look like. Look at the documentation of [Jasmine](http://jasmine.github.io/2.3/introduction.html) or [Mocha](https://mochajs.org/#assertions). For Mocha, the [Chai](http://chaijs.com/) module is automatically made available. All testing dependencies will be saved in the `devDependencies` section of the app's `package.json`.
+
+A `karma.conf.js` will be created in the root of your project. You should commit that file to source control.
 
 ## Running your tests
 
 If you're running your tests on a physical device, it has to be in the same network subnet as the developer machine. The test run will fail if the device cannot resolve the developer machine's IP, or if the Karma port (usually 9876) is blocked by the firewall, typically if the device is not connected to a local network, or if the device is in a separate VLAN. To ensure that the device can access the Karma server, either connect the device to a WiFi network that is connected to the developer machine, or establish USB tethering or Bluetooth tethering between the device and the computer.
 
 Run your tests using one of the two commands, depending on the platform:
- ```Shell
+```Shell
 tns test android
 tns test ios
 ```
@@ -34,18 +36,25 @@ What happens next is:
 * Your application is started on the device or emulator.
 * Instead of starting from your app's main module, the unit test runner's main module is launched.
 * The unit test runner uses the embedded network configuration to try to connect to the Karma server running on the developer machine.
-* When a connection is established to the Karma server, the test are run and the results are reported back to Karma.
+* When a connection is established to the Karma server, the tests are run and the results are reported back to Karma.
 * Karma reports the results of the test run in the console in which you ran the `tns test` command.
 
-### Running in the iOS simulator
+To integrate the test runner into a continuous integration process, you will also need to configure a suitable Karma reporter, for example the [JUnit reporter](https://github.com/karma-runner/karma-junit-reporter). Follow the instructions in the reporter's README to integrate it.
+
+### Running in the native emulators
 The following commands starts a test run in the iOS simulator:
 ```Shell
 tns test ios --emulator
 ```
 
+Android emulators (AVD, Genymotion, Visual Studio) do not require a special command. To run the tests on them, simply use the same command as the one for running on physical devices:
+```Shell
+tns test android
+```
+
 ## Continuous testing
 Use the `--watch` options to continuously monitor your code for changes, deploy those changes to connected devices and automatically re-run tests.
- ```Shell
+```Shell
 tns test android --watch
 tns test ios --watch
 tns test ios --emulator --watch
