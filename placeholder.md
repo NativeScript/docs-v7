@@ -19,7 +19,7 @@ The Placeholder allows you to add any native widget to your application. To do t
 </Page>
 ```
 
-## main-page.**android**.ts
+## main-page.**android**.js\main-page.**android**.ts
 
 ```JavaScript
 function creatingView(args) {
@@ -39,7 +39,7 @@ export function creatingView(args: placeholder.CreateViewEventData) {
 }
 ```
 
-## main-page.**ios**.ts
+## main-page.**ios**.js\main-page.**ios**.ts
 
 ```JavaScript
 function creatingView(args) {
