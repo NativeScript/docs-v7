@@ -55,10 +55,10 @@ Now that you have the module installed let's look at how to use it.
 Open `/app/shared/view-models/user-view-model.js` and add the following line at the top of the file:
 
 ``` JavaScript
-var validator = require("email-validator/index");
+var validator = require("email-validator");
 ```
 
-> **NOTE**: You need to explicitly point to the validator module's `index.js` file. The NativeScript framework is configured to look at the `"main"` value in an npm module's `package.json` file. In the case of this module, the `"main"` value is simply `"index"` (rather than `"index.js"`) so you need to reference the index file directly. If this package's `"main"` were set to `"index.js"`, you could use the simpler `require("email-validator")`.
+> **NOTE**: The NativeScript framework's `require()` method is configured to look at the `"main"` value in an npm module's `package.json` file. In the case of this module, the `"main"` value is `"index.js"`. Therefore, when you run `require("email-validator")`, you're actually requiring the file at `node_modules/email_validator/index.js`. You could also type `require("email-validator/index")` to retrieve the same file.
 
 To make use of this validator, add a function to `user-view-model.js`, right above the line `return viewModel`:
 
