@@ -84,7 +84,7 @@ The code that follows creates a bare-bones property which adds a static part com
 var dependencyObservable = require("ui/core/dependency-observable");
 exports.myPropertyProperty = new dependencyObservable.Property("myProperty",
           "MyClass",
-          new dependencyObservable.PropertyMetadata("", dependencyObservable.PropertyMetadataOptions.None));
+          new dependencyObservable.PropertyMetadata("", dependencyObservable.PropertyMetadataSettings.None));
 var MyClass = (function (_super) {
   __extends(MyClass, _super);
   function MyClass() {
@@ -110,7 +110,7 @@ import dependencyObservable = require("ui/core/dependency-observable");
 export var myPropertyProperty = new dependencyObservable.Property(
   "myProperty",
   "MyClass",
-  new dependencyObservable.PropertyMetadata("", dependencyObservable.PropertyMetadataOptions.None)
+  new dependencyObservable.PropertyMetadata("", dependencyObservable.PropertyMetadataSettings.None)
 );
 
 export class MyClass extends dependencyObservable.DependencyObservable {
@@ -137,7 +137,7 @@ function onMyPropertyChanged(eventData) {
 exports.myPropertyProperty = new dependencyObservable.Property("myProperty",
       "MyClass",
       new dependencyObservable.PropertyMetadata("",
-                  dependencyObservable.PropertyMetadataOptions.None,
+                  dependencyObservable.PropertyMetadataSettings.None,
                   onMyPropertyChanged));
 var MyClass = (function (_super) {
   __extends(MyClass, _super);
@@ -172,7 +172,7 @@ export var myPropertyProperty = new dependencyObservable.Property(
   "myProperty",
   "MyClass",
   new dependencyObservable.PropertyMetadata("",
-  dependencyObservable.PropertyMetadataOptions.None,
+  dependencyObservable.PropertyMetadataSettings.None,
   onMyPropertyChanged)
 );
 
@@ -203,7 +203,7 @@ function validateMyProperty(value) {
 }
 exports.myPropertyProperty = new dependencyObservable.Property("myProperty", "MyClass",
     new dependencyObservable.PropertyMetadata("",
-        dependencyObservable.PropertyMetadataOptions.None, null, validateMyProperty));
+        dependencyObservable.PropertyMetadataSettings.None, null, validateMyProperty));
 var MyClass = (function (_super) {
 ...
 ```
@@ -221,7 +221,7 @@ export var myPropertyProperty = new dependencyObservable.Property(
   "myProperty",
   "MyClass",
   new dependencyObservable.PropertyMetadata("",
-  dependencyObservable.PropertyMetadataOptions.None,
+  dependencyObservable.PropertyMetadataSettings.None,
   null,
   validateMyProperty)
   );
@@ -238,7 +238,7 @@ The following code example demonstrates how to create an inheritable dependency 
 var dependencyObservable = require("ui/core/dependency-observable");
 exports.myPropertyProperty = new dependencyObservable.Property("myProperty", "MyClass",
     new dependencyObservable.PropertyMetadata("",
-      dependencyObservable.PropertyMetadataOptions.Inheritable));
+      dependencyObservable.PropertyMetadataSettings.Inheritable));
 var MyClass = (function (_super) {
   __extends(MyClass, _super);
   function MyClass() {
@@ -265,7 +265,7 @@ export var myPropertyProperty = new dependencyObservable.Property(
     "myProperty",
     "MyClass",
     new dependencyObservable.PropertyMetadata("",
-        dependencyObservable.PropertyMetadataOptions.Inheritable)
+        dependencyObservable.PropertyMetadataSettings.Inheritable)
 );
 
 export class MyClass extends dependencyObservable.DependencyObservable {

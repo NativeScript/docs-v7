@@ -195,7 +195,7 @@ export function pageLoaded(args: observable.EventData) {
 }
 ```
 
-#### TabView
+#### TabView 
 
 With a [`tabview`](./ApiReference/ui/tab-view/README.md), you can avoid spreading your user interface across multiple pages. Instead, you can have one page with multiple tabs.
 
