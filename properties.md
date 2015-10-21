@@ -10,12 +10,18 @@ position: 8
 
 This article contents:
 
-* [Introduction](#introduction)
+* [Overview](#overview)
 * [Dependency Properties](#dependency-properties)
+    * [Introduction](#intro1)
+    * [Declaring a Dependency Property](#declaring)
+    * [Adding a Changed Callback](#changedCallback)
+    * [Adding a Validation Callback](#validationCallback)
+    * [Creating an Inheritable Dependency Property](#inheritable)
 * [Style properties](#style-properties)
+    * [Introduction](#intro2)
+    * [Setting a Style Property](#setting)
 
-
-## Introduction
+## Overview
 
 Being a TypeScript framework, NativeScript uses TypeScript properties. After transpilation, these result in ECMAScript v.5 compliant JavaScript with setter and getter methods to support working with class members, thus ensuring readable and manageable code. The following code example demonstrates how the TypeScript is transformed to JavaScript:
 
@@ -59,23 +65,16 @@ NativeScript features two types of properties: **dependency properties** and **s
 
 This sections includes these topics:
 
-* [Introduction](#introduction)
-* [Declaring a Dependency Property](#declaring-a-dependency-property)
-* [Adding a Changed Callback](#adding-a-changed-callback)
-* [Adding a Validation Callback](#adding-a-validation-callback)
-* [Adding a Validation Callback](#adding-a-validation-callback)
-* [Creating an Inheritable Dependency Property](#creating-an-inheritable-dependency-property)
-
-### Introduction
+### <a name = intro1></a>Introduction
 
 Dependency properties provide valuable features that simplify the creation of a rich User Interface (UI), including: 
 
 * Memory optimization&mdash;The creation of a rich custom UI control is bound to creating a huge number of properties most of which are used with default values. With the traditional approach you end up with a **private field** for every property. With dependency properties, you only store the instance properties that you modified. The default values are stored within the dependency property. Additionally, dependency properties are declared statically outside the class, which further helps optimize the memory footprint.
 * Value validation&mdash;Dependency properties offer business logic validation. It is implemented as a dedicated validation callback function that takes `newValue` as parameter and returns true or false if the value is valid or not respectively.
 * Change notification&mdash;Another callback function is called when the property value changes. It is called with an [EventData](./ApiReference/data/observable/EventData.md) as parameter.
-* Inheritance&mdash;One of the most important features of dependency properties is inheritance. It is implemented through a dedicated UI element (such as Button) option that allows it to get its property from a parent element in the visual tree. For example a button can inherit its style (or theme) property value from the parent Window, Layout, or another container. This gives you the option to dramatically change the look of your entire application by only changing a single setting (Window.theme).
+* Inheritance&mdash;One of the most important features of dependency properties is inheritance. It is implemented through a dedicated UI element (such as Button) option that allows it to get its property from a parent element in the visual tree. For example, a button can inherit its style (or theme) property value from the parent Window, Layout, or another container. This gives you the option to dramatically change the look of your entire application by only changing a single setting (Window.theme).
 
-### Declaring a Dependency Property
+### <a name = declaring></a>Declaring a Dependency Property
 
 Only classes that derive from [DependencyObservable](./ApiReference/ui/core/dependency-observable/DependencyObservable.md) can have a dependency property. This class has built-in methods that support the entire infrastructure of dependency properties.
 
@@ -124,12 +123,9 @@ export class MyClass extends dependencyObservable.DependencyObservable {
   }
 }
 ```
+### <a name = changedCallback></a>Adding a Changed Callback
 
-
-
-### Adding a Changed Callback
-
-The following code example demonstrates how to implement change notification. It adds a callback function `onMyPropertyChanged` that prints a message about a change in a property.
+The following code example demonstrates how to implement the functionality of changing a notification. It adds a callback function `onMyPropertyChanged` that prints a message about a change in a property.
 
 ``` JavaScript
 var dependencyObservable = require("ui/core/dependency-observable");
@@ -191,7 +187,7 @@ export class MyClass extends dependencyObservable.DependencyObservable {
 }
 ```
 
-### Adding a Validation Callback
+### <a name = validationCallback></a>Adding a Validation Callback
 
 The following code example demonstrates how to implement Value validation. It adds a callback function `validateMyProperty` that takes the new property value and validates it using a simple rule.
 
@@ -234,7 +230,7 @@ export var myPropertyProperty = new dependencyObservable.Property(
 ...
 ```
 
-### Creating an Inheritable Dependency Property
+### <a name = inheritable></a>Creating an Inheritable Dependency Property
 
 The following code example demonstrates how to create an inheritable dependency property:
 
@@ -287,16 +283,11 @@ export class MyClass extends dependencyObservable.DependencyObservable {
 
 ## Style Properties
 
-This sections includes these topics:
-
-* [Setting a Style Property](#setting-a-style-property)
-* [Creating a custom style property](#creating-a-custom-style-property)
-
-### Introduction
+### <a name = intro2></a>Introduction
 
 Probably the best use case for inheritable properties is applying different styles and themes to UI components. You only need to set a property (theme or style) to the base-most container and every single UI component inherits it through the visual tree.
 
-### Setting a Style Property
+### <a name = setting></a>Setting a Style Property
 
 Setting a style property is similar to setting a regular property but you use the nested `style` object (that is a property of the View class which means that every UI component has style).
 
@@ -325,7 +316,7 @@ someButton.css = "#someButtton {background-color: red}";
 someButton.id = "someButton";
 someButton.css = "#someButtton {background-color: red}";
 ```
-
+<!---
 ### Creating a Custom Style Property
 
 If you ever need to create a custom style property you can do so by taking these steps:
@@ -521,3 +512,4 @@ export function createPage() {
     return page;
 }
 ```
+-->
