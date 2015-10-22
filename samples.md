@@ -12,10 +12,15 @@ The NativeScript team prepared these samples below for educational purposes. The
 ### Groceries
 Groceries is a NativeScript-built iOS and Android app for managing grocery lists.
 
-![](https://www.nativescript.org/images/default-source/default-album/01-1-homeadd.png)
-![](https://www.nativescript.org/images/default-source/default-album/01-2-homeedit.png)
+![](https://www.nativescript.org/images/default-source/default-album/sample-groceries-ios.png)
+![](https://www.nativescript.org/images/default-source/default-album/sample-groceries-android.png)
 
 [Explore the Full Source Code](http://github.com/nativescript/sample-groceries).
+
+See it in action:
+
+[![](
+https://www.telerik.com/sfimages/default-source/app-store-buttons/googleplay.png?sfvrsn=2)](https://play.google.com/store/apps/details?id=org.nativescript.groceries)
 
 ### Tasks
 Tasks is an implementation of a classic to-do application showing how to work with data and how to perform the popular CRUD operations.
