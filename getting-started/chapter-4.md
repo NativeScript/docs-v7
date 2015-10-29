@@ -482,7 +482,7 @@ In NativeScript apps you can use the ActivityIndicator module to show a spinner 
     <b>Exercise</b>: Add an ActivityIndicator
 </h4>
 
-Open `app/views/list/list.js` and add the following element directly before the closing `</GridLayout>` tag.
+Open `app/views/list/list.xml` and add the following element directly before the closing `</GridLayout>` tag.
 
 ``` XML
 <ActivityIndicator busy="{% raw %}{{ isLoading }}{% endraw %}" rowSpan="2" colSpan="2" />
