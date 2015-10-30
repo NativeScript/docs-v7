@@ -5,6 +5,14 @@ description: NativeScript iOS Runtime Changelog
 position: 3
 ---
 
+1.4.1
+==
+
+## Bug Fixes
+
+- [Include merged xcconfig files from CLI (#363)](https://github.com/NativeScript/ios-runtime/pull/363)
+- [Fix issues with iPhone 6s and iPad Air 2 devices (#377)](https://github.com/NativeScript/ios-runtime/pull/377)
+
 1.4.0
 ==
 
