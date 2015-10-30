@@ -78,6 +78,9 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
         ```
 
         For example: `PATH=...;...;C:\Program Files (x86)\Android\android-sdk\tools;C:\Program Files (x86)\Android\android-sdk\platform-tools`
+        
+        Depending on the installation procedure, the Android SDK installation folder may also be `C:\Users\[YOUR-USERNAME]\AppData\Local\Android\android-sdk`.
+        
     1. If not present, create the following environment variable from a command-prompt, started as an administrator.
 
         ```
