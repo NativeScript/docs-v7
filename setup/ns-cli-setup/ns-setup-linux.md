@@ -21,7 +21,6 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 * G++ compiler
 * JDK 8 or a later stable official release
 * Android SDK 22 or a later stable official release
-* Gradle 2.3 or a later stable official release
 * Android Support Repository
 * Android SDK Build-tools 22.0.0 or a later stable official release
 * ANDROID_HOME environment variable must be set
@@ -55,19 +54,6 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
     	```Shell
     	sudo update-alternatives --config java
     	```
-1. Install [Gradle 2.3](https://docs.gradle.org/current/userguide/installation.html) or a later stable official release.
-    1. Run the following commands.
-
-    	```Shell
-    	sudo wget https://services.gradle.org/distributions/gradle-2.3-bin.zip
-    	sudo unzip gradle-2.3-bin.zip
-    	```
-	1. If not present, add the following file path to the `PATH` system environment variable.
-
-		```
-		Path to the bin directory in the Gradle installation folder
-		```
-		For example: `PATH=...:...:/usr/tools/gradle-2.3/bin`
 1. Install the [Android SDK](http://developer.android.com/sdk/index.html).<br/>If you experience issues with the installation, go to [Installing the Android SDK](https://developer.android.com/sdk/installing/index.html?pkg=tools), expand the **Show instructions for all platforms** section, expand the **Troubleshooting Ubuntu** section and review the troubleshooting guide.
     1. Go to [Android Studio and SDK Downloads](https://developer.android.com/sdk/index.html#Other) and in the **SDK Tools Only** section download the package for Linux.
     1. After the download completes, unpack the downloaded archive.
