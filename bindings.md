@@ -7,14 +7,14 @@ position: 6
 
 #Data Binding
 
-Data binding is the process of connecting application user interface (UI) to a data object (code). There are two different ways for propagating а change. It is possible to update the source code through the UI componets and vise versa - to reflect in the UI the changes from modifying the code.
+Data binding is the process of connecting application user interface (UI) to a data object (code). It enables changes propagation by reflecting UI modifications on the code and vise versa.
 
-> **source** is used as any object in the code, and **target** as any UI control (like TextField).
+> In the following article **source** is used as any object in the code, and **target** as any UI control (like TextField).
 
 * [Data Flow Direction](#data-flow-direction)
 * [Basic Binding Concepts](#basic-binding-concepts)
 * [Create a Binding](#create-a-binding)
-    * [TwoWay Binding in Code](#twoway-binding-in-code)
+    * [Two-Way Binding in Code](#two-way-binding-in-code)
     * [Binding in XML](#binding-in-xml)
 * [Binding Source](#binding-source)
 	* [Biding to a Property](#biding-to-a-property)
@@ -22,7 +22,6 @@ Data binding is the process of connecting application user interface (UI) to a d
 	* [Binding to a Plain Object](#binding-to-a-plain-object)
 	* [Binding to a Parent Binding Context](#binding-to-a-parent-binding-context)
 * [Using Expressions for Bindings](#using-expressions-for-bindings)
-	* [Supported Expressions](#supported-expressions)
 * [Using Converters in Bindings](#using-converters-in-bindings)
 * [Stop Binding](#stop-binding)
 
@@ -30,23 +29,24 @@ Data binding is the process of connecting application user interface (UI) to a d
 
 Part of the data binding settings is the way data flows. NativeScript data binding supports the following data transmissions.
 
-* **OneWay** - the default setting, guaranteeing the update of the target property, when a change is made in the source property. Contrary, a change in the UI will not be propagated back to the code. If such a change is made, it will stop the binding connection.
+* **One-Way** - this is the default setting, which ensures that the target property updates when a change in the source property occurs. However, UI modification will not update the code and it will stop the binding connection.
 
-* **TwoWay** - this setting ensures the reflexion of changes in both directions - from target to source and source to target. It is very useful in the cases when user input should be handled. 
+* **Two-Way** - this setting ensures the reflection of changes in both directions - from target to source and source to target. You can use two-way data binding when you need to handle user input. 
 
 ##Basic Binding Concepts
 
-Generally almost every UI control (since all controls are created with data binding in mind) could be bound to a data object. However, there are a few requirements to be fulfilled in order for the data binding to work out of the box.
+Generally almost every UI control could be bound to a data object (all NativeScript controls are created with data binding in mind). After your code has ,et the following requirements, you can use data-binding out of the box.
 
-* The target object should be a successor of the **Bindable** class. All NativeScript UI controls already inherit from this class.
-* For **twoWay** data binding, the target property should to be a **dependency property**. For **oneWay** binding, using a plain property is sufficient.
+* The target object has to be a successor of the **Bindable** class. All NativeScript UI controls already inherit from this class.
+* For **two-way** data binding, the target property should to be a **dependency property**. 
+* For **one-way** binding, using a plain property is sufficient.
 * The data object should raise a **propertyChange** event for every change in the value of its property in order to notify all of the listeners, interested in the change.
 
 ##Create a Binding
 
-###TwoWay Binding in Code
+###Two-Way Binding in Code
 
-The example bellow consists of a Label, TextField and a source property to which the UI controls are bound. Our purpose will be, when the user enters an input in the TextField, the property in the code to be updated together with the Label text. We will bind the TextField with a twoWay binding, so the user input will change the property in the code. And the binding of the Label will be set to oneWay in order to propagate changes only from the code to the UI. But, as we already mentined, when we make a change from the UI (TextField) to the source property, the binding will stop. This means that we will not have a constant flow of progating changes from the source property to the Label. Thus the property in the code should raise a **propertyChange** event, in order to notify the Label for the changes. To raise this event, we will use an inbuild class, which provides this functionality - Observable. 
+The example below consists of a Label, TextField and a source property to which the UI controls are bound. Our purpose will be, when the user enters an input in the TextField, the property in the code to be updated together with the Label text. We will bind the TextField with a two-way binding, so the user input will change the property in the code. And the binding of the Label will be set to one-way in order to propagate changes only from the code to the UI. But, as we already mentined, when we make a change from the UI (TextField) to the source property, the binding will stop. This means that we will not have a constant flow of progating changes from the source property to the Label. Thus the property in the code should raise a **propertyChange** event, in order to notify the Label for the changes. To raise this event, we will use an inbuild class, which provides this functionality - Observable. 
 
 First, we will create the **source** object, which will be instance of Observable, with a **textSource** property.
 
@@ -120,7 +120,7 @@ targetLabel.bind(labelBindingOptions, source);
 
 ###Binding in XML
 
-To create a binding in XML, we will need a source object, which will be created the same way, as in the exmple above ([TwoWay Binding in Code](#twoway-binding-in-code)). Then we describe the binding in the XML (using a mustache syntax). With an XML declaration we set only the names of the properties - for the target: text and for source: textSource.The interesting thing here is that we don't specify explicitly the source of the binding. More about this topic will be discussed in the next article.
+To create a binding in XML, we will need a source object, which will be created the same way, as in the exmple above ([Two-Way Binding in Code](#two-way-binding-in-code)). Then we describe the binding in the XML (using a mustache syntax). With an XML declaration we set only the names of the properties - for the target: text and for source: textSource.The interesting thing here is that we don't specify explicitly the source of the binding. More about this topic will be discussed in the next article.
 
 
 ``` XML
@@ -267,7 +267,7 @@ A great way of using bindings is the option to create a custom expression. Custo
 </Page>
 ```
 
-The full binding syntax contains three parameters - first parameter is the source property, which will be listened to for changes, second parameter is the expression that will be evaluated and the third parameter states if the binding is `twoWay` or not. As mentioned earlier by default XML declaration creates a `twoWay` binding by default, so in our example the third parameter could be omitted. We can also omit the first parameter, but this will mean that the expression will be evaluted everytime we have a change in the bindingContext and not only when the property, we are interested in, has changed. Thus, the recommended syntax is to include two parameters in the XML declaration, as in our example - the property of interest and the expression, which has to be evaluated. 
+The full binding syntax contains three parameters - first parameter is the source property, which will be listened to for changes, second parameter is the expression that will be evaluated and the third parameter states if the binding is two-way or not. As mentioned earlier by default XML declaration creates a two-way binding by default, so in our example the third parameter could be omitted. We can also omit the first parameter, but this will mean that the expression will be evaluted everytime we have a change in the bindingContext and not only when the property, we are interested in, has changed. Thus, the recommended syntax is to include two parameters in the XML declaration, as in our example - the property of interest and the expression, which has to be evaluated. 
 
 
 ###Supported Expressions
@@ -290,7 +290,7 @@ NativeScript binding infrastructure supports different kind of expressions inclu
 
 ##Using Converters in Bindings
 
-Speaking of a `twoWay` binding there is a common problem that origins in the different way of storing and displaying data. Probably the best example here is the date and time objects. Generally date and time information is stored as a number or a sequence of numbers (very useful for indexing, searching and other database operations), but this is not the best possible option for displaying date to the application user. Also there is another problem when the user inputs a date (in our example user types into a TextField). The result of the user input will be a string (TextField.text property) - representation of a date in a convenient to user's culture way. This string should be converted to a correct date object. Lets see how this could be handled with NativeScript binding.
+Speaking of a two-way binding there is a common problem that origins in the different way of storing and displaying data. Probably the best example here is the date and time objects. Generally date and time information is stored as a number or a sequence of numbers (very useful for indexing, searching and other database operations), but this is not the best possible option for displaying date to the application user. Also there is another problem when the user inputs a date (in our example user types into a TextField). The result of the user input will be a string (TextField.text property) - representation of a date in a convenient to user's culture way. This string should be converted to a correct date object. Lets see how this could be handled with NativeScript binding.
 
 ``` XML
 <Page>
