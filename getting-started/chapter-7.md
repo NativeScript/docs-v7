@@ -8,4 +8,4 @@ Your journey with NativeScript is just beginning. Here are some resources to hel
 - Check out [NativeScript's roadmap](https://www.nativescript.org/roadmap) to see what's coming next, or watch the [NativeScript/NativeScript repo](https://github.com/NativeScript/NativeScript) on GitHub to follow NativeScript as it's being built.
 - Look through the NativeScript [sample apps](https://www.nativescript.org/app-samples-with-code) to get an idea of what people are building.
 
-Finally, if you find an error in this guide, or have suggestions about how we can make it better, please file those ideas in [this guide's issue tracker](https://github.com/NativeScript/quick-start/issues) on GitHub. 
+Finally, if you find an error in this guide, or have suggestions about how we can make it better, please file those ideas in [this guide's issue tracker](https://github.com/NativeScript/docs/issues) on GitHub. 
