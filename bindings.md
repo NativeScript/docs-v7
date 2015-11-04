@@ -289,7 +289,7 @@ NativeScript supports different kind of expressions including:
 
 ##Using Converters in Bindings
 
-Speaking of a two-way binding there is a common problem - having different ways of storing and displaying data. Probably the best example here is the date and time objects. Date and time information is stored as a number or a sequence of numbers (very useful for indexing, searching and other database operations), but this is not the best possible option for displaying date to the application user. Also there is another problem when the user inputs a date (in the example below the user types into a TextField). The result of the user input will be a string, which will be formatted in accordance with the user's ptreferences. This string should be converted to a correct date object. Lets see how this could be handled with NativeScript binding.
+Speaking of a two-way binding there is a common problem - having different ways of storing and displaying data. Probably the best example here is the date and time objects. Date and time information is stored as a number or a sequence of numbers (very useful for indexing, searching and other database operations), but this is not the best possible option for displaying date to the application user. Also there is another problem when the user inputs a date (in the example below the user types into a TextField). The result of the user input will be a string, which will be formatted in accordance with the user's preferences. This string should be converted to a correct date object. Lets see how this could be handled with NativeScript binding.
 
 ``` XML
 <Page>
