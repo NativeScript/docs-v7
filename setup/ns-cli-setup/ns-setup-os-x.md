@@ -25,7 +25,6 @@ On OS X systems, you can use the NativeScript CLI to develop Android and iOS app
 * For Android development
     * JDK 8 or a later stable official release
     * Android SDK 22 or a later stable official release
-    * Gradle 2.3 or a later stable official release
     * Android Support Repository
     * Android SDK Build-tools 22.0.0 or a later stable official release
     * ANDROID_HOME environment variable must be set
@@ -51,18 +50,6 @@ On OS X systems, you can use the NativeScript CLI to develop Android and iOS app
         1. Go to [Java SE Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and click **Download** for JDK.
         1. In the **Java SE Development Kit** section, accept the license agreement and click the download link for Mac OS X.
         1. Wait for the download to complete and install the JDK.
-    1. Install [Gradle 2.3](https://docs.gradle.org/current/userguide/installation.html) or a later stable official release.
-        1. Run the following commands.
-
-            ```Shell
-            brew install gradle
-            ```
-        1. If not present, add the following file path to the `PATH` system environment variable.
-
-            ```
-            Path to the bin directory in the Gradle installation folder
-            ```
-            For example: `PATH=...:...:/usr/tools/gradle-2.3/bin`
     1. Install the [Android SDK](http://developer.android.com/sdk/index.html).
         1. In the terminal, run the following command.
 
