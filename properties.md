@@ -65,16 +65,16 @@ NativeScript features two types of properties: **dependency properties** and **s
 
 This sections includes these topics:
 
-### <a name = intro1></a>Introduction
+<a id = "intro1"></a>### Introduction
 
 Dependency properties provide valuable features that simplify the creation of a rich User Interface (UI), including: 
 
 * Memory optimization&mdash;The creation of a rich custom UI control is bound to creating a huge number of properties most of which are used with default values. With the traditional approach you end up with a **private field** for every property. With dependency properties, you only store the instance properties that you modified. The default values are stored within the dependency property. Additionally, dependency properties are declared statically outside the class, which further helps optimize the memory footprint.
 * Value validation&mdash;Dependency properties offer business logic validation. It is implemented as a dedicated validation callback function that takes `newValue` as parameter and returns true or false if the value is valid or not respectively.
 * Change notification&mdash;Another callback function is called when the property value changes. It is called with an [EventData](./ApiReference/data/observable/EventData.md) as parameter.
-* Inheritance&mdash;One of the most important features of dependency properties is inheritance. It is implemented through a dedicated UI element (such as Button) option that allows it to get its property from a parent element in the visual tree. For example, a button can inherit its style (or theme) property value from the parent Window, Layout, or another container. This gives you the option to dramatically change the look of your entire application by only changing a single setting (Window.theme).
+* Inheritance&mdash;One of the most important features of dependency properties is inheritance. It is implemented through a dedicated UI element that allows it to get its property from a parent element in the visual tree. For example, a button can inherit its style (or theme) property value from the parent Window, Layout, or another container. This gives you the option to dramatically change the look of your entire application by only changing a single setting (Window.theme).
 
-### <a name = declaring></a>Declaring a Dependency Property
+<a id = declaring></a>### Declaring a Dependency Property
 
 Only classes that derive from [DependencyObservable](./ApiReference/ui/core/dependency-observable/DependencyObservable.md) can have a dependency property. This class has built-in methods that support the entire infrastructure of dependency properties.
 
@@ -123,7 +123,7 @@ export class MyClass extends dependencyObservable.DependencyObservable {
   }
 }
 ```
-### <a name = changedCallback></a>Adding a Changed Callback
+<a id = "changedCallback"></a>### Adding a Changed Callback
 
 The following code example demonstrates how to implement the functionality of changing a notification. It adds a callback function `onMyPropertyChanged` that prints a message about a change in a property.
 
@@ -187,7 +187,7 @@ export class MyClass extends dependencyObservable.DependencyObservable {
 }
 ```
 
-### <a name = validationCallback></a>Adding a Validation Callback
+<a id = "validationCallback"></a>### Adding a Validation Callback
 
 The following code example demonstrates how to implement Value validation. It adds a callback function `validateMyProperty` that takes the new property value and validates it using a simple rule.
 
@@ -230,7 +230,7 @@ export var myPropertyProperty = new dependencyObservable.Property(
 ...
 ```
 
-### <a name = inheritable></a>Creating an Inheritable Dependency Property
+<a id = "inheritable"></a>### Creating an Inheritable Dependency Property
 
 The following code example demonstrates how to create an inheritable dependency property:
 
@@ -283,11 +283,11 @@ export class MyClass extends dependencyObservable.DependencyObservable {
 
 ## Style Properties
 
-### <a name = intro2></a>Introduction
+<a id = "intro2"></a>### Introduction
 
 Probably the best use case for inheritable properties is applying different styles and themes to UI components. You only need to set a property (theme or style) to the base-most container and every single UI component inherits it through the visual tree.
 
-### <a name = setting></a>Setting a Style Property
+<a id = "setting"></a>### Setting a Style Property
 
 Setting a style property is similar to setting a regular property but you use the nested `style` object (that is a property of the View class which means that every UI component has style).
 
