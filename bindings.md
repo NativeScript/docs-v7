@@ -7,92 +7,121 @@ position: 6
 
 #Data Binding
 
-##Overview
+Data binding is the process of connecting application user interface (UI) to a data object (code). It enables changes propagation by reflecting UI modifications on the code and vise versa.
 
-Data binding is the process of connecting application user interface (UI) to a data object (business model). With a correct data binding settings and if data object provides proper notifications then when data changes application UI will reflect changes accordingly (source to target). Depending on settings and requirements there is a possibility to update data from UI to data object (target to source).
+> In the following article **source** is used as any object in the code, and **target** as any UI control (like TextField).
 
-> **source** is used as any business logic object, and **target** as any UI control (like TextField).
+* [Data Flow Direction](#data-flow-direction)
+* [Basic Binding Concepts](#basic-binding-concepts)
+* [How to Create a Binding](#how-to-create-a-binding)
+    * [Two-Way Binding in Code](#two-way-binding-in-code)
+    * [Binding in XML](#binding-in-xml)
+* [Binding Source](#binding-source)
+	* [Binding to a Property](#binding-to-a-property)
+	* [Binding to an Event in XML](#binding-to-an-event-in-xml)
+	* [Binding to a Plain Object](#binding-to-a-plain-object)
+	* [Binding to a Parent Binding Context](#binding-to-a-parent-binding-context)
+* [Using Expressions for Bindings](#using-expressions-for-bindings)
+* [Using Converters in Bindings](#using-converters-in-bindings)
+* [Stop Binding](#stop-binding)
 
-##Basic data binding concepts
+##Data Flow Direction
 
-Generally almost every UI control (since all controls are created with data binding in mind) could be bound to a data object. However there are few restrictions for data binding to work out of the box.
+Part of the data binding settings is the way data flows. NativeScript data binding supports the following data transmissions.
 
-* Target object should be a successor of **Bindable** class. This is the case with all NativeScript UI controls.
-* Target property should be a **dependency property** in order to use data binding from target to source (or two way data binding). A plain property could be used if there is no need of **twoWay** binding.
-* Data (business) object should raise **propertyChange** event for every change in the value of the property.
+* **One-Way** - this is the default setting, which ensures that the target property updates when a change in the source property occurs. However, UI modification will not update the code and it will stop the binding connection.
 
-##Direction of data flow
+* **Two-Way** - this setting ensures the reflection of changes in both directions - from target to source and source to target. You can use two-way data binding when you need to handle user input. 
 
-Part of the data binding settings is the way data (values) flows. NativeScript data binding supports following data transmissions.
+##Basic Binding Concepts
 
-* **OneWay** - this is a setting that indicates that a change in the source object will update target property, but a change in target property will not be propagated back to source (data object). Any update to the target property (except binding) will stop the binding connection. - this is the **default** option.
+Generally almost every UI control could be bound to a data object (all NativeScript controls are created with data binding in mind). After your code has ,et the following requirements, you can use data-binding out of the box.
 
-* **TwoWay** - this setting indicates that both changes in source object will be reflected to the target and changes from target will update the source object. Very useful in cases when user input should be handled (for example user writes a text - text is written within a TextField control and is updated to a underlying data property of the source object).
-In order to use this option binding options should set **twoWay as true**. Following examples show how to do that.
+* The target object has to be a successor of the **Bindable** class. All NativeScript UI controls already inherit from this class.
+* For **two-way** data binding, the target property should to be a **dependency property**. 
+* For **one-way** binding, using a plain property is sufficient.
+* The data object should raise a **propertyChange** event for every change in the value of its property in order to notify all of the listeners, interested in the change.
 
-##Creating a binding
+##How to Create a Binding
 
-* Creating binding in code.
+###Two-Way Binding in Code
 
-In order to create a working binding first we should have a source object. Source object should raise **propertyChange** event for every change of any property. NativeScript has a built-in class that fulfills that requirement (Observable). Following is a code snippet that creates an observable object instance.
+The example below consists of a `Label`, `TextField` and a source property to which the UI controls are bound. The purpose will be, when the user enters an input in the `TextField`, to update the property in the code and the `Label` text. 
+
+First, the **source** object is created with a **textSource** property. A constant flow of progating changes from the source property to the Label is necessary. Thus the property in the code has to raise a **propertyChange** event, in order to notify the `Label` for the changes. To raise this event, an built-in class is used, which provides this functionality - `Observable`.
 
 ``` JavaScript
 var observableModule = require("data/observable");
 var source = new observableModule.Observable();
+source.textSource = "Text set via twoWay binding";
 ```
 ``` TypeScript
 import observableModule = require("data/observable");
 var source = new observableModule.Observable();
+source.textSource = "Text set via twoWay binding";
 ```
 
-Creating a target object. For the sake of example we will also create a target object an instance of Bindable class (all UI controls derives from it).
+Next, **target** objects are created to bind to the source property. In this case these will be a `Label` and a `TextField`, which inherit from the `Bindable` class (as all of the UI controls do). 
 
 ``` JavaScript
+//create the TextField
 var textFieldModule = require("ui/text-field");
 var targetTextField = new textFieldModule.TextField();
+
+//create the Label
+var labelModule = require("ui/label");
+var targetLabel = new labelModule.Label();
 ```
 ``` TypeScript
+//create the TextField
 import textFieldModule = require("ui/text-field");
 var targetTextField = new textFieldModule.TextField();
-```
 
-Create a data binding.
+//create the Label
+import labelModule = require("ui/label");
+var targetLabel = new labelModule.Label();
+```
+After that the target objects bind to the source object. The TextField uses a two-way binding, so the user input could change the property in the code. And the binding of the Label is set to one-way in order to propagate changes only from the code to the UI. 
 
 ``` JavaScript
-var bindingOptions = {
+//binding the TextField
+var textFieldBindingOptions = {
 	sourceProperty: "textSource",
 	targetProperty: "text",
 	twoWay: true
 };
-targetTextField.bind(bindingOptions, source);
-source.set("textSource", "Text set via binding");
+targetTextField.bind(textFieldBindingOptions, source);
+
+//binding the Label
+var labelBindingOptions = {
+	sourceProperty: "textSource",
+	targetProperty: "text",
+	twoWay: false
+};
+targetLabel.bind(labelBindingOptions, source);
 ```
 ``` TypeScript
-var bindingOptions = {
+//binding the TextField
+var textFieldBindingOptions = {
 	sourceProperty: "textSource",
 	targetProperty: "text",
 	twoWay: true
 };
-targetTextField.bind(bindingOptions, source);
-source.set("textSource", "Text set via binding");
+targetTextField.bind(textFieldBindingOptions, source);
+
+//binding the Label
+var labelBindingOptions = {
+	sourceProperty: "textSource",
+	targetProperty: "text",
+	twoWay: false
+};
+targetLabel.bind(labelBindingOptions, source);
 ```
 
-This example will update **targetTextField.text** property with a *"Text set via binding"* value, **twoWay** option ensures that every change of the **targetTextField.text** property (via user input) will be stored within **source.text** property. The new value of the text property could be get via:
+###Binding in XML
 
-> Note: Using **set** method of the Observable class is required, since it emits a **propertyChange** event for the property **testSource**. 
+To create a binding in XML, a source object is needed, which will be created the same way, as in the exmple above ([Two-Way Binding in Code](#two-way-binding-in-code)). Then the binding is described in the XML (using a mustache syntax). With an XML declaration only the names of the properties are set- for the target: text and for source: textSource. The interesting thing here is that the source of the binding is not specified explicitly. More about this topic will be discussed in the next article ([Binding source](#binding-source)).
 
-``` JavaScript
-source.get("textSource");
-```
-``` TypeScript
-source.get("textSource");
-```
-
-* Create a data binding in xml
-
-	1. Create a source object. "source" object from the previous case (creating binding with code) will be used for following examples.
-
-	2. Describe a binding within xml (using a mustache syntax).
 
 ``` XML
 <Page>
@@ -102,13 +131,13 @@ source.get("textSource");
 </Page>
 ```
 
-> Note: For an UI elements created with an xml declaration when data binding is set **twoWay** option is **true** by default.
-
-With an xml declaration we set only properties names both for target (text) and source (textSource). The interesting thing here is that there is no source of the binding (actually it is not set directly).
+> Note: When creating UI elements with an XML declaration, the data-binding is two-way by default. 
 
 ##Binding source
 
-The important part of the data binding is setting the source object. NativeScript data binding works with any object that emits a **propertyChange** event. On the process of creating binding **source** can be set as second parameter of the bind(bindingOptions, source) or could be omitted. In the case (when source argument is omitted) for source is used a special property named **bindingContext** of the Bindable class. The special about this property is that it is inheritable across the visual tree. This means that control can use the **bindingContext** (as source) of the first **parent** element with a explicitly set **bindingContext**. With the previous example **bindingContext** can be set either on Page instance or StackLayout instance and TextField will have a proper **source** for its "text" property binding.
+###Binding to a Property 
+
+An important part of the data binding is setting the source object. For a continuous flow of data changes, the source property needs to emit a **propertyChange** event. NativeScript data-binding works with any object that emits this event. Adding a binding **source** happens by passing it as a second parameter in the method **bind(bindingOptions, source)**. This parameter is optional and could be omited, in which case for source is used a property named **bindingContext** of the `Bindable` class. What is special about this property is that it is inheritable across the visual tree. This means that a UI control can use the `bindingContext` of the first of its **parent** elements, which has an explicitly set **bindingContext**. In the example from [Two-Way Binding in Code](#two-way-binding-in-code), the `bindingContext` can be set either on a `Page` instance or a `StackLayout` instance and the `TextField` will inherit it as a proper source for the binding of its "text" property.
 
 ``` JavaScript
 page.bindingContext = source;
@@ -120,25 +149,9 @@ page.bindingContext = source;
 //or
 stackLayout.bindingContext = source;
 ```
+###Binding to an Event in XML
 
-* Create a data binding to an event in xml
-
-There is an option to bind a function to execute on a specific event (MVVM command like). This option is available only through an xml declaration. The different part is that the source property should have an event handler function as value.
-
-``` JavaScript
-source.set("onTap", function(eventData) {
-	console.log("button is tapped!");
-});
-page.bindingContext = source;
-```
-``` TypeScript
-source.set("onTap", function(eventData) {
-	console.log("button is tapped!");
-});
-page.bindingContext = source;
-```
-
-and how xml will look like:
+There is an option to bind a function to execute on a specific event (MVVM command like). This option is available only through an XML declaration. To implement such a functionality, the source object should have an event handler function.
 
 ``` XML
 <Page>
@@ -147,12 +160,103 @@ and how xml will look like:
 {%endraw%}	</StackLayout>
 </Page>
 ```
+``` JavaScript
+source.set("onTap", function(eventData) {
+	console.log("button is tapped!");
+});
+page.bindingContext = source;
+```
+``` TypeScript
+source.set("onTap", function(eventData) {
+	console.log("button is tapped!");
+});
+page.bindingContext = source;
+```
+> Note: Be aware that if there is a button with an event handler function **onTap** within the page code-behind ([more info about XML declarations](./ui-with-xml.md)), and **onTap** function within the **bindingContext** object, then there **will not** be two event handlers hooked for that button. For executing the function in the code behind, the following syntax should be used in the XML - **tap="onTap"** and for the function from the bindingContext - **tap="\{\{ onTap \}\}"**.
 
-> Note: Be aware that if there is an event handler function **onTap** within the page code behind ([more info about xml declarations](./ui-with-xml.md)), and **onTap** function within the **bindingContext** object then there will be 2 event handlers hooked for that button and both will be executed on tap event.
+###Binding to a Plain Object
 
-##Using expressions for bindings
+A very common case is to provide a list (array) of plain elements (numbers, dates, strings) to a `ListView` items collection. All examples above demonstrate how to bind an UI element to a property of the bindingContext. If there is only plain data there is no property to bind, so the binding should be to the entire object. Here comes another feature of NativeScript binding - object or value binding. To refer to the entire object, which is Date() in the example, the keyword `$value` should be used.
 
-A great way of using bindings is the option to create a custom expression (that will be evaluated every time when the source property is changed). Custom expression could help in cases when a certain logic should be applied to the UI while keeping the underlying business data and logic clear. To be more clear lets see a basic binding expression example.
+``` XML
+<Page>
+	<StackLayout>{%raw%}
+		<ListView items="{{ items }}" height="200">
+			<ListView.itemTemplate>
+				<Label text="{{ $value }}" />
+			</ListView.itemTemplate>
+		</ListView>
+{%endraw%}	</StackLayout>
+</Page>
+```
+``` JavaScript
+var appModule = require("application");
+var list = [];
+var i;
+for(i = 0; i < 5; i++) {
+	list.push(new Date());
+}
+source.set("items", list);
+```
+``` TypeScript
+import appModule = require("application");
+var list = [];
+var i;
+for(i = 0; i < 5; i++) {
+	list.push(new Date());
+}
+source.set("items", list);
+```
+###Binding to a Parent Binding Context
+
+Another common case in working with bindings is requesting access to the parent binding context. It is because it might be different from the bindingContext of the child and might contain information, which the child has to use. Generally, the bindingContext is inheritable, but not when the elements (items) are created dynamically based on some data source. For example, `ListView` creates its child items based on an `itemТemplate`, which describes how the `ListView` element will look like. When this element is added to the visual tree, it gets for binding context an element from ListView `items` array (with the corresponding index). This process creates a new binding context chain for the child item and its inner UI elements. So, no inner UI element cannot access binding context of the `ListView`. In order to solve this problem NativeScript binding infrastructure has two special keywords `$parent` and `$parents`. While the first one denotes the binding context of the direct parent visual element, the second one can be used as an array (with number or string index). This gives the option to choose either `N` levels of UI nesting or get a parent UI element with a given type. Let's see how this works in a real case example.
+
+``` XML
+<Page loaded="pageLoaded">
+	<GridLayout rows="*" >{%raw%}
+		<ListView items="{{ items }}">
+			<!--Describing how the element will look like-->
+			<ListView.itemTemplate>
+				<GridLayout columns="auto, *">
+					<Label text="{{ $value }}" col="0"/>
+					<!--The TextField has a different bindingCotnext from the ListView, but has to use its properties. Thus the parents['ListView'] has to be used.-->
+					<TextField text="{{ $parents['ListView'].test, $parents['ListView'].test }}" col="1"/>
+				</GridLayout>
+			</ListView.itemTemplate>
+		</ListView>
+	{%endraw%}</GridLayout>
+</Page>
+```
+``` JavaScript
+var observable = require("data/observable");
+var pageModule = require("ui/page");
+
+var viewModel = new observable.Observable();
+
+function pageLoaded(args) {
+    var page = args.object;
+    viewModel.set("items", [1, 2, 3]);
+    viewModel.set("test", "Test for parent binding!");
+    page.bindingContext = viewModel;
+}
+exports.pageLoaded = pageLoaded;
+```
+``` TypeScript
+import observable = require("data/observable");
+import pageModule = require("ui/page");
+
+var viewModel = new observable.Observable();
+
+export function pageLoaded(args: observable.EventData) {
+    var page = <pageModule.Page>args.object;
+    viewModel.set("items", [1, 2, 3]);
+    viewModel.set("test", "Test for parent binding!");
+    page.bindingContext = viewModel;
+}
+```
+##Using Expressions for Bindings
+
+A great functionality is to create a custom expression for bindings. Custom expressions could help in cases when a certain logic should be applied to the UI, while keeping the underlying business data and logic clear. To be more specific let's see a basic binding expression example. The result should be a `TextField` element that will display the value of the `sourceProperty` followed by " some static text" string.
 
 ``` XML
 <Page>
@@ -162,11 +266,30 @@ A great way of using bindings is the option to create a custom expression (that 
 </Page>
 ```
 
-As seen from the example adding an expression extends a binding syntax a little bit. Actually it is a full binding syntax - first parameter is the source property (which will be listened for changes), second parameter is the expression that will be evaluated, there is one more (third) parameter which states if the binding is `twoWay` or not (as mentioned earlier by default xml declaration creates a `twoWay` binding). The result of the upper example is a TextField element that will display the value of the `sourceProperty` followed by " some static text" string.
+The full binding syntax contains three parameters - the first parameter is the source property, which will be listened to for changes, the second parameter is the expression that will be evaluated and the third parameter states if the binding is two-way or not. As mentioned earlier XML declaration creates a two-way binding by default, so in the example the third parameter could be omitted. Keeping the other two properties, means that the custom expression will be evaluated only when the sourceProperty changes. The first parameter could also be omitted, then the custom expression will be evaluated everytime the bindingContext changes. Thus, the recommended syntax is to include two parameters in the XML declaration, as in our example - the property of interest and the expression, which has to be evaluated. 
 
-##Using converters in bindings
 
-Speaking of a `twoWay` binding there is a common problem that origins in the different way of storing and displaying data. Probably the best example here is the date and time objects. Generally date and time information is stored as a number or a sequence of numbers (very useful for indexing, searching and other database operations), but this is not the best possible option for displaying date to the application user. Also there is another problem when user inputs a date (in our example user types into a TextField). The result of user input will be a string (TextField.text property) - representation of a date in a convenient to user's culture way usually using the same format as for display `DD.MM.YYYY`. This string should be converted to a correct date object. Lets see how this could be handled with NativeScript binding.
+###Supported Expressions
+NativeScript supports different kind of expressions including:
+
+| Feature | Example | Description |
+|:--------|:--------|:------------|
+| property access | `obj1.obj2.prop1` | Resulting in the value of the `prop1` property of the object `obj2`. Expressions in binding are based on `polymer expressions`, which supports re-evaluation of expression when any value within the dot (.) chain is changed. NativeScript uses expressions only in context of bindings (for now), so binding expression will be re-evaluated only when binding `sourceProperty` is changed (due to performance considerations). The expression part will not observe and therefore will not initiate re-evaluation. |
+| array access | `arrayVar[indexVar]` | Taking the value of an element in an array (arrayVar) accessed by a valid index for that array (indexVar). |
+| logical operators | `!var1` | Reversing the logical state of the operand - logical not. |
+| unary operators | `+var1`, `-var2` | Converting var1 into a number. Converting var2 to a number and negates it. |
+| binary operators | `var1 + var2` | Adding the value of var2 to var1. Supported operators: `+, -, *, /, %`. |
+| comparison operators | `var1 > var2` | Comparing whether the value of var1 is more than the value of var2. Other supported operators - `<, >, <=, >=, ==, !=, ===, !==`. |
+| logical comparison operators | `var1>1 && var2>1`. | Evealuating whether the value of var1 is more than 1 AND the value of var2 is more than 2. Supported operators: `&&, ||`. |
+| ternary operator | `var1 ? var2 : var3` | Evaluating the value of `var1` and if true returns `var2` else returns `var3` |
+| grouping parenthesis | `(a + b) * (c + d)` | |
+| function calls | `myFunc(var1, var2, ..., varN)`| Where myFunc is a function available in binding context (used as context for expression) or within `application level resources`. The value of the `var1` and `varN` will be used as parameter(s). |
+| filters | `expression \| filter1(param1, ...) | filter 2` | A filter is an object or a function that is applied to the value of the expression. Within the context of binding this feature is used as converters. For more information see dedicated topic [Using Converters in Bindings](#using-converters-in-bindings).|
+
+
+##Using Converters in Bindings
+
+Speaking of a two-way binding there is a common problem - having different ways of storing and displaying data. Probably the best example here is the date and time objects. Date and time information is stored as a number or a sequence of numbers (very useful for indexing, searching and other database operations), but this is not the best possible option for displaying date to the application user. Also there is another problem when the user inputs a date (in the example below the user types into a TextField). The result of the user input will be a string, which will be formatted in accordance with the user's preferences. This string should be converted to a correct date object. Lets see how this could be handled with NativeScript binding.
 
 ``` XML
 <Page>
@@ -230,11 +353,11 @@ source.set("testDate", new Date());
 page.bindingContext = source;
 ```
 
-Note the special operator (|) within the expression. The above code snippet (both XML and JavaScript part) will display a date in a `DD.MM.YYYY` format (`toView` function), and when a new date is entered with the same format is converted to a valid `Date` object (`toModel` function). `Converter` object should have one or two functions (`toView` and `toModel`) executed every time when a data should be converted. `toView` function is called when data will be displayed to the end user as value of any UI view, and `toModel` function will be called when we have an editable element (like TextField) and user enters a new value. In case of one way binding `Converter` object could have only `toView` function or to be a function. All convert functions have an array of parameters where the first parameter is the value which will be converted and all other parameters are custom parameters defined in the converter definition.
+Note the special operator (|) within the expression. The above code snippet (both XML and JavaScript) will display a date in a `DD.MM.YYYY` format (`toView` function), and when a new date is entered with the same format, it is converted to a valid `Date` object (`toModel` function). A `Converter` object should have one or two functions (`toView` and `toModel`) executed every time when a data should be converted. A `toView` function is called when data will be displayed to the end user as a value of any UI view, and a `toModel` function will be called when there is an editable element (like TextField) and the user enters a new value. In the case of one-way binding, the `Converter` object could have only a `toView` function or it should be a function. All converter functions have an array of parameters, where the first parameter is the value, which will be converted and all other parameters are custom parameters defined in the converter definition.
 
-> Remarks: Any run-time error within the converter methods (`toView` and `toModel`) will be handled automatically and application will not break, but data in view model will not be altered (in case of error) and an error message with more information will be logged to the console. To enable it use the built-in `trace` module with `Error` category. Date converter is simplified just for the sake of the example and it is not supposed to be used as a fully functional converter from date to string and vice versa.
+> Remarks: Any run-time error within the converter methods (`toView` and `toModel`) will be handled automatically and the application will not break, but the data in the view-model will not be altered (in case of error) and an error message with more information will be logged to the console. To enable it use the built-in `trace` module with a `Error` category. A date converter is simplified just for the sake of the example and it is not supposed to be used as a fully functional converter from date to string and vice versa.
 
-Converter can accept not only static custom parameters, but any value from the `bindingContext`. For example:
+A converter can accept not only static custom parameters, but any value from the `bindingContext`. For example:
 
 ``` XML
 <Page>
@@ -254,7 +377,7 @@ source.set("dateFormat", "DD.MM.YYYY");
 page.bindingContext = source;
 ```
 
-Setting a converter function and parameter within the bindingContext is very useful, however this is not the case when `listview` items should be bound. The problem comes from the fact that bindingContext of a `listview` item is a data item part of any collection (array) (and to apply a converter - converter and its parameters should be added to the data item which will result in a multiplied converter instances). Tackling this problem with NativeScript is fairly simplified. Binding infrastructure seeks for a application level resources to find a proper converter and parameters. To be more clear examine following example (both XML and JavaScript):
+Setting a converter function and a parameter within the bindingContext is very useful for ensuring proper convertion of data, however this is not the case when `listview` items should be bound. The problem comes from the fact that the bindingContext of a `listview` item is a data item, which is a part of `any` collection (array), and to apply a converter - the converter and its parameters should be added to the data item, which will result in a multiple converter instances. Tackling this problem with NativeScript is fairly simple. Binding infrastructure seeks for an application level resources to find a proper converter and parameters. So the converters could be added in the resources in the application module. To be more clear examine the following example (both XML and JavaScript):
 
 ``` XML
 <Page>
@@ -314,137 +437,9 @@ appModule.resources["dateFormat"] = "DD.MM.YYYY";
 
 > Note: Application module is static and could be reached within the entire application just need to be required. Another difference here is that `dateConverter` is a function instead of an object with two functions `toView` and `toModel`. Since the usual operation is converting data from model to view therefore if a function is provided as converter it acts as `toView` function.
 
-##Supported expressions
-NativeScript binding infrastructure supports different kind of expressions including:
+##Stop Binding
 
-| Feature | Example | Description |
-|:--------|:--------|:------------|
-| property access | `obj1.obj2.prop1` | The result will be the value of the `prop1` property of the object `obj2`. Despite the fact expressions in binding are based on `polymer expressions`, which supports re-evaluation of expression when any value within the dot (.) chain is changed. NativeScript uses expressions only in context of bindings (for now), so binding expression will be re-evaluated only when binding's `sourceProperty` is changed (due to performance considerations). Expression part will not observe and therefore will not initiate re-evaluation. |
-| array access | `arrayVar[indexVar]` | Where arrayVar is an array and indexVar is a valid index for that array. |
-| logical operators | `!var1` | Logical not. |
-| unary operators | `+var1`, `-var2` | Converts var1 into a number. Converts var2 to number and negates it. |
-| binary operators | `var1 + var2` | Supported operators - `+, -, *, /, %`. |
-| comparison operators | `var1 > var2` | Supported operators - `<, >, <=, >=, ==, !=, ===, !==`. |
-| logical comparison operators | `var1 && var2 || var3`. | Supported operators - `&&, ||`. |
-| ternary operator | `var1 ? var2 : var3` | Evaluates value of `var1` and if truly returns `var2` else `var3` |
-| grouping parenthesis | `(a + b) * (c + d)` | |
-| function calls | `myFunc(var1, var2, ..., varN)`| Where myFunc is a function available in binding context (used as context for expression) or within `application level resources` and value of the `var1` and `varN` will be used as parameter(s). |
-| filters | `expression | filter1(param1, ...) | filter 2` | Filters actually is an object or a function that is applied to the value of the expression. Within the context of binding this feature is used as converters. For more information see dedicated topic for converters.|
-
-##Using plain object as binding context (source)
-
-Very common case is to provide a list (array) of plain elements (numbers, dates, strings) to `listview` items collection. All example above demonstrated how to bind an UI element to a property of the bindingContext. In case with plain data there is no property to bind instead the entire object should be used. Here comes in place another feature of NativeScript binding - object or value binding. To refer to the entire object `$value` keyword should be used.
-
-``` XML
-<Page>
-	<StackLayout>{%raw%}
-		<ListView items="{{ items }}" height="200">
-			<ListView.itemTemplate>
-				<Label text="{{ $value | dateConverter(dateFormat) }}" />
-			</ListView.itemTemplate>
-		</ListView>
-{%endraw%}	</StackLayout>
-</Page>
-```
-``` JavaScript
-var appModule = require("application");
-var list = [];
-var i;
-for(i = 0; i < 5; i++) {
-	list.push(new Date());
-}
-source.set("items", list);
-
-var dateConverter = function(value, format) {
-	var result = format;
-	var day = value.getDate();
-	result = result.replace("DD", day < 10 ? "0" + day : day);
-	var month = value.getMonth() + 1;
-	result = result.replace("MM", month < 10 ? "0" + month : month);
-	result = result.replace("YYYY", value.getFullYear());
-	return result;
-};
-
-appModule.resources["dateConverter"] = dateConverter;
-appModule.resources["dateFormat"] = "DD.MM.YYYY";
-```
-``` TypeScript
-import appModule = require("application");
-var list = [];
-var i;
-for(i = 0; i < 5; i++) {
-	list.push(new Date());
-}
-source.set("items", list);
-
-var dateConverter = function(value, format) {
-	var result = format;
-	var day = value.getDate();
-	result = result.replace("DD", day < 10 ? "0" + day : day);
-	var month = value.getMonth() + 1;
-	result = result.replace("MM", month < 10 ? "0" + month : month);
-	result = result.replace("YYYY", value.getFullYear());
-	return result;
-};
-
-appModule.resources["dateConverter"] = dateConverter;
-appModule.resources["dateFormat"] = "DD.MM.YYYY";
-```
-
-> Note: The **items list** now contains pure Date() objects (not a wrapper with an **itemDate** property), and Label binding using **$value** instead of **itemDate**. In cases when an object is supplied (not a plain element) then the entire object will be returned by **$value**.
-
-##Using a parent binding context as binding source
-
-Another common case in working with bindings is access to parent binding context. The problem comes with dynamically created elements (items) based on some data source. For example `ListView` creates its child items based on an item template, which describes how ListView element will look like. When this element is added to visual tree it gets for binding context an element from ListView `items` array (with the corresponding index). This process actually creates a new binding context chain for child item and its inner UI elements. So any inner UI element cannot access binding context of the `ListView`. In order to solve this problem NativeScript binding infrastructure has two special keywords `$parent` and `$parents`. While the first one denotes the binding context of the direct parent visual element, the second one can be used as an array (with number or string index). This gives the option to choose either `N` levels of UI nesting or get a parent UI element with a given type. Lets see how this works in a real case example.
-
-``` XML
-<Page loaded="pageLoaded">
-	<GridLayout rows="*" >{%raw%}
-		<ListView items="{{ items }}">
-			<ListView.itemTemplate>
-				<GridLayout columns="auto, *">
-					<Label text="{{ $value }}" col="0"/>
-					<TextField text="{{ $parents['ListView'].test, $parents['ListView'].test }}" col="1"/>
-				</GridLayout>
-			</ListView.itemTemplate>
-		</ListView>
-	{%endraw%}</GridLayout>
-</Page>
-```
-``` JavaScript
-var observable = require("data/observable");
-var pageModule = require("ui/page");
-
-var viewModel = new observable.Observable();
-
-function pageLoaded(args) {
-    var page = args.object;
-    viewModel.set("items", [1, 2, 3]);
-    viewModel.set("test", "Test for parent binding!");
-    page.bindingContext = viewModel;
-}
-exports.pageLoaded = pageLoaded;
-```
-``` TypeScript
-import observable = require("data/observable");
-import pageModule = require("ui/page");
-
-var viewModel = new observable.Observable();
-
-export function pageLoaded(args: observable.EventData) {
-    var page = <pageModule.Page>args.object;
-    viewModel.set("items", [1, 2, 3]);
-    viewModel.set("test", "Test for parent binding!");
-    page.bindingContext = viewModel;
-}
-```
-
-The previous example shows how to access parent binding context of the first `ListView` element. Since the binding context of the Page, GridLayout and ListView is the same (inherited from Page), replacing `$parents['ListView']` with `$parents['GridLayout']` or `$parents['Page']` will not change the result. Also same result will be achieved with `$parents[1].test` instead of `$parents['ListView'].test`. However string index syntax is better. It will work even when a new UI hierarchy level is introduced (by surrounding TextField in a another panel).
-The other keyword `$parent` is actually just a short-cut for `$parents[0]` and will return the direct UI predecessor's binding context.
-
-##Stop binding
-
-Generally there is no need to stop binding explicitly, since Binding object uses weak references which prevents any memory leaks. However there are some scenarios (business logic) where binding must be stopped. In order to stop existing data binding just call **unbind** method with target property name as argument.
+Generally there is no need to stop binding explicitly, since Binding object uses weak references, which prevents any memory leaks. However, there are some scenarios, where binding must be stopped. In order to stop existing data binding just call **unbind** method with target property name as argument.
 
 ``` JavaScript
 targetTextField.unbind("text");
