@@ -21,9 +21,9 @@ The user interface of NativeScript mobile apps consists of pages. Typically, the
   * [Event Binding](#event-binding)
   * [ListView Binding](#listview-binding)
   * [Expressions](#expressions)
-* [Platform specific declarations](#platform-specific-declarations)
-  * [Platform specific property value](#platform-specific-property-value)
-  * [Platform specific component declaration](#platform-specific-component-declaration)
+* [Platform-specific declarations](#platform-specific-declarations)
+  * [Platform-specific property value](#platform-specific-property-value)
+  * [Platform-specific component declaration](#platform-specific-component-declaration)
 * [Lower-case-dashed component declaration](#lower-case-dashed-component-declaration)
 
 ## The Basics
@@ -133,7 +133,7 @@ To access variables or functions from the user interface, you need to declare th
 
 NativeScript sets each attribute value in the XML declaration to a respective property or an event of the component. If a respective property does not exist, NativeScript sets the attribute value as an expando object.
 
-Since NativeScript 1.3 you can specify code and CSS files for your Page XML using `codeFile` and `cssFile` attributes:
+Starting with NativeScript 1.3 you can specify code and CSS files for your Page XML using `codeFile` and `cssFile` attributes:
 ```XML
 <Page codeFile="~/your-code-file" cssFile="~/your-styles.css">
     <StackLayout>
@@ -340,7 +340,7 @@ The following `main-page.xml` contains a page with a single label positioned at 
 
 You can define your own XML namespaces to create custom user interface components.
 
-#### Code Only Custom Component
+#### Code-Only Custom Component
 
 This sample `main-page.xml` is using custom component defined in separate declarations in the `xml-declaration/mymodule` directory. 
 
@@ -408,9 +408,9 @@ export class MyControl extends stackLayout.StackLayout {
 
 When refering to code-only components in your pages with an `xmlns` declaration you should point it either to the code file with the component implementation or to the folder containing the files. In the latter case you will have to add a `package.json` file in the folder so that the file can be required properly.
 
-#### XML Based Custom Component with a Code File
+#### XML-Based Custom Component with a Code File
 
-This sample `main-page.xml` uses a custom component defined in a `xml-declaration/mymodulewithxml/MyControl.xml` file together with `xml-declaration/mymodulewithxml/MyControl.js` or `xml-declaration/mymodulewithxml/MyControl.ts` code file. 
+This sample `main-page.xml` uses a custom component defined in an `xml-declaration/mymodulewithxml/MyControl.xml` file together with `xml-declaration/mymodulewithxml/MyControl.js` or `xml-declaration/mymodulewithxml/MyControl.ts` code file. 
 
 ```XML
 <Page
@@ -419,7 +419,7 @@ This sample `main-page.xml` uses a custom component defined in a `xml-declaratio
 </Page>
 ```
 
-The custom component in `xml-declaration/MyControl.xml` defines a button and a label and a `buttonTap` function, located in the code file, which changes the label on every tap of the button.
+The custom component in `xml-declaration/MyControl.xml` defines a button, a label and a `buttonTap` function, located in the code file, which changes the label on every tap of the button.
 
 ```XML
 <StackLayout>
@@ -462,7 +462,7 @@ export function buttonTap(args: observable.EventData) {
 }
 ```
 #### Dynamicaly Loading Custom Components
-Load pure JavaScript component by finding it in the exports of the module. The component is specified by a path and its name. Then the code from the JavaScript file is executed.
+Load a pure JavaScript component by finding it in the exports of the module. The component is specified by a path and its name. Then the code from the JavaScript file is executed.
 ```JavaScript
 var builder = require("ui/builder");
 var myComponentInstance = builder.load({
@@ -681,7 +681,7 @@ If you want to show some inner collection items inside ```ListView.itemTemplate`
 
 ### Expressions
 
-To set an expression as a value of a property in the `XML`, you can use double curly brackets syntax.
+To set an expression as a value of a property in the `XML`, you might as well go with the mustache syntax here.
 
 > NativeScript reevaluates your expression on every property change of the `Observable` object set for `bindingContext`. This binding is a one-way binding - from the view model to the user interface.
 
@@ -729,17 +729,17 @@ a ? b : c
 ```JavaScript
 numbers, strings, null, undefined
 ```
-## Platform Specific Declarations
+## Platform-Specific Declarations
 
-To declare a platform specific property value or platform specific component in the `XML`, you can use following syntax:
+To declare a platform-specific property value or platform-specific component in the `XML`, you can use following syntax:
 
-### Platform Specific Property Value
+### Platform-Specific Property Value
 ```XML
 <Page>
   <TextField ios:editable='False' android:editable='True' />
 </Page>
 ```
-### Platform Specific Component Declaration
+### Platform-Specific Component Declaration
 ```XML
 <Page>
   <ios>
