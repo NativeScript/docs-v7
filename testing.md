@@ -7,56 +7,186 @@ position: 5
 
 # Unit Testing
 
-## Getting Started
+When you develop new features inside your app, you can ensure that they are working properly and that past functionality has not regressed by writing and executing unit tests on a regular basis. With the NativeScript CLI, you can write and execute unit tests using [Jasmine][Jasmine], [Mocha][Mocha] with [Chai][Chai] or [QUnit][QUnit].
 
-Running unit tests requires a bit of preparation. You need to select a JavaScript unit testing framework and install the necessary dependencies into your project.
+To run your unit tests, the NativeScript CLI uses [Karma][Karma].
 
-Start by executing the following in your project:
+* [Before You Begin](#before-you-begin)
+* [Configure Your Project](#configure-your-project)
+* [Write Your Tests](#write-your-tests)
+* [Run Your Tests](#run-your-tests)
+	* [Requirements](#requirements)
+	* [Run the Tests](#run-the-tests)
+	* [Re-Run Tests on Code Change](#re-run-tests-on-code-change)
+	* [Configure the Karma Server](#configure-the-karma-server)
+* [Continuous Integration](#continuous-integration)
+
+## Before You Begin
+
+Before writing and running unit tests, verify that you have completed the following steps.
+
+1. [Install and configure the NativeScript CLI on your system.][install]
+1. Create a new project.
+	
+	```Shell
+	tns create projectName
+	```
+1. Switch to directory of the newly created project.
+
+	```Shell
+	cd projectName
+	```
+
+> **TIP:** You don't need to explicitly add the platforms for which you want to test your project. The NativeScript CLI will configure your project when you begin to run your tests.
+
+## Configure Your Project
+
+The NativeScript CLI lets you choose between three widely popular unit testing frameworks: [Jasmine][Jasmine], [Mocha][Mocha] with [Chai][Chai] and [QUnit][QUnit]. You need to configure the project for unit testing by choosing a framework. You can use only framework at a time.
+
+To initialize your project for unit testing, run the following command and, when prompted, use the keyboard arrows to select the framework that you want to use.
+
 ```Shell
 tns test init
 ```
-Pick one of the supported testing frameworks. When the command completes, your project will be set up for writing tests. All test files go into the `app/tests/` folder in your project. All files in that folder are excluded in release builds. The above command creates that folder for you and places a sample test file there containing a sample unit test just to give you an idea of what tests should look like. Look at the documentation of [Jasmine](http://jasmine.github.io/2.3/introduction.html) or [Mocha](https://mochajs.org/#assertions). For Mocha, the [Chai](http://chaijs.com/) module is automatically made available. All testing dependencies will be saved in the `devDependencies` section of the app's `package.json`.
 
-A `karma.conf.js` will be created in the root of your project. You should commit that file to source control.
+This operation applies the following changes to your project.
+* It creates the `app/tests` directory. You need to store all tests in this directory. This directory is excluded from release builds.
+* It creates an `example.js` file in the `app/tests` directory. This sample test illustrates the basic syntax for the selected framework.
+* It installs the nativescript-unit-test-runner npm module for the selected framework and its dev dependencies in `node_modules`.
+* It creates `karma.conf.js` in the root of your project. This file contains the default configuration for the Karma server for the selected framework.
 
-## Running your tests
+## Write Your Tests
 
-If you're running your tests on a physical device, it has to be in the same network subnet as the developer machine. The test run will fail if the device cannot resolve the developer machine's IP, or if the Karma port (usually 9876) is blocked by the firewall, typically if the device is not connected to a local network, or if the device is in a separate VLAN. To ensure that the device can access the Karma server, either connect the device to a WiFi network that is connected to the developer machine, or establish USB tethering or Bluetooth tethering between the device and the computer.
+With the NativeScript CLI, you can extensively test **all JavaScript-related functionality**. You cannot test styling and UI which are not applied or created via JavaScript.
 
-Run your tests using one of the two commands, depending on the platform:
+When creating tests for a new or existing functionality, keep in mind the following specifics.
+
+* You need to create your tests as JavaScript files in the `app/tests` directory. The NativeScript CLI recognizes JavaScript files stored in `app/tests` as unit tests.
+* You need to write tests which comply with the testing framework specification you have chosen for the project.
+* You need to export the functionality that you want to test in the code of your NativeScript project.
+* You need to require the module which exposes the functionality that you want to test in the code of your unit tests.
+
+When creating tests for a new or existing functionality, keep in mind the following limitations.
+
+* You cannot require the file or module in which `application.start()` is called.
+* You cannot use more than one testing framework per project.
+* You cannot test styling and UI which are not applied or created via JavaScript.
+
+The following samples test the initial value of the counter and the message in the Hello World template. These tests show the specifics and limitations outlined above.
+
+```Jasmine
+var mainViewModel = require("../main-view-model"); //Require the main view model to expose the functionality inside it.
+
+describe("Hello World Sample Test:", function() {
+  it("Check counter.", function() {
+    expect(mainViewModel.mainViewModel.counter).toEqual(42); //Check if the counter equals 42.
+  });
+  it("Check message.", function () {
+  	expect(mainViewModel.mainViewModel.message).toBe("42 taps left"); //Check if the message is "42 taps left".
+  });
+});
+```
+```Mocha
+var mainViewModel = require("../main-view-model"); //Require the main view model to expose the functionality inside it.
+
+describe('Hello World Sample Test:', function () {
+	it('Counter should be 42 on start.', function () {
+		assert.equal(mainViewModel.mainViewModel.counter, 42); //Assert that the counter equals 42.
+	});
+	it('Message should be "42 taps left" on start.', function () {
+		assert.equal(mainViewModel.mainViewModel.message, "42 taps left"); //Assert that the message is "42 taps left".
+	});
+});
+```
+```QUnit
+var mainViewModel = require("../main-view-model"); //Require the main view model to expose the functionality inside it.
+
+QUnit.test("Hello World Sample Test:", function (assert) {
+	assert.equal( mainViewModel.mainViewModel.counter, 42, "Counter, 42; equal succeeds." ); //Assert that the counter equals 42.
+	assert.equal( mainViewModel.mainViewModel.message, "42 taps left", "Message, 42 taps left; equal succeeds." ); //Assert that the message is "42 taps left".
+});
+```
+
+## Run Your Tests
+
+After you have completed your test suite, you can run it on physical devices or in the native emulators.
+
+### Requirements
+
+Before running your tests, verify that your development machine and your testing devices meet the following prerequisites.
+
+* The Android native emulators on which you want to run your tests must be running on your development machine. To verify that your machine recognizes the devices, run the following command.
+
+	```Shell
+	tns device
+	```
+* The physical devices on which you want to run your tests must be connected to your development machine. To verify that your machine recognizes the devices, run the following command.
+
+	```Shell
+	tns device
+	```
+* The physical devices on which you want to run your tests must be able to resolve the IP of your development machine. To verify that the device can access the Karma server, connect the device and the development machine to the same Wi-Fi network or establish USB or Bluetooth tethering between the device and the development machine.
+* Port 9876 must be allowed on your development machine. The Karma server uses this port to communicate with the testing device.
+
+### Run the Tests
+
+To execute your test suite on any connected Android devices or running Android emulators, run the following command.
+
 ```Shell
 tns test android
+```
+
+To execute your test suite on connected iOS devices, run the following command.
+
+```Shell
 tns test ios
 ```
 
-What happens next is:
-* A [Karma server](http://karma-runner.github.io/) is started on your developer machine.
-* Your application is installed onto a connected device or emulator, if it's not already installed.
-* The unit test runner and your host's network and Karma configuration are embedded into your installed application.
-* Your application is started on the device or emulator.
-* Instead of starting from your app's main module, the unit test runner's main module is launched.
-* The unit test runner uses the embedded network configuration to try to connect to the Karma server running on the developer machine.
-* When a connection is established to the Karma server, the tests are run and the results are reported back to Karma.
-* Karma reports the results of the test run in the console in which you ran the `tns test` command.
+To execute your test suite in the iOS Simulator, run the following command.
 
-To integrate the test runner into a continuous integration process, you will also need to configure a suitable Karma reporter, for example the [JUnit reporter](https://github.com/karma-runner/karma-junit-reporter). Follow the instructions in the reporter's README to integrate it.
-
-### Running in the native emulators
-The following commands starts a test run in the iOS simulator:
 ```Shell
 tns test ios --emulator
 ```
 
-Android emulators (AVD, Genymotion, Visual Studio) do not require a special command. To run the tests on them, simply use the same command as the one for running on physical devices:
-```Shell
-tns test android
-```
+Each execution of `$ tns test` consists of the following steps, performed automatically.
 
-## Continuous testing
-Use the `--watch` options to continuously monitor your code for changes, deploy those changes to connected devices and automatically re-run tests.
+1. The CLI starts a Karma server on the development machine.
+1. The CLI prepares, builds and deploys your project, if not already deployed. If already deployed, the CLI synchronizes changes to the application package.
+1. The CLI embeds the NativeScript unit test runner and your host network and Karma configuration in the deployed package.
+1. The CLI launches the main module of the NativeScript unit test runner instead of launching the main module of your app.
+1. The NativeScript unit test runner uses the embedded network configuration to try to connect to the Karma server on the development machine.
+1. When the connection between the NativeScript unit test runner and the Karma server is established, the test runner begins the execution of the unit tests.
+1. When the execution completes, the NativeScript unit test runner reports the results to the Karma server.
+1. The Karma server reports the results on the command line. 
+
+### Re-Run Tests on Code Change
+
+The NativeScript can continuously monitor your code for changes and when such changes occur, it can deploy those changes to your testing devices and re-run your tests.
+
+To enable this behavior, run your `$ tns test` command with the `--watch` flag. For example:
+
 ```Shell
 tns test android --watch
 tns test ios --watch
 tns test ios --emulator --watch
 ```
-The CLI will remain active and will re-run tests and report results until stopped.
+
+The NativeScript CLI remains active and re-runs tests on code change. To unlock the console, press `Ctrl+C` to stop the process. 
+
+### Configure the Karma Server
+
+When you configure your project for unit testing, the NativeScript CLI adds `karma.conf.js` to the root of your project. This file contains the default configuration of the Karma server, including default port and selected testing framework. You can edit this file to customize your Karma server.
+
+When you modify `karma.conf.js`, make sure that your changes meet the specification of the [Karma Configuration File][Karma Configuration File].
+
+## Continuous Integration
+
+To integrate the NativeScript unit test runner into a continuous integration process, you need to configure a Karma reporter, for example, the [JUnit reporter](https://github.com/karma-runner/karma-junit-reporter).
+
+[Karma Configuration File]: http://karma-runner.github.io/0.13/config/configuration-file.html
+[install]: http://docs.nativescript.org/setup/quick-setup#the-nativescript-cli
+[Jasmine]: http://jasmine.github.io/
+[Mocha]: https://mochajs.org/
+[Chai]: http://chaijs.com/
+[QUnit]: https://qunitjs.com/
+[Karma]: http://karma-runner.github.io/0.13/index.html
