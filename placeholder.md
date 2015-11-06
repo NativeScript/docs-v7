@@ -10,7 +10,7 @@ position: 22
 The Placeholder allows you to add any native widget to your application. To do that, you need to put a Placeholder somewhere in the UI hierarchy and then create and configure the native widget that you want to appear there. Finally, pass your native widget to the event arguments of the **creatingView** event.
 
 ## main-page.xml
-
+ 
 ```XML
 <Page xmlns="http://www.nativescript.org/tns.xsd">
   <StackLayout>
@@ -19,7 +19,7 @@ The Placeholder allows you to add any native widget to your application. To do t
 </Page>
 ```
 
-## main-page.**android**.ts
+## main-page.**android**.js\main-page.**android**.ts
 
 ```JavaScript
 function creatingView(args) {
@@ -39,7 +39,7 @@ export function creatingView(args: placeholder.CreateViewEventData) {
 }
 ```
 
-## main-page.**ios**.ts
+## main-page.**ios**.js\main-page.**ios**.ts
 
 ```JavaScript
 function creatingView(args) {
