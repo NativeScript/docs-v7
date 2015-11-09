@@ -9,6 +9,11 @@ position: 21
 
 This document describes the critical breaking changes and suggested workarounds, if any, in the NativeScript framework. The complete list with all the changes may be found on the respective [Github repositories](#see-also).
 
+### 1.5.0 (2015, November ??)
+- The XML namespace (xmlns) of the validator XSD schema changed from
+    `xmlns="http://www.nativescript.org/tns.xsd"` to
+    `xmlns="http://schemas.nativescript.org/tns.xsd"`.
+    For convenience, the file can now get downloaded via the [same URL](http://schemas.nativescript.org/tns.xsd).
 
 ### 1.4.0 (2015, October 12)
 -  [(#774)](https://github.com/NativeScript/NativeScript/issues/774) Animation class no longer has a **finished** property because an animation can be played multiple times. The **play** method now returns a new Promise each time it is invoked. Use this to listen for the animation finishing or being cancelled. When upgrading to version 1.4.0 or above simply remove **.finished** from your code.
