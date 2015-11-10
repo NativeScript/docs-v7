@@ -428,7 +428,7 @@ Making the component visible to the XML parser is as easy as adding a custom nam
 
 ```xml
 <Page
-    xmlns="http://www.nativescript.org/tns.xsd"
+    xmlns="http://schemas.nativescript.org/tns.xsd"
     xmlns:numPicker="number-picker"
     loaded="pageLoaded">
   <StackLayout id="rootLayout">

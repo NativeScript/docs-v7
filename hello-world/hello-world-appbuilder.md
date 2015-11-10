@@ -200,7 +200,7 @@ You can use a `pageLoaded` event to load your app functionality when the home pa
 In `app` &#8594; `main-page.xml`, add a `loaded` attribute to the `Page` element.
 
 ```XML
-<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
     ...
 </Page>
 ```
@@ -235,7 +235,7 @@ Finally, you can bind the user interface of the home page to the view model you 
 
 ```XML
 <?xml version="1.0" encoding="UTF-8" ?>
-<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
   <StackLayout>
     <Label text="Tap the button" style="horizontal-align: center"/>
     {%raw%}<Button text="TAP" tap="{{ tapAction }}"/>
@@ -288,7 +288,7 @@ Finally, add the `cssClass` attribute to your user interface elements in `main-p
 
 ```XML
 <?xml version="1.0" encoding="UTF-8" ?>
-<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
   <StackLayout>
     <Label text="Tap the button" cssClass="title"/>
     {%raw%}<Button text="TAP" cssClass="button" tap="{{ tapAction }}"/>

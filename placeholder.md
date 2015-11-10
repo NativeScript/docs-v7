@@ -12,7 +12,7 @@ The Placeholder allows you to add any native widget to your application. To do t
 ## main-page.xml
  
 ```XML
-<Page xmlns="http://www.nativescript.org/tns.xsd">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <StackLayout>
     <Placeholder creatingView="creatingView"/>
   </StackLayout>
