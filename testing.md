@@ -26,15 +26,16 @@ To run your unit tests, the NativeScript CLI uses [Karma][Karma].
 Before writing and running unit tests, verify that you have completed the following steps.
 
 1. [Install and configure the NativeScript CLI on your system.][install]
-1. Create a new project.
+1. If you don't have any projects, create a new project and navigate to the directory of the newly created directory.
 	
 	```Shell
 	tns create projectName
+	cd projectName
 	```
-1. Switch to directory of the newly created project.
+1. If you want to create tests for an existing directory, navigate to the directory of the project.
 
 	```Shell
-	cd projectName
+	cd existingProjectDirectory
 	```
 
 > **TIP:** You don't need to explicitly add the platforms for which you want to test your project. The NativeScript CLI will configure your project when you begin to run your tests.
