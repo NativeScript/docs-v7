@@ -28,7 +28,7 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
 
 ## Setup
 
-1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/) or [0.12.x](https://nodejs.org/dist/latest-v0.12.x/) stable official release.
+1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/), [0.12.x](https://nodejs.org/dist/latest-v0.12.x/), or [4.2.x](https://nodejs.org/dist/latest-v4.x/) stable official release.
 1. Install [Chocolatey](https://chocolatey.org) to simplify the installation and configuration of the Android tools and SDKs.
     1. Run the command prompt as an Administrator.
     1. Copy and paste the following script in the command prompt.
@@ -49,21 +49,13 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
         SETX JAVA_HOME "Path to the jdk* install folder" /M
         ```
 
-        For example: `SETX JAVA_HOME "C:\Program Files\Java\jdk1.8.0_11" /M`
+        For example: `SETX JAVA_HOME "C:\Program Files\Java\jdk1.8.0_65" /M`
 1. Install the [Android SDK](http://developer.android.com/sdk/index.html).
     1. In the command prompt, run the following command.
 
         ```Shell
         choco install android-sdk
         ```
-    1. If not present, add the following file paths to the `PATH` system environment variable.
-
-        ```
-        Path to tools directory in the Android SDK installation folder
-        Path to platform-tools directory in the Android SDK installation folder
-        ```
-
-        For example: `PATH=...;...;C:\Program Files (x86)\Android\android-sdk\tools;C:\Program Files (x86)\Android\android-sdk\platform-tools`
     1. If not present, create the following environment variable from a command-prompt, started as an administrator.
 
         ```
@@ -75,7 +67,7 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
 1. Install the required Android SDKs and the Android Support Repository.
 
 	```Shell
-	echo yes | android update sdk --filter tools,platform-tools,android-22,build-tools-22.0.1,sys-img-x86-android-22,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
+	echo yes | %ANDROID_HOME%\tools\android update sdk --filter tools,platform-tools,android-22,build-tools-22.0.1,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
 	```
 1. (Optional) Install Genymotion.<br/>Genymotion is a third-party native emulator.
     1. Go to [Get Genymotion](https://www.genymotion.com/#!/download), select Windows and click **Get Genymotion**.<br/>You might want to download the larger archive which contains VirtualBox.
