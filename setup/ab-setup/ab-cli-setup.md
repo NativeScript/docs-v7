@@ -21,7 +21,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 
 * Telerik account
 * Windows 7 or later
-* .NET 4.0 or later
+* .NET 4.5 or later
 * Node.js
     * (Windows 7 systems): The latest Node.js 0.10.x or 0.12.x stable official release
     * (Windows 8 and later systems): The latest Node.js 0.12.x stable official release
@@ -59,7 +59,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
         JAVA_HOME=Path to the jdk* install folder
         ```
 
-        For example: `JAVA_HOME=C:\Program Files\Java\jdk1.8.0_11`
+        For example: `JAVA_HOME=C:\Program Files\Java\jdk1.8.0_66`
 1. Install the [Android SDK](http://developer.android.com/sdk/index.html).
     1. In the command prompt, run the following command.
 
@@ -103,7 +103,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 
 * Telerik account
 * OS X Mavericks or later
-* The latest Node.js 0.10.x or 0.12.x stable official release
+* The latest Node.js 0.10.x, 0.12.x, or 4.2.x stable official release
 * (Optional) Homebrew to simplify the installation of dependencies
 * For iOS development
     * Xcode 5 or later
@@ -122,7 +122,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
     ```Shell
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     ```
-1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/) or [0.12.x](https://nodejs.org/dist/latest-v0.12.x/) stable official release.
+1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/), or [0.12.x](https://nodejs.org/dist/latest-v0.12.x/), or [4.2.x](https://nodejs.org/dist/latest-v4.x/) stable official release.
 
     ```Shell
     brew install node
@@ -141,13 +141,6 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
             ```Shell
             brew install ant
             ```
-        1. If not present, add the following file path to the `PATH` system environment variable.
-
-            ```
-            Path to the bin directory in the Apache Ant installation folder
-            ```
-
-            For example: Run the following command `export PATH=${PATH}:/ant/apache-ant-1.9.4/bin`
     1. Install the [Android SDK](http://developer.android.com/sdk/index.html).
         1. In the terminal, run the following command.
 
@@ -199,7 +192,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 
 * Telerik account
 * Ubuntu 14.04 LTS
-* The latest Node.js 0.10.x or 0.12.x stable official release
+* The latest Node.js 0.10.x, 0.12.x, or 4.2.x stable official release
 * G++ compiler
 * (Optional) For Android development with the native emulators
     * JDK 8 or a later stable official release
@@ -211,7 +204,7 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 1. In your browser, navigate to [https://platform.telerik.com](https://platform.telerik.com) and log in.
 1. If you do not have a Telerik account, you can log in with a social provider of your choice and begin a Telerik Platform trial.<br/>With the Telerik Platform trial, you can use the AppBuilder CLI.
 1. Run the terminal.
-1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/) or [0.12.x](https://nodejs.org/dist/latest-v0.12.x/) stable official release.
+1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/) or [0.12.x](https://nodejs.org/dist/latest-v0.12.x/), or [4.2.x](https://nodejs.org/dist/latest-v4.x/) stable official release.
     
     > **TIP:** You can follow the instructions provided [here](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager) to install Node.js on your system.
     

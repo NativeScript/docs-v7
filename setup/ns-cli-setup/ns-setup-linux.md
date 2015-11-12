@@ -20,6 +20,7 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 * The latest Node.js 0.10.x or 0.12.x stable official release
 * G++ compiler
 * JDK 8 or a later stable official release
+* JAVA_HOME environment variable must be set
 * Android SDK 22 or a later stable official release
 * Android Support Repository
 * Android SDK Build-tools 22.0.0 or a later stable official release
@@ -29,7 +30,7 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 ## Setup
 
 1. Run the terminal.
-1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/) or [0.12.x](https://nodejs.org/dist/latest-v0.12.x/) stable official release.
+1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/), [0.12.x](https://nodejs.org/dist/latest-v0.12.x/), or [4.2.x](https://nodejs.org/dist/latest-v4.x/) stable official release.
 1. If you are running on a 64-bit system, install the runtime libraries for the ia32/i386 architecture.
 
     ```Shell
@@ -54,29 +55,28 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
     	```Shell
     	sudo update-alternatives --config java
     	```
+----
+1. Set JAVA_HOME system environment variable
+    ```
+    export JAVA_HOME=$(update-alternatives --query javac | sed -n -e 's/Best: *\(.*\)\/bin\/javac/\1/p')
+    ```
+
+----
 1. Install the [Android SDK](http://developer.android.com/sdk/index.html).<br/>If you experience issues with the installation, go to [Installing the Android SDK](https://developer.android.com/sdk/installing/index.html?pkg=tools), expand the **Show instructions for all platforms** section, expand the **Troubleshooting Ubuntu** section and review the troubleshooting guide.
     1. Go to [Android Studio and SDK Downloads](https://developer.android.com/sdk/index.html#Other) and in the **SDK Tools Only** section download the package for Linux.
     1. After the download completes, unpack the downloaded archive.
-    1. Аdd the following file paths to the `PATH` system environment variable.
-
-        ```
-        Path to tools directory in the Android SDK installation folder
-        Path to platform-tools directory in the Android SDK installation folder
-        ```
-
-        For example: Run the following command `export PATH=${PATH}:/android/sdk/tools:/android/sdk/platform-tools`
-    1. Restart the command prompt.
-1. Install the required Android SDKs and the Android Support Repository.
-
-	```Shell
-	sudo android update sdk --filter tools,platform-tools,android-22,build-tools-22.0.1,sys-img-x86-android-22,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
-	```
 1. Set ANDROID_HOME system environment variable
     ```
     export ANDROID_HOME=Path to Android installation directory
     ```
     For example: ANDROID_HOME=/android/sdk/
     > NOTE: The home directory is the one that contains `tools` and `platform-tools` directories.
+
+1. Install the required Android SDKs and the Android Support Repository.
+
+	```Shell
+	sudo $ANDROID_HOME/tools/android update sdk --filter tools,platform-tools,android-22,build-tools-22.0.1,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
+	```
 1. (Optional) Install Genymotion.<br/>Genymotion is a third-party native emulator.
     1. Go to [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads) and download and install VirtualBox for Linux.
     1. Go to [Get Genymotion](https://www.genymotion.com/#!/download), select Linux and click the download link for Ubuntu.
