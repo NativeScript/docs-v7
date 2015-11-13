@@ -23,8 +23,8 @@ With this IDE, you can develop for Android and iOS on Windows, OS X or Linux.
 * Windows 7 or later
 * .NET 4.5 or later
 * Node.js
-    * (Windows 7 systems): The latest Node.js 0.10.x or 0.12.x stable official release
-    * (Windows 8 and later systems): The latest Node.js 0.12.x stable official release
+    * (Windows 7 systems): The latest Node.js 0.10.x, 0.12.x, or 4.2.x stable official release
+    * (Windows 8 and later systems): The latest Node.js 0.12.x or 4.2.x stable official release
 * (Optional) For iOS development
     * (Latest official) iTunes<br/>The bitness of Node.js and iTunes must match.
 * (Optional) For Android development with the native emulators

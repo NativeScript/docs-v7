@@ -19,7 +19,7 @@ With this IDE, you can develop for Android and iOS on Windows systems.
 * Internet connection
 * Telerik account with at least Telerik Platform Trial, Telerik Platform Developer or AppBuilder Professional subscription
 * Microsoft Visual Studio
-    * Microsoft Visual Studio 2015 Preview
+    * Microsoft Visual Studio 2015 Community, Professional or Enterprise
     * Microsoft Visual Studio 2013 Community, Professional, Premium or Ultimate
     * Microsoft Visual Studio 2012 Professional, Premium or Ultimate
     * Microsoft Visual Studio 2010 Professional, Premium or Ultimate
@@ -59,7 +59,7 @@ With this IDE, you can develop for Android and iOS on Windows systems.
         JAVA_HOME=Path to the jdk* install folder
         ```
 
-        For example: `JAVA_HOME=C:\Program Files\Java\jdk1.8.0_11`
+        For example: `JAVA_HOME=C:\Program Files\Java\jdk1.8.0_66`
 1. Install the [Android SDK](http://developer.android.com/sdk/index.html).
     1. In the command prompt, run the following command.
 

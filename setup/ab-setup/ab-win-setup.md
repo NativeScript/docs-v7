@@ -23,7 +23,7 @@ With this IDE, you can develop for Android and iOS on Windows systems.
     * Windows 7
     * Windows Vista SP1 or later
     * Windows XP SP3
-* [Microsoft .NET Framework 4](http://www.microsoft.com/en-us/download/details.aspx?id=17851), updated to [this version](http://support.microsoft.com/kb/2468871/en-us), or later
+* [Microsoft .NET Framework 4.5](http://www.microsoft.com/en-us/download/details.aspx?id=30653) or later
 * (Optional) For iOS development
     * (Latest official) iTunes
 * (Optional) For Android development with the native emulators
@@ -60,7 +60,7 @@ With this IDE, you can develop for Android and iOS on Windows systems.
         JAVA_HOME=Path to the jdk* install folder
         ```
 
-        For example: `JAVA_HOME=C:\Program Files\Java\jdk1.8.0_11`
+        For example: `JAVA_HOME=C:\Program Files\Java\jdk1.8.0_66`
 1. Install the [Android SDK](http://developer.android.com/sdk/index.html).
     1. In the command prompt, run the following command.
 
