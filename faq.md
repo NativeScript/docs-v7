@@ -2,7 +2,7 @@
 nav-title: FAQ
 title: "FAQ"
 description: A list of frequently asked NativeScript questions and answers
-position: 19
+position: 5
 ---
 
 # NativeScript FAQ

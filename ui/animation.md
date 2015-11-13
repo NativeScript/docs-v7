@@ -1,8 +1,8 @@
 ---
 nav-title: Animation
-title: "UI: Animation"
+title: "Animation"
 description: Learn how to animate view properties.
-position: 18
+position: 8
 ---
 
 # Animation API

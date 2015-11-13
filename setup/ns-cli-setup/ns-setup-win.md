@@ -1,6 +1,6 @@
 ---
 nav-title: Set Up the NativeScript CLI on Windows
-title: Set Up the NativeScript CLI on Windows
+title: Windows
 description: Configure your Windows system to create, develop and build projects locally with NativeScript.
 position: 1
 ---

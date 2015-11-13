@@ -1,8 +1,8 @@
 ---
 nav-title: "NativeScript Data Binding"
-title: "App: Data Binding"
+title: "Data Binding"
 description: "NativeScript Documentation: Data Binding"
-position: 6
+position: 10
 ---
 
 #Data Binding

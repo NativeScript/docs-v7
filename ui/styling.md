@@ -1,8 +1,8 @@
 ---
 nav-title: Styling in NativeScript
-title: "UI: Styling"
+title: "Styling"
 description: How to use Cascading Style Sheets (CSS) in NativeScript to change the appearance of GUI elements
-position: 16
+position: 7
 ---
 
 # Styling

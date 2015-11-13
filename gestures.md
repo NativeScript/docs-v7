@@ -1,8 +1,8 @@
 ---
 nav-title: Gestures in NativeScript 
-title: "UI: Gestures"
+title: "Gestures"
 description: Learn what are the touch gestures that NativeScript supports and how to make use of them.
-position: 15
+position: 13
 
 ---
 

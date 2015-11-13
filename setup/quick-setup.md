@@ -1,8 +1,8 @@
 ---
 nav-title: Set Up Your System
-title: Set Up Your System
+title: Introduction
 description: Choose between a local and cloud tool set and set up our system to work with NativeScript.
-position: 1
+position: 2
 ---
 
 # Set Up Your System

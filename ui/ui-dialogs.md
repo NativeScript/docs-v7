@@ -1,8 +1,8 @@
 ---
 nav-title: User Interface Dialogs in NativeScript
-title: "UI: Dialogs"
+title: "Dialogs"
 description: Learn how to create alerts, confirmations, prompts, logins and other dialogs in your NativeScript apps.
-position: 14
+position: 5
 ---
 
 # User Interface Dialogs

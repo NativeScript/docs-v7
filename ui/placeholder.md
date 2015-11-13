@@ -2,7 +2,7 @@
 nav-title: Placeholder
 title: "Placeholder"
 description: Learn how to use the Placeholder to add any native widget to the visual tree.
-position: 22
+position: 4
 ---
 
 # Placeholder

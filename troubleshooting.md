@@ -2,7 +2,7 @@
 nav-title: Troubleshooting
 title: Troubleshooting
 description: Known issues with NativeScript and their workarounds
-position: 18
+position: 21
 ---
 
 # Known Issues and Limitations
