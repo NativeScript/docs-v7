@@ -103,12 +103,32 @@ Navigates between views in the same hierarchy. Swipes are quick and affect the s
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.swipe, function (args) {
     console.log("Swipe Direction: " + args.direction);
+    
+    if(args.state === gestures.GestureStateTypes.began) {
+      // Swipe began.
+    } else if(args.state === gestures.GestureStateTypes.changed) {
+      // Swipe changed.
+    } else if(args.state === gestures.GestureStateTypes.ended) {
+      // Swipe ended.
+    } else if(args.state === gestures.GestureStateTypes.cancelled) {
+      // Swipe cancelled.
+    }
 });
 ```
 ``` TypeScript
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.swipe, function (args: gestures.SwipeGestureEventData) {
     console.log("Swipe Direction: " + args.direction);
+    
+    if(args.state === gestures.GestureStateTypes.began) {
+      // Swipe began.
+    } else if(args.state === gestures.GestureStateTypes.changed) {
+      // Swipe changed.
+    } else if(args.state === gestures.GestureStateTypes.ended) {
+      // Swipe ended.
+    } else if(args.state === gestures.GestureStateTypes.cancelled) {
+      // Swipe cancelled.
+    }
 });
 ```
 
@@ -122,11 +142,31 @@ Scrolls overflowing content. Pans are executed more slowly and allow for more pr
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.pan, function (args) {
     console.log("Pan deltaX:" + args.deltaX + "; deltaY:" + args.deltaY + ";");
+    
+    if(args.state === gestures.GestureStateTypes.began) {
+      // Pan began.
+    } else if(args.state === gestures.GestureStateTypes.changed) {
+      // Pan changed.
+    } else if(args.state === gestures.GestureStateTypes.ended) {
+      // Pan ended.
+    } else if(args.state === gestures.GestureStateTypes.cancelled) {
+      // Pan cancelled.
+    }
 });
 ```
 ``` TypeScript
 label.on(gestures.GestureTypes.pan, function (args: gestures.PanGestureEventData) {
     console.log("Pan deltaX:" + args.deltaX + "; deltaY:" + args.deltaY + ";");
+    
+    if(args.state === gestures.GestureStateTypes.began) {
+      // Pan began.
+    } else if(args.state === gestures.GestureStateTypes.changed) {
+      // Pan changed.
+    } else if(args.state === gestures.GestureStateTypes.ended) {
+      // Pan ended.
+    } else if(args.state === gestures.GestureStateTypes.cancelled) {
+      // Pan cancelled.
+    }
 });
 ```
 
@@ -142,12 +182,32 @@ Zooms into content or out of content.
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.pinch, function (args) {
     console.log("Pinch Scale: " + args.scale);
+    
+    if(args.state === gestures.GestureStateTypes.began) {
+      // Pinch began.
+    } else if(args.state === gestures.GestureStateTypes.changed) {
+      // Pinch changed.
+    } else if(args.state === gestures.GestureStateTypes.ended) {
+      // Pinch ended.
+    } else if(args.state === gestures.GestureStateTypes.cancelled) {
+      // Pinch cancelled.
+    }
 });
 ```
 ``` TypeScript
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.pinch, function (args: gestures.PinchGestureEventData) {
     console.log("Pinch Scale: " + args.scale);
+    
+    if(args.state === gestures.GestureStateTypes.began) {
+      // Pinch began.
+    } else if(args.state === gestures.GestureStateTypes.changed) {
+      // Pinch changed.
+    } else if(args.state === gestures.GestureStateTypes.ended) {
+      // Pinch ended.
+    } else if(args.state === gestures.GestureStateTypes.cancelled) {
+      // Pinch cancelled.
+    }
 });
 ```
 
@@ -161,12 +221,32 @@ Rotates content clockwise or counterclockwise.
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.rotation, function (args) {
     console.log("Rotation: " + args.rotation);
+    
+    if(args.state === gestures.GestureStateTypes.began) {
+      // Rotation began.
+    } else if(args.state === gestures.GestureStateTypes.changed) {
+      // Rotation changed.
+    } else if(args.state === gestures.GestureStateTypes.ended) {
+      // Rotation ended.
+    } else if(args.state === gestures.GestureStateTypes.cancelled) {
+      // Rotation cancelled.
+    }
 });
 ```
 ``` TypeScript
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.rotation, function (args: gestures.RotationGestureEventData) {
     console.log("Rotation: " + args.rotation);
+    
+    if(args.state === gestures.GestureStateTypes.began) {
+      // Rotation began.
+    } else if(args.state === gestures.GestureStateTypes.changed) {
+      // Rotation changed.
+    } else if(args.state === gestures.GestureStateTypes.ended) {
+      // Rotation ended.
+    } else if(args.state === gestures.GestureStateTypes.cancelled) {
+      // Rotation cancelled.
+    }
 });
 ```
 
