@@ -1,8 +1,8 @@
 ---
 nav-title: "NativeScript Camera"
-title: "App: Camera"
+title: "Camera"
 description: "NativeScript Documentation: Camera"
-position: 10
+position: 1
 ---
 
 #Camera

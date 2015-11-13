@@ -1,6 +1,6 @@
 ---
 nav-title: Set Up the NativeScript CLI on Linux
-title: Set Up the NativeScript CLI on Linux
+title: Linux
 description: Configure your Linux system to create, develop and build projects locally with NativeScript.
 position: 3
 ---

@@ -1,8 +1,8 @@
 ---
 nav-title: Working with Images in NativeScript
-title: "UI: Images"
+title: "Images"
 description: How to work with images in NativeScritp application.
-position: 17
+position: 6
 ---
 
 # Working with Images

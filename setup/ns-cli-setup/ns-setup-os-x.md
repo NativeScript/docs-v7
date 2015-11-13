@@ -1,6 +1,6 @@
 ---
 nav-title: Set Up the NativeScript CLI on OS X
-title: Set Up the NativeScript CLI on OS X
+title: OS X
 description: Configure your OS X system to create, develop and build projects locally with NativeScript.
 position: 2
 ---

@@ -1,8 +1,8 @@
 ---
 nav-title: "NativeScript Changelogs"
-title: "Changes"
+title: "Release Notes"
 description: "NativeScript Documentation: Changes"
-position: 30
+position: 2
 ---
 
 

@@ -1,8 +1,8 @@
 ---
 nav-title: Upgrade instructions
-title: "Upgrade instructions"
+title: "Upgrading to a New Version"
 description: Upgrade instructions
-position: 20
+position: 1
 ---
 
 # Upgrade Instructions

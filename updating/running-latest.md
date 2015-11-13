@@ -2,7 +2,7 @@
 nav-title: "Running Latest Code"
 title: "Running Latest Code"
 description: "NativeScript Documentation: Running Latest Code"
-position: 23
+position: 2
 ---
 
 #Running Latest Code

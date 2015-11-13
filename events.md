@@ -1,8 +1,8 @@
 ---
 nav-title: Events in NativeScript
-title: "App: Events"
+title: "Events"
 description: How to handle events in NativeScript.
-position: 7
+position: 12
 ---
 
 # Events
