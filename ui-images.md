@@ -10,7 +10,7 @@ In this article we will look in the different ways to show images in a NativeScr
 Images are added to application either declaratively(XML) or with code(JS):
 
 ```XML
-<Image src="~/logo.png" / > 
+<Image src="~/logo.png" /> 
 ```
 ```JavaScript
 var image = new imageModule.Image();
@@ -36,7 +36,7 @@ You can also use the [image-source API](./ApiReference/image-source/ImageSource.
 ## Load Images from URL
 Web images have `http://` or `https://` prefix. When such image is loaded, an asynchronous http request will be sent and the image will be shown if the request is successful.
 ```XML
-<Image src="https://www.google.com/images/errors/logo_sm_2.png" / > 
+<Image src="https://www.google.com/images/errors/logo_sm_2.png" /> 
 ```
 
 You can manually create an [ImageSource instance from URL](./ApiReference/image-source/HOW-TO.html#load-image-from-url)
@@ -45,7 +45,7 @@ You can manually create an [ImageSource instance from URL](./ApiReference/image-
 Using the `~/` prefix you can load images relative to the `App` folder inside your project.
 
 ```XML
-<Image src="~/images/logo.png" stretch ="none" / > 
+<Image src="~/images/logo.png" stretch ="none" /> 
 ```
 
 You can manually create an [ImageSource instance from local file](./ApiReference/image-source/HOW-TO.html#load-image-from-a-local-file)
@@ -56,7 +56,7 @@ You can manually create an [ImageSource instance from local file](./ApiReference
 Using the `res://` prefix you can load resource image. This is the suggested approach, as it uses the native methods for loading the best image for the current device screen density.
 
 ```XML
-<Image src="res://logo" stretch ="none" / > 
+<Image src="res://logo" stretch ="none" /> 
 ```
 
 You can manually create an [ImageSource instance from resource](./ApiReference/image-source/HOW-TO.html#load-image-using-resource-name)
