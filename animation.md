@@ -25,7 +25,7 @@ The [`AnimationDefinition`](ApiReference/ui/animation/AnimationDefinition.md) in
  - duration: The length of the animation in milliseconds. The default duration is 300 milliseconds.
  - delay: The amount of time, in milliseconds, to delay starting the animation.
  - iterations: Specifies how many times the animation should be played. Default is 1. iOS animations support fractional iterations, i.e. 1.5. To repeat an animation infinitely, use Number.POSITIVE_INFINITY
- - curve: An optional animation curve of type [`UIViewAnimationCurve`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/#//apple_ref/c/tdef/UIViewAnimationCurve) for iOS or [`android.animation.TimeInterpolator`](http://developer.android.com/reference/android/animation/TimeInterpolator.html) for Android.
+ - curve: An optional animation curve. Possible values are contained in the [AnimationCurve enumeration](ApiReference/ui/enums/AnimationCurve/README.md). Alternatively, you can pass an instance of type [`UIViewAnimationCurve`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/#//apple_ref/c/tdef/UIViewAnimationCurve) for iOS or [`android.animation.TimeInterpolator`](http://developer.android.com/reference/android/animation/TimeInterpolator.html) for Android.
 
  All members of the interface are **optional** and have default values with the following exceptions:
  - target is only optional when calling the **animate** method of a [`View`](ApiReference/ui/core/View.md) instance since it is set automatically for you.
