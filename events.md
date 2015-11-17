@@ -32,7 +32,7 @@ The example below shows how to set a function that prints a "Hello World!" messa
 
 ### Adding an Event Handler Using the Shorthand or Full Syntax
 
-In the following code, there is an example of how to add an event listener by using the short and full syntax. There is a third optional parameter that represents the `this` argument.
+The example below shows how to add an event listener by using the short and full syntax. There is a third optional parameter that represents the `this` argument.
 
 ``` JavaScript
 //Adding a listener with the short syntax
