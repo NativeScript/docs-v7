@@ -12,20 +12,24 @@ With the open-source [NativeScript Command-Line Interface](https://github.com/Na
 On Linux systems, you can use the NativeScript CLI to develop only Android apps. This limitation is caused by the requirements for iOS development.
 
 * [System Requirements](#system-requirements)
+* [Environment Requirements](#environment-requirements)
 * [Setup](#setup)
 
 ## System Requirements
 
 * Ubuntu 14.04 LTS
-* The latest Node.js 0.10.x or 0.12.x stable official release
+* The latest Node.js 0.10.x, 0.12.x, or 4.2.x stable official release
 * G++ compiler
 * JDK 8 or a later stable official release
-* JAVA_HOME environment variable must be set
 * Android SDK 22 or a later stable official release
 * Android Support Repository
 * Android SDK Build-tools 22.0.0 or a later stable official release
-* ANDROID_HOME environment variable must be set
 * (Optional) Genymotion to expand your testing options
+
+## Environment Requirements
+
+* JAVA_HOME environment variable must be set
+* ANDROID_HOME environment variable must be set
 
 ## Setup
 
@@ -56,7 +60,7 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
     	sudo update-alternatives --config java
     	```
 ----
-1. Set JAVA_HOME system environment variable
+1. Set the JAVA_HOME system environment variable.
     ```
     export JAVA_HOME=$(update-alternatives --query javac | sed -n -e 's/Best: *\(.*\)\/bin\/javac/\1/p')
     ```
@@ -65,12 +69,12 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 1. Install the [Android SDK](http://developer.android.com/sdk/index.html).<br/>If you experience issues with the installation, go to [Installing the Android SDK](https://developer.android.com/sdk/installing/index.html?pkg=tools), expand the **Show instructions for all platforms** section, expand the **Troubleshooting Ubuntu** section and review the troubleshooting guide.
     1. Go to [Android Studio and SDK Downloads](https://developer.android.com/sdk/index.html#Other) and in the **SDK Tools Only** section download the package for Linux.
     1. After the download completes, unpack the downloaded archive.
-1. Set ANDROID_HOME system environment variable
+1. Set the ANDROID_HOME system environment variable.
     ```
     export ANDROID_HOME=Path to Android installation directory
     ```
     For example: ANDROID_HOME=/android/sdk/
-    > NOTE: The home directory is the one that contains `tools` and `platform-tools` directories.
+    > NOTE: This is the directory that contains `tools` and `platform-tools` directories.
 
 1. Install the required Android SDKs and the Android Support Repository.
 

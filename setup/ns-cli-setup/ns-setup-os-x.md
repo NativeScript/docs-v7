@@ -12,25 +12,31 @@ With the open-source [NativeScript Command-Line Interface](https://github.com/Na
 On OS X systems, you can use the NativeScript CLI to develop Android and iOS apps.
 
 * [System Requirements](#system-requirements)
+* [Environment Requirements](#environment-requirements)
 * [Setup](#setup)
 
 ## System Requirements
 
 * OS X Mavericks or later
-* The latest Node.js 0.10.x or 0.12.x stable official release
+* The latest Node.js 0.10.x, 0.12.x, or 4.2.x stable official release
 * (Optional) Homebrew to simplify the installation of dependencies
 * For iOS development
     * Latest Xcode
     * Command-line tools for Xcode
 * For Android development
     * JDK 8 or a later stable official release
-    * JAVA_HOME environment variable must be set
     * Android SDK 22 or a later stable official release
     * Android Support Repository
     * Android SDK Build-tools 22.0.0 or a later stable official release
-    * ANDROID_HOME environment variable must be set
     * (Optional) Genymotion to expand your testing options
 
+## Environment Requirements
+
+For Android development
+
+* JAVA_HOME environment variable must be set
+* ANDROID_HOME environment variable must be set
+    
 ## Setup
 
 1. Install [Homebrew](http://brew.sh) to simplify the installation process.
@@ -51,7 +57,7 @@ On OS X systems, you can use the NativeScript CLI to develop Android and iOS app
         1. Go to [Java SE Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and click **Download** for JDK.
         1. In the **Java SE Development Kit** section, accept the license agreement and click the download link for Mac OS X.
         1. Wait for the download to complete and install the JDK.
-    1. Set JAVA_HOME system environment variable
+    1. Set the JAVA_HOME system environment variable.
         ```
         export JAVA_HOME=$(/usr/libexec/java_home)
         ```
@@ -61,12 +67,12 @@ On OS X systems, you can use the NativeScript CLI to develop Android and iOS app
             ```Shell
             brew install android-sdk
             ```
-        1. Set ANDROID_HOME system environment variable
+        1. Set the ANDROID_HOME system environment variable.
             ```
             export ANDROID_HOME=Path to Android installation directory
             ```
             For example: ANDROID_HOME=/usr/local/Cellar/android-sdk/24/
-            > NOTE: The home directory is the one that contains `tools` and `platform-tools` directories.
+            > NOTE: This is the directory that contains `tools` and `platform-tools` directories.
         1. Select all packages for the Android 22 SDK, Android SDK Build-tools 22.0.0 or later, Android Support Repository (under Extras) and any other SDKs that you want to install and click **Install**.
            You can use the following command, that will install all required tools:
            ```
