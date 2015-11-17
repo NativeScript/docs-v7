@@ -270,7 +270,7 @@ topmost.goBack();
 
 Use the **showModal** method of the page class to show another page as a modal dialog. You must specify the location of the modal page module. You can provide a context and a callback function which will be called when the modal page is closed. You can also optionally specify whether to show the modal page in fullscreen or no. To close the modal page you need to subscribe to its `shownModally` event and store a reference to a close callback function provided through the event arguments. Call this function when you are ready to close the modal page optionally passing some results to the master page. Here is an example with two pages -- a main page and a login page. The main page shows the login page modally, the user enters his username and password and when ready clicks the Login button. This closes the modal login page and returns the username/password to the main page which can then log the user in.
 
-> **TIP:**By design in iOS, it is not possible to show a modal page in fullscreen.
+> **TIP:**By design in iOS, a modal page appears only in fullscreen.
 
 **main-page**
 ``` JavaScript
