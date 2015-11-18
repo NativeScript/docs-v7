@@ -71,9 +71,9 @@ label.on(gestures.GestureTypes.doubleTap, function (args: gestures.GestureEventD
 });
 ```
 Possible implementation:
-* Scales up the object with a predefined percentage, centered around the double-tapped region. Keeping repeating the gesture continues to scale up until the maximum scale is reached.
-* Scales up the smallest targetable view or returns it to its original scale in nested views. 
-* Used for text selection.
+* Scale up the object with a predefined percentage, centered around the double-tapped region. Keeping repeating the gesture continues to scale up until the maximum scale is reached.
+* Scale up the smallest targetable view or returns it to its original scale in nested views. 
+* Select text.
 
 ## Long Press
 
@@ -93,7 +93,7 @@ label.on(gestures.GestureTypes.longPress, function (args: gestures.GestureEventD
     console.log("Long Press");
 });
 ```
-Possible implementation: Allows you to select one or more items in a view and act upon the data using a contextual action bar. Enters data selection mode. Avoid using long press for displaying contextual menus.
+Possible implementation: Select one or more items in a view and act upon the data using a contextual action bar. Enter data selection mode. Avoid using long press for displaying contextual menus.
 
 ## Swipe
 
@@ -113,7 +113,7 @@ label.on(gestures.GestureTypes.swipe, function (args: gestures.SwipeGestureEvent
     console.log("Swipe Direction: " + args.direction);
 });
 ```
-Possible implementation: Navigates between views in the same hierarchy. 
+Possible implementation: Navigate between views in the same hierarchy. 
 
 ## Pan
 
@@ -151,7 +151,7 @@ label.on(gestures.GestureTypes.pinch, function (args: gestures.PinchGestureEvent
     console.log("Pinch Scale: " + args.scale);
 });
 ```
-Possible implementation: Zooms into content or out of content.
+Possible implementation: Zoom into content or out of content.
 
 ## Rotation
 
