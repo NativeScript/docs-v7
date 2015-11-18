@@ -29,7 +29,7 @@ The CSS styles can be set on 3 different levels:
 * [PageSpecific CSS](#page-specific-css)&mdash;applies to the page's UI views
 * [Inline CSS](#inline-css)&mdash;applies directly to a UI view
 
-Regardless of what level you apply the CSS on, it is parsed, its selectors are evaluated, and its properties are applied to the `style` object of each selected view.
+If there is CSS declared on different levels - all will be applied. The inline CSS will have the highest priority and the allication CSS - the lowest.
 
 ### Application-Wide CSS
 
