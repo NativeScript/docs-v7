@@ -31,14 +31,14 @@ Part of the data binding settings is the way data flows. NativeScript data bindi
 
 * **One-Way** - this is the default setting, which ensures that the target property updates when a change in the source property occurs. However, UI modification will not update the code and it will stop the binding connection.
 
-* **Two-Way** - this setting ensures the reflection of changes in both directions - from target to source and source to target. You can use two-way data binding when you need to handle user input. 
+* **Two-Way** - this setting ensures the reflection of changes in both directions - from target to source and source to target. You can use two-way data binding when you need to handle user input.
 
 ##Basic Binding Concepts
 
 Generally almost every UI control could be bound to a data object (all NativeScript controls are created with data binding in mind). After your code has ,et the following requirements, you can use data-binding out of the box.
 
 * The target object has to be a successor of the **Bindable** class. All NativeScript UI controls already inherit from this class.
-* For **two-way** data binding, the target property should to be a **dependency property**. 
+* For **two-way** data binding, the target property should to be a **dependency property**.
 * For **one-way** binding, using a plain property is sufficient.
 * The data object should raise a **propertyChange** event for every change in the value of its property in order to notify all of the listeners, interested in the change.
 
@@ -46,7 +46,7 @@ Generally almost every UI control could be bound to a data object (all NativeScr
 
 ###Two-Way Binding in Code
 
-The example below consists of a `Label`, `TextField` and a source property to which the UI controls are bound. The purpose will be, when the user enters an input in the `TextField`, to update the property in the code and the `Label` text. 
+The example below consists of a `Label`, `TextField` and a source property to which the UI controls are bound. The purpose will be, when the user enters an input in the `TextField`, to update the property in the code and the `Label` text.
 
 First, the **source** object is created with a **textSource** property. A constant flow of progating changes from the source property to the Label is necessary. Thus the property in the code has to raise a **propertyChange** event, in order to notify the `Label` for the changes. To raise this event, an built-in class is used, which provides this functionality - `Observable`.
 
@@ -61,7 +61,7 @@ var source = new observableModule.Observable();
 source.textSource = "Text set via twoWay binding";
 ```
 
-Next, **target** objects are created to bind to the source property. In this case these will be a `Label` and a `TextField`, which inherit from the `Bindable` class (as all of the UI controls do). 
+Next, **target** objects are created to bind to the source property. In this case these will be a `Label` and a `TextField`, which inherit from the `Bindable` class (as all of the UI controls do).
 
 ``` JavaScript
 //create the TextField
@@ -81,7 +81,7 @@ var targetTextField = new textFieldModule.TextField();
 import labelModule = require("ui/label");
 var targetLabel = new labelModule.Label();
 ```
-After that the target objects bind to the source object. The TextField uses a two-way binding, so the user input could change the property in the code. And the binding of the Label is set to one-way in order to propagate changes only from the code to the UI. 
+After that the target objects bind to the source object. The TextField uses a two-way binding, so the user input could change the property in the code. And the binding of the Label is set to one-way in order to propagate changes only from the code to the UI.
 
 ``` JavaScript
 //binding the TextField
@@ -131,11 +131,11 @@ To create a binding in XML, a source object is needed, which will be created the
 </Page>
 ```
 
-> Note: When creating UI elements with an XML declaration, the data-binding is two-way by default. 
+> Note: When creating UI elements with an XML declaration, the data-binding is two-way by default.
 
 ##Binding source
 
-###Binding to a Property 
+###Binding to a Property
 
 An important part of the data binding is setting the source object. For a continuous flow of data changes, the source property needs to emit a **propertyChange** event. NativeScript data-binding works with any object that emits this event. Adding a binding **source** happens by passing it as a second parameter in the method **bind(bindingOptions, source)**. This parameter is optional and could be omited, in which case for source is used a property named **bindingContext** of the `Bindable` class. What is special about this property is that it is inheritable across the visual tree. This means that a UI control can use the `bindingContext` of the first of its **parent** elements, which has an explicitly set **bindingContext**. In the example from [Two-Way Binding in Code](#two-way-binding-in-code), the `bindingContext` can be set either on a `Page` instance or a `StackLayout` instance and the `TextField` will inherit it as a proper source for the binding of its "text" property.
 
@@ -266,7 +266,7 @@ A great functionality is to create a custom expression for bindings. Custom expr
 </Page>
 ```
 
-The full binding syntax contains three parameters - the first parameter is the source property, which will be listened to for changes, the second parameter is the expression that will be evaluated and the third parameter states if the binding is two-way or not. As mentioned earlier XML declaration creates a two-way binding by default, so in the example the third parameter could be omitted. Keeping the other two properties, means that the custom expression will be evaluated only when the sourceProperty changes. The first parameter could also be omitted, then the custom expression will be evaluated everytime the bindingContext changes. Thus, the recommended syntax is to include two parameters in the XML declaration, as in our example - the property of interest and the expression, which has to be evaluated. 
+The full binding syntax contains three parameters - the first parameter is the source property, which will be listened to for changes, the second parameter is the expression that will be evaluated and the third parameter states if the binding is two-way or not. As mentioned earlier XML declaration creates a two-way binding by default, so in the example the third parameter could be omitted. Keeping the other two properties, means that the custom expression will be evaluated only when the sourceProperty changes. The first parameter could also be omitted, then the custom expression will be evaluated everytime the bindingContext changes. Thus, the recommended syntax is to include two parameters in the XML declaration, as in our example - the property of interest and the expression, which has to be evaluated.
 
 
 ###Supported Expressions
@@ -286,6 +286,12 @@ NativeScript supports different kind of expressions including:
 | function calls | `myFunc(var1, var2, ..., varN)`| Where myFunc is a function available in binding context (used as context for expression) or within `application level resources`. The value of the `var1` and `varN` will be used as parameter(s). |
 | filters | `expression \| filter1(param1, ...) | filter 2` | A filter is an object or a function that is applied to the value of the expression. Within the context of binding this feature is used as converters. For more information see dedicated topic [Using Converters in Bindings](#using-converters-in-bindings).|
 
+> Note: Special characters need to be escaped as follows:
+> - `"   &quot;`
+> - `'   &apos;`
+> - `<   &lt;`
+> - `>   &gt;`
+> - `&   &amp;`
 
 ##Using Converters in Bindings
 
