@@ -10,3 +10,5 @@ Defines the data for the page navigation events.
 ##### Properties
  - **context** - _Object_.    
   The navigation context (optional, may be undefined) passed to the page navigation events method.
+ - **isBackNavigation** - _Boolean_.    
+  Represents if a navigation is forward or backward.

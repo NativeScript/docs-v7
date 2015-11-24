@@ -4,6 +4,7 @@ title: "Object ui/dialogs.ActionOptions"
 description: "Object ui/dialogs.ActionOptions"
 ---
 ## Object: "ui/dialogs".ActionOptions  
+_Extends:_ [_CancelableOptions_](../../ui/dialogs/CancelableOptions.md)  
 Provides options for the dialog.
 
 ##### Properties

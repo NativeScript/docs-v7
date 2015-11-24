@@ -27,10 +27,6 @@ Using a TabView requires the "ui/tab-view" module.
 ``` JavaScript
 var tabViewModule = require("ui/tab-view");
 ```
-## Creating a TabView
-``` JavaScript
-var tabView = new tabViewModule.TabView();
-```
 ### Binding TabView.items
 ``` JavaScript
 var items = [];
@@ -57,4 +53,8 @@ tabView.items = items;
 ### Selecting a tab programmatically
 ``` JavaScript
 tabView.selectedIndex = 9;
+```
+## Creating a TabView
+``` JavaScript
+var tabView = new tabViewModule.TabView();
 ```

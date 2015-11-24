@@ -39,3 +39,4 @@ This method will start from the topmost Frame and will recursively search for an
  - **stack()** __...  
      Gets the frames stack.
    - _**return**_ - __ of [_Frame_](../../ui/frame/Frame.md)
+ - **reloadPage()**

@@ -23,6 +23,7 @@ Object | Description
    - **path** - _String_
    - **ext** - _String_
    - _**return**_ - _String_
+ - **clearCache()**
  - **findFileMatch(** path _String_, ext _String_, candidates __..., context [_PlatformContext_](../../file-system/file-name-resolver/PlatformContext.md) **)** _String_
    - **path** - _String_
    - **ext** - _String_

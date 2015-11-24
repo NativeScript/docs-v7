@@ -14,9 +14,17 @@ Represents an time picker.
 ##### Instance Properties
  - **android** - _Object_.    
   Gets the native [android.widget.TimePicker](http://developer.android.com/reference/android/widget/TimePicker.html) that represents the user interface for this component. Valid only when running on Android OS.
- - **ios** - _UIDatePicker_.    
+ - **ios** - _Object_.    
   Gets the native iOS [UIDatePicker](http://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html) that represents the user interface for this component. Valid only when running on iOS.
  - **hour** - _Number_.    
   Gets or sets the time hour.
  - **minute** - _Number_.    
   Gets or sets the time minute.
+ - **maxHour** - _Number_.    
+  Gets or sets the max time hour.
+ - **maxMinute** - _Number_.    
+  Gets or sets the max time minute.
+ - **minHour** - _Number_.    
+  Gets or sets the min time hour.
+ - **minMinute** - _Number_.    
+  Gets or sets the min time minute.

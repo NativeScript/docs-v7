@@ -9,7 +9,7 @@ Defines an interface for adding a child element declared in xml.
 ##### Functions
  - **_addChildFromBuilder(** name _String_, value _Object_ **)**  
      Called for every child element declared in xml.
-This function will create an instance of declared child element.
+This method will add a child element (value) to current element.
    - **name** - _String_  
      - Name of the element.
    - **value** - _Object_  

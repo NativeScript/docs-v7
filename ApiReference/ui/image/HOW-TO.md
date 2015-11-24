@@ -31,7 +31,7 @@ image.imageSource = ImageSourceModule.fromResource("logo");
 ### How to create an image and set its src.
 ``` JavaScript
 var image = new ImageModule.Image();
-image.src = "https://www.google.bg/images/srpr/logo11w.png";
+image.src = "https://www.google.com/images/errors/logo_sm_2.png";
 ```
 ### How to create an image and set its src to file within the application.
 ``` JavaScript

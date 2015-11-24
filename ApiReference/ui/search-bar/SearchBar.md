@@ -20,7 +20,7 @@ Represents a search bar component.
 ##### Instance Properties
  - **android** - _Object_.    
   Gets the native [android widget](http://developer.android.com/reference/android/widget/SearchView.html) that represents the user interface for this component. Valid only when running on Android OS.
- - **ios** - _UISearchBar_.    
+ - **ios** - _Object_.    
   Gets the native iOS [UISearchBar](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISearchBar_Class/) that represents the user interface for this component. Valid only when running on iOS.
  - **text** - _String_.    
   Gets or sets a search bar text.
@@ -50,3 +50,5 @@ Represents a search bar component.
    - **event**
    - **callback** - _Function_(args [_EventData_](../../data/observable/EventData.md))
    - **thisArg** - _(optional)_ - _Object_
+ - **dismissSoftInput()**  
+     Hides the soft input method, ususally a soft keyboard.

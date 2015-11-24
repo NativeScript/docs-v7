@@ -30,4 +30,6 @@ On iOS this will return a new uuid if the application re-installed on the device
 If you need to receive the same uuid even after the application has been re-installed on the device,
 use this plugin: https://www.npmjs.com/package/nativescript-ios-uuid
  - **language** - _String_.    
-  Gets the preferred language. For example "en" or "en_US"
+  Gets the preferred language. For example "en"
+ - **region** - _String_.    
+  Gets the preferred region. For example "US"

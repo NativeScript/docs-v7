@@ -5,7 +5,17 @@ description: "Class text/formatted-string.FormattedString"
 ---
 ## Class: "text/formatted-string".FormattedString  
 _Inherits:_ [_Observable_](../../data/observable/Observable.md)  
+_Conform to:_
+ - [_AddArrayFromBuilder_](../../ui/core/view/AddArrayFromBuilder.md)
+ - [_AddChildFromBuilder_](../../ui/core/view/AddChildFromBuilder.md)  
 A class used to create a formatted (rich text) string.
+
+##### Static Functions
+ - **addFormattedStringToView(** view [_FormattedStringView_](../../text/formatted-string/FormattedStringView.md), name _String_, value _Object_ **)**  
+     A static method used to add child elements of the FormattedString class to a View declared in xml.
+   - **view** - [_FormattedStringView_](../../text/formatted-string/FormattedStringView.md)
+   - **name** - _String_
+   - **value** - _Object_
 
 ##### Instance Properties
  - **spans** - [_ObservableArray_](../../data/observable-array/ObservableArray.md) of [_Span_](../../text/span/Span.md).    
@@ -35,3 +45,15 @@ A class used to create a formatted (rich text) string.
      Propogates binding context through the spans collection.
    - **newBindingContext** - _Object_  
      The value of the newly set binding context.
+ - **_addArrayFromBuilder(** name _String_, value __... **)**  
+     A function that is called when an array declaration is found in xml.
+   - **name** - _String_  
+     - Name of the array.
+   - **value** - __ of _Object_  
+     - The actual value of the array.
+ - **_addChildFromBuilder(** name _String_, value _Object_ **)**  
+     Called for every child element declared in xml.
+   - **name** - _String_  
+     - Name of the element.
+   - **value** - _Object_  
+     - Value of the element.

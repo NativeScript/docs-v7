@@ -7,11 +7,11 @@ description: "Object application.iOSApplication"
 The abstraction of an iOS-specific application object.
 
 ##### Properties
- - **rootController** - _UIViewController_.    
+ - **rootController** - _Object_.    
   The root view controller for the application.
- - **nativeApp** - _UIApplication_.    
+ - **nativeApp** - _Object_.    
   The [UIApplication](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html).
- - **delegate** - .    
+ - **delegate** - _Object_.    
   The [UIApplicationDelegate](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html) class.
 
 ##### Functions
@@ -20,7 +20,7 @@ The abstraction of an iOS-specific application object.
 For more information, please visit 'https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/#//apple_ref/occ/instm/NSNotificationCenter/addObserver:selector:name:object:'
    - **notificationName** - _String_  
      A string containing the name of the notification.
-   - **onReceiveCallback** - _Function_(notification _NSNotification_)  
+   - **onReceiveCallback** - _Function_(notification _Object_)  
      A callback function that will be called each time the observer receives a notification.
    - _**return**_ - _Object_
  - **removeNotificationObserver(** observer _Object_, notificationName _String_ **)**  

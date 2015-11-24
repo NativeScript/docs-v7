@@ -15,9 +15,9 @@ Namespace | Description
   Gets the iOS device major version (for 8.1 will return 8).
 
 ##### Functions
- - **getColor(** uiColor _UIColor_ **)** [_Color_](../../../color/Color.md)  
+ - **getColor(** uiColor _Object_ **)** [_Color_](../../../color/Color.md)  
      Gets NativeScript color from [UIColor](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/).
-   - **uiColor** - _UIColor_  
+   - **uiColor** - _Object_  
      - UIColor instance used to create a NativeScript color.
    - _**return**_ - [_Color_](../../../color/Color.md)
  - **isLandscape()** _Boolean_  

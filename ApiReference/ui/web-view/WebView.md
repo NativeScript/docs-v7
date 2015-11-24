@@ -18,7 +18,7 @@ Represents a standard WebView widget.
 ##### Instance Properties
  - **android** - _Object_.    
   Gets the native [android widget](http://developer.android.com/reference/android/webkit/WebView.html) that represents the user interface for this component. Valid only when running on Android OS.
- - **ios** - _UIWebView_.    
+ - **ios** - _Object_.    
   Gets the native [UIWebView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/) that represents the user interface for this component. Valid only when running on iOS.
  - **url** - _String_.    
   [Obsolete. Please use src instead!] Gets or sets the url displayed by this instance.

@@ -24,6 +24,10 @@ var button = new buttonModule.Button();
 ``` JavaScript
 button.text = "Hello, world!";
 ```
+### Setting the text of a button
+``` JavaScript
+button.textWrap = true;
+```
 ### Responding to the tap event
 ``` JavaScript
 button.on(buttonModule.Button.tapEvent, function (args) {

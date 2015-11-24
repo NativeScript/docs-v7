@@ -4,7 +4,7 @@ title: "Object ui/gestures.RotationGestureEventData"
 description: "Object ui/gestures.RotationGestureEventData"
 ---
 ## Object: "ui/gestures".RotationGestureEventData  
-_Extends:_ [_GestureEventData_](../../ui/gestures/GestureEventData.md)  
+_Extends:_ [_GestureEventDataWithState_](../../ui/gestures/GestureEventDataWithState.md)  
 Provides gesture event data for rotation gesture.
 
 ##### Properties

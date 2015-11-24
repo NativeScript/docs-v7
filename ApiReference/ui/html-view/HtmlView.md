@@ -16,7 +16,7 @@ Represents a view with html content. Use this component instead WebView when you
 ##### Instance Properties
  - **android** - _Object_.    
   Gets the native [android widget](http://developer.android.com/reference/android/widget/TextView.html) that represents the user interface for this component. Valid only when running on Android OS.
- - **ios** - _UILabel_.    
+ - **ios** - _Object_.    
   Gets the native [UILabel](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/) that represents the user interface for this component. Valid only when running on iOS.
  - **html** - _String_.    
   Gets or sets html string for the HtmlView.

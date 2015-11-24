@@ -37,7 +37,7 @@ Represents a color object. Stores all color components (alpha (opacity), red, gr
   Gets the known name of this instance. Defined only if it has been constructed from a known color name - e.g. "red". This is a read-only property.
  - **android** - _Number_.    
   Gets the android-specific integer value representation. Same as the Argb one. This is a read-only property.
- - **ios** - _UIColor_.    
+ - **ios** - _Object_.    
   Gets the iOS-specific UIColor value representation. This is a read-only property.
 
 ##### Instance Functions

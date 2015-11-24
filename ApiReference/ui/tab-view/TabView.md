@@ -10,6 +10,7 @@ Represents a tab view.
 ##### Static Properties
  - **itemsProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
  - **selectedIndexProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
+ - **selectedColorProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
  - **selectedIndexChangedEvent** - _String_.    
   String value used when hooking to the selectedIndexChanged event.
 
@@ -18,9 +19,13 @@ Represents a tab view.
   Gets or sets the items of the TabView.
  - **selectedIndex** - _Number_.    
   Gets or sets the selectedIndex of the TabView.
+ - **selectedColor** - [_Color_](../../color/Color.md).    
+  Gets or sets the color used for selected item.
+ - **tabsBackgroundColor** - [_Color_](../../color/Color.md).    
+  Gets or sets the color used for background of the tab items.
  - **android** - _Object_.    
   Gets the native [android widget](http://developer.android.com/reference/android/support/v4/view/ViewPager.html) that represents the user interface for this component. Valid only when running on Android OS.
- - **ios** - _UITabBarController_.    
+ - **ios** - _Object_.    
   Gets the native iOS [UITabBarController](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/) that represents the user interface for this component. Valid only when running on iOS.
 
 ##### Instance Functions
@@ -37,3 +42,6 @@ Represents a tab view.
    - **event**
    - **callback** - _Function_(args [_SelectedIndexChangedEventData_](../../ui/tab-view/SelectedIndexChangedEventData.md))
    - **thisArg** - _(optional)_ - _Object_
+ - **_getAndroidTabView()** _Object_
+   - _**return**_ - _Object_
+ - **_updateIOSTabBarColors()**

@@ -10,3 +10,4 @@ description: "Class file-system/file-name-resolver.FileNameResolver"
    - **path** - _String_
    - **ext** - _String_
    - _**return**_ - _String_
+ - **clearCache()**

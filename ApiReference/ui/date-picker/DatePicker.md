@@ -15,7 +15,7 @@ Represents an date picker.
 ##### Instance Properties
  - **android** - _Object_.    
   Gets the native [android.widget.DatePicker](http://developer.android.com/reference/android/widget/DatePicker.html) that represents the user interface for this component. Valid only when running on Android OS.
- - **ios** - _UIDatePicker_.    
+ - **ios** - _Object_.    
   Gets the native iOS [UIDatePicker](http://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html) that represents the user interface for this component. Valid only when running on iOS.
  - **year** - _Number_.    
   Gets or sets the year.

@@ -20,11 +20,13 @@ Represents a view that shows items in a vertically scrolling list.
   Represents the item template property of each ListView instance.
  - **isScrollingProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
   Represents the observable property backing the isScrolling property of each ListView instance.
+ - **rowHeightProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the rowHeight property of each ListView instance.
 
 ##### Instance Properties
  - **android** - _Object_.    
   Gets the native [android widget](http://developer.android.com/reference/android/widget/ListView.html) that represents the user interface for this component. Valid only when running on Android OS.
- - **ios** - _UITableView_.    
+ - **ios** - _Object_.    
   Gets the native [iOS view](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableView_Class/) that represents the user interface for this component. Valid only when running on iOS.
  - **isScrolling** - _Boolean_.    
   Gets a value indicating whether the ListView is currently scrolling.
@@ -33,8 +35,12 @@ Represents a view that shows items in a vertically scrolling list.
 The items property can be set to an array or an object defining length and getItem(index) method.
  - **itemTemplate** - _String_.    
   Gets or set the item template of the ListView. 
+ - **view**
+ - **Template**
  - **separatorColor** - [_Color_](../../color/Color.md).    
   Gets or set the items separator line color of the ListView. 
+ - **rowHeight** - _Number_.    
+  Gets or set row height of the ListView.
 
 ##### Instance Functions
  - **refresh()**  

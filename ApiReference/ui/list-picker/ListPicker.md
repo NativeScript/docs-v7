@@ -14,7 +14,7 @@ Represents an list picker.
 ##### Instance Properties
  - **android** - _Object_.    
   Gets the native [android.widget.NumberPicker](http://developer.android.com/reference/android/widget/NumberPicker.html) that represents the user interface for this component. Valid only when running on Android OS.
- - **ios** - _UIPickerView_.    
+ - **ios** - _Object_.    
   Gets the native iOS [UIPickerView](http://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html) that represents the user interface for this component. Valid only when running on iOS.
  - **selectedIndex** - _Number_.    
   Gets or sets the selected index.

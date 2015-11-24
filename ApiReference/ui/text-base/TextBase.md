@@ -5,6 +5,9 @@ description: "Class ui/text-base.TextBase"
 ---
 ## Class: "ui/text-base".TextBase  
 _Inherits:_ [_View_](../../ui/core/view/View.md)  
+_Conform to:_
+ - [_AddChildFromBuilder_](../../ui/core/view/AddChildFromBuilder.md)
+ - [_FormattedStringView_](../../text/formatted-string/FormattedStringView.md)  
 Represents the base class for all text views.
 
 ##### Static Properties
@@ -26,3 +29,10 @@ Represents the base class for all text views.
 ##### Instance Functions
  - **_onTextPropertyChanged(** data [_PropertyChangeData_](../../ui/core/dependency-observable/PropertyChangeData.md) **)**
    - **data** - [_PropertyChangeData_](../../ui/core/dependency-observable/PropertyChangeData.md)
+ - **_addChildFromBuilder(** name _String_, value _Object_ **)**  
+     Called for every child element declared in xml.
+This method will add a child element (value) to current element.
+   - **name** - _String_  
+     - Name of the element.
+   - **value** - _Object_  
+     - Value of the element.

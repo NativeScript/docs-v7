@@ -9,7 +9,7 @@ In iOS the native controller, associated with a Frame object is UINavigationCont
 The navigation controller will automatically hide/show its navigation bar depending on the back stack of the Frame.
 
 ##### Properties
- - **controller** - _UINavigationController_.    
+ - **controller** - _Object_.    
   Gets the native [UINavigationController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UINavigationController_Class/index.html) instance associated with this Frame.
  - **navBarVisibility** - _String_.    
   Gets or sets the visibility of navigationBar.

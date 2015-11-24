@@ -17,11 +17,13 @@ Class | Description
 Enum | Description
 ------|------------
 [GestureTypes](../../ui/gestures/GestureTypes.md) | Defines an enum with supported gesture types.
+[GestureStateTypes](../../ui/gestures/GestureStateTypes.md) | Defines an enum with supported gesture types.
 [SwipeDirection](../../ui/gestures/SwipeDirection.md) | Defines an enum for swipe gesture direction.
 
 Object | Description
 ------|------------
 [GestureEventData](../../ui/gestures/GestureEventData.md) | Provides gesture event data.
+[GestureEventDataWithState](../../ui/gestures/GestureEventDataWithState.md) | Provides gesture event data for pinch gesture.
 [PinchGestureEventData](../../ui/gestures/PinchGestureEventData.md) | Provides gesture event data for pinch gesture.
 [SwipeGestureEventData](../../ui/gestures/SwipeGestureEventData.md) | Provides gesture event data for swipe gesture.
 [PanGestureEventData](../../ui/gestures/PanGestureEventData.md) | Provides gesture event data for pan gesture.

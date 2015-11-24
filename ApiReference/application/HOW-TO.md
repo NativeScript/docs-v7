@@ -9,6 +9,7 @@ It is the main BCL module and is required for other BCL modules to work properly
 The default bootstrap.js implementation for each platform loads and initializes this module.
 ``` JavaScript
 var app = require("application");
+var platform = require("platform");
 ```
 The pre-required `app` module is used throughout the following code snippets.
 ### Checking the target platform

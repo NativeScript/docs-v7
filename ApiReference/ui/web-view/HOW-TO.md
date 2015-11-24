@@ -29,7 +29,7 @@ webView.on(webViewModule.WebView.loadFinishedEvent, function (args) {
         message = "Error loading " + args.url + ": " + args.error;
     }
 });
-webView.url = "http://nsbuild01.telerik.com/docs/";
+webView.url = "https://github.com/";
 ```
 ### Using WebView
 ``` JavaScript
@@ -55,5 +55,5 @@ webView.on(webViewModule.WebView.loadFinishedEvent, function (args) {
         message = "Error loading " + args.url + ": " + args.error;
     }
 });
-webView.src = '<!DOCTYPE html><html><head><title>MyTitle</title><meta charset="utf-8" /></head><body><span style="color:red">Test</span></body></html>';
+webView.src = '<!DOCTYPE html><html><head><title>MyTitle</title><meta charset="utf-8" /></head><body><span style="color:red">TestÖ</span></body></html>';
 ```

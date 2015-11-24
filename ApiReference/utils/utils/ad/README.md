@@ -18,3 +18,12 @@ Namespace | Description
  - **getApplicationContext()** _Object_  
      Gets the Android application context.
    - _**return**_ - _Object_
+ - **getInputMethodManager()** _Object_  
+     Gets the native Android input method manager.
+   - _**return**_ - _Object_
+ - **dismissSoftInput(** nativeView _Object_ **)**  
+     Hides the soft input method, ususally a soft keyboard.
+   - **nativeView** - _Object_
+ - **showSoftInput(** nativeView _Object_ **)**  
+     Shows the soft input method, ususally a soft keyboard.
+   - **nativeView** - _Object_

@@ -21,4 +21,3 @@ Object | Description
 Namespace | Description
 ------|------------
 [ios](../../../ui/styling/background/ios/) | 
-[ad](../../../ui/styling/background/ad/) | 

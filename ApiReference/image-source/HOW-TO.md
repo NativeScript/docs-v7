@@ -21,7 +21,7 @@ var img = imageSource.fromResource("logo");
 ```
 ### Load image from URL
 ``` JavaScript
-imageSource.fromUrl("http://www.google.com/images/errors/logo_sm_2.png")
+imageSource.fromUrl("https://www.google.com/images/errors/logo_sm_2.png")
     .then(function (res) {
     console.log("Image successfully loaded");
 }, function (error) {

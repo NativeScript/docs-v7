@@ -12,6 +12,7 @@ var uidialogs = require("ui/dialogs");
 
 Object | Description
 ------|------------
+[CancelableOptions](../../ui/dialogs/CancelableOptions.md) | Provides options for the dialog.
 [ActionOptions](../../ui/dialogs/ActionOptions.md) | Provides options for the dialog.
 [DialogOptions](../../ui/dialogs/DialogOptions.md) | Provides options for the dialog.
 [AlertOptions](../../ui/dialogs/AlertOptions.md) | Provides options for the alert.

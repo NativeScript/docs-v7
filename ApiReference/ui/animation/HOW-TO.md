@@ -19,7 +19,7 @@ label.animate({
     duration: 1000,
     delay: 100,
     iterations: 3,
-    curve: label.ios ? UIViewAnimationCurve.UIViewAnimationCurveEaseIn : new android.view.animation.AccelerateInterpolator(1),
+    curve: enums.AnimationCurve.easeIn
 })
     .then(function () {
     //console.log("Animation finished.");

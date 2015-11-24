@@ -28,4 +28,5 @@ Defines animation options for the View.animate method.
 iOS animations support fractional iterations, i.e. 1.5.
 To repeat an animation infinitely, use Number.POSITIVE_INFINITY
  - **curve** - _(optional)_ - _Object_.    
-  An optional animation curve of type UIViewAnimationCurve for iOS or android.animation.TimeInterpolator for Android.
+  An optional animation curve. Possible values are contained in the [AnimationCurve enumeration](../enums/AnimationCurve/README.md).
+Alternatively, you can pass an instance of type UIViewAnimationCurve for iOS or android.animation.TimeInterpolator for Android.

@@ -11,6 +11,8 @@ VerticalAlignment indicates where an element should be displayed on the horizont
   An element should be top aligned.
  - **center** - _String_.    
   An element should be center aligned.
+ - **middle** - _String_.    
+  Same as center. An element should be aligned in the middle.
  - **bottom** - _String_.    
   An element should be bottom aligned.
  - **stretch** - _String_.    

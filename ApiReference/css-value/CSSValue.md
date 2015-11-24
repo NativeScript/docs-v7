@@ -8,5 +8,5 @@ description: "Object css-value.CSSValue"
 ##### Properties
  - **type** - _String_.
  - **string** - _String_.
- - **unit** - _String_.
- - **value** - _Number_.
+ - **unit** - _(optional)_ - _String_.
+ - **value** - _(optional)_ - _Number_.

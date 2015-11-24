@@ -72,6 +72,9 @@ Represents as style object containing all the style properties for a particular 
   Gets or sets the visibility style property.
  - **opacity** - _Number_.    
   Gets or sets the opacity style property.
+ - **textDecoration** - _String_.
+ - **textTransform** - _String_.
+ - **whiteSpace** - _String_.
 
 ##### Instance Functions
  - **_beginUpdate()**
@@ -81,3 +84,5 @@ Represents as style object containing all the style properties for a particular 
  - **_inheritStyleProperty(** property [_Property_](../../ui/core/dependency-observable/Property.md) **)**
    - **property** - [_Property_](../../ui/core/dependency-observable/Property.md)
  - **_inheritStyleProperties()**
+ - **_updateTextDecoration()**
+ - **_updateTextTransform()**

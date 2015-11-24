@@ -275,6 +275,7 @@ Returns a value indicating whether this view or one of its descendants actually 
  - **_onDetached(** force? _Boolean_ **)**
    - **force** - _(optional)_ - _Boolean_
  - **_createUI()**
+ - **_shouldApplyStyleHandlers()**
  - **_checkMetadataOnPropertyChanged(** metadata [_PropertyMetadata_](../../../ui/core/dependency-observable/PropertyMetadata.md) **)**
    - **metadata** - [_PropertyMetadata_](../../../ui/core/dependency-observable/PropertyMetadata.md)
  - **_updateLayout()**
@@ -294,3 +295,6 @@ Returns a value indicating whether this view or one of its descendants actually 
    - _**return**_ - { left: _Number_, top: _Number_, right: _Number_, bottom: _Number_ }
  - **_goToVisualState(** state _String_ **)**
    - **state** - _String_
+ - **_setNativeViewFrame(** nativeView _Object_, frame _Object_ **)**
+   - **nativeView** - _Object_
+   - **frame** - _Object_

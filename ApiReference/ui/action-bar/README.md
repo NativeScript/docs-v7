@@ -23,3 +23,11 @@ Object | Description
 [AndroidActionItemSettings](../../ui/action-bar/AndroidActionItemSettings.md) | Represents Android specific options of the action item.
 [IOSActionItemSettings](../../ui/action-bar/IOSActionItemSettings.md) | Represents iOS specific options of the action item.
 [AndroidActionBarSettings](../../ui/action-bar/AndroidActionBarSettings.md) | Represents Android specific options of the action bar.
+
+##### Functions
+ - **_setNavBarColor(** navBar _Object_, color _Object_ **)**
+   - **navBar** - _Object_
+   - **color** - _Object_
+ - **_setNavBarBackgroundColor(** navBar _Object_, color _Object_ **)**
+   - **navBar** - _Object_
+   - **color** - _Object_

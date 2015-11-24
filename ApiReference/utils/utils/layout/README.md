@@ -41,3 +41,13 @@ Utility module related to layout.
  - **getDisplayDensity()** _Number_  
      Gets display density for the current device.
    - _**return**_ - _Number_
+ - **toDevicePixels(** value _Number_ **)** _Number_  
+     Convert value to device pixels.
+   - **value** - _Number_  
+     - The pixel to convert.
+   - _**return**_ - _Number_
+ - **toDeviceIndependentPixels(** value _Number_ **)** _Number_  
+     Convert value to device independent pixels.
+   - **value** - _Number_  
+     - The pixel to convert.
+   - _**return**_ - _Number_

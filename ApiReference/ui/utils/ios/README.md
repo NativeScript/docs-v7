@@ -6,13 +6,13 @@ description: "Module ui/utils.ios"
 ## Namespace: "ui/utils".ios
 
 ##### Functions
- - **getActualHeight(** uiView _UIView_ **)** _Number_  
+ - **getActualHeight(** uiView _Object_ **)** _Number_  
      Gets actual height of a [UIView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/) widget.
-   - **uiView** - _UIView_  
+   - **uiView** - _Object_  
      - An instance of UIView.
    - _**return**_ - _Number_
- - **_layoutRootView(** rootView [_View_](../../../ui/core/view/View.md), parentBounds _CGRect_ **)**
+ - **_layoutRootView(** rootView [_View_](../../../ui/core/view/View.md), parentBounds _Object_ **)**
    - **rootView** - [_View_](../../../ui/core/view/View.md)
-   - **parentBounds** - _CGRect_
+   - **parentBounds** - _Object_
  - **getStatusBarHeight()** _Number_
    - _**return**_ - _Number_

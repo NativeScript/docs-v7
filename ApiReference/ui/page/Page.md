@@ -36,6 +36,8 @@ Represents a logical unit for navigation (inside Frame).
   Gets the Frame object controlling this instance.
  - **actionBar** - [_ActionBar_](../../ui/action-bar/ActionBar.md).    
   Gets the ActionBar for this page.
+ - **modal** - [_Page_](../../ui/page/Page.md).    
+  Returns the current modal view that this page is showing (is parent of), if any.
 
 ##### Instance Functions
  - **addCss(** cssString _String_ **)**  
@@ -89,16 +91,24 @@ Represents a logical unit for navigation (inside Frame).
      - A function that will be called when the page is closed. Any arguments provided when calling ShownModallyData.closeCallback will be available here.
    - **fullscreen** - _(optional)_ - _Boolean_  
      - An optional parameter specifying whether to show the modal page in full-screen mode.
+ - **showModal()**  
+     Shows the page as a modal view.
  - **closeModal()**  
-     Closes the current modal dialog that this page is showing.
- - **onNavigatingTo(** context _Object_ **)**  
+     Closes the current modal view that this page is showing.
+ - **onNavigatingTo(** context _Object_, isBackNavigation _Boolean_ **)**  
      A method called before navigating to the page.
    - **context** - _Object_  
      - The data passed to the page through the NavigationEntry.context property.
- - **onNavigatedTo()**  
+   - **isBackNavigation** - _Boolean_  
+     - True if the Page is being navigated from using the Frame.goBack() method, false otherwise.
+ - **onNavigatedTo(** isBackNavigation _Boolean_ **)**  
      A method called after navigated to the page.
- - **onNavigatingFrom()**  
+   - **isBackNavigation** - _Boolean_  
+     - True if the Page is being navigated from using the Frame.goBack() method, false otherwise.
+ - **onNavigatingFrom(** isBackNavigation _Boolean_ **)**  
      A method called before navigating from the page.
+   - **isBackNavigation** - _Boolean_  
+     - True if the Page is being navigated from using the Frame.goBack() method, false otherwise.
  - **onNavigatedFrom(** isBackNavigation _Boolean_ **)**  
      A method called after navigated from the page.
    - **isBackNavigation** - _Boolean_  

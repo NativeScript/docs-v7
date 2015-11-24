@@ -28,9 +28,9 @@ description: "Class ui/styling/font.Font"
 ##### Instance Functions
  - **getAndroidTypeface()** _Object_
    - _**return**_ - _Object_
- - **getUIFont(** defaultFont _UIFont_ **)** _UIFont_
-   - **defaultFont** - _UIFont_
-   - _**return**_ - _UIFont_
+ - **getUIFont(** defaultFont _Object_ **)** _Object_
+   - **defaultFont** - _Object_
+   - _**return**_ - _Object_
  - **withFontFamily(** family _String_ **)** [_Font_](../../../ui/styling/font/Font.md)
    - **family** - _String_
    - _**return**_ - [_Font_](../../../ui/styling/font/Font.md)

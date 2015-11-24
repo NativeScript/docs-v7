@@ -6,6 +6,6 @@ description: "Module ui/styling/background.ios"
 ## Namespace: "ui/styling/background".ios
 
 ##### Functions
- - **createBackgroundUIColor(** view [_View_](../../../../ui/core/view/View.md) **)** _UIColor_
+ - **createBackgroundUIColor(** view [_View_](../../../../ui/core/view/View.md) **)** _Object_
    - **view** - [_View_](../../../../ui/core/view/View.md)
-   - _**return**_ - _UIColor_
+   - _**return**_ - _Object_

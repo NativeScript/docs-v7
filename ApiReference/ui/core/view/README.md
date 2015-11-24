@@ -15,11 +15,12 @@ Class | Description
 [View](../../../ui/core/view/View.md) | This class is the base class for all UI components. 
 A View occupies a rectangular area on the screen and is responsible for drawing and layouting of all UI components within. 
 [CustomLayoutView](../../../ui/core/view/CustomLayoutView.md) | Base class for all UI components that implements custom layouts. 
-[NativeViewGroup](../../../ui/core/view/NativeViewGroup.md) | 
 
 Object | Description
 ------|------------
 [Options](../../../ui/core/view/Options.md) | Defines interface for an optional parameter used to create a view.
+[Template](../../../ui/core/view/Template.md) | Defines an interface for a View factory function.
+Commonly used to specify the visualization of data objects.
 [AddArrayFromBuilder](../../../ui/core/view/AddArrayFromBuilder.md) | Defines an interface for adding arrays declared in xml.
 [AddChildFromBuilder](../../../ui/core/view/AddChildFromBuilder.md) | Defines an interface for adding a child element declared in xml.
 [ApplyXmlAttributes](../../../ui/core/view/ApplyXmlAttributes.md) | Defines an interface used to create a member of a class from string representation (used in xml declaration).

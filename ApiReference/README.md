@@ -72,6 +72,7 @@
  - ["ui/slider"](ui/slider/)
  - ["ui/styling"](ui/styling/)
  - ["ui/styling/background"](ui/styling/background/)
+ - ["ui/styling/background"](ui/styling/background/)
  - ["ui/styling/css-selector"](ui/styling/css-selector/)
  - ["ui/styling/font"](ui/styling/font/)
  - ["ui/styling/style-property"](ui/styling/style-property/)

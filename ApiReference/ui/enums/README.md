@@ -32,6 +32,10 @@ Namespace | Description
 [AndroidActionBarIconVisibility](../../ui/enums/AndroidActionBarIconVisibility/) | Specifies the visibility of the application bar icon
 [AndroidActionItemPosition](../../ui/enums/AndroidActionItemPosition/) | Specifies android MenuItem position.
 [FontStyle](../../ui/enums/FontStyle/) | Specifies different font styles.
+[TextDecoration](../../ui/enums/TextDecoration/) | Specifies different text decorations.
+[TextTransform](../../ui/enums/TextTransform/) | Specifies different text transforms.
+[WhiteSpace](../../ui/enums/WhiteSpace/) | Specifies different white spaces.
 [FontWeight](../../ui/enums/FontWeight/) | Specifies different font weights.
 [BackgroundRepeat](../../ui/enums/BackgroundRepeat/) | Specifies background repeat.
 [IOSActionItemPosition](../../ui/enums/IOSActionItemPosition/) | Specifies android MenuItem position.
+[AnimationCurve](../../ui/enums/AnimationCurve/) | Represents an animation curve type.
