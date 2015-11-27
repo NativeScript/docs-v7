@@ -1,6 +1,6 @@
 ---
 nav-title: Android Runtime Changelog
-title: Android Runtime Changelog
+title: Android Runtime
 description: NativeScript Android Runtime Changelog
 position: 4
 ---

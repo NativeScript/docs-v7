@@ -15,8 +15,7 @@ Cross Platform Modules Changelog
     `xmlns="http://schemas.nativescript.org/tns.xsd"`.
     For convenience, the file can now get downloaded via the [same URL](http://schemas.nativescript.org/tns.xsd).
 
-Fixed
-=========
+### Fixed
 
 - [(#1089)](https://github.com/NativeScript/NativeScript/pull/1089) http toString will raise error if response cannot be converted to string
 
@@ -78,8 +77,7 @@ Fixed
 
 - [(#642)](https://github.com/NativeScript/NativeScript/issues/642) Ability to style other native widgets
 
-New
-=========
+### New
 
 - [(#1001)](https://github.com/NativeScript/NativeScript/pull/1001) Embed utility fonts: Awesome, Icons, etc
 

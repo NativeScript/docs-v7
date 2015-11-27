@@ -5,6 +5,26 @@ description: NativeScript iOS Runtime Changelog
 position: 3
 ---
 
+1.5.0
+=====
+
+## Bug Fixes
+- [Unicode console logs in stderr](https://github.com/NativeScript/ios-runtime/issues/28)
+- [Fix out struct marshalling](https://github.com/NativeScript/ios-runtime/pull/370)
+- [Prefix modulemap link directives with "lib" as the linker would](https://github.com/NativeScript/ios-runtime/pull/381)
+- [Log Clang diagnostics when parsing modulemaps](https://github.com/NativeScript/ios-runtime/issues/316)
+- [Metadata generator build fails on older machines](https://github.com/NativeScript/ios-runtime/issues/388)
+- Fix some errors in TypeScript declarations - [#33](https://github.com/NativeScript/ios-metadata-generator/pull/33), [#34](https://github.com/NativeScript/ios-metadata-generator/pull/34)
+
+## What's New
+
+- [Add more bridged types](https://github.com/NativeScript/ios-runtime/pull/358)
+- [Implement `console.dir` method](https://github.com/NativeScript/ios-runtime/commit/a654ad28e8e78b29a5b0cd3c60306836e955fb0a)
+
+## Breaking Changes
+- [Automatic memory management of CoreFoundation functions marked with `CF_IMPLICIT_BRIDGING_ENABLED`](https://github.com/NativeScript/ios-runtime/pull/351)
+- [Manual memory management of CoreFoundation functions not-marked with `CF_IMPLICIT_BRIDGING_ENABLED`](https://github.com/NativeScript/ios-runtime/pull/386)
+
 1.4.1
 ==
 
