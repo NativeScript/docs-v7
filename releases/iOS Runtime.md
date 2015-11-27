@@ -21,7 +21,6 @@ previous_url: /Changelogs/iOS Runtime
 
 - [Add more bridged types](https://github.com/NativeScript/ios-runtime/pull/358)
 - [Implement `console.dir` method](https://github.com/NativeScript/ios-runtime/commit/a654ad28e8e78b29a5b0cd3c60306836e955fb0a)
-- [Persist NativeScript Inspector breakpoints](https://github.com/NativeScript/ios-runtime/pull/374)
 
 ## Breaking Changes
 - [Automatic memory management of CoreFoundation functions marked with `CF_IMPLICIT_BRIDGING_ENABLED`](https://github.com/NativeScript/ios-runtime/pull/351)
