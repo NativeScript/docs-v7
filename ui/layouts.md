@@ -10,7 +10,7 @@ previous_url: /layouts
 
 NativeScript provides a recursive layout system which sizes and positions [views][views] on the screen.
 
-* [Layouting](#layouting)
+* [Layout Process](#layout-process)
 	* [Measure Pass](#measure-pass)
 	* [Layout Pass](#layout-pass)
 	* [Alignment](#alignment)
@@ -19,12 +19,12 @@ NativeScript provides a recursive layout system which sizes and positions [views
 	* [Layout Paddings](#layout-paddings)
 	* [Layout Containers](#layout-containers)
 	* [Repeating layout children](#repeating-layout-children)
- 
-## Layouting
 
-Layouting is the process of measuring and positioning the child views of a [Layout][Layout] container. Layouting is an intensive process whose speed and performance depend on the count of the children and the complexity of the layout container. For example, a simple layout container such as [AbsoluteLayout][AbsoluteLayout] might perform better than a more complex layout container, such as [GridLayout][GridLayout].
+## Layout Process
 
-Layouting completes in two passes - a measure pass and a layout pass. Every layout container provides its own `onMeasure()` and `onLayout()` methods to achieve its own specific layouting.
+Layout is the process of measuring and positioning the child views of a [Layout][Layout] container. Layout is an intensive process whose speed and performance depend on the count of the children and the complexity of the layout container. For example, a simple layout container such as [AbsoluteLayout][AbsoluteLayout] might perform better than a more complex layout container, such as [GridLayout][GridLayout].
+
+Layout completes in two passes - a measure pass and a layout pass. Every layout container provides its own `onMeasure()` and `onLayout()` methods to achieve its own specific layout.
 
 ### Measure Pass
 
@@ -53,7 +53,7 @@ During the layout pass, each [View][View] is placed in a specific layout slot. T
 
 ### Alignment
 
-Layouting applies horizontal and vertical alignment only when an element is allocated more size than it needs.
+Layout applies horizontal and vertical alignment only when an element is allocated more size than it needs.
 
 The following table shows the valid values of `horizontalAlignment`.
 
@@ -85,15 +85,15 @@ When you set margins through XML, you can choose between the following approache
 
 ## Layouts
 
-`Layout` is the base class for all views that provide positioning of child elements. 
+`Layout` is the base class for all views that provide positioning of child elements.
 
 You can use the various layout containers to position elements. They evaluate the base properties of [View][View] such as `width`, `height`, `minWidth` and alignments, and expose additional properties for positioning child views (such as the four paddings).
 
 ### Layout Paddings
 
-The four padding properties (`paddingTop`, `paddingRight`, `paddingBottom` and `paddingLeft`) describe the distance between the layout container and its children. 
+The four padding properties (`paddingTop`, `paddingRight`, `paddingBottom` and `paddingLeft`) describe the distance between the layout container and its children.
 
-When set paddings through XML, you can choose between the following approaches. 
+When set paddings through XML, you can choose between the following approaches.
 
 * **Set one value**: Provide a single value which will be applied on all sides of the view.
 * **Set two values**: Provide two values. The first value is applied to the top side, the second value is applied to the right side. Next, the first value is applied to the bottom and the second value - the left side (in that order).
@@ -104,7 +104,7 @@ When set paddings through XML, you can choose between the following approaches.
 The following table shows predefined layouts that NativeScript provides.
 
 | Layouts  | Description  | Screenshot |
-| -------- | ------------ | ---------- | 
+| -------- | ------------ | ---------- |
 | [AbsoluteLayout][AbsoluteLayout] | This layout lets you set exact locations (left/top coordinates) for its children. | ![AbsoluteLayout android](http://docs.nativescript.org/img/gallery/android/absoluteLayoutPage.png "AbsoluteLayout android")|
 | [DockLayout][DockLayout] | This layout arranges its children at its outer edges and allows its last child to take up the remaining space. | ![DockLayout android](http://docs.nativescript.org/img/gallery/android/dockLayoutPage.png "DockLayout android")|
 | [GridLayout][GridLayout] | This layout defines a rectangular layout area that consists of columns and rows. | ![GridLayout android](http://docs.nativescript.org/img/gallery/android/gridLayoutPage.png "GridLayout android")|
