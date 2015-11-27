@@ -6,8 +6,8 @@ description: "Class ui/core/view.View"
 ## Class: "ui/core/view".View  
 _Inherits:_ [_ProxyObject_](../../../ui/core/proxy/ProxyObject.md)  
 _Conform to:_ [_ApplyXmlAttributes_](../../../ui/core/view/ApplyXmlAttributes.md)  
-This class is the base class for all UI components. 
-A View occupies a rectangular area on the screen and is responsible for drawing and layouting of all UI components within. 
+This class is the base class for all UI components.
+A View occupies a rectangular area on the screen and is responsible for drawing and laying out of all UI components within. 
 
 ##### Static Properties
  - **loadedEvent** - _String_.    
@@ -195,7 +195,7 @@ Returns a value indicating whether this view or one of its descendants actually 
  - **setInlineStyle(** style _String_ **)**  
      Sets in-line CSS string as style.
    - **style** - _String_  
-     - In-line CSS string. 
+     - In-line CSS string.
  - **getGestureObservers(** type [_GestureTypes_](../../../ui/gestures/GestureTypes.md) **)** __...
    - **type** - [_GestureTypes_](../../../ui/gestures/GestureTypes.md)
    - _**return**_ - __ of [_GesturesObserver_](../../../ui/gestures/GesturesObserver.md)
@@ -206,11 +206,11 @@ Returns a value indicating whether this view or one of its descendants actually 
    - **callback** - _Function_(args [_GestureEventData_](../../../ui/gestures/GestureEventData.md))  
      - A function that will be executed when gesture is received.
    - **thisArg** - _(optional)_ - _Object_  
-     - An optional parameter which will be used as `this` context for callback execution. 
+     - An optional parameter which will be used as `this` context for callback execution.
  - **on(** eventNames _String_, gestures, GestureTypes, callback _Function_..., thisArg? _Object_ **)**  
      A basic method signature to hook an event listener (shortcut alias to the addEventListener method).
    - **eventNames** - _String_  
-     - String corresponding to events (e.g. "propertyChange"). Optionally could be used more events separated by `,` (e.g. "propertyChange", "change") or you can use gesture types. 
+     - String corresponding to events (e.g. "propertyChange"). Optionally could be used more events separated by `,` (e.g. "propertyChange", "change") or you can use gesture types.
    - **gestures**
    - **GestureTypes**
    - **callback** - _Function_(data [_EventData_](../../../data/observable/EventData.md))  
