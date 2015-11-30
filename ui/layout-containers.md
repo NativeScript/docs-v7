@@ -162,6 +162,34 @@ None.
 
 ![StackLayout](http://docs.nativescript.org/img/modules/layouts/stack-layout2.png "StackLayout")
 
+### Sample (horizontal alignment of children)
+```XML
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+  <StackLayout orientation="vertical" width="210" height="210" style.backgroundColor="lightgray">
+    <Label text="Label 1" horizontalAlignment="left" backgroundColor="red"/>
+    <Label text="Label 2" horizontalAlignment="center" backgroundColor="green"/>
+    <Label text="Label 3" horizontalAlignment="right" backgroundColor="blue"/>
+    <Label text="Label 4" horizontalAlignment="stretch" backgroundColor="yellow"/>
+  </StackLayout>
+</Page>
+```
+
+![StackLayout](http://docs.nativescript.org/img/modules/layouts/stack-layout3.png "StackLayout")
+
+### Sample (vertical alignment of children)
+```XML
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+  <StackLayout orientation="horizontal" width="210" height="210" style.backgroundColor="lightgray">
+    <Label text="Label 1" verticalAlignment="top" backgroundColor="red"/>
+    <Label text="Label 2" verticalAlignment="center" backgroundColor="green"/>
+    <Label text="Label 3" verticalAlignment="bottom" backgroundColor="blue"/>
+    <Label text="Label 4" verticalAlignment="stretch" backgroundColor="yellow"/>
+  </StackLayout>
+</Page>
+```
+
+![StackLayout](http://docs.nativescript.org/img/modules/layouts/stack-layout4.png "StackLayout")
+
 ## [WrapLayout]("http://docs.nativescript.org/ApiReference/ui/layouts/wrap-layout/HOW-TO.md")
 
 ### WrapLayout Properties
