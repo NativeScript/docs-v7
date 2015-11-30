@@ -14,6 +14,7 @@ previous_url: /layout-containers
 * [WrapLayout](#wraplayout)
 
 ## [AbsoluteLayout]("http://docs.nativescript.org/ApiReference/ui/layouts/absolute-layout/HOW-TO.md")
+The AbsoluteLayout us the simplest layout in NativeScript. It uses absolute left-top coordinates to position its children. The AbsoluteLayout will not enforce any layout constraints on its children and will not resize them at runtime when its size changes.
 
 ### AbsoluteLayout Properties
 None.
@@ -37,6 +38,18 @@ None.
 ```
 
 ![AbsoluteLayout](http://docs.nativescript.org/img/modules/layouts/absolute-layout.png "AbsoluteLayout")
+
+### Sample (margin)
+```XML
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+  <AbsoluteLayout width="210" height="210" style.backgroundColor="lightgray">
+    <Label text="no margin" left="10" top="10" width="100" height="100" backgroundColor="red"/>
+    <Label text="margin=`30`" left="10" top="10" margin="30" width="100" height="90" backgroundColor="green"/>
+  </AbsoluteLayout>
+</Page>
+```
+
+![AbsoluteLayout](http://docs.nativescript.org/img/modules/layouts/absolute-layout2.png "AbsoluteLayout")
 
 ## [DockLayout]("http://docs.nativescript.org/ApiReference/ui/layouts/dock-layout/HOW-TO.md")
 
