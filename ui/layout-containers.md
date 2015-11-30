@@ -13,7 +13,7 @@ previous_url: /layout-containers
 * [StackLayout](#stacklayout)
 * [WrapLayout](#wraplayout)
 
-## [AbsoluteLayout]("../ApiReference/ui/layouts/absolute-layout/HOW-TO.md")
+## [AbsoluteLayout]("http://docs.nativescript.org/ApiReference/ui/layouts/absolute-layout/HOW-TO.md")
 
 ### AbsoluteLayout Properties
 None.
@@ -36,9 +36,9 @@ None.
 </Page>
 ```
 
-![AbsoluteLayout](../img/modules/layouts/absolute-layout.png "AbsoluteLayout")
+![AbsoluteLayout](http://docs.nativescript.org/img/modules/layouts/absolute-layout.png "AbsoluteLayout")
 
-## [DockLayout]("../ApiReference/ui/layouts/dock-layout/HOW-TO.md")
+## [DockLayout]("http://docs.nativescript.org/ApiReference/ui/layouts/dock-layout/HOW-TO.md")
 
 ### DockLayout Properties
 | Property | Description |
@@ -62,7 +62,7 @@ None.
 </Page>
 ```
 
-![DockLayout1](../img/modules/layouts/dock-layout1.png "DockLayout1")
+![DockLayout1](http://docs.nativescript.org/img/modules/layouts/dock-layout1.png "DockLayout1")
 
 ### Sample (stretchLastChild="true")
 ```XML
@@ -76,9 +76,9 @@ None.
 </Page>
 ```
 
-![DockLayout2](../img/modules/layouts/dock-layout2.png "DockLayout2")
+![DockLayout2](http://docs.nativescript.org/img/modules/layouts/dock-layout2.png "DockLayout2")
 
-## [GridLayout]("../ApiReference/ui/layouts/grid-layout/HOW-TO.md")
+## [GridLayout]("http://docs.nativescript.org/ApiReference/ui/layouts/grid-layout/HOW-TO.md")
 
 ### GridLayout Properties
 | Property | Description |
@@ -109,9 +109,9 @@ None.
 </Page>
 ```
 
-![GridLayout](../img/modules/layouts/grid-layout.png "GridLayout")
+![GridLayout](http://docs.nativescript.org/img/modules/layouts/grid-layout.png "GridLayout")
 
-## [StackLayout]("../ApiReference/ui/layouts/stack-layout/HOW-TO.md")
+## [StackLayout]("http://docs.nativescript.org/ApiReference/ui/layouts/stack-layout/HOW-TO.md")
 
 ### StackLayout Properties
 | Property    | Description |
@@ -133,7 +133,7 @@ None.
 </Page>
 ```
 
-![StackLayout](../img/modules/layouts/stack-layout1.png "StackLayout")
+![StackLayout](http://docs.nativescript.org/img/modules/layouts/stack-layout1.png "StackLayout")
 
 ### Sample (orientation="horizontal")
 ```XML
@@ -147,9 +147,9 @@ None.
 </Page>
 ```
 
-![StackLayout](../img/modules/layouts/stack-layout2.png "StackLayout")
+![StackLayout](http://docs.nativescript.org/img/modules/layouts/stack-layout2.png "StackLayout")
 
-## [WrapLayout]("../ApiReference/ui/layouts/wrap-layout/HOW-TO.md")
+## [WrapLayout]("http://docs.nativescript.org/ApiReference/ui/layouts/wrap-layout/HOW-TO.md")
 
 ### WrapLayout Properties
 | Property    | Description |
@@ -173,7 +173,7 @@ None.
 </Page>
 ```
 
-![WrapLayout](../img/modules/layouts/wrap-layout1.png "WrapLayout")
+![WrapLayout](http://docs.nativescript.org/img/modules/layouts/wrap-layout1.png "WrapLayout")
 
 ### Sample (orientation="vertical")
 ```XML
@@ -187,7 +187,7 @@ None.
 </Page>
 ```
 
-![WrapLayout](../img/modules/layouts/wrap-layout2.png "WrapLayout")
+![WrapLayout](http://docs.nativescript.org/img/modules/layouts/wrap-layout2.png "WrapLayout")
 
 ### Sample (itemWidth="30" itemHeight="30")
 ```XML
@@ -201,4 +201,4 @@ None.
 </Page>
 ```
 
-![WrapLayout](../img/modules/layouts/wrap-layout3.png "WrapLayout")
+![WrapLayout](http://docs.nativescript.org/img/modules/layouts/wrap-layout3.png "WrapLayout")
