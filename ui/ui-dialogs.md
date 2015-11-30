@@ -1,7 +1,7 @@
 ---
 title: Dialogs
 description: Learn how to create alerts, confirmations, prompts, logins and other dialogs in your NativeScript apps.
-position: 6
+position: 7
 slug: dialogs
 previous_url: /ui-dialogs
 ---
@@ -20,7 +20,7 @@ NativeScript lets you create dialogs in your app in a manner similar to the web 
 
 ### Alert
 
-**Web-Browser Style** 
+**Web-Browser Style**
 
 ```JavaScript
 var dialogs = require("ui/dialogs");
