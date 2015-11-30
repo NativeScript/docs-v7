@@ -110,7 +110,7 @@ The following table shows predefined layouts that NativeScript provides.
 | [StackLayout][StackLayout] | This layout arranges its children horizontally or vertically. The direction is set with the orientation property. | ![StackLayout android](http://docs.nativescript.org/img/gallery/android/stackLayoutPage.png "StackLayout android")|
 | [WrapLayout][WrapLayout] | This layout positions its children in rows or columns, based on the orientation property, until the space is filled and then wraps them on a new row or column. | ![WrapLayout android](http://docs.nativescript.org/img/gallery/android/wrapLayoutPage.png "WrapLayout android")|
 
-[views]: {%slug components %}
+[views]: {% slug components %}
 [View]: http://docs.nativescript.org/ApiReference/ui/core/view/View.md
 [Layout]: http://docs.nativescript.org/ApiReference/ui/layouts/layout/Layout.md
 [AbsoluteLayout]: http://docs.nativescript.org/ApiReference/ui/layouts/absolute-layout/HOW-TO.md
