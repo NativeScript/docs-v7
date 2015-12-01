@@ -1,7 +1,7 @@
 ---
 title: Gestures
 description: Learn what are the touch gestures that NativeScript supports and how to make use of them.
-position: 7
+position: 8
 slug: gestures
 previous_url: /gestures
 
@@ -73,7 +73,7 @@ label.on(gestures.GestureTypes.doubleTap, function (args: gestures.GestureEventD
 ```
 Possible implementation:
 * Scale up the object with a predefined percentage, centered around the double-tapped region. Keeping repeating the gesture continues to scale up until the maximum scale is reached.
-* Scale up the smallest targetable view or returns it to its original scale in nested views. 
+* Scale up the smallest targetable view or returns it to its original scale in nested views.
 * Select text.
 
 ## Long Press
@@ -114,7 +114,7 @@ label.on(gestures.GestureTypes.swipe, function (args: gestures.SwipeGestureEvent
     console.log("Swipe Direction: " + args.direction);
 });
 ```
-Possible implementation: Navigate between views in the same hierarchy. 
+Possible implementation: Navigate between views in the same hierarchy.
 
 ## Pan
 

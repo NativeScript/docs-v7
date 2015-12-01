@@ -1,7 +1,7 @@
 ---
 title: Styling
 description: How to use Cascading Style Sheets (CSS) in NativeScript to change the appearance of GUI elements
-position: 4
+position: 5
 slug: styling
 previous_url: /styling
 ---
@@ -205,7 +205,7 @@ The `font-family` property can hold several values. The first supported font in 
 * monospace (ex. Courier New)
 
 Platform specifics:
-* Android: The supported fonts depend very much on the system thus using the generic font-families or [custom-fonts](#custom-fonts) is recommended. 
+* Android: The supported fonts depend very much on the system thus using the generic font-families or [custom-fonts](#custom-fonts) is recommended.
 * iOS: You can check the [supported fonts in iOS 7](https://support.apple.com/en-us/HT202771).
 
 ### Custom Fonts

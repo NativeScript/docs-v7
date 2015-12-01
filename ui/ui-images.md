@@ -1,17 +1,17 @@
 ---
 title: Images
-description: How to work with images in NativeScritp application.
-position: 5
+description: How to work with images in NativeScript application.
+position: 6
 slug: images
 previous_url: /ui-images
 ---
 
 # Working with Images
-In this article we will look in the different ways to show images in a NativeScript application. 
+In this article we will look in the different ways to show images in a NativeScript application.
 Images are added to application either declaratively(XML) or with code(JS):
 
 ```XML
-<Image src="~/logo.png" / > 
+<Image src="~/logo.png" / >
 ```
 ```JavaScript
 var image = new imageModule.Image();
@@ -37,7 +37,7 @@ You can also use the [image-source API](http://docs.nativescript.org/ApiReferenc
 ## Load Images from URL
 Web images have `http://` or `https://` prefix. When such image is loaded, an asynchronous http request will be sent and the image will be shown if the request is successful.
 ```XML
-<Image src="https://www.google.com/images/errors/logo_sm_2.png" / > 
+<Image src="https://www.google.com/images/errors/logo_sm_2.png" / >
 ```
 
 You can manually create an [ImageSource instance from URL](http://docs.nativescript.org/ApiReference/image-source/HOW-TO.html#load-image-from-url)
@@ -46,7 +46,7 @@ You can manually create an [ImageSource instance from URL](http://docs.nativescr
 Using the `~/` prefix you can load images relative to the `App` folder inside your project.
 
 ```XML
-<Image src="~/images/logo.png" stretch ="none" / > 
+<Image src="~/images/logo.png" stretch ="none" / >
 ```
 
 You can manually create an [ImageSource instance from local file](http://docs.nativescript.org/ApiReference/image-source/HOW-TO.html#load-image-from-a-local-file)
@@ -57,7 +57,7 @@ You can manually create an [ImageSource instance from local file](http://docs.na
 Using the `res://` prefix you can load resource image. This is the suggested approach, as it uses the native methods for loading the best image for the current device screen density.
 
 ```XML
-<Image src="res://logo" stretch ="none" / > 
+<Image src="res://logo" stretch ="none" / >
 ```
 
 You can manually create an [ImageSource instance from resource](http://docs.nativescript.org/ApiReference/image-source/HOW-TO.html#load-image-using-resource-name)
@@ -67,7 +67,7 @@ You can manually create an [ImageSource instance from resource](http://docs.nati
 The actual resource images should be added to the `App_Resources` folder in you application and should follow the platform guidelines.
 
 ### Adding Android Resources
-Android resources should be added to the corresponding `drawable-XXX` folders inside the `App_Resources\Android` folder in your app: 
+Android resources should be added to the corresponding `drawable-XXX` folders inside the `App_Resources\Android` folder in your app:
 
 ![android resources](http://docs.nativescript.org/img/resources/android-resources.png "android resources")
 
@@ -78,8 +78,8 @@ IOS resources should be added inside the `App_Resources\ios` folder in your app.
 
 * **@1x** - iPad 2 and iPad mini (1st Generation)
 * **@2x** - iPhone 4s, iPhone 5, iPhone 6, iPad (retina)
-* **@3x** - iPhone 6 Plus 
- 
+* **@3x** - iPhone 6 Plus
+
 For more information see [Icon and Image Sizes](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1) in the iOS Developer Library.
 
 Once the NativeScript project is prepared(`tns ios prepare`) all the images will be copied to the `platforms\ios\<project-name>\Resources\Icons`.
