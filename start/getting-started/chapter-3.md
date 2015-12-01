@@ -39,7 +39,7 @@ exports.loaded = function() {
 
 When you run the app with this change, NativeScript triggers the `loaded()` function you created in the code-behind file, and you should see the word “hello” logged in your terminal.
 
-![](img/cli-getting-started/chapter3/terminal-1.png)
+![]({{site.baseurl}}/img/cli-getting-started/chapter3/terminal-1.png)
 
 This simple example shows you how you can append attributes to UI components to run functions in the view's accompanying JavaScript file. Let's use another one of these attributes: `tap`.
 
@@ -69,8 +69,8 @@ exports.register = function() {
 
 At this point, if you run your app and tap either of the buttons, you will see the appropriate alerts pop up. 
 
-![login 5](img/cli-getting-started/chapter3/ios/1.png)
-![login 5](img/cli-getting-started/chapter3/android/1.png)
+![login 5]({{site.baseurl}}/img/cli-getting-started/chapter3/ios/1.png)
+![login 5]({{site.baseurl}}/img/cli-getting-started/chapter3/android/1.png)
 
 Now that you can see tap gestures working, let's make them do something more interesting than open alerts.
 
@@ -98,12 +98,12 @@ exports.register = function() {
 ```
 <div class="exercise-end"></div>
 
-This function uses the [frame module](https://docs.nativescript.org/ApiReference/ui/frame/README.html), which is the NativeScript module responsible for navigation in your app. Here, you tell the topmost frame, or the frame the user actually sees, to navigate to the register view. 
+This function uses the [frame module]({{site.baseurl}}/ApiReference/ui/frame/README.html), which is the NativeScript module responsible for navigation in your app. Here, you tell the topmost frame, or the frame the user actually sees, to navigate to the register view. 
 
 If you run your app and click the “Sign up for Groceries” button, you will be sent to the registration screen, which we have pre-built for you.
 
-![navigate](img/cli-getting-started/chapter3/ios/2.gif)
-![navigate](img/cli-getting-started/chapter3/android/2.gif)
+![navigate]({{site.baseurl}}/img/cli-getting-started/chapter3/ios/2.gif)
+![navigate]({{site.baseurl}}/img/cli-getting-started/chapter3/android/2.gif)
 
 Now that you can access the registration page, go ahead and sign up for an account to use for the rest of this tutorial.
 
@@ -140,7 +140,7 @@ var viewModule = require("ui/core/view");
 var email;
 ```
 
-> **NOTE**: This line of code imports the [view module](https://docs.nativescript.org/ApiReference/ui/core/view/View.html), which is the base class for all UI components. The module provides a lot of functionality, including the ability to control properties of a view and its children. You're going to use it to get access to the email text field.
+> **NOTE**: This line of code imports the [view module]({{site.baseurl}}/ApiReference/ui/core/view/View.html), which is the base class for all UI components. The module provides a lot of functionality, including the ability to control properties of a view and its children. You're going to use it to get access to the email text field.
 
 Next, edit the `loaded()` function in `login.js` to get a reference to the email address text field:
 
@@ -151,7 +151,7 @@ exports.loaded = function(args) {
 };
 ```
 
-There are two things to note here. First, NativeScript passes `loaded` event handlers a reference to the `<Page>` in the function's argument, which is named `args` by convention. Second, you use the view module's [`getViewById()`](https://docs.nativescript.org/ApiReference/ui/core/view/View.html) function to get a reference to the text field component.
+There are two things to note here. First, NativeScript passes `loaded` event handlers a reference to the `<Page>` in the function's argument, which is named `args` by convention. Second, you use the view module's [`getViewById()`]({{site.baseurl}}/ApiReference/ui/core/view/View.html) function to get a reference to the text field component.
 
 Finally, edit the `signIn()` function to log the contents of the text field:
 
@@ -164,7 +164,7 @@ exports.signIn = function() {
 
 To see how this works in action, run the app, type some text in the email address text field, and tap the “Sign in” button. If all went well, you should see the text you typed logged in your terminal.
 
-![](img/cli-getting-started/chapter3/terminal-2.png)
+![]({{site.baseurl}}/img/cli-getting-started/chapter3/terminal-2.png)
 
 By accessing UI elements in JavaScript, you can control how those elements look and behave on the front end. However, accessing these UI components individually is a very manual process, and it makes it hard to track the state of the UI. This is where view models come in.
 
@@ -216,8 +216,8 @@ What's going on here?
 
 Simply put, properties placed on a page's binding context are available to XML elements using the `{% raw %}{{ propertyName }}{% endraw %}` syntax. Because JavaScript sets the view model's `email` to `"user@domain.com"`, and because you bound the email address text field to that property using `<TextField text="{% raw %}{{ email }}{% endraw %}">`, when you run this app you'll see "user@domain.com" appear on the front end.
 
-![](img/cli-getting-started/chapter3/ios/3.png)
-![](img/cli-getting-started/chapter3/android/3.png)
+![]({{site.baseurl}}/img/cli-getting-started/chapter3/ios/3.png)
+![]({{site.baseurl}}/img/cli-getting-started/chapter3/android/3.png)
 
 What's really cool is that the binding is two-way. Meaning, when the user types text in these text fields, those changes are immediately applied to your view model.
 

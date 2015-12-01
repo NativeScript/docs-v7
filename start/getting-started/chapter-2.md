@@ -67,7 +67,7 @@ applicationModule.mainModule = "views/login/login";
 applicationModule.start();
 ```
 
-Here, you're requiring, or importing, the [NativeScript application module](https://docs.nativescript.org/ApiReference/application/HOW-TO). Then, you set its `mainModule`, or the starting screen of your app to be the login screen, which lives in your app's `views/login` folder.
+Here, you're requiring, or importing, the [NativeScript application module]({{site.baseurl}}/ApiReference/application/HOW-TO). Then, you set its `mainModule`, or the starting screen of your app to be the login screen, which lives in your app's `views/login` folder.
 
 > **TIP**: JavaScript modules in NativeScript follow the [CommonJS specification](http://wiki.commonjs.org/wiki/CommonJS). This means you can use the [`require()` method](http://wiki.commonjs.org/wiki/Modules/1.1#Module_Context) to import modules, as is done above, as well as use the `export` keyword to expose a module's properties and methods, which we'll look at later in this chapter. These are the same constructs Node.js uses for JavaScript modules, so if you know how to use Node.js modules, you already know how to use NativeScript modules.
 
@@ -106,28 +106,28 @@ NativeScript UI components provide attributes to let you configure their behavio
 - `<TextField>`
     - `hint`: Used to show placeholder text in the TextField to tell the user what to type.
     - `secure`: A boolean attribute that determines whether the TextField's text should be masked, which is commonly done on password fields.
-    - `keyboardType`: The type of keyboard to present to the user for input. `keyboardType="email"` shows a keyboard optimized for entering email addresses. NativeScript currently supports [five types of keyboards](https://docs.nativescript.org/ApiReference/ui/enums/KeyboardType/README) for text fields.
+    - `keyboardType`: The type of keyboard to present to the user for input. `keyboardType="email"` shows a keyboard optimized for entering email addresses. NativeScript currently supports [five types of keyboards]({{site.baseurl}}/ApiReference/ui/enums/KeyboardType/README) for text fields.
 - `<Button>`
     - `text`: Controls the text displayed within the button.
 
 After you [run your app](#development-workflow) with this change, you will see a single `<Button>` component on the screen:
 
-![login 1](img/cli-getting-started/chapter2/ios/1.png)
-![login 1](img/cli-getting-started/chapter2/android/1.png)
+![login 1]({{site.baseurl}}/img/cli-getting-started/chapter2/ios/1.png)
+![login 1]({{site.baseurl}}/img/cli-getting-started/chapter2/android/1.png)
 
 You need to tell NativeScript how to layout the UI components in your page. Let's look at how to use NativeScript layouts to arrange these components on the screen.
 
-> **TIP**: The NativeScript docs include a [full list of the UI components and attributes](/ui-with-xml) with which you can build your apps. You can even [build your own, custom UI components](https://docs.nativescript.org/ui-with-xml#custom-components).
+> **TIP**: The NativeScript docs include a [full list of the UI components and attributes](/ui-with-xml) with which you can build your apps. You can even [build your own, custom UI components]({{site.baseurl}}/ui-with-xml#custom-components).
 
 ### Layouts 
 
 NativeScript provides several different layout containers that allow you to place UI components precisely where you want them to appear. 
 
-- The [Absolute Layout](https://docs.nativescript.org/ApiReference/ui/layouts/absolute-layout/HOW-TO.html) lets you position elements using explicit x and y coordinates. This is useful when you need to place elements in exact locations, for example showing an activity indicator widget in the top-left corner of your app.
-- The [Dock Layout](https://docs.nativescript.org/ApiReference/ui/layouts/dock-layout/HOW-TO.html) is useful for placing UI elements at the outer edges of your app. For example, a container docked at the bottom of the screen would be a good location for an ad.
-- The [Grid Layout](https://docs.nativescript.org/ApiReference/ui/layouts/grid-layout/HOW-TO.html) lets you divide your interface into a series of rows and columns, much like a `<table>` in HTML markup.
-- The [Stack Layout](https://docs.nativescript.org/ApiReference/ui/layouts/stack-layout/HOW-TO.html) lets you stack child UI components either vertically or horizontally.
-- The [Wrap Layout](https://docs.nativescript.org/ApiReference/ui/layouts/wrap-layout/HOW-TO.html) lets child UI components flow from one row or column to the next when space is filled.
+- The [Absolute Layout]({{site.baseurl}}/ApiReference/ui/layouts/absolute-layout/HOW-TO.html) lets you position elements using explicit x and y coordinates. This is useful when you need to place elements in exact locations, for example showing an activity indicator widget in the top-left corner of your app.
+- The [Dock Layout]({{site.baseurl}}/ApiReference/ui/layouts/dock-layout/HOW-TO.html) is useful for placing UI elements at the outer edges of your app. For example, a container docked at the bottom of the screen would be a good location for an ad.
+- The [Grid Layout]({{site.baseurl}}/ApiReference/ui/layouts/grid-layout/HOW-TO.html) lets you divide your interface into a series of rows and columns, much like a `<table>` in HTML markup.
+- The [Stack Layout]({{site.baseurl}}/ApiReference/ui/layouts/stack-layout/HOW-TO.html) lets you stack child UI components either vertically or horizontally.
+- The [Wrap Layout]({{site.baseurl}}/ApiReference/ui/layouts/wrap-layout/HOW-TO.html) lets child UI components flow from one row or column to the next when space is filled.
 
 > **TIP**:
 > * For an introduction to the other NativeScript layout elements, check out Jen Looper's article on [demystifying NativeScript layouts](https://www.nativescript.org/blog/demystifying-nativescript-layouts).
@@ -161,8 +161,8 @@ The stack layout is a UI component, and as such, it has attributes just like the
 
 After you run your app with this change, you'll see that your login page's UI components stack up:
 
-![login 2](img/cli-getting-started/chapter2/ios/2.png)
-![login 2](img/cli-getting-started/chapter2/android/2.png)
+![login 2]({{site.baseurl}}/img/cli-getting-started/chapter2/ios/2.png)
+![login 2]({{site.baseurl}}/img/cli-getting-started/chapter2/android/2.png)
 
 Although the UI components are in the correct order, they could use some spacing and color to make the app look a bit nicer. To do that let's look at another NativeScript feature: CSS.
 
@@ -256,8 +256,8 @@ NativeScript uses the `cssClass` attribute for adding CSS class names to UI comp
 
 With these changes in place, you'll notice that the app looks halfway decent now, and also has a distinctly different look on iOS and Android:
 
-![login 1](img/cli-getting-started/chapter2/ios/3.png)
-![login 1](img/cli-getting-started/chapter2/android/3.png)
+![login 1]({{site.baseurl}}/img/cli-getting-started/chapter2/ios/3.png)
+![login 1]({{site.baseurl}}/img/cli-getting-started/chapter2/android/3.png)
 
 Feel free to take some time to play with the look of this app before moving on. You can try adding some additional CSS class names, or adding some page-specific styles in your `login.css` file. When you're ready, let's move on and add an image to this login screen.
 
@@ -295,7 +295,7 @@ Although more complex than putting an image directly in the `app` folder, using 
 
 Once these files are in place the NativeScript framework knows how to pick the correct file; all you have to do is reference the image using `res://` and its base file name—i.e. `res://logo`. Here's what your login screen should look like on iOS and Android:
 
-![login 4](img/cli-getting-started/chapter2/ios/4.png)
-![login 4](img/cli-getting-started/chapter2/android/4.png)
+![login 4]({{site.baseurl}}/img/cli-getting-started/chapter2/ios/4.png)
+![login 4]({{site.baseurl}}/img/cli-getting-started/chapter2/android/4.png)
 
 At this point your UI looks good, but the app still doesn't actually do anything. Let's look at how you can use JavaScript to add some functionality.

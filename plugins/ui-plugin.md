@@ -28,7 +28,7 @@ Observable
 │   │   │   ├── View
 ```
 
-### [Observable](http://docs.nativescript.org/ApiReference/data/observable/Observable)
+### [Observable]({{site.baseurl}}/ApiReference/data/observable/Observable)
 This is the class that implements the [Observer](https://en.wikipedia.org/wiki/Observer_pattern) design-pattern. Every node within the Visual Tree should support the addEventListener/removeEventListener routine, hence the base class.
 
 ### [DependencyObservable](http://docs.nativescript.org/ApiReference/ui/core/dependency-observable/DependencyObservable)

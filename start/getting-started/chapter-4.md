@@ -33,7 +33,7 @@ Next, take a look in the `app/shared/view-models` folder, which contains a few v
 
 > **NOTE**: In a larger app, it's pretty common to place code that interacts with the backend in separate files, and not directly in the view models. But in our case, the connection code lives directly in the view model for simplicity—which is perfectly reasonable for small apps. 
 
-Note that the `register()` function uses the config module to get the path to the backend, as well as the [fetch module](https://docs.nativescript.org/ApiReference/fetch/HOW-TO.html) to make HTTP calls.
+Note that the `register()` function uses the config module to get the path to the backend, as well as the [fetch module]({{site.baseurl}}/ApiReference/fetch/HOW-TO.html) to make HTTP calls.
 
 ``` JavaScript
 var config = require("../../shared/config");
@@ -138,7 +138,7 @@ To utilize the `Promise` that the view model's `login()` function returns, you n
 
 In the case of Groceries, when the login works you're going to navigate the user to the list page, which you'll be building momentarily, and which will let the user add and remove groceries from a list. To do the navigation you'll use the same frame module you used earlier in this guide.
 
-The trickier situation is handling login failures, and for that you're going to use the dialog module. You can use this module to show [several types](https://docs.nativescript.org/ApiReference/ui/dialogs/HOW-TO.html) of popup UIs in your app, including action sheets, confirmation boxes, alert boxes, and prompts. It is a highly customizable module, and it lets you control the buttons in your alerts, their text, and the messaging in the alert itself. The dialog module's code is in the `node_modules/tns-core-modules/ui` folder with other UI widgets. Let's see how to use this widget on the login page.
+The trickier situation is handling login failures, and for that you're going to use the dialog module. You can use this module to show [several types]({{site.baseurl}}/ApiReference/ui/dialogs/HOW-TO.html) of popup UIs in your app, including action sheets, confirmation boxes, alert boxes, and prompts. It is a highly customizable module, and it lets you control the buttons in your alerts, their text, and the messaging in the alert itself. The dialog module's code is in the `node_modules/tns-core-modules/ui` folder with other UI widgets. Let's see how to use this widget on the login page.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Handle an error with a dialog window
@@ -170,8 +170,8 @@ exports.signIn = function() {
 
 This code handles both a successful and unsuccessful login. On success, you call the frame module's `navigate()` method to navigate the user to the (currently empty) list page. On failure, you use the dialog module to show the user an error message. Try inputting some invalid credentials to see what the dialog looks like.
 
-![login 8](img/cli-getting-started/chapter4/ios/1.png)
-![login 8](img/cli-getting-started/chapter4/android/1.png)
+![login 8]({{site.baseurl}}/img/cli-getting-started/chapter4/ios/1.png)
+![login 8]({{site.baseurl}}/img/cli-getting-started/chapter4/android/1.png)
 
 With that, the login page is completely functional. Now that you have user management working in your NativeScript app, let's move onto the page where users will manage their grocery list. To do that, you need a module that shows items in a list, which is exactly what the ListView module does.
 
@@ -209,7 +209,7 @@ Open `app/views/list/list.xml` and paste in the code below, which creates the li
 
 > **NOTE**: Notice that this page is going to use a `<GridLayout>` to layout the UI components on the screen. As you add more UI components, you'll start dividing the screen into rows and columns, but for now you're just going to let the `<ListView>` take up the full screen (which is the default behavior of a `<GridLayout>` with no attributes).
 
-As discussed earlier, even though you're using `<ListView>` in XML, the ListView module is still a NativeScript module. You can find its implementation in the `node_modules/tns-core-modules/ui/list-view` folder. If you want to, you could construct a ListView in pure JavaScript code in the code-behind file as shown in [this example](https://docs.nativescript.org/ApiReference/ui/list-view/HOW-TO.html). For most situations using the NativeScript UI modules in XML is easier, so we'll be sticking with XML usage throughout this tutorial.
+As discussed earlier, even though you're using `<ListView>` in XML, the ListView module is still a NativeScript module. You can find its implementation in the `node_modules/tns-core-modules/ui/list-view` folder. If you want to, you could construct a ListView in pure JavaScript code in the code-behind file as shown in [this example]({{site.baseurl}}/ApiReference/ui/list-view/HOW-TO.html). For most situations using the NativeScript UI modules in XML is easier, so we'll be sticking with XML usage throughout this tutorial.
 
 Note the use of `<ListView.itemTemplate>`. This tag gives you the ability to control how each of the ListView's items displays within the list. For now you're using a simple `<Label>` UI component to display the `{% raw %}{{ name }}{% endraw %}` of each grocery.
 
@@ -256,8 +256,8 @@ exports.loaded = function(args) {
 
 Here, you're creating a new Observable object called `pageData`, which you set as the page's `bindingContext` in the `load()` function. Inside the Observable, you set a single `"groceryList"` property to be a new instance of the ObservableArray module. Notice how the `"groceryList"` property corresponds to `<ListView items="{% raw %}{{ groceryList }}{% endraw %}">`, and each array entry's `"name"` property corresponds to `<Label text="{% raw %}{{ name }}{% endraw %}">`. If you run your app you'll see the list screen shows the hardcoded data:
 
-![list 1](img/cli-getting-started/chapter4/ios/2.png)
-![list 1](img/cli-getting-started/chapter4/android/2.png)
+![list 1]({{site.baseurl}}/img/cli-getting-started/chapter4/ios/2.png)
+![list 1]({{site.baseurl}}/img/cli-getting-started/chapter4/android/2.png)
 
 Now that we have items on the screen let's look at how you can tie this list to a backend instead of hardcoded data. To do so you'll switch the list page to use a view model, much like you did with the login page.
 
@@ -361,8 +361,8 @@ The code to make an HTTP call should look familiar, as it leverages the same fet
 
 If you load the app and log in with email address "tj.vantoll@gmail.com" and password "password", you should see a list of groceries that looks something like this:
 
-![list 2](img/cli-getting-started/chapter4/ios/3.png)
-![list 2](img/cli-getting-started/chapter4/android/3.png)
+![list 2]({{site.baseurl}}/img/cli-getting-started/chapter4/ios/3.png)
+![list 2]({{site.baseurl}}/img/cli-getting-started/chapter4/android/3.png)
 
 The cool thing here is the code you didn't have to write. Notice that there is no need to refresh the UI, or manually access the ListView UI component—all the view model does is push the JSON response to the ObservableArray, and the UI takes care of itself.
 
@@ -467,8 +467,8 @@ viewModel.add = function(grocery) {
 
 If you build and rerun your app, you'll find that you can add a grocery item and it will appear immediately in your list—and, all of this is completely driven by a backend service. Pretty cool, huh?
 
-![list 3](img/cli-getting-started/chapter4/ios/4.gif)
-![list 3](img/cli-getting-started/chapter4/android/4.gif)
+![list 3]({{site.baseurl}}/img/cli-getting-started/chapter4/ios/4.gif)
+![list 3]({{site.baseurl}}/img/cli-getting-started/chapter4/android/4.gif)
 
 Let's look at how you can polish this page with a NativeScript module for showing activity indicators.
 
@@ -503,9 +503,9 @@ In the code above you add a new `"isLoading"` flag to the list page's Observable
 
 You control where the ActivityIndicator displays by setting its `rowSpan` and `colSpan` attributes. In this case `rowSpan="2" colSpan="2"` makes the ActivityIndicator take up both rows and both columns of its parent GridLayout. Here's what the new ActivityIndicator looks like:
 
-![ActivityIndicator on iOS](img/cli-getting-started/chapter4/ios/5.gif)
-![ActivityIndicator on Android](img/cli-getting-started/chapter4/android/5.gif)
+![ActivityIndicator on iOS]({{site.baseurl}}/img/cli-getting-started/chapter4/ios/5.gif)
+![ActivityIndicator on Android]({{site.baseurl}}/img/cli-getting-started/chapter4/android/5.gif)
 
 Now that you have the login, registration, and list pages complete, you can enhance the app's functionality as a grocery list management tool. In the next chapters you'll add functionality such as email validation, social sharing, and more. And you'll use one of NativeScript's most useful feature to do so: npm modules.
 
-> **TIP**: There are several modules that come out of the box with your NativeScript install that we did not have time to cover in this guide—including a [location service](https://docs.nativescript.org/ApiReference/location/HOW-TO), a [file-system helper](https://docs.nativescript.org/ApiReference/file-system/HOW-TO), a [timer module](https://docs.nativescript.org/ApiReference/timer/HOW-TO), a [camera module](https://docs.nativescript.org/ApiReference/camera/HOW-TO), a [color module](https://docs.nativescript.org/ApiReference/color/HOW-TO), and a whole lot more. Make sure to peruse the “API Reference” of the docs, or just look around `node_modules/tns-core-modules` to see all of what's available.
+> **TIP**: There are several modules that come out of the box with your NativeScript install that we did not have time to cover in this guide—including a [location service]({{site.baseurl}}/ApiReference/location/HOW-TO), a [file-system helper]({{site.baseurl}}/ApiReference/file-system/HOW-TO), a [timer module]({{site.baseurl}}/ApiReference/timer/HOW-TO), a [camera module]({{site.baseurl}}/ApiReference/camera/HOW-TO), a [color module]({{site.baseurl}}/ApiReference/color/HOW-TO), and a whole lot more. Make sure to peruse the “API Reference” of the docs, or just look around `node_modules/tns-core-modules` to see all of what's available.

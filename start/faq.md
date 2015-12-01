@@ -32,4 +32,4 @@ The NativeScript Android runtime is built against Android API level 21; therefor
 
 ### How do I add a navigation bar to my iOS app?
 
-You can use the [`<ActionBar>` UI widget](http://docs.nativescript.org/ApiReference/ui/action-bar/HOW-TO).
+You can use the [`<ActionBar>` UI widget]({{site.baseurl}}/ApiReference/ui/action-bar/HOW-TO).
