@@ -36,7 +36,7 @@ Start exploring the documentation resources for NativeScript.
 * [Application Architecture]({% slug architecture %})
 * [Data Binding]({% slug binding %})
 * [Events]({% slug events %})
-* [Properties]({% slug props %})
+* [Properties]({% slug kiro %})
 * [Location]({% slug location %})
 * [Camera]({% slug camera %})
 * [The Basics]({% slug ui-basics %})
