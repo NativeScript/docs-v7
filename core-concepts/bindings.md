@@ -454,4 +454,4 @@ targetTextField.unbind("text");
 ``` TypeScript
 targetTextField.unbind("text");
 ```
-More information about binding can be found in [API-Ref](http://docs.nativescript.org/ApiReference/ui/core/bindable/Bindable.md). 
+More information about binding can be found in [API-Ref]({{site.baseurl}}/ApiReference/ui/core/bindable/Bindable.md). 

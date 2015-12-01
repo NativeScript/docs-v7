@@ -88,8 +88,8 @@ exports.register = function() {
 
 In this function, the user submits an email and password, and the value is sent to the view model for validation. If it passes, registration can proceed, otherwise you show an alert:
 
-![](img/cli-getting-started/chapter5/ios/1.png)
-![](img/cli-getting-started/chapter5/android/1.png)
+![]({{site.baseurl}}/img/cli-getting-started/chapter5/ios/1.png)
+![]({{site.baseurl}}/img/cli-getting-started/chapter5/android/1.png)
 
 In general npm modules greatly expand the number of things you're able to do in your NativeScript apps. Need date and time formatting? Use [moment](https://www.npmjs.com/package/moment). Need utility functions for objects and arrays? Use [lodash](https://www.npmjs.com/package/lodash) or [underscore](https://www.npmjs.com/package/underscore). This code reuse benefit gets even more powerful when you bring NativeScript plugins into the picture.
 
@@ -139,7 +139,7 @@ Next you have to build some UI that lets you share a grocery list. To do so, ope
 </Page.actionBar>
 ```
 
-This code defines an [ActionBar](https://docs.nativescript.org/ApiReference/ui/action-bar/ActionBar), which is a UI component that includes various menu items, enclosed in the `<ActionBar.actionItems>` tag. The `title` of the ActionBar lets you show page-specific titles.
+This code defines an [ActionBar]({{site.baseurl}}/ApiReference/ui/action-bar/ActionBar), which is a UI component that includes various menu items, enclosed in the `<ActionBar.actionItems>` tag. The `title` of the ActionBar lets you show page-specific titles.
 
 > **NOTE**: On iOS devices, `<ActionItem>`s are placed from left to right in sequence; you can override that (as the code above does) by providing an `ios.position` attribute.
 
@@ -165,8 +165,8 @@ This code takes the groceries from the grocery list view model, converts the dat
 
 Now when you run the app, you'll see a new button at the top of the screen. When you tap it, the native iOS or Android sharing widget will show to let you post your groceries to your social networks, or send them via email, message, or any other method you prefer.
 
-![Social sharing widget on iOS](img/cli-getting-started/chapter5/ios/2.gif)
-![Social sharing widget on Android](img/cli-getting-started/chapter5/android/2.gif)
+![Social sharing widget on iOS]({{site.baseurl}}/img/cli-getting-started/chapter5/ios/2.gif)
+![Social sharing widget on Android]({{site.baseurl}}/img/cli-getting-started/chapter5/android/2.gif)
 
 Pretty cool, huh? The ability to use npm modules greatly expands the number of things you're able to do in a NativeScript app. Need to compose emails in your app? Try out the [NativeScript email plugin](https://www.npmjs.com/package/nativescript-email). Need to use the clipboard in your app? Try out the [NativeScript clipboard plugin](https://www.npmjs.com/package/nativescript-clipboard).
 

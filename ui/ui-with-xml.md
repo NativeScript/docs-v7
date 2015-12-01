@@ -37,7 +37,7 @@ For each page, you need to have a separate `XML` file which holds the layout of 
 
 Each NativeScript app must have a home page - the page that loads when you launch the app.
 
-You need to explicitly set the home page for your app. You can do this by setting the `mainModule` member of the [`Application`](http://docs.nativescript.org/ApiReference/application/README.md) module.
+You need to explicitly set the home page for your app. You can do this by setting the `mainModule` member of the [`Application`]({{site.baseurl}}/ApiReference/application/README.md) module.
 
 When you set the `mainModule`, the NativeScript navigation framework looks for an `XML` file with the specified name, loads it and navigates to the respective page. If NativeScript discovers a `JavaScript` or `TypeScript` file with the same name, it executes the code inside it.
 
@@ -58,7 +58,7 @@ application.start();
 
 ### Navigate to a Page
 
-You can navigate between pages with the `navigate` method of the [`Frame`](http://docs.nativescript.org/ApiReference/ui/frame/Frame.md) class. The [`Frame`](http://docs.nativescript.org/ApiReference/ui/frame/Frame.md) class represents the logical unit that is responsible for navigation between different pages. Typically, each app has one frame at the root level - the topmost frame.
+You can navigate between pages with the `navigate` method of the [`Frame`]({{site.baseurl}}/ApiReference/ui/frame/Frame.md) class. The [`Frame`]({{site.baseurl}}/ApiReference/ui/frame/Frame.md) class represents the logical unit that is responsible for navigation between different pages. Typically, each app has one frame at the root level - the topmost frame.
 
 When you trigger navigation, NativeScript looks for an `XML` file with the specified name, loads it and navigates to the respective page. If NativeScript discovers a `JavaScript` or `TypeScript` file with the same name, it executes the code inside it.
 
@@ -163,7 +163,7 @@ The top-level user interface components are content components - pages and layou
 
 #### Page
 
-Your application pages (or screens) are instances of the [`page`](http://docs.nativescript.org/ApiReference/ui/page/Page.md) class of the [`Page`](http://docs.nativescript.org/ApiReference/ui/page/README.md) module. Typically, our app will consist of multiple application screens.
+Your application pages (or screens) are instances of the [`page`]({{site.baseurl}}/ApiReference/ui/page/Page.md) class of the [`Page`]({{site.baseurl}}/ApiReference/ui/page/README.md) module. Typically, our app will consist of multiple application screens.
 
 ##### Example
 
@@ -198,7 +198,7 @@ export function pageLoaded(args: observable.EventData) {
 
 #### TabView 
 
-With a [`tabview`](http://docs.nativescript.org/ApiReference/ui/tab-view/README.md), you can avoid spreading your user interface across multiple pages. Instead, you can have one page with multiple tabs.
+With a [`tabview`]({{site.baseurl}}/ApiReference/ui/tab-view/README.md), you can avoid spreading your user interface across multiple pages. Instead, you can have one page with multiple tabs.
 
 ##### Example
 
@@ -251,7 +251,7 @@ export function pageLoaded(args: observable.EventData) {
 
 #### ScrollView
 
-You can insert a [`scrollView`](http://docs.nativescript.org/ApiReference/ui/scroll-view/README.html) inside your page to make the page or the content enclosed in the `scrollView` scrollable.
+You can insert a [`scrollView`]({{site.baseurl}}/ApiReference/ui/scroll-view/README.html) inside your page to make the page or the content enclosed in the `scrollView` scrollable.
 
 ##### Example
 
@@ -267,7 +267,7 @@ This sample `main-page.xml` shows how to insert a `scrollView` inside your page.
 
 #### StackLayout
 
-You can arrange the user interface components in your page in a horizontal or vertical stack using [`stackLayout`](http://docs.nativescript.org/ApiReference/ui/layouts/stack-layout/README.html).
+You can arrange the user interface components in your page in a horizontal or vertical stack using [`stackLayout`]({{site.baseurl}}/ApiReference/ui/layouts/stack-layout/README.html).
 
 ##### Example
 
@@ -284,7 +284,7 @@ This sample `main-page.xml` shows how to arrange the labels in a page in a horiz
 
 #### GridLayout
 
-You can arrange the user interface components in your page in a flexible grid area using [`gridLayout`](http://docs.nativescript.org/ApiReference/ui/layouts/grid-layout/README.html).
+You can arrange the user interface components in your page in a flexible grid area using [`gridLayout`]({{site.baseurl}}/ApiReference/ui/layouts/grid-layout/README.html).
 
 ##### Example
 
@@ -304,7 +304,7 @@ This sample `main-page.xml` shows how to arrange labels inside a table by settin
 
 #### WrapLayout
 
-You can arrange your user interface components in rows or columns until the space is filled and then wrap them on a new row or column using [`wrapLayout`](http://docs.nativescript.org/ApiReference/ui/layouts/wrap-layout/README.html). By default, if orientation is not specified, `wrapLayout` arranges items horizontally.
+You can arrange your user interface components in rows or columns until the space is filled and then wrap them on a new row or column using [`wrapLayout`]({{site.baseurl}}/ApiReference/ui/layouts/wrap-layout/README.html). By default, if orientation is not specified, `wrapLayout` arranges items horizontally.
 
 ##### Example
 
@@ -323,7 +323,7 @@ This sample `main-page.xml` provides four labels wrapped horizontally within the
 
 #### AbsoluteLayout
 
-You can arrange your user interface components by left/top coordinates using [`absoluteLayout`](http://docs.nativescript.org/ApiReference/ui/layouts/absolute-layout/README.html).
+You can arrange your user interface components by left/top coordinates using [`absoluteLayout`]({{site.baseurl}}/ApiReference/ui/layouts/absolute-layout/README.html).
 
 ##### Example
 
@@ -613,7 +613,7 @@ export function pageLoaded(args: observable.EventData) {
 
 ### ListView Binding
 
-You can use the double curly brackets syntax to bind the items to a [`listView`](http://docs.nativescript.org/ApiReference/ui/list-view/README.md). You can also define a template with the `itemTemplate` property from which NativeScript will create the items for your `listView`.
+You can use the double curly brackets syntax to bind the items to a [`listView`]({{site.baseurl}}/ApiReference/ui/list-view/README.md). You can also define a template with the `itemTemplate` property from which NativeScript will create the items for your `listView`.
 
 > Avoid accessing components by ID, especially when the component is part of a template. It is recommended to use bindings to specify component properties. 
 

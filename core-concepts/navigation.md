@@ -8,9 +8,9 @@ previous_url: /navigation
 
 # Architecture and Navigation
 
-NativeScript apps consist of pages which represent the separate application screens. Pages are instances of the [`page`](http://docs.nativescript.org/ApiReference/ui/page/Page.md) class of the [`Page`](http://docs.nativescript.org/ApiReference/ui/page/README.md) module. To navigate between pages, you can use the methods of the [`Frame`](http://docs.nativescript.org/ApiReference/ui/frame/Frame.md) class of the [`Frame`](http://docs.nativescript.org/ApiReference/ui/frame/README.md) module.
+NativeScript apps consist of pages which represent the separate application screens. Pages are instances of the [`page`]({{site.baseurl}}/ApiReference/ui/page/Page.md) class of the [`Page`]({{site.baseurl}}/ApiReference/ui/page/README.md) module. To navigate between pages, you can use the methods of the [`Frame`]({{site.baseurl}}/ApiReference/ui/frame/Frame.md) class of the [`Frame`]({{site.baseurl}}/ApiReference/ui/frame/README.md) module.
 
-> **TIP:** Instead of multiple pages, you can have a single page with a [tab view](http://docs.nativescript.org/ApiReference/ui/tab-view/README.md) and different user interfaces for each tab.
+> **TIP:** Instead of multiple pages, you can have a single page with a [tab view]({{site.baseurl}}/ApiReference/ui/tab-view/README.md) and different user interfaces for each tab.
 
 
 * [Page Management](#page-management)
@@ -33,7 +33,7 @@ NativeScript apps consist of pages which represent the separate application scre
 
 ### Define Page
 
-Pages represent the separate screens of your application. Each page is an instance of the [`page`](http://docs.nativescript.org/ApiReference/ui/page/Page.md) class of the [`Page`](http://docs.nativescript.org/ApiReference/ui/page/README.md) module. Each class instance inherits the [`content`](http://docs.nativescript.org/ApiReference/ui/content-view/ContentView.md) property which holds the root visual element of the UI.
+Pages represent the separate screens of your application. Each page is an instance of the [`page`]({{site.baseurl}}/ApiReference/ui/page/Page.md) class of the [`Page`]({{site.baseurl}}/ApiReference/ui/page/README.md) module. Each class instance inherits the [`content`]({{site.baseurl}}/ApiReference/ui/content-view/ContentView.md) property which holds the root visual element of the UI.
 
 NativeScript provides two approaches to instantiating your pages.
 
@@ -98,7 +98,7 @@ export function createPage() {
 
 Each application must have a single entry point - the home page.
 
-To set the home page for your app, you need to use the `mainModule` member of the [`Application`](http://docs.nativescript.org/ApiReference/application/README.md) module. When you define `application.mainModule`, NativeScript looks for an XML file with the specified name, parses it and draws the UI described in the file. Afterwards, if NativeScript finds a `JS` or a `TS` file with the same name, it executes the business logic in the file.
+To set the home page for your app, you need to use the `mainModule` member of the [`Application`]({{site.baseurl}}/ApiReference/application/README.md) module. When you define `application.mainModule`, NativeScript looks for an XML file with the specified name, parses it and draws the UI described in the file. Afterwards, if NativeScript finds a `JS` or a `TS` file with the same name, it executes the business logic in the file.
 
 ``` JavaScript
 var application = require("application");
@@ -113,9 +113,9 @@ application.start();
 
 ## Navigation
 
-The [`Frame`](http://docs.nativescript.org/ApiReference/ui/frame/Frame.md) class represents the logical unit that is responsible for navigation between different pages. Typically, each app has one frame at the root level - the topmost frame.
+The [`Frame`]({{site.baseurl}}/ApiReference/ui/frame/Frame.md) class represents the logical unit that is responsible for navigation between different pages. Typically, each app has one frame at the root level - the topmost frame.
 
-To navigate between pages, you can use the [`navigate`](http://docs.nativescript.org/ApiReference/ui/frame/README.md) method of the topmost frame instance.
+To navigate between pages, you can use the [`navigate`]({{site.baseurl}}/ApiReference/ui/frame/README.md) method of the topmost frame instance.
 
 In addition, each `Page` instance carries information about the frame object which navigated to it in the `frame` property. This lets you navigate with the `frame` property as well. 
 
@@ -176,7 +176,7 @@ topmost.navigate(factoryFunc);
 
 ### Navigate and Pass Context
 
-When you navigate to another page, you can pass context to the page with a [`NavigationEntry`](http://docs.nativescript.org/ApiReference/ui/frame/NavigationEntry.md) object. This approach provides finer control over navigation compared to other navigation approaches. For example, with `NavigationEntry` you can also animate the navigation.
+When you navigate to another page, you can pass context to the page with a [`NavigationEntry`]({{site.baseurl}}/ApiReference/ui/frame/NavigationEntry.md) object. This approach provides finer control over navigation compared to other navigation approaches. For example, with `NavigationEntry` you can also animate the navigation.
 
 ``` JavaScript
 var navigationEntry = {
@@ -239,7 +239,7 @@ export function pageNavigatedTo(args: observable.EventData) {
 
 ### Navigate without History
 
-You can navigate to a page without adding this navigation to the history. Set the `backstackVisible` property of the [`NavigationEntry`](http://docs.nativescript.org/ApiReference/ui/frame/NavigationEntry.md) to `false`. If this property is set to false then the Page will be displayed but once navigated from it will not be able to be navigated back to.
+You can navigate to a page without adding this navigation to the history. Set the `backstackVisible` property of the [`NavigationEntry`]({{site.baseurl}}/ApiReference/ui/frame/NavigationEntry.md) to `false`. If this property is set to false then the Page will be displayed but once navigated from it will not be able to be navigated back to.
 
 ``` JavaScript
 var navigationEntry = {

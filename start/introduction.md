@@ -19,7 +19,7 @@ Develop your business logic with **JavaScript** or **TypeScript**, design and st
 
 You can develop for **Android 4.2 or later** and **iOS 7.1 or later**.
 
-![architecture diagram](https://docs.nativescript.org/img/architecture.png "architecture diagram")
+![architecture diagram]({{site.baseurl}}/img/architecture.png "architecture diagram")
 
 1. Write your **application code** once using the **NativeScript modules** and the **NativeScript runtimes**.<br/>The modules expose the native device and platform capabilities of Android and iOS in a consistent manner and let you access them via non-platform-specific code.<br/>The modules let you access some native capabilities via platform-specific JavaScript code.
 1. Customize your app with platform-specific assets such as icons and splash screens.
@@ -31,7 +31,7 @@ You can develop for **Android 4.2 or later** and **iOS 7.1 or later**.
 Start exploring the documentation resources for NativeScript.
 
 * [Tutorial]({% slug tutorial %})
-* [API Reference](http://docs.nativescript.org/ApiReference/application/README.md)
+* [API Reference]({{site.baseurl}}/ApiReference/application/README.md)
 * [Application Lifecycle]({% slug lifecycle %})
 * [Application Architecture]({% slug architecture %})
 * [Data Binding]({% slug binding %})
@@ -50,6 +50,6 @@ Start exploring the documentation resources for NativeScript.
 
 If you need even more native capabilities than the NativeScript modules provide, you can expand your development with any of the following options.
 
-* [iOS-Specific JavaScript Development](https://docs.nativescript.org/runtimes/ios/Overview.md)
-* [Android-Specific JavaScript Development](https://docs.nativescript.org/runtimes/android/overview.md)
+* [iOS-Specific JavaScript Development]({{site.baseurl}}/runtimes/ios/Overview.md)
+* [Android-Specific JavaScript Development]({{site.baseurl}}/runtimes/android/overview.md)
 * [Development with Native Libraries](https://github.com/NativeScript/nativescript-cli)

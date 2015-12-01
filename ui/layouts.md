@@ -105,15 +105,15 @@ The following table shows predefined layouts that NativeScript provides.
 
 | Layouts  | Description  | Screenshot |
 | -------- | ------------ | ---------- |
-| [AbsoluteLayout][AbsoluteLayout] | This layout lets you set exact locations (left/top coordinates) for its children. | ![AbsoluteLayout android](http://docs.nativescript.org/img/gallery/android/absoluteLayoutPage.png "AbsoluteLayout android")|
-| [DockLayout][DockLayout] | This layout arranges its children at its outer edges and allows its last child to take up the remaining space. | ![DockLayout android](http://docs.nativescript.org/img/gallery/android/dockLayoutPage.png "DockLayout android")|
-| [GridLayout][GridLayout] | This layout defines a rectangular layout area that consists of columns and rows. | ![GridLayout android](http://docs.nativescript.org/img/gallery/android/gridLayoutPage.png "GridLayout android")|
-| [StackLayout][StackLayout] | This layout arranges its children horizontally or vertically. The direction is set with the orientation property. | ![StackLayout android](http://docs.nativescript.org/img/gallery/android/stackLayoutPage.png "StackLayout android")|
-| [WrapLayout][WrapLayout] | This layout positions its children in rows or columns, based on the orientation property, until the space is filled and then wraps them on a new row or column. | ![WrapLayout android](http://docs.nativescript.org/img/gallery/android/wrapLayoutPage.png "WrapLayout android")|
+| [AbsoluteLayout][AbsoluteLayout] | This layout lets you set exact locations (left/top coordinates) for its children. | ![AbsoluteLayout android]({{site.baseurl}}/img/gallery/android/absoluteLayoutPage.png "AbsoluteLayout android")|
+| [DockLayout][DockLayout] | This layout arranges its children at its outer edges and allows its last child to take up the remaining space. | ![DockLayout android]({{site.baseurl}}/img/gallery/android/dockLayoutPage.png "DockLayout android")|
+| [GridLayout][GridLayout] | This layout defines a rectangular layout area that consists of columns and rows. | ![GridLayout android]({{site.baseurl}}/img/gallery/android/gridLayoutPage.png "GridLayout android")|
+| [StackLayout][StackLayout] | This layout arranges its children horizontally or vertically. The direction is set with the orientation property. | ![StackLayout android]({{site.baseurl}}/img/gallery/android/stackLayoutPage.png "StackLayout android")|
+| [WrapLayout][WrapLayout] | This layout positions its children in rows or columns, based on the orientation property, until the space is filled and then wraps them on a new row or column. | ![WrapLayout android]({{site.baseurl}}/img/gallery/android/wrapLayoutPage.png "WrapLayout android")|
 
 ### Repeating layout children
 
-In this sample `main-page.xml`, the [Repeater](http://docs.nativescript.org/ApiReference/ui/repeater/HOW-TO.md) with [WrapLayout](http://docs.nativescript.org/ApiReference/ui/layouts/wrap-layout/HOW-TO.md) inside [ScrollView](http://docs.nativescript.org/ApiReference/ui/scroll-view/HOW-TO.md) will create [Label](http://docs.nativescript.org/ApiReference/ui/label/HOW-TO.md) from template for each item in `myItems` array.
+In this sample `main-page.xml`, the [Repeater]({{site.baseurl}}/ApiReference/ui/repeater/HOW-TO.md) with [WrapLayout]({{site.baseurl}}ApiReference/ui/layouts/wrap-layout/HOW-TO.md) inside [ScrollView]({{site.baseurl}}/ApiReference/ui/scroll-view/HOW-TO.md) will create [Label]({{site.baseurl}}/ApiReference/ui/label/HOW-TO.md) from template for each item in `myItems` array.
 
 ```XML
  <Page>
@@ -154,10 +154,10 @@ export function pageLoaded(args: observable.EventData) {
 ```
 
 [views]: {%slug components %}
-[View]: http://docs.nativescript.org/ApiReference/ui/core/view/View.md
-[Layout]: http://docs.nativescript.org/ApiReference/ui/layouts/layout/Layout.md
-[AbsoluteLayout]: http://docs.nativescript.org/ApiReference/ui/layouts/absolute-layout/HOW-TO.md
-[DockLayout]: http://docs.nativescript.org/ApiReference/ui/layouts/dock-layout/HOW-TO.md
-[GridLayout]: http://docs.nativescript.org/ApiReference/ui/layouts/grid-layout/HOW-TO.md
-[StackLayout]: http://docs.nativescript.org/ApiReference/ui/layouts/stack-layout/HOW-TO.md
-[WrapLayout]: http://docs.nativescript.org/ApiReference/ui/layouts/wrap-layout/HOW-TO.md
+[View]: {{site.baseurl}}/ApiReference/ui/core/view/View.md
+[Layout]: {{site.baseurl}}/ApiReference/ui/layouts/layout/Layout.md
+[AbsoluteLayout]: {{site.baseurl}}/ApiReference/ui/layouts/absolute-layout/HOW-TO.md
+[DockLayout]: {{site.baseurl}}/ApiReference/ui/layouts/dock-layout/HOW-TO.md
+[GridLayout]: {{site.baseurl}}/ApiReference/ui/layouts/grid-layout/HOW-TO.md
+[StackLayout]: {{site.baseurl}}/ApiReference/ui/layouts/stack-layout/HOW-TO.md
+[WrapLayout]: {{site.baseurl}}/ApiReference/ui/layouts/wrap-layout/HOW-TO.md

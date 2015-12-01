@@ -12,7 +12,7 @@ The NativeScript location module uses an accuracy criteria approach to deliver g
 
 This approach does not limit location monitoring only to a specific location provider; it can still work with all of them.
 
-It is a good idea to start with the [How-to](http://docs.nativescript.org/ApiReference/location/HOW-TO.md) article. Here are some further explanations of how API is designed to work.
+It is a good idea to start with the [How-to]({{site.baseurl}}/ApiReference/location/HOW-TO.md) article. Here are some further explanations of how API is designed to work.
 
 ### Getting an information about location service
 
@@ -75,7 +75,7 @@ var onRequestButtonTap = function(args: observable.EventData) {
 ### Getting a location
 For getting a location information NativeScript provides two different approaches.
 
-* First approach is available using the `location` module, where there is a `getLocation` method which can be used to get a single location. This method accepts [`location options`](http://docs.nativescript.org/ApiReference/location/Options.md) parameter. The `timeout` parameter denotes the time in milliseconds when location monitoring will be stopped (default value is 20 seconds). When `timeout` is set to 0 (zero), then last known location (if is newer than maximum age) will be returned.
+* First approach is available using the `location` module, where there is a `getLocation` method which can be used to get a single location. This method accepts [`location options`]({{site.baseurl}}/ApiReference/location/Options.md) parameter. The `timeout` parameter denotes the time in milliseconds when location monitoring will be stopped (default value is 20 seconds). When `timeout` is set to 0 (zero), then last known location (if is newer than maximum age) will be returned.
 
 * Second approach is using the location manager `startLocationMonitoring` method. The difference here is that location monitoring will not be stopped automatically (useful for a GPS log like application). `stopLocationMonitoring` method is used to stop location monitoring.
 
@@ -110,4 +110,4 @@ locationManager.startLocationMonitoring(function(location){
     }, locationOptions);
 ```
 
-More information about the NativeScript location module can be found in the [API Reference](http://docs.nativescript.org/ApiReference/location/location.md).
+More information about the NativeScript location module can be found in the [API Reference]({{site.baseurl}}/ApiReference/location/location.md).
