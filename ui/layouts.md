@@ -18,7 +18,6 @@ NativeScript provides a recursive layout system which sizes and positions [views
 * [Layouts](#layouts)
 	* [Layout Paddings](#layout-paddings)
 	* [Layout Containers](#layout-containers)
-	* [Repeating layout children](#repeating-layout-children)
 
 ## Layout Process
 
@@ -111,49 +110,7 @@ The following table shows predefined layouts that NativeScript provides.
 | [StackLayout][StackLayout] | This layout arranges its children horizontally or vertically. The direction is set with the orientation property. | ![StackLayout android](http://docs.nativescript.org/img/gallery/android/stackLayoutPage.png "StackLayout android")|
 | [WrapLayout][WrapLayout] | This layout positions its children in rows or columns, based on the orientation property, until the space is filled and then wraps them on a new row or column. | ![WrapLayout android](http://docs.nativescript.org/img/gallery/android/wrapLayoutPage.png "WrapLayout android")|
 
-### Repeating layout children
-
-In this sample `main-page.xml`, the [Repeater](http://docs.nativescript.org/ApiReference/ui/repeater/HOW-TO.md) with [WrapLayout](http://docs.nativescript.org/ApiReference/ui/layouts/wrap-layout/HOW-TO.md) inside [ScrollView](http://docs.nativescript.org/ApiReference/ui/scroll-view/HOW-TO.md) will create [Label](http://docs.nativescript.org/ApiReference/ui/label/HOW-TO.md) from template for each item in `myItems` array.
-
-```XML
- <Page>
- {%raw%}<ScrollView>
-   <Repeater items="{{ myItems }}">
-     <Repeater.itemsLayout>
-        <WrapLayout />
-     </Repeater.itemsLayout>
-     <Repeater.itemTemplate>
-        <Label text="{{ name }}" margin="10" />
-     </Repeater.itemTemplate>
-   </Repeater>
-  </ScrollView>{%endraw%}
- </Page>
-```
-
-The sample `main-page.js` or `main-page.ts` populates the `bindingContext` for the page. In this case, the code sets values for the name property for each label.
-
-```JavaScript
-var view = require("ui/core/view");
-function pageLoaded(args) {
-    var page = args.object;
-    page.bindingContext = { myItems: [{ name: "Name1" }, { name: "Name2" }, { name: "Name3" }] };
-}
-exports.pageLoaded = pageLoaded;
-```
-```TypeScript
-import observable = require("data/observable");
-import pages = require("ui/page");
-import view = require("ui/core/view");
-import listView = require("ui/list-view");
-import label = require("ui/label");
-
-export function pageLoaded(args: observable.EventData) {
-    var page = <pages.Page>args.object;
-    page.bindingContext = { myItems: [{ name: "Name1" }, { name: "Name2" }, { name: "Name3" }] };
-}
-```
-
-[views]: {%slug components %}
+[views]: {% slug components %}
 [View]: http://docs.nativescript.org/ApiReference/ui/core/view/View.md
 [Layout]: http://docs.nativescript.org/ApiReference/ui/layouts/layout/Layout.md
 [AbsoluteLayout]: http://docs.nativescript.org/ApiReference/ui/layouts/absolute-layout/HOW-TO.md
