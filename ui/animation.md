@@ -16,7 +16,7 @@ The [`AnimationDefinition`]({{site.baseurl}}/ApiReference/ui/animation/Animation
  - scaleX and scaleY
  - rotate
 
-The [`AnimationDefinition`]http://docs.nativescript.org/({{site.baseurl}}/ApiReference/ui/animation/AnimationDefinition.md) interface has the following members:
+The [`AnimationDefinition`]({{site.baseurl}}/ApiReference/ui/animation/AnimationDefinition.md) interface has the following members:
  - target: The view whose property is to be animated.
  - opacity: Animates the opacity of the view. Value should be a number between 0.0 and 1.0.
  - backgroundColor: Animates the backgroundColor of the view.
