@@ -142,7 +142,7 @@ The following is an example of a `package.json` file for a NativeScript plugin w
 
 ### Include.gradle Specification
 
-Every NativeScript plugin, which contains native Android dependencies and uses .jar instead of .aar files, should also contain a valid `include.gradle` file in the root of its `platforms\android` directory. This `include.gradle` file must meet the following requirements.
+Every NativeScript plugin, which contains native Android dependencies, should also contain a valid `include.gradle` file in the root of its `platforms\android` directory. This `include.gradle` file must meet the following requirements.
 
 * It must contain its own [configuration](http://developer.android.com/tools/building/configuring-gradle.html).
 * It might contain native dependencies required to build the plugin properly.
