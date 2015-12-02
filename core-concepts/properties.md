@@ -2,7 +2,7 @@
 title: Properties
 description: What is a property in NativeScript, what types of properties are available, and how to use them.
 position: 5
-slug: props
+slug: kiro
 previous_url: /properties
 ---
 
