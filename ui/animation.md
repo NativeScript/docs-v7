@@ -9,7 +9,7 @@ previous_url: /animation
 # Animation API
 
 ## AnimationDefinition Interface
-The [`AnimationDefinition`]({{site.baseurl}}/ApiReference/ui/animation/AnimationDefinition.md) interface is central for defining an animation for **one or more properties** of a **single** [`View`]({{site.baseurl}}/ApiReference/ui/core/View.md). The animatable properties are:
+The [`AnimationDefinition`]({{site.baseurl}}/ApiReference/ui/animation/AnimationDefinition.md) interface is central for defining an animation for **one or more properties** of a **single** [`View`]({{site.baseurl}}/ApiReference/ui/core/view/View.md). The animatable properties are:
  - opacity
  - backgroundColor
  - translateX and translateY
@@ -29,18 +29,18 @@ The [`AnimationDefinition`]http://docs.nativescript.org/({{site.baseurl}}/ApiRef
  - curve: An optional animation curve. Possible values are contained in the [AnimationCurve enumeration]({{site.baseurl}}/ApiReference/ui/enums/AnimationCurve/README.md). Alternatively, you can pass an instance of type [`UIViewAnimationCurve`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/#//apple_ref/c/tdef/UIViewAnimationCurve) for iOS or [`android.animation.TimeInterpolator`](http://developer.android.com/reference/android/animation/TimeInterpolator.html) for Android.
 
  All members of the interface are **optional** and have default values with the following exceptions:
- - target is only optional when calling the **animate** method of a [`View`]({{site.baseurl}}/ApiReference/ui/core/View.md) instance since it is set automatically for you.
+ - target is only optional when calling the **animate** method of a [`View`]({{site.baseurl}}/ApiReference/ui/core/view/View.md) instance since it is set automatically for you.
  - You must specify at least one property among opacity, backgroundColor, scale, rotate and translate.
 
 ## Animation Class
-The [`Animation`]({{site.baseurl}}/ApiReference/ui/animation/Animation.md) class represents a **set** of one or more [`AnimationDefinitions`]({{site.baseurl}}/ApiReference/ui/animation/AnimationDefinition.md which can be played either **simultaneously or sequentially**. **This class is typically used when you need to animate several views together**. The constructor of the the [`Animation`]({{site.baseurl}}/ApiReference/ui/animation/Animation.md) class accepts an array of [`AnimationDefinitions`]({{site.baseurl}}/ApiReference/ui/animation/AnimationDefinition.md) and a boolean parameter indicating whether to play the animations sequentially. Creating an instance of the [`Animation`]({{site.baseurl}}/ApiReference/ui/animation/Animation.md) class does not start the animation playback. The class has four members:
+The [`Animation`]({{site.baseurl}}/ApiReference/ui/animation/Animation.md) class represents a **set** of one or more [`AnimationDefinitions`]({{site.baseurl}}/ApiReference/ui/animation/AnimationDefinition.md) which can be played either **simultaneously or sequentially**. **This class is typically used when you need to animate several views together**. The constructor of the the [`Animation`]({{site.baseurl}}/ApiReference/ui/animation/Animation.md) class accepts an array of [`AnimationDefinitions`]({{site.baseurl}}/ApiReference/ui/animation/AnimationDefinition.md) and a boolean parameter indicating whether to play the animations sequentially. Creating an instance of the [`Animation`]({{site.baseurl}}/ApiReference/ui/animation/Animation.md) class does not start the animation playback. The class has four members:
  - play: a method that starts the animation and returns the instance it was called on for fluent animation chaining.
  - cancel: a void method which stops the animation.
  - finished: a promise which will be resolved when the animation finishes or rejected when the animation is cancelled or stops for another reason.
  - isPlaying: a boolean property returning true if the animation is currently playing.
 
 ## View.animate Method
-In case you need to animate a **single** [`View`]({{site.baseurl}}/ApiReference/ui/core/View.md) and you don't need to be able to **cancel** the animation, you can simply use the shortcut **View.animate** method which accepts an [`AnimationDefinition`]({{site.baseurl}}/ApiReference/ui/animation/AnimationDefinition.md), immediately starts the animation and returns its finished promise.
+In case you need to animate a **single** [`View`]({{site.baseurl}}/ApiReference/ui/core/view/View.md) and you don't need to be able to **cancel** the animation, you can simply use the shortcut **View.animate** method which accepts an [`AnimationDefinition`]({{site.baseurl}}/ApiReference/ui/animation/AnimationDefinition.md), immediately starts the animation and returns its finished promise.
 
 # Examples
 

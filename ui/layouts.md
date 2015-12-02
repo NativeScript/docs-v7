@@ -113,7 +113,7 @@ The following table shows predefined layouts that NativeScript provides.
 
 ### Repeating layout children
 
-In this sample `main-page.xml`, the [Repeater]({{site.baseurl}}/ApiReference/ui/repeater/HOW-TO.md) with [WrapLayout]({{site.baseurl}}ApiReference/ui/layouts/wrap-layout/HOW-TO.md) inside [ScrollView]({{site.baseurl}}/ApiReference/ui/scroll-view/HOW-TO.md) will create [Label]({{site.baseurl}}/ApiReference/ui/label/HOW-TO.md) from template for each item in `myItems` array.
+In this sample `main-page.xml`, the [Repeater]({{site.baseurl}}/ApiReference/ui/repeater/HOW-TO.md) with [WrapLayout]({{site.baseurl}}/ApiReference/ui/layouts/wrap-layout/HOW-TO.md) inside [ScrollView]({{site.baseurl}}/ApiReference/ui/scroll-view/HOW-TO.md) will create [Label]({{site.baseurl}}/ApiReference/ui/label/HOW-TO.md) from template for each item in `myItems` array.
 
 ```XML
  <Page>

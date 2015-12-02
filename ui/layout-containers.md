@@ -189,7 +189,7 @@ When the GridLayout has no explicit `width` set and its `horizontalAlignment` is
 </Page>
 ```
 
-![GridLayout]({{site.baseurl}}/modules/layouts/grid-layout3.png "GridLayout")
+![GridLayout]({{site.baseurl}}/img/modules/layouts/grid-layout3.png "GridLayout")
 
 ### Sample (column stretching)
 Label 3 is has fixed width of 150 pixels. Label 1 is given more space than it actually needs, because Label 3 stretches the auto column.
