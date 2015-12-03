@@ -5,6 +5,22 @@ description: NativeScript Android Runtime Changelog
 position: 4
 ---
 
+1.5.0
+==
+
+## What's New
+
+ - Improved LiveSync
+ - [Improved error handling](https://github.com/NativeScript/android-runtime/issues/221)
+ - Use Gradle Wrapper
+ - Use V8 code cache (experimental)
+ 
+ ## Bug Fixes
+
+ - Proper handling of HTTP 401 status code
+ - [Generate metadata for protected interfaces](https://github.com/NativeScript/android-runtime/issues/236)
+ - [Fix loading module with NULL char in it](https://github.com/NativeScript/android-runtime/issues/271)
+
 1.4.0
 ==
 
@@ -55,15 +71,15 @@ position: 4
 
 ## What's New
 
- - [Updated android widgets library]()
+ - Updated android widgets library
  - [Allow verbose logging system property to enable debug messages early in engine bootstrap](https://github.com/NativeScript/android-runtime/issues/111)
 
 ## Bug Fixes
 
  - [Additional null checks in V8 to handle certain possible garbage collection issues](https://github.com/NativeScript/android-runtime/issues/111)
- - [Fix sync support in runtime for specific (Samsung) Android devices where run-as is not working]()
+ - Fix sync support in runtime for specific (Samsung) Android devices where run-as is not working
  - [Fix JNI memory leak](https://github.com/NativeScript/android-runtime/issues/167)
- - [Fix copy of correct android.jar referenced in project properties]
+ - Fix copy of correct android.jar referenced in project properties
 
 
 1.2.0
