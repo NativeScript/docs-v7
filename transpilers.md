@@ -37,6 +37,34 @@ If you want to change the version of the Babel compiler used in your project, si
 
 If you want to configure Babel, create a `.babelrc` file in the root of your project according to [spec](https://babeljs.io/docs/usage/babelrc/).
 
+## Installing {less}
+
+Run the following command to install {less} CSS preprocessor into your project:
+
+```Shell
+tns install less
+```
+
+The above command installs the {less} CSS preprocessor and the `nativescript-dev-less` npm module as a dev dependencies. The latter installs a `prepare` hook into your project, that transpiles your *.less files during build and when live-syncing.
+
+If you want to change the version of the {less} preprocessor used in your project, simply install the version you want into your project through npm.
+
+For more info about {less} CSS preprocessor please visit: http://lesscss.org/.
+
+## Installing Jade
+
+Run the following command to install Jade into your project:
+
+```Shell
+tns install jade
+```
+
+The above command installs the Jade transpiler and the `nativescript-dev-jade` npm module as a dev dependencies. The latter installs a `prepare` hook into your project, that transpiles your *.jade files to XML during build and when live-syncing.
+
+If you want to change the version of the Jade transpiler used in your project, simply install the version you want into your project through npm.
+
+For more info about Jade transpiler please visit: http://jade-lang.com/
+
 ## Installing other transpilers
 
 Transpiler support can be extended through the use of hooks. The easiest way to distribute transpiler hooks is by means of npm modules. You can use the implementation of the TypeScript and Babel hooks as reference and grok the [nativescript-hook module](https://github.com/NativeScript/nativescript-hook) that provides common hook installation support to transpiler authors.
