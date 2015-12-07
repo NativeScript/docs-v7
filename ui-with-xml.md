@@ -25,6 +25,7 @@ The user interface of NativeScript mobile apps consists of pages. Typically, the
   * [Platform-specific property value](#platform-specific-property-value)
   * [Platform-specific component declaration](#platform-specific-component-declaration)
 * [Lower-case-dashed component declaration](#lower-case-dashed-component-declaration)
+* [Validate the UI declared in XML files using XSD schema](#validate-the-ui-declared-in-xml-files-using-xsd-schema)
 
 ## The Basics
 
@@ -762,3 +763,14 @@ Since NativeScript 1.3 you can declare your UI using lower-case-dashed syntax:
       <button text="Button" tap="tap" />
       ...
 ```
+
+## Validate the UI declared in XML files using XSD schema
+Run the following command to install XSD validation into your project:
+
+```Shell
+tns install xmlxsd
+```
+
+The above command installs the XSD validation and the `nativescript-dev-xmlxsd` npm module as a dev dependencies. The latter installs a `prepare` hook into your project, that validates your XML files during build and when live-syncing.
+
+If you want to change the version of the XSD validation used in your project, simply install the version you want into your project through npm.
