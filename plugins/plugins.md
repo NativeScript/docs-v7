@@ -47,12 +47,12 @@ If the NativeScript framework does not expose a native API that you need, you ca
 * The plugin directory structure must comply with the specification described below.
 * The plugin must contain a valid `package.json` which complies with the specification described below.
 * If the plugin requires any permissions, features or other configuration specifics, it must contain `AndroidManifest.xml` and `Info.plist` file which describe them.
-* (Android-only) If the plugin contains .JARs, AndroidManifest.xml and resources, it must contain a valid `include.gradle file`, which describes the dependencies.
-* (Android-only) If the plugin contains .AARs it doesn't need AndroidManifest.xml, include.gradle or resources.
+* (Android-only) If the plugin contains `.JAR` libraries, `AndroidManifest.xml` and resources, it must contain a valid `include.gradle` file, which describes the dependencies.
+* (Android-only) If the plugin contains `.AAR` libraries, it doesn't need `AndroidManifest.xml`, `include.gradle` or resources.
 
 ### Directory Structure
 
-NativeScript plugins which consist of one CommonJS module, and have no native libraries, might have the following directory structure.
+NativeScript plugins which consist of one CommonJS module and no native libraries, might have the following directory structure.
 
 ```
 my-plugin/
@@ -66,7 +66,7 @@ my-plugin/
         └── Info.plist
 ```
 
-NativeScript plugins which consist of multiple CommonJS modules, and have no native libraries, might have the following directory structure.
+NativeScript plugins which consist of multiple CommonJS modules and no native libraries, might have the following directory structure.
 
 ```
 my-plugin/
@@ -111,10 +111,10 @@ my-plugin/
 
 * `platforms\android`: This directory contains any native Android libraries packaged as `*.jar` and `*.aar` packages. These native libraries can reside in the root of this directory or in a user-created sub-directory. During the plugin installation, the NativeScript CLI will configure the Android project in `platforms\android` to work with the plugin. 
 * `platforms\ios`: This directory contains native iOS dynamic libraries (`.framework`). During the plugin installation, the NativeScript CLI will copy these files to `lib\iOS` in your project and will configure the Android project in `platforms\ios` to work with the library.
-* `platforms\android\res`:  (Optional) This directory contains resources declared by the `AndroidManifest.xml` file. You can look at the folder structure [here](http://developer.android.com/guide/topics/resources/providing-resources.html#ResourceTypes). This folder is not necessary if you are using AAR libraries.
-* `platforms\android\include.gradle`: This file modifies the native Android configuration of your NativeScript project such as native dependencies, build types and configurations. For more information about the format of `include.gradle`, see [include.gradle file](#includegradle-specification). This file is not necessary if you are using AAR libraries.
-* `platforms\android\MyLibrary.jar`: This is a native android library that makes use of some native api. This file is not necessary if you are using AAR libraries.
-* `platforms\android\MyLibrary.aar`: This is a native android library. Furthermore 'aar' bundle is the standard binary distribution of an Android Library Project most commonly used by Android Studio. The main difference between a Jar and a AAR is that AARs include resources such as layouts, drawables etc. This makes it a lot easier to create self-contained components.
+* `platforms\android\res`: (Optional) This directory contains resources declared by the `AndroidManifest.xml` file. You can look at the folder structure  [here](http://developer.android.com/guide/topics/resources/providing-resources.html#ResourceTypes). This folder is not required if you are using `AAR` libraries.
+* `platforms\android\include.gradle`: This file modifies the native Android configuration of your NativeScript project such as native dependencies, build types and configurations. For more information about the format of `include.gradle`, see [include.gradle file](#includegradle-specification). This file is not required if you are using `AAR` libraries.
+* `platforms\android\MyLibrary.jar`: This is a native Android library that uses some native api. This file is not required if you are using `AAR` libraries.
+* `platforms\android\MyLibrary.aar`: This is a native Android library. `AAR` bundles are the standard binary distribution of Android Library Projects (most commonly used by Android Studio). The main difference between a `JAR` and an `AAR` is that `AAR` libraries include resources such as layouts, drawables, etc. This makes it a lot easier to create self-contained components.
 
 ### Package.json Specification
 
