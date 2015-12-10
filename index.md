@@ -50,3 +50,4 @@ If you need even more native capabilities than the NativeScript modules provide,
 * [iOS-Specific JavaScript Development](runtimes/ios/Overview.md)
 * [Android-Specific JavaScript Development](runtimes/android/overview.md)
 * [Development with Native Libraries](https://github.com/NativeScript/nativescript-cli)
+![](https://ga-beacon.appspot.com/UA-111455-24/nativescript/docs?pixel) 
