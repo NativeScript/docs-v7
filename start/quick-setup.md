@@ -1,5 +1,5 @@
 ---
-title: Quick Start
+title: Installation
 description: Choose between a local and cloud tool set and set up our system to work with NativeScript.
 position: 2
 slug: quick-start

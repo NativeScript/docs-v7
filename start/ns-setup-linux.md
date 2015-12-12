@@ -3,6 +3,7 @@ title: Set Up Linux
 description: Configure your Linux system to create, develop and build projects locally with NativeScript.
 position: 5
 slug: linux
+publish: false
 previous_url: /setup/ns-cli-setup/ns-setup-linux
 ---
 

@@ -2,6 +2,7 @@
 title: Set Up OS X
 description: Configure your OS X system to create, develop and build projects locally with NativeScript.
 position: 4
+publish: false
 slug: osx
 previous_url: /setup/ns-cli-setup/ns-setup-os-x
 ---

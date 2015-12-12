@@ -2,6 +2,7 @@
 title: Modules Changelog
 description: NativeScript Cross-Platform Modules Changelog
 position: 4
+publish: false
 slug: modules-changelog
 previous_url: /Changelogs/Cross-Platform Modules
 ---

@@ -3,6 +3,7 @@ title: Tutorial
 description: Learn the basics of how NativeScript works, how to set up your system, and how to create your first app
 position: 6
 guide: true
+publish: false
 slug: tutorial
 previous_url: /getting-started
 ---

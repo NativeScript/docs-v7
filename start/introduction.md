@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Welcome
 description: Meet NativeScript - an open-source framework for the cross-platform development of truly native apps.
 position: 1
 publish: true
