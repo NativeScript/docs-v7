@@ -2,6 +2,7 @@
 title: CLI Changelog
 description: NativeScript Command-Line Interface Changelog
 position: 5
+publish: false
 slug: cli-changelog
 previous_url: /Changelogs/CLI
 ---
