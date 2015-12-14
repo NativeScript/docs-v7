@@ -83,13 +83,13 @@ For Android development
         1. Go to [Get Genymotion](https://www.genymotion.com/#!/download), select Mac and click **Get Genymotion**.
         1. After the download completes, run the installer and complete the installation.
         1. Add the following file paths to the `PATH` system environment variable.
-
-            ```
-            Path to the MacOS directory in the Contents directory in the Genymotion Shell app
-            Path to the MacOS directory in the Contents directory in the Genymotion app
-            ```
-
-            For example: Run the following command `export PATH=$PATH:/Applications/Genymotion\ Shell.app/Contents/MacOS/:/Applications/Genymotion.app/Contents/MacOS/`
+            * For Genymotion earlier than 2.6:
+                * `/Applications/Genymotion.app/Contents/MacOS`
+                * `/Applications/Genymotion Shell.app/Contents/MacOS`
+            * For Genymotion 2.6:
+                * `/Applications/Genymotion.app/Contents/MacOS/player.app/Contents/MacOS`
+                * `/Applications/Genymotion Shell.app/Contents/MacOS`
+            For example: Run the following command `export PATH=$PATH:/Applications/Genymotion\ Shell.app/Contents/MacOS:/Applications/Genymotion.app/Contents/MacOS`
 1. Install the NativeScript CLI.
     1. Run the following command.
 
