@@ -24,3 +24,11 @@ And here's what the app will look like on Android:
 ![]({{site.baseurl}}/img/cli-getting-started/chapter0/android/1.png)
 ![]({{site.baseurl}}/img/cli-getting-started/chapter0/android/2.png)
 ![]({{site.baseurl}}/img/cli-getting-started/chapter0/android/3.png)
+
+### Prerequisites
+
+This guide assumes you know the basics of the following:
+
+* **JavaScript**: You understand how functions, if statements, and basic loops work.
+* **CSS**: You know how to write simple selectors and apply CSS rules as name/value pairs.
+* **The terminal**: You know how to open a terminal or command-line prompt on your development machine and how to execute commands.
