@@ -92,7 +92,7 @@ This page currently contains two UI components: a `<Page>` and a `<Label>`. To m
 Open `app/views/login/login.xml` and replace the existing `<Label>` with the following code:
 
 ``` XML
-<TextField hint="Email Address" keyboardType="email" />
+<TextField hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
 <TextField hint="Password" secure="true" />
 
 <Button text="Sign in" />
@@ -105,8 +105,10 @@ NativeScript UI components provide attributes to let you configure their behavio
 
 - `<TextField>`
     - `hint`: Used to show placeholder text in the TextField to tell the user what to type.
-    - `secure`: A boolean attribute that determines whether the TextField's text should be masked, which is commonly done on password fields.
     - `keyboardType`: The type of keyboard to present to the user for input. `keyboardType="email"` shows a keyboard optimized for entering email addresses. NativeScript currently supports [five types of keyboards]({{site.baseurl}}/ApiReference/ui/enums/KeyboardType/README) for text fields.
+    - `autocorrect`: A boolean attribute that determines whether the mobile operating system should autocorrect user input. In the case of a email address text field autocorrect behavior is undesirable.
+    - `autocapitalizationType`: Used to determine how the operating system should autocapitalize user input. `autocapitalizationType="none"` turns autocapitalization off altogether. NativeScript supports [four autocapitalization types]({{site.baseurl}}/ApiReference/ui/enums/AutocapitalizationType/README.html) on text fields.
+    - `secure`: A boolean attribute that determines whether the TextField's text should be masked, which is commonly done on password fields.
 - `<Button>`
     - `text`: Controls the text displayed within the button.
 
@@ -115,9 +117,9 @@ After you [run your app](#development-workflow) with this change, you will see a
 ![login 1]({{site.baseurl}}/img/cli-getting-started/chapter2/ios/1.png)
 ![login 1]({{site.baseurl}}/img/cli-getting-started/chapter2/android/1.png)
 
-You need to tell NativeScript how to layout the UI components in your page. Let's look at how to use NativeScript layouts to arrange these components on the screen.
+Currently you only see a single button because you need to tell NativeScript how to layout your page’s UI components. Let's look at how to use NativeScript layouts to arrange these components on the screen.
 
-> **TIP**: The NativeScript docs include a [full list of the UI components and attributes](/ui-with-xml) with which you can build your apps. You can even [build your own, custom UI components]({{site.baseurl}}/ui-with-xml#custom-components).
+> **TIP**: The NativeScript docs include a [full list of the UI components and attributes]({{site.baseurl}}/ui-with-xml) with which you can build your apps. You can even [build your own, custom UI components]({{site.baseurl}}/ui-with-xml#custom-components).
 
 ### Layouts 
 
@@ -128,10 +130,6 @@ NativeScript provides several different layout containers that allow you to plac
 - The [Grid Layout]({{site.baseurl}}/ApiReference/ui/layouts/grid-layout/HOW-TO.html) lets you divide your interface into a series of rows and columns, much like a `<table>` in HTML markup.
 - The [Stack Layout]({{site.baseurl}}/ApiReference/ui/layouts/stack-layout/HOW-TO.html) lets you stack child UI components either vertically or horizontally.
 - The [Wrap Layout]({{site.baseurl}}/ApiReference/ui/layouts/wrap-layout/HOW-TO.html) lets child UI components flow from one row or column to the next when space is filled.
-
-> **TIP**:
-> * For an introduction to the other NativeScript layout elements, check out Jen Looper's article on [demystifying NativeScript layouts](https://www.nativescript.org/blog/demystifying-nativescript-layouts).
-> * Refer to the NativeScript docs for a [more detailed look at how NativeScript layouts work](/layouts) and the various things you can do to configure them.
 
 For your login screen, all you need is a simple `<StackLayout>` to stack the UI components on top of each other. In later sections, you'll use some of the more advanced layouts.
 
@@ -145,7 +143,7 @@ In `login.xml`, add the `<StackLayout>` component within the `<Page>` component.
 <Page>
     <StackLayout orientation="vertical">
 
-        <TextField hint="Email Address" keyboardType="email" />
+        <TextField hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
         <TextField hint="Password" secure="true" />
 
         <Button text="Sign in" />
@@ -166,13 +164,17 @@ After you run your app with this change, you'll see that your login page's UI co
 
 Although the UI components are in the correct order, they could use some spacing and color to make the app look a bit nicer. To do that let's look at another NativeScript feature: CSS.
 
+> **TIP**:
+> * Refer to the NativeScript docs for a [more detailed look at how NativeScript layouts work](/layouts) and the various things you can do to configure them.
+> * Check out Jen Looper's article on [demystifying NativeScript layouts](https://www.nativescript.org/blog/demystifying-nativescript-layouts) for a more thorough look at NativeScript layouts in action.
+
 ### CSS
 
 NativeScript uses a [subset of CSS](/styling) to change the visual appearance of your app. You can use three mechanisms to add CSS properties to UI components: [application-wide CSS](/styling#application-wide-css) (`app.css`), [page-specific CSS](/styling#page-specific-css), and an [inline `style` attribute](/styling#inline-css).
 
 > **TIP**:
 > * Place CSS rules that should apply to all pages in your `app.css`, and CSS rules that apply to a single page in a page-specific CSS file (e.g. `login.css`). 
-> * Although inline styles are great for quick testing—e.g. `<Page style="background-color: green;">` you should avoid them in general because the `style` attributes tend to clutter up XML files especially if you need to apply multiple rules.
+> * Although inline styles are great for quick testing—e.g. `<Page style="background-color: green;">` you should avoid them in general because the `style` attributes tend to clutter up XML files, especially if you need to apply multiple rules.
 
 Let's start by adding a few application-wide CSS rules.
 
@@ -220,10 +222,10 @@ Add the following as the first line of your app's `app.css` file:
 ```
 > **IMPORTANT**: NativeScript is consistent with browser implementations, in that `@import` statements must precede all other CSS rules in a file.
 
-Next, add a `cssClass="link"` attribute to the sign up button in `login.xml`. The button's markup should look like this:
+Next, add a `class="link"` attribute to the sign up button in `login.xml`. The button's markup should look like this:
 
 ``` XML
-<Button text="Sign up for Groceries" cssClass="link" />
+<Button text="Sign up for Groceries" class="link" />
 ```
 
 <div class="exercise-end"></div>
@@ -232,13 +234,13 @@ Let's break down what just happened. First, NativeScript supports CSS's `@import
 
 <a id="platform-specific-files"></a>When you execute `tns run`, or `tns livesync`, the NativeScript CLI takes your code from the `app` folder and places it in the native projects located in the `platforms/ios` and `platforms/android` folders. Here the naming convention comes in: while moving files, the CLI intelligently selects `.android.*` and `.ios.*` files. To give a specific example, the CLI moves `platform.ios.css` into `platforms/ios` and renames it to `platform.css`; similarly, the CLI moves `platform.android.css` into `platforms/android`, and again renames it to `platform.css`. This convention provides a convenient way to branch your code to handle iOS and Android separately, and it's supported for any type of file in NativeScript—not just CSS files. You'll see a few more examples of this convention later in this guide.
 
-There's one other change here we need to discuss, and that's the `cssClass` attribute you added to this button:
+There's one other change here we need to discuss, and that's the `class` attribute you added to this button:
 
 ``` XML
-<Button text="Sign up for Groceries" cssClass="link" />
+<Button text="Sign up for Groceries" class="link" />
 ```
 
-NativeScript uses the `cssClass` attribute for adding CSS class names to UI components. The class name is used to give the sign up button a slightly different look than the sign in button. You can find the CSS rules associated with this class name in `platform.ios.css` and `platform.android.css`:
+NativeScript uses the `class` attribute for adding CSS class names to UI components. The class name is used to give the sign up button a slightly different look than the sign in button. You can find the CSS rules associated with this class name in `platform.ios.css` and `platform.android.css`:
 
 ``` CSS
 /* From platform.android.css */

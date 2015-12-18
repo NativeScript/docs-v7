@@ -1,6 +1,6 @@
 ## NativeScript modules
 
-In this chapter you'll learn about NativeScript modules, which are the JavaScript modules in your app's `node_modules/tns-core-modules` folder. Whether you've realized it or not, you've already used several NativeScript modules. This includes the modules you've brought in via require() (the view, frame and observable modules) and also the UI components you've been using in XML (the page, image, text field and button modules).
+In this chapter you'll learn about NativeScript modules, which are the JavaScript modules in your app's `node_modules/tns-core-modules` folder. Whether you've realized it or not, you've already used several NativeScript modules. This includes the modules you've brought in via `require()` (the view, frame and observable modules) and also the UI components you've been using in XML (the page, image, text field and button modules).
 
 If you dig into `node_modules/tns-core-modules` you can get an idea of how these modules work. Start by finding the `node_modules/tns-core-modules/camera` folder, which includes the implementation of the camera module. It includes:
 
@@ -155,14 +155,15 @@ Next, re-write your `signIn()` function to look like this:
 ``` JavaScript
 exports.signIn = function() {
     user.login()
-        .then(function() {
-            frameModule.topmost().navigate("views/list/list");
-        }).catch(function(error) {
+        .catch(function(error) {
             console.log(error);
             dialogsModule.alert({
                 message: "Unfortunately we could not find your account.",
                 okButtonText: "OK"
             });
+        })
+        .then(function() {
+            frameModule.topmost().navigate("views/list/list");
         });
 };
 ```
@@ -417,24 +418,26 @@ Next, you need to add an `add()` function to handle the button tap event. Paste 
 ``` JavaScript
 exports.add = function() {
     // Check for empty submissions
-    if (pageData.get("grocery").trim() !== "") {
-        // Dismiss the keyboard
-        viewModule.getViewById(page, "grocery").dismissSoftInput();
-        groceryList.add(pageData.get("grocery"))
-            .catch(function() {
-                dialogsModule.alert({
-                    message: "An error occurred while adding an item to your list.",
-                    okButtonText: "OK"
-                });
-            });
-        // Empty the input field
-        pageData.set("grocery", "");
-    } else {
+    if (pageData.get("grocery").trim() === "") {
         dialogsModule.alert({
             message: "Enter a grocery item",
             okButtonText: "OK"
         });
+        return;
     }
+
+    // Dismiss the keyboard
+    page.getViewById("grocery").dismissSoftInput();
+    groceryList.add(pageData.get("grocery"))
+        .catch(function() {
+            dialogsModule.alert({
+                message: "An error occurred while adding an item to your list.",
+                okButtonText: "OK"
+            });
+        });
+
+    // Empty the input field
+    pageData.set("grocery", "");
 };
 ```
 
@@ -507,5 +510,6 @@ You control where the ActivityIndicator displays by setting its `rowSpan` and `c
 ![ActivityIndicator on Android]({{site.baseurl}}/img/cli-getting-started/chapter4/android/5.gif)
 
 Now that you have the login, registration, and list pages complete, you can enhance the app's functionality as a grocery list management tool. In the next chapters you'll add functionality such as email validation, social sharing, and more. And you'll use one of NativeScript's most useful feature to do so: npm modules.
+
 
 > **TIP**: There are several modules that come out of the box with your NativeScript install that we did not have time to cover in this guide—including a [location service]({{site.baseurl}}/ApiReference/location/HOW-TO), a [file-system helper]({{site.baseurl}}/ApiReference/file-system/HOW-TO), a [timer module]({{site.baseurl}}/ApiReference/timer/HOW-TO), a [camera module]({{site.baseurl}}/ApiReference/camera/HOW-TO), a [color module]({{site.baseurl}}/ApiReference/color/HOW-TO), and a whole lot more. Make sure to peruse the “API Reference” of the docs, or just look around `node_modules/tns-core-modules` to see all of what's available.
