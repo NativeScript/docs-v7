@@ -51,7 +51,7 @@ You can add a `tap` attribute that will fire when the user taps or touches a but
 
 ``` XML
 <Button text="Sign in" tap="signIn" />
-<Button text="Sign up for Groceries" cssClass="link" tap="register" />
+<Button text="Sign up for Groceries" class="link" tap="register" />
 ```
 
 Then, at the bottom of the `app/views/login/login.js` file, paste in the following `signIn()` and `register()` functions:
@@ -127,10 +127,10 @@ It's time to see how data flows back and forth between the front end and back en
     <b>Exercise</b>: Send data from the front end to the view model
 </h4>
 
-Open `login.xml` and add an `id="email_address"` attribute to the email text field. Its markup should look like this:
+Open `login.xml` and add an `id="email"` attribute to the email text field. Its markup should look like this:
 
 ``` XML
-<TextField id="email_address" hint="Email Address" keyboardType="email" />
+<TextField id="email" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
 ```
 
 With an `id` attribute in place, you can access this text field in your code-behind file. To do that, start by opening `app/views/login/login.js` and adding the code below at the top, underneath the `frameModule` variable.
@@ -147,7 +147,7 @@ Next, edit the `loaded()` function in `login.js` to get a reference to the email
 ``` JavaScript
 exports.loaded = function(args) {
     var page = args.object;
-    email = viewModule.getViewById(page, "email_address");
+    email = viewModule.getViewById(page, "email");
 };
 ```
 
@@ -181,8 +181,8 @@ The Observable is the view model in the MVVM design pattern. It provides a mecha
 To allow for two-way data binding using an Observable, open `login.xml`, and replace the two existing TextField UI components with the two shown below, each including a new `text` attribute:
 
 ``` XML
-<TextField id="email_address" text="{% raw %}{{ email }}{% endraw %}" hint="Email Address" keyboardType="email" />
-<TextField secure="true" text="{% raw %}{{ password }}{% endraw %}" hint="Password" />
+<TextField id="email" text="{{ email }}" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
+<TextField secure="true" text="{{ password }}" hint="Password" />
 ```
 
 > **NOTE**: The use of two curly brackets surrounding the `text` attribute's value delineates a data-bound value. You will be setting corresponding properties with the same name in the view model.
