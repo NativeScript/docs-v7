@@ -14,7 +14,7 @@ The `ActionBar` is the NativeScript common abstraction over the Android ActionBa
   * [Using Custom Title View](#using-custom-title-view)
   * [Setting App Icon](#setting-app-icon)
 * [Navigation Button](#navigation-button)
-  * [IOS Specifics](#ios-specifics)
+  * [iOS Specifics](#ios-specifics)
   * [Android Specifics](#android-specifics)
 * [Action Items](#action-items)
   * [Positioning](#positioning)
@@ -121,7 +121,7 @@ The result is:
 ![nav-btn-ios]({{site.baseurl}}/img/modules/action-bar/nav-btn-ios.png "nav-btn-ios")
 ![nav-btn-android]({{site.baseurl}}/img/modules/action-bar/nav-btn-android.png "nav-btn-android")
 
-## IOS Specifics
+## iOS Specifics
 
 The default text of the button is the title of the previous page, you can change it by setting the `text` property as shown in the example above.
 
