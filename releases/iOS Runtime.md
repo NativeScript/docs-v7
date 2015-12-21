@@ -7,6 +7,19 @@ slug: ios-changelog
 previous_url: /Changelogs/iOS Runtime
 ---
 
+1.5.1
+=====
+
+## Bug Fixes
+- [Loading static frameworks as shared frameworks](https://github.com/NativeScript/ios-runtime/issues/373)
+- [Marshaling boxed JavaScript primitive types throws an exception](https://github.com/NativeScript/ios-runtime/issues/411)
+
+## What's New
+
+- [Simplify require errors.](https://github.com/NativeScript/ios-runtime/pull/424)
+- [Update JavaScriptCore](https://github.com/NativeScript/ios-runtime/issues/355)
+- [Enable requiring of JSON files](https://github.com/NativeScript/ios-runtime/issues/294)
+
 1.5.0
 =====
 
