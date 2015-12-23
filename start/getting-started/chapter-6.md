@@ -32,15 +32,21 @@ Next, open `app/views/login/login.xml` and paste in the following code, again di
 </Page.actionBar>
 ```
 
+Finally, open `app/app.css` and paste the following CSS to modify the ActionBar’s colors:
+
+``` CSS
+ActionBar {
+    color: white;
+    background-color: #2E6DAD;
+}
+```
+
 With the ActionBar in place, let's look at how to customize its look with some native iOS APIs. Open `app/views/login/login.js` and paste the following code in the `exports.loaded()` function, directly after the `var page = args.object;` assignment:
 
 ``` JavaScript
 if (page.ios) {
     var navigationBar = frameModule.topmost().ios.controller.navigationBar;
-    navigationBar.barTintColor = UIColor.colorWithRedGreenBlueAlpha(0.011, 0.278, 0.576, 1);
-    navigationBar.titleTextAttributes = new NSDictionary([UIColor.whiteColor()], [NSForegroundColorAttributeName]);
-    navigationBar.barStyle = 1;
-    navigationBar.tintColor = UIColor.whiteColor();
+    navigationBar.barStyle = UIBarStyle.UIBarStyleBlack;
 }
 ```
 
@@ -50,7 +56,7 @@ Ok, let's break down what just happened, starting with the `if (page.ios)` check
 
 > **TIP**: As a best practice, testing for a platform with an if check is the way to go when you have a small number of platform-specific changes to make. If, on the contrary, you have big, entirely different chunks of code for iOS and Android, you might want to go with [platform-specific code-behind files](#platform-specific-files)—e.g. `login.ios.js` and `login.android.js`.
 
-Within the if block, you start by getting a reference to the `UINavigationBar`, and then you set four of its properties—`barTintColor`, `titleTextAttributes`, `barStyle`, and `tintColor`. This produces the look shown below:
+Within the if block, you start by getting a reference to the `UINavigationBar`, and then you set its [`barStyle` property](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitDataTypesReference/index.html#//apple_ref/c/tdef/UIBarStyle) to `UIBarStyle.UIBarStyleBlack`, which (counter intuitively) makes the iOS status bar use white text. This produces the look shown below:
 
 ![The iOS actionbar with updated colors]({{site.baseurl}}/img/cli-getting-started/chapter6/ios/1.png)
 
