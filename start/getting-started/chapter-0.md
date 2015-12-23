@@ -27,8 +27,10 @@ And here's what the app will look like on Android:
 
 ### Prerequisites
 
-This guide assumes you know the basics of the following:
+This guide assumes that you have some basic knowledge of JavaScript, CSS, and your development machine’s terminal. More specifically:
 
-* **JavaScript**: You understand how functions, if statements, and basic loops work.
-* **CSS**: You know how to write simple selectors and apply CSS rules as name/value pairs.
-* **The terminal**: You know how to open a terminal or command-line prompt on your development machine and how to execute commands.
+* **JavaScript**: You should know basic JavaScript concepts, such as how functions, if statements, and loops work.
+* **CSS**: You should know how to write simple CSS selectors, and know how to apply CSS rules as name/value pairs.
+* **The terminal**: You should know how to open a terminal or command-line prompt on your development machine, how to change directories, and how to execute commands.
+
+With that out of the way, let’s get started!

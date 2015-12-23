@@ -181,8 +181,8 @@ The Observable is the view model in the MVVM design pattern. It provides a mecha
 To allow for two-way data binding using an Observable, open `login.xml`, and replace the two existing TextField UI components with the two shown below, each including a new `text` attribute:
 
 ``` XML
-<TextField id="email" text="{{ email }}" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
-<TextField secure="true" text="{{ password }}" hint="Password" />
+<TextField id="email" text="{% raw %}{{ email }}{% endraw %}" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
+<TextField secure="true" text="{% raw %}{{ password }}{% endraw %}" hint="Password" />
 ```
 
 > **NOTE**: The use of two curly brackets surrounding the `text` attribute's value delineates a data-bound value. You will be setting corresponding properties with the same name in the view model.
