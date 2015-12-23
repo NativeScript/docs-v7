@@ -103,8 +103,8 @@ Remove the following five lines of code, as you'll be using the `UserViewModel` 
 <div class="no-copy-button"></div>
 
 ``` JavaScript
-var observableModule = require("data/observable");
-var user = new observableModule.Observable({
+var Observable = require("data/observable").Observable;
+var user = new Observable({
     email: "user@domain.com",
     password: "password"
 });
@@ -234,13 +234,13 @@ Open `app/views/list/list.js` and paste in the following code:
 
 ``` JavaScript
 var dialogsModule = require("ui/dialogs");
-var observableModule = require("data/observable");
-var observableArrayModule = require("data/observable-array");
+var Observable = require("data/observable").Observable;
+var ObservableArray = require("data/observable-array").ObservableArray;
 var viewModule = require("ui/core/view");
 var page;
 
-var pageData = new observableModule.Observable({
-    groceryList: new observableArrayModule.ObservableArray([
+var pageData = new Observable({
+    groceryList: new ObservableArray([
         { name: "eggs" },
         { name: "bread" },
         { name: "cereal" }
@@ -255,7 +255,7 @@ exports.loaded = function(args) {
 
 <div class="exercise-end"></div>
 
-Here, you're creating a new Observable object called `pageData`, which you set as the page's `bindingContext` in the `load()` function. Inside the Observable, you set a single `"groceryList"` property to be a new instance of the ObservableArray module. Notice how the `"groceryList"` property corresponds to `<ListView items="{% raw %}{{ groceryList }}{% endraw %}">`, and each array entry's `"name"` property corresponds to `<Label text="{% raw %}{{ name }}{% endraw %}">`. If you run your app you'll see the list screen shows the hardcoded data:
+Here, you're creating a new Observable object called `pageData`, which you set as the page's `bindingContext` in the `load()` function. Inside the Observable, you set a single `"groceryList"` property to be a new instance of the ObservableArray class. Notice how the `"groceryList"` property corresponds to `<ListView items="{% raw %}{{ groceryList }}{% endraw %}">`, and each array entry's `"name"` property corresponds to `<Label text="{% raw %}{{ name }}{% endraw %}">`. If you run your app you'll see the list screen shows the hardcoded data:
 
 ![list 1]({{site.baseurl}}/img/cli-getting-started/chapter4/ios/2.png)
 ![list 1]({{site.baseurl}}/img/cli-getting-started/chapter4/android/2.png)
@@ -267,10 +267,10 @@ A starting view model for this page is already in the file at `app/shared/view-m
 ``` JavaScript
 var config = require("../../shared/config");
 var fetchModule = require("fetch");
-var observableArrayModule = require("data/observable-array");
+var ObservableArray = require("data/observable-array").ObservableArray;
 
 function GroceryListViewModel(items) {
-    var viewModel = new observableArrayModule.ObservableArray(items);
+    var viewModel = new ObservableArray(items);
     return viewModel;
 }
 
@@ -295,8 +295,8 @@ Next, remove the existing `var pageData` assignment:
 
 ``` JavaScript
 // Remove these seven lines of code
-var pageData = new observableModule.Observable({
-    groceryList: new observableArrayModule.ObservableArray([
+var pageData = new Observable({
+    groceryList: new ObservableArray([
         { name: "eggs" },
         { name: "bread" },
         { name: "cereal" }
@@ -308,7 +308,7 @@ And add the code below in the same location:
 
 ``` JavaScript
 var groceryList = new GroceryListViewModel([]);
-var pageData = new observableModule.Observable({
+var pageData = new Observable({
     groceryList: groceryList
 });
 ```
@@ -407,7 +407,7 @@ Finally, replace the `<ListView>` tag with the code below to place it in the sec
 Now you just need to make the necessary changes to the code-behind file to support these XML changes. Open `list.js` and start by adding a new `"grocery"` property to the `pageData` Observable. The `pageData` assignment should look like this:
 
 ``` JavaScript
-var pageData = new observableModule.Observable({
+var pageData = new Observable({
     groceryList: groceryList,
     grocery: ""
 });
