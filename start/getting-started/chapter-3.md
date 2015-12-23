@@ -187,12 +187,12 @@ To allow for two-way data binding using an Observable, open `login.xml`, and rep
 
 > **NOTE**: The use of two curly brackets surrounding the `text` attribute's value delineates a data-bound value. You will be setting corresponding properties with the same name in the view model.
 
-Add the following code to the top of `app/views/login/login.js`, which includes the observable module, and defines a new `user` object, which you'll be using as this page's view model:
+Add the following code to the top of `app/views/login/login.js`. The code gets a reference to the `Observable` constructor from the observable module, and invokes the constructor to define a new `user` object, which you'll be using as this page's view model:
 
 ``` JavaScript
-var observableModule = require("data/observable");
+var Observable = require("data/observable").Observable;
 
-var user = new observableModule.Observable({
+var user = new Observable({
     email: "user@domain.com",
     password: "password"
 });
