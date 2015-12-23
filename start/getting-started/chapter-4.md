@@ -509,7 +509,60 @@ You control where the ActivityIndicator displays by setting its `rowSpan` and `c
 ![ActivityIndicator on iOS]({{site.baseurl}}/img/cli-getting-started/chapter4/ios/5.gif)
 ![ActivityIndicator on Android]({{site.baseurl}}/img/cli-getting-started/chapter4/android/5.gif)
 
-Now that you have the login, registration, and list pages complete, you can enhance the app's functionality as a grocery list management tool. In the next chapters you'll add functionality such as email validation, social sharing, and more. And you'll use one of NativeScript's most useful feature to do so: npm modules.
+The list page is now more user friendly, but we can improve the experience with one of the more powerful NativeScript modules: the animation module.
 
+## Animations
 
-> **TIP**: There are several modules that come out of the box with your NativeScript install that we did not have time to cover in this guide—including a [location service]({{site.baseurl}}/ApiReference/location/HOW-TO), a [file-system helper]({{site.baseurl}}/ApiReference/file-system/HOW-TO), a [timer module]({{site.baseurl}}/ApiReference/timer/HOW-TO), a [camera module]({{site.baseurl}}/ApiReference/camera/HOW-TO), a [color module]({{site.baseurl}}/ApiReference/color/HOW-TO), and a whole lot more. Make sure to peruse the “API Reference” of the docs, or just look around `node_modules/tns-core-modules` to see all of what's available.
+The ability to run robust and performant animations is the one of the biggest reasons people choose to build native mobile apps, and NativeScript makes running these animations simple. The NativeScript animation modules provides a [series of JavaScript APIs](http://docs.nativescript.org/ui/animation) that let you perform a wide variety of animations to elements on the screen—including [scaling]({{site.baseurl}}/ui/animation#scale), [rotating]({{site.baseurl}}/ui/animation#rotate), [translating]({{site.baseurl}}/ui/animation#translate), and more.
+
+For our list page you’re going to use an [opacity animation]({{site.baseurl}}/ui/animation#opacity) to fade in your grocery list after your data loads. Let’s add in the code and then discuss how it all works.
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Add an animation
+</h4>
+
+Open `app/views/list/list.css` and add an `opacity: 0` rule to the existing `ListView` selector. The full set of rules should look like this:
+
+``` CSS
+ListView {
+    margin: 5;
+    opacity: 0;
+}
+```
+
+Then, in `app/views/list/list.js`, replace the existing `exports.loaded()` function with the code below, which does two things: gets a reference to the `<ListView>` (`page.getViewById("groceryList")`), and then calls that element’s `animate()` function after the `groceryList.load()` call completes.
+
+``` JavaScript
+exports.loaded = function(args) {
+    page = args.object;
+    var listView = page.getViewById("groceryList");
+    page.bindingContext = pageData;
+
+    groceryList.empty();
+    pageData.set("isLoading", true);
+    groceryList.load().then(function() {
+        pageData.set("isLoading", false);
+        listView.animate({
+            opacity: 1,
+            duration: 1000
+        });
+    });
+};
+```
+
+<div class="exercise-end"></div>
+
+Two things are happening in the code above. First, in CSS, you set the grocery list `<ListView>` to an `opacity` of `0`, which hides the grocery list completely when the list page loads. Next after the `groceryList.load()` call completes, you call the list view’s `animate()` function, which changes the element’s opacity from `0` (completely hidden) to `1` (completely visible) over one full second.
+
+> **NOTE**: The animation function’s `duration` property takes a time in milliseconds. Therefore, `1000` equates to one second.
+
+The result of this code is a nice fade in animation:
+
+![Animations on iOS]({{site.baseurl}}/img/cli-getting-started/chapter4/ios/6.gif)
+![Animations on Android]({{site.baseurl}}/img/cli-getting-started/chapter4/android/6.gif)
+
+The animation module is a lot of fun to play with—and it’s easy to use too. All you need to do is get a reference to an element using `getViewById()`, and then call that element’s `animate` method. You may want to take a few minutes to look through our [animation samples]({{site.baseurl}}/ui/animation#examples) and try a few of these animations for yourself in Groceries.
+
+Now that you have the login, registration, and list pages complete, let’s enhance the app's functionality as a grocery list management tool. In the next chapters you'll add functionality such as email validation, social sharing, and more. And you'll use one of NativeScript's most useful feature to do so: npm modules.
+
+> **TIP**: There are several modules that come out of the box with your NativeScript install that we did not have time to cover in this guide—including a [location service]({{site.baseurl}}/ApiReference/location/HOW-TO), a [file-system helper]({{site.baseurl}}/ApiReference/file-system/HOW-TO), a [timer module]({{site.baseurl}}/ApiReference/timer/HOW-TO), a [camera module]({{site.baseurl}}/ApiReference/camera/HOW-TO), a [color module]({{site.baseurl}}/ApiReference/color/HOW-TO), and a whole lot more. Make sure to peruse the “Modules API” of the docs, or just look around `node_modules/tns-core-modules` to see all of what's available.
