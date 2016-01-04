@@ -80,7 +80,7 @@ In each module, the `module` variable is a reference to the object representing 
 * `__filename` - The full filename that the currently executing script is located at, e.g. `/private/.../HelloWorldApp.app/app/main.js`.
 
 ## Global Require Function
-(iOS-only) A `global.require` function is available and useful in the context of the App Inspector because it can be called outside the context of an evaluating module. It resolves relative to the `app` folder:
+A `global.require` function is available and useful in the context of the App Inspector because it can be called outside the context of an evaluating module. It resolves relative to the `app` folder:
 
 ```javascript
 global.require('./user-module');
