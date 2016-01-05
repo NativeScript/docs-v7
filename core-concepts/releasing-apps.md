@@ -26,10 +26,12 @@ Publishing NativeScript apps in the App Store is similar to [releasing pure nati
      ```
      tns prepare android
      ```
- 3. Make sure you have a .keystore file to sign your app with. [How to create  a .keystore file?](http://developer.android.com/tools/publishing/app-signing.html#signing-manually)
- 2. Build your project in release mode by running the command:
+ 2. Make sure that you have a `.keystore` file to sign your app with. For more information, see [How to create  a .keystore file?](http://developer.android.com/tools/publishing/app-signing.html#signing-manually)
+ 3. Build your project in release mode by running the following command:
  
     ```
     tns build android --release --key-store-path [path_to_your_keystore] --key-store-password [your_key_store_password] --key-store-alias [your_alias_name] --key-store-alias-password [your_alias_password] 
     ```
- 3. Find the release .apk file inside: `<app_name>/platforms/android/build/outputs/apk/<app_name>-release.apk` and upload it to Google Developer Console. [How to publish an android app?](http://developer.android.com/distribute/googleplay/start.html)
+ 4. Obtain the release `.apk` located at `<app_name>/platforms/android/build/outputs/apk/<app_name>-release.apk`.
+ 5. Publish your Android app by uploading the `.apk` file to the Google Developer Console. For more information, see [How to publish an android app?](http://developer.android.com/distribute/googleplay/start.html)
+ 
