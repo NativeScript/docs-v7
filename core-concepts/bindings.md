@@ -36,11 +36,11 @@ Part of the data binding settings is the way data flows. NativeScript data bindi
 
 ##Basic Binding Concepts
 
-Generally almost every UI control could be bound to a data object (all NativeScript controls are created with data binding in mind). After your code has ,et the following requirements, you can use data-binding out of the box.
+Generally almost every UI control could be bound to a data object (all NativeScript controls are created with data binding in mind). After your code has met the following requirements, you can use data-binding out of the box.
 
 * The target object has to be a successor of the **Bindable** class. All NativeScript UI controls already inherit from this class.
-* For **two-way** data binding, the target property should to be a **dependency property**.
-* For **one-way** binding, using a plain property is sufficient.
+* For **two-way** data binding, the target property should be a **dependency property**.
+* For **one-way** binding, a plain property is sufficient.
 * The data object should raise a **propertyChange** event for every change in the value of its property in order to notify all of the listeners, interested in the change.
 
 ##How to Create a Binding
@@ -49,7 +49,7 @@ Generally almost every UI control could be bound to a data object (all NativeScr
 
 The example below consists of a `Label`, `TextField` and a source property to which the UI controls are bound. The purpose will be, when the user enters an input in the `TextField`, to update the property in the code and the `Label` text.
 
-First, the **source** object is created with a **textSource** property. A constant flow of progating changes from the source property to the Label is necessary. Thus the property in the code has to raise a **propertyChange** event, in order to notify the `Label` for the changes. To raise this event, an built-in class is used, which provides this functionality - `Observable`.
+First, the **source** object is created with a **textSource** property. A constant flow of propagating changes from the source property to the Label is necessary. Thus the property in the code has to raise a **propertyChange** event, in order to notify the `Label` for the changes. To raise this event, an built-in class is used, which provides this functionality - `Observable`.
 
 ``` JavaScript
 var observableModule = require("data/observable");
@@ -121,7 +121,7 @@ targetLabel.bind(labelBindingOptions, source);
 
 ###Binding in XML
 
-To create a binding in XML, a source object is needed, which will be created the same way, as in the exmple above ([Two-Way Binding in Code](#two-way-binding-in-code)). Then the binding is described in the XML (using a mustache syntax). With an XML declaration only the names of the properties are set- for the target: text and for source: textSource. The interesting thing here is that the source of the binding is not specified explicitly. More about this topic will be discussed in the next article ([Binding source](#binding-source)).
+To create a binding in XML, a source object is needed, which will be created the same way, as in the example above ([Two-Way Binding in Code](#two-way-binding-in-code)). Then the binding is described in the XML (using a mustache syntax). With an XML declaration only the names of the properties are set- for the target: text and for source: textSource. The interesting thing here is that the source of the binding is not specified explicitly. More about this topic will be discussed in the next article ([Binding source](#binding-source)).
 
 
 ``` XML
@@ -138,7 +138,7 @@ To create a binding in XML, a source object is needed, which will be created the
 
 ###Binding to a Property
 
-An important part of the data binding is setting the source object. For a continuous flow of data changes, the source property needs to emit a **propertyChange** event. NativeScript data-binding works with any object that emits this event. Adding a binding **source** happens by passing it as a second parameter in the method **bind(bindingOptions, source)**. This parameter is optional and could be omited, in which case for source is used a property named **bindingContext** of the `Bindable` class. What is special about this property is that it is inheritable across the visual tree. This means that a UI control can use the `bindingContext` of the first of its **parent** elements, which has an explicitly set **bindingContext**. In the example from [Two-Way Binding in Code](#two-way-binding-in-code), the `bindingContext` can be set either on a `Page` instance or a `StackLayout` instance and the `TextField` will inherit it as a proper source for the binding of its "text" property.
+An important part of the data binding is setting the source object. For a continuous flow of data changes, the source property needs to emit a **propertyChange** event. NativeScript data-binding works with any object that emits this event. Adding a binding **source** happens by passing it as a second parameter in the method **bind(bindingOptions, source)**. This parameter is optional and could be omitted, in which case for source is used a property named **bindingContext** of the `Bindable` class. What is special about this property is that it is inheritable across the visual tree. This means that a UI control can use the `bindingContext` of the first of its **parent** elements, which has an explicitly set **bindingContext**. In the example from [Two-Way Binding in Code](#two-way-binding-in-code), the `bindingContext` can be set either on a `Page` instance or a `StackLayout` instance and the `TextField` will inherit it as a proper source for the binding of its "text" property.
 
 ``` JavaScript
 page.bindingContext = source;
@@ -207,10 +207,10 @@ for(i = 0; i < 5; i++) {
 	list.push(new Date());
 }
 source.set("items", list);
-``` 
+```
  ###Binding to a Parent Binding Context
 
-Another common case in working with bindings is requesting access to the parent binding context. It is because it might be different from the bindingContext of the child and might contain information, which the child has to use. Generally, the bindingContext is inheritable, but not when the elements (items) are created dynamically based on some data source. For example, `ListView` creates its child items based on an `itemТemplate`, which describes how the `ListView` element will look like. When this element is added to the visual tree, it gets for binding context an element from ListView `items` array (with the corresponding index). This process creates a new binding context chain for the child item and its inner UI elements. So, no inner UI element cannot access binding context of the `ListView`. In order to solve this problem NativeScript binding infrastructure has two special keywords `$parent` and `$parents`. While the first one denotes the binding context of the direct parent visual element, the second one can be used as an array (with number or string index). This gives the option to choose either `N` levels of UI nesting or get a parent UI element with a given type. Let's see how this works in a real case example. 
+Another common case in working with bindings is requesting access to the parent binding context. It is because it might be different from the bindingContext of the child and might contain information, which the child has to use. Generally, the bindingContext is inheritable, but not when the elements (items) are created dynamically based on some data source. For example, `ListView` creates its child items based on an `itemТemplate`, which describes how the `ListView` element will look like. When this element is added to the visual tree, it gets for binding context an element from ListView `items` array (with the corresponding index). This process creates a new binding context chain for the child item and its inner UI elements. So, no inner UI element cannot access binding context of the `ListView`. In order to solve this problem NativeScript binding infrastructure has two special keywords `$parent` and `$parents`. While the first one denotes the binding context of the direct parent visual element, the second one can be used as an array (with number or string index). This gives the option to choose either `N` levels of UI nesting or get a parent UI element with a given type. Let's see how this works in a real case example.
 
 ``` XML
 <Page loaded="pageLoaded">
@@ -384,7 +384,7 @@ source.set("dateFormat", "DD.MM.YYYY");
 page.bindingContext = source;
 ```
 
-Setting a converter function and a parameter within the bindingContext is very useful for ensuring proper convertion of data, however this is not the case when `listview` items should be bound. The problem comes from the fact that the bindingContext of a `listview` item is a data item, which is a part of `any` collection (array), and to apply a converter - the converter and its parameters should be added to the data item, which will result in a multiple converter instances. Tackling this problem with NativeScript is fairly simple. Binding infrastructure seeks for an application level resources to find a proper converter and parameters. So the converters could be added in the resources in the application module. To be more clear examine the following example (both XML and JavaScript):
+Setting a converter function and a parameter within the bindingContext is very useful for ensuring proper conversion of data, however this is not the case when `listview` items should be bound. The problem comes from the fact that the bindingContext of a `listview` item is a data item, which is a part of `any` collection (array), and to apply a converter - the converter and its parameters should be added to the data item, which will result in a multiple converter instances. Tackling this problem with NativeScript is fairly simple. Binding infrastructure seeks for an application level resources to find a proper converter and parameters. So the converters could be added in the resources in the application module. To be more clear examine the following example (both XML and JavaScript):
 
 ``` XML
 <Page>
@@ -454,4 +454,4 @@ targetTextField.unbind("text");
 ``` TypeScript
 targetTextField.unbind("text");
 ```
-More information about binding can be found in [API-Ref]({{site.baseurl}}/ApiReference/ui/core/bindable/Bindable.md). 
+More information about binding can be found in [API-Ref]({{site.baseurl}}/ApiReference/ui/core/bindable/Bindable.md).
