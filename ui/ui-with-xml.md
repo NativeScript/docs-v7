@@ -760,7 +760,7 @@ Since NativeScript 1.3 you can declare your UI using lower-case-dashed syntax:
 <page>
   <scroll-view>
     <stack-layout>
-      <label ctext="Label" />
+      <label text="Label" />
       <button text="Button" tap="tap" />
       ...
 ```

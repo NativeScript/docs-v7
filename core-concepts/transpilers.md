@@ -38,6 +38,46 @@ If you want to change the version of the Babel compiler used in your project, si
 
 If you want to configure Babel, create a `.babelrc` file in the root of your project according to [spec](https://babeljs.io/docs/usage/babelrc/).
 
+## Installing XML validation against XSD schema
+
+Run the following command to install XML validation against XSD schema into your project:
+
+```Shell
+tns install xmlxsd
+```
+
+The above command installs the `nativescript-dev-xmlxsd` npm module as a dev dependencies. The latter installs a `prepare` hook into your project, that validates your XML files against NativeScript XSD schema during build and when live-syncing.
+
+If you want to change the version of the XML validation against XSD schema used in your project, simply install the version you want into your project through npm.
+
+## Installing Less CSS pre-processor
+
+Run the following command to install Less CSS pre-processor into your project:
+
+```Shell
+tns install less
+```
+
+The above command installs the `nativescript-dev-less` npm module as a dev dependencies. The latter installs a `prepare` hook into your project, that converts your *.less files to *.css files during build and when live-syncing.
+
+If you want to change the version of the Less CSS pre-processor used in your project, simply install the version you want into your project through npm.
+
+For more info about Less CSS pre-processor please visit http://lesscss.org/.
+
+## Installing Jade
+
+Run the following command to install Jade language support into your project:
+
+```Shell
+tns install jade
+```
+
+The above command installs the `nativescript-dev-jade` npm module as a dev dependencies. The latter installs a `prepare` hook into your project, that converts your *.jade files to *.xml files during build and when live-syncing.
+
+If you want to change the version of the Jade language support used in your project, simply install the version you want into your project through npm.
+
+For more info about Jade language please visit http://jade-lang.com/.
+
 ## Installing other transpilers
 
 Transpiler support can be extended through the use of hooks. The easiest way to distribute transpiler hooks is by means of npm modules. You can use the implementation of the TypeScript and Babel hooks as reference and grok the [nativescript-hook module](https://github.com/NativeScript/nativescript-hook) that provides common hook installation support to transpiler authors.
