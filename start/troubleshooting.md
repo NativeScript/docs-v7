@@ -14,7 +14,6 @@ previous_url: /troubleshooting
 ## CLI
 
 ### Error thrown when attempting to run build-related operations for Android
-**NativeScript CLI version:** 
 
 ```Shell
 FAILURE: Build failed with an exception.
@@ -36,21 +35,18 @@ A problem occurred configuring root project 'app_name'.
 * Revert Node.js to 0.10.36.
 
 ### Cannot run or debug apps on iOS 8.1.3 devices with Xcode 6.1
-**NativeScript CLI version:** 
 
 **Problem:** On OS X systems with Xcode 6.1 installed, you cannot run or debug apps on iOS 8.1.3 devices.<br/>The developer disk images provided with the iOS SDK in Xcode 6.1 are not compatible with iOS 8.1.3. The NativeScript CLI uses these disk images to work with your attached iOS devices.
 
 **Workaround:** Update to Xcode 6.1.1 or later.
 
 ### `Debug` command times out on Android device
-**NativeScript CLI version:**
 
 **Problem:** The `debug` command times out when you attempt to debug on Android devices or emulators and the debug tools do not start.<br/>The `debug` command is configured with a 30-second timeout. On slower computer configurations, the CLI might exceed this timeout when connecting to your Android devices or emulators.
 
 **Workaround:** Re-run the `debug` command.
 
 ### The debug tools for Android never launch on OS X system
-**NativeScript CLI version:** 
 
 **Problem:** The NativeScript CLI uses the [opener npm package](https://www.npmjs.com/package/opener) to open Chrome. The current version of the package that the CLI uses cannot open the browser.
 
