@@ -51,6 +51,12 @@ For Android development
     ```Shell
     brew install homebrew/versions/node012
     ```
+1. Install and configure CocoaPods.
+
+    ```Shell
+    sudo gem install cocoapods
+    pod setup
+    ```
 1. Install the dependencies for iOS development.
     1. Run the App Store and download and install Xcode 5 or later.
     1. Go to [Downloads for Apple Developers](https://developer.apple.com/downloads/index.action), log in and download and install the **Command Line Tools for Xcode** for your version of OS X and Xcode.
