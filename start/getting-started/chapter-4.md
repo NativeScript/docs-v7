@@ -511,7 +511,7 @@ You control where the ActivityIndicator displays by setting its `rowSpan` and `c
 
 The list page is now more user friendly, but we can improve the experience with one of the more powerful NativeScript modules: the animation module.
 
-## Animations
+### Animations
 
 The ability to run robust and performant animations is the one of the biggest reasons people choose to build native mobile apps, and NativeScript makes running these animations simple. The NativeScript animation modules provides a [series of JavaScript APIs]({{site.baseurl}}/ui/animation) that let you perform a wide variety of animations to elements on the screen, including the following:
 
