@@ -51,12 +51,10 @@ For Android development
     ```Shell
     brew install homebrew/versions/node012
     ```
-1. Install and configure cocoapods 
+1. Install and configure CocoaPods.
 
     ```Shell
     sudo gem install cocoapods
-    ```
-    ```Shell
     pod setup
     ```
 1. Install the dependencies for iOS development.
