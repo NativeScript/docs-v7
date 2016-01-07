@@ -199,7 +199,7 @@ Values for `android.systemIcon` correspond to the resources names of the built-i
 Values for `ios.systemIcon` are numbers from the [`UIBarButtonSystemItem`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItem_Class/index.html#//apple_ref/doc/uid/TP40007519-CH3-SW2) enumeration:
 
 | Value | Icon           |  | Value | Icon           |
-| ----- | -------------- |--| ----- | -------------- |
+|-------|----------------|--|-------|----------------|
 |0      | Done           |  |12     | Search |
 |1      | Cancel         |  |13     | Refresh |
 |2      | Edit           |  |14     | Stop |
