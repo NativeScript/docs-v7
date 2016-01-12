@@ -511,6 +511,31 @@ var myComponentInstance = builder.load({
 });
 ```
 
+## Events
+All UI component events can be defined in XML including derived events from Observable like propertyChanged. For example:
+```XML
+<Page>
+  <Switch propertyChange="switchPropertyChange" />
+</Page>
+```
+```JavaScript
+function switchPropertyChange(args) {
+    if (args.propertyName === "checked") {
+        // Your code goes here
+    }
+}
+exports.switchPropertyChange = switchPropertyChange;
+```
+```TypeScript
+import observable = require("data/observable");
+
+export function switchPropertyChange(args: observable.PropertyChangeData) {
+    if (args.propertyName === "checked") {
+        // Your code goes here
+    }
+}
+```
+
 ## Gestures
 All [UI Gestures]({% slug gestures %})
 (gestures.md) can be defined in XML. For example:
