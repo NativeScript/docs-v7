@@ -74,7 +74,7 @@ Starting with NativeScript 1.5.1, you are able to require `.json` files, the sam
 In each module, the `module` variable is a reference to the object representing the current module. The `module` object has some properties useful for inspecting it. The following examples are for the `/private/.../HelloWorldApp.app/app/main.js` module.
 
 * `module.require(id)` - The `module.require` method provides a way to load a module as if `require()` was called from the original module.
-* `module.id` - The identifier for the module relative to the app bundle, e.g. `app/main.js`.
+* `module.id` - The fully resolved filename to the module, e.g. `/private/.../HelloWorldApp.app/app/main.js`.
 * `module.filename` - The fully resolved filename to the module, e.g. `/private/.../HelloWorldApp.app/app/main.js`.
 * `__dirname` - The name of the directory that the currently executing script resides in, e.g. `/private/.../HelloWorldApp.app/app/`.
 * `__filename` - The full filename that the currently executing script is located at, e.g. `/private/.../HelloWorldApp.app/app/main.js`.
