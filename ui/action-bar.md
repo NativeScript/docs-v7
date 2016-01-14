@@ -56,7 +56,7 @@ Here is how to combine image and label for a `titleView` (the example contains o
       <Image src="res://nativescript_logo" class="action-image"/>
       <Label text="ativeScript"  class="action-label"/>
     </StackLayout>
-  <ActionBar.titleView>
+  </ActionBar.titleView>
 </ActionBar>
 ```
 ```CSS
