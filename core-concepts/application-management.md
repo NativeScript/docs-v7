@@ -30,8 +30,7 @@ iOS calls UIApplication and triggers the application main event loop.
 */
 
 var application = require("application");
-application.mainModule = "main-page";
-application.start();
+application.start({ moduleName: "main-page" });
 ```
 ``` TypeScript
 /*
@@ -39,8 +38,7 @@ iOS calls UIApplication and triggers the application main event loop.
 */
 
 import application = require("application");
-application.mainModule = "main-page";
-application.start();
+application.start({ moduleName: "main-page" });
 ```
 
 ## Use Application Events
@@ -58,7 +56,6 @@ NativeScript applications have the following life cycle events.
 
 ``` JavaScript
 var application = require("application");
-application.mainModule = "main-page";
 
 application.on(application.launchEvent, function (args) {
     if (args.android) {
@@ -120,11 +117,10 @@ application.on(application.uncaughtErrorEvent, function (args) {
     }
 });
 
-application.start();
+application.start({ moduleName: "main-page" });
 ```
 ``` TypeScript
 import application = require("application");
-application.mainModule = "main-page";
 application.on(application.launchEvent, function (args: application.ApplicationEventData) {
     if (args.android) {
         // For Android applications, args.android is an android.content.Intent class.
@@ -184,7 +180,7 @@ application.on(application.uncaughtErrorEvent, function (args: application.Appli
         console.log("NativeScriptError: " + args.ios);
     }
 });
-application.start();
+application.start({ moduleName: "main-page" });
 ```
 ## Android Activity Events
 
@@ -203,8 +199,6 @@ NativeScript applications have the following Android specific activity events:
 ### Example
 ``` JavaScript
 var application = require("application");
-
-application.mainModule = "app/mainPage";
 
 if (application.android) {
     application.android.on(application.AndroidApplication.activityCreatedEvent, function (args) {
@@ -250,7 +244,6 @@ application.start();
 ```
 ``` TypeScript
 import application = require("application");
-application.mainModule = "app/mainPage";
 
 // Android activity events
 if (application.android) {
@@ -293,7 +286,7 @@ if (application.android) {
     });
 }
 
-application.start();
+application.start({ moduleName: "main-page" });
 ```
 ## iOS UIApplicationDelegate
 
