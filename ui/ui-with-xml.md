@@ -37,23 +37,19 @@ For each page, you need to have a separate `XML` file which holds the layout of 
 
 Each NativeScript app must have a home page - the page that loads when you launch the app.
 
-You need to explicitly set the home page for your app. You can do this by setting the `mainModule` member of the [`Application`]({{site.baseurl}}/ApiReference/application/README.md) module.
+You need to explicitly set the home page for your app. You can do this by calling the `start()` method of the [`Application`]({{site.baseurl}}/ApiReference/application/README.md) module and pass `NavigationEntry` with desired `moduleName`.
 
-When you set the `mainModule`, the NativeScript navigation framework looks for an `XML` file with the specified name, loads it and navigates to the respective page. If NativeScript discovers a `JavaScript` or `TypeScript` file with the same name, it executes the code inside it.
+The NativeScript navigation framework looks for an `XML` file with the specified name, loads it and navigates to the respective page. If NativeScript discovers a `JavaScript` or `TypeScript` file with the same name, it executes the code inside it.
 
 ```JavaScript
 var application = require("application");
-// Set the start module for the application
-application.mainModule = "my-page";
 // Start the application. Don't place any code after this line.
-application.start();
+application.start({ moduleName: "my-page" });
 ```
 ```TypeScript
 import application = require("application");
-// Set the start module for the application
-application.mainModule = "my-page";
 // Start the application. Don't place any code after this line.
-application.start();
+application.start({ moduleName: "my-page" });
 ```
 
 ### Navigate to a Page

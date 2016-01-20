@@ -198,20 +198,20 @@ Values for `android.systemIcon` correspond to the resources names of the built-i
 
 Values for `ios.systemIcon` are numbers from the [`UIBarButtonSystemItem`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItem_Class/index.html#//apple_ref/doc/uid/TP40007519-CH3-SW2) enumeration:
 
-| Value | Icon           |  | Value | Icon           |
-| ----- | -------------- |--| ----- | -------------- |
-|0      | Done           |  |12     | Search |
-|1      | Cancel         |  |13     | Refresh |
-|2      | Edit           |  |14     | Stop |
-|3      | Save           |  |15     | Camera |
-|4      | Add            |  |16     | Trash |
-|5      | FlexibleSpace  |  |17     | Play |
-|6      | FixedSpace     |  |18     | Pause |
-|7      | Compose        |  |19     | Rewind |
-|8      | Reply          |  |20     | FastForward |
-|9      | Action         |  |21     | Undo |
-|10     | Organize       |  |22     | Redo |
-|11     | Bookmarks      |  |23     | PageCurl |
+| Value | Icon           |     | Value | Icon          |
+| ----- | -------------- | --- | ----- | ------------- |
+|0      | Done           |     |12     | Search |
+|1      | Cancel         |     |13     | Refresh |
+|2      | Edit           |     |14     | Stop |
+|3      | Save           |     |15     | Camera |
+|4      | Add            |     |16     | Trash |
+|5      | FlexibleSpace  |     |17     | Play |
+|6      | FixedSpace     |     |18     | Pause |
+|7      | Compose        |     |19     | Rewind |
+|8      | Reply          |     |20     | FastForward |
+|9      | Action         |     |21     | Undo |
+|10     | Organize       |     |22     | Redo |
+|11     | Bookmarks      |     |23     | PageCurl |
 
 # How To
 

@@ -98,17 +98,15 @@ export function createPage() {
 
 Each application must have a single entry point - the home page.
 
-To set the home page for your app, you need to use the `mainModule` member of the [`Application`]({{site.baseurl}}/ApiReference/application/README.md) module. When you define `application.mainModule`, NativeScript looks for an XML file with the specified name, parses it and draws the UI described in the file. Afterwards, if NativeScript finds a `JS` or a `TS` file with the same name, it executes the business logic in the file.
+To load the home page for your app, you need to pass `NavigationEntry` with desired `moduleName` to start() method. NativeScript looks for an XML file with the specified name, parses it and draws the UI described in the file. Afterwards, if NativeScript finds a `JS` or a `TS` file with the same name, it executes the business logic in the file.
 
 ``` JavaScript
 var application = require("application");
-application.mainModule = "main-page";
-application.start();
+application.start({ moduleName: "main-page" });
 ```
 ``` TypeScript
 import application = require("application");
-application.mainModule = "main-page";
-application.start();
+application.start({ moduleName: "main-page" });
 ```
 
 ## Navigation
