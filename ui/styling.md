@@ -40,17 +40,15 @@ You can change the name of the file from which the application-wide CSS is loade
 
 ``` JavaScript
 var application = require("application");
-application.mainModule = "main-page";
 application.cssFile = "style.css";
 
-application.start();
+application.start({ moduleName: "main-page" });
 ```
 ``` TypeScript
 import application = require("application");
-application.mainModule = "main-page";
 application.cssFile = "style.css";
 
-application.start();
+application.start({ moduleName: "main-page" });
 ```
 > The path to the CSS file is relative to the application root folder.
 
