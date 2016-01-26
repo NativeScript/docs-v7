@@ -184,10 +184,6 @@ This code gets a reference to the page's `<ListView>` id and then passes that re
 
 ![deleting from a list on iOS]({{site.baseurl}}/img/cli-getting-started/chapter6/ios/2.gif)
 
-<!--
->**NOTE:** Advanced ListView interactions like swipe-to-delete, pull-to-refresh, as well as other components such as calendars and charts are available out-of-the-box as part of Telerik's [UI For NativeScript](https://www.nativescript.org/blog/welcome-to-telerik-ui-for-nativescript) product.
--->
-
 And... that's it! You've created a functional, cross-platform, backend-driven app to manage your grocery list. In the process you've created a unique UI for Android and iOS, leveraged NativeScript plugins and npm modules, learned how to log in and register, managed backend services, created a list with add and delete functionality, and more. 
 
 Congratulations!
@@ -195,3 +191,4 @@ Congratulations!
 > **TIP**:
 > * If you're curious about how NativeScript makes it possible to directly invoke iOS and Android APIs, you can read about [“How NativeScript Works”](http://developer.telerik.com/featured/nativescript-works/) on our blog.
 > * Remember that the [Groceries app's “end” branch](https://github.com/NativeScript/sample-Groceries/tree/end) has the final state of this tutorial. Feel free to refer back to it at any time.
+> * Advanced ListView interactions like swipe-to-delete, pull-to-refresh, as well as other components such as calendars and charts are available out-of-the-box as part of Telerik [UI For NativeScript](http://docs.telerik.com/devtools/nativescript-ui/introduction).
