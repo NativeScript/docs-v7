@@ -155,16 +155,16 @@ Next, re-write your `signIn()` function to look like this:
 ``` JavaScript
 exports.signIn = function() {
     user.login()
+        .then(function() {
+            frameModule.topmost().navigate("views/list/list");
+        })
         .catch(function(error) {
             console.log(error);
             dialogsModule.alert({
                 message: "Unfortunately we could not find your account.",
                 okButtonText: "OK"
             });
-        })
-        .then(function() {
-            frameModule.topmost().navigate("views/list/list");
-        });
+        });        
 };
 ```
 <div class="exercise-end"></div>
