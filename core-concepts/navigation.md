@@ -22,6 +22,8 @@ NativeScript apps consist of pages which represent the separate application scre
     * [Navigate Using a Function](#navigate-using-a-function)
     * [Navigate and Pass Context](#navigate-and-pass-context)
     * [Navigate without History](#navigate-without-history)
+    * [Clear History](#clear-history)
+    * [Navigation Transitions](#navigation-transitions)
     * [Navigate Back](#navigate-back)
     * [Modal Pages](#modal-pages)
 * [Supporting Multiple Screens](#supporting-multiple-screens)
