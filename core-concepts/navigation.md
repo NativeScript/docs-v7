@@ -254,6 +254,256 @@ var navigationEntry = {
 topmost.navigate(navigationEntry);
 ```
 
+### Clear History
+
+You can navigate to a new page and decide to completely clear the entire navigation history. Set the `clearHistory` property of the [`NavigationEntry`]({{site.baseurl}}/ApiReference/ui/frame/NavigationEntry.md) to `true`. This will prevent the user from going back to pages previously visited. This is extremely useful if you have multiple-page authentication process and you want to clear the authentication pages once the user is successfully logged in and redirected to the start page of the application.
+
+``` JavaScript
+var navigationEntry = {
+    moduleName: "main-page",
+    clearHistory: true
+};
+topmost.navigate(navigationEntry);
+```
+``` TypeScript
+var navigationEntry = {
+    moduleName: "main-page",
+    clearHistory: true
+};
+topmost.navigate(navigationEntry);
+```
+
+### Navigation Transitions
+
+By default, all navigation will be animated and will use the default transition for the respective platform (UINavigationController transitions for iOS and Fragment Transitions for Android). To change the transition type set the `navigationTransition` property of the [`NavigationEntry`]({{site.baseurl}}/ApiReference/ui/frame/NavigationEntry.md) to an object conforming to the [`NavigationTransition`]({{site.baseurl}}/ApiReference/ui/frame/NavigationTransition.md) interface.
+
+``` JavaScript
+var navigationEntry = {
+    moduleName: "main-page",
+    animated: true,
+    navigationTransition: {
+        transition: "slide",
+        duration: 380,
+        curve: "easeIn"
+    }
+};
+topmost.navigate(navigationEntry);
+```
+``` TypeScript
+var navigationEntry = {
+    moduleName: "main-page",
+    animated: true,
+    navigationTransition: {
+        transition: "slide",
+        duration: 380,
+        curve: "easeIn"
+    }
+};
+topmost.navigate(navigationEntry);
+```
+
+The value for the `transition` property of the [`NavigationTransition`]({{site.baseurl}}/ApiReference/ui/frame/NavigationTransition.md) can be either a string specifying one of the built-in transitions that NativeScript Core Modules provide or an instance of a class that inherits from [`Transition`]({{site.baseurl}}/ApiReference/ui/transition/Transition.md). The built-in transition types are:
+ - curl (same as curlUp) (iOS only)
+ - curlUp (iOS only)
+ - curlDown (iOS only)
+ - explode (Android Lollipop an later)
+ - fade
+ - flip (same as flipRight)
+ - flipRight
+ - flipLeft
+ - slide (same as slideLeft)
+ - slideLeft
+ - slideRight
+ - slideTop
+ - slideBottom
+ 
+ The `duration` property lets you specify the transition duration in milliseconds. If left undefined, the default duration for each platform will be used -- `350` ms for iOS and `300` ms for Android.
+ 
+ The `curve` property lets you specify the animation curve of the transition. Possible values are contained in the [AnimationCurve enumeration]({{site.baseurl}}/ApiReference/ui/enums/AnimationCurve/README.md). Alternatively, you can pass an instance of type [`UIViewAnimationCurve`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/#//apple_ref/c/tdef/UIViewAnimationCurve) for iOS or [`android.animation.TimeInterpolator`](http://developer.android.com/reference/android/animation/TimeInterpolator.html) for Android. If left undefined, and `easeInOut` curve will be used. 
+ 
+ To specify a default transition for **all** frame navigations, set the `navigationTransition` property of the frame you are navigating with.
+
+ ``` JavaScript
+topmost.navigationTransition = { transition: "flip" };
+topmost.navigate("main-page");
+```
+``` TypeScript
+topmost.navigationTransition = { transition: "flip" };
+topmost.navigate("main-page");
+```
+
+ To specify a default transition for **all** navigations accross the entire app, set the **static** `defaultNavigationTransition` property of the `Frame` class.
+
+ ``` JavaScript
+var frameModule = require("ui/frame");
+frameModule.Frame.defaultNavigationTransition = { transition: "fade" };
+```
+``` TypeScript
+import frameModule = require("ui/frame");
+frameModule.Frame.defaultNavigationTransition = { transition: "fade" };
+```
+
+### Custom Transitions
+You can create your own custom user-defined transition by writing platform-specific code to animate the transition. To do that you need to inherit from the [`Transition`]({{site.baseurl}}/ApiReference/ui/transition/Transition.md) class and override one method for each platform. Since there will be platform-specific code, you need to separate your code into two separate files. Here is an example of a custom transition that shrinks the disappearing page while exapnding the appearing page by using a scale affine transform.
+
+`custom-transition.android.js/ts`
+``` JavaScript
+var transition = require("ui/transition");
+var floatType = java.lang.Float.class.getField("TYPE").get(null);
+var CustomTransition = (function (_super) {
+    __extends(CustomTransition, _super);
+    function CustomTransition() {
+        _super.apply(this, arguments);
+    }
+    CustomTransition.prototype.createAndroidAnimator = function (transitionType) {
+        var scaleValues = java.lang.reflect.Array.newInstance(floatType, 2);
+        switch (transitionType) {
+            case transition.AndroidTransitionType.enter:
+            case transition.AndroidTransitionType.popEnter:
+                scaleValues[0] = 0;
+                scaleValues[1] = 1;
+                break;
+            case transition.AndroidTransitionType.exit:
+            case transition.AndroidTransitionType.popExit:
+                scaleValues[0] = 1;
+                scaleValues[1] = 0;
+                break;
+        }
+        var objectAnimators = java.lang.reflect.Array.newInstance(android.animation.Animator.class, 2);
+        objectAnimators[0] = android.animation.ObjectAnimator.ofFloat(null, "scaleX", scaleValues);
+        objectAnimators[1] = android.animation.ObjectAnimator.ofFloat(null, "scaleY", scaleValues);
+        var animatorSet = new android.animation.AnimatorSet();
+        animatorSet.playTogether(objectAnimators);
+        var duration = this.getDuration();
+        if (duration !== undefined) {
+            animatorSet.setDuration(duration);
+        }
+        animatorSet.setInterpolator(this.getCurve());
+        return animatorSet;
+    };
+    return CustomTransition;
+})(transition.Transition);
+exports.CustomTransition = CustomTransition;
+```
+``` TypeScript
+import transition = require("ui/transition");
+import platform = require("platform");
+
+var floatType = java.lang.Float.class.getField("TYPE").get(null);
+
+export class CustomTransition extends transition.Transition {
+    public createAndroidAnimator(transitionType: string): android.animation.Animator {
+        var scaleValues = java.lang.reflect.Array.newInstance(floatType, 2);
+        switch (transitionType) {
+            case transition.AndroidTransitionType.enter:
+            case transition.AndroidTransitionType.popEnter:
+                scaleValues[0] = 0;
+                scaleValues[1] = 1;
+                break;
+            case transition.AndroidTransitionType.exit:
+            case transition.AndroidTransitionType.popExit:
+                scaleValues[0] = 1;
+                scaleValues[1] = 0;
+                break;
+        }
+        var objectAnimators = java.lang.reflect.Array.newInstance(android.animation.Animator.class, 2);
+        objectAnimators[0] = android.animation.ObjectAnimator.ofFloat(null, "scaleX", scaleValues);
+        objectAnimators[1] = android.animation.ObjectAnimator.ofFloat(null, "scaleY", scaleValues);
+        var animatorSet = new android.animation.AnimatorSet();
+        animatorSet.playTogether(objectAnimators);
+
+        var duration = this.getDuration();
+        if (duration !== undefined) {
+            animatorSet.setDuration(duration);
+        }
+        animatorSet.setInterpolator(this.getCurve());
+
+        return animatorSet;
+    }
+}
+```
+
+`custom-transition.ios.js/ts`
+``` JavaScript
+var transition = require("ui/transition");
+var CustomTransition = (function (_super) {
+    __extends(CustomTransition, _super);
+    function CustomTransition() {
+        _super.apply(this, arguments);
+    }
+    CustomTransition.prototype.animateIOSTransition = function (containerView, fromView, toView, operation, completion) {
+        toView.transform = CGAffineTransformMakeScale(0, 0);
+        fromView.transform = CGAffineTransformIdentity;
+        switch (operation) {
+            case UINavigationControllerOperation.UINavigationControllerOperationPush:
+                containerView.insertSubviewAboveSubview(toView, fromView);
+                break;
+            case UINavigationControllerOperation.UINavigationControllerOperationPop:
+                containerView.insertSubviewBelowSubview(toView, fromView);
+                break;
+        }
+        var duration = this.getDuration();
+        var curve = this.getCurve();
+        UIView.animateWithDurationAnimationsCompletion(duration, function () {
+            UIView.setAnimationCurve(curve);
+            toView.transform = CGAffineTransformIdentity;
+            fromView.transform = CGAffineTransformMakeScale(0, 0);
+        }, completion);
+    };
+    return CustomTransition;
+})(transition.Transition);
+exports.CustomTransition = CustomTransition;
+```
+``` TypeScript
+import transition = require("ui/transition");
+import platform = require("platform");
+
+export class CustomTransition extends transition.Transition {
+    public animateIOSTransition(containerView: UIView, fromView: UIView, toView: UIView, operation: UINavigationControllerOperation, completion: (finished: boolean) => void): void {
+        toView.transform = CGAffineTransformMakeScale(0, 0);
+        fromView.transform = CGAffineTransformIdentity;
+
+        switch (operation) {
+            case UINavigationControllerOperation.UINavigationControllerOperationPush:
+                containerView.insertSubviewAboveSubview(toView, fromView);
+                break;
+            case UINavigationControllerOperation.UINavigationControllerOperationPop:
+                containerView.insertSubviewBelowSubview(toView, fromView);
+                break;
+        }
+
+        var duration = this.getDuration();
+        var curve = this.getCurve();
+        UIView.animateWithDurationAnimationsCompletion(duration, () => {
+            UIView.setAnimationCurve(curve);
+            toView.transform = CGAffineTransformIdentity;
+            fromView.transform = CGAffineTransformMakeScale(0, 0);
+        }, completion);
+    }
+}
+```
+
+Once you have `custom-transition.android.js/ts` and `custom-transition.ios.js/ts` created, you need to require the module and instantiate your CustomTransition, optionally passing a duration and curve to the constructor.
+
+```JavaScript
+var customTransition = new customTransitionModule.CustomTransition(300, "easeIn");
+var navigationEntry = {
+    moduleName: "main-page",
+    animated: true,
+    navigationTransition: {transition: customTransition}
+};
+topmost.navigate(navigationEntry);
+```
+```TypeScript
+var customTransition = new customTransitionModule.CustomTransition(300, "easeIn");
+var navigationEntry = {
+    moduleName: "main-page",
+    animated: true,
+    navigationTransition: {transition: customTransition}
+};
+topmost.navigate(navigationEntry);
+```
+
 ### Navigate Back
 
 The topmost frame tracks the pages the user has visited in a navigation stack. To go back to a previous page, you need to use the **goBackMethod** of the topmost frame instance.
