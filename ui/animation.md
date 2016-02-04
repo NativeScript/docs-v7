@@ -62,8 +62,6 @@ view.animate({
 ```
 
 ## Background Color
-> **TIP:** [Animating Label.backgroundColor is not currently supported on iOS.](https://github.com/NativeScript/NativeScript/issues/793)
-
 ![background-color]({{site.baseurl}}/img/modules/animation/background-color.gif "Background Color")
 ``` JavaScript
 view.animate({
