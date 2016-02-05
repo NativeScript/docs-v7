@@ -195,6 +195,7 @@ This is the list of the properties that can be set in CSS or through the style p
 | padding-right   | paddingRight       | Sets the right padding of a layout container. |
 | padding-bottom  | paddingBottom      | Sets the bottom padding of a layout container. |
 | padding-left    | paddingLeft        | Sets the left padding of a layout container. |
+| text-decoration | textDecoration     | Sets the text formatting. Possible values: "line-through", "underline". |   
 | visibility      | visibility         | Sets the view visibility. Possible values: "visible", "collapse" (or"collapsed"). |
 | opacity         | opacity            | Sets the view opacity. The value is in the [0, 1] range. |
 
