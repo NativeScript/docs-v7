@@ -179,6 +179,7 @@ This is the list of the properties that can be set in CSS or through the style p
 | font-style      | fontStyle          | Sets the font style of the matched view. Possible values: "italic", "normal". |
 | font-weight     | fontWeight         | Sets the font weight of the matched view Possible values: "bold", "normal". |
 | text-align      | textAlignment      | Sets text alignment in the matched view. Possible values: "left" , "center", "right". |
+| text-decoration | textDecoration     | Sets the text formatting. Possible values: "none", "line-through", "underline". |
 | vertical-align  | verticalAlignment  | Sets the vertical alignment of the current view within its parent. Possible values: "top", "center", "bottom", "stretch". |
 | horizontal-align | horizontalAlignment| Sets the horizontal alignment of the current view within its parent. Possible values: "left", "center", "right", "stretch". |
 | margin          | margin             | Sets the margin of the view within its parent. |
