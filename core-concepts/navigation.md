@@ -283,8 +283,8 @@ By default, all navigation will be animated and will use the default transition 
 var navigationEntry = {
     moduleName: "main-page",
     animated: true,
-    navigationTransition: {
-        transition: "slide",
+    transition: {
+        name: "slide",
         duration: 380,
         curve: "easeIn"
     }
@@ -295,8 +295,8 @@ topmost.navigate(navigationEntry);
 var navigationEntry = {
     moduleName: "main-page",
     animated: true,
-    navigationTransition: {
-        transition: "slide",
+    transition: {
+        name: "slide",
         duration: 380,
         curve: "easeIn"
     }
@@ -304,7 +304,7 @@ var navigationEntry = {
 topmost.navigate(navigationEntry);
 ```
 
-The value for the `transition` property of the [`NavigationTransition`]({{site.baseurl}}/ApiReference/ui/frame/NavigationTransition.md) can be either a string specifying one of the built-in transitions that NativeScript Core Modules provide or an instance of a class that inherits from [`Transition`]({{site.baseurl}}/ApiReference/ui/transition/Transition.md). The built-in transition types are:
+To use one of the built-in transitions set the `name` property of the [`NavigationTransition`]({{site.baseurl}}/ApiReference/ui/frame/NavigationTransition.md) to one of the following:
  - curl (same as curlUp) (iOS only)
  - curlUp (iOS only)
  - curlDown (iOS only)
@@ -319,34 +319,71 @@ The value for the `transition` property of the [`NavigationTransition`]({{site.b
  - slideTop
  - slideBottom
  
- The `duration` property lets you specify the transition duration in milliseconds. If left undefined, the default duration for each platform will be used -- `350` ms for iOS and `300` ms for Android.
+The `duration` property lets you specify the transition duration in milliseconds. If left undefined, the default duration for each platform will be used -- `350` ms for iOS and `300` ms for Android.
  
- The `curve` property lets you specify the animation curve of the transition. Possible values are contained in the [AnimationCurve enumeration]({{site.baseurl}}/ApiReference/ui/enums/AnimationCurve/README.md). Alternatively, you can pass an instance of type [`UIViewAnimationCurve`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/#//apple_ref/c/tdef/UIViewAnimationCurve) for iOS or [`android.animation.TimeInterpolator`](http://developer.android.com/reference/android/animation/TimeInterpolator.html) for Android. If left undefined, and `easeInOut` curve will be used. 
+The `curve` property lets you specify the animation curve of the transition. Possible values are contained in the [AnimationCurve enumeration]({{site.baseurl}}/ApiReference/ui/enums/AnimationCurve/README.md). Alternatively, you can pass an instance of type [`UIViewAnimationCurve`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/#//apple_ref/c/tdef/UIViewAnimationCurve) for iOS or [`android.animation.TimeInterpolator`](http://developer.android.com/reference/android/animation/TimeInterpolator.html) for Android. If left undefined, and `easeInOut` curve will be used. 
  
- To specify a default transition for **all** frame navigations, set the `navigationTransition` property of the frame you are navigating with.
+To specify a default transition for **all** frame navigations, set the `transition` property of the frame you are navigating with.
 
  ``` JavaScript
-topmost.navigationTransition = { transition: "flip" };
+topmost.transition = { name: "flip" };
 topmost.navigate("main-page");
 ```
 ``` TypeScript
-topmost.navigationTransition = { transition: "flip" };
+topmost.transition = { name: "flip" };
 topmost.navigate("main-page");
 ```
 
- To specify a default transition for **all** navigations accross the entire app, set the **static** `defaultNavigationTransition` property of the `Frame` class.
+To specify a default transition for **all** navigations accross the entire app, set the **static** `defaultTransition` property of the `Frame` class.
 
  ``` JavaScript
 var frameModule = require("ui/frame");
-frameModule.Frame.defaultNavigationTransition = { transition: "fade" };
+frameModule.Frame.defaultTransition = { name: "fade" };
 ```
 ``` TypeScript
 import frameModule = require("ui/frame");
-frameModule.Frame.defaultNavigationTransition = { transition: "fade" };
+frameModule.Frame.defaultTransition = { name: "fade" };
+```
+
+To specify different transitions for the different platforms use the `transitioniOS` and `transitionAndroid` properties of the [`NavigationEntry`]({{site.baseurl}}/ApiReference/ui/frame/NavigationEntry.md).
+
+``` JavaScript
+var navigationEntry = {
+    moduleName: "main-page",
+    animated: true,
+    transitioniOS: {
+        name: "curl",
+        duration: 380,
+        curve: "easeIn"
+    },
+    transitionAndroid: {
+        name: "explode",
+        duration: 300,
+        curve: "easeOut"
+    }
+};
+topmost.navigate(navigationEntry);
+```
+``` TypeScript
+var navigationEntry = {
+    moduleName: "main-page",
+    animated: true,
+    transitioniOS: {
+        name: "curl",
+        duration: 380,
+        curve: "easeIn"
+    },
+    transitionAndroid: {
+        name: "explode",
+        duration: 300,
+        curve: "easeOut"
+    }
+};
+topmost.navigate(navigationEntry);
 ```
 
 ### Custom Transitions
-You can create your own custom user-defined transition by writing platform-specific code to animate the transition. To do that you need to inherit from the [`Transition`]({{site.baseurl}}/ApiReference/ui/transition/Transition.md) class and override one method for each platform. Since there will be platform-specific code, you need to separate your code into two separate files. Here is an example of a custom transition that shrinks the disappearing page while exapnding the appearing page by using a scale affine transform.
+Instead of setting the `name` property to one of the predefined transitions, you can set the `instance` property of the [`NavigationTransition`]({{site.baseurl}}/ApiReference/ui/frame/NavigationTransition.md) to an instance of a class that inherits from [`Transition`]({{site.baseurl}}/ApiReference/ui/transition/Transition.md). You can create your own custom user-defined transition by writing platform-specific code to animate the transition. To do that you need to inherit from the [`Transition`]({{site.baseurl}}/ApiReference/ui/transition/Transition.md) class and override one method for each platform. Since there will be platform-specific code, you need to separate your code into two separate files. Here is an example of a custom transition that shrinks the disappearing page while exapnding the appearing page by using a scale affine transform.
 
 `custom-transition.android.js/ts`
 ``` JavaScript
@@ -492,7 +529,7 @@ var customTransition = new customTransitionModule.CustomTransition(300, "easeIn"
 var navigationEntry = {
     moduleName: "main-page",
     animated: true,
-    navigationTransition: {transition: customTransition}
+    transition: {instance: customTransition}
 };
 topmost.navigate(navigationEntry);
 ```
@@ -501,7 +538,7 @@ var customTransition = new customTransitionModule.CustomTransition(300, "easeIn"
 var navigationEntry = {
     moduleName: "main-page",
     animated: true,
-    navigationTransition: {transition: customTransition}
+    transition: {instance: customTransition}
 };
 topmost.navigate(navigationEntry);
 ```
