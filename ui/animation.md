@@ -42,6 +42,71 @@ The [`Animation`]({{site.baseurl}}/ApiReference/ui/animation/Animation.md) class
 ## View.animate Method
 In case you need to animate a **single** [`View`]({{site.baseurl}}/ApiReference/ui/core/view/View.md) and you don't need to be able to **cancel** the animation, you can simply use the shortcut **View.animate** method which accepts an [`AnimationDefinition`]({{site.baseurl}}/ApiReference/ui/animation/AnimationDefinition.md), immediately starts the animation and returns its finished promise.
 
+## Animation curves
+
+By default the animation moves with a linear speed without acceleration or deceleration. This might look unnatural and different from the real world where objects need time to reach their top speed and can't stop immediately. The animation curve (called sometimes easing function) is used to give animations an illusion of inertia. It controls the animation speed by modifying the fraction of the duration. NativeScript comes with a number of predefined animation curves:
+
+- The simplest animation curve is linear. It maintains a constant speed while the animation is running:
+
+![linear]({{site.baseurl}}/img/modules/animation/linear.gif "Linear")
+
+- The ease-in curve causes the animation to begin slowly, and then speed up as it progresses. 
+
+![easein]({{site.baseurl}}/img/modules/animation/easein.gif "EaseIn")
+
+- An ease-out curve causes the animation to begin quickly, and then slow down as it completes.
+
+![easeout]({{site.baseurl}}/img/modules/animation/easeout.gif "EaseOut")
+
+
+- An ease-in ease-out curve causes the animation to begin slowly, accelerate through the middle of its duration, and then slow again before completing.
+
+![easeinout]({{site.baseurl}}/img/modules/animation/easeinout.gif "EaseInOut")
+
+
+- A spring animation curve causes an animation to produce a spring (bounce) effect.
+
+![spring]({{site.baseurl}}/img/modules/animation/spring.gif "Spring")
+
+
+In NativeScript the animation curve is represented by the AnimationCurve enumeration and can be specified with the curve property of the animation:
+
+``` JavaScript
+view.animate({
+	translate: { x: 0, y: 100},    
+	duration: 1000,
+	curve: enums.AnimationCurve.easeIn
+});
+```
+``` TypeScript
+view.animate({
+	translate: { x: 0, y: 100},    
+	duration: 1000,
+	curve: enums.AnimationCurve.easeIn
+});
+```
+
+It is easy to create your own animation curve by passing in the x and y components of two control points of a cubic Bezier curve. Using Bezier curves is a common technique to create smooth curves in computer graphics and they are widely used in vector-based drawing tools. The values passed to the cubicBezier method control the curve shape. The animation speed will be adjusted based on the resulting path.
+
+![beziergraph]({{site.baseurl}}/img/modules/animation/bezier-graph.png "BezierGraph")
+
+``` JavaScript
+view.animate({
+    translate: { x: 0, y: 100 },
+    duration: 1000,
+    curve: enums.AnimationCurve.cubicBezier(0.1, 0.1, 0.1, 1)
+});
+```
+``` TypeScript
+view.animate({
+    translate: { x: 0, y: 100 },
+    duration: 1000,
+    curve: enums.AnimationCurve.cubicBezier(0.1, 0.1, 0.1, 1)
+});
+```
+
+![bezier]({{site.baseurl}}/img/modules/animation/bezier.gif "Bezier")
+
 # Examples
 
 The full source code for all samples is located [`here`](https://github.com/NativeScript/animation-demo).
@@ -379,3 +444,4 @@ animationSet.play().catch((e) => {
 });
 // Call animationSet.cancel() to stop it;
 ```
+
