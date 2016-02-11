@@ -24,7 +24,9 @@ The Placeholder allows you to add any native widget to your application. To do t
 
 ```JavaScript
 function creatingView(args) {
-    var nativeView = new android.widget.LabelView(args.context);
+    var nativeView = new android.widget.TextView(args.context);
+    nativeView.setSingleLine(true);
+    nativeView.setEllipsize(android.text.TextUtils.TruncateAt.END);
     nativeView.setText("Native");
     args.view = nativeView;
 }
@@ -34,7 +36,9 @@ exports.creatingView = creatingView;
 import placeholder = require("ui/placeholder");
 
 export function creatingView(args: placeholder.CreateViewEventData) {
-    var nativeView = new android.widget.LabelView(args.context);
+    var nativeView = new android.widget.TextView(args.context);
+    nativeView.setSingleLine(true);
+    nativeView.setEllipsize(android.text.TextUtils.TruncateAt.END);
     nativeView.setText("Native");
     args.view = nativeView;
 }
