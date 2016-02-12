@@ -18,6 +18,7 @@ NativeScript provides a recursive layout system which sizes and positions [views
 * [Layouts](#layouts)
 	* [Layout Paddings](#layout-paddings)
 	* [Predefined Layouts](#predefined-layouts)
+* [Percent Support](#percentage-support)
 
 ## Layout Process
 
@@ -118,3 +119,11 @@ The following table shows predefined layouts that NativeScript provides.
 [GridLayout]: {{site.baseurl}}/ApiReference/ui/layouts/grid-layout/HOW-TO.md
 [StackLayout]: {{site.baseurl}}/ApiReference/ui/layouts/stack-layout/HOW-TO.md
 [WrapLayout]: {{site.baseurl}}/ApiReference/ui/layouts/wrap-layout/HOW-TO.md
+
+### Percentage Support
+
+> **NOTE:** Experimental feature v1.6+ 
+
+With version 1.6.0 NativeScript support percentage values for `width`, `height` and `margins`.
+When layout pass begins first the percent values are calculated based on parent available size. This means that on vertical `StackLayout` if you place two `Buttons` with `height='50%'` they will get all the available height (e.g. they will fill the `StackLayout` vertically.).
+Same applies for margin properties. For example if you set `marginLeft='5%'` the element will have margin which corresponds to 5% from parent available width.
