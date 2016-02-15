@@ -1,7 +1,7 @@
 ---
 title: Debugging
 description: How to debug {N} applications.
-position: 10
+position: 12
 slug: debugging
 previous_url: /debugging
 ---
