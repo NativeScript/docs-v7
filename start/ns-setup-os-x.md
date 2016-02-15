@@ -81,7 +81,11 @@ For Android development
             ```
             For example: ANDROID_HOME=/usr/local/Cellar/android-sdk/24/
             > NOTE: This is the directory that contains `tools` and `platform-tools` directories.
-        1. Select all packages for the Android 22 SDK, Android SDK Build-tools 22.0.0 or later, Android Support Repository (under Extras) and any other SDKs that you want to install and click **Install**.
+        2. Add the ANDROID_HOME variable to your path
+           ```
+           export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+           ```
+        3. Select all packages for the Android 22 SDK, Android SDK Build-tools 22.0.0 or later, Android Support Repository (under Extras) and any other SDKs that you want to install and click **Install**.
            You can use the following command, that will install all required tools:
            ```
            android update sdk --filter tools,platform-tools,android-22,build-tools-22.0.1,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
