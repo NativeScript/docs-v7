@@ -32,6 +32,7 @@ The next sections introduce you to all the gestures recognized by NativeScript:
 * [Pan](#pan)
 * [Pinch](#pinch)
 * [Rotation](#rotation)
+* [Touch](#touch)
 * [Subscribing to Multiple Gestures and Events](#subscribing-to-multiple-gestures-and-events)
 
 ## Tap
@@ -170,6 +171,26 @@ import labelModule = require("ui/label");
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.rotation, function (args: gestures.RotationGestureEventData) {
     console.log("Rotation: " + args.rotation);
+});
+```
+
+## Touch
+
+**Action: A finger action was performed.**
+This is a general purpose gesture that is triggered whenever pointer (usually finger) has performed a touch action (up, down, move or cancel). `TouchGestureEventData` provides information about all the pointers currently on the screen and their position inside the view that triggered the event.
+
+``` JavaScript
+var labelModule = require("ui/label");
+var label = new labelModule.Label();
+label.on(gestures.GestureTypes.touch, function (args) {
+    console.log("Touch: x: " + args.getX() + " y: " + args.getY());
+});
+```
+``` TypeScript
+import labelModule = require("ui/label");
+var label = new labelModule.Label();
+label.on(gestures.GestureTypes.touch, function (args: gestures.RotationGestureEventData) {
+    console.log("Touch: x: " + args.getX() + " y: " + args.getY());
 });
 ```
 
