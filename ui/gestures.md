@@ -190,7 +190,7 @@ label.on(gestures.GestureTypes.touch, function (args) {
 ``` TypeScript
 import labelModule = require("ui/label");
 var label = new labelModule.Label();
-label.on(gestures.GestureTypes.touch, function (args: gestures.RotationGestureEventData) {
+label.on(gestures.GestureTypes.touch, function (args: gestures.TouchGestureEventData) {
     console.log("Touch: x: " + args.getX() + " y: " + args.getY());
 });
 ```
