@@ -177,6 +177,7 @@ label.on(gestures.GestureTypes.rotation, function (args: gestures.RotationGestur
 ## Touch
 
 **Action: A finger action was performed.**
+
 This is a general purpose gesture that is triggered whenever pointer (usually finger) has performed a touch action (up, down, move or cancel). `TouchGestureEventData` provides information about all the pointers currently on the screen and their position inside the view that triggered the event.
 
 ``` JavaScript
