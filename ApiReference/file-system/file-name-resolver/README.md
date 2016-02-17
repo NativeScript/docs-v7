@@ -1,0 +1,32 @@
+---
+nav-title: "Module file-system/file-name-resolver"
+title: "Module file-system/file-name-resolver"
+description: "Module file-system/file-name-resolver"
+---
+# Module: "file-system/file-name-resolver"
+
+``` JavaScript
+// To import the "file-system/file-name-resolver" module:
+var file_systemfile_name_resolver = require("file-system/file-name-resolver");
+```
+
+Class | Description
+------|------------
+[FileNameResolver](../../file-system/file-name-resolver/FileNameResolver.md) | 
+
+Object | Description
+------|------------
+[PlatformContext](../../file-system/file-name-resolver/PlatformContext.md) | 
+
+##### Functions
+ - **resolveFileName(** path _String_, ext _String_ **)** _String_
+   - **path** - _String_
+   - **ext** - _String_
+   - _**return**_ - _String_
+ - **clearCache()**
+ - **findFileMatch(** path _String_, ext _String_, candidates __..., context [_PlatformContext_](../../file-system/file-name-resolver/PlatformContext.md) **)** _String_
+   - **path** - _String_
+   - **ext** - _String_
+   - **candidates** - __ of _String_
+   - **context** - [_PlatformContext_](../../file-system/file-name-resolver/PlatformContext.md)
+   - _**return**_ - _String_
