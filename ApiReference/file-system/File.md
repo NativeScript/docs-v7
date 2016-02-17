@@ -38,6 +38,11 @@ Represents a File entity on the file system.
    - **encoding** - _(optional)_ - _String_  
      An optional value specifying the preferred encoding (defaults to UTF-8).
    - _**return**_ - _String_
+ - **readSync(** onError? _Function_... **)** _Object_  
+     Reads the binary content of the file synchronously.
+   - **onError** - _(optional)_ - _Function_(error _Object_) _Object_  
+     An optional function to be called if some IO-error occurs.
+   - _**return**_ - _Object_
  - **writeText(** content _String_, encoding? _String_ **)** _Promise_...  
      Writes the provided string to the file, using the specified encoding (defaults to UTF-8).
    - **content** - _String_  
@@ -53,3 +58,9 @@ Represents a File entity on the file system.
      An optional function to be called if some IO-error occurs.
    - **encoding** - _(optional)_ - _String_  
      An optional value specifying the preferred encoding (defaults to UTF-8).
+ - **writeSync(** content _Object_, onError? _Function_... **)**  
+     Writes the provided binary content to the file synchronously.
+   - **content** - _Object_  
+     The binary content to be saved to the file.
+   - **onError** - _(optional)_ - _Function_(error _Object_) _Object_  
+     An optional function to be called if some IO-error occurs.

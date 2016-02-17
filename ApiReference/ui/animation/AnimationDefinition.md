@@ -8,7 +8,7 @@ Defines animation options for the View.animate method.
 
 ##### Properties
  - **target** - _(optional)_ - [_View_](../../ui/core/view/View.md).    
-  The view whose property is to be animated. 
+  The view whose property is to be animated.
  - **opacity** - _(optional)_ - _Number_.    
   Animates the opacity of the view. Value should be a number between 0.0 and 1.0
  - **backgroundColor** - _(optional)_ - [_Color_](../../color/Color.md).    
@@ -22,7 +22,7 @@ Defines animation options for the View.animate method.
  - **duration** - _(optional)_ - _Number_.    
   The length of the animation in milliseconds. The default duration is 300 milliseconds.
  - **delay** - _(optional)_ - _Number_.    
-  The amount of time, in milliseconds, to delay starting the animation. 
+  The amount of time, in milliseconds, to delay starting the animation.
  - **iterations** - _(optional)_ - _Number_.    
   Specifies how many times the animation should be played. Default is 1.
 iOS animations support fractional iterations, i.e. 1.5.

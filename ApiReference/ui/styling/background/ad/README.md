@@ -5,6 +5,6 @@ description: "Module ui/styling/background.ad"
 ---
 ## Namespace: "ui/styling/background".ad
 
-Class | Description
-------|------------
-[BorderDrawable](../../../../ui/styling/background/ad/BorderDrawable.md) | 
+##### Functions
+ - **onBackgroundOrBorderPropertyChanged(** v [_View_](../../../../ui/core/view/View.md) **)**
+   - **v** - [_View_](../../../../ui/core/view/View.md)

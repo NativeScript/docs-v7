@@ -12,6 +12,8 @@ Represents a logical unit for navigation (inside Frame).
   Dependency property that specify if page background should span under status bar.
  - **actionBarHiddenProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
   Dependency property used to hide the Navigation Bar in iOS and the Action Bar in Android.
+ - **showingModallyEvent** - _String_.    
+  String value used when hooking to showingModally event.
  - **shownModallyEvent** - _String_.    
   String value used when hooking to shownModally event.
  - **navigatingToEvent** - _String_.    
@@ -77,7 +79,12 @@ Represents a logical unit for navigation (inside Frame).
    - **callback** - _Function_(args [_NavigatedData_](../../ui/page/NavigatedData.md))
    - **thisArg** - _(optional)_ - _Object_
  - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
-     Raised when the page is shown as a modal dialog.
+     Raised before the page is shown as a modal dialog.
+   - **event**
+   - **callback** - _Function_(args [_EventData_](../../data/observable/EventData.md))
+   - **thisArg** - _(optional)_ - _Object_
+ - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
+     Raised after the page is shown as a modal dialog.
    - **event**
    - **callback** - _Function_(args [_ShownModallyData_](../../ui/page/ShownModallyData.md))
    - **thisArg** - _(optional)_ - _Object_

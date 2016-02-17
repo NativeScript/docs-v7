@@ -38,6 +38,11 @@ image.src = "https://www.google.com/images/errors/logo_sm_2.png";
 var image = new ImageModule.Image();
 image.src = "~/logo.png";
 ```
+### How to create an image and set its src to Data URI.
+``` JavaScript
+var image = new ImageModule.Image();
+image.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAAAXNSR0IArs4c6QAAABxpRE9UAAAAAgAAAAAAAAACAAAAKAAAAAIAAAACAAAARiS4uJEAAAASSURBVBgZYvjPwABHSMz/DAAAAAD//0GWpK0AAAAOSURBVGNgYPiPhBgQAACEvQv1D5y/pAAAAABJRU5ErkJggg==";
+```
 ### How to set image stretching.
 ``` JavaScript
 var image = new ImageModule.Image();

@@ -33,6 +33,23 @@ http.getImage("https://httpbin.org/image/png").then(function (r) {
     // Argument (e) is Error!
 });
 ```
+### Get File from URL. By default the file will be saved in Documents folder.
+``` JavaScript
+http.getFile("https://raw.githubusercontent.com/NativeScript/NativeScript/master/apps/tests/logo.png").then(function (r) {
+    // Argument (r) is File!
+}, function (e) {
+    // Argument (e) is Error!
+});
+```
+### Get content as File from URL. You can specify where the file should be saved.
+``` JavaScript
+var filePath = fs.path.join(fs.knownFolders.documents().path, "test.png");
+http.getFile("https://httpbin.org/image/png", filePath).then(function (r) {
+    // Argument (r) is File!
+}, function (e) {
+    // Argument (e) is Error!
+});
+```
 ### Get response status code
 ``` JavaScript
 http.request({ url: "https://httpbin.org/get", method: "GET" }).then(function (response) {

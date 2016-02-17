@@ -12,6 +12,9 @@ var dataobservable = require("data/observable");
 
 Class | Description
 ------|------------
+[WrappedValue](../../data/observable/WrappedValue.md) | Helper class that is used to fire property change even when real object is the same.
+By default property change will not be fired for a same object.
+By wrapping object into a WrappedValue instance `same object restriction` will be passed.
 [Observable](../../data/observable/Observable.md) | Observable is used when you want to be notified when a change occurs. Use on/off methods to add/remove listener.
 
 Object | Description

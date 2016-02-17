@@ -17,13 +17,13 @@ cache.placeholder = imageSource.fromFile(fs.path.join(__dirname, "res/no-image.p
 cache.maxRequests = 5;
 // Enable download while not scrolling
 cache.enableDownload();
-var imgSource;
+var imgSouce;
 var url = "https://github.com/NativeScript.png";
 // Try to read the image from the cache
 var image = cache.get(url);
 if (image) {
     // If present -- use it.
-    imgSource = imageSource.fromNativeSource(image);
+    imgSouce = imageSource.fromNativeSource(image);
 }
 else {
     // If not present -- request its download.
@@ -32,7 +32,7 @@ else {
         url: url,
         completed: function (image, key) {
             if (url === key) {
-                imgSource = imageSource.fromNativeSource(image);
+                imgSouce = imageSource.fromNativeSource(image);
             }
         }
     });

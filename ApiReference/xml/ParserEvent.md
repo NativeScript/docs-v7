@@ -9,6 +9,8 @@ Provides information for a parser event.
 ##### Properties
  - **eventType** - _String_.    
   Returns the type of the parser event. This is one of the ParserEventType static members.
+ - **position** - [_Position_](../xml/Position.md).    
+  Get the position in the xml string where the event was generated.
  - **prefix** - _(optional)_ - _String_.    
   If namespace processing is enabled, returns the prefix of the element in case the eventType is ParserEventType.StartElement or ParserEventType.EndElement.
  - **namespace** - _(optional)_ - _String_.    

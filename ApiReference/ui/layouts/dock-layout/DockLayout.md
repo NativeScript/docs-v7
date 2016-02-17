@@ -4,23 +4,23 @@ title: "Class ui/layouts/dock-layout.DockLayout"
 description: "Class ui/layouts/dock-layout.DockLayout"
 ---
 ## Class: "ui/layouts/dock-layout".DockLayout  
-_Inherits:_ [_LayoutBase_](../../../ui/layouts/layout-base/LayoutBase.md)  
+_Inherits:_ _Object_  
 A Layout that arranges its children at its outer edges, and allows its last child to take up the remaining space. 
 
 ##### Static Properties
- - **dockProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
+ - **dockProperty** - _Object_.    
   Represents the observable property backing the dock property.
- - **stretchLastChildProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
+ - **stretchLastChildProperty** - _Object_.    
   Represents the observable property backing the stretchLastChild property of each DockLayout instance.
 
 ##### Static Functions
- - **getDock(** view [_View_](../../../ui/core/view/View.md) **)** _String_  
+ - **getDock(** view _Object_ **)** _String_  
      Gets the value of the Left property from a given View.
-   - **view** - [_View_](../../../ui/core/view/View.md)
+   - **view** - _Object_
    - _**return**_ - _String_
- - **setDock(** view [_View_](../../../ui/core/view/View.md), value _String_ **)**  
+ - **setDock(** view _Object_, value _String_ **)**  
      Sets the value of the Left property from a given View.
-   - **view** - [_View_](../../../ui/core/view/View.md)
+   - **view** - _Object_
    - **value** - _String_
 
 ##### Instance Properties

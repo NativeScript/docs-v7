@@ -40,6 +40,8 @@ The abstraction of an Android-specific application object.
   The main (start) Activity for the application.
  - **packageName** - _String_.    
   The name of the application package.
+ - **paused** - _Boolean_.    
+  True if the application is not running (suspended), false otherwise.
  - **onActivityCreated** - _Function_(activity _Object_, bundle _Object_).    
   [Deprecated. Please use the respective event instead.] Direct handler of the [onActivityCreated method](http://developer.android.com/reference/android/app/Application.ActivityLifecycleCallbacks.html).
  - **onActivityDestroyed** - _Function_(activity _Object_).    

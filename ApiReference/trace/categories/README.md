@@ -18,6 +18,7 @@ An enum that defines all predefined categories.
  - **Binding** - _String_.
  - **Error** - _String_.
  - **Animation** - _String_.
+ - **Transition** - _String_.
  - **All** - _String_.
  - **separator** - _String_.
 

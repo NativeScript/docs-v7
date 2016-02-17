@@ -96,6 +96,15 @@ myFile.writeText("Something")
     // Failed to write to the file.
 });
 ```
+### Reading/writing binary data from/to a File
+``` JavaScript
+var fileName = "logo.png";
+var error;
+var sourceFile = fs.File.fromPath(__dirname + "/" + fileName);
+var destinationFile = fs.knownFolders.documents().getFile(fileName);
+var source = sourceFile.readSync(function (e) { error = e; });
+destinationFile.writeSync(source, function (e) { error = e; });
+```
 ### Getting the Known Folders
 Each app has several well known folders. This is how to access them:
 ``` JavaScript

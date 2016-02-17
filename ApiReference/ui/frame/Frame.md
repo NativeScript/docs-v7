@@ -11,9 +11,12 @@ Nested frames are supported, enabling hierarchical navigation scenarios.
 
 ##### Static Properties
  - **androidOptionSelectedEvent** - _String_.    
-  String value used when hooking to androidOptionSelected event (prefix `android` states that this event is available only in Android).
+  Deprecated.
+String value used when hooking to androidOptionSelected event (prefix `android` states that this event is available only in Android).
  - **defaultAnimatedNavigation** - _Boolean_.    
   Gets or sets if navigation transitions should be animated globally.
+ - **defaultTransition** - [_NavigationTransition_](../../ui/frame/NavigationTransition.md).    
+  Gets or sets the default NavigationTransition for all frames across the app.
 
 ##### Instance Properties
  - **backStack** - __ of [_BackstackEntry_](../../ui/frame/BackstackEntry.md).    
@@ -24,6 +27,8 @@ Nested frames are supported, enabling hierarchical navigation scenarios.
   Gets the NavigationEntry instance the Frame is currently navigated to.
  - **animated** - _Boolean_.    
   Gets or sets if navigation transitions should be animated.
+ - **transition** - [_NavigationTransition_](../../ui/frame/NavigationTransition.md).    
+  Gets or sets the default navigation transition for this frame.
  - **android** - [_AndroidFrame_](../../ui/frame/AndroidFrame.md).    
   Gets the AndroidFrame object that represents the Android-specific APIs for this Frame. Valid when running on Android OS.
  - **ios** - [_iOSFrame_](../../ui/frame/iOSFrame.md).    
@@ -31,8 +36,10 @@ Nested frames are supported, enabling hierarchical navigation scenarios.
  - **navigationBarHeight** - _Number_.
 
 ##### Instance Functions
- - **goBack()**  
+ - **goBack(** to? [_BackstackEntry_](../../ui/frame/BackstackEntry.md) **)**  
      Navigates to the previous entry (if any) in the back stack.
+   - **to** - _(optional)_ - [_BackstackEntry_](../../ui/frame/BackstackEntry.md)  
+     The backstack entry to navigate back to.
  - **canGoBack()** _Boolean_  
      Checks whether the goBack operation is available.
    - _**return**_ - _Boolean_

@@ -7,6 +7,7 @@ description: "Class ui/styling/css-selector.CssSelector"
 
 ##### Instance Properties
  - **expression** - _String_.
+ - **attrExpression** - _String_.
  - **specificity** - _Number_.
 
 ##### Instance Functions

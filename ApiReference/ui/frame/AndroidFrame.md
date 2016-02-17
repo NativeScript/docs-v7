@@ -22,10 +22,3 @@ To start a new Activity, a new Frame instance should be created and navigated to
   Determines whether the Activity associated with this Frame will display an action bar or not.
  - **cachePagesOnNavigate** - _Boolean_.    
   Gets or sets whether the page UI will be cached when navigating away from the page.
-
-##### Functions
- - **onActivityRequested(** intent _Object_ **)** _Object_  
-     A function called by the Runtime whenever a new Activity is about to be opened.
-   - **intent** - _Object_  
-     The native [android Intent](http://developer.android.com/reference/android/content/Intent.html) object passed to the Activity's onCreate method.
-   - _**return**_ - _Object_

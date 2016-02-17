@@ -18,6 +18,7 @@ Object | Description
 ------|------------
 [NativeScriptError](../application/NativeScriptError.md) | An extended JavaScript Error which will have the nativeError property initialized in case the error is caused by executing platform-specific code.
 [ApplicationEventData](../application/ApplicationEventData.md) | Event data containing information for the application events.
+[LaunchEventData](../application/LaunchEventData.md) | Event data containing information for launch event.
 [OrientationChangedEventData](../application/OrientationChangedEventData.md) | Event data containing information for orientation changed event.
 [AndroidActivityEventData](../application/AndroidActivityEventData.md) | Data for the Android activity events.
 [AndroidActivityBundleEventData](../application/AndroidActivityBundleEventData.md) | Data for the Android activity events with bundle.
@@ -65,13 +66,17 @@ Encapsulates methods and properties specific to the iOS platform.
 Will be undefined when TargetOS is Android.
 
 ##### Functions
- - **loadCss()**  
+ - **loadCss(** cssFile? _String_ **)** __...  
      Loads css file and parses to a css syntax tree.
- - **start()**  
+   - **cssFile** - _(optional)_ - _String_  
+     Optional parameter to point to an arbitrary css file. If not specified, the cssFile property is used.
+   - _**return**_ - __ of [_CssSelector_](../ui/styling/css-selector/CssSelector.md)
+ - **start(** entry? [_NavigationEntry_](../ui/frame/NavigationEntry.md) **)**  
      Call this method to start the application. Important: All code after this method call will not be executed!
- - **onLaunch(** context _Object_ **)**  
+   - **entry** - _(optional)_ - [_NavigationEntry_](../ui/frame/NavigationEntry.md)
+ - **onLaunch(** context? _Object_ **)**  
      The main entry point event. This method is expected to use the root frame to navigate to the main application page.
-   - **context** - _Object_
+   - **context** - _(optional)_ - _Object_
  - **onUncaughtError(** error [_NativeScriptError_](../application/NativeScriptError.md) **)**  
      A callback to be used when an uncaught error occurs while the application is running.
 The application will be shut down after this method returns.
@@ -114,7 +119,7 @@ The method is intended to be used for crash reports and/or application restart.
  - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
      This event is raised on application launchEvent.
    - **event**
-   - **callback** - _Function_(args [_ApplicationEventData_](../application/ApplicationEventData.md))
+   - **callback** - _Function_(args [_LaunchEventData_](../application/LaunchEventData.md))
    - **thisArg** - _(optional)_ - _Object_
  - **on(** event , callback _Function_..., thisArg? _Object_ **)**  
      This event is raised when the Application is suspended.

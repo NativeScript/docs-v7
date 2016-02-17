@@ -20,4 +20,3 @@ Namespace | Description
 [properties](../../ui/styling/properties/) | Encapsulates the style properties definitions and utility methods.
 [converters](../../ui/styling/converters/) | Encapsulates CSS converter methods.
 [visualStates](../../ui/styling/visualStates/) | Encapsulates visual states names.
-[stylers](../../ui/styling/stylers/) | Encapsulates styler classes used for converting NativeScript properties to properties of the native views/widgets.

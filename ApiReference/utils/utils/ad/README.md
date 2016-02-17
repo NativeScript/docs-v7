@@ -12,6 +12,15 @@ Namespace | Description
 [resources](../../../utils/utils/ad/resources/) | Utility module related to android resources.
 
 ##### Functions
+ - **setTextTransform(** view, value _String_ **)**
+   - **view**
+   - **value** - _String_
+ - **setWhiteSpace(** view, value _String_ **)**
+   - **view**
+   - **value** - _String_
+ - **setTextDecoration(** view, value _String_ **)**
+   - **view**
+   - **value** - _String_
  - **getApplication()** _Object_  
      Gets the native Android application instance.
    - _**return**_ - _Object_

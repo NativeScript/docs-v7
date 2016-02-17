@@ -23,14 +23,20 @@ Enum | Description
 Object | Description
 ------|------------
 [GestureEventData](../../ui/gestures/GestureEventData.md) | Provides gesture event data.
+[TouchGestureEventData](../../ui/gestures/TouchGestureEventData.md) | Provides gesture event data.
+[Pointer](../../ui/gestures/Pointer.md) | Pointer is an object representing a finger (or other object) that is touching the screen.
 [GestureEventDataWithState](../../ui/gestures/GestureEventDataWithState.md) | Provides gesture event data for pinch gesture.
 [PinchGestureEventData](../../ui/gestures/PinchGestureEventData.md) | Provides gesture event data for pinch gesture.
 [SwipeGestureEventData](../../ui/gestures/SwipeGestureEventData.md) | Provides gesture event data for swipe gesture.
 [PanGestureEventData](../../ui/gestures/PanGestureEventData.md) | Provides gesture event data for pan gesture.
 [RotationGestureEventData](../../ui/gestures/RotationGestureEventData.md) | Provides gesture event data for rotation gesture.
 
+Namespace | Description
+------|------------
+[TouchAction](../../ui/gestures/TouchAction/) | Defines a touch action
+
 ##### Functions
- - **observe(** target [_View_](../../ui/core/view/View.md), type [_GestureTypes_](../../ui/gestures/GestureTypes.md), callback _Function_..., thisArg? _Object_ **)** [_GesturesObserver_](../../ui/gestures/GesturesObserver.md)  
+ - **observe(** target [_View_](../../ui/core/view/View.md), type [_GestureTypes_](../../ui/gestures/GestureTypes.md), callback _Function_..., context? _Object_ **)** [_GesturesObserver_](../../ui/gestures/GesturesObserver.md)  
      A short-hand function that is used to create a gesture observer for a view and gesture.
    - **target** - [_View_](../../ui/core/view/View.md)  
      - View which will be watched for originating a specific gesture.
@@ -38,7 +44,8 @@ Object | Description
      - Type of the gesture.
    - **callback** - _Function_(args [_GestureEventData_](../../ui/gestures/GestureEventData.md))  
      - A function that will be executed when a gesture is received.
-   - **thisArg** - _(optional)_ - _Object_
+   - **context** - _(optional)_ - _Object_  
+     - this argument for the callback.
    - _**return**_ - [_GesturesObserver_](../../ui/gestures/GesturesObserver.md)
  - **toString(** type [_GestureTypes_](../../ui/gestures/GestureTypes.md), separator? _String_ **)** _String_  
      Returns a string representation of a gesture type.

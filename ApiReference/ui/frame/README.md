@@ -19,6 +19,7 @@ Nested frames are supported, enabling hierarchical navigation scenarios.
 Object | Description
 ------|------------
 [NavigationEntry](../../ui/frame/NavigationEntry.md) | Represents an entry in passed to navigate method.
+[NavigationTransition](../../ui/frame/NavigationTransition.md) | Represents an object specifying a page navigation transition.
 [BackstackEntry](../../ui/frame/BackstackEntry.md) | Represents an entry in the back stack of a Frame object.
 [AndroidOptionEventData](../../ui/frame/AndroidOptionEventData.md) | Represents the data passed to the androidOptionSelected event. 
 This event is raised by the Android OS when an option in the Activity's action bar has been selected.
@@ -40,3 +41,8 @@ This method will start from the topmost Frame and will recursively search for an
      Gets the frames stack.
    - _**return**_ - __ of [_Frame_](../../ui/frame/Frame.md)
  - **reloadPage()**
+ - **resolvePageFromEntry(** entry [_NavigationEntry_](../../ui/frame/NavigationEntry.md) **)** [_Page_](../../ui/page/Page.md)
+   - **entry** - [_NavigationEntry_](../../ui/frame/NavigationEntry.md)
+   - _**return**_ - [_Page_](../../ui/page/Page.md)
+ - **getActivity()** _Object_
+   - _**return**_ - _Object_

@@ -12,3 +12,4 @@ Defines an enum with supported gesture types.
  - **swipe** - Denotes swipe gesture.
  - **rotation** - Denotes rotation gesture.
  - **longPress** - Denotes long press gesture.
+ - **touch** - Denotes touch action.

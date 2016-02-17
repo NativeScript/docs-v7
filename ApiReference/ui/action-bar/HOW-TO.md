@@ -13,12 +13,12 @@ var actionBarModule = require("ui/action-bar");
 ```XML
 <Page>
   <Page.actionBar>
-    {%raw%}<ActionBar title="{{ title }}" android.icon="res://ic_test"/>{%endraw%}
+    {%raw%}<ActionBar title="{{ title }}" android.icon="res://is_custom_home_icon"/>{%endraw%}
   </Page.actionBar>
   ...
 </Page>
 ```
-The icon can only be set in Android platform. Following the design guides it is automatically hidden in Lollipop versions (API level >= 20). You explicitly control its visibility with the `android.iconVisibility' property.
+The icon can only be set in Android platform. It is hidden by default, but you explicitly control its visibility with the `android.iconVisibility' property.
 
 
 ## Setting Custom Title View 
@@ -59,17 +59,6 @@ The position option is platform specific. The available values are as follows:
 * **Android** - `actionBar`, `actionBarIfRoom` and `popup`. The default is `actionBar`.
 * **iOS** - `left` and `right`. The default is `left`.
 
-## Setting Navigation Button
-```XML
-<Page>
-  <Page.actionBar>
-    <ActionBar title="Title">
-      <NavigationButton text="go back"/>
-    </ActionBar>
-  ...
-</Page>
-```
-
 ## Displaying Platform-Specific System Icons on Action Items
 ```XML
 <Page>
@@ -88,7 +77,8 @@ The position option is platform specific. The available values are as follows:
 
 ### iOS
 Set `ios.systemIcon` to a number representing the iOS system item to be displayed.
-Use this property instead of `ActionItemBase.icon` if you want to diplsay a built-in iOS system icon.
+Use this property instead of `ActionItem.icon` if you want to diplsay a built-in iOS system icon.
+Note: systemIcon is not supported on NavigationButton in iOS
 The value should be a number from the `UIBarButtonSystemItem` enumeration
 (https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItem_Class/#//apple_ref/c/tdef/UIBarButtonSystemItem)
 0: Done
@@ -118,7 +108,20 @@ The value should be a number from the `UIBarButtonSystemItem` enumeration
 
 ### Android
 Set `android.systemIcon` the name of the system drawable resource to be displayed.
-Use this property instead of `ActionItemBase.icon` if you want to diplsay a built-in Android system icon.
+Use this property instead of `ActionItem.icon` if you want to diplsay a built-in Android system icon.
 The value should be a string such as 'ic_menu_search' if you want to display the built-in Android Menu Search icon for example.
 For a full list of Android drawable names, please visit http://androiddrawables.com
+
+## Setting Navigation Button
+```XML
+<Page>
+  <Page.actionBar>
+    <ActionBar title="Title">
+      <NavigationButton text="go back" android.systemIcon = "ic_menu_back"/>
+    </ActionBar>
+  ...
+</Page>
+```
+Setting `text` for the navigation button is not supported in Android. You can use `icon` or `android.systemIcon` to set the image in Android.
+Setting `ios.systemIcon` for the navigation button is not supported in iOS.
 

@@ -9,3 +9,9 @@ Provides gesture event data for pinch gesture.
 
 ##### Properties
  - **scale** - _Number_.
+
+##### Functions
+ - **getFocusX()** _Number_
+   - _**return**_ - _Number_
+ - **getFocusY()** _Number_
+   - _**return**_ - _Number_

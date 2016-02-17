@@ -3,7 +3,7 @@ nav-title: "HtmlView How-To"
 title: "How-To"
 description: "Examples for using HtmlView"
 ---
-# WebView
+# HtmlView
 Using a HtmlView requires the html-view module.
 ``` JavaScript
 var htmlViewModule = require("ui/html-view");

@@ -37,6 +37,21 @@ var thirdItem = array.getItem(2);
 var array = new observableArrayModule.ObservableArray([1, 2, 3]);
 array.setItem(1, 5);
 ```
+### Set item at specified index using setItem(index, item) method and observe change event data.
+``` JavaScript
+var index;
+var action;
+var addedCount;
+var removed;
+var array = new observableArrayModule.ObservableArray([1, 2, 3]);
+array.on("change", function (args) {
+    index = args.index; // Index of the changed item.
+    action = args.action; // Action. In this case Update.
+    addedCount = args.addedCount; // Number of added items. In this case 1.
+    removed = args.removed; // Array of removed items. In this case with single item (2).
+});
+array.setItem(1, 5);
+```
 ### Use concat() method to combine ObservableArray with array.
 ``` JavaScript
 var array = new observableArrayModule.ObservableArray([1, 2, 3]);

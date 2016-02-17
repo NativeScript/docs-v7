@@ -28,3 +28,11 @@ Represents an time picker.
   Gets or sets the min time hour.
  - **minMinute** - _Number_.    
   Gets or sets the min time minute.
+ - **minuteInterval** - _Number_.    
+  Gets or sets the minute interval.
+
+##### Instance Functions
+ - **_setNativeTime()**
+ - **_setNativeMinTime()**
+ - **_setNativeMaxTime()**
+ - **_setNativeMinuteIntervalTime()**

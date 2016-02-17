@@ -17,4 +17,5 @@ Class | Description
 
 Object | Description
 ------|------------
+[Position](../xml/Position.md) | Defines a position within string, in line and column form.
 [ParserEvent](../xml/ParserEvent.md) | Provides information for a parser event.

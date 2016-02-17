@@ -52,3 +52,8 @@ Namespace | Description
    - **url** - _String_  
      The url.
    - _**return**_ - _Boolean_
+ - **escapeRegexSymbols(** source _String_ **)** _String_  
+     Escapes special regex symbols (., *, ^, $ and so on) in string in order to create a valid regex from it.
+   - **source** - _String_  
+     The original value. 
+   - _**return**_ - _String_

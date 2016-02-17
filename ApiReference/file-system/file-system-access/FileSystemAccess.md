@@ -92,6 +92,9 @@ Returns for Android: "/data/data/applicationPackageName/files", iOS: "/var/mobil
      Gets the special documents folder.
 Returns for Android: "/data/data/applicationPackageName/cache", iOS: "/var/mobile/Applications/appID/Library/Caches"
    - _**return**_ - _String_
+ - **getLogicalRootPath()** _String_  
+     Gets the path to the logical root of the application - that is /path/to/appfiles/app.
+   - _**return**_ - _String_
  - **readText(** path _String_, onError? _Function_..., encoding? _Object_ **)** _String_  
      Reads a text from a file with a given path.
    - **path** - _String_  
@@ -101,6 +104,13 @@ Returns for Android: "/data/data/applicationPackageName/cache", iOS: "/var/mobil
    - **encoding** - _(optional)_ - _Object_  
      (optional) If set reads the text with the specified encoding (default UTF-8).
    - _**return**_ - _String_
+ - **read(** path _String_, onError? _Function_... **)** _Object_  
+     Reads a binary content from a file with a given path.
+   - **path** - _String_  
+     The path to the source file.
+   - **onError** - _(optional)_ - _Function_(error _Object_) _Object_  
+     (optional) A callback function to use if any error occurs.
+   - _**return**_ - _Object_
  - **writeText(** path _String_, content _String_, onError? _Function_..., encoding? _Object_ **)**  
      Writes a text to a file with a given path.
    - **path** - _String_  
@@ -111,6 +121,14 @@ Returns for Android: "/data/data/applicationPackageName/cache", iOS: "/var/mobil
      (optional) A callback function to use if any error occurs.
    - **encoding** - _(optional)_ - _Object_  
      (optional) If set writes the text with the specified encoding (default UTF-8).
+ - **write(** path _String_, content _Object_, onError? _Function_... **)**  
+     Writes a binary to a file with a given path.
+   - **path** - _String_  
+     The path to the source file.
+   - **content** - _Object_  
+     The content which will be written to the file.
+   - **onError** - _(optional)_ - _Function_(error _Object_) _Object_  
+     (optional) A callback function to use if any error occurs.
  - **getFileExtension(** path _String_ **)** _String_  
      Gets extension of the file with a given path.
    - **path** - _String_  

@@ -14,7 +14,6 @@ Class | Description
 ------|------------
 [ActionBar](../../ui/action-bar/ActionBar.md) | Provides an abstraction over the ActionBar (android) and NavigationBar (iOS).
 [ActionItems](../../ui/action-bar/ActionItems.md) | Represents a collection of ActionItems.
-[ActionItemBase](../../ui/action-bar/ActionItemBase.md) | Base class for action items.
 [ActionItem](../../ui/action-bar/ActionItem.md) | Represents an action item in the action bar.
 [NavigationButton](../../ui/action-bar/NavigationButton.md) | Represents the navigation (a.k.a. "back") button.
 

@@ -51,3 +51,6 @@ Utility module related to layout.
    - **value** - _Number_  
      - The pixel to convert.
    - _**return**_ - _Number_
+ - **measureSpecToString(** measureSpec _Number_ **)** _String_
+   - **measureSpec** - _Number_
+   - _**return**_ - _String_

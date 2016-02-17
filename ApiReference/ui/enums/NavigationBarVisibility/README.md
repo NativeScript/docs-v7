@@ -8,7 +8,7 @@ Specifies NavigationBar visibility mode.
 
 ##### Variables
  - **auto** - _String_.    
-  NavigationBar will be visible if there if frame backstack canGoBack is true or Page have optionsMenu with menuItems.
+  NavigationBar will be visible if there if frame backstack canGoBack is true or if the page Action Bar is not empty.
  - **never** - _String_.    
   NavigationBar will be hidden.
  - **always** - _String_.    

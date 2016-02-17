@@ -10,18 +10,6 @@ Base class for all views that supports children positioning.
 ##### Static Properties
  - **clipToBoundsProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).
 
-##### Instance Properties
- - **padding** - _String_.    
-  Gets or sets padding style property.
- - **paddingBottom** - _Number_.    
-  Specify the bottom padding of this layout.
- - **paddingLeft** - _Number_.    
-  Specify the left padding of this layout.
- - **paddingRight** - _Number_.    
-  Specify the right padding of this layout.
- - **paddingTop** - _Number_.    
-  Specify the top padding of this layout.
-
 ##### Instance Functions
  - **getChildrenCount()** _Number_  
      Returns the number of children in this Layout.
@@ -51,3 +39,13 @@ Base class for all views that supports children positioning.
      The view to remove from the children array.
  - **removeChildren()**  
      Removes all views in this layout.
+ - **_registerLayoutChild(** child [_View_](../../../ui/core/view/View.md) **)**  
+     INTERNAL. Used by the layout system.
+   - **child** - [_View_](../../../ui/core/view/View.md)
+ - **_unregisterLayoutChild(** child [_View_](../../../ui/core/view/View.md) **)**  
+     INTERNAL. Used by the layout system.
+   - **child** - [_View_](../../../ui/core/view/View.md)
+ - **eachLayoutChild(** callback _Function_... **)**  
+     Calls the callback for each child that should be laid out.
+   - **callback** - _Function_(child [_View_](../../../ui/core/view/View.md), isLast _Boolean_)  
+     The callback

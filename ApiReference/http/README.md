@@ -49,6 +49,20 @@ Object | Description
    - **options** - [_HttpRequestOptions_](../http/HttpRequestOptions.md)  
      An object that specifies various request options.
    - _**return**_ - _Promise_ of [_ImageSource_](../image-source/ImageSource.md)
+ - **getFile(** url _String_, destinationFilePath? _String_ **)** _Promise_...  
+     Downloads the content from the specified URL and attempts to save it as file.
+   - **url** - _String_  
+     The URL to request from.
+   - **destinationFilePath** - _(optional)_ - _String_  
+     Optional. The downloaded file path.
+   - _**return**_ - _Promise_ of [_File_](../file-system/File.md)
+ - **getFile(** options [_HttpRequestOptions_](../http/HttpRequestOptions.md), destinationFilePath? _String_ **)** _Promise_...  
+     Downloads the content from the specified URL and attempts to save it as file.
+   - **options** - [_HttpRequestOptions_](../http/HttpRequestOptions.md)  
+     An object that specifies various request options.
+   - **destinationFilePath** - _(optional)_ - _String_  
+     Optional. The downloaded file path.
+   - _**return**_ - _Promise_ of [_File_](../file-system/File.md)
  - **request(** options [_HttpRequestOptions_](../http/HttpRequestOptions.md) **)** _Promise_...  
      Makes a generic http request using the provided options and returns a HttpResponse Object.
    - **options** - [_HttpRequestOptions_](../http/HttpRequestOptions.md)  

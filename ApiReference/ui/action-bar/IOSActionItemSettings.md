@@ -11,9 +11,11 @@ Represents iOS specific options of the action item.
   Gets or sets the position of the action item in the action bar.
  1. left - items is shown at the left part of the navigation bar. This is the default value.
  2. right - items is shown at the right part of the navigation bar.
+Note: Property not applicable to NavigationButton
  - **systemIcon** - _Number_.    
   Gets or sets a number representing the iOS system item to be displayed.
-Use this property instead of ActionItemBase.icon if you want to diplsay a built-in iOS system icon.
+Use this property instead of ActionItem.icon if you want to diplsay a built-in iOS system icon.
+Note: Property not applicable to NavigationButton
 The value should be a number from the UIBarButtonSystemItem enumeration
 (https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItem_Class/#//apple_ref/c/tdef/UIBarButtonSystemItem)
  0: Done

@@ -15,3 +15,5 @@ Encapsulates the content of an HttpResponse.
   Gets the response body as JSON object.
  - **toImage** - _Function_() _Promise_ of [_ImageSource_](../image-source/ImageSource.md).    
   Gets the response body as ImageSource.
+ - **toFile** - _Function_(destinationFilePath _String_) [_File_](../file-system/File.md).    
+  Gets the response body as file.

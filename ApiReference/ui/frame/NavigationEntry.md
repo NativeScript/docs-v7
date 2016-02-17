@@ -15,6 +15,12 @@ Represents an entry in passed to navigate method.
   An object passed to the onNavigatedTo callback of the Page. Typically this is used to pass some data among pages. Optional.
  - **animated** - _(optional)_ - _Boolean_.    
   True to navigate to the new Page using animated transitions, false otherwise.
+ - **transition** - _(optional)_ - [_NavigationTransition_](../../ui/frame/NavigationTransition.md).    
+  Specifies an optional navigation transition for all platforms. If not specified, the default platform transition will be used.
+ - **transitioniOS** - _(optional)_ - [_NavigationTransition_](../../ui/frame/NavigationTransition.md).    
+  Specifies an optional navigation transition for iOS. If not specified, the default platform transition will be used.
+ - **transitionAndroid** - _(optional)_ - [_NavigationTransition_](../../ui/frame/NavigationTransition.md).    
+  Specifies an optional navigation transition for iOS. If not specified, the default platform transition will be used.
  - **backstackVisible** - _(optional)_ - _Boolean_.    
   True to record the navigation in the backstack, false otherwise. 
 If the parameter is set to false then the Page will be displayed but once navigated from it will not be able to be navigated back to.

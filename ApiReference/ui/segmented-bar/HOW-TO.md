@@ -13,8 +13,8 @@ var segmentedBarModule = require("ui/segmented-bar");
 var segmentedBar = new segmentedBarModule.SegmentedBar();
 ```
 ### Creating segmentedBar.items
-It is important that an items array must get created and filled with items first and
-then assigned to the segmented bar.
+It is important that an items array gets created and filled with
+items first and then assigned to the segmented bar.
 ``` JavaScript
 var items = [];
 var item1 = new segmentedBarModule.SegmentedBarItem();

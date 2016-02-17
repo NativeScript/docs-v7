@@ -44,4 +44,4 @@ Represents a tab view.
    - **thisArg** - _(optional)_ - _Object_
  - **_getAndroidTabView()** _Object_
    - _**return**_ - _Object_
- - **_updateIOSTabBarColors()**
+ - **_updateIOSTabBarColorsAndFonts()**

@@ -12,6 +12,7 @@ The View itself does not have visual representation and serves as a placeholder 
 ##### Instance Properties
  - **content** - [_View_](../../ui/core/view/View.md).    
   Gets or sets the single child of the view.
+ - **layoutView** - [_View_](../../ui/core/view/View.md).
 
 ##### Instance Functions
  - **_onContentChanged(** oldView [_View_](../../ui/core/view/View.md), newView [_View_](../../ui/core/view/View.md) **)**  

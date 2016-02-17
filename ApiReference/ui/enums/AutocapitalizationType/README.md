@@ -10,8 +10,8 @@ Represents the auto-capitalization style for a text input.
  - **none** - _String_.    
   Do not capitalize any text automatically.
  - **words** - _String_.    
-  Capitalize the first letter of each word automatically. 
+  Capitalize the first letter of each word automatically.
  - **sentences** - _String_.    
-  Capitalize the first letter of each sentence automatically. 
+  Capitalize the first letter of each sentence automatically.
  - **allCharacters** - _String_.    
-  Capitalize all characters automatically. 
+  Capitalize all characters automatically.

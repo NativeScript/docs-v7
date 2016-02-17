@@ -6,14 +6,16 @@ description: "Class ui/core/view.View"
 ## Class: "ui/core/view".View  
 _Inherits:_ [_ProxyObject_](../../../ui/core/proxy/ProxyObject.md)  
 _Conform to:_ [_ApplyXmlAttributes_](../../../ui/core/view/ApplyXmlAttributes.md)  
-This class is the base class for all UI components.
-A View occupies a rectangular area on the screen and is responsible for drawing and laying out of all UI components within. 
+This class is the base class for all UI components. 
+A View occupies a rectangular area on the screen and is responsible for drawing and layouting of all UI components within. 
 
 ##### Static Properties
  - **loadedEvent** - _String_.    
   String value used when hooking to loaded event.
  - **unloadedEvent** - _String_.    
   String value used when hooking to unloaded event.
+ - **automationTextProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
+  Represents the observable property backing the automationText property of each View.
  - **idProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
   Represents the observable property backing the id property of each View.
  - **cssClassProperty** - [_Property_](../../../ui/core/dependency-observable/Property.md).    
@@ -26,19 +28,28 @@ A View occupies a rectangular area on the screen and is responsible for drawing 
   Represents the observable property backing the isUserInteractionEnabled property of each View.
 
 ##### Static Functions
- - **measureChild(** parent [_View_](../../../ui/core/view/View.md), child [_View_](../../../ui/core/view/View.md), widthMeasureSpec _Number_, heightMeasureSpec _Number_ **)** {}...
-   - **parent** - [_View_](../../../ui/core/view/View.md)
-   - **child** - [_View_](../../../ui/core/view/View.md)
+ - **measureChild(** parent [_View_](../../../ui/core/view/View.md), child [_View_](../../../ui/core/view/View.md), widthMeasureSpec _Number_, heightMeasureSpec _Number_ **)** {}...  
+     Measure a child by taking into account its margins and a given measureSpecs.
+   - **parent** - [_View_](../../../ui/core/view/View.md)  
+     This parameter is not used. You can pass null.
+   - **child** - [_View_](../../../ui/core/view/View.md)  
+     The view to be measured.
    - **widthMeasureSpec** - _Number_
    - **heightMeasureSpec** - _Number_
    - _**return**_ - { measuredWidth: _Number_, measuredHeight: _Number_ }
- - **layoutChild(** parent [_View_](../../../ui/core/view/View.md), child [_View_](../../../ui/core/view/View.md), left _Number_, top _Number_, right _Number_, bottom _Number_ **)**
-   - **parent** - [_View_](../../../ui/core/view/View.md)
+ - **layoutChild(** parent [_View_](../../../ui/core/view/View.md), child [_View_](../../../ui/core/view/View.md), left _Number_, top _Number_, right _Number_, bottom _Number_ **)**  
+     Layout a child by taking into account its margins, horizontal and vertical alignments and a given bounds.
+   - **parent** - [_View_](../../../ui/core/view/View.md)  
+     This parameter is not used. You can pass null.
    - **child** - [_View_](../../../ui/core/view/View.md)
-   - **left** - _Number_
-   - **top** - _Number_
-   - **right** - _Number_
-   - **bottom** - _Number_
+   - **left** - _Number_  
+     Left position, relative to parent
+   - **top** - _Number_  
+     Top position, relative to parent
+   - **right** - _Number_  
+     Right position, relative to parent
+   - **bottom** - _Number_  
+     Bottom position, relative to parent
  - **resolveSizeAndState(** size _Number_, specSize _Number_, specMode _Number_, childMeasuredState _Number_ **)** _Number_  
      Utility to reconcile a desired size and state, with constraints imposed
 by a MeasureSpec.  Will take the desired size, unless a different size
@@ -59,6 +70,8 @@ size is smaller than the size the view wants to be.
   Gets or sets the border width of the view.
  - **borderColor** - [_Color_](../../../color/Color.md).    
   Gets or sets the border color of the view.
+ - **automationText** - _String_.    
+  Gets or sets the automation text of the view.
  - **color** - [_Color_](../../../color/Color.md).    
   Gets or sets the color of the view.
  - **backgroundColor** - [_Color_](../../../color/Color.md).    
@@ -99,6 +112,10 @@ size is smaller than the size the view wants to be.
   Gets or sets the scaleX affine transform of the view.
  - **scaleY** - _Number_.    
   Gets or sets the scaleY affine transform of the view.
+ - **originX** - _Number_.    
+  Gets or sets the X component of the origin point around which the view will be transformed. The deafault value is 0.5 representing the center of the view.
+ - **originY** - _Number_.    
+  Gets or sets the Y component of the origin point around which the view will be transformed. The deafault value is 0.5 representing the center of the view.
  - **rotate** - _Number_.    
   Gets or sets the rotate affine transform of the view.
  - **isEnabled** - _Boolean_.    
@@ -178,11 +195,16 @@ When overriding this method, you must call setMeasuredDimension(int, int) to sto
      The measured width of this view. May be a complex bit mask as defined by MEASURED_SIZE_MASK and MEASURED_STATE_TOO_SMALL.
    - **measuredHeight** - _Number_  
      The measured height of this view. May be a complex bit mask as defined by MEASURED_SIZE_MASK and MEASURED_STATE_TOO_SMALL.
- - **layoutNativeView(** left _Number_, top _Number_, right _Number_, bottom _Number_ **)**
-   - **left** - _Number_
-   - **top** - _Number_
-   - **right** - _Number_
-   - **bottom** - _Number_
+ - **layoutNativeView(** left _Number_, top _Number_, right _Number_, bottom _Number_ **)**  
+     Called from onLayout when native view position is about to be changed.
+   - **left** - _Number_  
+     Left position, relative to parent
+   - **top** - _Number_  
+     Top position, relative to parent
+   - **right** - _Number_  
+     Right position, relative to parent
+   - **bottom** - _Number_  
+     Bottom position, relative to parent
  - **getViewById(** id _String_ **)** _T_    
      _Types Parameters:_ _**T**_  
      Returns the child view with the specified id.
@@ -195,7 +217,7 @@ Returns a value indicating whether this view or one of its descendants actually 
  - **setInlineStyle(** style _String_ **)**  
      Sets in-line CSS string as style.
    - **style** - _String_  
-     - In-line CSS string.
+     - In-line CSS string. 
  - **getGestureObservers(** type [_GestureTypes_](../../../ui/gestures/GestureTypes.md) **)** __...
    - **type** - [_GestureTypes_](../../../ui/gestures/GestureTypes.md)
    - _**return**_ - __ of [_GesturesObserver_](../../../ui/gestures/GesturesObserver.md)
@@ -206,11 +228,11 @@ Returns a value indicating whether this view or one of its descendants actually 
    - **callback** - _Function_(args [_GestureEventData_](../../../ui/gestures/GestureEventData.md))  
      - A function that will be executed when gesture is received.
    - **thisArg** - _(optional)_ - _Object_  
-     - An optional parameter which will be used as `this` context for callback execution.
+     - An optional parameter which will be used as `this` context for callback execution. 
  - **on(** eventNames _String_, gestures, GestureTypes, callback _Function_..., thisArg? _Object_ **)**  
      A basic method signature to hook an event listener (shortcut alias to the addEventListener method).
    - **eventNames** - _String_  
-     - String corresponding to events (e.g. "propertyChange"). Optionally could be used more events separated by `,` (e.g. "propertyChange", "change") or you can use gesture types.
+     - String corresponding to events (e.g. "propertyChange"). Optionally could be used more events separated by `,` (e.g. "propertyChange", "change") or you can use gesture types. 
    - **gestures**
    - **GestureTypes**
    - **callback** - _Function_(data [_EventData_](../../../data/observable/EventData.md))  
@@ -254,10 +276,24 @@ Returns a value indicating whether this view or one of its descendants actually 
    - **parentView** - [_View_](../../../ui/core/view/View.md)
  - **_removeView(** view [_View_](../../../ui/core/view/View.md) **)**
    - **view** - [_View_](../../../ui/core/view/View.md)
+ - **_childIndexToNativeChildIndex(** index? _Number_ **)** _Number_
+   - **index** - _(optional)_ - _Number_
+   - _**return**_ - _Number_
+ - **_getNativeViewsCount()** _Number_
+   - _**return**_ - _Number_
+ - **_eachLayoutView(** callback _Function_... **)**
+   - **callback** - _Function_(View )
+ - **_addToSuperview(** superview _Object_, index? _Number_ **)** _Boolean_
+   - **superview** - _Object_
+   - **index** - _(optional)_ - _Number_
+   - _**return**_ - _Boolean_
+ - **_removeFromSuperview()**
  - **_applyXmlAttribute(** attribute _String_, value _Object_ **)** _Boolean_
    - **attribute** - _String_
    - **value** - _Object_
    - _**return**_ - _Boolean_
+ - **_parentChanged(** oldParent [_View_](../../../ui/core/view/View.md) **)**
+   - **oldParent** - [_View_](../../../ui/core/view/View.md)
  - **_isInheritedChange()** _Boolean_
    - _**return**_ - _Boolean_
  - **_addViewToNativeVisualTree(** view [_View_](../../../ui/core/view/View.md), atIndex? _Number_ **)** _Boolean_  
