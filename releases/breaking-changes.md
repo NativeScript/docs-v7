@@ -10,7 +10,7 @@ previous_url: /breaking-changes
 
 This document describes the critical breaking changes and suggested workarounds, if any, in the NativeScript framework. The complete list with all the changes may be found on the respective [Github repositories](#see-also).
 
-### 1.5.0 (2015, November ??)
+### 1.5.0 (2015, November 24)
 - The XML namespace (xmlns) of the validator XSD schema changed from
     `xmlns="http://www.nativescript.org/tns.xsd"` to
     `xmlns="http://schemas.nativescript.org/tns.xsd"`.
