@@ -225,7 +225,7 @@ fontModule.ios.registerFont("MyFont.ttf");
 The @import CSS rule allows you to import external CSS from local file, resource or url. These rules must precede all other types of rules.
 
 ```CSS
-@import { url('http://some-domain.com/your-style.css') }
-@import { url('res://your-style.css') }
-@import { url('~/your-style.css') }
+@import url('http://some-domain.com/your-style.css');
+@import url('res://your-style.css');
+@import url('~/your-style.css');
 ```
