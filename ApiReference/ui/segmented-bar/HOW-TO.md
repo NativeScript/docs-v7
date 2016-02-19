@@ -11,9 +11,9 @@ var segmentedBarModule = require("ui/segmented-bar");
 ```` xml
 <SegmentedBar>
   <SegmentedBar.items>
-    <SegmentedBarItem title="Item 1">
-    <SegmentedBarItem title="Item 2">
-    <SegmentedBarItem title="Item 3">
+    <SegmentedBarItem title="Item 1" />
+    <SegmentedBarItem title="Item 2" />
+    <SegmentedBarItem title="Item 3" />
   </SegmentedBar.items>
 </SegmentedBar>
 ````
