@@ -10,6 +10,13 @@ previous_url: /Changelogs/CLI
 NativeScript CLI Changelog
 ================
 
+1.6.1 (2016, February 19)
+==
+
+### Fixed
+* [Fixed #1499](https://github.com/NativeScript/nativescript-cli/issues/1499): `livesync --watch` fails for TypeScript projects with `sourceMaps` enabled.
+* [Fixed #1503](https://github.com/NativeScript/nativescript-cli/issues/1503): Livesync fails to install app on multiple devices.
+
 1.6.0 (2016, February 17)
 ==
 
