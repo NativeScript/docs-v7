@@ -7,6 +7,29 @@ slug: ios-changelog
 previous_url: /Changelogs/iOS Runtime
 ---
 
+1.6.0
+=====
+
+## What's New
+- [ES6 Modules](https://github.com/NativeScript/ios-runtime/pull/468)
+- [Swift-style initializers](https://github.com/NativeScript/ios-runtime/pull/476)
+- [Distribute Inspector Application as a separate npm package](https://github.com/NativeScript/ios-runtime/pull/478)
+- [Generate TypeScript comments in TypeScript declarations](https://github.com/NativeScript/ios-runtime/pull/497)
+- [TNS Objective-C exception handler](https://github.com/NativeScript/ios-runtime/pull/500)
+- [Wrap bridged NSError objects in JavaScript Errors](https://github.com/NativeScript/ios-runtime/pull/458)
+- [Allow vanilla TypeScript classes to extend null](https://github.com/NativeScript/ios-runtime/pull/455/files)
+- [Performance improvements for method calls](https://github.com/NativeScript/ios-runtime/pull/438)
+
+## Bug Fixes
+- [Rename Objective-C class name in case of extend conflicts](https://github.com/NativeScript/ios-runtime/pull/479)
+- [Use proper debug macro in project template.](https://github.com/NativeScript/ios-runtime/pull/484)
+- [Fix for debugger connecting after a delay](https://github.com/NativeScript/ios-runtime/pull/498)
+- [Remove code signing identity from project template](https://github.com/NativeScript/ios-runtime/pull/501)
+- [Throw error if package.json has non-utf8 encoding](https://github.com/NativeScript/ios-runtime/pull/462)
+- [Throw an error if loading module source fails](https://github.com/NativeScript/ios-runtime/pull/457)
+- [TypeScript extends should not replace parent scope variables](https://github.com/NativeScript/ios-runtime/pull/454)
+- [Remove quotes from paths in nativescript-build.xcconfig](https://github.com/NativeScript/ios-runtime/pull/447)
+
 1.5.2
 =====
 
