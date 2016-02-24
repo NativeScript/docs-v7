@@ -8,6 +8,15 @@ Using a SegmentedBar requires the "ui/segmented-bar" module.
 ``` JavaScript
 var segmentedBarModule = require("ui/segmented-bar");
 ```
+```` xml
+<SegmentedBar>
+  <SegmentedBar.items>
+    <SegmentedBarItem title="Item 1" />
+    <SegmentedBarItem title="Item 2" />
+    <SegmentedBarItem title="Item 3" />
+  </SegmentedBar.items>
+</SegmentedBar>
+````
 ## Creating a SegmentedBar
 ``` JavaScript
 var segmentedBar = new segmentedBarModule.SegmentedBar();
