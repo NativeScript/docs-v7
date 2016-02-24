@@ -9,7 +9,7 @@ previous_url: /setup/ns-cli-setup/ns-setup-linux
 
 # Set Up the NativeScript CLI on Linux
 
-With the open-source [NativeScript Command-Line Interface](https://github.com/NativeScript/nativescript-cli) and an IDE or text editor of your choice, you can create, develop, store and build your apps entirely locally, free of charge, without an Internet connection and anonymously.
+With the open-source [NativeScript Command-Line Interface](https://github.com/NativeScript/nativescript-cli) and an IDE or text editor of your choice, you can create, develop, store and build your apps entirely locally, free of charge and anonymously.
 
 On Linux systems, you can use the NativeScript CLI to develop only Android apps. This limitation is caused by the requirements for iOS development.
 
@@ -20,7 +20,7 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 ## System Requirements
 
 * Ubuntu 14.04 LTS
-* The latest Node.js 0.10.x, 0.12.x, 4.2.x, or 5.1.x stable official release
+* The latest Node.js 0.10.x, 0.12.x, 4.x, or 5.x stable official release
 * G++ compiler
 * JDK 8 or a later stable official release
 * Android SDK 22 or a later stable official release

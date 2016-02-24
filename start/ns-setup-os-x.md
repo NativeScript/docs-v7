@@ -9,7 +9,7 @@ previous_url: /setup/ns-cli-setup/ns-setup-os-x
 
 # Set Up the NativeScript CLI on OS X
 
-With the open-source [NativeScript Command-Line Interface](https://github.com/NativeScript/nativescript-cli) and an IDE or text editor of your choice, you can create, develop, store and build your apps entirely locally, free of charge, without an Internet connection and anonymously.
+With the open-source [NativeScript Command-Line Interface](https://github.com/NativeScript/nativescript-cli) and an IDE or text editor of your choice, you can create, develop, store and build your apps entirely locally, free of charge and anonymously.
 
 On OS X systems, you can use the NativeScript CLI to develop Android and iOS apps.
 
@@ -20,7 +20,7 @@ On OS X systems, you can use the NativeScript CLI to develop Android and iOS app
 ## System Requirements
 
 * OS X Mavericks or later
-* The latest Node.js 0.10.x, 0.12.x, 4.2.x, or 5.1.x stable official release
+* The latest Node.js 0.10.x, 0.12.x, 4.x, or 5.x stable official release
 * (Optional) Homebrew to simplify the installation of dependencies
 * For iOS development
     * Latest Xcode
@@ -31,6 +31,17 @@ On OS X systems, you can use the NativeScript CLI to develop Android and iOS app
     * Android Support Repository
     * Android SDK Build-tools 22.0.0 or a later stable official release
     * (Optional) Genymotion to expand your testing options
+
+### Quick setup
+
+If this is your first time developing a mobile project, consider using the one-liner scripts in this section to effortlessly setup your machine. 
+If you have experience developing mobile apps, you may skip to the [Environment Requirements](#environment-requirements) section below.
+
+Using Spotlight, search `Terminal` and start it. This opens a console window. Copy and paste this script:
+
+> ruby -e "$(curl -fsSL https://raw.githubusercontent.com/NativeScript/nativescript-cli/production/setup/native-script.rb)"
+
+The script calls some of the commands using `sudo` and you may need to provide your password several times. Note that the script downloads and installs some big dependencies and may take some time to complete.
 
 ## Environment Requirements
 
@@ -46,10 +57,10 @@ For Android development
     ```Shell
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     ```
-1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/), or [0.12.x](https://nodejs.org/dist/latest-v0.12.x/), or [4.2.x](https://nodejs.org/dist/latest-v4.x/) stable official release.
+1. Install the latest Node.js stable official release. We recommend using Node.js v4.x
 
     ```Shell
-    brew install homebrew/versions/node012
+    brew install homebrew/versions/node4-lts
     ```
 1. Install the dependencies for iOS development.
     1. Run the App Store and download and install Xcode 5 or later.
