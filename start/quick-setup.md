@@ -21,9 +21,32 @@ When you develop with NativeScript, you can choose between a local tool set ([Na
 
 > **TIP:** If you are familiar with the Apache Cordova CLI, you might want to try the NativeScript CLI. It provides a similar set of commands and an identical experience.
 
-With the open-source [NativeScript Command-Line Interface][NativeScript CLI] and an IDE or text editor of your choice, you can create, develop, store and build your apps entirely locally, free of charge, without an Internet connection and anonymously.
+With the open-source [NativeScript Command-Line Interface][NativeScript CLI] and an IDE or text editor of your choice, you can create, develop, store and build your apps entirely locally, free of charge and anonymously.
 
 To take advantage of this autonomy, you need to configure your system with the tools and SDKs for native development of the platforms for which you want to develop. The NativeScript CLI uses them to produce truly native builds of your cross-platform projects.
+
+### Quick setup
+
+If this is your first time developing a mobile project, consider using the one-liner scripts in this section to effortlessly setup your machine. 
+If you have experience developing mobile apps, you may skip to the [advanced setup](#advanced-setup) section below.
+
+ * On Windows:
+
+Open Start Menu, search for `Command Prompt` and start it. This opens a console window. Copy and paste this script:
+
+> @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/NativeScript/nativescript-cli/production/setup/native-script.ps1'))"
+
+You may need to accept an User Account Control prompt to grant the script administrative privileges. Note that the script downloads and installs some big dependencies and may take some time to complete. 
+
+ * On Mac:
+
+Using Spotlight, search `Terminal` and start it. This opens a console window. Copy and paste this script:
+
+> ruby -e "$(curl -fsSL https://raw.githubusercontent.com/NativeScript/nativescript-cli/production/setup/native-script.rb)"
+
+The script calls some of the commands using `sudo` and you may need to provide your password several times. Note that the script downloads and installs some big dependencies and may take some time to complete.
+
+### Advanced setup
 
 * [Set Up on Windows]({% slug windows %})
 * [Set Up on OS X]({% slug osx %})
