@@ -63,6 +63,11 @@ For Android development
         ```
         export JAVA_HOME=$(/usr/libexec/java_home)
         ```
+        If this does not retain your changes after you quit terminal, you may need to edit your .bash_profile (located in
+        ```
+        /Users/yourusername/.bash_profile
+        ```
+        ) and add it as the first line
     1. Install the [Android SDK](http://developer.android.com/sdk/index.html).
         1. In the terminal, run the following command.
 
@@ -75,7 +80,11 @@ For Android development
             ```
             For example: ANDROID_HOME=/usr/local/Cellar/android-sdk/24/
             > NOTE: This is the directory that contains `tools` and `platform-tools` directories.
-        1. Select all packages for the Android 22 SDK, Android SDK Build-tools 22.0.0 or later, Android Support Repository (under Extras) and any other SDKs that you want to install and click **Install**.
+            If this does not retain your changes after you quit terminal, you may need to add it to your .bash_profile (located in 
+            ```
+            /Users/yourusername/.bash_profile
+            ```)
+        1. Select all packages for the Android 22 SDK, Android SDK Build-tools 22.0.0 or later, Local Maven repository for Support Libraries (under Extras) and any other SDKs that you want to install and click **Install**.
            You can use the following command, that will install all required tools:
            ```
            android update sdk --filter tools,platform-tools,android-22,build-tools-22.0.1,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
