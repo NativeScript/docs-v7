@@ -83,7 +83,8 @@ For Android development
             If this does not retain your changes after you quit terminal, you may need to add it to your .bash_profile (located in 
             ```
             /Users/yourusername/.bash_profile
-            ```)
+            ```
+            )
         1. Select all packages for the Android 22 SDK, Android SDK Build-tools 22.0.0 or later, Local Maven repository for Support Libraries (under Extras) and any other SDKs that you want to install and click **Install**.
            You can use the following command, that will install all required tools:
            ```
