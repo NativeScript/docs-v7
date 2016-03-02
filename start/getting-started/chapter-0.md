@@ -1,8 +1,14 @@
 ## NativeScript Getting Started Guide
 
-Welcome to the [NativeScript](https://www.nativescript.org/) getting started guide. In this tutorial you'll use NativeScript, a cross-platform JavaScript framework for building native mobile apps, to build an iOS and Android app from scratch.
+Welcome to the [NativeScript](http://www.nativescript.org/) Getting Started Guide. In this tutorial you'll use NativeScript, a cross-platform JavaScript framework for building native mobile apps, to build an iOS and Android app from scratch. You can start by watching the video walkthrough below, or by [jumping straight into the hands-on tutorial](#what-is-nativescript).
 
-> **TIP:** For a video introduction to NativeScript, see the [getting started guide on YouTube](https://www.youtube.com/watch?v=N8zsFIVdLwY).
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N8zsFIVdLwY" frameborder="0" allowfullscreen></iframe>
+
+### What is NativeScript?
+
+NativeScript is a framework for building native iOS and Android apps using JavaScript and CSS. NativeScript renders UIs with the native platform’s rendering engine—no [WebViews](http://developer.telerik.com/featured/what-is-a-webview/)—resulting in native-like performance and UX.
+
+NativeScript provides a best-of-both-worlds development experience. Our cross-platform JavaScript modules give you the convenience of writing iOS and Android apps from a single JavaScript codebase, while our runtimes give you the power of accessing native APIs, SDKs, and frameworks when you need them—all without needing to open Xcode or Android Studio. NativeScript was created and is supported by [Telerik](http://www.telerik.com/).
 
 ### What you're building
 
