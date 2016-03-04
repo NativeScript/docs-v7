@@ -300,3 +300,5 @@ Once these files are in place the NativeScript framework knows how to pick the c
 ![login 4]({{site.baseurl}}/img/cli-getting-started/chapter2/android/4.png)
 
 At this point your UI looks good, but the app still doesn't actually do anything. Let's look at how you can use JavaScript to add some functionality.
+
+> **TIP**: The community-written [NativeScript Image Builder](http://nsimage.brosteins.com/) can help you generate images in the appropriate resolutions for iOS and Android.
