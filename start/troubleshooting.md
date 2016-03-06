@@ -52,6 +52,20 @@ A problem occurred configuring root project 'app_name'.
 
 **Workaround:** Update the opener package to a newer version. If this does not resolve the issue, try modifying your local copy of the package.
 
+### Cocoapod install fails on OS X system
+
+**Problem** The cocoapod install fails when creating a shallow clone of spec repo 'master'.  The actual error should look something like
+```
+Creating shallow clone of spec repo 'master' from 'https://github.com/CocoaPods/Specs.git'
+[!] Unable to add a source with url 'https://github.com/CocoaPods/Specs.git' named 'master'.
+You can try adding it manually in '~/.cocoapods/repos' or via 'pod repo add'.
+```
+
+**Workaround** There are 3 methods to try to fix this issue:
+  1. Make sure that you tried to install cocoapods initially by `sudo gem install cocoapods`
+  1. Type `pod setup`
+  1. If neither of the above fix the problem, try adding the directories `~\.cocoapods` and `~\.cocoapods\repos`
+
 ## User Experience
 
 ### Very slow first launch on Android device
