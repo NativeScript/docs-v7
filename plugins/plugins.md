@@ -110,7 +110,7 @@ my-plugin/
 * `platforms\ios\build.xcconfig`: This file modifies the native iOS configuration of your NativeScript project such as native dependencies and configurations. For more information about the format of `build.xcconfig`, see [`build.xcconfig` file](#buildxcconfig-specification).
 * `platforms\ios\Podfile`: This file describes the dependency to the library that you want to use. For more information, see [the CocoaPods article](CocoaPods.md).
 
-> **IMPORTANT:** For more detailed information on the android plugin structure, [see here]({% slug android-plugins-infrastructure %}).
+> **IMPORTANT:** For more detailed information on the Android plugin structure, [see here]({% slug android-plugins-infrastructure %}).
 
 ### Package.json Specification
 
