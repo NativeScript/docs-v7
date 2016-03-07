@@ -8,10 +8,11 @@ previous_url: /debugging
 
 # Debugging
 
-You can debug apps developed with the NativeScript framework from the NativeScript CLI.
+You can debug apps developed with the NativeScript framework from both the NativeScript CLI and [Visual Studio Code](https://code.visualstudio.com/).
 
 * [Debugger Commands](#debugger-commands)
 * [Debugger Options](#debugger-options)
+* [Debugging with Visual Studio Code](#debugging-with-visual-studio-code)
 
 ## Debugger Commands
 
@@ -49,3 +50,7 @@ For more information about Android debugging, run the following command:
 ```Bash
 tns help debug ios
 ```
+
+## Debugging with Visual Studio Code
+
+To debug NativeScript applications in [Visual Studio Code](https://code.visualstudio.com/), you need the [NativeScript extension for VS Code](https://marketplace.visualstudio.com/items?itemName=Telerik.nativescript). Detailed instructions how to install and set up the extension you can find [here]({% slug nativescript-extension-for-visual-studio-code %}).
