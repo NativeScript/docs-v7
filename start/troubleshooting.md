@@ -62,9 +62,9 @@ You can try adding it manually in '~/.cocoapods/repos' or via 'pod repo add'.
 ```
 
 **Workaround** There are 3 methods to try to fix this issue:
-  1. Make sure that you tried to install cocoapods initially by `sudo gem install cocoapods`
-  1. Type `pod setup`
-  1. If neither of the above fix the problem, try adding the directories `~\.cocoapods` and `~\.cocoapods\repos`
+  * Make sure that you tried to install cocoapods initially by `sudo gem install cocoapods`
+  * Type `pod setup`
+  * If neither of the above fix the problem, try adding the directories `~\.cocoapods` and `~\.cocoapods\repos`
 
 ## User Experience
 
