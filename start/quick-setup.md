@@ -27,6 +27,15 @@ To take advantage of this autonomy, you need to configure your system with the t
 
 ### Quick setup
 
+NativeScript CLI is a Node.js application. If you have Node.js already installed, just run the following command.
+
+```Shell
+npm i -g nativescript
+```
+
+If you do not have Node.js, you need to install it first. Here's how to install it on [Mac]({% slug osx %}), [Windows]({% slug windows %}) or [Linux]({% slug linux %})
+
+To develop your apps, you need the Native SDK dependencies.
 If this is your first time developing a mobile project, consider using the one-liner scripts in this section to effortlessly setup your machine. 
 If you have experience developing mobile apps, you may skip to the [advanced setup](#advanced-setup) section below.
 
