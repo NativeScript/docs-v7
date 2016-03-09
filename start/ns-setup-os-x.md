@@ -29,12 +29,12 @@ On OS X systems, you can use the NativeScript CLI to develop Android and iOS app
     * JDK 8 or a later stable official release
     * Android SDK 22 or a later stable official release
     * Android Support Repository
-    * Android SDK Build-tools 22.0.0 or a later stable official release
+    * Android SDK Build-tools 23.0.0 or a later stable official release
     * (Optional) Genymotion to expand your testing options
 
 ### Quick setup
 
-If this is your first time developing a mobile project, consider using the one-liner scripts in this section to effortlessly setup your machine. 
+If this is your first time developing a mobile project, consider using the one-liner scripts in this section to effortlessly setup your machine.
 If you have experience developing mobile apps, you may skip to the [Environment Requirements](#environment-requirements) section below.
 
 Using Spotlight, search `Terminal` and start it. This opens a console window. Copy and paste this script:
@@ -49,7 +49,7 @@ For Android development
 
 * JAVA_HOME environment variable must be set
 * ANDROID_HOME environment variable must be set
-    
+
 ## Setup
 
 1. Install [Homebrew](http://brew.sh) to simplify the installation process.
@@ -86,10 +86,10 @@ For Android development
             ```
             For example: ANDROID_HOME=/usr/local/Cellar/android-sdk/24/
             > NOTE: This is the directory that contains `tools` and `platform-tools` directories.
-        1. Select all packages for the Android 22 SDK, Android SDK Build-tools 22.0.0 or later, Android Support Repository (under Extras) and any other SDKs that you want to install and click **Install**.
+        1. Select all packages for the Android 22 SDK, Android SDK Build-tools 23.0.0 or later, Android Support Repository (under Extras) and any other SDKs that you want to install and click **Install**.
            You can use the following command, that will install all required tools:
            ```
-           android update sdk --filter tools,platform-tools,android-22,build-tools-22.0.1,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
+           android update sdk --filter tools,platform-tools,android-22,build-tools-23.0.2,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
            ```
     1. (Optional) Install Genymotion.<br/>Genymotion is a third-party native emulator.
         1. Go to [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads) and download and install VirtualBox for OS X.

@@ -25,19 +25,19 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
 * JDK 8 or a later stable official release
 * Android SDK 22 or a later stable official release
 * Android Support Repository
-* Android SDK Build-tools 22.0.0 or a later stable official release
+* Android SDK Build-tools 23.0.0 or a later stable official release
 * (Optional) Genymotion to expand your testing options
 
 ### Quick setup
 
-If this is your first time developing a mobile project, consider using the one-liner scripts in this section to effortlessly setup your machine. 
+If this is your first time developing a mobile project, consider using the one-liner scripts in this section to effortlessly setup your machine.
 If you have experience developing mobile apps, you may skip to the [Environment Requirements](#environment-requirements) section below.
 
 Open Start Menu, search for `Command Prompt` and start it. This opens a console window. Copy and paste this script:
 
 > @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/NativeScript/nativescript-cli/production/setup/native-script.ps1'))"
 
-You may need to accept an User Account Control prompt to grant the script administrative privileges. Note that the script downloads and installs some big dependencies and may take some time to complete. 
+You may need to accept an User Account Control prompt to grant the script administrative privileges. Note that the script downloads and installs some big dependencies and may take some time to complete.
 
 ## Environment Requirements
 
@@ -87,7 +87,7 @@ For Android development
 1. Install the required Android SDKs and the Android Support Repository.
 
 	```Shell
-	echo yes | "%ANDROID_HOME%\tools\android" update sdk --filter tools,platform-tools,android-22,build-tools-22.0.1,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
+	echo yes | "%ANDROID_HOME%\tools\android" update sdk --filter tools,platform-tools,android-22,build-tools-23.0.2,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
 	```
 1. (Optional) Install Genymotion.<br/>Genymotion is a third-party native emulator.
     1. Go to [Get Genymotion](https://www.genymotion.com/#!/download), select Windows and click **Get Genymotion**.<br/>You might want to download the larger archive which contains VirtualBox.
