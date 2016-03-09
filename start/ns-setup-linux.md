@@ -25,7 +25,7 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 * JDK 8 or a later stable official release
 * Android SDK 22 or a later stable official release
 * Android Support Repository
-* Android SDK Build-tools 22.0.0 or a later stable official release
+* Android SDK Build-tools 23.0.0 or a later stable official release
 * (Optional) Genymotion to expand your testing options
 
 ## Environment Requirements
@@ -36,7 +36,7 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 ## Setup
 
 1. Run the terminal.
-1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/), [0.12.x](https://nodejs.org/dist/latest-v0.12.x/), or [4.2.x](https://nodejs.org/dist/latest-v4.x/) stable official release.
+1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/), [0.12.x](https://nodejs.org/dist/latest-v0.12.x/), or [4.x](https://nodejs.org/dist/latest-v4.x/) stable official release.
 1. If you are running on a 64-bit system, install the runtime libraries for the ia32/i386 architecture.
 
     ```Shell
@@ -81,7 +81,7 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 1. Install the required Android SDKs and the Android Support Repository.
 
 	```Shell
-	sudo $ANDROID_HOME/tools/android update sdk --filter tools,platform-tools,android-22,build-tools-22.0.1,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
+	sudo $ANDROID_HOME/tools/android update sdk --filter tools,platform-tools,android-22,build-tools-23.0.2,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
 	```
 1. (Optional) Install Genymotion.<br/>Genymotion is a third-party native emulator.
     1. Go to [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads) and download and install VirtualBox for Linux.
