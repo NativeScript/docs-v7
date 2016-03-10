@@ -4,6 +4,7 @@ description: What is a property in NativeScript, what types of properties are av
 position: 5
 slug: properties
 previous_url: /properties
+environment: nativescript
 ---
 
 # Properties

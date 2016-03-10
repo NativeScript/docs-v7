@@ -26,6 +26,7 @@ None.
 | top     | Gets or sets the distance, in pixels, between the top edge of the child and the top edge of its parent AbsoluteLayout client area. |
 
 ### Sample
+{% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
  <AbsoluteLayout width="210" height="210" style.backgroundColor="lightgray">
@@ -36,10 +37,15 @@ None.
  </AbsoluteLayout>
 </Page>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 ![AbsoluteLayout]({{site.baseurl}}/img/modules/layouts/absolute-layout.png "AbsoluteLayout")
 
 ### Sample (margin)
+{% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <AbsoluteLayout width="210" height="210" style.backgroundColor="lightgray">
@@ -48,6 +54,10 @@ None.
   </AbsoluteLayout>
 </Page>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 ![AbsoluteLayout]({{site.baseurl}}/img/modules/layouts/absolute-layout2.png "AbsoluteLayout")
 
@@ -65,6 +75,7 @@ The DockLayout is a layout that provides an docking mechanism for child elements
 | dock     | Specifies the Dock position of a child element that is inside a DockLayout. Possible values are `left`, `top`, `right` and `bottom` |
 
 ### Sample (stretchLastChild="false")
+{% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <DockLayout width="210" height="210" style.backgroundColor="lightgray" stretchLastChild="false">
@@ -75,10 +86,15 @@ The DockLayout is a layout that provides an docking mechanism for child elements
   </DockLayout>
 </Page>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 ![DockLayout]({{site.baseurl}}/img/modules/layouts/dock-layout1.png "DockLayout1")
 
 ### Sample (stretchLastChild="true")
+{% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <DockLayout width="210" height="210" style.backgroundColor="lightgray" stretchLastChild="true">
@@ -89,10 +105,15 @@ The DockLayout is a layout that provides an docking mechanism for child elements
   </DockLayout>
 </Page>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 ![DockLayout]({{site.baseurl}}/img/modules/layouts/dock-layout2.png "DockLayout1")
 
 ### Sample (multiple child elements on one side)
+{% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <DockLayout width="210" height="210" style.backgroundColor="lightgray" stretchLastChild="true">
@@ -103,6 +124,10 @@ The DockLayout is a layout that provides an docking mechanism for child elements
   </DockLayout>
 </Page>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 ![DockLayout]({{site.baseurl}}/img/modules/layouts/dock-layout3.png "DockLayout2")
 
@@ -127,6 +152,7 @@ The GridLayout is a layout that arranges its child elements in a table structure
 | colSpan  | Gets or sets a value that indicates the total number of columns that child content spans within a GridLayout. |
 
 ### Sample
+{% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <GridLayout columns="50, auto, *" rows="50, auto, *" width="210" height="210" style.backgroundColor="lightgray" >
@@ -140,12 +166,17 @@ The GridLayout is a layout that arranges its child elements in a table structure
   </GridLayout>
 </Page>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 ![GridLayout]({{site.baseurl}}/img/modules/layouts/grid-layout.png "GridLayout")
 
 ### Sample (star-sizing)
 - Columns: One star plus two stars is equal to three stars. (\* + 2\* = 3\*). Divide GridLayout width (300) by 3 to get 100. So first column is 1 x 100 = 100 pixels wide and second column is 2 x 100 = 200 pixels wide. 100 + 200 = 300.
 - Rows: Two stars plus three stars is equal to five stars. (2\* + 3\* = 5\*). Divide GridLayout height (300) by 5 to get 60. So first row is 2 x 60 = 120 pixels high and second row is 3 x 60 = 180 pixels high. 120 + 180 = 300.
+{% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <GridLayout columns="*,2*" rows="2*,3*" width="300" height="300" style.backgroundColor="lightgray" >
@@ -156,12 +187,17 @@ The GridLayout is a layout that arranges its child elements in a table structure
   </GridLayout>
 </Page>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 ![GridLayout]({{site.baseurl}}/img/modules/layouts/grid-layout1.png "GridLayout")
 
 ### Sample (fixed and auto)
 - The first column and the first row are `auto`. This means that they are measured with infinite available space and then sized to their content.
 - The second column and the second row have fixed sizes of 30 and 50 respectively. They will be exactly this wide/high regardless of their children's dimensions. They would still be exactly this wide/high even if they don't have any children.
+{% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <GridLayout columns="100,auto" rows="100,auto" width="210" height="210" style.backgroundColor="lightgray" >
@@ -172,12 +208,17 @@ The GridLayout is a layout that arranges its child elements in a table structure
   </GridLayout>
 </Page>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 ![GridLayout]({{site.baseurl}}/img/modules/layouts/grid-layout2.png "GridLayout")
 
 ### Sample (no width & horizontalAlignment != stretch)
 When the GridLayout has no explicit `width` set and its `horizontalAlignment` is not `stretch`, the star columns will not occupy the entire available space (300 from parent StackLayout).
 
+{% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <StackLayout width="200" height="200" style.backgroundColor="palegreen">
@@ -188,11 +229,16 @@ When the GridLayout has no explicit `width` set and its `horizontalAlignment` is
   </StackLayout>
 </Page>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 ![GridLayout]({{site.baseurl}}/img/modules/layouts/grid-layout3.png "GridLayout")
 
 ### Sample (column stretching)
 Label 3 is has fixed width of 150 pixels. Label 1 is given more space than it actually needs, because Label 3 stretches the auto column.
+{% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <GridLayout columns="auto,100" rows="auto,auto" width="300" height="300" style.backgroundColor="lightgray" >
@@ -202,11 +248,16 @@ Label 3 is has fixed width of 150 pixels. Label 1 is given more space than it ac
   </GridLayout>
 </Page>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 ![GridLayout]({{site.baseurl}}/img/modules/layouts/grid-layout4.png "GridLayout")
 
 ### Sample (complex)
 
+{% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <GridLayout columns="auto, *, auto" rows="auto, 25" style.verticalAlignment="top" style.backgroundColor="lightgray">
@@ -217,6 +268,10 @@ Label 3 is has fixed width of 150 pixels. Label 1 is given more space than it ac
   </GridLayout>
 </Page>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 ![GridLayout]({{site.baseurl}}/img/modules/layouts/grid-layout5.png "GridLayout")
 
@@ -232,6 +287,7 @@ The StackLayout stacks its child elements below or beside each other, depending 
 None.
 
 ### Sample (orientation="vertical")
+{% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <StackLayout orientation="vertical" width="210" height="210" style.backgroundColor="lightgray">
@@ -242,10 +298,15 @@ None.
   </StackLayout>
 </Page>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 ![StackLayout]({{site.baseurl}}/img/modules/layouts/stack-layout1.png "StackLayout")
 
 ### Sample (orientation="horizontal")
+{% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <StackLayout orientation="horizontal" width="210" height="210" style.backgroundColor="lightgray">
@@ -256,10 +317,15 @@ None.
   </StackLayout>
 </Page>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 ![StackLayout]({{site.baseurl}}/img/modules/layouts/stack-layout2.png "StackLayout")
 
 ### Sample (horizontal alignment of children)
+{% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <StackLayout orientation="vertical" width="210" height="210" style.backgroundColor="lightgray">
@@ -270,10 +336,15 @@ None.
   </StackLayout>
 </Page>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 ![StackLayout]({{site.baseurl}}/img/modules/layouts/stack-layout3.png "StackLayout")
 
 ### Sample (vertical alignment of children)
+{% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <StackLayout orientation="horizontal" width="210" height="210" style.backgroundColor="lightgray">
@@ -284,6 +355,10 @@ None.
   </StackLayout>
 </Page>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 ![StackLayout]({{site.baseurl}}/img/modules/layouts/stack-layout4.png "StackLayout")
 
@@ -300,6 +375,7 @@ The WrapLayout is similar to the StackLayout, but it does not just stack all chi
 None.
 
 ### Sample (orientation="horizontal")
+{% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <WrapLayout orientation="horizontal" width="210" height="210" style.backgroundColor="lightgray">
@@ -310,10 +386,15 @@ None.
   </WrapLayout>
 </Page>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 ![WrapLayout]({{site.baseurl}}/img/modules/layouts/wrap-layout1.png "WrapLayout")
 
 ### Sample (orientation="vertical")
+{% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <WrapLayout orientation="vertical" width="210" height="210" style.backgroundColor="lightgray">
@@ -324,10 +405,15 @@ None.
   </WrapLayout>
 </Page>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 ![WrapLayout]({{site.baseurl}}/img/modules/layouts/wrap-layout2.png "WrapLayout")
 
 ### Sample (itemWidth="30" itemHeight="30")
+{% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <WrapLayout itemWidth="30" itemHeight="30" width="210" height="210" style.backgroundColor="lightgray">
@@ -338,5 +424,9 @@ None.
   </WrapLayout>
 </Page>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 ![WrapLayout]({{site.baseurl}}/img/modules/layouts/wrap-layout3.png "WrapLayout")

@@ -38,6 +38,7 @@ When the  application starts, NativeScript checks if the file `app.css` exists. 
 
 You can change the name of the file from which the application-wide CSS is loaded. You need to do the change before the application is started, usually in the app.js or app.ts file as shown below:
 
+{% nativescript %}
 ``` JavaScript
 var application = require("application");
 application.cssFile = "style.css";
@@ -50,8 +51,13 @@ application.cssFile = "style.css";
 
 application.start({ moduleName: "main-page" });
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 > The path to the CSS file is relative to the application root folder.
 
+{% nativescript %}
 ### Page-Specific CSS
 
 When the page's XML declaration file is loaded, NativeScript looks for a CSS file with the same name (if such exists), reads any CSS styles that it finds and automatically loads and applies them to the page.
@@ -66,6 +72,10 @@ page.css = "button { color: red }";
 ```
 
 After you have set the default CSS for the page, you can add to it using two methods: adding CSS from a string and adding CSS from a file.
+{% endnativescript %}
+{% angular %}
+TODO... Component-specific CSS: styles/styleUrls
+{% endangular %}
 
 #### Adding CSS From a String
 
