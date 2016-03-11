@@ -4,6 +4,7 @@ description: NativeScript Documentation - Data Binding
 position: 4
 slug: binding
 previous_url: /bindings
+environment: nativescript
 ---
 
 #Data Binding

@@ -26,6 +26,7 @@ Choose or generate an icon font that best matches your needs. Two popular icon f
 }
 ```
 
+{% nativescript %}
 ## main-page.xml
 ``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
@@ -39,7 +40,12 @@ Choose or generate an icon font that best matches your needs. Two popular icon f
     </ListView>
 </Page>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
+{% nativescript %}
 ## main-page.js/ts
 ``` JavaScript
 "use strict";
@@ -80,6 +86,10 @@ export function pageLoaded(args: observable.EventData) {
     page.bindingContext = viewModel;
 }
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 ## Sample App
 ![sample-app]({{site.baseurl}}/img/modules/icon-fonts/sample-app.png "Sample App")

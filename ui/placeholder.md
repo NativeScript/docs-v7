@@ -4,6 +4,7 @@ description: Learn how to use the Placeholder to add any native widget to the vi
 position: 10
 slug: placeholder
 previous_url: /placeholder
+environment: nativescript
 ---
 
 # Placeholder

@@ -4,6 +4,7 @@ description: Learn the basic principles of designing a user interface with Nativ
 position: 1
 slug: ui-basics
 previous_url: /ui-with-xml
+environment: nativescript
 ---
 
 # The User Interface

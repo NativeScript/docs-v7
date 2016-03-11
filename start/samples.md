@@ -5,6 +5,7 @@ position: 7
 slug: samples
 publish: false
 previous_url: /samples
+environment: nativescript
 ---
 
 # Samples with source code

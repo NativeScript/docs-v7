@@ -29,6 +29,7 @@ The `ActionBar` is the NativeScript common abstraction over the Android ActionBa
 
 ## Setting The Title Text
 
+{% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <Page.actionBar>
@@ -38,6 +39,7 @@ The `ActionBar` is the NativeScript common abstraction over the Android ActionBa
   <!-- page content ... -->
 </Page>
 ```
+{% endnativescript %}
 
 ![title-ios]({{site.baseurl}}/img/modules/action-bar/title-ios.png "title-ios")
 ![title-android]({{site.baseurl}}/img/modules/action-bar/title-android.png "title-android")
@@ -47,6 +49,7 @@ The `ActionBar` is the NativeScript common abstraction over the Android ActionBa
 You can set a custom title view, which will render instead of the title.
 Here is how to combine image and label for a `titleView` (the example contains only the `ActionBar` definition):
 
+{% nativescript %}
 ```XML
 <ActionBar title="test">
   <ActionBar.titleView>
@@ -59,6 +62,10 @@ Here is how to combine image and label for a `titleView` (the example contains o
   </ActionBar.titleView>
 </ActionBar>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 ```CSS
 .action-image {
     width: 40;
@@ -85,9 +92,14 @@ Note, that you can use CSS to style the elements inside the `titleView`.
 
 You can set the application icon only for Android. By default, the application icon is hidden. You can show it by setting the `android.iconVisibility` property to `always`.
 
+{% nativescript %}
 ```XML
 <ActionBar title="App Icon Demo" android.icon="res://icon" android.iconVisibility="always"/>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 The result is:
 
@@ -97,11 +109,17 @@ The result is:
 
 The `NavigationButton` component is a common abstraction over the iOS back button and the Android navigation button.
 
+{% nativescript %}
 ```XML
 <ActionBar title="App Icon Demo">
   <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="onNavBtnTap"/>
 </ActionBar>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
+{% nativescript %}
 ```JavaScript
 function onNavBtnTap() {
     // This code will be called only in Android.
@@ -115,6 +133,10 @@ export function onNavBtnTap(){
     console.log("Navigation button tapped!");
 }
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 
 The result is:
 
@@ -137,6 +159,7 @@ In Android, you cannot set text inside the navigation button. You can use the `i
 
 You can define additional action buttons using the `actionItems` collection:
 
+{% nativescript %}
 ```XML
 <ActionBar title="Action Items">
   <ActionBar.actionItems>
@@ -168,6 +191,10 @@ export function onDelete(args: observable.EventData) {
     console.log("Delete action item tapped.");
 }
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 The result is:
 
 ![action-items-ios]({{site.baseurl}}/img/modules/action-bar/action-items-ios.png "action-items-ios")
@@ -217,7 +244,12 @@ Values for `ios.systemIcon` are numbers from the [`UIBarButtonSystemItem`](https
 
 ## Showing/Hiding The Action Bar
 
+{% nativescript %}
 You can explicitly control the visibility of the `ActionBar` by setting the `actionBarHidden` property of the `Page`.
+{% endnativescript %}
+{% angular %}
+TODO... AppOptions...
+{% endangular %}
 
 In **Android**, the application bar is visible by default and shows the name of the application as title. The navigation button is visible only when it is explicitly defined in the application.
 
@@ -229,6 +261,7 @@ You can use the `visibility` property of the `ActionItem` to dynamically hide an
 
 Here is an example of showing different action items when the app is in "editing" mode:
 
+{% nativescript %}
 ```XML
 <ActionBar title="Action Items Visibility">
   <ActionBar.actionItems>
@@ -296,6 +329,9 @@ export function onCancel(args: observable.EventData) {
     btn.bindingContext.set("isEditing", false);
 }
 ```
+{% endnativescript %}
+{% angular %}
+{% endangular %}
 
 The result is:
 
@@ -306,6 +342,7 @@ The result is:
 
 The action bar has some CSS styling limitations. You can use only `background-color` and `color` properties. Here is an example:
 
+{% nativescript %}
 ```XML
 <ActionBar title="Action Bar Style">
   <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"/>
@@ -314,6 +351,10 @@ The action bar has some CSS styling limitations. You can use only `background-co
   </ActionBar.actionItems>
 </ActionBar>
 ```
+{% endnativescript %}
+{% angular %}
+TODO...
+{% endangular %}
 ```CSS
 ActionBar {
     background-color:  #3C5AFD;
@@ -339,8 +380,11 @@ For Android, this sample uses the `NavigationButton`, because `ActionItems` are 
 
 For iOS, this code adds a regular `ActionItem` with `position` set to `left`. Using the `NavigationButton` as a side-drawer button in iOS is not possible, because its function is to always navigate back in the application.
 
+{% nativescript %}
 >Note: The `<android>` and `<ios>` tags are used inside the XML to define platform-specific elements.
+{% endnativescript %}
 
+{% nativescript %}
 ```XML
 <ActionBar title="SideDrawer Button">
   <android>
@@ -372,6 +416,7 @@ ActionBar {
     color: white;
 }
 ```
+{% endnativescript %}
 
 The result is:
 

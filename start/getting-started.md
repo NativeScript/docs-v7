@@ -6,6 +6,7 @@ guide: true
 publish: false
 slug: tutorial
 previous_url: /getting-started
+environment: nativescript
 ---
 
 !!include(start/getting-started/chapter-0.md)
