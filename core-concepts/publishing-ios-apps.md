@@ -29,9 +29,10 @@ previous_url: /core-concepts/releasing-apps
   2. [Creating an App](#creating-an-app)
   3. [Builds](#builds)
     1. [Build Versioning](#build-versioning)
-    2. [Submit from Xcode](#submit-from-xcode)
-    3. [Submit with the Telerik AppManager](#submit-with-the-telerik-appmanager)
-    4. [Submission Automation](#submission-automation)
+    2. [Submit from the NativeScript CLI](#submit-from-the-nativescript-cli)
+    3. [Submit from Xcode](#submit-from-xcode)
+    4. [Submit with Telerik AppManager](#submit-with-telerik-appmanager)
+    5. [Submission Automation](#submission-automation)
   4. [Send for Approval and Publish](#send-for-approval-and-publish)
 
 ## Overview
@@ -166,7 +167,7 @@ If you plan to use the Xcode tooling it would be best to create a *Development C
 
 A few pitfalls are:
  - A developer is allowed to have one certificate at any time. You must 'Revoke' an existing certificate to create a new one.
- - Certificates consist of public and private keys. The private key is never sent to Apple, so you cannot 'Download' your certificate from the *Member Center*. If you lose the private key of your certificate, you have to revoke it and create a new one. 
+ - Certificates consist of public and private keys. The private key is never sent to Apple, so you cannot 'Download' your certificate from the *Member Center*. If you lose the private key of your certificate, you have to revoke it and create a new one.
  - When Revoked or Expired the certificates may further invalidate *Provisioning Profiles*. Once the certificate is recreated, the *Provisioning Profiles* need to be updated as well.
  - Making a certificate requires a Mac. You use the Keychain Access tool to create a certificate request, generating a public and private keys at your side, then send the public key to Apple while storing the private key in your keychain.
  - If you follow the steps at the *Member Center* to create new *Development Certificate*, the certificate must be stored in your keychain. You can consider exporting it and backing it up.
@@ -303,6 +304,24 @@ export CFBundleVersion=`/usr/libexec/PlistBuddy app/App_Resources/iOS/Info.plist
 /usr/libexec/PlistBuddy app/App_Resources/iOS/Info.plist -c "Set :CFBundleVersion $CFBundleVersion.$BUILD_NUMBER"
 ```
 
+#### Submit from the NativeScript CLI
+You can execute the following command inside a NativeScript project using the CLI:
+```
+tns publish ios
+```
+
+The command will prompt for your `Apple ID` and `Password` for authentication with [iTunes Connect](https://itunesconnect.apple.com) and then produce a `release` build and proceed to upload it to iTunes Connect.
+
+Alternatively, you can use an existing build by running the following command:
+```
+tns publish ios --ipa <Ipa File Path>
+```
+
+For more information, run the following command:
+```
+tns help publish ios
+```
+
 #### Submit from Xcode
 You can execute the following command using the CLI:
 ```
@@ -311,7 +330,7 @@ tns prepare ios
 This will create an Xcode project in `platforms/ios/`. Then you may consider the following Apple article about how to [configure the project for distribution](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/ConfiguringYourApp/ConfiguringYourApp.html).
 
 The `platform` folder is not meant to stay in source control and you should be careful when you do modifications there.
-Rebuilds may erase your changes and you should add changed files to source control. 
+Rebuilds may erase your changes and you should add changed files to source control.
 
 A common pitfall, if you are using CocoaPods, would be to open the Xcode project instead of the workspace.
 
@@ -338,6 +357,22 @@ as well as support for cloud builds and *Google Play* submission.
 Read more about app submission process in the *Telerik Platform* in ['Introduction to Telerik AppManager'](http://docs.telerik.com/platform/appmanager/getting-started/introduction)
 
 #### Submission Automation
+Automation can be achieved using the NativeScript CLI only. All of the parameters needed for publishing can be passed to the `publish` command directly:
+
+```
+tns publish ios [<Apple ID> [<Password> [<Mobile Provisioning Profile Identifier> [<Code Sign Identity>]]]]]
+```
+For example, assuming that you want to issue a build using a mobile provision with an identifier *d5d40f61-b303-4fc8-aea3-fbb229a8171c*, you could run:
+```
+tns publish ios my-apple-id my-password d5d40f61-b303-4fc8-aea3-fbb229a8171c "iPhone Distribution"
+```
+Note that the `Code Sign Identity` can be set to something generic like *iPhone Distribution* in order to let the build automatically detect a code sign identity.
+
+You can also automate the uploads of already built packages:
+```
+tns publish ios my-apple-id my-password --ipa /tmp/build/myIpa.ipa
+```
+
 Then there are some tools that allow the submission process to be automated - [MIT Licensed one: fastlane](https://github.com/fastlane/fastlane).
 Also the mentioned *Application Loader* has a command line tool called *iTMSTransporter* in its package,
 which you may use to hack your own [shell scripts](https://gist.github.com/jedi4ever/b1f8b27d4a803d487fa4) around.
