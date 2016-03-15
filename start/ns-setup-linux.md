@@ -24,7 +24,7 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 * G++ compiler
 * JDK 8 or a later stable official release
 * Android SDK 22 or a later stable official release
-* Android Support Repository
+* Local Maven repository for Support Libraries
 * Android SDK Build-tools 23.0.0 or a later stable official release
 * (Optional) Genymotion to expand your testing options
 
@@ -78,10 +78,10 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
     For example: ANDROID_HOME=/android/sdk/
     > NOTE: This is the directory that contains `tools` and `platform-tools` directories.
 
-1. Install the required Android SDKs and the Android Support Repository.
+1. Install the required Android SDKs and the Local Maven repository for Support Libraries.
 
 	```Shell
-	sudo $ANDROID_HOME/tools/android update sdk --filter tools,platform-tools,android-22,build-tools-23.0.2,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
+	sudo $ANDROID_HOME/tools/android update sdk --filter tools,platform-tools,android-23,build-tools-23.0.2,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
 	```
 1. (Optional) Install Genymotion.<br/>Genymotion is a third-party native emulator.
     1. Go to [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads) and download and install VirtualBox for Linux.
