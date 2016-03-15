@@ -164,7 +164,7 @@ This is the list of the properties that can be set in CSS or through the style p
 |:----------------|:-------------------|:----------------|
 | color           | color              | Sets a solid-color value to the matched view’s foreground. |
 | background-color | backgroundColor   | Sets a solid-color value to the matched view’s background. |
-| background-image | backgroundImage   | Sets a image url to the matched view’s background image. |
+| background-image | backgroundImage   | Sets a image url to the matched view’s background image. You can use images from url, resource or local file: `background-image: url('http://some-domain.com/your-image.png');`, `background-image: url('res://your-image.png');`, `background-image: url('~/your-image.png');` |
 | background-repeat | backgroundRepeat | Sets if/how the background image should be repeated. Possible values: "repeat", "repeat-x", "repeat-y", "no-repeat" |
 | background-position | backgroundPosition | Sets the starting position of the background image. You can set the position with absolute, percent or aligment values. More info [here](http://www.w3schools.com/cssref/pr_background-position.asp).  |
 | background-size | backgroundSize     | Sets the size of the background image. Possible values: "*length length*", "*percent% percent%*", "cover" or "contain". |
