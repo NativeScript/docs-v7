@@ -77,7 +77,7 @@ The position option is platform specific. The available values are as follows:
 
 ### iOS
 Set `ios.systemIcon` to a number representing the iOS system item to be displayed.
-Use this property instead of `ActionItem.icon` if you want to diplsay a built-in iOS system icon.
+Use this property instead of `ActionItem.icon` if you want to display a built-in iOS system icon.
 Note: systemIcon is not supported on NavigationButton in iOS
 The value should be a number from the `UIBarButtonSystemItem` enumeration
 (https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItem_Class/#//apple_ref/c/tdef/UIBarButtonSystemItem)
