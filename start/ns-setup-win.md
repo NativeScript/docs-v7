@@ -24,7 +24,7 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
 * (Optional) Chocolatey to simplify the installation of dependencies
 * JDK 8 or a later stable official release
 * Android SDK 22 or a later stable official release
-* Android Support Repository
+* Local Maven repository for Support Libraries
 * Android SDK Build-tools 23.0.0 or a later stable official release
 * (Optional) Genymotion to expand your testing options
 
@@ -84,10 +84,10 @@ For Android development
 
         For example: `SETX ANDROID_HOME "C:\Program Files (x86)\Android\android-sdk" /M`
     1. Restart the command prompt.
-1. Install the required Android SDKs and the Android Support Repository.
+1. Install the required Android SDKs and the Local Maven repository for Support Libraries.
 
 	```Shell
-	echo yes | "%ANDROID_HOME%\tools\android" update sdk --filter tools,platform-tools,android-22,build-tools-23.0.2,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
+	echo yes | "%ANDROID_HOME%\tools\android" update sdk --filter tools,platform-tools,android-23,build-tools-23.0.2,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
 	```
 1. (Optional) Install Genymotion.<br/>Genymotion is a third-party native emulator.
     1. Go to [Get Genymotion](https://www.genymotion.com/#!/download), select Windows and click **Get Genymotion**.<br/>You might want to download the larger archive which contains VirtualBox.
