@@ -87,7 +87,7 @@ model.set("secure", false);
 // textField.secure is now false
 ```
 ### Binding to the return press event
-It is possible to bind to the return press event on a TextField. This event will be fired with the user hits the "Return" key on the keyboard while in the TextField.
+It is possible to bind to the return press event on a TextField. This event will be fired when the user hits the "Return" key on the keyboard while in the TextField.
 ````XML
 <TextField text="search" returnPress="performSearch" />
 ````
