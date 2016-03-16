@@ -9,7 +9,7 @@ Encapsulates HTTP-response information from an HTTP-request.
 ##### Properties
  - **statusCode** - _Number_.    
   Gets the response status code.
- - **headers** - _Object_.    
+ - **headers** - _Headers_.    
   Gets the response headers.
- - **content** - _(optional)_ - [_HttpContent_](../http/HttpContent.md).    
+ - **content** - _(optional)_ - _HttpContent_.    
   Gets the response content.

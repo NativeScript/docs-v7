@@ -113,9 +113,9 @@ size is smaller than the size the view wants to be.
  - **scaleY** - _Number_.    
   Gets or sets the scaleY affine transform of the view.
  - **originX** - _Number_.    
-  Gets or sets the X component of the origin point around which the view will be transformed. The default value is 0.5 representing the center of the view.
+  Gets or sets the X component of the origin point around which the view will be transformed. The deafault value is 0.5 representing the center of the view.
  - **originY** - _Number_.    
-  Gets or sets the Y component of the origin point around which the view will be transformed. The default value is 0.5 representing the center of the view.
+  Gets or sets the Y component of the origin point around which the view will be transformed. The deafault value is 0.5 representing the center of the view.
  - **rotate** - _Number_.    
   Gets or sets the rotate affine transform of the view.
  - **isEnabled** - _Boolean_.    
@@ -334,3 +334,5 @@ Returns a value indicating whether this view or one of its descendants actually 
  - **_setNativeViewFrame(** nativeView _Object_, frame _Object_ **)**
    - **nativeView** - _Object_
    - **frame** - _Object_
+ - **_onStylePropertyChanged(** property [_Property_](../../../ui/core/dependency-observable/Property.md) **)**
+   - **property** - [_Property_](../../../ui/core/dependency-observable/Property.md)

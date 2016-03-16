@@ -22,6 +22,8 @@ Represents an action item in the action bar.
   Gets or sets the text of the action item.
  - **icon** - _String_.    
   Gets or sets the icon of the action item.
+ - **actionView** - [_View_](../../ui/core/view/View.md).    
+  Gets or sets the custom action view of the action item.
  - **visibility** - _String_.    
   Gets or sets the visibility of the action item.
  - **actionBar** - [_ActionBar_](../../ui/action-bar/ActionBar.md).    

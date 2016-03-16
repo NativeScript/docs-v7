@@ -11,7 +11,7 @@ var Button = require("ui/button").Button;
 var stackLayout = new stack_layout_1.StackLayout();
  ```
 ### Declaring a StackLayout.
-```XML
+``` XML
 <Page>
   <StackLayout orientation="horizontal">
     <Label text="This is Label 1" />

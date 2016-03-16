@@ -9,12 +9,12 @@ Using the progress view requires the Progress module.
 var progressModule = require("ui/progress");
 ```
 Binding the Progress value property to a view-model property.
-```XML
+``` XML
 <Page loaded="pageLoaded">
   {%raw%}<Progress value="{{ someProperty }}" />{%endraw%}
 </Page>
 ```
-```JS
+``` JavaScript
 function pageLoaded(args) {
   var page = args.object;
   page.bindingContext = { someProperty : 42 };

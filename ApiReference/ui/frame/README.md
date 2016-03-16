@@ -44,5 +44,3 @@ This method will start from the topmost Frame and will recursively search for an
  - **resolvePageFromEntry(** entry [_NavigationEntry_](../../ui/frame/NavigationEntry.md) **)** [_Page_](../../ui/page/Page.md)
    - **entry** - [_NavigationEntry_](../../ui/frame/NavigationEntry.md)
    - _**return**_ - [_Page_](../../ui/page/Page.md)
- - **getActivity()** _Object_
-   - _**return**_ - _Object_

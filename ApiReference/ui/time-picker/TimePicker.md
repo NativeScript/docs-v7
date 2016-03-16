@@ -10,6 +10,7 @@ Represents an time picker.
 ##### Static Properties
  - **hourProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
  - **minuteProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
+ - **timeProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).
 
 ##### Instance Properties
  - **android** - _Object_.    
@@ -20,6 +21,8 @@ Represents an time picker.
   Gets or sets the time hour.
  - **minute** - _Number_.    
   Gets or sets the time minute.
+ - **time** - _Object_.    
+  Gets or sets the time.
  - **maxHour** - _Number_.    
   Gets or sets the max time hour.
  - **maxMinute** - _Number_.    

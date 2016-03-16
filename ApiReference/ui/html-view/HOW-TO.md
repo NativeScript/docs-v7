@@ -9,7 +9,7 @@ Using a HtmlView requires the html-view module.
 var htmlViewModule = require("ui/html-view");
 ```
 ### Declaring a HtmlView.
-```XML
+``` XML
  <Page>
       {%raw%}<HtmlView html="{{ htmlString }}" />{%endraw%}
  </Page>

@@ -27,7 +27,6 @@
  - ["text/span"](text/span/)
  - ["timer"](timer/)
  - ["trace"](trace/)
- - ["ui"](ui/)
  - ["ui/action-bar"](ui/action-bar/)
  - ["ui/activity-indicator"](ui/activity-indicator/)
  - ["ui/animation"](ui/animation/)

@@ -46,3 +46,7 @@ var hasKey = appSettings.hasKey("noBoolKey");
 ``` JavaScript
 appSettings.remove("boolKey");
 ```
+### Removing all values
+``` JavaScript
+appSettings.clear();
+```

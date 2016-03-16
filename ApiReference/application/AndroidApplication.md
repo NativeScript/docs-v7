@@ -60,12 +60,6 @@ The abstraction of an Android-specific application object.
   [Deprecated. Please use the respective event instead.] Direct handler of the onActivityResult method.
 
 ##### Instance Functions
- - **getActivity(** intent _Object_ **)** _Object_  
-     This method is called by the JavaScript Bridge when navigation to a new activity is triggered.
-   - **intent** - _Object_  
-     - Native (android) intent used to create the activity.
-Returns com.tns.NativeScriptActivity.extend implementation.
-   - _**return**_ - _Object_
  - **on(** eventNames _String_, callback _Function_..., thisArg? _Object_ **)**  
      A basic method signature to hook an event listener (shortcut alias to the addEventListener method).
    - **eventNames** - _String_  

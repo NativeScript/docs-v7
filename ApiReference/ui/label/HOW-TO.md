@@ -9,7 +9,7 @@ Using a label requires the Label module.
 var LabelModule = require("ui/label");
 ```
 ### Binding the Label text property to a view-model property.
-```XML
+``` XML
 <Page>
   {%raw%}<Label text="{{ title }}" />{%endraw%}
 </Page>

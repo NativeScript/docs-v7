@@ -12,6 +12,8 @@ Represents a standard WebView widget.
   String value used when hooking to loadStarted event.
  - **loadFinishedEvent** - _String_.    
   String value used when hooking to loadFinished event.
+ - **navigationTypes** - Array of _String_.    
+  Array of string values used when passing navigation types.
  - **urlProperty** - [_Property_](../../ui/core/dependency-observable/Property.md).    
   Represents the observable property backing the Url property of each WebView instance.
 

@@ -12,6 +12,15 @@ var segmentedBarModule = require("ui/segmented-bar");
 ``` JavaScript
 var segmentedBar = new segmentedBarModule.SegmentedBar();
 ```
+``` XML
+<SegmentedBar>
+  <SegmentedBar.items>
+    <SegmentedBarItem title="Item 1" />
+    <SegmentedBarItem title="Item 2" />
+    <SegmentedBarItem title="Item 3" />
+  </SegmentedBar.items>
+</SegmentedBar>
+```
 ### Creating segmentedBar.items
 It is important that an items array gets created and filled with
 items first and then assigned to the segmented bar.

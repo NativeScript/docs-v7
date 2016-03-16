@@ -9,7 +9,7 @@ Using a slider requires the Slider module.
 var sliderModule = require("ui/slider");
 ```
 ### Binding the Progress and Slider value properties to a observable view-model property.
-```XML
+``` XML
 <Page loaded="pageLoaded">
  <StackLayout orientation="vertical">
    {%raw%}<Progress value="{{ someProperty }}" />
@@ -17,7 +17,7 @@ var sliderModule = require("ui/slider");
  </StackLayout>
 </Page>
 ```
-```JS
+``` JavaScript
 function pageLoaded(args) {
   var page = args.object;
   var obj = new observable.Observable();

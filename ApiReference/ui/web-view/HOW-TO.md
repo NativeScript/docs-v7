@@ -9,7 +9,7 @@ Using a WebView requires the web-view module.
 var webViewModule = require("ui/web-view");
 ```
 ### Declaring a WebView.
-```XML
+``` XML
  <Page>
       {%raw%}<WebView src="{{ someUrl | pathToLocalFile | htmlString }}" />{%endraw%}
  </Page>

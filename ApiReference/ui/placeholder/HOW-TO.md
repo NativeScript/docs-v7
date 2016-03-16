@@ -9,12 +9,12 @@ Using the placeholder requires the Placeholder module.
 var placeholderModule = require("ui/placeholder");
 ```
 Creating native view for the Placeholder using creatingView event.
-```XML
+``` XML
 <Page>
   {%raw%}<Placeholder creatingView="creatingView" />{%endraw%}
 </Page>
 ```
-```JS
+``` JavaScript
 var platform = require("platform");
 var utils = require("utils/utils");
 

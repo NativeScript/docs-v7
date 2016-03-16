@@ -27,8 +27,6 @@ Represents the base class for all text views.
   Gets or sets a formatted string.
 
 ##### Instance Functions
- - **_onTextPropertyChanged(** data [_PropertyChangeData_](../../ui/core/dependency-observable/PropertyChangeData.md) **)**
-   - **data** - [_PropertyChangeData_](../../ui/core/dependency-observable/PropertyChangeData.md)
  - **_addChildFromBuilder(** name _String_, value _Object_ **)**  
      Called for every child element declared in xml.
 This method will add a child element (value) to current element.
@@ -36,3 +34,7 @@ This method will add a child element (value) to current element.
      - Name of the element.
    - **value** - _Object_  
      - Value of the element.
+ - **_onTextPropertyChanged(** data [_PropertyChangeData_](../../ui/core/dependency-observable/PropertyChangeData.md) **)**
+   - **data** - [_PropertyChangeData_](../../ui/core/dependency-observable/PropertyChangeData.md)
+ - **_setFormattedTextPropertyToNative(** value _Object_ **)**
+   - **value** - _Object_

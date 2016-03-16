@@ -9,7 +9,7 @@ Using a switch requires the Switch module.
 var switchModule = require("ui/switch");
 ```
 ### Binding the Switch checked property and Button isEanbled property to a observable view-model property.
-```XML
+``` XML
 <Page loaded="pageLoaded">
  <StackLayout orientation="vertical">
    {%raw%}<Switch checked="{{ someProperty }}" />
@@ -17,7 +17,7 @@ var switchModule = require("ui/switch");
  </StackLayout>
 </Page>
 ```
-```JS
+``` JavaScript
 function pageLoaded(args) {
   var page = args.object;
   var obj = new observable.Observable();

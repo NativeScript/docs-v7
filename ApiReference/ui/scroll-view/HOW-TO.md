@@ -9,7 +9,7 @@ Using a ScrollView requires the ScrollView module.
 var scrollViewModule = require("ui/scroll-view");
 ```
 ### Declaring the ScrollView.
-```XML
+``` XML
 <Page>
  <ScrollView>
    {%raw%}<Image src="{{ someBigImageUrl }}" />{%endraw%}

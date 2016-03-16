@@ -14,13 +14,13 @@ var observableArray = require("data/observable-array");
 var labelModule = require("ui/label");
 ```
 ### Binding the Repeater items property to collection in the view-model.
-```XML
+``` XML
 <Page>
   {%raw%}<Repeater items="{{ myItems }}" />{%endraw%}
 </Page>
 ```
 ### Define the Repeater itemTemplate property.
-```XML
+``` XML
 <Page>
  {%raw%}<Repeater items="{{ myItems }}">
     <Repeater.itemTemplate>
@@ -30,7 +30,7 @@ var labelModule = require("ui/label");
 </Page>
 ```
 ### Define the Repeater itemsLayout property. Default is StackLayout with orientation="vertical".
-```XML
+``` XML
 <Page>
  {%raw%}<Repeater items="{{ myItems }}">
     <Repeater.itemsLayout>
@@ -40,7 +40,7 @@ var labelModule = require("ui/label");
 </Page>
 ```
 ### Repeater with WrapLayout inside ScrollView.
-```XML
+``` XML
 <Page>
 {%raw%}<ScrollView>
   <Repeater items="{{ myItems }}">

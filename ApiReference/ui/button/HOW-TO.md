@@ -11,7 +11,7 @@ var buttonModule = require("ui/button");
 var observable = require("data/observable");
 ```
 ### Attaching event handler for the button tap event.
-```XML
+``` XML
 <Page>
   <Button tap="buttonTap" />
 </Page>
@@ -23,10 +23,6 @@ var button = new buttonModule.Button();
 ### Setting the text of a button
 ``` JavaScript
 button.text = "Hello, world!";
-```
-### Setting the text of a button
-``` JavaScript
-button.textWrap = true;
 ```
 ### Responding to the tap event
 ``` JavaScript

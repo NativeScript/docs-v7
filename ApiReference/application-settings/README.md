@@ -59,3 +59,5 @@ var application_settings = require("application-settings");
      Removes a value (if existing) for a key.
    - **key** - _String_  
      The key to check for.
+ - **clear()**  
+     Removes all values.

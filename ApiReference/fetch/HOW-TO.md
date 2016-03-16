@@ -36,7 +36,7 @@ fetch("https://httpbin.org/get").then(function (response) { return response.form
 });
 ```
 ### Get Response status
-``` fetch
+``` JavaScript
 fetch("https://httpbin.org/get").then(function (response) {
     // Argument (response) is Response!
     var statusCode = response.status;

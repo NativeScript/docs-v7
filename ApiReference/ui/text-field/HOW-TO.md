@@ -10,7 +10,7 @@ var textFieldModule = require("ui/text-field");
 var observable = require("data/observable");
 ```
 ### Binding two TextFields text property to observable view-model property.
-```XML
+``` XML
 <Page loaded="pageLoaded">
  <StackLayout orientation="vertical">
    {%raw%}<TextField text="{{ someProperty }}" />
@@ -18,7 +18,7 @@ var observable = require("data/observable");
  </StackLayout>
 </Page>
 ```
-```JS
+``` JavaScript
 function pageLoaded(args) {
   var page = args.object;
   var obj = new observable.Observable();
@@ -86,15 +86,3 @@ textField.bind(options, model);
 model.set("secure", false);
 // textField.secure is now false
 ```
-### Binding to the return press event
-It is possible to bind to the return press event on a TextField. This event will be fired when the user hits the "Return" key on the keyboard while in the TextField.
-````XML
-<TextField text="search" returnPress="performSearch" />
-````
-
-### Setting return key text
-The return key text that is displayed in the keyboard for a TextField can be customized. Possible values are `send`, `search`, `go`, `next`, `done`. See the [Return Key Type](https://docs.nativescript.org/ui/keyboard#return-key-type) section of the API documentation for more details.
-
-````XML
-<TextField text="search" returnKeyType="search" />
-````

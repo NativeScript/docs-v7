@@ -51,3 +51,7 @@ This method will add a child element (value) to current element.
      - Name of the element.
    - **value** - _Object_  
      - Value of the element.
+ - **_onTextPropertyChanged(** data [_PropertyChangeData_](../../ui/core/dependency-observable/PropertyChangeData.md) **)**
+   - **data** - [_PropertyChangeData_](../../ui/core/dependency-observable/PropertyChangeData.md)
+ - **_setFormattedTextPropertyToNative(** value _Object_ **)**
+   - **value** - _Object_

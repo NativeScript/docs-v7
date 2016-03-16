@@ -14,7 +14,6 @@ Object | Description
 ------|------------
 [HttpRequestOptions](../http/HttpRequestOptions.md) | Provides options for the http requests.
 [HttpResponse](../http/HttpResponse.md) | Encapsulates HTTP-response information from an HTTP-request.
-[HttpContent](../http/HttpContent.md) | Encapsulates the content of an HttpResponse.
 
 ##### Functions
  - **getString(** url _String_ **)** _Promise_...  

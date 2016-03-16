@@ -5,7 +5,7 @@ description: "Examples for using TabView"
 ---
 # TabView
 ### Declaring the TabView in xml.
-```XML
+``` XML
 <Page>
  <TabView>
    <TabView.items>

@@ -9,7 +9,7 @@ Using an image requires the Image module to be loaded.
 var ImageModule = require("ui/image");
 ```
 Binding the image source property to a view-model property.
-```XML
+``` XML
 <Page>
   <StackLayout>
      <!--Bind the image source property to view-model property -->

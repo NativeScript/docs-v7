@@ -10,5 +10,7 @@ Event data containing information for the loading events of a WebView.
 ##### Properties
  - **url** - _String_.    
   Gets the url of the web-view.
+ - **navigationType** - _String_.    
+  Gets the navigation type of the web-view.
  - **error** - _String_.    
   Gets the error (if any). 

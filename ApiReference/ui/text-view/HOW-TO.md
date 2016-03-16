@@ -10,7 +10,7 @@ var textViewModule = require("ui/text-view");
 var observable = require("data/observable");
 ```
 ### Binding two TextViews text property to observable view-model property.
-```XML
+``` XML
 <Page loaded="pageLoaded">
  <StackLayout orientation="vertical">
    {%raw%}<TextView text="{{ someProperty }}" />
@@ -18,7 +18,7 @@ var observable = require("data/observable");
  </StackLayout>
 </Page>
 ```
-```JS
+``` JavaScript
 function pageLoaded(args) {
   var page = args.object;
   var obj = new observable.Observable();

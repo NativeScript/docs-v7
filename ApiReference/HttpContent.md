@@ -1,9 +1,9 @@
 ---
-nav-title: "Object http.HttpContent"
-title: "Object http.HttpContent"
-description: "Object http.HttpContent"
+nav-title: "Object HttpContent"
+title: "Object HttpContent"
+description: "Object HttpContent"
 ---
-## Object: "http".HttpContent  
+## Object: HttpContent  
 Encapsulates the content of an HttpResponse.
 
 ##### Properties
@@ -13,7 +13,7 @@ Encapsulates the content of an HttpResponse.
   Gets the response body as string.
  - **toJSON** - _Function_() _Object_.    
   Gets the response body as JSON object.
- - **toImage** - _Function_() _Promise_ of [_ImageSource_](../image-source/ImageSource.md).    
+ - **toImage** - _Function_() _Promise_ of _Object_.    
   Gets the response body as ImageSource.
- - **toFile** - _Function_(destinationFilePath _String_) [_File_](../file-system/File.md).    
+ - **toFile** - _Function_(destinationFilePath _String_) _Object_.    
   Gets the response body as file.

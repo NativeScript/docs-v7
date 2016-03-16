@@ -10,7 +10,7 @@ var actionBarModule = require("ui/action-bar");
 ```
 
 ## Setting Title and Icon
-```XML
+``` XML
 <Page>
   <Page.actionBar>
     {%raw%}<ActionBar title="{{ title }}" android.icon="res://is_custom_home_icon"/>{%endraw%}
@@ -22,7 +22,7 @@ The icon can only be set in Android platform. It is hidden by default, but you e
 
 
 ## Setting Custom Title View 
-```XML
+``` XML
 <Page loaded="pageLoaded">
   <Page.actionBar>
     <ActionBar title="Title">
@@ -40,7 +40,7 @@ The icon can only be set in Android platform. It is hidden by default, but you e
 ```
 
 ## Setting Action Items
-```XML
+``` XML
 <Page>
   <Page.actionBar>
     <ActionBar title="Title">
@@ -60,7 +60,7 @@ The position option is platform specific. The available values are as follows:
 * **iOS** - `left` and `right`. The default is `left`.
 
 ## Displaying Platform-Specific System Icons on Action Items
-```XML
+``` XML
 <Page>
   <Page.actionBar>
     <ActionBar>
@@ -77,7 +77,7 @@ The position option is platform specific. The available values are as follows:
 
 ### iOS
 Set `ios.systemIcon` to a number representing the iOS system item to be displayed.
-Use this property instead of `ActionItem.icon` if you want to display a built-in iOS system icon.
+Use this property instead of `ActionItem.icon` if you want to diplsay a built-in iOS system icon.
 Note: systemIcon is not supported on NavigationButton in iOS
 The value should be a number from the `UIBarButtonSystemItem` enumeration
 (https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItem_Class/#//apple_ref/c/tdef/UIBarButtonSystemItem)
@@ -112,8 +112,29 @@ Use this property instead of `ActionItem.icon` if you want to diplsay a built-in
 The value should be a string such as 'ic_menu_search' if you want to display the built-in Android Menu Search icon for example.
 For a full list of Android drawable names, please visit http://androiddrawables.com
 
+## Displaying Custom View in Action Items
+``` XML
+<Page>
+  <Page.actionBar>
+    <ActionBar>
+      <ActionBar.actionItems>
+		<ActionItem>
+		  <ActionItem.actionView>
+			  <StackLayout orientation="horizontal">
+			    <Label text="Green" color="green"/>
+			    <Label text="Red" color="red"/>
+			  </StackLayout>
+		  </ActionItem.actionView>
+		</ActionItem>
+      </ActionBar.actionItems>
+    </ActionBar>
+  </Page.actionBar>
+  ...
+</Page>
+```
+
 ## Setting Navigation Button
-```XML
+``` XML
 <Page>
   <Page.actionBar>
     <ActionBar title="Title">
