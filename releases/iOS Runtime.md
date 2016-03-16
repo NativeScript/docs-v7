@@ -7,6 +7,17 @@ slug: ios-changelog
 previous_url: /Changelogs/iOS Runtime
 ---
 
+1.7.0
+=====
+
+## What's New
+- [Add methods to Objective-C protocol wrappers](https://github.com/NativeScript/ios-runtime/pull/506)
+- [Throw error when overriding properties without getter/setter.](https://github.com/NativeScript/ios-runtime/pull/517)
+- [Provide runtime implementation for source maps](https://github.com/NativeScript/ios-runtime/pull/525)
+
+## Bug Fixes
+- [Debugger crashes when open the Storage tab](https://github.com/NativeScript/ios-runtime/pull/527)
+
 1.6.0
 =====
 
