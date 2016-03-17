@@ -13,7 +13,8 @@ This article includes the following topics:
 * [Introduction](#introduction)
 * [Applying CSS Styles](#applying-css-styles)
 * [Supported Selectors](#supported-selectors)
-* [Supported Properties](#supported-properties)
+* [Supported CSS Properties](#supported-css-properties)
+* [Accessing NativeScript component properties with CSS](#accessing-nativeScript-component-properties-with-css)
 * [Using Fonts](#using-fonts)
 * [Import External CSS](#import-external-css)
 
@@ -166,7 +167,7 @@ btn.id = "login-button"
 <Button id="login-button" />
 ```
 
-## Supported Properties
+## Supported CSS Properties
 
 This is the list of the properties that can be set in CSS or through the style property of each View:
 
@@ -206,6 +207,17 @@ This is the list of the properties that can be set in CSS or through the style p
 | padding-left    | paddingLeft        | Sets the left padding of a layout container. |
 | visibility      | visibility         | Sets the view visibility. Possible values: "visible", "collapse" (or"collapsed"). |
 | opacity         | opacity            | Sets the view opacity. The value is in the [0, 1] range. |
+
+## Accessing NativeScript component properties with CSS
+
+You can set NativeScript component properties value that are not part of the CSS specification. For example:
+```CSS
+StackLayout {
+   orientation: horizontal;
+}
+```
+
+This feature is limited to properties with simple types like string, number and boolean and will set local property value similar to component markup declaration in XML. CSS cascading and inheritance are not supported. 
 
 ## Using Fonts
 The `font-family` property can hold several values. The first supported font in the list will be used. There is also support for the following generic font-families:
