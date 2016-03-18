@@ -95,6 +95,7 @@ listView.on(listViewModule.ListView.itemLoadingEvent, function (args) {
 colors.push("yellow");
 // The ListView will be updated automatically.
 ```
+
 ## Responding to other events
 ### ItemTap event
 The event will be raise when an item inside the ListView is tapped.
@@ -102,7 +103,7 @@ The event will be raise when an item inside the ListView is tapped.
 listView.on(listViewModule.ListView.itemTapEvent, function (args) {
     var tappedItemIndex = args.index;
     var tappedItemView = args.view;
-    // Do someting
+    // Do something
 });
 ```
 ### LoadMoreItems event
