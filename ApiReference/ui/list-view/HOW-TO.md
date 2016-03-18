@@ -70,6 +70,7 @@ listView.on(listViewModule.ListView.itemLoadingEvent, function (args) {
     args.view.text = colors[args.index];
 });
 ```
+
 > Note, that changing the array after the list view is shown will not update the UI.
 You can force-update the UI using the refresh() method.
 ``` JavaScript
@@ -77,6 +78,7 @@ colors.push("yellow");
 // Manually trigger the update so that the new color is shown.
 listView.refresh();
 ```
+
 ### Using ListView with ObservableArray
 ``` JavaScript
 var colors = new observableArray.ObservableArray(["red", "green", "blue"]);
@@ -90,6 +92,7 @@ listView.on(listViewModule.ListView.itemLoadingEvent, function (args) {
     indexes[args.index] = true;
 });
 ```
+
 > When using ObservableArray the list view will be automatically updated when items are added or removed form the array.
 ``` JavaScript
 colors.push("yellow");
