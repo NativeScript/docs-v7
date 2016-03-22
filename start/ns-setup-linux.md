@@ -11,7 +11,7 @@ previous_url: /setup/ns-cli-setup/ns-setup-linux
 
 With the open-source [NativeScript Command-Line Interface](https://github.com/NativeScript/nativescript-cli) and an IDE or text editor of your choice, you can create, develop, store and build your apps entirely locally, free of charge and anonymously.
 
-On Linux systems, you can use the NativeScript CLI to develop only Android apps. This limitation is caused by the requirements for iOS development.
+On Linux systems, you can use the NativeScript CLI to develop only Android apps. This limitation is caused by the requirements for iOS development. <Commment: The sentence about iOS requirments sounds odd to me. I think you could reword it if you said, "You cannot use NativeScript CLI to develop iOS apps on Linux because x, y, z." where you specifically state in x, y and z what the limitations are.>
 
 * [System Requirements](#system-requirements)
 * [Environment Requirements](#environment-requirements)
@@ -56,7 +56,7 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
     	sudo apt-get update
     	sudo apt-get install oracle-java8-installer
         ```
-    1. After installation if you have multiple installations of java you can choose which to use:
+    1. After installation, if you have multiple installations of java, you can choose which to use:
 
     	```Shell
     	sudo update-alternatives --config java
@@ -69,7 +69,7 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 
 ----
 1. Install the [Android SDK](http://developer.android.com/sdk/index.html).<br/>If you experience issues with the installation, go to [Installing the Android SDK](https://developer.android.com/sdk/installing/index.html?pkg=tools), expand the **Show instructions for all platforms** section, expand the **Troubleshooting Ubuntu** section and review the troubleshooting guide.
-    1. Go to [Android Studio and SDK Downloads](https://developer.android.com/sdk/index.html#Other) and in the **SDK Tools Only** section download the package for Linux.
+    1. Go to [Android Studio and SDK Downloads](https://developer.android.com/sdk/index.html#Other) and in the **SDK Tools Only** section, download the package for Linux.
     1. After the download completes, unpack the downloaded archive.
 1. Set the ANDROID_HOME system environment variable.
     ```
