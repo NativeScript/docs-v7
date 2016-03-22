@@ -32,7 +32,7 @@ On OS X systems, you can use the NativeScript CLI to develop Android and iOS app
     * Android SDK Build-tools 23.0.0 or a later stable official release
     * (Optional) Genymotion to expand your testing options
 
-### Quick setup
+### Quick Setup
 
 If this is your first time developing a mobile project, consider using the one-liner scripts in this section to effortlessly setup your machine.
 If you have experience developing mobile apps, you may skip to the [Environment Requirements](#environment-requirements) section below.
