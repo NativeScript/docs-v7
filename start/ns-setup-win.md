@@ -11,7 +11,7 @@ previous_url: /setup/ns-cli-setup/ns-setup-win
 
 With the open-source [NativeScript Command-Line Interface](https://github.com/NativeScript/nativescript-cli) and an IDE or text editor of your choice, you can create, develop, store and build your apps entirely locally, free of charge and anonymously.
 
-On Windows systems, you can use the NativeScript CLI to develop only Android apps. This limitation is caused by the requirements for iOS development.
+On Windows systems, you can use the NativeScript CLI to develop only Android apps. This limitation is caused by the requirements for iOS development. <Comment: This last sentence sounds awkward to me. I think you can improve it by rewording it like this: "You cannot use the NativeScript CLI to develop iOS apps because of x, y and z." where you supply the reasons for x, y and z.>
 
 * [System Requirements](#system-requirements)
 * [Environment Requirements](#environment-requirements)
@@ -28,12 +28,12 @@ On Windows systems, you can use the NativeScript CLI to develop only Android app
 * Android SDK Build-tools 23.0.0 or a later stable official release
 * (Optional) Genymotion to expand your testing options
 
-### Quick setup
+### Quick Setup
 
 If this is your first time developing a mobile project, consider using the one-liner scripts in this section to effortlessly setup your machine.
 If you have experience developing mobile apps, you may skip to the [Environment Requirements](#environment-requirements) section below.
 
-Open Start Menu, search for `Command Prompt` and start it. This opens a console window. Copy and paste this script:
+Open the Start Menu, search for `Command Prompt` and start it. This opens a console window. Copy and paste this script:
 
 > @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/NativeScript/nativescript-cli/production/setup/native-script.ps1'))"
 
@@ -50,7 +50,7 @@ For Android development
 
 1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/), [0.12.x](https://nodejs.org/dist/latest-v0.12.x/), [4.x](https://nodejs.org/dist/latest-v4.x/), or [5.x](https://nodejs.org/dist/latest-v5.x/) stable official release. We recommend using Node.js v4.x
 1. Install [Chocolatey](https://chocolatey.org) to simplify the installation and configuration of the Android tools and SDKs.
-    1. Run the command prompt as an Administrator.
+    1. Run the command prompt as an administrator.
     1. Copy and paste the following script in the command prompt.
 
         ```Shell
@@ -63,7 +63,7 @@ For Android development
         ```Shell
         choco install jdk8
         ```
-    1. If not present, create the following environment variable from a command-prompt, started as an administrator.
+    1. If not present, create the following environment variable from a command prompt, started as an administrator.
 
         ```
         SETX JAVA_HOME "Path to the jdk* install folder" /M
@@ -76,7 +76,7 @@ For Android development
         ```Shell
         choco install android-sdk
         ```
-    1. If not present, create the following environment variable from a command-prompt, started as an administrator.
+    1. If not present, create the following environment variable from a command prompt, started as an administrator.
 
         ```
         SETX ANDROID_HOME "Path to the Android SDK install folder" /M
@@ -90,7 +90,7 @@ For Android development
 	echo yes | "%ANDROID_HOME%\tools\android" update sdk --filter tools,platform-tools,android-23,build-tools-23.0.2,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
 	```
 1. (Optional) Install Genymotion.<br/>Genymotion is a third-party native emulator.
-    1. Go to [Get Genymotion](https://www.genymotion.com/#!/download), select Windows and click **Get Genymotion**.<br/>You might want to download the larger archive which contains VirtualBox.
+    1. Go to [Get Genymotion](https://www.genymotion.com/#!/download), select Windows and click **Get Genymotion**.<br/>You might want to download the larger archive, which contains VirtualBox.
     1. If prompted, confirm the download.
     1. After the download completes, run the installer and complete the installation.
 1. Install the NativeScript CLI.
