@@ -23,7 +23,7 @@ A problem occurred configuring root project 'app_name'.
 > Could not resolve all dependencies for configuration ':_debugCompile'.
 ```
 
-**Workaround:** Run `$ android` to launch the Android SDK Manager and download the Android Support Repository 21.0.0.
+**Workaround:** Run `$ android` to launch the Android SDK Manager and download the Local Maven repository for Support Libraries 28.0.0.
 
 ### Node.js 0.12.0 problems on OS X
 **NativeScript CLI version:** 0.9.0
