@@ -13,10 +13,10 @@ While bitmap images are great, they present challenges in designing mobile appli
 Choose or generate an icon font that best matches your needs. Two popular icon fonts are [IcoMoon](https://icomoon.io/) and [Font Awesome](https://fortawesome.github.io/Font-Awesome/). Once you have downloaded the icon font to your machine, locate the [TrueType](https://en.wikipedia.org/wiki/TrueType) font file with extension **.ttf**. In your NativeScript application **app** folder create a folder called **fonts** and place the **.ttf** there. Follow the instructions on the icon font webpage to determine the hex codes of each font glyph, i.e. icon. Add a **Label** component to your NativeScript app and bind the Label's **text** property to a one-letter string generated from the character code of the icon you want to show, i.e. `String.fromCharCode(0xe903)`. Do not forget to set the Label's **font-family** to the name of your font either through CSS, XML or code-behind.
 
 ## Icon Font
-![icomoon]({{site.baseurl}}/img/modules/icon-fonts/icomoon.png "Icomoon")
+![icomoon](../img/modules/icon-fonts/icomoon.png "Icomoon")
 
 ## Fonts Folder
-![icon-fonts]({{site.baseurl}}/img/modules/icon-fonts/fonts-folder.png "Fonts Folder")
+![icon-fonts](../img/modules/icon-fonts/fonts-folder.png "Fonts Folder")
 
 ## app.css
 ``` CSS
@@ -92,6 +92,6 @@ TODO...
 {% endangular %}
 
 ## Sample App
-![sample-app]({{site.baseurl}}/img/modules/icon-fonts/sample-app.png "Sample App")
+![sample-app](../img/modules/icon-fonts/sample-app.png "Sample App")
 
 [Sample Application](https://github.com/NativeScript/icon-fonts)
