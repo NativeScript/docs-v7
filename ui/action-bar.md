@@ -41,8 +41,8 @@ The `ActionBar` is the NativeScript common abstraction over the Android ActionBa
 ```
 {% endnativescript %}
 
-![title-ios]({{site.baseurl}}/img/modules/action-bar/title-ios.png "title-ios")
-![title-android]({{site.baseurl}}/img/modules/action-bar/title-android.png "title-android")
+![title-ios](../img/modules/action-bar/title-ios.png "title-ios")
+![title-android](../img/modules/action-bar/title-android.png "title-android")
 
 ## Using Custom Title View
 
@@ -83,8 +83,8 @@ TODO...
 
 The result is:
 
-![title-view-ios]({{site.baseurl}}/img/modules/action-bar/title-view-ios.png "title-view-ios")
-![title-view-android]({{site.baseurl}}/img/modules/action-bar/title-view-android.png "title-view-android")
+![title-view-ios](../img/modules/action-bar/title-view-ios.png "title-view-ios")
+![title-view-android](../img/modules/action-bar/title-view-android.png "title-view-android")
 
 Note, that you can use CSS to style the elements inside the `titleView`.
 
@@ -103,7 +103,7 @@ TODO...
 
 The result is:
 
-![home-icon-android]({{site.baseurl}}/img/modules/action-bar/home-icon-android.png "home-icon-android")
+![home-icon-android](../img/modules/action-bar/home-icon-android.png "home-icon-android")
 
 # Navigation Button
 
@@ -140,8 +140,8 @@ TODO...
 
 The result is:
 
-![nav-btn-ios]({{site.baseurl}}/img/modules/action-bar/nav-btn-ios.png "nav-btn-ios")
-![nav-btn-android]({{site.baseurl}}/img/modules/action-bar/nav-btn-android.png "nav-btn-android")
+![nav-btn-ios](../img/modules/action-bar/nav-btn-ios.png "nav-btn-ios")
+![nav-btn-android](../img/modules/action-bar/nav-btn-android.png "nav-btn-android")
 
 ## iOS Specifics
 
@@ -197,8 +197,8 @@ TODO...
 {% endangular %}
 The result is:
 
-![action-items-ios]({{site.baseurl}}/img/modules/action-bar/action-items-ios.png "action-items-ios")
-![action-items-android]({{site.baseurl}}/img/modules/action-bar/action-items-android.png "action-items-android")
+![action-items-ios](../img/modules/action-bar/action-items-ios.png "action-items-ios")
+![action-items-android](../img/modules/action-bar/action-items-android.png "action-items-android")
 
 ## Positioning
 
@@ -335,8 +335,8 @@ export function onCancel(args: observable.EventData) {
 
 The result is:
 
-![action-items-visibility-ios]({{site.baseurl}}/img/modules/action-bar/action-items-visibility-ios.png "action-items-visibility-ios")
-![action-items-visibility-android]({{site.baseurl}}/img/modules/action-bar/action-items-visibility-android.png "action-items-visibility-android")
+![action-items-visibility-ios](../img/modules/action-bar/action-items-visibility-ios.png "action-items-visibility-ios")
+![action-items-visibility-android](../img/modules/action-bar/action-items-visibility-android.png "action-items-visibility-android")
 
 ## Styling
 
@@ -364,8 +364,8 @@ ActionBar {
 
 The result is:
 
-![style-ios]({{site.baseurl}}/img/modules/action-bar/style-ios.png "style-ios")
-![style-android]({{site.baseurl}}/img/modules/action-bar/style-android.png "style-android")
+![style-ios](../img/modules/action-bar/style-ios.png "style-ios")
+![style-android](../img/modules/action-bar/style-android.png "style-android")
 
 In iOS, the `color` property affects the color of the title and the action items.
 In Android, the `color` property affects only the title text. However, you can set the default color of the text in the action items by adding an `actionMenuTextColor` item in the Android theme (inside `App_Resources\Android\values\styles.xml`).
@@ -420,5 +420,5 @@ ActionBar {
 
 The result is:
 
-![side-drawer-ios]({{site.baseurl}}/img/modules/action-bar/side-drawer-ios.png "side-drawer-ios")
-![side-drawer-android]({{site.baseurl}}/img/modules/action-bar/side-drawer-android.png "side-drawer-android")
+![side-drawer-ios](../img/modules/action-bar/side-drawer-ios.png "side-drawer-ios")
+![side-drawer-android](../img/modules/action-bar/side-drawer-android.png "side-drawer-android")
