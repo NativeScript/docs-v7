@@ -69,7 +69,7 @@ The actual resource images should be added to the `App_Resources` folder in you 
 ### Adding Android Resources
 Android resources should be added to the corresponding `drawable-XXX` folders inside the `App_Resources\Android` folder in your app:
 
-![android resources]({{site.baseurl}}/img/resources/android-resources.png "android resources")
+![android resources](../img/resources/android-resources.png "android resources")
 
 The content of this directory will be copied inside the `platforms\android\res` when the app is prepared by the NativeScript CLI. More information about how drawable resources in android can be found [here](http://developer.android.com/guide/practices/screens_support.html#DesigningResources).
 
