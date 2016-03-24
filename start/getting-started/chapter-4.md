@@ -172,8 +172,8 @@ exports.signIn = function() {
 
 This code handles both a successful and unsuccessful login. On success, you call the frame module's `navigate()` method to navigate the user to the (currently empty) list page. On failure, you use the dialog module to show the user an error message. Try inputting some invalid credentials to see what the dialog looks like.
 
-![login 8]({{site.baseurl}}/img/cli-getting-started/chapter4/ios/1.png)
-![login 8]({{site.baseurl}}/img/cli-getting-started/chapter4/android/1.png)
+![login 8](../../img/cli-getting-started/chapter4/ios/1.png)
+![login 8](../../img/cli-getting-started/chapter4/android/1.png)
 
 With that, the login page is completely functional. Now that you have user management working in your NativeScript app, let's move onto the page where users will manage their grocery list. To do that, you need a module that shows items in a list, which is exactly what the ListView module does.
 
@@ -258,8 +258,8 @@ exports.loaded = function(args) {
 
 Here, you're creating a new Observable object called `pageData`, which you set as the page's `bindingContext` in the `load()` function. Inside the Observable, you set a single `"groceryList"` property to be a new instance of the ObservableArray class. Notice how the `"groceryList"` property corresponds to `<ListView items="{% raw %}{{ groceryList }}{% endraw %}">`, and each array entry's `"name"` property corresponds to `<Label text="{% raw %}{{ name }}{% endraw %}">`. If you run your app you'll see the list screen shows the hardcoded data:
 
-![list 1]({{site.baseurl}}/img/cli-getting-started/chapter4/ios/2.png)
-![list 1]({{site.baseurl}}/img/cli-getting-started/chapter4/android/2.png)
+![list 1](../../img/cli-getting-started/chapter4/ios/2.png)
+![list 1](../../img/cli-getting-started/chapter4/android/2.png)
 
 Now that we have items on the screen let's look at how you can tie this list to a backend instead of hardcoded data. To do so you'll switch the list page to use a view model, much like you did with the login page.
 
@@ -363,8 +363,8 @@ The code to make an HTTP call should look familiar, as it leverages the same fet
 
 If you load the app and log in with email address "tj.vantoll@gmail.com" and password "password", you should see a list of groceries that looks something like this:
 
-![list 2]({{site.baseurl}}/img/cli-getting-started/chapter4/ios/3.png)
-![list 2]({{site.baseurl}}/img/cli-getting-started/chapter4/android/3.png)
+![list 2](../../img/cli-getting-started/chapter4/ios/3.png)
+![list 2](../../img/cli-getting-started/chapter4/android/3.png)
 
 The cool thing here is the code you didn't have to write. Notice that there is no need to refresh the UI, or manually access the ListView UI component—all the view model does is push the JSON response to the ObservableArray, and the UI takes care of itself.
 
@@ -471,8 +471,8 @@ viewModel.add = function(grocery) {
 
 If you build and rerun your app, you'll find that you can add a grocery item and it will appear immediately in your list—and, all of this is completely driven by a backend service. Pretty cool, huh?
 
-![list 3]({{site.baseurl}}/img/cli-getting-started/chapter4/ios/4.gif)
-![list 3]({{site.baseurl}}/img/cli-getting-started/chapter4/android/4.gif)
+![list 3](../../img/cli-getting-started/chapter4/ios/4.gif)
+![list 3](../../img/cli-getting-started/chapter4/android/4.gif)
 
 Let's look at how you can polish this page with a NativeScript module for showing activity indicators.
 
@@ -507,8 +507,8 @@ In the code above you add a new `"isLoading"` flag to the list page's Observable
 
 You control where the ActivityIndicator displays by setting its `rowSpan` and `colSpan` attributes. In this case `rowSpan="2" colSpan="2"` makes the ActivityIndicator take up both rows and both columns of its parent GridLayout. Here's what the new ActivityIndicator looks like:
 
-![ActivityIndicator on iOS]({{site.baseurl}}/img/cli-getting-started/chapter4/ios/5.gif)
-![ActivityIndicator on Android]({{site.baseurl}}/img/cli-getting-started/chapter4/android/5.gif)
+![ActivityIndicator on iOS](../../img/cli-getting-started/chapter4/ios/5.gif)
+![ActivityIndicator on Android](../../img/cli-getting-started/chapter4/android/5.gif)
 
 The list page is now more user friendly, but we can improve the experience with one of the more powerful NativeScript modules: the animation module.
 
@@ -567,8 +567,8 @@ First, in CSS, you assign an `opacity` of `0` to the grocery list `<ListView>`. 
 
 The result of this code is a nice fade-in animation:
 
-![Animations on iOS]({{site.baseurl}}/img/cli-getting-started/chapter4/ios/6.gif)
-![Animations on Android]({{site.baseurl}}/img/cli-getting-started/chapter4/android/6.gif)
+![Animations on iOS](../../img/cli-getting-started/chapter4/ios/6.gif)
+![Animations on Android](../../img/cli-getting-started/chapter4/android/6.gif)
 
 The animation module is a lot of fun to play with, and it’s easy to use too. All you need to do is get a reference to an element using `getViewById()`, and then call that element’s `animate` method. You may want to take a few minutes to look through our [animation samples]({{site.baseurl}}/ui/animation#examples) and try a few of these animations for yourself in Groceries.
 
