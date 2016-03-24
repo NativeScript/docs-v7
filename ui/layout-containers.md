@@ -42,7 +42,7 @@ None.
 TODO...
 {% endangular %}
 
-![AbsoluteLayout]({{site.baseurl}}/img/modules/layouts/absolute-layout.png "AbsoluteLayout")
+![AbsoluteLayout](../img/modules/layouts/absolute-layout.png "AbsoluteLayout")
 
 ### Sample (margin)
 {% nativescript %}
@@ -59,7 +59,7 @@ TODO...
 TODO...
 {% endangular %}
 
-![AbsoluteLayout]({{site.baseurl}}/img/modules/layouts/absolute-layout2.png "AbsoluteLayout")
+![AbsoluteLayout](../img/modules/layouts/absolute-layout2.png "AbsoluteLayout")
 
 ## [DockLayout]({{site.baseurl}}/ApiReference/ui/layouts/dock-layout/HOW-TO.md)
 The DockLayout is a layout that provides an docking mechanism for child elements to the left, right, top, bottom or center of the layout. To define the docking side of a child element, use its `dock` property. To dock a child element to the center of the DockLayout, it must be the last child of the DockLayout and the `stretchLastChild` property of the DockLayout must be set to `true`.
@@ -91,7 +91,7 @@ The DockLayout is a layout that provides an docking mechanism for child elements
 TODO...
 {% endangular %}
 
-![DockLayout]({{site.baseurl}}/img/modules/layouts/dock-layout1.png "DockLayout1")
+![DockLayout](../img/modules/layouts/dock-layout1.png "DockLayout1")
 
 ### Sample (stretchLastChild="true")
 {% nativescript %}
@@ -110,7 +110,7 @@ TODO...
 TODO...
 {% endangular %}
 
-![DockLayout]({{site.baseurl}}/img/modules/layouts/dock-layout2.png "DockLayout1")
+![DockLayout](../img/modules/layouts/dock-layout2.png "DockLayout1")
 
 ### Sample (multiple child elements on one side)
 {% nativescript %}
@@ -129,7 +129,7 @@ TODO...
 TODO...
 {% endangular %}
 
-![DockLayout]({{site.baseurl}}/img/modules/layouts/dock-layout3.png "DockLayout2")
+![DockLayout](../img/modules/layouts/dock-layout3.png "DockLayout2")
 
 ## [GridLayout]({{site.baseurl}}/ApiReference/ui/layouts/grid-layout/HOW-TO.md)
 The GridLayout is a layout that arranges its child elements in a table structure of rows and columns. A cell can contain multiple child elements, they can span over multiple rows and columns, and even overlap each other. The GridLayout has one column and one row by default. To add additional columns and rows, you have to specify column definition items (separated by commas) to the `columns` property and row definition items (separated by commas) to the `rows` property of the GridLayout. The width of a column and the height of a row can be specified as an absolute amount of pixels, as a percentage of the available space or automatically:
@@ -171,7 +171,7 @@ The GridLayout is a layout that arranges its child elements in a table structure
 TODO...
 {% endangular %}
 
-![GridLayout]({{site.baseurl}}/img/modules/layouts/grid-layout.png "GridLayout")
+![GridLayout](../img/modules/layouts/grid-layout.png "GridLayout")
 
 ### Sample (star-sizing)
 - Columns: One star plus two stars is equal to three stars. (\* + 2\* = 3\*). Divide GridLayout width (300) by 3 to get 100. So first column is 1 x 100 = 100 pixels wide and second column is 2 x 100 = 200 pixels wide. 100 + 200 = 300.
@@ -192,7 +192,7 @@ TODO...
 TODO...
 {% endangular %}
 
-![GridLayout]({{site.baseurl}}/img/modules/layouts/grid-layout1.png "GridLayout")
+![GridLayout](../img/modules/layouts/grid-layout1.png "GridLayout")
 
 ### Sample (fixed and auto)
 - The first column and the first row are `auto`. This means that they are measured with infinite available space and then sized to their content.
@@ -213,7 +213,7 @@ TODO...
 TODO...
 {% endangular %}
 
-![GridLayout]({{site.baseurl}}/img/modules/layouts/grid-layout2.png "GridLayout")
+![GridLayout](../img/modules/layouts/grid-layout2.png "GridLayout")
 
 ### Sample (no width & horizontalAlignment != stretch)
 When the GridLayout has no explicit `width` set and its `horizontalAlignment` is not `stretch`, the star columns will not occupy the entire available space (300 from parent StackLayout).
@@ -234,7 +234,7 @@ When the GridLayout has no explicit `width` set and its `horizontalAlignment` is
 TODO...
 {% endangular %}
 
-![GridLayout]({{site.baseurl}}/img/modules/layouts/grid-layout3.png "GridLayout")
+![GridLayout](../img/modules/layouts/grid-layout3.png "GridLayout")
 
 ### Sample (column stretching)
 Label 3 is has fixed width of 150 pixels. Label 1 is given more space than it actually needs, because Label 3 stretches the auto column.
@@ -253,7 +253,7 @@ Label 3 is has fixed width of 150 pixels. Label 1 is given more space than it ac
 TODO...
 {% endangular %}
 
-![GridLayout]({{site.baseurl}}/img/modules/layouts/grid-layout4.png "GridLayout")
+![GridLayout](../img/modules/layouts/grid-layout4.png "GridLayout")
 
 ### Sample (complex)
 
@@ -273,7 +273,7 @@ TODO...
 TODO...
 {% endangular %}
 
-![GridLayout]({{site.baseurl}}/img/modules/layouts/grid-layout5.png "GridLayout")
+![GridLayout](../img/modules/layouts/grid-layout5.png "GridLayout")
 
 ## [StackLayout]({{site.baseurl}}/ApiReference/ui/layouts/stack-layout/HOW-TO.md)
 The StackLayout stacks its child elements below or beside each other, depending on its orientation. It is very useful to create any kinds of lists.
@@ -303,7 +303,7 @@ None.
 TODO...
 {% endangular %}
 
-![StackLayout]({{site.baseurl}}/img/modules/layouts/stack-layout1.png "StackLayout")
+![StackLayout](../img/modules/layouts/stack-layout1.png "StackLayout")
 
 ### Sample (orientation="horizontal")
 {% nativescript %}
@@ -322,7 +322,7 @@ TODO...
 TODO...
 {% endangular %}
 
-![StackLayout]({{site.baseurl}}/img/modules/layouts/stack-layout2.png "StackLayout")
+![StackLayout](../img/modules/layouts/stack-layout2.png "StackLayout")
 
 ### Sample (horizontal alignment of children)
 {% nativescript %}
@@ -341,7 +341,7 @@ TODO...
 TODO...
 {% endangular %}
 
-![StackLayout]({{site.baseurl}}/img/modules/layouts/stack-layout3.png "StackLayout")
+![StackLayout](../img/modules/layouts/stack-layout3.png "StackLayout")
 
 ### Sample (vertical alignment of children)
 {% nativescript %}
@@ -360,7 +360,7 @@ TODO...
 TODO...
 {% endangular %}
 
-![StackLayout]({{site.baseurl}}/img/modules/layouts/stack-layout4.png "StackLayout")
+![StackLayout](../img/modules/layouts/stack-layout4.png "StackLayout")
 
 ## [WrapLayout]({{site.baseurl}}/ApiReference/ui/layouts/wrap-layout/HOW-TO.md)
 The WrapLayout is similar to the StackLayout, but it does not just stack all child elements to one column/row, it wraps them to new columns/rows if no space is left. The WrapLayout is often used with items of the same size, but this is not a requirement.
@@ -391,7 +391,7 @@ None.
 TODO...
 {% endangular %}
 
-![WrapLayout]({{site.baseurl}}/img/modules/layouts/wrap-layout1.png "WrapLayout")
+![WrapLayout](../img/modules/layouts/wrap-layout1.png "WrapLayout")
 
 ### Sample (orientation="vertical")
 {% nativescript %}
@@ -410,7 +410,7 @@ TODO...
 TODO...
 {% endangular %}
 
-![WrapLayout]({{site.baseurl}}/img/modules/layouts/wrap-layout2.png "WrapLayout")
+![WrapLayout](../img/modules/layouts/wrap-layout2.png "WrapLayout")
 
 ### Sample (itemWidth="30" itemHeight="30")
 {% nativescript %}
@@ -429,4 +429,4 @@ TODO...
 TODO...
 {% endangular %}
 
-![WrapLayout]({{site.baseurl}}/img/modules/layouts/wrap-layout3.png "WrapLayout")
+![WrapLayout](../img/modules/layouts/wrap-layout3.png "WrapLayout")
