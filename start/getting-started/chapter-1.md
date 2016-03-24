@@ -108,7 +108,7 @@ tns run ios --emulator
 
 If all went well, you should see something like this:
 
-![iOS login]({{site.baseurl}}/img/cli-getting-started/chapter1/ios/1.png)
+![iOS login](../../img/cli-getting-started/chapter1/ios/1.png)
 
 Next, run your app on an Android emulator with the following command:
 
@@ -122,7 +122,7 @@ tns run android --emulator
 
 If all went well, you should see your app running in an Android emulator:
 
-![Android login]({{site.baseurl}}/img/cli-getting-started/chapter1/android/1.png)
+![Android login](../../img/cli-getting-started/chapter1/android/1.png)
 
 <div class="exercise-end"></div>
 
