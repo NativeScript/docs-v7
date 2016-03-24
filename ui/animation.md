@@ -48,25 +48,25 @@ By default the animation moves with a linear speed without acceleration or decel
 
 - The simplest animation curve is linear. It maintains a constant speed while the animation is running:
 
-![linear]({{site.baseurl}}/img/modules/animation/linear.gif "Linear")
+![linear](../img/modules/animation/linear.gif "Linear")
 
 - The ease-in curve causes the animation to begin slowly, and then speed up as it progresses. 
 
-![easein]({{site.baseurl}}/img/modules/animation/easein.gif "EaseIn")
+![easein](../img/modules/animation/easein.gif "EaseIn")
 
 - An ease-out curve causes the animation to begin quickly, and then slow down as it completes.
 
-![easeout]({{site.baseurl}}/img/modules/animation/easeout.gif "EaseOut")
+![easeout](../img/modules/animation/easeout.gif "EaseOut")
 
 
 - An ease-in ease-out curve causes the animation to begin slowly, accelerate through the middle of its duration, and then slow again before completing.
 
-![easeinout]({{site.baseurl}}/img/modules/animation/easeinout.gif "EaseInOut")
+![easeinout](../img/modules/animation/easeinout.gif "EaseInOut")
 
 
 - A spring animation curve causes an animation to produce a spring (bounce) effect.
 
-![spring]({{site.baseurl}}/img/modules/animation/spring.gif "Spring")
+![spring](../img/modules/animation/spring.gif "Spring")
 
 
 In NativeScript the animation curve is represented by the AnimationCurve enumeration and can be specified with the curve property of the animation:
@@ -88,7 +88,7 @@ view.animate({
 
 It is easy to create your own animation curve by passing in the x and y components of two control points of a cubic Bezier curve. Using Bezier curves is a common technique to create smooth curves in computer graphics and they are widely used in vector-based drawing tools. The values passed to the cubicBezier method control the curve shape. The animation speed will be adjusted based on the resulting path.
 
-![beziergraph]({{site.baseurl}}/img/modules/animation/bezier-graph.png "BezierGraph")
+![beziergraph](../img/modules/animation/bezier-graph.png "BezierGraph")
 
 ``` JavaScript
 view.animate({
@@ -105,14 +105,14 @@ view.animate({
 });
 ```
 
-![bezier]({{site.baseurl}}/img/modules/animation/bezier.gif "Bezier")
+![bezier](../img/modules/animation/bezier.gif "Bezier")
 
 # Examples
 
 The full source code for all samples is located [`here`](https://github.com/NativeScript/animation-demo).
 
 ## Opacity
-![opacity]({{site.baseurl}}/img/modules/animation/opacity.gif "Opacity")
+![opacity](../img/modules/animation/opacity.gif "Opacity")
 ``` JavaScript
 view.animate({
     opacity: 0,
@@ -127,7 +127,7 @@ view.animate({
 ```
 
 ## Background Color
-![background-color]({{site.baseurl}}/img/modules/animation/background-color.gif "Background Color")
+![background-color](../img/modules/animation/background-color.gif "Background Color")
 ``` JavaScript
 view.animate({
     backgroundColor: new colorModule.Color("#3D5AFE"),
@@ -142,7 +142,7 @@ view.animate({
 ```
 
 ## Translate
-![translate]({{site.baseurl}}/img/modules/animation/translate.gif "Translate")
+![translate](../img/modules/animation/translate.gif "Translate")
 ``` JavaScript
 view.animate({
     translate: { x: 100, y: 100},
@@ -157,7 +157,7 @@ view.animate({
 ```
 
 ## Scale
-![scale]({{site.baseurl}}/img/modules/animation/scale.gif "Scale")
+![scale](../img/modules/animation/scale.gif "Scale")
 ``` JavaScript
 view.animate({
     scale: { x: 2, y: 2},
@@ -172,7 +172,7 @@ view.animate({
 ```
 
 ## Rotate
-![rotate]({{site.baseurl}}/img/modules/animation/rotate.gif "Rotate")
+![rotate](../img/modules/animation/rotate.gif "Rotate")
 ``` JavaScript
 view.animate({
     rotate: 360,
@@ -187,7 +187,7 @@ view.animate({
 ```
 
 ## Multiple Properties
-![multiple-properties]({{site.baseurl}}/img/modules/animation/multiple-properties.gif "Multiple Properties")
+![multiple-properties](../img/modules/animation/multiple-properties.gif "Multiple Properties")
 ``` JavaScript
 view.animate({
     backgroundColor: new color.Color("#3D5AFE"),
@@ -208,7 +208,7 @@ view.animate({
 ```
 
 ## Chaining with Promises
-![chaining-with-promises]({{site.baseurl}}/img/modules/animation/chaining-with-promises.gif "Chaining with Promises")
+![chaining-with-promises](../img/modules/animation/chaining-with-promises.gif "Chaining with Promises")
 ``` JavaScript
 view.animate({ opacity: 0 })
     .then(function () { return view.animate({ opacity: 1 }); })
@@ -243,7 +243,7 @@ view.animate({ opacity: 0 })
 ```
 
 ## Chaining with Animation Set
-![chaining-with-animation-set]({{site.baseurl}}/img/modules/animation/chaining-with-animation-set.gif "Chaining with Animation Set")
+![chaining-with-animation-set](../img/modules/animation/chaining-with-animation-set.gif "Chaining with Animation Set")
 ``` JavaScript
 var definitions = new Array();
 definitions.push({ target: view1, translate: { x: 200, y: 0 }, duration: 3000 });
@@ -276,7 +276,7 @@ animationSet.play().then(() => {
 ```
 
 ## Multiple Views
-![multiple-views]({{site.baseurl}}/img/modules/animation/multiple-views.gif "Multiple Views")
+![multiple-views](../img/modules/animation/multiple-views.gif "Multiple Views")
 ``` JavaScript
 var definitions = new Array();
 var a1 = {
@@ -352,7 +352,7 @@ animationSet.play().then(() => {
 ```
 
 ## Reusing Animations
-![reusing]({{site.baseurl}}/img/modules/animation/reusing.gif "Reusing Animations")
+![reusing](../img/modules/animation/reusing.gif "Reusing Animations")
 ``` JavaScript
 var animation1 = view.createAnimation({ opacity: 0 });
 var animation2 = view.createAnimation({ opacity: 1 });
@@ -388,7 +388,7 @@ animation1.play()
 ```
 
 ## Slide-in Effect
-![slide-in-effect]({{site.baseurl}}/img/modules/animation/slide-in-effect.gif "Slide-in Effect")
+![slide-in-effect](../img/modules/animation/slide-in-effect.gif "Slide-in Effect")
 ``` JavaScript
 var item = new imageModule.Image();
 item.src = "~/res/icon_100x100.png";
@@ -417,7 +417,7 @@ wrapLayout.addChild(item);
 ```
 
 ## Infinite
-![infinite]({{site.baseurl}}/img/modules/animation/infinite.gif "Infinite")
+![infinite](../img/modules/animation/infinite.gif "Infinite")
 ``` JavaScript
 animationSet = new animationModule.Animation([{
         target: view,
