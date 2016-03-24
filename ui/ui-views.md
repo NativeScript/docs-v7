@@ -43,7 +43,7 @@ Defining the layout of the application is also an important part of the applicat
 
 The [Button]({{site.baseurl}}/ApiReference/ui/button/how-to.md) widget provides a standard button widget that reacts to a `tap` event.
 
-![button android]({{site.baseurl}}/img/gallery/android/buttonPage.png "button android")![button ios]({{site.baseurl}}/img/gallery/ios/buttonPage.png "button ios")
+![button android](../img/gallery/android/buttonPage.png "button android")![button ios](../img/gallery/ios/buttonPage.png "button ios")
 
 **Native Component**
 
@@ -55,7 +55,7 @@ The [Button]({{site.baseurl}}/ApiReference/ui/button/how-to.md) widget provides 
 
 The [Label]({{site.baseurl}}/ApiReference/ui/label/how-to.md) widget provides a text label that shows read-only text.
 
-![label android]({{site.baseurl}}/img/gallery/android/labelPage.png "label android")![label ios]({{site.baseurl}}/img/gallery/ios/labelPage.png "label ios")
+![label android](../img/gallery/android/labelPage.png "label android")![label ios](../img/gallery/ios/labelPage.png "label ios")
 
 **Native Component**
 
@@ -67,7 +67,7 @@ The [Label]({{site.baseurl}}/ApiReference/ui/label/how-to.md) widget provides a 
 
 The [TextField]({{site.baseurl}}/ApiReference/ui/text-field/how-to.md) widget provides an editable **single-line** text field.
 
-![text-field android]({{site.baseurl}}/img/gallery/android/textFieldPage.png "text-field android")![text-field ios]({{site.baseurl}}/img/gallery/ios/textFieldPage.png "text-field ios")
+![text-field android](../img/gallery/android/textFieldPage.png "text-field android")![text-field ios](../img/gallery/ios/textFieldPage.png "text-field ios")
 
 **Native Component**
 
@@ -81,7 +81,7 @@ The [TextView]({{site.baseurl}}/ApiReference/ui/text-view/how-to.md) widget prov
 
 You can use it to show multi-line text and implement text editing.
 
-![text-view android]({{site.baseurl}}/img/gallery/android/textViewPage.png "text-view android")![text-view ios]({{site.baseurl}}/img/gallery/ios/textViewPage.png "text-view ios")
+![text-view android](../img/gallery/android/textViewPage.png "text-view android")![text-view ios](../img/gallery/ios/textViewPage.png "text-view ios")
 
 **Native Component**
 
@@ -93,7 +93,7 @@ You can use it to show multi-line text and implement text editing.
 
 The [SearchBar]({{site.baseurl}}/ApiReference/ui/search-bar/how-to.md) widget provides a user interface for entering search queries and submitting requests to search provider.
 
-![search-bar android]({{site.baseurl}}/img/gallery/android/searchBarPage.png "search-bar android")![search-bar ios]({{site.baseurl}}/img/gallery/ios/searchBarPage.png "search-bar ios")
+![search-bar android](../img/gallery/android/searchBarPage.png "search-bar android")![search-bar ios](../img/gallery/ios/searchBarPage.png "search-bar ios")
 
 **Native Component**
 
@@ -105,7 +105,7 @@ The [SearchBar]({{site.baseurl}}/ApiReference/ui/search-bar/how-to.md) widget pr
 
 The [Switch]({{site.baseurl}}/ApiReference/ui/switch/how-to.md) widget provides a two-state toggle switch with which you can choose between two options.
 
-![switch android]({{site.baseurl}}/img/gallery/android/switchPage.png "switch android")![switch ios]({{site.baseurl}}/img/gallery/ios/switchPage.png "switch ios")
+![switch android](../img/gallery/android/switchPage.png "switch android")![switch ios](../img/gallery/ios/switchPage.png "switch ios")
 
 **Native Component**
 
@@ -117,7 +117,7 @@ The [Switch]({{site.baseurl}}/ApiReference/ui/switch/how-to.md) widget provides 
 
 The [Slider]({{site.baseurl}}/ApiReference/ui/slider/how-to.md) widget provides a slider which you can use to pick a numeric value within a configurable range.
 
-![slider android]({{site.baseurl}}/img/gallery/android/sliderPage.png "slider android")![slider ios]({{site.baseurl}}/img/gallery/ios/sliderPage.png "slider ios")
+![slider android](../img/gallery/android/sliderPage.png "slider android")![slider ios](../img/gallery/ios/sliderPage.png "slider ios")
 
 **Native Component**
 
@@ -129,7 +129,7 @@ The [Slider]({{site.baseurl}}/ApiReference/ui/slider/how-to.md) widget provides 
 
 The [Progress]({{site.baseurl}}/ApiReference/ui/progress/how-to.md) widget is a visual bar indicator of a progress in a operation. Shows a bar representing the current progress of the operation.
 
-![progress android]({{site.baseurl}}/img/gallery/android/progressPage.png "progress android")![progress ios]({{site.baseurl}}/img/gallery/ios/progressPage.png "progress ios")
+![progress android](../img/gallery/android/progressPage.png "progress android")![progress ios](../img/gallery/ios/progressPage.png "progress ios")
 
 **Native Component**
 
@@ -141,7 +141,7 @@ The [Progress]({{site.baseurl}}/ApiReference/ui/progress/how-to.md) widget is a 
 
 The [ActivityIndicator]({{site.baseurl}}/ApiReference/ui/activity-indicator/how-to.md) widget is a visual spinner indicator which shows that a task is in progress.
 
-![activity-indicator android]({{site.baseurl}}/img/gallery/android/activityIndicatorPage.png "activity-indicator android")![activity-indicator ios]({{site.baseurl}}/img/gallery/ios/activityIndicatorPage.png "activity-indicator ios")
+![activity-indicator android](../img/gallery/android/activityIndicatorPage.png "activity-indicator android")![activity-indicator ios](../img/gallery/ios/activityIndicatorPage.png "activity-indicator ios")
 
 **Native Component**
 
@@ -153,7 +153,7 @@ The [ActivityIndicator]({{site.baseurl}}/ApiReference/ui/activity-indicator/how-
 
 The [Image]({{site.baseurl}}/ApiReference/ui/image/how-to.md) widget shows an image. You can load the image can be from [`ImageSource`]({{site.baseurl}}/ApiReference/image-source/ImageSource.md) or from URL.
 
-![image android]({{site.baseurl}}/img/gallery/android/imagePage.png "image android")![image ios]({{site.baseurl}}/img/gallery/ios/imagePage.png "image ios")
+![image android](../img/gallery/android/imagePage.png "image android")![image ios](../img/gallery/ios/imagePage.png "image ios")
 
 **Native Component**
 
@@ -165,7 +165,7 @@ The [Image]({{site.baseurl}}/ApiReference/ui/image/how-to.md) widget shows an im
 
 The [ListView]({{site.baseurl}}/ApiReference/ui/list-view/how-to.md) shows items in a vertically scrolling list. You can set an [`itemTemplate`]{{site.baseurl}}/(ApiReference/ui/list-view/knownTemplates/README.md) to specify how each item in the list should be displayed.
 
-![list-view android]({{site.baseurl}}/img/gallery/android/listViewPage.png "list-view android")![list-view ios]({{site.baseurl}}/img/gallery/ios/listViewPage.png "list-view ios")
+![list-view android](../img/gallery/android/listViewPage.png "list-view android")![list-view ios](../img/gallery/ios/listViewPage.png "list-view ios")
 
 **Native Component**
 
@@ -177,7 +177,7 @@ The [ListView]({{site.baseurl}}/ApiReference/ui/list-view/how-to.md) shows items
 
 The [HtmlView]({{site.baseurl}}/ApiReference/ui/html-view/how-to.md) represents a view with html content. Use this component instead WebView when you want to show just static HTML content.
 
-![html-view android]({{site.baseurl}}/img/gallery/android/htmlViewPage.png "html-view android")![html-view ios]({{site.baseurl}}/img/gallery/ios/htmlViewPage.png "html-view ios")
+![html-view android](../img/gallery/android/htmlViewPage.png "html-view android")![html-view ios](../img/gallery/ios/htmlViewPage.png "html-view ios")
 
 **Native Component**
 
@@ -189,7 +189,7 @@ The [HtmlView]({{site.baseurl}}/ApiReference/ui/html-view/how-to.md) represents 
 
 The [WebView]({{site.baseurl}}/ApiReference/ui/web-view/how-to.md) shows web pages. You can load a page from URL or by navigating back and forward.
 
-![web-view android]({{site.baseurl}}/img/gallery/android/webViewPage.png "web-view android")![web-view ios]({{site.baseurl}}/img/gallery/ios/webViewPage.png "web-view ios")
+![web-view android](../img/gallery/android/webViewPage.png "web-view android")![web-view ios](../img/gallery/ios/webViewPage.png "web-view ios")
 
 **Native Component**
 
@@ -201,7 +201,7 @@ The [WebView]({{site.baseurl}}/ApiReference/ui/web-view/how-to.md) shows web pag
 
 With the [TabView]({{site.baseurl}}/ApiReference/ui/tab-view/how-to.md) control, you can implement tab navigation.
 
-![tab-view android]({{site.baseurl}}/img/gallery/android/tabViewPage.png "tab-view android")![tab-view ios]({{site.baseurl}}/img/gallery/ios/tabViewPage.png "tab-view ios")
+![tab-view android](../img/gallery/android/tabViewPage.png "tab-view android")![tab-view ios](../img/gallery/ios/tabViewPage.png "tab-view ios")
 
 **Native Component**
 
@@ -213,7 +213,7 @@ With the [TabView]({{site.baseurl}}/ApiReference/ui/tab-view/how-to.md) control,
 
 With the [SegmentedBar]({{site.baseurl}}/ApiReference/ui/segmented-bar/how-to.md) control, you can implement discrete selection.
 
-![segmented-bar android]({{site.baseurl}}/img/gallery/android/segmentedBarPage.png "segmented-bar android")![segmented-bar ios]({{site.baseurl}}/img/gallery/ios/segmentedBarPage.png "segmented-bar ios")
+![segmented-bar android](../img/gallery/android/segmentedBarPage.png "segmented-bar android")![segmented-bar ios](../img/gallery/ios/segmentedBarPage.png "segmented-bar ios")
 
 **Native Component**
 
@@ -225,7 +225,7 @@ With the [SegmentedBar]({{site.baseurl}}/ApiReference/ui/segmented-bar/how-to.md
 
 With the [DatePicker]({{site.baseurl}}/ApiReference/ui/date-picker/how-to.md) control, you can pick date.
 
-![date-picker android]({{site.baseurl}}/img/gallery/android/datePickerPage.png "date-picker android")![date-picker ios]({{site.baseurl}}/img/gallery/ios/datePickerPage.png "date-picker ios")
+![date-picker android](../img/gallery/android/datePickerPage.png "date-picker android")![date-picker ios](../img/gallery/ios/datePickerPage.png "date-picker ios")
 
 **Native Component**
 
@@ -237,7 +237,7 @@ With the [DatePicker]({{site.baseurl}}/ApiReference/ui/date-picker/how-to.md) co
 
 With the [TimePicker]({{site.baseurl}}/ApiReference/ui/time-picker/how-to.md) widget, you can pick time.
 
-![time-picker android]({{site.baseurl}}/img/gallery/android/timePickerPage.png "time-picker android")![time-picker ios]({{site.baseurl}}/img/gallery/ios/timePickerPage.png "time-picker ios")
+![time-picker android](../img/gallery/android/timePickerPage.png "time-picker android")![time-picker ios](../img/gallery/ios/timePickerPage.png "time-picker ios")
 
 **Native Component**
 
@@ -249,7 +249,7 @@ With the [TimePicker]({{site.baseurl}}/ApiReference/ui/time-picker/how-to.md) wi
 
 With the [ListPicker]({{site.baseurl}}/ApiReference/ui/list-picker/how-to.md) widget, you can pick value from a list.
 
-![list-picker android]({{site.baseurl}}/img/gallery/android/listPickerPage.png "list-picker android")![list-picker ios]({{site.baseurl}}/img/gallery/ios/listPickerPage.png "list-picker ios")
+![list-picker android](../img/gallery/android/listPickerPage.png "list-picker android")![list-picker ios](../img/gallery/ios/listPickerPage.png "list-picker ios")
 
 **Native Component**
 
@@ -261,4 +261,4 @@ With the [ListPicker]({{site.baseurl}}/ApiReference/ui/list-picker/how-to.md) wi
 
 The [dialogs module]({%slug dialogs %}) lets you create and show dialog windows.
 
-![dialog-confirm android]({{site.baseurl}}/img/gallery/android/dialogsPage_confirm.png "dialog-confirm android")![dialog-confirm ios]({{site.baseurl}}/img/gallery/ios/dialogsPage_confirm.png "dialog-confirm ios")
+![dialog-confirm android](../img/gallery/android/dialogsPage_confirm.png "dialog-confirm android")![dialog-confirm ios](../img/gallery/ios/dialogsPage_confirm.png "dialog-confirm ios")
