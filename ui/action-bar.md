@@ -9,6 +9,7 @@ slug: action-bar
 
 The `ActionBar` is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
 
+* [Defining The Action Bar](#defining-the-action-bar)
 * [Title](#title)
   * [Setting The Title Text](#setting-the-title-text)
   * [Using Custom Title View](#using-custom-title-view)
@@ -24,22 +25,47 @@ The `ActionBar` is the NativeScript common abstraction over the Android ActionBa
   * [Hiding Action Items](#hiding-action-items)
   * [Styling](#styling)
   * [Creating SlideDrawer Button](#creating-slidedrawer-button)
+{% angular %}  * [Adding Actions To Existing Action Bar](#adding-actions-to-existing-action-bar){% endangular %}
 
-# Title
-
-## Setting The Title Text
-
+# Defining The Action Bar
 {% nativescript %}
+Here is how to define the action bar inside your page:
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <Page.actionBar>
-      <ActionBar title="Application Title"/>
+      <ActionBar title="My Action Bar"/>
   </Page.actionBar>
 
   <!-- page content ... -->
 </Page>
 ```
+We will include only the `ActionBar` tag in the rest of the code-snippets in this article. 
 {% endnativescript %}
+{% angular %}
+To define the action bar include the `ActionBar` tag inside a component template:
+```XML
+<ActionBar title="Custom Title"></ActionBar>
+```
+If more than one component defines an `ActionBar` - the last definition will be respected. You can also [add items to the current action bar](#adding-actions-to-existing-action-bar).
+
+>Note: To show the action bar on the initial page of you application use the `startPageActionBarHidden: false` app option when bootstrapping the application.
+
+```TypeScript
+nativeScriptBootstrap(AppComponent, [CUSTOM_PROVIDERS], { startPageActionBarHidden: false });
+```
+
+{% endangular %}
+
+# Title
+
+## Setting The Title Text
+Use the `title` property of the `ActionBar` to set the title:
+
+```XML
+<ActionBar title="Application Title"></ActionBar>
+```
+
+The result is:
 
 ![title-ios](../img/modules/action-bar/title-ios.png "title-ios")
 ![title-android](../img/modules/action-bar/title-android.png "title-android")
@@ -49,23 +75,16 @@ The `ActionBar` is the NativeScript common abstraction over the Android ActionBa
 You can set a custom title view, which will render instead of the title.
 Here is how to combine image and label for a `titleView` (the example contains only the `ActionBar` definition):
 
-{% nativescript %}
 ```XML
 <ActionBar title="test">
-  <ActionBar.titleView>
-    <StackLayout orientation="horizontal"
-      ios:horizontalAlignment="center"
-      android:horizontalAlignment="left">
-      <Image src="res://nativescript_logo" class="action-image"/>
-      <Label text="ativeScript"  class="action-label"/>
-    </StackLayout>
-  </ActionBar.titleView>
+  <StackLayout orientation="horizontal"
+    ios:horizontalAlignment="center"
+    android:horizontalAlignment="left">
+    <Image src="res://nativescript_logo" class="action-image"></Image>
+    <Label text="ativeScript"  class="action-label"></Label>
+  </StackLayout>
 </ActionBar>
 ```
-{% endnativescript %}
-{% angular %}
-TODO...
-{% endangular %}
 ```CSS
 .action-image {
     width: 40;
@@ -92,14 +111,9 @@ Note, that you can use CSS to style the elements inside the `titleView`.
 
 You can set the application icon only for Android. By default, the application icon is hidden. You can show it by setting the `android.iconVisibility` property to `always`.
 
-{% nativescript %}
 ```XML
-<ActionBar title="App Icon Demo" android.icon="res://icon" android.iconVisibility="always"/>
+<ActionBar title="App Icon Demo" android.icon="res://icon" android.iconVisibility="always"></ActionBar>
 ```
-{% endnativescript %}
-{% angular %}
-TODO...
-{% endangular %}
 
 The result is:
 
@@ -115,11 +129,6 @@ The `NavigationButton` component is a common abstraction over the iOS back butto
   <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="onNavBtnTap"/>
 </ActionBar>
 ```
-{% endnativescript %}
-{% angular %}
-TODO...
-{% endangular %}
-{% nativescript %}
 ```JavaScript
 function onNavBtnTap() {
     // This code will be called only in Android.
@@ -135,7 +144,21 @@ export function onNavBtnTap(){
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+```XML
+<ActionBar title="App Icon Demo">
+  <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" 
+    (tap)="onNavBtnTap()"></NavigationButton>
+</ActionBar>
+```
+```TypeScript
+@Component({ ... })
+class MyComponent {
+    public onNavBtnTap(){
+        // This code will be called only in Android.
+        console.log("Navigation button tapped!");
+    }
+}
+```
 {% endangular %}
 
 The result is:
@@ -162,14 +185,12 @@ You can define additional action buttons using the `actionItems` collection:
 {% nativescript %}
 ```XML
 <ActionBar title="Action Items">
-  <ActionBar.actionItems>
-    <ActionItem tap="onShare"
+  <ActionItem tap="onShare"
       ios.systemIcon="9" ios.position="left"
       android.systemIcon="ic_menu_share" android.position="actionBar"/>
-    <ActionItem tap="onDelete"
+  <ActionItem tap="onDelete"
       ios.systemIcon="16" ios.position="right"
       text="delete" android.position="popup"/>
-  </ActionBar.actionItems>
 </ActionBar>
 ```
 ```JavaScript
@@ -193,7 +214,29 @@ export function onDelete(args: observable.EventData) {
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+```XML
+<ActionBar title="Action Items">
+  <ActionItem (tap)="onShare()"
+      ios.systemIcon="9" ios.position="left"
+      android.systemIcon="ic_menu_share" 
+      android.position="actionBar"></ActionItem>
+  <ActionItem (tap)="onDelete()"
+      ios.systemIcon="16" ios.position="right"
+      text="delete" android.position="popup"></ActionItem>
+</ActionBar>
+```
+```TypeScript
+@Component({ ... })
+class MyComponent {
+    onShare(args: observable.EventData) {
+        console.log("Share action item tapped.");
+    }
+    
+    onDelete(args: observable.EventData) {
+        console.log("Delete action item tapped.");
+    }
+}
+```
 {% endangular %}
 The result is:
 
@@ -244,11 +287,9 @@ Values for `ios.systemIcon` are numbers from the [`UIBarButtonSystemItem`](https
 
 ## Showing/Hiding The Action Bar
 
-{% nativescript %}
 You can explicitly control the visibility of the `ActionBar` by setting the `actionBarHidden` property of the `Page`.
-{% endnativescript %}
 {% angular %}
-TODO... AppOptions...
+You can inject a reference to the current `Page` in the constructor of your component using the angluar DI.
 {% endangular %}
 
 In **Android**, the application bar is visible by default and shows the name of the application as title. The navigation button is visible only when it is explicitly defined in the application.
@@ -256,22 +297,19 @@ In **Android**, the application bar is visible by default and shows the name of 
 In **iOS**, if the application bar is empty (E.g. no title or action items are defined), it is hidden on the fist page and automatically shown after navigation to host the navigation button. If the action bar is not empty (e.g. there is title or action items defined) it will be shown on first page too.
 
 ## Hiding Action Items
-
+{% nativescript %}
 You can use the `visibility` property of the `ActionItem` to dynamically hide and show items. You can also use binding for the visibility.
 
 Here is an example of showing different action items when the app is in "editing" mode:
 
-{% nativescript %}
 ```XML
 <ActionBar title="Action Items Visibility">
-  <ActionBar.actionItems>
-    <ActionItem tap="onEdit" ios.systemIcon="2" android.systemIcon="ic_menu_edit" ios.position="right"
-      visibility="{{ isEditing ? 'collapse' : 'visible' }}"/>
-    <ActionItem tap="onSave" ios.systemIcon="3" android.systemIcon="ic_menu_save" ios.position="right"
-      visibility="{{ isEditing ? 'visible' : 'collapse' }}"/>
-    <ActionItem tap="onCancel"  ios.systemIcon="1" android.systemIcon="ic_menu_close_clear_cancel"
-      visibility="{{ isEditing ? 'visible' : 'collapse' }}"/>
-  </ActionBar.actionItems>
+  <ActionItem tap="onEdit" ios.systemIcon="2" android.systemIcon="ic_menu_edit" ios.position="right"
+      {%raw%}visibility="{{ isEditing ? 'collapse' : 'visible' }}"/>{%endraw%}
+  <ActionItem tap="onSave" ios.systemIcon="3" android.systemIcon="ic_menu_save" ios.position="right"
+      {%raw%}visibility="{{ isEditing ? 'visible' : 'collapse' }}"/>{%endraw%}
+  <ActionItem tap="onCancel"  ios.systemIcon="1" android.systemIcon="ic_menu_close_clear_cancel"
+      {%raw%}visibility="{{ isEditing ? 'visible' : 'collapse' }}"/>{%endraw%}
 </ActionBar>
 ```
 ```JavaScript
@@ -331,6 +369,46 @@ export function onCancel(args: observable.EventData) {
 ```
 {% endnativescript %}
 {% angular %}
+You can use the `*ngIf` directive to dynamically hide and show action items.
+
+Here is an example of showing different action items when the app is in "editing" mode:
+
+```XML
+<ActionBar title="Action Items Visibility">
+  <ActionItem *ngIf="!isEditing" (tap)="onEdit()"
+    ios.systemIcon="2" android.systemIcon="ic_menu_edit"
+    ios.position="right"></ActionItem>
+      
+  <ActionItem *ngIf="isEditing" (tap)="onSave()" 
+    ios.systemIcon="3" android.systemIcon="ic_menu_save"
+    ios.position="right"></ActionItem>
+    
+  <ActionItem *ngIf="isEditing" (tap)="onCancel()"
+    ios.systemIcon="1" android.systemIcon="ic_menu_close_clear_cancel"></ActionItem>
+</ActionBar>
+```
+```TypeScript
+
+@Component({ ... })
+class MyComponent {
+    isEditing:boolean = false;
+    
+    onEdit() {
+        console.log("Edit item tapped.");
+        this.isEditing = true;
+    }
+
+    onSave() {
+        console.log("Save item tapped.");
+        this.isEditing = false;
+    }
+
+    onCancel() {
+        console.log("Cancel item tapped.");
+        this.isEditing = false;
+    }
+}
+```
 {% endangular %}
 
 The result is:
@@ -342,19 +420,12 @@ The result is:
 
 The action bar has some CSS styling limitations. You can use only `background-color` and `color` properties. Here is an example:
 
-{% nativescript %}
 ```XML
 <ActionBar title="Action Bar Style">
-  <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"/>
-  <ActionBar.actionItems>
-    <ActionItem ios.systemIcon="2" android.systemIcon="ic_menu_edit" ios.position="right"/>
-  </ActionBar.actionItems>
+  <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"></NavigationButton>
+  <ActionItem ios.systemIcon="2" android.systemIcon="ic_menu_edit" ios.position="right"></ActionItem>
 </ActionBar>
 ```
-{% endnativescript %}
-{% angular %}
-TODO...
-{% endangular %}
 ```CSS
 ActionBar {
     background-color:  #3C5AFD;
@@ -390,11 +461,9 @@ For iOS, this code adds a regular `ActionItem` with `position` set to `left`. Us
   <android>
     <NavigationButton icon="res://ic_menu" tap="showSlideout" />
   </android>
-  <ActionBar.actionItems>
-    <ios>
-      <ActionItem icon="res://ic_menu" ios.position="left" tap="showSideDrawer" />
-    </ios>
-  </ActionBar.actionItems>
+  <ios>
+    <ActionItem icon="res://ic_menu" ios.position="left" tap="showSideDrawer" />
+  </ios>
 </ActionBar>
 ```
 ```JavaScript
@@ -422,3 +491,28 @@ The result is:
 
 ![side-drawer-ios](../img/modules/action-bar/side-drawer-ios.png "side-drawer-ios")
 ![side-drawer-android](../img/modules/action-bar/side-drawer-android.png "side-drawer-android")
+
+{% angular %}
+## Adding Actions To Existing Action Bar
+Using the `ActionBarExtension` component you can add additional action items to the current `ActionBar`. This is useful if you are writing a resuable compnent that exposes an action (ex. "save"), but you don't want you don't want to override the whole `ActionBar`.
+
+Here is how to define a contextual `copy` action:
+
+```XML
+<ActionBarExtension>
+    <ActionItem *ngIf="hasSelection" (tap)="copy()" text="Copy"></ActionItem>
+</ActionBarExtension>
+```
+```TypeScript
+@Component({ ... })
+class MyTextEditorComponent {
+    public hasSelection: boolean;
+    // ...
+    copy() {
+        console.log("Copying...");
+        // ...
+    }
+    // ...
+}
+```
+{% endangular %}
