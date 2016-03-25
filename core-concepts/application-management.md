@@ -45,7 +45,7 @@ application.start({ moduleName: "main-page" });
 
 NativeScript applications have the following life cycle events.
 
-+ `launch`: This event is raised when application launch.
++ `launch`: This event is raised when the application launches.
 + `suspend`: This event is raised when the application is suspended.
 + `resume`: This event is raised when the application is resumed after it has been suspended.
 + `exit`: This event is raised when the application is about to exit.
@@ -184,7 +184,7 @@ application.start({ moduleName: "main-page" });
 ```
 ## Android Activity Events
 
-NativeScript applications have the following Android specific activity events:
+NativeScript applications have the following Android-specific activity events:
 
 + `activityCreated`: This event is raised when activity is created.
 + `activityDestroyed`: This event is raised when activity is destroyed.
@@ -290,7 +290,7 @@ application.start({ moduleName: "main-page" });
 ```
 ## iOS UIApplicationDelegate
 
-Since NativeScript 1.3 you can specify custom UIApplicationDelegate for the iOS application:
+Since NativeScript 1.3, you can specify custom UIApplicationDelegate for the iOS application.
 
 ### Example
 ``` JavaScript
