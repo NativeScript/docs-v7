@@ -13,21 +13,21 @@ In this article, you will learn how to call native APIs from JavaScript with var
 
 # Numeric Types
 
-All native numeric types (e.g. char, short, int, double, float on iOS and byte, short, int, long, double, float on Android) are implicitly converted to JavaScript number and vice versa. For example, when you run the following code on Android:
+All native numeric types (e.g., char, short, int, double, float on iOS and byte, short, int, long, double, float on Android) are implicitly converted to JavaScript number and vice versa. For example, when you run the following code on Android:
 
 ```javascript
 // iOS
 console.log('pow(2.5, 3) = ', pow(2.5, 3));
 ```
 
-the iOS Runtime converts the JavaScript number literals to native doubles and passes them to the native `pow(double x, double y)` function. The returned native integer is automatically converted to JavaScript number and passed to `console.log()`. The same is valid for Android:
+the iOS Runtime converts the JavaScript number literals to native doubles and passes them to the native `pow(double x, double y)` function. The returned native integer is automatically converted to a JavaScript number and passed to `console.log()`. The same is valid for Android:
 
 ```javascript
 // Android
 console.log('min(3, 4) = ', java.lang.Math.min(3, 4));
 ```
 
-The native `java.lang.Math.min()` method expects two integers. The Android Runtime knows the signature of `java.lang.Math.min()` function and translates the literals `3` and `4` to their representation in Java integer data type. The returned integer is also automatically translated to JavaScript number and passed to `console.log()`.
+The native `java.lang.Math.min()` method expects two integers. The Android Runtime knows the signature of `java.lang.Math.min()` function and translates the literals `3` and `4` to their representation in a Java integer data type. The returned integer is also automatically translated to a JavaScript number and passed to `console.log()`.
 
 # Classes and Objects
 
@@ -39,7 +39,7 @@ var array = new NSMutableArray();
 array.addObject(new NSObject());
 ```
 
-the iOS Runtime calls `[[NSMutableArray alloc] init]` and the returned native object is converted to JavaScript object wrapper (proxy object) and assigned to `array1`. The wrapper has all instance methods of `NSMutableArray` (and its predecessor) in its prototype chain, so they can be called from JavaScript. Method names are slightly changed in order to be more convenient to use from JavaScript(e.g. `setObject:atIndexedSubscript:` is named `setObjectAtIndexedSubscript()` in JavaScript). The same is valid for Android:
+the iOS Runtime calls `[[NSMutableArray alloc] init]` and the returned native object is converted to a JavaScript object wrapper (proxy object) and assigned to `array1`. The wrapper has all instance methods of `NSMutableArray` (and its predecessor) in its prototype chain, so they can be called from JavaScript. Method names are slightly changed in order to be more convenient to use from JavaScript (e.g., `setObject:atIndexedSubscript:` is named `setObjectAtIndexedSubscript()` in JavaScript). The same is valid for Android:
 
 ```javascript
 // Android
@@ -66,7 +66,7 @@ var file = new java.io.File('myfile.txt'); // 'myfile.txt' is converted to java.
 
 The exception to this are the methods on `NSString` classes declared as returning `instancetype` - init methods and factory methods. This means that a call to `NSString.stringWithString` whose return type in Objective-C is `instancetype` will return a wrapper around a `NSString` instance, rather than a JavaScript string.
 
-> Exception: Methods on `NSString` classes declared as returning `instancetype` (e.g. init methods and factory methods). For example, calls to `NSString.stringWithString` return `instancetype` results in Objective-C. In your NativeScript code, such calls will return a wrapper around a `NSString` instance instead of a JavaScript string.
+> Exception: Methods on `NSString` classes declared as returning `instancetype` (e.g., init methods and factory methods). For example, calls to `NSString.stringWithString` return `instancetype` results in Objective-C. In your NativeScript code, such calls will return a wrapper around a `NSString` instance instead of a JavaScript string.
 
 # Boolean
 
@@ -84,7 +84,7 @@ var str = new java.lang.String('Hello world!');
 var result = str.endsWith('world!');
 console.log(result); // true
 ```
-
+<Comment: My expectation is that I should see the word boolean somewhere in the previous Android example.>
 # Array
 
 JavaScript arrays map to specialized Java arrays on Android and `NSArray` on iOS.
