@@ -8,17 +8,17 @@ previous_url: /animation
 
 # Animations
 
-One of the ways to improve the attractiveness of your application is by adding animations. NativeScript exposes simple and easy, but powerful enough API to allow animating almost every native element in your application.
+One of the ways to improve the attractiveness of your application is by adding animations. NativeScript exposes a simple and easy, but powerful enough API to allow animating almost every native element in your application.
 
-For your convenience we expose two ways of creating animations:
+For your convenience, we expose two ways of creating animations:
 
 - Declarative - you will use the easy and familiar CSS3 animations API
 - Imperative - take full control of any animation by calling animation methods directly with code
+<Comment: This is a very long article. For better SEO, I suggest breaking it up into smaller articles and linking them together--Google only indexes the first few hundred words so later sections could be harder to find through external search. If you do not want to do that, I suggest that you at least add some major section headings (that include SEO keywords for the article) to jump to as a sort of table of contents near the front of this article. One of these entries should jump to the specific code examples at the end with a list of the types of examples there. Also, I think this article would be hard to navigate through on a tablet without these sorts of changes.>
+##Hello world example
 
-##hello-world example
-
-To get started we will change the background color of a button form "red" to "green". With code we can do the following:
-
+In __Example 1__ we will change the background color of a button from "red" to "green". You can use JavaScript or TypeScript code to do the following:
+<Comment: __Example 1: Please add an SEO-friendly caption for these code examples.__>
 ![hello-world](../img/modules/animation/hello-world.gif "Hello world")
 
 ``` JavaScript
@@ -30,8 +30,8 @@ view.backgroundColor = new colorModule.Color("red");
 view.animate({ backgroundColor: new colorModule.Color("green"), duration: 2000 });
 ```
 
-The same animation can be expressed in CSS with the following definition:
-
+As _Example 2_ shows, you can express the same animation in CSS with the following definition:
+<Comment: __Example 2: Please add an SEO-friendly caption for this code example.__>
 ``` CSS
 @keyframes example {
     from { background-color: red; }
@@ -44,9 +44,9 @@ The same animation can be expressed in CSS with the following definition:
 }
 ```
 
-* CSS animations apply with lower precedence like any other CSS settings, so any local values set in your element will cancel the animation.
+> CSS animations apply with lower precedence, like any other CSS settings, so any local values set in your element will cancel the animation.
 
-In NativeScript the following properties can be animated:
+NativeScript lets you animate the following properties:
 
 - opacity
 - backgroundColor
@@ -54,34 +54,34 @@ In NativeScript the following properties can be animated:
 - scaleX and scaleY
 - rotate
 
-In every animation you can control the following properties:
+In every animation, you can control the following properties:
 
 - duration: The length of the animation.
-- delay: The amount of time, to delay starting the animation.
+- delay: The amount of time to delay starting the animation.
 - iterations: Specifies how many times the animation should be played. 
 - timing function: The speed curve of the animation. Available options are defined below.
 
 ##Animation curves
 
-By default the animation moves with a linear speed without acceleration or deceleration. This might look unnatural and different from the real world where objects need time to reach their top speed and can't stop immediately. The animation curve (called sometimes easing function) is used to give animations an illusion of inertia. It controls the animation speed by modifying the fraction of the duration. NativeScript comes with a number of predefined animation curves:
-
-- **linear** - The simplest animation curve is linear. It maintains a constant speed while the animation is running:
+By default, an animation moves with a linear speed without acceleration or deceleration. This might look unnatural and different from the real world where objects need time to reach their top speed and can't stop immediately. The animation curve (sometimes called an easing function) is used to give animations an illusion of inertia. It controls the animation speed by modifying the fraction of the duration. NativeScript comes with a number of predefined animation curves.
+<Comment: Why are the terms in this list bold but terms in the previous list were not?>
+- **linear**: The simplest animation curve is linear. It maintains a constant speed while the animation is running:
 ![linear](../img/modules/animation/linear.gif "Linear")
 
-- **Ease-in** - The ease-in curve causes the animation to begin slowly, and then speed up as it progresses.
+- **Ease-in**: The ease-in curve causes the animation to begin slowly, and then speed up as it progresses.
 ![easein](../img/modules/animation/easein.gif "EaseIn")
 
-- **Ease-out** - An ease-out curve causes the animation to begin quickly, and then slow down as it completes.
+- **Ease-out**: An ease-out curve causes the animation to begin quickly, and then slow down as it completes.
 ![easeout](../img/modules/animation/easeout.gif "EaseOut")
 
-- **Ease-in-out** - An ease-in ease-out curve causes the animation to begin slowly, accelerate through the middle of its duration, and then slow again before completing.
+- **Ease-in-out**: An ease-in ease-out curve causes the animation to begin slowly, accelerate through the middle of its duration, and then slow again before completing.
 ![easeinout](../img/modules/animation/easeinout.gif "EaseInOut")
 
-- **Spring** - A spring animation curve causes an animation to produce a spring (bounce) effect.
+- **Spring**: A spring animation curve causes an animation to produce a spring (bounce) effect.
 ![spring](../img/modules/animation/spring.gif "Spring")
 
-In NativeScript the animation curve is represented by the AnimationCurve enumeration and can be specified with the curve property of the animation. In CSS the animation curve is defined by using the animation-timing-function property:
-
+In NativeScript, the animation curve is represented by the AnimationCurve enumeration and can be specified with the curve property of the animation. In CSS, the animation curve is defined by using the animation-timing-function property (see __Example 3__):
+<Comment: __Example 3: Please add an SEO-friendly caption for this code example.__>
 ``` JavaScript
 view.animate({
 	translate: { x: 0, y: 100},    
@@ -109,8 +109,8 @@ view.animate({
 }
 ```
 
-It is easy to create your own animation curve by passing in the x and y components of two control points of a cubic Bezier curve. Using Bezier curves is a common technique to create smooth curves in computer graphics and they are widely used in vector-based drawing tools. The values passed to the cubicBezier method control the curve shape. The animation speed will be adjusted based on the resulting path.
-
+It is easy to create your own animation curve by passing in the x and y components of two control points of a cubic Bezier curve (as shown in __Example 4__). Using Bezier curves is a common technique to create smooth curves in computer graphics and they are widely used in vector-based drawing tools. The values passed to the cubicBezier method control the curve shape. The animation speed will be adjusted based on the resulting path.
+<Comment: __Example 4: Please add an SEO-friendly caption for this code example.__>
 ![beziergraph](../img/modules/animation/bezier-graph.png "BezierGraph")
 
 ``` JavaScript
@@ -140,12 +140,12 @@ view.animate({
 
 # CSS Animations
 
-CSS animations are based on the simple and easy to use standard [CSS3 animations API](http://www.w3schools.com/css/css3_animations.asp). You can use them to animate almost every native view without even having to know JavaScript. You have the potential to alter the appearance and behavior of an element whenever a state change occurs, such as when it is touched, or activated. You can use multiple frames and change the aimation direction. Finally with CSS animations you can separate the animation code from your application logic.
+CSS animations are based on the simple and easy to use standard [CSS3 animations API](http://www.w3schools.com/css/css3_animations.asp). You can use them to animate almost every native view without even having to know JavaScript. You have the potential to alter the appearance and behavior of an element whenever a state change occurs, such as when it is touched or activated. You can use multiple frames and change the aimation direction. Finally, with CSS animations, you can separate the animation code from your application logic.
 
-CSS animations consist of two components, a style describing the CSS animation and a set of keyframes that indicate the start and end states of the animation's style, as well as possible intermediate waypoints. You can change as many animatable CSS properties you want, as many times you want.
+CSS animations consist of two components: a style describing the CSS animation and a set of keyframes that indicate the start and end states of the animation's style, as well as possible intermediate waypoints. You can change as many animatable CSS properties you want, as many times you want.
 
-The following example binds the "example" animation to the button element. The animation will lasts for 4 seconds, and it will gradually change the background-color of the button element from "red" to "green":
-
+__Example 5__ binds the "example" animation to the button element. The animation will lasts for 4 seconds, and it will gradually change the background-color of the button element from "red" to "green".
+<Comment: __Example 5: Please add an SEO-friendly caption for this code example.__>
 ```
 @keyframes example {
     from { background-color: red; }
@@ -171,39 +171,39 @@ view1.className = "example";
 <Button id="myButton" text="{N}" class="example"/>
 ```
 
-* If the animation-duration property is not specified, the animation will use a default value - 0.3 seconds.
+> If the animation-duration property is not specified, the animation will use a default value - 0.3 seconds.
 
 ## Animatable properties
 
-CSS animations support the same animatable properties like in code based animations: 
+CSS animations support the same animatable properties used in code-based animations: 
 
 - opacity
-- background-color corresponds with the backgroundColor
-- transform: translate corresponds with translateX and translateY properties. 
-- transform: scale corresponds with scaleX and scaleY properties
-- transform: rotate corresponds with the rotate property
+- background-color: Corresponds with the backgroundColor.
+- transform: Translate corresponds with translateX and translateY properties. 
+- transform: Scale corresponds with scaleX and scaleY properties.
+- transform: Rotate corresponds with the rotate property.
 
-* You cannot set a single x or y field in scale and translate. If you set only x in translate, y will be assumed 0; If you set only y in scale, x will be assumed 1.
+> You cannot set a single x or y field in scale and translate. If you set only x in translate, y will be assumed 0; If you set only y in scale, x will be assumed 1.
 
 ## Animation properties
 
-A CSS animation is defined by using the animation property and its sub-properties. Those include timing, duration, delay, and other animation properties. The actual animation appearance is defined with the @keyframes rule.
+A CSS animation is defined by using the animation property and its sub-properties. Those include timing, duration, delay and other animation properties. The actual animation appearance is defined with the @keyframes rule.
 
 The following list presents all animation properties:
-
-- **animation-name**: specifies the name of the @keyframes rule that should be used.
-- **animation-delay**: specifies the time between the style is applied and the beginning of the animation.
-- **animation-duration**: the length of the animation in seconds.
-- **animation-iteration-count**: Specifies how many times the animation should be played. Default is 1. To repeat an animation forever use infinite.
-- **animation-timing-function**: Defines how the animation transitions through keyframes, by establishing acceleration curves.
+<Comment: Why are the terms in this list bold but terms in the previous list were not? This was noted in a previous list as well.>
+- **animation-name**: Specifies the name of the @keyframes rule that should be used.
+- **animation-delay**: Specifies the time between the style is applied and the beginning of the animation.
+- **animation-duration**: The length of the animation in seconds.
+- **animation-iteration-count**: Specifies how many times the animation should be played. Default is 1. To repeat an animation forever, use infinite.
+- **animation-timing-function**: Defines how the animation transitions through keyframes by establishing acceleration curves.
 - **animation-fill-mode**: Configures what values are applied by the animation after it is executing.
 - **animation-direction**: Configures whether or not the animation should alternate direction on each run through the sequence or reset to the start point and repeat itself.
 - **animation**: The shorthand property allows setting all animation properties in a single line.
 
 ## Animation keyframes
 
-To set multiple points at which an element should undergo a transition, use the **@keyframes** rule. It includes the animation name, any animation breakpoints, and the properties intended to be animated. 
-
+To set multiple points at which an element should undergo a transition, use the **@keyframes** rule, shown in __Example 6__. It includes the animation name, any animation breakpoints, and the properties intended to be animated. 
+<Comment: __Example 6: Please add an SEO-friendly caption for this code example.__>
 ``` CSS
 @keyframes example {
     from { background-color: red; }
@@ -211,10 +211,10 @@ To set multiple points at which an element should undergo a transition, use the 
 }
 ```
 
-This example defines an animation with two keyframes. "from" represents 0% (the start of the animation) and "to" represents 100% (the final value). You can add more keyframes by using percent.
+__Example 6__ defines an animation with two keyframes. The "from" represents 0% (the start of the animation) and "to" represents 100% (the final value). You can add more keyframes by using percent.
 
-The following example will change the background-color when the animation is 25% complete, 50% complete, and again when the animation is 100% complete:
-
+__Example 7__ shows how to change the background-color when the animation is 25% complete, 50% complete, and again when the animation is 100% complete.
+<Comment: __Example 7: Please add an SEO-friendly caption for this code example.__>
 ``` CSS
 @keyframes example {
     0%   { background-color: red; }
@@ -224,8 +224,8 @@ The following example will change the background-color when the animation is 25%
 }
 ```
 
-You can set multiple properties in a keyframe:
-
+You can set multiple properties in a keyframe, as shown in __Example 8__.
+<Comment: __Example 8: Please add an SEO-friendly caption for this code example.__>
 ``` CSS
 @keyframes example {
     0%   { background-color: red; transform: translate(0, 0); }
@@ -236,8 +236,8 @@ You can set multiple properties in a keyframe:
 }
 ```
 
-You can combine keyframes:
-
+You can combine keyframes, as shown in __Example 9__.
+<Comment: __Example 9: Please add an SEO-friendly caption for this code example.__>
 ``` CSS
 @keyframes example {
     0%, 50% { background-color: red; transform: translate(0, 0); }
@@ -246,7 +246,7 @@ You can combine keyframes:
 }
 ```
 
-## Delay an Animation
+## Delay an animation
 
 The **animation-delay** property specifies a delay (in seconds) before the animation starts:
 
@@ -259,10 +259,10 @@ The **animation-delay** property specifies a delay (in seconds) before the anima
 }
 ```
 
-## Set How Many Times an Animation Should Run
+## Set how many times an animation should run
 
-The **animation-iteration-count** property defines the number of times an animation should run. The following animation will play two times before it stops:
-
+The **animation-iteration-count** property defines the number of times an animation should run. The animation in __Example 10__ will play two times before it stops.
+<Comment: __Example 10: Please add an SEO-friendly caption for this code example.__>
 ``` CSS
 .view {
 	background-color: red;
@@ -272,24 +272,24 @@ The **animation-iteration-count** property defines the number of times an animat
 }
 ```
 
-If you want to play an animation forever, set this property to "infinite":
+If you want to play an animation forever, set this property to "infinite".
 
 ``` CSS
 animation-iteration-count: infinite;
 ```
 
-## Specify the Speed Curve of the Animation
+## Specify the speed curve of the animation
 
 The **animation-timing-function** property specifies the speed curve of the animation. It can have one of the following values:
 
-- ease: specifies an animation with a slow start, then fast, then end slowly (this is default)
-- linear: specifies an animation with the same speed from start to end
-- ease-in: specifies an animation with a slow start
-- ease-out: specifies an animation with a slow end
-- ease-in-out: specifies an animation with a slow start and end
-- spring: specifies a spring animation
-- cubic-bezier(n,n,n,n): lets you define your own values in a cubic-bezier function
-
+- ease: Specifies an animation with a slow start, then fast, then end slowly (this is the default).
+- linear: Specifies an animation with the same speed from start to end.
+- ease-in: Specifies an animation with a slow start.
+- ease-out: Specifies an animation with a slow end.
+- ease-in-out: Specifies an animation with a slow start and slow end.
+- spring: Specifies a spring animation.
+- cubic-bezier(n,n,n,n): Lets you define your own values in a cubic-bezier function, as shown in __Example 11__.
+<Comment: __Example 11: Please add an SEO-friendly caption for this code example.__>
 ``` CSS
 .view {
 	animation-name: example;
@@ -299,8 +299,8 @@ The **animation-timing-function** property specifies the speed curve of the anim
 
 ## Determine the result when the animation ends
 
-The **animation-fill-mode** property determines the element style when the animation finishes. Its default value is "none". In this case all animated values will be reset to a previous value when the animation finishes. When using "forwards" all animated values will apply the property values for the time the animation ended.
-
+The **animation-fill-mode** property determines the element style when the animation finishes. Its default value is "none". In this case, all animated values will be reset to a previous value when the animation finishes. If you set the **animation-fill-mode** property to "forwards", all animated values will apply the property values for the time the animation ended. <Comment: I do not understand the last sentence. For example, if an annimation ends in 1 second, (perhaps a user presses Esc) what happens?>
+<Comment: __Example 12: Please add an SEO-friendly caption for this code example.__>
 ``` CSS
 .view {
 	background-color: red;
@@ -312,8 +312,8 @@ The **animation-fill-mode** property determines the element style when the anima
 
 ## Animation direction
 
-The **animation-direction** property can be used to play a CSS animation in reverse direction:
-
+You can use the **animation-direction** property to play a CSS animation in reverse direction, as shown in __Example 13__.
+<Comment: __Example 13: Please add an SEO-friendly caption for this code example.__>
 ``` CSS
 .view {
 	background-color: red;
@@ -323,10 +323,10 @@ The **animation-direction** property can be used to play a CSS animation in reve
 }
 ```
 
-## Animation Shorthand Property
-
+## Animation shorthand property
+<Comment: I suggest cutting the word "property" from the previous heading. When I read it, I expect to see a property called annimation-shorthand or shorthand but I do not see that in the example.>
 The **animation** property allows setting all seven animation properties with a single line:
-
+<Comment: __Example 14: Please add an SEO-friendly caption for this code example.__>
 ``` CSS
 .view {
     animation: example 4s ease-in-out 2s infinite reverse forwards;
@@ -338,7 +338,7 @@ The supported syntax is:
 animation: name duration timing-function delay iteration-count direction fill-mode;
 
 You can combine two animations in the **animation** property by using commas:
-
+<Comment: __Example 15: Please add an SEO-friendly caption for this code example.__>
 ``` CSS
 .view {
     animation: example 4s ease-in-out 2s infinite reverse, second-animation-example 5s ease-out;
@@ -347,8 +347,8 @@ You can combine two animations in the **animation** property by using commas:
 
 ## Pseudo selectors
 
-A pseudo-selector is used to define a special state of an element. For example, when a button is touched by the user. Pseudo selectors can be used to trigger animations:
-
+A pseudo selector is used to define a special state of an element. For example, when a button is touched by the user. You can use pseudo selectors to trigger animations:
+<Comment: __Example 16: Please add an SEO-friendly caption for this code example.__>
 ``` CSS
 .button {
     background-color: green;
@@ -366,12 +366,12 @@ A pseudo-selector is used to define a special state of an element. For example, 
 }
 ```
 
-* Currently only the **Button** component has a built-in special state "highlighted" which indicates that it is touched by the user.
+> Currently only the **Button** component has a built-in special state "highlighted" to indicate that it is touched by the user.
 
 ## Access CSS animations from code
 
 The simplest way to trigger a CSS animation is by changing the element **className** property:
-
+<Comment: __Example 17: Please add an SEO-friendly caption for this code example.__>
 ```JavaScript
 var view = page.getViewById("view");
 view.className = "transparent";
@@ -382,7 +382,7 @@ view.className = "transparent";
 ```
 
 All keyframes defined in CSS can be accessed with code by using the **getKeyframeAnimationWithName** method. This allows further customization of animation properties:
-
+<Comment: __Example 18: Please add an SEO-friendly caption for this code example.__>
 ``` JavaScript
 var view = page.getViewById("view");
 var animationInfo = page.getKeyframeAnimationWithName("bounce");
@@ -404,8 +404,8 @@ animation.play(view).then(() => {
 
 # Animations with code
 
-In case you need to animate a **single** [`View`]({{site.baseurl}}/ApiReference/ui/core/view/View.md) and you don't need to be able to **cancel** the animation, you can simply use the shortcut **View.animate** method which accepts an [`AnimationDefinition`]({{site.baseurl}}/ApiReference/ui/animation/AnimationDefinition.md), immediately starts the animation and returns its finished promise.
-
+In case you need to animate a **single** [`View`]({{site.baseurl}}/ApiReference/ui/core/view/View.md) and you don't need to be able to **cancel** the animation, you can simply use the shortcut **View.animate** method, which accepts an [`AnimationDefinition`]({{site.baseurl}}/ApiReference/ui/animation/AnimationDefinition.md), immediately starts the animation and then returns its finished promise.
+<Comment: __Example 19: Please add an SEO-friendly caption for this code example.__>
 ``` JavaScript
 view.animate({
     translate: { x: 0, y: 100},    
@@ -441,27 +441,27 @@ The [`AnimationDefinition`]({{site.baseurl}}/ApiReference/ui/animation/Animation
  - rotate: Animates the rotate affine transform of the view. Value should be a number specifying the rotation amount in degrees.
  - duration: The length of the animation in milliseconds. The default duration is 300 milliseconds.
  - delay: The amount of time, in milliseconds, to delay starting the animation.
- - iterations: Specifies how many times the animation should be played. Default is 1. iOS animations support fractional iterations, i.e. 1.5. To repeat an animation infinitely, use Number.POSITIVE_INFINITY
+ - iterations: Specifies how many times the animation should be played. Default is 1. iOS animations support fractional iterations, i.e., 1.5. To repeat an animation infinitely, use **Number.POSITIVE_INFINITY**.
  - curve: An optional animation curve. Possible values are contained in the [AnimationCurve enumeration]({{site.baseurl}}/ApiReference/ui/enums/AnimationCurve/README.md). Alternatively, you can pass an instance of type [`UIViewAnimationCurve`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/#//apple_ref/c/tdef/UIViewAnimationCurve) for iOS or [`android.animation.TimeInterpolator`](http://developer.android.com/reference/android/animation/TimeInterpolator.html) for Android.
 
  All members of the interface are **optional** and have default values with the following exceptions:
  
  - target is only optional when calling the **animate** method of a [`View`]({{site.baseurl}}/ApiReference/ui/core/view/View.md) instance since it is set automatically for you.
- - You must specify at least one property among opacity, backgroundColor, scale, rotate and translate.
+ - You must specify at least one property from this list: opacity, backgroundColor, scale, rotate or translate.
 
-## The Animation Class
+## The Animation class
 
-The [`Animation`]({{site.baseurl}}/ApiReference/ui/animation/Animation.md) class represents a **set** of one or more [`AnimationDefinitions`]({{site.baseurl}}/ApiReference/ui/animation/AnimationDefinition.md) which can be played either **simultaneously or sequentially**. **This class is typically used when you need to animate several views together**. The constructor of the the [`Animation`]({{site.baseurl}}/ApiReference/ui/animation/Animation.md) class accepts an array of [`AnimationDefinitions`]({{site.baseurl}}/ApiReference/ui/animation/AnimationDefinition.md) and a boolean parameter indicating whether to play the animations sequentially. Creating an instance of the [`Animation`]({{site.baseurl}}/ApiReference/ui/animation/Animation.md) class does not start the animation playback. The class has four members:
+The [`Animation`]({{site.baseurl}}/ApiReference/ui/animation/Animation.md) class represents a **set** of one or more [`AnimationDefinitions`]({{site.baseurl}}/ApiReference/ui/animation/AnimationDefinition.md) that can be played either **simultaneously or sequentially**. **This class is typically used when you need to animate several views together**. The constructor of the  [`Animation`]({{site.baseurl}}/ApiReference/ui/animation/Animation.md) class accepts an array of [`AnimationDefinitions`]({{site.baseurl}}/ApiReference/ui/animation/AnimationDefinition.md) and a boolean parameter indicating whether to play the animations sequentially. Creating an instance of the [`Animation`]({{site.baseurl}}/ApiReference/ui/animation/Animation.md) class does not start the animation playback. The class has four members:
 
- - play: a method that starts the animation and returns the instance it was called on for fluent animation chaining.
- - cancel: a void method which stops the animation.
- - finished: a promise which will be resolved when the animation finishes or rejected when the animation is cancelled or stops for another reason.
- - isPlaying: a boolean property returning true if the animation is currently playing.
+ - play: A method that starts the animation and returns the instance it was called on for fluent animation chaining.
+ - cancel: A void method that stops the animation.
+ - finished: A promise that will be resolved when the animation finishes or rejected when the animation is cancelled or stops for another reason.
+ - isPlaying: A boolean property returning __True__ if the animation is currently playing.
 
 ## Animating multiple properties
 
-It is easy to animate multiple properties at once, just pass the desired animatable properties and the corresponding values when calling the animate function:
-
+It is easy to animate multiple properties at once; just pass the desired animatable properties and the corresponding values when calling the animate function.
+<Comment: __Example 20: Please add an SEO-friendly caption for this code example.__>
 ``` JavaScript
 view.animate({
     backgroundColor: new color.Color("#3D5AFE"),
@@ -483,10 +483,10 @@ view.animate({
 
 ![multiple-properties](../img/modules/animation/multiple-properties.gif "Multiple Properties")
 
-## Chaining animations with Promises
+## Chaining animations with promises
 
-The animate method returns a promise that can be used to chain animations. Here is an example:
- 
+The animate method returns a promise that you can use to chain animations, as shown in __Example 21__. 
+<Comment: __Example 21: Please add an SEO-friendly caption for this code example.__> 
 ``` JavaScript
 view.animate({ opacity: 0 })
     .then(function () { return view.animate({ opacity: 1 }); })
@@ -523,9 +523,9 @@ view.animate({ opacity: 0 })
 ![chaining-with-promises](../img/modules/animation/chaining-with-promises.gif "Chaining with Promises")
 
 # Examples
-
+<Comment: As a heading, the word Examples is not very SEO friendly. Can you come up with something more descriptive?>
 The full source code for all samples is located [`here`](https://github.com/NativeScript/animation-demo).
-
+<Comment: I suggest you add SEO-friendly captions to these, but the article does not provide enough text for proper call outs from the body text.>
 ## Opacity
 
 ![opacity](../img/modules/animation/opacity.gif "Opacity")
