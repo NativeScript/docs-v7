@@ -1,7 +1,7 @@
 ---
 title: Transpilers
 description: Learn how to enable TypeScript and other transpiler support in your project.
-position: 8
+position: 9
 slug: transpilers
 previous_url: /transpilers
 ---
