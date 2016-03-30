@@ -10,23 +10,23 @@ previous_url: /modules
 
 To let you access the native device and platform capabilities of your target platform, NativeScript uses a modular design pattern. All device, platform or user interface functionalities reside in separate modules. To access the functionality provided by a module, you need to **require** the module.
 
-In your project, the files for each module reside in a dedicated subdirectory in the `tns_modules` directory. Each default module comes along with a `package.json` file which declares how the module should be called within your call and which file contains its respective code.
+In your project, the files for each module reside in a dedicated subdirectory in the `tns_modules` directory. Each default module comes along with a `package.json` file that declares how the module should be called within your call and which file contains its respective code.
 
 ```JSON
 { "name" : "button",
   "main" : "button.js" }
 ``` 
 
-* [Core Modules](#core-modules)
-* [Device Functionality Modules](#device-functionality-modules)
-* [Data Modules](#data-modules)
-* [User Interface Modules](#user-interface-modules)
+* [Core modules](#core-modules)
+* [Device functionality modules](#device-functionality-modules)
+* [Data modules](#data-modules)
+* [User interface modules](#user-interface-modules)
 	* [Layouts](#layouts)
 	* [Widgets](#widgets)
-* [WHATWG Polyfills](#whatwg-polyfills)
+* [WHATWG polyfills](#whatwg-polyfills)
 * 
-### Core Modules
-
+### Core modules
+<Comment: Your team's capitalization style in other help articles is that heading 3s like this do not use title case but instead use sentence case. So in this case, Core modules is appropriate. I will change the article to match.>
 + [application]({{site.baseurl}}/ApiReference/application/HOW-TO.md): Provides the application abstraction with all related methods.
 + [console]({{site.baseurl}}/ApiReference/console/HOW-TO.md): Lets you print messages to the device console.
 + [application-settings]({{site.baseurl}}/ApiReference/application-settings/HOW-TO.md): Lets you save and restore any information related to your application.
@@ -35,24 +35,24 @@ In your project, the files for each module reside in a dedicated subdirectory in
 + [timer]({{site.baseurl}}/ApiReference/timer/HOW-TO.md): Lets you to create, start, stop and react to timers.
 + [trace]({{site.baseurl}}/ApiReference/trace/HOW-TO.md): Lets you trace and print specific information based on categories.
 + [ui/image-cache]({{site.baseurl}}/ApiReference/ui/image-cache/HOW-TO.md): Provides the `Cache` class which handles image download requests and caches the already downloaded images.
-+ [connectivity]({{site.baseurl}}/ApiReference/connectivity/HOW-TO.md): Let's you check the type of internet connection and monitor its state changes.
++ [connectivity]({{site.baseurl}}/ApiReference/connectivity/HOW-TO.md): Lets you check the type of Internet connection and monitor its state changes.
 
-### Device Functionality Modules
+### Device functionality modules
 
-+ [camera]({{site.baseurl}}/ApiReference/camera/HOW-TO.md): Lets you take pictures with the device camera.
++ [camera]({{site.baseurl}}/ApiReference/camera/HOW-TO.md): Lets you take pictures with the device's camera.
 + [location]({{site.baseurl}}/ApiReference/location/HOW-TO.md): Lets you use the geolocation sensors of the device.
 + [platform]({{site.baseurl}}/ApiReference/platform/HOW-TO.md): Provides information about the device, its operating system and software.
 + [fps-meter]({{site.baseurl}}/ApiReference/fps-meter/HOW-TO.md): Lets you capture the frames-per-second metrics of your application.
-+ [file-system]({{site.baseurl}}/ApiReference/file-system/HOW-TO.md): Lets you work with the device file system. Provides high-level abstractions for file system entities such as files, folders, known folders, paths, separators, etc.
++ [file-system]({{site.baseurl}}/ApiReference/file-system/HOW-TO.md): Lets you work with the device's file system. Provides high-level abstractions for file system entities such as files, folders, known folders, paths, separators, etc.
 + [ui/gestures]({{site.baseurl}}/ApiReference/ui/gestures/HOW-TO.md): Provides the `GesturesObserver` class which lets you observe and respond to user gestures.
 
-### Data Modules
+### Data modules
 
 + [data/observable]({{site.baseurl}}/ApiReference/data/observable/HOW-TO.md): Provides the `Observable` class which represents an observable object or data in the MVVM paradigm.
 + [data/observable-array]({{site.baseurl}}/ApiReference/data/observable-array/HOW-TO.md): Provides the `ObservableArray` class which detects and responds to changes in a collection of objects.
 + [data/virtual-array]({{site.baseurl}}/ApiReference/data/virtual-array/HOW-TO.md): Provides the `VirtualArray` class which is an advanced array-like class that helps loading items on demand.
 
-### User Interface Modules
+### User interface modules
 
 + [ui/core/dependency-observable]({{site.baseurl}}/ApiReference/ui/core/dependency-observable/HOW-TO.md): Provides the `DependencyObservable` class which represents an extended `Observable` object that uses Property instances for value backing mechanism.
 + [ui/frame]({{site.baseurl}}/ApiReference/ui/frame/HOW-TO.md): Provides the `Frame` class which represents the logical `View` unit that is responsible for navigation within an application.
@@ -66,7 +66,7 @@ In your project, the files for each module reside in a dedicated subdirectory in
 
 #### Layouts
 
-+ [ui/layouts/stack-layout]({{site.baseurl}}/ApiReference/ui/layouts/stack-layout/HOW-TO.md): Provides the `StackLayout` class which lets you arrange the children of the layout in single line.
++ [ui/layouts/stack-layout]({{site.baseurl}}/ApiReference/ui/layouts/stack-layout/HOW-TO.md): Provides the `StackLayout` class which lets you arrange the children of the layout in a single line.
 + [ui/layouts/grid-layout]({{site.baseurl}}/ApiReference/ui/layouts/grid-layout/HOW-TO.md): Provides the `GridLayout` class which lets you arrange the children of the layout in a flexible grid area with columns and rows.
 + [ui/layouts/absolute-layout]({{site.baseurl}}/ApiReference/ui/layouts/absolute-layout/HOW-TO.md): Provides the `AbsoluteLayout` class which lets you arrange the children of the layout at arbitrary positions or draw them in multiple layers.
 + [ui/layouts/wrap-layout]({{site.baseurl}}/ApiReference/ui/layouts/wrap-layout/HOW-TO.md): Provides the `WrapLayout` class which lets you arrange the children of the layout at sequential positions from left to right and then wrap the lines of children from top to bottom.
@@ -79,7 +79,7 @@ In your project, the files for each module reside in a dedicated subdirectory in
 + [ui/text-field]({{site.baseurl}}/ApiReference/ui/text-field/HOW-TO.md): Provides the `TextField` class which represents an editable single-line box.
 + [ui/text-view]({{site.baseurl}}/ApiReference/ui/text-view/HOW-TO.md): Provides the `TextView` class which represents an editable multi-line line box.
 + [ui/list-view]({{site.baseurl}}/ApiReference/ui/list-view/HOW-TO.md): Provides the `ListView` class which represents a standard list view widget.
-+ [ui/image]({{site.baseurl}}/ApiReference/ui/image/HOW-TO.md): Provides the `Image` class, which represents an image widget.
++ [ui/image]({{site.baseurl}}/ApiReference/ui/image/HOW-TO.md): Provides the `Image` class which represents an image widget.
 + [ui/progress]({{site.baseurl}}/ApiReference/ui/progress/HOW-TO.md): Provides the `Progress` class which represents a progress or loading indicator.
 + [ui/scroll-view]({{site.baseurl}}/ApiReference/ui/scroll-view/HOW-TO.md): Provides the `ScrollView` class which represents a scrollable area that can show content which is larger than the visible area.
 + [ui/search-bar]({{site.baseurl}}/ApiReference/ui/search-bar/HOW-TO.md): Provides the `SearchBar` class which represents a standard search bar component.
