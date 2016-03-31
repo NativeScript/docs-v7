@@ -287,7 +287,7 @@ NativeScript supports different kind of expressions including:
 | comparison operators | `var1 > var2` | Comparing whether the value of var1 is more than the value of var2. Other supported operators - `<, >, <=, >=, ==, !=, ===, !==`. |
 | logical comparison operators | `var1>1 && var2>1`. | Evaluating whether the value of var1 is more than 1 AND the value of var2 is more than 2. Supported operators: `&&, ||`. |
 | ternary operator | `var1 ? var2 : var3` | Evaluating the value of `var1` and if true, returns `var2`, else returns `var3`. |
-| grouping parenthesis | `(a + b) * (c + d)` |<Comment: You are missing description text here.> |
+| grouping parenthesis | `(a + b) * (c + d)` | Returns the result of the equation, with the expressions in the parenthesis preceding the multiplication. |
 | function calls | `myFunc(var1, var2, ..., varN)`| Where myFunc is a function available in binding context (used as context for expression) or within `application level resources`. The value of the `var1` and `varN` will be used as parameter(s). |
 | filters | `expression \| filter1(param1, ...) | filter 2` | A filter is an object or a function that is applied to the value of the expression. Within the context of binding, this feature is used as converters. For more information, see the dedicated topic [Using Converters in Bindings](#using-converters-in-bindings).|
 
