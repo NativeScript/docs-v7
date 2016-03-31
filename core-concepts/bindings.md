@@ -83,7 +83,7 @@ var targetTextField = new textFieldModule.TextField();
 import labelModule = require("ui/label");
 var targetLabel = new labelModule.Label();
 ```
-After that, the target objects bind to the source object. <Comment: "that" in the previous sentence is vague to me. I suggest you replace "that" with "bound target objects" or whatever "that" refers to.> The TextField uses a two-way binding, so the user input could change the property in the code. And the binding of the Label is set to one-way in order to propagate changes only from the code to the UI.
+Finally, the target objects bind to the source object. The TextField uses a two-way binding, so the user input could change the property in the code. And the binding of the Label is set to one-way in order to propagate changes only from the code to the UI.
 
 <Comment: __Example 1: Please insert an SEO-friendly code caption.__>
 ``` JavaScript
