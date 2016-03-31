@@ -40,7 +40,7 @@ Part of the data binding settings is the way data flows. NativeScript data bindi
 Generally, almost every UI control could be bound to a data object (all NativeScript controls are created with data binding in mind). After your code has met the following requirements, you can use data-binding out of the box.
 
 * The target object has to be a successor of the **Bindable** class. All NativeScript UI controls already inherit from this class.
-* For **two-way** data binding, the target property should be to a **dependency property**.
+* For **two-way** data binding, the target property should be a **dependency property**.
 * For **one-way** binding, using a plain property is sufficient.
 * The data object should raise a **propertyChange** event for every change in the value of its property in order to notify all of the listeners interested in the change.
 
