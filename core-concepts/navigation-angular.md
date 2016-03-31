@@ -33,7 +33,7 @@ The main difference when creating an app with NativeScript is the you have a cho
 
 To show the difference between the to we are going to use the following components in the next examples:
 
-``` FirstComponent
+``` first-component.ts
 import {NS_ROUTER_DIRECTIVES} from "nativescript-angular/router/ns-router";
 @Component({
     selector: "first",
@@ -46,7 +46,7 @@ import {NS_ROUTER_DIRECTIVES} from "nativescript-angular/router/ns-router";
 })
 class FirstComponent { }
 ```
-``` SecondComponent
+``` second-component.ts
 import {NS_ROUTER_DIRECTIVES} from "nativescript-angular/router/ns-router";
 @Component({
     selector: "second",
@@ -59,7 +59,7 @@ import {NS_ROUTER_DIRECTIVES} from "nativescript-angular/router/ns-router";
 })
 class SecondComponent { }
 ```
-``` CSS
+``` app.css
 .title {
     font-size: 30;
     margin: 16;
