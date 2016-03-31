@@ -84,7 +84,7 @@ var str = new java.lang.String('Hello world!');
 var result = str.endsWith('world!');
 console.log(result); // true
 ```
-<Comment: My expectation is that I should see the word boolean somewhere in the previous Android example.>
+
 # Array
 
 JavaScript arrays map to specialized Java arrays on Android and `NSArray` on iOS.
