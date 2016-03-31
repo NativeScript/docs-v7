@@ -153,7 +153,7 @@ stackLayout.bindingContext = source;
 ```
 ###Binding to an event in XML
 
-There is an option to bind a function to execute on a specific event (like a MVVM command). This option is available only through an XML declaration. To implement such a functionality, the source object should have an event handler function.
+There is an option to bind a function to execute on a specific event (like an MVVM command). This option is available only through an XML declaration. To implement such a functionality, the source object should have an event handler function.
 
 <Comment: __Example 2: Please insert an SEO-friendly code caption.__>
 ``` XML
