@@ -139,7 +139,7 @@ To create a binding in XML, a source object is needed, which will be created the
 
 ###Binding to a property
 
-An important part of the data binding is setting the source object. For a continuous flow of data changes, the source property needs to emit a **propertyChange** event. NativeScript data binding works with any object that emits this event. Adding a binding **source** happens by passing it as a second parameter in the method **bind(bindingOptions, source)**. This parameter is optional and could be omited, in which case the source is used for a property named **bindingContext** of the `Bindable` class. What is special about this property is that it is inheritable across the visual tree. This means that a UI control can use the `bindingContext` of the first of its **parent** elements, which has an explicitly set **bindingContext**. In the example from [Two-Way Binding in Code](#two-way-binding-in-code), the `bindingContext` can be set either on a `Page` instance or a `StackLayout` instance and the `TextField` will inherit it as a proper source for the binding of its "text" property.
+An important part of the data binding is setting the source object. For a continuous flow of data changes, the source property needs to emit a **propertyChange** event. NativeScript data binding works with any object that emits this event. Adding a binding **source** happens by passing it as a second parameter in the method **bind(bindingOptions, source)**. This parameter is optional and could be omited, in which case source is used for a property named **bindingContext** of the `Bindable` class. What is special about this property is that it is inheritable across the visual tree. This means that a UI control can use the `bindingContext` of the first of its **parent** elements, which has an explicitly set **bindingContext**. In the example from [Two-Way Binding in Code](#two-way-binding-in-code), the `bindingContext` can be set either on a `Page` instance or a `StackLayout` instance and the `TextField` will inherit it as a proper source for the binding of its "text" property.
 
 ``` JavaScript
 page.bindingContext = source;
@@ -153,7 +153,7 @@ stackLayout.bindingContext = source;
 ```
 ###Binding to an event in XML
 
-There is an option to bind a function to execute on a specific event (MVVM command like). <Comment: Do you mean "like a MVVM command"> This option is available only through an XML declaration. To implement such a functionality, the source object should have an event handler function.
+There is an option to bind a function to execute on a specific event (like a MVVM command). This option is available only through an XML declaration. To implement such a functionality, the source object should have an event handler function.
 
 <Comment: __Example 2: Please insert an SEO-friendly code caption.__>
 ``` XML
