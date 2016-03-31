@@ -309,7 +309,7 @@ To use one of the built-in transitions set the `name` property of the [`Navigati
  - curl (same as curlUp) (iOS only)
  - curlUp (iOS only)
  - curlDown (iOS only)
- - explode (Android Lollipop an later)
+ - explode (Android Lollipop and later)
  - fade
  - flip (same as flipRight)
  - flipRight
