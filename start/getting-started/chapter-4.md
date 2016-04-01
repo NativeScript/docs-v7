@@ -361,7 +361,7 @@ viewModel.empty = function() {
 
 The code to make an HTTP call should look familiar, as it leverages the same fetch module you used in the previous section. Here, the fetch module's first `then()` handler checks for HTTP errors, the second `then()` handler converts the data from the response into JSON format, and the third handler pushes each grocery item from the response into the ObservableArray.
 
-If you load the app and log in with email address "tj.vantoll@gmail.com" and password "password", you should see a list of groceries that looks something like this:
+If you load the app and log in with email address "user@nativescript.org" and password "password", you should see a list of groceries that looks something like this:
 
 ![list 2]({{site.baseurl}}/img/cli-getting-started/chapter4/ios/3.png)
 ![list 2]({{site.baseurl}}/img/cli-getting-started/chapter4/android/3.png)
