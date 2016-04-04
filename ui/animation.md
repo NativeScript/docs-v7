@@ -18,7 +18,8 @@ For your convenience, we expose two ways of creating animations:
 ##Hello world example
 
 In __Example 1__ we will change the background color of a button from "red" to "green". You can use JavaScript or TypeScript code to do the following:
-<Comment: __Example 1: Please add an SEO-friendly caption for these code examples.__>
+
+__Example 1 (JavaScript): Changing background color animation.__
 ![hello-world](../img/modules/animation/hello-world.gif "Hello world")
 
 ``` JavaScript
@@ -31,7 +32,8 @@ view.animate({ backgroundColor: new colorModule.Color("green"), duration: 2000 }
 ```
 
 As _Example 2_ shows, you can express the same animation in CSS with the following definition:
-<Comment: __Example 2: Please add an SEO-friendly caption for this code example.__>
+
+<Comment: __Example2 (CSS): Changing background color animation.__ >
 ``` CSS
 @keyframes example {
     from { background-color: red; }
@@ -81,7 +83,7 @@ By default, an animation moves with a linear speed without acceleration or decel
 ![spring](../img/modules/animation/spring.gif "Spring")
 
 In NativeScript, the animation curve is represented by the AnimationCurve enumeration and can be specified with the curve property of the animation. In CSS, the animation curve is defined by using the animation-timing-function property (see __Example 3__):
-<Comment: __Example 3: Please add an SEO-friendly caption for this code example.__>
+<Comment: __Example 3: How to create simple animation__>
 ``` JavaScript
 view.animate({
 	translate: { x: 0, y: 100},    
@@ -110,7 +112,7 @@ view.animate({
 ```
 
 It is easy to create your own animation curve by passing in the x and y components of two control points of a cubic Bezier curve (as shown in __Example 4__). Using Bezier curves is a common technique to create smooth curves in computer graphics and they are widely used in vector-based drawing tools. The values passed to the cubicBezier method control the curve shape. The animation speed will be adjusted based on the resulting path.
-<Comment: __Example 4: Please add an SEO-friendly caption for this code example.__>
+<Comment: __Example 4: How to create own animation curve via cubic Bezier__>
 ![beziergraph](../img/modules/animation/bezier-graph.png "BezierGraph")
 
 ``` JavaScript
@@ -145,7 +147,7 @@ CSS animations are based on the simple and easy to use standard [CSS3 animations
 CSS animations consist of two components: a style describing the CSS animation and a set of keyframes that indicate the start and end states of the animation's style, as well as possible intermediate waypoints. You can change as many animatable CSS properties you want, as many times you want.
 
 __Example 5__ binds the "example" animation to the button element. The animation will lasts for 4 seconds, and it will gradually change the background-color of the button element from "red" to "green".
-<Comment: __Example 5: Please add an SEO-friendly caption for this code example.__>
+<Comment: __Example 5: How to cerate simple animation using only css.__>
 ```
 @keyframes example {
     from { background-color: red; }
@@ -203,7 +205,7 @@ The following list presents all animation properties:
 ## Animation keyframes
 
 To set multiple points at which an element should undergo a transition, use the **@keyframes** rule, shown in __Example 6__. It includes the animation name, any animation breakpoints, and the properties intended to be animated. 
-<Comment: __Example 6: Please add an SEO-friendly caption for this code example.__>
+<Comment: __Example 6: How to use **@keyframes** rule.__>
 ``` CSS
 @keyframes example {
     from { background-color: red; }
@@ -214,7 +216,7 @@ To set multiple points at which an element should undergo a transition, use the 
 __Example 6__ defines an animation with two keyframes. The "from" represents 0% (the start of the animation) and "to" represents 100% (the final value). You can add more keyframes by using percent.
 
 __Example 7__ shows how to change the background-color when the animation is 25% complete, 50% complete, and again when the animation is 100% complete.
-<Comment: __Example 7: Please add an SEO-friendly caption for this code example.__>
+<Comment: __Example 7: Changing background color in different animation stages.__>
 ``` CSS
 @keyframes example {
     0%   { background-color: red; }
@@ -225,7 +227,7 @@ __Example 7__ shows how to change the background-color when the animation is 25%
 ```
 
 You can set multiple properties in a keyframe, as shown in __Example 8__.
-<Comment: __Example 8: Please add an SEO-friendly caption for this code example.__>
+<Comment: __Example 8: Changing multiple properties in different animation stages.__>
 ``` CSS
 @keyframes example {
     0%   { background-color: red; transform: translate(0, 0); }
@@ -237,7 +239,7 @@ You can set multiple properties in a keyframe, as shown in __Example 8__.
 ```
 
 You can combine keyframes, as shown in __Example 9__.
-<Comment: __Example 9: Please add an SEO-friendly caption for this code example.__>
+<Comment: __Example 9: Set up properties for several keyframes__>
 ``` CSS
 @keyframes example {
     0%, 50% { background-color: red; transform: translate(0, 0); }
@@ -262,7 +264,7 @@ The **animation-delay** property specifies a delay (in seconds) before the anima
 ## Set how many times an animation should run
 
 The **animation-iteration-count** property defines the number of times an animation should run. The animation in __Example 10__ will play two times before it stops.
-<Comment: __Example 10: Please add an SEO-friendly caption for this code example.__>
+<Comment: __Example 10: How to use **animation-iteration-count** property__>
 ``` CSS
 .view {
 	background-color: red;
@@ -289,7 +291,7 @@ The **animation-timing-function** property specifies the speed curve of the anim
 - ease-in-out: Specifies an animation with a slow start and slow end.
 - spring: Specifies a spring animation.
 - cubic-bezier(n,n,n,n): Lets you define your own values in a cubic-bezier function, as shown in __Example 11__.
-<Comment: __Example 11: Please add an SEO-friendly caption for this code example.__>
+<Comment: __Example 11: How to specify speed the curve using cubic-bezier function.__>
 ``` CSS
 .view {
 	animation-name: example;
@@ -299,7 +301,9 @@ The **animation-timing-function** property specifies the speed curve of the anim
 
 ## Determine the result when the animation ends
 
-The **animation-fill-mode** property determines the element style when the animation finishes. Its default value is "none". In this case, all animated values will be reset to a previous value when the animation finishes. If you set the **animation-fill-mode** property to "forwards", all animated values will apply the property values for the time the animation ended. <Comment: I do not understand the last sentence. For example, if an annimation ends in 1 second, (perhaps a user presses Esc) what happens?>
+The **animation-fill-mode** property determines the element style when the animation finishes. Its default value is "none". In this case, all animated values will be reset to a previous value when the animation finishes. If you set the **animation-fill-mode** property to "forwards", all animated values will apply the property values for the time the animation ended. 
+<Comment: If you set the **animation-fill-mode** property to "forwards", all animated values will apply the property values for the same time as the duration of the animation .>
+<Comment: I do not understand the last sentence. For example, if an annimation ends in 1 second, (perhaps a user presses Esc) what happens?>
 <Comment: __Example 12: Please add an SEO-friendly caption for this code example.__>
 ``` CSS
 .view {
@@ -326,7 +330,7 @@ You can use the **animation-direction** property to play a CSS animation in reve
 ## Animation shorthand property
 <Comment: I suggest cutting the word "property" from the previous heading. When I read it, I expect to see a property called annimation-shorthand or shorthand but I do not see that in the example.>
 The **animation** property allows setting all seven animation properties with a single line:
-<Comment: __Example 14: Please add an SEO-friendly caption for this code example.__>
+<Comment: __Example 14: How to use animation shorthand property__>
 ``` CSS
 .view {
     animation: example 4s ease-in-out 2s infinite reverse forwards;
@@ -338,7 +342,7 @@ The supported syntax is:
 animation: name duration timing-function delay iteration-count direction fill-mode;
 
 You can combine two animations in the **animation** property by using commas:
-<Comment: __Example 15: Please add an SEO-friendly caption for this code example.__>
+<Comment: __Example 15: How to combine several animation in the **animation** property __>
 ``` CSS
 .view {
     animation: example 4s ease-in-out 2s infinite reverse, second-animation-example 5s ease-out;
@@ -348,7 +352,7 @@ You can combine two animations in the **animation** property by using commas:
 ## Pseudo selectors
 
 A pseudo selector is used to define a special state of an element. For example, when a button is touched by the user. You can use pseudo selectors to trigger animations:
-<Comment: __Example 16: Please add an SEO-friendly caption for this code example.__>
+<Comment: __Example 16: How to trigger animation on element special state __>
 ``` CSS
 .button {
     background-color: green;
@@ -371,7 +375,7 @@ A pseudo selector is used to define a special state of an element. For example, 
 ## Access CSS animations from code
 
 The simplest way to trigger a CSS animation is by changing the element **className** property:
-<Comment: __Example 17: Please add an SEO-friendly caption for this code example.__>
+<Comment: __Example 17: How to trigger css animation__>
 ```JavaScript
 var view = page.getViewById("view");
 view.className = "transparent";
@@ -382,7 +386,7 @@ view.className = "transparent";
 ```
 
 All keyframes defined in CSS can be accessed with code by using the **getKeyframeAnimationWithName** method. This allows further customization of animation properties:
-<Comment: __Example 18: Please add an SEO-friendly caption for this code example.__>
+<Comment: __Example 18: Accesing CSS defined keyframe in the code via **getKeyframeAnimationWithName** method __>
 ``` JavaScript
 var view = page.getViewById("view");
 var animationInfo = page.getKeyframeAnimationWithName("bounce");
@@ -405,7 +409,7 @@ animation.play(view).then(() => {
 # Animations with code
 
 In case you need to animate a **single** [`View`]({{site.baseurl}}/ApiReference/ui/core/view/View.md) and you don't need to be able to **cancel** the animation, you can simply use the shortcut **View.animate** method, which accepts an [`AnimationDefinition`]({{site.baseurl}}/ApiReference/ui/animation/AnimationDefinition.md), immediately starts the animation and then returns its finished promise.
-<Comment: __Example 19: Please add an SEO-friendly caption for this code example.__>
+<Comment: __Example 19: How to execute animation on single view.__>
 ``` JavaScript
 view.animate({
     translate: { x: 0, y: 100},    
@@ -461,7 +465,7 @@ The [`Animation`]({{site.baseurl}}/ApiReference/ui/animation/Animation.md) class
 ## Animating multiple properties
 
 It is easy to animate multiple properties at once; just pass the desired animatable properties and the corresponding values when calling the animate function.
-<Comment: __Example 20: Please add an SEO-friendly caption for this code example.__>
+<Comment: __Example 20: How to animate multiple properties.__>
 ``` JavaScript
 view.animate({
     backgroundColor: new color.Color("#3D5AFE"),
@@ -486,7 +490,7 @@ view.animate({
 ## Chaining animations with promises
 
 The animate method returns a promise that you can use to chain animations, as shown in __Example 21__. 
-<Comment: __Example 21: Please add an SEO-friendly caption for this code example.__> 
+<Comment: __Example 21: How to create chain animations.__> 
 ``` JavaScript
 view.animate({ opacity: 0 })
     .then(function () { return view.animate({ opacity: 1 }); })
