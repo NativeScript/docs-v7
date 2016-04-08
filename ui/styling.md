@@ -29,7 +29,12 @@ Similarly to the [DOM Style Object](http://www.w3schools.com/jsref/dom_obj_style
 The CSS styles can be set on 3 different levels:
 
 * [Application-wide CSS](#application-wide-css)&mdash;applies to every application page
+{% nativescript %}
 * [PageSpecific CSS](#page-specific-css)&mdash;applies to the page's UI views
+{% endnativescript %}
+{% angular %}
+* [Component specific CSS](#component-specific-css)&mdash;applies for component only
+{% endangular %}
 * [Inline CSS](#inline-css)&mdash;applies directly to a UI view
 
 If there is CSS declared on different levels - all will be applied. The inline CSS will have the highest priority and the allication CSS - the lowest.
@@ -55,7 +60,11 @@ application.start({ moduleName: "main-page" });
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+
+```TypeScript
+nativeScriptBootstrap(ListTest, {"cssFile": "style.css"});
+```
+
 {% endangular %}
 > The path to the CSS file is relative to the application root folder.
 
@@ -76,7 +85,28 @@ page.css = "button { color: red }";
 After you have set the default CSS for the page, you can add to it using two methods: adding CSS from a string and adding CSS from a file.
 {% endnativescript %}
 {% angular %}
-TODO... Component-specific CSS: styles/styleUrls
+### Component specific CSS
+
+In an Angular application everything is a component, therefore it is very common task is to add a component specific css. Adding a component specific css in a NativeScript-Angular app involves using `styles` or `styleUrls` options of the component.
+
+```TypeScript
+@Component({
+    selector: 'list-test',
+    styles: ['.third { background-color: lime; }'],
+    template: ...
+```
+
+```TypeScript
+@Component({
+    selector: 'list-test',
+    styleUrls: ['style.css'],
+    template: ...
+```
+
+This code will create an unique attribute for the component and css will be applied to that component only.
+
+> Css selectors will be available on an application level so `styles` and `styleUrls` will be applied even if the component is placed in another page within application. As for application specific css path to the file is relative to application root folder.
+
 {% endangular %}
 
 #### Adding CSS From a String
@@ -120,6 +150,8 @@ NativeScript supports a subset of the [CSS selector syntax](http://www.w3schools
 * [Type Selector](#type-selector)
 * [Class Selector](#class-selector)
 * [ID Selector](#id-selector)
+* [Hierarchical selector](#hierachical-selector-css-combinators)
+* [Attribute selector](#attribute-selector)
 
 ### Type Selector
 Like [CSS element selectors](http://www.w3schools.com/cssref/sel_element.asp), type selectors in NativeScript select all views of a given type. Type selectors are case-insensitive, so you can use both `button` and `Button`.
@@ -166,6 +198,62 @@ btn.id = "login-button"
 ```
 ```XML
 <Button id="login-button" />
+```
+
+### Hierachical selector (CSS combinators)
+
+A css selector could contain more than one simple selectors and between selectors a combinator symbol could be included.
+
+* (space) - Descendant selector. For example following code will select all buttons inside StackLayout (no matter) at which level.
+
+```CSS
+stacklayout button { background-color: blue; }
+```
+```XML
+<StackLayout>
+	<WrapLayout>
+    	<Button id="login-button" testAttr='flower' />
+    </WrapLayout>
+</StackLayout>
+```
+
+* (>) - A direct child selector. Using the previous example if css is changed to:
+
+```CSS
+stacklayout > button { background-color: blue; }
+```
+
+Css style will not be applied. In order to apply the selector WrapLayout should be removed.
+
+### Attribute selector
+
+```CSS
+button[testAttr]{ background-color: blue; }
+```
+```XML
+<Button testAttr="flower" />
+```
+
+This selector will select all buttons which have attribute `testAttr` with some value.
+
+Also some more advanced scenarios are supported:
+
+* button[testAttr='flower'] {...} - Will apply css on every button which have `testAttr` property set exactly to value `flower`.
+* button[testAttr~='flower'] {...} - Selects all buttons with a `testAttr` property that contains a space-separated list of words, one of which is "flower".
+* button[testAttr|='flower'] {...} - Selects all buttons with a `testAttr` property value that begins with "flower". The value has to be a whole word, either alone like `btn['testAttr'] = 'flower'`, or followed by hypen (-), like `btn['testAttr'] = 'flower-house'`.
+* button[testAttr^='flower'] {...} - Selects all buttons with a `testAttr` property value that begins with "flower". The value does not have to be a whole word.
+* button[testAttr$='flower'] {...} - Selects all buttons with a `testAttr` property value that ends with "flower". The value does not have to be a whole word.
+* button[testAttr*='flo'] {...} - Selects all buttons with a `testAttr` property value that contains "flo". The value does not have to be a whole word.
+
+Attribute selectors could be used alone or could be combined with all type of css selectors. 
+
+```CSS
+#login-button[testAttr='flower'] { background-color: blue; }
+[testAttr] {color: white;}
+```
+```XML
+<Button id="login-button" testAttr='flower' />
+<Label testAttr="some value" />
 ```
 
 ## Supported CSS Properties
