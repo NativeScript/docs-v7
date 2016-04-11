@@ -82,6 +82,6 @@ IOS resources should be added inside the `App_Resources\ios` folder in your app.
 
 For more information see [Icon and Image Sizes](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1) in the iOS Developer Library.
 
-Once the NativeScript project is prepared(`tns ios prepare`) all the images will be copied to the `platforms\ios\<project-name>\Resources\Icons`.
+Once the NativeScript project is prepared(`tns ios prepare`) all the images will be copied to the `platforms\ios\<project-name>\Resources`.
 
-**iOS images must be `PNG` files**
+**iOS images must be `PNG` or `JPG` files**
