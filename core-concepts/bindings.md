@@ -181,7 +181,7 @@ page.bindingContext = source;
 
 A very common case is to provide a list (array) of plain elements (numbers, dates, strings) to a `ListView` items collection. All examples above demonstrate how to bind a UI element to a property of the bindingContext. If there is only plain data, there is no property to bind, so the binding should be to the entire object. Here comes another feature of NativeScript binding &mdash; object or value binding. To refer to the entire object, which is Date() in the example, the keyword `$value` should be used.
 
-<Comment: __Example 3: Binding ListView to a property of the bindingContext .__>
+<Comment: __Example 3: Bind ListView to a property of the bindingContext .__>
 ``` XML
 <Page>
 	<StackLayout>{%raw%}
