@@ -15,10 +15,15 @@ NativeScript lets you create dialogs in your app in a manner similar to the web 
 * [Prompt](#prompt)
 * [Login](#login)
 * [Action](#action)
+{% angular %}* [Custom Dialog](#custom-dialog)
+  * [Showing Custom Dialog](#showing-custom-dialog)
+  * [Passing Parameters](#passing-parameters)
+  * [Returning a Result](#returning-a-result)
+{% endangular %}
 
 > You can call dialog functions with parameters similar to the web browser API or the `options` object. All dialog functions return a `Promise` object. **In both iOS and Android dialogs will not block your code execution!**
 
-### Alert
+## Alert
 
 **Web-Browser Style**
 
@@ -58,7 +63,7 @@ dialogs.alert({
 });
 ```
 
-### Confirm
+## Confirm
 
 **Web-Browser Style**
 
@@ -106,7 +111,7 @@ dialogs.confirm({
 
 > The dialog result argument is boolean. The result is true if the dialog is closed with the OK button. The result is false if closed with the Cancel button. The result is undefined if closed with a neutral button.
 
-### Prompt
+## Prompt
 
 **Web-Browser Style**
 
@@ -159,7 +164,7 @@ dialogs.prompt({
 ```
 > The dialog result argument is an object with two properties: result and text (entered text). The result property is true if the dialog is closed with the OK button, false if closed with the Cancel button or undefined if closed with a neutral button.
 
-### Login
+## Login
 
 **Web-Browser Style**
 
@@ -211,7 +216,7 @@ dialogs.login({
 
 > The dialog result argument is an object with three properties: result, userName and password (entered user name and password). The result property is true if the dialog is closed with the OK button, false if closed with the Cancel button or undefined if closed with a neutral button.
 
-### Action
+## Action
 
 **Web-Browser Style**
 
@@ -251,3 +256,121 @@ dialogs.action({
 });
 ```
 > The dialog result argument is a string (the text of the clicked option or the text of the cancel button).
+{% angular %}
+## Custom Dialog
+
+You can also create dialogs with custom content. All the needed types live inside the `nativescript-angular/modal-dialog` module.
+
+### Showing Custom Dialog
+
+Start by getting a reference to  `ModalDialogService` by injecting it in you component:
+
+``` TypeScript
+import {ModalDialogService, ModalDialogOptions, ModalDialogHost} from "nativescript-angular/modal-dialog";
+
+@Component({
+    // ...
+    providers: [ModalDialogService],
+})
+export class CustomDialogTest {
+    public result: string;
+    constructor(private modalService: ModalDialogService) { }
+    ...
+}
+```
+Ignore the `result` field for now - we will use it later on.
+
+Make sure you have added `modal-dialog-host` somewhere inside the your component template. If you skip it - you will get an exception when trying to show the dialog.
+
+``` TypeScript
+@Component({
+    directives: [ModalDialogHost],
+    template: `
+    <StackLayout modal-dialog-host>
+        <Button text="show" (tap)="show()"></Button>
+        <Label [text]="'RESULT: ' + result"></Label>
+    </StackLayout>`,
+    // ...
+})
+```
+
+Call the `showModal` method of the dialog service passing the type of the component that should be loaded in the dialog:
+
+``` TypeScript
+public show() {
+    this.modalService.showModal(DialogContent, {});
+}
+```
+
+### Passing Parameters
+
+You can pass parameters to the dialog component when calling the `showModal` method. You can also specify if the dialog should be shown fullscreen.
+
+``` TypeScript
+var options: ModalDialogOptions = {
+    context: { promptMsg: "This is the prompt message!" },
+    fullscreen: true
+};
+
+this.modal.showModal(DialogContent, options)
+```
+
+> **TIP:** By design on iPhone, a modal page appears only in fullscreen.
+
+Inside the `DialogContent`, you can get the parameters by injecting a `ModalDialogParams`:
+
+``` Typescript
+import {Component} from 'angular2/core';
+import {ModalDialogParams} from "nativescript-angular/modal-dialog";
+
+@Component({
+    selector: 'modal-content',
+    template: `
+    <StackLayout margin="24" horizontalAlignment="center" verticalAlignment="center">
+        <Label [text]="prompt"></Label>
+        <StackLayout orientation="horizontal" marginTop="12">
+            <Button text="ok" (tap)="close('OK')"></Button>
+            <Button text="cancel" (tap)="close('Cancel')"></Button>
+        </StackLayout>
+    </StackLayout>
+    `
+})
+export class DialogContent {
+    public prompt: string;
+    constructor(private params: ModalDialogParams) {
+        this.prompt = params.context.promptMsg;
+    }
+
+    public close(res: string) {
+        // ...
+    }
+}
+```
+
+The `params.context` is the same object as `oprions.context` passed to the `showModal` method.
+
+### Returning a Result
+
+To close the dialog call the `closeCallback` function of the dialog params. 
+
+```
+public close(result: string) {
+    this.params.closeCallback(result);
+}
+```
+
+Note that the `showModal` function actually returns a promise which is resolved when the dialog closes. The value you pass to the `closeCallback` will be the value returned by the promise. 
+Let's modify the `show` function in the main component so that it shows the result when the dialog closes:
+
+``` TypeScript
+public show(fullscreen: boolean) {
+    var options: ModalDialogOptions = {
+        context: { promptMsg: "This is the prompt message!" },
+        fullscreen: true
+    };
+
+    this.modal.showModal(DialogContent, options)
+        .then((dialogResult: string) => { this.result = dialogResult; })
+}
+```
+{% endangular %}
