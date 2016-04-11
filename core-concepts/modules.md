@@ -26,7 +26,7 @@ In your project, the files for each module reside in a dedicated subdirectory in
 * [WHATWG polyfills](#whatwg-polyfills)
 * 
 ### Core modules
-<Comment: Your team's capitalization style in other help articles is that heading 3s like this do not use title case but instead use sentence case. So in this case, Core modules is appropriate. I will change the article to match.>
+
 + [application]({{site.baseurl}}/ApiReference/application/HOW-TO.md): Provides the application abstraction with all related methods.
 + [console]({{site.baseurl}}/ApiReference/console/HOW-TO.md): Lets you print messages to the device console.
 + [application-settings]({{site.baseurl}}/ApiReference/application-settings/HOW-TO.md): Lets you save and restore any information related to your application.
