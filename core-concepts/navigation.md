@@ -45,7 +45,7 @@ NativeScript provides two approaches to instantiating your pages.
 You can define the UI declaration and the code for the page separately.
 
 To apply this approach, create a `XML` file for each page to hold the layout of the page. Thus your code will be in a `JS` or a `TS` file. The names of the `XML` and the `JS` or `TS` file must match.
-<Comment: __Example 1:  Please provide an SEO-friendly caption for this example.__>
+<Comment: __Example 1:  Creating sample page in XML.__>
 
 ``` XML
 <!-- main-page.xml-->
@@ -71,7 +71,7 @@ export function onPageLoaded(args: observableModule.EventData) {
 **Create a page in code**
 
 To apply this approach, you need to create a function named `createPage` that will return an instance of your page. NativeScript considers `createPage` a factory function.
-<Comment: __Example 2:  Please provide an SEO-friendly caption for this example.__>
+<Comment: __Example 2:  Creating a page using code.__>
 ``` JavaScript
 var pagesModule = require("ui/page");
 var labelModule = require("ui/label");
@@ -152,7 +152,7 @@ topmost.navigate("details-page");
 ### Navigate using a function
 
 A more dynamic way of navigating can be done by providing a function that returns the instance of the page to which you want to navigate.
-<Comment: __Example 3:  Please provide an SEO-friendly caption for this example.__>
+<Comment: __Example 3:  How to navigate dinamicly to page created via code.__>
 ``` JavaScript
 var factoryFunc = function () {
     var label = new labelModule.Label();
@@ -179,7 +179,7 @@ topmost.navigate(factoryFunc);
 
 When you navigate to another page, you can pass context to the page with a [`NavigationEntry`]({{site.baseurl}}/ApiReference/ui/frame/NavigationEntry.md) object. This approach provides finer control over navigation compared to other navigation approaches. For example, with `NavigationEntry` you can also animate the navigation.
 
-<Comment: __Example 4:  Please provide an SEO-friendly caption for this example.__>
+<Comment: __Example 4:  How to pass content between different pages.__>
 ``` JavaScript
 var navigationEntry = {
     moduleName: "details-page",
@@ -202,7 +202,7 @@ topmost.navigate(navigationEntry);
 In this example, this master-details app consists of two pages. The main page contains a list of entities. The details page shows information about the currently selected entity.
 
 When you navigate to the details page, you transfer a primary key or ID information about the selected entity. 
-<Comment: __Example 5:  Please provide an SEO-friendly caption for this example.__>
+<Comment: __Example 5:  Navigate to the details page with data content for specific index .__>
 ``` JavaScript
 function listViewItemTap(args) {
     // Navigate to the details page with context set to the data item for specified index
@@ -223,7 +223,7 @@ export function listViewItemTap(args: listView.ItemEventData) {
 ```
 
 With the **onNavigatedTo** callback, you show the details for the entity.
-<Comment: __Example 6:  Please provide an SEO-friendly caption for this example.__>
+<Comment: __Example 6:  Showing the content received from previous page.__>
 ``` JavaScript
 function pageNavigatedTo(args) {
     var page = args.object;
@@ -242,7 +242,7 @@ export function pageNavigatedTo(args: observable.EventData) {
 ### Navigate without history
 
 You can navigate to a page without adding this navigation to the history. Set the `backstackVisible` property of the [`NavigationEntry`]({{site.baseurl}}/ApiReference/ui/frame/NavigationEntry.md) to `false`. If this property is set to false, then the Page will be displayed, but once navigated from it will not be able to be navigated back to.
-<Comment: __Example 7:  Please provide an SEO-friendly caption for this example.__>
+<Comment: __Example 7:  Page navigation, without saving navigation history.__>
 ``` JavaScript
 var navigationEntry = {
     moduleName: "login-page",
@@ -261,7 +261,7 @@ topmost.navigate(navigationEntry);
 ### Clear history
 
 You can navigate to a new page and decide to completely clear the entire navigation history. Set the `clearHistory` property of the [`NavigationEntry`]({{site.baseurl}}/ApiReference/ui/frame/NavigationEntry.md) to `true`. This will prevent the user from going back to pages previously visited. This is extremely useful if you have a multiple-page authentication process and you want to clear the authentication pages once the user is successfully logged in and redirected to the start page of the application.
-<Comment: __Example 8:  Please provide an SEO-friendly caption for this example.__>
+<Comment: __Example 8:  Prevent user from going back by setting clearHistory to true.__>
 ``` JavaScript
 var navigationEntry = {
     moduleName: "main-page",
@@ -281,7 +281,7 @@ topmost.navigate(navigationEntry);
 
 By default, all navigation will be animated and will use the default transition for the respective platform (UINavigationController transitions for iOS and Fragment transitions for Android). To change the transition type, set the `navigationTransition` property of the [`NavigationEntry`]({{site.baseurl}}/ApiReference/ui/frame/NavigationEntry.md) to an object conforming to the [`NavigationTransition`]({{site.baseurl}}/ApiReference/ui/frame/NavigationTransition.md) interface.
 
-<Comment: __Example 9:  Please provide an SEO-friendly caption for this example.__>
+<Comment: __Example 9:  Set up transiton property on page navigation.__>
 ``` JavaScript
 var navigationEntry = {
     moduleName: "main-page",
@@ -349,7 +349,7 @@ frameModule.Frame.defaultTransition = { name: "fade" };
 ```
 
 To specify different transitions for the different platforms use the `transitioniOS` and `transitionAndroid` properties of the [`NavigationEntry`]({{site.baseurl}}/ApiReference/ui/frame/NavigationEntry.md).
-<Comment: __Example 10:  Please provide an SEO-friendly caption for this example.__>
+<Comment: __Example 10:  Set up platform specific transitions.__>
 ``` JavaScript
 var navigationEntry = {
     moduleName: "main-page",
@@ -388,7 +388,7 @@ topmost.navigate(navigationEntry);
 ### Custom transitions
 Instead of setting the `name` property to one of the predefined transitions, you can set the `instance` property of the [`NavigationTransition`]({{site.baseurl}}/ApiReference/ui/frame/NavigationTransition.md) to an instance of a class that inherits from [`Transition`]({{site.baseurl}}/ApiReference/ui/transition/Transition.md). You can create your own custom user-defined transition by writing platform-specific code to animate the transition. To do that you need to inherit from the [`Transition`]({{site.baseurl}}/ApiReference/ui/transition/Transition.md) class and override one method for each platform. Since there will be platform-specific code, you need to separate your code into two separate files. Here is an example of a custom transition that shrinks the disappearing page while exapnding the appearing page by using a scale affine transform.
 
-<Comment: __Example 11:  Please provide an SEO-friendly caption for this example.__>
+<Comment: __Example 11:  Create your own custom transition.__>
 `custom-transition.android.js/ts`
 ``` JavaScript
 var transition = require("ui/transition");
@@ -528,7 +528,7 @@ export class CustomTransition extends transition.Transition {
 
 Once you have `custom-transition.android.js/ts` and `custom-transition.ios.js/ts` created, you need to require the module and instantiate your CustomTransition, optionally passing a duration and curve to the constructor.
 
-<Comment: __Example 12:  Please provide an SEO-friendly caption for this example.__>
+<Comment: __Example 12:  Require module and instantiate custom transition.__>
 ```JavaScript
 var customTransition = new customTransitionModule.CustomTransition(300, "easeIn");
 var navigationEntry = {
@@ -565,7 +565,7 @@ Use the **showModal** method of the page class to show another page as a modal d
 
 > **TIP:** By design on iPhone, a modal page appears only in fullscreen.
 
-<Comment: __Example 13:  Please provide an SEO-friendly caption for this example.__>
+<Comment: __Example 13:  Receiving data from the modal page.__>
 **main-page**
 ``` JavaScript
  var modalPageModule = "./modal-views-demo/login-page";
