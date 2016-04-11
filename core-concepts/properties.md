@@ -27,7 +27,7 @@ This article contents:
 
 Being a TypeScript framework, NativeScript uses TypeScript properties. After transpilation, these result in ECMAScript v.5 compliant JavaScript with setter and getter methods to support working with class members, thus ensuring readable and manageable code. The code in __Example 1__ demonstrates how the TypeScript is transformed to JavaScript.
 
-<Comment: __Example 1: Please write an SEO-friendly caption for this code example.>
+<Comment: __Example 1: How TypeScript is transformed to JavaScript.>
 ``` JavaScript
 var MyClass = (function () {
   function MyClass() {
@@ -83,7 +83,7 @@ Only classes that derive from [DependencyObservable]({{site.baseurl}}/ApiReferen
 
 The code in __Example 2__ creates a bare-bones property that adds a static part compared to a standard property implementation.
 
-<Comment: __Example 2: Please write an SEO-friendly caption for this code example.>
+<Comment: __Example 2: Creating property that adds a static part compared to a standard property.>
 ``` JavaScript
 var dependencyObservable = require("ui/core/dependency-observable");
 exports.myPropertyProperty = new dependencyObservable.Property("myProperty",
@@ -131,7 +131,7 @@ export class MyClass extends dependencyObservable.DependencyObservable {
 
 __Example 3__ demonstrates how to implement the functionality of changing a notification. It adds a callback function, `onMyPropertyChanged`, that prints a message about a change in a property.
 
-<Comment: __Example 3: Please write an SEO-friendly caption for this code example.>
+<Comment: __Example 3: How to handle onPropertyChange event.>
 ``` JavaScript
 var dependencyObservable = require("ui/core/dependency-observable");
 function onMyPropertyChanged(eventData) {
@@ -196,7 +196,7 @@ export class MyClass extends dependencyObservable.DependencyObservable {
 
 __Example 4__ demonstrates how to implement value validation. It adds a callback function, `validateMyProperty`, that takes the new property value and validates it using a simple rule.
 
-<Comment: __Example 4: Please write an SEO-friendly caption for this code example.>
+<Comment: __Example 4: How to implement value validation.>
 
 ``` JavaScript
 var dependencyObservable = require("ui/core/dependency-observable");
@@ -239,7 +239,7 @@ export var myPropertyProperty = new dependencyObservable.Property(
 
 __Example 5__ demonstrates how to create an inheritable dependency property:
 
-<Comment: __Example 5: Please write an SEO-friendly caption for this code example.>
+<Comment: __Example 5: How to create inheritable dependency property.>
 ``` JavaScript
 var dependencyObservable = require("ui/core/dependency-observable");
 exports.myPropertyProperty = new dependencyObservable.Property("myProperty", "MyClass",
