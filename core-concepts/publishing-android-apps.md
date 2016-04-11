@@ -1,7 +1,7 @@
 ---
 title: Publishing for Android
 description: Learn how to publish your app in the Play Store for Android users.
-position: 13
+position: 14
 slug: publishing-android-apps
 ---
 
