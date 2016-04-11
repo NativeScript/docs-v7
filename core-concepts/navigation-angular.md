@@ -27,9 +27,9 @@ NativeScript apps consist of pages which represent the separate application scre
 
 > Note: You will rarely need to create Page instances manually. The framework creates pages automatically when bootstrapping or navigating the app. You can get a reference to the current page by injecting it into your component using the DI.
 
-The main difference when creating an app with NativeScript is the you have a choice between two router outlets:
-* `router-outlet` - replaces the content of the outlet with different component.
-* `page-router-outlet` - used pages to navigate.
+In NativeScript you have a choice between two router outlets:
+* `router-outlet` - replaces the content of the outlet with different component. It is the default outlet that comes from angular2.
+* `page-router-outlet` - uses pages to navigate. The new components are shown in a new page.
 
 To show the difference between the to we are going to use the following components in the next examples:
 
@@ -79,11 +79,11 @@ class SecondComponent { }
 
 ## Router Links
 
-One thing you might have noticed in the code abovr is the `nsRouterLink` directive. It is similar to [`routerLink`](https://angular.io/docs/ts/latest/guide/router.html#!#-routerlink-binding), but works with NativeScript navigation. It is included in the `NS_ROUTER_DIRECTIVES`.
+One thing you might have noticed in the code above is the `nsRouterLink` directive. It is similar to [`routerLink`](https://angular.io/docs/ts/latest/guide/router.html#!#-routerlink-binding), but works with NativeScript navigation. It is included in the `NS_ROUTER_DIRECTIVES`.
 
 ## Router Outlet
 
-Let's take a look at the following example:
+Let's take a look at the following example that uses `router-outlet`:
 
 ``` TypeScript
 import {nativeScriptBootstrap} from "nativescript-angular/application";
@@ -117,7 +117,7 @@ nativeScriptBootstrap(NavigationTestRouter, [NS_ROUTER_PROVIDERS]);
 
 There are few things worth noting:
 
-The application is bootstrapped using the `NS_ROUTER_PROVIDERS`. It is a collection of DI providers which internally includes the `ROUTER_PROVIDERS` from `angular2/router` but also adds some NativeScript specific providers. 
+The application is bootstrapped using the `NS_ROUTER_PROVIDERS`. It is a collection of DI providers which internally includes the `ROUTER_PROVIDERS` from `angular2/router`, but also adds some NativeScript specific providers. 
 
 The result is that with each navigation the content of the `router-outlet` is replaced with the new component:
 
@@ -143,7 +143,7 @@ export class NavigationTestPageRouter { }
 nativeScriptBootstrap(NavigationTestPageRouter, [NS_ROUTER_PROVIDERS]);
 ```
 
-The main difference here is that when navigating - the new component will be loaded in a separate `Page` as a root view. This means that any content *outside* the `page-router-outlet` will not be included in the new page. This is the reason why the `page-router-outlet` is the single root element in the application component. 
+The main difference here is that when navigating - the new component will be loaded as a root view in a **new** `Page`. This means that any content *outside* the `page-router-outlet` will not be included in the new page. This is the reason why the `page-router-outlet` is usually the single root element in the application component. 
 
 Here is the result:
 
