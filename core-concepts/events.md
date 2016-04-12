@@ -11,12 +11,12 @@ previous_url: /events
 Contents of this article:
 
 * [Overview](#overview)
-* [Adding an Event Handler](#adding-an-event-handler)
-* [Removing an Event Listener](#removing-an-event-listener)
-* [PropertyChange Event](#propertychange-event)
-* [Creating a Custom Event](#creating-a-custom-event)
-* [Avoiding Memory Leaks](#avoiding-memory-leaks)
-* [Working with Weak Events](#working-with-weak-events)
+* [Adding an event handler](#adding-an-event-handler)
+* [Removing an event listener](#removing-an-event-listener)
+* [PropertyChange event](#propertychange-event)
+* [Creating a custom event](#creating-a-custom-event)
+* [Avoiding memory leaks](#avoiding-memory-leaks)
+* [Working with weak events](#working-with-weak-events)
 
 
 ## Overview
@@ -31,10 +31,10 @@ To add an **event handler** means setting a function (method) that executes when
 
 __Example 1__ shows how to set a function that prints a "Hello World!" message in the console when a button is tapped. You can choose between the shorthand syntax and the full syntax or you can declare the event handler in XML.
 
-###Example 1 (JavaScript): Adding an event handler or event listener using she short and full syntax.
 
 The example below shows how to add an event listener by using the short and full syntax. There is a third optional parameter that represents the `this` argument.
 
+###Example 1 (JavaScript): Adding an event handler or an event listener using the short and full syntax.
 ``` JavaScript
 //Adding a listener with the short syntax
 var buttonModule = require("ui/button");
@@ -55,7 +55,7 @@ var onTap = function (eventData) {
 
 testButton2.addEventListener(buttonModule.Button.tapEvent, onTap, this);
 ```
-###Example 1 (TypeScript): Adding an event handler or event listener using she short and full syntax.
+###Example 1 (TypeScript): Adding an event handler or an event listener using the short and full syntax.
 ``` TypeScript
 //Adding a listener with the short syntax
 import buttonModule = require("ui/button");
@@ -77,10 +77,9 @@ var onTap = function (eventData) {
 testButton2.addEventListener(buttonModule.Button.tapEvent, onTap, this);
 ```
 
-### Example 1 (XML): Adding an event handler or event listener using an XML declaration.
+Another option to set an event handler is to use an XML declaration.
 
-Another option to set an event handler is to use an XML declaration like this:
-
+###Example 1 (XML): Adding an event handler or an event listener using an XML declaration.
 ``` XML
 <Page>
   <StackLayout>
@@ -88,9 +87,9 @@ Another option to set an event handler is to use an XML declaration like this:
   </StackLayout>
 </Page>
 ```
-You need a code-behind file (see __Example 2__)to write the function body (the code-behind file has the same file name, but a different extension: .js or .ts depending on the language you are using). 
+You need a code-behind file (see __Example 2__) to write the function body (the code-behind file has the same file name, but a different extension: .js or .ts depending on the language you are using). 
 
-###Example 2: Hooking to button tap event
+###Example 2: Hooking to a button tap event
 ``` JavaScript
 function onTap(eventData) {
   console.log("Hello World!");
@@ -113,7 +112,7 @@ Usually you don't need to remove the event listener. You might need to do it whe
 
 __Example 3__ uses the shorthand and full syntax to remove all listeners for the tap event of the testButton instance. If more than one object are listening for events, you can set a second parameter with the name of the callback function. This way only the referenced event listener is removed. When multiple event listeners with different `this` arguments are available, a third optional parameter is used.
 
-###Example 3: Removing button tap even listener
+###Example 3: Removing a button tap event listener
 
 ``` JavaScript
 //Removing a listener with short syntax
@@ -131,9 +130,9 @@ testButton2.removeEventListener(buttonModule.Button.tapEvent);
 ```
 ## PropertyChange Event
 
-The `Observable` class provides a built-in event called `propertyChange` that is called when a property is changed. __Example 4__ shows how to subscribe to this event:
+The `Observable` class provides a built-in event called `propertyChange` that is called when a property is changed. __Example 4__ shows how to subscribe to this event.
 
-###Example 4: Handle propertyChage event
+###Example 4: Handle the propertyChange event
 
 ``` JavaScript
 var observableModule = require("data/observable");
@@ -151,9 +150,9 @@ observableObject.on(observableModule.Observable.propertyChangeEvent, function(pr
   console.log(propertyChangeData.propertyName + " has been changed and the new value is: " + propertyChangeData.value);
 });
 ```
-It is important to note that the `propertyChange` event is critical for the entire [data binding]({% slug binding %}) system. To take advantage of the data binding mechanism, all you have to do is make your business object **inherit** the `Observable` class. __Example 5__ demonstrates how to do that:
+It is important to note that the `propertyChange` event is critical for the entire [data binding]({% slug binding %}) system. To take advantage of the data binding mechanism, all you have to do is make your business object **inherit** the `Observable` class. __Example 5__ demonstrates how to do that.
 
-###Example 5: Create custom class and inheriting `Observable` class
+###Example 5: Creating a custom class and inheriting `Observable` class
 ``` JavaScript
 var observableModule = require("data/observable");
 var MyClass = (function (_super) {
@@ -195,7 +194,7 @@ The code snippet in __Example 5__ fires the `propertyChange` event when the prop
 
 If your business logic demands it, you may want to fire (raise or emit) a custom event on a particular action (see __Example 6__). To do that, call the `Observable.notify()` method when the action is completed. This method takes any **implementer** of the [EventData interface]({{site.baseurl}}/ApiReference/data/observable/EventData.md) as event data. It includes basic information about an event&mdash;its name as `eventName` and an instance of the event sender as `object`).
 
-###Example 6: Creating custom event.
+###Example 6: Creating a custom event.
 ``` JavaScript
 var eventData = {
   eventName: "myCustomEventName",
@@ -237,7 +236,7 @@ A weak event, as its name suggests, creates an weak reference to the listener ob
 ### Adding a Weak Event Listener
 
 Using weak event listeners is very similar to normal events. __Example 7__ shows how to add a weak event listener (code comments are included for clarity):
-###Example 7: Creating weak event and handle property change event 
+###Example 7: Creating a weak event and handling a property change event 
 ``` JavaScript
 var weakEventListenerModule = require("ui/core/weakEventListener");
 var buttonModule = require("ui/button");
@@ -311,8 +310,7 @@ var weakEventListenerOptions: weakEventListenerModule.WeakEventListenerOptions =
 weakEL.addWeakEventListener(this.weakEventListenerOptions);
 ```
 
-__Example 7__ shows how to attach a weak event listener to an observable object instance. A closer look to the `handlePropertyChange` function shows that `text` property of the `this` object is changed when the `propertyChange` event is raised (via the button tap event). The function demonstrates how to use the `handlerContext` property&mdash;its value is taken as an argument to `this` inside the event handler function.
-<Comment: What does it refer to at the beginning of the previous sentence? Something specific in Example 7? The function? The text property? The event? It is not clear to me so I do not think the customer will know either. Please replace "it" with the noun that is doing the demonstrating.>
+__Example 7__ shows how to attach a weak event listener to an observable object instance. A closer look at the `handlePropertyChange` function shows that `text` property of the `this` object is changed when the `propertyChange` event is raised (via the button tap event). The function demonstrates how to use the `handlerContext` property&mdash;its value is taken as an argument to `this` inside the event handler function.
 
 ### Removing a Weak Event Listener
 
