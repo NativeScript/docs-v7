@@ -72,7 +72,7 @@ If you want to extend the default icon set, and you don't want to use the defaul
 List the icons using [`CFBundleIconFiles`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-SW10) or [`CFBundleIcon`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-SW13).
 
 For example, listing icons using `CFBundleIconFiles`:
-<Comment: __Example 1: Please write an SEO-friendly caption for this code example.__>
+<Comment: __Example 1: Customise Info.plist.__>
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
