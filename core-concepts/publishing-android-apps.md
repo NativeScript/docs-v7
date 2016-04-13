@@ -114,8 +114,12 @@ You will need a developer account and you will need to log into the [Google Play
 ### Creating an app
 Go to the **All applications** section and click the **+ Add new application** button.
 
-You will get prompted to provide the app title and you can then proceed with the store listings.
-You can fill in app description, screenshots and so on.
+1.You will get prompted to provide the app title
+
+2.You can then proceed with the store listings.
+
+3.You can fill in app description, screenshots and so on.
+
 <Comment: Why not make the previous lines a numbered list? You are instructing the customer to perform steps in a particular order.>
 You can also submit an APK. Read about how to obtain an APK from a NativeScript app. <Comment: You are missing a link to this resource.>
 
@@ -131,6 +135,7 @@ The *versionCode* is an integer so you should carefully consider a strategy for 
 
 Both values are stored in `app/App_Resources/Android/AndroidManifest.xml`.
 <Comment: You have not explained what *android:versionName* is or why it would be a different number than versionCode.>
+<Comment: virtionName is a string value, which is used to represen the application version to the user whereas android:versionCode, which is integer value showing version of the application code relative to the other versions.>
 You can read more about ["Versioning Your Applications"](http://developer.android.com/tools/publishing/versioning.html).
 
 In the `app/App_Resources/Android/AndroidManifest.xml`, the *versionCode* and *versionName* appear as:
