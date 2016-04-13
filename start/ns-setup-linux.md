@@ -40,7 +40,7 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 1. If you are running on a 64-bit system, install the runtime libraries for the ia32/i386 architecture.
 
     ```Shell
-    sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0 libstdc++6:i386
+    sudo apt-get install lib32z1 lib32ncurses5 libbz2-1.0:i386 libstdc++6:i386
     ```
 1. Install the G++ compiler.
 
