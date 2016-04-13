@@ -75,7 +75,7 @@ When creating tests for a new or existing functionality, keep in mind the follow
 * You cannot test styling and UI that are not applied or created via JavaScript.
 
 __Example 1__ shows different tests of the initial value of the counter and the message in the Hello World template. These tests show the specifics and limitations outlined above.
-<Comment: __Example 1: Please write one or more SEO-friendly code captions. You can number them all as Example 1 if you specify the type of unit testing framework, or you can write one code caption for the whole example.__>
+<Comment: __Example 1: How to create unit tests in NativeScript application. Please write one or more SEO-friendly code captions. You can number them all as Example 1 if you specify the type of unit testing framework, or you can write one code caption for the whole example.__>
 ```Jasmine
 var mainViewModel = require("../main-view-model"); //Require the main view model to expose the functionality inside it.
 
@@ -117,7 +117,7 @@ After you have completed your test suite, you can run it on physical devices or 
 
 Before running your tests, verify that your development machine and your testing devices meet the following prerequisites.
 
-* The Android native emulators on which you want to run your tests must be running on your development machine. To verify that your machine recognizes the devices, run the following command.
+* The Android native emulators<Comment: or the IOS native emulator> on which you want to run your tests must be running on your development machine. To verify that your machine recognizes the devices, run the following command.
 <Comment: You run the same command to recognize the emulator and the device? To me, it seems like the first code snippet would have some reference to an emulator. What if you have both the emulator and the device connected to your development machine? Also, should the customer run something to recognize an iOS emulator or device or does it just work? It seems odd, to me, that iOS is not mentioned in this section.>
 	```Shell
 	tns device
