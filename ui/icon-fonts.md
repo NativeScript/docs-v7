@@ -18,16 +18,14 @@ Choose or generate an icon font that best matches your needs. Two popular icon f
 ## Fonts Folder
 ![icon-fonts](../img/modules/icon-fonts/fonts-folder.png "Fonts Folder")
 
-## app.css
+## The Code
+{% nativescript %}
 ``` CSS
 .icon {
    font-family: 'icomoon';
    font-size: 48;
 }
 ```
-
-{% nativescript %}
-## main-page.xml
 ``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
   <ListView items="{{ glyphs }}">
@@ -40,13 +38,6 @@ Choose or generate an icon font that best matches your needs. Two popular icon f
     </ListView>
 </Page>
 ```
-{% endnativescript %}
-{% angular %}
-TODO...
-{% endangular %}
-
-{% nativescript %}
-## main-page.js/ts
 ``` JavaScript
 "use strict";
 var observable = require("data/observable");
@@ -88,10 +79,13 @@ export function pageLoaded(args: observable.EventData) {
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='icon-font-sample'/>  
 {% endangular %}
 
-## Sample App
+And the result is: 
+
 ![sample-app](../img/modules/icon-fonts/sample-app.png "Sample App")
 
-[Sample Application](https://github.com/NativeScript/icon-fonts)
+{% nativescript %}
+Here you can find the complete sample: [Icon Font Sample Application](https://github.com/NativeScript/icon-fonts)
+{% endnativescript %}
