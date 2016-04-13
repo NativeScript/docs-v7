@@ -122,7 +122,7 @@ targetLabel.bind(labelBindingOptions, source);
 
 ###Binding in XML
 
-To create a binding in XML, a source object is needed, which will be created the same way, as in the exmple above ([Two-Way Binding in Code](#two-way-binding-in-code)). Then the binding is described in the XML (using a mustache syntax). With an XML declaration only the names of the properties are set- for the target: text and for source: textSource. The interesting thing here is that the source of the binding is not specified explicitly. More about this topic will be discussed in the next article ([Binding source](#binding-source)).
+To create a binding in XML, a source object is needed, which will be created the same way, as in the example above ([Two-Way Binding in Code](#two-way-binding-in-code)). Then the binding is described in the XML (using a mustache syntax). With an XML declaration only the names of the properties are set- for the target: text and for source: textSource. The interesting thing here is that the source of the binding is not specified explicitly. More about this topic will be discussed in the next article ([Binding source](#binding-source)).
 
 
 ``` XML
