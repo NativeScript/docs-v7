@@ -68,7 +68,7 @@ This is the way Angular 2 supports two-way data binding. It generally works in a
 Angular mustache (`{{ }}`) syntax for binding is also supported within a NativeScript-Angular application. It's just another way of one-way binding placed in the middle of a text.
 
 ```XML
-<Label text='{{model.deliveryHour}}:{{deliveryMinute}}'></Label>
+{%raw%}<Label text='{{model.deliveryHour}}:{{deliveryMinute}}'></Label>{%endraw%}
 ```
 ```TypeScript
 this.model.deliveryHour = 10;
