@@ -33,8 +33,8 @@ The next sections introduce you to all the gestures recognized by NativeScript:
 * [Pinch](#pinch)
 * [Rotation](#rotation)
 * [Touch](#touch)
-* [Subscribing to Multiple Gestures and Events](#subscribing-to-multiple-gestures-and-events)
-
+{% nativescript %}* [Subscribing to Multiple Gestures and Events](#subscribing-to-multiple-gestures-and-events)
+{% endnativescript %}
 ## Tap
 
 **Action: Briefly touch the screen.**
@@ -56,7 +56,7 @@ label.on(gestures.GestureTypes.tap, function (args: gestures.GestureEventData) {
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='tap-gesture'/>  
 {% endangular %}
 
 ## Double Tap
@@ -80,7 +80,7 @@ label.on(gestures.GestureTypes.doubleTap, function (args: gestures.GestureEventD
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='double-tap-gesture'/>  
 {% endangular %}
 Possible implementation:
 * Scale up the object with a predefined percentage, centered around the double-tapped region. Keeping repeating the gesture continues to scale up until the maximum scale is reached.
@@ -108,7 +108,7 @@ label.on(gestures.GestureTypes.longPress, function (args: gestures.GestureEventD
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='long-press-gesture'/>  
 {% endangular %}
 Possible implementation: Select one or more items in a view and act upon the data using a contextual action bar. Enter data selection mode. Avoid using long press for displaying contextual menus.
 
@@ -133,7 +133,7 @@ label.on(gestures.GestureTypes.swipe, function (args: gestures.SwipeGestureEvent
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='swipe-gesture'/>  
 {% endangular %}
 Possible implementation: Navigate between views in the same hierarchy.
 
@@ -157,7 +157,7 @@ label.on(gestures.GestureTypes.pan, function (args: gestures.PanGestureEventData
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='pan-gesture'/>  
 {% endangular %}
 
 ## Pinch
@@ -181,7 +181,7 @@ label.on(gestures.GestureTypes.pinch, function (args: gestures.PinchGestureEvent
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='pinch-gesture'/>  
 {% endangular %}
 Possible implementation: Zoom into content or out of content.
 
@@ -206,7 +206,7 @@ label.on(gestures.GestureTypes.rotation, function (args: gestures.RotationGestur
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='rotate-gesture'/>  
 {% endangular %}
 
 ## Touch
@@ -232,14 +232,14 @@ label.on(gestures.GestureTypes.touch, function (args: gestures.TouchGestureEvent
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='touch-gesture'/>  
 {% endangular %}
 
+{% nativescript %}
 # Subscribing to Multiple Gestures and Events
 
 Since NativeScript 1.3 when subscribing you can use gestures names, comma separated gestures names and/or even mix with events.
 
-{% nativescript %}
 ``` JavaScript
 var labelModule = require("ui/label");
 var label = new labelModule.Label();
@@ -255,6 +255,3 @@ label.on("loaded, tap, doubleTap, longPress", function (args: gestures.GestureEv
 });
 ```
 {% endnativescript %}
-{% angular %}
-TODO...
-{% endangular %}

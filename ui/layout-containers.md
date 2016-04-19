@@ -39,7 +39,7 @@ None.
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='absolute-layout'/>  
 {% endangular %}
 
 ![AbsoluteLayout](../img/modules/layouts/absolute-layout.png "AbsoluteLayout")
@@ -56,7 +56,7 @@ TODO...
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='absolute-layout-margin'/>  
 {% endangular %}
 
 ![AbsoluteLayout](../img/modules/layouts/absolute-layout2.png "AbsoluteLayout")
@@ -88,7 +88,7 @@ The DockLayout is a layout that provides an docking mechanism for child elements
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='dock-layout'/>  
 {% endangular %}
 
 ![DockLayout](../img/modules/layouts/dock-layout1.png "DockLayout1")
@@ -107,7 +107,7 @@ TODO...
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='dock-layout-stretch-last'/>  
 {% endangular %}
 
 ![DockLayout](../img/modules/layouts/dock-layout2.png "DockLayout1")
@@ -126,7 +126,7 @@ TODO...
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='dock-layout-one-side'/>  
 {% endangular %}
 
 ![DockLayout](../img/modules/layouts/dock-layout3.png "DockLayout2")
@@ -168,7 +168,7 @@ The GridLayout is a layout that arranges its child elements in a table structure
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='grid-layout-sample'/>  
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout.png "GridLayout")
@@ -189,7 +189,7 @@ TODO...
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='grid-layout-star'/>  
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout1.png "GridLayout")
@@ -210,7 +210,7 @@ TODO...
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='grid-layout-fexed-auto'/>  
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout2.png "GridLayout")
@@ -231,7 +231,7 @@ When the GridLayout has no explicit `width` set and its `horizontalAlignment` is
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='grid-layout-no-width'/>  
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout3.png "GridLayout")
@@ -250,7 +250,7 @@ Label 3 is has fixed width of 150 pixels. Label 1 is given more space than it ac
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='grid-layout-column-stretch'/>  
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout4.png "GridLayout")
@@ -270,7 +270,7 @@ TODO...
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='grid-layout-complex'/>  
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout5.png "GridLayout")
@@ -300,7 +300,7 @@ None.
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='stack-layout-vertical'/>  
 {% endangular %}
 
 ![StackLayout](../img/modules/layouts/stack-layout1.png "StackLayout")
@@ -319,7 +319,7 @@ TODO...
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='stack-layout-horizontal'/>  
 {% endangular %}
 
 ![StackLayout](../img/modules/layouts/stack-layout2.png "StackLayout")
@@ -338,7 +338,7 @@ TODO...
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='stack-layout-vertical-align'/> 
 {% endangular %}
 
 ![StackLayout](../img/modules/layouts/stack-layout3.png "StackLayout")
@@ -357,7 +357,7 @@ TODO...
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='stack-layout-horizontal-align'/>  
 {% endangular %}
 
 ![StackLayout](../img/modules/layouts/stack-layout4.png "StackLayout")
@@ -388,7 +388,7 @@ None.
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='wrap-layout-horizontal'/>  
 {% endangular %}
 
 ![WrapLayout](../img/modules/layouts/wrap-layout1.png "WrapLayout")
@@ -407,7 +407,7 @@ TODO...
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='wrap-layout-vertical'/>  
 {% endangular %}
 
 ![WrapLayout](../img/modules/layouts/wrap-layout2.png "WrapLayout")
@@ -426,7 +426,7 @@ TODO...
 ```
 {% endnativescript %}
 {% angular %}
-TODO...
+<snippet id='wrap-layout-item'/>  
 {% endangular %}
 
 ![WrapLayout](../img/modules/layouts/wrap-layout3.png "WrapLayout")
