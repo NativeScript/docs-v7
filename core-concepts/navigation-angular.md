@@ -88,7 +88,7 @@ Let's take a look at the following example that uses `router-outlet`:
 ``` TypeScript
 import {nativeScriptBootstrap} from "nativescript-angular/application";
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {NS_ROUTER_DIRECTIVES, NS_ROUTER_PROVIDERS} from "./nativescript-angular/router/ns-router";
+import {NS_ROUTER_DIRECTIVES, NS_ROUTER_PROVIDERS} from "nativescript-angular/router";
 
 @Component({
     selector: 'navigation-test',
