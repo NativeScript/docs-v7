@@ -47,7 +47,6 @@ You can publish a NativeScript app in *Google Play* the same way [you would rele
 Both *Package Name*, and *Application Id*, are unique identifiers, provided by you for your app.
  - *Package Name* is used to identify resources such as the `R`.
  - *Application Id* is used to identify your app on devices and at the *Google Play*.
-<Comment: I am looking at your Readmore link: http://tools.android.com/tech-docs/new-build-system/applicationid-vs-packagename and in Google's documentation, package name and application id are lower case. Are they specifically capitalized in NativeScript? If not, and if it doesn't break customer code or cause a lot of work, I suggest you match their capitalization.> 
 In the NativeScript framework, both are set to the `nativescript.id` in `package.json`.
 The NativeScript CLI build system will set them as the `package` attribute in the generated project in `platforms/android/src/main/AndroidManifest.xml`.
 In the `app/App_Resources/Android/AndroidManifest.xml` it will use a placeholder: `package="__PACKAGE__"`. Do **not** modify the `package` attribute there.
@@ -120,8 +119,7 @@ Go to the **All applications** section and click the **+ Add new application** b
 
 3.You can fill in app description, screenshots and so on.
 
-<Comment: Why not make the previous lines a numbered list? You are instructing the customer to perform steps in a particular order.>
-You can also submit an APK. Read about how to obtain an APK from a NativeScript app. <Comment: You are missing a link to this resource.>
+You can also submit an APK. Read about how to obtain an APK from a NativeScript app.
 
 ### Builds
 #### Build versioning
@@ -134,8 +132,7 @@ A new build with a higher *versionCode* is considered an upgrade to builds that 
 The *versionCode* is an integer so you should carefully consider a strategy for versioning.
 
 Both values are stored in `app/App_Resources/Android/AndroidManifest.xml`.
-<Comment: You have not explained what *android:versionName* is or why it would be a different number than versionCode.>
-<Comment: virtionName is a string value, which is used to represen the application version to the user whereas android:versionCode, which is integer value showing version of the application code relative to the other versions.>
+> **NOTE:** `android:virtionName` is a string value, which is used to represen the application version to the user whereas `android:versionCode`, which is integer value showing version of the application code relative to the other versions.
 You can read more about ["Versioning Your Applications"](http://developer.android.com/tools/publishing/versioning.html).
 
 In the `app/App_Resources/Android/AndroidManifest.xml`, the *versionCode* and *versionName* appear as:
@@ -165,7 +162,6 @@ To submit your app to the *Google Play Developer Console*:
 You can read more about these stages at ["Set up alpha/beta tests"](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en).
 
 Once you upload your APK, it will go through a review. When approved, you can move it to production to make it available on *Google Play*.
-<Comment: In poking around the Getting Started with Publishing pages of Google Play, their documentation uses the preposition "on" so in the future, do not use at or in.>
 
 #### Submit with Telerik AppManager
 It is worth mentioning that the NativeScript platform is integrated in the *Telerik Platform*. And the *Telerik Platform* has everything you need in the cloud, easing the submission process. This includes managing your distribution certificates and provisioning profiles, as well as support for cloud builds and *App Store* submission.
