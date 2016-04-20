@@ -12,22 +12,22 @@ When you develop new features inside your app, you can ensure that they are work
 
 To run your unit tests, the NativeScript CLI uses [Karma][Karma].
 
-* [Before You Begin](#before-you-begin)
-* [Configure Your Project](#configure-your-project)
-* [Write Your Tests](#write-your-tests)
-* [Run Your Tests](#run-your-tests)
+* [Before you begin](#before-you-begin)
+* [Configure your project](#configure-your-project)
+* [Write your tests](#write-your-tests)
+* [Run your tests](#run-your-tests)
 	* [Requirements](#requirements)
-	* [Run the Tests](#run-the-tests)
-	* [Re-Run Tests on Code Change](#re-run-tests-on-code-change)
-	* [Configure the Karma Server](#configure-the-karma-server)
-* [Continuous Integration](#continuous-integration)
+	* [Run the tests](#run-the-tests)
+	* [Re-run tests on code change](#re-run-tests-on-code-change)
+	* [Configure the Karma server](#configure-the-karma-server)
+* [Continuous integration](#continuous-integration)
 
-## Before You Begin
+## Before you begin
 
 Before writing and running unit tests, verify that you have completed the following steps.
 
 1. [Install and configure the NativeScript CLI on your system.][install]
-1. If you don't have any projects, create a new project and navigate to the directory of the newly created directory.
+1. If you don't have any projects, create a new project and navigate to the newly created directory.
 	
 	```Shell
 	tns create projectName
@@ -41,9 +41,9 @@ Before writing and running unit tests, verify that you have completed the follow
 
 > **TIP:** You don't need to explicitly add the platforms for which you want to test your project. The NativeScript CLI will configure your project when you begin to run your tests.
 
-## Configure Your Project
+## Configure your project
 
-The NativeScript CLI lets you choose between three widely popular unit testing frameworks: [Jasmine][Jasmine], [Mocha][Mocha] with [Chai][Chai] and [QUnit][QUnit]. You need to configure the project for unit testing by choosing a framework. You can use only framework at a time.
+The NativeScript CLI lets you choose between three widely popular unit testing frameworks: [Jasmine][Jasmine], [Mocha][Mocha] with [Chai][Chai] and [QUnit][QUnit]. You need to configure the project for unit testing by choosing a framework. You can use only one framework at a time.
 
 To initialize your project for unit testing, run the following command and, when prompted, use the keyboard arrows to select the framework that you want to use.
 
@@ -57,25 +57,25 @@ This operation applies the following changes to your project.
 * It installs the nativescript-unit-test-runner npm module for the selected framework and its dev dependencies in `node_modules`.
 * It creates `karma.conf.js` in the root of your project. This file contains the default configuration for the Karma server for the selected framework.
 
-## Write Your Tests
+## Write your tests
 
 With the NativeScript CLI, you can extensively test **all JavaScript-related functionality**. You cannot test styling and UI which are not applied or created via JavaScript.
 
-When creating tests for a new or existing functionality, keep in mind the following specifics.
+When creating tests for new or existing functionality, keep in mind the following specifics:
 
 * You need to create your tests as JavaScript files in the `app/tests` directory. The NativeScript CLI recognizes JavaScript files stored in `app/tests` as unit tests.
-* You need to write tests which comply with the testing framework specification you have chosen for the project.
+* You need to write tests that comply with the testing framework specification you have chosen for the project.
 * You need to export the functionality that you want to test in the code of your NativeScript project.
-* You need to require the module which exposes the functionality that you want to test in the code of your unit tests.
+* You need to require the module that exposes the functionality that you want to test in the code of your unit tests.
 
-When creating tests for a new or existing functionality, keep in mind the following limitations.
+When creating tests for a new or existing functionality, keep in mind the following limitations:
 
 * You cannot require the file or module in which `application.start()` is called.
 * You cannot use more than one testing framework per project.
-* You cannot test styling and UI which are not applied or created via JavaScript.
+* You cannot test styling and UI that are not applied or created via JavaScript.
 
-The following samples test the initial value of the counter and the message in the Hello World template. These tests show the specifics and limitations outlined above.
-
+__Example 1__ shows different tests of the initial value of the counter and the message in the Hello World template. These tests show the specifics and limitations outlined above.
+<Comment: __Example 1: How to create unit tests in NativeScript application. Please write one or more SEO-friendly code captions. You can number them all as Example 1 if you specify the type of unit testing framework, or you can write one code caption for the whole example.__>
 ```Jasmine
 var mainViewModel = require("../main-view-model"); //Require the main view model to expose the functionality inside it.
 
@@ -109,7 +109,7 @@ QUnit.test("Hello World Sample Test:", function (assert) {
 });
 ```
 
-## Run Your Tests
+## Run your tests
 
 After you have completed your test suite, you can run it on physical devices or in the native emulators.
 
@@ -117,8 +117,8 @@ After you have completed your test suite, you can run it on physical devices or 
 
 Before running your tests, verify that your development machine and your testing devices meet the following prerequisites.
 
-* The Android native emulators on which you want to run your tests must be running on your development machine. To verify that your machine recognizes the devices, run the following command.
-
+* The Android native emulators<Comment: or the IOS native emulator> on which you want to run your tests must be running on your development machine. To verify that your machine recognizes the devices, run the following command.
+<Comment: You run the same command to recognize the emulator and the device? To me, it seems like the first code snippet would have some reference to an emulator. What if you have both the emulator and the device connected to your development machine? Also, should the customer run something to recognize an iOS emulator or device or does it just work? It seems odd, to me, that iOS is not mentioned in this section.>
 	```Shell
 	tns device
 	```
@@ -130,7 +130,7 @@ Before running your tests, verify that your development machine and your testing
 * The physical devices on which you want to run your tests must be able to resolve the IP of your development machine. To verify that the device can access the Karma server, connect the device and the development machine to the same Wi-Fi network or establish USB or Bluetooth tethering between the device and the development machine.
 * Port 9876 must be allowed on your development machine. The Karma server uses this port to communicate with the testing device.
 
-### Run the Tests
+### Run the tests
 
 To execute your test suite on any connected Android devices or running Android emulators, run the following command.
 
@@ -161,7 +161,7 @@ Each execution of `$ tns test` consists of the following steps, performed automa
 1. When the execution completes, the NativeScript unit test runner reports the results to the Karma server.
 1. The Karma server reports the results on the command line. 
 
-### Re-Run Tests on Code Change
+### Re-run tests on code change
 
 The NativeScript can continuously monitor your code for changes and when such changes occur, it can deploy those changes to your testing devices and re-run your tests.
 
@@ -175,13 +175,13 @@ tns test ios --emulator --watch
 
 The NativeScript CLI remains active and re-runs tests on code change. To unlock the console, press `Ctrl+C` to stop the process. 
 
-### Configure the Karma Server
+### Configure the Karma server
 
 When you configure your project for unit testing, the NativeScript CLI adds `karma.conf.js` to the root of your project. This file contains the default configuration of the Karma server, including default port and selected testing framework. You can edit this file to customize your Karma server.
 
 When you modify `karma.conf.js`, make sure that your changes meet the specification of the [Karma Configuration File][Karma Configuration File].
 
-## Continuous Integration
+## Continuous integration
 
 To integrate the NativeScript unit test runner into a continuous integration process, you need to configure a Karma reporter, for example, the [JUnit reporter](https://github.com/karma-runner/karma-junit-reporter).
 
