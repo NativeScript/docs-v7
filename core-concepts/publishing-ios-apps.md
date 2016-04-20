@@ -72,7 +72,7 @@ If you want to extend the default icon set, and you don't want to use the defaul
 List the icons using [`CFBundleIconFiles`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-SW10) or [`CFBundleIcon`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-SW13).
 
 For example, listing icons using `CFBundleIconFiles`:
-<Comment: __Example 1: Customise Info.plist.__>
+### Example 1: How to customise Info.plist.__>
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -110,10 +110,10 @@ If a customer runs your app on a device with a high resolution screen and your a
  - Your app may be upscaled, and blurred
  - Your app may have black areas
 
-Earlier iOS versions had to support a small range of form factors. Providing a different launch image per screen size was trivial. With the new devices released by Apple, the number of images that had to be provided increased. That's where Apple introduced the *launch screen storyboard*. <Comment: I spent some time looking through the iOS Developer Library documentation looking for launch screen storyboard to verify the capitalization and I do not see the phrase after several searches. I think this is our handy name for something in the NativeScript UI, but it is not in the Apple documentation. I see general references to storyboard, but I do not see anything with the specific name launch screen storyboard. I suggest you change your name for this or do not say that Apple introduced it because I cannot find evidence to support that. I see that iOS apps start with a XIB or storyboard file or a launch image.>
+Earlier iOS versions had to support a small range of form factors. Providing a different launch image per screen size was trivial. With the new devices released by Apple, the number of images that had to be provided increased. That's where Apple introduced the *launch screen storyboard*. 
 The storyboard allows basic primitives such as images to be presented on the screen, and you can have dynamic layout using layout constraints. This makes it possible to design a single *launch screen* that fits well for all form factors.
 
-The NativeScript framework default project has a *Launch Screen Storyboard* and *Launch Images*. In iOS8 and later, your app may use storyboards; your app can use launch images for devices that run earlier versions of iOS. <Comment: Please verify that my changes to this sentence did not create a technical error.>
+The NativeScript framework default project has a *Launch Screen Storyboard* and *Launch Images*. In iOS8 and later, your app may use storyboards; your app can use launch images for devices that run earlier versions of iOS. 
 
 #### Launch screen images
 The images are placed, similar to the icons already mentioned, in `app/App_Resources/iOS`. The default project template ships several `Default-*.PNG` files there; you may consider changing them.
@@ -132,7 +132,7 @@ To disable the default *Launch Screen Storyboard*, remove the `UILaunchStoryboar
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 ```
-This will force all supported launch screens to use the *launch image*. <Comment: Please verify that my changes did not create a technical error.>
+This will force all supported launch screens to use the *launch image*. 
 
 ## Certificates, identifiers & profiles
 Certificates, identifiers and profiles are managed at [https://developer.apple.com/membercenter](https://developer.apple.com/membercenter).
@@ -152,23 +152,24 @@ A few pitfalls are:
  - A developer is allowed to have one certificate at any time. You must 'revoke' an existing certificate before you can create a new one.
  - Certificates consist of public and private keys. The private key is never sent to Apple, so you cannot 'download' your certificate from the *Member Center*. If you lose the private key of your certificate, you have to revoke it and create a new one.
  - When revoked or expired, the certificates may further invalidate *provisioning profiles*. Once the certificate is recreated, the *provisioning profiles* need to be updated as well.
- - Making a certificate requires a Mac. You use the Keychain Access tool to create a certificate request, generating a public and private keys at your side, then send the public key to Apple while storing the private key in your keychain. <Comment: It sounds a bit odd to me to say that a private key stays at your side. Perhaps reword this phrase?>
+ - Making a certificate requires a Mac. You use the Keychain Access tool to create a certificate request, generating a public and private keys at your side, then send the public key to Apple while storing the private key in your keychain.
  - If you follow the steps at the *Member Center* to create a new *development certificate*, the certificate must be stored in your keychain. You can consider exporting it and backing it up.
 
-Go to [https://developer.apple.com/account/ios/certificate/certificateList.action?type=development](https://developer.apple.com/account/ios/certificate/certificateList.action?type=development) click the '+' (add) button and follow the instructions for making a new 'iOS App Development' certificate. <Comment: Note that to view the previous link, one must sign in with their Apple ID; possibly a developer account? I suggest you add this as a note, and indicate that several links later in this article also will require the customer to sign in to Apple with their Apple ID.>
+> **NOTE:** Go to [https://developer.apple.com/account/ios/certificate/certificateList.action?type=development](https://developer.apple.com/account/ios/certificate/certificateList.action?type=development) click the '+' (add) button and follow the instructions for making a new 'iOS App Development' certificate. 
 
 ### Production certificates
-*Production certificates* work similarly to development certificates. They consist of public and private keys. The private key stays at your side and is never sent to Apple. <Comment: As I noted in the previous section, it sounds a bit odd to me to say that a private key stays at your side. Perhaps reword this phrase?> Your app is signed with the distribution certificate using your private key,
+*Production certificates* work similarly to development certificates. They consist of public and private keys. The private key stays at your side and is never sent to Apple. Your app is signed with the distribution certificate using your private key,
  so Apple can verify the origin of submissions in *iTunes Connect* using the public key you sent them. <Comment: You have not mentioned or defined distribution certificate. What is it, and how does it differ from a production certificate?>
 
 This certificate <Comment: Do you mean the production certificate (or the distribution certificate)?>is used to sign the application binary when it is prepared for submission.
-Usually when an app is built for a device, its IPA file is signed with the development certificate. <Comment: This is the first mention of an IPA file. Define what it is (and provide a link) or will the customer know?>
+Usually when an app is built for a device, its IPA file is signed with the development certificate. 
+> **Note** You can read more about IPA (file extention) [here](https://en.wikipedia.org/wiki/.ipa_(file_extension))
 Later, the tooling resigns the IPA with the *production certificate* and appends the distribution provisioning profile when submitting to *iTunes Connect*.
 
 A few pitfalls are:
- - Creating *production certificates* are more restricted than creating development certificates. Apple limit the number of *production certificates* per team. <Comment: Please review to make sure my rewrite did not create an error. Apple sets this limit, correct?>
- - Because production certificates are limited in quantity per team, and frequently shared between multiple team members, you must be extremely careful when you revoke an existing distribution certificate. If you ultimately lost your private key of a distribution certificate and revoke it, consult with anyone that may have backed it up or is in need of the new certificate. Hopefully this will avoid your new copy being revoked in the future or losing your admin rights. <Comment: As I noted in the previous section, you have not defined what distribution certificates are.>
- - *Production certificates* can be shared between team members. If you follow the steps at the *Member Center* to create a new one (link below) the certificate will be stored in your keychain. You can export it as a .p12 file, easily backing it up and sharing it with senior team peers. <Comment: This last point sounds pretty positive to me. Why did you include it in the list of pitfalls? I suggest that instead you make it a note to the reader, not included in the list of pitfalls.>
+ - Creating *production certificates* are more restricted than creating development certificates. Apple limit the number of *production certificates* per team.
+ - Because production certificates are limited in quantity per team, and frequently shared between multiple team members, you must be extremely careful when you revoke an existing distribution certificate. If you ultimately lost your private key of a distribution certificate and revoke it, consult with anyone that may have backed it up or is in need of the new certificate. Hopefully this will avoid your new copy being revoked in the future or losing your admin rights. 
+ - *Production certificates* can be shared between team members. If you follow the steps at the *Member Center* to create a new one (link below) the certificate will be stored in your keychain. You can export it as a .p12 file, easily backing it up and sharing it with senior team peers.
 
 If you need a new distribution certificate, go to [https://developer.apple.com/account/ios/certificate/certificateList.action?type=distribution](https://developer.apple.com/account/ios/certificate/certificateList.action?type=distribution) click the '+' (add) button and follow the instructions for making a new 'App Store Distribution' certificate. Chances are you are part of a larger organization and your role does not have sufficient rights to create a new distribution certificate. Admins or other team member may provide you the certificates in that case. In such cases, you will probably be given a .p12 file and a password. You should import the file in your keychain using the `Keychain Access` application. 
 
@@ -205,7 +206,7 @@ There you can check all signing identities (developer and *production certificat
 
 When you run an app on a device, Xcode will sign the app with your development certificate and add a provisioning profile that has your certificate, device ID and App ID.
 
-While the *development provisioning profiles* are easily created and updated, they frequently invalidate, especially when multiple *developer certificates* are involved. <Comment: Please check that my change did not create an error. I think you meant development provisioning profile instead of distribution provisioning profile, since this section of the article is about development provisioning profiles.> Every time one of them is revoked or expires, you need to update the provisioning certificate.
+While the *development provisioning profiles* are easily created and updated, they frequently invalidate, especially when multiple *developer certificates* are involved. Every time one of them is revoked or expires, you need to update the provisioning certificate.
 
 These are not of a particular interest for *App Store* submissions but you may need one to test on a real device.
 
@@ -221,7 +222,7 @@ These are similar to the *development provisioning profiles* because they bind:
 
 For *App Store* submissions, you must create an *App Store Distribution Provisioning Profile*. Once you create it, download it and double-click it on your Mac so it gets registerd with Xcode.
 
-*Distribution provisioning profiles* invalidate rarely since they refer a single *Distribution Certificate*. <Comment: I think refer sounds odd to me. Perhaps "refer to" or "reference" is more accurate?>
+*Distribution provisioning profiles* invalidate rarely since they refer a single *Distribution Certificate*.
 
 ## iTunes Connect
 While you manage your *provisioning profiles* and certificates at the *Apple Developer Member Center*, apps are registered and submitted at [iTunes Connect](https://itunesconnect.apple.com).
