@@ -22,7 +22,7 @@ slug: nativescript-extension-for-visual-studio-code
 
 To install the [NativeScript extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=Telerik.nativescript) open the Command Palette (`F1` or `Cmd+Shift+P`) and run `Extensions: Install Extension` command, then search for 'NativeScript' and choose it from the list.
 
-<Comment: __Figure 1: How to install NativeScript extention for Visual Studio Code.__>
+### Figure 1: How to install NativeScript extention for Visual Studio Code.
 ![Installing the NativeScript extension for Visual Studio Code](../img/visual-studio-code-extension/install.png)
 
 After the installation completes, the extension appears in the list of installed extensions. You can see it if you run `Extensions: Show Installed Extensions` command from the Command Palette.
@@ -35,14 +35,14 @@ Open your application root folder, created with the `tns create` command, in Vis
 
 Click the debugging icon ![VS Code debug panel](../img/visual-studio-code-extension/debug-panel.png) in the View bar, and then click the gear icon ![gear icon](../img/visual-studio-code-extension/gear-icon.png) to choose the NativeScript debug environment. A `launch.json` file should be generated in your `.vscode` folder located next to the `app` folder. The configurations, described in `launch.json`, can be selected from the menu in the Debug Panel.
 
-<Comment: __Figure 2: How to debug application using Visual Studio Code.__>
+### Figure 2: How to debug application via Visual Studio Code.
 ![Installing NativeScript extension for Visual Studio Code](../img/visual-studio-code-extension/configurations-menu.png)
 
 ### Launch an application with the debugger
 
 Choose one of the launch configurations (e.g., `Launch on iOS Emulator`) and press the `Start` button next to the menu. This will run your app in the iOS emulator and attach the VS Code debugger. The app should break on the first JavaScript/TypeScript statement. You can find more information about the debugging support in VS Code in the [VS Code Debugging Guide](https://code.visualstudio.com/docs/editor/debugging).
 
-<Comment: __Figure 3: Attach the debugger without rebuilding the application.__>
+### Figure 3: Attach the debugger without rebuilding the application.
 ![NativeScript Debugging](../img/visual-studio-code-extension/nativescript-debugging.png)
 
 ### Attach the debugger to an already running app
@@ -59,7 +59,7 @@ If you are writing your app in TypeScript, you have fully functional debugging s
 
 Under the hood, starting a particular debug configuration executes the `tns debug` command with various arguments. You can append additional arguments by supplying them in the `tnsArgs` property of a debug configuration definition in `launch.json`. For example, if you add `"tnsArgs": "--log=trace"` in the `Launch on iOS Emulator` configuration, in the background VS Code will execute the `tns debug ios --emulator --no-client --log=trace` command, which will give you more verbose information in the Debug Console.
 
-<Comment: __Figure 4: Adding additional commmand while debugging.__>
+### Figure 4: Adding additional commmand while debugging.
 ![Supply custom arguments to the debug command](../img/visual-studio-code-extension/nativescript-tns-args.png)
 
 ### Turn on diagnostic logging
@@ -70,7 +70,7 @@ If the `diagnosticLogging` flag for a particular debug configuration in `launch.
 
 Type `nativescript` in the Command Palette and you will see all NativeScript-specific commands. Currently there are only two of them but the list will grow in the future.
 
-<Comment: __Figure 5: Using NativeScript-specific commands directly from Visual Studio Code .__>
+### Figure 5: Using NativeScript-specific commands directly from Visual Studio Code .
 ![NativeScript commands](../img/visual-studio-code-extension/nativescript-commands.png)
 
 The Run command is the equivalent to `tns run` in the NativeScript CLI. It lets you build, deploy and run your app on an emulator/device directly from Visual Studio Code.
@@ -79,7 +79,7 @@ The Run command is the equivalent to `tns run` in the NativeScript CLI. It lets 
 
 The extension depends on a globally installed NativeScript CLI. It will show an error message if it can't find it.
 
-<Comment: __Figure 6: Handle NativeScript's error for extentions builded for specific NativeScript CLI.__>
+### Figure 6: Handle NativeScript's error for extentions builded for specific NativeScript CLI.
 ![NativeScript not found](../img/visual-studio-code-extension/nativescript-not-found-error-message.png)
 
 > The extension requires a specific NativeScript CLI version and if you have another version installed, you will see a warning message. The extension is likely to work with the unsupported version but it is recommended that you update the NativeScript CLI or the VS Code extension.
