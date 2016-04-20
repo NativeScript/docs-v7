@@ -159,9 +159,9 @@ A few pitfalls are:
 
 ### Production certificates
 *Production certificates* work similarly to development certificates. They consist of public and private keys. The private key stays at your side and is never sent to Apple. Your app is signed with the distribution certificate using your private key,
- so Apple can verify the origin of submissions in *iTunes Connect* using the public key you sent them. <Comment: You have not mentioned or defined distribution certificate. What is it, and how does it differ from a production certificate?>
+ so Apple can verify the origin of submissions in *iTunes Connect* using the public key you sent them.
 
-This certificate <Comment: Do you mean the production certificate (or the distribution certificate)?>is used to sign the application binary when it is prepared for submission.
+This *production certificates* is used to sign the application binary when it is prepared for submission.
 Usually when an app is built for a device, its IPA file is signed with the development certificate. 
 > **Note** You can read more about IPA (file extention) [here](https://en.wikipedia.org/wiki/.ipa_(file_extension))
 Later, the tooling resigns the IPA with the *production certificate* and appends the distribution provisioning profile when submitting to *iTunes Connect*.
@@ -232,8 +232,8 @@ This is where you will be able to create new apps, prepare app screens, descript
 You will need your *Apple ID* added to your organization with sufficient rights at [https://itunesconnect.apple.com](https://itunesconnect.apple.com).
 
 ### Creating an app
-To publish your app in the iOS *App Store* you will have to create an app. Log into [https://itunesconnect.apple.com](https://itunesconnect.apple.com) and go to 'My Apps'.
-There you can check the status and edit existing apps or create a new app. <Comment: I am a bit confused about the difference between the app the customer has created with NativeScript and the app that they create in iTunes Connect. Can you explain? This is a good place for an image from iTunes Connect and some numbered steps to explain all of the iTunes Connect steps.>
+To publish your app in the iOS *App Store* you will have to register your app. Log into [https://itunesconnect.apple.com](https://itunesconnect.apple.com) and go to 'My Apps'.
+There you can check the status and edit existing apps or create a new app.
 
 Click the '+' button at the top left corner. The 'New App' dialog should appear. There you have to fill the public *App Store* name of your app and primary language.
 
@@ -329,7 +329,7 @@ Click `Upload`.
 If you upload successfully, you should be able to log in at [https://itunesconnect.apple.com](https://itunesconnect.apple.com) and see your build in 'Activities'. From there you can enable Test Flight beta testing or send it for approval.
 
 #### Submit with Telerik AppManager
-<Comment: This section is a direct cut/paste from your Android docs. Please carefully update this to use the names of the Apple certificates and indicate whether something goes to the App Store or to iTunes Connect.>
+
 It is worth mentioning that the NativeScript platform is integreated in the Telerik platform.
 The Telerik platform has everything you need in the cloud, easing the submission process.
 This includes managing your *production certificates* and *provisioning profiles*,
