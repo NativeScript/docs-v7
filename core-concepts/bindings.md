@@ -268,6 +268,8 @@ A great functionality is to create a custom expression for bindings. Custom expr
 </Page>
 ```
 
+> Note: Binding expression could be used without explicitly named `source property` ( TextField text="{{ sourceProperty + ' some static text' }}" ). In that case `$value` is used as a `source property`. However this could lead to problems when a nested property should be observed for changes (e.g. `item.nestedProp`). `$value` represents `bindingContext` and when any property of the `bindingContext` is changed expression will be evaluated. Since `nestedProp` is not a property of the `bindingContext` in `item.nestedProp` then there will be no propertyChange listener attached and changes to `nestedProp` will not be populated to UI. So it is a good practice to specify which property should be used as `source property` in order to eliminate such issues.
+
 The full binding syntax contains three parameters - the first parameter is the source property, which will be listened to for changes, the second parameter is the expression that will be evaluated and the third parameter states if the binding is two-way or not. As mentioned earlier XML declaration creates a two-way binding by default, so in the example the third parameter could be omitted. Keeping the other two properties, means that the custom expression will be evaluated only when the sourceProperty changes. The first parameter could also be omitted, then the custom expression will be evaluated everytime the bindingContext changes. Thus, the recommended syntax is to include two parameters in the XML declaration, as in our example - the property of interest and the expression, which has to be evaluated.
 
 
