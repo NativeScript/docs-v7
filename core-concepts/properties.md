@@ -27,7 +27,7 @@ This article contents:
 
 Being a TypeScript framework, NativeScript uses TypeScript properties. After transpilation, these result in ECMAScript v.5 compliant JavaScript with setter and getter methods to support working with class members, thus ensuring readable and manageable code. The code in __Example 1__ demonstrates how the TypeScript is transformed to JavaScript.
 
-<Comment: __Example 1: How TypeScript is transformed to JavaScript.>
+### Example 1: How TypeScript is transformed to JavaScript.
 ``` JavaScript
 var MyClass = (function () {
   function MyClass() {
@@ -71,7 +71,7 @@ This sections includes these topics:
 ###<a id = "intro1"></a>Introduction
 
 Dependency properties provide valuable features that simplify the creation of a rich User Interface (UI), including: 
-<Comment: I have changed your mdashes to colons because that is the style used in term lists for other NativeScript documentation I have edited.>
+
 * Memory optimization: The creation of a rich custom UI control is bound to creating a huge number of properties, most of which are used with default values. With the traditional approach you end up with a **private field** for every property. With dependency properties, you only store the instance properties that you modified. The default values are stored within the dependency property. Additionally, dependency properties are declared statically outside the class, which further helps optimize the memory footprint.
 * Value validation: Dependency properties offer business logic validation. It is implemented as a dedicated validation callback function that takes `newValue` as parameter and returns true or false if the value is valid or not, respectively.
 * Change notification: Another callback function is called when the property value changes. It is called with an [EventData]({{site.baseurl}}/ApiReference/data/observable/EventData.md) as parameter.
@@ -83,7 +83,7 @@ Only classes that derive from [DependencyObservable]({{site.baseurl}}/ApiReferen
 
 The code in __Example 2__ creates a bare-bones property that adds a static part compared to a standard property implementation.
 
-<Comment: __Example 2: Creating property that adds a static part compared to a standard property.>
+### Example 2: How to create property that adds a static part compared to a standard property.
 ``` JavaScript
 var dependencyObservable = require("ui/core/dependency-observable");
 exports.myPropertyProperty = new dependencyObservable.Property("myProperty",
@@ -131,7 +131,7 @@ export class MyClass extends dependencyObservable.DependencyObservable {
 
 __Example 3__ demonstrates how to implement the functionality of changing a notification. It adds a callback function, `onMyPropertyChanged`, that prints a message about a change in a property.
 
-<Comment: __Example 3: How to handle onPropertyChange event.>
+### Example 3: How to handle onPropertyChange event.
 ``` JavaScript
 var dependencyObservable = require("ui/core/dependency-observable");
 function onMyPropertyChanged(eventData) {
@@ -196,7 +196,7 @@ export class MyClass extends dependencyObservable.DependencyObservable {
 
 __Example 4__ demonstrates how to implement value validation. It adds a callback function, `validateMyProperty`, that takes the new property value and validates it using a simple rule.
 
-<Comment: __Example 4: How to implement value validation.>
+### Example 4: How to implement value validation.
 
 ``` JavaScript
 var dependencyObservable = require("ui/core/dependency-observable");
@@ -239,7 +239,7 @@ export var myPropertyProperty = new dependencyObservable.Property(
 
 __Example 5__ demonstrates how to create an inheritable dependency property:
 
-<Comment: __Example 5: How to create inheritable dependency property.>
+### Example 5: How to create inheritable dependency property.
 ``` JavaScript
 var dependencyObservable = require("ui/core/dependency-observable");
 exports.myPropertyProperty = new dependencyObservable.Property("myProperty", "MyClass",
