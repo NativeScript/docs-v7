@@ -1,7 +1,7 @@
 ---
 title: Placeholder
 description: Learn how to use the Placeholder to add any native widget to the visual tree.
-position: 10
+position: 140
 slug: placeholder
 previous_url: /placeholder
 environment: nativescript
@@ -9,7 +9,8 @@ environment: nativescript
 
 # Placeholder
 
-The Placeholder allows you to add any native widget to your application. To do that, you need to put a Placeholder somewhere in the UI hierarchy and then create and configure the native widget that you want to appear there. Finally, pass your native widget to the event arguments of the **creatingView** event.
+The Placeholder allows you to add any native widget to your application. To do that, you need to put a Placeholder somewhere in the UI hierarchy and then create and configure the native widget that you want to appear there. Finally, pass your native widget to the event argum
+ents of the **creatingView** event.
 
 ## main-page.xml
 

@@ -1,7 +1,7 @@
 ---
 title: Styling
 description: How to use Cascading Style Sheets (CSS) in NativeScript to change the appearance of GUI elements
-position: 5
+position: 50
 slug: styling
 previous_url: /styling
 ---

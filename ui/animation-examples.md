@@ -1,14 +1,14 @@
 ---
 title: Animation Examples
 description: Examples demonstrating how to animate view properties.
-position: 12
+position: 130
 slug: animation-examples
 publish: false
 ---
 
 # Animation examples
 
-This article contains examples demonstrating how to animate the animatable view propertires. A full list of all animatable properties and a detailed explanation of the animations API is presented [here](./animation.md).
+This article contains examples demonstrating how to animate the animatable view properties. A full list of all animatable properties and a detailed explanation of the animations API is presented [here](./animation.md).
 
 The full source code for all samples is located [here](https://github.com/NativeScript/animation-demo).
 

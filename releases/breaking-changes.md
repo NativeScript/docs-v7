@@ -1,7 +1,7 @@
 ---
 title: Breaking Changes
 description: A list of breaking changes across the releases of the NativeScript framework and its tools.
-position: 1
+position: 10
 slug: breaking-changes
 previous_url: /breaking-changes
 ---
