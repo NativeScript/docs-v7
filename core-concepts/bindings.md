@@ -85,7 +85,7 @@ var targetLabel = new labelModule.Label();
 ```
 Finally, the target objects bind to the source object. The TextField uses a two-way binding, so the user input could change the property in the code. And the binding of the Label is set to one-way in order to propagate changes only from the code to the UI.
 
-<Comment: __Example 1: Binding label text property.__>
+__Example 1: Binding label text property.
 ``` JavaScript
 //binding the TextField
 var textFieldBindingOptions = {
@@ -155,7 +155,7 @@ stackLayout.bindingContext = source;
 
 There is an option to bind a function to execute on a specific event (like an MVVM command). This option is available only through an XML declaration. To implement such a functionality, the source object should have an event handler function.
 
-<Comment: __Example 2: Binding function on button tap event.__>
+__Example 2: Binding function on button tap event.
 ``` XML
 <Page>
 	<StackLayout>{%raw%}
@@ -181,7 +181,7 @@ page.bindingContext = source;
 
 A very common case is to provide a list (array) of plain elements (numbers, dates, strings) to a `ListView` items collection. All examples above demonstrate how to bind a UI element to a property of the bindingContext. If there is only plain data, there is no property to bind, so the binding should be to the entire object. Here comes another feature of NativeScript binding &mdash; object or value binding. To refer to the entire object, which is Date() in the example, the keyword `$value` should be used.
 
-<Comment: __Example 3: Bind ListView to a property of the bindingContext .__>
+__Example 3: Bind ListView to a property of the bindingContext .
 ``` XML
 <Page>
 	<StackLayout>{%raw%}
@@ -215,7 +215,7 @@ source.set("items", list);
 
 Another common case in working with bindings is requesting access to the parent binding context. It is because it might be different from the bindingContext of the child and might contain information, which the child has to use. Generally, the bindingContext is inheritable, but not when the elements (items) are created dynamically based on some data source. For example, `ListView` creates its child items based on an `itemТemplate`, which describes what the `ListView` element will look like. When this element is added to the visual tree, it gets for binding context an element from a ListView `items` array (with the corresponding index). This process creates a new binding context chain for the child item and its inner UI elements. Thus, the inner UI element cannot access the binding conext of the 'ListView'. In order to solve this problem, NativeScript binding infrastructure has two special keywords: `$parent` and `$parents`. While the first one denotes the binding context of the direct parent visual element, the second one can be used as an array (with a number or string index). This gives you the option to choose either `N` levels of UI nesting or get a parent UI element with a given type. Let's see how this works in a realistic example. 
 
-<Comment: __Example 4: Creating ListView child items based on the itemTemplate.__>
+__Example 4: Creating ListView child items based on the itemTemplate.
 ``` XML
 <Page loaded="pageLoaded">
 	<GridLayout rows="*" >{%raw%}
@@ -302,7 +302,7 @@ NativeScript supports different kind of expressions including:
 
 Speaking of a two-way binding, there is a common problem &mdash; having different ways of storing and displaying data. Probably the best example here is the date and time objects. Date and time information is stored as a number or a sequence of numbers (very useful for indexing, searching and other database operations), but this is not the best possible option for displaying date to the application user. Also there is another problem when the user inputs a date (in the example below, the user types into a TextField). The result of the user input will be a string, which will be formatted in accordance with the user's preferences. This string should be converted to a correct date object. Let's see how this could be handled with NativeScript binding.
 
-<Comment: __Example 5: Handle textField date input an dformatted in accordance preferences.__>
+__Example 5: Handle textField date input and formatted in accordance preferences.
 ``` XML
 <Page>
 	<StackLayout>{%raw%}
@@ -371,7 +371,7 @@ Note the special operator (|) within the expression. The above code snippet (bot
 
 A converter can accept not only static custom parameters, but any value from the `bindingContext`. For example:
 
-<Comment: __Example 6: Converting the new date input to a valid Date object.__>
+__Example 6: Converting the new date input to a valid Date object.
 ``` XML
 <Page>
 	<StackLayout>{%raw%}
@@ -390,9 +390,9 @@ source.set("dateFormat", "DD.MM.YYYY");
 page.bindingContext = source;
 ```
 
-Setting a converter function and a parameter within the bindingContext is very useful for ensuring proper convertion of data. However, this is not the case when `listview` items should be bound. The problem comes from the fact that the bindingContext of a `listview` item is a data item, which is a part of `any` collection (array), and to apply a converter &mdash; the converter and its parameters should be added to the data item, which will result in multiple converter instances. Tackling this problem with NativeScript is fairly simple. Binding infrastructure seeks for an application level resources to find a proper converter and parameters. <Comment: The previous sentence does not make sense to me. What is the subject and what action is it doing?> So you could add the converters in the resources in the application module. To be more clear, examine the following example (both XML and JavaScript):
+Setting a converter function and a parameter within the bindingContext is very useful for ensuring proper convertion of data. However, this is not the case when `listview` items should be bound. The problem comes from the fact that the bindingContext of a `listview` item is a data item, which is a part of `any` collection (array), and to apply a converter &mdash; the converter and its parameters should be added to the data item, which will result in multiple converter instances. Tackling this problem with NativeScript is fairly simple. Binding infrastructure seeks for an application level resources to find a proper converter and parameters. So you could add the converters in the resources in the application module. To be more clear, examine the following example (both XML and JavaScript):
 
-<Comment: __Example 7: Adding converters in the application module resources.__>
+__Example 7: Adding converters in the application module resources.
 ``` XML
 <Page>
 	<StackLayout>{%raw%}
@@ -449,7 +449,7 @@ appModule.resources["dateConverter"] = dateConverter;
 appModule.resources["dateFormat"] = "DD.MM.YYYY";
 ```
 
-> Note: The application module is static and could be reached within the entire application; it just needs to be required. <Comment: Please verify that my changes to the previous sentence did not create a technical error.> Another difference here is that `dateConverter` is a function instead of an object with two functions `toView` and `toModel`. Since the usual operation is converting data from model to view, if a function is provided as converter, it acts as a `toView` function. <Comment: Please verify that my changes to the previous sentence did not create a technical error.>
+> Note: The application module is static and could be reached within the entire application; it just needs to be required.  Another difference here is that `dateConverter` is a function instead of an object with two functions `toView` and `toModel`. Since the usual operation is converting data from model to view, if a function is provided as converter, it acts as a `toView` function. 
 
 ##Stop binding
 
