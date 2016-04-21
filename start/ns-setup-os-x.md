@@ -26,6 +26,7 @@ On OS X systems, you can use the NativeScript CLI to develop Android and iOS app
     * Latest Xcode
     * Command-line tools for Xcode
     * xcodeproj ruby gem
+    * (Optional) xcproj command line tool
 * For Android development
     * JDK 8 or a later stable official release
     * Android SDK 22 or a later stable official release
@@ -67,6 +68,7 @@ For Android development
     1. Run the App Store and download and install Xcode 5 or later.
     1. Go to [Downloads for Apple Developers](https://developer.apple.com/downloads/index.action), log in and download and install the **Command Line Tools for Xcode** for your version of OS X and Xcode.
     1. Run `$ [sudo] gem install xcodeproj` in the terminal
+    1. (Optional) If you are using Xcode 7.3 and CocoaPods 0.39.0 or earlier you **must** install [xcproj](https://github.com/0xced/xcproj#installation) command line tool either by running `$ brew install xcproj` in the terminal, or building the xcproj tool manually with `xcodebuild`.
 1. Install the dependencies for Android development.
     1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
         1. Go to [Java SE Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and click **Download** for JDK.
