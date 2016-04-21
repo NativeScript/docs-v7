@@ -40,11 +40,7 @@ Part of the data binding settings is the way data flows. NativeScript data bindi
 Generally, almost every UI control could be bound to a data object (all NativeScript controls are created with data binding in mind). After your code has met the following requirements, you can use data-binding out of the box.
 
 * The target object has to be a successor of the **Bindable** class. All NativeScript UI controls already inherit from this class.
-<<<<<<< 541fec2eea39b0e6631737509f0afc3755281df6
-* For **two-way** data binding, the target property should be a **dependency property**.
-=======
 * For **two-way** data binding, the target property should be to a **dependency property**.
->>>>>>> Update bindings.md
 * For **one-way** binding, using a plain property is sufficient.
 * The data object should raise a **propertyChange** event for every change in the value of its property in order to notify all of the listeners interested in the change.
 
@@ -54,11 +50,7 @@ Generally, almost every UI control could be bound to a data object (all NativeSc
 
 The example below consists of a `Label`, `TextField` and a source property to which the UI controls are bound. The purpose will be, when the user enters an input in the `TextField`, to update the property in the code and the `Label` text.
 
-<<<<<<< 541fec2eea39b0e6631737509f0afc3755281df6
-First, the **source** object is created with a **textSource** property. A constant flow of propagating changes from the source property to the Label is necessary. Thus, the property in the code has to raise a **propertyChange** event in order to notify the `Label` for the changes. To raise this event, a built-in class is used, which provides this functionality &mdash; `Observable`.
-=======
-First, the **source** object is created with a **textSource** property. A constant flow of progating changes from the source property to the Label is necessary. <Comment: What is progating? Do you mean propagating? A bit later in the article, five code snippets down, you use propagate.> Thus, the property in the code has to raise a **propertyChange** event in order to notify the `Label` for the changes. To raise this event, a built-in class is used, which provides this functionality - `Observable`.
->>>>>>> Update bindings.md
+First, the **source** object is created with a **textSource** property. A constant flow of propagating changes from the source property to the Label is necessary. Thus, the property in the code has to raise a **propertyChange** event in order to notify the `Label` for the changes. To raise this event, a built-in class is used, which provides this functionality - `Observable`.
 
 ``` JavaScript
 var observableModule = require("data/observable");
@@ -91,11 +83,7 @@ var targetTextField = new textFieldModule.TextField();
 import labelModule = require("ui/label");
 var targetLabel = new labelModule.Label();
 ```
-<<<<<<< 541fec2eea39b0e6631737509f0afc3755281df6
-Finally, the target objects bind to the source object. The TextField uses a two-way binding, so the user input could change the property in the code. And the binding of the Label is set to one-way in order to propagate changes only from the code to the UI.
-=======
-After that, the target objects bind to the source object. <Comment: "that" in the previous sentence is vague to me. I suggest you replace "that" with "bound target objects" or whatever "that" refers to.> The TextField uses a two-way binding, so the user input could change the property in the code. And the binding of the Label is set to one-way in order to propagate changes only from the code to the UI.
->>>>>>> Update bindings.md
+After that, the target objects bind to the source object. The TextField uses a two-way binding, so the user input could change the property in the code. And the binding of the Label is set to one-way in order to propagate changes only from the code to the UI.
 
 ### Example 1: Binding label text property.
 ``` JavaScript
@@ -151,7 +139,7 @@ To create a binding in XML, a source object is needed, which will be created the
 
 ###Binding to a property
 
-An important part of the data binding is setting the source object. For a continuous flow of data changes, the source property needs to emit a **propertyChange** event. NativeScript data binding works with any object that emits this event. Adding a binding **source** happens by passing it as a second parameter in the method **bind(bindingOptions, source)**. This parameter is optional and could be omited, in which case for source is used a property named **bindingContext** of the `Bindable` class. <Comment: The previous sentence does not make sense to me. "for source is used a property named..." might be "source is used for a property named..."> What is special about this property is that it is inheritable across the visual tree. This means that a UI control can use the `bindingContext` of the first of its **parent** elements, which has an explicitly set **bindingContext**. In the example from [Two-Way Binding in Code](#two-way-binding-in-code), the `bindingContext` can be set either on a `Page` instance or a `StackLayout` instance and the `TextField` will inherit it as a proper source for the binding of its "text" property.
+An important part of the data binding is setting the source object. For a continuous flow of data changes, the source property needs to emit a **propertyChange** event. NativeScript data binding works with any object that emits this event. Adding a binding **source** happens by passing it as a second parameter in the method **bind(bindingOptions, source)**. This parameter is optional and could be omited, in which case the source is used for a property named **bindingContext** of the `Bindable` class. What is special about this property is that it is inheritable across the visual tree. This means that a UI control can use the `bindingContext` of the first of its **parent** elements, which has an explicitly set **bindingContext**. In the example from [Two-Way Binding in Code](#two-way-binding-in-code), the `bindingContext` can be set either on a `Page` instance or a `StackLayout` instance and the `TextField` will inherit it as a proper source for the binding of its "text" property.
 
 ``` JavaScript
 page.bindingContext = source;
@@ -303,7 +291,7 @@ NativeScript supports different kind of expressions including:
 | comparison operators | `var1 > var2` | Comparing whether the value of var1 is more than the value of var2. Other supported operators - `<, >, <=, >=, ==, !=, ===, !==`. |
 | logical comparison operators | `var1>1 && var2>1`. | Evaluating whether the value of var1 is more than 1 AND the value of var2 is more than 2. Supported operators: `&&, ||`. |
 | ternary operator | `var1 ? var2 : var3` | Evaluating the value of `var1` and if true, returns `var2`, else returns `var3`. |
-| grouping parenthesis | `(a + b) * (c + d)` |<Comment: You are missing description text here.> |
+| grouping parenthesis | `(a + b) * (c + d)` | |
 | function calls | `myFunc(var1, var2, ..., varN)`| Where myFunc is a function available in binding context (used as context for expression) or within `application level resources`. The value of the `var1` and `varN` will be used as parameter(s). |
 | filters | `expression \| filter1(param1, ...) | filter 2` | A filter is an object or a function that is applied to the value of the expression. Within the context of binding, this feature is used as converters. For more information, see the dedicated topic [Using Converters in Bindings](#using-converters-in-bindings).|
 
@@ -405,7 +393,7 @@ page.bindingContext = source;
 source.set("dateFormat", "DD.MM.YYYY");
 page.bindingContext = source;
 ```
-Setting a converter function and a parameter within the bindingContext is very useful for ensuring proper convertion of data. However, this is not the case when `listview` items should be bound. The problem comes from the fact that the bindingContext of a `listview` item is a data item, which is a part of `any` collection (array), and to apply a converter - the converter and its parameters should be added to the data item, which will result in multiple converter instances. Tackling this problem with NativeScript is fairly simple. Binding infrastructure seeks for an application level resources to find a proper converter and parameters. <Comment: The previous sentence does not make sense to me. What is the subject and what action is it doing?> Soyou could add the converters in the resources in the application module. To be more clear, examine the following example (both XML and JavaScript):
+Setting a converter function and a parameter within the bindingContext is very useful for ensuring proper convertion of data. However, this is not the case when `listview` items should be bound. The problem comes from the fact that the bindingContext of a `listview` item is a data item, which is a part of `any` collection (array), and to apply a converter - the converter and its parameters should be added to the data item, which will result in multiple converter instances. Tackling this problem with NativeScript is fairly simple. Binding infrastructure seeks for an application level resources to find a proper converter and parameters. Soyou could add the converters in the resources in the application module. To be more clear, examine the following example (both XML and JavaScript):
 
 ### Example 7: Adding converters in the application module resources.
 ``` XML
@@ -463,7 +451,7 @@ var dateConverter = function(value, format) {
 appModule.resources["dateConverter"] = dateConverter;
 appModule.resources["dateFormat"] = "DD.MM.YYYY";
 ```
-> Note: The application module is static and could be reached within the entire application; it just needs to be required. Another difference here is that `dateConverter` is a function instead of an object with two functions `toView` and `toModel`. Since the usual operation is converting data from model to view, if a function is provided as converter, it acts as a `toView` function. 
+> Note: The application module is static and could be reached within the entire application; it just needs to be required. Another difference here is that `dateConverter` is a function instead of an object with two functions `toView` and `toModel`. Since the usual operation is converting data from model to view, if a function is provided as converter, it acts as a `toView` function.
 
 ##Stop binding
 
