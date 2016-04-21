@@ -19,7 +19,7 @@ You can debug apps developed with the NativeScript framework from both the Nativ
 To start the debugger for Android, run the following command:
 
 ```Bash
-tns debug anroid
+tns debug android
 ```
 
 To start the debugger for iOS, run the following command:
