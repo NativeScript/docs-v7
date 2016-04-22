@@ -16,6 +16,8 @@ You can debug apps developed with the NativeScript framework from both the Nativ
 
 ## Debugger Commands
 
+> **Note** For more details about `Debugger Command` options, you can use `tns debug android --help` or `tns debug ios --help`.
+
 To start the debugger for Android, run the following command:
 
 ```Bash
@@ -28,7 +30,7 @@ To start the debugger for iOS, run the following command:
 tns debug ios
 ```
 
-This command starts the platform-speciffic debugger with the default `--debug-brk` option.
+This command starts the platform-specific debugger with the default `--debug-brk` option.
 
 ## Debugger Options
 
@@ -45,7 +47,7 @@ For more information about Android debugging, run the following command:
 tns help debug android
 ```
 
-For more information about Android debugging, run the following command:
+For more information about iOS debugging, run the following command:
 
 ```Bash
 tns help debug ios
@@ -53,4 +55,4 @@ tns help debug ios
 
 ## Debugging with Visual Studio Code
 
-To debug NativeScript applications in [Visual Studio Code](https://code.visualstudio.com/), you need the [NativeScript extension for VS Code](https://marketplace.visualstudio.com/items?itemName=Telerik.nativescript). Detailed instructions how to install and set up the extension you can find [here]({% slug nativescript-extension-for-visual-studio-code %}).
+To debug NativeScript applications in [Visual Studio Code](https://code.visualstudio.com/), you need the [NativeScript extension for VS Code](https://marketplace.visualstudio.com/items?itemName=Telerik.nativescript). You can find detailed instructions about how to install and set up the NativeScript extension for VS Code [here]({% slug nativescript-extension-for-visual-studio-code %}).
