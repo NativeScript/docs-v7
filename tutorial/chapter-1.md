@@ -1,7 +1,7 @@
 ---
 title: Chapter 1—Getting Up and Running
 position: 2
-
+environment: nativescript
 ---
 
 # Chapter 1—Getting Up and Running

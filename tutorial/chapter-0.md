@@ -4,6 +4,7 @@ description: Learn the basics of how NativeScript works, how to set up your syst
 position: 1
 previous_url: /start/getting-started
 slug: tutorial
+environment: nativescript
 ---
 
 # NativeScript Getting Started Guide

@@ -1,7 +1,7 @@
 ---
 title: Chapter 7—Next Steps
 position: 8
-
+environment: nativescript
 ---
 
 # Chapter 7—Next Steps
