@@ -127,8 +127,8 @@ tns livesync android --emulator --watch
 
 After your app launches again, if you type an invalid email address and attempt to login, you should see an alert that prevents the submission:
 
-![Validation alert on Android]({{site.baseurl}}/img/cli-getting-started/angular/chapter5/android/1.png)
-![Validation alert on iOS]({{site.baseurl}}/img/cli-getting-started/angular/chapter5/ios/1.png)
+![Validation alert on Android](../img/cli-getting-started/angular/chapter5/android/1.png)
+![Validation alert on iOS](../img/cli-getting-started/angular/chapter5/ios/1.png)
 
 In general npm modules greatly expand the number of things you're able to do in your NativeScript apps. Need date and time formatting? Use [moment](https://www.npmjs.com/package/moment). Need utility functions for objects and arrays? Use [lodash](https://www.npmjs.com/package/lodash) or [underscore](https://www.npmjs.com/package/underscore). This code reuse benefit gets even more powerful when you bring NativeScript plugins into the picture.
 
@@ -209,8 +209,8 @@ This code takes the grocery data from the grocery list array, converts the data 
 
 After you run the app, you'll see a new button at the top of the screen. When you tap it, the native iOS or Android sharing widget will show to let you post your groceries to your social networks, or send them via email, message, or any other method you prefer.
 
-![Social sharing on Android]({{site.baseurl}}/img/cli-getting-started/angular/chapter5/android/2.gif)
-![Social sharing on iOS]({{site.baseurl}}/img/cli-getting-started/angular/chapter5/ios/2.gif)
+![Social sharing on Android](../img/cli-getting-started/angular/chapter5/android/2.gif)
+![Social sharing on iOS](../img/cli-getting-started/angular/chapter5/ios/2.gif)
 
 Pretty cool, huh? The ability to use npm modules greatly expands the number of things you're able to do in a NativeScript app. Need to compose emails in your app? Try out the [NativeScript email plugin](https://www.npmjs.com/package/nativescript-email). Need to use the clipboard in your app? Try out the [NativeScript clipboard plugin](https://www.npmjs.com/package/nativescript-clipboard).
 

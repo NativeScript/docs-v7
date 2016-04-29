@@ -74,7 +74,7 @@ If you’re on Windows, copy and paste the script below into your command prompt
 @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/NativeScript/nativescript-cli/production/setup/native-script.ps1'))"
 ```
 
-During installation you may need to accept a User Account Control prompt to grant the script administrative privileges. Also, be aware that the script downloads and installs some big dependencies—so it’s common for the script to take a while to complete.
+During installation you may need to accept a User Account Control prompt to grant the script administrative privileges. Also, be aware that the script downloads and installs some big dependencies—so it’s common for the script to take a while to complete. When the script does finish, close and reopen your command prompt.
 
 <u>OS X</u>
 
@@ -84,7 +84,7 @@ If you’re on a Mac, copy and paste the script below into your terminal and pre
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/NativeScript/nativescript-cli/production/setup/native-script.rb)"
 ```
 
-Much like the Windows script, the OS X script needs administrative access to run some commands using `sudo`; therefore, you may need to provide your password several times during execution. The OS X script also may take some time to complete, as it’s installing the dependencies for both iOS and Android development.
+Much like the Windows script, the OS X script needs administrative access to run some commands using `sudo`; therefore, you may need to provide your password several times during execution. The OS X script also may take some time to complete, as it’s installing the dependencies for both iOS and Android development. When the script finishes close and restart your terminal.
 
 **Step 4: Verify the setup**
 
@@ -185,7 +185,7 @@ tns run ios --emulator
 
 If all went well, you should see something like this:
 
-![iOS login]({{site.baseurl}}/img/cli-getting-started/angular/chapter1/ios/1.png)
+![iOS login](../img/cli-getting-started/angular/chapter1/ios/1.png)
 
 Next, run your app on an Android emulator with the following command:
 
@@ -199,7 +199,7 @@ tns run android --emulator
 
 If all went well, you should see your app running in an Android emulator:
 
-![Android login]({{site.baseurl}}/img/cli-getting-started/angular/chapter1/android/1.png)
+![Android login](../img/cli-getting-started/angular/chapter1/android/1.png)
 
 <div class="exercise-end"></div>
 
@@ -255,8 +255,8 @@ export class AppComponent {}
 
 Save `app/app.component.ts` and you should see the app relaunch and the updated text displayed.
 
-![Updated iOS text]({{site.baseurl}}/img/cli-getting-started/angular/chapter1/ios/2.png)
-![Updated Android text]({{site.baseurl}}/img/cli-getting-started/angular/chapter1/android/2.png)
+![Updated iOS text](../img/cli-getting-started/angular/chapter1/ios/2.png)
+![Updated Android text](../img/cli-getting-started/angular/chapter1/android/2.png)
 
 <div class="exercise-end"></div> 
 

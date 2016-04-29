@@ -47,7 +47,7 @@ The `(eventName)="functionName()"` syntax is part of [Angular 2’s event bindin
 
 To verify this binding works tap the “Sign In” button in your app; you should see “hello” logged in your terminal or command prompt as such:
 
-<img alt="Terminal showing the word hello logged" src="{{site.baseurl}}/img/cli-getting-started/angular/chapter3/terminal-1.png" class="plain">
+<img alt="Terminal showing the word hello logged" src="../img/cli-getting-started/angular/chapter3/terminal-1.png" class="plain">
 
 > **TIP**:
 > * You can find a list of events available for each UI element on its API documentation page. For instance, the [button element’s API documentation](http://docs.nativescript.org/ApiReference/ui/button/Button) lists its `tap` event.
@@ -87,8 +87,8 @@ Next, find the first `<TextField>` in your component’s `template` and replace 
 
 The key thing to note here is the `[text]="email"` attribute on the `<TextField>`. This is Angular 2’s syntax for attribute binding, and it allows you to bind the value of an attribute to a property in your TypeScript class. In this case, the `text` attribute of the `<TextField>`—which is roughly equivalent to a DOM `<input>`’s `value` attribute—is bound to the `AppComponent`’s `email` attribute. Therefore the app now has an email address prefilled when it loads:
 
-![Android with prefilled email]({{site.baseurl}}/img/cli-getting-started/angular/chapter3/android/1.png)
-![iOS with prefilled email]({{site.baseurl}}/img/cli-getting-started/angular/chapter3/ios/1.png)
+![Android with prefilled email](../img/cli-getting-started/angular/chapter3/android/1.png)
+![iOS with prefilled email](../img/cli-getting-started/angular/chapter3/ios/1.png)
 
 > **NOTE**: It’s very easy to confuse Angular 2’s event binding syntax `(eventName)="functionName()"` with its attribute binding syntax `[attributeName]="propertyName"`. Don’t worry though; if you get them backwards, the problem is usually easy to debug, as the functionality you’re attempting to add just won’t work. These syntaxes are common enough that you’ll be using them a lot, and eventually you should be able to commit them to memory.
 
@@ -96,7 +96,7 @@ This attribute binding approach works really well when you need the data binding
 
 To show that the current example’s data binding is only one way, head back to your app, change the email text field’s value (type a few extra letters or something like that), and then tap the “Sign In” button. Because your `submit()` function alerts the current value of your component’s `email` property—`alert("You’re using: " + this.email)`—you might expect to see the updated value in the alert. Instead, however, you see the original value. Notice how the typed text and the alert value don’t match in the screenshot below.
 
-![Android with email address that do not match]({{site.baseurl}}/img/cli-getting-started/angular/chapter3/android/2.png)
+![Android with email address that do not match](../img/cli-getting-started/angular/chapter3/android/2.png)
 
 To fix this, you need to switch to Angular 2’s two-way data binding syntax.
 
@@ -117,7 +117,7 @@ At first glance the `[(ngModel)]` syntax looks more than a little odd, as it’s
 
 Don’t worry too much about the details of this syntax while you’re getting started. In your head you can think of `[(ngModel)]` as the way to implement two-way data binding when you need it on form controls. To show that it works, if you again modify your app’s email address and click the “Sign In” button, you’ll see the updated value in the alert as expected:
 
-![Android with email addresses that do match]({{site.baseurl}}/img/cli-getting-started/angular/chapter3/android/3.png)
+![Android with email addresses that do match](../img/cli-getting-started/angular/chapter3/android/3.png)
 
 Before we move on, let’s make one additional change to show what else you can do with Angular 2’s data binding APIs. The Groceries app uses the same UI for the “Sign In” form and the “Sign Up” form. Therefore, when the user taps “Sign Up”, we need to update the text of the buttons (and eventually the functionality that occurs when you tap them). Let’s see how to make that happen.
 
@@ -153,8 +153,8 @@ export class AppComponent {
 
 The previous examples switches each button’s `text` attribute from a simple string—e.g. `<Button text="Sign Up">`—to an attribute binding that is dependent on a value defined in the `AppComponent` class—e.g. `<Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'">"`. Now, when the value of the `isLoggingIn` attributes changes after the user taps the bottom button, Angular is smart enough to update the text of the button automatically. The result looks like this:
 
-![Text changing on Android]({{site.baseurl}}/img/cli-getting-started/angular/chapter3/android/4.gif)
-![Text changing on iOS]({{site.baseurl}}/img/cli-getting-started/angular/chapter3/ios/4.gif)
+![Text changing on Android](../img/cli-getting-started/angular/chapter3/android/4.gif)
+![Text changing on iOS](../img/cli-getting-started/angular/chapter3/ios/4.gif)
 
 At this point, you have a basic login screen setup with two-way data binding—which isn’t bad for 20 some lines of TypeScript. (Think about how much code you’d have to write in Android Studio _and_ Xcode to accomplish the same task.) To this point though you’ve been placing all of your logic in a single TypeScript file, which doesn’t scale all that well for real-world applications.
 
@@ -355,8 +355,8 @@ signUp() {
 
 Now, in your app, tap the “Sign Up” button, type an email address, and tap the “Sign Up” button again. If all went well, you should see the alert below:
 
-![Alert on Android]({{site.baseurl}}/img/cli-getting-started/angular/chapter3/android/5.png)
-![Alert on iOS]({{site.baseurl}}/img/cli-getting-started/angular/chapter3/ios/5.png)
+![Alert on Android](../img/cli-getting-started/angular/chapter3/android/5.png)
+![Alert on iOS](../img/cli-getting-started/angular/chapter3/ios/5.png)
 
 How does this code work? Let’s return to this bit of code:
 
@@ -495,8 +495,8 @@ At this point you should be ready to create an account to verify this whole setu
 
 If all went well, you should see a confirmation dialog that looks like this:
 
-![Alert on Android]({{site.baseurl}}/img/cli-getting-started/angular/chapter3/android/6.png)
-![Alert on iOS]({{site.baseurl}}/img/cli-getting-started/angular/chapter3/ios/6.png)
+![Alert on Android](../img/cli-getting-started/angular/chapter3/android/6.png)
+![Alert on iOS](../img/cli-getting-started/angular/chapter3/ios/6.png)
 
 > **TIP**:  After creating your account, you may wish to hardcode your credentials in your `AppComponent`’s `constructor()` to make development faster for the rest of this guide.
 > ``` TypeScript
@@ -660,8 +660,8 @@ login() {
 
 After this change you can now navigate between the login and list pages in your app:
 
-![Navigating on Android]({{site.baseurl}}/img/cli-getting-started/angular/chapter3/android/7.gif)
-![Navigating on iOS]({{site.baseurl}}/img/cli-getting-started/angular/chapter3/ios/7.gif)
+![Navigating on Android](../img/cli-getting-started/angular/chapter3/android/7.gif)
+![Navigating on iOS](../img/cli-getting-started/angular/chapter3/ios/7.gif)
 
 The power of NativeScript is you have the ability to use the same Angular conventions that you’d use in a web app—`@RouteConfig`, `Router`, and so forth—yet get an app that fits right in on iOS and Android. Notice how on Android the hardware back button works as expected, and how your iOS app uses built-in iOS animations and conventions such as the back button.
 

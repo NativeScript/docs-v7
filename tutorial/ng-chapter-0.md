@@ -15,17 +15,17 @@ Welcome to the NativeScript & Angular 2 getting started guide 📚. In this hand
 ## What is NativeScript? What is Angular 2?
 
 <div class="intro-box">
-  <img src="{{site.baseurl}}/img/cli-getting-started/angular/chapter0/NativeScript_logo.png" class="plain" alt="NativeScript logo">
+  <img src="../img/cli-getting-started/angular/chapter0/NativeScript_logo.png" class="plain" alt="NativeScript logo">
   <p><a href="https://www.nativescript.org/">NativeScript</a> is a framework for building native iOS and Android apps using JavaScript and CSS. NativeScript renders UIs with the native platform’s rendering engine—no <a href="http://developer.telerik.com/featured/what-is-a-webview/">WebViews</a>—resulting in native-like performance and UX.</p>
 </div>
 
 <div class="intro-box">
-  <img src="{{site.baseurl}}/img/cli-getting-started/angular/chapter0/Angular_logo.png" class="plain" alt="Angular logo">
+  <img src="../img/cli-getting-started/angular/chapter0/Angular_logo.png" class="plain" alt="Angular logo">
   <p><a href="https://angularjs.org/">Angular JS</a> is one of the most popular open source JavaScript frameworks for application development. The latest version of Angular, <a href="https://angular.io/">Angular 2</a>, makes it possible to use Angular outside of a web browser, and developers at <a href="http://www.telerik.com/">Telerik</a>—the company that created and maintains NativeScript—<a href="https://docs.google.com/document/d/1J6fZcVbVa6uONVCJIox2A3Jn5TWgspLufmryfA1OXGk/edit#heading=h.trgonlvb0z3j">have been working closely with developers at Google</a> to make Angular 2 in NativeScript a reality.</p>
 </div>
 
 <div class="intro-box">
-  <img src="{{site.baseurl}}/img/cli-getting-started/angular/chapter0/NativeScript_Angular_logo.png" class="plain" alt="Angular logo">
+  <img src="../img/cli-getting-started/angular/chapter0/NativeScript_Angular_logo.png" class="plain" alt="Angular logo">
   <p>The result is a software architecture that allows you to build mobile apps using the same framework—and in some cases the same code—that you use to build Angular 2 web apps, with the performance you’d expect from native code. Let’s look at how it all works by building an app.</p>
 </div>
 
@@ -40,15 +40,15 @@ This guide will walk you through building [Groceries](https://github.com/NativeS
 
 If you follow along to the end, here's what the finished app will look like on iOS:
 
-<img src="{{site.baseurl}}/img/cli-getting-started/angular/chapter0/ios/1.png" alt="Final look of iOS app 1" style="height: 300px;">
-<img src="{{site.baseurl}}/img/cli-getting-started/angular/chapter0/ios/2.png" alt="Final look of iOS app 1" style="height: 300px;">
-<img src="{{site.baseurl}}/img/cli-getting-started/angular/chapter0/ios/3.png" alt="Final look of iOS app 1" style="height: 300px;">
+<img src="../img/cli-getting-started/angular/chapter0/ios/1.png" alt="Final look of iOS app 1" style="height: 300px;">
+<img src="../img/cli-getting-started/angular/chapter0/ios/2.png" alt="Final look of iOS app 1" style="height: 300px;">
+<img src="../img/cli-getting-started/angular/chapter0/ios/3.png" alt="Final look of iOS app 1" style="height: 300px;">
 
 And here's what the app will look like on Android:
 
-<img src="{{site.baseurl}}/img/cli-getting-started/angular/chapter0/android/1.png" alt="Final look of Android app 1" style="height: 300px;">
-<img src="{{site.baseurl}}/img/cli-getting-started/angular/chapter0/android/2.png" alt="Final look of Android app 1" style="height: 300px;">
-<img src="{{site.baseurl}}/img/cli-getting-started/angular/chapter0/android/3.png" alt="Final look of Android app 1" style="height: 300px;">
+<img src="../img/cli-getting-started/angular/chapter0/android/1.png" alt="Final look of Android app 1" style="height: 300px;">
+<img src="../img/cli-getting-started/angular/chapter0/android/2.png" alt="Final look of Android app 1" style="height: 300px;">
+<img src="../img/cli-getting-started/angular/chapter0/android/3.png" alt="Final look of Android app 1" style="height: 300px;">
 
 ## Prerequisites
 

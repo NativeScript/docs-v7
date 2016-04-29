@@ -21,8 +21,8 @@ NativeScript gives you the option to dig into native code as needed, and to do s
 
 You may recall from earlier chapters that the hint color on your sign up screen could use a little more contrast. Notice the unappealing black on brown color of the text in the images below (if you can see the text at all).
 
-![Bad contrast on Android]({{site.baseurl}}/img/cli-getting-started/angular/chapter6/android/1.png)
-![Bad contrast on iOS]({{site.baseurl}}/img/cli-getting-started/angular/chapter6/ios/1.png)
+![Bad contrast on Android](../img/cli-getting-started/angular/chapter6/android/1.png)
+![Bad contrast on iOS](../img/cli-getting-started/angular/chapter6/ios/1.png)
 
 At the time of this writing, NativeScript doesn’t expose a way to style a text field’s hint color through CSS—although [there is an open issue requesting the feature](https://github.com/NativeScript/NativeScript/issues/712)—however, both iOS and Android have ways to accomplish this task, and with NativeScript you have direct access to these native APIs.
 
@@ -103,7 +103,7 @@ this.setTextFieldColors();
 
 After your app refreshes with this change, you should now see a far more readable hint color:
 
-![Better contrast on iOS]({{site.baseurl}}/img/cli-getting-started/angular/chapter6/ios/2.png)
+![Better contrast on iOS](../img/cli-getting-started/angular/chapter6/ios/2.png)
 
 Let’s back up to the contents of the `setHintColor()` function so we can discuss what’s going on here.
 
@@ -169,7 +169,7 @@ Remember from the previous section that NativeScript makes native objects availa
 
 One other thing to notice is the if checks that you added around each of the native calls. Your TypeScript code runs across both platforms, and iOS APIs are not available on Android (and vice versa). Testing for the existence of the native object properties is a common way to fork your code in NativeScript to avoid errors. And with this change in place, your hint colors on Android are now far more legible.
 
-![Better contrast on Android]({{site.baseurl}}/img/cli-getting-started/angular/chapter6/android/2.png)
+![Better contrast on Android](../img/cli-getting-started/angular/chapter6/android/2.png)
 
 Let’s look at one last way we can improve the look of this app with native code.
 
@@ -222,8 +222,8 @@ ActionBar {
 
 And with that, your status bar is now translucent and properly spaced on iOS and Android:
 
-![Updated status bar on Android]({{site.baseurl}}/img/cli-getting-started/angular/chapter6/android/3.png)
-![Updated status bar on iOS]({{site.baseurl}}/img/cli-getting-started/angular/chapter6/ios/3.png)
+![Updated status bar on Android](../img/cli-getting-started/angular/chapter6/android/3.png)
+![Updated status bar on iOS](../img/cli-getting-started/angular/chapter6/ios/3.png)
 
 And... that's it! You've created a functional, cross-platform, backend-driven app to manage your grocery list. In the process you've created a unique UI for Android and iOS, leveraged NativeScript plugins and npm modules, learned how to log in and register, managed backend services, created a list, and more. 
 

@@ -186,8 +186,8 @@ This code adds two new NativeScript UI elements: a [text field](http://docs.nati
 
 After your app updates with this change, you may expect to see a polished login screen, but instead you will see a single `<Button>` element on the screen:
 
-![login 1]({{site.baseurl}}/img/cli-getting-started/angular/chapter2/ios/1.png)
-![login 1]({{site.baseurl}}/img/cli-getting-started/angular/chapter2/android/1.png)
+![login 1](../img/cli-getting-started/angular/chapter2/ios/1.png)
+![login 1](../img/cli-getting-started/angular/chapter2/android/1.png)
 
 What went wrong? In NativeScript whenever you use more than one UI element, you need to tell NativeScript how to arrange those elements on the screen. Since you’re not doing that currently, NativeScript is incorrectly assuming you want the last element—the `<Button>`—to take up the whole screen. To arrange these elements, let’s move onto the NativeScript feature for aligning elements on the screen: NativeScript layouts.
 
@@ -231,8 +231,8 @@ Open `app/app.component.ts` and add a `<StackLayout>` element within your compon
 
 After your app updates with this change, you'll see that your login page’s UI elements stack up:
 
-![login 2]({{site.baseurl}}/img/cli-getting-started/angular/chapter2/ios/2.png)
-![login 2]({{site.baseurl}}/img/cli-getting-started/angular/chapter2/android/2.png)
+![login 2](../img/cli-getting-started/angular/chapter2/ios/2.png)
+![login 2](../img/cli-getting-started/angular/chapter2/android/2.png)
 
 Although the UI elements are in the correct order, they could use some spacing and color to make the app look a bit nicer. To do that let's look at another NativeScript feature: CSS.
 
@@ -305,8 +305,8 @@ NativeScript supports CSS's `@import` statement for importing one CSS file into 
 
 With these changes in place, you'll notice that the app has a bit more spacing, and also that the text fields have borders on iOS but that Android:
 
-![login 3]({{site.baseurl}}/img/cli-getting-started/angular/chapter2/ios/3.png)
-![login 3]({{site.baseurl}}/img/cli-getting-started/angular/chapter2/android/3.png)
+![login 3](../img/cli-getting-started/angular/chapter2/ios/3.png)
+![login 3](../img/cli-getting-started/angular/chapter2/android/3.png)
 
 Despite our changes the app still looks pretty ugly, and that’s because we’re going to apply another batch of styles at the component level. Let’s look at how that works.
 
@@ -386,8 +386,8 @@ Open your `app/app.component.ts` file, find `<Button text="Sign in"></Button>` i
 
 With this last `class` change in place your app is starting to look a little nicer:
 
-![login 4]({{site.baseurl}}/img/cli-getting-started/angular/chapter2/ios/4.png)
-![login 4]({{site.baseurl}}/img/cli-getting-started/angular/chapter2/android/4.png)
+![login 4](../img/cli-getting-started/angular/chapter2/ios/4.png)
+![login 4](../img/cli-getting-started/angular/chapter2/android/4.png)
 
 As you can see, in NativeScript you have a lot of options for how you can apply CSS rules. You can apply rules globally either for both platforms in `app.css`, for iOS in `platform.ios.css`, or for Android in `platform.android.css`. And you can also apply rules at the component level, while maintaining the same flexibility to target different platforms if required.
 
@@ -427,8 +427,8 @@ Although more complex than putting an image directly in the `app` folder, using 
 
 Once these files are in place the NativeScript framework knows how to pick the correct file; all you have to do is reference the image using `res://` and its base file name—i.e. `res://logo_login`. Here's what your login screen should look like on iOS and Android:
 
-![login 5]({{site.baseurl}}/img/cli-getting-started/angular/chapter2/ios/5.png)
-![login 5]({{site.baseurl}}/img/cli-getting-started/angular/chapter2/android/5.png)
+![login 5](../img/cli-getting-started/angular/chapter2/ios/5.png)
+![login 5](../img/cli-getting-started/angular/chapter2/android/5.png)
 
 At this point your UI looks better visually, but the app still doesn't actually do anything. Let's look at how you can use JavaScript to add some functionality.
 

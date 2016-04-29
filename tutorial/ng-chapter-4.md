@@ -90,12 +90,12 @@ this.page.backgroundImage = this.page.ios ? "res://bg_login.jpg" : "res://bg_log
 
 This code uses an instance of the [`Page` class](http://docs.nativescript.org/ApiReference/ui/page/Page) from the [NativeScript page module](http://docs.nativescript.org/ApiReference/ui/page/README), and sets two properties on it—`actionBarHidden` and `backgroundImage`. Although you can peruse the NativeScript API documentation for a full list of these properties and what they do, if you’re using a TypeScript-friendly IDE, you can get a full list of these properties at any point.
 
-<img alt="TypeScript autocomplete" class="plain" src="{{site.baseurl}}/img/cli-getting-started/angular/chapter4/typescript.png" style="border: 1px solid black;">
+<img alt="TypeScript autocomplete" class="plain" src="../img/cli-getting-started/angular/chapter4/typescript.png" style="border: 1px solid black;">
 
 If you run your app you should see that the action bar—the bar beneath the status bar that had previously displayed on Android—is now hidden, and the page uses a gorgeous new background image:
 
-![Background image on Android]({{site.baseurl}}/img/cli-getting-started/angular/chapter4/android/1.png)
-![Background image on iOS]({{site.baseurl}}/img/cli-getting-started/angular/chapter4/ios/1.png)
+![Background image on Android](../img/cli-getting-started/angular/chapter4/android/1.png)
+![Background image on iOS](../img/cli-getting-started/angular/chapter4/ios/1.png)
 
 Let’s look at a few other NativeScript modules you can use to help improve the look of this app.
 
@@ -161,8 +161,8 @@ All NativeScript UI elements inherit from a base [`View` class](http://docs.nati
 
 One you have a reference to a UI element, you can call any of the methods that element inherits from `View`. In this case, you call the `<StackLayout #container>` element’s `animate()` method to change its background color over a duration of `200`, or 2/10 of a second. The effect is a subtle color change that helps user differentiate between the “Sign In” and “Sign Up” functionality that your form provides.
 
-![Color animation on Android]({{site.baseurl}}/img/cli-getting-started/angular/chapter4/android/2.gif)
-![Color animation on iOS]({{site.baseurl}}/img/cli-getting-started/angular/chapter4/ios/2.gif)
+![Color animation on Android](../img/cli-getting-started/angular/chapter4/android/2.gif)
+![Color animation on iOS](../img/cli-getting-started/angular/chapter4/ios/2.gif)
 
 > **NOTE**: You may notice that the text color is off with the brown background. Don’t worry about that for now; we’ll address that in chapter 6.
 
@@ -226,8 +226,8 @@ export class ListPage implements OnInit {
 
 Your `ListPage` class now has a `groceryList` property that you fill with three objects in an `ngOnInit` handler. If you run your app and login, you should see the same list of groceries on the screen:
 
-![List view on Android]({{site.baseurl}}/img/cli-getting-started/angular/chapter4/android/3.png)
-![List view on iOS]({{site.baseurl}}/img/cli-getting-started/angular/chapter4/ios/3.png)
+![List view on Android](../img/cli-getting-started/angular/chapter4/android/3.png)
+![List view on iOS](../img/cli-getting-started/angular/chapter4/ios/3.png)
 
 How does this work? Let’s return to this chunk of code:
 
@@ -416,8 +416,8 @@ Generally, it’s only a good idea to declare providers in parent components if 
 
 If you load the list page with the account you created earlier you’ll see a blank page, as your account is newly created, and therefore your grocery list is empty. If you want to see some data to verify your changes worked, try logging in with the credentials "user@nativescript.org" and "password". You should see data that looks something like this:
 
-![Grocery data on Android]({{site.baseurl}}/img/cli-getting-started/angular/chapter4/android/4.png)
-![Grocery data on iOS]({{site.baseurl}}/img/cli-getting-started/angular/chapter4/ios/4.png)
+![Grocery data on Android](../img/cli-getting-started/angular/chapter4/android/4.png)
+![Grocery data on iOS](../img/cli-getting-started/angular/chapter4/ios/4.png)
 
 At this point you have a list of data associated with each account, but a grocery list isn’t very useful if you can’t add new groceries to the list. Let’s look at how to do that next.
 
@@ -452,8 +452,8 @@ Open `app/pages/list/list.html` and replace the contents of the file with the fo
 
 When your app runs with these changes your UI should now look like this:
 
-![Updated view on Android]({{site.baseurl}}/img/cli-getting-started/angular/chapter4/android/5.png)
-![Updated view on  iOS]({{site.baseurl}}/img/cli-getting-started/angular/chapter4/ios/5.png)
+![Updated view on Android](../img/cli-getting-started/angular/chapter4/android/5.png)
+![Updated view on  iOS](../img/cli-getting-started/angular/chapter4/ios/5.png)
 
 To break down how this layout works, let’s start with the outer structure of the markup:
 
@@ -582,8 +582,8 @@ this._groceryListService.add(this.grocery)
 
 The end result looks like this:
 
-![Adding to a list on Android]({{site.baseurl}}/img/cli-getting-started/angular/chapter4/android/6.gif)
-![Adding to a list on iOS]({{site.baseurl}}/img/cli-getting-started/angular/chapter4/ios/6.gif)
+![Adding to a list on Android](../img/cli-getting-started/angular/chapter4/android/6.gif)
+![Adding to a list on iOS](../img/cli-getting-started/angular/chapter4/ios/6.gif)
 
 At this point you can add a grocery item and it will appear immediately in your list—and, all of this is completely driven by a backend service. Pretty cool, huh?
 
@@ -630,8 +630,8 @@ ngOnInit() {
 
 When you first visit the list page, you should now see the following loading indicators:
 
-![ActivityIndicator on Android]({{site.baseurl}}/img/cli-getting-started/angular/chapter4/android/7.png)
-![ActivityIndicator on iOS]({{site.baseurl}}/img/cli-getting-started/angular/chapter4/ios/7.png)
+![ActivityIndicator on Android](../img/cli-getting-started/angular/chapter4/android/7.png)
+![ActivityIndicator on iOS](../img/cli-getting-started/angular/chapter4/ios/7.png)
 
 > **TIP**: You can apply the same `row` or `column` attribute to multiple UI controls to have them take up the same space on the screen. The UI control that is defined last will appear on top, which is why the `<ActivityIndicator>` appears on top of the `<ListView>` in the previous example.
 > ``` XML
@@ -703,8 +703,8 @@ The advantage of using CSS animations is that you avoid the need to reference sp
 
 If you try out your app you should now see a nice fade-in animation:
 
-![Loading animation on Android]({{site.baseurl}}/img/cli-getting-started/angular/chapter4/android/8.gif)
-![Loading animation on iOS]({{site.baseurl}}/img/cli-getting-started/angular/chapter4/ios/8.gif)
+![Loading animation on Android](../img/cli-getting-started/angular/chapter4/android/8.gif)
+![Loading animation on iOS](../img/cli-getting-started/angular/chapter4/ios/8.gif)
 
 Now that you have functional login and list pages, let’s enhance the app’s functionality as a grocery list management tool. In the next chapters you'll add functionality such as email validation, social sharing, and more. And you’ll use one of NativeScript's most useful features to do so: npm modules.
 
