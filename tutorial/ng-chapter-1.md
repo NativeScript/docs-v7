@@ -21,6 +21,8 @@ In this chapter you're going to start with the basics, including installing the 
 
 The NativeScript CLI has a few system requirements you must have in place before building NativeScript apps. Let’s look at the steps you’ll need to take to get up and running.
 
+> **TIP**: Setting up your machine for native development can be tricky, especially if you’re new to mobile development. If you get stuck, or if you have questions at any point while going through this guide, the [NativeScript Community Slack channel](http://developer.telerik.com/wp-login.php?action=slack-invitation) is a great place to ask questions.
+
 <h4 class="exercise-start">
     <b>Exercise</b>: Setup NativeScript
 </h4>
@@ -40,6 +42,8 @@ Open your terminal or command prompt and execute the following command to instal
 ```
 npm install -g nativescript
 ```
+
+> **NOTE**: If you’re on OS X and receive an EACCES error, you either need to rerun the previous command with `sudo`—that is, `sudo npm install -g nativescript`—or take a moment to [fix your npm persmissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions) so that you don’t need admin rights to globally install npm packages.
 
 After completing the setup you should have two commands available from your terminal or command prompt: `tns`—which is short for <b>T</b>elerik <b>N</b>ative<b>S</b>cript—and `nativescript`. The two commands are equivalent, so we'll stick with the shorter `tns`.
 
@@ -74,7 +78,7 @@ If you’re on Windows, copy and paste the script below into your command prompt
 @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/NativeScript/nativescript-cli/production/setup/native-script.ps1'))"
 ```
 
-During installation you may need to accept a User Account Control prompt to grant the script administrative privileges. Also, be aware that the script downloads and installs some big dependencies—so it’s common for the script to take a while to complete. When the script does finish, close and reopen your command prompt.
+During installation you may need to accept a User Account Control prompt to grant the script administrative privileges. Also, be aware that the script downloads and installs some big dependencies—so it’s common for the script to take a while to complete. When the script finishes, close and reopen your command prompt.
 
 <u>OS X</u>
 
@@ -84,7 +88,7 @@ If you’re on a Mac, copy and paste the script below into your terminal and pre
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/NativeScript/nativescript-cli/production/setup/native-script.rb)"
 ```
 
-Much like the Windows script, the OS X script needs administrative access to run some commands using `sudo`; therefore, you may need to provide your password several times during execution. The OS X script also may take some time to complete, as it’s installing the dependencies for both iOS and Android development. When the script finishes close and restart your terminal.
+Much like the Windows script, the OS X script needs administrative access to run some commands using `sudo`; therefore, you may need to provide your password several times during execution. The OS X script also may take some time to complete, as it’s installing the dependencies for both iOS and Android development. When the script finishes, close and restart your terminal.
 
 **Step 4: Verify the setup**
 
@@ -97,8 +101,6 @@ tns doctor
 If you see “No issues were detected” you’re good to go!
 
 <div class="exercise-end"></div>
-
-Regardless of which approach you take, setting up your machine for native development can be tricky. If you get stuck, or if you have questions at any point while going through this guide, the [NativeScript Community Slack channel](http://developer.telerik.com/wp-login.php?action=slack-invitation) is a great place to ask questions.
 
 ## 1.2: Start your app
 
