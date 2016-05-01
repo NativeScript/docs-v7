@@ -1,7 +1,7 @@
 ---
 title: Action Bar
 description: Learn how to use and customize the Action Bar.
-position: 11
+position: 90
 slug: action-bar
 ---
 

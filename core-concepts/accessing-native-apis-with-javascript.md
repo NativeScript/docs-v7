@@ -1,7 +1,7 @@
 ---
 title: Accessing Native APIs with JavaScript
 description: Learn how to access native APIs in NativeScript
-position: 10
+position: 100
 slug: access-native-apis
 ---
 

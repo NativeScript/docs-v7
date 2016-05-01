@@ -1,7 +1,7 @@
 ---
 title: Application Lifecycle
 description: Learn how to manage the life cycle of NativeScript applications from application start to storing user-defined settings.
-position: 2
+position: 20
 slug: lifecycle
 previous_url: /application-management
 ---

@@ -2,7 +2,7 @@
 title: Animations with CSS
 description: Animate view properties by using CSS stylesheets.
 slug: animation-css
-position: 10
+position: 110
 publish: false
 ---
 

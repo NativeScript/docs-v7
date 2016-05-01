@@ -1,7 +1,7 @@
 ---
 title: Supporting Multiple Screens
 description: Learn how to tailor you application for different screen sizes.
-position: 8
+position: 80
 slug: multiple-screen-sizes
 ---
 

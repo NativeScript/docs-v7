@@ -1,7 +1,7 @@
 ---
 title: Dialogs
 description: Learn how to create alerts, confirmations, prompts, logins and other dialogs in your NativeScript apps.
-position: 7
+position: 70
 slug: dialogs
 previous_url: /ui-dialogs
 ---
