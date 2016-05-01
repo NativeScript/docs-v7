@@ -1,36 +1,36 @@
 ---
 title: Using formatted string
-description: How to use formatted-string in Angular App
+description: How to use the FormattedString class in an Angular App
 position: 2
 slug: formatted-string
 previous_url: /formatted-string
 environment: angular
 ---
 
-# How to use formatted string in text
+# How to use the FormattedString class in text
 
-NativeScript has a special class called [FormattedString](http://docs.nativescript.org/ApiReference/text/formatted-string/FormattedString) to support varios text transformations and decorations. `FormattedString` could be used with all text related components like Label, TextView, TextField and even Button. Using `FormattedString` within an NativeScript-Angular requires using short-hand syntax instead of full syntax due to some specifics while creating Angular views and adding them to native visual tree. So the correct syntax should be:
+NativeScript has a special class called [FormattedString](http://docs.nativescript.org/ApiReference/text/formatted-string/FormattedString) to support various text transformations and decorations. The `FormattedString` class can be used with all text-related components like Label, TextView, TextField and even Button. Using `FormattedString` within an NativeScript-Angular app requires using a special syntax because of how Angular views get added to the native visual tree. Here’s what the correct syntax looks like:
 
 ```HTML
 <Label>
-	<FormattedString>
-    	<Span text="some text" fontAttributes="Bold"></Span>
+    <FormattedString>
+        <Span text="some text" fontAttributes="Bold"></Span>
     </FormattedString>
 </Label>
 ```
 
-instead of full syntax:
+This syntax differs from the FormattedString’s full syntax, shown below, which does not work in Angular apps:
 
 ```HTML
 <Label>
-	<Label.FormattedText>
-      <FormattedString>
-          <FormattedString.Spans>
-          	  <Span text="some text" fontAttributes="Bold"></Span>
-          </FormattedString.Spans>
-      </FormattedString>
+    <Label.FormattedText>
+        <FormattedString>
+            <FormattedString.Spans>
+                <Span text="some text" fontAttributes="Bold"></Span>
+            </FormattedString.Spans>
+        </FormattedString>
     </Label.FormattedText>
 </Label>
 ```
 
-> Both syntaxes are supported by pure NativeScript application, so using the short one is a safe bet.
+> Both syntaxes are supported in NativeScript applications that do not use Angular, so using the short one is a safe bet.
