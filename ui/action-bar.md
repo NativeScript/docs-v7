@@ -289,7 +289,7 @@ Values for `ios.systemIcon` are numbers from the [`UIBarButtonSystemItem`](https
 
 You can explicitly control the visibility of the `ActionBar` by setting the `actionBarHidden` property of the `Page`.
 {% angular %}
-You can inject a reference to the current `Page` in the constructor of your component using the angluar DI.
+You can inject a reference to the current `Page` in the constructor of your component using the Angular DI.
 {% endangular %}
 
 In **Android**, the application bar is visible by default and shows the name of the application as title. The navigation button is visible only when it is explicitly defined in the application.
@@ -494,7 +494,7 @@ The result is:
 
 {% angular %}
 ## Adding Actions To Existing Action Bar
-Using the `ActionBarExtension` component you can add additional action items to the current `ActionBar`. This is useful if you are writing a resuable compnent that exposes an action (ex. "save"), but you don't want you don't want to override the whole `ActionBar`.
+Using the `ActionBarExtension` component you can add additional action items to the current `ActionBar`. This is useful if you are writing a reusable component that exposes an action (ex. "save"), but you don't want you don't want to override the whole `ActionBar`.
 
 Here is how to define a contextual `copy` action:
 

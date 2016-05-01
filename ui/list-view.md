@@ -66,9 +66,9 @@ export class ListTest {
 
 As shown there is nothing complex in a way ListView component is used, but some points need clarifications.
 
-* items - `Items` property is bound in a standart way to a ordinary JavaScript Array. Since the JavaScript Array object does not have observable or change notifications capabilities supporting such scenario counts on Angular 2 change detection mechanism for notification that something is changed. Be aware that the process of checking that anything is changed within an Array could take a lot of time on large arrays (including a memory issue) leading to a possible performance issue. So consider using another kind of source with large collections. A great example of such kind of data source is NativeScript ObservableArray.
+* items - `Items` property is bound in a standard way to a ordinary JavaScript Array. Since the JavaScript Array object does not have observable or change notifications capabilities supporting such scenario counts on Angular 2 change detection mechanism for notification that something is changed. Be aware that the process of checking that anything is changed within an Array could take a lot of time on large arrays (including a memory issue) leading to a possible performance issue. So consider using another kind of source with large collections. A great example of such kind of data source is NativeScript ObservableArray.
 
-* template - The template tag is used to define a template which will be used for the User Interface of every ListView item. As shown there are some standart Angular 2 optional variables marked with `#` that are preset for every data item:
+* template - The template tag is used to define a template which will be used for the User Interface of every ListView item. As shown there are some standard Angular 2 optional variables marked with `#` that are preset for every data item:
   * #item - item it is the data item itself.
   * #i - its the index of the data item (inside data source)
   * #odd - represents if index of data item is an odd number

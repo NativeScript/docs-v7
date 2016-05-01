@@ -16,7 +16,7 @@ There are several ways of data flows (data bindings).
 * one-way to source (to model) - this is a way of binding which updates Model due to some action on UI. The best example for this is an event like button click (tap).
 * two-way data binding - this is a way of binding that combines both previous ways of binding. A tipical example is a text box field that reads its value from Model, but also changes the Model based on user input.
 
-`NativeScript-angular` plugin simplifies the way which data binding will be used. NativeScript part of the binding infrastructure is used to bind Model values to the real native elements (Android and iOS). Angular 2 part is used to provide correct binding context, change detection and notifications. In order to use data binding within NativeScript-Angular application generally do not differ from a standart Angular 2 web application.
+`NativeScript-angular` plugin simplifies the way which data binding will be used. NativeScript part of the binding infrastructure is used to bind Model values to the real native elements (Android and iOS). Angular 2 part is used to provide correct binding context, change detection and notifications. In order to use data binding within NativeScript-Angular application generally do not differ from a standard Angular 2 web application.
 
 Let's see some examples how to use data binding with `NativeScript-Angular` plugin.
 
@@ -40,7 +40,7 @@ onButtonTap = function () {
 ```
 * two-way data binding - surround target property with square and normal brackets
 
-In Angular 1.x two-way data binding was the default way of binding. However with Angular 2 the state of `two-way data binding` is not the same - due to too many performance problems caused by the uncertaincy of what or who caused the change of the value within Model which sometimes results in way too many changes (and change notifications). So Angular 2 does not have two-way data binding by default, instead it uses events to notify Model that something is changed.
+In Angular 1.x two-way data binding was the default way of binding. However with Angular 2 the state of `two-way data binding` is not the same - due to too many performance problems caused by the uncertainty of what or who caused the change of the value within Model which sometimes results in way too many changes (and change notifications). So Angular 2 does not have two-way data binding by default, instead it uses events to notify Model that something is changed.
 
 ```XML
 <TextField [(ngModel)]='model.mytext'></TextField>
