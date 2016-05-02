@@ -142,7 +142,7 @@ git checkout angular-start
 > * The “angular-end” branch has the final state of this guide's tutorial. Feel free to [refer to the branch on GitHub](https://github.com/NativeScript/sample-Groceries/tree/angular-end) if you get stuck.
 > * After completing this guide, if you’d like to start a new NativeScript and Angular 2 app—one that doesn’t clone Groceries—you can use the NativeScript CLI’s `tns create` command as such:
 > ```
-> tns create my-app-name --template tns-template-hello-world-ng
+> tns create my-app-name --ng
 > ```
 
 ## 1.3: Add target development platforms

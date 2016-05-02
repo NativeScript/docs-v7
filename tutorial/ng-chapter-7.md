@@ -26,21 +26,13 @@ Regardless of what you choose to do next with NativeScript, joining the NativeSc
 
 ## 7.2: Start your own app
 
-Although you’re welcome to use Groceries as the basis of your own app, if you want to start a new app from scratch, the NativeScript CLI provides a number of built-in starting points. For example, you can start a new “hello world” app by running the `tns create` command:
+Although you’re welcome to use Groceries as the basis of your own app, if you want to start a new app from scratch, the NativeScript CLI provides a `--ng` option for starting apps with TypeScript and Angular preconfigured. For example, the following command creates an app named “MyNextGreatApp”:
 
 ```
-tns create my-app-name --template tns-template-hello-world-ng
+tns create MyNextGreatApp --ng
 ```
 
-If you want to start from a slightly more complete starting point, the `tns create` command also has additional values you can use with the `--template` option. For instance, the following command creates a NativeScript project with tab navigation already setup:
-
-```
-tns create MyNextGreatApp --template tns-template-tab-navigation
-```
-
-> **TIP**: A number of other templates are available to use with the `--template` option, including TypeScript templates and more. Refer to [the full list of official templates](https://www.tjvantoll.com/2016/02/22/creating-nativescript-templates/) at any time.
-
-Regardless of which template you choose to start from, once you have your app up and running, let’s look at some of the resources you can use as you develop.
+Once you have your app up and running, let’s look at some of the resources you can use as you develop.
 
 ## 7.3: Bookmark NativeScript learning resources
 
