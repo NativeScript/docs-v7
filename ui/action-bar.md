@@ -1,6 +1,6 @@
 ---
-title: Action Bar
-description: Learn how to use and customize the Action Bar.
+title: ActionBar
+description: Learn how to use and customize the ActionBar.
 position: 11
 slug: action-bar
 ---
@@ -9,11 +9,11 @@ slug: action-bar
 
 The `ActionBar` is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
 
-* [Defining The Action Bar](#defining-the-action-bar)
+* [Defining The ActionBar](#defining-the-action-bar)
 * [Title](#title)
-  * [Setting The Title Text](#setting-the-title-text)
-  * [Using Custom Title View](#using-custom-title-view)
-  * [Setting App Icon](#setting-app-icon)
+  * [Setting the Title Text](#setting-the-title-text)
+  * [Using a Custom Title View](#using-custom-title-view)
+  * [Setting the App Icon](#setting-app-icon)
 * [Navigation Button](#navigation-button)
   * [iOS Specifics](#ios-specifics)
   * [Android Specifics](#android-specifics)
@@ -21,19 +21,22 @@ The `ActionBar` is the NativeScript common abstraction over the Android ActionBa
   * [Positioning](#positioning)
   * [Setting Icons](#setting-icons)
 * [How To](#how-to)
-  * [Showing/Hiding The Action Bar](#showing-hiding-the-action-bar)
+  * [Showing/Hiding the ActionBar](#showing-hiding-the-action-bar)
   * [Hiding Action Items](#hiding-action-items)
   * [Styling](#styling)
   * [Creating SlideDrawer Button](#creating-slidedrawer-button)
-{% angular %}  * [Adding Actions To Existing Action Bar](#adding-actions-to-existing-action-bar){% endangular %}
+{% angular %}  * [Adding Actions To Existing ActionBar](#adding-actions-to-existing-action-bar){% endangular %}
 
-# Defining The Action Bar
+
+
+## Setting the Title Text
+
 {% nativescript %}
-Here is how to define the action bar inside your page:
+Here is how to define the ActionBar inside your page:
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <Page.actionBar>
-      <ActionBar title="My Action Bar"/>
+      <ActionBar title="My ActionBar"/>
   </Page.actionBar>
 
   <!-- page content ... -->
@@ -42,13 +45,13 @@ Here is how to define the action bar inside your page:
 We will include only the `ActionBar` tag in the rest of the code-snippets in this article. 
 {% endnativescript %}
 {% angular %}
-To define the action bar include the `ActionBar` tag inside a component template:
+To define the ActionBar include the `ActionBar` tag inside a component template:
 ```XML
 <ActionBar title="Custom Title"></ActionBar>
 ```
-If more than one component defines an `ActionBar` - the last definition will be respected. You can also [add items to the current action bar](#adding-actions-to-existing-action-bar).
+If more than one component defines an `ActionBar` - the last definition will be respected. You can also [add items to the current ActionBar](#adding-actions-to-existing-action-bar).
 
->Note: To show the action bar on the initial page of you application use the `startPageActionBarHidden: false` app option when bootstrapping the application.
+>Note: To show the ActionBar on the initial page of you application use the `startPageActionBarHidden: false` app option when bootstrapping the application.
 
 ```TypeScript
 nativeScriptBootstrap(AppComponent, [CUSTOM_PROVIDERS], { startPageActionBarHidden: false });
@@ -70,10 +73,13 @@ The result is:
 ![title-ios](../img/modules/action-bar/title-ios.png "title-ios")
 ![title-android](../img/modules/action-bar/title-android.png "title-android")
 
-## Using Custom Title View
+## Using a Custom Title View
 
 You can set a custom title view, which will render instead of the title.
-Here is how to combine image and label for a `titleView` (the example contains only the `ActionBar` definition):
+The example below shows how to combine an image and label for a `titleView` (the example contains only the `ActionBar` definition):
+
+### How to create custom title view using only `ActionBar` definition.
+{% nativescript %}
 
 ```XML
 <ActionBar title="test">
@@ -105,10 +111,9 @@ The result is:
 ![title-view-ios](../img/modules/action-bar/title-view-ios.png "title-view-ios")
 ![title-view-android](../img/modules/action-bar/title-view-android.png "title-view-android")
 
-Note, that you can use CSS to style the elements inside the `titleView`.
+Note that you can use CSS to style the elements inside the `titleView`.
 
-## Setting App Icon
-
+## Setting the App Icon for Android
 You can set the application icon only for Android. By default, the application icon is hidden. You can show it by setting the `android.iconVisibility` property to `always`.
 
 ```XML
@@ -168,15 +173,14 @@ The result is:
 
 ## iOS Specifics
 
-The default text of the button is the title of the previous page, you can change it by setting the `text` property as shown in the example above.
-
+The default text of the button is the title of the previous page; you can change it by setting the `text` property as shown in the example `Setting the Text Title`.
 In iOS, the back button is used explicitly for navigation. It navigates to the previous page and you cannot handle the `tap` event to override this behavior.
 
-If you want to place a button on the left side of the `ActionBar` and handle the tap event (e.g. show slide-out), you can use `ActionItem` with `ios.position="left"`.
+If you want to place a button on the left side of the `ActionBar` and handle the tap event (e.g., show slide-out), you can use `ActionItem` with `ios.position="left"`.
 
 ## Android Specifics
 
-In Android, you cannot set text inside the navigation button. You can use the `icon` property to set an image (e.g. `~\images\nav-image.png` or `res:\\ic_nav`). You can use `android.systemIcon` to set one of the system icons available in Android.
+In Android, you cannot set text inside the navigation button. You can use the `icon` property to set an image (e.g., `~\images\nav-image.png` or `res:\\ic_nav`). You can use `android.systemIcon` to set one of the system icons available in Android.
 
 # Action Items
 
@@ -249,20 +253,20 @@ The following positioning options are available for iOS and Android.
 
 Android (set with `android.position`):
 
-* `actionBar`\[default\] - Puts the item in the action bar. Action item can be rendered both as text or icon.
-* `popup` - Puts the item in the options menu. Items will be rendered as text.
-* `actionBarIfRoom` - Puts the item in the action bar if there is room for it. Otherwise, puts it in the options menu.
+* `actionBar`\[default\]: Puts the item in the ActionBar. Action item can be rendered both as text or icon.
+* `popup`: Puts the item in the options menu. Items will be rendered as text.
+* `actionBarIfRoom`: Puts the item in the ActionBar if there is room for it. Otherwise, puts it in the options menu.
 
 iOS (set with `ios.position`):
 
-* `left`\[default\] - Puts the item on the left side of the action bar.
-* `right` - Puts the item on the left side of the action bar.
+* `left`\[default\]: Puts the item on the left side of the ActionBar.
+* `right`: Puts the item on the right side of the ActionBar.
 
 ## Setting Icons
 
-You can use the `icon` property to set an image instead of text for the action item. You can use local image (e.g. `~/images/add.png`) or resource (e.g. `res://ic_add`). Because there is no way to set explicitly `width` and `height` for icons, the recommended approach is using resources.
+You can use the `icon` property to set an image instead of text for the action item. You can use local image (e.g., `~/images/add.png`) or resource (e.g., `res://ic_add`). Because there is no way to explicitly set `width` and `height` for icons, the recommended approach is using resources.
 
-You can use the `ios.systemIcon` and `android.systemIcon` properties to show system icons. If you define a system icon - it will be used instead of `icon` and `text` properties.
+You can use the `android.systemIcon` and `ios.systemIcon` properties to show system icons. If you define a system icon, it will be used instead of `icon` and `text` properties.
 
 Values for `android.systemIcon` correspond to the resources names of the built-in Android system icons. For a full list of Android drawable names, see [http://androiddrawables.com](http://androiddrawables.com).
 
@@ -285,7 +289,7 @@ Values for `ios.systemIcon` are numbers from the [`UIBarButtonSystemItem`](https
 
 # How To
 
-## Showing/Hiding The Action Bar
+## Showing/Hiding the ActionBar
 
 You can explicitly control the visibility of the `ActionBar` by setting the `actionBarHidden` property of the `Page`.
 {% angular %}
@@ -294,7 +298,7 @@ You can inject a reference to the current `Page` in the constructor of your comp
 
 In **Android**, the application bar is visible by default and shows the name of the application as title. The navigation button is visible only when it is explicitly defined in the application.
 
-In **iOS**, if the application bar is empty (E.g. no title or action items are defined), it is hidden on the fist page and automatically shown after navigation to host the navigation button. If the action bar is not empty (e.g. there is title or action items defined) it will be shown on first page too.
+In **iOS**, if the application bar is empty (e.g., no title or action items are defined), it is hidden on the first page and automatically shown after navigation to host the navigation button. If the ActionBar is not empty (e.g., there is a title or action items defined) it will be shown on first page, too.
 
 ## Hiding Action Items
 {% nativescript %}
@@ -418,10 +422,10 @@ The result is:
 
 ## Styling
 
-The action bar has some CSS styling limitations. You can use only `background-color` and `color` properties. Here is an example:
+The ActionBar has some CSS styling limitations. You can use only `background-color` and `color` properties. Here is an example:
 
 ```XML
-<ActionBar title="Action Bar Style">
+<ActionBar title="ActionBar Style">
   <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"></NavigationButton>
   <ActionItem ios.systemIcon="2" android.systemIcon="ic_menu_edit" ios.position="right"></ActionItem>
 </ActionBar>
@@ -441,13 +445,13 @@ The result is:
 In iOS, the `color` property affects the color of the title and the action items.
 In Android, the `color` property affects only the title text. However, you can set the default color of the text in the action items by adding an `actionMenuTextColor` item in the Android theme (inside `App_Resources\Android\values\styles.xml`).
 
->Note: Setting other CSS properties (e.g. `font-family`) will only affect the views defined inside `titleView`.
+>Note: Setting other CSS properties (e.g., `font-family`) will only affect the views defined inside `titleView`.
 
 ## Creating SlideDrawer Button
 
 This example shows how to implement a "show side-drawer button" functionality.
 
-For Android, this sample uses the `NavigationButton`, because `ActionItems` are shown on the right side of the `ActionBar`.
+For Android, this example uses the `NavigationButton` because `ActionItems` are shown on the right side of the `ActionBar`.
 
 For iOS, this code adds a regular `ActionItem` with `position` set to `left`. Using the `NavigationButton` as a side-drawer button in iOS is not possible, because its function is to always navigate back in the application.
 
@@ -493,7 +497,7 @@ The result is:
 ![side-drawer-android](../img/modules/action-bar/side-drawer-android.png "side-drawer-android")
 
 {% angular %}
-## Adding Actions To Existing Action Bar
+## Adding Actions To Existing ActionBar
 Using the `ActionBarExtension` component you can add additional action items to the current `ActionBar`. This is useful if you are writing a reusable component that exposes an action (ex. "save"), but you don't want you don't want to override the whole `ActionBar`.
 
 Here is how to define a contextual `copy` action:
