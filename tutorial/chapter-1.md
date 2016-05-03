@@ -18,19 +18,37 @@ In this chapter you're going to start with the basics, including installing the 
 
 ## 1.1: Install NativeScript and configure your environment
 
-The NativeScript CLI has a few system requirements you must have in place before building NativeScript apps. As a first step, start by going through the instructions for your operating system:
+The NativeScript CLI has a few system requirements you must have in place before building NativeScript apps. Let’s look at the steps you’ll need to take to get up and running.
 
-- [Windows]({% slug windows %})
-- [OS X]({% slug osx %})
-- [Linux]({% slug linux %})
+> **TIP**: Setting up your machine for native development can be tricky, especially if you’re new to mobile development. If you get stuck, or if you have questions at any point while going through this guide, the [NativeScript Community Slack channel](http://developer.telerik.com/wp-login.php?action=slack-invitation) is a great place to ask questions.
 
-> **TIP**:
-> * Completing the installation instructions can be tricky if you’re new to mobile development. If you get stuck, or you have questions at any point while going through this guide, the [NativeScript Community Slack channel](http://developer.telerik.com/wp-login.php?action=slack-invitation) is a great place to ask questions.
-> * If you’re overwhelmed by these requirements, you may also be interested in using NativeScript as part of the [Telerik Platform](http://www.telerik.com/platform). The Telerik Platform provides robust tooling for NativeScript apps, including an IDE that performs iOS and Android builds in the cloud, removing the need to complete these system requirements.
+<h4 class="exercise-start">
+    <b>Exercise</b>: Setup NativeScript
+</h4>
 
-After completing the setup you should have two commands available from your terminal: `tns`—which is short for <b>T</b>elerik <b>N</b>ative<b>S</b>cript—and `nativescript`. The two commands are equivalent, so we'll stick with the shorter `tns`.
+**Step 1: Install Node.js**
+
+The NativeScript CLI is built on Node.js, and as such you need to have Node.js installed to use NativeScript.
+
+You can check whether you have Node.js setup by opening a terminal or command prompt on your development machine and executing `node --version`. If you get an error, head to the https://nodejs.org/ and download and install the latest “LTS” (long-term support) distribution for your development machine.
+
+> **TIP**: The NativeScript CLI supports a wide variety of Node.js versions, so if you already have Node.js installed you should be good to go. If, by chance, you’re running an unsupported version, the `tns doctor` command we’ll run momentarily will flag the problem so you can upgrade.
+
+**Step 2: Install the NativeScript CLI**
+
+Open your terminal or command prompt and execute the following command to install the NativeScript CLI from npm, which is Node.js’ package manager:
+
+```
+npm install -g nativescript
+```
+
+> **NOTE**: If you’re on OS X and receive an EACCES error, you either need to rerun the previous command with `sudo`—that is, `sudo npm install -g nativescript`—or take a moment to [fix your npm persmissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions) so that you don’t need admin rights to globally install npm packages.
+
+After completing the setup you should have two commands available from your terminal or command prompt: `tns`—which is short for <b>T</b>elerik <b>N</b>ative<b>S</b>cript—and `nativescript`. The two commands are equivalent, so we'll stick with the shorter `tns`.
 
 You can verify the installation was successful by running `tns` in your terminal. You should see something like this:
+
+<div class="no-copy-button"></div>
 
 ```
 $ tns
@@ -41,6 +59,47 @@ $ tns
 │ Alias   │ $ nativescript <Command> [Command Parameters] [--command <Options>] │
 └─────────┴─────────────────────────────────────────────────────────────────────┘
 ```
+
+**Step 3: Install iOS and Android requirements**
+
+When you build with NativeScript you’re building truly native iOS and Android apps, and as such, you need to setup each platform you intend to build for on your development machine. To ease the pain of installing all of these requirements manually, the NativeScript CLI provides quick-start scripts for Windows and OS X that handle the necessary setup for you automatically. Let’s look at how they work.
+
+> **NOTE**: If you have existing mobile experience, if you’re on Linux, or if you want full control of the installation process, refer to one of the advanced setup guide below, which walk you through manually setting up your environment for NativeScript development.
+> * [Advanced setup: Windows](http://docs.nativescript.org/start/ns-setup-win#setup)
+> * [Advanced setup: OS X](http://docs.nativescript.org/start/ns-setup-os-x#setup)
+> * [Advanced setup: Linux](http://docs.nativescript.org/start/ns-setup-linux#setup)
+
+<u>Windows</u>
+
+If you’re on Windows, copy and paste the script below into your command prompt and press Enter:
+
+```
+@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/NativeScript/nativescript-cli/production/setup/native-script.ps1'))"
+```
+
+During installation you may need to accept a User Account Control prompt to grant the script administrative privileges. Also, be aware that the script downloads and installs some big dependencies—so it’s common for the script to take a while to complete. When the script finishes, close and reopen your command prompt.
+
+<u>OS X</u>
+
+If you’re on a Mac, copy and paste the script below into your terminal and press Enter:
+
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/NativeScript/nativescript-cli/production/setup/native-script.rb)"
+```
+
+Much like the Windows script, the OS X script needs administrative access to run some commands using `sudo`; therefore, you may need to provide your password several times during execution. The OS X script also may take some time to complete, as it’s installing the dependencies for both iOS and Android development. When the script finishes, close and restart your terminal.
+
+**Step 4: Verify the setup**
+
+Once you’ve finished installing NativeScript and its dependencies, run the `tns doctor` command, which will check for any issues with your installation.
+
+```
+tns doctor
+```
+
+If you see “No issues were detected” you’re good to go!
+
+<div class="exercise-end"></div>
 
 ## 1.2: Start your app
 
@@ -102,7 +161,7 @@ tns platform add android
 
 <div class="exercise-end"></div>
 
->**IMPORTANT:** You can add platforms only for SDKs that you already have installed on your development machine. If you get errors running `tns platform add`, refer back to the section on [setting up your development environment](#install-nativescript-and-configure-your-environment).
+>**IMPORTANT:** You can add platforms only for SDKs that you already have installed on your development machine. If you get errors running `tns platform add`, refer back to the section on [setting up your development environment](#11-install-nativescript-and-configure-your-environment).
 
 The `platform add` command adds a folder called `platforms` to your project, and copies all of the required native SDKs into this folder. When you build the application, the NativeScript CLI will copy your application code into the `platforms` folder so that a native binary can be created.
 
@@ -148,9 +207,7 @@ Here are a few other tips for running NativeScript apps.
 
 ## 1.5: Development workflow
 
-At this point, you have the NativeScript CLI downloaded and installed, as well as the iOS and Android dependencies that you need to run your app. Now you need a good workflow that lets you make changes and see results fast.
-
-A good way to see your changes is to execute `tns run ios` or `tns run android` after you save files. To see this action, let's make a trivial update to your app.
+At this point, you have the NativeScript CLI downloaded and installed, as well as the iOS and Android dependencies that you need to run your app. Now you need a good workflow that lets you make changes and see results fast. For that we’ll use the `tns livesync` command.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Your first NativeScript change
@@ -158,13 +215,35 @@ A good way to see your changes is to execute `tns run ios` or `tns run android` 
 
 If your previous `tns run ios` or `tns run android` task is still running, type `Ctrl+C` in your terminal to kill it.
 
-Open your app's `app/views/login/login.xml` file in your text editor of choice and change `<Label text="hello world" />` to `<Label text="hello NativeScript" />`.
+If you’re on a Mac, start an iOS livesync watcher by executing the following command:
 
-Return to your terminal and run either `tns run ios --emulator` (if you're on a Mac), or `tns run android --emulator`. You should see the app relaunch and the updated text displayed.
+```
+tns livesync ios --emulator --watch
+```
+
+If you have your app running on an Android emulator, start an Android livesync watcher by executing the following command:
+
+```
+tns livesync android --emulator --watch
+```
+
+If you instead have your app running on a USB-connected Android device or Genymotion virtual device, run the same command without the `--emulator` flag:
+
+```
+tns livesync android --watch
+```
+
+The `tns livesync` command updates your app by transferring the updated source code to the device or simulator. By adding the `--watch` flag, the `livesync` command additionally watches the files in your NativeScript project. Whenever one of those files changes, the command detects the update, and patches your app with the updated code.
+
+> **TIP**: You can learn about how this is possible by reading more about [how NativeScript works](http://developer.telerik.com/featured/nativescript-works/).
+
+To see livesync in action let’s make a small update to your app. Open your app's `app/views/login/login.xml` file in your text editor of choice and change `<Label text="hello world" />` to `<Label text="hello NativeScript" />`.
+
+Save `app/views/login/login.xml` and you should see the app relaunch and the updated text displayed
 
 <div class="exercise-end"></div>
 
-As you might have noticed, the `tns run` command blocks your terminal while your app is running (it's the task you had to use `Ctrl` + `C` to kill). The task shows both the output of `console.log()` statements as your app executes, as well as stack traces when things go wrong. So if your app crashes at any time during this guide, look to the terminal for a detailed report of the problem.
+Regardless of whether you’re running on iOS or Android, or whether you’re using `tns livesync` or `tns run`, the NativeScript CLI shows the output of `console.log()` statements as your app executes, as well as stack traces when things go wrong. So if your app crashes at any time during this guide, look to the terminal for a detailed report of the problem.
 
 The iOS and Android logs can be a bit noisy, so you might have to scroll up a bit to find the actual problem. For example if I try to call `foo.bar()` when `foo` does not exist, here's the information I get on iOS:
 
@@ -182,7 +261,7 @@ E/TNS.Native( 2063): File: "/data/data/org.nativescript.groceries/files/app/./vi
 
 > **TIP**: When you're trying to debug a problem, you can also try adding `console.log()` statements in your JavaScript code—exactly as you would in a browser-based application.
 
-If you find it tedious to continuously run `tns run` from the terminal, you may be interested in using `tns livesync` instead. The `tns livesync` command instantly transfers XML, CSS, and JavaScript files to a running NativeScript app. If you set the command's `--watch` flag (`tns livesync ios --emulator --watch` or `tns livesync android --emulator --watch`), the NativeScript CLI will watch your app for changes, and apply those changes automatically after you save files. Be warned, however, that the `livesync` command does not show `console.log()` output or stack traces on iOS simulators. So during iOS debugging you may want to switch back to `tns run`.
+> **WARNING**: Not all changes can be livesync’d in a NativeScript app. For instance, livesync cannot patch native configuration file changes (`Info.plist`, `AndroidManifest.xml`, and so forth), new plugin installations, and any other change that requires a full compilation of the application. In those cases, you’ll want to use `Ctrl+C` to stop livesync, and rerun the application using the `tns run ios` or `tns run android` commands. Don’t worry though; when situations that require a full compilation come up in this guide, these instructions will be explicitly listed.
 
 Now that you've created an app, configured your environment, and set up your app to run on iOS and Android, you're ready to start digging into the files that make up a NativeScript app.
 

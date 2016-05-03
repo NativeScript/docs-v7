@@ -97,7 +97,41 @@ exports.register = function() {
 
 <div class="exercise-end"></div>
 
-In this function, the user submits an email and password, and the value is sent to the view model for validation. If it passes, registration can proceed, otherwise you show an alert:
+In this function, the user submits an email and password, and the value is sent to the view model for validation. If it passes, registration can proceed, otherwise you show an alert. However in order to test out this change you’ll need to do one more thing.
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Rebuild your app
+</h4>
+
+As we mentioned in chapter 1, although the `tns livesync` command is smart enough to reload your app for most changes you make to your app, certain changes require a full build—most notably, changes to native files in `app/App_Resources`, new modules installed with `npm install`, and new NativeScript plugins.
+
+For NativeScript to recognize this new email-validator npm module, type `Ctrl+C` in your terminal to kill the existing `tns livesync` watcher if it’s still running, and then use `tns run` to rebuild your application and deploy it to an emulator or device.
+
+```
+tns run ios --emulator
+```
+
+Or
+
+```
+tns run android --emulator
+```
+
+After the app deploys you can again run the `livesync` command to setup the watcher again.
+
+```
+tns livesync ios --emulator --watch
+```
+
+Or
+
+```
+tns livesync android --emulator --watch
+```
+
+<div class="exercise-end"></div>
+
+After your app launches again, if you attempt to register with an invalid email address, you should see an alert that prevents the submission:
 
 ![]({{site.baseurl}}/img/cli-getting-started/nativescript/chapter5/ios/1.png)
 ![]({{site.baseurl}}/img/cli-getting-started/nativescript/chapter5/android/1.png)
@@ -173,6 +207,8 @@ exports.share = function() {
 <div class="exercise-end"></div>
 
 This code takes the groceries from the grocery list view model, converts the data into a comma-separated string, and passes that string to the social share module's `shareText()` method.
+
+> **WARNING**: Because this section had you install a NativeScript plugin, you’ll have to rebuild your app one last time in order to test your changes. If you don’t remember how refer back to [chapter 5](chapter-5) for instructions.
 
 Now when you run the app, you'll see a new button at the top of the screen. When you tap it, the native iOS or Android sharing widget will show to let you post your groceries to your social networks, or send them via email, message, or any other method you prefer.
 
