@@ -67,7 +67,8 @@ For Android development
 1. Install the dependencies for iOS development.
     1. Run the App Store and download and install Xcode 5 or later.
     1. Go to [Downloads for Apple Developers](https://developer.apple.com/downloads/index.action), log in and download and install the **Command Line Tools for Xcode** for your version of OS X and Xcode.
-    1. Run `$ [sudo] gem install xcodeproj` in the terminal
+    1. Run `$ [sudo] gem install xcodeproj` in the terminal to install [xcodeproj ruby gem](https://rubygems.org/gems/xcodeproj/versions/0.28.2)
+    1. (Optional) [CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started)
     1. (Optional) If you are using Xcode 7.3 and CocoaPods 0.39.0 or earlier you **must** install [xcproj](https://github.com/0xced/xcproj#installation) command line tool either by running `$ brew install xcproj` in the terminal, or building the xcproj tool manually with `xcodebuild`.
 1. Install the dependencies for Android development.
     1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
