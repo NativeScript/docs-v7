@@ -8,7 +8,7 @@ environment: angular
 
 # Building Apps with NativeScript and Angular 2
 
-Welcome to the NativeScript & Angular 2 getting started guide 📚. In this hands-on tutorial, you’ll build a cross-platform iOS and Android app from scratch.
+Welcome to the NativeScript & Angular 2 getting started guide. In this hands-on tutorial, you’ll build a cross-platform iOS and Android app from scratch.
 
 > **IMPORTANT**: NativeScript’s Angular integration is in beta. If you run into any issues completing this guide, please log those issues on our [Angular GitHub repo](https://github.com/NativeScript/nativescript-angular/issues).
 
