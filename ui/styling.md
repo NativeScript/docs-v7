@@ -37,7 +37,7 @@ The CSS styles can be set on 3 different levels:
 {% endangular %}
 * [Inline CSS](#inline-css)&mdash;applies directly to a UI view
 
-If there is CSS declared on different levels - all will be applied. The inline CSS will have the highest priority and the allication CSS - the lowest.
+If there is CSS declared on different levels - all will be applied. The inline CSS will have the highest priority and the application CSS - the lowest.
 
 ### Application-Wide CSS
 
@@ -87,7 +87,7 @@ After you have set the default CSS for the page, you can add to it using two met
 {% angular %}
 ### Component specific CSS
 
-In an Angular application everything is a component, therefore it is very common task is to add a component specific css. Adding a component specific css in a NativeScript-Angular app involves using `styles` or `styleUrls` options of the component.
+In an Angular application everything is a component, therefore it is very common task is to add some CSS code that should only apply to one component. Adding component specific CSS in a NativeScript-Angular app involves using a component’s `styles` or `styleUrls` property.
 
 ```TypeScript
 @Component({
@@ -103,9 +103,9 @@ In an Angular application everything is a component, therefore it is very common
     template: ...
 ```
 
-This code will create an unique attribute for the component and css will be applied to that component only.
+In each of these examples the CSS rules will only apply to the declared component, and not other UI elements in the application.
 
-> Css selectors will be available on an application level so `styles` and `styleUrls` will be applied even if the component is placed in another page within application. As for application specific css path to the file is relative to application root folder.
+> The `styles` and `styleUrls` will be applied even if the component is moved to another page within the application.
 
 {% endangular %}
 
@@ -202,28 +202,28 @@ btn.id = "login-button"
 
 ### Hierachical selector (CSS combinators)
 
-A css selector could contain more than one simple selectors and between selectors a combinator symbol could be included.
+A CSS selector could contain more than one simple selector, and between selectors a combinator symbol could be included.
 
-* (space) - Descendant selector. For example following code will select all buttons inside StackLayout (no matter) at which level.
+* (space) - Descendant selector. For example following code will select all buttons inside StackLayouts (no matter) at which level.
 
 ```CSS
-stacklayout button { background-color: blue; }
+StackLayout Button { background-color: blue; }
 ```
 ```XML
 <StackLayout>
-	<WrapLayout>
-    	<Button id="login-button" testAttr='flower' />
+    <WrapLayout>
+        <Button id="login-button" testAttr='flower' />
     </WrapLayout>
 </StackLayout>
 ```
 
-* (>) - A direct child selector. Using the previous example if css is changed to:
+* (>) - A direct child selector. Using the previous example if the CSS is changed to:
 
 ```CSS
-stacklayout > button { background-color: blue; }
+StackLayout > Button { background-color: blue; }
 ```
 
-Css style will not be applied. In order to apply the selector WrapLayout should be removed.
+The `background-color` rule will not be applied. In order to apply the selector, the WrapLayout element would need to be removed so that the Button is a direct child of the StackLayout.
 
 ### Attribute selector
 
@@ -240,12 +240,12 @@ Also some more advanced scenarios are supported:
 
 * button[testAttr='flower'] {...} - Will apply css on every button which have `testAttr` property set exactly to value `flower`.
 * button[testAttr~='flower'] {...} - Selects all buttons with a `testAttr` property that contains a space-separated list of words, one of which is "flower".
-* button[testAttr|='flower'] {...} - Selects all buttons with a `testAttr` property value that begins with "flower". The value has to be a whole word, either alone like `btn['testAttr'] = 'flower'`, or followed by hypen (-), like `btn['testAttr'] = 'flower-house'`.
+* button[testAttr|='flower'] {...} - Selects all buttons with a `testAttr` property value that begins with "flower". The value has to be a whole word, either alone like `btn['testAttr'] = 'flower'`, or followed by hyphen (-), like `btn['testAttr'] = 'flower-house'`.
 * button[testAttr^='flower'] {...} - Selects all buttons with a `testAttr` property value that begins with "flower". The value does not have to be a whole word.
 * button[testAttr$='flower'] {...} - Selects all buttons with a `testAttr` property value that ends with "flower". The value does not have to be a whole word.
 * button[testAttr*='flo'] {...} - Selects all buttons with a `testAttr` property value that contains "flo". The value does not have to be a whole word.
 
-Attribute selectors could be used alone or could be combined with all type of css selectors. 
+Attribute selectors could be used alone or could be combined with all type of CSS selectors. 
 
 ```CSS
 #login-button[testAttr='flower'] { background-color: blue; }
@@ -266,7 +266,7 @@ This is the list of the properties that can be set in CSS or through the style p
 | background-color | backgroundColor   | Sets a solid-color value to the matched view’s background. |
 | background-image | backgroundImage   | Sets a image url to the matched view’s background image. |
 | background-repeat | backgroundRepeat | Sets if/how the background image should be repeated. Possible values: "repeat", "repeat-x", "repeat-y", "no-repeat" |
-| background-position | backgroundPosition | Sets the starting position of the background image. You can set the position with absolute, percent or aligment values. More info [here](http://www.w3schools.com/cssref/pr_background-position.asp).  |
+| background-position | backgroundPosition | Sets the starting position of the background image. You can set the position with absolute, percent or alignment values. More info [here](http://www.w3schools.com/cssref/pr_background-position.asp).  |
 | background-size | backgroundSize     | Sets the size of the background image. Possible values: "*length length*", "*percent% percent%*", "cover" or "contain". |
 | border-color    | borderColor        | Sets a border color to the matched view’s. |
 | border-width    | borderWidth        | Sets a border width to the matched view’s. |
