@@ -31,5 +31,5 @@ We have a vibrant, engaged community and are here to help. You can find us on [T
 
 Ready to get started developing with NativeScript? We offer a set of comprehensive tutorials that walk you through installing NativeScript, and building a real-world iOS and Android app from scratch.
 
-- [Get Started with JavaScript]({{site.baseurl}}/tutorial/chapter-0)
-- [Get Started with TypeScript & Angular]({{site.baseurl}}/tutorial/ng-chapter-0)
+- [Get Started with JavaScript](http://docs.nativescript.org/tutorial/chapter-0)
+- [Get Started with TypeScript & Angular](http://docs.nativescript.org/angular/tutorial/ng-chapter-0)
