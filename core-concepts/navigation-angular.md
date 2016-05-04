@@ -6,7 +6,7 @@ slug: navigation
 environment: angular
 ---
 
-# Overview
+# Navigation
 In this article we will cover how to do navigation in NativeScript application using Angular.
 
 * [Router](#router)
