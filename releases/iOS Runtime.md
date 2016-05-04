@@ -7,6 +7,13 @@ slug: ios-changelog
 previous_url: /Changelogs/iOS Runtime
 ---
 
+2.0.0
+=====
+
+## Bug Fixes
+- [LLVM/Clang in metadata generator is updated to v3.8.0](https://github.com/NativeScript/ios-runtime/pull/547)
+- [Throw error on unknown module character encoding](https://github.com/NativeScript/ios-runtime/pull/540)
+
 1.7.0
 =====
 
