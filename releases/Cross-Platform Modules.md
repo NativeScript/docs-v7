@@ -674,7 +674,7 @@ application.ios.removeNotificationObserver(observer, UIDeviceBatteryLevelDidChan
 - [(#261)](https://github.com/NativeScript/NativeScript/issues/261) WebView crash when navigating back
 
 ### Breaking changes
--  [(#304)](https://github.com/NativeScript/NativeScript/issues/304) ActionBar/NavigationBar is now defined using the `page.actionBar` instead of `page.optionsMenu`. [See an example...](../cookbook/ui/action-bar)
+-  [(#304)](https://github.com/NativeScript/NativeScript/issues/304) ActionBar/NavigationBar is now defined using the `page.actionBar` instead of `page.optionsMenu`. [See an example...](../ApiReference/ui/action-bar/HOW-TO.md)
 
 ### Known issues
 -  ```tns debug ios``` command is not working. The workaround is to use ```tns debug ios --framework-path "__path to the iOS runtime__"```. A fix for this is coming in 1.2.1 which will be released in the week of July, 27th.
@@ -690,7 +690,7 @@ application.ios.removeNotificationObserver(observer, UIDeviceBatteryLevelDidChan
 
 - [(#221)](https://github.com/NativeScript/NativeScript/pull/221) view parent exposed in itemLoading event
 
-- [(#214)](https://github.com/NativeScript/NativeScript/pull/214) Repeater component added. [Read more...](../cookbook/ui/repeater)
+- [(#214)](https://github.com/NativeScript/NativeScript/pull/214) Repeater component added. [Read more...](../ApiReference/ui/repeater/HOW-TO.md)
 
 - [(#207)](https://github.com/NativeScript/NativeScript/pull/207) Optimizations
 
