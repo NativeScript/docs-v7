@@ -80,7 +80,7 @@ var applicationModule = require("application");
 application.start({ moduleName: "views/login/login" });
 ```
 
-Here, you're requiring, or importing, the [NativeScript application module]({{site.baseurl}}/ApiReference/application/HOW-TO). Then, you call its `start()` method with the starting screen of your app (the login screen), which lives in your app's `views/login` folder.
+Here, you're requiring, or importing, the [NativeScript application module]({{site.baseurl}}/cookbook/application). Then, you call its `start()` method with the starting screen of your app (the login screen), which lives in your app's `views/login` folder.
 
 > **TIP**: JavaScript modules in NativeScript follow the [CommonJS specification](http://wiki.commonjs.org/wiki/CommonJS). This means you can use the [`require()` method](http://wiki.commonjs.org/wiki/Modules/1.1#Module_Context) to import modules, as is done above, as well as use the `export` keyword to expose a module's properties and methods, which we'll look at later in this chapter. These are the same constructs Node.js uses for JavaScript modules, so if you know how to use Node.js modules, you already know how to use NativeScript modules.
 
@@ -138,11 +138,11 @@ Currently you only see a single button because you need to tell NativeScript how
 
 NativeScript provides several different layout containers that allow you to place UI components precisely where you want them to appear. 
 
-- The [Absolute Layout]({{site.baseurl}}/ApiReference/ui/layouts/absolute-layout/HOW-TO.html) lets you position elements using explicit x and y coordinates. This is useful when you need to place elements in exact locations, for example showing an activity indicator widget in the top-left corner of your app.
-- The [Dock Layout]({{site.baseurl}}/ApiReference/ui/layouts/dock-layout/HOW-TO.html) is useful for placing UI elements at the outer edges of your app. For example, a container docked at the bottom of the screen would be a good location for an ad.
-- The [Grid Layout]({{site.baseurl}}/ApiReference/ui/layouts/grid-layout/HOW-TO.html) lets you divide your interface into a series of rows and columns, much like a `<table>` in HTML markup.
-- The [Stack Layout]({{site.baseurl}}/ApiReference/ui/layouts/stack-layout/HOW-TO.html) lets you stack child UI components either vertically or horizontally.
-- The [Wrap Layout]({{site.baseurl}}/ApiReference/ui/layouts/wrap-layout/HOW-TO.html) lets child UI components flow from one row or column to the next when space is filled.
+- The [Absolute Layout]({{site.baseurl}}/cookbook/ui/layouts/absolute-layout) lets you position elements using explicit x and y coordinates. This is useful when you need to place elements in exact locations, for example showing an activity indicator widget in the top-left corner of your app.
+- The [Dock Layout]({{site.baseurl}}/cookbook/ui/layouts/dock-layout) is useful for placing UI elements at the outer edges of your app. For example, a container docked at the bottom of the screen would be a good location for an ad.
+- The [Grid Layout]({{site.baseurl}}/cookbook/ui/layouts/grid-layout) lets you divide your interface into a series of rows and columns, much like a `<table>` in HTML markup.
+- The [Stack Layout]({{site.baseurl}}/cookbook/ui/layouts/stack-layout) lets you stack child UI components either vertically or horizontally.
+- The [Wrap Layout]({{site.baseurl}}/cookbook/ui/layouts/wrap-layout) lets child UI components flow from one row or column to the next when space is filled.
 
 For your login screen, all you need is a simple `<StackLayout>` to stack the UI components on top of each other. In later sections, you'll use some of the more advanced layouts.
 

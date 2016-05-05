@@ -25,7 +25,7 @@ The prefix of the `src` value specify where the image will be loaded form. The p
 * [From local file system (`~/` prefix)](#load-images-from-local-file-system)
 * [From resource (`res://` prefix)](#load-images-from-resource)
 
-You can also use the [image-source]({{site.baseurl}}/ApiReference/image-source/HOW-TO.html) module to create an image source and manually set it to the image:
+You can also use the [image-source]({{site.baseurl}}/cookbook/image-source) module to create an image source and manually set it to the image:
 ```JavaScript
 var image = new imageModule.Image();
 var imageSource = imageSourceModule.fromResource("logo");
@@ -40,7 +40,7 @@ Web images have `http://` or `https://` prefix. When such image is loaded, an as
 <Image src="https://www.google.com/images/errors/logo_sm_2.png" / >
 ```
 
-You can manually create an [ImageSource instance from URL]({{site.baseurl}}/ApiReference/image-source/HOW-TO.html#load-image-from-url)
+You can manually create an [ImageSource instance from URL]({{site.baseurl}}/cookbook/image-source#load-image-from-url)
 
 ## Load Images from Local File System
 Using the `~/` prefix you can load images relative to the `App` folder inside your project.
@@ -49,7 +49,7 @@ Using the `~/` prefix you can load images relative to the `App` folder inside yo
 <Image src="~/images/logo.png" stretch ="none" / >
 ```
 
-You can manually create an [ImageSource instance from local file]({{site.baseurl}}/ApiReference/image-source/HOW-TO.html#load-image-from-a-local-file)
+You can manually create an [ImageSource instance from local file]({{site.baseurl}}/cookbook/image-source#load-image-from-a-local-file)
 
 > Currently loading images form the file system does not respect file-name qualifiers as described [here]({% slug architecture %}#supporting-multiple-screens). We have plans to implement that along with [density-specific qualifiers support.](https://github.com/NativeScript/NativeScript/issues/276).
 
@@ -60,7 +60,7 @@ Using the `res://` prefix you can load resource image. This is the suggested app
 <Image src="res://logo" stretch ="none" / >
 ```
 
-You can manually create an [ImageSource instance from resource]({{site.baseurl}}/ApiReference/image-source/HOW-TO.html#load-image-using-resource-name)
+You can manually create an [ImageSource instance from resource]({{site.baseurl}}/cookbook/image-source#load-image-using-resource-name)
 
 > The file extension is not included when referencing resource images.
 
