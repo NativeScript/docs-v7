@@ -78,7 +78,7 @@ The result is:
 You can set a custom title view, which will render instead of the title.
 The example below shows how to combine an image and label for a `titleView` (the example contains only the `ActionBar` definition):
 
-### How to create custom title view using only `ActionBar` definition.
+### How to create custom title view instead of the ActionBar title.
 {% nativescript %}
 
 ```XML
