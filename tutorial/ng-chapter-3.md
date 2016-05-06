@@ -554,7 +554,7 @@ export class AppComponent {}
 
 <div class="exercise-end"></div>
 
-> **NOTE**: The Angular team introduced an updated router in their [very recently released RC0](https://github.com/angular/angular/blob/master/CHANGELOG.md#200-rc0-2016-05-02). NativeScript doesn’t support this router quite yet, which is why you’re using the router in `@angular/router-deprecated` above. Follow [this GitHub issue](https://github.com/NativeScript/nativescript-angular/issues/218) for updates.
+> **NOTE**: The Angular team introduced an updated router in their [very recently released RC0](https://github.com/angular/angular/blob/master/CHANGELOG.md#200-rc0-2016-05-02). NativeScript doesn’t support this router quite yet, which is why you’re using the `@angular/router-deprecated` module above. Follow [this GitHub issue](https://github.com/NativeScript/nativescript-angular/issues/218) for updates.
 
 If you haven’t played with routing in Angular 2 before, you can refer to [Angular’s tutorial on the topic](https://angular.io/docs/ts/latest/tutorial/toh-pt5.html) for some background, but the basic concept is you include a  `@RouteConfig` decorator, and pass that decorator a list of all routes that are present in your app. Currently you only have one route, which is why `@RouteConfig` contains a single entry.
 
