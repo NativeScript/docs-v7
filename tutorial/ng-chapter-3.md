@@ -246,7 +246,7 @@ templateUrl: "pages/login/login.html"
 In case you got lost during this section, here’s a copy-and-paste friendly of the `app/app.component.ts` file you should have at this point:
 
 ``` TypeScript
-import {Component} from "angular2/core";
+import {Component} from "@angular/core";
 import {User} from "./shared/user/user";
 
 @Component({
@@ -293,7 +293,7 @@ For the purposes of this tutorial we prebuilt a handful of backend endpoints usi
 There are several new concepts to introduce with Angular services, so we’re going to start by stubbing out a new `register()` method, and then come back to the implementation later in this section. With that in mind, open `app/shared/user/user.service.ts` and paste in the following code:
 
 ``` TypeScript
-import {Injectable} from "angular2/core";
+import {Injectable} from "@angular/core";
 import {User} from "./user";
 
 @Injectable()
@@ -386,8 +386,8 @@ Let’s return to our example and make the registration process actually work.
 Open `app/shared/user/user.service.ts` and paste in the following code, which we’ll discuss in detail in a moment.
 
 ``` TypeScript
-import {Injectable} from "angular2/core";
-import {Http, Headers, Response} from "angular2/http";
+import {Injectable} from "@angular/core";
+import {Http, Headers, Response} from "@angular/http";
 import {User} from "./user";
 import {Config} from "../config";
 import {Observable} from "rxjs/Rx";
@@ -472,7 +472,7 @@ The two functions you pass `subscribe()` are success and failure handlers. If th
 Because the `UserService` makes use of the `Http` service, your final step is registering the Http provider in `AppComponent`. Start by opening `app/app.component.ts` and adding the following import to the top of the file:
 
 ``` TypeScript
-import {HTTP_PROVIDERS} from "angular2/http";
+import {HTTP_PROVIDERS} from "@angular/http";
 ```
 
 Next, in the same file, replace the current `providers` array with the following code:
@@ -535,8 +535,8 @@ import {UserService} from "../../shared/user/user.service";
 Now that `app.component.ts` is empty, let’s add in the appropriate Angular 2 routing code. Open `app/app.component.ts` back up and paste in the following code:
 
 ``` TypeScript
-import {Component} from "angular2/core";
-import {RouteConfig} from "angular2/router";
+import {Component} from "@angular/core";
+import {RouteConfig} from "@angular/router-deprecated";
 import {NS_ROUTER_DIRECTIVES, NS_ROUTER_PROVIDERS} from "nativescript-angular/router";
 import {LoginPage} from "./pages/login/login.component";
 
@@ -554,6 +554,8 @@ export class AppComponent {}
 
 <div class="exercise-end"></div>
 
+> **NOTE**: The Angular team introduced an updated router in their [very recently released RC0](https://github.com/angular/angular/blob/master/CHANGELOG.md#200-rc0-2016-05-02). NativeScript doesn’t support this router quite yet, which is why you’re using the router in `@angular/router-deprecated` above. Follow [this GitHub issue](https://github.com/NativeScript/nativescript-angular/issues/218) for updates.
+
 If you haven’t played with routing in Angular 2 before, you can refer to [Angular’s tutorial on the topic](https://angular.io/docs/ts/latest/tutorial/toh-pt5.html) for some background, but the basic concept is you include a  `@RouteConfig` decorator, and pass that decorator a list of all routes that are present in your app. Currently you only have one route, which is why `@RouteConfig` contains a single entry.
 
 The other new concept in this example is the `<page-router-outlet>` tag, which is your app’s first directive. You can again check out Angular’s docs if you want [detailed information on what directives are and do](https://angular.io/docs/ts/latest/api/core/Directive-decorator.html), but the simplest way to think of a directive is as something that can affect the markup you put in your `template`—in this case `<page-router-outlet>`.
@@ -569,7 +571,7 @@ Let’s add another page to see the routing in action.
 Open `pages/list/list.component.ts` and paste in the following code, which you’ll use as the start of a simple list page:
 
 ``` TypeScript
-import {Component} from "angular2/core";
+import {Component} from "@angular/core";
 
 @Component({
   selector: "list",
@@ -631,7 +633,7 @@ This code hits one of our existing backend endpoints, and stores off a authentic
 To use this `login()` function, return to `app/login/login.component.ts`, and add the following import to the top of the file:
 
 ``` TypeScript
-import {Router} from "angular2/router";
+import {Router} from "@angular/router-deprecated";
 ```
 
 Next, replace the current `constructor()` declaration with the code below, which injects Angular 2’s `Router` service:
