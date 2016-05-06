@@ -44,12 +44,12 @@ Open `app/pages/login/login.component.ts`, and add the following import to the t
 import {Page} from "ui/page";
 ```
 
-> **NOTE**: All of the imports you’ve seen to this point work because the TypeScript compiler resolves them against your project’s `node_modules` folder. For instance, `import {Component} from "angular2/core"` works because a `node_modules/angular2/core.d.ts` file exists. The two imports above are NativeScript module imports, and they work because your project’s `references.d.ts` file includes a reference to a TypeScript declaration file (a `.d.ts` file), that lives in `node_modules/tns-core-modules`, and which allows you to import modules from `node_modules/tns-core-modules` without any prefixes.
+> **NOTE**: All of the imports you’ve seen to this point work because the TypeScript compiler resolves them against your project’s `node_modules` folder. For instance, `import {Component} from "@angular/core"` works because a `node_modules/angular2/core.d.ts` file exists. The two imports above are NativeScript module imports, and they work because your project’s `references.d.ts` file includes a reference to a TypeScript declaration file (a `.d.ts` file), that lives in `node_modules/tns-core-modules`, and which allows you to import modules from `node_modules/tns-core-modules` without any prefixes.
 
-Next, alter the same file’s existing `"angular2/core"` import to include the `OnInit` interface:
+Next, alter the same file’s existing `"@angular/core"` import to include the `OnInit` interface:
 
 ```TypeScript
-import {Component, OnInit} from "angular2/core";
+import {Component, OnInit} from "@angular/core";
 ```
 
 `OnInit` is a [TypeScript class interface](http://www.typescriptlang.org/docs/handbook/interfaces.html#class-types). To see how it works, make the following change to the declaration of your `LoginPage` class:
@@ -133,7 +133,7 @@ import {View} from "ui/core/view";
 After that, change the existing “angular2/core” import to include a few more classes:
 
 ``` TypeScript
-import {Component, ElementRef, OnInit, ViewChild} from "angular2/core";
+import {Component, ElementRef, OnInit, ViewChild} from "@angular/core";
 ```
 
 With these new imports in place, next, add the following property to the `LoginPage` class. Place it right under the `isLoggingIn = true;` line:
@@ -183,7 +183,7 @@ Open `app/pages/list/list.html` and replace its contents with the following code
 ``` XML
 <GridLayout>
   <ListView [items]="groceryList" class="small-spacing">
-    <template #item="item">
+    <template let-item="item">
       <Label [text]="item.name" class="medium-spacing"></Label>
     </template>
   </ListView>
@@ -204,7 +204,7 @@ We’ll talk about the new syntax in a moment, but first let’s define the clas
 Next, open `app/pages/list/list.component.ts` and replace its contents with the code below:
 
 ``` TypeScript
-import {Component, ElementRef, OnInit, ViewChild} from "angular2/core";
+import {Component, ElementRef, OnInit, ViewChild} from "@angular/core";
 
 @Component({
   selector: "list",
@@ -233,7 +233,7 @@ How does this work? Let’s return to this chunk of code:
 
 ``` XML
 <ListView [items]="groceryList" class="small-spacing">
-  <template #item="item">
+  <template let-item="item">
     <Label [text]="item.name" class="medium-spacing"></Label>
   </template>
 </ListView>
@@ -241,7 +241,7 @@ How does this work? Let’s return to this chunk of code:
 
 The [`<ListView>` UI element](http://docs.nativescript.org/ApiReference/ui/list-view/ListView) requires an `items` property that points at an array of data—in this case, the `groceryList` array you added to your `ListPage` class. The list view element requires a child `<template>` element that specifies how to render each item in the `items` array.
 
-The `#item` syntax is again Angular 2’s for syntax for creating local template variables. This gives you the ability to refer to each item in the array as `item` within the template. For this template, you render each item in the array with a single `<Label>` UI element, and because of the `[text]="item.name"` binding, those labels contain the text from the `name` property of each of the items in `groceryList` TypeScript array.
+The `let-*` syntax Angular 2’s for syntax for template variables within a loop. You can think of it working like TypeScript’s `let` keyword for creating local variables. This gives you the ability to refer to each item in the array as `item` within the template. For this template, you render each item in the array with a single `<Label>` UI element, and because of the `[text]="item.name"` binding, those labels contain the text from the `name` property of each of the items in `groceryList` TypeScript array.
 
 Now that you have a hardcoded list displaying, let’s see how to swap that out with live data.
 
@@ -260,8 +260,8 @@ export class Grocery {
 This creates a simple `Grocery` model object that you can use throughout your app. Next, let’s create a simple service that reads grocery lists from our backend.  Open `app/shared/grocery/grocery-list.service.ts` and paste in the following code:
 
 ``` TypeScript
-import {Injectable} from "angular2/core";
-import {Http, Headers} from "angular2/http";
+import {Injectable} from "@angular/core";
+import {Http, Headers} from "@angular/http";
 import {Config} from "../config";
 import {Grocery} from "./grocery";
 import {Observable} from "rxjs/Rx";
@@ -344,7 +344,7 @@ ngOnInit() {
 The full version of your `app/pages/list/list.component.ts` file should now look like this:
 
 ``` TypeScript
-import {Component, ElementRef, OnInit, ViewChild} from "angular2/core";
+import {Component, ElementRef, OnInit, ViewChild} from "@angular/core";
 import {Grocery} from "../../shared/grocery/grocery";
 import {GroceryListService} from "../../shared/grocery/grocery-list.service";
 
@@ -389,7 +389,7 @@ Open `app/pages/login/login.component.ts` and _remove_ the following line from t
 <div class="no-copy-button"></div>
 
 ``` TypeScript
-import {HTTP_PROVIDERS} from "angular2/http";
+import {HTTP_PROVIDERS} from "@angular/http";
 ```
 
 Next, in the same file, remove `HTTP_PROVIDERS` from the component decorator’s `providers` array. The array should now look this like:
@@ -401,7 +401,7 @@ providers: [UserService],
 After that, open `app/app.component.ts` and _add_ the following import to the top of the file:
 
 ``` TypeScript
-import {HTTP_PROVIDERS} from "angular2/http";
+import {HTTP_PROVIDERS} from "@angular/http";
 ```
 
 Finally, add `HTTP_PROVIDERS` to the `AppComponent` decorator’s `providers` array so that it looks like this:
@@ -440,7 +440,7 @@ Open `app/pages/list/list.html` and replace the contents of the file with the fo
   </GridLayout>
 
   <ListView [items]="groceryList" row="1" class="small-spacing">
-    <template #item="item">
+    <template let-item="item">
       <Label [text]="item.name" class="medium-spacing"></Label>
     </template>
   </ListView>

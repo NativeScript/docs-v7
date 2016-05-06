@@ -33,7 +33,7 @@ To keep things simple, let's start by looking at the outer structure of the Groc
     ├── hooks
     │   └── ...
     ├── node_modules
-    │   ├── angular2
+    │   ├── @angular
     │   ├── nativescript-angular
     │   ├── tns-core-modules
     │   └── ...
@@ -51,7 +51,7 @@ Here's what these various files and folders do:
 - **app**: This folder contains all the development resources you need to build your app. You'll be spending most of your time editing the files in here.
 - **hooks**: This folder contains a series of files the NativeScript CLI uses to preprocess TypeScript code into JavaScript code. You can ignore this folder for now, but after you complete this tutorial you may want to experiment with other preprocessors that NativeScript provides out of the box, such as [Babel for JavaScript](http://docs.nativescript.org/core-concepts/transpilers#installing-babel) or [SASS for CSS](http://www.nativescriptsnacks.com/more/2016/03/14/less-sass.html).
 - **node_modules**: This folder contains your app's npm module dependencies, including Angular 2, TypeScript, and the other modules NativeScript needs to build your app.
-- **node_modules/angular2**: This folder contains the Angular 2 source code. NativeScript does not alter the core Angular 2 source code in any way, instead, NativeScript builds on top of Angular 2 with the nativescript-angular npm module.
+- **node_modules/@angular**: This folder contains the Angular 2 source code. NativeScript does not alter the core Angular 2 source code in any way, instead, NativeScript builds on top of Angular 2 with the nativescript-angular npm module.
 - **node_modules/nativescript-angular**: This folder contains the module that integrates NativeScript-specific functionality into Angular 2. The source code for this module lives at <https://github.com/NativeScript/nativescript-angular>.
 - **node_modules/tns-core-modules**: This folder contains your app's NativeScript modules, which are a series of NativeScript-provided JavaScript modules you'll use to build your app. Each module contains the platform-specific code needed to implement some feature—the camera, http calls, the file system, and so forth—exposed through a platform-agnostic API (e.g. `camera.takePicture()`). We'll look at some examples in [chapter 4](ng-chapter-4). The source code for these modules lives at <https://github.com/NativeScript/nativescript>.
 - **platforms**: This folder contains the platform-specific code NativeScript needs to build native iOS and Android apps. For example in the `android` folder you'll find things like your project's `AndroidManifest.xml` and .apk executable files. Similarly, the `ios` folder contains the Groceries' Xcode project and .ipa executables. Note, users on Windows and Linux machines will not have an `ios` folder.
@@ -118,7 +118,7 @@ The bootstrap function, regardless of whether it’s for the web or for native a
 Next, open your app’s `app/app.component.ts` file; you should see the code below:
 
 ``` JavaScript
-import {Component} from "angular2/core";
+import {Component} from "@angular/core";
 
 @Component({
   selector: "my-app",

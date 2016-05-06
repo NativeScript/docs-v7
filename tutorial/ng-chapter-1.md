@@ -246,7 +246,7 @@ The `tns livesync` command updates your app by transferring the updated source c
 To see livesync in action let’s make a small update to your app. Open your project’s `app/app.component.ts` file in your text editor of choice, and replace the file’s contents with the code below, which updates the label’s text:
 
 ``` TypeScript
-import {Component} from "angular2/core";
+import {Component} from "@angular/core";
 
 @Component({
   selector: "my-app",
