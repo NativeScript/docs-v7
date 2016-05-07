@@ -14,7 +14,7 @@ previous_url: /layout-containers
 * [WrapLayout](#wraplayout)
 
 ## [AbsoluteLayout]({{site.baseurl}}/cookbook/ui/layouts/absolute-layout)
-The AbsoluteLayout us the simplest layout in NativeScript. It uses absolute left-top coordinates to position its children. The AbsoluteLayout will not enforce any layout constraints on its children and will not resize them at runtime when its size changes.
+The AbsoluteLayout is the simplest layout in NativeScript. It uses absolute left-top coordinates to position its children. The AbsoluteLayout will not enforce any layout constraints on its children and will not resize them at runtime when its size changes.
 
 ### AbsoluteLayout Properties
 None.
@@ -62,17 +62,17 @@ None.
 ![AbsoluteLayout](../img/modules/layouts/absolute-layout2.png "AbsoluteLayout")
 
 ## [DockLayout]({{site.baseurl}}/cookbook/ui/layouts/dock-layout)
-The DockLayout is a layout that provides an docking mechanism for child elements to the left, right, top, bottom or center of the layout. To define the docking side of a child element, use its `dock` property. To dock a child element to the center of the DockLayout, it must be the last child of the DockLayout and the `stretchLastChild` property of the DockLayout must be set to `true`.
+The DockLayout is a layout that provides a docking mechanism for child elements to the left, right, top, bottom or center of the layout. To define the docking side of a child element, use its `dock` property. To dock a child element to the center of the DockLayout, it must be the last child of the DockLayout and the `stretchLastChild` property of the DockLayout must be set to `true`.
 
 ### DockLayout Properties
 | Property | Description |
 | -------- | ------------|
-| stretchLastChild | Gets or sets a value that indicates whether the last child element within a DockLayout stretches to fill the remaining available space. The default value is true. |
+| stretchLastChild | Gets or sets a value that indicates whether the last child element within a DockLayout stretches to fill the remaining available space. The default value is `true`. |
 
 ### Child Properties
 | Property | Description |
 | -------- | ------------|
-| dock     | Specifies the Dock position of a child element that is inside a DockLayout. Possible values are `left`, `top`, `right` and `bottom` |
+| dock     | Specifies the Dock position of a child element that is inside a DockLayout. Possible values are `left`, `top`, `right` and `bottom`. |
 
 ### Sample (stretchLastChild="false")
 {% nativescript %}
@@ -150,7 +150,7 @@ The GridLayout is a layout that arranges its child elements in a table structure
 | col      | Gets or sets a value that indicates which column child content within a GridLayout should appear in. |
 | rowSpan  | Gets or sets a value that indicates the total number of rows that child content spans within a GridLayout. |
 | colSpan  | Gets or sets a value that indicates the total number of columns that child content spans within a GridLayout. |
-
+<Comment: In the row and col descriptions, I think you are missing a word after GridLayout. Perhaps it, but you may mean row in the first and column in the second.>
 ### Sample
 {% nativescript %}
 ```XML
@@ -215,7 +215,7 @@ The GridLayout is a layout that arranges its child elements in a table structure
 
 ![GridLayout](../img/modules/layouts/grid-layout2.png "GridLayout")
 
-### Sample (no width & horizontalAlignment != stretch)
+### Sample (no width and horizontalAlignment != stretch)
 When the GridLayout has no explicit `width` set and its `horizontalAlignment` is not `stretch`, the star columns will not occupy the entire available space (300 from parent StackLayout).
 
 {% nativescript %}
@@ -237,7 +237,7 @@ When the GridLayout has no explicit `width` set and its `horizontalAlignment` is
 ![GridLayout](../img/modules/layouts/grid-layout3.png "GridLayout")
 
 ### Sample (column stretching)
-Label 3 is has fixed width of 150 pixels. Label 1 is given more space than it actually needs, because Label 3 stretches the auto column.
+Label 3 has a fixed width of 150 pixels. Label 1 is given more space than it actually needs, because Label 3 stretches the auto column.
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -256,7 +256,7 @@ Label 3 is has fixed width of 150 pixels. Label 1 is given more space than it ac
 ![GridLayout](../img/modules/layouts/grid-layout4.png "GridLayout")
 
 ### Sample (complex)
-
+<Comment: Please add a description of the complex sample.>
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -276,12 +276,12 @@ Label 3 is has fixed width of 150 pixels. Label 1 is given more space than it ac
 ![GridLayout](../img/modules/layouts/grid-layout5.png "GridLayout")
 
 ## [StackLayout]({{site.baseurl}}/cookbook/ui/layouts/stack-layout)
-The StackLayout stacks its child elements below or beside each other, depending on its orientation. It is very useful to create any kinds of lists.
+The StackLayout stacks its child elements below or beside each other, depending on its orientation. It is very useful to create lists.
 
 ### StackLayout Properties
 | Property    | Description |
 | ----------- | ------------|
-| orientation | Gets or sets a value indicating whether child items should be stacked in the horizontal or vertical direction. Possible values are `vertical` and `horizontal`. The default value is `vertical`. |
+| orientation | Gets or sets a value indicating whether the child items should be stacked in the horizontal or vertical direction. Possible values are `vertical` and `horizontal`. The default value is `vertical`. |
 
 ### Child Properties
 None.
@@ -367,9 +367,9 @@ The WrapLayout is similar to the StackLayout, but it does not just stack all chi
 ### WrapLayout Properties
 | Property    | Description |
 | ----------- | ------------|
-| orientation | Gets or sets a value indicating the flow direction. If orientation is `horizontal` items are arranged in rows. If orientation is `vertical` items are arranged in columns. The default value is `horizontal`. |
-| itemWidth   | Gets or sets the width used to measure and layout each child. Default value is Number.NaN which does not restrict children. |
-| itemHeight  | Gets or sets the height used to measure and layout each child. Default value is Number.NaN which does not restrict children. |
+| orientation | Gets or sets a value indicating the flow direction. If orientation is `horizontal`, items are arranged in rows. If orientation is `vertical`, items are arranged in columns. The default value is `horizontal`. |
+| itemWidth   | Gets or sets the width used to measure and layout each child. Default value is Number.NaN, which does not restrict children. |
+| itemHeight  | Gets or sets the height used to measure and layout each child. Default value is Number.NaN, which does not restrict children. |
 
 ### Child Properties
 None.
