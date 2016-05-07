@@ -8,7 +8,7 @@ previous_url: /layouts
 
 # User Interface Layouts
 
-NativeScript provides a recursive layout system which sizes and positions [views][views] on the screen.
+NativeScript provides a recursive layout system that sizes and positions [views][views] on the screen.
 
 * [Layout Process](#layout-process)
 	* [Measure Pass](#measure-pass)
@@ -24,11 +24,11 @@ NativeScript provides a recursive layout system which sizes and positions [views
 
 Layout is the process of measuring and positioning the child views of a [Layout][Layout] container. Layout is an intensive process whose speed and performance depend on the count of the children and the complexity of the layout container. For example, a simple layout container such as [AbsoluteLayout][AbsoluteLayout] might perform better than a more complex layout container, such as [GridLayout][GridLayout].
 
-Layout completes in two passes - a measure pass and a layout pass. Every layout container provides its own `onMeasure()` and `onLayout()` methods to achieve its own specific layout.
+Layout completes in two passes&mdash;a measure pass and a layout pass. Every layout container provides its own `onMeasure()` and `onLayout()` methods to achieve its own specific layout.
 
 ### Measure Pass
 
-During the measure pass, each [View][View] is measured to retrieve its desired size. The measure pass evaluates the following properties:
+During the measure pass, each [view][view] is measured to retrieve its desired size. The measure pass evaluates the following properties:
 
 * width
 * height
@@ -42,7 +42,7 @@ During the measure pass, each [View][View] is measured to retrieve its desired s
 
 ### Layout Pass
 
-During the layout pass, each [View][View] is placed in a specific layout slot. This slot is determined by the desired size of the view (retrieved from the measure pass) and the following properties:
+During the layout pass, each [view][view] is placed in a specific layout slot. This slot is determined by the desired size of the view (retrieved from the measure pass) and the following properties:
 
 - marginTop
 - marginRight
@@ -62,7 +62,7 @@ The following table shows the valid values of `horizontalAlignment`.
 | left    | The view is aligned to the left of the layout slot of the parent element. |
 | center  | The view is aligned to the center of the layout slot of the parent element. |
 | right   | The view is aligned to the right of the layout slot of the parent element. |
-| stretch | The view is stretched to fill the layout slot of the parent element. `width` takes precedence, if set. |
+| stretch | The view is stretched to fill the layout slot of the parent element; `width` takes precedence, if set. |
 
 The following table shows the valid values of `verticalAlignment`.
 
@@ -71,7 +71,7 @@ The following table shows the valid values of `verticalAlignment`.
 | top     | The view is aligned to the top of the layout slot of the parent element. |
 | center  | The view is aligned to the center of the layout slot of the parent element. |
 | bottom  | The view is aligned to the bottom of the layout slot of the parent element. |
-| stretch | The view is stretched to fill the layout slot of the parent element. `height` takes precedence, if set. |
+| stretch | The view is stretched to fill the layout slot of the parent element; `height` takes precedence, if set. |
 
 ### Margins
 
@@ -79,24 +79,24 @@ The four margin properties (`marginTop`, `marginRight`, `marginBottom` and `marg
 
 When you set margins through XML, you can choose between the following approaches.
 
-* **Set one value**: Provide a single value which will be applied on all sides of the view.
-* **Set two values**: Provide two values. The first value is applied to the top side, the second value is applied to the right side. Next, the first value is applied to the bottom and the second value - the left side (in that order).
+* **Set one value**: Provide a single value that will be applied on all sides of the view.
+* **Set two values**: Provide two values. The first value is applied to the top side, the second value is applied to the right side. Next, the first value is applied to the bottom and the second value to the left side (in that order).
 * **Set four values**: Provide four values for each margin. The first value is applied to the top, the second value is applied to the right, the third value is applied to the bottom and the fourth value is applied to the left side (in that order).
 
 ## Layouts
 
 `Layout` is the base class for all views that provide positioning of child elements.
 
-You can use the various layout containers to position elements. They evaluate the base properties of [View][View] such as `width`, `height`, `minWidth` and alignments, and expose additional properties for positioning child views (such as the four paddings).
+You can use the various layout containers to position elements. They evaluate the base properties of [view][view] such as `width`, `height`, `minWidth` and alignments, and expose additional properties for positioning child views (such as the four paddings).
 
 ### Layout Paddings
 
 The four padding properties (`paddingTop`, `paddingRight`, `paddingBottom` and `paddingLeft`) describe the distance between the layout container and its children.
 
-When set paddings through XML, you can choose between the following approaches.
+When you set paddings through XML, you can choose between the following approaches.
 
-* **Set one value**: Provide a single value which will be applied on all sides of the view.
-* **Set two values**: Provide two values. The first value is applied to the top side, the second value is applied to the right side. Next, the first value is applied to the bottom and the second value - the left side (in that order).
+* **Set one value**: Provide a single value that will be applied on all sides of the view.
+* **Set two values**: Provide two values. The first value is applied to the top side, the second value is applied to the right side. Next, the first value is applied to the bottom and the second value to the left side (in that order).
 * **Set four values**: Provide four values for each padding. The first value is applied to the top, the second value is applied to the right, the third value is applied to the bottom and the fourth value is applied to the left side (in that order).
 
 ### Predefined Layouts
@@ -124,6 +124,6 @@ The following table shows predefined layouts that NativeScript provides.
 
 > **NOTE:** Experimental feature v1.6+ 
 
-With version 1.6.0 NativeScript support percentage values for `width`, `height` and `margins`.
-When layout pass begins first the percent values are calculated based on parent available size. This means that on vertical `StackLayout` if you place two `Buttons` with `height='50%'` they will get all the available height (e.g. they will fill the `StackLayout` vertically.).
-Same applies for margin properties. For example if you set `marginLeft='5%'` the element will have margin which corresponds to 5% from parent available width.
+With version 1.6.0, NativeScript supports percentage values for `width`, `height` and `margins`.
+When a layout pass begins, first the percent values are calculated based on parent available size. This means that on vertical `StackLayout` if you place two `Buttons` with `height='50%'` they will get all the available height (e.g., they will fill the `StackLayout` vertically.).
+The same applies for margin properties. For example, if you set `marginLeft='5%'`, the element will have a margin that corresponds to 5% from parent available width. <Comment: The last part of this sentence does not make sense to me. Do you mean, "5% of the parent's available width"?>
