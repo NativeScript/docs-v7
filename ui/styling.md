@@ -25,21 +25,21 @@ You change the looks and appearance of views (elements) in a NativeScript applic
 
 Similarly to the [DOM Style Object](http://www.w3schools.com/jsref/dom_obj_style.asp), each View instance exposes a **style** property, which holds all the style properties for the view. When the view is displayed, all its style properties are applied to the underlying native widget.
 
-## Applying CSS Styles
+## Applying CSS styles
 The CSS styles can be set on 3 different levels:
 
-* [Application-wide CSS](#application-wide-css)&mdash;applies to every application page
+* [Application-wide CSS](#application-wide-css): Applies to every application page
 {% nativescript %}
-* [PageSpecific CSS](#page-specific-css)&mdash;applies to the page's UI views
+* [Page-specific CSS](#page-specific-css): Applies to the page's UI views
 {% endnativescript %}
 {% angular %}
-* [Component specific CSS](#component-specific-css)&mdash;applies for component only
+* [Component-specific CSS](#component-specific-css): Applies for component only
 {% endangular %}
-* [Inline CSS](#inline-css)&mdash;applies directly to a UI view
+* [Inline CSS](#inline-css): Applies directly to a UI view
 
-If there is CSS declared on different levels - all will be applied. The inline CSS will have the highest priority and the application CSS - the lowest.
+If there is CSS declared on different levels&mdash;all will be applied. The inline CSS will have the highest priority and the application CSS will have the lowest priority.
 
-### Application-Wide CSS
+### Application-wide CSS
 
 When the  application starts, NativeScript checks if the file `app.css` exists. If it does, any CSS styles that it contains are loaded and used across all application pages. This file is a convenient place to store styles that will be used on multiple pages.
 
@@ -69,7 +69,7 @@ nativeScriptBootstrap(ListTest, null, {"cssFile": "style.css"});
 > The path to the CSS file is relative to the application root folder.
 
 {% nativescript %}
-### Page-Specific CSS
+### Page-specific CSS
 
 When the page's XML declaration file is loaded, NativeScript looks for a CSS file with the same name (if such exists), reads any CSS styles that it finds and automatically loads and applies them to the page.
 
@@ -85,9 +85,9 @@ page.css = "button { color: red }";
 After you have set the default CSS for the page, you can add to it using two methods: adding CSS from a string and adding CSS from a file.
 {% endnativescript %}
 {% angular %}
-### Component specific CSS
+### Component-specific CSS
 
-In an Angular application everything is a component, therefore it is very common task is to add some CSS code that should only apply to one component. Adding component specific CSS in a NativeScript-Angular app involves using a component’s `styles` or `styleUrls` property.
+In an Angular application everything is a component, therefore, it is a very common task to add some CSS code that should only apply to one component. Adding component-specific CSS in a NativeScript-Angular app involves using a component’s `styles` or `styleUrls` property.
 
 ```TypeScript
 @Component({
@@ -103,15 +103,15 @@ In an Angular application everything is a component, therefore it is very common
     template: ...
 ```
 
-In each of these examples the CSS rules will only apply to the declared component, and not other UI elements in the application.
+In each of these examples, the CSS rules will only apply to the declared component, and not other UI elements in the application.
 
 > The `styles` and `styleUrls` will be applied even if the component is moved to another page within the application.
 
 {% endangular %}
 
-#### Adding CSS From a String
+#### Adding CSS from a string
 
-This snippet adds a new style to the current set of styles. This is quite useful when you need to add a small CSS chunk to an element (one example is for testing purposes):
+This snippet adds a new style to the current set of styles. This is quite useful when you need to add a small CSS chunk to an element (for example, for testing purposes):
 
 ``` JavaScript
 page.addCss("button {background-color: blue}");
@@ -120,9 +120,9 @@ page.addCss("button {background-color: blue}");
 page.addCss("button {background-color: blue}");
 ```
 
-#### Adding CSS From a File
+#### Adding CSS from a file
 
-This snippet again adds new CSS styles to the current set. However, this method reads them from a file. It is useful for organizing styles in files and reusing them across multiple pages.
+This snippet adds new CSS styles to the current set. However, this method reads them from a file. It is useful for organizing styles in files and reusing them across multiple pages.
 
 ``` JavaScript
 page.addCssFile(cssFileName);
@@ -141,26 +141,26 @@ Similarly to HTML, CSS can be defined inline for a UI view in the XML markup:
 <Button text="inline style" style="background-color: green;"/>
 ```
 
-## Supported Selectors
+## Supported selectors
 
 > Currently the CSS support is limited only to the selectors and properties listed in the current article.
 
-NativeScript supports a subset of the [CSS selector syntax](http://www.w3schools.com/cssref/css_selectors.asp). Let's go through the supported selectors:
+NativeScript supports a subset of the [CSS selector syntax](http://www.w3schools.com/cssref/css_selectors.asp). Here is how to use the supported selectors:
 
-* [Type Selector](#type-selector)
-* [Class Selector](#class-selector)
-* [ID Selector](#id-selector)
+* [Type selector](#type-selector)
+* [Class selector](#class-selector)
+* [ID selector](#id-selector)
 * [Hierarchical selector](#hierachical-selector-css-combinators)
 * [Attribute selector](#attribute-selector)
 
-### Type Selector
-Like [CSS element selectors](http://www.w3schools.com/cssref/sel_element.asp), type selectors in NativeScript select all views of a given type. Type selectors are case-insensitive, so you can use both `button` and `Button`.
+### Type selector
+Like [CSS element selectors](http://www.w3schools.com/cssref/sel_element.asp), type selectors in NativeScript select all views of a given type. Type selectors are case insensitive, so you can use both `button` and `Button`.
 
 ```CSS
 button { background-color: gray }
 ```
 
-### Class Selector
+### Class selector
 [Class selectors](http://www.w3schools.com/cssref/sel_class.asp) select all views with a given class.
 The class is set using the `cssClass` property of the view.
 
@@ -180,7 +180,7 @@ label.cssClass = "title"
 <Label cssClass="title" />
 ```
 
-### ID Selector
+### ID selector
 [Id selectors](http://www.w3schools.com/cssref/sel_id.asp) select all views with a given id.
 The id is set using the `id` property of the view.
 
@@ -204,7 +204,7 @@ btn.id = "login-button"
 
 A CSS selector could contain more than one simple selector, and between selectors a combinator symbol could be included.
 
-* (space) - Descendant selector. For example following code will select all buttons inside StackLayouts (no matter) at which level.
+* (space) - Descendant selector. For example, the following code will select all buttons inside StackLayouts (no matter) at which level.
 
 ```CSS
 StackLayout Button { background-color: blue; }
@@ -217,7 +217,7 @@ StackLayout Button { background-color: blue; }
 </StackLayout>
 ```
 
-* (>) - A direct child selector. Using the previous example if the CSS is changed to:
+* (>) - A direct child selector. Using the previous example, if the CSS is changed to:
 
 ```CSS
 StackLayout > Button { background-color: blue; }
@@ -234,11 +234,11 @@ button[testAttr]{ background-color: blue; }
 <Button testAttr="flower" />
 ```
 
-This selector will select all buttons which have attribute `testAttr` with some value.
+This selector will select all buttons that have the attribute `testAttr` with some value.
 
-Also some more advanced scenarios are supported:
+Also, some more advanced scenarios are supported:
 
-* button[testAttr='flower'] {...} - Will apply css on every button which have `testAttr` property set exactly to value `flower`.
+* button[testAttr='flower'] {...} - Will apply CAA on every button that has the `testAttr` property set exactly to the value `flower`.
 * button[testAttr~='flower'] {...} - Selects all buttons with a `testAttr` property that contains a space-separated list of words, one of which is "flower".
 * button[testAttr|='flower'] {...} - Selects all buttons with a `testAttr` property value that begins with "flower". The value has to be a whole word, either alone like `btn['testAttr'] = 'flower'`, or followed by hyphen (-), like `btn['testAttr'] = 'flower-house'`.
 * button[testAttr^='flower'] {...} - Selects all buttons with a `testAttr` property value that begins with "flower". The value does not have to be a whole word.
@@ -256,9 +256,9 @@ Attribute selectors could be used alone or could be combined with all type of CS
 <Label testAttr="some value" />
 ```
 
-## Supported CSS Properties
+## Supported CSS properties
 
-This is the list of the properties that can be set in CSS or through the style property of each View:
+This list of properties can be set in CSS or through the style property of each view:
 
 | CSS Property    | JavaScript Property | Description |
 |:----------------|:-------------------|:----------------|
@@ -266,13 +266,13 @@ This is the list of the properties that can be set in CSS or through the style p
 | background-color | backgroundColor   | Sets a solid-color value to the matched view’s background. |
 | background-image | backgroundImage   | Sets a image url to the matched view’s background image. |
 | background-repeat | backgroundRepeat | Sets if/how the background image should be repeated. Possible values: "repeat", "repeat-x", "repeat-y", "no-repeat" |
-| background-position | backgroundPosition | Sets the starting position of the background image. You can set the position with absolute, percent or alignment values. More info [here](http://www.w3schools.com/cssref/pr_background-position.asp).  |
+| background-position | backgroundPosition | Sets the starting position of the background image. You can set the position with absolute, percent or alignment values. More info [here](http://www.w3schools.com/cssref/pr_background-position.asp). |
 | background-size | backgroundSize     | Sets the size of the background image. Possible values: "*length length*", "*percent% percent%*", "cover" or "contain". |
 | border-color    | borderColor        | Sets a border color to the matched view’s. |
 | border-width    | borderWidth        | Sets a border width to the matched view’s. |
 | border-radius   | borderRadius       | Sets a border radius to the matched view’s. |
-| font            | font               | Sets the font properties(this includes font-family, font-size, font-style and font-weight)  of the matched view. |
-| font-family     | fontFamily         | Sets the font family of the matched view |
+| font            | font               | Sets the font properties (this includes font-family, font-size, font-style and font-weight)  of the matched view. |
+| font-family     | fontFamily         | Sets the font family of the matched view. |
 | font-size       | fontSize           | Sets the font size of the matched view (only supports device-independent units). |
 | font-style      | fontStyle          | Sets the font style of the matched view. Possible values: "italic", "normal". |
 | font-weight     | fontWeight         | Sets the font weight of the matched view Possible values: "bold", "normal". |
@@ -292,12 +292,12 @@ This is the list of the properties that can be set in CSS or through the style p
 | height          | height             | Sets the view height. |
 | min-width       | minWidth           | Sets the minimal view width. |
 | min-height      | minHeight          | Sets the minimal view height. |
-| padding         | padding            | Sets the distance between the boundaries of layout container and its children. |
+| padding         | padding            | Sets the distance between the boundaries of the layout container and its children. |
 | padding-top     | paddingTop         | Sets the top padding of a layout container. |
 | padding-right   | paddingRight       | Sets the right padding of a layout container. |
 | padding-bottom  | paddingBottom      | Sets the bottom padding of a layout container. |
 | padding-left    | paddingLeft        | Sets the left padding of a layout container. |
-| visibility      | visibility         | Sets the view visibility. Possible values: "visible", "collapse" (or"collapsed"). |
+| visibility      | visibility         | Sets the view visibility. Possible values: "visible", "collapse" (or "collapsed"). |
 | opacity         | opacity            | Sets the view opacity. The value is in the [0, 1] range. |
 
 ## Accessing NativeScript component properties with CSS
@@ -309,22 +309,22 @@ StackLayout {
 }
 ```
 
-This feature is limited to properties with simple types like string, number and boolean and will set local property value similar to component markup declaration in XML. CSS cascading and inheritance are not supported. 
+This feature is limited to properties with simple types like string, number and boolean, and will set a local property value similar to component markup declaration in XML. CSS cascading and inheritance are not supported. 
 
-## Using Fonts
+## Using fonts
 The `font-family` property can hold several values. The first supported font in the list will be used. There is also support for the following generic font-families:
 * serif (ex. Times New Roman)
 * sans-serif (ex. Helvetica)
 * monospace (ex. Courier New)
 
 Platform specifics:
-* Android: The supported fonts depend very much on the system thus using the generic font-families or [custom-fonts](#custom-fonts) is recommended.
+* Android: The supported fonts depend very much on the system, thus using the generic font-families or [custom-fonts](#custom-fonts) is recommended.
 * iOS: You can check the [supported fonts in iOS 7](https://support.apple.com/en-us/HT202771).
 
-### Custom Fonts
-You can use custom fonts in you app(in .TTF or .OTF format). The NativeScript runtime will look for the font files under the `app/fonts/` directory and load them automatically.
+### Custom fonts
+You can use custom fonts in your app (in .TTF or .OTF format). The NativeScript runtime will look for the font files under the `app/fonts/` directory and load them automatically.
 
-Note: In iOS you should also do one-time registration of the font to be able to use it(usually in the app.ts/app.js file):
+Note: In iOS you should also do a one-time registration of the font to be able to use it (usually in the app.ts/app.js file):
 
 ```JavaScript
 var fontModule = require("ui/styling/font");
@@ -335,7 +335,7 @@ import fontModule = require("ui/styling/font");
 fontModule.ios.registerFont("MyFont.ttf");
 ```
 
-## Import External CSS
+## Import external CSS
 The @import CSS rule allows you to import external CSS from local file, resource or url. These rules must precede all other types of rules.
 
 ```CSS
