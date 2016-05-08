@@ -8,7 +8,7 @@ previous_url: /ui-views
 
 # User Interface Widgets
 
-NativeScript ships with a set of user interface [`Views`]({{site.baseurl}}/ApiReference/ui/core/view/README.md) (also known as widgets) which you can use to build the user interface of a mobile application. Most of these views wrap the corresponding native view for each platform while providing a common API for working with it. For example the `Button` view renders an [`android.widget.Button`](http://developer.android.com/reference/android/widget/Button.html) on Android and [`UIButton`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/) on iOS.
+NativeScript ships with a set of user interface [`views`]({{site.baseurl}}/ApiReference/ui/core/view/README.md) (also known as widgets) which you can use to build the user interface of a mobile application. Most of these views wrap the corresponding native view for each platform while providing a common API for working with it. For example, the `Button` view renders an [`android.widget.Button`](http://developer.android.com/reference/android/widget/Button.html) on Android and [`UIButton`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/) on iOS.
 
 * [Button](#button)
 * [Label](#label)
@@ -32,7 +32,7 @@ NativeScript ships with a set of user interface [`Views`]({{site.baseurl}}/ApiRe
 
 Defining the layout of the application is also an important part of the application development. For more information about the different layout containers that are available in NativeScript, see [The NativeScript Layout System]({%slug layouts %}).
 
-> **TIP:** You can access the underlying native widget for each view at runtime using the following properties.
+> **TIP:** You can access the underlying native widget for each view at runtime using the following properties:
 >
 > * Android: `<view>.android`
 > * iOS: `<view>.ios`
@@ -91,7 +91,7 @@ You can use it to show multi-line text and implement text editing.
 
 ## SearchBar
 
-The [SearchBar]({{site.baseurl}}/cookbook/ui/search-bar) widget provides a user interface for entering search queries and submitting requests to search provider.
+The [SearchBar]({{site.baseurl}}/cookbook/ui/search-bar) widget provides a user interface for entering search queries and submitting requests to the search provider.
 
 ![search-bar android](../img/gallery/android/searchBarPage.png "search-bar android")![search-bar ios](../img/gallery/ios/searchBarPage.png "search-bar ios")
 
@@ -103,7 +103,7 @@ The [SearchBar]({{site.baseurl}}/cookbook/ui/search-bar) widget provides a user 
 
 ## Switch
 
-The [Switch]({{site.baseurl}}/cookbook/ui/switch) widget provides a two-state toggle switch with which you can choose between two options.
+The [Switch]({{site.baseurl}}/cookbook/ui/switch) widget provides a two-state toggle switch from which you can choose between two options.
 
 ![switch android](../img/gallery/android/switchPage.png "switch android")![switch ios](../img/gallery/ios/switchPage.png "switch ios")
 
@@ -115,7 +115,7 @@ The [Switch]({{site.baseurl}}/cookbook/ui/switch) widget provides a two-state to
 
 ## Slider
 
-The [Slider]({{site.baseurl}}/cookbook/ui/slider) widget provides a slider which you can use to pick a numeric value within a configurable range.
+The [Slider]({{site.baseurl}}/cookbook/ui/slider) widget provides a slider that you can use to pick a numeric value within a configurable range.
 
 ![slider android](../img/gallery/android/sliderPage.png "slider android")![slider ios](../img/gallery/ios/sliderPage.png "slider ios")
 
@@ -127,7 +127,7 @@ The [Slider]({{site.baseurl}}/cookbook/ui/slider) widget provides a slider which
 
 ## Progress
 
-The [Progress]({{site.baseurl}}/cookbook/ui/progress) widget is a visual bar indicator of a progress in a operation. Shows a bar representing the current progress of the operation.
+The [Progress]({{site.baseurl}}/cookbook/ui/progress) widget is a visual bar indicator of a progress in a operation. It shows a bar representing the current progress of the operation.
 
 ![progress android](../img/gallery/android/progressPage.png "progress android")![progress ios](../img/gallery/ios/progressPage.png "progress ios")
 
@@ -151,7 +151,7 @@ The [ActivityIndicator]({{site.baseurl}}/cookbook/ui/activity-indicator) widget 
 
 ## Image
 
-The [Image]({{site.baseurl}}/cookbook/ui/image) widget shows an image. You can load the image can be from [`ImageSource`]({{site.baseurl}}/ApiReference/image-source/ImageSource.md) or from URL.
+The [Image]({{site.baseurl}}/cookbook/ui/image) widget shows an image. You can load the image from an [`ImageSource`]({{site.baseurl}}/ApiReference/image-source/ImageSource.md) or from a URL.
 
 ![image android](../img/gallery/android/imagePage.png "image android")![image ios](../img/gallery/ios/imagePage.png "image ios")
 
@@ -175,7 +175,7 @@ The [ListView]({{site.baseurl}}/cookbook/ui/list-view) shows items in a vertical
 
 ## HtmlView
 
-The [HtmlView]({{site.baseurl}}/cookbook/ui/html-view) represents a view with html content. Use this component instead WebView when you want to show just static HTML content.
+The [HtmlView]({{site.baseurl}}/cookbook/ui/html-view) represents a view with HTML content. Use this component instead of WebView when you want to show just static HTML content.
 
 ![html-view android](../img/gallery/android/htmlViewPage.png "html-view android")![html-view ios](../img/gallery/ios/htmlViewPage.png "html-view ios")
 
@@ -187,7 +187,7 @@ The [HtmlView]({{site.baseurl}}/cookbook/ui/html-view) represents a view with ht
 
 ## WebView
 
-The [WebView]({{site.baseurl}}/cookbook/ui/web-view) shows web pages. You can load a page from URL or by navigating back and forward.
+The [WebView]({{site.baseurl}}/cookbook/ui/web-view) shows web pages. You can load a page from a URL or by navigating back and forward.
 
 ![web-view android](../img/gallery/android/webViewPage.png "web-view android")![web-view ios](../img/gallery/ios/webViewPage.png "web-view ios")
 
@@ -223,7 +223,7 @@ With the [SegmentedBar]({{site.baseurl}}/cookbook/ui/segmented-bar) control, you
 
 ## DatePicker
 
-With the [DatePicker]({{site.baseurl}}/cookbook/ui/date-picker) control, you can pick date.
+With the [DatePicker]({{site.baseurl}}/cookbook/ui/date-picker) control, you can pick a date.
 
 ![date-picker android](../img/gallery/android/datePickerPage.png "date-picker android")![date-picker ios](../img/gallery/ios/datePickerPage.png "date-picker ios")
 
@@ -235,7 +235,7 @@ With the [DatePicker]({{site.baseurl}}/cookbook/ui/date-picker) control, you can
 
 ## TimePicker
 
-With the [TimePicker]({{site.baseurl}}/cookbook/ui/time-picker) widget, you can pick time.
+With the [TimePicker]({{site.baseurl}}/cookbook/ui/time-picker) widget, you can pick a time.
 
 ![time-picker android](../img/gallery/android/timePickerPage.png "time-picker android")![time-picker ios](../img/gallery/ios/timePickerPage.png "time-picker ios")
 
@@ -247,7 +247,7 @@ With the [TimePicker]({{site.baseurl}}/cookbook/ui/time-picker) widget, you can 
 
 ## ListPicker
 
-With the [ListPicker]({{site.baseurl}}/cookbook/ui/list-picker) widget, you can pick value from a list.
+With the [ListPicker]({{site.baseurl}}/cookbook/ui/list-picker) widget, you can pick a value from a list.
 
 ![list-picker android](../img/gallery/android/listPickerPage.png "list-picker android")![list-picker ios](../img/gallery/ios/listPickerPage.png "list-picker ios")
 
