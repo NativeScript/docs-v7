@@ -15,17 +15,17 @@ NativeScript lets you create dialogs in your app in a manner similar to the web 
 * [Prompt](#prompt)
 * [Login](#login)
 * [Action](#action)
-{% angular %}* [Custom Dialog](#custom-dialog)
-  * [Showing Custom Dialog](#showing-custom-dialog)
-  * [Passing Parameters](#passing-parameters)
-  * [Returning a Result](#returning-a-result)
+{% angular %}* [Custom dialog](#custom-dialog)
+  * [Showing custom dialog](#showing-custom-dialog)
+  * [Passing parameters](#passing-parameters)
+  * [Returning a result](#returning-a-result)
 {% endangular %}
 
-> You can call dialog functions with parameters similar to the web browser API or the `options` object. All dialog functions return a `Promise` object. **In both iOS and Android dialogs will not block your code execution!**
+> You can call dialog functions with parameters similar to the web browser API or the `options` object. All dialog functions return a `Promise` object. **In both iOS and Android, dialogs will not block your code execution!**
 
 ## Alert
 
-**Web-Browser Style**
+**Web browser style**
 
 ```JavaScript
 var dialogs = require("ui/dialogs");
@@ -40,7 +40,7 @@ dialogs.alert("Your message").then(()=> {
 });
 ```
 
-**Using an Options Object**
+**Using an options object**
 
 ```JavaScript
 var dialogs = require("ui/dialogs");
@@ -65,7 +65,7 @@ dialogs.alert({
 
 ## Confirm
 
-**Web-Browser Style**
+**Web browser style**
 
 ```JavaScript
 var dialogs = require("ui/dialogs");
@@ -80,7 +80,7 @@ dialogs.confirm("Your message").then(result => {
 });
 ```
 
-**Using an Options Object**
+**Using an options object**
 
 ```JavaScript
 var dialogs = require("ui/dialogs");
@@ -109,11 +109,11 @@ dialogs.confirm({
 });
 ```
 
-> The dialog result argument is boolean. The result is true if the dialog is closed with the OK button. The result is false if closed with the Cancel button. The result is undefined if closed with a neutral button.
+> The dialog result argument is boolean. The result is __true__ if the dialog is closed with the OK button. The result is __false__ if closed with the Cancel button. The result is undefined if closed with a neutral button.
 
 ## Prompt
 
-**Web-Browser Style**
+**Web browser style**
 
 ```JavaScript
 var dialogs = require("ui/dialogs");
@@ -130,7 +130,7 @@ dialogs.prompt("Your message", "Default text").then(r => {
 });
 ```
 
-**Using an Options Object**
+**Using an options object**
 
 ```JavaScript
 var dialogs = require("ui/dialogs");
@@ -162,11 +162,11 @@ dialogs.prompt({
   console.log("Dialog result: " + r.result + ", text: " + r.text);
 });
 ```
-> The dialog result argument is an object with two properties: result and text (entered text). The result property is true if the dialog is closed with the OK button, false if closed with the Cancel button or undefined if closed with a neutral button.
+> The dialog result argument is an object with two properties: result and text (entered text). The result property is __true__ if the dialog is closed with the OK button, __false__ if closed with the Cancel button or undefined if closed with a neutral button.
 
 ## Login
 
-**Web-Browser Style**
+**Web browser style**
 
 ```JavaScript
 var dialogs = require("ui/dialogs");
@@ -183,7 +183,7 @@ dialogs.login("Your message", "User name label text", "Password label text").the
 });
 ```
 
-**Using an Options Object**
+**Using an options object**
 
 ```JavaScript
 var dialogs = require("ui/dialogs");
@@ -214,11 +214,11 @@ dialogs.login({
 });
 ```
 
-> The dialog result argument is an object with three properties: result, userName and password (entered user name and password). The result property is true if the dialog is closed with the OK button, false if closed with the Cancel button or undefined if closed with a neutral button.
+> The dialog result argument is an object with three properties: result, userName and password (entered user name and password). The result property is __true__ if the dialog is closed with the OK button, __false__ if closed with the Cancel button or undefined if closed with a neutral button.
 
 ## Action
 
-**Web-Browser Style**
+**Web browser style**
 
 ```JavaScript
 var dialogs = require("ui/dialogs");
@@ -233,7 +233,7 @@ dialogs.action("Your message", "Cancel button text", ["Option1", "Option2"]).the
 });
 ```
 
-**Using an Options Object**
+**Using an options object**
 
 ```JavaScript
 var dialogs = require("ui/dialogs");
@@ -257,13 +257,13 @@ dialogs.action({
 ```
 > The dialog result argument is a string (the text of the clicked option or the text of the cancel button).
 {% angular %}
-## Custom Dialog
+## Custom dialog
 
 You can also create dialogs with custom content. All the needed types live inside the `nativescript-angular/modal-dialog` module.
 
-### Showing Custom Dialog
+### Showing custom dialog
 
-Start by getting a reference to  `ModalDialogService` by injecting it in you component:
+Start by getting a reference to `ModalDialogService` by injecting it in your component:
 
 ``` TypeScript
 import {ModalDialogService, ModalDialogOptions, ModalDialogHost} from "nativescript-angular/modal-dialog";
@@ -278,9 +278,9 @@ export class CustomDialogTest {
     ...
 }
 ```
-Ignore the `result` field for now - we will use it later on.
+Ignore the `result` field for now&mdash;we will use it later on.
 
-Make sure you have added `modal-dialog-host` somewhere inside the your component template. If you skip it - you will get an exception when trying to show the dialog.
+Make sure you have added `modal-dialog-host` somewhere inside the your component template. If you skip it&mdash;you will get an exception when trying to show the dialog.
 
 ``` TypeScript
 @Component({
@@ -302,9 +302,9 @@ public show() {
 }
 ```
 
-### Passing Parameters
+### Passing parameters
 
-You can pass parameters to the dialog component when calling the `showModal` method. You can also specify if the dialog should be shown fullscreen.
+You can pass parameters to the dialog component when calling the `showModal` method. You can also specify if the dialog should be shown full screen.
 
 ``` TypeScript
 var options: ModalDialogOptions = {
@@ -315,7 +315,7 @@ var options: ModalDialogOptions = {
 this.modal.showModal(DialogContent, options)
 ```
 
-> **TIP:** By design on iPhone, a modal page appears only in fullscreen.
+> **TIP:** By design on iPhone, a modal page appears only in full screen.
 
 Inside the `DialogContent`, you can get the parameters by injecting a `ModalDialogParams`:
 
@@ -348,10 +348,11 @@ export class DialogContent {
 ```
 
 The `params.context` is the same object as `oprions.context` passed to the `showModal` method.
+<Comment: Please check the spelling of oprions. That does not seem correct to me.>
 
-### Returning a Result
+### Returning a result
 
-To close the dialog call the `closeCallback` function of the dialog params. 
+To close the dialog, call the `closeCallback` function of the dialog params. 
 
 ```
 public close(result: string) {
@@ -359,7 +360,7 @@ public close(result: string) {
 }
 ```
 
-Note that the `showModal` function actually returns a promise which is resolved when the dialog closes. The value you pass to the `closeCallback` will be the value returned by the promise. 
+Note that the `showModal` function actually returns a promise that is resolved when the dialog closes. The value you pass to the `closeCallback` will be the value returned by the promise. 
 Let's modify the `show` function in the main component so that it shows the result when the dialog closes:
 
 ``` TypeScript
