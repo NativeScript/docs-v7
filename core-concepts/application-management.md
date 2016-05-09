@@ -5,7 +5,118 @@ position: 2
 slug: lifecycle
 previous_url: /application-management
 ---
+{% angular %}
+# NativeScript application architecture and lifecycle
 
+The main building blocks of NativeScript applications with Angular 2 are:
+
+* [Modules](#modules)
+* [Components](#components)
+
+The `application` module lets you manage the life cycle of your NativeScript apps from starting the application to storing user-defined settings.
+
+* [Start Application](#start-application)
+* [Use Application Events](#use-application-events)
+* [Android Activity Events](#android-activity-events)
+* [iOS UIApplicationDelegate](#ios-uiapplicationdelegate)
+* [Persist and Restore Application Settings](#persist-and-restore-application-settings)
+
+## Modules 
+
+Angular applications are modular. A module is a file containing a block of code dedicated to a single purpose. It exports a value that can be used by other parts of the application. For example:
+
+``` TypeScript
+export class AppComponent {}
+```
+
+The `export` statement is important as it makes the `AppComponent` accessible to other modules. The import clause is used to reference the `AppComponent` class from other modules:
+
+``` TypeScript
+import { Component } from '@angular/core';
+import { AppComponent } from './app.component';
+```
+
+Some modules are libraries of other modules. Modules installed as npm packages (like `@angular/core` in the above example) should be referenced without a path prefix. When we import from one of our own files, we prefix the module name with the file path. In this example we specify a relative file path (./). That means the source module is in the same folder (./) as the module importing it. 
+
+## Components
+
+Components are the fundamental building blocks of NativeScript applications built with Angular 2. Every NativeScript application contains a set of components that define every UI element, screen or route. The application has a root component that contains all other components. The following constitutes a component:
+
+* A component knows how to interact with its host element.
+* A component knows how to render itself.
+* A component configures dependency injection.
+* A component has a well-defined public API of input and output properties.
+* A component has well-defined lifecycle.
+
+### Component example
+
+``` TypeScript
+import {Component} from "angular2/core";
+
+@Component({
+    selector: "main-component",
+    template: `
+        <StackLayout>
+            <Label text="Hello {{ name }}"></Label>
+        </StackLayout>
+    `
+})
+export class MainComponent {
+    constructor() {
+        this.name = "Angular!";
+    }
+}
+```
+
+## Component metadata
+
+The `@Component` decorator contains metadata describing how to create and present the component. Here are some of the configuration options:
+
+* **selector** - a CSS selector that tells Angular to create and insert an instance of this component where it finds the selector in parent component's template. For example:
+
+```HTML
+<main-component></main-component>
+```
+
+* **template** - A visual tree that represents the component view. Here you can use all NativeScript UI elements and custom defined UI components.
+* **templateUrl** - The address of a file where the component template is located.
+* **styles** - CSS directives that define the component style.
+* **styleUrls** - An array containing URLs of CSS files that define the component style.
+* **animations** - The animations associated with this component.
+* **providers** - an array of dependency injection providers for services that the component requires.
+
+## Component lifecycle
+
+The component lifecycle is controlled by the Angular application. It creates, updates and destroys components. Lifecycle hooks are used to handle different events from the component lifecycle. Each hook method starts with the **ng** prefix. The following are some the component lifecycle methods:
+
+* **ngOnInit** - Called after all data-bound input methods are initialized.
+* **ngOnChanges** - Callled after a data-bound property has been changed.
+* **ngDoCheck** - Detect and act upon changes that Angular can or won't detect on its own. Called every change detection run.
+* **ngOnDestroy** - Called just before Angular destroys the component.
+
+For a full list, see the official [Angular 2 Lifecyle Hooks docs](https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html).
+
+## Start application
+
+The starting point of an Angular 2 application is the `nativeScriptBootstrap` method. It takes the root component as an argument:
+
+### Example
+
+``` TypeScript
+import { nativeScriptBootstrap } from "./nativescript-angular/application";
+import { MainComponent } from "./main-component";
+
+nativeScriptBootstrap(MainComponent).then((compRef) => {
+    console.log("The application is now running!");
+}).catch((e) => {
+    console.log("The application bootstrapping failed with error: " + e);
+});
+```
+
+> **IMPORTANT:** You must call the `nativeScriptBootstrap` method **after** the module initialization. Any code after the `nativeScriptBootstrap` call will not be executed.
+{% endangular%} 
+
+{% nativescript %}
 # Application Management
 
 The `application` module lets you manage the life cycle of your NativeScript apps from starting the application to storing user-defined settings.
@@ -40,6 +151,7 @@ iOS calls UIApplication and triggers the application main event loop.
 import application = require("application");
 application.start({ moduleName: "main-page" });
 ```
+{% endnativescript %}
 
 ## Use Application Events
 
@@ -54,6 +166,7 @@ NativeScript applications have the following life cycle events.
 
 ### Example
 
+{% nativescript %}
 ``` JavaScript
 var application = require("application");
 
@@ -119,6 +232,7 @@ application.on(application.uncaughtErrorEvent, function (args) {
 
 application.start({ moduleName: "main-page" });
 ```
+{% endnativescript %}
 ``` TypeScript
 import application = require("application");
 application.on(application.launchEvent, function (args: application.ApplicationEventData) {
@@ -197,6 +311,8 @@ NativeScript applications have the following Android specific activity events:
 + `activityBackPressed`: This event is raised when the activity has detected the user's press of the back key.
 
 ### Example
+
+{% nativescript %}
 ``` JavaScript
 var application = require("application");
 
@@ -242,6 +358,7 @@ if (application.android) {
 
 application.start();
 ```
+{% endnativescript %}
 ``` TypeScript
 import application = require("application");
 
@@ -288,11 +405,14 @@ if (application.android) {
 
 application.start({ moduleName: "main-page" });
 ```
+
 ## iOS UIApplicationDelegate
 
 Since NativeScript 1.3 you can specify custom UIApplicationDelegate for the iOS application:
 
 ### Example
+
+{% nativescript %}
 ``` JavaScript
 var application = require("application");
 var MyDelegate = (function (_super) {
@@ -313,6 +433,7 @@ var MyDelegate = (function (_super) {
 application.ios.delegate = MyDelegate;
 application.start();
 ```
+{% endnativescript %}
 ``` TypeScript
 import application = require("application");
 class MyDelegate extends UIResponder implements UIApplicationDelegate {
@@ -341,6 +462,7 @@ The setter methods have two required parameters: a key and value.
 
 ### Example
 
+{% nativescript %}
 ``` JavaScript
 var applicationSettings = require("application-settings");
 // Event handler for Page "loaded" event attached in main-page.xml.
@@ -357,6 +479,7 @@ function pageLoaded(args) {
 }
 exports.pageLoaded = pageLoaded;
 ```
+{% endnativescript %}
 ``` TypeScript
 import observable = require("data/observable");
 import applicationSettings = require("application-settings");
