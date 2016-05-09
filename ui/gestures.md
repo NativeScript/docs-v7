@@ -13,7 +13,7 @@ Gestures, such as tap, slide and pinch, allow users to interact with your app by
 
 In NativeScript, `View`&mdash;the base class for all NativeScript UI elements&mdash;has `on` and `off` methods that let you subscribe or unsubscribe to all events and gestures recognized by the UI element.  
 
-As first parameter of the `on` and `off` methods you pass the type of gesture you are interested in. <Comment: The previous sentence does not make sense to me. I think you mean that in the first parameter, you pass an on or off method and the type of gesture you want to track. Please review and rewrite.> The second  parameter is a function that is called each time the specified gesture is recognized. The function arguments contain additional information about the gesture, if applicable.
+As the first parameter, you pass an `on` or `off` method the type of gesture you want to track. The second  parameter is a function that is called each time the specified gesture is recognized. The function arguments contain additional information about the gesture, if applicable.
 
 - **on(** type _Number_ | name _String_ | names Comma separated _String_, callback _Function_... **)
    - **type** - _Number_ | **name** - _String_ | **names** - Comma separated _String_
