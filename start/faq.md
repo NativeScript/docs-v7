@@ -94,7 +94,7 @@ No. In NativeScript you describe the business logic and the UI of the applicatio
 
 ### Is NativeScript based on browser?
 
-No. See our [technical overview]http://developer.telerik.com/featured/nativescript-a-technical-overview/ of how NativeScript works.
+No. See our [technical overview](http://developer.telerik.com/featured/nativescript-a-technical-overview/ of how NativeScript works.
 
 ### How is the UI being built?
 
