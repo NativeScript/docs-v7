@@ -16,19 +16,17 @@ NativeScript is how you build cross-platform, native iOS and Android apps withou
 {% angular %}
 #Angular for NativeScript
 
-NativeScript doesn’t require Angular, but it’s even better when you use it. 
-
-You can fully reuse skills and code from the web to build beautiful, high performance native mobile apps without web views. NativeScript features deep integration with Angular 2, the latest and greatest (and fastest) Angular framework.
-
-Open source and backed by Telerik.
+NativeScript doesn’t require Angular, but it’s even better when you use it. You can fully reuse skills and code from the web to build beautiful, high performance native mobile apps without web views. NativeScript features deep integration with Angular 2, the latest and greatest (and fastest) Angular framework. Open source and backed by Telerik.
 {% endangular %}
 
 ## Get Started
 
 Ready to get started developing with NativeScript? We offer a set of comprehensive tutorials that walk you through installing NativeScript, and building a real-world iOS and Android app from scratch.
 
-- **[Get Started with JavaScript](http://docs.nativescript.org/tutorial/chapter-0)**
-- **[Get Started with TypeScript & Angular](http://docs.nativescript.org/angular/tutorial/ng-chapter-0)**
+<div>
+  <a href="http://docs.nativescript.org/tutorial/chapter-0" class="Btn">Get Started with JavaScript</a>
+  <a href="http://docs.nativescript.org/angular/tutorial/ng-chapter-0" class="Btn" style="margin: 1em 0;">Get Started with TypeScript & Angular</a>
+</div>
 
 ## Join the NativeScript Community
 
