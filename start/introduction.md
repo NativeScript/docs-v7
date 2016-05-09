@@ -23,13 +23,13 @@ You can fully reuse skills and code from the web to build beautiful, high perfor
 Open source and backed by Telerik.
 {% endangular %}
 
-## Join the NativeScript Community
-
-We have a vibrant, engaged community and are here to help. You can find us on [Twitter](https://twitter.com/nativescript) and [Slack](http://developer.telerik.com/wp-login.php?action=slack-invitation).
-
 ## Get Started
 
 Ready to get started developing with NativeScript? We offer a set of comprehensive tutorials that walk you through installing NativeScript, and building a real-world iOS and Android app from scratch.
 
-- [Get Started with JavaScript](http://docs.nativescript.org/tutorial/chapter-0)
-- [Get Started with TypeScript & Angular](http://docs.nativescript.org/angular/tutorial/ng-chapter-0)
+- **[Get Started with JavaScript](http://docs.nativescript.org/tutorial/chapter-0)**
+- **[Get Started with TypeScript & Angular](http://docs.nativescript.org/angular/tutorial/ng-chapter-0)**
+
+## Join the NativeScript Community
+
+We have a vibrant, engaged community and are here to help. You can find us on [Twitter](https://twitter.com/nativescript) and [Slack](http://developer.telerik.com/wp-login.php?action=slack-invitation).
