@@ -130,7 +130,6 @@ export function buttonTap(args: observable.EventData) {
 To access variables or functions from the user interface, you need to declare them in the `exports` object in the module.
 
 NativeScript sets each attribute value in the XML declaration to a respective property or an event of the component. If a respective property does not exist, NativeScript sets the attribute value as an expando object.
-<Comment: I think expando object is incorrect.>
 
 Starting with NativeScript 1.3 you can specify code and CSS files for your Page XML using `codeFile` and `cssFile` attributes:
 ```XML
@@ -534,7 +533,6 @@ export function myTapHandler(args: gestures.GestureEventData) {
 ## Bindings
 
 To set a binding for a property in the `XML`, you can use double curly brackets syntax.
-<Comment: Should there be an example here? It seems odd, to me, not to have one.>
 
 ### Property binding
 
@@ -616,7 +614,7 @@ You can use the double curly brackets syntax to bind the items to a [`listView`]
 
 > Avoid accessing components by ID, especially when the component is part of a template. It is recommended that you use bindings to specify component properties. 
 
-NativeScript can create the items in a  from template when the `listView` loads inside your page. When you work with templates and a `listView`, keep in mind the scope of the `listView` and its items. <Comment: The phrase "items in a  from template" is incorrect. You are either missing a word or you may mean "items from a template".>
+NativeScript can create the items from a template when the `listView` loads inside your page. When you work with templates and a `listView`, keep in mind the scope of the `listView` and its items. 
 
 In this sample `main-page.xml`, the ListView consists of labels and each item will be created from a template. The text of each label is the value of the name property of the corresponding item. 
 
