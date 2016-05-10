@@ -20,7 +20,7 @@ The following is a list of all system requirements you must have in place to bui
 * Android SDK Build-tools 23.0.0 or a later stable official release
 * (Optional) Genymotion to expand your testing options
 
-You must also have the following two environment setup for Android development:
+You must also have the following two environment variables setup for Android development:
 
 * JAVA_HOME
 * ANDROID_HOME

@@ -20,14 +20,14 @@ The following is a list of all system requirements you must have in place to bui
 * Android SDK Build-tools 23.0.0 or a later stable official release
 * (Optional) Genymotion to expand your testing options
 
-You must also have the following two environment setup for Android development:
+You must also have the following two environment variables setup for Android development:
 
 * JAVA_HOME
 * ANDROID_HOME
 
 ## Advanced Setup Steps
 
-Complete the following steps to setup NativeScript on your Windows development machine:
+Complete the following steps to setup NativeScript on your Linux development machine:
 
 1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/), [0.12.x](https://nodejs.org/dist/latest-v0.12.x/), or [4.x](https://nodejs.org/dist/latest-v4.x/) stable official release.
 1. If you are running on a 64-bit system, install the runtime libraries for the ia32/i386 architecture.

@@ -6,7 +6,7 @@ slug: quick-start
 previous_url: /setup/quick-setup
 ---
 
-# NativeScript Setup
+# NativeScript Quick Setup
 
 With the open-source [NativeScript command-line interface](https://www.npmjs.com/package/nativescript) and an IDE or text editor of your choice, you can create, develop, store and build your apps entirely locally, free of charge and anonymously.
 
@@ -14,7 +14,7 @@ To take advantage of this autonomy, you need to configure your system with the t
 
 > **TIP**: Setting up your machine for native development can be tricky, especially if you’re new to mobile development. If you get stuck, or if you have questions at any point while going through this guide, the [NativeScript Community Slack channel](http://developer.telerik.com/wp-login.php?action=slack-invitation) is a great place to ask questions.
 
-> **Warning**: The steps below are the quick setup steps intended for users new to mobile development. If you have existing mobile experience, if you’re on Linux, or if you want full control of the installation process, refer to one of the advanced setup guide below, which walk you through manually setting up your environment for NativeScript development.
+> **Warning**: The steps below are quick setup steps intended for users new to mobile development. If you have existing mobile experience, if you’re on Linux, or if you want full control of the installation process, refer to one of the advanced setup guide below, which walk you through manually setting up your environment for NativeScript development.
 > * [Advanced setup: Windows](http://docs.nativescript.org/start/ns-setup-win#setup)
 > * [Advanced setup: OS X](http://docs.nativescript.org/start/ns-setup-os-x#setup)
 > * [Advanced setup: Linux](http://docs.nativescript.org/start/ns-setup-linux#setup)
