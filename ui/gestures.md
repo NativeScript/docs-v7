@@ -1,6 +1,6 @@
 ---
 title: Gestures
-description: Learn what are the touch gestures that NativeScript supports and how to make use of them.
+description: Learn what touch gestures NativeScript supports and how to use them.
 position: 8
 slug: gestures
 previous_url: /gestures
@@ -9,11 +9,11 @@ previous_url: /gestures
 
 # Overview
 
-Gestures, such as tap, slide, and pinch, allow users to interact with your app by manipulating UI elements on the screen.
+Gestures, such as tap, slide and pinch, allow users to interact with your app by manipulating UI elements on the screen.
 
-In NativeScript, `View`&mdash;the base class for all NativeScript UI elements&mdash;has an `on` and `off` methods that lets you subscribe or unsubscribe to all events and gestures recognized by the UI element.  
+In NativeScript, `View`&mdash;the base class for all NativeScript UI elements&mdash;has `on` and `off` methods that let you subscribe or unsubscribe to all events and gestures recognized by the UI element.  
 
-As first parameter of the `on` and `off` methods you pass the type of gesture you are interested in. The second  parameter is a function that is called each time the specified gesture is recognized. The function arguments contain additional information about the gesture, if applicable.
+As the first parameter, you pass an `on` or `off` method and the type of gesture you want to track. The second  parameter is a function that is called each time the specified gesture is recognized. The function arguments contain additional information about the gesture, if applicable.
 
 - **on(** type _Number_ | name _String_ | names Comma separated _String_, callback _Function_... **)
    - **type** - _Number_ | **name** - _String_ | **names** - Comma separated _String_
@@ -61,7 +61,7 @@ label.on(gestures.GestureTypes.tap, function (args: gestures.GestureEventData) {
 
 ## Double Tap
 
-**Action: Two taps in a quick succession**
+**Action: Two taps in a quick succession.**
 
 {% nativescript %}
 ``` JavaScript
@@ -83,13 +83,13 @@ label.on(gestures.GestureTypes.doubleTap, function (args: gestures.GestureEventD
 <snippet id='double-tap-gesture'/>  
 {% endangular %}
 Possible implementation:
-* Scale up the object with a predefined percentage, centered around the double-tapped region. Keeping repeating the gesture continues to scale up until the maximum scale is reached.
+* Scale up the object with a predefined percentage, centered around the double-tapped region. If a user keeps repeating the double tap gesture, continue to scale up until the maximum scale is reached.
 * Scale up the smallest targetable view or returns it to its original scale in nested views.
 * Select text.
 
 ## Long Press
 
-**Action: Press you finger against the screen for a few moments.**
+**Action: Press your finger against the screen for a few moments.**
 
 {% nativescript %}
 ``` JavaScript
@@ -162,7 +162,7 @@ label.on(gestures.GestureTypes.pan, function (args: gestures.PanGestureEventData
 
 ## Pinch
 
-**Action: Touch using two of your fingers, then move them towards each other or away from each other.**
+**Action: Touch the screen using two of your fingers, then move them towards each other or away from each other.**
 
 {% nativescript %}
 ``` JavaScript
@@ -187,7 +187,7 @@ Possible implementation: Zoom into content or out of content.
 
 ## Rotation
 
-**Action: Touch using two of your fingers, then rotate them simultaneously left or right.**
+**Action: Touch the screen using two of your fingers, then rotate them simultaneously left or right.**
 
 {% nativescript %}
 ``` JavaScript
@@ -213,7 +213,7 @@ label.on(gestures.GestureTypes.rotation, function (args: gestures.RotationGestur
 
 **Action: A finger action was performed.**
 
-This is a general purpose gesture that is triggered whenever pointer (usually finger) has performed a touch action (up, down, move or cancel). `TouchGestureEventData` provides information about all the pointers currently on the screen and their position inside the view that triggered the event.
+This is a general purpose gesture that is triggered whenever a pointer (usually a finger) has performed a touch action (up, down, move or cancel). `TouchGestureEventData` provides information about all the pointers currently on the screen and their position inside the view that triggered the event.
 
 {% nativescript %}
 ``` JavaScript
@@ -238,7 +238,7 @@ label.on(gestures.GestureTypes.touch, function (args: gestures.TouchGestureEvent
 {% nativescript %}
 # Subscribing to Multiple Gestures and Events
 
-Since NativeScript 1.3 when subscribing you can use gestures names, comma separated gestures names and/or even mix with events.
+Since the release of NativeScript 1.3, when subscribing you can use gestures names, comma separated gestures names and/or even mix with events.
 
 ``` JavaScript
 var labelModule = require("ui/label");
