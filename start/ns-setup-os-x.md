@@ -1,5 +1,5 @@
 ---
-title: Set Up OS X
+title: NativeScript Advanced Setup—OS X
 description: Configure your OS X system to create, develop and build projects locally with NativeScript.
 position: 4
 publish: false
@@ -7,17 +7,9 @@ slug: osx
 previous_url: /setup/ns-cli-setup/ns-setup-os-x
 ---
 
-# Set Up the NativeScript CLI on OS X
+# NativeScript Advanced Setup: OS X
 
-With the open-source [NativeScript Command-Line Interface](https://github.com/NativeScript/nativescript-cli) and an IDE or text editor of your choice, you can create, develop, store and build your apps entirely locally, free of charge and anonymously.
-
-On OS X systems, you can use the NativeScript CLI to develop Android and iOS apps.
-
-* [System Requirements](#system-requirements)
-* [Environment Requirements](#environment-requirements)
-* [Setup](#setup)
-
-## System Requirements
+The following is a list of all system requirements you must have in place to build NativeScript apps on OS X, and which the [advanced setup steps](#advanced-setup-steps) below will walk you through. On OS X you can develop for both iOS and Android.
 
 * OS X Mavericks or later
 * The latest Node.js 0.10.x, 0.12.x, 4.x, or 5.x stable official release
@@ -34,25 +26,14 @@ On OS X systems, you can use the NativeScript CLI to develop Android and iOS app
     * Android SDK Build-tools 23.0.0 or a later stable official release
     * (Optional) Genymotion to expand your testing options
 
-### Quick setup
+You must also have the following two environment variables setup for Android development:
 
-If this is your first time developing a mobile project, consider using the one-liner scripts in this section to effortlessly setup your machine.
-If you have experience developing mobile apps, you may skip to the [Environment Requirements](#environment-requirements) section below.
+* JAVA_HOME
+* ANDROID_HOME
 
-Using Spotlight, search `Terminal` and start it. This opens a console window. Copy and paste this script:
+## Advanced Setup Steps
 
-> ruby -e "$(curl -fsSL https://raw.githubusercontent.com/NativeScript/nativescript-cli/production/setup/native-script.rb)"
-
-The script calls some of the commands using `sudo` and you may need to provide your password several times. Note that the script downloads and installs some big dependencies and may take some time to complete.
-
-## Environment Requirements
-
-For Android development
-
-* JAVA_HOME environment variable must be set
-* ANDROID_HOME environment variable must be set
-
-## Setup
+Complete the following steps to setup NativeScript on your OS X development machine:
 
 1. Install [Homebrew](http://brew.sh) to simplify the installation process.
 
@@ -120,7 +101,3 @@ For Android development
     ```Shell
     tns doctor
     ```
-
-## What's Next
-
-Return to the [introduction]({% slug introduction %}).

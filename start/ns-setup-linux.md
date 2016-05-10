@@ -1,5 +1,5 @@
 ---
-title: Set Up Linux
+title: NativeScript Advanced Setup—Linux
 description: Configure your Linux system to create, develop and build projects locally with NativeScript.
 position: 5
 slug: linux
@@ -7,17 +7,9 @@ publish: false
 previous_url: /setup/ns-cli-setup/ns-setup-linux
 ---
 
-# Set Up the NativeScript CLI on Linux
+# NativeScript Advanced Setup: Linux
 
-With the open-source [NativeScript Command-Line Interface](https://github.com/NativeScript/nativescript-cli) and an IDE or text editor of your choice, you can create, develop, store and build your apps entirely locally, free of charge and anonymously.
-
-On Linux systems, you can use the NativeScript CLI to develop only Android apps. This limitation is caused by the requirements for iOS development.
-
-* [System Requirements](#system-requirements)
-* [Environment Requirements](#environment-requirements)
-* [Setup](#setup)
-
-## System Requirements
+The following is a list of all system requirements you must have in place to build NativeScript apps on Linux, and which the [advanced setup steps](#advanced-setup-steps) below will walk you through.
 
 * Ubuntu 14.04 LTS
 * The latest Node.js 0.10.x, 0.12.x, 4.x, or 5.x stable official release
@@ -28,14 +20,15 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 * Android SDK Build-tools 23.0.0 or a later stable official release
 * (Optional) Genymotion to expand your testing options
 
-## Environment Requirements
+You must also have the following two environment variables setup for Android development:
 
-* JAVA_HOME environment variable must be set
-* ANDROID_HOME environment variable must be set
+* JAVA_HOME
+* ANDROID_HOME
 
-## Setup
+## Advanced Setup Steps
 
-1. Run the terminal.
+Complete the following steps to setup NativeScript on your Linux development machine:
+
 1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/), [0.12.x](https://nodejs.org/dist/latest-v0.12.x/), or [4.x](https://nodejs.org/dist/latest-v4.x/) stable official release.
 1. If you are running on a 64-bit system, install the runtime libraries for the ia32/i386 architecture.
 
@@ -99,7 +92,3 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
     ```Shell
     tns doctor
     ```
-
-## What's Next
-
-Return to the [introduction]({% slug introduction %}).
