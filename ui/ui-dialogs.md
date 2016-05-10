@@ -347,8 +347,7 @@ export class DialogContent {
 }
 ```
 
-The `params.context` is the same object as `oprions.context` passed to the `showModal` method.
-<Comment: Please check the spelling of oprions. That does not seem correct to me.>
+The `params.context` is the same object as `options.context` passed to the `showModal` method.
 
 ### Returning a result
 
