@@ -9,7 +9,7 @@ previous_url: /setup/ns-cli-setup/ns-setup-win
 
 # NativeScript Advanced Setup: Windows
 
-The following is a list of all system requirements you must have in place to build NativeScript apps on Windows, and which the [setup steps](#advanced-setup-steps) below will walk you through below.
+The following is a list of all system requirements you must have in place to build NativeScript apps on Windows, and which the [advanced setup steps](#advanced-setup-steps) below will walk you through.
 
 * Windows 7 Service Pack 1 or later
 * The latest Node.js 0.10.x, 0.12.x, 4.x, or 5.x stable official release

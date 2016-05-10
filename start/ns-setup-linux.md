@@ -9,7 +9,7 @@ previous_url: /setup/ns-cli-setup/ns-setup-linux
 
 # NativeScript Advanced Setup: Linux
 
-The following is a list of all system requirements you must have in place to build NativeScript apps on Linux, and which the [setup steps](#advanced-setup-steps) below will walk you through below.
+The following is a list of all system requirements you must have in place to build NativeScript apps on Linux, and which the [advanced setup steps](#advanced-setup-steps) below will walk you through.
 
 * Ubuntu 14.04 LTS
 * The latest Node.js 0.10.x, 0.12.x, 4.x, or 5.x stable official release
