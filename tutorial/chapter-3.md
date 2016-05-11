@@ -111,7 +111,7 @@ exports.register = function() {
 ```
 <div class="exercise-end"></div>
 
-This function uses the [frame module](/ApiReference/ui/frame/README.html), which is the NativeScript module responsible for navigation in your app. Here, you tell the topmost frame, or the frame the user actually sees, to navigate to the register view. 
+This function uses the [frame module](api-reference/modules/_ui_frame_.html), which is the NativeScript module responsible for navigation in your app. Here, you tell the topmost frame, or the frame the user actually sees, to navigate to the register view. 
 
 If you run your app and click the “Sign up for Groceries” button, you will be sent to the registration screen, which we have pre-built for you.
 
