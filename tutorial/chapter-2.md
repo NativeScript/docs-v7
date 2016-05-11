@@ -73,11 +73,11 @@ Here's what these various files and folders do:
 - **app.css**: This file contains global styles for your app. We'll dig into app styling in [chapter 2.4](#24-css).
 - **app.js**: This file sets up your application's starting module and initializes the app.
 
-Let's start with `app/app.js`, as it's the starting point for NativeScript apps. Your `app.js` contains the three lines below: 
+Let's start with `app/app.js`, as it's the starting point for NativeScript apps. Your `app.js` contains the two lines below: 
 
 ``` JavaScript
 var applicationModule = require("application");
-application.start({ moduleName: "views/login/login" });
+applicationModule.start({ moduleName: "views/login/login" });
 ```
 
 Here, you're requiring, or importing, the [NativeScript application module]({{site.baseurl}}/cookbook/application). Then, you call its `start()` method with the starting screen of your app (the login screen), which lives in your app's `views/login` folder.
