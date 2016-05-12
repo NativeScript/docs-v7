@@ -146,11 +146,11 @@ The GridLayout is a layout that arranges its child elements in a table structure
 ### Child Properties
 | Property | Description |
 | -------- | ------------|
-| row      | Gets or sets a value that indicates which row child content within a GridLayout should appear in. |
-| col      | Gets or sets a value that indicates which column child content within a GridLayout should appear in. |
+| row      | Gets or sets a value that indicates which row child content within a GridLayout it should appear in. |
+| col      | Gets or sets a value that indicates which column child content within a GridLayout it should appear in. |
 | rowSpan  | Gets or sets a value that indicates the total number of rows that child content spans within a GridLayout. |
 | colSpan  | Gets or sets a value that indicates the total number of columns that child content spans within a GridLayout. |
-<Comment: In the row and col descriptions, I think you are missing a word after GridLayout. Perhaps it, but you may mean row in the first and column in the second.>
+
 ### Sample
 {% nativescript %}
 ```XML
@@ -256,7 +256,9 @@ Label 3 has a fixed width of 150 pixels. Label 1 is given more space than it act
 ![GridLayout](../img/modules/layouts/grid-layout4.png "GridLayout")
 
 ### Sample (complex)
-<Comment: Please add a description of the complex sample.>
+`Image` has fixed width and height of 72 and span the both rows. For the first `Label` it is given more space by using `colSpan="2"`.
+For the third `Lable` is given more space than it actually needs, because fourth `Label` stretches the auto column.
+
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
