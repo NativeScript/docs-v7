@@ -256,8 +256,7 @@ Label 3 has a fixed width of 150 pixels. Label 1 is given more space than it act
 ![GridLayout](../img/modules/layouts/grid-layout4.png "GridLayout")
 
 ### Sample (complex)
-`Image` has fixed width and height of 72 and span the both rows. For the first `Label` it is given more space by using `colSpan="2"`.
-For the third `Lable` is given more space than it actually needs, because fourth `Label` stretches the auto column.
+`Image` has fixed width and height of 72 and span the both rows. For the first `Label` is given more space by using `colSpan="2"`. Third `Lable` is given more space than it actually needs, because fourth `Label` stretches the auto column.
 
 {% nativescript %}
 ```XML
