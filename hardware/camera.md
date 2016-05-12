@@ -56,7 +56,7 @@ Previous example shows how to take a picture using the NativeScript camera modul
 * height - The desired height of the picture (in device independent pixels).
 * keepAspectRatio - A boolean parameter that indicates if aspect ratio should be kept.
 
-What `device independent pixels` means? NativeScript layout mechanism uses device independent pixels when measuring UI controls. This allows to declare one layout and this layout will look similar to all devices (no matter device display resolution). In order to get a proper image quality for high resolution devices (like iPhone retina and Android Full HD), camera module will return an image with bigger dimensions. For example if we request an image 100x100 on iPhone 6 actual image will be 200x200 (since its display density factor is 2 -> 100*2x100*2).
+What does `device independent pixels` mean? NativeScript layout mechanism uses device independent pixels when measuring UI controls. This allows to declare one layout and this layout will look similar to all devices (no matter device display resolution). In order to get a proper image quality for high resolution devices (like iPhone retina and Android Full HD), camera module will return an image with bigger dimensions. For example if we request an image 100x100 on iPhone 6 actual image will be 200x200 (since its display density factor is 2 -> 100*2x100*2).
 Setting `keepAspectRatio` property could result in a different than requested width or height. Camera module will return an image with correct aspect ratio but generally only one (from width and height) will be same as requested, the other value will be calculated in order to preserve the aspect of the original image.
 
 Using the options parameter:
