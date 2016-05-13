@@ -464,4 +464,4 @@ targetTextField.unbind("text");
 targetTextField.unbind("text");
 ```
 
-You can find more information about binding in [API-Ref]({{site.baseurl}}/ApiReference/ui/core/bindable/Bindable.md). 
+You can find more information about binding in [API-Ref](/ApiReference/ui/core/bindable/Bindable.md). 

@@ -111,7 +111,7 @@ exports.register = function() {
 ```
 <div class="exercise-end"></div>
 
-This function uses the [frame module]({{site.baseurl}}/ApiReference/ui/frame/README.html), which is the NativeScript module responsible for navigation in your app. Here, you tell the topmost frame, or the frame the user actually sees, to navigate to the register view. 
+This function uses the [frame module](/ApiReference/ui/frame/README.html), which is the NativeScript module responsible for navigation in your app. Here, you tell the topmost frame, or the frame the user actually sees, to navigate to the register view. 
 
 If you run your app and click the “Sign up for Groceries” button, you will be sent to the registration screen, which we have pre-built for you.
 
@@ -153,7 +153,7 @@ var viewModule = require("ui/core/view");
 var email;
 ```
 
-> **NOTE**: This line of code imports the [view module]({{site.baseurl}}/ApiReference/ui/core/view/View.html), which is the base class for all UI components. The module provides a lot of functionality, including the ability to control properties of a view and its children. You're going to use it to get access to the email text field.
+> **NOTE**: This line of code imports the [view module](/ApiReference/ui/core/view/View.html), which is the base class for all UI components. The module provides a lot of functionality, including the ability to control properties of a view and its children. You're going to use it to get access to the email text field.
 
 Next, edit the `loaded()` function in `login.js` to get a reference to the email address text field:
 
@@ -164,7 +164,7 @@ exports.loaded = function(args) {
 };
 ```
 
-There are two things to note here. First, NativeScript passes `loaded` event handlers a reference to the `<Page>` in the function's argument, which is named `args` by convention. Second, you use the view module's [`getViewById()`]({{site.baseurl}}/ApiReference/ui/core/view/View.html) function to get a reference to the text field component.
+There are two things to note here. First, NativeScript passes `loaded` event handlers a reference to the `<Page>` in the function's argument, which is named `args` by convention. Second, you use the view module's [`getViewById()`](/ApiReference/ui/core/view/View.html) function to get a reference to the text field component.
 
 Finally, edit the `signIn()` function to log the contents of the text field:
 

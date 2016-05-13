@@ -74,12 +74,12 @@ Dependency properties provide valuable features that simplify the creation of a 
 
 * Memory optimization: The creation of a rich custom UI control is bound to creating a huge number of properties, most of which are used with default values. With the traditional approach you end up with a **private field** for every property. With dependency properties, you only store the instance properties that you modified. The default values are stored within the dependency property. Additionally, dependency properties are declared statically outside the class, which further helps optimize the memory footprint.
 * Value validation: Dependency properties offer business logic validation. It is implemented as a dedicated validation callback function that takes `newValue` as parameter and returns true or false if the value is valid or not, respectively.
-* Change notification: Another callback function is called when the property value changes. It is called with an [EventData]({{site.baseurl}}/ApiReference/data/observable/EventData.md) as parameter.
+* Change notification: Another callback function is called when the property value changes. It is called with an [EventData](/ApiReference/data/observable/EventData.md) as parameter.
 * Inheritance: One of the most important features of dependency properties is inheritance. It is implemented through a dedicated UI element that allows it to get its property from a parent element in the visual tree. For example, a button can inherit its style (or theme) property value from the parent Window, Layout, or another container. This gives you the option to dramatically change the look of your entire application by only changing a single setting (Window.theme).
 
 ###<a id = declaring></a>Declaring a dependency property
 
-Only classes that derive from [DependencyObservable]({{site.baseurl}}/ApiReference/ui/core/dependency-observable/DependencyObservable.md) can have a dependency property. This class has built-in methods that support the entire infrastructure of dependency properties.
+Only classes that derive from [DependencyObservable](/ApiReference/ui/core/dependency-observable/DependencyObservable.md) can have a dependency property. This class has built-in methods that support the entire infrastructure of dependency properties.
 
 The code in __Example 2__ creates a bare-bones property that adds a static part compared to a standard property implementation.
 

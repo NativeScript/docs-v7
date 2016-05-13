@@ -80,7 +80,7 @@ var applicationModule = require("application");
 applicationModule.start({ moduleName: "views/login/login" });
 ```
 
-Here, you're requiring, or importing, the [NativeScript application module]({{site.baseurl}}/cookbook/application). Then, you call its `start()` method with the starting screen of your app (the login screen), which lives in your app's `views/login` folder.
+Here, you're requiring, or importing, the [NativeScript application module](/cookbook/application). Then, you call its `start()` method with the starting screen of your app (the login screen), which lives in your app's `views/login` folder.
 
 > **TIP**: JavaScript modules in NativeScript follow the [CommonJS specification](http://wiki.commonjs.org/wiki/CommonJS). This means you can use the [`require()` method](http://wiki.commonjs.org/wiki/Modules/1.1#Module_Context) to import modules, as is done above, as well as use the `export` keyword to expose a module's properties and methods, which we'll look at later in this chapter. These are the same constructs Node.js uses for JavaScript modules, so if you know how to use Node.js modules, you already know how to use NativeScript modules.
 
@@ -118,9 +118,9 @@ NativeScript UI components provide attributes to let you configure their behavio
 
 - `<TextField>`
     - `hint`: Shows placeholder text that tells the user what to type.
-    - `keyboardType`: The type of keyboard to present to the user for input. `keyboardType="email"` shows a keyboard optimized for entering email addresses. NativeScript currently supports [five types of keyboards]({{site.baseurl}}/ApiReference/ui/enums/KeyboardType/README) for text fields.
+    - `keyboardType`: The type of keyboard to present to the user for input. `keyboardType="email"` shows a keyboard optimized for entering email addresses. NativeScript currently supports [five types of keyboards](/ApiReference/ui/enums/KeyboardType/README) for text fields.
     - `autocorrect`: A boolean attribute that determines whether the mobile operating system should autocorrect user input. In the case of email address text fields, the autocorrect behavior is undesirable.
-    - `autocapitalizationType`: Determines how the operating system should autocapitalize user input. `autocapitalizationType="none"` turns autocapitalization off altogether. NativeScript supports [four autocapitalization types]({{site.baseurl}}/ApiReference/ui/enums/AutocapitalizationType/README.html) on text fields.
+    - `autocapitalizationType`: Determines how the operating system should autocapitalize user input. `autocapitalizationType="none"` turns autocapitalization off altogether. NativeScript supports [four autocapitalization types](/ApiReference/ui/enums/AutocapitalizationType/README.html) on text fields.
     - `secure`: A boolean attribute that determines whether the TextField's text should be masked, which is commonly done on password fields.
 - `<Button>`
     - `text`: Controls the text displayed within the button.
@@ -132,17 +132,17 @@ After you [run your app](#development-workflow) with this change, you will see a
 
 Currently you only see a single button because you need to tell NativeScript how to layout your page’s UI components. Let's look at how to use NativeScript layouts to arrange these components on the screen.
 
-> **TIP**: The NativeScript docs include a [full list of the UI components and attributes]({{site.baseurl}}/ui-with-xml) with which you can build your apps. You can even [build your own, custom UI components]({{site.baseurl}}/ui-with-xml#custom-components).
+> **TIP**: The NativeScript docs include a [full list of the UI components and attributes](/ui-with-xml) with which you can build your apps. You can even [build your own, custom UI components](/ui-with-xml#custom-components).
 
 ## 2.3: Layouts 
 
 NativeScript provides several different layout containers that allow you to place UI components precisely where you want them to appear. 
 
-- The [Absolute Layout]({{site.baseurl}}/cookbook/ui/layouts/absolute-layout) lets you position elements using explicit x and y coordinates. This is useful when you need to place elements in exact locations, for example showing an activity indicator widget in the top-left corner of your app.
-- The [Dock Layout]({{site.baseurl}}/cookbook/ui/layouts/dock-layout) is useful for placing UI elements at the outer edges of your app. For example, a container docked at the bottom of the screen would be a good location for an ad.
-- The [Grid Layout]({{site.baseurl}}/cookbook/ui/layouts/grid-layout) lets you divide your interface into a series of rows and columns, much like a `<table>` in HTML markup.
-- The [Stack Layout]({{site.baseurl}}/cookbook/ui/layouts/stack-layout) lets you stack child UI components either vertically or horizontally.
-- The [Wrap Layout]({{site.baseurl}}/cookbook/ui/layouts/wrap-layout) lets child UI components flow from one row or column to the next when space is filled.
+- The [Absolute Layout](/cookbook/ui/layouts/absolute-layout) lets you position elements using explicit x and y coordinates. This is useful when you need to place elements in exact locations, for example showing an activity indicator widget in the top-left corner of your app.
+- The [Dock Layout](/cookbook/ui/layouts/dock-layout) is useful for placing UI elements at the outer edges of your app. For example, a container docked at the bottom of the screen would be a good location for an ad.
+- The [Grid Layout](/cookbook/ui/layouts/grid-layout) lets you divide your interface into a series of rows and columns, much like a `<table>` in HTML markup.
+- The [Stack Layout](/cookbook/ui/layouts/stack-layout) lets you stack child UI components either vertically or horizontally.
+- The [Wrap Layout](/cookbook/ui/layouts/wrap-layout) lets child UI components flow from one row or column to the next when space is filled.
 
 For your login screen, all you need is a simple `<StackLayout>` to stack the UI components on top of each other. In later sections, you'll use some of the more advanced layouts.
 

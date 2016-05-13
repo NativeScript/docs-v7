@@ -49,7 +49,7 @@ Next, take a look in the `app/shared/view-models` folder, which contains a few v
 
 > **NOTE**: In a larger app, it's pretty common to place code that interacts with the backend in separate files, and not directly in the view models. But in our case, the connection code lives directly in the view model for simplicity—which is perfectly reasonable for small apps. 
 
-Note that the `register()` function uses the config module to get the path to the backend, as well as the [fetch module]({{site.baseurl}}/cookbook/fetch) to make HTTP calls.
+Note that the `register()` function uses the config module to get the path to the backend, as well as the [fetch module](/cookbook/fetch) to make HTTP calls.
 
 ``` JavaScript
 var config = require("../../shared/config");
@@ -154,7 +154,7 @@ To utilize the `Promise` that the view model's `login()` function returns, you n
 
 In the case of Groceries, when the login works you're going to navigate the user to the list page, which you'll be building momentarily, and which will let the user add and remove groceries from a list. To do the navigation you'll use the same frame module you used earlier in this guide.
 
-The trickier situation is handling login failures, and for that you're going to use the dialog module. You can use this module to show [several types]({{site.baseurl}}/cookbook/ui/dialogs) of popup UIs in your app, including action sheets, confirmation boxes, alert boxes, and prompts. It is a highly customizable module, and it lets you control the buttons in your alerts, their text, and the messaging in the alert itself. The dialog module's code is in the `node_modules/tns-core-modules/ui` folder with other UI widgets. Let's see how to use this widget on the login page.
+The trickier situation is handling login failures, and for that you're going to use the dialog module. You can use this module to show [several types](/cookbook/ui/dialogs) of popup UIs in your app, including action sheets, confirmation boxes, alert boxes, and prompts. It is a highly customizable module, and it lets you control the buttons in your alerts, their text, and the messaging in the alert itself. The dialog module's code is in the `node_modules/tns-core-modules/ui` folder with other UI widgets. Let's see how to use this widget on the login page.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Handle an error with a dialog window
@@ -227,7 +227,7 @@ Open `app/views/list/list.xml` and paste in the code below, which creates the li
 
 > **NOTE**: Notice that this page is going to use a `<GridLayout>` to layout the UI components on the screen. As you add more UI components, you'll start dividing the screen into rows and columns, but for now you're just going to let the `<ListView>` take up the full screen (which is the default behavior of a `<GridLayout>` with no attributes).
 
-As discussed earlier, even though you're using `<ListView>` in XML, the ListView module is still a NativeScript module. You can find its implementation in the `node_modules/tns-core-modules/ui/list-view` folder. If you want to, you could construct a ListView in pure JavaScript code in the code-behind file as shown in [this example]({{site.baseurl}}/cookbook/ui/list-view). For most situations using the NativeScript UI modules in XML is easier, so we'll be sticking with XML usage throughout this tutorial.
+As discussed earlier, even though you're using `<ListView>` in XML, the ListView module is still a NativeScript module. You can find its implementation in the `node_modules/tns-core-modules/ui/list-view` folder. If you want to, you could construct a ListView in pure JavaScript code in the code-behind file as shown in [this example](/cookbook/ui/list-view). For most situations using the NativeScript UI modules in XML is easier, so we'll be sticking with XML usage throughout this tutorial.
 
 Note the use of `<ListView.itemTemplate>`. This tag gives you the ability to control how each of the ListView's items displays within the list. For now you're using a simple `<Label>` UI component to display the `{% raw %}{{ name }}{% endraw %}` of each grocery.
 
@@ -530,15 +530,15 @@ The list page is now more user friendly, but we can improve the experience with 
 
 ## 4.7: Animations
 
-The ability to run robust and performant animations is the one of the biggest reasons people choose to build native mobile apps, and NativeScript makes running these animations simple. The NativeScript animation modules provides a [series of JavaScript APIs]({{site.baseurl}}/ui/animation) that let you perform a wide variety of animations to elements on the screen, including the following:
+The ability to run robust and performant animations is the one of the biggest reasons people choose to build native mobile apps, and NativeScript makes running these animations simple. The NativeScript animation modules provides a [series of JavaScript APIs](/ui/animation) that let you perform a wide variety of animations to elements on the screen, including the following:
 
-- [Opacity]({{site.baseurl}}/ui/animation#opacity)
-- [Background Color]({{site.baseurl}}/ui/animation#background-color)
-- [Translations]({{site.baseurl}}/ui/animation#translate)
-- [Scaling]({{site.baseurl}}/ui/animation#scale)
-- [Rotating]({{site.baseurl}}/ui/animation#rotate)
+- [Opacity](/ui/animation#opacity)
+- [Background Color](/ui/animation#background-color)
+- [Translations](/ui/animation#translate)
+- [Scaling](/ui/animation#scale)
+- [Rotating](/ui/animation#rotate)
 
-For our list page you’re going to use an [opacity animation]({{site.baseurl}}/ui/animation#opacity) to fade in your grocery list after your data loads. Let’s add in the code and then discuss how it all works.
+For our list page you’re going to use an [opacity animation](/ui/animation#opacity) to fade in your grocery list after your data loads. Let’s add in the code and then discuss how it all works.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Add an animation
@@ -586,11 +586,11 @@ The result of this code is a nice fade-in animation:
 ![Animations on iOS]({{site.baseurl}}/img/cli-getting-started/nativescript/chapter4/ios/6.gif)
 ![Animations on Android]({{site.baseurl}}/img/cli-getting-started/nativescript/chapter4/android/6.gif)
 
-The animation module is a lot of fun to play with, and it’s easy to use too. All you need to do is get a reference to an element using `getViewById()`, and then call that element’s `animate` method. You may want to take a few minutes to look through our [animation samples]({{site.baseurl}}/ui/animation#examples) and try a few of these animations for yourself in Groceries.
+The animation module is a lot of fun to play with, and it’s easy to use too. All you need to do is get a reference to an element using `getViewById()`, and then call that element’s `animate` method. You may want to take a few minutes to look through our [animation samples](/ui/animation#examples) and try a few of these animations for yourself in Groceries.
 
 Now that you have the login, registration, and list pages complete, let’s enhance the app's functionality as a grocery list management tool. In the next chapters you'll add functionality such as email validation, social sharing, and more. And you'll use one of NativeScript's most useful features to do so: npm modules.
 
-> **TIP**: There are several modules that come out of the box with your NativeScript installation that we did not have time to cover in this guide—including a [location service]({{site.baseurl}}/cookbook/location), a [file-system helper]({{site.baseurl}}/cookbook/file-system), a [timer module]({{site.baseurl}}/cookbook/timer), a [camera module]({{site.baseurl}}/cookbook/camera), a [color module]({{site.baseurl}}/cookbook/color), and a whole lot more. Make sure to peruse the “Modules API” of the docs, or just look around `node_modules/tns-core-modules` to see all of what's available.
+> **TIP**: There are several modules that come out of the box with your NativeScript installation that we did not have time to cover in this guide—including a [location service](/cookbook/location), a [file-system helper](/cookbook/file-system), a [timer module](/cookbook/timer), a [camera module](/cookbook/camera), a [color module](/cookbook/color), and a whole lot more. Make sure to peruse the “Modules API” of the docs, or just look around `node_modules/tns-core-modules` to see all of what's available.
 
 <div class="next-chapter-link-container">
   <a href="/tutorial/chapter-5">Continue to Chapter 5—Plugins and npm Modules</a>

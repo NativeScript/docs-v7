@@ -112,13 +112,13 @@ The following table shows predefined layouts that NativeScript provides.
 | [WrapLayout][WrapLayout] | This layout positions its children in rows or columns, based on the orientation property, until the space is filled and then wraps them on a new row or column. | ![WrapLayout android]({{site.baseurl}}/img/gallery/android/wrapLayoutPage.png "WrapLayout android")|
 
 [views]: {%slug components %}
-[View]: {{site.baseurl}}/ApiReference/ui/core/view/View.md
-[Layout]: {{site.baseurl}}/ApiReference/ui/layouts/layout/Layout.md
-[AbsoluteLayout]: {{site.baseurl}}/cookbook/ui/layouts/absolute-layout
-[DockLayout]: {{site.baseurl}}/cookbook/ui/layouts/dock-layout
-[GridLayout]: {{site.baseurl}}/cookbook/ui/layouts/grid-layout
-[StackLayout]: {{site.baseurl}}/cookbook/ui/layouts/stack-layout
-[WrapLayout]: {{site.baseurl}}/cookbook/ui/layouts/wrap-layout
+[View]: /ApiReference/ui/core/view/View.md
+[Layout]: /ApiReference/ui/layouts/layout/Layout.md
+[AbsoluteLayout]: /cookbook/ui/layouts/absolute-layout
+[DockLayout]: /cookbook/ui/layouts/dock-layout
+[GridLayout]: /cookbook/ui/layouts/grid-layout
+[StackLayout]: /cookbook/ui/layouts/stack-layout
+[WrapLayout]: /cookbook/ui/layouts/wrap-layout
 
 ### Percentage Support
 

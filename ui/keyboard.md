@@ -7,7 +7,7 @@ previous_url: /keyboard
 ---
 
 # Keyboard Type
-All widgets that inherit from [`EditableTextBase`]({{site.baseurl}}/ApiReference/ui/editable-text-base/EditableTextBase.md), i.e., [`TextField`]({{site.baseurl}}/ApiReference/ui/text-field/TextField.md) and [`TextField`]({{site.baseurl}}/ApiReference/ui/text-view/TextView.md), have a **keyboardType** property that gets or sets the soft keyboard type that will be shown while in edit mode. Possible values are contained in the [`KeyboardType`]({{site.baseurl}}/ApiReference/ui/enums/KeyboardType/README.html) enumeration.
+All widgets that inherit from [`EditableTextBase`](/ApiReference/ui/editable-text-base/EditableTextBase.md), i.e., [`TextField`](/ApiReference/ui/text-field/TextField.md) and [`TextField`](/ApiReference/ui/text-view/TextView.md), have a **keyboardType** property that gets or sets the soft keyboard type that will be shown while in edit mode. Possible values are contained in the [`KeyboardType`](/ApiReference/ui/enums/KeyboardType/README.html) enumeration.
 
 - datetime
  - Android: [TYPE_CLASS_DATETIME](http://developer.android.com/reference/android/text/InputType.html#TYPE_CLASS_DATETIME) | [TYPE_DATETIME_VARIATION_NORMAL](http://developer.android.com/reference/android/text/InputType.html#TYPE_DATETIME_VARIATION_NORMAL)
@@ -31,7 +31,7 @@ All widgets that inherit from [`EditableTextBase`]({{site.baseurl}}/ApiReference
  - ![email]({{site.baseurl}}/img/modules/keyboard/email.png "email")
 
 # Return Key Type
-All widgets that inherit from [`EditableTextBase`]({{site.baseurl}}/ApiReference/ui/editable-text-base/EditableTextBase.md), i.e., [`TextField`]({{site.baseurl}}/ApiReference/ui/text-field/TextField.md) and [`TextField`]({{site.baseurl}}/ApiReference/ui/text-view/TextView.md), have a **returnKeyType** property that gets or sets the soft keyboard return key type. Possible values are contained in the [`ReturnKeyType`]({{site.baseurl}}/ApiReference/ui/enums/ReturnKeyType/README.html) enumeration.
+All widgets that inherit from [`EditableTextBase`](/ApiReference/ui/editable-text-base/EditableTextBase.md), i.e., [`TextField`](/ApiReference/ui/text-field/TextField.md) and [`TextField`](/ApiReference/ui/text-view/TextView.md), have a **returnKeyType** property that gets or sets the soft keyboard return key type. Possible values are contained in the [`ReturnKeyType`](/ApiReference/ui/enums/ReturnKeyType/README.html) enumeration.
 
 - done
  - Android: [IME_ACTION_DONE](http://developer.android.com/reference/android/view/inputmethod/EditorInfo.html#IME_ACTION_DONE)
