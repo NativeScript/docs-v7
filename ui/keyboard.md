@@ -28,7 +28,7 @@ All widgets that inherit from [`EditableTextBase`](/ApiReference/ui/editable-tex
 - email
  - Android: [TYPE_CLASS_TEXT](http://developer.android.com/reference/android/text/InputType.html#TYPE_CLASS_TEXT) | [TYPE_TEXT_VARIATION_EMAIL_ADDRESS](http://developer.android.com/reference/android/text/InputType.html#TYPE_TEXT_VARIATION_EMAIL_ADDRESS)
  - iOS:  [UIKeyboardTypeEmailAddress](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/c/tdef/UIKeyboardType)
- - ![email]({{site.baseurl}}/img/modules/keyboard/email.png "email")
+ - ![email](/img/modules/keyboard/email.png "email")
 
 # Return Key Type
 All widgets that inherit from [`EditableTextBase`](/ApiReference/ui/editable-text-base/EditableTextBase.md), i.e., [`TextField`](/ApiReference/ui/text-field/TextField.md) and [`TextField`](/ApiReference/ui/text-view/TextView.md), have a **returnKeyType** property that gets or sets the soft keyboard return key type. Possible values are contained in the [`ReturnKeyType`](/ApiReference/ui/enums/ReturnKeyType/README.html) enumeration.

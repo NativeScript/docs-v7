@@ -72,7 +72,7 @@ Within the if block, you start by getting a reference to the `UINavigationBar`, 
 
 > **WARNING**: Unfortunately, because of an issue in the NativeScript 2.0 release, this example’s iOS status bar will show black text instead of white text. You can follow <https://github.com/NativeScript/NativeScript/issues/2062> on GitHub for updates on the problem.
 
-![The iOS actionbar with updated colors]({{site.baseurl}}/img/cli-getting-started/nativescript/chapter6/ios/1.png)
+![The iOS actionbar with updated colors](/img/cli-getting-started/nativescript/chapter6/ios/1.png)
 
 Learning how to transfer iOS and Android APIs into valid NativeScript code can take a little trial and error to get right. You can always refer to the NativeScript docs for detailed discussions of how to handle the code conversion. Here are the [docs for Android](/runtimes/android/marshalling/java-to-js.html), and here are the [docs for iOS](/runtimes/ios/marshalling/Marshalling-Overview.html).
 
@@ -115,7 +115,7 @@ With this code you're primarily adding an `<Image>` to the existing ListView tem
 
 For the image itself, the `ios:visibility="collapsed"` attribute sets the image's `visibility` CSS property to `"collapsed"`, which hides it. Because the attribute was prefixed with `ios:`, that CSS property is only applied on iOS; therefore the button displays on Android devices, but not on iOS ones. The trash can image itself has already been placed in the app for you, and can be found in appropriate sizes in the four drawable folders in `/app/App_Resources/Android`. Here's what the trash can UI looks like on Android:
 
-![Trash can icons on Android]({{site.baseurl}}/img/cli-getting-started/nativescript/chapter6/android/1.png)
+![Trash can icons on Android](/img/cli-getting-started/nativescript/chapter6/android/1.png)
 
 Finally, make the trash actually delete items. To do that you'll need to implement the `tap="delete"` handler in the list code-behind file.
 
@@ -159,7 +159,7 @@ This code probably looks fairly familiar by now. You're again calling the fetch 
 
 If you run your app on Android you should be able to delete items from the list.
 
-![deleting from a list on Android]({{site.baseurl}}/img/cli-getting-started/nativescript/chapter6/android/2.gif)
+![deleting from a list on Android](/img/cli-getting-started/nativescript/chapter6/android/2.gif)
 
 Now that you have built the interface for Android's tappable icon, let's add a swipe delete interface for iOS.
 
@@ -196,7 +196,7 @@ if (page.ios) {
 
 This code gets a reference to the page's `<ListView>` id and then passes that reference to the swipe-to-delete module's `enable()` function. The `enable()` function also takes a callback, so you additionally pass an inline function that calls the view model's `delete()` function that you built in the previous section. Here's what the swipe-to-delete functionality looks like on iOS:
 
-![deleting from a list on iOS]({{site.baseurl}}/img/cli-getting-started/nativescript/chapter6/ios/2.gif)
+![deleting from a list on iOS](/img/cli-getting-started/nativescript/chapter6/ios/2.gif)
 
 And... that's it! You've created a functional, cross-platform, backend-driven app to manage your grocery list. In the process you've created a unique UI for Android and iOS, leveraged NativeScript plugins and npm modules, learned how to log in and register, managed backend services, created a list with add and delete functionality, and more. 
 
