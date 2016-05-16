@@ -164,7 +164,7 @@ One you have a reference to a UI element, you can call any of the methods that e
 ![Color animation on Android](../img/cli-getting-started/angular/chapter4/android/2.gif)
 ![Color animation on iOS](../img/cli-getting-started/angular/chapter4/ios/2.gif)
 
-> **NOTE**: You may notice that the text color is off with the brown background. Don’t worry about that for now; we’ll address that in chapter 6.
+> **NOTE**: You may notice that the text color is off with the brown background. Don’t worry about that for now; we’ll address those colors in chapter 6.
 
 The animation module is a lot of fun to play with, and it’s easy to use too. All you need to do is get a reference to an element using `@ViewChild`, and then call that element’s `animate()` method. You may want to take a few minutes to look through our [animation samples](https://docs.nativescript.org/ui/animation#examples) and try a few of these animations for yourself in Groceries.
 
