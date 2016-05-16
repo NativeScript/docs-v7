@@ -6,30 +6,30 @@ slug: latest-code
 previous_url: /running-latest
 ---
 
-#Running Latest Code
-<Comment: I think the title and description should say "Running the Latest Code">
+#Running the Latest Code
+
 ## Reasoning
 Often when working with open-source projects, one needs functionality that has not yet passed the full release cycle, or even functionality that is not yet implemented. Building the source code is essential. The statement is applicable for NativeScript as well. According to the [Contribution Guidelines](https://github.com/NativeScript/NativeScript/blob/master/CONTRIBUTING.md), suggesting a fix involves testing the latest code.
 
 ## Behind the curtains of running a NativeScript application
 
-1. `npm install nativescript -g` - Node Package Manager (npm) downloads and installs the [NativeScript CLI](https://www.npmjs.com/package/nativescript).
-2. `tns create [AppName]` - The NativeScript CLI downloads the [Hello-World template](https://www.npmjs.com/package/tns-template-hello-world) and unpacks it to a folder named after the app name you point out. <Comment: "you point out" sounds odd to me. I think "you specify" or "you choose" sounds better.> At the same time, the CLI installs the [NativeScript cross-platform modules](https://www.npmjs.com/package/tns-core-modules). As a result, your application folder now contains an `app` folder, holding the files of your application ([source code](https://github.com/NativeScript/template-hello-world)) and a `node_modules` folder, having the cross-platform modules ([source code](https://github.com/NativeScript/NativeScript)).
-3. `tns platform add android/ios` - The NativeScript CLI downloads the latest SemVer-compatible version of the specified runtime, unpacks it and applies transformations to the native (Android Studio or xCode) project (e.g., changes the project name).
-4. `tns run android/ios` - The NativeScript CLI copies the files under the `app` folder to the `platforms/[android/ios]/.../app` folder following a specific logic so that these get used later by a native build tool (*gradle*/*xcode-build*). As a next step, the NativeScript CLI executes compilation, deployment and run commands of *gradle* or *xcode-build*.
+1. `npm install nativescript -g` : Node Package Manager (npm) downloads and installs the [NativeScript CLI](https://www.npmjs.com/package/nativescript).
+2. `tns create [AppName]` : The NativeScript CLI downloads the [Hello-World template](https://www.npmjs.com/package/tns-template-hello-world) and unpacks it to a folder named after the app name you choose. At the same time, the CLI installs the [NativeScript cross-platform modules](https://www.npmjs.com/package/tns-core-modules). As a result, your application folder now contains an `app` folder, holding the files of your application ([source code](https://github.com/NativeScript/template-hello-world)) and a `node_modules` folder, having the cross-platform modules ([source code](https://github.com/NativeScript/NativeScript)).
+3. `tns platform add android/ios` : The NativeScript CLI downloads the latest SemVer-compatible version of the specified runtime, unpacks it and applies transformations to the native (Android Studio or xCode) project (e.g., changes the project name).
+4. `tns run android/ios` : The NativeScript CLI copies the files under the `app` folder to the `platforms/[android/ios]/.../app` folder following a specific logic so that these get used later by a native build tool (*gradle*/*xcode-build*). As a next step, the NativeScript CLI executes compilation, deployment and run commands of *gradle* or *xcode-build*.
 5. Any JavaScript code gets executed in a V8 or JavaScriptCore engine and embedded in the NativeScript runtimes. Each call to an actual native object gets marshalled via the runtimes to the underlying platform and vice-versa. The runtimes provide JavaScript handles to the native objects.
 
 ## Contents of the [NativeScript](https://github.com/NativeScript/NativeScript) repo
 
-The NativeScript framework is built using TypeScript. For that, one of the build steps is TypeScript compilation, which uses TypeScript declarations of the underlying native objects. These are really large files ([android17.d.ts](https://github.com/NativeScript/NativeScript/blob/master/android17.d.ts) and [ios.d.ts](https://github.com/NativeScript/NativeScript/blob/master/ios.d.ts)). The TypeScript compilation with these two files loaded in memory takes a lot of time. To save development time and have as quick and stable feature output, the NativeScript team decided to keep several important applications inside the same repository so that all of them get compiled in a single pass. <Comment: Please verify that my addition of NativeScript before team did not create an error.>
+The NativeScript framework is built using TypeScript. For that, one of the build steps is TypeScript compilation, which uses TypeScript declarations of the underlying native objects. These are really large files ([android17.d.ts](https://github.com/NativeScript/NativeScript/blob/master/android17.d.ts) and [ios.d.ts](https://github.com/NativeScript/NativeScript/blob/master/ios.d.ts)). The TypeScript compilation with these two files loaded in memory takes a lot of time. To save development time and have as quick and stable feature output, the NativeScript team decided to keep several important applications inside the same repository so that all of them get compiled in a single pass.
 
 Having said that, each subfolder of the [apps](https://github.com/NativeScript/NativeScript/tree/master/apps) subfolder of the repo represents a single application.
 
 ## Building the repo
 When the repo gets built, it outputs a bunch of packages (stripping the version- and extension- part of the filename for clarity):
-- tns-core-modules - the package, containing the core modules. It gets distributed via [npm](https://www.npmjs.com/package/tns-core-modules).
-- tns-sample-* contains some test/demo applications the team uses internally for testing.
-- tns-template-* has templates that will get used once we have the [template-selection functionality](https://github.com/NativeScript/nativescript-cli/issues/374) implemented in the command-line interface.
+- tns-core-modules : the package, containing the core modules. It gets distributed via [npm](https://www.npmjs.com/package/tns-core-modules).
+- tns-sample-* : contains some test/demo applications the team uses internally for testing.
+- tns-template-* : has templates that will get used once we have the [template-selection functionality](https://github.com/NativeScript/nativescript-cli/issues/374) implemented in the command-line interface.
 
 The repo gets built via the commands:
 
@@ -71,5 +71,4 @@ The resulting tns-android-x.x.x.tgz package will get created in the `dist` folde
 
 Follow the instructions on setting up the dependencies for building the [ios runtime](https://github.com/NativeScript/ios-runtime) in the repository README and then run `grunt package`.
 
-The built tns-ios-x.x.x.tgx package will get created in the `dist` folder.
-<Comment: In the previous line, should built be build? That reads better to me.>
+The build tns-ios-x.x.x.tgx package will get created in the `dist` folder.
