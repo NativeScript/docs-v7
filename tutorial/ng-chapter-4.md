@@ -130,7 +130,7 @@ import {Color} from "color";
 import {View} from "ui/core/view";
 ```
 
-After that, change the existing “angular2/core” import to include a few more classes:
+After that, change the existing “@angular/core” import to include a few more classes:
 
 ``` TypeScript
 import {Component, ElementRef, OnInit, ViewChild} from "@angular/core";

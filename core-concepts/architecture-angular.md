@@ -24,7 +24,7 @@ In this article we are going to go through the core concepts of the Angular 2 fr
 Components are the main building block of Angluar 2 applications. They define the application UI and the logic that controls it. Let's take look at the following component:
 
 ``` TypeScript
-import {Component} from "angular2/core";
+import {Component} from "@angular/core";
 
 @Component({
     selector: "my-app",
@@ -80,7 +80,7 @@ Data binding is a mechanism for connecting the parts of the view (template) with
 <StackLayout orientation="vertical">
     <Label [text]="message"></Label>
     <Button text="tap me" (tap)="onTap()"></Button>
-    <TextField [(ngModel)]="mesage"></TextField>
+    <TextField [(ngModel)]="message"></TextField>
 </StackLayout>
 ```
 
@@ -88,7 +88,7 @@ Let's examine:
 
 * `[text]="message"` - *binds* the `text` property of the `Label` to the `message` property of the component. Whenever the message is updated the label will be updated as well. This kind of binding is called “one-way binding” - the data flows in one direction from the component to the view.
 * `(tap)="onTap()"` - means that when the button is tapped the `onTap` method in the component should be called. This kind of binding is called “event binding” - here the data flows from the view to the component.
-* `[(ngModel)]="mesage"` - This is an example of “two-way-binding”. When the user types something in the `TextField` - the `message` property of the component will be changed and vice versa - if your code changes the `message` property - the UI will be updated. Data flows in both directions, thus the name.
+* `[(ngModel)]="message"` - This is an example of “two-way-binding”. When the user types something in the `TextField` - the `message` property of the component will be changed and vice versa - if your code changes the `message` property - the UI will be updated. Data flows in both directions, thus the name.
     
 This topic is covered in depth in the [data binding article]({% slug data-binding %}).
 
@@ -103,7 +103,7 @@ When it comes to NativeScript specifics - there are again almost no differences 
 
 # Dependency Injection
 
-Angluar ships with its own dependency injection (DI for short) framework. It is extremely powerful and fully usable in NativeScript.
+Angular ships with its own dependency injection (DI for short) framework. It is extremely powerful and fully usable in NativeScript.
 You can read more about it on [angular.io](https://angular.io/docs/ts/latest/guide/dependency-injection.html).
 
 # Navigation

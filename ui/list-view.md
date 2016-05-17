@@ -14,7 +14,7 @@ Using a `ListView` control inside Angular 2 app requires some special attention 
 ```XML
 // list-test.html
 <ListView [items]="myItems" (itemTap)="onItemTap($event)">
-    <template #item="item" #i="index" #odd="odd" #even="even">
+    <template let-item="item" let-i="index" let-odd="odd" let-even="even">
         <StackLayout [class.odd]="odd" [class.even]="even">
             <Label [text]='"index: " + i'></Label>
             <Label [text]='"[" + item.id +"] " + item.name'></Label>
@@ -23,7 +23,7 @@ Using a `ListView` control inside Angular 2 app requires some special attention 
 </ListView>
 ```
 ```TypeScript
-import {Component, Input, ChangeDetectionStrategy} from 'angular2/core';
+import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
 
 class DataItem {
     constructor(public id: number, public name: string) { }
@@ -66,13 +66,13 @@ export class ListTest {
 
 As shown there is nothing complex in a way ListView component is used, but some points need clarifications.
 
-* items - `Items` property is bound in a standard way to a ordinary JavaScript Array. Since the JavaScript Array object does not have observable or change notifications capabilities supporting such scenario counts on Angular 2 change detection mechanism for notification that something is changed. Be aware that the process of checking that anything is changed within an Array could take a lot of time on large arrays (including a memory issue) leading to a possible performance issue. So consider using another kind of source with large collections. A great example of such kind of data source is NativeScript ObservableArray.
+* items - The `items` property is bound in a standard way to a ordinary JavaScript Array. Since the JavaScript Array object does not have observable or change notifications capabilities supporting such scenario counts on Angular 2 change detection mechanism for notification that something is changed. Be aware that the process of checking that anything is changed within an Array could take a lot of time on large arrays (including a memory issue) leading to a possible performance issue. So consider using another kind of source with large collections. A great example of such kind of data source is NativeScript ObservableArray.
 
-* template - The template tag is used to define a template which will be used for the User Interface of every ListView item. As shown there are some standard Angular 2 optional variables marked with `#` that are preset for every data item:
-  * #item - item it is the data item itself.
-  * #i - its the index of the data item (inside data source)
-  * #odd - represents if index of data item is an odd number
-  * #even - represents if index of data item is an even number
+* template - The template tag is used to define a template which will be used for the User Interface of every ListView item. As shown there are some standard Angular 2 optional variables marked with `let-` that are preset for every data item:
+  * `let-item` - the data item itself.
+  * `let-i` - the index of the data item (inside data source)
+  * `let-odd` - represents if the index of the data item is an odd number
+  * `let-even` - represents if the index of the data item is an even number
   * Inside the actual template it is shown how to use these variables.
 
 * itemTap event - `itemTap` event is an event that comes from NativeScript ListView (the underlying control behind NativeScript-Angular ListView component). There is nothing special just a normal one-way to source binding with a corresponding function `onItemTap` inside code-behind file.
@@ -86,7 +86,7 @@ The most common customization of ListView control is customizing the item templa
 ```XML
 <GridLayout rows="*">
     <ListView [items]="myItems" (setupItemView)="onSetupItemView($event)">
-        <template #item="item" #i="index" #third="third">
+        <template let-item="item" let-i="index" let-third="third">
             <StackLayout [class.third]="third">
                 <Label [text]='"index: " + i'></Label>
                 <Label [text]='"[" + item.id +"] " + item.name'></Label>
@@ -141,7 +141,7 @@ export class ItemComponent {
     template: `
         <GridLayout rows="*">
             <ListView [items]="myItems">
-                <template #item="item">
+                <template let-item="item">
                     <item-component [data]="item"></item-component>
                 </template>
             </ListView>
@@ -168,7 +168,7 @@ As shown just creating a custom component and add it to directives of the host c
 Generally according to Angular documentation pipe is a simple display-value transformation that can be declared in HTML. Pipe takes an input and transforms it to a desired output. One of the built-in Angular pipes is very commonly used with ListView like controls. This is the `async` pipe. The input of this pipe is either `Promise<Array>` or `Observable<Array>` (Observable actually stands for [RxJS.Observable](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/observable.md). What this pipe do is to subscribe for the observable and return the value inside it as property value. Following is a simple example of using async pipe with NativeScript-Angular ListView.
 
 ```TypeScript
-import { Component, Input, ChangeDetectionStrategy } from 'angular2/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Observable as RxObservable } from 'rxjs/Observable';
 
 export class DataItem {
@@ -180,7 +180,7 @@ export class DataItem {
     template: `
     <GridLayout>
         <ListView [items]="myItems | async">
-            <template #item="item" #i="index" #odd="odd" #even="even">
+            <template let-item="item" let-i="index" let-odd="odd" let-even="even">
                 <StackLayout [class.odd]="odd" [class.even]="even">
                     <Label [text]='"index: " + item.name'></Label>
                 </StackLayout>
