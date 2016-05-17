@@ -51,7 +51,7 @@ To define the ActionBar include the `ActionBar` tag inside a component template:
 ```
 If more than one component defines an `ActionBar` - the last definition will be respected. You can also [add items to the current ActionBar](#adding-actions-to-existing-action-bar).
 
->Note: To show the ActionBar on the initial page of you application use the `startPageActionBarHidden: false` app option when bootstrapping the application.
+>Note: To show the ActionBar on the initial page of your application use the `startPageActionBarHidden: false` app option when bootstrapping the application.
 
 ```TypeScript
 nativeScriptBootstrap(AppComponent, [CUSTOM_PROVIDERS], { startPageActionBarHidden: false });
