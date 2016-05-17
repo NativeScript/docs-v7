@@ -320,7 +320,7 @@ this.modal.showModal(DialogContent, options)
 Inside the `DialogContent`, you can get the parameters by injecting a `ModalDialogParams`:
 
 ``` Typescript
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 import {ModalDialogParams} from "nativescript-angular/modal-dialog";
 
 @Component({

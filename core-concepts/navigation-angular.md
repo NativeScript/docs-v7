@@ -87,7 +87,7 @@ Let's take a look at the following example that uses `router-outlet`:
 
 ``` TypeScript
 import {nativeScriptBootstrap} from "nativescript-angular/application";
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated"';
 import {NS_ROUTER_DIRECTIVES, NS_ROUTER_PROVIDERS} from "nativescript-angular/router";
 
 @Component({
@@ -117,7 +117,7 @@ nativeScriptBootstrap(NavigationTestRouter, [NS_ROUTER_PROVIDERS]);
 
 There are few things worth noting:
 
-The application is bootstrapped using the `NS_ROUTER_PROVIDERS`. It is a collection of DI providers which internally includes the `ROUTER_PROVIDERS` from `angular2/router`, but also adds some NativeScript specific providers. 
+The application is bootstrapped using the `NS_ROUTER_PROVIDERS`. It is a collection of DI providers which internally includes the `ROUTER_PROVIDERS` from `@angular/router-deprecated"`, but also adds some NativeScript specific providers. 
 
 The result is that with each navigation the content of the `router-outlet` is replaced with the new component:
 
@@ -158,7 +158,7 @@ Note that we can now use the **Back button** and the **NavigationBar** to naviga
 You can navigate back pragmatically by injecting `Location` in your component and calling its `back()` method:
 
 ``` Typescript
-import {Location} from 'angular2/router';
+import {Location} from '@angular/router-deprecated"';
 
 @Component({ ... })
 export class MyComponent {
