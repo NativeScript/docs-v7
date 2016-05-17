@@ -51,7 +51,7 @@ Components are the fundamental building blocks of NativeScript applications buil
 ### Component example
 
 ``` TypeScript
-import {Component} from "angular2/core";
+import {Component} from "@angular/core";
 
 @Component({
     selector: "main-component",
