@@ -497,7 +497,7 @@ The result is:
 
 {% angular %}
 ## Adding Actions To Existing ActionBar
-Using the `ActionBarExtension` component you can add additional action items to the current `ActionBar`. This is useful if you are writing a reusable component that exposes an action (ex. "save"), but you don't want you don't want to override the whole `ActionBar`.
+Using the `ActionBarExtension` component you can add additional action items to the current `ActionBar`. This is useful if you are writing a reusable component that exposes an action (ex. "save"), but you don't want to override the whole `ActionBar`.
 
 Here is how to define a contextual `copy` action:
 
