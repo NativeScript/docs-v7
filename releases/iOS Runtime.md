@@ -127,7 +127,6 @@ previous_url: /Changelogs/iOS Runtime
 
  - [Embed metadata in binary so it can be stripped by app thinning (#275)](https://github.com/NativeScript/ios-runtime/pull/275)
  - [Swift modules use mangled name which is different than the klassName so get the name from the metadata (#274)](https://github.com/NativeScript/ios-runtime/pull/274)
- - <Comment: Should klassName be className?>
  - [Require with tilde (~) should resolve to the app folder (#254)](https://github.com/NativeScript/ios-runtime/pull/254)
  - [Pause the debugger on startup with --debug-brk (#245)](https://github.com/NativeScript/ios-runtime/pull/245)
  - [Web Inspector Page Agent (#240)](https://github.com/NativeScript/ios-runtime/pull/240)
@@ -199,7 +198,7 @@ previous_url: /Changelogs/iOS Runtime
  - NativeScript apps for iOS no longer ship with a WebSocket server for debugging, but rely on a plain TCP socket instead
  - Removed backwards compatibility for the pre-0.10 behavior when looking for *tns_modules*
 
-## What's Fixed
+## Bug Fixes
 
  - The NativeScript CLI iOS template project now strips non-device architectures from embedded frameworks
  - You can now require paths with .js extension
@@ -229,7 +228,7 @@ previous_url: /Changelogs/iOS Runtime
  - JavaScript Date is implicitly converted to NSDate and vice versa.
  - JSON object and JS Map, when passed to native, are wrapped in NSDictionary. NSDictionaries do **not** behave as JSON objects when returned from native.
 
-## What's Fixed
+## Bug Fixes
 
  - We will try to freeze the application on crash if there is a debugger attached so the debugger can be used to examine the errors.
  - When Objective-C exception is thrown from code called from JavaScript, it will be wrapped in JavaScript error and reported to the debugger.
