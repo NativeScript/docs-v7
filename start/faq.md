@@ -139,11 +139,7 @@ NativeScript Android runtime: [https://github.com/NativeScript/android-runtime](
 
 Contributions are welcome!
 
-Before all, check the CONTRIBUTING article: [https://github.com/NativeScript/NativeScript/blob/master/CONTRIBUTING.md](https://github.com/NativeScript/NativeScript/blob/master/CONTRIBUTING.md)
-
-First, follow the code conventions: [https://github.com/NativeScript/NativeScript/blob/master/source-control.md](https://github.com/NativeScript/NativeScript/blob/master/source-control.md).
-Second, check the Running Latest Code article: [http://docs.nativescript.org/releases/running-latest](http://docs.nativescript.org/releases/running-latest).
-Finally, run the tests: [https://github.com/NativeScript/NativeScript/blob/master/running-tests.md](https://github.com/NativeScript/NativeScript/blob/master/running-tests.md).
+Check the [CONTRIBUTING article](https://www.nativescript.org/contribute): 
 
 ### Who works on NativeScript?
 
