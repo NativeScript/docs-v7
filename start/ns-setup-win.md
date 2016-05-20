@@ -35,7 +35,7 @@ If you have experience developing mobile apps, you may skip to the [Environment 
 
 Open Start Menu, search for `Command Prompt` and start it. This opens a console window. Copy and paste this script:
 
-> @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/NativeScript/nativescript-cli/production/setup/native-script.ps1'))"
+> @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://www.nativescript.org/setup/win'))"
 
 You may need to accept an User Account Control prompt to grant the script administrative privileges. Note that the script downloads and installs some big dependencies and may take some time to complete.
 

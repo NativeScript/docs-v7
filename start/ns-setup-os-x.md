@@ -41,7 +41,7 @@ If you have experience developing mobile apps, you may skip to the [Environment 
 
 Using Spotlight, search `Terminal` and start it. This opens a console window. Copy and paste this script:
 
-> ruby -e "$(curl -fsSL https://raw.githubusercontent.com/NativeScript/nativescript-cli/production/setup/native-script.rb)"
+> ruby -e "$(curl -fsSL https://www.nativescript.org/setup/mac)"
 
 The script calls some of the commands using `sudo` and you may need to provide your password several times. Note that the script downloads and installs some big dependencies and may take some time to complete.
 

@@ -75,7 +75,7 @@ When you build with NativeScript you’re building truly native iOS and Android 
 If you’re on Windows, copy and paste the script below into your command prompt and press Enter:
 
 ```
-@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/NativeScript/nativescript-cli/production/setup/native-script.ps1'))"
+@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://www.nativescript.org/setup/win'))"
 ```
 
 During installation you may need to accept a User Account Control prompt to grant the script administrative privileges. Also, be aware that the script downloads and installs some big dependencies—so it’s common for the script to take a while to complete. When the script finishes, close and reopen your command prompt.
@@ -85,7 +85,7 @@ During installation you may need to accept a User Account Control prompt to gran
 If you’re on a Mac, copy and paste the script below into your terminal and press Enter:
 
 ```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/NativeScript/nativescript-cli/production/setup/native-script.rb)"
+ruby -e "$(curl -fsSL https://www.nativescript.org/setup/mac)"
 ```
 
 Much like the Windows script, the OS X script needs administrative access to run some commands using `sudo`; therefore, you may need to provide your password several times during execution. The OS X script also may take some time to complete, as it’s installing the dependencies for both iOS and Android development. When the script finishes, close and restart your terminal.
