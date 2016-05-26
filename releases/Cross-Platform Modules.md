@@ -10,6 +10,34 @@ previous_url: /Changelogs/Cross-Platform Modules
 Cross Platform Modules Changelog
 ==============================
 
+##2.0.1 (2016, May 18)
+
+### Fixed
+
+- [(#2133)](https://github.com/NativeScript/NativeScript/pull/2133) Removed unnecessary view state creation.
+
+- [(#2126)](https://github.com/NativeScript/NativeScript/pull/2126) zIndex fixed for Android buttons
+
+- [(#2113)](https://github.com/NativeScript/NativeScript/issues/2113) Panning gesture in Android creates non-smooth delta coordinates. 
+
+- [(#2100)](https://github.com/NativeScript/NativeScript/pull/2100) Fix navigatedFrom event raised when Activity is destroyed without act…
+
+- [(#2099)](https://github.com/NativeScript/NativeScript/pull/2099) Typo in Pointer.getY method for iOS
+
+- [(#2084)](https://github.com/NativeScript/NativeScript/issues/2084) App crashes when animating ActionBar
+
+- [(#2077)](https://github.com/NativeScript/NativeScript/issues/2077) Animations not working in 2.0.0 on android?
+
+- [(#2076)](https://github.com/NativeScript/NativeScript/issues/2076) 2.0 Corrupted navigation stack
+
+- [(#2062)](https://github.com/NativeScript/NativeScript/issues/2062) Cannot change the iOS status bar text color since 2.0
+
+### New
+
+- [(#2108)](https://github.com/NativeScript/NativeScript/pull/2108) Add Method to see if camera is available
+
+- [(#2102)](https://github.com/NativeScript/NativeScript/pull/2102) clip-path support added
+
 ##2.0.0 (2016, April 27)
 
 ### Fixed
@@ -674,7 +702,7 @@ application.ios.removeNotificationObserver(observer, UIDeviceBatteryLevelDidChan
 - [(#261)](https://github.com/NativeScript/NativeScript/issues/261) WebView crash when navigating back
 
 ### Breaking changes
--  [(#304)](https://github.com/NativeScript/NativeScript/issues/304) ActionBar/NavigationBar is now defined using the `page.actionBar` instead of `page.optionsMenu`. [See an example...](../cookbook/ui/action-bar)
+-  [(#304)](https://github.com/NativeScript/NativeScript/issues/304) ActionBar/NavigationBar is now defined using the `page.actionBar` instead of `page.optionsMenu`. [See an example...](../ApiReference/ui/action-bar/HOW-TO.md)
 
 ### Known issues
 -  ```tns debug ios``` command is not working. The workaround is to use ```tns debug ios --framework-path "__path to the iOS runtime__"```. A fix for this is coming in 1.2.1 which will be released in the week of July, 27th.
@@ -690,7 +718,7 @@ application.ios.removeNotificationObserver(observer, UIDeviceBatteryLevelDidChan
 
 - [(#221)](https://github.com/NativeScript/NativeScript/pull/221) view parent exposed in itemLoading event
 
-- [(#214)](https://github.com/NativeScript/NativeScript/pull/214) Repeater component added. [Read more...](../cookbook/ui/repeater)
+- [(#214)](https://github.com/NativeScript/NativeScript/pull/214) Repeater component added. [Read more...](../ApiReference/ui/repeater/HOW-TO.md)
 
 - [(#207)](https://github.com/NativeScript/NativeScript/pull/207) Optimizations
 
