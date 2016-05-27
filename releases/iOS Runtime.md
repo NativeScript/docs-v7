@@ -7,6 +7,15 @@ slug: ios-changelog
 previous_url: /Changelogs/iOS Runtime
 ---
 
+---
+title: iOS Runtime Changelog
+description: NativeScript iOS Runtime Changelog
+position: 6
+publish: false
+slug: ios-changelog
+previous_url: /Changelogs/iOS Runtime
+---
+
 2.0.0
 =====
 
@@ -19,7 +28,7 @@ previous_url: /Changelogs/iOS Runtime
 
 ## What's New
 - [Add methods to Objective-C protocol wrappers](https://github.com/NativeScript/ios-runtime/pull/506)
-- [Throw error when overriding properties without getter/setter.](https://github.com/NativeScript/ios-runtime/pull/517)
+- [Throw error when overriding properties without getter/setter](https://github.com/NativeScript/ios-runtime/pull/517)
 - [Provide runtime implementation for source maps](https://github.com/NativeScript/ios-runtime/pull/525)
 
 ## Bug Fixes
@@ -29,21 +38,21 @@ previous_url: /Changelogs/iOS Runtime
 =====
 
 ## What's New
-- [ES6 Modules](https://github.com/NativeScript/ios-runtime/pull/468)
+- [ES6 modules](https://github.com/NativeScript/ios-runtime/pull/468)
 - [Swift-style initializers](https://github.com/NativeScript/ios-runtime/pull/476)
-- [Distribute Inspector Application as a separate npm package](https://github.com/NativeScript/ios-runtime/pull/478)
+- [Distribute inspector application as a separate npm package](https://github.com/NativeScript/ios-runtime/pull/478)
 - [Generate TypeScript comments in TypeScript declarations](https://github.com/NativeScript/ios-runtime/pull/497)
 - [TNS Objective-C exception handler](https://github.com/NativeScript/ios-runtime/pull/500)
-- [Wrap bridged NSError objects in JavaScript Errors](https://github.com/NativeScript/ios-runtime/pull/458)
+- [Wrap bridged NSError objects in JavaScript errors](https://github.com/NativeScript/ios-runtime/pull/458)
 - [Allow vanilla TypeScript classes to extend null](https://github.com/NativeScript/ios-runtime/pull/455/files)
 - [Performance improvements for method calls](https://github.com/NativeScript/ios-runtime/pull/438)
 
 ## Bug Fixes
 - [Rename Objective-C class name in case of extend conflicts](https://github.com/NativeScript/ios-runtime/pull/479)
-- [Use proper debug macro in project template.](https://github.com/NativeScript/ios-runtime/pull/484)
+- [Use proper debug macro in project template](https://github.com/NativeScript/ios-runtime/pull/484)
 - [Fix for debugger connecting after a delay](https://github.com/NativeScript/ios-runtime/pull/498)
 - [Remove code signing identity from project template](https://github.com/NativeScript/ios-runtime/pull/501)
-- [Throw error if package.json has non-utf8 encoding](https://github.com/NativeScript/ios-runtime/pull/462)
+- [Throw an error if package.json has non-utf8 encoding](https://github.com/NativeScript/ios-runtime/pull/462)
 - [Throw an error if loading module source fails](https://github.com/NativeScript/ios-runtime/pull/457)
 - [TypeScript extends should not replace parent scope variables](https://github.com/NativeScript/ios-runtime/pull/454)
 - [Remove quotes from paths in nativescript-build.xcconfig](https://github.com/NativeScript/ios-runtime/pull/447)
@@ -59,11 +68,11 @@ previous_url: /Changelogs/iOS Runtime
 
 ## Bug Fixes
 - [Loading static frameworks as shared frameworks](https://github.com/NativeScript/ios-runtime/issues/373)
-- [Marshaling boxed JavaScript primitive types throws an exception](https://github.com/NativeScript/ios-runtime/issues/411)
+- [Marshalling boxed JavaScript primitive types throws an exception](https://github.com/NativeScript/ios-runtime/issues/411)
 
 ## What's New
 
-- [Simplify require errors.](https://github.com/NativeScript/ios-runtime/pull/424)
+- [Simplify require errors](https://github.com/NativeScript/ios-runtime/pull/424)
 - [Update JavaScriptCore](https://github.com/NativeScript/ios-runtime/issues/355)
 - [Enable requiring of JSON files](https://github.com/NativeScript/ios-runtime/issues/294)
 
@@ -100,7 +109,7 @@ previous_url: /Changelogs/iOS Runtime
 
 ## What's New
 
- - [iOS 9 Support: Introduce generic information in typescript definitions (#341)](https://github.com/NativeScript/ios-runtime/pull/341)
+ - [iOS 9 Support: Introduce generic information in TypeScript definitions (#341)](https://github.com/NativeScript/ios-runtime/pull/341)
  - [Add async method to FFICall (#339)](https://github.com/NativeScript/ios-runtime/pull/339)
  - [Migrate to Clang 3.7 (#332)](https://github.com/NativeScript/ios-runtime/pull/332)
  - [Move project template files in internal folder (#325)](https://github.com/NativeScript/ios-runtime/pull/325)
@@ -125,13 +134,13 @@ previous_url: /Changelogs/iOS Runtime
 
 ## What's New
 
- - [Embed metadata in binary so it can be stripped by App Thinning (#275)](https://github.com/NativeScript/ios-runtime/pull/275)
+ - [Embed metadata in binary so it can be stripped by app thinning (#275)](https://github.com/NativeScript/ios-runtime/pull/275)
  - [Swift modules use mangled name which is different than the klassName so get the name from the metadata (#274)](https://github.com/NativeScript/ios-runtime/pull/274)
  - [Require with tilde (~) should resolve to the app folder (#254)](https://github.com/NativeScript/ios-runtime/pull/254)
  - [Pause the debugger on startup with --debug-brk (#245)](https://github.com/NativeScript/ios-runtime/pull/245)
  - [Web Inspector Page Agent (#240)](https://github.com/NativeScript/ios-runtime/pull/240)
  - [Two-way marshaling between NSData and ArrayBuffer (#235)](https://github.com/NativeScript/ios-runtime/pull/235)
- - [JavaScript functions, when passed to Objective-C as blocks, will now round-trip back to JavaScript, as the initial function object. (#234)](https://github.com/NativeScript/ios-runtime/pull/234)
+ - [JavaScript functions, when passed to Objective-C as blocks, will now round-trip back to JavaScript, as the initial function object (#234)](https://github.com/NativeScript/ios-runtime/pull/234)
  - [Create a global require function (#84)](https://github.com/NativeScript/ios-runtime/issues/84)
 
 ## Bug Fixes
@@ -174,15 +183,15 @@ previous_url: /Changelogs/iOS Runtime
  - [Update to the latest JavaScriptCore (#211)](https://github.com/NativeScript/ios-runtime/pull/211)
  - [Add application that uses the updated webkit webview to show web inspector frontend (#201)](https://github.com/NativeScript/ios-runtime/pull/201)
  - [Transform (NSError **) parameters to JavaScript error throw (#186)](https://github.com/NativeScript/ios-runtime/issues/186)
- - [CMake the JSC: Performance and memory diffs (#185)](https://github.com/NativeScript/ios-runtime/issues/185)
- - [iOS 9 Support: Metadata for Objective-C Generics (#177)](https://github.com/NativeScript/ios-runtime/issues/177)
- - [WebInspector: Enable WebInspector Performance Profiler (#164)](https://github.com/NativeScript/ios-runtime/issues/164)
+ - [CMake the JSC: performance and memory diffs (#185)](https://github.com/NativeScript/ios-runtime/issues/185)
+ - [iOS 9 support: metadata for Objective-C generics (#177)](https://github.com/NativeScript/ios-runtime/issues/177)
+ - [WebInspector: enable WebInspector Performance Profiler (#164)](https://github.com/NativeScript/ios-runtime/issues/164)
  - [Optimize require of JavaScript modules (#139)](https://github.com/NativeScript/ios-runtime/issues/139)
 
 ## Bug Fixes
 
  - [Recursive calls from Objective-C to a method returning JavaScript function as block (#210)](https://github.com/NativeScript/ios-runtime/pull/210)
- - [Enums which has no common prefix are not exposed correctly (#205)](https://github.com/NativeScript/ios-runtime/issues/205)
+ - [Enums which have no common prefix are not exposed correctly (#205)](https://github.com/NativeScript/ios-runtime/issues/205)
  - [Recursive calls from JavaScript to Objective-C method receiving a block argument (#199)](https://github.com/NativeScript/ios-runtime/issues/199)
  - [Fix TypeScript extends (#178)](https://github.com/NativeScript/ios-runtime/issues/178)
 
@@ -194,11 +203,11 @@ previous_url: /Changelogs/iOS Runtime
 
  - NativeScript for iOS is now built using CMake
  - The runtime is now distributed as a static library and a Cocoa Framework
- - API Metadata now includes information about Clang modules
+ - API metadata now includes information about Clang modules
  - NativeScript apps for iOS no longer ship with a WebSocket server for debugging, but rely on a plain TCP socket instead
  - Removed backwards compatibility for the pre-0.10 behavior when looking for *tns_modules*
 
-## What's Fixed
+## Bug Fixes
 
  - The NativeScript CLI iOS template project now strips non-device architectures from embedded frameworks
  - You can now require paths with .js extension
@@ -228,17 +237,17 @@ previous_url: /Changelogs/iOS Runtime
  - JavaScript Date is implicitly converted to NSDate and vice versa.
  - JSON object and JS Map, when passed to native, are wrapped in NSDictionary. NSDictionaries do **not** behave as JSON objects when returned from native.
 
-## What's Fixed
+## Bug Fixes
 
  - We will try to freeze the application on crash if there is a debugger attached so the debugger can be used to examine the errors.
- - When Objective-C exception is thrown from code called from JavaScript, it will be wrapped in JavaScript Error and reported to the debugger.
- - We have fixed the “tagged pointers“ bug on iPhone 5s with iOS7.0.
+ - When Objective-C exception is thrown from code called from JavaScript, it will be wrapped in JavaScript error and reported to the debugger.
+ - We have fixed the “tagged pointers” bug on iPhone 5s with iOS7.0.
  - We have dramatically reduced the “tns-ios” package size by stripping the debug symbols from the NativeScript.framework.
- - We have fixed the project template to support properly the app-id provided from the CLI.
+ - We have fixed the project template to properly support the app-id provided from the CLI.
  - We’ve cleaned the package.tgz from some xcodebuild logs and the Chrome version of the inspector.
- - Made submodules public, fixed builds
- - *tns_modules* are now expected in the app folder. We are backward compatible but will remove the compatibility in future.
- - We have updated the project template to use larger resolution
- - Promise reactions have too low a priority on the runloop
+ - Made submodules public, fixed builds.
+ - *tns_modules* are now expected in the app folder. We are backward compatible but will remove the compatibility in the future.
+ - We have updated the project template to use larger resolution.
+ - Promise reactions have too low a priority on the runloop.
 
 
