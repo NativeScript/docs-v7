@@ -70,8 +70,6 @@ Ok, let's break down what just happened, starting with the `if (page.ios)` check
 
 Within the if block, you start by getting a reference to the `UINavigationBar`, and then you set its [`barStyle` property](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitDataTypesReference/index.html#//apple_ref/c/tdef/UIBarStyle) to `UIBarStyle.UIBarStyleBlack`, which (counter intuitively) makes the iOS status bar use white text. This produces the look shown below:
 
-> **WARNING**: Unfortunately, because of an issue in the NativeScript 2.0 release, this example’s iOS status bar will show black text instead of white text. You can follow <https://github.com/NativeScript/NativeScript/issues/2062> on GitHub for updates on the problem.
-
 ![The iOS actionbar with updated colors](/img/cli-getting-started/nativescript/chapter6/ios/1.png)
 
 Learning how to transfer iOS and Android APIs into valid NativeScript code can take a little trial and error to get right. You can always refer to the NativeScript docs for detailed discussions of how to handle the code conversion. Here are the [docs for Android](/runtimes/android/marshalling/java-to-js.html), and here are the [docs for iOS](/runtimes/ios/marshalling/Marshalling-Overview.html).
