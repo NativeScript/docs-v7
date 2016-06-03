@@ -189,6 +189,9 @@ If all went well, you should see something like this:
 
 ![iOS login](../img/cli-getting-started/angular/chapter1/ios/1.png)
 
+> **NOTE**:
+> * If your app fails to start, and you get a `Service exited due to signal: Killed: 9` error, refer to [this issue](https://github.com/NativeScript/nativescript-angular/issues/101) for a workaround.
+
 Next, run your app on an Android emulator with the following command:
 
 ```
