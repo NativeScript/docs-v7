@@ -274,7 +274,7 @@ export class AppComponent {
 
 > **TIP**:
 > * With Angular 2 components you have the ability to specify templates and CSS styling in two places—directly within the component, or in external files. For simple components feel free to choose either approach based on your personal preference, but once your templates/styles get to ~10 lines of code, consider using external files exclusively, as mixing non-trivial UI, CSS, and TypeScript code makes your component code less readable.
-> * You’re free to provide any suffix for your NativeScript template file names. This guide uses `.html` suffixes, even though NativeScript templates aren’t HTML code, because that suffix tends to provide the best syntax highlighting in common development IDEs. This guide does _not_ use `.xml` suffixes because Angular 2 syntaxes like `(tap)` and `[text]` are not valid XML.
+> * You’re free to provide any suffix for your NativeScript template file names. This guide uses `.html` suffixes, even though NativeScript templates aren’t HTML code, because that suffix tends to provide the best syntax highlighting in common development IDEs, and because Angular uses an [HTML parser](https://github.com/inikulin/parse5) to parse the templates. This guide does _not_ use `.xml` suffixes because Angular 2 syntaxes like `(tap)` and `[text]` are not valid XML.
 
 With this setup you now have a `User` class that you can share across pages in your app and even across applications. But a model object that’s four simple lines of code isn’t all that exciting. Where this approach really pays off is when you’re able to share your business logic, and the code that hits your backend systems. In Angular 2 those classes are known as services. Let’s look at them next.
 
