@@ -11,7 +11,7 @@ In this article, we will look at the different ways to show images in a NativeSc
 Images are added to an application either declaratively (XML) or with code (JS).
 
 ```XML
-<Image src="~/logo.png" / >
+<Image src="~/logo.png" />
 ```
 ```JavaScript
 var image = new imageModule.Image();
@@ -39,7 +39,7 @@ You can also use the [image-source API]({{site.baseurl}}/ApiReference/image-sour
 Web images have an `http://` or `https://` prefix. When such an image is loaded, an asynchronous http request will be sent and the image will be shown if the request is successful.
 
 ```XML
-<Image src="https://www.google.com/images/errors/logo_sm_2.png" / >
+<Image src="https://www.google.com/images/errors/logo_sm_2.png" />
 ```
 
 You can manually create an [ImageSource instance from URL]({{site.baseurl}}/cookbook/image-source#load-image-from-url).
@@ -48,7 +48,7 @@ You can manually create an [ImageSource instance from URL]({{site.baseurl}}/cook
 Using the `~/` prefix, you can load images relative to the `App` folder inside your project.
 
 ```XML
-<Image src="~/images/logo.png" stretch ="none" / >
+<Image src="~/images/logo.png" stretch ="none" />
 ```
 
 You can manually create an [ImageSource instance from local file]({{site.baseurl}}/cookbook/image-source#load-image-from-a-local-file).
@@ -56,10 +56,10 @@ You can manually create an [ImageSource instance from local file]({{site.baseurl
 > Currently, loading images from the file system does not respect filename qualifiers as described [here]({% slug architecture %}#supporting-multiple-screens). We have plans to implement that along with [density-specific qualifiers support](https://github.com/NativeScript/NativeScript/issues/276).
 
 ## Load images from a resource
-Using the `res://` prefi,x you can load a resource image. This is the suggested approach, as it uses the native methods for loading the best image for the current device screen density.
+Using the `res://` prefix you can load a resource image. This is the suggested approach, as it uses the native methods for loading the best image for the current device screen density.
 
 ```XML
-<Image src="res://logo" stretch ="none" / >
+<Image src="res://logo" stretch ="none" />
 ```
 
 You can manually create an [ImageSource instance from resource]({{site.baseurl}}/cookbook/image-source#load-image-using-resource-name).
