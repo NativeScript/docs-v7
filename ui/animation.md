@@ -15,7 +15,7 @@ For your convenience, we expose two ways of creating animations:
 - [Declarative](./animation-css.md) - you will use the easy and familiar CSS3 animations API
 - [Imperative](./animation-code.md) - take full control of any animation by calling animation methods directly with code
 
-[Here](./animation-examples.md) you wlll find a detailed set of examples demonstating the different animations that can be achieved with NativeScript.
+[Here](./animation-examples.md) you will find a detailed set of examples demonstrating the different animations that can be achieved with NativeScript.
 
 ##Hello world example
 
@@ -91,6 +91,7 @@ In NativeScript, the animation curve is represented by the AnimationCurve enumer
 __Example 3: How to customize the animation timing function__
 
 ``` JavaScript
+var enums = require("ui/enums");
 view.animate({
 	translate: { x: 0, y: 100},    
 	duration: 1000,
@@ -98,10 +99,11 @@ view.animate({
 });
 ```
 ``` TypeScript
+import {AnimationCurve} from "ui/enums";
 view.animate({
 	translate: { x: 0, y: 100},    
 	duration: 1000,
-	curve: enums.AnimationCurve.easeIn
+	curve: AnimationCurve.easeIn
 });
 ```
 ``` CSS
@@ -124,6 +126,7 @@ __Example 4: How to create own animation curve via cubic Bezier__
 ![beziergraph](../img/modules/animation/bezier-graph.png "BezierGraph")
 
 ``` JavaScript
+var enums = require("ui/enums");
 view.animate({
     translate: { x: 0, y: 100 },
     duration: 1000,
@@ -131,10 +134,11 @@ view.animate({
 });
 ```
 ``` TypeScript
+import {AnimationCurve} from "ui/enums";
 view.animate({
     translate: { x: 0, y: 100 },
     duration: 1000,
-    curve: enums.AnimationCurve.cubicBezier(0.1, 0.1, 0.1, 1)
+    curve: AnimationCurve.cubicBezier(0.1, 0.1, 0.1, 1)
 });
 ```
 ``` CSS
