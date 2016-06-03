@@ -23,7 +23,7 @@ In an Angular 2 application navigation is done using the **Angular Component Rou
 
 ## Pages
 
-NativeScript apps consist of pages which represent the separate application screens. Pages are instances of the [`Page`](/ApiReference/ui/page/Page.md) class. Page navigation integrates with the native navigation elements on the current platform (ex. the **Back** button in Android or the **NavigationBar** in iOS). 
+NativeScript apps consist of pages which represent the separate application screens. Pages are instances of the [`Page`](/api-reference/classes/_ui_page_.page.html) class. Page navigation integrates with the native navigation elements on the current platform (ex. the **Back** button in Android or the **NavigationBar** in iOS). 
 
 > Note: You will rarely need to create Page instances manually. The framework creates pages automatically when bootstrapping or navigating the app. You can get a reference to the current page by injecting it into your component using the DI.
 

@@ -7,7 +7,7 @@ previous_url: /keyboard
 ---
 
 # Keyboard Type
-All widgets that inherit from [`EditableTextBase`](/ApiReference/ui/editable-text-base/EditableTextBase.md), i.e., [`TextField`](/ApiReference/ui/text-field/TextField.md) and [`TextField`](/ApiReference/ui/text-view/TextView.md), have a **keyboardType** property that gets or sets the soft keyboard type that will be shown while in edit mode. Possible values are contained in the [`KeyboardType`](/ApiReference/ui/enums/KeyboardType/README.html) enumeration.
+All widgets that inherit from [`EditableTextBase`](/api-reference/classes/_ui_editable_text_base_.editabletextbase.html), i.e., [`TextField`](/api-reference/classes/_ui_text_field_.textfield.html) and [`TextView`](/api-reference/classes/_ui_text_view_.textview.html), have a **keyboardType** property that gets or sets the soft keyboard type that will be shown while in edit mode. Possible values are contained in the [`KeyboardType`](/api-reference/modules/_ui_enums_.keyboardtype.html) enumeration.
 
 - datetime
  - Android: [TYPE_CLASS_DATETIME](http://developer.android.com/reference/android/text/InputType.html#TYPE_CLASS_DATETIME) | [TYPE_DATETIME_VARIATION_NORMAL](http://developer.android.com/reference/android/text/InputType.html#TYPE_DATETIME_VARIATION_NORMAL)
@@ -31,7 +31,7 @@ All widgets that inherit from [`EditableTextBase`](/ApiReference/ui/editable-tex
  - ![email](/img/modules/keyboard/email.png "email")
 
 # Return Key Type
-All widgets that inherit from [`EditableTextBase`](/ApiReference/ui/editable-text-base/EditableTextBase.md), i.e., [`TextField`](/ApiReference/ui/text-field/TextField.md) and [`TextField`](/ApiReference/ui/text-view/TextView.md), have a **returnKeyType** property that gets or sets the soft keyboard return key type. Possible values are contained in the [`ReturnKeyType`](/ApiReference/ui/enums/ReturnKeyType/README.html) enumeration.
+All widgets that inherit from [`EditableTextBase`](/api-reference/classes/_ui_editable_text_base_.editabletextbase.html), i.e., [`TextField`](/api-reference/classes/_ui_text_field_.textfield.html) and [`TextView`](/api-reference/classes/_ui_text_view_.textview.html), have a **returnKeyType** property that gets or sets the soft keyboard return key type. Possible values are contained in the [`ReturnKeyType`](/api-reference/modules/_ui_enums_.returnkeytype.html) enumeration.
 
 - done
  - Android: [IME_ACTION_DONE](http://developer.android.com/reference/android/view/inputmethod/EditorInfo.html#IME_ACTION_DONE)

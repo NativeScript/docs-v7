@@ -112,8 +112,8 @@ The following table shows predefined layouts that NativeScript provides.
 | [WrapLayout][WrapLayout] | This layout positions its children in rows or columns, based on the orientation property, until the space is filled and then wraps them on a new row or column. | ![WrapLayout android](/img/gallery/android/wrapLayoutPage.png "WrapLayout android")|
 
 [views]: {%slug components %}
-[View]: /ApiReference/ui/core/view/View.md
-[Layout]: /ApiReference/ui/layouts/layout/Layout.md
+[View]: /api-reference/classes/_ui_core_view_.view.html
+[Layout]: /api-reference/classes/_ui_layouts_layout_.layout.html
 [AbsoluteLayout]: /cookbook/ui/layouts/absolute-layout
 [DockLayout]: /cookbook/ui/layouts/dock-layout
 [GridLayout]: /cookbook/ui/layouts/grid-layout

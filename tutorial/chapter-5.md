@@ -184,7 +184,7 @@ Next you have to build some UI that lets you share a grocery list. To do so, ope
 </Page.actionBar>
 ```
 
-This code defines an [ActionBar](/ApiReference/ui/action-bar/ActionBar), which is a UI component that includes various menu items, enclosed in the `<ActionBar.actionItems>` tag. The `title` of the ActionBar lets you show page-specific titles.
+This code defines an [ActionBar](/ui/action-bar), which is a UI component that includes various menu items, enclosed in the `<ActionBar.actionItems>` tag. The `title` of the ActionBar lets you show page-specific titles.
 
 > **NOTE**: On iOS devices, `<ActionItem>`s are placed from left to right in sequence; you can override that (as the code above does) by providing an `ios.position` attribute.
 

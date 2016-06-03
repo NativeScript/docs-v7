@@ -153,7 +153,7 @@ var viewModule = require("ui/core/view");
 var email;
 ```
 
-> **NOTE**: This line of code imports the [view module](/ApiReference/ui/core/view/View.html), which is the base class for all UI components. The module provides a lot of functionality, including the ability to control properties of a view and its children. You're going to use it to get access to the email text field.
+> **NOTE**: This line of code imports the [view class](/api-reference/classes/_ui_core_view_.view.html), which is the base class for all UI components. The module provides a lot of functionality, including the ability to control properties of a view and its children. You're going to use it to get access to the email text field.
 
 Next, edit the `loaded()` function in `login.js` to get a reference to the email address text field:
 
@@ -164,7 +164,7 @@ exports.loaded = function(args) {
 };
 ```
 
-There are two things to note here. First, NativeScript passes `loaded` event handlers a reference to the `<Page>` in the function's argument, which is named `args` by convention. Second, you use the view module's [`getViewById()`](/ApiReference/ui/core/view/View.html) function to get a reference to the text field component.
+There are two things to note here. First, NativeScript passes `loaded` event handlers a reference to the `<Page>` in the function's argument, which is named `args` by convention. Second, you use the view module's [`getViewById()`](/api-reference/classes/_ui_core_view_.view.html#getviewbyid) function to get a reference to the text field component.
 
 Finally, edit the `signIn()` function to log the contents of the text field:
 

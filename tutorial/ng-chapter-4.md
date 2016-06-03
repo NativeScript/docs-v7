@@ -88,7 +88,7 @@ this.page.actionBarHidden = true;
 this.page.backgroundImage = this.page.ios ? "res://bg_login.jpg" : "res://bg_login";
 ```
 
-This code uses an instance of the [`Page` class](http://docs.nativescript.org/ApiReference/ui/page/Page) from the [NativeScript page module](http://docs.nativescript.org/ApiReference/ui/page/README), and sets two properties on it—`actionBarHidden` and `backgroundImage`. Although you can peruse the NativeScript API documentation for a full list of these properties and what they do, if you’re using a TypeScript-friendly IDE, you can get a full list of these properties at any point.
+This code uses an instance of the [`Page` class](/api-reference/classes/_ui_page_.page.html) from the [NativeScript page module](/api-reference/modules/_ui_page_.html), and sets two properties on it—`actionBarHidden` and `backgroundImage`. Although you can peruse the NativeScript API documentation for a full list of these properties and what they do, if you’re using a TypeScript-friendly IDE, you can get a full list of these properties at any point.
 
 <img alt="TypeScript autocomplete" class="plain" src="../img/cli-getting-started/angular/chapter4/typescript.png" style="border: 1px solid black;">
 
@@ -123,7 +123,7 @@ Open `app/pages/login/login.html` and add `#container` to the existing `<StackLa
 
 The “#” syntax is Angular’s way of creating [local template variables](https://angular.io/docs/ts/latest/guide/template-syntax.html#!#local-vars), and you’ll use this local variable to get a reference to the `<StackLayout>` element in TypeScript code momentarily.
 
-Next, open `app/pages/login/login.component.ts` and add the following two lines at the top, which import the [`Color` class](http://docs.nativescript.org/ApiReference/color/Color.html) from the NativeScript color module, and the [`View` class](http://docs.nativescript.org/ApiReference/ui/core/view/View) from the NativeScript view module.
+Next, open `app/pages/login/login.component.ts` and add the following two lines at the top, which import the [`Color` class](/api-reference/classes/_color_.color.html) from the NativeScript color module, and the [`View` class](/api-reference/classes/_ui_core_view_.view.html) from the NativeScript view module.
 
 ``` TypeScript
 import {Color} from "color";
@@ -157,7 +157,7 @@ toggleDisplay() {
 
 <div class="exercise-end"></div>
 
-All NativeScript UI elements inherit from a base [`View` class](http://docs.nativescript.org/ApiReference/ui/core/view/View.html), which contains a number of useful methods—including the `animate()` method you used in the previous example.
+All NativeScript UI elements inherit from a base [`View` class](/api-reference/classes/_ui_core_view_.view.html.html), which contains a number of useful methods—including the `animate()` method you used in the previous example.
 
 One you have a reference to a UI element, you can call any of the methods that element inherits from `View`. In this case, you call the `<StackLayout #container>` element’s `animate()` method to change its background color over a duration of `200`, or 2/10 of a second. The effect is a subtle color change that helps user differentiate between the “Sign In” and “Sign Up” functionality that your form provides.
 
@@ -239,7 +239,7 @@ How does this work? Let’s return to this chunk of code:
 </ListView>
 ```
 
-The [`<ListView>` UI element](http://docs.nativescript.org/ApiReference/ui/list-view/ListView) requires an `items` property that points at an array of data—in this case, the `groceryList` array you added to your `ListPage` class. The list view element requires a child `<template>` element that specifies how to render each item in the `items` array.
+The [`<ListView>` UI element](/api-reference/classes/_ui_list_view_.listview.html) requires an `items` property that points at an array of data—in this case, the `groceryList` array you added to your `ListPage` class. The list view element requires a child `<template>` element that specifies how to render each item in the `items` array.
 
 The `let-*` syntax is Angular 2’s way of creating template variables within loops. You can think of the syntax working like TypeScript’s `let` keyword. This gives you the ability to refer to each item in the array as `item` within the template. For this template, you render each item in the array with a single `<Label>` UI element, and because of the `[text]="item.name"` binding, those labels contain the text from the `name` property of each of the items in `groceryList` TypeScript array.
 
@@ -593,7 +593,7 @@ Let's look at how you can polish this page with a NativeScript module for showin
 
 Currently there's a bit of a delay when you first visit the list page before groceries appear. This delay could confuse a new user, who might think the app is stuck rather than retrieving data from a backend.
 
-In NativeScript apps you can use the [ActivityIndicator](http://docs.nativescript.org/ApiReference/ui/activity-indicator/README) module to show a spinner icon in your UI while your app is busy performing actions. The ActivityIndicator is a relatively simple UI element as it primarily uses one attribute—`busy`. When an ActivityIndicator's `busy` attribute is set to `true` the ActivityIndicator shows, and when its `busy` attribute is set to `false` it doesn't. Let's see how the module works by adding an ActivityIndicator to the list page.
+In NativeScript apps you can use the [ActivityIndicator](/api-reference/classes/_ui_activity_indicator_.activityindicator.html) module to show a spinner icon in your UI while your app is busy performing actions. The ActivityIndicator is a relatively simple UI element as it primarily uses one attribute—`busy`. When an ActivityIndicator's `busy` attribute is set to `true` the ActivityIndicator shows, and when its `busy` attribute is set to `false` it doesn't. Let's see how the module works by adding an ActivityIndicator to the list page.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Add an ActivityIndicator

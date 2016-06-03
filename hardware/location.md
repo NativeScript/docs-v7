@@ -249,5 +249,5 @@ function getDistance(loc1, loc2) {
 ## See Also
 
 * [NativeScript Plugins](http://docs.nativescript.org/plugins/plugins)
-* [Location Module (Deprecated)](http://docs.nativescript.org/ApiReference/location/README)
+* [Location Module (Deprecated)](/api-reference/modules/_location_.html)
 * [NativeScript-Geolocation in NPM](https://www.npmjs.com/package/nativescript-geolocation)

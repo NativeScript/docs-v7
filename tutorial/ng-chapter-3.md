@@ -50,7 +50,7 @@ To verify this binding works tap the “Sign In” button in your app; you shoul
 <img alt="Terminal showing the word hello logged" src="../img/cli-getting-started/angular/chapter3/terminal-1.png" class="plain">
 
 > **TIP**:
-> * You can find a list of events available for each UI element on its API documentation page. For instance, the [button element’s API documentation](http://docs.nativescript.org/ApiReference/ui/button/Button) lists its `tap` event.
+> * You can find a list of events available for each UI element on its API documentation page. For instance, the [button element’s API documentation](/api-reference/classes/_ui_button_.button.html) lists its `tap` event.
 > * The Angular 2 docs have a helpful [cheat sheet](https://angular.io/docs/ts/latest/guide/cheatsheet.html) that includes the various syntaxes available when building templates. Don’t worry too much about knowing how all these work at the moment; we’ll progressively introduce the most common syntaxes in this guide.
 
 With the `tap` event in place, you now have a way of tying the UI elements in your template to your TypeScript code. To make a login page actually work though, we need to introduce one other way of connecting a template to code: data binding.
