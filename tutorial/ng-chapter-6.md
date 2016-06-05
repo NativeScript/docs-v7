@@ -132,7 +132,7 @@ Let’s move onto how to accomplish this same hint color task on Android.
 
 ## 6.2: Accessing Android APIs
 
-Much like with iOS, if you’ve not a native Android developer, figuring out how to accomplish a task on Android often starts with a web search. If you run a [search for “style Android text field hint text”](https://www.google.com/#q=style%20android%20text%20field%20hint%20text), you’ll end up on a [Stack Overflow answer](http://stackoverflow.com/questions/6438478/sethinttextcolor-in-edittext) that recommends using a [`android.widget.TextView`’s `setTextHintColor()` method](http://developer.android.com/reference/android/widget/TextView.html#attr_android:textColorHint). Let’s alter our code to do that.
+Much like with iOS, if you’re not a native Android developer, figuring out how to accomplish a task on Android often starts with a web search. If you run a [search for “style Android text field hint text”](https://www.google.com/#q=style%20android%20text%20field%20hint%20text), you’ll end up on a [Stack Overflow answer](http://stackoverflow.com/questions/6438478/sethinttextcolor-in-edittext) that recommends using a [`android.widget.TextView`’s `setTextHintColor()` method](http://developer.android.com/reference/android/widget/TextView.html#attr_android:textColorHint). Let’s alter our code to do that.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Change hint colors on Android
