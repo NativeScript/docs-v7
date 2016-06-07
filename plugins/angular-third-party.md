@@ -81,7 +81,7 @@ You can register any class for a given tag, and that gives you a valuable inject
 
 This approach is similar to the wrapper tag one since it is aimed at doing all component customization in code. Any directive can get a reference to its host tag by declaring an `ElementRef` constructor parameter and get the NativeScript `View` from that via the `ElementRef.nativeElement` property.
 
-The directive approach is especially useful when trying to build a cross-platform that shares code with a web application since you can provide a different directive implementation in the web app. Directives compose really well too &mdash; you can split different parts of the integration code in different directives and apply more than one directive per component. <Comment: You are missing a word after cross-platform. Perhaps solution?>
+The directive approach is especially useful when trying to build a cross-platform solution that shares code with a web application since you can provide a different directive implementation in the web app. Directives compose really well too &mdash; you can split different parts of the integration code in different directives and apply more than one directive per component. 
 
 # Summary
 
