@@ -1,5 +1,5 @@
 ---
-title: Set Up Linux
+title: NativeScript Advanced Setup—Linux
 description: Configure your Linux system to create, develop and build projects locally with NativeScript.
 position: 5
 slug: linux
@@ -7,15 +7,14 @@ publish: false
 previous_url: /setup/ns-cli-setup/ns-setup-linux
 ---
 
-# Set Up the NativeScript CLI on Linux
+# NativeScript Advanced Setup: Linux
 
-With the open-source [NativeScript Command-Line Interface](https://github.com/NativeScript/nativescript-cli) and an IDE or text editor of your choice, you can create, develop, store and build your apps entirely locally, free of charge and anonymously.
-
-On Linux systems, you can use the NativeScript CLI to develop only Android apps. This limitation is caused by the requirements for iOS development.
+This page contains a list of all system requirements needed to build and run NativeScript apps on Linux, as well as a guided walkthrough for getting these requirements in place.
 
 * [System Requirements](#system-requirements)
-* [Environment Requirements](#environment-requirements)
-* [Setup](#setup)
+* [Advanced Setup Steps](#advanced-setup-steps)
+
+> **NOTE**: On Linux systems you can only use the NativeScript CLI to develop Android apps. This is because the NativeScript CLI uses Xcode to build iOS apps, which is only available on the OS X operating system. If you’re interested in building iOS apps on Linux, you may want to try out the [Telerik Platform](http://www.telerik.com/platform). The Telerik Platform provides robust tooling for NativeScript apps, including a service that performs iOS and Android builds in the cloud, removing the need to complete these system requirements, and allowing you to build for iOS on Linux.
 
 ## System Requirements
 
@@ -28,14 +27,15 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 * Android SDK Build-tools 23.0.0 or a later stable official release
 * (Optional) Genymotion to expand your testing options
 
-## Environment Requirements
+You must also have the following two environment variables setup for Android development:
 
-* JAVA_HOME environment variable must be set
-* ANDROID_HOME environment variable must be set
+* JAVA_HOME
+* ANDROID_HOME
 
-## Setup
+## Advanced Setup Steps
 
-1. Run the terminal.
+Complete the following steps to setup NativeScript on your Linux development machine:
+
 1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/), [0.12.x](https://nodejs.org/dist/latest-v0.12.x/), or [4.x](https://nodejs.org/dist/latest-v4.x/) stable official release.
 1. If you are running on a 64-bit system, install the runtime libraries for the ia32/i386 architecture.
 
@@ -48,19 +48,19 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
     sudo apt-get install g++
     ```
 1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
-	1. Run the following commands.
+    1. Run the following commands.
 
-    	```Shell
+        ```Shell
         sudo apt-get install python-software-properties
-    	sudo add-apt-repository ppa:webupd8team/java
-    	sudo apt-get update
-    	sudo apt-get install oracle-java8-installer
+        sudo add-apt-repository ppa:webupd8team/java
+        sudo apt-get update
+        sudo apt-get install oracle-java8-installer
         ```
     1. After installation if you have multiple installations of java you can choose which to use:
 
-    	```Shell
-    	sudo update-alternatives --config java
-    	```
+        ```Shell
+        sudo update-alternatives --config java
+        ```
 ----
 1. Set the JAVA_HOME system environment variable.
     ```
@@ -80,19 +80,19 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
 
 1. Install the required Android SDKs and the Local Maven repository for Support Libraries.
 
-	```Shell
-	sudo $ANDROID_HOME/tools/android update sdk --filter tools,platform-tools,android-23,build-tools-23.0.2,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
-	```
+    ```Shell
+    sudo $ANDROID_HOME/tools/android update sdk --filter tools,platform-tools,android-23,build-tools-23.0.2,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
+    ```
 1. (Optional) Install Genymotion.<br/>Genymotion is a third-party native emulator.
     1. Go to [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads) and download and install VirtualBox for Linux.
     1. Go to [Get Genymotion](https://www.genymotion.com/#!/download), select Linux and click the download link for Ubuntu.
-	1. After the download completes, run the installer and complete the installation.
+    1. After the download completes, run the installer and complete the installation.
 1. Install the NativeScript CLI.
     1. Run the following command.
 
-	```Shell
-	sudo npm install nativescript -g --unsafe-perm
-	```
+    ```Shell
+    sudo npm install nativescript -g --unsafe-perm
+    ```
     1. Restart the command prompt.
 1. To check if your system is configured properly, run the following command.
 
@@ -100,6 +100,7 @@ On Linux systems, you can use the NativeScript CLI to develop only Android apps.
     tns doctor
     ```
 
-## What's Next
+## What’s Next
 
-Return to the [introduction]({% slug introduction %}).
+* [Return to the JavaScript tutorial](/tutorial/ng-chapter-1#11-install-nativescript-and-configure-your-environment)
+* [Return to the TypeScript & Angular tutorial](/angular/tutorial/ng-chapter-1#11-install-nativescript-and-configure-your-environment).

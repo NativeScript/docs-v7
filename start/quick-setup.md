@@ -1,73 +1,87 @@
 ---
-title: Installation
-description: Choose between a local and cloud tool set and set up our system to work with NativeScript.
+title: NativeScript Quick Setup
+description: Set up your system to work with NativeScript.
 position: 2
 slug: quick-start
 previous_url: /setup/quick-setup
 ---
 
-# Set Up Your System
+# NativeScript Quick Setup
 
-Before you can begin development with NativeScript, you need to choose your tool set and configure your system to use it.
+With the open-source NativeScript command-line interface and an IDE or text editor of your choice, you can create, develop, store and build your apps entirely locally, free of charge and anonymously. Let’s look at how to set up the CLI for development.
 
-When you develop with NativeScript, you can choose between a local tool set ([NativeScript Command-Line Interface][NativeScript CLI]) and a cloud tool set ([Telerik AppBuilder][AppBuilder]).
+> **NOTE**: The steps on this page are quick setup steps intended for users new to mobile development. If you have existing mobile experience, if you’re on Linux, or if you want full control of the installation process, refer to one of the advanced setup guide below, which walk you through manually setting up your environment for NativeScript development.
+> * [Advanced setup: Windows](/start/ns-setup-win)
+> * [Advanced setup: OS X](/start/ns-setup-os-x)
+> * [Advanced setup: Linux](/start/ns-setup-linux)
 
-* [The NativeScript CLI](#the-nativescript-cli)
-* [The AppBuilder Tool Set](#the-appbuilder-toolset)
+## Step 1: Install Node.js
 
-## The NativeScript CLI
+The NativeScript CLI is built on Node.js, and as such you need to have Node.js installed to use NativeScript.
 
-*Create, store, develop, build and test apps locally and free of charge on Windows, OS X or Ubuntu*
+You can check whether you have Node.js set up by opening a terminal or command prompt on your development machine and executing `node --version`. If you get an error, head to  <https://nodejs.org/> and download and install the latest “LTS” (long-term support) distribution for your development machine.
 
-> **TIP:** If you are familiar with the Apache Cordova CLI, you might want to try the NativeScript CLI. It provides a similar set of commands and an identical experience.
+> **TIP**:
+> * If you’re on OS X and use [Homebrew](http://brew.sh/), you can alternatively install the Node.js LTS release by running `brew install node4-lts` in your terminal.
+> * The NativeScript CLI supports a wide variety of Node.js versions, so if you already have Node.js installed you should be good to go. If, by chance, you’re running an unsupported version, the `tns doctor` command we’ll run momentarily will flag the problem so you can upgrade.
 
-With the open-source [NativeScript Command-Line Interface][NativeScript CLI] and an IDE or text editor of your choice, you can create, develop, store and build your apps entirely locally, free of charge and anonymously.
+## Step 2: Install the NativeScript CLI
 
-To take advantage of this autonomy, you need to configure your system with the tools and SDKs for native development of the platforms for which you want to develop. The NativeScript CLI uses them to produce truly native builds of your cross-platform projects.
+Open your terminal or command prompt and execute the following command to install the NativeScript CLI from npm, which is Node.js’ package manager:
 
-### Quick setup
+<pre class="add-copy-button"><code class="language-terminal">npm install -g nativescript</code></pre>
 
-NativeScript CLI is a Node.js application. If you have Node.js already installed, just run the following command.
+> **NOTE**: If you’re on OS X and receive an EACCES error, you either need to rerun the previous command with `sudo`—that is, `sudo npm install -g nativescript`—or take a moment to [fix your npm permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions) so that you don’t need admin rights to globally install npm packages.
 
-```Shell
-npm i -g nativescript
+After completing the setup you should have two commands available from your terminal or command prompt: `tns`—which is short for <b>T</b>elerik <b>N</b>ative<b>S</b>cript—and `nativescript`. The two commands are equivalent, so we'll stick with the shorter `tns`.
+
+You can verify the installation was successful by running `tns` in your terminal. You should see something like this:
+
+```
+$ tns
+# NativeScript
+┌─────────┬─────────────────────────────────────────────────────────────────────┐
+│ Usage   │ Synopsis                                                            │
+│ General │ $ tns <Command> [Command Parameters] [--command <Options>]          │
+│ Alias   │ $ nativescript <Command> [Command Parameters] [--command <Options>] │
+└─────────┴─────────────────────────────────────────────────────────────────────┘
 ```
 
-If you do not have Node.js, you need to install it first. Here's how to install it on [Mac]({% slug osx %}), [Windows]({% slug windows %}) or [Linux]({% slug linux %})
+## Step 3: Install iOS and Android requirements
 
-To develop your apps, you need the Native SDK dependencies.
-If this is your first time developing a mobile project, consider using the one-liner scripts in this section to effortlessly setup your machine. 
-If you have experience developing mobile apps, you may skip to the [advanced setup](#advanced-setup) section below.
+When you build with NativeScript you’re building truly native iOS and Android apps, and as such, you need to set up each platform you intend to build for on your development machine. To ease the pain of installing all of these requirements manually, the NativeScript CLI provides quick-start scripts for Windows and OS X that handle the necessary setup for you automatically. Let’s look at how they work.
 
- * On Windows:
+> **TIP**: Setting up your machine for native development can be tricky, especially if you’re new to mobile development. If you get stuck, or if you have questions at any point while going through these instructions, the [NativeScript Community Slack channel](http://developer.telerik.com/wp-login.php?action=slack-invitation) is a great place to ask questions.
 
-Open Start Menu, search for `Command Prompt` and start it. This opens a console window. Copy and paste this script:
+### Windows
 
-> @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://www.nativescript.org/setup/win'))"
+If you’re on Windows, copy and paste the script below into your command prompt and press Enter:
 
-You may need to accept an User Account Control prompt to grant the script administrative privileges. Note that the script downloads and installs some big dependencies and may take some time to complete. 
+<pre class="add-copy-button"><code class="language-terminal">@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://www.nativescript.org/setup/win'))"</code></pre>
 
- * On Mac:
+During installation you may need to accept a User Account Control prompt to grant the script administrative privileges. Also, be aware that the script downloads and installs some big dependencies—so it’s common for the script to take a while to complete. When the script finishes, close and reopen your command prompt.
 
-Using Spotlight, search `Terminal` and start it. This opens a console window. Copy and paste this script:
+> **NOTE**: On Windows systems you can only use the NativeScript CLI to develop Android apps. This is because the NativeScript CLI uses Xcode to build iOS apps, which is only available on the OS X operating system. If you’re interested in building iOS apps on Windows, you may want to try out the [Telerik Platform](http://www.telerik.com/platform). The Telerik Platform provides robust tooling for NativeScript apps, including a service that performs iOS and Android builds in the cloud, removing the need to complete these system requirements, and allowing you to build for iOS on Windows.
 
-> ruby -e "$(curl -fsSL https://www.nativescript.org/setup/mac)"
+### OS X
 
-The script calls some of the commands using `sudo` and you may need to provide your password several times. Note that the script downloads and installs some big dependencies and may take some time to complete.
+If you’re on a Mac, copy and paste the script below into your terminal and press Enter:
 
-### Advanced setup
+<pre class="add-copy-button"><code class="language-terminal">ruby -e "$(curl -fsSL https://www.nativescript.org/setup/mac)"</code></pre>
 
-* [Set Up on Windows]({% slug windows %})
-* [Set Up on OS X]({% slug osx %})
-* [Set Up on Linux]({% slug linux %})
+Much like the Windows script, the OS X script needs administrative access to run some commands using `sudo`; therefore, you may need to provide your password several times during execution. The OS X script also may take some time to complete, as it’s installing the dependencies for both iOS and Android development. When the script finishes, close and restart your terminal.
 
-## The AppBuilder Tool Set
+## Step 4: Verify the setup
 
-*Create, store, develop, build and test apps in the cloud without installing any additional dependencies*
+Once you’ve finished installing NativeScript and its dependencies, run the `tns doctor` command, which will check for any issues with your installation.
 
-> **TIP:** If you are unfamiliar with the complexity of native development, you might want to try the AppBuilder tool set. It does not require additional tools and SDKs installed on your system.
+```
+tns doctor
+```
 
-[Telerik AppBuilder][AppBuilder] provides a wide range of IDE choices paired with storage, compile and build services in the cloud. If you have access to the Internet and a Telerik account, you can use AppBuilder to develop NativeScript apps without configuring any additional tools and SDKs for native development. Telerik AppBuilder takes your cross-platform  project, compiles and builds it in the cloud and produces a truly native app.
+If you see “No issues were detected” you’re good to go!
 
-[NativeScript CLI]: https://www.npmjs.com/package/nativescript
-[AppBuilder]: http://www.telerik.com/appbuilder
+## What’s Next
+
+* [Return to the JavaScript tutorial](/tutorial/ng-chapter-1#11-install-nativescript-and-configure-your-environment)
+* [Return to the TypeScript & Angular tutorial](/angular/tutorial/ng-chapter-1#11-install-nativescript-and-configure-your-environment).
