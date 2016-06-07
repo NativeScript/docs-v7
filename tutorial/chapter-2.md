@@ -118,9 +118,9 @@ NativeScript UI components provide attributes to let you configure their behavio
 
 - `<TextField>`
     - `hint`: Shows placeholder text that tells the user what to type.
-    - `keyboardType`: The type of keyboard to present to the user for input. `keyboardType="email"` shows a keyboard optimized for entering email addresses. NativeScript currently supports [five types of keyboards]({{site.baseurl}}/ApiReference/ui/enums/KeyboardType/README) for text fields.
+    - `keyboardType`: The type of keyboard to present to the user for input. `keyboardType="email"` shows a keyboard optimized for entering email addresses. NativeScript currently supports [five types of keyboards]({{site.baseurl}}/api-reference/modules/_ui_enums_.keyboardtype.html) for text fields.
     - `autocorrect`: A boolean attribute that determines whether the mobile operating system should autocorrect user input. In the case of email address text fields, the autocorrect behavior is undesirable.
-    - `autocapitalizationType`: Determines how the operating system should autocapitalize user input. `autocapitalizationType="none"` turns autocapitalization off altogether. NativeScript supports [four autocapitalization types]({{site.baseurl}}/ApiReference/ui/enums/AutocapitalizationType/README.html) on text fields.
+    - `autocapitalizationType`: Determines how the operating system should autocapitalize user input. `autocapitalizationType="none"` turns autocapitalization off altogether. NativeScript supports [four autocapitalization types]({{site.baseurl}}/api-reference/modules/_ui_enums_.autocapitalizationtype.html) on text fields.
     - `secure`: A boolean attribute that determines whether the TextField's text should be masked, which is commonly done on password fields.
 - `<Button>`
     - `text`: Controls the text displayed within the button.
