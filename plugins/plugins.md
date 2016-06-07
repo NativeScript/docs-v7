@@ -345,9 +345,9 @@ The NativeScript CLI removes any plugin files from the `node_modules` directory 
 
 ### Manual Steps After Removal
 
-After the plugin removal is complete, make sure to remove any leftover native iOS library files from the `lib\ios` directory in the root of the project. Update the iOS-specific projects in `platforms\ios` to remove any dependencies on the removed native libraries.
-
-Next, you need to run the following command.
+1. After the plugin removal is complete, make sure to remove any leftover native iOS library files from the `lib\ios` directory in the root of the project. 
+2. Update the iOS-specific projects in `platforms\ios` to remove any dependencies on the removed native libraries.
+3. Run the following command.
 
 ```Shell
 tns prepare <Platform>
@@ -357,6 +357,6 @@ Make sure to run the command for all platforms configured for the project. Durin
 
 > **TIP:** Instead of `$ tns prepare` you can run `$ tns build`, `$ tns run`, `$ tns deploy` or `$ tns emulate`. All these commands run `$ tns prepare`.
 
-Next, open your `platforms\ios\Info.plist` file and remove any leftover entries from the plugin `Info.plist` file.
+4. Open your `platforms\ios\Info.plist` file and remove any leftover entries from the plugin `Info.plist` file.
 
-Finally, make sure to update your code not to use the uninstalled plugin.
+5. Make sure to update your code not to use the uninstalled plugin.
