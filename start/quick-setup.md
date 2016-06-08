@@ -19,7 +19,7 @@ With the open-source NativeScript command-line interface and an IDE or text edit
 
 The NativeScript CLI is built on Node.js, and as such you need to have Node.js installed to use NativeScript.
 
-You can check whether you have Node.js setup by opening a terminal or command prompt on your development machine and executing `node --version`. If you get an error, head to  <https://nodejs.org/> and download and install the latest “LTS” (long-term support) distribution for your development machine.
+You can check whether you have Node.js set up by opening a terminal or command prompt on your development machine and executing `node --version`. If you get an error, head to  <https://nodejs.org/> and download and install the latest “LTS” (long-term support) distribution for your development machine.
 
 > **TIP**:
 > * If you’re on OS X and use [Homebrew](http://brew.sh/), you can alternatively install the Node.js LTS release by running `brew install node4-lts` in your terminal.
@@ -49,7 +49,7 @@ $ tns
 
 ## Step 3: Install iOS and Android requirements
 
-When you build with NativeScript you’re building truly native iOS and Android apps, and as such, you need to setup each platform you intend to build for on your development machine. To ease the pain of installing all of these requirements manually, the NativeScript CLI provides quick-start scripts for Windows and OS X that handle the necessary setup for you automatically. Let’s look at how they work.
+When you build with NativeScript you’re building truly native iOS and Android apps, and as such, you need to set up each platform you intend to build for on your development machine. To ease the pain of installing all of these requirements manually, the NativeScript CLI provides quick-start scripts for Windows and OS X that handle the necessary setup for you automatically. Let’s look at how they work.
 
 > **TIP**: Setting up your machine for native development can be tricky, especially if you’re new to mobile development. If you get stuck, or if you have questions at any point while going through these instructions, the [NativeScript Community Slack channel](http://developer.telerik.com/wp-login.php?action=slack-invitation) is a great place to ask questions.
 
