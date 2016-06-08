@@ -34,7 +34,7 @@ You must also have the following two environment variables setup for Android dev
 
 ## Advanced Setup Steps
 
-Complete the following steps to setup NativeScript on your Windows development machine:
+Complete the following steps to set up NativeScript on your Windows development machine:
 
 1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/), [0.12.x](https://nodejs.org/dist/latest-v0.12.x/), [4.x](https://nodejs.org/dist/latest-v4.x/), or [5.x](https://nodejs.org/dist/latest-v5.x/) stable official release. We recommend using Node.js v4.x
 1. Install [Chocolatey](https://chocolatey.org) to simplify the installation and configuration of the Android tools and SDKs.

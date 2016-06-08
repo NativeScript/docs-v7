@@ -38,7 +38,7 @@ You must also have the following two environment variables setup for Android dev
 
 ## Advanced Setup Steps
 
-Complete the following steps to setup NativeScript on your OS X development machine:
+Complete the following steps to set up NativeScript on your OS X development machine:
 
 1. Install [Homebrew](http://brew.sh) to simplify the installation process.
 
