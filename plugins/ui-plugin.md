@@ -84,7 +84,7 @@ declare module "number-picker" {
 To enable features like data-binding and styling for the widget, you need to use dependency properties to back the instance properties as described [here](http://docs.nativescript.org/bindings.html).
 
 ### Common File (number-picker-common.ts)
-Looking at the [Button](https://github.com/NativeScript/NativeScript/tree/master/ui/button) folder you will notice the `*-common` file. This is the file that holds the functionality, which is the same regardless of the target platform. Such functionality, for example, is instance properties implementation. <Comment: The previous sentence does not make sense to me. Perhaps "has an instance property implementation" or "contains instance properties in its implementation."> Here is how the common file looks like:
+Looking at the [Button](https://github.com/NativeScript/NativeScript/tree/master/ui/button) folder you will notice the `*-common` file. This is the file that holds the functionality, which is the same regardless of the target platform. Such functionality, for example, contains instance properties in its implementation. Here is how the common file looks like:
 
 ```javascript
 var view = require("ui/core/view");
@@ -220,7 +220,7 @@ var NumberPicker = (function (_super) {
 exports.NumberPicker = NumberPicker;
 ```
 
-To some extent, the code looks similar to the Android-specific one and uses the same concepts, but when you look into the details, you will see the differences. For example, the `onValuePropertyChanged` function uses the iOS [UIStepper](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/cl/UIStepper) API to update the native `value`. Or the absence of a `_createUI` method. <Comment: The previous sentence does not make sense. What is the subject and what is the verb? Can it be reworded to combine with the previous sentence?>In iOS, the instantiation pass happens in the constructor of each UI widget because each native widget may be constructed at any time, without the need of an additional parameter like Android's `Context`. Here are the steps of the iOS instantiation pass:
+To some extent, the code looks similar to the Android-specific one and uses the same concepts, but when you look into the details, you will see the differences. For example, the `onValuePropertyChanged` function uses the iOS [UIStepper](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/cl/UIStepper) API to update the native `value` or another example could be the absence of a `_createUI` method. In iOS, the instantiation pass happens in the constructor of each UI widget because each native widget may be constructed at any time, without the need of an additional parameter like Android's `Context`. Here are the steps of the iOS instantiation pass:
 
 ```
 AppDelegate's applicationDidFinishLaunchingWithOptions notification comes
@@ -320,7 +320,7 @@ NumberPicker.prototype._createUI = function () {
 
 >Note the `WeakRef` wrapper of the `this` argument. This is an important part of the listener implementation as it prevents circular references (resulting in a memory leak) between the JavaScript implementation Object literal, which is statically cached per `extend` call and the outer JavaScript instance.
 
-Here the NativeScript Android Bridge is used to create a new [interface implementation in JavaScript](http://docs.nativescript.org/runtimes/android/generator/extend-class-interface) and to handle the `onValueChange` method. When a notification from the native Picker is received, the JavaScript object associated with the event is retrieved and the special method `_onPropertyChangedFromNative` is called on it. This is a method on the `Proxy` class that synchronizes properties from both JavaScript and Native in a way that prevents circular updates, which may result in a StackOverflow Exception. <Comment: What is Native? Do you mean the native Picker or NativeScript?>
+Here the NativeScript Android Bridge is used to create a new [interface implementation in JavaScript](http://docs.nativescript.org/runtimes/android/generator/extend-class-interface) and to handle the `onValueChange` method. When a notification from the native Picker is received, the JavaScript object associated with the event is retrieved and the special method `_onPropertyChangedFromNative` is called on it. This is a method on the `Proxy` class that synchronizes properties from both JavaScript and native Picker in a way that prevents circular updates, which may result in a StackOverflow Exception.
 
 ### iOS
 On iOS the generic event [UIControlEventValueChanged](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/c/econst/UIControlEventValueChanged) raised by the `UIStepper` widget is used. So the approach will be to extend the base `NSObject` class, to expose a handler method and register a new instance of the extended object using the [addTargetActionForControlEvents](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/#//apple_ref/occ/instm/UIControl/addTarget:action:forControlEvents:) method. According to the [Extending Classes in NativeScript for iOS](http://docs.nativescript.org/runtimes/ios/how-to/ObjC-Subclassing#calling-base-methods-Exposed) article, the following code enables value change notifications:
@@ -366,7 +366,7 @@ The styling support in the NativeScript modules is built on top of three major l
 * The *Styler* concept - the mapping of a JavaScript value to the corresponding native widget's property is delegated to an external object, named `Styler`.
 
 
-> The properties, common for each native widget, are handled by the `DefaultStyler`. Other properties are specific on a per widget type. For example, the [TextView](http://developer.android.com/reference/android/widget/TextView.html) widgets&mdash;these are handled by the specific `TextViewStyler`. <Comment: Please review that my edits to the previous two sentences did not create an error.>
+> The properties, common for each native widget, are handled by the `DefaultStyler`. Other properties are specific on a per widget type. For example, the [TextView](http://developer.android.com/reference/android/widget/TextView.html) widgets&mdash;these are handled by the specific `TextViewStyler`. 
 
 The `DefaultStyler` handles the following [properties](http://uatdocs.nativescript.org/styling#supported-properties):
 
