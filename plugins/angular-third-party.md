@@ -1,12 +1,12 @@
 ---
-title: Integrating Third Party Components
+title: Integrating Third-Party Components
 description: Integrating vanilla NativeScript UI components in Angular
 position: 1
 slug: angular-third-party
 environment: angular
 ---
 
-# Integrating Third Party Components
+# Integrating Third-Party Components
 
 0. [Overview](#overview)
 1. [Simple Elements](#simple-elements)
@@ -20,7 +20,7 @@ The standard NativeScript abstraction for a visual component is the `View` class
 * Native Android and iOS UI components. Plugins for those typically create a `View` facade for JavaScript code.
 * UI widgets written in JavaScript. Those too are exposed as `View` instances.
 
-Angular applications do not typically use NativeScript `View` objects directly since visual tree manipulations are best left to the "renderer" abstraction. The renderer provides great flexibility in building platform-independent UI's, but that comes with a price -- using advanced NativeScript components may require some glue code.
+Angular applications do not typically use NativeScript `View` objects directly since visual tree manipulations are best left to the "renderer" abstraction. The renderer provides great flexibility in building platform-independent UIs, but that comes with a price; using advanced NativeScript components may require some glue code.
 
 # Simple Elements
 
@@ -50,7 +50,7 @@ To illustrate this approach, we'll assume that we have a `<document-form>` compo
 
 <snippet id='third-party-document-form-component'/>
 
-To support that on the Angular side, we need an Angular template nested inside the `document-form` tag. To make template discovery and manipulation easier, we associate it with a directive named `DocumentTitleDirective`. Here is how the client code looks like:
+To support that on the Angular side, we need an Angular template nested inside the `document-form` tag. To make template discovery and manipulation easier, we associate it with a directive named `DocumentTitleDirective`. Here is what the client code looks like:
 
 <snippet id='third-party-document-form-container'/>
 
@@ -81,8 +81,8 @@ You can register any class for a given tag, and that gives you a valuable inject
 
 This approach is similar to the wrapper tag one since it is aimed at doing all component customization in code. Any directive can get a reference to its host tag by declaring an `ElementRef` constructor parameter and get the NativeScript `View` from that via the `ElementRef.nativeElement` property.
 
-The directive approach is especially useful when trying to build a cross-platform that shares code with a web application since you can provide a different directive implementation in the web app. Directives compose really well too -- you can split different parts of the integration code in different directives and apply more than one directive per component.
+The directive approach is especially useful when trying to build a cross-platform solution that shares code with a web application since you can provide a different directive implementation in the web app. Directives compose really well too &mdash; you can split different parts of the integration code in different directives and apply more than one directive per component. 
 
 # Summary
 
-Third party NativeScript components are not automatically integrated in Angular applications, but doing that is a straightforward task. Most libraries need a couple of `registerElement` calls and some of them conveniently ship a module that client code can `require` and have the registration happen automatically.
+Third-party NativeScript components are not automatically integrated in Angular applications, but doing that is a straightforward task. Most libraries need a couple of `registerElement` calls and some of them conveniently ship a module that client code can `require` and have the registration happen automatically.
