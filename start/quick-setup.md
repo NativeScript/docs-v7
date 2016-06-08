@@ -1,12 +1,12 @@
 ---
-title: NativeScript Quick Setup
+title: Installation
 description: Set up your system to work with NativeScript.
 position: 2
 slug: quick-start
 previous_url: /setup/quick-setup
 ---
 
-# NativeScript Quick Setup
+# Set Up Your System
 
 With the open-source NativeScript command-line interface and an IDE or text editor of your choice, you can create, develop, store and build your apps entirely locally, free of charge and anonymously. Let’s look at how to set up the CLI for development.
 
