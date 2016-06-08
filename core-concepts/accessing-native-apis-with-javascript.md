@@ -61,7 +61,7 @@ console.log(button.titleLabel.text); // The returned NSString is converted to Ja
 
 ```javascript
 // Android
-var file = new java.io.File('myfile.txt'); // 'myfile.txt' is converted to java.lnag.String
+var file = new java.io.File('myfile.txt'); // 'myfile.txt' is converted to java.lang.String
 ```
 
 The exception to this are the methods on `NSString` classes declared as returning `instancetype` - init methods and factory methods. This means that a call to `NSString.stringWithString` whose return type in Objective-C is `instancetype` will return a wrapper around a `NSString` instance, rather than a JavaScript string.
