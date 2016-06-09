@@ -23,6 +23,7 @@ This page contains a list of all system requirements needed to build and run Nat
     * Latest Xcode
     * Command-line tools for Xcode
     * xcodeproj ruby gem
+    * CocoaPods
     * (Optional) xcproj command line tool
 * For Android development
     * JDK 8 or a later stable official release
@@ -58,7 +59,7 @@ Complete the following steps to setup NativeScript on your OS X development mach
         <pre class="add-copy-button"><code class="language-terminal">sudo gem install xcodeproj
         </code></pre>
 
-    1. [Install CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started)
+    1. Install [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
 
         <pre class="add-copy-button"><code class="language-terminal">sudo gem install cocoapods
         </code></pre>
