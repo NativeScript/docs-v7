@@ -98,7 +98,7 @@ To get a sense of how a NativeScript app actually starts up, let’s explore the
 
 ## 2.2: Starting up
 
-The first few files you run in a NativeScript app look almost identical to [the first few files you run in an Angular 2 web app](https://angular.io/docs/ts/latest/quickstart.html). Let’s start with `main.ts` as that’s the first file executed. Open your `app.main.ts` file; you should see the code below:
+The first few files you run in a NativeScript app look almost identical to [the first few files you run in an Angular 2 web app](https://angular.io/docs/ts/latest/quickstart.html). Let’s start with `main.ts` as that’s the first file executed. Open your `app/main.ts` file; you should see the code below:
 
 ``` JavaScript
 import {nativeScriptBootstrap} from "nativescript-angular/application";
