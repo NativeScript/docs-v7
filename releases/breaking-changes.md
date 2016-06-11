@@ -19,7 +19,7 @@ This help article describes the critical breaking changes and suggested workarou
     `xmlns="http://schemas.nativescript.org/tns.xsd"`.
     For convenience, the file can now be downloaded via the [same URL](http://schemas.nativescript.org/tns.xsd).
 - [Automatic memory management of CoreFoundation functions marked with `CF_IMPLICIT_BRIDGING_ENABLED`](https://github.com/NativeScript/ios-runtime/pull/351). You should delete any `CFRelease()` calls on the result of `Create`/`Copy` functions.
-- [Manual memory management of CoreFoundation functions not-marked with `CF_IMPLICIT_BRIDGING_ENABLED`](https://github.com/NativeScript/ios-runtime/pull/386). You should call `takeRetainedValue()`/`takeUnretainedValue()` on the result object of such functions. See the [docs]({{site.baseurl}}/runtimes/ios/marshalling/Marshalling-Overview#corefoundation-objects) for more info.
+- [Manual memory management of CoreFoundation functions not-marked with `CF_IMPLICIT_BRIDGING_ENABLED`](https://github.com/NativeScript/ios-runtime/pull/386). You should call `takeRetainedValue()`/`takeUnretainedValue()` on the result object of such functions. See the [docs](/runtimes/ios/marshalling/Marshalling-Overview#corefoundation-objects) for more info.
 
 ### 1.4.0 (2015, October 12)
 -  [(#774)](https://github.com/NativeScript/NativeScript/issues/774) The Animation class no longer has a **finished** property because an animation can be played multiple times. The **play** method now returns a new Promise each time it is invoked. Use this to listen for the animation finishing or being cancelled. When upgrading to version 1.4.0 or above, simply remove **.finished** from your code.
