@@ -173,7 +173,7 @@ Open `app/app.component.ts` and replace the existing `@Component` with the follo
 
 > **WARNING**: Take special care to properly close all your UI elements and _not_ use self-closing declarations like `<Button text="Sign in" />`. The limitation is related to the [parse5 library](https://github.com/inikulin/parse5) Angular 2 uses to parse templates, and you can read [details about the issue on GitHub](https://github.com/NativeScript/nativescript-angular#known-issues).
 
-This code adds two new NativeScript UI elements: a [text field](http://docs.nativescript.org/cookbook/ui/text-field) and a [button](http://docs.nativescript.org/cookbook/ui/button). Much like HTML elements, NativeScript UI elements provide attributes to let you configure their behavior and appearance. The code you just added uses the following attributes:
+This code adds two new NativeScript UI elements: a [text field]({%ns_cookbook ui/text-field%}) and a [button]({%ns_cookbook ui/button%}). Much like HTML elements, NativeScript UI elements provide attributes to let you configure their behavior and appearance. The code you just added uses the following attributes:
 
 - `<TextField>`
     - `hint`: Shows placeholder text that tells the user what to type.
@@ -197,11 +197,11 @@ What went wrong? In NativeScript whenever you use more than one UI element, you 
 
 NativeScript provides several different layout containers that allow you to place UI elements precisely where you want them to appear. 
 
-- The [Absolute Layout](http://docs.nativescript.org/cookbook/ui/layouts/absolute-layout) lets you position elements using explicit x and y coordinates. This is useful when you need to place elements in exact locations, for example showing an activity indicator widget in the top-left corner of your app.
-- The [Dock Layout](http://docs.nativescript.org/cookbook/ui/layouts/dock-layout) is useful for placing UI elements at the outer edges of your app. For example, a container docked at the bottom of the screen would be a good location for an ad.
-- The [Grid Layout](http://docs.nativescript.org/cookbook/ui/layouts/grid-layout) lets you divide your interface into a series of rows and columns, much like a `<table>` in HTML markup.
-- The [Stack Layout](http://docs.nativescript.org/cookbook/ui/layouts/stack-layout) lets you stack child UI elements either vertically or horizontally.
-- The [Wrap Layout](http://docs.nativescript.org/cookbook/ui/layouts/wrap-layout) lets child UI elements flow from one row or column to the next when space is filled.
+- The [Absolute Layout]({%ns_cookbook ui/layouts/absolute-layout%}) lets you position elements using explicit x and y coordinates. This is useful when you need to place elements in exact locations, for example showing an activity indicator widget in the top-left corner of your app.
+- The [Dock Layout]({%ns_cookbook ui/layouts/dock-layout%}) is useful for placing UI elements at the outer edges of your app. For example, a container docked at the bottom of the screen would be a good location for an ad.
+- The [Grid Layout]({%ns_cookbook ui/layouts/grid-layout%}) lets you divide your interface into a series of rows and columns, much like a `<table>` in HTML markup.
+- The [Stack Layout]({%ns_cookbook ui/layouts/stack-layout%}) lets you stack child UI elements either vertically or horizontally.
+- The [Wrap Layout]({%ns_cookbook ui/layouts/wrap-layout%}) lets child UI elements flow from one row or column to the next when space is filled.
 
 For your login screen, all you need is a simple `<StackLayout>` for stacking the UI elements on top of each other. In later sections, you'll use some of the more advanced layouts.
 

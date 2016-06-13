@@ -114,11 +114,11 @@ The following table shows predefined layouts that NativeScript provides.
 [views]: {%slug components %}
 [View]: /api-reference/classes/_ui_core_view_.view.html
 [Layout]: /api-reference/classes/_ui_layouts_layout_.layout.html
-[AbsoluteLayout]: /cookbook/ui/layouts/absolute-layout
-[DockLayout]: /cookbook/ui/layouts/dock-layout
-[GridLayout]: /cookbook/ui/layouts/grid-layout
-[StackLayout]: /cookbook/ui/layouts/stack-layout
-[WrapLayout]: /cookbook/ui/layouts/wrap-layout
+[AbsoluteLayout]: {%ns_cookbook ui/layouts/absolute-layout%}
+[DockLayout]: {%ns_cookbook ui/layouts/dock-layout%}
+[GridLayout]: {%ns_cookbook ui/layouts/grid-layout%}
+[StackLayout]: {%ns_cookbook ui/layouts/stack-layout%}
+[WrapLayout]: {%ns_cookbook ui/layouts/wrap-layout%}
 
 ### Percentage Support
 

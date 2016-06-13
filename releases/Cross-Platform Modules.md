@@ -727,7 +727,7 @@ application.ios.removeNotificationObserver(observer, UIDeviceBatteryLevelDidChan
 
 - [(#221)](https://github.com/NativeScript/NativeScript/pull/221) View parent exposed in itemLoading event
 
-- [(#214)](https://github.com/NativeScript/NativeScript/pull/214) Repeater component added [Read more...](../cookbook/ui/repeater)
+- [(#214)](https://github.com/NativeScript/NativeScript/pull/214) Repeater component added [Read more...]({%ns_cookbook ui/repeater%})
 
 - [(#207)](https://github.com/NativeScript/NativeScript/pull/207) Optimizations
 

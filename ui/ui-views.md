@@ -41,7 +41,7 @@ Defining the layout of the application is also an important part of the applicat
 
 ## Button
 
-The [Button](/cookbook/ui/button) widget provides a standard button widget that reacts to a `tap` event.
+The [Button]({%ns_cookbook ui/button%}) widget provides a standard button widget that reacts to a `tap` event.
 
 ![button android](../img/gallery/android/buttonPage.png "button android")![button ios](../img/gallery/ios/buttonPage.png "button ios")
 
@@ -53,7 +53,7 @@ The [Button](/cookbook/ui/button) widget provides a standard button widget that 
 
 ## Label
 
-The [Label](/cookbook/ui/label) widget provides a text label that shows read-only text.
+The [Label]({%ns_cookbook ui/label%}) widget provides a text label that shows read-only text.
 
 ![label android](../img/gallery/android/labelPage.png "label android")![label ios](../img/gallery/ios/labelPage.png "label ios")
 
@@ -65,7 +65,7 @@ The [Label](/cookbook/ui/label) widget provides a text label that shows read-onl
 
 ## TextField
 
-The [TextField](/cookbook/ui/text-field) widget provides an editable **single-line** text field.
+The [TextField]({%ns_cookbook ui/text-field%}) widget provides an editable **single-line** text field.
 
 ![text-field android](../img/gallery/android/textFieldPage.png "text-field android")![text-field ios](../img/gallery/ios/textFieldPage.png "text-field ios")
 
@@ -77,7 +77,7 @@ The [TextField](/cookbook/ui/text-field) widget provides an editable **single-li
 
 ## TextView
 
-The [TextView](/cookbook/ui/text-view) widget provides an editable **multi-line** text view. 
+The [TextView]({%ns_cookbook ui/text-view%}) widget provides an editable **multi-line** text view. 
 
 You can use it to show multi-line text and implement text editing.
 
@@ -91,7 +91,7 @@ You can use it to show multi-line text and implement text editing.
 
 ## SearchBar
 
-The [SearchBar](/cookbook/ui/search-bar) widget provides a user interface for entering search queries and submitting requests to the search provider.
+The [SearchBar]({%ns_cookbook ui/search-bar%}) widget provides a user interface for entering search queries and submitting requests to the search provider.
 
 ![search-bar android](../img/gallery/android/searchBarPage.png "search-bar android")![search-bar ios](../img/gallery/ios/searchBarPage.png "search-bar ios")
 
@@ -103,7 +103,7 @@ The [SearchBar](/cookbook/ui/search-bar) widget provides a user interface for en
 
 ## Switch
 
-The [Switch](/cookbook/ui/switch) widget provides a two-state toggle switch from which you can choose between two options.
+The [Switch]({%ns_cookbook ui/switch%}) widget provides a two-state toggle switch from which you can choose between two options.
 
 ![switch android](../img/gallery/android/switchPage.png "switch android")![switch ios](../img/gallery/ios/switchPage.png "switch ios")
 
@@ -115,7 +115,7 @@ The [Switch](/cookbook/ui/switch) widget provides a two-state toggle switch from
 
 ## Slider
 
-The [Slider](/cookbook/ui/slider) widget provides a slider that you can use to pick a numeric value within a configurable range.
+The [Slider]({%ns_cookbook ui/slider%}) widget provides a slider that you can use to pick a numeric value within a configurable range.
 
 ![slider android](../img/gallery/android/sliderPage.png "slider android")![slider ios](../img/gallery/ios/sliderPage.png "slider ios")
 
@@ -127,7 +127,7 @@ The [Slider](/cookbook/ui/slider) widget provides a slider that you can use to p
 
 ## Progress
 
-The [Progress](/cookbook/ui/progress) widget is a visual bar indicator of a progress in a operation. It shows a bar representing the current progress of the operation.
+The [Progress]({%ns_cookbook ui/progress%}) widget is a visual bar indicator of a progress in a operation. It shows a bar representing the current progress of the operation.
 
 ![progress android](../img/gallery/android/progressPage.png "progress android")![progress ios](../img/gallery/ios/progressPage.png "progress ios")
 
@@ -139,7 +139,7 @@ The [Progress](/cookbook/ui/progress) widget is a visual bar indicator of a prog
 
 ## ActivityIndicator
 
-The [ActivityIndicator](/cookbook/ui/activity-indicator) widget is a visual spinner indicator which shows that a task is in progress.
+The [ActivityIndicator]({%ns_cookbook ui/activity-indicator%}) widget is a visual spinner indicator which shows that a task is in progress.
 
 ![activity-indicator android](../img/gallery/android/activityIndicatorPage.png "activity-indicator android")![activity-indicator ios](../img/gallery/ios/activityIndicatorPage.png "activity-indicator ios")
 
@@ -151,7 +151,7 @@ The [ActivityIndicator](/cookbook/ui/activity-indicator) widget is a visual spin
 
 ## Image
 
-The [Image](/cookbook/ui/image) widget shows an image. You can load the image from an [`ImageSource`](/api-reference/modules/_image_source_.html) or from a URL.
+The [Image]({%ns_cookbook ui/image%}) widget shows an image. You can load the image from an [`ImageSource`](/api-reference/modules/_image_source_.html) or from a URL.
 
 ![image android](../img/gallery/android/imagePage.png "image android")![image ios](../img/gallery/ios/imagePage.png "image ios")
 
@@ -163,7 +163,7 @@ The [Image](/cookbook/ui/image) widget shows an image. You can load the image fr
 
 ## ListView
 
-The [ListView](/cookbook/ui/list-view) shows items in a vertically scrolling list. You can set an [`itemTemplate`](api-reference/modules/_ui_list_view_.knowntemplates.html) to specify how each item in the list should be displayed.
+The [ListView]({%ns_cookbook ui/list-view%}) shows items in a vertically scrolling list. You can set an [`itemTemplate`](api-reference/modules/_ui_list_view_.knowntemplates.html) to specify how each item in the list should be displayed.
 
 ![list-view android](../img/gallery/android/listViewPage.png "list-view android")![list-view ios](../img/gallery/ios/listViewPage.png "list-view ios")
 
@@ -175,7 +175,7 @@ The [ListView](/cookbook/ui/list-view) shows items in a vertically scrolling lis
 
 ## HtmlView
 
-The [HtmlView](/cookbook/ui/html-view) represents a view with HTML content. Use this component instead of WebView when you want to show just static HTML content.
+The [HtmlView]({%ns_cookbook ui/html-view%}) represents a view with HTML content. Use this component instead of WebView when you want to show just static HTML content.
 
 ![html-view android](../img/gallery/android/htmlViewPage.png "html-view android")![html-view ios](../img/gallery/ios/htmlViewPage.png "html-view ios")
 
@@ -187,7 +187,7 @@ The [HtmlView](/cookbook/ui/html-view) represents a view with HTML content. Use 
 
 ## WebView
 
-The [WebView](/cookbook/ui/web-view) shows web pages. You can load a page from a URL or by navigating back and forward.
+The [WebView]({%ns_cookbook ui/web-view%}) shows web pages. You can load a page from a URL or by navigating back and forward.
 
 ![web-view android](../img/gallery/android/webViewPage.png "web-view android")![web-view ios](../img/gallery/ios/webViewPage.png "web-view ios")
 
@@ -199,7 +199,7 @@ The [WebView](/cookbook/ui/web-view) shows web pages. You can load a page from a
 
 ## TabView
 
-With the [TabView](/cookbook/ui/tab-view) control, you can implement tab navigation.
+With the [TabView]({%ns_cookbook ui/tab-view%}) control, you can implement tab navigation.
 
 ![tab-view android](../img/gallery/android/tabViewPage.png "tab-view android")![tab-view ios](../img/gallery/ios/tabViewPage.png "tab-view ios")
 
@@ -211,7 +211,7 @@ With the [TabView](/cookbook/ui/tab-view) control, you can implement tab navigat
 
 ## SegmentedBar
 
-With the [SegmentedBar](/cookbook/ui/segmented-bar) control, you can implement discrete selection.
+With the [SegmentedBar]({%ns_cookbook ui/segmented-bar%}) control, you can implement discrete selection.
 
 ![segmented-bar android](../img/gallery/android/segmentedBarPage.png "segmented-bar android")![segmented-bar ios](../img/gallery/ios/segmentedBarPage.png "segmented-bar ios")
 
@@ -223,7 +223,7 @@ With the [SegmentedBar](/cookbook/ui/segmented-bar) control, you can implement d
 
 ## DatePicker
 
-With the [DatePicker](/cookbook/ui/date-picker) control, you can pick a date.
+With the [DatePicker]({%ns_cookbook ui/date-picker%}) control, you can pick a date.
 
 ![date-picker android](../img/gallery/android/datePickerPage.png "date-picker android")![date-picker ios](../img/gallery/ios/datePickerPage.png "date-picker ios")
 
@@ -235,7 +235,7 @@ With the [DatePicker](/cookbook/ui/date-picker) control, you can pick a date.
 
 ## TimePicker
 
-With the [TimePicker](/cookbook/ui/time-picker) widget, you can pick a time.
+With the [TimePicker]({%ns_cookbook ui/time-picker%}) widget, you can pick a time.
 
 ![time-picker android](../img/gallery/android/timePickerPage.png "time-picker android")![time-picker ios](../img/gallery/ios/timePickerPage.png "time-picker ios")
 
@@ -247,7 +247,7 @@ With the [TimePicker](/cookbook/ui/time-picker) widget, you can pick a time.
 
 ## ListPicker
 
-With the [ListPicker](/cookbook/ui/list-picker) widget, you can pick a value from a list.
+With the [ListPicker]({%ns_cookbook ui/list-picker%}) widget, you can pick a value from a list.
 
 ![list-picker android](../img/gallery/android/listPickerPage.png "list-picker android")![list-picker ios](../img/gallery/ios/listPickerPage.png "list-picker ios")
 

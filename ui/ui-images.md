@@ -25,7 +25,7 @@ The prefix of the `src` value specifies where the image will be loaded form. The
 * [From local file system (`~/` prefix)](#load-images-from-local-file-system)
 * [From resource (`res://` prefix)](#load-images-from-resource)
 
-You can also use the [image-source](/cookbook/image-source) module to create an image source and manually set it to the image:
+You can also use the [image-source]({%ns_cookbook image-source%}) module to create an image source and manually set it to the image:
 
 ```JavaScript
 var image = new imageModule.Image();
@@ -42,7 +42,7 @@ Web images have an `http://` or `https://` prefix. When such an image is loaded,
 <Image src="https://www.google.com/images/errors/logo_sm_2.png" />
 ```
 
-You can manually create an [ImageSource instance from URL](/cookbook/image-source#load-image-from-url).
+You can manually create an [ImageSource instance from URL]({%ns_cookbook image-source#load-image-from-url%}).
 
 ## Load images from local file system
 Using the `~/` prefix, you can load images relative to the `App` folder inside your project.
@@ -51,7 +51,7 @@ Using the `~/` prefix, you can load images relative to the `App` folder inside y
 <Image src="~/images/logo.png" stretch ="none" />
 ```
 
-You can manually create an [ImageSource instance from local file](/cookbook/image-source#load-image-from-a-local-file).
+You can manually create an [ImageSource instance from local file]({%ns_cookbook image-source#load-image-from-a-local-file%}).
 
 > Currently, loading images from the file system does not respect filename qualifiers as described [here]({% slug architecture %}#supporting-multiple-screens). We have plans to implement that along with [density-specific qualifiers support](https://github.com/NativeScript/NativeScript/issues/276).
 
@@ -62,7 +62,7 @@ Using the `res://` prefix you can load a resource image. This is the suggested a
 <Image src="res://logo" stretch ="none" />
 ```
 
-You can manually create an [ImageSource instance from resource](/cookbook/image-source#load-image-using-resource-name).
+You can manually create an [ImageSource instance from resource]({%ns_cookbook image-source#load-image-using-resource-name%}).
 
 > The file extension is not included when referencing resource images.
 
