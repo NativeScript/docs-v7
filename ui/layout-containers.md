@@ -13,7 +13,7 @@ previous_url: /layout-containers
 * [StackLayout](#stacklayout)
 * [WrapLayout](#wraplayout)
 
-## [AbsoluteLayout]({{site.baseurl}}/cookbook/ui/layouts/absolute-layout)
+## [AbsoluteLayout](/cookbook/ui/layouts/absolute-layout)
 The AbsoluteLayout is the simplest layout in NativeScript. It uses absolute left-top coordinates to position its children. The AbsoluteLayout will not enforce any layout constraints on its children and will not resize them at runtime when its size changes.
 
 ### AbsoluteLayout Properties
@@ -61,7 +61,7 @@ None.
 
 ![AbsoluteLayout](../img/modules/layouts/absolute-layout2.png "AbsoluteLayout")
 
-## [DockLayout]({{site.baseurl}}/cookbook/ui/layouts/dock-layout)
+## [DockLayout](/cookbook/ui/layouts/dock-layout)
 The DockLayout is a layout that provides a docking mechanism for child elements to the left, right, top, bottom or center of the layout. To define the docking side of a child element, use its `dock` property. To dock a child element to the center of the DockLayout, it must be the last child of the DockLayout and the `stretchLastChild` property of the DockLayout must be set to `true`.
 
 ### DockLayout Properties
@@ -131,7 +131,7 @@ The DockLayout is a layout that provides a docking mechanism for child elements 
 
 ![DockLayout](../img/modules/layouts/dock-layout3.png "DockLayout2")
 
-## [GridLayout]({{site.baseurl}}/cookbook/ui/layouts/grid-layout)
+## [GridLayout](/cookbook/ui/layouts/grid-layout)
 The GridLayout is a layout that arranges its child elements in a table structure of rows and columns. A cell can contain multiple child elements, they can span over multiple rows and columns, and even overlap each other. The GridLayout has one column and one row by default. To add additional columns and rows, you have to specify column definition items (separated by commas) to the `columns` property and row definition items (separated by commas) to the `rows` property of the GridLayout. The width of a column and the height of a row can be specified as an absolute amount of pixels, as a percentage of the available space or automatically:
 - **Absolute**: Fixed size of pixels.
 - **Star (\*)**: Takes as much space as available (after filling all auto and fixed sized columns), proportionally divided over all star-sized columns. So 3*/7* means the same as 30*/70*.
@@ -276,7 +276,7 @@ Label 3 has a fixed width of 150 pixels. Label 1 is given more space than it act
 
 ![GridLayout](../img/modules/layouts/grid-layout5.png "GridLayout")
 
-## [StackLayout]({{site.baseurl}}/cookbook/ui/layouts/stack-layout)
+## [StackLayout](/cookbook/ui/layouts/stack-layout)
 The StackLayout stacks its child elements below or beside each other, depending on its orientation. It is very useful to create lists.
 
 ### StackLayout Properties
@@ -363,7 +363,7 @@ None.
 
 ![StackLayout](../img/modules/layouts/stack-layout4.png "StackLayout")
 
-## [WrapLayout]({{site.baseurl}}/cookbook/ui/layouts/wrap-layout)
+## [WrapLayout](/cookbook/ui/layouts/wrap-layout)
 The WrapLayout is similar to the StackLayout, but it does not just stack all child elements to one column/row, it wraps them to new columns/rows if no space is left. The WrapLayout is often used with items of the same size, but this is not a requirement.
 ### WrapLayout Properties
 | Property    | Description |

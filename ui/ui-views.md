@@ -8,7 +8,7 @@ previous_url: /ui-views
 
 # User Interface Widgets
 
-NativeScript ships with a set of user interface [`views`]({{site.baseurl}}/ApiReference/ui/core/view/README.md) (also known as widgets) which you can use to build the user interface of a mobile application. Most of these views wrap the corresponding native view for each platform while providing a common API for working with it. For example, the `Button` view renders an [`android.widget.Button`](http://developer.android.com/reference/android/widget/Button.html) on Android and [`UIButton`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/) on iOS.
+NativeScript ships with a set of user interface [`views`](/ApiReference/ui/core/view/README.md) (also known as widgets) which you can use to build the user interface of a mobile application. Most of these views wrap the corresponding native view for each platform while providing a common API for working with it. For example, the `Button` view renders an [`android.widget.Button`](http://developer.android.com/reference/android/widget/Button.html) on Android and [`UIButton`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/) on iOS.
 
 * [Button](#button)
 * [Label](#label)
@@ -41,7 +41,7 @@ Defining the layout of the application is also an important part of the applicat
 
 ## Button
 
-The [Button]({{site.baseurl}}/cookbook/ui/button) widget provides a standard button widget that reacts to a `tap` event.
+The [Button](/cookbook/ui/button) widget provides a standard button widget that reacts to a `tap` event.
 
 ![button android](../img/gallery/android/buttonPage.png "button android")![button ios](../img/gallery/ios/buttonPage.png "button ios")
 
@@ -53,7 +53,7 @@ The [Button]({{site.baseurl}}/cookbook/ui/button) widget provides a standard but
 
 ## Label
 
-The [Label]({{site.baseurl}}/cookbook/ui/label) widget provides a text label that shows read-only text.
+The [Label](/cookbook/ui/label) widget provides a text label that shows read-only text.
 
 ![label android](../img/gallery/android/labelPage.png "label android")![label ios](../img/gallery/ios/labelPage.png "label ios")
 
@@ -65,7 +65,7 @@ The [Label]({{site.baseurl}}/cookbook/ui/label) widget provides a text label tha
 
 ## TextField
 
-The [TextField]({{site.baseurl}}/cookbook/ui/text-field) widget provides an editable **single-line** text field.
+The [TextField](/cookbook/ui/text-field) widget provides an editable **single-line** text field.
 
 ![text-field android](../img/gallery/android/textFieldPage.png "text-field android")![text-field ios](../img/gallery/ios/textFieldPage.png "text-field ios")
 
@@ -77,7 +77,7 @@ The [TextField]({{site.baseurl}}/cookbook/ui/text-field) widget provides an edit
 
 ## TextView
 
-The [TextView]({{site.baseurl}}/cookbook/ui/text-view) widget provides an editable **multi-line** text view. 
+The [TextView](/cookbook/ui/text-view) widget provides an editable **multi-line** text view. 
 
 You can use it to show multi-line text and implement text editing.
 
@@ -91,7 +91,7 @@ You can use it to show multi-line text and implement text editing.
 
 ## SearchBar
 
-The [SearchBar]({{site.baseurl}}/cookbook/ui/search-bar) widget provides a user interface for entering search queries and submitting requests to the search provider.
+The [SearchBar](/cookbook/ui/search-bar) widget provides a user interface for entering search queries and submitting requests to the search provider.
 
 ![search-bar android](../img/gallery/android/searchBarPage.png "search-bar android")![search-bar ios](../img/gallery/ios/searchBarPage.png "search-bar ios")
 
@@ -103,7 +103,7 @@ The [SearchBar]({{site.baseurl}}/cookbook/ui/search-bar) widget provides a user 
 
 ## Switch
 
-The [Switch]({{site.baseurl}}/cookbook/ui/switch) widget provides a two-state toggle switch from which you can choose between two options.
+The [Switch](/cookbook/ui/switch) widget provides a two-state toggle switch from which you can choose between two options.
 
 ![switch android](../img/gallery/android/switchPage.png "switch android")![switch ios](../img/gallery/ios/switchPage.png "switch ios")
 
@@ -115,7 +115,7 @@ The [Switch]({{site.baseurl}}/cookbook/ui/switch) widget provides a two-state to
 
 ## Slider
 
-The [Slider]({{site.baseurl}}/cookbook/ui/slider) widget provides a slider that you can use to pick a numeric value within a configurable range.
+The [Slider](/cookbook/ui/slider) widget provides a slider that you can use to pick a numeric value within a configurable range.
 
 ![slider android](../img/gallery/android/sliderPage.png "slider android")![slider ios](../img/gallery/ios/sliderPage.png "slider ios")
 
@@ -127,7 +127,7 @@ The [Slider]({{site.baseurl}}/cookbook/ui/slider) widget provides a slider that 
 
 ## Progress
 
-The [Progress]({{site.baseurl}}/cookbook/ui/progress) widget is a visual bar indicator of a progress in a operation. It shows a bar representing the current progress of the operation.
+The [Progress](/cookbook/ui/progress) widget is a visual bar indicator of a progress in a operation. It shows a bar representing the current progress of the operation.
 
 ![progress android](../img/gallery/android/progressPage.png "progress android")![progress ios](../img/gallery/ios/progressPage.png "progress ios")
 
@@ -139,7 +139,7 @@ The [Progress]({{site.baseurl}}/cookbook/ui/progress) widget is a visual bar ind
 
 ## ActivityIndicator
 
-The [ActivityIndicator]({{site.baseurl}}/cookbook/ui/activity-indicator) widget is a visual spinner indicator which shows that a task is in progress.
+The [ActivityIndicator](/cookbook/ui/activity-indicator) widget is a visual spinner indicator which shows that a task is in progress.
 
 ![activity-indicator android](../img/gallery/android/activityIndicatorPage.png "activity-indicator android")![activity-indicator ios](../img/gallery/ios/activityIndicatorPage.png "activity-indicator ios")
 
@@ -151,7 +151,7 @@ The [ActivityIndicator]({{site.baseurl}}/cookbook/ui/activity-indicator) widget 
 
 ## Image
 
-The [Image]({{site.baseurl}}/cookbook/ui/image) widget shows an image. You can load the image from an [`ImageSource`]({{site.baseurl}}/ApiReference/image-source/ImageSource.md) or from a URL.
+The [Image](/cookbook/ui/image) widget shows an image. You can load the image from an [`ImageSource`](/ApiReference/image-source/ImageSource.md) or from a URL.
 
 ![image android](../img/gallery/android/imagePage.png "image android")![image ios](../img/gallery/ios/imagePage.png "image ios")
 
@@ -163,7 +163,7 @@ The [Image]({{site.baseurl}}/cookbook/ui/image) widget shows an image. You can l
 
 ## ListView
 
-The [ListView]({{site.baseurl}}/cookbook/ui/list-view) shows items in a vertically scrolling list. You can set an [`itemTemplate`]{{site.baseurl}}/(ApiReference/ui/list-view/knownTemplates/README.md) to specify how each item in the list should be displayed.
+The [ListView](/cookbook/ui/list-view) shows items in a vertically scrolling list. You can set an [`itemTemplate`]/(ApiReference/ui/list-view/knownTemplates/README.md) to specify how each item in the list should be displayed.
 
 ![list-view android](../img/gallery/android/listViewPage.png "list-view android")![list-view ios](../img/gallery/ios/listViewPage.png "list-view ios")
 
@@ -175,7 +175,7 @@ The [ListView]({{site.baseurl}}/cookbook/ui/list-view) shows items in a vertical
 
 ## HtmlView
 
-The [HtmlView]({{site.baseurl}}/cookbook/ui/html-view) represents a view with HTML content. Use this component instead of WebView when you want to show just static HTML content.
+The [HtmlView](/cookbook/ui/html-view) represents a view with HTML content. Use this component instead of WebView when you want to show just static HTML content.
 
 ![html-view android](../img/gallery/android/htmlViewPage.png "html-view android")![html-view ios](../img/gallery/ios/htmlViewPage.png "html-view ios")
 
@@ -187,7 +187,7 @@ The [HtmlView]({{site.baseurl}}/cookbook/ui/html-view) represents a view with HT
 
 ## WebView
 
-The [WebView]({{site.baseurl}}/cookbook/ui/web-view) shows web pages. You can load a page from a URL or by navigating back and forward.
+The [WebView](/cookbook/ui/web-view) shows web pages. You can load a page from a URL or by navigating back and forward.
 
 ![web-view android](../img/gallery/android/webViewPage.png "web-view android")![web-view ios](../img/gallery/ios/webViewPage.png "web-view ios")
 
@@ -199,7 +199,7 @@ The [WebView]({{site.baseurl}}/cookbook/ui/web-view) shows web pages. You can lo
 
 ## TabView
 
-With the [TabView]({{site.baseurl}}/cookbook/ui/tab-view) control, you can implement tab navigation.
+With the [TabView](/cookbook/ui/tab-view) control, you can implement tab navigation.
 
 ![tab-view android](../img/gallery/android/tabViewPage.png "tab-view android")![tab-view ios](../img/gallery/ios/tabViewPage.png "tab-view ios")
 
@@ -211,7 +211,7 @@ With the [TabView]({{site.baseurl}}/cookbook/ui/tab-view) control, you can imple
 
 ## SegmentedBar
 
-With the [SegmentedBar]({{site.baseurl}}/cookbook/ui/segmented-bar) control, you can implement discrete selection.
+With the [SegmentedBar](/cookbook/ui/segmented-bar) control, you can implement discrete selection.
 
 ![segmented-bar android](../img/gallery/android/segmentedBarPage.png "segmented-bar android")![segmented-bar ios](../img/gallery/ios/segmentedBarPage.png "segmented-bar ios")
 
@@ -223,7 +223,7 @@ With the [SegmentedBar]({{site.baseurl}}/cookbook/ui/segmented-bar) control, you
 
 ## DatePicker
 
-With the [DatePicker]({{site.baseurl}}/cookbook/ui/date-picker) control, you can pick a date.
+With the [DatePicker](/cookbook/ui/date-picker) control, you can pick a date.
 
 ![date-picker android](../img/gallery/android/datePickerPage.png "date-picker android")![date-picker ios](../img/gallery/ios/datePickerPage.png "date-picker ios")
 
@@ -235,7 +235,7 @@ With the [DatePicker]({{site.baseurl}}/cookbook/ui/date-picker) control, you can
 
 ## TimePicker
 
-With the [TimePicker]({{site.baseurl}}/cookbook/ui/time-picker) widget, you can pick a time.
+With the [TimePicker](/cookbook/ui/time-picker) widget, you can pick a time.
 
 ![time-picker android](../img/gallery/android/timePickerPage.png "time-picker android")![time-picker ios](../img/gallery/ios/timePickerPage.png "time-picker ios")
 
@@ -247,7 +247,7 @@ With the [TimePicker]({{site.baseurl}}/cookbook/ui/time-picker) widget, you can 
 
 ## ListPicker
 
-With the [ListPicker]({{site.baseurl}}/cookbook/ui/list-picker) widget, you can pick a value from a list.
+With the [ListPicker](/cookbook/ui/list-picker) widget, you can pick a value from a list.
 
 ![list-picker android](../img/gallery/android/listPickerPage.png "list-picker android")![list-picker ios](../img/gallery/ios/listPickerPage.png "list-picker ios")
 
