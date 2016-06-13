@@ -137,9 +137,16 @@ page.addCssFile(cssFileName);
 
 Similarly to HTML, CSS can be defined inline for a UI view in the XML markup:
 
+{% nativescript %}
 ```XML
-<Button text="inline style" style="background-color: green;"/>
+<Button text="inline style" style="background-color: green;" />
 ```
+{% endnativescript %}
+{% angular %}
+```XML
+<Button text="inline style" style="background-color: green;"></Button>
+```
+{% endangular %}
 
 ## Supported selectors
 
@@ -164,7 +171,7 @@ button { background-color: gray }
 [Class selectors](http://www.w3schools.com/cssref/sel_class.asp) select all views with a given class.
 The class is set using the `cssClass` property of the view.
 
-
+{% nativescript %}
 ```CSS
 .title { font-size: 32 }
 ```
@@ -179,12 +186,29 @@ label.cssClass = "title"
 ```XML
 <Label cssClass="title" />
 ```
+{% endnativescript %}
+{% angular %}
+```CSS
+.title { font-size: 32 }
+```
+```JavaScript
+var label = new labelModule.Label();
+label.cssClass = "title"
+```
+```TypeScript
+var label = new labelModule.Label();
+label.cssClass = "title"
+```
+```XML
+<Label cssClass="title" ></Label>
+```
+{% endangular %}
 
 ### ID selector
 [Id selectors](http://www.w3schools.com/cssref/sel_id.asp) select all views with a given id.
 The id is set using the `id` property of the view.
 
-
+{% nativescript %}
 ```CSS
 #login-button { background-color: blue }
 ```
@@ -199,6 +223,23 @@ btn.id = "login-button"
 ```XML
 <Button id="login-button" />
 ```
+{% endnativescript %}
+{% angular %}
+```CSS
+#login-button { background-color: blue }
+```
+```JavaScript
+var btn = new buttonModule.Button();
+btn.id = "login-button"
+```
+```TypeScript
+var btn = new buttonModule.Button();
+btn.id = "login-button"
+```
+```XML
+<Button id="login-button" ></Button>
+```
+{% endangular %}
 
 ### Hierachical selector (CSS combinators)
 
@@ -206,6 +247,7 @@ A CSS selector could contain more than one simple selector, and between selector
 
 * (space) - Descendant selector. For example, the following code will select all buttons inside StackLayouts (no matter) at which level.
 
+{% nativescript %}
 ```CSS
 StackLayout Button { background-color: blue; }
 ```
@@ -216,6 +258,19 @@ StackLayout Button { background-color: blue; }
     </WrapLayout>
 </StackLayout>
 ```
+{% endnativescript %}
+{% angular %}
+```CSS
+StackLayout Button { background-color: blue; }
+```
+```XML
+<StackLayout>
+    <WrapLayout>
+        <Button id="login-button" testAttr='flower' ></Button>
+    </WrapLayout>
+</StackLayout>
+```
+{% endangular %}
 
 * (>) - A direct child selector. Using the previous example, if the CSS is changed to:
 
@@ -227,12 +282,22 @@ The `background-color` rule will not be applied. In order to apply the selector,
 
 ### Attribute selector
 
+{% nativescript %}
 ```CSS
 button[testAttr]{ background-color: blue; }
 ```
 ```XML
 <Button testAttr="flower" />
 ```
+{% endnativescript %}
+{% angular %}
+```CSS
+button[testAttr]{ background-color: blue; }
+```
+```XML
+<Button testAttr="flower" ></Button>
+```
+{% endangular %}
 
 This selector will select all buttons that have the attribute `testAttr` with some value.
 
@@ -247,6 +312,7 @@ Also, some more advanced scenarios are supported:
 
 Attribute selectors could be used alone or could be combined with all type of CSS selectors. 
 
+{% nativescript %}
 ```CSS
 #login-button[testAttr='flower'] { background-color: blue; }
 [testAttr] {color: white;}
@@ -255,6 +321,18 @@ Attribute selectors could be used alone or could be combined with all type of CS
 <Button id="login-button" testAttr='flower' />
 <Label testAttr="some value" />
 ```
+{% endnativescript %}
+{% angular %}
+```CSS
+#login-button[testAttr='flower'] { background-color: blue; }
+[testAttr] {color: white;}
+```
+```XML
+<Button id="login-button" testAttr='flower' ></Button>
+<Label testAttr="some value" ></Label>
+```
+{% endangular %}
+
 
 ## Supported CSS properties
 
