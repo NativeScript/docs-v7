@@ -23,10 +23,26 @@ NativeScript doesn’t require Angular, but it’s even better when you use it. 
 
 Ready to get started developing with NativeScript? We offer a set of comprehensive tutorials that walk you through installing NativeScript, and building a real-world iOS and Android app from scratch.
 
-<div>
-  <a href="http://docs.nativescript.org/angular/tutorial/ng-chapter-0" class="Btn">Get Started with TypeScript & Angular</a>
-  <a href="http://docs.nativescript.org/tutorial/chapter-0" class="Btn" style="margin: 1em 0;">Get Started with JavaScript</a>
+<div id="start-button-container">
+  <a href="http://docs.nativescript.org/angular/tutorial/ng-chapter-0" class="Btn" id="ng-start-button">Get Started with TypeScript & Angular</a>
+  <a href="http://docs.nativescript.org/tutorial/chapter-0" class="Btn" id="js-start-button">Get Started with JavaScript</a>
 </div>
+
+<script>
+  // Quick script to randomize the tutorial button order
+  var container = document.getElementById("start-button-container");
+  var ngButton = document.getElementById("ng-start-button");
+  var jsButton = document.getElementById("js-start-button");
+
+  if (Math.floor(Math.random() * 2) == 0) {
+    container.insertBefore(jsButton, ngButton);
+    ngButton.style.marginTop = "1em";
+    ngButton.style.marginButton = "1em";
+  } else {
+    jsButton.style.marginTop = "1em";
+    jsButton.style.marginButton = "1em";
+  }
+</script>
 
 ## Join the NativeScript Community
 
