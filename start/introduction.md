@@ -37,10 +37,10 @@ Ready to get started developing with NativeScript? We offer a set of comprehensi
   if (Math.floor(Math.random() * 2) == 0) {
     container.insertBefore(jsButton, ngButton);
     ngButton.style.marginTop = "1em";
-    ngButton.style.marginButton = "1em";
+    ngButton.style.marginBottom = "1em";
   } else {
     jsButton.style.marginTop = "1em";
-    jsButton.style.marginButton = "1em";
+    jsButton.style.marginBottom = "1em";
   }
 </script>
 
