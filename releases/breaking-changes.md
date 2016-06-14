@@ -61,7 +61,7 @@ You cannot create NativeScript plugins with Android native code using Eclipse pr
 
 ### 1.2.0 (2015, July 24)
 
-There are changes in how the **Android ActionBar/IOS NavigationBar** is configured. UI is now defined with `page.actionBar` instead of `page.optionsMenu`. [See an example...](http://docs.nativescript.org/cookbook/ui/action-bar)
+There are changes in how the **Android ActionBar/IOS NavigationBar** is configured. UI is now defined with `page.actionBar` instead of `page.optionsMenu`. [See an example...]({%ns_cookbook ui/action-bar%})
 
 ### 0.10.0 (2015, April 17)
 
