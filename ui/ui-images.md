@@ -10,6 +10,7 @@ previous_url: /ui-images
 In this article, we will look at the different ways to show images in a NativeScript application.
 Images are added to an application either declaratively (XML) or with code (JS).
 
+{% nativescript %}
 ```XML
 <Image src="~/logo.png" />
 ```
@@ -18,6 +19,17 @@ var image = new imageModule.Image();
 image.src = "~/logo.png";
 dockLayout.addChild(image);
 ```
+{% endnativescript %}
+{% angular %}
+```XML
+<Image src="~/logo.png" ></Image>
+```
+```JavaScript
+var image = new imageModule.Image();
+image.src = "~/logo.png";
+dockLayout.addChild(image);
+```
+{% endangular %}
 
 The prefix of the `src` value specifies where the image will be loaded form. The possible options are:
 
@@ -38,18 +50,32 @@ You can also use the [image-source API](/api-reference/classes/_image_source_.im
 ## Load images from URL
 Web images have an `http://` or `https://` prefix. When such an image is loaded, an asynchronous http request will be sent and the image will be shown if the request is successful.
 
+{% nativescript %}
 ```XML
 <Image src="https://www.google.com/images/errors/logo_sm_2.png" />
 ```
+{% endnativescript %}
+{% angular %}
+```XML
+<Image src="https://www.google.com/images/errors/logo_sm_2.png" ></Image>
+```
+{% endangular %}
 
 You can manually create an [ImageSource instance from URL]({%ns_cookbook image-source#load-image-from-url%}).
 
 ## Load images from local file system
 Using the `~/` prefix, you can load images relative to the `App` folder inside your project.
 
+{% nativescript %}
 ```XML
 <Image src="~/images/logo.png" stretch ="none" />
 ```
+{% endnativescript %}
+{% angular %}
+```XML
+<Image src="~/images/logo.png" stretch ="none" ></Image>
+```
+{% endangular %}
 
 You can manually create an [ImageSource instance from local file]({%ns_cookbook image-source#load-image-from-a-local-file%}).
 
@@ -58,9 +84,16 @@ You can manually create an [ImageSource instance from local file]({%ns_cookbook 
 ## Load images from a resource
 Using the `res://` prefix you can load a resource image. This is the suggested approach, as it uses the native methods for loading the best image for the current device screen density.
 
+{% nativescript %}
 ```XML
-<Image src="res://logo" stretch ="none" />
+<Image src="res://logo" stretch ="none" /> 
 ```
+{% endnativescript %}
+{% angular %}
+```XML
+<Image src="res://logo" stretch ="none" ></Image> 
+```
+{% endangular %}
 
 You can manually create an [ImageSource instance from resource]({%ns_cookbook image-source#load-image-using-resource-name%}).
 

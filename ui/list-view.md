@@ -56,11 +56,11 @@ export class ListTest {
 ```CSS
 // list-test.css
 .odd {
-	background-color: "red";
+	background-color: red;
 }
 
 .even {
-	background-color: "blue";
+	background-color: blue;
 }
 ```
 
