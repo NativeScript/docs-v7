@@ -29,7 +29,7 @@ This page contains a list of all system requirements needed to build and run Nat
     * JDK 8 or a later stable official release
     * Android SDK 22 or a later stable official release
     * Local Maven repository for Support Libraries
-    * Android SDK Build-tools 23.0.0 or a later stable official release
+    * Android SDK Build-tools 23.0.3 or a later stable official release
     * (Optional) Genymotion to expand your testing options
 
 You must also have the following two environment variables setup for Android development:
@@ -91,9 +91,9 @@ Complete the following steps to setup NativeScript on your OS X development mach
             </code></pre>
             For example: `ANDROID_HOME=/usr/local/Cellar/android-sdk/24/`
             <blockquote><b>NOTE</b>: This is the directory that contains the <code>tools</code> and <code>platform-tools</code> directories.</blockquote>
-        1. Select all packages for the Android 22 SDK, Android SDK Build-tools 23.0.0 or later, Local Maven repository for Support Libraries (under Extras) and any other SDKs that you want to install and click **Install**. You can alternatively use the following command, which will install all required tools:
+        1. Select all packages for the Android 22 SDK, Android SDK Build-tools 23.0.3 or later, Local Maven repository for Support Libraries (under Extras) and any other SDKs that you want to install and click **Install**. You can alternatively use the following command, which will install all required tools:
 
-           <pre class="add-copy-button"><code class="language-terminal">android update sdk --filter tools,platform-tools,android-23,build-tools-23.0.2,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
+           <pre class="add-copy-button"><code class="language-terminal">android update sdk --filter tools,platform-tools,android-23,build-tools-23.0.3,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
            </code></pre>
 
 1. (Optional) Install Genymotion.<br/>Genymotion is a third-party native emulator.
