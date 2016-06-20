@@ -1,1 +1,6 @@
 .DS_Store
+
+# ignore nativescript generated cookbook content
+cookbook/**/*.md
+# unignore angular "local" cookbook articles, having *-ng.md file names
+!cookbook/**/*-ng.md
