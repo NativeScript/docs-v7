@@ -1,39 +1,51 @@
 # Changing Status Bar Style in iOS
  
-NativeScript allows you to build multiplatform application using its module without knowing specifics of the different platforms.
-However sometimes you should use specific `Native` code to access some platform specific functionality e.g. changing the style of the `UIStatusBar` in iOS.
-There are two options to do this in NativeScript. The first one is to change the style of the whole `NavigationBar` or to change only `StatusBarStyle` using `Info.plist`
- 
-## Changing StatusBarStyle With Help Of NavigationBar barStyle Property
- 
-NativeScript `ActionBar` is common abstraction over iOS `UINavigationBar`. In regard to this you could change the style of the `NavigationBar`, which will change and the style of the `StatusBar` automatically.
-In iOS there are two possible styles, which you could set to the NavigationBar: `UIBarStyleDefault` and `UIBarStyleBlack`. To style StatusBar you could follow the described steps below.
-1. Adding ActionBar To The Project
+NativeScript allows you to build multiplatform applications by exposing a rich common API. You don't need to know specifics of the different platforms. However, every platform has its own features. In those cases when you need to fine tune your application and make it look more native, NativeScrpt gives you full control and access to the native API and platform specific functionality. One such scenario is when changing the status bar style in iOS. 
 
-**XML**
+There are two options to change the status bar style for iOS applications in NativeScript.
 
-```
+- By changing the `NavigationBar` style. 
+- By using the `Info.plist` file.
+ 
+## Changing Status Bar Style With Help Of NavigationBar barStyle Property
+ 
+This method is easier, but it implies using an `ActionBar`. NativeScript `ActionBar` is common abstraction over iOS `UINavigationBar` and Android's `ActionBar`. It is a bar typically located at the top of the screen and provides title and navigation control in your application.
+
+- Use page's XML file to activate `ActionBar` in your application:
+
+``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="loaded">
   <Page.actionBar>
-     <ActionBar title="Sample title" backgroundColor="green"></ActionBar>
+     <ActionBar title="Sample title"></ActionBar>
   </Page.actionBar>
 </Page>
-
 ```
+
 The result of adding this sample code should be this:
 
 ![adding-action-bar](../img/change-status-bar-style-ios/status-bar-style-via-actionbar.png "adding-action-bar")
 
-By default NavigationBar style in iOS is `UIBarStyleDefault`, which means that the letters will be in black and background color - white.
+In iOS there are two possible styles, which you could set to the `UINavigationBar`: `UIBarStyleDefault` and `UIBarStyleBlack`. Changing `UINavigationBar` style will change the style of the status bar automatically. By default `UINavigationBar` style in iOS is `UIBarStyleDefault`, which means that the letters will be in black and background color - white. 
 
-2. Changing The Style Of NavigationBar 
+- Changing The Style Of UINavigationBar 
 
-**TypeScript** 
+You should use the `frame` module to access the native instance of `UINavigationBar`. Then you can use its `barStyle` property to change its style to `UIBarStyleBlack`.
+
+``` JavaScript
+var frame = require("ui/frame");
+function loaded(args) {
+    var page = args.object;
+    if (page.ios) {
+        var navigationBar = frame.topmost().ios.controller.navigationBar;
+        navigationBar.barStyle = UIBarStyle.UIBarStyleBlack;
+    }
+}
+exports.loaded = loaded;
 ```
+``` TypeScript
 import { EventData } from "data/observable";
 import { Page } from "ui/page";
 import { topmost } from "ui/frame";
-
 
 export function loaded(args: EventData){
     var page:Page = <Page> args.object;
@@ -44,48 +56,23 @@ export function loaded(args: EventData){
 }
 ```
 
-**JavaScript**
-```
-var frame_1 = require("ui/frame");
-function loaded(args) {
-    var page = args.object;
-    if (page.ios) {
-        var navigationBar = frame_1.topmost().ios.controller.navigationBar;
-        navigationBar.barStyle = UIBarStyle.UIBarStyleBlack;
-    }
-}
-exports.loaded = loaded;
-```
-
-In the code above, we are accessing iOS NavigationBar component with the help of NativeScript  `Frame` module. With its help we are accessing `barstyle` property of UINavigationBar and then changing 
-the main style to `UIBarStyleBlack`.
-
 The result:
 
 ![adding-action-bar-black-style](../img/change-status-bar-style-ios/status-bar-style-via-actionbar-black-style.png "adding-action-bar-black-style")
 
-As you can see the style of `NavigationBar` and `StatusBar` have been changed with gray background color and white text and icons.
+As you can see the style of `UINavigationBar` and status bar have been changed with gray background color and white text and icons.
 
+It is easy to change the background color of `UINavigationBar` and the status bar respectively. To do this you should set `backgroundColor` property of the `ActionBar`. This can be done in XML or with CSS.
 
-3. Changing background color(Optional)
-
-
-Changing the background color of `NavigationBar` and `StatusBar` is really easy. To do this you should setup `backgroundColor` property of NativeScript `ActionBar`. This has been demonstrate in examplegiven below.
  
- 
-**XML**
-```
+``` XML
 <Page.actionBar>
      <ActionBar title="Sample title" backgroundColor="green"></ActionBar>
 </Page.actionBar>
-```
- 
-Note that you could setup this property and in your `css` file
- 
-**CSS**
- 
-```
-ActionBar{
+``` 
+``` CSS
+ActionBar 
+{
     background-color: green;
 }
 ```
@@ -94,40 +81,30 @@ The result is:
  
 ![adding-action-bar-set-backgroundcolor](../img/change-status-bar-style-ios/status-bar-style-via-actionbar-set-backgroundcolor.png "adding-action-bar-set-backgroundcolor")
  
+## Changing Status Bar Style Only
  
-## Changing StatusBar Style Only
- 
- 
-In iOS StatusBar has two style types: the default on - `UIStatusBarStyleDefault` and `UIStatusBarStyleLightContent`. Little more tricky part is to change only the style of the `StatusBar`.
-If we create clean project our application should look like this, StatusBar with default style: icons with black color and white background color.
+You should use this option in scenarios when you don't want to use `ActionBar`. In iOS the status bar has two style types: the default one - `UIStatusBarStyleDefault` and `UIStatusBarStyleLightContent`. The default style looks like this: icons with black color and white background color.
 
 ![clean-nativescript-project](../img/change-status-bar-style-ios/status-bar-style-info.plist-startup.png "clean-nativescript-project")
 
-
-1. Changing the `UIStatusBar` style via Info.plist.
- 
-To make this change for StatusBar style we have to add several properties in our `Info.plist`. 
- 
+Use application's Info.plist file to change status bar style:
+  
 * go to `app/App_Resources/iOS` folder
  
 * open `Info.plist` file 
  
 * add below shown lines in your `Info.plist` before closing `</dict>` tag
 
-
-```
+``` XML
 <key>UIStatusBarStyle</key>
 <string>UIStatusBarStyleLightContent</string>
 <key>UIViewControllerBasedStatusBarAppearance</key>
 <false/>
 ```
 
-
 In a result your `Info.plist` should look like that:
 
-**Info.plist**
-
-```
+``` XML
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
     <plist version="1.0">
@@ -200,20 +177,12 @@ In a result your `Info.plist` should look like that:
     </plist>
 ```
 
-The result: 
-
 ![changing-status-bar-style](../img/change-status-bar-style-ios/status-bar-style-info.plist-startup-style-change.png "changing-status-bar-style")
 
-Note: Now on the place of the StatusBar we can see one white line. That's happened, because we changed the color of the icon to white, however the background color is the same as those of the icon. To fix this
-we should now setup page `backgroundColor` property.
- 
-2. Change Background Color Of The Page
- 
-We can do that through `XML` or `CSS`
- 
-**XML**
-```
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" backgroundColor="red">
+> Now on the place of the status bar we can see one white line. That's happened, because we changed the color of the icon to white, however the background color is the same as those of the icon. To fix this we should set page `backgroundColor` property. You should set also the `backgroundSpanUnderStatusBar` property to `true`. This will span the background color under the status bar:
+  
+``` XML
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" backgroundSpanUnderStatusBar="true" backgroundColor="red">
   <StackLayout>
     <Label text="Tap the button" class="title"/>
     <Button text="TAP" tap="{{ onTap }}" />
@@ -222,39 +191,8 @@ We can do that through `XML` or `CSS`
 </Page>
 ```
  
-**CSS**
-```
-Page{
-    background-color:red;
-}
-```
- 
-In a result our application should look like the image below:
- 
-![changing-status-bar-style-background-color](../img/change-status-bar-style-ios/status-bar-style-info.plist-startup-background-color.png "changing-status-bar-style-background-color")
- 
-Even though we have changed the page background color, the white line above still have been seen.
- 
-3. Setting up Background Color To Cover Whole Window
- 
-In NativeScript we have page property `backgroundSpanUnderStatusBar`, which will allow us to control, when the background color is span under the StatusBar in iOS. The default value of `backgroundSpanUnderStatusBar`
-is false and to allow background-color to cover StatusBar, we should change this property to `true`.
- 
-**XML**
-```
-<Page xmlns="http://schemas.nativescript.org/tns.xsd"  backgroundSpanUnderStatusBar="true" backgroundColor="red">
-  <StackLayout>
-    <Label text="Tap the button" class="title"/>
-    <Button text="TAP" tap="{{ onTap }}" />
-    <Label text="{{ message }}" class="message" textWrap="true"/>
-  </StackLayout>
-</Page>
-```
- 
-At the end the result is:
- 
- 
+The result is:
+  
 ![changing-background-span-under-statusBar-to-true](../img/change-status-bar-style-ios/status-bar-style-info.plist-startup-backgroundSpan.png "changing-background-span-under-statusBar-to-true")
  
- 
-Note: The sample projects for both cases are available in those GitHub repositories: [StyleStatusBariOSviaActionBar](https://github.com/tsonevn/StyleStatusBariOSviaActionBar.git) and [StyleStatusBariOSviaInfo.plist](https://github.com/tsonevn/StyleStatusBariOSviaInfo.plist.git)
+> The sample projects for both cases are available in those GitHub repositories: [StyleStatusBariOSviaActionBar](https://github.com/tsonevn/StyleStatusBariOSviaActionBar.git) and [StyleStatusBariOSviaInfo.plist](https://github.com/tsonevn/StyleStatusBariOSviaInfo.plist.git)
