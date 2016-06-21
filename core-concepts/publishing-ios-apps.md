@@ -104,7 +104,7 @@ The launch files are not a splash screen; instead, they are a way for the OS to 
 
 > **QUOTE:** If you think that following these guidelines will result in a plain, boring launch image, you’re right. Remember, the launch image doesn’t provide you with an opportunity for artistic expression. It’s solely intended to enhance the user’s perception of your app as quick to launch and immediately ready for use.
 
-*App Store* submissions will be rejected if certain launch files are not present. Make sure that when new iOS versions and devices are released that you update your *launch files* and accommodate the upcomming form factors.
+*App Store* submissions will be rejected if certain launch files are not present. Make sure that when new iOS versions and devices are released that you update your *launch files* and accommodate the upcoming form factors.
 
 If a customer runs your app on a device with a high resolution screen and your app is missing the launch screen file for that device, then iOS will render your app using a smaller resolution, degrading its quality:
  - Your app may be upscaled, and blurred
@@ -163,7 +163,7 @@ A few pitfalls are:
 
 This *production certificates* is used to sign the application binary when it is prepared for submission.
 Usually when an app is built for a device, its IPA file is signed with the development certificate. 
-> **Note** You can read more about IPA (file extention) [here](https://en.wikipedia.org/wiki/.ipa_(file_extension))
+> **Note** You can read more about IPA (file extension) [here](https://en.wikipedia.org/wiki/.ipa_(file_extension))
 Later, the tooling resigns the IPA with the *production certificate* and appends the distribution provisioning profile when submitting to *iTunes Connect*.
 
 A few pitfalls are:
@@ -220,7 +220,7 @@ These are similar to the *development provisioning profiles* because they bind:
 
 *Distribution provisioning profiles* are created at [https://developer.apple.com/account/ios/profile/profileList.action?type=production](https://developer.apple.com/account/ios/profile/profileList.action?type=production).
 
-For *App Store* submissions, you must create an *App Store Distribution Provisioning Profile*. Once you create it, download it and double-click it on your Mac so it gets registerd with Xcode.
+For *App Store* submissions, you must create an *App Store Distribution Provisioning Profile*. Once you create it, download it and double-click it on your Mac so it gets registered with Xcode.
 
 *Distribution provisioning profiles* invalidate rarely since they refer a single *Distribution Certificate*.
 
@@ -238,7 +238,7 @@ There you can check the status and edit existing apps or create a new app.
 Click the '+' button at the top left corner. The 'New App' dialog should appear. There you have to fill the public *App Store* name of your app and primary language.
 
 Also, you have to set *Bundle ID*, which must match the *Bundle ID* referred in ['1.1. Bundle ID'](#bundle-id).
-If the drop-down does not contain a suitable match, you are probably missing an *App ID* refered at ['2.4. Identifiers - App IDs'](#identifiers-app-ids).
+If the drop-down does not contain a suitable match, you are probably missing an *App ID* referred at ['2.4. Identifiers - App IDs'](#identifiers-app-ids).
 If there is a wildcard *App ID*, that is a potential match so select it. You will be able to type the suffix, replacing the wildcard in a text box.
 
 At that point you have to fill in the App Information.
@@ -253,7 +253,7 @@ Once you have your app information registered at [https://itunesconnect.apple.co
 There are two main ways to submit an app to *iTunes Connect* — using Xcode or using *Application Loader*.
 
 #### Build versioning
-We have already explained how the *Bundle ID* is set in your project, how the lauch screen (or storyboard) and images are added to your app, and how you can set the display name.
+We have already explained how the *Bundle ID* is set in your project, how the launch screen (or storyboard) and images are added to your app, and how you can set the display name.
 
 Before the build, you need to set two important things: the *Bundle Short Version String* and the *Bundle Version String*.
 

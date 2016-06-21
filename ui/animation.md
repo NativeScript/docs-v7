@@ -36,7 +36,7 @@ view.animate({ backgroundColor: new colorModule.Color("green"), duration: 2000 }
 
 As _Example 2_ shows, you can express the same animation in CSS with the following definition:
 
-__Example2: Changing background color animation with CSS.__
+__Example 2: Changing background color animation with CSS.__
 
 ``` CSS
 @keyframes example {

@@ -128,7 +128,7 @@ __Example 5: Set up properties for several keyframes__
 
 The **animation-delay** property specifies a delay (in seconds) before the animation starts:
 
-__Example 6: Set up a dealy before the animation starts__
+__Example 6: Set up a delay before the animation starts__
 
 ``` CSS
 .view {

@@ -8,7 +8,7 @@ publish: false
 
 # Animation examples
 
-This article contains examples demonstrating how to animate the animatable view propertires. A full list of all animatable properties and a detailed explanation of the animations API is presented [here](./animation.md).
+This article contains examples demonstrating how to animate the animatable view properties. A full list of all animatable properties and a detailed explanation of the animations API is presented [here](./animation.md).
 
 The full source code for all samples is located [here](https://github.com/NativeScript/animation-demo).
 
@@ -342,7 +342,7 @@ animationSet = new animationModule.Animation([{
         curve: view.ios ? UIViewAnimationCurve.UIViewAnimationCurveLinear : new android.view.animation.LinearInterpolator
     }]);
 animationSet.play().catch(function (e) {
-    console.log("Animation stoppped!");
+    console.log("Animation stopped!");
 });
 // Call animationSet.cancel() to stop it;
 ```
@@ -355,7 +355,7 @@ animationSet = new animationModule.Animation([{
     curve: view.ios ? UIViewAnimationCurve.UIViewAnimationCurveLinear : new android.view.animation.LinearInterpolator
 }]);
 animationSet.play().catch((e) => {
-    console.log("Animation stoppped!");
+    console.log("Animation stopped!");
 });
 // Call animationSet.cancel() to stop it;
 ```

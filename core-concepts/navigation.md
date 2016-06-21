@@ -154,7 +154,7 @@ topmost.navigate("details-page");
 
 A more dynamic way of navigating can be done by providing a function that returns the instance of the page to which you want to navigate.
 
-### Example 3:  How to navigate dinamicly to page created via code.
+### Example 3:  How to navigate to a page dynamically created via code.
 ``` JavaScript
 var factoryFunc = function () {
     var label = new labelModule.Label();
@@ -283,7 +283,7 @@ topmost.navigate(navigationEntry);
 
 By default, all navigation will be animated and will use the default transition for the respective platform (UINavigationController transitions for iOS and Fragment transitions for Android). To change the transition type, set the `navigationTransition` property of the [`NavigationEntry`](/api-reference/interfaces/_ui_frame_.navigationentry.html) to an object conforming to the [`NavigationTransition`](/api-reference/interfaces/_ui_frame_.navigationtransition.html) interface.
 
-### Example 9:  Set up transiton property on page navigation.
+### Example 9:  Set up a transition property on page navigation.
 ``` JavaScript
 var navigationEntry = {
     moduleName: "main-page",
@@ -388,7 +388,7 @@ topmost.navigate(navigationEntry);
 ```
 
 ### Custom transitions
-Instead of setting the `name` property to one of the predefined transitions, you can set the `instance` property of the [`NavigationTransition`](/api-reference/interfaces/_ui_frame_.navigationtransition.html) to an instance of a class that inherits from [`Transition`](/api-reference/classes/_ui_transition_.transition.html). You can create your own custom user-defined transition by writing platform-specific code to animate the transition. To do that you need to inherit from the [`Transition`](/api-reference/classes/_ui_transition_.transition.html) class and override one method for each platform. Since there will be platform-specific code, you need to separate your code into two separate files. Here is an example of a custom transition that shrinks the disappearing page while exapnding the appearing page by using a scale affine transform.
+Instead of setting the `name` property to one of the predefined transitions, you can set the `instance` property of the [`NavigationTransition`](/api-reference/interfaces/_ui_frame_.navigationtransition.html) to an instance of a class that inherits from [`Transition`](/api-reference/classes/_ui_transition_.transition.html). You can create your own custom user-defined transition by writing platform-specific code to animate the transition. To do that you need to inherit from the [`Transition`](/api-reference/classes/_ui_transition_.transition.html) class and override one method for each platform. Since there will be platform-specific code, you need to separate your code into two separate files. Here is an example of a custom transition that shrinks the disappearing page while expanding the appearing page by using a scale affine transform.
 
 ### Example 11:  Create your own custom transition.
 `custom-transition.android.js/ts`
@@ -613,7 +613,7 @@ export function onLoginButtonTap() {
 }
 ```
 
-You can find th ecomplete source code [here](https://github.com/NativeScript/NativeScript/tree/master/apps/modal-views-demo).
+You can find the complete source code [here](https://github.com/NativeScript/NativeScript/tree/master/apps/modal-views-demo).
 
 ## Supporting multiple screens
 Mobile applications run on different devices with different screen sizes and form factors. NativeScript provides a way to define different files (.js, .css, .xml, etc.) to be loaded based on the screen's size, platform and orientation of the current device. The approach is somewhat similar to [multi screen support in Android](http://developer.android.com/guide/practices/screens_support.html). There is a set of *qualifiers* that can be added inside the file that will be respected when the file is loaded. Here is how the file should look:

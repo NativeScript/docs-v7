@@ -132,7 +132,7 @@ A new build with a higher *versionCode* is considered an upgrade to builds that 
 The *versionCode* is an integer so you should carefully consider a strategy for versioning.
 
 Both values are stored in `app/App_Resources/Android/AndroidManifest.xml`.
-> **NOTE:** `android:virtionName` is a string value, which is used to represen the application version to the user whereas `android:versionCode`, which is integer value showing version of the application code relative to the other versions.
+> **NOTE:** `android:versionName` is a string value, which is used to represent the application version to the user whereas `android:versionCode`, which is integer value showing version of the application code relative to the other versions.
 You can read more about ["Versioning Your Applications"](http://developer.android.com/tools/publishing/versioning.html).
 
 In the `app/App_Resources/Android/AndroidManifest.xml`, the *versionCode* and *versionName* appear as:
