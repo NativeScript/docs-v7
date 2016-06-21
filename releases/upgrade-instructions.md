@@ -17,7 +17,7 @@ You should first upgrade your `tns` (or `nativescript`) command, so go to a comm
 npm install -g nativescript
 ```
 
-This will automaticly download needed files and will update your computer to the latest version of the NativeScript command line.  
+This will automatically download needed files and will update your computer to the latest version of the NativeScript command line.  
 You can type `tns --version` to verify that the new version is installed.
 
 ### Upgrading the platforms

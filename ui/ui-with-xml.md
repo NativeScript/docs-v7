@@ -459,7 +459,7 @@ export function buttonTap(args: observable.EventData) {
     }
 }
 ```
-#### Dynamicaly loading custom components
+#### Dynamically loading custom components
 Load a pure JavaScript component by finding it in the exports of the module. The component is specified by a path and its name. Then the code from the JavaScript file is executed.
 ```JavaScript
 var builder = require("ui/builder");
@@ -749,7 +749,7 @@ To declare a platform-specific property value or platform-specific component in 
   </android>
 </Page>
 ```
-> You cannot nest plaftorm tags!
+> You cannot nest platform tags!
 
 ## Lowercase-dashed component declaration
 Since the release of NativeScript 1.3, you can declare your UI using lowercase-dashed syntax:

@@ -59,7 +59,7 @@ If you are writing your app in TypeScript, you have fully functional debugging s
 
 Under the hood, starting a particular debug configuration executes the `tns debug` command with various arguments. You can append additional arguments by supplying them in the `tnsArgs` property of a debug configuration definition in `launch.json`. For example, if you add `"tnsArgs": "--log=trace"` in the `Launch on iOS Emulator` configuration, in the background VS Code will execute the `tns debug ios --emulator --no-client --log=trace` command, which will give you more verbose information in the Debug Console.
 
-### Figure 4: Adding additional commmand while debugging.
+### Figure 4: Adding additional command while debugging.
 ![Supply custom arguments to the debug command](../img/visual-studio-code-extension/nativescript-tns-args.png)
 
 ### Turn on diagnostic logging
@@ -79,7 +79,7 @@ The Run command is the equivalent to `tns run` in the NativeScript CLI. It lets 
 
 The extension depends on a globally installed NativeScript CLI. It will show an error message if it can't find it.
 
-### Figure 6: Handle NativeScript's error for extentions builded for specific NativeScript CLI.
+### Figure 6: Handle NativeScript's error for extensions builded for specific NativeScript CLI.
 ![NativeScript not found](../img/visual-studio-code-extension/nativescript-not-found-error-message.png)
 
 > The extension requires a specific NativeScript CLI version and if you have another version installed, you will see a warning message. The extension is likely to work with the unsupported version but it is recommended that you update the NativeScript CLI or the VS Code extension.
