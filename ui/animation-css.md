@@ -279,7 +279,7 @@ view.className = "transparent";
 
 All keyframes defined in CSS can be accessed with code by using the **getKeyframeAnimationWithName** method. This allows further customization of animation properties:
 
-__Example 15: Accesing CSS defined keyframe in the code via **getKeyframeAnimationWithName** method__
+__Example 15: Accessing CSS defined keyframe in the code via **getKeyframeAnimationWithName** method__
 
 ``` JavaScript
 var keyframeAnimation = require("ui/animation/keyframe-animation");
@@ -293,12 +293,12 @@ animation.play(view).then(() => {
 });
 ```
 ``` TypeScript
-import keyframeAnimation = require("ui/animation/keyframe-animation");
+import {KeyframeAnimation} from "ui/animation/keyframe-animation";
 
 let view = page.getViewById<viewModule.View>("view");
 let animationInfo = page.getKeyframeAnimationWithName("bounce");
 animationInfo.duration = 2000;
-let animation = keyframeAnimation.KeyframeAnimation.keyframeAnimationFromInfo(animationInfo);
+let animation = KeyframeAnimation.keyframeAnimationFromInfo(animationInfo);
 animation.play(view).then(() => {
     console.log("Played with code!");
 });
