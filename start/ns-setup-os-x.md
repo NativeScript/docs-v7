@@ -123,9 +123,5 @@ Complete the following steps to setup NativeScript on your OS X development mach
 
 ## What’s Next
 
-* [Return to the JavaScript tutorial](/tutorial/ng-chapter-1#11-install-nativescript-and-configure-your-environment)
-<<<<<<< HEAD
-* [Return to the TypeScript & Angular tutorial](/angular/tutorial/ng-chapter-1#11-install-nativescript-and-configure-your-environment).
-=======
-* [Return to the TypeScript & Angular tutorial](/angular/tutorial/ng-chapter-1#11-install-nativescript-and-configure-your-environment)
->>>>>>> 52f9c66... Installation: Copy buttons! 🍾
+* [Return to the JavaScript tutorial](http://docs.nativescript.org/tutorial/chapter-1#11-install-nativescript-and-configure-your-environment)
+* [Return to the TypeScript & Angular tutorial](http://docs.nativescript.org/angular/tutorial/ng-chapter-1#11-install-nativescript-and-configure-your-environment)
