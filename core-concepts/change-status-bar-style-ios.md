@@ -25,6 +25,25 @@ The result of adding this sample code should be this:
 
 ![adding-action-bar](../img/change-status-bar-style-ios/status-bar-style-via-actionbar.png "adding-action-bar")
 
+It is easy to change the background color of `UINavigationBar` and the status bar respectively. To do this you should set `backgroundColor` property of the `ActionBar`. This can be done in XML or with CSS.
+
+ 
+``` XML
+<Page.actionBar>
+     <ActionBar title="Sample title" backgroundColor="green"></ActionBar>
+</Page.actionBar>
+``` 
+``` CSS
+ActionBar 
+{
+    background-color: green;
+}
+```
+ 
+The result is:
+ 
+![adding-action-bar-set-backgroundcolor](../img/change-status-bar-style-ios/status-bar-style-via-actionbar-set-backgroundcolor.png "adding-action-bar-set-backgroundcolor")
+
 In iOS there are two possible styles, which you could set to the `UINavigationBar`: `UIBarStyleDefault` and `UIBarStyleBlack`. Changing `UINavigationBar` style will change the style of the status bar automatically. By default `UINavigationBar` style in iOS is `UIBarStyleDefault`, which means that the letters will be in black and background color - white. 
 
 - Changing The Style Of UINavigationBar 
@@ -61,25 +80,6 @@ The result:
 ![adding-action-bar-black-style](../img/change-status-bar-style-ios/status-bar-style-via-actionbar-black-style.png "adding-action-bar-black-style")
 
 As you can see the style of `UINavigationBar` and status bar have been changed with gray background color and white text and icons.
-
-It is easy to change the background color of `UINavigationBar` and the status bar respectively. To do this you should set `backgroundColor` property of the `ActionBar`. This can be done in XML or with CSS.
-
- 
-``` XML
-<Page.actionBar>
-     <ActionBar title="Sample title" backgroundColor="green"></ActionBar>
-</Page.actionBar>
-``` 
-``` CSS
-ActionBar 
-{
-    background-color: green;
-}
-```
- 
-The result is:
- 
-![adding-action-bar-set-backgroundcolor](../img/change-status-bar-style-ios/status-bar-style-via-actionbar-set-backgroundcolor.png "adding-action-bar-set-backgroundcolor")
  
 ## Changing Status Bar Style Only
  
