@@ -122,7 +122,8 @@ Go to the **All applications** section and click the **+ Add new application** b
 You can also submit an APK. Read about how to obtain an APK from a NativeScript app.
 
 ### Builds
-#### Build versioning
+
+<h4 id="build-versioning">Build versioning</h4>
 We have already explained how the *Application Id* is set in your project, how icons are added to your app and how you can set the display name.
 
 Before the build, you need to set two important things: the *versionCode* and the *android:versionName*.
@@ -144,14 +145,16 @@ In the `app/App_Resources/Android/AndroidManifest.xml`, the *versionCode* and *v
       ...
 ```
 
-#### Build signed release APK
+<h4 id="build-signed-release-apk">Build signed release APK</h4>
+
 You can perform a full build and produce a signed APK using the NativeScript CLI:
 ```
 tns build android --release --key-store-path <path-to-your-keystore> --key-store-password <your-key-store-password> --key-store-alias <your-alias-name> --key-store-alias-password <your-alias-password> --copy-to <apk-location>.apk
 ```
 You can then use the produced `<apk-location>.apk` for upload to *Google Play*.
 
-#### Submit with the Google Play Developer Console
+<h4 id="submit-with-the-google-play-developer-console">Submit with the Google Play Developer Console</h4>
+
 To submit your app to the *Google Play Developer Console*:
 
 1. Log into the [Google Play Developer Console](https://play.google.com/apps/publish).
@@ -163,12 +166,14 @@ You can read more about these stages at ["Set up alpha/beta tests"](https://supp
 
 Once you upload your APK, it will go through a review. When approved, you can move it to production to make it available on *Google Play*.
 
-#### Submit with Telerik AppManager
+<h4 id="submit-with-telerik-appmanager">Submit with Telerik AppManager</h4>
+
 It is worth mentioning that the NativeScript platform is integrated in the *Telerik Platform*. And the *Telerik Platform* has everything you need in the cloud, easing the submission process. This includes managing your distribution certificates and provisioning profiles, as well as support for cloud builds and *App Store* submission.
 
 Read more about the app submission process in the *Telerik Platform* in ['Introduction to Telerik AppManager'](http://docs.telerik.com/platform/appmanager/getting-started/introduction).
 
-#### Submission automation
+<h4 id="submission-automation">Submission automation</h4>
+
 Some tools allow the submission process to be automated - [MIT Licensed one: fastlane](https://github.com/fastlane/fastlane).
 You can also hack your own scripts around the [Google Play Developer API](https://developers.google.com/android-publisher/api-ref/edits/apks/upload).
 
