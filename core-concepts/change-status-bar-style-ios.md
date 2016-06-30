@@ -11,7 +11,7 @@ There are two options to change the status bar style for iOS applications in Nat
  
 This method is easier, but it implies using an `ActionBar`. NativeScript `ActionBar` is common abstraction over iOS `UINavigationBar` and Android's `ActionBar`. It is a bar typically located at the top of the screen and provides title and navigation control in your application.
 
-- Use page's XML file to activate `ActionBar` in your application:
+- Use page's XML file to declare `ActionBar` in your application:
 
 ``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="loaded">
@@ -52,9 +52,9 @@ You should use the `frame` module to access the native instance of `UINavigation
 
 ``` JavaScript
 var frame = require("ui/frame");
+var platform = require("platform")
 function loaded(args) {
-    var page = args.object;
-    if (page.ios) {
+    if (platform.isIOS) {
         var navigationBar = frame.topmost().ios.controller.navigationBar;
         navigationBar.barStyle = UIBarStyle.UIBarStyleBlack;
     }
@@ -63,13 +63,12 @@ exports.loaded = loaded;
 ```
 ``` TypeScript
 import { EventData } from "data/observable";
-import { Page } from "ui/page";
 import { topmost } from "ui/frame";
+import { isIOS } from "platform"
 
 export function loaded(args: EventData){
-    var page:Page = <Page> args.object;
-     if (page.ios) {
-        var navigationBar = topmost().ios.controller.navigationBar;
+     if (isIOS) {
+        let navigationBar = topmost().ios.controller.navigationBar;
         navigationBar.barStyle = UIBarStyle.UIBarStyleBlack;
     }
 }
@@ -179,7 +178,7 @@ In a result your `Info.plist` should look like that:
 
 ![changing-status-bar-style](../img/change-status-bar-style-ios/status-bar-style-info.plist-startup-style-change.png "changing-status-bar-style")
 
-> Now on the place of the status bar we can see one white line. That's happened, because we changed the color of the icon to white, however the background color is the same as those of the icon. To fix this we should set page `backgroundColor` property. You should set also the `backgroundSpanUnderStatusBar` property to `true`. This will span the background color under the status bar:
+Now on the place of the status bar we can see one white line. That's happened, because we changed the color of the icon to white, however the background color is the same as those of the icon. To fix this we should set page `backgroundColor` property. You should set also the `backgroundSpanUnderStatusBar` property to `true`. This will span the background color under the status bar:
   
 ``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" backgroundSpanUnderStatusBar="true" backgroundColor="red">
@@ -195,4 +194,4 @@ The result is:
   
 ![changing-background-span-under-statusBar-to-true](../img/change-status-bar-style-ios/status-bar-style-info.plist-startup-backgroundSpan.png "changing-background-span-under-statusBar-to-true")
  
-> The sample projects for both cases are available in those GitHub repositories: [StyleStatusBariOSviaActionBar](https://github.com/tsonevn/StyleStatusBariOSviaActionBar.git) and [StyleStatusBariOSviaInfo.plist](https://github.com/tsonevn/StyleStatusBariOSviaInfo.plist.git)
+The sample projects for both cases are available in those GitHub repositories: [StyleStatusBariOSviaActionBar](https://github.com/tsonevn/StyleStatusBariOSviaActionBar.git) and [StyleStatusBariOSviaInfo.plist](https://github.com/tsonevn/StyleStatusBariOSviaInfo.plist.git)
