@@ -7,23 +7,11 @@ slug: ios-changelog
 previous_url: /Changelogs/iOS Runtime
 ---
 
-
-
 2.1.1
 =====
 
 ## Bug Fixes
 - Add `CFBundleVersion` and `CFBundleShortVersionString` keys in the `Info.plist` of the NativeScript framework
-
-2.1.0
-=====
-
-## Bug Fixes
-- Various debugging and LiveSync improvements
-
-## Breaking Changes
-- Removed iOS 7 support
-
 
 2.1.0
 =====
