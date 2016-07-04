@@ -1,3 +1,10 @@
+---
+title: Changing Status Bar Style in iOS
+description: How to change Status Bar style in iOS
+position: 14
+slug: status-bar-style-ios
+---
+
 # Changing Status Bar Style in iOS
  
 NativeScript allows you to build multiplatform applications by exposing a rich common API. You don't need to know specifics of the different platforms. However, every platform has its own features. In those cases when you need to fine tune your application and make it look more native, NativeScrpt gives you full control and access to the native API and platform specific functionality. One such scenario is when changing the status bar style in iOS. 
