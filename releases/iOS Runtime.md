@@ -19,6 +19,16 @@ previous_url: /Changelogs/iOS Runtime
 ## Breaking Changes
 - Removed iOS 7 support
 
+
+2.1.0
+=====
+
+## Bug Fixes
+- Various debugging and LiveSync improvements
+
+## Breaking Changes
+- Removed iOS 7 support
+
 2.0.1
 =====
 
