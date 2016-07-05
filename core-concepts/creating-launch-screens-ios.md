@@ -118,8 +118,6 @@ with minimal or no moving elements and text labels. It is meant to provide immed
 
 ![LaunchScreen setup in Xcode](../img/launch-screen/ios/launch-screen-howto-010.png "LaunchScreen setup in Xcode")
 
-![LaunchScreen setup in Xcode](../img/launch-screen/ios/launch-screen-howto-010.png "LaunchScreen setup in Xcode")
-
 #### Customizing LaunchScreen.AspectFill
 
 + Manual approach 
