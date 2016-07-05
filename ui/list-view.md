@@ -81,7 +81,7 @@ This is a typical usage of the ListView component however if business case requi
 
 ### Customizing List View
 
-The most common customization of ListView control is customizing the item template. Everything inside `<template>` tag will be used as item template and will be generated for each item. Another possible customization is connected with creation of a different item. Usually with a pure NativeScript application `itemLoading` event could be used to accomplish such customization. Unfortunately this event cannot be used with NativeScript-Angular 2 app, since NativeScript-Angular plugin uses this event to create Angular2 view which will be inserted into Angular2 virtual dom. However NativeScript-Angular ListView component provides an option to customize the created Angular2 view before adding it to visual tree. This option is available via `setupItemView` event. Here is a small example how to use this event:
+The most common customization of ListView control is customizing the item template. Everything inside `<template>` tag will be used as item template and will be generated for each item. Another possible customization is connected with creation of a different item. Usually with a pure NativeScript application `itemLoading` event could be used to accomplish such customization. Unfortunately this event cannot be used with NativeScript-Angular 2 app, since NativeScript-Angular plugin uses this event to create Angular 2 view which will be inserted into Angular 2 virtual dom. However NativeScript-Angular ListView component provides an option to customize the created Angular 2 view before adding it to visual tree. This option is available via `setupItemView` event. Here is a small example how to use this event:
 
 ```XML
 <GridLayout rows="*">
