@@ -7,14 +7,7 @@ slug: ios-changelog
 previous_url: /Changelogs/iOS Runtime
 ---
 
----
-title: iOS Runtime Changelog
-description: NativeScript iOS Runtime Changelog
-position: 6
-publish: false
-slug: ios-changelog
-previous_url: /Changelogs/iOS Runtime
----
+
 
 
 2.1.0
