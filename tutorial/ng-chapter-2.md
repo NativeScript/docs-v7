@@ -179,7 +179,7 @@ This code adds two new NativeScript UI elements: a [text field]({%ns_cookbook ui
     - `hint`: Shows placeholder text that tells the user what to type.
     - `keyboardType`: The type of keyboard to present to the user for input. `keyboardType="email"` shows a keyboard optimized for entering email addresses. NativeScript currently supports [five types of keyboards](http://docs.nativescript.org/ui/keyboard.html) for text fields.
     - `autocorrect`: A boolean attribute that determines whether the mobile operating system should autocorrect user input. In the case of email address text fields, the autocorrect behavior is undesirable.
-    - `autocapitalizationType`: Determines how the operating system should autocapitalize user input. `autocapitalizationType="none"` turns autocapitalization off altogether. NativeScript supports [four autocapitalization types](/api-reference/modules/_ui_enums_.autocapitalizationtype.html) on text fields.
+    - `autocapitalizationType`: Determines how the operating system should autocapitalize user input. `autocapitalizationType="none"` turns autocapitalization off altogether. NativeScript supports [four autocapitalization types](http://docs.nativescript.org/api-reference/modules/_ui_enums_.autocapitalizationtype.html) on text fields.
     - `secure`: A boolean attribute that determines whether the text field’s text should be masked, which is commonly done on password fields.
 - `<Button>`
     - `text`: Controls the text displayed within the button.

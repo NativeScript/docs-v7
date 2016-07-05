@@ -8,7 +8,7 @@ publish: false
 
 # Animations with code
 
-The easiest way to animate a **single** [`View`](/api-reference/classes/_ui_core_view_.view.html) is by using the `View.animate` method which accepts an [`AnimationDefinition`](/api-reference/interfaces/_ui_animation_.animationdefinition.html), immediately starts the animation and then returns its finished promise.
+The easiest way to animate a **single** [`View`](http://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html) is by using the `View.animate` method which accepts an [`AnimationDefinition`](http://docs.nativescript.org/api-reference/interfaces/_ui_animation_.animationdefinition.html), immediately starts the animation and then returns its finished promise.
 
 __Example 20: How to execute animation on single view.__
 
@@ -27,11 +27,11 @@ view.animate({
 });
 ```
 
-> You should create an [`Animation`](/api-reference/classes/_ui_animation_.animation.html) class in order to be able to **cancel** the animation. This is demonstrated below.
+> You should create an [`Animation`](http://docs.nativescript.org/api-reference/classes/_ui_animation_.animation.html) class in order to be able to **cancel** the animation. This is demonstrated below.
 
 ## The AnimationDefinition interface
 
-The [`AnimationDefinition`](/api-reference/interfaces/_ui_animation_.animationdefinition.html) interface is central for defining an animation for **one or more properties** of a **single** [`View`](/api-reference/classes/_ui_core_view_.view.html). The animatable properties are:
+The [`AnimationDefinition`](http://docs.nativescript.org/api-reference/interfaces/_ui_animation_.animationdefinition.html) interface is central for defining an animation for **one or more properties** of a **single** [`View`](http://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html). The animatable properties are:
 
  - **opacity**
  - **backgroundColor**
@@ -39,27 +39,27 @@ The [`AnimationDefinition`](/api-reference/interfaces/_ui_animation_.animationde
  - **scaleX** and **scaleY**
  - **rotate**
 
-The [`AnimationDefinition`](/api-reference/interfaces/_ui_animation_.animationdefinition.html) interface has the following members:
+The [`AnimationDefinition`](http://docs.nativescript.org/api-reference/interfaces/_ui_animation_.animationdefinition.html) interface has the following members:
 
  - **target**: The view whose property is to be animated.
  - **opacity**: Animates the opacity of the view. Value should be a number between 0.0 and 1.0.
  - **backgroundColor**: Animates the backgroundColor of the view.
- - **translate**: Animates the translate affine transform of the view. Value should be a [`Pair`](/api-reference/interfaces/_ui_animation_.pair.html).
- - **scale**: Animates the scale affine transform of the view. Value should be a [`Pair`](/api-reference/interfaces/_ui_animation_.pair.html).
+ - **translate**: Animates the translate affine transform of the view. Value should be a [`Pair`](http://docs.nativescript.org/api-reference/interfaces/_ui_animation_.pair.html).
+ - **scale**: Animates the scale affine transform of the view. Value should be a [`Pair`](http://docs.nativescript.org/api-reference/interfaces/_ui_animation_.pair.html).
  - **rotate**: Animates the rotate affine transform of the view. Value should be a number specifying the rotation amount in degrees.
  - **duration**: The length of the animation in milliseconds. The default duration is 300 milliseconds.
  - **delay**: The amount of time, in milliseconds, to delay starting the animation.
  - **iterations**: Specifies how many times the animation should be played. Default is 1. iOS animations support fractional iterations, i.e., 1.5. To repeat an animation infinitely, use `Number.POSITIVE_INFINITY`.
- - **curve**: An optional animation curve. Possible values are contained in the [AnimationCurve enumeration](/api-reference/modules/_ui_enums_.animationcurve.html). Alternatively, you can pass an instance of type [`UIViewAnimationCurve`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/#//apple_ref/c/tdef/UIViewAnimationCurve) for iOS or [`android.animation.TimeInterpolator`](http://developer.android.com/reference/android/animation/TimeInterpolator.html) for Android.
+ - **curve**: An optional animation curve. Possible values are contained in the [AnimationCurve enumeration](http://docs.nativescript.org/api-reference/modules/_ui_enums_.animationcurve.html). Alternatively, you can pass an instance of type [`UIViewAnimationCurve`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/#//apple_ref/c/tdef/UIViewAnimationCurve) for iOS or [`android.animation.TimeInterpolator`](http://developer.android.com/reference/android/animation/TimeInterpolator.html) for Android.
 
  All members of the interface are **optional** and have default values with the following exceptions:
  
- - target is only optional when calling the `animate` method of a [`View`](/api-reference/classes/_ui_core_view_.view.html) instance since it is set automatically for you.
+ - target is only optional when calling the `animate` method of a [`View`](http://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html) instance since it is set automatically for you.
  - You must specify at least one property from this list: opacity, backgroundColor, scale, rotate or translate.
 
 ## The Animation class
 
-The [`Animation`](/api-reference/classes/_ui_animation_.animation.html) class represents a **set** of one or more [`AnimationDefinitions`](/api-reference/interfaces/_ui_animation_.animationdefinition.html) that can be played either **simultaneously or sequentially**. **This class is typically used when you need to animate several views together**. The constructor of the  [`Animation`](/api-reference/classes/_ui_animation_.animation.html) class accepts an array of [`AnimationDefinitions`](/api-reference/interfaces/_ui_animation_.animationdefinition.html) and a boolean parameter indicating whether to play the animations sequentially. Creating an instance of the [`Animation`](/api-reference/classes/_ui_animation_.animation.html) class does not start the animation playback. The class has four members:
+The [`Animation`](http://docs.nativescript.org/api-reference/classes/_ui_animation_.animation.html) class represents a **set** of one or more [`AnimationDefinitions`](http://docs.nativescript.org/api-reference/interfaces/_ui_animation_.animationdefinition.html) that can be played either **simultaneously or sequentially**. **This class is typically used when you need to animate several views together**. The constructor of the  [`Animation`](http://docs.nativescript.org/api-reference/classes/_ui_animation_.animation.html) class accepts an array of [`AnimationDefinitions`](http://docs.nativescript.org/api-reference/interfaces/_ui_animation_.animationdefinition.html) and a boolean parameter indicating whether to play the animations sequentially. Creating an instance of the [`Animation`](http://docs.nativescript.org/api-reference/classes/_ui_animation_.animation.html) class does not start the animation playback. The class has four members:
 
  - **play**: A method that starts the animation and returns the instance it was called on for fluent animation chaining.
  - **cancel**: A void method that stops the animation.

@@ -464,4 +464,4 @@ targetTextField.unbind("text");
 targetTextField.unbind("text");
 ```
 
-You can find more information about binding in [API-Ref](/api-reference/classes/_ui_core_bindable_.bindable.html). 
+You can find more information about binding in [API-Ref](http://docs.nativescript.org/api-reference/classes/_ui_core_bindable_.bindable.html). 

@@ -38,7 +38,7 @@ For each page, you need to have a separate `XML` file that holds the layout of t
 
 Each NativeScript app must have a home page&mdash;the page that loads when you launch the app.
 
-You need to explicitly set the home page for your app. You can do this by calling the `start()` method of the [`Application`](/api-reference/modules/_application_.html) module and pass `NavigationEntry` with the desired `moduleName`.
+You need to explicitly set the home page for your app. You can do this by calling the `start()` method of the [`Application`](http://docs.nativescript.org/api-reference/modules/_application_.html) module and pass `NavigationEntry` with the desired `moduleName`.
 
 The NativeScript navigation framework looks for an `XML` file with the specified name, loads it and navigates to the respective page. If NativeScript discovers a `JavaScript` or `TypeScript` file with the same name, it executes the code inside it.
 
@@ -55,7 +55,7 @@ application.start({ moduleName: "my-page" });
 
 ### Navigate to a page
 
-You can navigate between pages with the `navigate` method of the [`Frame`](/api-reference/classes/_ui_frame_.frame.html) class. The [`Frame`](/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. Typically, each app has one frame at the root level&mdash;the topmost frame.
+You can navigate between pages with the `navigate` method of the [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class. The [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. Typically, each app has one frame at the root level&mdash;the topmost frame.
 
 When you trigger navigation, NativeScript looks for an `XML` file with the specified name, loads it and navigates to the respective page. If NativeScript discovers a `JavaScript` or `TypeScript` file with the same name, it executes the code inside it.
 
@@ -160,7 +160,7 @@ The top-level user interface components are content components:mdash;pages and l
 
 #### Page
 
-Your application pages (or screens) are instances of the [`page`](/api-reference/classes/_ui_page_.page.html) class of the [`Page`](/api-reference/classes/_ui_page_.page.html) module. Typically, an app will consist of multiple application screens.
+Your application pages (or screens) are instances of the [`page`](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) class of the [`Page`](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) module. Typically, an app will consist of multiple application screens.
 
 ##### Example
 
@@ -195,7 +195,7 @@ export function pageLoaded(args: observable.EventData) {
 
 #### TabView 
 
-With a [`tabview`](/api-reference/classes/_ui_tab_view_.tabview.html), you can avoid spreading your user interface across multiple pages. Instead, you can have one page with multiple tabs.
+With a [`tabview`](http://docs.nativescript.org/api-reference/classes/_ui_tab_view_.tabview.html), you can avoid spreading your user interface across multiple pages. Instead, you can have one page with multiple tabs.
 
 ##### Example
 
@@ -248,7 +248,7 @@ export function pageLoaded(args: observable.EventData) {
 
 #### ScrollView
 
-You can insert a [`scrollView`](/api-reference/classes/_ui_scroll_view_.scrollview.html) inside your page to make the page or the content enclosed in the `scrollView` scrollable.
+You can insert a [`scrollView`](http://docs.nativescript.org/api-reference/classes/_ui_scroll_view_.scrollview.html) inside your page to make the page or the content enclosed in the `scrollView` scrollable.
 
 ##### Example
 
@@ -264,7 +264,7 @@ This sample `main-page.xml` shows how to insert a `scrollView` inside your page.
 
 #### StackLayout
 
-You can arrange the user interface components in your page in a horizontal or vertical stack using [`stackLayout`](/api-reference/classes/_ui_layouts_stack_layout_.stacklayout.html).
+You can arrange the user interface components in your page in a horizontal or vertical stack using [`stackLayout`](http://docs.nativescript.org/api-reference/classes/_ui_layouts_stack_layout_.stacklayout.html).
 
 ##### Example
 
@@ -281,7 +281,7 @@ This sample `main-page.xml` shows how to arrange the labels in a page in a horiz
 
 #### GridLayout
 
-You can arrange the user interface components in your page in a flexible grid area using [`gridLayout`](/api-reference/classes/_ui_layouts_grid_layout_.gridlayout.html).
+You can arrange the user interface components in your page in a flexible grid area using [`gridLayout`](http://docs.nativescript.org/api-reference/classes/_ui_layouts_grid_layout_.gridlayout.html).
 
 ##### Example
 
@@ -320,7 +320,7 @@ This sample `main-page.xml` provides four labels wrapped horizontally within the
 
 #### AbsoluteLayout
 
-You can arrange your user interface components by left/top coordinates using [`absoluteLayout`](/api-reference/classes/_ui_layouts_absolute_layout_.absolutelayout.html).
+You can arrange your user interface components by left/top coordinates using [`absoluteLayout`](http://docs.nativescript.org/api-reference/classes/_ui_layouts_absolute_layout_.absolutelayout.html).
 
 ##### Example
 
@@ -610,7 +610,7 @@ export function pageLoaded(args: observable.EventData) {
 
 ### ListView binding
 
-You can use the double curly brackets syntax to bind the items to a [`listView`](/api-reference/classes/_ui_list_view_.listview.html). You can also define a template with the `itemTemplate` property from which NativeScript will create the items for your `listView`.
+You can use the double curly brackets syntax to bind the items to a [`listView`](http://docs.nativescript.org/api-reference/classes/_ui_list_view_.listview.html). You can also define a template with the `itemTemplate` property from which NativeScript will create the items for your `listView`.
 
 > Avoid accessing components by ID, especially when the component is part of a template. It is recommended that you use bindings to specify component properties. 
 
