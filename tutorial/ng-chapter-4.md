@@ -63,11 +63,9 @@ If you’re using an editor that supports TypeScript, you should see an error th
 ``` TypeScript
 ngOnInit() {
   this.page.actionBarHidden = true;
-  this.page.backgroundImage = this.page.ios ? "res://bg_login.jpg" : "res://bg_login";
+  this.page.backgroundImage = "res://bg_login";
 }
 ```
-
-> **NOTE**: The `this.page.ios` check in this function can go away after NativeScript 2.0 is released. The check is there because of [this bug](https://github.com/NativeScript/NativeScript/issues/1788).
 
 `ngOnInit` is one of several [component lifecycle hooks](https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html) that Angular 2 provides. As its name implies, `ngOnInit` gets invoked when Angular initializes this component.
 
@@ -85,7 +83,7 @@ Now that you have this code in place, let’s discuss what happens in these two 
 
 ``` TypeScript
 this.page.actionBarHidden = true;
-this.page.backgroundImage = this.page.ios ? "res://bg_login.jpg" : "res://bg_login";
+this.page.backgroundImage = "res://bg_login";
 ```
 
 This code uses an instance of the [`Page` class](/api-reference/classes/_ui_page_.page.html) from the [NativeScript page module](/api-reference/modules/_ui_page_.html), and sets two properties on it—`actionBarHidden` and `backgroundImage`. Although you can peruse the NativeScript API documentation for a full list of these properties and what they do, if you’re using a TypeScript-friendly IDE, you can get a full list of these properties at any point.
@@ -371,48 +369,6 @@ export class ListPage implements OnInit {
 ```
 
 <div class="exercise-end"></div>
-
-Once you run this code you may expect to see a list of groceries, but instead you’ll see this error in your terminal:
-
-```
-JS: EXCEPTION: No provider for Http! (ListPage -> GroceryListService -> Http)
-```
-
-The problem here is your new `GroceryListService` uses the `Http` service, but that `Http` service is never included in your component’s `providers` array. You could add `HTTP_PROVIDERS` to this array, as you did in `login.component.ts`, but it seems a little silly to add `HTTP_PROVIDERS` to every page that you build. And as it turns out, Angular 2 has a simpler way of handling this, by allowing you to add common providers to parent components.
-
-<h4 class="exercise-start">
-    <b>Exercise</b>: Declaring providers
-</h4>
-
-Open `app/pages/login/login.component.ts` and _remove_ the following line from the top of the file:
-
-<div class="no-copy-button"></div>
-
-``` TypeScript
-import {HTTP_PROVIDERS} from "@angular/http";
-```
-
-Next, in the same file, remove `HTTP_PROVIDERS` from the component decorator’s `providers` array. The array should now look this like:
-
-``` TypeScript
-providers: [UserService],
-```
-
-After that, open `app/app.component.ts` and _add_ the following import to the top of the file:
-
-``` TypeScript
-import {HTTP_PROVIDERS} from "@angular/http";
-```
-
-Finally, add `HTTP_PROVIDERS` to the `AppComponent` decorator’s `providers` array so that it looks like this:
-
-``` TypeScript
-providers: [HTTP_PROVIDERS, NS_ROUTER_PROVIDERS],
-```
-
-<div class="exercise-end"></div>
-
-Generally, it’s only a good idea to declare providers in parent components if all of the component’s children actually use that provider. Although you _could_ declare all your providers in `AppComponent`, your `providers` would become unwieldy as your app grows, and difficult to refactor as your app changes.
 
 If you load the list page with the account you created earlier you’ll see a blank page, as your account is newly created, and therefore your grocery list is empty. If you want to see some data to verify your changes worked, try logging in with the credentials "user@nativescript.org" and "password". You should see data that looks something like this:
 

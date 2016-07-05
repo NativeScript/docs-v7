@@ -183,15 +183,16 @@ At the time of this writing, NativeScript does not expose a way to make transluc
 
 Sometimes accomplishing tasks with native code is simple, as it was with setting hint text on Android, and sometimes it takes a little more work. Because setting a status bar’s appearance is slightly more involved, the code has been prepopulated in `app/utils/status-bar-util.ts`. There are a few comments that link to detailed information on the techniques used, if you’re curious about how it all works.
 
-Because this code changes the appearance of the status bar, we’ll want to call this method as soon as possible, so that the status bar doesn’t awkwardly update after the app has already loaded. Therefore to use this new utility, open `app/main.ts` and replace the contents of the file with the following code, which calls a new `setStatusBarColors()` before the app is bootstrapped.
+Because this code changes the appearance of the status bar, we’ll want to call this method as soon as possible, so that the status bar doesn’t awkwardly update after the app has already loaded. Therefore to use this new utility, open `app/main.ts` and first add the following import.
 
 ``` TypeScript
-import {nativeScriptBootstrap} from "nativescript-angular/application";
-import {AppComponent} from "./app.component";
 import {setStatusBarColors} from "./utils/status-bar-util";
+```
 
+Next, add a call to the `setStatusBarColors()` function you just imported directly _before_ the call to `nativeScriptBootstrap()`.
+
+``` TypeScript
 setStatusBarColors();
-nativeScriptBootstrap(AppComponent);
 ```
 
 Finally, there are a few last CSS tweaks you to make to account for the now translucent status bars. On iOS a translucent status bar continues to take up space, so you need to adjust the content of the page to sit on top of the status bar’s location. To do so, open `app/platform.ios.css` and paste in the following code:
