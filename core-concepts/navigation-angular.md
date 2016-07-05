@@ -46,7 +46,7 @@ NativeScript apps consist of pages which represent the separate application scre
 > Note: You will rarely need to create Page instances manually. The framework creates pages automatically when bootstrapping or navigating the app. You can get a reference to the current page by injecting it into your component using the DI.
 
 In NativeScript you have a choice between two router outlets:
-* `router-outlet` - replaces the content of the outlet with different component. It is the default outlet that comes from Angular2.
+* `router-outlet` - replaces the content of the outlet with different component. It is the default outlet that comes from Angular 2.
 * `page-router-outlet` - uses pages to navigate. The new components are shown in a new page.
 
 To show the difference between the to we are going to use the following components in the next examples:
