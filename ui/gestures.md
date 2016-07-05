@@ -11,7 +11,7 @@ previous_url: /gestures
 
 Gestures, such as tap, slide and pinch, allow users to interact with your app by manipulating UI elements on the screen.
 
-In NativeScript, `View`&mdash;the base class for all NativeScript UI elements&mdash;has `on` and `off` methods that let you subscribe or unsubscribe to all events and gestures recognized by the UI element.  
+In NativeScript, `View`&mdash;the base class for all NativeScript UI elements&mdash;has `on` and `off` methods that let you subscribe or unsubscribe to all events and gestures recognized by the UI element.
 
 As the first parameter, you pass an `on` or `off` method and the type of gesture you want to track. The second  parameter is a function that is called each time the specified gesture is recognized. The function arguments contain additional information about the gesture, if applicable.
 
@@ -56,7 +56,7 @@ label.on(gestures.GestureTypes.tap, function (args: gestures.GestureEventData) {
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='tap-gesture'/>  
+{%snippet ng-tap-gesture%}
 {% endangular %}
 
 ## Double Tap
@@ -80,7 +80,7 @@ label.on(gestures.GestureTypes.doubleTap, function (args: gestures.GestureEventD
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='double-tap-gesture'/>  
+{%snippet ng-double-tap-gesture%}
 {% endangular %}
 Possible implementation:
 * Scale up the object with a predefined percentage, centered around the double-tapped region. If a user keeps repeating the double tap gesture, continue to scale up until the maximum scale is reached.
@@ -108,7 +108,7 @@ label.on(gestures.GestureTypes.longPress, function (args: gestures.GestureEventD
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='long-press-gesture'/>  
+{%snippet ng-long-press-gesture%}
 {% endangular %}
 Possible implementation: Select one or more items in a view and act upon the data using a contextual action bar. Enter data selection mode. Avoid using long press for displaying contextual menus.
 
@@ -133,7 +133,7 @@ label.on(gestures.GestureTypes.swipe, function (args: gestures.SwipeGestureEvent
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='swipe-gesture'/>  
+{%snippet ng-swipe-gesture%}
 {% endangular %}
 Possible implementation: Navigate between views in the same hierarchy.
 
@@ -157,7 +157,7 @@ label.on(gestures.GestureTypes.pan, function (args: gestures.PanGestureEventData
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='pan-gesture'/>  
+{%snippet ng-pan-gesture%}
 {% endangular %}
 
 ## Pinch
@@ -181,7 +181,7 @@ label.on(gestures.GestureTypes.pinch, function (args: gestures.PinchGestureEvent
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='pinch-gesture'/>  
+{%snippet ng-pinch-gesture%}
 {% endangular %}
 Possible implementation: Zoom into content or out of content.
 
@@ -206,7 +206,7 @@ label.on(gestures.GestureTypes.rotation, function (args: gestures.RotationGestur
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='rotate-gesture'/>  
+{%snippet ng-rotate-gesture%}
 {% endangular %}
 
 ## Touch
@@ -232,7 +232,7 @@ label.on(gestures.GestureTypes.touch, function (args: gestures.TouchGestureEvent
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='touch-gesture'/>  
+{% snippet ng-touch-gesture %}
 {% endangular %}
 
 {% nativescript %}

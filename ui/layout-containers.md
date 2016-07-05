@@ -39,7 +39,7 @@ None.
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='absolute-layout'/>  
+{%snippet absolute-layout%}
 {% endangular %}
 
 ![AbsoluteLayout](../img/modules/layouts/absolute-layout.png "AbsoluteLayout")
@@ -56,7 +56,7 @@ None.
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='absolute-layout-margin'/>  
+{%snippet absolute-layout-margin%}
 {% endangular %}
 
 ![AbsoluteLayout](../img/modules/layouts/absolute-layout2.png "AbsoluteLayout")
@@ -88,7 +88,7 @@ The DockLayout is a layout that provides a docking mechanism for child elements 
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='dock-layout'/>  
+{%snippet dock-layout%}
 {% endangular %}
 
 ![DockLayout](../img/modules/layouts/dock-layout1.png "DockLayout1")
@@ -107,7 +107,7 @@ The DockLayout is a layout that provides a docking mechanism for child elements 
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='dock-layout-stretch-last'/>  
+{%snippet dock-layout-stretch-last%}
 {% endangular %}
 
 ![DockLayout](../img/modules/layouts/dock-layout2.png "DockLayout1")
@@ -126,7 +126,7 @@ The DockLayout is a layout that provides a docking mechanism for child elements 
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='dock-layout-one-side'/>  
+{%snippet dock-layout-one-side%}
 {% endangular %}
 
 ![DockLayout](../img/modules/layouts/dock-layout3.png "DockLayout2")
@@ -168,7 +168,7 @@ The GridLayout is a layout that arranges its child elements in a table structure
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='grid-layout-sample'/>  
+{%snippet grid-layout-sample%}
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout.png "GridLayout")
@@ -189,7 +189,7 @@ The GridLayout is a layout that arranges its child elements in a table structure
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='grid-layout-star'/>  
+{%snippet grid-layout-star%}
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout1.png "GridLayout")
@@ -210,7 +210,7 @@ The GridLayout is a layout that arranges its child elements in a table structure
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='grid-layout-fexed-auto'/>  
+{%snippet grid-layout-fexed-auto%}
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout2.png "GridLayout")
@@ -231,7 +231,7 @@ When the GridLayout has no explicit `width` set and its `horizontalAlignment` is
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='grid-layout-no-width'/>  
+{%snippet grid-layout-no-width%}
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout3.png "GridLayout")
@@ -250,7 +250,7 @@ Label 3 has a fixed width of 150 pixels. Label 1 is given more space than it act
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='grid-layout-column-stretch'/>  
+{%snippet grid-layout-column-stretch%}
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout4.png "GridLayout")
@@ -271,7 +271,7 @@ Label 3 has a fixed width of 150 pixels. Label 1 is given more space than it act
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='grid-layout-complex'/>  
+{%snippet grid-layout-complex%}
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout5.png "GridLayout")
@@ -301,7 +301,7 @@ None.
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='stack-layout-vertical'/>  
+{%snippet stack-layout-vertical%}
 {% endangular %}
 
 ![StackLayout](../img/modules/layouts/stack-layout1.png "StackLayout")
@@ -320,7 +320,7 @@ None.
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='stack-layout-horizontal'/>  
+{%snippet stack-layout-horizontal%}
 {% endangular %}
 
 ![StackLayout](../img/modules/layouts/stack-layout2.png "StackLayout")
@@ -339,7 +339,7 @@ None.
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='stack-layout-vertical-align'/> 
+{%snippet stack-layout-vertical-align%}
 {% endangular %}
 
 ![StackLayout](../img/modules/layouts/stack-layout3.png "StackLayout")
@@ -358,7 +358,7 @@ None.
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='stack-layout-horizontal-align'/>  
+{%snippet stack-layout-horizontal-align%}
 {% endangular %}
 
 ![StackLayout](../img/modules/layouts/stack-layout4.png "StackLayout")
@@ -389,7 +389,7 @@ None.
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='wrap-layout-horizontal'/>  
+{%snippet wrap-layout-horizontal%}
 {% endangular %}
 
 ![WrapLayout](../img/modules/layouts/wrap-layout1.png "WrapLayout")
@@ -408,7 +408,7 @@ None.
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='wrap-layout-vertical'/>  
+{%snippet wrap-layout-vertical%}
 {% endangular %}
 
 ![WrapLayout](../img/modules/layouts/wrap-layout2.png "WrapLayout")
@@ -427,7 +427,7 @@ None.
 ```
 {% endnativescript %}
 {% angular %}
-<snippet id='wrap-layout-item'/>  
+{%snippet wrap-layout-item%}
 {% endangular %}
 
 ![WrapLayout](../img/modules/layouts/wrap-layout3.png "WrapLayout")
