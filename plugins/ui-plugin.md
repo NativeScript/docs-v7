@@ -29,21 +29,21 @@ Observable
 │   │   │   ├── View
 ```
 
-### [Observable](/api-reference/classes/_data_observable_.observable.html)
+### [Observable](http://docs.nativescript.org/api-reference/classes/_data_observable_.observable.html)
 This is the class that implements the [Observer](https://en.wikipedia.org/wiki/Observer_pattern) design-pattern. Every node within the Visual Tree should support the addEventListener/removeEventListener routine, hence the base class.
 
-### [DependencyObservable](/api-reference/classes/_ui_core_dependency_observable_.dependencyobservable.html)
+### [DependencyObservable](http://docs.nativescript.org/api-reference/classes/_ui_core_dependency_observable_.dependencyobservable.html)
 This class enables cascading property values - for example an effective property value may be the default one, inherited from some ancestor, coming from a style or set locally directly. You may consider it as an `Observable` with extended property backing mechanism.
 
 
-### [Bindable](/api-reference/classes/_ui_core_bindable_.bindable.html)
+### [Bindable](http://docs.nativescript.org/api-reference/classes/_ui_core_bindable_.bindable.html)
 This class enables data-binding, using the extended property backing mechanism of the `DependencyObservable` base class. 
 
-### [ProxyObject](/api-reference/classes/_ui_core_proxy_.proxyobject.html)
+### [ProxyObject](http://docs.nativescript.org/api-reference/classes/_ui_core_proxy_.proxyobject.html)
 Each UI module within NativeScript internally creates and maintains a corresponding native UI instance. This class serves as a proxy between the JavaScript object and the wrapped native object. For example, when a property changes on the JavaScript side, the implementation takes care of delegating the change to the native representation and vice-versa.
 
-### [View](/api-reference/classes/_ui_core_view_.view.html)
-At an abstract level, *View* describes an object that has visual representation on the screen. It participates in the life-cycle and layout passes and may be styled - either through CSS or by using the [View.style](/api-reference/classes/_ui_styling_.style.html) property.
+### [View](http://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html)
+At an abstract level, *View* describes an object that has visual representation on the screen. It participates in the life-cycle and layout passes and may be styled - either through CSS or by using the [View.style](http://docs.nativescript.org/api-reference/classes/_ui_styling_.style.html) property.
 
 
 ### See Also
@@ -356,12 +356,12 @@ function NumberPicker() {
 >Note the assignment of the `listener` object to the `this` argument (`this._listener = new ListenerClass()`) in the constructor. This is needed to prevent the native class deallocation because the `addTargetActionForControlEvents` method uses `Weak` references when adding listeners.
 
 ### Data-Binding Ready
-With gluing the Native-to-JavaScript and JavaScript-to-Native flow of changes, the `value` property is completely [data-binding](http://docs.nativescript.org/bindings) ready and calling the [Bindable.bind](/api-reference/classes/_ui_core_bindable_.bindable.html#bind) method on the widget will work as expected, both in one-way and two-way cases.
+With gluing the Native-to-JavaScript and JavaScript-to-Native flow of changes, the `value` property is completely [data-binding](http://docs.nativescript.org/bindings) ready and calling the [Bindable.bind](http://docs.nativescript.org/api-reference/classes/_ui_core_bindable_.bindable.html#bind) method on the widget will work as expected, both in one-way and two-way cases.
 
 # CSS Support
 The styling support in the NativeScript modules is built on top of three major layers:
 
-* The [Style](/api-reference/classes/_ui_styling_.style.html) object on a per `View` instance, which allows programmatic styling.
+* The [Style](http://docs.nativescript.org/api-reference/classes/_ui_styling_.style.html) object on a per `View` instance, which allows programmatic styling.
 * The Css parser that reads `*.css` files and updates the `Style` object of each matched `View`.
 * The *Styler* concept - the mapping of a JavaScript value to the corresponding native widget's property is delegated to an external object, named `Styler`.
 

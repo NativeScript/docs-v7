@@ -174,7 +174,7 @@ Next you have to build some UI that lets you share a grocery list. To do so, ope
 </ActionBar>
 ```
 
-This code defines an [ActionBar](/api-reference/classes/_ui_action_bar_.actionbar.html), which is a UI component that appears on the top of the screen, and which can optionally include menu items, or [`<ActionItem>`](/api-reference/classes/_ui_action_bar_.actionitem.html) components.
+This code defines an [ActionBar](http://docs.nativescript.org/api-reference/classes/_ui_action_bar_.actionbar.html), which is a UI component that appears on the top of the screen, and which can optionally include menu items, or [`<ActionItem>`](http://docs.nativescript.org/api-reference/classes/_ui_action_bar_.actionitem.html) components.
 
 > **NOTE**: On iOS devices, `<ActionItem>`s are placed from left to right in sequence; you can override that (as the code above does) by providing an `ios.position` attribute.
 

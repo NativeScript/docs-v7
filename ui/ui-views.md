@@ -151,7 +151,7 @@ The [ActivityIndicator]({%ns_cookbook ui/activity-indicator%}) widget is a visua
 
 ## Image
 
-The [Image]({%ns_cookbook ui/image%}) widget shows an image. You can load the image from an [`ImageSource`](/api-reference/modules/_image_source_.html) or from a URL.
+The [Image]({%ns_cookbook ui/image%}) widget shows an image. You can load the image from an [`ImageSource`](http://docs.nativescript.org/api-reference/modules/_image_source_.html) or from a URL.
 
 ![image android](../img/gallery/android/imagePage.png "image android")![image ios](../img/gallery/ios/imagePage.png "image ios")
 

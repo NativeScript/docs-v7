@@ -9,9 +9,9 @@ environment: nativescript
 
 # Architecture and Navigation
 
-NativeScript apps consist of pages that represent the separate application screens. Pages are instances of the [`page`](/api-reference/classes/_ui_page_.page.html) class of the [`Page`](/api-reference/classes/_ui_page_.page.html) module. To navigate between pages, you can use the methods of the [`Frame`](/api-reference/classes/_ui_frame_.frame.html) class of the [`Frame`](/api-reference/classes/_ui_frame_.frame.html) module.
+NativeScript apps consist of pages that represent the separate application screens. Pages are instances of the [`page`](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) class of the [`Page`](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) module. To navigate between pages, you can use the methods of the [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class of the [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) module.
 
-> **TIP:** Instead of multiple pages, you can have a single page with a [tab view](/api-reference/classes/_ui_tab_view_.tabview.html) and different user interfaces for each tab.
+> **TIP:** Instead of multiple pages, you can have a single page with a [tab view](http://docs.nativescript.org/api-reference/classes/_ui_tab_view_.tabview.html) and different user interfaces for each tab.
 
 
 * [Page management](#page-management)
@@ -36,7 +36,7 @@ NativeScript apps consist of pages that represent the separate application scree
 
 ### Define page
 
-Pages represent the separate screens of your application. Each page is an instance of the [`page`](/api-reference/classes/_ui_page_.page.html) class of the [`Page`](/api-reference/classes/_ui_page_.page.html) module. Each class instance inherits the [`content`](/api-reference/classes/_ui_content_view_.contentview.html) property which holds the root visual element of the UI.
+Pages represent the separate screens of your application. Each page is an instance of the [`page`](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) class of the [`Page`](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) module. Each class instance inherits the [`content`](http://docs.nativescript.org/api-reference/classes/_ui_content_view_.contentview.html) property which holds the root visual element of the UI.
 
 NativeScript provides two approaches to instantiating your pages.
 
@@ -115,9 +115,9 @@ application.start({ moduleName: "main-page" });
 
 ## Navigation
 
-The [`Frame`](/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. Typically, each app has one frame at the root level - the topmost frame.
+The [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. Typically, each app has one frame at the root level - the topmost frame.
 
-To navigate between pages, you can use the [`navigate`](/api-reference/classes/_ui_frame_.frame.html) method of the topmost frame instance.
+To navigate between pages, you can use the [`navigate`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) method of the topmost frame instance.
 
 In addition, each `Page` instance carries information about the frame object which navigated to it in the `frame` property. This lets you navigate with the `frame` property as well. 
 
@@ -179,7 +179,7 @@ topmost.navigate(factoryFunc);
 
 ### Navigate and pass context
 
-When you navigate to another page, you can pass context to the page with a [`NavigationEntry`](/api-reference/interfaces/_ui_frame_.navigationentry.html) object. This approach provides finer control over navigation compared to other navigation approaches. For example, with `NavigationEntry` you can also animate the navigation.
+When you navigate to another page, you can pass context to the page with a [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) object. This approach provides finer control over navigation compared to other navigation approaches. For example, with `NavigationEntry` you can also animate the navigation.
 
 ### Example 4:  How to pass content between different pages.
 ``` JavaScript
@@ -243,7 +243,7 @@ export function pageNavigatedTo(args: observable.EventData) {
 
 ### Navigate without history
 
-You can navigate to a page without adding this navigation to the history. Set the `backstackVisible` property of the [`NavigationEntry`](/api-reference/interfaces/_ui_frame_.navigationentry.html) to `false`. If this property is set to false, then the Page will be displayed, but once navigated from it will not be able to be navigated back to.
+You can navigate to a page without adding this navigation to the history. Set the `backstackVisible` property of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) to `false`. If this property is set to false, then the Page will be displayed, but once navigated from it will not be able to be navigated back to.
 ### Example 7:  Page navigation, without saving navigation history.__>
 ``` JavaScript
 var navigationEntry = {
@@ -262,7 +262,7 @@ topmost.navigate(navigationEntry);
 
 ### Clear history
 
-You can navigate to a new page and decide to completely clear the entire navigation history. Set the `clearHistory` property of the [`NavigationEntry`](/api-reference/interfaces/_ui_frame_.navigationentry.html) to `true`. This will prevent the user from going back to pages previously visited. This is extremely useful if you have a multiple-page authentication process and you want to clear the authentication pages once the user is successfully logged in and redirected to the start page of the application.
+You can navigate to a new page and decide to completely clear the entire navigation history. Set the `clearHistory` property of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) to `true`. This will prevent the user from going back to pages previously visited. This is extremely useful if you have a multiple-page authentication process and you want to clear the authentication pages once the user is successfully logged in and redirected to the start page of the application.
 ### Example 8:  Prevent user from going back using `clearHistory` property.
 ``` JavaScript
 var navigationEntry = {
@@ -281,7 +281,7 @@ topmost.navigate(navigationEntry);
 
 ### Navigation transitions
 
-By default, all navigation will be animated and will use the default transition for the respective platform (UINavigationController transitions for iOS and Fragment transitions for Android). To change the transition type, set the `navigationTransition` property of the [`NavigationEntry`](/api-reference/interfaces/_ui_frame_.navigationentry.html) to an object conforming to the [`NavigationTransition`](/api-reference/interfaces/_ui_frame_.navigationtransition.html) interface.
+By default, all navigation will be animated and will use the default transition for the respective platform (UINavigationController transitions for iOS and Fragment transitions for Android). To change the transition type, set the `navigationTransition` property of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) to an object conforming to the [`NavigationTransition`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition.html) interface.
 
 ### Example 9:  Set up a transition property on page navigation.
 ``` JavaScript
@@ -309,7 +309,7 @@ var navigationEntry = {
 topmost.navigate(navigationEntry);
 ```
 
-To use one of the built-in transitions, set the `name` property of the [`NavigationTransition`](/api-reference/interfaces/_ui_frame_.navigationtransition.html) to one of the following:
+To use one of the built-in transitions, set the `name` property of the [`NavigationTransition`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition.html) to one of the following:
  - curl (same as curlUp) (iOS only)
  - curlUp (iOS only)
  - curlDown (iOS only)
@@ -326,7 +326,7 @@ To use one of the built-in transitions, set the `name` property of the [`Navigat
  
 The `duration` property lets you specify the transition duration in milliseconds. If left undefined, the default duration for each platform will be used &mdash; `350` ms for iOS and `300` ms for Android. 
  
-The `curve` property lets you specify the animation curve of the transition. Possible values are contained in the [AnimationCurve enumeration](/api-reference/modules/_ui_enums_.animationcurve.html). Alternatively, you can pass an instance of type [`UIViewAnimationCurve`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/#//apple_ref/c/tdef/UIViewAnimationCurve) for iOS or [`android.animation.TimeInterpolator`](http://developer.android.com/reference/android/animation/TimeInterpolator.html) for Android. If left undefined, and `easeInOut` curve will be used. 
+The `curve` property lets you specify the animation curve of the transition. Possible values are contained in the [AnimationCurve enumeration](http://docs.nativescript.org/api-reference/modules/_ui_enums_.animationcurve.html). Alternatively, you can pass an instance of type [`UIViewAnimationCurve`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/#//apple_ref/c/tdef/UIViewAnimationCurve) for iOS or [`android.animation.TimeInterpolator`](http://developer.android.com/reference/android/animation/TimeInterpolator.html) for Android. If left undefined, and `easeInOut` curve will be used. 
  
 To specify a default transition for **all** frame navigations, set the `transition` property of the frame you are navigating with.
 
@@ -350,7 +350,7 @@ import frameModule = require("ui/frame");
 frameModule.Frame.defaultTransition = { name: "fade" };
 ```
 
-To specify different transitions for the different platforms use the `transitioniOS` and `transitionAndroid` properties of the [`NavigationEntry`](/api-reference/interfaces/_ui_frame_.navigationentry.html).
+To specify different transitions for the different platforms use the `transitioniOS` and `transitionAndroid` properties of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html).
 ### Example 10:  Set up platform specific transitions.
 ``` JavaScript
 var navigationEntry = {
@@ -388,7 +388,7 @@ topmost.navigate(navigationEntry);
 ```
 
 ### Custom transitions
-Instead of setting the `name` property to one of the predefined transitions, you can set the `instance` property of the [`NavigationTransition`](/api-reference/interfaces/_ui_frame_.navigationtransition.html) to an instance of a class that inherits from [`Transition`](/api-reference/classes/_ui_transition_.transition.html). You can create your own custom user-defined transition by writing platform-specific code to animate the transition. To do that you need to inherit from the [`Transition`](/api-reference/classes/_ui_transition_.transition.html) class and override one method for each platform. Since there will be platform-specific code, you need to separate your code into two separate files. Here is an example of a custom transition that shrinks the disappearing page while expanding the appearing page by using a scale affine transform.
+Instead of setting the `name` property to one of the predefined transitions, you can set the `instance` property of the [`NavigationTransition`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition.html) to an instance of a class that inherits from [`Transition`](http://docs.nativescript.org/api-reference/classes/_ui_transition_.transition.html). You can create your own custom user-defined transition by writing platform-specific code to animate the transition. To do that you need to inherit from the [`Transition`](http://docs.nativescript.org/api-reference/classes/_ui_transition_.transition.html) class and override one method for each platform. Since there will be platform-specific code, you need to separate your code into two separate files. Here is an example of a custom transition that shrinks the disappearing page while expanding the appearing page by using a scale affine transform.
 
 ### Example 11:  Create your own custom transition.
 `custom-transition.android.js/ts`
