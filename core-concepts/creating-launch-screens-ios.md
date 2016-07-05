@@ -110,6 +110,8 @@ Your own storyboard can be customized to use your own logic with different image
 However, keep in mind that according to iOS Human Interface Guidelines, the LaunchScreen should be as light as possible
 with minimal or no moving elements and text labels. It is meant to provide immediate UX rather than artistic presentation. <Comment: Please check that my word change did not create an error.>
 
+![LaunchScreen setup in Xcode](../img/launch-screen/ios/launch-screen-howto-010.png "LaunchScreen setup in Xcode")
+
 #### Customizing LaunchScreen.AspectFill
 
 + Manual approach 
@@ -127,7 +129,7 @@ Drag and drop your **Assets.xcassets** into Xcode (7.1 or newer version).
 In the opened window choose **LaunchScreen.AspectFill** and add the proper scaled image for each entry (1x, 2x and 3x).
 Close Xcode and rebuild your NativeScript app to use the new LaunchScreen.AspectFill.
 
-![LaunchScreen.AspectFill setup in Xcode](../img/launch-screen/ios/launch-screen-howto-005.png "LaunchScreen.AspectFill setup in Xcode")
+![LaunchScreen.AspectFill setup in Xcode](../img/launch-screen/ios/launch-screen-howto-008.png "LaunchScreen.AspectFill setup in Xcode")
 
 #### Customizing LaunchScreen.Center
 
@@ -146,4 +148,4 @@ Drag and drop your **Assets.xcassets** into Xcode (7.1 or newer version).
 In the opened window choose **LaunchScreen.Center** and add the proper scaled image for each entry (1x, 2x and 3x).
 Close Xcode and rebuild your NativeScript app to use the new LaunchScreen.Center.
 
-![LaunchScreen.Center setup in Xcode](../img/launch-screen/ios/launch-screen-howto-006.png "LaunchScreen.Center setup in Xcode")
+![LaunchScreen.Center setup in Xcode](../img/launch-screen/ios/launch-screen-howto-009.png "LaunchScreen.Center setup in Xcode")
