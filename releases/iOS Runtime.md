@@ -9,6 +9,11 @@ previous_url: /Changelogs/iOS Runtime
 
 
 
+2.1.1
+=====
+
+## Bug Fixes
+- Add `CFBundleVersion` and `CFBundleShortVersionString` keys in the `Info.plist` of the NativeScript framework
 
 2.1.0
 =====
