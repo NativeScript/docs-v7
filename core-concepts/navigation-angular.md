@@ -29,15 +29,15 @@ In an Angular 2 application navigation is done using the **Angular Component Rou
 The router configuration usually consists of the following steps:
 
 Create a `RouterConfig` object which maps paths to components and parameters:
-<snippet id='router-config'/>   
+{%snippet router-config%}
 
 
 Use `nsRouterProvider` function to create provider for the router:
-<snippet id='router-provider'/>   
+{%snippet router-provider%}
 
 
 Pass the provider to the `nativeScriptBootstrap` when starting your app:
-<snippet id='router-bootstrap'/>
+{%snippet router-bootstrap%}
 
 ## Pages
 
@@ -51,11 +51,11 @@ In NativeScript you have a choice between two router outlets:
 
 To show the difference between the to we are going to use the following components in the next examples:
 
-<snippet id='router-content-components'/>  
+{%snippet router-content-components%}
 
 We are also going to use the following route configuration file (`app.routes.ts`):
 
-<snippet id='router-config-all'/>   
+{%snippet router-config-all%}
 
 
 ## Router Links
@@ -66,7 +66,7 @@ One thing you might have noticed in the code above is the `nsRouterLink` directi
 
 Let's take a look at the following example that uses `<router-outlet>`:
 
-<snippet id='router-outlet-example'/> 
+{%snippet router-outlet-example%}
 
 There are few things worth noting:
 
@@ -81,7 +81,7 @@ The result is that with each navigation the content of the `router-outlet` is re
 
 Here is a similar example using the `page-router-outlet`:
 
-<snippet id='page-outlet-example'/> 
+{%snippet page-outlet-example%}
 
 The main difference here is that when navigating - the new component will be loaded as a root view in a **new** `Page`. This means that any content *outside* the `page-router-outlet` will not be included in the new page. This is the reason why the `page-router-outlet` is usually the single root element in the application component. 
 
@@ -97,7 +97,7 @@ Note that we can now use the **Back button** and the **NavigationBar** to naviga
 
 You can navigate back pragmatically by injecting `Location` in your component and calling its `back()` method:
 
-<snippet id='router-location-back'/>
+{%snippet router-location-back%}
 
 ## Route Guards
 

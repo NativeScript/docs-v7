@@ -30,15 +30,15 @@ Most visual components have a simple markup interface: just a tag with zero or m
 
 Now, suppose you have a third-party component named `SimpleTag`:
 
-<snippet id='third-party-simple-view'/>
+{%snippet third-party-simple-view%}
 
 This is a fully-functional "vanilla" NativeScript component. To register it as a valid tag for Angular templates, you need to use the element registry API:
 
-<snippet id='third-party-simple-view-registration'/>
+{%snippet third-party-simple-view-registration%}
 
 That maps the `SimpleTag` class to the "third-party-view" tag name. You can now use it in templates:
 
-<snippet id='third-party-simple-view-container'/>
+{%snippet third-party-simple-view-container%}
 
 # Views and Templates
 
@@ -48,17 +48,17 @@ The problem with accepting `View` instances as a means of configuration is that 
 
 To illustrate this approach, we'll assume that we have a `<document-form>` component that displays a document with a form-like UI. It allows you to customize its title by setting a preconfigured title `View` instance.
 
-<snippet id='third-party-document-form-component'/>
+{%snippet third-party-document-form-component%}
 
 To support that on the Angular side, we need an Angular template nested inside the `document-form` tag. To make template discovery and manipulation easier, we associate it with a directive named `DocumentTitleDirective`. Here is what the client code looks like:
 
-<snippet id='third-party-document-form-container'/>
+{%snippet third-party-document-form-container%}
 
 Note the standard Angular asterisk syntax, which is just shorthand for creating a template.
 
 The actual integration code is hosted in the directive implementation. It works with the Angular `TemplateRef` instance and uses the `ViewContainer` API to create and attach a view:
 
-<snippet id='third-party-template-directive'/>
+{%snippet third-party-template-directive%}
 
 Two things in the code above need mentioning:
 
