@@ -9,11 +9,11 @@ slug: action-bar
 
 The `ActionBar` is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
 
-* [Defining The ActionBar](#defining-the-action-bar)
+* [Defining The ActionBar](#defining-the-actionbar)
 * [Title](#title)
   * [Setting the Title Text](#setting-the-title-text)
-  * [Using a Custom Title View](#using-custom-title-view)
-  * [Setting the App Icon](#setting-app-icon)
+  * [Using a Custom Title View](#using-a-custom-title-view)
+  * [Setting the App Icon for Android](#setting-the-app-icon-for-android)
 * [Navigation Button](#navigation-button)
   * [iOS Specifics](#ios-specifics)
   * [Android Specifics](#android-specifics)
@@ -21,15 +21,15 @@ The `ActionBar` is the NativeScript common abstraction over the Android ActionBa
   * [Positioning](#positioning)
   * [Setting Icons](#setting-icons)
 * [How To](#how-to)
-  * [Showing/Hiding the ActionBar](#showing-hiding-the-action-bar)
+  * [Showing or Hiding the ActionBar](#showing-or-hiding-the-actionbar)
   * [Hiding Action Items](#hiding-action-items)
   * [Styling](#styling)
   * [Creating SlideDrawer Button](#creating-slidedrawer-button)
-{% angular %}  * [Adding Actions To Existing ActionBar](#adding-actions-to-existing-action-bar){% endangular %}
+{% angular %}  * [Adding Actions To Existing ActionBar](#adding-actions-to-existing-actionbar){% endangular %}
 
 
 
-## Setting the Title Text
+## Defining The ActionBar
 
 {% nativescript %}
 Here is how to define the ActionBar inside your page:
@@ -288,7 +288,7 @@ Values for `ios.systemIcon` are numbers from the [`UIBarButtonSystemItem`](https
 
 # How To
 
-## Showing/Hiding the ActionBar
+## Showing or Hiding the ActionBar
 
 You can explicitly control the visibility of the `ActionBar` by setting the `actionBarHidden` property of the `Page`.
 {% angular %}
