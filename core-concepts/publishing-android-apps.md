@@ -12,6 +12,7 @@ slug: publishing-android-apps
   1. [Application Id and Package Name](#application-id-and-package-name)
   2. [App name](#app-name)
   3. [App icons](#app-icons)
+  4. [Launch Screen](#launch-screen)
 2. [Certificates](#certificates)
   1. [Debug certificate](#debug-certificate)
   2. [Release certificate](#release-certificate)
@@ -20,9 +21,10 @@ slug: publishing-android-apps
   2. [Builds](#builds)
     1. [Build versioning](#build-versioning)
     2. [Build signed release APK](#build-signed-release-apk)
-    3. [Submit with the Google Play Developer Console](#submit-with-the-google-play-developer-console)
-    4. [Submit with Telerik AppManager](#submit-with-telerik-appmanager)
-    5. [Submission automation](#submission-automation)
+    3. [APKs with ABI splits](#apks-with-abi-splits)
+    4. [Submit with the Google Play Developer Console](#submit-with-the-google-play-developer-console)
+    5. [Submit with Telerik AppManager](#submit-with-telerik-appmanager)
+    6. [Submission automation](#submission-automation)
 4. [Publish](#publish)
 
 ## Overview
@@ -39,12 +41,12 @@ You can publish a NativeScript app in *Google Play* the same way [you would rele
     ```
     tns build android --release --key-store-path <path-to-your-keystore> --key-store-password <your-key-store-password> --key-store-alias <your-alias-name> --key-store-alias-password <your-alias-password> 
     ```
+> Note: At the end of `<path-to-your-keystore>` you should also add the exact name of your keystore. 
 
->Note: At the end of `<path-to-your-keystore>` you should also add the exact name of your keystore. 
+> Example(Windows): `tns build android --release --key-store-path C:\keystore\Telerik.keystore --key-store-password sample_password --key-store-alias Telerik --key-store-alias-password sample_password` .
 
->Example(Windows): `tns build android --release --key-store-path C:\keystore\Telerik.keystore --key-store-password sample_password --key-store-alias Telerik --key-store-alias-password sample_password` .
-
->Example(Mac): `tns build android --release --key-store-path ~/Desktop/keystore/Telerik.keystore --key-store-password sample_password --key-store-alias Telerik --key-store-alias-password sample_password` .
+> Example(Mac): `tns build android --release --key-store-path ~/Desktop/keystore/Telerik.keystore --key-store-password sample_password --key-store-alias Telerik --key-store-alias-password sample_password` .
+ 
  4. Obtain the release `.apk` located at `<app_name>/platforms/android/build/outputs/apk/<app_name>-release.apk`.
  5. Publish your Android app by uploading the `.apk` file to the Google Developer Console. For more information, see [How to publish an Android app?](http://developer.android.com/distribute/googleplay/start.html)
 
@@ -83,9 +85,9 @@ The actual .PNG icons stay at the Android resources in `app/App_Resource/Android
 | `drawable-xxhdpi` | 480 | Extra-extra-high density screen       | 144px x 144px |
 | `drawable-xxxhdpi`| 640 | Extra-extra-extra-high density screen | 192px x 192px |
 
-### Splash screen
-Android has no built-in mechanism to provide splash screen image.
-[Here is a blog post that describes how to implement a splash screen in the NativeScript framework.](https://www.nativescript.org/blog/details/splash-screen-for-your-android-applications)
+### Launch screen
+Android has no built-in mechanism to provide launch screen image.
+[Here is a documentation article that describes how to implement a launch screen in the NativeScript framework.](http://docs.nativescript.org/angular/core-concepts/creating-launch-screens-android.html)
 
 ## Certificates
 ### Debug certificate
@@ -158,6 +160,31 @@ You can perform a full build and produce a signed APK using the NativeScript CLI
 tns build android --release --key-store-path <path-to-your-keystore> --key-store-password <your-key-store-password> --key-store-alias <your-alias-name> --key-store-alias-password <your-alias-password> --copy-to <apk-location>.apk
 ```
 You can then use the produced `<apk-location>.apk` for upload to *Google Play*.
+
+
+<h4 id="apks-with-abi-splits">APKs with ABI splits</h4>
+
+* If you need to narrow the native architectures your app supports you can enable ABI splits at **app/App_Resources/Android/app.gradle**
+
+* add:
+```
+android {
+....
+  splits {
+    abi {
+      enable true //enables the ABIs split mechanism
+      reset() //reset the list of ABIs to be included to an empty string
+      include 'arm64-v8a', 'armeabi-v7a', 'x86'
+      universalApk true
+    }
+  }
+....
+```
+
+* run 
+```
+tns run android
+```
 
 <h4 id="submit-with-the-google-play-developer-console">Submit with the Google Play Developer Console</h4>
 
