@@ -15,11 +15,17 @@ We have two Jekyll builds for the documentation that generate similar output: `n
     {% angular %}Change detection...{% endangular %}[
     ```
 
+## Contributing
+
+The NativeScript documentation is completely open source and we love contributions. Whether you want to fix a typo, or write an entire article, the NativeScript documentation is a great way to get started contributing to an open source project.
+
+Don’t know where to start? Check out the [list of issues with the “up-for-grabs” label](https://github.com/NativeScript/docs/issues?q=is%3Aopen+is%3Aissue+label%3Aup-for-grabs). New to git or GitHub? [Join our community Slack channel](http://developer.telerik.com/wp-login.php?action=slack-invitation) and we’ll be happy to help get you up and running.
+
 ## Contributors
 
 The following is a list of all the people that have contributed to the NativeScript documentation. Thanks for your contributions!
 
-Want to contribute? [Send a pull request!](https://help.github.com/articles/using-pull-requests/) [Ping us on Slack](http://developer.telerik.com/wp-login.php?action=slack-invitation) if you need help getting with git or GitHub, or for ideas on documentation pages you can help with.
+Want to contribute? 
 
 [<img alt="tjvantoll" src="https://avatars.githubusercontent.com/u/544280?v=3&s=117" width="117">](https://github.com/tjvantoll)[<img alt="ErjanGavalji" src="https://avatars.githubusercontent.com/u/84975?v=3&s=117" width="117">](https://github.com/ErjanGavalji)[<img alt="ns-bot" src="https://avatars.githubusercontent.com/u/8101183?v=3&s=117" width="117">](https://github.com/ns-bot)[<img alt="vakrilov" src="https://avatars.githubusercontent.com/u/4092076?v=3&s=117" width="117">](https://github.com/vakrilov)[<img alt="N3ll" src="https://avatars.githubusercontent.com/u/12541122?v=3&s=117" width="117">](https://github.com/N3ll)[<img alt="enchev" src="https://avatars.githubusercontent.com/u/5804953?v=3&s=117" width="117">](https://github.com/enchev)
 
