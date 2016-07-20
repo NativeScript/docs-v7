@@ -22,6 +22,7 @@ NativeScript apps consist of pages that represent the separate application scree
     * [Navigate by page name](#navigate-by-page-name)
     * [Navigate using a function](#navigate-using-a-function)
     * [Navigate and pass context](#navigate-and-pass-context)
+    * [Navigate and set bindingContext to the page](#navigate-and-set-bindingcontext-to-the-page)
     * [Navigate without history](#navigate-without-history)
     * [Clear history](#clear-history)
     * [Navigation transitions](#navigation-transitions)
@@ -199,12 +200,40 @@ var navigationEntry = {
 topmost.navigate(navigationEntry);
 ```
 
+### Navigate and set bindingContext to the page
+
+While you are navigating you could set `bindingContext` to a page.
+
+### Example 5:  How to provide `bindingContext` automaticlly while navigating to a page.
+
+
+```JavaScript
+// To import the "ui/frame" module and "main-view-model":
+var frame = require("ui/frame");
+var main_view_model = require("./main-view-model");
+// Navigate to page called “my-page” and provide "bindingContext"
+frame.topmost().navigate({ 
+  moduleName: "my-page", 
+  bindingContext: new main_view_model.HelloWorldModel() 
+});
+```
+```TypeScript
+// To import the "ui/frame" module and "main-view-model":
+import {topmost} from "ui/frame";
+import {HelloWorldModel} from "./main-view-model"
+// Navigate to page called “my-page” and provide "bindingContext"
+topmost().navigate({
+  moduleName:"my-page", 
+  bindingContext:new HelloWorldModel()
+});
+```
+
 #### Example
 
 In this example, this master-details app consists of two pages. The main page contains a list of entities. The details page shows information about the currently selected entity.
 
 When you navigate to the details page, you transfer a primary key or ID information about the selected entity. 
-### Example 5:  Navigate to the details page and pass the content for selected item.
+### Example 6:  Navigate to the details page and pass the content for selected item.
 ``` JavaScript
 function listViewItemTap(args) {
     // Navigate to the details page with context set to the data item for specified index
@@ -225,7 +254,7 @@ export function listViewItemTap(args: listView.ItemEventData) {
 ```
 
 With the **onNavigatedTo** callback, you show the details for the entity.
-### Example 6:  Bind the content received from main page.
+### Example 7:  Bind the content received from main page.
 ``` JavaScript
 function pageNavigatedTo(args) {
     var page = args.object;
@@ -244,7 +273,7 @@ export function pageNavigatedTo(args: observable.EventData) {
 ### Navigate without history
 
 You can navigate to a page without adding this navigation to the history. Set the `backstackVisible` property of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) to `false`. If this property is set to false, then the Page will be displayed, but once navigated from it will not be able to be navigated back to.
-### Example 7:  Page navigation, without saving navigation history.__>
+### Example 8:  Page navigation, without saving navigation history.__>
 ``` JavaScript
 var navigationEntry = {
     moduleName: "login-page",
@@ -263,7 +292,7 @@ topmost.navigate(navigationEntry);
 ### Clear history
 
 You can navigate to a new page and decide to completely clear the entire navigation history. Set the `clearHistory` property of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) to `true`. This will prevent the user from going back to pages previously visited. This is extremely useful if you have a multiple-page authentication process and you want to clear the authentication pages once the user is successfully logged in and redirected to the start page of the application.
-### Example 8:  Prevent user from going back using `clearHistory` property.
+### Example 9:  Prevent user from going back using `clearHistory` property.
 ``` JavaScript
 var navigationEntry = {
     moduleName: "main-page",
@@ -283,7 +312,7 @@ topmost.navigate(navigationEntry);
 
 By default, all navigation will be animated and will use the default transition for the respective platform (UINavigationController transitions for iOS and Fragment transitions for Android). To change the transition type, set the `navigationTransition` property of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) to an object conforming to the [`NavigationTransition`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition.html) interface.
 
-### Example 9:  Set up a transition property on page navigation.
+### Example 10:  Set up a transition property on page navigation.
 ``` JavaScript
 var navigationEntry = {
     moduleName: "main-page",
@@ -351,7 +380,7 @@ frameModule.Frame.defaultTransition = { name: "fade" };
 ```
 
 To specify different transitions for the different platforms use the `transitioniOS` and `transitionAndroid` properties of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html).
-### Example 10:  Set up platform specific transitions.
+### Example 11:  Set up platform specific transitions.
 ``` JavaScript
 var navigationEntry = {
     moduleName: "main-page",
@@ -390,7 +419,7 @@ topmost.navigate(navigationEntry);
 ### Custom transitions
 Instead of setting the `name` property to one of the predefined transitions, you can set the `instance` property of the [`NavigationTransition`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition.html) to an instance of a class that inherits from [`Transition`](http://docs.nativescript.org/api-reference/classes/_ui_transition_.transition.html). You can create your own custom user-defined transition by writing platform-specific code to animate the transition. To do that you need to inherit from the [`Transition`](http://docs.nativescript.org/api-reference/classes/_ui_transition_.transition.html) class and override one method for each platform. Since there will be platform-specific code, you need to separate your code into two separate files. Here is an example of a custom transition that shrinks the disappearing page while expanding the appearing page by using a scale affine transform.
 
-### Example 11:  Create your own custom transition.
+### Example 12:  Create your own custom transition.
 `custom-transition.android.js/ts`
 ``` JavaScript
 var transition = require("ui/transition");
@@ -530,7 +559,7 @@ export class CustomTransition extends transition.Transition {
 
 Once you have `custom-transition.android.js/ts` and `custom-transition.ios.js/ts` created, you need to require the module and instantiate your CustomTransition, optionally passing a duration and curve to the constructor.
 
-### Example 12:  Require the module and instantiate your custom transition.
+### Example 13:  Require the module and instantiate your custom transition.
 ```JavaScript
 var customTransition = new customTransitionModule.CustomTransition(300, "easeIn");
 var navigationEntry = {
@@ -567,7 +596,7 @@ Use the **showModal** method of the page class to show another page as a modal d
 
 > **TIP:** By design on iPhone, a modal page appears only in fullscreen.
 
-### Example 13:  Receive data from the modal page.
+### Example 14:  Receive data from the modal page.
 **main-page**
 ``` JavaScript
  var modalPageModule = "./modal-views-demo/login-page";
