@@ -33,11 +33,11 @@ While bitmap images are great, they present challenges in designing mobile appli
 ```
 ``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <ListView items="{{ glyphs }}">
+  <ListView items="{%raw%}{{ glyphs }}{%endraw%}">
         <ListView.itemTemplate>
             <StackLayout orientation="horizontal">
-                <Label text="{{ icon }}" class="icon"/>
-                <Label text="{{ code }}" />
+                <Label text="{%raw%}{{ icon }}{%endraw%}" class="icon"/>
+                <Label text="{%raw%}{{ code }}{%endraw%}" />
             </StackLayout>
         </ListView.itemTemplate>
     </ListView>
