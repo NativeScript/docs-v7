@@ -66,7 +66,14 @@ You may need to delete `platforms/android` and rebuild using the CLI command `tn
 
 ### App name
 This is the display name for your app. It is purely cosmetic but highly important. For example, it appears under the app icon.
-The value can be stored in the `app/App_Resources/Android/AndroidManifest.xml` file, as an `android:label="<App Name>"` attribute, on the `<application>` element.
+The value can be stored in the `app/App_Resources/Android/values/strings.xml` file
+```
+<resources>
+    <string name="app_name">MyAppName</string>
+    <string name="title_activity_kimera">MyAppName</string>
+</resources>
+```
+By default (or if the project lacks the values above) your application name is generated with the `create` command (e.g. `tns create testApp` will have app name **testApp**)
 
 You can check out more information about [the elements you can define in the `AndroidManifest.xml` here](http://developer.android.com/guide/topics/manifest/application-element.html).
 
