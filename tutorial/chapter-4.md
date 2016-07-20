@@ -342,7 +342,7 @@ exports.loaded = function(args) {
 };
 ```
 
-In this code, `groceryList` is referencing the grocery list model, and the `load()` function empties the list, and then calls the view model's `load()` function to reload the data from the backend.
+In this code, `groceryList` is referencing the grocery list model, and the `empty()` function empties the list, and then calls the view model's `load()` function to reload the data from the backend.
 
 The last piece to make this work is actually implementing the `empty()` and `load()` functions in the view model. Open `app/shared/view-models/grocery-list-view-model.js`, and paste the following code between the `var viewModel` assignment, and the `return viewModel` statement.
 
