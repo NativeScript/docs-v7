@@ -18,7 +18,7 @@ This article will cover in detail the process of bootstrapping an Angular applic
 
 # The Bootstrap Process
 
-A traditional NativeScript application starts by initializing global objects, setting up global CSS rules, creating, and navigating to the main page. Angular does not care about any of that -- all it needs it a place in the DOM to attach to. To make both paradigms work together, we provide a wrapper function, `nativeScriptBootstrap`, that sets up a NativeScript application and bootstraps the Angular framework in a default location on the main UI page.
+A traditional NativeScript application starts by initializing global objects, setting up global CSS rules, creating, and navigating to the main page. Angular does not care about any of that -- all it needs is a place in the DOM to attach to. To make both paradigms work together, we provide a wrapper function, `nativeScriptBootstrap`, that sets up a NativeScript application and bootstraps the Angular framework in a default location on the main UI page.
 
 ```typescript
 nativeScriptBootstrap(AppMainComponent);
@@ -73,7 +73,7 @@ export class UserDetailsView {
 
 Certain application scenarios may require bootstrapping an Angular app in a preexisting NativeScript application. The need to do that usually arises in automated tests that need to create and destroy applications in different setups. Advanced bootstraps could also be useful when migrating vanilla NativeScript applications to Angular -- you can start the migration by integrating Angular and implementing new features with it, then start migrating old features one at a time.
 
-The advanced bootstrap API entrypoint is called just `bootstrap`. All it does is set up DI providers needed by the NativeScript renderer and start the Angular application. To use it, you need to specify a location in the visual tree that will be the application root. Angular web applications use the main component selector for that purpose, but due to a limitation in the NativeScript CSS selector implementation you need to configure a DI provider with a special key: `APP_ROOT_VIEW`.
+The advanced bootstrap API entry point is called just `bootstrap`. All it does is set up DI providers needed by the NativeScript renderer and start the Angular application. To use it, you need to specify a location in the visual tree that will be the application root. Angular web applications use the main component selector for that purpose, but due to a limitation in the NativeScript CSS selector implementation you need to configure a DI provider with a special key: `APP_ROOT_VIEW`.
 
 ```typescript
 import {bootstrap} from "nativescript-angular/application";
