@@ -25,8 +25,6 @@ Don’t know where to start? Check out the [list of issues with the “up-for-gr
 
 The following is a list of all the people that have contributed to the NativeScript documentation. Thanks for your contributions!
 
-Want to contribute? 
-
 [<img alt="tjvantoll" src="https://avatars.githubusercontent.com/u/544280?v=3&s=117" width="117">](https://github.com/tjvantoll)[<img alt="ErjanGavalji" src="https://avatars.githubusercontent.com/u/84975?v=3&s=117" width="117">](https://github.com/ErjanGavalji)[<img alt="ns-bot" src="https://avatars.githubusercontent.com/u/8101183?v=3&s=117" width="117">](https://github.com/ns-bot)[<img alt="vakrilov" src="https://avatars.githubusercontent.com/u/4092076?v=3&s=117" width="117">](https://github.com/vakrilov)[<img alt="N3ll" src="https://avatars.githubusercontent.com/u/12541122?v=3&s=117" width="117">](https://github.com/N3ll)[<img alt="enchev" src="https://avatars.githubusercontent.com/u/5804953?v=3&s=117" width="117">](https://github.com/enchev)
 
 [<img alt="tsonevn" src="https://avatars.githubusercontent.com/u/17448734?v=3&s=117" width="117">](https://github.com/tsonevn)[<img alt="nsndeck" src="https://avatars.githubusercontent.com/u/5665150?v=3&s=117" width="117">](https://github.com/nsndeck)[<img alt="ikoevska" src="https://avatars.githubusercontent.com/u/3539221?v=3&s=117" width="117">](https://github.com/ikoevska)[<img alt="hamorphis" src="https://avatars.githubusercontent.com/u/1201857?v=3&s=117" width="117">](https://github.com/hamorphis)[<img alt="erikruth" src="https://avatars.githubusercontent.com/u/14181027?v=3&s=117" width="117">](https://github.com/erikruth)[<img alt="vchimev" src="https://avatars.githubusercontent.com/u/12251337?v=3&s=117" width="117">](https://github.com/vchimev)
