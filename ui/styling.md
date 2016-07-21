@@ -401,18 +401,13 @@ Platform specifics:
 * iOS: You can check the [supported fonts in iOS 7](https://support.apple.com/en-us/HT202771).
 
 ### Custom fonts
-You can use custom fonts in your app (in .TTF or .OTF format). The NativeScript runtime will look for the font files under the `app/fonts/` directory and load them automatically.
+You can use custom fonts in your app (in .TTF or .OTF format). 
+The NativeScript runtime will look for the font files under the `app/fonts/` directory and load them automatically.
 
-Note: In iOS you should also do a one-time registration of the font to be able to use it (usually in the app.ts/app.js file):
+![Custom fonts setup"](../img/font-images/custom-fonts.png "Custom fonts setup")
 
-```JavaScript
-var fontModule = require("ui/styling/font");
-fontModule.ios.registerFont("MyFont.ttf");
-```
-```TypeScript
-import fontModule = require("ui/styling/font");
-fontModule.ios.registerFont("MyFont.ttf");
-```
+> Note: In iOS your font file should be named **exactly** as the font name. 
+If you have doubt about the original font name use [Font Book](https://support.apple.com/en-us/HT201749) app to get the original font name.
 
 ## Import external CSS
 The @import CSS rule allows you to import external CSS from local file, resource or url. These rules must precede all other types of rules.
