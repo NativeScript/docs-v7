@@ -61,3 +61,13 @@ A problem occurred configuring root project 'app_name'.
 **Workaround:** None. Wait for the app to load.
 
 The NativeScript team is working on improving the performance of Android apps on initial run.
+
+### Files added to the App_Resources folder are not working
+
+**Problem:** When you add images or files to your app's *App_Resources* folder, run the app, and the images don't show up when they should.
+
+**Solution:** When you add files to the *App_Resources* folder you have to run a new *build* of the app. Files located in *App_Resources* are compiled into the executable so they can't be synced with a previous build. Here are the correct steps to take to resolve the problem:
+
+- Uninstall the old .apk (Android) or .ipa (iOS) from the device or emulator you are running the app on.
+- Execute the `tns build android` or `tns build ios` command to create a new .apk or .ipa for your app.
+- Execute the `tns run android` or `tns run ios` command to install the new executable, and you'll find your files are now packaged into your application.
