@@ -14,6 +14,7 @@ The user interface of NativeScript mobile apps consists of pages. Typically, the
 * [The basics](#the-basics)
   * [Declare the home page](#declare-the-home-page)
   * [Navigate to a page](#navigate-to-a-page)
+  * [Set the bindingContext while navigating to a page](#set-the-bindingcontext-while-navigating-to-a-page)
   * [Execute business logic](#execute-business-logic)
 * [User interface components](#user-interface-components)
   * [The default content components](#the-default-content-components)
@@ -73,6 +74,33 @@ frames.topmost().navigate("my-page");
 ```
 
 > Paths are relative to the application root. In the example above, NativeScript looks for a `my-page.xml` file in the app directory of your project.
+
+### Set the bindingContext while navigating to a page
+
+You could provide `bindingContext` automatically while navigating to a page. This will give you simple way the context to become the bindingContext of the page on navigation. The simple way to do that is to set up the `bindingContext` property, which points to your custom view model, on navigate method.
+
+```JavaScript
+// To import the "ui/frame" module and "main-view-model":
+var frame = require("ui/frame");
+var main_view_model = require("./main-view-model");
+// Navigate to page called “my-page” and provide "bindingContext"
+frame.topmost().navigate({ 
+  moduleName: "my-page", 
+  bindingContext: new main_view_model.HelloWorldModel() 
+});
+```
+```TypeScript
+// To import the "ui/frame" module and "main-view-model":
+import {topmost} from "ui/frame";
+import {HelloWorldModel} from "./main-view-model"
+// Navigate to page called “my-page” and provide "bindingContext"
+topmost().navigate({
+  moduleName:"my-page", 
+  bindingContext:new HelloWorldModel()
+});
+```
+
+
 
 ### Execute business logic
 
