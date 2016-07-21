@@ -153,7 +153,39 @@ observableObject.on(observableModule.Observable.propertyChangeEvent, function(pr
 ```
 It is important to note that the `propertyChange` event is critical for the entire [data binding]({% slug binding %}) system. To take advantage of the data binding mechanism, all you have to do is make your business object **inherit** the `Observable` class. __Example 5__ demonstrates how to do that.
 
-###Example 5: Creating a custom class and inheriting `Observable` class
+###Example 5: Handle the propertyChange event via XML
+
+``` XML
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+  <StackLayout>
+    <Switch checked="{{ isChecked }}" propertyChange="onCheckChange"/>
+  </StackLayout>
+</Page>
+```
+``` JavaScript
+function onCheckChange(args) {
+    console.log("Property Changed!");
+    console.log("Event name:" + args.eventName);
+    console.log("Object:" + args.object);
+    console.log("propertyname:" + args.propertyName);
+    console.log("value:" + args.value);
+}
+exports.onCheckChange = onCheckChange;
+```
+``` TypeScript
+import { PropertyChangeData } from "data/observable";
+
+export function onCheckChange(args: PropertyChangeData) {
+    console.log("Property Changed!");
+    console.log("Event name:" + args.eventName);
+    console.log("Object:" + args.object);
+    console.log("propertyname:" + args.propertyName);
+    console.log("value:" + args.value);
+}
+```
+The code snippet in __Example 5__ fires the `propertyChange` event when the switch checked value is changed.
+
+###Example 6: Creating a custom class and inheriting `Observable` class
 ``` JavaScript
 var observableModule = require("data/observable");
 var MyClass = (function (_super) {
@@ -189,13 +221,13 @@ export class MyClass extends observableModule.Observable {
   }
 }
 ```
-The code snippet in __Example 5__ fires the `propertyChange` event when the property value is changed.
+The code snippet in __Example 6__ fires the `propertyChange` event when the property value is changed.
 
 ## Creating a Custom Event
 
-If your business logic demands it, you may want to fire (raise or emit) a custom event on a particular action (see __Example 6__). To do that, call the `Observable.notify()` method when the action is completed. This method takes any **implementer** of the [EventData interface](http://docs.nativescript.org/api-reference/interfaces/_data_observable_.eventdata.html) as event data. It includes basic information about an event&mdash;its name as `eventName` and an instance of the event sender as `object`).
+If your business logic demands it, you may want to fire (raise or emit) a custom event on a particular action (see __Example 7__). To do that, call the `Observable.notify()` method when the action is completed. This method takes any **implementer** of the [EventData interface](http://docs.nativescript.org/api-reference/interfaces/_data_observable_.eventdata.html) as event data. It includes basic information about an event&mdash;its name as `eventName` and an instance of the event sender as `object`).
 
-###Example 6: Creating a custom event.
+###Example 7: Creating a custom event.
 ``` JavaScript
 var eventData = {
   eventName: "myCustomEventName",
@@ -236,8 +268,8 @@ A weak event, as its name suggests, creates an weak reference to the listener ob
 
 ### Adding a Weak Event Listener
 
-Using weak event listeners is very similar to normal events. __Example 7__ shows how to add a weak event listener (code comments are included for clarity):
-###Example 7: Creating a weak event and handling a property change event 
+Using weak event listeners is very similar to normal events. __Example 8__ shows how to add a weak event listener (code comments are included for clarity):
+###Example 8: Creating a weak event and handling a property change event 
 ``` JavaScript
 var weakEventListenerModule = require("ui/core/weakEventListener");
 var buttonModule = require("ui/button");
@@ -311,7 +343,7 @@ var weakEventListenerOptions: weakEventListenerModule.WeakEventListenerOptions =
 weakEL.addWeakEventListener(this.weakEventListenerOptions);
 ```
 
-__Example 7__ shows how to attach a weak event listener to an observable object instance. A closer look at the `handlePropertyChange` function shows that `text` property of the `this` object is changed when the `propertyChange` event is raised (via the button tap event). The function demonstrates how to use the `handlerContext` property&mdash;its value is taken as an argument to `this` inside the event handler function.
+__Example 8__ shows how to attach a weak event listener to an observable object instance. A closer look at the `handlePropertyChange` function shows that `text` property of the `this` object is changed when the `propertyChange` event is raised (via the button tap event). The function demonstrates how to use the `handlerContext` property&mdash;its value is taken as an argument to `this` inside the event handler function.
 
 ### Removing a Weak Event Listener
 
