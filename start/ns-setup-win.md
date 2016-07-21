@@ -19,7 +19,7 @@ This page contains a list of all system requirements needed to build and run Nat
 ## System Requirements
 
 * Windows 7 Service Pack 1 or later
-* The latest Node.js 0.10.x, 0.12.x, 4.x, or 5.x stable official release
+* The latest Node.js 0.10.x, 0.12.x, 4.x, 5.x, or 6.x stable official release
 * (Optional) Chocolatey to simplify the installation of dependencies
 * JDK 8 or a later stable official release
 * Android SDK 22 or a later stable official release
@@ -36,7 +36,7 @@ You must also have the following two environment variables setup for Android dev
 
 Complete the following steps to set up NativeScript on your Windows development machine:
 
-1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/), [0.12.x](https://nodejs.org/dist/latest-v0.12.x/), [4.x](https://nodejs.org/dist/latest-v4.x/), or [5.x](https://nodejs.org/dist/latest-v5.x/) stable official release. We recommend using Node.js v4.x.
+1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/), [0.12.x](https://nodejs.org/dist/latest-v0.12.x/), [4.x](https://nodejs.org/dist/latest-v4.x/), [5.x](https://nodejs.org/dist/latest-v5.x/), or [6.x](https://nodejs.org/dist/latest-v6.x/) stable official release. We recommend using Node.js v4.x.
 
 1. Install [Chocolatey](https://chocolatey.org) to simplify the installation and configuration of the Android tools and SDKs.
     1. Run the command prompt as an Administrator.

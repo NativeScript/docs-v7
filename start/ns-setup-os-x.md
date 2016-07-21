@@ -17,7 +17,7 @@ This page contains a list of all system requirements needed to build and run Nat
 ## System Requirements
 
 * OS X Mavericks or later
-* The latest Node.js 0.10.x, 0.12.x, 4.x, or 5.x stable official release
+* The latest Node.js 0.10.x, 0.12.x, 4.x, 5.x, or 6.x stable official release
 * (Optional) Homebrew to simplify the installation of dependencies
 * For iOS development
     * Latest Xcode
