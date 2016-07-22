@@ -34,6 +34,7 @@ There are a few known issues that you might run into as you develop mobile appli
 ### My app broke after switching git branches
 
 **Problem:** After switching branches your app no longer builds, or does not display new changes.
+
 **Solution:** The NativeScript CLI generates platform-specific native projects for your app in the `platforms/android` and `platforms/ios` folders. When you switch branches you may need to regenerate those native projects for your app to function correctly.
 
 Start by removing the existing platform(s) with the `tns platform remove` command.
