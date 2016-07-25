@@ -110,7 +110,7 @@ The result is:
 ![title-view-ios](../img/modules/action-bar/title-view-ios.png "title-view-ios")
 ![title-view-android](../img/modules/action-bar/title-view-android.png "title-view-android")
 
-Note that you can use CSS to style the elements inside the `titleView`.
+> Note that you can use CSS to style the elements inside the `titleView`.
 
 ## Setting the App Icon for Android
 You can set the application icon only for Android. By default, the application icon is hidden. You can show it by setting the `android.iconVisibility` property to `always`.
