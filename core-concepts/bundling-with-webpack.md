@@ -17,6 +17,7 @@ slug: bundling-with-webpack
 6. [Tips and Tricks](#tips-and-tricks)
     1. [Dynamic Imports](#dynamic-requires)
     2. [Advanced Configuration](#advanced-configuration)
+    3. [Bundling HTML templates](#bundling-html-templates)
 7. Webpack resources (#webpack-resources)
 
 ## Overview
@@ -163,6 +164,49 @@ config.output.pathinfo = false;
 module.exports = config;
 
 ```
+
+### Bundling HTML Templates
+
+Webpack can bundle not only JavaScript code files -- it can be extended with different "loaders", and web developers typically use it to reduce server round trips while fetching resources.
+
+You can use the same trick to reduce file system reads and simplify your application deployment. This is especially useful in Angular applications where you can have components resolve their HTML templates from bundled strings using the [html-loader](https://www.npmjs.com/package/html-loader) loader:
+
+1. Add `html-loader` as a developer dependency in your package.json:
+
+    ```sh
+    $ npm install --save-dev html-loader
+    ```
+2. Register your `node_modules` dir as your loader resolver root (webpack doesn't do it by default), and register a loader for modules whose names end in ".html" in your `webpack.config.js`. Here is a sample configuration:
+
+    ```JavaScript
+    var bundler = require("nativescript-dev-webpack");
+    var path = require("path");
+
+    module.exports = bundler.getConfig({
+        resolveLoader: {
+            root: path.join(__dirname, "node_modules")
+        },
+        module: {
+            loaders: [
+                {
+                    test: /\.html$/,
+                    loader: "html"
+                }
+            ]
+        }
+    });
+    ```
+
+3. Change your Angular component template declarations from using `templateUrl` to template:
+
+    ```TypeScript
+    @Component({
+        selector: "my-app",
+        template: require("./app.component.html"),
+    })
+    export class AppComponent {
+    }
+    ```
 
 ## Webpack Resources
 
