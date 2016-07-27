@@ -1,7 +1,7 @@
 ---
 title: Properties
 description: What is a property in NativeScript, what types of properties are available, and how to use them.
-position: 5
+position: 80
 slug: properties
 previous_url: /properties
 environment: nativescript

@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting
 description: Known issues with NativeScript, and where to get help when you run into problems
-position: 9
+position: 80
 slug: troubleshooting
 previous_url: /troubleshooting
 ---

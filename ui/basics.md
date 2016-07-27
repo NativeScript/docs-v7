@@ -1,9 +1,9 @@
 ---
 title: The Basics
 description: Learn the basic principles of designing a user interface with NativeScript. In NativeScript, you can design the UI using XML and CSS.
-position: 1
+position: 10
 slug: ui-basics
-previous_url: /ui-with-xml
+previous_url: /ui-with-xml,/ui/ui-with-xml
 environment: nativescript
 ---
 

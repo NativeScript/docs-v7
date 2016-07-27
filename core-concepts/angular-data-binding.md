@@ -1,9 +1,10 @@
 ---
 title: Data Binding
 description: NativeScript Documentation - Data Binding
-position: 4
+position: 60
 slug: data-binding
 environment: angular
+previous_url: /core-concepts/DataBinding
 --- 
 
 #Data Binding

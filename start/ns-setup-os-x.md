@@ -1,7 +1,7 @@
 ---
 title: NativeScript Advanced Setup—OS X
 description: Configure your OS X system to create, develop and build projects locally with NativeScript.
-position: 4
+position: 40
 publish: false
 slug: osx
 previous_url: /setup/ns-cli-setup/ns-setup-os-x

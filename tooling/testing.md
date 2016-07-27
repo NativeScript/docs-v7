@@ -1,9 +1,9 @@
 ---
 title: Unit Testing
 description: Learn how to write and execute tests for your NativeScript app.
-position: 7
+position: 10
 slug: unit-testing
-previous_url: /testing
+previous_url: /testing,/core-concepts/testing
 ---
 
 # Unit Testing

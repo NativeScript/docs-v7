@@ -1,7 +1,7 @@
 ---
 title: Animation Examples
 description: Examples demonstrating how to animate view properties.
-position: 12
+position: 100
 slug: animation-examples
 publish: false
 ---

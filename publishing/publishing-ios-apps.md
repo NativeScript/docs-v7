@@ -1,9 +1,9 @@
 ---
 title: Publishing for iOS
 description: Learn how to publish your app in the App Store for iOS users.
-position: 13
+position: 20
 slug: publishing-ios-apps
-previous_url: /core-concepts/releasing-apps
+previous_url: /core-concepts/releasing-apps,/core-concepts/publishing-ios-apps
 ---
 
 # Publishing a NativeScript iOS App in the App Store

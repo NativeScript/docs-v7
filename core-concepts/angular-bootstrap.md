@@ -1,9 +1,10 @@
 ---
 title: Angular Bootstrap
 description: Learn how a NativeScript Angular application bootstraps and how you can customize the process.
-position: 2
+position: 30
 slug: angular-bootstrap
 environment: angular
+previous_url: /core-concepts/customizing-bootstrap
 ---
 
 # Overview

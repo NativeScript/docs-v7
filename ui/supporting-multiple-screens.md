@@ -1,8 +1,9 @@
 ---
 title: Supporting Multiple Screens
 description: Learn how to tailor you application for different screen sizes.
-position: 8
+position: 150
 slug: multiple-screen-sizes
+previous_url: /core-concepts/supporting-multiple-screens
 ---
 
 # Supporting Multiple Screens

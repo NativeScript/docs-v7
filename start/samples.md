@@ -1,7 +1,7 @@
 ---
 title: Sample Apps
 description: Full apps with source code implemented by the NativeScript team
-position: 7
+position: 60
 slug: samples
 publish: false
 previous_url: /samples
