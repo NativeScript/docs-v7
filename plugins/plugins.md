@@ -1,7 +1,7 @@
 ---
 title: Infrastructure
 description: When the NativeScript modules do not provide the native device or platform capability that you need, you can use NativeScript plugins.
-position: 20
+position: 1
 slug: plugins-infrastructure
 previous_url: /plugins
 ---

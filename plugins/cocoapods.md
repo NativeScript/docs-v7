@@ -1,7 +1,7 @@
 ---
 title: CocoaPods
 description: Wrap a Cocoapod as a plug in.
-position: 40
+position: 3
 slug: cocoapods
 ---
 
