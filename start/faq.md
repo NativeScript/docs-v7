@@ -1,7 +1,7 @@
 ---
 title: FAQ
 description: A list of frequently asked NativeScript questions and answers
-position: 8
+position: 20
 slug: faq
 previous_url: /faq
 publish: false

@@ -2,7 +2,7 @@
 title: Animations with Code
 description: Animated view properties by using code.
 slug: animations-code
-position: 10
+position: 100
 publish: false
 ---
 

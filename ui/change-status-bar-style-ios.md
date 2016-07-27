@@ -1,7 +1,7 @@
 ---
 title: Changing Status Bar Style in iOS
 description: How to change Status Bar style in iOS
-position: 25
+position: 160
 slug: status-bar-style-ios
 ---
 

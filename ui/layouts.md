@@ -1,7 +1,7 @@
 ---
 title: Layouts
 description: Learn the basic principles of designing and positioning the UI elements inside your apps.
-position: 3
+position: 30
 slug: layouts
 previous_url: /layouts
 ---

@@ -1,7 +1,7 @@
 ---
 title: NativeScript Advanced Setup—Windows
 description: Configure your Windows system to create, develop and build projects locally with NativeScript.
-position: 3
+position: 10
 slug: windows
 publish: false
 previous_url: /setup/ns-cli-setup/ns-setup-win

@@ -1,7 +1,7 @@
 ---
 title: Keyboard
 description: Learn how to configure the soft keyboard when entering text in a TextField or TextView.
-position: 22
+position: 130
 slug: keyboard
 previous_url: /keyboard
 ---

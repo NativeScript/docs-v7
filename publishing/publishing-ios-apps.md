@@ -1,7 +1,7 @@
 ---
 title: Publishing for iOS
 description: Learn how to publish your app in the App Store for iOS users.
-position: 2
+position: 20
 slug: publishing-ios-apps
 previous_url: /core-concepts/releasing-apps,/core-concepts/publishing-ios-apps
 ---

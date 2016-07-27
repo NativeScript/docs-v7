@@ -1,7 +1,7 @@
 ---
 title: Events
 description: How to handle events in NativeScript.
-position: 7
+position: 90
 slug: events
 environment: nativescript
 previous_url: /events

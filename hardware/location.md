@@ -1,7 +1,7 @@
 ---
 title: Location
 description: How to work with geographical location data in NativeScript.
-position: 1
+position: 10
 slug: location
 previous_url: /location
 ---

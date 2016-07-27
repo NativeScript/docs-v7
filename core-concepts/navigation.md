@@ -1,7 +1,7 @@
 ---
 title: Application Architecture
 description: Learn the basic application structure of NativeScript apps and how to navigate inside your app.
-position: 1
+position: 20
 slug: architecture
 previous_url: /navigation
 environment: nativescript
