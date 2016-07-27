@@ -1,7 +1,7 @@
 ---
 title: Animations
 description: Learn how to animate view properties.
-position: 9
+position: 10
 slug: animations
 previous_url: /animation
 ---

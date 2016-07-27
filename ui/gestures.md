@@ -1,7 +1,7 @@
 ---
 title: Gestures
 description: Learn what touch gestures NativeScript supports and how to use them.
-position: 8
+position: 9
 slug: gestures
 previous_url: /gestures
 

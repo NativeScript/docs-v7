@@ -1,9 +1,9 @@
 ---
 title: Data Binding
 description: NativeScript Documentation - Data Binding
-position: 4
+position: 5
 slug: binding
-previous_url: /bindings
+previous_url: /bindings,core-concepts/bindings
 environment: nativescript
 ---
 

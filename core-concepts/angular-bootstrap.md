@@ -4,6 +4,7 @@ description: Learn how a NativeScript Angular application bootstraps and how you
 position: 2
 slug: angular-bootstrap
 environment: angular
+previous_url: /core-concepts/customizing-bootstrap
 ---
 
 # Overview

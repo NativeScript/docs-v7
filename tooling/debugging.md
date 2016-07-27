@@ -1,9 +1,9 @@
 ---
 title: Debugging
 description: How to debug {N} applications.
-position: 11
+position: 2
 slug: debugging
-previous_url: /debugging
+previous_url: /debugging,/core-concepts/debugging
 ---
 
 # Debugging

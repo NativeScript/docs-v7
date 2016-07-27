@@ -1,8 +1,9 @@
 ---
 title: Creating Launch Screen and AppIcons for iOS
 description: How to set up and modify Launch Screen and AppIcons for iOS
-position: 13
+position: 1
 slug: launch-screen-and-icons-ios
+previous_url: /core-concepts/creating-launch-screens-ios
 ---
 
 # Creating AppIcons and Launch Screens for iOS 

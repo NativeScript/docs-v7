@@ -4,6 +4,7 @@ description: Learn the core concepts of building Angular 2 apps with NativeScrip
 position: 0
 slug: architecture-angular
 environment: angular
+previous_url: /core-concepts/architecture-angular
 ---
 
 # Application Architecture

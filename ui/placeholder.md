@@ -1,7 +1,7 @@
 ---
 title: Placeholder
 description: Learn how to use the Placeholder to add any native widget to the visual tree.
-position: 10
+position: 20
 slug: placeholder
 previous_url: /placeholder
 environment: nativescript

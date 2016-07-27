@@ -3,7 +3,7 @@ title: Images
 description: How to work with images in a NativeScript application.
 position: 6
 slug: images
-previous_url: /ui-images
+previous_url: /ui-images,/ui/ui-images
 ---
 
 # Working with Images
