@@ -276,6 +276,59 @@ Label 3 has a fixed width of 150 pixels. Label 1 is given more space than it act
 
 ![GridLayout](../img/modules/layouts/grid-layout5.png "GridLayout")
 
+
+### Sample (Create grid dynamically via code behind)
+```TypeScript
+import { GridLayout, ItemSpec, GridUnitType } from "ui/layouts/grid-layout"
+
+//Grid wrapper
+var grid = new GridLayout();
+
+//Create title Label and add is as a child to our grid
+let titleLabel = new Label();
+titleLabel.text = "NativeScript";
+grid.addChild(titleLabel);
+
+//Create info Label and add is as a child to our grid
+let infoLabel = new Label();
+infoLabel.text = "Truly native mobile apps";
+infoLabel.backgroundColor = new Color("gray");
+grid.addChild(infoLabel);
+
+//Create the share button and add is as a child to our grid
+let shareButton = new Button();
+shareButton.text = "Share This!";
+grid.addChild(shareButton);
+
+// Add Grid Rows as if rows="*, 100, auto" cols="250, *"
+
+// * - occupy the remaining available space 
+grid.addRow(new ItemSpec(1, GridUnitType.star));
+
+// 100 - fixed column width. If elements in this columns wants to be more - we will coerce their width to the column width.
+grid.addRow(new ItemSpec(100, GridUnitType.pixel));
+
+// auto - the column width will be the width of the widest element in that column.
+grid.addRow(new ItemSpec(1, GridUnitType.auto));
+
+grid.addColumn(new ItemSpec(250, GridUnitType.pixel));
+grid.addColumn(new ItemSpec(1, GridUnitType.star));
+
+// Assign views to their row (if not set default row is 0)
+GridLayout.setRow(titleLabel, 0); // titleLabel set to row 0
+GridLayout.setRow(infoLabel, 1);  // infoLabel set to row 1
+GridLayout.setRow(shareButton, 2);// shareButton set to row 2
+
+// Assign views to their col (if not set default column is 0)
+GridLayout.setColumn(titleLabel, 0); // titleLabel set to column 0
+GridLayout.setColumn(infoLabel, 0);  // infoLabel set to column 0
+GridLayout.setColumn(shareButton, 1);// shareButton set to column 1
+
+// Assign ColumnSpan for views 
+GridLayout.setColumnSpan(infoLabel, 2); // infoLabel set with columnSpan = 2
+
+```
+
 ## [StackLayout]({%ns_cookbook ui/layouts/stack-layout%})
 The StackLayout stacks its child elements below or beside each other, depending on its orientation. It is very useful to create lists.
 
