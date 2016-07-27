@@ -1,7 +1,7 @@
 ---
 title: Installation
 description: Set up your system to work with NativeScript.
-position: 40
+position: 20
 slug: quick-start
 previous_url: /setup/quick-setup
 ---
