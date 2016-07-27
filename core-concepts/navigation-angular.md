@@ -49,7 +49,7 @@ In NativeScript you have a choice between two router outlets:
 * `router-outlet` - replaces the content of the outlet with different component. It is the default outlet that comes from Angular 2.
 * `page-router-outlet` - uses pages to navigate. The new components are shown in a new page.
 
-To show the difference between the to we are going to use the following components in the next examples:
+To show the difference between both choices we will use the following components in the next examples:
 
 {%snippet router-content-components%}
 
