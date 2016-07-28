@@ -16,7 +16,10 @@ In this article we will cover how to do navigation in NativeScript application u
 * [Router Links](#router-links)
 * [Router Outlet](#router-outlet)
 * [Page Router Outlet](#page-router-outlet)
-* [Navigating Back](#navigating-back)
+* [Navigation Options](#navigation-options)
+    * [Navigating Back](#navigating-back)
+    * [Clearing Page Navigation History](#clearing-page-navigation-history)
+    * [Specifying Page Transitions](#specifying-page-transitions)
 * [Route Guards](#route-guards)
 
 ## Router
@@ -93,12 +96,59 @@ Here is the result:
 
 Note that we can now use the **Back button** and the **NavigationBar** to navigate. 
 
+It is possible to nest `<router-outlet>` component inside `<page-router-outlet>` or another `<router-outlet>`.
 
-## Navigating Back
+## Navigation Options
 
-You can navigate back pragmatically by injecting `Location` in your component and calling its `back()` method:
+You can define the trigger in you application declaratively - using the `nsRouterLink` directive in the markup. Or you can do it trough code - by injecting `RouterExtensions` class and using its methods:
 
-{%snippet router-location-back%}
+{%snippet router-extensions-import%}
+
+> Note: You can also use the stock angular `Route` and `Location` classes do navigation. Actually, `RouterExtensions` calls those internally. However, it provides access to some NativeScript-specific features like clearing navigation history or defining page transitions.
+
+### Navigating Back
+
+You can navigate back using `back()` method of the `RouterExtensions`:
+
+{%snippet router-back%}
+
+You can also navigate back directly to the previous page with `backToPreviousPage()`:
+
+{%snippet router-page-back%}
+
+The difference between the two methods is visible when there are nested(child) router-outlet inside the current page:
+
+* `back()` - will go back to the previous router location event if it is was navigation inside the child router outlet on the current page.
+* `backToPreviousPage()` - will go back to the previous page. It will skip all child router-outlet navigations inside the current page and go directly to the previous one. 
+
+
+### Clearing Page Navigation History
+
+In NativeScript's page navigation, you have the option to navigate to another page and clear the page navigation history. This means that the user will not be able to go back using the back button (or swipe back in iOS). This is useful in scenarios where you have a login page and you don't want users to be able go go back to it once logged in.
+
+You can specify the `clearHistory` as an attribute on your `nsRouterLink` tag in the markup:
+
+{%snippet router-clear-history-link%}
+
+Or you can use `RotuerExtensions` class:
+
+{%snippet router-clear-history-code%}
+
+### Specifying Page Transitions
+
+By default, all navigation will be animated and will use the default transition for the respective platform (UINavigationController transitions for iOS and Fragment transitions for Android). To change the transition type, set the `pageTransition` attribute on your `nsRouterLink` tag in the markup:
+
+{%snippet router-page-transition-link%}
+
+> Note: You can set `pageTransition="none"` to disable the transition.
+
+You can also do this trough code using the `RotuerExtensions` class:
+
+{%snippet router-page-transition-code%}
+
+> Note: You can pass `animated: fasle` in `NavigationOptions` to disable the transition.
+
+For other customization options check the [`NavigationTransition`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition.html) interface.
 
 ## Route Guards
 
