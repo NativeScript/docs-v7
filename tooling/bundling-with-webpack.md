@@ -19,7 +19,7 @@ previous_url: /core-concepts/bundling-with-webpack
     1. [Dynamic Imports](#dynamic-requires)
     2. [Advanced Configuration](#advanced-configuration)
     3. [Bundling HTML templates](#bundling-html-templates)
-7. Webpack resources (#webpack-resources)
+7. [Webpack resources](#webpack-resources)
 
 ## Overview
 
@@ -177,7 +177,7 @@ You can use the same trick to reduce file system reads and simplify your applica
     ```sh
     $ npm install --save-dev html-loader
     ```
-2. Register your `node_modules` dir as your loader resolver root (webpack doesn't do it by default), and register a loader for modules whose names end in ".html" in your `webpack.config.js`. Here is a sample configuration:
+2. Register your `node_modules` folder as your loader resolver root (webpack doesn't do it by default), and register a loader for modules whose names end in ".html" in your `webpack.config.js`. Here is a sample configuration:
 
     ```JavaScript
     var bundler = require("nativescript-dev-webpack");
@@ -211,7 +211,7 @@ You can use the same trick to reduce file system reads and simplify your applica
 
 ## Webpack Resources
 
-Bundling JavaScript code can get complex very soon, and encountering webpack for the first time can get daunting. A full introduction to webpack and related technologies is beyond the scope of this article, and we recommend the following resources:
+Bundling JavaScript code can get complex quickly, and encountering webpack for the first time can be daunting. A full introduction to webpack and related technologies is beyond the scope of this article, and we recommend the following resources:
 
 * [Introduction](https://webpack.github.io/docs/what-is-webpack.html)
 * [Tutorial](https://webpack.github.io/docs/tutorials/getting-started/)
