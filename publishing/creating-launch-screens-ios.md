@@ -6,7 +6,7 @@ slug: launch-screen-and-icons-ios
 previous_url: /core-concepts/creating-launch-screens-ios
 ---
 
-# Creating AppIcons and Launch Screens for iOS 
+# Creating App Icons and Launch Screens for iOS 
 
 Publishing your iOS app is an essential step in the development process and in order for your iOS application 
 to be published successfully in App Store, there are some requirements that need to be fulfilled. 
@@ -19,7 +19,7 @@ As described in [iOS Human Interface Guidelines](https://developer.apple.com/lib
 In NativeScript, your application comes with predefined template settings and images for these steps.
 In this article, we are going to introduce the workflow to create your own launch screens.
 
-## Setting launch screen and AppIcons
+## Setting launch screen and App Icons
 
 Setting up launch screens depends on the version of iOS you are targeting.
 In iOS 7 and lower, the approach for creating the launch screen is to use static image resources.
@@ -60,7 +60,7 @@ In your **app/App_Resources/iOS/Assets.xcassets** you will find the following su
 
 ![Default asset catalog](../img/launch-screen/ios/launch-screen-howto-001.png "Default asset catalog")
 
-### Customizing AppIcons
+### Customizing App Icons
 + Changing AppIcons: manual approach 
 	
 Open **AppIcon.appiconset** and change the default icons images with your own using the proper resolution for each image (e.g., icon-29.png should be 29px x 29px; icon-29@2x should be 58px x 58px).
@@ -128,7 +128,7 @@ As this is an image that will be used in your LaunchScreen.storyboard, your actu
 The default NativeScript template ships a LaunchScreen-AspectFill.png and LaunchScreen-AspectFill@2x.png used as a sample background.
 If your images have different file names then open Contents.json and change the key `filename` for each image.
 
-> **Important:** After each file change in the **Assets.xcassets** folder you should rebuild your project and restart your emulator to avoid visualising cached images.
+> **Important:** After each file change in the **Assets.xcassets** folder you should rebuild your project and restart your emulator to avoid visualizing cached images.
 
 + Xcode WYSIWYG approach
 	
@@ -147,7 +147,7 @@ As this is an image that will be used in your LaunchScreen.storyboard, your actu
 The default NativeScript template ships a LaunchScreen-Center.png and LaunchScreen-Center@2x.png used as a sample center logo image.
 If your images have different file names then open Contents.json and change the key `filename` for each image.
 
-> **Important:** After each file change in the **Assets.xcassets** folder you should rebuild your project and restart your emulator to avoid visualising cached images.
+> **Important:** After each file change in the **Assets.xcassets** folder you should rebuild your project and restart your emulator to avoid visualizing cached images.
 
 + Xcode WYSIWYG approach
 
