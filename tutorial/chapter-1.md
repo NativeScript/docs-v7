@@ -160,7 +160,7 @@ The `tns livesync` command updates your app by transferring the updated source c
 
 To see livesync in action let’s make a small update to your app. Open your app's `app/views/login/login.xml` file in your text editor of choice and change `<Label text="hello world" />` to `<Label text="hello NativeScript" />`.
 
-Save `app/views/login/login.xml` and you should see the app relaunch and the updated text displayed
+Save `app/views/login/login.xml` and you should see the app relaunch and the updated text displayed.
 
 <div class="exercise-end"></div>
 

@@ -150,7 +150,7 @@ For your login screen, all you need is a simple `<StackLayout>` to stack the UI 
     <b>Exercise</b>: Add a stack layout to the login screen
 </h4>
 
-In `login.xml`, add the `<StackLayout>` component within the `<Page>` component. `login.xml` should look like this:
+In `login.xml`, add a `<StackLayout>` component within the `<Page>` component. `login.xml` should look like this:
 
 ``` XML
 <Page>
@@ -179,7 +179,7 @@ Although the UI components are in the correct order, they could use some spacing
 
 > **TIP**:
 > * Refer to the NativeScript docs for a [more detailed look at how NativeScript layouts work](/layouts) and the various things you can do to configure them.
-> * Check out Jen Looper's article on [demystifying NativeScript layouts](https://www.nativescript.org/blog/demystifying-nativescript-layouts) for a more thorough look at NativeScript layouts in action.
+> * Check out Jen Looper's article on [demystifying NativeScript layouts](https://www.nativescript.org/blog/demystifying-nativescript-layouts) for a thorough look at NativeScript layouts in action.
 
 ## 2.4: CSS
 
