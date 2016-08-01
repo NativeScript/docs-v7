@@ -156,11 +156,11 @@ var email;
 
 > **NOTE**: This line of code imports the [view class](http://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html), which is the base class for all UI components. The module provides a lot of functionality, including the ability to control properties of a view and its children. You're going to use it to get access to the email text field.
 
-Next, edit the `loaded()` function in `login.js` to get a reference to the current view:
+Next, edit the `loaded()` function in `login.js` to get a reference to the current page:
 
 ``` JavaScript
 exports.loaded = function(args) {
-    var page = args.object;
+    page = args.object;
 };
 ```
 
@@ -218,7 +218,7 @@ Now, replace the existing `loaded()` function with the one below, which sets `us
 
 ``` JavaScript
 exports.loaded = function(args) {
-    var page = args.object;
+    page = args.object;
     page.bindingContext = user;
 };
 ```
