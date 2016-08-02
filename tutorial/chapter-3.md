@@ -150,29 +150,32 @@ With an `id` attribute in place, you can access this text field in your code-beh
 
 ``` JavaScript
 var viewModule = require("ui/core/view");
+var page;
 var email;
 ```
 
 > **NOTE**: This line of code imports the [view class](http://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html), which is the base class for all UI components. The module provides a lot of functionality, including the ability to control properties of a view and its children. You're going to use it to get access to the email text field.
 
-Next, edit the `loaded()` function in `login.js` to get a reference to the email address text field:
+Next, edit the `loaded()` function in `login.js` to get a reference to the current page:
 
 ``` JavaScript
 exports.loaded = function(args) {
-    var page = args.object;
+    page = args.object;
+};
+```
+
+Finally, edit the `signIn()` function to get a reference to the text field component and log its contents:
+
+``` JavaScript
+exports.signIn = function() {
     email = viewModule.getViewById(page, "email");
+    console.log(email.text);
 };
 ```
 
 There are two things to note here. First, NativeScript passes `loaded` event handlers a reference to the `<Page>` in the function's argument, which is named `args` by convention. Second, you use the view module's [`getViewById()`](http://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html#getviewbyid) function to get a reference to the text field component.
 
-Finally, edit the `signIn()` function to log the contents of the text field:
 
-``` JavaScript
-exports.signIn = function() {
-    console.log(email.text);
-};
-```
 <div class="exercise-end"></div>
 
 To see how this works in action, run the app, type some text in the email address text field, and tap the “Sign in” button. If all went well, you should see the text you typed logged in your terminal.
@@ -215,7 +218,7 @@ Now, replace the existing `loaded()` function with the one below, which sets `us
 
 ``` JavaScript
 exports.loaded = function(args) {
-    var page = args.object;
+    page = args.object;
     page.bindingContext = user;
 };
 ```
