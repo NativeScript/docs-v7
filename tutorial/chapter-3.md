@@ -146,15 +146,12 @@ Open `login.xml` and add an `id="email"` attribute to the email text field. Its 
 <TextField id="email" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
 ```
 
-With an `id` attribute in place, you can access this text field in your code-behind file. To do that, start by opening `app/views/login/login.js` and adding the code below at the top, underneath the `frameModule` variable.
+With an `id` attribute in place, you can access this text field in your code-behind file. To do that, start by opening `app/views/login/login.js` and adding the two lines of code below at the top of the file, underneath the `frameModule` variable.
 
 ``` JavaScript
-var viewModule = require("ui/core/view");
 var page;
 var email;
 ```
-
-> **NOTE**: This line of code imports the [view class](http://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html), which is the base class for all UI components. The module provides a lot of functionality, including the ability to control properties of a view and its children. You're going to use it to get access to the email text field.
 
 Next, edit the `loaded()` function in `login.js` to get a reference to the current page:
 
@@ -164,19 +161,20 @@ exports.loaded = function(args) {
 };
 ```
 
+> **NOTE**: This works because NativeScript passes `loaded` event handlers a reference to the `<Page>` in the function's argument, which is named `args` by convention.
+
 Finally, edit the `signIn()` function to get a reference to the text field component and log its contents:
 
 ``` JavaScript
 exports.signIn = function() {
-    email = viewModule.getViewById(page, "email");
+    email = page.getViewById("email");
     console.log(email.text);
 };
 ```
 
-There are two things to note here. First, NativeScript passes `loaded` event handlers a reference to the `<Page>` in the function's argument, which is named `args` by convention. Second, you use the view module's [`getViewById()`](http://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html#getviewbyid) function to get a reference to the text field component.
-
-
 <div class="exercise-end"></div>
+
+All NativeScript UI components, including `<Page>`, inherit from the [`View` class](http://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html), which gives them a number of methods for working the UI. In this case you use the [`getViewById()` method](http://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html#getviewbyid) to get a reference to the email text field by its `id` attribute.
 
 To see how this works in action, run the app, type some text in the email address text field, and tap the “Sign in” button. If all went well, you should see the text you typed logged in your terminal.
 

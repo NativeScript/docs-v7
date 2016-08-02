@@ -183,7 +183,7 @@ Then, add the following code to the `exports.loaded()` function, directly under 
 
 ``` JavaScript
 if (page.ios) {
-    var listView = viewModule.getViewById(page, "groceryList");
+    var listView = page.getViewById("groceryList");
     swipeDelete.enable(listView, function(index) {
         groceryList.delete(index);
     });
