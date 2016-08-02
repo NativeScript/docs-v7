@@ -66,31 +66,32 @@ Here is the full list of the files that ships with the basic NativeScript templa
 Used when you need to provide themes supported only on API Level 21+ (e.g. Theme.Material)   
 
 * **AndroidManifest.xml** file: Every application must have an `AndroidManifest.xml` file (with precisely that name) 
-in its root directory. The manifest file presents essential information about your app to the Android system, i
-nformation the system must have before it can run any of the app's code.
-Chaning your application icon file is done with modifying the `android:icon` key in `applcation` tag.
+in its root directory. The manifest file presents essential information about your app to the Android system, 
+information the system must have before it can run any of the app's code.
+Changing your application icon file is done with modifying the `android:icon` key in `applcation` tag.
 The default app icon set up:
 
     `android:icon="@drawable/icon"`
 
     The code above will look for file named __icon.png__ in drawables folders and will load the properly scaled image for the current device.
 
-    > Note: In `AndroidManifest` you will find the following key
+    > Note: In `AndroidManifest` you will find the following key 
+    >
     >`<meta-data android:name="SET_THEME_ON_LAUNCH" android:resource="@style/AppTheme" />`
     >
     > This key is used by NativeScript to change your `LaunchScreenTheme` with `AppTheme` when your application is loading. 
 
-### How to setup custom launch screen
+### How to setup a custom launch screen
 
-In order to change the default NativeScript launch screen (defined in `drawable-nodpi/splash_screen.xml`) and create your own, follow this steps:
+In order to change the default NativeScript launch screen (defined in `drawable-nodpi/splash_screen.xml`) and create your own, follow these steps:
 
 1. Provide your properly scaled images accordingly to the **drawable** folders.
-This folder can be used not only for your launch screen images but also for your app icons and for your
+This folder can be used not only for your launch screen images, but also for your app icons and for your
 in-app images (you can refer to this resource from your application logic with `"res://image-name"` )
 The default template app ships with three images: **icon.png** (used for app icon), **logo.png** (centered sample image)
 and **background.png** (image used to fill the background).
 
-The default `splash_screen.xml` with centered 'logo.png' and filled `background.png`
+The default **splash_screen.xml** with centered `logo.png` and filled `background.png`.
 
 ```
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" android:gravity="fill">
@@ -111,7 +112,7 @@ You can set your own colors here and reuse them in splash_screen.xml file for yo
 ![Setting colors in values folders](../img/launch-screen/android/launch-android-002.png "Setting colors in values folders")
 
 3. Define the strings you want to use in **values/strings.xml** and in **values-v21/strings.xml**
-You can set your own string here and reuse them in splash_screen.xml file for your launch screen (or reuse them in your app).
+You can set your own string here and reuse them in **splash_screen.xml** file for your launch screen (or reuse them in your app).
 
 ![Setting colors in values folders](../img/launch-screen/android/launch-android-003.png "Setting colors in values folders")
 
