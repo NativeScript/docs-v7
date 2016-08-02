@@ -114,11 +114,12 @@ In `login.js`, at the top of the file, add the following reference to `shared/vi
 var UserViewModel = require("../../shared/view-models/user-view-model");
 ```
 
-Remove the following five lines of code, as you'll be using the `UserViewModel` instead of the `user` you added in the previous chapter.
+**Remove** the following five lines of code, as you'll be using the `UserViewModel` instead of the `user` you added in the previous chapter.
 
 <div class="no-copy-button"></div>
 
 ``` JavaScript
+// Remove these lines of code
 var Observable = require("data/observable").Observable;
 var user = new Observable({
     email: "user@domain.com",
@@ -253,7 +254,6 @@ Open `app/views/list/list.js` and paste in the following code:
 var dialogsModule = require("ui/dialogs");
 var Observable = require("data/observable").Observable;
 var ObservableArray = require("data/observable-array").ObservableArray;
-var viewModule = require("ui/core/view");
 var page;
 
 var pageData = new Observable({
@@ -306,7 +306,7 @@ You're going to start by changing `list.js` to use the `GroceryListViewModel`. F
 var GroceryListViewModel = require("../../shared/view-models/grocery-list-view-model");
 ```
 
-Next, remove the existing `var pageData` assignment:
+Next, **remove** the existing `var pageData` assignment:
 
 <div class="no-copy-button"></div>
 
