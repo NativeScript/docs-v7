@@ -41,6 +41,7 @@ The next sections introduce you to all the gestures recognized by NativeScript:
 
 {% nativescript %}
 ``` JavaScript
+var gestures = require("ui/gestures");
 var labelModule = require("ui/label");
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.tap, function (args) {
@@ -48,9 +49,10 @@ label.on(gestures.GestureTypes.tap, function (args) {
 });
 ```
 ``` TypeScript
+import { GestureTypes } from "ui/gestures";
 import labelModule = require("ui/label");
 var label = new labelModule.Label();
-label.on(gestures.GestureTypes.tap, function (args: gestures.GestureEventData) {
+label.on(GestureTypes.tap, function (args: gestures.GestureEventData) {
     console.log("Tap");
 });
 ```
@@ -65,6 +67,7 @@ label.on(gestures.GestureTypes.tap, function (args: gestures.GestureEventData) {
 
 {% nativescript %}
 ``` JavaScript
+var gestures = require("ui/gestures");
 var labelModule = require("ui/label");
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.doubleTap, function (args) {
@@ -72,9 +75,10 @@ label.on(gestures.GestureTypes.doubleTap, function (args) {
 });
 ```
 ``` TypeScript
+import { GestureTypes } from "ui/gestures";
 import labelModule = require("ui/label");
 var label = new labelModule.Label();
-label.on(gestures.GestureTypes.doubleTap, function (args: gestures.GestureEventData) {
+label.on(GestureTypes.doubleTap, function (args: gestures.GestureEventData) {
     console.log("Double Tap");
 });
 ```
@@ -93,6 +97,7 @@ Possible implementation:
 
 {% nativescript %}
 ``` JavaScript
+var gestures = require("ui/gestures");
 var labelModule = require("ui/label");
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.longPress, function (args) {
@@ -100,9 +105,10 @@ label.on(gestures.GestureTypes.longPress, function (args) {
 });
 ```
 ``` TypeScript
+import { GestureTypes } from "ui/gestures";
 import labelModule = require("ui/label");
 var label = new labelModule.Label();
-label.on(gestures.GestureTypes.longPress, function (args: gestures.GestureEventData) {
+label.on(GestureTypes.longPress, function (args: gestures.GestureEventData) {
     console.log("Long Press");
 });
 ```
@@ -118,6 +124,7 @@ Possible implementation: Select one or more items in a view and act upon the dat
 
 {% nativescript %}
 ``` JavaScript
+var gestures = require("ui/gestures");
 var labelModule = require("ui/label");
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.swipe, function (args) {
@@ -125,9 +132,10 @@ label.on(gestures.GestureTypes.swipe, function (args) {
 });
 ```
 ``` TypeScript
+import { GestureTypes } from "ui/gestures";
 import labelModule = require("ui/label");
 var label = new labelModule.Label();
-label.on(gestures.GestureTypes.swipe, function (args: gestures.SwipeGestureEventData) {
+label.on(GestureTypes.swipe, function (args: gestures.SwipeGestureEventData) {
     console.log("Swipe Direction: " + args.direction);
 });
 ```
@@ -143,6 +151,7 @@ Possible implementation: Navigate between views in the same hierarchy.
 
 {% nativescript %}
 ``` JavaScript
+var gestures = require("ui/gestures");
 var labelModule = require("ui/label");
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.pan, function (args) {
@@ -150,8 +159,9 @@ label.on(gestures.GestureTypes.pan, function (args) {
 });
 ```
 ``` TypeScript
+import { GestureTypes } from "ui/gestures";
 import labelModule = require("ui/label");
-label.on(gestures.GestureTypes.pan, function (args: gestures.PanGestureEventData) {
+label.on(GestureTypes.pan, function (args: gestures.PanGestureEventData) {
     console.log("Pan deltaX:" + args.deltaX + "; deltaY:" + args.deltaY + ";");
 });
 ```
@@ -166,6 +176,7 @@ label.on(gestures.GestureTypes.pan, function (args: gestures.PanGestureEventData
 
 {% nativescript %}
 ``` JavaScript
+var gestures = require("ui/gestures");
 var labelModule = require("ui/label");
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.pinch, function (args) {
@@ -173,9 +184,10 @@ label.on(gestures.GestureTypes.pinch, function (args) {
 });
 ```
 ``` TypeScript
+import { GestureTypes } from "ui/gestures";
 import labelModule = require("ui/label");
 var label = new labelModule.Label();
-label.on(gestures.GestureTypes.pinch, function (args: gestures.PinchGestureEventData) {
+label.on(GestureTypes.pinch, function (args: gestures.PinchGestureEventData) {
     console.log("Pinch Scale: " + args.scale);
 });
 ```
@@ -191,6 +203,7 @@ Possible implementation: Zoom into content or out of content.
 
 {% nativescript %}
 ``` JavaScript
+var gestures = require("ui/gestures");
 var labelModule = require("ui/label");
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.rotation, function (args) {
@@ -198,9 +211,10 @@ label.on(gestures.GestureTypes.rotation, function (args) {
 });
 ```
 ``` TypeScript
+import { GestureTypes } from "ui/gestures";
 import labelModule = require("ui/label");
 var label = new labelModule.Label();
-label.on(gestures.GestureTypes.rotation, function (args: gestures.RotationGestureEventData) {
+label.on(GestureTypes.rotation, function (args: gestures.RotationGestureEventData) {
     console.log("Rotation: " + args.rotation);
 });
 ```
@@ -217,6 +231,7 @@ This is a general purpose gesture that is triggered whenever a pointer (usually 
 
 {% nativescript %}
 ``` JavaScript
+var gestures = require("ui/gestures");
 var labelModule = require("ui/label");
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.touch, function (args) {
@@ -224,9 +239,10 @@ label.on(gestures.GestureTypes.touch, function (args) {
 });
 ```
 ``` TypeScript
+import { GestureTypes } from "ui/gestures";
 import labelModule = require("ui/label");
 var label = new labelModule.Label();
-label.on(gestures.GestureTypes.touch, function (args: gestures.TouchGestureEventData) {
+label.on(GestureTypes.touch, function (args: gestures.TouchGestureEventData) {
     console.log("Touch: x: " + args.getX() + " y: " + args.getY());
 });
 ```
@@ -241,6 +257,7 @@ label.on(gestures.GestureTypes.touch, function (args: gestures.TouchGestureEvent
 Since the release of NativeScript 1.3, when subscribing you can use gestures names, comma separated gestures names and/or even mix with events.
 
 ``` JavaScript
+var gestures = require("ui/gestures");
 var labelModule = require("ui/label");
 var label = new labelModule.Label();
 label.on("loaded, tap, doubleTap, longPress", function (args) {
@@ -248,9 +265,10 @@ label.on("loaded, tap, doubleTap, longPress", function (args) {
 });
 ```
 ``` TypeScript
+import { GestureEventData } from "ui/gestures";
 import labelModule = require("ui/label");
 var label = new labelModule.Label();
-label.on("loaded, tap, doubleTap, longPress", function (args: gestures.GestureEventData) {
+label.on("loaded, tap, doubleTap, longPress", function (args: GestureEventData) {
     console.log("Event: " + args.eventName + ", sender: " + args.object);
 });
 ```
