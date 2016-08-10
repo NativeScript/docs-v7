@@ -9,6 +9,11 @@ previous_url: /Changelogs/iOS Runtime
 
 
 
+2.2.0
+=====
+
+- LiveSync improvements
+
 2.1.1
 =====
 
