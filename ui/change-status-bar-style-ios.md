@@ -7,7 +7,7 @@ slug: status-bar-style-ios
 
 # Changing Status Bar Style in iOS
  
-NativeScript allows you to build multiplatform applications by exposing a rich common API. You don't need to know specifics of the different platforms. However, every platform has its own features. In those cases when you need to fine tune your application and make it look more native, NativeScrpt gives you full control and access to the native API and platform-specific functionality. One such scenario is when you want to change the status bar style in iOS. 
+NativeScript allows you to build multi-platform applications by exposing a rich common API. You don't need to know specifics of the different platforms, however, every platform has its own features. In those cases when you need to fine tune your application and make it look more native, NativeScrpt gives you full control and access to the native API and platform-specific functionality. One such scenario is when you want to change the status bar style in iOS. 
 
 There are two options to change the status bar style for iOS applications in NativeScript.
 
@@ -52,7 +52,7 @@ ActionBar
  
 __Figure 2__ shows the result.
 
->caption Figure 2: Changed backgroung color of NavigationBar and StatusBar
+>caption Figure 2: Changed background color of NavigationBar and StatusBar
  
 ![adding-action-bar-set-backgroundcolor](../img/change-status-bar-style-ios/status-bar-style-via-actionbar-set-backgroundcolor.png "adding-action-bar-set-backgroundcolor")
 
@@ -66,7 +66,7 @@ You should use the `frame` module to access the native instance of `UINavigation
 
 ``` JavaScript
 var frame = require("ui/frame");
-var platform = require("platform")
+var platform = require("platform");
 function loaded(args) {
     if (platform.isIOS) {
         var navigationBar = frame.topmost().ios.controller.navigationBar;
@@ -78,7 +78,7 @@ exports.loaded = loaded;
 ``` TypeScript
 import { EventData } from "data/observable";
 import { topmost } from "ui/frame";
-import { isIOS } from "platform"
+import { isIOS } from "platform";
 
 export function loaded(args: EventData){
      if (isIOS) {
