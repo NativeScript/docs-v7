@@ -8,7 +8,7 @@ previous_url: /ui-views,/ui/ui-views
 
 # User Interface Widgets
 
-NativeScript ships with a set of user interface [`views`](api-reference/modules/_ui_core_view_.html) (also known as widgets) which you can use to build the user interface of a mobile application. Most of these views wrap the corresponding native view for each platform while providing a common API for working with it. For example, the `Button` view renders an [`android.widget.Button`](http://developer.android.com/reference/android/widget/Button.html) on Android and [`UIButton`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/) on iOS.
+NativeScript ships with a set of user interface [`views`](http://docs.nativescript.org/api-reference/modules/_ui_core_view_.html) (also known as widgets) which you can use to build the user interface of a mobile application. Most of these views wrap the corresponding native view for each platform while providing a common API for working with it. For example, the `Button` view renders an [`android.widget.Button`](http://developer.android.com/reference/android/widget/Button.html) on Android and [`UIButton`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/) on iOS.
 
 * [Button](#button)
 * [Label](#label)
@@ -163,7 +163,7 @@ The [Image]({%ns_cookbook ui/image%}) widget shows an image. You can load the im
 
 ## ListView
 
-The [ListView]({%ns_cookbook ui/list-view%}) shows items in a vertically scrolling list. You can set an [`itemTemplate`](api-reference/modules/_ui_list_view_.knowntemplates.html) to specify how each item in the list should be displayed.
+The [ListView]({%ns_cookbook ui/list-view%}) shows items in a vertically scrolling list. You can set an [`itemTemplate`](http://docs.nativescript.org/api-reference/modules/_ui_list_view_.knowntemplates.html) to specify how each item in the list should be displayed.
 
 ![list-view android](../img/gallery/android/listViewPage.png "list-view android")![list-view ios](../img/gallery/ios/listViewPage.png "list-view ios")
 
