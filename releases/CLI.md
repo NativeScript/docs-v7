@@ -9,6 +9,14 @@ previous_url: /Changelogs/CLI
 
 NativeScript CLI Changelog
 ================
+2.2.1 (2016, August 15)
+==
+
+### Fixed
+* [Fixed #1985](https://github.com/NativeScript/nativescript-cli/issues/1985): Fixed: Livesync + debug on Android not working when there are changes in tns-core-modules.
+* [Fixed #1993](https://github.com/NativeScript/nativescript-cli/issues/1993): Fixed: VisualStudio Code hangs when executing sync on iOS action.
+* [Fixed #1994](https://github.com/NativeScript/nativescript-cli/issues/1985): Fixed: Livesync + debug syncs wrong files on Android.
+
 2.2.0 (2016, August 10)
 ==
 
