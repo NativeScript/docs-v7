@@ -4,7 +4,7 @@ description: Learn the basic application structure of NativeScript apps and how 
 position: 20
 slug: navigation
 environment: angular
-previous_url: core-concepts/navigation-angular
+previous_url: /core-concepts/navigation-angular
 ---
 
 # Navigation
