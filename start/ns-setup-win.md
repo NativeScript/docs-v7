@@ -27,7 +27,7 @@ This page contains a list of all system requirements needed to build and run Nat
 * Android SDK Build-tools 23.0.3 or a later stable official release
 * (Optional) Genymotion to expand your testing options
 
-You must also have the following two environment variables setup for Android development:
+You must also have the following two environment variables setup for Android development which will automatically be setup for you as part of the installs:
 
 * JAVA_HOME
 * ANDROID_HOME
@@ -35,8 +35,6 @@ You must also have the following two environment variables setup for Android dev
 ## Advanced Setup Steps
 
 Complete the following steps to set up NativeScript on your Windows development machine:
-
-1. Install the latest Node.js [0.10.x](https://nodejs.org/dist/latest-v0.10.x/), [0.12.x](https://nodejs.org/dist/latest-v0.12.x/), [4.x](https://nodejs.org/dist/latest-v4.x/), [5.x](https://nodejs.org/dist/latest-v5.x/), or [6.x](https://nodejs.org/dist/latest-v6.x/) stable official release. We recommend using Node.js v4.x.
 
 1. Install [Chocolatey](https://chocolatey.org) to simplify the installation and configuration of the Android tools and SDKs.
     1. Run the command prompt as an Administrator.
@@ -46,31 +44,25 @@ Complete the following steps to set up NativeScript on your Windows development 
         </code></pre>
     1. Restart the command prompt.
 
+1. Install [NodeJs LTS Version](https://nodejs.org/).  Currently the LTS version is Node.js v4.x.
+
+    1. In the command prompt, run the following command.
+
+        <pre class="add-copy-button"><code class="language-terminal">choco install nodejs -y -version 4.5.0
+        </code></pre>
+
 1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
     1. In the command prompt, run the following command.
 
-        <pre class="add-copy-button"><code class="language-terminal">choco install jdk8
+        <pre class="add-copy-button"><code class="language-terminal">choco install jdk8 -y
         </code></pre>
-
-    1. If not present, create the following environment variable from a command-prompt, started as an administrator.
-
-        <pre><code class="language-terminal">SETX JAVA_HOME "Path to the jdk* install folder" /M
-        </code></pre>
-
-        For example: `SETX JAVA_HOME "C:\Program Files\Java\jdk1.8.0_65" /M`
 
 1. Install the [Android SDK](http://developer.android.com/sdk/index.html).
     1. In the command prompt, run the following command.
 
-        <pre class="add-copy-button"><code class="language-terminal">choco install android-sdk
+        <pre class="add-copy-button"><code class="language-terminal">choco install android-sdk -y
         </code></pre>
 
-    1. If not present, create the following environment variable from a command-prompt, started as an administrator.
-
-        <pre><code class="language-terminal">SETX ANDROID_HOME "Path to the Android SDK install folder" /M
-        </code></pre>
-
-        For example: `SETX ANDROID_HOME "C:\Program Files (x86)\Android\android-sdk" /M`
     1. Restart the command prompt.
 
 1. Install the required Android SDKs and the Local Maven repository for Support Libraries.
