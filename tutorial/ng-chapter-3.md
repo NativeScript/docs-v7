@@ -469,20 +469,20 @@ The two functions you pass `subscribe()` are success and failure handlers. If th
     <b>Exercise</b>: Create an account
 </h4>
 
-Because the `UserService` makes use of the `Http` service, your final step is registering the Http provider in `AppComponent`. Start by opening `app/main.ts` and adding the following two imports to the top of the file:
+Because the `UserService` makes use of the `Http` service, your final step is registering the Http provider. Start by opening `app/main.ts` and adding the following two imports to the top of the file:
 
 ``` TypeScript
 import "reflect-metadata";
-import {HTTP_PROVIDERS} from "@angular/http";
+import {NS_HTTP_PROVIDERS} from "nativescript-angular/http";
 ```
 
 Next, in the same file, replace the existing call to `nativeScriptBootstrap()` with the line of code below:
 
 ``` TypeScript
-nativeScriptBootstrap(AppComponent, [HTTP_PROVIDERS]);
+nativeScriptBootstrap(AppComponent, [NS_HTTP_PROVIDERS]);
 ```
 
-[`HTTP_PROVIDERS`](https://angular.io/docs/ts/latest/api/http/HTTP_PROVIDERS-let.html) is an Angular-provided shorthand array that includes all of Angular’s HTTP-based services, including the `Http` service that `UserService` uses. Angular lets you declare common providers globally by passing them to `bootstrap()`, or `nativeScriptBootstrap()`, in this case.
+`NS_HTTP_PROVIDERS` is a NativeScript wrapper of Angular’s [`HTTP_PROVIDERS`](https://angular.io/docs/ts/latest/api/http/HTTP_PROVIDERS-let.html), an array that includes all of Angular’s HTTP-based services—including the `Http` service that `UserService` uses. Angular lets you declare common providers globally by passing them to `bootstrap()`, or `nativeScriptBootstrap()`, in this case.
 
 > **NOTE**: Angular supports the concept of [hierarchical dependency injectors](https://angular.io/docs/ts/latest/guide/hierarchical-dependency-injection.html), which is a fancy way of saying that you can declare `providers` in parent components and use them in child components. In this example, this concept means you can declare `HTTP_PROVIDERS` in `main.ts`, even though the `Http` service is used in `UserService`. Generally, it’s only a good idea to declare providers in parent components if most of the component’s children actually use that provider. Although you _could_ declare all your providers in the call to `nativeScriptBootstrap()`, your providers would become unwieldy as your app grows, and difficult to refactor as your app changes.
 
