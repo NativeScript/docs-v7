@@ -555,12 +555,12 @@ First, open `app/main.ts` and replace the file’s contents with the following c
 
 ``` TypeScript
 import "reflect-metadata";
-import {HTTP_PROVIDERS} from "@angular/http";
 import {nativeScriptBootstrap} from "nativescript-angular/application";
+import {NS_HTTP_PROVIDERS} from "nativescript-angular/http";
 import {AppComponent} from "./app.component";
 import {APP_ROUTER_PROVIDERS} from "./app.routes";
 
-nativeScriptBootstrap(AppComponent, [HTTP_PROVIDERS, APP_ROUTER_PROVIDERS]);
+nativeScriptBootstrap(AppComponent, [NS_HTTP_PROVIDERS, APP_ROUTER_PROVIDERS]);
 ```
 
 And finally, open `app/app.component.ts` back up and paste in the following code. We’ll discuss this file in detail momentarily.
