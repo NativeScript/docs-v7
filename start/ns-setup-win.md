@@ -27,7 +27,7 @@ This page contains a list of all system requirements needed to build and run Nat
 * Android SDK Build-tools 23.0.3 or a later stable official release
 * (Optional) Genymotion to expand your testing options
 
-You must also have the following two environment variables setup for Android development which will automatically be setup for you as part of the installs:
+You must also have the following two environment variables setup for Android development, which will automatically be added for you as part of the installation:
 
 * JAVA_HOME
 * ANDROID_HOME
@@ -44,7 +44,7 @@ Complete the following steps to set up NativeScript on your Windows development 
         </code></pre>
     1. Restart the command prompt.
 
-1. Install [NodeJs LTS Version](https://nodejs.org/).  Currently the LTS version is Node.js v4.x.
+1. Install the [Node.js LTS (Long Term Support) Version](https://nodejs.org/). Currently the LTS version is Node.js v4.x.
 
     1. In the command prompt, run the following command.
 
