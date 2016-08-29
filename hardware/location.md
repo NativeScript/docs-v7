@@ -45,7 +45,7 @@ NativeScript has a universal way to check if location services are turned on&mda
 By default, the `nativescript-geolocation` plugin adds the required permissions in `AndroidManiest.xml` for Android and `Info.plist` for iOS. For iOS, the plugin adds two dummy string values which serve as te message when the platform asks for permission to use location services. You can edit this message later. 
 
 After you install the plugin, you can request to use location services in the app with the code in __Example 1__:
->caption Example 1: How to enable location service on a device
+> Example 1: How to enable location service on a device
 {% nativescript %}
 ```XML
 <Page> 
@@ -123,7 +123,7 @@ Property | Type | Description
 `maximumAge` | Number | (Optional) Filters locations by how long ago they were received, in milliseconds. For example, if the `maximumAge` is 5000, you will get locations only from the last 5 seconds. 
 `timeout` | Number | (Optional) Specifies how long to wait for a location, in milliseconds.
 
->caption Example 2: How to get current location
+> Example 2: How to get current location
 {% nativescript %}
 ```XML
 <Page>
@@ -170,7 +170,7 @@ exports.buttonGetLocationTap = buttonGetLocationTap;
 
 With this method, location watching does not stop automatically until the `clearWatch` method is called. You might need to use this method in apps which require a GPS log or active location tracking. 
 
->caption Example 3: How to handle location chnage event
+> Example 3: How to handle location chnage event
 
 {% nativescript %}
 ```XML
@@ -237,7 +237,7 @@ exports.buttonStopTap = buttonStopTap;
 
 This method lets you measure the distance between two locations in meters.
 
->caption Example 4: How to get distance between to too location
+> Example 4: How to get distance between to too location
 
 {% nativescript %}
 ```JavaScript
