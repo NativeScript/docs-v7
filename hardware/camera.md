@@ -18,7 +18,7 @@ Using the camera module is relatively simple. However, there are some points tha
 
 In order to use the camera module, just require it, as shown in Example 1:
 
->caption Example 1: Require camera module in the application
+> Example 1: Require camera module in the application
 ``` JavaScript
 var cameraModule = require("camera");
 ```
@@ -27,7 +27,7 @@ import cameraModule = require("camera");
 ```
 
 Then you are ready to use it:
->caption Example 2: How to take a picture and to recieve image source
+> Example 2: How to take a picture and to recieve image source
 ``` JavaScript
 var imageModule = require("ui/image");
 cameraModule.takePicture().then(function(picture) {
@@ -61,7 +61,7 @@ What does `device independent pixels` mean? The NativeScript layout mechanism us
 Setting the `keepAspectRatio` property could result in a different than requested width or height. The cameraModule will return an image with the correct aspect ratio but generally only one (from width and height) will be the same as requested; the other value will be calculated in order to preserve the aspect of the original image.
 
 __Example 3__ shows how to use the options parameter:
->caption Example 3: How to setup `width`, `height` and `keepAspectRatio` properties for the camera module
+> Example 3: How to setup `width`, `height` and `keepAspectRatio` properties for the camera module
 
 ``` JavaScript
 var imageModule = require("ui/image");
