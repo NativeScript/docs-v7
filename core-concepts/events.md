@@ -271,7 +271,7 @@ A weak event, as its name suggests, creates an weak reference to the listener ob
 Using weak event listeners is very similar to normal events. __Example 8__ shows how to add a weak event listener (code comments are included for clarity):
 ###Example 8: Creating a weak event and handling a property change event 
 ``` JavaScript
-var weakEventListenerModule = require("ui/core/weakEventListener");
+var weakEventListenerModule = require("ui/core/weak-event-listener");
 var buttonModule = require("ui/button");
 var observableModule = require("data/observable");
 
@@ -307,7 +307,7 @@ testButton.on(buttonModule.Button.tapEvent, function () {
   weakEL.addWeakEventListener(this.weakEventListenerOptions);
 ```
 ``` TypeScript
-import weakEventListenerModule = require("ui/core/weakEventListener");
+import weakEventListenerModule = require("ui/core/weak-event-listener");
 import buttonModule = require("ui/button");
 import observableModule = require("data/observable");
 
