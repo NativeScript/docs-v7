@@ -20,7 +20,7 @@ In this chapter you're going to start with the basics, including installing the 
 
 The NativeScript CLI has a few system requirements you must have in place before building NativeScript apps. Before we get started building, make sure you’ve completed the NativeScript installation instructions using the link below.
 
-* [Complete the NativeScript installation guide](/angular/start/quick-setup)
+* [Complete the NativeScript installation guide](/start/quick-setup)
 
 ## 1.2: Start your app
 
