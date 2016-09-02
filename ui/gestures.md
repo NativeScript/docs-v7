@@ -49,10 +49,10 @@ label.on(gestures.GestureTypes.tap, function (args) {
 });
 ```
 ``` TypeScript
-import { GestureTypes } from "ui/gestures";
+import { GestureTypes, GestureEventData } from "ui/gestures";
 import labelModule = require("ui/label");
 var label = new labelModule.Label();
-label.on(GestureTypes.tap, function (args: gestures.GestureEventData) {
+label.on(GestureTypes.tap, function (args: GestureEventData) {
     console.log("Tap");
 });
 ```
@@ -75,10 +75,10 @@ label.on(gestures.GestureTypes.doubleTap, function (args) {
 });
 ```
 ``` TypeScript
-import { GestureTypes } from "ui/gestures";
+import { GestureTypes, GestureEventData } from "ui/gestures";
 import labelModule = require("ui/label");
 var label = new labelModule.Label();
-label.on(GestureTypes.doubleTap, function (args: gestures.GestureEventData) {
+label.on(GestureTypes.doubleTap, function (args: GestureEventData) {
     console.log("Double Tap");
 });
 ```
@@ -105,10 +105,10 @@ label.on(gestures.GestureTypes.longPress, function (args) {
 });
 ```
 ``` TypeScript
-import { GestureTypes } from "ui/gestures";
+import { GestureTypes, GestureEventData } from "ui/gestures";
 import labelModule = require("ui/label");
 var label = new labelModule.Label();
-label.on(GestureTypes.longPress, function (args: gestures.GestureEventData) {
+label.on(GestureTypes.longPress, function (args: GestureEventData) {
     console.log("Long Press");
 });
 ```
@@ -132,10 +132,10 @@ label.on(gestures.GestureTypes.swipe, function (args) {
 });
 ```
 ``` TypeScript
-import { GestureTypes } from "ui/gestures";
+import { GestureTypes, SwipeGestureEventData } from "ui/gestures";
 import labelModule = require("ui/label");
 var label = new labelModule.Label();
-label.on(GestureTypes.swipe, function (args: gestures.SwipeGestureEventData) {
+label.on(GestureTypes.swipe, function (args: SwipeGestureEventData) {
     console.log("Swipe Direction: " + args.direction);
 });
 ```
@@ -159,9 +159,9 @@ label.on(gestures.GestureTypes.pan, function (args) {
 });
 ```
 ``` TypeScript
-import { GestureTypes } from "ui/gestures";
+import { GestureTypes, PanGestureEventData } from "ui/gestures";
 import labelModule = require("ui/label");
-label.on(GestureTypes.pan, function (args: gestures.PanGestureEventData) {
+label.on(GestureTypes.pan, function (args: PanGestureEventData) {
     console.log("Pan deltaX:" + args.deltaX + "; deltaY:" + args.deltaY + ";");
 });
 ```
@@ -184,10 +184,10 @@ label.on(gestures.GestureTypes.pinch, function (args) {
 });
 ```
 ``` TypeScript
-import { GestureTypes } from "ui/gestures";
+import { GestureTypes, PinchGestureEventData } from "ui/gestures";
 import labelModule = require("ui/label");
 var label = new labelModule.Label();
-label.on(GestureTypes.pinch, function (args: gestures.PinchGestureEventData) {
+label.on(GestureTypes.pinch, function (args: PinchGestureEventData) {
     console.log("Pinch Scale: " + args.scale);
 });
 ```
@@ -211,10 +211,10 @@ label.on(gestures.GestureTypes.rotation, function (args) {
 });
 ```
 ``` TypeScript
-import { GestureTypes } from "ui/gestures";
+import { GestureTypes, RotationGestureEventData } from "ui/gestures";
 import labelModule = require("ui/label");
 var label = new labelModule.Label();
-label.on(GestureTypes.rotation, function (args: gestures.RotationGestureEventData) {
+label.on(GestureTypes.rotation, function (args: RotationGestureEventData) {
     console.log("Rotation: " + args.rotation);
 });
 ```
@@ -239,10 +239,10 @@ label.on(gestures.GestureTypes.touch, function (args) {
 });
 ```
 ``` TypeScript
-import { GestureTypes } from "ui/gestures";
+import { GestureTypes, TouchGestureEventData } from "ui/gestures";
 import labelModule = require("ui/label");
 var label = new labelModule.Label();
-label.on(GestureTypes.touch, function (args: gestures.TouchGestureEventData) {
+label.on(GestureTypes.touch, function (args: TouchGestureEventData) {
     console.log("Touch: x: " + args.getX() + " y: " + args.getY());
 });
 ```
