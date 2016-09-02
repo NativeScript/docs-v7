@@ -85,7 +85,7 @@ Complete the following steps to setup NativeScript on your OS X development mach
             <pre class="add-copy-button"><code class="language-terminal">brew install android-sdk
             </code></pre>
 
-        1. Set the ANDROID_HOME system environment variable
+        1. Next, run the following command to set the ANDROID_HOME system environment variable:
 
             <pre class="add-copy-button"><code class="language-terminal">export ANDROID_HOME=/usr/local/opt/android-sdk
             </code></pre>
