@@ -20,7 +20,7 @@ This method is easier, but it implies using an `ActionBar`. The NativeScript `Ac
 
 - Use the page's XML file to declare an `ActionBar` in your application.
 
->caption Example 1: How to create default `ActionBar` with title
+> Example 1: How to create default `ActionBar` with title
 ``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="loaded">
   <Page.actionBar>
@@ -31,13 +31,13 @@ This method is easier, but it implies using an `ActionBar`. The NativeScript `Ac
 
 __Figure 1__ shows the result of adding the sample code from __Example 1__.
 
->caption Figure 1: Default style of ActionBar
+> Figure 1: Default style of ActionBar
 
 ![adding-action-bar](../img/change-status-bar-style-ios/status-bar-style-via-actionbar.png "adding-action-bar")
  
  It is easy to change the background color of the `UINavigationBar` and the status bar, respectively. To do this you should set the `backgroundColor` property of the `ActionBar`. This can be done in XML or with CSS.
  
- >caption Example 2:How to set up `ActionBar` backgroundColor property
+ > Example 2:How to set up `ActionBar` backgroundColor property
 ``` XML
 <Page.actionBar>
      <ActionBar title="Sample title" backgroundColor="green"></ActionBar>
@@ -52,7 +52,7 @@ ActionBar
  
 __Figure 2__ shows the result.
 
->caption Figure 2: Changed background color of NavigationBar and StatusBar
+> Figure 2: Changed background color of NavigationBar and StatusBar
  
 ![adding-action-bar-set-backgroundcolor](../img/change-status-bar-style-ios/status-bar-style-via-actionbar-set-backgroundcolor.png "adding-action-bar-set-backgroundcolor")
 
@@ -62,7 +62,7 @@ In iOS there are two possible styles that you could set to the `UINavigationBar`
 
 You should use the `frame` module to access the native instance of `UINavigationBar`. Then you can use its `barStyle` property to change its style to `UIBarStyleBlack`.
 
->caption Example 3: How to change UINavigationBar style using native code
+> Example 3: How to change UINavigationBar style using native code
 
 ``` JavaScript
 var frame = require("ui/frame");
@@ -89,7 +89,7 @@ export function loaded(args: EventData){
 ```
 
 __Figure 3__ shows the result.
->caption Figure 3: Changing the default UINavigationBar style to UIBarStyleBlack
+> Figure 3: Changing the default UINavigationBar style to UIBarStyleBlack
 
 ![adding-action-bar-black-style](../img/change-status-bar-style-ios/status-bar-style-via-actionbar-black-style.png "adding-action-bar-black-style")
 
@@ -99,7 +99,7 @@ As __Figure 3__ shows, the style of `UINavigationBar` and status bar have been c
  
 You should use this option in scenarios when you don't want to use `ActionBar`. In iOS, the status bar has two style types: the default one - `UIStatusBarStyleDefault` and `UIStatusBarStyleLightContent`. The default style looks like __Figure 4__: icons with black color and white background color.
 
->caption Figure 4: Default StatusBar style
+> Figure 4: Default StatusBar style
 
 ![clean-nativescript-project](../img/change-status-bar-style-ios/status-bar-style-info.plist-startup.png "clean-nativescript-project")
 
@@ -194,13 +194,13 @@ As a result, your `Info.plist` should look like this:
 ```
 Which you can see in __Figure 5__.
 
->caption Figure 5: Changed StatusBar style to `UIStatusBarStyleLightContent`
+> Figure 5: Changed StatusBar style to `UIStatusBarStyleLightContent`
 
 ![changing-status-bar-style](../img/change-status-bar-style-ios/status-bar-style-info.plist-startup-style-change.png "changing-status-bar-style")
 
 Now in place of the status bar we can see one white line. That happened because we changed the color of the icon to white; however, the background color is the same as the icon. To fix this we should set the page's `backgroundColor` property. You should also set the `backgroundSpanUnderStatusBar` property to `true`. This will span the background color under the status bar:
 
->caption: Example 5: How to span the background color under the status bar  
+> Example 5: How to span the background color under the status bar  
 
 ``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" backgroundSpanUnderStatusBar="true" backgroundColor="red">
@@ -214,7 +214,7 @@ Now in place of the status bar we can see one white line. That happened because 
  
 __Figure 6__ shows the result:
  
->caption Figure 6: Changed background color of status bar
+> Figure 6: Changed background color of status bar
   
 ![changing-background-span-under-statusBar-to-true](../img/change-status-bar-style-ios/status-bar-style-info.plist-startup-backgroundSpan.png "changing-background-span-under-statusBar-to-true")
  
