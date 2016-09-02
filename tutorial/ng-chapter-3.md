@@ -469,16 +469,14 @@ The two functions you pass `subscribe()` are success and failure handlers. If th
     <b>Exercise</b>: Create an account
 </h4>
 
-Because the `UserService` makes use of the `Http` service, your final step is registering the Http provider. Start by opening `app/main.ts` and adding the following two imports to the top of the file:
+Because the `UserService` makes use of the `Http` service, your final step is registering the Http provider. To do so, open `app/main.ts` and replace its contents with the following code:
 
 ``` TypeScript
 import "reflect-metadata";
+import {nativeScriptBootstrap} from "nativescript-angular/application";
 import {NS_HTTP_PROVIDERS} from "nativescript-angular/http";
-```
+import {AppComponent} from "./app.component";
 
-Next, in the same file, replace the existing call to `nativeScriptBootstrap()` with the line of code below:
-
-``` TypeScript
 nativeScriptBootstrap(AppComponent, [NS_HTTP_PROVIDERS]);
 ```
 
