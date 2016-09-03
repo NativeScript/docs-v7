@@ -160,10 +160,10 @@ Now that you've installed the social share plugin, let's look at how to use it.
     <b>Exercise</b>: Use the social sharing plugin
 </h4>
 
-Open `app/pages/list/list.component.ts` and add the following line at the top of the file, which requires the social share module you just installed:
+Open `app/pages/list/list.component.ts` and add the following line at the top of the file, which imports the social share module you just installed:
 
-``` JavaScript
-var socialShare = require("nativescript-social-share");
+``` TypeScript
+import * as SocialShare from "nativescript-social-share";
 ```
 
 Next you have to build some UI that lets you share a grocery list. To do so, open `app/pages/list/list.html` and add the following code at the very top of the file:
@@ -187,7 +187,7 @@ ActionBar {
 }
 ```
 
-Finally, now that you’ve installed and required the plugin, and setup a UI to use it, your last step is implementing the `<ActionItem>`'s `tap` handler. Open `app/pages/list/list.component.ts` again and add the following function to the `ListPage` class:
+Finally, now that you’ve installed and imported the plugin, and setup a UI to use it, your last step is implementing the `<ActionItem>`'s `tap` handler. Open `app/pages/list/list.component.ts` again and add the following function to the `ListPage` class:
 
 
 ``` TypeScript
@@ -197,7 +197,7 @@ share() {
     list.push(this.groceryList[i].name);
   }
   let listString = list.join(", ").trim();
-  socialShare.shareText(listString);
+  SocialShare.shareText(listString);
 }
 ```
 
