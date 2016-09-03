@@ -458,7 +458,7 @@ Next, give the same file’s image a new `tap` attribute binding, so that the fu
 With these attributes in place, your next steps are to define a new `grocery` property and `add()` method in your `ListPage` class. To do that, open `app/pages/list/list.component.ts` and add the following two properties to the `ListPage` class (right below the existing `groceryList` property):
 
 ``` TypeScript
-grocery: string = "";
+grocery = "";
 @ViewChild("groceryTextField") groceryTextField: ElementRef;
 ```
 
@@ -561,7 +561,7 @@ Open up `app/pages/list/list.html` and paste the following line immediately befo
 <ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" row="1" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
 ```
 
-This binds the ActivityIndicator’s `busy` attribute to an `isLoading` property in the `ListPage` component. To define that property, open `app/pages/list/list.component.ts` and add the following line of code immediately under `grocery: string = ""`:
+This binds the ActivityIndicator’s `busy` attribute to an `isLoading` property in the `ListPage` component. To define that property, open `app/pages/list/list.component.ts` and add the following line of code immediately under `grocery = ""`:
 
 ``` TypeScript
 isLoading = false;
