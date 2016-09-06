@@ -446,7 +446,7 @@ constructor(private _http: Http) {}
 
 The `UserService` class is using the same dependency injection technique to bring in a service that it needs, in this case the Http class, which is Angular 2’s way of letting you perform HTTP calls. And thanks to NativeScript, those same HTTP APIs work on iOS and Android without any extra work.
 
-> **TIP**: Refer to [Angular 2’s docs on Http](https://angular.io/docs/ts/latest/api/http/Http-class.html) for specifics on what HTTP APIs are available.
+> **TIP**: Refer to [Angular 2’s docs on Http](https://angular.io/docs/ts/latest/api/http/index/Http-class.html) for specifics on what HTTP APIs are available.
 
 The other new bit of code is the return value of this new `register()` method. `register()` returns `this._http.post()`, which is an RxJS `Observable`. You can refer to the Angular docs for a [full tutorial on how RxJS observables work](https://angular.io/docs/ts/latest/guide/server-communication.html), but for now just know that the most common thing you’ll need to do with observables is subscribe to them, which is what the new code you added to `app.component.ts` does:
 
