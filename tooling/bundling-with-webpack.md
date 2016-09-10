@@ -126,6 +126,38 @@ global.loadModule(myPlugin);
 
 Webpack bundling can fail for different reasons, or it can generate code that breaks at runtime (like the dynamic imports scenario outlined above). Debugging problems is easy once you know what code runs on your device.
 
+### Enabling Platform File Extensions
+
+Say you have the following files:
+
+- `permissions.ios.ts`
+- `permissions.android.ts`
+
+[Example of platform specific ng2 injectable services in NativeScript](https://gist.github.com/roblav96/2e32a742ec0b4b7b492d22287c1b4839)
+
+And you import them in your module `import {Permissions} from "./permissions"`. You need to tell webpack to import the platform specific files by adding `"+process.env.NODE_ENV+".js"` to your `resolve.extensions` in your `webpack.config.js`.
+
+Here's an example of a `webpack.config.js`:
+```javascript
+module.exports = bundler.getConfig({
+    resolve: {
+        extensions: ["", ".webpack.js", ".web.js", "."+process.env.NODE_ENV+".js", ".js"]
+    }
+})
+```
+
+This prioritizes platform specific files before regular common files. 
+
+Now when you want to bundle your app for a platform, set `ios` or `android` and your `NODE_ENV` like so:
+```shell
+NODE_ENV=ios tns run ios --bundle
+```
+
+For more information, please refer to the official webpack documentation:
+[webpack resolve-extensions](https://webpack.github.io/docs/configuration.html#resolve-extensions).
+
+
+
 ### Debugging Bundling Errors
 
 Webpack may not show all error details by default, but you can always enable that by passing the `--display-error-details` [configuration option](https://webpack.github.io/docs/cli.html#display-error-details). Since the plugin invokes webpack automatically, the way to pass those options is via the `WEBPACK_OPTS` environment variable. For example, when running in a bash-like command shell you can do:
