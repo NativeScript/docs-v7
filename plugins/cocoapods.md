@@ -104,6 +104,11 @@ This modifies the `MYCocoaPodsApp.xcodeproj` and creates a workspace with the sa
 
 > **IMPORTANT:** You will no longer be able to run the `xcodeproj` alone. NativeScript CLI will build the newly created workspace and produce the correct package.
 
+> **IMPORTANT:** NativeScript uses the `sandbox-pod` executable. This may prevent some pods from installing correctly. If you encounter such cases, you can switch to the regular `pod` executable:
+>
+> 1. Open the NativeScript CLI configuration file, usually located in `/usr/local/lib/node_modules/nativescript/config/config.json`.
+> 1. Change the value of `USE_POD_SANDBOX` to `false`.
+
 ## Troubleshooting
 
 In case of post-build linker errors, you might need to resolve missing dependencies to native frameworks required by the installed CocoaPod. For more information about how to create the required links, see the [build.xcconfig specification](PLUGINS.md#buildxcconfig-specification).
