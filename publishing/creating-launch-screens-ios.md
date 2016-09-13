@@ -61,6 +61,9 @@ In your **app/App_Resources/iOS/Assets.xcassets** you will find the following su
 ![Default asset catalog](../img/launch-screen/ios/launch-screen-howto-001.png "Default asset catalog")
 
 ### Customizing App Icons
+
+*Note: occasionally the iOS OS caches the icon of your application and any customizations will not be visible. If this happens to be the case simply delete the application from the device/emulator before publishing it again.*
+
 + Changing AppIcons: manual approach 
 	
 Open **AppIcon.appiconset** and change the default icons images with your own using the proper resolution for each image (e.g., icon-29.png should be 29px x 29px; icon-29@2x should be 58px x 58px).
@@ -77,6 +80,9 @@ Close Xcode and rebuild your NativeScript app to use the new AppIcons.
 ![AppIcon setup in Xcode](../img/launch-screen/ios/launch-screen-howto-003.png "AppIcon setup in Xcode]")
 
 ### Customizing launch images
+
+*Note: occasionally the iOS OS caches splash screen of your application and any customizations will not be visible. If this happens to be the case simply reboot either the iOS device or the iOS emulator.*
+
 + Manual approach 
 	
 Open **LaunchImage.launchimage** and change the default launch images with your own using the proper resolution for each image (e.g., Default-568h@2x.png should be 640px x 1136px).
@@ -109,6 +115,8 @@ Close Xcode and rebuild your NativeScript app to use the new launch images.
 
 
 ### Customizing LaunchScreen.storyboard
+
+*Note: occasionally the iOS OS caches splash screen of your application and any customizations will not be visible. If this happens to be the case simply reboot either the iOS device or the iOS emulator.*
 
 The default template app in NativeScript comes with **LaunchScreen.storyboard**, which contains two image views.
 The first one, named **LaunchScreen.AspectFill.imageset**, is used to visualize your background.
