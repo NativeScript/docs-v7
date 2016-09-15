@@ -9,6 +9,17 @@ previous_url: /Changelogs/CLI
 
 NativeScript CLI Changelog
 ================
+
+2.3.0 (2016, September 15)
+==
+
+### Fixed
+* [Fixed #2034](https://github.com/NativeScript/nativescript-cli/issues/2034): Fixed: Cannot read property "targetNum" of undefined
+* [Fixed #2028](https://github.com/NativeScript/nativescript-cli/issues/2028):Fixed: Android Custom Activities and TNS incompatibility
+* [Fixed #2025](https://github.com/NativeScript/nativescript-cli/issues/2025):Fixed: Add support for Node.js 6.5
+* [Fixed #2022](https://github.com/NativeScript/nativescript-cli/issues/2022):Fixed: LiveEdit restarts typescript projects
+* [Fixed #1636](https://github.com/NativeScript/nativescript-cli/issues/1636):Fixed: The test android command fails to run tests
+
 2.2.1 (2016, August 15)
 ==
 
