@@ -9,6 +9,15 @@ previous_url: /Changelogs/iOS Runtime
 
 
 
+2.3.0
+=====
+
+## What's New
+- Marshalling Objective-C class properties - [#635](https://github.com/NativeScript/ios-runtime/pull/635)
+
+## Bug Fixes
+- Fix debugging without rebuild on iOS device - [#634](https://github.com/NativeScript/ios-runtime/pull/634)
+
 2.2.1
 =====
 
