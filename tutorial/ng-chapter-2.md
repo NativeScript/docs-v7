@@ -103,6 +103,7 @@ The first few files you run in a NativeScript app look almost identical to [the 
 
 ``` JavaScript
 import { platformNativeScriptDynamic } from "nativescript-angular/platform";
+
 import { AppModule } from "./app.module";
 
 platformNativeScriptDynamic().bootstrapModule(AppModule);
