@@ -716,7 +716,7 @@ Next, replace the current `constructor()` declaration with the code below, which
 constructor(private router: Router, private userService: UserService) {
 ```
 
-Finally, replace the `LoginPage`’s existing `login()` function with the code below:
+Finally, replace the `LoginComponent`’s existing `login()` function with the code below:
 
 ``` TypeScript
 login() {
@@ -729,7 +729,7 @@ login() {
 ```
 
 > **NOTE**:
-> * You don’t have to add `Router` to your `LoginPage` component’s `providers` array because it’s already included in the `NativeScriptRouterModule` you’re including as an `import` in `app.module.ts`.
+> * You don’t have to add `Router` to your `LoginComponent`’s `providers` array because it’s already included in the `NativeScriptRouterModule` you’re including as an `import` in `app.module.ts`.
 > * Refer to the [NativeScript navigation documentation](https://docs.nativescript.org/angular/core-concepts/angular-navigation.html) for more information on what you can do with the router in NativeScript, such as configuring alternative page transitions.
 
 <div class="exercise-end"></div>

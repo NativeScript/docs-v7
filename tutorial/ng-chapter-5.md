@@ -187,7 +187,7 @@ ActionBar {
 }
 ```
 
-Finally, now that you’ve installed and imported the plugin, and setup a UI to use it, your last step is implementing the `<ActionItem>`'s `tap` handler. Open `app/pages/list/list.component.ts` again and add the following function to the `ListPage` class:
+Finally, now that you’ve installed and imported the plugin, and setup a UI to use it, your last step is implementing the `<ActionItem>`'s `tap` handler. Open `app/pages/list/list.component.ts` again and add the following function to the `ListComponent` class:
 
 
 ``` TypeScript
