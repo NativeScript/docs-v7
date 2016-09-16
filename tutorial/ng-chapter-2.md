@@ -91,7 +91,8 @@ Here's what these various files and folders do:
 - **pages**: This folder, specific to the Groceries app, contains the code to build your app's pages. Each page is made up of a TypeScript file, an optional HTML file, and an optional set of CSS files. The Groceries app starts with two folders for its two pages, a login page, and a list page.
 - **shared**: This folder, also specific to the Groceries app, contains any files you need to share between NativeScript apps and Angular-2-built web apps. For Groceries this includes a few classes for talking to backend services, some model objects, and a `config.ts` file used to share configuration variables like API keys. We’ll discuss the `shared` folder, as well as code sharing between native apps and web apps, in detail in [chapter 3](ng-chapter-3).
 - **app.css**: This file contains global styles for your app. We'll dig into app styling in [chapter 2](ng-chapter-2).
-- **app.component.ts**: This primary Angular component that drives your application. Eventually this file will handle routing and application-wide configuration, however for now the file has a simple hello world example that we’ll look at momentarily.
+- **app.component.ts**: The primary Angular component that drives your application. For now the file has a simple hello world example that we’ll look at momentarily.
+- **app.module.ts**: This file contains the main configuration for your application. You’ll be adding new entries here as you progress through this tutorial.
 - **main.ts**: The starting point of Angular 2 applications—web and native.
 
 To get a sense of how a NativeScript app actually starts up, let’s explore the first few files.
@@ -101,21 +102,39 @@ To get a sense of how a NativeScript app actually starts up, let’s explore the
 The first few files you run in a NativeScript app look almost identical to [the first few files you run in an Angular 2 web app](https://angular.io/docs/ts/latest/quickstart.html). Let’s start with `main.ts` as that’s the first file executed. Open your `app/main.ts` file; you should see the code below:
 
 ``` JavaScript
-import {nativeScriptBootstrap} from "nativescript-angular/application";
-import {AppComponent} from "./app.component";
+import { platformNativeScriptDynamic } from "nativescript-angular/platform";
+import { AppModule } from "./app.module";
 
-nativeScriptBootstrap(AppComponent);
+platformNativeScriptDynamic().bootstrapModule(AppModule);
 ```
 
-Here you’re using the TypeScript `import` command to bring in a function—`nativescriptBootstrap()`—and a [TypeScript class](http://www.typescriptlang.org/Handbook#classes)—`AppComponent`—each of which are defined in separate files. The `nativescriptBootstrap()` function comes from the “nativescript-angular” npm module, which you may recall contains the code needed to integrate NativeScript and Angular 2. Whereas Angular 2’s own `bootstrap()` function starts an Angular 2 browser app, NativeScript’s bootstrap function starts an Angular 2 native app.
+Here you’re using the TypeScript `import` command to bring in a function—`platformNativeScriptDynamic()`—and a [TypeScript class](http://www.typescriptlang.org/Handbook#classes)—`AppModule`—each of which are defined in separate files. The `platformNativeScriptDynamic()` function comes from the “nativescript-angular” npm module, which you may recall contains the code needed to integrate NativeScript and Angular 2. Whereas Angular 2’s own `platformBrowserDynamic()` function sets up an Angular 2 browser app, NativeScript’s `platformNativeScriptDynamic()` function sets up an Angular 2 native app.
 
-> **TIP**: If you’re curious about what `nativescriptBootstrap()` function actually has to do to startup native iOS and Android apps, remember that all this code is open source for you to explore at any time. The `nativescriptBootstrap()` function specifically is defined in an [`application.ts` file](https://github.com/NativeScript/nativescript-angular/blob/master/src/nativescript-angular/application.ts) in the [NativeScript/nativescript-angular repository](https://github.com/NativeScript/nativescript-angular) on GitHub.
+> **TIP**: If you’re curious about what `platformNativeScriptDynamic()` function actually has to do to startup native iOS and Android apps, remember that all this code is open source for you to explore at any time. The `platformNativeScriptDynamic()` function specifically is defined in an [`platform.ts` file](https://github.com/NativeScript/nativescript-angular/blob/805083e8b6018672b05512b4e5b5f20d26eee27d/nativescript-angular/platform.ts) in the [NativeScript/nativescript-angular repository](https://github.com/NativeScript/nativescript-angular) on GitHub.
 
-The bootstrap function, regardless of whether it’s for the web or for native apps, needs to know which Angular component to start the application with. In this case, you’re passing control to a `AppComponent` component defined in `app.component.ts`.
+Regardless of whether you use `platformBrowserDynamic()` on the web, or `platformNativeScriptDynamic()` in NativeScript, the subsequent `bootstrapModule()` function is what actually gets the app up and running. The `bootstrapModule()` expects an Angular module that contains the main configuration for your application. In this case, you’re passing a reference to a `AppModule` module defined in `app.module.ts`.
 
 > **TIP**: In a NativeScript app you can follow the same code conventions you would in an Angular 2 web app. Here we’re using Angular 2’s own convention of naming component files with a `.component.ts` suffix.
 
-Next, open your app’s `app/app.component.ts` file; you should see the code below:
+Next, open your app’s `app/app.module.ts` file; you should see the code below:
+
+``` JavaScript
+import { NgModule } from "@angular/core";
+import { NativeScriptModule } from "nativescript-angular/platform";
+
+import { AppComponent } from "./app.component";
+
+@NgModule({
+  imports: [NativeScriptModule],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
+Don’t worry this file for now, as we’ll be returning here frequently in this tutorial to explain the various syntaxes you see.
+
+At the moment, just note that the `NgModule`’s `bootstrap` property is set to `AppComponent`. This bit of configuration passes control to the `AppComponent` class in your `app/app.component.ts` file. Open that file next and you should see the code below.
 
 ``` JavaScript
 import {Component} from "@angular/core";
@@ -151,9 +170,11 @@ Let’s return back to building Groceries. The first screen of Groceries is inte
     <b>Exercise</b>: Add UI elements to <code>app.component.ts</code>
 </h4>
 
-Open `app/app.component.ts` and replace the existing `@Component` with the following code:
+Open `app/app.component.ts` and replace the contents of the file with the following code:
 
 ``` JavaScript
+import { Component } from "@angular/core";
+
 @Component({
   selector: "my-app",
   template: `
@@ -165,6 +186,7 @@ Open `app/app.component.ts` and replace the existing `@Component` with the follo
     <Button text="Sign up for Groceries"></Button>
   `
 })
+export class AppComponent {}
 ```
 
 <div class="exercise-end"></div>
@@ -191,7 +213,7 @@ After your app updates with this change, you may expect to see a polished login 
 
 What went wrong? In NativeScript whenever you use more than one UI element, you need to tell NativeScript how to arrange those elements on the screen. Since you’re not doing that currently, NativeScript is incorrectly assuming you want the last element—the `<Button>`—to take up the whole screen. To arrange these elements, let’s move onto the NativeScript feature for aligning elements on the screen: NativeScript layouts.
 
-> **TIP**: The NativeScript docs include a [full list of the UI components and attributes](http://docs.nativescript.org/ui-with-xml) with which you can build your apps. You can even [build your own, custom UI components](http://docs.nativescript.org/ui-with-xml#custom-components).
+> ** TIP**: The [code samples](https://docs.nativescript.org/angular/code-samples/overview.html) portion of the NativeScript documentation is a great place to find copy-and-paste friendly examples of the various NativeScript UI components. The [TextField](https://docs.nativescript.org/angular/code-samples/text-field.html) and [Button](https://docs.nativescript.org/angular/code-samples/button.html) code sample pages are great places to get started.
 
 ## 2.4: Layouts
 
@@ -209,9 +231,11 @@ For your login screen, all you need is a simple `<StackLayout>` for stacking the
     <b>Exercise</b>: Add a stack layout to the login screen
 </h4>
 
-Open `app/app.component.ts` and add a `<StackLayout>` element within your component’s `template` property. The full component should now look like this:
+Open `app/app.component.ts` and add a `<StackLayout>` element within your component’s `template` property. The full file should now look like this:
 
 ``` JavaScript
+import { Component } from "@angular/core";
+
 @Component({
   selector: "my-app",
   template: `
@@ -225,6 +249,7 @@ Open `app/app.component.ts` and add a `<StackLayout>` element within your compon
     </StackLayout>
   `
 })
+export class AppComponent {}
 ```
 
 <div class="exercise-end"></div>
@@ -318,9 +343,11 @@ Much like on the web, sometimes in your NativeScript apps you want to write CSS 
     <b>Exercise</b>: Add component-specific CSS
 </h4>
 
-Open your `app/app.component.ts` file and add a `styleUrls` property, so that that full `@Component` declaration now looks like this:
+Open your `app/app.component.ts` file and add a `styleUrls` property, so that that full file now looks like this:
 
 ``` JavaScript
+import { Component } from "@angular/core";
+
 @Component({
   selector: "my-app",
   template: `
@@ -335,6 +362,7 @@ Open your `app/app.component.ts` file and add a `styleUrls` property, so that th
   `,
   styleUrls: ["pages/login/login-common.css", "pages/login/login.css"]
 })
+export class AppComponent {}
 ```
 
 Next, open your app’s `app/pages/login/login-common.css` file and paste in the following code:
@@ -373,7 +401,7 @@ The great thing about placing CSS rules at the component level is you can use co
 Before we see what your app looks like now, there’s one small change you need to make. Notice that the last selector used in `login-common.css` is `.submit-button`. Much like using CSS on the web, in NativeScript you can both `id` and `class` attributes to target specific user interface elements, but at the moment there’s no UI element in your app with an `class` of `"submit-button"`. Let’s change that.
 
 <h4 class="exercise-start">
-    <b>Exercise</b>: Add a `class` attribute
+    <b>Exercise</b>: Add a <code>class</code> attribute
 </h4>
 
 Open your `app/app.component.ts` file, find `<Button text="Sign in"></Button>` in your component’s `template`, and replace it with the code below:
