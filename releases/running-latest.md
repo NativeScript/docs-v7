@@ -29,7 +29,7 @@ npm uninstall -g nativescript
 npm install -g nativescript@next
 ```
 
-- Edit the package.json file in your project and replace tns-core-modules and tns-android versions with `@next`:
+- Edit the package.json file in your project and replace tns-core-modules, tns-android and tns-ios versions with `next`:
 
 ```JSON
 {
@@ -37,7 +37,7 @@ npm install -g nativescript@next
 	"nativescript": {
 		"id": "org.nativescript.MyApp",
 		"tns-ios": {
-			"version": "2.2.0"
+			"version": "next"
 		},
 		"tns-android": {
 			"version": "next"
@@ -52,11 +52,10 @@ npm install -g nativescript@next
 Instead of editing the package.json file by hand, you could run the following commands:
 
 ```Console
+tns platform add ios@next
 tns platform add android@next
 tns plugin add tns-core-modules@next
 ```
-
-> Currently we don’t provide a “next” npm package for the iOS runtime. You should use the latest official release.
 
 - Run the `npm install` command to update the node modules:
 
