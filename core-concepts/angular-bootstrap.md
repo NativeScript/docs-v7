@@ -19,33 +19,57 @@ This article will cover in detail the process of bootstrapping an Angular applic
 
 # The Bootstrap Process
 
-A traditional NativeScript application starts by initializing global objects, setting up global CSS rules, creating, and navigating to the main page. Angular does not care about any of that -- all it needs is a place in the DOM to attach to. To make both paradigms work together, we provide a wrapper function, `nativeScriptBootstrap`, that sets up a NativeScript application and bootstraps the Angular framework in a default location on the main UI page.
+A traditional NativeScript application starts by initializing global objects, setting up global CSS rules, creating, and navigating to the main page. Angular does not care about any of that -- all it needs is a place in the DOM to attach to. Of course, Angular applications need to take care of their own initialization: modules, components, directives, routes, DI providers. A NativeScript Angular app needs to make both paradigms work together, so we provide a wrapper platform object, `nativeScriptPlatformDynamic`, that sets up a NativeScript application and can bootstrap the Angular framework in a default location on the main UI page.
 
 ```typescript
-nativeScriptBootstrap(AppMainComponent);
+platformNativeScriptDynamic().bootstrapModule(AppComponentModule);
 ```
 
 One of our major design goals here is to provide virtually the same interface as the default Angular `bootstrap` routine, so that people familiar with the web version of Angular get productive with as little friction as possible.
 
 # NativeScript Application Options
 
-Application options in NativeScript are configured at the time the application boots. That could be problematic for Angular apps since the usual application start up process is hidden inside the `nativeScriptBootstrap` black box. To allow for customizations, we introduced an additional `AppOptions` parameter that lets you preconfigure certain aspects of your application behavior. At the moment those are:
+Application options in NativeScript are configured at the time the application boots. That could be problematic for Angular apps since the usual application start up process is hidden inside the `platformNativeScriptDynamic` black box. To allow for customizations, we introduced an additional `AppOptions` parameter to the platform initialization function that lets you preconfigure certain aspects of your application behavior. At the moment those are:
 
 * `cssFile`: overrides the path to the file containing global CSS rules that are applied to all visual objects in the application. The default path is `app.css`.
 * `startPageActionBarHidden`: a boolean setting controlling whether your app will display the action bar on startup. The default setting is platform-specific: it displays the action bar on Android and hides it on iOS.
 
 ```typescript
-nativeScriptBootstrap(AppMainComponent, [], {startPageActionBarHidden: true});
+platformNativeScriptDynamic({startPageActionBarHidden: true});
 ```
 
 # Customizing DI Providers
 
-Many aspects of Angular applications are configured through the dependency injection (DI) system. The bootstrap function is the tool that configures the DI providers and exposes them to all application objects. Multiple Angular libraries, such as the router and the http client use it to configure providers and associated directives:
+Many aspects of Angular applications are configured through the dependency injection (DI) system. NgModule's are usually the tool that lets you configure DI providers and exposes them to all application objects. Multiple Angular libraries, such as the router and the http client come with their own modules that register providers. NativeScript provides wrappers for the built-in modules (router, forms, HTTP) that should be used in mobile apps:
 
 ```typescript
 import {NS_ROUTER_PROVIDERS} from "nativescript-angular/router";
 
 nativeScriptBootstrap(AppMainComponent, [NS_ROUTER_PROVIDERS]);
+
+import { platformNativeScriptDynamic, NativeScriptModule } from "nativescript-angular/platform";
+import { NgModule } from "@angular/core"; 
+import { NativeScriptRouterModule } from "nativescript-angular/router";
+import { NativeScriptHttpModule } from "nativescript-angular/http";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { routes } from "./app.routes";
+import { AppComponent } from "./app.component";
+
+@NgModule({
+    declarations: [
+        AppComponent,
+    ],
+    bootstrap: [AppComponent],
+    imports: [
+        NativeScriptModule,
+        NativeScriptHttpModule,
+        NativeScriptRouterModule,
+        NativeScriptRouterModule.forRoot(routes),
+    ],
+})
+class AppModule {}
+
+platformNativeScriptDynamic().bootstrapModule(AppModule);
 ```
 
 For an in-depth guide to dependency injection in Angular 2, please review the [Dependency Injection in Angular 2](http://blog.thoughtram.io/angular/2015/05/18/dependency-injection-in-angular-2.html) blog post.
@@ -74,21 +98,23 @@ export class UserDetailsView {
 
 Certain application scenarios may require bootstrapping an Angular app in a preexisting NativeScript application. The need to do that usually arises in automated tests that need to create and destroy applications in different setups. Advanced bootstraps could also be useful when migrating vanilla NativeScript applications to Angular -- you can start the migration by integrating Angular and implementing new features with it, then start migrating old features one at a time.
 
-The advanced bootstrap API entry point is called just `bootstrap`. All it does is set up DI providers needed by the NativeScript renderer and start the Angular application. To use it, you need to specify a location in the visual tree that will be the application root. Angular web applications use the main component selector for that purpose, but due to a limitation in the NativeScript CSS selector implementation you need to configure a DI provider with a special key: `APP_ROOT_VIEW`.
+The advanced bootstrap API entry point is again our friend the `platformNativeScriptDynamic` factory function, but this time you need to pass the `bootInExistingPage` application option. You will also need a DI provider that will return the visual element that will serve as the application root view. Here is how a typical bootstrap looks like:
 
 ```typescript
-import {bootstrap} from "nativescript-angular/application";
-import {APP_ROOT_VIEW} from "nativescript-angular/platform-providers";
+const root = new StackLayout();
+const rootViewProvider = {provide: APP_ROOT_VIEW, useValue: root};
 
-const viewRoot = new GridLayout();
-rootLayout.addChild(viewRoot);
-
-const rootViewProvider = provide(APP_ROOT_VIEW, { useValue: viewRoot });
-return bootstrap(appComponentType, providers.concat(rootViewProvider)).then((componentRef) => {
+@NgModule({
     //...
-});
+    providers: [
+        rootViewProvider,
+    ]
+})
+class AdvancedBootstrapModule {}
+
+platformNativeScriptDynamic({bootInExistingPage: true}).bootstrapModule(AdvancedBootstrapModule);
 ```
 
 # Conclusion
 
-Bootstrapping a mobile Angular application should look almost identical to web application bootstraps. Most projects will never need to go beyond customizing providers for the DI subsystem, yet the customization mechanisms are there for the complex use cases.
+Bootstrapping a mobile Angular application should look almost identical to web application bootstraps. Most projects will never need to go beyond customizing DI providers or importing NgModule's, yet the customization mechanisms are there for the advanced use cases.
