@@ -237,7 +237,7 @@ How does this work? Let’s return to this chunk of code:
 </ListView>
 ```
 
-The [`<ListView>` UI element](http://docs.nativescript.org/api-reference/classes/_ui_list_view_.listview.html) requires an `items` property that points at an array of data—in this case, the `groceryList` array you added to your `ListComponent` class. The list view element requires a child `<template>` element that specifies how to render each item in the `items` array.
+The [`<ListView>` UI element](http://docs.nativescript.org/api-reference/classes/_ui_list_view_.listview.html) requires an `items` property that points to an array of data—in this case, the `groceryList` array you added to your `ListComponent` class. The list view element requires a child `<template>` element that specifies how to render each item in the `items` array.
 
 The `let-*` syntax is Angular 2’s way of creating template variables within loops. You can think of the syntax working like TypeScript’s `let` keyword. This gives you the ability to refer to each item in the array as `item` within the template. For this template, you render each item in the array with a single `<Label>` UI element, and because of the `[text]="item.name"` binding, those labels contain the text from the `name` property of each of the items in `groceryList` TypeScript array.
 
