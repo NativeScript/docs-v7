@@ -494,7 +494,7 @@ The two functions you pass `subscribe()` are success and failure handlers. If th
     <b>Exercise</b>: Create an account
 </h4>
 
-Because the `UserService` makes use of the `Http` service, your final step is registering the `Http` provider. Although you could do this in your `app.component.ts` file, this time you’re going to take a slightly different approach. Let’s make the change first and then discuss the why. Open `app/app.module.ts` and replace its contents with the following code, which adds a new `NativeScriptHttpModule` to the list of `imports`.
+Because the `UserService` makes use of the `Http` service, your final step is registering the `Http` provider. Although you could do this in your `app.component.ts` file, this time you’re going to take a slightly different approach. Let’s make the change first and then discuss why. Open `app/app.module.ts` and replace its contents with the following code, which adds a new `NativeScriptHttpModule` to the list of `imports`.
 
 ``` TypeScript
 import { NgModule } from "@angular/core";
@@ -581,7 +581,7 @@ export const navigatableComponents = [
 ];
 ```
 
-The `app.routing.ts` file is where you declare a list of all routes your app has. Right now your `routes` array has a single route for the login page, but you’ll add more momentarily. To get this app running you need to make two more changes.
+The `app.routing.ts` file is where you declare a list of all your app’s routes. Right now your `routes` array has a single route for the login page, but you’ll add more momentarily. To get this app running you need to make two more changes.
 
 First, open `app/app.module.ts` and replace the file’s contents with the following code, which adds a new `NativeScriptRouterModule` import, as well as imports the routes you just declared in `app.routing.ts`.
 
@@ -730,7 +730,7 @@ login() {
 
 > **NOTE**:
 > * You don’t have to add `Router` to your `LoginComponent`’s `providers` array because it’s already included in the `NativeScriptRouterModule` you’re including as an `import` in `app.module.ts`.
-> * Refer to the [NativeScript navigation documentation](https://docs.nativescript.org/angular/core-concepts/angular-navigation.html) for more information on what you can do with the router in NativeScript, such as configuring alternative page transitions.
+> * Refer to the [NativeScript navigation documentation](https://docs.nativescript.org/angular/core-concepts/angular-navigation.html) for more information on what you can do with the router in NativeScript, such as configuring alternate page transitions.
 
 <div class="exercise-end"></div>
 

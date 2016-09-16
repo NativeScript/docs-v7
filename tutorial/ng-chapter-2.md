@@ -133,7 +133,7 @@ import { AppComponent } from "./app.component";
 export class AppModule {}
 ```
 
-Don’t worry this file for now, as we’ll be returning here frequently in this tutorial to explain the various syntaxes you see.
+Don’t worry about this file for now, as we’ll be returning here frequently in this tutorial to explain the various syntaxes you see.
 
 At the moment, just note that the `NgModule`’s `bootstrap` property is set to `AppComponent`. This bit of configuration passes control to the `AppComponent` class in your `app/app.component.ts` file. Open that file next and you should see the code below.
 
