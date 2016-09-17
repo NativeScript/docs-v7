@@ -36,11 +36,11 @@ Create a `RouterConfig` object which maps paths to components and parameters:
 {%snippet router-config%}
 
 
-Use `nsRouterProvider` function to create provider for the router:
+Use the `NativeScriptRouterModule` API to import your routes:
 {%snippet router-provider%}
 
 
-Pass the provider to the `nativeScriptBootstrap` when starting your app:
+As usual, pass your module to the `bootstrapModule` function to start your app:
 {%snippet router-bootstrap%}
 
 ## Pages
@@ -64,17 +64,13 @@ We are also going to use the following route configuration file (`app.routes.ts`
 
 ## Router Links
 
-One thing you might have noticed in the code above is the `nsRouterLink` directive. It is similar to [`routerLink`](https://angular.io/docs/ts/latest/guide/router.html#!#-routerlink-binding), but works with NativeScript navigation. It is included in the `NS_ROUTER_DIRECTIVES`.
+One thing you might have noticed in the code above is the `nsRouterLink` directive. It is similar to [`routerLink`](https://angular.io/docs/ts/latest/guide/router.html#!#-routerlink-binding), but works with NativeScript navigation. To use it, you need to import `NativeScriptRouterModule` in your NgModule.
 
 ## Router Outlet
 
 Let's take a look at the following example that uses `<router-outlet>`:
 
 {%snippet router-outlet-example%}
-
-There are few things worth noting:
-
-The main component uses both `ROUTER_DIRECTIVES` (needed for `<router-outlet>`) and `NS_ROUTER_DIRECTIVES` (needed for `routerLink`).
 
 The result is that with each navigation the content of the `router-outlet` is replaced with the new component:
 

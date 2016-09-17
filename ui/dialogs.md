@@ -284,7 +284,6 @@ Make sure you have added `modal-dialog-host` somewhere inside the your component
 
 ``` TypeScript
 @Component({
-    directives: [ModalDialogHost],
     template: `
     <StackLayout modal-dialog-host>
         <Button text="show" (tap)="show()"></Button>
