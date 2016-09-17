@@ -137,7 +137,6 @@ export class ItemComponent {
 
 @Component({
     selector: 'list-test',
-    directives: [ItemComponent],
     template: `
         <GridLayout rows="*">
             <ListView [items]="myItems">
