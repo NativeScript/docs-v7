@@ -116,7 +116,7 @@ The NativeScript core theme does not change the base font family you use to deve
 * `font-italic`: A class name to display a font in italic text.
 
 ``` XML
-<Label class="font-weight-bold" text="This text will appear italicized"></Label>
+<Label class="font-italic" text="This text will appear italicized"></Label>
 ```
 
 ### Padding and Margin
