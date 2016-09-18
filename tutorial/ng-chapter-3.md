@@ -111,7 +111,7 @@ In `app/app.component.ts`, find the first `<TextField>`, and replace it with the
   autocorrect="false" autocapitalizationType="none"></TextField>
 ```
 
-Next, open `app/app.modules.ts` and replaces its contents with the code below, which adds a new `NativeScriptFormsModule` to the `NgModule`’s list of `imports`.
+Next, open `app/app.module.ts` and replaces its contents with the code below, which adds a new `NativeScriptFormsModule` to the `NgModule`’s list of `imports`.
 
 ``` JavaScript
 import { NgModule } from "@angular/core";
