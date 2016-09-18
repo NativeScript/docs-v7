@@ -108,6 +108,9 @@ Complete the following steps to setup NativeScript on your OS X development mach
         </code></pre>
 
         For example: Run the following command `export PATH=$PATH:/Applications/Genymotion\ Shell.app/Contents/MacOS/:/Applications/Genymotion.app/Contents/MacOS/`
+   1. Go to the settings tab inside Genymotion, navigate to ADB and change the ADB tool connection settings to custom. Enter the path of your Android SDK:
+
+        <pre><code class="language-terminal">Android SDK: /usr/local/opt/android-sdk</code></pre>
 
 1. Install the NativeScript CLI.
     1. Run the following command.
