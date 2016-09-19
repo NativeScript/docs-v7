@@ -72,6 +72,8 @@ In all cases below, copy and paste the script below into your terminal and press
 If you’re on a Mac, before starting, update your homebrew:
 <pre class="add-copy-button"><code class="language-terminal">brew update</code></pre>
 
+If you do not have homebrew installed, you can [install it here](http://brew.sh/).
+
 This install requires ruby >2.2.2. Confirm your ruby version is high enough:
 
 <pre class="add-copy-button"><code class="language-terminal">ruby -v</code></pre>
@@ -93,6 +95,11 @@ tns doctor
 ```
 
 If you see “No issues were detected” you’re good to go!
+
+## Troubleshooting and notes
+
+* The build scripts assume Python 2 for compiling templates. If you're using Python 3, you may need to use the iPhone 5 emulator instead of the iPhone 6 emulator.
+* If you are running this on external drive or a partition that is not case-insensitive, you may have issues.
 
 ## What’s Next
 
