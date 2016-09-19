@@ -58,7 +58,7 @@ In your project, the files for each module reside in a dedicated subdirectory in
 + [ui/page]({%ns_cookbook ui/page%}): Provides the `Page` class which represents a logical unit for navigation inside a `Frame`. NativeScript apps consist of pages.
 + [color]({%ns_cookbook color%}): Lets you create colors which you can use when you style the UI.
 + [text/formatted-string]({%ns_cookbook formatted-string%}): Provides the `FormattedString` and `Span` classes which you can use to create rich text formatted strings.
-+ [xml]({%ns_cookbook xml%}): Provides the `XmlParser` class which is a SAX parser using the easysax implementation.
++ [xml]({%ns_cookbook xml-parser%}): Provides the `XmlParser` class which is a SAX parser using the easysax implementation.
 + [ui/styling]({%ns_cookbook ui/styling%}): Provides the `Style` class which is responsible for the visual appearance of elements.
 + [ui/animation]({%ns_cookbook ui/animation%}): Provides the `Animation` class which lets you animate view properties.
 

@@ -95,7 +95,7 @@ The actual .PNG icons stay at the Android resources in `app/App_Resource/Android
 
 ### Launch screen
 Android has no built-in mechanism to provide launch screen image.
-[Here is a documentation article that describes how to implement a launch screen in the NativeScript framework.](http://docs.nativescript.org/angular/core-concepts/creating-launch-screens-android.html)
+[Here is a documentation article that describes how to implement a launch screen in the NativeScript framework.](http://docs.nativescript.org/angular/publishing/creating-launch-screens-android.html)
 
 ## Certificates
 ### Debug certificate
