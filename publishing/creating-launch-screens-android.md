@@ -3,6 +3,7 @@ title: Creating Launch Screen and App Icons for Android
 description: How to set up and modify Launch Screen and App Icons for Android
 position: 30
 slug: launch-screen-android
+previous_url: /core-concepts/creating-launch-screens-android
 ---
 
 # Creating Launch Screens for Android 

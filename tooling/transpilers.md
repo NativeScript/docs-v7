@@ -3,7 +3,7 @@ title: Transpilers
 description: Learn how to enable TypeScript and other transpiler support in your project.
 position: 30
 slug: transpilers
-previous_url: /transpilers,core-concepts/transpilers
+previous_url: /transpilers,/core-concepts/transpilers
 ---
 
 # Using transpilers in NativeScript
