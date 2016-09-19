@@ -31,7 +31,7 @@ dockLayout.addChild(image);
 ```
 {% endangular %}
 
-The prefix of the `src` value specifies where the image will be loaded form. The possible options are:
+The prefix of the `src` value specifies where the image will be loaded from. The possible options are:
 
 * [From URL (`http://` or `https://` prefix)](#load-images-from-url)
 * [From local file system (`~/` prefix)](#load-images-from-local-file-system)
