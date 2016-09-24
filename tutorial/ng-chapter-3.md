@@ -446,6 +446,28 @@ export class UserService {
 }
 ```
 
+Next, in `app/app.module.ts`, replace the file's content with the following code. This adds an import for the `HttpModule`. It also adds it to the `NgModule` `imports` list. The `HttpModule` is used by the `UserService` we just modified. 
+
+``` TypeScript
+import { NgModule } from "@angular/core";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptModule } from "nativescript-angular/platform";
+import { HttpModule } from '@angular/http';
+
+import { AppComponent } from "./app.component";
+
+@NgModule({
+  imports: [
+    NativeScriptModule,
+    NativeScriptFormsModule,
+    HttpModule
+  ],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
 Next, in `app/app.component.ts`, replace the existing `signUp()` function with the following code:
 
 ``` TypeScript
