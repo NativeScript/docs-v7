@@ -41,6 +41,18 @@ onButtonTap = function () {
 ```
 * two-way data binding - surround target property with square and normal brackets
 
+> Before we can use the ngModel directive in a two-way data binding, we must import the NativeScriptFormsModule and add it to the Angular module's imports list:
+> ```typescript
+import {NativeScriptFormsModule} from "nativescript-angular/forms"
+@NgModule({
+	imports: [
+		NativeScriptModule,
+		NativeScriptRouterModule,
+		NativeScriptFormsModule, // RIGHT HERE
+	],
+})
+```
+
 In Angular 1.x two-way data binding was the default way of binding. However with Angular 2 the state of `two-way data binding` is not the same - due to too many performance problems caused by the uncertainty of what or who caused the change of the value within Model which sometimes results in way too many changes (and change notifications). So Angular 2 does not have two-way data binding by default, instead it uses events to notify Model that something is changed.
 
 ```XML
