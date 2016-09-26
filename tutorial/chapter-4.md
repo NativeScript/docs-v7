@@ -252,11 +252,11 @@ Open `app/views/list/list.js` and paste in the following code:
 
 ``` JavaScript
 var dialogsModule = require("ui/dialogs");
-var Observable = require("data/observable").Observable;
+var observableModule = require("data/observable")
 var ObservableArray = require("data/observable-array").ObservableArray;
 var page;
 
-var pageData = new Observable({
+var pageData = new observableModule.fromObject({
     groceryList: new ObservableArray([
         { name: "eggs" },
         { name: "bread" },
@@ -272,7 +272,11 @@ exports.loaded = function(args) {
 
 <div class="exercise-end"></div>
 
-Here, you're creating a new Observable object called `pageData`, which you set as the page's `bindingContext` in the `load()` function. Inside the Observable, you set a single `"groceryList"` property to be a new instance of the ObservableArray class. Notice how the `"groceryList"` property corresponds to `<ListView items="{% raw %}{{ groceryList }}{% endraw %}">`, and each array entry's `"name"` property corresponds to `<Label text="{% raw %}{{ name }}{% endraw %}">`. If you run your app you'll see the list screen shows the hardcoded data:
+Here, you're creating a new Observable object called `pageData`, which you set as the page's `bindingContext` in the `load()` function. Inside the Observable, you set a single `"groceryList"` property to be a new instance of the ObservableArray class. Notice how the `"groceryList"` property corresponds to `<ListView items="{% raw %}{{ groceryList }}{% endraw %}">`, and each array entry's `"name"` property corresponds to `<Label text="{% raw %}{{ name }}{% endraw %}">`.
+
+> **NOTE**: Notice how this example uses the observable module’s `fromObject()` method instead of the `Observable` class constructor. Both `observableModule.fromObject()` and `new Observable()` create a new `Obserable` instance, however, the `fromObject()` method performs a bit of additional initialization to handle nested objects. This example uses `fromObject()` because the `pageData` observable object contains a nested `ObservableArray`.
+
+If you run your app you'll see the list screen shows the hardcoded data:
 
 ![list 1](/img/cli-getting-started/nativescript/chapter4/ios/2.png)
 ![list 1](/img/cli-getting-started/nativescript/chapter4/android/2.png)
@@ -325,7 +329,7 @@ And add the code below in the same location:
 
 ``` JavaScript
 var groceryList = new GroceryListViewModel([]);
-var pageData = new Observable({
+var pageData = new observableModule.fromObject({
     groceryList: groceryList
 });
 ```
@@ -424,7 +428,7 @@ Finally, replace the `<ListView>` tag with the code below to place it in the sec
 Now you just need to make the necessary changes to the code-behind file to support these XML changes. Open `list.js` and start by adding a new `"grocery"` property to the `pageData` Observable. The `pageData` assignment should look like this:
 
 ``` JavaScript
-var pageData = new Observable({
+var pageData = new observableModule.fromObject({
     groceryList: groceryList,
     grocery: ""
 });
