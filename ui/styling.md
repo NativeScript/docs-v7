@@ -347,14 +347,6 @@ button:highlighted { background-color: red; color: gray;}
 <Button testAttr='flower' />
 ```
 {% endnativescript %}
-{% angular %}
-```CSS
-button:highlighted { background-color: red; color: gray;}
-```
-```XML
-<Button testAttr='flower' />
-```
-{% endangular %}
 
 ## Supported CSS properties
 
