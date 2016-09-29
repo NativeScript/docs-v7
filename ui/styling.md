@@ -159,6 +159,7 @@ NativeScript supports a subset of the [CSS selector syntax](http://www.w3schools
 * [ID selector](#id-selector)
 * [Hierarchical selector](#hierachical-selector-css-combinators)
 * [Attribute selector](#attribute-selector)
+* [Pseudo selector](#pseudo-selector)
 
 ### Type selector
 Like [CSS element selectors](http://www.w3schools.com/cssref/sel_element.asp), type selectors in NativeScript select all views of a given type. Type selectors are case insensitive, so you can use both `button` and `Button`.
@@ -333,6 +334,27 @@ Attribute selectors could be used alone or could be combined with all type of CS
 ```
 {% endangular %}
 
+### Pseudo selector
+A pseudo-selector or also pseudo-class is used to define a special state of an element.
+Currently, NativeScript supports only `:highlighted` pseudo-selector.
+
+{% nativescript %}
+
+```CSS
+button:highlighted { background-color: red; color: gray;}
+```
+```XML
+<Button testAttr='flower' />
+```
+{% endnativescript %}
+{% angular %}
+```CSS
+button:highlighted { background-color: red; color: gray;}
+```
+```XML
+<Button testAttr='flower' />
+```
+{% endangular %}
 
 ## Supported CSS properties
 
