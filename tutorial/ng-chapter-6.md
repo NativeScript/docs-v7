@@ -124,8 +124,8 @@ Admittedly, this code can seem a bit arcane if you’ve never written an iOS app
 
 > **TIP**:
 > * NativeScript provides TypeScript declaration files (`.d.ts` files) for all iOS and Android APIs. You can download the files using the links below. One word of warning though: because the declaration files include the entirety of the iOS and Android SDKs, they’re quite large, and can slow TypeScript builds to a crawl because of their sheer size. Nevertheless, the files can be invaluable during development, as they make accessing native APIs a whole lot easier.
->     * [iOS TypeScript declaration file](https://raw.githubusercontent.com/NativeScript/NativeScript/master/tns-core-modules/ios/ios.d.ts)
->     * [Android TypeScript declaration file](https://raw.githubusercontent.com/NativeScript/NativeScript/master/tns-core-modules/android17.d.ts)
+>     * [iOS TypeScript declaration file](https://github.com/NativeScript/NativeScript/tree/master/tns-platform-declarations/ios/objc-i386)
+>     * [Android TypeScript declaration file](https://raw.githubusercontent.com/NativeScript/NativeScript/master/tns-platform-declarations/android/android17.d.ts)
 > * For detailed information on how NativeScript makes native APIs globally available, read about [“How NativeScript Works”](http://developer.telerik.com/featured/nativescript-works/) on our blog, and [“Accessing Native APIs with JavaScript”](http://docs.nativescript.org/core-concepts/accessing-native-apis-with-javascript) on our documentation.
 
 Let’s move onto how to accomplish this same hint color task on Android.
