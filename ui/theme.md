@@ -29,7 +29,7 @@ The install process downloads the necessary files from npm, and then moves the a
 
 ## Color Schemes
 
-The NativeScript core theme includes color schemes, light and dark. The theme install process places the following line of code at the top of your app’s `app.css` file, which includes all the necessary CSS rules to make the light color scheme work.
+The NativeScript core theme includes two color schemes, light and dark. The theme install process places the following line of code at the top of your app’s `app.css` file, which includes all the necessary CSS rules to make the light color scheme work.
 
 ``` CSS
 @import '~/css/core.light.css';
@@ -219,6 +219,14 @@ The NativeScript theme includes a handful of class names to change the look and 
 <Button class="btn btn-rounded-sm" text="Large rounded corners"></Button>
 ```
 
+* `btn-active`: A class name that makes a button appear highlighted when tapped.
+
+``` XML
+<Button class="btn btn-active" text="I’m highlighted when tapped"></Button>
+```
+
+> **WARNING**: By default, iOS uses a delay before highlighting buttons used within ScrollView controls. Therefore, use caution when applying the `btn-active` class name to `<Button>` elements that are children of `<ScrollView>`s. For more detail see [this Stack Overflow thread](http://stackoverflow.com/questions/7541159/is-it-possible-to-remove-the-delay-of-uibuttons-highlighted-state-inside-a-uisc).
+
 ### Forms
 
 You can use the following form-related class names to improve the look of forms in your NativeScript apps.
@@ -254,10 +262,10 @@ You can use the following form-related class names to improve the look of forms 
     <TextField class="input"></TextField>
   </StackLayout>
   <StackLayout class="input-field">
-    <TextField class="input-border"></TextField>
+    <TextField class="input input-border"></TextField>
   </StackLayout>
   <StackLayout class="input-field">
-    <TextField class="input-rounded"></TextField>
+    <TextField class="input input-rounded"></TextField>
   </StackLayout>
 </StackLayout>
 ```
@@ -277,99 +285,209 @@ You can use the following form-related class names to improve the look of forms 
 </StackLayout>
 ```
 
-<!--
-
 ### Images
 
-* `img-rounded`
-* `img-circle`
-* `img-thumbnail`
+The NativeScript core theme provides a few CSS class names for altering the appearance of images.
 
-### Listview
+* `img-rounded`: A class name that applies a small `border-radius` to Image UI components.
+* `img-circle`: A class name that applies a large `border-radius` to Image UI components, making the image appear as a circle.
 
-* `list-group`
-* `list-group-item`
-* `list-group-item.active`
-* `list-group-item-heading`
-* `list-group-item-text`
-``` xml
-<ListView items="{{ sampleItems }}" class="list-group">
+``` XML
+<Image src="~/path/to/image.png" height="20" width="20" class="img-rounded"></Image>
+<Image src="~/path/to/image.png" height="20" width="20" class="img-circle"></Image>
+```
+
+> **NOTE**: You can only add `border-radius` to an image if it has an explicit `height` and `width` set.
+
+### ListViews
+
+ListViews are a common UI component in mobile apps, and the NativeScript core theme provides a series of class names to make your listviews look great.
+
+* `list-group`: A class name that should be applied to ListView UI components that you wish to style with any of the subsequent class names.
+
+``` XML
+<ListView class="list-group">
+  <!-- The contents of the ListView -->
+</ListView>
+```
+
+* `list-group-item`: A class name that should be applied to the container of each item template—usually a stack or grid layout. The class name adds a bit of spacing and the theme’s color scheme.
+
+``` XML
+<ListView class="list-group">
   <ListView.itemTemplate>
-    <GridLayout class="list-group-item" rows="auto" columns="auto, *">
-        <Image row="0" col="0" src="{{ imagealt }}" class="thumb img-rounded" />
-        <StackLayout row="0" col="1" >
-          <Label text="{{ title }}" class="list-group-item-heading" />
-          <Label text="{{ content }}" textWrap="true"  class="list-group-item-text" />
-        </StackLayout>
-      </GridLayout>
+    <GridLayout class="list-group-item">
+      <!-- The contents of the template -->
+    </GridLayout>
   </ListView.itemTemplate>
 </ListView>
 ```
-``` xml
-<ListView items="{{ sampleItems }}" class="list-group">
-    <ListView.itemTemplate>
-      <StackLayout>
-          <Label class="list-group-item" text="{{ title }}"/>  
-      </StackLayout>
-    </ListView.itemTemplate>
-  </ListView>
+
+* `list-group-item.active`: Apply the `active` class name to any list view item that you want to stand out to the user. You will likely want to conditionally apply this class name.
+
+``` XML
+<ListView class="list-group">
+  <ListView.itemTemplate>
+    <GridLayout class="list-group-item active">
+      <!-- The contents of the template -->
+    </GridLayout>
+  </ListView.itemTemplate>
+</ListView>
+```
+
+* `list-group-item.thumb`: Use the `thumb` class name to add thumbnail images to list view items.
+
+``` XML
+<ListView class="list-group">
+  <ListView.itemTemplate>
+    <GridLayout class="list-group-item" rows="*" columns="auto, *">
+      <Image row="0" col="0" src="..." class="thumb img-circle"></Image>
+      <Label row="0" col="1" text="Your text"></Label>
+    </GridLayout>
+  </ListView.itemTemplate>
+</ListView>
+```
+
+* `list-group-item-heading`: A class name to apply to elements that should appear as headings in multi-line item templates. Used in combination with the `list-group-item-text` class name.
+* `list-group-item-text`: A class name to apply to body text within a multi-line item template.
+
+``` XML
+<ListView class="list-group">
+  <ListView.itemTemplate>
+    <StackLayout class="list-group-item">
+      <Label class="list-group-item-heading" text="A Heading"></Label>
+      <Label class="list-group-item-text" text="The rest of the content" textWrap="true"></Label>
+    </StackLayout>
+  </ListView.itemTemplate>
+</ListView>
 ```
 
 ### Progress & Activity
 
-* `progress`
-* `activity-indicator`
-``` xml
-<Progress class="progress" />
-<ActivityIndicator class="activity-indicator" />
+You can use the following class names to apply the NativeScript core theme’s color scheme to your Progress and ActivityIndicator UI components.
+
+* `progress`: A class name for applying the core theme’s color scheme to a Progress UI component.
+* `activity-indicator`: A class name for applying the core theme’s color scheme to an ActivityIndicator UI component.
+
+``` XML
+<Progress class="progress"></Progress>
+<ActivityIndicator class="activity-indicator"></ActivityIndicator>
 ```
 
-### SideDrawer
+### SideDrawers
 
-* `sidedrawer-center`
-* `sidedrawer-left`
-* `sidedrawer-header`
-* `sidedrawer-header-image`
-* `sidedrawer-header-brand`
-* `sidedrawer-list-item`
-* `sidedrawer-list-item-icon` 
-* `sidedrawer-list-item-text`
-```xml
+SideDrawers are a common way to implement navigation in your NativeScript apps. The NativeScript core theme includes class names to help you style the free-to-use [RadSideDrawer](http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawer/overview) that’s a part of the [UI for NativeScript](http://www.telerik.com/nativescript-ui) component suite.
+
+> **NOTE**: The UI snippets you see below should be placed within a RadSideDrawer’s `drawerContent`. Refer to the [control’s documentation](http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawer/getting-started) for more information on how to structure drawers within your apps.
+
+The first two sidedrawer class names control the alignment of content within the sidedrawer.
+
+* `sidedrawer-center`: A class name that aligns content in the center.
+* `sidedrawer-left`: A class name that aligns content on the left-hand side of the screen.
+
+``` XML
+<StackLayout class="sidedrawer-center">
+<!-- Contents of the sidedrawer -->
+</StackLayout>
+```
+
+``` XML
+<StackLayout class="sidedrawer-left">
+  <!-- Contents of the sidedrawer -->
+</StackLayout>
+```
+
+* `sidedrawer-header`: A class name to designate a section of your sidedrawer as the header. Useful if you want to show an image or logo above your app’s drawer navigation.
+
+``` XML
 <StackLayout class="sidedrawer-left">
   <StackLayout class="sidedrawer-header">
-  <Image src="~/sample.png" class="sidedrawer-header-image"/>
-  <Label text="NativeScript Theme Project" textWrap="true" class="sidedrawer-header-brand" />
+    <!-- The contents of the header -->
+  </StackLayout>
 </StackLayout>
-<StackLayout class="sidedrawer-content">
-  <GridLayout class="sidedrawer-list-item" rows="auto" columns="auto,*">
-    <Label class="sidedrawer-list-item-icon" row="0" col="0" />
-    <Label text="Home" class="sidedrawer-list-item-text" row="0" col="1" />
-  </GridLayout>
+```
+
+* `sidedrawer-header-image`: A class name to apply to an image or logo that you show within the sidedrawer header. The theme takes care of aligning the image for you. 
+* `sidedrawer-header-brand`: A class name to apply to text heading that appears in your sidedrawer’s header.
+
+``` XML
+<StackLayout class="sidedrawer-left">
+  <StackLayout class="sidedrawer-header">
+    <Image class="sidedrawer-header-image img-circle src="~/my-app-logo.png"></Image>
+    <Label class="sidedrawer-header-brand text="Name of My App"></Label>
+  </StackLayout>
+</StackLayout>
+```
+
+* `sidedrawer-content`: A class name used to designate a section of your sidedrawer as the main content. This section is commonly used to display a list of navigation links.
+
+``` XML
+<StackLayout class="sidedrawer-left">
+  <StackLayout class="sidedrawer-header">...</StackLayout>
+  <StackLayout class="sidedrawer-content">...</StackLayout>
+</StackLayout>
+```
+
+* `sidedrawer-list-item`: A class name to apply to each individual item, or link, that appears within your sidedrawer’s content.
+* `sidedrawer-list-item-text`: A class name to apply to the text used within each sidedrawer’s list item.
+* `sidedrawer-list-item-icon`: A class name you can use to show an icon next to each list item’s text.
+
+``` XML
+<StackLayout class="sidedrawer-left">
+  <StackLayout class="sidedrawer-header">
+    <!-- The contents of the header -->
+  </StackLayout>
+  <StackLayout class="sidedrawer-content">
+
+    <!-- A list item with no icon -->
+    <GridLayout class="sidedrawer-list-item" rows="*" columns="*">
+      <Label row="0" col="0" text="A Link"><Label>
+    </GridLayout>
+
+    <!-- A list item with an icon -->
+    <GridLayout class="sidedrawer-list-item" rows="auto" columns="auto, *">
+      <Image class="sidedrawer-list-item-icon" row="0" col="0" src="~/path/to/icon.png"></Image>
+      <Label class="sidedrawer-list-item-text" row="0" col="1" text="A Link"><Label>
+    </GridLayout>
+
+  </StackLayout>
 </StackLayout>
 ```
 
 ### Sliders
 
-* `slider`
-```xml
-<Slider minValue="1" maxValue="100" value="50" class="slider" />
+The NativeScript core theme includes a class name for styling Slider UI components.
+
+* `slider`: A class name to apply the theme’s color scheme to sliders. The class name handles styling disabled slider controls.
+
+```XML
+<Slider minValue="1" maxValue="100" value="50" class="slider"></Slider>
+<Slider minValue="1" maxValue="100" value="50" class="slider" isEnabled="false"></Slider>
 ```
 
 ### Switches
 
-* `switch`
-```xml
-<Switch checked="true" class="switch"/>
+The NativeScript core theme also includes a class name for styling Switch UI components.
+
+* `switch`: A class name to apply the theme’s color scheme to switches. The class name handles styling disabled switch controls.
+
+```XML
+<Switch checked="true" class="switch"></Switch>
+<Switch checked="false" class="switch"></Switch>
+<Switch checked="false" class="switch" isEnabled="false"></Switch>
 ```
 
-### Tabs
+### TabViews
 
-* `tab-view`
-``` xml
+Finally, the NativeScript core theme includes a class name for styling TabView UI controls.
+
+* `tab-view`: A class name to apply the theme’s color scheme to TabViews.
+
+``` XML
 <TabView class="tab-view">
+  <!-- The contents of the TabView -->
+</TabView>
 ```
-
--->
 
 ## Contributing
 
