@@ -35,8 +35,8 @@ Let’s start with iOS. If you run a [generic search for “style iOS text field
 Because there are multiple text fields in Groceries, we’ll write the functionality to change hint colors as a utility that lives in your app’s `utils` folder. Open `app/utils/hint-util.ts` and paste in the following code:
 
 ``` TypeScript
-import {Color} from "color";
-import {TextField} from "ui/text-field";
+import { Color } from "color";
+import { TextField } from "ui/text-field";
 
 declare var NSAttributedString: any;
 declare var NSDictionary: any;
@@ -72,11 +72,11 @@ Next, open up `app/pages/login/login.component.ts` and add the following two pro
 After that, add the following two imports to the top of the file:
 
 ``` TypeScript
-import {setHintColor} from "../../utils/hint-util";
-import {TextField} from "ui/text-field";
+import { setHintColor } from "../../utils/hint-util";
+import { TextField } from "ui/text-field";
 ```
 
-Then, add the following function to the file’s `LoginPage` class:
+Then, add the following function to the file’s `LoginComponent` class:
 
 ``` TypeScript
 setTextFieldColors() {
@@ -93,7 +93,7 @@ setTextFieldColors() {
 }
 ```
 
-Finally, add a call to the new `setTextFieldColors()` in your `LoginPage`’s existing `toggleDisplay()` method—ideally immediately after the existing `this.isLoggingIn = !this.isLoggingIn` line:
+Finally, add a call to the new `setTextFieldColors()` in your `LoginComponent`’s existing `toggleDisplay()` method—ideally immediately after the existing `this.isLoggingIn = !this.isLoggingIn` line:
 
 ``` TypeScript
 this.setTextFieldColors();
@@ -124,8 +124,8 @@ Admittedly, this code can seem a bit arcane if you’ve never written an iOS app
 
 > **TIP**:
 > * NativeScript provides TypeScript declaration files (`.d.ts` files) for all iOS and Android APIs. You can download the files using the links below. One word of warning though: because the declaration files include the entirety of the iOS and Android SDKs, they’re quite large, and can slow TypeScript builds to a crawl because of their sheer size. Nevertheless, the files can be invaluable during development, as they make accessing native APIs a whole lot easier.
->     * [iOS TypeScript declaration file](https://raw.githubusercontent.com/NativeScript/NativeScript/master/tns-core-modules/ios.d.ts)
->     * [Android TypeScript declaration file](https://raw.githubusercontent.com/NativeScript/NativeScript/master/tns-core-modules/android17.d.ts)
+>     * [iOS TypeScript declaration file](https://github.com/NativeScript/NativeScript/tree/master/tns-platform-declarations/ios/objc-i386)
+>     * [Android TypeScript declaration file](https://raw.githubusercontent.com/NativeScript/NativeScript/master/tns-platform-declarations/android/android17.d.ts)
 > * For detailed information on how NativeScript makes native APIs globally available, read about [“How NativeScript Works”](http://developer.telerik.com/featured/nativescript-works/) on our blog, and [“Accessing Native APIs with JavaScript”](http://docs.nativescript.org/core-concepts/accessing-native-apis-with-javascript) on our documentation.
 
 Let’s move onto how to accomplish this same hint color task on Android.
@@ -141,8 +141,8 @@ Much like with iOS, if you’re not a native Android developer, figuring out how
 Open `app/utils/hint-util.ts` and replace the existing contents of the file with the following code:
 
 ``` TypeScript
-import {Color} from "color";
-import {TextField} from "ui/text-field";
+import { Color } from "color";
+import { TextField } from "ui/text-field";
 
 declare var NSAttributedString: any;
 declare var NSDictionary: any;
@@ -186,10 +186,10 @@ Sometimes accomplishing tasks with native code is simple, as it was with setting
 Because this code changes the appearance of the status bar, we’ll want to call this method as soon as possible, so that the status bar doesn’t awkwardly update after the app has already loaded. Therefore to use this new utility, open `app/main.ts` and first add the following import.
 
 ``` TypeScript
-import {setStatusBarColors} from "./utils/status-bar-util";
+import { setStatusBarColors } from "./utils/status-bar-util";
 ```
 
-Next, add a call to the `setStatusBarColors()` function you just imported directly _before_ the call to `nativeScriptBootstrap()`.
+Next, add a call to the `setStatusBarColors()` function you just imported directly _before_ the call to `platformNativeScriptDynamic()`.
 
 ``` TypeScript
 setStatusBarColors();
@@ -244,7 +244,7 @@ delete(id: string) {
   headers.append("Authorization", "Bearer " + Config.token);
   headers.append("Content-Type", "application/json");
 
-  return this._http.delete(
+  return this.http.delete(
     Config.apiUrl + "Groceries/" + id,
     { headers: headers }
   )

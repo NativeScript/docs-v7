@@ -26,7 +26,7 @@ If you dig into `node_modules/tns-core-modules` you can get an idea of how these
 
 > **NOTE**:
 > * You can refer to the [Node.js documentation on folders as modules](https://nodejs.org/api/modules.html#modules_folders_as_modules) for more detailed information on how NativeScript organizes its modules.
-> * The “tns-core-modules” package only includes compiled JavaScript code to cut down on file size. You can find the TypeScript code for each of these modules in the `[main NativeScript GitHub repo](https://github.com/NativeScript/nativescript), for instance here’s the [camera module’s source code](https://github.com/NativeScript/nativescript/tree/master/tns-core-modules/camera).
+> * The “tns-core-modules” package only includes compiled JavaScript code to cut down on file size. You can find the TypeScript code for each of these modules in the [main NativeScript GitHub repo](https://github.com/NativeScript/nativescript), for instance here’s the [camera module’s source code](https://github.com/NativeScript/nativescript/tree/master/tns-core-modules/camera).
 
 The `*.ios.*` and `*.android.*` naming convention should look familiar, as it’s the exact same convention we used to include Android- and iOS-specific styling in [chapter 2](ng-chapter-2). NativeScript uses this same convention to implement its modules on iOS and Android. Now that you know where these modules are, let's take a closer look at what else they can do for your app, starting with a closer looks at what you can do with NativeScript’s UI elements.
 
@@ -41,24 +41,24 @@ So far, you’ve only used NativeScript UI elements by including them in an Angu
 Open `app/pages/login/login.component.ts`, and add the following import to the top of the file:
 
 ``` TypeScript
-import {Page} from "ui/page";
+import { Page } from "ui/page";
 ```
 
-> **NOTE**: All of the imports you’ve seen to this point work because the TypeScript compiler resolves them against your project’s `node_modules` folder. For instance, `import {Component} from "@angular/core"` works because a `node_modules/angular2/core.d.ts` file exists. The two imports above are NativeScript module imports, and they work because your project’s `references.d.ts` file includes a reference to a TypeScript declaration file (a `.d.ts` file), that lives in `node_modules/tns-core-modules`, and which allows you to import modules from `node_modules/tns-core-modules` without any prefixes.
+> **NOTE**: All of the imports you’ve seen to this point work because the TypeScript compiler resolves them against your project’s `node_modules` folder. For instance, `import { Component } from "@angular/core"` works because a `node_modules/angular2/core.d.ts` file exists. The two imports above are NativeScript module imports, and they work because your project’s `references.d.ts` file includes a reference to a TypeScript declaration file (a `.d.ts` file), that lives in `node_modules/tns-core-modules`, and which allows you to import modules from `node_modules/tns-core-modules` without any prefixes.
 
 Next, alter the same file’s existing `"@angular/core"` import to include the `OnInit` interface:
 
-```TypeScript
-import {Component, OnInit} from "@angular/core";
+``` TypeScript
+import { Component, OnInit } from "@angular/core";
 ```
 
-`OnInit` is a [TypeScript class interface](http://www.typescriptlang.org/docs/handbook/interfaces.html#class-types). To see how it works, make the following change to the declaration of your `LoginPage` class:
+`OnInit` is a [TypeScript class interface](http://www.typescriptlang.org/docs/handbook/interfaces.html#class-types). To see how it works, make the following change to the declaration of your `LoginComponent` class:
 
 ``` TypeScript
-export class LoginPage implements OnInit {
+export class LoginComponent implements OnInit {
 ```
 
-If you’re using an editor that supports TypeScript, you should see an error that says something like *“Class ‘LoginPage’ incorrectly implements interface ‘OnInit’”*. When you implement a TypeScript class interface, you’re telling the TypeScript compiler that you must implement all methods that the interface requires. In the case of `OnInit`, Angular 2 requires you to implement a single `ngOnInit()` method. To implement it, add the following code within the `LoginPage` class:
+If you’re using an editor that supports TypeScript, you should see an error that says something like *“Class ‘LoginComponent’ incorrectly implements interface ‘OnInit’”*. When you implement a TypeScript class interface, you’re telling the TypeScript compiler that you must implement all methods that the interface requires. In the case of `OnInit`, Angular 2 requires you to implement a single `ngOnInit()` method. To implement it, add the following code within the `LoginComponent` class:
 
 ``` TypeScript
 ngOnInit() {
@@ -69,10 +69,10 @@ ngOnInit() {
 
 `ngOnInit` is one of several [component lifecycle hooks](https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html) that Angular 2 provides. As its name implies, `ngOnInit` gets invoked when Angular initializes this component.
 
-We’ll discuss what the code within `ngOnInit()` does momentarily, but finally, to make these changes compile and run, change the `LoginPage`’s existing `constructor()` declaration to use the code below.
+We’ll discuss what the code within `ngOnInit()` does momentarily, but finally, to make these changes compile and run, change the `LoginComponent`’s existing `constructor()` declaration to use the code below.
 
 ``` TypeScript
-constructor(private _router: Router, private _userService: UserService, private page: Page) {
+constructor(private router: Router, private userService: UserService, private page: Page) {
 ```
 
 > **NOTE**: Because the `Page` class is so commonly used in NativeScript apps, NativeScript provides this syntax as a shorthand for getting access to a component’s page.
@@ -86,7 +86,7 @@ this.page.actionBarHidden = true;
 this.page.backgroundImage = "res://bg_login";
 ```
 
-This code uses an instance of the [`Page` class](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) from the [NativeScript page module](http://docs.nativescript.org/api-reference/modules/_ui_page_.html), and sets two properties on it—`actionBarHidden` and `backgroundImage`. Although you can peruse the NativeScript API documentation for a full list of these properties and what they do, if you’re using a TypeScript-friendly IDE, you can get a full list of these properties at any point.
+This code uses an instance of the [`Page` class](https://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) from the [NativeScript page module](https://docs.nativescript.org/api-reference/modules/_ui_page_.html), and sets two properties on it—`actionBarHidden` and `backgroundImage`. Although you can peruse the NativeScript API documentation for a full list of these properties and what they do, if you’re using a TypeScript-friendly IDE, you can get a full list of these properties at any point.
 
 <img alt="TypeScript autocomplete" class="plain" src="../img/cli-getting-started/angular/chapter4/typescript.png" style="border: 1px solid black;">
 
@@ -121,26 +121,27 @@ Open `app/pages/login/login.html` and add `#container` to the existing `<StackLa
 
 The “#” syntax is Angular’s way of creating [local template variables](https://angular.io/docs/ts/latest/guide/template-syntax.html#!#local-vars), and you’ll use this local variable to get a reference to the `<StackLayout>` element in TypeScript code momentarily.
 
-Next, open `app/pages/login/login.component.ts` and add the following two lines at the top, which import the [`Color` class](http://docs.nativescript.org/api-reference/classes/_color_.color.html) from the NativeScript color module, and the [`View` class](http://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html) from the NativeScript view module.
+Next, open `app/pages/login/login.component.ts` and add the following two lines at the top, which import the [`Color` class](https://docs.nativescript.org/api-reference/classes/_color_.color.html) from the NativeScript color module, and the [`View` class](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html) from the NativeScript view module.
 
 ``` TypeScript
-import {Color} from "color";
-import {View} from "ui/core/view";
+import { Color } from "color";
+import { View } from "ui/core/view";
 ```
 
 After that, change the existing “@angular/core” import to include a few more classes:
 
 ``` TypeScript
-import {Component, ElementRef, OnInit, ViewChild} from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 ```
 
-With these new imports in place, next, add the following property to the `LoginPage` class. Place it right under the `isLoggingIn = true;` line:
+With these new imports in place, next, add the following property to the `LoginComponent` class. Place it right under the `isLoggingIn = true;` line:
 
 ``` TypeScript
 @ViewChild("container") container: ElementRef;
 ```
 
-This code uses Angular’s [`@ViewChild` decorator](https://angular.io/docs/ts/latest/api/core/ViewChild-var.html) to create a new property that points at the `<StackLayout>` element. To use that property, change the `LoginPage`’s `toggleDisplay()` function in the same file to use this code:
+This code uses Angular’s [`@ViewChild` decorator](https://angular.
+io/docs/ts/latest/api/core/ViewChild-var.html) to create a new property that points at the `<StackLayout>` element. To use that property, change the `LoginComponent`’s `toggleDisplay()` function in the same file to use this code:
 
 ``` TypeScript
 toggleDisplay() {
@@ -155,7 +156,7 @@ toggleDisplay() {
 
 <div class="exercise-end"></div>
 
-All NativeScript UI elements inherit from a base [`View` class](http://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html.html), which contains a number of useful methods—including the `animate()` method you used in the previous example.
+All NativeScript UI elements inherit from a base [`View` class](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html), which contains a number of useful methods—including the `animate()` method you used in the previous example.
 
 One you have a reference to a UI element, you can call any of the methods that element inherits from `View`. In this case, you call the `<StackLayout #container>` element’s `animate()` method to change its background color over a duration of `200`, or 2/10 of a second. The effect is a subtle color change that helps user differentiate between the “Sign In” and “Sign Up” functionality that your form provides.
 
@@ -202,14 +203,14 @@ We’ll talk about the new syntax in a moment, but first let’s define the clas
 Next, open `app/pages/list/list.component.ts` and replace its contents with the code below:
 
 ``` TypeScript
-import {Component, ElementRef, OnInit, ViewChild} from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 
 @Component({
   selector: "list",
   templateUrl: "pages/list/list.html",
   styleUrls: ["pages/list/list-common.css", "pages/list/list.css"]
 })
-export class ListPage implements OnInit {
+export class ListComponent implements OnInit {
   groceryList: Array<Object> = [];
 
   ngOnInit() {
@@ -222,7 +223,7 @@ export class ListPage implements OnInit {
 
 <div class="exercise-end"></div>
 
-Your `ListPage` class now has a `groceryList` property that you fill with three objects in an `ngOnInit` handler. If you run your app and login, you should see the same list of groceries on the screen:
+Your `ListComponent` class now has a `groceryList` property that you fill with three objects in an `ngOnInit` handler. If you run your app and login, you should see the same list of groceries on the screen:
 
 ![List view on Android](../img/cli-getting-started/angular/chapter4/android/3.png)
 ![List view on iOS](../img/cli-getting-started/angular/chapter4/ios/3.png)
@@ -237,7 +238,7 @@ How does this work? Let’s return to this chunk of code:
 </ListView>
 ```
 
-The [`<ListView>` UI element](http://docs.nativescript.org/api-reference/classes/_ui_list_view_.listview.html) requires an `items` property that points at an array of data—in this case, the `groceryList` array you added to your `ListPage` class. The list view element requires a child `<template>` element that specifies how to render each item in the `items` array.
+The [`<ListView>` UI element](https://docs.nativescript.org/api-reference/classes/_ui_list_view_.listview.html) requires an `items` property that points to an array of data—in this case, the `groceryList` array you added to your `ListComponent` class. The list view element requires a child `<template>` element that specifies how to render each item in the `items` array.
 
 The `let-*` syntax is Angular 2’s way of creating template variables within loops. You can think of the syntax working like TypeScript’s `let` keyword. This gives you the ability to refer to each item in the array as `item` within the template. For this template, you render each item in the array with a single `<Label>` UI element, and because of the `[text]="item.name"` binding, those labels contain the text from the `name` property of each of the items in `groceryList` TypeScript array.
 
@@ -258,22 +259,23 @@ export class Grocery {
 This creates a simple `Grocery` model object that you can use throughout your app. Next, let’s create a simple service that reads grocery lists from our backend.  Open `app/shared/grocery/grocery-list.service.ts` and paste in the following code:
 
 ``` TypeScript
-import {Injectable} from "@angular/core";
-import {Http, Headers} from "@angular/http";
-import {Config} from "../config";
-import {Grocery} from "./grocery";
-import {Observable} from "rxjs/Rx";
+import { Injectable } from "@angular/core";
+import { Http, Headers } from "@angular/http";
+import { Observable } from "rxjs/Rx";
 import "rxjs/add/operator/map";
+
+import { Config } from "../config";
+import { Grocery } from "./grocery";
 
 @Injectable()
 export class GroceryListService {
-  constructor(private _http: Http) {}
+  constructor(private http: Http) {}
 
   load() {
     let headers = new Headers();
     headers.append("Authorization", "Bearer " + Config.token);
 
-    return this._http.get(Config.apiUrl + "Groceries", {
+    return this.http.get(Config.apiUrl + "Groceries", {
       headers: headers
     })
     .map(res => res.json())
@@ -299,8 +301,8 @@ The code here is very similar to the code you used in the `UserService` earlier 
 To use this service, open `app/pages/list/list.component.ts` and add the following two lines to the top of the file:
 
 ``` TypeScript
-import {Grocery} from "../../shared/grocery/grocery";
-import {GroceryListService} from "../../shared/grocery/grocery-list.service";
+import { Grocery } from "../../shared/grocery/grocery";
+import { GroceryListService } from "../../shared/grocery/grocery-list.service";
 ```
 
 Next, change the existing `groceryList` declaration to use the newly imported `Grocery` class instead of a generic `Object`:
@@ -309,10 +311,10 @@ Next, change the existing `groceryList` declaration to use the newly imported `G
 groceryList: Array<Grocery> = [];
 ```
 
-Then, add the following `constructor` function within the `ListPage` class:
+Then, add the following `constructor` function within the `ListComponent` class:
 
 ``` TypeScript
-constructor(private _groceryListService: GroceryListService) {}
+constructor(private groceryListService: GroceryListService) {}
 ```
 
 Next, because you’re injecting a service into your constructor you must also include it as a provider within your component decorator. To do so, replace the existing `@Component` decorator with the code below:
@@ -330,7 +332,7 @@ Finally, to kick off the call to `load()` when this page initializes, replace th
 
 ``` TypeScript
 ngOnInit() {
-  this._groceryListService.load()
+  this.groceryListService.load()
     .subscribe(loadedGroceries => {
       loadedGroceries.forEach((groceryObject) => {
         this.groceryList.unshift(groceryObject);
@@ -342,9 +344,10 @@ ngOnInit() {
 The full version of your `app/pages/list/list.component.ts` file should now look like this:
 
 ``` TypeScript
-import {Component, ElementRef, OnInit, ViewChild} from "@angular/core";
-import {Grocery} from "../../shared/grocery/grocery";
-import {GroceryListService} from "../../shared/grocery/grocery-list.service";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+
+import { Grocery } from "../../shared/grocery/grocery";
+import { GroceryListService } from "../../shared/grocery/grocery-list.service";
 
 @Component({
   selector: "list",
@@ -352,13 +355,13 @@ import {GroceryListService} from "../../shared/grocery/grocery-list.service";
   styleUrls: ["pages/list/list-common.css", "pages/list/list.css"],
   providers: [GroceryListService]
 })
-export class ListPage implements OnInit {
+export class ListComponent implements OnInit {
   groceryList: Array<Grocery> = [];
 
-  constructor(private _groceryListService: GroceryListService) {}
+  constructor(private groceryListService: GroceryListService) {}
 
   ngOnInit() {
-    this._groceryListService.load()
+    this.groceryListService.load()
       .subscribe(loadedGroceries => {
         loadedGroceries.forEach((groceryObject) => {
           this.groceryList.unshift(groceryObject);
@@ -434,8 +437,8 @@ Grid layouts can also divide the screen into columns, which is what the inner gr
 Here the `columns` attribute divides the top of the screen into two columns. The `col="0"` attribute puts the text field in the first column, and the `col="1"` attribute puts the “+” image in the last column. Grid layouts are the most commonly used NativeScript layout, so you may wish to take a minute to play around with the `columns` and `rows` attributes to figure out how they work.
 
 > **TIP**:
-> * You can nest any of the [NativeScript layouts](http://docs.nativescript.org/ui/layout-containers.html)—not just grid layouts.
-> * You can pass numbers, percentages, and a variety of other values to create more complex grid layouts. Refer to the [grid layout docs](http://docs.nativescript.org/ui/layout-containers.html#gridlayout) for more information.
+> * You can nest any of the [NativeScript layouts](/ui/layout-containers.html)—not just grid layouts.
+> * You can pass numbers, percentages, and a variety of other values to create more complex grid layouts. Refer to the [grid layout docs](/ui/layout-containers.html#gridlayout) for more information.
 
 Now that we have the UI ready, let’s make the add button work.
 
@@ -455,7 +458,7 @@ Next, give the same file’s image a new `tap` attribute binding, so that the fu
 <Image src="res://add" (tap)="add()" col="1"></Image>
 ```
 
-With these attributes in place, your next steps are to define a new `grocery` property and `add()` method in your `ListPage` class. To do that, open `app/pages/list/list.component.ts` and add the following two properties to the `ListPage` class (right below the existing `groceryList` property):
+With these attributes in place, your next steps are to define a new `grocery` property and `add()` method in your `ListComponent` class. To do that, open `app/pages/list/list.component.ts` and add the following two properties to the `ListComponent` class (right below the existing `groceryList` property):
 
 ``` TypeScript
 grocery = "";
@@ -465,10 +468,10 @@ grocery = "";
 Next, add the following import to the top of the `list.component.ts` file:
 
 ``` TypeScript
-import {TextField} from "ui/text-field";
+import { TextField } from "ui/text-field";
 ```
 
-Then, add the following `add()` function to the existing `ListPage` class:
+Then, add the following `add()` function to the existing `ListComponent` class:
 
 ``` TypeScript
 add() {
@@ -481,7 +484,7 @@ add() {
   let textField = <TextField>this.groceryTextField.nativeElement;
   textField.dismissSoftInput();
 
-  this._groceryListService.add(this.grocery)
+  this.groceryListService.add(this.grocery)
     .subscribe(
       groceryObject => {
         this.groceryList.unshift(groceryObject);
@@ -508,7 +511,7 @@ add(name: string) {
   headers.append("Authorization", "Bearer " + Config.token);
   headers.append("Content-Type", "application/json");
 
-  return this._http.post(
+  return this.http.post(
     Config.apiUrl + "Groceries",
     JSON.stringify({ Name: name }),
     { headers: headers }
@@ -523,10 +526,10 @@ add(name: string) {
 
 <div class="exercise-end"></div>
 
-The `add()` code should look familiar as you’re again using the `Http` service’s `post()` method to make an HTTP call to our backend, and then using RxJS’s `map()` function to convert the returned data into a `Grocery` object. You consume that object in the `ListPage` component’s `add()` method, which adds the grocery to the page’s list by calling `this.groceryList.unshift()`, and then empties that page’s text field by setting `this.grocery` equal to `""`.
+The `add()` code should look familiar as you’re again using the `Http` service’s `post()` method to make an HTTP call to our backend, and then using RxJS’s `map()` function to convert the returned data into a `Grocery` object. You consume that object in the `ListComponent`’s `add()` method, which adds the grocery to the page’s list by calling `this.groceryList.unshift()`, and then empties that page’s text field by setting `this.grocery` equal to `""`.
 
 ``` TypeScript
-this._groceryListService.add(this.grocery)
+this.groceryListService.add(this.grocery)
   .subscribe(
     groceryObject => {
       this.groceryList.unshift(groceryObject);
@@ -549,7 +552,7 @@ Let's look at how you can polish this page with a NativeScript module for showin
 
 Currently there's a bit of a delay when you first visit the list page before groceries appear. This delay could confuse a new user, who might think the app is stuck rather than retrieving data from a backend.
 
-In NativeScript apps you can use the [ActivityIndicator](http://docs.nativescript.org/api-reference/classes/_ui_activity_indicator_.activityindicator.html) module to show a spinner icon in your UI while your app is busy performing actions. The ActivityIndicator is a relatively simple UI element as it primarily uses one attribute—`busy`. When an ActivityIndicator's `busy` attribute is set to `true` the ActivityIndicator shows, and when its `busy` attribute is set to `false` it doesn't. Let's see how the module works by adding an ActivityIndicator to the list page.
+In NativeScript apps you can use the [ActivityIndicator](https://docs.nativescript.org/api-reference/classes/_ui_activity_indicator_.activityindicator.html) module to show a spinner icon in your UI while your app is busy performing actions. The ActivityIndicator is a relatively simple UI element as it primarily uses one attribute—`busy`. When an ActivityIndicator's `busy` attribute is set to `true` the ActivityIndicator shows, and when its `busy` attribute is set to `false` it doesn't. Let's see how the module works by adding an ActivityIndicator to the list page.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Add an ActivityIndicator
@@ -561,7 +564,11 @@ Open up `app/pages/list/list.html` and paste the following line immediately befo
 <ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" row="1" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
 ```
 
+<<<<<<< HEAD
 This binds the ActivityIndicator’s `busy` attribute to an `isLoading` property in the `ListPage` component. To define that property, open `app/pages/list/list.component.ts` and add the following line of code immediately under `grocery = ""`:
+=======
+This binds the ActivityIndicator’s `busy` attribute to an `isLoading` property in the `ListComponent` component. To define that property, open `app/pages/list/list.component.ts` and add the following line of code immediately under `grocery = ""`:
+>>>>>>> 8d490570bdf98a66342cc47ec7df586fa8ad1f57
 
 ``` TypeScript
 isLoading = false;
@@ -572,7 +579,7 @@ Now that the property exists, your final step is to set this flag to to `true` w
 ``` TypeScript
 ngOnInit() {
   this.isLoading = true;
-  this._groceryListService.load()
+  this.groceryListService.load()
     .subscribe(loadedGroceries => {
       loadedGroceries.forEach((groceryObject) => {
         this.groceryList.unshift(groceryObject);
@@ -634,7 +641,7 @@ Next, in the same file, replace the existing `ngOnInit()` function with the foll
 ``` TypeScript
 ngOnInit() {
   this.isLoading = true;
-  this._groceryListService.load()
+  this.groceryListService.load()
     .subscribe(loadedGroceries => {
       loadedGroceries.forEach((groceryObject) => {
         this.groceryList.unshift(groceryObject);

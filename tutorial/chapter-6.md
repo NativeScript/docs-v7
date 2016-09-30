@@ -75,8 +75,8 @@ Within the if block, you start by getting a reference to the `UINavigationBar`, 
 Learning how to transfer iOS and Android APIs into valid NativeScript code can take a little trial and error to get right. You can always refer to the NativeScript docs for detailed discussions of how to handle the code conversion. Here are the [docs for Android](/runtimes/android/marshalling/java-to-js.html), and here are the [docs for iOS](/runtimes/ios/marshalling/Marshalling-Overview.html).
 
 > **TIP**: NativeScript provides TypeScript declaration files for all iOS and Android APIs. If you're using TypeScript you can reference these declaration files to enable code completion in your editor. Even if you're not using TypeScript, these declaration files can be invaluable references when you're transferring native APIs to NativeScript code. For instance try searching for “UINavigationBar” in the iOS declaration file below to see which other properties are available.
-> - [iOS TypeScript declaration file](https://raw.githubusercontent.com/NativeScript/NativeScript/master/tns-core-modules/ios.d.ts)
-> - [Android TypeScript declaration file](https://raw.githubusercontent.com/NativeScript/NativeScript/master/tns-core-modules/android17.d.ts)
+> - [iOS TypeScript declaration file](https://github.com/NativeScript/NativeScript/tree/master/tns-platform-declarations/ios/objc-i386)
+> - [Android TypeScript declaration file](https://raw.githubusercontent.com/NativeScript/NativeScript/master/tns-platform-declarations/android/android17.d.ts)
 
 Forking the user experience can entail more than just changing some colors. For example, sliding to delete list items is a common UI interaction on iOS, but not Android. But as you've seen, NativeScript makes it relatively easy to fork your code to provide a more platform-specific experience. So to allow a user to delete an item from a list, let's create a slide-to-delete UI for iOS, and use a more-Android-friendly trash can icon to let the user delete items from our Android app.
 

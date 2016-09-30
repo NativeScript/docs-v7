@@ -111,6 +111,28 @@ In `app/app.component.ts`, find the first `<TextField>`, and replace it with the
   autocorrect="false" autocapitalizationType="none"></TextField>
 ```
 
+Next, open `app/app.module.ts` and replaces its contents with the code below, which adds a new `NativeScriptFormsModule` to the `NgModule`’s list of `imports`.
+
+``` JavaScript
+import { NgModule } from "@angular/core";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptModule } from "nativescript-angular/platform";
+
+import { AppComponent } from "./app.component";
+
+@NgModule({
+  imports: [
+    NativeScriptModule,
+    NativeScriptFormsModule
+  ],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
+> **NOTE**: You can think of the list of `imports` in an Angular module as the pieces of functionality needed to make your app work. In this case, the `NativeScriptFormsModule` makes the `[(ngModel)]` syntax work with NativeScript’s UI components. If you want to dive into exactly how Angular imports work, refer to [Angular’s documentation on modules](https://angular.io/docs/ts/latest/guide/ngmodule.html).
+
 <div class="exercise-end"></div>
 
 At first glance the `[(ngModel)]` syntax looks more than a little odd, as it’s essentially a combination of the event and attribute binding syntax that you used in earlier examples. In the case of this example, `[(ngModel)]="email"` is shorthand for `[text]="email" (emailChange)="email=$event"`, which binds the email element’s `text` attribute to an `email` property and adds a `change` event handler that updates the `email` property’s value whenever the user makes a change.
@@ -188,7 +210,7 @@ This code defines a simple [TypeScript class](http://www.typescriptlang.org/Hand
 Next, open `app/app.component.ts`, and add the following `import` to the top of the file:
 
 ``` TypeScript
-import {User} from "./shared/user/user";
+import { User } from "./shared/user/user";
 ```
 
 Here you import the `User` class that you just defined. Note the parallel between the `export` command used in the previous example and the `import` command used here. The reason the `User` class is available to import is because it was explicitly exported. You’ll see other examples of `import` and `export` as you go through this guide.
@@ -246,8 +268,9 @@ templateUrl: "pages/login/login.html"
 In case you got lost during this section, here’s a copy-and-paste friendly of the `app/app.component.ts` file you should have at this point:
 
 ``` TypeScript
-import {Component} from "@angular/core";
-import {User} from "./shared/user/user";
+import { Component } from "@angular/core";
+
+import { User } from "./shared/user/user";
 
 @Component({
   selector: "my-app",
@@ -293,8 +316,9 @@ For the purposes of this tutorial we prebuilt a handful of backend endpoints usi
 There are several new concepts to introduce with Angular services, so we’re going to start by stubbing out a new `register()` method, and then come back to the implementation later in this section. With that in mind, open `app/shared/user/user.service.ts` and paste in the following code:
 
 ``` TypeScript
-import {Injectable} from "@angular/core";
-import {User} from "./user";
+import { Injectable } from "@angular/core";
+
+import { User } from "./user";
 
 @Injectable()
 export class UserService {
@@ -309,7 +333,7 @@ This creates a basic Angular service with a single method that takes an instance
 Next, add the following line to the top of `app/app.component.ts`, which imports the service you just defined:
 
 ``` TypeScript
-import {UserService} from "./shared/user/user.service";
+import { UserService } from "./shared/user/user.service";
 ```
 
 After that, add a new `providers` property to the existing `@Component` decorator. The full `@Component` declaration should now look like this:
@@ -328,7 +352,7 @@ The `providers` array is a simple list of all the Angular 2 services that you ne
 Next, replace `AppComponent`’s existing `constructor` with the code below:
 
 ``` TypeScript
-constructor(private _userService: UserService) {
+constructor(private userService: UserService) {
   this.user = new User();
 }
 ```
@@ -347,7 +371,7 @@ login() {
   // TODO: Define
 }
 signUp() {
-  this._userService.register(this.user);
+  this.userService.register(this.user);
 }
 ```
 
@@ -361,14 +385,14 @@ Now, in your app, tap the “Sign Up” button, type an email address, and tap t
 How does this code work? Let’s return to this bit of code:
 
 ``` TypeScript
-constructor(private _userService: UserService) {
+constructor(private userService: UserService) {
   this.user = new User();
 }
 ```
 
 This is Angular 2’s dependency injection implementation in action. Because you registered `UserService` as a provider in this component’s `providers` array, when Angular sees this syntax it creates an instance of the `UserService` class, and passes that instance into the component’s constructor.
 
-This begs a bigger question though: why bother with all of this? Why not run `this._userService = new UserService()` in the component’s constructor and forget the complexity of `@Injectable` and `providers`?
+This begs a bigger question though: why bother with all of this? Why not run `this.userService = new UserService()` in the component’s constructor and forget the complexity of `@Injectable` and `providers`?
 
 The short answer is a dependency-injection-based approach to coding keeps your classes less coupled, and therefore more maintainable and testable as your application evolves over time. For a longer answer, head over to the Angular’s docs for a [thorough discussion of the benefits of dependency injection](https://angular.io/docs/ts/latest/guide/dependency-injection.html).
 
@@ -386,23 +410,24 @@ Let’s return to our example and make the registration process actually work.
 Open `app/shared/user/user.service.ts` and paste in the following code, which we’ll discuss in detail in a moment.
 
 ``` TypeScript
-import {Injectable} from "@angular/core";
-import {Http, Headers, Response} from "@angular/http";
-import {User} from "./user";
-import {Config} from "../config";
-import {Observable} from "rxjs/Rx";
+import { Injectable } from "@angular/core";
+import { Http, Headers, Response } from "@angular/http";
+import { Observable } from "rxjs/Rx";
 import "rxjs/add/operator/do";
 import "rxjs/add/operator/map";
 
+import { User } from "./user";
+import { Config } from "../config";
+
 @Injectable()
 export class UserService {
-  constructor(private _http: Http) {}
+  constructor(private http: Http) {}
 
   register(user: User) {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
 
-    return this._http.post(
+    return this.http.post(
       Config.apiUrl + "Users",
       JSON.stringify({
         Username: user.email,
@@ -425,7 +450,7 @@ Next, in `app/app.component.ts`, replace the existing `signUp()` function with t
 
 ``` TypeScript
 signUp() {
-  this._userService.register(this.user)
+  this.userService.register(this.user)
     .subscribe(
       () => {
         alert("Your account was successfully created.");
@@ -441,14 +466,14 @@ signUp() {
 The first thing to note here is the new `constructor` code in `user.service.ts`:
 
 ``` TypeScript
-constructor(private _http: Http) {}
+constructor(private http: Http) {}
 ```
 
 The `UserService` class is using the same dependency injection technique to bring in a service that it needs, in this case the Http class, which is Angular 2’s way of letting you perform HTTP calls. And thanks to NativeScript, those same HTTP APIs work on iOS and Android without any extra work.
 
 > **TIP**: Refer to [Angular 2’s docs on Http](https://angular.io/docs/ts/latest/api/http/index/Http-class.html) for specifics on what HTTP APIs are available.
 
-The other new bit of code is the return value of this new `register()` method. `register()` returns `this._http.post()`, which is an RxJS `Observable`. You can refer to the Angular docs for a [full tutorial on how RxJS observables work](https://angular.io/docs/ts/latest/guide/server-communication.html), but for now just know that the most common thing you’ll need to do with observables is subscribe to them, which is what the new code you added to `app.component.ts` does:
+The other new bit of code is the return value of this new `register()` method. `register()` returns `this.http.post()`, which is an RxJS `Observable`. You can refer to the Angular docs for a [full tutorial on how RxJS observables work](https://angular.io/docs/ts/latest/guide/server-communication.html), but for now just know that the most common thing you’ll need to do with observables is subscribe to them, which is what the new code you added to `app.component.ts` does:
 
 ``` TypeScript
 this._userService.register(this.user)
@@ -469,6 +494,7 @@ The two functions you pass `subscribe()` are success and failure handlers. If th
     <b>Exercise</b>: Create an account
 </h4>
 
+<<<<<<< HEAD
 Because the `UserService` makes use of the `Http` service, your final step is registering the Http provider. To do so, open `app/main.ts` and replace its contents with the following code:
 
 ``` TypeScript
@@ -481,8 +507,33 @@ nativeScriptBootstrap(AppComponent, [NS_HTTP_PROVIDERS]);
 ```
 
 `NS_HTTP_PROVIDERS` is a NativeScript wrapper of Angular’s [`HTTP_PROVIDERS`](https://angular.io/docs/ts/latest/api/http/HTTP_PROVIDERS-let.html), an array that includes all of Angular’s HTTP-based services—including the `Http` service that `UserService` uses. Angular lets you declare common providers globally by passing them to `bootstrap()`, or `nativeScriptBootstrap()`, in this case.
+=======
+Because the `UserService` makes use of the `Http` service, your final step is registering the `Http` provider. Although you could do this in your `app.component.ts` file, this time you’re going to take a slightly different approach. Let’s make the change first and then discuss why. Open `app/app.module.ts` and replace its contents with the following code, which adds a new `NativeScriptHttpModule` to the list of `imports`.
 
-> **NOTE**: Angular supports the concept of [hierarchical dependency injectors](https://angular.io/docs/ts/latest/guide/hierarchical-dependency-injection.html), which is a fancy way of saying that you can declare `providers` in parent components and use them in child components. In this example, this concept means you can declare `HTTP_PROVIDERS` in `main.ts`, even though the `Http` service is used in `UserService`. Generally, it’s only a good idea to declare providers in parent components if most of the component’s children actually use that provider. Although you _could_ declare all your providers in the call to `nativeScriptBootstrap()`, your providers would become unwieldy as your app grows, and difficult to refactor as your app changes.
+``` TypeScript
+import { NgModule } from "@angular/core";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptHttpModule } from "nativescript-angular/http";
+import { NativeScriptModule } from "nativescript-angular/platform";
+
+import { AppComponent } from "./app.component";
+
+@NgModule({
+  imports: [
+    NativeScriptModule,
+    NativeScriptFormsModule,
+    NativeScriptHttpModule
+  ],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
+`NativeScriptHttpModule` is a NativeScript wrapper of Angular’s [`HttpModule`](https://angular.io/docs/ts/latest/api/http/index/HttpModule-class.html), a module that declares all of Angular’s HTTP-based services—including the `Http` service that `UserService` uses.
+>>>>>>> 8d490570bdf98a66342cc47ec7df586fa8ad1f57
+
+Angular supports the concept of [hierarchical dependency injectors](https://angular.io/docs/ts/latest/guide/hierarchical-dependency-injection.html), which is a fancy way of saying that you can import providers in parent modules and use them in child components. In this example, this concept means you can declare `NativeScriptHttpModule` in `main.ts`, even though the `Http` service is used in `UserService`. Generally, it’s only a good idea to declare providers in parent modules if most of the components in your app need access to the provider. Although you _could_ declare all your providers in a single root `NgModule`, your list of imports would become unwieldy as your app grows, and difficult to refactor as your app changes.
 
 At this point you should be ready to create an account to verify this whole setup worked. After the provider changes have livesync’d, perform the following tasks to create an account:
 
@@ -499,7 +550,7 @@ If all went well, you should see a confirmation dialog that looks like this:
 
 > **TIP**:  After creating your account, you may wish to hardcode your credentials in your `AppComponent`’s `constructor()` to make development faster for the rest of this guide.
 > ``` TypeScript
-constructor(private _userService: UserService) {
+constructor(private userService: UserService) {
   this.user = new User();
   this.user.email = "user@nativescript.org";
   this.user.password = "password";
@@ -524,34 +575,33 @@ To this point you’ve been putting your login page code in `app.component.ts`. 
 
 First, open `app/app.component.ts` and copy its contents into `app/pages/login/login.component.ts`.
 
-Next, in `login.component.ts`, change the name of the class from “AppComponent” to “LoginPage”, and update the two paths below accordingly:
+Next, in `login.component.ts`, change the name of the class from “AppComponent” to “LoginComponent”, and update the two paths below accordingly:
 
 ``` TypeScript
-import {User} from "../../shared/user/user";
-import {UserService} from "../../shared/user/user.service";
+import { User } from "../../shared/user/user";
+import { UserService } from "../../shared/user/user.service";
 ```
 
-Now that `app.component.ts` is empty, let’s add in the appropriate Angular 2 routing code. Start by opening up `app/app.routes.ts` up and pasting in the following code:
+Now that `app.component.ts` is empty, let’s add in the appropriate Angular 2 routing code. Start by opening up `app/app.routing.ts` up and pasting in the following code:
 
 ``` TypeScript
-import {RouterConfig} from "@angular/router";
-import {nsProvideRouter} from "nativescript-angular/router"
-import {LoginPage} from "./pages/login/login.component";
+import { LoginComponent } from "./pages/login/login.component";
 
-export const routes: RouterConfig = [
-  { path: "", component: LoginPage }
+export const routes = [
+  { path: "", component: LoginComponent }
 ];
 
-export const APP_ROUTER_PROVIDERS = [
-  nsProvideRouter(routes, {})
+export const navigatableComponents = [
+  LoginComponent
 ];
 ```
 
-The `app.routes.ts` file is where you declare a list of all routes your app has. Right now your `RouterConfig` has a single route for the login page, but you’ll add more momentarily. To get this app running you need to make two more changes.
+The `app.routing.ts` file is where you declare a list of all your app’s routes. Right now your `routes` array has a single route for the login page, but you’ll add more momentarily. To get this app running you need to make two more changes.
 
-First, open `app/main.ts` and replace the file’s contents with the following code, which declares the routes you just added in `app.routes.ts` as a global provider.
+First, open `app/app.module.ts` and replace the file’s contents with the following code, which adds a new `NativeScriptRouterModule` import, as well as imports the routes you just declared in `app.routing.ts`.
 
 ``` TypeScript
+<<<<<<< HEAD
 import "reflect-metadata";
 import {nativeScriptBootstrap} from "nativescript-angular/application";
 import {NS_HTTP_PROVIDERS} from "nativescript-angular/http";
@@ -559,17 +609,43 @@ import {AppComponent} from "./app.component";
 import {APP_ROUTER_PROVIDERS} from "./app.routes";
 
 nativeScriptBootstrap(AppComponent, [NS_HTTP_PROVIDERS, APP_ROUTER_PROVIDERS]);
+=======
+import { NgModule } from "@angular/core";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptHttpModule } from "nativescript-angular/http";
+import { NativeScriptModule } from "nativescript-angular/platform";
+import { NativeScriptRouterModule } from "nativescript-angular/router";
+
+import { AppComponent } from "./app.component";
+import { routes, navigatableComponents } from "./app.routing";
+
+@NgModule({
+  imports: [
+    NativeScriptModule,
+    NativeScriptFormsModule,
+    NativeScriptHttpModule,
+    NativeScriptRouterModule,
+    NativeScriptRouterModule.forRoot(routes)
+  ],
+  declarations: [
+    AppComponent,
+    ...navigatableComponents
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+>>>>>>> 8d490570bdf98a66342cc47ec7df586fa8ad1f57
 ```
+
+> **NOTE**: An `NgModule`’s `declarations` array expects a list of the components that you’ll be using in your app. In this case you’re adding the `navigatableComponents` array you exported in the `app.routing.ts` file to the `AppComponent` declaration you already had. The `...` operator is [ES2015 spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator), and it’s easiest to explain what it does with a quick example. If you declare a variable `x` as `let x = [2, 3]`, then JavaScript will interpret `[1, ...x]` as `[1, 2, 3]`.
 
 And finally, open `app/app.component.ts` back up and paste in the following code. We’ll discuss this file in detail momentarily.
 
 ``` TypeScript
-import {Component} from "@angular/core";
-import {NS_ROUTER_DIRECTIVES} from "nativescript-angular/router";
+import { Component } from "@angular/core";
 
 @Component({
   selector: "main",
-  directives: [NS_ROUTER_DIRECTIVES],
   template: "<page-router-outlet></page-router-outlet>"
 })
 export class AppComponent {}
@@ -577,11 +653,11 @@ export class AppComponent {}
 
 <div class="exercise-end"></div>
 
-If you haven’t played with routing in Angular 2 before, you can refer to [Angular’s tutorial on the topic](https://angular.io/docs/ts/latest/tutorial/toh-pt5.html) for some background, but the basic concept is you need to declare a `RouteConfig` object that include a list of all components the user can navigate to, as well as a path to use to access those components. When you need to add new routes, you import the appropriate component in `app.routes.ts`, and then include that component in the `routes` constant.
+If you haven’t played with routing in Angular 2 before, you can refer to [Angular’s guide on the topic](https://angular.io/docs/ts/latest/guide/router.html) for some background, but the basic concept is you need to declare a `routes` array that includes a list of all components the user can navigate to, as well as a path to use to access those components. When you need to add new routes, you import the appropriate component in `app.routing.ts`, and then include that component in the `routes` array.
 
 The other new concept in this example is the `<page-router-outlet>` tag, which is your app’s first directive. You can again check out Angular’s docs if you want [detailed information on what directives are and do](https://angular.io/docs/ts/latest/api/core/Directive-decorator.html), but the simplest way to think of a directive is as something that can affect the markup you put in your `template`—in this case `<page-router-outlet>`.
 
-And to take a step back, that directive, `<page-router-outlet>` is the only difference in routing between the routing code above and the [same code in the Groceries web implementation](https://github.com/tjvantoll/Groceries/blob/master/app/app.component.ts). Angular 2 provides a `<router-outlet>` directive for web apps, and NativeScript extends that directive with its own `<page-router-outlet>` directive that handles the unique environment of iOS and Android apps. The great thing about NativeScript is those details are transparent to you as a developer.
+And to take a step back, that directive, `<page-router-outlet>` is the only difference in routing between the routing code above and the same code in the Groceries web implementation. Angular 2 provides a `<router-outlet>` directive for web apps, and NativeScript extends that directive with its own `<page-router-outlet>` directive that handles the unique environment of iOS and Android apps. The great thing about NativeScript is those details are transparent to you as a developer.
 
 At this point your router code should work, but the app is no different than it was at the beginning of this section. Let’s add another page to see the routing in action.
 
@@ -592,34 +668,36 @@ At this point your router code should work, but the app is no different than it 
 Open `pages/list/list.component.ts` and paste in the following code, which you’ll use as the start of a simple list page:
 
 ``` TypeScript
-import {Component} from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
   selector: "list",
   templateUrl: "pages/list/list.html",
   styleUrls: ["pages/list/list-common.css", "pages/list/list.css"]
 })
-export class ListPage {}
+export class ListComponent {}
 ```
 
-For now, we’ll keep the list page simple so you can see how the routing works. But so that there’s something to see, open `pages/list/list.html` and paste the following label:
+For now, we’ll keep the list page simple so you can see how the routing works. But so that there’s something to see, open `pages/list/list.html` and paste in the following label:
 
 ``` XML
 <Label text="Hello world"></Label>
 ```
 
-After that, go back to `app/app.routes.ts` and paste the following import in at the top of the file:
+After that, go back to `app/app.routing.ts` and update the file with the following code:
 
 ``` TypeScript
-import {ListPage} from "./pages/list/list.component";
-```
+import { LoginComponent } from "./pages/login/login.component";
+import { ListComponent } from "./pages/list/list.component";
 
-Next, replace the existing `routes` constant declaration with the following code, which includes the new list page:
+export const routes = [
+  { path: "", component: LoginComponent },
+  { path: "list", component: ListComponent }
+];
 
-``` TypeScript
-export const routes: RouterConfig = [
-  { path: "", component: LoginPage },
-  { path: "list", component: ListPage }
+export const navigatableComponents = [
+  LoginComponent,
+  ListComponent
 ];
 ```
 
@@ -632,7 +710,7 @@ login(user: User) {
   let headers = new Headers();
   headers.append("Content-Type", "application/json");
 
-  return this._http.post(
+  return this.http.post(
     Config.apiUrl + "oauth/token",
     JSON.stringify({
       username: user.email,
@@ -654,30 +732,30 @@ This code hits one of our existing backend endpoints, and stores off a authentic
 To use this `login()` function, return to `app/login/login.component.ts`, and add the following import to the top of the file:
 
 ``` TypeScript
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
 ```
 
 Next, replace the current `constructor()` declaration with the code below, which injects Angular 2’s `Router` service:
 
 ``` TypeScript
-constructor(private _router: Router, private _userService: UserService) {
+constructor(private router: Router, private userService: UserService) {
 ```
 
-Finally, replace the `LoginPage`’s existing `login()` function with the code below:
+Finally, replace the `LoginComponent`’s existing `login()` function with the code below:
 
 ``` TypeScript
 login() {
-  this._userService.login(this.user)
+  this.userService.login(this.user)
     .subscribe(
-      () => this._router.navigate(["/list"]),
+      () => this.router.navigate(["/list"]),
       (error) => alert("Unfortunately we could not find your account.")
     );
 }
 ```
 
 > **NOTE**:
-> * You don’t have to add `Router` to your `LoginPage` component’s `providers` array because it’s already included in the `APP_ROUTER_PROVIDERS` you’re passing to `nativeScriptBootstrap()` in `main.ts`.
-> * Refer to Angular’s documentation for a [full list of the API available on the `Router` service](https://angular.io/docs/ts/latest/api/router/Router-class.html).
+> * You don’t have to add `Router` to your `LoginComponent`’s `providers` array because it’s already included in the `NativeScriptRouterModule` you’re including as an `import` in `app.module.ts`.
+> * Refer to the [NativeScript navigation documentation](https://docs.nativescript.org/angular/core-concepts/angular-navigation.html) for more information on what you can do with the router in NativeScript, such as configuring alternate page transitions.
 
 <div class="exercise-end"></div>
 
@@ -686,7 +764,7 @@ After this change you can now navigate between the login and list pages in your 
 ![Navigating on Android](../img/cli-getting-started/angular/chapter3/android/7.gif)
 ![Navigating on iOS](../img/cli-getting-started/angular/chapter3/ios/7.gif)
 
-The power of NativeScript is you have the ability to use the same Angular conventions that you’d use in a web app—`RouteConfig`, `Router`, and so forth—yet get an app that fits right in on iOS and Android. Notice how on Android the hardware back button works as expected, and how your iOS app uses built-in iOS animations and conventions such as the back button.
+The power of NativeScript is you have the ability to use the same Angular conventions that you’d use in a web app—`Router` and so forth—yet get an app that fits right in on iOS and Android. Notice how on Android the hardware back button works as expected, and how your iOS app uses built-in iOS animations and conventions such as the back button.
 
 > **TIP**: There are other ways to share code between native and web apps besides the `shared` folder convention Groceries uses. For an approach that places web and native code in the same codebase, that also provides some additional tooling around testing and internationalization, check out [Nathan Walker’s advanced Angular 2 seed project](https://github.com/NathanWalker/angular2-seed-advanced).
 

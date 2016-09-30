@@ -187,7 +187,11 @@ ActionBar {
 }
 ```
 
+<<<<<<< HEAD
 Finally, now that you’ve installed and imported the plugin, and setup a UI to use it, your last step is implementing the `<ActionItem>`'s `tap` handler. Open `app/pages/list/list.component.ts` again and add the following function to the `ListPage` class:
+=======
+Finally, now that you’ve installed and imported the plugin, and setup a UI to use it, your last step is implementing the `<ActionItem>`'s `tap` handler. Open `app/pages/list/list.component.ts` again and add the following function to the `ListComponent` class:
+>>>>>>> 8d490570bdf98a66342cc47ec7df586fa8ad1f57
 
 
 ``` TypeScript
@@ -205,7 +209,7 @@ share() {
 
 This code takes the grocery data from the grocery list array, converts the data into a comma-separated string, and passes that string to the social share plugin’s `shareText()` method.
 
-> **WARNING**: Because this section had you install a NativeScript plugin, you’ll have to rebuild your app one last time in order to test your changes. If you don’t remember how refer back to [chapter 5](ng-chapter-5) for instructions.
+> **WARNING**: Because this section had you install a NativeScript plugin, you’ll have to rebuild your app one last time in order to test your changes. If you don’t remember how refer back to [the previous section](#51-using-npm-modules) for instructions.
 
 After you run the app, you'll see a new button at the top of the screen. When you tap it, the native iOS or Android sharing widget will show to let you post your groceries to your social networks, or send them via email, message, or any other method you prefer.
 
