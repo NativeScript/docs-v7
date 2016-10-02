@@ -274,7 +274,7 @@ exports.loaded = function(args) {
 
 Here, you're creating a new Observable object called `pageData`, which you set as the page's `bindingContext` in the `load()` function. Inside the Observable, you set a single `"groceryList"` property to be a new instance of the ObservableArray class. Notice how the `"groceryList"` property corresponds to `<ListView items="{% raw %}{{ groceryList }}{% endraw %}">`, and each array entry's `"name"` property corresponds to `<Label text="{% raw %}{{ name }}{% endraw %}">`.
 
-> **NOTE**: Notice how this example uses the observable module’s `fromObject()` method instead of the `Observable` class constructor. Both `observableModule.fromObject()` and `new Observable()` create a new `Obserable` instance, however, the `fromObject()` method performs a bit of additional initialization to handle nested objects. This example uses `fromObject()` because the `pageData` observable object contains a nested `ObservableArray`.
+> **NOTE**: Notice how this example uses the observable module’s `fromObject()` method instead of the `Observable` class constructor. Both `observableModule.fromObject()` and `new Observable()` create a new `Observable` instance, however, the `fromObject()` method performs a bit of additional initialization to handle nested objects. This example uses `fromObject()` because the `pageData` observable object contains a nested `ObservableArray`.
 
 If you run your app you'll see the list screen shows the hardcoded data:
 
