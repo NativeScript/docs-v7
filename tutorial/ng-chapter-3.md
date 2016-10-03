@@ -494,6 +494,20 @@ The two functions you pass `subscribe()` are success and failure handlers. If th
     <b>Exercise</b>: Create an account
 </h4>
 
+<<<<<<< HEAD
+Because the `UserService` makes use of the `Http` service, your final step is registering the Http provider. To do so, open `app/main.ts` and replace its contents with the following code:
+
+``` TypeScript
+import "reflect-metadata";
+import {nativeScriptBootstrap} from "nativescript-angular/application";
+import {NS_HTTP_PROVIDERS} from "nativescript-angular/http";
+import {AppComponent} from "./app.component";
+
+nativeScriptBootstrap(AppComponent, [NS_HTTP_PROVIDERS]);
+```
+
+`NS_HTTP_PROVIDERS` is a NativeScript wrapper of Angular’s [`HTTP_PROVIDERS`](https://angular.io/docs/ts/latest/api/http/HTTP_PROVIDERS-let.html), an array that includes all of Angular’s HTTP-based services—including the `Http` service that `UserService` uses. Angular lets you declare common providers globally by passing them to `bootstrap()`, or `nativeScriptBootstrap()`, in this case.
+=======
 Because the `UserService` makes use of the `Http` service, your final step is registering the `Http` provider. Although you could do this in your `app.component.ts` file, this time you’re going to take a slightly different approach. Let’s make the change first and then discuss why. Open `app/app.module.ts` and replace its contents with the following code, which adds a new `NativeScriptHttpModule` to the list of `imports`.
 
 ``` TypeScript
@@ -517,6 +531,7 @@ export class AppModule {}
 ```
 
 `NativeScriptHttpModule` is a NativeScript wrapper of Angular’s [`HttpModule`](https://angular.io/docs/ts/latest/api/http/index/HttpModule-class.html), a module that declares all of Angular’s HTTP-based services—including the `Http` service that `UserService` uses.
+>>>>>>> 8d490570bdf98a66342cc47ec7df586fa8ad1f57
 
 Angular supports the concept of [hierarchical dependency injectors](https://angular.io/docs/ts/latest/guide/hierarchical-dependency-injection.html), which is a fancy way of saying that you can import providers in parent modules and use them in child components. In this example, this concept means you can declare `NativeScriptHttpModule` in `main.ts`, even though the `Http` service is used in `UserService`. Generally, it’s only a good idea to declare providers in parent modules if most of the components in your app need access to the provider. Although you _could_ declare all your providers in a single root `NgModule`, your list of imports would become unwieldy as your app grows, and difficult to refactor as your app changes.
 
@@ -586,6 +601,15 @@ The `app.routing.ts` file is where you declare a list of all your app’s routes
 First, open `app/app.module.ts` and replace the file’s contents with the following code, which adds a new `NativeScriptRouterModule` import, as well as imports the routes you just declared in `app.routing.ts`.
 
 ``` TypeScript
+<<<<<<< HEAD
+import "reflect-metadata";
+import {nativeScriptBootstrap} from "nativescript-angular/application";
+import {NS_HTTP_PROVIDERS} from "nativescript-angular/http";
+import {AppComponent} from "./app.component";
+import {APP_ROUTER_PROVIDERS} from "./app.routes";
+
+nativeScriptBootstrap(AppComponent, [NS_HTTP_PROVIDERS, APP_ROUTER_PROVIDERS]);
+=======
 import { NgModule } from "@angular/core";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { NativeScriptHttpModule } from "nativescript-angular/http";
@@ -610,6 +634,7 @@ import { routes, navigatableComponents } from "./app.routing";
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+>>>>>>> 8d490570bdf98a66342cc47ec7df586fa8ad1f57
 ```
 
 > **NOTE**: An `NgModule`’s `declarations` array expects a list of the components that you’ll be using in your app. In this case you’re adding the `navigatableComponents` array you exported in the `app.routing.ts` file to the `AppComponent` declaration you already had. The `...` operator is [ES2015 spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator), and it’s easiest to explain what it does with a quick example. If you declare a variable `x` as `let x = [2, 3]`, then JavaScript will interpret `[1, ...x]` as `[1, 2, 3]`.

@@ -9,6 +9,8 @@ previous_url: /Changelogs/CLI
 
 NativeScript CLI Changelog
 ================
+<<<<<<< HEAD
+=======
 
 2.3.0 (2016, September 15)
 ==
@@ -20,6 +22,7 @@ NativeScript CLI Changelog
 * [Fixed #2022](https://github.com/NativeScript/nativescript-cli/issues/2022):Fixed: LiveEdit restarts typescript projects
 * [Fixed #1636](https://github.com/NativeScript/nativescript-cli/issues/1636):Fixed: The test android command fails to run tests
 
+>>>>>>> 8d490570bdf98a66342cc47ec7df586fa8ad1f57
 2.2.1 (2016, August 15)
 ==
 

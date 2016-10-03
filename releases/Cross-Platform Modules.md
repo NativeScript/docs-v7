@@ -10,6 +10,8 @@ previous_url: /Changelogs/Cross-Platform Modules
 Cross Platform Modules Changelog
 ==============================
 
+<<<<<<< HEAD
+=======
 ##2.3.0 (2016, September 16)
 
 ### Fixed
@@ -34,6 +36,7 @@ Cross Platform Modules Changelog
 
 - [(#712)](https://github.com/NativeScript/NativeScript/issues/712) Ability to style EditableTextBase's hint property
 
+>>>>>>> 8d490570bdf98a66342cc47ec7df586fa8ad1f57
 ##2.2.0 (2016, August 10)
 
 ### Fixed

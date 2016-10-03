@@ -564,7 +564,11 @@ Open up `app/pages/list/list.html` and paste the following line immediately befo
 <ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" row="1" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
 ```
 
+<<<<<<< HEAD
+This binds the ActivityIndicator’s `busy` attribute to an `isLoading` property in the `ListPage` component. To define that property, open `app/pages/list/list.component.ts` and add the following line of code immediately under `grocery = ""`:
+=======
 This binds the ActivityIndicator’s `busy` attribute to an `isLoading` property in the `ListComponent` component. To define that property, open `app/pages/list/list.component.ts` and add the following line of code immediately under `grocery = ""`:
+>>>>>>> 8d490570bdf98a66342cc47ec7df586fa8ad1f57
 
 ``` TypeScript
 isLoading = false;

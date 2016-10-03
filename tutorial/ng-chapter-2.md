@@ -109,7 +109,11 @@ import { AppModule } from "./app.module";
 platformNativeScriptDynamic().bootstrapModule(AppModule);
 ```
 
+<<<<<<< HEAD
+Here you’re using the TypeScript `import` command to bring in a function—`nativescriptBootstrap()`—and a [TypeScript class](http://www.typescriptlang.org/Handbook#classes)—`AppComponent`—each of which are defined in separate files. The `nativescriptBootstrap()` function comes from the “nativescript-angular” npm module, which you may recall contains the code needed to integrate NativeScript and Angular 2. Whereas Angular 2’s own `bootstrap()` function starts an Angular 2 browser app, NativeScript’s bootstrap function starts an Angular 2 native app.
+=======
 Here you’re using the TypeScript `import` command to bring in a function—`platformNativeScriptDynamic()`—and a [TypeScript class](http://www.typescriptlang.org/Handbook#classes)—`AppModule`—each of which are defined in separate files. The `platformNativeScriptDynamic()` function comes from the “nativescript-angular” npm module, which you may recall contains the code needed to integrate NativeScript and Angular 2. Whereas Angular 2’s own `platformBrowserDynamic()` function sets up an Angular 2 browser app, NativeScript’s `platformNativeScriptDynamic()` function sets up an Angular 2 native app.
+>>>>>>> 8d490570bdf98a66342cc47ec7df586fa8ad1f57
 
 > **TIP**: If you’re curious about what `platformNativeScriptDynamic()` function actually has to do to startup native iOS and Android apps, remember that all this code is open source for you to explore at any time. The `platformNativeScriptDynamic()` function specifically is defined in an [`platform.ts` file](https://github.com/NativeScript/nativescript-angular/blob/805083e8b6018672b05512b4e5b5f20d26eee27d/nativescript-angular/platform.ts) in the [NativeScript/nativescript-angular repository](https://github.com/NativeScript/nativescript-angular) on GitHub.
 
