@@ -18,7 +18,7 @@ to test mobile applications on various virtual devices. By default, the Android 
 
 2. Make sure that the system images for the AVDs are installed. 
 
-    In the screenshot below are shown installed system images for Android API 24. If additional system images are needed (e.g. for different API level) select them and press **Install Packages** button at the bottom right corner.
+    The screenshow below shows the Android API 24 system images installed on the computer. If additional system images are needed (e.g. for different API level) select them and press **Install Packages** button at the bottom right corner.
 
     ![Installed AVDs for API 24 in Andrid SDK](../img/create-avd/avd-001.png "Installed AVDs for API 24 in Andrid SDK")
 
@@ -26,10 +26,9 @@ to test mobile applications on various virtual devices. By default, the Android 
 
     ![Enabling HAXM](../img/create-avd/avd-002.png "Enabling HAXM")
 
-    Once your HAXM is downloaded by the Android SDK Manager navigate to the source folder (usually in `<sdk_path>\extras\intel\Hardware_Accelerated_Execution_Manager\`) and manually install **Intel HAXM** (intelhaxm-android.exe). For additional information on HAXM follow this [link](https://software.intel.com/en-us/android/articles/speeding-up-the-android-emulator-on-intel-architecture)
+    Once the SDK Manager downloads the HAXM installer, navigate to the source folder (usually in `<sdk_path>\extras\intel\Hardware_Accelerated_Execution_Manager\`) and manually install **Intel HAXM** (intelhaxm-android.exe). For additional information on HAXM follow this [link](https://software.intel.com/en-us/android/articles/speeding-up-the-android-emulator-on-intel-architecture)
 
     > **Note:** To Use HAXM make sure that the system image is of type **Intel x86 Atom** or **Intel x86_x64 Atom** 
-
 
 3. Go to **Tools > Manage AVDs**
 
@@ -104,17 +103,6 @@ To launch a NativeScript application on all connected devices simultaneously, si
 ```
 tns run android
 ```
-
-
-
-
-
-
-
-
-
-
-
 
 
 
