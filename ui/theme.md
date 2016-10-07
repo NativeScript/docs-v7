@@ -392,6 +392,8 @@ The first two sidedrawer class names control the alignment of content within the
 </StackLayout>
 ```
 
+---
+
 ``` XML
 <StackLayout class="sidedrawer-left">
   <!-- Contents of the sidedrawer -->
