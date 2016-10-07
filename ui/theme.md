@@ -15,6 +15,7 @@ The core theme is in beta. If you discover any issues please report them at <htt
 * [Installation](#installation)
 * [Color Schemes](#color-schemes)
 * [Class Names](#class-names)
+* [Uninstalling](#uninstalling)
 * [Contributing](#contributing)
 
 ## Installation
@@ -488,6 +489,31 @@ Finally, the NativeScript core theme includes a class name for styling TabView U
   <!-- The contents of the TabView -->
 </TabView>
 ```
+
+## Uninstalling
+
+There are three steps you need to take to uninstall the NativeScript core theme. First, find and remove the appropriate `@import` from your `app.css` file:
+
+``` CSS
+/* Your app.css should have one of these lines of code */
+/* at the top of the file. Remove the line to uninstall */
+/* the theme */
+@import '~/css/core.light.css';
+@import '~/css/core.dark.css';
+```
+
+Next, remove the core theme as a dependency of your application by running the following command:
+
+```
+npm uninstall nativescript-theme-core --save
+```
+
+Finally, find and delete the following four files from your application:
+
+* `app/css/core.dark.android.css`
+* `app/css/core.dark.ios.css`
+* `app/css/core.light.android.css`
+* `app/css/core.light.ios.css`
 
 ## Contributing
 
