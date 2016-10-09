@@ -444,13 +444,13 @@ The first two sidedrawer class names control the alignment of content within the
 
     <!-- A list item with no icon -->
     <GridLayout class="sidedrawer-list-item" rows="*" columns="*">
-      <Label row="0" col="0" text="A Link"><Label>
+      <Label row="0" col="0" text="A Link"></Label>
     </GridLayout>
 
     <!-- A list item with an icon -->
     <GridLayout class="sidedrawer-list-item" rows="auto" columns="auto, *">
       <Image class="sidedrawer-list-item-icon" row="0" col="0" src="~/path/to/icon.png"></Image>
-      <Label class="sidedrawer-list-item-text" row="0" col="1" text="A Link"><Label>
+      <Label class="sidedrawer-list-item-text" row="0" col="1" text="A Link"></Label>
     </GridLayout>
 
   </StackLayout>
