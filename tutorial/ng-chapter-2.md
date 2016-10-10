@@ -214,7 +214,9 @@ After your app updates with this change, you may expect to see a polished login 
 
 What went wrong? In NativeScript whenever you use more than one UI element, you need to tell NativeScript how to arrange those elements on the screen. Since you’re not doing that currently, NativeScript is incorrectly assuming you want the last element—the `<Button>`—to take up the whole screen. To arrange these elements, let’s move onto the NativeScript feature for aligning elements on the screen: NativeScript layouts.
 
-> ** TIP**: The [code samples](https://docs.nativescript.org/angular/code-samples/overview.html) portion of the NativeScript documentation is a great place to find copy-and-paste friendly examples of the various NativeScript UI components. The [TextField](https://docs.nativescript.org/angular/code-samples/text-field.html) and [Button](https://docs.nativescript.org/angular/code-samples/button.html) code sample pages are great places to get started.
+> **TIP**:
+* The [code samples](https://docs.nativescript.org/angular/code-samples/overview.html) portion of the NativeScript documentation is a great place to find copy-and-paste friendly examples of the various NativeScript UI components. The [TextField](https://docs.nativescript.org/angular/code-samples/text-field.html) and [Button](https://docs.nativescript.org/angular/code-samples/button.html) code sample pages are great places to get started.
+* If you’re coming from a web or hybrid development background, you may find Nic Raboy’s guide for [Upgrading Hybrid Apps to Native with NativeScript](http://www.hybridtonative.com/) helpful, as it compares and contrasts web and native user interface implementations.
 
 ## 2.4: Layouts
 
