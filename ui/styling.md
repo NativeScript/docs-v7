@@ -354,6 +354,7 @@ This list of properties can be set in CSS or through the style property of each 
 | font-size       | fontSize           | Sets the font size of the matched view (only supports device-independent units). |
 | font-style      | fontStyle          | Sets the font style of the matched view. Possible values: "italic", "normal". |
 | font-weight     | fontWeight         | Sets the font weight of the matched view Possible values: "bold", "normal". |
+| placeholder-color | placeholderColor | Sets the placeholder(hint) font color to the matched views. |
 | text-align      | textAlignment      | Sets text alignment in the matched view. Possible values: "left" , "center", "right". |
 | text-decoration | textDecoration     | Sets the text formatting. Possible values: "none", "line-through", "underline". |
 | text-transform  | textTransform      | Sets the text transform. Possible values: "none", "capitalize", "uppercase", "lowercase". |
