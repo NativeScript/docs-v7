@@ -263,52 +263,55 @@ You can also create dialogs with custom content. All the needed types live insid
 
 ### Showing custom dialog
 
-Start by getting a reference to `ModalDialogService` by injecting it in your component:
+Start by injecting `ModalDialogService` into components constructor (this service is exported by the `NativeScriptModule` so there is no need to declare it explicitly). 
+
+We are also injecting the `ViewContainerRef` of this component &mdash; we are going to need it when showing the dialog.
 
 ``` TypeScript
-import {ModalDialogService, ModalDialogOptions, ModalDialogHost} from "nativescript-angular/modal-dialog";
+import { Component, ViewContainerRef } from '@angular/core';
+import { ModalDialogService, ModalDialogOptions } from "nativescript-angular/modal-dialog";
 
 @Component({
-    // ...
-    providers: [ModalDialogService],
+  template: `
+    <StackLayout>
+      <Button text="show" (tap)="show()"></Button>
+      <Label [text]="'RESULT: ' + result"></Label>
+    </StackLayout>`
 })
 export class CustomDialogTest {
-    public result: string;
-    constructor(private modalService: ModalDialogService) { }
+  public result: string;
+  constructor(
+    private modalService: ModalDialogService, 
+    private viewContainerRef: ViewContainerRef) { }
     ...
 }
 ```
-Ignore the `result` field for now&mdash;we will use it later on.
 
-Make sure you have added `modal-dialog-host` somewhere inside the your component template. If you skip it&mdash;you will get an exception when trying to show the dialog.
+Ignore the `result` field for now &mdash; we will use it later on.
 
-``` TypeScript
-@Component({
-    template: `
-    <StackLayout modal-dialog-host>
-        <Button text="show" (tap)="show()"></Button>
-        <Label [text]="'RESULT: ' + result"></Label>
-    </StackLayout>`,
-    // ...
-})
-```
-
-Call the `showModal` method of the dialog service passing the type of the component that should be loaded in the dialog:
+Call the `showModal` method of the dialog service passing the type of the component that should be loaded in the dialog. We are also passing the `viewContainerRef` in the modal dialog options to tell angular where (in the component tree) to load the dialog component.
 
 ``` TypeScript
 public show() {
-    this.modalService.showModal(DialogContent, {});
+  let options: ModalDialogOptions = {
+    viewContainerRef: this.viewContainerRef
+  };
+  
+  this.modalService.showModal(DialogContent, options);
 }
 ```
 
 ### Passing parameters
 
-You can pass parameters to the dialog component when calling the `showModal` method. You can also specify if the dialog should be shown full screen.
+You can pass parameters to the dialog component when calling the `showModal` method. These are specified in the `context` field of the options.
+
+You can also specify if the dialog should be shown `fullscreen`.
 
 ``` TypeScript
-var options: ModalDialogOptions = {
-    context: { promptMsg: "This is the prompt message!" },
-    fullscreen: true
+let options: ModalDialogOptions = {
+  context: { promptMsg: "This is the prompt message!" },
+  fullscreen: true,
+  viewContainerRef: this.viewContainerRef
 };
 
 this.modal.showModal(DialogContent, options)
@@ -316,43 +319,54 @@ this.modal.showModal(DialogContent, options)
 
 > **TIP:** By design on iPhone, a modal page appears only in full screen.
 
-Inside the `DialogContent`, you can get the parameters by injecting a `ModalDialogParams`:
+Inside the `DialogContent` component, you can get the parameters by injecting a `ModalDialogParams`:
 
 ``` Typescript
 import {Component} from '@angular/core';
 import {ModalDialogParams} from "nativescript-angular/modal-dialog";
 
 @Component({
-    selector: 'modal-content',
-    template: `
-    <StackLayout margin="24" horizontalAlignment="center" verticalAlignment="center">
-        <Label [text]="prompt"></Label>
-        <StackLayout orientation="horizontal" marginTop="12">
-            <Button text="ok" (tap)="close('OK')"></Button>
-            <Button text="cancel" (tap)="close('Cancel')"></Button>
-        </StackLayout>
+  selector: 'modal-content',
+  template: `
+  <StackLayout margin="24" horizontalAlignment="center" verticalAlignment="center">
+    <Label [text]="prompt"></Label>
+    <StackLayout orientation="horizontal" marginTop="12">
+      <Button text="ok" (tap)="close('OK')"></Button>
+      <Button text="cancel" (tap)="close('Cancel')"></Button>
     </StackLayout>
-    `
+  </StackLayout>
+  `
 })
 export class DialogContent {
-    public prompt: string;
-    constructor(private params: ModalDialogParams) {
-        this.prompt = params.context.promptMsg;
-    }
+  public prompt: string;
+  constructor(private params: ModalDialogParams) {
+    this.prompt = params.context.promptMsg;
+  }
 
-    public close(res: string) {
-        // ...
-    }
+  public close(res: string) {
+    this.params.closeCallback(result);
+  }
 }
 ```
 
 The `params.context` is the same object as `options.context` passed to the `showModal` method.
 
+> **NOTE:** The component used for the modal content(`DialogContent` from the example) should be added in both the `declarations` and `entryComponents` in your `NgModule` definition:
+> ``` Typescript
+> @NgModule({
+>     declarations: [CustomDialogTest, DialogContent],
+>     entryComponents: [DialogContent],
+>     imports: [NativeScriptModule],
+>     bootstrap: [CustomDialogTest],
+> })
+> class AppComponentModule { }
+> ```
+
 ### Returning a result
 
 To close the dialog, call the `closeCallback` function of the dialog params. 
 
-```
+``` TypeScript
 public close(result: string) {
     this.params.closeCallback(result);
 }
@@ -363,13 +377,14 @@ Let's modify the `show` function in the main component so that it shows the resu
 
 ``` TypeScript
 public show(fullscreen: boolean) {
-    var options: ModalDialogOptions = {
-        context: { promptMsg: "This is the prompt message!" },
-        fullscreen: true
-    };
+  var options: ModalDialogOptions = {
+    context: { promptMsg: "This is the prompt message!" },
+    fullscreen: true,
+    viewContainerRef: this.viewContainerRef
+  };
 
-    this.modal.showModal(DialogContent, options)
-        .then((dialogResult: string) => { this.result = dialogResult; })
+  this.modal.showModal(DialogContent, options)
+    .then((dialogResult: string) => { this.result = dialogResult; })
 }
 ```
 {% endangular %}
