@@ -461,6 +461,26 @@ signUp() {
 }
 ```
 
+Finally, in `app/app.module.ts`, be sure to include the `HttpModule`.  The updated file should look like this:
+```
+import { NgModule } from "@angular/core";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptModule } from "nativescript-angular/platform";
+import { AppComponent } from "./app.component";
+import { HttpModule } from '@angular/http';
+
+@NgModule({
+  imports: [
+    NativeScriptModule,
+    NativeScriptFormsModule,
+    HttpModule
+  ],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
 <div class="exercise-end"></div>
 
 The first thing to note here is the new `constructor` code in `user.service.ts`:
