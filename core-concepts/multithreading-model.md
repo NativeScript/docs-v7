@@ -46,6 +46,8 @@ Workers API in NativeScript is loosely based on the [Dedicated Web Workers API](
 
 ## Sample Usage
 
+![NativeScript Workers API](../img/multithreading/Workers.png)
+
  main-view-model.js
  ```JavaScript
     ...
