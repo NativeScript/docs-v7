@@ -101,7 +101,7 @@ import {SetupItemViewArgs} from "nativescript-angular/directives";
 ...
 
 onSetupItemView(args: SetupItemViewArgs) {
-	args.view.setLocal('third', (args.index % 3 === 0));
+	args.view.context.third = (args.index % 3 === 0);
 }
 ```
 
