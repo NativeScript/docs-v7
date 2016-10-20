@@ -220,7 +220,7 @@ Button {
 
 <div class="exercise-end"></div>
 
-If you've done any web development before, the syntax should feel familiar here. You select four UI components (Page, TextField, Image, and Button) by their tag name, and then apply a handful of CSS rules as name/value pairs. NativeScript does not support all CSS properties because it is not possible to replicate some of them in native apps without causing performance issues. A [full list of the CSS properties that are supported](/styling#supported-properties) are listed in the NativeScript docs.
+If you've done any web development before, the syntax should feel familiar here. You select four UI components (Page, TextField, Image, and Button) by their tag name, and then apply a handful of CSS rules as name/value pairs. NativeScript does not support all CSS properties because it is not possible to replicate some of them in native apps without causing performance issues. A [full list of the CSS properties that are supported](/styling#supported-css-properties) are listed in the NativeScript docs.
 
 Let's make one more change. Although often you want CSS rules to apply equally to your iOS and Android app, occasionally it makes sense to apply a CSS rule to only one platform. For example, iOS text fields frequently have borders around them, but Android text fields do not. Let's look at how to make platform-specific style changes in NativeScript.
 
