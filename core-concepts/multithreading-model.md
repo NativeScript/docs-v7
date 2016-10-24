@@ -23,7 +23,7 @@ Workers API in NativeScript is loosely based on the [Dedicated Web Workers API](
 ### Worker Object prototype
  - `new Worker(path)` - creates an instance of a Worker and spawns a new OS thread, where the script pointed to by the `path` parameter is executed.
  - `postMessage(message)` - sends a JSON-serializable message to the associated script's `onmessage` event handler.
- - `terminate()` - terminates the execution of the worker thread on the next run loop tick
+ - `terminate()` - terminates the execution of the worker thread on the next run loop tick.
 
 **Worker** Object event handlers
  - `onmessage(message)` - handle incoming messages sent from the associated worker thread. The message object has the following properties:
