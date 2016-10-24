@@ -368,7 +368,7 @@ The styling support in the NativeScript modules is built on top of three major l
 
 > The properties, common for each native widget, are handled by the `DefaultStyler`. Other properties are specific on a per widget type. For example, the [TextView](http://developer.android.com/reference/android/widget/TextView.html) widgets&mdash;these are handled by the specific `TextViewStyler`. 
 
-The `DefaultStyler` handles the following [properties](http://uatdocs.nativescript.org/styling#supported-css-properties):
+The `DefaultStyler` handles the following [properties](http://docs.nativescript.org/ui/styling#supported-css-properties):
 
 * background
 * visibility
