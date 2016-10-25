@@ -24,7 +24,7 @@ In this article we will cover how to do navigation in NativeScript application u
 
 ## Router
 
-In an Angular 2 application navigation is done using the **Angular Component Router**. You can check [this detailed guide on how to use the router](https://angular.io/docs/ts/latest/guide/router.html). From here on we are going to assume that you are familiar with the basic concepts and concentrate on the specifics when doing navigation with Angular 2 inside a NativeScript app. 
+In an Angular 2 application navigation is done using the **Angular Component Router**. You can check [this detailed guide on how to use the router](https://angular.io/docs/ts/latest/guide/router.html). From here on we are going to assume that you are familiar with the basic concepts and concentrate on the specifics when doing navigation with Angular 2 inside a NativeScript app.
 
 > Note: This article covers usage of the @angular/router v3. For the `deprecated beta router` please import `nativescript-angular/router-deprecated`.
 
@@ -45,7 +45,7 @@ As usual, pass your module to the `bootstrapModule` function to start your app:
 
 ## Pages
 
-NativeScript apps consist of pages which represent the separate application screens. Pages are instances of the [`Page`](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) class. Page navigation integrates with the native navigation elements on the current platform (ex. the **Back** button in Android or the **NavigationBar** in iOS). 
+NativeScript apps consist of pages which represent the separate application screens. Pages are instances of the [`Page`](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) class. Page navigation integrates with the native navigation elements on the current platform (ex. the **Back** button in Android or the **NavigationBar** in iOS).
 
 > Note: You will rarely need to create Page instances manually. The framework creates pages automatically when bootstrapping or navigating the app. You can get a reference to the current page by injecting it into your component using the DI.
 
@@ -53,7 +53,7 @@ In NativeScript you have a choice between two router outlets:
 * `router-outlet` - replaces the content of the outlet with different component. It is the default outlet that comes from Angular 2.
 * `page-router-outlet` - uses pages to navigate. The new components are shown in a new page.
 
-To show the difference between the to we are going to use the following components in the next examples:
+To show the difference between the two we are going to use the following components in the next examples:
 
 {%snippet router-content-components%}
 
@@ -83,14 +83,14 @@ Here is a similar example using the `page-router-outlet`:
 
 {%snippet page-outlet-example%}
 
-The main difference here is that when navigating - the new component will be loaded as a root view in a **new** `Page`. This means that any content *outside* the `page-router-outlet` will not be included in the new page. This is the reason why the `page-router-outlet` is usually the single root element in the application component. 
+The main difference here is that when navigating - the new component will be loaded as a root view in a **new** `Page`. This means that any content *outside* the `page-router-outlet` will not be included in the new page. This is the reason why the `page-router-outlet` is usually the single root element in the application component.
 
 Here is the result:
 
 ![page-outlet-ios](../img/navigation-angular/page-outlet-ios.gif "PageRouterOutlet IOS")
 ![page-outlet-Android](../img/navigation-angular/page-outlet-android.gif "PageRouterOutlet Android")
 
-Note that we can now use the **Back button** and the **NavigationBar** to navigate. 
+Note that we can now use the **Back button** and the **NavigationBar** to navigate.
 
 It is possible to nest `<router-outlet>` component inside `<page-router-outlet>` or another `<router-outlet>`.
 
@@ -115,7 +115,7 @@ You can also navigate back to the previous page with `backToPreviousPage()`:
 The difference between the two methods is visible when there are nested(child) router-outlet(s) inside the current page:
 
 * `back()` - goes back to the previous router location even if the navigation occurred inside the child router outlet on the current page.
-* `backToPreviousPage()` - goes back to the previous page. The method skips all child router-outlet navigations inside the current page and goes directly to the previous one. 
+* `backToPreviousPage()` - goes back to the previous page. The method skips all child router-outlet navigations inside the current page and goes directly to the previous one.
 
 
 ### Clearing Page Navigation History
@@ -126,7 +126,7 @@ You can specify `clearHistory` as an attribute on your `nsRouterLink` tag in the
 
 {%snippet router-clear-history-link%}
 
-Or you can use `RotuerExtensions` class:
+Or you can use `RouterExtensions` class:
 
 {%snippet router-clear-history-code%}
 
@@ -138,7 +138,7 @@ By default, all navigation will be animated and will use the default transition 
 
 > Note: You can set `pageTransition="none"` to disable the transition.
 
-You can also do this through code using the `RotuerExtensions` class:
+You can also do this through code using the `RouterExtensions` class:
 
 {%snippet router-page-transition-code%}
 
@@ -148,6 +148,6 @@ For other customization options check the [`NavigationTransition`](http://docs.n
 
 ## Route Guards
 
-You can use Angular’s [route guards](https://angular.io/docs/ts/latest/guide/router.html#!#guards) for even more control over the navigation. 
+You can use Angular’s [route guards](https://angular.io/docs/ts/latest/guide/router.html#!#guards) for even more control over the navigation.
 
 > **Note**: Currently, there is no way to prevent user-initiated back navigation - trying to apply guards in such scenario is not supported.
