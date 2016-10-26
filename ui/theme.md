@@ -416,8 +416,8 @@ The first two sidedrawer class names control the alignment of content within the
 ``` XML
 <StackLayout class="sidedrawer-left">
   <StackLayout class="sidedrawer-header">
-    <Image class="sidedrawer-header-image img-circle src="~/my-app-logo.png"></Image>
-    <Label class="sidedrawer-header-brand text="Name of My App"></Label>
+    <Image class="sidedrawer-header-image img-circle" src="~/my-app-logo.png"></Image>
+    <Label class="sidedrawer-header-brand" text="Name of My App"></Label>
   </StackLayout>
 </StackLayout>
 ```
