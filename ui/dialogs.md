@@ -109,7 +109,7 @@ dialogs.confirm({
 });
 ```
 
-> The dialog result argument is boolean. The result is __true__ if the dialog is closed with the OK button. The result is __false__ if closed with the Cancel button. The result is undefined if closed with a neutral button.
+> The dialog result argument is Boolean. The result is __true__ if the dialog is closed with the OK button. The result is __false__ if closed with the Cancel button. The result is undefined if closed with a neutral button.
 
 ## Prompt
 
@@ -263,7 +263,7 @@ You can also create dialogs with custom content. All the needed types live insid
 
 ### Showing custom dialog
 
-Start by injecting `ModalDialogService` into components constructor (this service is exported by the `NativeScriptModule` so there is no need to declare it explicitly). 
+Start by injecting `ModalDialogService` into the components constructor (this service is exported by the `NativeScriptModule` so there is no need to declare it explicitly). 
 
 We are also injecting the `ViewContainerRef` of this component &mdash; we are going to need it when showing the dialog.
 
