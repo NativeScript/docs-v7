@@ -16,7 +16,7 @@ Almost every mobile application needs the option to capture, save and share imag
 
 Navigate to project folder and run NativeScript-CLI command 
 ``` 
-tns plugin add nativescript-camera.
+tns plugin add nativescript-camera
 ``` 
 
 Plugin could be added as a standard npm dependency running command 
