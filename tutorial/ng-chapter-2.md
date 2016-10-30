@@ -461,7 +461,7 @@ Once these files are in place the NativeScript framework knows how to pick the c
 ![login 5](../img/cli-getting-started/angular/chapter2/ios/5.png)
 ![login 5](../img/cli-getting-started/angular/chapter2/android/5.png)
 
-At this point your UI looks better visually, but the app still doesn't actually do anything. Let's look at how you can use JavaScript to add some functionality.
+At this point your UI looks better visually, but the app still doesn't actually do anything. Let's look at how you can use TypeScript to add some functionality.
 
 > **TIP**: The community-written [NativeScript Image Builder](http://nsimage.brosteins.com/) can help you generate images with the appropriate naming conventions and resolutions for iOS and Android.
 
