@@ -26,7 +26,7 @@ npm install nativescript-camera --save
 
 > Note: the `--save` flag will add the plugin as dependency in your package.json file
 
-### Requesting premissions
+### Requesting permissions
 
 Newer API levels of Android and iOS versions are requiring explicit permissions in order the application
 to have access to the camera and to be able to save photos to the device. Once the user has granted permissions the camera module can be used.
