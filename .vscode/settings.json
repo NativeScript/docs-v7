@@ -1,4 +1,5 @@
 {
   "editor.wrappingColumn": 0,
-  "editor.quickSuggestions": false
+  "editor.quickSuggestions": false,
+  "cSpell.enabled": true
 }
