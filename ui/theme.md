@@ -13,6 +13,22 @@ The NativeScript project provides a core theme that you can add to any of your p
 * [Installation](#installation)
 * [Color Schemes](#color-schemes)
 * [Class Names](#class-names)
+    - [Headings](#headings)
+    - [Text](#text)
+    - [Font](#font)
+    - [Padding and Margin](#padding-and-margin)
+    - [Dividers](#dividers)
+    - [Utilities](#utilities)
+    - [Contextual Colors](#contextual-colors)
+    - [Buttons](#buttons)
+    - [Forms](#forms)
+    - [Images](#images)
+    - [ListViews](#listviews)
+    - [Progress and Activity](#progress-and-activity)
+    - [SideDrawers](#sidedrawers)
+    - [Slides](#slides)
+    - [Switches](#switches)
+    - [TabViews](#tabviews)
 * [Uninstalling](#uninstalling)
 * [Contributing](#contributing)
 
@@ -361,7 +377,7 @@ ListViews are a common UI component in mobile apps, and the NativeScript core th
 </ListView>
 ```
 
-### Progress & Activity
+### Progress and Activity
 
 You can use the following class names to apply the NativeScript core theme’s color scheme to your Progress and ActivityIndicator UI components.
 
