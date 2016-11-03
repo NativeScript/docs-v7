@@ -192,7 +192,7 @@ function buttonStartTap() {
 	function(e){
 		console.log("Error: " + e.message);
 	}, 
-	{desiredAccuracy: 3, updateDistance: 10, updateTime: 1000 * 20}); // should update every 20 sec according to google documentation this is not so sure.
+	{desiredAccuracy: 3, updateDistance: 10, minimumUpdateTime : 1000 * 20}); // should update every 20 sec according to google documentation this is not so sure.
 }
 exports.buttonStartTap = buttonStartTap;
 
@@ -223,7 +223,7 @@ exports.buttonStopTap = buttonStopTap;
 	function(e){
 		console.log("Error: " + e.message);
 	}, 
-	{desiredAccuracy: 3, updateDistance: 10, updateTime: 1000 * 20}); // Should update every 20 seconds according to Googe documentation. Not verified.
+	{desiredAccuracy: 3, updateDistance: 10, minimumUpdateTime : 1000 * 20}); // Should update every 20 seconds according to Googe documentation. Not verified.
 }
 
 {% nativescript %}export function {% endnativescript %}public {% angular %}{% endangular %}buttonStopTap() {
