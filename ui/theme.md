@@ -10,8 +10,6 @@ NativeScript’s [styling infrastructure](https://docs.nativescript.org/ui/styli
 
 The NativeScript project provides a core theme that you can add to any of your projects. The theme includes two color schemes, light and dark, as well as a series of convenience class names to help you build elegant user interfaces quickly.
 
-The core theme is in beta. If you discover any issues please report them at <https://github.com/nativescript/theme/issues>.
-
 * [Installation](#installation)
 * [Color Schemes](#color-schemes)
 * [Class Names](#class-names)
@@ -20,7 +18,7 @@ The core theme is in beta. If you discover any issues please report them at <htt
 
 ## Installation
 
-Run the following command to add the NativeScript core theme to your application:
+As of NativeScript version 2.4, the core theme is installed by default when you start an app using `tns create`. However, if you wish to add the theme to a NativeScript app built before 2.4, run the following command:
 
 ```
 npm install nativescript-theme-core --save
@@ -494,28 +492,13 @@ Finally, the NativeScript core theme includes a class name for styling TabView U
 
 ## Uninstalling
 
-There are three steps you need to take to uninstall the NativeScript core theme. First, find and remove the appropriate `@import` from your `app.css` file:
-
-``` CSS
-/* Your app.css should have one of these lines of code */
-/* at the top of the file. Remove the line to uninstall */
-/* the theme */
-@import '~/css/core.light.css';
-@import '~/css/core.dark.css';
-```
-
-Next, remove the core theme as a dependency of your application by running the following command:
+If you wish to remove the NativeScript core theme from your application, you can do so using the following command:
 
 ```
 npm uninstall nativescript-theme-core --save
 ```
 
-Finally, find and delete the following four files from your application:
-
-* `app/css/core.dark.android.css`
-* `app/css/core.dark.ios.css`
-* `app/css/core.light.android.css`
-* `app/css/core.light.ios.css`
+This command removes the core theme as a dependency in your `package.json` file, and also removes the theme’s CSS file from your app’s `app/css` folder.
 
 ## Contributing
 
