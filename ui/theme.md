@@ -285,6 +285,8 @@ You can use the following form-related class names to improve the look of forms 
 </StackLayout>
 ```
 
+> **TIP** The NativeScript core theme handles styling disabled TextField components. To disable a TextField, set its `isEnabled` attribute to `false`. For example, `<TextField class="input" isEnabled="false"></TextField>`.
+
 * `label`: A class name that applies the base styling to Label UI components.
 
 ``` XML
