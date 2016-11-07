@@ -21,6 +21,8 @@ In this article we will cover how to do navigation in NativeScript application u
     * [Clearing Page Navigation History](#clearing-page-navigation-history)
     * [Specifying Page Transitions](#specifying-page-transitions)
 * [Route Guards](#route-guards)
+* [Lifecycle Hooks And Component Caching](#lifecycle-hooks-and-component-caching)
+* [Passing Parameter](#passing-parameter)
 
 ## Router
 
@@ -100,7 +102,7 @@ You can define the trigger in your application declaratively - using the `nsRout
 
 {%snippet router-extensions-import%}
 
-> Note: You can also use the stock Angular `Route` and `Location` classes to handle your navigation—`RouterExtensions` actually invokes those APIs internally. However, `RouterExtenstions` provides access to some NativeScript-specific features like clearing navigation history or defining page transitions.
+> Note: You can also use the stock Angular `Route` and `Location` classes to handle your navigation—`RouterExtensions` actually invokes those APIs internally. However, `RouterExtensions` provides access to some NativeScript-specific features like clearing navigation history or defining page transitions.
 
 ### Navigating Back
 
@@ -151,3 +153,44 @@ For other customization options check the [`NavigationTransition`](http://docs.n
 You can use Angular’s [route guards](https://angular.io/docs/ts/latest/guide/router.html#!#guards) for even more control over the navigation.
 
 > **Note**: Currently, there is no way to prevent user-initiated back navigation - trying to apply guards in such scenario is not supported.
+
+## Lifecycle Hooks And Component Caching
+
+There is a difference in the component lifecycle when using `<page-router-outlet>` and `<router-outlet>`.
+
+With `<router-outlet>` new instance of the component is created with each navigation and is destroyed when you navigate to another component. The component's constructor and its **init** hooks will be called every time you navigate to the component and `ngOnDestroy()` will be called every time you navigate away from it.
+
+With `<page-router-outlet>` when you navigate **forward**, the current page and views are saved in the native navigation stack. The corresponding component is **not** destroyed. It is cached, so that it can be shown when you go back to the same page. It will still be connected to the views that were cached natively.
+
+Let's demonstrate with the following navigation example:
+
+```
+┌───────────────┐  --- 1. Forward ->  ┌─────────────┐  --- 2. Forward ->  ┌───────────────┐
+│ PrevComponent │                     │ MyComponent │                     │ NextComponent │
+└───────────────┘  <--- 4. Back ----  └─────────────┘  <--- 3. Back ----  └───────────────┘
+```
+
+Here is a comparison of what will happen with `MyComponent` using both outlets.
+
+| Action | `<router-outlet>` | `<page-router-outlet>` |
+|--------|-------------------|------------------------|
+| 1. Forward to MyComponent | New `MyComponent` instance is created. `Init` hooks are called.| New `MyComponent` instance is created. `Init` hooks are called. |
+| 2. Forward to NextComponent | `MyComponent` is destroyed. `ngOnDestroy()` is called. | `MyComponent` instance is cached. No hooks are called. |
+| 3. Back to MyComponent |  New `MyComponent` instance is created. `Init` hooks are called. | `MyComponent` is brought back from the cache and is shown. No hooks are called. |
+| 4. Back to PrevComponent |  `MyComponent` is destroyed. `ngOnDestroy()` is called. | `MyComponent` is destroyed. `ngOnDestroy()` is called.  |
+
+You might want to perform some cleanup actions (ex. unsubscribe from a service to stop updates) when you are navigating forward to a next page (step 2). If you are using `<page-router-outlet>` you cannot do that in the `ngOnDestroy()` hook, as this will not be called when you navigate forward. What you can do is inject `Page` inside your component and attach to page navigation events (for example `navigatedFrom`) and do the cleanup there. You can check all the available page events [here](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html#on).
+
+## Passing Parameter
+
+In Angular you can inject `ActivatedRoute` and read route parameters from it. Your component will be reused if you do a subsequent navigations to the same route while only changing the params. That's why `params` and `data` inside `ActivatedRoute` are observables. Using `ActivatedRoute` is covered in [angular route-parameters guide](https://angular.io/docs/ts/latest/guide/router.html#!#route-parameters).
+
+As explained in previous chapter, with `<page-router-outlet>` when navigating **back** to an existing page, your component will **not** be re-created. Angular router will still create an **new instance** `ActivatedRoute` and put all params in it, but you cannot get hold of it through injection, as your component is revived from the cache and not constructed anew.
+
+**The Solution**: In NativeScript you can inject `PageRoute` which has an `activatedRoute: Observable<ActivatedRoute>` field inside it. Each time a new `ActivatedRoute` instance is created for this reused component it will be pushed in this observable, so you can still get you params:
+
+So, instead of:
+{%snippet router-params-activated-route%}
+
+You do:
+{%snippet router-params-page-route%}
