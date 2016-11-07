@@ -48,6 +48,8 @@ Workers API in NativeScript is loosely based on the [Dedicated Web Workers API](
 
 ![NativeScript Workers API](../img/multithreading/Workers.png)
 
+> Note: In order to use `console`'s methods, setTimeout/setInterval, or other functionality coming from the core-modules package, the `globals` module needs to be imported manually to bootstrap the infrastructure on the new worker thread.
+
  main-view-model.js
  ```JavaScript
     ...
@@ -79,6 +81,8 @@ Workers API in NativeScript is loosely based on the [Dedicated Web Workers API](
 
  workers/image-processor.js
  ```JavaScript
+    require('globals'); // necessary to bootstrap tns modules on the new thread
+
     onmessage = function(msg) {
         var request = msg.data;
         var src = request.src;
@@ -93,6 +97,8 @@ Workers API in NativeScript is loosely based on the [Dedicated Web Workers API](
     }
 
     function processImage(src, mode, options) {
+        console.log(options); // will throw an exception if `globals` hasn't been imported before this call
+
         // image processing logic
 
         // save image, retrieve location
@@ -104,6 +110,7 @@ Workers API in NativeScript is loosely based on the [Dedicated Web Workers API](
     // does not handle errors with an `onerror` handler
     // errors will propagate directly to the main thread Worker instance
  ```
+
 
 ## General Guidelines
 
