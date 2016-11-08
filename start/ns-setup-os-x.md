@@ -17,7 +17,7 @@ This page contains a list of all system requirements needed to build and run Nat
 ## System Requirements
 
 * OS X Mavericks or later
-* The latest Node.js 0.10.x, 0.12.x, 4.x, 5.x, or 6.x stable official release
+* The latest Node.js [4.x](https://nodejs.org/dist/latest-v4.x/), [6.x](https://nodejs.org/dist/latest-v6.x/) or [7.x](https://nodejs.org/dist/latest-v7.x/) stable official release
 * (Optional) Homebrew to simplify the installation of dependencies
 * For iOS development
     * Latest Xcode
@@ -46,7 +46,7 @@ Complete the following steps to setup NativeScript on your OS X development mach
     <pre class="add-copy-button"><code class="language-terminal">ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     </code></pre>
 
-1. Install the latest Node.js stable official release. We recommend using Node.js v4.x.
+1. Install the latest Node.js [4.x](https://nodejs.org/dist/latest-v4.x/), [6.x](https://nodejs.org/dist/latest-v6.x/) or [7.x](https://nodejs.org/dist/latest-v7.x/) stable official release. We recommend using Node.js v4.x.
 
     <pre class="add-copy-button"><code class="language-terminal">brew install homebrew/versions/node4-lts
     </code></pre>
@@ -89,9 +89,9 @@ Complete the following steps to setup NativeScript on your OS X development mach
 
             <pre class="add-copy-button"><code class="language-terminal">export ANDROID_HOME=/usr/local/opt/android-sdk
             </code></pre>
-            
+
             <blockquote><b>NOTE</b>: This is the directory that contains the <code>tools</code> and <code>platform-tools</code> directories.</blockquote>
-            
+
         1. Select all packages for the Android 22 SDK, Android SDK Build-tools 23.0.3 or later, Local Maven repository for Support Libraries (under Extras) and any other SDKs that you want to install and click **Install**. You can alternatively use the following command, which will install all required tools:
 
            <pre class="add-copy-button"><code class="language-terminal">android update sdk --filter tools,platform-tools,android-23,build-tools-23.0.3,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
