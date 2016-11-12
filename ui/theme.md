@@ -217,7 +217,7 @@ The NativeScript theme includes a handful of class names to change the look and 
 
 ``` XML
 <Button class="btn btn-rounded-sm" text="Small rounded corners"></Button>
-<Button class="btn btn-rounded-sm" text="Large rounded corners"></Button>
+<Button class="btn btn-rounded-lg" text="Large rounded corners"></Button>
 ```
 
 * `btn-active`: A class name that makes a button appear highlighted when tapped.
