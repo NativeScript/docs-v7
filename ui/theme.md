@@ -11,7 +11,6 @@ NativeScript’s [styling infrastructure](https://docs.nativescript.org/ui/styli
 The NativeScript project provides a core theme that you can add to any of your projects. The theme includes two color schemes, light and dark, as well as a series of convenience class names to help you build elegant user interfaces quickly.
 
 * [Installation](#installation)
-* [Color Schemes](#color-schemes)
 * [Class Names](#class-names)
     - [Headings](#headings)
     - [Text](#text)
@@ -40,23 +39,18 @@ As of NativeScript version 2.4, the core theme is installed by default when you 
 npm install nativescript-theme-core --save
 ```
 
-The install process downloads the necessary files from npm, and then moves the appropriate CSS files from your project’s `node_modules` folder to your project’s `app` folder.
+Then, you should add a single `@import` CSS rule to your `app.css` sheet in order to include the theme in your app.
 
-## Color Schemes
-
-The NativeScript core theme includes two color schemes, light and dark. The theme install process places the following line of code at the top of your app’s `app.css` file, which includes all the necessary CSS rules to make the light color scheme work.
+The NativeScript core theme includes two color schemes, light and dark. To include the light theme, add the following line:
 
 ``` CSS
 @import '~/css/core.light.css';
 ```
 
-To switch to the dark color scheme, change the line of code above to alternatively import `core.dark.css`.
+And in order to include the dark theme:
+
 
 ``` CSS
-/* Remove this line of code */
-@import '~/css/core.light.css';
-
-/* And add this one */
 @import '~/css/core.dark.css';
 ```
 
@@ -516,7 +510,7 @@ If you wish to remove the NativeScript core theme from your application, you can
 npm uninstall nativescript-theme-core --save
 ```
 
-This command removes the core theme as a dependency in your `package.json` file, and also removes the theme’s CSS file from your app’s `app/css` folder.
+This command removes the core theme as a dependency in your `package.json` file.
 
 ## Contributing
 
