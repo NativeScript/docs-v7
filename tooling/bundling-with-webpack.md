@@ -8,18 +8,18 @@ previous_url: /core-concepts/bundling-with-webpack
 
 # Using Webpack to Bundle Your Code
 
-0. [Overview](#overview)
+1. [Overview](#overview)
 1. [Introducing Webpack](#introducing-webpack)
-2. [Installation](#installation)
-3. [How nativescript-dev-webpack works](#how-nativescript-dev-webpack-works)
-    : config, hooks
-4. [Bundling](#bundling)
-5. [Android Native Classes](#android-native-classes)
-6. [Tips and Tricks](#tips-and-tricks)
-    1. [Dynamic Imports](#dynamic-requires)
-    2. [Advanced Configuration](#advanced-configuration)
-    3. [Bundling HTML templates](#bundling-html-templates)
-7. [Webpack resources](#webpack-resources)
+1. [Installation](#installation)
+1. [How nativescript-dev-webpack works](#how-nativescript-dev-webpack-works)
+1. [Bundling](#bundling)
+1. [Dynamic Imports](#dynamic-imports)
+1. [Advanced Usage](#advanced-usage)
+1. [Debugging Bundling Errors](#debugging-bundling-errors)
+1. [Inspecting Bundles](#inspecting-bundles)
+1. [Bundling Extra Assets](#bundling-extra-assets)
+1. [Recommendations for Plugin Authors](#recommendations-for-plugin-authors)
+1. [Webpack resources](#webpack-resources)
 
 ## Overview
 
@@ -29,74 +29,74 @@ Why bundle scripts in a mobile app though? Aren't all files stored on the local 
 
 * Fewer filesystem operations on app startup since all code is loaded from a single bundle file. Mobile file storage is not known for being very performant.
 * Smaller code size. Bundlers traverse the module import graph and do not bundle unused modules. Not using that obscure feature in module X? Don't make your users pay for it then.
+    * Tree-shaking. With the advent of ECMAScript 2015 modules, we have new tools that allow stripping unused parts of big modules and further reduce our application size.
 * Preprocessing and interoperability hooks (not covered in this article). Webpack provides a way to resolve modules and expressions differently according to its configuration. It also contains a lot of plugins and loaders that let you embed different content in your application or use code written in different programming languages.
 
 ## Introducing Webpack
 
-Webpack works by traversing your source tree starting from a number of "entry" modules. This makes it possible to collect just modules that are actually used in your program.
-
-Bundling options are configured in the `webpack.config.js` file, which has the benefit of being a fully-functional JavaScript program that can give you great flexibility. See the [advanced configuration](#advanced-configuration) section below for examples.
+Webpack works by traversing your source tree starting from a number of "entry" modules and navigating through module imports. This makes it possible to collect just modules that are actually used in your program. Webpack is very extensible -- you can customize every step of the bundling process and add support for all sorts of asset generation and manipulation procedures.
 
 Since bundling can be a slow and resource intensive operation, we do not enable it for every build. It is easiest to develop and debug your code without bundling, and use bundled code for QA/release builds.
 
 
-## Installation
+## Installation and Configuration
+
+Since every project is unique and can have quite complex requirements for bundling we tried to make webpack configuration as simple as possible. After installation, the plugin will configure the bundling dependencies, and add a basic configuration that should work for most projects. Developers can (and should) extend that to fit their specific project needs.
 
 The easiest way to enable webpack support for your application is to install the `nativescript-dev-webpack` plugin. To do that, run this in your application folder:
 
 ```
-$ tns install webpack
+$ npm install --save-dev nativescript-dev-webpack
 ```
 
-## How nativescript-dev-webpack works
+## How nativescript-dev-webpack Works
 
-Installing the plugin adds the following files to your project:
+Installing the plugin adds several updates your project:
 
-* `webpack.config.js` -- the main bundling config. Add it to source control.
-* `app/tns-java-classes.js` -- native Java classes entrypoint . See [below](#android-native-classes) for details. Add it to source control too.
-* An "after-prepare" bundling build hook. Add it to source control or gitignore `hooks/after-prepare`, as that directory will be recreated if missing.
+- `devDependencies` settings that will contain the most popular webpack package and several loaders and plugins.
+- `webpack.android.js` and `webpack.ios.js` configuration files for the Android and iOS platforms respectively.
+- `webpack.common.js` -- this is the main configuration file that is shared for both the Android and iOS platform. It contains sensible defaults, but it is designed to be as readable and easy to modify as possible.
+- Application source files configuring bundle chunks:
+    - `app/vendor`. Defines vendor modules which get bundled separately from application code.
+    - `app/vendor-platform.android` and `app/vendor-platform.ios`. Define platform-specific vendor modules.
+- Several helper scripts in your project's `package.json` files that let you build a bundled version: `build-<platform>-bundle` and `start-<platform>-bundle`.
 
-The nativescript-dev-webpack plugin works together with the `tns` CLI tool. Its "after-prepare" build hook invokes the webpack process. Since most transpiler plugins are run as "before-prepare" hooks, this happens after all your code has been verified and transpiled to JavaScript.
-
-### Bundling Transpiled Code
-
-Webpack supports two modes of operation when using code that transpiles to JavaScript e.g. TypeScript, CoffeeScript:
-
-1. Run the transpiler, and then run webpack on the generated file. This is the simplest and hence the recommended approach for NativeScript apps at the moment.
-2. Register a loader for the transpilable language, and run transpilation as a part of the bundling process.
 
 ## Bundling
 
-Bundling is run as a part of the platform "preparation" process and is invoked by the respective `tns prepare <platform>` command, and its relatives like `tns build <platform>` and `tns run <platform>`.
+`nativescript-dev-webpack` changes the usual workflow of working with your project. Instead of using `tns` CLI commands, we will use `npm run` commands to invoke scripts that prepare the release build.
 
-
-Note that the default behavior will **NOT** trigger bundling. You need to explicitly request it with the `--bundle` option:
+Given that you have your project running in its non-bundled state, you can test the bundled version with the following command(s):
 
 ```
-$ tns prepare android --bundle
+$ npm run start-android-bundle
 ```
 
 or
 
 ```
-$ tns run ios --bundle
+$ npm run start-ios-bundle
 ```
 
-and, of course:
+If you want to package your application, you need the `build-...` commands:
 
 ```
-$ tns build ios --for-device --bundle
+$ npm run build-android-bundle
 ```
 
-To reiterate, passing the `--bundle` option will **not** include any JavaScript modules from your `node_modules` folder in your app. The resulting bundle is the only code that will get executed on the emulator/device.
+or
 
-## Android Native Classes
+```
+$ npm run build-ios-bundle
+```
 
-The NativeScript Android runtime allows for certain classes to contain both a Java and a JavaScript implementation. The way this works is by using a Java annotation that points to the JavaScript module which contains the corresponding JavaScript class. Those classes need some special handling by the bundling process since they need to be loaded by Java code (which webpack does not control), and they usually need to be loaded earlier than the rest of the application.
+The former will produce an android `.apk` archive, while the latter will create an `.app` or `.ipa` package.
 
-The way `nativescript-dev-webpack` solves this problem is to add mappings for those classes to a config file called `tns-java-classes.js` and split the bundle in two chunks. This allows us to load the chunk containing the Java-related code first.
+Note that the `build-<platform>-bundle` commands will ultimately call `tns build <platform>` behind the scenes. By default it will not pass any extra parameters to the `tns` tool, so, if you need a release build, signed with a certain key, you would need to provide the parameters prefixed by a `--` marker. For example, here is how you'd create a release build for an iOS device containing bundled scripts:
 
-On installation, you will get a default file that registers built-in classes like `com.tns.NativeScriptApplication` and `com.tns.NativeScriptActivity`. You can modify this file and include other classes that need to be instantiated from Java code.
+```
+$ npm run build-ios-bundle -- --release --for-device
+```
 
 ### Dynamic Imports
 
@@ -122,124 +122,100 @@ var myPlugin = "my-plugin";
 global.loadModule(myPlugin);
 ```
 
-## Tips and Tricks
+### XML Pages and Code-behind Files
 
-Webpack bundling can fail for different reasons, or it can generate code that breaks at runtime (like the dynamic imports scenario outlined above). Debugging problems is easy once you know what code runs on your device.
+XML page definitions load JavaScript modules named with the same name as the XML file that contains the UI markup. To make those work with webpack bundles, you need to register them as dynamic modules:
 
-### Enabling Platform File Extensions
-
-Say you have the following files:
-
-- `permissions.ios.ts`
-- `permissions.android.ts`
-
-[Example of platform specific ng2 injectable services in NativeScript](https://gist.github.com/roblav96/2e32a742ec0b4b7b492d22287c1b4839)
-
-And you import them in your module `import {Permissions} from "./permissions"`. You need to tell webpack to import the platform specific files by adding `"+process.env.NODE_ENV+".js"` to your `resolve.extensions` in your `webpack.config.js`.
-
-Here's an example of a `webpack.config.js`:
-```javascript
-module.exports = bundler.getConfig({
-    resolve: {
-        extensions: ["", ".webpack.js", ".web.js", "."+process.env.NODE_ENV+".js", ".js"]
-    }
-})
+```JavaScript
+global.registerModule("main-page", () => require("./main-page"));
 ```
 
-This prioritizes platform specific files before regular common files. 
 
-Now when you want to bundle your app for a platform, set `ios` or `android` and your `NODE_ENV` like so:
-```shell
-NODE_ENV=ios tns run ios --bundle
-```
+## Advanced Usage
 
-For more information, please refer to the official webpack documentation:
-[webpack resolve-extensions](https://webpack.github.io/docs/configuration.html#resolve-extensions).
-
+Webpack bundling can fail for different reasons. It sometimes fails to resolve certain modules, or it generates code that breaks at runtime (like the dynamic imports scenario outlined above). To debug those problems, you need to turn on detailed error messages and/or inspect the produced bundles.
 
 
 ### Debugging Bundling Errors
 
-Webpack may not show all error details by default, but you can always enable that by passing the `--display-error-details` [configuration option](https://webpack.github.io/docs/cli.html#display-error-details). Since the plugin invokes webpack automatically, the way to pass those options is via the `WEBPACK_OPTS` environment variable. For example, when running in a bash-like command shell you can do:
+Webpack may not show all error details by default, but you can always enable that by passing the `--display-error-details` [configuration option](https://webpack.github.io/docs/cli.html#display-error-details). You can manually invoke the webpack tool, and pass the extra options using the same `--` trick we mentioned above:
 
 ```
-$ WEBPACK_OPTS="--display-error-details" tns prepare android --bundle
+$ npm run webpack-android -- --display-error-details
 ```
+
+Note that the above command will not run a full build. Use it only to run the webpack process manually and troubleshoot failed builds.
 
 Other options that can be useful when diagnosing a problem are: `--display-modules`, `--display-reasons`, `--display-chunks`.
 
 ### Inspecting Bundles
 
-Bundles are generated in the platform output folders. Look for the `bundle.js` and `tns-bundle-js` files in your `platforms/android/...` and `platforms/ios/...` "app" folders.
+Bundles are generated in the platform output folders. Look for the `bundle.js` and `tns-bundle-js` files in your `platforms/android/...` and `platforms/ios/...` "app" folders. You coul change the destination directory by editing your configuration.
 
-### Advanced Configuration
+You could also rely on webpack analysis and visualization plugins that can help you diagnoze bundle problems and reduce bundle size:
 
-The `webpack.config.js` file exports a valid webpack configuration that you can modify in-flight. A typical file looks like:
+- [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer)
+- [webpack-visualizer-plugin](https://www.npmjs.com/package/webpack-visualizer-plugin)
+
+
+### Bundling Extra Assets
+
+The default webpack configuration tries to copy certain files to your app folder:
+
+- HTML/XML markup files.
+- App/theme CSS files.
+- Images: png/jpg/etc.
+
+If you need other files bundled with your app, find the `CopyWebPackPlugin` configuration in `webpack.common.js`, and add a new config:
 
 ```JavaScript
-var bundler = require("nativescript-dev-webpack");
-
-module.exports = bundler.getConfig({
-    // TODO: add project-specific webpack settings here...
-});
-```
-
-You have two customization options:
-
-1. Pass your pre-populated configuration in the object parameter to `bundler.getConfig`. Any top-level webpack properties that you set will be preserved by the plugin.
-2. Modify the `bundler.getConfig` result before reexporting it. This might be more convenient if you need to modify a single suboption of an option that is set by default. For example, here is how you can **only** disable module path information, and preserve the rest of the `output` options:
-
-```JavaScript
-var bundler = require("nativescript-dev-webpack");
-
-var config = bundler.getConfig({});
-config.output.pathinfo = false;
-module.exports = config;
+new CopyWebpackPlugin([
+    ...
+    {from: "**/*.pdf"},
+    ...
+], {ignore: ["App_Resources/**"]}),
 
 ```
 
-### Bundling HTML Templates
+## Recommendations for Plugin Authors
 
-Webpack can bundle not only JavaScript code files -- it can be extended with different "loaders", and web developers typically use it to reduce server round trips while fetching resources.
+Most third party packages are problem free, and get picked up by webpack without any issues. Some libraries though require a bit of tweaking. When you encounter a library that does not get recognized by your webpack configuration, please open up an issue on that library's GitHub repository.
 
-You can use the same trick to reduce file system reads and simplify your application deployment. This is especially useful in Angular applications where you can have components resolve their HTML templates from bundled strings using the [html-loader](https://www.npmjs.com/package/html-loader) loader:
+### Referencing Platform-specific modules from "package.json"
 
-1. Add `html-loader` as a developer dependency in your package.json:
+This is the most common problem with third party plugins. Most plugins provide two platform-specific implementations stored in modules named like `my-plugin.android.js` and `my-plugin.ios.js`. The `package.json` file for the plugin looks like this:
 
-    ```sh
-    $ npm install --save-dev html-loader
-    ```
-2. Register your `node_modules` folder as your loader resolver root (webpack doesn't do it by default), and register a loader for modules whose names end in ".html" in your `webpack.config.js`. Here is a sample configuration:
+```JSON
+{
+    "main": "my-plugin.js"
+}
+```
 
-    ```JavaScript
-    var bundler = require("nativescript-dev-webpack");
-    var path = require("path");
+Webpack will read the `package.json` file and try to find a `my-plugin.js` module and will fail. The correct way to reference a platform-specific module would be to remove the `.js` extension:
 
-    module.exports = bundler.getConfig({
-        resolveLoader: {
-            root: path.join(__dirname, "node_modules")
-        },
-        module: {
-            loaders: [
-                {
-                    test: /\.html$/,
-                    loader: "html"
-                }
-            ]
-        }
-    });
-    ```
+```JSON
+{
+    "main": "my-plugin"
+}
+```
 
-3. Change your Angular component template declarations from using `templateUrl` to template:
+That will allow webpack to correctly reference `my-plugin.android.js` or `myplugin.ios.js`.
 
-    ```TypeScript
-    @Component({
-        selector: "my-app",
-        template: require("./app.component.html"),
-    })
-    export class AppComponent {
-    }
-    ```
+### Emitting Helper Functions in TypeScript Plugins
+
+The TypeScript compiler implements class inheritance, decorators and other features using a set of helper functions that get emitted at compile time. NativeScript ships with its own implementations of those helpers to allow features like extending platform native classes. That is why plugin authors need to configure their compiler **NOT** to emit helpers. The easiest way is to edit the `tsconfig.json` file and set the `noEmitHelpers` option to `true`:
+
+```JSON
+{
+    "compilerOptions": {
+        ...
+        "noEmitHelpers": true,
+        ...
+    },
+    ...
+}
+```
+
 
 ## Webpack Resources
 
