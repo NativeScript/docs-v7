@@ -9,6 +9,14 @@ previous_url: /Changelogs/iOS Runtime
 
 
 
+
+2.4.0
+=====
+
+## What's New
+- Update the JavaScriptCore Engine (100% ES6 support)
+- [Experimental] Multithreading support enabled with Web Workers API - [#620](https://github.com/NativeScript/ios-runtime/issues/620)
+
 2.3.0
 =====
 
