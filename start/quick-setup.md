@@ -35,6 +35,7 @@ Open your terminal or command prompt and execute the following command to instal
 > * You may be asked two questions during the installation—_Do you want to visit the official documentation?_, and _Do you want to run the setup script?_ Go ahead and answer “No” to both questions for now as we’ll cover the documentation and scripts momentarily.
 > * If you’re on OS X and receive an EACCES error, you either need to rerun the previous command with `sudo`—that is, `sudo npm install -g nativescript`—or take a moment to [fix your npm permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions) so that you don’t need admin rights to globally install npm packages.
 > * nativescript CLI will try detecting your mobile platform SDKs and configure itself against these. If you're seetting up brand new system, consider installing all mobile SDKs prior NativeScript installation.
+> * If you're on Windows and receive an admin privileges error, please visit this page on launching the command prompt as an admin: https://technet.microsoft.com/en-us/library/cc947813(v=ws.10).aspx
 
 After completing the setup you should have two commands available from your terminal or command prompt: `tns`—which is short for <b>T</b>elerik <b>N</b>ative<b>S</b>cript—and `nativescript`. The two commands are equivalent, so we'll stick with the shorter `tns`.
 
