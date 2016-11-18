@@ -25,6 +25,8 @@ You can type `tns --version` to verify that the new version is installed.
 
 You should execute the **update** command in the root folder of your project to upgrade it with the latest versions of iOS/Android runtimes and cross-platform modules.
 
+>The **update** command is introduced in version 2.4 of NativeScript CLI. You should update NativeScript CLI before using this command.
+
 ```
 tns update
 ```
