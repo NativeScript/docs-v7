@@ -44,14 +44,14 @@ After you install the theme, you need to add a single `@import` CSS rule to your
 The NativeScript core theme includes two color schemes, light and dark. To include the light theme, add the following line:
 
 ``` CSS
-@import url('nativescript-core-theme/core.light.css');
+@import 'nativescript-theme-core/css/core.light.css';
 ```
 
 And in order to include the dark theme, add this line of code instead:
 
 
 ``` CSS
-@import url('nativescript-core-theme/core.dark.css');
+@import 'nativescript-theme-core/css/core.dark.css';
 ```
 
 ## Class Names
