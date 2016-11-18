@@ -36,7 +36,7 @@ You must also have the following two environment variables setup for Android dev
 
 Complete the following steps to set up NativeScript on your Linux development machine:
 
-1. Install the latest Node.js [4.x](https://nodejs.org/dist/latest-v4.x/), [6.x](https://nodejs.org/dist/latest-v6.x/) or [7.x](https://nodejs.org/dist/latest-v7.x/) stable official release. We recommend using Node.js v4.x.
+1. Install the latest Node.js [4.x](https://nodejs.org/dist/latest-v4.x/), [6.x](https://nodejs.org/dist/latest-v6.x/) or [7.x](https://nodejs.org/dist/latest-v7.x/) stable official release. We recommend using Node.js v6.x.
 
 1. If you are running on a 64-bit system, install the runtime libraries for the ia32/i386 architecture.
 
