@@ -231,7 +231,7 @@ Let's make one more change. Although often you want CSS rules to apply equally t
 Add the following as the first line of your app's `app.css` file:
 
 ``` CSS
-@import { url('~/platform.css') };
+@import url('~/platform.css');
 ```
 > **IMPORTANT**: NativeScript is consistent with browser implementations, in that `@import` statements must precede all other CSS rules in a file.
 

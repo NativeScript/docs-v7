@@ -19,7 +19,7 @@ This page contains a list of all system requirements needed to build and run Nat
 ## System Requirements
 
 * Windows 7 Service Pack 1 or later
-* The latest Node.js 0.10.x, 0.12.x, 4.x, 5.x, or 6.x stable official release
+* The latest Node.js [4.x](https://nodejs.org/dist/latest-v4.x/), [6.x](https://nodejs.org/dist/latest-v6.x/) or [7.x](https://nodejs.org/dist/latest-v7.x/) stable official release
 * (Optional) Chocolatey to simplify the installation of dependencies
 * JDK 8 or a later stable official release
 * Android SDK 22 or a later stable official release
@@ -44,7 +44,7 @@ Complete the following steps to set up NativeScript on your Windows development 
         </code></pre>
     1. Restart the command prompt.
 
-1. Install the [Node.js LTS (Long Term Support) Version](https://nodejs.org/). Currently the LTS version is Node.js v4.x.
+1. Install the latest Node.js [4.x](https://nodejs.org/dist/latest-v4.x/), [6.x](https://nodejs.org/dist/latest-v6.x/) or [7.x](https://nodejs.org/dist/latest-v7.x/) stable official release. We recommend using Node.js v4.x.
 
     1. In the command prompt, run the following command.
 

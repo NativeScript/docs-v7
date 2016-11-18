@@ -159,9 +159,9 @@ To access variables or functions from the user interface, you need to declare th
 
 NativeScript sets each attribute value in the XML declaration to a respective property or an event of the component. If a respective property does not exist, NativeScript sets the attribute value as an expando object.
 
-Starting with NativeScript 1.3 you can specify code and CSS files for your Page XML using `codeFile` and `cssFile` attributes:
+You can specify code and CSS files for your Page XML using `import` and `cssFile` attributes:
 ```XML
-<Page codeFile="~/your-code-file" cssFile="~/your-styles.css">
+<Page import="~/your-code-file" cssFile="~/your-styles.css">
     <StackLayout>
      ...
     </StackLayout>
