@@ -48,7 +48,7 @@ Complete the following steps to set up NativeScript on your Windows development 
 
     1. In the command prompt, run the following command.
 
-        <pre class="add-copy-button"><code class="language-terminal">choco install nodejs -y -version 4.6.0
+        <pre class="add-copy-button"><code class="language-terminal">choco install nodejs -y -version 6.9.1
         </code></pre>
 
 1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
