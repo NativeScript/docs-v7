@@ -10,11 +10,23 @@ previous_url: /Changelogs/CLI
 NativeScript CLI Changelog
 ================
 
+2.4.0 (2016, October 16)
+==
+### New
+* [Implemented #2112](https://github.com/NativeScript/nativescript-cli/issues/2112): Update webpack plugin to run as a npm script
+* [Implemented #1845](https://github.com/NativeScript/nativescript-cli/issues/1845): Remove NPM as a dependency, use the NPM installed on users' machine
+
+### Fixed
+* [Fixed #2195](https://github.com/NativeScript/nativescript-cli/issues/2195):Fixed: Remove use of lib/iOS folder for native plugins
+* [Fixed #2228](https://github.com/NativeScript/nativescript-cli/issues/2228):Fixed: [Setup Script on OS X] Homebrew as root is no longer supported
+* [Fixed #2232](https://github.com/NativeScript/nativescript-cli/issues/2232):Fixed: Updating macOS setup script with latest macOS/package requirements
+* [Fixed #2221](https://github.com/NativeScript/nativescript-cli/issues/2221):Fixed: Provision to watch files in symlinked directories for livesync command
+
 2.3.0 (2016, September 15)
 ==
 
 ### Fixed
-* [Fixed #2034](https://github.com/NativeScript/nativescript-cli/issues/2034): Fixed: Cannot read property "targetNum" of undefined
+* [Fixed #2034](https://github.com/NativeScript/nativescript-cli/issues/2034):Fixed: Cannot read property "targetNum" of undefined
 * [Fixed #2028](https://github.com/NativeScript/nativescript-cli/issues/2028):Fixed: Android Custom Activities and TNS incompatibility
 * [Fixed #2025](https://github.com/NativeScript/nativescript-cli/issues/2025):Fixed: Add support for Node.js 6.5
 * [Fixed #2022](https://github.com/NativeScript/nativescript-cli/issues/2022):Fixed: LiveEdit restarts typescript projects
