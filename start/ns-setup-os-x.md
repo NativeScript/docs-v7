@@ -48,7 +48,7 @@ Complete the following steps to setup NativeScript on your OS X development mach
 
 1. Install the latest Node.js [4.x](https://nodejs.org/dist/latest-v4.x/), [6.x](https://nodejs.org/dist/latest-v6.x/) or [7.x](https://nodejs.org/dist/latest-v7.x/) stable official release. We recommend using Node.js v6.x.
 
-    <pre class="add-copy-button"><code class="language-terminal">brew install node6-lts
+    <pre class="add-copy-button"><code class="language-terminal">brew install homebrew/versions/node6-lts
     </code></pre>
 
 1. Install the dependencies for iOS development.
