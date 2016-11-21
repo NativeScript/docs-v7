@@ -43,13 +43,13 @@ After you install the theme, you need to add a single `@import` CSS rule to your
 
 ## Color Schemes
 
-The NativeScript core theme includes two standard color schemes, light and dark. To include the light theme, add the following line of code to the top of your `app.css` file:
+The NativeScript core theme includes two standard color schemes, light and dark. To use the light color scheme, add the following line of code to the top of your `app.css` file:
 
 ``` CSS
 @import 'nativescript-theme-core/css/core.light.css';
 ```
 
-And in order to include the dark theme, add this line of code to your `app.css` instead:
+And in order to use the dark scheme, add this line of code to your `app.css` instead:
 
 
 ``` CSS
