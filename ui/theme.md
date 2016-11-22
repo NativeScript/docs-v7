@@ -32,6 +32,7 @@ The NativeScript project provides a core theme that you can add to any of your p
     - [Slides](#slides)
     - [Switches](#switches)
     - [TabViews](#tabviews)
+* [Status Bar Considerations](#status-bar-considerations)
 * [Uninstalling](#uninstalling)
 * [Contributing](#contributing)
 
@@ -64,7 +65,7 @@ And in order to use the dark scheme, add this line of code to your `app.css` ins
 @import 'nativescript-theme-core/css/core.dark.css';
 ```
 
-> **TIP**: When using the dark color scheme, you need to apply the [`page` class name](#page) for your app’s text to display appropriately.
+> **TIP**: When using the dark color scheme, make sure that you 1) apply the [`page` class name](#page) to ensure your app’s text displays appropriately, and 2) [alter your app’s status bar colors](#status-bar-considerations).
 
 You may want to alternatively use one of the 11 other color schemes included in the NativeScript core theme. To do so, switch your `app.css` file to use one of the following imports.
 
@@ -684,6 +685,34 @@ Finally, the NativeScript core theme includes a class name for styling TabView U
   <!-- The contents of the TabView -->
 </TabView>
 ```
+
+## Status Bar Considerations
+
+When using the NativeScript core theme, you may wish to alter the colors you use in the status bar to match the rest of your application.
+
+### iOS
+
+On iOS you can set the status bar colors to one of two values: `UIBarStyleDefault`, the default which uses black text, or `UIBarStyleBlack`, an alternative option that uses white text. For the purposes of the NativeScript core theme, **you only need to change your status bar colors on iOS if you’re using the dark color scheme**. If you are, [refer to our docs](/ui/change-status-bar-style-ios) on how to change your status bar colors to `UIBarStyleBlack`.
+
+### Android
+
+Android API levels 21+ (Lollipop and above) let you set the status bar to use any color that you’d like. To do so in NativeScript, find your `app/App_Resources/values/colors.xml` file, and update its `ns_primaryDark` color to use the appropriate color based on your color scheme of choice.
+
+| Color Scheme | ns_primaryDark value |
+| ------------ | -------------------- |
+| Light        | #6A6A6A              |
+| Dark         | #6A6A6A              |
+| Aqua         | #00caab              |
+| Blue         | #3d5afe              |
+| Brown        | #795548              |
+| Forest       | #006968              |
+| Grey Dark    | #5c687c              |
+| Purple       | #8130ff              |
+| Lemon        | #ffea00              |
+| Lime         | #aee406              |
+| Orange       | #f57c00              |
+| Ruby         | #ff1744              |
+| Sky          | #30bcff              |
 
 ## Uninstalling
 
