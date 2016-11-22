@@ -293,15 +293,20 @@ The NativeScript core theme includes a few class names to apply to ActionBar UI 
 ```
 {% endangular %}
 
-* `action-item`: A class name that applies the theme’s color scheme to ActionItem UI components.
+* `action-item`: A class name that applies the theme’s color scheme to custom ActionItem UI components.
 
 {% nativescript %}
 ``` XML
 <Page class="page">
   <Page.actionBar>
     <ActionBar class="action-bar" title="My App">
-      <ActionItem class="action-item" text="Action">
-      </ActionItem>
+      <ActionBar.actionItems>
+        <ActionItem>
+          <ActionItem.actionView>
+            <Button text="Action" class="action-item"></Button>
+          </ActionItem.actionView>
+        </ActionItem>
+      </ActionBar.actionItems>
     </ActionBar>
   </Page.actionBar>
 </Page>
@@ -310,7 +315,8 @@ The NativeScript core theme includes a few class names to apply to ActionBar UI 
 {% angular %}
 ``` XML
 <ActionBar class="action-bar" title="My App">
-  <ActionItem class="action-item" text="Action">
+  <ActionItem>
+    <Button text="Action" class="action-item"></Button>
   </ActionItem>
 </ActionBar>
 ```
