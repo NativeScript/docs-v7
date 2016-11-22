@@ -19,6 +19,7 @@ The NativeScript project provides a core theme that you can add to any of your p
     - [Dividers](#dividers)
     - [Utilities](#utilities)
     - [Contextual Colors](#contextual-colors)
+    - [Page](#page)
     - [Buttons](#buttons)
     - [Forms](#forms)
     - [Images](#images)
@@ -59,6 +60,8 @@ And in order to use the dark scheme, add this line of code to your `app.css` ins
 ``` CSS
 @import 'nativescript-theme-core/css/core.dark.css';
 ```
+
+> **TIP**: When using the dark color scheme, you need to apply the [`page` class name](#page) for your app’s text to display appropriately.
 
 You may want to alternatively use one of the 11 other color schemes included in the NativeScript core theme. To do so, switch your `app.css` file to use one of the following imports.
 
@@ -226,6 +229,20 @@ You can convey meaning through color with a handful of utility classes that are 
   <Label text="A critical error has occurred!"></Label>
 </StackLayout>
 ```
+
+### Page
+
+The NativeScript core theme includes a single class name to apply to Page UI components.
+
+* `page`: A class name that alters text colors when using the dark color scheme.
+
+``` XML
+<Page class="page">
+  <Label class="body" text="I will show up in the dark color scheme."></Label>
+</Page>
+```
+
+* **NOTE**: You can also apply the `page` class name to a page’s top-level layout container, for instance `<GridLayout class="page">...</GridLayout>`. This is useful in Angular apps, where the `<Page>` component is not included in your component markup.
 
 ### Buttons
 
