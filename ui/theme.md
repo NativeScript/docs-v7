@@ -700,8 +700,8 @@ Android API levels 21+ (Lollipop and above) let you set the status bar to use an
 
 | Color Scheme | ns_primaryDark value |
 | ------------ | -------------------- |
-| Light        | #6A6A6A              |
-| Dark         | #6A6A6A              |
+| Light        | #F8F8F8              |
+| Dark         | #303030              |
 | Aqua         | #00caab              |
 | Blue         | #3d5afe              |
 | Brown        | #795548              |
@@ -713,6 +713,38 @@ Android API levels 21+ (Lollipop and above) let you set the status bar to use an
 | Orange       | #f57c00              |
 | Ruby         | #ff1744              |
 | Sky          | #30bcff              |
+
+Additionally, when using the light color scheme, include the following code in your `app.js` file. The code sets Android’s `SYSTEM_UI_FLAG_LIGHT_STATUS_BAR` flag, which makes all icons in the status bar use a color that’s visible on the light background.
+
+``` JavaScript
+var application = require("application");
+var platform = require("platform");
+
+if (platform.isAndroid && platform.device.sdkVersion >= "21") {
+  application.android.onActivityStarted = function() {
+    var window = application.android.startActivity.getWindow();
+    var decorView = window.getDecorView();
+    decorView.setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+  }
+}
+
+// Your application.start() call goes here.
+```
+``` TypeScript
+import * as application from "application";
+import * as platform from "platform";
+declare var android: any;
+
+if (platform.isAndroid && platform.device.sdkVersion >= "21") {
+  application.android.onActivityStarted = function() {
+    let window = application.android.startActivity.getWindow();
+    let decorView = window.getDecorView();
+    decorView.setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+  }
+}
+
+// Your application.start() call goes here.
+```
 
 ## Uninstalling
 
