@@ -11,6 +11,8 @@ NativeScript’s [styling infrastructure](https://docs.nativescript.org/ui/styli
 The NativeScript project provides a core theme that you can add to any of your projects. The theme includes two color schemes, light and dark, as well as a series of convenience class names to help you build elegant user interfaces quickly.
 
 * [Installation](#installation)
+* [Color Schemes](#color-schemes)
+* [SASS Usage](#sass-usage)
 * [Class Names](#class-names)
     - [Headings](#headings)
     - [Text](#text)
@@ -81,6 +83,62 @@ You may want to alternatively use one of the 11 other color schemes included in 
 ```
 
 > **TIP**: [This image](/img/theme/color-schemes-light-and-dark.png) shows all 13 color schemes on iOS and Android, and can help you decide which color scheme is a good fit for your app.
+
+## SASS Usage
+
+The NativeScript core theme is written in SASS, and you can use the theme’s `.scss` files directly. Using SASS is a great way to customize the theme in a way that’s not possible in CSS, such as using the theme’s SASS variables to change your app’s appearance.
+
+To get started, first verify that your app has the [NativeScript SASS plugin](https://github.com/toddanglin/nativescript-dev-sass) installed by running the following command:
+
+```
+tns install sass
+```
+
+With SASS set up and ready to use, next you’ll need to import the theme’s `.scss` files into your own. Start by creating the following files in your app:
+
+```
+.
+├── _app-common.scss
+├── app.android.scss
+└── app.ios.scss
+```
+
+After that, paste the following code into your `app.android.scss` file.
+
+``` CSS
+@import 'app-common';
+@import 'nativescript-theme-core/scss/platforms/index.android';
+
+// Place any CSS rules you want to apply only on Android here
+```
+
+And the following code into your `app.ios.scss` file.
+
+``` CSS
+@import 'app-common';
+@import 'nativescript-theme-core/scss/platforms/index.ios';
+
+// Place any CSS rules you want to apply only on iOS here
+```
+
+Finally, paste the following code into your `_app-common.scss` file.
+
+``` CSS
+// Import the theme’s variables. If you’re using a color scheme
+// other than “light”, switch the path to the alternative scheme,
+// for example 'nativescript-theme-core/scss/dark'.
+@import 'nativescript-theme-core/scss/light';
+
+// Customize any of the theme’s variables here, for instance $btn-color: red;
+
+// Import the theme’s main ruleset.
+@import 'nativescript-theme-core/scss/index';
+
+// Place any CSS rules you want to apply on both iOS and Android here.
+// This is where the vast majority of your CSS code goes.
+```
+
+The power of this approach is you have the ability to customize the [theme’s SASS variables](https://github.com/NativeScript/theme/blob/master/app/scss/_variables.scss) directly. You also have separate files set up for iOS- and Android-specific code, should you need to style your app differently on each platform.
 
 ## Class Names
 
@@ -322,7 +380,7 @@ The NativeScript core theme includes a few class names to apply to ActionBar UI 
 ```
 {% endangular %}
 
-> **TIP**: You can use the various ActionBar class names to create an ActionBar-like look without actually using the ActionBar UI components. You may find this approach useful for using in [modal pages](/core-concepts/navigation#modal-pages), for instance.
+> **TIP**: You can use the various ActionBar class names to create an ActionBar-like look without actually using the ActionBar UI components. You may find this approach useful for use in [modal pages](/core-concepts/navigation#modal-pages), for example.
 > <GridLayout rows="auto" columns="75,*,75" class="action-bar p-10">
 >  <Button text="Close" class="text-left action-item" row="0" col="0"></Button> 
 >  <Label text="My Modal" class="text-center action-bar-title" row="0" col="1"></Label>
