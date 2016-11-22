@@ -20,6 +20,7 @@ The NativeScript project provides a core theme that you can add to any of your p
     - [Utilities](#utilities)
     - [Contextual Colors](#contextual-colors)
     - [Page](#page)
+    - [ActionBar](#actionbar)
     - [Buttons](#buttons)
     - [Forms](#forms)
     - [Images](#images)
@@ -243,6 +244,77 @@ The NativeScript core theme includes a single class name to apply to Page UI com
 ```
 
 * **NOTE**: You can also apply the `page` class name to a page’s top-level layout container, for instance `<GridLayout class="page">...</GridLayout>`. This is useful in Angular apps, where the `<Page>` component is not included in your component markup.
+
+### ActionBar
+
+The NativeScript core theme includes a few class names to apply to ActionBar UI components.
+
+* `action-bar`: A class name that applies the theme’s color scheme to ActionBar components.
+
+{% nativescript %}
+``` XML
+<Page class="page">
+  <Page.actionBar>
+    <ActionBar class="action-bar" title="My App">
+    </ActionBar>
+  </Page.actionBar>
+</Page>
+```
+{% endnativescript %}
+{% angular %}
+``` XML
+<ActionBar class="action-bar" title="My App">
+</ActionBar>
+```
+{% endangular %}
+
+* `action-title`: A class name that applies the theme’s color scheme when using a [custom title view](/ui/action-bar#using-a-custom-title-view).
+
+{% nativescript %}
+``` XML
+<Page class="page">
+  <Page.actionBar>
+    <ActionBar class="action-bar">
+      <StackLayout class="action-title">
+        <Label text="Your App"></Label>
+      </StackLayout>
+    </ActionBar>
+  </Page.actionBar>
+</Page>
+```
+{% endnativescript %}
+{% angular %}
+``` XML
+<ActionBar class="action-bar">
+  <StackLayout class="action-title">
+    <Label text="Your App"></Label>
+  </StackLayout>
+</ActionBar>
+```
+{% endangular %}
+
+* `action-item`: A class name that applies the theme’s color scheme to ActionItem UI components.
+
+{% nativescript %}
+``` XML
+<Page class="page">
+  <Page.actionBar>
+    <ActionBar class="action-bar" title="My App">
+      <ActionItem class="action-item" text="Action">
+      </ActionItem>
+    </ActionBar>
+  </Page.actionBar>
+</Page>
+```
+{% endnativescript %}
+{% angular %}
+``` XML
+<ActionBar class="action-bar" title="My App">
+  <ActionItem class="action-item" text="Action">
+  </ActionItem>
+</ActionBar>
+```
+{% endangular %}
 
 ### Buttons
 
