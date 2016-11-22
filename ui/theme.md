@@ -268,14 +268,14 @@ The NativeScript core theme includes a few class names to apply to ActionBar UI 
 ```
 {% endangular %}
 
-* `action-title`: A class name that applies the theme’s color scheme when using a [custom title view](/ui/action-bar#using-a-custom-title-view).
+* `action-bar-title`: A class name that applies the theme’s color scheme when using a [custom title view](/ui/action-bar#using-a-custom-title-view).
 
 {% nativescript %}
 ``` XML
 <Page class="page">
   <Page.actionBar>
     <ActionBar class="action-bar">
-      <StackLayout class="action-title">
+      <StackLayout class="action-bar-title">
         <Label text="Your App"></Label>
       </StackLayout>
     </ActionBar>
@@ -286,7 +286,7 @@ The NativeScript core theme includes a few class names to apply to ActionBar UI 
 {% angular %}
 ``` XML
 <ActionBar class="action-bar">
-  <StackLayout class="action-title">
+  <StackLayout class="action-bar-title">
     <Label text="Your App"></Label>
   </StackLayout>
 </ActionBar>
@@ -321,6 +321,12 @@ The NativeScript core theme includes a few class names to apply to ActionBar UI 
 </ActionBar>
 ```
 {% endangular %}
+
+> **TIP**: You can use the various ActionBar class names to create an ActionBar-like look without actually using the ActionBar UI components. You may find this approach useful for using in [modal pages](/core-concepts/navigation#modal-pages), for instance.
+> <GridLayout rows="auto" columns="75,*,75" class="action-bar p-10">
+>  <Button text="Close" class="text-left action-item" row="0" col="0"></Button> 
+>  <Label text="My Modal" class="text-center action-bar-title" row="0" col="1"></Label>
+> </GridLayout>
 
 ### Buttons
 
