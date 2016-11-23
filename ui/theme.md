@@ -83,7 +83,7 @@ You may want to alternatively use one of the 11 other color schemes included in 
 @import 'nativescript-theme-core/css/sky.css';
 ```
 
-> **TIP**: [This image](/img/theme/color-schemes-light-and-dark.png) shows all 13 color schemes on iOS and Android, and can help you decide which color scheme is a good fit for your app.
+> **TIP**: [This image](/img/theme/color-schemes-all.png) shows all 13 color schemes on iOS and Android, and can help you decide which color scheme is a good fit for your app.
 
 ## SASS Usage
 
