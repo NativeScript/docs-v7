@@ -11,6 +11,8 @@ NativeScript’s [styling infrastructure](https://docs.nativescript.org/ui/styli
 The NativeScript project provides a core theme that you can add to any of your projects. The theme includes two color schemes, light and dark, as well as a series of convenience class names to help you build elegant user interfaces quickly.
 
 * [Installation](#installation)
+* [Color Schemes](#color-schemes)
+* [SASS Usage](#sass-usage)
 * [Class Names](#class-names)
     - [Headings](#headings)
     - [Text](#text)
@@ -19,6 +21,8 @@ The NativeScript project provides a core theme that you can add to any of your p
     - [Dividers](#dividers)
     - [Utilities](#utilities)
     - [Contextual Colors](#contextual-colors)
+    - [Page](#page)
+    - [ActionBar](#actionbar)
     - [Buttons](#buttons)
     - [Forms](#forms)
     - [Images](#images)
@@ -28,6 +32,7 @@ The NativeScript project provides a core theme that you can add to any of your p
     - [Slides](#slides)
     - [Switches](#switches)
     - [TabViews](#tabviews)
+* [Status Bar Considerations](#status-bar-considerations)
 * [Uninstalling](#uninstalling)
 * [Contributing](#contributing)
 
@@ -41,18 +46,100 @@ npm install nativescript-theme-core --save
 
 After you install the theme, you need to add a single `@import` CSS rule to your `app.css` file in order to include the theme in your app.
 
-The NativeScript core theme includes two color schemes, light and dark. To include the light theme, add the following line:
+## Color Schemes
+
+The NativeScript core theme includes two standard color schemes, light and dark.
+
+![Light and dark color schemes](/img/theme/color-schemes-light-and-dark.png)
+
+To use the light color scheme, add the following line of code to the top of your `app.css` file:
 
 ``` CSS
 @import 'nativescript-theme-core/css/core.light.css';
 ```
 
-And in order to include the dark theme, add this line of code instead:
+And in order to use the dark scheme, add this line of code to your `app.css` instead:
 
 
 ``` CSS
 @import 'nativescript-theme-core/css/core.dark.css';
 ```
+
+> **TIP**: When using the dark color scheme, make sure that you 1) apply the [`page` class name](#page) to ensure your app’s text displays appropriately, and 2) [alter your app’s status bar colors](#status-bar-considerations).
+
+You may want to alternatively use one of the 11 other color schemes included in the NativeScript core theme. To do so, switch your `app.css` file to use one of the following imports.
+
+``` CSS
+@import 'nativescript-theme-core/css/aqua.css';
+@import 'nativescript-theme-core/css/blue.css';
+@import 'nativescript-theme-core/css/brown.css';
+@import 'nativescript-theme-core/css/forest.css';
+@import 'nativescript-theme-core/css/grey.css';
+@import 'nativescript-theme-core/css/lemon.css';
+@import 'nativescript-theme-core/css/lime.css';
+@import 'nativescript-theme-core/css/orange.css';
+@import 'nativescript-theme-core/css/purple.css';
+@import 'nativescript-theme-core/css/ruby.css';
+@import 'nativescript-theme-core/css/sky.css';
+```
+
+> **TIP**: [This image](/img/theme/color-schemes-light-and-dark.png) shows all 13 color schemes on iOS and Android, and can help you decide which color scheme is a good fit for your app.
+
+## SASS Usage
+
+The NativeScript core theme is written in SASS, and you can use the theme’s `.scss` files directly. Using SASS is a great way to customize the theme in a way that’s not possible in CSS, such as using the theme’s SASS variables to change your app’s appearance.
+
+To get started, first verify that your app has the [NativeScript SASS plugin](https://github.com/toddanglin/nativescript-dev-sass) installed by running the following command:
+
+```
+tns install sass
+```
+
+With SASS set up and ready to use, next you’ll need to import the theme’s `.scss` files into your own. Start by creating the following files in your app:
+
+```
+.
+├── _app-common.scss
+├── app.android.scss
+└── app.ios.scss
+```
+
+After that, paste the following code into your `app.android.scss` file.
+
+``` CSS
+@import 'app-common';
+@import 'nativescript-theme-core/scss/platforms/index.android';
+
+// Place any CSS rules you want to apply only on Android here
+```
+
+And the following code into your `app.ios.scss` file.
+
+``` CSS
+@import 'app-common';
+@import 'nativescript-theme-core/scss/platforms/index.ios';
+
+// Place any CSS rules you want to apply only on iOS here
+```
+
+Finally, paste the following code into your `_app-common.scss` file.
+
+``` CSS
+// Import the theme’s variables. If you’re using a color scheme
+// other than “light”, switch the path to the alternative scheme,
+// for example 'nativescript-theme-core/scss/dark'.
+@import 'nativescript-theme-core/scss/light';
+
+// Customize any of the theme’s variables here, for instance $btn-color: red;
+
+// Import the theme’s main ruleset.
+@import 'nativescript-theme-core/scss/index';
+
+// Place any CSS rules you want to apply on both iOS and Android here.
+// This is where the vast majority of your CSS code goes.
+```
+
+The power of this approach is you have the ability to customize the [theme’s SASS variables](https://github.com/NativeScript/theme/blob/master/app/scss/_variables.scss) directly. You also have separate files set up for iOS- and Android-specific code, should you need to style your app differently on each platform.
 
 ## Class Names
 
@@ -202,6 +289,103 @@ You can convey meaning through color with a handful of utility classes that are 
   <Label text="A critical error has occurred!"></Label>
 </StackLayout>
 ```
+
+### Page
+
+The NativeScript core theme includes a single class name to apply to Page UI components.
+
+* `page`: A class name that alters text colors when using the dark color scheme.
+
+``` XML
+<Page class="page">
+  <Label class="body" text="I will show up in the dark color scheme."></Label>
+</Page>
+```
+
+* **NOTE**: You can also apply the `page` class name to a page’s top-level layout container, for instance `<GridLayout class="page">...</GridLayout>`. This is useful in Angular apps, where the `<Page>` component is not included in your component markup.
+
+### ActionBar
+
+The NativeScript core theme includes a few class names to apply to ActionBar UI components.
+
+* `action-bar`: A class name that applies the theme’s color scheme to ActionBar components.
+
+{% nativescript %}
+``` XML
+<Page class="page">
+  <Page.actionBar>
+    <ActionBar class="action-bar" title="My App">
+    </ActionBar>
+  </Page.actionBar>
+</Page>
+```
+{% endnativescript %}
+{% angular %}
+``` XML
+<ActionBar class="action-bar" title="My App">
+</ActionBar>
+```
+{% endangular %}
+
+* `action-bar-title`: A class name that applies the theme’s color scheme when using a [custom title view](/ui/action-bar#using-a-custom-title-view).
+
+{% nativescript %}
+``` XML
+<Page class="page">
+  <Page.actionBar>
+    <ActionBar class="action-bar">
+      <StackLayout class="action-bar-title">
+        <Label text="Your App"></Label>
+      </StackLayout>
+    </ActionBar>
+  </Page.actionBar>
+</Page>
+```
+{% endnativescript %}
+{% angular %}
+``` XML
+<ActionBar class="action-bar">
+  <StackLayout class="action-bar-title">
+    <Label text="Your App"></Label>
+  </StackLayout>
+</ActionBar>
+```
+{% endangular %}
+
+* `action-item`: A class name that applies the theme’s color scheme to custom ActionItem UI components.
+
+{% nativescript %}
+``` XML
+<Page class="page">
+  <Page.actionBar>
+    <ActionBar class="action-bar" title="My App">
+      <ActionBar.actionItems>
+        <ActionItem>
+          <ActionItem.actionView>
+            <Button text="Action" class="action-item"></Button>
+          </ActionItem.actionView>
+        </ActionItem>
+      </ActionBar.actionItems>
+    </ActionBar>
+  </Page.actionBar>
+</Page>
+```
+{% endnativescript %}
+{% angular %}
+``` XML
+<ActionBar class="action-bar" title="My App">
+  <ActionItem>
+    <Button text="Action" class="action-item"></Button>
+  </ActionItem>
+</ActionBar>
+```
+{% endangular %}
+
+> **TIP**: You can use the various ActionBar class names to create an ActionBar-like look without actually using the ActionBar UI components. You may find this approach useful for using in [modal pages](/core-concepts/navigation#modal-pages), for instance.
+> <GridLayout rows="auto" columns="75,*,75" class="action-bar p-10">
+>  <Button text="Close" class="text-left action-item" row="0" col="0"></Button> 
+>  <Label text="My Modal" class="text-center action-bar-title" row="0" col="1"></Label>
+> </GridLayout>
 
 ### Buttons
 
@@ -500,6 +684,66 @@ Finally, the NativeScript core theme includes a class name for styling TabView U
 <TabView class="tab-view">
   <!-- The contents of the TabView -->
 </TabView>
+```
+
+## Status Bar Considerations
+
+When using the NativeScript core theme, you may wish to alter the colors you use in the status bar to match the rest of your application.
+
+### iOS
+
+On iOS you can set the status bar colors to one of two values: `UIBarStyleDefault`, the default which uses black text, or `UIBarStyleBlack`, an alternative option that uses white text. For the purposes of the NativeScript core theme, **you only need to change your status bar colors on iOS if you’re using the dark color scheme**. If you are, [refer to our docs](/ui/change-status-bar-style-ios) on how to change your status bar colors to `UIBarStyleBlack`.
+
+### Android
+
+Android API levels 21+ (Lollipop and above) let you set the status bar to use any color that you’d like. To do so in NativeScript, find your `app/App_Resources/values/colors.xml` file, and update its `ns_primaryDark` color to use the appropriate color based on your color scheme of choice.
+
+| Color Scheme | ns_primaryDark value |
+| ------------ | -------------------- |
+| Light        | #F8F8F8              |
+| Dark         | #303030              |
+| Aqua         | #00caab              |
+| Blue         | #3d5afe              |
+| Brown        | #795548              |
+| Forest       | #006968              |
+| Grey Dark    | #5c687c              |
+| Purple       | #8130ff              |
+| Lemon        | #ffea00              |
+| Lime         | #aee406              |
+| Orange       | #f57c00              |
+| Ruby         | #ff1744              |
+| Sky          | #30bcff              |
+
+Additionally, when using the light color scheme, include the following code in your `app.js` file. The code sets Android’s `SYSTEM_UI_FLAG_LIGHT_STATUS_BAR` flag, which makes all icons in the status bar use a color that’s visible on the light background.
+
+``` JavaScript
+var application = require("application");
+var platform = require("platform");
+
+if (platform.isAndroid && platform.device.sdkVersion >= "21") {
+  application.android.onActivityStarted = function() {
+    var window = application.android.startActivity.getWindow();
+    var decorView = window.getDecorView();
+    decorView.setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+  }
+}
+
+// Your application.start() call goes here.
+```
+``` TypeScript
+import * as application from "application";
+import * as platform from "platform";
+declare var android: any;
+
+if (platform.isAndroid && platform.device.sdkVersion >= "21") {
+  application.android.onActivityStarted = function() {
+    let window = application.android.startActivity.getWindow();
+    let decorView = window.getDecorView();
+    decorView.setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+  }
+}
+
+// Your application.start() call goes here.
 ```
 
 ## Uninstalling
