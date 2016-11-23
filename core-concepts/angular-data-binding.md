@@ -9,7 +9,7 @@ previous_url: /core-concepts/DataBinding
 
 #Data Binding
 
-DataBinding is a core concept for both NativeScript and Angular frameworks. By default `Data Binding` stands for a connection (`binding`) between `Data Model` (Model) and `User Interface` (UI). Since this `binding` involves mostly `data` we use therm `Data Binding` to denote such connection or relationship.
+DataBinding is a core concept for both NativeScript and Angular frameworks. By default `Data Binding` stands for a connection (`binding`) between `Data Model` (Model) and `User Interface` (UI). Since this `binding` involves mostly `data` we use the term `Data Binding` to denote such connection or relationship.
 
 There are several ways of data flows (data bindings).
 
