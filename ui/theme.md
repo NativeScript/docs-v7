@@ -44,11 +44,11 @@ As of NativeScript version 2.4, the core theme is installed by default when you 
 npm install nativescript-theme-core --save
 ```
 
-After you install the theme, you need to add a single `@import` CSS rule to your `app.css` file in order to include the theme in your app.
+After you install the theme, you need to add a single `@import` CSS rule to your `app.css` file in order to include the theme in your app. But first you need to decide which of the theme’s color schemes you’d like to use.
 
 ## Color Schemes
 
-The NativeScript core theme includes two standard color schemes, light and dark.
+The NativeScript core theme includes two standard color schemes, light and dark. Here’s what they look like on Android (left) and iOS (right).
 
 ![Light and dark color schemes](/img/theme/color-schemes-light-and-dark.png)
 
@@ -65,7 +65,7 @@ And in order to use the dark scheme, add this line of code to your `app.css` ins
 @import 'nativescript-theme-core/css/core.dark.css';
 ```
 
-> **TIP**: When using the dark color scheme, make sure that you 1) apply the [`page` class name](#page) to ensure your app’s text displays appropriately, and 2) [alter your app’s status bar colors](#status-bar-considerations).
+> **TIP**: When using the dark color scheme, make sure that you, 1) apply the [`page` class name](#page) to ensure your app’s text displays appropriately, and 2) [alter your app’s status bar colors](#status-bar-considerations).
 
 You may want to alternatively use one of the 11 other color schemes included in the NativeScript core theme. To do so, switch your `app.css` file to use one of the following imports.
 
@@ -382,10 +382,12 @@ The NativeScript core theme includes a few class names to apply to ActionBar UI 
 {% endangular %}
 
 > **TIP**: You can use the various ActionBar class names to create an ActionBar-like look without actually using the ActionBar UI components. You may find this approach useful for using in [modal pages](/core-concepts/navigation#modal-pages), for instance.
+> ```
 > <GridLayout rows="auto" columns="75,*,75" class="action-bar p-10">
 >  <Button text="Close" class="text-left action-item" row="0" col="0"></Button> 
 >  <Label text="My Modal" class="text-center action-bar-title" row="0" col="1"></Label>
 > </GridLayout>
+> ```
 
 ### Buttons
 
