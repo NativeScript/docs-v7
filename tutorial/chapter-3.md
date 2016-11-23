@@ -235,7 +235,7 @@ Simply put, properties placed on a page's binding context are available to XML e
 
 What's really cool is that the binding is two-way. Meaning, when the user types text in these text fields, those changes are immediately applied to your view model.
 
-To use these values, and to make this login functional by tying your app into a backend service, you're going to need the ability to make HTTP calls. And to make HTTP calls in NativeScript you use the NativeScript fetch module. Let's look at how NativeScript modules work.
+To use these values, and to make this login functional by typing your app into a backend service, you're going to need the ability to make HTTP calls. And to make HTTP calls in NativeScript you use the NativeScript fetch module. Let's look at how NativeScript modules work.
 
 <div class="next-chapter-link-container">
   <a href="/tutorial/chapter-4">Continue to Chapter 4—NativeScript Modules</a>
