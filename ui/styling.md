@@ -62,7 +62,7 @@ application.start({ moduleName: "main-page" });
 {% angular %}
 
 ```TypeScript
-nativeScriptBootstrap(ListTest, null, {"cssFile": "style.css"});
+platformNativeScriptDynamic({bootInExistingPage:false, cssFile:"style.css"});
 ```
 
 {% endangular %}
