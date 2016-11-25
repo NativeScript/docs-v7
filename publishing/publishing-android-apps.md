@@ -56,7 +56,8 @@ You can publish a NativeScript app in *Google Play* the same way [you would rele
 Both *Package Name*, and *Application Id*, are unique identifiers, provided by you for your app.
  - *Package Name* is used to identify resources such as the `R`.
  - *Application Id* is used to identify your app on devices and at the *Google Play*.
-In the NativeScript framework, both are set to the `nativescript.id` in `package.json`.
+
+In the NativeScript framework, both are set to the `applicationId` in `app.gradle`.
 The NativeScript CLI build system will set them as the `package` attribute in the generated project in `platforms/android/src/main/AndroidManifest.xml`.
 In the `app/App_Resources/Android/AndroidManifest.xml` it will use a placeholder: `package="__PACKAGE__"`. Do **not** modify the `package` attribute there.
 
