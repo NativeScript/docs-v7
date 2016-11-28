@@ -32,7 +32,7 @@ The `*.ios.*` and `*.android.*` naming convention should look familiar, as it’
 
 ## 4.1: UI elements
 
-So far, you’ve only used NativeScript UI elements by including them in an Angular 2 component’s `template`, but you can also programmaticly create and access UI elements, and each UI element has a set of properties and methods you can use to customize your app. To see how this works lets access the `<Page>` UI element and make some changes to it.
+So far, you’ve only used NativeScript UI elements by including them in an Angular 2 component’s `template`, but you can also programmatically create and access UI elements, and each UI element has a set of properties and methods you can use to customize your app. To see how this works lets access the `<Page>` UI element and make some changes to it.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Customize the Page
