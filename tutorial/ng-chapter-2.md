@@ -220,7 +220,7 @@ What went wrong? In NativeScript whenever you use more than one UI element, you 
 
 ## 2.4: Layouts
 
-NativeScript provides several different layout containers that allow you to place UI elements precisely where you want them to appear. 
+NativeScript provides several different layout containers that allow you to place UI elements precisely where you want them to appear.
 
 - The [Absolute Layout]({%ns_cookbook ui/layouts/absolute-layout%}) lets you position elements using explicit x and y coordinates. This is useful when you need to place elements in exact locations, for example showing an activity indicator widget in the top-left corner of your app.
 - The [Dock Layout]({%ns_cookbook ui/layouts/dock-layout%}) is useful for placing UI elements at the outer edges of your app. For example, a container docked at the bottom of the screen would be a good location for an ad.
@@ -403,7 +403,7 @@ Why three files? Much like you divided your global files into `app.css`, `platfo
 
 The great thing about placing CSS rules at the component level is you can use concise CSS selectors such as `Button` and `TextField`, and not worry about those rules applying to all buttons and text fields in your application, as Angular 2 ensures those rules remain scoped to your component.
 
-Before we see what your app looks like now, there’s one small change you need to make. Notice that the last selector used in `login-common.css` is `.submit-button`. Much like using CSS on the web, in NativeScript you can both `id` and `class` attributes to target specific user interface elements, but at the moment there’s no UI element in your app with an `class` of `"submit-button"`. Let’s change that.
+Before we see what your app looks like now, there’s one small change you need to make. Notice that the last selector used in `login-common.css` is `.submit-button`. Much like using CSS on the web, in NativeScript you can add both `id` and `class` attributes to target specific user interface elements, but at the moment there’s no UI element in your app with an `class` of `"submit-button"`. Let’s change that.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Add a <code>class</code> attribute
