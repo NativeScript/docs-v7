@@ -13,7 +13,7 @@ In this article, you will learn how to call native APIs from JavaScript with var
 
 # Numeric Types
 
-All native numeric types (e.g., char, short, int, double, float on iOS and byte, short, int, long, double, float on Android) are implicitly converted to JavaScript number and vice versa. For example, when you run the following code on Android:
+All native numeric types (e.g., char, short, int, double, float on iOS and byte, short, int, long, double, float on Android) are implicitly converted to JavaScript number and vice versa. For example, when you run the following code on iOS:
 
 ```javascript
 // iOS

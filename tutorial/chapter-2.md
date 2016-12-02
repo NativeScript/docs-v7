@@ -41,7 +41,7 @@ Here's what these various files and folders do:
 - **node_modules**: This folder contains your app's npm module dependencies. All new NativeScript projects start with a single dependency on tns-core-modules.
 - **node_modules/tns-core-modules**: This folder contains your app's NativeScript modules, which are a series of NativeScript-provided JavaScript modules you'll use to build your app. Each module contains the platform-specific code needed to implement some feature—the camera, http calls, the file system, and so forth—exposed through a platform-agnostic API (e.g. `camera.takePicture()`). We'll look at some examples momentarily.
 - **package.json**: This file contains your app's configuration details, such as your app id, the version of NativeScript you're using, and also which npm modules your app uses. We'll take a closer look at how to use this file when we talk about using npm modules in [chapter 5](chapter-5).
-- **platforms**: This folder contains the platform-specific code NativeScript needs to build native iOS and Android apps. For example in the `android` folder you'll find things like your project's `AndroidManifest.xml` and .apk executable files. Similarly, the `ios` folder contains the Groceries' Xcode project and .ipa executables. Note, users on Windows machines will not have an `ios` folder.
+- **platforms**: This folder contains the platform-specific code NativeScript needs to build native iOS and Android apps. For example in the `android` folder you'll find things like your project's `AndroidManifest.xml` and .apk executable files. Similarly, the `ios` folder contains the Groceries' Xcode project and .ipa executables. Note, users on Windows and Linux machines will not have an `ios` folder.
 
 The NativeScript CLI manages the `platforms` folder for you as you develop and run your app; therefore, it's a best practice to treat the `platforms` folder as generated code. The Groceries app includes the `platforms` folder in its [`.gitignore`](https://github.com/NativeScript/sample-Groceries/blob/master/.gitignore) to exclude its files from source control.
 
@@ -125,7 +125,7 @@ NativeScript UI components provide attributes to let you configure their behavio
 - `<Button>`
     - `text`: Controls the text displayed within the button.
 
-After you [run your app](#development-workflow) with this change, you will see a single `<Button>` component on the screen:
+After your app updates with this change, you may expect to see a polished login screen, but instead you will see a single `<Button>` element on the screen:
 
 ![login 1](/img/cli-getting-started/nativescript/chapter2/ios/1.png)
 ![login 1](/img/cli-getting-started/nativescript/chapter2/android/1.png)
@@ -140,6 +140,7 @@ NativeScript provides several different layout containers that allow you to plac
 
 - The [Absolute Layout]({%ns_cookbook ui/layouts/absolute-layout%}) lets you position elements using explicit x and y coordinates. This is useful when you need to place elements in exact locations, for example showing an activity indicator widget in the top-left corner of your app.
 - The [Dock Layout]({%ns_cookbook ui/layouts/dock-layout%}) is useful for placing UI elements at the outer edges of your app. For example, a container docked at the bottom of the screen would be a good location for an ad.
+- The [Flexbox Layout]({%ns_cookbook ui/layouts/flexbox-layout%}) lets you arrange UI components using the syntax as `display: flex` on web.
 - The [Grid Layout]({%ns_cookbook ui/layouts/grid-layout%}) lets you divide your interface into a series of rows and columns, much like a `<table>` in HTML markup.
 - The [Stack Layout]({%ns_cookbook ui/layouts/stack-layout%}) lets you stack child UI components either vertically or horizontally.
 - The [Wrap Layout]({%ns_cookbook ui/layouts/wrap-layout%}) lets child UI components flow from one row or column to the next when space is filled.
@@ -178,7 +179,7 @@ After you run your app with this change, you'll see that your login page's UI co
 Although the UI components are in the correct order, they could use some spacing and color to make the app look a bit nicer. To do that let's look at another NativeScript feature: CSS.
 
 > **TIP**:
-> * Refer to the NativeScript docs for a [more detailed look at how NativeScript layouts work](/layouts) and the various things you can do to configure them.
+> * Refer to the NativeScript docs for a [look at how NativeScript layouts work](/layouts) and the various things you can do to configure them.
 > * Check out Jen Looper's article on [demystifying NativeScript layouts](https://www.nativescript.org/blog/demystifying-nativescript-layouts) for a thorough look at NativeScript layouts in action.
 
 ## 2.4: CSS

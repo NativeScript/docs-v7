@@ -224,6 +224,7 @@ NativeScript provides several different layout containers that allow you to plac
 
 - The [Absolute Layout]({%ns_cookbook ui/layouts/absolute-layout%}) lets you position elements using explicit x and y coordinates. This is useful when you need to place elements in exact locations, for example showing an activity indicator widget in the top-left corner of your app.
 - The [Dock Layout]({%ns_cookbook ui/layouts/dock-layout%}) is useful for placing UI elements at the outer edges of your app. For example, a container docked at the bottom of the screen would be a good location for an ad.
+- The [Flexbox Layout]({%ns_cookbook ui/layouts/flexbox-layout%}) lets you arrange UI components using the syntax as `display: flex` on web.
 - The [Grid Layout]({%ns_cookbook ui/layouts/grid-layout%}) lets you divide your interface into a series of rows and columns, much like a `<table>` in HTML markup.
 - The [Stack Layout]({%ns_cookbook ui/layouts/stack-layout%}) lets you stack child UI elements either vertically or horizontally.
 - The [Wrap Layout]({%ns_cookbook ui/layouts/wrap-layout%}) lets child UI elements flow from one row or column to the next when space is filled.

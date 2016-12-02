@@ -393,7 +393,7 @@ The following code illustrates how to update the `tintColor` property of the iOS
 
 ```javascript
 // within the number-picker.ios.js file
-var style = require("ui/styling");
+var style = require("ui/styling/style");
 
 //////////////////////////////////
 
@@ -420,10 +420,10 @@ function getNativeColorValue(view) {
     return nativePicker.tintColor;
 }
 
-var changedHandler = new style.stylers.StylePropertyChangedHandler(setColor, resetColor, getNativeColorValue);
+var changedHandler = new style.StylePropertyChangedHandler(setColor, resetColor, getNativeColorValue);
 
 // register the handler for the color property on the NumberPicker type
-style.stylers.registerHandler(style.properties.colorProperty, changedHandler, "NumberPicker");
+style.registerHandler(style.colorProperty, changedHandler, "NumberPicker");
 ```
 
 >In Android, the `color` property would be mapped to the text color of the labels within the native widget, However, this cannot be easily achieved programmatically but rather through the Android-specific XML styles. That's why this article will not cover the `color` property for Android. Still, the concept there is identical to the one described for iOS.
