@@ -12,13 +12,14 @@ previous_url: /core-concepts/bundling-with-webpack
 1. [Introducing Webpack](#introducing-webpack)
 2. [Installation](#installation)
 3. [How nativescript-dev-webpack works](#how-nativescript-dev-webpack-works)
-    : config, hooks
 4. [Bundling](#bundling)
-5. [Android Native Classes](#android-native-classes)
-6. [Tips and Tricks](#tips-and-tricks)
-    1. [Dynamic Imports](#dynamic-requires)
-    3. [Bundling HTML templates](#bundling-html-templates)
-7. [Webpack resources](#webpack-resources)
+5. [Dynamic Imports](#dynamic-imports)
+6. [Advanced Usage](#advanced-usage)
+    - [Debugging Bundling Errors](#debugging-bundling-errors)
+    - [Inspecting Bundles](#inspecting-bundles)
+    - [Bundling Extra Assets](#bundling-extra-assets)
+7.[Recommendations for Plugin Authors](#recommendations-for-plugin-authors)
+8. [Webpack resources](#webpack-resources)
 
 ## Overview
 
