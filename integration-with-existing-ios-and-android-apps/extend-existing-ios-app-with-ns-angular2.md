@@ -48,3 +48,5 @@ environment: angular
 ![Copy your NativeScript](../img/extend-existing-ios-app-with-ns-angular2/present-nativescript-view-controller.png)
 
 ![Copy your NativeScript](../img/extend-existing-ios-app-with-ns-angular2/result.gif)
+
+Get the app from here: [https://github.com/enchev/ios-ng2-tns/](https://github.com/enchev/ios-ng2-tns/)
