@@ -15,11 +15,11 @@ previous_url: /core-concepts/bundling-with-webpack
 4. [Bundling](#bundling)
 5. [Dynamic Imports](#dynamic-imports)
 6. [Advanced Usage](#advanced-usage)
-    - [Debugging Bundling Errors](#debugging-bundling-errors)
-    - [Inspecting Bundles](#inspecting-bundles)
-    - [Bundling Extra Assets](#bundling-extra-assets)
-7.[Recommendations for Plugin Authors](#recommendations-for-plugin-authors)
-8. [Webpack resources](#webpack-resources)
+7. [Debugging Bundling Errors](#debugging-bundling-errors)
+8. [Inspecting Bundles](#inspecting-bundles)
+9. [Bundling Extra Assets](#bundling-extra-assets)
+10.[Recommendations for Plugin Authors](#recommendations-for-plugin-authors)
+11. [Webpack resources](#webpack-resources)
 
 ## Overview
 
