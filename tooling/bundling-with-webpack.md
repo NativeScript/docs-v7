@@ -8,18 +8,18 @@ previous_url: /core-concepts/bundling-with-webpack
 
 # Using Webpack to Bundle Your Code
 
-0. [Overview](#overview)
+1. [Overview](#overview)
 1. [Introducing Webpack](#introducing-webpack)
-2. [Installation](#installation)
-3. [How nativescript-dev-webpack works](#how-nativescript-dev-webpack-works)
-4. [Bundling](#bundling)
-5. [Dynamic Imports](#dynamic-imports)
-6. [Advanced Usage](#advanced-usage)
-7. [Debugging Bundling Errors](#debugging-bundling-errors)
-8. [Inspecting Bundles](#inspecting-bundles)
-9. [Bundling Extra Assets](#bundling-extra-assets)
-10.[Recommendations for Plugin Authors](#recommendations-for-plugin-authors)
-11. [Webpack resources](#webpack-resources)
+1. [Installation](#installation)
+1. [How nativescript-dev-webpack works](#how-nativescript-dev-webpack-works)
+1. [Bundling](#bundling)
+1. [Dynamic Imports](#dynamic-imports)
+1. [Advanced Usage](#advanced-usage)
+1. [Debugging Bundling Errors](#debugging-bundling-errors)
+1. [Inspecting Bundles](#inspecting-bundles)
+1. [Bundling Extra Assets](#bundling-extra-assets)
+1.[Recommendations for Plugin Authors](#recommendations-for-plugin-authors)
+1. [Webpack resources](#webpack-resources)
 
 ## Overview
 
