@@ -18,7 +18,7 @@ previous_url: /core-concepts/bundling-with-webpack
 1. [Debugging Bundling Errors](#debugging-bundling-errors)
 1. [Inspecting Bundles](#inspecting-bundles)
 1. [Bundling Extra Assets](#bundling-extra-assets)
-1.[Recommendations for Plugin Authors](#recommendations-for-plugin-authors)
+1. [Recommendations for Plugin Authors](#recommendations-for-plugin-authors)
 1. [Webpack resources](#webpack-resources)
 
 ## Overview
