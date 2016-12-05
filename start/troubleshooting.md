@@ -89,3 +89,27 @@ A problem occurred configuring root project 'app_name'.
 - Uninstall the old .apk (Android) or .ipa (iOS) from the device or emulator you are running the app on.
 - Execute the `tns build android` or `tns build ios` command to create a new .apk or .ipa for your app.
 - Execute the `tns run android` or `tns run ios` command to install the new executable, and you'll find your files are now packaged into your application.
+
+### Problems with running on simulators/emulators and devices
+
+**Problem:** Running your app on the iOS simulator produces an error like this:
+```
+Command xcrun with arguments simctl launch CC9DBE24-A540-40E4-A187-E7DE3ECDA254 org.nativescript.groceries failed with exit code 4. Error output: An error was encountered processing the command (domain=FBSOpenApplicationErrorDomain, code=4):
+The operation couldn’t be completed. (FBSOpenApplicationErrorDomain error 4.)
+```
+
+**Solution:** Try  `iOS Simulator -> Reset Contents and Settings`
+
+**Problem:** Running your app on Android produces an error like this:
+```
+The system failed to delete the package for an unspecified reason.
+```
+
+**Solution:** Ignore this warning. This happens only if you have never deployed the app before, because the CLI is trying to delete it before re-deploying it.
+
+**Problem:** Running your app on Android produces an error like this:
+```
+The package manager service found that the device didn't have enough storage space to install the app.
+```
+
+**Solution:** Free more space on your device/emulator.
