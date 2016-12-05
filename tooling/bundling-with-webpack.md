@@ -150,7 +150,7 @@ Other options that can be useful when diagnosing a problem are: `--display-modul
 
 ### Inspecting Bundles
 
-Bundles are generated in the platform output folders. Look for the `bundle.js` and `tns-bundle-js` files in your `platforms/android/...` and `platforms/ios/...` "app" folders. You coul change the destination directory by editing your configuration.
+Bundles are generated in the platform output folders. Look for the `bundle.js` and `tns-bundle.js` files in your `platforms/android/...` and `platforms/ios/...` "app" folders. You could change the destination directory by editing your configuration.
 
 You could also rely on webpack analysis and visualization plugins that can help you diagnoze bundle problems and reduce bundle size:
 
@@ -199,7 +199,7 @@ Webpack will read the `package.json` file and try to find a `my-plugin.js` modul
 }
 ```
 
-That will allow webpack to correctly reference `my-plugin.android.js` or `myplugin.ios.js`.
+That will allow webpack to correctly reference `my-plugin.android.js` or `my-plugin.ios.js`.
 
 ### Emitting Helper Functions in TypeScript Plugins
 
