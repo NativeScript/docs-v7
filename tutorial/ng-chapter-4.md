@@ -17,16 +17,16 @@ In this chapter you'll learn about NativeScript modules, which are the TypeScrip
 - [4.4: GridLayout](#44-gridlayout)
 - [4.5: ActivityIndicator](#45-activityindicator)
 
-If you dig into `node_modules/tns-core-modules` you can get an idea of how these modules work. Start by finding the `node_modules/tns-core-modules/camera` folder, which includes the implementation of the camera module. It includes:
+If you dig into `node_modules/tns-core-modules` you can get an idea of how these modules work. Start by finding the `node_modules/tns-core-modules/color` folder, which includes the implementation of the color module. It includes:
 
 - a `package.json` file that sets the name of the module;
-- a file containing the module's Android implementation (`camera.android.js`);
-- a file containing the module's iOS implementation (`camera.ios.js`);
-- a file containing code shared by the Android and iOS implementations (`camera-common.js`)
+- a file containing the module's Android implementation (`color.android.js`);
+- a file containing the module's iOS implementation (`color.ios.js`);
+- a file containing code shared by the Android and iOS implementations (`color-common.js`)
 
 > **NOTE**:
 > * You can refer to the [Node.js documentation on folders as modules](https://nodejs.org/api/modules.html#modules_folders_as_modules) for more detailed information on how NativeScript organizes its modules.
-> * The “tns-core-modules” package only includes compiled JavaScript code to cut down on file size. You can find the TypeScript code for each of these modules in the [main NativeScript GitHub repo](https://github.com/NativeScript/nativescript), for instance here’s the [camera module’s source code](https://github.com/NativeScript/nativescript/tree/master/tns-core-modules/camera).
+> * The “tns-core-modules” package only includes compiled JavaScript code to cut down on file size. You can find the TypeScript code for each of these modules in the [main NativeScript GitHub repo](https://github.com/NativeScript/nativescript), for instance here’s the [color module’s source code](https://github.com/NativeScript/nativescript/tree/master/tns-core-modules/color).
 
 The `*.ios.*` and `*.android.*` naming convention should look familiar, as it’s the exact same convention we used to include Android- and iOS-specific styling in [chapter 2](ng-chapter-2). NativeScript uses this same convention to implement its modules on iOS and Android. Now that you know where these modules are, let's take a closer look at what else they can do for your app, starting with a closer looks at what you can do with NativeScript’s UI elements.
 
@@ -667,7 +667,7 @@ If you try out your app you should now see a nice fade-in animation:
 
 Now that you have functional login and list pages, let’s enhance the app’s functionality as a grocery list management tool. In the next chapters you'll add functionality such as email validation, social sharing, and more. And you’ll use one of NativeScript's most useful features to do so: npm modules.
 
-> **TIP**: There are several modules that come out of the box with your NativeScript installation that we did not have time to cover in this guide—including a [location service]({%ns_cookbook location%}), a [file-system helper]({%ns_cookbook file-system%}), a [timer module]({%ns_cookbook timer%}), a [camera module]({%ns_cookbook camera%}), and a whole lot more. Make sure to peruse the “Modules API” of the NativeScript documentation, or just look around your `node_modules/tns-core-modules` folder to see all of what’s available.
+> **TIP**: There are several modules that come out of the box with your NativeScript installation that we did not have time to cover in this guide—including a [file-system helper]({%ns_cookbook file-system%}), a [timer module]({%ns_cookbook timer%}), and a whole lot more. Make sure to peruse the “Modules API” of the NativeScript documentation, or just look around your `node_modules/tns-core-modules` folder to see all of what’s available.
 
 <div class="next-chapter-link-container">
   <a href="ng-chapter-5">Continue to Chapter 5—Plugins and npm Modules</a>

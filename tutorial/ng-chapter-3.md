@@ -49,6 +49,8 @@ To verify this binding works tap the “Sign In” button in your app; you shoul
 
 <img alt="Terminal showing the word hello logged" src="../img/cli-getting-started/angular/chapter3/terminal-1.png" class="plain">
 
+> **WARNING**: The iOS console will filter out similar messages and will show them only once. That is why when you keep on clicking the button, you will see `hello` only once printed on the console. Replace the string "hello" with the following back-tick string `hello ${new Date()}` to verify that the tap event does work. Printing the current time will make sure the string is different every time and the console will have to show it.
+
 > **TIP**:
 > * You can find a list of events available for each UI element on its API documentation page. For instance, the [button element’s API documentation](http://docs.nativescript.org/api-reference/classes/_ui_button_.button.html) lists its `tap` event.
 > * The Angular 2 docs have a helpful [cheat sheet](https://angular.io/docs/ts/latest/guide/cheatsheet.html) that includes the various syntaxes available when building templates. Don’t worry too much about knowing how all these work at the moment; we’ll progressively introduce the most common syntaxes in this guide.
@@ -303,7 +305,7 @@ With this setup you now have a `User` class that you can share across pages in y
 
 ## 3.4: Services
 
-A login screen isn’t all that useful if it doesn’t actually log users into anything. Therefore, our next task is to allow users to create and log into accounts. We’ll build this functionality as an [Angular 2 service](https://angular.io/docs/ts/latest/tutorial/toh-pt4.html), which is Angular 2’s mechanism for reusable classes that operate on data.
+A login screen isn’t all that useful if it doesn’t actually log users into anything. Therefore, our next task is to allow users to create and log into accounts. We’ll build this functionality as an [Angular 2 service](https://angular.io/docs/ts/latest/guide/architecture.html#!#services), which is Angular 2’s mechanism for reusable classes that operate on data.
 
 For the purposes of this tutorial we prebuilt a handful of backend endpoints using [Telerik Backend Services](http://www.telerik.com/platform/backend-services), and we’ll be using those endpoints to make this app functional. Let’s see how they work.
 

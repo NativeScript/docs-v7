@@ -125,6 +125,8 @@ Here are a few other tips for running NativeScript apps.
 > **TIP**:
 > * To run on a USB-connected Android or iOS device, use the same `run` command without the `--emulator` flag—i.e. `tns run android` and `tns run ios`.
 > * The `tns device` command lists all USB-connected iOS devices, USB-connected Android devices, and Genymotion virtual devices that `tns run` can deploy to. Note that `tns device` does not list iOS simulators.
+> * If you encounter any errors when trying to run the app, check the [Troubleshooting](http://docs.nativescript.org/angular/start/troubleshooting) section.
+> * Make sure you have at least 20MB free on your emulator.
 
 ## 1.5: Development workflow
 
