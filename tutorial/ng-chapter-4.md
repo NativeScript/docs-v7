@@ -667,7 +667,7 @@ If you try out your app you should now see a nice fade-in animation:
 
 Now that you have functional login and list pages, let’s enhance the app’s functionality as a grocery list management tool. In the next chapters you'll add functionality such as email validation, social sharing, and more. And you’ll use one of NativeScript's most useful features to do so: npm modules.
 
-> **TIP**: There are several modules that come out of the box with your NativeScript installation that we did not have time to cover in this guide—including a [file-system helper]({%ns_cookbook file-system%}), a [timer module]({%ns_cookbook timer%}), and a whole lot more. Make sure to peruse the “Modules API” of the NativeScript documentation, or just look around your `node_modules/tns-core-modules` folder to see all of what’s available.
+> **TIP**: There are several modules that come out of the box with your NativeScript installation that we did not have time to cover in this guide—including a [file-system helper]({%ns_cookbook file-system%}), a [timer module]({%ns_cookbook timer%}), and a whole lot more. Make sure to peruse the “API Reference” of the NativeScript documentation, or just look around your `node_modules/tns-core-modules` folder to see all of what’s available.
 
 <div class="next-chapter-link-container">
   <a href="ng-chapter-5">Continue to Chapter 5—Plugins and npm Modules</a>
