@@ -140,7 +140,7 @@ With these new imports in place, next, add the following property to the `LoginC
 @ViewChild("container") container: ElementRef;
 ```
 
-This code uses Angular’s [`@ViewChild` decorator](https://angular.io/docs/ts/latest/api/core/ViewChild-var.html) to create a new property that points at the `<StackLayout>` element. To use that property, change the `LoginComponent`’s `toggleDisplay()` function in the same file to use this code:
+This code uses Angular’s [`@ViewChild` decorator](https://angular.io/docs/ts/latest/api/core/index/ViewChild-decorator.html) to create a new property that points at the `<StackLayout>` element. To use that property, change the `LoginComponent`’s `toggleDisplay()` function in the same file to use this code:
 
 ``` TypeScript
 toggleDisplay() {
