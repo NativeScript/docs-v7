@@ -9,7 +9,7 @@ environment: nativescript
 
 # The User Interface
 
-The user interface of NativeScript mobile apps consists of pages. Typically, the design of the user interface is developed and stored in `XML` files, styling is done via CSS and the business logic is developed and stored in `JavaScript` or `TypeScript` files. 
+The user interface of NativeScript mobile apps consists of pages. Typically, the design of the user interface is developed and stored in `XML` files, styling is done via CSS and the business logic is developed and stored in `JavaScript` or `TypeScript` files.
 
 * [The basics](#the-basics)
   * [Declare the home page](#declare-the-home-page)
@@ -31,9 +31,9 @@ The user interface of NativeScript mobile apps consists of pages. Typically, the
 
 ## The basics
 
-When you develop the user interface of your app, you can implement each application screen in a separate page or implement your application screens on a single page with a tab view. 
+When you develop the user interface of your app, you can implement each application screen in a separate page or implement your application screens on a single page with a tab view.
 
-For each page, you need to have a separate `XML` file that holds the layout of the page. For each `XML` file that NativeScript parses, the framework also looks for a `JavaScript` or `TypeScript` file with the same name and executes the business logic inside it. 
+For each page, you need to have a separate `XML` file that holds the layout of the page. For each `XML` file that NativeScript parses, the framework also looks for a `JavaScript` or `TypeScript` file with the same name and executes the business logic inside it.
 
 ### Declare the home page
 
@@ -77,16 +77,16 @@ frames.topmost().navigate("my-page");
 
 ### Set the bindingContext while navigating to a page
 
-You could provide `bindingContext` automatically while navigating to a page. This will give you simple way the context to become the bindingContext of the page on navigation. The simple way to do that is to set up the `bindingContext` property, which points to your custom view model, on navigate method.
+You could provide `bindingContext` automatically while navigating to a page. This will give you a simple way to make the context become the bindingContext of the page on navigation. The way to do that is to set up the `bindingContext` property, which points to your custom view model, on navigate method.
 
 ```JavaScript
 // To import the "ui/frame" module and "main-view-model":
 var frame = require("ui/frame");
 var main_view_model = require("./main-view-model");
 // Navigate to page called “my-page” and provide "bindingContext"
-frame.topmost().navigate({ 
-  moduleName: "my-page", 
-  bindingContext: new main_view_model.HelloWorldModel() 
+frame.topmost().navigate({
+  moduleName: "my-page",
+  bindingContext: new main_view_model.HelloWorldModel()
 });
 ```
 ```TypeScript
@@ -95,7 +95,7 @@ import {topmost} from "ui/frame";
 import {HelloWorldModel} from "./main-view-model"
 // Navigate to page called “my-page” and provide "bindingContext"
 topmost().navigate({
-  moduleName:"my-page", 
+  moduleName:"my-page",
   bindingContext:new HelloWorldModel()
 });
 ```
@@ -108,7 +108,7 @@ When you have a `JavaScript` or a `TypeScript` file in the same location with th
 
 #### Example
 
-In this example of `main-page.xml`, your page consists of a button. When you tap the button, the `buttonTap` function is triggered.  
+In this example of `main-page.xml`, your page consists of a button. When you tap the button, the `buttonTap` function is triggered.
 
 ```XML
 <Page>
@@ -170,7 +170,7 @@ You can specify code and CSS files for your Page XML using `import` and `cssFile
 
 ## User interface components
 
-NativeScript provides a wide range of built-in user interface components:mdash;layouts and widgets. You can also create your own custom user interface components. 
+NativeScript provides a wide range of built-in user interface components:mdash;layouts and widgets. You can also create your own custom user interface components.
 
 When NativeScript parses your `XML` files, it looks for components that match a name in the module exports.
 
@@ -221,7 +221,7 @@ export function pageLoaded(args: observable.EventData) {
 }
 ```
 
-#### TabView 
+#### TabView
 
 With a [`tabview`](http://docs.nativescript.org/api-reference/classes/_ui_tab_view_.tabview.html), you can avoid spreading your user interface across multiple pages. Instead, you can have one page with multiple tabs.
 
@@ -368,7 +368,7 @@ You can define your own XML namespaces to create custom user interface component
 
 #### Code-only custom component
 
-This sample `main-page.xml` is using a custom component defined in separate declarations in the `xml-declaration/mymodule` directory. 
+This sample `main-page.xml` is using a custom component defined in separate declarations in the `xml-declaration/mymodule` directory.
 
 ```XML
 <Page
@@ -436,7 +436,7 @@ When referring to code-only components in your pages with an `xmlns` declaration
 
 #### XML-based custom component with a code file
 
-This sample `main-page.xml` uses a custom component defined in an `xml-declaration/mymodulewithxml/MyControl.xml` file together with `xml-declaration/mymodulewithxml/MyControl.js` or `xml-declaration/mymodulewithxml/MyControl.ts` code file. 
+This sample `main-page.xml` uses a custom component defined in an `xml-declaration/mymodulewithxml/MyControl.xml` file together with `xml-declaration/mymodulewithxml/MyControl.js` or `xml-declaration/mymodulewithxml/MyControl.ts` code file.
 
 ```XML
 <Page
@@ -450,7 +450,7 @@ The custom component in `xml-declaration/MyControl.xml` defines a button, a labe
 ```XML
 <StackLayout>
   <Label id="Label1" />
-  <Button text="Click!" tap="buttonTap" /> 
+  <Button text="Click!" tap="buttonTap" />
 </StackLayout>
 ```
 
@@ -640,11 +640,11 @@ export function pageLoaded(args: observable.EventData) {
 
 You can use the double curly brackets syntax to bind the items to a [`listView`](http://docs.nativescript.org/api-reference/classes/_ui_list_view_.listview.html). You can also define a template with the `itemTemplate` property from which NativeScript will create the items for your `listView`.
 
-> Avoid accessing components by ID, especially when the component is part of a template. It is recommended that you use bindings to specify component properties. 
+> Avoid accessing components by ID, especially when the component is part of a template. It is recommended that you use bindings to specify component properties.
 
-NativeScript can create the items from a template when the `listView` loads inside your page. When you work with templates and a `listView`, keep in mind the scope of the `listView` and its items. 
+NativeScript can create the items from a template when the `listView` loads inside your page. When you work with templates and a `listView`, keep in mind the scope of the `listView` and its items.
 
-In this sample `main-page.xml`, the ListView consists of labels and each item will be created from a template. The text of each label is the value of the name property of the corresponding item. 
+In this sample `main-page.xml`, the ListView consists of labels and each item will be created from a template. The text of each label is the value of the name property of the corresponding item.
 
 ```XML
 <Page loaded="pageLoaded">
