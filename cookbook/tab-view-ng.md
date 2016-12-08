@@ -9,7 +9,7 @@ environment: angular
 
 # Tab View
 
-Using a `TabView` inside Angular 2 app requires some special attention how to provide title, iconSource and content (view) of the TabItem. In a pure NativeScript application `TabView` has an items property which could be set via XML to an array of TabViewItems (basically an array of objects with `title` and `view` properties). However NativeScript-Angular does not support nested properties in its html template, so adding `TabViewItem` to TabView is a little bit different. NativeScript-Angular provides a custom Angular 2 directive which simplifies the way native `TabView` should be used. Following is an example of how to add `TabView` to your page (with some clarifications later):
+Using a `TabView` inside an Angular 2 app requires some special attention about how to provide title, iconSource and content (view) of the TabItem. In a pure NativeScript application, `TabView` has an items property which could be set via XML to an array of TabViewItems (basically, an array of objects with `title` and `view` properties). However, NativeScript-Angular does not support nested properties in its HTML template, so adding `TabViewItem` to TabView is a little bit different. NativeScript-Angular provides a custom Angular 2 directive that simplifies the way native `TabView` should be used. The following example shows how to add a `TabView` to your page (with some clarifications later):
 
 ```XML
 // tab-view-test.html
@@ -52,13 +52,15 @@ export class TabViewTest {
 }
 ```
 
-* tabItem - TabView directive uses a JSON object to transfer properties to the native object. Actually `TabViewItem` is a pretty simple object with just `title`, `iconSource` and `view` properties. Since `title` and `iconSource` are usually represented as text TabView directive uses a small JSON object (`{title: 'Profile', iconSource: '~/icon.png'}`) to define these properties easily in html. View however is not so simple therefore as TabViewItem. View TabView directive uses the tag where `tabItem` attribute is set.
+* tabItem:  The TabView directive uses a JSON object to transfer properties to the native object. Actually, `TabViewItem` is a pretty simple object with just `title`, `iconSource` and `view` properties. Since `title` and `iconSource` are usually represented as text, TabView directive uses a small JSON object (`{title: 'Profile', iconSource: '~/icon.png'}`) to define these properties easily in HTML. View, however, is not so simple, therefore as TabViewItem. View TabView directive uses the tag where `tabItem` attribute is set.
+<Comment: The text in the previous sentence, TabViewItem. View TabView is incorrect, but any changes I make to it may change the meaning. The commas I added are correct, so please keep those.>
 
-This is a typical usage of the TabView directive however if business case requires there are a few options for customizations.
+This is a typical usage of the TabView directive; however, if the business case requires more customizations, there are a few options available.
 
 ### Customizing Tab View
 
-The most common customization of TabView is customizing the background color of the selected tab item and using some other than first tab item for start up. Following is how to achieve that by little modifications to the previous example.
+The most common customization of TabView is customizing the background color of the selected tab item to use something other than the first tab item for start up. <Comment: Please review my changes to the previous sentence to verify I did not create a technical error.> The following example shows how to achieve that with a few modifications to the previous example.
+
 ```XML
 // tab-view-test.html
 <TabView selectedIndex="1" selectedColor="#FF0000">
@@ -78,11 +80,11 @@ The most common customization of TabView is customizing the background color of 
 </TabView>
 ```
 
-And result is a TabView which selects second tab at start up and uses red color for color of the selected tab.
+The result is a TabView that selects the second tab at start up and uses the color red for the selected tab.
 
 ### Binding (Two-way) TabView selectedIndex
 
-NativeScript-Angular TabView `selectedIndex` property can be used in a two-way binding scenarios and using this kind of binding is relatively simple. Just use standard `ngModel` syntax to a data model property (for the sake of example TabViewTest class is used as binding context) and set data model property `tabSelectedIndex` to desired value.
+You can use the NativeScript-Angular TabView `selectedIndex` property in two-way binding scenarios. Using this kind of binding is relatively simple. Just use the standard `ngModel` syntax to a data model property (for the sake of example, the TabViewTest class is used as binding context) and set the data model property `tabSelectedIndex` to the desired value. <Comment: Please review my changes to the previous sentence to verify I did not create a technical error. I think there is a word missing in the phrase, "syntax to a data model property".>
 
 ```XML
 // tab-view-test.html
