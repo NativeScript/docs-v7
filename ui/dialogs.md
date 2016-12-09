@@ -263,7 +263,7 @@ You can also create dialogs with custom content. All the needed types live insid
 
 ### Showing custom dialog
 
-Start by injecting `ModalDialogService` into the components constructor (this service is exported by the `NativeScriptModule` so there is no need to declare it explicitly). 
+Start by injecting `ModalDialogService` into the components constructor (this service is exported by the `NativeScriptModule` so there is no need to declare it explicitly). `ModalDialogService` needs to be added to the component's `providers` array.
 
 We are also injecting the `ViewContainerRef` of this component &mdash; we are going to need it when showing the dialog.
 
@@ -272,6 +272,9 @@ import { Component, ViewContainerRef } from '@angular/core';
 import { ModalDialogService, ModalDialogOptions } from "nativescript-angular/modal-dialog";
 
 @Component({
+  providers: [
+    ModalDialogService
+  ],
   template: `
     <StackLayout>
       <Button text="show" (tap)="show()"></Button>
@@ -289,14 +292,13 @@ export class CustomDialogTest {
 
 Ignore the `result` field for now &mdash; we will use it later on.
 
-Call the `showModal` method of the dialog service passing the type of the component that should be loaded in the dialog. We are also passing the `viewContainerRef` in the modal dialog options to tell angular where (in the component tree) to load the dialog component.
+Call the `showModal` method of the dialog service passing the type of the component that should be loaded in the dialog. We are also calling `registerViewContainerRef(ref: ViewContainerRef)` on the `ModalDialogService` to tell angular where (in the component tree) to load the dialog component.
 
 ``` TypeScript
 public show() {
   let options: ModalDialogOptions = {
-    viewContainerRef: this.viewContainerRef
   };
-  
+  this.modalService.registerViewContainerRef(this.viewContainerRef);
   this.modalService.showModal(DialogContent, options);
 }
 ```
@@ -311,10 +313,9 @@ You can also specify if the dialog should be shown `fullscreen`.
 let options: ModalDialogOptions = {
   context: { promptMsg: "This is the prompt message!" },
   fullscreen: true,
-  viewContainerRef: this.viewContainerRef
 };
-
-this.modal.showModal(DialogContent, options)
+this.modalService.registerViewContainerRef(this.viewContainerRef);
+this.modalService.showModal(DialogContent, options)
 ```
 
 > **TIP:** By design on iPhone, a modal page appears only in full screen.
@@ -351,7 +352,7 @@ export class DialogContent {
 
 The `params.context` is the same object as `options.context` passed to the `showModal` method.
 
-> **NOTE:** The component used for the modal content(`DialogContent` from the example) should be added in both the `declarations` and `entryComponents` in your `NgModule` definition:
+> **NOTE:** The component used for the modal content (`DialogContent` from the example) should be added in both the `declarations` and `entryComponents` in your `NgModule` definition:
 > ``` Typescript
 > @NgModule({
 >     declarations: [CustomDialogTest, DialogContent],
@@ -379,12 +380,11 @@ Let's modify the `show` function in the main component so that it shows the resu
 public show(fullscreen: boolean) {
   var options: ModalDialogOptions = {
     context: { promptMsg: "This is the prompt message!" },
-    fullscreen: true,
-    viewContainerRef: this.viewContainerRef
+    fullscreen: fullscreen,
   };
-
-  this.modal.showModal(DialogContent, options)
-    .then((dialogResult: string) => { this.result = dialogResult; })
+  this.modalService.registerViewContainerRef(this.viewContainerRef);
+  this.modalService.showModal(DialogContent, options)
+    .then((dialogResult: string) => { this.result = dialogResult; });
 }
 ```
 {% endangular %}
