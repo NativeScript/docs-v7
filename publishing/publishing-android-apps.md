@@ -31,13 +31,8 @@ previous_url: /core-concepts/publishing-android-apps
 ## Overview
 You can publish a NativeScript app in *Google Play* the same way [you would release a purely native Android app](http://developer.android.com/tools/publishing/publishing_overview.html).
 
- 1. Verify that the Android native project inside your app contains your latest changes and resources by running the following command.
- 
-     ```
-     tns prepare android
-     ```
- 2. Make sure that you have a `.keystore` file to sign your app with. For more information, see [How to create  a .keystore file](http://developer.android.com/tools/publishing/app-signing.html#signing-manually)?
- 3. Build your project in release mode by running the following command:
+ 1. Make sure that you have a `.keystore` file to sign your app with. For more information, see [How to create  a .keystore file](http://developer.android.com/tools/publishing/app-signing.html#signing-manually)?
+ 2. Build your project in release mode by running the following command:
  
     ```
     tns build android --release --key-store-path <path-to-your-keystore> --key-store-password <your-key-store-password> --key-store-alias <your-alias-name> --key-store-alias-password <your-alias-password> 
