@@ -38,8 +38,6 @@ NativeScript has a universal way to check if location services are turned on&mda
 
 > **NOTE:** For Android, `isEnabled` checks if the location service is enabled (any accuracy level). For iOS, the method checks if the location service is enabled for the application in foreground or background mode.
 
-> **NOTE:** Keep in mind that location services do not work in emulators. You can test location services only on a real devices.
-
 ## Requesting permissions to use location services
 
 By default, the `nativescript-geolocation` plugin adds the required permissions in `AndroidManiest.xml` for Android and `Info.plist` for iOS. For iOS, the plugin adds two dummy string values which serve as te message when the platform asks for permission to use location services. You can edit this message later. 
@@ -117,7 +115,7 @@ Provides options for location monitoring.
 
 Property | Type | Description
 ---|---|---
-`desiredAccuracy` | Number | (Optional) Specifies desired accuracy in meters. Defaults to `DesiredAccuracy.HIGH`.
+`desiredAccuracy` | Number | (Optional) Specifies desired accuracy in meters. NativeScript has a special enum [Accuracy](http://docs.nativescript.org/api-reference/modules/_ui_enums_.accuracy.html) that helps to make code more readable. Defaults to `Accuracy.any`. Such accuracy could be achieved with only wifi and assist GPS from network provider, therefore does not put additional pressure on battery consumption. In order to use high accuracy (requires GPS sensor) set this option to `Accuracy.high`.
 `updateDistance` | Number | (Optional) Updates distance filter in meters. Specifies how often to update. Default on iOS is no filter, on Android it is 0 meters.
 `minimumUpdateTime` | Number | (Optional) Specifies the minimum time interval between location updates, in milliseconds. Ignored on iOS.
 `maximumAge` | Number | (Optional) Filters locations by how long ago they were received, in milliseconds. For example, if the `maximumAge` is 5000, you will get locations only from the last 5 seconds. 
