@@ -124,11 +124,14 @@ button.setOnClickListener(undefined); // the Java call will be made using the nu
 
 # Intellisense
 
-If you are working with Visual Studio Code and you want to add intellisense you have to add a dev dependency to tns-platform-declarations on your project (`npm install tns-platform-declarations --save-dev`) and later add the following to the references.d.ts of your project:
+If you are working with Visual Studio Code and you want to add intellisense you have to add a dev dependency to tns-platform-declarations on your project (`npm install tns-platform-declarations --save-dev`) and later add the following to the references.d.ts of your project (if you already have tns-core-modules in your project change it as follows):
 ```
+/// <reference path="node_modules/tns-core-modules/tns-core-modules.es2016.d.ts" />
 /// <reference path="node_modules/tns-platform-declarations/android.d.ts" />
 /// <reference path="node_modules/tns-platform-declarations/ios.d.ts" />
 ```
+For more information: [tns-platform-declarations](https://github.com/NativeScript/NativeScript/tree/master/tns-platform-declarations)
+
 
 # See Also
 * [Marshalling in Android Runtime](./../runtimes/android/marshalling/overview.md)
