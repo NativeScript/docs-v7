@@ -122,6 +122,14 @@ var button = new android.widget.Button(context);
 button.setOnClickListener(undefined); // the Java call will be made using the null keyword
 ```
 
+# Intellisense
+
+If you are working with Visual Studio Code and you want to add intellisense you have to add a dev dependency to tns-platform-declarations on your project (`npm install tns-platform-declarations --save-dev`) and later add the following to the references.d.ts of your project:
+```
+/// <reference path="node_modules/tns-platform-declarations/android.d.ts" />
+/// <reference path="node_modules/tns-platform-declarations/ios.d.ts" />
+```
+
 # See Also
 * [Marshalling in Android Runtime](./../runtimes/android/marshalling/overview.md)
 * [Marshalling in iOS Runtime](./../runtimes/ios/marshalling/Marshalling-Overview.md)
