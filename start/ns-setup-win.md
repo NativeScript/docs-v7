@@ -19,7 +19,7 @@ This page contains a list of all system requirements needed to build and run Nat
 ## System Requirements
 
 * Windows 7 Service Pack 1 or later
-* The latest Node.js [4.x](https://nodejs.org/dist/latest-v4.x/), [6.x](https://nodejs.org/dist/latest-v6.x/) or [7.x](https://nodejs.org/dist/latest-v7.x/) stable official release
+* The latest stable official release of Node.js (LTS) [6.x](https://nodejs.org/dist/latest-v6.x/) 
 * (Optional) Chocolatey to simplify the installation of dependencies
 * JDK 8 or a later stable official release
 * Android SDK 22 or a later stable official release
