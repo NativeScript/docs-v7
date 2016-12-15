@@ -144,7 +144,7 @@ plus the following settings in your `tsconfig.json`:
     }
 }
 ```
-Note taht d.ts files require a lot of memory and CPU. Consider adding skipLibCheck option to tsconfig file.
+Note that d.ts files require a lot of memory and CPU. Consider adding skipLibCheck option to tsconfig file.
 For more information: [tns-platform-declarations](https://github.com/NativeScript/NativeScript/tree/master/tns-platform-declarations)
 
 
