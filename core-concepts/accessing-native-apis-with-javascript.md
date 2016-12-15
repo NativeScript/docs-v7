@@ -124,12 +124,27 @@ button.setOnClickListener(undefined); // the Java call will be made using the nu
 
 # Intellisense
 
-If you are working with Visual Studio Code and you want to add intellisense you have to add a dev dependency to tns-platform-declarations on your project (`npm install tns-platform-declarations --save-dev`) and later add the following to the references.d.ts of your project (if you already have tns-core-modules in your project change it as follows):
+If you are working with TypeScript enabled project and Visual Studio Code and you want to add intellisense you have to add a dev dependency to tns-platform-declarations on your project (`npm install tns-platform-declarations --save-dev`) and later add the following to the references.d.ts of your project (if you already have tns-core-modules in your project change it as follows):
 ```
 /// <reference path="node_modules/tns-core-modules/tns-core-modules.es2016.d.ts" />
 /// <reference path="node_modules/tns-platform-declarations/android.d.ts" />
 /// <reference path="node_modules/tns-platform-declarations/ios.d.ts" />
 ```
+
+plus the following settings in your `tsconfig.json`:
+```
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "experimentalDecorators": true,
+        "lib": [
+            "es2016"
+        ]
+    }
+}
+```
+Note taht d.ts files require a lot of memory and CPU. Consider adding skipLibCheck option to tsconfig file.
 For more information: [tns-platform-declarations](https://github.com/NativeScript/NativeScript/tree/master/tns-platform-declarations)
 
 
