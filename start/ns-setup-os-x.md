@@ -87,7 +87,7 @@ Complete the following steps to setup NativeScript on your OS X development mach
 
         1. Next, run the following command to set the ANDROID_HOME system environment variable:
 
-            <pre class="add-copy-button"><code class="language-terminal">export ANDROID_HOME=/usr/local/opt/android-sdk
+            <pre class="add-copy-button"><code class="language-terminal">export ANDROID_HOME=/usr/local/Cellar/android-sdk
             </code></pre>
 
             <blockquote><b>NOTE</b>: This is the directory that contains the <code>tools</code> and <code>platform-tools</code> directories.</blockquote>
