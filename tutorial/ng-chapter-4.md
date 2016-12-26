@@ -262,6 +262,7 @@ import { Injectable } from "@angular/core";
 import { Http, Headers } from "@angular/http";
 import { Observable } from "rxjs/Rx";
 import "rxjs/add/operator/map";
+import "rxjs/add/operator/switchMap";
 
 import { Config } from "../config";
 import { Grocery } from "./grocery";
@@ -274,18 +275,11 @@ export class GroceryListService {
     let headers = new Headers();
     headers.append("Authorization", "Bearer " + Config.token);
 
-    return this.http.get(Config.apiUrl + "Groceries", {
-      headers: headers
-    })
-    .map(res => res.json())
-    .map(data => {
-      let groceryList = [];
-      data.Result.forEach((grocery) => {
-        groceryList.push(new Grocery(grocery.Id, grocery.Name));
-      });
-      return groceryList;
-    })
-    .catch(this.handleErrors);
+    return this.http.get(Config.apiUrl + "Groceries", { headers })
+        .map(res => <{ Result: { Id: string, Name: string }[] }>res.json())
+        .switchMap(resp => Observable.from(resp.Result))
+        .map(go => new Grocery(go.Id, go.Name))
+        .catch(this.handleErrors);
   }
 
   handleErrors(error: Response) {
