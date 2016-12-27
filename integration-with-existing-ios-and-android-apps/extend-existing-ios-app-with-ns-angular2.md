@@ -9,7 +9,7 @@ environment: angular
 
 # Extend your existing iOS app with Angular 2 and NativeScript
 
-## This article provides step-by-stem instructions, how to extend existing iOS app with Angular 2 and NativeScript
+## This article provides step-by-step instructions how to extend existing iOS app with Angular 2 and NativeScript
 
 1.Build your NativeScript app for iOS:
 `tns build ios`
