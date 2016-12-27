@@ -8,7 +8,7 @@ environment: angular
 
 # Extend your existing Android app with Angular 2 and NativeScript
 
-## This article provides step-by-stem instructions, how to extend existing Android app with Angular 2 and NativeScript
+## This article provides step-by-step instructions how to extend existing Android app with Angular 2 and NativeScript
 
 1.Build your NativeScript app for Android:
 `tns build android`
