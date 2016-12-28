@@ -15,9 +15,9 @@ There are several ways of data flows (data bindings).
 
 * one-way data binding - this is the most popular way of binding from Model to UI. A good example of such binding is a text stored in Model and displayed on UI in a text area control.
 * one-way to source (to model) - this is a way of binding which updates Model due to some action on UI. The best example for this is an event like button click (tap).
-* two-way data binding - this is a way of binding that combines both previous ways of binding. A tipical example is a text box field that reads its value from Model, but also changes the Model based on user input.
+* two-way data binding - this is a way of binding that combines both previous ways of binding. A typical example is a text box field that reads its value from Model, but also changes the Model based on user input.
 
-`NativeScript-angular` plugin simplifies the way which data binding will be used. NativeScript part of the binding infrastructure is used to bind Model values to the real native elements (Android and iOS). Angular 2 part is used to provide correct binding context, change detection and notifications. In order to use data binding within NativeScript-Angular application generally do not differ from a standard Angular 2 web application.
+`NativeScript-Angular` plugin simplifies the way which data binding will be used. NativeScript part of the binding infrastructure is used to bind Model values to the real native elements (Android and iOS). Angular 2 part is used to provide correct binding context, change detection and notifications. Using data binding within NativeScript-Angular application generally do not differ from a standard Angular 2 web application.
 
 Let's see some examples how to use data binding with `NativeScript-Angular` plugin.
 
@@ -81,18 +81,18 @@ This is the way Angular 2 supports two-way data binding. It generally works in a
 Angular mustache (`{{ }}`) syntax for binding is also supported within a NativeScript-Angular application. It's just another way of one-way binding placed in the middle of a text.
 
 ```XML
-{%raw%}<Label text='{{model.deliveryHour}}:{{deliveryMinute}}'></Label>{%endraw%}
+{%raw%}<Label text='{{model.deliveryHour}}:{{model.deliveryMinute}}'></Label>{%endraw%}
 ```
 ```TypeScript
 this.model.deliveryHour = 10;
 this.model.deliveryMinute = 25;
 ```
 
-> Note: Notice that property text of the Label element in previous example is not surrounded by any brackets.
+> Note: Notice that property `text` of the Label element in previous example is not surrounded by any brackets.
 
 ### Data converters
 
-Often data within Data Model is stored in a way that is optimized for best performance of tasks like search, replace and so on. Unfortunately the way like computers store data differs a lot with a human readable format. Probably the best example is `Date object`. In JavaScript `Date` actually is a very big number that represents milliseconds from 01.01.1970 which does not speak much to any human. Here comes the use of data converters which basically are functions that formats the data (from Model) in a human readable format (display in UI). Angular 2 uses same concept and named it `pipe` (like UNIX pipe) - value is passed to the pipe function which transforms it and the final result is displayed to the user. Using `pipe` is simple and with the same syntax like UNIX pipe.
+Often data within Data Model is stored in a way that is optimized for best performance of tasks like search, replace and so on. Unfortunately, the way computers store data differs a lot with a human readable format. Probably the best example is `Date object`. In JavaScript `Date` actually is a very big number that represents milliseconds from 01.01.1970 which does not speak much to any human. Here comes the use of data converters which basically are functions that formats the data (from Model) in a human readable format (display in UI). Angular 2 uses the same concept and names it `pipe` (like UNIX pipe) - value is passed to the pipe function which transforms it and the final result is displayed to the user. Using `pipe` is simple and with the same syntax like UNIX pipe.
 
 ```XML
 <Label [text]='model.deliveryDate | date:"fullDate"' ></Label>
@@ -102,7 +102,7 @@ this.model.deliveryDate = new Date(2016, 2, 24);
 // this will display Thursday, March 24, 2016 for en-US locale
 ```
 
-Pipes like pipes in UNIX can be chained and used one after another, while each pipe receives the result of the previous pipe or value of the property:
+Pipes, like pipes in UNIX, can be chained and used one after another, while each pipe receives the result of the previous pipe or the value of the property:
 
 ```XML
 <Label [text]='model.deliveryDate | date:"fullDate" | testPipe' ></Label>
