@@ -22,7 +22,7 @@ In this article we are going to go through the core concepts of the Angular 2 fr
 
 # Components
 
-Components are the main building block of Angluar 2 applications. They define the application UI and the logic that controls it. Let's take look at the following component:
+Components are the main building block of Angular 2 applications. They define the application UI and the logic that controls it. Let's take look at the following component:
 
 ``` TypeScript
 import {Component} from "@angular/core";
@@ -48,7 +48,7 @@ Each component has two parts - the **component class** and the **component templ
 
 The class and the view communicate with each other using data binding and events.
 
-You can learn more about components on [angular.io](https://angular.io/docs/ts/latest/guide/architecture.html#!#component)
+You can learn more about components on [angular.io](https://angular.io/docs/ts/latest/guide/architecture.html#!#components).
 
 There are almost no differences between creating component classes in Angular 2 web apps and NativeScript apps.
 
@@ -56,7 +56,7 @@ There are almost no differences between creating component classes in Angular 2 
 The template defines the view of the component - what is actually rendered. 
 In NativeScript applications the template is defined with XML using [NativeScript UI elements]({% slug components %}). It is different from HTML. So instead of `<input>`, `<span>`, `<div>` etc. - we have `<text-field>`, `<label>` and layouts.
 
-The important thing is that although the elements are different - all the of [Angular’s template syntax](https://angular.io/docs/ts/latest/guide/template-syntax.html) works exactly the same. So you can still use template expressions, bindings, templates as well as all the build in directives.
+The important thing is that although the elements are different - all of the [Angular’s template syntax](https://angular.io/docs/ts/latest/guide/template-syntax.html) works exactly the same. So you can still use template expressions, bindings, templates as well as all the built-in directives.
 
 >When defining the template you can use both CamelCase and kebab-case. So, both `<StackLayout>` and `<stack-layout>` are valid inside a template definition. 
 
@@ -64,18 +64,18 @@ There is no text-node element in NativeScript so the following template will ren
 ``` XML
 <StackLayout orientation="vertical">
     {%raw%} {{ message }} {%endraw%} 
-</StackLayout>`,
+</StackLayout>
 ```
 
-To fix it you can just use a `Label` to show the message:
+To fix it, you can just use a `Label` to show the message:
 ``` XML
 <StackLayout orientation="vertical">
     {%raw%}<Label text="{{ message }}"></Label>{%endraw%} 
-</StackLayout>`
+</StackLayout>
 ```
 
 # Data Binding
-Data binding is a mechanism for connecting the parts of the view (template) with parts of the component class. There are several forms of data binding in an angular app. 
+Data binding is a mechanism for connecting the parts of the view (template) with parts of the component class. There are several forms of data binding in an Angular app. 
 
 ``` XML
 <StackLayout orientation="vertical">
@@ -89,7 +89,7 @@ Let's examine:
 
 * `[text]="message"` - *binds* the `text` property of the `Label` to the `message` property of the component. Whenever the message is updated the label will be updated as well. This kind of binding is called “one-way binding” - the data flows in one direction from the component to the view.
 * `(tap)="onTap()"` - means that when the button is tapped the `onTap` method in the component should be called. This kind of binding is called “event binding” - here the data flows from the view to the component.
-* `[(ngModel)]="message"` - This is an example of “two-way-binding”. When the user types something in the `TextField` - the `message` property of the component will be changed and vice versa - if your code changes the `message` property - the UI will be updated. Data flows in both directions, thus the name.
+* `[(ngModel)]="message"` - This is an example of “two-way binding”. When the user types something in the `TextField` - the `message` property of the component will be changed and vice versa - if your code changes the `message` property - the UI will be updated. Data flows in both directions, thus the name.
     
 This topic is covered in depth in the [data binding article]({% slug data-binding %}).
 
