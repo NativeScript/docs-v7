@@ -32,7 +32,7 @@ In your project, the files for each module reside in a dedicated subdirectory in
 + [application-settings]({%ns_cookbook application-settings%}): Lets you save and restore any information related to your application.
 + [http]({%ns_cookbook http%}): Lets you send web requests and receive the responses.
 + [image-source]({%ns_cookbook image-source%}): Provides the `ImageSource` class which encapsulates the common abstraction behind a platform-specific object that is used as a source for images (typically a Bitmap).
-+ [timer]({%ns_cookbook timer%}): Lets you to create, start, stop and react to timers.
++ [timer]({%ns_cookbook timer%}): Lets you create, start, stop and react to timers.
 + [trace]({%ns_cookbook trace%}): Lets you trace and print specific information based on categories.
 + [ui/image-cache]({%ns_cookbook ui/image-cache%}): Provides the `Cache` class which handles image download requests and caches the already downloaded images.
 + [connectivity]({%ns_cookbook connectivity%}): Lets you check the type of Internet connection and monitor its state changes.
