@@ -1,22 +1,22 @@
 ---
-title: NativeScript Advanced Setup—OS X
-description: Configure your OS X system to create, develop and build projects locally with NativeScript.
+title: NativeScript Advanced Setup—macOS
+description: Configure your macOS system to create, develop and build projects locally with NativeScript.
 position: 40
 publish: false
 slug: osx
 previous_url: /setup/ns-cli-setup/ns-setup-os-x
 ---
 
-# NativeScript Advanced Setup: OS X
+# NativeScript Advanced Setup: macOS
 
-This page contains a list of all system requirements needed to build and run NativeScript apps on OS X, as well as a guided walkthrough for getting these requirements in place. On OS X systems, you can use the NativeScript CLI to develop Android and iOS apps.
+This page contains a list of all system requirements needed to build and run NativeScript apps on macOS, as well as a guided walkthrough for getting these requirements in place. On macOS systems, you can use the NativeScript CLI to develop Android and iOS apps.
 
 * [System Requirements](#system-requirements)
 * [Advanced Setup Steps](#advanced-setup-steps)
 
 ## System Requirements
 
-* OS X Mavericks or later
+* macOS Mavericks or later
 * The latest stable official release of Node.js (LTS) [6.x](https://nodejs.org/dist/latest-v6.x/) 
 * (Optional) Homebrew to simplify the installation of dependencies
 * For iOS development
@@ -39,7 +39,7 @@ You must also have the following two environment variables setup for Android dev
 
 ## Advanced Setup Steps
 
-Complete the following steps to setup NativeScript on your OS X development machine:
+Complete the following steps to setup NativeScript on your macOS development machine:
 
 1. Install [Homebrew](http://brew.sh) to simplify the installation process.
 
@@ -53,7 +53,7 @@ Complete the following steps to setup NativeScript on your OS X development mach
 
 1. Install the dependencies for iOS development.
     1. Run the App Store and download and install Xcode 5 or later.
-    1. Go to [Downloads for Apple Developers](https://developer.apple.com/downloads/index.action), log in and download and install the **Command Line Tools for Xcode** for your version of OS X and Xcode.
+    1. Go to [Downloads for Apple Developers](https://developer.apple.com/downloads/index.action), log in and download and install the **Command Line Tools for Xcode** for your version of macOS and Xcode.
     1. Install the [xcodeproj ruby gem](https://rubygems.org/gems/xcodeproj/versions/0.28.2) with the following command.
 
         <pre class="add-copy-button"><code class="language-terminal">sudo gem install xcodeproj
@@ -72,7 +72,7 @@ Complete the following steps to setup NativeScript on your OS X development mach
 1. Install the dependencies for Android development.
     1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
         1. Go to [Java SE Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and click **Download** for JDK.
-        1. In the **Java SE Development Kit** section, accept the license agreement and click the download link for Mac OS X.
+        1. In the **Java SE Development Kit** section, accept the license agreement and click the download link for Mac macOS.
         1. Wait for the download to complete and install the JDK.
     1. Set the JAVA_HOME system environment variable.
 
@@ -98,7 +98,7 @@ Complete the following steps to setup NativeScript on your OS X development mach
            </code></pre>
 
 1. (Optional) Install Genymotion.<br/>Genymotion is a third-party native emulator.
-    1. Go to [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads) and download and install VirtualBox for OS X.
+    1. Go to [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads) and download and install VirtualBox for macOS.
     1. Go to [Get Genymotion](https://www.genymotion.com/#!/download), select Mac and click **Get Genymotion**.
     1. After the download completes, run the installer and complete the installation.
     1. Add the following file paths to the `PATH` system environment variable.
