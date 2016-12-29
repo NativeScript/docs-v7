@@ -260,7 +260,7 @@ The built in [loadMoreItemsEvent](http://docs.nativescript.org/api-reference/cla
 </ListView>
 ```
 ```TypeScript
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { EventData } from 'data/observable';
 
 @Component({
