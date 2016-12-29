@@ -261,7 +261,7 @@ This creates a simple `Grocery` model object that you can use throughout your ap
 ``` TypeScript
 import { Injectable } from "@angular/core";
 import { Http, Headers } from "@angular/http";
-import { Observable } from "rxjs/Rx";
+import { Observable as RxObservable } from "rxjs/Rx";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/switchMap";
 
@@ -280,14 +280,14 @@ export class GroceryListService {
       headers: headers
     })
             .map(res => <{ Result: { Id: string, Name: string }[] }>res.json())
-            .switchMap(resp => Observable.from(resp.Result))
+            .switchMap(resp => RxObservable.from(resp.Result))
             .map(go => new Grocery(go.Id, go.Name))
             .catch(this.handleErrors);
   }
 
   handleErrors(error: Response) {
     console.log(JSON.stringify(error.json()));
-    return Observable.throw(error);
+    return RxObservable.throw(error);
   }
 }
 ```
