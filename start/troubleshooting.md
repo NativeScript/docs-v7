@@ -64,7 +64,7 @@ A problem occurred configuring root project 'app_name'.
 
 ### Cannot run or debug apps on iOS 8.1.3 devices with Xcode 6.1
 
-**Problem:** On OS X systems with Xcode 6.1 installed, you cannot run or debug apps on iOS 8.1.3 devices.<br/>The developer disk images provided with the iOS SDK in Xcode 6.1 are not compatible with iOS 8.1.3. The NativeScript CLI uses these disk images to work with your attached iOS devices.
+**Problem:** On macOS systems with Xcode 6.1 installed, you cannot run or debug apps on iOS 8.1.3 devices.<br/>The developer disk images provided with the iOS SDK in Xcode 6.1 are not compatible with iOS 8.1.3. The NativeScript CLI uses these disk images to work with your attached iOS devices.
 
 **Solution:** Update to Xcode 6.1.1 or later.
 
@@ -74,7 +74,7 @@ A problem occurred configuring root project 'app_name'.
 
 **Solution:** Re-run the `debug` command. If you continue to have issue with your Android emulator performance, you may want to consider using a more performant third-party emulator option such as [Genymotion](https://www.genymotion.com/).
 
-### The debug tools for Android never launch on OS X
+### The debug tools for Android never launch on macOS
 
 **Problem:** The NativeScript CLI uses the [opener npm package](https://www.npmjs.com/package/opener) to open Chrome. The current version of the package that the CLI uses cannot open the browser.
 
