@@ -18,6 +18,7 @@ In this article we will cover the following topics:
 * [Using an Item Template](#using-an-item-template)
 * [Using Multiple Item Templates](#using-multiple-item-templates)
 * [Using Async Pipe](#using-async-pipe)
+* [Using Load More Items](#load-more-items)
 
 ## Using the ListView Component
 
@@ -242,6 +243,47 @@ export class ListTestAsync {
         setTimeout(() => {
             clearInterval(intervalId);
         }, 15000);
+    }
+}
+```
+
+## Load More Items
+
+The built in [loadMoreItemsEvent](http://docs.nativescript.org/api-reference/classes/_ui_list_view_.listview.html#loadmoreitemsevent) can be used to implement infinite scrolling in your application. Infinite scrolling allows you to load content on demand without the need for pagination.
+
+```HTML
+// list-test.html
+<ListView [items]="myItems" (loadMoreItems)="loadMoreItems()">
+    <template let-item="item" let-i="index">
+        <Label [text]="item"></Label>
+    </template>
+</ListView>
+```
+```TypeScript
+import { Component } from '@angular/core';
+import { EventData } from 'data/observable';
+
+@Component({
+    selector: 'list-test',
+    styleUrls: ['list-test.css'],
+    template: 'list-test.html'
+})
+export class ListTest {
+    public myItems: string[] = [];
+    public counter = 0;
+
+    constructor() {
+        this.myItems = [];
+        for (var i = 0; i < 50; i++) {
+            this.myItems.push("data item " + i);
+            this.counter = i;
+        }
+    }
+
+    loadMoreItems() {
+        // Load more items here.
+        this.myItems.push("data item " + this.counter)
+        this.counter += 1;
     }
 }
 ```
