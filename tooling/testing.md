@@ -81,10 +81,10 @@ var mainViewModel = require("../main-view-model"); //Require the main view model
 
 describe("Hello World Sample Test:", function() {
   it("Check counter.", function() {
-    expect(mainViewModel.mainViewModel.counter).toEqual(42); //Check if the counter equals 42.
+    expect(mainViewModel.createViewModel().counter).toEqual(42); //Check if the counter equals 42.
   });
   it("Check message.", function () {
-  	expect(mainViewModel.mainViewModel.message).toBe("42 taps left"); //Check if the message is "42 taps left".
+  	expect(mainViewModel.createViewModel().message).toBe("42 taps left"); //Check if the message is "42 taps left".
   });
 });
 ```
@@ -93,10 +93,10 @@ var mainViewModel = require("../main-view-model"); //Require the main view model
 
 describe('Hello World Sample Test:', function () {
 	it('Counter should be 42 on start.', function () {
-		assert.equal(mainViewModel.mainViewModel.counter, 42); //Assert that the counter equals 42.
+		assert.equal(mainViewModel.createViewModel().counter, 42); //Assert that the counter equals 42.
 	});
 	it('Message should be "42 taps left" on start.', function () {
-		assert.equal(mainViewModel.mainViewModel.message, "42 taps left"); //Assert that the message is "42 taps left".
+		assert.equal(mainViewModel.createViewModel().message, "42 taps left"); //Assert that the message is "42 taps left".
 	});
 });
 ```
@@ -104,8 +104,8 @@ describe('Hello World Sample Test:', function () {
 var mainViewModel = require("../main-view-model"); //Require the main view model to expose the functionality inside it.
 
 QUnit.test("Hello World Sample Test:", function (assert) {
-	assert.equal( mainViewModel.mainViewModel.counter, 42, "Counter, 42; equal succeeds." ); //Assert that the counter equals 42.
-	assert.equal( mainViewModel.mainViewModel.message, "42 taps left", "Message, 42 taps left; equal succeeds." ); //Assert that the message is "42 taps left".
+	assert.equal( mainViewModel.createViewModel().counter, 42, "Counter, 42; equal succeeds." ); //Assert that the counter equals 42.
+	assert.equal( mainViewModel.createViewModel().message, "42 taps left", "Message, 42 taps left; equal succeeds." ); //Assert that the message is "42 taps left".
 });
 ```
 
