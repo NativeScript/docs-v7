@@ -56,7 +56,7 @@ Next, let's dig into the `app` folder, as that's where you'll be spending the ma
     │   │   └── iOS
     │   ├── shared
     │   │   └── ...
-    │   ├── views
+    │   ├── pages
     │   │   └── login
     │   │       ├── login.js
     │   │       └── login.xml
