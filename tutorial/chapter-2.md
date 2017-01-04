@@ -73,7 +73,7 @@ Here's what these various files and folders do:
 - **app.css**: This file contains global styles for your app. We'll dig into app styling in [chapter 2.4](#24-css).
 - **app.js**: This file sets up your application's starting module and initializes the app.
 
-Let's start with `app/app.js`, as it's the starting point for NativeScript apps. Your `app.js` contains the two lines below: 
+Let's start with `app/main.js`, as it's the starting point for NativeScript apps. Your `main.js` contains the two lines below: 
 
 ``` JavaScript
 var applicationModule = require("application");
