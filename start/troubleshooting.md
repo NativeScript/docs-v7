@@ -17,7 +17,7 @@ The NativeScript framework has a vibrant community that’s here to help when yo
 
 If you hit an issue, start by seeing if anyone else has reported the problem on [Stack Overflow](http://stackoverflow.com/questions/tagged/nativescript). If you can’t find any information, try [asking the question yourself](http://stackoverflow.com/questions/ask) with any details needed to recreate the issue. Make sure to include the “NativeScript” tag so your question is visible to the NativeScript community.
 
-If you need more help than a Q&A format like Stack Overflow can provide, try [joining the NativeScript community Slack](http://developer.telerik.com/wp-login.php?action=slack-invitation). The Slack chat is a great place to get help troubleshooting problems, as well as connect with other NativeScript developers.
+If you need more help than a Q&A format like Stack Overflow can provide, try [joining the NativeScript community forum](http://forum.nativescript.org/). The community forum is a great place to get help troubleshooting problems, as well as connect with other NativeScript developers.
 
 Finally, if you’ve found an issue with the NativeScript framework itself, please report the problem in the appropriate GitHub repository.
 
