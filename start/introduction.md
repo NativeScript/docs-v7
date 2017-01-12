@@ -48,4 +48,5 @@ Ready to get started developing with NativeScript? We offer a set of comprehensi
 
 ## Join the NativeScript Community
 
-We have a vibrant, engaged community and are here to help. You can find us on [Twitter](https://twitter.com/nativescript) and [Slack](http://developer.telerik.com/wp-login.php?action=slack-invitation).
+We have a vibrant, engaged community and are here to help. You can find us on [Twitter](https://twitter.com/nativescript) and our [community forum](http://forum.nativescript.org/).
+
