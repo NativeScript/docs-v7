@@ -53,7 +53,7 @@ $ tns
 
 When you build with NativeScript you’re building truly native iOS and Android apps, and as such, you need to set up each platform you intend to build for on your development machine. To ease the pain of installing all of these requirements manually, the NativeScript CLI provides quick-start scripts for Windows and OS X that handle the necessary setup for you automatically. Let’s look at how they work.
 
-> **TIP**: Setting up your machine for native development can be tricky, especially if you’re new to mobile development. If you get stuck, or if you have questions while going through these instructions, the NativeScript Community Slack is a great place to get help. Feel free to [join us](http://developer.telerik.com/wp-login.php?action=slack-invitation), and ask any installation questions you may have in the #getting-started channel.
+> **TIP**: Setting up your machine for native development can be tricky, especially if you’re new to mobile development. If you get stuck, or if you have questions while going through these instructions, the [NativeScript community forum](http://forum.nativescript.org/) is a great place to get help.
 
 ### Windows
 
