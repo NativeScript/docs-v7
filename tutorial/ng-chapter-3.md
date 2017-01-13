@@ -478,7 +478,7 @@ The `UserService` class is using the same dependency injection technique to brin
 The other new bit of code is the return value of this new `register()` method. `register()` returns `this.http.post()`, which is an RxJS `Observable`. You can refer to the Angular docs for a [full tutorial on how RxJS observables work](https://angular.io/docs/ts/latest/guide/server-communication.html), but for now just know that the most common thing you’ll need to do with observables is subscribe to them, which is what the new code you added to `app.component.ts` does:
 
 ``` TypeScript
-this._userService.register(this.user)
+this.userService.register(this.user)
   .subscribe(
     () => {
       alert("Your account was successfully created.");
