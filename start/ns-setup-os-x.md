@@ -29,7 +29,7 @@ This page contains a list of all system requirements needed to build and run Nat
     * JDK 8 or a later stable official release
     * Android SDK 22 or a later stable official release
     * Local Maven repository for Support Libraries
-    * Android SDK Build-tools 23.0.3 or a later stable official release
+    * Android SDK Build-tools 25.0.2 or a later stable official release
     * (Optional) Genymotion to expand your testing options
 
 You must also have the following two environment variables setup for Android development:
@@ -46,7 +46,7 @@ Complete the following steps to setup NativeScript on your macOS development mac
     <pre class="add-copy-button"><code class="language-terminal">ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     </code></pre>
 
-1. Install the latest Node.js [4.x](https://nodejs.org/dist/latest-v4.x/), [6.x](https://nodejs.org/dist/latest-v6.x/) or [7.x](https://nodejs.org/dist/latest-v7.x/) stable official release. We recommend using Node.js v6.x.
+1. Install the latest Node.js [6.x](https://nodejs.org/dist/latest-v6.x/) or [7.x](https://nodejs.org/dist/latest-v7.x/) stable official release. We recommend using Node.js v6.x.
 
     <pre class="add-copy-button"><code class="language-terminal">brew install homebrew/versions/node6-lts
     </code></pre>
