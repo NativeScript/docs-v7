@@ -215,12 +215,12 @@ After your app updates with this change, you may expect to see a polished login 
 What went wrong? In NativeScript whenever you use more than one UI element, you need to tell NativeScript how to arrange those elements on the screen. Since you’re not doing that currently, NativeScript is incorrectly assuming you want the last element—the `<Button>`—to take up the whole screen. To arrange these elements, let’s move onto the NativeScript feature for aligning elements on the screen: NativeScript layouts.
 
 > **TIP**:
-* The [code samples](https://docs.nativescript.org/angular/code-samples/overview.html) portion of the NativeScript documentation is a great place to find copy-and-paste friendly examples of the various NativeScript UI components. The [TextField](https://docs.nativescript.org/angular/code-samples/text-field.html) and [Button](https://docs.nativescript.org/angular/code-samples/button.html) code sample pages are great places to get started.
+* The [code samples](https://docs.nativescript.org/angular/code-samples/overview.html) portion of the NativeScript documentation is a great place to find copy-and-paste friendly examples of the various NativeScript UI components. The [TextField](https://docs.nativescript.org/angular/code-samples/ui/text-field.html) and [Button](https://docs.nativescript.org/angular/code-samples/ui/button.html) code sample pages are great places to get started.
 * If you’re coming from a web or hybrid development background, you may find Nic Raboy’s guide for [Upgrading Hybrid Apps to Native with NativeScript](http://www.hybridtonative.com/) helpful, as it compares and contrasts web and native user interface implementations.
 
 ## 2.4: Layouts
 
-NativeScript provides several different layout containers that allow you to place UI elements precisely where you want them to appear. 
+NativeScript provides several different layout containers that allow you to place UI elements precisely where you want them to appear.
 
 - The [Absolute Layout]({%ns_cookbook ui/layouts/absolute-layout%}) lets you position elements using explicit x and y coordinates. This is useful when you need to place elements in exact locations, for example showing an activity indicator widget in the top-left corner of your app.
 - The [Dock Layout]({%ns_cookbook ui/layouts/dock-layout%}) is useful for placing UI elements at the outer edges of your app. For example, a container docked at the bottom of the screen would be a good location for an ad.
