@@ -32,7 +32,7 @@ The `*.ios.*` and `*.android.*` naming convention should look familiar, as it’
 
 ## 4.1: UI elements
 
-So far, you’ve only used NativeScript UI elements by including them in an Angular 2 component’s `template`, but you can also programmaticly create and access UI elements, and each UI element has a set of properties and methods you can use to customize your app. To see how this works lets access the `<Page>` UI element and make some changes to it.
+So far, you’ve only used NativeScript UI elements by including them in an Angular component’s `template`, but you can also programmaticly create and access UI elements, and each UI element has a set of properties and methods you can use to customize your app. To see how this works lets access the `<Page>` UI element and make some changes to it.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Customize the Page
@@ -58,7 +58,7 @@ import { Component, OnInit } from "@angular/core";
 export class LoginComponent implements OnInit {
 ```
 
-If you’re using an editor that supports TypeScript, you should see an error that says something like *“Class ‘LoginComponent’ incorrectly implements interface ‘OnInit’”*. When you implement a TypeScript class interface, you’re telling the TypeScript compiler that you must implement all methods that the interface requires. In the case of `OnInit`, Angular 2 requires you to implement a single `ngOnInit()` method. To implement it, add the following code within the `LoginComponent` class:
+If you’re using an editor that supports TypeScript, you should see an error that says something like *“Class ‘LoginComponent’ incorrectly implements interface ‘OnInit’”*. When you implement a TypeScript class interface, you’re telling the TypeScript compiler that you must implement all methods that the interface requires. In the case of `OnInit`, Angular requires you to implement a single `ngOnInit()` method. To implement it, add the following code within the `LoginComponent` class:
 
 ``` TypeScript
 ngOnInit() {
@@ -67,7 +67,7 @@ ngOnInit() {
 }
 ```
 
-`ngOnInit` is one of several [component lifecycle hooks](https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html) that Angular 2 provides. As its name implies, `ngOnInit` gets invoked when Angular initializes this component.
+`ngOnInit` is one of several [component lifecycle hooks](https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html) that Angular provides. As its name implies, `ngOnInit` gets invoked when Angular initializes this component.
 
 We’ll discuss what the code within `ngOnInit()` does momentarily, but finally, to make these changes compile and run, change the `LoginComponent`’s existing `constructor()` declaration to use the code below.
 
@@ -239,7 +239,7 @@ How does this work? Let’s return to this chunk of code:
 
 The [`<ListView>` UI element](https://docs.nativescript.org/api-reference/classes/_ui_list_view_.listview.html) requires an `items` property that points to an array of data—in this case, the `groceryList` array you added to your `ListComponent` class. The list view element requires a child `<template>` element that specifies how to render each item in the `items` array.
 
-The `let-*` syntax is Angular 2’s way of creating template variables within loops. You can think of the syntax working like TypeScript’s `let` keyword. This gives you the ability to refer to each item in the array as `item` within the template. For this template, you render each item in the array with a single `<Label>` UI element, and because of the `[text]="item.name"` binding, those labels contain the text from the `name` property of each of the items in `groceryList` TypeScript array.
+The `let-*` syntax is Angular’s way of creating template variables within loops. You can think of the syntax working like TypeScript’s `let` keyword. This gives you the ability to refer to each item in the array as `item` within the template. For this template, you render each item in the array with a single `<Label>` UI element, and because of the `[text]="item.name"` binding, those labels contain the text from the `name` property of each of the items in `groceryList` TypeScript array.
 
 Now that you have a hardcoded list displaying, let’s see how to swap that out with live data.
 

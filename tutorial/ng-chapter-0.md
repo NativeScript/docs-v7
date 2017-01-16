@@ -25,13 +25,10 @@ Welcome to the NativeScript & Angular getting started guide. In this hands-on tu
 
 <div class="intro-box">
   <img src="../img/cli-getting-started/angular/chapter0/Angular_logo.png" class="plain" alt="Angular logo">
-  <p><a href="https://angularjs.org/">Angular JS</a> is one of the most popular open source JavaScript frameworks for application development. The latest version of Angular, <a href="https://angular.io/">Angular 2</a>, makes it possible to use Angular outside of a web browser, and developers at <a href="http://www.telerik.com/">Telerik</a>—the company that created and maintains NativeScript—<a href="https://docs.google.com/document/d/1J6fZcVbVa6uONVCJIox2A3Jn5TWgspLufmryfA1OXGk/edit#heading=h.trgonlvb0z3j">have been working closely with developers at Google</a> to make Angular in NativeScript a reality.</p>
+  <p><a href="https://angular.io/">Angular JS</a> is one of the most popular open source JavaScript frameworks for application development. The latest version of Angular <a href="https://angular.io/">makes it possible to use the framework outside of a web browser</a>, and developers at <a href="http://www.telerik.com/">Telerik</a>—the company that created and maintains NativeScript—<a href="https://docs.google.com/document/d/1J6fZcVbVa6uONVCJIox2A3Jn5TWgspLufmryfA1OXGk/edit#heading=h.trgonlvb0z3j">have been working closely with developers at Google</a> to make Angular in NativeScript a reality.</p>
 </div>
 
-<div class="intro-box">
-  <img src="../img/cli-getting-started/angular/chapter0/NativeScript_Angular_logo.png" class="plain" alt="Angular logo">
-  <p>The result is a software architecture that allows you to build mobile apps using the same framework—and in some cases the same code—that you use to build Angular web apps, with the performance you’d expect from native code. Let’s look at how it all works by building an app.</p>
-</div>
+The result is a software architecture that allows you to build mobile apps using the same framework—and in some cases the same code—that you use to build Angular web apps, with the performance you’d expect from native code. Let’s look at how it all works by building an app.
 
 > **NOTE**: If you spot any issues while completing this guide, let us know on our [Angular GitHub repo](https://github.com/NativeScript/nativescript-angular/issues).
 
