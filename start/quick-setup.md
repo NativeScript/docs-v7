@@ -10,10 +10,6 @@ previous_url: /setup/quick-setup
 
 With the open-source NativeScript command-line interface and an IDE or text editor of your choice, you can create, develop, store and build your apps entirely locally, free of charge and anonymously. Let’s look at how to set up the CLI for development.
 
-> **NOTE**: Recently we implemented a GUI installer for Windows. You can use this installer to setup the development environment for NativeScript.
-> * [GUI Installer for Windows](https://www.nativescript.org/docs/default-source/default-document-library/nativescript-cli-setup-wix.exe?sfvrsn=2)
-> After the installer is finished, go directly to [STEP 4: Verify the setup](#step-4-verify-the-setup).
-
 
 > **NOTE**: The steps on this page are quick setup steps intended for users new to mobile development. If you have existing mobile experience, if you’re on Linux, or if you want full control of the installation process, refer to one of the advanced setup guides below, which walk you through manually setting up your environment for NativeScript development.
 > * [Advanced setup: Windows](/start/ns-setup-win)
