@@ -49,38 +49,38 @@ Let’s get the starting point of this app so you can follow along with the rest
     <b>Exercise</b>: Get the Groceries starting point
 </h4>
 
-Navigate to a folder where you want to keep your app code:
+Your first step will be to find a place on your development machine to store this new project. You might want to set up a folder structure that looks something like this:
 
 <div class="no-copy-button"></div>
 
 ```
-cd the-folder-you-want-groceries-to-be-in
+.
+└── NativeScript-Projects
+    ├── HelloWorld
+    └── ...
 ```
 
-Next, assuming you have [git installed](http://www.git-scm.com/), clone the Groceries repo from GitHub:
+Once you have a folder structure you’re comfortable in place navigate to that folder using your terminal’s `cd` command, and run the `tns create` command below to create a new app named Groceries.
 
 ```
-git clone https://github.com/NativeScript/sample-Groceries.git
+tns create Groceries --template nativescript-template-ng-groceries
 ```
 
-After that, change to the newly cloned repo's folder:
+The command will again take a minute to complete, as the Groceries template contains a number of images you’ll be using as part of this tutorial. When the process finishes use the `cd` command to navigate into the new app.
 
 ```
-cd sample-Groceries
+cd Groceries
 ```
 
-Finally, switch to the “angular-start” branch for this guide's starting point:
+And then open the new app in your text editor of choice. If you’re using Visual Studio Code you can use the `code` command to do so.
 
 ```
-git checkout angular-start
+code .
 ```
 
 <div class="exercise-end"></div>
 
-> **TIP:**
-> * The “angular-end” branch has the final state of this guide's tutorial. Feel free to [refer to the branch on GitHub](https://github.com/NativeScript/sample-Groceries/tree/angular-end) if you get stuck.
-
-Now that you have the app locally, let’s take a look at the files that make up this application. Getting familiar with the NativeScript folder structure will help you understand how NativeScript works, and also help you structure code in your own applications.
+Now that you have the app locally, let’s take a look at the files that make up this application.
 
 ## 2.2: Folder structure
 
@@ -88,7 +88,7 @@ To keep things simple, let's start by looking at the outer structure of the Groc
 
 ```
 .
-└── sample-Groceries
+└── Groceries
     ├── app
     │   └── ...
     ├── hooks
