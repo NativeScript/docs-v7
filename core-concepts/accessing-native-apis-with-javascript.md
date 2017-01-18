@@ -1,9 +1,20 @@
 ---
-title: Accessing Native APIs with JavaScript
+title: Accessing Native APIs
 description: Learn how to access native APIs in NativeScript
 position: 100
 slug: access-native-apis
 ---
+
+## Table of contents
+
+- [Overview](#overview)
+- [Numeric Types](#numeric-types)
+- [Classes and Objects](#classes-and-objects)
+- [String](#string)
+- [Boolean](#boolean)
+- [Array](#array)
+- [Undefined & Null](#undefined-and-null)
+- [Intellisense and access to native APIs via TypeScript](#intellisense-and-access-to-native-apis-via-typescript)
 
 # Overview
 
@@ -106,7 +117,7 @@ var numbers = [3, 6, 19, -2, 7, 6];
 var min = ns.example.Math.minElement(numbers); // -2
 ```
 
-# Undefined & Null
+# Undefined and Null
 
 JavaScript [Undefined](http://www.w3schools.com/jsref/jsref_undefined.asp) & [Null](http://www.w3schools.com/js/js_datatypes.asp) map to Java null pointer and Objective-C nil. Native null values map to JavaScript null.
 
@@ -122,16 +133,22 @@ var button = new android.widget.Button(context);
 button.setOnClickListener(undefined); // the Java call will be made using the null keyword
 ```
 
-# Intellisense
+# Intellisense and access to native APIs via TypeScript
 
-If you are working with TypeScript enabled project and Visual Studio Code and you want to add intellisense you have to add a dev dependency to tns-platform-declarations on your project (`npm install tns-platform-declarations --save-dev`) and later add the following to the references.d.ts of your project (if you already have tns-core-modules in your project change it as follows):
+To have access and Intellisense for the native APIs with TypeScript enabled project, you have to add a dev dependency to `tns-platform-declarations` 
+
+Steps to install and enable 
+
+- `npm install tns-platform-declarations --save-dev`
+
+- Modify `references.d.ts` file as follows:
 ```
 /// <reference path="node_modules/tns-core-modules/tns-core-modules.es2016.d.ts" />
 /// <reference path="node_modules/tns-platform-declarations/android.d.ts" />
 /// <reference path="node_modules/tns-platform-declarations/ios.d.ts" />
 ```
 
-plus the following settings in your `tsconfig.json`:
+- Modify `tsconfig.json` to contain the following settings:
 ```
 {
     "compilerOptions": {
