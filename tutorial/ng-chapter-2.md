@@ -126,7 +126,7 @@ Next, let's dig into the `app` folder, as that's where you'll be spending the ma
 
 ```
 .
-└── sample-Groceries
+└── Groceries
     ├── app
     │   ├── App_Resources
     │   │   ├── Android

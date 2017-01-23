@@ -29,7 +29,7 @@ Return to your terminal and make sure that you are working in the root directory
 <div class="no-copy-button"></div>
 
 ```
-sample-Groceries <----------------
+Groceries <----------------
     ├── app
     │   └── ...
     ├── package.json
