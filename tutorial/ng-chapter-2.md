@@ -1,11 +1,11 @@
 ---
-title: Chapter 2—Creating user interfaces
+title: Chapter 2—Creating User Interfaces
 position: 3
 guide: true
 environment: angular
 ---
 
-# Chapter 2—Creating user interfaces
+# Chapter 2—Creating User Interfaces
 
 In this chapter you’re going to learn how to build NativeScript user interfaces, including markup, styling, images, and more.
 
