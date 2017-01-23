@@ -18,6 +18,15 @@ You can debug apps developed with the NativeScript framework from both the Nativ
 
 > **Note** For more details about `Debugger Command` options, you can use `tns debug android --help` or `tns debug ios --help`.
 
+The `debug` command will build and deploy new package on the connected device/emulator.
+It will also track for changes in the `app` folder which mean it will livesync your application
+when changes in your code are saved. On code change & save, the application will be restarted automatically.
+
+The debugging agent won't be started automatically by NativeScript-CLI but will provide a link for the user to open in Google Chrome. The link will appear in the CLI log after the command is executed. Android and iOS have different links, but both can e opened in Google Chrome. When the link is opened, the debugger will be attached.
+
+To enable the same behaviour in iOS, you need to execute `tns debug ios --chrome` (there's a special flag because the default action uses Safari).
+
+
 To start the debugger for Android, run the following command:
 
 ```Bash
@@ -40,6 +49,7 @@ You can customize the `tns debug` command using any of the following options:
 * `--stop` - Detaches the debug tools.
 * `--emulator` - Specifies that you want to debug the app in an emulator.
 * `--timeout` - Sets the number of seconds that the NativeScript CLI will wait for the debugger to boot. If not set, the default timeout is 90 seconds.
+* `--chrome` - iOS specific flag to generate link for debugging with Google Chrome agent (default is Safari)
 
 For more information about Android debugging, run the following command:
 
