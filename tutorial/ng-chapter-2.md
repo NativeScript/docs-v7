@@ -401,7 +401,7 @@ Why three files? Much like you divided your global files into `app.css`, `platfo
 
 The great thing about placing CSS rules at the component level is you can use concise CSS selectors such as `Button` and `TextField`, and not worry about those rules applying to all buttons and text fields in your application, as Angular 2 ensures those rules remain scoped to your component.
 
-Before we see what your app looks like now, there’s one small change you need to make. Notice that the last selector used in `login-common.css` is `.submit-button`. Much like using CSS on the web, in NativeScript you can both `id` and `class` attributes to target specific user interface elements, but at the moment there’s no UI element in your app with an `class` of `"submit-button"`. Let’s change that.
+Before we see what your app looks like now, there’s one small change you need to make. Notice that the last selector used in `login-common.css` is `.submit-button`. Much like using CSS on the web, in NativeScript you can add both `id` and `class` attributes to target specific user interface elements, but at the moment there’s no UI element in your app with an `class` of `"submit-button"`. Let’s change that.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Add a <code>class</code> attribute
