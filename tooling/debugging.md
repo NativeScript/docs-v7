@@ -16,7 +16,16 @@ You can debug apps developed with the NativeScript framework from both the Nativ
 
 ## Debugger Commands
 
-> **Note** For more details about `Debugger Command` options, you can use `tns debug android --help` or `tns debug ios --help`.
+The `debug` command builds and deploys new package on the connected device/emulator.
+It also tracks for changes in the `app` folder which mean it will livesync your application
+when changes in your code are saved. On code change & save, the application is restarted automatically.
+
+> **Note** Chagnes inside `App_Resources` folder (e.g. `AndroidManifest.xml`, `info.plist` or any of the resources folders) won't trigger the livesync and the app needs to be rebuild entirely for those to take effect.
+
+The debugging agent won't be started automatically by NativeScript-CLI but a link is provided for the user to open in Google Chrome. The link appears in the CLI log after the command is executed. Android and iOS have different links, but both can be opened in Google Chrome. The debugger is attached once the link is opened.
+
+To enable the same behaviour in iOS, the command `tns debug ios --chrome` needs to be execured (there's a special flag because the default action uses Safari as debug agent).
+
 
 To start the debugger for Android, run the following command:
 
@@ -32,6 +41,8 @@ tns debug ios
 
 This command starts the platform-specific debugger with the default `--debug-brk` option.
 
+> **Note** For more details about `Debugger Command` options, you can use `tns debug android --help` or `tns debug ios --help`.
+
 ## Debugger Options
 
 You can customize the `tns debug` command using any of the following options:
@@ -40,6 +51,7 @@ You can customize the `tns debug` command using any of the following options:
 * `--stop` - Detaches the debug tools.
 * `--emulator` - Specifies that you want to debug the app in an emulator.
 * `--timeout` - Sets the number of seconds that the NativeScript CLI will wait for the debugger to boot. If not set, the default timeout is 90 seconds.
+* `--chrome` - iOS specific flag to generate link for debugging with Google Chrome agent (default is Safari)
 
 For more information about Android debugging, run the following command:
 
