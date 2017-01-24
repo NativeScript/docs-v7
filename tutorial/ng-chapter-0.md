@@ -25,7 +25,7 @@ Welcome to the NativeScript & Angular getting started guide. In this hands-on tu
 
 <div class="intro-box">
   <img src="../img/cli-getting-started/angular/chapter0/Angular_logo.png" class="plain" alt="Angular logo">
-  <p><a href="https://angular.io/">Angular JS</a> is one of the most popular open source JavaScript frameworks for application development. The latest version of Angular <a href="https://angular.io/">makes it possible to use the framework outside of a web browser</a>, and developers at <a href="http://www.telerik.com/">Telerik</a>—the company that created and maintains NativeScript—<a href="https://docs.google.com/document/d/1J6fZcVbVa6uONVCJIox2A3Jn5TWgspLufmryfA1OXGk/edit#heading=h.trgonlvb0z3j">have been working closely with developers at Google</a> to make Angular in NativeScript a reality.</p>
+  <p><a href="https://angular.io/">Angular</a> is one of the most popular open source JavaScript frameworks for application development. The latest version of Angular makes it possible to use the framework outside of a web browser, and developers at <a href="https://www.progress.com/">Progress</a>—the company that created and maintains NativeScript—<a href="http://angularjs.blogspot.com/2015/12/building-mobile-apps-with-angular-2-and.html">worked closely with developers at Google for over a year</a> to make Angular in NativeScript a reality.</p>
 </div>
 
 The result is a software architecture that allows you to build mobile apps using the same framework—and in some cases the same code—that you use to build Angular web apps, with the performance you’d expect from native code. Let’s look at how it all works by building an app.
@@ -47,7 +47,7 @@ This guide will _not_ assume you have any knowledge of Angular 2 or TypeScript. 
 
 In order to start this tutorial you need to have the NativeScript CLI (command-line interface) installed on your development machine, which you can do using the link below.
 
-* [Complete the NativeScript installation guide](/angular/start/quick-setup)
+* [Complete the NativeScript installation guide](/start/quick-setup)
 
 > **TIP**: Setting up your machine for native development can be tricky, especially if you’re new to mobile development. If you get stuck, or if you have questions while going through these instructions, the [NativeScript community forum](http://forum.nativescript.org/) is a great place to get help.
 

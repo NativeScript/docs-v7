@@ -18,7 +18,7 @@ In this chapter you’re going to start with the basics, including creating new 
 
 ## 1.1: Creating apps
 
-In NativeScript you create and run apps using the NativeScript CLI. After [installation](/angular/start/quick-setup), the NativeScript CLI is available on your terminal or command prompt as a `tns` command—which is short for <b>T</b>elerik <b>N</b>ative<b>S</b>cript.
+In NativeScript you create and run apps using the NativeScript CLI. After [installation](/start/quick-setup), the NativeScript CLI is available on your terminal or command prompt as a `tns` command—which is short for <b>T</b>elerik <b>N</b>ative<b>S</b>cript.
 
 In this section you’ll familiarize yourself with the NativeScript CLI, and use the CLI’s `create` command to start your first NativeScript app.
 
@@ -68,7 +68,7 @@ If you are on a Mac, execute the following command on your terminal to run your 
 tns run ios
 ```
 
-> **WARNING**: If you get an error at this point you likely haven’t completed the [NativeScript CLI installation instructions](/angular/start/quick-setup). If you’ve gone through the instructions and are still stuck, try asking for help in the [NativeScript community forum](http://forum.nativescript.org/).
+> **WARNING**: If you get an error at this point you likely haven’t completed the [NativeScript CLI installation instructions](/start/quick-setup). If you’ve gone through the instructions and are still stuck, try asking for help in the [NativeScript community forum](http://forum.nativescript.org/).
 
 The `run` command will take a few seconds to complete, as the NativeScript CLI will actually be building and deploying a native iOS application. When the command finishes the native emulator will open and you will see your app:
 
@@ -83,7 +83,7 @@ tns run android
 ```
 
 > **NOTE**:
-> * You must have at least one AVD (Android Virtual Device) configured on your development machine for this command to run your app up on an Android emulator. If you don’t have one installed currently go ahead and [set one up now](/angular/tooling/android-virtual-devices).
+> * You must have at least one AVD (Android Virtual Device) configured on your development machine for this command to run your app up on an Android emulator. If you don’t have one installed currently go ahead and [set one up now](/tooling/android-virtual-devices).
 > * If you’re on a Mac you have the ability to develop for Android and iOS simultaneously.  Instead of stopping the previous `tns run ios` command, open a new tab in your terminal of choice (`Command` + `T` works in most clients), and execute `tns run android` there.
 
 <div class="exercise-end"></div>
@@ -104,7 +104,7 @@ This happens because the `tns run` command not only starts your apps, it also wa
 
 Open your new project in your favorite text editor or IDE.
 
-> **TIP**: You can use any editor to develop NativeScript apps, but we recommend Visual Studio Code. Feel free to [skip ahead to this chapter’s appendix]((#appendix-a-choosing-an-editor)) for more information.
+> **TIP**: You can use any editor to develop NativeScript apps, but we recommend Visual Studio Code. Feel free to [skip ahead to this chapter’s appendix](#appendix-a-choosing-an-editor) for more information.
 
 Let’s add a simple image to your app so you can see how livesync works. Open your app’s  `app/app.component.ts` file, and place the following line of code directly under the comment `<!-- Your UI components go here -->` :
 
@@ -168,7 +168,7 @@ The emulator should refresh and you should see a nice blue ActionBar color:
     <b>Challenge</b>: Pick a different color scheme
 </h4>
 
-Looking for a little more fun? NativeScript has several color schemes available for styling your iOS and Android apps. Pick a different stylesheet from the [full list](/angular/ui/theme#color-schemes) and try it out in your app. Which one looks best?
+Looking for a little more fun? NativeScript has several color schemes available for styling your iOS and Android apps. Pick a different stylesheet from the [full list](/ui/theme#color-schemes) and try it out in your app. Which one looks best?
 
 <div class="exercise-end"></div>
 
@@ -176,7 +176,7 @@ Overall, the NativeScript CLI’s livesync process makes native iOS and Android 
 
 > **WARNING**: There are situations where you’ll need to stop `tns run` and rebuild your app from scratch—for instance if need to install a new dependency from npm. In those cases you need to type `Ctrl + C` in your terminal to stop the current `tns run` process, and then re-execute `tns run android` or `tns run ios` to get your app up and running again. Don’t worry though; when situations that require a restart come up in this tutorial, those instructions will be explicitly listed.
 
-## 1.3: Debugging your code
+## 1.3: Debugging apps
 
 You now know how to create and run NativeScript apps. Your next step is learning how to debug your apps when things go wrong. Let’s look at how debugging works in NativeScript.
 
