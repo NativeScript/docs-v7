@@ -216,7 +216,7 @@ The GridLayout is a layout that arranges its child elements in a table structure
 ![GridLayout](../img/modules/layouts/grid-layout2.png "GridLayout")
 
 ### Sample (no width and horizontalAlignment != stretch)
-When the GridLayout has no explicit `width` set and its `horizontalAlignment` is not `stretch`, the star columns will not occupy the entire available space (300 from parent StackLayout).
+When the GridLayout has no explicit `width` set and its `horizontalAlignment` is not `stretch`, the star columns will not occupy the entire available space (200 from parent StackLayout).
 
 {% nativescript %}
 ```XML
