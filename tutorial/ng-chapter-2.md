@@ -60,13 +60,13 @@ Your first step will be to find a place on your development machine to store thi
     └── ...
 ```
 
-Once you have a folder structure you’re comfortable in place navigate to that folder using your terminal’s `cd` command, and run the `tns create` command below to create a new app named Groceries.
+Once you have a folder structure you’re comfortable with in place, navigate to that folder using your terminal’s `cd` command, and run the `tns create` command below to create a new app named Groceries.
 
 ```
 tns create Groceries --template nativescript-template-ng-groceries
 ```
 
-The command will again take a minute to complete, as the Groceries template contains a number of images you’ll be using as part of this tutorial. When the process finishes use the `cd` command to navigate into the new app.
+The command will again take a minute to complete, as the Groceries template contains a number of images you’ll be using as part of this tutorial. When the process finishes, use the `cd` command to navigate into the new app.
 
 ```
 cd Groceries
