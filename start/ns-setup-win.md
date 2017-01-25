@@ -25,7 +25,7 @@ This page contains a list of all system requirements needed to build and run Nat
 * Android SDK 22 or a later stable official release
 * Local Maven repository for Support Libraries
 * Android SDK Build-tools 25.0.2 or a later stable official release
-* Setup Android virtual devices to expand your testing options
+* Set up Android virtual devices to expand your testing options
 
 You must also have the following two environment variables setup for Android development, which will automatically be added for you as part of the installation:
 
@@ -84,7 +84,7 @@ Complete the following steps to set up NativeScript on your Windows development 
 
     - Restart the command prompt.
 
-9. To check if your system is configured properly, run the following command.
+8. To check if your system is configured properly, run the following command.
 
     <pre class="add-copy-button"><code class="language-terminal">tns doctor
     </code></pre>
