@@ -9,46 +9,41 @@ environment: nativescript
 
 # NativeScript Getting Started Guide
 
-Welcome to the [NativeScript](http://www.nativescript.org/) Getting Started Guide. In this tutorial you'll use NativeScript, a cross-platform JavaScript framework for building native mobile apps, to build an iOS and Android app from scratch. You can start by watching the video walkthrough below, or by [jumping straight into the hands-on tutorial](#what-is-nativescript).
+Welcome to the [NativeScript](http://www.nativescript.org/) Getting Started Guide. In this tutorial you'll use NativeScript, a cross-platform JavaScript framework for building native mobile apps, to build an iOS and Android app from scratch.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/N8zsFIVdLwY" frameborder="0" allowfullscreen></iframe>
+## Table of contents
 
-## What is NativeScript?
+- [0.1: What is NativeScript?](#01-what-is-nativescript)
+- [0.2: Prerequisites](#02-prerequisites)
+- [0.3: Installation](#03-installation)
 
-NativeScript is a free and open source framework for building native iOS and Android apps using JavaScript and CSS. NativeScript renders UIs with the native platform’s rendering engine—no [WebViews](http://developer.telerik.com/featured/what-is-a-webview/)—resulting in native-like performance and UX.
+## 0.1: What is NativeScript?
 
-NativeScript provides a best-of-both-worlds development experience. Our cross-platform JavaScript modules give you the convenience of writing iOS and Android apps from a single JavaScript codebase, while our runtimes give you the power of accessing native APIs, SDKs, and frameworks when you need them—all without needing to open Xcode or Android Studio. NativeScript was created and is supported by [Telerik](http://www.telerik.com/).
+<div class="intro-box">
+  <img src="../img/cli-getting-started/angular/chapter0/NativeScript_logo.png" class="plain" alt="NativeScript logo">
+  <p><a href="https://www.nativescript.org/">NativeScript</a> is a free and open source framework for building native iOS and Android apps using JavaScript and CSS. NativeScript renders UIs with the native platform’s rendering engine—no <a href="http://developer.telerik.com/featured/what-is-a-webview/">WebViews</a>—resulting in native-like performance and UX.</p>
+</div>
 
-## What you're building
+NativeScript provides a best-of-both-worlds development experience. The NativeScript cross-platform JavaScript modules give you the convenience of writing iOS and Android apps from a single JavaScript codebase, while the NativeScript runtimes give you the power of accessing native APIs, SDKs, and frameworks when you need them—all without needing to open Xcode or Android Studio.
 
-This guide will walk you through building [Groceries](https://github.com/NativeScript/sample-Groceries), a groceries management app that does the following things:
-
-- Connects to an existing RESTful service.
-- Provides user registration and login.
-- Lets authenticated users add and delete groceries from a list.
-- Runs cross-platform (iOS and Android).
-
-If you follow along to the end, here's what the finished app will look like on iOS:
-
-![login](/img/cli-getting-started/nativescript/chapter0/ios/1.png)
-![register](/img/cli-getting-started/nativescript/chapter0/ios/2.png)
-![list](/img/cli-getting-started/nativescript/chapter0/ios/3.png)
-
-And here's what the app will look like on Android:
-
-![](/img/cli-getting-started/nativescript/chapter0/android/1.png)
-![](/img/cli-getting-started/nativescript/chapter0/android/2.png)
-![](/img/cli-getting-started/nativescript/chapter0/android/3.png)
-
-## Prerequisites
+## 0.2: Prerequisites
 
 This guide assumes that you have some basic knowledge of JavaScript, CSS, and your development machine’s terminal. More specifically:
 
 * **JavaScript**: You should know basic JavaScript concepts, such as how functions, if statements, and loops work.
 * **CSS**: You should know how to write simple CSS selectors, and know how to apply CSS rules as name/value pairs.
 * **The terminal**: You should know how to open a terminal or command-line prompt on your development machine, how to change directories, and how to execute commands.
+* **A text editor or IDE**: You should know the basics of your text editor or IDE of choice. You can use any text editor to build NativeScript apps.
 
-With that out of the way, let’s get started!
+## 0.3: Installation
+
+In order to start this tutorial you need to have the NativeScript CLI (command-line interface) installed on your development machine, which you can do using the link below.
+
+* [Complete the NativeScript installation guide](/start/quick-setup)
+
+> **TIP**: Setting up your machine for native development can be tricky, especially if you’re new to mobile development. If you get stuck, or if you have questions while going through these instructions, the [NativeScript community forum](http://forum.nativescript.org/) is a great place to get help.
+
+With that out of the way, let’s get started building apps with NativeSript!
 
 <div class="next-chapter-link-container">
   <a href="chapter-1">Continue to Chapter 1—Getting Up and Running</a>

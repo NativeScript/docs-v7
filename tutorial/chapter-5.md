@@ -28,7 +28,7 @@ Return to your terminal and make sure that you are working in the root directory
 <div class="no-copy-button"></div>
 
 ```
-sample-Groceries <----------------
+Groceries <----------------
     ├── app
     │   └── ...
     ├── package.json
@@ -103,30 +103,18 @@ In this function, the user submits an email and password, and the value is sent 
     <b>Exercise</b>: Rebuild your app
 </h4>
 
-As we mentioned in chapter 1, although the `tns livesync` command is smart enough to reload your app for most changes you make to your app, certain changes require a full build—most notably, changes to native files in `app/App_Resources`, new modules installed with `npm install`, and new NativeScript plugins.
+As we mentioned in chapter 1, although the `tns run` command is smart enough to reload your app for most changes you make to your app, certain changes require a full build—most notably, changes to native files in `app/App_Resources`, new modules installed with `npm install`, and new NativeScript plugins.
 
-For NativeScript to recognize this new email-validator npm module, type `Ctrl+C` in your terminal to kill the existing `tns livesync` watcher if it’s still running, and then use `tns run` to rebuild your application and deploy it to an emulator or device.
-
-```
-tns run ios --emulator
-```
-
-Or
+For NativeScript to recognize this new email-validator npm module, type `Ctrl+C` in your terminal to kill the existing `tns run` watcher if it’s still running, and then use `tns run` to rebuild your application and deploy it to an emulator or device.
 
 ```
-tns run android --emulator
-```
-
-After the app deploys you can again run the `livesync` command to setup the watcher again.
-
-```
-tns livesync ios --emulator --watch
+tns run ios
 ```
 
 Or
 
 ```
-tns livesync android --emulator --watch
+tns run android
 ```
 
 <div class="exercise-end"></div>
