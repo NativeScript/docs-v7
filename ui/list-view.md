@@ -45,7 +45,7 @@ class DataItem {
 @Component({
     selector: 'list-test',
     styleUrls: ['list-test.css'],
-    template: 'list-test.html',
+    templateUrl: 'list-test.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListTest {
@@ -139,7 +139,7 @@ Another popular scenario is using a separate component for the ListView template
     selector: 'item-component',
     template: `
         <StackLayout>
-            <Label *ngFor="#element of data.list" [text]="element.text"></Label>
+            <Label *ngFor="let element of data.list" [text]="element.text"></Label>
         </StackLayout>
     `
 })
