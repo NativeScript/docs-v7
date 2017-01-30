@@ -29,7 +29,7 @@ The NativeScript project provides a core theme that you can add to any of your p
     - [ListViews](#listviews)
     - [Progress and Activity](#progress-and-activity)
     - [SideDrawers](#sidedrawers)
-    - [Slides](#slides)
+    - [Sliders](#sliders)
     - [Switches](#switches)
     - [TabViews](#tabviews)
 * [Status Bar Considerations](#status-bar-considerations)
