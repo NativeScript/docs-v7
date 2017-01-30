@@ -46,7 +46,7 @@ testButton.on(buttonModule.Button.tapEvent, function (eventData) {
   console.log("Hello World!");
 },this);
 
-//Adding a lister with the full syntax
+//Adding a listener with the full syntax
 var testButton2 = new buttonModule.Button();
 testButton2.text = "Test";
 
