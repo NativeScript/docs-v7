@@ -23,32 +23,31 @@ previous_url: /core-concepts/visual-studio-code-extension
 
 To install the [NativeScript extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=Telerik.nativescript) open the Command Palette (`F1` or `Cmd+Shift+P`) and run `Extensions: Install Extension` command, then search for 'NativeScript' and choose it from the list.
 
-### Figure 1: How to install NativeScript extention for Visual Studio Code.
 ![Installing the NativeScript extension for Visual Studio Code](../img/visual-studio-code-extension/install.png)
 
 After the installation completes, the extension appears in the list of installed extensions. You can see it if you run `Extensions: Show Installed Extensions` command from the Command Palette.
 
 ## Debugging
 
-Open your application root folder, created with the `tns create` command, in Visual Studio Code.
+Open your application root folder, created with `tns create` command, in Visual Studio Code.
 
 ### Generate launch configurations
 
-Click the debugging icon ![VS Code debug panel](../img/visual-studio-code-extension/debug-panel.png) in the View bar, and then click the gear icon ![gear icon](../img/visual-studio-code-extension/gear-icon.png) to choose the NativeScript debug environment. A `launch.json` file should be generated in your `.vscode` folder located next to the `app` folder. The configurations, described in `launch.json`, can be selected from the menu in the Debug Panel.
+Click the debugging icon ![VS Code debug panel](../img/visual-studio-code-extension/debug-panel.png) in the View bar, and then click the gear icon ![gear icon](../img/visual-studio-code-extension/gear-icon.png) to choose the NativeScript debug environment. A `launch.json` file should be generated in your `.vscode` folder, containing 4 default launch configurations - `Launch on iOS`, `Attach on iOS`, `Launch on Android` and `Attach on Android`. You can always add your own debug configuration or alter the existing ones just by editing the `launch.json` file.
 
-### Figure 2: How to debug application via Visual Studio Code.
-![Installing NativeScript extension for Visual Studio Code](../img/visual-studio-code-extension/configurations-menu.png)
+![Default NativeScript debug configurations in Visual Studio Code](../img/visual-studio-code-extension/configurations-menu.png)
 
 ### Launch an application with the debugger
 
-Choose one of the launch configurations (e.g., `Launch on iOS Emulator`) and press the `Start` button next to the menu. This will run your app in the iOS emulator and attach the VS Code debugger. The app should break on the first JavaScript/TypeScript statement. You can find more information about the debugging support in VS Code in the [VS Code Debugging Guide](https://code.visualstudio.com/docs/editor/debugging).
+Choose one of the launch configurations (e.g., `Launch on iOS`) and press the `Start Debugging` button next to the menu. This will trigger a NativeScript CLI command which will build, deploy and run your app in an iOS device or emulator and attach the Visual Studio Code debugger. If you want the execution to stop on the first JavaScript/TypeScript statement set the `stopOnEntry` flag to `true` in  your `launch.json` configuration.
 
-### Figure 3: Attach the debugger without rebuilding the application.
-![NativeScript Debugging](../img/visual-studio-code-extension/nativescript-debugging.png)
+Once the debugger is attached you can inspect scope variables, set breakpoints, watch expressions, execute code while the app is paused on a breakpoint etc. You can find more information about the debugging support in Visual Studio Code in the [VS Code Debugging Guide](https://code.visualstudio.com/docs/editor/debugging).
+
+What's more awesome is that the default launch configurations take advantage of the NativeScript CLI watch functionallity. Therefore, while the VS Code debugger is attached, every change to the app's source will trigger a livesync (after saving the altered file) which will update and restart the target application while the VS Code debugger is automatically reattached to the new app instance preserving all breakpoints and watched expressions. The watching feature can be disabled by setting the `watch` flag to `false` in your `launch.json` configurations.
 
 ### Attach the debugger to an already running app
 
-If you already have a NativeScript application running your Android or iOS emulator or device, you can attach the VS Code debugger to it, without rebuilding and restarting the application. Just select the desired attach configuration through the debug configuration menu and press the start button.
+If you have an already running NativeScript application in your emulator or device, you can attach the VS Code debugger to it, without even restarting the app. Just select the desired attach configuration through the debug configuration menu and press the start button.
 
 ### Debug TypeScript
 
@@ -58,10 +57,7 @@ If you are writing your app in TypeScript, you have fully functional debugging s
 
 ### Supply additional arguments to the debug command
 
-Under the hood, starting a particular debug configuration executes the `tns debug` command with various arguments. You can append additional arguments by supplying them in the `tnsArgs` property of a debug configuration definition in `launch.json`. For example, if you add `"tnsArgs": "--log=trace"` in the `Launch on iOS Emulator` configuration, in the background VS Code will execute the `tns debug ios --emulator --no-client --log=trace` command, which will give you more verbose information in the Debug Console.
-
-### Figure 4: Adding additional command while debugging.
-![Supply custom arguments to the debug command](../img/visual-studio-code-extension/nativescript-tns-args.png)
+Under the hood, starting a particular debug configuration executes the `tns debug` command with various arguments. You can append additional arguments by supplying them in the `tnsArgs` property of a debug configuration definition in `launch.json`. For example, if you add `"tnsArgs": "--log=trace"` in the `Launch on iOS` configuration, in the background VS Code will execute the `tns debug ios --no-client --log=trace` command, which will give you more verbose information in the Debug Console.
 
 ### Turn on diagnostic logging
 
@@ -71,16 +67,18 @@ If the `diagnosticLogging` flag for a particular debug configuration in `launch.
 
 Type `nativescript` in the Command Palette and you will see all NativeScript-specific commands. Currently there are only two of them but the list will grow in the future.
 
-### Figure 5: Using NativeScript-specific commands directly from Visual Studio Code .
 ![NativeScript commands](../img/visual-studio-code-extension/nativescript-commands.png)
 
-The Run command is the equivalent to `tns run` in the NativeScript CLI. It lets you build, deploy and run your app on an emulator/device directly from Visual Studio Code.
+The `Run on Android/iOS` command is the equivalent of `tns run` in the NativeScript CLI. It lets you build, deploy and run your app on an emulator/device directly from Visual Studio Code.
 
 ## NativeScript CLI version detection
 
 The extension depends on a globally installed NativeScript CLI. It will show an error message if it can't find it.
 
-### Figure 6: Handle NativeScript's error for extensions builded for specific NativeScript CLI.
 ![NativeScript not found](../img/visual-studio-code-extension/nativescript-not-found-error-message.png)
 
-> The extension requires a specific NativeScript CLI version and if you have another version installed, you will see a warning message. The extension is likely to work with the unsupported version but it is recommended that you update the NativeScript CLI or the VS Code extension.
+> The extension requires a specific NativeScript CLI version and if you have another version installed, you will see a warning message. The extension is likely to work with the unsupported version but it is recommended to update the NativeScript CLI or the VS Code extension.
+
+## Known issues
+ * [The variables pane on Android doesn't work](https://github.com/NativeScript/nativescript-vscode-extension/issues/21). * [In order to be able to debug, the opened workspace must be the app root folder.](https://github.com/NativeScript/nativescript-vscode-extension/issues/104)
+
