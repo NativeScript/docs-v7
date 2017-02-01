@@ -1,6 +1,7 @@
 ---
 title: Chapter 7—Next Steps
 position: 8
+guide: true
 environment: nativescript
 ---
 
