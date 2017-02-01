@@ -220,7 +220,7 @@ JS: === dump(): finished ===
 
 <div class="exercise-end"></div>
 
-The `console.log()` and `console.dump()` functions are two of the many tools available when debugging your NativeScript applications. You might want to try out [step debugging](https://www.nativescript.org/nativescript-for-visual-studio-code) as you move into more advanced developement, but for now let’s shift our attention to how to deal with errors in NativeScript apps.
+The `console.log()` and `console.dump()` functions are two of the many tools available when debugging your NativeScript applications. You might want to try out [step debugging](https://www.nativescript.org/nativescript-for-visual-studio-code) as you move into more advanced development, but for now let’s shift our attention to how to deal with errors in NativeScript apps.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Error handling in NativeScript
