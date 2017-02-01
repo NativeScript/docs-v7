@@ -2,6 +2,7 @@
 title: Chapter 1—Learning the NativeScript Basics
 position: 2
 environment: nativescript
+guide: true
 ---
 
 # Chapter 1—Learning the NativeScript Basics
@@ -83,7 +84,7 @@ tns run android
 
 > **NOTE**:
 > * You must have at least one AVD (Android Virtual Device) configured on your development machine for this command to run your app up on an Android emulator. If you don’t have one installed currently go ahead and [set one up now](/tooling/android-virtual-devices).
-> * If you’re on a Mac you have the ability to develop for Android and iOS simultaneously.  Instead of stopping the previous `tns run ios` command, open a new tab in your terminal of choice (`Command` + `T` works in most clients), and execute `tns run android` there.
+> * If you’re on a Mac you have the ability to develop for Android and iOS simultaneously.  Instead of stopping the previous `tns run ios` command, you can open a new tab in your terminal of choice (`Command` + `T` works in most clients), and execute `tns run android` there.
 
 <div class="exercise-end"></div>
 
@@ -243,7 +244,7 @@ JS ERROR Error: Building UI from XML. @file:///app/main-page.xml:2:50
 Let’s fix the error now by adding the `>` back to line 6 in your `app.component.ts` file.
 
 ``` XML
-<ActionBar title="My Apple" class="action-bar">
+<ActionBar title="My Apple" class="action-bar"></ActionBar>
 ```
 
 The NativeScript CLI continues to watch the files in your application, even after errors. As such, after you correct this problem, the CLI updates your app to its previous state.

@@ -280,7 +280,7 @@ JS ERROR Error: Template parse errors:
 Let’s fix the error now by adding the `>` back to line 6 in your `app.component.ts` file.
 
 ``` XML
-<ActionBar title="My Apple" class="action-bar">
+<ActionBar title="My Apple" class="action-bar"></ActionBar>
 ```
 
 The NativeScript CLI continues to watch the files in your application, even after errors. As such, after you correct this problem, the CLI updates your app to its previous state.

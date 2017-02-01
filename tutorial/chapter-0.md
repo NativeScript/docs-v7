@@ -4,12 +4,13 @@ description: Learn the basics of how NativeScript works, how to set up your syst
 position: 1
 previous_url: /start/getting-started
 slug: tutorial
+guide: true
 environment: nativescript
 ---
 
 # NativeScript Getting Started Guide
 
-Welcome to the [NativeScript](http://www.nativescript.org/) Getting Started Guide. In this tutorial you'll use NativeScript, a cross-platform JavaScript framework for building native mobile apps, to build an iOS and Android app from scratch.
+Welcome to the NativeScript Getting Started Guide. In this tutorial you'll use NativeScript, a cross-platform JavaScript framework for building native mobile apps, to build an iOS and Android app from scratch.
 
 ## Table of contents
 
