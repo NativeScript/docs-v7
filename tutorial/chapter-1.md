@@ -58,33 +58,33 @@ Now that you have an app scaffolded on your local computer and you have `cd`‘e
     <b>Exercise</b>: Use the <code>tns run</code> command
 </h4>
 
-In NativeScript you use the CLI’s `tns run` command to run your apps on iOS or Android. Let’s start with iOS.
+In NativeScript you use the CLI’s `tns run` command to run your apps on iOS or Android. Let’s start with Android.
 
-> **NOTE**: NativeScript uses Xcode under the hood to build and run iOS apps, and Xcode is only available on macOS; therefore, you can only run iOS apps on macOS. If you’re on Windows or Linux [skip ahead to running your app on Android](#running-on-android).
-
-If you are on a Mac, execute the following command on your terminal to run your app in an iOS simulator.
-
-```
-tns run ios
-```
-
-> **WARNING**: If you get an error at this point you likely haven’t completed the [NativeScript CLI installation instructions](/start/quick-setup). If you’ve gone through the instructions and are still stuck, try asking for help in the [NativeScript community forum](http://forum.nativescript.org/).
-
-The `run` command will take a few seconds to complete, as the NativeScript CLI will actually be building and deploying a native iOS application. When the command finishes the native emulator will open and you will see your app:
-
-![Basic hello world app running on iOS](../img/cli-getting-started/angular/chapter1/ios/1.png)
-
-<div id="running-on-android"></div>
-
-Next, to see your app run on Android emulator execute the following command.
+Execute the following command in your terminal to run your app on an Android emulator.
 
 ```
 tns run android
 ```
 
 > **NOTE**:
+> * If you get an error at this point you likely haven’t completed the [NativeScript CLI installation instructions](/start/quick-setup). If you’ve gone through the instructions and are still stuck, try asking for help in the [NativeScript community forum](http://forum.nativescript.org/).
 > * You must have at least one AVD (Android Virtual Device) configured on your development machine for this command to run your app up on an Android emulator. If you don’t have one installed currently go ahead and [set one up now](/tooling/android-virtual-devices).
-> * If you’re on a Mac you have the ability to develop for Android and iOS simultaneously.  Instead of stopping the previous `tns run ios` command, you can open a new tab in your terminal of choice (`Command` + `T` works in most clients), and execute `tns run android` there.
+
+The `run` command will take a few seconds to complete, as the NativeScript CLI will actually be building and deploying a native Android application. When the command finishes the native emulator will open and you will see your app:
+
+![Basic hello world app running on Android](../img/cli-getting-started/angular/chapter1/android/1.png)
+
+If you’re on macOS and would prefer to develop for iOS first, type `Ctrl` + `C` in your terminal to end the previous `tns run android` command, and then execute the following command instead.
+
+```
+tns run ios
+```
+
+> **NOTE**: NativeScript uses Xcode under the hood to build and run iOS apps, and Xcode is only available on macOS; therefore, you can only run iOS apps on macOS.
+
+The `run` command will again take a few seconds, as the NativeScript CLI will be building and deploying a native iOS application. When the command finishes the native emulator will open and you will see your app:
+
+![Basic hello world app running on iOS](../img/cli-getting-started/angular/chapter1/ios/1.png)
 
 <div class="exercise-end"></div>
 
