@@ -88,11 +88,7 @@ The `run` command will again take a few seconds, as the NativeScript CLI will be
 
 <div class="exercise-end"></div>
 
-The `run` command will again take a few seconds, as the NativeScript CLI will be building and deploying a native Android application. When it finishes the native emulator will open and you will see your app:
-
-![Basic hello world app running on Android](../img/cli-getting-started/angular/chapter1/android/1.png)
-
-You might have noticed that the `tns run` command never terminates. That is, you’re cannot type in your terminal or command prompt after your app starts up.
+You might have noticed that the `tns run` command never terminates. That is, you cannot type in your terminal or command prompt after your app starts up.
 
 <img src="../img/cli-getting-started/nativescript/chapter1/terminal-1.png" alt="Terminal display after executing tns run" class="plain">
 
