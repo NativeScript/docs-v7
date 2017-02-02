@@ -241,7 +241,7 @@ JS ERROR Error: Building UI from XML. @file:///app/main-page.xml:2:50
 	 > close tag
 ```
 
-Let’s fix the error now by adding the `>` back to line 6 in your `app.component.ts` file.
+Let’s fix the error now by adding the `>` back to line 2 in your `main-page.xml` file.
 
 ``` XML
 <ActionBar title="My Apple" class="action-bar"></ActionBar>
