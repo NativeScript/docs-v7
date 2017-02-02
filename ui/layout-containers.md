@@ -196,7 +196,7 @@ The GridLayout is a layout that arranges its child elements in a table structure
 
 ### Sample (fixed and auto)
 - The first column and the first row are `auto`. This means that they are measured with infinite available space and then sized to their content.
-- The second column and the second row have fixed sizes of 30 and 50 respectively. They will be exactly this wide/high regardless of their children's dimensions. They would still be exactly this wide/high even if they don't have any children.
+- The first column and the first row have fixed sizes of 100 and 100 respectively. They will be exactly this wide/high regardless of their children's dimensions. They would still be exactly this wide/high even if they don't have any children.
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
