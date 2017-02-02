@@ -9,6 +9,11 @@ previous_url: /Changelogs/iOS Runtime
 
 
 
+2.5.0
+=====
+
+## What's New
+- Support for Chrome DevTools remote debugging
 
 2.4.0
 =====
