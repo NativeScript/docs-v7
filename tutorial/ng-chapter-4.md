@@ -569,7 +569,7 @@ This binds the ActivityIndicator’s `busy` attribute to an `isLoading` property
 isLoading = false;
 ```
 
-Now that the property exists, your final step is to set this flag to to `true` when the grocery data is loading. To do that, change the existing `ngOnInit()` function to use the code below:
+Now that the property exists, your final step is to set this flag to `true` when the grocery data is loading. To do that, change the existing `ngOnInit()` function to use the code below:
 
 ``` TypeScript
 ngOnInit() {
