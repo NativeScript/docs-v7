@@ -25,8 +25,8 @@ to test mobile applications on various virtual devices. By default, the Android 
     You can accelerate the virtual device using Virtualization Technology. For hardware with Intel CPUs, this can be achieved with HAXM installer. Acquire the installer from the [official download site of HAXM](https://software.intel.com/en-us/android/articles/intel-hardware-accelerated-execution-manager).
     After successful download, execute the installer and follow the installation instruction.
 
-    > **Note:** To Use HAXM make sure that the system image is of type **Intel x86 Atom** or **Intel x86_x64 Atom**. ARM emulators are much slower, but can be useful when your hardware does not support HAXM or when you have enabled Hyper-V technology.
-    
+    > **Note:** To Use HAXM make sure that the system image is of type **Intel x86 Atom**. ARM emulators are much slower, but can be useful when your hardware does not support HAXM or when you have enabled Hyper-V technology.
+
 3. Go to **Tools > Manage AVDs**
 
     This will load the **Android Virtual Device Manager** 
