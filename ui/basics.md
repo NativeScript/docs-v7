@@ -170,7 +170,7 @@ You can specify code and CSS files for your Page XML using `import` and `cssFile
 
 ## User interface components
 
-NativeScript provides a wide range of built-in user interface components:mdash;layouts and widgets. You can also create your own custom user interface components.
+NativeScript provides a wide range of built-in user interface components&mdash;layouts and widgets. You can also create your own custom user interface components.
 
 When NativeScript parses your `XML` files, it looks for components that match a name in the module exports.
 
@@ -184,7 +184,7 @@ exports.Button = Button;
 
 ### The default content components
 
-The top-level user interface components are content components:mdash;pages and layouts. These content components let you arrange your interactive user interface components in specific ways.
+The top-level user interface components are content components&mdash;pages and layouts. These content components let you arrange your interactive user interface components in specific ways.
 
 #### Page
 
@@ -710,7 +710,7 @@ If you want to show some inner collection items inside ```ListView.itemTemplate`
 
 To set an expression as a value of a property in the `XML`, you might as well go with the mustache syntax here.
 
-> NativeScript reevaluates your expression on every property change of the `Observable` object set for `bindingContext`. This binding is a one-way binding;mdash;from the view model to the user interface.
+> NativeScript reevaluates your expression on every property change of the `Observable` object set for `bindingContext`. This binding is a one-way binding&mdash;from the view model to the user interface.
 
 The following sample `main-page.xml` shows how to set an expression as the value for a label.
 
