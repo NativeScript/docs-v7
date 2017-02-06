@@ -14,21 +14,18 @@ to test mobile applications on various virtual devices. By default, the Android 
 
 1. Open **Android SDK Manager** 
 
-    It can be started from command prompt / shell with command `android`
+     - From your terminal run  `start %ANDROID_HOME%/"SDK Manager.exe"`
 
 2. Make sure that the system images for the AVDs are installed. 
 
-    The screenshow below shows the Android API 24 system images installed on the computer. If additional system images are needed (e.g. for different API level) select them and press **Install Packages** button at the bottom right corner.
+    The screenshow below shows the Android API 23 system images installed on the computer. If additional system images are needed (e.g. for different API level) select them and press **Install Packages** button at the bottom right corner.
 
-    ![Installed AVDs for API 24 in Andrid SDK](../img/create-avd/avd-001.png "Installed AVDs for API 24 in Andrid SDK")
+    ![Installed AVDs for API 23 in Andrid SDK](../img/create-avd/avd-001.png "Installed AVDs for API 23 in Andrid SDK")
 
-    You can accelerate the virtual device using Virtualization Technology. For hardware with Intel CPUs this can be achieved with HAXM installer.
+    You can accelerate the virtual device using Virtualization Technology. For hardware with Intel CPUs, this can be achieved with HAXM installer. Acquire the installer from the [official download site of HAXM](https://software.intel.com/en-us/android/articles/intel-hardware-accelerated-execution-manager).
+    After successful download, execute the installer and follow the installation instruction.
 
-    ![Enabling HAXM](../img/create-avd/avd-002.png "Enabling HAXM")
-
-    Once the SDK Manager downloads the HAXM installer, navigate to the source folder (usually in `<sdk_path>\extras\intel\Hardware_Accelerated_Execution_Manager\`) and manually install **Intel HAXM** (intelhaxm-android.exe). For additional information on HAXM follow this [link](https://software.intel.com/en-us/android/articles/speeding-up-the-android-emulator-on-intel-architecture)
-
-    > **Note:** To Use HAXM make sure that the system image is of type **Intel x86 Atom** or **Intel x86_x64 Atom** 
+    > **Note:** To Use HAXM make sure that the system image is of type **Intel x86 Atom**. ARM emulators are much slower, but can be useful when your hardware does not support HAXM or when you have enabled Hyper-V technology.
 
 3. Go to **Tools > Manage AVDs**
 
@@ -42,8 +39,8 @@ to test mobile applications on various virtual devices. By default, the Android 
 
     - **AVD Name** : The emulator name in "Android Virtual Devices"
     - **Device** : Choose the hardware device to emulate (e.g. Nexus 5)
-    - **Target** : Choose the API Level (e.g. Android Nougat API Level 24)
-    - **CPU/ABI** : Choose the CPU architecture (e.g. Intel Atom x86_x64) for use with HAXM use Intel Atom images!
+    - **Target** : Choose the API Level (e.g. Android Nougat API Level 23)
+    - **CPU/ABI** : Choose the CPU architecture (e.g. Intel Atom x86) for use with HAXM use Intel Atom images!
     - **Keyboard** : Check "hardware keyboard present"
     - **Skin** : Choose the skin type for the emulator
     - **Front & Back Camera** : Enable/disable support for emulated or web cameras
@@ -95,8 +92,7 @@ e.g. run on device with Device Identifier
 tns run android --device 00bd261c1580a7d3
 ```
 
-The example above will start the application on device with id 2 (sdk_phone_x86_64). The same rule applies for `livesync` command
-
+The example above will start the application on device with id 2 (sdk_phone_x86_64).
 
 To launch a NativeScript application on all connected devices simultaneously, simply ignore the `--device <id>` flag.
 
