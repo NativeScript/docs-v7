@@ -5,7 +5,31 @@ position: 10
 slug: docs-changelog
 ---
 
-2.5.0 (2017, February 01)
+2.5.0 (2015, February 01)
+==
+### Thank you, community!
+
+- [<img src="https://avatars.githubusercontent.com/u/16624674?v=3" alt="JmOkay" width="30px" height="30px"/>](https://github.com/JmOkay) @JmOkay
+    - [(# 671)](https://github.com/NativeScript/docs/pull/671) Update ng-chapter-4.md 
+- [<img src="https://avatars.githubusercontent.com/u/15941813?v=3" alt="dogabudak" width="30px" height="30px"/>](https://github.com/dogabudak) @dogabudak
+    - [(# 668)](https://github.com/NativeScript/docs/pull/668) Update action-bar.md 
+- [<img src="https://avatars.githubusercontent.com/u/505549?v=3" alt="tdous" width="30px" height="30px"/>](https://github.com/tdous) @tdous
+    - [(# 666)](https://github.com/NativeScript/docs/pull/666) Fixed reference to 'line 6' of 'app.component.ts' 
+- [<img src="https://avatars.githubusercontent.com/u/2218261?v=3" alt="bel3atar" width="30px" height="30px"/>](https://github.com/bel3atar) @bel3atar
+    - [(# 660)](https://github.com/NativeScript/docs/pull/660) Typo 
+- [<img src="https://avatars.githubusercontent.com/u/1499095?v=3" alt="Hakier" width="30px" height="30px"/>](https://github.com/Hakier) @Hakier
+    - [(# 658)](https://github.com/NativeScript/docs/pull/658) Updated list-view doc - fixed code to really work (use external template, *ngFor current format) 
+    - [(# 656)](https://github.com/NativeScript/docs/pull/656) Fixed description to be in sync with code 
+- [<img src="https://avatars.githubusercontent.com/u/825998?v=3" alt="michael-martin" width="30px" height="30px"/>](https://github.com/michael-martin) @michael-martin
+    - [(# 650)](https://github.com/NativeScript/docs/pull/650) Fix broken links to UI sample code 
+- [<img src="https://avatars.githubusercontent.com/u/13690699?v=3" alt="shiravand" width="30px" height="30px"/>](https://github.com/shiravand) @shiravand
+    - [(# 649)](https://github.com/NativeScript/docs/pull/649) fix typo 
+- [<img src="https://avatars.githubusercontent.com/u/5482155?v=3" alt="csj" width="30px" height="30px"/>](https://github.com/csj) @csj
+    - [(# 645)](https://github.com/NativeScript/docs/pull/645) Update list-view.md 
+- [<img src="https://avatars.githubusercontent.com/u/8535252?v=3" alt="crezione1" width="30px" height="30px"/>](https://github.com/crezione1) @crezione1
+    - [(# 644)](https://github.com/NativeScript/docs/pull/644) Update chapter-2.md 
+    - [(# 643)](https://github.com/NativeScript/docs/pull/643) Update chapter-2.md 
+2.5.0 (2015, February 01)
 ==
 ### Thank you, community!
 
