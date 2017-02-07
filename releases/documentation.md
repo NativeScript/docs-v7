@@ -5,6 +5,88 @@ position: 10
 slug: docs-changelog
 ---
 
+2.5.0 (2015, February 01)
+==
+### Thank you, community!
+
+- [<img src="https://avatars.githubusercontent.com/u/16624674?v=3" alt="JmOkay" width="30px" height="30px"/>](https://github.com/JmOkay) @JmOkay
+    - [(# 671)](https://github.com/NativeScript/docs/pull/671) Update ng-chapter-4.md 
+- [<img src="https://avatars.githubusercontent.com/u/15941813?v=3" alt="dogabudak" width="30px" height="30px"/>](https://github.com/dogabudak) @dogabudak
+    - [(# 668)](https://github.com/NativeScript/docs/pull/668) Update action-bar.md 
+- [<img src="https://avatars.githubusercontent.com/u/505549?v=3" alt="tdous" width="30px" height="30px"/>](https://github.com/tdous) @tdous
+    - [(# 666)](https://github.com/NativeScript/docs/pull/666) Fixed reference to 'line 6' of 'app.component.ts' 
+- [<img src="https://avatars.githubusercontent.com/u/2218261?v=3" alt="bel3atar" width="30px" height="30px"/>](https://github.com/bel3atar) @bel3atar
+    - [(# 660)](https://github.com/NativeScript/docs/pull/660) Typo 
+- [<img src="https://avatars.githubusercontent.com/u/1499095?v=3" alt="Hakier" width="30px" height="30px"/>](https://github.com/Hakier) @Hakier
+    - [(# 658)](https://github.com/NativeScript/docs/pull/658) Updated list-view doc - fixed code to really work (use external template, *ngFor current format) 
+    - [(# 656)](https://github.com/NativeScript/docs/pull/656) Fixed description to be in sync with code 
+- [<img src="https://avatars.githubusercontent.com/u/825998?v=3" alt="michael-martin" width="30px" height="30px"/>](https://github.com/michael-martin) @michael-martin
+    - [(# 650)](https://github.com/NativeScript/docs/pull/650) Fix broken links to UI sample code 
+- [<img src="https://avatars.githubusercontent.com/u/13690699?v=3" alt="shiravand" width="30px" height="30px"/>](https://github.com/shiravand) @shiravand
+    - [(# 649)](https://github.com/NativeScript/docs/pull/649) fix typo 
+- [<img src="https://avatars.githubusercontent.com/u/5482155?v=3" alt="csj" width="30px" height="30px"/>](https://github.com/csj) @csj
+    - [(# 645)](https://github.com/NativeScript/docs/pull/645) Update list-view.md 
+- [<img src="https://avatars.githubusercontent.com/u/8535252?v=3" alt="crezione1" width="30px" height="30px"/>](https://github.com/crezione1) @crezione1
+    - [(# 644)](https://github.com/NativeScript/docs/pull/644) Update chapter-2.md 
+    - [(# 643)](https://github.com/NativeScript/docs/pull/643) Update chapter-2.md 
+2.5.0 (2015, February 01)
+==
+### Thank you, community!
+
+- [<img src="https://avatars.githubusercontent.com/u/16624674?v=3" alt="JmOkay" width="30px" height="30px"/>](https://github.com/JmOkay) @JmOkay
+    - [(# 671)](https://github.com/NativeScript/docs/pull/671) Update ng-chapter-4.md 
+- [<img src="https://avatars.githubusercontent.com/u/15941813?v=3" alt="dogabudak" width="30px" height="30px"/>](https://github.com/dogabudak) @dogabudak
+    - [(# 668)](https://github.com/NativeScript/docs/pull/668) Update action-bar.md 
+- [<img src="https://avatars.githubusercontent.com/u/505549?v=3" alt="tdous" width="30px" height="30px"/>](https://github.com/tdous) @tdous
+    - [(# 666)](https://github.com/NativeScript/docs/pull/666) Fixed reference to 'line 6' of 'app.component.ts' 
+- [<img src="https://avatars.githubusercontent.com/u/2218261?v=3" alt="bel3atar" width="30px" height="30px"/>](https://github.com/bel3atar) @bel3atar
+    - [(# 660)](https://github.com/NativeScript/docs/pull/660) Typo 
+- [<img src="https://avatars.githubusercontent.com/u/1499095?v=3" alt="Hakier" width="30px" height="30px"/>](https://github.com/Hakier) @Hakier
+    - [(# 658)](https://github.com/NativeScript/docs/pull/658) Updated list-view doc - fixed code to really work (use external template, *ngFor current format) 
+    - [(# 656)](https://github.com/NativeScript/docs/pull/656) Fixed description to be in sync with code 
+- [<img src="https://avatars.githubusercontent.com/u/825998?v=3" alt="michael-martin" width="30px" height="30px"/>](https://github.com/michael-martin) @michael-martin
+    - [(# 650)](https://github.com/NativeScript/docs/pull/650) Fix broken links to UI sample code 
+- [<img src="https://avatars.githubusercontent.com/u/13690699?v=3" alt="shiravand" width="30px" height="30px"/>](https://github.com/shiravand) @shiravand
+    - [(# 649)](https://github.com/NativeScript/docs/pull/649) fix typo 
+- [<img src="https://avatars.githubusercontent.com/u/5482155?v=3" alt="csj" width="30px" height="30px"/>](https://github.com/csj) @csj
+    - [(# 645)](https://github.com/NativeScript/docs/pull/645) Update list-view.md 
+- [<img src="https://avatars.githubusercontent.com/u/8535252?v=3" alt="crezione1" width="30px" height="30px"/>](https://github.com/crezione1) @crezione1
+    - [(# 644)](https://github.com/NativeScript/docs/pull/644) Update chapter-2.md 
+    - [(# 643)](https://github.com/NativeScript/docs/pull/643) Update chapter-2.md 
+- [<img src="https://avatars.githubusercontent.com/u/10167897?v=3" alt="CMRHDL" width="30px" height="30px"/>](https://github.com/CMRHDL) @CMRHDL
+    - [(# 642)](https://github.com/NativeScript/docs/pull/642) Update Unit Testing code examples 
+- [<img src="https://avatars.githubusercontent.com/u/20006215?v=3" alt="ls-spavel" width="30px" height="30px"/>](https://github.com/ls-spavel) @ls-spavel
+    - [(# 638)](https://github.com/NativeScript/docs/pull/638) Changed OS X to macOS 
+    - [(# 637)](https://github.com/NativeScript/docs/pull/637) Added example for LoadMoreItems to List View page 
+    - [(# 636)](https://github.com/NativeScript/docs/pull/636) Load More Items Example 
+- [<img src="https://avatars.githubusercontent.com/u/24413675?v=3" alt="betosalvador" width="30px" height="30px"/>](https://github.com/betosalvador) @betosalvador
+    - [(# 633)](https://github.com/NativeScript/docs/pull/633) Update ng-chapter-2.md 
+- [<img src="https://avatars.githubusercontent.com/u/10381633?v=3" alt="mrsoto" width="30px" height="30px"/>](https://github.com/mrsoto) @mrsoto
+    - [(# 632)](https://github.com/NativeScript/docs/pull/632) reduce arrays response using rxjs functional programing 
+- [<img src="https://avatars.githubusercontent.com/u/15932965?v=3" alt="ignaciolarranaga" width="30px" height="30px"/>](https://github.com/ignaciolarranaga) @ignaciolarranaga
+    - [(# 626)](https://github.com/NativeScript/docs/pull/626) Missed information on how to add intellisense 
+- [<img src="https://avatars.githubusercontent.com/u/6358632?v=3" alt="cameronnorman" width="30px" height="30px"/>](https://github.com/cameronnorman) @cameronnorman
+    - [(# 619)](https://github.com/NativeScript/docs/pull/619) fixes a typo on the UI basics documentation 
+- [<img src="https://avatars.githubusercontent.com/u/20977267?v=3" alt="tdsmithATabc" width="30px" height="30px"/>](https://github.com/tdsmithATabc) @tdsmithATabc
+    - [(# 617)](https://github.com/NativeScript/docs/pull/617) Escape literal asterisks 
+- [<img src="https://avatars.githubusercontent.com/u/5335826?v=3" alt="gbhojraj" width="30px" height="30px"/>](https://github.com/gbhojraj) @gbhojraj
+    - [(# 615)](https://github.com/NativeScript/docs/pull/615) Two Typos - Broken link and grammer in Typescript tutorial 
+    - [(# 600)](https://github.com/NativeScript/docs/pull/600) Added the word 'add' to instructions about attributes 
+    - [(# 591)](https://github.com/NativeScript/docs/pull/591) Updated quick-setup with Windows-specific instructions for intel haxm. 
+- [<img src="https://avatars.githubusercontent.com/u/1922606?v=3" alt="TedHopp" width="30px" height="30px"/>](https://github.com/TedHopp) @TedHopp
+    - [(# 610)](https://github.com/NativeScript/docs/pull/610) Update ng-chapter-2.md 
+    - [(# 588)](https://github.com/NativeScript/docs/pull/588) Update chapter-4.md 
+- [<img src="https://avatars.githubusercontent.com/u/1558524?v=3" alt="EricRobertBrewer" width="30px" height="30px"/>](https://github.com/EricRobertBrewer) @EricRobertBrewer
+    - [(# 603)](https://github.com/NativeScript/docs/pull/603) Update dialogs.md 
+- [<img src="https://avatars.githubusercontent.com/u/1496395?v=3" alt="sebastianovide" width="30px" height="30px"/>](https://github.com/sebastianovide) @sebastianovide
+    - [(# 598)](https://github.com/NativeScript/docs/pull/598) typo: Android should be iOS 
+- [<img src="https://avatars.githubusercontent.com/u/6155180?v=3" alt="Weecher" width="30px" height="30px"/>](https://github.com/Weecher) @Weecher
+    - [(# 595)](https://github.com/NativeScript/docs/pull/595) Update chapter-3.md 
+- [<img src="https://avatars.githubusercontent.com/u/1625265?v=3" alt="klaasjs" width="30px" height="30px"/>](https://github.com/klaasjs) @klaasjs
+    - [(# 583)](https://github.com/NativeScript/docs/pull/583) fixed small typo. 
+
+
+
 2.4.0 (2016, November 16)
 ==
 ### Thank you, community!
