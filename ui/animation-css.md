@@ -14,7 +14,7 @@ CSS animations consist of two components: a style describing the CSS animation a
 
 __Example 1__ binds the "example" animation to the button element. The animation lasts 4 seconds. It will gradually change the background-color of the button element from "red" to "green".
 
-__Example 1: How to cerate simple animation using CSS.__
+__Example 1: How to create simple animation using CSS.__
 
 ``` CSS
 @keyframes example {
