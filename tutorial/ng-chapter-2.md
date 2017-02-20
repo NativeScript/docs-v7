@@ -507,7 +507,7 @@ The third way, and the one Groceries uses, is to use platform-specific image res
     <b>Exercise</b>: Add a logo
 </h4>
 
-In `app.component.ts`, add the `<Image>` below as the first child of the existing `<StackLayout>` tag:
+In `app.component.html`, add the `<Image>` below as the first child of the existing `<StackLayout>` tag:
 
 ``` XML
 <Image src="res://logo_login" stretch="none" horizontalAlignment="center"></Image>
