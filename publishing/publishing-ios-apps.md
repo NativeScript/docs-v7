@@ -40,7 +40,7 @@ You can publish a NativeScript app in the *App Store* the same way you would [re
 
  1. Verify that the iOS native project inside your app contains your latest changes and resources by running the following command.
      ```
-     tns prepare ios
+     tns prepare ios --release
      ```
  2. Open the iOS native project in Xcode. Your native project is located at: `{app-name}/platforms/ios/{app-name}.xcodeproj`.
  3. [Configure the project for distribution](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/ConfiguringYourApp/ConfiguringYourApp.html).
