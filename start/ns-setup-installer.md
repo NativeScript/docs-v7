@@ -10,7 +10,7 @@ publish: false
 
 ## Installation
 
-Install the latest version of NativeScript CLI and its missing prerequisites for Windows OS via executible installer.
+Install the latest version of NativeScript CLI and its missing prerequisites for Windows OS via an executable installer.
 
 ### Prerequisites
 
@@ -20,7 +20,7 @@ In case .NET Framework 4 is missing the installer offers to download and install
 
 ![](../img/start/installer-001.png "Initial screen")
 
-In case the OS prerequisite is not met a message pops up and the installer is shut down.
+In case the OS prerequisite is not met, a message pops up and the installer is shut down.
 
 ![](../img/start/installer-002.png "Initial screen")
 
@@ -28,7 +28,7 @@ In case the OS prerequisite is not met a message pops up and the installer is sh
 
 ![](../img/start/installer-003.png "Welcome screen")
 
-Welcome page describes what will be done by the installer. It also allows the user to review the GitHub repository and the license agreement of the product.
+The welcome page describes what will be done by the installer. It also allows the user to review the GitHub repository and the license agreement of the product.
 
 - _**I Agree – Continue**_ button proceeds to the next step of the setup wizard.
 
@@ -67,7 +67,7 @@ If no such version detected:
 
 - &quot;Supported JDK version not found&quot; message appears and an information about where it can be downloaded from and the &quot;Install&quot; button is disabled
 
-When supported JDK version is detected the Install button is enabled and the user can proceed. An additional setup action is shown in case JAVA\_HOME environment variable is not set or it points to a wrong location. If the variable is set and valid the additional setup action is not shown.
+When supported JDK version is detected the Install button is enabled and the user can proceed. An additional setup action is shown in case the `JAVA_HOME` environment variable is not set or it points to a wrong location. If the variable is set and valid the additional setup action is not shown.
 
 #### Node.js
 
@@ -87,9 +87,9 @@ Shows whether Android SDK is installed on the machine.
 
 ![](../img/start/installer-015.png "Android SDK version")
 
-If Android SDK is not detected an information about what version will be installed and how much download and installation space it requires is shown.
+If an Android SDK is not detected, information about what version will be installed and how much download and installation space it requires is shown.
 
-Whether Android SDK is installed or not, the following setup actions are available:
+Whether the Android SDK is installed or not, the following setup actions are available:
 
 - &quot;Set ANDROID\_HOME environment variable&quot; – visible only if the ANDROID\_HOME variable is not set or set and not valid
 - &quot;Update SDK features&quot; – always visible. Use this option is your SDK is not up-to-date with the latest SDK features. If the installed SDK is regulary updated
