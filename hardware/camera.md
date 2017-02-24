@@ -67,8 +67,8 @@ camera.takePicture()
 ```
 ``` TypeScript
 import { Image } from "ui/image";
-camera.takePicture({).
-    then((imageAsset) => {
+camera.takePicture()
+    .then((imageAsset) => {
         console.log("Result is an image asset instance");
         var image = new Image();
         image.src = imageAsset;
@@ -111,8 +111,8 @@ camera.takePicture(options)
 import { Image } from "ui/image";
 
 var options = { width: 300, height: 300, keepAspectRatio: false, saveToGallery: true };
-camera.takePicture(options).
-    then((imageAsset) => {
+camera.takePicture(options)
+    .then((imageAsset) => {
         console.log("Size: " + imageAsset.options.width + "x" + imageAsset.options.height);
         console.log("keepAspectRatio: " + imageAsset.options.keepAspectRatio);
         console.log("Photo saved in Photos/Gallery for Android or in Camera Roll for iOS");
