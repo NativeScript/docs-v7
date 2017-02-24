@@ -446,7 +446,7 @@ In Android, the `color` property affects only the title text. However, you can s
 
 >Note: Setting other CSS properties (e.g., `font-family`) will only affect the views defined inside `titleView`.
 
-## Creating SlideDrawer Button
+## Creating SideDrawer Button
 
 This example shows how to implement a "show side-drawer button" functionality.
 
