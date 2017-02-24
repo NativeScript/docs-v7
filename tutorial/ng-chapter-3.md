@@ -706,7 +706,7 @@ login(user: User) {
 
 This code hits one of our existing backend endpoints, and stores off a authentication token that we’ll use later in this guide.
 
-To use this `login()` function, return to `app/login/login.component.ts`, and add the following import to the top of the file:
+To use this `login()` function, return to `app/pages/login/login.component.ts`, and add the following import to the top of the file:
 
 ``` TypeScript
 import { Router } from "@angular/router";
