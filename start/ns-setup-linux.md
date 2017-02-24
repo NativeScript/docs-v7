@@ -25,7 +25,6 @@ This page contains a list of all system requirements needed to build and run Nat
 * Android SDK 22 or a later stable official release
 * Local Maven repository for Support Libraries
 * Android SDK Build-tools 25.0.2 or a later stable official release
-* (Optional) Genymotion to expand your testing options
 
 You must also have the following two environment variables setup for Android development:
 
@@ -84,10 +83,7 @@ Complete the following steps to set up NativeScript on your Linux development ma
     <pre class="add-copy-button"><code class="language-terminal">sudo $ANDROID_HOME/tools/android update sdk --filter tools,platform-tools,android-23,build-tools-23.0.3,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
     </code></pre>
 
-1. (Optional) Install Genymotion.<br/>Genymotion is a third-party native emulator.
-    1. Go to [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads) and download and install VirtualBox for Linux.
-    1. Go to [Get Genymotion](https://www.genymotion.com/#!/download), select Linux and click the download link for Ubuntu.
-    1. After the download completes, run the installer and complete the installation.
+1. Setup Android Emulators (AVD) by following the article [here]({%slug android-emulators%})
 
 1. Install the NativeScript CLI.
     1. Run the following command.
