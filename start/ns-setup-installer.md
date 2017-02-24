@@ -2,7 +2,7 @@
 title: NativeScript Installer Setup—Windows
 description: Configure your Windows system via installer.
 position: 60
-slug: installer
+slug: windows-installer
 publish: false
 ---
 
@@ -11,6 +11,8 @@ publish: false
 ## Installation
 
 Install the latest version of NativeScript CLI and its missing prerequisites for Windows OS via an executable installer.
+
+[Download Installer](https://www.nativescript.org/docs/default-source/default-document-library/nativescript-cli-setup-wixdbee632a7b776b26a649ff04000922f2.exe?sfvrsn=2)
 
 ### Prerequisites
 
