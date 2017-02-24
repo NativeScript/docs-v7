@@ -10,8 +10,12 @@ previous_url: /setup/quick-setup
 
 With the open-source NativeScript command-line interface and an IDE or text editor of your choice, you can create, develop, store and build your apps entirely locally, free of charge and anonymously. Let’s look at how to set up the CLI for development.
 
-> **NOTE**: If you’re on Windows you might be interested in trying our new **Windows installer** instead of going through the steps on this page. The installer is in beta, so [let us know if you hit any issues](https://github.com/nativescript/nativescript-cli/issues).
-> * [Try the NativeScript Windows installer](/start/ns-setup-installer)
+
+> **NOTE**: The steps on this page are quick setup steps intended for users new to mobile development. If you have existing mobile experience, if you’re on Linux, or if you want full control of the installation process, refer to one of the advanced setup guides below, which walk you through manually setting up your environment for NativeScript development.
+> * [Standart setup: Windows](/start/ns-setup-installer)
+> * [Advanced setup: Windows](/start/ns-setup-win)
+> * [Advanced setup: macOS](/start/ns-setup-os-x)
+> * [Advanced setup: Linux](/start/ns-setup-linux)
 
 ## Step 1: Install Node.js
 
