@@ -12,7 +12,7 @@ With the open-source NativeScript command-line interface and an IDE or text edit
 
 
 > **NOTE**: The steps on this page are quick setup steps intended for users new to mobile development. If you have existing mobile experience, if you’re on Linux, or if you want full control of the installation process, refer to one of the advanced setup guides below, which walk you through manually setting up your environment for NativeScript development.
-> * [Standart setup: Windows](/start/ns-setup-installer)
+> * [Standard setup: Windows](/start/ns-setup-installer)
 > * [Advanced setup: Windows](/start/ns-setup-win)
 > * [Advanced setup: macOS](/start/ns-setup-os-x)
 > * [Advanced setup: Linux](/start/ns-setup-linux)
