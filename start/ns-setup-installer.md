@@ -14,6 +14,10 @@ Install the latest version of NativeScript CLI and its missing prerequisites for
 
 [Download Installer](https://www.nativescript.org/docs/default-source/default-document-library/nativescript-cli-setup-wixdbee632a7b776b26a649ff04000922f2.exe?sfvrsn=2)
 
+> **WARNING**:
+> * The NativeScript Windows installer only works on machines that do not currently have an Android SDK installed. If you’re working on a machine with Android SDKs already in place, go through the manual installation steps on this page to set up NativeScript.
+> * The NativeScript Windows installer can **not** be used to update existing NativeScript installations. To get the latest version of NativeScript, refer to our article on [updating your NativeScript versions](http://docs.nativescript.org/releases/upgrade-instructions).
+
 ### Prerequisites
 
 The installation requires .NET Framework 4 and Windows 7 SP1 or later.
