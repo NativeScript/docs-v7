@@ -10,12 +10,8 @@ previous_url: /setup/quick-setup
 
 With the open-source NativeScript command-line interface and an IDE or text editor of your choice, you can create, develop, store and build your apps entirely locally, free of charge and anonymously. Let’s look at how to set up the CLI for development.
 
-
-> **NOTE**: The steps on this page are quick setup steps intended for users new to mobile development. If you have existing mobile experience, if you’re on Linux, or if you want full control of the installation process, refer to one of the advanced setup guides below, which walk you through manually setting up your environment for NativeScript development.
-> * [Advanced setup: Windows](/start/ns-setup-win)
-> * [Advanced setup: macOS](/start/ns-setup-os-x)
-> * [Advanced setup: Linux](/start/ns-setup-linux)
-
+> **NOTE**: If you’re on Windows you might be interested in trying our new **Windows installer** instead of going through the steps on this page. The installer is in beta, so [let us know if you hit any issues](https://github.com/nativescript/nativescript-cli/issues).
+> * [Download the NativeScript Windows installer](https://www.nativescript.org/docs/default-source/default-document-library/nativescript-cli-setup-wix-20170220.exe?sfvrsn=2)
 
 ## Step 1: Install Node.js
 
@@ -27,7 +23,7 @@ You can check whether you have Node.js set up by opening a terminal or command p
 > * If you’re on macOS and use [Homebrew](http://brew.sh/), you can alternatively install the Node.js LTS release by running `brew update`, to download the latest available updates and then `brew install node@6` in your terminal.
 > * The NativeScript CLI supports a wide variety of Node.js versions, so if you already have Node.js installed you should be good to go. If, by chance, you’re running an unsupported version, the `tns doctor` command we’ll run momentarily will flag the problem so you can upgrade.
 
-> **NOTE**:Bear on mind that you should add the path to `node@6/bin` manually by running `echo 'export PATH="/usr/local/opt/node@6/bin:$PATH"' >> ~/.bash_profile` in terminal
+> **NOTE**: Bear in mind that you should add the path to `node@6/bin` manually by running `echo 'export PATH="/usr/local/opt/node@6/bin:$PATH"' >> ~/.bash_profile` in your terminal.
 
 ## Step 2: Install the NativeScript CLI
 
@@ -57,7 +53,12 @@ $ tns
 
 When you build with NativeScript you’re building truly native iOS and Android apps, and as such, you need to set up each platform you intend to build for on your development machine. To ease the pain of installing all of these requirements manually, the NativeScript CLI provides quick-start scripts for Windows and macOS that handle the necessary setup for you automatically. Let’s look at how they work.
 
-> **TIP**: Setting up your machine for native development can be tricky, especially if you’re new to mobile development. If you get stuck, or if you have questions while going through these instructions, the [NativeScript community forum](http://forum.nativescript.org/) is a great place to get help.
+> **TIP**:
+> * Setting up your machine for native development can be tricky, especially if you’re new to mobile development. If you get stuck, or if you have questions while going through these instructions, the [NativeScript community forum](http://forum.nativescript.org/) is a great place to get help.
+> * If you’re not comfortable with a script automatically installing dependencies on your development machine, or if you’re on Linux, refer to one of the advanced setup guides below for details on manually installing NativeScript’s iOS and Android dependencies.
+>     * [Advanced setup: Windows](/start/ns-setup-win)
+>     * [Advanced setup: macOS](/start/ns-setup-os-x)
+>     * [Advanced setup: Linux](/start/ns-setup-linux)
 
 ### Windows
 
