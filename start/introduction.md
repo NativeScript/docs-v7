@@ -46,6 +46,8 @@ Ready to get started developing with NativeScript? We offer a set of comprehensi
   }
 </script>
 
+> **NOTE**: NativeScript also lets you use TypeScript _without_ Angular. If you’re interested in this approach, start with [our JavaScript tutorial](http://docs.nativescript.org/tutorial/chapter-0) to familiarize yourself with the basic NativeScript concepts, and then refer to [our TypeScript documentation](https://www.nativescript.org/using-typescript-with-nativescript-when-developing-mobile-apps) for your next steps.
+
 ## Join the NativeScript Community
 
 We have a vibrant, engaged community and are here to help. You can find us on [Twitter](https://twitter.com/nativescript) and our [community forum](http://forum.nativescript.org/).
