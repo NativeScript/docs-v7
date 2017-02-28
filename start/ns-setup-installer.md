@@ -62,13 +62,13 @@ When supported JDK version is detected, the Install button is enabled and the us
 
 #### Node.js
 
-Shows whether a supported Node.js version is installed on the machine. If no such version detected, information about what version will be installed and how much space it requires is shown.
+Shows whether a supported Node.js version is installed on the machine. If no such version is detected, information about what version will be installed and how much space it requires is shown.
 
-If supported Node.js is installed but its NPM feature is not installed or not added to PATH environment variable then, an appropriate message is shown and the &quot;Install&quot; button is disabled.
+a supported version of Node.js is installed, but its npm feature is not, or if the npm command has not been added to the PATH environment variable, an appropriate message is shown and the &quot;Install&quot; button is disabled.
 
 #### Android SDK
 
-Shows whether Android SDK is installed on the machine. If an Android SDK is not detected, information about what version will be installed and how much space it requires is shown.
+Shows whether an Android SDK is installed on the machine. If an Android SDK is not detected, information about what version will be installed and how much space it requires is shown.
 
 Whether the Android SDK is installed or not, the following setup actions are available:
 
@@ -79,7 +79,7 @@ Whether the Android SDK is installed or not, the following setup actions are ava
 
 _**Install**_ button
 
-A dialog is shown to the user to confirm the installation as it can take a lot of time and cannot be canceled. If &quot;Yes&quot; is clicked proceeds to the installation page and the installation process is started. If &quot;No&quot; is clicked the dialog is closed.
+A dialog is shown to the user to confirm the installation as it can take a lot of time and cannot be canceled. If &quot;Yes&quot; is clicked, it proceeds to the installation page and the installation process is started. If &quot;No&quot; is clicked the dialog is closed.
 
 ### Installation Screen
 
@@ -91,4 +91,4 @@ Shows a progress bar and information about the current installation that is exec
 
 ![](../img/start/installer-021.png "Installation successful")
 
-After successful installation, the installer shows a reference to a [documentation article](https://docs.nativescript.org/tooling/android-virtual-devices) on how to setup Android Emulator. Also, a checkbox to open documentation is checked.
+After successful installation, the installer shows a reference to a [documentation article](https://docs.nativescript.org/tooling/android-virtual-devices) on how to setup an Android Emulator. Also, a checkbox to open documentation is checked.
