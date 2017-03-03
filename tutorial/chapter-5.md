@@ -1,7 +1,6 @@
 ---
 title: Chapter 5—Plugins and npm Modules
 position: 6
-guide: true
 environment: nativescript
 ---
 
