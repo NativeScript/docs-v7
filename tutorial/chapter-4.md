@@ -1,7 +1,6 @@
 ---
 title: Chapter 4—NativeScript Modules
 position: 5
-guide: true
 environment: nativescript
 ---
 
