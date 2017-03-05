@@ -44,7 +44,7 @@ In order to start this tutorial you need to have the NativeScript CLI (command-l
 
 > **TIP**: Setting up your machine for native development can be tricky, especially if you’re new to mobile development. If you get stuck, or if you have questions while going through these instructions, the [NativeScript community forum](http://forum.nativescript.org/) is a great place to get help.
 
-With that out of the way, let’s get started building apps with NativeSript!
+With that out of the way, let’s get started building apps with NativeScript!
 
 <div class="next-chapter-link-container">
   <a href="chapter-1">Continue to Chapter 1—Getting Up and Running</a>
