@@ -14,7 +14,7 @@ This article includes the following topics:
 * [Applying CSS Styles](#applying-css-styles)
 * [Supported Selectors](#supported-selectors)
 * [Supported CSS Properties](#supported-css-properties)
-* [Accessing NativeScript component properties with CSS](#accessing-nativeScript-component-properties-with-css)
+* [Accessing NativeScript component properties with CSS](#accessing-nativescript-component-properties-with-css)
 * [Using Fonts](#using-fonts)
 * [Import External CSS](#import-external-css)
 * [CSS parser playground](http://iamdustan.com/reworkcss_ast_explorer/)
