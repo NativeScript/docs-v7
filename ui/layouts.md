@@ -37,7 +37,7 @@ During the measure pass, each [view][view] is measured to retrieve its desired s
 * visibility
 * marginTop
 * marginRight
-* marginBotton
+* marginBottom
 * marginLeft
 
 ### Layout Pass
