@@ -5,7 +5,7 @@ position: 10
 slug: docs-changelog
 ---
 
-2.5.0 (2015, February 01)
+2.5.0 (2017, February 01)
 ==
 ### Thank you, community!
 
