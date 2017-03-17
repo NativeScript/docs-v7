@@ -67,7 +67,7 @@ Complete the following steps to set up NativeScript on your Windows development 
 
 5. Install the required Android SDKs and the Local Maven repository for Support Libraries.
 
-    <pre class="add-copy-button"><code class="language-terminal">echo yes | "%ANDROID_HOME%\tools\android" update sdk --filter tools,platform-tools,android-23,build-tools-23.0.3,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
+    <pre class="add-copy-button"><code class="language-terminal">echo yes | "%ANDROID_HOME%\tools\android" update sdk --filter tools,platform-tools,android-25,build-tools-25.0.2,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
     </code></pre>
 
 6. Install Android virtual devices (AVDs)
