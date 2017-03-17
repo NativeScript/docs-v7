@@ -80,7 +80,7 @@ Complete the following steps to set up NativeScript on your Linux development ma
 
 1. Install the required Android SDKs and the Local Maven repository for Support Libraries.
 
-    <pre class="add-copy-button"><code class="language-terminal">sudo $ANDROID_HOME/tools/android update sdk --filter tools,platform-tools,android-23,build-tools-23.0.3,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
+    <pre class="add-copy-button"><code class="language-terminal">sudo $ANDROID_HOME/tools/android update sdk --filter tools,platform-tools,android-25,build-tools-25.0.2,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
     </code></pre>
 
 1. Setup Android Emulators (AVD) by following the article [here]({%slug android-emulators%})
