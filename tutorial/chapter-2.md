@@ -149,7 +149,7 @@ Now that your app is ready for development, let's add some UI components to make
 
 ## 2.3: Adding UI components
 
-Let's dig into the files used to create your app's UI, which reside in the `app/views` folder. Each folder in `app/views` contains the code for one of the three pages in Groceries: `list`, `login`, and `register`. If you look in the `app/views/login` folder, you'll see three files: `login.css`, `login.js`, and the `login.xml`. When you open `login.xml` again you should see the following code:
+Let's dig into the files used to create your app's UI, which reside in the `app/views` folder. Each folder in `app/views` contains the code for one of the three pages in Groceries: `list`, `login`, and `register`. If you look in the `app/views/login` folder, you'll see three files: `login.css`, `login.js`, and `login.xml`. When you open `login.xml` you should see the following code:
 
 ``` XML
 <Page>
