@@ -113,7 +113,7 @@ The navigation inside a NativeScript application is done with the [Angular 2 Rou
 * `router-outlet` - the built in Angular 2 router outlet. It replaces the content of the outlet with the templates of different component.
 * `page-router-outlet` - uses NativeScript [page navigation]({% slug navigation %}#pages). 
 
-To use the Router you will have to pass the `NS_ROUTER_PROVIDERS` providers when bootstrapping you app:
+To use the Router you will have to pass the `NS_ROUTER_PROVIDERS` providers when bootstrapping your app:
 
 ``` TypeScript
 import {nativeScriptBootstrap} from "nativescript-angular/application";
