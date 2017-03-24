@@ -260,7 +260,7 @@ Errors happen, and when they do it’s important to know how to handle them. Let
 Find the line of code that declares an `<ActionBar>` (line 6 of your `app/app.component.ts` file). Remove that line’s final `>` character so that the line looks like this.
 
 ``` XML
-<ActionBar title="My Apple" class="action-bar"
+<ActionBar title="My Apple" class="action-bar"></ActionBar
 ```
 
 This is invalid markup, and as you might expect NativeScript is unable to render your user interface. What NativeScript does do, however, is log any relevant errors and stack traces to your console. If you return to your terminal and scroll up just a bit you’ll see following error logged that indicates exactly where the problem is.
@@ -272,6 +272,8 @@ JS ERROR Error: Template parse errors:
             [ERROR ->]<Image src="~/images/apple.jpg"></Image>
           "): AppComponent@2:4
 ```
+
+> **WARNING**: There is a bug in the NativeScript CLI that currently prevents you from seeing template parsing errors on Android. Follow [this issue on GitHub](https://github.com/NativeScript/nativescript-cli/issues/2603) for updates.
 
 Let’s fix the error now by adding the `>` back to line 6 in your `app.component.ts` file.
 
