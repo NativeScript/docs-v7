@@ -1,6 +1,7 @@
 ---
 title: Chapter 6—Accessing Native APIs
 position: 7
+guide: true
 environment: nativescript
 ---
 
