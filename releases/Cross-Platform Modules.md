@@ -8,9 +8,8 @@ previous_url: /Changelogs/Cross-Platform Modules
 ---
 
 Cross Platform Modules Changelog
-==============================
 
-## 2.5.2 (2017, March 21)
+##2.5.2 (2017, March 21)
 
 ### Fixed
 
@@ -18,13 +17,13 @@ Cross Platform Modules Changelog
 
 - [(#3675)](https://github.com/NativeScript/NativeScript/pull/3675) Fix a crash when nesting a ProxyViewContainer in FlexboxLayout
 
-## 2.5.1 (2017, February 16)
+##2.5.1 (2017, February 16)
 
 ### Fixed
 
 - [(#3565)](https://github.com/NativeScript/NativeScript/issues/3565) Fix a crash when ActionBar transparent background
 
-## 2.5.0 (2017, February 1)
+##2.5.0 (2017, February 1)
 
 ### Fixed
 
