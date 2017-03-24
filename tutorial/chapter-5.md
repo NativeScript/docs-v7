@@ -183,7 +183,6 @@ To do so, return to `list.js` and paste the following code at the bottom of the 
 ``` JavaScript
 exports.share = function() {
     var list = [];
-    var finalList = "";
     for (var i = 0, size = groceryList.length; i < size ; i++) {
         list.push(groceryList.getItem(i).name);
     }
