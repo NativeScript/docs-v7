@@ -63,7 +63,7 @@ exports.onPageLoaded = onPageLoaded;
 ```
 ``` TypeScript
 // main-page.ts
-import observableModule = require("data/observable");
+import observableModule from "data/observable";
 
 export function onPageLoaded(args: observableModule.EventData) {
     console.log("Page Loaded");
@@ -87,8 +87,8 @@ function createPage() {
 exports.createPage = createPage;
 ```
 ``` TypeScript
-import pagesModule = require("ui/page");
-import labelModule = require("ui/label");
+import pagesModule from "ui/page";
+import labelModule from "ui/label";
 
 export function createPage() {
     var label = new labelModule.Label();
@@ -110,7 +110,7 @@ var application = require("application");
 application.start({ moduleName: "main-page" });
 ```
 ``` TypeScript
-import application = require("application");
+import application from "application";
 application.start({ moduleName: "main-page" });
 ```
 
@@ -133,7 +133,7 @@ var frameModule = require("ui/frame");
 var topmost = frameModule.topmost();
 ```
 ``` TypeScript
-import frameModule = require("ui/frame");
+import frameModule from "ui/frame";
 var topmost = frameModule.topmost();
 ```
 
@@ -375,7 +375,7 @@ var frameModule = require("ui/frame");
 frameModule.Frame.defaultTransition = { name: "fade" };
 ```
 ``` TypeScript
-import frameModule = require("ui/frame");
+import frameModule from "ui/frame";
 frameModule.Frame.defaultTransition = { name: "fade" };
 ```
 
@@ -460,8 +460,8 @@ var CustomTransition = (function (_super) {
 exports.CustomTransition = CustomTransition;
 ```
 ``` TypeScript
-import transition = require("ui/transition");
-import platform = require("platform");
+import transition from "ui/transition";
+import platform from "platform";
 
 var floatType = java.lang.Float.class.getField("TYPE").get(null);
 
@@ -529,8 +529,8 @@ var CustomTransition = (function (_super) {
 exports.CustomTransition = CustomTransition;
 ```
 ``` TypeScript
-import transition = require("ui/transition");
-import platform = require("platform");
+import transition from "ui/transition";
+import platform from "platform";
 
 export class CustomTransition extends transition.Transition {
     public animateIOSTransition(containerView: UIView, fromView: UIView, toView: UIView, operation: UINavigationControllerOperation, completion: (finished: boolean) => void): void {
