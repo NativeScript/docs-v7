@@ -227,7 +227,7 @@ Errors happen, and when they do it’s important to know how to handle them. Let
 Find the line of code that declares an `<ActionBar>` (line 2 of your `app/main-page.xml` file). Remove that line’s final `>` character so that the line looks like this.
 
 ``` XML
-<ActionBar title="My Apple" class="action-bar"
+<ActionBar title="My Apple" class="action-bar"></ActionBar
 ```
 
 This is invalid markup, and as you might expect NativeScript is unable to render your user interface. What NativeScript does do, however, is log any relevant errors and stack traces to your console. If you return to your terminal and scroll up just a bit you’ll see following error logged that indicates exactly where the problem is.
