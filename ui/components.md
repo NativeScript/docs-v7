@@ -310,7 +310,7 @@ The [SideDrawer](http://docs.telerik.com/devtools/nativescript-ui/Controls/Nativ
 The [SideDrawer](http://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/SideDrawer/overview) is a component can show a hidden view that contains navigation UI or common settings.
 {% endangular %}
 
-![side-drawer android](../img/ui-for-nativescript/Drawer_Android.png "side-drawer android")![side-drawer ios](../img/ui-for-nativescript/Drawer_Android.png "side-drawer ios")
+![side-drawer android](../img/ui-for-nativescript/Drawer_Android.png "side-drawer android")![side-drawer ios](../img/ui-for-nativescript/Drawer_iOS.png "side-drawer ios")
 
 
 ## Calendar
