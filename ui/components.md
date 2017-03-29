@@ -33,7 +33,8 @@ NativeScript ships with a set of user interface [`views`](http://docs.nativescri
 
 
 
-Some of the components are provided by Telerik UI for NativeScript plugin, which is distributed in two versions:
+
+Some of the components has been provided by Telerik UI for NativeScript plugin, which is distributed in two versions:
 
 * Telerik UI for NativeScript (free)
 * Telerik UI for NativeScript Pro (paid)
@@ -43,14 +44,15 @@ Telerik UI for NativeScript is available for download on npmjs.com under the [na
 * [RadListView](#radlistview)
 * [SideDrawer](#sidedrawer)
 
-A fully functioning trial of Telerik UI for NativeScript Pro is available for download from the [Telerik website](https://www.telerik.com/download-trial-file/v2/nativescript-ui) or from npmjs.com under the [nativescript-telerik-ui-pro](https://www.npmjs.com/package/nativescript-telerik-ui-pro) name. Besides the two free components mentioned above, it also contains:
 
-* [Calendar <sup>Premium</sup>](#calendar)
-* [Chart <sup>Premium</sup>](#chart)
-* [DataForm <sup>Premium</sup>](#dataform)
+Telerik UI for NativeScript Pro is available for download from the [Telerik website](https://www.telerik.com/download-trial-file/v2/nativescript-ui) or from npmjs.com under the [nativescript-telerik-ui-pro](https://www.npmjs.com/package/nativescript-telerik-ui-pro) name. Besides the two free components mentioned above, it also contains:
+
+* [Calendar (Paid Component)](#calendar)
+* [Chart (Paid Component)](#chart)
+* [DataForm (Paid Component)](#dataform)
 {% nativescript %}
-* [Gauges <sup>Premium</sup>](#gauges)
-* [AutoCompleteTextView <sup>Premium</sup>](#autocompletetextview)
+* [Gauges (Paid Component)](#gauges)
+* [AutoCompleteTextView (Paid Component)](#autocompletetextview)
 {% endnativescript %}
 
 
@@ -310,12 +312,11 @@ The [SideDrawer](http://docs.telerik.com/devtools/nativescript-ui/Controls/Nativ
 The [SideDrawer](http://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/SideDrawer/overview) is a component can show a hidden view that contains navigation UI or common settings.
 {% endangular %}
 
-![side-drawer android](../img/ui-for-nativescript/Drawer_Android.png "side-drawer android")![side-drawer ios](../img/ui-for-nativescript/Drawer_iOS.png "side-drawer ios")
 
+![side-drawer android](../img/ui-for-nativescript/Drawer_Android.png "side-drawer android")![side-drawer ios](../img/ui-for-nativescript/Drawer_Android.png "side-drawer ios")
 
 ## Calendar
-
->This component is part of [Telerik UI for NativeScript Pro](http://docs.telerik.com/devtools/nativescript-ui/introduction).
+### (Paid Component)
 
 {% nativescript %}
 The [Calendar](http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/Calendar/overview) for NativeScript is based on the corresponding native calendar components from the Telerik UI for iOS and Telerik UI for Android suites. It exposes a unified API covering all major features coming from the native components like:
@@ -330,14 +331,10 @@ The [Calendar](http://docs.telerik.com/devtools/nativescript-ui/Controls/Angular
 * cells customization
 * selection
 
-
-
 ![calendar android](../img/ui-for-nativescript/Calendar_Android.png "calendar android")![calendar ios](../img/ui-for-nativescript/Calendar_iOS.png "calendar ios")
 
 ## Chart
-
->This component is part of [Telerik UI for NativeScript Pro](http://docs.telerik.com/devtools/nativescript-ui/introduction).
-
+### (Paid Component)
 
 {% nativescript %}
 The [Chart](http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/Chart/overview) for NativeScript is a charting component that has been designed for the mobile environment.
@@ -350,8 +347,7 @@ The [Chart](http://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/Ch
 ![chart android](../img/ui-for-nativescript/Chart_Android.png "chart android")![chart ios](../img/ui-for-nativescript/Chart_iOS.png "chart ios")
 
 ## DataForm
-
->This component is part of [Telerik UI for NativeScript Pro](http://docs.telerik.com/devtools/nativescript-ui/introduction).
+### (Paid Component)
 
 {% nativescript %}
 The [DataForm](http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/DataForm/dataform-overview)  for NativeScript helps you edit the properties of a business object during runtime and build a mobile form fast and easy.
@@ -365,16 +361,14 @@ The [DataForm](http://docs.telerik.com/devtools/nativescript-ui/Controls/Angular
 
 {% nativescript %}
 ## Gauges
-
->This component is part of [Telerik UI for NativeScript Pro](http://docs.telerik.com/devtools/nativescript-ui/introduction).
+### (Paid Component)
 
 The [Gauges](http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/Gauges/overview)  is a highly customizable component that allows you to show the current status of a value within a range of upper and lower bounds, illustrate progress towards a goal or a summary of a fluctuating metric.
 
 ![gauges android](../img/ui-for-nativescript/Gauges_Android.png "gauges android")![gauges ios](../img/ui-for-nativescript/Gauges_iOS.png "gauges ios")
 
 ## AutoCompleteTextView
-
->This component is part of [Telerik UI for NativeScript Pro](http://docs.telerik.com/devtools/nativescript-ui/introduction).
+### (Paid Component)
 
 The [AutoCompleteTextView](http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/AutoCompleteTextView/overview) can automatically complete user input string by comparing the text being entered to all strings in the associated data source.
 
