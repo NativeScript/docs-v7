@@ -313,7 +313,7 @@ The [SideDrawer](http://docs.telerik.com/devtools/nativescript-ui/Controls/Angul
 {% endangular %}
 
 
-![side-drawer android](../img/ui-for-nativescript/Drawer_Android.png "side-drawer android")![side-drawer ios](../img/ui-for-nativescript/Drawer_Android.png "side-drawer ios")
+![side-drawer android](../img/ui-for-nativescript/Drawer_Android.png "side-drawer android")![side-drawer ios](../img/ui-for-nativescript/Drawer_iOS.png "side-drawer ios")
 
 
 ## Calendar
