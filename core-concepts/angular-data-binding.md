@@ -66,7 +66,7 @@ There are some limitations when using two-way data binding with Angular 2. Two-w
 ```XML
 <TextField [(ngModel)]='model.mytext' ></TextField>
 // becomes
-<TextField [ngModel]='model.mytext' (ngModelChange)='model.mytext=$event.value' ></TextField>
+<TextField [ngModel]='model.mytext' (ngModelChange)='model.mytext=$event' ></TextField>
 ```
 
 This is the way Angular 2 supports two-way data binding. It generally works in almost all cases with the limitation that we could use only one property with two-way data binding (in the case of TextField this is the `text` property). `ngModel` directive also provide an interface for safely updating property in both directions. For all NativeScript controls `NativeScript-Angular` plugin provides the underlying infrastructure to support native controls via `ngModel` directive (the same way as Angular 2 syntax). It is done by using a single value property for every control that could be used with `ngModel` syntax. Following is the list of available properties:
