@@ -39,8 +39,6 @@ In your project, the files for each module reside in a dedicated subdirectory in
 
 ### Device functionality modules
 
-+ [camera]({%ns_cookbook camera%}): Lets you take pictures with the device camera.
-+ [location]({%ns_cookbook location%}): Lets you use the geolocation sensors of the device.
 + [platform]({%ns_cookbook platform%}): Provides information about the device, its operating system and software.
 + [fps-meter]({%ns_cookbook fps-meter%}): Lets you capture the frames-per-second metrics of your application.
 + [file-system]({%ns_cookbook file-system%}): Lets you work with the device file system. Provides high-level abstractions for file system entities such as files, folders, known folders, paths, separators, etc.
