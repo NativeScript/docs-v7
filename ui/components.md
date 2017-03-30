@@ -33,7 +33,7 @@ NativeScript ships with a set of user interface [`views`](http://docs.nativescri
 
 
 
-Some of the components has been provided by Telerik UI for NativeScript plugin, which is distributed in two versions:
+Some of the components are provided by Telerik UI for NativeScript plugin, which is distributed in two versions:
 
 * Telerik UI for NativeScript (free)
 * Telerik UI for NativeScript Pro (paid)
@@ -43,7 +43,7 @@ Telerik UI for NativeScript is available for download on npmjs.com under the [na
 * [RadListView](#radlistview)
 * [SideDrawer](#sidedrawer)
 
-Telerik UI for NativeScript Pro is available for download from the [Telerik website](https://www.telerik.com/download-trial-file/v2/nativescript-ui) or from npmjs.com under the [nativescript-telerik-ui-pro](https://www.npmjs.com/package/nativescript-telerik-ui-pro) name. Besides the two free components mentioned above, it also contains:
+A fully functioning trial of Telerik UI for NativeScript Pro is available for download from the [Telerik website](https://www.telerik.com/download-trial-file/v2/nativescript-ui) or from npmjs.com under the [nativescript-telerik-ui-pro](https://www.npmjs.com/package/nativescript-telerik-ui-pro) name. Besides the two free components mentioned above, it also contains:
 
 * [Calendar <sup>Premium</sup>](#calendar)
 * [Chart <sup>Premium</sup>](#chart)
