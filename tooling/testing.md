@@ -43,7 +43,7 @@ Before writing and running unit tests, verify that you have completed the follow
 
 ## Configure Your Project
 
-The NativeScript CLI lets you choose between three widely popular unit testing frameworks: [Jasmine][Jasmine], [Mocha][Mocha] with [Chai][Chai] and [QUnit][QUnit]. You need to configure the project for unit testing by choosing a framework. You can use only framework at a time.
+The NativeScript CLI lets you choose between three widely popular unit testing frameworks: [Jasmine][Jasmine], [Mocha][Mocha] with [Chai][Chai] and [QUnit][QUnit]. You need to configure the project for unit testing by choosing a framework. You can use only one framework at a time.
 
 To initialize your project for unit testing, run the following command and, when prompted, use the keyboard arrows to select the framework that you want to use.
 
