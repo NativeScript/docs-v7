@@ -38,7 +38,7 @@ the iOS Runtime converts the JavaScript number literals to native doubles and pa
 console.log('min(3, 4) = ', java.lang.Math.min(3, 4));
 ```
 
-The native `java.lang.Math.min()` method expects two integers. The Android Runtime knows the signature of `java.lang.Math.min()` function and translates the literals `3` and `4` to their representation in a Java integer data type. The returned integer is also automatically translated to a JavaScript number and passed to `console.log()`.
+The native `java.lang.Math.min()` method expects two integers. The Android Runtime knows the signature of the function `java.lang.Math.min()` and translates the literals `3` and `4` to their representation in a Java integer data type. The returned integer is also automatically translated to a JavaScript number and passed to `console.log()`.
 
 # Classes and Objects
 
@@ -75,7 +75,7 @@ console.log(button.titleLabel.text); // The returned NSString is converted to Ja
 var file = new java.io.File('myfile.txt'); // 'myfile.txt' is converted to java.lang.String
 ```
 
-The exception to this are the methods on `NSString` classes declared as returning `instancetype` - init methods and factory methods. This means that a call to `NSString.stringWithString` whose return type in Objective-C is `instancetype` will return a wrapper around a `NSString` instance, rather than a JavaScript string.
+The exception to this are the methods on `NSString` classes declared as returning `instancetype` - init methods and factory methods. This means that a call to `NSString.stringWithString` whose return type in Objective-C is `instancetype` will return a wrapper around a `NSString` instance rather than a JavaScript string.
 
 > Exception: Methods on `NSString` classes declared as returning `instancetype` (e.g., init methods and factory methods). For example, calls to `NSString.stringWithString` return `instancetype` results in Objective-C. In your NativeScript code, such calls will return a wrapper around a `NSString` instance instead of a JavaScript string.
 
@@ -161,7 +161,7 @@ Steps to install and enable
     }
 }
 ```
-Note that d.ts files require a lot of memory and CPU. Consider adding skipLibCheck option to tsconfig file.
+Note that d.ts files require a lot of memory and CPU. Consider adding skipLibCheck option to `tsconfig.json`.
 For more information: [tns-platform-declarations](https://github.com/NativeScript/NativeScript/tree/master/tns-platform-declarations)
 
 
