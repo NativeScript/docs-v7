@@ -55,14 +55,14 @@ The NativeScript core theme includes two standard color schemes, light and dark.
 To use the light color scheme, add the following line of code to the top of your `app.css` file:
 
 ``` CSS
-@import 'nativescript-theme-core/css/core.light.css';
+@import '~nativescript-theme-core/css/core.light.css';
 ```
 
 And in order to use the dark scheme, add this line of code to your `app.css` instead:
 
 
 ``` CSS
-@import 'nativescript-theme-core/css/core.dark.css';
+@import '~nativescript-theme-core/css/core.dark.css';
 ```
 
 > **TIP**: When using the dark color scheme, make sure that you, 1) apply the [`page` class name](#page) to ensure your app’s text displays appropriately, and 2) [alter your app’s status bar colors](#status-bar-considerations).
@@ -70,17 +70,17 @@ And in order to use the dark scheme, add this line of code to your `app.css` ins
 You may want to alternatively use one of the 11 other color schemes included in the NativeScript core theme. To do so, switch your `app.css` file to use one of the following imports.
 
 ``` CSS
-@import 'nativescript-theme-core/css/aqua.css';
-@import 'nativescript-theme-core/css/blue.css';
-@import 'nativescript-theme-core/css/brown.css';
-@import 'nativescript-theme-core/css/forest.css';
-@import 'nativescript-theme-core/css/grey.css';
-@import 'nativescript-theme-core/css/lemon.css';
-@import 'nativescript-theme-core/css/lime.css';
-@import 'nativescript-theme-core/css/orange.css';
-@import 'nativescript-theme-core/css/purple.css';
-@import 'nativescript-theme-core/css/ruby.css';
-@import 'nativescript-theme-core/css/sky.css';
+@import '~nativescript-theme-core/css/aqua.css';
+@import '~nativescript-theme-core/css/blue.css';
+@import '~nativescript-theme-core/css/brown.css';
+@import '~nativescript-theme-core/css/forest.css';
+@import '~nativescript-theme-core/css/grey.css';
+@import '~nativescript-theme-core/css/lemon.css';
+@import '~nativescript-theme-core/css/lime.css';
+@import '~nativescript-theme-core/css/orange.css';
+@import '~nativescript-theme-core/css/purple.css';
+@import '~nativescript-theme-core/css/ruby.css';
+@import '~nativescript-theme-core/css/sky.css';
 ```
 
 > **TIP**: [This image](/img/theme/color-schemes-all.png) shows all 13 color schemes on iOS and Android, and can help you decide which color scheme is a good fit for your app.
@@ -108,16 +108,18 @@ After that, paste the following code into your `app.android.scss` file.
 
 ``` CSS
 @import 'app-common';
-@import 'nativescript-theme-core/scss/platforms/index.android';
+@import '~nativescript-theme-core/scss/platforms/index.android';
 
 // Place any CSS rules you want to apply only on Android here
 ```
+
+> **TIP**: If you are using an older version of the `nativescript-dev-sass` plugin (before 1.0.0), the tilde ("~") in the `@import` is **not** required for referencing theme stylesheets. As of 1.0.0, the "~" is required to tell the node sass compiler to resovle the import file path relative to the `node_modules` directory.
 
 And the following code into your `app.ios.scss` file.
 
 ``` CSS
 @import 'app-common';
-@import 'nativescript-theme-core/scss/platforms/index.ios';
+@import '~nativescript-theme-core/scss/platforms/index.ios';
 
 // Place any CSS rules you want to apply only on iOS here
 ```
@@ -127,13 +129,13 @@ Finally, paste the following code into your `_app-common.scss` file.
 ``` CSS
 // Import the theme’s variables. If you’re using a color scheme
 // other than “light”, switch the path to the alternative scheme,
-// for example 'nativescript-theme-core/scss/dark'.
-@import 'nativescript-theme-core/scss/light';
+// for example '~nativescript-theme-core/scss/dark'.
+@import '~nativescript-theme-core/scss/light';
 
 // Customize any of the theme’s variables here, for instance $btn-color: red;
 
 // Import the theme’s main ruleset.
-@import 'nativescript-theme-core/scss/index';
+@import '~nativescript-theme-core/scss/index';
 
 // Place any CSS rules you want to apply on both iOS and Android here.
 // This is where the vast majority of your CSS code goes.
