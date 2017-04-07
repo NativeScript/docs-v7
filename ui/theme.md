@@ -141,6 +141,33 @@ Finally, paste the following code into your `_app-common.scss` file.
 
 The power of this approach is you have the ability to customize the [theme’s SASS variables](https://github.com/NativeScript/theme/blob/master/app/scss/_variables.scss) directly. You also have separate files set up for iOS- and Android-specific code, should you need to style your app differently on each platform.
 
+### Using custom `.scss` file
+
+While using SASS in NativeScript Angular 2 project and create custom `.scss` file for specific component, you should refer the path to the compiled CSS file in `styleUrls` in the component typescript file.
+For example:
+
+File structure:
+
+```
+.
+├── custom.scss
+├── custom.css
+└── app.component.ts
+```
+
+app.component.ts
+
+```
+import { Component } from "@angular/core";
+
+@Component({
+    selector: "ns-app",
+    templateUrl: "app.component.html",
+    styleUrls:['./custom.css']
+})
+export class AppComponent { }
+```
+
 ## Class Names
 
 The NativeScript core theme contains a wide variety of CSS class names you can use to quickly style your applications. Here’s a complete list of the class names and what they do.
