@@ -22,9 +22,12 @@ This repository’s two main branches are `master` and `production`.
 * The `master` branch contains the most up-to-date version of the NativeScript documentation. The contents of the `master` branch are moved into the `production` branch with NativeScript release; therefore, the `master` branch is perfect for updating the docs about yet-to-be-released versions of NativeScript, as well as trivial changes that don’t need to be deployed immediately.
 
 When in doubt feel free to submit pull requests against either branch.
-> Note: The pull request should be made in `production` branch, in case those edits are related to the current version of NativeScript and it is important to immediately publish the changes(e.g. mistakes in the code snippets, semantic errors in  the articles, etc.)
 
-> All other pull requests related to the upcoming releases or when it is not critical for the current version, should be made in the `master` branch (e.g. article for a new feature, adding some extra information for the component or modules, etc.).
+> Note: The pull request should be made in `production` branch, in case those edits are related to the current version of NativeScript and it is important to be published immediately the documentation. 
+>> (e.g. mistakes in the code snippets, semantic errors in  the articles, ...)
+
+> All other pull requests related to the upcoming releases or it is not critical for the current version, should be made in the `master` branch
+>> (e.g. article for a new feature, adding some extra information for the component or modules, ...).
 
 ## Configuration
 
