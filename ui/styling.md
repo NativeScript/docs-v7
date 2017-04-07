@@ -48,16 +48,33 @@ You can change the name of the file from which the application-wide CSS is loade
 {% nativescript %}
 ``` JavaScript
 var application = require("application");
-application.cssFile = "style.css";
+application.setCssFileName("style.css");
 
 application.start({ moduleName: "main-page" });
 ```
 ``` TypeScript
 import application = require("application");
-application.cssFile = "style.css";
+application.setCssFileName("style.css");
 
 application.start({ moduleName: "main-page" });
 ```
+
+You could also check the name of the application-wide CSS file by using `getCssFileName()` method as shown below:
+
+``` JavaScript
+var application = require("application");
+var fileName = app.getCssFileName();
+console.log("fileName "+fileName);
+
+```
+``` TypeScript
+import application = require("application");
+var fileName = app.getCssFileName();
+console.log("fileName "+fileName);
+
+application.start({ moduleName: "main-page" });
+```
+
 {% endnativescript %}
 {% angular %}
 
