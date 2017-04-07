@@ -51,7 +51,7 @@ Components are the fundamental building blocks of NativeScript applications buil
 ### Component example
 
 ``` TypeScript
-import {Component} from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
     selector: "main-component",
@@ -148,7 +148,7 @@ application.start({ moduleName: "main-page" });
 iOS calls UIApplication and triggers the application main event loop.
 */
 
-import application = require("application");
+import * as application from "application";
 application.start({ moduleName: "main-page" });
 ```
 {% endnativescript %}
@@ -234,7 +234,7 @@ application.start({ moduleName: "main-page" });
 ```
 {% endnativescript %}
 ``` TypeScript
-import application = require("application");
+import * as application from "application";
 application.on(application.launchEvent, function (args: application.ApplicationEventData) {
     if (args.android) {
         // For Android applications, args.android is an android.content.Intent class.
@@ -435,7 +435,7 @@ application.start();
 ```
 {% endnativescript %}
 ``` TypeScript
-import application = require("application");
+import * as application from "application";
 class MyDelegate extends UIResponder implements UIApplicationDelegate {
     public static ObjCProtocols = [UIApplicationDelegate];
 
@@ -481,8 +481,8 @@ exports.pageLoaded = pageLoaded;
 ```
 {% endnativescript %}
 ``` TypeScript
-import observable = require("data/observable");
-import applicationSettings = require("application-settings");
+import * as observable from "data/observable";
+import * as applicationSettings from "application-settings";
 // Event handler for Page "loaded" event attached in main-page.xml.
 export function pageLoaded(args: observable.EventData) {
     applicationSettings.setString("Name", "John Doe");

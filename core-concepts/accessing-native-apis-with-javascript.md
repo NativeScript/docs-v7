@@ -151,14 +151,16 @@ Steps to install and enable
 - Modify `tsconfig.json` to contain the following settings:
 ```
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es5",
-        "experimentalDecorators": true,
-        "lib": [
-            "es2016"
+  "compilerOptions": {
+    ...
+    "lib": ["es6", "dom"]
+    "baseUrl": ".",
+    "paths": {
+        "*": [
+            "./node_modules/tns-core-modules/*",
+            "./node_modules/*"
         ]
-    }
+  }
 }
 ```
 Note that d.ts files require a lot of memory and CPU. Consider adding skipLibCheck option to `tsconfig.json`.
