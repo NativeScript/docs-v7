@@ -437,9 +437,9 @@ Making the component visible to the XML parser is as easy as adding a custom nam
     xmlns:numPicker="number-picker"
     loaded="pageLoaded">
   <StackLayout id="rootLayout">
-    <Label text="{{ value }}" cssClass="title"/>
+    <Label text="{{ value }}" className="title"/>
     <Button text="TAP" tap="{{ tapAction }}" />
-    <Label text="{{ value }}" cssClass="message" textWrap="true"/>
+    <Label text="{{ value }}" className="message" textWrap="true"/>
     <numPicker:NumberPicker value="{{ value }}" horizontalAlignment="left"/>
   </StackLayout>
 </Page>

@@ -29,7 +29,7 @@ var geolocation = require("nativescript-geolocation");
 ```
 {% endnativescript %}
 ```TypeScript
-import geolocation = require("nativescript-geolocation");
+import * as geolocation from "nativescript-geolocation";
 ```
 
 ## Getting information about a location service

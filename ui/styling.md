@@ -187,7 +187,7 @@ button { background-color: gray }
 
 ### Class selector
 [Class selectors](http://www.w3schools.com/cssref/sel_class.asp) select all views with a given class.
-The class is set using the `cssClass` property of the view.
+The class is set using the `className` property of the view.
 
 {% nativescript %}
 ```CSS
@@ -195,14 +195,14 @@ The class is set using the `cssClass` property of the view.
 ```
 ```JavaScript
 var label = new labelModule.Label();
-label.cssClass = "title"
+label.className = "title"
 ```
 ```TypeScript
 var label = new labelModule.Label();
-label.cssClass = "title"
+label.className = "title"
 ```
 ```XML
-<Label cssClass="title" />
+<Label className="title" />
 ```
 {% endnativescript %}
 {% angular %}
@@ -211,14 +211,14 @@ label.cssClass = "title"
 ```
 ```JavaScript
 var label = new labelModule.Label();
-label.cssClass = "title"
+label.className = "title"
 ```
 ```TypeScript
 var label = new labelModule.Label();
-label.cssClass = "title"
+label.className = "title"
 ```
 ```XML
-<Label cssClass="title" ></Label>
+<Label className="title" ></Label>
 ```
 {% endangular %}
 
