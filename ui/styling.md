@@ -53,7 +53,7 @@ application.setCssFileName("style.css");
 application.start({ moduleName: "main-page" });
 ```
 ``` TypeScript
-import application = require("application");
+import * as application from "application";
 application.setCssFileName("style.css");
 
 application.start({ moduleName: "main-page" });
@@ -68,7 +68,7 @@ console.log("fileName "+fileName);
 
 ```
 ``` TypeScript
-import application = require("application");
+import * as application from "application";
 var fileName = app.getCssFileName();
 console.log("fileName "+fileName);
 

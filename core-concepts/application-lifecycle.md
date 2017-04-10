@@ -360,7 +360,7 @@ application.start();
 ```
 {% endnativescript %}
 ``` TypeScript
-import application = require("application");
+import * as application from "application";
 
 // Android activity events
 if (application.android) {

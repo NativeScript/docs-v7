@@ -343,8 +343,8 @@ function onCancel(args) {
 exports.onCancel = onCancel;
 ```
 ```TypeScript
-import observable = require("data/observable");
-import view = require("ui/core/view");
+import * as observable from "data/observable";
+import * as view from "ui/core/view";
 
 export function onLoaded(args: observable.EventData) {
     var page = <view.View>args.object;

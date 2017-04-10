@@ -64,12 +64,12 @@ exports.pageLoaded = pageLoaded;
 //# sourceMappingURL=main-page.js.map
 ```
 ``` TypeScript
-import observable = require("data/observable");
-import pages = require("ui/page");
+import * as observable from "data/observable";
+import * as pages from "ui/page";
 
 export function pageLoaded(args: observable.EventData) {
-    var page = <pages.Page>args.object;
-    var viewModel = new observable.Observable();
+    let page = <pages.Page>args.object;
+    let viewModel = new observable.Observable();
     var glyphs = new Array<observable.Observable>();
     var charCode = 0xe903;
     for(; charCode <= 0xeaea; charCode++){

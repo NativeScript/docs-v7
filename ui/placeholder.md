@@ -34,7 +34,7 @@ function creatingView(args) {
 exports.creatingView = creatingView;
 ```
 ```TypeScript
-import placeholder = require("ui/placeholder");
+import * as placeholder from "ui/placeholder";
 
 export function creatingView(args: placeholder.CreateViewEventData) {
     var nativeView = new android.widget.TextView(args.context);
