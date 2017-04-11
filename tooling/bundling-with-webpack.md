@@ -51,7 +51,7 @@ $ npm install --save-dev nativescript-dev-webpack
 
 ## How nativescript-dev-webpack Works
 
-Installing the plugin adds several updates your project:
+Installing the plugin adds several updates to your project:
 
 - `devDependencies` settings that will contain the most popular webpack package and several loaders and plugins.
 - `webpack.android.js` and `webpack.ios.js` configuration files for the Android and iOS platforms respectively.
