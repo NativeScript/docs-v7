@@ -89,7 +89,7 @@ You may want to alternatively use one of the 11 other color schemes included in 
 
 The NativeScript core theme is written in SASS, and you can use the theme’s `.scss` files directly. Using SASS is a great way to customize the theme in a way that’s not possible in CSS, such as using the theme’s SASS variables to change your app’s appearance.
 
-To get started, first verify that your app has the [NativeScript SASS plugin](https://github.com/toddanglin/nativescript-dev-sass) installed by running the following command:
+To get started, first verify that your app has the latest version of the [NativeScript SASS plugin](https://github.com/toddanglin/nativescript-dev-sass) installed by running the following command:
 
 ```
 tns install sass
@@ -108,7 +108,7 @@ After that, paste the following code into your `app.android.scss` file.
 
 ``` CSS
 @import 'app-common';
-@import 'nativescript-theme-core/scss/platforms/index.android';
+@import '~nativescript-theme-core/scss/platforms/index.android';
 
 // Place any CSS rules you want to apply only on Android here
 ```
@@ -117,7 +117,7 @@ And the following code into your `app.ios.scss` file.
 
 ``` CSS
 @import 'app-common';
-@import 'nativescript-theme-core/scss/platforms/index.ios';
+@import '~nativescript-theme-core/scss/platforms/index.ios';
 
 // Place any CSS rules you want to apply only on iOS here
 ```
@@ -127,13 +127,13 @@ Finally, paste the following code into your `_app-common.scss` file.
 ``` CSS
 // Import the theme’s variables. If you’re using a color scheme
 // other than “light”, switch the path to the alternative scheme,
-// for example 'nativescript-theme-core/scss/dark'.
-@import 'nativescript-theme-core/scss/light';
+// for example '~nativescript-theme-core/scss/dark'.
+@import '~nativescript-theme-core/scss/light';
 
 // Customize any of the theme’s variables here, for instance $btn-color: red;
 
 // Import the theme’s main ruleset.
-@import 'nativescript-theme-core/scss/index';
+@import '~nativescript-theme-core/scss/index';
 
 // Place any CSS rules you want to apply on both iOS and Android here.
 // This is where the vast majority of your CSS code goes.
