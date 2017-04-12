@@ -83,7 +83,7 @@ Workers API in NativeScript is loosely based on the [Dedicated Web Workers API](
  ```JavaScript
     require('globals'); // necessary to bootstrap tns modules on the new thread
 
-    onmessage = function(msg) {
+    global.onmessage = function(msg) {
         var request = msg.data;
         var src = request.src;
         var mode = request.mode || 'noop'
@@ -93,7 +93,7 @@ Workers API in NativeScript is loosely based on the [Dedicated Web Workers API](
 
         var msg = result !== undefined ? { success: true, src: result } : { }
 
-        postMessage(msg);
+        global.postMessage(msg);
     }
 
     function processImage(src, mode, options) {
@@ -109,6 +109,9 @@ Workers API in NativeScript is loosely based on the [Dedicated Web Workers API](
 
     // does not handle errors with an `onerror` handler
     // errors will propagate directly to the main thread Worker instance
+
+    // to handle errors implement the global.onerror handler:
+    // global.onerror = function(err) {}
  ```
 
 
