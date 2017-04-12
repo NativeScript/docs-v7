@@ -57,6 +57,17 @@ This operation applies the following changes to your project.
 * It installs the nativescript-unit-test-runner npm module for the selected framework and its dev dependencies in `node_modules`.
 * It creates `karma.conf.js` in the root of your project. This file contains the default configuration for the Karma server for the selected framework.
 
+> Note: To enable and write unit tests for TypeScript or Angular project install the TypeScript typings for the selected testing framework.
+```Jasmine
+npm i @types/jasmine --save-dev
+```
+```Mocha
+npm i @types/mocha --save-dev
+```
+```QUnit
+npm i @types/qunit --save-dev
+```
+
 ## Write Your Tests
 
 With the NativeScript CLI, you can extensively test **all JavaScript-related functionality**. You cannot test styling and UI which are not applied or created via JavaScript.
@@ -85,6 +96,18 @@ describe("Hello World Sample Test:", function() {
   });
   it("Check message.", function () {
   	expect(mainViewModel.createViewModel().message).toBe("42 taps left"); //Check if the message is "42 taps left".
+  });
+});
+```
+```Jasmine (Angular w/TypeScript)
+// As our intention is to test an Angular 2 component that contains annotations 
+// we need to include the reflect-metadata dependency.
+import * as reflect from "reflect-metadata";
+
+// A sample Jasmine test
+describe("A suite", function() {
+  it("contains spec with an expectation", function() {
+    expect(true).toBe(true);
   });
 });
 ```
