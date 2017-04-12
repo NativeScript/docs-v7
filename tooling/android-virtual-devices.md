@@ -15,7 +15,8 @@ to test mobile applications on various virtual devices. By default, the Android 
 1. Open **Android SDK Manager** 
 
      - From your terminal run  `start %ANDROID_HOME%/"SDK Manager.exe"`
-
+     - In macOS run `android sdk`
+     
 2. Make sure that the system images for the AVDs are installed. 
 
     The screenshow below shows the Android API 23 system images installed on the computer. If additional system images are needed (e.g. for different API level) select them and press **Install Packages** button at the bottom right corner.
