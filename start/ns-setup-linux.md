@@ -75,7 +75,7 @@ Complete the following steps to set up NativeScript on your Linux development ma
     1. Set the ANDROID_HOME system environment variable.
         <pre><code class="language-terminal">export ANDROID_HOME=Path to Android installation directory
         </code></pre>
-        For example: ANDROID_HOME=/android/sdk/
+        For example: ANDROID_HOME=/android/sdk
         <blockquote><b>NOTE</b>: This is the directory that contains the <code>tools</code> and <code>platform-tools</code> directories.</blockquote>
 
 1. Install the required Android SDKs and the Local Maven repository for Support Libraries.
