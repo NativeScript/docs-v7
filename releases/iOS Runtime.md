@@ -9,6 +9,12 @@ previous_url: /Changelogs/iOS Runtime
 
 
 
+2.5.1
+=====
+
+## Bug Fixes
+- Fix the AppIcon setting - [#743](https://github.com/NativeScript/ios-runtime/pull/743)
+
 2.5.0
 =====
 
