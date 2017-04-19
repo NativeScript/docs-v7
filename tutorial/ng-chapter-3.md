@@ -526,7 +526,7 @@ At this point you should be ready to create an account to verify this whole setu
 
 * 1) Click the gray “Sign Up” button in your app.
 * 2) Type in an email address and password. Fake credentials are fine, just make up something you can remember.
-* 3) Click the orange “Sign Up” button.
+* 3) Click the red “Sign Up” button.
 
 <div class="exercise-end"></div>
 
