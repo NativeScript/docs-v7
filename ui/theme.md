@@ -463,53 +463,50 @@ You can use the following form-related class names to improve the look of forms 
 </StackLayout>
 ```
 
-* `input-field`: A class name that should be applied to each individual field within a form.
-
-``` XML
-<StackLayout class="form">
-  <StackLayout class="input-field">
-    <!-- The first field, for example “Email address” -->
-  </StackLayout>
-  <StackLayout class="input-field">
-    <!-- The second field, for example “Password” -->
-  </StackLayout>
-</StackLayout>
-```
+There are a few different ways you may want to display individual form fields within your form. Look over the list of class names below, and then review the subsequent examples to see those class names in action.
 
 * `input`: A class name that applies the base stying to TextField UI components.
 * `input-border`: A class name that adds a border to a TextField UI component.
 * `input-rounded`: A class name that adds a rounded border to a TextField UI component.
+* `label`: A class name that applies the base styling to Label UI components.
+* `input-field`: A class name that can be applied to a parent container to align labels with their corresponding TextField UI controls.
+* `input-sides`: A class name that helps align a label and text field side by side.
+
+Here’s a form with a number of different form control display options you can experiment with.
 
 ``` XML
 <StackLayout class="form">
+
+  <!-- Option 1: An input with no label, and a bottom border -->
   <StackLayout class="input-field">
-    <TextField class="input"></TextField>
+    <TextField hint="Option 1" class="input" />
+    <StackLayout class="hr-light"></StackLayout>
   </StackLayout>
+
+  <!-- Option 2: An input with a label on top, and a bottom border -->
   <StackLayout class="input-field">
-    <TextField class="input input-border"></TextField>
+    <Label text="Option 2" class="label font-weight-bold m-b-5" />
+    <TextField class="input" />
+    <StackLayout class="hr-light"></StackLayout>
   </StackLayout>
-  <StackLayout class="input-field">
-    <TextField class="input input-rounded"></TextField>
-  </StackLayout>
+
+  <!-- Option 3: An label and input—positioned side by side -->
+  <GridLayout class="input-field input-sides" rows="auto, auto" columns="*,*">
+    <Label text="Option 3" class="label font-weight-bold" row="0" col="0" />
+    <TextField class="input right" row="0" col="1" />
+    <StackLayout class="hr-light" row="1" colSpan="2"></StackLayout>
+  </GridLayout>
+
+  <!-- Option 4: An input with a simple border and no label -->
+  <TextField hint="Option 4" class="input input-border" />
+
+  <!-- Option 5: An input with a rounded border and no label -->
+  <TextField hint="Input rounded" class="input input-rounded" />
+
 </StackLayout>
 ```
 
 > **TIP** The NativeScript core theme handles styling disabled TextField components. To disable a TextField, set its `isEnabled` attribute to `false`. For example, `<TextField class="input" isEnabled="false"></TextField>`.
-
-* `label`: A class name that applies the base styling to Label UI components.
-
-``` XML
-<StackLayout class="form">
-  <StackLayout class="input-field">
-    <Label class="label" text="Email:"></Label>
-    <TextField class="input"></TextField>
-  </StackLayout>
-  <StackLayout class="input-field">
-    <Label class="label" text="Password:"></Label>
-    <TextField class="input"></TextField>
-  </StackLayout>
-</StackLayout>
-```
 
 ### Images
 
