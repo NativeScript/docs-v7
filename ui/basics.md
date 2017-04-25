@@ -777,7 +777,9 @@ To declare a platform-specific property value or platform-specific component in 
   </android>
 </Page>
 ```
-> You cannot nest platform tags!
+> **Note** You cannot nest platform tags! 
+
+> **Note** Platform tags are not supported inside `ActionBar`! 
 
 ## Lowercase-dashed component declaration
 Since the release of NativeScript 1.3, you can declare your UI using lowercase-dashed syntax:
