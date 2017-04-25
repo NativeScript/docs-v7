@@ -49,7 +49,7 @@ To define the ActionBar include the `ActionBar` tag inside a component template:
 ```XML
 <ActionBar title="Custom Title"></ActionBar>
 ```
-If more than one component defines an `ActionBar` - the last definition will be respected. You can also [add items to the current ActionBar](#adding-actions-to-existing-action-bar).
+If more than one component defines an `ActionBar` - the last definition will be respected. You can also [add items to the current ActionBar](#adding-actions-to-existing-actionbar).
 
 >Note: To show the ActionBar on the initial page of your application use the `startPageActionBarHidden: false` app option when bootstrapping the application.
 
@@ -111,6 +111,11 @@ The result is:
 ![title-view-android](../img/modules/action-bar/title-view-android.png "title-view-android")
 
 > **Note**: You can use CSS to style the elements inside the `titleView`.
+
+{% angular %}
+> **Important**: Platform specific tags (e.g. `<ios>` and `android`) can't be used in Angular based project.
+Use structural directives like `*ngIf` to create platform specific logic for your ActionBar.
+{% endangular %}
 
 ## Setting the App Icon for Android
 You can set the application icon only for Android. By default, the application icon is hidden. You can show it by setting the `android.iconVisibility` property to `always`.
@@ -456,6 +461,7 @@ For iOS, this code adds a regular `ActionItem` with `position` set to `left`. Us
 
 {% nativescript %}
 >Note: The `<android>` and `<ios>` tags are used inside the XML to define platform-specific elements.
+>Important: The platform specifc tags (`<android>` and `<ios>`) will work only in non-Angular based project.
 {% endnativescript %}
 
 {% nativescript %}
@@ -496,6 +502,7 @@ The result is:
 ![side-drawer-android](../img/modules/action-bar/side-drawer-android.png "side-drawer-android")
 
 {% angular %}
+
 ## Adding Actions To Existing ActionBar
 Using the `ActionBarExtension` component you can add additional action items to the current `ActionBar`. This is useful if you are writing a reusable component that exposes an action (ex. "save"), but you don't want to override the whole `ActionBar`.
 
