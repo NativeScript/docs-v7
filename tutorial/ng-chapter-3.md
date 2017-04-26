@@ -490,7 +490,7 @@ this.userService.register(this.user)
 
 > **NOTE**: The `() => {}` syntax defines an [ES2015 arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), which TypeScript supports out of the box. In this example, the arrow functions are the equivalent of writing `function() {}`. Arrow functions have the advantage of inheriting their context—aka `this`—from their parents. Note how the code above is able to call `this.toggleDisplay()` from an inner function, which would not work with a generic JavaScript `function() {}`.
 
-The two functions you pass `subscribe()` are success and failure handlers. If the call to `register()` succeeds, your first alert will fire, and if the call to `register()` fails, your second alert will fire. Now that your service code is setup and ready to go, let’s create make the final few changes and create an account.
+The two functions you pass `subscribe()` are success and failure handlers. If the call to `register()` succeeds, your first alert will fire, and if the call to `register()` fails, your second alert will fire. Now that your service code is setup and ready to go, let’s make the final few changes and create an account.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Create an account
