@@ -25,7 +25,7 @@ Most user interfaces are driven by events. In NativeScript apps, those events ar
     <b>Exercise</b>: Add a <code>tap</code> event handler
 </h4>
 
-Open `app/app.component.ts`, find the existing sign in button within your component’s `template` (`<Button text="Sign in"></Button>`), and replace it with the following code:
+Open `app/app.component.ts`, find the existing sign in button within your component’s `template` (`<Button text="Sign in" class="submit-button"></Button>`), and replace it with the following code:
 
 ``` TypeScript
 <Button text="Sign in" class="submit-button" (tap)="submit()"></Button>
