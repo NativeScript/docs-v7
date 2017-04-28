@@ -15,7 +15,8 @@ While bitmap images are great, they present challenges in designing mobile appli
 3. In your NativeScript application **app** folder, create a folder called **fonts** and place the **.ttf** there.
 4. Follow the instructions on the icon font webpage to determine the hex codes of each font glyph, i.e., icon. Add a **Label** component to your NativeScript app and bind the Label's **text** property to a one-letter string generated from the character code of the icon you want to show, i.e., `String.fromCharCode(0xe903)`.
 
-> Do not forget to set the Label's **font-family** to the name of your font either through CSS, XML or code-behind.
+> Do not forget to set the Label's **font-family** to the name of your font either through CSS, XML or code-behind. Remember: Android needs the actual filename (without extension) whereas iOS needs the font name. To be cross-platform-ready, you can provide both.
+
 
 ## Icon Font
 ![icomoon](../img/modules/icon-fonts/icomoon.png "Icomoon")
@@ -30,6 +31,13 @@ While bitmap images are great, they present challenges in designing mobile appli
    font-family: 'icomoon';
    font-size: 48;
 }
+
+/* only for reference, is NOT working in this example (wrong codes) 
+.fa {
+   font-family: 'FontAwesome', 'fontawesome-webfont';
+   font-size: 48;
+}
+*/
 ```
 ``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
