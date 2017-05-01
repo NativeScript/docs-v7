@@ -309,7 +309,7 @@ A login screen isn’t all that useful if it doesn’t actually log users into a
 
 For the purposes of this tutorial we prebuilt a handful of backend endpoints using [Telerik Backend Services](http://www.telerik.com/platform/backend-services), and we’ll be using those endpoints to make this app functional. Let’s see how they work.
 
-> **NOTE**: You don't have to use Telerik Backend Services to power your app’s backend; you can use any HTTP API in a NativeScript app, including common solutions such as [Firebase](http://plugins.telerik.com/nativescript/plugin/firebase) and [Couchbase](https://github.com/couchbaselabs/nativescript-couchbase). Telerik Backend Services is convenient for us to use for this tutorial because it lets us spin up HTTP endpoints quickly.
+> **NOTE**: You don't have to use Telerik Backend Services to power your app’s backend; you can use any HTTP API in a NativeScript app, including common solutions such as [Firebase](http://plugins.nativescript.org/plugin/nativescript-firebase) and [Couchbase](https://github.com/couchbaselabs/nativescript-couchbase). Telerik Backend Services is convenient for us to use for this tutorial because it lets us spin up HTTP endpoints quickly.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Add an Angular service
@@ -632,7 +632,7 @@ export class AppComponent {}
 
 If you haven’t played with routing in Angular before, you can refer to [Angular’s guide on the topic](https://angular.io/docs/ts/latest/guide/router.html) for some background, but the basic concept is you need to declare a `routes` array that includes a list of all components the user can navigate to, as well as a path to use to access those components. When you need to add new routes, you import the appropriate component in `app.routing.ts`, and then include that component in the `routes` array.
 
-The other new concept in this example is the `<page-router-outlet>` tag, which is your app’s first directive. You can again check out Angular’s docs if you want [detailed information on what directives are and do](https://angular.io/docs/ts/latest/api/core/index/Directive-decorator.html), but the simplest way to think of a directive is as something that can affect the markup you put in your `template`—in this case `<page-router-outlet>`.
+The other new concept in this example is the `<page-router-outlet>` tag, which is your app’s first directive. You can again check out Angular’s docs if you want [detailed information on what directives are and do](https://angular.io/docs/ts/latest/guide/attribute-directives.html), but the simplest way to think of a directive is as something that can affect the markup you put in your `template` — in this case `<page-router-outlet>`.
 
 And to take a step back, that directive, `<page-router-outlet>` is the only difference in routing between the routing code above and the same code in the Groceries web implementation. Angular provides a `<router-outlet>` directive for web apps, and NativeScript extends that directive with its own `<page-router-outlet>` directive that handles the unique environment of iOS and Android apps. The great thing about NativeScript is those details are transparent to you as a developer.
 
