@@ -129,7 +129,7 @@ Finally, paste the following code into your `_app-common.scss` file.
 ``` SCSS
 // Import the theme’s variables. If you’re using a color scheme
 // other than “light”, switch the path to the alternative scheme,
-// for example '~/nativescript-theme-core/scss/dark'.
+// for example '~nativescript-theme-core/scss/dark'.
 @import '~nativescript-theme-core/scss/light';
 
 // Customize any of the theme’s variables here, for instance $btn-color: red;
