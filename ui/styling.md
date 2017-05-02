@@ -53,10 +53,10 @@ application.setCssFileName("style.css");
 application.start({ moduleName: "main-page" });
 ```
 ``` TypeScript
-import * as application from "application";
-application.setCssFileName("style.css");
+import { setCssFileName, start as applicationStart } from "application";
+setCssFileName("style.css");
 
-application.start({ moduleName: "main-page" });
+applicationStart({ moduleName: "main-page" });
 ```
 
 You could also check the name of the application-wide CSS file by using `getCssFileName()` method as shown below:
@@ -198,7 +198,7 @@ var label = new labelModule.Label();
 label.className = "title"
 ```
 ```TypeScript
-var label = new labelModule.Label();
+let label = new labelModule.Label();
 label.className = "title"
 ```
 ```XML
@@ -214,7 +214,7 @@ var label = new labelModule.Label();
 label.className = "title"
 ```
 ```TypeScript
-var label = new labelModule.Label();
+let label = new labelModule.Label();
 label.className = "title"
 ```
 ```XML
@@ -251,7 +251,7 @@ var btn = new buttonModule.Button();
 btn.id = "login-button"
 ```
 ```TypeScript
-var btn = new buttonModule.Button();
+let btn = new buttonModule.Button();
 btn.id = "login-button"
 ```
 ```XML

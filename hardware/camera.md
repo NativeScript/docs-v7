@@ -70,7 +70,7 @@ import { Image } from "ui/image";
 camera.takePicture()
     .then((imageAsset) => {
         console.log("Result is an image asset instance");
-        var image = new Image();
+        let image = new Image();
         image.src = imageAsset;
     }).catch((err) => {
         console.log("Error -> " + err.message);

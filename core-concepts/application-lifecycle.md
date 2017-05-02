@@ -148,8 +148,8 @@ application.start({ moduleName: "main-page" });
 iOS calls UIApplication and triggers the application main event loop.
 */
 
-import * as application from "application";
-application.start({ moduleName: "main-page" });
+import { start as applicationStart } from "application";
+applicationStart({ moduleName: "main-page" });
 ```
 {% endnativescript %}
 
