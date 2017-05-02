@@ -106,9 +106,9 @@ With SASS set up and ready to use, next you’ll need to import the theme’s `.
 
 After that, paste the following code into your `app.android.scss` file.
 
-``` CSS
+``` SCSS
 @import 'app-common';
-@import '~/nativescript-theme-core/scss/platforms/index.android';
+@import '~nativescript-theme-core/scss/platforms/index.android';
 
 // Place any CSS rules you want to apply only on Android here
 ```
@@ -117,25 +117,25 @@ After that, paste the following code into your `app.android.scss` file.
 
 And the following code into your `app.ios.scss` file.
 
-``` CSS
+``` SCSS
 @import 'app-common';
-@import '~/nativescript-theme-core/scss/platforms/index.ios';
+@import '~nativescript-theme-core/scss/platforms/index.ios';
 
 // Place any CSS rules you want to apply only on iOS here
 ```
 
 Finally, paste the following code into your `_app-common.scss` file.
 
-``` CSS
+``` SCSS
 // Import the theme’s variables. If you’re using a color scheme
 // other than “light”, switch the path to the alternative scheme,
 // for example '~/nativescript-theme-core/scss/dark'.
-@import '~/nativescript-theme-core/scss/light';
+@import '~nativescript-theme-core/scss/light';
 
 // Customize any of the theme’s variables here, for instance $btn-color: red;
 
 // Import the theme’s main ruleset.
-@import '~/nativescript-theme-core/scss/index';
+@import '~nativescript-theme-core/scss/index';
 
 // Place any CSS rules you want to apply on both iOS and Android here.
 // This is where the vast majority of your CSS code goes.
