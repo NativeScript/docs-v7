@@ -205,7 +205,7 @@ After the NativeScript CLI refreshes your app, head back to your terminal or com
 
 <img src="../img/cli-getting-started/angular/chapter1/terminal-2.png" alt="Terminal display after running a console log" class="plain">
 
-The `console.log()` function is great for outputting primitive values such as strings, numbers, and booleans, but it doesn’t work so well for objects. For those situations you’ll want to use another of the `console` object’s methods intended for complex object output: `console.dump()`.
+The `console.log()` function is great for outputting primitive values such as strings, numbers, and booleans, but it doesn’t work so well for objects. For those situations you’ll want to use another of the `console` object’s methods intended for complex object output: `console.dir()`.
 
 To see this in action replace the contents of your `app/app.component.ts` file with the code below, which uses `console.log()` to log a simple object.
 
@@ -235,7 +235,7 @@ If you look at your console you’ll see the following not-very-helpful output.
 JS: [object Object]
 ```
 
-Go ahead and replace your code’s `console.log` reference with `console.dump`. After the NativeScript CLI refreshes your app you should see the full output of the object in your terminal or command prompt.
+Go ahead and replace your code’s `console.log` reference with `console.dir`. After the NativeScript CLI refreshes your app you should see the full output of the object in your terminal or command prompt.
 
 ```
 JS: === dump(): dumping members ===
@@ -249,7 +249,7 @@ JS: === dump(): finished ===
 
 <div class="exercise-end"></div>
 
-The `console.log()` and `console.dump()` functions are two of the many tools available when debugging your NativeScript applications. You might want to try out [step debugging](https://www.nativescript.org/nativescript-for-visual-studio-code) as you move into more advanced development, but for now let’s shift our attention to how to deal with errors in NativeScript apps.
+The `console.log()` and `console.dir()` functions are two of the many tools available when debugging your NativeScript applications. You might want to try out [step debugging](https://www.nativescript.org/nativescript-for-visual-studio-code) as you move into more advanced development, but for now let’s shift our attention to how to deal with errors in NativeScript apps.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Error handling in NativeScript
