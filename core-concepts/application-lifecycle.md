@@ -51,7 +51,7 @@ Components are the fundamental building blocks of NativeScript applications buil
 ### Component example
 
 ``` TypeScript
-import {Component} from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
     selector: "main-component",
@@ -148,8 +148,8 @@ application.start({ moduleName: "main-page" });
 iOS calls UIApplication and triggers the application main event loop.
 */
 
-import application = require("application");
-application.start({ moduleName: "main-page" });
+import { start as applicationStart } from "application";
+applicationStart({ moduleName: "main-page" });
 ```
 {% endnativescript %}
 
@@ -234,8 +234,8 @@ application.start({ moduleName: "main-page" });
 ```
 {% endnativescript %}
 ``` TypeScript
-import application = require("application");
-application.on(application.launchEvent, function (args: application.ApplicationEventData) {
+import { on as applicationOn, launchEvent, suspendEvent, resumeEvent, exitEvent, lowMemoryEvent, uncaughtErrorEvent, ApplicationEventData, start as applicationStart } from "application";
+applicationOn(launchEvent, function (args: ApplicationEventData) {
     if (args.android) {
         // For Android applications, args.android is an android.content.Intent class.
         console.log("Launched Android application with the following intent: " + args.android + ".");
@@ -245,7 +245,7 @@ application.on(application.launchEvent, function (args: application.ApplicationE
     }
 });
 
-application.on(application.suspendEvent, function (args: application.ApplicationEventData) {
+applicationOn(suspendEvent, function (args: ApplicationEventData) {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -255,7 +255,7 @@ application.on(application.suspendEvent, function (args: application.Application
     }
 });
 
-application.on(application.resumeEvent, function (args: application.ApplicationEventData) {
+applicationOn(resumeEvent, function (args: ApplicationEventData) {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -265,7 +265,7 @@ application.on(application.resumeEvent, function (args: application.ApplicationE
     }
 });
 
-application.on(application.exitEvent, function (args: application.ApplicationEventData) {
+applicationOn(exitEvent, function (args: ApplicationEventData) {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -275,7 +275,7 @@ application.on(application.exitEvent, function (args: application.ApplicationEve
     }
 });
 
-application.on(application.lowMemoryEvent, function (args: application.ApplicationEventData) {
+application.on(lowMemoryEvent, function (args: ApplicationEventData) {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -285,7 +285,7 @@ application.on(application.lowMemoryEvent, function (args: application.Applicati
     }
 });
 
-application.on(application.uncaughtErrorEvent, function (args: application.ApplicationEventData) {
+application.on(uncaughtErrorEvent, function (args: ApplicationEventData) {
     if (args.android) {
         // For Android applications, args.android is an NativeScriptError.
         console.log("NativeScriptError: " + args.android);
@@ -294,7 +294,7 @@ application.on(application.uncaughtErrorEvent, function (args: application.Appli
         console.log("NativeScriptError: " + args.ios);
     }
 });
-application.start({ moduleName: "main-page" });
+applicationStart({ moduleName: "main-page" });
 ```
 ## Android Activity Events
 
@@ -360,44 +360,44 @@ application.start();
 ```
 {% endnativescript %}
 ``` TypeScript
-import application = require("application");
+import { android, AndroidApplication, AndroidActivityBundleEventData } from "application";
 
 // Android activity events
-if (application.android) {
-    application.android.on(application.AndroidApplication.activityCreatedEvent, function (args: application.AndroidActivityBundleEventData) {
+if (android) {
+    android.on(AndroidApplication.activityCreatedEvent, function (args: AndroidActivityBundleEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
     });
 
-    application.android.on(application.AndroidApplication.activityDestroyedEvent, function (args: application.AndroidActivityEventData) {
+    android.on(AndroidApplication.activityDestroyedEvent, function (args: AndroidActivityEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
 
-    application.android.on(application.AndroidApplication.activityStartedEvent, function (args: application.AndroidActivityEventData) {
+    android.on(AndroidApplication.activityStartedEvent, function (args: AndroidActivityEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
 
-    application.android.on(application.AndroidApplication.activityPausedEvent, function (args: application.AndroidActivityEventData) {
+    android.on(AndroidApplication.activityPausedEvent, function (args: AndroidActivityEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
 
-    application.android.on(application.AndroidApplication.activityResumedEvent, function (args: application.AndroidActivityEventData) {
+    android.on(AndroidApplication.activityResumedEvent, function (args: AndroidActivityEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
 
-    application.android.on(application.AndroidApplication.activityStoppedEvent, function (args: application.AndroidActivityEventData) {
+    android.on(AndroidApplication.activityStoppedEvent, function (args: AndroidActivityEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
 
-    application.android.on(application.AndroidApplication.saveActivityStateEvent, function (args: application.AndroidActivityBundleEventData) {
+    android.on(AndroidApplication.saveActivityStateEvent, function (args: AndroidActivityBundleEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
     });
 
-    application.android.on(application.AndroidApplication.activityResultEvent, function (args: application.AndroidActivityResultEventData) {
+    android.on(AndroidApplication.activityResultEvent, function (args: AndroidActivityResultEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity +
             ", requestCode: " + args.requestCode + ", resultCode: " + args.resultCode + ", Intent: " + args.intent);
     });
 
-    application.android.on(application.AndroidApplication.activityBackPressedEvent, function (args: application.AndroidActivityBackPressedEventData) {
+    android.on(AndroidApplication.activityBackPressedEvent, function (args: AndroidActivityBackPressedEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
         // Set args.cancel = true to cancel back navigation and do something custom.
     });
@@ -435,7 +435,7 @@ application.start();
 ```
 {% endnativescript %}
 ``` TypeScript
-import application = require("application");
+import { ios, start as applicationStart } from "application";
 class MyDelegate extends UIResponder implements UIApplicationDelegate {
     public static ObjCProtocols = [UIApplicationDelegate];
 
@@ -449,8 +449,8 @@ class MyDelegate extends UIResponder implements UIApplicationDelegate {
         console.log("applicationDidBecomeActive: " + application)
     }
 }
-application.ios.delegate = MyDelegate;
-application.start();
+ios.delegate = MyDelegate;
+applicationStart();
 ```
 
 ## Persist and Restore Application Settings
@@ -481,10 +481,10 @@ exports.pageLoaded = pageLoaded;
 ```
 {% endnativescript %}
 ``` TypeScript
-import observable = require("data/observable");
-import applicationSettings = require("application-settings");
+import { EventData } from "data/observable";
+import * as applicationSettings from "application-settings";
 // Event handler for Page "loaded" event attached in main-page.xml.
-export function pageLoaded(args: observable.EventData) {
+export function pageLoaded(args: EventData) {
     applicationSettings.setString("Name", "John Doe");
     console.log(applicationSettings.getString("Name"));// Prints "John Doe".
     applicationSettings.setBoolean("Married", false);

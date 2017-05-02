@@ -29,7 +29,7 @@ var geolocation = require("nativescript-geolocation");
 ```
 {% endnativescript %}
 ```TypeScript
-import geolocation = require("nativescript-geolocation");
+import { isEnabled, enableLocationRequest, getCurrentLocation, watchLocation, distance, clearWatch } from "nativescript-geolocation";
 ```
 
 ## Getting information about a location service
@@ -70,8 +70,8 @@ exports.enableLocationTap = enableLocationTap;
 {% endangular %}
 ```TypeScript
 {% nativescript %}export function {% endnativescript %}public {% angular %}{% endangular %}enableLocationTap() { 
-    if (!geolocation.isEnabled()) {
-        geolocation.enableLocationRequest();
+    if (!isEnabled()) {
+        enableLocationRequest();
     }
 }
 ```
@@ -153,7 +153,7 @@ exports.buttonGetLocationTap = buttonGetLocationTap;
 {% endangular %}
 ```TypeScript
 {% nativescript %}export function {% endnativescript %}public {% angular %}{% endangular %}buttonGetLocationTap() {
-	var location = geolocation.getCurrentLocation({desiredAccuracy: 3, updateDistance: 10, maximumAge: 20000, timeout: 20000}).
+	var location = getCurrentLocation({desiredAccuracy: 3, updateDistance: 10, maximumAge: 20000, timeout: 20000}).
 	then(function(loc) {
 		if (loc) {
 			console.log("Current location is: " + loc);
@@ -212,7 +212,7 @@ exports.buttonStopTap = buttonStopTap;
 {% endangular %}
 ``` TypeScript
 {% nativescript %}export function {% endnativescript %}public {% angular %}{% endangular %}buttonStartTap() {
-	watchId = geolocation.watchLocation(
+	watchId = watchLocation(
 	function (loc) {
 		if (loc) {
 			console.log("Received location: " + loc);
@@ -226,7 +226,7 @@ exports.buttonStopTap = buttonStopTap;
 
 {% nativescript %}export function {% endnativescript %}public {% angular %}{% endangular %}buttonStopTap() {
 	if (watchId) {
-		geolocation.clearWatch(watchId);
+		clearWatch(watchId);
 	}
 }
 ```
@@ -246,7 +246,7 @@ function getDistance(loc1, loc2) {
 {% endnativescript %}
 ```TypeScript
 function getDistance(loc1, loc2) {
-    console.log("Distance between loc1 and loc2 is: " + geolocation.distance(loc1, loc2));
+    console.log("Distance between loc1 and loc2 is: " + distance(loc1, loc2));
 }
 ```
 

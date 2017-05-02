@@ -348,30 +348,30 @@ function onCancel(args) {
 exports.onCancel = onCancel;
 ```
 ```TypeScript
-import observable = require("data/observable");
-import view = require("ui/core/view");
+import { EventData, Observable } from "data/observable";
+import { View } from "ui/core/view";
 
-export function onLoaded(args: observable.EventData) {
-    var page = <view.View>args.object;
-    page.bindingContext = new observable.Observable();
+export function onLoaded(args: EventData) {
+    let page = <View>args.object;
+    page.bindingContext = new Observable();
     page.bindingContext.set("isEditing", false);
 }
 
 export function onEdit(args: observable.EventData) {
     console.log("Edit item tapped.");
-    var btn = <view.View>args.object;
+    let btn = <view.View>args.object;
     btn.bindingContext.set("isEditing", true);
 }
 
 export function onSave(args: observable.EventData) {
     console.log("Save item tapped.");
-    var btn = <view.View>args.object;
+    let btn = <view.View>args.object;
     btn.bindingContext.set("isEditing", false);
 }
 
 export function onCancel(args: observable.EventData) {
     console.log("Cancel item tapped.");
-    var btn = <view.View>args.object;
+    let btn = <view.View>args.object;
     btn.bindingContext.set("isEditing", false);
 }
 ```

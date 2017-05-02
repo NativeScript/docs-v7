@@ -48,16 +48,33 @@ You can change the name of the file from which the application-wide CSS is loade
 {% nativescript %}
 ``` JavaScript
 var application = require("application");
-application.cssFile = "style.css";
+application.setCssFileName("style.css");
 
 application.start({ moduleName: "main-page" });
 ```
 ``` TypeScript
-import application = require("application");
-application.cssFile = "style.css";
+import { setCssFileName, start as applicationStart } from "application";
+setCssFileName("style.css");
 
-application.start({ moduleName: "main-page" });
+applicationStart({ moduleName: "main-page" });
 ```
+
+You could also check the name of the application-wide CSS file by using `getCssFileName()` method as shown below:
+
+``` JavaScript
+var application = require("application");
+var fileName = application.getCssFileName();
+console.log(`fileName ${fileName}`);
+
+```
+``` TypeScript
+import { getCssFileName, start } from "application";
+let fileName = getCssFileName();
+console.log(`fileName ${fileName}`);
+
+start({ moduleName: "main-page" });
+```
+
 {% endnativescript %}
 {% angular %}
 
@@ -170,7 +187,7 @@ button { background-color: gray }
 
 ### Class selector
 [Class selectors](http://www.w3schools.com/cssref/sel_class.asp) select all views with a given class.
-The class is set using the `cssClass` property of the view.
+The class is set using the `className` property of the view.
 
 {% nativescript %}
 ```CSS
@@ -178,14 +195,14 @@ The class is set using the `cssClass` property of the view.
 ```
 ```JavaScript
 var label = new labelModule.Label();
-label.cssClass = "title"
+label.className = "title"
 ```
 ```TypeScript
-var label = new labelModule.Label();
-label.cssClass = "title"
+let label = new labelModule.Label();
+label.className = "title"
 ```
 ```XML
-<Label cssClass="title" />
+<Label className="title" />
 ```
 {% endnativescript %}
 {% angular %}
@@ -194,14 +211,14 @@ label.cssClass = "title"
 ```
 ```JavaScript
 var label = new labelModule.Label();
-label.cssClass = "title"
+label.className = "title"
 ```
 ```TypeScript
-var label = new labelModule.Label();
-label.cssClass = "title"
+let label = new labelModule.Label();
+label.className = "title"
 ```
 ```XML
-<Label cssClass="title" ></Label>
+<Label className="title" ></Label>
 ```
 {% endangular %}
 
@@ -234,7 +251,7 @@ var btn = new buttonModule.Button();
 btn.id = "login-button"
 ```
 ```TypeScript
-var btn = new buttonModule.Button();
+let btn = new buttonModule.Button();
 btn.id = "login-button"
 ```
 ```XML
