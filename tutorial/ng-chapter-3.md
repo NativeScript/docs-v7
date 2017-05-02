@@ -118,7 +118,7 @@ Next, open `app/app.module.ts` and replaces its contents with the code below, wh
 ``` JavaScript
 import { NgModule } from "@angular/core";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
-import { NativeScriptModule } from "nativescript-angular/platform";
+import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
 import { AppComponent } from "./app.component";
 
@@ -502,7 +502,7 @@ Because the `UserService` makes use of the `Http` service, your final step is re
 import { NgModule } from "@angular/core";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { NativeScriptHttpModule } from "nativescript-angular/http";
-import { NativeScriptModule } from "nativescript-angular/platform";
+import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
 import { AppComponent } from "./app.component";
 
@@ -591,7 +591,7 @@ First, open `app/app.module.ts` and replace the file’s contents with the follo
 import { NgModule } from "@angular/core";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { NativeScriptHttpModule } from "nativescript-angular/http";
-import { NativeScriptModule } from "nativescript-angular/platform";
+import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 import { AppComponent } from "./app.component";

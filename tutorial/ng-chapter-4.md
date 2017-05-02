@@ -181,9 +181,9 @@ Open `app/pages/list/list.html` and replace its contents with the following code
 ``` XML
 <GridLayout>
   <ListView [items]="groceryList" class="small-spacing">
-    <template let-item="item">
+    <ng-template let-item="item">
       <Label [text]="item.name" class="medium-spacing"></Label>
-    </template>
+    </ng-template>
   </ListView>
 </GridLayout>
 ```
@@ -231,13 +231,13 @@ How does this work? Let’s return to this chunk of code:
 
 ``` XML
 <ListView [items]="groceryList" class="small-spacing">
-  <template let-item="item">
+  <ng-template let-item="item">
     <Label [text]="item.name" class="medium-spacing"></Label>
-  </template>
+  </ng-template>
 </ListView>
 ```
 
-The [`<ListView>` UI element](https://docs.nativescript.org/api-reference/classes/_ui_list_view_.listview.html) requires an `items` property that points to an array of data—in this case, the `groceryList` array you added to your `ListComponent` class. The list view element requires a child `<template>` element that specifies how to render each item in the `items` array.
+The [`<ListView>` UI element](https://docs.nativescript.org/api-reference/classes/_ui_list_view_.listview.html) requires an `items` property that points to an array of data—in this case, the `groceryList` array you added to your `ListComponent` class. The list view element requires a child `<ng-template>` element that specifies how to render each item in the `items` array.
 
 The `let-*` syntax is Angular’s way of creating template variables within loops. You can think of the syntax working like TypeScript’s `let` keyword. This gives you the ability to refer to each item in the array as `item` within the template. For this template, you render each item in the array with a single `<Label>` UI element, and because of the `[text]="item.name"` binding, those labels contain the text from the `name` property of each of the items in `groceryList` TypeScript array.
 
@@ -398,9 +398,9 @@ Open `app/pages/list/list.html` and replace the contents of the file with the fo
   </GridLayout>
 
   <ListView [items]="groceryList" row="1" class="small-spacing">
-    <template let-item="item">
+    <ng-template let-item="item">
       <Label [text]="item.name" class="medium-spacing"></Label>
-    </template>
+    </ng-template>
   </ListView>
 
 </GridLayout>

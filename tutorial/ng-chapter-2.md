@@ -182,7 +182,7 @@ Next, open your app’s `app/app.module.ts` file; you should see the code below:
 
 ``` JavaScript
 import { NgModule } from "@angular/core";
-import { NativeScriptModule } from "nativescript-angular/platform";
+import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
 import { AppComponent } from "./app.component";
 
