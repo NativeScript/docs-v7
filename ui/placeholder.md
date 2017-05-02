@@ -34,10 +34,10 @@ function creatingView(args) {
 exports.creatingView = creatingView;
 ```
 ```TypeScript
-import * as placeholder from "ui/placeholder";
+import { CreateViewEventData } from "ui/placeholder";
 
-export function creatingView(args: placeholder.CreateViewEventData) {
-    var nativeView = new android.widget.TextView(args.context);
+export function creatingView(args: CreateViewEventData) {
+    let nativeView = new android.widget.TextView(args.context);
     nativeView.setSingleLine(true);
     nativeView.setEllipsize(android.text.TextUtils.TruncateAt.END);
     nativeView.setText("Native");
@@ -56,10 +56,10 @@ function creatingView(args) {
 exports.creatingView = creatingView;
 ```
 ```TypeScript
-import placeholder = require("ui/placeholder");
+import { CreateViewEventData } from "ui/placeholder";
 
-export function creatingView(args: placeholder.CreateViewEventData) {
-    var nativeView = new UILabel();
+export function creatingView(args: CreateViewEventData) {
+    let nativeView = new UILabel();
     nativeView.text = "Native";
     args.view = nativeView;
 }

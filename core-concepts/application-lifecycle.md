@@ -481,10 +481,10 @@ exports.pageLoaded = pageLoaded;
 ```
 {% endnativescript %}
 ``` TypeScript
-import * as observable from "data/observable";
+import { EventData } from "data/observable";
 import * as applicationSettings from "application-settings";
 // Event handler for Page "loaded" event attached in main-page.xml.
-export function pageLoaded(args: observable.EventData) {
+export function pageLoaded(args: EventData) {
     applicationSettings.setString("Name", "John Doe");
     console.log(applicationSettings.getString("Name"));// Prints "John Doe".
     applicationSettings.setBoolean("Married", false);

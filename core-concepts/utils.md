@@ -13,13 +13,15 @@ To be able to use the functionality provided by the `utils/utils` module, you sh
 var utilsModule = require("tns-core-modules/utils/utils");
 ```
 ```TypeScript
-import * as utils from "tns-core-modules/utils/utils";
+import * as utils from "utils/utils";
 ```
 
 ## isFileOrResourcePath method
 
 Allows you to verify if the specified path points to a resource or local file. The method will return boolen value:
+
 `true` - if the string contains valid path structure.
+
 `false` - if the string do not contain file path 
 
 ```JavaScript
@@ -27,8 +29,8 @@ var path = "res://icon";
 var value = utilsModule.isFileOrResourcePath(path);
 ```
 ```TypeScript
-var path:string  = "res://icon";
-var value:boolean = utils.isFileOrResourcePath(path);
+const path: string  = "res://icon";
+const value:boolean = utils.isFileOrResourcePath(path);
 ```
 
 ## isDataURI method
@@ -41,8 +43,8 @@ var url = "<url>";
 var value = utilsModule.isDataURI(url);
 ```
 ```TypeScript
-var url:string = "<url>"; 
-var value:boolean = utils.isDataURI(url);
+const url: string = "<url>"; 
+const value:boolean = utils.isDataURI(url);
 ```
 
 ## openUrl method
@@ -66,8 +68,8 @@ var samplestring = "All of these should be escaped: ^ $ * ";
 var newString = utilsModule.escapeRegexSymbols(samplestring);
 ```
 ```TypeScript
-var samplestring:string = "All of these should be escaped: ^ $ * ";
-var newString:string = utils.escapeRegexSymbols(samplestring);
+var samplestring: string = "All of these should be escaped: ^ $ * ";
+var newString: string = utils.escapeRegexSymbols(samplestring);
 ```
 
 ## convertString method
@@ -79,11 +81,11 @@ var samplestring = "All of these should be escaped: ^ $ * ";
 var newString = utilsModule.escapeRegexSymbols(samplestring);
 ```
 ```TypeScript
-var stringToBoolean:string="true";
-var booleanValue:boolean = utils.convertString(stringToBoolean);
+const stringToBoolean:string="true";
+const booleanValue:boolean = utils.convertString(stringToBoolean);
 
-var stringToNumber:string="23";
-var numberValue:number = utils.convertString(stringToNumber);
+const stringToNumber:string="23";
+const numberValue:number = utils.convertString(stringToNumber);
 ```
 ## getDisplayDensity method
 
@@ -93,7 +95,7 @@ Returns display density for the current device.
 var displayDensity = utilsModule.layout.getDisplayDensity();
 ```
 ```TypeScript
-var displayDensity = utils.layout.getDisplayDensity();
+const displayDensity = utils.layout.getDisplayDensity();
 ```
 
 ## toDevicePixels method
@@ -104,7 +106,7 @@ Convert value from device independent pixels to device pixels.
 var devicePixels = utilsModule.layout.toDevicePixels(<dip>);
 ```
 ```TypeScript
-var devicePixels = utils.layout.toDevicePixels(<dip>);
+const devicePixels = utils.layout.toDevicePixels(<dip>);
 ```
 
 ## toDeviceIndependentPixels method
@@ -115,7 +117,7 @@ Convert value to device independent pixels.
 var deviceIndependentPixels = utilsModule.layout.toDeviceIndependentPixels(<px>);
 ```
 ```TypeScript
-var deviceIndependentPixels = utils.layout.toDeviceIndependentPixels(<px>);
+const deviceIndependentPixels = utils.layout.toDeviceIndependentPixels(<px>);
 ```
 
 ## round method
@@ -143,7 +145,7 @@ The method allows to get an instance of native Android application
 var application = utilsModule.ad.getApplication();
 ```
 ```TypeScript
-var application = utils.ad.getApplication();
+const application = utils.ad.getApplication();
 ```
 
 #### getApplication method
@@ -155,7 +157,7 @@ The method allows to get the Android application context
 var context = utilsModule.ad.getApplicationContext();
 ```
 ```TypeScript
-var context = utils.ad.getApplicationContext();
+const context = utils.ad.getApplicationContext();
 ```
 
 #### getInputMethodManager method
@@ -167,7 +169,7 @@ The method allows to get instance of native Android input method manager.
 var inputMethodManager = utilsModule.ad.getInputMethodManager();
 ```
 ```TypeScript
-var inputMethodManager = utils.ad.getInputMethodManager();
+const inputMethodManager = utils.ad.getInputMethodManager();
 ```
 
 #### dismissSoftInput method
@@ -189,8 +191,8 @@ exports.showKeyboard = showKeyboard;
 ```
 ```TypeScript
 import { Page } from 'ui/page';
-import {TextField} from "ui/text-field";
-import {Button} from "ui/button"
+import { TextField } from "ui/text-field";
+import { Button } from "ui/button"
 
 export function showKeyboard(args:EventData){
     var button:Button = <Button>args.object;
@@ -209,8 +211,8 @@ var stringArr = ["a", "b", "c"]
 var stringSet = utilsModule.ad.collections.stringArrayToStringSet(stringArr);
 ```
 ```TypeScript
-var stringArr = ["a", "b", "c"]
-var stringSet = utils.ad.collections.stringArrayToStringSet(stringArr);
+const stringArr = ["a", "b", "c"]
+const stringSet = utils.ad.collections.stringArrayToStringSet(stringArr);
 ```
 
 #### stringSetToStringArray method
@@ -230,10 +232,10 @@ hashset.add(string3);
 var stringArray = utilsModule.ad.collections.stringSetToStringArray(hashset);
 ```
 ```TypeScript
-var hashset = new java.util.HashSet();
-var string1 = new java.lang.String("item1");
-var string2 = new java.lang.String("item2");
-var string3 = new java.lang.String("item3");
+const hashset = new java.util.HashSet();
+const string1 = new java.lang.String("item1");
+const string2 = new java.lang.String("item2");
+const string3 = new java.lang.String("item3");
     
 hashset.add(string1);
 hashset.add(string2);
@@ -250,7 +252,7 @@ Allows to get the drawable id from a given resource name
 var drawableId = utilsModule.ad.resources.getDrawableId("icon");
 ```
 ```TypeScript
-var drawableId:number = utils.ad.resources.getDrawableId("icon");
+const drawableId:number = utils.ad.resources.getDrawableId("icon");
 ```
 
 #### getStringId method
@@ -260,7 +262,7 @@ Get the id of the string from the resources, while using its `name`
 var stringId = utilsModule.ad.resources.getStringId("string_name");
 ```
 ```TypeScript
-var stringId:string = utils.ad.resources.getStringId("string_name");
+const stringId: string = utils.ad.resources.getStringId("string_name");
 ```
 
 #### getStringId method
@@ -271,7 +273,7 @@ Get the id of the string from the resources, while using its `name`
 var stringId = utilsModule.ad.resources.getStringId("resource_string_name");
 ```
 ```TypeScript
-var stringId:string = utils.ad.resources.getStringId("resource_string_name");
+const stringId: string = utils.ad.resources.getStringId("resource_string_name");
 ```
 
 #### getId method
@@ -282,7 +284,7 @@ Gets the id from a resource, while passing string with resource type and name. F
 var id = utilsModule.ad.resources.getId("resource_name");
 ```
 ```TypeScript
-var id:number = utils.ad.resources.getId("resource_name");
+const id: number = utils.ad.resources.getId("resource_name");
 ```
 
 #### getPalleteColor method
@@ -290,12 +292,12 @@ var id:number = utils.ad.resources.getId("resource_name");
 Gets a color from the current theme, while using the resource color name.
 
 ```JavaScript
- var context = utilsModule.ad.getApplicationContext();
+var context = utilsModule.ad.getApplicationContext();
 var currentThemeColor = utilsModule.ad.resources.getPalleteColor("resource_color_name", context);
 ```
 ```TypeScript
-var context = utils.ad.getApplicationContext();
-var currentThemeColor:number = utils.ad.resources.getPalleteColor("resource_color_name", context);
+const context = utils.ad.getApplicationContext();
+const currentThemeColor:number = utils.ad.resources.getPalleteColor("resource_color_name", context);
 ```
 
 ### iOS
@@ -309,8 +311,8 @@ var jsArray = ["item1", "item2", "item3"];
 var nsarray = utilsModule.ios.collections.jsArrayToNSArray(jsArray);
 ```
 ```TypeScript
-var jsArray:Array<string>=["item1", "item2", "item3"];
-var nsarray = utils.ios.collections.jsArrayToNSArray(jsArray);
+const jsArray:Array<string> = ["item1", "item2", "item3"];
+const nsarray = utils.ios.collections.jsArrayToNSArray(jsArray);
 ```
 
 #### nsArrayToJSArray method
@@ -322,8 +324,8 @@ var nsarray = new NSArray(["item1", "item2", "item3"]);
 var jsarray = utilsModule.ios.collections.nsArrayToJSArray(nsarray);
 ```
 ```TypeScript
-var nsarray = new NSArray(["item1", "item2", "item3"]);
-var jsarray:Array<any> = utils.ios.collections.nsArrayToJSArray(nsarray);
+const nsarray = new NSArray(["item1", "item2", "item3"]);
+const jsarray:Array<any> = utils.ios.collections.nsArrayToJSArray(nsarray);
 ```
 
 #### isLandscape method
@@ -334,7 +336,7 @@ var jsarray:Array<any> = utils.ios.collections.nsArrayToJSArray(nsarray);
 var value = utilsModule.ios.isLandscape();
 ```
 ```TypeScript
-var value:boolean = utils.ios.isLandscape()
+const value: boolean = utils.ios.isLandscape()
 ```
 
 #### MajorVersion property
@@ -342,10 +344,10 @@ var value:boolean = utils.ios.isLandscape()
 Get the iOS device major version (for 8.1 will return 8); The returned value will be from type `number`.
 
 ```JavaScript
-console.log("iOS MajorVersion "+utilsModule.ios.MajorVersion);
+console.log("iOS MajorVersion "+ utilsModule.ios.MajorVersion);
 ```
 ```TypeScript
-console.log("iOS MajorVersion "+utils.ios.MajorVersion);
+console.log("iOS MajorVersion "+ utils.ios.MajorVersion);
 ```
 
 #### openFile method

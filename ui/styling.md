@@ -63,16 +63,16 @@ You could also check the name of the application-wide CSS file by using `getCssF
 
 ``` JavaScript
 var application = require("application");
-var fileName = app.getCssFileName();
-console.log("fileName "+fileName);
+var fileName = application.getCssFileName();
+console.log(`fileName ${fileName}`);
 
 ```
 ``` TypeScript
-import * as application from "application";
-var fileName = app.getCssFileName();
-console.log("fileName "+fileName);
+import { getCssFileName, start } from "application";
+let fileName = getCssFileName();
+console.log(`fileName ${fileName}`);
 
-application.start({ moduleName: "main-page" });
+start({ moduleName: "main-page" });
 ```
 
 {% endnativescript %}

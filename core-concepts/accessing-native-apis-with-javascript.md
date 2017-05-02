@@ -153,7 +153,7 @@ Steps to install and enable
 {
   "compilerOptions": {
     ...
-    "lib": ["es6", "dom"]
+    "lib": ["es6", "dom"],
     "baseUrl": ".",
     "paths": {
         "*": [
