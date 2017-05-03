@@ -146,6 +146,8 @@ You can also do this through code using the `RouterExtensions` class:
 
 > Note: You can pass `animated: false` in `NavigationOptions` to disable the transition.
 
+> Note: `transition` animation provided by NativeScript `routerExtensions` is supported only in cases when `page-router-outlet` is used.
+
 For other customization options check the [`NavigationTransition`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition.html) interface.
 
 ## Route Guards
