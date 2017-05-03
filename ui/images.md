@@ -68,12 +68,12 @@ Using the `~/` prefix, you can load images relative to the `App` folder inside y
 
 {% nativescript %}
 ```XML
-<Image src="~/images/logo.png" stretch ="none" />
+<Image src="~/images/logo.png" stretch="none" />
 ```
 {% endnativescript %}
 {% angular %}
 ```XML
-<Image src="~/images/logo.png" stretch ="none" ></Image>
+<Image src="~/images/logo.png" stretch="none" ></Image>
 ```
 {% endangular %}
 
@@ -86,12 +86,12 @@ Using the `res://` prefix you can load a resource image. This is the suggested a
 
 {% nativescript %}
 ```XML
-<Image src="res://logo" stretch ="none" /> 
+<Image src="res://logo" stretch="none" /> 
 ```
 {% endnativescript %}
 {% angular %}
 ```XML
-<Image src="res://logo" stretch ="none" ></Image> 
+<Image src="res://logo" stretch="none" ></Image> 
 ```
 {% endangular %}
 
