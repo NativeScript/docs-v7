@@ -49,7 +49,7 @@ To verify this binding works tap the “Sign In” button in your app; you shoul
 
 <img alt="Terminal showing the word hello logged" src="../img/cli-getting-started/angular/chapter3/terminal-1.png" class="plain">
 
-> **WARNING**: The iOS console will filter out similar messages and will show them only once. That is why when you keep on clicking the button, you will see `hello` only once printed on the console. Replace the string "hello" with the following back-tick string `hello ${new Date()}` to verify that the tap event does work. Printing the current time will make sure the string is different every time and the console will have to show it.
+> **WARNING**: The iOS console will filter out similar messages and will show them only once. That is why when you keep on clicking the button, you will see `hello` only printed on the console once. Replace the string "hello" with the following back-tick string `hello ${new Date()}` to verify that the tap event does work. Printing the current time will make sure the string is different every time and the console will have to show it.
 
 > **TIP**:
 > * You can find a list of events available for each UI element on its API documentation page. For instance, the [button element’s API documentation](http://docs.nativescript.org/api-reference/classes/_ui_button_.button.html) lists its `tap` event.
@@ -175,7 +175,7 @@ export class AppComponent {
 
 <div class="exercise-end"></div>
 
-The previous examples switches each button’s `text` attribute from a simple string—e.g. `<Button text="Sign Up">`—to an attribute binding that is dependent on a value defined in the `AppComponent` class—e.g. `<Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'">"`. Now, when the value of the `isLoggingIn` attributes changes after the user taps the bottom button, Angular is smart enough to update the text of the button automatically. The result looks like this:
+The previous examples switches each button’s `text` attribute from a simple string—e.g. `<Button text="Sign up">`—to an attribute binding that is dependent on a value defined in the `AppComponent` class—e.g. `<Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'">"`. Now, when the value of the `isLoggingIn` attribute changes after the user taps the bottom button, Angular is smart enough to update the text of the button automatically. The result looks like this:
 
 ![Text changing on Android](../img/cli-getting-started/angular/chapter3/android/4.gif)
 ![Text changing on iOS](../img/cli-getting-started/angular/chapter3/ios/4.gif)

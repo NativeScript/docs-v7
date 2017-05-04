@@ -151,7 +151,7 @@ Here's what these various files and folders do:
 - **App_Resources**: This folder contains platform-specific resources such as icons, splash screens, and configuration files. The NativeScript CLI takes care of injecting these resources into the appropriate places in the `platforms` folder when you execute `tns run`.
 - **pages**: This folder, specific to the Groceries app, contains the code to build your app's pages. Each page is made up of a TypeScript file, an optional HTML file, and an optional set of CSS files. The Groceries app starts with two folders for its two pages, a login page, and a list page.
 - **shared**: This folder, also specific to the Groceries app, contains any files you need to share between NativeScript apps and Angular-built web apps. For Groceries this includes a few classes for talking to backend services, some model objects, and a `config.ts` file used to share configuration variables like API keys. We’ll discuss the `shared` folder, as well as code sharing between native apps and web apps, in detail in [chapter 3](ng-chapter-3).
-- **app.css**: This file contains global styles for your app. We'll dig into app styling in [chapter 2](ng-chapter-2).
+- **app.css**: This file contains global styles for your app. We'll dig into app styling later in this chapter.
 - **app.component.ts**: The primary Angular component that drives your application. For now the file has a simple hello world example that we’ll look at momentarily.
 - **app.module.ts**: This file contains the main configuration for your application. You’ll be adding new entries here as you progress through this tutorial.
 - **main.ts**: The starting point of Angular applications—web and native.
