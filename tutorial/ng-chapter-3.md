@@ -371,6 +371,7 @@ submit() {
 }
 login() {
   // TODO: Define
+  this.loggingIn = false;
 }
 signUp() {
   this.userService.register(this.user);
