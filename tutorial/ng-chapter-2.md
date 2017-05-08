@@ -203,6 +203,7 @@ import {Component} from "@angular/core";
 
 @Component({
   selector: "my-app",
+  moduleId: module.id,
   template: "<Label text='hello world'></Label>"
 })
 export class AppComponent {}
@@ -303,6 +304,7 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: "my-app",
+  moduleId: module.id,
   template: `
     <StackLayout>
       <TextField hint="Email Address" keyboardType="email"
@@ -416,6 +418,7 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: "my-app",
+  moduleId: module.id,
   template: `
     <StackLayout>
       <TextField hint="Email Address" keyboardType="email"
@@ -426,7 +429,7 @@ import { Component } from "@angular/core";
       <Button text="Sign up for Groceries"></Button>
     </StackLayout>
   `,
-  styleUrls: ["pages/login/login-common.css", "pages/login/login.css"]
+  styleUrls: ["./login/login-common.css", "./login/login.css"]
 })
 export class AppComponent {}
 ```

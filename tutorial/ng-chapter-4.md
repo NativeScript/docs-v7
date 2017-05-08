@@ -206,8 +206,9 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 
 @Component({
   selector: "list",
-  templateUrl: "pages/list/list.html",
-  styleUrls: ["pages/list/list-common.css", "pages/list/list.css"]
+  moduleId: module.id,
+  templateUrl: "./list.html",
+  styleUrls: ["./list-common.css", "./list.css"]
 })
 export class ListComponent implements OnInit {
   groceryList: Array<Object> = [];
@@ -321,8 +322,9 @@ Next, because you’re injecting a service into your constructor you must also i
 ``` TypeScript
 @Component({
   selector: "list",
-  templateUrl: "pages/list/list.html",
-  styleUrls: ["pages/list/list-common.css", "pages/list/list.css"],
+  moduleId: module.id,
+  templateUrl: "./list.html",
+  styleUrls: ["./list-common.css", "./list.css"],
   providers: [GroceryListService]
 })
 ```
@@ -350,8 +352,9 @@ import { GroceryListService } from "../../shared/grocery/grocery-list.service";
 
 @Component({
   selector: "list",
-  templateUrl: "pages/list/list.html",
-  styleUrls: ["pages/list/list-common.css", "pages/list/list.css"],
+  moduleId: module.id,
+  templateUrl: "./list.html",
+  styleUrls: ["./list-common.css", "./list.css"],
   providers: [GroceryListService]
 })
 export class ListComponent implements OnInit {
