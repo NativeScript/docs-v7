@@ -51,6 +51,11 @@ The easiest way to enable webpack support for your application is to install the
 $ npm install --save-dev nativescript-dev-webpack
 ```
 
+The plugin adds a few dependencies to the project. Don't forget to install them:
+```
+$ npm install
+```
+
 ## How nativescript-dev-webpack Works
 
 Installing the plugin adds several updates to your project:
