@@ -327,7 +327,7 @@ code .
 
 ### Tip #2: Hiding generated code
 
-One thing you’ve likely noticed is that each `.ts` file in your `app` folder has a corresponding `.js` and `.js.map` file. We’ll be going over TypeScript compilation and why these files are present throughout this tutorial, but for now just know that the `.js` and `.js.map` files are generated from their corresponding `.ts` file; therefore, the `.js`  and `.js.map` files aren’t files you need to see in your editor during development. Luckily, Visual Studio Code has a handy little feature you can use to hide these files.
+One thing you’ve likely noticed is that each `.ts` file in your `app` folder has a corresponding `.js` file. In older versions of NativeScript `.js.map` files were also generated, so we'll show them in this example as well. We’ll be going over TypeScript compilation and why these files are present throughout this tutorial, but for now just know that the `.js` and `.js.map` files are generated from their corresponding `.ts` file; therefore, the `.js`  and `.js.map` files aren’t files you need to see in your editor during development. Luckily, Visual Studio Code has a handy little feature you can use to hide these files.
 
 Open your Visual Studio Code user settings by pressing `Command + ,` on macOS, or `Ctrl + ,` on Windows and Linux, and then paste in the following lines of code.
 
