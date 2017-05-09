@@ -25,20 +25,40 @@ MyButton btn = new MyButton(context);
 
 Here is how the above is done in NativeScript:
 
-```javascript
+``` JavaScript
 var constructorCalled = false;
 var MyButton = android.widget.Button.extend({
-		//constructor
-		init: function() {
-			constructorCalled = true;
-		},
-		
-		setEnabled: function(enabled) {
-			this.super.setEnable(enabled);
-		}
-	});
-	var btn = new MyButton(context);
-	//constructorCalled is true here
+	//constructor
+	init: function() {
+		constructorCalled = true;
+	},
+	
+	setEnabled: function(enabled) {
+		this.super.setEnable(enabled);
+	}
+});
+
+var btn = new MyButton(context);
+// constructorCalled === true
+```
+``` TypeScript
+class MyButton extends android.widget.Button.extend
+	static constructorCalled: boolean = false;
+	//constructor
+	init() {
+		MyButton.constructorCalled = true;
+
+		// necessary when extending TypeScript constructors
+		return global.__native(this);
+	}
+
+	setEnabled(enabled : boolean): void {
+		this.super.setEnable(enabled);
+	}
+}
+
+let btn = new MyButton(context);
+// MyButton.constructorCalled === true
 ```
 
 > **Note:** In the above setEnabled function the `this` keyword points to the JavaScript object that proxies the extended native instance. The `this.super` property provides access to the base class method implementation.
@@ -54,7 +74,14 @@ button.setOnClickListener(new View.OnClickListener() {
 });
 ```
 
-```javascript
+``` JavaScript
+button.setOnClickListener(new android.view.View.OnClickListener({
+	onClick: function() {
+		// Perform action on click
+	}
+}));
+```
+``` TypeScript
 button.setOnClickListener(new android.view.View.OnClickListener({
 	onClick: function() {
 		// Perform action on click
@@ -98,11 +125,14 @@ public class MyVersatileCopywriter implements Printer, Copier, Writer {
 }
 ```
 
-The same result can be achieved in NativeScript by extending(./how-extend-works.md) any valid object that inherits [Java Object](https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html), and declaring an **interfaces** array in the implementation as shown below:
+The same result can be achieved in NativeScript by [extending]({%slug how-extend-works}) any valid object that inherits [Java Object](https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html). 
+
+- In JavaScript - Declare an **interfaces** array in the implementation
+- Using Typescript syntax - apply a **decorator** to the extended class (note `@Interfaces([...]`))
 
 Using Javascript syntax - attach `interfaces` array to implementation object of the extend call
 
-```javascript
+``` JavaScript
 var MyVersatileCopyWriter = java.lang.Object.extend({
 	interfaces: [com.a.b.Printer, com.a.b.Copier, com.a.b.Writer], /* the interfaces that will be inherited by the resulting class */
 	print: function() { ... }, /* implementing the 'print' methods from Printer */
@@ -112,18 +142,23 @@ var MyVersatileCopyWriter = java.lang.Object.extend({
 	toString: function() { ... } /* override `java.lang.Object's` `toString */
 });
 ```
-
-Using Typescript syntax - apply a **decorator** to the extended class (note `@Interfaces([...]`))
-
-```typescript
+``` TypeScript
 @Interfaces([com.a.b.Printer, com.a.b.Copier, com.a.b.Writer]) /* the interfaces that will be inherited by the resulting MyVersatileCopyWriter class */
 class MyVersatileCopyWriter extends java.lang.Object { 
+	constructor() {
+		return global.__native(this);
+	}
+
 	print() { ... }
 	copy() { ... }
 	write() { ... }
 	writeLine() { ... }
 }
 ```
+
+
+> When implementing Java interfaces in NativeScript, it is necessary to provide implementation (declare the methods - `print`, `copy`, `write`, `writeLine`) for **every** method present in the interfaces, otherwise compilation will fail. If you do not want to fully implement an interface you need to declare empty functions. Functions with empty bodies are considered valid method implementations (`print: function() {}`).
+
 
 ## Limitations
 * Implementing two interfaces with the same method signature will generate just 1 method. It is the implementor's responsibility to define how the method will behave for both interfaces
@@ -133,14 +168,14 @@ class MyVersatileCopyWriter extends java.lang.Object {
 ### Notes
 > Java method overloads are handled by the developer by explicitly checking the `arguments` count of the invoked function
 
-```javascript
+``` JavaScript
 var MyVersatileCopyWriter = ...extend({
 	...
 	print: function() {
 		var content = "";
 		var offset = 0;
 
-		if(arguments.length == 2) {
+		if (arguments.length == 2) {
 			offset = arguments[1];
 		}
 
@@ -151,8 +186,27 @@ var MyVersatileCopyWriter = ...extend({
 	...
 })
 ```
+``` TypeScript
+class MyVersatileCopyWriter extends ... {
+	constructor() {
+		return global.__native(this);
+	}
+	...
+	print() {
+		let content = "";
+		let offset = 0;
 
-> When implementing Java interfaces in NativeScript, it is necessary to provide implementation (declare the methods - `print`, `copy`, `write`, `writeLine`) for **every** method present in the interfaces, otherwise compilation will fail. If you do not want to fully implement an interface you need to declare empty functions. Functions with empty bodies are considered valid method implementations (`print: function() {}`).
+		if (arguments.length == 2) {
+			offset = arguments[1];
+		}
+
+		content = arguments[0];
+
+		// do stuff
+	}
+	...
+}
+```
 
 
 
