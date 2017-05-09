@@ -22,7 +22,7 @@ var androidPkg = android;
 var androidViewPkg = android.view;
 ```
 
-> **Note:** You may not use APIs that are not present in the metadata. By default the Android Runtime comes with prebuilt metadata for Android [API level 23](https://developer.android.com/about/versions/marshmallow/index.html).
+> **Note:** You may not use APIs that are not present in the metadata. By default, if `--compileSdk` argument isn't provided while building, metadata will be built for the latest Android [Platform SDK](https://developer.android.com/about/versions/nougat/index.html) installed on the workstation.
 
 # Proxies
 The JavaScript objects that lie behind the Android APIs are called *Proxies*. There are two types of proxies:
@@ -40,7 +40,7 @@ Class proxies may be instantiated much like in Android:
 var file = new java.io.File("/path/to/myfile.txt");
 ```
 
-The result of the call will create a native java.io.File instance on the Android side and a special hollow Object on the JavaScript side. This special object knows how to invoke methods and access fields on the corresponding native instance. For example we may retrieve the path value of the above created `File` like:
+The result of the call will create a native java.io.File instance on the Android side and a special hollow Object on the JavaScript side. This special object knows how to invoke methods and access fields on the corresponding native instance. For example we may retrieve the path value of the above created `File` using the corresponding `File` class API like:
 
 ```javascript
 var path = file.getPath();

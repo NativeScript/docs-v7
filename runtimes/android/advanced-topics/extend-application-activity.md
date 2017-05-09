@@ -33,7 +33,7 @@ The following steps are needed to create custom native `android.app.Application`
     var Application = android.app.Application.extend("org.myApp.Application", {
         onCreate: function() {
             superProto.onCreate.call(this);
-
+            
             // At this point modules have already been initialized
 
             // Enter custom initialization code here
@@ -53,9 +53,8 @@ The following steps are needed to create custom native `android.app.Application`
     class Application extends android.app.Application {
         protected onCreate(): void {
             super.onCreate();
-
-            // initialize the modules with the custom application object
-            application.android.init(this);
+            
+            // At this point modules have already been initialized
 
             // Enter custom initialization code here
         }
@@ -68,8 +67,6 @@ The following steps are needed to create custom native `android.app.Application`
         }
     }
     ```
-
-    >Note the `application.init` call within the `onCreate` override. This is needed by the core modules to cache the application context and perform bootstraping logic before the main `Activity` is created.
 
 3. Modify the `application` entry within the `AndroidManifest.xml` file found in the `<application-name>app/App_Resources/Android/` folder:
 

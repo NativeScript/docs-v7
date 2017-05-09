@@ -3,6 +3,7 @@ nav-title: "How Extend Works"
 title: "How Extend Works"
 description: "NativeScript Android Runtime Extend Workflow"
 position: 3
+slug: how-extend-works
 ---
 
 # The Extend Function

@@ -73,7 +73,7 @@ Every NativeScript plugin, which contains native Android dependencies, should al
 
 * It must contain its own [configuration](http://developer.android.com/tools/building/configuring-gradle.html).
 * It might contain native dependencies required to build the plugin properly.
-* Any native dependencies should be available in [jcenter](https://bintray.com/bintray/jcenter) or from the Android SDK installed on your machine if you want it to work out of the box. You can see an example of a compile dependency [here](https://github.com/NativeScript/nativescript-facebook-plugin/blob/master/platforms/android/include.gradle).
+* Any native dependencies should be available in [jcenter](https://bintray.com/bintray/jcenter) or from the Android SDK installed on your machine if you want it to work out of the box. You can see an example of a compile dependency [here](https://github.com/NativeScript/nativescript-fresco/blob/master/platforms/android/include.gradle).
 * It can be used for any kind of native configuration. Find more information [here](http://developer.android.com/tools/building/configuring-gradle.html)
 
 #### Include.gradle Example

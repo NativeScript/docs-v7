@@ -3,6 +3,7 @@ nav-title: "Overview"
 title: "Overview"
 description: "NativeScript Android Runtime Overview"
 position: 1
+previous_url: /getting-started/hello-world
 ---
 
 # What is Android Runtime for NativeScript?

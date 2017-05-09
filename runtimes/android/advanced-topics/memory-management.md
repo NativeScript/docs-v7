@@ -85,4 +85,4 @@ The described approaches are not mutually exclusive. You can combine them as it 
 * Avoid allocating many large objects at once
 * Avoid allocating objects in loops
 
-Be causios when you write closures as it often hard to observe object retentions along all the reference chain. 
+Be cautious when you write closures as it often hard to observe object retentions along all the reference chain. 
