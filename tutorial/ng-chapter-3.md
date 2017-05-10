@@ -87,7 +87,7 @@ Next, find the first `<TextField>` in your component’s `template` and replace 
 
 <div class="exercise-end"></div>
 
-The key thing to note here is the `[text]="email"` attribute on the `<TextField>`. This is Angular’s syntax for attribute binding, and it allows you to bind the value of an attribute to a property in your TypeScript class. In this case, the `text` attribute of the `<TextField>`—which is roughly equivalent to a DOM `<input>`’s `value` attribute—is bound to the `AppComponent`’s `email` attribute. Therefore the app now has an email address prefilled when it loads:
+The key thing to note here is the `[text]="email"` attribute on the `<TextField>`. This is Angular’s syntax for attribute binding, and it allows you to bind the value of an attribute to a property in your TypeScript class. In this case, the `text` attribute of the `<TextField>`—which is roughly equivalent to a DOM `<input>`’s `value` attribute—is bound to the `AppComponent`’s `email` property. Therefore the app now has an email address prefilled when it loads:
 
 ![Android with prefilled email](../img/cli-getting-started/angular/chapter3/android/1.png)
 ![iOS with prefilled email](../img/cli-getting-started/angular/chapter3/ios/1.png)
@@ -175,7 +175,7 @@ export class AppComponent {
 
 <div class="exercise-end"></div>
 
-The previous examples switches each button’s `text` attribute from a simple string—e.g. `<Button text="Sign up">`—to an attribute binding that is dependent on a value defined in the `AppComponent` class—e.g. `<Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'">"`. Now, when the value of the `isLoggingIn` attribute changes after the user taps the bottom button, Angular is smart enough to update the text of the button automatically. The result looks like this:
+The previous examples switches each button’s `text` attribute from a simple string—e.g. `<Button text="Sign up">`—to an attribute binding that is dependent on a value defined in the `AppComponent` class—e.g. `<Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'">"`. Now, when the value of the `isLoggingIn` property changes after the user taps the bottom button, Angular is smart enough to update the text of the button automatically. The result looks like this:
 
 ![Text changing on Android](../img/cli-getting-started/angular/chapter3/android/4.gif)
 ![Text changing on iOS](../img/cli-getting-started/angular/chapter3/ios/4.gif)
