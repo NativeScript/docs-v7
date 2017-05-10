@@ -9,6 +9,18 @@ previous_url: /Changelogs/iOS Runtime
 
 
 
+3.0.0
+=====
+
+## What's New
+- [ObjC TS decorators for specifying protocols and exposed methods](https://github.com/NativeScript/ios-runtime/pull/753)
+
+## Bug Fixes
+- [Double click on file in ios debug inspector throws an error](https://github.com/NativeScript/ios-runtime/pull/722)
+- [Livesync makes some modules executed twice](https://github.com/NativeScript/ios-runtime/pull/738)
+- [Tagged (rc) versions cannot be uploaded to TestFlight/iTunes](https://github.com/NativeScript/ios-runtime/pull/760)
+- [Prevent crash when materializing a property without a getter](https://github.com/NativeScript/ios-runtime/commit/93f21af78adfcca026edb5600f75c8b6ed6a3615)
+
 2.5.1
 =====
 
