@@ -552,7 +552,7 @@ Most of the Angular concepts you’ve used in the last few sections are the same
 
 However, routing is a bit different, as there are some fundamental differences between how the concept of routing works on the web and in apps. Routing on the web revolves around the concept of a URL, but in a native app there is no browser. Likewise, native apps have concepts that aren’t present in the browser, such as Android’s hardware back button, or iOS’s swipe left-to-right gesture to go back.
 
-Because of that, even though NativeScript uses the same Angular routing APIs, you must designate certain Angular components in your app as “pages”—which is something you don’t necessarily have to do in an Angular web app. In Groceries the code for these pages is in the app’s `pages` folder. Let’s look at this works in an exercise, and then step back and discuss why NativeScript takes the approach that it does.
+Because of that, even though NativeScript uses the same Angular routing APIs, you must designate certain Angular components in your app as “pages”—which is something you don’t necessarily have to do in an Angular web app. In Groceries the code for these pages is in the app’s `pages` folder. Let’s look at how this works in an exercise, and then step back and discuss why NativeScript takes the approach that it does.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Setting up routing
