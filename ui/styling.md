@@ -295,6 +295,92 @@ StackLayout Button { background-color: blue; }
 ```CSS
 StackLayout > Button { background-color: blue; }
 ```
+* (+) - A adjacent sibling selector, allows to select all elements, which are siblings of a specified element.
+#### Direct sibling test by class
+{% nativescript %}
+```XML
+<StackLayout class="layout-class">
+    <Label text="Direct sibling test by id"/>
+	<Button class="test-child" text="First Button"/>
+	<Button class="test-child-2" text="Second Button"/>
+</StackLayout>
+```
+{% endnativescript %}
+{% angular %}
+```HTML
+<StackLayout class="layout-class">
+    <Label text="Direct sibling test by id"></Label>
+	<Button class="test-child" text="First Button"></Button>
+	<Button class="test-child-2" text="Second Button"></Button>
+</StackLayout>
+```
+{% endangular %}
+
+```CSS
+.layout-class .test-child + .test-child-2 {
+  background-color: green;
+}
+```
+#### Direct sibling test by id
+{% nativescript %}
+```XML
+<StackLayout class="layout-class">
+    <Label text="Direct sibling test by id"/>
+	<Button id="test-child" text="First Button"/>
+	<Button id="test-child-2" text="Second Button"/>
+</StackLayout>
+```
+{% endnativescript %}
+{% angular %}
+```HTML
+<StackLayout class="layout-class">
+    <Label text="Direct sibling test by id"></Label>
+	<Button id="test-child" text="First Button"></Button>
+	<Button id="test-child-2" text="Second Button"></Button>
+</StackLayout>
+```
+{% endangular %}
+
+```CSS
+.layout-class #test-child + #test-child-2 {
+  background-color: green;
+}
+```
+#### Direct sibling by type
+
+{% nativescript %}
+```XML
+<StackLayout class="direct-sibling--type">
+    <Label text="Direct sibling by type"/>
+    <Button text="Test Button"/>
+    <Label text="Test Label"/>
+    <Button text="Test Button"/>
+    <Label text="Test Label"/>
+    <Button text="Test Button"/>
+    <Label  text="Test Label"/>
+</StackLayout>
+```
+{% endnativescript %}
+{% angular %}
+```HTML
+<StackLayout class="direct-sibling--type">
+    <Label text="Direct sibling by type"></Label>
+    <Button text="Test Button"></Button>
+    <Label text="Test Label"></Label>
+    <Button text="Test Button"></Button>
+    <Label text="Test Label"></Label>
+    <Button text="Test Button"></Button>
+    <Label  text="Test Label"></Label>
+</StackLayout>
+```
+{% endangular %}
+
+```CSS
+StackLayout Button + Label{
+    background-color:green;
+    color:white;
+}
+```
 
 The `background-color` rule will not be applied. In order to apply the selector, the WrapLayout element would need to be removed so that the Button is a direct child of the StackLayout.
 
