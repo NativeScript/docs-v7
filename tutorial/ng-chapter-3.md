@@ -524,9 +524,9 @@ Angular supports the concept of [hierarchical dependency injectors](https://angu
 
 At this point you should be ready to create an account to verify this whole setup worked. After the provider changes have livesync’d, perform the following tasks to create an account:
 
-* 1) Click the gray “Sign Up” button in your app.
+* 1) Tap the gray “Sign Up” button in your app.
 * 2) Type in an email address and password. Fake credentials are fine, just make up something you can remember.
-* 3) Click the red “Sign Up” button.
+* 3) Tap the red “Sign Up” button.
 
 <div class="exercise-end"></div>
 
