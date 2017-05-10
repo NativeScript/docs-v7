@@ -522,7 +522,7 @@ export class AppModule {}
 
 Angular supports the concept of [hierarchical dependency injectors](https://angular.io/docs/ts/latest/guide/hierarchical-dependency-injection.html), which is a fancy way of saying that you can import providers in parent modules and use them in child components. In this example, this concept means you can declare `NativeScriptHttpModule` in `main.ts`, even though the `Http` service is used in `UserService`. Generally, it’s only a good idea to declare providers in parent modules if most of the components in your app need access to the provider. Although you _could_ declare all your providers in a single root `NgModule`, your list of imports would become unwieldy as your app grows, and difficult to refactor as your app changes.
 
-At this point you should be ready to create an account to verify this whole setup worked. After the provider changes have livesync’d, perform the following tasks to create an account:
+At this point you should be ready to create an account to verify that this whole setup worked. After the provider changes have livesync’d, perform the following tasks to create an account:
 
 * 1) Tap the gray “Sign Up” button in your app.
 * 2) Type in an email address and password. Fake credentials are fine, just make up something you can remember.
