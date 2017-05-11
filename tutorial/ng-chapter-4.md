@@ -452,7 +452,7 @@ Open `app/pages/list/list.html` and give the existing `<TextField>` a new `[(ngM
 <TextField #groceryTextField [(ngModel)]="grocery" hint="Enter a grocery item" col="0"></TextField>
 ```
 
-Next, give the same file’s image a new `tap` attribute binding, so that the full `<Image>` looks like this:
+Next, add a new `tap` event binding to the image, so that the full `<Image>` looks like this:
 
 ``` XML
 <Image src="res://add" (tap)="add()" col="1"></Image>
