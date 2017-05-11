@@ -45,7 +45,7 @@ Open `app/pages/login/login.component.ts`, and add the following import to the t
 import { Page } from "ui/page";
 ```
 
-> **NOTE**: All of the imports you’ve seen to this point work because the TypeScript compiler resolves them against your project’s `node_modules` folder. For instance, `import { Component } from "@angular/core"` works because a `node_modules/angular2/core/core.d.ts` file exists. The two imports above are NativeScript module imports, and they work because your project’s `references.d.ts` file includes a reference to a TypeScript declaration file (a `.d.ts` file), that lives in `node_modules/tns-core-modules`, and which allows you to import modules from `node_modules/tns-core-modules` without any prefixes.
+> **NOTE**: All of the imports you’ve seen to this point work because the TypeScript compiler resolves them against your project’s `node_modules` folder. For instance, `import { Component } from "@angular/core"` works because a `node_modules/angular2/core/core.d.ts` file exists. The `Page` class import above is a NativeScript module import, and it works because your project’s `tsconfig.json` file includes a path to TypeScript declarations (`.d.ts` files) that live in `node_modules/tns-core-modules`, which allow you to import modules from `node_modules/tns-core-modules` without any prefixes.
 
 Next, alter the same file’s existing `"@angular/core"` import to include the `OnInit` interface:
 
