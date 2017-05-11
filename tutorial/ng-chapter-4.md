@@ -29,7 +29,7 @@ If you dig into `node_modules/tns-core-modules` you can get an idea of how these
 > * You can refer to the [Node.js documentation on folders as modules](https://nodejs.org/api/modules.html#modules_folders_as_modules) for more detailed information on how NativeScript organizes its modules.
 > * The “tns-core-modules” package only includes compiled JavaScript code to cut down on file size. You can find the TypeScript code for each of these modules in the [main NativeScript GitHub repo](https://github.com/NativeScript/nativescript), for instance here’s the [color module’s source code](https://github.com/NativeScript/nativescript/tree/master/tns-core-modules/color).
 
-The `*.ios.*` and `*.android.*` naming convention should look familiar, as it’s the exact same convention we used to include Android- and iOS-specific styling in [chapter 2](ng-chapter-2). NativeScript uses this same convention to implement its modules on iOS and Android. Now that you know where these modules are, let's take a closer look at what else they can do for your app, starting with a closer looks at what you can do with NativeScript’s UI elements.
+The `*.ios.*` and `*.android.*` naming convention should look familiar, as it’s the exact same convention we used to include Android- and iOS-specific styling in [chapter 2](ng-chapter-2). NativeScript uses this same convention to implement its modules on iOS and Android. Now that you know where these modules are, let's examine what else they can do for your app, starting with a closer look at what you can do with NativeScript’s UI elements.
 
 ## 4.1: UI elements
 
