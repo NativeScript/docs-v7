@@ -260,7 +260,7 @@ This creates a simple `Grocery` model object that you can use throughout your ap
 
 ``` TypeScript
 import { Injectable } from "@angular/core";
-import { Http, Headers } from "@angular/http";
+import { Http, Headers, Response } from "@angular/http";
 import { Observable } from "rxjs/Rx";
 import "rxjs/add/operator/map";
 
