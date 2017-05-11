@@ -625,7 +625,7 @@ ListView {
 
 This code sets the starting opacity value of the `<ListView>` to `0` so that the control is hidden when the page loads. The code also defines a `visible` class name that changes the `opacity` of an element from `0` to `1` over one full second.
 
-> **TIP**: For background on how the CSS animations syntax works, feel free to refer to the [NativeScript CSS animation documentation](https://github.com/NativeScript/docs/blob/master/ui/animation-css.md), or [external CSS animation guides](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations).
+> **TIP**: For background on how the CSS animations syntax works, feel free to refer to the [NativeScript CSS animation documentation](https://docs.nativescript.org/angular/ui/animation-css), or [external CSS animation guides](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations).
 
 Now that you have the CSS in place, your next step is to add the previously defined `"visible"` class name to the `<ListView>` control after data has loaded. To do that, start by opening `app/pages/list/list.component.ts` and adding the following new property right below the existing `isLoading = false;` line:
 
