@@ -11,6 +11,8 @@ environment: nativescript
 # Overview
 This article covers the basics of creating a NativeScript User Interface plugin that integrates with the existing [cross-platform](https://github.com/NativeScript/NativeScript) modules.
 
+> **Important:** The techniques described in this article are applicable for NativeScript versions 2.5.x and below.  
+
 Although the cross-platform part of NativeScript is entirely written in [TypeScript](http://www.typescriptlang.org/), the provided code samples are in plain JavaScript and are created with Sublime Text 2 as the preferred IDE. You can achieve the same with any transpiler tool that produces valid ES5 JavaScript and an IDE of your choice.
 
 The widget to enable is [NumberPicker](http://developer.android.com/reference/android/widget/NumberPicker.html) / [UIStepper](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/cl/UIStepper) as this component is currently not available in the NativeScript UI modules and (a very important note) - semantically similar widgets are available in both Android and iOS. The suggested way for building the plugin will follow the guidelines the NativeScript team uses when creating cross-platform modules and will emphasize major concepts like observables, bindable properties, abstract View hierarchy (or Visual Tree) and CSS styling.
