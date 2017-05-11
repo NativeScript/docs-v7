@@ -158,7 +158,7 @@ toggleDisplay() {
 
 All NativeScript UI elements inherit from a base [`View` class](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html), which contains a number of useful methods—including the `animate()` method you used in the previous example.
 
-Once you have a reference to a UI element, you can call any of the methods that element inherits from `View`. In this case, you call the `<StackLayout #container>` element’s `animate()` method to change its background color over a duration of `200`, or 2/10 of a second. The effect is a subtle color change that helps user differentiate between the “Sign In” and “Sign Up” functionality that your form provides.
+Once you have a reference to a UI element, you can call any of the methods that element inherits from `View`. In this case, you call the `<StackLayout #container>` element’s `animate()` method to change its background color over a duration of `200`, or 2/10 of a second. The effect is a subtle color change that helps users differentiate between the “Sign In” and “Sign Up” functionality that your form provides.
 
 ![Color animation on Android](../img/cli-getting-started/angular/chapter4/android/2.gif)
 ![Color animation on iOS](../img/cli-getting-started/angular/chapter4/ios/2.gif)
