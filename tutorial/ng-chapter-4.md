@@ -615,6 +615,7 @@ ListView {
 .visible {
   animation-name: show;
   animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 @keyframes show {
   from { opacity: 0; }
