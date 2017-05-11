@@ -423,7 +423,7 @@ To break down how this layout works, let’s start with the outer structure of t
 </GridLayout>
 ```
 
-The outer grid layout’s `rows` attribute divides the screen into two rows, the first auto-sized according to its childrens' height, and the other to sized to take up *, or the remaining height of the screen. You place UI elements into these rows using the zero-based `row` attribute. The inner grid layout is in the top row because of its `row="0"` attribute, and the list view is in the bottom row because of its `row="1"` attribute.
+The outer grid layout’s `rows` attribute divides the screen into two rows, the first auto-sized according to its childrens' height, and the other sized to take up *, or the remaining height of the screen. You place UI elements into these rows using the zero-based `row` attribute. The inner grid layout is in the top row because of its `row="0"` attribute, and the list view is in the bottom row because of its `row="1"` attribute.
 
 Grid layouts can also divide the screen into columns, which is what the inner grid layout does:
 
