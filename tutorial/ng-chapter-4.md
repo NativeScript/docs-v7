@@ -659,7 +659,7 @@ Finally, open `app/pages/list/list.html` and replace the existing `<ListView>` t
 
 The key here is the list view’s `[class.visible]="listLoaded"` binding, which automatically applies the `visible` CSS class name based on the state of the `listLoaded` TypeScript property.
 
-The advantage of using CSS animations is that you avoid the need to reference specific UI elements in your TypeScript code; there was no need to create a local template variable. The CSS animation approach also help to keep your code decoupled. Your TypeScript code can focus on logic, and leave styling concerns to your CSS code.
+The advantage of using CSS animations is that you avoid the need to reference specific UI elements in your TypeScript code; there was no need to create a local template variable. The CSS animation approach also helps to keep your code decoupled. Your TypeScript code can focus on logic, and leave styling concerns to your CSS code.
 
 If you try out your app you should now see a nice fade-in animation:
 
