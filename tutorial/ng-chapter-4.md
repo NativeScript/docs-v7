@@ -23,6 +23,7 @@ If you dig into `node_modules/tns-core-modules` you can get an idea of how these
 - a file containing the module's Android implementation (`color.android.js`);
 - a file containing the module's iOS implementation (`color.ios.js`);
 - a file containing code shared by the Android and iOS implementations (`color-common.js`)
+- files containing TypeScript definitions for the Color module, to help with code completion (`color.d.ts` and `known-colors.d.ts`)
 
 > **NOTE**:
 > * You can refer to the [Node.js documentation on folders as modules](https://nodejs.org/api/modules.html#modules_folders_as_modules) for more detailed information on how NativeScript organizes its modules.
