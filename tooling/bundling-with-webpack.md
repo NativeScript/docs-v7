@@ -61,8 +61,7 @@ $ npm install
 Installing the plugin adds several updates to your project:
 
 - `devDependencies` settings that will contain the most popular webpack package and several loaders and plugins.
-- `webpack.android.js` and `webpack.ios.js` configuration files for the Android and iOS platforms respectively.
-- `webpack.common.js` -- this is the main configuration file that is shared for both the Android and iOS platform. It contains sensible defaults, but it is designed to be as readable and easy to modify as possible.
+- `webpack.config.js` -- this is the configuration file. It contains sensible defaults, but it is designed to be as readable and easy to modify as possible.
 - Application source files configuring bundle chunks:
     - `app/vendor`. Defines vendor modules which get bundled separately from application code.
     - `app/vendor-platform.android` and `app/vendor-platform.ios`. Define platform-specific vendor modules.
@@ -226,7 +225,7 @@ You could also rely on webpack analysis and visualization plugins that can help 
 Here's a simple configuration of the above plugin, that you can add to your `webpack.config.js`:
 
 ```js
-// webpack.common.js
+// webpack.config.js
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 ...
@@ -257,7 +256,7 @@ The default webpack configuration tries to copy certain files to your app folder
 - App/theme CSS files.
 - Images: png/jpg/etc.
 
-If you need other files bundled with your app, find the `CopyWebpackPlugin` configuration in `webpack.common.js`, and add a new config:
+If you need other files bundled with your app, find the `CopyWebpackPlugin` configuration in `webpack.config.js`, and add a new config:
 
 ```JavaScript
 new CopyWebpackPlugin([
