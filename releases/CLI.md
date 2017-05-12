@@ -9,6 +9,80 @@ previous_url: /Changelogs/CLI
 
 NativeScript CLI Changelog
 ================
+
+3.0.1 (2017, May 11)
+==
+
+### Fixed
+
+* [Fix #2780](https://github.com/NativeScript/nativescript-cli/issues/2780): CLI tool doesn't restart app if HTML/CSS file was modified
+* [Fix #2732](https://github.com/NativeScript/nativescript-cli/issues/2732): Livesync crashes app every OTHER time on iOS with 3.0.0-rc.2
+* [Fix #2764](https://github.com/NativeScript/nativescript-cli/issues/2764): Error when executing "tns run ios" with 3.0 on a project that is located in a directory path with "spaces"
+
+2.5.5 (2017, May 11)
+==
+
+### Fixed
+
+* [Fix #2782](https://github.com/NativeScript/nativescript-cli/issues/2782): [2.5.*] tns run always add latest platform
+
+3.0.0 (2017, May 3)
+==
+
+### Fixed
+
+* [Fixed #2500](https://github.com/NativeScript/nativescript-cli/issues/2500): Debug on device does not sync file changes
+* [Fixed #2639](https://github.com/NativeScript/nativescript-cli/issues/2639): Build continues after gradle build fails
+* [Fixed #1882](https://github.com/NativeScript/nativescript-cli/issues/1882): Run/debug commands should not try to deploy on connected but not paired devices
+* [Fixed #2673](https://github.com/NativeScript/nativescript-cli/issues/2673): `tns device ios` does not list real devices if simulator is running.
+* [Fixed #2685](https://github.com/NativeScript/nativescript-cli/issues/2685): `tns run ios` starts iOS Simulator even if physical iOS device is attached
+* [Fixed #2661](https://github.com/NativeScript/nativescript-cli/issues/2661): Adding new files during livesync doesn't succeed on iOS Devices
+* [Fixed #2650](https://github.com/NativeScript/nativescript-cli/issues/2650): Release Build Android error: gradlew.bat failed with exit code 1 When Path contains Space
+* [Fixed #2125](https://github.com/NativeScript/nativescript-cli/issues/2125): NativeScript setup script fails on Mac
+* [Fixed #2697](https://github.com/NativeScript/nativescript-cli/issues/2697): App_Resources being copied into app RAW 
+
+3.0.0-RC.1 (2017, March 29)
+==
+
+### New
+
+* [Implemented #2170](https://github.com/NativeScript/nativescript-cli/issues/2170): CLI should report adb install errors
+* [Implemented #2204](https://github.com/NativeScript/nativescript-cli/issues/2204): Remove fibers from CLI and use async/await
+* [Implemented #2349](https://github.com/NativeScript/nativescript-cli/issues/2349): Command "emulate" and options "--emulator/--device/--avd" are a bit confusing to use
+* [Implemented #2513](https://github.com/NativeScript/nativescript-cli/issues/2513): Allow templates to omit App_Resources 
+* [Implemented #2633](https://github.com/NativeScript/nativescript-cli/issues/2633): Deprecate `tns livesync` command
+
+### Fixed
+
+* [Fixed #2225](https://github.com/NativeScript/nativescript-cli/issues/2225): The tns debug ios command hangs on launch screen 
+* [Fixed #2357](https://github.com/NativeScript/nativescript-cli/issues/2357): --copy-to option is broken
+* [Fixed #2446](https://github.com/NativeScript/nativescript-cli/issues/2446): tns emulate --device NonexistentName retunrs different messages for ios and android
+* [Fixed #2486](https://github.com/NativeScript/nativescript-cli/issues/2486): tns run android (without started emulator/connected device) fails to start app
+* [Fixed #2487](https://github.com/NativeScript/nativescript-cli/issues/2487): Exception: The plugin tns-android@2.5.0 is already installed
+* [Fixed #2496](https://github.com/NativeScript/nativescript-cli/issues/2496): `tns platform clean android` does not maintain the same version of the runtimes
+* [Fixed #2511](https://github.com/NativeScript/nativescript-cli/issues/2511): Second run of `tns run android --release` does not respect changes in application code
+* [Fixed #2557](https://github.com/NativeScript/nativescript-cli/issues/2557): 2.5.1 iOS incremental build generates inconsistent binary 
+* [Fixed #2559](https://github.com/NativeScript/nativescript-cli/issues/2559): `tns init` fails, `ins init --force` produce invalid app
+* [Fixed #2560](https://github.com/NativeScript/nativescript-cli/issues/2560): `tns run` should do full prepare/rebuild if something in App_Resources is changes
+* [Fixed #2561](https://github.com/NativeScript/nativescript-cli/issues/2561): Fix prepare process terminates if passing too many arguments to a new node process
+* [Fixed #2641](https://github.com/NativeScript/nativescript-cli/issues/2641): Removed files are not sync correctly on android
+* [Fixed #2642](https://github.com/NativeScript/nativescript-cli/issues/2642): `tns run ios/android` sync hidden files
+* [Fixed #2653](https://github.com/NativeScript/nativescript-cli/issues/2653): Copy folder with files inside app breaks live sync
+
+2.5.3 (2017, March 20)
+==
+
+### New
+
+* [Implemented #2583](https://github.com/NativeScript/nativescript-cli/issues/2583): Add support for Android SDK Tools 25.2.3
+
+2.5.2 (2017, February 24)
+==
+
+### Fixed
+
+* [Fixed #2564](https://github.com/NativeScript/nativescript-cli/issues/2564): Add support for Node.js 7.6.0
+
 2.5.1 (2017, February 17)
 ==
 
