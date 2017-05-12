@@ -28,6 +28,8 @@ This article contents:
 
 Being a TypeScript framework, NativeScript uses TypeScript properties. After transpilation, these result in ECMAScript v.5 compliant JavaScript with setter and getter methods to support working with class members, thus ensuring readable and manageable code. The code in __Example 1__ demonstrates how the TypeScript is transformed to JavaScript.
 
+> **Important:** The techniques described in this article are applicable for NativeScript versions 2.5.x and below.  
+
 ### Example 1: How TypeScript is transformed to JavaScript.
 ``` JavaScript
 var MyClass = (function () {
