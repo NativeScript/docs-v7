@@ -16,10 +16,9 @@ cover the techniques that will improve our applicaiton performance.
 
 ## Handling large images and avoiding OOM (Out of Memory) exception
 
-Sometimes when working with multiple large images on devices with low memory we can get OOM exception. To prevent that scenario, in NativeScript 2.5.x and above using the `src` property in Android will internally load the bitmap in Java. This way Bitmap memory management is not an issue.
+Sometimes when working with multiple large images on devices with low memory we can get OOM exception. To prevent that scenario, in NativeScript 2.5.x and above using the `src` property in Android will internally load the Bitmap in Java. Bitmap memory stays in Java world and is reclaimed once the Bitmap is no longer in use (e.g. there is no need for Javascript object to be collected).This way Bitmap memory management is not an issue.
 
-In contrast, if we use `ImageSource` instance and set it to `imageSource` property of `Image` 
-or if we pass Base64 encoded string, we will load the bitmap in JavaScript which may cause OOM exception due to the synchronization of the garbage collectors (JavaScript and Java). 
+In contrast, when using `ImageSource` or Base64 encoded string the Bitmap is transferred to Javascript so it will be released only when Javascript object is reclaimed. Javascript garbage collection happens less frequently than Java garbage collection which might lead to OOM.
 
 > **Recommendation tip**: Use `src` property of your `Image` to set your images to avoid OOM related issues.
 
