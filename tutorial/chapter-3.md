@@ -204,9 +204,9 @@ To allow for two-way data binding using an Observable, open `login.xml`, and rep
 Add the following code to the top of `app/views/login/login.js`. The code gets a reference to the `Observable` constructor from the observable module, and invokes the constructor to define a new `user` object, which you'll be using as this page's view model:
 
 ``` JavaScript
-var Observable = require("data/observable").Observable;
+var observableModule = require("data/observable");
 
-var user = new Observable({
+var user = new observableModule.fromObject({
     email: "user@domain.com",
     password: "password"
 });
