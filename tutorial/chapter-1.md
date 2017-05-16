@@ -269,7 +269,7 @@ However, if you’re not absolutely committed to an editor, or if you’re looki
 - Visual Studio Code is available for Windows, macOS, and Linux.
 - Visual Studio Code is backed by Microsoft; therefore, you can feel confident that the editor will continue to be supported in the future.
 
-If you do choose to [try Visual Studio Code](https://code.visualstudio.com/), let’s look at a few tips & tricks you might find useful as you develop NativeScript apps.
+If you do choose to [try Visual Studio Code](https://code.visualstudio.com/), let’s look at one tip you might find useful as you develop NativeScript apps.
 
 ### Tip #1: The `code` command
 
@@ -284,25 +284,6 @@ tns create MyNewApp
 cd MyNewApp
 code .
 ```
-
-### Tip #2: Hiding generated code when using TypeScript
-
-If you are using TypeScript, one thing you’ve likely noticed is that each `.ts` file in your `app` folder has a corresponding `.js` file. In older versions of NativeScript `.js.map` files were also generated, so we'll show them in this example as well. We’ll be going over TypeScript compilation and why these files are present throughout this tutorial, but for now just know that the `.js` and `.js.map` files are generated from their corresponding `.ts` file; therefore, the `.js`  and `.js.map` files aren’t files you need to see in your editor during development. Luckily, Visual Studio Code has a handy little feature you can use to hide these files.
-
-Open your Visual Studio Code user settings by pressing `Command + ,` on macOS, or `Ctrl + ,` on Windows and Linux, and then paste in the following lines of code.
-
-``` JavaScript
-{
-    "files.exclude": {
-        "**/*.js": { "when": "$(basename).ts" },
-        "**/*.map": { "when": "$(basename).map" }
-    }
-}
-```
-
-This tells Visual Studio Code to exclude `.js` and `.map` files whenever there’s a corresponding `.ts` file. For example after you save these new settings, Visual Studio Code will no longer display your new app’s `main-page.js` or `main-page.js.map` files because a `main-page.ts` file exists.
-
-This is one of many features that makes Visual Studio Code a powerful editor well suited for NativeScript development. You may wish to look through the [many configuration options](https://code.visualstudio.com/Docs/customization/userandworkspace) Visual Studio Code provides to customize the editor to match your personal preferences.
 
 <div class="next-chapter-link-container">
   <a href="chapter-2">Continue to Chapter 2—Creating User Interfaces</a>

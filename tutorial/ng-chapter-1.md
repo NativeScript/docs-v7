@@ -327,20 +327,19 @@ code .
 
 ### Tip #2: Hiding generated code
 
-One thing you’ve likely noticed is that each `.ts` file in your `app` folder has a corresponding `.js` file. In older versions of NativeScript `.js.map` files were also generated, so we'll show them in this example as well. We’ll be going over TypeScript compilation and why these files are present throughout this tutorial, but for now just know that the `.js` and `.js.map` files are generated from their corresponding `.ts` file; therefore, the `.js`  and `.js.map` files aren’t files you need to see in your editor during development. Luckily, Visual Studio Code has a handy little feature you can use to hide these files.
+One thing you’ve likely noticed is that each `.ts` file in your `app` folder has a corresponding `.js` file. We’ll be going over TypeScript compilation and why these files are present throughout this tutorial, but for now just know that the `.js` files are generated from their corresponding `.ts` file; therefore, the `.js` files aren’t files you need to see in your editor during development. Luckily, Visual Studio Code has a handy little feature you can use to hide these files.
 
 Open your Visual Studio Code user settings by pressing `Command + ,` on macOS, or `Ctrl + ,` on Windows and Linux, and then paste in the following lines of code.
 
 ``` JavaScript
 {
     "files.exclude": {
-        "**/*.js": { "when": "$(basename).ts" },
-        "**/*.map": { "when": "$(basename).map" }
+        "**/*.js": { "when": "$(basename).ts" }
     }
 }
 ```
 
-This tells Visual Studio Code to exclude `.js` and `.map` files whenever there’s a corresponding `.ts` file. For example after you save these new settings, Visual Studio Code will no longer display your new app’s `app.component.js` or `app.component.js.map` files because a `app.component.ts` file exists.
+This tells Visual Studio Code to exclude `.js` files whenever there’s a corresponding `.ts` file. For example after you save these new settings, Visual Studio Code will no longer display your new app’s `app.component.js` file because a `app.component.ts` file exists.
 
 This is one of many features that makes Visual Studio Code a powerful editor well suited for NativeScript development. You may wish to look through the [many configuration options](https://code.visualstudio.com/Docs/customization/userandworkspace) Visual Studio Code provides to customize the editor to match your personal preferences.
 
