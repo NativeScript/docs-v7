@@ -37,3 +37,13 @@ As an additional feature for Android, NativeScript supports `decodeWidth` and `d
 The `Image` module will use internal memory and disk cache, so when loaded the module stores the images in the memory cache, and when they are not needed anymore, the `Image` module saves the images in the disk cache. This way the next time the application needs the same image NativeScript will load it from memory or the disk cache. Setting property `useCache` to `false` could be used to bypass image cache and load the image as it is on the first request to the specified URL.
 
 > **Important**: The properties `decodeWidth`, `decodeHeight` and `useCache` will work only for Android. Setting them for our iOS images will not change the application behavour in any way.
+
+
+**API Reference for** [Image Module](http://docs.nativescript.org/api-reference/modules/_ui_image_.html)
+
+**NativeScript Core Examples**  [Cookbook](http://docs.nativescript.org/cookbook/ui/image)
+
+**NativeScript Angular Examples**  [Code Samples](http://docs.nativescript.org/angular/code-samples/ui/image.html)
+
+
+
