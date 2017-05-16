@@ -206,10 +206,9 @@ Add the following code to the top of `app/views/login/login.js`. The code gets a
 ``` JavaScript
 var Observable = require("data/observable").Observable;
 
-var user = new Observable({
-    email: "user@domain.com",
-    password: "password"
-});
+var user = new Observable();
+user.email = "user@domain.com";
+user.password = "password";
 ```
 
 Now, replace the existing `loaded()` function with the one below, which sets `user` as the binding context for the page.
