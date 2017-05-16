@@ -23,12 +23,13 @@ If you dig into `node_modules/tns-core-modules` you can get an idea of how these
 - a file containing the module's Android implementation (`color.android.js`);
 - a file containing the module's iOS implementation (`color.ios.js`);
 - a file containing code shared by the Android and iOS implementations (`color-common.js`)
+- files containing TypeScript definitions for the Color module, to help with code completion (`color.d.ts` and `known-colors.d.ts`)
 
 > **NOTE**:
 > * You can refer to the [Node.js documentation on folders as modules](https://nodejs.org/api/modules.html#modules_folders_as_modules) for more detailed information on how NativeScript organizes its modules.
 > * The “tns-core-modules” package only includes compiled JavaScript code to cut down on file size. You can find the TypeScript code for each of these modules in the [main NativeScript GitHub repo](https://github.com/NativeScript/nativescript), for instance here’s the [color module’s source code](https://github.com/NativeScript/nativescript/tree/master/tns-core-modules/color).
 
-The `*.ios.*` and `*.android.*` naming convention should look familiar, as it’s the exact same convention we used to include Android- and iOS-specific styling in [chapter 2](ng-chapter-2). NativeScript uses this same convention to implement its modules on iOS and Android. Now that you know where these modules are, let's take a closer look at what else they can do for your app, starting with a closer looks at what you can do with NativeScript’s UI elements.
+The `*.ios.*` and `*.android.*` naming convention should look familiar, as it’s the exact same convention we used to include Android- and iOS-specific styling in [chapter 2](ng-chapter-2). NativeScript uses this same convention to implement its modules on iOS and Android. Now that you know where these modules are, let's examine what else they can do for your app, starting with a closer look at what you can do with NativeScript’s UI elements.
 
 ## 4.1: UI elements
 
@@ -44,7 +45,7 @@ Open `app/pages/login/login.component.ts`, and add the following import to the t
 import { Page } from "ui/page";
 ```
 
-> **NOTE**: All of the imports you’ve seen to this point work because the TypeScript compiler resolves them against your project’s `node_modules` folder. For instance, `import { Component } from "@angular/core"` works because a `node_modules/angular2/core.d.ts` file exists. The two imports above are NativeScript module imports, and they work because your project’s `references.d.ts` file includes a reference to a TypeScript declaration file (a `.d.ts` file), that lives in `node_modules/tns-core-modules`, and which allows you to import modules from `node_modules/tns-core-modules` without any prefixes.
+> **NOTE**: All of the imports you’ve seen to this point work because the TypeScript compiler resolves them against your project’s `node_modules` folder. For instance, `import { Component } from "@angular/core"` works because a `node_modules/angular2/core/core.d.ts` file exists. The `Page` class import above is a NativeScript module import, and it works because your project’s `tsconfig.json` file includes a path to TypeScript declarations (`.d.ts` files) that live in `node_modules/tns-core-modules`, which allow you to import modules from `node_modules/tns-core-modules` without any prefixes.
 
 Next, alter the same file’s existing `"@angular/core"` import to include the `OnInit` interface:
 
@@ -99,13 +100,13 @@ Let’s look at a few other NativeScript modules you can use to help improve the
 
 ## 4.2: Animations
 
-The ability to run robust and performant animations is one of the biggest reasons people choose to build native mobile apps, and NativeScript makes running these animations simple. The NativeScript animation modules provides a [series of JavaScript APIs](https://docs.nativescript.org/ui/animation) that let you perform a wide variety of animations to elements on the screen, including the following:
+The ability to run robust and performant animations is one of the biggest reasons people choose to build native mobile apps, and NativeScript makes running these animations simple. The NativeScript animation modules provides a [series of JavaScript APIs](https://docs.nativescript.org/angular/ui/animation) that let you perform a wide variety of animations to elements on the screen, including the following:
 
-- [Opacity](https://docs.nativescript.org/ui/animation#opacity)
-- [Background Color](https://docs.nativescript.org/ui/animation#background-color)
-- [Translations](https://docs.nativescript.org/ui/animation#translate)
-- [Scaling](https://docs.nativescript.org/ui/animation#scale)
-- [Rotating](https://docs.nativescript.org/ui/animation#rotate)
+- [Opacity](https://docs.nativescript.org/angular/ui/animation-examples#opacity)
+- [Background Color](https://docs.nativescript.org/angular/ui/animation-examples#background-color)
+- [Translations](https://docs.nativescript.org/angular/ui/animation-examples#translate)
+- [Scaling](https://docs.nativescript.org/angular/ui/animation-examples#scale)
+- [Rotating](https://docs.nativescript.org/angular/ui/animation-examples#rotate)
 
 Let’s add a simple animation so you can see how they work.
 
@@ -157,7 +158,7 @@ toggleDisplay() {
 
 All NativeScript UI elements inherit from a base [`View` class](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html), which contains a number of useful methods—including the `animate()` method you used in the previous example.
 
-Once you have a reference to a UI element, you can call any of the methods that element inherits from `View`. In this case, you call the `<StackLayout #container>` element’s `animate()` method to change its background color over a duration of `200`, or 2/10 of a second. The effect is a subtle color change that helps user differentiate between the “Sign In” and “Sign Up” functionality that your form provides.
+Once you have a reference to a UI element, you can call any of the methods that element inherits from `View`. In this case, you call the `<StackLayout #container>` element’s `animate()` method to change its background color over a duration of `200`, or 2/10 of a second. The effect is a subtle color change that helps users differentiate between the “Sign In” and “Sign Up” functionality that your form provides.
 
 ![Color animation on Android](../img/cli-getting-started/angular/chapter4/android/2.gif)
 ![Color animation on iOS](../img/cli-getting-started/angular/chapter4/ios/2.gif)
@@ -259,7 +260,7 @@ This creates a simple `Grocery` model object that you can use throughout your ap
 
 ``` TypeScript
 import { Injectable } from "@angular/core";
-import { Http, Headers } from "@angular/http";
+import { Http, Headers, Response } from "@angular/http";
 import { Observable } from "rxjs/Rx";
 import "rxjs/add/operator/map";
 
@@ -422,7 +423,7 @@ To break down how this layout works, let’s start with the outer structure of t
 </GridLayout>
 ```
 
-The outer grid layout’s `rows` attribute divides the screen into two rows, the first auto-sized according to its childrens' height, and the other to sized to take up *, or the remaining height of the screen. You place UI elements into these rows using the zero-based `row` attribute. The inner grid layout is in the top row because of its `row="0"` attribute, and the list view is in the bottom row because of its `row="1"` attribute.
+The outer grid layout’s `rows` attribute divides the screen into two rows, the first auto-sized according to its childrens' height, and the other sized to take up *, or the remaining height of the screen. You place UI elements into these rows using the zero-based `row` attribute. The inner grid layout is in the top row because of its `row="0"` attribute, and the list view is in the bottom row because of its `row="1"` attribute.
 
 Grid layouts can also divide the screen into columns, which is what the inner grid layout does:
 
@@ -451,7 +452,7 @@ Open `app/pages/list/list.html` and give the existing `<TextField>` a new `[(ngM
 <TextField #groceryTextField [(ngModel)]="grocery" hint="Enter a grocery item" col="0"></TextField>
 ```
 
-Next, give the same file’s image a new `tap` attribute binding, so that the full `<Image>` looks like this:
+Next, add a new `tap` event binding to the image, so that the full `<Image>` looks like this:
 
 ``` XML
 <Image src="res://add" (tap)="add()" col="1"></Image>
@@ -624,7 +625,7 @@ ListView {
 
 This code sets the starting opacity value of the `<ListView>` to `0` so that the control is hidden when the page loads. The code also defines a `visible` class name that changes the `opacity` of an element from `0` to `1` over one full second.
 
-> **TIP**: For background on how the CSS animations syntax works, feel free to refer to the [NativeScript CSS animation documentation](https://github.com/NativeScript/docs/blob/master/ui/animation-css.md), or [external CSS animation guides](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations).
+> **TIP**: For background on how the CSS animations syntax works, feel free to refer to the [NativeScript CSS animation documentation](https://docs.nativescript.org/angular/ui/animation-css), or [external CSS animation guides](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations).
 
 Now that you have the CSS in place, your next step is to add the previously defined `"visible"` class name to the `<ListView>` control after data has loaded. To do that, start by opening `app/pages/list/list.component.ts` and adding the following new property right below the existing `isLoading = false;` line:
 
@@ -658,7 +659,7 @@ Finally, open `app/pages/list/list.html` and replace the existing `<ListView>` t
 
 The key here is the list view’s `[class.visible]="listLoaded"` binding, which automatically applies the `visible` CSS class name based on the state of the `listLoaded` TypeScript property.
 
-The advantage of using CSS animations is that you avoid the need to reference specific UI elements in your TypeScript code; there was no need to create a local template variable. The CSS animation approach also help to keep your code decoupled. Your TypeScript code can focus on logic, and leave styling concerns to your CSS code.
+The advantage of using CSS animations is that you avoid the need to reference specific UI elements in your TypeScript code; there was no need to create a local template variable. The CSS animation approach also helps to keep your code decoupled. Your TypeScript code can focus on logic, and leave styling concerns to your CSS code.
 
 If you try out your app you should now see a nice fade-in animation:
 

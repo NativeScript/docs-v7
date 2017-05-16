@@ -87,7 +87,7 @@ Next, find the first `<TextField>` in your component’s `template` and replace 
 
 <div class="exercise-end"></div>
 
-The key thing to note here is the `[text]="email"` attribute on the `<TextField>`. This is Angular’s syntax for attribute binding, and it allows you to bind the value of an attribute to a property in your TypeScript class. In this case, the `text` attribute of the `<TextField>`—which is roughly equivalent to a DOM `<input>`’s `value` attribute—is bound to the `AppComponent`’s `email` attribute. Therefore the app now has an email address prefilled when it loads:
+The key thing to note here is the `[text]="email"` attribute on the `<TextField>`. This is Angular’s syntax for attribute binding, and it allows you to bind the value of an attribute to a property in your TypeScript class. In this case, the `text` attribute of the `<TextField>`—which is roughly equivalent to a DOM `<input>`’s `value` attribute—is bound to the `AppComponent`’s `email` property. Therefore the app now has an email address prefilled when it loads:
 
 ![Android with prefilled email](../img/cli-getting-started/angular/chapter3/android/1.png)
 ![iOS with prefilled email](../img/cli-getting-started/angular/chapter3/ios/1.png)
@@ -175,7 +175,7 @@ export class AppComponent {
 
 <div class="exercise-end"></div>
 
-The previous examples switches each button’s `text` attribute from a simple string—e.g. `<Button text="Sign up">`—to an attribute binding that is dependent on a value defined in the `AppComponent` class—e.g. `<Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'">"`. Now, when the value of the `isLoggingIn` attribute changes after the user taps the bottom button, Angular is smart enough to update the text of the button automatically. The result looks like this:
+The previous examples switches each button’s `text` attribute from a simple string—e.g. `<Button text="Sign up">`—to an attribute binding that is dependent on a value defined in the `AppComponent` class—e.g. `<Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'">"`. Now, when the value of the `isLoggingIn` property changes after the user taps the bottom button, Angular is smart enough to update the text of the button automatically. The result looks like this:
 
 ![Text changing on Android](../img/cli-getting-started/angular/chapter3/android/4.gif)
 ![Text changing on iOS](../img/cli-getting-started/angular/chapter3/ios/4.gif)
@@ -522,11 +522,11 @@ export class AppModule {}
 
 Angular supports the concept of [hierarchical dependency injectors](https://angular.io/docs/ts/latest/guide/hierarchical-dependency-injection.html), which is a fancy way of saying that you can import providers in parent modules and use them in child components. In this example, this concept means you can declare `NativeScriptHttpModule` in `main.ts`, even though the `Http` service is used in `UserService`. Generally, it’s only a good idea to declare providers in parent modules if most of the components in your app need access to the provider. Although you _could_ declare all your providers in a single root `NgModule`, your list of imports would become unwieldy as your app grows, and difficult to refactor as your app changes.
 
-At this point you should be ready to create an account to verify this whole setup worked. After the provider changes have livesync’d, perform the following tasks to create an account:
+At this point you should be ready to create an account to verify that this whole setup worked. After the provider changes have livesync’d, perform the following tasks to create an account:
 
-* 1) Click the gray “Sign Up” button in your app.
+* 1) Tap the gray “Sign Up” button in your app.
 * 2) Type in an email address and password. Fake credentials are fine, just make up something you can remember.
-* 3) Click the red “Sign Up” button.
+* 3) Tap the red “Sign Up” button.
 
 <div class="exercise-end"></div>
 
@@ -552,7 +552,7 @@ Most of the Angular concepts you’ve used in the last few sections are the same
 
 However, routing is a bit different, as there are some fundamental differences between how the concept of routing works on the web and in apps. Routing on the web revolves around the concept of a URL, but in a native app there is no browser. Likewise, native apps have concepts that aren’t present in the browser, such as Android’s hardware back button, or iOS’s swipe left-to-right gesture to go back.
 
-Because of that, even though NativeScript uses the same Angular routing APIs, you must designate certain Angular components in your app as “pages”—which is something you don’t necessarily have to do in an Angular web app. In Groceries the code for these pages is in the app’s `pages` folder. Let’s look at this works in an exercise, and then step back and discuss why NativeScript takes the approach that it does.
+Because of that, even though NativeScript uses the same Angular routing APIs, you must designate certain Angular components in your app as “pages”—which is something you don’t necessarily have to do in an Angular web app. In Groceries the code for these pages is in the app’s `pages` folder. Let’s look at how this works in an exercise, and then step back and discuss why NativeScript takes the approach that it does.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Setting up routing
@@ -704,7 +704,7 @@ login(user: User) {
 }
 ```
 
-This code hits one of our existing backend endpoints, and stores off a authentication token that we’ll use later in this guide.
+This code hits one of our existing backend endpoints, and stores off an authentication token that we’ll use later in this guide.
 
 To use this `login()` function, return to `app/pages/login/login.component.ts`, and add the following import to the top of the file:
 
