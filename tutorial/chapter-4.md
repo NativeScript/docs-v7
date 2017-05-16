@@ -121,8 +121,9 @@ var UserViewModel = require("../../shared/view-models/user-view-model");
 
 ``` JavaScript
 // Remove these lines of code
-var Observable = require("data/observable").Observable;
-var user = new Observable({
+var observableModule = require("data/observable");
+
+var user = new observableModule.fromObject({
     email: "user@domain.com",
     password: "password"
 });
@@ -317,7 +318,7 @@ Next, **remove** the existing `var pageData` assignment:
 
 ``` JavaScript
 // Remove these seven lines of code
-var pageData = new Observable({
+var pageData = new observableModule.fromObject({
     groceryList: new ObservableArray([
         { name: "eggs" },
         { name: "bread" },
