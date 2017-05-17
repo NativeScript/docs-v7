@@ -10,6 +10,10 @@ previous_url: /breaking-changes
 
 This help article describes the critical breaking changes and suggested workarounds, if any, in the NativeScript framework. You can find the complete list with all the changes in the respective [GitHub repositories](#see-also).
 
+### 3.0 (2017, May 3)
+
+- Changes and migration advice is available in the NativeScript repository [here](https://github.com/NativeScript/NativeScript/blob/v3.0.0/Modules30Changes.md).
+
 ### 1.6.0 (2016, February 17)
 - Up to v 1.6.0, the background drawable attribute of the buttons in Android was always replaced. To keep the consistency with the default platform-specific background, the attribute is not changed now and the button is only styled.
 
