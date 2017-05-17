@@ -141,12 +141,14 @@ Steps to install and enable
 
 - `npm install tns-platform-declarations --save-dev`
 
-- Modify `references.d.ts` file as follows:
+- As of version 3.0.0 of NativeScript the newly created projects are shipped without `references.d.ts` file.
+
+Create `references.d.ts` in the root project directory and add the following:
 ```
-/// <reference path="node_modules/tns-core-modules/tns-core-modules.es2016.d.ts" />
 /// <reference path="node_modules/tns-platform-declarations/android.d.ts" />
 /// <reference path="node_modules/tns-platform-declarations/ios.d.ts" />
 ```
+
 
 - Modify `tsconfig.json` to contain the following settings:
 ```
