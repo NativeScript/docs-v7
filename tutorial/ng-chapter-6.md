@@ -167,7 +167,7 @@ export function setHintColor(args: { view: TextField, color: Color }) {
 
 Remember from the previous section that NativeScript makes native objects available via a `android` property. In this case `args.view.android` refers to a [`TextView`](http://developer.android.com/reference/android/widget/TextView.html), and therefore has the `setHintTextColor()` method that the Stack Overflow post said to call.
 
-One other thing to notice is the if checks that you added around each of the native calls. Your TypeScript code runs across both platforms, and iOS APIs are not available on Android (and vice versa). Testing for the existence of the native object properties is a common way to fork your code in NativeScript to avoid errors. And with this change in place, your hint colors on Android are now far more legible.
+One other thing to notice are the `if` checks that you added around each of the native calls. Your TypeScript code runs across both platforms, and iOS APIs are not available on Android (and vice versa). Testing for the existence of the native object properties is a common way to fork your code in NativeScript to avoid errors. And with this change in place, your hint colors on Android are now far more legible.
 
 ![Better contrast on Android](../img/cli-getting-started/angular/chapter6/android/2.png)
 
