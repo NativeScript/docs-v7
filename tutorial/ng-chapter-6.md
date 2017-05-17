@@ -195,7 +195,7 @@ Next, add a call to the `setStatusBarColors()` function you just imported direct
 setStatusBarColors();
 ```
 
-Finally, there are a few last CSS tweaks you to make to account for the now translucent status bars. On iOS a translucent status bar continues to take up space, so you need to adjust the content of the page to sit on top of the status bar’s location. To do so, open `app/platform.ios.css` and paste in the following code:
+Finally, there are a few last CSS tweaks you need to make to account for the now translucent status bars. On iOS a translucent status bar continues to take up space, so you need to adjust the content of the page to sit on top of the status bar’s location. To do so, open `app/platform.ios.css` and paste in the following code:
 
 ``` CSS
 Page {
