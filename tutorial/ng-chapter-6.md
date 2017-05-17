@@ -211,7 +211,7 @@ Next, open `app/pages/list/list.ios.css` and paste in the following code, which 
 }
 ```
 
-On Android a translucent does not take up space, so you need to add a bit of padding to the top of the list page so the status bar and `<ActionBar>` don’t sit on top of one another. To do so, open `app/pages/list/list.android.css` and paste in the following code:
+On Android a translucent status bar does not take up space, so you need to add a bit of padding to the top of the list page so the status bar and `<ActionBar>` don’t sit on top of one another. To do so, open `app/pages/list/list.android.css` and paste in the following code:
 
 ``` CSS
 ActionBar {
