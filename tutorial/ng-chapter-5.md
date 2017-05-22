@@ -180,10 +180,10 @@ Finally, now that you’ve installed and imported the plugin, and setup a UI to 
 
 ``` TypeScript
 share() {
-  const listString = this.groceryList
-      .map(el => el.name)
-      .join(", ")
-      .trim();
+  let listString = this.groceryList
+    .map(grocery => grocery.name)
+    .join(", ")
+    .trim();
   SocialShare.shareText(listString);
 }
 ```
