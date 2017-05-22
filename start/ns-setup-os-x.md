@@ -28,7 +28,8 @@ This page contains a list of all system requirements needed to build and run Nat
 * For Android development
     * JDK 8 or a later stable official release
     * Android SDK 22 or a later stable official release
-    * Local Maven repository for Support Libraries
+    * Android Support Repository
+    * (Optional) Google Repository
     * Android SDK Build-tools 25.0.2 or a later stable official release
 
 You must also have the following two environment variables setup for Android development:
@@ -89,14 +90,14 @@ Complete the following steps to setup NativeScript on your macOS development mac
 
         1. Next, run the following command to set the ANDROID_HOME system environment variable:
 
-            <pre class="add-copy-button"><code class="language-terminal">export ANDROID_HOME=/usr/local/opt/android-sdk
+            <pre class="add-copy-button"><code class="language-terminal">export ANDROID_HOME=/usr/local/share/android-sdk
             </code></pre>
 
             <blockquote><b>NOTE</b>: This is the directory that contains the <code>tools</code> and <code>platform-tools</code> directories.</blockquote>
 
-        1. Select all packages for the Android 22 SDK, Android SDK Build-tools 23.0.3 or later, Local Maven repository for Support Libraries (under Extras) and any other SDKs that you want to install and click **Install**. You can alternatively use the following command, which will install all required tools:
+        1. In addition, install all packages for the Android SDK Platform 25, Android SDK Build-Tools 25.0.2 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages.
 
-           <pre class="add-copy-button"><code class="language-terminal">android update sdk --filter tools,platform-tools,android-25,build-tools-25.0.2,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
+           <pre class="add-copy-button"><code class="language-terminal">$ANDROID_HOME/tools/bin/sdkmanager "tools" "platform-tools" "platforms;android-25" "build-tools;25.0.2" "extras;android;m2repository" "extras;google;m2repository"
            </code></pre>
 
 1. Setup Android Emulators (AVD) by following the article [here]({%slug android-emulators%})
