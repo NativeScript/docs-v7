@@ -23,7 +23,8 @@ This page contains a list of all system requirements needed to build and run Nat
 * G++ compiler
 * JDK 8 or a later stable official release
 * Android SDK 22 or a later stable official release
-* Local Maven repository for Support Libraries
+* Android Support Repository
+* (Optional) Google Repository
 * Android SDK Build-tools 25.0.2 or a later stable official release
 
 You must also have the following two environment variables setup for Android development:
@@ -69,8 +70,8 @@ Complete the following steps to set up NativeScript on your Linux development ma
         <pre class="add-copy-button"><code class="language-terminal">export JAVA_HOME=$(update-alternatives --query javac | sed -n -e 's/Best: *\(.*\)\/bin\/javac/\1/p')
         </code></pre>
 
-1. Install the [Android SDK](http://developer.android.com/sdk/index.html).<br/>If you experience issues with the installation, go to [Installing the Android SDK](https://developer.android.com/sdk/installing/index.html?pkg=tools), expand the **Show instructions for all platforms** section, expand the **Troubleshooting Ubuntu** section and review the troubleshooting guide.
-    1. Go to [Android Studio and SDK Downloads](https://developer.android.com/sdk/index.html#Other) and in the **SDK Tools Only** section download the package for Linux.
+1. Install the [Android SDK](http://developer.android.com/sdk/index.html).
+    1. Go to [Android Studio and SDK Downloads](https://developer.android.com/sdk/index.html#Other) and in the **SDK Tools Only** section download the package for Linux at the bottom of the page.
     1. After the download completes, unpack the downloaded archive.
     1. Set the ANDROID_HOME system environment variable.
         <pre><code class="language-terminal">export ANDROID_HOME=Path to Android installation directory
@@ -78,9 +79,9 @@ Complete the following steps to set up NativeScript on your Linux development ma
         For example: ANDROID_HOME=/android/sdk
         <blockquote><b>NOTE</b>: This is the directory that contains the <code>tools</code> and <code>platform-tools</code> directories.</blockquote>
 
-1. Install the required Android SDKs and the Local Maven repository for Support Libraries.
+1. Install all packages for the Android SDK Platform 25, Android SDK Build-Tools 25.0.2 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages.
 
-    <pre class="add-copy-button"><code class="language-terminal">sudo $ANDROID_HOME/tools/android update sdk --filter tools,platform-tools,android-25,build-tools-25.0.2,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
+    <pre class="add-copy-button"><code class="language-terminal">sudo $ANDROID_HOME/tools/bin/sdkmanager "tools" "platform-tools" "platforms;android-25" "build-tools;25.0.2" "extras;android;m2repository" "extras;google;m2repository"
     </code></pre>
 
 1. Setup Android Emulators (AVD) by following the article [here]({%slug android-emulators%})

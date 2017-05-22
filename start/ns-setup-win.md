@@ -23,7 +23,8 @@ This page contains a list of all system requirements needed to build and run Nat
 * (Optional) Chocolatey to simplify the installation of dependencies
 * JDK 8 or a later stable official release
 * Android SDK 22 or a later stable official release
-* Local Maven repository for Support Libraries
+* Android Support Repository
+* (Optional) Google Repository
 * Android SDK Build-tools 25.0.2 or a later stable official release
 * Set up Android virtual devices to expand your testing options
 
@@ -36,7 +37,7 @@ You must also have the following two environment variables setup for Android dev
 
 Complete the following steps to set up NativeScript on your Windows development machine:
 
-1. Install [Chocolatey](https://chocolatey.org) to simplify the installation and configuration of the Android tools and SDKs.
+1. Install [Chocolatey](https://chocolatey.org) to simplify the installation and configuration of the requirements.
     - Run the command prompt as an Administrator.
     - Copy and paste the following script in the command prompt.
 
@@ -65,16 +66,16 @@ Complete the following steps to set up NativeScript on your Windows development 
 
     - Restart the command prompt.
 
-5. Install the required Android SDKs and the Local Maven repository for Support Libraries.
+5. Install all packages for the Android SDK Platform 25, Android SDK Build-Tools 25.0.2 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages.
 
-    <pre class="add-copy-button"><code class="language-terminal">echo yes | "%ANDROID_HOME%\tools\android" update sdk --filter tools,platform-tools,android-25,build-tools-25.0.2,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui
+    <pre class="add-copy-button"><code class="language-terminal">"%ANDROID_HOME%\tools\bin\sdkmanager" "platforms;android-25" "build-tools;25.0.2" "extras;android;m2repository" "extras;google;m2repository"
     </code></pre>
 
 6. Install Android virtual devices (AVDs)
     - Go to [Setup Android emulators](https://docs.nativescript.org/tooling/android-virtual-devices) 
     - Follow the steps to create and start AVD with enabled HAXM.
 
-    Alternativly a Visual Studio emulator for Android can be used, More information [here](https://www.visualstudio.com/vs/msft-android-emulator/)
+    Alternativly a [Visual Studio Emulator for Android](https://www.visualstudio.com/vs/msft-android-emulator/) can be used.
 
 7. Install the NativeScript CLI.
     - Run the following command.
