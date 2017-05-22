@@ -80,14 +80,14 @@ Then, add the following function to the file’s `LoginComponent` class:
 
 ``` TypeScript
 setTextFieldColors() {
-  let emailTextField = <TextField>this.email.nativeElement;
-  let passwordTextField = <TextField>this.password.nativeElement;
+  const emailTextField = <TextField>this.email.nativeElement;
+  const passwordTextField = <TextField>this.password.nativeElement;
 
-  let mainTextColor = new Color(this.isLoggingIn ? "black" : "#C4AFB4");
+  const mainTextColor = new Color(this.isLoggingIn ? "black" : "#C4AFB4");
   emailTextField.color = mainTextColor;
   passwordTextField.color = mainTextColor;
 
-  let hintColor = new Color(this.isLoggingIn ? "#ACA6A7" : "#C4AFB4");
+  const hintColor = new Color(this.isLoggingIn ? "#ACA6A7" : "#C4AFB4");
   setHintColor({ view: emailTextField, color: hintColor });
   setHintColor({ view: passwordTextField, color: hintColor });
 }
