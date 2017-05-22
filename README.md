@@ -3,7 +3,6 @@
 Home of the NativeScript documentation content that lives at <http://docs.nativescript.org>. Start [contributing](#contributing) today!
 
 * [Contributing 🍺](#contributing)
-* [Branches ⤴️](#branches)
 * [Configuration ⚙️](#configuration)
 * [Tutorials 📖](#tutorials)
 * [Contributors ❤️](#contributors)
@@ -14,18 +13,7 @@ The NativeScript documentation is completely open source and we love contributio
 
 Don’t know where to start? Check out the [list of issues with the “up-for-grabs” label](https://github.com/NativeScript/docs/issues?q=is%3Aopen+is%3Aissue+label%3Aup-for-grabs). New to git or GitHub? [Join our community Slack chat](http://developer.telerik.com/wp-login.php?action=slack-invitation) and we’ll be happy to help get you up and running.
 
-## Branches
-
-This repository’s two main branches are `master` and `production`.
-
-* The `production` branch contains the version of the content that is currently deployed on docs.nativescript.org. New commits to this branch trigger a complete build that will push the changes live; therefore, only commit urgent fixes to this branch.
-* The `master` branch contains the most up-to-date version of the NativeScript documentation. The contents of the `master` branch are moved into the `production` branch with NativeScript release; therefore, the `master` branch is perfect for updating the docs about yet-to-be-released versions of NativeScript, as well as trivial changes that don’t need to be deployed immediately.
-
-When in doubt feel free to submit pull requests against either branch.
-
-> Note: The pull request should be made in `production` branch, in case those edits are related to the current version of NativeScript and it is important to immediately publish the changes(e.g. mistakes in the code snippets, semantic errors in  the articles, etc.)
-
-> All other pull requests related to the upcoming releases or when it is not critical for the current version, should be made in the `master` branch (e.g. article for a new feature, adding some extra information for the component or modules, etc.).
+The `master` branch contains the most up-to-date version of the NativeScript documentation and its contents are uploaded to [docs.nativescript.org](https://docs.nativescript.org/). When contributing to the documentation, always create a branch for your work from `master` as this will facilitate easier pull request management.
 
 ## Configuration
 
