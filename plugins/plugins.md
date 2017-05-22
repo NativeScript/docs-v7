@@ -34,6 +34,7 @@ A NativeScript plugin is any npm package, published or not, that exposes a nativ
 * A `package.json` file which contains the following metadata: name, version, supported runtime versions, dependencies and others. For more information, see the [`package.json` Specification](#packagejson-specification) section.
 * One or more CommonJS modules that expose a native API via a unified JavaScript API. For more information about Common JS modules, see the [CommonJS Wiki](http://wiki.commonjs.org/wiki/CommonJS).
 * (Optional) `AndroidManifest.xml` and `Info.plist` which describe the permissions, features or other configurations required or used by your app for Android and iOS, respectively.
+* (Optional) A `app.entitlements` file which describes the Capabilities required by your iOS app - Maps, Push Notifications, Wallet, Apple Pay and etc.
 * (Optional) Native Android libraries and the native Android `include.gradle` configuration file which describes the native dependencies. For more information, see the [`include.gradle` Specification](#includegradle-specification) section.
 * (Optional) Native iOS libraries and the native `build.xcconfig` configuration file which describes the native dependencies. For more information, see the [`build.xcconfig` Specification](#buildxcconfig-specification) section.
 
@@ -53,6 +54,7 @@ If the NativeScript framework does not expose a native API that you need, you ca
 * The plugin directory structure must comply with the specification described below.
 * The plugin must contain a valid `package.json` which complies with the specification described below.
 * If the plugin requires any permissions, features or other configuration specifics, it must contain `AndroidManifest.xml` or `Info.plist` file which describe them.
+* If the plugin requires any Capabilities for iOS, it must contain `app.entitlements` file which describe them.
 * If the plugin depends on native libraries, it must contain a valid `include.gradle` or `build.xcconfig` file, which describes the dependencies.
 
 ### Directory Structure
@@ -69,6 +71,7 @@ my-plugin/
     │   └── AndroidManifest.xml
     └── ios/
         └── Info.plist
+        └── app.entitlements
 ```
 
 NativeScript plugins which consist of multiple CommonJS modules might have the following directory structure.
@@ -89,6 +92,7 @@ my-plugin/
     │   └── res/
     └── ios/
         └── Info.plist
+        └── app.entitlements
 ```
 
 * `index.js`: This file is the CommonJS module which exposes the native API. You can use platform-specific `*.platform.js` files. For example: `index.ios.js` and `index.android.js`. During the plugin installation, the NativeScript CLI will copy the platform resources to the `tns_modules` subdirectory in the correct platform destination in the `platforms` directory of your project.<br/>Alternatively, you can give any name to this CommonJS module. In this case, however, you need to point to this file by setting the `main` key in the `package.json` for the plugin. For more information, see [Folders as Modules](https://nodejs.org/api/modules.html#modules_folders_as_modules).
@@ -96,6 +100,9 @@ my-plugin/
 * `platforms\android\AndroidManifest.xml`: This file describes any specific configuration changes required for your plugin to work. For example: required permissions. For more information about the format of `AndroidManifest.xml`, see [App Manifest](http://developer.android.com/guide/topics/manifest/manifest-intro.html).<br/>During build, gradle will merge the plugin `AndroidManifest.xml` with the `AndroidManifest.xml` for your project. The NativeScript CLI will not resolve any contradicting or duplicate entries during the merge. After the plugin is installed, you need to manually resolve such issues.
 * `platforms\android\res`:  (Optional) This directory contains resources declared by the `AndroidManifest.xml` file. You can look at the folder structure [here](http://developer.android.com/guide/topics/resources/providing-resources.html#ResourceTypes).
 * `platforms\ios\Info.plist`: This file describes any specific configuration changes required for your plugin to work. For example, required permissions. For more information about the format of `Info.plist`, see [About Information Property List Files](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html).<br/>During the plugin installation, the NativeScript CLI will merge the plugin `Info.plist` with the `Info.plist` for your project. The NativeScript CLI will not resolve any contradicting or duplicate entries during the merge. After the plugin is installed, you need to manually resolve such issues.
+* `platforms\ios\app.entitlements`: This file describes all specific Capabilities required your plugin to work. For example, Push Notifications. For more information about the format of `app.entitlements` see [About Entitlements](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/AboutEntitlements.html).
+<br/>
+During building the project, the NativeScript CLI will merge the plugin's entitlement files with the other entitlement files included in the Application (created from the Developer or by required by other Plugins).
 
 NativeScript plugins which contain both native Android and iOS libraries might have the following directory structure.
 
