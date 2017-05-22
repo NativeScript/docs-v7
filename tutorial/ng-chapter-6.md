@@ -167,7 +167,7 @@ export function setHintColor(args: { view: TextField, color: Color }) {
 
 Remember from the previous section that NativeScript makes native objects available via a `android` property. In this case `args.view.android` refers to a [`TextView`](http://developer.android.com/reference/android/widget/TextView.html), and therefore has the `setHintTextColor()` method that the Stack Overflow post said to call.
 
-One other thing to notice is the if checks that you added around each of the native calls. Your TypeScript code runs across both platforms, and iOS APIs are not available on Android (and vice versa). Testing for the existence of the native object properties is a common way to fork your code in NativeScript to avoid errors. And with this change in place, your hint colors on Android are now far more legible.
+One other thing to notice are the `if` checks that you added around each of the native calls. Your TypeScript code runs across both platforms, and iOS APIs are not available on Android (and vice versa). Testing for the existence of the native object properties is a common way to fork your code in NativeScript to avoid errors. And with this change in place, your hint colors on Android are now far more legible.
 
 ![Better contrast on Android](../img/cli-getting-started/angular/chapter6/android/2.png)
 
@@ -195,7 +195,7 @@ Next, add a call to the `setStatusBarColors()` function you just imported direct
 setStatusBarColors();
 ```
 
-Finally, there are a few last CSS tweaks you to make to account for the now translucent status bars. On iOS a translucent status bar continues to take up space, so you need to adjust the content of the page to sit on top of the status bar’s location. To do so, open `app/platform.ios.css` and paste in the following code:
+Finally, there are a few last CSS tweaks you need to make to account for the now translucent status bars. On iOS a translucent status bar continues to take up space, so you need to adjust the content of the page to sit on top of the status bar’s location. To do so, open `app/platform.ios.css` and paste in the following code:
 
 ``` CSS
 Page {
@@ -211,7 +211,7 @@ Next, open `app/pages/list/list.ios.css` and paste in the following code, which 
 }
 ```
 
-On Android a translucent does not take up space, so you need to add a bit of padding to the top of the list page so the status bar and `<ActionBar>` don’t sit on top of one another. To do so, open `app/pages/list/list.android.css` and paste in the following code:
+On Android a translucent status bar does not take up space, so you need to add a bit of padding to the top of the list page so the status bar and `<ActionBar>` don’t sit on top of one another. To do so, open `app/pages/list/list.android.css` and paste in the following code:
 
 ``` CSS
 ActionBar {
