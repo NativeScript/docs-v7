@@ -226,6 +226,8 @@ Next, the NativeScript CLI runs a partial `prepare` operation for the plugin for
 
 Finally, the CLI merges the plugin `Info.plist` file with `platforms\ios\Info.plist` in your project. The plugin `AndroidManifest.xml` will be merged with `platforms\android\AndroidManifest.xml` later, at build time.
 
+Optionally, the CLI merges the plugin `app.entitlements` file with `platforms\ios\app.entitlements` in your project.
+
 > **IMPORTANT:** Currently, the merging of the platform configuration files does not resolve any contradicting or duplicate entries.
 
 #### AndroidManifest.xml Merge Example
@@ -321,6 +323,49 @@ The following is an example of a plugin `AndroidManifest`, project `AndroidManif
     </activity>
   </application>
 </manifest>
+```
+
+#### app.entitlements Merge Example
+
+The following is an example of a plugin `app.entitlements`, project `app.entitlements` and the resulting merged file after building the project.
+
+**The Plugin App Entitlements which enables Push Notification Capabilities**
+
+```XML
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>aps-environment</key>
+    <string>development</string>
+  </dict>
+</plist>
+```
+
+**The Project App Entitlements Located in `app\App_Resources\ios\`**
+
+```XML
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>someKey</key>
+    <string>someValue</string>
+  </dict>
+</plist>
+```
+
+**The Merged App Entitlement Located in `platforms\ios\`**
+
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>aps-environment</key>
+    <string>development</string>
+    <key>someKey</key>
+    <string>someValue</string>
+  </dict>
+</plist>
 ```
 
 ### Manual Steps After Installation
