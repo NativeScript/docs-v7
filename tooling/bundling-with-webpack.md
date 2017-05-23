@@ -10,10 +10,10 @@ previous_url: /core-concepts/bundling-with-webpack
 
 1. [Overview](#overview)
 1. [Introducing Webpack](#introducing-webpack)
-1. [Installation](#installation)
+1. [Installation](#installation-and-configuration)
 1. [How nativescript-dev-webpack works](#how-nativescript-dev-webpack-works)
 1. [Bundling](#bundling)
-1. [Uglify.js](#uglify.js)
+1. [Uglify.js](#uglifyjs)
 1. [Angular and Ahead-of-Time Compilation](#angular-and-ahead-of-time-compilation)
 1. [Dynamic Imports](#dynamic-imports)
 1. [Advanced Usage](#advanced-usage)
