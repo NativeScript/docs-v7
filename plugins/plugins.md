@@ -34,7 +34,7 @@ A NativeScript plugin is any npm package, published or not, that exposes a nativ
 * A `package.json` file which contains the following metadata: name, version, supported runtime versions, dependencies and others. For more information, see the [`package.json` Specification](#packagejson-specification) section.
 * One or more CommonJS modules that expose a native API via a unified JavaScript API. For more information about Common JS modules, see the [CommonJS Wiki](http://wiki.commonjs.org/wiki/CommonJS).
 * (Optional) `AndroidManifest.xml` and `Info.plist` which describe the permissions, features or other configurations required or used by your app for Android and iOS, respectively.
-* (Optional) A `app.entitlements` file which describes the Capabilities required by your iOS app - Maps, Push Notifications, Wallet, Apple Pay and etc.
+* (Optional) An `app.entitlements` file which describes the Capabilities required by your iOS app - Maps, Push Notifications, Wallet, Apple Pay and etc.
 * (Optional) Native Android libraries and the native Android `include.gradle` configuration file which describes the native dependencies. For more information, see the [`include.gradle` Specification](#includegradle-specification) section.
 * (Optional) Native iOS libraries and the native `build.xcconfig` configuration file which describes the native dependencies. For more information, see the [`build.xcconfig` Specification](#buildxcconfig-specification) section.
 
