@@ -614,6 +614,7 @@ Use the **showModal** method of the page class to show another page as a modal d
      // Log the user in...
  }, fullscreen);
 ```
+>  Note: Only one Modal Page could be opened in the application (For example: opening a Modal Page from another Modal Page is not supported). In case we need to open second Modal, we should close the first one and then to open the second.
 
 **login-page**
 ``` JavaScript
