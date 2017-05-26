@@ -172,9 +172,9 @@ var inputMethodManager = utilsModule.ad.getInputMethodManager();
 const inputMethodManager = utils.ad.getInputMethodManager();
 ```
 
-#### dismissSoftInput method
+#### showSoftInput method
 
-Hides the soft input method, ususally a soft keyboard.
+Show keyboard for a specific element.
 
  ```XML
 <TextField id="textfieldid" hint="Target field" />
@@ -199,6 +199,26 @@ export function showKeyboard(args:EventData){
     var page:Page = <Page>button.page;
     var textfield:TextField =<TextField> page.getViewById("textfieldid");
     utils.ad.showSoftInput(textfield.android);
+}
+```
+
+#### dismissSoftInput method
+
+Hides the soft input method, ususally a soft keyboard.
+
+ ```XML
+<TextField id="textfieldid" hint="Target field" />
+<Button text="Hide keyboard" tap="dismissSoftInput" class="btn btn-primary btn-active"/>
+```
+```JavaScript
+function dismissSoftInput(args) {
+    utilsModule.ad.dismissSoftInput();
+}
+exports.dismissSoftInput = dismissSoftInput;
+```
+```TypeScript
+export function dismissSoftInput(args:EventData){
+    utils.ad.dismissSoftInput();
 }
 ```
 
