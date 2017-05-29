@@ -68,7 +68,12 @@ Defining the layout of the application is also an important part of the applicat
 
 ## Button
 
+{% nativescript %}
 The [Button]({%ns_cookbook ui/button%}) widget provides a standard button widget that reacts to a `tap` event.
+{% endnativescript %}
+{% angular %}
+The [Button]({%nativescript-code-samples/button%}) widget provides a standard button widget that reacts to a `tap` event.
+{% endangular %}
 
 ![button android](../img/gallery/android/buttonPage.png "button android")![button ios](../img/gallery/ios/buttonPage.png "button ios")
 
