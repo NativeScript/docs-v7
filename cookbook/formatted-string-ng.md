@@ -14,7 +14,7 @@ NativeScript has a special class called [FormattedString](http://docs.nativescri
 ```HTML
 <Label>
     <FormattedString>
-        <Span text="some text" fontAttributes="Bold"></Span>
+        <Span text="some content" fontAttributes="Bold"></Span>
     </FormattedString>
 </Label>
 ```
@@ -23,13 +23,14 @@ This syntax differs from the FormattedString’s full syntax, shown below, which
 
 ```HTML
 <Label>
-    <Label.FormattedText>
+    <Label.formattedText>
         <FormattedString>
-            <FormattedString.Spans>
-                <Span text="some text" fontAttributes="Bold"></Span>
-            </FormattedString.Spans>
+            <FormattedString.spans>
+                <Span text="some " fontAttributes="Bold"></Span>
+                <Span text="content"></Span>
+            </FormattedString.spans>
         </FormattedString>
-    </Label.FormattedText>
+    </Label.formattedText>
 </Label>
 ```
 
