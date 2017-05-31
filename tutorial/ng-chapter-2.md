@@ -392,7 +392,7 @@ NativeScript supports CSS's `@import` statement for importing one CSS file into 
 
 <a id="platform-specific-files"></a>When you execute `tns run`, the NativeScript CLI takes the code from your `app` folder and places it in the native projects located in the `platforms/ios` and `platforms/android` folders. Here the naming convention comes in: while moving files, the CLI intelligently selects `.android.*` and `.ios.*` files. To give a specific example, the CLI moves `platform.ios.css` into `platforms/ios` and renames it to `platform.css`; similarly, the CLI moves `platform.android.css` into `platforms/android`, and again renames it to `platform.css`. This convention provides a convenient way to branch your code to handle iOS and Android separately, and it's supported for any type of file in NativeScript—not just CSS files. You'll see a few more examples of this convention later in this guide.
 
-With these changes in place, you'll notice that the app has a bit more spacing, and also that the text fields have borders on iOS but that Android:
+With these changes in place, you'll notice that the app has a bit more spacing, and the text fields have borders on iOS but not on Android:
 
 ![login 3](../img/cli-getting-started/angular/chapter2/ios/3.png)
 ![login 3](../img/cli-getting-started/angular/chapter2/android/3.png)
