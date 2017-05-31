@@ -77,8 +77,11 @@ var newString: string = utils.escapeRegexSymbols(samplestring);
 Ability to convert string value to a number or boolean;
 
  ```JavaScript
-var samplestring = "All of these should be escaped: ^ $ * ";
-var newString = utilsModule.escapeRegexSymbols(samplestring);
+var stringToBoolean = "true";
+var booleanValue = utilsModule.convertString(stringToBoolean);
+
+var stringToNumber = "23";
+var numberValue = utilsModule.convertString(stringToNumber);
 ```
 ```TypeScript
 const stringToBoolean:string="true";
