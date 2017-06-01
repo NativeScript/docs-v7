@@ -51,6 +51,7 @@ There is a variety of NativeScript learning material that goes above and beyond 
 - The [NativeScript resources page](https://www.nativescript.org/resources) lists further NativeScript learning material, such as training, books, and screencasts.
 - [NativeScript Snacks](http://www.nativescriptsnacks.com/) is a collection of bite-sized video tutorials—perfect for learning how a NativeScript concept works quickly.
 - This NativeScript documentation site has detailed guides on topics that were out of scope for this guide, including [unit testing](http://docs.nativescript.org/core-concepts/testing), [debugging](http://docs.nativescript.org/core-concepts/debugging), [transpiling Babel or TypeScript code](http://docs.nativescript.org/core-concepts/transpilers), and [publishing to the iOS App Store](http://docs.nativescript.org/core-concepts/publishing-ios-apps) and [Google Play](http://docs.nativescript.org/core-concepts/publishing-android-apps).
+- The third-party site [NativeScripting](https://nativescripting.com/) has a series of high-quality free and premium videos that cover a variety of NativeScript topics.
 
 ## 7.4: Let us know what you think
 
