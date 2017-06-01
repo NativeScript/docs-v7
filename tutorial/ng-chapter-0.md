@@ -16,6 +16,8 @@ Welcome to the NativeScript & Angular getting started guide. In this hands-on tu
 - [0.2: Prerequisites](#02-prerequisites)
 - [0.3: Installation](#03-installation)
 
+> **TIP**: If you’re a video learner, the third-party site NativeScripting has a [free video course](https://nativescripting.com/course/nativescript-with-angular-getting-started-guide) that walks you through this guide step by step.
+
 ## 0.1: What is NativeScript? What is Angular?
 
 <div class="intro-box">
