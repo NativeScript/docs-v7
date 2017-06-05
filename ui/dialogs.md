@@ -252,7 +252,7 @@ dialogs.action({
     cancelButtonText: "Cancel text",
     actions: ["Option1", "Option2"]
 }).then(function (result) {
-    console.log("Dialog result: " + result)
+    console.log("Dialog result: " + result);
     if(result == "Options1"){
         //Do action1
     }else if(result == "Option2"){
@@ -267,7 +267,7 @@ dialogs.action({
     cancelButtonText: "Cancel text",
     actions: ["Option1", "Option2"]
 }).then(result => {
-    console.log("Dialog result: " + result)
+    console.log("Dialog result: " + result);
     if(result == "Options1"){
         //Do action1
     }else if(result == "Option2"){
