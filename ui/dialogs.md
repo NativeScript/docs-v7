@@ -223,13 +223,23 @@ dialogs.login({
 ```JavaScript
 var dialogs = require("ui/dialogs");
 dialogs.action("Your message", "Cancel button text", ["Option1", "Option2"]).then(function (result) {
-    console.log("Dialog result: " + result);
+    console.log("Dialog result: " + result)
+    if(result == "Options1"){
+        //Do action1
+    }else if(result == "Option2"){
+        //Do action2
+    }
 });
 ```
 ```TypeScript
 import dialogs = require("ui/dialogs");
 dialogs.action("Your message", "Cancel button text", ["Option1", "Option2"]).then(result => {
-    console.log("Dialog result: " + result);
+    console.log("Dialog result: " + result)
+    if(result == "Options1"){
+        //Do action1
+    }else if(result == "Option2"){
+        //Do action2
+    }
 });
 ```
 
@@ -243,6 +253,11 @@ dialogs.action({
     actions: ["Option1", "Option2"]
 }).then(function (result) {
     console.log("Dialog result: " + result)
+    if(result == "Options1"){
+        //Do action1
+    }else if(result == "Option2"){
+        //Do action2
+    }
 });
 ```
 ```TypeScript
@@ -253,6 +268,11 @@ dialogs.action({
     actions: ["Option1", "Option2"]
 }).then(result => {
     console.log("Dialog result: " + result)
+    if(result == "Options1"){
+        //Do action1
+    }else if(result == "Option2"){
+        //Do action2
+    }
 });
 ```
 > The dialog result argument is a string (the text of the clicked option or the text of the cancel button).
