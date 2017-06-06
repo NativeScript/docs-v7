@@ -35,7 +35,7 @@ This paragraph appears in both environments.
 
 ## Tutorials
 
-The NativeScript documentation contains two full getting started tutorials, one for [using NativeScript with vanilla JavaScript](https://docs.nativescript.org/tutorial/chapter-0), and another for [using NativeScript with Angular](https://docs.nativescript.org/angular/tutorial/ng-chapter-0.html). The contents of these two tutorials are in [this repository’s `/tutorial` folder](https://github.com/NativeScript/docs/tree/production/tutorial).
+The NativeScript documentation contains two full getting started tutorials, one for [using NativeScript with vanilla JavaScript](https://docs.nativescript.org/tutorial/chapter-0), and another for [using NativeScript with Angular](https://docs.nativescript.org/angular/tutorial/ng-chapter-0.html). The contents of these two tutorials are in [this repository’s `/tutorial` folder](https://github.com/NativeScript/docs/tree/master/tutorial).
 
 When making changes to either of these tutorials you might need to additional alter one of the four templates these tutorials use. Readers use these templates through the `tns create` command, for example `tns create HelloWorld --template nativescript-template-tutorial`.
 
