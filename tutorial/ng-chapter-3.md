@@ -119,13 +119,15 @@ Next, open `app/app.module.ts` and replaces its contents with the code below, wh
 import { NgModule } from "@angular/core";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+import { NativeScriptHttpModule } from "nativescript-angular";
 
 import { AppComponent } from "./app.component";
 
 @NgModule({
   imports: [
     NativeScriptModule,
-    NativeScriptFormsModule
+    NativeScriptFormsModule,
+    NativeScriptHttpModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]
