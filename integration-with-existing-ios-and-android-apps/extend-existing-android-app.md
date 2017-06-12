@@ -8,7 +8,7 @@ previous: /extend-existing-android-app-with-ns-angular2
 
 # Extend your existing Android app with NativeScript
 
-### This article will walk you through setting up an already existing Android Studio project to integrate with the NativeScript runtime, and execute NativeScript code.
+This article will walk you through setting up an already existing Android Studio project to integrate with the NativeScript runtime, and execute NativeScript code.
 
 ## Requirements: 
  - Android Studio 2.3+
