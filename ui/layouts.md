@@ -105,7 +105,7 @@ The following table shows predefined layouts that NativeScript provides.
 
 | Layouts  | Description  | Screenshot |
 | -------- | ------------ | ---------- |
-| [FlexboxLayout][FlexboxLayout] | This layout is a non-conformin implementation of the [CSS Flexible Box Layout](https://www.w3.org/TR/css-flexbox-1/) | ![FlexboxLayout android](../img/gallery/android/flexboxLayoutPage.png "FlexboxLayout android")|
+| [FlexboxLayout][FlexboxLayout] | This layout is a non-conforming implementation of the [CSS Flexible Box Layout](https://www.w3.org/TR/css-flexbox-1/) | ![FlexboxLayout android](../img/gallery/android/flexboxLayoutPage.png "FlexboxLayout android")|
 | [AbsoluteLayout][AbsoluteLayout] | This layout lets you set exact locations (left/top coordinates) for its children. | ![AbsoluteLayout android](../img/gallery/android/absoluteLayoutPage.png "AbsoluteLayout android")|
 | [DockLayout][DockLayout] | This layout arranges its children at its outer edges and allows its last child to take up the remaining space. | ![DockLayout android](../img/gallery/android/dockLayoutPage.png "DockLayout android")|
 | [GridLayout][GridLayout] | This layout defines a rectangular layout area that consists of columns and rows. | ![GridLayout android](../img/gallery/android/gridLayoutPage.png "GridLayout android")|
