@@ -3,7 +3,7 @@ title: Extend existing Android app
 description: Learn how to extend your existing Android app with NativeScript
 position: 11
 slug: extend-existing-android-app
-previous: /extend-existing-android-app-with-ns-angular2
+previous: /extend-existing-android-app-with-ns-angular2, /angular/integration-with-existing-ios-and-android-apps/extend-existing-android-app-with-ns-angular2, /integration-with-existing-ios-and-android-apps/extend-existing-android-app-with-ns-angular2
 ---
 
 # Extend your existing Android app with NativeScript
