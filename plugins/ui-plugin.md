@@ -1,6 +1,6 @@
 ---
-title: UI Plugins
-description: Learn how to create a new User Interface plugin for NativeScript.
+title: Building UI Plugins
+description: Building UI plugin using the NativeScript property system.
 position: 30
 slug: ui-plugins
 publish: false
@@ -8,449 +8,375 @@ previous_url: /ui-plugin
 environment: nativescript
 ---
 
-# Overview
-This article covers the basics of creating a NativeScript User Interface plugin that integrates with the existing [cross-platform](https://github.com/NativeScript/NativeScript) modules.
+# Building UI Plugins
 
-> **Important:** The techniques described in this article are applicable for NativeScript versions 2.5.x and below.  
+This article contents:
 
-Although the cross-platform part of NativeScript is entirely written in [TypeScript](http://www.typescriptlang.org/), the provided code samples are in plain JavaScript and are created with Sublime Text 2 as the preferred IDE. You can achieve the same with any transpiler tool that produces valid ES5 JavaScript and an IDE of your choice.
+* [Prerequisites](#prerequisites)
+* [Basic UI plugin structure](#basic-ui-plugin-structure)
+* [Property class](#property-class) 
+* [CssProperty class](#cssproperty-class) 
+* [Registering the Property](#registering-the-property) 
+* [Platform-specific code](#platform-specific-code) 
 
-The widget to enable is [NumberPicker](http://developer.android.com/reference/android/widget/NumberPicker.html) / [UIStepper](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/cl/UIStepper) as this component is currently not available in the NativeScript UI modules and (a very important note) - semantically similar widgets are available in both Android and iOS. The suggested way for building the plugin will follow the guidelines the NativeScript team uses when creating cross-platform modules and will emphasize major concepts like observables, bindable properties, abstract View hierarchy (or Visual Tree) and CSS styling.
+## Prerequisites
 
-> The article assumes that you are already familiar with developing [applications with NativeScript]({% slug tutorial %}).
-
-# Class Hierarchy
-> Throughout this article you will often see the "Visual Tree" expression&mdash;it refers to the JavaScript abstraction available in the cross-platform modules.
-
-Here is a brief overview of the class hierarchy in the Visual Tree:
+- NativeScript 3.x.x or newer version
+- Basic plugin structure as follows
 
 ```
-Observable
-├── DependencyObservable
-│   ├── Bindable
-│   │   ├── ProxyObject
-│   │   │   ├── View
+src/
+├── index.d.ts
+├── my-button.d.ts
+├── my-button.common.ts
+├── my-button.ios.ts
+├── my-button.android.ts
+├── package.json
+├── references.d.ts
+├── tsconfig.json
+└── platforms/
+    ├── android/
+    │   ├── include.gradle
+    └── ios/
+        └── Info.plist
 ```
+> Note: For more details about the plugin infrastructure in NativeScript refer to [this article]({%slug plugins-infrastructure%}).
 
-### [Observable](http://docs.nativescript.org/api-reference/classes/_data_observable_.observable.html)
-This is the class that implements the [Observer](https://en.wikipedia.org/wiki/Observer_pattern) design-pattern. Every node within the Visual Tree should support the addEventListener/removeEventListener routine, hence the base class.
+## Basic UI Plugin Structure
 
-### [DependencyObservable](http://docs.nativescript.org/api-reference/classes/_ui_core_dependency_observable_.dependencyobservable.html)
-This class enables cascading property values - for example an effective property value may be the default one, inherited from some ancestor, coming from a style or set locally directly. You may consider it as an `Observable` with extended property backing mechanism.
+The file `index.d.ts` defines the public API of the control (in our case MyButton).
 
-
-### [Bindable](http://docs.nativescript.org/api-reference/classes/_ui_core_bindable_.bindable.html)
-This class enables data-binding, using the extended property backing mechanism of the `DependencyObservable` base class. 
-
-### [ProxyObject](http://docs.nativescript.org/api-reference/classes/_ui_core_proxy_.proxyobject.html)
-Each UI module within NativeScript internally creates and maintains a corresponding native UI instance. This class serves as a proxy between the JavaScript object and the wrapped native object. For example, when a property changes on the JavaScript side, the implementation takes care of delegating the change to the native representation and vice-versa.
-
-### [View](http://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html)
-At an abstract level, *View* describes an object that has visual representation on the screen. It participates in the life-cycle and layout passes and may be styled - either through CSS or by using the [View.style](http://docs.nativescript.org/api-reference/classes/_ui_styling_.style.html) property.
-
-
-### See Also
-The NativeScript documentation portal has some great content to walk you through each of the above classes in greater details:
-
-* [Events](http://docs.nativescript.org/events.html)
-* [Properties](http://docs.nativescript.org/properties.html)
-* [Data-Binding](http://docs.nativescript.org/bindings.html)
-  
-# File Structure
-Keeping in mind the class hierarchy, the obvious choice for the base class of the widget will be `View`. Following is the structure of a typical NativeScript [UI module](https://github.com/NativeScript/NativeScript/tree/master/ui/button):
-
-### Definition File (number-picker.d.ts)
-This is the TypeScript way to describe all the publicly available APIs within a module. Typically, the creation of a NativeScript module starts with the API first (or defining what a widget should do) and then move to the actual implementation. Taking a close look at [NumberPicker](http://developer.android.com/reference/android/widget/NumberPicker.html) and [UIStepper](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/cl/UIStepper) you can easily come up with the API definition (we are looking for an API that is cross-platform and each method/property is available for each native platform). For the sake of simplicity, this article will cover only one property. You can examine the sample [GitHub repository](https://github.com/atanasovg/nativescript-number-picker) for the complete implementation.
-
-> This file is not mandatory and if you do not use TypeScript you may simply skip this step. Still, defining the public API one way or another will be useful for the users of the plugin.
-
-```javascript
-declare module "number-picker" {
-    import view = require("ui/core/view");
-    import dependencyObservable = require("ui/core/dependency-observable");
-
-    export class NumberPicker extends view.View {
-        // static (prototype) properties
-        public static valueProperty: dependencyObservable.Property;
-
-        // instance properties
-        value: number;
-        
-        android: android.widget.NumberPicker;
-        ios: UIStepper;
-    }
-} 
+_index.d.ts_
 ```
-
-> Each NativeScript module uses TypeScript's [ambient module declaration](http://www.typescriptlang.org/Handbook#modules-working-with-other-javascript-libraries), which tell the language service that this module will be available at runtime and it is our responsibility to load it.
-
-To enable features like data-binding and styling for the widget, you need to use dependency properties to back the instance properties as described [here](http://docs.nativescript.org/bindings.html).
-
-### Common File (number-picker-common.ts)
-Looking at the [Button](https://github.com/NativeScript/NativeScript/tree/master/ui/button) folder you will notice the `*-common` file. This is the file that holds the functionality, which is the same regardless of the target platform. Such functionality, for example, contains instance properties in its implementation. Here is how the common file looks like:
-
-```javascript
-var view = require("ui/core/view");
-var dObservable = require("ui/core/dependency-observable");
-var proxy = require("ui/core/proxy");
-
-var NumberPicker = (function (_super) {
-    global.__extends(NumberPicker, _super);
-    function NumberPicker() {
-        _super.call(this);
-    }
-    Object.defineProperty(NumberPicker.prototype, "value", {
-        get: function () {
-            return this._getValue(NumberPicker.valueProperty);
-        },
-        set: function (value) {
-            this._setValue(NumberPicker.valueProperty, value);
-        }
-    });
-    NumberPicker.valueProperty = new dObservable.Property("value", "NumberPicker", new proxy.PropertyMetadata(0, dObservable.PropertyMetadataSettings.AffectsLayout));
-    return NumberPicker;
-})(view.View);
-
-exports.NumberPicker = NumberPicker;
+export * from "./my-button";
 ```
+For better code readability the exported logic comes from `my-button.d.ts`
+It has dual purpose: as a contract when implementing the public API and to give intellisense when "my-button" is used in some editors/IDEs.
 
->The global `__extends` function is provided by the NativeScript runtime and it basically adds some functionality on top of the TypeScript's `__extends` function.
+_my-button.d.ts_
+```
+import { View, Style, Property, CssProperty, EventData } from "tns-core-modules/ui/core/view";
 
-A new `NumberPicker` class is defined and a backing dependency property with the respective getter and setter functions for the instance property is created. An important note is how the `getter` and `setter` functions are implemented. The `DependencyObservable` `_getValue` and `_setValue` methods, respectively, enable cascading values as well as change notifications and data-bindings. Now comes the other interesting part&mdash;creating the native widgets themselves and plugging them into the NativeScript framework.
+export const textProperty: Property<MyButton, string>;
+export const myOpacityProperty: CssProperty<Style, number>;
 
-### Android-Specific File (number-picker.android.ts)
-The [NativeScript CLI](https://github.com/NativeScript/nativescript-cli#development-in-app) follows the convention of marking platform-specific files with the platform name. This tells the CLI that these files will be only available for the package targeting the specified platform. With that said, you will need the `number-picker.android.ts` file to specify the Android-specific part of the widget:
+export class MyButton extends View {
+    // static field used from component-builder module to find events on controls.
+    static tapEvent: string; 
 
-```javascript
-var common = require("./number-picker-common");
+    // Defines the text property.
+    text: string;
 
-function onValuePropertyChanged(data) {
-    var picker = data.object;
-    if (!picker.android) {
-        return;
-    }
-    picker.android.setValue(data.newValue);
+    // Overload 'on' method so that it provides intellisense for 'tap' event.
+    on(event: "tap", callback: (args: EventData) => void, thisArg?: any);
+
+    // Needed when 'on' method is overriden.
+    on(eventNames: string, callback: (data: EventData) => void, thisArg?: any);
 }
+```
 
-common.NumberPicker.valueProperty.metadata.onSetNativeValue = onValuePropertyChanged;
-require("utils/module-merge").merge(common, module.exports);
+In the file above, we declare that our control will have `text` and `myOpacity` properties. We also provide intellisense when `myButton.on` method is called so that it is known that a tap event is exposed. There is also definition of two properties - `text: Property` and `myOpacity: CssProperty`.
+Further info on what `Property` and `CssProperty` means is covered [here](#property-class).    
 
-var NumberPicker = (function (_super) {
-    global.__extends(NumberPicker, _super);
-    function NumberPicker() {
-        _super.apply(this, arguments);
-    }
-    NumberPicker.prototype._createUI = function () {
-        this._android = new android.widget.NumberPicker(this._context);
-    };
-    Object.defineProperty(NumberPicker.prototype, "android", {
-        get: function () {
-            return this._android;
+In `my-button.common.ts`is the base file in which we define all common fields, properties and methods that are applicable for both Android and iOS. At the top of the file we declare our new properties `text: Property` and `myOpacity: CssProperty`.
+
+_my-button.common.ts_
+```
+import { MyButton as ButtonDefinition } from "./my-button";
+import { View, Style, Property, CssProperty, isIOS } from "tns-core-modules/ui/core/view";
+
+export const textProperty = new Property<MyButtonBase, string>({ name: "text", defaultValue: "", affectsLayout: isIOS });
+
+// using myOpacity instead of opacity as it will override the one defined in `tns-core-modules`
+export const myOpacityProperty = new CssProperty<Style, number>({
+    name: "myOpacity", cssName: "my-opacity", defaultValue: 1, valueConverter: (v) => {
+        const x = parseFloat(v);
+        if (x < 0 || x > 1) {
+            throw new Error(`opacity accepts values in the range [0, 1]. Value: ${v}`);
         }
-    });
-    return NumberPicker;
-})(common.NumberPicker);
 
-exports.NumberPicker = NumberPicker;
-```
-
-What the above code does is:
-
-1. Require the common module.
-1. Define a PropertyChangedCallback that will update the value of the native `NumberPicker`. Because this code is applicable to Android only, you can safely go through the NativeScript Bridge and change the property of the native widget directly.
-1. Register the callback with the metadata of the `value` property so that the base implementation can call it. Here, the `Proxy` level of the class hierarchy provides the implementation that will execute this callback whenever the JavaScript `value` property changes. 
-1. Merge the exports of the common file with the exports of this file. This is very important because at run time, the loaded file is the `number-picker.android` and you need the publicly exposed API from the common module to be available on the specific one.
-1. Create a new `NumberPicker` class that inherits the common one and its functionality.
-1. Override the `_createUI` method and instantiate the `_android` field.
-1. Define a public getter property for the native Android instance.
- 
-> The `iOS` property, as declared in the definition (API) file, remains `undefined` when running on Android.
-
-The `_createUI` method is part of the Visual Tree instantiation pass for Android. Because every native Android UI widget requires a valid [Context](http://developer.android.com/reference/android/content/Context.html) as a constructor parameter, the UI is lazy initialized when we have such `Context` available. This happens when the main [Activity](http://developer.android.com/reference/android/app/Activity.html) is created. The following scheme briefly summarizes the steps during the UI initialization pass within the Visual Tree:
-
-```
-Android runtime raises the getActivity callback
-                 |
-Application module handles the callback
-                 |
-Frame module onActivityRequested is called
-                 |
-Native Activity overrides are provided
-                 |
-Native onCreate method is called on the main Activity
-                 |
-Application is navigated to the main module
-                 |
-The XML is parsed and the Visual Tree is created
-                 |
-The Visual Tree is traversed and _onAttached(context) is called on each View
-                 |
-_onAttached(context) will update the _context property and will call _createUI
-
-```
-
-So, overriding the `_createUI` method is what is needed to plug the new widget within the Visual Tree.
-
-### iOS-specific File (number-picker.ios.ts)
-Here is the minimalistic iOS functionality implementation:
-
-```javascript
-var common = require("./number-picker-common");
-
-function onValuePropertyChanged(data) {
-    var picker = data.object;
-    picker.ios.value = data.newValue;
-}
-
-common.NumberPicker.valueProperty.metadata.onSetNativeValue = onValuePropertyChanged;
-require("utils/module-merge").merge(common, module.exports);
-
-var NumberPicker = (function (_super) {
-    global.__extends(NumberPicker, _super);
-    function NumberPicker() {
-        _super.apply(this, arguments);
-        this._ios = new UIStepper();
-    }
-
-    Object.defineProperty(NumberPicker.prototype, "ios", {
-        get: function () {
-            return this._ios;
-        }
-    });
-    return NumberPicker;
-})(common.NumberPicker);
-
-exports.NumberPicker = NumberPicker;
-```
-
-To some extent, the code looks similar to the Android-specific one and uses the same concepts, but when you look into the details, you will see the differences. For example, the `onValuePropertyChanged` function uses the iOS [UIStepper](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStepper_Class/index.html#//apple_ref/occ/cl/UIStepper) API to update the native `value` or another example could be the absence of a `_createUI` method. In iOS, the instantiation pass happens in the constructor of each UI widget because each native widget may be constructed at any time, without the need of an additional parameter like Android's `Context`. Here are the steps of the iOS instantiation pass:
-
-```
-AppDelegate's applicationDidFinishLaunchingWithOptions notification comes
-                 |
-Application module handles the notification
-                 |
-Application is navigated to the main module
-                 |
-The XML is parsed and the Visual Tree, including native widgets, is created
-```
-
-# Testing
-The minimalistic implementation is ready and the widget is ready to be tested. You need to package the files as a valid plugin, as described in the [documentation](http://docs.nativescript.org/plugins). Here are the steps:
-
-1. Create a new sample project named *myApp*:
-
-   ```shell
-   tns create myApp
-   ```
-1. Navigate to the new folder:
-
-   ```Shell
-   cd myApp
-   ```
-1. Create a new folder named `number-picker`.
-1. Add the above described JavaScript files in `number-picker`:
-   * `number-picker-common.js`
-   * `number-picker.android.js`
-   * `number-picker.ios.js`
-1. Add a new `package.json` file in `number-picker` with the following content:
-
-   ```json
-   {
-       "name": "number-picker",
-       "version": "0.0.1",
-       "main": "number-picker.js",
-       "nativescript": {
-           "platforms": {
-               "ios": "1.0.0",
-               "android": "1.1.0"
-           }
-       }
-   }
-   ```
-1. Run the following command:
-
-   ```Shell
-   tns plugin add number-picker
-   ```
-1. Modify the `app/main-page.js` file to create the new widget:
-
-   ```javascript
-   var vmModule = require("./main-view-model");
-   var pickerModule = require("number-picker");
-  
-   function pageLoaded(args) {
-       var page = args.object;
-       page.bindingContext = vmModule.mainViewModel;
-   
-       var layout = page.content;
-       var picker = new pickerModule.NumberPicker();
-       layout.addChild(picker);
-   }
-   exports.pageLoaded = pageLoaded;
-   ```
-1. Run the application:
-
-   ```Shell
-    tns run android (or tns emulate ios)
-   ```
-
-The new widget should be successfully displayed on the page.
-
-# Handling User Interaction
-The widget is already successfully visualized but it is in a very basic state&mdash;for example, it does not reflect changes coming from the Native side when the user interacts with the widget. In other words, the `value` property on the JavaScript side will not be updated after user interaction.
-
-### Android
-The Android general way of handling change notifications is via *Listeners*&mdash;in the current scenario this is the [OnValueChangeListener](http://developer.android.com/reference/android/widget/NumberPicker.OnValueChangeListener.html).You need to create a new interface implementation and register it on the native picker instance to receive updates coming from the Android world. Because this implementation is instance-related, we want to put it in the `_createUI` method:
-
-```javascript
-NumberPicker.prototype._createUI = function () {
-    this._android = new android.widget.NumberPicker(this._context);
-
-    var that = new WeakRef(this);
-    var changeListener = new android.widget.NumberPicker.OnValueChangeListener({
-        onValueChange: function(picker, oldVal, newVal){
-            var instance = that.get();
-            if(instance) {
-                instance._onPropertyChangedFromNative(NumberPicker.valueProperty, newVal);
-            }
-        }
-    });
-
-    this._android.setOnValueChangedListener(changeListener);
-};
-```
-
->Note the `WeakRef` wrapper of the `this` argument. This is an important part of the listener implementation as it prevents circular references (resulting in a memory leak) between the JavaScript implementation Object literal, which is statically cached per `extend` call and the outer JavaScript instance.
-
-Here the NativeScript Android Bridge is used to create a new [interface implementation in JavaScript](http://docs.nativescript.org/runtimes/android/generator/extend-class-interface) and to handle the `onValueChange` method. When a notification from the native Picker is received, the JavaScript object associated with the event is retrieved and the special method `_onPropertyChangedFromNative` is called on it. This is a method on the `Proxy` class that synchronizes properties from both JavaScript and native Picker in a way that prevents circular updates, which may result in a StackOverflow Exception.
-
-### iOS
-On iOS the generic event [UIControlEventValueChanged](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/c/econst/UIControlEventValueChanged) raised by the `UIStepper` widget is used. So the approach will be to extend the base `NSObject` class, to expose a handler method and register a new instance of the extended object using the [addTargetActionForControlEvents](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/#//apple_ref/occ/instm/UIControl/addTarget:action:forControlEvents:) method. According to the [Extending Classes in NativeScript for iOS](http://docs.nativescript.org/runtimes/ios/how-to/ObjC-Subclassing#calling-base-methods-Exposed) article, the following code enables value change notifications:
-
-```javascript
-// put this somewhere in the module implementation
-var ListenerClass = NSObject.extend({
-    valueChanged: function(sender) {
-        if(this._owner) {
-            this._owner._onPropertyChangedFromNative(common.NumberPicker.valueProperty, sender.value);
-        }
-    }
-}, {
-    name: "ListenerClass",
-    exposedMethods: {
-        "valueChanged": { returns: interop.types.void, params: [ UIStepper ] }
+        return x;
     }
 });
 
-////////////////////////////////////////
+export abstract class MyButtonBase extends View implements ButtonDefinition {
+    public static tapEvent = "tap";
+    text: string;
 
-// inside the NumberPicker's constructor
-function NumberPicker() {
-    _super.apply(this, arguments);
+    // Exposing myOpacity style property through MyButton.
+    // This is all optional. If not exposed users will have to set it
+    // through style: <control:MyButton style.myOpacity='0.4' />.
+    get myOpacity(): number {
+        return this.style.myOpacity;
+    }
+    set myOpacity(value: number) {
+        this.style.myOpacity = value;
+    }
+}
 
-    this._ios = new UIStepper();
-    this._listener = new ListenerClass();
-    this._listener._owner = this;
-    this._ios.addTargetActionForControlEvents(this._listener, "valueChanged", UIControlEvents.UIControlEventValueChanged);
+// Augmenting Style definition so it includes our myOpacity property
+declare module "tns-core-modules/ui/styling/style" {
+    interface Style {
+        myOpacity: number;
+    }
+}
+
+// Defines 'text' property on MyButtonBase class.
+textProperty.register(MyButtonBase);
+
+// Defines 'myOpacity' property on Style class.
+myOpacityProperty.register(Style);
+ 
+// If set to true - nativeView will be kept in memory and reused when some other instance 
+// of type MyButtonBase needs nativeView. Set to true only if you are sure that you can reset the
+// nativeView to its initial state. When true will improve application performance. 
+MyButtonBase.prototype.recycleNativeView = false; 
+```
+
+Now that we have created the basic plugin structure it is time to explain how the property system works and what are `Property` and `CssProperty`.
+
+## Property class 
+
+`Property` is a simple wrapper around [`Object.defineProperty`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty) with some additional callbacks like `valueChange`, `valueConverter` and `equalityComparer`.
+When you define property you specify the owning type and the type of the property:
+
+`textProperty: Property<MyButtonBase, string>` - here the owning type is MyButtonBase meaning that this property will be defined on instances of MyButtonBase. The type of the property is `string` so it will accept any text. 
+
+The `valueChange` event is executed when the value of an property has changed. If the type of the property isn't `string` we will need to specify `valueConverter` and `equalityComparer`. The `valueConverter` is called if a string value is set to this property (for example from xml or css) and there you will have to convert that string to meaningful value if possible or throw exception if you can't. If `equalityComparer` is specified it will be called everytime a value is set to a property. There you can compare current and new value for equality. For example if your property is of type `Color` you can use `Color.equals` as `equalityComparer` function so even if new instance of `Color` is set the comparer will return `false` if current color and new color have the same `argb` value. 
+
+There is one more option in the `Property` constructor: `affectsLayout: boolean`. When set to `true` setting new value to this property will trigger a new layout pass. `textProperty` sets `affectsLayout: isIOS`. This means that this property will request new layout pass only when executing for iOS. This is done as performance optimization. Android has an integrated layout system so most of the time it will invalidate it self when needed. Thus we skip one native call by defining `affectsLayout` as `true` only for iOS. Because iOS doesn't have integrated layout system if you know that this property could affect the layout you should specify it in the `Property` constructor. 
+ 
+Here is again the definition of `textProperty` from _my-button.common.ts_ file: 
+``` 
+export const textProperty = new Property<MyButtonBase, string>({ name: "text", defaultValue: "", affectsLayout: isIOS }); 
+``` 
+ 
+`affectsLayout` flag should be `true` *(mainly for iOS)* when setting that property will change the element size and/or position. For example in our case setting button text to something different will either widen or shorten the width of the button so this will affect the element dimension hence with specify it as `affectsLayout: isIOS`. If this property won't change element position/size then you don't have to specify `affectsLayout` at all. For example `background-color` property doesn't change element position/size. 
+
+## CssProperty Class 
+
+`CssProperty` is very similar to `Property` type with two small differences: 
+- you have to additionally specify `cssName` which will be used to set this property through css  
+- its value can be be set from inline styles, page css or application css 
+
+## Registering the Property
+
+After a property is defined it needs to be registered on a type like this: 
+```
+textProperty.register(MyButtonBase);
+```
+
+The `CssProperties` should be registered on the `Style` class like this:
+
+```
+myOpacityProperty.register(Style);
+```
+
+The registration defines that property for the type passed on to `register` method. 
+
+> Note: Make sure that put your `register` call **after** your class definition or you will get an exception.
+
+## Platform-Specific Code 
+
+Now let’s define the platform-specific code 
+ 
+_my-button.android.ts_
+``` 
+import { MyButtonBase, textProperty, myOpacityProperty } from "./my-button.common";
+
+let clickListener: android.view.View.OnClickListener;
+
+// NOTE: ClickListenerImpl is in function instead of directly in the module because we 
+// want this file to be compatible with V8 snapshot. When V8 snapshot is created
+// JS is loaded into memory, compiled & saved as binary file which is later loaded by
+// Android runtime. Thus when snapshot is created we don't have Android runtime and
+// we don't have access to native types.
+function initializeClickListener(): void {
+    // Define ClickListener class only once.
+    if (clickListener) {
+        return;
+    }
+
+    // Interfaces decorator with implemented interfaces on this class
+    @Interfaces([android.view.View.OnClickListener])
+    class ClickListener extends java.lang.Object implements android.view.View.OnClickListener {
+        public owner: MyButton;
+
+        constructor() {
+            super();
+            // Required by Android runtime when native class is extended through TypeScript.
+            return global.__native(this);
+        }
+
+        public onClick(v: android.view.View): void {
+            // When native button is clicked we raise 'tap' event.
+            const owner = (<any>v).owner;
+            if (owner) {
+                owner.notify({ eventName: MyButtonBase.tapEvent, object: owner });
+            }
+        }
+    }
+
+    clickListener = new ClickListener();
+}
+
+export class MyButton extends MyButtonBase {
+
+    // added for TypeScript intellisense.
+    nativeView: android.widget.Button;
+
+    /**
+     * Creates new native button.
+     */
+    public createNativeView(): Object {
+        // Initialize ClickListener.
+        initializeClickListener();
+
+        // Create new instance of android.widget.Button.
+        const button = new android.widget.Button(this._context);
+
+        // set onClickListener on the nativeView.
+        button.setOnClickListener(clickListener);
+
+        return button;
+    }
+
+    /**
+     * Initializes properties/listeners of the native view.
+     */
+    initNativeView(): void {
+        // Attach the owner to nativeView.
+        // When nativeView is tapped we get the owning JS object through this field.
+        (<any>this.nativeView).owner = this;
+        super.initNativeView();
+    }
+
+    /**
+     * Clean up references to the native view and resets nativeView to its original state.
+     * If you have changed nativeView in some other way except through setNative callbacks
+     * you have a chance here to revert it back to its original state 
+     * so that it could be reused later.
+     */
+    disposeNativeView(): void {
+        // Remove reference from native view to this instance.
+        (<any>this.nativeView).owner = null;
+
+        // If you want to recycle nativeView and have modified the nativeView 
+        // without using Property or CssProperty (e.g. outside our property system - 'setNative' callbacks)
+        // you have to reset it to its initial state here.
+        super.disposeNativeView();
+    }
+
+    // transfer JS text value to nativeView.
+    [textProperty.setNative](value: string) {
+        this.nativeView.setText(value);
+    }
+
+    // gets the default native value for opacity property.
+    // Alpha could be controlled from Android theme.
+    // Thus we take the default native value from the nativeView.
+    // If view is recycled the value returned from this method
+    // will be passed to [myOppacityProperty.setNative]
+    [myOpacityProperty.getDefault](): number {
+        return this.nativeView.getAlpha()
+    }
+
+    // set opacity to the native view.
+    [myOpacityProperty.setNative](value: number) {
+        return this.nativeView.setAlpha(value);
+    }
 }
 ```
 
->Note the assignment of the `listener` object to the `this` argument (`this._listener = new ListenerClass()`) in the constructor. This is needed to prevent the native class deallocation because the `addTargetActionForControlEvents` method uses `Weak` references when adding listeners.
+_my-button.ios.ts_
+``` 
+import { MyButtonBase, textProperty, myOpacityProperty } from "./my-button.common";
 
-### Data-Binding Ready
-With gluing the Native-to-JavaScript and JavaScript-to-Native flow of changes, the `value` property is completely [data-binding](http://docs.nativescript.org/bindings) ready and calling the [Bindable.bind](http://docs.nativescript.org/api-reference/classes/_ui_core_bindable_.bindable.html#bind) method on the widget will work as expected, both in one-way and two-way cases.
+// class that handles all native 'tap' callbacks
+class TapHandler extends NSObject {
 
-# CSS Support
-The styling support in the NativeScript modules is built on top of three major layers:
+    public tap(nativeButton: UIButton, nativeEvent: _UIEvent) {
+        // Gets the owner from the nativeView.
+        const owner: MyButton = (<any>nativeButton).owner;
+        if (owner) {
+            owner.notify({ eventName: MyButtonBase.tapEvent, object: owner });
+        }
+    }
 
-* The [Style](http://docs.nativescript.org/api-reference/classes/_ui_styling_.style.html) object on a per `View` instance, which allows programmatic styling.
-* The Css parser that reads `*.css` files and updates the `Style` object of each matched `View`.
-* The *Styler* concept - the mapping of a JavaScript value to the corresponding native widget's property is delegated to an external object, named `Styler`.
-
-
-> The properties, common for each native widget, are handled by the `DefaultStyler`. Other properties are specific on a per widget type. For example, the [TextView](http://developer.android.com/reference/android/widget/TextView.html) widgets&mdash;these are handled by the specific `TextViewStyler`. 
-
-The `DefaultStyler` handles the following [properties](http://docs.nativescript.org/ui/styling#supported-css-properties):
-
-* background
-* visibility
-* opacity
-* minWidth
-* minHeight
-* borderWidth
-* borderColor
-* borderRadius
-
-When you create a new widget and you do not need support for other specific properties, there is no need to specify custom `Styler` because the default one will handle these for you. In this particular case, the article will walk you through handling the `color` property as well, to demonstrate the workflow and the steps needed to enable widget-specific properties. The following three entry points are needed by a `Styler` to reflect a JavaScript style property change:
-
-* setPropertyValue <br/>
-  *Applies the property-specific logic to the native widget.*
-* resetPropertyValue <br/>
-  *Resets the property value to its default (original) state.*
-* getNativePropertyValue <br/>
-  *Gets the default (original) property value.*
-
-### iOS
-The following code illustrates how to update the `tintColor` property of the iOS UIStepper when the `color` property changes on a JavaScript `NumberPicker` object:
-
-```javascript
-// within the number-picker.ios.js file
-var style = require("ui/styling/style");
-
-//////////////////////////////////
-
-// this function is called when the `color` Style property changes on a `NumberPicker` instance 
-function setColor(view, value) {
-    var nativePicker = view.ios;
-
-    // value is UIColor, so we may apply it directly
-    nativePicker.tintColor = value;
+    public static ObjCExposedMethods = {
+        "tap": { returns: interop.types.void, params: [interop.types.id, interop.types.id] }
+    };
 }
 
-// this function is called when the `color` Style property changes and the new value is `undefined`
-function resetColor(view, value) {
-    var nativePicker = view.ios;
+const handler = TapHandler.new();
 
-    // value is native UIColor, so apply it directly
-    nativePicker.tintColor = value;
+export class MyButton extends MyButtonBase {
+
+    // added for TypeScript intellisense.
+    nativeView: UIButton;
+
+    /**
+     * Creates new native button.
+     */
+    public createNativeView(): Object {
+        // Create new instance
+        const button = UIButton.buttonWithType(UIButtonType.System);
+
+        // Set the handler as callback function.
+        button.addTargetActionForControlEvents(handler, "tap", UIControlEvents.TouchUpInside);
+
+        return button;
+    }
+
+    /**
+     * Initializes properties/listeners of the native view.
+     */
+    initNativeView(): void {
+        // Attach the owner to nativeView.
+        // When nativeView is tapped we get the owning JS object through this field.
+        (<any>this.nativeView).owner = this;
+        super.initNativeView();
+    }
+
+    /**
+     * Clean up references to the native view and resets nativeView to its original state.
+     * If you have changed nativeView in some other way except through setNative callbacks
+     * you have a chance here to revert it back to its original state 
+     * so that it could be reused later.
+     */
+    disposeNativeView(): void {
+        // Remove reference from native listener to this instance.
+        (<any>this.nativeView).owner = null;
+        
+        // If you want to recycle nativeView and have modified the nativeView 
+        // without using Property or CssProperty (e.g. outside our property system - 'setNative' callbacks)
+        // you have to reset it to its initial state here.
+        super.disposeNativeView();
+    }
+
+    // transfer JS text value to nativeView.
+    [textProperty.setNative](value: string) {
+        this.nativeView.setTitleForState(value, UIControlState.Normal);
+    }
+
+    // gets the default native value for opacity property.
+    // If view is recycled the value returned from this method
+    // will be passed to [myOppacityProperty.setNative]
+    [myOpacityProperty.getDefault](): number {
+        return this.nativeView.alpha;
+    }
+
+    // set opacity to the native view.
+    [myOpacityProperty.setNative](value: number) {
+        return this.nativeView.alpha = value;
+    }
 }
+``` 
+Most of the platform specific code is documented.
+- `createNativeView` - you override this method, create and return your nativeView 
+- `initNativeView` - in this method you setup listeners/handlers to the nativeView 
+- `disposeNativeView` - in this method you clear the reference between nativeView and javascript object to avoid memory leaks as well as reset the native view to its initial state if you want to reuse that native view later.
 
-// this function is called when the `Styler` is about to reset the `color` property to its default (original) value.
-function getNativeColorValue(view) {
-    var nativePicker = view.ios;
-
-    return nativePicker.tintColor;
-}
-
-var changedHandler = new style.StylePropertyChangedHandler(setColor, resetColor, getNativeColorValue);
-
-// register the handler for the color property on the NumberPicker type
-style.registerHandler(style.colorProperty, changedHandler, "NumberPicker");
-```
-
->In Android, the `color` property would be mapped to the text color of the labels within the native widget, However, this cannot be easily achieved programmatically but rather through the Android-specific XML styles. That's why this article will not cover the `color` property for Android. Still, the concept there is identical to the one described for iOS.
-
-# XML-Ready
-Making the component visible to the XML parser is as easy as adding a custom namespace at the [Page level](http://docs.nativescript.org/ui-with-xml#custom-components). The following code illustrates this:
-
-```xml
-<Page
-    xmlns="http://schemas.nativescript.org/tns.xsd"
-    xmlns:numPicker="number-picker"
-    loaded="pageLoaded">
-  <StackLayout id="rootLayout">
-    <Label text="{{ value }}" className="title"/>
-    <Button text="TAP" tap="{{ tapAction }}" />
-    <Label text="{{ value }}" className="message" textWrap="true"/>
-    <numPicker:NumberPicker value="{{ value }}" horizontalAlignment="left"/>
-  </StackLayout>
-</Page>
-```
-
-> The CLI will copy the JavaScript part of the plugin within the tns_modules folder. The XML parser will automatically check for the `tns_modules/number-picker` folder to load the widget.
-
-# See Also
-
-* [Plugins](http://docs.nativescript.org/plugins).
-* [UI - The Basics](http://docs.nativescript.org/ui-with-xml)
+In Android, avoid access to native types in the root of the module (note that ClickListener is declared and implemented in a function which is called at runtime). This is specific for the V8 snapshot feature which is generated on a host machine where android runtime is not running. What is important is that if you access native types, methods, fields, namespaces, etc. at the root of your module (e.g. not in a function) your code won't be compatible with V8 snapshot feature. The easiest workaround is to wrap it in a function like in the above `initializeClickListener` function.
+ 
+In this implementation we use singleton listener (for Android - `clickListener`) and handler (for iOS - `handler`) in order to reduce the need to instantiate native classes and to reduce memory usage. If possible it is recommended to use such techniques to reduce native calls.
