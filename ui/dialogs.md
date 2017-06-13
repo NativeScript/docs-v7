@@ -34,7 +34,7 @@ dialogs.alert("Your message").then(function() {
 });
 ```
 ```TypeScript
-import dialogs = require("ui/dialogs");
+import * as dialogs from "ui/dialogs";
 dialogs.alert("Your message").then(()=> {
     console.log("Dialog closed!");
 });
@@ -53,7 +53,7 @@ dialogs.alert({
 });
 ```
 ```TypeScript
-import dialogs = require("ui/dialogs");
+import * as dialogs from "ui/dialogs";
 dialogs.alert({
     title: "Your title",
     message: "Your message",
@@ -74,7 +74,7 @@ dialogs.confirm("Your message").then(function (result) {
 });
 ```
 ```TypeScript
-import dialogs = require("ui/dialogs");
+import * as dialogs from "ui/dialogs";
 dialogs.confirm("Your message").then(result => {
     console.log("Dialog result: " + result);
 });
@@ -96,7 +96,7 @@ dialogs.confirm({
 });
 ```
 ```TypeScript
-import dialogs = require("ui/dialogs");
+import * as dialogs from "ui/dialogs";
 dialogs.confirm({
     title: "Your title",
     message: "Your message",
@@ -123,7 +123,7 @@ dialogs.prompt("Your message", "Default text").then(function (r) {
 });
 ```
 ```TypeScript
-import dialogs = require("ui/dialogs");
+import * as dialogs from "ui/dialogs";
 // Second argument is optional.
 dialogs.prompt("Your message", "Default text").then(r => {
     console.log("Dialog result: " + r.result + ", text: " + r.text);
@@ -148,7 +148,7 @@ dialogs.prompt({
 });
 ```
 ```TypeScript
-import dialogs = require("ui/dialogs");
+import * as dialogs from "ui/dialogs";
 // inputType property can be dialogs.inputType.password or dialogs.inputType.text.
 dialogs.prompt({
     title: "Your title",
@@ -176,7 +176,7 @@ dialogs.login("Your message", "User name label text", "Password label text").the
 });
 ```
 ```TypeScript
-import dialogs = require("ui/dialogs");
+import * as dialogs from "ui/dialogs";
 // User name and password arguments are optional.
 dialogs.login("Your message", "User name label text", "Password label text").then(r => {
     console.log("Dialog result: " + r.result + ", user: " + r.userName + ", pwd: " + r.password);
@@ -200,7 +200,7 @@ dialogs.login({
 });
 ```
 ```TypeScript
-import dialogs = require("ui/dialogs");
+import * as dialogs from "ui/dialogs";
 dialogs.login({
     title: "Your title",
     message: "Your message",
@@ -224,12 +224,22 @@ dialogs.login({
 var dialogs = require("ui/dialogs");
 dialogs.action("Your message", "Cancel button text", ["Option1", "Option2"]).then(function (result) {
     console.log("Dialog result: " + result);
+    if(result == "Options1"){
+        //Do action1
+    }else if(result == "Option2"){
+        //Do action2
+    }
 });
 ```
 ```TypeScript
-import dialogs = require("ui/dialogs");
+import * as dialogs from "ui/dialogs";
 dialogs.action("Your message", "Cancel button text", ["Option1", "Option2"]).then(result => {
     console.log("Dialog result: " + result);
+    if(result == "Options1"){
+        //Do action1
+    }else if(result == "Option2"){
+        //Do action2
+    }
 });
 ```
 
@@ -242,17 +252,27 @@ dialogs.action({
     cancelButtonText: "Cancel text",
     actions: ["Option1", "Option2"]
 }).then(function (result) {
-    console.log("Dialog result: " + result)
+    console.log("Dialog result: " + result);
+    if(result == "Options1"){
+        //Do action1
+    }else if(result == "Option2"){
+        //Do action2
+    }
 });
 ```
 ```TypeScript
-import dialogs = require("ui/dialogs");
+import * as dialogs from "ui/dialogs";
 dialogs.action({
     message: "Your message",
     cancelButtonText: "Cancel text",
     actions: ["Option1", "Option2"]
 }).then(result => {
-    console.log("Dialog result: " + result)
+    console.log("Dialog result: " + result);
+    if(result == "Options1"){
+        //Do action1
+    }else if(result == "Option2"){
+        //Do action2
+    }
 });
 ```
 > The dialog result argument is a string (the text of the clicked option or the text of the cancel button).
