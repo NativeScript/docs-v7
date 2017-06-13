@@ -1,18 +1,17 @@
 ---
-title: Properties
-description: What is a property in NativeScript, what types of properties are available, and how to use them.
-position: 80
-slug: properties
+title: Building UI Plugins
+description: Building UI plugin using the NativeScript property system.
+position: 30
+slug: ui-plugins
 publish: false
-previous_url: /properties
+previous_url: /ui-plugin
 environment: nativescript
 ---
 
-# Properties
+# Building UI Plugins
 
 This article contents:
 
-* [Overview](#overview)
 * [Prerequisites](#prerequisites)
 * [Basic UI plugin structure](#basic-ui-plugin-structure)
 * [Property class](#property-class) 
@@ -20,20 +19,16 @@ This article contents:
 * [Registering the Property](#registering-the-property) 
 * [Platform-specific code](#platform-specific-code) 
 
-## Overview
-
-Being a TypeScript framework, NativeScript uses TypeScript properties. After transpilation, these result in ECMAScript v.5 compliant JavaScript with setter and getter methods to support working with class members, thus ensuring readable and manageable code. This article will guide you through the process of creating basic UI plugin using the property system. All the code is in TypeScript and requires NativeScript 3.x.x or newer version.
-
 ## Prerequisites
 
 - NativeScript 3.x.x or newer version
-- Plugin structure as follows
+- Basic plugin structure as follows
 
 ```
 src/
 ├── index.d.ts
 ├── my-button.d.ts
-├── my-button-base.ts
+├── my-button.common.ts
 ├── my-button.ios.ts
 ├── my-button.android.ts
 ├── package.json
@@ -49,7 +44,7 @@ src/
 
 ## Basic UI Plugin Structure
 
-The first file `index.d.ts` defines the public API of the control (in our case MyButton).
+The file `index.d.ts` defines the public API of the control (in our case MyButton).
 
 _index.d.ts_
 ```
@@ -83,9 +78,9 @@ export class MyButton extends View {
 In the file above, we declare that our control will have `text` and `myOpacity` properties. We also provide intellisense when `myButton.on` method is called so that it is known that a tap event is exposed. There is also definition of two properties - `text: Property` and `myOpacity: CssProperty`.
 Further info on what `Property` and `CssProperty` means is covered [here](#property-class).    
 
-The next file is `my-button-base.ts`. In the base file we define all common fields, properties and methods that are applicable for both Android and iOS. At the top of the file we declare our new properties `text: Property` and `myOpacity: CssProperty`.
+In `my-button.common.ts`is the base file in which we define all common fields, properties and methods that are applicable for both Android and iOS. At the top of the file we declare our new properties `text: Property` and `myOpacity: CssProperty`.
 
-_my-button-base.ts_
+_my-button.common.ts_
 ```
 import { MyButton as ButtonDefinition } from "./my-button";
 import { View, Style, Property, CssProperty, isIOS } from "tns-core-modules/ui/core/view";
@@ -142,23 +137,23 @@ Now that we have created the basic plugin structure it is time to explain how th
 
 ## Property class 
 
-`Property` is a simple wrapper around [`Object.defineProperty`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty) with some additional callbacks like `valueChange`, `valueConverter` and `equalityComparer`. 
+`Property` is a simple wrapper around [`Object.defineProperty`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty) with some additional callbacks like `valueChange`, `valueConverter` and `equalityComparer`.
 When you define property you specify the owning type and the type of the property:
 
 `textProperty: Property<MyButtonBase, string>` - here the owning type is MyButtonBase meaning that this property will be defined on instances of MyButtonBase. The type of the property is `string` so it will accept any text. 
 
-If the type of the property not `string` we will probably need to specify `valueConverter` and `equalityComparer`. The `valueConverter` will be called if a string value is set to your property (for example from xml or css) and there you will have to convert that string to meaningful value if possible or throw exception if you can't. If `equalityComparer` is specified it will be called everytime a value is set to a property. There you can compare current and new value for equality. For example if your property is of type `Color` you can use `Color.equals` as `equalityComparer` function so even if new instance of `Color` is set the comparer will return `false` if current color and new color have the same `argb` value. 
+The `valueChange` event is executed when the value of an property has changed. If the type of the property isn't `string` we will need to specify `valueConverter` and `equalityComparer`. The `valueConverter` is called if a string value is set to this property (for example from xml or css) and there you will have to convert that string to meaningful value if possible or throw exception if you can't. If `equalityComparer` is specified it will be called everytime a value is set to a property. There you can compare current and new value for equality. For example if your property is of type `Color` you can use `Color.equals` as `equalityComparer` function so even if new instance of `Color` is set the comparer will return `false` if current color and new color have the same `argb` value. 
 
-There is one more property in the `Property` constructor: `affectsLayout: boolean`. When set to `true` setting new value to this property will trigger a new layout pass. `textProperty` sets `affectsLayout: isIOS`. This means that this property will request new layout pass only for `ios`. This is done as performance optimization. `android` has an integrated layout system so most of the time it will invalidate it self when needed. Thus we skip one native call by defining `affectsLayout` as `true` only for `ios`. But `ios` doesn't have integrated layout system so if you know that your property could affect the layout you should specify it in the `Property` constructor.  
+There is one more option in the `Property` constructor: `affectsLayout: boolean`. When set to `true` setting new value to this property will trigger a new layout pass. `textProperty` sets `affectsLayout: isIOS`. This means that this property will request new layout pass only when executing for iOS. This is done as performance optimization. Android has an integrated layout system so most of the time it will invalidate it self when needed. Thus we skip one native call by defining `affectsLayout` as `true` only for iOS. Because iOS doesn't have integrated layout system if you know that this property could affect the layout you should specify it in the `Property` constructor. 
  
-Here is again the definition of `textProperty` from _my-button-base.ts_ file: 
+Here is again the definition of `textProperty` from _my-button.common.ts_ file: 
 ``` 
 export const textProperty = new Property<MyButtonBase, string>({ name: "text", defaultValue: "", affectsLayout: isIOS }); 
 ``` 
  
-`affectsLayout` flag should be `true` *(mainly for ios)* when setting that property will change the element size and/or position. For example in our case setting button text to something different will either widen or shorten the width of the button so this will affect the element dimension hence with specify it as `affectsLayout: isIOS`. If this property won't change element position/size then you don't have to specify `affectsLayout` at all. For example `background-color` property doesn't change element position/size. 
+`affectsLayout` flag should be `true` *(mainly for iOS)* when setting that property will change the element size and/or position. For example in our case setting button text to something different will either widen or shorten the width of the button so this will affect the element dimension hence with specify it as `affectsLayout: isIOS`. If this property won't change element position/size then you don't have to specify `affectsLayout` at all. For example `background-color` property doesn't change element position/size. 
 
-## CssProperty class 
+## CssProperty Class 
 
 `CssProperty` is very similar to `Property` type with two small differences: 
 - you have to additionally specify `cssName` which will be used to set this property through css  
@@ -181,20 +176,20 @@ The registration defines that property for the type passed on to `register` meth
 
 > Note: Make sure that put your `register` call **after** your class definition or you will get an exception.
 
-## Platform-specific code 
+## Platform-Specific Code 
 
 Now let’s define the platform-specific code 
  
 _my-button.android.ts_
 ``` 
-import { MyButtonBase, textProperty, myOpacityProperty } from "./my-button-base";
+import { MyButtonBase, textProperty, myOpacityProperty } from "./my-button.common";
 
 let clickListener: android.view.View.OnClickListener;
 
 // NOTE: ClickListenerImpl is in function instead of directly in the module because we 
 // want this file to be compatible with V8 snapshot. When V8 snapshot is created
 // JS is loaded into memory, compiled & saved as binary file which is later loaded by
-// android runtime. Thus when snapshot is created we don't have android runtime and
+// Android runtime. Thus when snapshot is created we don't have Android runtime and
 // we don't have access to native types.
 function initializeClickListener(): void {
     // Define ClickListener class only once.
@@ -209,7 +204,7 @@ function initializeClickListener(): void {
 
         constructor() {
             super();
-            // Required by android runtime when native class is extended through TypeScript.
+            // Required by Android runtime when native class is extended through TypeScript.
             return global.__native(this);
         }
 
@@ -295,7 +290,7 @@ export class MyButton extends MyButtonBase {
 
 _my-button.ios.ts_
 ``` 
-import { MyButtonBase, textProperty, myOpacityProperty } from "./my-button-base";
+import { MyButtonBase, textProperty, myOpacityProperty } from "./my-button.common";
 
 // class that handles all native 'tap' callbacks
 class TapHandler extends NSObject {
@@ -377,12 +372,11 @@ export class MyButton extends MyButtonBase {
     }
 }
 ``` 
-Most of the platform specific code is documented. Few things are important.
-In Android, we want to support V8 snapshot feature so we have to avoid access to native types in the root of the module *(note that ClickListener is declared and implemented in a function which is called at runtime)*. This is specific of V8 snapshot which is generated on a host machine where android runtime is not running. What is important is that if you access native types, methods, fields, namespaces, etc. at the root of your module (e.g. not in a function) your code won't be compatible with V8 snapshot feature. The easiest workaround is to wrap it in a function like in the above `initializeClickListener` function.
- 
-There are three important methods: 
+Most of the platform specific code is documented.
 - `createNativeView` - you override this method, create and return your nativeView 
 - `initNativeView` - in this method you setup listeners/handlers to the nativeView 
 - `disposeNativeView` - in this method you clear the reference between nativeView and javascript object to avoid memory leaks as well as reset the native view to its initial state if you want to reuse that native view later.
+
+In Android, avoid access to native types in the root of the module (note that ClickListener is declared and implemented in a function which is called at runtime). This is specific for the V8 snapshot feature which is generated on a host machine where android runtime is not running. What is important is that if you access native types, methods, fields, namespaces, etc. at the root of your module (e.g. not in a function) your code won't be compatible with V8 snapshot feature. The easiest workaround is to wrap it in a function like in the above `initializeClickListener` function.
  
-In this implementation we use singleton listener (for android - `clickListener`) and handler (for ios - `handler`) in order to reduce the need to instantiate native classes and to reduce memory usage. If possible it is recommended to use such techniques to reduce native calls.
+In this implementation we use singleton listener (for Android - `clickListener`) and handler (for iOS - `handler`) in order to reduce the need to instantiate native classes and to reduce memory usage. If possible it is recommended to use such techniques to reduce native calls.
