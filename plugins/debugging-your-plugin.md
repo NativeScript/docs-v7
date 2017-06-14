@@ -6,17 +6,24 @@ slug: debugging-your-plugin
 publish: false
 ---
 
-# Overview
+# Debugging a plugin
 
-Debugging a plugin is not much different than debugging a NativeScript app but needs some preparation to ease the plugin development. Before continue reading make sure you have covered the topics about [Debugging]({% slug debugging %}) and [NativeScript extension for Visual Studo Code]({% slug nativescript-extension-for-visual-studio-code %})
+Debugging a plugin is not much different than debugging a NativeScript app but needs some preparation to ease the plugin development. Before continue reading make sure you have covered the topics about [Debugging]({% slug debugging %}) and [NativeScript extension for Visual Studo Code]({% slug nativescript-extension-for-visual-studio-code %}). 
 
-# The problem
+What this article covers:
+
+* [The problem](#Theproblem)
+* [Linking your plugin in the demo](#Linkingyourplugininthedemo)
+* [Debugging](#Debugging)
+* [Limitations](#Limitations)
+
+##  <a name='Theproblem'></a>The problem
 
 Having your plugin developed separately from your plugin demo app makes debugging and development a tedious task. Relying only on the `tns plugin add\remove` commands slows down the development since on every change the commands need to be run to preview your changes in the demo app.
 
 What would be the ultimate goal is to be able to debug your plugin as part of the demo application with the option to make ad hoc changes in the plugin source code and preview them immediately. In addition it would be also convenient to get advantage of the live sync and have your demo automatically updated in the simulator/device when you make a change in the plugin source code.
 
-# Linking your plugin in the demo
+##  <a name='Linkingyourplugininthedemo'></a>Linking your plugin in the demo
 
 Achieving the goal descibed above is possible by using `npm link` during plugin development. 
 
@@ -39,11 +46,11 @@ If at some point you're ready with the development and want to test how your plu
 
 (Read more about `npm unlink` command)[https://www.npmjs.com/browse/keyword/unlink]
 
-# Debugging your plugin
+##  <a name='Debugging'></a>Debugging
 
 Having the `npm link` set up, you can start debugging your demo project along with your plugin code in `node_modules` folder. Read more about [Debugging using `tns debug`]({% slug debugging %}) and [debugging using NativeScript extension for Visual Studo Code]({% slug nativescript-extension-for-visual-studio-code %}).
 
-# Limitations
+##  <a name='Limitations'></a>Limitations
 
 Using `npm link` eases the development of your plugin when you do any kind of code changes to your page templates, typescript/javascript, css files. What it won't do for you is to apply plugin changes to your demo related to:
 
@@ -51,6 +58,3 @@ Using `npm link` eases the development of your plugin when you do any kind of co
 * plugin's native libraries
 
 This means that if during development you need to change Info.plist or add a native library to your plugin, then you need to run "tns plugin remove/add your-plugin-name". This will apply the plugin platform specifics to your demo. After that you can continue debugging and developing using `npm link`.
-
-
-
