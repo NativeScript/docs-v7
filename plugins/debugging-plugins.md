@@ -1,19 +1,19 @@
 ---
-title: Debugging a plugin
-description: Debugging a plugin
+title: Debugging Plugins
+description: Debugging Plugins
 position: 10
-slug: debugging-a-plugin
+slug: debugging-plugins
 publish: false
 ---
 
-# Debugging a Plugin
+# Debugging Plugins
 
 Debugging a plugin is not much different than debugging a NativeScript app but needs some preparation to ease the plugin development. Before you continue, make sure you have covered the topics about [Debugging]({% slug debugging %}) and [NativeScript extension for Visual Studo Code]({% slug nativescript-extension-for-visual-studio-code %}). 
 
 What this article covers:
 
 * [The Problem](#Theproblem)
-* [Linking Your Plugin in the Demo](#Linkingyourplugininthedemo)
+* [Linking Your Plugin in the Demo App](#Linkingyourplugininthedemo)
 * [Debugging](#Debugging)
 * [Limitations](#Limitations)
 
@@ -23,7 +23,7 @@ Having your plugin developed separately from your plugin demo app makes debuggin
 
 What would be the ultimate goal is to be able to debug your plugin as part of the demo application with the option to make ad hoc changes in the plugin source code and preview them immediately. In addition it would be also convenient to get advantage of the live sync and have your demo automatically updated in the simulator/device when you make a change in the plugin source code.
 
-##  <a name='Linkingyourplugininthedemo'></a>Linking Your Plugin in the Demo
+##  <a name='Linkingyourplugininthedemoapp'></a>Linking Your Plugin in the Demo App
 
 Achieving the goal descibed above is possible by using `npm link` during plugin development. 
 
@@ -38,7 +38,7 @@ If you have your custom plugin structure you can still enable `npm link` by foll
 
 Now the files under `your-demo-folder/node_modules/your-plugin-name` are physically the same files that are located under `src`. This means that making changes in `demo/node_modules/your-plugin-name` will actually change the plugin source files. 
 
-If at some point you're ready with the development and want to test how your plugin behaves on running 'tns plugin add/remove'you cna easily unlink your plugin by running:
+If at some point you're ready with the development and want to test how your plugin behaves on running `tns plugin add/remove` you can easily unlink your plugin by running:
 1. In terminal run `cd your-demo-folder`
 2. Run `npm unlink your-plugin-name`
 3. Run `cd your-plugin-folder`
