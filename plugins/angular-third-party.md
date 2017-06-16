@@ -1,7 +1,7 @@
 ---
 title: Integrating Third-Party Components
 description: Integrating vanilla NativeScript UI components in Angular
-position: 10
+position: 60
 slug: angular-third-party
 environment: angular
 ---
