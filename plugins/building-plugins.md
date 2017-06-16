@@ -203,7 +203,7 @@ export class VersionNumber {
 
 The NativeScript plugin seed automatically sets up the necessary TypeScript configuration for working with native iOS and Android APIs, so as you develop your plugins you’ll get a little help working with these native APIs in TypeScript-friendly editors like Visual Studio Code. For example, if you start to type out `NSBundle`, Visual Studio Code helps you find the native iOS APIs that are available.
 
-![](vs-code-intellisense.png)
+![](../img/plugins/vs-code-intellisense.png)
 
 > **TIP**: If you’re new to working with native APIs in NativeScript, check out our documentation on [accessing native APIs in JavaScript and TypeScript](https://docs.nativescript.org/core-concepts/accessing-native-apis-with-javascript). You might also want to dive into a few existing plugin’s source code just to see how they work. Almost every plugin on the [NativeScript plugin marketplace](http://plugins.nativescript.org/) is open source.
 
