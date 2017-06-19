@@ -9,6 +9,12 @@ previous_url: /Changelogs/iOS Runtime
 
 
 
+3.0.1
+=====
+
+## Bug Fixes
+- [Fix module resolution logic](https://github.com/NativeScript/ios-runtime/pull/765)
+
 3.0.0
 =====
 
