@@ -267,7 +267,7 @@ hashset.add(string3);
 var stringArray = utils.ad.collections.stringSetToStringArray(hashset);
 ```
 
-#### stringSetToStringArray method
+#### getDrawableId method
 
 Allows to get the drawable id from a given resource name
 
