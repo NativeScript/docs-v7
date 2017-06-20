@@ -73,7 +73,20 @@ During installation you may need to accept a User Account Control prompt to gran
 
 ### macOS
 
-If you’re on a Mac, copy and paste the script below into your terminal and press Enter:
+In all cases below, copy and paste the script below into your terminal and press Enter.
+
+If you’re on a Mac, before starting, update your homebrew:
+<pre class="add-copy-button"><code class="language-terminal">brew update</code></pre>
+
+If you do not have homebrew installed, you can [install it here](http://brew.sh/).
+
+This install requires ruby >2.2.2. Confirm your ruby version is high enough:
+
+<pre class="add-copy-button"><code class="language-terminal">ruby -v</code></pre>
+
+If your ruby is not high enough, [upgrade your version of ruby](https://www.ruby-lang.org/en/documentation/installation/), or [install rvm](https://rvm.io/) to run multiple versions of ruby.
+
+Run setup script:
 
 <pre class="add-copy-button"><code class="language-terminal">ruby -e "$(curl -fsSL https://www.nativescript.org/setup/mac)"</code></pre>
 
@@ -88,6 +101,11 @@ tns doctor
 ```
 
 If you see “No issues were detected” you’re good to go!
+
+## Troubleshooting and notes
+
+* The build scripts assume Python 2 for compiling templates. If you're using Python 3, you may need to use the iPhone 5 emulator instead of the iPhone 6 emulator.
+* If you are running this on external drive or a partition that is not case-insensitive, you may have issues.
 
 ## What’s Next
 
