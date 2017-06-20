@@ -19,7 +19,7 @@ NativeScript has a special class called [FormattedString](http://docs.nativescri
 </Label>
 ```
 
-This syntax differs from the FormattedString’s full syntax, shown below, which does not work in Angular apps:
+This syntax differs from the FormattedString’s full syntax used in NativeScript Core, shown below, which does not work in Angular apps:
 
 ```HTML
 <Label>
@@ -33,5 +33,3 @@ This syntax differs from the FormattedString’s full syntax, shown below, which
     </Label.formattedText>
 </Label>
 ```
-
-> Both syntaxes are supported in NativeScript applications that do not use Angular, so using the short one is a safe bet.
