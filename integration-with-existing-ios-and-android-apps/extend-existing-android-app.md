@@ -3,7 +3,7 @@ title: Extend existing Android app
 description: Learn how to extend your existing Android app with NativeScript
 position: 11
 slug: extend-existing-android-app
-previous: /extend-existing-android-app-with-ns-angular2, /angular/integration-with-existing-ios-and-android-apps/extend-existing-android-app-with-ns-angular2, /integration-with-existing-ios-and-android-apps/extend-existing-android-app-with-ns-angular2
+previous: /integration-with-existing-ios-and-android-apps/extend-existing-android-app-with-ns-angular2
 ---
 
 # Extend your existing Android app with NativeScript
@@ -110,13 +110,14 @@ This article will walk you through setting up an already existing Android Studio
 
 ---
 
-## **Sample app code:** [sample-extend-android-app](https://github.com/NativeScript/sample-extend-android-app)
+## **Sample app code:** 
+[NativeScript](https://github.com/NativeScript/)/[sample-extend-android-app](https://github.com/NativeScript/sample-extend-android-app)
 
 ## **Additional Notes:**
  - Arbitrary JavaScript files can be executed using the `Runtime.runScript()` method like so:
     - ```Java
       nsRuntimeInstance.runScript(new File(context.getFilesDir(),"app/view.js"))
-        ```
+      ```
 
 ## **Known Limitations**:
  - JavaScript metadata for all available Android classes is prebuilt and cannot be generated from within the Android Studio project. Rebuild the NativeScript project with the respective Android plugins if their classes are going to be consumed from within JavaScript/TypeScript/Angular.
