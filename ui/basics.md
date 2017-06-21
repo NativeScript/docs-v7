@@ -567,7 +567,7 @@ To set a binding for a property in the `XML`, you can use double curly brackets 
 This sample `main-page.xml` contains a simple label whose text will be populated when the page loads.
 
 ```XML
-<Page loaded="pageLoaded">
+<Page navigatingTo="navigatingTo">
 {%raw%}
   <Label text="{{ name }}" />
 {%endraw%}
@@ -577,18 +577,18 @@ This sample `main-page.xml` contains a simple label whose text will be populated
 This sample `main-page.js` or `main-page.ts` file sets a `bindingContext` for the page. The `bindingContext` contains the custom property and its value. When NativeScript parses `main-page.xml`, it will populate the custom name property with the value in the `bindingContext`.
 
 ```JavaScript
-function pageLoaded(args) {
+function navigatingTo(args) {
 	var page = args.object;
 
 	page.bindingContext = { name: "Some name" };
 }
-exports.pageLoaded = pageLoaded;
+exports.navigatingTo = navigatingTo;
 ```
 ```TypeScript
 import observable = require("data/observable");
 import pages = require("ui/page");
 
-export function pageLoaded(args: observable.EventData) {
+export function navigatingTo(args: observable.EventData) {
     var page = <pages.Page>args.object;
     page.bindingContext = { name: "Some name" };
 }
@@ -600,7 +600,7 @@ export function pageLoaded(args: observable.EventData) {
 This sample `main-page.xml` contains a button. The text for the button and the event that the button triggers are determined when the page loads from the matching `main-page.js` or `main-page.ts` file.
 
 ```XML
-<Page loaded="pageLoaded">
+<Page navigatingTo="navigatingTo">
 {%raw%}
   <Button text="{{ myProperty }}" tap="{{ myFunction }}" />
 {%endraw%}
@@ -610,7 +610,7 @@ This sample `main-page.xml` contains a button. The text for the button and the e
 This sample `main-page.js` or `main-page.ts` sets a `bindingContext` for the page. The `bindingContext` contains the custom property for the button text and its value and the custom function that will be triggered when the button is tapped. When NativeScript parses `main-page.xml`, it will populate the button text with the value in the `bindingContext` and will bind the custom function to the tap event.
 
 ```JavaScript
-function pageLoaded(args) {
+function navigatingTo(args) {
     var page = args.object;
     page.bindingContext = {
         myProperty: "Some text",
@@ -619,13 +619,13 @@ function pageLoaded(args) {
         }
     };
 }
-exports.pageLoaded = pageLoaded;
+exports.navigatingTo = navigatingTo;
 ```
 ```TypeScript
 import observable = require("data/observable");
 import pages = require("ui/page");
 
-export function pageLoaded(args: observable.EventData) {
+export function navigatingTo(args: observable.EventData) {
     var page = <pages.Page>args.object;
     page.bindingContext = {
         myProperty: "Some text",
@@ -647,7 +647,7 @@ NativeScript can create the items from a template when the `listView` loads insi
 In this sample `main-page.xml`, the ListView consists of labels and each item will be created from a template. The text of each label is the value of the name property of the corresponding item.
 
 ```XML
-<Page loaded="pageLoaded">
+<Page navigatingTo="navigatingTo">
 {%raw%}
   <ListView id="listView1" items="{{ myItems }}">
     <ListView.itemTemplate>
@@ -662,7 +662,7 @@ The sample `main-page.js` or `main-page.ts` populates the `bindingContext` for t
 
 ```JavaScript
 var view = require("ui/core/view");
-function pageLoaded(args) {
+function navigatingTo(args) {
     var page = args.object;
     page.bindingContext = { myItems: [{ name: "Name1" }, { name: "Name2" }, { name: "Name3" }] };
 
@@ -672,7 +672,7 @@ function pageLoaded(args) {
     // Will not work!
     var label1 = view.getViewById(page, "label1");
 }
-exports.pageLoaded = pageLoaded;
+exports.navigatingTo = navigatingTo;
 ```
 ```TypeScript
 import observable = require("data/observable");
@@ -681,7 +681,7 @@ import view = require("ui/core/view");
 import listView = require("ui/list-view");
 import label = require("ui/label");
 
-export function pageLoaded(args: observable.EventData) {
+export function navigatingTo(args: observable.EventData) {
     var page = <pages.Page>args.object;
     page.bindingContext = { myItems: [{ name: "Name1" }, { name: "Name2" }, { name: "Name3" }] };
 

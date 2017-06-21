@@ -219,7 +219,7 @@ Another common case in working with bindings is requesting access to the parent 
 
 ### Example 4: Creating ListView child items based on the itemTemplate.
 ``` XML
-<Page loaded="pageLoaded">
+<Page navigatingTo="navigatingTo">
 	<GridLayout rows="*" >{%raw%}
 		<ListView items="{{ items }}">
 			<!--Describing how the element will look like-->
@@ -240,13 +240,13 @@ var pageModule = require("ui/page");
 
 var viewModel = new observable.Observable();
 
-function pageLoaded(args) {
+function navigatingTo(args) {
     var page = args.object;
     viewModel.set("items", [1, 2, 3]);
     viewModel.set("test", "Test for parent binding!");
     page.bindingContext = viewModel;
 }
-exports.pageLoaded = pageLoaded;
+exports.navigatingTo = navigatingTo;
 ```
 ``` TypeScript
 import observable = require("data/observable");
@@ -254,7 +254,7 @@ import pageModule = require("ui/page");
 
 var viewModel = new observable.Observable();
 
-export function pageLoaded(args: observable.EventData) {
+export function navigatingTo(args: observable.EventData) {
     var page = <pageModule.Page>args.object;
     viewModel.set("items", [1, 2, 3]);
     viewModel.set("test", "Test for parent binding!");
