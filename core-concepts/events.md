@@ -279,32 +279,32 @@ var testButton = new buttonModule.Button();
 testButton.text = "Test";
 testButton.on(buttonModule.Button.tapEvent, function () {
   source.set("testProperty", "change" + counter);
-  });
+});
 
-  var source = new observableModule.Observable();
+var source = new observableModule.Observable();
 
-  var counter = 0;
-  var handlePropertyChange = function () {
-    counter++;
-    this.text = counter + "";
-  };
+var counter = 0;
+var handlePropertyChange = function () {
+  counter++;
+  this.text = counter + "";
+};
 
-  var weakEL = weakEventListenerModule.WeakEventListener;
-  var weakEventListenerOptions: weakEventListenerModule.WeakEventListenerOptions = {
-    // create a weak reference to the event listener object
-    targetWeakRef: new WeakRef(this),
-    // create a weak reference to the event sender object
-    sourceWeakRef: new WeakRef(this.source),
-    // set the name of the event
-    eventName: observable.Observable.propertyChangeEvent,
-    // set the event handler
-    handler: handlePropertyChange,
-    // (optional) set the context in which to execute the handler 
-    handlerContext: testButton,
-    // (optional) set a specialized property used for extra event recognition 
-    key: this.options.targetProperty
-  }
-  weakEL.addWeakEventListener(this.weakEventListenerOptions);
+var weakEL = weakEventListenerModule.WeakEventListener;
+var weakEventListenerOptions: weakEventListenerModule.WeakEventListenerOptions = {
+  // create a weak reference to the event listener object
+  targetWeakRef: new WeakRef(this),
+  // create a weak reference to the event sender object
+  sourceWeakRef: new WeakRef(this.source),
+  // set the name of the event
+  eventName: observable.Observable.propertyChangeEvent,
+  // set the event handler
+  handler: handlePropertyChange,
+  // (optional) set the context in which to execute the handler 
+  handlerContext: testButton,
+  // (optional) set a specialized property used for extra event recognition 
+  key: this.options.targetProperty
+}
+weakEL.addWeakEventListener(this.weakEventListenerOptions);
 ```
 ``` TypeScript
 import weakEventListenerModule = require("ui/core/weak-event-listener");
