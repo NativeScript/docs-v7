@@ -581,7 +581,7 @@ topmost.navigate(navigationEntry);
 
 ### Navigate back
 
-The topmost frame tracks the pages the user has visited in a navigation stack. To go back to a previous page, you need to use the **goBackMethod** of the topmost frame instance.
+The topmost frame tracks the pages the user has visited in a navigation stack. To go back to a previous page, you need to use the **goBack** method of the topmost frame instance.
 
 ``` JavaScript
 topmost.goBack();
