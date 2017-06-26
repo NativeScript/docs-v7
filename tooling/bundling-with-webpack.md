@@ -14,6 +14,7 @@ previous_url: /core-concepts/bundling-with-webpack
 1. [How nativescript-dev-webpack works](#how-nativescript-dev-webpack-works)
 1. [Bundling](#bundling)
 1. [Uglify.js](#uglifyjs)
+1. [V8 heap snapshot generation](#v8-heap-snapshot)
 1. [Angular and Ahead-of-Time Compilation](#angular-and-ahead-of-time-compilation)
 1. [Dynamic Imports](#dynamic-imports)
 1. [Advanced Usage](#advanced-usage)
@@ -131,6 +132,56 @@ or, if you are building for release:
 ```
 $ npm run build-ios-bundle --uglify -- --release --forDevice --teamId TEAM_ID
 ```
+
+### V8 Heap Snapshot
+
+The webpack configuration also includes the [`NativeScriptSnapshotPlugin`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/plugins/NativeScriptSnapshotPlugin.js). The plugin loads a single webpack bundle in an empty V8 context and after its execution, captures a snapshot of the produced V8 heap and saves it in a blob file. Next the blob file is included in the apk bundle and [is loaded by the Android Runtime](https://docs.nativescript.org/runtimes/android/advanced-topics/V8-heap-snapshots) on app initialization. This will obviate the need for loading, parsing and executing the script on app startup which can drastically decrease the starting time.
+
+To include the `NativeScriptSnapshotPlugin` in already existing webapck configuration regenerate your `webpack.config.js` or use the `update-ns-webpack` script to update it:
+
+```
+$ node ./node_modules/.bin/update-ns-webpack
+$ npm install
+```
+
+Once you have updated your `webpack.config.js` the feature is still disabled by default. You can enable it by providing the `--snapshot` flag to the bundling command:
+
+```
+$ npm run start-android-bundle --snapshot
+
+```
+
+Snapshot generation can be used in combination with uglify (`--uglify`) which will result in smaller heap size.
+
+Known limitations:
+* No iOS support. Heap snapshot is a V8 feature which is the engine used in the Android Runtime. Providing `--snapshot` flag on the iOS bundling commands will have no effect.
+* No Windows support. Providing `--snapshot` flag on the Android bundling command will have no effect on Windows machine.
+* Only one webpack bundle can be snapshotted. By default, this is the `vendor` bundle because in most of the cases it is the largest one.
+
+#### NativeScriptSnapshotPlugin configuration:
+
+The `NativeScriptSnapshotPlugin` by default comes with the following configuration:
+
+```
+if (env.snapshot) {
+    plugins.push(new nsWebpack.NativeScriptSnapshotPlugin({
+        chunk: "vendor",
+        projectRoot: __dirname,
+        webpackConfig: config,
+        targetArchs: ["arm", "arm64", "ia32"],
+        tnsJavaClassesOptions: { packages: ["tns-core-modules" ] },
+        useLibs: false
+    }));
+}
+```
+
+* `chunk` - the name of the chunk to be snapshotted
+* `projectRoot` - path to the app root folder
+* `webpackConfig` - Webpack configurations object. The snapshot generation modifies the webpack config object to ensure that the specified bundle will be snapshotted successfully
+* `targetArchs` - Since the serialization format of the V8 heap is architecture-specific we need a different blob file for each V8 library target architecture. The Android Runtime library contains 3 architecture slices - `ia32` (for emulators), `arm` and `arm64` (for devices). However, [if not explicitly specified](https://github.com/NativeScript/android-runtime/issues/614), the `arm` slice will be used even on `arm64` devices. In other words, generating heap snapshot for all supported architectures (`arm`, `arm64`, `ia32`) will guarantee that the snapshotted heap will be available on every device/emulator. However, when building for release you can leave only `arm` (and `arm64` in case you have [explicitly enabled `arm64` support](https://github.com/NativeScript/android-runtime/issues/614)) in the `targetArchs` array which will decrease the size of the produced APK file.
+* `useLibs` - if `true`, generated snapshots are included in the APK as native Android libraries instead of blob files which eliminates the need for manually changing `targetArchs` when building for release because the gradle build will automatically exclude the unnecessary architecture slices of all libraries. Additionally, if ABI split is enabled, it will apply on the snapshot libraries as well, resulting in several APKs, each of which containing a snapshot for its own target architecture only.
+However, using libraries instead of blobs does not affect the startup time in any way. By default `useLibs` is set to `false` because it requires having [Android NDK, Revision 12b](https://developer.android.com/ndk/downloads/older_releases.html) installed locally on the developer machine and setting `androidNdkPath` configuration. 
+* `androidNdkPath` - path to a local copy of [Android NDK, Revision 12b](https://developer.android.com/ndk/downloads/older_releases.html). Used only when `useLibs` is set to `true`. If not specified the plugin will look for `ANDROID_NDK_HOME` environment variable.
 
 ### Angular and Ahead-of-Time Compilation
 
