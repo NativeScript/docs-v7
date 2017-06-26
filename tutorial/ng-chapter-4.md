@@ -373,12 +373,9 @@ export class ListComponent implements OnInit {
 
 <div class="exercise-end"></div>
 
-If you load the list page with the account you created earlier you’ll see a blank page, as your account is newly created, and therefore your grocery list is empty. If you want to see some data to verify your changes worked, try logging in with the credentials "user@nativescript.org" and "password". You should see data that looks something like this:
+If you load the list page with the account you created earlier you’ll see a blank page, as your account is newly created, and therefore your grocery list is empty.
 
-![Grocery data on Android](../img/cli-getting-started/angular/chapter4/android/4.png)
-![Grocery data on iOS](../img/cli-getting-started/angular/chapter4/ios/4.png)
-
-At this point you have a list of data associated with each account, but a grocery list isn’t very useful if you can’t add new groceries to the list. Let’s look at how to do that next.
+To really test out these changes you’ll need to allow users to add groceries to their lists, so let’s look at how to do that next.
 
 ## 4.4: GridLayout
 

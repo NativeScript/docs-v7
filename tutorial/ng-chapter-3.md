@@ -539,7 +539,7 @@ If all went well, you should see a confirmation dialog that looks like this:
 > ``` TypeScript
 constructor(private userService: UserService) {
   this.user = new User();
-  this.user.email = "user@nativescript.org";
+  this.user.email = "my.test.account@nativescript.org";
   this.user.password = "password";
 }
 ```

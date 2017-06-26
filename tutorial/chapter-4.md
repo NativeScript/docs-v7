@@ -383,14 +383,9 @@ viewModel.empty = function() {
 
 The code to make an HTTP call should look familiar, as it leverages the same fetch module you used in the previous section. Here, the fetch module's first `then()` handler checks for HTTP errors, the second `then()` handler converts the data from the response into JSON format, and the third handler pushes each grocery item from the response into the ObservableArray.
 
-If you load the app and log in with email address "user@nativescript.org" and password "password", you should see a list of groceries that looks something like this:
-
-![list 2](/img/cli-getting-started/nativescript/chapter4/ios/3.png)
-![list 2](/img/cli-getting-started/nativescript/chapter4/android/3.png)
-
 The cool thing here is the code you didn't have to write. Notice that there is no need to refresh the UI, or manually access the ListView UI component—all the view model does is push the JSON response to the ObservableArray, and the UI takes care of itself.
 
-Let's see how you can build on top of this and enable users to add to their grocery list directly from the app.
+If you load the list page with the account you created earlier you’ll see a blank page, as your account is newly created, and therefore your grocery list is empty. To really test out these changes you’ll need to allow users to add groceries to their lists, so let’s look at how to do that next.
 
 ## 4.5: GridLayout
 
