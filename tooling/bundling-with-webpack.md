@@ -182,6 +182,7 @@ if (env.snapshot) {
 * `useLibs` - if `true`, generated snapshots are included in the APK as native Android libraries instead of blob files which has the following benefits:
    * No need to manually change `targetArchs` when building for release because the gradle build will automatically exclude the unnecessary architecture slices of all APK libraries.
    * ABI split support for heap snapshots. In other words, if ABI split is enabled it will apply on the snapshot libraries as well, resulting in several APKs, each of which containing a snapshot for its own target architecture only.
+
     By default `useLibs` is set to `false` because it requires having [Android NDK, Revision 12b](https://developer.android.com/ndk/downloads/older_releases.html) insalled locally on the developer machine and setting `androidNdkPath` configuration.
 * `androidNdkPath` - path to a local copy of [Android NDK, Revision 12b](https://developer.android.com/ndk/downloads/older_releases.html). Used only when `useLibs` is set to `true`. If not specified the plugin will look for `ANDROID_NDK_HOME` environment variable.
 
