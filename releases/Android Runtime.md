@@ -7,6 +7,12 @@ slug: android-changelog
 previous_url: /Changelogs/Android Runtime
 ---
 
+3.1.1
+==
+
+## Bug Fixes
+ - [APKS with ABI split crash on start up (#785)](https://github.com/NativeScript/android-runtime/issues/785)
+
 3.1.0
 ==
 

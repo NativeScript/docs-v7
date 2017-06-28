@@ -1,7 +1,7 @@
 ---
-title: Building Plugins That Use CocoaPods
+title: CocoaPods
 description: Wrap a Cocoapod as a plug in.
-position: 50
+position: 3
 slug: cocoapods
 ---
 
