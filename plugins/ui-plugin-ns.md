@@ -16,7 +16,7 @@ First things first - you start off from a regular plugin. You can use the [Nativ
 
 ## Add UI bits
 
-Let's say you want to build a simple meme generator component with 3 properties, which you can use like:
+Let's say you want to build a simple meme generator component with three properties, which you can use like:
 
 ```
     <ui:Meme imageSource="~/images/nativescript.png" topText="ROCK" bottomText="ROLL" />
@@ -24,9 +24,9 @@ Let's say you want to build a simple meme generator component with 3 properties,
 
 ...and when used in an app it looks like:
 
-http://jmp.sh/7VQqWde
+![](../img/plugins/ui-plugin-ns-preview.png)
 
-You need 2 files in that can do the job:
+You need two files in that can do the job:
 - **meme.ts** (properties, logic, loads the UI)
 - **meme.xml** (UI, bindings)
 
