@@ -8,7 +8,7 @@ environment: nativescript
 
 # Building UI Plugins using Composite Components
 
-When writing a plugin that shows some UI, you can take different paths. One of the easiest of them is to use {N} means to biuld the UI, i.e. no calls to native APIs. Thus you can even sometimes avoid using platform specific files (like \*.ios.ts, \*.android.ts ...).
+When writing a plugin that shows some UI, you can take different paths. One of the easiest of them is to use {N} means to build the UI, i.e. no calls to native APIs. Thus you can even sometimes avoid using platform-specific files (like \*.ios.ts, \*.android.ts ...).
 
 ## Bootstrap Your Plugin 
 
