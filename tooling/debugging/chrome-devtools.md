@@ -130,39 +130,40 @@ Writing plugins is a great way to give back to the community by making applicati
 -	Elements tab (UI plugins) - The following content concerns only plugin authors who wrap and expose native Android/iOS views in their work. 
     If you are a plugin author, or plan to be one, you can either:
 
-        - A: start off with a nativescript plugin template, which provides you with an already well-established structure to wrap native UI views in. To get started head over to the official seed's repository and follow the README instructions - https://github.com/NativeScript/nativescript-plugin-seed
+    - A: start off with a nativescript plugin template, which provides you with an already well-established structure to wrap native UI views in. To get started head over to the official seed's repository and follow the README instructions - https://github.com/NativeScript/nativescript-plugin-seed
 
-        - B: extend the `tns-core-modules`'s [View](http://docs.nativescript.org/api-reference/modules/_ui_core_view_.html) base class. Detailed information and tutorial on doing that coming soon!
+    - B: extend the `tns-core-modules`'s [View](http://docs.nativescript.org/api-reference/modules/_ui_core_view_.html) base class. Detailed information and tutorial on doing that coming soon!
 
 
 -	Network requests in plugins - The following content concerns only plugin authors who wrap and expose native **Android** (Network agent in DevTools not yet supported in the iOS runtime) http functionalities.
-    To make your http functionality debuggable, there are callbacks you need to call at certain times of the lifecycle of the network request, following a [specific protocol](https://chromedevtools.github.io/devtools-protocol/tot/Network/). For your convenience we've exposed callbacks to send information to the Network agent.
-        - Immediatelly before making the request:
-            
-            Check if the `global.__inspector` object is available, and whether the DevTools are connected:
-            ```javascript
-                if (global.__inspector && global.__inspector.isConnected) { .. }
-            ```
-            Build a [RequestData-compliant](https://github.com/NativeScript/NativeScript/blob/8f621a0df0f5c5660ed784944470e47bd6133825/tns-core-modules/debugger/debugger.ts#L56) object, as declared in the `debugger module`. `RequestData` contains the minimum subset of properties needed to display request entries in the Network panel.
-            Finally call to the runtime-exposed callback:
-            ```javascript
-                global.__inspector.requestWillBeSent(requestData);
-            ```
-        - When a response is received:
+    To make your http functionality debuggable, there are callbacks you need to call at certain times of the lifecycle of the network request, following a [specific protocol](https://chromedevtools.github.io/devtools-protocol/tot/Network/). For your convenience we've exposed callbacks and [TypeScript interfaces](https://github.com/NativeScript/NativeScript/blob/8f621a0df0f5c5660ed784944470e47bd6133825/tns-core-modules/debugger/debugger.ts#L48) to facilitate send information to the Network agent.
 
-            Check if the `global.__inspector` object is available, and whether the DevTools are connected, as shown above.
-            Build a [ResponseData-compliant](https://github.com/NativeScript/NativeScript/blob/8f621a0df0f5c5660ed784944470e47bd6133825/tns-core-modules/debugger/debugger.ts#L74) object, as declared in the `debugger module`. `ResponseData` contains the minimum subset of properties needed to display the response for a completed request.
+    - Immediatelly before making the request:
+        
+        Check if the `global.__inspector` object is available, and whether the DevTools are connected:
+        ```JavaScript
+        if (global.__inspector && global.__inspector.isConnected) { .. }
+        ```
+        Build a [RequestData-compliant](https://github.com/NativeScript/NativeScript/blob/8f621a0df0f5c5660ed784944470e47bd6133825/tns-core-modules/debugger/debugger.ts#L56) object, as declared in the `debugger module`. `RequestData` contains the minimum subset of properties needed to display request entries in the Network panel.
+        Finally call to the runtime-exposed callback:
+        ```JavaScript
+        global.__inspector.requestWillBeSent(requestData);
+        ```
+    - When a response is received:
 
-            Build a [LoadingFinishedData-compliant](https://github.com/NativeScript/NativeScript/blob/8f621a0df0f5c5660ed784944470e47bd6133825/tns-core-modules/debugger/debugger.ts#L87) object, as declared in the `debugger module`. The object notifies the Network agent that a request has completed, as well as the time spent.
+        Check if the `global.__inspector` object is available, and whether the DevTools are connected, as shown above.
+        Build a [ResponseData-compliant](https://github.com/NativeScript/NativeScript/blob/8f621a0df0f5c5660ed784944470e47bd6133825/tns-core-modules/debugger/debugger.ts#L74) object, as declared in the `debugger module`. `ResponseData` contains the minimum subset of properties needed to display the response for a completed request.
 
-            Build a [SuccessfulRequestData-compliant](https://github.com/NativeScript/NativeScript/blob/8f621a0df0f5c5660ed784944470e47bd6133825/tns-core-modules/debugger/debugger.ts#L81) object, as declared in the `debugger module`. The object contains the response data, in a string format, the Id of the original request the response data corresponds to, and information whether the content should be base64-encoded, or not. 
+        Build a [LoadingFinishedData-compliant](https://github.com/NativeScript/NativeScript/blob/8f621a0df0f5c5660ed784944470e47bd6133825/tns-core-modules/debugger/debugger.ts#L87) object, as declared in the `debugger module`. The object notifies the Network agent that a request has completed, as well as the time spent.
 
-            Finally call the following runtime-exposed callbacks:
-            ```javascript
-                global.__inspector.responseReceived(responseData);
-                global.__inspector.loadingFinished({ requestId: requestIdStr, timestamp: getTimeStamp() });
-                global.__inspector.dataForRequestId(successfulRequestData);
-            ``` 
+        Build a [SuccessfulRequestData-compliant](https://github.com/NativeScript/NativeScript/blob/8f621a0df0f5c5660ed784944470e47bd6133825/tns-core-modules/debugger/debugger.ts#L81) object, as declared in the `debugger module`. The object contains the response data, in a string format, the Id of the original request the response data corresponds to, and information whether the content should be base64-encoded, or not. 
+
+        Finally call the following runtime-exposed callbacks:
+        ```JavaScript
+        global.__inspector.responseReceived(responseData);
+        global.__inspector.loadingFinished({ requestId: requestIdStr, timestamp: getTimeStamp() });
+        global.__inspector.dataForRequestId(successfulRequestData);
+        ``` 
 
 -	Debugging typescript-transpiled plugins - In order to debug your TypeScript plugin based on the original sources, and not the transpiled JS, it is enough to edit the respective `tsconfig.json` to output sources with inlined maps. That will ensure that the TypeScript sources will also show in the Sources pane, and allow you to debug it. Don't forget to transpile the sources without source maps prior to publishing the plugin.
 
