@@ -9,12 +9,32 @@ To debug on iOS: `tns debug ios --chrome`
 
 ## Table of content:
 -	[Debugger](#debugger)
+    - Pause code with breakpoints
+    - Inspect local and global properties, and variables
+    - Watch the values of custom JavaScript expressions
+    - View the current call stack
 -   [Console](#console)
+    - Writing to the console
+    - Autocompleting commands and expressions
+    - Measure execution times
+    - Evaluate expressions
 -   [Resources](#resources)
 -   [Network](#network)
+    - View a log of requests
+    - View a preview of a response body
+    - View a response body
+    - View HTTP headers
+    - View qury string parameters
 -   [Elements](#elements)
+    - Inspect the view tree
+    - View node modifications
+    - Live edit attributes
+    - Delete a child node
 -   [Feature table](#feature-table)
 -   [Plugin author's guide](#plugin-authors-guide)
+    - Elements panel (UI plugins)
+    - Network requests in plugins
+    - Debugging typescript-transpiled plugins
 -----
 
 ## Debugger
@@ -127,7 +147,7 @@ Supported features as of NativeScript version **3.1.0**
 
 ## Plugin author’s guide
 Writing plugins is a great way to give back to the community by making application development ever easier by abstracting complex logic through a simple interface. What is even better is when your plugin can integrate *almost* seamlessly with the expanding arsenal of debugging tools provided by the platform. Following are the optional requirements and interfaces your plugin should comply to, to have your plugin's components/data shown in the respective DevTools panels.
--	Elements tab (UI plugins) - The following content concerns only plugin authors who wrap and expose native Android/iOS views in their work. 
+-	Elements panel (UI plugins) - The following content concerns only plugin authors who wrap and expose native Android/iOS views in their work. 
     If you are a plugin author, or plan to be one, you can either:
 
     - A: start off with a nativescript plugin template, which provides you with an already well-established structure to wrap native UI views in. To get started head over to the official seed's repository and follow the README instructions - https://github.com/NativeScript/nativescript-plugin-seed
