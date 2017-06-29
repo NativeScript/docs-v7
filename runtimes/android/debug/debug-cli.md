@@ -63,7 +63,7 @@ Detaching the debugger is as simple as closing the chrome-devtools tab.
 > Debugging sources different than JavaScript (TypeScript, CoffeeScript, etc.) is only possible when source maps are inlined by the transpiler.
 
 # See Also
-* [Chrome Developer Tools](https://developer.chrome.com/devtools/index).
+* [Chrome DevTools reference](https://developer.chrome.com/devtools/index).
 * [Chrome DevTools in NativeScript - Overview]({%chrome-devtools%})
 * [JavaScript debugging](https://developer.chrome.com/devtools/docs/javascript-debugging).
 * [debugger; statement](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/debugger)
