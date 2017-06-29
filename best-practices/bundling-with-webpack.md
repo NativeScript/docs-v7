@@ -161,7 +161,7 @@ Once the release build is ready, you have two options:
 $ npm run publish-ios-bundle --  --teamId TEAM_ID APPLE_ID APPLE_PASSWORD
 ```
 
->If there are multiple mobile provisioning profiles for the selected development team available on the machine, it is not guaranteed that Xcode will select the deisred one and publishing using the command line will be successfull. Therefore, in such cases we recommend manually configuring and uploading the project from Xcode.
+>If there are multiple mobile provisioning profiles for the selected development team available on the machine, it is not guaranteed that Xcode will select the desired one and publishing using the command line will be successful. Therefore, in such cases we recommend manually configuring and uploading the project from Xcode.
 
 ### Angular and Ahead-of-Time Compilation
 
