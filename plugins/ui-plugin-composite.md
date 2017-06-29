@@ -1,18 +1,18 @@
 ---
-title: Building Simple UI Plugin using {N} Core Modules
+title: Building UI Plugins using Composite Components
 description: 
 position: 10
-slug: ui-plugin-ns
+slug: building-ui-plugins-composite-components
 environment: nativescript
 ---
 
-# Building Simple UI Plugin using {N} Core Modules
+# Building UI Plugins using Composite Components
 
 When writing a plugin that shows some UI, you can take different paths. One of the easiest of them is to use {N} means to biuld the UI, i.e. no calls to native APIs. Thus you can even sometimes avoid using platform specific files (like \*.ios.ts, \*.android.ts ...).
 
 ## Bootstrap Your Plugin 
 
-First things first - you start off from a regular plugin. You can use the [NativeScript plugin seed repo](https://github.com/NativeScript/nativescript-plugin-seed).
+First things first - you start off from a regular plugin. You can refer the [Building Plugins article](/plugins/building-plugins.md) for reference.
 
 ## Add UI bits
 
@@ -27,8 +27,8 @@ Let's say you want to build a simple meme generator component with three propert
 ![](../img/plugins/ui-plugin-ns-preview.png)
 
 You need two files in that can do the job:
-- **meme.ts** (properties, logic, loads the UI)
-- **meme.xml** (UI, bindings)
+- **meme.ts** (contains properties, logic, loads the UI)
+- **meme.xml** (contains the UI and bindings)
 
 In **meme.ts**, you need to declare a class with the name of the UI element that will be used in the app:
 
@@ -56,6 +56,18 @@ As you see, in the constructor, we load the UI from the **meme.xml** and set its
     <Label row="2" text="{{ bottomText }}" fontSize="64" textWrap="true" 
         horizontalAlignment="center" verticalAlignment="bottom"></Label>
 </GridLayout>
+```
+The properties themselves are declared and registered in the .ts like:
+```
+export const topTextProperty = new Property<Meme, string>({ name: "topText", defaultValue: undefined });
+export const bottomTextProperty = new Property<Meme, string>({ name: "bottomText", defaultValue: undefined });
+export const imageSourceProperty = new Property<Meme, string>({ name: "imageSource", defaultValue: undefined });
+
+...
+
+imageSourceProperty.register(Meme);
+topTextProperty.register(Meme);
+bottomTextProperty.register(Meme);
 ```
 
 For more details and the full source code of the described meme sample, check the [NativeScript ui-plugin sample repo](https://github.com/NativeScript/nativescript-ui-plugin). 
