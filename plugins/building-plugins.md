@@ -85,7 +85,7 @@ The [NativeScript plugin seed](https://github.com/NativeScript/nativescript-plug
 
 Let’s look at how the plugin seed works, and in the process build a simple plugin that can retrieve an app’s version number on both Android and iOS.
 
-> **NOTE**: Although we recommend using the NativeScript plugin seed, you do have the ability to build your NativeScript plugin from scratch. If you’re interested in creating your own plugin development workflow, refer to the [NativeScript plugin reference](/plugins/plugin-reference/) for details on exactly how NativeScript plugins are structured.
+> **NOTE**: Although we recommend using the NativeScript plugin seed, you do have the ability to build your NativeScript plugin from scratch. If you’re interested in creating your own plugin development workflow, refer to the [NativeScript plugin reference](/plugins/plugin-reference) for details on exactly how NativeScript plugins are structured.
 
 ### Step 1: Start Your Plugin
 

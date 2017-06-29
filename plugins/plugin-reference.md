@@ -4,6 +4,8 @@ description: A collection of reference material for NativeScript plugin authors
 position: 60
 ---
 
+# Plugin Reference
+
 The following article is a reference for advanced NativeScript plugin creation and configuration.
 
 * [What Are NativeScript Plugins](#what-are-nativescript-plugins)

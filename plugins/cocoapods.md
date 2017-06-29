@@ -1,11 +1,11 @@
 ---
-title: CocoaPods
-description: Wrap a Cocoapod as a plug in.
-position: 3
+title: Building Plugins That Use CocoaPods
+description: How to build NativeScript plugins that use iOS CocoaPods
+position: 50
 slug: cocoapods
 ---
 
-# Using CocoaPods
+# Building Plugins That Use CocoaPods
 
 When you develop for iOS, you can quickly add third-party libraries to your NativeScript projects via the [CocoaPods](https://cocoapods.org/) dependency manager.
 
