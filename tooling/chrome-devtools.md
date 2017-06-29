@@ -1,4 +1,11 @@
-# Chrome DevTools debugging
+---
+title: Chrome DevTools Debugging
+description: Debugging {N} applications using Chrome DevTools.
+position: 21
+slug: chrome-devtools
+---
+
+# Chrome DevTools Debugging
 
 The following article is an overview of the features supported in Chrome DevTools when debugging NativeScript applications.
 
@@ -110,7 +117,7 @@ DevTools shows **all*** network requests in the Network panel while the DevTools
 
 - [View qury string parameters](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#query-string) - To view the query string parameters of a URL in a human-readable format: Open the Headers tab for the request you're interested in. Go to the Query String Parameters section.
 
- **Note:** &ast;This is currently available for the built-in [http module](http://uatdocs.nativescript.org/cookbook/http). For third-party modules that do network requests, additional code must be implemented to populate the Network Tab. See [Plugin author's guide](#plugin-authors-guide) for details on how to do it for your plugin.
+ **Note:** *This is currently available for the built-in [http module]({%ns_cookbook http%}). For third-party modules that do network requests, additional code must be implemented to populate the Network Tab. See [Plugin author's guide](#plugin-authors-guide) for details on how to do it for your plugin.
 
 ## Elements
 The Elements panel in DevTools displays information about the current view tree, the attributes of each individual child, and its computed styles.
@@ -192,5 +199,5 @@ Writing plugins is a great way to give back to the community by making applicati
  
 
 ## See also
- - [Building plugins](http://docs.nativescript.org/plugins/building-plugins)
- - [Debugging NativeScript applications](http://docs.nativescript.org/tooling/debugging)
+ - [Building plugins]({%building-plugins%})
+ - [Debugging NativeScript applications]({%debugging%})
