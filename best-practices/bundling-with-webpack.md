@@ -14,6 +14,7 @@ previous_url: /core-concepts/bundling-with-webpack
 1. [How nativescript-dev-webpack works](#how-nativescript-dev-webpack-works)
 1. [Usage](#usage)
     1. [NPM scripts](#npm-scripts)
+    1. [Publishing Application](#publishing-application)
     1. [Angular and Ahead-of-Time Compilation](#angular-and-ahead-of-time-compilation)
     1. [Bundling Extra Assets](#bundling-extra-assets)
 1. [Advanced Optimizations](#advanced-optimizations)
@@ -56,6 +57,7 @@ $ npm install --save-dev nativescript-dev-webpack
 ```
 
 The plugin adds a few dependencies to the project. Don't forget to install them:
+
 ```
 $ npm install
 ```
@@ -69,14 +71,14 @@ Installing the plugin adds several updates to your project:
 - Application source files configuring bundle chunks:
     - `app/vendor`. Defines vendor modules which get bundled separately from application code.
     - `app/vendor-platform.android` and `app/vendor-platform.ios`. Define platform-specific vendor modules.
-- Several helper scripts in your project's `package.json` files that let you build a bundled version: `build-<platform>-bundle` and `start-<platform>-bundle`.
+- Several helper scripts in your project's `package.json` files that let you build a bundled version: `build-<platform>-bundle`, `start-<platform>-bundle` and others.
 
 
 ## Usage
 
 ### NPM scripts
 
-`nativescript-dev-webpack` changes the usual workflow of working with your project. Instead of using `tns` CLI commands, we will use `npm run` commands to invoke scripts that prepare the release build.
+`nativescript-dev-webpack` changes the usual workflow of working with your project. Instead of using `tns` CLI commands, we will use `npm run` commands to invoke scripts that prepare the bundled version.
 
 Given that you have your project running in its non-bundled state, you can test the bundled version with the following command(s):
 
@@ -109,12 +111,15 @@ Note that the `build-<platform>-bundle` commands will ultimately call `tns build
 ```
 $ npm run build-ios-bundle -- --release --forDevice --teamId TEAM_ID
 ```
+
 The corresponding command for android looks like:
+
 ```
 $ npm run build-android-bundle -- --release --keyStorePath ~/path/to/keystore --keyStorePassword your-pass --keyStoreAlias your-alias --keyStoreAliasPassword your-alias-pass
 ```
 
 You can also use the same method to provide environmental variables to the webpack build:
+
 ```
 $ npm run build-android-bundle -- --env.development --env.property=value
 ```
@@ -130,6 +135,32 @@ module.exports = env => {
     ...
 }
 ```
+
+### Publishing Application
+
+For android it will be enough to build in release a bundled version of the application with the script mentioned before:
+
+```
+$ npm run build-android-bundle -- --release --keyStorePath ~/path/to/keystore --keyStorePassword your-pass --keyStoreAlias your-alias --keyStoreAliasPassword your-alias-pass
+```
+
+and then proceed further with uploading the output `.apk` file in `<project>/platforms/android/build/outputs/apk` directory to Google Play store.
+
+For iOS it will be best to build in release a bundled version of the application with the script mentined before:
+
+```
+$ npm run build-ios-bundle -- --release --forDevice --teamId TEAM_ID
+```
+
+and then proceed with Xcode by opening the `<project/platforms/ios/<project>.xcodeproj>` (or `<project/platforms/ios/<project>.xcworkspace>` if present) to configure project signing and upload archive to App Store.
+
+In a command line way, you could specify your development team in `<project>/app/App_Resources/iOS/build.xcconfig` and execute the following script:
+
+```
+$ npm run publish-ios-bundle --  --teamId TEAM_ID APPLE_ID APPLE_PASSWORD
+```
+
+Please, have in mind that if there are multiple mobile provisioning profiles for the selected development team available on the machine, it is not guaranteed that Xcode will select the proper one and the publish will be successfull. Therefore, we recommend manually configuring and uploading the project from Xcode.
 
 ### Angular and Ahead-of-Time Compilation
 
