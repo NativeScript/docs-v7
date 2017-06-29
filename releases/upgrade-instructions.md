@@ -1,7 +1,7 @@
 ---
-title: Upgrade instructions
-description: Upgrade instructions
-position: 2
+title: Upgrade Instructions
+description: Upgrade Instructions
+position: 3
 slug: upgrade-instructions
 previous_url: /upgrade-instructions
 ---
