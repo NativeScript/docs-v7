@@ -138,29 +138,30 @@ module.exports = env => {
 
 ### Publishing Application
 
-For android it will be enough to build in release a bundled version of the application with the script mentioned before:
+A bundled version of the application for Android can be built in release with this script:
 
 ```
 $ npm run build-android-bundle -- --release --keyStorePath ~/path/to/keystore --keyStorePassword your-pass --keyStoreAlias your-alias --keyStoreAliasPassword your-alias-pass
 ```
 
-and then proceed further with uploading the output `.apk` file in `<project>/platforms/android/build/outputs/apk` directory to Google Play store.
+Once this is finished, proceed with uploading the output .apk file in the <project>/platforms/android/build/outputs/apk directory on Google Play store.
 
-For iOS it will be best to build in release a bundled version of the application with the script mentined before:
+You can build a bundled version of the application for iOS in release with this script:
 
 ```
 $ npm run build-ios-bundle -- --release --forDevice --teamId TEAM_ID
 ```
 
-and then proceed with Xcode by opening the `<project/platforms/ios/<project>.xcodeproj>` (or `<project/platforms/ios/<project>.xcworkspace>` if present) to configure project signing and upload archive to App Store.
+Once the release build is ready, you have two options:
 
-In a command line way, you could specify your development team in `<project>/app/App_Resources/iOS/build.xcconfig` and execute the following script:
+* Open `<project/platforms/ios/<project>.xcodeproj>` (or `<project/platforms/ios/<project>.xcworkspace>` if present) in Xcode to configure project signing and upload the archive to App Store. This is the recommended option.
+* Specify your development team in `<project>/app/App_Resources/iOS/build.xcconfig` from the command line and execute 
 
 ```
 $ npm run publish-ios-bundle --  --teamId TEAM_ID APPLE_ID APPLE_PASSWORD
 ```
 
-Please, have in mind that if there are multiple mobile provisioning profiles for the selected development team available on the machine, it is not guaranteed that Xcode will select the proper one and the publish will be successfull. Therefore, we recommend manually configuring and uploading the project from Xcode.
+>If there are multiple mobile provisioning profiles for the selected development team available on the machine, it is not guaranteed that Xcode will select the deisred one and publishing using the command line will be successfull. Therefore, in such cases we recommend manually configuring and uploading the project from Xcode.
 
 ### Angular and Ahead-of-Time Compilation
 
