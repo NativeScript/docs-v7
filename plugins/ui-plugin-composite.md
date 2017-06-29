@@ -26,9 +26,9 @@ Let's say you want to build a simple meme generator component with three propert
 
 ![](../img/plugins/ui-plugin-ns-preview.png)
 
-You need two files in that can do the job:
-- **meme.ts** (contains properties, logic, loads the UI)
-- **meme.xml** (contains the UI and bindings)
+You can implement this by creating two files:
+- **meme.ts**: Contains properties, the implementation logic, and loads the UI.
+- **meme.xml**: Contains the UI and data bindings.
 
 In **meme.ts**, you need to declare a class with the name of the UI element that will be used in the app:
 
@@ -72,6 +72,6 @@ bottomTextProperty.register(Meme);
 
 For more details and the full source code of the described meme sample, check the [NativeScript ui-plugin sample repo](https://github.com/NativeScript/nativescript-ui-plugin). 
 
-## Make your plugin Angular compatible
+## Make Your Plugin Angular Compatible
 
-Having your UI plugin developed successfully you could easily make it Angular compatible following the steps described in [Supporting Angular in UI Plugins article](/plugins/angular-plugin.md).
+Having your UI plugin developed successfully you could easily make it Angular compatible following the steps described in [Supporting Angular in UI Plugins article]({%slug supporting-angular-in-ui-plugins%}).
