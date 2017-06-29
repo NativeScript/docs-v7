@@ -74,4 +74,4 @@ For more details and the full source code of the described meme sample, check th
 
 ## Make your plugin Angular compatible
 
-Having your UI plugin developed successfully you could easily make it Angular compatible following the steps described in [Supporting Angular in UI Plugins article](https://github.com/NativeScript/docs/blob/tachev/angular-compatible-plugin/plugins/angular-plugin.md).
+Having your UI plugin developed successfully you could easily make it Angular compatible following the steps described in [Supporting Angular in UI Plugins article](/plugins/angular-plugin.md).
