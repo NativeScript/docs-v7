@@ -1,7 +1,7 @@
 ---
 title: Breaking Changes
 description: A list of breaking changes across the releases of the NativeScript framework and its tools.
-position: 1
+position: 2
 slug: breaking-changes
 previous_url: /breaking-changes
 ---
@@ -114,7 +114,7 @@ Starting with version 0.10, the inner app folder has been removed. Newly created
 
 #See Also
 
-* [Cross-platform Modules Changelog]({%slug modules-changelog %})
-* [Command-line Interface Changelog]({% slug cli-changelog %})
-* [iOS Runtime Changelog]({% slug ios-changelog %})
-* [Android Runtime Changelog]({% slug android-changelog %})
+* [Changes]({%slug changes %})
+* [Upgrade Instructions]({%slug upgrade-instructions %})
+
+
