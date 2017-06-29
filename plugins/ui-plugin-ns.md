@@ -6,12 +6,16 @@ slug: ui-plugin-ns
 environment: nativescript
 ---
 
-# Creating a plugin 
+# Building Simple UI Plugin using {N} Core Modules
+
+When writing a plugin that shows some UI, you can take different paths. One of the easiest of them is to use {N} means to biuld the UI, i.e. no calls to native APIs. Thus you can even sometimes avoid using platform specific files (like \*.ios.ts, \*.android.ts ...).
+
+## Bootstrap Your Plugin 
+
 First things first - you start off from a regular plugin. You can use the [NativeScript plugin seed repo](https://github.com/NativeScript/nativescript-plugin-seed).
 
-# Add UI bits
+## Add UI bits
 
-When writing a plugin that shows some UI, you can take different paths. One of the easiest of them is to use {N} means to biuld the UI, i.e. no calls to native APIs. Thus you can sometimes avoid platform specific files (like \*.ios.ts, \*.android.ts ...). 
 Let's say you want to build a simple meme generator component with 3 properties, which you can use like:
 
 ```
@@ -22,7 +26,7 @@ Let's say you want to build a simple meme generator component with 3 properties,
 
 http://jmp.sh/7VQqWde
 
-You need 2 files in that do the job:
+You need 2 files in that can do the job:
 - **meme.ts** (properties, logic, loads the UI)
 - **meme.xml** (UI, bindings)
 
@@ -56,6 +60,6 @@ As you see, in the constructor, we load the UI from the **meme.xml** and set its
 
 For more details and the full source code of the described meme sample, check the [NativeScript ui-plugin sample repo](https://github.com/NativeScript/nativescript-ui-plugin). 
 
-##  Angular Wrapper
+## Make your plugin Angular compatible
 
 Having your UI plugin developed successfully you could easily make it Angular compatible following the steps described in [Supporting Angular in UI Plugins article](https://github.com/NativeScript/docs/blob/tachev/angular-compatible-plugin/plugins/angular-plugin.md).
