@@ -175,5 +175,5 @@ Writing plugins is a great way to give back to the community by making applicati
  
 
 ## See also
- - [Building plugins]({%building-plugins%})
- - [Debugging NativeScript applications]({%debugging%})
+ - [Building plugins]({%slug building-plugins%})
+ - [Debugging NativeScript applications]({%slug debugging%})
