@@ -3,7 +3,7 @@ title: Property System
 description: NativeScript Property System.
 position: 80
 slug: properties
-publish: false
+publish: true
 previous_url: /properties
 environment: nativescript
 ---
