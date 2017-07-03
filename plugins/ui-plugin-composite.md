@@ -12,7 +12,7 @@ When writing a plugin that shows some UI, you can take different paths. One of t
 
 ## Bootstrap Your Plugin 
 
-First things first - you start off from a regular plugin. You can check the [Building Plugins article](/plugins/building-plugins.md) for reference.
+First things first - you start off from a regular plugin. You can check the [Building Plugins article](%slug building-plugins%) for reference.
 
 ## Add UI bits
 
