@@ -8,9 +8,9 @@ environment: nativescript
 
 # Building UI Plugins using Custom Components
 
-Whenever needed UI can be shown by a plugin just by exposing a custom component, e.g. some platform-specific functionality that renders UI itself. This article demonstrates how to create a simple button plugin as.
+Whenever needed UI can be shown by a plugin just by exposing a custom component, e.g. some platform-specific functionality that renders UI itself. To demonstrate that, this article explains how to create a simple button plugin.
 
-This article's contents:
+Contents:
 
 * [Prerequisites](#prerequisites)
 * [Bootstrap Your Plugin](#bootstrap-your-plugin)
@@ -28,7 +28,7 @@ First things first - you start off from a regular plugin. You can check the [Bui
 
 ## Add the UI bits: common code
 
-Let's say you want to build a simple button, which you can use like:
+Let's say you want to build a simple button which you can use like:
 
 ```
     <ui:MyButton text="MyButton1" tap="onTap" />
