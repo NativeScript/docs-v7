@@ -13,7 +13,7 @@ Debugging a plugin is not much different than debugging a NativeScript app but n
 What this article covers:
 
 * [The Problem](#Theproblem)
-* [Linking Your Plugin in the Demo App](#Linkingyourplugininthedemo)
+* [Linking Your Plugin in the Demo App](#Linkingyourplugininthedemoapp)
 * [Debugging](#Debugging)
 * [Limitations](#Limitations)
 
@@ -30,19 +30,19 @@ Achieving the goal descibed above is possible by using `npm link` during plugin 
 Boostrapping your plugin by using the [NativeScript plugin seed](https://github.com/NativeScript/nativescript-plugin-seed) links your plugin in the demo app out of the box on the `postclone` step. 
 
 If you have your custom plugin structure you can still enable `npm link` by following the steps below:
-1. Make sure your plugin code parent folder is different than the parent folder of your demo. See  [NativeScript plugin seed](https://github.com/NativeScript/nativescript-plugin-seed) for example where the plugin code is located in the `src` folder and demo is located in the `demo` folder, both on the root level. In terminal run:
-2. `cd <your-plugin-folder>`
-3. `npm link` to link your plugin in the global `node_modules` folder. [Read more about `npm link`](https://docs.npmjs.com/cli/link)
-4. `cd <your-demo-folder>` to navigate to your demo folder
-5. `npm link <your-plugin-name>`
+- Make sure your plugin code parent folder is different than the parent folder of your demo. See  [NativeScript plugin seed](https://github.com/NativeScript/nativescript-plugin-seed) for example where the plugin code is located in the `src` folder and demo is located in the `demo` folder, both on the root level. In terminal run:
+* `cd <your-plugin-folder>`
+* `npm link` to link your plugin in the global `node_modules` folder. [Read more about `npm link`](https://docs.npmjs.com/cli/link)
+* `cd <your-demo-folder>` to navigate to your demo folder
+* `npm link <your-plugin-name>`
 
 Now the files under `<your-demo-folder>/node_modules/<your-plugin-name>` are physically the same files that are located under `src`. This means that making changes in `<your-demo-folder>/node_modules/<your-plugin-name>` will actually change the plugin source files. 
 
 If at some point you're ready with the development and want to test how your plugin behaves on running `tns plugin add/remove` you can easily unlink your plugin by running Terminal:
-1. `cd <your-demo-folder>`
-2. `npm unlink <your-plugin-name>`
-3. `cd <your-plugin-folder>`
-4. `npm unlink`
+* `cd <your-demo-folder>`-
+* `npm unlink <your-plugin-name>`
+* `cd <your-plugin-folder>`
+* `npm unlink`
 
 [Read more about `npm unlink` command](https://www.npmjs.com/browse/keyword/unlink)
 
