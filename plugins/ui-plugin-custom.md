@@ -14,19 +14,20 @@ Contents:
 
 * [Prerequisites](#prerequisites)
 * [Bootstrap Your Plugin](#bootstrap-your-plugin)
-* [Add the UI bits: common code](#add-the-ui-bits-common-code)
-* [Add the UI bits: platform-specific code](#add-the-ui-bits-platform-specific-code)
+* [Add the UI bits: common code](#common-code)
+* [Add the UI bits: platform-specific code](#platform-specific-code)
 * [Make Your Plugin Angular Compatible](#make-your-plugin-angular-compatible)
 
 ## Prerequisites
 
-The article contains information applicable to apps built on NativeScript 3.x.x or newer version
+The article contains information applicable to apps built with NativeScript 3.x.x or newer version
 
 ## Bootstrap Your Plugin 
 
 First things first - you start off from a regular plugin. You can check the [Building Plugins article](%slug building-plugins%) for reference.
 
-## Add the UI bits: common code
+## Add the UI bits
+### Common Code
 
 Let's say you want to build a simple button which you can use like:
 
@@ -38,10 +39,10 @@ This can be accomplished by wrapping the platform-specific buttons (iOS's UIButt
 
 You can implement this by creating four files:
 
-- **my-button.d.ts** - to hold the declarations of MyButton class, its properties "text" and "myOpacity", enables auto-complete in some IDEs. 
+- **my-button.d.ts** - holds the declarations of MyButton class, its properties "text" and "myOpacity", enables auto-complete in some IDEs. 
 - **my-button.common.ts** - contains the logic accessible from the apps.
-- **my-button.ios.ts** - holds the iOS-specific logic for creation the native view (UIButton)
-- **my-button.android.ts** - holds the Android-specific logic for creation the native view (android.widget.Button)
+- **my-button.ios.ts** - holds the iOS-specific logic for creation of the native view (UIButton)
+- **my-button.android.ts** - holds the Android-specific logic for creation of the native view (android.widget.Button)
 
 In the following way you create the common logic:
 _my-button.common.ts_
@@ -98,7 +99,8 @@ MyButtonBase.prototype.recycleNativeView = false;
 
 You see "text" and "myOpacity" properties are defined in this file and also recycleNativeView is set to "false". To read more how these declarations work refer the [Properties article]({%slug properties%}).
 
-## Add the UI bits: platform-specific code
+## Add the UI bits
+### Platform-specific code
 
 Writing the platform-specific implementations, the following overrides need to be considered:
 - `createNativeView` - you override this method, create and return your nativeView 
@@ -213,7 +215,7 @@ export class MyButton extends MyButtonBase {
 }
 ```
 
-NOTE: In Android, avoid access to native types in the root of the module (note that ClickListener is declared and implemented in a function which is called at runtime). This is specific for the V8 snapshot feature which is generated on a host machine where android runtime is not running. What is important is that if you access native types, methods, fields, namespaces, etc. at the root of your module (e.g. not in a function) your code won't be compatible with V8 snapshot feature. The easiest workaround is to wrap it in a function like in the above `initializeClickListener` function.
+NOTE: In Android, avoid access to native types in the root of the module (note that ClickListener is declared and implemented in a function which is called at runtime). This is specific for the [V8 snapshot feature](https://www.nativescript.org/blog/improving-app-startup-time-on-android-with-webpack-v8-heap-snapshot) which is generated on a host machine where android runtime is not running. What is important is that if you access native types, methods, fields, namespaces, etc. at the root of your module (e.g. not in a function) your code won't be compatible with V8 snapshot feature. The easiest workaround is to wrap it in a function like in the above `initializeClickListener` function.
  
 _my-button.ios.ts_
 ``` 
@@ -300,7 +302,7 @@ export class MyButton extends MyButtonBase {
 }
 ``` 
 
-In the a.m. implementations we use singleton listener (for Android - `clickListener`) and handler (for iOS - `handler`) in order to reduce the need to instantiate native classes and to reduce memory usage. If possible it is recommended to use such techniques to reduce native calls.
+In the above mentioned implementations we use singleton listener (for Android - `clickListener`) and handler (for iOS - `handler`) in order to reduce the need to instantiate native classes and to reduce memory usage. If possible it is recommended to use such techniques to reduce native calls.
 
 For more details and the full source code of the described MyButton sample, check the [NativeScript UI Plugin (Custom button component) repo](https://github.com/NativeScript/nativescript-ui-plugin-custom). 
 
