@@ -14,8 +14,9 @@ Contents:
 
 * [Prerequisites](#prerequisites)
 * [Bootstrap Your Plugin](#bootstrap-your-plugin)
-* [Add the UI bits: common code](#common-code)
-* [Add the UI bits: platform-specific code](#platform-specific-code)
+* [Add the UI bits](#add-the-ui-bits)
+    * [Common Code](#common-code)
+    * [Platform-specific Code](#platform-specific-code)
 * [Make Your Plugin Angular Compatible](#make-your-plugin-angular-compatible)
 
 ## Prerequisites
@@ -99,8 +100,7 @@ MyButtonBase.prototype.recycleNativeView = false;
 
 You see "text" and "myOpacity" properties are defined in this file and also recycleNativeView is set to "false". To read more how these declarations work refer the [Properties article]({%slug properties%}).
 
-## Add the UI bits
-### Platform-specific code
+### Platform-specific Code
 
 Writing the platform-specific implementations, the following overrides need to be considered:
 - `createNativeView` - you override this method, create and return your nativeView 
