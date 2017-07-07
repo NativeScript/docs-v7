@@ -200,7 +200,7 @@ $ npm run build-ios-bundle --uglify -- --release --forDevice --teamId TEAM_ID
 
 ### V8 Heap Snapshot
 
-The webpack configuration also includes the [`NativeScriptSnapshotPlugin`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/plugins/NativeScriptSnapshotPlugin.js). The plugin loads a single webpack bundle in an empty V8 context, aka snapshtted context, and after its execution, captures a snapshot of the produced V8 heap and saves it in a blob file. Next the blob file is included in the apk bundle and [is loaded by the Android Runtime](https://docs.nativescript.org/runtimes/android/advanced-topics/V8-heap-snapshots) on app initialization. This will obviate the need for loading, parsing and executing the script on app startup which can drastically decrease the starting time.
+The webpack configuration also includes the [`NativeScriptSnapshotPlugin`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/plugins/NativeScriptSnapshotPlugin.js). The plugin loads a single webpack bundle in an empty V8 context, aka snapshotted context, and after its execution, captures a snapshot of the produced V8 heap and saves it in a blob file. Next the blob file is included in the apk bundle and [is loaded by the Android Runtime](https://docs.nativescript.org/runtimes/android/advanced-topics/V8-heap-snapshots) on app initialization. This will obviate the need for loading, parsing and executing the script on app startup which can drastically decrease the starting time.
 
 To include the `NativeScriptSnapshotPlugin` in already existing webpack configuration regenerate your `webpack.config.js` or use the `update-ns-webpack` script to update it:
 
@@ -299,7 +299,7 @@ function logMessage(message) {
 ```
 
 #### Using snapshot without Webpack
-The `nativescript-dev-webpack` plugin adds `generate-android-snapshot` npm script in the app's `package.json` file. The command will check if `__snapshot.js` file exists in the app root folder and will generate and install blob files using the file as input. Make sure you have prepared the android platform beforehand, because a subsequent prepare will clear some installed artefacts. This is how V8 heap snapshot can be generated from a single file, without using Webpack bundling. However, generating snapshot from something different than a Webpack bundle is not a common scenario. Packing all scripts into one fat bundle, in advance, is what makes the snapshot so beneficial. Generating snapshot for a single script only will rarely have some notable effect on the app performance.
+The `nativescript-dev-webpack` plugin adds `generate-android-snapshot` npm script in the app's `package.json` file. The command will check if `__snapshot.js` file exists in the app root folder and will generate and install blob files using the file as input. Make sure you have prepared the android platform beforehand, because a subsequent prepare will clear some installed artefacts. This is how V8 heap snapshot can be generated from a single file, without using Webpack bundling. However, generating snapshot from something different than a Webpack bundle is not a common scenario. Packing all scripts into one fat bundle in advance, is what makes the snapshot so beneficial. Generating snapshot for a single script only will rarely have some notable effect on the app performance.
 
 ## Debugging Common Errors
 
