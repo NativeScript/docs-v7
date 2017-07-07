@@ -1,7 +1,7 @@
 ---
 title: Debugging Plugins
 description: Debugging Plugins
-position: 10
+position: 25
 slug: debugging-plugins
 publish: true
 ---
