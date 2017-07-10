@@ -17,6 +17,7 @@ What this article covers:
     * [Files Structure and Contents](#files-structure-and-contents) 
     * [SCSS Compilation](#scss-compilation)
 * [Usage](#usage)
+* [Screenshots](#screenshots)
 
 ## Prerequisites
 
@@ -206,4 +207,14 @@ Now, the plugin from the example has 2 skins and is ready to be used along with 
 
 For light skin, just import the corresponding `light` files to `app.css`.
 
-TODO: Add Screenshots
+
+## Screenshots
+
+_Dark skin on Android_
+![](../img/plugins/dark-android.png) 
+_Dark skin on iOS
+![](../img/plugins/dark-ios.png)
+_Light skin on Android_
+![](../img/plugins/light-android.png) 
+_Light skin on iOS_
+![](../img/plugins/light-ios.png)
