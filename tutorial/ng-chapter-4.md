@@ -87,7 +87,7 @@ this.page.actionBarHidden = true;
 this.page.backgroundImage = "res://bg_login";
 ```
 
-This code uses an instance of the [`Page` class](https://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) from the [NativeScript page module](https://docs.nativescript.org/api-reference/modules/_ui_page_.html), and sets two properties on it—`actionBarHidden` and `backgroundImage`. Although you can peruse the NativeScript API documentation for a full list of these properties and what they do, if you’re using a TypeScript-friendly IDE, you can get a full list of these properties at any point.
+This code uses an instance of the [`Page` class](https://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) from the [NativeScript page module](https://docs.nativescript.org/api-reference/modules/_ui_page_.html), and sets two properties on it—`actionBarHidden` and `backgroundImage`. Although you can peruse the [NativeScript API documentation](http://docs.nativescript.org/api-reference/globals.html) for a full list of these properties and what they do, if you’re using a TypeScript-friendly IDE, you can get a full list of these properties at any point.
 
 <img alt="TypeScript autocomplete" class="plain" src="../img/cli-getting-started/angular/chapter4/typescript.png" style="border: 1px solid black;">
 
