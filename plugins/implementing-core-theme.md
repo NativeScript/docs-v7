@@ -8,7 +8,7 @@ environment: nativescript
 
 # Implementing NativeScript Theme in Plugins
 
-For plugins having UI representation is highly recommended to implement the NativeScript core theme. It's up to you to decide if light and dark skins are enough or you want to implement more. Before continue reading make sure you read the basics about [NativeScript theme]({ % theme % }) and review [NativeScript Theme repository](https://github.com/NativeScript/theme)
+For plugins that use UI components, we highly recommend implementing the NativeScript core theme. It's up to you to decide if light and dark skins are enough or you want to implement more. Before continue reading make sure you read the basics about [NativeScript theme]({ % theme % }) and review the [NativeScript Theme repository](https://github.com/NativeScript/theme)
 
 What this article covers:
 * [Prerequisites](#prerequisites)
@@ -25,7 +25,7 @@ This article is built on top of a [custom UI plugin](https://github.com/NativeSc
 
 We are using `.scss` files to define our plugin styles. So make sure you run the following commands in your plugin source folder:
 
-* `npm install node-sass —save-dev` to install `node-sass` library used     to compile `.scss` to `.css`
+* `npm install node-sass —save-dev` to install the `node-sass` library to compile `.scss` files into `.css` files.
 * `npm install nativescript-theme-core —save-dev` to install the NativeScript core theme
 
 ## Plugin Code Changes
@@ -45,9 +45,9 @@ constructor() {
     this.className = "mybtn";
 }  
 ```
-This will add class name `mybtn` to our custom button element. 
+This will add a `mybtn` class name to our custom button element. 
 
-> NOTE: If you want to customize font styles and color, make sure your custom component inherits from `TextBase` instead of `View`.
+> **NOTE**: If you want to customize font styles and color, make sure your custom component inherits from `TextBase` instead of `View`.
 
 ## Implementation
 
@@ -182,7 +182,7 @@ What you need to do in each of them is just import the corresponding skin and pl
 
 ### SCSS compilation
 
-Once you have all your styles defineed per skin and platform, you're ready to compile the `scss` files to `css`. To do so, open Terminal and run the following command from your plugin source folder:
+Once you have all your styles defined per skin and platform, you're ready to compile the `scss` files to `css`. To do so, open your command prompt or terminal and run the following command from your plugin source folder:
 
 `node_modules/node-sass/bin/node-sass scss --output css`
 
