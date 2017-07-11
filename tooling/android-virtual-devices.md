@@ -7,68 +7,49 @@ slug: android-emulators
 
 # Setup Android Emulators (AVD)
 
-Using Android emulator a.k.a. Android Virtual Device (AVD) eases the development process by providing an option
-to test mobile applications on various virtual devices. By default, the Android SDK does not provide an instance of an AVD, so in this article we are going to cover the process of creating and using one.
+Using Android emulator a.k.a. Android Virtual Device (AVD) eases the development process by providing an option to test mobile applications on various virtual devices. By default, the Android SDK does not provide an instance of an AVD, so in this article, we are going to cover the process of downloading, creating and using one via Android Studio.
 
 ## Create a new emulator 
 
-1. Open **Android SDK Manager** 
+Open **Android Studio** and start AVD manager located in `Tools > Android > AVD Manager`
 
-     - From your terminal run  `start %ANDROID_HOME%/"SDK Manager.exe"`
+![Navigate to AVD Manager](../img/create-avd/avd_001.png "Navigate to AVD Manager")
 
-2. Make sure that the system images for the AVDs are installed. 
+The AVD Manager will load the list of already installed system images (if any) and will also provide you with an option to create new emulator via `Create Virtual Device button located at the bottom left corner.
 
-    The screenshow below shows the Android API 23 system images installed on the computer. If additional system images are needed (e.g. for different API level) select them and press **Install Packages** button at the bottom right corner.
+![AVD Manager](../img/create-avd/avd_002.png "Installed AVDs")
 
-    ![Installed AVDs for API 23 in Andrid SDK](../img/create-avd/avd-001.png "Installed AVDs for API 23 in Andrid SDK")
+Pressing `Create Virtual Device` will load the `Select Hardware` screen. A list of device definitions will load. Choose the preferred device from the `Phone` tab and press `Next`.
 
-    You can accelerate the virtual device using Virtualization Technology. For hardware with Intel CPUs, this can be achieved with HAXM installer. Acquire the installer from the [official download site of HAXM](https://software.intel.com/en-us/android/articles/intel-hardware-accelerated-execution-manager).
-    After successful download, execute the installer and follow the installation instruction.
+![Select Hardware Screen](../img/create-avd/avd_003.png "Select Hardware")
 
-    > **Note:** To Use HAXM make sure that the system image is of type **Intel x86 Atom**. ARM emulators are much slower, but can be useful when your hardware does not support HAXM or when you have enabled Hyper-V technology.
+The `System Image` screen will give you the list of available system images for all supported Android API Levels. To be able to create an emulator, the system image must be downloaded locally. In the screen above, an Android 6 Google APIs system image is selected. Press `Download` to obtain the image.
 
-3. Go to **Tools > Manage AVDs**
+![System Image Screen](../img/create-avd/avd_004.png "System Image")
 
-    This will load the **Android Virtual Device Manager** 
-    On the first tab called "Android Virtual Devices" you will see a list of your enabled AVDs.
-    By default, with a fresh Android SDK installation, this list will be empty. 
+In the screen shown above, an Android 6 Google APIs system image is selected. Press `Download` to obtain the image. Once the system image is successfully downloaded and unzipped, press `Finish`.
 
-4. Press **Create**
+![Download Screen](../img/create-avd/avd_005.png "Download Image")
 
-    This step will load the AVD creation tool. Set the following parameters:
+The `System Image` screen will appear again with the downloaded system image. Select the system image and press `Next`.
 
-    - **AVD Name** : The emulator name in "Android Virtual Devices"
-    - **Device** : Choose the hardware device to emulate (e.g. Nexus 5)
-    - **Target** : Choose the API Level (e.g. Android Nougat API Level 23)
-    - **CPU/ABI** : Choose the CPU architecture (e.g. Intel Atom x86) for use with HAXM use Intel Atom images!
-    - **Keyboard** : Check "hardware keyboard present"
-    - **Skin** : Choose the skin type for the emulator
-    - **Front & Back Camera** : Enable/disable support for emulated or web cameras
-    - **Memory Options** : Recommended to leave this as set by default!
-    - **Internal Storage** : Default value 200MB - Increase this value to ensure that there is enough space for the applications that will be deployed later.
-    - Check "Use Host GPU" to improve performance if your GPU provides enough resources.
+![System Image Next Screen](../img/create-avd/avd_006.png "System Image")
 
-    ![AVD creation tool](../img/create-avd/avd-003.png "AVD creation tool")
+The final configuration screen will load. If fine tuning is needed, here we can change the default settings of the new emulator (e.g. default screen orientation, device frame, memory options, etc.). When all settings are set and ready press `Finish`.
 
-    Once you have the AVD parameters set click **"OK"** then confirm all params and once again click **"OK"** and the emulator will be created.
+![Verify Configuration Screen](../img/create-avd/avd_007.png "Verify Configuration Screen")
 
-5. Press **Start**
+The newly created Android Virtual Device is now listed in the AVD Manager. Select the system image and press the green arrow to the right to manually start the emulator.
 
-    From "Android Virtual Devices" select the created emulator and press **Start**.
-    An additional popup screen will give options to scale the emulator and to wipe previously used data.
-    Once all is set press **Launch**.
+![List of AVDs](../img/create-avd/avd_008.png "List of AVDs")
 
-    ![Launched AVD](../img/create-avd/avd-004.png "Launched AVD")
 
 # Using the emulators with NativeScript
 
-Once the emulator is launched, we can start the development process with NativeScript.
-In many occasions the developers would like to work with several emulators simultaneously.
-The best practice for this scenarios is to have all emulators opened in advance (to avoid launch timings and possible timeouts during build).
-Once all the selected emulators are launched and all the real devices are attached we can check their status.
+Once the emulator is launched, we can start the development process with NativeScript. In many occasions, the developers would like to work with several emulators simultaneously. The best practice for this scenarios is to have all emulators opened in advance (to avoid launch timings and possible timeouts during build). Once all the selected emulators are launched, and all the real devices are attached we can check their status.
 
 ```
-tns device
+tns devices
 
 ┌───┬──────────────────┬──────────┬──────────────────────┬──────────┬───────────┐
 │ # │ Device Name      │ Platform │ Device Identifier    │ Type     │ Status    │
@@ -78,7 +59,7 @@ tns device
 └───┴──────────────────┴──────────┴──────────────────────┴──────────┴───────────┘
 ```
 
-In the example case we have three devices connected. The first one is real device, the second one is Android Virtual Device and the third one is a third party emulator.
+In the example case, we have three devices connected. The first one is a real device, the second one is Android Virtual Device, and the third one is a third party emulator.
 
 To launch a NativeScript application on a specific device you can pass `--device <id>` or `--device <device-identifier>` .
 
@@ -92,13 +73,14 @@ e.g. run on device with Device Identifier
 tns run android --device 00bd261c1580a7d3
 ```
 
-The example above will start the application on device with id 2 (sdk_phone_x86_64).
+The example above will start the application on the device with id 2 (sdk_phone_x86_64).
 
 To launch a NativeScript application on all connected devices simultaneously, simply ignore the `--device <id>` flag.
 
 ```
 tns run android
 ```
+
 
 
 
