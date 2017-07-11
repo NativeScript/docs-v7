@@ -59,7 +59,7 @@ tns devices
 └───┴──────────────────┴──────────┴──────────────────────┴──────────┴───────────┘
 ```
 
-In the example case we have three devices connected. The first one is real device, the second one is Android Virtual Device and the third one is a third party emulator.
+In the example case, we have three devices connected. The first one is a real device, the second one is Android Virtual Device, and the third one is a third party emulator.
 
 To launch a NativeScript application on a specific device you can pass `--device <id>` or `--device <device-identifier>` .
 
