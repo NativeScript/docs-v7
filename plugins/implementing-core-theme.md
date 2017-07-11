@@ -218,3 +218,5 @@ _Light skin on Android_
 ![](../img/plugins/light-android.png) 
 _Light skin on iOS_
 ![](../img/plugins/light-ios.png)
+
+To review the working example, you can refer to (this branch)[https://github.com/NativeScript/nativescript-ui-plugin-custom/tree/implement-core-themes/] of the (NativeScript Custom UI Plugin repository)[https://github.com/NativeScript/nativescript-ui-plugin-custom].
