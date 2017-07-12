@@ -298,7 +298,7 @@ And that’s it! You have now built a simple plugin, set up a robust development
 
 And these are just the basics. The plugin seed supports more advanced workflows for your plugin development. You may be interested in trying out:
 
-- [Adding unit tests](https://github.com/NativeScript/nativescript-plugin-seed#unittesting)
+- [Adding unit tests]({% slug plugin-unit-tests %})
 - [Setting up Travis CI](https://github.com/NativeScript/nativescript-plugin-seed#travisci)
 
 If you run into any problems during your plugin development, reach out using the [NativeScript community forum](https://discourse.nativescript.org/). And if you’d like to chat with other NativeScript plugin authors, sign up for the [NativeScript community chat](http://developer.telerik.com/wp-login.php?action=slack-invitation) and join us in the #plugins channel.
