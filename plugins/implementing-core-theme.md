@@ -1,14 +1,16 @@
 ---
-title: Implementing NativeScript Theme in Plugins
-description: A guide to implement NativeScript theme in plugins
+title: Implementing the NativeScript Theme in Plugins
+description: A guide to implement the NativeScript theme in plugins
 position: 40
-slug: implementing-nativescript-theme-in-plugins
+slug: implementing-the-nativescript-theme-in-plugins
 environment: nativescript
 ---
 
-# Implementing NativeScript Theme in Plugins
+# Implementing the NativeScript Theme in Plugins
 
 For plugins that use UI components, we highly recommend implementing the NativeScript core theme. It's up to you to decide if light and dark skins are enough or you want to implement more. Before continue reading make sure you read the basics about [NativeScript theme]({ % theme % }) and review the [NativeScript Theme repository](https://github.com/NativeScript/theme)
+
+To review the working example, you can refer to (this branch)[https://github.com/NativeScript/nativescript-ui-plugin-custom/tree/implement-core-themes/] of the (NativeScript Custom UI Plugin repository)[https://github.com/NativeScript/nativescript-ui-plugin-custom].
 
 What this article covers:
 * [Prerequisites](#prerequisites)
@@ -212,11 +214,9 @@ For light skin, just import the corresponding `light` files to `app.css`.
 
 _Dark skin on Android_
 ![](../img/plugins/dark-android.png) 
-_Dark skin on iOS
+_Dark skin on iOS_
 ![](../img/plugins/dark-ios.png)
 _Light skin on Android_
 ![](../img/plugins/light-android.png) 
 _Light skin on iOS_
 ![](../img/plugins/light-ios.png)
-
-To review the working example, you can refer to (this branch)[https://github.com/NativeScript/nativescript-ui-plugin-custom/tree/implement-core-themes/] of the (NativeScript Custom UI Plugin repository)[https://github.com/NativeScript/nativescript-ui-plugin-custom].
