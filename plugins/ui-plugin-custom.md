@@ -47,7 +47,7 @@ You can implement this by creating four files:
 
 In the following way you create the common logic:
 _my-button.common.ts_
-```
+```TypeScript
 import { MyButton as ButtonDefinition } from "./my-button";
 import { View, Style, Property, CssProperty, isIOS } from "tns-core-modules/ui/core/view";
 
@@ -108,7 +108,7 @@ Writing the platform-specific implementations, the following overrides need to b
 - `disposeNativeView` - in this method you clear the reference between nativeView and javascript object to avoid memory leaks as well as reset the native view to its initial state if you want to reuse that native view later.
 
 _my-button.android.ts_
-``` 
+```TypeScript
 import { MyButtonBase, textProperty, myOpacityProperty } from "./my-button.common";
 
 let clickListener: android.view.View.OnClickListener;
@@ -218,7 +218,7 @@ export class MyButton extends MyButtonBase {
 NOTE: In Android, avoid access to native types in the root of the module (note that ClickListener is declared and implemented in a function which is called at runtime). This is specific for the [V8 snapshot feature](https://www.nativescript.org/blog/improving-app-startup-time-on-android-with-webpack-v8-heap-snapshot) which is generated on a host machine where android runtime is not running. What is important is that if you access native types, methods, fields, namespaces, etc. at the root of your module (e.g. not in a function) your code won't be compatible with V8 snapshot feature. The easiest workaround is to wrap it in a function like in the above `initializeClickListener` function.
  
 _my-button.ios.ts_
-``` 
+```TypeScript
 import { MyButtonBase, textProperty, myOpacityProperty } from "./my-button.common";
 
 // class that handles all native 'tap' callbacks
@@ -307,6 +307,6 @@ In the above mentioned implementations we use singleton listener (for Android - 
 For more details and the full source code of the described MyButton sample, check the [NativeScript UI Plugin (Custom button component) repo](https://github.com/NativeScript/nativescript-ui-plugin-custom). 
 
 
-## Make Your Plugin Angular Compatible
+## Make Your Plugin Angular-Compatible
 
-Having your UI plugin developed successfully you could easily make it Angular compatible following the steps described in [Supporting Angular in UI Plugins article]({%slug supporting-angular-in-ui-plugins%}).
+Having your UI plugin developed successfully you could easily make it Angular-compatible following the steps described in [Supporting Angular in UI Plugins article]({%slug supporting-angular-in-ui-plugins%}).
