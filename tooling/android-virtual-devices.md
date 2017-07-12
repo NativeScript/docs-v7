@@ -13,40 +13,48 @@ Using Android emulator a.k.a. Android Virtual Device (AVD) eases the development
 
 Open **Android Studio** and start AVD manager located in `Tools > Android > AVD Manager`
 
-![Navigate to AVD Manager](../img/create-avd/avd_001.png "Navigate to AVD Manager")
+_Figure 1: Start AVD Manager:_
+![Start AVD Manager](../img/create-avd/avd_001.png "Start AVD Manager")
 
-The AVD Manager will load the list of already installed system images (if any) and will also provide you with an option to create new emulator via `Create Virtual Device button located at the bottom left corner.
+The AVD Manager will load the list of already installed system images (if any) and will also provide you with an option to create new emulator via `Create Virtual Device` button located at the bottom left corner.
 
-![AVD Manager](../img/create-avd/avd_002.png "Installed AVDs")
+_Figure 2: List all AVDs:_
+![Installed AVDs](../img/create-avd/avd_002.png "Installed AVDs")
 
 Pressing `Create Virtual Device` will load the `Select Hardware` screen. A list of device definitions will load. Choose the preferred device from the `Phone` tab and press `Next`.
 
+_Figure 3: Select Hardware:_
 ![Select Hardware Screen](../img/create-avd/avd_003.png "Select Hardware")
 
 The `System Image` screen will give you the list of available system images for all supported Android API Levels. To be able to create an emulator, the system image must be downloaded locally. In the screen above, an Android 6 Google APIs system image is selected. Press `Download` to obtain the image.
 
+_Figure 4: Choose system image:_
 ![System Image Screen](../img/create-avd/avd_004.png "System Image")
 
 In the screen shown above, an Android 6 Google APIs system image is selected. Press `Download` to obtain the image. Once the system image is successfully downloaded and unzipped, press `Finish`.
 
+_Figure 5: Download system image:_
 ![Download Screen](../img/create-avd/avd_005.png "Download Image")
 
 The `System Image` screen will appear again with the downloaded system image. Select the system image and press `Next`.
 
+_Figure 6: Install system image:_
 ![System Image Next Screen](../img/create-avd/avd_006.png "System Image")
 
-The final configuration screen will load. If fine tuning is needed, here we can change the default settings of the new emulator (e.g. default screen orientation, device frame, memory options, etc.). When all settings are set and ready press `Finish`.
+The final configuration screen will load. If fine-tuning is needed, you can change the default settings of the new emulator (e.g. default screen orientation, device frame, memory options, etc.). When all settings are set and ready press `Finish`.
 
+_Figure 7: Verify Configuration Screen:_
 ![Verify Configuration Screen](../img/create-avd/avd_007.png "Verify Configuration Screen")
 
 The newly created Android Virtual Device is now listed in the AVD Manager. Select the system image and press the green arrow to the right to manually start the emulator.
 
-![List of AVDs](../img/create-avd/avd_008.png "List of AVDs")
+_Figure 8: Start the Android Virtual Device:_
+![Start the AVD](../img/create-avd/avd_008.png "Start the AVD")
 
 
 # Using the emulators with NativeScript
 
-Once the emulator is launched, we can start the development process with NativeScript. In many occasions, the developers would like to work with several emulators simultaneously. The best practice for this scenarios is to have all emulators opened in advance (to avoid launch timings and possible timeouts during build). Once all the selected emulators are launched, and all the real devices are attached we can check their status.
+Once you launch an emulator, you’re ready to start developing NativeScript apps on this emulated device. Oftentimes during development you’ll want to work with several emulators simultaneously. The best practice for this scenarios is to have all emulators opened in advance (to avoid launch timings and possible timeouts during build). Once all the selected emulators are launched, and all the real devices are attached we can check their status.
 
 ```
 tns devices
