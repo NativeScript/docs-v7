@@ -75,7 +75,7 @@ Complete the following steps to set up NativeScript on your Windows development 
     - Go to [Setup Android emulators](https://docs.nativescript.org/tooling/android-virtual-devices) 
     - Follow the steps to create and start AVD with enabled HAXM.
 
-    Alternativly a [Visual Studio Emulator for Android](https://www.visualstudio.com/vs/msft-android-emulator/) can be used.
+    Alternatively a [Visual Studio Emulator for Android](https://www.visualstudio.com/vs/msft-android-emulator/) can be used.
 
 7. Install the NativeScript CLI.
     - Run the following command.
