@@ -1,7 +1,7 @@
 ---
 title: Implementing the NativeScript Theme in Plugins
 description: A guide to implement the NativeScript theme in plugins
-position: 40
+position: 45
 slug: implementing-the-nativescript-theme-in-plugins
 environment: nativescript
 ---
