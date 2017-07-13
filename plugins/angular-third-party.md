@@ -1,12 +1,12 @@
 ---
-title: Integrating Third-Party Components
-description: Integrating vanilla NativeScript UI components in Angular
-position: 60
-slug: angular-third-party
+title: Supporting Angular Explained
+description: Integrating vanilla NativeScript UI components in Angular Explained
+position: 45
+slug: supporting-angular-explained
 environment: angular
 ---
 
-# Integrating Third-Party Components
+# Integrating UI plugins
 
 0. [Overview](#overview)
 1. [Simple Elements](#simple-elements)
@@ -28,7 +28,7 @@ Angular templates look a lot like HTML. To extend the browser analogy, we can th
 
 Most visual components have a simple markup interface: just a tag with zero or more attribute values. NativeScript already provides mappings for frameworks classes shipped with the `tns-core-modules` package, and lets you register additional mappings for other components.
 
-Now, suppose you have a third-party component named `SimpleTag`:
+Now, suppose you have a NativeScript UI plugin named `SimpleTag`:
 
 {%snippet third-party-simple-view%}
 
@@ -85,4 +85,4 @@ The directive approach is especially useful when trying to build a cross-platfor
 
 # Summary
 
-Third-party NativeScript components are not automatically integrated in Angular applications, but doing that is a straightforward task. Most libraries need a couple of `registerElement` calls and some of them conveniently ship a module that client code can `require` and have the registration happen automatically.
+NativeScript UI plugins are not automatically integrated in Angular applications, but doing that is a straightforward task. Most libraries need a couple of `registerElement` calls and some of them conveniently ship a module that client code can `require` and have the registration happen automatically. Follow the steps in [this article]({% supporting-angular-in-ui-plugins %}) to provide Angular support for your UI plugin.
