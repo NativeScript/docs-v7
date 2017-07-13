@@ -1,7 +1,7 @@
 ---
 title: Supporting Angular in UI Plugins
 description: Supporting Angular in UI Plugins
-position: 40
+position: 45
 slug: supporting-angular-in-ui-plugins
 environment: angular
 ---
