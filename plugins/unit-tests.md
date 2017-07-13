@@ -1,7 +1,7 @@
 ---
 title: Unit Tests
 description: A guide describing how easy it is to write unit tests for plugin created using the NativeScript plugin seed.
-position: 99
+position: 65
 slug: plugin-unit-tests
 environment: nativescript
 ---
