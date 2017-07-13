@@ -1,7 +1,7 @@
 ---
 title: Plugin Reference
 description: A collection of reference material for NativeScript plugin authors
-position: 60
+position: 90
 ---
 
 # Plugin Reference
