@@ -1,7 +1,7 @@
 ---
 title: Ensure Plugins Quality
 description: A series of tips on how to sanity check a NativeScript plugin
-position: 50
+position: 60
 slug: ensure-plugins-quality
 ---
 
