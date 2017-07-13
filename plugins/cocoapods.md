@@ -1,7 +1,7 @@
 ---
 title: Building Plugins That Use CocoaPods
 description: How to build NativeScript plugins that use iOS CocoaPods
-position: 50
+position: 40
 slug: cocoapods
 ---
 
