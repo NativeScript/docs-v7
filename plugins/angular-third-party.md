@@ -1,7 +1,7 @@
 ---
 title: Supporting Angular Explained
 description: Integrating vanilla NativeScript UI components in Angular Explained
-position: 45
+position: 55
 slug: supporting-angular-explained
 environment: angular
 ---
