@@ -85,4 +85,4 @@ The directive approach is especially useful when trying to build a cross-platfor
 
 # Summary
 
-NativeScript UI plugins are not automatically integrated in Angular applications, but doing that is a straightforward task. Most libraries need a couple of `registerElement` calls and some of them conveniently ship a module that client code can `require` and have the registration happen automatically. Follow the steps in [this article]({% supporting-angular-in-ui-plugins %}) to provide Angular support for your UI plugin.
+NativeScript UI plugins are not automatically integrated in Angular applications, but doing that is a straightforward task. Most libraries need a couple of `registerElement` calls and some of them conveniently ship a module that client code can `require` and have the registration happen automatically. Follow the steps in [this article]({% slug supporting-angular-in-ui-plugins %}) to provide Angular support for your UI plugin.
