@@ -6,7 +6,7 @@ slug: supporting-angular-explained
 environment: angular
 ---
 
-# Integrating UI plugins
+# Supporting Angular Explained
 
 0. [Overview](#overview)
 1. [Simple Elements](#simple-elements)
