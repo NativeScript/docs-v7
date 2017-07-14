@@ -214,7 +214,7 @@ export class MyButton extends MyButtonBase {
 }
 ```
 
-NOTE: In Android, avoid access to native types in the root of the module (note that ClickListener is declared and implemented in a function which is called at runtime). This is specific for the [V8 snapshot feature](https://www.nativescript.org/blog/improving-app-startup-time-on-android-with-webpack-v8-heap-snapshot) which is generated on a host machine where android runtime is not running. What is important is that if you access native types, methods, fields, namespaces, etc. at the root of your module (e.g. not in a function) your code won't be compatible with V8 snapshot feature. The easiest workaround is to wrap it in a function like in the above `initializeClickListener` function.
+> **NOTE**: In Android, avoid access to native types in the root of the module (note that ClickListener is declared and implemented in a function which is called at runtime). This is specific for the [V8 snapshot feature](https://www.nativescript.org/blog/improving-app-startup-time-on-android-with-webpack-v8-heap-snapshot) which is generated on a host machine where android runtime is not running. What is important is that if you access native types, methods, fields, namespaces, etc. at the root of your module (e.g. not in a function) your code won't be compatible with V8 snapshot feature. The easiest workaround is to wrap it in a function like in the above `initializeClickListener` function.
  
 _my-button.ios.ts_
 ```TypeScript

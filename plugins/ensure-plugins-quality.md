@@ -275,3 +275,7 @@ If everything is configured properly, the sanity checks will execute on every co
 The main benefit of having sanity checks in place for your NativeScript plugins is that you can develop without spending additional time to ensure your changes don't break existing applications depending on your plugin.
 
 Do not forget to [add a Travis CI badge](https://docs.travis-ci.com/user/status-images/) in your NativeScript plugin's project! It reports live status of your CI build and makes your plugin look more reliable.
+
+## See Also
+
+* [Unit Tests]({% plugin-unit-tests %})
