@@ -1,7 +1,7 @@
 ---
 title: Plugin UI Tests
 description: A guide about writing JavaScript based UI tests for mobile app.
-position: 100
+position: 70
 slug: plugin-ui-tests
 ---
 
@@ -23,7 +23,7 @@ The main characteristics that distinguish UI tests we will talk about in this ar
     npm install -g appium
     ```
 
-More about `nativescript-dev-appium` plugin you can find in its repository documentation, but in short it depends on Appium to communicate with device/emulator, uses [Appium JavaScript client library](https://www.npmjs.com/package/wd) and [Mocha](https://mochajs.org/) testing framework. Before we continue, take a moment and familiarize yourself with fore-mentioned tools unknown to you.
+More about `nativescript-dev-appium` plugin you can find in its [repository](https://github.com/NativeScript/nativescript-dev-appium) documentation, but in short it depends on Appium to communicate with device/emulator, uses [Appium JavaScript client library](https://www.npmjs.com/package/wd) and [Mocha](https://mochajs.org/) testing framework. Before we continue, take a moment and familiarize yourself with fore-mentioned tools unknown to you.
 
 ## Test Implementation
 
@@ -68,9 +68,13 @@ describe("facebook tests", function () { // define test suite
     });
     ...
 ```
-Here, we define our suite and set a custom [timeout](https://mochajs.org/#timeouts). We use some bigger value as we run the tests in Sauce Labs and it takes a bit more time than а local execution. Two types of [Mocha hooks](https://mochajs.org/#hooks) are used in the suite. The `before` one initialize our driver and `after` quits it.
+Here, we define our suite and set a custom [timeout](https://mochajs.org/#timeouts). We use some bigger value as we run the tests in [Sauce Labs](https://saucelabs.com/) and it takes a bit more time than а local execution.
 
-It is time for our tests implementation. Let's review our first test.
+[Sauce Labs](https://saucelabs.com/) is a cloud-based platform for automated testing of web and mobile applications. It provides us an access to mobile emulators and simulators needed for our test execution. This way we don't have to take care of a testing environment which is great. Additionally, our testing results are public and that increases the transparency of plugin's state and how it has been tested.
+
+Furthermore, two types of [Mocha hooks](https://mochajs.org/#hooks) are noticeable in the suite. The `before` one initialize our driver which communicates with the server and `after` quits it.
+
+It is time for our tests implementation. Let's review the first test.
 
 ```javascript
 it("should log in via original button", function () {
@@ -116,7 +120,7 @@ Once we have our UI elements selectors ready it is time for the driver to find t
 
 ## Test Execution
 
-It is time for the fun part - test execution. Before we get to the command that will run our tests we will have to add a configuration file describing our capabilities [appium.capabilities.json](https://github.com/NativeScript/nativescript-facebook/blob/master/appium.capabilities.json). This is a requirement coming from [nativescript-dev-appium](https://github.com/NativeScript/nativescript-dev-appium#custom-appium-capabilities) plugin. In our NativeScript Facebook plugin we have two capabilities defined - for Android 6.0 and iOS 10.0 emulator/simulator.
+It is time for the fun part - test execution. Before we get to the command that will run our tests we will have to add a configuration file describing our capabilities [appium.capabilities.json](https://github.com/NativeScript/nativescript-facebook/blob/master/appium.capabilities.json). This is a requirement coming from [nativescript-dev-appium](https://github.com/NativeScript/nativescript-dev-appium#custom-appium-capabilities) plugin. In our NativeScript Facebook plugin we have two capabilities defined - for Android 6.0 and iOS 10.0 emulator/simulator. These capabilities are a set of keys and values sent to the Appium server to tell the server what kind of automation session we are interested in starting up. For example, if we set `platformName` to `Android` Appium will initiate Android session. The full list can be find [here](https://appium.io/slate/en/master/?javascript#appium-server-capabilities).
 
 In order to execute the tests for those environments we will use the command for local execution. Before that we have to navigate to `demo` folder.
 
@@ -195,4 +199,5 @@ npm run appium --runType=ios-simulator10iPhone6 --sauceLab=true --appLocation=$I
 
 ## See Also
 
-* [Unit tests]({% slug plugin-unit-tests %})
+* [Unit Tests]({% slug plugin-unit-tests %})
+* [Ensure Plugins Quality]({% slug ensure-plugins-quality %})
