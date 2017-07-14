@@ -278,4 +278,4 @@ Do not forget to [add a Travis CI badge](https://docs.travis-ci.com/user/status-
 
 ## See Also
 
-* [Unit Tests]({% plugin-unit-tests %})
+* [Unit Tests]({% slug plugin-unit-tests %})
