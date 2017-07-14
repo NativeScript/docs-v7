@@ -10,7 +10,7 @@ environment: nativescript
 
 For plugins that use UI components, we highly recommend implementing the NativeScript core theme. It's up to you to decide if light and dark skins are enough or you want to implement more. Before continue reading make sure you read the basics about [NativeScript theme]({ % theme % }) and review the [NativeScript Theme repository](https://github.com/NativeScript/theme)
 
-To review the working example, you can refer to (this branch)[https://github.com/NativeScript/nativescript-ui-plugin-custom/tree/implement-core-themes/] of the (NativeScript Custom UI Plugin repository)[https://github.com/NativeScript/nativescript-ui-plugin-custom].
+To review the working example, you can refer to [this branch](https://github.com/NativeScript/nativescript-ui-plugin-custom/tree/implement-core-themes/) of the [NativeScript Custom UI Plugin repository](https://github.com/NativeScript/nativescript-ui-plugin-custom).
 
 What this article covers:
 * [Prerequisites](#prerequisites)

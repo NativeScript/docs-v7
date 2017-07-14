@@ -8,9 +8,9 @@ previous_url: /testing,/core-concepts/testing
 
 # Unit Testing
 
-When you develop new features inside your app, you can ensure that they are working properly and that past functionality has not regressed by writing and executing unit tests on a regular basis. With the NativeScript CLI, you can write and execute unit tests using [Jasmine][Jasmine], [Mocha][Mocha] with [Chai][Chai] or [QUnit][QUnit].
+When you develop new features inside your app, you can ensure that they are working properly and that past functionality has not regressed by writing and executing unit tests on a regular basis. With the NativeScript CLI, you can write and execute unit tests using [Jasmine](http://jasmine.github.io/), [Mocha](https://mochajs.org/) with [Chai](http://chaijs.com/) or [QUnit](https://qunitjs.com/).
 
-To run your unit tests, the NativeScript CLI uses [Karma][Karma].
+To run your unit tests, the NativeScript CLI uses [Karma](http://karma-runner.github.io/0.13/index.html).
 
 * [Before You Begin](#before-you-begin)
 * [Configure Your Project](#configure-your-project)
@@ -26,7 +26,7 @@ To run your unit tests, the NativeScript CLI uses [Karma][Karma].
 
 Before writing and running unit tests, verify that you have completed the following steps.
 
-1. [Install and configure the NativeScript CLI on your system.][install]
+1. [Install and configure the NativeScript CLI on your system.]({% slug quick-start %}#the-nativescript-cli)
 1. If you don't have any projects, create a new project and navigate to the directory of the newly created directory.
 	
 	```Shell
@@ -43,7 +43,7 @@ Before writing and running unit tests, verify that you have completed the follow
 
 ## Configure Your Project
 
-The NativeScript CLI lets you choose between three widely popular unit testing frameworks: [Jasmine][Jasmine], [Mocha][Mocha] with [Chai][Chai] and [QUnit][QUnit]. You need to configure the project for unit testing by choosing a framework. You can use only one framework at a time.
+The NativeScript CLI lets you choose between three widely popular unit testing frameworks: [Jasmine](http://jasmine.github.io/), [Mocha](https://mochajs.org/) with [Chai](http://chaijs.com/) and [QUnit](https://qunitjs.com/). You need to configure the project for unit testing by choosing a framework. You can use only one framework at a time.
 
 To initialize your project for unit testing, run the following command and, when prompted, use the keyboard arrows to select the framework that you want to use.
 
@@ -57,7 +57,7 @@ This operation applies the following changes to your project.
 * It installs the nativescript-unit-test-runner npm module for the selected framework and its dev dependencies in `node_modules`.
 * It creates `karma.conf.js` in the root of your project. This file contains the default configuration for the Karma server for the selected framework.
 
-> Note: To enable and write unit tests for TypeScript or Angular project install the TypeScript typings for the selected testing framework.
+> **Note**: To enable and write unit tests for TypeScript or Angular project install the TypeScript typings for the selected testing framework.
 ```Jasmine
 npm i @types/jasmine --save-dev
 ```
@@ -202,16 +202,8 @@ The NativeScript CLI remains active and re-runs tests on code change. To unlock 
 
 When you configure your project for unit testing, the NativeScript CLI adds `karma.conf.js` to the root of your project. This file contains the default configuration of the Karma server, including default port and selected testing framework. You can edit this file to customize your Karma server.
 
-When you modify `karma.conf.js`, make sure that your changes meet the specification of the [Karma Configuration File][Karma Configuration File].
+When you modify `karma.conf.js`, make sure that your changes meet the specification of the [Karma Configuration File](http://karma-runner.github.io/1.0/intro/configuration.html).
 
 ## Continuous Integration
 
 To integrate the NativeScript unit test runner into a continuous integration process, you need to configure a Karma reporter, for example, the [JUnit reporter](https://github.com/karma-runner/karma-junit-reporter).
-
-[Karma Configuration File]: http://karma-runner.github.io/0.13/config/configuration-file.html
-[install]: {% slug quick-start %}#the-nativescript-cli
-[Jasmine]: http://jasmine.github.io/
-[Mocha]: https://mochajs.org/
-[Chai]: http://chaijs.com/
-[QUnit]: https://qunitjs.com/
-[Karma]: http://karma-runner.github.io/0.13/index.html
