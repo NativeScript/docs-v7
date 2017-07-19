@@ -1,6 +1,6 @@
 ---
 title: Application Architecture
-description: Learn the core concepts of building Angular 2 apps with NativeScript
+description: Learn the core concepts of building Angular apps with NativeScript
 position: 10
 slug: architecture-angular
 environment: angular
@@ -9,9 +9,9 @@ previous_url: /core-concepts/architecture-angular
 
 # Application Architecture
 
-In this article we are going to go through the core concepts of the Angular 2 framework, with an an emphasis on the specifics of using Angular 2 with NativeScript.
+In this article we are going to go through the core concepts of the Angular framework, with an an emphasis on the specifics of using Angular with NativeScript.
 
->**Note:** The best place to learn about Angular 2 concepts is on [angular.io](https://angular.io/docs/ts/latest/). We are going to refer to it in many sections in this article.
+>**Note:** The best place to learn about Angular concepts is on [angular.io](https://angular.io/docs/ts/latest/). We are going to refer to it in many sections in this article.
 
 * [Components](#components)
 * [Template Syntax](#template-syntax)
@@ -22,7 +22,7 @@ In this article we are going to go through the core concepts of the Angular 2 fr
 
 # Components
 
-Components are the main building block of Angular 2 applications. They define the application UI and the logic that controls it. Let's take look at the following component:
+Components are the main building block of Angular applications. They define the application UI and the logic that controls it. Let's take look at the following component:
 
 ``` TypeScript
 import {Component} from "@angular/core";
@@ -50,7 +50,7 @@ The class and the view communicate with each other using data binding and events
 
 You can learn more about components on [angular.io](https://angular.io/docs/ts/latest/guide/architecture.html#!#components).
 
-There are almost no differences between creating component classes in Angular 2 web apps and NativeScript apps.
+There are almost no differences between creating component classes in Angular web apps and NativeScript apps.
 
 # Template Syntax
 The template defines the view of the component - what is actually rendered. 
@@ -100,7 +100,7 @@ Directives allow you to create and attach behavior to the visual tree. There are
 * [Structural Directives](https://angular.io/docs/ts/latest/guide/structural-directives.html) - alter the visual tree by adding, removing or replacing elements. The most commonly used structural directives are [`*ngIf`](https://angular.io/docs/ts/latest/guide/displaying-data.html#!#ngIf) and [`*ngFor`](https://angular.io/docs/ts/latest/guide/displaying-data.html#!#ngFor).
 * [Attribute Directive](https://angular.io/docs/ts/latest/guide/attribute-directives.html) - change the appearance or behavior of UI elements. One of the most commonly used attribute directives is [`ngClass`](https://angular.io/docs/ts/latest/guide/template-syntax.html#!#ngClass).
 
-When it comes to NativeScript specifics - there are again almost no differences as far as directives are concerned. You are free to use all the built-in Angular 2 directives; you’re also free to write your own.
+When it comes to NativeScript specifics - there are again almost no differences as far as directives are concerned. You are free to use all the built-in Angular directives; you’re also free to write your own.
 
 # Dependency Injection
 
@@ -109,8 +109,8 @@ You can read more about it on [angular.io](https://angular.io/docs/ts/latest/gui
 
 # Navigation
 
-The navigation inside a NativeScript application is done with the [Angular 2 Router](https://angular.io/docs/ts/latest/guide/router.html#). However, you can choose between two router-outlets:
-* `router-outlet` - the built in Angular 2 router outlet. It replaces the content of the outlet with the templates of different component.
+The navigation inside a NativeScript application is done with the [Angular Router](https://angular.io/docs/ts/latest/guide/router.html#). However, you can choose between two router-outlets:
+* `router-outlet` - the built in Angular router outlet. It replaces the content of the outlet with the templates of different component.
 * `page-router-outlet` - uses NativeScript [page navigation]({% slug navigation %}#pages). 
 
 To use the Router you will have to pass the `NS_ROUTER_PROVIDERS` providers when bootstrapping your app:

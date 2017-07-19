@@ -9,7 +9,7 @@ environment: angular
 
 # Tab View
 
-Using a `TabView` inside an Angular 2 app requires some special attention about how to provide title, iconSource and content (view) of the TabItem. In a pure NativeScript application, `TabView` has an items property which could be set via XML to an array of TabViewItems (basically, an array of objects with `title` and `view` properties). However, NativeScript-Angular does not support nested properties in its HTML template, so adding `TabViewItem` to TabView is a little bit different. NativeScript-Angular provides a custom Angular 2 directive that simplifies the way native `TabView` should be used. The following example shows how to add a `TabView` to your page (with some clarifications later):
+Using a `TabView` inside an Angular app requires some special attention about how to provide title, iconSource and content (view) of the TabItem. In a pure NativeScript application, `TabView` has an items property which could be set via XML to an array of TabViewItems (basically, an array of objects with `title` and `view` properties). However, NativeScript-Angular does not support nested properties in its HTML template, so adding `TabViewItem` to TabView is a little bit different. NativeScript-Angular provides a custom Angular directive that simplifies the way native `TabView` should be used. The following example shows how to add a `TabView` to your page (with some clarifications later):
 
 ```XML
 // tab-view-test.html
