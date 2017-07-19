@@ -1,0 +1,107 @@
+## The base url of the header links
+headerbaseurl: //www.nativescript.org
+nscookbookurl: "/cookbook/"
+source: ./Content
+# Release date in the format of: YYYY-MM-DD
+release_date: "2016-11-16"
+
+# Exclude files which should not be in the output
+exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist]
+navigation:
+## List your directory names and order here, like this:
+    start:
+        position: 10
+        title: "INTRODUCTION"
+        expanded: true
+    tutorial:
+        position: 15
+        title: "TUTORIAL"
+        expanded: false
+    core-concepts:
+        position: 20
+        title: "CORE CONCEPTS"
+        expanded: true
+    integration-with-existing-ios-and-android-apps:
+        position: 21
+        title: "INTEGRATING EXISTING NATIVE APPS"
+    best-practices:
+        position: 25
+        title: "BEST PRACTICES"
+    ui:
+        position: 30
+        title: "USER INTERFACE"
+        expanded: false
+    tooling:
+        position: 40
+        title: "TOOLING"
+        expanded: false
+    publishing:
+        position: 50
+        title: "PUBLISHING"
+        expanded: false
+    hardware:
+        position: 60
+        title: "HARDWARE АCCESS"
+    plugins:
+        position: 70
+        title: "PLUGINS"
+    cookbook:
+        position: 80
+        title: "COOKBOOK"  
+    releases:
+        position: 90
+        title: "RELEASES"
+    runtimes:
+        position: 100
+        title: "RUNTIMES REFERENCE"
+
+## The product name
+productName: "NativeScript"
+
+## Improve This Article button-related:
+improveThis:
+    mapOfBaseUrls:
+        0:
+            matchPattern: '^/cookbook/.*'
+        1:
+            matchPattern: '^/code-samples/.*'
+        2:
+            matchPattern: '^/runtimes/android/.*'
+            pathUpdatePattern: '^/runtimes/android'
+            baseUrl: "https://github.com/NativeScript/android-runtime-docs/blob/master/"
+        3:
+            matchPattern: '^/runtimes/ios/.*'
+            pathUpdatePattern: '^/runtimes/ios'
+            baseUrl: "https://github.com/NativeScript/ios-runtime-docs/blob/master/"
+        4:
+            matchPattern: '.*'
+            baseUrl: "https://github.com/NativeScript/docs/blob/master/"
+
+## Assign layout and category per different paths
+defaults:
+-
+    scope:
+        path: ""
+    values:
+        layout: "page"
+        category: "default"
+
+# Aliases available in the markdown template. The below will expand {{site.foo}} to Bar in the output
+# "foo": "Bar"
+"current-version": "2.0.0"
+
+# Assets pipeline configuration
+assets:
+    cachebust: soft
+    js_compressor: uglifier
+
+## Do not edit below this line
+safe: false
+markdown: MarkdownProcessor
+kramdown:
+    toc_levels: 2..3
+    smart_quotes: ["quot", "quot", "quot", "quot"]
+    input: GFM
+
+gems:
+    - jekyll-unsanitize

@@ -1,0 +1,17 @@
+# The public documentation URL, used for sitemap.xml
+url: "https://docs.nativescript.org"
+destination: ./dist
+
+## The application virtual path
+baseurl:  ""
+
+## The highlighting in the header
+nsselected: "selected"
+ngselected: ""
+
+
+flavour: "nativescript"
+
+# The google services configuration
+google_tag_manager: GTM-W58JDD
+google_custom_search: '001595215763381649090:asl7kpbijam'
