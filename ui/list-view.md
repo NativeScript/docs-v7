@@ -9,7 +9,7 @@ environment: angular
 
 # List View
 
-Using a `ListView` control inside Angular 2 app requires some special attention due to the complexity of the NativeScript control like custom item template, bindings and so on. 
+Using a `ListView` control inside Angular app requires some special attention due to the complexity of the NativeScript control like custom item template, bindings and so on. 
 
 In this article we will cover the following topics:
 
@@ -22,7 +22,7 @@ In this article we will cover the following topics:
 
 ## Using the ListView Component
 
-NativeScript-angular plugin provides a custom Angular 2 component which simplifies the way native ListView should be used. Following is an example of how to add ListView to your page (with some clarifications later):
+NativeScript-angular plugin provides a custom Angular component which simplifies the way native ListView should be used. Following is an example of how to add ListView to your page (with some clarifications later):
 
 ```XML
 // list-test.html
@@ -79,9 +79,9 @@ export class ListTest {
 
 As shown there is nothing complex in a way ListView component is used, but some points need clarifications.
 
-* items - The `items` property is bound in a standard way to a ordinary JavaScript Array. Since the JavaScript Array object does not have observable or change notifications capabilities, supporting such a scenario counts on Angular 2's change detection mechanism for notification that something has changed. Be aware that the process of checking that anything is changed within an Array could take a lot of time on large arrays (including a memory issue) leading to a possible performance issue. So consider using another kind of source with large collections. A great example of this kind of data source is the NativeScript ObservableArray.
+* items - The `items` property is bound in a standard way to a ordinary JavaScript Array. Since the JavaScript Array object does not have observable or change notifications capabilities, supporting such a scenario counts on Angular's change detection mechanism for notification that something has changed. Be aware that the process of checking that anything is changed within an Array could take a lot of time on large arrays (including a memory issue) leading to a possible performance issue. So consider using another kind of source with large collections. A great example of this kind of data source is the NativeScript ObservableArray.
 
-* template - The template tag is used to define a template which will be used for the User Interface of every ListView item. As shown there are some standard Angular 2 optional variables marked with `let-` that are preset for every data item:
+* template - The template tag is used to define a template which will be used for the User Interface of every ListView item. As shown there are some standard Angular optional variables marked with `let-` that are preset for every data item:
   * `let-item` - the data item itself.
   * `let-i` - the index of the data item (inside data source)
   * `let-odd` - represents if the index of the data item is an odd number
@@ -94,7 +94,7 @@ This is a typical usage of the ListView component, however if the business case 
 
 ## Customizing the ListView
 
-The most common customization of ListView control is customizing the item template. Everything inside the `<template>` tag will be used as the item template and will be generated for each item. Another possible customization is connected with the creation of a different item. Usually with a pure NativeScript application, the `itemLoading` event could be used to accomplish this customization. Unfortunately this event cannot be used with a NativeScript-Angular 2 app, since the NativeScript-Angular plugin uses this event to create an Angular 2 view which will be inserted into the Angular 2 virtual dom. However, the NativeScript-Angular ListView component provides an option to customize the created Angular 2 view before adding it to the visual tree. This option is available via the `setupItemView` event. Here is a small example how to use this event:
+The most common customization of ListView control is customizing the item template. Everything inside the `<template>` tag will be used as the item template and will be generated for each item. Another possible customization is connected with the creation of a different item. Usually with a pure NativeScript application, the `itemLoading` event could be used to accomplish this customization. Unfortunately this event cannot be used with a NativeScript-Angular app, since the NativeScript-Angular plugin uses this event to create an Angular view which will be inserted into the Angular virtual dom. However, the NativeScript-Angular ListView component provides an option to customize the created Angular view before adding it to the visual tree. This option is available via the `setupItemView` event. Here is a small example how to use this event:
 
 ```XML
 <GridLayout rows="*">

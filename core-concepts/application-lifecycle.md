@@ -8,7 +8,7 @@ previous_url: /application-management,/core-concepts/application-management
 {% angular %}
 # NativeScript application architecture and lifecycle
 
-The main building blocks of NativeScript applications with Angular 2 are:
+The main building blocks of NativeScript applications with Angular are:
 
 * [Modules](#modules)
 * [Components](#components)
@@ -40,7 +40,7 @@ Some modules are libraries of other modules. Modules installed as npm packages (
 
 ## Components
 
-Components are the fundamental building blocks of NativeScript applications built with Angular 2. Every NativeScript application contains a set of components that define every UI element, screen or route. The application has a root component that contains all other components. The following constitutes a component:
+Components are the fundamental building blocks of NativeScript applications built with Angular. Every NativeScript application contains a set of components that define every UI element, screen or route. The application has a root component that contains all other components. The following constitutes a component:
 
 * A component knows how to interact with its host element.
 * A component knows how to render itself.
@@ -94,11 +94,11 @@ The component lifecycle is controlled by the Angular application. It creates, up
 * **ngDoCheck** - Detect and act upon changes that Angular can or won't detect on its own. Called every change detection run.
 * **ngOnDestroy** - Called just before Angular destroys the component.
 
-For a full list, see the official [Angular 2 Lifecyle Hooks docs](https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html).
+For a full list, see the official [Angular Lifecyle Hooks docs](https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html).
 
 ## Start application
 
-The starting point of an Angular 2 application is the `nativeScriptBootstrap` method. It takes the root component as an argument:
+The starting point of an Angular application is the `nativeScriptBootstrap` method. It takes the root component as an argument:
 
 ### Example
 

@@ -100,7 +100,7 @@ describe("Hello World Sample Test:", function() {
 });
 ```
 ```Jasmine (Angular w/TypeScript)
-// As our intention is to test an Angular 2 component that contains annotations 
+// As our intention is to test an Angular component that contains annotations 
 // we need to include the reflect-metadata dependency.
 import * as reflect from "reflect-metadata";
 

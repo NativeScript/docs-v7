@@ -145,7 +145,7 @@ The power of this approach is you have the ability to customize the [theme’s S
 
 ### Using custom `.scss` file
 
-While using SASS in NativeScript Angular 2 project and create custom `.scss` file for specific component, you should refer the path to the compiled CSS file in `styleUrls` in the component typescript file.
+While using SASS in NativeScript Angular project and create custom `.scss` file for specific component, you should refer the path to the compiled CSS file in `styleUrls` in the component typescript file.
 For example:
 
 File structure:

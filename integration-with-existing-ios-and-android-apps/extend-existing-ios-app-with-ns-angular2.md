@@ -1,15 +1,15 @@
 ---
 title: Extend existing iOS app
-description: Learn how to your existing iOS app with Angular 2 and NativeScript
+description: Learn how to your existing iOS app with Angular and NativeScript
 position: 12
 slug: extend-existing-ios-app
 environment: angular
 ---
 
 
-# Extend your existing iOS app with Angular 2 and NativeScript
+# Extend your existing iOS app with Angular and NativeScript
 
-## This article provides step-by-step instructions how to extend existing iOS app with Angular 2 and NativeScript
+## This article provides step-by-step instructions how to extend existing iOS app with Angular and NativeScript
 
 1.Build your NativeScript app for iOS:
 `tns build ios`

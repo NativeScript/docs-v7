@@ -26,7 +26,7 @@ In this article we will cover how to do navigation in NativeScript application u
 
 ## Router
 
-In an Angular 2 application navigation is done using the **Angular Component Router**. You can check [this detailed guide on how to use the router](https://angular.io/docs/ts/latest/guide/router.html). From here on we are going to assume that you are familiar with the basic concepts and concentrate on the specifics when doing navigation with Angular 2 inside a NativeScript app.
+In an Angular application navigation is done using the **Angular Component Router**. You can check [this detailed guide on how to use the router](https://angular.io/docs/ts/latest/guide/router.html). From here on we are going to assume that you are familiar with the basic concepts and concentrate on the specifics when doing navigation with Angular inside a NativeScript app.
 
 > Note: This article covers usage of the @angular/router v3. For the `deprecated beta router` please import `nativescript-angular/router-deprecated`.
 
@@ -52,7 +52,7 @@ NativeScript apps consist of pages which represent the separate application scre
 > Note: You will rarely need to create Page instances manually. The framework creates pages automatically when bootstrapping or navigating the app. You can get a reference to the current page by injecting it into your component using the DI.
 
 In NativeScript you have a choice between two router outlets:
-* `router-outlet` - replaces the content of the outlet with different component. It is the default outlet that comes from Angular 2.
+* `router-outlet` - replaces the content of the outlet with different component. It is the default outlet that comes from Angular.
 * `page-router-outlet` - uses pages to navigate. The new components are shown in a new page.
 
 To show the difference between the two we are going to use the following components in the next examples:

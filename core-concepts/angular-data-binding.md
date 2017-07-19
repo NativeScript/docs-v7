@@ -17,7 +17,7 @@ There are several ways of data flows (data bindings).
 * one-way to source (to model) - this is a way of binding which updates Model due to some action on UI. The best example for this is an event like button click (tap).
 * two-way data binding - this is a way of binding that combines both previous ways of binding. A typical example is a text box field that reads its value from Model, but also changes the Model based on user input.
 
-`NativeScript-Angular` plugin simplifies the way which data binding will be used. NativeScript part of the binding infrastructure is used to bind Model values to the real native elements (Android and iOS). Angular 2 part is used to provide correct binding context, change detection and notifications. Using data binding within NativeScript-Angular application generally do not differ from a standard Angular 2 web application.
+`NativeScript-Angular` plugin simplifies the way which data binding will be used. NativeScript part of the binding infrastructure is used to bind Model values to the real native elements (Android and iOS). Angular part is used to provide correct binding context, change detection and notifications. Using data binding within NativeScript-Angular application generally do not differ from a standard Angular web application.
 
 Let's see some examples how to use data binding with `NativeScript-Angular` plugin.
 
@@ -53,7 +53,7 @@ import {NativeScriptFormsModule} from "nativescript-angular/forms"
 })
 ```
 
-In Angular 1.x two-way data binding was the default way of binding. However with Angular 2 the state of `two-way data binding` is not the same - due to too many performance problems caused by the uncertainty of what or who caused the change of the value within Model which sometimes results in way too many changes (and change notifications). So Angular 2 does not have two-way data binding by default, instead it uses events to notify Model that something is changed.
+In Angular 1.x two-way data binding was the default way of binding. However with Angular the state of `two-way data binding` is not the same - due to too many performance problems caused by the uncertainty of what or who caused the change of the value within Model which sometimes results in way too many changes (and change notifications). So Angular does not have two-way data binding by default, instead it uses events to notify Model that something is changed.
 
 ```XML
 <TextField [(ngModel)]='model.mytext'></TextField>
@@ -61,7 +61,7 @@ In Angular 1.x two-way data binding was the default way of binding. However with
 ```TypeScript
 this.model.mytext = 'Lorem Ipsum ...';
 ```
-There are some limitations when using two-way data binding with Angular 2. Two-way binding is initialized with `ngModel` directive instead of the name of the property. This under the hood creates two simple data bindings one-way and one-way to source:
+There are some limitations when using two-way data binding with Angular. Two-way binding is initialized with `ngModel` directive instead of the name of the property. This under the hood creates two simple data bindings one-way and one-way to source:
 
 ```XML
 <TextField [(ngModel)]='model.mytext' ></TextField>
@@ -69,7 +69,7 @@ There are some limitations when using two-way data binding with Angular 2. Two-w
 <TextField [ngModel]='model.mytext' (ngModelChange)='model.mytext=$event' ></TextField>
 ```
 
-This is the way Angular 2 supports two-way data binding. It generally works in almost all cases with the limitation that we could use only one property with two-way data binding (in the case of TextField this is the `text` property). `ngModel` directive also provide an interface for safely updating property in both directions. For all NativeScript controls `NativeScript-Angular` plugin provides the underlying infrastructure to support native controls via `ngModel` directive (the same way as Angular 2 syntax). It is done by using a single value property for every control that could be used with `ngModel` syntax. Following is the list of available properties:
+This is the way Angular supports two-way data binding. It generally works in almost all cases with the limitation that we could use only one property with two-way data binding (in the case of TextField this is the `text` property). `ngModel` directive also provide an interface for safely updating property in both directions. For all NativeScript controls `NativeScript-Angular` plugin provides the underlying infrastructure to support native controls via `ngModel` directive (the same way as Angular syntax). It is done by using a single value property for every control that could be used with `ngModel` syntax. Following is the list of available properties:
 
 * TextField, TextView, SearchBar - text property
 * DatePicker - date property
@@ -92,7 +92,7 @@ this.model.deliveryMinute = 25;
 
 ### Data converters
 
-Often data within Data Model is stored in a way that is optimized for best performance of tasks like search, replace and so on. Unfortunately, the way computers store data differs a lot with a human readable format. Probably the best example is `Date object`. In JavaScript `Date` actually is a very big number that represents milliseconds from 01.01.1970 which does not speak much to any human. Here comes the use of data converters which basically are functions that formats the data (from Model) in a human readable format (display in UI). Angular 2 uses the same concept and names it `pipe` (like UNIX pipe) - value is passed to the pipe function which transforms it and the final result is displayed to the user. Using `pipe` is simple and with the same syntax like UNIX pipe.
+Often data within Data Model is stored in a way that is optimized for best performance of tasks like search, replace and so on. Unfortunately, the way computers store data differs a lot with a human readable format. Probably the best example is `Date object`. In JavaScript `Date` actually is a very big number that represents milliseconds from 01.01.1970 which does not speak much to any human. Here comes the use of data converters which basically are functions that formats the data (from Model) in a human readable format (display in UI). Angular uses the same concept and names it `pipe` (like UNIX pipe) - value is passed to the pipe function which transforms it and the final result is displayed to the user. Using `pipe` is simple and with the same syntax like UNIX pipe.
 
 ```XML
 <Label [text]='model.deliveryDate | date:"fullDate"' ></Label>

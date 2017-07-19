@@ -72,7 +72,7 @@ class AppModule {}
 platformNativeScriptDynamic().bootstrapModule(AppModule);
 ```
 
-For an in-depth guide to dependency injection in Angular 2, please review the [Dependency Injection in Angular 2](http://blog.thoughtram.io/angular/2015/05/18/dependency-injection-in-angular-2.html) blog post.
+For an in-depth guide to dependency injection in Angular, please review the [Dependency Injection in Angular](http://blog.thoughtram.io/angular/2015/05/18/dependency-injection-in-angular-2.html) blog post.
 
 # Objects Injected by the Platform
 
