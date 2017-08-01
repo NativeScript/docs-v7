@@ -31,8 +31,7 @@ previous_url: /core-concepts/releasing-apps,/core-concepts/publishing-ios-apps
     1. [Build versioning](#build-versioning)
     2. [Submit from the NativeScript CLI](#submit-from-the-nativescript-cli)
     3. [Submit from Xcode](#submit-from-xcode)
-    4. [Submit with Telerik AppManager](#submit-with-telerik-appmanager)
-    5. [Submission automation](#submission-automation)
+    4. [Submission automation](#submission-automation)
   4. [Send for approval and publish](#send-for-approval-and-publish)
 
 ## Overview
@@ -327,15 +326,6 @@ You should select a team again and whether to include app symbols for your app. 
 Click `Upload`.
 
 If you upload successfully, you should be able to log in at [https://itunesconnect.apple.com](https://itunesconnect.apple.com) and see your build in 'Activities'. From there you can enable Test Flight beta testing or send it for approval.
-
-#### Submit with Telerik AppManager
-
-It is worth mentioning that the NativeScript platform is integreated in the Telerik platform.
-The Telerik platform has everything you need in the cloud, easing the submission process.
-This includes managing your *production certificates* and *provisioning profiles*,
-as well as support for cloud builds and *Google Play* submission. 
-
-Read more about app submission process in the *Telerik Platform* in ['Introduction to Telerik AppManager'](http://docs.telerik.com/platform/appmanager/getting-started/introduction)
 
 #### Submission automation
 Automation can be achieved using the NativeScript CLI only. All of the parameters needed for publishing can be passed to the `publish` command directly:
