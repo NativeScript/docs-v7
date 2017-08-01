@@ -24,8 +24,7 @@ previous_url: /core-concepts/publishing-android-apps
     2. [Build signed release APK](#build-signed-release-apk)
     3. [APKs with ABI splits](#apks-with-abi-splits)
     4. [Submit with the Google Play Developer Console](#submit-with-the-google-play-developer-console)
-    5. [Submit with Telerik AppManager](#submit-with-telerik-appmanager)
-    6. [Submission automation](#submission-automation)
+    5. [Submission automation](#submission-automation)
 4. [Publish](#publish)
 
 ## Overview
@@ -202,12 +201,6 @@ To submit your app to the *Google Play Developer Console*:
 You can read more about these stages at ["Set up alpha/beta tests"](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en).
 
 Once you upload your APK, it will go through a review. When approved, you can move it to production to make it available on *Google Play*.
-
-<h4 id="submit-with-telerik-appmanager">Submit with Telerik AppManager</h4>
-
-It is worth mentioning that the NativeScript platform is integrated in the *Telerik Platform*. And the *Telerik Platform* has everything you need in the cloud, easing the submission process. This includes managing your distribution certificates and provisioning profiles, as well as support for cloud builds and *App Store* submission.
-
-Read more about the app submission process in the *Telerik Platform* in ['Introduction to Telerik AppManager'](http://docs.telerik.com/platform/appmanager/getting-started/introduction).
 
 <h4 id="submission-automation">Submission automation</h4>
 
