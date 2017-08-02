@@ -151,7 +151,7 @@ var application = utilsModule.ad.getApplication();
 const application = utils.ad.getApplication();
 ```
 
-#### getApplication method
+#### getApplicationContext method
 
 The method allows to get the Android application context
 > the returned value willl be from type `android.content.Context`
@@ -276,16 +276,6 @@ var drawableId = utilsModule.ad.resources.getDrawableId("icon");
 ```
 ```TypeScript
 const drawableId:number = utils.ad.resources.getDrawableId("icon");
-```
-
-#### getStringId method
-
-Get the id of the string from the resources, while using its `name`
-```JavaScript
-var stringId = utilsModule.ad.resources.getStringId("string_name");
-```
-```TypeScript
-const stringId: string = utils.ad.resources.getStringId("string_name");
 ```
 
 #### getStringId method
