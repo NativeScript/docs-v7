@@ -276,8 +276,9 @@ import { User } from "./shared/user/user";
 
 @Component({
   selector: "my-app",
-  templateUrl: "pages/login/login.html",
-  styleUrls: ["pages/login/login-common.css", "pages/login/login.css"]
+  moduleId: module.id,
+  templateUrl: "./login/login.html",
+  styleUrls: ["./login/login-common.css", "./login/login.css"]
 })
 export class AppComponent {
   user: User;
@@ -343,9 +344,10 @@ After that, add a new `providers` property to the existing `@Component` decorato
 ``` TypeScript
 @Component({
   selector: "my-app",
+  moduleId: module.id,
   providers: [UserService],
-  templateUrl: "pages/login/login.html",
-  styleUrls: ["pages/login/login-common.css", "pages/login/login.css"],
+  templateUrl: "./login/login.html",
+  styleUrls: ["./login/login-common.css", "./login/login.css"],
 })
 ```
 
@@ -623,6 +625,7 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: "main",
+  moduleId: module.id,
   template: "<page-router-outlet></page-router-outlet>"
 })
 export class AppComponent {}
@@ -649,8 +652,9 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: "list",
-  templateUrl: "pages/list/list.html",
-  styleUrls: ["pages/list/list-common.css", "pages/list/list.css"]
+  moduleId: module.id,
+  templateUrl: "./list.html",
+  styleUrls: ["./list-common.css", "./list.css"]
 })
 export class ListComponent {}
 ```
