@@ -27,12 +27,12 @@ NativeScript-angular plugin provides a custom Angular component which simplifies
 ```XML
 // list-test.html
 <ListView [items]="myItems" (itemTap)="onItemTap($event)">
-    <template let-item="item" let-i="index" let-odd="odd" let-even="even">
+    <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
         <StackLayout [class.odd]="odd" [class.even]="even">
             <Label [text]='"index: " + i'></Label>
             <Label [text]='"[" + item.id +"] " + item.name'></Label>
         </StackLayout>
-    </template>
+    </ng-template>
 </ListView>
 ```
 ```TypeScript
