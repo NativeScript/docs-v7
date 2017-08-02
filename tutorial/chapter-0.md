@@ -40,9 +40,13 @@ This guide assumes that you have some basic knowledge of JavaScript, CSS, and yo
 
 ## 0.3: Installation
 
-In order to start this tutorial you need to have the NativeScript CLI (command-line interface) installed on your development machine, which you can do using the link below.
+If you have node v6, homebrew, jdk, and the android-sdk installed then you can get up and running with:
 
-* [Complete the NativeScript installation guide](/start/quick-setup)
+    npm install -g nativescript
+    gem install cocoapods -V
+    gem install xcodeproj -V
+
+If you have not yet done any software development then you want to read more about setting up your environment in our [Complete the NativeScript installation guide](/start/quick-setup)
 
 > **TIP**: Setting up your machine for native development can be tricky, especially if you’re new to mobile development. If you get stuck, or if you have questions while going through these instructions, the [NativeScript community forum](http://forum.nativescript.org/) is a great place to get help.
 
