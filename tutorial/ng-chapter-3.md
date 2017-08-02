@@ -448,6 +448,37 @@ export class UserService {
 }
 ```
 
+Notice that the code above uses a new Http module, that we first need to introduce, just like other modules we have used before in this toturial.
+Open `app/app.module.ts`, and import the `NativeScriptHttpModule` by adding the following import line at the top of the file:
+
+``` TypeScript
+import { NativeScriptHttpModule } from "nativescript-angular";
+```
+
+Then add the `NativeScriptHttpModule` to your imports list.
+
+Your `app/app.module.ts` file should now look like this:
+
+``` TypeScript
+import { NgModule } from "@angular/core";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+import { NativeScriptHttpModule } from "nativescript-angular";
+
+import { AppComponent } from "./app.component";
+
+@NgModule({
+  imports: [
+    NativeScriptModule,
+    NativeScriptFormsModule,
+    NativeScriptHttpModule
+  ],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
 Next, in `app/app.component.ts`, replace the existing `signUp()` function with the following code:
 
 ``` TypeScript
