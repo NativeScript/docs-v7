@@ -13,7 +13,7 @@ get_dependencies
 extract_prebuild_dependencies
 
 fetchExternals=${FETCH_EXTERNALS:=}
-./update-changelog.sh $fetchExternals "tsonevn_merge_repositories"
+./update-changelog.sh $fetchExternals
 
 # Run "nativescript" build first since Jekyll wipes its target dir and
 # would wipe the "angular" output subdir
