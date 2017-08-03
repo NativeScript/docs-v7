@@ -1,0 +1,4 @@
+#[submodule "Content"]
+#	path = Content
+#	url = git@github.com:NativeScript/docs.git
+#	branch = master

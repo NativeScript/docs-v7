@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{page.title}}</title>
+        <link rel="shortcut icon" href="{{site.headerbaseurl}}/favicon.ico"/>
+        {% if page.description %}<meta name="description" content="{{page.description}}">{% endif %}
+        <link href="//da7xgjtj801h2.cloudfront.net/2014.2.716/styles/kendo.common.min.css" rel="stylesheet" />
+        <link href="https://d6vtbcy3ong79.cloudfront.net/fonts/1.1.0/css/geomanist.min.css" type="text/css" rel="stylesheet" media="all" />
+        {% stylesheet styles %}
+        <!--{% stylesheet theme %}-->
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="//da7xgjtj801h2.cloudfront.net/2014.2.716/js/kendo.web.min.js"></script>
+        {% javascript prism %}
+        {% javascript app %}
+    </head>
+    <body {% if page.guide %}class="guide"{% endif %}>
+        <!-- Google Tag Manager -->
+        <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id={{site.google_tag_manager}}" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', '{{site.google_tag_manager}}');</script>
+        <!-- End Google Tag Manager -->
+        <header id="page-header">
+            {% include header.html %}
+        </header>
+        {{ content }}
+    </body>
+</html>
+

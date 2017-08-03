@@ -12,5 +12,6 @@ web.config
 
 # ignore nativescript generated cookbook content
 cookbook/**/*.md
+code-samples/
 # unignore angular "local" cookbook articles, having *-ng.md file names
 !cookbook/**/*-ng.md
