@@ -75,7 +75,7 @@ improveThis:
             baseUrl: "https://github.com/NativeScript/ios-runtime-docs/blob/master/"
         4:
             matchPattern: '.*'
-            baseUrl: "https://github.com/NativeScript/docs/blob/master/"
+            baseUrl: "https://github.com/NativeScript/docs/blob/master/docs/"
 
 ## Assign layout and category per different paths
 defaults:
