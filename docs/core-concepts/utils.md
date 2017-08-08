@@ -18,7 +18,7 @@ import * as utils from "utils/utils";
 
 ## isFileOrResourcePath method
 
-Allows you to verify if the specified path points to a resource or local file. The method will return boolen value:
+Allows you to verify if the specified path points to a resource or local file. The method will return boolean value:
 
 `true` - if the string contains valid path structure.
 
