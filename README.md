@@ -5,6 +5,7 @@ Home of the NativeScript documentation content that lives at <http://docs.native
 * [Contributing 🍺](#contributing)
 * [Configuration ⚙️](#configuration)
 * [Tutorials 📖](#tutorials)
+* [Local Setup :computer:](#local-setup)
 * [Contributors ❤️](#contributors)
 
 ## Contributing
@@ -14,6 +15,9 @@ The NativeScript documentation is completely open source and we love contributio
 Don’t know where to start? Check out the [list of issues with the “up-for-grabs” label](https://github.com/NativeScript/docs/issues?q=is%3Aopen+is%3Aissue+label%3Aup-for-grabs). New to git or GitHub? [Join our community Slack chat](http://developer.telerik.com/wp-login.php?action=slack-invitation) and we’ll be happy to help get you up and running.
 
 The `master` branch contains the most up-to-date version of the NativeScript documentation and its contents are uploaded to [docs.nativescript.org](https://docs.nativescript.org/). When contributing to the documentation, always create a branch for your work from `master` as this will facilitate easier pull request management.
+
+## About Jekyll
+This documentation is built using [Jekyll](https://jekyllrb.com/docs/home/). More info on how to control the template, table of content and the project structure in general can be found in the [Build README](build/README.md)
 
 ## Configuration
 
@@ -49,6 +53,80 @@ When making changes to either of these tutorials you might need to additional al
         * Hello world template used by the Angular tutorial.
     * [nativescript-template-ng-groceries](https://github.com/tjvantoll/nativescript-template-ng-groceries)
         * Starting point for the Groceries example used by the Angular tutorial.
+
+## Local Setup
+
+If you plan to work on a non-trivial change, you will most probably want to run the documentation locally in order to give your change a try before submitting a pull request. To provide you with this opportunity without installing a ton of libraries and loose time in configuration, we have prepared a virtual environment based on vagrant configuration, where everything is prepared for you in advance. 
+
+### Prerequisites
+
+* VirtualBox: https://www.virtualbox.org
+* Vagrant: https://www.vagrantup.com
+
+### Installing the virtual machine
+
+Open a console box (**Windows users should run a Git bash session!**) and cd to your working dir. Then do a:
+
+```bash
+$ vagrant up
+```
+
+This should download the correct image, install it, start the VM and run the provisioning script.
+
+### Provisioning
+
+The provisioning script (`provision/install.sh`) installs:
+
+* Base system packages;
+* Ruby;
+* Node.js;
+* nginx.
+
+It also sets up the Jekyll project by installing all gems locally using bundler.
+
+### Building the documentation
+
+Connect to the running VM first:
+
+```bash
+$ vagrant ssh
+```
+
+Then go to the project dir (mapped to `/vagrant`):
+
+```bash
+$ cd /vagrant
+```
+
+And run the build script telling it to use the current branch and avoid committing changelogs:
+
+```bash
+$ ./build.sh
+```
+
+### Adding content
+
+Edit an article and trigger your build by running `build.sh` as described above.
+
+Then open a web browser on your host machine and navigate to http://localhost:8000/start/introduction.html or http://localhost:8000/angular/start/introduction.html.
+
+Alternatively you could run a quick build with just a single configuration: "nativescript" or "angular" that will take about half the time. It could be useful when editing a documentation article and you want quicker feedback:
+
+```bash
+$ ./build-jekyll.sh "nativescript"
+```
+
+or
+
+```bash
+$ ./build-jekyll.sh "angular"
+```
+
+### Making changes
+
+* Edit some files.
+* Rerun the build command above.
+* Refresh your browser.
 
 ## Contributors
 
