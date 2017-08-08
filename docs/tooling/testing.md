@@ -99,10 +99,14 @@ describe("Hello World Sample Test:", function() {
   });
 });
 ```
-```Jasmine (Angular w/TypeScript)
+```Jasmine 
+// (Angular w/TypeScript)
 // As our intention is to test an Angular component that contains annotations 
 // we need to include the reflect-metadata dependency.
-import * as reflect from "reflect-metadata";
+import * as reflect from "reflect-metadata"; 
+// The reason we assign it to r is that the Nativescript compiler does not include
+// the import in the compiled JS unless it is actually used in the file.
+const r=reflect;
 
 // A sample Jasmine test
 describe("A suite", function() {
