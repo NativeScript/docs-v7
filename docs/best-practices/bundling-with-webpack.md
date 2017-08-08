@@ -440,7 +440,7 @@ The TypeScript compiler implements class inheritance, decorators and other featu
 
 Bundling JavaScript code can get complex quickly, and encountering webpack for the first time can be daunting. A full introduction to webpack and related technologies is beyond the scope of this article, and we recommend the following resources:
 
-* [Introduction](https://webpack.js.org/guides/get-started/)
+* [Introduction](https://webpack.js.org/guides/getting-started/)
 * [Tutorial](https://webpack.js.org/concepts/)
 * [Webpack CLI Reference](https://webpack.js.org/api/cli/#components/sidebar/sidebar.jsx)
 
