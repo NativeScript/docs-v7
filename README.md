@@ -3,6 +3,7 @@
 Home of the NativeScript documentation content that lives at <http://docs.nativescript.org>. Start [contributing](#contributing) today!
 
 * [Contributing 🍺](#contributing)
+* [About Jekyll :nut_and_bolt:](#about-jekyll)
 * [Configuration ⚙️](#configuration)
 * [Tutorials 📖](#tutorials)
 * [Local Setup :computer:](#local-setup)
