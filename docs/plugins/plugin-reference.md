@@ -129,7 +129,7 @@ Every NativeScript plugin should contain a valid `package.json` file in its root
 
 #### Package.json Example
 
-The following is an example of a `package.json` file for a NativeScript plugin which supports the 1.0.0 version of the iOS runtime and the 1.1.0 version of the Android runtime.
+The following is an example of a `package.json` file for a NativeScript plugin which supports the 1.0.0 version or above of the iOS runtime and the 1.1.0 version or above of the Android runtime.
 
 ```JSON
 {
@@ -143,6 +143,8 @@ The following is an example of a `package.json` file for a NativeScript plugin w
   }
 }
 ```
+
+> **Note** In case your plugin supports only iOS or Android, make sure to remove the platform which is not supported.
 
 ### Include.gradle Specification
 
