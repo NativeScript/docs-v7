@@ -62,6 +62,33 @@ The plugin adds a few dependencies to the project. Don't forget to install them:
 $ npm install
 ```
 
+For non-Angular apps, make sure to add `bundle-config.js` file in the `app` folder with the following content:
+
+```JavaScript
+if (global.TNS_WEBPACK) {
+    require("tns-core-modules/bundle-entry-points");
+    global.registerModule("main-page", function () { return require("./main-page"); });
+    // register more application modules here following the example above
+}
+```
+
+```TypeScript
+if ((<any>global).TNS_WEBPACK) {
+    require("tns-core-modules/bundle-entry-points");
+
+    global.registerModule("main-page", () => require("./main-page"));
+}
+```
+
+Then import `bundle-config` on top of `app.js` / `app.ts`
+
+```JavaScript
+require("./bundle-config");
+```
+
+```TypeScript
+import "./bundle-config";
+```
 ## How nativescript-dev-webpack Works
 
 Installing the plugin adds several updates to your project:
