@@ -55,6 +55,12 @@ This script will install all NativeScript plugin’s dependencies, compile TypeS
 "prepublishOnly": "npm run build"
 ```
 
+In the `package.json` under your `demo` and `demo-angular` folders add the following script:
+
+```
+"build.plugin": "cd ../src && npm run build"
+```
+
 This script will be executed before the package is prepared and packed, only on npm publish. More details can be found in the [npm-script documentation](https://docs.npmjs.com/misc/scripts). This approach is important because it ensures the plugin’s TypeScript is compiled and the plugin’s required metadata is generated every time before publishing.
 
 Refer to the [package.json](https://github.com/NativeScript/nativescript-facebook/blob/doc/src/package.json#L12-L15) file of the [nativescript-facebook](https://github.com/NativeScript/nativescript-facebook) plugin where these scripts are also added.
