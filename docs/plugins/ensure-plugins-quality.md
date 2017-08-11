@@ -91,7 +91,7 @@ Now the command `npm run ci.tslint` will start a static analysis.
 ## Checking in Bundled NativeScript Applications
 
 Key benefits of bundling a NativeScript app are:
-- increase the app start-up time
+- improve the app startup time
 - decrease the size of the app
 
 > **NOTE**: You can read more details about the benefits of bundling NativeScript apps in the [“Using Webpack to Bundle Your Code”]({% slug bundling-with-webpack %}) article.
