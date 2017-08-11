@@ -98,10 +98,10 @@ Key benefits of bundling a NativeScript app are:
 
 NativeScript plugins should work seamlessly in bundled app. This could be verified by testing the bundled demo apps. In order to enable the app for bundling, there is some configuration required. The entire setup is defined in [“Using Webpack to Bundle Your Code”]({% slug bundling-with-webpack %}). 
 
-Once the webpack is setup for the demo app(s), there should be several scripts added into apps' package.json files.
+Once the `nativescript-dev-webpack` plugin is installed in the demo app(s), several scripts will be added into apps' package.json files.
 
 ```
- "scripts": {
+  "scripts": {
     "ns-bundle": "ns-bundle",
     "publish-ios-bundle": "npm run ns-bundle --ios --publish-app",
     "start-android-bundle": "npm run ns-bundle --android --run-app",
