@@ -61,7 +61,7 @@ Refer to the [package.json](https://github.com/NativeScript/nativescript-faceboo
 
 ## Checking for Readability, Maintainability, and Functionality Errors
 
-[TSLint](https://palantir.github.io/tslint/) is a great tool for static analysis of your plugin’s code. It will test the plugin for readability and maintainability as well as functionality errors based on customizable rules. A complete list with the available TSLint rules can be found in the [tsling repository](https://palantir.github.io/tslint/rules/).
+[TSLint](https://palantir.github.io/tslint/) is a great tool for static analysis of your plugin’s code. It will test the plugin for readability and maintainability as well as functionality errors based on customizable rules. A complete list with the available TSLint rules can be found in the [tslint repository](https://palantir.github.io/tslint/rules/).
 
 The official [NativeScript plugin seed](https://github.com/NativeScript/nativescript-plugin-seed) recommends TSLint rules defined in this [tslint.json](https://github.com/NativeScript/nativescript-plugin-seed/blob/master/tslint.json) file.
 
