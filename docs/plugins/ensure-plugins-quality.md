@@ -43,7 +43,7 @@ In order to ease the process add the following scripts in your `package.json` fi
 "ngc": "node --max-old-space-size=8192 ./node_modules/.bin/ngc"
 ```
 
-This script will initiate Ahead of Time (AOT) compilation. The parameter `max-old-space-size` is a workaround to fix heap out of memory errors when running node binaries. It's a common issue when using TypeScript 2.1+ and webpack.
+This script will initiate Ahead of Time (AOT) compilation. The parameter `max-old-space-size` is a workaround to fix heap out of memory errors when running node binaries. It's a common issue when using TypeScript 2.1+ and the Angular compiler (ngc). Check out this issue for more information - https://github.com/angular/angular-cli/issues/5618.
 
 ```
 "build": "npm i && tsc && npm run ngc"
