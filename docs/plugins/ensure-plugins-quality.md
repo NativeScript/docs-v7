@@ -118,8 +118,26 @@ To minify your JavaScript files, it is handy to use `--uglify` flag:
 ```
 You have to assure that your plugin doesn't break successful bundling of the application with `--uglify` flag.
 
+[Generation of V8 heap snapshots](http://docs.nativescript.org/best-practices/bundling-with-webpack#v8-heap-snapshot) is another optimization that you have to assure is supported by your plugin. When you build your application using the default configuration from the `nativescript-dev-webpack` plugin, two assets are generated - `bundle.js` and `vendor.js`. The first one contains the application code and the second one - every node package that is required in the `./app/vendor.ts|js` file. You need to add your plugin to the list of required ones in `./app/vendor.ts|js`:
 
-Now the command `npm run build-ios-bundle` will bundle the NativeScript application and build it for iOS. The result is an optimized iOS application that uses the plugin.
+```js
+// app/vendor.ts|js
+
+require("./vendor-platform");
+// ...
+
+require("my-awesome-plugin");
+```
+
+You can enable the generation of V8 snapshots by providing the `--snapshot`:
+
+```
+"build-ios-bundle": "npm run ns-bundle --ios --build-app --uglify --snapshot"
+
+```
+
+
+Now the command `npm run build-ios-bundle` will bundle the minified and 'snapshotted' NativeScript application and build it for iOS. The result is an optimized iOS application that uses the plugin.
 
 Refer to the nativescript-facebook [demo app](https://github.com/NativeScript/nativescript-facebook/tree/doc/demo) which is configured and webpack ready. Notice the [package.json](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/package.json#L41-L42), [vendor.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/vendor.ts), [vendor-platform.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/vendor-platform.ts) ([vendor-platform.android.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/vendor-platform.android.ts) and [vendor-platform.ios.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/vendor-platform.ios.ts)) and [bundle-config.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/bundle-config.ts)
 
