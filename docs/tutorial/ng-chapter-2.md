@@ -7,9 +7,9 @@ environment: angular
 
 # Chapter 2—Creating User Interfaces
 
-In this chapter you’re going to learn how to build NativeScript user interfaces, including markup, styling, images, and more.
+In this chapter, you’re going to learn how to build NativeScript user interfaces, including markup, styling, images, and more.
 
-But to do that you’re going to start on a new app that you’ll continue building throughout the rest of the tutorial. Working on a real-world app will help teach concepts that are hard to show in simple examples, such as how to best organize your code. With that in mind let’s start by looking at what you’ll be building.
+But to do that you’re going to start on a new app that you’ll continue building throughout the rest of the tutorial. Working on a real-world app will help teach concepts that are hard to show in simple examples, such as how to best organize your code. With that in mind, let’s start by looking at what you’ll be building.
 
 ## Table of contents
 
