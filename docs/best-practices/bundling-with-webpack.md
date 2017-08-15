@@ -62,6 +62,35 @@ The plugin adds a few dependencies to the project. Don't forget to install them:
 $ npm install
 ```
 
+#### XML Pages and Code-behind Files
+
+XML page definitions load JavaScript modules named with the same name as the XML file that contains the UI markup. To make those work with webpack bundles, you need to register them as dynamic modules:
+
+```JavaScript
+global.registerModule("main-page", () => require("./main-page"));
+```
+
+Here's an example [configuration](https://github.com/NickIliev/NativeScript-Cosmos-Databank/blob/master/app/bundle-config.ts).
+
+For non-Angular apps, make sure to add `bundle-config.js` file in the `app` folder with the following content:
+
+```JavaScript | TypeScript
+if (global["TNS_WEBPACK"]) {
+    require("tns-core-modules/bundle-entry-points");
+    global.registerModule("main-page", function () { return require("./main-page"); });
+    // register more application modules here following the example above
+}
+```
+
+Then import `bundle-config` on top of `app.js` / `app.ts`
+
+```JavaScript
+require("./bundle-config");
+```
+
+```TypeScript
+import "./bundle-config";
+```
 ## How nativescript-dev-webpack Works
 
 Installing the plugin adds several updates to your project:
@@ -360,16 +389,6 @@ const myPlugin = "my-plugin";
 //...
 global.loadModule(myPlugin);
 ```
-
-#### XML Pages and Code-behind Files
-
-XML page definitions load JavaScript modules named with the same name as the XML file that contains the UI markup. To make those work with webpack bundles, you need to register them as dynamic modules:
-
-```JavaScript
-global.registerModule("main-page", () => require("./main-page"));
-```
-
-Here's an example [configuration](https://github.com/NickIliev/NativeScript-Cosmos-Databank/blob/master/app/bundle-config.ts).
 
 ### Passing extra flags
 

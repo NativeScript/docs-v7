@@ -45,14 +45,25 @@ In order to ease the process add the following scripts in your `package.json` fi
 
 This script will initiate Ahead of Time (AOT) compilation. The parameter `max-old-space-size` is a workaround to fix heap out of memory errors when running node binaries. It's a common issue when using TypeScript 2.1+ and the Angular compiler (ngc). Check out this issue for more information - https://github.com/angular/angular-cli/issues/5618.
 
+
+>**NOTE** The script above is needed only if the plugin implements some specific Angular wrappers for Angular support.
+
 ```
 "build": "npm i && tsc && npm run ngc"
 ```
 
 This script will install all NativeScript plugin’s dependencies, compile TypeScript files and initiate Ahead of Time (AOT) compilation. 
 
+>**NOTE** The command `npm run ngc` is needed only if the plugin implements some specific Angular wrappers for Angular support. If this is not the case, it can be removed.
+
 ```
 "prepublishOnly": "npm run build"
+```
+
+In the `package.json` under your `demo` and `demo-angular` folders add the following script:
+
+```
+"build.plugin": "cd ../src && npm run build"
 ```
 
 This script will be executed before the package is prepared and packed, only on npm publish. More details can be found in the [npm-script documentation](https://docs.npmjs.com/misc/scripts). This approach is important because it ensures the plugin’s TypeScript is compiled and the plugin’s required metadata is generated every time before publishing.
