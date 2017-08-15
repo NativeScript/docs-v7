@@ -43,7 +43,7 @@ In order to ease the process add the following scripts in your `package.json` fi
 "ngc": "node --max-old-space-size=8192 ./node_modules/.bin/ngc"
 ```
 
-This script will initiate Ahead of Time (AOT) compilation. The parameter `max-old-space-size` is a workaround to fix heap out of memory errors when running node binaries. It's a common issue when using TypeScript 2.1+ and webpack.
+This script will initiate Ahead of Time (AOT) compilation. The parameter `max-old-space-size` is a workaround to fix heap out of memory errors when running node binaries. It's a common issue when using TypeScript 2.1+ and the Angular compiler (ngc). Check out this issue for more information - https://github.com/angular/angular-cli/issues/5618.
 
 ```
 "build": "npm i && tsc && npm run ngc"
@@ -61,7 +61,7 @@ Refer to the [package.json](https://github.com/NativeScript/nativescript-faceboo
 
 ## Checking for Readability, Maintainability, and Functionality Errors
 
-[TSLint](https://palantir.github.io/tslint/) is a great tool for static analysis of your plugin’s code. It will test the plugin for readability and maintainability as well as functionality errors based on customizable rules. A complete list with the available TSLint rules can be found in the [tsling repository](https://palantir.github.io/tslint/rules/).
+[TSLint](https://palantir.github.io/tslint/) is a great tool for static analysis of your plugin’s code. It will test the plugin for readability and maintainability as well as functionality errors based on customizable rules. A complete list with the available TSLint rules can be found in the [tslint repository](https://palantir.github.io/tslint/rules/).
 
 The official [NativeScript plugin seed](https://github.com/NativeScript/nativescript-plugin-seed) recommends TSLint rules defined in this [tslint.json](https://github.com/NativeScript/nativescript-plugin-seed/blob/master/tslint.json) file.
 
@@ -90,18 +90,18 @@ Now the command `npm run ci.tslint` will start a static analysis.
 
 ## Checking in Bundled NativeScript Applications
 
-Key benefits of bundling a NativeScript app are:
-- increase the app start-up time
+Key benefits of using webpack to bundle a NativeScript app are:
+- improve the app startup time
 - decrease the size of the app
 
 > **NOTE**: You can read more details about the benefits of bundling NativeScript apps in the [“Using Webpack to Bundle Your Code”]({% slug bundling-with-webpack %}) article.
 
 NativeScript plugins should work seamlessly in bundled app. This could be verified by testing the bundled demo apps. In order to enable the app for bundling, there is some configuration required. The entire setup is defined in [“Using Webpack to Bundle Your Code”]({% slug bundling-with-webpack %}). 
 
-Once the webpack is setup for the demo app(s), there should be several scripts added into apps' package.json files.
+Once the `nativescript-dev-webpack` plugin is installed in the demo app(s), several scripts will be added into apps' package.json files.
 
 ```
- "scripts": {
+  "scripts": {
     "ns-bundle": "ns-bundle",
     "publish-ios-bundle": "npm run ns-bundle --ios --publish-app",
     "start-android-bundle": "npm run ns-bundle --android --run-app",
@@ -118,8 +118,26 @@ To minify your JavaScript files, it is handy to use `--uglify` flag:
 ```
 You have to assure that your plugin doesn't break successful bundling of the application with `--uglify` flag.
 
+[Generation of V8 heap snapshots](http://docs.nativescript.org/best-practices/bundling-with-webpack#v8-heap-snapshot) is another optimization that you have to assure is supported by your plugin. When you build your application using the default configuration from the `nativescript-dev-webpack` plugin, two assets are generated - `bundle.js` and `vendor.js`. The first one contains the application code and the second one - every node package that is required in the `./app/vendor.ts|js` file. You need to add your plugin to the list of required ones in `./app/vendor.ts|js`:
 
-Now the command `npm run build-ios-bundle` will bundle the NativeScript application and build it for iOS. The result is an optimized iOS application that uses the plugin.
+```js
+// app/vendor.ts|js
+
+require("./vendor-platform");
+// ...
+
+require("my-awesome-plugin");
+```
+
+You can enable the generation of V8 snapshots by providing the `--snapshot`:
+
+```
+"build-ios-bundle": "npm run ns-bundle --ios --build-app --uglify --snapshot"
+
+```
+
+
+Now the command `npm run build-ios-bundle` will bundle the minified and 'snapshotted' NativeScript application and build it for iOS. The result is an optimized iOS application that uses the plugin.
 
 Refer to the nativescript-facebook [demo app](https://github.com/NativeScript/nativescript-facebook/tree/doc/demo) which is configured and webpack ready. Notice the [package.json](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/package.json#L41-L42), [vendor.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/vendor.ts), [vendor-platform.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/vendor-platform.ts) ([vendor-platform.android.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/vendor-platform.android.ts) and [vendor-platform.ios.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/vendor-platform.ios.ts)) and [bundle-config.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/bundle-config.ts)
 
