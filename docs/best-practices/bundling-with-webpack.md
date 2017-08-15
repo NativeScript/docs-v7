@@ -72,9 +72,9 @@ global.registerModule("main-page", () => require("./main-page"));
 
 Here's an example [configuration](https://github.com/NickIliev/NativeScript-Cosmos-Databank/blob/master/app/bundle-config.ts).
 
-For non-Angular apps, make sure to add `bundle-config.js` file in the `app` folder with the following content:
+For non-Angular apps, make sure to add `bundle-config.js|ts` file in the `app` folder with the following content:
 
-```JavaScript | TypeScript
+```
 if (global["TNS_WEBPACK"]) {
     require("tns-core-modules/bundle-entry-points");
     global.registerModule("main-page", function () { return require("./main-page"); });
@@ -82,7 +82,7 @@ if (global["TNS_WEBPACK"]) {
 }
 ```
 
-Then import `bundle-config` on top of `app.js` / `app.ts`
+Then import `bundle-config` on top of `app.js|ts`
 
 ```JavaScript
 require("./bundle-config");
