@@ -61,7 +61,7 @@ This template uses a [TabView](https://docs.nativescript.org/cookbook/ui/tab-vie
 
 ## Master Detail with Firebase
 
-<img src="https://raw.githubusercontent.com/NativeScript/template-master-detail-kinvey/master/tools/assets/phone-masterDetail-detail-ios.png" height="400"> <img src="https://raw.githubusercontent.com/NativeScript/template-master-detail-kinvey/master/tools/assets/phone-masterDetail-detail-android.png" height="400">
+<img src="https://raw.githubusercontent.com/NativeScript/template-master-detail-kinvey/master/tools/assets/phone-masterDetail-ios.png" height="400"> <img src="https://raw.githubusercontent.com/NativeScript/template-master-detail-kinvey/master/tools/assets/phone-masterDetail-detail-ios.png" height="400">
 
 {% nativescript %}
 `tns-template-master-detail` - JavaScript
@@ -73,7 +73,7 @@ This Master-Detail template is a fundamental building block for any app that dis
 
 ## Master Detail with Kinvey
 
-<img src="https://raw.githubusercontent.com/NativeScript/template-master-detail/master/tools/assets/phone-masterDetail-detail-ios.png" height="400"> <img src="https://raw.githubusercontent.com/NativeScript/template-master-detail/master/tools/assets/phone-masterDetail-detail-android.png" height="400">
+<img src="https://raw.githubusercontent.com/NativeScript/template-master-detail/master/tools/assets/phone-masterDetail-ios.png" height="400"> <img src="https://raw.githubusercontent.com/NativeScript/template-master-detail/master/tools/assets/phone-masterDetail-detail-ios.png" height="400">
 
 {% nativescript %}
 `tns-template-master-detail-kinvey` - JavaScript
