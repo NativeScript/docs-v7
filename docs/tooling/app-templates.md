@@ -25,8 +25,7 @@ In the command above `tns-template-name` should be the template you wish to use.
 
 ## Blank
 
-<img src="https://raw.githubusercontent.com/NativeScript/template-blank/master/tools/assets/blank-ios.png" height="400">
-<img src="https://raw.githubusercontent.com/NativeScript/template-blank/master/tools/assets/blank-android.png" height="400">
+<img src="https://raw.githubusercontent.com/NativeScript/template-blank/master/tools/assets/blank-ios.png" height="400"> <img src="https://raw.githubusercontent.com/NativeScript/template-blank/master/tools/assets/blank-android.png" height="400">
 
 {% nativescript %}
 `tns-template-blank` - JavaScript
@@ -38,8 +37,7 @@ A basic template with a single page and no custom styles. Useful for when minima
 
 ## Navigation Drawer
 
-<img src="https://raw.githubusercontent.com/NativeScript/template-drawer-navigation/HEAD/tools/assets/phone-tab-ios.png" height="400">
-<img src="https://raw.githubusercontent.com/NativeScript/template-drawer-navigation/HEAD/tools/assets/phone-tab-android.png" height="400">
+<img src="https://raw.githubusercontent.com/NativeScript/template-drawer-navigation/master/tools/assets/phone-drawer-ios.png" height="400"> <img src="https://raw.githubusercontent.com/NativeScript/template-drawer-navigation/master/tools/assets/phone-drawer-android.png" height="400">
 
 {% nativescript %}
 `tns-template-drawer-navigation` - JavaScript
@@ -51,8 +49,7 @@ This template a preconfigured {% nativescript %}[SideDrawer](http://docs.telerik
 
 ## Tabs
 
-<img src="https://raw.githubusercontent.com/NativeScript/template-tab-navigation/HEAD/tools/assets/phone-tab-ios.png" height="400">
-<img src="https://raw.githubusercontent.com/NativeScript/template-tab-navigation/HEAD/tools/assets/phone-tab-android.png" height="400">
+<img src="https://raw.githubusercontent.com/NativeScript/template-tab-navigation/HEAD/tools/assets/phone-tab-ios.png" height="400"> <img src="https://raw.githubusercontent.com/NativeScript/template-tab-navigation/HEAD/tools/assets/phone-tab-android.png" height="400">
 
 {% nativescript %}
 `tns-template-tab-navigation` - JavaScript
@@ -64,8 +61,7 @@ This template uses a [TabView](https://docs.nativescript.org/cookbook/ui/tab-vie
 
 ## Master Detail with Firebase
 
-<img src="https://raw.githubusercontent.com/NativeScript/template-master-detail/HEAD/tools/assets/phone-tab-ios.png" height="400">
-<img src="https://raw.githubusercontent.com/NativeScript/template-master-detail/HEAD/tools/assets/phone-tab-android.png" height="400">
+<img src="https://raw.githubusercontent.com/NativeScript/template-master-detail-kinvey/master/tools/assets/phone-masterDetail-detail-ios.png" height="400"> <img src="https://raw.githubusercontent.com/NativeScript/template-master-detail-kinvey/master/tools/assets/phone-masterDetail-detail-android.png" height="400">
 
 {% nativescript %}
 `tns-template-master-detail` - JavaScript
@@ -77,8 +73,7 @@ This Master-Detail template is a fundamental building block for any app that dis
 
 ## Master Detail with Kinvey
 
-<img src="https://raw.githubusercontent.com/NativeScript/template-master-detail-kinvey/HEAD/tools/assets/phone-tab-ios.png" height="400">
-<img src="https://raw.githubusercontent.com/NativeScript/template-master-detail-kinvey/HEAD/tools/assets/phone-tab-android.png" height="400">
+<img src="https://raw.githubusercontent.com/NativeScript/template-master-detail/master/tools/assets/phone-masterDetail-detail-ios.png" height="400"> <img src="https://raw.githubusercontent.com/NativeScript/template-master-detail/master/tools/assets/phone-masterDetail-detail-android.png" height="400">
 
 {% nativescript %}
 `tns-template-master-detail-kinvey` - JavaScript
