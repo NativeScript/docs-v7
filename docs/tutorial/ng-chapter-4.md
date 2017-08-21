@@ -564,7 +564,7 @@ Open up `app/pages/list/list.html` and paste the following line immediately befo
 This binds the ActivityIndicator’s `busy` attribute to an `isLoading` property in the `ListComponent` component. To define that property, open `app/pages/list/list.component.ts` and add the following line of code immediately under `grocery = ""`:
 
 ``` TypeScript
-isLoading = false;
+isLoading = true;
 ```
 
 Now that the property exists, your final step is to set this flag to `true` when the grocery data is loading. To do that, change the existing `ngOnInit()` function to use the code below:
