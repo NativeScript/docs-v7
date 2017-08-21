@@ -31,7 +31,8 @@ In the command above `tns-template-name` should be the template you wish to use.
 `tns-template-blank` - JavaScript  
 Github repo: https://github.com/NativeScript/template-blank  
 `tns-template-blank-ts` - TypeScript  
-Github repo: https://github.com/NativeScript/template-blank-ts{% endnativescript %}{% angular %}
+Github repo: https://github.com/NativeScript/template-blank-ts
+{% endnativescript %}{% angular %}
 `tns-template-blank-ng` - Angular with TypeScript  
 Github repo: https://github.com/NativeScript/template-blank-ng
 {% endangular %}
@@ -46,7 +47,8 @@ A basic template with a single page and no custom styles. Useful for when minima
 `tns-template-drawer-navigation` - JavaScript  
 Github repo: https://github.com/NativeScript/template-drawer-navigation  
 `tns-template-drawer-navigation-ts` - TypeScript  
-Github repo: https://github.com/NativeScript/template-drawer-navigation-ts{% endnativescript %}{% angular %}
+Github repo: https://github.com/NativeScript/template-drawer-navigation-ts
+{% endnativescript %}{% angular %}
 `tns-template-drawer-navigation-ng` - Angular with TypeScript  
 Github repo: https://github.com/NativeScript/template-drawer-navigation-ng
 {% endangular %}
@@ -59,9 +61,10 @@ This template a preconfigured {% nativescript %}[SideDrawer](http://docs.telerik
 
 {% nativescript %}
 `tns-template-tab-navigation` - JavaScript  
-Github repo: https://github.com/NativeScript/template-tab-navigationg  
+Github repo: https://github.com/NativeScript/template-tab-navigation  
 `tns-template-tab-navigation-ts` - TypeScript  
-Github repo: https://github.com/NativeScript/template-tab-navigation-ts{% endnativescript %}{% angular %}
+Github repo: https://github.com/NativeScript/template-tab-navigation-ts
+{% endnativescript %}{% angular %}
 `tns-template-tab-navigation-ng` - Angular with TypeScript  
 Github repo: https://github.com/NativeScript/template-tab-navigation-ng
 {% endangular %}
@@ -92,7 +95,8 @@ This Master-Detail template is a fundamental building block for any app that dis
 `tns-template-master-detail-kinvey` - JavaScript  
 Github repo: https://github.com/NativeScript/template-master-detail-kinvey  
 `tns-template-master-detail-kinvey-ts` - TypeScript  
-Github repo: https://github.com/NativeScript/template-master-detail-kinvey-ts{% endnativescript %}{% angular %}
+Github repo: https://github.com/NativeScript/template-master-detail-kinvey-ts
+{% endnativescript %}{% angular %}
 `tns-template-master-detail-kinvey-ng` - Angular with TypeScript  
 Github repo: https://github.com/NativeScript/template-master-detail-kinvey-ng
 {% endangular %}
