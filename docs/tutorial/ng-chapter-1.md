@@ -273,8 +273,6 @@ JS ERROR Error: Template parse errors:
           "): AppComponent@2:4
 ```
 
-> **WARNING**: There is a bug in the NativeScript CLI that currently prevents you from seeing template parsing errors on Android. Follow [this issue on GitHub](https://github.com/NativeScript/nativescript-cli/issues/2603) for updates.
-
 Let’s fix the error now by adding the `>` back to line 6 in your `app.component.ts` file.
 
 ``` XML
