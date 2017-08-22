@@ -56,16 +56,16 @@ npm run start-ios-bundle
 
 To give you a sense of how big of a difference webpack makes, let’s look at some before and after videos of applying webpack builds to the [NativeScript Groceries sample](https://github.com/nativescript/sample-Groceries). Here’s what Groceries looks like if you start it _without_ using webpack.
 
-<div style="display: flex; max-width: 100%; height: 300px;">
-  <img src="../img/best-practices/ios-start-up-0.gif">
-  <img src="../img/best-practices/android-start-up-0.gif">
+<div style="display: flex; max-width: 100%;">
+  <img src="../img/best-practices/ios-start-up-0.gif" style="height: 450px;">
+  <img src="../img/best-practices/android-start-up-0.gif" style="height: 450px;">
 </div>
 
 And here’s the same app with webpack turned on.
 
-<div style="display: flex; max-width: 100%; height: 300px;">
-  <img src="../img/best-practices/ios-start-up-1.gif">
-  <img src="../img/best-practices/android-start-up-1.gif">
+<div style="display: flex; max-width: 100%;">
+  <img src="../img/best-practices/ios-start-up-1.gif" style="height: 450px;">
+  <img src="../img/best-practices/android-start-up-1.gif" style="height: 450px;">
 </div>
 
 > **NOTE**:
@@ -104,9 +104,9 @@ If you open your `vendor.js` and `bundle.js` files, you should now see compresse
 
 The more code you have, the more of a difference the UglifyJS optimization will make. Here’s what the NativeScript Groceries sample looks like with Uglify added to the webpack build process.
 
-<div style="display: flex; max-width: 100%;height: 300px;">
-  <img src="../img/best-practices/ios-start-up-2.gif">
-  <img src="../img/best-practices/android-start-up-2.gif">
+<div style="display: flex; max-width: 100%;">
+  <img src="../img/best-practices/ios-start-up-2.gif" style="height: 450px;">
+  <img src="../img/best-practices/android-start-up-2.gif" style="height: 450px;">
 </div>
 
 To recap our steps so far, you started by enabling webpack, which placed all of your application code into two files. Having your code in two files greatly reduced the file I/O NativeScript had to do when your app started, and your startup times improved.
@@ -138,7 +138,7 @@ There are two important things to note:
 
 Because heap snapshots completely avoid the need to parse and execute the vast majority of your JavaScript on startup, they tend to speed up the startup times of NativeScript apps substantially. Here’s how the NativeScript Groceries app starts up on Android with heap snapshots enabled.
 
-<img src="../img/best-practices/android-start-up-3.gif" style="height: 300px;">
+<img src="../img/best-practices/android-start-up-3.gif" style="height: 450px;">
 
 > **NOTE**: For a far more technical explanation of how V8 heap snapshots work in NativeScript, and how you can configure and optimize the snapshots, check out [this article on the NativeScript blog](https://www.nativescript.org/blog/improving-app-startup-time-on-android-with-webpack-v8-heap-snapshot).
 
