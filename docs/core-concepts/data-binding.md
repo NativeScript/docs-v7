@@ -55,12 +55,12 @@ First, the **source** object is created with a **textSource** property. A consta
 ``` JavaScript
 var observableModule = require("data/observable");
 var source = new observableModule.Observable();
-source.textSource = "Text set via twoWay binding";
+source.set("textSource", "Text set via twoWay binding");
 ```
 ``` TypeScript
-import observableModule = require("data/observable");
-var source = new observableModule.Observable();
-source.textSource = "Text set via twoWay binding";
+import { Observable } import "data/observable";
+let source = new Observable();
+source.set("textSource", "Text set via twoWay binding");
 ```
 
 Next, **target** objects are created to bind to the source property. In this case, these will be a `Label` and a `TextField`, which inherit from the `Bindable` class (as all of the UI controls do).
@@ -249,13 +249,13 @@ function navigatingTo(args) {
 exports.navigatingTo = navigatingTo;
 ```
 ``` TypeScript
-import observable = require("data/observable");
-import pageModule = require("ui/page");
+import { EventData, Observable } from "data/observable";
+import { Page } from "ui/page";
 
-var viewModel = new observable.Observable();
+let viewModel = new Observable();
 
-export function navigatingTo(args: observable.EventData) {
-    var page = <pageModule.Page>args.object;
+export function navigatingTo(args: EventData) {
+    let page = <Page>args.object;
     viewModel.set("items", [1, 2, 3]);
     viewModel.set("test", "Test for parent binding!");
     page.bindingContext = viewModel;
