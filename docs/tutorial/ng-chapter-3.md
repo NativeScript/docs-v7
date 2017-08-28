@@ -190,7 +190,7 @@ There are many reasons to segment any application into modular units, and you ca
 
 Even if you have no plans to create an Angular web app, separating out your code is still advantageous for a number of other reasons—testability, ease of maintenance, and so forth—but if you _do_ have plans to build an Angular web app, having a chunk of functionality that you can reuse in your native and web apps can be an invaluable time saver.
 
-> **NOTE**: To show that sharing code between native and web projects is possible, and not theoretical, feel free to peruse [our web implementation of Groceries](https://github.com/tjvantoll/Groceries), which uses the exact same `shared` folder this guide’s native implementation does.
+> **NOTE**: To show that sharing code between native and web projects is possible, and not theoretical, feel free to peruse [our web implementation of Groceries](https://github.com/nativescript/sample-Groceries/tree/web), which uses the exact same `shared` folder this guide’s native implementation does.
 
 To see how this works in action, let’s edit some files in the `shared` folder and set them up to be imported.
 
