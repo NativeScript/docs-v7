@@ -143,12 +143,12 @@ require("my-awesome-plugin");
 You can enable the generation of V8 snapshots by providing the `--snapshot`:
 
 ```
-"build-ios-bundle": "npm run ns-bundle --ios --build-app --uglify --snapshot"
+"build-android-bundle": "npm run ns-bundle --android --build-app --uglify --snapshot"
 
 ```
 
 
-Now the command `npm run build-ios-bundle` will bundle the minified and 'snapshotted' NativeScript application and build it for iOS. The result is an optimized iOS application that uses the plugin.
+Now the command `npm run build-android-bundle` will bundle the minified and 'snapshotted' NativeScript application and build it for Android. The result is an optimized Android application that uses the plugin.
 
 Refer to the nativescript-facebook [demo app](https://github.com/NativeScript/nativescript-facebook/tree/doc/demo) which is configured and webpack ready. Notice the [package.json](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/package.json#L41-L42), [vendor.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/vendor.ts), [vendor-platform.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/vendor-platform.ts) ([vendor-platform.android.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/vendor-platform.android.ts) and [vendor-platform.ios.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/vendor-platform.ios.ts)) and [bundle-config.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/bundle-config.ts)
 
