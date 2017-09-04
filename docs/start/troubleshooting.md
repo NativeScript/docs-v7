@@ -50,6 +50,8 @@ tns install
 
 ### Error thrown when attempting to run build-related operations for Android
 
+
+**Problem:**
 ```Shell
 FAILURE: Build failed with an exception.
 
@@ -59,6 +61,11 @@ A problem occurred configuring root project 'app_name'.
 ```
 
 **Solution:** Run `$ android` to launch the Android SDK Manager and download the Local Maven repository for Support Libraries 28.0.0.
+
+
+**Problem:** Gradle doesn't work with `org.gradle.parallel=true` enabled in `gradle.properties`.
+
+**Solution:** Currently there's no solution, but we are wokring on updating the build to work with this option enabled.
 
 ### Cannot run or debug apps on iOS 8.1.3 devices with Xcode 6.1
 
