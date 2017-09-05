@@ -21,7 +21,9 @@ To create a new app using one of the templates, you can use the following comman
 $  tns create my-app-name --template tns-template-name
 ```
 
-In the command above `tns-template-name` should be the template you wish to use. See bellow for the name of each template. Note that different versions of NativeScript can have different code in the application templates. If you create an app using an older version of the framework you might get less features from the ones included in the current NativeScript release.
+In the command above `tns-template-name` should be the template you wish to use. See bellow for the name of each template. 
+
+>Different versions of NativeScript can have different code in the application templates. If you create an app using an older version of the framework you might get less features from the ones included in the current NativeScript release.
 
 ## Blank
 
@@ -53,7 +55,7 @@ Github repo: https://github.com/NativeScript/template-drawer-navigation-ts
 Github repo: https://github.com/NativeScript/template-drawer-navigation-ng
 {% endangular %}
 
-This template a preconfigured {% nativescript %}[SideDrawer](http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawer/overview){% endnativescript %}{% angular %}[SideDrawer](http://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/SideDrawer/overview){% endangular %} component from the [Progress NativeScript UI](http://docs.telerik.com/devtools/nativescript-ui/introduction) suite with several pages.
+This template contains a preconfigured {% nativescript %}[SideDrawer](http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawer/overview){% endnativescript %}{% angular %}[SideDrawer](http://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/SideDrawer/overview){% endangular %} component from the [Progress NativeScript UI](http://docs.telerik.com/devtools/nativescript-ui/introduction) suite with several pages.
 
 ## Tabs
 
