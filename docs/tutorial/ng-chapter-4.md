@@ -446,7 +446,7 @@ Now that we have the UI ready, let’s make the add button work.
 Open `app/pages/list/list.html` and give the existing `<TextField>` a new `[(ngModel)]` attribute so that it looks like this:
 
 ``` XML
-<TextField #groceryTextField [(ngModel)]="grocery" hint="Enter a grocery item" (returnPress)="add()" "col="0"></TextField>
+<TextField #groceryTextField [(ngModel)]="grocery" hint="Enter a grocery item" (returnPress)="add()" col="0"></TextField>
 ```
 
 Note our new use of the `(returnPress)` binding. This will fire the `add()` method when the user hits return.
