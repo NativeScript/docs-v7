@@ -24,7 +24,8 @@ get_dependencies() {
     (cd _dependencies &&
         get_artifacts "sdk-examples-docs-$ENV" 1 && \
         get_artifacts "nativescript-angular-docs-$ENV" 1 && \
-        get_artifacts "modules-docs-$ENV" {1..3})
+        get_artifacts "modules-docs-$ENV" {1..3} && \
+        get_artifacts "sidekick-docs-$ENV" 1)
 }
 
 extract_prebuild_dependencies() {
@@ -37,5 +38,6 @@ extract_prebuild_dependencies() {
 
 extract_postbuild_dependencies() {
     (cd dist && \
-         tar zxvf ../_dependencies/nativescript-api-reference*.tar.gz)
+         tar zxvf ../_dependencies/nativescript-api-reference*.tar.gz && \
+         tar zxvf ../_dependencies/sidekick-docs*.tar.gz)
 }
