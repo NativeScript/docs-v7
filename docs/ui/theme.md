@@ -113,7 +113,7 @@ After that, paste the following code into your `app.android.scss` file.
 // Place any CSS rules you want to apply only on Android here
 ```
 
-> **TIP**: If you are using an older version of the `nativescript-dev-sass` plugin (before 1.0.0), the tilde ("`~`") in the `@import` is **not** required for referencing theme stylesheets. As of 1.0.0, the "~" is required to tell the node sass compiler to resovle the import file path relative to the `node_modules` directory.
+> **TIP**: If you are using an older version of the `nativescript-dev-sass` plugin (before 1.0.0), the tilde ("`~`") in the `@import` is **not** required for referencing theme stylesheets. As of 1.0.0, the "~" is required to tell the node sass compiler to resolve the import file path relative to the `node_modules` directory.
 
 And the following code into your `app.ios.scss` file.
 
