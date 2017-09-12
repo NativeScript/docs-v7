@@ -173,7 +173,9 @@ The Verified Plugins Recommendations outline best practices that is going to be 
 #### 8. Make sure you have "nativescript" property in plugin's package.json that correctly specifies the platforms the plugin supports. [Read more](http://docs.nativescript.org/plugins/plugin-reference#packagejson-specification)
 #### 9. Test whether the demo application can be snapshotted `npm run ns-bundle --android --build-app --uglify --snapshot`
 
-Your plugin passes all these requirements? Apply by sending an email with link to your plugin's repository to [nativescriptplugins@progress.com](mailto:nativescriptplugins@progress.com)!
+<br>
+
+>Your plugin passes all these requirements? Apply by sending an email with link to your plugin's repository to [nativescriptplugins@progress.com](mailto:nativescriptplugins@progress.com)!
 
 ## See Also
 
