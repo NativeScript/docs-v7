@@ -17,7 +17,7 @@ There is a list of requirements that should assure the high quality of the Nativ
 
 - The time for building of NativeScript applications will be decreased. The more quality are the plugins, the faster mobile apps will be build.
 
-- Since the high quality plugins will be more discoverable in the [Marketplace](http://market.nativescript.org) - the plugin authors of these plugin will be also more discoverable
+- Since the high quality plugins will be more discoverable in the [Marketplace](http://market.nativescript.org) - the plugin authors of these plugins will be also more discoverable
 
 
 ## Criteria
