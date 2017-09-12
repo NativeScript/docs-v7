@@ -205,7 +205,7 @@ The NativeScript plugin seed automatically sets up the necessary TypeScript conf
 
 ![](../img/plugins/vs-code-intellisense.png)
 
-> **TIP**: If you’re new to working with native APIs in NativeScript, check out our documentation on [accessing native APIs in JavaScript and TypeScript](https://docs.nativescript.org/core-concepts/accessing-native-apis-with-javascript). You might also want to dive into a few existing plugin’s source code just to see how they work. Almost every plugin on the [NativeScript plugin marketplace](http://plugins.nativescript.org/) is open source.
+> **TIP**: If you’re new to working with native APIs in NativeScript, check out our documentation on [accessing native APIs in JavaScript and TypeScript](https://docs.nativescript.org/core-concepts/accessing-native-apis-with-javascript). You might also want to dive into a few existing plugin’s source code just to see how they work. Almost every plugin on the [NativeScript marketplace](http://market.nativescript.org) is open source.
 
 There are still a few more changes you need to make before your plugin is ready to test. Next, open your `src/version-number.android.ts` file and paste in the following code:
 

@@ -18,7 +18,7 @@ NativeScript plugins are npm packages with some added native functionality. Ther
 
 Because NativeScript plugins are npm packages, you can find NativeScript plugins on npm’s own site by searching for “nativescript-plugin-name”. For example a search of “nativescript accelerometer” would point you right at the [NativeScript accelerometer plugin](https://www.npmjs.com/package/nativescript-accelerometer).
 
-The NativeScript team also maintains an [official plugins marketplace](http://plugins.nativescript.org/), which displays a filtered list of NativeScript-related plugins from npm. A search for “accelerometer” on the plugins marketplace will point you at the plugin you need.
+The NativeScript team also maintains an [official marketplace](http://market.nativescript.org/), which displays a filtered list of NativeScript-related plugins from npm. A search for “accelerometer” on the plugins marketplace will point you at the plugin you need.
 
 ![](../img/plugins/marketplace.png)
 
@@ -34,7 +34,7 @@ Once you’ve found the plugin you need, install the plugin into your app using 
 tns plugin add <plugin-name>
 ```
 
-For example, the following command installs the [NativeScript camera plugin](http://plugins.nativescript.org/plugin/nativescript-camera).
+For example, the following command installs the [NativeScript camera plugin](http://market.nativescript.org/plugins/nativescript-camera).
 
 ```
 tns plugin add nativescript-camera
