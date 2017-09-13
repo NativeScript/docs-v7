@@ -66,7 +66,13 @@ If you plan to work on a non-trivial change, you will most probably want to run 
 
 ### Installing the virtual machine
 
-Open a console box (**Windows users should run a Git bash session!**) and cd to your working dir. Then do a:
+Open a console box (**Windows users should run a Git bash session!**) and cd to the `build` folder of the working dir.
+
+```bash
+$ cd build
+```
+
+Then do a:
 
 ```bash
 $ vagrant up
