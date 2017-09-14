@@ -17,9 +17,7 @@ fetchExternals=${FETCH_EXTERNALS:=}
 
 # Run "nativescript" build first since Jekyll wipes its target dir and
 # would wipe the "angular" output subdir
-mv ./Content/code-samples ./code-samples
 ./build-jekyll.sh "nativescript"
-mv ./code-samples ./Content/code-samples
 ./build-jekyll.sh "angular"
 
 extract_postbuild_dependencies

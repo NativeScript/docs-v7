@@ -5,8 +5,6 @@ source: ./Content
 # Release date in the format of: YYYY-MM-DD
 release_date: "2016-11-16"
 
-# Exclude files which should not be in the output
-exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist]
 navigation:
 ## List your directory names and order here, like this:
     start:

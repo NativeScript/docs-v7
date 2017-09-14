@@ -9,6 +9,9 @@ baseurl:  "/angular"
 nsselected: ""
 ngselected: "selected"
 
+# Exclude files which should not be in the output
+exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist]
+
 # The google services configuration
 google_tag_manager: GTM-W58JDD
 google_custom_search: '001595215763381649090:asl7kpbijam'

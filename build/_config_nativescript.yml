@@ -4,7 +4,8 @@ destination: ./dist
 
 ## The application virtual path
 baseurl:  ""
-
+# Exclude files which should not be in the output
+exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, code-samples]
 ## The highlighting in the header
 nsselected: "selected"
 ngselected: ""
