@@ -14,11 +14,9 @@ gruntcli() {
     npm install -g grunt-cli
 }
 
-bundler() {
-    sudo gem install bundler
-}
-
 install_ruby() {
+
+    command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
     curl -sSL https://get.rvm.io | bash -s stable --ruby=2.3.0
     . ~/.rvm/scripts/rvm
     gem install bundler
