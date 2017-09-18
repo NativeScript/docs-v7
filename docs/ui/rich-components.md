@@ -8,7 +8,7 @@ slug: rich-components
 # Rich UI Widgets
 
 
-NativeScript UI is a free suite of rich and customizable premium UI widgets for building NativeScript apps. It is available for download as a plugin on npmjs.com under [nativescript-telerik-ui](https://www.npmjs.com/package/nativescript-telerik-ui).
+NativeScript UI is a free suite of rich and customizable premium UI widgets for building NativeScript apps. It is available for download as a plugin on npmjs.com under [nativescript-pro-ui](https://www.npmjs.com/package/nativescript-pro-ui).
 
 > Continue reading more about each component below or take them up for a spin with the {% nativescript %}[NativeScript UI sample app on GitHub](https://github.com/telerik/nativescript-ui-samples){% endnativescript %}{% angular %}[NativeScript UI sample app on GitHub](https://github.com/telerik/nativescript-ui-samples-angular){%  endangular %}.
 
