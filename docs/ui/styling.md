@@ -295,6 +295,9 @@ StackLayout Button { background-color: blue; }
 ```CSS
 StackLayout > Button { background-color: blue; }
 ```
+
+The `background-color` rule will not be applied. In order to apply the selector, the WrapLayout element would need to be removed so that the Button is a direct child of the StackLayout.
+
 * (+) - A adjacent sibling selector, allows to select all elements, which are siblings of a specified element.
 #### Direct sibling test by class
 {% nativescript %}
@@ -381,8 +384,6 @@ StackLayout Button + Label{
     color:white;
 }
 ```
-
-The `background-color` rule will not be applied. In order to apply the selector, the WrapLayout element would need to be removed so that the Button is a direct child of the StackLayout.
 
 ### Attribute selector
 
