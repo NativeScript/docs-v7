@@ -71,7 +71,7 @@ During installation you may need to accept a User Account Control prompt to gran
 
 If you’re on a Mac, copy and paste the script below into your terminal and press Enter:
 
-<pre class="add-copy-button"><code class="language-terminal">ruby -e "$(curl -fsSL https://www.nativescript.org/setup/mac)"</code></pre>
+<pre class="add-copy-button"><code class="language-terminal">bash <(curl -Ls https://www.nativescript.org/setup/mac)</code></pre>
 
 Much like the Windows script, the macOS script needs administrative access to run some commands using `sudo`; therefore, you may need to provide your password several times during execution. The macOS script also may take some time to complete, as it’s installing the dependencies for both iOS and Android development. When the script finishes, close and restart your terminal.
 
