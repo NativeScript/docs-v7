@@ -249,7 +249,7 @@ With the {% nativescript %}[TimePicker]({%ns_cookbook ui/time-picker%}){% endnat
 
 ## ListPicker
 
-With the {% nativescript %}[ListPicker]({%ns_cookbook ui/list-picker%}){% endnativescript %} {% angular %}[ListPicker]({%slug list-picker%}){% endangular %} widget, you can pick a value from a list.
+With the {% nativescript %}[ListPicker]({%ns_cookbook ui/listpicker%}){% endnativescript %} {% angular %}[ListPicker]({%slug list-picker%}){% endangular %} widget, you can pick a value from a list.
 
 ![list-picker android](../img/gallery/android/listPickerPage.png "list-picker android")![list-picker ios](../img/gallery/ios/listPickerPage.png "list-picker ios")
 
