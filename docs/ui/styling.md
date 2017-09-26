@@ -476,6 +476,7 @@ This list of properties can be set in CSS or through the style property of each 
 | `text-decoration`     | `textDecoration`      | Sets the text formatting. Possible values: `none`, `line-through`, `underline`. |
 | `text-transform`      | `textTransform`       | Sets the text transform. Possible values: `none`, `capitalize`, `uppercase`, `lowercase`. |
 | `letter-spacing`      | `letterSpacing`       | Sets the text letter spacing. (On Android API Level 21 and above.) |
+| `line-height`         | `lineHeight`          | Sets the text line height |
 | `z-index`             | `zIndex`              | Sets the z-index. (On Android API Level 21 and above.) |
 | `clip-path`           | `clip-path`           | Sets the clip-path. Supported shapes are circle, ellipse, rect and polygon. You can define your own shape using [clippy](http://bennettfeely.com/clippy/)  |
 | `vertical-align`      | `verticalAlignment`   | Sets the vertical alignment of the current view within its parent. Possible values: `top`, `center`, `bottom`, `stretch`. |
