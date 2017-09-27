@@ -465,8 +465,16 @@ This list of properties can be set in CSS or through the style property of each 
 | `background-repeat`   | `backgroundRepeat`    | Sets if/how the background image should be repeated. Possible values: `repeat`, `repeat-x`, `repeat-y`, `no-repeat` |
 | `background-position` | `backgroundPosition`  | Sets the starting position of the background image. You can set the position with absolute, percent or alignment values. More info [here](http://www.w3schools.com/cssref/pr_background-position.asp). |
 | `background-size`     | `backgroundSize`      | Sets the size of the background image. Possible values: "*length length*", "*percent% percent%*", "cover" or "contain". |
-| `border-color`        | `borderColor`         | Sets a border color to the matched view’s. |
-| `border-width`        | `borderWidth`         | Sets a border width to the matched view’s. |
+| `border-color`        | `borderColor`         | Sets border colors to the matched view’s. |
+| `border-top-color`        | `borderTopColor`         | Sets a top border color to the matched view’s. |
+| `border-right-color`        | `borderRightColor`         | Sets a right border color to the matched view’s. |
+| `border-bottom-color`        | `borderBottomColor`         | Sets a bottom border color to the matched view’s. |
+| `border-left-color`        | `borderLeftColor`         | Sets a left border color to the matched view’s. |
+| `border-width`        | `borderWidth`         | Sets border widths to the matched view’s. |
+| `border-top-width`        | `borderTopWidth`         | Sets a top border width to the matched view’s. |
+| `border-right-width`        | `borderRightWidth`         | Sets a right border width to the matched view’s. |
+| `border-bottom-width`        | `borderBottomWidth`         | Sets a bottom border width to the matched view’s. |
+| `border-left-width`        | `borderLeftWidth`         | Sets a left border width to the matched view’s. |
 | `border-radius`       | `borderRadius`        | Sets a border radius to the matched view’s. |
 | `font`                | `font`                | Sets the font properties (this includes `font-family`, `font-size`, `font-style` and `font-weight`)  of the matched view. |
 | `font-family`         | `fontFamily`          | Sets the font family of the matched view. |
