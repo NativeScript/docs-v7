@@ -8,6 +8,8 @@ previous: /integration-with-existing-ios-and-android-apps/extend-existing-androi
 
 # Extend your existing Android app with NativeScript
 
+> **WARNING**: Embedding NativeScript into an existing Android application is an experimental feature. If you’re interested in seeing this scenario being officially supported, please [let us know on GitHub](https://github.com/NativeScript/android-runtime/issues/321).
+
 This article will walk you through setting up an already existing Android Studio project to integrate with the NativeScript runtime, and execute NativeScript code.
 
 ## Requirements: 

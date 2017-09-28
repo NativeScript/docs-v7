@@ -6,8 +6,9 @@ slug: extend-existing-ios-app
 environment: angular
 ---
 
-
 # Extend your existing iOS app with Angular and NativeScript
+
+> **WARNING**: Embedding NativeScript into an existing iOS application is an experimental feature. If you’re interested in seeing this scenario being officially supported, please [let us know on GitHub](https://github.com/NativeScript/ios-runtime/issues/459).
 
 ## This article provides step-by-step instructions how to extend existing iOS app with Angular and NativeScript
 
