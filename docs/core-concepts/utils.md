@@ -151,10 +151,10 @@ var application = utilsModule.ad.getApplication();
 const application = utils.ad.getApplication();
 ```
 
-#### getApplication method
+#### getApplicationContext method
 
 The method allows to get the Android application context
-> the returned value willl be from type `android.content.Context`
+> the returned value will be from type `android.content.Context`
 
  ```JavaScript
 var context = utilsModule.ad.getApplicationContext();
