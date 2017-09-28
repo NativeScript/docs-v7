@@ -13,7 +13,7 @@ previous_url: /index
 NativeScript is how you build cross-platform, native iOS and Android apps without web views. Use Angular, TypeScript or modern JavaScript to get truly native UI and performance while sharing skills and code with the web. Get 100% access to native APIs via JavaScript and reuse of packages from npm, CocoaPods and Gradle. Open source and backed by Progress.
 {% endnativescript %}
 
-NativeScript 是一种跨平台的开发技术，可以开发ios和Android应用程序， NativeScript并不使用 web views来实现跨平台，通过一些现代的网页技术如Angular、TypeScript或者JavaScript操作系统原生UI，和低性能损失，使用JavaScript可以获得100%的原生APIs的访问权限，同时网络上有大量的npm包，CocoaPods 和 Gradle供重复使用。NativeScript是开源的并会获得持续的更新维护。
+NativeScript 是一种用来开发ios和Android应用程序的跨平台技术，它不使用 web views。在共享和利用网络技能和代码的同时，NactiveScript通过Angular、TypeScript或者现代JavaScript来获取真正的原生UI和高性能。NativeScript可以获得原生APIs 100%的访问权限，重复使用网络上有大量的npm包，CocoaPods包和 Gradle包。NativeScript是开源项目，由Progress维护。
 
 {% angular %}
 # NativeScript with Angular
