@@ -4,7 +4,7 @@ description: Configure your Windows system to create, develop and build projects
 position: 30
 slug: windows
 publish: false
-previous_url: /setup/ns-cli-setup/ns-setup-win
+previous_url: /setup/ns-cli-setup/ns-setup-win,/start/ns-setup-installer
 ---
 
 # NativeScript Advanced Setup: Windows
