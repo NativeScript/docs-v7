@@ -141,18 +141,6 @@ var value = utils.layout.round(<number_value>);
 
 #### getApplication method
 
-The method allows to get an instance of native Android application
-> the returned value will be from type `android.app.Application`
-
- ```JavaScript
-var application = utilsModule.ad.getApplication();
-```
-```TypeScript
-const application = utils.ad.getApplication();
-```
-
-#### getApplication method
-
 The method allows to get the Android application context
 > the returned value willl be from type `android.content.Context`
 
