@@ -6,7 +6,7 @@ position: 2
 ---
 
 # Java to JavaScript Conversion
-The article lists the available types in Java and how they are projected to Java.
+The article lists the available types in Java and how they are projected to JavaScript.
 
 ### String & Character
 Both [java.lang.String](http://developer.android.com/reference/java/lang/String.html) and [java.lang.Character](http://docs.oracle.com/javase/7/docs/api/java/lang/Character.html) types are projected as JavaScript [String](http://www.w3schools.com/jsref/jsref_obj_string.asp):
