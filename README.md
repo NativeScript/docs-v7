@@ -111,7 +111,7 @@ And run the build script telling it to use the current branch and avoid committi
 $ ./build.sh
 ```
 
-_Note: If you are an external contributors, you can add a '--skipDependencies' flag to the ./build.sh command in order to bypass steps that you will not be able to execute successfully._
+_Note: If you are an external contributors, you can add a '--skipDependencies' flag to the ./build.sh command in order to bypass steps that you will not be able to execute successfully. Be advised that in such case parts of the documentation (API Reference, Sidekick, SDK Examples) won't be available locally._
 
 ### Adding content
 
