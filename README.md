@@ -111,6 +111,8 @@ And run the build script telling it to use the current branch and avoid committi
 $ ./build.sh
 ```
 
+_Note: If you are an external contributors, you can add a '--skipDependencies' flag to the ./build.sh command in order to bypass steps that you will not be able to execute successfully._
+
 ### Adding content
 
 Edit an article and trigger your build by running `build.sh` as described above.
