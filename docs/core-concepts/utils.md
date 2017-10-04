@@ -281,16 +281,6 @@ const drawableId:number = utils.ad.resources.getDrawableId("icon");
 #### getStringId method
 
 Get the id of the string from the resources, while using its `name`
-```JavaScript
-var stringId = utilsModule.ad.resources.getStringId("string_name");
-```
-```TypeScript
-const stringId: string = utils.ad.resources.getStringId("string_name");
-```
-
-#### getStringId method
-
-Get the id of the string from the resources, while using its `name`
 
 ```JavaScript
 var stringId = utilsModule.ad.resources.getStringId("resource_string_name");
