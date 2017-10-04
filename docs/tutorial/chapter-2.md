@@ -193,7 +193,7 @@ After your app updates with this change, you may expect to see a polished login 
 
 Currently you only see a single button because you need to tell NativeScript how to layout your page’s UI components. Let's look at how to use NativeScript layouts to arrange these components on the screen.
 
-> **TIP**: The NativeScript docs include a [full list of the UI components and attributes](/ui-with-xml) with which you can build your apps. You can even [build your own, custom UI components](/ui-with-xml#custom-components).
+> **TIP**: The NativeScript docs include a [full list of the UI components and attributes](/ui/components) with which you can build your apps. You can even [build your own, custom UI components](/ui/basics#custom-components).
 
 ## 2.4: Layouts 
 
