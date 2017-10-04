@@ -85,6 +85,9 @@ Complete the following steps to set up NativeScript on your Linux development ma
     </code></pre>
 
 1. Setup Android Emulators (AVD) by following the article [here]({%slug android-emulators%})
+    1. After creating an emulated device you need to:
+        * Enable its Developer mode - go to _Settings -> About emulated device_ and tap 7 times on _Build number_
+        * Enable USB debugging - go to _Settings -> Developer options_ and enable USB Debugging 
 
 1. Install the NativeScript CLI.
     1. Run the following command.
