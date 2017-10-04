@@ -99,12 +99,12 @@ The most common customization of ListView control is customizing the item templa
 ```XML
 <GridLayout rows="*">
     <ListView [items]="myItems" (setupItemView)="onSetupItemView($event)">
-        <template let-item="item" let-i="index" let-third="third">
+        <ng-template let-item="item" let-i="index" let-third="third">
             <StackLayout [class.third]="third">
                 <Label [text]='"index: " + i'></Label>
                 <Label [text]='"[" + item.id +"] " + item.name'></Label>
             </StackLayout>
-        </template>
+        </ng-template>
     </ListView>
 </GridLayout>
 ```
@@ -153,9 +153,9 @@ export class ItemComponent {
     template: `
         <GridLayout rows="*">
             <ListView [items]="myItems">
-                <template let-item="item">
+                <ng-template let-item="item">
                     <item-component [data]="item"></item-component>
-                </template>
+                </ng-template>
             </ListView>
         </GridLayout>
     `,
@@ -205,11 +205,11 @@ export class DataItem {
     template: `
     <GridLayout>
         <ListView [items]="myItems | async">
-            <template let-item="item" let-i="index" let-odd="odd" let-even="even">
+            <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
                 <StackLayout [class.odd]="odd" [class.even]="even">
                     <Label [text]='"index: " + item.name'></Label>
                 </StackLayout>
-            </template>
+            </ng-template>
         </ListView>
     </GridLayout>
     `,
@@ -254,9 +254,9 @@ The built-in [loadMoreItemsEvent](http://docs.nativescript.org/api-reference/cla
 ```HTML
 // list-test.html
 <ListView [items]="myItems" (loadMoreItems)="loadMoreItems()">
-    <template let-item="item" let-i="index">
+    <ng-template let-item="item" let-i="index">
         <Label [text]="item"></Label>
-    </template>
+    </ng-template>
 </ListView>
 ```
 ```TypeScript
