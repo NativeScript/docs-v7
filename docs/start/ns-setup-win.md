@@ -21,7 +21,7 @@ This page contains a list of all system requirements needed to build and run Nat
 * Windows 7 Service Pack 1 or later
 * The latest stable official release of Node.js (LTS) [6.x](https://nodejs.org/dist/latest-v6.x/) 
 * (Optional) Chocolatey to simplify the installation of dependencies
-* JDK 8 or a later stable official release
+* JDK 8
 * Android SDK 22 or a later stable official release
 * Android Support Repository
 * (Optional) Google Repository
@@ -52,7 +52,7 @@ Complete the following steps to set up NativeScript on your Windows development 
         <pre class="add-copy-button"><code class="language-terminal">choco install nodejs-lts -y
         </code></pre>
 
-3. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
+3. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
     - In the command prompt, run the following command.
 
         <pre class="add-copy-button"><code class="language-terminal">choco install jdk8 -y

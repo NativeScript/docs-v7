@@ -26,7 +26,7 @@ This page contains a list of all system requirements needed to build and run Nat
     * CocoaPods
     * (Optional) xcproj command line tool
 * For Android development
-    * JDK 8 or a later stable official release
+    * JDK 8
     * Android SDK 22 or a later stable official release
     * Android Support Repository
     * (Optional) Google Repository
@@ -73,9 +73,9 @@ Complete the following steps to setup NativeScript on your macOS development mac
         </code></pre>
 
 1. Install the dependencies for Android development.
-    1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or a later stable official release.
+    1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
         1. Go to [Java SE Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and click **Download** for JDK.
-        1. In the **Java SE Development Kit** section, accept the license agreement and click the download link for Mac macOS.
+        1. In the **Java SE Development Kit** section, accept the license agreement and click the download link for macOS.
         1. Wait for the download to complete and install the JDK.
     1. Set the JAVA_HOME system environment variable.
 
