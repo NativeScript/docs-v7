@@ -51,7 +51,7 @@ Complete the following steps to set up NativeScript on your Linux development ma
     <pre class="add-copy-button"><code class="language-terminal">sudo apt-get install g++
     </code></pre>
 
-1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
+1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
     1. Run the following commands.
 
         <pre class="add-copy-button"><code class="language-terminal">sudo apt-get install python-software-properties
