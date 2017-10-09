@@ -92,7 +92,7 @@ Next, install the plugin:
 tns plugin add ../my-plugin
 ```
 
-> **NOTE:** Installing CocoaPods sets the deployment target of your app to iOS 8, if not already set to iOS 8 or later. This change is required because CocoaPods are installed as shared frameworks to ensure that all symbols are available at runtime.
+> **NOTE:** Installing CocoaPods sets the deployment target of your app to iOS 9, if not already set to iOS 9 or later. This change is required because CocoaPods are installed as shared frameworks to ensure that all symbols are available at runtime.
 
 ## Build the Project
 
