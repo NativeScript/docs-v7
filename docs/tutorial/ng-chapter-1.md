@@ -184,8 +184,6 @@ The default way of debugging a NativeScript application is by using the integrat
 **Visual Studio Code**
 One of the preffered ways of debugging a NativeScript application is with the [NativeScript extension for Visual Studio Code](http://docs.nativescript.org/tooling/debugging#debugging-with-visual-studio-code).
 
-**ConsoleLog**
-
 <h4 class="exercise-start">
     <b>Exercise</b>: Console logging in NativeScript
 </h4>
