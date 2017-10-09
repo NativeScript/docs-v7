@@ -67,12 +67,6 @@ A problem occurred configuring root project 'app_name'.
 
 **Solution:** Currently there's no solution, but we are wokring on updating the build to work with this option enabled.
 
-### Cannot run or debug apps on iOS 8.1.3 devices with Xcode 6.1
-
-**Problem:** On macOS systems with Xcode 6.1 installed, you cannot run or debug apps on iOS 8.1.3 devices.<br/>The developer disk images provided with the iOS SDK in Xcode 6.1 are not compatible with iOS 8.1.3. The NativeScript CLI uses these disk images to work with your attached iOS devices.
-
-**Solution:** Update to Xcode 6.1.1 or later.
-
 ### The `debug` command times out on Android devices
 
 **Problem:** The `debug` command times out when you attempt to debug on Android devices or emulators and the debug tools do not start.<br/>The `debug` command is configured with a 30-second timeout. On slower computer configurations, the CLI might exceed this timeout when connecting to your Android devices or emulators.

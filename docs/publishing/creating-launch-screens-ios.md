@@ -26,11 +26,11 @@ In this article, we are going to introduce the workflow to create your own launc
 Setting up launch screens depends on the version of iOS you are targeting.
 In iOS 7 and lower, the approach for creating the launch screen is to use static image resources.
 The drawback of this method is that the app developer will have to provide many different
-images, each with different resolution for each iOS device. In iOS 8 and above, the approach is to create
+images, each with different resolution for each iOS device. In iOS 9 and above, the approach is to create
 a LaunchScreen.storyboard, which is much more powerful in terms of customization and is easier to maintain.
 
 The default Hello-World project in NativeScript is provided with default settings that supports both 
-approaches. When you build your app for devices with iOS lower then version 8, NativeScript will use the static images and when you use NativeScript to build your app for devices with iOS 8 and above, it will use the provided LaunchScreen.storyboard.
+approaches. When you build your app for devices with iOS lower then version 8, NativeScript will use the static images and when you use NativeScript to build your app for devices with iOS 9 and above, it will use the provided LaunchScreen.storyboard.
 
 ### How to set your launch screen
 
@@ -56,9 +56,9 @@ In your **app/App_Resources/iOS/Assets.xcassets** you will find the following su
 
 * **LaunchImage.launchimage**: The resource that holds the images for your launch screen images (for iOS 7 and lower versions).
 
-* **LaunchScreen.AspectFill.imageset**: The resource that holds the background image for your LaunchScreen.storyboard (for iOS 8, 9 amd 10).
+* **LaunchScreen.AspectFill.imageset**: The resource that holds the background image for your LaunchScreen.storyboard (for iOS 9 amd 10).
 
-* **LaunchScreen.Center.imageset**: The resource that holds the centered image for your LaunchScreen.storyboard (for iOS 8, 9 amd 10).
+* **LaunchScreen.Center.imageset**: The resource that holds the centered image for your LaunchScreen.storyboard (for iOS 9 amd 10).
 
 ![Default asset catalog](../img/launch-screen/ios/launch-screen-howto-001.png "Default asset catalog")
 

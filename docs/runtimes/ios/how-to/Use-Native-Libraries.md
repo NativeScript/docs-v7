@@ -42,7 +42,7 @@ If there is no CocoaPod for the current library you can still use a plugin, but 
 
 ### Cons
 
-* Shared frameworks can be used only in iOS 8 and above. This limitation is valid for pure native applications, too. If you are targeting iOS versions lower than 8.0 you must use static frameworks.
+* Shared frameworks can be used only in iOS 9 and above. This limitation is valid for pure native applications, too. If you are targeting iOS versions lower than 8.0 you must use static frameworks.
 
 # Static Frameworks
 
