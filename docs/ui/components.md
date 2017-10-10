@@ -165,7 +165,7 @@ The {% nativescript %}[Image]({%ns_cookbook ui/image%}){% endnativescript %} {% 
 
 ## ListView
 
-The {% nativescript %}[ListView]({%ns_cookbook ui/list-view%}){% endnativescript %} {% angular %}[ListView]({%slug list-view%}){% endangular %} shows items in a vertically scrolling list. You can set an [`itemTemplate`](http://docs.nativescript.org/api-reference/modules/_ui_list_view_.knowntemplates.html) to specify how each item in the list should be displayed.
+The {% nativescript %}[ListView]({%ns_cookbook ui/list-view%}){% endnativescript %} {% angular %}[ListView]({%slug listview%}){% endangular %} shows items in a vertically scrolling list. You can set an [`itemTemplate`](http://docs.nativescript.org/api-reference/modules/_ui_list_view_.knowntemplates.html) to specify how each item in the list should be displayed.
 
 ![list-view android](../img/gallery/android/listViewPage.png "list-view android")![list-view ios](../img/gallery/ios/listViewPage.png "list-view ios")
 
@@ -177,7 +177,7 @@ The {% nativescript %}[ListView]({%ns_cookbook ui/list-view%}){% endnativescript
 
 ## HtmlView
 
-The {% nativescript %}[HtmlView]({%ns_cookbook ui/html-view%}){% endnativescript %} {% angular %}[HtmlView]({%slug html-view%}){% endangular %} represents a view with HTML content. Use this component instead of WebView when you want to show just static HTML content.
+The {% nativescript %}[HtmlView]({%ns_cookbook ui/html-view%}){% endnativescript %} {% angular %}[HtmlView](https://docs.nativescript.org/angular/code-samples/ui/htmlview.html){% endangular %} represents a view with HTML content. Use this component instead of WebView when you want to show just static HTML content.
 
 ![html-view android](../img/gallery/android/htmlViewPage.png "html-view android")![html-view ios](../img/gallery/ios/htmlViewPage.png "html-view ios")
 
@@ -249,7 +249,7 @@ With the {% nativescript %}[TimePicker]({%ns_cookbook ui/time-picker%}){% endnat
 
 ## ListPicker
 
-With the {% nativescript %}[ListPicker]({%ns_cookbook ui/list-picker%}){% endnativescript %} {% angular %}[ListPicker]({%slug listpicker%}){% endangular %} widget, you can pick a value from a list.
+With the {% nativescript %}[ListPicker]({%ns_cookbook ui/list-picker%}){% endnativescript %} {% angular %}[ListPicker](https://docs.nativescript.org/angular/code-samples/ui/listpicker.html){% endangular %} widget, you can pick a value from a list.
 
 ![list-picker android](../img/gallery/android/listPickerPage.png "list-picker android")![list-picker ios](../img/gallery/ios/listPickerPage.png "list-picker ios")
 
