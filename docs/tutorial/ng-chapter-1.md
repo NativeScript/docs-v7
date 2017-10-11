@@ -182,7 +182,7 @@ There are three main paths you can take when you want to debug a NativeScript ap
 The default way of debugging a NativeScript application is by using the integration with Chrome. You can find more information on the actual steps [here](http://docs.nativescript.org/tooling/debugging).
 
 **Visual Studio Code**
-One of the preffered ways of debugging a NativeScript application is with the [NativeScript extension for Visual Studio Code](http://docs.nativescript.org/tooling/debugging#debugging-with-visual-studio-code).
+One of the prefered ways of debugging a NativeScript application is with the [NativeScript extension for Visual Studio Code](http://docs.nativescript.org/tooling/debugging#debugging-with-visual-studio-code).
 
 You’ll want to check out the Chrome Dev Tools and the Visual Studio debugger as you have the need to step through your JavaScript code or TypeScript code, but for the moment let’s look at how to do some simple logging in your apps.
 
