@@ -165,6 +165,16 @@ Overall, the NativeScript CLI’s livesync process makes native iOS and Android 
 
 You now know how to create and run NativeScript apps. Your next step is learning how to debug your apps when things go wrong. Let’s look at how debugging works in NativeScript.
 
+There are three main paths you can take when you want to debug a NativeScript application:
+
+**Chrome**
+The default way of debugging a NativeScript application is by using the integration with Chrome. You can find more information on the actual steps [here](http://docs.nativescript.org/tooling/debugging).
+
+**Visual Studio Code**
+One of the prefered ways of debugging a NativeScript application is with the [NativeScript extension for Visual Studio Code](http://docs.nativescript.org/tooling/debugging#debugging-with-visual-studio-code).
+
+You’ll want to check out the Chrome Dev Tools and the Visual Studio debugger as you have the need to step through your JavaScript code or TypeScript code, but for the moment let’s look at how to do some simple logging in your apps.
+
 <h4 class="exercise-start">
     <b>Exercise</b>: Console logging in NativeScript
 </h4>
