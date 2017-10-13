@@ -274,12 +274,8 @@ $(function() {
   var $searchBtn = $('.Search-open');
   var $searchBar = $('.Search-container');
   var $searchCancel = $('.Btn--cancel');
-  var $searchInput = $('.Search-input');
   var $navLinks = $('.Nav-menu .-fl');
   var $navLinksMobileToggle = $('.Nav-open-menu');
-
-  // improve search input
-  $searchInput.attr('placeholder', 'Looking for...');
 
   // improve menu
   $navLinks.find('a').each(function() {
@@ -292,13 +288,12 @@ $(function() {
   $searchBtn.on('click', function() {
     $searchBtn.toggleClass('is-active');
     $searchBar.toggle();
-    $searchInput.focus();
+    $('[name=search]').first().focus();
     // hide nav when opening search
     $navLinks.removeClass('is-visible');
     $navLinksMobileToggle.removeClass('is-active');
   });
   $searchCancel.on('click', function() {
-    $searchInput.blur();
     $searchBar.toggle();
     $searchBtn.toggleClass('is-active');
   });
