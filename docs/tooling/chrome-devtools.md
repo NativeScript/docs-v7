@@ -105,7 +105,7 @@ DevTools shows **all*** network requests in the Network panel while the DevTools
     *Figure 10: The Headers tab, outlined in blue*:
     ![Headers tab](https://developers.google.com/web/tools/chrome-devtools/network-performance/imgs/headers.svg)
 
-- [View qury string parameters](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#query-string) - To view the query string parameters of a URL in a human-readable format: Open the Headers tab for the request you're interested in. Go to the Query String Parameters section.
+- [View query string parameters](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#query-string) - To view the query string parameters of a URL in a human-readable format: Open the Headers tab for the request you're interested in. Go to the Query String Parameters section.
 
  > **Note:** *This is currently available for the built-in [http module]({%ns_cookbook http%}). For third-party modules that do network requests, additional code must be implemented to populate the Network Tab. See [Plugin author's guide](#plugin-authors-guide) for details on how to do it for your plugin.
 
