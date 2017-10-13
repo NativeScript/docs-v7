@@ -275,7 +275,7 @@ applicationOn(exitEvent, function (args: ApplicationEventData) {
     }
 });
 
-application.on(lowMemoryEvent, function (args: ApplicationEventData) {
+applicationOn(lowMemoryEvent, function (args: ApplicationEventData) {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -285,7 +285,7 @@ application.on(lowMemoryEvent, function (args: ApplicationEventData) {
     }
 });
 
-application.on(uncaughtErrorEvent, function (args: ApplicationEventData) {
+applicationOn(uncaughtErrorEvent, function (args: ApplicationEventData) {
     if (args.android) {
         // For Android applications, args.android is an NativeScriptError.
         console.log("NativeScriptError: " + args.android);
