@@ -50,6 +50,16 @@ tns install
 
 ### Error thrown when attempting to run build-related operations for Android
 
+**Problem**
+```Shell
+...
+Unable to start service com.apple.mobile.installation_proxy. Result code is: ...
+```
+
+**Solution:**
+Try one of the following approaches: 
+ - The `Sync with this iPhone over Wi-Fi` option in iTunes on your machine should be disabled
+ - Disable your Wi-Fi and execute `tns device` (when your device is connected and disconnected). It is possible that some other device is connected to the same Wi-Fi and this causes confusion in the way CLI communicates to the devices. You can find more info on the issue [here](https://github.com/NativeScript/nativescript-cli/issues/1398).
 
 **Problem:**
 ```Shell
