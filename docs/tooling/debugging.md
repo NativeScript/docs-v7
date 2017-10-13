@@ -13,6 +13,7 @@ You can debug apps developed with the NativeScript framework from both the Nativ
 * [Debugger Commands](#debugger-commands)
 * [Debugger Options](#debugger-options)
 * [Debugging with Visual Studio Code](#debugging-with-visual-studio-code)
+* [Debugging with Chrome DevTools](#debugging-with-chrome-devtools)
 
 ## Debugger Commands
 
@@ -20,12 +21,11 @@ The `debug` command builds and deploys new package on the connected device/emula
 It also tracks for changes in the `app` folder which mean it will livesync your application
 when changes in your code are saved. On code change & save, the application is restarted automatically.
 
-> **Note** Chagnes inside `App_Resources` folder (e.g. `AndroidManifest.xml`, `info.plist` or any of the resources folders) won't trigger the livesync and the app needs to be rebuild entirely for those to take effect.
+> **Note** Changes inside `App_Resources` folder (e.g. `AndroidManifest.xml`, `info.plist` or any of the resources folders) will trigger a rebuild before resuming the livesyncing.
 
 The debugging agent won't be started automatically by NativeScript-CLI but a link is provided for the user to open in Google Chrome. The link appears in the CLI log after the command is executed. Android and iOS have different links, but both can be opened in Google Chrome. The debugger is attached once the link is opened.
 
-To enable the same behaviour in iOS, the command `tns debug ios --chrome` needs to be execured (there's a special flag because the default action uses Safari as debug agent).
-
+To enable the same behaviour in iOS, the command `tns debug ios --chrome` needs to be executed (Safari defaults as a debug agent).
 
 To start the debugger for Android, run the following command:
 
@@ -51,7 +51,7 @@ You can customize the `tns debug` command using any of the following options:
 * `--stop` - Detaches the debug tools.
 * `--emulator` - Specifies that you want to debug the app in an emulator.
 * `--timeout` - Sets the number of seconds that the NativeScript CLI will wait for the debugger to boot. If not set, the default timeout is 90 seconds.
-* `--chrome` - iOS specific flag to generate link for debugging with Google Chrome agent (default is Safari)
+* `--chrome` - iOS specific flag to generate link for debugging with [Google Chrome agent](#debugging-with-chrome-devtools) (default is Safari)
 
 For more information about Android debugging, run the following command:
 
@@ -68,3 +68,7 @@ tns help debug ios
 ## Debugging with Visual Studio Code
 
 To debug NativeScript applications in [Visual Studio Code](https://code.visualstudio.com/), you need the [NativeScript extension for VS Code](https://marketplace.visualstudio.com/items?itemName=Telerik.nativescript). You can find detailed instructions about how to install and set up the NativeScript extension for VS Code [here]({% slug nativescript-extension-for-visual-studio-code %}).
+
+## Debugging with Chrome DevTools
+
+Debugging android apps is as easy as executing `tns debug android`, to debug iOS apps with Chrome DevTools, the `--chrome` flag needs to be passed - `tns debug ios --chrome`. A complete list of features, and how to use them can be found at [Debugging NativeScript apps with Chrome DevTools]({%slug chrome-devtools%})

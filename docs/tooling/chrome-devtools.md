@@ -17,15 +17,15 @@ The article will cover the following DevTools features, what they are good for, 
 -   [Elements](#elements)
 -   [Plugin author's guide](#plugin-authors-guide)
 
-Table of supported features as of NativeScript version **3.1.0**
+Table of supported features as of NativeScript version **3.3.0**
 
 |                            | Android Chrome DevTools | iOS Safari AppInspector | iOS Chrome DevTools | VSCode Extension |
 |----------------------------|-------------------------|-------------------------|---------------------|------------------|
 | Debugger                   | ✔ | ✔ | ✔ | ✔ |
 | Console                    | ✔ | ✔ | ✔ | ✔ |
 | Resources                  | ✔ | ✔ | ✔ | not applicable |
-| Network                    | ✔ | ✔ | ✘ | not applicable |
-| Elements                   | ✔ | ✘ | ✘ | not applicable |
+| Network                    | ✔ | ✔ | ✔ | not applicable |
+| Elements                   | ✔ | ✘ | ✔ | not applicable |
 | Memory Profiling           | ✘ | ✘ | ✘ | not applicable |
 | Timeline and CPU Profiling | ✘ | ✔ | ✘ | not applicable |
 
@@ -79,7 +79,7 @@ The console complements the debugging experience in that it displays messages ou
 - Evaluate expressions - Explore the state of any object of your application global scope, or the paused local scope from the Console by evaluating an expression just by typing it.
 
 ## Resources
-Scripts loaded by the V8 Virtual Machine appear in the Sources panel, which you can then debug and place breakpoints in. Besides scripts all other text and image resources found in your application are also listed in the Sources panel, grouped by folder name by default. You can inspect and search inside the contents of xml, html, css, json, and image files. Text and image network responses are also stored there.
+Scripts loaded by the JavaScript Virtual Machine appear in the Sources panel, which you can then debug and place breakpoints in. Besides scripts all other text and image resources found in your application are also listed in the Sources panel, grouped by folder name by default. You can inspect and search inside the contents of xml, html, css, json, and image files. Text and image network responses are also stored there.
 
 ## Network
 DevTools shows **all*** network requests in the Network panel while the DevTools are open. In the panel you will find information about the requests made, whether they've completed, the response status and data.
@@ -138,8 +138,8 @@ Writing plugins is a great way to give back to the community by making applicati
     - B: extend the `tns-core-modules`'s [View](http://docs.nativescript.org/api-reference/modules/_ui_core_view_.html) base class. Detailed information and tutorial on doing that coming soon!
 
 
--	Network requests in plugins - The following content concerns only plugin authors who wrap and expose native **Android** (Network agent in DevTools not yet supported in the iOS runtime) http functionalities.
-    To make your http functionality debuggable, there are callbacks you need to call at certain times of the lifecycle of the network request, following a [specific protocol](https://chromedevtools.github.io/devtools-protocol/tot/Network/). For your convenience we've exposed callbacks and [TypeScript interfaces](https://github.com/NativeScript/NativeScript/blob/8f621a0df0f5c5660ed784944470e47bd6133825/tns-core-modules/debugger/debugger.ts#L48) to facilitate send information to the Network agent.
+-	Network requests in plugins - **Note**: __The following content concerns only plugin authors who wrap and expose **Android** (Network agent in DevTools not yet supported with a public API in the iOS runtime) http functionalities.__
+    To make your http functionality debuggable, there are callbacks you need to call at certain times of the lifecycle of the network request, following a [specific protocol](https://chromedevtools.github.io/devtools-protocol/tot/Network/). For your convenience we've exposed callbacks and [TypeScript interfaces](https://github.com/NativeScript/NativeScript/blob/8f621a0df0f5c5660ed784944470e47bd6133825/tns-core-modules/debugger/debugger.ts#L48) to facilitate sending information to the Network agent.
 
     - Immediatelly before making the request:
         
