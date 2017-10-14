@@ -309,6 +309,7 @@ You can develop NativeScript apps in any text editor or IDE you wish. Therefore,
 
 However, if you’re not absolutely committed to an editor, or if you’re looking to try something new, the NativeScript team recommends using Microsoft’s Visual Studio Code to develop your NativeScript applications. Here’s why.
 
+- Visual Studio Code is open source.
 - Visual Studio Code has excellent support for TypeScript, which you’ll be using heavily as you code Angular apps in this tutorial.
 - Visual Studio Code gives you the ability to debug JavaScript and TypeScript code directly in your editor. The NativeScript team maintains an official [NativeScript Visual Studio Code extension](https://www.nativescript.org/nativescript-for-visual-studio-code) that enables step debugging for NativeScript apps.
 - Visual Studio Code is a fast, modern editor that Microsoft [updates frequently](https://code.visualstudio.com/updates/).
