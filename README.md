@@ -76,6 +76,7 @@ Then do a:
 
 ```bash
 $ vagrant up
+$ vagrant up --provider virtualbox  (for linux)
 ```
 
 This should download the correct image, install it, start the VM and run the provisioning script.
