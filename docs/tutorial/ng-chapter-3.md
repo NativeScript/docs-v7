@@ -265,7 +265,7 @@ Finally, in `app/app.component.ts`, replace the existing `template` property wit
 
 ``` TypeScript
 moduleId: module.id,
-templateUrl: "./login.html"
+templateUrl: "pages/login/login.html",
 ```
 
 In case you got lost during this section, here’s a copy-and-paste friendly of the `app/app.component.ts` file you should have at this point:
@@ -278,7 +278,7 @@ import { User } from "./shared/user/user";
 @Component({
   selector: "my-app",
   moduleId: module.id,
-  templateUrl: "./login.html",
+  templateUrl: "pages/login/login.html",
   styleUrls: ["./login-common.css", "./login.css"]
 })
 export class AppComponent {
