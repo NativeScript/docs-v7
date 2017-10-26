@@ -5414,3 +5414,16 @@ input.gsc-search-button:focus {
 div.noimprovethis {
   display: none;
 }
+#feedback-form-window{
+  background-color: #fff
+}
+#send-feedback {
+	float: left;
+	color: #fff;
+	margin-left: 1.833em;
+}
+
+#send-feedback:hover  {
+	text-decoration: underline;
+	background-color: #000;
+}
