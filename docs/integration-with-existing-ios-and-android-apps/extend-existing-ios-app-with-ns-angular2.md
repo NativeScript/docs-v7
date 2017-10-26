@@ -25,7 +25,7 @@ environment: angular
 
 > Note: Both can be found in your NativeScript app `\platforms\ios\`and `\lib\ios\` folders.
 
-4.Add reference to **NativeScript.framework** and **TNSWidgets.framework**
+4.Add reference to **NativeScript.framework** and **TNSWidgets.framework** (the former should be in the **internal** folder)
 
 ![Copy your NativeScript](../img/extend-existing-ios-app-with-ns-angular2/add-reference.png)
 
@@ -36,11 +36,11 @@ environment: angular
 
 ![Copy your NativeScript](../img/extend-existing-ios-app-with-ns-angular2/add-run-script-and-linker-flags.png)
 
-`cd “$PROJECT_DIR/internal/metadata-generator/bin” && ./metadata-generation-build-step`
+`cd "$PROJECT_DIR/internal/metadata-generator/bin" && ./build-step-metadata-generator.py`
 
 ![Copy your NativeScript](../img/extend-existing-ios-app-with-ns-angular2/add-run-script-and-linker-flags2.png)
 
-`-sectcreate __DATA __TNSMetadata “$(CONFIGURATION_BUILD_DIR)/metadata-$(CURRENT_ARCH).bin”`
+`-sectcreate __DATA __TNSMetadata "$(CONFIGURATION_BUILD_DIR)/metadata-$(CURRENT_ARCH).bin"`
 
 > Note: Run Script should be the first build phase.
 
@@ -50,4 +50,7 @@ environment: angular
 
 ![Copy your NativeScript](../img/extend-existing-ios-app-with-ns-angular2/result.gif)
 
-Get the app from here: [https://github.com/enchev/ios-ng2-tns/](https://github.com/enchev/ios-ng2-tns/)
+Get the app from here: [https://github.com/tdermendjiev/ios-ng2-tns](https://github.com/tdermendjiev/ios-ng2-tns)
+
+# Credits
+[Extend your existing iOS app with Angular 2 and NativeScript](https://medium.com/@enchev/extend-your-existing-ios-app-with-angular-2-and-nativescript-c2225c9bf616)
