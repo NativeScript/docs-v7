@@ -103,3 +103,5 @@ kramdown:
 
 gems:
     - jekyll-unsanitize
+# Feedback Form Google Sheet ID
+ff-sheet-id: 1Njk-CD9m_mKw_jSRBV2p6quwEOAKRZnUPJgeUrA1ZFA

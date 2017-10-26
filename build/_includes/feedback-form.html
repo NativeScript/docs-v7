@@ -1,0 +1,87 @@
+<div id="feedback-section">
+    <script src="https://bs-static.cdn.telerik.com/documentation/feedback/latest/feedback.js"></script>
+  
+    <span id="popupNotification"></span>
+  
+    <div id="feedback-menu-container" class="feedback-ext">
+      <div id="helpful-buttons-container" class="feedback-ext__left">
+        <span class="feedback-ext__label-normal">Was this article helpful?</span>
+  
+        <button id="noButton" class="feedback-ext__button button button--small">No</button>
+        <button id="yesButton" class="feedback-ext__button button button--small">Yes</button>
+      </div>
+  
+      <div id="feedback-submitted-container" class="feedback-ext__left">
+        <span class="feedback-ext__label-submit">Thank you for your feedback!</span>
+      </div>
+  
+      <div id="additional-feedback-button" class="feedback-ext__right">
+        <span class="feedback-ext__addition">Give additional feedback</span>
+      </div>
+    </div>
+  
+    <div id="feedback-window-container">
+      <div id="feedback-form-window" class="feedback-extw">
+        <h1 class="feedback-extw__title">Give article feedback</h1>
+  
+        <p class="feedback-extw__subtitle">Tell us how we can improve the information</p>
+  
+        <span id="feedback-form-popup-container"></span>
+  
+        <form id="feedback-form" class="feedback-extw__form">
+            <div id ="feedback-checkbox-area">
+              <input id="hidden-sheet-id" type="hidden" value="{{site.ff-sheet-id}}">
+              <label class="feedback-extw__checkbox checkbox">
+                <input type="checkbox" value="outdated-sample" class="checkbox__input"
+                  data-bind="checked: outdatedSample">
+  
+                <div class="checkbox__icon"></div>
+                <span class="checkbox__text">Code samples are inaccurate/outdated.</span>
+              </label>
+  
+              <label class="feedback-extw__checkbox checkbox">
+                <input type="checkbox" value="wrong-information" class="checkbox__input"
+                  data-bind="checked: wrongInformation">
+  
+                <div class="checkbox__icon"></div>
+                <span class="checkbox__text">I expected to find other information.</span>
+              </label>
+  
+              <label class="feedback-extw__checkbox checkbox">
+                <input type="checkbox" value="insufficient-information" class="checkbox__input"
+                  data-bind="checked: insufficientInformation">
+  
+                <div class="checkbox__icon"></div>
+                <span class="checkbox__text">I expected to find more information.</span>
+              </label>
+  
+              <label class="feedback-extw__checkbox checkbox">
+                <input type="checkbox" value="text-errors" class="checkbox__input"
+                  data-bind="checked: textErrors">
+  
+                <div class="checkbox__icon"></div>
+                <span class="checkbox__text">There are typos / broken links / broken page elements.</span>
+              </label>
+  
+              <label class="feedback-extw__checkbox checkbox">
+                <input type="checkbox" value="inaccurate-content" class="checkbox__input"
+                  data-bind="checked: inaccurateContent">
+  
+                <div class="checkbox__icon"></div>
+                <span class="checkbox__text">Content is inaccurate / outdated.</span>
+              </label>
+            </div>
+              <textarea id="feedback-text-input" class="feedback-extw__textarea textarea"
+                placeholder="Enter details or unlisted feedback (optional)"
+                data-bind="value: textFeedback">
+              </textarea>
+          <input id="feedback-email-input" class="feedback-extw__input input" placeholder="email (optional)" data-bind="value: email">
+        </form>
+  
+        <div class="feedback-extw__foot">
+          <button id="form-submit-button" class="feedback-extw__button button button--action">Send feedback</button>
+          <button id="form-close-button" class="feedback-extw__button button">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
