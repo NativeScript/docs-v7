@@ -50,7 +50,7 @@ environment: angular
 
 ![Copy your NativeScript](../img/extend-existing-ios-app-with-ns-angular2/result.gif)
 
-Get the app from here: [https://github.com/tdermendjiev/ios-ng2-tns](https://github.com/tdermendjiev/ios-ng2-tns)
+Get the app from here: [https://github.com/NativeScript/ios-ng2-tns](https://github.com/NativeScript/ios-ng2-tns)
 
 # Credits
 [Extend your existing iOS app with Angular 2 and NativeScript](https://medium.com/@enchev/extend-your-existing-ios-app-with-angular-2-and-nativescript-c2225c9bf616)
