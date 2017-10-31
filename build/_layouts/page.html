@@ -29,14 +29,13 @@ layout: index
             });
             </script>
         </div>
-
+        
         <div id="page-article" class="col-9 -xl-col-8 -l-col-8 -m-col-12">
-
+            {% include improvethis.html %}
             <article>
                 {{ content }}
             </article>
 
-            {% include improvethis.html %}
             {% if site.ff-sheet-id %}{% include feedback-form.html %}{% endif %}
         </div>
     </div>

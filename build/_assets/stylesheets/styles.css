@@ -5410,12 +5410,28 @@ input.gsc-search-button:focus {
     overflow: visible;
   }
 }
-
 div.noimprovethis {
   display: none;
 }
+#feedback-checkbox-area {
+  margin-top: 24px;
+}
 #feedback-form-window{
-  background-color: #fff
+  background-color: #fff;
+  padding: 27px 30px 10px 30px;
+  overflow: hidden;
+}
+#feedback-checkbox-area label{
+  display: block;
+  margin: 5px 0 10px;
+}
+#feedback-checkbox-area textarea{
+  width: 90%;
+}
+.feedback-extw__input {
+  margin: 12px 0 30px;
+  padding: 10px;
+  width: 90%;
 }
 #send-feedback {
 	float: left;
