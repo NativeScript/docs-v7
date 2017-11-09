@@ -426,8 +426,8 @@ var dateConverter = function(value, format) {
 	return result;
 };
 
-appModule.resources["dateConverter"] = dateConverter;
-appModule.resources["dateFormat"] = "DD.MM.YYYY";
+appModule.getResources()["dateConverter"] = dateConverter;
+appModule.getResources()["dateFormat"] = "DD.MM.YYYY";
 ```
 ``` TypeScript
 import appModule = require("application");
@@ -448,8 +448,8 @@ var dateConverter = function(value, format) {
 	return result;
 };
 
-appModule.resources["dateConverter"] = dateConverter;
-appModule.resources["dateFormat"] = "DD.MM.YYYY";
+appModule.getResources()["dateConverter"] = dateConverter;
+appModule.getResources()["dateFormat"] = "DD.MM.YYYY";
 ```
 > Note: The application module is static and could be reached within the entire application; it just needs to be required. Another difference here is that `dateConverter` is a function instead of an object with two functions `toView` and `toModel`. Since the usual operation is converting data from model to view, if a function is provided as converter, it acts as a `toView` function.
 
