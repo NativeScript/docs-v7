@@ -2,14 +2,14 @@
 title: Debugging the iOS Runtime within your app's XCode project
 description: Add the iOS Runtime .xcodeproj to an existing app
 position: 0
-slug: degub-ios-runtime
+slug: debug-ios-runtime
 ---
 
-# Debugging the iOS Runtime within your app's XCode project/Users/dermendz/dev/docs/build/_config.yml
+# Debugging the iOS Runtime within your app's XCode project
 
 ##What is this document about?
 
-In certain scenarios where runtime errors occur the debug info provided by the NativeScript CLI or by the application's XCode project is not sufficient. This article will guide you through the steps needed to debug iOS Runtime library as a part of your Nativescript application. It implies you have the [ios-runtime repository](https://github.com/NativeScript/ios-runtime) already cloned and set up. For more info on how to setup the ios-runtime project on your machine refer to its [README](https://github.com/NativeScript/ios-runtime/blob/master/README.md).
+In certain scenarios where runtime errors occur, the debug info provided by the NativeScript CLI or by the application's XCode project is not sufficient. This article will guide you through the steps needed to debug the iOS Runtime library as a part of your NativeScript application. It implies you have the [ios-runtime repository](https://github.com/NativeScript/ios-runtime) already cloned and set up. For more info on how to setup the ios-runtime project on your machine refer to its [README](https://github.com/NativeScript/ios-runtime/blob/master/README.md).
 
 ## Creating the sample application
 
@@ -42,7 +42,7 @@ NativeScript with plain JavaScript:
 
 > **WARNING**: Make sure your environment fulfills all the requirements mentioned in [ios-runtime ](https://github.com/NativeScript/ios-runtime)'s README.
 
-###1.Create a cmake-build folder in the already cloned ios runtime repo 
+###1.Create a cmake-build folder in the already cloned ios runtime repository 
 
 `cd ios-runtime`
 
