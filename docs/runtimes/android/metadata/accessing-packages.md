@@ -22,6 +22,8 @@ var androidPkg = android;
 var androidViewPkg = android.view;
 ```
 
+> **Note:** To have access and Intellisense for the native APIs with **NativeScript + TypeScript** or **NativeScript + Angular** projects, you have to add a dev dependency to `tns-platform-declarations`. More details about accessing native APIs with TypeScript can be found [here]({% slug access-native-apis %}#intellisense-and-access-to-native-apis-via-typescript).
+
 > **Note:** You may not use APIs that are not present in the metadata. By default, if `--compileSdk` argument isn't provided while building, metadata will be built for the latest Android [Platform SDK](https://developer.android.com/about/versions/nougat/index.html) installed on the workstation.
 
 # Proxies
