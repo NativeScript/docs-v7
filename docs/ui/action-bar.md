@@ -195,10 +195,10 @@ You can define additional action buttons using the `actionItems` collection:
 <ActionBar title="Action Items">
   <ActionItem tap="onShare"
       ios.systemIcon="9" ios.position="left"
-      android.systemIcon="ic_menu_share" android.position="actionBar"/>
+      android.systemIcon="ic_menu_share" android.position="actionBar"></ActionItem>
   <ActionItem tap="onDelete"
       ios.systemIcon="16" ios.position="right"
-      text="delete" android.position="popup"/>
+      text="delete" android.position="popup"></ActionItem>
 </ActionBar>
 ```
 ```JavaScript
