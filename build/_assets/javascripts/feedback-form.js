@@ -4,7 +4,6 @@ $(document).ready(function () {
 	
 		var $window = $(window);
 	
-		var cookieVariablesNames = ['feedbackSubmitted', 'path', 'uuid'];
 		var defaultFormValues = {
 			email: "",
 			inaccurateContent: false,
@@ -87,14 +86,14 @@ $(document).ready(function () {
 		//FORM
 		//Init the form popup window
 		var win = $("#feedback-form-window").kendoWindow({
+			title: "Give article feedback",
 			actions: ["Close"],
 			draggable: true,
 			modal: true,
 			pinned: false,
 			visible: false,
-			title: false,
 			resizable: false,
-			width: "500px"
+			width: "700px"
 		}).data("kendoWindow");
 		//Init form
 		var feedbackForm = $("#feedback-form");
@@ -121,7 +120,7 @@ $(document).ready(function () {
 			} else {
 				return true;
 			}
-		}
+		};
 		//Bind model to form
 		kendo.bind($("div#feedback-form-window"), formModel);
 		//Attach to form submit to adjust variables and send request
@@ -161,31 +160,28 @@ $(document).ready(function () {
 			return $(selector).kendoValidator({
 				validateOnBlur: false,
 				messages: {
-					emptyValidation: "Please provide some additional information.",
-					htmlValidation: "HTML tags are not allowed in this field.",
-					messageLength: "The message length must not exceed 2500 characters.",
-					whiteSpaces: "Using only white spaces is not allowed in this field.",
+					required: "Field should not be empty.",
+					htmlValidation: "HTML tags are not allowed.",
+					messageLength: "Message must not exceed 2500 characters.",
+					whiteSpaces: "Using only whitespace is not allowed.",
 					feedbackValidation: "Please select a category and provide some additional information."
 				},
 				rules: {
 					emptyValidation: function (input) {
 						var text = input.val();
+
 						return isFormModelSatisfied(formModelKey, text);
 					},
 					htmlValidation: function (input) {
 						var text = input.val();
 						var matches = text.match(/(<([^>]+)>)/ig);
-						if (matches != null) {
-							return false;
-						}
-						return true;
+
+						return matches == null;
 					},
 					messageLength: function (input) {
 						var text = input.val();
-						if (text.length > 2500) {
-							return false;
-						}
-						return true;
+
+						return text.length <= 2500;
 					},
 					whiteSpaces: function (input) {
 						var text = input.val();
@@ -203,7 +199,7 @@ $(document).ready(function () {
 					}
 				}
 			}).data("kendoValidator");
-		}
+		};
 	
 		feedbackForm.submit(function (e) {
 			e.preventDefault();
@@ -211,22 +207,24 @@ $(document).ready(function () {
 			if (formIsProcessing) {
 				return;
 			}
+
 			formIsProcessing = true;
-			//if(isFormModelEmpty()){
-			//	formPopupNotification.show("Please provide some feedback before submitting the form.", "Error");
-			//	formIsProcessing = false;
-			//	return;
-			//}
+
+			if(isFormModelEmpty()){
+				formPopupNotification.show("Please provide some feedback before submitting the form.", "Error");
+				formIsProcessing = false;
+				return;
+			}
 	
-			if (textAreaValidator("#feedback-code-sample-text-input", "outdatedSample").validate() &&
-				textAreaValidator("#feedback-more-information-text-input", "otherMoreInformation").validate() &&
-				textAreaValidator("#feedback-text-errors-text-input", "textErrors").validate() &&
-				textAreaValidator("#feedback-inaccurate-content-text-input", "inaccurateContent").validate() &&
-				textAreaValidator("#feedback-other-text-input", "otherFeedback").validate() &&
+			if ((!formModel.outdatedSample || (formModel.outdatedSample && textAreaValidator("#feedback-code-sample-text-input", "outdatedSample").validate())) &&
+				(!formModel.otherMoreInformation || (formModel.otherMoreInformation && textAreaValidator("#feedback-more-information-text-input", "otherMoreInformation").validate())) &&
+				(!formModel.textErrors || (formModel.textErrors && textAreaValidator("#feedback-text-errors-text-input", "textErrors").validate())) &&
+				(!formModel.inaccurateContent || (formModel.inaccurateContent && textAreaValidator("#feedback-inaccurate-content-text-input", "inaccurateContent").validate())) &&
+				(!formModel.otherFeedback || (formModel.otherFeedback && textAreaValidator("#feedback-other-text-input", "otherFeedback").validate())) &&
 				emptyFormValidator.validate() &&
 				emailValidator.validate()) {
 				win.close();
-				setCookieByName("submittingFeedback")
+				setCookieByName("submittingFeedback");
 				formModel.yesNoFeedback = getCookieByName("yesNoFeedback") || "Not submitted";
 				formModel.uuid = getCookieByName("uuid");
 				formModel.path = currentPath;
@@ -263,11 +261,8 @@ $(document).ready(function () {
 			Feedback.adjustNavigationPosition();
 			win.center().open();
 		});
-		$("#additional-feedback-button").click(function () {
-			win.center().open();
-		});
-	
-	
+
+
 		var windowHeight = $window.height();
 		var headerHeight = $(".TK-Hat").outerHeight() + $("#page-header").outerHeight();
 		var footerHeight = $("#feedback-section").outerHeight() + $("footer").outerHeight();
@@ -295,16 +290,16 @@ $(document).ready(function () {
 	
 				Feedback.adjustArticleHeight();
 				Feedback.adjustNavigationPosition();
-	
+
 				if (shouldOverlayFeedback) {
 	
 					showingFeedbackBar = true;
 	
 					window.setTimeout(function() {
 						showingFeedbackBar = false;
-						Feedback.adjustFeedbackPoistion();
+						Feedback.toggleFeedback();
 						Feedback.adjustNavigationPosition();
-					}, 10000);
+					}, 30000);
 				}
 	
 			},
@@ -314,21 +309,21 @@ $(document).ready(function () {
 			_events: function() {
 				$window.scroll(Feedback._window_scroll);
 				$window.resize(Feedback._window_resize);
-				$("#close-button").click(Feedback._button_click);
+				$("#close-banner-button").click(Feedback._button_click);
 			},
 			_window_scroll: function() {
 				updateVariables();
 	
 				scrollFold = $window.scrollTop() + windowHeight;
 	
-				Feedback.adjustFeedbackPoistion();
+				Feedback.toggleFeedback();
 				Feedback.adjustNavigationPosition();
 			},
 			_window_resize: function() {
 				updateVariables();
 	
 				Feedback.adjustArticleHeight();
-				Feedback.adjustFeedbackPoistion();
+				Feedback.toggleFeedback();
 				Feedback.adjustNavigationPosition();
 			},
 			_button_click: function() {
@@ -339,7 +334,7 @@ $(document).ready(function () {
 	
 	
 			// #region adjusters
-			adjustNavigationPosition: function Feedback_adjustNavigationPosition() {
+			adjustNavigationPosition: function() {
 				var bottom = 0;
 	
 				if (!window.matchMedia('(max-width: 1200px)').matches) {
@@ -348,10 +343,10 @@ $(document).ready(function () {
 	
 				$("#page-nav").css("bottom", bottom);
 			},
-			adjustArticleHeight: function Feedback_adjustArticleHeight() {
+			adjustArticleHeight: function() {
 				$("#page-article").css("min-height", articleHeight);
 			},
-			adjustFeedbackPoistion: function Feedback_adjustFeedbackPosition() {
+			toggleFeedback: function() {
 				if (!shouldOverlayFeedback || showingFeedbackBar) {
 					return;
 				}
@@ -367,17 +362,15 @@ $(document).ready(function () {
 	
 	
 			// #region feedback bar
-			pinFeedback: function Feedback_pinFeedback() {
+			pinFeedback: function() {
 				feedbackPinned = true;
-				$("#feedback-section").addClass("fixed");
-				$("#feedback-section-dummy").show();
+				$("#feedback-section").addClass("-detached");
 			},
-			unpinFeedback: function Feedback_pinFeedback() {
+			unpinFeedback: function() {
 				feedbackPinned = false;
-				$("#feedback-section").removeClass("fixed");
-				$("#feedback-section-dummy").hide();
+				$("#feedback-section").removeClass("-detached");
 			},
-			closeFeedback: function Feedback_pinFeedback() {
+			closeFeedback: function() {
 				shouldOverlayFeedback = false;
 				setCookieByName("yesNoFeedbackClosed");
 				Feedback.unpinFeedback();
@@ -385,7 +378,7 @@ $(document).ready(function () {
 			// #endregion
 	
 		});
-	
+
 		Feedback.init();
 	
 	});

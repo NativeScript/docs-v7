@@ -2,44 +2,43 @@
 layout: index
 ---
 <div class="Section -pt7 -pb7">
-<div class="container">
-    <div id="page-inner-content" class="row">
-        <div id="page-nav" class="col-3 -mt1 -xl-col-4 -l-col-4 -m-col-12 -m-mb4">
-            <div id="page-tree" class="-bg-lightgray -pt3 -pb3 -pl2 -pr2"></div>
-            <script>
-            $("#page-tree").kendoTreeView({
-                dataSource: {
-                    transport: {
-                        read: {
-                            url: "{{site.baseurl}}/{{page.category}}.json",
-                            dataType: "json"
+    <div class="container">
+        <div id="page-inner-content" class="row">
+            <div id="page-nav" class="col-3 -mt1 -xl-col-4 -l-col-4 -m-col-12 -m-mb4">
+                <div id="page-tree" class="-bg-lightgray -pt3 -pb3 -pl2 -pr2"></div>
+                <script>
+                $("#page-tree").kendoTreeView({
+                    dataSource: {
+                        transport: {
+                            read: {
+                                url: "{{site.baseurl}}/{{page.category}}.json",
+                                dataType: "json"
+                            }
+                        },
+                        schema: {
+                            model: {
+                                id: "path",
+                                children: "items",
+                                hasChildren: "items"
+                            }
                         }
                     },
-                    schema: {
-                        model: {
-                            id: "path",
-                            children: "items",
-                            hasChildren: "items"
-                        }
-                    }
-                },
-                select: preventParentSelection,
-                template: navigationTemplate("{{site.baseurl}}/"),
-                dataBound: expandNavigation("{{page.url | remove_first: '/' }}")
-            });
-            </script>
-        </div>
-        
-        <div id="page-article" class="col-9 -xl-col-8 -l-col-8 -m-col-12">
-            {% include improvethis.html %}
-            <article>
-                {{ content }}
-            </article>
+                    select: preventParentSelection,
+                    template: navigationTemplate("{{site.baseurl}}/"),
+                    dataBound: expandNavigation("{{page.url | remove_first: '/' }}")
+                });
+                </script>
+            </div>
 
-            {% if site.ff-sheet-id %}{% include feedback-form.html %}{% endif %}
+            <div id="page-article" class="col-9 -xl-col-8 -l-col-8 -m-col-12">
+                {% include improvethis.html %}
+                <article>
+                    {{ content }}
+                </article>
+            </div>
         </div>
     </div>
-</div>
+    {% if site.ff-sheet-id %}{% include feedback-form.html %}{% endif %}
 </div>
 
 {% include footer.html %}
