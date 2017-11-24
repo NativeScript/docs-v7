@@ -59,7 +59,9 @@ When you build with NativeScript you’re building truly native iOS and Android 
 
 ### Windows
 
-If you’re on Windows, copy and paste the script below into your command prompt and press Enter:
+If you’re on Windows, copy and paste the script below into your command prompt as an administrator and press Enter:
+
+Please be sure that you run this command in cmd as an administator (Windows key > type "cmd" > right click > Run as Administrator ).
 
 <pre class="add-copy-button"><code class="language-terminal">@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://www.nativescript.org/setup/win'))"</code></pre>
 
