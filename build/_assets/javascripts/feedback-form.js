@@ -221,7 +221,6 @@ $(document).ready(function () {
 				(!formModel.textErrors || (formModel.textErrors && textAreaValidator("#feedback-text-errors-text-input", "textErrors").validate())) &&
 				(!formModel.inaccurateContent || (formModel.inaccurateContent && textAreaValidator("#feedback-inaccurate-content-text-input", "inaccurateContent").validate())) &&
 				(!formModel.otherFeedback || (formModel.otherFeedback && textAreaValidator("#feedback-other-text-input", "otherFeedback").validate())) &&
-				emptyFormValidator.validate() &&
 				emailValidator.validate()) {
 				win.close();
 				setCookieByName("submittingFeedback");
