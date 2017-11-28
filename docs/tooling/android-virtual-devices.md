@@ -76,12 +76,14 @@ e.g. run on device with ID
 tns run android --device 2
 ```
 
+The example above will start the application on the emulated device with id 2 (sdk_phone_x86_64).
+
 e.g. run on device with Device Identifier
 ```
 tns run android --device 00bd261c1580a7d3
 ```
 
-The example above will start the application on the device with id 2 (sdk_phone_x86_64).
+The example above will start the application on the real device with id 1 (bullhead).
 
 To launch a NativeScript application on all connected devices simultaneously, simply ignore the `--device <id>` flag.
 

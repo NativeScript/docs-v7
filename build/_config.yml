@@ -64,14 +64,6 @@ improveThis:
         1:
             matchPattern: '^/code-samples/.*'
         2:
-            matchPattern: '^/runtimes/android/.*'
-            pathUpdatePattern: '^/runtimes/android'
-            baseUrl: "https://github.com/NativeScript/android-runtime-docs/blob/master/"
-        3:
-            matchPattern: '^/runtimes/ios/.*'
-            pathUpdatePattern: '^/runtimes/ios'
-            baseUrl: "https://github.com/NativeScript/ios-runtime-docs/blob/master/"
-        4:
             matchPattern: '.*'
             baseUrl: "https://github.com/NativeScript/docs/blob/master/docs/"
 
@@ -103,3 +95,5 @@ kramdown:
 
 gems:
     - jekyll-unsanitize
+# Feedback Form Google Sheet ID
+ff-sheet-id: 1Njk-CD9m_mKw_jSRBV2p6quwEOAKRZnUPJgeUrA1ZFA
