@@ -98,22 +98,21 @@ For a full list, see the official [Angular Lifecyle Hooks docs](https://angular.
 
 ## Start application
 
-The starting point of an Angular application is the `nativeScriptBootstrap` method. It takes the root component as an argument:
+The starting point of an Angular application is the `platformNativeScriptDynamic().bootstrapModule()` method. It takes the root module as an argument:
 
 ### Example
 
 ``` TypeScript
-import { nativeScriptBootstrap } from "./nativescript-angular/application";
-import { MainComponent } from "./main-component";
+import { platformNativeScriptDynamic } from "nativescript-angular/platform";
+import { AppModule } from "./app.module";
 
-nativeScriptBootstrap(MainComponent).then((compRef) => {
+platformNativeScriptDynamic().bootstrapModule(AppModule).then(() => {
     console.log("The application is now running!");
 }).catch((e) => {
     console.log("The application bootstrapping failed with error: " + e);
 });
 ```
 
-> **IMPORTANT:** You must call the `nativeScriptBootstrap` method **after** the module initialization. Any code after the `nativeScriptBootstrap` call will not be executed.
 {% endangular%} 
 
 {% nativescript %}

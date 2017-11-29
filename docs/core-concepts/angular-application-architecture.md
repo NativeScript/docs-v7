@@ -113,16 +113,9 @@ The navigation inside a NativeScript application is done with the [Angular Route
 * `router-outlet` - the built in Angular router outlet. It replaces the content of the outlet with the templates of different component.
 * `page-router-outlet` - uses NativeScript [page navigation]({% slug navigation %}#pages). 
 
-To use the Router you will have to pass the `NS_ROUTER_PROVIDERS` providers when bootstrapping your app:
+To use the Router you will have to import `NativeScriptRouterModule` into `AppModule`:
 
-``` TypeScript
-import {nativeScriptBootstrap} from "nativescript-angular/application";
-import {NS_ROUTER_PROVIDERS} from "nativescript-angular/router";
-
-// ...
-
-nativeScriptBootstrap(NavigationTestRouter, [NS_ROUTER_PROVIDERS]);
-```
+{%snippet router-provider%}
 
 Navigation is covered in detail in the [navigation article]({% slug navigation %}).
  
