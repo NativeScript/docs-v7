@@ -13,6 +13,8 @@ For iOS, three types of library packages are available:
 2. Static framework (`MyFramework.framework`): An ordinary static library wrapped in a framework. Typically, doesn't contain the required `module.modulemap` file and you need to add it manually.
 3. Static library (`libMyLib.a`): Contains a headers folder (usually called `include`) with `.h` files.
 
+> In the case when `node_modules/<your-plugin>` is a symlink the paths within your `module.modulemap` might not work as expected. You will not be able to use the native libraries from NativeScript in such cases. The reason for this is that relative paths such as `../../../node_modules/<your-symlinked-plugin>` are resolved after the the symlink is resolved thus defaulting to the original path the symlink is pointing to. This makes the native libraries invisible to the NativeScript metadata generator. To avoid such issues you can position the `module.modulemap` outside the symlink folder (`node_modules/<your-plugin>`) and update your `build.xcconfig`'s `HEADER_SEARCH_PATHS` to point to it.
+
 You can use any of the following approaches to add and use a native library in your project:
 
 1. (Recommended) [Create a plugin containing a CocoaPod `Podfile`.](./../../../plugins/cocoapods.md)
