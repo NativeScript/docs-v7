@@ -13,8 +13,6 @@ For iOS, three types of library packages are available:
 2. Static framework (`MyFramework.framework`): An ordinary static library wrapped in a framework. Typically, doesn't contain the required `module.modulemap` file and you need to add it manually.
 3. Static library (`libMyLib.a`): Contains a headers folder (usually called `include`) with `.h` files.
 
-> In the case when `node_modules/<your-plugin>` is a symlink the paths within your `module.modulemap` might not work as expected. You will not be able to use the native libraries from NativeScript in such cases. The reason for this is that relative paths such as `../../../node_modules/<your-symlinked-plugin>` are resolved after the the symlink is resolved thus defaulting to the original path the symlink is pointing to. This makes the native libraries invisible to the NativeScript metadata generator. To avoid such issues you can position the `module.modulemap` outside the symlink folder (`node_modules/<your-plugin>`) and update your `build.xcconfig`'s `HEADER_SEARCH_PATHS` to point to it.
-
 You can use any of the following approaches to add and use a native library in your project:
 
 1. (Recommended) [Create a plugin containing a CocoaPod `Podfile`.](./../../../plugins/cocoapods.md)
@@ -25,7 +23,7 @@ To consume a native library the iOS Runtime has to know about the following reso
  1. Binary file (e.g `libMyLib.a`, `MyLib`).
  2. Header files and `module.modulemap` file  describing a clang module and specifying which headers are part of the module.
 
-The only reason the runtime needs header files is to generate metadata. The metadata generator knows which headers have to be parsed because of the supplied `module.modulemap` file. Both the headers and `module.modulemap` file must reside in a folder which is part of the header search paths of the Xcode project (`{your-app}/platforms/ios/{your-app}.xcodeproj`). You can find a sample `module.modulemap` file [here](https://github.com/NativeScript/ios-runtime/blob/master/tests/TestFixtures/module.modulemap).
+The only reason the runtime needs header files is to generate metadata. The metadata generator knows which headers have to be parsed because of the supplied `module.modulemap` file. Both the headers and `module.modulemap` file must reside in a folder which is part of the header search paths of the Xcode project (`{your-app}/platforms/ios/{your-app}.xcodeproj`). You can find a sample `module.modulemap` file [here](https://github.com/NativeScript/ios-runtime/blob/master/tests/TestFixtures/module.modulemap). You can find more information about CLANG modules, module maps and their synthax here: https://clang.llvm.org/docs/Modules.html
 
 # Shared Frameworks
 
@@ -48,7 +46,9 @@ If there is no CocoaPod for the current library you can still use a plugin, but 
 
 # Static Frameworks
 
-Most of the static frameworks don't contain `module.modulemap` file, so you have to add the file manually. This is why you can't use CocoaPods to include static frameworks. To include a static framework in a plugin grab a prebuilt version of the framework, add a `module.modulemap` file in it and drop it in your `{plugin-path}/platforms/ios/` folder.
+Most of the static frameworks don't contain `module.modulemap` file, so you have to add the file manually. To include a static framework in a plugin grab a prebuilt version of the framework, add a `module.modulemap` file in it and drop it in your `{plugin-path}/platforms/ios/` folder.
+
+> In case you cannot modify the native framework (for example when it comes from a Pod) and must define its `module.modulemap` somewhere else in your plugin, take a look at the following sample for guidance: https://github.com/NativeScript/plugin-ios-modulemap-sample
 
 ### Pros
 
@@ -61,7 +61,9 @@ Most of the static frameworks don't contain `module.modulemap` file, so you have
 2. Only Objective-C APIs are exposed (no C functions and C constants) from static frameworks. To work around this limitation, you can manually edit the Xcode project file. However, this workaround is not recommended.
 
 # Static Libraries
-The NativeScript CLI supports static libraries coming from plugins but the binary and headers must be ordered in a specific folder structure described in details [here](./../../../plugins/plugins.md). This is required because the NativeScript CLI generates a `module.modulemap` file for the library which works most of the time. However, in some cases you might need to wrap the library in a static framework with a `module.modulemap` file.
+The NativeScript CLI supports static libraries coming from plugins but the binary and headers must be ordered in a specific folder structure described in details [here](./../../../plugins/plugins.md). This is required because the NativeScript CLI generates a `module.modulemap` file for the library which works most of the time. However, in some cases you might need to wrap the library in a static framework with a `module.modulemap` file. 
+
+> If you cannot wrap your static library in a static framework with a `module.modulemap`, in cases such as when using Cocoapods, take a look at the following sample for guidance: https://github.com/NativeScript/plugin-ios-modulemap-sample
 
 ### Pros
 
