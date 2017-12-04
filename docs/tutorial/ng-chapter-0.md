@@ -51,7 +51,9 @@ In order to start this tutorial you need to have the NativeScript CLI (command-l
 
 * [Complete the NativeScript installation guide](/start/quick-setup)
 
-> **TIP**: Setting up your machine for native development can be tricky, especially if you’re new to mobile development. If you get stuck, or if you have questions while going through these instructions, the [NativeScript community forum](http://forum.nativescript.org/) is a great place to get help.
+> **TIP**: Setting up your machine for native development can be tricky, especially if you’re new to mobile development. Here are a few tips you might find useful.
+> * You can [complete a version of this tutorial in NativeScript Playground](https://play.nativescript.org/?template=groceries-ng&tutorial=groceries-ng). NativeScript Playground is a browser-based environment that lets you develop apps without needing to configure your local development environment.
+> * If you get stuck going through the installation process, the [NativeScript community forum](http://forum.nativescript.org/) is a great place to get help.
 
 With that out of the way, let’s get started building apps with NativeScript!
 
