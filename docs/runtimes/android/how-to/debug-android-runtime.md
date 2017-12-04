@@ -114,3 +114,6 @@ The symbols can be found in the cloned android runtime repo in: `<android-runtim
 
 ![Run In Debug](hit-debug.png)
 
+## Known Issues
+
+If you have native plugins in your application, you will still be able to build it with Android Studio, but you won't be able to debug it with the Android runtime. We will fix that issue in the upcoming releases.
