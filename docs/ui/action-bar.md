@@ -54,7 +54,7 @@ If more than one component defines an `ActionBar` - the last definition will be 
 >Note: To show the ActionBar on the initial page of your application use the `startPageActionBarHidden: false` app option when bootstrapping the application.
 
 ```TypeScript
-nativeScriptBootstrap(AppComponent, [CUSTOM_PROVIDERS], { startPageActionBarHidden: false });
+platformNativeScriptDynamic({startPageActionBarHidden: false}).bootstrapModule(AppModule);
 ```
 
 {% endangular %}

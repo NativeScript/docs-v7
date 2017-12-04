@@ -22,7 +22,7 @@ This article will cover in detail the process of bootstrapping an Angular applic
 A traditional NativeScript application starts by initializing global objects, setting up global CSS rules, creating, and navigating to the main page. Angular does not care about any of that -- all it needs is a place in the DOM to attach to. Of course, Angular applications need to take care of their own initialization: modules, components, directives, routes, DI providers. A NativeScript Angular app needs to make both paradigms work together, so we provide a wrapper platform object, `nativeScriptPlatformDynamic`, that sets up a NativeScript application and can bootstrap the Angular framework in a default location on the main UI page.
 
 ```typescript
-platformNativeScriptDynamic().bootstrapModule(AppComponentModule);
+platformNativeScriptDynamic().bootstrapModule(AppModule);
 ```
 
 One of our major design goals here is to provide virtually the same interface as the default Angular `bootstrap` routine, so that people familiar with the web version of Angular get productive with as little friction as possible.
@@ -43,10 +43,6 @@ platformNativeScriptDynamic({startPageActionBarHidden: true});
 Many aspects of Angular applications are configured through the dependency injection (DI) system. NgModule's are usually the tool that lets you configure DI providers and exposes them to all application objects. Multiple Angular libraries, such as the router and the http client come with their own modules that register providers. NativeScript provides wrappers for the built-in modules (router, forms, HTTP) that should be used in mobile apps:
 
 ```typescript
-import {NS_ROUTER_PROVIDERS} from "nativescript-angular/router";
-
-nativeScriptBootstrap(AppMainComponent, [NS_ROUTER_PROVIDERS]);
-
 import { platformNativeScriptDynamic, NativeScriptModule } from "nativescript-angular/platform";
 import { NgModule } from "@angular/core"; 
 import { NativeScriptRouterModule } from "nativescript-angular/router";

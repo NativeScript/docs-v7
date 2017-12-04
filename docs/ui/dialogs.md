@@ -381,7 +381,7 @@ The `params.context` is the same object as `options.context` passed to the `show
 >     imports: [NativeScriptModule],
 >     bootstrap: [CustomDialogTest],
 > })
-> class AppComponentModule { }
+> class AppModule { }
 > ```
 
 ### Returning a result
