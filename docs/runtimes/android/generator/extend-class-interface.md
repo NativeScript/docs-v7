@@ -26,9 +26,9 @@ MyButton btn = new MyButton(context);
 Here is how the above is done in NativeScript:
 
 ``` JavaScript
-var constructorCalled = false;
-var MyButton = android.widget.Button.extend({
-	//constructor
+let constructorCalled = false;
+let MyButton = android.widget.Button.extend({
+	// constructor
 	init: function() {
 		constructorCalled = true;
 	},
@@ -38,14 +38,15 @@ var MyButton = android.widget.Button.extend({
 	}
 });
 
-var btn = new MyButton(context);
+let btn = new MyButton(context);
 // constructorCalled === true
 ```
 ``` TypeScript
-class MyButton extends android.widget.Button.extend
+class MyButton extends android.widget.Button {
 	static constructorCalled: boolean = false;
-	//constructor
-	init() {
+	// constructor
+	constructor() {
+		super();
 		MyButton.constructorCalled = true;
 
 		// necessary when extending TypeScript constructors
@@ -62,6 +63,74 @@ let btn = new MyButton(context);
 ```
 
 > **Note:** In the above setEnabled function the `this` keyword points to the JavaScript object that proxies the extended native instance. The `this.super` property provides access to the base class method implementation.
+
+Creating an anonymous Java class which extends from the base Java `java.lang.Object` class:
+
+``` JavaScript
+let MyClass = java.lang.Object({
+	// constructor
+	init: function() {
+	},
+	
+	toString: function() {
+		// override Object's toString
+	}
+});
+
+let myClassInstance = new MyClass();
+```
+``` TypeScript
+class MyClass extends java.lang.Object {
+	// constructor
+	constructor() {
+		super();
+		// necessary when extending TypeScript constructors
+		return global.__native(this);
+	}
+
+	toString(): string {
+		// override Object's toString
+	}
+}
+
+let myClassInstance: any | java.lang.Object = new MyClass();
+```
+
+Creating a named Java class which extends from the base Java `java.lang.Object` class will allow referring to the class by its full package name (in AndroidManifest.xml, for example):
+``` JavaScript
+let MyClass = java.lang.Object("my.application.name.MyClass", {
+	// constructor
+	init: function() {
+	},
+	
+	toString: function() {
+		// override Object's toString
+	}
+});
+
+let myClassInstance = new MyClass();
+let myClassInstance2 = new my.application.name.MyClass();
+```
+``` TypeScript
+class MyClass extends java.lang.Object {
+	// constructor
+	constructor() {
+		super();
+		// necessary when extending TypeScript constructors
+		return global.__native(this);
+	}
+
+	toString(): string {
+		// override Object's toString
+	}
+}
+
+let myClassInstance: any | java.lang.Object = new MyClass();
+let myClassInstance2: any | java.lang.Object = new my.application.name.MyClass(); // may produce a TypeScript compilation error, because the namespace will not be recognized, it's safe to ignore
+let myClassInstance3: any = new (<any>my).application.name.MyClass(); // TypeScript compiler-safe
+```
+
+> One important thing to note when dealing with extending classes and implementing interfaces in NativeScript is that, unlike in Java - where you can extend an **Abstract** class with a **new java.arbitrary.abstract.Class() { }**, in NativeScript the class needs to be extended as per the previous examples - using the `extend` function on the `java.arbitrary.abstract.Class`, or using the `extends` class syntax in TypeScript.
 
 # Interfaces
 The next example shows how to implement an interface in Java and NativeScript. The main difference between inheriting classes and implementing interfaces in NativeScript is the use of the `extend` keyword. Basically, you implement an interface by passing the *implementation* object to the interface constructor function. The syntax is identical to the [Java Anonymous Classes](http://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html).
@@ -133,7 +202,7 @@ The same result can be achieved in NativeScript by [extending]({%slug how-extend
 Using Javascript syntax - attach `interfaces` array to implementation object of the extend call
 
 ``` JavaScript
-var MyVersatileCopyWriter = java.lang.Object.extend({
+let MyVersatileCopyWriter = java.lang.Object.extend({
 	interfaces: [com.a.b.Printer, com.a.b.Copier, com.a.b.Writer], /* the interfaces that will be inherited by the resulting class */
 	print: function() { ... }, /* implementing the 'print' methods from Printer */
 	copy: function() { ... }, /* implementing the 'copy' method from Copier */
@@ -146,6 +215,7 @@ var MyVersatileCopyWriter = java.lang.Object.extend({
 @Interfaces([com.a.b.Printer, com.a.b.Copier, com.a.b.Writer]) /* the interfaces that will be inherited by the resulting MyVersatileCopyWriter class */
 class MyVersatileCopyWriter extends java.lang.Object { 
 	constructor() {
+		super();
 		return global.__native(this);
 	}
 
@@ -155,7 +225,6 @@ class MyVersatileCopyWriter extends java.lang.Object {
 	writeLine() { ... }
 }
 ```
-
 
 > When implementing Java interfaces in NativeScript, it is necessary to provide implementation (declare the methods - `print`, `copy`, `write`, `writeLine`) for **every** method present in the interfaces, otherwise compilation will fail. If you do not want to fully implement an interface you need to declare empty functions. Functions with empty bodies are considered valid method implementations (`print: function() {}`).
 
@@ -169,11 +238,11 @@ class MyVersatileCopyWriter extends java.lang.Object {
 > Java method overloads are handled by the developer by explicitly checking the `arguments` count of the invoked function
 
 ``` JavaScript
-var MyVersatileCopyWriter = ...extend({
+let MyVersatileCopyWriter = ...extend({
 	...
 	print: function() {
-		var content = "";
-		var offset = 0;
+		let content = "";
+		let offset = 0;
 
 		if (arguments.length == 2) {
 			offset = arguments[1];
@@ -189,6 +258,7 @@ var MyVersatileCopyWriter = ...extend({
 ``` TypeScript
 class MyVersatileCopyWriter extends ... {
 	constructor() {
+		super();
 		return global.__native(this);
 	}
 	...
