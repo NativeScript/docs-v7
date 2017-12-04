@@ -343,13 +343,13 @@ Feel free to take some time to play with the look of this app before moving on. 
 In NativeScript you use the `<Image>` UI component and its `src` attribute to add images to your pages. The `src` attribute lets you specify your image in three ways. The first (and simplest) way is to point at the URL of an image:
 
 ``` XML
-<Image src="https://www.nativescript.org/images/default-source/landingpages/logo.png" />
+<Image src="https://www.nativescript.org/images/default-source/landingpages/logo.png" ></Image>
 ```
 
 The second way is to point at an image that lives within your app's `app` folder. For example if you have an image at `app/images/logo.png`, you can use it with:
 
 ``` XML
-<Image src="~/images/logo.png" />
+<Image src="~/images/logo.png" ></Image>
 ```
 
 The third way, and the one Groceries uses, is to use platform-specific image resources. Let's add an image to the login screen and then discuss exactly what's happening.
@@ -361,7 +361,7 @@ The third way, and the one Groceries uses, is to use platform-specific image res
 In `login.xml`, add the `<Image>` below as the first child of the existing `<StackLayout>` tag:
 
 ``` XML
-<Image src="res://logo" stretch="none" horizontalAlignment="center" />
+<Image src="res://logo" stretch="none" horizontalAlignment="center" ></Image>
 ```
 
 <div class="exercise-end"></div>
