@@ -5,6 +5,17 @@ description: "Using V8 heap snapshots with the Android Runtime"
 position: 3
 ---
 
+> **NOTE**: `nativescript-dev-android-snapshot` plugin is deprecated. The recommended approach for using V8 Heap Snpashot feature in the context of NativeScript is via [`nativescript-dev-webpack` plugin](https://docs.nativescript.org/tooling/bundling-with-webpack#v8-heap-snapshot) in combination with `--snapshot` flag.
+
+Benefits of using `nativescript-dev-webpack` plugin in combination with `--snapshot` flag:
+
+ 1. No limitation for using only a few pre-generated snapshot packages (`tns-core-modules-snapshot` and `nativescript-angular-snapshot`).
+ 2. Fine-grained control over what is included in the snapshot. By changing the webpack configuration you can include any module in the snapshotted bundle.
+ 3. An Angular app can take advantage of both ahead of time compilation and heap snapshotting.
+ 4. No need to choose between Webapck and heap snapshot. You can have both.
+ 5. It is easier to troubleshoot errors because the whole process of heap snapshot generation is happening on the developer machine.
+ 6. It is more scalable and effective.
+
 # Introduction
 
 The Android Runtime currently uses the V8 engine to execute JavaScript and interact with native APIs. Starting with version 2.1 of the Android Runtime, you can hint the runtime to use custom [V8 heap snapshots](https://v8project.blogspot.bg/2015/09/custom-startup-snapshots.html) for reduced startup time.
@@ -48,14 +59,3 @@ tns install android-snapshot
 ```
 
 For more information about the plugin and the distributed snapshot packages follow the related repository: https://github.com/NativeScript/android-snapshot
-
-> **NOTE**: `nativescript-dev-android-snapshot` plugin is deprecated. The recommended approach for using V8 Heap Snpashot feature in the context of NativeScript is via [`nativescript-dev-webpack` plugin](https://docs.nativescript.org/tooling/bundling-with-webpack#v8-heap-snapshot) in combination with `--snapshot` flag.
-
-Benefits of using `nativescript-dev-webpack` plugin in combination with `--snapshot` flag:
-
- 1. No limitation for using only a few pre-generated snapshot packages (`tns-core-modules-snapshot` and `nativescript-angular-snapshot`).
- 2. Fine-grained control over what is included in the snapshot. By changing the webpack configuration you can include any module in the snapshotted bundle.
- 3. An Angular app can take advantage of both ahead of time compilation and heap snapshotting.
- 4. No need to choose between Webapck and heap snapshot. You can have both.
- 5. It is easier to troubleshoot errors because the whole process of heap snapshot generation is happening on the developer machine.
- 6. It is more scalable and effective.

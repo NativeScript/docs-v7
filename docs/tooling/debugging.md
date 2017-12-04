@@ -25,8 +25,6 @@ when changes in your code are saved. On code change & save, the application is r
 
 The debugging agent won't be started automatically by NativeScript-CLI but a link is provided for the user to open in Google Chrome. The link appears in the CLI log after the command is executed. Android and iOS have different links, but both can be opened in Google Chrome. The debugger is attached once the link is opened.
 
-To enable the same behaviour in iOS, the command `tns debug ios --chrome` needs to be executed (Safari defaults as a debug agent).
-
 To start the debugger for Android, run the following command:
 
 ```Bash
@@ -51,7 +49,7 @@ You can customize the `tns debug` command using any of the following options:
 * `--stop` - Detaches the debug tools.
 * `--emulator` - Specifies that you want to debug the app in an emulator.
 * `--timeout` - Sets the number of seconds that the NativeScript CLI will wait for the debugger to boot. If not set, the default timeout is 90 seconds.
-* `--chrome` - iOS specific flag to generate link for debugging with [Google Chrome agent](#debugging-with-chrome-devtools) (default is Safari)
+* `--inspector` - iOS specific flag to use the embedded Webkit Web Inspector debugger (default is Chrome DevTools)
 
 For more information about Android debugging, run the following command:
 
@@ -71,4 +69,12 @@ To debug NativeScript applications in [Visual Studio Code](https://code.visualst
 
 ## Debugging with Chrome DevTools
 
-Debugging android apps is as easy as executing `tns debug android`, to debug iOS apps with Chrome DevTools, the `--chrome` flag needs to be passed - `tns debug ios --chrome`. A complete list of features, and how to use them can be found at [Debugging NativeScript apps with Chrome DevTools]({%slug chrome-devtools%})
+Debugging Android and iOS applications is as easy as executing `tns debug <android | ios>`. A complete list of features, and how to use them can be found at [Debugging NativeScript apps with Chrome DevTools]({%slug chrome-devtools%}).
+
+## Debugging iOS Applications with the WebKit Web Inspector
+
+To debug iOS applications using the WebKit Web Inspector debugger the `--inspector` flag needs to be supplied to the `tns debug ios` command.
+
+## Known Problems
+
+- The Chrome DevTools Inspector url is different after each application restart while running a debug session.
