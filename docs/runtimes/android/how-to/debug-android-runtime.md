@@ -33,7 +33,7 @@ NativeScript with plain JavaScript:
 
 `tns prepare android`
 
-> After you have prepare the project, make sure the `tns-android` version is at least 3.4.0, because that's the version the Android Studio support is introduced. You can check the version by running `tns info` inside the project folder.
+> After you have prepared the project, make sure the `tns-android` version is at least 3.4.0, because that's the version the Android Studio support is introduced. You can check the version by running `tns info` inside the project folder.
 
 ### 3. Open the Android Studio project:
 
@@ -44,7 +44,7 @@ NativeScript with plain JavaScript:
 * Set path to the project: e.g. `/home/userName/debug-android-runtime/platforms/android`
 * Open the project
 
-> Note: Tested with Android Studion 2.3.3, 3.0.0, 3.0.1
+> Note: Tested with Android Studio 2.3.3, 3.0.0, 3.0.1
 > If you don't need to debug the Android runtime, at this point you can already build your app using Android Studio by running the `:app` project play button.
 
 ## Add Android Runtime module library as a dependency
@@ -52,7 +52,7 @@ NativeScript with plain JavaScript:
 ### 1. Make sure you have NDK and SDK directories set, because it's needed to build the Android runtime.
 
 * `File/Project Structure`
-* SDK Localtion
+* SDK Location
 * Check if Android NDK and SDK Location is set
 
 After set up the Project Structure should look like this:
@@ -78,7 +78,7 @@ After the files are synced you should see the `:runtime` and `:runtime-binding-g
 
 ![Runtime Project Included](runtime-project-shown.png)
 
-## Debug the Android runtime
+## Debug the Android Runtime
 
 ### 1. How to debug the Java part of the runtime
 
