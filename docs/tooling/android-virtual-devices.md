@@ -7,8 +7,7 @@ slug: android-emulators
 
 # Setup Android Emulators (AVD)
 
-Using Android emulator a.k.a. Android Virtual Device (AVD) eases the development process by providing an option to test mobile applications on various virtual devices. By default, the Android SDK does not provide an instance of an AVD, so it is required to make some additional steps to allow its use on your machine. 
-Android provides an article in their official documentation called [Create and Manage Virtual Devices](https://developer.android.com/studio/run/managing-avds.html), where it is covered the processes of downloading, creating and using one Android Emulator via Android Studio.
+Follow the official documentation on [Creating and Managing Virtual Devices](https://developer.android.com/studio/run/managing-avds.html), where the process of downloading, setting up, and using Android Emulators via Android studio is covered.
 
 
 
