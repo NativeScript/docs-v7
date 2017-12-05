@@ -9,11 +9,11 @@ slug: debug-android-runtime
 
 ## What is this document about?
 
-In certain scenarios where runtime errors occur, the debug info provided by the NativeScript CLI are not sufficient. This article will guide you through the steps needed to debug the Android Runtime library module as a part of your NativeScript application. It implies you have the [android-runtime repository](https://github.com/NativeScript/android-runtime) already cloned and set up. For more info on how to setup the android-runtime project on your machine refer to its [README](https://github.com/NativeScript/android-runtime/blob/master/README.md).
+In certain scenarios where runtime errors occur, the debug info provided by the NativeScript CLI is not sufficient. This article will guide you through the steps needed to debug the Android Runtime library module as a part of your NativeScript application. It implies you have already cloned and set up the [android-runtime repository](https://github.com/NativeScript/android-runtime). For more info on how to setup the android-runtime project on your workstation refer to its [README](https://github.com/NativeScript/android-runtime/blob/master/README.md).
 
 ## Creating the sample application
 
-### 1. Create a new NativeScript application using one of the following commands depending on your platform preference:
+### 1. Create a new NativeScript application using one of the following commands depending on your language/technology preference:
 
 NativeScript with Angular: 
 
@@ -38,7 +38,7 @@ NativeScript with plain JavaScript:
 ### 3. Open the Android Studio project:
 
 * Open Android Studio
-* `File/Open` or `Open an existing Android Studio project`
+* Click `File -> Open` or `Open an existing Android Studio project`
 ![Project Structure](open-as-project.png)
 
 * Set path to the project: e.g. `/home/userName/debug-android-runtime/platforms/android`
@@ -51,11 +51,11 @@ NativeScript with plain JavaScript:
 
 ### 1. Make sure you have NDK and SDK directories set, because it's needed to build the Android runtime.
 
-* `File/Project Structure`
-* SDK Location
-* Check if Android NDK and SDK Location is set
+* Click `File -> Project Structure`
+* Navigate to `SDK Localtion` section
+* Check if `Android NDK Location` and `Android SDK Location` are set
 
-After set up the Project Structure should look like this:
+Following the set up the `Project Structure` dialog look like this:
 
 ![Project Structure](project-structure-window.png)
 
@@ -74,13 +74,13 @@ After the changes, Android Studio will ask you to sync files and `settings.gradl
 
 ![Settings Gradle After](settings-gradle-after.png)
 
-After the files are synced you should see the `:runtime` and `:runtime-binding-generator` modules in Android Studio and should look like this:
+After the sync has completed, the `:runtime` and `:runtime-binding-generator` modules should appear in the Project view in Android Studio:
 
 ![Runtime Project Included](runtime-project-shown.png)
 
 ## Debug the Android Runtime
 
-### 1. How to debug the Java part of the runtime
+### 1. Debugging the runtime Java code
 
 If you only want to debug the Java part of the runtime, you're already all set up. All you need to do is set a break point and run in debug.
 
@@ -92,7 +92,7 @@ If you only want to debug the Java part of the runtime, you're already all set u
 
 ![Run In Debug](hit-debug.png)
 
-> When you run the project in debug, you should see in the `Gradle Console`(bottom right) the Android Runtime being built.
+> When you run the project in debug, you should see the Android Runtime build log in the Gradle Console(bottom right).
 
 ### 2. How to debug both Java and the C++ part of the runtime
 
@@ -116,4 +116,4 @@ The symbols can be found in the cloned android runtime repo in: `<android-runtim
 
 ## Known Issues
 
-If you have native plugins in your application, you will still be able to build it with Android Studio, but you won't be able to debug it with the Android runtime. We will fix that issue in the upcoming releases.
+If you have NativeScript plugins, containing Java Libraries in your application, you will still be able to build it with Android Studio, but you won't be able to debug it with the Android runtime. We will fix that issue in the upcoming releases.
