@@ -43,13 +43,13 @@ When the `install` command finishes, you’ll have a series of scripts you can u
 You can go ahead and run one of the following two commands to see how much faster your apps run with the default webpack configuration in place.
 
 ```
-npm run start-android-bundle
+tns run android --bundle
 ```
 
 Or
 
 ```
-npm run start-ios-bundle
+tns run ios --bundle
 ```
 
 > **NOTE**: If you’re having trouble enabling webpack in your own apps, feel free to reach out for help on the [NativeScript community forum](https://discourse.nativescript.org/).
@@ -86,16 +86,16 @@ Webpack has a number of plugins that extend its capabilities, but perhaps the mo
 
 For NativeScript apps there are two advantages to using UglifyJS. First, because UglifyJS reduces the file size of JavaScript files, it’ll also reduce the file size of your app as a whole. Second, because UglifyJS removes dead code as it minifies your code, your app will start up faster because there will be fewer JavaScript instructions for NativeScript to parse.
 
-Using UglifyJS is easy too. To use UglifyJS as part of your NativeScript builds, all you need to do is add a `--uglify` flag to the scripts you ran earlier. That is, run one of the following commands.
+Using UglifyJS is easy too. To use UglifyJS as part of your NativeScript builds, all you need to do is add a `--env.uglify` flag to the scripts you ran earlier. That is, run one of the following commands.
 
 ```
-npm run start-android-bundle --uglify
+tns run android --bundle --env.uglify
 ```
 
 Or
 
 ```
-npm run start-ios-bundle --uglify
+tns run ios --bundle --env.uglify
 ```
 
 If you open your `vendor.js` and `bundle.js` files, you should now see compressed code that looks something like this.
@@ -125,16 +125,16 @@ Here’s the basics of how heap snapshots work: when you start up your app, norm
 
 What V8 lets you do, however, is provide a so-called heap snapshot, or a previously prepared JavaScript context. In other words, instead of NativeScript fetching, parsing, and executing scripts on every startup, the NativeScript Android runtime can instead look for a previously prepared binary file that is the result of those tasks, and just use that instead—greatly reducing the amount of time it takes for your app to get up and running.
 
-In NativeScript we’re integrated this process directly within our webpack build process; therefore, running a build with V8 heap snapshots enabled is as simple as adding a `--snapshot` flag to the previous step.
+In NativeScript we’re integrated this process directly within our webpack build process; therefore, running a build with V8 heap snapshots enabled is as simple as adding a `--env.snapshot` flag to the previous step.
 
 ```
-npm run start-android-bundle --uglify --snapshot
+tns run android --bundle --env.uglify --env.snapshot
 ```
 
 There are two important things to note:
 
 1) Because heap snapshots are a feature of V8, you can only use this feature as part of your NativeScript Android builds. A similar feature is not available for NativeScript iOS builds.
-2) Under the hood, the NativeScript snapshot generator uses a V8 tool called `mksnapshot`. The `mksnapshot` tool only supports macOS and Linux, and therefore at the moment you are unable to use the `--snapshot` flag as part of your builds on Windows. On Windows-based development machine the NativeScript CLI ignores the `--snapshot` flag.
+2) Under the hood, the NativeScript snapshot generator uses a V8 tool called `mksnapshot`. The `mksnapshot` tool only supports macOS and Linux, and therefore at the moment you are unable to use the `--env.snapshot` flag as part of your builds on Windows. On Windows-based development machine the NativeScript CLI ignores the `--env.snapshot` flag.
 
 Because heap snapshots completely avoid the need to parse and execute the vast majority of your JavaScript on startup, they tend to speed up the startup times of NativeScript apps substantially. Here’s how the NativeScript Groceries app starts up on Android with heap snapshots enabled.
 
@@ -158,14 +158,14 @@ npm install --save-dev nativescript-dev-webpack
 npm install
 ```
 
-3) Run on iOS with webpack and UglifyJS enabled.
+3) Run on iOS with webpack, UglifyJS, and Angular Ahead-of-Time enabled.
 
 ```
-npm run start-ios-bundle --uglify
+tns run ios --bundle --env.uglify --env.aot 
 ```
 
-4) Run on Android with webpack, UglifyJS, and V8 heap snapshot builds enabled.
+4) Run on Android with webpack, UglifyJS, Angular Ahead-of-Time, and V8 heap snapshot builds enabled.
 
 ```
-npm run start-android-bundle --uglify --snapshot
+tns run android --bundle --env.uglify --env.aot --env.snapshot
 ```
