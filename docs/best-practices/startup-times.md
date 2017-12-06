@@ -164,7 +164,7 @@ npm install
 tns run ios --bundle --env.uglify --env.aot 
 ```
 
-4) Run on Android with webpack, UglifyJS, Angular Ahead-of-Time, and V8 heap snapshot builds enabled.
+4) Run on Android with webpack, UglifyJS, Angular Ahead-of-Time (if using Angular), and V8 heap snapshot builds enabled.
 
 ```
 tns run android --bundle --env.uglify --env.aot --env.snapshot
