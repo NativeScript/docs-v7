@@ -9,15 +9,15 @@ position: 1
 
 One of NativeScript's strongest capabilities is the access to Android (also referred to as __'Java'__ or __'native'__) APIs inside JavaScript/TypeScript. That's possible thanks to build-time generated [Metadata](./overview.md) chunks which hold the information about the public classes from the Android SDK, Android support libraries, and any other Android libraries which may be imported into your Android NativeScript project.
 
-- [Accessing Android Packages](#access-android-packages)
-- [Accessing Android Classes](#access-android-classes)
-- [Accessing Fields and Constants](#access-methods-fields-and-constants)
-- [Example](#example)
-- [Extending Classes and Interfaces](#extending-classes-and-interfaces)
+- [Access Android Packages](#access-android-packages)
+- [Access Android Classes](#access-android-classes)
+- [Access Fields and Constants](#access-methods-fields-and-constants)
+- [Extend Classes and Interfaces](#extending-classes-and-interfaces)
+- [Example](#full-fledged-example)
 
 > Note: 'Android classes' and 'Java classes' are used interchangeably throughout the article to refer to classes in the Java programming language. 
 
-# Access Android Packages
+## Access Android Packages
 
 The [Android packages](https://developer.android.com/reference/packages.html) are available in the JavaScript/TypeScript global context and are the entry point for accessing Android APIs. Think of them as of TypeScript/C# namespaces, or the way to access sets of classes. For example, the `android.view` package grants access to classes like `android.view.View` - the base of all view elements in Android.
 
@@ -44,9 +44,9 @@ const View = android.view.View;
 const Object = javaLangPkg.Object; // === java.lang.Object;
 ```
 
-To find out the package name of an Android class, refer to the [Android SDK Reference] (https://developer.android.com/reference/packages.html), or to the supplied API Reference of a plugin, when importing 3rd party Android components into your project. 
+To find out the package name of an Android class, refer to the [Android SDK Reference](https://developer.android.com/reference/packages.html), or to the supplied API Reference of a plugin, when importing 3rd-party Android components into your project. 
 
-For example, if you need to work with the Google API for Google Maps, after following the installation guide, you may need to access packages from the plugin like `com.google.android.gms.maps`, reference for which can be found at [Google APIs for Android Reference](https://developers.google.com/android/reference/com/google/android/gms/maps/package-summary)
+For example, if you need to work with the Google API for Google Maps, after following the installation guide, you may need to access packages from the plugin like `com.google.android.gms.maps`, which you can find a reference for at [Google APIs for Android Reference](https://developers.google.com/android/reference/com/google/android/gms/maps/package-summary)
 
 > **Note:** To have access and Intellisense for the native APIs with **NativeScript + TypeScript** or **NativeScript + Angular** projects, you have to add a dev dependency to `tns-platform-declarations`. More details about accessing native APIs with TypeScript can be found [here]({% slug access-native-apis %}#intellisense-and-access-to-native-apis-via-typescript).
 
@@ -56,7 +56,7 @@ For example, if you need to work with the Google API for Google Maps, after foll
 
 > **Note:** You cannot use APIs that are not present in the metadata. By default, if `--compileSdk` argument isn't provided while building, metadata will be built against the latest Android [Platform SDK](https://developer.android.com/about/versions/nougat/index.html) installed on the workstation. See [metadata limitations](./overview.md).
 
-# Access Android Classes
+## Access Android Classes
 Classes ([See OOP](https://docs.oracle.com/javase/tutorial/java/concepts/)) are the schematics to producing building blocks (Objects) in Android, as such, they are used to represent almost everything you see, as well as what you don't see, in an Android application - the Android layouts are objects built from classes, the buttons and text views also have class representations. Classes in Android (Java) have unique identifiers denoted by the full package name (see above), followed by the actual class name (usually capitalized - see above - 'View')
 
 Accessing classes in Android you would normally add an `import` statement at the beginning of the Java file, to allow referring to the class only by its name. If the developer decides, they may be as expressive as possible by using the full class identifier too:
@@ -88,7 +88,7 @@ function arbitraryFunction(context) { // 'context' is a JavaScript wrapper (Prox
 }
 ```
 
-# Proxies
+## Proxies
 The JavaScript objects that lie behind the Android APIs are called *Proxies*. There are two types of proxies:
 
 ### Package Proxy
@@ -99,7 +99,7 @@ Represents a thin wrapper over a class or an interface and provides access to it
 
 The result of the constructor calls (`new ...()`) will create native `android.view.View` instances on the Android side and a special hollow Object on the JavaScript side. This special object knows how to invoke methods and access fields on the corresponding native instance. For example we may retrieve the path value of the above created `File` using the corresponding `File` class API like:
 
-# Access Methods, Fields and Constants
+## Access Methods, Fields and Constants
 Thanks to the 'proxying' system, Java methods and fields can be accessed through the JavaScript wrappers of Java instances. For example, you may retrieve the result of a method call to the Java instance:
 
 ```javascript
@@ -125,11 +125,11 @@ let foundView = newView.focusSearch(android.view.View.FOCUS_UP); // public membe
 const randomViewId = android.view.View.generateViewId(); // static method call to 'public static int generateViewId()' - generates a random integer suitable for Android Views
 ```
 
-# Extending Classes and Interfaces
-For a comprehensive guide on extending classes and implementing interfaces through JavaScript/TypeScript check out [the dedicated article](../generator/extend-class-interface.md)
+## Extend Classes and Interfaces
+For a comprehensive guide on extending classes and implementing interfaces through JavaScript/TypeScript check out [the dedicated article](../generator/extend-class-interface.md).
 
-# Full fledged example
-Let's take a sample Android code, and transcribe it to JavaScript/TypeScript
+## Full-fledged Example
+Let's take a sample Android code, and transcribe it to JavaScript/TypeScript.
 
 The following code (courtesy of [startandroid.ru](http://startandroid.ru/en/lessons/220-lesson-16-creating-layout-programmatically-layoutparams.html)) creates an Android layout, and adds a couple Button and TextView elements:
 ```java
@@ -386,7 +386,7 @@ class MainActivity extends android.app.Activity {
     }
 });
 ```
-# See Also
+## See Also
 * [Metadata Overview and Limitations](./overview.md)
 * [Extending Classes and Interfaces](../generator/extend-class-interface.md)
 * [Execution Flow](../advanced-topics/execution-flow.md)

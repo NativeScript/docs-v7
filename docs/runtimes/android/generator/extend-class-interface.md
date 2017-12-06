@@ -62,7 +62,7 @@ let btn = new MyButton(context);
 // MyButton.constructorCalled === true
 ```
 
-> **Note:** In the above setEnabled function the `this` keyword points to the JavaScript object that proxies the extended native instance. The `this.super` property provides access to the base class method implementation.
+> **Note:** In the above `setEnabled` function the `this` keyword points to the JavaScript object that proxies the extended native instance. The `this.super` property provides access to the base class method implementation.
 
 Creating an anonymous Java class which extends from the base Java `java.lang.Object` class:
 
