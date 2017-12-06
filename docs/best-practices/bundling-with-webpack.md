@@ -13,10 +13,12 @@ previous_url: /core-concepts/bundling-with-webpack,/tooling/bundling-with-webpac
 1. [Installation](#installation-and-configuration)
 1. [How nativescript-dev-webpack works](#how-nativescript-dev-webpack-works)
 1. [Usage](#usage)
-    1. [NPM scripts](#npm-scripts)
+    1. [NativeScript CLI commands](#nativescript-cli-commands)
     1. [Publishing Application](#publishing-application)
     1. [Angular and Ahead-of-Time Compilation](#angular-and-ahead-of-time-compilation)
+    1. [Generating WebPack Report](#generating-webpack-report)
     1. [Bundling Extra Assets](#bundling-extra-assets)
+    1. [Bundling Background Workers](#bundling-background-workers)
 1. [Advanced Optimizations](#advanced-optimizations)
     1. [Uglify.js](#uglifyjs)
     1. [V8 heap snapshot generation](#v8-heap-snapshot)
@@ -254,6 +256,16 @@ new CopyWebpackPlugin([
 ], {ignore: ["App_Resources/**"]}),
 
 ```
+
+### Bundling Background Workers
+
+When the applicaiton is implementing workers some additional steps are required to make the project WebPack compatible. Use `nativescript-worker-loader` plugin.
+
+```
+npm i nativescript-worker-loader -D
+```
+
+Detailed instructions on how to implement WebPack compatible workers can be found in [this demonstration applicaiton](https://github.com/NativeScript/worker-loader#usage).
 
 ## Advanced Optimizations
 
