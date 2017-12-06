@@ -225,16 +225,17 @@ android:
   components:
     - tools
     - platform-tools
-    - build-tools-25.0.2
-    - android-25
+    - build-tools-26.0.1
+    - android-26
+    - android-23
     - extra-android-m2repository
 ```
 
 `tools` and `platform-tools` components define that the latest revision of Android SDK Tools will be installed. Read more about [Travis CI Environment for Android Project](https://docs.travis-ci.com/user/languages/android/#Overview).
 
-`build-tools-25.0.2` component defines the BuildTools version that will be used.
+`build-tools-26.0.1` component defines the BuildTools version that will be used.
 
-`android-25` component defines the SDK version used to compile the project.
+`android-26` component defines the SDK version used to compile the project.
 
 `extra-android-m2repository` component defines the support library repositories.
 
@@ -264,8 +265,8 @@ The machine that is going to be provisioned will be Linux with nodejs v6 install
 - stage: "WebPack"
     os: osx
     env:
-      - Platform="iOS"
-    osx_image: xcode8.3
+      - WebpackiOS="11"
+    osx_image: xcode9.1
     language: node_js 
     node_js: "6"
     jdk: oraclejdk8
@@ -273,7 +274,7 @@ The machine that is going to be provisioned will be Linux with nodejs v6 install
   - language: android
     os: linux
     env:
-      - Platform="Android"
+      - WebpackAndroid="26"
     jdk: oraclejdk8
     before_install: nvm install 6.10.3
     script: cd demo && npm run build.plugin && npm i && npm run build-android-bundle && cd ../demo-angular && npm run build.plugin && npm i && npm run build-android-bundle
@@ -287,7 +288,7 @@ The scripts that are executed build the plugin (take a look at [package.json fil
 ```
 - stage: "Build"
   env: 
-    - Android="25"
+    - BuildAndroid="26"
   language: android
   os: linux
   jdk: oraclejdk8
@@ -295,9 +296,9 @@ The scripts that are executed build the plugin (take a look at [package.json fil
   script: cd demo && npm run ci.android.build && cd ../demo-angular && npm run ci.android.build
 - os: osx
   env: 
-    - iOS="10.3"
-    - Xcode="8.3"
-  osx_image: xcode8.3
+    - BuildiOS="11"
+    - Xcode="9.1"
+  osx_image: xcode9.1
   language: node_js 
   node_js: "6"
   jdk: oraclejdk8
