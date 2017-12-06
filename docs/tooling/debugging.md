@@ -75,6 +75,6 @@ Debugging Android and iOS applications is as easy as executing `tns debug <andro
 
 To debug iOS applications using the WebKit Web Inspector debugger the `--inspector` flag needs to be supplied to the `tns debug ios` command.
 
-## Known Problems
+## Known Issues and Limitations
 
-- The Chrome DevTools Inspector url is different after each application restart while running a debug session.
+- [iOS] The Chrome DevTools Inspector url is different after each application restart while running a debug session.

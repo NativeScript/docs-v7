@@ -61,21 +61,10 @@ Try one of the following approaches:
  - The `Sync with this iPhone over Wi-Fi` option in iTunes on your machine should be disabled
  - Disable your Wi-Fi and execute `tns device` (when your device is connected and disconnected). It is possible that some other device is connected to the same Wi-Fi and this causes confusion in the way CLI communicates to the devices. You can find more info on the issue [here](https://github.com/NativeScript/nativescript-cli/issues/1398).
 
-**Problem:**
-```Shell
-FAILURE: Build failed with an exception.
-
-* What went wrong:
-A problem occurred configuring root project 'app_name'.
-> Could not resolve all dependencies for configuration ':_debugCompile'.
-```
-
-**Solution:** Run `$ android` to launch the Android SDK Manager and download the Local Maven repository for Support Libraries 28.0.0.
-
 
 **Problem:** Gradle doesn't work with `org.gradle.parallel=true` enabled in `gradle.properties`.
 
-**Solution:** Currently there's no solution, but we are wokring on updating the build to work with this option enabled.
+**Solution:** Currently there's no solution, but we are working on updating the build to work with this option enabled.
 
 ### Cannot run or debug apps on iOS 8.1.3 devices with Xcode 6.1
 
@@ -83,21 +72,9 @@ A problem occurred configuring root project 'app_name'.
 
 **Solution:** Update to Xcode 6.1.1 or later.
 
-### The `debug` command times out on Android devices
-
-**Problem:** The `debug` command times out when you attempt to debug on Android devices or emulators and the debug tools do not start.<br/>The `debug` command is configured with a 30-second timeout. On slower computer configurations, the CLI might exceed this timeout when connecting to your Android devices or emulators.
-
-**Solution:** Re-run the `debug` command. If you continue to have issue with your Android emulator performance, you may want to consider using a more performant third-party emulator option such as [Genymotion](https://www.genymotion.com/).
-
-### The debug tools for Android never launch on macOS
-
-**Problem:** The NativeScript CLI uses the [opener npm package](https://www.npmjs.com/package/opener) to open Chrome. The current version of the package that the CLI uses cannot open the browser.
-
-**Solution:** Update the opener package to a newer version. If this does not resolve the issue, try modifying your local copy of the package.
-
 ### Files added to the App_Resources folder are not working
 
-**Problem:** When you add images or files to your app's *App_Resources* folder, run the app, and the images don't show up when they should.
+**Problem:** When you add images or files to your app's *App_Resources* folder, run the app, the images don't show up when they should.
 
 **Solution:** When you add files to the *App_Resources* folder you have to run a new *build* of the app. Files located in *App_Resources* are compiled into the executable so they can't be synced with a previous build. Here are the correct steps to take to resolve the problem:
 
@@ -127,4 +104,4 @@ The system failed to delete the package for an unspecified reason.
 The package manager service found that the device didn't have enough storage space to install the app.
 ```
 
-**Solution:** Free more space on your device/emulator.
+**Solution:** Free up more space on your device/emulator.
