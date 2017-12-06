@@ -11,16 +11,16 @@ The NativeScript Metadata is the mapping between the JavaScript and the Java/And
 
 ![Metadata](metadata_diagram.png)
 
-# Metadata API Level
+## Metadata API Level
 
 Only Android public APIs (**including those of any plugins added to the project**) present in the metadata will be accessible in JavaScript/TypeScript. That means, if an application is built with metadata for API level 23 (Android Marshmallow 6.0 – 6.0.1), the application user might have problems when running the application on an older device, for example with API levels 17 through 19 (Android KitKat 4.4 – 4.4.4).
 
 Metadata is built automatically for the application. The metadata API level, or simply put, what API level the metadata is built for, is determined by the `--compileSdk` flag passed to the build. By default the nativescript CLI automatically detects the highest Android API level installed on the developer's machine and passes it to the build implicitly. This `--compileSdk` flag can be supplied explicitly when starting a build: `tns run android --compileSdk=1`.
 
-# Metadata Limitations
+## Metadata Limitations
 
 Let's look at the Android [TextView](https://developer.android.com/reference/android/widget/TextView.html).
-In API level 21 a method called getLetterSpacing was added. What that means is, an application developer can use the "getLetterSpacing" method only on two conditions:
+In API level 21 a method called `getLetterSpacing` was added. What that means is, an application developer can use the `"`getLetterSpacing` method only on two conditions:
 * The built metadata is >= 21
 * The device that the application will be running on is >= 21
 
@@ -47,6 +47,6 @@ if (android.os.Build.VERSION.SDK_INT >= 21) {
 }
 ```
 
-#See Also
+## See Also
 * [Accessing APIs](./accessing-packages.md)
 * [Extending Android classes]({%slug accessing-android-apis %})
