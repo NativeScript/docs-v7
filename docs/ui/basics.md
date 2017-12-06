@@ -693,7 +693,7 @@ export function navigatingTo(args: observable.EventData) {
 }
 ```
 
-If you want to show some inner collection items inside ```ListView.itemTemplate``` you can use a [Repeater]({%slug layouts %}#repeating-layout-children):
+If you want to show some inner collection items inside ```ListView.itemTemplate``` you can use a [Repeater](https://docs.nativescript.org/cookbook/ui/repeater):
 ```XML
 <Page>
 {%raw%}
