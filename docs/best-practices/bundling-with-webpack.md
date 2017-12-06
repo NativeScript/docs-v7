@@ -30,7 +30,7 @@ previous_url: /core-concepts/bundling-with-webpack,/tooling/bundling-with-webpac
 
 ## Overview
 
-JavaScript code and general asset bundling has been a member of the web developer toolbox for a long time. Tools like [webpack](https://webpack.github.io/) have been providing support for an enjoyable development experience that lets you assemble client-side code from various module sources and formats and then package it together. Most importantly, they allow for page load time optimizations that reduce or parallelize the number of requests a browser makes to the server.
+JavaScript code and general asset bundling have been a member of the web developer toolbox for a long time. Tools like [webpack](https://webpack.github.io/) have been providing support for an enjoyable development experience that lets you assemble client-side code from various module sources and formats and then package it together. Most importantly, they allow for page load time optimizations that reduce or parallelize the number of requests a browser makes to the server.
 
 Why bundle scripts in a mobile app though? Aren't all files stored on the local device, so requesting them should be faster than an HTTP request?! Yes, that is the case, but bundling still has an important place in mobile app optimizations:
 
@@ -41,14 +41,14 @@ Why bundle scripts in a mobile app though? Aren't all files stored on the local 
 
 ## Introducing Webpack
 
-Webpack works by traversing your source tree starting from a number of "entry" modules and navigating through module imports. This makes it possible to collect just modules that are actually used in your program. Webpack is very extensible -- you can customize every step of the bundling process and add support for all sorts of asset generation and manipulation procedures.
+Webpack works by traversing your source tree starting from some "entry" modules and navigating through module imports. This makes it possible to collect just modules that are used in your program. Webpack is very extensible -- you can customize every step of the bundling process and add support for all sorts of asset generation and manipulation procedures.
 
 Since bundling can be a slow and resource intensive operation, we do not enable it for every build. It is easiest to develop and debug your code without bundling, and use bundled code for QA/release builds.
 
 
 ## Installation and Configuration
 
-Since every project is unique and can have quite complex requirements for bundling we tried to make webpack configuration as simple as possible. After installation, the plugin will configure the bundling dependencies, and add a basic configuration that should work for most projects. Developers can (and should) extend that to fit their specific project needs.
+Since every project is unique and can have quite complex requirements for bundling, we tried to make webpack configuration as simple as possible. After installation, the plugin will configure the bundling dependencies, and add a basic configuration that should work for most projects. Developers can (and should) extend that to fit their specific project needs.
 
 The easiest way to enable webpack support for your application is to install the `nativescript-dev-webpack` plugin. To do that, run this in your application folder:
 
@@ -105,52 +105,52 @@ Installing the plugin adds several updates to your project:
 
 ## Usage
 
-### NPM scripts
+### NativeScript CLI commands
 
-`nativescript-dev-webpack` changes the usual workflow of working with your project. Instead of using `tns` CLI commands, we will use `npm run` commands to invoke scripts that prepare the bundled version.
+`nativescript-dev-webpack` implements the usual workflow of working with your project. Using `tns` CLI  commands to invoke scripts that prepare the bundled version.
 
 Given that you have your project running in its non-bundled state, you can test the bundled version with the following command(s):
 
 ```
-$ npm run start-android-bundle
+$ tns run android --bundle
 ```
 
 or
 
 ```
-$ npm run start-ios-bundle
+$ tns run ios --bundle
 ```
 
 If you want to package your application, you need the `build-...` commands:
 
 ```
-$ npm run build-android-bundle
+$ tns build android --bundle
 ```
 
 or
 
 ```
-$ npm run build-ios-bundle
+$ tns build ios --bundle
 ```
 
 The former will produce an android `.apk` archive, while the latter will create an `.app` or `.ipa` package.
 
-Note that the `build-<platform>-bundle` commands will ultimately call `tns build <platform>` behind the scenes. By default it will not pass any extra parameters to the `tns` tool, so, if you need a release build, signed with a certain key, you would need to provide the parameters prefixed by a `--` marker. For example, here is how you'd create a release build for an iOS device containing bundled scripts:
+By default it will not pass any extra parameters to the `tns` tool, so, if you need a release build, signed with a certain key, you would need to provide the parameters prefixed by a `--` marker. For example, here is how you'd create a release build for an iOS device containing bundled scripts:
 
 ```
-$ npm run build-ios-bundle -- --release --forDevice --teamId TEAM_ID
+$ tns build ios --bundle --release --forDevice
 ```
 
 The corresponding command for android looks like:
 
 ```
-$ npm run build-android-bundle -- --release --keyStorePath ~/path/to/keystore --keyStorePassword your-pass --keyStoreAlias your-alias --keyStoreAliasPassword your-alias-pass
+$ tns build android --bundle --release --keyStorePath ~/path/to/keystore --keyStorePassword your-pass --keyStoreAlias your-alias --keyStoreAliasPassword your-alias-pass
 ```
 
 You can also use the same method to provide environmental variables to the webpack build:
 
 ```
-$ npm run build-android-bundle -- --env.development --env.property=value
+$ tns build android --bundle --env.development --env.property=value
 ```
 
 They can be accessed through the `env` object in the webpack configuration:
@@ -170,7 +170,7 @@ module.exports = env => {
 A bundled version of the application for Android can be built in release with this script:
 
 ```
-$ npm run build-android-bundle -- --release --keyStorePath ~/path/to/keystore --keyStorePassword your-pass --keyStoreAlias your-alias --keyStoreAliasPassword your-alias-pass
+$ tns build android --bundle --release --keyStorePath ~/path/to/keystore --keyStorePassword your-pass --keyStoreAlias your-alias --keyStoreAliasPassword your-alias-pass
 ```
 
 Once this is finished, proceed with uploading the output .apk file in the <project>/platforms/android/build/outputs/apk directory on Google Play store.
@@ -178,8 +178,10 @@ Once this is finished, proceed with uploading the output .apk file in the <proje
 You can build a bundled version of the application for iOS in release with this script:
 
 ```
-$ npm run build-ios-bundle -- --release --forDevice --teamId TEAM_ID
+$ tns build ios --bundle --release --forDevice --teamId TEAM_ID
 ```
+
+Note  that if `--teamId` flag is emmited, the NativeScript CLI will prompt for team ID during the build process.
 
 Once the release build is ready, you have two options:
 
@@ -187,14 +189,16 @@ Once the release build is ready, you have two options:
 * Specify your development team in `<project>/app/App_Resources/iOS/build.xcconfig` from the command line and execute 
 
 ```
-$ npm run publish-ios-bundle --  --teamId TEAM_ID APPLE_ID APPLE_PASSWORD
+$ tns publish ios --ipa ipa-file-path-here
 ```
 
->If there are multiple mobile provisioning profiles for the selected development team available on the machine, it is not guaranteed that Xcode will select the desired one and publishing using the command line will be successful. Therefore, in such cases we recommend manually configuring and uploading the project from Xcode.
+More options for publishing an iOS application can be found in ["Publishing for iOS"](https://docs.nativescript.org/publishing/publishing-ios-apps) article.
+
+>If there are multiple mobile provisioning profiles for the selected development team available on the machine, it is not guaranteed that Xcode will select the desired one and publishing using the command line will be successful. Therefore, in such cases, we recommend manually configuring and uploading the project from Xcode.
 
 ### Angular and Ahead-of-Time Compilation
 
-NativeScript Angular projects will also have the [`@ngtools/webpack`](https://www.npmjs.com/package/@ngtools/webpack) plugin added. The former performs Ahead-of-Time compilation and code splitting for lazy loaded modules. Also, if your application is Ahead-of-Time compiled, you won't have Angular compiler included in your bundle which results in smaller application size and improved start up time.
+NativeScript Angular projects will also have the [`@ngtools/webpack`](https://www.npmjs.com/package/@ngtools/webpack) plugin added. The former performs Ahead-of-Time compilation and code splitting for lazily loaded modules. Also, if your application is Ahead-of-Time compiled, you won't have Angular compiler included in your bundle which results in smaller application size and improved start up time.
 To take advantage of Ahead-of-Time compilation, you need to bootstrap your app with the static NativeScript Angular platform instead of the dynamic one. For that, you will have to create a `main.aot.ts` file next to your `app/main.ts` file. Also make sure, that the `main` property in your `app/package.json` is `main.js`. If your root NgModule is named `AppModule` and is located in `app/app.module.ts`, the content of the `main.aot.ts` file should be the following:
 
 ```ts
@@ -211,7 +215,16 @@ Note that the `./app.module.ngfactory` file still does not exist. It will be in-
 // tsconfig.json
 {
     "compilerOptions": {
-    ...
+        ...
+        "paths": {
+            "~/*": [
+                "app/*"
+            ],
+            "*": [
+                "./node_modules/tns-core-modules/*",
+                "./node_modules/*"
+            ]
+        }
     },
     "exclude": [
         ...
@@ -247,21 +260,25 @@ new CopyWebpackPlugin([
 ### Uglify.js
 
 The webpack configuration includes the `uglifyjs-webpack-plugin`(https://github.com/webpack-contrib/uglifyjs-webpack-plugin). The plugin performs code minification and improves the size of the bundle.
-That plugin is disabled by default because it slows down the building process. You can enable it by providing the `--uglify` flag to the bundling command. Example usage:
+That plugin is disabled by default because it slows down the building process. You can enable it by providing the `--env.uglify` flag to the CLI command. Example usage:
 
 ```
-$ npm run build-android-bundle --uglify
-
+$ tns build android --bundle --env.uglify
 ```
 
-or, if you are building for release:
+or, if you are building for release on Android:
 ```
-$ npm run build-ios-bundle --uglify -- --release --forDevice --teamId TEAM_ID
+$ tns build android --bundle --env.uglify --release --keyStorePath ~/path/to/keystore --keyStorePassword your-pass --keyStoreAlias your-alias --keyStoreAliasPassword your-alias-pass
+```
+
+Building for release with uglify on iOS
+```
+$ tns build ios --bundle --env.uglify --release --forDevice --teamId TEAM_ID
 ```
 
 ### V8 Heap Snapshot
 
-The webpack configuration also includes the [`NativeScriptSnapshotPlugin`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/plugins/NativeScriptSnapshotPlugin.js). The plugin loads a single webpack bundle in an empty V8 context, aka snapshotted context, and after its execution, captures a snapshot of the produced V8 heap and saves it in a blob file. Next the blob file is included in the apk bundle and [is loaded by the Android Runtime](https://docs.nativescript.org/runtimes/android/advanced-topics/V8-heap-snapshots) on app initialization. This will obviate the need for loading, parsing and executing the script on app startup which can drastically decrease the starting time.
+The webpack configuration also includes the [`NativeScriptSnapshotPlugin`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/plugins/NativeScriptSnapshotPlugin.js). The plugin loads a single webpack bundle in an empty V8 context, aka snapshotted context, and after its execution captures a snapshot of the produced V8 heap and saves it in a blob file. Next the blob file is included in the apk bundle and [is loaded by the Android Runtime](https://docs.nativescript.org/runtimes/android/advanced-topics/V8-heap-snapshots) on app initialization. This will obviate the need for loading, parsing and executing the script on app startup which can drastically decrease the starting time.
 
 To include the `NativeScriptSnapshotPlugin` in already existing webpack configuration regenerate your `webpack.config.js` or use the `update-ns-webpack` script to update it:
 
@@ -270,19 +287,60 @@ $ ./node_modules/.bin/update-ns-webpack
 $ npm install
 ```
 
-Once you have updated your `webpack.config.js`, you can enable the feature by providing the `--snapshot` flag to the bundling command:
+Once you have updated your `webpack.config.js`, you can enable the feature by providing the `--env.snapshot` flag to the bundling command:
 
 ```
-$ npm run start-android-bundle --snapshot
-
+$ tns build android --bundle --env.snapshot
 ```
 
-Snapshot generation can be used in combination with uglify (`--uglify`) which will result in smaller heap size.
+Snapshot generation can be used in combination with uglify (`--env.uglify`) which will result in smaller heap size.
+
+```
+$ tns build android --bundle --env.uglify --env.snapshot
+```
 
 Known limitations:
-* No iOS support. Heap snapshot is a V8 feature which is the engine used in the Android Runtime. Providing `--snapshot` flag on the iOS bundling commands will have no effect.
-* No Windows support. Providing `--snapshot` flag on the Android bundling command will have no effect on Windows machine.
+* No iOS support. Heap snapshot is a V8 feature which is the engine used in the Android Runtime. Providing `--env.snapshot` flag on the iOS bundling commands will have no effect.
+* No Windows support. Providing `--env.snapshot` flag on the Android bundling command will not affect Windows machine.
 * Only one webpack bundle can be snapshotted. By default, this is the `vendor` bundle because in most of the cases it is the largest one.
+
+
+### Angular Ahead-of-Time Compilation Build (AOT)
+
+The Angular Ahead-of-Time (AOT) compiler converts your Angular HTML and TypeScript code into efficient JavaScript code during the build phase before the browser downloads and runs that code. To enable AOT  provide `--env.aot` flag to the CLI command.
+
+Building with AOT on Android
+```
+$ tns build android --bundle --env.aot
+```
+
+Building with AOT on iOS
+```
+$ tns build ios --bundle --env.aot
+```
+
+The `--env.aot` flag can be used in combination with `--env.uglify` and `--env.snapshot` (Note that snapshots are available for Android only).
+
+Building with AOT, uglify and snapshot on Android
+```
+$ tns build android --bundle --env.aot --env.uglify --env.snapshot
+```
+
+Building with AOT and uglify on iOS
+```
+$ tns build ios --bundle --env.aot --env.uglify
+```
+
+### Generating WebPack Report
+
+WebPack bundling comes with a report functionality provided via `--env.report` flag. Enabling the flag will generate `report` folder
+in the root directory of the project with `report.html` page rendering the application chunks. 
+The plugin used fpr generating the report is [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer).
+
+Generating report
+```
+$ tns build android --bundle --env.report
+```
 
 #### NativeScriptSnapshotPlugin configuration
 
@@ -304,8 +362,8 @@ if (env.snapshot) {
 * `chunk` - the name of the chunk to be snapshotted
 * `projectRoot` - path to the app root folder
 * `webpackConfig` - Webpack configurations object. The snapshot generation modifies the webpack config object to ensure that the specified bundle will be snapshotted successfully
-* `targetArchs` - Since the serialization format of the V8 heap is architecture-specific we need a different blob file for each V8 library target architecture. The Android Runtime library contains 3 architecture slices - `ia32` (for emulators), `arm` and `arm64` (for devices). However, [if not explicitly specified](https://github.com/NativeScript/android-runtime/issues/614), the `arm` slice will be used even on `arm64` devices. In other words, generating heap snapshot for all supported architectures (`arm`, `arm64`, `ia32`) will guarantee that the snapshotted heap will be available on every device/emulator. However, when building for release you can leave only `arm` (and `arm64` in case you have [explicitly enabled `arm64` support](https://github.com/NativeScript/android-runtime/issues/614)) in the `targetArchs` array which will decrease the size of the produced APK file.
-* `tnsJavaClassesOptions` - Basically, every Java class successor, declared in NativeScript, consists of two parts - native Java part generated by the [static binding generator](https://www.nativescript.org/blog/static-binding-generator---what-is-it-good-for) and JavaScript counterpart, created when the [JavaScript extending](https://docs.nativescript.org/runtimes/android/generator/extend-class-interface#classes) is evaluated. Both parts must be loaded in order to instantiate the class. The native Java definition is compiled with the app, so it is loaded by the JVM without requiring any additional work. Since the JavaScript counterpart is created by [the extend function](https://docs.nativescript.org/runtimes/android/generator/how-extend-works#the-extend-function) we should make sure that it is evaluated before using the successor class. This is not a concern, when the class is instantiated from JavaScript, because its constructor is created by the `extend` function call, which means that there is no way to refer to the extended class without having the `extend` call executed beforehand. However, there are classes defined in JavaScript that are instantiated from native code. For example, the `NativeScriptActivity` class defined in `ui/frame/activity` is instantiated on app startup by the system. When bundling is disabled, such cases are handled by the Android runtime in the following way:
+* `targetArchs` - Since the serialization format of the V8 heap is architecture-specific, we need a different blob file for each V8 library target architecture. The Android Runtime library contains 3 architecture slices - `ia32` (for emulators), `arm` and `arm64` (for devices). However, [if not explicitly specified](https://github.com/NativeScript/android-runtime/issues/614), the `arm` slice will be used even on `arm64` devices. In other words, generating heap snapshot for all supported architectures (`arm`, `arm64`, `ia32`) will guarantee that the snapshotted heap will be available on every device/emulator. However, when building for the release, you can leave only `arm` (and `arm64` in case you have [explicitly enabled `arm64` support](https://github.com/NativeScript/android-runtime/issues/614)) in the `targetArchs` array which will decrease the size of the produced APK file.
+* `tnsJavaClassesOptions` - Basically, every Java class successor, declared in NativeScript, consists of two parts - native Java part generated by the [static binding generator](https://www.nativescript.org/blog/static-binding-generator---what-is-it-good-for) and JavaScript counterpart, created when the [JavaScript extending](https://docs.nativescript.org/runtimes/android/generator/extend-class-interface#classes) is evaluated. Both parts must be loaded to instantiate the class. The native Java definition is compiled with the app, so it is loaded by the JVM without requiring any additional work. Since the JavaScript counterpart is created by [the extend function](https://docs.nativescript.org/runtimes/android/generator/how-extend-works#the-extend-function), we should make sure that it is evaluated before using the successor class. This is not a concern, when the class is instantiated from JavaScript, because its constructor is created by the `extend` function call, which means that there is no way to refer to the extended class without having the `extend` call executed beforehand. However, there are classes defined in JavaScript that are instantiated from native code. For example, the `NativeScriptActivity` class defined in `ui/frame/activity` is instantiated on app startup by the system. When bundling is disabled, such cases are handled by the Android runtime in the following way:
     1. The static binding generator saves the path to the file containing its JavaScript implementation in the class metadata.
     2. Before instantiating the class, the runtime loads and executes the module at the path saved in the metadata, assuming that this will evaluate the class extending code.
     When bundling with Webpack, the saved path in the metadata always points to the bundle script. However, depending on configurations, executing the bundle script may not evaluate the module containing the Java class definition. Therefore, instead of relying on the Android runtime mechanism to automatically load the JavaScript counterparts we load them on startup by explicitly adding `require` calls to such modules in our default `app/vendor-platform.android` module:
@@ -396,7 +454,7 @@ Webpack may not show all error details by default, but you can always enable tha
 
 
 ```
-$ npm run start-android-bundle -- --display-error-details
+$ tns run android --bundle --display-error-details
 ```
 
 Note that the above command will not run a full build. Use it only to run the webpack process manually and troubleshoot failed builds.
@@ -470,5 +528,5 @@ Apps using the nativescript-dev-webpack plugin:
 * [Groceries](https://github.com/NativeScript/sample-Groceries)
 * [NativeScript SDK Examples](https://github.com/NativeScript/nativescript-sdk-examples-ng)
 * [NativeScript-UI SDK Examples](https://github.com/telerik/nativescript-ui-samples-angular)
-* [Cosmos Databank](https://github.com/NickIliev/NativeScript-Cosmos-Databank)
+* [Cosmos Databank](https://github.com/NickIliev/nativescript-ng-cosmos)
 * [Tests app NG](https://github.com/NativeScript/tests-app-ng)
