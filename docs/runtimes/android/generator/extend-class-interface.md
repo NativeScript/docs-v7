@@ -9,7 +9,7 @@ As part of the native Android development you often have to inherit from classes
 
 # Classes
 
-```java
+```Java
 public class MyButton extends android.widget.Button {
 	public MyButton(Context context) {
 		super(context);
@@ -135,7 +135,7 @@ let myClassInstance3: any = new (<any>my).application.name.MyClass(); // TypeScr
 # Interfaces
 The next example shows how to implement an interface in Java and NativeScript. The main difference between inheriting classes and implementing interfaces in NativeScript is the use of the `extend` keyword. Basically, you implement an interface by passing the *implementation* object to the interface constructor function. The syntax is identical to the [Java Anonymous Classes](http://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html).
 
-```java
+```Java
 button.setOnClickListener(new View.OnClickListener() {
 	public void onClick(View v) {
 		// Perform action on click
@@ -162,7 +162,7 @@ button.setOnClickListener(new android.view.View.OnClickListener({
 
 Suppose you have the following interfaces in Java:
 
-```java
+```Java
 public interface Printer {
 	void print(String content);
 	void print(String content, int offset);
@@ -180,7 +180,7 @@ public interface Writer {
 
 Implementing the interfaces is as easy in Java as writing:
 
-```java
+```Java
 public class MyVersatileCopywriter implements Printer, Copier, Writer {
 	public void print(String content) {	...	}
 

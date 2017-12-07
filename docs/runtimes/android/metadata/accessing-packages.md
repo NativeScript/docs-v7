@@ -61,7 +61,7 @@ Classes ([See OOP](https://docs.oracle.com/javase/tutorial/java/concepts/)) are 
 
 Accessing classes in Android you would normally add an `import` statement at the beginning of the Java file, to allow referring to the class only by its name. If the developer decides, they may be as expressive as possible by using the full class identifier too:
 
-```java
+```Java
 package my.awesome.application;
 
 import android.view.View;
@@ -132,7 +132,7 @@ For a comprehensive guide on extending classes and implementing interfaces throu
 Let's take a sample Android code, and transcribe it to JavaScript/TypeScript.
 
 The following code (courtesy of [startandroid.ru](http://startandroid.ru/en/lessons/220-lesson-16-creating-layout-programmatically-layoutparams.html)) creates an Android layout, and adds a couple Button and TextView elements:
-```java
+```Java
 public class MainActivity extends Activity {
     /** Called when the activity is first created. */
     @Override
