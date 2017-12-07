@@ -41,9 +41,9 @@ There you will find a sample testing file using [Mocha "BDD" interface](https://
 Let's review most notable lines of code and explain them.
 
 ```javascript
-var nsAppium = require("nativescript-dev-appium");
+import { AppiumDriver, createDriver, SearchOptions } from "nativescript-dev-appium";
 ```
-We start by loading our plugin's module that we will be further used to initialize our driver and provide us some helpful functions.
+We start by loading our plugin's modules that will be further used to initialize our driver and provide us some helpful functions.
 
 ```javascript
 describe("Facebook tests", async function () { // define test suite
@@ -117,7 +117,7 @@ it("should log in via original button", async function () {
 
 To be able to execute our tests both on Android and iOS platforms we have to use different xpath selectors. Here comes in handy `driver.locators.getElementByName("textfield")` function from the plugin. It returns the native class of the element depending on the platform and platform's version by accepting as parameter the name of the element of type string. The list of all elements can be find in [locators.ts](https://github.com/NativeScript/nativescript-dev-appium/blob/master/lib/locators.ts) file of the plugin. The last part needed to assemble our xpath selector is some distinguishing property so we are sure using the right UI element. This can be obtained by using [Appium desktop app](http://appium.io/downloads.html) to inspect the visual tree of our app and pick a proper one.
 
-Once we have our UI elements selectors ready it is time for the driver to find them in the visual tree so we can further manipulate and assert them. It is worth mentioning that we should use accessibility ID as a preferable selector where possible `driver.findElementByAccessibilityId(FACEBOOK_BUTTON)`, but in most cases this is not an option and we use xpath `driver.findElementByXPath("//" + driver.locators.button + loginButtonElement)` or class name `driver.findElementByClassName(driver.locators.button)`.
+Once we have our UI elements selectors ready it is time for the driver to find them in the visual tree so we can further manipulate and assert them. It is worth mentioning that we should use accessibility ID as a preferable selector where possible `driver.findElementByAccessibilityId(FACEBOOK_BUTTON)`, but in most cases this is not an option and we use text `driver.findElementByText(pickSingleButtonText, SearchOptions.contains);`, xpath `driver.findElementByXPath("//" + driver.locators.button + loginButtonElement)` or class name `driver.findElementByClassName(driver.locators.button)`.
 
 In some scenarios we might need to use any of the [wd](https://www.npmjs.com/package/wd) functions, for example `hideDeviceKeyboard()`. Then the `driver` property come to help which gives us that ability `await driver.driver.hideDeviceKeyboard("Done");`.
 
