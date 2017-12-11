@@ -95,9 +95,28 @@ platformNativeScriptDynamic({bootInExistingPage:false, cssFile:"style.css"});
 {% nativescript %}
 ### Page-specific CSS
 
-When the page's XML declaration file is loaded, NativeScript looks for a CSS file with the same name (if such exists), reads any CSS styles that it finds and automatically loads and applies them to the page.
+When the page's XML declaration file is loaded, NativeScript looks for a CSS file with the same name (if such exists), reads any CSS styles that it finds and automatically loads and applies them to the page. For example, a page named `mypage.xml` will automatically load any CSS in `mypage.css`. The CSS file must exist in the same folder as the XML file to be automatically applied.
 
-You can override CSS styles specified in the file by using the page's `css` property:
+If you import any [custom components](https://docs.nativescript.org/ui/basics#custom-components) on your page, the CSS from those components will be applied to the page, too. As a best practice, scope the CSS of custom components so that component styles do not "leak" on to pages.
+
+```XML
+<!-- myCustomComponent.xml -->
+<StackLayout class="mywidget">
+   <Label text="Custom component layout" class="label" />
+</StackLayout>
+```
+```CSS
+/* myCustomComponent.css */
+/* GOOD: This will ONLY apply to the custom component */
+.mywidget .label { color: blue; }
+
+/* BAD: This will apply to custom component AND potentially to the page where the component is used */
+.label { color: blue; }
+```
+
+For an example of how styles from custom components get applied, [try this project on the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=o87l19).
+
+You can also override CSS styles specified in the file by using the page's `css` property:
 
 ```JavaScript
 page.css = "button { color: red }";
