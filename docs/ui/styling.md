@@ -25,6 +25,13 @@ You change the looks and appearance of views (elements) in a NativeScript applic
 
 Similarly to the [DOM Style Object](http://www.w3schools.com/jsref/dom_obj_style.asp), each View instance exposes a **style** property, which holds all the style properties for the view. When the view is displayed, all its style properties are applied to the underlying native widget.
 
+{% nativescript %}
+If you are using Angular with NativeScript, refer to the [Styling docs for NativeScript with Angular](https://docs.nativescript.org/angular/ui/styling).
+{% endnativescript %}
+{% angular %}
+If you are not using Angular with NativeScript, refer to the [Styling docs for NativeScript Core](https://docs.nativescript.org/ui/styling).
+{% endangular %}
+
 ## Applying CSS styles
 The CSS styles can be set on 3 different levels:
 
