@@ -114,6 +114,14 @@ The symbols can be found in the cloned android runtime repo in: `<android-runtim
 
 ![Run In Debug](hit-debug.png)
 
+## Requirements
+
+* Android Studio >= 2.3.x
+* All the tools needed to build the Android Runtime. Read more info [here](https://github.com/NativeScript/android-runtime#build-prerequisites).
+* (Debug C++) Once Android Studio Is installed, you need to install the [`LLDB`](https://lldb.llvm.org/) tool used for debugging native code. You can do that by: navigating to `Tools -> Android -> SDK Manager` then go to `SDK Tools` tab and install `LLDB`.
+
 ## Known Issues
 
-If you have NativeScript plugins, containing Java Libraries in your application, you will still be able to build it with Android Studio, but you won't be able to debug it with the Android runtime. We will fix that issue in the upcoming releases.
+* If you have NativeScript plugins, containing Java Libraries in your application, you will still be able to build it with Android Studio, but you won't be able to debug it with the Android runtime. We will fix that issue in the upcoming releases.
+
+* If you encounter this error: `Error while starting native debug session: com.intellij.execution.ExecutionException: LLDB package hasn’t been found`, you're probably trying to debug C++ code and you need to install the `LLDB` debugger. Look at the Requirements for instructions on how to do it.
