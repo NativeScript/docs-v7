@@ -107,7 +107,7 @@ If you import any [custom components](https://docs.nativescript.org/ui/basics#cu
 .label { color: blue; }
 ```
 
-For an example of how styles from custom components get applied, [try this project on the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=o87l19).
+For an example of how styles from custom components get applied, [try this project on the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=o87l19&v=3).
 
 You can also override CSS styles specified in the file by using the page's `css` property:
 
