@@ -11,6 +11,12 @@ slug: debug-android-runtime
 
 In certain scenarios where runtime errors occur, the debug info provided by the NativeScript CLI is not sufficient. This article will guide you through the steps needed to debug the Android Runtime library module as a part of your NativeScript application. It implies you have already cloned and set up the [android-runtime repository](https://github.com/NativeScript/android-runtime). For more info on how to setup the android-runtime project on your workstation refer to its [README](https://github.com/NativeScript/android-runtime/blob/master/README.md).
 
+## Requirements
+
+* Android Studio >= 2.3.x
+* All the tools needed to build the Android Runtime. Read more info [here](https://github.com/NativeScript/android-runtime#build-prerequisites).
+* (Debug C++) Once Android Studio Is installed, you need to install the [`LLDB`](https://lldb.llvm.org/) tool used for debugging native code. You can do that by: navigating to `Tools -> Android -> SDK Manager` then go to `SDK Tools` tab and install `LLDB`.
+
 ## Creating the sample application
 
 ### 1. Create a new NativeScript application using one of the following commands depending on your language/technology preference:
@@ -113,12 +119,6 @@ The symbols can be found in the cloned android runtime repo in: `<android-runtim
 * Run Debug 
 
 ![Run In Debug](hit-debug.png)
-
-## Requirements
-
-* Android Studio >= 2.3.x
-* All the tools needed to build the Android Runtime. Read more info [here](https://github.com/NativeScript/android-runtime#build-prerequisites).
-* (Debug C++) Once Android Studio Is installed, you need to install the [`LLDB`](https://lldb.llvm.org/) tool used for debugging native code. You can do that by: navigating to `Tools -> Android -> SDK Manager` then go to `SDK Tools` tab and install `LLDB`.
 
 ## Known Issues
 
