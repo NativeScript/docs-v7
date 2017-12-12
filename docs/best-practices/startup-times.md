@@ -125,7 +125,7 @@ Here’s the basics of how heap snapshots work: when you start up your app, norm
 
 What V8 lets you do, however, is provide a so-called heap snapshot, or a previously prepared JavaScript context. In other words, instead of NativeScript fetching, parsing, and executing scripts on every startup, the NativeScript Android runtime can instead look for a previously prepared binary file that is the result of those tasks, and just use that instead—greatly reducing the amount of time it takes for your app to get up and running.
 
-In NativeScript we’re integrated this process directly within our webpack build process; therefore, running a build with V8 heap snapshots enabled is as simple as adding a `--snapshot` flag to the previous step.
+In NativeScript we’ve integrated this process directly within our webpack build process; therefore, running a build with V8 heap snapshots enabled is as simple as adding a `--snapshot` flag to the previous step.
 
 ```
 npm run start-android-bundle --uglify --snapshot
