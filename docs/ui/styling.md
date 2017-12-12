@@ -17,7 +17,6 @@ This article includes the following topics:
 * [Accessing NativeScript component properties with CSS](#accessing-nativescript-component-properties-with-css)
 * [Using Fonts](#using-fonts)
 * [Import External CSS](#import-external-css)
-* [CSS parser playground](http://iamdustan.com/reworkcss_ast_explorer/)
 
 ## Introduction
 
@@ -38,6 +37,8 @@ The CSS styles can be set on 3 different levels:
 * [Inline CSS](#inline-css): Applies directly to a UI view
 
 If there is CSS declared on different levels&mdash;all will be applied. The inline CSS will have the highest priority and the application CSS will have the lowest priority.
+
+It is also possible to apply [platform specific CSS](#platform-specific-css).
 
 ### Application-wide CSS
 
@@ -164,6 +165,56 @@ Similarly to HTML, CSS can be defined inline for a UI view in the XML markup:
 <Button text="inline style" style="background-color: green;"></Button>
 ```
 {% endangular %}
+
+### Platform Specific CSS
+
+NativeScript conventions make it easy to apply platform specific CSS, either via separate stylesheets or via in-line declarations. For an overview of NativeScript's convention-based file name rules for targeting files at specific platforms and screen sizes, [refer to this article in the docs](https://docs.nativescript.org/core-concepts/navigation#supporting-multiple-screens). {% angular %} **NOTE:** If you are using Angular, file name rules do not work for targeting specific screen sizes or orientations. JavaScript is required to target styles at different screens at runtime. [See this article](https://dzone.com/articles/tablet-support-for-nativescript-with-angular) for an example of targeting styles at tablets with Angular.{% endangular %}
+
+There are 4 primary ways to target styles at iOS or Android:
+
+1. Platform specific stylesheets {% nativescript %}(`styles.ios.css`, `styles.android.css`){% endnativescript %}{% angular }(`styles.component.ios.css`, `styles.component.android.css`){% endangular %}
+2. Platform specific markup blocks (`<ios> ... </ios>`, `<android> ... </android>`)
+3. Platform specific attributes (`<Label ios:style="..." android:style="..."`)
+4. Platform specific CSS rules (`.ios .mystyle { ... }`, `.android .mystyle { ... }`) _[*requires plugin](https://market.nativescript.org/plugins/nativescript-platform-css)_
+
+The most common and maintainable pattern for managing platform agnostic and platform specific styles in NativeScript is with multiple stylesheets and CSS imports.
+
+{% nativescript %}
+With this pattern, a page has 3 separate stylesheets: Common, iOS and Android. For example, for page `myPage.xml` you would have 3 stylesheets:
+
+1. `myPage-common.css`
+2. `myPage.ios.css`
+3. `myPage.android.css`
+
+In both `myPage.ios.css` and `myPage.android.css` you then import the shared common styles from `myPage-common.css`:
+
+```CSS
+/* Import shared style rules */
+@import './myPage-common.css';
+
+/* Add iOS/Android specific rules (if any) */
+.mystyle { ... }
+```
+{% endnativescript %}
+{% angular %}
+With this pattern, a page (or component) has 3 separate stylesheets: Common, iOS and Android. For example, for page `home.component.html` you would have 3 stylesheets:
+
+1. `home-common.css`
+2. `home.component.ios.css`
+3. `home.component.android.css`
+
+In both `home.component.ios.css` and `home.component.android.css` you then import the shared common styles from `home-common.css`:
+
+```CSS
+/* Import shared style rules */
+@import './home-common.css';
+
+/* Add iOS/Android specific rules (if any) */
+.mystyle { ... }
+```
+{% endangular %}
+
+At build time, NativeScript will automatically import the common styles and choose the correct iOS or Android stylesheet depending on the target build platform.
 
 ## Supported selectors
 
