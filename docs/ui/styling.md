@@ -484,7 +484,7 @@ This list of properties can be set in CSS or through the style property of each 
 | `font-family`         | `fontFamily`          | Sets the font family of the matched view. |
 | `font-size`           | `fontSize`            | Sets the font size of the matched view (only supports device-independent units). |
 | `font-style`          | `fontStyle`           | Sets the font style of the matched view. Possible values: `italic`, `normal`. |
-| `font-weight`         | `fontWeight`          | Sets the font weight of the matched view Possible values: `bold`, `normal` OR `100`,`200`,`300`,`400`,`500`,`600`,`700`,`800`,`900`, where `400` is `normal` and `700` is `bold` |
+| `font-weight`         | `fontWeight`          | Sets the font weight of the matched view Possible values: `bold`, `normal` OR `100`,`200`,`300`,`400`,`500`,`600`,`700`,`800`,`900`, where `400` is `normal` and `700` is `bold` (NOTE: Some fonts do not support all available variants) |
 | `text-align`          | `textAlignment`       | Sets text alignment in the matched view. Possible values: `left` , `center`, `right`. |
 | `text-decoration`     | `textDecoration`      | Sets the text formatting. Possible values: `none`, `line-through`, `underline`. |
 | `text-transform`      | `textTransform`       | Sets the text transform. Possible values: `none`, `capitalize`, `uppercase`, `lowercase`. |
