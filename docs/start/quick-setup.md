@@ -10,6 +10,7 @@ previous_url: /setup/quick-setup
 
 With the open-source NativeScript command-line interface and an IDE or text editor of your choice, you can create, develop, store, and build your apps locally, free of charge and anonymously. Let’s look at how to set up the CLI for development.
 
+> **TIP**: Try [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick) for a one-click setup experience for macOS, Windows, and Linux. Sidekick installs the NativeScript CLI and dependencies listed below - and offers starter kits, cloud-based builds for iOS and Android, and app store publishing.
 
 ## Step 1: Install Node.js
 
