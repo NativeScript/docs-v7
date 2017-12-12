@@ -17,13 +17,11 @@ You can debug apps developed with the NativeScript framework from both the Nativ
 
 ## Debugger Commands
 
-The `debug` command builds and deploys new package on the connected device/emulator.
-It also tracks for changes in the `app` folder which mean it will livesync your application
-when changes in your code are saved. On code change & save, the application is restarted automatically.
+The `debug` command builds and deploys a new package on a connected device or emulator. By default, it also starts to track for changes the `app` folder,  meaning that it will automatically livesync changes in code as soon as they are saved. In order to apply the changes, the CLI will automatically restart the application after each sync.
 
-> **Note** Changes inside `App_Resources` folder (e.g. `AndroidManifest.xml`, `info.plist` or any of the resources folders) will trigger a rebuild before resuming the livesyncing.
+> **Note** Changes inside `App_Resources` folder (e.g. `AndroidManifest.xml`, `Info.plist` or any of the resources folders) trigger a rebuild after which livesyncing is resumed.
 
-The debugging agent won't be started automatically by NativeScript-CLI but a link is provided for the user to open in Google Chrome. The link appears in the CLI log after the command is executed. Android and iOS have different links, but both can be opened in Google Chrome. The debugger is attached once the link is opened.
+For security reasons the debugging agent **can't be started automatically** from the command-line. That's why NativeScript CLI generates a URL which is printed on the screen instead. **You need to manually copy it in Google Chrome's address bar to start debugging.**
 
 To start the debugger for Android, run the following command:
 
@@ -37,31 +35,28 @@ To start the debugger for iOS, run the following command:
 tns debug ios
 ```
 
-This command starts the platform-specific debugger with the default `--debug-brk` option.
-
-> **Note** For more details about `Debugger Command` options, you can use `tns debug android --help` or `tns debug ios --help`.
-
 ## Debugger Options
 
 You can customize the `tns debug` command using any of the following options:
-* `--debug-brk` - Prepares, builds and deploys the application package on a device or in an emulator, launches the browser and stops at the first breakpoint. This option is enabled by default when you run `tns debug` and no other options are specified.
+
+* `--debug-brk` - Prepares, builds and deploys the application package on a device or in an emulator, and stops at the first JavaScript line until either the debugger frontend connects or a 30 seconds timeout elapses.
 * `--start` - Attaches the debug tools to a deployed and running app.
-* `--stop` - Detaches the debug tools.
 * `--emulator` - Specifies that you want to debug the app in an emulator.
 * `--timeout` - Sets the number of seconds that the NativeScript CLI will wait for the debugger to boot. If not set, the default timeout is 90 seconds.
-* `--inspector` - iOS specific flag to use the embedded Webkit Web Inspector debugger (default is Chrome DevTools)
+* `--no-watch` - If set, changes in your code will not be livesynced.
+* `--clean` - If set, forces rebuilding the native application.
 
-For more information about Android debugging, run the following command:
+### iOS specific options
+* `--inspector` - flag to use the embedded Webkit Web Inspector debugger (default is Chrome DevTools)
+* `--chrome` - Deprecated (now default). Allows debugging in Chrome Developer Tools. If set, Safari Web Inspector is not started and debugging is attached to Chrome Developer Tools.
 
-```Bash
-tns help debug android
-```
+For more information about Android debugging, run any of the following commands:
 
-For more information about iOS debugging, run the following command:
+`tns help debug android` or `tns debug android --help`
 
-```Bash
-tns help debug ios
-```
+For more information about iOS debugging, run any the following commands:
+
+`tns help debug ios` or `tns debug ios --help`
 
 ## Debugging with Visual Studio Code
 
@@ -73,8 +68,8 @@ Debugging Android and iOS applications is as easy as executing `tns debug <andro
 
 ## Debugging iOS Applications with the WebKit Web Inspector
 
-To debug iOS applications using the WebKit Web Inspector debugger the `--inspector` flag needs to be supplied to the `tns debug ios` command.
+To debug iOS applications using the WebKit Web Inspector debugger use the `--inspector` flag - `tns debug ios --inspector`.
 
 ## Known Issues and Limitations
 
-- [iOS] The Chrome DevTools Inspector url is different after each application restart while running a debug session.
+- **[iOS]** The Chrome DevTools Inspector url is different after each application restart while running a debug session. You have to manually update it in the address bar each time.
