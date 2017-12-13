@@ -55,7 +55,7 @@ The Calendar component (known as RadCalendar in code) is a highly customizable n
 
 The Chart component (known as RadChart in code) can be used to visualize data in a human-readable way through lines, areas, bars, pies, and more. Some features include:
 
-* Wide array of accepted data types: numerical, string or `DataTime` data depending on the chart you want to visualize;
+* Wide array of accepted data types: numerical, string or `DateTime` data depending on the chart you want to visualize;
 * Smooth interaction and zooming;
 * Various chart series options:
 
@@ -73,7 +73,7 @@ The Chart component (known as RadChart in code) can be used to visualize data in
 
 [{% nativescript %}[Documentation](http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/DataForm/dataform-overview){% endnativescript %}{% angular %}[Documentation](http://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/DataForm/dataform-overview){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/release/sdk/app/dataform){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/release/sdkAngular/app/dataform){% endangular %}]
 
-The DataForm component (known as RadDataForm in code) provides an easy and versatile approach for building mobile forms based on a provided data objects’ public members. Use DataForm to:
+The DataForm component (known as RadDataForm in code) provides an easy and versatile approach for building mobile forms based on a provided data object's public members. Use DataForm to:
 
 * Bind a form to a data object with a single line of code;
 * Take advantage of more than **15** built-in editors (or provide your own custom editor);
