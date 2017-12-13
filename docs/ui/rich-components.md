@@ -101,6 +101,8 @@ The Gauges component (known as RadRadialGauge in code) allows you to display the
 
 [{% nativescript %}[Documentation](http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/ListView/overview){% endnativescript %}{% angular %}[Documentation](http://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/ListView/overview){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/release/sdk/app/listview){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/release/sdkAngular/app/listview){% endangular %}]
 
+> NOTE: The professional ListView component is different from the ListView built in to the [core NativeScript modules](https://docs.nativescript.org/ui/list-view). Use the professional ListView if you need to take advantage of the advanced functionality listed below.
+
 The ListView component (known as RadListView in code) is a virtualizing list component that provides the most needed features associated with scenarios where a list of items is used. Features include:
 
 * Pull to refresh;
@@ -108,8 +110,6 @@ The ListView component (known as RadListView in code) is a virtualizing list com
 *  `Linear`, `Grid`, and `Staggered` layout modes, allowing horizontal and vertical scrolling direction;
 * Single and multiple selection modes;
 * Smart defaults for many gestures: select on long press, execution of special action on swipe, reorder of items on long press and drag, refreshing the list on swipe, and loading more items only when needed.
-
-> RadListView is not to be confused with the [default NativeScript ListView component](https://docs.nativescript.org/ui/list-view)!
 
 ![listview ios](../img/ui-for-nativescript/listview-ios.png "listview ios") ![listview android](../img/ui-for-nativescript/listview-android.png "listview android")
 
