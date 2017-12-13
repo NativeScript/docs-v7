@@ -48,55 +48,59 @@ Generally, almost every UI control could be bound to a data object (all NativeSc
 
 ###Two-way binding in code
 
-The example below consists of a `Label`, `TextField` and a source property to which the UI controls are bound. The purpose will be, when the user enters an input in the `TextField`, to update the property in the code and the `Label` text.
+The example below consists of a `Label`, `TextField` and a source property to which the UI controls are bound. The purpose will be, when the user enters an input in the `TextField`, to update the property in the code and the `Label` text. 
+
+> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=4zwcfW&v=2) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=8gVPMi&v=4).
 
 First, the **source** object is created with a **textSource** property. A constant flow of propagating changes from the source property to the Label is necessary. Thus, the property in the code has to raise a **propertyChange** event in order to notify the `Label` for the changes. To raise this event, a built-in class is used, which provides this functionality - `Observable`.
 
 ``` JavaScript
-var observableModule = require("data/observable");
-var source = new observableModule.Observable();
-source.set("textSource", "Text set via twoWay binding");
+const fromObject = require("data/observable").fromObject;
+const source = fromObject({
+	textSource: "Text set via twoWay binding"
+});
 ```
 ``` TypeScript
-import { Observable } import "data/observable";
-let source = new Observable();
-source.set("textSource", "Text set via twoWay binding");
+import { fromObject } import "data/observable";
+const source = fromObject({
+	textSource: "Text set via twoWay binding"
+});
 ```
 
 Next, **target** objects are created to bind to the source property. In this case, these will be a `Label` and a `TextField`, which inherit from the `Bindable` class (as all of the UI controls do).
 
 ``` JavaScript
-//create the TextField
-var textFieldModule = require("ui/text-field");
-var targetTextField = new textFieldModule.TextField();
+// create the TextField
+const TextField = require("ui/text-field").TextField;
+const targetTextField = new TextField();
 
-//create the Label
-var labelModule = require("ui/label");
-var targetLabel = new labelModule.Label();
+// create the Label
+const Label = require("ui/label").Label;
+const targetLabel = new Label();
 ```
 ``` TypeScript
-//create the TextField
-import textFieldModule = require("ui/text-field");
-var targetTextField = new textFieldModule.TextField();
+// create the TextField
+import { TextField } from "ui/text-field";
+const targetTextField = new TextField();
 
-//create the Label
-import labelModule = require("ui/label");
-var targetLabel = new labelModule.Label();
+// create the Label
+import { Label } from "ui/label";
+const targetLabel = new Label();
 ```
 After that, the target objects bind to the source object. The TextField uses a two-way binding, so the user input could change the property in the code. And the binding of the Label is set to one-way in order to propagate changes only from the code to the UI.
 
 ### Example 1: Binding label text property.
 ``` JavaScript
-//binding the TextField
-var textFieldBindingOptions = {
+// binding the TextField
+const textFieldBindingOptions = {
 	sourceProperty: "textSource",
 	targetProperty: "text",
 	twoWay: true
 };
 targetTextField.bind(textFieldBindingOptions, source);
 
-//binding the Label
-var labelBindingOptions = {
+// binding the Label
+	const labelBindingOptions = {
 	sourceProperty: "textSource",
 	targetProperty: "text",
 	twoWay: false
@@ -104,16 +108,17 @@ var labelBindingOptions = {
 targetLabel.bind(labelBindingOptions, source);
 ```
 ``` TypeScript
-//binding the TextField
-var textFieldBindingOptions = {
+import { BindingOptions } from "ui/core/bindable";
+// binding the TextField
+const textFieldBindingOptions: BindingOptions = {
 	sourceProperty: "textSource",
 	targetProperty: "text",
 	twoWay: true
 };
 targetTextField.bind(textFieldBindingOptions, source);
 
-//binding the Label
-var labelBindingOptions = {
+// binding the Label
+const labelBindingOptions: BindingOptions = {
 	sourceProperty: "textSource",
 	targetProperty: "text",
 	twoWay: false
@@ -126,7 +131,7 @@ targetLabel.bind(labelBindingOptions, source);
 To create a binding in XML, a source object is needed, which will be created the same way, as in the example above ([Two-Way Binding in Code](#two-way-binding-in-code)). Then the binding is described in the XML (using a mustache syntax). With an XML declaration, only the names of the properties are set - for the target: text, and for source: textSource. The interesting thing here is that the source of the binding is not specified explicitly. More about this topic will be discussed in the [Binding source](#binding-source) article.
 
 ``` XML
-<Page>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
 	<StackLayout>{%raw%}
 		<TextField text="{{ textSource }}" />
 {%endraw%}	</StackLayout>
@@ -139,7 +144,7 @@ To create a binding in XML, a source object is needed, which will be created the
 
 ###Binding to a property
 
-An important part of the data binding is setting the source object. For a continuous flow of data changes, the source property needs to emit a **propertyChange** event. NativeScript data binding works with any object that emits this event. Adding a binding **source** happens by passing it as a second parameter in the method **bind(bindingOptions, source)**. This parameter is optional and could be omitted, in which case the source is used for a property named **bindingContext** of the `Bindable` class. What is special about this property is that it is inheritable across the visual tree. This means that a UI control can use the `bindingContext` of the first of its **parent** elements, which has an explicitly set **bindingContext**. In the example from [Two-Way Binding in Code](#two-way-binding-in-code), the `bindingContext` can be set either on a `Page` instance or a `StackLayout` instance and the `TextField` will inherit it as a proper source for the binding of its "text" property.
+An important part of the data binding is setting the source object. For a continuous flow of data changes, the source property needs to emit a **propertyChange** event. NativeScript data binding works with any object that emits this event. Adding a binding **source** happens by passing it as a second parameter in the method **bind(bindingOptions, source)**. This parameter is optional and could be omitted, in which case a property named **bindingContext** of the `Bindable` class is used as the source. What is special about this property is that it is inheritable across the visual tree. This means that a UI control can use the `bindingContext` of the first of its **parent** elements, which has an explicitly set **bindingContext**. In the example from [Two-Way Binding in Code](#two-way-binding-in-code), the `bindingContext` can be set either on a `Page` instance or a `StackLayout` instance and the `TextField` will inherit it as a proper source for the binding of its "text" property.
 
 ``` JavaScript
 page.bindingContext = source;
@@ -158,7 +163,7 @@ There is an option to bind a function to execute on a specific event (MVVM comma
 
 ### Example 2: Binding function on button tap event.
 ``` XML
-<Page>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
 	<StackLayout>{%raw%}
 		<Button text="Test Button For Binding" tap="{{ onTap }}" />
 {%endraw%}	</StackLayout>
@@ -183,9 +188,11 @@ page.bindingContext = source;
 
 A very common case is to provide a list (array) of plain elements (numbers, dates, strings) to a `ListView` items collection. All examples above demonstrate how to bind a UI element to a property of the bindingContext. If there is only plain data, there is no property to bind, so the binding should be to the entire object. Here comes another feature of NativeScript binding - object or value binding. To refer to the entire object, which is Date() in the example, the keyword `$value` should be used.
 
+> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=9pGhIY&v=2) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=pOnwov&v=2).
+
 ### Example 3: Bind ListView to a property of the bindingContext .
 ``` XML
-<Page>
+<Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
 	<StackLayout>{%raw%}
 		<ListView items="{{ items }}" height="200">
 			<ListView.itemTemplate>
@@ -196,30 +203,51 @@ A very common case is to provide a list (array) of plain elements (numbers, date
 </Page>
 ```
 ``` JavaScript
-var appModule = require("application");
-var list = [];
-var i;
-for(i = 0; i < 5; i++) {
-	list.push(new Date());
+const fromObject = require("data/observable").fromObject;
+
+function onNavigatingTo(args) {
+    const list = [];
+    for (let i = 0; i < 5; i++) {
+        list.push(new Date());
+    }
+
+    const source = fromObject({
+        items: list
+    });
+
+    source.set("items", list);
+
+    const page = args.object;
+    page.bindingContext = source;
 }
-source.set("items", list);
 ```
 ``` TypeScript
-import appModule = require("application");
-var list = [];
-var i;
-for(i = 0; i < 5; i++) {
-	list.push(new Date());
+import { EventData, fromObject } from "data/observable";
+import { Page } from "ui/page";
+
+export function onNavigatingTo(args: EventData) {
+    const list = [];
+    for (let i = 0; i < 5; i++) {
+        list.push(new Date());
+    }
+
+    const source = fromObject({
+        items: list
+    });
+
+    const page = <Page>args.object;
+    page.bindingContext = source;
 }
-source.set("items", list);
 ``` 
 ###Binding to a parent binding context
 
 Another common case in working with bindings is requesting access to the parent binding context. It is because it might be different from the bindingContext of the child and might contain information, which the child has to use. Generally, the bindingContext is inheritable, but not when the elements (items) are created dynamically based on some data source. For example, `ListView` creates its child items based on an `itemТemplate`, which describes what the `ListView` element will look like. When this element is added to the visual tree, it gets for binding context an element from a ListView `items` array (with the corresponding index). This process creates a new binding context chain for the child item and its inner UI elements. So, the inner UI element cannot access the binding context of the 'ListView'. In order to solve this problem, NativeScript binding infrastructure has two special keywords: `$parent` and `$parents`. While the first one denotes the binding context of the direct parent visual element, the second one can be used as an array (with a number or string index). This gives you the option to choose either `N` levels of UI nesting or get a parent UI element with a given type. Let's see how this works in a realistic example.
 
+> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=kfnG5j) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=FGkvTn).
+
 ### Example 4: Creating ListView child items based on the itemTemplate.
 ``` XML
-<Page navigatingTo="navigatingTo">
+<Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
 	<GridLayout rows="*" >{%raw%}
 		<ListView items="{{ items }}">
 			<!--Describing how the element will look like-->
@@ -235,29 +263,30 @@ Another common case in working with bindings is requesting access to the parent 
 </Page>
 ```
 ``` JavaScript
-var observable = require("data/observable");
-var pageModule = require("ui/page");
+const fromObject = require("data/observable").fromObject;
 
-var viewModel = new observable.Observable();
+function onNavigatingTo(args) {
+    const page = args.object;
+    const viewModel = fromObject({
+        items: [1, 2, 3],
+        test: "Test for parent binding!"
+    });
 
-function navigatingTo(args) {
-    var page = args.object;
-    viewModel.set("items", [1, 2, 3]);
-    viewModel.set("test", "Test for parent binding!");
     page.bindingContext = viewModel;
 }
-exports.navigatingTo = navigatingTo;
+exports.onNavigatingTo = onNavigatingTo;
 ```
 ``` TypeScript
-import { EventData, Observable } from "data/observable";
+import { EventData, fromObject } from "data/observable";
 import { Page } from "ui/page";
 
-let viewModel = new Observable();
+export function onNavigatingTo(args: EventData) {
+    const page = <Page>args.object;
+    const viewModel = fromObject({
+        items: [1, 2, 3],
+        test: "Test for parent binding!"
+    });
 
-export function navigatingTo(args: EventData) {
-    let page = <Page>args.object;
-    viewModel.set("items", [1, 2, 3]);
-    viewModel.set("test", "Test for parent binding!");
     page.bindingContext = viewModel;
 }
 ```
@@ -266,7 +295,7 @@ export function navigatingTo(args: EventData) {
 You can create a custom expression for bindings. Custom expressions could help in cases when a certain logic should be applied to the UI, while keeping the underlying business data and logic clear. To be more specific, let's see a basic binding expression example. The result should be a `TextField` element that will display the value of the `sourceProperty` followed by " some static text" string.
 
 ``` XML
-<Page>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
 	<StackLayout>{%raw%}
 		<TextField text="{{ sourceProperty, sourceProperty + ' some static text' }}" />
 {%endraw%}	</StackLayout>
@@ -306,67 +335,91 @@ NativeScript supports different kind of expressions including:
 
 Speaking of a two-way binding, there is a common problem - having different ways of storing and displaying data. Probably the best example here is the date and time objects. Date and time information is stored as a number or a sequence of numbers (very useful for indexing, searching and other database operations), but this is not the best possible option for displaying date to the application user. Also there is another problem when the user inputs a date (in the example below, the user types into a TextField). The result of the user input will be a string, which will be formatted in accordance with the user's preferences. This string should be converted to a correct date object. Let's see how this could be handled with NativeScript binding.
 
+> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=d7Eu2Z) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=qktQye).
+
 ### Example 5: Handle textField date input and formatted in accordance preferences.
 ``` XML
-<Page>
+<Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
 	<StackLayout>{%raw%}
 		<TextField text="{{ testDate, testDate | dateConverter('DD.MM.YYYY') }}" />
 {%endraw%}	</StackLayout>
 </Page>
 ```
 ``` JavaScript
-var dateConverter = {
-	toView: function (value, format) {
-		var result = format;
-		var day = value.getDate();
-		result = result.replace("DD", day < 10 ? "0" + day : day);
-		var month = value.getMonth() + 1;
-		result = result.replace("MM", month < 10 ? "0" + month : month);
-		result = result.replace("YYYY", value.getFullYear());
-		return result;
-	},
-	toModel: function (value, format) {
-		var ddIndex = format.indexOf("DD");
-		var day = parseInt(value.substr(ddIndex, 2));
-		var mmIndex = format.indexOf("MM");
-		var month = parseInt(value.substr(mmIndex, 2));
-		var yyyyIndex = format.indexOf("YYYY");
-		var year = parseInt(value.substr(yyyyIndex, 4));
-		var result = new Date(year, month - 1, day);
-		return result;
-	}
-}
+const fromObject = require("data/observable").fromObject;
 
-source.set("dateConverter", dateConverter);
-source.set("testDate", new Date());
-page.bindingContext = source;
+function onNavigatingTo(args) {
+    const dateConverter = {
+        toView(value, format) {
+            let result = format;
+            const day = value.getDate();
+            result = result.replace("DD", day < 10 ? `0${day}` : day);
+            const month = value.getMonth() + 1;
+            result = result.replace("MM", month < 10 ? `0${month}` : month);
+            result = result.replace("YYYY", value.getFullYear());
+
+            return result;
+        },
+        toModel(value, format) {
+            const ddIndex = format.indexOf("DD");
+            const day = parseInt(value.substr(ddIndex, 2), 10);
+            const mmIndex = format.indexOf("MM");
+            const month = parseInt(value.substr(mmIndex, 2), 10);
+            const yyyyIndex = format.indexOf("YYYY");
+            const year = parseInt(value.substr(yyyyIndex, 4), 10);
+            const result = new Date(year, month - 1, day);
+
+            return result;
+        }
+    };
+
+    const page = args.object;
+    const viewModel = fromObject({
+        dateConverter,
+        testDate: new Date()
+    });
+
+    page.bindingContext = viewModel;
+}
+exports.onNavigatingTo = onNavigatingTo;
 ```
 ``` TypeScript
-var dateConverter = {
-	toView: function (value, format) {
-		var result = format;
-		var day = value.getDate();
-		result = result.replace("DD", day < 10 ? "0" + day : day);
-		var month = value.getMonth() + 1;
-		result = result.replace("MM", month < 10 ? "0" + month : month);
-		result = result.replace("YYYY", value.getFullYear());
-		return result;
-	},
-	toModel: function (value, format) {
-		var ddIndex = format.indexOf("DD");
-		var day = parseInt(value.substr(ddIndex, 2));
-		var mmIndex = format.indexOf("MM");
-		var month = parseInt(value.substr(mmIndex, 2));
-		var yyyyIndex = format.indexOf("YYYY");
-		var year = parseInt(value.substr(yyyyIndex, 4));
-		var result = new Date(year, month - 1, day);
-		return result;
-	}
-}
+import { EventData, fromObject } from "data/observable";
+import { Page } from "ui/page";
 
-source.set("dateConverter", dateConverter);
-source.set("testDate", new Date());
-page.bindingContext = source;
+export function onNavigatingTo(args: EventData) {
+    const dateConverter = {
+        toView(value, format) {
+            let result = format;
+            const day = value.getDate();
+            result = result.replace("DD", day < 10 ? "0" + day : day);
+            const month = value.getMonth() + 1;
+            result = result.replace("MM", month < 10 ? "0" + month : month);
+            result = result.replace("YYYY", value.getFullYear());
+
+            return result;
+        },
+        toModel(value, format) {
+            const ddIndex = format.indexOf("DD");
+            const day = parseInt(value.substr(ddIndex, 2), 10);
+            const mmIndex = format.indexOf("MM");
+            const month = parseInt(value.substr(mmIndex, 2), 10);
+            const yyyyIndex = format.indexOf("YYYY");
+            const year = parseInt(value.substr(yyyyIndex, 4), 10);
+            const result = new Date(year, month - 1, day);
+
+            return result;
+        }
+    };
+
+    const page = <Page>args.object;
+    const viewModel = fromObject({
+        dateConverter,
+        testDate: new Date()
+    });
+
+    page.bindingContext = viewModel;
+}
 ```
 
 Note the special operator (|) within the expression. The above code snippet (both XML and JavaScript) will display a date in a `DD.MM.YYYY` format (`toView` function), and when a new date is entered with the same format, it is converted to a valid `Date` object (`toModel` function). A `Converter` object should have one or two functions (`toView` and `toModel`) executed every time when a data should be converted. A `toView` function is called when data will be displayed to the end user as a value of any UI view, and a `toModel` function will be called when there is an editable element (like TextField) and the user enters a new value. In the case of one-way binding, the `Converter` object could have only a `toView` function or it should be a function. All converter functions have an array of parameters where the first parameter is the value that will be converted, and all other parameters are custom parameters defined in the converter definition.
@@ -377,27 +430,96 @@ A converter can accept not only static custom parameters, but any value from the
 
 ### Example 6: Converting the new date input to a valid Date object.
 ``` XML
-<Page>
+<Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
 	<StackLayout>{%raw%}
 		<TextField text="{{ testDate, testDate | dateConverter(dateFormat) }}" />
 {%endraw%}	</StackLayout>
 </Page>
 ```
 ``` JavaScript
-...
-source.set("dateFormat", "DD.MM.YYYY");
-page.bindingContext = source;
+const fromObject = require("data/observable").fromObject;
+
+function onNavigatingTo(args) {
+  const dateConverter = {
+    toView(value, format) {
+      let result = format;
+      const day = value.getDate();
+      result = result.replace("DD", day < 10 ? `0${day}` : day);
+      const month = value.getMonth() + 1;
+      result = result.replace("MM", month < 10 ? `0${month}` : month);
+      result = result.replace("YYYY", value.getFullYear());
+
+      return result;
+    },
+    toModel(value, format) {
+      const ddIndex = format.indexOf("DD");
+      const day = parseInt(value.substr(ddIndex, 2), 10);
+      const mmIndex = format.indexOf("MM");
+      const month = parseInt(value.substr(mmIndex, 2), 10);
+      const yyyyIndex = format.indexOf("YYYY");
+      const year = parseInt(value.substr(yyyyIndex, 4), 10);
+      const result = new Date(year, month - 1, day);
+
+      return result;
+    }
+  };
+
+  const page = args.object;
+  const viewModel = fromObject({
+    dateConverter,
+	dateFormat: "DD.MM.YYYY",
+    testDate: new Date()
+  });
+
+  page.bindingContext = viewModel;
+}
 ```
 ``` TypeScript
-...
-source.set("dateFormat", "DD.MM.YYYY");
-page.bindingContext = source;
+import { EventData, fromObject } from "data/observable";
+import { Page } from "ui/page";
+
+export function onNavigatingTo(args: EventData) {
+    const dateConverter = {
+        toView(value, format) {
+            let result = format;
+            const day = value.getDate();
+            result = result.replace("DD", day < 10 ? "0" + day : day);
+            const month = value.getMonth() + 1;
+            result = result.replace("MM", month < 10 ? "0" + month : month);
+            result = result.replace("YYYY", value.getFullYear());
+
+            return result;
+        },
+        toModel(value, format) {
+            const ddIndex = format.indexOf("DD");
+            const day = parseInt(value.substr(ddIndex, 2), 10);
+            const mmIndex = format.indexOf("MM");
+            const month = parseInt(value.substr(mmIndex, 2), 10);
+            const yyyyIndex = format.indexOf("YYYY");
+            const year = parseInt(value.substr(yyyyIndex, 4), 10);
+            const result = new Date(year, month - 1, day);
+
+            return result;
+        }
+    };
+
+    const page = <Page>args.object;
+    const viewModel = fromObject({
+        dateConverter,
+		dateFormat: "DD.MM.YYYY",
+        testDate: new Date()
+    });
+
+    page.bindingContext = viewModel;
+}
 ```
 Setting a converter function and a parameter within the bindingContext is very useful for ensuring proper conversion of data. However, this is not the case when `listview` items should be bound. The problem comes from the fact that the bindingContext of a `listview` item is a data item, which is a part of `any` collection (array), and to apply a converter - the converter and its parameters should be added to the data item, which will result in multiple converter instances. Tackling this problem with NativeScript is fairly simple. Binding infrastructure seeks for an application level resources to find a proper converter and parameters. So you could add the converters in the resources in the application module. To be more clear, examine the following example (both XML and JavaScript):
 
+> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=TbTyMK) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=hvvCkn).
+
 ### Example 7: Adding converters in the application module resources.
 ``` XML
-<Page>
+<Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
 	<StackLayout>{%raw%}
 		<ListView items="{{ items }}" height="200">
 			<ListView.itemTemplate>
@@ -408,48 +530,70 @@ Setting a converter function and a parameter within the bindingContext is very u
 </Page>
 ```
 ``` JavaScript
-var appModule = require("application");
-var list = [];
-var i;
-for(i = 0; i < 5; i++) {
-	list.push({ itemDate: new Date()});
+const appModule = require("application");
+const fromObject = require("data/observable").fromObject;
+
+function onNavigatingTo(args) {
+    const list = [];
+    for (let i = 0; i < 5; i++) {
+        list.push({ itemDate: new Date() });
+    }
+
+    const dateConverter = (value, format) => {
+        let result = format;
+        const day = value.getDate();
+        result = result.replace("DD", day < 10 ? `0${day}` : day);
+        const month = value.getMonth() + 1;
+        result = result.replace("MM", month < 10 ? `0${month}` : month);
+        result = result.replace("YYYY", value.getFullYear());
+
+        return result;
+    };
+
+    appModule.getResources().dateConverter = dateConverter;
+    appModule.getResources().dateFormat = "DD.MM.YYYY";
+
+    const page = args.object;
+    const viewModel = fromObject({
+        items: list
+    });
+
+    page.bindingContext = viewModel;
 }
-source.set("items", list);
-
-var dateConverter = function(value, format) {
-	var result = format;
-	var day = value.getDate();
-	result = result.replace("DD", day < 10 ? "0" + day : day);
-	var month = value.getMonth() + 1;
-	result = result.replace("MM", month < 10 ? "0" + month : month);
-	result = result.replace("YYYY", value.getFullYear());
-	return result;
-};
-
-appModule.getResources()["dateConverter"] = dateConverter;
-appModule.getResources()["dateFormat"] = "DD.MM.YYYY";
+exports.onNavigatingTo = onNavigatingTo;
 ```
 ``` TypeScript
-import appModule = require("application");
-var list = [];
-var i;
-for(i = 0; i < 5; i++) {
-	list.push({ itemDate: new Date()});
+import * as application from "application";
+import { EventData, fromObject } from "data/observable";
+import { Page } from "ui/page";
+
+export function onNavigatingTo(args: EventData) {
+    const list = [];
+    for (let i = 0; i < 5; i++) {
+        list.push({ itemDate: new Date() });
+    }
+
+    const dateConverter = (value, format) => {
+        let result = format;
+        const day = value.getDate();
+        result = result.replace("DD", day < 10 ? "0" + day : day);
+        const month = value.getMonth() + 1;
+        result = result.replace("MM", month < 10 ? "0" + month : month);
+        result = result.replace("YYYY", value.getFullYear());
+
+        return result;
+    };
+
+    application.getResources().dateConverter = dateConverter;
+    application.getResources().dateFormat = "DD.MM.YYYY";
+
+    const page = <Page>args.object;
+    const viewModel = fromObject({
+        items: list
+    });
+
+    page.bindingContext = viewModel;
 }
-source.set("items", list);
-
-var dateConverter = function(value, format) {
-	var result = format;
-	var day = value.getDate();
-	result = result.replace("DD", day < 10 ? "0" + day : day);
-	var month = value.getMonth() + 1;
-	result = result.replace("MM", month < 10 ? "0" + month : month);
-	result = result.replace("YYYY", value.getFullYear());
-	return result;
-};
-
-appModule.getResources()["dateConverter"] = dateConverter;
-appModule.getResources()["dateFormat"] = "DD.MM.YYYY";
 ```
 > Note: The application module is static and could be reached within the entire application; it just needs to be required. Another difference here is that `dateConverter` is a function instead of an object with two functions `toView` and `toModel`. Since the usual operation is converting data from model to view, if a function is provided as converter, it acts as a `toView` function.
 
