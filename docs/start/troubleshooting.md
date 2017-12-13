@@ -27,7 +27,7 @@ If you’ve found an issue with the NativeScript framework itself, please report
 
 ## Known issues and limitations
 
-There are a few known issues that you might run into as you develop mobile applications with NativeScript. The following is a list of common problems you might run into, as well as workarounds you can use to continue developing.
+There are a few known issues that you might run into as you develop mobile applications with NativeScript. The following is a list of such problems, as well as workarounds you can use to overcome them.
 
 ### My app broke after switching git branches
 
@@ -42,13 +42,13 @@ tns platform remove ios
 tns platform remove android
 ```
 
-Next, add back the platforms—as well as install any new npm dependencies—using the `tns install` command.
+Next, add back the platforms and install any new npm dependencies using the `tns install` command.
 
 ```Shell
 tns install
 ```
 
-### Error thrown when attempting to run build-related operations for Android
+### Error thrown when attempting to run build-related operations for iOS
 
 **Problem**
 ```Shell
@@ -64,23 +64,7 @@ Try one of the following approaches:
 
 **Problem:** Gradle doesn't work with `org.gradle.parallel=true` enabled in `gradle.properties`.
 
-**Solution:** Currently there's no solution, but we are working on updating the build to work with this option enabled.
-
-### Cannot run or debug apps on iOS 8.1.3 devices with Xcode 6.1
-
-**Problem:** On macOS systems with Xcode 6.1 installed, you cannot run or debug apps on iOS 8.1.3 devices.<br/>The developer disk images provided with the iOS SDK in Xcode 6.1 are not compatible with iOS 8.1.3. The NativeScript CLI uses these disk images to work with your attached iOS devices.
-
-**Solution:** Update to Xcode 6.1.1 or later.
-
-### Files added to the App_Resources folder are not working
-
-**Problem:** When you add images or files to your app's *App_Resources* folder, run the app, the images don't show up when they should.
-
-**Solution:** When you add files to the *App_Resources* folder you have to run a new *build* of the app. Files located in *App_Resources* are compiled into the executable so they can't be synced with a previous build. Here are the correct steps to take to resolve the problem:
-
-- Uninstall the old .apk (Android) or .ipa (iOS) from the device or emulator you are running the app on.
-- Execute the `tns build android` or `tns build ios` command to create a new .apk or .ipa for your app.
-- Execute the `tns run android` or `tns run ios` command to install the new executable, and you'll find your files are now packaged into your application.
+**Solution:** Currently there's no other solution than disabling parallel builds.
 
 ### Problems with running on simulators/emulators and devices
 
@@ -90,14 +74,7 @@ Command xcrun with arguments simctl launch CC9DBE24-A540-40E4-A187-E7DE3ECDA254 
 The operation couldn’t be completed. (FBSOpenApplicationErrorDomain error 4.)
 ```
 
-**Solution:** Try  `iOS Simulator -> Reset Contents and Settings`
-
-**Problem:** Running your app on Android produces an error like this:
-```
-The system failed to delete the package for an unspecified reason.
-```
-
-**Solution:** Ignore this warning. This happens only if you have never deployed the app before, because the CLI is trying to delete it before re-deploying it.
+**Solution:** Try `iOS Simulator -> Reset Contents and Settings`
 
 **Problem:** Running your app on Android produces an error like this:
 ```
