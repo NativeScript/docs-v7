@@ -451,7 +451,7 @@ class MyDelegate extends UIResponder implements UIApplicationDelegate {
 ios.delegate = MyDelegate;
 applicationStart({ moduleName: "main-page" });
 ```
-> **Note:** While extending `UIApplicationDelegate` in NativeScript TypeScript project we need also to add [tns-platform-declarations](https://www.npmjs.com/package/tns-platform-declarations) plugin as a dependency.
+> **NOTE**: If you’re using TypeScript in your NativeScript apps, you need to install the [tns-platform-declarations plugin](https://www.npmjs.com/package/tns-platform-declarations) to add typings for native iOS APIs such as `UIApplicationDelegate`.
 
 ## Persist and Restore Application Settings
 
