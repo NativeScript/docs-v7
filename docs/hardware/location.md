@@ -34,7 +34,7 @@ import { isEnabled, enableLocationRequest, getCurrentLocation, watchLocation, di
 
 ## Getting information about a location service
 
-NativeScript has a universal way to check if location services are turned on&mdash;the `isEnabled` method. The method returns a Boolean value (true if the location service is enabled).
+NativeScript has a universal way to check if location services are turned on&mdash;the `isEnabled` method. The method returns a `Promise<boolean>` (resolves `true` or `false` based on the location services availability.).
 
 > **NOTE:** For Android, `isEnabled` checks if the location service is enabled (any accuracy level). For iOS, the method checks if the location service is enabled for the application in foreground or background mode.
 
@@ -54,9 +54,16 @@ After you install the plugin, you can request to use location services in the ap
 ```
 ```JavaScript
 function enableLocationTap(args) {
-    if (!geolocation.isEnabled()) {
-        geolocation.enableLocationRequest();
-    }
+     geolocation.isEnabled().then(function (isEnabled) {
+        if (!isEnabled) {
+            geolocation.enableLocationRequest().then(function () {
+            }, function (e) {
+                console.log("Error: " + (e.message || e));
+            });
+        }
+    }, function (e) {
+        console.log("Error: " + (e.message || e));
+    });
 }
 exports.enableLocationTap = enableLocationTap;
 ```
@@ -70,9 +77,16 @@ exports.enableLocationTap = enableLocationTap;
 {% endangular %}
 ```TypeScript
 {% nativescript %}export function {% endnativescript %}public {% angular %}{% endangular %}enableLocationTap() { 
-    if (!isEnabled()) {
-        enableLocationRequest();
-    }
+    geolocation.isEnabled().then(function (isEnabled) {
+        if (!isEnabled) {
+            geolocation.enableLocationRequest().then(function () {
+            }, function (e) {
+                console.log("Error: " + (e.message || e));
+            });
+        }
+    }, function (e) {
+        console.log("Error: " + (e.message || e));
+    });
 }
 ```
 
