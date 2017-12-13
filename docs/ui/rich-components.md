@@ -101,7 +101,7 @@ The Gauges component (known as RadRadialGauge in code) allows you to display the
 
 [{% nativescript %}[Documentation](http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/ListView/overview){% endnativescript %}{% angular %}[Documentation](http://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/ListView/overview){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/release/sdk/app/listview){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/release/sdkAngular/app/listview){% endangular %}]
 
-> NOTE: The professional ListView component is different from the ListView built in to the [core NativeScript modules](https://docs.nativescript.org/ui/list-view). Use the professional ListView if you need to take advantage of the advanced functionality listed below.
+> NOTE: The professional ListView component is different from the ListView built in to the core NativeScript modules. Use the professional ListView if you need to take advantage of the advanced functionality listed below.
 
 The ListView component (known as RadListView in code) is a virtualizing list component that provides the most needed features associated with scenarios where a list of items is used. Features include:
 
