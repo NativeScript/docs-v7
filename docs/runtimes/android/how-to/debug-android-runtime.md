@@ -125,3 +125,13 @@ The symbols can be found in the cloned android runtime repo in: `<android-runtim
 * If you have NativeScript plugins, containing Java Libraries in your application, you will still be able to build it with Android Studio, but you won't be able to debug it with the Android runtime. We will fix that issue in the upcoming releases.
 
 * If you encounter this error: `Error while starting native debug session: com.intellij.execution.ExecutionException: LLDB package hasn’t been found`, you're probably trying to debug C++ code and you need to install the `LLDB` debugger. Look at the Requirements for instructions on how to do it.
+
+* If you encounter this error: `Error:Unable to find module with Gradle path ':runtime' (needed by module 'app'.)`
+
+![Known Issue 1](ki-1.png)
+
+Delete the `.gradle` and `.idea` folders
+
+![Known Issue 1](ki-delete-folders.png)
+
+Click: `File -> Invalidate Caches/Restart -> Invalidate and Restart`
