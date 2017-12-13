@@ -102,7 +102,7 @@ var min = ns.example.Math.minElement(numbers); // -2
 
 # Classes and Objects
 
-All native classes are represented in the JavaScript world by a constructor function. Each static method on a native class becomes a function on its JavaScript constructor function and each instance method becomes a function on the JavaScript prototype. Although quite intuitive, instantiating objects and calling methods via JavaScript has some specifics on the Android and iOS platforms which are explained below.
+All native classes are represented in the JavaScript world by a constructor function. Each static method on a native class becomes a function on its JavaScript constructor function and each instance method becomes a function on the JavaScript prototype. Although quite intuitive, instantiating objects and calling methods via JavaScript has some specifics (particularly on iOS) which are explained below.
 
 ## Working With Classes and Objects on iOS
 
@@ -126,7 +126,7 @@ var context = ...;
 var button = new android.widget.Button(context);
 button.setText("My Button"); // "My Button" is converted to java.lang.String
 ```
-As you can see, the native Java types are exposed with their corresponding packages. In other words, to access a native Java type, you simply need to know the package it is contained in and explicitly state it. Native Java methods are accessed in the same way as regular JavaScript methods: by using the method identifier and supplying the required arguments.
+As you can see, the native Java types are exposed through their corresponding packages. In other words, to access a native Java type, you simply need to know the package it is contained in and explicitly state it. Native Java methods are accessed in the same way as regular JavaScript methods: by using the method identifier and supplying the required arguments.
 
 # Undefined and Null
 
