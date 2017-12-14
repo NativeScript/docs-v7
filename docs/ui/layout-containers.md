@@ -12,6 +12,7 @@ previous_url: /layout-containers
 * [GridLayout](#gridlayout)
 * [StackLayout](#stacklayout)
 * [WrapLayout](#wraplayout)
+* [FlexboxLayout](#flexboxlayout)
 
 ## [AbsoluteLayout]({%ns_cookbook ui/layouts/absolute-layout%})
 The AbsoluteLayout is the simplest layout in NativeScript. It uses absolute left-top coordinates to position its children. The AbsoluteLayout will not enforce any layout constraints on its children and will not resize them at runtime when its size changes.
@@ -29,7 +30,7 @@ None.
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
- <AbsoluteLayout width="210" height="210" style.backgroundColor="lightgray">
+ <AbsoluteLayout width="210" height="210" backgroundColor="lightgray">
    <Label text="10, 10" left="10" top="10" width="90" height="90" backgroundColor="red"/>
    <Label text="110, 10" left="110" top="10" width="90" height="90" backgroundColor="green"/>
    <Label text="110, 110" left="110" top="110" width="90" height="90" backgroundColor="blue"/>
@@ -48,7 +49,7 @@ None.
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-  <AbsoluteLayout width="210" height="210" style.backgroundColor="lightgray">
+  <AbsoluteLayout width="210" height="210" backgroundColor="lightgray">
     <Label text="no margin" left="10" top="10" width="100" height="100" backgroundColor="red"/>
     <Label text="margin=`30`" left="10" top="10" margin="30" width="100" height="90" backgroundColor="green"/>
   </AbsoluteLayout>
@@ -78,7 +79,7 @@ The DockLayout is a layout that provides a docking mechanism for child elements 
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-  <DockLayout width="210" height="210" style.backgroundColor="lightgray" stretchLastChild="false">
+  <DockLayout width="210" height="210" backgroundColor="lightgray" stretchLastChild="false">
     <Label text="left" dock="left" width="60" backgroundColor="red"/>
     <Label text="top" dock="top" height="60" backgroundColor="green"/>
     <Label text="right" dock="right" width="60" backgroundColor="blue"/>
@@ -97,7 +98,7 @@ The DockLayout is a layout that provides a docking mechanism for child elements 
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-  <DockLayout width="210" height="210" style.backgroundColor="lightgray" stretchLastChild="true">
+  <DockLayout width="210" height="210" backgroundColor="lightgray" stretchLastChild="true">
     <Label text="left" dock="left" backgroundColor="red"/>
     <Label text="top" dock="top" backgroundColor="green"/>
     <Label text="right" dock="right" backgroundColor="blue"/>
@@ -116,7 +117,7 @@ The DockLayout is a layout that provides a docking mechanism for child elements 
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-  <DockLayout width="210" height="210" style.backgroundColor="lightgray" stretchLastChild="true">
+  <DockLayout width="210" height="210" backgroundColor="lightgray" stretchLastChild="true">
     <Label text="left1" dock="left" backgroundColor="red"/>
     <Label text="left2" dock="left" backgroundColor="green"/>
     <Label text="left3" dock="left" backgroundColor="blue"/>
@@ -155,7 +156,7 @@ The GridLayout is a layout that arranges its child elements in a table structure
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-  <GridLayout columns="50, auto, *" rows="50, auto, *" width="210" height="210" style.backgroundColor="lightgray" >
+  <GridLayout columns="50, auto, *" rows="50, auto, *" width="210" height="210" backgroundColor="lightgray" >
     <Label text="Label 1" row="0" col="0" backgroundColor="red"/>
     <Label text="Label 2" row="0" col="1" colSpan="2" backgroundColor="green"/>
     <Label text="Label 3" row="1" col="0" rowSpan="2" backgroundColor="blue"/>
@@ -179,7 +180,7 @@ The GridLayout is a layout that arranges its child elements in a table structure
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-  <GridLayout columns="*,2*" rows="2*,3*" width="300" height="300" style.backgroundColor="lightgray" >
+  <GridLayout columns="*,2*" rows="2*,3*" width="300" height="300" backgroundColor="lightgray" >
     <Label text="Label 1" col="0" row="0" backgroundColor="red"/>
     <Label text="Label 2" col="1" row="0" backgroundColor="green"/>
     <Label text="Label 3" col="0" row="1" backgroundColor="blue"/>
@@ -200,7 +201,7 @@ The GridLayout is a layout that arranges its child elements in a table structure
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-  <GridLayout columns="100,auto" rows="100,auto" width="210" height="210" style.backgroundColor="lightgray" >
+  <GridLayout columns="100,auto" rows="100,auto" width="210" height="210" backgroundColor="lightgray" >
     <Label text="Label 1" col="0" row="0" backgroundColor="red"/>
     <Label text="Label 2" col="1" row="0" backgroundColor="green"/>
     <Label text="Label 3" col="0" row="1" backgroundColor="blue"/>
@@ -221,8 +222,8 @@ When the GridLayout has no explicit `width` set and its `horizontalAlignment` is
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-  <StackLayout width="200" height="200" style.backgroundColor="palegreen">
-    <GridLayout columns="*,2*" horizontalAlignment="left" verticalAlignment="top" style.backgroundColor="lightgray" >
+  <StackLayout width="200" height="200" backgroundColor="palegreen">
+    <GridLayout columns="*,2*" horizontalAlignment="left" verticalAlignment="top" backgroundColor="lightgray">
       <Label text="Label 1" col="0" backgroundColor="red"/>
       <Label text="Label 2" col="1" backgroundColor="green"/>
     </GridLayout>
@@ -241,7 +242,7 @@ Label 3 has a fixed width of 150 pixels. Label 1 is given more space than it act
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-  <GridLayout columns="auto,100" rows="auto,auto" width="300" height="300" style.backgroundColor="lightgray" >
+  <GridLayout columns="auto,100" rows="auto,auto" width="300" height="300" backgroundColor="lightgray" >
     <Label text="Label 1" col="0" row="0" backgroundColor="red"/>
     <Label text="Label 2" col="1" row="0" backgroundColor="green"/>
     <Label text="Label 3" width="150" col="0" row="1" backgroundColor="blue"/>
@@ -261,11 +262,11 @@ Label 3 has a fixed width of 150 pixels. Label 1 is given more space than it act
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-  <GridLayout columns="auto, *, auto" rows="auto, 25" style.verticalAlignment="top" style.backgroundColor="lightgray">
-    <Image src="~/cute.jpg" rowSpan="2" width="72" height="72" margin="3" style.verticalAlignment="top"/>
-    <Label text="My cat loves the camera" textWrap="true" col="1" colSpan="2" minHeight="50" style.fontSize="20" margin="3"/>
-    <Label text="John Smith" col="1" row="1" style.fontSize="14" style.horizontalAlignment="left" style.verticalAlignment="bottom" margin="3"/>
-    <Label text="comments: 26" col="2" row="1" style.color="#10C2B0" style.fontSize="14" style.verticalAlignment="bottom" margin="3"/>
+  <GridLayout columns="auto, *, auto" rows="auto, 25" verticalAlignment="top" backgroundColor="lightgray">
+    <Image src="~/cute.jpg" rowSpan="2" width="72" height="72" margin="3" verticalAlignment="top"/>
+    <Label text="My cat loves the camera" textWrap="true" col="1" colSpan="2" minHeight="50" fontSize="20" margin="3"/>
+    <Label text="John Smith" col="1" row="1" fontSize="14" horizontalAlignment="left" verticalAlignment="bottom" margin="3"/>
+    <Label text="comments: 26" col="2" row="1" color="#10C2B0" fontSize="14" verticalAlignment="bottom" margin="3"/>
   </GridLayout>
 </Page>
 ```
@@ -278,55 +279,133 @@ Label 3 has a fixed width of 150 pixels. Label 1 is given more space than it act
 
 
 ### Sample (Create grid dynamically via code behind)
+
+> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=uxpI70) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=FHnThH).
+
+```XML
+<Page loaded="onPageLoaded" xmlns="http://schemas.nativescript.org/tns.xsd">
+
+</Page>
+```
+```JavaScript
+const Color = require("color").Color;
+const Button = require("ui/button").Button;
+const Label = require("ui/label").Label;
+const layout = require("ui/layouts/grid-layout");
+const [GridLayout, GridUnitType, ItemSpec] = [layout.GridLayout, layout.GridUnitType, layout.ItemSpec];
+
+function onPageLoaded(args) {
+    // Grid wrapper
+    const grid = new GridLayout();
+
+    // Create title Label and add is as a child to our grid
+    const titleLabel = new Label();
+    titleLabel.text = "NativeScript";
+    grid.addChild(titleLabel);
+
+    // Create info Label and add is as a child to our grid
+    const infoLabel = new Label();
+    infoLabel.text = "Truly native mobile apps";
+    infoLabel.backgroundColor = new Color("gray");
+    grid.addChild(infoLabel);
+
+    // Create the share button and add is as a child to our grid
+    const shareButton = new Button();
+    shareButton.text = "Share This!";
+    grid.addChild(shareButton);
+
+    // Add Grid Rows as if rows="*, 100, auto" cols="250, *"
+
+    // * - occupy the remaining available space
+    grid.addRow(new ItemSpec(1, GridUnitType.STAR));
+
+    // 100 - fixed column width.
+    // If elements in this columns wants to be more - we will coerce their width to the column width.
+    grid.addRow(new ItemSpec(100, GridUnitType.PIXEL));
+
+    // auto - the column width will be the width of the widest element in that column.
+    grid.addRow(new ItemSpec(1, GridUnitType.AUTO));
+
+    grid.addColumn(new ItemSpec(250, GridUnitType.PIXEL));
+    grid.addColumn(new ItemSpec(1, GridUnitType.STAR));
+
+    // Assign views to their row (if not set default row is 0)
+    GridLayout.setRow(titleLabel, 0); // titleLabel set to row 0
+    GridLayout.setRow(infoLabel, 1); // infoLabel set to row 1
+    GridLayout.setRow(shareButton, 2); // shareButton set to row 2
+
+    // Assign views to their col (if not set default column is 0)
+    GridLayout.setColumn(titleLabel, 0); // titleLabel set to column 0
+    GridLayout.setColumn(infoLabel, 0); // infoLabel set to column 0
+    GridLayout.setColumn(shareButton, 1); // shareButton set to column 1
+
+    // Assign ColumnSpan for views
+    GridLayout.setColumnSpan(infoLabel, 2); // infoLabel set with columnSpan = 2
+
+    const page = args.object;
+    page.content = grid;
+}
+exports.onPageLoaded = onPageLoaded;
+```
 ```TypeScript
-import { GridLayout, ItemSpec, GridUnitType } from "ui/layouts/grid-layout"
+import { Color } from "color";
+import { EventData } from "data/observable";
+import { Button } from "ui/button";
+import { Label } from "ui/label";
+import { GridLayout, GridUnitType, ItemSpec } from "ui/layouts/grid-layout";
+import { Page } from "ui/page";
 
-//Grid wrapper
-var grid = new GridLayout();
+export function onPageLoaded(args: EventData) {
+    // Grid wrapper
+    const grid = new GridLayout();
 
-//Create title Label and add is as a child to our grid
-let titleLabel = new Label();
-titleLabel.text = "NativeScript";
-grid.addChild(titleLabel);
+    // Create title Label and add is as a child to our grid
+    const titleLabel = new Label();
+    titleLabel.text = "NativeScript";
+    grid.addChild(titleLabel);
 
-//Create info Label and add is as a child to our grid
-let infoLabel = new Label();
-infoLabel.text = "Truly native mobile apps";
-infoLabel.backgroundColor = new Color("gray");
-grid.addChild(infoLabel);
+    // Create info Label and add is as a child to our grid
+    const infoLabel = new Label();
+    infoLabel.text = "Truly native mobile apps";
+    infoLabel.backgroundColor = new Color("gray");
+    grid.addChild(infoLabel);
 
-//Create the share button and add is as a child to our grid
-let shareButton = new Button();
-shareButton.text = "Share This!";
-grid.addChild(shareButton);
+    // Create the share button and add is as a child to our grid
+    const shareButton = new Button();
+    shareButton.text = "Share This!";
+    grid.addChild(shareButton);
 
-// Add Grid Rows as if rows="*, 100, auto" cols="250, *"
+    // Add Grid Rows as if rows="*, 100, auto" cols="250, *"
 
-// * - occupy the remaining available space 
-grid.addRow(new ItemSpec(1, GridUnitType.star));
+    // * - occupy the remaining available space
+    grid.addRow(new ItemSpec(1, GridUnitType.STAR));
 
-// 100 - fixed column width. If elements in this columns wants to be more - we will coerce their width to the column width.
-grid.addRow(new ItemSpec(100, GridUnitType.pixel));
+    // 100 - fixed column width.
+    // If elements in this columns wants to be more - we will coerce their width to the column width.
+    grid.addRow(new ItemSpec(100, GridUnitType.PIXEL));
 
-// auto - the column width will be the width of the widest element in that column.
-grid.addRow(new ItemSpec(1, GridUnitType.auto));
+    // auto - the column width will be the width of the widest element in that column.
+    grid.addRow(new ItemSpec(1, GridUnitType.AUTO));
 
-grid.addColumn(new ItemSpec(250, GridUnitType.pixel));
-grid.addColumn(new ItemSpec(1, GridUnitType.star));
+    grid.addColumn(new ItemSpec(250, GridUnitType.PIXEL));
+    grid.addColumn(new ItemSpec(1, GridUnitType.STAR));
 
-// Assign views to their row (if not set default row is 0)
-GridLayout.setRow(titleLabel, 0); // titleLabel set to row 0
-GridLayout.setRow(infoLabel, 1);  // infoLabel set to row 1
-GridLayout.setRow(shareButton, 2);// shareButton set to row 2
+    // Assign views to their row (if not set default row is 0)
+    GridLayout.setRow(titleLabel, 0); // titleLabel set to row 0
+    GridLayout.setRow(infoLabel, 1);  // infoLabel set to row 1
+    GridLayout.setRow(shareButton, 2); // shareButton set to row 2
 
-// Assign views to their col (if not set default column is 0)
-GridLayout.setColumn(titleLabel, 0); // titleLabel set to column 0
-GridLayout.setColumn(infoLabel, 0);  // infoLabel set to column 0
-GridLayout.setColumn(shareButton, 1);// shareButton set to column 1
+    // Assign views to their col (if not set default column is 0)
+    GridLayout.setColumn(titleLabel, 0); // titleLabel set to column 0
+    GridLayout.setColumn(infoLabel, 0);  // infoLabel set to column 0
+    GridLayout.setColumn(shareButton, 1); // shareButton set to column 1
 
-// Assign ColumnSpan for views 
-GridLayout.setColumnSpan(infoLabel, 2); // infoLabel set with columnSpan = 2
+    // Assign ColumnSpan for views
+    GridLayout.setColumnSpan(infoLabel, 2); // infoLabel set with columnSpan = 2
 
+    const page = <Page>args.object;
+    page.content = grid;
+}
 ```
 
 ## [StackLayout]({%ns_cookbook ui/layouts/stack-layout%})
@@ -344,7 +423,7 @@ None.
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-  <StackLayout orientation="vertical" width="210" height="210" style.backgroundColor="lightgray">
+  <StackLayout orientation="vertical" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" width="50" height="50" backgroundColor="red"/>
     <Label text="Label 2" width="50" height="50" backgroundColor="green"/>
     <Label text="Label 3" width="50" height="50" backgroundColor="blue"/>
@@ -363,7 +442,7 @@ None.
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-  <StackLayout orientation="horizontal" width="210" height="210" style.backgroundColor="lightgray">
+  <StackLayout orientation="horizontal" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" width="50" height="50" backgroundColor="red"/>
     <Label text="Label 2" width="50" height="50" backgroundColor="green"/>
     <Label text="Label 3" width="50" height="50" backgroundColor="blue"/>
@@ -382,7 +461,7 @@ None.
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-  <StackLayout orientation="vertical" width="210" height="210" style.backgroundColor="lightgray">
+  <StackLayout orientation="vertical" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" horizontalAlignment="left" backgroundColor="red"/>
     <Label text="Label 2" horizontalAlignment="center" backgroundColor="green"/>
     <Label text="Label 3" horizontalAlignment="right" backgroundColor="blue"/>
@@ -401,7 +480,7 @@ None.
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-  <StackLayout orientation="horizontal" width="210" height="210" style.backgroundColor="lightgray">
+  <StackLayout orientation="horizontal" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" verticalAlignment="top" backgroundColor="red"/>
     <Label text="Label 2" verticalAlignment="center" backgroundColor="green"/>
     <Label text="Label 3" verticalAlignment="bottom" backgroundColor="blue"/>
@@ -432,7 +511,7 @@ None.
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-  <WrapLayout orientation="horizontal" width="210" height="210" style.backgroundColor="lightgray">
+  <WrapLayout orientation="horizontal" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" width="70" height="70" backgroundColor="red"/>
     <Label text="Label 2" width="70" height="70" backgroundColor="green"/>
     <Label text="Label 3" width="70" height="70" backgroundColor="blue"/>
@@ -451,7 +530,7 @@ None.
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-  <WrapLayout orientation="vertical" width="210" height="210" style.backgroundColor="lightgray">
+  <WrapLayout orientation="vertical" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" width="70" height="70" backgroundColor="red"/>
     <Label text="Label 2" width="70" height="70" backgroundColor="green"/>
     <Label text="Label 3" width="70" height="70" backgroundColor="blue"/>
@@ -470,7 +549,7 @@ None.
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-  <WrapLayout itemWidth="30" itemHeight="30" width="210" height="210" style.backgroundColor="lightgray">
+  <WrapLayout itemWidth="30" itemHeight="30" width="210" height="210" backgroundColor="lightgray">
     <Label text="Label 1" width="70" height="70" backgroundColor="red"/>
     <Label text="Label 2" width="70" height="70" backgroundColor="green"/>
     <Label text="Label 3" width="70" height="70" backgroundColor="blue"/>
@@ -484,3 +563,143 @@ None.
 {% endangular %}
 
 ![WrapLayout](../img/modules/layouts/wrap-layout3.png "WrapLayout")
+
+## [FlexboxLayout]({%ns_cookbook ui/layouts/flexbox-layout%})
+The FlexboxLayout is a non-conforming implementation of the [CSS Flexible Box Layout](https://www.w3.org/TR/css-flexbox-1/) based on an existing Apache-2 licensed flexbox implementation hosted on [github.com/google/flexbox-layout](https://github.com/google/flexbox-layout).
+
+### FlexboxLayout Properties
+| Property    | Description |
+| ----------- | ------------|
+| flexDirection | Gets or sets a value indicating the direction flex items are placed in the flex container. The flexDirection property accepts 4 different values: `row` (same as text direction), `row-reverse` (opposite to text direction), `column` (same as `row` but top to bottom), and `column-reverse` (same as `row-reverse` top to bottom). The default value is `row`. |
+| flexWrap | Gets or sets a value indicating whether the flex items are forced in a single line or can be flowed into multiple lines. If set to multiple lines, it also defines the cross-axis which determines the direction new lines are stacked in. The flexWrap property accepts 3 different values: `nowrap` (single-line which may cause the container to overflow), `wrap` (multi-lines, direction is defined by flexDirection), and `wrap-reverse` (multi-lines, opposite to direction defined by flexDirection). The default value is `nowrap`. |
+| justifyContent | Gets or sets a value indicating the alignment along the main axis. It helps distribute extra free space leftover when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line. The justifyContent property accepts 5 different values: `flex-start` (items are packed toward the start line), `flex-end` (items are packed toward to end line), `center` (items are centered along the line), `space-between` (items are evenly distributed in the line; first item is on the start line, last item on the end line), and `space-around` (items are evenly distributed in the line with equal space around them). The default value is `flex-start`. |
+| alignItems | Gets or sets a value indicating how flex items are laid out along the cross axis on the current line. You can think of it as the justifyContent version for the cross-axis (perpendicular to the main-axis). The alignItems property accepts 5 different values: `flex-start` (cross-start margin edge of the items is placed on the cross-start line), `flex-end` (cross-end margin edge of the items is placed on the cross-end line), `center` (items are centered in the cross-axis), `baseline` (items are aligned such as their baselines align), `stretch` (stretch to fill the container but still respect min-width/max-width). The default value is `stretch`. |
+| alignContent | Gets or sets a value that helps aligning a flex container's lines within it when there is extra space in the cross-axis, similar to how justifyContent aligns individual items within the main-axis. The alignContent property accepts 6 different values: `flex-start` (lines packed to the start of the container), `flex-end` (lines packed to the end of the container), `center` (lines packed to the center of the container), `space-between` (lines evenly distributed; the first line is at the start of the container while the last one is at the end), `space-around` (lines evenly distributed with equal space between them), and `stretch` (lines stretch to take up the remaining space). The default value is `stretch`. This property has no effect when the flexbox has only a single line. |
+
+> **NOTE:** There is a limitation for `alignItems` in **iOS** the `baseline` option can **not** be used.
+
+### Child Properties
+| Property | Description |
+| -------- | ------------|
+| order         | Gets or sets a value that changes the default ordering of flex items. |
+| flexGrow | Gets or sets a unitless value that serves as a proportion indicating whether the flex item is able to grow if necessary. It dictates what amount of the available space inside the flex container the item should take up. |
+| flexShrink | Gets or sets a value indicating the "flex shrink factor", which determines how much the flex item will shrink relative to the rest of the flex items in the flex container when there is not enough space on the row. When omitted, it is set to 1 and the flex shrink factor is multiplied by the flex basis when distributing negative space. |
+| alignSelf | Gets or sets a value that makes it possible to override the alignItems value for specific flex items. This property accepts the same 5 values as the alignItems: `flex-start` (cross-start margin edge of the item is placed on the cross-start line), `flex-end` (cross-end margin edge of the item is placed on the cross-end line), `center` (item is centered in the cross-axis), `baseline` (items are aligned such as their baseline are aligned), and `stretch` (stretch to fill the container but still respect min-width / max-width). The default value is `stretch`. |
+| flexWrapBefore | Gets or sets a boolean value controlling item wrapping. Setting it to `true` on flexbox item will force it to wrap on a new line. The default value is `false`. This property is not part of the official flexbox specification.  
+
+> **NOTE:** There is a limitation for `alignSelf` in **iOS** the `baseline` option can **not** be used.
+
+### Sample (flexDirection="row", alignItems="stretch" (default))
+{% nativescript %}
+```XML
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+  <FlexboxLayout width="300" height="300" backgroundColor="lightgray">
+    <Label text="Label 1" width="70" height="70" backgroundColor="red"/>
+    <Label text="Label 2" width="70" height="70" backgroundColor="green"/>
+    <Label text="Label 3" width="70" height="70" backgroundColor="blue"/>
+    <Label text="Label 4" width="70" height="70" backgroundColor="yellow"/>
+  </FlexboxLayout>
+</Page>
+```
+{% endnativescript %}
+{% angular %}
+{%snippet flexbox-layout-flexdirection-row%}
+{% endangular %}
+
+![FlexboxLayout](../img/modules/layouts/flexbox-layout1.png "FlexboxLayout")
+
+### Sample (flexDirection="column", alignItems="stretch" (default))
+{% nativescript %}
+```XML
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+  <FlexboxLayout flexDirection="column" width="300" height="300" backgroundColor="lightgray">
+    <Label text="Label 1" width="70" height="70" backgroundColor="red"/>
+    <Label text="Label 2" width="70" height="70" backgroundColor="green"/>
+    <Label text="Label 3" width="70" height="70" backgroundColor="blue"/>
+    <Label text="Label 4" width="70" height="70" backgroundColor="yellow"/>
+  </FlexboxLayout>
+</Page>
+```
+{% endnativescript %}
+{% angular %}
+{%snippet flexbox-layout-flexdirection-column%}
+{% endangular %}
+
+![FlexboxLayout](../img/modules/layouts/flexbox-layout2.png "FlexboxLayout")
+
+### Sample (flexDirection="row", alignItems="flex-start")
+{% nativescript %}
+```XML
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+  <FlexboxLayout alignItems="flex-start" width="300" height="300" backgroundColor="lightgray">
+    <Label text="Label 1" width="70" height="70" backgroundColor="red"/>
+    <Label text="Label 2" width="70" height="70" backgroundColor="green"/>
+    <Label text="Label 3" width="70" height="70" backgroundColor="blue"/>
+    <Label text="Label 4" width="70" height="70" backgroundColor="yellow"/>
+  </FlexboxLayout>
+</Page>
+```
+{% endnativescript %}
+{% angular %}
+{%snippet flexbox-layout-alignItems-flex-start%}
+{% endangular %}
+
+![FlexboxLayout](../img/modules/layouts/flexbox-layout3.png "FlexboxLayout")
+
+### Sample (flexDirection="row", custom order)
+{% nativescript %}
+```XML
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+  <FlexboxLayout alignItems="flex-start" width="300" height="300" backgroundColor="lightgray">
+    <Label order="3" text="Label 1" width="70" height="70" backgroundColor="red"/>
+    <Label order="4" text="Label 2" width="70" height="70" backgroundColor="green"/>
+    <Label order="2" text="Label 3" width="70" height="70" backgroundColor="blue"/>
+    <Label order="1" text="Label 4" width="70" height="70" backgroundColor="yellow"/>
+  </FlexboxLayout>
+</Page>
+```
+{% endnativescript %}
+{% angular %}
+{%snippet flexbox-layout-order%}
+{% endangular %}
+
+![FlexboxLayout](../img/modules/layouts/flexbox-layout4.png "FlexboxLayout")
+
+### Sample (flexWrap="wrap")
+{% nativescript %}
+```XML
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+  <FlexboxLayout flexWrap="wrap" height="300" width="300" backgroundColor="lightgray">
+    <Label text="Label 1" width="100" height="50" backgroundColor="red"/>
+    <Label text="Label 2" width="100" height="50" backgroundColor="green"/>
+    <Label text="Label 3" width="100" height="50" backgroundColor="blue"/>
+    <Label text="Label 4" width="100" height="50" backgroundColor="yellow"/>
+  </FlexboxLayout>
+</Page>
+```
+{% endnativescript %}
+{% angular %}
+{%snippet flexbox-layout-flexWrap%}
+{% endangular %}
+
+![FlexboxLayout](../img/modules/layouts/flexbox-layout6.png "FlexboxLayout")
+
+### Sample (flexDirection="column-reverse", justifyContent="space-around", alignSelf)
+{% nativescript %}
+```XML
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+  <FlexboxLayout flexDirection="column-reverse" justifyContent="space-around" alignItems="stretch"
+    height="300" width="300" backgroundColor="lightgray">
+    <Label text="Label 1" width="50" height="50" backgroundColor="red"/>
+    <Label alignSelf="center" text="Label 2" width="50" height="50" backgroundColor="green"/>
+    <Label alignSelf="flex-end" text="Label 3" width="50" height="50" backgroundColor="blue"/>
+    <Label text="Label 4" width="50" height="50" backgroundColor="yellow"/>
+  </FlexboxLayout>
+</Page>
+```
+{% endnativescript %}
+{% angular %}
+{%snippet flexbox-layout-alignSelf%}
+{% endangular %}
+
+![FlexboxLayout](../img/modules/layouts/flexbox-layout5.png "FlexboxLayout")
