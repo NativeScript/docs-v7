@@ -183,4 +183,5 @@ For more information: [tns-platform-declarations](https://github.com/NativeScrip
 # See Also
 * [Marshalling in Android Runtime](./../runtimes/android/marshalling/overview.md)
 * [Marshalling in iOS Runtime](./../runtimes/ios/marshalling/Marshalling-Overview.md)
+* [Accessing Java packages in Android Runtime](./../runtimes/android/metadata/accessing-packages.md)
 
