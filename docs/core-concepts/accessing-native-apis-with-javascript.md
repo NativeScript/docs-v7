@@ -126,7 +126,7 @@ var context = ...;
 var button = new android.widget.Button(context);
 button.setText("My Button"); // "My Button" is converted to java.lang.String
 ```
-As you can see, the native Java types are exposed through their corresponding packages. In other words, to access a native Java type, you simply need to know the package it is contained in and explicitly state it. Native Java methods are accessed in the same way as regular JavaScript methods: by using the method identifier and supplying the required arguments.
+As you can see, the native Java types are exposed through their corresponding packages. In other words, to access a native Java type, you simply need to know the package it is contained in and explicitly state it. Native Java methods are accessed in the same way as regular JavaScript methods: by using the method identifier and supplying the required arguments. You can read more about Java packages on Android [here](https://docs.nativescript.org/runtimes/android/metadata/accessing-packages).
 
 # Undefined and Null
 
