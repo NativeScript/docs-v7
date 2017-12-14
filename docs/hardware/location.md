@@ -54,9 +54,16 @@ After you install the plugin, you can request to use location services in the ap
 ```
 ```JavaScript
 function enableLocationTap(args) {
-    if (!geolocation.isEnabled()) {
-        geolocation.enableLocationRequest();
-    }
+     geolocation.isEnabled().then(function (isEnabled) {
+        if (!isEnabled) {
+            geolocation.enableLocationRequest().then(function () {
+            }, function (e) {
+                console.log("Error: " + (e.message || e));
+            });
+        }
+    }, function (e) {
+        console.log("Error: " + (e.message || e));
+    });
 }
 exports.enableLocationTap = enableLocationTap;
 ```
@@ -70,9 +77,16 @@ exports.enableLocationTap = enableLocationTap;
 {% endangular %}
 ```TypeScript
 {% nativescript %}export function {% endnativescript %}public {% angular %}{% endangular %}enableLocationTap() { 
-    if (!isEnabled()) {
-        enableLocationRequest();
-    }
+    geolocation.isEnabled().then(function (isEnabled) {
+        if (!isEnabled) {
+            geolocation.enableLocationRequest().then(function () {
+            }, function (e) {
+                console.log("Error: " + (e.message || e));
+            });
+        }
+    }, function (e) {
+        console.log("Error: " + (e.message || e));
+    });
 }
 ```
 
