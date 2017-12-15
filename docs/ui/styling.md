@@ -18,6 +18,7 @@ This article includes the following topics:
 * [Using Fonts](#using-fonts)
 * [Import External CSS](#import-external-css)
 * [CSS parser playground](http://iamdustan.com/reworkcss_ast_explorer/)
+* [Using SASS](#using-sass)
 
 ## Introduction
 
@@ -575,3 +576,10 @@ The @import CSS rule allows you to import external CSS from local file, resource
 @import url('res://your-style.css');
 @import url('~/your-style.css');
 ```
+
+## Using SASS
+With NativeScript, it is possible to manage your app styles using the SASS CSS pre-compiler instead of plain CSS files. Just as with web projects, SASS gives your stylesheets extra capabilities like shared variables, mixins and nested style tags.
+
+To use SASS with NativeScript, the `nativescript-dev-sass` plugin is required. This plugin will hook-in to the NativeScript build process and automatically convert `.scss/.sass` files to `.css` during `build` and `livesync` operations. Since SASS is compiled to CSS at build time, it does **not** require any changes to your stylesheet naming conventions for NativeScript's normal convention-based patterns to work. SASS files with the same name as a NativeScript page will still be automatically linked.
+
+For complete details on adding SASS support to a NativeScript project, [see this page in the Theme docs](https://docs.nativescript.org/ui/theme#sass-usage).
