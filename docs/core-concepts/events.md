@@ -35,45 +35,52 @@ __Example 1__ shows how to set a function that prints a "Hello World!" message i
 
 The example below shows how to add an event listener by using the short and full syntax. There is a third optional parameter that represents the `this` argument.
 
-###Example 1: Adding an event handler or an event listener using the short and full syntax.
-> Run this example – [JavaScript](https://play.nativescript.org/?template=play-js&id=bo1JvH&v=2) or [TypeScript](https://play.nativescript.org/?template=play-tsc&id=y5hWfh).
+###Example 1 (JavaScript): Adding an event handler or an event listener using the short and full syntax.
 ``` JavaScript
+//Adding a listener with the short syntax
 var buttonModule = require("ui/button");
 var testButton = new buttonModule.Button();
 testButton.text = "Test";
 
+testButton.on(buttonModule.Button.tapEvent, function (eventData) {
+  console.log("Hello World!");
+},this);
+
+//Adding a lister with the full syntax
+var testButton2 = new buttonModule.Button();
+testButton2.text = "Test";
+
 var onTap = function (eventData) {
   console.log("Hello World!");
 };
 
-//Adding a listener with the short syntax
-testButton.on(buttonModule.Button.tapEvent, onTap, this);
-
-//Adding a listener with the full syntax
-testButton.addEventListener(buttonModule.Button.tapEvent, onTap, this);
+testButton2.addEventListener(buttonModule.Button.tapEvent, onTap, this);
 ```
+###Example 1 (TypeScript): Adding an event handler or an event listener using the short and full syntax.
 ``` TypeScript
+//Adding a listener with the short syntax
 import buttonModule = require("ui/button");
 var testButton = new buttonModule.Button();
 testButton.text = "Test";
 
+testButton.on(buttonModule.Button.tapEvent, function (eventData) {
+  console.log("Hello World!");
+  },this);
+
+//Adding a lister with the full syntax
+var testButton2 = new buttonModule.Button();
+testButton2.text = "Test";
+
 var onTap = function (eventData) {
   console.log("Hello World!");
 };
 
-//Adding a listener with the short syntax
-testButton.on(buttonModule.Button.tapEvent, onTap, this);
-
-//Adding a lister with the full syntax
-testButton.addEventListener(buttonModule.Button.tapEvent, onTap, this);
+testButton2.addEventListener(buttonModule.Button.tapEvent, onTap, this);
 ```
 
 Another option to set an event handler is to use an XML declaration.
-You need a code-behind file to write the function body (the code-behind file has the same file name, but a different extension: .js or .ts depending on the language you are using). 
-
 
 ###Example 1 (XML): Adding an event handler or an event listener using an XML declaration.
-> Run this example – [JavaScript](https://play.nativescript.org/?template=play-js&id=bo1JvH&v=2) or [TypeScript](https://play.nativescript.org/?template=play-tsc&id=y5hWfh).
 ``` XML
 <Page>
   <StackLayout>
@@ -81,6 +88,9 @@ You need a code-behind file to write the function body (the code-behind file has
   </StackLayout>
 </Page>
 ```
+You need a code-behind file (see __Example 2__) to write the function body (the code-behind file has the same file name, but a different extension: .js or .ts depending on the language you are using). 
+
+###Example 2: Hooking to a button tap event
 ``` JavaScript
 function onTap(eventData) {
   console.log("Hello World!");
@@ -95,16 +105,16 @@ export function onTap(eventData) {
 
 ## Removing an Event Listener
 
-Usually you don't need to remove the event listener. You might need to do it when you want to receive the event just once or to free up resources. In such cases, you can apply the methods in __Example 2__.
+Usually you don't need to remove the event listener. You might need to do it when you want to receive the event just once or to free up resources. In such cases, you can apply the methods in __Example 3__.
 
 > There is no syntax to remove an event listener through an XML declaration.
 
 ### Removing an Event Listener Using the Shorthand or Full Syntax
 
-__Example 2__ uses the shorthand and full syntax to remove all listeners for the tap event of the testButton instance. If more than one object are listening for events, you can set a second parameter with the name of the callback function. This way only the referenced event listener is removed. When multiple event listeners with different `this` arguments are available, a third optional parameter is used.
+__Example 3__ uses the shorthand and full syntax to remove all listeners for the tap event of the testButton instance. If more than one object are listening for events, you can set a second parameter with the name of the callback function. This way only the referenced event listener is removed. When multiple event listeners with different `this` arguments are available, a third optional parameter is used.
 
-###Example 2: Removing a button tap event listener
-> Run this example – [JavaScript](https://play.nativescript.org/?template=play-js&id=bo1JvH&v=2) or [TypeScript](https://play.nativescript.org/?template=play-tsc&id=y5hWfh).
+###Example 3: Removing a button tap event listener
+
 ``` JavaScript
 //Removing a listener with short syntax
 testButton.off(buttonModule.Button.tapEvent);
@@ -121,10 +131,10 @@ testButton2.removeEventListener(buttonModule.Button.tapEvent);
 ```
 ## PropertyChange Event
 
-The `Observable` class provides a built-in event called `propertyChange` that is called when a property is changed. __Example 3__ shows how to subscribe to this event.
+The `Observable` class provides a built-in event called `propertyChange` that is called when a property is changed. __Example 4__ shows how to subscribe to this event.
 
-###Example 3: Handle the propertyChange event
-> Run this example – [JavaScript](https://play.nativescript.org/?template=play-js&id=bo1JvH&v=2) or [TypeScript](https://play.nativescript.org/?template=play-tsc&id=y5hWfh).
+###Example 4: Handle the propertyChange event
+
 ``` JavaScript
 var observableModule = require("data/observable");
 var observableObject = new observableModule.Observable();
@@ -137,14 +147,45 @@ observableObject.on(observableModule.Observable.propertyChangeEvent, function(pr
 import observableModule = require("data/observable");
 var observableObject = new observableModule.Observable();
 
-observableObject.on(observableModule.Observable.propertyChangeEvent, function(propertyChangeData: PropertyChangeData){
+observableObject.on(observableModule.Observable.propertyChangeEvent, function(propertyChangeData){
   console.log(propertyChangeData.propertyName + " has been changed and the new value is: " + propertyChangeData.value);
 });
 ```
-It is important to note that the `propertyChange` event is critical for the entire [data binding]({% slug binding %}) system. To take advantage of the data binding mechanism, all you have to do is make your business object **inherit** the `Observable` class. __Example 4__ demonstrates how to do that.
+It is important to note that the `propertyChange` event is critical for the entire [data binding]({% slug binding %}) system. To take advantage of the data binding mechanism, all you have to do is make your business object **inherit** the `Observable` class. __Example 5__ demonstrates how to do that.
 
-###Example 4: Creating a custom class and inheriting `Observable` class
-> Run this example – [JavaScript](https://play.nativescript.org/?template=play-js&id=bo1JvH&v=2) or [TypeScript](https://play.nativescript.org/?template=play-tsc&id=y5hWfh).
+###Example 5: Handle the propertyChange event via XML
+
+``` XML
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+  <StackLayout>
+    <Switch checked="{{ isChecked }}" propertyChange="onCheckChange"/>
+  </StackLayout>
+</Page>
+```
+``` JavaScript
+function onCheckChange(args) {
+    console.log("Property Changed!");
+    console.log("Event name:" + args.eventName);
+    console.log("Object:" + args.object);
+    console.log("propertyname:" + args.propertyName);
+    console.log("value:" + args.value);
+}
+exports.onCheckChange = onCheckChange;
+```
+``` TypeScript
+import { PropertyChangeData } from "data/observable";
+
+export function onCheckChange(args: PropertyChangeData) {
+    console.log("Property Changed!");
+    console.log("Event name:" + args.eventName);
+    console.log("Object:" + args.object);
+    console.log("propertyname:" + args.propertyName);
+    console.log("value:" + args.value);
+}
+```
+The code snippet in __Example 5__ fires the `propertyChange` event when the switch checked value is changed.
+
+###Example 6: Creating a custom class and inheriting `Observable` class
 ``` JavaScript
 var observableModule = require("data/observable");
 var MyClass = (function (_super) {
@@ -180,14 +221,13 @@ export class MyClass extends observableModule.Observable {
   }
 }
 ```
-The code snippet in __Example 4__ fires the `propertyChange` event when the property value is changed.
+The code snippet in __Example 6__ fires the `propertyChange` event when the property value is changed.
 
 ## Creating a Custom Event
 
-If your business logic demands it, you may want to fire (raise or emit) a custom event on a particular action (see __Example 5__). To do that, call the `Observable.notify()` method when the action is completed. This method takes any **implementer** of the [EventData interface](http://docs.nativescript.org/api-reference/interfaces/_data_observable_.eventdata.html) as event data. It includes basic information about an event&mdash;its name as `eventName` and an instance of the event sender as `object`).
+If your business logic demands it, you may want to fire (raise or emit) a custom event on a particular action (see __Example 7__). To do that, call the `Observable.notify()` method when the action is completed. This method takes any **implementer** of the [EventData interface](http://docs.nativescript.org/api-reference/interfaces/_data_observable_.eventdata.html) as event data. It includes basic information about an event&mdash;its name as `eventName` and an instance of the event sender as `object`).
 
-###Example 5: Creating a custom event.
-> Run this example – [JavaScript](https://play.nativescript.org/?template=play-js&id=bo1JvH&v=2) or [TypeScript](https://play.nativescript.org/?template=play-tsc&id=y5hWfh).
+###Example 7: Creating a custom event.
 ``` JavaScript
 var eventData = {
   eventName: "myCustomEventName",
@@ -228,8 +268,8 @@ A weak event, as its name suggests, creates an weak reference to the listener ob
 
 ### Adding a Weak Event Listener
 
-Using weak event listeners is very similar to normal events. __Example 6__ shows how to add a weak event listener (code comments are included for clarity):
-###Example 6: Creating a weak event and handling a property change event 
+Using weak event listeners is very similar to normal events. __Example 8__ shows how to add a weak event listener (code comments are included for clarity):
+###Example 8: Creating a weak event and handling a property change event 
 ``` JavaScript
 var weakEventListenerModule = require("ui/core/weak-event-listener");
 var buttonModule = require("ui/button");
@@ -303,7 +343,7 @@ var weakEventListenerOptions: weakEventListenerModule.WeakEventListenerOptions =
 weakEL.addWeakEventListener(this.weakEventListenerOptions);
 ```
 
-__Example 6__ shows how to attach a weak event listener to an observable object instance. A closer look at the `handlePropertyChange` function shows that `text` property of the `this` object is changed when the `propertyChange` event is raised (via the button tap event). The function demonstrates how to use the `handlerContext` property&mdash;its value is taken as an argument to `this` inside the event handler function.
+__Example 8__ shows how to attach a weak event listener to an observable object instance. A closer look at the `handlePropertyChange` function shows that `text` property of the `this` object is changed when the `propertyChange` event is raised (via the button tap event). The function demonstrates how to use the `handlerContext` property&mdash;its value is taken as an argument to `this` inside the event handler function.
 
 ### Removing a Weak Event Listener
 
