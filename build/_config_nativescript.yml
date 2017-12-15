@@ -1,6 +1,6 @@
 # The public documentation URL, used for sitemap.xml
 url: "https://docs.nativescript.org"
-destination: ./dist
+destination: ./nativescript
 
 ## The application virtual path
 baseurl:  ""

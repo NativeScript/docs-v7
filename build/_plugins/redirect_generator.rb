@@ -8,15 +8,15 @@ module Jekyll
             site.config['redirect_pages'] = redirect_pages(site)
             site.config['redirect_directories'] = redirect_directories(site)
 
-            web_config = Page.new(site, site.source, '', 'web.config')
-            web_config.content = File.read(File.join(site.source, 'web.config'))
-            web_config.render(Hash.new, site.site_payload)
+            nginx_config = Page.new(site, site.source, '', 'nginx.conf')
+            nginx_config.content = File.read(File.join(site.source, 'nginx.conf'))
+            nginx_config.render(Hash.new, site.site_payload)
 
             FileUtils.mkdir_p(site.dest) unless File.directory?(site.dest)
 
-            File.write(File.join(site.dest, 'web.config'), web_config.output)
+            File.write(File.join(site.dest, 'nginx.conf'), nginx_config.output)
 
-            site.static_files << web_config
+            site.static_files << nginx_config
         end
 
         def redirect_pages(site)

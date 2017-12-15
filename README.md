@@ -22,7 +22,7 @@ This documentation is built using [Jekyll](https://jekyllrb.com/docs/home/). Mor
 
 ## Configuration
 
-There are two versions of the NativeScript documentation that generate similar output: `nativescript` and `angular`. The former builds the vanilla NativeScript docs at [docs.nativescript.org](https://docs.nativescript.org/), while the latter discusses Angular-specific topics at [docs.nativescript.org/angular](https://docs.nativescript.org/angular). 
+There are two versions of the NativeScript documentation that generate similar output: `nativescript` and `angular`. The former builds the vanilla NativeScript docs at [docs.nativescript.org](https://docs.nativescript.org/), while the latter discusses Angular-specific topics at [docs.nativescript.org/angular](https://docs.nativescript.org/angular).
 
 Most of the content in this repository is shared between the two environments, but occasionally you may need to add environment-specific content. When you have this need you have a few options.
 
@@ -57,83 +57,67 @@ When making changes to either of these tutorials you might need to additional al
 
 ## Local Setup
 
-If you plan to work on a non-trivial change, you will most probably want to run the documentation locally in order to give your change a try before submitting a pull request. To provide you with this opportunity without installing a ton of libraries and loose time in configuration, we have prepared a virtual environment based on vagrant configuration, where everything is prepared for you in advance. 
+If you plan to work on a non-trivial change, you will most probably want to run the documentation locally in order to give your change a try before submitting a pull request. To provide you with this opportunity without installing a ton of libraries and loose time in configuration, we have prepared a virtual environment based on a docker image, where everything is prepared for you in advance.
 
 ### Prerequisites
 
-* VirtualBox: https://www.virtualbox.org
-* Vagrant: https://www.vagrantup.com
+Docker should be installed on your machine:
+* Open the [official Docker install page](https://docs.docker.com/engine/installation/) and follow the instructions.
 
-### Installing the virtual machine
+The NativeScript documentation is composed from multiple repositories:
 
-Open a console box (**Windows users should run a Git bash session!**) and cd to the `build` folder of the working dir.
+* [NativeScript Docs](https://github.com/NativeScript/docs)
+* [NativeScript Modules](https://github.com/NativeScript/NativeScript)
+* [NativeScript Angular](https://github.com/NativeScript/nativescript-angular)
+* [Sidekick Docs](https://github.com/NativeScript/sidekick-docs)
+* [NativeScript SDK examples](https://github.com/NativeScript/nativescript-sdk-examples-ng)
+
+### Building the docker image
+
+Start by cloning all required git repositories in some local folder (`ns-docs` in the following examples):
+
+Open a console box (**Windows users should run a Git bash session!**) and clone the required git repositories:
 
 ```bash
-$ cd build
+mkdir ns-docs
+cd ns-docs
+git clone https://github.com/NativeScript/docs.git
+git clone https://github.com/NativeScript/NativeScript.git
+git clone https://github.com/NativeScript/nativescript-angular.git
+git clone https://github.com/NativeScript/sidekick-docs.git
+git clone https://github.com/NativeScript/nativescript-sdk-examples-ng.git
 ```
 
-Then do a:
+> **NOTE**: If you have these repositories locally from previous work with the documentation, be sure to delete them and start from scratch as some old files can cause problems with the current setup.
+
+Then build the docker image by using the following command from the `ns-docs` folder:
 
 ```bash
-$ vagrant up
+sudo docker build -t ns-docs:1.0 docs/build
 ```
-
-This should download the correct image, install it, start the VM and run the provisioning script.
-
-### Provisioning
-
-The provisioning script (`provision/install.sh`) installs:
-
-* Base system packages;
-* Ruby;
-* Node.js;
-* nginx.
-
-It also sets up the Jekyll project by installing all gems locally using bundler.
 
 ### Building the documentation
 
-Connect to the running VM first:
+Start the docker image created in the previous step from the **ns-docs** folder:
 
 ```bash
-$ vagrant ssh
+sudo docker run --rm -t -i -v $(pwd):/root -p 9192:9192 -t ns-docs:1.0
 ```
 
-Then go to the project dir (mapped to `/vagrant`):
+Due to the [poor performance of mounted volumes on Mac OS](https://docs.docker.com/docker-for-mac/osxfs/#performance-issues-solutions-and-roadmap) you may use the [`delegated`](https://docs.docker.com/docker-for-mac/osxfs-caching/#delegated) mount strategy:
 
 ```bash
-$ cd /vagrant
-```
-
-And run the build script telling it to use the current branch and avoid committing changelogs:
-
-```bash
-$ ./build.sh
+sudo docker run --rm -t -i -v $(pwd):/root:delegated -p 9192:9192 -t ns-docs:1.0
 ```
 
 ### Adding content
 
-Edit an article and trigger your build by running `build.sh` as described above.
-
-Then open a web browser on your host machine and navigate to http://localhost:8000/start/introduction.html or http://localhost:8000/angular/start/introduction.html.
-
-Alternatively you could run a quick build with just a single configuration: "nativescript" or "angular" that will take about half the time. It could be useful when editing a documentation article and you want quicker feedback:
-
-```bash
-$ ./build-jekyll.sh "nativescript"
-```
-
-or
-
-```bash
-$ ./build-jekyll.sh "angular"
-```
+Edit an article in some of the repositories and navigate to http://localhost:9192 on the host machine. Notice that it might take some time for the changes to be reflected in the browser.
 
 ### Making changes
 
 * Edit some files.
-* Rerun the build command above.
-* Refresh your browser.
+* Refresh your browser (depending on which files have been modified it might take more or less time for the changes to take effect).
 
 ## Contributors
 

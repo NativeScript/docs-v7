@@ -22,7 +22,7 @@ The layout pages used by the documentation site. They define the common HTML whi
 
 #### _plugins
 
-Contains [Jekyll plugins](http://jekyllrb.com/docs/plugins/) (Ruby classes) which are needed for producing the final output. Not included in the final output. 
+Contains [Jekyll plugins](http://jekyllrb.com/docs/plugins/) (Ruby classes) which are needed for producing the final output. Not included in the final output.
 
 #### Markdown includes
 
@@ -41,7 +41,7 @@ The following plugins are currently available:
 * breadcrumb.rb - renders breadcrumb navigation
 * markdown_processor.rb - creates HTML from Markdown using [html-pipeline](https://github.com/jch/html-pipeline). We are not using the default markdown conversion as we need to tweak the output to our needs.
 * navigation_generator.rb - creates a JSON TOC file used for the left-hand treeview navigation.
-* redirect_generator.rb - creates IIS redirect rules in the `web.config` to handle the `previous_url` attribute. 
+* redirect_generator.rb - creates nginx redirect rules in the `nginx.conf` to handle the `previous_url` attribute.
 * sitemap_generator.rb - creates sitemap.xml which is used by search engines for crawling.
 * slug.rb - gets the URL of a help article from its slug.
 
@@ -101,11 +101,11 @@ The optional unique identifier of the page. Can be used to link to the current p
 
 #### previous_url
 
-The previous URL of this page. Used to create IIS redirect rules in `web.config`. Supports comma separated values if there is more than one previous url `previous_url: /foo/bar, /bar/foo`.
+The previous URL of this page. Used to create nginx redirect rules in `nginx.conf`. Supports comma separated values if there is more than one previous url `previous_url: /foo/bar, /bar/foo`.
 
 ### Customizing the TOC
 
-The TOC displays an entry for all directories and files. 
+The TOC displays an entry for all directories and files.
 
 #### Files
 
