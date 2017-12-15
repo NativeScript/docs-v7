@@ -40,7 +40,7 @@ view.backgroundColor = new Color("red");
 view.animate({ backgroundColor: new Color("green"), duration: 2000 });
 ```
 
-[Try this animation in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF)
+[Try this animation in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=5)
 
 As _Example 2_ shows, you can express the same animation in CSS with the following definition:
 
