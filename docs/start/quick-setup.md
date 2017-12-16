@@ -61,6 +61,11 @@ When you build with NativeScript you’re building truly native iOS and Android 
 
 ### Windows
 
+#### Prerequisites
+* Windows 7 Service Pack 1 or later
+
+#### Setup
+
 If you’re on Windows, copy and paste the script below into your command prompt as an administrator and press Enter:
 
 Please be sure that you run this command in cmd as an administator (Windows key > type "cmd" > right click > Run as Administrator).
@@ -70,6 +75,28 @@ Please be sure that you run this command in cmd as an administator (Windows key 
 During installation you may need to accept a User Account Control prompt to grant the script administrative privileges. Also, be aware that the script downloads and installs some big dependencies—so it’s common for the script to take a while to complete. When the script finishes, close and reopen your command prompt.
 
 > **NOTE**: On Windows and Linux systems you can only use the NativeScript CLI to develop Android apps. This is because the NativeScript CLI uses Xcode to build iOS apps, which is only available on macOS. If you’re interested in building iOS apps on Windows or Linux, you should download [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick).
+
+After the installation your system setup will have:
+* The latest stable official release of Node.js (LTS) [6.x](https://nodejs.org/dist/latest-v6.x/) 
+* Google Chrome 
+* JDK 8
+* Android SDK 22 or a later stable official release
+* Android Support Repository
+* Google Repository
+* Android SDK Build-tools 25.0.2 or a later stable official release
+* Android Studio
+* Set up Android virtual devices to expand your testing options
+
+You must also have the following two environment variables setup for Android development, which will automatically be added for you as part of the installation:
+
+* JAVA_HOME
+* ANDROID_HOME
+
+> **NOTE** To check if JAVA_HOME and ANDROID_HOME are indeed initialized you can:
+- close any Command Prompt windows you have opened, 
+- open a new Command Prompt
+- write `echo %JAVA_HOME%` and make sure a valid path is returned
+- write `echo %ANDROID_HOME%` and make sure a valid path is returned
 
 ### macOS
 
