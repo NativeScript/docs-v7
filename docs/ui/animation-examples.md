@@ -39,6 +39,8 @@ view.animate({
 }
 ```
 
+[Try this in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=8)
+
 ## Animate background color
 
 ![background-color](../img/modules/animation/background-color.gif "Background Color")
@@ -65,6 +67,8 @@ view.animate({
 	to { background-color: #3D5AFE; }
 }
 ```
+
+[Try this in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=9)
 
 ## Animate position
 
@@ -93,6 +97,8 @@ view.animate({
 }
 ```
 
+[Try this in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=10)
+
 ## Animate scale
 
 ![scale](../img/modules/animation/scale.gif "Scale")
@@ -120,6 +126,8 @@ view.animate({
 }
 ```
 
+[Try this in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=11)
+
 ## Animate rotate
 
 ![rotate](../img/modules/animation/rotate.gif "Rotate")
@@ -146,6 +154,8 @@ view.animate({
 	to { transform: rotate(360deg); }
 }
 ```
+
+[Try this in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=12)
 
 ## Chaining animations with AnimationSet
 
@@ -259,6 +269,8 @@ animationSet.play().then(() => {
     console.log(e.message);
 });
 ```
+
+[Try this in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=13)
 
 ## Reusing animations
 
