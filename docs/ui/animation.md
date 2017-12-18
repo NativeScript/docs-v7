@@ -133,7 +133,7 @@ view.animate({
 }
 ```
 
-[Experiment with the different animation timing functions in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=4)
+[Experiment with the different animation timing functions in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=6)
 
 It is easy to create your own animation curve by passing in the X and Y components of two control points of a cubic Bezier curve (as shown in __Example 4__). Using Bezier curves is a common technique to create smooth curves in computer graphics and they are widely used in vector-based drawing tools. The values passed to the cubicBezier method control the curve shape. The animation speed will be adjusted based on the resulting path.
 
