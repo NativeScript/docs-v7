@@ -483,7 +483,7 @@ topmost().navigate(navigationEntry);
 ### Custom transitions
 Instead of setting the `name` property to one of the predefined transitions, you can set the `instance` property of the [`NavigationTransition`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition.html) to an instance of a class that inherits from [`Transition`](http://docs.nativescript.org/api-reference/classes/_ui_transition_.transition.html). You can create your own custom user-defined transition by writing platform-specific code to animate the transition. To do that you need to inherit from the [`Transition`](http://docs.nativescript.org/api-reference/classes/_ui_transition_.transition.html) class and override one method for each platform. Since there will be platform-specific code, you need to separate your code into two separate files. Here is an example of a custom transition that shrinks the disappearing page while expanding the appearing page by using a scale affine transform.
 
->  Note: Since the example uses native APIs you have to add a dev dependency to `tns-platform-declarations` with TypeScript enabled project. For more information, see the [Intellisense and access to native APIs via TypeScript](./accessing-native-apis-with-javascript.md) section.
+>  **NOTE**: The following example uses native APIs. When using TypeScript, you need to add a dev dependency to the `tns-platform-declarations` package to use these native APIs without compiler errors. For more information, see the [Intellisense and access to native APIs via TypeScript](./accessing-native-apis-with-javascript.md) section.
 
 ### Example 12:  Create your own custom transition.
 `custom-transition.android.js/ts`
@@ -633,7 +633,8 @@ Once you have `custom-transition.android.js/ts` and `custom-transition.ios.js/ts
 
 ### Example 13:  Require the module and instantiate your custom transition.
 
-> **Tip**: Consider creating `custom-transition.d.ts` file next to `custom-transition.android.ts` and `custom-transition.ios.ts` for TypeScript enabled project:
+> **TIP**: Consider creating the following `custom-transition.d.ts` file next to your `custom-transition.android.ts` and `custom-transition.ios.ts` files in TypeScript projects.
+
 ```TypeScript
 import { Transition } from "tns-core-modules/ui/transition";
 export class CustomTransition extends Transition {
