@@ -63,9 +63,9 @@ exports.onPageLoaded = onPageLoaded;
 ```
 ``` TypeScript
 // main-page.ts
-import observableModule from "data/observable";
+import { EventData } from "data/observable";
 
-export function onPageLoaded(args: observableModule.EventData) {
+export function onPageLoaded(args: EventData): void {
     console.log("Page Loaded");
 }
 ```
@@ -75,25 +75,26 @@ To apply this approach, you need to create a function named `createPage` that wi
 
 ### Example 2:  Create page via code.
 ``` JavaScript
-var pagesModule = require("ui/page");
-var labelModule = require("ui/label");
+const pagesModule = require("ui/page");
+const labelModule = require("ui/label");
+
 function createPage() {
-    var label = new labelModule.Label();
+    const label = new labelModule.Label();
     label.text = "Hello, world!";
-    var page = new pagesModule.Page();
+    const page = new pagesModule.Page();
     page.content = label;
     return page;
 }
 exports.createPage = createPage;
 ```
 ``` TypeScript
-import pagesModule from "ui/page";
-import labelModule from "ui/label";
+import { Page } from "ui/page";
+import { Label } from "ui/label";
 
-export function createPage() {
-    var label = new labelModule.Label();
+export function createPage(): Page {
+    const label = new Label();
     label.text = "Hello, world!";
-    var page = new pagesModule.Page();
+    const page = new Page();
     page.content = label;
     return page;
 }
@@ -106,7 +107,7 @@ Each application must have a single entry point - the home page.
 To load the home page for your app, you need to pass `NavigationEntry` with the desired `moduleName` to the start() method.  NativeScript looks for an XML file with the specified name, parses it and draws the UI described in the file. Afterwards, if NativeScript finds a `JS` or a `TS` file with the same name, it executes the business logic in the file.
 
 ``` JavaScript
-var application = require("application");
+const application = require("application");
 application.start({ moduleName: "main-page" });
 ```
 ``` TypeScript
@@ -118,7 +119,7 @@ application.start({ moduleName: "main-page" });
 
 The [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. Typically, each app has one frame at the root level - the topmost frame.
 
-To navigate between pages, you can use the [`navigate`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) method of the topmost frame instance.
+To navigate between pages, you can use the [`navigate`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame#navigate) method of the topmost frame instance.
 
 In addition, each `Page` instance carries information about the frame object which navigated to it in the `frame` property. This lets you navigate with the `frame` property as well. 
 
@@ -129,12 +130,12 @@ The topmost frame is the root-level container for your app's UI and you can use 
 
 
 ``` JavaScript
-var frameModule = require("ui/frame");
-var topmost = frameModule.topmost();
+const frameModule = require("ui/frame");
+const topmost = frameModule.topmost();
 ```
 ``` TypeScript
-import frameModule from "ui/frame";
-var topmost = frameModule.topmost();
+import * as frameModule from "ui/frame";
+const topmost = frameModule.topmost();
 ```
 
 There are several ways to perform navigation; which one you use depends on the needs of your app.
@@ -157,25 +158,32 @@ A more dynamic way of navigating can be done by providing a function that return
 
 ### Example 3:  How to navigate to a page dynamically created via code.
 ``` JavaScript
-var factoryFunc = function () {
-    var label = new labelModule.Label();
+const pagesModule = require("ui/page");
+const labelModule = require("ui/label");
+const topmost = require("ui/frame").topmost;
+
+const factoryFunc = () => {
+    const label = new labelModule.Label();
     label.text = "Hello, world!";
-    var page = new pagesModule.Page();
+    const page = new pagesModule.Page();
     page.content = label;
     return page;
 };
-topmost.navigate(factoryFunc);
+topmost().navigate(factoryFunc);
 ```
 ``` TypeScript
-var topmost = frameModule.topmost();
-var factoryFunc = function () {
-    var label = new labelModule.Label();
+import { Page } from "ui/page";
+import { Label } from "ui/label";
+import { topmost } from "ui/frame";
+
+const factoryFunc = (): Page => {
+    const label = new Label();
     label.text = "Hello, world!";
-    var page = new pagesModule.Page();
+    const page = new Page();
     page.content = label;
     return page;
 };
-topmost.navigate(factoryFunc);
+topmost().navigate(factoryFunc);
 ```
 
 ### Navigate and pass context
@@ -184,20 +192,47 @@ When you navigate to another page, you can pass context to the page with a [`Nav
 
 ### Example 4:  How to pass content between different pages.
 ``` JavaScript
-var navigationEntry = {
+const topmost = require("ui/frame").topmost;
+
+const navigationEntry = {
     moduleName: "details-page",
-    context: {info: "something you want to pass to your page"},
+    context: { info: "something you want to pass to your page" },
     animated: false
 };
-topmost.navigate(navigationEntry);
+topmost().navigate(navigationEntry);
 ```
 ``` TypeScript
-var navigationEntry = {
+import { topmost } from "ui/frame";
+
+const navigationEntry = {
     moduleName: "details-page",
-    context: {info: "something you want to pass to your page"},
+    context: { info: "something you want to pass to your page" },
     animated: false
 };
-topmost.navigate(navigationEntry);
+topmost().navigate(navigationEntry);
+```
+
+#### Retrieve content
+``` JavaScript
+// Event handler for Page "navigatedTo" event attached in details-page.xml e.g.
+function pageNavigatedTo(args) {
+    const page = args.object;
+    const context = page.navigationContext;
+}
+
+exports.pageNavigatedTo = pageNavigatedTo;
+```
+``` TypeScript
+import { EventData } from "data/observable";
+import { Page } from "ui/page";
+
+// Event handler for Page "navigatedTo" event attached in details-page.xml e.g.
+export function pageNavigatedTo(args: EventData): void {
+    // Get the event sender
+    const page: Page = <Page>args.object;
+    // You can access `info` property from the navigationEntry
+    const context: any = page.navigationContext;
+}
 ```
 
 ### Navigate and set bindingContext to the page
@@ -208,23 +243,21 @@ While you are navigating you could set `bindingContext` to a page.
 
 
 ```JavaScript
-// To import the "ui/frame" module and "main-view-model":
-var frame = require("ui/frame");
-var main_view_model = require("./main-view-model");
+const topmost = require("ui/frame").topmost;
+const mainViewModel = require("./main-view-model");
 // Navigate to page called “my-page” and provide "bindingContext"
-frame.topmost().navigate({ 
+topmost().navigate({ 
   moduleName: "my-page", 
-  bindingContext: new main_view_model.HelloWorldModel() 
+  bindingContext: new mainViewModel.HelloWorldModel() 
 });
 ```
 ```TypeScript
-// To import the "ui/frame" module and "main-view-model":
-import {topmost} from "ui/frame";
-import {HelloWorldModel} from "./main-view-model"
+import { topmost } from "ui/frame";
+import { HelloWorldModel } from "./main-view-model"
 // Navigate to page called “my-page” and provide "bindingContext"
 topmost().navigate({
-  moduleName:"my-page", 
-  bindingContext:new HelloWorldModel()
+  moduleName: "my-page", 
+  bindingContext: new HelloWorldModel()
 });
 ```
 
@@ -235,18 +268,25 @@ In this example, this master-details app consists of two pages. The main page co
 When you navigate to the details page, you transfer a primary key or ID information about the selected entity. 
 ### Example 6:  Navigate to the details page and pass the content for selected item.
 ``` JavaScript
+const topmost = require("ui/frame").topmost;
+
 function listViewItemTap(args) {
     // Navigate to the details page with context set to the data item for specified index
-    frames.topmost().navigate({
+    topmost().navigate({
         moduleName: "cuteness.io/details-page",
         context: appViewModel.redditItems.getItem(args.index)
     });
 }
+
+exports.listViewItemTap = listViewItemTap;
 ```
 ``` TypeScript
-export function listViewItemTap(args: listView.ItemEventData) {
+import { topmost } from "ui/frame";
+import { ItemEventData } from "tns-core-modules/ui/list-view";
+
+export function listViewItemTap(args: ItemEventData): void {
     // Navigate to the details page with context set to the data item for specified index
-    frames.topmost().navigate({
+    topmost().navigate({
         moduleName: "details-page",
         context: appViewModel.redditItems.getItem(args.index)
     });
@@ -256,16 +296,22 @@ export function listViewItemTap(args: listView.ItemEventData) {
 With the **onNavigatedTo** callback, you show the details for the entity.
 ### Example 7:  Bind the content received from main page.
 ``` JavaScript
+// Event handler for Page "navigatedTo" event attached in details-page.xml e.g.
 function pageNavigatedTo(args) {
-    var page = args.object;
+    const page = args.object;
     page.bindingContext = page.navigationContext;
 }
+
+exports.pageNavigatedTo = pageNavigatedTo;
 ```
 ``` TypeScript
+import { EventData } from "data/observable";
+import { Page } from "ui/page";
+
 // Event handler for Page "navigatedTo" event attached in details-page.xml
-export function pageNavigatedTo(args: observable.EventData) {
+export function pageNavigatedTo(args: EventData): void {
     // Get the event sender
-    var page = <pages.Page>args.object;
+    const page: Page = <Page>args.object;
     page.bindingContext = page.navigationContext;
 }
 ```
@@ -273,20 +319,24 @@ export function pageNavigatedTo(args: observable.EventData) {
 ### Navigate without history
 
 You can navigate to a page without adding this navigation to the history. Set the `backstackVisible` property of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) to `false`. If this property is set to false, then the Page will be displayed, but once navigated from it will not be able to be navigated back to.
-### Example 8:  Page navigation, without saving navigation history.__>
+### Example 8:  Page navigation, without saving navigation history.
 ``` JavaScript
-var navigationEntry = {
+const topmost = require("ui/frame").topmost;
+
+const navigationEntry = {
     moduleName: "login-page",
     backstackVisible: false
 };
-topmost.navigate(navigationEntry);
+topmost().navigate(navigationEntry);
 ```
 ``` TypeScript
-var navigationEntry = {
+import { topmost } from "ui/frame";
+
+const navigationEntry = {
     moduleName: "login-page",
     backstackVisible: false
 };
-topmost.navigate(navigationEntry);
+topmost().navigate(navigationEntry);
 ```
 
 ### Clear history
@@ -294,18 +344,22 @@ topmost.navigate(navigationEntry);
 You can navigate to a new page and decide to completely clear the entire navigation history. Set the `clearHistory` property of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) to `true`. This will prevent the user from going back to pages previously visited. This is extremely useful if you have a multiple-page authentication process and you want to clear the authentication pages once the user is successfully logged in and redirected to the start page of the application.
 ### Example 9:  Prevent user from going back using `clearHistory` property.
 ``` JavaScript
-var navigationEntry = {
+const topmost = require("ui/frame").topmost;
+
+const navigationEntry = {
     moduleName: "main-page",
     clearHistory: true
 };
-topmost.navigate(navigationEntry);
+topmost().navigate(navigationEntry);
 ```
 ``` TypeScript
-var navigationEntry = {
+import { topmost } from "ui/frame";
+
+const navigationEntry = {
     moduleName: "main-page",
     clearHistory: true
 };
-topmost.navigate(navigationEntry);
+topmost().navigate(navigationEntry);
 ```
 
 ### Navigation transitions
@@ -314,7 +368,9 @@ By default, all navigation will be animated and will use the default transition 
 
 ### Example 10:  Set up a transition property on page navigation.
 ``` JavaScript
-var navigationEntry = {
+const topmost = require("ui/frame").topmost;
+
+const navigationEntry = {
     moduleName: "main-page",
     animated: true,
     transition: {
@@ -323,10 +379,12 @@ var navigationEntry = {
         curve: "easeIn"
     }
 };
-topmost.navigate(navigationEntry);
+topmost().navigate(navigationEntry);
 ```
 ``` TypeScript
-var navigationEntry = {
+import { topmost } from "ui/frame";
+
+const navigationEntry = {
     moduleName: "main-page",
     animated: true,
     transition: {
@@ -335,7 +393,7 @@ var navigationEntry = {
         curve: "easeIn"
     }
 };
-topmost.navigate(navigationEntry);
+topmost().navigate(navigationEntry);
 ```
 
 To use one of the built-in transitions, set the `name` property of the [`NavigationTransition`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition.html) to one of the following:
@@ -360,29 +418,33 @@ The `curve` property lets you specify the animation curve of the transition. Pos
 To specify a default transition for **all** frame navigations, set the `transition` property of the frame you are navigating with.
 
  ``` JavaScript
-topmost.transition = { name: "flip" };
-topmost.navigate("main-page");
+const topmost = require("ui/frame").topmost;
+topmost().transition = { name: "flip" };
+topmost().navigate("main-page");
 ```
 ``` TypeScript
-topmost.transition = { name: "flip" };
-topmost.navigate("main-page");
+import { topmost } from "ui/frame";
+topmost().transition = { name: "flip" };
+topmost().navigate("main-page");
 ```
 
 To specify a default transition for **all** navigations across the entire app, set the **static** `defaultTransition` property of the `Frame` class.
 
  ``` JavaScript
-var frameModule = require("ui/frame");
+const frameModule = require("ui/frame");
 frameModule.Frame.defaultTransition = { name: "fade" };
 ```
 ``` TypeScript
-import frameModule from "ui/frame";
-frameModule.Frame.defaultTransition = { name: "fade" };
+import { Frame } from "ui/frame";
+Frame.defaultTransition = { name: "fade" };
 ```
 
 To specify different transitions for the different platforms use the `transitioniOS` and `transitionAndroid` properties of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html).
 ### Example 11:  Set up platform specific transitions.
 ``` JavaScript
-var navigationEntry = {
+const topmost = require("ui/frame").topmost;
+
+const navigationEntry = {
     moduleName: "main-page",
     animated: true,
     transitioniOS: {
@@ -396,10 +458,12 @@ var navigationEntry = {
         curve: "easeOut"
     }
 };
-topmost.navigate(navigationEntry);
+topmost().navigate(navigationEntry);
 ```
 ``` TypeScript
-var navigationEntry = {
+import { topmost } from "ui/frame";
+
+const navigationEntry = {
     moduleName: "main-page",
     animated: true,
     transitioniOS: {
@@ -413,24 +477,26 @@ var navigationEntry = {
         curve: "easeOut"
     }
 };
-topmost.navigate(navigationEntry);
+topmost().navigate(navigationEntry);
 ```
 
 ### Custom transitions
 Instead of setting the `name` property to one of the predefined transitions, you can set the `instance` property of the [`NavigationTransition`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition.html) to an instance of a class that inherits from [`Transition`](http://docs.nativescript.org/api-reference/classes/_ui_transition_.transition.html). You can create your own custom user-defined transition by writing platform-specific code to animate the transition. To do that you need to inherit from the [`Transition`](http://docs.nativescript.org/api-reference/classes/_ui_transition_.transition.html) class and override one method for each platform. Since there will be platform-specific code, you need to separate your code into two separate files. Here is an example of a custom transition that shrinks the disappearing page while expanding the appearing page by using a scale affine transform.
 
+>  Note: Since the example uses native APIs you have to add a dev dependency to `tns-platform-declarations` with TypeScript enabled project. For more information, see the [Intellisense and access to native APIs via TypeScript](./accessing-native-apis-with-javascript.md) section.
+
 ### Example 12:  Create your own custom transition.
 `custom-transition.android.js/ts`
 ``` JavaScript
-var transition = require("ui/transition");
-var floatType = java.lang.Float.class.getField("TYPE").get(null);
-var CustomTransition = (function (_super) {
+const transition = require("ui/transition");
+const floatType = java.lang.Float.class.getField("TYPE").get(null);
+const CustomTransition = (function (_super) {
     __extends(CustomTransition, _super);
     function CustomTransition() {
         _super.apply(this, arguments);
     }
-    CustomTransition.prototype.createAndroidAnimator = function (transitionType) {
-        var scaleValues = java.lang.reflect.Array.newInstance(floatType, 2);
+    CustomTransition.prototype.createAndroidAnimator = (transitionType) => {
+        const scaleValues = java.lang.reflect.Array.newInstance(floatType, 2);
         switch (transitionType) {
             case transition.AndroidTransitionType.enter:
             case transition.AndroidTransitionType.popEnter:
@@ -443,12 +509,12 @@ var CustomTransition = (function (_super) {
                 scaleValues[1] = 0;
                 break;
         }
-        var objectAnimators = java.lang.reflect.Array.newInstance(android.animation.Animator.class, 2);
+        const objectAnimators = java.lang.reflect.Array.newInstance(android.animation.Animator.class, 2);
         objectAnimators[0] = android.animation.ObjectAnimator.ofFloat(null, "scaleX", scaleValues);
         objectAnimators[1] = android.animation.ObjectAnimator.ofFloat(null, "scaleY", scaleValues);
-        var animatorSet = new android.animation.AnimatorSet();
+        const animatorSet = new android.animation.AnimatorSet();
         animatorSet.playTogether(objectAnimators);
-        var duration = this.getDuration();
+        const duration = this.getDuration();
         if (duration !== undefined) {
             animatorSet.setDuration(duration);
         }
@@ -460,38 +526,35 @@ var CustomTransition = (function (_super) {
 exports.CustomTransition = CustomTransition;
 ```
 ``` TypeScript
-import transition from "ui/transition";
-import platform from "platform";
-
-var floatType = java.lang.Float.class.getField("TYPE").get(null);
-
-export class CustomTransition extends transition.Transition {
+import { Transition, AndroidTransitionType } from "tns-core-modules/ui/transition";
+export class CustomTransition extends Transition {
     public createAndroidAnimator(transitionType: string): android.animation.Animator {
-        var scaleValues = java.lang.reflect.Array.newInstance(floatType, 2);
+        const scaleValues = (<any>Array).create("float", 2);
         switch (transitionType) {
-            case transition.AndroidTransitionType.enter:
-            case transition.AndroidTransitionType.popEnter:
+            case AndroidTransitionType.enter:
+            case AndroidTransitionType.popEnter:
                 scaleValues[0] = 0;
                 scaleValues[1] = 1;
                 break;
-            case transition.AndroidTransitionType.exit:
-            case transition.AndroidTransitionType.popExit:
+            case AndroidTransitionType.exit:
+            case AndroidTransitionType.popExit:
                 scaleValues[0] = 1;
                 scaleValues[1] = 0;
                 break;
         }
-        var objectAnimators = java.lang.reflect.Array.newInstance(android.animation.Animator.class, 2);
+        const objectAnimators = (<any>Array).create(android.animation.Animator, 2);
         objectAnimators[0] = android.animation.ObjectAnimator.ofFloat(null, "scaleX", scaleValues);
         objectAnimators[1] = android.animation.ObjectAnimator.ofFloat(null, "scaleY", scaleValues);
-        var animatorSet = new android.animation.AnimatorSet();
+        
+        const animatorSet = new android.animation.AnimatorSet();
         animatorSet.playTogether(objectAnimators);
 
-        var duration = this.getDuration();
+        const duration = this.getDuration();
         if (duration !== undefined) {
             animatorSet.setDuration(duration);
         }
-        animatorSet.setInterpolator(this.getCurve());
 
+        animatorSet.setInterpolator(this.getCurve());
         return animatorSet;
     }
 }
@@ -499,13 +562,13 @@ export class CustomTransition extends transition.Transition {
 
 `custom-transition.ios.js/ts`
 ``` JavaScript
-var transition = require("ui/transition");
-var CustomTransition = (function (_super) {
+const transition = require("ui/transition");
+const CustomTransition = (function (_super) {
     __extends(CustomTransition, _super);
     function CustomTransition() {
         _super.apply(this, arguments);
     }
-    CustomTransition.prototype.animateIOSTransition = function (containerView, fromView, toView, operation, completion) {
+    CustomTransition.prototype.animateIOSTransition = (containerView, fromView, toView, operation, completion) => {
         toView.transform = CGAffineTransformMakeScale(0, 0);
         fromView.transform = CGAffineTransformIdentity;
         switch (operation) {
@@ -516,9 +579,9 @@ var CustomTransition = (function (_super) {
                 containerView.insertSubviewBelowSubview(toView, fromView);
                 break;
         }
-        var duration = this.getDuration();
-        var curve = this.getCurve();
-        UIView.animateWithDurationAnimationsCompletion(duration, function () {
+        const duration = this.getDuration();
+        const curve = this.getCurve();
+        UIView.animateWithDurationAnimationsCompletion(duration, () => {
             UIView.setAnimationCurve(curve);
             toView.transform = CGAffineTransformIdentity;
             fromView.transform = CGAffineTransformMakeScale(0, 0);
@@ -529,12 +592,17 @@ var CustomTransition = (function (_super) {
 exports.CustomTransition = CustomTransition;
 ```
 ``` TypeScript
-import transition from "ui/transition";
-import platform from "platform";
+import { Transition } from "tns-core-modules/ui/transition";
 
-export class CustomTransition extends transition.Transition {
+export class CustomTransition extends Transition {
     public animateIOSTransition(containerView: UIView, fromView: UIView, toView: UIView, operation: UINavigationControllerOperation, completion: (finished: boolean) => void): void {
-        toView.transform = CGAffineTransformMakeScale(0, 0);
+        const originalToViewTransform = toView.transform;
+        const originalFromViewTransform = fromView.transform;
+
+        //http://stackoverflow.com/questions/216076/uiview-scale-to-0-using-cgaffinetransformmakescale
+        const scaleTransform = CGAffineTransformMakeScale(0.0001, 0.0001);
+
+        toView.transform = scaleTransform;
         fromView.transform = CGAffineTransformIdentity;
 
         switch (operation) {
@@ -546,13 +614,17 @@ export class CustomTransition extends transition.Transition {
                 break;
         }
 
-        var duration = this.getDuration();
-        var curve = this.getCurve();
+        const duration = this.getDuration();
+        const curve = this.getCurve();
         UIView.animateWithDurationAnimationsCompletion(duration, () => {
             UIView.setAnimationCurve(curve);
             toView.transform = CGAffineTransformIdentity;
-            fromView.transform = CGAffineTransformMakeScale(0, 0);
-        }, completion);
+            fromView.transform = scaleTransform;
+        }, (finished: boolean) => {
+            toView.transform = originalToViewTransform;
+            fromView.transform = originalFromViewTransform;
+            completion(finished);
+        });
     }
 }
 ```
@@ -560,23 +632,37 @@ export class CustomTransition extends transition.Transition {
 Once you have `custom-transition.android.js/ts` and `custom-transition.ios.js/ts` created, you need to require the module and instantiate your CustomTransition, optionally passing a duration and curve to the constructor.
 
 ### Example 13:  Require the module and instantiate your custom transition.
+
+> **Tip**: Consider creating `custom-transition.d.ts` file next to `custom-transition.android.ts` and `custom-transition.ios.ts` for TypeScript enabled project:
+```TypeScript
+import { Transition } from "tns-core-modules/ui/transition";
+export class CustomTransition extends Transition {
+}
+```
+
 ```JavaScript
-var customTransition = new customTransitionModule.CustomTransition(300, "easeIn");
-var navigationEntry = {
+const topmost = require("ui/frame").topmost;
+const customTransitionModule = require("./custom-transition");
+const customTransition = new customTransitionModule.CustomTransition(300, "easeIn");
+
+const navigationEntry = {
     moduleName: "main-page",
     animated: true,
-    transition: {instance: customTransition}
+    transition: { instance: customTransition }
 };
-topmost.navigate(navigationEntry);
+topmost().navigate(navigationEntry);
 ```
 ```TypeScript
-var customTransition = new customTransitionModule.CustomTransition(300, "easeIn");
-var navigationEntry = {
+import { topmost } from "ui/frame";
+import { CustomTransition } from "./custom-transition";
+const customTransition = new CustomTransition(300, "easeIn");
+
+const navigationEntry = {
     moduleName: "main-page",
     animated: true,
-    transition: {instance: customTransition}
+    transition: { instance: customTransition }
 };
-topmost.navigate(navigationEntry);
+topmost().navigate(navigationEntry);
 ```
 
 ### Navigate back
@@ -584,10 +670,12 @@ topmost.navigate(navigationEntry);
 The topmost frame tracks the pages the user has visited in a navigation stack. To go back to a previous page, you need to use the **goBack** method of the topmost frame instance.
 
 ``` JavaScript
-topmost.goBack();
+const topmost = require("ui/frame").topmost;
+topmost().goBack();
 ```
 ``` TypeScript
-topmost.goBack();
+import { topmost } from "ui/frame";
+topmost().goBack();
 ```
 
 ### Modal pages
@@ -599,27 +687,39 @@ Use the **showModal** method of the page class to show another page as a modal d
 ### Example 14:  Receive data from the modal page.
 **main-page**
 ``` JavaScript
- var modalPageModule = "./modal-views-demo/login-page";
- var context = "some custom context";
- var fullscreen = true;
- mainPage.showModal(modalPageModule, context, function closeCallback(username, password) {
-     // Log the user in...
- }, fullscreen);
+const modalPageModule = "./modal-views-demo/login-page";
+const context = "some custom context";
+const fullscreen = true;
+ 
+function onPageLoaded(args) {
+    const mainPage = args.object;
+    mainPage.showModal(modalPageModule, context, (username, password) => {
+        // Log the user in...
+    }, fullscreen);
+}
+
+exports.onLoaded = onLoaded;
 ```
 ``` TypeScript
- var modalPageModule = "./modal-views-demo/login-page";
- var context = "some custom context";
- var fullscreen = true;
- mainPage.showModal(modalPageModule, context, function closeCallback (username: string, password: string) {
-     // Log the user in...
- }, fullscreen);
+import { EventData } from "data/observable";
+
+const modalPageModule = "./modal-views-demo/login-page";
+const context = "some custom context";
+const fullscreen = true;
+
+export function onPageLoaded(args: EventData): void {
+    const mainPage: Page = <Page>args.object;
+    mainPage.showModal(modalPageModule, context, (username: string, password: string) => {
+        // Log the user in...
+    }, fullscreen);
+}
 ```
 >  Note: Only one Modal Page could be opened in the application (For example: opening a Modal Page from another Modal Page is not supported). In case we need to open second Modal, we should close the first one and then to open the second.
 
 **login-page**
 ``` JavaScript
-var context;
-var closeCallback;
+let context;
+let closeCallback;
 function onShownModally(args) {
     context = args.context;
     closeCallback = args.closeCallback;
@@ -631,14 +731,14 @@ function onLoginButtonTap() {
 exports.onLoginButtonTap = onLoginButtonTap;
 ```
 ``` TypeScript
-var context: any;
-var closeCallback: Function;
-export function onShownModally(args: pages.ShownModallyData) {
+let context: any;
+let closeCallback: Function;
+export function onShownModally(args: pages.ShownModallyData): void {
     context = args.context;
     closeCallback = args.closeCallback;
 }
 
-export function onLoginButtonTap() {
+export function onLoginButtonTap(): void {
     closeCallback(usernameTextField.text, passwordTextField.text);
 }
 ```
