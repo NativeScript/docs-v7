@@ -40,7 +40,7 @@ To modify that template and create your own launch screen using your own assets 
 
 * **app/App_Resources/iOS/Assets.xcassets**: The resource that holds your image asset catalogs (for AppIcons, LaunchImages and LaunchScreen).
 
-* **app/App_Resources/iOS/LaunchScreen.storyboard**: Your default storyboard used for your launch screen (used in iOS versions 8, 9, 10 and 11).
+* **app/App_Resources/iOS/LaunchScreen.storyboard**: Your default storyboard used for your launch screen (used in iOS versions 8+).
 
 * **app/App_Resources/iOS/build.xcconfig**: The resource that holds the references to the assets catalogs which will be used 
 (optional: modify only if you change the name convention or introduce a new image asset catalog).
@@ -56,9 +56,9 @@ In your **app/App_Resources/iOS/Assets.xcassets** you will find the following su
 
 * **LaunchImage.launchimage**: The resource that holds the images for your launch screen images (for iOS 7 and lower versions).
 
-* **LaunchScreen.AspectFill.imageset**: The resource that holds the background image for your LaunchScreen.storyboard (for iOS 8, 9, 10 and 11).
+* **LaunchScreen.AspectFill.imageset**: The resource that holds the background image for your LaunchScreen.storyboard (for iOS versions 8+).
 
-* **LaunchScreen.Center.imageset**: The resource that holds the centered image for your LaunchScreen.storyboard (for iOS 8, 9, 10 and 11).
+* **LaunchScreen.Center.imageset**: The resource that holds the centered image for your LaunchScreen.storyboard (for iOS versions 8+).
 
 ![Default asset catalog](../img/launch-screen/ios/launch-screen-howto-001.png "Default asset catalog")
 
@@ -84,19 +84,19 @@ Close Xcode and rebuild your NativeScript app to use the new AppIcons.
 Open **LaunchImage.launchimage** and change the default launch images with your own using the proper resolution for each image (e.g., Default-568h@2x.png should be 640px x 1136px).
 If your images have different file names then open Contents.json and change the key `filename` for each image.
 
-| Device           | Image Resolution | Image name                          |
-|------------------|------------------|-------------------------------------|
-|iPhone 1g-3Gs     | 320x480          | Default.png                         |
-|iPhone 4, 4s      | 640x960          | Default@2x.png                      |
-|iPhone 5, 5c, 5s  | 640x1136         | Default-568h@2x.png                 |
-|iPhone 6s - 8     | 750x1334         | Default-667h@2x.png                 |
-|iPhone 6s Plus - 8 Plus | 1242x2208        | Default-736h@3x.png                 |
-|iPhone X     | 	1125px × 2436px         | Default-1125h.png                 |
-|iPhone X Landscape     | 	 2436px × 1125px     | Default-Landscape-X.png                 |
-|iPad, iPad 2, Mini| 768x1024         | Default-Portrait.png                |
-|iPad Landscape    | 1024x768         | Default-Landscape.png               |
-|iPad Retina       | 1536x2048        | Default-Portrait@2x.png             |
-|12.9" iPad Pro    | 2048x1536        | Default-Landscape@2x.png            |
+| Device                 | Image Resolution | Image name                 |
+|------------------------|------------------|----------------------------|
+|iPhone 1g-3Gs           | 320x480          | `Default.png`              |
+|iPhone 4, 4s            | 640x960          | `Default@2x.png`           |
+|iPhone 5, 5c, 5s        | 640x1136         | `Default-568h@2x.png`      |
+|iPhone 6s - 8           | 750x1334         | `Default-667h@2x.png`      |
+|iPhone 6s Plus - 8 Plus | 1242x2208        | `Default-736h@3x.png`      |
+|iPhone X                | 1125px × 2436px  | `Default-1125h.png`        |
+|iPhone X Landscape      | 2436px × 1125px  | `Default-Landscape-X.png`  |
+|iPad, iPad 2, Mini      | 768x1024         | `Default-Portrait.png`     |
+|iPad Landscape          | 1024x768         | `Default-Landscape.png`    |
+|iPad Retina             | 1536x2048        | `Default-Portrait@2x.png`  |
+|12.9" iPad Pro          | 2048x1536        | `Default-Landscape@2x.png` |
 
 > **Note: ** For a better understanding of the supported image resolutions for the different iOS devices, refer to [iOS Human Interface Guidelines](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1)
 or check our reference table. 
