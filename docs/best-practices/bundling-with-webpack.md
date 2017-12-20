@@ -199,7 +199,7 @@ More options for publishing an iOS application can be found in the ["Publishing 
 
 NativeScript Angular projects will also have the [`@ngtools/webpack`](https://www.npmjs.com/package/@ngtools/webpack) plugin added. The former performs Ahead-of-Time compilation and code splitting for lazily loaded modules. Also, if your application is Ahead-of-Time compiled, you won't have Angular compiler included in your bundle which results in smaller application size and improved start up time. 
 
-Ahead-of-Time compilation is not enabled by default. To enable Ahead-of-Time compilation in your porject provide `--env.aot` flag to the CLI command.
+Ahead-of-Time compilation is not enabled by default. To enable Ahead-of-Time compilation in your project provide `--env.aot` flag to the CLI command.
 
 Building with AOT on Android
 ```
