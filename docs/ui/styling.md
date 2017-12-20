@@ -203,7 +203,7 @@ NativeScript conventions make it easy to apply platform specific CSS, either via
 
 There are 4 primary ways to target styles at iOS or Android:
 
-1. Platform-specific stylesheets {% nativescript %}(`styles.ios.css`, `styles.android.css`){% endnativescript %}{% angular }(`styles.component.ios.css`, `styles.component.android.css`){% endangular %}
+1. Platform-specific stylesheets {% nativescript %}(`styles.ios.css`, `styles.android.css`){% endnativescript %}{% angular %}(`styles.component.ios.css`, `styles.component.android.css`){% endangular %}
 2. Platform-specific markup blocks (`<ios> ... </ios>`, `<android> ... </android>`)
 3. Platform-specific attributes (`<Label ios:style="..." android:style="..."`)
 4. Platform-specific CSS rules (`.ios .mystyle { ... }`, `.android .mystyle { ... }`) _[*requires plugin](https://market.nativescript.org/plugins/nativescript-platform-css)_
