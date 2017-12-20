@@ -40,7 +40,7 @@ view.backgroundColor = new Color("red");
 view.animate({ backgroundColor: new Color("green"), duration: 2000 });
 ```
 
-[Try this animation in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=5)
+[Try this animation in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=18)
 
 As _Example 2_ shows, you can express the same animation in CSS with the following definition:
 
@@ -64,7 +64,7 @@ __Example 2: Changing background color animation with CSS.__
 
 > CSS animations apply with lower precedence, like any other CSS settings, so any local values set in your element will cancel the animation.
 
-[Try this animation in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=2)
+[Try this animation in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=19)
 
 NativeScript lets you animate the following properties:
 
@@ -133,11 +133,11 @@ view.animate({
 }
 ```
 
-[Experiment with the different animation timing functions in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=6)
+[Experiment with the different animation timing functions in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=16)
 
 It is easy to create your own animation curve by passing in the X and Y components of two control points of a cubic Bezier curve (as shown in __Example 4__). Using Bezier curves is a common technique to create smooth curves in computer graphics and they are widely used in vector-based drawing tools. The values passed to the cubicBezier method control the curve shape. The animation speed will be adjusted based on the resulting path.
 
-For help finding the `cubicBezier` values you need for your custom animation timing function, use the visual tools on [cubic-bezier.com](http://cubic-bezier.com). Once you find an animation path you like, simply copy and paste the cubic bezier values and paste them in the `AnimationCurve.cubicBezier` function. Their should be four numbers (X,Y coordinates for each of the two points in the animation).
+For help finding the `cubicBezier` values you need for your custom animation timing function, use the visual tools on [cubic-bezier.com](http://cubic-bezier.com). Once you find an animation path you like, simply copy and paste the cubic bezier values and paste them in the `AnimationCurve.cubicBezier` function. There should be four numbers (X,Y coordinates for each of the two points in the animation).
 
 __Example 4: How to create own animation curve via cubic Bezier__
 
@@ -170,8 +170,4 @@ view.animate({
 
 ![bezier](../img/modules/animation/bezier.gif "Bezier")
 
-
-
- 
 More detailed examples are available on the [Animation Examples](./animation-examples.md) page.
-
