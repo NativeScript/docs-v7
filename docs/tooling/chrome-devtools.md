@@ -17,7 +17,7 @@ The article will cover the following DevTools features, what they are good for, 
 -   [Elements](#elements)
 -   [Plugin author's guide](#plugin-authors-guide)
 
-Table of supported features as of NativeScript version **3.3.0**
+Table of supported features as of NativeScript version **3.4.0**
 
 |                            | Android Chrome DevTools | iOS Safari AppInspector | iOS Chrome DevTools | VSCode Extension |
 |----------------------------|-------------------------|-------------------------|---------------------|------------------|
@@ -25,12 +25,13 @@ Table of supported features as of NativeScript version **3.3.0**
 | Console                    | ✔ | ✔ | ✔ | ✔ |
 | Resources                  | ✔ | ✔ | ✔ | not applicable |
 | Network                    | ✔ | ✔ | ✔ | not applicable |
-| Elements                   | ✔ | ✘ | ✔ | not applicable |
+| Elements (DOM)             | ✔ | ✘ | ✔ | not applicable |
+| Elements (Styles)          | ✘ | ✘ | ✘ | not applicable |
 | Memory Profiling           | ✘ | ✘ | ✘ | not applicable |
 | Timeline and CPU Profiling | ✘ | ✔ | ✘ | not applicable |
 
  > **Note:** To debug on Android: `tns debug android`;  
- To debug on iOS: `tns debug ios --chrome`
+ To debug on iOS: `tns debug ios`
 
 -----
 

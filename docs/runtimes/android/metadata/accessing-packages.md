@@ -3,6 +3,7 @@ nav-title: "Accessing APIs"
 title: "Accessing APIs"
 description: "NativeScript Android Runtime Metadata API Access"
 position: 1
+slug: accessing-android-apis
 ---
 
 # Overview
