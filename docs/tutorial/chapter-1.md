@@ -123,7 +123,8 @@ Next, open your app’s `app/app.css` and paste the following code directly belo
   to { transform: rotate(360); }
 }
 Image {
-  animation-name: spin; animation-duration: 3s;
+  animation-name: spin; 
+  animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
