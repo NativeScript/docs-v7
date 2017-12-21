@@ -176,3 +176,5 @@ The following is a list of all the people that have contributed to the NativeScr
 <!-- Note: The table above get generated with the following commands -->
 <!-- npm install -g github-contributors-list -->
 <!-- githubcontrib --owner NativeScript --repo docs --cols 6 --sortOrder desc | pbcopy -->
+
+This is a test.
