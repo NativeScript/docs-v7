@@ -201,7 +201,7 @@ After you run the app, you'll see a new button at the top of the screen. When yo
 
 Pretty cool, huh? The ability to use npm modules greatly expands the number of things you're able to do in a NativeScript app. Need to compose emails in your app? Try out the [NativeScript email plugin](https://www.npmjs.com/package/nativescript-email). Need to use the clipboard in your app? Try out the [NativeScript clipboard plugin](https://www.npmjs.com/package/nativescript-clipboard).
 
-If you're looking for NativeScript plugins start by searching both the [NativeScript Marketplace](https://market.nativescript.org). If you don't find the plugin you need, you can [request the plugin by posting in our forums](https://discourse.nativescript.org/c/plugins), or you can take a stab at [creating the plugin yourself](https://docs.nativescript.org/plugins).
+If you're looking for NativeScript plugins start by searching the [NativeScript Marketplace](https://market.nativescript.org). If you don't find the plugin you need, you can [request the plugin by posting in our forums](https://discourse.nativescript.org/c/plugins), or you can take a stab at [creating the plugin yourself](https://docs.nativescript.org/plugins).
 
 Between NativeScript modules, npm modules, and NativeScript plugins, the NativeScript framework provides a lot of functionality you can use to build your next app. However, we've yet to talk about NativeScript's most powerful feature: the ability to directly access iOS and Android APIs in TypeScript. Let's look at how it works.
 
