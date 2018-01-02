@@ -203,7 +203,7 @@ Congratulations! Feel free to [share your accomplishment on Twitter](https://twi
 > **TIP**:
 > * If you're curious about how NativeScript makes it possible to directly invoke iOS and Android APIs, you can read about [“How NativeScript Works”](http://developer.telerik.com/featured/nativescript-works/) on our blog.
 > * Remember that the [Groceries app's “end” branch](https://github.com/NativeScript/sample-Groceries/tree/end) has the final state of this tutorial. Feel free to refer back to it at any time.
-> * Advanced ListView interactions like swipe-to-delete, pull-to-refresh, as well as other components such as calendars and charts are available out-of-the-box as part of Telerik [UI For NativeScript](http://docs.telerik.com/devtools/nativescript-ui/introduction).
+> * Advanced ListView interactions like swipe-to-delete, pull-to-refresh, as well as other components such as calendars and charts are available out-of-the-box for free as part of [NativeScript UI](/ui/rich-components) suite.
 
 <div class="next-chapter-link-container">
   <a href="/tutorial/chapter-7">Continue to Chapter 7—Next Steps</a>
