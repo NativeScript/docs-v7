@@ -130,7 +130,7 @@ You can use a fake email address and password, just remember your credentials as
 
 <div class="exercise-end"></div>
 
-> **TIP**: Although our Groceries app doesn't use complex navigation strategies, you have several available to you out of the box, such as the [TabView](/ui-views#tabview) and the [SegmentedBar](/ui-views#segmentedbar). A SideDrawer component is also available for free via Telerik's [UI for NativeScript](http://docs.telerik.com/devtools/nativescript-ui/introduction) product.
+> **TIP**: Although our Groceries app doesn't use complex navigation strategies, you have several available to you out of the box, such as the [TabView](/ui-views#tabview) and the [SegmentedBar](/ui-views#segmentedbar). A [SideDrawer](/ui/rich-components#sidedrawer) component is also available for free via [NativeScript UI]((/ui/rich-components) ) suite.
 
 ## 3.3: Accessing UI components
 
