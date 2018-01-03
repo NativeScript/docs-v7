@@ -10,6 +10,8 @@ previous_url: /getting-started/hello-world
 NativeScript is a framework which enables developers to write truly native mobile applications for Android and iOS using JavaScript and CSS. Each mobile platform has its own ecosystem and offers completely different development tools and language(s) - Java for Android and Objective C (Swift) for iOS. In order to translate JavaScript code to the corresponding native APIs some kind of proxy mechanism is needed. This is exactly what the "Runtime" parts of NativeScript are responsible for. The Android Runtime may be thought of as "The Bridge" between the JavaScript and Android worlds. A NativeScript application for Android is a standard native package (apk) which besides the JavaScript files embed the runtime as well.
 
 ## Building Blocks
+![Android Runtime Diagram](../../img/ns-runtime-android.png)
+
 The Android Runtime is built on top of the following major modules:
 
 ### Google's V8 JavaScript Virtual Machine
