@@ -272,7 +272,7 @@ You can use the `icon` property to set an image instead of text for the action i
 
 You can use the `android.systemIcon` and `ios.systemIcon` properties to show system icons. If you define a system icon, it will be used instead of `icon` and `text` properties.
 
-Values for `android.systemIcon` correspond to the resources names of the built-in Android system icons. For a full list of Android drawable names, see [http://androiddrawables.com](http://androiddrawables.com).
+Values for `android.systemIcon` correspond to the resources names of the built-in Android system icons. For a full list of Android drawable names, you may visit [Android Developer Site](https://developer.android.com/reference/android/R.drawable.html).
 
 Values for `ios.systemIcon` are numbers from the [`UIBarButtonSystemItem`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItem_Class/index.html#//apple_ref/doc/uid/TP40007519-CH3-SW2) enumeration:
 
