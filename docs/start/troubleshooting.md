@@ -82,3 +82,15 @@ The package manager service found that the device didn't have enough storage spa
 ```
 
 **Solution:** Free up more space on your device/emulator.
+
+**Problem:**
+* Black screen when running AVD emulator.
+* AVD android emulator is laggy when running.
+* tns doctor not finding any problems but tns run android --timeout 300 times out with error.
+* Command gradlew.bat failed with exit code 1.
+* `tns run android` throws Java (javac) error.
+
+**Solution:**
+https://github.com/NativeScript/nativescript-cli/issues/2486#issuecomment-355299977
+
+> Solution provided by [KristiyanFxy](https://github.com/KristiyanFxy) a member of the NativeScript community.
