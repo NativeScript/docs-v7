@@ -92,12 +92,12 @@ The package manager service found that the device didn't have enough storage spa
 
 **Solution:**
 
-# 1. Black screen when running AVD emulator
+### 1. Black screen when running AVD emulator
 
-## Problem & Suspected reason
+#### Problem & Suspected reason
 When I was trying to run an android emulator using AVD Manager, as Administrator, I was getting a back screen. The reason was that I did not have all the necessary Android SDK packets. This might be because I already had Visual Studio & c# Xamarin extension installed that after running `@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://www.nativescript.org/setup/win'))"` confused the hell out of my Android emulator.
 
-## Fix
+#### Fix
 1. Run AVD Manager as Administrator
 2. Click on the Tools > Manage SDK...
 3. Make sure you have all API version 23 (at least I went for 23) mobile packets > Install the once you don't have.
@@ -119,21 +119,21 @@ When I was trying to run an android emulator using AVD Manager, as Administrator
 8. Click on Ok > Start...
 9. Profit!
 
-# 2. AVD Android emulator is laggy when running
+### 2. AVD Android emulator is laggy when running
 
-## Problem & Suspected reason
+#### Problem & Suspected reason
 My uneducated assumption in my case the problem was forcing my old CPU I5-3750k to calculate polygons which the processor is not very successful at.
 
-## Fix
+#### Fix
 1. Run AVD Manager as Administrator
 2. Click on your AVD device > Edit...
 3. Enable "Use Host GPU" (also shown on the picture above)
 4. Click "OK" > Start...
 5. Profit!
 
-# 3. `tns doctor` not finding any problems but `tns run android --timeout 300` times out with error.
+### 3. `tns doctor` not finding any problems but `tns run android --timeout 300` times out with error.
 
-## Problem & Suspected reason
+#### Problem & Suspected reason
 This was a tricky one and I have no idea what causes the problem but I have found a workaround (unless that is how NativeScript is intended to be used).
 
 Now for this to work you will need to manually start your emulator and then instruct NativeScript to run your program.
@@ -144,7 +144,7 @@ That being said, after using the workaround mentioned bellow, tns finds the emul
 ![Console command 1](34571894-c486be2c-f167-11e7-8b1a-c61b6b7b16cb.png)
 
 
-## Fix... Workaround
+#### Fix... Workaround
 
 1. Run AVD Manager as Administrator
 2. Run your Emulated Android device
@@ -156,12 +156,12 @@ That being said, after using the workaround mentioned bellow, tns finds the emul
 ![successfull build](34571454-86c04244-f166-11e7-8856-bd67ca8a2f6f.png)
 
 
-# 4. Command gradlew.bat failed with exit code 1.
+### 4. Command gradlew.bat failed with exit code 1.
 
-## Problem & Suspected reason
+#### Problem & Suspected reason
 As explained by @Plamen5kov in ticket #2092 the problem is due to conflicting jars.
 
-## Fix
+#### Fix
 Easiest fix is to build a new app from scratch and port your scripts. alternatively you can follow the steps from ticket #2092 by @Pip3r4o 
 
 1. Open package.json
@@ -170,12 +170,12 @@ Easiest fix is to build a new app from scratch and port your scripts. alternativ
 4. `tns run android`
 5. Profit!
 
-# 5. **`tns run android` throws Java (javac) error.**
+### 5. **`tns run android` throws Java (javac) error.**
 
-## ## Problem & Suspected reason
+#### ## Problem & Suspected reason
 This was caused by the installer skipping jdk8 installation because I already had it installed, unfortunately, the current installation was causing problems.
 
-## Fix
+#### Fix
 You will need to force install jdk8
 
 1. Run CMD/Bash/PS... as Administrator
@@ -184,10 +184,10 @@ You will need to force install jdk8
 3. `tns run android`
 4. Profit!
 
-# **Conclusion**
+### **Conclusion**
 The problem is with the development environment, that being said I hope my comment will help in the future others.
 
 ![successfull build 1](34573002-e05e7e98-f16a-11e7-889d-622a584ae8e0.png)
 
-> Solution provided by [KristiyanFxy](https://github.com/KristiyanFxy) a member of the NativeScript community. Link to original solution [here](https://github.com/NativeScript/nativescript-cli/issues/2486#issuecomment-355299977
+> Solution provided by [KristiyanFxy](https://github.com/KristiyanFxy) a member of the NativeScript community. Link to original solution [here.](https://github.com/NativeScript/nativescript-cli/issues/2486#issuecomment-355299977
 )
