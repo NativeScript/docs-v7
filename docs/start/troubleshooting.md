@@ -92,6 +92,9 @@ The package manager service found that the device didn't have enough storage spa
 
 **Solution:**
 
+Solution provided by [KristiyanFxy](https://github.com/KristiyanFxy) a member of the NativeScript community. Link to original solution [here.](https://github.com/NativeScript/nativescript-cli/issues/2486#issuecomment-355299977
+). The following explanation is a direct quote from his solution:
+
 ### 1. Black screen when running AVD emulator
 
 #### Problem & Suspected reason
@@ -150,7 +153,7 @@ That being said, after using the workaround mentioned bellow, tns finds the emul
 2. Run your Emulated Android device
 3. Open CMD/PS/Bash... as Administrator > CD \[project directory] > `tns run android --timeout 100`
 
-**Note:** At this point you might find that the NativeScript is running to a **"Build Error"** and it is exiting. Now... that is documented here #2092. I found that creating a fresh TNS project works best than amending package.json, but you are welcome to do either.
+**Note:** At this point you might find that the NativeScript is running to a **"Build Error"** and it is exiting. Now... that is documented here [#2092](https://github.com/NativeScript/nativescript-cli/issues/2092). I found that creating a fresh TNS project works best than amending package.json, but you are welcome to do either.
 ![build_error](34571332-19a317ae-f166-11e7-828a-fd50319cc474.JPG)
 4. Profit!
 ![successfull build](34571454-86c04244-f166-11e7-8856-bd67ca8a2f6f.png)
@@ -159,10 +162,10 @@ That being said, after using the workaround mentioned bellow, tns finds the emul
 ### 4. Command gradlew.bat failed with exit code 1.
 
 #### Problem & Suspected reason
-As explained by @Plamen5kov in ticket #2092 the problem is due to conflicting jars.
+As explained by @Plamen5kov in ticket [#2092](https://github.com/NativeScript/nativescript-cli/issues/2092) the problem is due to conflicting jars.
 
 #### Fix
-Easiest fix is to build a new app from scratch and port your scripts. alternatively you can follow the steps from ticket #2092 by @Pip3r4o 
+Easiest fix is to build a new app from scratch and port your scripts. alternatively you can follow the steps from ticket [#2092](https://github.com/NativeScript/nativescript-cli/issues/2092) by @Pip3r4o
 
 1. Open package.json
 2. Delete `"tns-android": "^2.2.0"` from Dependencies
@@ -188,6 +191,3 @@ You will need to force install jdk8
 The problem is with the development environment, that being said I hope my comment will help in the future others.
 
 ![successfull build 1](34573002-e05e7e98-f16a-11e7-889d-622a584ae8e0.png)
-
-> Solution provided by [KristiyanFxy](https://github.com/KristiyanFxy) a member of the NativeScript community. Link to original solution [here.](https://github.com/NativeScript/nativescript-cli/issues/2486#issuecomment-355299977
-)
