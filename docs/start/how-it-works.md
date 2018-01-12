@@ -21,7 +21,7 @@ The runtimes enable you to call APIs in the Android and iOS frameworks using Jav
 
 The Core Modules are there to provide the abstractions needed to access the underlying native platforms. Take the Gestures module for example. It defines a common JS API that when called from the application TypeScript/JavaScript translates to native gestures APIs calls (thanks to the Runtimes). 
 
-Another thing the Core Modules provide is the "original" NativeScript way for defining UI, data-binding, navigation. Along with it, Angular and Vue can be used as Application Framework technologies. Read more in the [Modules Documentation](../core-concepts/modules.md).
+Another thing the Core Modules provide is the "original" NativeScript way for defining UI, data-binding, navigation. Along with it, Angular and Vue can be used as Application Framework technologies. Read more in the [Modules documentation](../core-concepts/modules.md).
 
 ## NativeScript CLI
 
