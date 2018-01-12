@@ -69,6 +69,7 @@ In your project, the files for each module reside in a dedicated subdirectory in
 + [ui/layouts/grid-layout]({%ns_cookbook ui/layouts/grid-layout%}): Provides the `GridLayout` class which lets you arrange the children of the layout in a flexible grid area with columns and rows.
 + [ui/layouts/absolute-layout]({%ns_cookbook ui/layouts/absolute-layout%}): Provides the `AbsoluteLayout` class which lets you arrange the children of the layout at arbitrary positions or draw them in multiple layers.
 + [ui/layouts/wrap-layout]({%ns_cookbook ui/layouts/wrap-layout%}): Provides the `WrapLayout` class which lets you arrange the children of the layout at sequential positions from left to right and then wrap the lines of children from top to bottom.
++ [ui/layouts/dock-layout]({%ns_cookbook ui/layouts/dock-layout%}): Provides the `DocLayout` class which lets you arrange the children of the layout at top, bottom, left and right of the layout.
 
 #### Widgets
 
