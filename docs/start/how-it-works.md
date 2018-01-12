@@ -1,10 +1,9 @@
 ---
 title: How NativeScript Works
 description: NativeScript - technology stack diagram.
-position: 10
+position: 15
 publish: true
 slug: how-it-works
-previous_url: /index
 ---
 
 
