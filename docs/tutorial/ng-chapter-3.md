@@ -133,7 +133,7 @@ import { AppComponent } from "./app.component";
 export class AppModule {}
 ```
 
-> **NOTE**: You can think of the list of `imports` in an Angular module as the pieces of functionality needed to make your app work. In this case, the `NativeScriptFormsModule` makes the `[(ngModel)]` syntax work with NativeScript’s UI components. If you want to dive into exactly how Angular imports work, refer to [Angular’s documentation on modules](https://angular.io/docs/ts/latest/guide/ngmodule.html).
+> **NOTE**: You can think of the list of `imports` in an Angular module as the pieces of functionality needed to make your app work. In this case, the `NativeScriptFormsModule` makes the `[(ngModel)]` syntax work with NativeScript’s UI components. If you want to dive into exactly how Angular imports work, refer to [Angular’s documentation on modules](https://angular.io/guide/ngmodules).
 
 <div class="exercise-end"></div>
 
