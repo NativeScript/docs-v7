@@ -257,7 +257,7 @@ We have already explained how the *Bundle ID* is set in your project, how the la
 Before the build, you need to set two important things: the *Bundle Short Version String* and the *Bundle Version String*.
 
 *Bundle Short Version String* is the public version of your app. It is incremented between releases. For example: `2.1`.
-*Bundle Version String* is the internal build number. One public release usually has multiple release candidates. For example `2.1.1`, `2.1.1`, etc.
+*Bundle Version String* is the internal build number. One public release usually has multiple release candidates. For example `2.1.1`, `2.1.2`, etc.
 
 iTunes Connect has a restriction that a bundle cannot be uploaded with the same version twice, so you must increment the *Bundle Version String* with each upload.
 
