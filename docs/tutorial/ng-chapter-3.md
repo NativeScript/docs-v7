@@ -630,7 +630,7 @@ export class AppComponent {}
 
 <div class="exercise-end"></div>
 
-If you haven’t played with routing in Angular before, you can refer to [Angular’s guide on the topic](https://angular.io/docs/ts/latest/guide/router.html) for some background, but the basic concept is you need to declare a `routes` array that includes a list of all components the user can navigate to, as well as a path to use to access those components. When you need to add new routes, you import the appropriate component in `app.routing.ts`, and then include that component in the `routes` array.
+If you haven’t played with routing in Angular before, you can refer to [Angular’s guide on the topic](https://angular.io/docs/ts/latest/guide/router.html) for some background, but the basic concept is you need to declare a `routes` array that includes a list of all components the user can navigate to, as well as a path to use to access those components. When you need to add new routes, you import the appropriate component in `app.routing.ts`, and then include that component in the `routes` and `navigatableComponents` arrays.
 
 The other new concept in this example is the `<page-router-outlet>` tag, which is your app’s first directive. You can again check out Angular’s docs if you want [detailed information on what directives are and do](https://angular.io/docs/ts/latest/guide/attribute-directives.html), but the simplest way to think of a directive is as something that can affect the markup you put in your `template` — in this case `<page-router-outlet>`.
 
