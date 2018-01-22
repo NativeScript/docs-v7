@@ -19,7 +19,7 @@ previous_url: /core-concepts/releasing-apps,/core-concepts/publishing-ios-apps
 2. [Certificates, identifiers & profiles](#certificates-identifiers--profiles)
   1. [Account with Apple ID](#account-with-apple-id)
   2. [Development certificates](#development-certificates)
-  3. [Production certificates](#distribution-certificates)
+  3. [Production certificates](#distribution-provisioning-profiles)
   4. [Identifiers - App IDs](#identifiers---app-ids)
   5. [Devices](#devices)
   6. [Development provisioning profiles](#development-provisioning-profiles)
