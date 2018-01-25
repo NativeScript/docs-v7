@@ -17,8 +17,8 @@ This page contains a list of all system requirements needed to build and run Nat
 ## System Requirements
 
 * macOS Mavericks or later
-* The latest stable official release of Node.js (LTS) [6.x](https://nodejs.org/dist/latest-v6.x/) 
-* (Optional) Homebrew to simplify the installation of dependencies
+* The latest stable official release of Node.js (LTS) [8.x](https://nodejs.org/dist/latest-v8.x/). Support for Node.js 9.x is not verified. This CLI might not install or run properly. We recommend using Node.js (LTS) 8.x.
+* (Optional) [Homebrew](https://brew.sh/) to simplify the installation of dependencies
 * For iOS development
     * Latest Xcode
     * Command-line tools for Xcode
@@ -46,12 +46,12 @@ Complete the following steps to setup NativeScript on your macOS development mac
     <pre class="add-copy-button"><code class="language-terminal">ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     </code></pre>
 
-1. Install the latest Node.js [6.x](https://nodejs.org/dist/latest-v6.x/) or [7.x](https://nodejs.org/dist/latest-v7.x/) stable official release. We recommend using Node.js v6.x.
+1. Install the latest Node.js (LTS) [8.x](https://nodejs.org/dist/latest-v8.x/).
 
     <pre class="add-copy-button"><code class="language-terminal">brew update
     </code></pre>
 
-    <pre class="add-copy-button"><code class="language-terminal">brew install node@6
+    <pre class="add-copy-button"><code class="language-terminal">brew install node@8
     </code></pre>
 
 1. Install the dependencies for iOS development.
