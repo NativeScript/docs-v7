@@ -128,7 +128,7 @@ var cookie = NSHTTPCookie.cookieWithProperties(dict);
 ```Javascript
 var cookie = NSHTTPCookie.cookieWithProperties({[NSHTTPCookieDomain]:".example.com", [NSHTTPCookieName]:"cookieName", [NSHTTPCookiePath]:"/", [NSHTTPCookieValue]:"cookieValue"});
 ```
-In the second example we are passing a JSON literal to the method. **The key in JSON must be enclosed in double quotes.** **NSHTTPCookieDomain** is a variable and we need to use a [computed property name](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer) in order to have its value.
+In the second example we are passing a JSON literal to the method.**NSHTTPCookieDomain** is a variable and we need to use a [computed property name](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer) in order to have its value (otherwise we are getting *"NSHTTPCookieDomain"* as key).
 
 ## Working With Classes And Objects on Android
 
