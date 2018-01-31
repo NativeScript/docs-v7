@@ -10,7 +10,6 @@ environment: nativescript
 
 # Property System 
 
-This article contents:
 * [Prerequisites](#prerequisites)
 * [Property class](#property-class) 
 * [CssProperty class](#cssproperty-class)
@@ -20,7 +19,7 @@ This article contents:
 * [NativeView Property](#nativeview-property) 
 * [Views Lifecycle and Recycling](#views-lifecycle-and-recycling)
 * [Iterating Over View Children](#iterating-over-view-children) 
-
+* [View Class Common Methods](#view-class-common-methods)
 
 ## Prerequisites
 
@@ -142,3 +141,108 @@ Getting ViewBase children use:
 public eachChild(callback: (child: ViewBase) => boolean): void;
 ```
 This method will return all views including ViewBase. It is used by the property system to apply native setters, propagate inherited properties, apply styles, etc. In the case of TabView – this method will return TabViewItems as well so that they could be styled through CSS.
+
+## View Class Common Methods
+
+Each UI element extends the `View` class (e.g., like `StackLayout` or `Label`) and comes with a set of methods created to ease the UI development. Methods related to measuring and positioning should be called in `navigatedTo` event of the current `Page` to ensure that all layout measuring has passed.
+
+ - [`getViewById`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#getviewbyid) - Returns the child view with the specified id.
+
+ ```XML
+ <Page navigatedTo="onNavigatedTo">
+    <StackLayout id="myStack">
+        <Label text="Tap the button" />
+        <Button text="TAP" tap="{{ onTap }}" />
+        <Label id="myLabel" text="{{ message }}" />
+    </StackLayout>
+ </Page>
+ ```
+ ```TypeScript
+ export function onNavigatedTo(args: EventData) {
+    let page = <Page>args.object;
+    let stack = <StackLayout>page.getViewById("myStack"); // e.g. StackLayout<myStack>@file:///app/page.xml:2:5;
+    let label = <Label>stack.getViewById("myLabel"); // e.g. Label<myLabel>@file:///app/main-page.xml:5:9;
+ }
+ ```
+ ```JavaScript
+ function onNavigatedTo(args) {
+    var page = args.object;
+    var stack = page.getViewById("myStack"); // e.g. StackLayout<myStack>@file:///app/page.xml:2:5;
+    var label = stack.getViewById("myLabel"); // e.g. Label<myLabel>@file:///app/main-page.xml:5:9;
+ }
+ exports.onNavigatedTo = onNavigatedTo;
+ ```
+
+> **Angular Specific Note**: In Angular to use `getViewById` for root search, we might need to inject native `Page` object.
+> As an alternative, in Angular, we can get reference to the native elements using the `ViewChild` directive and the `nativeElement` property.
+ ```HTML
+ <StackLayout #myNgStack id="myStackId">
+    <Label text="Using ViewChild agains getViewById" />
+</StackLayout>
+ ```
+ ```TypeScript
+ import { ViewChild, ElementRef } from "@angular/core";
+ export class MyComponent {
+    @ViewChild("myNgStack") stackRef: ElementRef;
+    myNativeStack: StackLayout;
+
+    constructor(private _page: Page) { }
+
+    ngAfterViewInit() {
+        this._page.getViewById("myStackId");
+        this.myNativeStack = this.stackRef.nativeElement;
+        // this._page.getViewById("myStack") === this.myNativeStack
+    }
+ }
+ ```
+
+ - [`getActualSize`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#getactualsize) - Returns the actual size of the view in device-independent pixels. The returned value is of type [`Size`](https://docs.nativescript.org/api-reference/interfaces/_ui_core_view_.size).
+
+ ```TypeScript
+ let stackSize: Size = stack.getActualSize();
+ let stackWidth = stackSize.width; // e.g. 411.42857142857144 DIP
+ let stackHeight = stackSize.height; // e.g. 603.4285714285714 DIP
+ ```
+ ```JavaScript
+ var stackSize = stack.getActualSize();
+ var stackWidth = stackSize.width;
+ var stackHeight = stackSize.height;
+ ```
+
+ - [`getLocationInWindow`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#getlocationinwindow) - Returns the location of this view in the window coordinate system. The returned value is of type [`Point`](https://docs.nativescript.org/api-reference/interfaces/_ui_core_view_.point).
+ ```TypeScript
+ let locationInWindow: Point = stack.getLocationInWindow();
+ let locationWindowX = locationInWindow.x; // e.g. 10
+ let locationWindowY = locationInWindow.y; // e.g. 80
+ ```
+ ```JavaScript
+ var locationInWindow = stack.getLocationInWindow();
+ var locationWindowX = locationInWindow.x;
+ var locationWindowY = locationInWindow.y;
+ ```
+
+  - [`getLocationOnScreen`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#getlocationonscreen) - Returns the location of this view in the screen coordinate system. The returned value is of type [`Point`](https://docs.nativescript.org/api-reference/interfaces/_ui_core_view_.point).
+ ```TypeScript
+ let locationOnScreen : Point = stack.getLocationOnScreen();
+ let locScreenX = locationOnScreen.x; // e.g. 10
+ let locScreenY = locationOnScreen.y; // e.g. 67.42857142857143
+ ```
+ ```JavaScript
+ var locationOnScreen = stack.getLocationOnScreen();
+ var locScreenX = locationOnScreen.x;
+ var locScreenY = locationOnScreen.y;
+ ```
+
+  - [`getLocationRelativeTo`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#getlocationrelativeto) - Returns the location of this view against another view's coordinate system. The returned value is of type [`Point`](https://docs.nativescript.org/api-reference/interfaces/_ui_core_view_.point).
+ ```TypeScript
+ let labelLocationRelativeToStack: Point = label.getLocationRelativeTo(stack);
+ let labelRelativeX = labelLocationRelativeToStack.x;
+ let labelRelativeY = labelLocationRelativeToStack.y;
+ ```
+ ```JavaScript
+ var labelLocationRelativeToStack = label.getLocationRelativeTo(stack);
+ var labelRelativeX = labelLocationRelativeToStack.x;
+ var labelRelativeY = labelLocationRelativeToStack.y;
+ ```
+
+[API Reference for View Class](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view)
