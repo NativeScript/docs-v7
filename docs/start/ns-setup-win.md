@@ -63,7 +63,7 @@ Complete the following steps to set up NativeScript on your Windows development 
 7. Install Android virtual devices (AVDs). There are multiple ways to do it so just choose one:
     
     a. Execute the following command in Command Prompt as Administrator:
-        <pre class="add-copy-button"><code class="language-terminal">@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/NativeScript/setup-scripts/master/create-avd-script.ps1'))"</code></pre>
+        <pre class="add-copy-button"><code class="language-terminal">@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://nativescript.org/setup/win-avd'))"</code></pre>
 
     b. Use [Android Studio](https://developer.android.com/studio/index.html) and [install Android virtual devices (AVDs)](https://developer.android.com/studio/run/managing-avds.html) from there:
         
