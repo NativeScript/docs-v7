@@ -9,9 +9,8 @@ environment: nativescript
 
 #Data Binding
 
-Data binding is the process of connecting application user interface (UI) to a data object (code). It enables changes propagation by reflecting UI modifications in the code and vise versa.
+The perpose of this article is to explain what is Data Binding and how it is working in NativeScript. Also in the article could be found an samples, which demostrats different use cases of the data binding usage.
 
-> In the following article, **source** is used as any object in the code and **target** as any UI control (like TextField).
 
 * [Data flow direction](#data-flow-direction)
 * [Basic binding concepts](#basic-binding-concepts)
@@ -27,6 +26,11 @@ Data binding is the process of connecting application user interface (UI) to a d
 * [Using converters in bindings](#using-converters-in-bindings)
 * [Stop binding](#stop-binding)
 
+
+Data binding is the process of connecting application user interface (UI) to a data object (code). It enables changes propagation by reflecting UI modifications in the code and vise versa.
+
+> In the following article, **source** is used as any object in the code and **target** as any UI control (like TextField).
+
 ##Data flow direction
 
 Part of the data binding settings is the way data flows. NativeScript data binding supports the following data transmissions.
@@ -40,7 +44,7 @@ Part of the data binding settings is the way data flows. NativeScript data bindi
 Generally, almost every UI control could be bound to a data object (all NativeScript controls are created with data binding in mind). After your code has met the following requirements, you can use data-binding out of the box.
 
 * The target object has to be a successor of the **Bindable** class. All NativeScript UI controls already inherit from this class.
-* For **two-way** data binding, the target property should be to a **dependency property**.
+* For **two-way** data binding, the target property should be a **dependency property**.
 * For **one-way** binding, using a plain property is sufficient.
 * The data object should raise a **propertyChange** event for every change in the value of its property in order to notify all of the listeners interested in the change.
 
@@ -48,7 +52,7 @@ Generally, almost every UI control could be bound to a data object (all NativeSc
 
 ###Two-way binding in code
 
-The example below consists of a `Label`, `TextField` and a source property to which the UI controls are bound. The purpose will be, when the user enters an input in the `TextField`, to update the property in the code and the `Label` text. 
+The example below consists of a `Label`, `TextField` and a source property to which the UI controls are bound. The purpose of the sample is to demostrate how the `Label`'s text will be changed, while editing the input of the `TextField`. 
 
 > You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=4zwcfW&v=2) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=8gVPMi&v=4).
 
@@ -67,7 +71,7 @@ const source = fromObject({
 });
 ```
 
-Next, **target** objects are created to bind to the source property. In this case, these will be a `Label` and a `TextField`, which inherit from the `Bindable` class (as all of the UI controls do).
+Next, **target** objects are created to bind to the source property. In this case, these will be a `Label` and a `TextField`, which inherit the `Bindable` class (as all of the UI controls do).
 
 ``` JavaScript
 // create the TextField
@@ -608,4 +612,10 @@ targetTextField.unbind("text");
 targetTextField.unbind("text");
 ```
 
-You can find more information about binding in [API-Ref](http://docs.nativescript.org/api-reference/classes/_ui_core_bindable_.bindable.html). 
+**API Reference for** [Binding](http://docs.nativescript.org/api-reference/classes/_ui_core_bindable_.bindable.html). 
+
+
+### See also
+
+* [Architecture and Navigation](https://docs.nativescript.org/core-concepts/navigation)
+* [Page Module](https://docs.nativescript.org/cookbook/ui/page)
