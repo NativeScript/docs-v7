@@ -32,9 +32,9 @@ The \*.ios.\* and \*.android.\* naming convention should look familiar, as it's 
 
 ## 4.1: Connecting to a backend
 
-When you created your own account on the registration page, you probably noticed that data was magically going... somewhere. But there's actually no magic involved; the register page invokes a RESTful API provided by [Telerik Backend Services](http://www.telerik.com/backend-services) to register the user for the Groceries service.
+When you created your own account on the registration page, you probably noticed that data was magically going... somewhere. But there's actually no magic involved; the register page invokes a RESTful API provided by [Kinvey](https://www.kinvey.com/) to register the user for the Groceries service.
 
-> **NOTE**: You don't have to use Telerik Backend Services to hit your backend service; you can use any HTTP API in a NativeScript app. Telerik Backend Services is convenient for us to use for this tutorial because it lets us spin up HTTP endpoints quickly.
+> **NOTE**: You don't have to use Kinvey to hit your backend service; you can use any HTTP API in a NativeScript app. Kinvey is convenient for us to use for this tutorial because it lets us spin up HTTP endpoints quickly.
 
 Take a look at `app/shared/config.js`. There's only a small code snippet there, but it includes a hardcoded root path to the Groceries backend that the register page uses, and that you'll be using momentarily:
 

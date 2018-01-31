@@ -307,9 +307,9 @@ With this setup you now have a `User` class that you can share across pages in y
 
 A login screen isn’t all that useful if it doesn’t actually log users into anything. Therefore, our next task is to allow users to create and log into accounts. We’ll build this functionality as an [Angular service](https://angular.io/docs/ts/latest/guide/architecture.html#!#services), which is Angular’s mechanism for reusable classes that operate on data.
 
-For the purposes of this tutorial we prebuilt a handful of backend endpoints using [Telerik Backend Services](http://www.telerik.com/platform/backend-services), and we’ll be using those endpoints to make this app functional. Let’s see how they work.
+For the purposes of this tutorial we prebuilt a handful of backend endpoints using [Kinvey](https://www.kinvey.com/), and we’ll be using those endpoints to make this app functional. Let’s see how they work.
 
-> **NOTE**: You don't have to use Telerik Backend Services to power your app’s backend; you can use any HTTP API in a NativeScript app, including common solutions such as [Firebase](http://market.nativescript.org/plugins/nativescript-firebase) and [Couchbase](https://github.com/couchbaselabs/nativescript-couchbase). Telerik Backend Services is convenient for us to use for this tutorial because it lets us spin up HTTP endpoints quickly.
+> **NOTE**: You don't have to use Kinvey to power your app’s backend; you can use any HTTP API in a NativeScript app, including common solutions such as [Firebase](http://market.nativescript.org/plugins/nativescript-firebase) and [Couchbase](https://github.com/couchbaselabs/nativescript-couchbase). Kinvey is convenient for us to use for this tutorial because it lets us spin up HTTP endpoints quickly.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Add an Angular service
