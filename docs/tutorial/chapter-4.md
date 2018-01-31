@@ -40,8 +40,10 @@ Take a look at `app/shared/config.js`. There's only a small code snippet there, 
 
 ``` JavaScript
 module.exports = {
-    apiUrl: "https://api.everlive.com/v1/GWfRtXi1Lwt4jcqK/"
+    apiUrl: "https://baas.kinvey.com/",
+    ...
 };
+
 ```
 
 > **TIP**: `config.js` also shows a convenient pattern you can use for sharing configuration variables throughout your app.
@@ -67,23 +69,20 @@ Open `app/shared/view-models/user-view-model.js` and paste the following code di
 
 ``` JavaScript
 viewModel.login = function() {
-    return fetchModule.fetch(config.apiUrl + "oauth/token", {
+    return fetchModule.fetch(config.apiUrl + "user/" + config.appKey + "/login", {
         method: "POST",
         body: JSON.stringify({
             username: viewModel.get("email"),
-            password: viewModel.get("password"),
-            grant_type: "password"
+            password: viewModel.get("password")
         }),
-        headers: {
-            "Content-Type": "application/json"
-        }
+        headers: getCommonHeaders()
     })
     .then(handleErrors)
     .then(function(response) {
         return response.json();
     })
     .then(function(data) {
-        config.token = data.Result.access_token;
+        config.token = data._kmd.authtoken;
     });
 };
 ```
@@ -92,7 +91,7 @@ viewModel.login = function() {
 
 Let's break down what the code you just pasted in does.
 
-- You use the fetch module's `fetch()` method to POST data to the `apiUrl` stored in `shared/config.js`. The username, password and grant_type are sent to this endpoint as a JSON string. (Telerik Backend Services [requires a grant_type parameter](http://docs.telerik.com/platform/backend-services/development/rest-api/users/authenticate-user) for logins.)
+- You use the fetch module's `fetch()` method to POST data to the `apiUrl` stored in `shared/config.js`. The username and password are sent to this endpoint as a JSON string.
 
 - The `fetch()` method returns a `Promise`, which allows you to execute code after the asynchronous login either completes successfully or fails. You use this functionality to do three things (the three `then()` handlers).
     - First, you handle any errors in the HTTP response with a `handleErrors()` function defined at the bottom of `user-view-model.js`. (If you want more details on how handling HTTP response errors with `fetch()` works check out [this article](http://tjvantoll.com/2015/09/13/fetch-and-errors/).)
@@ -354,19 +353,17 @@ The last piece to make this work is actually implementing the `empty()` and `loa
 
 ``` JavaScript
 viewModel.load = function() {
-    return fetch(config.apiUrl + "Groceries", {
-        headers: {
-            "Authorization": "Bearer " + config.token
-        }
+    return fetch(baseUrl, {
+        headers: getCommonHeaders()
     })
     .then(handleErrors)
     .then(function(response) {
         return response.json();
     }).then(function(data) {
-        data.Result.forEach(function(grocery) {
+        data.forEach(function(grocery) {
             viewModel.push({
                 name: grocery.Name,
-                id: grocery.Id
+                id: grocery._id
             });
         });
     });
@@ -465,22 +462,19 @@ Finally, define that `add()` function. To do so, open `app/shared/view-models/gr
 
 ``` JavaScript
 viewModel.add = function(grocery) {
-    return fetch(config.apiUrl + "Groceries", {
+    return fetch(baseUrl, {
         method: "POST",
         body: JSON.stringify({
             Name: grocery
         }),
-        headers: {
-            "Authorization": "Bearer " + config.token,
-            "Content-Type": "application/json"
-        }
+        headers: getCommonHeaders()
     })
     .then(handleErrors)
     .then(function(response) {
         return response.json();
     })
     .then(function(data) {
-        viewModel.push({ name: grocery, id: data.Result.Id });
+        viewModel.push({ name: grocery, id: data._id });
     });
 };
 ```
