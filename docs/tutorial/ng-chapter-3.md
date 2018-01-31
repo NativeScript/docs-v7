@@ -694,8 +694,7 @@ login(user: User) {
     Config.apiUrl + "user/" + Config.appKey + "/login",
     JSON.stringify({
       username: user.email,
-      password: user.password,
-      grant_type: "password"
+      password: user.password
     }),
     { headers: this.getCommonHeaders() }
   )
