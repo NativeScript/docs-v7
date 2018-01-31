@@ -55,9 +55,9 @@ Complete the following steps to set up NativeScript on your Windows development 
 
     - Restart the command prompt.
 
-6. Install all packages for the Android SDK Platform 26, Android SDK Build-Tools 26.0.2 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages.
+6. Install all packages for the Android SDK Platform 25, Android SDK Build-Tools 25.0.2 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages.
 
-    <pre class="add-copy-button"><code class="language-terminal">"%ANDROID_HOME%\tools\bin\sdkmanager" "platform-tools" "platforms;android-26" "build-tools;26.0.2" "extras;android;m2repository" "extras;google;m2repository"
+    <pre class="add-copy-button"><code class="language-terminal">"%ANDROID_HOME%\tools\bin\sdkmanager" "platform-tools" "platforms;android-25" "build-tools;25.0.2" "extras;android;m2repository" "extras;google;m2repository"
     </code></pre>
 
 7. Install Android virtual devices (AVDs). There are multiple ways to do it so just choose one:
@@ -73,7 +73,7 @@ Complete the following steps to set up NativeScript on your Windows development 
 
     * Restart the command prompt.
     * Open Android Studio
-        > NOTE: If you see a gradle error like "Failed to find Build Tools revision 26.0.2", make sure to click on the install link and fix this error. Otherwise Tools->Android->AVD Manager might not be available.
+        > NOTE: If you see a gradle error like "Failed to find Build Tools revision 25.0.2", make sure to click on the install link and fix this error. Otherwise Tools->Android->AVD Manager might not be available.
     * Go to [Create and Manage Virtual Devices](https://developer.android.com/studio/run/managing-avds.html) 
     * Follow the steps to create and start AVD with enabled HAXM.
     
