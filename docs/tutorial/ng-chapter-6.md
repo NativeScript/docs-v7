@@ -240,13 +240,9 @@ The Groceries backend already supports deleting, but it’s up to you to impleme
 
 ``` TypeScript
 delete(id: string) {
-  let headers = new Headers();
-  headers.append("Authorization", "Bearer " + Config.token);
-  headers.append("Content-Type", "application/json");
-
   return this.http.delete(
-    Config.apiUrl + "Groceries/" + id,
-    { headers: headers }
+    this.baseUrl + "/" + id,
+    { headers: this.getCommonHeaders() }
   )
   .map(res => res.json())
   .catch(this.handleErrors);
