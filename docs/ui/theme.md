@@ -188,8 +188,8 @@ The following heading class names can be used to create headings, much like you 
 Here are a few examples for how you could use these class names.
 
 ``` XML
-<Label class="h1">This is a big heading</Label>
-<Label class="h6">This is a small heading</Label>
+<Label class="h1" text="This is a big heading"></Label>
+<Label class="h6" text="This is a small heading"></Label>
 ```
 
 ### Text
