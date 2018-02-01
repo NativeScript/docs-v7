@@ -40,8 +40,8 @@ Defining the layout of the application is also an important part of the applicat
 >
 > Accessing the native widgets might be useful when you want to use some platform-specific functionalities of the widget. You can find information about the underlying native component for each view below.
 
-Each component comes with a set of common methods availabel from the extended `View` class.
-Dedicated documentatio0n section covering the different measuring and position methods can be found [here]({%slug properties#view-class-common-methods %).
+Each component comes with a set of common methods available from the extended `View` class.
+Dedicated documentation section covering the different measuring and position methods can be found [here]({%slug properties#view-class-common-methods %).
 
 ## Button
 
