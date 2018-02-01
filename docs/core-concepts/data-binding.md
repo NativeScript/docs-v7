@@ -52,7 +52,7 @@ Generally, almost every UI control could be bound to a data object (all NativeSc
 
 ###Two-way binding in code
 
-The example below consists of a `Label`, `TextField` and a source property to which the UI controls are bound. The purpose of the sample is to demostrate how the `Label`'s text will be changed, while editing the input of the `TextField`. 
+The example below consists of a `Label`, `TextField` and a source property to which the UI controls are bound. The purpose of the sample is to demonstrate how the `Label` text is changed, while editing the input of the `TextField`. 
 
 > You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=4zwcfW&v=2) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=8gVPMi&v=4).
 
@@ -618,4 +618,3 @@ targetTextField.unbind("text");
 ### See also
 
 * [Architecture and Navigation](https://docs.nativescript.org/core-concepts/navigation)
-* [Page Module](https://docs.nativescript.org/cookbook/ui/page)
