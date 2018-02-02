@@ -5,9 +5,7 @@ position: 120
 slug: action-bar
 ---
 
-# Overview
-
-The `ActionBar` is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
+Tha article describes how to use the ActionBar component in a non-Angular NativeScript application as well as some iOS and Android specifics. All described scenarios are demonstrated with the appropriate code snippet.
 
 * [Defining The ActionBar](#defining-the-actionbar)
 * [Title](#title)
@@ -27,7 +25,7 @@ The `ActionBar` is the NativeScript common abstraction over the Android ActionBa
   * [Creating SlideDrawer Button](#creating-slidedrawer-button)
 {% angular %}  * [Adding Actions To Existing ActionBar](#adding-actions-to-existing-actionbar){% endangular %}
 
-
+The `ActionBar` is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
 
 ## Defining The ActionBar
 
@@ -526,3 +524,8 @@ class MyTextEditorComponent {
 }
 ```
 {% endangular %}
+
+### See also
+
+* [Layout Containers](https://docs.nativescript.org/ui/layout-containers)
+* [Architecture and Navigation](https://docs.nativescript.org/core-concepts/navigation)
