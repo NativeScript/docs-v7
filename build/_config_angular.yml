@@ -1,6 +1,6 @@
 # The public documentation URL, used for sitemap.xml
 url: "https://docs.nativescript.org/angular"
-destination: ./dist/angular
+destination: ./angular
 
 ## The application virtual path
 baseurl:  "/angular"

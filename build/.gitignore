@@ -9,5 +9,6 @@ site*.gz
 # We need to have a "working" folder where the Content submodule will get merged so that the files in it appear in the root:
 dist/
 snippets/
-/node_modules/
+node_modules/
 remote_repos/
+bin/
