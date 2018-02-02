@@ -9,7 +9,7 @@ environment: nativescript
 
 #Data Binding
 
-The perpose of this article is to explain what is Data Binding and how it is working in NativeScript. Also in the article could be found an samples, which demostrats different use cases of the data binding usage.
+The purpose of this article is to explain what is Data Binding and how it is working in NativeScript. Also in the article could be found samples, which demonstrates different use cases of the data binding usage.
 
 
 * [Data flow direction](#data-flow-direction)
@@ -27,7 +27,7 @@ The perpose of this article is to explain what is Data Binding and how it is wor
 * [Stop binding](#stop-binding)
 
 
-Data binding is the process of connecting application user interface (UI) to a data object (code). It enables changes propagation by reflecting UI modifications in the code and vise versa.
+Data binding is the process of connecting application user interface (UI) to a data object (code). It enables changes propagation by reflecting UI modifications in the code and vice versa.
 
 > In the following article, **source** is used as any object in the code and **target** as any UI control (like TextField).
 
