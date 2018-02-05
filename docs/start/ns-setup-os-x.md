@@ -116,6 +116,10 @@ Complete the following steps to setup NativeScript on your macOS development mac
     <pre class="add-copy-button"><code class="language-terminal">tns doctor
     </code></pre>
 
+If you see "No issues were detected" you are good to go!
+
+![NativeScript tns doctor result](../img/start/maxos-tns-doctor.png)
+
 ## What’s Next
 
 * [Return to the JavaScript tutorial](http://docs.nativescript.org/tutorial/chapter-1#11-install-nativescript-and-configure-your-environment)
