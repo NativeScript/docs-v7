@@ -137,12 +137,9 @@ Open `app/shared/view-models/grocery-list-view-model.js` and paste in the code b
 
 ``` JavaScript
 viewModel.delete = function(index) {
-    return fetch(config.apiUrl + "Groceries/" + viewModel.getItem(index).id, {
+    return fetch(baseUrl + "/" + viewModel.getItem(index).id, {
         method: "DELETE",
-        headers: {
-            "Authorization": "Bearer " + config.token,
-            "Content-Type": "application/json"
-        }
+        headers: getCommonHeaders()
     })
     .then(handleErrors)
     .then(function() {

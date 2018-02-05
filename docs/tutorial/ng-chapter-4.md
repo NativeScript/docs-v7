@@ -261,8 +261,9 @@ This creates a simple `Grocery` model object that you can use throughout your ap
 
 ``` TypeScript
 import { Injectable } from "@angular/core";
-import { Http, Headers, Response } from "@angular/http";
-import { Observable } from "rxjs/Rx";
+import { Http, Headers, Response, URLSearchParams } from "@angular/http";
+import { Observable } from "rxjs/Observable";
+import "rxjs/add/operator/catch";
 import "rxjs/add/operator/map";
 
 import { Config } from "../config";
@@ -270,24 +271,35 @@ import { Grocery } from "./grocery";
 
 @Injectable()
 export class GroceryListService {
+  baseUrl = Config.apiUrl + "appdata/" + Config.appKey + "/Groceries";
+
   constructor(private http: Http) {}
 
   load() {
-    let headers = new Headers();
-    headers.append("Authorization", "Bearer " + Config.token);
+    // Kinvey-specific syntax to sort the groceries by last modified time. Don’t worry about the details here.
+    let params = new URLSearchParams();
+    params.append("sort", "{\"_kmd.lmt\": 1}");
 
-    return this.http.get(Config.apiUrl + "Groceries", {
-      headers: headers
+    return this.http.get(this.baseUrl, {
+      headers: this.getCommonHeaders(),
+      params: params
     })
     .map(res => res.json())
     .map(data => {
       let groceryList = [];
-      data.Result.forEach((grocery) => {
-        groceryList.push(new Grocery(grocery.Id, grocery.Name));
+      data.forEach((grocery) => {
+        groceryList.push(new Grocery(grocery._id, grocery.Name));
       });
       return groceryList;
     })
     .catch(this.handleErrors);
+  }
+
+  getCommonHeaders() {
+    let headers = new Headers();
+    headers.append("Content-Type", "application/json");
+    headers.append("Authorization", "Kinvey " + Config.token);
+    return headers;
   }
 
   handleErrors(error: Response) {
@@ -509,18 +521,14 @@ To finish this example you have to define that new `add()` method. To do so, ope
 
 ``` TypeScript
 add(name: string) {
-  let headers = new Headers();
-  headers.append("Authorization", "Bearer " + Config.token);
-  headers.append("Content-Type", "application/json");
-
   return this.http.post(
-    Config.apiUrl + "Groceries",
+    this.baseUrl,
     JSON.stringify({ Name: name }),
-    { headers: headers }
+    { headers: this.getCommonHeaders() }
   )
   .map(res => res.json())
   .map(data => {
-    return new Grocery(data.Result.Id, name);
+    return new Grocery(data._id, name);
   })
   .catch(this.handleErrors);
 }
