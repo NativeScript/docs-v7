@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-VER=${Version:-`cd docs && git describe --abbrev=0 && cd..`}
+VER=${Version:-`cd docs && git describe --abbrev=0 && cd ..`}
 REGISTRY="042292518259.dkr.ecr.eu-west-1.amazonaws.com"
 DOCKER_IMAGE_URL=$REGISTRY"/nativescript/docs:"$VER
 
