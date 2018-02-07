@@ -175,7 +175,7 @@ The result is:
 
 ## iOS Specifics
 
-The default text of the button is the title of the previous page; you can change it by setting the `text` property as shown in the example `Setting the Text Title`.
+The default text of the button is the title of the previous page; you can change it by setting the `text` property as shown in the example [Setting the Text Title](#setting-the-title-text).
 In iOS, the back button is used explicitly for navigation. It navigates to the previous page and you cannot handle the `tap` event to override this behavior.
 
 If you want to place a button on the left side of the `ActionBar` and handle the tap event (e.g., show slide-out), you can use `ActionItem` with `ios.position="left"`.
