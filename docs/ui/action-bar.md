@@ -11,6 +11,7 @@ The article describes how to use the ActionBar component in a non-Angular Native
 * [Title](#title)
   * [Setting the Title Text](#setting-the-title-text)
   * [Using a Custom Title View](#using-a-custom-title-view)
+  * [Using Custom View in Action Items](#using-custom-view-in-action-items)
   * [Setting the App Icon for Android](#setting-the-app-icon-for-android)
 * [Navigation Button](#navigation-button)
   * [iOS Specifics](#ios-specifics)
@@ -109,6 +110,45 @@ The result is:
 ![title-view-android](../img/modules/action-bar/title-view-android.png "title-view-android")
 
 > **Note**: You can use CSS to style the elements inside the `titleView`.
+
+## Using Custom View in Action Items
+You could set a custom view, which will be redered instead of the ActionItem text.
+The example below demostrates, how to load to separate labels inside the item.
+
+{% nativescript %}
+```XML
+<Page>
+  <Page.actionBar>
+    <ActionBar>
+      <ActionBar.actionItems>
+			<ActionItem>
+			  <ActionItem.actionView>
+				  <StackLayout orientation="horizontal">
+				    <Label text="Green" color="green"/>
+				    <Label text="Red" color="red"/>
+				  </StackLayout>
+			  </ActionItem.actionView>
+			</ActionItem>
+      </ActionBar.actionItems>
+    </ActionBar>
+  </Page.actionBar>
+  ...
+</Page>
+```
+{% endnativescript %}
+
+{% angular %}
+```HTML
+<ActionBar title="Title">
+  <ActionItem>
+    <StackLayout orientation="horizontal">
+        <Label text="Green" color="green"></Label>
+        <Label text="Red" color="red"></Label>
+      </StackLayout>
+  </ActionItem>
+</ActionBar>
+```
+{% endangular %}
 
 {% angular %}
 > **Important**: Platform specific tags (e.g. `<ios>` and `android`) can't be used in Angular based project.
