@@ -24,9 +24,13 @@ At their basic level NativeScript plugins are simple JavaScript modules that use
 
 ```
 nativescript-hello-world/
-├── index.js
-└── package.json
+└── src
+    ├── index.js
+    └── package.json
 ```
+
+>IMPORTANT: Putting your source in sub-folder is required for local live sync debugging.  
+>Existing plugins should be updated to move their source code in to a subfolder.
 
 And here is the simplest possible implementation of that plugin.
 
@@ -60,10 +64,10 @@ There are a few things to note in this implementation.
 
 > **TIP**: Other than the `"nativescript"` key, everything about your plugin’s `package.json` file will be identical to any other npm package. Therefore, [npm own’s docs on the `package.json` file](https://docs.npmjs.com/files/package.json) is a great reference when tinkering with your NativeScript plugin’s metadata during development.
 
- To use the above plugin all you need to do is install the plugin in one of your apps.
+To use the above plugin all you need to do is install the plugin in one of your apps.
 
 ```
-tns plugin add /path/to/nativescript-hello-world
+tns plugin add /path/to/nativescript-hello-world/src
 ```
 
 > **TIP**: The `tns plugin add` command lets you install plugins from non-npm locations, such as GitHub repos and local folders. For details, run `tns plugin add --help` on your command line.
