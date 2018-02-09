@@ -66,7 +66,7 @@ Having the `npm link` set up, you can start debugging your demo project along wi
 
 ## <a name='Disabling'></a>Disabling
 
-You may want disable debugging your local code if you are done developing or have published your plugin and want to test what the rest of the world will experience when they install your public.
+You may want to disable debugging your local code if you are done developing or have published your plugin and want to test what the rest of the world will experience when they install your public plugin.
 
 To disable local live sync debugging of you plugin and install your public plugin in a demo/test app:
 
