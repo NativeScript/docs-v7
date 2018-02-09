@@ -35,9 +35,10 @@ rsync --relative -az --exclude node_modules/ \
 
 /www/docs/build/build-docs.sh
 /www/docs/build/nginx-setup.sh
-npm --prefix /www/docs/build/docs-watcher install
 
-node /www/docs/build/docs-watcher/index.js & PID="$!"
+cd /www/docs/build/docs-watcher
+npm install
+node index.js & PID="$!"
 
 while true
 do
