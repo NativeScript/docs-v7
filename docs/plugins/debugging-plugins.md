@@ -58,7 +58,7 @@ If you are using npm 4 then this will have copied your plugin's files instead of
 
 3. `npm link ../relative-path-to/your-plugin/src`
 
-Now the files under `/your-demo-or-test-folder/node_modules/your-plugin` are physically the same files that are located under `your-plugin/src`. This means that you can edit either `/your-demo-or-test-folder/node_modules/your-plugin` or ``your-plugin/src` and the changes will automatically update in the demo/test app. 
+Now the files under `/your-demo-or-test-folder/node_modules/your-plugin` are physically the same files that are located under `your-plugin/src`. This means that you can edit either `/your-demo-or-test-folder/node_modules/your-plugin` or `your-plugin/src` and the changes will automatically update in the demo/test app. 
 
 ## <a name='Debugging'></a>Debugging
 
