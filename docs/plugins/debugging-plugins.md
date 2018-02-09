@@ -52,7 +52,7 @@ To enable local live sync debugging of you plugin in a demo/test app:
 1. `cd /your-demo-or-test-folder`
 2. `tns plugin add ../relative-path-to/your-plugin/src`
 
-If you are using npm 5 then this will automatically create a `npm link` in your demo/test app's node_modules folder to point to your plugin's source code.
+If you are using npm 5 then this will automatically `npm link` your demo/test app's node_modules folder to point to your plugin's source code.
 
 If you are using npm 4 then this will have copied your plugin's files instead of linking directly to them. You will need to manually perform the following additional step(s):
 
