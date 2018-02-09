@@ -47,7 +47,7 @@ If you did not create your plugin using the [NativeScript plugin seed](https://g
 
 ## <a name='Enabling'></a>Enabling
 
-To enable local live sync debugging of you plugin in a demo/test app:
+To enable local live sync debugging of your plugin in a demo/test app:
 
 1. `cd /your-demo-or-test-folder`
 2. `tns plugin add ../relative-path-to/your-plugin/src`
@@ -68,7 +68,7 @@ Having the `npm link` set up, you can start debugging your demo project along wi
 
 You may want to disable debugging your local code if you are done developing or have published your plugin and want to test what the rest of the world will experience when they install your public plugin.
 
-To disable local live sync debugging of you plugin and install your public plugin in a demo/test app:
+To disable local live sync debugging of your plugin and install your public plugin in a demo/test app:
 
 1. `cd /your-demo-or-test-folder`
 2. `tns plugin remove your-plugin`
