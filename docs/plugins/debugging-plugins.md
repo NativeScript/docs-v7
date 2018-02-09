@@ -81,7 +81,7 @@ If you are using npm 4 then you will need to perform the following additional st
 
 Now, add back the dependency to your public plugin:
 
-4. `tns plugin add you-plugin`
+4. `tns plugin add your-plugin`
 
 ## <a name='Limitations'></a>Limitations
 
