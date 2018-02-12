@@ -13,6 +13,7 @@ MODULES_ROOT=$SCRIPT_PATH"/../../NativeScript"
 NG_ROOT=$SCRIPT_PATH"/../../nativescript-angular"
 SDK_ROOT=$SCRIPT_PATH"/../../nativescript-sdk-examples-ng"
 SIDEKICK_ROOT=$SCRIPT_PATH"/../../sidekick-docs"
+CLI_ROOT=$SCRIPT_PATH"/../../nativescript-cli"
 
 if [ -d "$ROOT" ]; then
 	rm -rf $ROOT
@@ -29,6 +30,9 @@ if [ ! -d "$WWW_ROOT" ]; then
 fi
 
 bundle config build.nokogiri --use-system-libraries
+
+cd $CLI_ROOT
+./docs/build-jekyll-md.sh
 
 cd $SIDEKICK_ROOT
 bundle install
@@ -50,7 +54,7 @@ for JEKYLL_DIR in {_assets,_includes,_layouts,_plugins,fonts,images}; do
 	rsync -a --delete $JEKYLL_DIR $CONTENT_ROOT
 done
 
-cp -R $DOCS_ROOT"/docs/./" $MODULES_ROOT"/bin/dist/cookbook" $MODULES_ROOT"/bin/dist/snippets" $NG_ROOT"/bin/dist/snippets" $SDK_ROOT"/dist/code-samples" $CONTENT_ROOT
+cp -R $DOCS_ROOT"/docs/./" $MODULES_ROOT"/bin/dist/cookbook" $MODULES_ROOT"/bin/dist/snippets" $NG_ROOT"/bin/dist/snippets" $SDK_ROOT"/dist/code-samples" $CLI_ROOT"/docs-cli" $CONTENT_ROOT
 cp $SCRIPT_PATH"/nginx.conf" $CONTENT_ROOT
 
 cd $ROOT
