@@ -135,7 +135,7 @@ There are certain limitations to keep in mind when working with workers:
 
 ## Demo projects
 
-The below-attached projects demonstrate, how we could use the multithreading functionality in non-Angular NativeScript project as well as NAtiveScript Angular one.
+The below-attached projects demonstrate, how we could use the multithreading functionality in non-Angular NativeScript project as well as NativeScript Angular one.
 
 [non-Angular NativeScript Demo](https://github.com/NativeScript/demo-workers)
 
