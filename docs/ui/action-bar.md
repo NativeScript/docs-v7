@@ -3,6 +3,7 @@ title: ActionBar
 description: Learn how to use and customize the ActionBar.
 position: 120
 slug: action-bar
+previous_url: /cookbook/ui/action-bar
 ---
 
 The article describes how to use the ActionBar component in a non-Angular NativeScript application as well as some iOS and Android specifics. All described scenarios are demonstrated with the appropriate code snippet.
