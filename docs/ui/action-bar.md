@@ -508,7 +508,7 @@ For iOS, this code adds a regular `ActionItem` with `position` set to `left`. Us
 ```XML
 <ActionBar title="SideDrawer Button">
   <android>
-    <NavigationButton icon="res://ic_menu" tap="showSlideout" />
+    <NavigationButton icon="res://ic_menu" tap="showSideDrawer" />
   </android>
   <ios>
     <ActionItem icon="res://ic_menu" ios.position="left" tap="showSideDrawer" />
