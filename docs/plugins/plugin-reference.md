@@ -53,36 +53,39 @@ NativeScript plugins which consist of one CommonJS module might have the followi
 
 ```
 my-plugin/
-├── index.js
-├── package.json
-└── platforms/
-    ├── android/
-    │   ├── res/
-    │   └── AndroidManifest.xml
-    └── ios/
-        └── Info.plist
+└── src
+    ├── index.js
+    ├── package.json
+    └── platforms/
+        ├── android/
+        │   ├── res/
+        │   └── AndroidManifest.xml
+        └── ios/
+            └── Info.plist
 ```
 
 NativeScript plugins which consist of multiple CommonJS modules might have the following directory structure.
 
 ```
 my-plugin/
-├── index.js
-├── package.json
-├── MyModule1/
-│   ├── index1.js
-│   └── package.json
-├── MyModule2/
-│   ├── index2.js
-│   └── package.json
-└── platforms/
-    ├── android/
-    │   ├── AndroidManifest.xml
-    │   └── res/
-    └── ios/
-        └── Info.plist
+└── src
+    ├── index.js
+    ├── package.json
+    ├── MyModule1/
+    │   ├── index1.js
+    │   └── package.json
+    ├── MyModule2/
+    │   ├── index2.js
+    │   └── package.json
+    └── platforms/
+        ├── android/
+        │   ├── AndroidManifest.xml
+        │   └── res/
+        └── ios/
+            └── Info.plist
 ```
 
+* `src`: Putting your source in sub-folder is required for local live sync debugging. Existing plugins should be updated to move their source code in to a subfolder.
 * `index.js`: This file is the CommonJS module which exposes the native API. You can use platform-specific `*.platform.js` files. For example: `index.ios.js` and `index.android.js`. During the plugin installation, the NativeScript CLI will copy the platform resources to the `tns_modules` subdirectory in the correct platform destination in the `platforms` directory of your project.<br/>Alternatively, you can give any name to this CommonJS module. In this case, however, you need to point to this file by setting the `main` key in the `package.json` for the plugin. For more information, see [Folders as Modules](https://nodejs.org/api/modules.html#modules_folders_as_modules).
 * `package.json`: This file contains the metadata for your plugin. It sets the supported runtimes, the plugin name and version and any dependencies. The `package.json` specification is described in detail below.
 * `platforms\android\AndroidManifest.xml`: This file describes any specific configuration changes required for your plugin to work. For example: required permissions. For more information about the format of `AndroidManifest.xml`, see [App Manifest](http://developer.android.com/guide/topics/manifest/manifest-intro.html).<br/>During build, gradle will merge the plugin `AndroidManifest.xml` with the `AndroidManifest.xml` for your project. The NativeScript CLI will not resolve any contradicting or duplicate entries during the merge. After the plugin is installed, you need to manually resolve such issues.
@@ -93,23 +96,24 @@ NativeScript plugins which contain both native Android and iOS libraries might h
 
 ```
 my-plugin/
-├── ...
-└── platforms/
-    ├── android/
-    │   ├── res/
-    │   ├── MyLibrary.jar
-    │   ├── MyLibrary.aar
-    │   ├── include.gradle
-    │   └── AndroidManifest.xml
-    └── ios/
-        ├── MyiOSFramework.framework
-        ├── build.xcconfig
-        ├── Podfile
-        ├── Info.plist
-        ├── MyStaticiOSLibrary.a
-        └── include/
-            └── MyStaticiOSLibrary/
-                └── ...
+└── src
+    ├── ...
+    └── platforms/
+        ├── android/
+        │   ├── res/
+        │   ├── MyLibrary.jar
+        │   ├── MyLibrary.aar
+        │   ├── include.gradle
+        │   └── AndroidManifest.xml
+        └── ios/
+            ├── MyiOSFramework.framework
+            ├── build.xcconfig
+            ├── Podfile
+            ├── Info.plist
+            ├── MyStaticiOSLibrary.a
+            └── include/
+                └── MyStaticiOSLibrary/
+                    └── ...
 ```
 
 * `platforms\android`: This directory contains any native Android libraries packaged as `*.jar` and `*.aar` packages. These native libraries can reside in the root of this directory or in a user-created sub-directory. During the plugin installation, the NativeScript CLI will configure the Android project in `platforms\android` to work with the plugin.
@@ -194,7 +198,7 @@ tns plugin add <Plugin>
 You can specify a plugin by name in the npm registry, local path or URL. The following are valid values for the `<Plugin>` attribute.
 
 * A `<Name>` or `<Name>@<Version>` for plugins published in the npm registry.
-* A `<Local Path>` to the directory which contains the plugin files and its `package.json` file.
+* A `<Local Path>` to the directory which contains the plugin source files and its `package.json` file.
 * A `<Local Path>` to a `.tar.gz` archive containing a directory with the plugin and its `package.json` file.
 * A `<URL>` which resolves to a `.tar.gz` archive containing a directory with the plugin and its `package.json` file.
 * A `<git Remote URL>` which resolves to a `.tar.gz` archive containing a directory with the plugin and its `package.json` file.
