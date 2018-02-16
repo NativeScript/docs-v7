@@ -1,5 +1,5 @@
 ---
-title: Application Architecture
+title: Architecture and Navigation
 description: Learn the basic application structure of NativeScript apps and how to navigate inside your app.
 position: 20
 slug: architecture
