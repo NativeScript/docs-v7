@@ -46,7 +46,8 @@ In order to start this tutorial you need to have the NativeScript CLI (command-l
 
 > **TIP**: Setting up your machine for native development can be tricky, especially if you’re new to mobile development. Here are a few tips you might find useful.
 > * You can [complete a version of this tutorial in NativeScript Playground](https://play.nativescript.org/?template=groceries-js&tutorial=groceries-js). NativeScript Playground is a browser-based environment that lets you develop apps without needing to configure your local development environment.
-> * If you get stuck going through the installation process, the [NativeScript community forum](http://forum.nativescript.org/) is a great place to get help.
+> * [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick) is a one-click setup experience for macOS, Windows, and Linux. Sidekick installs the NativeScript CLI and required dependencies for macOS and Windows - and offers starter kits, cloud-based builds for iOS and Android, and app store publishing. Install Sidekick and resume your tutorial with the CLI pre-installed for you.
+> * If you get stuck going through the installation process, the [NativeScript community forum](https://discourse.nativescript.org/c/getting-started) is a great place to get help.
 
 With that out of the way, let’s get started building apps with NativeScript!
 
