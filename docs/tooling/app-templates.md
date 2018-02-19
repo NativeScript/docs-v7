@@ -21,13 +21,15 @@ To create a new app using one of the templates, you can use the following comman
 $  tns create my-app-name --template tns-template-name
 ```
 
+> **Tip:** All of the app templates listed here are also available in [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick). In addition, Sidekick offers cloud-based builds for iOS and Android, plugin management, app store publishing, and single page templates.
+
 In the command above `tns-template-name` should be the template you wish to use. See bellow for the name of each template. 
 
 >Different versions of NativeScript can have different code in the application templates. If you create an app using an older version of the framework you might get less features from the ones included in the current NativeScript release.
 
 ## Blank
 
-<img src="https://raw.githubusercontent.com/NativeScript/template-blank/master/tools/assets/blank-ios.png" height="400"> <img src="https://raw.githubusercontent.com/NativeScript/template-blank/master/tools/assets/blank-android.png" height="400">
+<img src="https://raw.githubusercontent.com/NativeScript/template-blank/master/tools/assets/appTemplate-ios.png" style="height:400px;border:1px solid black"> <img src="https://raw.githubusercontent.com/NativeScript/template-blank/master/tools/assets/appTemplate-android.png" style="height:400px;border:1px solid black">
 
 {% nativescript %}
 `tns-template-blank` - JavaScript  
@@ -43,7 +45,7 @@ A basic template with a single page and no custom styles. Useful for when minima
 
 ## Navigation Drawer
 
-<img src="https://raw.githubusercontent.com/NativeScript/template-drawer-navigation/master/tools/assets/phone-drawer-ios.png" height="400"> <img src="https://raw.githubusercontent.com/NativeScript/template-drawer-navigation/master/tools/assets/phone-drawer-android.png" height="400">
+<img src="https://raw.githubusercontent.com/NativeScript/template-drawer-navigation/master/tools/assets/phone-drawer-ios.png" style="height:400px"> <img src="https://raw.githubusercontent.com/NativeScript/template-drawer-navigation/master/tools/assets/phone-drawer-android.png" style="height:400px">
 
 {% nativescript %}
 `tns-template-drawer-navigation` - JavaScript  
@@ -59,7 +61,7 @@ This template contains a preconfigured {% nativescript %}[SideDrawer](http://doc
 
 ## Tabs
 
-<img src="https://raw.githubusercontent.com/NativeScript/template-tab-navigation/HEAD/tools/assets/phone-tab-ios.png" height="400"> <img src="https://raw.githubusercontent.com/NativeScript/template-tab-navigation/HEAD/tools/assets/phone-tab-android.png" height="400">
+<img src="https://raw.githubusercontent.com/NativeScript/template-tab-navigation/HEAD/tools/assets/phone-tab-ios.png" style="height:400px"> <img src="https://raw.githubusercontent.com/NativeScript/template-tab-navigation/HEAD/tools/assets/phone-tab-android.png" style="height:400px">
 
 {% nativescript %}
 `tns-template-tab-navigation` - JavaScript  
@@ -75,7 +77,7 @@ This template uses a [TabView](https://docs.nativescript.org/cookbook/ui/tab-vie
 
 ## Master Detail with Firebase
 
-<img src="https://raw.githubusercontent.com/NativeScript/template-master-detail-kinvey/master/tools/assets/phone-masterDetail-ios.png" height="400"> <img src="https://raw.githubusercontent.com/NativeScript/template-master-detail-kinvey/master/tools/assets/phone-masterDetail-detail-ios.png" height="400">
+<img src="https://raw.githubusercontent.com/NativeScript/template-master-detail-kinvey/master/tools/assets/phone-masterDetail-ios.png" style="height:400px"> <img src="https://raw.githubusercontent.com/NativeScript/template-master-detail-kinvey/master/tools/assets/phone-masterDetail-detail-ios.png" style="height:400px">
 
 {% nativescript %}
 `tns-template-master-detail` - JavaScript  
@@ -91,7 +93,7 @@ This Master-Detail template is a fundamental building block for any app that dis
 
 ## Master Detail with Kinvey
 
-<img src="https://raw.githubusercontent.com/NativeScript/template-master-detail/master/tools/assets/phone-masterDetail-ios.png" height="400"> <img src="https://raw.githubusercontent.com/NativeScript/template-master-detail/master/tools/assets/phone-masterDetail-detail-ios.png" height="400">
+<img src="https://raw.githubusercontent.com/NativeScript/template-master-detail/master/tools/assets/phone-masterDetail-ios.png" style="height:400px"> <img src="https://raw.githubusercontent.com/NativeScript/template-master-detail/master/tools/assets/phone-masterDetail-detail-ios.png" style="height:400px">
 
 {% nativescript %}
 `tns-template-master-detail-kinvey` - JavaScript  
