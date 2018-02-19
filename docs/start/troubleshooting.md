@@ -11,6 +11,8 @@ previous_url: /troubleshooting
 * [Where to get help](#where-to-get-help)
 * [Known issues and limitations](#known-issues-and-limitations)
 
+> **Installation Troubles?** Try [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick) for a one-click setup experience for macOS, Windows, and Linux. Sidekick installs the NativeScript CLI and required dependencies for macOS and Windows - and offers starter kits, cloud-based builds for iOS and Android, and app store publishing.
+
 ## Where to get help
 
 The NativeScript framework has a vibrant community that’s here to help when you run into problems.
