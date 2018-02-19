@@ -28,6 +28,9 @@ previous_url: /core-concepts/publishing-android-apps
 4. [Publish](#publish)
 
 ## Overview
+
+> **Tip:** Instead of the CLI, use [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick) for easy app store publishing to both the iOS App Store and Google Play. Sidekick also offers starter kits, plugin management, and cloud-based builds for iOS and Android.
+
 You can publish a NativeScript app in *Google Play* the same way [you would release a purely native Android app](http://developer.android.com/tools/publishing/publishing_overview.html).
 
  1. Make sure that you have a `.keystore` file to sign your app with. For more information, see [How to create  a .keystore file](http://developer.android.com/tools/publishing/app-signing.html#signing-manually)?
