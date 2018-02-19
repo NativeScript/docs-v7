@@ -13,6 +13,7 @@ RUN apk add --update \
   nginx \
   nodejs \
   && rm -rf /var/cache/apk/* \
+  && npm config set cache /var --global \
   && npm install -g grunt \
   && mkdir /run/nginx \
   && chmod +x /start.sh
