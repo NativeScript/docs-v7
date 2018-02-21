@@ -13,6 +13,7 @@ MODULES_ROOT=$SCRIPT_PATH"/../../NativeScript"
 NG_ROOT=$SCRIPT_PATH"/../../nativescript-angular"
 SDK_ROOT=$SCRIPT_PATH"/../../nativescript-sdk-examples-ng"
 SIDEKICK_ROOT=$SCRIPT_PATH"/../../sidekick-docs"
+VUEJS_ROOT=$SCRIPT_PATH"/../../docs/vuejs-docs"
 
 if [ -d "$ROOT" ]; then
 	rm -rf $ROOT
@@ -33,6 +34,13 @@ bundle config build.nokogiri --use-system-libraries
 cd $SIDEKICK_ROOT
 bundle install
 jekyll build --config _config.yml
+
+cd $SCRIPT_PATH
+cp -r $SCRIPT_PATH"/_config_vuejs.yml" $SCRIPT_PATH"/_assets" $SCRIPT_PATH"/_layouts" $SCRIPT_PATH"/_plugins" $SCRIPT_PATH"/_includes" $VUEJS_ROOT
+rm $VUEJS_ROOT"/_plugins/redirect_generator.rb" $VUEJS_ROOT"/_plugins/slug.rb" $VUEJS_ROOT"/_plugins/improvethis_generator.rb"
+cd $VUEJS_ROOT
+jekyll build --config _config_vuejs.yml --verbose
+ls
 
 cd $SDK_ROOT
 ./build-docs.sh
@@ -68,5 +76,15 @@ export JEKYLL_ENV="angular"
 jekyll build --config _config_angular.yml,_config.yml
 
 cp -R $MODULES_ROOT"/bin/dist/api-reference" $SIDEKICK_ROOT"/sidekick" $WWW_ROOT
+echo "Copying vuejs: \n"
+
+cp --verbose -R $VUEJS_ROOT"/vuejs" $WWW_ROOT
+
 cp -R $NS_DIST_ROOT"/./" $WWW_ROOT
 cp -R $NG_DIST_ROOT"/./" $WWW_ROOT"/angular"
+
+cd $WWW_ROOT
+ls
+echo "Vuejs: folder"
+cd vuejs
+ls
