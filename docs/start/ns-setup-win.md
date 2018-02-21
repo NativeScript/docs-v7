@@ -94,7 +94,7 @@ Complete the following steps to set up NativeScript on your Windows development 
 
 If you see "No issues were detected" you are good to go!
 
-![NativeScript tns doctor result](../img/start/windows-tns-doctor.png)
+![NativeScript tns doctor result](../img/start/window-tns-doctor.png)
 
 ## What’s Next
 
