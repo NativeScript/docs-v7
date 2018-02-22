@@ -45,9 +45,11 @@ cp -r $SCRIPT_PATH"/_config_vuejs.yml" \
 	  $VUEJS_ROOT
 rm $VUEJS_ROOT"/_plugins/redirect_generator.rb" \
    $VUEJS_ROOT"/_plugins/slug.rb" \
-   $VUEJS_ROOT"/_plugins/improvethis_generator.rb"
+   $VUEJS_ROOT"/_plugins/snippet.rb" \
+   $VUEJS_ROOT"/_plugins/ns_cookbook.rb"
+
 cd $VUEJS_ROOT
-jekyll build --config _config_vuejs.yml --verbose
+jekyll build --config _config_vuejs.yml
 
 cd $SDK_ROOT
 ./build-docs.sh

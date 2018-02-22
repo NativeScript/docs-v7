@@ -3,13 +3,11 @@ url: "https://docs.nativescript.org"
 destination: ./vuejs
 
 ## The application virtual path
-baseurl:  ""
+baseurl:  "/vuejs"
 # Exclude files which should not be in the output
 exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, code-samples]
 ## The highlighting in the header
-nsselected: "selected"
-ngselected: ""
-
+vjsselected: "selected"
 
 flavour: "vuejs"
 
@@ -24,26 +22,8 @@ source: ./
 # Release date in the format of: YYYY-MM-DD
 release_date: "2016-11-16"
 
-navigation:
-## List your directory names and order here, like this:
-    start:
-        position: 10
-        title: "INTRODUCTION"
-        expanded: true
- 
 ## The product name
 productName: "NativeScript"
-
-## Improve This Article button-related:
-improveThis:
-    mapOfBaseUrls:
-        0:
-            matchPattern: '^/cookbook/.*'
-        1:
-            matchPattern: '^/code-samples/.*'
-        2:
-            matchPattern: '.*'
-            baseUrl: "https://github.com/NativeScript/docs/blob/master/docs/"
 
 ## Assign layout and category per different paths
 defaults:
@@ -62,6 +42,13 @@ defaults:
 assets:
     cachebust: soft
     js_compressor: uglifier
+
+## Improve This Article button-related:
+improveThis:
+    mapOfBaseUrls:
+        0:
+            matchPattern: '.*'
+            baseUrl: "https://github.com/NativeScript/docs/blob/master/vuejs-docs"
 
 ## Do not edit below this line
 safe: false
