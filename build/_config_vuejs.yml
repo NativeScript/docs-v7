@@ -1,0 +1,64 @@
+# The public documentation URL, used for sitemap.xml
+url: "https://docs.nativescript.org"
+destination: ./vuejs
+
+## The application virtual path
+baseurl:  "/vuejs"
+# Exclude files which should not be in the output
+exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, code-samples]
+## The highlighting in the header
+vjsselected: "selected"
+
+flavour: "vuejs"
+
+# The google services configuration
+google_tag_manager: GTM-W58JDD
+google_custom_search: '001595215763381649090:asl7kpbijam'
+
+## The base url of the header links
+headerbaseurl: //www.nativescript.org
+nscookbookurl: "/vuejs/"
+source: ./
+# Release date in the format of: YYYY-MM-DD
+release_date: "2016-11-16"
+
+## The product name
+productName: "NativeScript"
+
+## Assign layout and category per different paths
+defaults:
+-
+    scope:
+        path: ""
+    values:
+        layout: "page"
+        category: "default"
+
+# Aliases available in the markdown template. The below will expand {{site.foo}} to Bar in the output
+# "foo": "Bar"
+"current-version": "2.0.0"
+
+# Assets pipeline configuration
+assets:
+    cachebust: soft
+    js_compressor: uglifier
+
+## Improve This Article button-related:
+improveThis:
+    mapOfBaseUrls:
+        0:
+            matchPattern: '.*'
+            baseUrl: "https://github.com/NativeScript/docs/blob/master/vuejs-docs"
+
+## Do not edit below this line
+safe: false
+markdown: MarkdownProcessor
+kramdown:
+    toc_levels: 2..3
+    smart_quotes: ["quot", "quot", "quot", "quot"]
+    input: GFM
+
+gems:
+    - jekyll-unsanitize
+# Feedback Form Google Sheet ID
+ff-sheet-id: 1Njk-CD9m_mKw_jSRBV2p6quwEOAKRZnUPJgeUrA1ZFA
