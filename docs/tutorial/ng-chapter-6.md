@@ -24,7 +24,7 @@ You may recall from earlier chapters that the hint color on your sign up screen 
 ![Bad contrast on Android](../img/cli-getting-started/angular/chapter6/android/1.png)
 ![Bad contrast on iOS](../img/cli-getting-started/angular/chapter6/ios/1.png)
 
-At the time of this writing, NativeScript doesn’t expose a way to style a text field’s hint color through CSS—although [there is an open issue requesting the feature](https://github.com/NativeScript/NativeScript/issues/712)—however, both iOS and Android have ways to accomplish this task, and with NativeScript you have direct access to these native APIs.
+You can achieve this by using the `placeholder-color` CSS property applied on the TextField. However, both iOS and Android have native ways to accomplish this task, and with NativeScript you have direct access to these native APIs.
 
 Let’s start with iOS. If you run a [generic search for “style iOS text field hint text”](https://www.google.com/#q=style%20ios%20text%20field%20hint%20text), the first result is a [Stack Overflow post](http://stackoverflow.com/questions/1340224/iphone-uitextfield-change-placeholder-text-color) that recommends setting a `UITextField`’s `attributedPlaceholder` property. Let’s look at how to do that.
 
