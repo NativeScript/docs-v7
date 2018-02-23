@@ -22,6 +22,8 @@ source: ./
 # Release date in the format of: YYYY-MM-DD
 release_date: "2016-11-16"
 
+sideBarHidden: "hidden"
+
 ## The product name
 productName: "NativeScript"
 
