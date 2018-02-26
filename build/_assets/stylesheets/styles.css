@@ -4902,7 +4902,6 @@ pre[class*="language-"] {
   font-size: 0.9em;
 
   -moz-tab-size: 4;
-  -o-tab-size: 4;
   tab-size: 4;
 
   -webkit-hyphens: none;
@@ -4917,17 +4916,10 @@ pre[class*="language-"] {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin: .5em 0;
-  -webkit-box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
-  -moz-box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
-  box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+  box-shadow: -1px 0 0 0 #358ccb, 0 0 0 1px #dfdfdf;
   border-left: 10px solid #358ccb;
-  background-color: #fdfdfd;
-  background-image: -webkit-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
-  background-image: -moz-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
-  background-image: -ms-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
-  background-image: -o-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
-  background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
-  background-size: 3em 3em;
+  background: #fdfdfd linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+  background-size: 2.7em 2.7em;
   background-origin: content-box;
   overflow: visible;
 }
@@ -4954,10 +4946,6 @@ pre[class*="language-"] {
 :not(pre) > code[class*="language-"] {
   position: relative;
   padding: .2em;
-  -webkit-border-radius: 0.3em;
-  -moz-border-radius: 0.3em;
-  -ms-border-radius: 0.3em;
-  -o-border-radius: 0.3em;
   border-radius: 0.3em;
   color: #c92c2c;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -4973,9 +4961,7 @@ pre[class*="language-"]:after {
   left: 0.18em;
   width: 40%;
   height: 20%;
-  -webkit-box-shadow: 0px 13px 8px #979797;
-  -moz-box-shadow: 0px 13px 8px #979797;
-  box-shadow: 0px 13px 8px #979797;
+  box-shadow: 0 13px 8px #979797;
   -webkit-transform: rotate(-2deg);
   -moz-transform: rotate(-2deg);
   -ms-transform: rotate(-2deg);
@@ -5123,13 +5109,12 @@ pre[class*="language-"].line-numbers .line-numbers-rows {
 .copy-button {
   position: absolute;
   height: 1.5em;
-  top: -1.5em;
   top: calc(-1.5em - 1px);
   right: -1px;
   padding: 0 0.5em;
   background: white;
-  border: 2px solid #dfdfdf;
-  border-width: 1px 1px 0 1px;
+  border: 1px solid #dfdfdf;
+  border-bottom: 0;
   width: auto;
   margin-top: 0;
   color: #000;
@@ -5249,7 +5234,6 @@ input.gsc-search-button:focus {
   height: 18px;
   color: #494275 !important;
   background: currentColor;
-  background: -webkit-radial-gradient(0 100%, circle, transparent 19px, currentColor 20px), -webkit-radial-gradient(100% 100%, circle, transparent 19px, currentColor 20px);
   background: radial-gradient(circle at bottom left, transparent 19px, currentColor 20px), radial-gradient(circle at bottom right, transparent 19px, currentColor 20px);
   background-position: top left, top right;
   background-size: 20px 20px;
@@ -5290,12 +5274,6 @@ input.gsc-search-button:focus {
 
 .k-treeview .k-icon {
   vertical-align: top;
-}
-
-.k-top,
-.k-mid,
-.k-bot {
-  white-space: nowrap:
 }
 
 .k-treeview-lines .k-item:before {
@@ -5802,3 +5780,51 @@ html .tp-radio .radio__icon:before {
 .tp-radio .radio__input:disabled + label .radio__icon {
   border-color: rgba(0,0,0,.3);
 }
+
+/* table styling (copied from the theme.css which is not loaded anymore */
+table {
+    width: 100%;
+    margin: 20px 0;
+    text-align: left;
+    border-collapse: collapse;
+    border-bottom: 2px solid #ecf0f1;
+    font: 400 16px "Open Sans",sans-serif;
+    border-left-width: 0;
+    border-right-width: 0;
+}
+table tr {
+    border-left-width: 0;
+    border-right-width: 0;
+}
+table th {
+    padding: 6px 15px;
+    border-top: 2px solid #ecf0f1;
+    border-bottom: 2px solid #ecf0f1;
+    color: #969ea7;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    text-transform: uppercase;
+    background: #f5f7f8;
+    vertical-align: middle;
+    line-height: normal;
+    border-left-width: 0;
+    border-right-width: 0;
+}
+table td {
+    border-top: 2px solid #ecf0f1;
+    padding: 10px 15px;
+    font: inherit;
+    line-height: normal;
+    border-left-width: 0;
+    border-right-width: 0;
+}
+table td:first-child {
+    white-space: nowrap;
+}
+table td h2, table td h3, table td h4, table td h5 {
+    font-weight: 500;
+    margin: 0;
+}
+
