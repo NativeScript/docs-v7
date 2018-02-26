@@ -8,49 +8,82 @@ publish: true
 
 # Debugging Plugins
 
-Debugging a plugin is not much different than debugging a NativeScript app but needs some preparation to ease the plugin development. Before you continue, make sure you have covered the topics about [Debugging]({% slug debugging %}) and [NativeScript extension for Visual Studo Code]({% slug nativescript-extension-for-visual-studio-code %}). 
+Live sync debugging updates your demo/test app automatically in the simulator/device whenever you make a change in the plugin source code. Debugging a plugin is not much different than debugging a NativeScript app but needs some preparation to ease the plugin development. Before you continue, make sure you have covered the topics about [Debugging]({% slug debugging %}) and [NativeScript extension for Visual Studo Code]({% slug nativescript-extension-for-visual-studio-code %}). 
 
 What this article covers:
 
-* [The Problem](#Theproblem)
-* [Linking Your Plugin in the Demo App](#Linkingyourplugininthedemoapp)
+* [Setup](#Setup)
+* [Enabling](#Enabling)
 * [Debugging](#Debugging)
+* [Disabling](#Disabling)
 * [Limitations](#Limitations)
 
-##  <a name='Theproblem'></a>The Problem
+## <a name='Setup'></a>Setup
 
-Having your plugin developed separately from your plugin demo app makes debugging and development a tedious task. Relying only on the `tns plugin add\remove` commands slows down the development since on every change the commands need to be run to preview your changes in the demo app.
+Live sync debugging requires your plugin's source code to not be in the root of its home folder.
 
-What would be the ultimate goal is to be able to debug your plugin as part of the demo application with the option to make ad hoc changes in the plugin source code and preview them immediately. In addition it would be also convenient to get advantage of the live sync and have your demo automatically updated in the simulator/device when you make a change in the plugin source code.
+Bad:
+```
+nativescript-my-plugin/
+├── index.js
+└── package.json
+```
+Good:
+```
+nativescript-my-plugin/
+├── demo
+└── src
+    ├── index.js
+    └── package.json
+```
 
-##  <a name='Linkingyourplugininthedemoapp'></a>Linking Your Plugin in the Demo App
+>For the technically curious, this is because the build process will copy your plugin's source code folder, including **all** of its files, to their respective android/ios platform folder(s) prior to transpiling. If that process copied your project's root folder then it would also be copying your hidden/system (ex: .git) folders their respective android/ios platform folder(s); that would be bad.
 
-Achieving the goal descibed above is possible by using `npm link` during plugin development. 
+If you created your plugin using the [NativeScript plugin seed](https://github.com/NativeScript/nativescript-plugin-seed) then you are already set up!
 
-Boostrapping your plugin by using the [NativeScript plugin seed](https://github.com/NativeScript/nativescript-plugin-seed) links your plugin in the demo app out of the box on the `postclone` step. 
+If you did not create your plugin using the [NativeScript plugin seed](https://github.com/NativeScript/nativescript-plugin-seed) then just make sure that, per the example above, your plugin's source code is not in your project's root folder.
 
->NOTE: The instructions below are valid for npm 4 only. From npm 5 running `npm install` adds sym links by default. [Read more about `npm install`](https://docs.npmjs.com/cli/install).
->
->If you have your custom plugin structure you can still enable `npm link` by following the steps below:
->- Make sure your plugin code parent folder is different than the parent folder of your demo. See  [NativeScript plugin seed]>(https://github.com/NativeScript/nativescript-plugin-seed) for example where the plugin code is located in the `src` folder and demo is located in the `demo` folder, both on the root level. In terminal run:
->* `cd <your-plugin-folder>`
->* `npm link` to link your plugin in the global `node_modules` folder. [Read more about `npm link`](https://docs.npmjs.com/cli/link)
->* `cd <your-demo-folder>` to navigate to your demo folder
->* `npm link <your-plugin-name>`
->
->Now the files under `<your-demo-folder>/node_modules/<your-plugin-name>` are physically the same files that are located under `src`. >This means that making changes in `<your-demo-folder>/node_modules/<your-plugin-name>` will actually change the plugin source files. 
->
->If at some point you're ready with the development and want to test how your plugin behaves on running `tns plugin add/remove` you can >easily unlink your plugin by running Terminal:
->* `cd <your-demo-folder>`-
->* `npm unlink <your-plugin-name>`
->* `cd <your-plugin-folder>`
->* `npm unlink`
+>If you are debugging an existing or third party plugin, many of them may not be updated and properly structured to support live sync debugging. If a plugin's source code is in the project's root folder and not in a subfolder then you will need to move its source code out of the root folder and in to a subfolder. We encourage you to fork the plugin's original repo and create a Pull Request of your changes back to the plugin's original repo.
 
-##  <a name='Debugging'></a>Debugging
+## <a name='Enabling'></a>Enabling
+
+To enable local live sync debugging of your plugin in a demo/test app:
+
+1. `cd /your-demo-or-test-folder`
+2. `tns plugin add ../relative-path-to/your-plugin/src`
+
+If you are using npm 5 then this will automatically `npm link` your demo/test app's node_modules folder to point to your plugin's source code.
+
+If you are using npm 4 then this will have copied your plugin's files instead of linking directly to them. You will need to manually perform the following additional step(s):
+
+3. `npm link ../relative-path-to/your-plugin/src`
+
+Now the files under `/your-demo-or-test-folder/node_modules/your-plugin` are physically the same files that are located under `your-plugin/src`. This means that you can edit either `/your-demo-or-test-folder/node_modules/your-plugin` or `your-plugin/src` and the changes will automatically update in the demo/test app. 
+
+## <a name='Debugging'></a>Debugging
 
 Having the `npm link` set up, you can start debugging your demo project along with your plugin code in `node_modules` folder. Read more about [Debugging using `tns debug`]({% slug debugging %}) and [debugging using NativeScript extension for Visual Studo Code]({% slug nativescript-extension-for-visual-studio-code %}).
 
-##  <a name='Limitations'></a>Limitations
+## <a name='Disabling'></a>Disabling
+
+You may want to disable debugging your local code if you are done developing or have published your plugin and want to test what the rest of the world will experience when they install your public plugin.
+
+To disable local live sync debugging of your plugin and install your public plugin in a demo/test app:
+
+1. `cd /your-demo-or-test-folder`
+2. `tns plugin remove your-plugin`
+
+If you are using npm 5 then this will automatically call `npm unlink`.
+
+If you are using npm 4 then you will need to perform the following additional step(s):
+
+3. `npm unlink your-plugin`
+
+Now, add back the dependency to your public plugin:
+
+4. `tns plugin add your-plugin`
+
+## <a name='Limitations'></a>Limitations
 
 Using `npm link` eases the development of your plugin when you do any kind of code changes to your page templates, typescript/javascript, css files. What it won't do for you is to apply plugin changes to your demo related to:
 

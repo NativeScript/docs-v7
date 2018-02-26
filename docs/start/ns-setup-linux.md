@@ -104,6 +104,7 @@ Complete the following steps to set up NativeScript on your Linux development ma
 
 If you see "No issues were detected" you are good to go!
 
+![NativeScript tns doctor result](../img/start/linux-tns-doctor.png)
 
 ## What’s Next
 

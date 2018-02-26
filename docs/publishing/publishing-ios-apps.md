@@ -311,7 +311,8 @@ This will create an Xcode project in `platforms/ios/`. Then you may consider the
 The `platform` folder is not meant to stay in source control and you should be careful when you do modifications there.
 Rebuilds may erase your changes and you should add changed files to source control.
 
-A common pitfall, if you are using CocoaPods, is to open the Xcode project instead of the workspace.
+
+A common pitfall, if you are using CocoaPods, is to open the Xcode project instead of the workspace, so be sure to open the workspace.
 
 Once you have it open in Xcode, you have to go to your target's General settings and pick a team.
 In 'Build Settings' there should be a suitable 'iOS Developer' and 'Code Signing Identity'.

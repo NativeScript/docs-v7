@@ -51,7 +51,7 @@ None.
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
   <AbsoluteLayout width="210" height="210" backgroundColor="lightgray">
     <Label text="no margin" left="10" top="10" width="100" height="100" backgroundColor="red"/>
-    <Label text="margin=`30`" left="10" top="10" margin="30" width="100" height="90" backgroundColor="green"/>
+    <Label text="margin='30'" left="10" top="10" margin="30" width="100" height="90" backgroundColor="green"/>
   </AbsoluteLayout>
 </Page>
 ```

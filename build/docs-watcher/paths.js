@@ -12,6 +12,7 @@ module.exports.nativescriptAngularRoot = path.join(module.exports.root, "..", ".
 module.exports.sdkExamplesRoot = path.join(module.exports.root, "..", "..", "nativescript-sdk-examples-ng");
 module.exports.sidekickRoot = path.join(module.exports.root, "..", "..", "sidekick-docs");
 module.exports.cliRoot = path.join(module.exports.root, "..", "nativescript-cli");
+module.exports.vuejsRoot = path.join(module.exports.root, "..", "vuejs-docs");
 
 module.exports.sourceFilesRoot = "/root";
 module.exports.assetsPaths = [

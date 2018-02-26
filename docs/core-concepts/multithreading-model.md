@@ -132,3 +132,11 @@ There are certain limitations to keep in mind when working with workers:
  - No object transferring. If you are a web developer you may be familiar with the ArrayBuffer and MessagePort transferring support in browsers. Currently, in NativeScript there is no such concept as object transferring.
  - Currently, you can’t debug scripts running in the context of worker thread. It will be available in the future.
  - No nested workers support. We want to hear from the community if this is something we need to support.
+
+## Demo projects
+
+The below-attached projects demonstrate, how we could use the multithreading functionality in non-Angular NativeScript project as well as NativeScript Angular one.
+
+[non-Angular NativeScript Demo](https://github.com/NativeScript/demo-workers)
+
+[NativeScript Angular Demo](https://github.com/NativeScript/worker-loader)

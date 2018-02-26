@@ -35,7 +35,7 @@ The prefix of the `src` value specifies where the image will be loaded form. The
 
 * [From URL (`http://` or `https://` prefix)](#load-images-from-url)
 * [From local file system (`~/` prefix)](#load-images-from-local-file-system)
-* [From resource (`res://` prefix)](#load-images-from-resource)
+* [From resource (`res://` prefix)](#load-images-from-a-resource)
 
 You can also use the [image-source]({%ns_cookbook image-source%}) module to create an image source and manually set it to the image:
 

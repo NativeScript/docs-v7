@@ -231,7 +231,6 @@ application.on(application.uncaughtErrorEvent, function (args) {
 
 application.start({ moduleName: "main-page" });
 ```
-{% endnativescript %}
 ``` TypeScript
 import { on as applicationOn, launchEvent, suspendEvent, resumeEvent, exitEvent, lowMemoryEvent, uncaughtErrorEvent, ApplicationEventData, start as applicationStart } from "application";
 applicationOn(launchEvent, function (args: ApplicationEventData) {
@@ -295,6 +294,75 @@ applicationOn(uncaughtErrorEvent, function (args: ApplicationEventData) {
 });
 applicationStart({ moduleName: "main-page" });
 ```
+{% endnativescript %}
+{% angular %}
+```TypeScript
+import { platformNativeScriptDynamic } from "nativescript-angular/platform";
+import { AppModule } from "./app.module";
+import { on as applicationOn, launchEvent, suspendEvent, resumeEvent, exitEvent, lowMemoryEvent, uncaughtErrorEvent, ApplicationEventData, start as applicationStart } from "application";
+
+applicationOn(launchEvent, function (args: ApplicationEventData) {
+    if (args.android) {
+        // For Android applications, args.android is an android.content.Intent class.
+        console.log("Launched Android application with the following intent: " + args.android + ".");
+    } else if (args.ios !== undefined) {
+        // For iOS applications, args.ios is NSDictionary (launchOptions).
+        console.log("Launched iOS application with options: " + args.ios);
+    }
+});
+
+applicationOn(suspendEvent, function (args: ApplicationEventData) {
+    if (args.android) {
+        // For Android applications, args.android is an android activity class.
+        console.log("Activity: " + args.android);
+    } else if (args.ios) {
+        // For iOS applications, args.ios is UIApplication.
+        console.log("UIApplication: " + args.ios);
+    }
+});
+
+applicationOn(resumeEvent, function (args: ApplicationEventData) {
+    if (args.android) {
+        // For Android applications, args.android is an android activity class.
+        console.log("Activity: " + args.android);
+    } else if (args.ios) {
+        // For iOS applications, args.ios is UIApplication.
+        console.log("UIApplication: " + args.ios);
+    }
+});
+
+applicationOn(exitEvent, function (args: ApplicationEventData) {
+    if (args.android) {
+        // For Android applications, args.android is an android activity class.
+        console.log("Activity: " + args.android);
+    } else if (args.ios) {
+        // For iOS applications, args.ios is UIApplication.
+        console.log("UIApplication: " + args.ios);
+    }
+});
+
+applicationOn(lowMemoryEvent, function (args: ApplicationEventData) {
+    if (args.android) {
+        // For Android applications, args.android is an android activity class.
+        console.log("Activity: " + args.android);
+    } else if (args.ios) {
+        // For iOS applications, args.ios is UIApplication.
+        console.log("UIApplication: " + args.ios);
+    }
+});
+
+applicationOn(uncaughtErrorEvent, function (args: ApplicationEventData) {
+    if (args.android) {
+        // For Android applications, args.android is an NativeScriptError.
+        console.log("NativeScriptError: " + args.android);
+    } else if (args.ios) {
+        // For iOS applications, args.ios is NativeScriptError.
+        console.log("NativeScriptError: " + args.ios);
+    }
+});
+platformNativeScriptDynamic().bootstrapModule(AppModule);
+```
+{% endangular %}
 ## Android Activity Events
 
 NativeScript applications have the following Android specific activity events:
@@ -357,7 +425,6 @@ if (application.android) {
 
 application.start();
 ```
-{% endnativescript %}
 ``` TypeScript
 import { android, AndroidApplication, AndroidActivityBundleEventData } from "application";
 
@@ -404,7 +471,57 @@ if (android) {
 
 application.start({ moduleName: "main-page" });
 ```
+{% endnativescript %}
+{% angular %}
+```TypeScript
+import { platformNativeScriptDynamic } from "nativescript-angular/platform";
+import { AppModule } from "./app.module";
+import { android, AndroidApplication, AndroidActivityBundleEventData, AndroidActivityEventData, AndroidActivityResultEventData, AndroidActivityBackPressedEventData } from "application";
 
+// Android activity events
+if (android) {
+    android.on(AndroidApplication.activityCreatedEvent, function (args: AndroidActivityBundleEventData) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
+    });
+
+    android.on(AndroidApplication.activityDestroyedEvent, function (args: AndroidActivityEventData) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity);
+    });
+
+    android.on(AndroidApplication.activityStartedEvent, function (args: AndroidActivityEventData) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity);
+    });
+
+    android.on(AndroidApplication.activityPausedEvent, function (args: AndroidActivityEventData) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity);
+    });
+
+    android.on(AndroidApplication.activityResumedEvent, function (args: AndroidActivityEventData) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity);
+    });
+
+    android.on(AndroidApplication.activityStoppedEvent, function (args: AndroidActivityEventData) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity);
+    });
+
+    android.on(AndroidApplication.saveActivityStateEvent, function (args: AndroidActivityBundleEventData) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
+    });
+
+    android.on(AndroidApplication.activityResultEvent, function (args: AndroidActivityResultEventData) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity +
+            ", requestCode: " + args.requestCode + ", resultCode: " + args.resultCode + ", Intent: " + args.intent);
+    });
+
+    android.on(AndroidApplication.activityBackPressedEvent, function (args: AndroidActivityBackPressedEventData) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity);
+        // Set args.cancel = true to cancel back navigation and do something custom.
+    });
+}
+platformNativeScriptDynamic().bootstrapModule(AppModule);
+
+```
+{% endangular %}
 ## iOS UIApplicationDelegate
 
 Since NativeScript 1.3 you can specify custom UIApplicationDelegate for the iOS application:
@@ -432,7 +549,6 @@ var MyDelegate = (function (_super) {
 application.ios.delegate = MyDelegate;
 application.start({ moduleName: "main-page" });
 ```
-{% endnativescript %}
 ``` TypeScript
 import { ios, start as applicationStart } from "application";
 class MyDelegate extends UIResponder implements UIApplicationDelegate {
@@ -451,6 +567,32 @@ class MyDelegate extends UIResponder implements UIApplicationDelegate {
 ios.delegate = MyDelegate;
 applicationStart({ moduleName: "main-page" });
 ```
+{% endnativescript %}
+{% angular %}
+```TypeScript
+import { platformNativeScriptDynamic } from "nativescript-angular/platform";
+
+import { AppModule } from "./app.module";
+
+import { ios, start as applicationStart } from "application";
+class MyDelegate extends UIResponder implements UIApplicationDelegate {
+    public static ObjCProtocols = [UIApplicationDelegate];
+
+    applicationDidFinishLaunchingWithOptions(application: UIApplication, launchOptions: NSDictionary<any, any>): boolean {
+        console.log("applicationWillFinishLaunchingWithOptions: " + launchOptions)
+
+        return true;
+    }
+
+    applicationDidBecomeActive(application: UIApplication): void {
+        console.log("applicationDidBecomeActive: " + application)
+    }
+}
+ios.delegate = MyDelegate;
+platformNativeScriptDynamic().bootstrapModule(AppModule);
+
+```
+{% endangular %}
 > **NOTE**: If you’re using TypeScript in your NativeScript apps, you need to install the [tns-platform-declarations plugin](https://www.npmjs.com/package/tns-platform-declarations) to add typings for native iOS APIs such as `UIApplicationDelegate`.
 
 ## Persist and Restore Application Settings

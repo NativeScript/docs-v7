@@ -137,7 +137,7 @@ export class AppModule {}
 
 <div class="exercise-end"></div>
 
-At first glance the `[(ngModel)]` syntax looks more than a little odd, as it’s essentially a combination of the event and attribute binding syntax that you used in earlier examples. In the case of this example, `[(ngModel)]="email"` is shorthand for `[text]="email" (ngModelChange)="email=$event"`, which binds the email element’s `text` attribute to an `email` property and adds a `change` event handler that updates the `email` property’s value whenever the user makes a change.
+At first glance the `[(ngModel)]` syntax looks more than a little odd, as it’s essentially a combination of the event and attribute binding syntax that you used in earlier examples. In the case of this example, `[(ngModel)]="email"` is shorthand for `[text]="email" (textChange)="email=$event.object.text"`, which binds the email element’s `text` attribute to an `email` property and adds a `change` event handler that updates the `email` property’s value whenever the user makes a change.
 
 Don’t worry too much about the details of this syntax while you’re getting started. In your head you can think of `[(ngModel)]` as the way to implement two-way data binding when you need it on form controls. To show that it works, if you again modify your app’s email address and click the “Sign In” button, you’ll see the updated value in the alert as expected:
 

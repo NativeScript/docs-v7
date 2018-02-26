@@ -14,6 +14,8 @@ NG_ROOT=$SCRIPT_PATH"/../../nativescript-angular"
 SDK_ROOT=$SCRIPT_PATH"/../../nativescript-sdk-examples-ng"
 SIDEKICK_ROOT=$SCRIPT_PATH"/../../sidekick-docs"
 CLI_ROOT=$SCRIPT_PATH"/../../nativescript-cli"
+VUEJS_ROOT=$SCRIPT_PATH"/../../docs/vuejs-docs"
+
 
 if [ -d "$ROOT" ]; then
 	rm -rf $ROOT
@@ -38,6 +40,23 @@ cd $SIDEKICK_ROOT
 bundle install
 jekyll build --config _config.yml
 
+cd $SCRIPT_PATH
+
+cp -r $SCRIPT_PATH"/_config_vuejs.yml" \
+	  $SCRIPT_PATH"/_assets" \
+	  $SCRIPT_PATH"/_layouts" \
+	  $SCRIPT_PATH"/_plugins" \
+	  $SCRIPT_PATH"/_includes" \
+	  $VUEJS_ROOT
+	  
+rm $VUEJS_ROOT"/_plugins/redirect_generator.rb" \
+   $VUEJS_ROOT"/_plugins/slug.rb" \
+   $VUEJS_ROOT"/_plugins/snippet.rb" \
+   $VUEJS_ROOT"/_plugins/ns_cookbook.rb"
+
+cd $VUEJS_ROOT
+jekyll build --config _config_vuejs.yml
+
 cd $SDK_ROOT
 ./build-docs.sh
 
@@ -47,14 +66,24 @@ cd $NG_ROOT
 cd $MODULES_ROOT
 ./build-docs.sh
 
-cp $SCRIPT_PATH"/_config_angular.yml" $SCRIPT_PATH"/_config_nativescript.yml" $SCRIPT_PATH"/_config.yml" $ROOT
+cp $SCRIPT_PATH"/_config_angular.yml" \
+   $SCRIPT_PATH"/_config_nativescript.yml" \
+   $SCRIPT_PATH"/_config.yml" \
+   $ROOT
 
 cd $DOCS_ROOT"/build"
 for JEKYLL_DIR in {_assets,_includes,_layouts,_plugins,fonts,images}; do
 	rsync -a --delete $JEKYLL_DIR $CONTENT_ROOT
 done
 
-cp -R $DOCS_ROOT"/docs/./" $MODULES_ROOT"/bin/dist/cookbook" $MODULES_ROOT"/bin/dist/snippets" $NG_ROOT"/bin/dist/snippets" $SDK_ROOT"/dist/code-samples" $CLI_ROOT"/docs-cli" $CONTENT_ROOT
+cp -R $DOCS_ROOT"/docs/./" \
+	  $MODULES_ROOT"/bin/dist/cookbook" \
+	  $MODULES_ROOT"/bin/dist/snippets" \
+	  $NG_ROOT"/bin/dist/snippets" \
+	  $SDK_ROOT"/dist/code-samples" \
+	  $CLI_ROOT"/docs-cli" \
+	  $CONTENT_ROOT
+
 cp $SCRIPT_PATH"/nginx.conf" $CONTENT_ROOT
 
 cd $ROOT
@@ -71,6 +100,10 @@ jekyll build --config _config_nativescript.yml,_config.yml
 export JEKYLL_ENV="angular"
 jekyll build --config _config_angular.yml,_config.yml
 
-cp -R $MODULES_ROOT"/bin/dist/api-reference" $SIDEKICK_ROOT"/sidekick" $WWW_ROOT
+cp -R $MODULES_ROOT"/bin/dist/api-reference" \
+	  $SIDEKICK_ROOT"/sidekick" \
+	  $VUEJS_ROOT"/vuejs" \
+	  $WWW_ROOT
+
 cp -R $NS_DIST_ROOT"/./" $WWW_ROOT
 cp -R $NG_DIST_ROOT"/./" $WWW_ROOT"/angular"
