@@ -15,3 +15,5 @@ cookbook/**/*.md
 code-samples/
 # unignore angular "local" cookbook articles, having *-ng.md file names
 !cookbook/**/*-ng.md
+# ignore the cli generated content
+cli

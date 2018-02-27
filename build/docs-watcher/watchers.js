@@ -23,6 +23,10 @@ module.exports.WatcherService = class WatcherService {
 			basePath: path.normalize(paths.sdkExamplesRoot),
 			distPaths: [`${paths.sdkExamplesRoot}/dist/./code-samples`],
 			buildScript: `${paths.sdkExamplesRoot}/build-docs.sh`
+		}, {
+			basePath: path.normalize(`${paths.cliRoot}/docs`),
+			distPaths: [`${paths.cliRoot}/./docs-cli`],
+			buildScript: `${paths.cliRoot}/docs/build-jekyll-md.sh`
 		}];
 	}
 

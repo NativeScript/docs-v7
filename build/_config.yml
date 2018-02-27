@@ -52,6 +52,9 @@ navigation:
     runtimes:
         position: 100
         title: "RUNTIMES REFERENCE"
+    docs-cli:
+        position: 200
+        title: "COMMAND-LINE INTERFACE"
 
 ## The product name
 productName: "NativeScript"
@@ -64,6 +67,8 @@ improveThis:
         1:
             matchPattern: '^/code-samples/.*'
         2:
+            matchPattern: '^/docs-cli/.*'
+        3:
             matchPattern: '.*'
             baseUrl: "https://github.com/NativeScript/docs/blob/master/docs/"
 

@@ -13,7 +13,9 @@ MODULES_ROOT=$SCRIPT_PATH"/../../NativeScript"
 NG_ROOT=$SCRIPT_PATH"/../../nativescript-angular"
 SDK_ROOT=$SCRIPT_PATH"/../../nativescript-sdk-examples-ng"
 SIDEKICK_ROOT=$SCRIPT_PATH"/../../sidekick-docs"
+CLI_ROOT=$SCRIPT_PATH"/../../nativescript-cli"
 VUEJS_ROOT=$SCRIPT_PATH"/../../docs/vuejs-docs"
+
 
 if [ -d "$ROOT" ]; then
 	rm -rf $ROOT
@@ -31,6 +33,9 @@ fi
 
 bundle config build.nokogiri --use-system-libraries
 
+cd $CLI_ROOT
+./docs/build-jekyll-md.sh
+
 cd $SIDEKICK_ROOT
 bundle install
 jekyll build --config _config.yml
@@ -43,6 +48,7 @@ cp -r $SCRIPT_PATH"/_config_vuejs.yml" \
 	  $SCRIPT_PATH"/_plugins" \
 	  $SCRIPT_PATH"/_includes" \
 	  $VUEJS_ROOT
+	  
 rm $VUEJS_ROOT"/_plugins/redirect_generator.rb" \
    $VUEJS_ROOT"/_plugins/slug.rb" \
    $VUEJS_ROOT"/_plugins/snippet.rb" \
@@ -75,6 +81,7 @@ cp -R $DOCS_ROOT"/docs/./" \
 	  $MODULES_ROOT"/bin/dist/snippets" \
 	  $NG_ROOT"/bin/dist/snippets" \
 	  $SDK_ROOT"/dist/code-samples" \
+	  $CLI_ROOT"/docs-cli" \
 	  $CONTENT_ROOT
 
 cp $SCRIPT_PATH"/nginx.conf" $CONTENT_ROOT
