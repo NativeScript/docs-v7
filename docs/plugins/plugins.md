@@ -14,6 +14,8 @@ NativeScript plugins are npm packages with some added native functionality. Ther
 * [Installing Plugins](#installing-plugins)
 * [Removing Plugins](#removing-plugins)
 
+> **Tip:** Alternatively, you can search, install, and remove plugins with [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick). Sidekick also offers starter kits, single page templates, cloud-based builds for iOS and Android, and app store publishing.
+
 ## Finding plugins
 
 Because NativeScript plugins are npm packages, you can find NativeScript plugins on npm’s own site by searching for “nativescript-plugin-name”. For example a search of “nativescript accelerometer” would point you right at the [NativeScript accelerometer plugin](https://www.npmjs.com/package/nativescript-accelerometer).
