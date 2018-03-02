@@ -5782,7 +5782,7 @@ html .tp-radio .radio__icon:before {
 }
 
 /* table styling (copied from the theme.css which is not loaded anymore */
-table {
+.Section table {
     width: 100%;
     margin: 20px 0;
     text-align: left;
@@ -5792,11 +5792,13 @@ table {
     border-left-width: 0;
     border-right-width: 0;
 }
-table tr {
+
+.Section table tr {
     border-left-width: 0;
     border-right-width: 0;
 }
-table th {
+
+.Section table th {
     padding: 6px 15px;
     border-top: 2px solid #ecf0f1;
     border-bottom: 2px solid #ecf0f1;
@@ -5812,7 +5814,8 @@ table th {
     border-left-width: 0;
     border-right-width: 0;
 }
-table td {
+
+.Section table td {
     border-top: 2px solid #ecf0f1;
     padding: 10px 15px;
     font: inherit;
@@ -5820,10 +5823,11 @@ table td {
     border-left-width: 0;
     border-right-width: 0;
 }
-table td:first-child {
-    white-space: nowrap;
-}
-table td h2, table td h3, table td h4, table td h5 {
+
+.Section table td h2,
+.Section table td h3,
+.Section table td h4,
+.Section table td h5 {
     font-weight: 500;
     margin: 0;
 }
