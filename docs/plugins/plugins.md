@@ -24,9 +24,9 @@ The NativeScript team also maintains an [official marketplace](http://market.nat
 
 ![](../img/plugins/marketplace.png)
 
-If you don’t find a plugin you need try asking for help on the [NativeScript community forum](https://discourse.nativescript.org/). The NativeScript team and community may be able to help find what you’re looking for.
+If you don’t find a plugin you need try asking for help on the [NativeScript community forum](https://discourse.nativescript.org/c/plugins). The NativeScript team and community may be able to help find what you’re looking for.
 
-Also, make sure to look through the [NativeScript core modules](https://docs.nativescript.org/core-concepts/modules), which ship as a dependency of every NativeScript app. There’s a chance that the functionality you need is built in. If you’re still not finding what you need, you can request the plugin as an idea on the [NativeScript ideas portal](https://nativescript.ideas.aha.io/), or you can take a stab at [building the plugin yourself](/plugins/building-plugins/).
+Also, make sure to look through the [NativeScript core modules](https://docs.nativescript.org/core-concepts/modules), which ship as a dependency of every NativeScript app. There’s a chance that the functionality you need is built in. If you’re still not finding what you need, you can request the plugin as an idea on the [NativeScript community forum](https://discourse.nativescript.org/c/plugins), or you can take a stab at [building the plugin yourself](/plugins/building-plugins/).
 
 ## Installing Plugins
 
