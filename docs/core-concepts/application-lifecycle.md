@@ -554,7 +554,7 @@ import { ios, start as applicationStart } from "application";
 class MyDelegate extends UIResponder implements UIApplicationDelegate {
     public static ObjCProtocols = [UIApplicationDelegate];
 
-    applicationDidFinishLaunchingWithOptions(application: UIApplication, launchOptions: NSDictionary): boolean {
+    applicationDidFinishLaunchingWithOptions(application: UIApplication, launchOptions: NSDictionary<string, any>): boolean {
         console.log("applicationWillFinishLaunchingWithOptions: " + launchOptions)
 
         return true;
