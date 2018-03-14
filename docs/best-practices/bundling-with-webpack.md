@@ -417,6 +417,19 @@ const myPlugin = "my-plugin";
 global.loadModule(myPlugin);
 ```
 
+### Debugging Bundling Errors
+
+#### Javascript heap out of memory
+
+Bundle processing can consume a significant amount of memory, specically when using uglify `--env.uglify`. The default node process allocates 1.5GB memory. If you encounter issues similar to:
+`FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory`
+
+Please set the following environment variable to allocate a larger heap size before running `tns build --bundle`, e.g. to allocate 4GB memory:
+For macOS / Linux:
+`export NODE_OPTIONS=--max-old-space-size=4096`
+For Windows:
+`set NODE_OPTIONS=--max-old-space-size=4096`
+
 ### Inspecting Bundles
 
 Bundles are generated in the platform output folders. Look for the `bundle.js` and `tns-bundle.js` files in your `platforms/android/...` and `platforms/ios/...` "app" folders. You could change the destination directory by editing your configuration.
