@@ -187,7 +187,7 @@ The {% nativescript %}[HtmlView]({%ns_cookbook ui/html-view%}){% endnativescript
 
 | Android                | iOS      |
 |:-----------------------|:---------|
-| [android.widget.TextView](http://developer.android.com/reference/android/widget/TextView.html) | [UILabel](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/) |
+| [android.widget.TextView](http://developer.android.com/reference/android/widget/TextView.html) | [UITextView](https://developer.apple.com/documentation/uikit/uitextview) |
 
 ## WebView
 
