@@ -52,6 +52,48 @@ navigation:
     runtimes:
         position: 100
         title: "RUNTIMES REFERENCE"
+    "runtimes/android":
+        position: 10
+        title: "Android"
+    "runtimes/android/getting-started":
+        position: 10
+        title: "Getting started"
+    "runtimes/android/metadata":
+        position: 20
+        title: "Metadata"
+    "runtimes/android/marshalling":
+        position: 30
+        title: "Marshalling"
+    "runtimes/android/generator":
+        position: 40
+        title: "Generator"
+    "runtimes/android/plugins":
+        position: 50
+        title: "Plugins"
+    "runtimes/android/how-to":
+        position: 60
+        title: "How-To"
+    "runtimes/android/debug":
+        position: 70
+        title: "Debug"
+    "runtimes/android/advanced-topics":
+        position: 80
+        title: "Advanced topics"
+    "runtimes/ios":
+        position: 20
+        title: "iOS"
+    "runtimes/ios/getting-started":
+        position: 10
+        title: "Getting started"
+    "runtimes/ios/types":
+        position: 20
+        title: "Types"
+    "runtimes/ios/marshalling":
+        position: 30
+        title: "Marshalling"
+    "runtimes/ios/how-to":
+        position: 40
+        title: "How-To"
     docs-cli:
         position: 200
         title: "COMMAND-LINE INTERFACE"
