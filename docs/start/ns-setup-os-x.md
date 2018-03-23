@@ -74,9 +74,13 @@ Complete the following steps to setup NativeScript on your macOS development mac
 
 1. Install the dependencies for Android development.
     1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
-        1. Go to [Java SE Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and click **Download** for JDK.
-        1. In the **Java SE Development Kit** section, accept the license agreement and click the download link for macOS.
-        1. Wait for the download to complete and install the JDK.
+      
+    <pre class="add-copy-button"><code class="language-terminal">brew tap caskroom/versions
+    </code></pre>
+
+    <pre class="add-copy-button"><code class="language-terminal">brew cask install java8
+    </code></pre>
+    
     1. Set the JAVA_HOME system environment variable.
 
         <pre class="add-copy-button"><code class="language-terminal">export JAVA_HOME=$(/usr/libexec/java_home)
