@@ -9,6 +9,8 @@ slug: android-emulators
 
 Follow the official documentation on [Creating and Managing Virtual Devices](https://developer.android.com/studio/run/managing-avds.html), where the process of downloading, setting up, and using Android Emulators via Android studio is covered.
 
+* Note: if your top-level "Tools" menu does not include the "Android" option (common issue in versions >3.0.0), follow the instructions in [this stackoverflow answer](https://stackoverflow.com/questions/46948322/how-to-open-avd-manager-in-android-studio-3-0-version) to add this to the toolbar and enable the AVD Manager.
+
 
 
 
