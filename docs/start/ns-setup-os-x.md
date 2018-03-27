@@ -104,6 +104,8 @@ Complete the following steps to setup NativeScript on your macOS development mac
 
            <pre class="add-copy-button"><code class="language-terminal">$ANDROID_HOME/tools/bin/sdkmanager "tools" "platform-tools" "platforms;android-25" "build-tools;25.0.2" "extras;android;m2repository" "extras;google;m2repository"
            </code></pre>
+           
+           <blockquote><b>NOTE</b>: If you are behind a corporate proxy, you should add <code>--proxy=http --proxy_host=<your-proxy-server> --proxy_port=<your-proxy-port></code>.</blockquote>
 
 1. Setup Android Emulators (AVD) by following the article [here]({%slug android-emulators%})
 
