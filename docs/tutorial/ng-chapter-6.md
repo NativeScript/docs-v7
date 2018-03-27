@@ -215,7 +215,7 @@ On Android a translucent status bar does not take up space, so you need to add a
 
 ``` CSS
 ActionBar {
-  padding-top: 10;
+  padding-top: 24;
 }
 ```
 
