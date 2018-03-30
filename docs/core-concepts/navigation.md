@@ -495,7 +495,7 @@ const CustomTransition = (function (_super) {
     function CustomTransition() {
         _super.apply(this, arguments);
     }
-    CustomTransition.prototype.createAndroidAnimator = (transitionType) => {
+    CustomTransition.prototype.createAndroidAnimator = function(transitionType) {
         const scaleValues = java.lang.reflect.Array.newInstance(floatType, 2);
         switch (transitionType) {
             case transition.AndroidTransitionType.enter:
@@ -568,7 +568,7 @@ const CustomTransition = (function (_super) {
     function CustomTransition() {
         _super.apply(this, arguments);
     }
-    CustomTransition.prototype.animateIOSTransition = (containerView, fromView, toView, operation, completion) => {
+    CustomTransition.prototype.animateIOSTransition = function(containerView, fromView, toView, operation, completion) {
         toView.transform = CGAffineTransformMakeScale(0, 0);
         fromView.transform = CGAffineTransformIdentity;
         switch (operation) {
