@@ -692,7 +692,7 @@ const modalPageModule = "./modal-views-demo/login-page";
 const context = "some custom context";
 const fullscreen = true;
  
-function onPageLoaded(args) {
+function onLoaded(args) {
     const mainPage = args.object;
     mainPage.showModal(modalPageModule, context, (username, password) => {
         // Log the user in...
