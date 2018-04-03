@@ -10,7 +10,7 @@ To help the rest of the community review your change, please follow the instruct
 ## PR Checklist
 
 - [ ] The PR title follows our guidelines: https://github.com/NativeScript/NativeScript/blob/master/CONTRIBUTING.md#commit-messages.
-- [ ] There is an issue for the bug/feature this PR is for. To avoid wasting your time, it's best to open a suggestion issue first and wait for approval before working on it.
+- [ ] If there is an issue related with this PR, point it out here.
 
 ## What is the current state of the documentation article?
 <!-- Please describe the current behavior that you are modifying, or link to a relevant issue. -->
