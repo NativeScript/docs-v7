@@ -37,6 +37,8 @@ Devices with higher pixel density displays will decode their images larger out o
 
 - Image caching now takes into account the `decodeWidth` and `decodeHeight` values. Identical images with different decode property values will now be retrieved and saved separately in the cache. This results in better quality images - if we have a small version of the image in a master list and want to decode it with 100 x 100 DP, and then want to display it in 1000 x 1000 DP on the detail page, the detailed image will now not be blurry. This also means you can now control caching - using the same image with the same decode parameter values will still get the image from the cache.
 
+> **Important**: The properties `decodeWidth`, `decodeHeight`  will work only for Android. Setting them for our iOS images will not change the application behavour in any way.
+
 ### Using `loadMode` property
 
 With [loadMode](http://docs.nativescript.org/api-reference/modules/_ui_image_.html#loadmode) set to `async`, the image will load asynchronously meaning the UI won't block by the decoding and preloading operations. The developers can use `loadMode` on both iOS and Android.
@@ -52,9 +54,11 @@ With [loadMode](http://docs.nativescript.org/api-reference/modules/_ui_image_.ht
 
 > **Important**: When the `src` value starts with `http` it will be loaded asynchronously no matter what value is set to `loadMode`.
 
+### Using `useCache` property
+
 The `Image` module will use internal memory and disk cache, so when loaded the module stores the images in the memory cache, and when they are not needed anymore, the `Image` module saves the images in the disk cache. This way the next time the application needs the same image NativeScript will load it from memory or the disk cache. Setting property `useCache` to `false` could be used to bypass image cache and load the image as it is on the first request to the specified URL.
 
-> **Important**: The properties `decodeWidth`, `decodeHeight` and `useCache` will work only for Android. Setting them for our iOS images will not change the application behavour in any way.
+> **Important**: The property `useCache` will work only for Android. Setting it for our iOS images will not change the application behavour in any way.
 
 
 **API Reference for** [Image Module](http://docs.nativescript.org/api-reference/modules/_ui_image_.html)
