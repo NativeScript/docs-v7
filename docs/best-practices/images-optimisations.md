@@ -21,7 +21,7 @@ In contrast, when using `ImageSource` or Base64 encoded string, the Bitmap is tr
 
 > **Tip**: Use `src` property of your `Image` to set your images to avoid Out Of Memory related issues.
 
-### Using `decodeHeight` and `decodeWidth` properties (Android only)
+### Using `decodeHeight` and `decodeWidth` properties
 
 As an additional feature for Android, NativeScript supports `decodeWidth` and `decodeHeight`. These properties will **downsample** your image so that it will take less memory. 
 The goal is to avoid as much as possible out of memory exceptions caused by images being loaded into memory and at the same time display crispy images. 
