@@ -10,8 +10,13 @@ slug: images-performance
 One of the most common scenarios for modern mobile applications is to work with multiple images often in high definition formats.
 It is crucial for each mobile developer to handle memory related issues and optimize the application so it could handle large data (e.g., API call which will load hundreds of photos). 
 
-In this article, we will take a look at how Image module works in NativeScript and 
+In this article, we will take a look at how the `Image` module works in NativeScript and 
 cover the techniques that will improve Android application performance.
+
+* [Handling large images](#handling-large-images-and-avoiding-out-of-memory-exception)
+* [Using `decodeHeight` and `decodeWidth` properties](#using-decodeheight-and-decodewidth-properties)
+* [Using `loadMode` property](#using-loadmode-property)
+* [Using `useCache` property](#using-usecache-property)
 
 ## Handling large images and avoiding Out Of Memory exception
 
