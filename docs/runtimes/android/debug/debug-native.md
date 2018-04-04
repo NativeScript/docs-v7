@@ -136,6 +136,5 @@ After the folder is deleted successfully from the device, just run/debug again f
 
 # See Also
 * [Chrome DevTools reference](https://developer.chrome.com/devtools/index).
-* [Chrome DevTools in NativeScript - Overview]({% slug chrome-devtools %})
 * [JavaScript debugging](https://developer.chrome.com/devtools/docs/javascript-debugging).
 * [debugger; statement](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/debugger)
