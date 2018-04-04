@@ -98,7 +98,7 @@ If you want to stop early in the execution you can put a `debugger;` statement i
 
 >Note: always start the application before trying to if through chrome.
 
-Now you can debug both the Android Runtime through Android Studio and your business logic through Chrome-Dev-Tools.
+Now you can debug both the Android Runtime && Android Runtime Binging Generator through Android Studio and your business logic through Chrome-Dev-Tools.
 
 # Known issues:
 
