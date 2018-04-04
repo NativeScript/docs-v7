@@ -24,6 +24,9 @@ Searching for devices...
 └───┴─────────────────────────┴──────────┴───────────────────┴──────────┴───────────┘
 ```
 
+> **Tip:** Sometimes emulators take longer to start. As a recommendation and to avoid timing issues, start the emulator before executing other CLI commands.
+Once the emulator is started, leave it open to avoid the initial load time the next time you need to deploy an Android application.
+
 ## Creating Android Virtual Device via Android Studio
 
 Follow the official documentation on [Creating and Managing Virtual Devices](https://developer.android.com/studio/run/managing-avds.html), where the process of downloading, setting up, and using Android Emulators via Android studio is covered.
