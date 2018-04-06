@@ -14,7 +14,7 @@ NativeScript apps consist of pages that represent the separate application scree
 > **TIP:** Instead of multiple pages, you can have a single page with a [tab view](http://docs.nativescript.org/api-reference/classes/_ui_tab_view_.tabview.html) and different user interfaces for each tab.
 
 
-* [Page management](#page-management)
+* [Page overview](#page-overview)
     * [Define page](#define-page)
     * [Set home page](#set-home-page)
 * [Navigation](#navigation)
@@ -22,18 +22,18 @@ NativeScript apps consist of pages that represent the separate application scree
     * [Navigate by page name](#navigate-by-page-name)
     * [Navigate using a function](#navigate-using-a-function)
     * [Navigate and pass context](#navigate-and-pass-context)
-    * [Navigate and set bindingContext to the page](#navigate-and-set-bindingcontext-to-the-page)
+    * [Navigate and set bindingContext of the page](#navigate-and-set-bindingcontext-of-the-page)
     * [Navigate without history](#navigate-without-history)
+    * [Navigate back](#navigate-back)
     * [Clear history](#clear-history)
     * [Navigation transitions](#navigation-transitions)
-    * [Navigate back](#navigate-back)
     * [Modal pages](#modal-pages)
 * [Supporting multiple screens](#supporting-multiple-screens)
     * [Screen size qualifiers](#screen-size-qualifiers)
     * [Platform qualifiers](#platform-qualifiers)
     * [Orientation qualifiers](#orientation-qualifiers)
 
-## Page management
+## Page Overview
 
 ### Define page
 
@@ -117,16 +117,18 @@ application.start({ moduleName: "main-page" });
 
 ## Navigation
 
-The [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. Typically, each app has one frame at the root level - the topmost frame.
+The [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation/switching between different pages. Typically, each application has one frame at the "root level", ie the 'topmost' frame.
 
-To navigate between pages, you can use the [`navigate`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame#navigate) method of the topmost frame instance.
-
-In addition, each `Page` instance carries information about the frame object which navigated to it in the `frame` property. This lets you navigate with the `frame` property as well. 
+- To navigate between pages, use the 
+  [`navigate()`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame#navigate) 
+  method of the `topmost()` frame instance.
+- Each `Page` instance carries data about the `Frame` object which navigated to it in the `.frame` property. 
+- This means the page `frame` property can be used to navigate also.
 
 
 ### The topmost frame
 
-The topmost frame is the root-level container for your app's UI and you can use it to navigate inside of your app. You can get a reference to this frame by using the `topmost()` method of the Frame module.
+The topmost frame is the root-level container for the app's UI and is used to navigate an app. To get a reference to this frame use the [`topmost()`](/api-reference/modules/_ui_frame_#topmost) method of the [`ui/frame`](/api-reference/modules/_ui_frame_) module.
 
 
 ``` JavaScript
@@ -138,59 +140,59 @@ import * as frameModule from "ui/frame";
 const topmost = frameModule.topmost();
 ```
 
-There are several ways to perform navigation; which one you use depends on the needs of your app.
+There are several ways to perform navigation; which one is used depends on the needs of the app.
 
 
 ### Navigate by page name
 
-Perhaps the simplest way to navigate is by specifying the file name of the page to which you want to navigate.
+The simplest way to navigate (without passing data etc) is by specifying the file name of the page (omitting the extention).
 
 ``` JavaScript
-topmost.navigate("details-page");
+topmost.navigate("info/details-page");
 ```
 ``` TypeScript
-topmost.navigate("details-page");
+topmost.navigate("info/details-page");
 ```
 
 ### Navigate using a function
 
-A more dynamic way of navigating can be done by providing a function that returns the instance of the page to which you want to navigate.
+A more dynamic way of navigating is to create a function that returns an instance of the 'Page'.
 
-### Example 3:  How to navigate to a page dynamically created via code.
+#### Example - navigate to a page dynamically created via code.
 ``` JavaScript
 const pagesModule = require("ui/page");
 const labelModule = require("ui/label");
 const topmost = require("ui/frame").topmost;
 
-const factoryFunc = () => {
+const myPageFunc = () => {
     const label = new labelModule.Label();
-    label.text = "Hello, world!";
+    label.text = "Hello, NativeScript is cool!";
     const page = new pagesModule.Page();
     page.content = label;
     return page;
 };
-topmost().navigate(factoryFunc);
+topmost().navigate(myPageFunc);
 ```
 ``` TypeScript
 import { Page } from "ui/page";
 import { Label } from "ui/label";
 import { topmost } from "ui/frame";
 
-const factoryFunc = (): Page => {
+const myPageFunc = (): Page => {
     const label = new Label();
-    label.text = "Hello, world!";
+    label.text = "Hello, NativeScript is cool!";
     const page = new Page();
     page.content = label;
     return page;
 };
-topmost().navigate(factoryFunc);
+topmost().navigate(myPageFunc);
 ```
 
 ### Navigate and pass context
 
-When you navigate to another page, you can pass context to the page with a [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) object. This approach provides finer control over navigation compared to other navigation approaches. For example, with `NavigationEntry` you can also animate the navigation.
+When navigating to another page, data can be passed in the `context` of a [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) object. This approach provides finer control over navigation compared to other approaches. eg an animatation config.
 
-### Example 4:  How to pass content between different pages.
+#### Example - Pass data context between pages
 ``` JavaScript
 const topmost = require("ui/frame").topmost;
 
@@ -212,7 +214,7 @@ const navigationEntry = {
 topmost().navigate(navigationEntry);
 ```
 
-#### Retrieve content
+#### Example - Retrieve content
 ``` JavaScript
 // Event handler for Page "navigatedTo" event attached in details-page.xml e.g.
 function pageNavigatedTo(args) {
@@ -235,11 +237,11 @@ export function pageNavigatedTo(args: EventData): void {
 }
 ```
 
-### Navigate and set bindingContext to the page
+### Navigate and set the bindingContext of the page
 
-While you are navigating you could set `bindingContext` to a page.
+When navigating, the `bindingContext` of the page can be set.
 
-### Example 5:  How to provide `bindingContext` automaticlly while navigating to a page.
+#### Example - provide `bindingContext` while navigating to a page
 
 
 ```JavaScript
@@ -261,19 +263,23 @@ topmost().navigate({
 });
 ```
 
-#### Example
+### List/Detail Example
 
-In this example, this master-details app consists of two pages. The main page contains a list of entities. The details page shows information about the currently selected entity.
+In this example, the  list-details app consists of two pages:
 
-When you navigate to the details page, you transfer a primary key or ID information about the selected entity. 
-### Example 6:  Navigate to the details page and pass the content for selected item.
+- The `list-page` contains a list of entities
+- The `list-detail` page shows information about the selected entity
+
+When navigating to the `detail-page`, the primary key or ID information about the selected entity is transferred via `context`. 
+
+#### Example - Navigate and pass the data from selected item.
 ``` JavaScript
 const topmost = require("ui/frame").topmost;
 
 function listViewItemTap(args) {
     // Navigate to the details page with context set to the data item for specified index
     topmost().navigate({
-        moduleName: "cuteness.io/details-page",
+        moduleName: "cuteness.io/detail-page",
         context: appViewModel.redditItems.getItem(args.index)
     });
 }
@@ -287,14 +293,15 @@ import { ItemEventData } from "tns-core-modules/ui/list-view";
 export function listViewItemTap(args: ItemEventData): void {
     // Navigate to the details page with context set to the data item for specified index
     topmost().navigate({
-        moduleName: "details-page",
+        moduleName: "detail-page",
         context: appViewModel.redditItems.getItem(args.index)
     });
 }
 ```
 
-With the **onNavigatedTo** callback, you show the details for the entity.
-### Example 7:  Bind the content received from main page.
+In the `onNavigatedTo` callback, show the details of the passed entity.
+
+### Example - content received from requesting page.
 ``` JavaScript
 // Event handler for Page "navigatedTo" event attached in details-page.xml e.g.
 function pageNavigatedTo(args) {
@@ -318,8 +325,9 @@ export function pageNavigatedTo(args: EventData): void {
 
 ### Navigate without history
 
-You can navigate to a page without adding this navigation to the history. Set the `backstackVisible` property of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) to `false`. If this property is set to false, then the Page will be displayed, but once navigated from it will not be able to be navigated back to.
-### Example 8:  Page navigation, without saving navigation history.
+To navigate to a page without adding to the history, set the `backstackVisible` property of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) to `false`. If `false`, then the page will be displayed, however it cannot be navigated back to.
+
+### Example - without saving navigation history.
 ``` JavaScript
 const topmost = require("ui/frame").topmost;
 
@@ -339,10 +347,24 @@ const navigationEntry = {
 topmost().navigate(navigationEntry);
 ```
 
+### Navigate back
+
+The topmost frame tracks the pages the user has visited in a navigation stack. To go back to a previous page, you need to use the **goBack** method of the topmost frame instance.
+
+``` JavaScript
+const topmost = require("ui/frame").topmost;
+topmost().goBack();
+```
+``` TypeScript
+import { topmost } from "ui/frame";
+topmost().goBack();
+```
+
 ### Clear history
 
-You can navigate to a new page and decide to completely clear the entire navigation history. Set the `clearHistory` property of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) to `true`. This will prevent the user from going back to pages previously visited. This is extremely useful if you have a multiple-page authentication process and you want to clear the authentication pages once the user is successfully logged in and redirected to the start page of the application.
-### Example 9:  Prevent user from going back using `clearHistory` property.
+When navigating to a new page, it is possible to completely clear the entire navigation history. Set the `clearHistory` property of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) to `true`. This will prevent an user from going back to pages previously visited. This is extremely useful for example if there is a multiple-page authentication process and you want to clear the authentication pages once the user is successfully logged in and redirected to the start page of the application.
+
+### Example - Prevent user from going back using `clearHistory` property.
 ``` JavaScript
 const topmost = require("ui/frame").topmost;
 
@@ -366,7 +388,7 @@ topmost().navigate(navigationEntry);
 
 By default, all navigation will be animated and will use the default transition for the respective platform (UINavigationController transitions for iOS and Fragment transitions for Android). To change the transition type, set the `navigationTransition` property of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) to an object conforming to the [`NavigationTransition`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition.html) interface.
 
-### Example 10:  Set up a transition property on page navigation.
+### Example - Set up a transition property on page navigation.
 ``` JavaScript
 const topmost = require("ui/frame").topmost;
 
@@ -411,9 +433,9 @@ To use one of the built-in transitions, set the `name` property of the [`Navigat
  - slideTop
  - slideBottom
  
-The `duration` property lets you specify the transition duration in milliseconds. If left undefined, the default duration for each platform will be used &mdash; `350` ms for iOS and `300` ms for Android. 
+The `duration` property is the transition duration in milliseconds. If undefined, the default duration for each platform will be used &mdash; `350` ms for iOS and `300` ms for Android. 
  
-The `curve` property lets you specify the animation curve of the transition. Possible values are contained in the [AnimationCurve enumeration](http://docs.nativescript.org/api-reference/modules/_ui_enums_.animationcurve.html). Alternatively, you can pass an instance of type [`UIViewAnimationCurve`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/#//apple_ref/c/tdef/UIViewAnimationCurve) for iOS or [`android.animation.TimeInterpolator`](http://developer.android.com/reference/android/animation/TimeInterpolator.html) for Android. If left undefined, and `easeInOut` curve will be used. 
+The `curve` property specifies the animation curve of the transition. Possible values are contained in the [AnimationCurve enumeration](http://docs.nativescript.org/api-reference/modules/_ui_enums_.animationcurve.html). Alternatively, pass an instance of type [`UIViewAnimationCurve`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/#//apple_ref/c/tdef/UIViewAnimationCurve) for iOS or [`android.animation.TimeInterpolator`](http://developer.android.com/reference/android/animation/TimeInterpolator.html) for Android. If left undefined, and `easeInOut` curve will be used. 
  
 To specify a default transition for **all** frame navigations, set the `transition` property of the frame you are navigating with.
 
@@ -440,7 +462,7 @@ Frame.defaultTransition = { name: "fade" };
 ```
 
 To specify different transitions for the different platforms use the `transitioniOS` and `transitionAndroid` properties of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html).
-### Example 11:  Set up platform specific transitions.
+### Example - Set up platform specific transitions.
 ``` JavaScript
 const topmost = require("ui/frame").topmost;
 
@@ -666,18 +688,7 @@ const navigationEntry = {
 topmost().navigate(navigationEntry);
 ```
 
-### Navigate back
 
-The topmost frame tracks the pages the user has visited in a navigation stack. To go back to a previous page, you need to use the **goBack** method of the topmost frame instance.
-
-``` JavaScript
-const topmost = require("ui/frame").topmost;
-topmost().goBack();
-```
-``` TypeScript
-import { topmost } from "ui/frame";
-topmost().goBack();
-```
 
 ### Modal pages
 
