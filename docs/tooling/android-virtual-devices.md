@@ -8,7 +8,7 @@ slug: android-emulators
 # Setup Android Emulators
 
 Apart from using real Android devices, a viable option is to download, install and use an Android emulator.
-In NativeScript, we can use all Android emulators that are connected and recognized by `tns device` command. More information about this command could be found in the [`tns device` article]((https://docs.nativescript.org/docs-cli/device/device)).
+In NativeScript, we can use all Android emulators that are connected and recognized by `tns device` command. More information about this command could be found in the [`tns device` article](https://docs.nativescript.org/docs-cli/device/device).
 
 Example output from `tns device`
 
