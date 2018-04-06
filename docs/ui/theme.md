@@ -38,13 +38,13 @@ The NativeScript project provides a core theme that you can add to any of your p
 
 ## Installation
 
-As of NativeScript version 2.4, the core theme is installed by default when you start an app using `tns create`. However, if you wish to add the theme to a NativeScript app built **before** 2.4, run the following command:
+All official NativeScript templates come with the NativeScript Core Theme prepackaged and ready to go, so manual installation is unnecessary. If for some reason you’re using an app that doesn’t have the theme pre-installed, you can add it with the following command:
 
 ```
 npm install nativescript-theme-core --save
 ```
 
-After you install the theme on a pre-2.4 app, you need to add a single `@import` CSS rule to your `app.css` file in order to include the theme in your app. But first you need to decide which of the theme’s color schemes you’d like to use.
+Your `app.css` file then needs a single `@import` CSS rule in order to include the theme in your app, which you'll learn about in the next section.
 
 ## Color Schemes
 
@@ -726,7 +726,7 @@ With SASS set up and ready to use, next you’ll need to import the theme’s `.
 
 After that, paste the following code into your `app.android.scss` file.
 
-``` SCSS
+``` CSS
 @import 'app-common';
 @import '~nativescript-theme-core/scss/platforms/index.android';
 
@@ -737,7 +737,7 @@ After that, paste the following code into your `app.android.scss` file.
 
 And the following code into your `app.ios.scss` file.
 
-``` SCSS
+``` CSS
 @import 'app-common';
 @import '~nativescript-theme-core/scss/platforms/index.ios';
 
@@ -746,7 +746,7 @@ And the following code into your `app.ios.scss` file.
 
 Finally, paste the following code into your `_app-common.scss` file.
 
-``` SCSS
+``` CSS
 // Import the theme’s variables. If you’re using a color scheme
 // other than “light”, switch the path to the alternative scheme,
 // for example '~nativescript-theme-core/scss/dark'.
@@ -779,7 +779,7 @@ File structure:
 
 app.component.ts
 
-```
+``` TypeScript
 import { Component } from "@angular/core";
 
 @Component({
