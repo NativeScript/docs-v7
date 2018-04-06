@@ -128,7 +128,7 @@ The `application` module lets you manage the life cycle of your NativeScript app
 
 ## Application Run
 
-The method `run` from the `applicaiton` module is required to start the application and accepts an entry point as `NavigationEntry` argument.
+The method `run` from the `application` module is required to start the application and accepts an entry point as `NavigationEntry` argument.
 
 > **IMPORTANT:** You must call the `run` method of the application module **after** the module initialization. Any code after the `run` call will not be executed.
 
