@@ -68,6 +68,15 @@ Try one of the following approaches:
 
 **Solution:** Currently there's no other solution than disabling parallel builds.
 
+### Error claiming "Xcode is not installed or configured properly" when Xcode seems to be installed
+
+**Problem:** NativeScript CLI installation or `tns doctor` complains that Xcode is not configured properly
+
+**Solution:**
+Open a shell and run the following:
+
+    $ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
 ### Problems with running on simulators/emulators and devices
 
 **Problem:** Running your app on the iOS simulator produces an error like this:
