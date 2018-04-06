@@ -15,7 +15,7 @@ NativeScript apps consist of pages that represent the separate application scree
 
 
 * [Page management](#page-management)
-    * [Define page](#define-page)
+    * [Define a page](#define-a-page)
     * [Set home page](#set-home-page)
 * [Navigation](#navigation)
     * [The topmost frame](#the-topmost-frame)
@@ -35,19 +35,23 @@ NativeScript apps consist of pages that represent the separate application scree
 
 ## Page management
 
-### Define page
+### Define a page
 
-Pages represent the separate screens of your application. Each page is an instance of the [`page`](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) class of the [`Page`](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) module. Each class instance inherits the [`content`](http://docs.nativescript.org/api-reference/classes/_ui_content_view_.contentview.html) property which holds the root visual element of the UI.
+Pages represent the separate screens of an application. Each page is an instance of the [`Page`](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) class of the [`ui/page`](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) module. Each class instance inherits the [`content`](http://docs.nativescript.org/api-reference/classes/_ui_content_view_.contentview.html) property which holds the root visual element of the UI.
 
 NativeScript provides two approaches to instantiating your pages.
 
 **Create a page in XML**
 
-You can define the UI declaration and the code for the page separately.
+A page UI can be declared in an `.xml` file, seperate and independant of the logic code.
 
-To apply this approach, create a `XML` file for each page to hold the layout of the page. Thus your code will be in a `JS` or a `TS` file. The names of the `XML` and the `JS` or `TS` file must match.
+To apply this approach:
 
-### Example 1:  Create page with XML.
+- create an `.xml` file for each page with its layout and widgets eg `my-page.xml`
+- and code in a `.js` or a `.ts` file eg `my-page.ts`
+- Important: The names of the `.xml` and the `.js` or `.ts` file must match exactly (*nix systems are case sensitive).
+
+### Example page with XML.
 ``` XML
 <!-- main-page.xml-->
 <Page loaded="onPageLoaded">
@@ -73,7 +77,7 @@ export function onPageLoaded(args: EventData): void {
 
 To apply this approach, you need to create a function named `createPage` that will return an instance of your page. NativeScript considers `createPage` a factory function.
 
-### Example 2:  Create page via code.
+### Example page via code.
 ``` JavaScript
 const pagesModule = require("ui/page");
 const labelModule = require("ui/label");
@@ -102,9 +106,13 @@ export function createPage(): Page {
 
 ### Set home page
 
-Each application must have a single entry point - the home page.
+Each application must have a single starting/entry point, ie the "home page".
 
-To load the home page for your app, you need to pass `NavigationEntry` with the desired `moduleName` to the start() method.  NativeScript looks for an XML file with the specified name, parses it and draws the UI described in the file. Afterwards, if NativeScript finds a `JS` or a `TS` file with the same name, it executes the business logic in the file.
+To load the home page for the app, pass a [`NavigationEntry`](/api-reference/interfaces/_ui_frame_.navigationentry) 
+with the desired `moduleName` to the [`start()`](/core-concepts/application-lifecycle#start-application) method.  
+
+- NativeScript looks for a `.xml` file with the specified name, parses it and draws the UI described in the file.
+- Afterwards, if NativeScript finds a `.js` or a `.ts` file with the same base name, it executes the business logic in the file.
 
 ``` JavaScript
 const application = require("application");
