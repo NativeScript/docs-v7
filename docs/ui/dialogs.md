@@ -1,18 +1,18 @@
 ---
-title: Dialogs
-description: Learn how to create alerts, confirmations, prompts, logins and other dialogs in your NativeScript apps.
+title: UI Dialogs
+description: Dialogs = alert, confirm, prompt, logins and other dialogs in {N}
 position: 80
 slug: dialogs
 previous_url: /ui-dialogs,/ui/ui-dialogs
 ---
 
-# User Interface Dialogs
+# UI Dialogs
 
-NativeScript lets you create dialogs in your app in a manner similar to the web browser. You can create alerts, confirmations, prompts, logins and dialogs that require action.
+**{N}** presents dialogs basic with the same API as a web browser. IMPORTANT is NativeScript on a device calls the devices api and is **non blocking**, ie a send and wait for response, whilst code still executes
 
-* [Alert](#alert)
-* [Confirm](#confirm)
-* [Prompt](#prompt)
+* [alert()](#alert)
+* [confirm()](#confirm)
+* [prompt()](#prompt)
 * [Login](#login)
 * [Action](#action)
 {% angular %}* [Custom dialog](#custom-dialog)
@@ -21,13 +21,13 @@ NativeScript lets you create dialogs in your app in a manner similar to the web 
   * [Returning a result](#returning-a-result)
 {% endangular %}
 
-> **NOTE**: You can call dialog functions with parameters similar to the web browser API or the `options` object. All dialog functions return a `Promise` object. **In both iOS and Android, dialogs will not block your code execution!**
+> **NOTE**: Call dialog functions with parameters same as web browser API or an `options` object. All dialog functions return a `Promise` object. **In both iOS and Android, dialogs will not block your code execution!**
 
-> **TIP**: You can try [this NativeScript Playground project](https://play.nativescript.org/?template=play-ng&id=dWQhV7) to see all of this article’s examples in action on your device.
+> **TIP**: Goto [this NativeScript Playground project](https://play.nativescript.org/?template=play-ng&id=dWQhV7) to see all of these examples in action on your device.
 
-## Alert
+## alert()
 
-**Web browser style**
+**www browser style**
 
 ```JavaScript
 var dialogs = require("ui/dialogs");
@@ -42,7 +42,7 @@ dialogs.alert("Your message").then(()=> {
 });
 ```
 
-**Using an options object**
+** With an {options} object**
 
 ```JavaScript
 var dialogs = require("ui/dialogs");
@@ -68,9 +68,9 @@ dialogs.alert({
 ![alert-ios](../img/modules/dialogs/alert-ios.png "alert-ios")
 ![alert-android](../img/modules/dialogs/alert-android.png "alert-android")
 
-## Confirm
+## confirm()
 
-**Web browser style**
+**www browser style**
 
 ```JavaScript
 var dialogs = require("ui/dialogs");
@@ -85,7 +85,7 @@ dialogs.confirm("Your message").then(result => {
 });
 ```
 
-**Using an options object**
+**Using an options {object}**
 
 ```JavaScript
 var dialogs = require("ui/dialogs");
@@ -114,14 +114,17 @@ dialogs.confirm({
 });
 ```
 
-> The dialog result argument is Boolean. The result is __true__ if the dialog is closed with the OK button. The result is __false__ if closed with the Cancel button. The result is undefined if closed with a neutral button.
+The dialog result argument is . 
+- The result is `true` if dialog closed with **okButton**
+- The result is `false` if closed with the **cancelButton**
+- The result is `undefined` if closed with a neutral button.
 
 ![confirm-ios](../img/modules/dialogs/confirm-ios.png "confirm-ios")
 ![confirm-android](../img/modules/dialogs/confirm-android.png "confirm-android")
 
-## Prompt
+## prompt()
 
-**Web browser style**
+**browser style**
 
 ```JavaScript
 var dialogs = require("ui/dialogs");
@@ -138,7 +141,7 @@ dialogs.prompt("Your message", "Default text").then(r => {
 });
 ```
 
-**Using an options object**
+**With an options object**
 
 ```JavaScript
 var dialogs = require("ui/dialogs");
@@ -177,7 +180,7 @@ dialogs.prompt({
 
 ## Login
 
-**Web browser style**
+**browser style**
 
 ```JavaScript
 var dialogs = require("ui/dialogs");
