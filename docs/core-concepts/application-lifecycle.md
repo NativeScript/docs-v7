@@ -36,7 +36,7 @@ import { Component } from '@angular/core';
 import { AppComponent } from './app.component';
 ```
 
-Some modules are libraries of other modules. Modules installed as npm packages (like `@angular/core` in the above example) should be referenced without a path prefix. When we import from one of our own files, we prefix the module name with the file path. In this example, we specify a relative file path (./). That means the source module is in the same folder (./) as the module importing it. 
+Some of the modules can depend on one or more separate modules.. Modules installed as npm packages (like `@angular/core` in the above example) should be referenced without a path prefix. When we import from one of our own files, we prefix the module name with the file path. In this example, we specify a relative file path (./). That means the source module is in the same folder (./) as the module importing it. 
 
 ## Components
 
@@ -151,7 +151,7 @@ import * as application from "tns-core-modules/application";
 application.run({ moduleName: "main-page" });
 ```
 
-> **Note:** Prior to version 4.0.0 all NativeScript application had single topmost `Frame` implicitly created by the `application.start()` method. With NativeScript 4.x.x and above, you can create multiple `Frame` instances using the `application.run()` method. More about the `Frame` API and navigation could be found in the [applicaiton lifecycle article](https://docs.nativescript.org/core-concepts/navigation)
+> **Note:** Prior to version 4.0.0 all NativeScript application had single topmost `Frame` implicitly created by the `start` method. With NativeScript 4.x.x and above, you can create multiple `Frame` instances using the `run` method. More about the `Frame` API and navigation could be found in the [application lifecycle article](https://docs.nativescript.org/core-concepts/navigation)
 
 {% endnativescript %}
 
