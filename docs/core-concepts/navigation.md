@@ -18,7 +18,8 @@ NativeScript apps consist of pages that represent the separate application scree
     * [Define page](#define-page)
     * [Set home page](#set-home-page)
 * [Navigation](#navigation)
-    * [The topmost frame](#the-topmost-frame)
+    * [Getting Frame reference](#getting-frame-reference)
+    * [Basic navigation](#basic-navigation)
     * [Navigate by page name](#navigate-by-page-name)
     * [Navigate using a function](#navigate-using-a-function)
     * [Navigate and pass context](#navigate-and-pass-context)
@@ -174,28 +175,89 @@ Example for `GridLayout` as root in `app-root.xml`.
 
 ## Navigation
 
-The [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. An applicaiton can have a single or multiple `Frame` instances depending on the busniess logic and requirments. 
+The [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. An applicaiton can have single or multiple `Frame` instances depending on the busniess logic and requirments. 
+
+### Getting Frame reference
 
 To get a reference to the `Frame` instance you need use the following methods and arguments:
 
-- the [`topmost`](https://docs.nativescript.org/api-reference/modules/_ui_frame_#topmost) method from the `tns-core-modules/ui/frame` module. 
-- the [`getFrameById`](https://docs.nativescript.org/api-reference/modules/_ui_frame_#getFrameById) method from the `tns-core-modules/ui/frame` module. 
-- the `eventArgs.object.page.frame` property of [`Page`](https://docs.nativescript.org/api-reference/classes/_ui_page_.page) instance retrieved via the [`EventData`](https://docs.nativescript.org/api-reference/interfaces/_data_observable_.eventdata) interface. Each `Page` instance carries information about the frame object which navigated to it in the `frame`  property. This lets you navigate with the `frame` property as well. 
+- the [`topmost`](https://docs.nativescript.org/api-reference/modules/_ui_frame_#topmost) method from the `tns-core-modules/ui/frame` module. The  method returns the last navigated `Frame` instance or in case you are in a `TabView`, the currently selected tab item's `Frame` instance. For more complex cases or more control, you should use methods like `getFrameById` or the `frame` property of `Page` class.
+``` JavaScript
+const frameModule = require("tns-core-modules/ui/frame");
+const topmostFrame = frameModule.topmost();
+```
+``` TypeScript
+import { Frame, topmost } from "tns-core-modules/ui/frame";
+const topmostFrame: Frame = topmost();
+```
+
+- the [`getFrameById`](https://docs.nativescript.org/api-reference/modules/_ui_frame_#getFrameById) method from the `tns-core-modules/ui/frame` module. This method allows you to get a reference to a `Frame` by an **id** that you specified on the element. Note that this searches for already navigated frames and won't find frames that are not yet displayed like in a modal view for example.
+
+``` JavaScript
+const frameModule = require("tns-core-modules/ui/frame");
+const firstFrame = frameModule.getFrameById("firstFrame");
+```
+``` TypeScript
+import { Frame, getFrameById } from "tns-core-modules/ui/frame";
+const firstFrame: Frame = getFrameById("firstFrame");
+```
+```XML
+<TabView>
+    <TabViewItem title="First">
+        <Frame id="firstFrame" defaultPage="home/home-page" />
+    </TabViewItem>
+    <TabViewItem title="Second">
+        <Frame id="secondFrame" defaultPage="second/second-page" />
+    </TabViewItem>
+</TabView>
+
+```
+
+- the `frame` property of [`Page`](https://docs.nativescript.org/api-reference/classes/_ui_page_.page) instance. Each `Page` instance carries information about the frame object which navigated to it in the `frame`  property. This lets you navigate with the `frame` property as well. 
+
+```JavaScript
+const Button = require("tns-core-modules/ui/button").Button;
+const Page = require("tns-core-modules/ui/page").Page;
+
+function onTap(args) {
+    const button = args.object;
+    const page = button.page;
+    page.frame.navigate("second/second-page");
+}
+exports.onTap = onTap;
+```
+```TypeScript
+import { Button } from "tns-core-modules/ui/button";
+import { Page } from "tns-core-modules/ui/page";
+
+export function onTap(args) {
+    const button: Button = args.object;
+    const page: Page = button.page;
+    page.frame.navigate("second/second-page");
+}
+```
+
+
+### Basic navigation
 
 To navigate between pages, you can use the [`navigate`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame#navigate) method of the desired `Frame` instance.
 
-### The topmost frame
-
-The topmost frame is the root-level container for your app's UI and you can use it to navigate inside of your app. You can get a reference to this frame by using the `topmost()` method of the Frame module.
-
 
 ``` JavaScript
-const frameModule = require("ui/frame");
-const topmost = frameModule.topmost();
+// app-root.js
+const frameModule = require("tns-core-modules/ui/frame");
+const frame = frameModule.getFrameById("firstFrame");
+frame.navigate("second/second-page");
 ```
 ``` TypeScript
-import * as frameModule from "ui/frame";
-const topmost = frameModule.topmost();
+// app-root.ts
+import { getFrameById } from "tns-core-modules/ui/frame";
+const frame = getFrameById("firstFrame");
+frame.navigate("second/second-page");
+```
+```XML
+<!-- app-root.xml -->
+<Frame id="firstFrame" defaultPage="home/home-page"/>
 ```
 
 There are several ways to perform navigation; which one you use depends on the needs of your app.
@@ -206,10 +268,10 @@ There are several ways to perform navigation; which one you use depends on the n
 Perhaps the simplest way to navigate is by specifying the file name of the page to which you want to navigate.
 
 ``` JavaScript
-topmost.navigate("details-page");
+frame.navigate("details-page");
 ```
 ``` TypeScript
-topmost.navigate("details-page");
+frame.navigate("details-page");
 ```
 
 ### Navigate using a function
@@ -218,9 +280,9 @@ A more dynamic way of navigating can be done by providing a function that return
 
 ### Example 3:  How to navigate to a page dynamically created via code.
 ``` JavaScript
-const pagesModule = require("ui/page");
-const labelModule = require("ui/label");
-const topmost = require("ui/frame").topmost;
+const pagesModule = require("tns-core-modules/ui/page");
+const labelModule = require("tns-core-modules/ui/label");
+const frameModule = require("tns-core-modules/ui/frame");
 
 const factoryFunc = () => {
     const label = new labelModule.Label();
@@ -229,12 +291,14 @@ const factoryFunc = () => {
     page.content = label;
     return page;
 };
-topmost().navigate(factoryFunc);
+
+const frame = frameModule.getFrameById("firstFrame");
+frame.navigate(factoryFunc);
 ```
 ``` TypeScript
-import { Page } from "ui/page";
-import { Label } from "ui/label";
-import { topmost } from "ui/frame";
+import { Page } from "tns-core-modules/ui/page";
+import { Label } from "tns-core-modules/ui/label";
+import { getFrameById } from "tns-core-modules/ui/frame";
 
 const factoryFunc = (): Page => {
     const label = new Label();
@@ -243,7 +307,9 @@ const factoryFunc = (): Page => {
     page.content = label;
     return page;
 };
-topmost().navigate(factoryFunc);
+
+const frame = getFrameById("firstFrame");
+frame.navigate(factoryFunc);
 ```
 
 ### Navigate and pass context
@@ -252,43 +318,45 @@ When you navigate to another page, you can pass context to the page with a [`Nav
 
 ### Example 4:  How to pass content between different pages.
 ``` JavaScript
-const topmost = require("ui/frame").topmost;
+const getFrameById = require("tns-core-modules/ui/frame").getFrameById;
 
 const navigationEntry = {
     moduleName: "details-page",
     context: { info: "something you want to pass to your page" },
     animated: false
 };
-topmost().navigate(navigationEntry);
+const frame = getFrameById("firstFrame");
+frame.navigate(navigationEntry);
 ```
 ``` TypeScript
-import { topmost } from "ui/frame";
+import { getFrameById } from "tns-core-modules/ui/frame";
 
 const navigationEntry = {
     moduleName: "details-page",
     context: { info: "something you want to pass to your page" },
     animated: false
 };
-topmost().navigate(navigationEntry);
+const frame = getFrameById("firstFrame");
+frame.navigate(navigationEntry);
 ```
 
 #### Retrieve content
 ``` JavaScript
-// Event handler for Page "navigatedTo" event attached in details-page.xml e.g.
+// details-page.js
 function pageNavigatedTo(args) {
     const page = args.object;
+    // You can access `info` property from the navigationEntry
     const context = page.navigationContext;
 }
-
 exports.pageNavigatedTo = pageNavigatedTo;
 ```
 ``` TypeScript
-import { EventData } from "data/observable";
-import { Page } from "ui/page";
+// details-page.ts
+import { EventData } from "tns-core-modules/data/observable";
+import { Page } from "tns-core-modules/ui/page";
 
 // Event handler for Page "navigatedTo" event attached in details-page.xml e.g.
 export function pageNavigatedTo(args: EventData): void {
-    // Get the event sender
     const page: Page = <Page>args.object;
     // You can access `info` property from the navigationEntry
     const context: any = page.navigationContext;
@@ -297,56 +365,57 @@ export function pageNavigatedTo(args: EventData): void {
 
 ### Navigate and set bindingContext to the page
 
-While you are navigating you could set `bindingContext` to a page.
-
-### Example 5:  How to provide `bindingContext` automaticlly while navigating to a page.
-
+While you are navigating you could set `bindingContext` to a page. The follwing example shows how to provide `bindingContext` automaticlly while navigating to a page.
 
 ```JavaScript
-const topmost = require("ui/frame").topmost;
+const getFrameById = require("tns-core-modules/ui/frame").getFrameById;
 const mainViewModel = require("./main-view-model");
 // Navigate to page called “my-page” and provide "bindingContext"
-topmost().navigate({ 
+const frame = getFrameById("firstFrame");
+frame..navigate({ 
   moduleName: "my-page", 
   bindingContext: new mainViewModel.HelloWorldModel() 
 });
 ```
 ```TypeScript
-import { topmost } from "ui/frame";
+import { getFrameById } from "tns-core-modules/ui/frame";
 import { HelloWorldModel } from "./main-view-model"
 // Navigate to page called “my-page” and provide "bindingContext"
-topmost().navigate({
+const frame = getFrameById("firstFrame");
+frame.navigate({
   moduleName: "my-page", 
   bindingContext: new HelloWorldModel()
 });
 ```
 
-#### Example
+#### Master-details example
 
 In this example, this master-details app consists of two pages. The main page contains a list of entities. The details page shows information about the currently selected entity.
 
 When you navigate to the details page, you transfer a primary key or ID information about the selected entity. 
-### Example 6:  Navigate to the details page and pass the content for selected item.
+The following example shows how to navigate to the details page and pass the content for selected item.
+
 ``` JavaScript
-const topmost = require("ui/frame").topmost;
+const getFrameById = require("tns-core-modules/ui/frame").getFrameById;
 
 function listViewItemTap(args) {
     // Navigate to the details page with context set to the data item for specified index
-    topmost().navigate({
+    const frame = getFrameById("firstFrame");
+    frame.navigate({
         moduleName: "cuteness.io/details-page",
         context: appViewModel.redditItems.getItem(args.index)
     });
 }
-
 exports.listViewItemTap = listViewItemTap;
 ```
 ``` TypeScript
-import { topmost } from "ui/frame";
+import { getFrameById } from "tns-core-modules/ui/frame";
 import { ItemEventData } from "tns-core-modules/ui/list-view";
 
 export function listViewItemTap(args: ItemEventData): void {
     // Navigate to the details page with context set to the data item for specified index
-    topmost().navigate({
+    const frame = getFrameById("firstFrame");
+    frame.navigate({
         moduleName: "details-page",
         context: appViewModel.redditItems.getItem(args.index)
     });
