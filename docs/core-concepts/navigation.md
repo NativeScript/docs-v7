@@ -51,7 +51,11 @@ To apply this approach, create a `XML` file for each page to hold the layout of 
 ``` XML
 <!-- main-page.xml-->
 <Page loaded="onPageLoaded">
-  <Label text="Hello, world!"/>
+    <!-- Each page can have only a single root view -->
+    <StackLayout>
+        <!-- content here -->
+        <Label text="Hello, world!"/>
+    </StackLayout>
 </Page>
 ```
 ``` JavaScript
@@ -75,26 +79,36 @@ To apply this approach, you need to create a function named `createPage` that wi
 
 ### Example 2:  Create page via code.
 ``` JavaScript
-const pagesModule = require("ui/page");
-const labelModule = require("ui/label");
+const Page = require("tns-core-modules/ui/page").Page;
+const Label = require("tns-core-modules/ui/label").Label;
+const StackLayout = require("tns-core-modules/ui/layouts/stack-layout").StackLayout;
 
 function createPage() {
-    const label = new labelModule.Label();
+    const stack = new StackLayout();
+    const label = new Label();
     label.text = "Hello, world!";
-    const page = new pagesModule.Page();
-    page.content = label;
+    stack.addChild(label);
+
+    const page = new Page();
+    // Each page can have a single root view set via the content property
+    page.content = stack;
     return page;
 }
 exports.createPage = createPage;
 ```
 ``` TypeScript
-import { Page } from "ui/page";
-import { Label } from "ui/label";
+import { Page } from "tns-core-modules/ui/page";
+import { Label } from "tns-core-modules/ui/label";
+import { StackLayout } from "tns-core-modules/ui/layouts/stack-layout";
 
 export function createPage(): Page {
+    const stack = new StackLayout();
     const label = new Label();
     label.text = "Hello, world!";
+    stack.addChild(label);
+
     const page = new Page();
+    // Each page can have a single root view set via the content property
     page.content = label;
     return page;
 }
@@ -102,27 +116,73 @@ export function createPage(): Page {
 
 ### Set home page
 
-Each application must have a single entry point - the home page.
+Each application must have a single entry point. To load the entry point for your app, you need to pass `NavigationEntry` with the desired `moduleName` to the `run` method.  NativeScript looks for an XML file with the specified name, parses it and draws the UI described in the file. Afterwards, if NativeScript finds a `JS` or a `TS` file with the same name, it executes the business logic in the file.
 
-To load the home page for your app, you need to pass `NavigationEntry` with the desired `moduleName` to the start() method.  NativeScript looks for an XML file with the specified name, parses it and draws the UI described in the file. Afterwards, if NativeScript finds a `JS` or a `TS` file with the same name, it executes the business logic in the file.
 
+In the example below, the entry point is `app-root.xml`. The `app-root.xml` is using a `Frame` element and via its `defaultPage` property is navigating by default to `home/home-page.xml`.
 ``` JavaScript
+// app.js
 const application = require("application");
-application.start({ moduleName: "main-page" });
+application.run({ moduleName: "app-root" });
 ```
 ``` TypeScript
-import application from "application";
-application.start({ moduleName: "main-page" });
+// app.ts
+import * as application from "application";
+application.run({ moduleName: "app-root" });
+```
+```XML
+<!-- app-root.xml -->
+<Frame defaultPage="home/home-page" />
+```
+```XML
+<!-- home/home-page.xml -->
+<Page class="page">
+    <StackLayout>
+        <!-- content here-->
+        <Label text="Hooray! Home Page loaded!"/>
+    </StackLayout>
+</Page>
+```
+
+> **Important:** Prior to NativeScript 4.0.0 the `start` method automatically created an underlying root `Frame` instance and wraped your page. The new `run` method will set up the root element of the provided module as application root element. This effectively means that apart from `Page` you can now have other roots of your app like `TabView` and `SideDrawer`. The `start` is now marked as deprecated.
+
+Example for `TabView` as root in `app-root.xml`.
+```XML
+<!-- app-root.xml -->
+<TabView androidTabsPosition="bottom">
+    <TabViewItem title="First">
+        <Frame defaultPage="home/home-page" />
+    </TabViewItem>
+    <TabViewItem title="Second">
+        <Frame defaultPage="second/second-page" />
+    </TabViewItem>
+</TabView>
+```
+
+Example for `GridLayout` as root in `app-root.xml`.
+```XML
+<!-- app-root.xml -->
+<GridLayout rows="*, 2*">
+	<StackLayout row="0" backgroundColor="green">
+        <!-- Static content goes here -->
+    <StackLayout/>
+	<StackLayout row="1">
+        <Frame defaultPage="home/home-page"/>
+    </StackLayout>
+</GridLayout>
 ```
 
 ## Navigation
 
-The [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. Typically, each app has one frame at the root level - the topmost frame.
+The [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. An applicaiton can have a single or multiple `Frame` instances depending on the busniess logic and requirments. 
 
-To navigate between pages, you can use the [`navigate`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame#navigate) method of the topmost frame instance.
+To get a reference to the `Frame` instance you need use the following methods and arguments:
 
-In addition, each `Page` instance carries information about the frame object which navigated to it in the `frame` property. This lets you navigate with the `frame` property as well. 
+- the [`topmost`](https://docs.nativescript.org/api-reference/modules/_ui_frame_#topmost) method from the `tns-core-modules/ui/frame` module. 
+- the [`getFrameById`](https://docs.nativescript.org/api-reference/modules/_ui_frame_#getFrameById) method from the `tns-core-modules/ui/frame` module. 
+- the `eventArgs.object.page.frame` property of [`Page`](https://docs.nativescript.org/api-reference/classes/_ui_page_.page) instance retrieved via the [`EventData`](https://docs.nativescript.org/api-reference/interfaces/_data_observable_.eventdata) interface. Each `Page` instance carries information about the frame object which navigated to it in the `frame`  property. This lets you navigate with the `frame` property as well. 
 
+To navigate between pages, you can use the [`navigate`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame#navigate) method of the desired `Frame` instance.
 
 ### The topmost frame
 
