@@ -46,7 +46,7 @@ NativeScript provides two approaches to instantiating your pages.
 
 You can define the UI declaration and the code for the page separately.
 
-To apply this approach, create a `XML` file for each page to hold the layout of the page. Thus your code will be in a `JS` or a `TS` file. The names of the `XML` and the `JS` or `TS` file must match.
+To apply this approach, create an `XML` file for each page to hold the layout of the page. Thus your code will be in a `JS` or a `TS` file. The names of the `XML` and the `JS` or `TS` file must match.
 
 ### Example 1:  Create page with XML.
 ``` XML
@@ -117,7 +117,7 @@ export function createPage(): Page {
 
 ### Set home page
 
-Each application must have a single entry point. To load the entry point for your app, you need to pass `NavigationEntry` with the desired `moduleName` to the `run` method.  NativeScript looks for an XML file with the specified name, parses it and draws the UI described in the file. Afterwards, if NativeScript finds a `JS` or a `TS` file with the same name, it executes the business logic in the file.
+Each application must have a single entry point. To load the entry point for your app, you need to pass `NavigationEntry` with the desired `moduleName` to the `run` method.  NativeScript looks for an XML file with the specified name, parses it and draws the UI described in the file. Afterward, if NativeScript finds a `JS` or a `TS` file with the same name, it executes the business logic in the file.
 
 
 In the example below, the entry point is `app-root.xml`. The `app-root.xml` is using a `Frame` element and via its `defaultPage` property is navigating by default to `home/home-page.xml`.
@@ -145,7 +145,7 @@ application.run({ moduleName: "app-root" });
 </Page>
 ```
 
-> **Important:** Prior to NativeScript 4.0.0 the `start` method automatically created an underlying root `Frame` instance and wraped your page. The new `run` method will set up the root element of the provided module as application root element. This effectively means that apart from `Page` you can now have other roots of your app like `TabView` and `SideDrawer`. The `start` is now marked as deprecated.
+> **Important:** Before NativeScript 4.0.0 the `start` method automatically created an underlying root `Frame` instance and wrapped your page. The new `run` method will set up the root element of the provided module as application root element. This effectively means that apart from `Page` you can now have other roots of your app like `TabView` and `SideDrawer`. The `start` is now marked as deprecated.
 
 Example for `TabView` as root in `app-root.xml`.
 ```XML
@@ -164,10 +164,10 @@ Example for `GridLayout` as root in `app-root.xml`.
 ```XML
 <!-- app-root.xml -->
 <GridLayout rows="*, 2*">
-	<StackLayout row="0" backgroundColor="green">
+    <StackLayout row="0" backgroundColor="green">
         <!-- Static content goes here -->
     <StackLayout/>
-	<StackLayout row="1">
+    <StackLayout row="1">
         <Frame defaultPage="home/home-page"/>
     </StackLayout>
 </GridLayout>
@@ -175,10 +175,11 @@ Example for `GridLayout` as root in `app-root.xml`.
 
 ## Navigation
 
-The [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. An applicaiton can have single or multiple `Frame` instances depending on the busniess logic and requirments. 
+The [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. An application can have single or multiple `Frame` instances depending on the business logic and requirements. 
 
 ### Getting Frame reference
 
+The navigation in NativeScript is based on the `Frame` API and using `navigate` method of the wanted frame.
 To get a reference to the `Frame` instance you need use the following methods and arguments:
 
 - the [`topmost`](https://docs.nativescript.org/api-reference/modules/_ui_frame_#topmost) method from the `tns-core-modules/ui/frame` module. The  method returns the last navigated `Frame` instance or in case you are in a `TabView`, the currently selected tab item's `Frame` instance. For more complex cases or more control, you should use methods like `getFrameById` or the `frame` property of `Page` class.
@@ -191,7 +192,7 @@ import { Frame, topmost } from "tns-core-modules/ui/frame";
 const topmostFrame: Frame = topmost();
 ```
 
-- the [`getFrameById`](https://docs.nativescript.org/api-reference/modules/_ui_frame_#getFrameById) method from the `tns-core-modules/ui/frame` module. This method allows you to get a reference to a `Frame` by an **id** that you specified on the element. Note that this searches for already navigated frames and won't find frames that are not yet displayed like in a modal view for example.
+- the [`getFrameById`](https://docs.nativescript.org/api-reference/modules/_ui_frame_#getFrameById) method from the `tns-core-modules/ui/frame` module. This method allows you to get a reference to a `Frame` by a **id** that you specified on the element. Note that this searches for already navigated frames and won't find frames that are not yet displayed like in a modal view for example.
 
 ``` JavaScript
 const frameModule = require("tns-core-modules/ui/frame");
@@ -260,7 +261,7 @@ frame.navigate("second/second-page");
 <Frame id="firstFrame" defaultPage="home/home-page"/>
 ```
 
-There are several ways to perform navigation; which one you use depends on the needs of your app.
+There are several ways to perform a navigation; which one you use depends on the needs of your app.
 
 
 ### Navigate by page name
@@ -365,7 +366,7 @@ export function pageNavigatedTo(args: EventData): void {
 
 ### Navigate and set bindingContext to the page
 
-While you are navigating you could set `bindingContext` to a page. The follwing example shows how to provide `bindingContext` automaticlly while navigating to a page.
+While you are navigating, you could set `bindingContext` to a page. The following example shows how to provide `bindingContext` automatically while navigating to a page.
 
 ```JavaScript
 const getFrameById = require("tns-core-modules/ui/frame").getFrameById;
@@ -393,7 +394,7 @@ frame.navigate({
 In this example, this master-details app consists of two pages. The main page contains a list of entities. The details page shows information about the currently selected entity.
 
 When you navigate to the details page, you transfer a primary key or ID information about the selected entity. 
-The following example shows how to navigate to the details page and pass the content for selected item.
+The following example shows how to navigate to the details page and pass the content for the selected item.
 
 ``` JavaScript
 const getFrameById = require("tns-core-modules/ui/frame").getFrameById;
@@ -430,12 +431,11 @@ function pageNavigatedTo(args) {
     const page = args.object;
     page.bindingContext = page.navigationContext;
 }
-
 exports.pageNavigatedTo = pageNavigatedTo;
 ```
 ``` TypeScript
-import { EventData } from "data/observable";
-import { Page } from "ui/page";
+import { EventData } from "tns-core-modules/data/observable";
+import { Page } from "tns-core-modules/ui/page";
 
 // Event handler for Page "navigatedTo" event attached in details-page.xml
 export function pageNavigatedTo(args: EventData): void {
@@ -450,22 +450,24 @@ export function pageNavigatedTo(args: EventData): void {
 You can navigate to a page without adding this navigation to the history. Set the `backstackVisible` property of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) to `false`. If this property is set to false, then the Page will be displayed, but once navigated from it will not be able to be navigated back to.
 ### Example 8:  Page navigation, without saving navigation history.
 ``` JavaScript
-const topmost = require("ui/frame").topmost;
+const getFrameById = require("tns-core-modules/ui/frame").getFrameById;
 
 const navigationEntry = {
     moduleName: "login-page",
     backstackVisible: false
 };
-topmost().navigate(navigationEntry);
+const frame = getFrameById("firstFrame");
+frame.navigate(navigationEntry);
 ```
 ``` TypeScript
-import { topmost } from "ui/frame";
+import { getFrameById } from "tns-core-modules/ui/frame";
 
 const navigationEntry = {
     moduleName: "login-page",
     backstackVisible: false
 };
-topmost().navigate(navigationEntry);
+const frame = getFrameById("firstFrame");
+frame.navigate(navigationEntry);
 ```
 
 ### Clear history
@@ -473,22 +475,24 @@ topmost().navigate(navigationEntry);
 You can navigate to a new page and decide to completely clear the entire navigation history. Set the `clearHistory` property of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) to `true`. This will prevent the user from going back to pages previously visited. This is extremely useful if you have a multiple-page authentication process and you want to clear the authentication pages once the user is successfully logged in and redirected to the start page of the application.
 ### Example 9:  Prevent user from going back using `clearHistory` property.
 ``` JavaScript
-const topmost = require("ui/frame").topmost;
+const getFrameById = require("tns-core-modules/ui/frame").getFrameById;
 
 const navigationEntry = {
     moduleName: "main-page",
     clearHistory: true
 };
-topmost().navigate(navigationEntry);
+const frame = getFrameById("firstFrame");
+frame.navigate(navigationEntry);
 ```
 ``` TypeScript
-import { topmost } from "ui/frame";
+import { getFrameById } from "tns-core-modules/ui/frame";
 
 const navigationEntry = {
     moduleName: "main-page",
     clearHistory: true
 };
-topmost().navigate(navigationEntry);
+const frame = getFrameById("firstFrame");
+frame.navigate(navigationEntry);
 ```
 
 ### Navigation transitions
@@ -497,7 +501,7 @@ By default, all navigation will be animated and will use the default transition 
 
 ### Example 10:  Set up a transition property on page navigation.
 ``` JavaScript
-const topmost = require("ui/frame").topmost;
+const getFrameById = require("ui/frame").getFrameById;
 
 const navigationEntry = {
     moduleName: "main-page",
@@ -508,10 +512,11 @@ const navigationEntry = {
         curve: "easeIn"
     }
 };
-topmost().navigate(navigationEntry);
+const frame = getFrameById("firstFrame");
+frame.navigate(navigationEntry);
 ```
 ``` TypeScript
-import { topmost } from "ui/frame";
+import { getFrameById } from "ui/frame";
 
 const navigationEntry = {
     moduleName: "main-page",
@@ -522,7 +527,8 @@ const navigationEntry = {
         curve: "easeIn"
     }
 };
-topmost().navigate(navigationEntry);
+const frame = getFrameById("firstFrame");
+frame.navigate(navigationEntry);
 ```
 
 To use one of the built-in transitions, set the `name` property of the [`NavigationTransition`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition.html) to one of the following:
@@ -547,31 +553,33 @@ The `curve` property lets you specify the animation curve of the transition. Pos
 To specify a default transition for **all** frame navigations, set the `transition` property of the frame you are navigating with.
 
  ``` JavaScript
-const topmost = require("ui/frame").topmost;
-topmost().transition = { name: "flip" };
-topmost().navigate("main-page");
+const getFrameById = require("tns-core-modules/ui/frame").getFrameById;
+const frame = getFrameById("firstFrame");
+frame.transition = { name: "flip" };
+frame.navigate("main-page");
 ```
 ``` TypeScript
-import { topmost } from "ui/frame";
-topmost().transition = { name: "flip" };
-topmost().navigate("main-page");
+import { getFrameById } from "tns-core-modules/ui/frame";
+const frame = getFrameById("firstFrame");
+frame.transition = { name: "flip" };
+frame.navigate("main-page");
 ```
 
 To specify a default transition for **all** navigations across the entire app, set the **static** `defaultTransition` property of the `Frame` class.
 
  ``` JavaScript
-const frameModule = require("ui/frame");
+const frameModule = require("tns-core-modules/ui/frame");
 frameModule.Frame.defaultTransition = { name: "fade" };
 ```
 ``` TypeScript
-import { Frame } from "ui/frame";
+import { Frame } from "tns-core-modules/ui/frame";
 Frame.defaultTransition = { name: "fade" };
 ```
 
 To specify different transitions for the different platforms use the `transitioniOS` and `transitionAndroid` properties of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html).
 ### Example 11:  Set up platform specific transitions.
 ``` JavaScript
-const topmost = require("ui/frame").topmost;
+const topmost = require("tns-core-modules/ui/frame").topmost;
 
 const navigationEntry = {
     moduleName: "main-page",
@@ -587,10 +595,11 @@ const navigationEntry = {
         curve: "easeOut"
     }
 };
-topmost().navigate(navigationEntry);
+const frame = topmost();
+frame.navigate(navigationEntry);
 ```
 ``` TypeScript
-import { topmost } from "ui/frame";
+import { topmost } from "tns-core-modules/ui/frame";
 
 const navigationEntry = {
     moduleName: "main-page",
@@ -606,18 +615,19 @@ const navigationEntry = {
         curve: "easeOut"
     }
 };
-topmost().navigate(navigationEntry);
+const frame = topmost();
+frame.navigate(navigationEntry);
 ```
 
 ### Custom transitions
-Instead of setting the `name` property to one of the predefined transitions, you can set the `instance` property of the [`NavigationTransition`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition.html) to an instance of a class that inherits from [`Transition`](http://docs.nativescript.org/api-reference/classes/_ui_transition_.transition.html). You can create your own custom user-defined transition by writing platform-specific code to animate the transition. To do that you need to inherit from the [`Transition`](http://docs.nativescript.org/api-reference/classes/_ui_transition_.transition.html) class and override one method for each platform. Since there will be platform-specific code, you need to separate your code into two separate files. Here is an example of a custom transition that shrinks the disappearing page while expanding the appearing page by using a scale affine transform.
+Instead of setting the `name` property to one of the predefined transitions, you can set the `instance` property of the [`NavigationTransition`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition.html) to an instance of a class that inherits from [`Transition`](http://docs.nativescript.org/api-reference/classes/_ui_transition_.transition.html). You can create your custom user-defined transition by writing platform-specific code to animate the transition. To do that you need to inherit from the [`Transition`](http://docs.nativescript.org/api-reference/classes/_ui_transition_.transition.html) class and override one method for each platform. Since there will be platform-specific code, you need to separate your code into two separate files. Here is an example of a custom transition that shrinks the disappearing page while expanding the appearing page by using a scale affine transform.
 
 >  **NOTE**: The following example uses native APIs. When using TypeScript, you need to add a dev dependency to the `tns-platform-declarations` package to use these native APIs without compiler errors. For more information, see the [Intellisense and access to native APIs via TypeScript](./accessing-native-apis-with-javascript.md) section.
 
 ### Example 12:  Create your own custom transition.
 `custom-transition.android.js/ts`
 ``` JavaScript
-const transition = require("ui/transition");
+const transition = require("tns-core-modules/ui/transition");
 const floatType = java.lang.Float.class.getField("TYPE").get(null);
 const CustomTransition = (function (_super) {
     __extends(CustomTransition, _super);
@@ -691,7 +701,7 @@ export class CustomTransition extends Transition {
 
 `custom-transition.ios.js/ts`
 ``` JavaScript
-const transition = require("ui/transition");
+const transition = require("tns-core-modules/ui/transition");
 const CustomTransition = (function (_super) {
     __extends(CustomTransition, _super);
     function CustomTransition() {
@@ -771,7 +781,7 @@ export class CustomTransition extends Transition {
 ```
 
 ```JavaScript
-const topmost = require("ui/frame").topmost;
+const topmost = require("tns-core-modules/ui/frame").topmost;
 const customTransitionModule = require("./custom-transition");
 const customTransition = new customTransitionModule.CustomTransition(300, "easeIn");
 
@@ -783,7 +793,7 @@ const navigationEntry = {
 topmost().navigate(navigationEntry);
 ```
 ```TypeScript
-import { topmost } from "ui/frame";
+import { topmost } from "tns-core-modules/ui/frame";
 import { CustomTransition } from "./custom-transition";
 const customTransition = new CustomTransition(300, "easeIn");
 
@@ -797,7 +807,7 @@ topmost().navigate(navigationEntry);
 
 ### Navigate back
 
-The topmost frame tracks the pages the user has visited in a navigation stack. To go back to a previous page, you need to use the **goBack** method of the topmost frame instance.
+Each frame tracks the pages the user has visited in a navigation stack. To go back to a previous page, you need to use the **goBack** method of the topmost frame instance.
 
 ``` JavaScript
 const topmost = require("ui/frame").topmost;
@@ -810,7 +820,7 @@ topmost().goBack();
 
 ### Modal pages
 
-Use the **showModal** method of the page class to show another page as a modal dialog. You must specify the location of the modal page module. You can provide a context and a callback function that will be called when the modal page is closed. You can also optionally specify whether to show the modal page in fullscreen or not. To close the modal page, you need to subscribe to its `shownModally` event and store a reference to a close callback function provided through the event arguments. Call this function when you are ready to close the modal page, optionally passing some results to the master page. Here is an example with two pages &mdash; a main page and a login page. The main page shows the login page modally; the user enters their username and password and when ready clicks the Login button. This closes the modal login page and returns the username/password to the main page which can then log the user in.
+Use the **showModal** method of the `View` class to show another view as a modal dialog. You must specify the location of the modal page module. You can provide a context and a callback function that will be called when the modal page is closed. You can also optionally specify whether to show the modal page in fullscreen or not. To close the modal page, you need to subscribe to its `shownModally` event and store a reference to a close callback function provided by the event arguments. Call this function when you are ready to close the modal page, optionally passing some results to the master page. Here is an example with two pages &mdash; the main page and a login page. The main page shows the login page modally; the user enters their username and password and when ready clicks the Login button. This closes the modal login page and returns the username/password to the main page which can then log the user in.
 
 > **TIP:** By design on iPhone, a modal page appears only in fullscreen.
 
@@ -822,12 +832,11 @@ const context = "some custom context";
 const fullscreen = true;
  
 function onLoaded(args) {
-    const mainPage = args.object;
-    mainPage.showModal(modalPageModule, context, (username, password) => {
+    const mainView = args.object;
+    mainView.showModal(modalPageModule, context, (username, password) => {
         // Log the user in...
     }, fullscreen);
 }
-
 exports.onLoaded = onLoaded;
 ```
 ``` TypeScript
@@ -844,7 +853,7 @@ export function onPageLoaded(args: EventData): void {
     }, fullscreen);
 }
 ```
->  Note: Only one Modal Page could be opened in the application (For example: opening a Modal Page from another Modal Page is not supported). In case we need to open second Modal, we should close the first one and then to open the second.
+>  Note: With version 4.0.0 of NativeScript, opening a Modal Page from another Modal Page is officially supported. The previous versions of NativeScript supported only a single Modal page.
 
 **login-page**
 ``` JavaScript
@@ -876,14 +885,14 @@ export function onLoginButtonTap(): void {
 You can find the complete source code [here](https://github.com/NativeScript/NativeScript/tree/master/apps/app/ui-tests-app/modal-view).
 
 ## Supporting multiple screens
-Mobile applications run on different devices with different screen sizes and form factors. NativeScript provides a way to define different files (.js, .css, .xml, etc.) to be loaded based on the screen's size, platform and orientation of the current device. The approach is somewhat similar to [multi screen support in Android](http://developer.android.com/guide/practices/screens_support.html). There is a set of *qualifiers* that can be added inside the file that will be respected when the file is loaded. Here is how the file should look:
+Mobile applications are running on different devices with different screen sizes and form factors. NativeScript provides a way to define different files (.js, .css, .xml, etc.) to be loaded based on the screen's size, platform and orientation of the current device. The approach is somewhat similar to [multi screen support in Android](http://developer.android.com/guide/practices/screens_support.html). There is a set of *qualifiers* that can be added inside the file that will be respected when the file is loaded. Here is how the file should look:
 
 `<file-name>[.<qualifier>]*.<extension>`
 
-In the next section we will go trough the list of supported qualifiers.
+In the next section, we will go through the list of supported qualifiers.
 
 ### Screen size qualifiers
-All the values in screen size qualifiers are in density independent pixels(dp) &mdash; meaning it corresponds to the physical dimensions of the screen. The assumptions is that there are ~160 dp per inch. For example, according to Android guidelines, if the device's smaller dimension is more than 600 dp (~3.75 inches) it is probably a tablet.
+All the values in screen size qualifiers are in density independent pixels(DP) &mdash; meaning it corresponds to the physical dimensions of the screen. The assumptions are that there are ~160 DP per inch. For example, according to Android guidelines, if the device's smaller dimension is more than 600 dp (~3.75 inches), it is probably a tablet.
 
 * `minWH<X>` - The smaller dimension (width or height) should be at least **X** dp.
 * `minW<X>` - Width should be at least **X** dp.
@@ -905,10 +914,10 @@ All the values in screen size qualifiers are in density independent pixels(dp) &
 * `app.android.css` - CSS styles for Android.
 * `app.ios.css` - CSS styles for iOS. 
 
-The platform qualifiers are executed during build time, while the others are executed during run time. For example, the app.ios.css file will not be taken in consideration when building for the Android platform. Contrary, the screen size qualifiers will be considered just after the application runs on a device with a specific screen size. 
+The platform qualifiers are executed during build time, while the others are executed during runtime. For example, the app.ios.css file will not be taken into consideration when building for the Android platform. Contrary, the screen size qualifiers will be considered just after the application runs on a device with specific screen size. 
 
 ### Orientation qualifiers
 * `land` - orientation is in landscape mode.
 * `port` - orientation is in portrait mode.
 
-> Note: All qualifiers are taken into account when the page is loading. However, changing the device orientation will not trigger page reload and will not change the current page.
+> Note: All qualifiers are taken into account when the page is loading. However, changing the device orientation will not trigger a page reload and will not change the current age.
