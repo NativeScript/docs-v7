@@ -48,8 +48,6 @@ Components are the fundamental building blocks of NativeScript applications buil
 * A component has a well-defined public API of input and output properties.
 * A component has a well-defined lifecycle.
 
-### Component example
-
 ``` TypeScript
 import { Component } from "@angular/core";
 
@@ -62,6 +60,8 @@ import { Component } from "@angular/core";
     `
 })
 export class MainComponent {
+    name: string;
+
     constructor() {
         this.name = "Angular!";
     }
@@ -100,8 +100,6 @@ For a full list, see the official [Angular Lifecycle Hooks docs](https://angular
 
 The starting point of an Angular application is the `platformNativeScriptDynamic().bootstrapModule()` method. It takes the root module as an argument:
 
-### Example
-
 ``` TypeScript
 import { platformNativeScriptDynamic } from "nativescript-angular/platform";
 import { AppModule } from "./app.module";
@@ -128,11 +126,7 @@ The `application` module lets you manage the life cycle of your NativeScript app
 
 ## Application Run
 
-The method `run` from the `application` module is required to start the application and accepts an entry point as `NavigationEntry` argument.
-
-> **IMPORTANT:** You must call the `run` method of the application module **after** the module initialization. Any code after the `run` call will not be executed.
-
-### Example
+The method `run` from the `application` module is required to start the application. The method accept JS object with `moduleName` key and value the module that will be set as root. You must call the `run` method of the application module **after** the module initialization. Any code after the `run` call will not be executed.
 
 ``` JavaScript
 /*
@@ -151,7 +145,7 @@ import * as application from "tns-core-modules/application";
 application.run({ moduleName: "main-page" });
 ```
 
-> **Note:** Prior to version 4.0.0 all NativeScript application had single topmost `Frame` implicitly created by the `start` method. With NativeScript 4.x.x and above, you can create multiple `Frame` instances using the `run` method. More about the `Frame` API and navigation could be found in the [application lifecycle article](https://docs.nativescript.org/core-concepts/navigation)
+> **Note:** With NativeScript 4.x.x and above, you can create multiple `Frame` instances using the `run` method. More about the `Frame` API and navigation could be found in the [application lifecycle article](https://docs.nativescript.org/core-concepts/navigation).
 
 {% endnativescript %}
 
@@ -166,8 +160,6 @@ NativeScript applications have the following life cycle events.
 + `exit`: This event is raised when the application is about to exit.
 + `lowMemory`: This event is raised when the memory on the target device is low.
 + `uncaughtError`: This event is raised when an uncaught application error is present.
-
-### Example
 
 {% nativescript %}
 ``` JavaScript
@@ -394,8 +386,6 @@ NativeScript applications have the following Android specific activity events:
 + `activityResult`: This event is raised when an activity you launched exits, giving you the requestCode you started it with, the resultCode it returned, and any additional data from it.
 + `activityBackPressed`: This event is raised when the activity has detected the user's press of the back key.
 
-### Example
-
 {% nativescript %}
 ``` JavaScript
 const application = require("application");
@@ -541,9 +531,7 @@ platformNativeScriptDynamic().bootstrapModule(AppModule);
 {% endangular %}
 ## iOS UIApplicationDelegate
 
-Since NativeScript 1.3 you can specify custom UIApplicationDelegate for the iOS application:
-
-### Example
+In NativeScript, you can specify custom `UIApplicationDelegate` for the iOS application:
 
 {% nativescript %}
 ``` JavaScript
@@ -610,7 +598,7 @@ platformNativeScriptDynamic().bootstrapModule(AppModule);
 
 ```
 {% endangular %}
-> **NOTE**: If you’re using TypeScript in your NativeScript apps, you need to install the [tns-platform-declarations plugin](https://www.npmjs.com/package/tns-platform-declarations) to add typings for native iOS APIs such as `UIApplicationDelegate`.
+> **Note**: If you’re using TypeScript in your NativeScript apps, you need to install the [tns-platform-declarations plugin](https://www.npmjs.com/package/tns-platform-declarations) to add typings for native iOS APIs such as `UIApplicationDelegate`.
 
 ## Persist and Restore Application Settings
 
@@ -618,8 +606,6 @@ To persist user-defined settings, you need to use the `application-settings` mod
 
 The getter methods have two parameters: a key and an optional default value to return if the specified key does not exist.
 The setter methods have two required parameters: a key and value. 
-
-### Example
 
 {% nativescript %}
 ``` JavaScript
