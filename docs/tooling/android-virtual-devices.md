@@ -31,14 +31,12 @@ Once the emulator is started, leave it open to avoid the initial load time the n
 
 Follow the official documentation on [Creating and Managing Virtual Devices](https://developer.android.com/studio/run/managing-avds.html), where the process of downloading, setting up, and using Android Emulators via Android studio is covered.
 
-> **Note:** if your top-level "Tools" menu does not include the "Android" option (a common issue in versions >3.0.0), follow the instructions in [this StackOverflow answer](https://stackoverflow.com/questions/46948322/how-to-open-avd-manager-in-android-studio-3-0-version) to add this to the toolbar and enable the AVD Manager.
+> **Note:** If your top-level "Tools" menu does not include the "Android" option (a common issue in versions >3.0.0), follow the instructions in [this StackOverflow answer](https://stackoverflow.com/questions/46948322/how-to-open-avd-manager-in-android-studio-3-0-version) to add this to the toolbar and enable the AVD Manager.
 
 
 ## Creating Android Virtual Device via command line tool
 
-The `avdmanager` is a tool that allows you to create and manage Android Virtual Devices (AVDs) from the command line.
-The `avdmanager` is provided in the Android SDK Tools package (25.3.0 and higher) and is located in `<ANDROID_HOME_PATH_HERE>/tools/bin/`.
-Follow the official documentation on [creating AVD via avdmanager and command line](https://developer.android.com/studio/command-line/avdmanager.html).
+The `avdmanager` is a tool that allows you to create and manage Android Virtual Devices (AVDs) from the command line. The `avdmanager` is provided in the Android SDK Tools package (25.3.0 and higher) and is located in `<ANDROID_HOME_PATH_HERE>/tools/bin/`. For more information about the avdmanager and how to use it to create AVDs, see the [official avdmanager documentation](https://developer.android.com/studio/command-line/avdmanager.html).
 
 Command syntax to create new AVD 
 ```Shell
