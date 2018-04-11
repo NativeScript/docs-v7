@@ -85,7 +85,7 @@ After the installation your system setup will have:
 * Google Repository
 * Android SDK Build-tools 25.0.2 or a later stable official release
 * Android Studio
-* Set up Android virtual devices to expand your testing options
+* Set up Android virtual devices to expand your testing options 
 
 You must also have the following two environment variables setup for Android development, which will automatically be added for you as part of the installation:
 
@@ -97,6 +97,8 @@ You must also have the following two environment variables setup for Android dev
 - open a new Command Prompt
 - write `echo %JAVA_HOME%` and make sure a valid path is returned
 - write `echo %ANDROID_HOME%` and make sure a valid path is returned
+
+> **Tip** You can [install and use custom Android Virtual Devices](https://docs.nativescript.org/tooling/android-virtual-devices) that are emulating different API levels and screens.
 
 ### macOS
 
