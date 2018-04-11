@@ -128,9 +128,9 @@ The `application` module lets you manage the life cycle of your NativeScript app
 
 ## Application Run
 
-The method `run` from the `application` module is required to start the application and accepts an entry point as `NavigationEntry` argument.
+The method `run` from the `application` module is required to start the application and accepts the path to the root XML file.
 
-> **IMPORTANT:** You must call the `run` method of the application module **after** the module initialization. Any code after the `run` call will not be executed.
+> **Note:** You must call the `run` method of the application module **after** the module initialization. Any code after the `run` call will not be executed.
 
 ### Example
 
@@ -140,18 +140,18 @@ iOS calls UIApplication and triggers the application main event loop.
 */
 
 const application = require("tns-core-modules/application");
-application.run({ moduleName: "main-page" });
+application.run({ moduleName: "app-root" });
 ```
 ``` TypeScript
 /*
 iOS calls UIApplication and triggers the application main event loop.
 */
-
+F
 import * as application from "tns-core-modules/application";
-application.run({ moduleName: "main-page" });
+application.run({ moduleName: "app-root" });
 ```
 
-> **Note:** Prior to version 4.0.0 all NativeScript application had single topmost `Frame` implicitly created by the `application.start()` method. With NativeScript 4.x.x and above, you can create multiple `Frame` instances using the `application.run()` method. More about the `Frame` API and navigation could be found in the [applicaiton lifecycle article](https://docs.nativescript.org/core-concepts/navigation)
+> **Note:** Prior to version 4.0.0 all NativeScript application had single topmost `Frame` implicitly created by the `application.start()` method. With NativeScript 4.x.x and above the root `Frame` is no longer implicitly created. Instead you can specify any `View` to be the root of your application while using `applicaiton.run({ moduleName: "app-root"})` where `app-root` is the file containing your root `View`. More about the `Frame` API and navigation could be found in the [applicaiton lifecycle article](https://docs.nativescript.org/core-concepts/navigation)
 
 {% endnativescript %}
 
@@ -166,8 +166,6 @@ NativeScript applications have the following life cycle events.
 + `exit`: This event is raised when the application is about to exit.
 + `lowMemory`: This event is raised when the memory on the target device is low.
 + `uncaughtError`: This event is raised when an uncaught application error is present.
-
-### Example
 
 {% nativescript %}
 ``` JavaScript
@@ -238,7 +236,7 @@ application.on(application.uncaughtErrorEvent, (args) => {
     console.log("Error: " + args.error);
 });
 
-application.run({ moduleName: "main-page" });
+application.run({ moduleName: "app-root" });
 ```
 ``` TypeScript
 import { displayedEvent, exitEvent, launchEvent, lowMemoryEvent, 
@@ -440,7 +438,7 @@ if (application.android) {
     });
 }
 
-application.run({ moduleName: "main-page" });
+application.run({ moduleName: "app-root" });
 ```
 ``` TypeScript
 import { android, AndroidApplication, AndroidActivityBundleEventData } from "application";
@@ -486,7 +484,7 @@ if (android) {
     });
 }
 
-application.run({ moduleName: "main-page" });
+application.run({ moduleName: "app-root" });
 ```
 {% endnativescript %}
 {% angular %}
@@ -564,7 +562,7 @@ const MyDelegate = (function (_super) {
     return MyDelegate;
 })(UIResponder);
 application.ios.delegate = MyDelegate;
-application.run({ moduleName: "main-page" });
+application.run({ moduleName: "app-root" });
 ```
 ``` TypeScript
 import { ios, run as applicationRun } from "application";

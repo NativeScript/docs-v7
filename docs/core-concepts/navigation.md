@@ -18,7 +18,7 @@ NativeScript apps consist of pages that represent the separate application scree
     * [Define page](#define-page)
     * [Set home page](#set-home-page)
 * [Navigation](#navigation)
-    * [Getting Frame reference](#getting-frame-reference)
+    * [Getting Frame Reference](#getting-frame-reference)
     * [Basic navigation](#basic-navigation)
     * [Navigate by page name](#navigate-by-page-name)
     * [Navigate using a function](#navigate-using-a-function)
@@ -174,10 +174,10 @@ Example for `GridLayout` as root in `app-root.xml`.
 
 The [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. An application can have single or multiple `Frame` instances depending on the business logic and requirements. 
 
-### Getting Frame reference
+### Getting Frame Reference
 
 The navigation in NativeScript is based on the `Frame` API and using `navigate` method of the wanted frame.
-To get a reference to the `Frame` instance you need use the following methods and arguments:
+To get a reference to the `Frame` instance you need use the following methods or properties:
 
 - the [`topmost`](https://docs.nativescript.org/api-reference/modules/_ui_frame_#topmost) method from the `tns-core-modules/ui/frame` module. The  method returns the last navigated `Frame` instance or in case you are in a `TabView`, the currently selected tab item's `Frame` instance. For more complex cases or more control, you should use methods like `getFrameById` or the `frame` property of `Page` class.
 ``` JavaScript
@@ -235,21 +235,34 @@ export function onTap(args) {
 }
 ```
 
+> **Note** We can get a reference to a `Frame` only for a frame that has been already loaded in the visual tree. Frames that are not still loaded (for example a `Frame` within a modal page that is not yet opened) can not be retrieved. 
 
 ### Basic navigation
 
+To load an default (initial) page in your application use `defaultPage` property of the `Frane` element.
+With the example below the applicaiton will load a page located in `<project-folder>/app/home/home-page.xml`
+```XML
+<!-- app-root.xml -->
+<Frame defaultPage="home/home-page"/>
+```
+
 To navigate between pages, you can use the [`navigate`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame#navigate) method of the desired `Frame` instance.
 
-
 ``` JavaScript
-// app-root.js
+// e.g. home/home-page.js
 const frameModule = require("tns-core-modules/ui/frame");
+
+// Example using `getFrameById(frameId)` to get a `Frame` reference
+// As an alternative, we could use `topmost()` method or `page.frame` property
 const frame = frameModule.getFrameById("firstFrame");
 frame.navigate("second/second-page");
 ```
 ``` TypeScript
-// app-root.ts
+// e.g. home/home-page.ts
 import { getFrameById } from "tns-core-modules/ui/frame";
+
+// Example using `getFrameById(frameId)` to get a `Frame` reference
+// As an alternative, we could use `topmost()` method or `page.frame` property
 const frame = getFrameById("firstFrame");
 frame.navigate("second/second-page");
 ```
@@ -276,36 +289,44 @@ frame.navigate("details-page");
 A more dynamic way of navigating can be done by providing a function that returns the instance of the page to which you want to navigate.
 
 ``` JavaScript
-const pagesModule = require("tns-core-modules/ui/page");
-const labelModule = require("tns-core-modules/ui/label");
-const frameModule = require("tns-core-modules/ui/frame");
+const Page = require("tns-core-modules/ui/page").Page;
+const StackLayout = require("tns-core-modules/ui/layouts/stack-layout").StackLayout;
+const Label = require("tns-core-modules/ui/label").Label;
+const getFrameById = require("tns-core-modules/ui/frame").getFrameById;
 
-const factoryFunc = () => {
-    const label = new labelModule.Label();
-    label.text = "Hello, world!";
-    const page = new pagesModule.Page();
-    page.content = label;
-    return page;
-};
+const frame = getFrameById("firstFrame");
+frame.navigate({ 
+    create: () => {
+        const stack = new StackLayout();
+        const label = new Label();
+        label.text = "Hello, world!";
+        stack.addChild(label);
 
-const frame = frameModule.getFrameById("firstFrame");
-frame.navigate(factoryFunc);
+        const page = new Page();
+        page.content = stack;
+        return page;
+    }
+});
 ```
 ``` TypeScript
 import { Page } from "tns-core-modules/ui/page";
+import { StackLayout } from "tns-core-modules/ui/layouts/stack-layout";
 import { Label } from "tns-core-modules/ui/label";
 import { getFrameById } from "tns-core-modules/ui/frame";
 
-const factoryFunc = (): Page => {
-    const label = new Label();
-    label.text = "Hello, world!";
-    const page = new Page();
-    page.content = label;
-    return page;
-};
-
 const frame = getFrameById("firstFrame");
-frame.navigate(factoryFunc);
+frame.navigate({ 
+    create: () => {
+        const stack = new StackLayout();
+        const label = new Label();
+        label.text = "Hello, world!";
+        stack.addChild(label);
+
+        const page = new Page();
+        page.content = stack;
+        return page;
+    }
+});
 ```
 
 ### Navigate and pass context
@@ -835,14 +856,14 @@ function onLoaded(args) {
 exports.onLoaded = onLoaded;
 ```
 ``` TypeScript
-import { EventData } from "data/observable";
+import { EventData } from "tns-core-modules/data/observable";
 
 const modalPageModule = "./modal-views-demo/login-page";
 const context = "some custom context";
 const fullscreen = true;
 
-export function onPageLoaded(args: EventData): void {
-    const mainPage: Page = <Page>args.object;
+export function onPageLoaded(args: EventData) {
+    const mainPage = <Page>args.object;
     mainPage.showModal(modalPageModule, context, (username: string, password: string) => {
         // Receive data from the modal page. e.g. username & password
     }, fullscreen);
@@ -915,4 +936,4 @@ The platform qualifiers are executed during build time, while the others are exe
 * `land` - orientation is in landscape mode.
 * `port` - orientation is in portrait mode.
 
-> Note: All qualifiers are taken into account when the page is loading. However, changing the device orientation will not trigger a page reload and will not change the current age.
+> Note: All qualifiers are taken into account when the page is loading. However, changing the device orientation will not trigger a page reload and will not change the current page.
