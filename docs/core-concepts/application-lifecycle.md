@@ -36,7 +36,7 @@ import { Component } from '@angular/core';
 import { AppComponent } from './app.component';
 ```
 
-Some of the modules can depend on one or more separate modules.. Modules installed as npm packages (like `@angular/core` in the above example) should be referenced without a path prefix. When we import from one of our own files, we prefix the module name with the file path. In this example, we specify a relative file path (./). That means the source module is in the same folder (./) as the module importing it. 
+Some of the modules can depend on one or more separate modules. Modules installed as npm packages (like `@angular/core` in the above example) should be referenced without a path prefix. When we import from one of our own files, we prefix the module name with the file path. In this example, we specify a relative file path (./). That means the source module is in the same folder (./) as the module importing it. 
 
 ## Components
 
