@@ -8,7 +8,7 @@ slug: images-performance
 # Android Image Optimization
 
 One of the most common scenarios for modern mobile applications is to work with multiple images often in high definition formats.
-It is essential for the mobile developer to handle memory related issues and optimize an application so it can process large data(for example, a web request that downloads hundreds of photos and alike).
+It is essential for the mobile developer to handle memory related issues and optimize an application so it can process large data (for example, a web request that downloads hundreds of photos and alike).
 
 In this article, we will take a look at how the `Image` module works in NativeScript and 
 cover the techniques that will improve Android application performance.
@@ -42,9 +42,9 @@ Devices with higher pixel density displays will decode their images larger out o
 
 - When `decodeWidth` and `decodeHeight` values are **not** set, the images will be decoded with the size of the device screen. This is an optimization as in most cases you probably want to see the whole of the image on your device screen. Note that if you still want the image to be decoded in full size (if you want to be able to zoom it for example), you can manually set `decodeWidth` and `decodeHeight`.
 
-- Image caching now takes into account the `decodeWidth` and `decodeHeight` values. Identical images with different decode property values will now be retrieved and saved separately in the cache. This results in better quality images - if you have a small version of the image in a master list and want to decode it with 100 x 100 DP, and then want to display it in 1000 x 1000 DP on the detail page, the detailed image will now not be blurry. This also means you can now control caching - using the same image with the same decode parameter values will still get the image from the cache.
+- Image caching now takes into account the `decodeWidth` and `decodeHeight` values. Identical images with different decode property values will now be retrieved and saved separately in the cache. This results in better quality images. If you have a small version of the image in a master list and want to decode it with 100 x 100 DP, and then want to display it in 1000 x 1000 DP on the detail page, the detailed image will now not be blurry. This also means you can now control caching - using the same image with the same decode parameter values will still get the image from the cache.
 
-> **Important**: The `decodeWidth` and `decodeHeight` properties will work only for Android.. Setting them for our iOS images will not change the application behaviour in any way.
+> **Important**: The `decodeWidth` and `decodeHeight` properties will work only for Android. Setting them for our iOS images will not change the application behaviour in any way.
 
 ### Using `loadMode` property
 
