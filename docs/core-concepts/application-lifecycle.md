@@ -36,7 +36,7 @@ import { Component } from '@angular/core';
 import { AppComponent } from './app.component';
 ```
 
-Some modules are libraries of other modules. Modules installed as npm packages (like `@angular/core` in the above example) should be referenced without a path prefix. When we import from one of our own files, we prefix the module name with the file path. In this example we specify a relative file path (./). That means the source module is in the same folder (./) as the module importing it. 
+Some of the modules can depend on one or more separate modules. Modules installed as npm packages (like `@angular/core` in the above example) should be referenced without a path prefix. When we import from one of our own files, we prefix the module name with the file path. In this example, we specify a relative file path (./). That means the source module is in the same folder (./) as the module importing it. 
 
 ## Components
 
@@ -46,9 +46,7 @@ Components are the fundamental building blocks of NativeScript applications buil
 * A component knows how to render itself.
 * A component configures dependency injection.
 * A component has a well-defined public API of input and output properties.
-* A component has well-defined lifecycle.
-
-### Component example
+* A component has a well-defined lifecycle.
 
 ``` TypeScript
 import { Component } from "@angular/core";
@@ -62,6 +60,8 @@ import { Component } from "@angular/core";
     `
 })
 export class MainComponent {
+    name: string;
+
     constructor() {
         this.name = "Angular!";
     }
@@ -90,17 +90,15 @@ The `@Component` decorator contains metadata describing how to create and presen
 The component lifecycle is controlled by the Angular application. It creates, updates and destroys components. Lifecycle hooks are used to handle different events from the component lifecycle. Each hook method starts with the **ng** prefix. The following are some the component lifecycle methods:
 
 * **ngOnInit** - Called after all data-bound input methods are initialized.
-* **ngOnChanges** - Callled after a data-bound property has been changed.
+* **ngOnChanges** - Called after a data-bound property has been changed.
 * **ngDoCheck** - Detect and act upon changes that Angular can or won't detect on its own. Called every change detection run.
 * **ngOnDestroy** - Called just before Angular destroys the component.
 
-For a full list, see the official [Angular Lifecyle Hooks docs](https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html).
+For a full list, see the official [Angular Lifecycle Hooks docs](https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html).
 
 ## Start application
 
 The starting point of an Angular application is the `platformNativeScriptDynamic().bootstrapModule()` method. It takes the root module as an argument:
-
-### Example
 
 ``` TypeScript
 import { platformNativeScriptDynamic } from "nativescript-angular/platform";
@@ -120,36 +118,35 @@ platformNativeScriptDynamic().bootstrapModule(AppModule).then(() => {
 
 The `application` module lets you manage the life cycle of your NativeScript apps from starting the application to storing user-defined settings.
 
-* [Start Application](#start-application)
+* [Application Run](#application-run)
 * [Use Application Events](#use-application-events)
 * [Android Activity Events](#android-activity-events)
 * [iOS UIApplicationDelegate](#ios-uiapplicationdelegate)
 * [Persist and Restore Application Settings](#persist-and-restore-application-settings)
 
-## Start Application
+## Application Run
 
-This method is required only for iOS applications. 
-
-> **IMPORTANT:** You must call the `start` method of the application module **after** the module initialization. Any code after the `start` call will not be executed.
-
-### Example
+The method `run` from the `application` module is required to start the application. The method accept JS object with `moduleName` key and value the module that will be set as root. You must call the `run` method of the application module **after** the module initialization. Any code after the `run` call will not be executed.
 
 ``` JavaScript
 /*
 iOS calls UIApplication and triggers the application main event loop.
 */
 
-var application = require("application");
-application.start({ moduleName: "main-page" });
+const application = require("tns-core-modules/application");
+application.run({ moduleName: "main-page" });
 ```
 ``` TypeScript
 /*
 iOS calls UIApplication and triggers the application main event loop.
 */
 
-import { start as applicationStart } from "application";
-applicationStart({ moduleName: "main-page" });
+import * as application from "tns-core-modules/application";
+application.run({ moduleName: "main-page" });
 ```
+
+> **Note:** With NativeScript 4.x.x and above, you can create multiple `Frame` instances using the `run` method. More about the `Frame` API and navigation could be found in the [application lifecycle article](https://docs.nativescript.org/core-concepts/navigation).
+
 {% endnativescript %}
 
 ## Use Application Events
@@ -159,17 +156,16 @@ NativeScript applications have the following life cycle events.
 + `launch`: This event is raised when application launch.
 + `suspend`: This event is raised when the application is suspended.
 + `resume`: This event is raised when the application is resumed after it has been suspended.
++ `displayed`: This event is raised when the UIelements are rendered.
 + `exit`: This event is raised when the application is about to exit.
 + `lowMemory`: This event is raised when the memory on the target device is low.
 + `uncaughtError`: This event is raised when an uncaught application error is present.
 
-### Example
-
 {% nativescript %}
 ``` JavaScript
-var application = require("application");
+const application = require("application");
 
-application.on(application.launchEvent, function (args) {
+application.on(application.launchEvent, (args) => {
     if (args.android) {
         // For Android applications, args.android is an android.content.Intent class.
         console.log("Launched Android application with the following intent: " + args.android + ".");
@@ -179,7 +175,7 @@ application.on(application.launchEvent, function (args) {
     }
 });
 
-application.on(application.suspendEvent, function (args) {
+application.on(application.suspendEvent, (args) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -189,7 +185,7 @@ application.on(application.suspendEvent, function (args) {
     }
 });
 
-application.on(application.resumeEvent, function (args) {
+application.on(application.resumeEvent, (args) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -199,7 +195,18 @@ application.on(application.resumeEvent, function (args) {
     }
 });
 
-application.on(application.exitEvent, function (args) {
+application.on(application.displayedEvent, (args) => {
+    // args is of type ApplicaitonEventData
+    console.log("displayedEvent");
+});
+
+application.on(application.orientationChangedEvent, (args) => {
+    // args is of type OrientationChangedEventData
+    console.log(args.newValue); // "portrait", "landscape", "unknown"
+});
+
+
+application.on(application.exitEvent, (args) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -209,7 +216,7 @@ application.on(application.exitEvent, function (args) {
     }
 });
 
-application.on(application.lowMemoryEvent, function (args) {
+application.on(application.lowMemoryEvent, (args) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -219,21 +226,19 @@ application.on(application.lowMemoryEvent, function (args) {
     }
 });
 
-application.on(application.uncaughtErrorEvent, function (args) {
-    if (args.android) {
-        // For Android applications, args.android is an NativeScriptError.
-        console.log("NativeScriptError: " + args.android);
-    } else if (args.ios) {
-        // For iOS applications, args.ios is NativeScriptError.
-        console.log("NativeScriptError: " + args.ios);
-    }
+application.on(application.uncaughtErrorEvent, (args) => {
+    console.log("Error: " + args.error);
 });
 
-application.start({ moduleName: "main-page" });
+application.run({ moduleName: "main-page" });
 ```
 ``` TypeScript
-import { on as applicationOn, launchEvent, suspendEvent, resumeEvent, exitEvent, lowMemoryEvent, uncaughtErrorEvent, ApplicationEventData, start as applicationStart } from "application";
-applicationOn(launchEvent, function (args: ApplicationEventData) {
+import { displayedEvent, exitEvent, launchEvent, lowMemoryEvent, 
+        orientationChangedEvent, resumeEvent, suspendEvent, uncaughtErrorEvent, 
+        ApplicationEventData, LaunchEventData, OrientationChangedEventData, UnhandledErrorEventData,
+        on as applicationOn, run as applicationRun } from "application";
+
+applicationOn(launchEvent, (args: LaunchEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android.content.Intent class.
         console.log("Launched Android application with the following intent: " + args.android + ".");
@@ -243,7 +248,7 @@ applicationOn(launchEvent, function (args: ApplicationEventData) {
     }
 });
 
-applicationOn(suspendEvent, function (args: ApplicationEventData) {
+applicationOn(suspendEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -253,7 +258,7 @@ applicationOn(suspendEvent, function (args: ApplicationEventData) {
     }
 });
 
-applicationOn(resumeEvent, function (args: ApplicationEventData) {
+applicationOn(resumeEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -263,7 +268,16 @@ applicationOn(resumeEvent, function (args: ApplicationEventData) {
     }
 });
 
-applicationOn(exitEvent, function (args: ApplicationEventData) {
+applicationOn(displayedEvent, (args: ApplicationEventData) => {
+    console.log("displayedEvent");
+});
+
+applicationOn(orientationChangedEvent, (args: OrientationChangedEventData) => {
+    // "portrait", "landscape", "unknown"
+    console.log(args.newValue)
+});
+
+applicationOn(exitEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -273,7 +287,7 @@ applicationOn(exitEvent, function (args: ApplicationEventData) {
     }
 });
 
-applicationOn(lowMemoryEvent, function (args: ApplicationEventData) {
+applicationOn(lowMemoryEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -283,25 +297,20 @@ applicationOn(lowMemoryEvent, function (args: ApplicationEventData) {
     }
 });
 
-applicationOn(uncaughtErrorEvent, function (args: ApplicationEventData) {
-    if (args.android) {
-        // For Android applications, args.android is an NativeScriptError.
-        console.log("NativeScriptError: " + args.android);
-    } else if (args.ios) {
-        // For iOS applications, args.ios is NativeScriptError.
-        console.log("NativeScriptError: " + args.ios);
-    }
+applicationOn(uncaughtErrorEvent, function (args: UnhandledErrorEventData) {
+    console.log("Error: " + args.error);
 });
-applicationStart({ moduleName: "main-page" });
+
+applicationRun({ moduleName: "app-root" });
 ```
 {% endnativescript %}
 {% angular %}
 ```TypeScript
 import { platformNativeScriptDynamic } from "nativescript-angular/platform";
 import { AppModule } from "./app.module";
-import { on as applicationOn, launchEvent, suspendEvent, resumeEvent, exitEvent, lowMemoryEvent, uncaughtErrorEvent, ApplicationEventData, start as applicationStart } from "application";
+import { on as applicationOn, launchEvent, suspendEvent, resumeEvent, exitEvent, lowMemoryEvent, uncaughtErrorEvent, ApplicationEventData } from "application";
 
-applicationOn(launchEvent, function (args: ApplicationEventData) {
+applicationOn(launchEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android.content.Intent class.
         console.log("Launched Android application with the following intent: " + args.android + ".");
@@ -311,7 +320,7 @@ applicationOn(launchEvent, function (args: ApplicationEventData) {
     }
 });
 
-applicationOn(suspendEvent, function (args: ApplicationEventData) {
+applicationOn(suspendEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -321,7 +330,7 @@ applicationOn(suspendEvent, function (args: ApplicationEventData) {
     }
 });
 
-applicationOn(resumeEvent, function (args: ApplicationEventData) {
+applicationOn(resumeEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -331,7 +340,7 @@ applicationOn(resumeEvent, function (args: ApplicationEventData) {
     }
 });
 
-applicationOn(exitEvent, function (args: ApplicationEventData) {
+applicationOn(exitEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -341,7 +350,7 @@ applicationOn(exitEvent, function (args: ApplicationEventData) {
     }
 });
 
-applicationOn(lowMemoryEvent, function (args: ApplicationEventData) {
+applicationOn(lowMemoryEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -351,7 +360,7 @@ applicationOn(lowMemoryEvent, function (args: ApplicationEventData) {
     }
 });
 
-applicationOn(uncaughtErrorEvent, function (args: ApplicationEventData) {
+applicationOn(uncaughtErrorEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an NativeScriptError.
         console.log("NativeScriptError: " + args.android);
@@ -377,11 +386,9 @@ NativeScript applications have the following Android specific activity events:
 + `activityResult`: This event is raised when an activity you launched exits, giving you the requestCode you started it with, the resultCode it returned, and any additional data from it.
 + `activityBackPressed`: This event is raised when the activity has detected the user's press of the back key.
 
-### Example
-
 {% nativescript %}
 ``` JavaScript
-var application = require("application");
+const application = require("application");
 
 if (application.android) {
     application.android.on(application.AndroidApplication.activityCreatedEvent, function (args) {
@@ -423,7 +430,7 @@ if (application.android) {
     });
 }
 
-application.start();
+application.run({ moduleName: "main-page" });
 ```
 ``` TypeScript
 import { android, AndroidApplication, AndroidActivityBundleEventData } from "application";
@@ -469,7 +476,7 @@ if (android) {
     });
 }
 
-application.start({ moduleName: "main-page" });
+application.run({ moduleName: "main-page" });
 ```
 {% endnativescript %}
 {% angular %}
@@ -524,14 +531,12 @@ platformNativeScriptDynamic().bootstrapModule(AppModule);
 {% endangular %}
 ## iOS UIApplicationDelegate
 
-Since NativeScript 1.3 you can specify custom UIApplicationDelegate for the iOS application:
-
-### Example
+In NativeScript, you can specify custom `UIApplicationDelegate` for the iOS application:
 
 {% nativescript %}
 ``` JavaScript
-var application = require("application");
-var MyDelegate = (function (_super) {
+const application = require("application");
+const MyDelegate = (function (_super) {
     __extends(MyDelegate, _super);
     function MyDelegate() {
         _super.apply(this, arguments);
@@ -547,10 +552,10 @@ var MyDelegate = (function (_super) {
     return MyDelegate;
 })(UIResponder);
 application.ios.delegate = MyDelegate;
-application.start({ moduleName: "main-page" });
+application.run({ moduleName: "main-page" });
 ```
 ``` TypeScript
-import { ios, start as applicationStart } from "application";
+import { ios, run as applicationRun } from "application";
 class MyDelegate extends UIResponder implements UIApplicationDelegate {
     public static ObjCProtocols = [UIApplicationDelegate];
 
@@ -565,7 +570,7 @@ class MyDelegate extends UIResponder implements UIApplicationDelegate {
     }
 }
 ios.delegate = MyDelegate;
-applicationStart({ moduleName: "main-page" });
+applicationRun({ moduleName: "main-page" });
 ```
 {% endnativescript %}
 {% angular %}
@@ -574,7 +579,7 @@ import { platformNativeScriptDynamic } from "nativescript-angular/platform";
 
 import { AppModule } from "./app.module";
 
-import { ios, start as applicationStart } from "application";
+import { ios } from "application";
 class MyDelegate extends UIResponder implements UIApplicationDelegate {
     public static ObjCProtocols = [UIApplicationDelegate];
 
@@ -593,7 +598,7 @@ platformNativeScriptDynamic().bootstrapModule(AppModule);
 
 ```
 {% endangular %}
-> **NOTE**: If you’re using TypeScript in your NativeScript apps, you need to install the [tns-platform-declarations plugin](https://www.npmjs.com/package/tns-platform-declarations) to add typings for native iOS APIs such as `UIApplicationDelegate`.
+> **Note**: If you’re using TypeScript in your NativeScript apps, you need to install the [tns-platform-declarations plugin](https://www.npmjs.com/package/tns-platform-declarations) to add typings for native iOS APIs such as `UIApplicationDelegate`.
 
 ## Persist and Restore Application Settings
 
@@ -602,11 +607,9 @@ To persist user-defined settings, you need to use the `application-settings` mod
 The getter methods have two parameters: a key and an optional default value to return if the specified key does not exist.
 The setter methods have two required parameters: a key and value. 
 
-### Example
-
 {% nativescript %}
 ``` JavaScript
-var applicationSettings = require("application-settings");
+const applicationSettings = require("application-settings");
 // Event handler for Page "loaded" event attached in main-page.xml.
 function pageLoaded(args) {
     applicationSettings.setString("Name", "John Doe");
