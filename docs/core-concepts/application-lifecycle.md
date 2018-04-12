@@ -36,7 +36,7 @@ import { Component } from '@angular/core';
 import { AppComponent } from './app.component';
 ```
 
-Some modules are libraries of other modules. Modules installed as npm packages (like `@angular/core` in the above example) should be referenced without a path prefix. When we import from one of our own files, we prefix the module name with the file path. In this example, we specify a relative file path (./). That means the source module is in the same folder (./) as the module importing it. 
+Some of the modules can depend on one or more separate modules. Modules installed as npm packages (like `@angular/core` in the above example) should be referenced without a path prefix. When we import from one of our own files, we prefix the module name with the file path. In this example, we specify a relative file path (./). That means the source module is in the same folder (./) as the module importing it. 
 
 ## Components
 
@@ -47,8 +47,6 @@ Components are the fundamental building blocks of NativeScript applications buil
 * A component configures dependency injection.
 * A component has a well-defined public API of input and output properties.
 * A component has a well-defined lifecycle.
-
-### Component example
 
 ``` TypeScript
 import { Component } from "@angular/core";
@@ -62,6 +60,8 @@ import { Component } from "@angular/core";
     `
 })
 export class MainComponent {
+    name: string;
+
     constructor() {
         this.name = "Angular!";
     }
@@ -100,8 +100,6 @@ For a full list, see the official [Angular Lifecycle Hooks docs](https://angular
 
 The starting point of an Angular application is the `platformNativeScriptDynamic().bootstrapModule()` method. It takes the root module as an argument:
 
-### Example
-
 ``` TypeScript
 import { platformNativeScriptDynamic } from "nativescript-angular/platform";
 import { AppModule } from "./app.module";
@@ -131,8 +129,6 @@ The `application` module lets you manage the life cycle of your NativeScript app
 The method `run` from the `application` module is required to start the application and accepts the path to the root XML file.
 
 > **Note:** You must call the `run` method of the application module **after** the module initialization. Any code after the `run` call will not be executed.
-
-### Example
 
 ``` JavaScript
 /*
@@ -392,8 +388,6 @@ NativeScript applications have the following Android specific activity events:
 + `activityResult`: This event is raised when an activity you launched exits, giving you the requestCode you started it with, the resultCode it returned, and any additional data from it.
 + `activityBackPressed`: This event is raised when the activity has detected the user's press of the back key.
 
-### Example
-
 {% nativescript %}
 ``` JavaScript
 const application = require("application");
@@ -539,9 +533,7 @@ platformNativeScriptDynamic().bootstrapModule(AppModule);
 {% endangular %}
 ## iOS UIApplicationDelegate
 
-Since NativeScript 1.3 you can specify custom UIApplicationDelegate for the iOS application:
-
-### Example
+In NativeScript, you can specify custom `UIApplicationDelegate` for the iOS application:
 
 {% nativescript %}
 ``` JavaScript
@@ -608,7 +600,7 @@ platformNativeScriptDynamic().bootstrapModule(AppModule);
 
 ```
 {% endangular %}
-> **NOTE**: If you’re using TypeScript in your NativeScript apps, you need to install the [tns-platform-declarations plugin](https://www.npmjs.com/package/tns-platform-declarations) to add typings for native iOS APIs such as `UIApplicationDelegate`.
+> **Note**: If you’re using TypeScript in your NativeScript apps, you need to install the [tns-platform-declarations plugin](https://www.npmjs.com/package/tns-platform-declarations) to add typings for native iOS APIs such as `UIApplicationDelegate`.
 
 ## Persist and Restore Application Settings
 
@@ -616,8 +608,6 @@ To persist user-defined settings, you need to use the `application-settings` mod
 
 The getter methods have two parameters: a key and an optional default value to return if the specified key does not exist.
 The setter methods have two required parameters: a key and value. 
-
-### Example
 
 {% nativescript %}
 ``` JavaScript
