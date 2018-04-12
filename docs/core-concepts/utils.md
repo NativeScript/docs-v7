@@ -7,7 +7,7 @@ slug: utils
 
 # Utils
 
-To be able to use the functionality provided by the `utils/utils` module, you should first require the module:
+To use the functionality provided by the `utils/utils` module, first require/import the module:
 
 ```JavaScript
 var utilsModule = require("tns-core-modules/utils/utils");
@@ -16,13 +16,12 @@ var utilsModule = require("tns-core-modules/utils/utils");
 import * as utils from "utils/utils";
 ```
 
-## isFileOrResourcePath method
+### isFileOrResourcePath() function
 
-Allows you to verify if the specified path points to a resource or local file. The method will return boolean value:
+Verify if the specified `path` points to a resource or a local file. The function returns a boolean value of:
 
-`true` - if the string contains valid path structure.
-
-`false` - if the string do not contain file path 
+- `true` - if the path has a valid path structure
+- `false` - if the path is not a file path 
 
 ```JavaScript
 var path = "res://icon";
@@ -30,13 +29,14 @@ var value = utilsModule.isFileOrResourcePath(path);
 ```
 ```TypeScript
 const path: string  = "res://icon";
-const value:boolean = utils.isFileOrResourcePath(path);
+const value: boolean = utils.isFileOrResourcePath(path);
 ```
 
-## isDataURI method
+### isDataURI() function
 
-Ability to validate if the specified URI is [data URI](http://en.wikipedia.org/wiki/Data_URI_scheme).
-Returns `true` if the string is data URL.
+Checks if the specified URI is a [data URI](http://en.wikipedia.org/wiki/Data_URI_scheme).
+
+- Returns `true` if the string is data URL, otherwise `false`
 
 ```JavaScript
 var url = "<url>";
@@ -47,19 +47,19 @@ const url: string = "<url>";
 const value:boolean = utils.isDataURI(url);
 ```
 
-## openUrl method
+### openUrl() function
 
-Open URL in the default device browser
+Open an URL on device with the default browser
 
 ```JavaScript
-utilsModule.openUrl("https://google.com")
+utilsModule.openUrl("https://docs.nativescript.org/core-concepts/utils")
 ```
 ```TypeScript
-utils.openUrl("https://google.com")
+utils.openUrl("https://docs.nativescript.org/core-concepts/utils")
 ```
 
 
-## escapeRegexSymbols method
+### escapeRegexSymbols() function
 
  Escapes special regex symbols (., *, ^, $, etc.) in string in order to create a valid regex from it.
 
@@ -72,9 +72,9 @@ var samplestring: string = "All of these should be escaped: ^ $ * ";
 var newString: string = utils.escapeRegexSymbols(samplestring);
 ```
 
-## convertString method
+### convertString() function
 
-Ability to convert string value to a number or boolean;
+Converts a string value to a number or boolean;
 
  ```JavaScript
 var stringToBoolean = "true";
@@ -84,15 +84,15 @@ var stringToNumber = "23";
 var numberValue = utilsModule.convertString(stringToNumber);
 ```
 ```TypeScript
-const stringToBoolean:string="true";
-const booleanValue:boolean = utils.convertString(stringToBoolean);
+const stringToBoolean :string = "true";
+const booleanValue :boolean = utils.convertString(stringToBoolean);
 
-const stringToNumber:string="23";
-const numberValue:number = utils.convertString(stringToNumber);
+const stringToNumber: string = "23";
+const numberValue :number = utils.convertString(stringToNumber);
 ```
-## getDisplayDensity method
+### getDisplayDensity() function
 
-Returns display density for the current device.
+Returns the display density of the device.
 
 ```JavaScript
 var displayDensity = utilsModule.layout.getDisplayDensity();
@@ -101,9 +101,9 @@ var displayDensity = utilsModule.layout.getDisplayDensity();
 const displayDensity = utils.layout.getDisplayDensity();
 ```
 
-## toDevicePixels method
+### toDevicePixels() function
 
-Convert value from device independent pixels to device pixels.
+Converts value from device independent pixels to device pixels.
 
 ```JavaScript
 var devicePixels = utilsModule.layout.toDevicePixels(<dip>);
@@ -112,7 +112,7 @@ var devicePixels = utilsModule.layout.toDevicePixels(<dip>);
 const devicePixels = utils.layout.toDevicePixels(<dip>);
 ```
 
-## toDeviceIndependentPixels method
+### toDeviceIndependentPixels() function
 
 Convert value to device independent pixels.
 
@@ -123,7 +123,7 @@ var deviceIndependentPixels = utilsModule.layout.toDeviceIndependentPixels(<px>)
 const deviceIndependentPixels = utils.layout.toDeviceIndependentPixels(<px>);
 ```
 
-## round method
+### round() method
 
 Rounds value used in layout.
 
@@ -139,10 +139,9 @@ var value = utils.layout.round(<number_value>);
 
 ### Android
 
-#### getApplication method
+#### getApplication() function
 
-The method allows to get an instance of native Android application
-> the returned value will be from type `android.app.Application`
+Returns an instance of native Android application The returned value will be of type [`android.app.Application`](https://developer.android.com/reference/android/app/Application.html).
 
  ```JavaScript
 var application = utilsModule.ad.getApplication();
@@ -151,10 +150,9 @@ var application = utilsModule.ad.getApplication();
 const application = utils.ad.getApplication();
 ```
 
-#### getApplicationContext method
+#### getApplicationContext() function
 
-The method allows to get the Android application context
-> the returned value will be from type `android.content.Context`
+Returns the Android application context. The returned value will be of type [`android.content.Context`](https://developer.android.com/reference/android/content/Context.html).
 
  ```JavaScript
 var context = utilsModule.ad.getApplicationContext();
@@ -163,10 +161,10 @@ var context = utilsModule.ad.getApplicationContext();
 const context = utils.ad.getApplicationContext();
 ```
 
-#### getInputMethodManager method
+#### getInputMethodManager() function
 
-The method allows to get instance of native Android input method manager.
-> the returned value will be from type `android.view.inputmethod.InputMethodManager`
+Returns an instance of native Android input method manager. The returned value will be an 
+[`android.view.inputmethod.InputMethodManager`](https://developer.android.com/reference/android/view/inputmethod/InputMethodManager.html)
 
  ```JavaScript
 var inputMethodManager = utilsModule.ad.getInputMethodManager();
@@ -175,7 +173,7 @@ var inputMethodManager = utilsModule.ad.getInputMethodManager();
 const inputMethodManager = utils.ad.getInputMethodManager();
 ```
 
-#### showSoftInput method
+#### showSoftInput() function
 
 Show keyboard for a specific element.
 
@@ -198,16 +196,16 @@ import { TextField } from "ui/text-field";
 import { Button } from "ui/button"
 
 export function showKeyboard(args:EventData){
-    var button:Button = <Button>args.object;
-    var page:Page = <Page>button.page;
-    var textfield:TextField =<TextField> page.getViewById("textfieldid");
+    var button: Button = <Button>args.object;
+    var page: Page = <Page>button.page;
+    var textfield: TextField = <TextField> page.getViewById("textfieldid");
     utils.ad.showSoftInput(textfield.android);
 }
 ```
 
-#### dismissSoftInput method
+#### dismissSoftInput() function
 
-Hides the soft input method, ususally a soft keyboard.
+Hides the soft input method, usually a soft keyboard.
 
  ```XML
 <TextField id="textfieldid" hint="Target field" />
@@ -220,14 +218,14 @@ function dismissSoftInput(args) {
 exports.dismissSoftInput = dismissSoftInput;
 ```
 ```TypeScript
-export function dismissSoftInput(args:EventData){
+export function dismissSoftInput(args: EventData){
     utils.ad.dismissSoftInput();
 }
 ```
 
-#### stringArrayToStringSet method
+#### stringArrayToStringSet() function
 
-Converts string array into a String [hash set](http://developer.android.com/reference/java/util/HashSet.html).
+Converts a string array into a String [hash set](http://developer.android.com/reference/java/util/HashSet.html).
 
 ```JavaScript
 var stringArr = ["a", "b", "c"]
@@ -238,9 +236,9 @@ const stringArr = ["a", "b", "c"]
 const stringSet = utils.ad.collections.stringArrayToStringSet(stringArr);
 ```
 
-#### stringSetToStringArray method
+#### stringSetToStringArray() function
 
-Converts string hash set into array of strings
+Converts a string hash set into array of strings
 
 ```JavaScript
 var hashset = new java.util.HashSet();
@@ -267,9 +265,9 @@ hashset.add(string3);
 var stringArray = utils.ad.collections.stringSetToStringArray(hashset);
 ```
 
-#### getDrawableId method
+#### getDrawableId() function
 
-Allows to get the drawable id from a given resource name
+Returns the drawable id from a given resource name
 
 ```JavaScript
 var drawableId = utilsModule.ad.resources.getDrawableId("icon");
@@ -278,9 +276,9 @@ var drawableId = utilsModule.ad.resources.getDrawableId("icon");
 const drawableId:number = utils.ad.resources.getDrawableId("icon");
 ```
 
-#### getStringId method
+#### getStringId() function
 
-Get the id of the string from the resources, while using its `name`
+Returns the id of the string from the resources, while using its `name`
 
 ```JavaScript
 var stringId = utilsModule.ad.resources.getStringId("resource_string_name");
@@ -289,9 +287,9 @@ var stringId = utilsModule.ad.resources.getStringId("resource_string_name");
 const stringId: string = utils.ad.resources.getStringId("resource_string_name");
 ```
 
-#### getId method
+#### getId() function
 
-Gets the id from a resource, while passing string with resource type and name. For example: `:drawable/<resource_name>`, `:string/<resource_name>`
+Returns the id from a resource, while passing string with resource type and name. eg: `:drawable/<resource_name>`, `:string/<resource_name>`
 
 ```JavaScript
 var id = utilsModule.ad.resources.getId("resource_name");
@@ -300,9 +298,9 @@ var id = utilsModule.ad.resources.getId("resource_name");
 const id: number = utils.ad.resources.getId("resource_name");
 ```
 
-#### getPalleteColor method
+#### getPalleteColor() function
 
-Gets a color from the current theme, while using the resource color name.
+Returns a color from the current theme using the resource color name.
 
 ```JavaScript
 var context = utilsModule.ad.getApplicationContext();
@@ -310,14 +308,14 @@ var currentThemeColor = utilsModule.ad.resources.getPalleteColor("resource_color
 ```
 ```TypeScript
 const context = utils.ad.getApplicationContext();
-const currentThemeColor:number = utils.ad.resources.getPalleteColor("resource_color_name", context);
+const currentThemeColor: number = utils.ad.resources.getPalleteColor("resource_color_name", context);
 ```
 
 ### iOS
 
-#### jsArrayToNSArray method
+#### jsArrayToNSArray() function
 
-Converts JavaScript array to [NSArray](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/)
+Converts a JavaScript array to a [NSArray](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/)
 
 ```JavaScript
 var jsArray = ["item1", "item2", "item3"];
@@ -328,9 +326,9 @@ const jsArray:Array<string> = ["item1", "item2", "item3"];
 const nsarray = utils.ios.collections.jsArrayToNSArray(jsArray);
 ```
 
-#### nsArrayToJSArray method
+#### nsArrayToJSArray() function
 
-Converts NSArray to JavaScript array.
+Converts a NSArray to a JavaScript array.
 
 ```JavaScript
 var nsarray = new NSArray(["item1", "item2", "item3"]);
@@ -338,12 +336,12 @@ var jsarray = utilsModule.ios.collections.nsArrayToJSArray(nsarray);
 ```
 ```TypeScript
 const nsarray = new NSArray(["item1", "item2", "item3"]);
-const jsarray:Array<any> = utils.ios.collections.nsArrayToJSArray(nsarray);
+const jsarray: Array<any> = utils.ios.collections.nsArrayToJSArray(nsarray);
 ```
 
-#### isLandscape method
+#### isLandscape() function
 
- Get an information, whether current mode is Landscape.
+Returns `true` if current orientation is Landscape.
  
 ```JavaScript
 var value = utilsModule.ios.isLandscape();
@@ -352,9 +350,9 @@ var value = utilsModule.ios.isLandscape();
 const value: boolean = utils.ios.isLandscape()
 ```
 
-#### MajorVersion property
+#### MajorVersion() function
 
-Get the iOS device major version (for 8.1 will return 8); The returned value will be from type `number`.
+Returns a `number` with the iOS device major version(eg 8.1 will return 8). 
 
 ```JavaScript
 console.log("iOS MajorVersion "+ utilsModule.ios.MajorVersion);
@@ -363,7 +361,7 @@ console.log("iOS MajorVersion "+ utilsModule.ios.MajorVersion);
 console.log("iOS MajorVersion "+ utils.ios.MajorVersion);
 ```
 
-#### openFile method
+#### openFile() function
 
 Opens file with associated application, while using file path.
 
