@@ -9,12 +9,9 @@ module.exports.WatcherService = class WatcherService {
 		this.sourcePaths = [{
 			basePath: path.normalize(paths.docsRoot)
 		}, {
-			basePath: path.normalize(paths.modulesRoot),
-			distPaths: [
-				`${paths.modulesRoot}/bin/dist/./snippets`,
-				`${paths.modulesRoot}/bin/dist/./cookbook`
-			],
-			buildScript: `${paths.modulesRoot}/build-docs.sh`
+			basePath: path.normalize(paths.sdkExamplesRootJS),
+			distPaths: [`${paths.sdkExamplesRootJS}/dist/./cookbook`],
+			buildScript: `${paths.sdkExamplesRootJS}/build-docs.sh`
 		}, {
 			basePath: path.normalize(paths.nativescriptAngularRoot),
 			distPaths: [`${paths.nativescriptAngularRoot}/bin/dist/./snippets`],
@@ -37,9 +34,10 @@ module.exports.WatcherService = class WatcherService {
 				persistent: true,
 				ignoreInitial: true,
 				ignored: [
-					`${paths.modulesRoot}/bin/dist/**`,
+					// `${paths.modulesRoot}/bin/dist/**`,
 					`${paths.nativescriptAngularRoot}/bin/dist/**`,
 					`${paths.sdkExamplesRoot}/dist/**`,
+					`${paths.sdkExamplesRootJS}/dist/**`,
 					"**/node_modules/**",
 					"**/.*",
 					"**/.git/**"
