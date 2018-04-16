@@ -1,6 +1,6 @@
 ---
 title: Project Structure
-description: Learn the basic project structure of NativeScript apps.
+description: Learn the basic project structure of NativeScript application.
 position: 10
 slug: structure
 previous_url: /structure
@@ -11,6 +11,9 @@ environment: nativescript
 
 * [Overview](#overview)
 * [Nsconfig](#nsconfig)
+    * [Usage](#usage)
+    * [Examples](#examples)
+    * [Requirements](#requirements)
 
 ## Overview
 
@@ -18,7 +21,9 @@ The default structure of a NativeScript project consist of a project directory t
 
 ## Nsconfig
 
-The **nsconfig.json** is an optional configuration file, located at the root project directory on the same level as the project's package.json file. This file makes it possible for users to modify the structure of their application. Valid available configurations are **appPath** and **appResourcesPath**. For example:
+### Usage
+
+The **nsconfig.json** is an optional configuration file, located at the root project directory on the same level as the project's package.json file. This file makes it possible for users to modify the structure of their application. The available configurations are **appPath** and **appResourcesPath**. For example:
 
 ```
 {
@@ -29,38 +34,43 @@ The **nsconfig.json** is an optional configuration file, located at the root pro
 
 Both paths must be relative to the project root(where the "package.json" file and "platforms" directory are located) in order everything to work as expected. 
 
-If `appResourcesPath` is omitted the CLI will assume that they are at their default location - folder called App_Resources inside the folder containing the rest of the app files. 
-
 If `appPath` is omitted CLI will assume the application files are located inside a folder called "app" inside the project folder.
 
-Examples:
+If `appResourcesPath` is omitted the CLI will assume that they are at their default location - folder called `App_Resources` inside the folder containing the rest of the app files.
+
+### Examples
 Lets say the project is located at "/d/work/myApplication".
 
-1. "nsconfig.json" content:
-```
-{
-    "appPath": "code/src"
-}
-```
-Will result in app located at "/d/work/myApplication/code/src" and resources located at "/d/work/myApplication/code/src/App_Resources".
+1. The first option is to have only the app location specified like this:
+    ```
+    {
+        "appPath": "code/src"
+    }
+    ```
+    This will result in app located at **"/d/work/myApplication/code/src"** and resources located at **"/d/work/myApplication/code/src/App_Resources"**.
 
-2. "nsconfig.json" content:
-```
-{
-    "appResourcesPath": "resources"
-}
-```
-Will result in app located at "/d/work/myApplication/app" and resources located at "/d/work/myApplication/resources".
+2. The second option is to have only the app resources location specified like this:
+    ```
+    {
+        "appResourcesPath": "resources"
+    }
+    ```
+    This will result in app located at **"/d/work/myApplication/app"** and resources located at **"/d/work/myApplication/resources"**.
 
-3. "nsconfig.json" content:
-```
-{
-    "appPath": "code/src",
-    "appResourcesPath": "resources"
-}
-```
-Will result in app located at "/d/work/myApplication/code/src" and resources located at "/d/work/myApplication/resources".
+3. The third option is to have both the app folder and resources folder location specified like this:
+    ```
+    {
+        "appPath": "code/src",
+        "appResourcesPath": "resources"
+    }
+    ```
+    This will result in app located at **"/d/work/myApplication/code/src"** and resources located at **"/d/work/myApplication/resources"**.
 
-4. If no "nsconfig.json" file is present the app folder will be  "/d/work/myApplication/app" and resources folder will be at "/d/work/myApplication/app/App_Resources"
+4. The fourth option is to not have nsconfig file inside your project. This is the default option when creating new project. Тhe app will be located at **"/d/work/myApplication/app"** and resources at **"/d/work/myApplication/app/App_Resources"**
 
-The option folders/files to be included/excluded in the app and to be watched during livesync (related to #887) is still not implemented. Its discussion/implementation is moved in the separate issue.
+### Requirements
+
+* nativescript >= 4.0.0
+* Android Runtime >= 4.0.0
+* nativescript-dev-sass >= 1.3.6 (if used by the application)
+* nativescript-dev-webpack >= 0.10.1 (if used by the application)
