@@ -26,8 +26,8 @@ New to NativeScript? [Try out NativeScript on your phone](https://www.nativescri
 Ready to get started developing with NativeScript? We offer a set of comprehensive tutorials that walk you through installing NativeScript, and building a real-world iOS and Android app from scratch.
 
 <div id="start-button-container">
-  <a href="http://docs.nativescript.org/angular/tutorial/ng-chapter-0" class="Btn" id="ng-start-button">Get Started with TypeScript & Angular</a>
-  <a href="http://docs.nativescript.org/tutorial/chapter-0" class="Btn" id="js-start-button">Get Started with JavaScript</a>
+  <a href="https://play.nativescript.org/?template=groceries-ng&tutorial=groceries-ng" class="Btn" id="ng-start-button">Get Started with TypeScript & Angular</a>
+  <a href="https://play.nativescript.org/?template=groceries-js&tutorial=groceries-js" class="Btn" id="js-start-button">Get Started with JavaScript</a>
 </div>
 
 <script>
@@ -46,7 +46,7 @@ Ready to get started developing with NativeScript? We offer a set of comprehensi
   }
 </script>
 
-> **NOTE**: NativeScript also lets you use TypeScript _without_ Angular. If you’re interested in this approach, start with [our JavaScript tutorial](http://docs.nativescript.org/tutorial/chapter-0) to familiarize yourself with the basic NativeScript concepts, and then refer to [our TypeScript documentation](https://www.nativescript.org/using-typescript-with-nativescript-when-developing-mobile-apps) for your next steps.
+> **NOTE**: NativeScript also lets you use TypeScript _without_ Angular. If you’re interested in this approach, start with [our JavaScript tutorial](https://play.nativescript.org/?template=groceries-js&tutorial=groceries-js) to familiarize yourself with the basic NativeScript concepts, and then refer to [our TypeScript documentation](https://www.nativescript.org/using-typescript-with-nativescript-when-developing-mobile-apps) for your next steps.
 
 ## Join the NativeScript Community
 
