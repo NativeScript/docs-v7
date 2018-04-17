@@ -1,7 +1,7 @@
 ---
 title: Project Structure
 description: Learn the basic project structure of NativeScript application.
-position: 10
+position: 120
 slug: structure
 previous_url: /structure
 environment: nativescript
@@ -41,7 +41,7 @@ If `appResourcesPath` is omitted the CLI will assume that they are at their defa
 ### Examples
 Lets say the project is located at "/d/work/myApplication".
 
-1. The first option is to have only the app location specified like this:
+1. The first option is to have only the app location specified:
     ```
     {
         "appPath": "code/src"
@@ -49,7 +49,7 @@ Lets say the project is located at "/d/work/myApplication".
     ```
     This will result in app located at **"/d/work/myApplication/code/src"** and resources located at **"/d/work/myApplication/code/src/App_Resources"**.
 
-2. The second option is to have only the app resources location specified like this:
+2. The second option is to have only the app resources location specified:
     ```
     {
         "appResourcesPath": "resources"
@@ -57,7 +57,7 @@ Lets say the project is located at "/d/work/myApplication".
     ```
     This will result in app located at **"/d/work/myApplication/app"** and resources located at **"/d/work/myApplication/resources"**.
 
-3. The third option is to have both the app folder and resources folder location specified like this:
+3. The third option is to have both the app folder and resources folder location specified:
     ```
     {
         "appPath": "code/src",
@@ -71,6 +71,6 @@ Lets say the project is located at "/d/work/myApplication".
 ### Requirements
 
 * nativescript >= 4.0.0
-* Android Runtime >= 4.0.0
+* Android Runtime >= 4.0.0 (if the application targets Android platform)
 * nativescript-dev-sass >= 1.3.6 (if used by the application)
 * nativescript-dev-webpack >= 0.10.1 (if used by the application)
