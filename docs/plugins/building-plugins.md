@@ -214,7 +214,7 @@ The NativeScript plugin seed automatically sets up the necessary TypeScript conf
 There are still a few more changes you need to make before your plugin is ready to test. Next, open your `src/version-number.android.ts` file and paste in the following code:
 
 ``` TypeScript
-import * as application from "application";
+import * as application from "tns-core-modules/application";
 
 export class VersionNumber {
   get() {
