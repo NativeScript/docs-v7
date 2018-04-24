@@ -239,7 +239,7 @@ export function onTap(args) {
 
 ### Basic navigation
 
-To load an default (initial) page in your application use `defaultPage` property of the `Frame` element.
+To load a default (initial) page in your application use the `defaultPage` property of the `Frame` element.
 With the example below the applicaiton will load a page located in `<project-folder>/app/home/home-page.xml`
 ```XML
 <!-- app-root.xml -->
