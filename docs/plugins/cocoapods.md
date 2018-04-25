@@ -47,7 +47,7 @@ $ tns platform add ios
 
 ## Wrap the Library as NativeScript Plugin
 
-For more information about working with NativeScript plugins, click [here](PLUGINS.md).
+For more information about working with NativeScript plugins, click [here](plugins.md).
 
 ```bash
 cd ..
