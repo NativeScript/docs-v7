@@ -19,7 +19,7 @@ This page contains a list of all system requirements needed to build and run Nat
 ## System Requirements
 
 * Ubuntu 14.04 LTS
-* The latest stable official release of Node.js (LTS) [6.x](https://nodejs.org/dist/latest-v6.x/) 
+* The latest stable official release of Node.js (LTS) [8.x](https://nodejs.org/dist/latest-v8.x/) 
 * G++ compiler
 * JDK 8
 * Android SDK 22 or a later stable official release
@@ -36,7 +36,7 @@ You must also have the following two environment variables setup for Android dev
 
 Complete the following steps to set up NativeScript on your Linux development machine:
 
-1. Install the latest Node.js [6.x](https://nodejs.org/dist/latest-v6.x/) or [7.x](https://nodejs.org/dist/latest-v7.x/) stable official release. We recommend using Node.js v6.x.
+1. Install the latest Node.js [8.x](https://nodejs.org/dist/latest-v8.x/) stable official release. 
 
 1. If you are running on a 64-bit system, install the runtime libraries for the ia32/i386 architecture.
 
