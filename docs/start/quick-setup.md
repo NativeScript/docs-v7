@@ -19,10 +19,10 @@ The NativeScript CLI is built on [Node.js](https://nodejs.org/en/), and as such 
 To check whether you have Node.js installed, open a terminal or command prompt and execute `node --version`. If there is an error, head to  <https://nodejs.org/> and download and install the latest “LTS” (long-term support) distribution and restart your terminal or command prompt.
 
 > **TIP**:
-> * If you’re on macOS and use [Homebrew](http://brew.sh/), you can alternatively install the Node.js LTS release by running `brew update` (to download the latest updates) and then `brew install node@6` in your terminal.
+> * If you’re on macOS and use [Homebrew](http://brew.sh/), you can alternatively install the Node.js LTS release by running `brew update` (to download the latest updates) and then `brew install node@8` in your terminal.
 > * The NativeScript CLI supports a wide variety of Node.js versions, so if you already have Node.js installed you should be good to go. If, by chance, you’re running an unsupported version, the `tns doctor` command will run momentarily and flag the problem so you can upgrade.
 
-> **NOTE**: Mac users, bear in mind that you should add the path to `node@6/bin` manually by running `echo 'export PATH="/usr/local/opt/node@6/bin:$PATH"' >> ~/.bash_profile` and restart your terminal.
+> **NOTE**: Mac users, bear in mind that you should add the path to `node@8/bin` manually by running `echo 'export PATH="/usr/local/opt/node@8/bin:$PATH"' >> ~/.bash_profile` and restart your terminal.
 
 ## Step 2: Install the NativeScript CLI
 
