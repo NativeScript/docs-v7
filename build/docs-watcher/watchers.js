@@ -37,9 +37,9 @@ module.exports.WatcherService = class WatcherService {
 				persistent: true,
 				ignoreInitial: true,
 				ignored: [
-					`${paths.modulesRoot}/bin/dist/**`,
 					`${paths.nativescriptAngularRoot}/bin/dist/**`,
 					`${paths.sdkExamplesRoot}/dist/**`,
+					`${paths.sdkExamplesRootJS}/dist/**`,
 					"**/node_modules/**",
 					"**/.*",
 					"**/.git/**"
