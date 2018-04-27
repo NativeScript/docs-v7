@@ -174,7 +174,7 @@ The second change is adding our UI tests stage.
       - Android="23"
       language: node_js
       os: linux
-      node_js: "6"
+      node_js: "8"
       script:
         - npm i -g appium
         - cd demo && npm i
@@ -183,7 +183,7 @@ The second change is adding our UI tests stage.
       env: 
         - iOS="10"
       language: node_js 
-      node_js: "6"
+      node_js: "8"
       script: 
         - npm i -g appium
         - cd demo && npm i
