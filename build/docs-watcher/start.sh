@@ -30,6 +30,7 @@ rsync --relative -az --exclude node_modules/ \
 	/root/./NativeScript \
 	/root/./nativescript-angular \
 	/root/./nativescript-sdk-examples-ng \
+	/root/./nativescript-sdk-examples-js \
 	/root/./sidekick-docs \
 	/root/./nativescript-cli \
 	/www
