@@ -165,7 +165,7 @@ import { platformNativeScriptDynamic } from "nativescript-angular/platform";
 
 import { AppModule } from "./app.module";
 
-platformNativeScriptDynamic().bootstrapModule(AppModule);
+platformNativeScriptDynamic({ createFrameOnBootstrap: true }).bootstrapModule(AppModule);
 ```
 
 Here you’re using the TypeScript `import` command to bring in a function—`platformNativeScriptDynamic()`—and a [TypeScript class](http://www.typescriptlang.org/Handbook#classes)—`AppModule`—each of which are defined in separate files. The `platformNativeScriptDynamic()` function comes from the “nativescript-angular” npm module, which you may recall contains the code needed to integrate NativeScript and Angular. Whereas Angular’s own `platformBrowserDynamic()` function sets up an Angular browser app, NativeScript’s `platformNativeScriptDynamic()` function sets up an Angular native app.
