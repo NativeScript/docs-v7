@@ -142,7 +142,7 @@ dialogs.prompt("Your message", "Default text").then(r => {
 
 ```JavaScript
 var dialogs = require("ui/dialogs");
-// inputType property can be dialogs.inputType.password or dialogs.inputType.text.
+// inputType property can be dialogs.inputType.password, dialogs.inputType.text, or dialogs.inputType.email.
 dialogs.prompt({
     title: "Your title",
     message: "Your message",
@@ -157,7 +157,7 @@ dialogs.prompt({
 ```
 ```TypeScript
 import * as dialogs from "ui/dialogs";
-// inputType property can be dialogs.inputType.password or dialogs.inputType.text.
+// inputType property can be dialogs.inputType.password, dialogs.inputType.text, or dialogs.inputType.email.
 dialogs.prompt({
     title: "Your title",
     message: "Your message",
