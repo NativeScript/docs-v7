@@ -1,6 +1,6 @@
-var path = require("path"),
-	paths = require("./paths"),
-	exec = require("child_process").exec;
+const path = require("path"),
+	  paths = require("./paths"),
+	  exec = require("child_process").exec;
 
 module.exports = class JekyllService {
 	constructor(watchService) {
@@ -24,16 +24,28 @@ module.exports = class JekyllService {
 
 	start() {
 		this.listeners.forEach(l => {
-			var opts = { cwd: l.workDir };
+			const opts = { cwd: l.workDir };
 			if (l.env) {
-				var env = process.env;
-				for (var key in l.env) {
-					env[key] = l.env[key];
+				const env = process.env;
+
+				for (const key in l.env) {
+					if (l.env.hasOwnProperty(key)) {
+                        env[key] = l.env[key];
+                    }
 				}
+
 				opts.env = env;
 			}
 
-			l.proc = exec(l.cmd, opts, (error, stdout, stderr) => { });
+			l.proc = exec(l.cmd, opts, (error, stdout, stderr) => {
+				if (error) {
+				    console.error(`exec error: ${error}`);
+				    return;
+		  		}
+
+		  		console.log(`stdout: ${stdout}`);
+		  		console.log(`stderr: ${stderr}`);
+			});
 		});
 
 		return this;
@@ -48,21 +60,17 @@ module.exports = class JekyllService {
 	}
 
 	stop() {
-		var stopPromises = this.listeners.map(l => {
-			return new Promise((resolve, reject) => {
+		const stopPromises = this.listeners.map(l => {
+			return new Promise((resolve) => {
 				if (l.proc) {
-					exec("pkill -9 -f jekyll", (error, stdout, stderr) => {
-						exec(`rm -rf ${l.cleanFolder}`, (error, stdout, stderr) => {
-							l.proc = null;
-							resolve();
-						});
-					});
-				} else {
-					resolve();
+					l.proc.kill("SIGKILL");
+					l.proc = null;
 				}
+
+				resolve();
 			});
 		});
 
 		return Promise.all(stopPromises);
 	}
-}
+};

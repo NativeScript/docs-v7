@@ -78,7 +78,7 @@ This is the way Angular supports two-way data binding. It generally works in alm
 * Switch - checked property
 * Slider - value property
 
-Angular mustache (`{{ }}`) syntax for binding is also supported within a NativeScript-Angular application. It's just another way of one-way binding placed in the middle of a text.
+Angular mustache (`{%raw%}{{ }}{%endraw%}`) syntax for binding is also supported within a NativeScript-Angular application. It's just another way of one-way binding placed in the middle of a text.
 
 ```XML
 {%raw%}<Label text='{{model.deliveryHour}}:{{model.deliveryMinute}}'></Label>{%endraw%}

@@ -32,13 +32,10 @@ if [ ! -d "$WWW_ROOT" ]; then
 	mkdir $WWW_ROOT
 fi
 
-bundle config build.nokogiri --use-system-libraries
-
 cd $CLI_ROOT
 ./docs/build-jekyll-md.sh
 
 cd $SIDEKICK_ROOT
-bundle install
 jekyll build --config _config.yml
 
 cd $SCRIPT_PATH

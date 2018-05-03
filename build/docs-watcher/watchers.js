@@ -1,8 +1,13 @@
-let chokidar = require("chokidar"),
-	exec = require("child_process").exec,
-	path = require("path"),
-	fs = require("fs-extra"),
-	paths = require("./paths");
+const chokidar = require("chokidar"),
+	  exec = require("child_process").exec,
+	  path = require("path"),
+	  fs = require("fs-extra"),
+	  paths = require("./paths"),
+	  livereload = require('livereload');
+
+const server = livereload.createServer();
+
+server.watch(paths.distRoot);
 
 module.exports.WatcherService = class WatcherService {
 	constructor() {
@@ -32,8 +37,8 @@ module.exports.WatcherService = class WatcherService {
 
 	start() {
 		if (!this.watcher) {
-			var watchPaths = this.sourcePaths.map(x => x.basePath);
-			var chokidarOptions = {
+			const watchPaths = this.sourcePaths.map(x => x.basePath);
+			const chokidarOptions = {
 				persistent: true,
 				ignoreInitial: true,
 				ignored: [
@@ -69,15 +74,16 @@ module.exports.WatcherService = class WatcherService {
 			return;
 		}
 
-		var destFile = this.getDestFile(f);
-		if (!destFile) {
+		const destination = this.getDestFile(f);
+
+		if (!destination) {
 			return;
 		}
 
 		if (fs.existsSync(f)) {
-			ensureDestPath(destFile);
-			fs.copySync(f, destFile);
-			//console.log(`${destFile} updated`);
+			ensureDestPath(destination);
+			fs.copySync(f, destination);
+			console.log(`${destination} updated`);
 		}
 	}
 
@@ -86,36 +92,38 @@ module.exports.WatcherService = class WatcherService {
 			return;
 		}
 
-		var destFile = this.getDestFile(f);
-		if (!destFile) {
+		const destination = this.getDestFile(f);
+
+		if (!destination) {
 			return;
 		}
 
-		if (fs.existsSync(destFile)) {
-			fs.unlinkSync(destFile);
-			//console.log(`${destFile} removed`);
+		if (fs.existsSync(destination)) {
+			fs.unlinkSync(destination);
+			console.log(`${destination} removed`);
 		}
 	}
 
 	getDestFile(f) {
-		var sourcePath = this.sourcePaths.find(x => isChildOf(f, x.basePath));
+		const sourcePath = this.sourcePaths.find(x => isChildOf(f, x.basePath));
+
 		if (!sourcePath) {
 			return null;
 		}
 
 		if (!sourcePath.buildScript) {
-			var relativePath = path.relative(sourcePath.basePath, f);
-			var destFile = path.join(paths.contentPath, relativePath);
-			return destFile;
+			return path.join(paths.contentPath, path.relative(sourcePath.basePath, f));
 		}
 
-		var distPaths = sourcePath.distPaths || [];
+		const distPaths = sourcePath.distPaths || [];
 
 		if (fs.existsSync(sourcePath.buildScript) && distPaths.length > 0) {
 			console.log(`Triggering build script ${sourcePath.buildScript}`);
-			var workDir = path.dirname(sourcePath.buildScript);
+			const workDir = path.dirname(sourcePath.buildScript);
+
 			this.watching = false;
-			var childProc = exec(sourcePath.buildScript, { cwd: workDir }, (error, stdout, stderr) => {
+
+			const childProc = exec(sourcePath.buildScript, { cwd: workDir }, (error, stdout, stderr) => {
 				this.watching = true;
 
 				if (error) {
@@ -125,7 +133,8 @@ module.exports.WatcherService = class WatcherService {
 				}
 
 				distPaths.forEach(distPath => {
-					var script = `rsync --relative -avzP ${distPath} ${paths.contentPath}`;
+					const script = `rsync --relative -avzP ${distPath} ${paths.contentPath}`;
+
 					exec(script, (error, stdout, stderr) => { });
 				});
 			});
@@ -137,7 +146,7 @@ module.exports.WatcherService = class WatcherService {
 		return null;
 	}
 
-}
+};
 
 module.exports.SourcesWatcher = class SourcesWatcher {
 	constructor(jekyllService) {
@@ -174,73 +183,86 @@ module.exports.SourcesWatcher = class SourcesWatcher {
 	}
 
 	sourceFileChanged(f) {
-		var filename = path.basename(f);
-		if (filename == "_config.yml" || filename == "_config_nativescript.yml" || filename == "_config_angular.yml") {
+		let filename = path.basename(f);
+
+		let basePath, destination, relativePath;
+
+		if (filename === "_config.yml" || filename === "_config_nativescript.yml" || filename === "_config_angular.yml") {
 			console.log(`${f} updated -> restarting jekyll service...`);
+			let destination;
+
 			if (f.toLowerCase().indexOf("sidekick-docs") < 0) {
-				fs.copySync(f, path.join(paths.binRoot, filename));
+				destination = path.join(paths.binRoot, filename);
 			} else {
-				fs.copySync(f, path.join(paths.sidekickRoot, filename));
+				destination = path.join(paths.sidekickRoot, filename);
 			}
-			this.jekyllService.restart();
+
+			if (f !== destination) {
+                fs.copySync(f, destination);
+                this.jekyllService.restart();
+            }
+
 			return;
 		}
 
 		let assetsPath = paths.assetsPaths.find(ap => isChildOf(f, ap));
 		if (assetsPath) {
-			var basePath = path.normalize(path.join(assetsPath, ".."));
-			var relativePath = path.relative(basePath, f);
-			var destination = path.join(paths.contentPath, relativePath);
+			basePath = path.normalize(path.join(assetsPath, ".."));
+			relativePath = path.relative(basePath, f);
+			destination = path.join(paths.contentPath, relativePath);
+
 			if (f.toLowerCase().indexOf("sidekick-docs") > -1) {
 				destination = path.join(paths.sidekickRoot, relativePath);
 			}
 
-			if (fs.existsSync(f)) {
-				console.log(`${destination} updated -> rebuilding site...`);
+			if (fs.existsSync(f) && f !== destination) {
 				ensureDestPath(destination);
 				fs.copySync(f, destination);
-				this.jekyllService.restart();
+				console.log(f, destination);
+				console.log(`${destination} asset updated -> rebuilding site...`);
 			}
 			return;
 		}
 
-		var relativePath = path.relative(paths.sourceFilesRoot, f);
-		var destFile = path.join(paths.wwwRoot, relativePath);
+		relativePath = path.relative(paths.sourceFilesRoot, f);
+		destination = path.join(paths.wwwRoot, relativePath);
 
-		if (fs.existsSync(f)) {
-			ensureDestPath(destFile);
-			fs.copySync(f, destFile);
-			console.log(`${destFile} updated -> rebuilding site...`);
+		if (fs.existsSync(f) && f !== destination) {
+			ensureDestPath(destination);
+			fs.copySync(f, destination);
+			console.log(`${destination} updated -> rebuilding site...`);
 		}
 	}
 
 	sourceFileRemoved(f) {
+		let basePath, destination, relativePath;
 		let assetsPath = paths.assetsPaths.find(ap => isChildOf(f, ap));
+
 		if (assetsPath) {
-			var basePath = path.normalize(path.join(assetsPath, ".."));
-			var relativePath = path.relative(basePath, f);
-			var destination = path.join(paths.contentPath, relativePath);
+			basePath = path.normalize(path.join(assetsPath, ".."));
+			relativePath = path.relative(basePath, f);
+			destination = path.join(paths.contentPath, relativePath);
 			if (f.toLowerCase().indexOf("sidekick-docs") > -1) {
 				destination = path.join(paths.sidekickRoot, relativePath);
 			}
 
-			if (fs.existsSync(f)) {
+			if (fs.existsSync(f) && f !== destination) {
 				console.log(`${destination} removed -> rebuilding site...`);
-				fs.unlinkSync(destFile);
+				fs.unlinkSync(destination);
 				this.jekyllService.restart();
 			}
 			return;
 		}
 
-		var relativePath = path.relative(paths.sourceFilesRoot, f);
-		var destFile = path.join(paths.wwwRoot, relativePath);
+		relativePath = path.relative(paths.sourceFilesRoot, f);
+		destination = path.join(paths.wwwRoot, relativePath);
 
-		if (fs.existsSync(destFile)) {
-			fs.unlinkSync(destFile);
-			console.log(`${destFile} removed -> rebuilding site...`);
+		if (fs.existsSync(destination) && f !== destination) {
+			fs.unlinkSync(destination);
+			console.log(`${destination} removed -> rebuilding site...`);
 		}
 	}
-}
+};
 
 function isChildOf(child, parent) {
 	child = path.normalize(child);
@@ -250,13 +272,14 @@ function isChildOf(child, parent) {
 		return false;
 	}
 
-	var parentTokens = parent.split("/").filter(i => i.length);
-	var childTokens = child.split("/").filter(i => i.length);
+	const parentTokens = parent.split("/").filter(i => i);
+	const childTokens = child.split("/").filter(i => i);
+
 	return parentTokens.every((t, i) => childTokens[i].toLowerCase() === t.toLowerCase());
 }
 
 function ensureDestPath(filename) {
-	var folder = path.dirname(filename);
+	const folder = path.dirname(filename);
 
 	if (!fs.existsSync(folder)) {
 		fs.ensureDirSync(folder);

@@ -9,14 +9,17 @@
         {% if page.description %}<meta name="description" content="{{page.description}}">{% endif %}
         <link href="//da7xgjtj801h2.cloudfront.net/2014.2.716/styles/kendo.common.min.css" rel="stylesheet" />
         <link href="https://d6vtbcy3ong79.cloudfront.net/fonts/1.1.0/css/geomanist.min.css" type="text/css" rel="stylesheet" media="all" />
-        {% stylesheet styles %}
-        <!--{% stylesheet theme %}-->
+        {% asset styles.css %}
+        <!--{% asset theme.css %}-->
         <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="//da7xgjtj801h2.cloudfront.net/2014.2.716/js/kendo.web.min.js"></script>
-        {% javascript prism %}
-        {% javascript app %}
+        {% asset prism.js %}
+        {% asset app.js %}
+        <script>
+            document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+        </script>
     </head>
-    <body {% if page.guide %}class="guide"{% endif %}>
+    <body {% if page.guide %}class="guide" {% endif %}>
         <!-- Google Tag Manager -->
         <noscript>
             <iframe src="//www.googletagmanager.com/ns.html?id={{site.google_tag_manager}}" height="0" width="0" style="display: none; visibility: hidden"></iframe>

@@ -1,5 +1,5 @@
-var exec = require("child_process").exec,
-	paths = require("./paths");
+const exec = require("child_process").exec,
+	  paths = require("./paths");
 
 module.exports = class SyncService {
 	constructor(watchService) {
@@ -25,7 +25,7 @@ module.exports = class SyncService {
 			return;
 		}
 
-		var sources = this.silentSyncFolders.join(" ");
+		const sources = this.silentSyncFolders.join(" ");
 		let rsyncScript = `rsync --relative --delete -az --info=NAME ${sources} ${paths.distRoot}`;
 		exec(rsyncScript, (error, stdout, stderr) => {
 			if (error) {
@@ -53,6 +53,6 @@ module.exports = class SyncService {
 	isEmptyOutput(stdout) {
 		stdout = stdout || "";
 		let lines = stdout.split(/\r?\n/);
-		return lines.every(line => line == "");
+		return lines.every(line => line === "");
 	}
-}
+};
