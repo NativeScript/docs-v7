@@ -621,7 +621,7 @@ export class AppModule {}
 
 > **NOTE**: An `NgModule`’s `declarations` array expects a list of the components that you’ll be using in your app. In this case you’re adding the `navigatableComponents` array you exported in the `app.routing.ts` file to the `AppComponent` declaration you already had. The `...` operator is [ES2015 spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator), and it’s easiest to explain what it does with a quick example. If you declare a variable `x` as `let x = [2, 3]`, then JavaScript will interpret `[1, ...x]` as `[1, 2, 3]`.
 
-And finally, open `app/app.component.ts` back up and paste in the following code. We’ll discuss this file in detail momentarily.
+After that, open `app/app.component.ts` back up and paste in the following code. We’ll discuss this file in detail momentarily.
 
 ``` TypeScript
 import { Component } from "@angular/core";
@@ -632,6 +632,18 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {}
 ```
+
+And finally, open your `app/main.ts` file, and replace it’s contents with the following code, which removes the `createFrameOnBootstrap` option, as it’s no longer necessary now that you have routing in place.
+
+``` TypeScript
+import { platformNativeScriptDynamic } from "nativescript-angular/platform";
+
+import { AppModule } from "./app.module";
+
+platformNativeScriptDynamic().bootstrapModule(AppModule);
+```
+
+> **NOTE**: You can read more about the `createFrameOnBootstrap` option [here](https://github.com/NativeScript/nativescript-angular/blob/master/CHANGELOG.md#nativescript-40-compatible-bootstrap-and-navigation), but for apps with routing you’re safe to ignore the option altogether.
 
 <div class="exercise-end"></div>
 
