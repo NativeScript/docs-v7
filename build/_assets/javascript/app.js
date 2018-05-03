@@ -72,7 +72,7 @@ $(function(){
 
        tabs[0].addClass("k-state-active");
 
-       var tabstrip = $("<div>")
+       var tabstrip = $("<div class='nd-code-container'>")
                        .insertBefore(this)
                        .append($("<ul>").append(tabs))
                        .append(langs);
@@ -80,7 +80,7 @@ $(function(){
        langs.wrap("<div>");
 
        tabstrip.kendoTabStrip({
-           animation: false
+           animation: "fade"
        });
     });
 

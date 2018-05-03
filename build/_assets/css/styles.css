@@ -1,4 +1,184 @@
 @charset "utf-8";
+
+@import "variables.css";
+
+html {
+    display: flex;
+    flex-direction: column;
+    font: 300 16px/22px "Open Sans", sans-serif;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    margin: 0;
+    color: var(--color-dark);
+    background: var(--background-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: geometricPrecision;
+    flex: 1 0 100%;
+    max-width: 1366px;
+}
+
+/* Headings */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    line-height: 1.36em;
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: -.036em;
+}
+
+h2 {
+    font-size: 2.25rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+    line-height: 1.28em;
+}
+
+h4 {
+    font-size: 1.3125rem;
+    line-height: 1.43em;
+}
+
+h5 {
+    font-size: 1.125rem;
+}
+
+.allcaps {
+    font-weight: 600;
+    letter-spacing: -.02em;
+}
+
+a {
+    text-decoration: none;
+}
+
+pre {
+    font-size: .8125rem;
+    line-height: 1.36em;
+}
+
+/* Kendo */
+
+/* TreeView */
+
+html .k-treeview {
+    white-space: normal;
+    overflow: hidden;
+}
+
+html .k-treeview .k-in {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-top: -11px;
+    margin-bottom: 12px;
+    border: 0;
+    color: var(--color-accent);
+    font-weight: 400;
+    cursor: pointer;
+    line-height: 1.1;
+}
+
+html .k-treeview-lines > .k-item {
+    margin-bottom: 20px;
+}
+
+html .k-treeview-lines > .k-item > div > .k-in {
+    font-size: 18px;
+    text-transform: lowercase;
+    font-family: Consolas, sans-serif;
+}
+
+html .k-treeview-lines > .k-item > div > .k-in:first-letter {
+    text-transform: uppercase;
+}
+
+html .k-state-selected a {
+    color: var(--color-dark);
+}
+
+html .k-treeview .k-icon {
+    vertical-align: top;
+}
+
+html .k-treeview-lines .k-item:before {
+    display: none;
+}
+
+html .k-treeview-lines .k-icon:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin-left: 8px;
+    border-style: solid;
+    border-width: 7px 4px 0 4px;
+    border-color: var(--color-accent) transparent transparent transparent;
+}
+
+html .k-treeview-lines .k-icon.k-plus:before {
+    border-width: 4px 0 4px 7px;
+    border-color: transparent transparent transparent var(--color-accent);
+}
+
+html .k-treeview-lines .k-icon.k-minus:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    background: var(--color-purple);
+    opacity: 0.2;
+    top: 0;
+    left: 11px;
+    bottom: 15px;
+}
+
+html .k-group {
+    padding-top: 2px;
+}
+
+html .k-group .k-group li:before {
+    display: none;
+}
+
+/* TabStrip */
+
+html .nd-code-container .k-loading {
+    display: none;
+}
+
+html .nd-code-container,
+html .nd-code-container .k-item {
+    border: none;
+}
+
+html .nd-code-container .k-tabstrip-items .k-state-active .k-link {
+    border: none;
+    color: var(--color-green);
+}
+
+html .nd-code-container .k-content {
+    padding: 20px;
+}
+
+html .nd-code-container pre {
+    margin: 0 -20px;
+    padding: 0 20px;
+    overflow-x: auto;
+    font-weight: 400;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+/*
+@charset "utf-8";
 html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
@@ -4910,7 +5090,7 @@ pre[class*="language-"] {
   hyphens: none;
 }
 
-/* Code blocks */
+!* Code blocks *!
 pre[class*="language-"] {
   position: relative;
   padding-top: 0.5em;
@@ -4932,7 +5112,7 @@ code[class*="language"] {
   overflow: auto;
 }
 
-/* Margin bottom to accomodate shadow */
+!* Margin bottom to accomodate shadow *!
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   background-color: #fdfdfd;
@@ -4942,7 +5122,7 @@ pre[class*="language-"] {
   margin-bottom: 1em;
 }
 
-/* Inline code */
+!* Inline code *!
 :not(pre) > code[class*="language-"] {
   position: relative;
   padding: .2em;
@@ -5069,14 +5249,14 @@ pre[class*="language-"]:after {
 
 }
 
-/* Plugin styles */
+!* Plugin styles *!
 .token.tab:not(:empty):before,
 .token.cr:before,
 .token.lf:before {
   color: #e0d7d1;
 }
 
-/* Plugin styles: Line Numbers */
+!* Plugin styles: Line Numbers *!
 pre[class*="language-"].line-numbers {
   padding-left: 0;
 }
@@ -5089,7 +5269,7 @@ pre[class*="language-"].line-numbers .line-numbers-rows {
   left: 0;
 }
 
-/* Style the code exercise boxes */
+!* Style the code exercise boxes *!
 .exercise {
   border: 1px solid #ccc;
   border-radius: 0.3em;
@@ -5174,7 +5354,7 @@ td.gsc-search-button:before {
 
 #gsc-i-id1 {
   background: none !important;
-  height: 48px !important; 
+  height: 48px !important;
 }
 
 .gsc-search-box .gsc-input>input:hover,
@@ -5356,7 +5536,7 @@ input.gsc-search-button:focus {
   display: none;
 }
 
-/* tip */
+!* tip *!
 .tip-container {
   display: none;
   background: #faae2a;
@@ -5553,7 +5733,7 @@ html .k-window-title {
   top: 13px;
 }
 
-/* Checkboxes and radios */
+!* Checkboxes and radios *!
 
 .tp-checkbox.-switch label .checkbox__icon {
   display: none;
@@ -5751,7 +5931,7 @@ html .tp-checkbox {
   color: #FFF;
 }
 
-/* checkbox span text */
+!* checkbox span text *!
 .tp-checkbox .checkbox__label .checkbox__text {
   font-weight: 400;
   font-size: 15px;
@@ -5781,7 +5961,7 @@ html .tp-radio .radio__icon:before {
   border-color: rgba(0,0,0,.3);
 }
 
-/* table styling (copied from the theme.css which is not loaded anymore */
+!* table styling (copied from the theme.css which is not loaded anymore *!
 .Section table {
     width: 100%;
     margin: 20px 0;
@@ -5832,3 +6012,140 @@ html .tp-radio .radio__icon:before {
     margin: 0;
 }
 
+*/
+
+/* Base16 Google Light Prism Theme */
+
+code[class*="language-"],
+pre[class*="language-"] {
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+    text-shadow: none;
+    background: var(--color-purple);
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+    text-shadow: none;
+    background: var(--color-purple);
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    padding: .1em;
+    border-radius: .3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #b4b7b4;
+}
+
+.token.punctuation {
+    color: #373b41;
+}
+
+.token.namespace {
+    opacity: .7;
+}
+
+.token.property {
+    color: #fba922;
+}
+
+.token.selector {
+    color: #a36ac7;
+}
+
+.token.attr-name,
+.token.tag,
+.token.string,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #f96a38;
+}
+
+.token.attr-value,
+.token.keyword,
+.token.control,
+.token.directive,
+.token.unit {
+    color: var(--color-green);
+}
+
+.token.operator,
+.token.boolean,
+.token.number,
+.token.statement,
+.token.regex,
+.token.atrule,
+.token.placeholder,
+.token.variable {
+    color: var(--color-accent);
+}
+
+.token.deleted {
+    text-decoration: line-through;
+}
+
+.token.inserted {
+    border-bottom: 1px dotted #1d1f21;
+    text-decoration: none;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+
+.token.important {
+    color: #cc342b;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+pre > code.highlight {
+    outline: 0.4em solid #cc342b;
+    outline-offset: .4em;
+}
+
+.line-numbers .line-numbers-rows {
+    border-right-color: #e0e0e0 !important;
+}
+
+.line-numbers-rows > span:before {
+    color: #c5c8c6 !important;
+}
+
+.line-highlight {
+    background: rgba(29, 31, 33, 0.2) !important;
+    background: -webkit-linear-gradient(left, rgba(29, 31, 33, 0.2) 70%, rgba(29, 31, 33, 0)) !important;
+    background: linear-gradient(to right, rgba(29, 31, 33, 0.2) 70%, rgba(29, 31, 33, 0)) !important;
+}
