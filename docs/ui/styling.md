@@ -490,7 +490,7 @@ This selector will select all buttons that have the attribute `testAttr` with so
 
 Also, some more advanced scenarios are supported:
 
-* button[testAttr='flower'] {...} - Will apply CAA on every button that has the `testAttr` property set exactly to the value `flower`.
+* button[testAttr='flower'] {...} - Will apply CSS on every button that has the `testAttr` property set exactly to the value `flower`.
 * button[testAttr~='flower'] {...} - Selects all buttons with a `testAttr` property that contains a space-separated list of words, one of which is "flower".
 * button[testAttr|='flower'] {...} - Selects all buttons with a `testAttr` property value that begins with "flower". The value has to be a whole word, either alone like `btn['testAttr'] = 'flower'`, or followed by hyphen (-), like `btn['testAttr'] = 'flower-house'`.
 * button[testAttr^='flower'] {...} - Selects all buttons with a `testAttr` property value that begins with "flower". The value does not have to be a whole word.
