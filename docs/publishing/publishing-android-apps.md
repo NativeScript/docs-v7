@@ -22,7 +22,7 @@ previous_url: /core-concepts/publishing-android-apps
   2. [Builds](#builds)
     1. [Build versioning](#build-versioning)
     2. [Build signed release APK](#build-signed-release-apk)
-    3. [APKs with ABI splits](#apks-with-abi-splits)
+    4. [APKs with ABI splits](#apks-with-abi-splits)
     4. [Submit with the Google Play Developer Console](#submit-with-the-google-play-developer-console)
     5. [Submission automation](#submission-automation)
 4. [Publish](#publish)
@@ -35,16 +35,16 @@ You can publish a NativeScript app in *Google Play* the same way [you would rele
 
  1. Make sure that you have a `.keystore` file to sign your app with. For more information, see [How to create  a .keystore file](http://developer.android.com/tools/publishing/app-signing.html#signing-manually)?
  2. Build your project in release mode by running the following command:
- 
+
     ```
-    tns build android --release --key-store-path <path-to-your-keystore> --key-store-password <your-key-store-password> --key-store-alias <your-alias-name> --key-store-alias-password <your-alias-password> 
+    tns build android --release --key-store-path <path-to-your-keystore> --key-store-password <your-key-store-password> --key-store-alias <your-alias-name> --key-store-alias-password <your-alias-password>
     ```
-> Note: At the end of `<path-to-your-keystore>` you should also add the exact name of your keystore. 
+> Note: At the end of `<path-to-your-keystore>` you should also add the exact name of your keystore.
 
 > Example(Windows): `tns build android --release --key-store-path C:\keystore\Telerik.keystore --key-store-password sample_password --key-store-alias Telerik --key-store-alias-password sample_password` .
 
 > Example(Mac): `tns build android --release --key-store-path ~/Desktop/keystore/Telerik.keystore --key-store-password sample_password --key-store-alias Telerik --key-store-alias-password sample_password` .
- 
+
  4. Obtain the release `.apk` located at `<app_name>/platforms/android/app/build/outputs/apk/<app_name>-release.apk`.
  5. Publish your Android app by uploading the `.apk` file to the Google Developer Console. For more information, see [How to publish an Android app?](http://developer.android.com/distribute/googleplay/start.html)
 
@@ -170,27 +170,7 @@ You can then use the produced `<apk-location>.apk` for upload to *Google Play*.
 
 <h4 id="apks-with-abi-splits">APKs with ABI splits</h4>
 
-* If you need to narrow the native architectures your app supports you can enable ABI splits at **app/App_Resources/Android/app.gradle**
-
-* add:
-```
-android {
-....
-  splits {
-    abi {
-      enable true //enables the ABIs split mechanism
-      reset() //reset the list of ABIs to be included to an empty string
-      include 'arm64-v8a', 'armeabi-v7a', 'x86'
-      universalApk true
-    }
-  }
-....
-```
-
-* run 
-```
-tns run android
-```
+If you want to reduce the apk sizes you can check how to achieve this in [Android ABI Split article](http://docs.nativescript.org/publishing/android-abi-slit.html)
 
 <h4 id="submit-with-the-google-play-developer-console">Submit with the Google Play Developer Console</h4>
 
