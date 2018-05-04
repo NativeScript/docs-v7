@@ -10,7 +10,7 @@ slug: android-abi-split
 To reduce the size of the android application downloaded from Google Play we can produce different apk files for different architectures.
 To achieve this you need to enable ABI splits at **app/App_Resources/Android/app.gradle**
 
-* Enable ABI split
+## Enable ABI split
 ```
 android {
 ....
@@ -25,7 +25,7 @@ android {
 ....
 ```
 
-* ABI split with snapshots
+## ABI split with snapshots
 However if you want to improve the performance of your application with the `nativescript-dev-webpack` plugin you will need to make some additional changes.
 
 The default file format that the `nativescript-dev-webpack` plugin produce when you execute `tns build  android --bundle --env.uglify --env.snapshot` is a `.blob` file.
@@ -70,7 +70,8 @@ sourceSets {
     }
 }
 ```
-* Publishing ABI split apk
+
+## Publishing ABI split apk
 Now you will need to upload all built apk files in Google Play Developer Console. To achieve this the different apks need to have different Version Codes otherwise Google Play won't allow adding them in the same version.
 To use different Version Codes you can add the following code in your `App_Resources/Android/app.gradle` which will prefix the different architecture apk Version Codes with different prefixes:
 
