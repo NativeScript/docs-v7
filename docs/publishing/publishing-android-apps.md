@@ -22,7 +22,7 @@ previous_url: /core-concepts/publishing-android-apps
   2. [Builds](#builds)
     1. [Build versioning](#build-versioning)
     2. [Build signed release APK](#build-signed-release-apk)
-    4. [APKs with ABI splits](#apks-with-abi-splits)
+    3. [APKs with ABI splits](#apks-with-abi-splits)
     4. [Submit with the Google Play Developer Console](#submit-with-the-google-play-developer-console)
     5. [Submission automation](#submission-automation)
 4. [Publish](#publish)
@@ -170,7 +170,7 @@ You can then use the produced `<apk-location>.apk` for upload to *Google Play*.
 
 <h4 id="apks-with-abi-splits">APKs with ABI splits</h4>
 
-If you want to reduce the apk sizes you can check how to achieve this in [Android ABI Split article](http://docs.nativescript.org/publishing/android-abi-slit.html)
+If you want to reduce the apk sizes you can check how to achieve this in [Android ABI Split article](http://docs.nativescript.org/publishing/android-abi-slit.html).
 
 <h4 id="submit-with-the-google-play-developer-console">Submit with the Google Play Developer Console</h4>
 
