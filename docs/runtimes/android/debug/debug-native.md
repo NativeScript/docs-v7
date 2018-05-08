@@ -1,10 +1,12 @@
 ---
-nav-title: "Native Debug"
-title: "Native Debug"
+nav-title: "Debugging the Android Runtime"
+title: "Debugging the Android Runtime"
 description: "Debugging the application and the Android Runtime"
 position: 1
 previous_url: /debug-eclipse
 ---
+
+# Debugging the Android Runtime
 
 ## Overview
 
