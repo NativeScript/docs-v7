@@ -26,7 +26,7 @@ The article describes how to use the ActionBar component in a non-Angular Native
   * [Showing or Hiding the ActionBar](#showing-or-hiding-the-actionbar)
   * [Hiding Action Items](#hiding-action-items)
   * [Styling](#styling)
-  * [Creating SlideDrawer Button](#creating-slidedrawer-button)
+  * [Creating SideDrawer Button](#creating-sidedrawer-button)
 {% angular %}  * [Adding Actions To Existing ActionBar](#adding-actions-to-existing-actionbar){% endangular %}
 
 The `ActionBar` is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
@@ -114,8 +114,8 @@ The result is:
 > **Note**: You can use CSS to style the elements inside the `titleView`.
 
 ### Using Custom View in Action Items
-You could set a custom view, which will be redered instead of the ActionItem text.
-The example below demostrates, how to load to separate labels inside the item.
+You could set a custom view, which will be rendered instead of the ActionItem text.
+The example below demonstrates, how to load to separate labels inside the item.
 
 {% nativescript %}
 ```XML
@@ -501,7 +501,7 @@ For iOS, this code adds a regular `ActionItem` with `position` set to `left`. Us
 
 {% nativescript %}
 >Note: The `<android>` and `<ios>` tags are used inside the XML to define platform-specific elements.
->Important: The platform specifc tags (`<android>` and `<ios>`) will work only in non-Angular based project.
+>Important: The platform specific tags (`<android>` and `<ios>`) will work only in non-Angular based project.
 {% endnativescript %}
 
 {% nativescript %}
@@ -535,6 +535,54 @@ ActionBar {
 }
 ```
 {% endnativescript %}
+
+{% angular %}
+```XML
+<ActionBar title="SideDrawer Button">
+	<NavigationButton android.systemIcon="res://ic_menu" *ngIf="isAndroid()" (tap)="showSideDrawer()"></NavigationButton>
+	<ActionItem ios.systemIcon="res://ic_menu" *ngIf="isIOS()" ios.position="left" (tap)="showSideDrawer()"></ActionItem>
+</ActionBar>
+```
+```TypeScript
+import { Component, OnInit } from "@angular/core";
+import { isAndroid, isIOS } from "platform";
+
+@Component({
+    selector: "Home",
+    moduleId: module.id,
+    templateUrl: "./home.component.html",
+    styleUrls: ['./home.component.css']
+})
+export class HomeComponent implements OnInit {
+
+    constructor() {
+    }
+
+    ngOnInit(): void {
+    }
+    
+    isIOS(): boolean {
+        return isIOS;
+    }
+
+    isAndroid(): boolean {
+        return isAndroid;
+    }
+
+    showSideDrawer(): void {
+        console.log("Show SideDrawer tapped.");
+        // Show sidedrawer ...
+    }
+}
+```
+```CSS
+ActionBar {
+    background-color:  #3C5AFD;
+    color: white;
+}
+```
+{% endangular %}
+
 
 The result is:
 
