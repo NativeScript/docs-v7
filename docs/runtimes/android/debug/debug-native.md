@@ -8,6 +8,14 @@ previous_url: /debug-eclipse
 
 # Debugging the Android Runtime
 
+1. [Overview](#overview)
+1. [Setting up the project for native debugging](#setting-up-the-project-for-native-debugging)
+1. [Debugging with chrome-dev-tools and Android Studio](#debugging-with-chrome-dev-tools-and-android-studio)
+    1. [Adb Forward](#adb-forward)
+    1. [Open Google Chrome with debug url](#open-google-chrome-with-debug-url)
+1. [Known Issues](#known-issues)
+1. [See Also](#see-also)
+
 ## Overview
 
 The [Debug article](./debug-cli) shows how to debug the business logic of your application. But what happens when the problem is in the runtime? How do I debug the application and the runtime simultaneously?
@@ -83,9 +91,9 @@ adb forward tcp:40000 localabstract:com.tns.testapplication-inspectorServer
 
 >Note: This is a one time command and needs to be reran only if adb-server is killed.
 
-### Open chrome with debug url
+### Open Google Chrome with debug url
 
-Usually the CLI provides this link so you can open it in chrome, so it's not that different from the normal debug flow.
+Usually the CLI provides this link so you can open it in Google Chrome, so it's not that different from the normal debug flow.
 
 ```
 chrome-devtools://devtools/bundled/inspector.html?experiments=true&ws=localhost:<local-host-port>
@@ -93,11 +101,11 @@ chrome-devtools://devtools/bundled/inspector.html?experiments=true&ws=localhost:
 
 `<local-host-port>`: the same socket we set-up earlier (40000)
 
-Open this link in chrome and it will automatically connect to your running application if you've done the `adb forward` part correctly.
+Open this link in Google Chrome and it will automatically connect to your running application if you've done the `adb forward` part correctly.
 If it doesn't connect right away, you'll get a button to `Reconnect`. This will happen when you try to connect chrome-dev-tools before the application has started.
 If you want to stop early in the execution you can put a `debugger;` statement in your JavaScript code.
 
->Note: always start the application before trying to if through chrome.
+>Note: always start the application before trying to if through Google Chrome.
 
 Now you can debug both the Android Runtime && Android Runtime Binging Generator through Android Studio and your business logic through Chrome-Dev-Tools.
 
@@ -125,6 +133,6 @@ adb root && adb shell "rm -rf /data/local/tmp/org.nativescript.aaa"
 After the folder is deleted successfully from the device, just run/debug again from Android Studio.
 
 ## See Also
-* [Chrome DevTools reference](https://developer.chrome.com/devtools/index).
+* [Google Chrome DevTools reference](https://developer.chrome.com/devtools/index).
 * [JavaScript debugging](https://developer.chrome.com/devtools/docs/javascript-debugging).
 * [debugger; statement](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/debugger)
