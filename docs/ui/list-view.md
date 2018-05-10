@@ -19,6 +19,7 @@ In this article we will cover the following topics:
 * [Using Multiple Item Templates](#using-multiple-item-templates)
 * [Using Async Pipe](#using-async-pipe)
 * [Using Load More Items](#load-more-items)
+* [Estimated Row Height](#estimated-row-height)
 
 ## Using the ListView Component
 
@@ -287,3 +288,9 @@ export class ListTest {
     }
 }
 ```
+
+## Estimated Row Height
+
+The NativeScript property `iosEstimatedRowHeight` is used to improve the scrolling performance on lists with flexible row heights on the `iOS` platform. It comes with a default value so make sure to set it to something appropriate.
+
+In case you're using flexible row heights in conjunction with dynamic list contents (which is the case when providing load on demand functionality) you'll want to set the `iosEstimatedRowHeight` property to `0`. This will force a precise row height calculation of currently out of view cells. (Which fixes possible scroll position jumps)
