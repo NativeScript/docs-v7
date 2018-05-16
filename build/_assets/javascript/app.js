@@ -80,9 +80,15 @@ $(function(){
        langs.wrap("<div>");
 
        tabstrip.kendoTabStrip({
-           animation: "fade"
+           animation: {
+               open: {
+                   effects: "fadeIn"
+               }
+           }
        });
     });
+
+    $(".navigation__right ul").kendoMenu();
 
     var codeSampleMapper = {
         'c#': 'clike',

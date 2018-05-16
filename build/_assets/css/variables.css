@@ -12,12 +12,21 @@
     --color-secondary: #455B66;
     --color-accent: #3D5AFE;
     --color-green: #11CC71;
+    --color-source-green: #5DB240;
     --color-purple: #EBEEFF;
+
+    --border-purple: #E1E4F8;
 
     --color-progress-green: #5CE500;
 
     --background-base: #F8FAFD;
     --background-special: #F2F4FA;
+
+    --background-light: var(--color-light);
+    --background-accent: var(--color-accent);
+    --background-dark: var(--color-dark);
+    --background-secondary: var(--color-secondary);
+    --background-purple: var(--color-purple);
 
     --transparent-dark-02: rgba(var(--dark), .02);
     --transparent-dark-05: rgba(var(--dark), .05);

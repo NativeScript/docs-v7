@@ -5,7 +5,11 @@ const chokidar = require("chokidar"),
 	  paths = require("./paths"),
 	  livereload = require('livereload');
 
-const server = livereload.createServer();
+const server = livereload.createServer({
+	applyCSSLive: true,
+	applyImgLive: true,
+	delay: 500
+});
 
 server.watch(paths.distRoot);
 
