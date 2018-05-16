@@ -9,6 +9,8 @@ position: 0
 
 NativeScript modules and the code for your NativeScript app need to comply with the [CommonJS specification](http://wiki.commonjs.org/wiki/Modules/1.1.1). In NativeScript, files and modules are in one-to-one correspondence. To be able to call the functionality of a custom or built-in NativeScript module, you need to reference it in a `require` statement. When declaring your `require` statements, keep in mind that the NativeScript runtimes search and evaluate JavaScript files in a platform-dependent way for performance reasons.
 
+> **Note:** The good development practice for Angular and TypeScript based applicaitons is to use ES6 specification (e.g. `import` and `export`). In NativeScript all TypeScript files will be downcompiled to ES5 and the generated files will be transpiled according to the CommonJS specification (`require` and `module.exports`).
+
 This is the typical architecture of a built and packaged NativeScript app. All example `require` statements in this article refer to this sample architecture:
 ```
 /private/var/.../Applications/HelloWorldApp.app
@@ -35,7 +37,7 @@ There are several ways you can load CommonJS modules:
 ### Loading Absolute Files
 Paths starting with `/` are treated as absolute paths relative to the device file system:
 
-```javascript
+```JavaScript
 require('/private/.../HelloWorldApp.app/app/app.js');
 ```
 Resolves to `/private/.../HelloWorldApp.app/app/app.js`.
@@ -43,15 +45,17 @@ Resolves to `/private/.../HelloWorldApp.app/app/app.js`.
 ### Loading Files from the App Bundle
 Paths starting with `~` are resolved relative to the app bundle:
 
-```javascript
+```JavaScript
 require('~/user-module/index.js')
+```
+user-module/index.js';
 ```
 Resolves to `/private/.../HelloWorldApp.app/app/user-module/index.js`.
 
 ### Loading NativeScript Modules
 Paths starting with no special symbol are resolved relative to the `tns_modules` folder:
 
-```javascript
+```JavaScript
 require('camera/camera.js');
 ```
 Resolves to `/private/.../HelloWorldApp.app/app/tns_modules/camera/camera.js`.
@@ -61,7 +65,7 @@ For more information about using NativeScript and Node plugins see [Plugins.md](
 ### Loading Modules Relatively
 Paths starting with `.` or `..` are resolved relative to the calling module:
 
-```javascript
+```JavaScript
 // In `app/user-module/index.js`:
 require('./helper.js');
 ```
@@ -82,7 +86,7 @@ In each module, the `module` variable is a reference to the object representing 
 ## Global Require Function
 A `global.require` function is available and useful in the context of the App Inspector because it can be called outside the context of an evaluating module. It resolves relative to the `app` folder:
 
-```javascript
+```JavaScript
 global.require('./user-module');
 ```
 Resolves to `/private/.../HelloWorldApp.app/app/user-module/index.js`.
