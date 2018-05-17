@@ -70,7 +70,7 @@ testButton.addEventListener(buttonModule.Button.tapEvent, onTap, this);
 ```
 
 Another option to set an event handler is to use an XML declaration.
-You need a code-behind file to write the function body (the code-behind file has the same file name, but a different extension: .js or .ts depending on the language you are using). 
+You need a code-behind file to write the function body (the code-behind file has the same file name, but a different extension: .js or .ts depending on the language you are using).
 
 
 ###Example 1 (XML): Adding an event handler or an event listener using an XML declaration.
@@ -225,7 +225,7 @@ A weak event, as its name suggests, creates an weak reference to the listener ob
 ### Adding a Weak Event Listener
 
 Using weak event listeners is very similar to normal events. __Example 6__ shows how to add a weak event listener (code comments are included for clarity):
-###Example 6: Creating a weak event and handling a property change event 
+###Example 6: Creating a weak event and handling a property change event
 ``` JavaScript
 var weakEventListenerModule = require("ui/core/weak-event-listener");
 var buttonModule = require("ui/button");
@@ -255,9 +255,9 @@ var weakEventListenerOptions: weakEventListenerModule.WeakEventListenerOptions =
   eventName: observable.Observable.propertyChangeEvent,
   // set the event handler
   handler: handlePropertyChange,
-  // (optional) set the context in which to execute the handler 
+  // (optional) set the context in which to execute the handler
   handlerContext: testButton,
-  // (optional) set a specialized property used for extra event recognition 
+  // (optional) set a specialized property used for extra event recognition
   key: this.options.targetProperty
 }
 weakEL.addWeakEventListener(this.weakEventListenerOptions);
