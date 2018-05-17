@@ -1,18 +1,18 @@
-const exec = require("child_process").exec,
-	  paths = require("./paths");
+const paths = require("./paths"),
+	  cpx = require("cpx");
 
 module.exports = class SyncService {
 	constructor(watchService) {
 		this.watchService = watchService;
-		this.silentSyncFolders = [
-			`${paths.modulesRoot}/bin/dist/./api-reference`,
-			`${paths.sidekickRoot}/./sidekick`,
-			`${paths.vuejsRoot}/./vuejs`,
-			`${paths.root}/bin/./angular`,
-			`${paths.root}/bin/nativescript/./`
-		];
+		this.watchers = [];
+		this.silentSyncFolders = {
+            "api-reference": `${paths.modulesRoot}/bin/dist/api-reference`,
+            "sidekick": `${paths.sidekickRoot}/sidekick/**/!(nginx.conf|robots.txt|default.json|sitemap.xml)`,
+            "vuejs": `${paths.vuejsRoot}/vuejs/**/!(nginx.conf|robots.txt|default.json|sitemap.xml)`,
+            "angular": `${paths.root}/bin/angular/**/!(nginx.conf|robots.txt|default.json|sitemap.xml)`,
+            "": `${paths.root}/bin/nativescript/**/!(nginx.conf|robots.txt|default.json|sitemap.xml)`
+    	};
 		this.initialSyncFinished = false;
-		this.emptySyncCount = 0;
 	}
 
 	start() {
@@ -25,34 +25,37 @@ module.exports = class SyncService {
 			return;
 		}
 
-		const sources = this.silentSyncFolders.join(" ");
-		let rsyncScript = `rsync --relative --delete -az --info=NAME ${sources} ${paths.distRoot}`;
-		exec(rsyncScript, (error, stdout, stderr) => {
-			if (error) {
-				setTimeout(() => this.start(), 2000);
-				return;
-			}
+		for (const prefix in this.silentSyncFolders) {
+			const watcher = cpx.watch(this.silentSyncFolders[prefix], `${paths.distRoot}${prefix}`, {
+				preserve: true
+			});
 
-			if (this.initialSyncFinished && !this.isEmptyOutput(stdout)) {
-				console.log(stdout);
-			}
+			watcher.on("copy", (e) => {
+				console.log(`${e.srcPath} => ${e.dstPath}`);
+			});
 
-			if (!this.initialSyncFinished && this.isEmptyOutput(stdout)) {
-				if (++this.emptySyncCount > 3) {
-					this.initialSyncFinished = true;
-					console.log("Documentation successfully built! You can start making changes.");
-				}
-			}
+			watcher.on("remove", (e) => {
+				console.log(`${e.path} removed`);
+			});
 
-			setTimeout(() => this.start(), 2000);
-		});
+			watcher.on("watch-ready", () => {
+				this.initialSyncFinished = true;
+				console.log("Documentation successfully built! You can start making changes.");
+			});
+
+			watcher.on("watch-error", (err) => {
+				console.log(err);
+			});
+
+			this.watchers.push(watcher);
+		}
 
 		return this;
 	}
 
-	isEmptyOutput(stdout) {
-		stdout = stdout || "";
-		let lines = stdout.split(/\r?\n/);
-		return lines.every(line => line === "");
+	stop() {
+		this.watchers.forEach((watcher) => {
+			watcher.stop();
+		});
 	}
 };

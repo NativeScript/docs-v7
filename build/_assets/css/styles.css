@@ -297,40 +297,32 @@ html .k-state-selected a {
 }
 
 html .k-treeview .k-icon {
+    margin-top: -4px;
     vertical-align: top;
 }
 
-html .k-treeview-lines .k-item:before {
-    display: none;
-}
-
-html .k-treeview-lines .k-icon:before {
-    content: "";
-    display: block;
+html .k-treeview .k-icon:before {
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 300;
+    content: "\f067";
     position: absolute;
-    width: 0;
-    height: 0;
-    margin-left: 8px;
-    border-style: solid;
-    border-width: 7px 4px 0 4px;
-    border-color: var(--color-accent) transparent transparent transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-html .k-treeview-lines .k-icon.k-plus:before {
-    border-width: 4px 0 4px 7px;
-    border-color: transparent transparent transparent var(--color-accent);
+html .k-treeview .k-i-collapse:before {
+    content: "\f068";
 }
 
-html .k-treeview-lines .k-icon.k-minus:after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 1px;
-    background: var(--color-purple);
-    opacity: 0.2;
-    top: 0;
-    left: 11px;
-    bottom: 15px;
+.k-treeview .k-group .kgroup .k-icon {
+    visibility: hidden;
+}
+
+.k-treeview .k-group .kgroup .k-i-collapse {
+    visibility: visible;
+    content: "\f30b";
+    transform: rotate(45deg);
 }
 
 html .k-group {
@@ -339,6 +331,70 @@ html .k-group {
 
 html .k-group .k-group li:before {
     display: none;
+}
+
+/* Page */
+
+.page__inner-content {
+    position: relative;
+}
+
+/* Left TOC */
+
+.ns-side-nav {
+    float: left;
+    margin: -20px 20px 0 -20px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.side-nav__burger-input {
+    opacity: 0;
+    position: absolute;
+}
+
+.side-nav__burger-menu {
+    border: 0;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-light);
+    color: var(--color-secondary);
+    transition: box-shadow .2s ease-out;
+    box-shadow: 0 3px 20px var(--transparent-dark-15);
+}
+
+.side-nav__burger-menu:hover {
+    color: var(--color-dark);
+}
+
+.side-nav__burger-input:checked + label {
+    box-shadow: 0 0 0 var(--transparent-dark-15);
+}
+
+html body .side-nav__tree {
+    width: 0;
+    transform: translate(calc(-100% - 40px));
+    transition: transform .2s ease-out, width .2s linear;
+    background: var(--color-light);
+    box-shadow: 0 3px 20px var(--transparent-dark-15);
+}
+
+.side-nav__tree > ul {
+    min-width: 230px;
+}
+
+.side-nav__burger-input:checked ~ .side-nav__tree {
+    width: 230px;
+    transform: translate(0);
+    padding: 40px 12px 12px;
+    margin-top: -40px;
 }
 
 /* TabStrip */
@@ -460,6 +516,7 @@ html .ns-navigation .navigation__right .k-last .ns-button {
     height: 42px;
     line-height: 42px;
 }
+
 
 
 /*

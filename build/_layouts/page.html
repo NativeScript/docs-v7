@@ -1,32 +1,34 @@
 ---
 layout: index
 ---
-<div class="Section -pt7 -pb7">
+<div class="ns-page Section -pt7 -pb7">
     <div class="container">
-        <div id="page-inner-content" class="row">
-            <div id="page-nav" class="col-3 -mt1 -xl-col-4 -l-col-4 -m-col-12 -m-mb4" {{site.sideBarHidden}}>
-                <div id="page-tree" class="-bg-lightgray -pt3 -pb3 -pl2 -pr2"></div>
+        <div id="page__inner-content" class="row">
+            <div class="ns-side-nav" {{site.sideBarHidden}}>
+                <input id="side-nav__toggle" class="side-nav__burger-input" type="checkbox" checked="checked">
+                <label for="side-nav__toggle" class="side-nav__burger-menu fal fa-bars"></label>
+                <div class="side-nav__tree"></div>
                 <script>
-                $("#page-tree").kendoTreeView({
-                    dataSource: {
-                        transport: {
-                            read: {
-                                url: "{{site.baseurl}}/{{page.category}}.json",
-                                dataType: "json"
+                    $(".side-nav__tree").kendoTreeView({
+                        dataSource: {
+                            transport: {
+                                read: {
+                                    url: "{{site.baseurl}}/{{page.category}}.json",
+                                    dataType: "json"
+                                }
+                            },
+                            schema: {
+                                model: {
+                                    id: "path",
+                                    children: "items",
+                                    hasChildren: "items"
+                                }
                             }
                         },
-                        schema: {
-                            model: {
-                                id: "path",
-                                children: "items",
-                                hasChildren: "items"
-                            }
-                        }
-                    },
-                    select: preventParentSelection,
-                    template: navigationTemplate("{{site.baseurl}}/"),
-                    dataBound: expandNavigation("{{page.url | remove_first: '/' }}")
-                });
+                        select: preventParentSelection,
+                        template: navigationTemplate("{{site.baseurl}}/"),
+                        dataBound: expandNavigation("{{page.url | remove_first: '/' }}")
+                    });
                 </script>
             </div>
 

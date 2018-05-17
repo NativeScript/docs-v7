@@ -49,6 +49,10 @@ module.exports.WatcherService = class WatcherService {
 					`${paths.nativescriptAngularRoot}/bin/dist/**`,
 					`${paths.sdkExamplesRoot}/dist/**`,
 					`${paths.sdkExamplesRootJS}/dist/**`,
+					"**/nginx.conf",
+					"**/robots.txt",
+					"**/sitemap.xml",
+					"**/default.json",
 					"**/node_modules/**",
 					"**/.*",
 					"**/.git/**"
@@ -167,7 +171,12 @@ module.exports.SourcesWatcher = class SourcesWatcher {
 			ignoreInitial: true,
 			usePolling: true,
 			interval: 1000,
-			ignored: ["**/node_modules/**", "**/*.tar.gz", "**/.*", "**/.git/**"]
+			ignored: [
+				"**/node_modules/**",
+				"**/*.tar.gz",
+				"**/.*",
+				"**/.git/**"
+			]
 		});
 
 		this.watcher
@@ -223,7 +232,7 @@ module.exports.SourcesWatcher = class SourcesWatcher {
 				ensureDestPath(destination);
 				fs.copySync(f, destination);
 				console.log(f, destination);
-				console.log(`${destination} asset updated -> rebuilding site...`);
+				console.log(`${destination} asset updated`);
 			}
 			return;
 		}
