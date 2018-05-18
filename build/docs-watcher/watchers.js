@@ -8,7 +8,8 @@ const chokidar = require("chokidar"),
 const server = livereload.createServer({
 	applyCSSLive: true,
 	applyImgLive: true,
-	delay: 500
+	delay: 500,
+	exts: ["css", "png", "gif", "jpg"]
 });
 
 server.watch(paths.distRoot);

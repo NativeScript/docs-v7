@@ -25,10 +25,29 @@ layout: index
                                 }
                             }
                         },
+                        loadOnDemand: false,
                         select: preventParentSelection,
                         template: navigationTemplate("{{site.baseurl}}/"),
-                        dataBound: expandNavigation("{{page.url | remove_first: '/' }}")
-                    });
+                        dataBound: expandNavigation("{{page.url | remove_first: '/' }}"),
+                        expand: (e) => {
+                            const node = $(e.node);
+
+                            if (node.parent().hasClass("k-treeview-lines")) {
+                                e.sender.collapse($(node).siblings());
+                            }
+
+                            if (node.children(".k-group")[0]) {
+                                node.addClass("ns-state-expanded");
+                            }
+
+                            node.parents(".k-item").each((idx, parent) => {
+                                parent.classList.add("ns-state-expanded");
+                            });
+                        },
+                        collapse: (e) => {
+                            e.node.classList.remove("ns-state-expanded");
+                        }
+                    }).data("kendoTreeView");
                 </script>
             </div>
 

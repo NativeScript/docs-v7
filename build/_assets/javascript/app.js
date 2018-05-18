@@ -88,8 +88,6 @@ $(function(){
        });
     });
 
-    $(".navigation__right ul").kendoMenu();
-
     var codeSampleMapper = {
         'c#': 'clike',
         'appbuilder' : 'javascript',
@@ -211,21 +209,21 @@ $(function(){
     });
 });
 
-$(function() {
-    $(document.body)
-        .on("click", ".hamb", function(e) {
-            e.preventDefault();
-            $("#page-nav").toggleClass("expanded");
-        })
-        .kendoTouch({
-            tap: function(e) {
-                var navigation = $("#page-nav");
-                if (!$.contains(navigation[0], e.target)) {
-                    navigation.removeClass("expanded");
-                }
-            }
-        });
-});
+//$(function() {
+//    $(document.body)
+//        .on("click", ".hamb", function(e) {
+//            e.preventDefault();
+//            $("#page-nav").toggleClass("expanded");
+//        })
+//        .kendoTouch({
+//            tap: function(e) {
+//                var navigation = $("#page-nav");
+//                if (!$.contains(navigation[0], e.target)) {
+//                    navigation.removeClass("expanded");
+//                }
+//            }
+//        });
+//});
 
 $(function() {
     'use strict';

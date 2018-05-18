@@ -257,7 +257,13 @@ html .ns-navigation .navigation__right .k-item:not(.k-state-disabled) .k-link:ho
     line-height: 1;
 }
 
-/* Kendo */
+/* Page */
+
+.page__inner-content {
+    position: relative;
+}
+
+/* Left TOC */
 
 /* TreeView */
 
@@ -267,44 +273,49 @@ html .k-treeview {
 }
 
 html .k-treeview .k-in {
-    display: inline-block;
-    padding: 5px 10px;
-    margin-top: -11px;
-    margin-bottom: 12px;
     border: 0;
-    color: var(--color-accent);
-    font-weight: 400;
     cursor: pointer;
-    line-height: 1.1;
+    font-size: 15px;
+    margin: 0;
+    padding-left: 28px;
+    user-select: none;
+
 }
 
-html .k-treeview-lines > .k-item {
-    margin-bottom: 20px;
+.k-treeview .k-item > div {
+    display: flex;
+    align-items: center;
 }
 
-html .k-treeview-lines > .k-item > div > .k-in {
-    font-size: 18px;
-    text-transform: lowercase;
-    font-family: Consolas, sans-serif;
+.k-treeview-lines > .k-item > div > .k-icon {
+    display: none;
 }
 
-html .k-treeview-lines > .k-item > div > .k-in:first-letter {
+.k-treeview-lines > .k-item > div > .k-in {
     text-transform: uppercase;
 }
 
-html .k-state-selected a {
-    color: var(--color-dark);
+html .k-treeview .k-group .k-icon {
+    margin: 0 -24px 0 10px;
+    font-size: 14px;
 }
 
-html .k-treeview .k-icon {
-    margin-top: -4px;
-    vertical-align: top;
+.k-treeview .k-group .k-group .k-in {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+html .k-treeview .k-in > a {
+    color: inherit;
+    font-weight: inherit;
 }
 
 html .k-treeview .k-icon:before {
     font-family: 'Font Awesome 5 Pro';
-    font-weight: 300;
-    content: "\f067";
+    font-weight: 400;
+    content: "\f105";
     position: absolute;
     display: inline-flex;
     align-items: center;
@@ -312,34 +323,40 @@ html .k-treeview .k-icon:before {
 }
 
 html .k-treeview .k-i-collapse:before {
-    content: "\f068";
+    content: "\f107";
 }
 
-.k-treeview .k-group .kgroup .k-icon {
-    visibility: hidden;
+html .k-treeview-lines > .k-item {
+    margin: 0 -12px 20px;
+    padding: 0;
 }
 
-.k-treeview .k-group .kgroup .k-i-collapse {
-    visibility: visible;
-    content: "\f30b";
-    transform: rotate(45deg);
+html .k-treeview-lines > .k-item > .k-group {
+    padding-top: 5px;
 }
 
-html .k-group {
-    padding-top: 2px;
+html .k-treeview-lines > .k-item > .k-group > .k-item {
+    margin: 0 -12px;
+    padding: 0 0 0 12px;
+    width: 100%;
 }
 
-html .k-group .k-group li:before {
-    display: none;
+html .k-treeview-lines > .k-item > .k-group > .k-item > .k-group .k-in {
+    font-weight: 400;
+    color: var(--color-accent);
 }
 
-/* Page */
-
-.page__inner-content {
-    position: relative;
+html .k-treeview-lines > .k-item > .k-group > .ns-state-expanded {
+    border: solid var(--border-purple);
+    border-width: 1px 0;
+    background: var(--background-special);
 }
 
-/* Left TOC */
+html .k-treeview.k-treeview.k-treeview.k-treeview.k-treeview .k-state-selected {
+    color: var(--color-green);
+}
+
+/* Collapse button and container */
 
 .ns-side-nav {
     float: left;
@@ -396,6 +413,16 @@ html body .side-nav__tree {
     padding: 40px 12px 12px;
     margin-top: -40px;
 }
+
+/* Right TOC */
+
+article > h1:first-of-type + p + ul {
+    float: right;
+    width: 200px;
+    position: sticky;
+    border-left: 1px solid var(--color-purple);
+}
+
 
 /* TabStrip */
 
