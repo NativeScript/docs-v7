@@ -65,7 +65,7 @@ $(document).ready(function () {
 		};
 	
 		//Feedback menu controls
-		var feedbackButtonsContainer = $("#helpful-buttons-container");
+		var feedbackButtonsContainer = $("#feedback-buttons-container");
 		var feedbackSubmittedContainer = $("#feedback-submitted-container");
 		var toggleFeedbackButtons = function (toggle) {
 			if (toggle) {
@@ -350,7 +350,7 @@ $(document).ready(function () {
 					return;
 				}
 	
-				if (scrollFold - $("#feedback-section").outerHeight() < feedbackOffsetTop) {
+				if (scrollFold - $("#feedback-section").outerHeight() * 2 < feedbackOffsetTop) {
 					Feedback.pinFeedback();
 				}
 				else {
