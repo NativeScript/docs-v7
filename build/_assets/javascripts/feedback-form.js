@@ -15,7 +15,8 @@ $(document).ready(function () {
 			outdatedSample: false,
 			inaccurateOutdatedCodeSamplesText: "",
 			otherFeedback: false,
-			textFeedback: ""
+			textFeedback: "",
+			acceptFeedbackContact: false
 		};
 	
 		$("#feedback-checkbox-area").click(function (e) {
@@ -153,6 +154,24 @@ $(document).ready(function () {
 				}
 			}
 		}).data("kendoValidator");
+
+		var emailConsentValidator = $("#feedback-email-consent").kendoValidator({
+			validateOnBlur: false,
+			messages: {
+				consent: "You have to agree first."
+			},
+			rules: {
+				consent: function (input) {
+					var email = formModel["email"];
+					console.log("email: " + email + ", checked: ", formModel["acceptFeedbackContact"]);
+					if (email.length > 0) {
+						return formModel["acceptFeedbackContact"];
+					}
+
+					return true;
+				}
+			}
+		}).data("kendoValidator");
 	
 		// text validation is disabled for the new design of the form. In order to enable it
 		// it must be reworked!!!
@@ -221,7 +240,8 @@ $(document).ready(function () {
 				(!formModel.textErrors || (formModel.textErrors && textAreaValidator("#feedback-text-errors-text-input", "textErrors").validate())) &&
 				(!formModel.inaccurateContent || (formModel.inaccurateContent && textAreaValidator("#feedback-inaccurate-content-text-input", "inaccurateContent").validate())) &&
 				(!formModel.otherFeedback || (formModel.otherFeedback && textAreaValidator("#feedback-other-text-input", "otherFeedback").validate())) &&
-				emailValidator.validate()) {
+				emailValidator.validate() &&
+				emailConsentValidator.validate()) {
 				win.close();
 				setCookieByName("submittingFeedback");
 				formModel.yesNoFeedback = getCookieByName("yesNoFeedback") || "Not submitted";
