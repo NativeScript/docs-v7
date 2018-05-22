@@ -1,7 +1,7 @@
 ---
 layout: index
 ---
-<div class="ns-page Section -pt7 -pb7">
+<div class="ns-page">
     <div class="container">
         <div id="page__inner-content" class="row">
             <div class="ns-side-nav" {{site.sideBarHidden}}>
@@ -51,12 +51,15 @@ layout: index
                 </script>
             </div>
 
-            <div id="page-article" class="{% unless site.sideBarHidden %} col-9 -xl-col-8 -l-col-8 {% endunless %} -m-col-12">
-                {% include improvethis.html %}
+            <div class="ns-breadcrumb">
+                {% breadcrumb %}
+            </div>
+            <div id="page-article">
                 <article>
                     {{ content }}
                 </article>
             </div>
+            {% include improvethis.html %}
         </div>
     </div>
 </div>

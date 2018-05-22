@@ -15,6 +15,7 @@
         <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
         <script src="//kendo.cdn.telerik.com/2018.1.221/js/kendo.web.min.js"></script>
+        <script src="//polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
         {% asset prism.js %}
         {% asset app.js %}
         <script>
@@ -28,9 +29,19 @@
         </noscript>
         <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', '{{site.google_tag_manager}}');</script>
         <!-- End Google Tag Manager -->
-        <header id="page-header">
+        <header class="ns-navigation">
             {% include header.html %}
         </header>
+
+        <div class="ns-flavor-header">
+            <a class="flavor-header__navigation" href="/">
+                <h4 class="flavor-header__title">NativeScript & Angular</h4>
+            </a>
+            <div class="flavor-header__search">
+                {% include search.html %}
+            </div>
+        </div>
+
         {{ content }}
     </body>
 </html>

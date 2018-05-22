@@ -209,16 +209,34 @@ $(function(){
     });
 
     const options = {
-      root: document.querySelector("html"),
-      rootMargin: "0px",
-      threshold: 1.0
+        root: null,
+        rootMargin: "0px",
+        threshold: 1.0
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    window.addEventListener("scroll", (e) => {
+        e.target.documentElement.classList[e.target.scrollingElement.scrollTop !== 0 ? "add" : "remove"]("ns-state-scrolled");
+    }, { passive: true });
+
+    const visibleElements = [];
+
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            $("article > ul:first-of-type a").removeClass("ns-state-selected");
-            $(`[href$=${entry.target.id}]`).addClass("ns-state-selected");
-            console.log($(`[href$=${entry.target.id}]`));
+            const tocElement = $(`article > ul:first-of-type [href$=${entry.target.id}]`)[0];
+
+            if (entry.intersectionRatio < 1) {
+                if (tocElement && visibleElements.length) {
+                    visibleElements[entry.intersectionRect.y < entry.rootBounds.height / 2 ? "shift" : "pop"]();
+                    $(`article > ul:first-of-type a`).removeClass("ns-state-selected");
+                }
+            } else if (tocElement) {
+                visibleElements[entry.intersectionRect.y < entry.rootBounds.height / 2 ? "unshift" : "push"](tocElement);
+                $(`article > ul:first-of-type a`).removeClass("ns-state-selected");
+            }
+
+            if (visibleElements[0]) {
+                visibleElements[0].classList.add("ns-state-selected");
+            }
         });
     }, options);
 

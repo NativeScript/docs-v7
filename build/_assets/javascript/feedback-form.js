@@ -263,7 +263,7 @@ $(document).ready(function () {
 
 
 		var windowHeight = $window.height();
-		var headerHeight = $(".TK-Hat").outerHeight() + $("#page-header").outerHeight();
+		var headerHeight = $(".TK-Hat").outerHeight() + $(".ns-navigation").outerHeight();
 		var footerHeight = $("#feedback-section").outerHeight() + $("footer").outerHeight();
 		var articleHeight = windowHeight - (headerHeight + footerHeight);
 		var feedbackOffsetTop = document.body.scrollHeight - footerHeight;
@@ -274,7 +274,7 @@ $(document).ready(function () {
 	
 		function updateVariables() {
 			windowHeight = $window.height();
-			headerHeight = $(".TK-Hat").outerHeight() + $("#page-header").outerHeight();
+			headerHeight = $(".TK-Hat").outerHeight() + $(".ns-navigation").outerHeight();
 			footerHeight = $("#feedback-section").outerHeight() + $("footer").outerHeight();
 			articleHeight = windowHeight - (headerHeight + footerHeight);
 			feedbackOffsetTop = document.body.scrollHeight - footerHeight;

@@ -8,47 +8,36 @@
     </div>
 </div>-->
 
-<div class="ns-navigation">
-    <a class="navigation__logo" href="/"></a>
-    <div class="navigation__right">
-        <ul>
-            <li class="k-state-selected">
-                <a href="https://docs.nativescript.org" target="_blank">Docs</a>
-            </li>
-            <li>
-                <a href="{{site.headerbaseurl}}/showcases">Showcases</a>
-            </li>
-            <li>
-                <a href="{{site.headerbaseurl}}/resources">Resources</a>
-            </li>
-            <li>
-                <a href="{{site.headerbaseurl}}/blog">Blog</a>
-            </li>
-            <li>
-                <a href="{{site.headerbaseurl}}/about">About</a>
-            </li>
-            <li class="k-separator"></li>
-            <li>
-                <a href="https://github.com/NativeScript/NativeScript"><i class="fab fa-github"></i></a>
-            </li>
-            <li class="k-state-disabled">
-                <a class="ns-button -action" href="https://play.nativescript.org/?utm_medium=website&utm_campaign=useownrealestate&utm_source=docsnativescriptdotcom&utm_content=topnavgreenbutton">Play Now</a>
-            </li>
-        </ul>
-    </div>
-    <script>
-        $(".navigation__right ul").kendoMenu();
-    </script>
+<a class="navigation__logo" href="/"></a>
+<div class="navigation__right">
+    <ul>
+        <li class="k-state-selected">
+            <a href="https://docs.nativescript.org" target="_blank">Docs</a>
+        </li>
+        <li>
+            <a href="{{site.headerbaseurl}}/showcases">Showcases</a>
+        </li>
+        <li>
+            <a href="{{site.headerbaseurl}}/resources">Resources</a>
+        </li>
+        <li>
+            <a href="{{site.headerbaseurl}}/blog">Blog</a>
+        </li>
+        <li>
+            <a href="{{site.headerbaseurl}}/about">About</a>
+        </li>
+        <li class="k-separator"></li>
+        <li class="k-state-disabled">
+            <span class="k-link"><a href="https://github.com/NativeScript/NativeScript"><i class="fab fa-github"></i></a></span>
+        </li>
+        <li class="k-state-disabled">
+            <a class="ns-button -action" href="https://play.nativescript.org/?utm_medium=website&utm_campaign=useownrealestate&utm_source=docsnativescriptdotcom&utm_content=topnavgreenbutton">Play Now</a>
+        </li>
+    </ul>
 </div>
-
-<div class="ns-flavor-header">
-    <a class="flavor-header__navigation" href="/">
-        <h4 class="flavor-header__title">NativeScript & Angular</h4>
-    </a>
-    <div class="flavor-header__search">
-        {% include search.html %}
-    </div>
-</div>
+<script>
+    $(".navigation__right ul").kendoMenu();
+</script>
 
 <!--
 <div class="Section -bg-darkpurple -pt7 -pb0 -s-oh">

@@ -28,6 +28,7 @@
     --background-dark: var(--color-dark);
     --background-secondary: var(--color-secondary);
     --background-purple: var(--color-purple);
+    --background-green: var(--color-green);
 
     --transparent-dark-02: rgba(var(--dark), .02);
     --transparent-dark-05: rgba(var(--dark), .05);
