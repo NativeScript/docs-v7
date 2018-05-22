@@ -97,6 +97,7 @@ html {
     flex-direction: column;
     font: 400 16px/22px "Open Sans", sans-serif;
     align-items: center;
+    overflow-x: hidden;
 }
 
 body {
@@ -214,11 +215,11 @@ pre {
     height: 66px;
     background: inherit;
     z-index: -1;
+    transition: box-shadow .3s ease-out;
 }
 
 html.ns-state-scrolled .ns-navigation:before {
-    box-shadow: 0 3px 6px var(--transparent-dark-20);
-    transition: box-shadow .3s ease-out;
+    box-shadow: 0 2px 10px var(--transparent-dark-50);
 }
 
 .navigation__logo {
@@ -321,8 +322,7 @@ html .ns-navigation .navigation__right .k-item:not(.k-state-disabled) .k-link:ho
 
 /* Page */
 
-.page__inner-content {
-    position: relative;
+#page-inner-content {
 }
 
 /* Left TOC */
@@ -692,17 +692,30 @@ html .ns-navigation .navigation__right .k-last .ns-button {
 
 /* Footer */
 
+.ns-footer {
+    z-index: 2;
+    position: relative;
+}
+
+.ns-footer:after,
 .ns-footer:before,
 .footer__contribute:before,
 #feedback-section.-detached:before {
     position: absolute;
     display: block;
     content: "\a0";
-    width: 100%;
-    left: 0;
+    width: 500%;
+    left: -200%;
     height: 60px;
     background: var(--background-dark);
     z-index: -1;
+}
+
+.ns-footer:after {
+    height: 100%;
+    top: 0;
+    background: var(--background-base);
+    z-index: -2;
 }
 
 #feedback-section.-detached:before {
@@ -720,7 +733,7 @@ html .ns-navigation .navigation__right .k-last .ns-button {
 }
 
 .footer__form > h4 {
-    margin-bottom: 0;
+    margin: 20px 0 0;
 }
 
 .footer__newsletter-frame {
@@ -1295,6 +1308,55 @@ html .tp-radio .radio__icon:before {
 @media only screen and (max-width: 480px) {
     .footer__social-links {
         height: 80px
+    }
+}
+
+
+
+/* Responsiveness */
+
+@media only screen and (max-width: 1550px) {
+    body {
+        flex: 1 0 90%;
+        width: 90%;
+    }
+
+    #page-inner-content {
+        display: flex;
+    }
+
+    .flavor-header__navigation {
+        margin-left: 10px;
+    }
+
+    .ns-side-nav {
+        margin: -10px 20px 0 -20px;
+        float: none;
+        overflow: visible;
+    }
+
+    #page-article {
+        flex: 1;
+        min-width: 0;
+    }
+
+    article>ul:first-of-type {
+        position: fixed;
+        padding-top: 70px;
+        padding-right: 20px;
+        top: 66px;
+        right: -200px;
+        bottom: 0;
+        margin: 0;
+        background: var(--background-base);
+        transition: right .2s ease-out;
+        transition-property: right, box-shadow;
+    }
+
+    article>ul:first-of-type:hover {
+        right: 0;
+        box-shadow: -3px 0 6px var(--transparent-dark-15);
+        z-index: 1;
     }
 }
 

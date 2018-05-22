@@ -3,7 +3,7 @@ layout: index
 ---
 <div class="ns-page">
     <div class="container">
-        <div id="page__inner-content" class="row">
+        <div id="page-inner-content" class="row">
             <div class="ns-side-nav" {{site.sideBarHidden}}>
                 <input id="side-nav__toggle" class="side-nav__burger-input" type="checkbox" checked="checked">
                 <label for="side-nav__toggle" class="side-nav__burger-menu fal fa-bars"></label>
@@ -27,7 +27,7 @@ layout: index
                         },
                         loadOnDemand: false,
                         select: preventParentSelection,
-                        template: navigationTemplate("{{site.baseurl}}/"),
+                        //template: navigationTemplate("{{site.baseurl}}/"),
                         dataBound: expandNavigation("{{page.url | remove_first: '/' }}"),
                         expand: (e) => {
                             const node = $(e.node);
@@ -51,15 +51,15 @@ layout: index
                 </script>
             </div>
 
-            <div class="ns-breadcrumb">
-                {% breadcrumb %}
-            </div>
             <div id="page-article">
+                <div class="ns-breadcrumb">
+                    {% breadcrumb %}
+                </div>
                 <article>
                     {{ content }}
                 </article>
+                {% include improvethis.html %}
             </div>
-            {% include improvethis.html %}
         </div>
     </div>
 </div>
