@@ -207,23 +207,25 @@ $(function(){
 
         ul.appendTo(this);
     });
-});
 
-//$(function() {
-//    $(document.body)
-//        .on("click", ".hamb", function(e) {
-//            e.preventDefault();
-//            $("#page-nav").toggleClass("expanded");
-//        })
-//        .kendoTouch({
-//            tap: function(e) {
-//                var navigation = $("#page-nav");
-//                if (!$.contains(navigation[0], e.target)) {
-//                    navigation.removeClass("expanded");
-//                }
-//            }
-//        });
-//});
+    const options = {
+      root: document.querySelector("html"),
+      rootMargin: "0px",
+      threshold: 1.0
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            $("article > ul:first-of-type a").removeClass("ns-state-selected");
+            $(`[href$=${entry.target.id}]`).addClass("ns-state-selected");
+            console.log($(`[href$=${entry.target.id}]`));
+        });
+    }, options);
+
+    $("article > h1, article > h2, article > h3").each((index, node) => {
+        observer.observe(node);
+    });
+});
 
 $(function() {
     'use strict';
@@ -270,45 +272,5 @@ $(function() {
     }
 
     window.setTimeout(handleBanner, 1000);
-});
-
-$(function() {
-  'use strict';
-
-  var $searchBtn = $('.Search-open');
-  var $searchBar = $('.Search-container');
-  var $searchCancel = $('.Btn--cancel');
-  var $navLinks = $('.Nav-menu .-fl');
-  var $navLinksMobileToggle = $('.Nav-open-menu');
-
-  // improve menu
-  $navLinks.find('a').each(function() {
-    if ($(this).attr('href') === document.location.pathname) {
-      $(this).addClass('is-current');
-    }
-  });
-
-  // show search menu
-  $searchBtn.on('click', function() {
-    $searchBtn.toggleClass('is-active');
-    $searchBar.toggle();
-    $('[name=search]').first().focus();
-    // hide nav when opening search
-    $navLinks.removeClass('is-visible');
-    $navLinksMobileToggle.removeClass('is-active');
-  });
-  $searchCancel.on('click', function() {
-    $searchBar.toggle();
-    $searchBtn.toggleClass('is-active');
-  });
-
-  // show mobile menu
-  $navLinksMobileToggle.on('click', function() {
-    $(this).toggleClass('is-active');
-    $navLinks.toggleClass('is-visible');
-    // hide search when opening nav
-    $searchBar.hide();
-    $searchBtn.removeClass('is-active');
-  });
 });
 
