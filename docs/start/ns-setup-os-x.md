@@ -17,7 +17,7 @@ This page contains a list of all system requirements needed to build and run Nat
 ## System Requirements
 
 * macOS Mavericks or later
-* The latest stable official release of Node.js (LTS) [8.x](https://nodejs.org/dist/latest-v8.x/). Support for Node.js 9.x is not verified. This CLI might not install or run properly. We recommend using Node.js (LTS) 8.x.
+* The latest stable official release of Node.js (LTS) [8.x](https://nodejs.org/dist/latest-v8.x/). 
 * (Optional) [Homebrew](https://brew.sh/) to simplify the installation of dependencies
 * For iOS development
     * Latest Xcode
@@ -30,7 +30,7 @@ This page contains a list of all system requirements needed to build and run Nat
     * Android SDK 22 or a later stable official release
     * Android Support Repository
     * (Optional) Google Repository
-    * Android SDK Build-tools 25.0.2 or a later stable official release
+    * Android SDK Build-tools 27.0.3 or a later stable official release
 
 You must also have the following two environment variables setup for Android development:
 
@@ -100,9 +100,9 @@ Complete the following steps to setup NativeScript on your macOS development mac
             <blockquote><b>NOTE</b>: This is the directory that contains the <code>tools</code> and <code>platform-tools</code> directories.</blockquote>
             <blockquote><b>NOTE</b>: In order to persist these variables after your terminal session is closed, they have to be persisted in your shell profile file (e.g. <code>~/.bash_profile</code> if you are using Bash, <code>~/.zprofile if you are using Zsh)</blockquote>            
 
-        1. In addition, install all packages for the Android SDK Platform 25, Android SDK Build-Tools 25.0.2 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages.
+        1. In addition, install all packages for the Android SDK Platform 25, Android SDK Build-Tools 27.0.3 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages.
 
-           <pre class="add-copy-button"><code class="language-terminal">$ANDROID_HOME/tools/bin/sdkmanager "tools" "platform-tools" "platforms;android-25" "build-tools;25.0.2" "extras;android;m2repository" "extras;google;m2repository"
+           <pre class="add-copy-button"><code class="language-terminal">$ANDROID_HOME/tools/bin/sdkmanager "tools" "platform-tools" "platforms;android-25" "build-tools;27.0.3" "extras;android;m2repository" "extras;google;m2repository"
            </code></pre>
            
            *If you are behind a corporate proxy, it might be necessary to pass additional arguments. You can check [sdkmanager documentation] (https://developer.android.com/studio/command-line/sdkmanager.html)*
