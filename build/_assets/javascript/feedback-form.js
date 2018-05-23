@@ -17,8 +17,10 @@ $(document).ready(function () {
 			otherFeedback: false,
 			textFeedback: ""
 		};
+
+		const checkboxArea = $("#feedback-checkbox-area");
 	
-		$("#feedback-checkbox-area").click(function (e) {
+		checkboxArea.click(function (e) {
 			$("span.k-tooltip-validation").remove();
 		});
 	
@@ -124,7 +126,7 @@ $(document).ready(function () {
 		//Bind model to form
 		kendo.bind($("div#feedback-form-window"), formModel);
 		//Attach to form submit to adjust variables and send request
-		var emptyFormValidator = $("#feedback-checkbox-area").kendoValidator({
+		var emptyFormValidator = checkboxArea.kendoValidator({
 			validateOnBlur: false,
 			messages: {
 				// defines a message for the custom validation rule
@@ -349,7 +351,7 @@ $(document).ready(function () {
 				if (!shouldOverlayFeedback || showingFeedbackBar) {
 					return;
 				}
-	
+
 				if (scrollFold - $("#feedback-section").outerHeight() * 2 < feedbackOffsetTop) {
 					Feedback.pinFeedback();
 				}

@@ -27,7 +27,7 @@ layout: index
                         },
                         loadOnDemand: false,
                         select: preventParentSelection,
-                        //template: navigationTemplate("{{site.baseurl}}/"),
+                        template: navigationTemplate("{{site.baseurl}}/"),
                         dataBound: expandNavigation("{{page.url | remove_first: '/' }}"),
                         expand: (e) => {
                             const node = $(e.node);
@@ -58,7 +58,7 @@ layout: index
                 <article>
                     {{ content }}
                 </article>
-                {% include improvethis.html %}
+                <!--{% include improvethis.html %}-->
             </div>
         </div>
     </div>
