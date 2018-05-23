@@ -25,7 +25,7 @@ This page contains a list of all system requirements needed to build and run Nat
 * Android SDK 22 or a later stable official release
 * Android Support Repository
 * (Optional) Google Repository
-* Android SDK Build-tools 25.0.2 or a later stable official release
+* Android SDK Build-tools 27.0.3 or a later stable official release
 
 You must also have the following two environment variables setup for Android development:
 
@@ -80,9 +80,9 @@ Complete the following steps to set up NativeScript on your Linux development ma
         For example: `ANDROID_HOME=/android/sdk`
         <blockquote><b>NOTE</b>: This is the directory that contains the <code>tools</code> (just installed) and <code>platform-tools</code> (installed by scripts in the next step) directories.</blockquote>
 
-1. Install all packages for the Android SDK Platform 25, Android SDK Build-Tools 25.0.2 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages.
+1. Install all packages for the Android SDK Platform 25, Android SDK Build-Tools 27.0.3 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages.
 
-    <pre class="add-copy-button"><code class="language-terminal">sudo $ANDROID_HOME/tools/bin/sdkmanager "tools" "platform-tools" "platforms;android-25" "build-tools;25.0.2" "extras;android;m2repository" "extras;google;m2repository"
+    <pre class="add-copy-button"><code class="language-terminal">sudo $ANDROID_HOME/tools/bin/sdkmanager "tools" "platform-tools" "platforms;android-25" "build-tools;27.0.3" "extras;android;m2repository" "extras;google;m2repository"
     </code></pre>
 
 1. Setup Android Emulators (AVD) by following the article [here]({%slug android-emulators%})
