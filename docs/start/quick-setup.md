@@ -79,13 +79,13 @@ During installation you may need to accept a User Account Control prompt to gran
 > **NOTE**: On Windows and Linux systems you can only use the `tns` command to develop Android apps. This is because the NativeScript CLI uses Xcode to build iOS apps, which is only available on macOS. If you’re interested in building iOS apps on Windows or Linux, you should download [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick).
 
 After the installation the system setup should have:
-* The latest stable official release of Node.js (LTS) [6.x](https://nodejs.org/dist/latest-v6.x/) 
+* The latest stable official release of Node.js (LTS) [8.x](https://nodejs.org/dist/latest-v8.x/) 
 * Google Chrome 
 * JDK 8
 * Android SDK 22 or a later stable official release
 * Android Support Repository
 * Google Repository
-* Android SDK Build-tools 25.0.2 or a later stable official release
+* Android SDK Build-tools 27.0.3 or a later stable official release
 * Android Studio
 * Set up Android virtual devices to expand your testing options 
 
