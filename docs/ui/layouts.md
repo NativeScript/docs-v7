@@ -124,8 +124,6 @@ The following table shows predefined layouts that NativeScript provides.
 
 ### Percentage Support
 
-> **NOTE:** Experimental feature v1.6+ 
-
-With version 1.6.0, NativeScript supports percentage values for `width`, `height` and `margins`.
+NativeScript supports percentage values for `width`, `height` and `margins`.
 When a layout pass begins, first the percent values are calculated based on parent available size. This means that on vertical `StackLayout` if you place two `Buttons` with `height='50%'` they will get all the available height (e.g., they will fill the `StackLayout` vertically.).
 The same applies for margin properties. For example, if you set `marginLeft='5%'`, the element will have a margin that corresponds to 5% of the parent's available width.
