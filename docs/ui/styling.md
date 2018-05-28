@@ -541,6 +541,7 @@ This list of properties can be set in CSS or through the style property of each 
 | CSS Property          | JavaScript Property   | Description     |
 |:----------------------|:----------------------|:----------------|
 | `color`               | `color`               | Sets a solid-color value to the matched view’s foreground. |
+| `background`          | `background`          | Sets a solid-color value or [a linear gradient](https://docs.nativescript.org/ui/styling) to the matched view’s background. |
 | `background-color`    | `backgroundColor`     | Sets a solid-color value to the matched view’s background. |
 | `placeholder-color`   | `placeholderColor`    | Sets the placeholder (hint) font color to matched views. |
 | `background-image`    | `backgroundImage`     | Sets a image url to the matched view’s background image. |
