@@ -44,7 +44,7 @@ Why bundle scripts in a mobile app though? Aren't all files stored on the local 
 
 ## Introducing Webpack
 
-Webpack works by traversing your source tree starting from some "entry" modules and navigating through module imports. This makes it possible to collect just modules that are used in your program. Webpack is very extensible -- you can customize every step of the bundling process and add support for all sorts of asset generation and manipulation procedures.
+Webpack works by traversing your source tree starting from some "entry" modules and navigating through module imports. This makes it possible to collect just modules that are used in your program. Webpack is very extensible - you can customize every step of the bundling process and add support for all sorts of asset generation and manipulation procedures.
 
 Since bundling can be a slow and resource intensive operation, we do not enable it for every build. It is easiest to develop and debug your code without bundling, and use bundled code for QA/release builds.
 
@@ -220,7 +220,7 @@ if (env.snapshot) {
 
 #### [ABI split](https://docs.nativescript.org/publishing/android-abi-split) options:
 * `useLibs` - Instructs the plugin to produce `.so` instead of `.blob` files.
-* `androidNdkPath` - Path to local installation of Android NDK.
+* `androidNdkPath` - Path to a local installation of Android NDK.
 
 #### Checking if snapshot is enabled
 If you want to toggle whether specific logic is executed only in snapshotted context you can use the `global.__snapshot` flag. Its value is `true` only if the current execution happens in the snapshotted context. Once the app is deployed on the device, the value of the flag is changed to `false`. There is also `global.__snapshotEnabled` flag. Its only difference compared to `global.__snapshot` is that its value is `true` in both snapshotted and runtime contexts, given that snapshot generation is enabled.
@@ -241,7 +241,7 @@ Webpack bundling can fail for different reasons. It sometimes fails to resolve c
 
 ### Javascript heap out of memory
 
-Bundle processing can consume a significant amount of memory, especically when using uglify `--env.uglify`. The default node process allocates 1.5GB memory. If you encounter issues similar to:
+Bundle processing can consume a significant amount of memory, especially when using uglify `--env.uglify`. The default node process allocates 1.5GB memory. If you encounter issues similar to:
 `FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory`
 
 Please set the following environment variable to allocate a larger heap size before running `tns build --bundle`, e.g. to allocate 4GB memory:
