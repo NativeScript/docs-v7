@@ -52,6 +52,22 @@ function preventParentSelection(e) {
     }
 }
 
+function traverseAnchors(elements, level) {
+    let html = "<ul>";
+
+    elements.each((index, anchor) => {
+        if (!anchor.textContent.startsWith("Example")) {
+            html += `<li><a href="${anchor.hash}">${anchor.textContent}</a>`;
+
+            html += traverseAnchors($(anchor.parentElement).nextUntil(`h${level}`, `h${level + 1}`).children("a"), level + 1);
+
+            html += "</li>";
+        }
+    });
+
+    return html + "</ul>";
+}
+
 $(function(){
 
     $("pre[lang]").each(function() {
@@ -222,16 +238,16 @@ $(function(){
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            const tocElement = $(`article > ul:first-of-type [href$=${entry.target.id}]`)[0];
+            const tocElement = $(`.right-nav__tree [href$=${entry.target.id}]`)[0];
 
             if (entry.intersectionRatio < 1) {
                 if (tocElement && visibleElements.length) {
                     visibleElements[entry.intersectionRect.y < entry.rootBounds.height / 2 ? "shift" : "pop"]();
-                    $(`article > ul:first-of-type a`).removeClass("ns-state-selected");
+                    $(`.right-nav__tree a`).removeClass("ns-state-selected");
                 }
             } else if (tocElement) {
                 visibleElements[entry.intersectionRect.y < entry.rootBounds.height / 2 ? "unshift" : "push"](tocElement);
-                $(`article > ul:first-of-type a`).removeClass("ns-state-selected");
+                $(`.right-nav__tree a`).removeClass("ns-state-selected");
             }
 
             if (visibleElements[0]) {
@@ -239,6 +255,34 @@ $(function(){
             }
         });
     }, options);
+
+    const seeAlso = $("#see-also");
+    const seeAlsoLinks = seeAlso.next("ul");
+
+    seeAlso.remove();
+
+    $(`
+<div class="right-nav__container">
+    <input id="right-nav__toggle" class="right-nav__input" type="checkbox">
+    <label for="right-nav__toggle" class="right-nav__label"></label>
+    <div class="right-nav__tree">
+        <div>In this article</div>
+        ${traverseAnchors($("article > h2 > a"), 2)}
+    </div>
+</div>`)
+        .insertBefore($("article"))
+        .children(".right-nav__tree")
+        .append($("<div>Related articles</div>"))
+        .append(seeAlsoLinks)
+        .append($(".right-nav__links"));
+
+    $(document.documentElement).on("click", () => {
+        $("#right-nav__toggle")[0].checked = false;
+    });
+
+    $(".right-nav__container").on("click", (e) => {
+        e.stopPropagation();
+    });
 
     $("article > h1, article > h2, article > h3").each((index, node) => {
         observer.observe(node);

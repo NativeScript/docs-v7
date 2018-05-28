@@ -107,8 +107,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: geometricPrecision;
-    flex: 1 0 60%;
-    width: 60%;
+    flex: 1 0 50%;
+    width: 50%;
     max-width: 1280px;
 }
 
@@ -428,8 +428,8 @@ html .k-treeview.k-treeview.k-treeview.k-treeview.k-treeview .k-state-selected {
     padding: 1.43em;
 }
 
+.right-nav__input,
 .side-nav__burger-input {
-    display: none;
     opacity: 0;
     position: absolute;
 }
@@ -455,6 +455,7 @@ html .k-treeview.k-treeview.k-treeview.k-treeview.k-treeview .k-state-selected {
     color: var(--color-dark);
 }
 
+.right-nav__input:checked + label,
 .side-nav__burger-input:checked + label {
     box-shadow: 0 0 0 var(--transparent-dark-15);
 }
@@ -497,60 +498,119 @@ html body .side-nav__tree {
 
 /* Right TOC */
 
-article > ul:first-of-type,
-article > ul:first-of-type ul {
-    top: 100px;
+.right-nav__container {
+    top: 6.25em;
+    margin-left: 1.25em;
     position: -webkit-sticky;
     position: sticky;
-    list-style: none;
-    padding: 0 0 0 20px;
-    display: block;
-    font-size: 15px;
-    font-weight: 600;
+    float: right;
+    margin-right: -15em;
 }
 
-article > ul:first-of-type {
-    float: right;
-    width: 200px;
-    margin-left: 20px;
-    margin-right: -240px;
+.right-nav__tree {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     border-left: 1px solid var(--color-purple);
 }
 
-article > ul:first-of-type li {
+.right-nav__tree ul {
+    list-style: none;
+    padding: 0 0 0 1.33em;
     display: block;
 }
 
-article > ul:first-of-type a {
+.right-nav__tree > ul {
+    font-size: .94em;
+    font-weight: 600;
+    width: 13.33em;
+    -webkit-user-select: text;
+    -moz-user-select: -moz-text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+.right-nav__tree > div {
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.right-nav__tree > div:first-child {
+    display: inline-block;
+    padding: 0;
+}
+
+.right-nav__tree li {
     display: block;
-    padding: 5px 0;
+}
+
+.right-nav__label {
+    display: none;
+    cursor: pointer;
+    width: 2.5em;
+    height: 2.5em;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    opacity: .75;
+}
+
+.right-nav__label:hover {
+    opacity: 1;
+}
+
+.right-nav__label:before {
+    content: "\f100";
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 300;
+    font-size: 1.5em;
+}
+
+.right-nav__input:checked + .right-nav__label:before {
+    content: "\f101";
+}
+
+.right-nav__tree ul a {
+    display: block;
+    padding: .33em 0;
     position: relative;
 }
 
-article > ul:first-of-type .ns-state-selected:before {
+.right-nav__tree .ns-state-selected:before {
     content: "\a0";
     position: absolute;
     top: 0;
-    left: -23px;
-    width: 3px;
+    left: -1.53em;
+    width: .2em;
     height: 100%;
     background: var(--background-green);
 }
 
-article > ul:first-of-type li li .ns-state-selected:before {
-    content: "\a0";
-    position: absolute;
-    left: -43px;
-    width: 3px;
-    height: 100%;
-    background: var(--background-green);
+.right-nav__tree li li .ns-state-selected:before {
+    left: -2.87em;
 }
 
-article > ul:first-of-type ul {
+.right-nav__tree li li li .ns-state-selected:before {
+    left: -4.2em;
 }
 
-article > ul:first-of-type a.ns-state-selected {
+.right-nav__tree a.ns-state-selected {
     color: var(--color-green);
+}
+
+div.right-nav__links {
+    text-transform: none;
+}
+
+div.right-nav__links .ns-button {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.right-nav__links a:not(.ns-button) {
+    margin-top: 1.56em;
+    display: block;
 }
 
 /* Code Container */
@@ -954,7 +1014,7 @@ html .k-window-title {
     position: fixed;
     bottom: 0;
     z-index: 10000;
-    width: 60%;
+    width: 50%;
     max-width: 1280px;
 }
 
@@ -1298,13 +1358,29 @@ article table td h5 {
 }
 
 
+.-hidden {
+    display: none;
+}
+
 
 /* Responsiveness */
 
-@media only screen and (max-width: 1550px) {
+@media only screen and (max-width: 1800px) {
+    .ns-navigation {
+        width: calc(100% + 540px);
+        margin-left: -300px;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
     body {
         flex: 1 0 90%;
         width: 90%;
+    }
+
+    .ns-navigation {
+        width: auto;
+        margin-left: unset;
     }
 
     #feedback-section.-detached {
@@ -1355,24 +1431,66 @@ article table td h5 {
         min-width: 0;
     }
 
-    article>ul:first-of-type {
-        position: fixed;
-        padding-top: 70px;
-        padding-right: 20px;
-        top: 66px;
-        right: -200px;
-        bottom: 0;
-        margin: 0;
-        background: var(--background-base);
-        transition: right .2s ease-out;
-        transition-property: right, box-shadow;
+    .right-nav__label {
+        display: inline-flex;
+        position: absolute;
+        left: 0;
+        top: .94em;
     }
 
-    article>ul:first-of-type:hover {
-        right: 0;
-        box-shadow: -3px 0 6px var(--transparent-dark-15);
+    .right-nav__container {
+        position: fixed;
+        padding-right: 1.25em;
+        top: 4.13em;
+        right: -12.5em;
+        bottom: 0;
+        margin: 0;
         z-index: 1;
     }
+
+    .right-nav__tree > div {
+        margin-top: 1.38em;
+    }
+
+    .right-nav__tree {
+        margin-top: 0;
+        width: 13.75em;
+        height: 100%;
+        background: var(--background-base);
+        transition: width .2s ease-out;
+        transition-property: width, box-shadow;
+    }
+
+    .right-nav__tree > div,
+    .right-nav__tree > ul {
+        margin-left: 4.67em;
+    }
+
+    .right-nav__input:checked ~ .right-nav__tree {
+        width: 29em;
+        box-shadow: -3px 0 6px var(--transparent-dark-15);
+    }
+
+    .right-nav__input:checked ~ .right-nav__tree > ul {
+        margin-left: 1.33em;
+    }
+
+    .right-nav__input:checked ~ .right-nav__tree > div {
+        margin-left: 2.5em;
+    }
+
+    .right-nav__tree .ns-state-selected:before {
+        left: -2.87em;
+    }
+
+    .right-nav__tree li li .ns-state-selected:before {
+        left: -4.2em;
+    }
+
+    .right-nav__tree li li li .ns-state-selected:before {
+        left: -5.53em;
+    }
+
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1387,6 +1505,12 @@ article table td h5 {
     }
 }
 
+
+@media only screen and (max-width: 800px) {
+    html {
+        font-size: 13px;
+    }
+}
 
 
 /* Base16 Google Light Prism Theme */
