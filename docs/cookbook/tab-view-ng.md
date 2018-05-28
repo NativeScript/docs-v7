@@ -16,9 +16,9 @@ Using a `TabView` inside an Angular app requires some special attention about ho
 <TabView>
     <StackLayout *tabItem="{title: 'Profile', iconSource: '~/icon.png'}" >
         <ListView [items]="items">
-            <template let-item="item">
+            <ng-template let-item="item">
                 <Label [text]="item.itemDesc"></Label>
-            </template>
+            </ng-template>
         </ListView>
     </StackLayout>
     <StackLayout *tabItem="{title: 'Stats'}">
@@ -66,9 +66,9 @@ The most common customization of TabView is customizing the background color of 
 <TabView selectedIndex="1" selectedColor="#FF0000">
     <StackLayout *tabItem="{title: 'Profile', iconSource: '~/icon.png'}" >
         <ListView [items]="items">
-            <template let-item="item">
+            <ng-template let-item="item">
                 <Label [text]="item.itemDesc"></Label>
-            </template>
+            </ng-template>
         </ListView>
     </StackLayout>
     <StackLayout *tabItem="{title: 'Stats'}">
@@ -91,9 +91,9 @@ You can use the NativeScript-Angular TabView `selectedIndex` property in two-way
 <TabView [(ngModel)]="tabSelectedIndex" selectedColor="#FF0000">
     <StackLayout *tabItem="{title: 'Profile', iconSource: '~/icon.png'}" >
         <ListView [items]="items">
-            <template let-item="item">
+            <ng-template let-item="item">
             	<Label [text]="item.itemDesc"></Label>
-            </template>
+            </ng-template>
         </ListView>
     </StackLayout>
     <StackLayout *tabItem="{title: 'Stats'}">
