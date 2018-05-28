@@ -70,7 +70,8 @@ The NativeScript documentation is composed from multiple repositories:
 * [NativeScript Modules](https://github.com/NativeScript/NativeScript)
 * [NativeScript Angular](https://github.com/NativeScript/nativescript-angular)
 * [Sidekick Docs](https://github.com/NativeScript/sidekick-docs)
-* [NativeScript SDK examples](https://github.com/NativeScript/nativescript-sdk-examples-ng)
+* [NativeScript JavaScript SDK examples](https://github.com/NativeScript/nativescript-sdk-examples-js)
+* [NativeScript Angular SDK examples](https://github.com/NativeScript/nativescript-sdk-examples-ng)
 
 ### Building the docker image
 
@@ -85,6 +86,7 @@ git clone https://github.com/NativeScript/docs.git
 git clone https://github.com/NativeScript/NativeScript.git
 git clone https://github.com/NativeScript/nativescript-angular.git
 git clone https://github.com/NativeScript/sidekick-docs.git
+git clone https://github.com/NativeScript/nativescript-sdk-examples-js.git
 git clone https://github.com/NativeScript/nativescript-sdk-examples-ng.git
 git clone https://github.com/NativeScript/nativescript-cli.git
 cd nativescript-cli
