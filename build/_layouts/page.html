@@ -32,9 +32,7 @@ layout: index
                         expand: (e) => {
                             const node = $(e.node);
 
-                            if (node.parent().hasClass("k-treeview-lines")) {
-                                e.sender.collapse($(node).siblings());
-                            }
+                            e.sender.collapse($(node).siblings());
 
                             if (node.children(".k-group")[0]) {
                                 node.addClass("ns-state-expanded");

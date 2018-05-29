@@ -1,17 +1,17 @@
 <script>
-  (function() {
-    var cx = '{{site.google_custom_search}}';
-    var gcse = document.createElement('script');
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
+    (function () {
+        var cx = '{{site.google_custom_search}}';
+        var gcse = document.createElement('script');
+        gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
 </script>
 <gcse:search></gcse:search>
 <script>
-    window.onload = function(){
+    window.onload = function () {
         const input = document.getElementById('gsc-i-id1');
 
         input.placeholder = 'Looking for...';

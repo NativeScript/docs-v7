@@ -261,7 +261,9 @@ $(function(){
 
     seeAlso.remove();
 
-    $(`
+    const apiReferences = $("article > p > a[href*=api-reference]");
+
+    const rightNav = $(`
 <div class="right-nav__container">
     <input id="right-nav__toggle" class="right-nav__input" type="checkbox">
     <label for="right-nav__toggle" class="right-nav__label"></label>
@@ -271,10 +273,23 @@ $(function(){
     </div>
 </div>`)
         .insertBefore($("article"))
-        .children(".right-nav__tree")
-        .append($("<div>Related articles</div>"))
-        .append(seeAlsoLinks)
-        .append($(".right-nav__links"));
+        .children(".right-nav__tree");
+
+    if (seeAlsoLinks[0]) {
+        rightNav
+            .append($("<div>Related articles</div>"))
+            .append(seeAlsoLinks);
+    }
+
+    if (apiReferences[0]) {
+        apiReferences.parent().remove();
+
+        rightNav
+            .append($("<div>API Reference</div>"))
+            .append(apiReferences.wrap("<li></li>").parent().wrapAll("<ul></ul>").parent());
+    }
+
+    rightNav.append($(".right-nav__links"));
 
     $(document.documentElement).on("click", () => {
         $("#right-nav__toggle")[0].checked = false;
@@ -286,6 +301,22 @@ $(function(){
 
     $("article > h1, article > h2, article > h3").each((index, node) => {
         observer.observe(node);
+    });
+
+    const bodyObserver = new MutationObserver((entries) => {
+        entries.forEach(() => {
+            if (document.body.classList.contains("gsc-overflow-hidden")) {
+                document.documentElement.classList.add("-overflow-hidden");
+            } else {
+                document.documentElement.classList.remove("-overflow-hidden");
+            }
+        });
+    });
+
+    bodyObserver.observe(document.body, {
+        attributes: true,
+        attributeOldValue: true,
+        attributeFilter: ["class"]
     });
 });
 
