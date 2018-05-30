@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="google-site-verification" content="iwHdY_1KfeQbVLI-gtcAsI9pslqa2dLBsQD47d2E5To" />
+        <title>{{page.title}}</title>
+        <link rel="preload" href="{{site.baseurl}}/{{page.category}}.json" as="script">
+        <link rel="shortcut icon" href="{{site.headerbaseurl}}/favicon.ico"/>
+        {% if page.description %}<meta name="description" content="{{page.description}}">{% endif %}
+        <link href="//kendo.cdn.telerik.com/2018.1.221/styles/kendo.common.min.css" rel="stylesheet" />
+        {% asset fontawesome-all.css %}
+        {% asset variables.css %}
+        {% asset styles.css %}
+        <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+        <script src="//kendo.cdn.telerik.com/2018.1.221/js/kendo.web.min.js"></script>
+        <script src="//polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+        {% asset prism.js %}
+        {% asset app.js %}
+        <script>
+            document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+        </script>
+    </head>
+    <body {% if page.guide %}class="guide" {% endif %} class="-landing">
+        <!-- Google Tag Manager -->
+        <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id={{site.google_tag_manager}}" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', '{{site.google_tag_manager}}');</script>
+        <!-- End Google Tag Manager -->
+        <header class="ns-navigation">
+            {% include header.html %}
+        </header>
+
+        <div class="ns-page">
+            <a class="ns-card">
+                <span class="card__icon -tutorials"></span>
+                <span class="card__title">Tutorials</span>
+                <span class="card__description">It is easy to start with NativeScript with our fantastic tutorials.</span>
+            </a>
+            <a class="ns-card">
+                <span class="card__icon -sample-apps"></span>
+                <span class="card__title">Sample Apps</span>
+                <span class="card__description">It is easy to start with NativeScript with our fantastic tutorials.</span>
+            </a>
+            <a class="ns-card">
+                <span class="card__icon -animations"></span>
+                <span class="card__title">Animations</span>
+                <span class="card__description">It is easy to start with NativeScript with our fantastic tutorials.</span>
+            </a>
+            <div class="ns-start-links">
+                {% include search.html %}
+                <div class="start-links__container">
+                    <div class="start-links__category">
+                        <span class="start-links__title">NativeScript &<br/>Angular</span>
+                        <ul>
+                            <li><a>Getting Started</a></li>
+                            <li><a>Tutorials</a></li>
+                            <li><a>Components</a></li>
+                            <li><a>Theming</a></li>
+                            <li><a>Sample Apps</a></li>
+                            <li><a>API Reference</a></li>
+                        </ul>
+                    </div>
+                    <div class="start-links__category">
+                        <span class="start-links__title">NativeScript<br/>Core</span>
+                        <ul>
+                            <li><a>Getting Started</a></li>
+                            <li><a>Tutorials</a></li>
+                            <li><a>Components</a></li>
+                            <li><a>Theming</a></li>
+                            <li><a>Sample Apps</a></li>
+                            <li><a>API Reference</a></li>
+                        </ul>
+                    </div>
+                    <div class="start-links__category">
+                        <span class="start-links__title">NativeScript &<br/>Vue.JS</span>
+                        <ul>
+                            <li><a>Getting Started</a></li>
+                            <li><a>Join the Community</a></li>
+                        </ul>
+                        <hr/>
+                        <span class="start-links__title">API Reference</span>
+                        <ul>
+                            <li><a>Documentation</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="ns-footer">
+            <div class="ns-feedback">
+                <div id="feedback-section">
+                    <div>Not finding the help you need? Learn more about our professional support offerings.</div>
+                    <a class="ns-button -action">Contact us</a>
+                </div>
+            </div>
+            {% include footer.html %}
+        </footer>
+    </body>
+</html>
+

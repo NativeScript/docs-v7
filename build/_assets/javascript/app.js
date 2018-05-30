@@ -292,7 +292,11 @@ $(function(){
     rightNav.append($(".right-nav__links"));
 
     $(document.documentElement).on("click", () => {
-        $("#right-nav__toggle")[0].checked = false;
+        const toggle = $("#right-nav__toggle")[0];
+
+        if (toggle) {
+            toggle.checked = false;
+        }
     });
 
     $(".right-nav__container").on("click", (e) => {

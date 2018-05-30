@@ -1,121 +1,118 @@
-<footer class="ns-footer">
-    {% if site.ff-sheet-id %}{% include feedback-form.html %}{% endif %}
-    <div class="footer__container">
-        <div class="footer__form">
-            <h4>Stay connected with NativeScript</h4>
+<div class="footer__container">
+    <div class="footer__form">
+        <h4>Stay connected with NativeScript</h4>
+        <div>
             <div>
-                <div>
-                    <p>Get the latest news and updates delivered straight to your inbox.</p>
-                    <iframe width="500" height="36" class="footer__newsletter-frame"
-                            src="//telerik-media.s3.amazonaws.com/nativescript/newsletter-form.html" frameborder="0"></iframe>
-                </div>
-                <!--<div class="footer__social-links">
-                    <div id="fb-root">&nbsp;</div>
-                    <a href="https://github.com/NativeScript/NativeScript" class="github-button u-dib u-vab" target="_blank"
-                       data-count-api="/repos/NativeScript/NativeScript#stargazers_count"
-                       data-count-href="/NativeScript/NativeScript/stargazers">Star</a>
-                    <div class="fb-follow -m1" data-href="https://www.facebook.com/TelerikNativeScript" data-layout="button_count"
-                         data-size="small" data-show-faces="false"></div>
-                    <a href="https://twitter.com/nativescript" class="twitter-follow-button u-dib u-vab" target="_blank" data-dnt="true"
-                       data-show-count="true" data-show-screen-name="false">Follow @nativescript</a>
-                </div>-->
+                <p>Get the latest news and updates delivered straight to your inbox.</p>
+                <iframe width="500" height="36" class="footer__newsletter-frame"
+                        src="//telerik-media.s3.amazonaws.com/nativescript/newsletter-form.html" frameborder="0"></iframe>
             </div>
+            <!--<div class="footer__social-links">
+                <div id="fb-root">&nbsp;</div>
+                <a href="https://github.com/NativeScript/NativeScript" class="github-button u-dib u-vab" target="_blank"
+                   data-count-api="/repos/NativeScript/NativeScript#stargazers_count"
+                   data-count-href="/NativeScript/NativeScript/stargazers">Star</a>
+                <div class="fb-follow -m1" data-href="https://www.facebook.com/TelerikNativeScript" data-layout="button_count"
+                     data-size="small" data-show-faces="false"></div>
+                <a href="https://twitter.com/nativescript" class="twitter-follow-button u-dib u-vab" target="_blank" data-dnt="true"
+                   data-show-count="true" data-show-screen-name="false">Follow @nativescript</a>
+            </div>-->
         </div>
+    </div>
 <!--
-        <script>
-            var networks = {
-                    'facebook-jssdk': '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3',
-                    'github-bjs': 'https://buttons.github.io/buttons.js',
-                    'twitter-wjs': '//platform.twitter.com/widgets.js'
-                },
-                insertSocialNetworkToDOM = function (url, sdk) {
-                    var script = document.createElement('script');
+    <script>
+        var networks = {
+                'facebook-jssdk': '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3',
+                'github-bjs': 'https://buttons.github.io/buttons.js',
+                'twitter-wjs': '//platform.twitter.com/widgets.js'
+            },
+            insertSocialNetworkToDOM = function (url, sdk) {
+                var script = document.createElement('script');
 
-                    script.id = sdk || '';
-                    script.async = true;
-                    script.defer = true;
-                    script.src = url;
+                script.id = sdk || '';
+                script.async = true;
+                script.defer = true;
+                script.src = url;
 
-                    document.body.appendChild(script);
-                },
-                loadSocialNetworks = function (urls) {
-                    if (Object.keys(networks).length > 0) {
-                        for (var sdk in urls) {
-                            if (urls.hasOwnProperty(sdk)) {
-                                insertSocialNetworkToDOM(urls[sdk], sdk);
-                                delete networks[sdk];
-                            }
+                document.body.appendChild(script);
+            },
+            loadSocialNetworks = function (urls) {
+                if (Object.keys(networks).length > 0) {
+                    for (var sdk in urls) {
+                        if (urls.hasOwnProperty(sdk)) {
+                            insertSocialNetworkToDOM(urls[sdk], sdk);
+                            delete networks[sdk];
                         }
-                    } else {
-                        window.clearInterval(throttle);
                     }
-                },
-                throttle = setInterval(function () {
-                    loadSocialNetworks(networks);
-                }, 2000 / 3);
-        </script>
+                } else {
+                    window.clearInterval(throttle);
+                }
+            },
+            throttle = setInterval(function () {
+                loadSocialNetworks(networks);
+            }, 2000 / 3);
+    </script>
 -->
-    </div>
+</div>
 
-    <div class="footer__sitemap">
-        <div class="footer__sitemap-container">
-            <div class="footer__links row">
-                <div>
-                    <h5 class="-allcaps">Resources</h5>
-                    <ul class="List0 HighlightList -ff-prim">
-                        <li><a href="https://docs.nativescript.org" target="_blank">Documentation</a></li>
-                        <li><a href="{{site.headerbaseurl}}/integrations">Integrations</a></li>
-                        <li><a href="{{site.headerbaseurl}}/resources">Resource list</a></li>
-                        <li><a href="{{site.headerbaseurl}}/app-samples-with-code">App samples</a></li>
-                        <li><a href="{{site.headerbaseurl}}/ui-for-nativescript">Premium UI suite</a></li>
-                        <li><a href="{{site.headerbaseurl}}/blog">Blogs</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="-allcaps">Community</h5>
-                    <ul class="List0 HighlightList -ff-prim">
-                        <li><a href="https://github.com/NativeScript/NativeScript">GitHub</a></li>
-                        <li><a href="http://stackoverflow.com/questions/tagged/nativescript">Stack Overflow</a></li>
-                        <li><a href="{{site.headerbaseurl}}/events">Events</a></li>
-                        <li><a href="{{site.headerbaseurl}}/contribute">Contribute</a></li>
-                        <li><a href="https://nativescript.ideas.aha.io/?status=6001166983752519805">Have an Idea?</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="-allcaps">Enterprise</h5>
-                    <ul class="List0 HighlightList -ff-prim">
-                        <li><a href="{{site.headerbaseurl}}/ctos-guide">CTO's Guide</a></li>
-                        <li><a href="{{site.headerbaseurl}}/enterprise">Enterprise Support</a></li>
-                        <li><a href="{{site.headerbaseurl}}/preferred-partners">Preferred Partners</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="-allcaps">About</h5>
-                    <ul class="List0 HighlightList -ff-prim">
-                        <li><a href="{{site.headerbaseurl}}/about">What is NativeScript?</a></li>
-                        <li><a href="{{site.headerbaseurl}}/showcases">Showcases</a></li>
-                        <li><a href="{{site.headerbaseurl}}/nativescript-example-application">Try {N} on your device</a></li>
-                        <li><a href="{{site.headerbaseurl}}/roadmap">Roadmap &amp; release log</a></li>
-                    </ul>
-                </div>
+<div class="footer__sitemap">
+    <div class="footer__sitemap-container">
+        <div class="footer__links row">
+            <div>
+                <h5 class="-allcaps">Resources</h5>
+                <ul class="List0 HighlightList -ff-prim">
+                    <li><a href="https://docs.nativescript.org" target="_blank">Documentation</a></li>
+                    <li><a href="{{site.headerbaseurl}}/integrations">Integrations</a></li>
+                    <li><a href="{{site.headerbaseurl}}/resources">Resource list</a></li>
+                    <li><a href="{{site.headerbaseurl}}/app-samples-with-code">App samples</a></li>
+                    <li><a href="{{site.headerbaseurl}}/ui-for-nativescript">Premium UI suite</a></li>
+                    <li><a href="{{site.headerbaseurl}}/blog">Blogs</a></li>
+                </ul>
             </div>
-            <div class="footer__contribute row">
-                <p>
-                    If you see an area for improvement or have an idea for a new feature, we'd love to have your help!
-                </p>
-                <a class="ns-button" href="{{site.headerbaseurl}}/contribute">Contribute</a>
+            <div>
+                <h5 class="-allcaps">Community</h5>
+                <ul class="List0 HighlightList -ff-prim">
+                    <li><a href="https://github.com/NativeScript/NativeScript">GitHub</a></li>
+                    <li><a href="http://stackoverflow.com/questions/tagged/nativescript">Stack Overflow</a></li>
+                    <li><a href="{{site.headerbaseurl}}/events">Events</a></li>
+                    <li><a href="{{site.headerbaseurl}}/contribute">Contribute</a></li>
+                    <li><a href="https://nativescript.ideas.aha.io/?status=6001166983752519805">Have an Idea?</a></li>
+                </ul>
             </div>
-            <div class="footer__last-row row">
-                <div class="navigation__logo"></div>
-                <div class="footer__copyright">
-                    <span>
-                        <span>NativeScript is licensed under the</span><a href="https://github.com/NativeScript/nativescript-cli/blob/master/LICENSE">Apache 2.0 license</a><span>.</span>
-                    </span>
-                    <span>
-                        © <script>document.write(new Date().getFullYear())</script> Progress Software Corporation. All Rights Reserved.
-                    </span>
-                </div>
+            <div>
+                <h5 class="-allcaps">Enterprise</h5>
+                <ul class="List0 HighlightList -ff-prim">
+                    <li><a href="{{site.headerbaseurl}}/ctos-guide">CTO's Guide</a></li>
+                    <li><a href="{{site.headerbaseurl}}/enterprise">Enterprise Support</a></li>
+                    <li><a href="{{site.headerbaseurl}}/preferred-partners">Preferred Partners</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="-allcaps">About</h5>
+                <ul class="List0 HighlightList -ff-prim">
+                    <li><a href="{{site.headerbaseurl}}/about">What is NativeScript?</a></li>
+                    <li><a href="{{site.headerbaseurl}}/showcases">Showcases</a></li>
+                    <li><a href="{{site.headerbaseurl}}/nativescript-example-application">Try {N} on your device</a></li>
+                    <li><a href="{{site.headerbaseurl}}/roadmap">Roadmap &amp; release log</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__contribute row">
+            <p>
+                If you see an area for improvement or have an idea for a new feature, we'd love to have your help!
+            </p>
+            <a class="ns-button" href="{{site.headerbaseurl}}/contribute">Contribute</a>
+        </div>
+        <div class="footer__last-row row">
+            <div class="navigation__logo"></div>
+            <div class="footer__copyright">
+                <span>
+                    <span>NativeScript is licensed under the</span><a href="https://github.com/NativeScript/nativescript-cli/blob/master/LICENSE">Apache 2.0 license</a><span>.</span>
+                </span>
+                <span>
+                    © <script>document.write(new Date().getFullYear())</script> Progress Software Corporation. All Rights Reserved.
+                </span>
             </div>
         </div>
     </div>
-</footer>
+</div>
