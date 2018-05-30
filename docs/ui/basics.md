@@ -56,24 +56,29 @@ application.start({ moduleName: "my-page" });
 
 ### Navigate to a page
 
-You can navigate between pages with the `navigate` method of the [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class. The [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. Typically, each app has one frame at the root level&mdash;the topmost frame.
+You can navigate between pages with the `navigate` method of the [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class. The [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. With NativeScript 4 and above each app can have on or more frames. To get a reference to a frame we can use [`getFrameById`](https://docs.nativescript.org/api-reference/modules/_ui_frame_#getframebyid) method. Detailed information about navigation can be found in the [dedicated article](#core-concepts/navigation#basic-navigation).
 
 When you trigger navigation, NativeScript looks for an `XML` file with the specified name, loads it and navigates to the respective page. If NativeScript discovers a `JavaScript` or `TypeScript` file with the same name, it executes the code inside it.
 
 ```JavaScript
 // To import the "ui/frame" module:
-var frames = require("ui/frame");
+let getFrameById = require("tns-core-modules/ui/frame").getFrameById;
+const frame = getFrameById("myFrame");
 // Navigate to page called “my-page”
-frames.topmost().navigate("my-page");
+frame.navigate("my-page");
 ```
 ```TypeScript
 // To import the "ui/frame" module:
-import frames = require("ui/frame");
+import { getFrameById } from "tns-core-modules/ui/frame";
+const frame = getFrameById("myFrame");
 // Navigate to page called “my-page”
-frames.topmost().navigate("my-page");
+frame.navigate("my-page");
+```
+```XML
+<Frame id="myFrame"/>
 ```
 
-> Paths are relative to the application root. In the example above, NativeScript looks for a `my-page.xml` file in the app directory of your project.
+> Paths are relative to the application root. In the example above, NativeScript looks for a `my-page.xml` file in the app directory of your project (e.g. `app/my-page.xml`).
 
 ### Set the bindingContext while navigating to a page
 
@@ -81,22 +86,24 @@ You could provide `bindingContext` automatically while navigating to a page. Thi
 
 ```JavaScript
 // To import the "ui/frame" module and "main-view-model":
-var frame = require("ui/frame");
-var main_view_model = require("./main-view-model");
+let getFrameById = require("tns-core-modules/ui/frame").getFrameById;
+const frame = getFrameById("myFrame");
+const HelloWorldModel = require("./main-view-model").HelloWorldModel;
 // Navigate to page called “my-page” and provide "bindingContext"
-frame.topmost().navigate({
+frame.navigate({
   moduleName: "my-page",
-  bindingContext: new main_view_model.HelloWorldModel()
+  bindingContext: new HelloWorldModel()
 });
 ```
 ```TypeScript
 // To import the "ui/frame" module and "main-view-model":
-import {topmost} from "ui/frame";
-import {HelloWorldModel} from "./main-view-model"
+import { getFrameById } from "tns-core-modules/ui/frame";
+const frame = getFrameById("myFrame");
+import { HelloWorldModel } from "./main-view-model"
 // Navigate to page called “my-page” and provide "bindingContext"
-topmost().navigate({
-  moduleName:"my-page",
-  bindingContext:new HelloWorldModel()
+frame.navigate({
+  moduleName: "my-page",
+  bindingContext: new HelloWorldModel()
 });
 ```
 
@@ -122,7 +129,7 @@ In this example of `main-page.xml`, your page consists of a button. When you tap
 This example app is a simple counter app. The logic for the counter is implemented in a `main-page.js` or `main-page.ts` file.
 
 ```JavaScript
-var view = require("ui/core/view");
+var view = require("tns-core-modules/ui/core/view");
 var count = 0;
 function buttonTap(args) {
     count++;
@@ -138,17 +145,18 @@ function buttonTap(args) {
 exports.buttonTap = buttonTap;
 ```
 ```TypeScript
-import observable = require("data/observable");
-import view = require("ui/core/view");
-import label = require("ui/label");
+import { EventData } from "tns-core-modules/data/observable";
+import { getViewById } from "tns-core-modules/ui/core/view";
+import { Label } from "tns-core-modules/ui/label";
+import { View } from "tns-core-modules/ui/core/view";
 
 var count = 0;
-export function buttonTap(args: observable.EventData) {
+export function buttonTap(args: EventData) {
     count++;
-    var sender = <view.View>args.object;
+    var sender = <View>args.object;
     var parent = sender.parent;
     if (parent) {
-        var lbl = <label.Label>view.getViewById(parent, "Label1");
+        var lbl = <Label>getViewById(parent, "Label1");
         if (lbl) {
             lbl.text = "You tapped " + count + " times!";
         }
@@ -158,15 +166,6 @@ export function buttonTap(args: observable.EventData) {
 To access variables or functions from the user interface, you need to declare them in the `exports` object in the module.
 
 NativeScript sets each attribute value in the XML declaration to a respective property or an event of the component. If a respective property does not exist, NativeScript sets the attribute value as an expando object.
-
-You can specify code and CSS files for your Page XML using `import` and `cssFile` attributes:
-```XML
-<Page import="~/your-code-file" cssFile="~/your-styles.css">
-    <StackLayout>
-     ...
-    </StackLayout>
-</Page>
-```
 
 ## User interface components
 
@@ -211,13 +210,13 @@ function pageLoaded(args) {
 exports.pageLoaded = pageLoaded;
 ```
 ```TypeScript
-import observable = require("data/observable");
-import pages = require("ui/page");
+import { EventData } from "tns-core-modules/data/observable";
+import { Page } from "tns-core-modules/ui/page";
 
 // Event handler for Page "loaded" event attached in main-page.xml
-export function pageLoaded(args: observable.EventData) {
+export function pageLoaded(args: EventData) {
     // Get the event sender
-    var page = <pages.Page>args.object;
+    const page = <Page>args.object;
 }
 ```
 
@@ -251,25 +250,25 @@ The following sample `main-page.xml` contains two tabs with labels.
 The respective `main-page.js` or `main-page.ts` loads the first tab by its ID and shows its contents.
 
 ```JavaScript
-var view = require("ui/core/view");
+var getViewById = require("tns-core-modules/ui/core/view").getViewById;
 function pageLoaded(args) {
     var page = args.object;
-    var tabView1 = view.getViewById(page, "tabView1");
+    var tabView1 = getViewById(page, "tabView1");
     tabView1.selectedIndex = 1;
 }
 exports.pageLoaded = pageLoaded;
 ```
 ```TypeScript
-import observable = require("data/observable");
-import view = require("ui/core/view");
-import pages = require("ui/page");
-import tab = require("ui/tab-view");
+import { EventData } from "tns-core-modules/data/observable";
+import { getViewById } from "tns-core-modules/ui/core/view";
+import { Page } from "tns-core-modules/ui/page";
+import { TabView } from "tns-core-modules/ui/tab-view";
 
 // Event handler for Page "loaded" event attached in main-page.xml
-export function pageLoaded(args: observable.EventData) {
+export function pageLoaded(args: EventData) {
     // Get the event sender
-    var page = <pages.Page>args.object;
-    var tabView1 = <tab.TabView>view.getViewById(page, "tabView1");
+    var page = <Page>args.object;
+    var tabView1 = <TabView>getViewById(page, "tabView1");
     tabView1.selectedIndex = 1;
 }
 ```
@@ -371,8 +370,7 @@ You can define your own XML namespaces to create custom user interface component
 This sample `main-page.xml` is using a custom component defined in separate declarations in the `xml-declaration/mymodule` directory.
 
 ```XML
-<Page
-    xmlns:customControls="xml-declaration/mymodule">
+<Page xmlns:customControls="xml-declaration/mymodule">
   <customControls:MyControl />
 </Page>
 ```
@@ -386,9 +384,9 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var stackLayout = require("ui/layouts/stack-layout");
-var label = require("ui/label");
-var button = require("ui/button");
+var stackLayout = require("tns-core-modules/ui/layouts/stack-layout");
+var label = require("tns-core-modules/ui/label");
+var button = require("tns-core-modules/ui/button");
 var MyControl = (function (_super) {
     __extends(MyControl, _super);
     function MyControl() {
@@ -408,21 +406,21 @@ var MyControl = (function (_super) {
 exports.MyControl = MyControl;
 ```
 ```TypeScript
-import observable = require("data/observable");
-import stackLayout = require("ui/layouts/stack-layout");
-import label = require("ui/label");
-import button = require("ui/button");
+import { EventData } from "tns-core-modules/data/observable";
+import { StackLayout } from "tns-core-modules/ui/layouts/stack-layout";
+import { Label } from "tns-core-modules/ui/label";
+import { Button } from "tns-core-modules/ui/button";
 
-export class MyControl extends stackLayout.StackLayout {
+export class MyControl extends StackLayout {
     constructor() {
         super();
 
-        var counter: number = 0;
+        let counter: number = 0;
 
-        var lbl = new label.Label();
-        var btn = new button.Button();
+        const lbl = new Label();
+        const btn = new Button();
         btn.text = "Tap me!";
-        btn.on(button.Button.tapEvent, (args: observable.EventData) => {
+        btn.on("tap", (args) => {
             lbl.text = "Tap " + counter++;
         });
 
@@ -455,7 +453,7 @@ The custom component in `xml-declaration/MyControl.xml` defines a button, a labe
 ```
 
 ```JavaScript
-var view = require("ui/core/view");
+var view = require("tns-core-modules/ui/core/view");
 var count = 0;
 function buttonTap(args) {
     count++;
@@ -470,17 +468,17 @@ function buttonTap(args) {
 exports.buttonTap = buttonTap;
 ```
 ```TypeScript
-import observable = require("data/observable");
-import view = require("ui/core/view");
-import label = require("ui/label");
+import { EventData } from "tns-core-modules/data/observable";
+import { Label } from "tns-core-modules/ui/label";
+import { View, getViewById } from "tns-core-modules/ui/core/view";
 
-var count = 0;
-export function buttonTap(args: observable.EventData) {
+let count = 0;
+export function buttonTap(args: EventData) {
     count++;
 
-    var parent = (<view.View>args.object).parent;
+    let parent = (<View>args.object).parent;
     if (parent) {
-        var lbl = <label.Label>view.getViewById(parent, "Label1");
+        var lbl = <Label>getViewById(parent, "Label1");
         if (lbl) {
             lbl.text = "You tapped " + count + " times!";
         }
@@ -490,14 +488,14 @@ export function buttonTap(args: observable.EventData) {
 #### Dynamically loading custom components
 Load a pure JavaScript component by finding it in the exports of the module. The component is specified by a path and its name. Then the code from the JavaScript file is executed.
 ```JavaScript
-var builder = require("ui/builder");
+var builder = require("tns-core-modules/ui/builder");
 var myComponentInstance = builder.load({
         path: "~/xml-declaration/mymodule",
         name: "MyControl"
 });
 ```
 ```TypeScript
-import builder = require("ui/builder");
+import * as builder from "tns-core-modules/ui/builder";
 var myComponentInstance = builder.load({
         path: "~/xml-declaration/mymodule",
         name: "MyControl"
@@ -513,7 +511,7 @@ var myComponentInstance = builder.load({
 });
 ```
 ```TypeScript
-import builder = require("ui/builder");
+import * as builder from "tns-core-modules/ui/builder";
 var myComponentInstance = builder.load({
         path: "~/xml-declaration/mymodulewithxml",
         name: "MyControl"
@@ -551,10 +549,10 @@ function myTapHandler(args) {
 exports.myTapHandler = myTapHandler;
 ```
 ```TypeScript
-import gestures = require("ui/gestures");
+import { GestureEventData } from "tns-core-modules/ui/gestures";
 
-export function myTapHandler(args: gestures.GestureEventData) {
-    var context = args.view.bindingContext;
+export function myTapHandler(args: GestureEventData) {
+    const context = args.view.bindingContext;
 }
 ```
 
@@ -578,18 +576,17 @@ This sample `main-page.js` or `main-page.ts` file sets a `bindingContext` for th
 
 ```JavaScript
 function navigatingTo(args) {
-	var page = args.object;
-
-	page.bindingContext = { name: "Some name" };
+    const page = args.object;
+    page.bindingContext = { name: "Some name" };
 }
 exports.navigatingTo = navigatingTo;
 ```
 ```TypeScript
-import observable = require("data/observable");
-import pages = require("ui/page");
+import { EventData } from "tns-core-modules/data/observable";
+import { Page } from "tns-core-modules/ui/page";
 
-export function navigatingTo(args: observable.EventData) {
-    var page = <pages.Page>args.object;
+export function navigatingTo(args: EventData) {
+    const page = <Page>args.object;
     page.bindingContext = { name: "Some name" };
 }
 ```
@@ -611,10 +608,10 @@ This sample `main-page.js` or `main-page.ts` sets a `bindingContext` for the pag
 
 ```JavaScript
 function navigatingTo(args) {
-    var page = args.object;
+    const page = args.object;
     page.bindingContext = {
         myProperty: "Some text",
-        myFunction: function () {
+        myFunction: () => {
           // Your code
         }
     };
@@ -622,11 +619,11 @@ function navigatingTo(args) {
 exports.navigatingTo = navigatingTo;
 ```
 ```TypeScript
-import observable = require("data/observable");
-import pages = require("ui/page");
+import { EventData } from "tns-core-modules/data/observable";
+import { Page } from "tns-core-modules/ui/page";
 
-export function navigatingTo(args: observable.EventData) {
-    var page = <pages.Page>args.object;
+export function navigatingTo(args: EventData) {
+    const page = <Page>args.object;
     page.bindingContext = {
         myProperty: "Some text",
         myFunction: () => {
@@ -661,7 +658,7 @@ In this sample `main-page.xml`, the ListView consists of labels and each item wi
 The sample `main-page.js` or `main-page.ts` populates the `bindingContext` for the page. In this case, the code sets values for the name property for each label. Note that because the `ListView` and the Label have different scopes, you can access ListView by ID from the page but you cannot access the Label by ID. The `ListView` creates a new `Label` for every item.
 
 ```JavaScript
-var view = require("ui/core/view");
+var view = require("tns-core-modules/ui/core/view");
 function navigatingTo(args) {
     var page = args.object;
     page.bindingContext = { myItems: [{ name: "Name1" }, { name: "Name2" }, { name: "Name3" }] };
@@ -675,21 +672,21 @@ function navigatingTo(args) {
 exports.navigatingTo = navigatingTo;
 ```
 ```TypeScript
-import observable = require("data/observable");
-import pages = require("ui/page");
-import view = require("ui/core/view");
-import listView = require("ui/list-view");
-import label = require("ui/label");
+import { EventData } from "tns-core-modules/data/observable";
+import { Page } from "tns-core-modules/ui/page";
+import { getViewById } from "tns-core-modules/ui/core/view";
+import { ListView } from "tns-core-modules/ui/list-view";
+import { Label } from "tns-core-modules/ui/label";
 
-export function navigatingTo(args: observable.EventData) {
-    var page = <pages.Page>args.object;
+export function navigatingTo(args: EventData) {
+    const page = <Page>args.object;
     page.bindingContext = { myItems: [{ name: "Name1" }, { name: "Name2" }, { name: "Name3" }] };
 
     // Will work!
-    var listView1 = <listView.ListView>view.getViewById(page, "listView1");
+    const listView1 = <ListView>getViewById(page, "listView1");
 
     // Will not work!
-    var label1 = <label.Label>view.getViewById(page, "label1");
+    const label1 = <Label>getViewById(page, "label1");
 }
 ```
 
