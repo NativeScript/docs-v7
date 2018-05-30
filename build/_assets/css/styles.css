@@ -771,21 +771,21 @@ html .ns-navigation .navigation__right .k-last .ns-button {
 }
 
 .ns-card {
-    padding: 30px 20px;
+    padding: 1.88em 1.25em;
     background: var(--color-light);
     box-shadow: 0 3px 6px var(--transparent-dark-15);
     color: var(--color-secondary);
     display: inline-block;
     margin: 1.88em .94em 0;
     box-sizing: border-box;
-    flex: 1 1 17.5em;
+    flex: 1 1 16.5em;
 }
 
 .card__icon {
     width: 4em;
     height: 101%;
     float: left;
-    margin-right: 1.88em;
+    margin-right: 1.25em;
 }
 
 .card__icon.-tutorials {
@@ -813,9 +813,14 @@ html .ns-navigation .navigation__right .k-last .ns-button {
     padding-bottom: 1.88em;
 }
 
+.ns-page > h1 {
+    margin: 1em .3em .4em;
+    width: 100%;
+}
+
 .ns-start-links {
     width: 100%;
-    margin-top: 1.88em;
+    margin-top: 3em;
     background: var(--color-light);
     position: relative;
 }
