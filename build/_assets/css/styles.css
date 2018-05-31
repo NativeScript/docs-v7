@@ -762,7 +762,7 @@ html .ns-navigation .navigation__right .k-last .ns-button {
 
 /* Landing page */
 
-.ns-page {
+.-landing .ns-page {
     display: flex;
     flex-flow: wrap;
     margin: 0 -1.25em;
