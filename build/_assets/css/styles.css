@@ -115,6 +115,7 @@ body {
 /* Headings */
 
 a {
+    cursor: pointer;
     text-decoration: none;
     color: var(--color-accent);
 }
@@ -764,9 +765,9 @@ html .ns-navigation .navigation__right .k-last .ns-button {
 .ns-page {
     display: flex;
     flex-flow: wrap;
-    justify-content: space-between;
     margin: 0 -1.25em;
     position: relative;
+    justify-content: space-between;
     background: var(--background-purple);
 }
 
@@ -779,6 +780,14 @@ html .ns-navigation .navigation__right .k-last .ns-button {
     margin: 1.88em .94em 0;
     box-sizing: border-box;
     flex: 1 1 16.5em;
+    transition: transform .2s ease-out;
+    transition-property: transform, box-shadow;
+}
+
+.ns-card:hover {
+    cursor: pointer;
+    transform: translateY(5px);
+    box-shadow: 0 6px 12px var(--transparent-dark-15);
 }
 
 .card__icon {
@@ -801,11 +810,8 @@ html .ns-navigation .navigation__right .k-last .ns-button {
 }
 
 .card__title {
-    font-size: 1.31em;
-    font-weight: 600;
-    text-transform: uppercase;
     color: var(--color-dark);
-    margin-bottom: .48em;
+    margin: 0 0 .5em;
 }
 
 .card__description {
@@ -848,12 +854,6 @@ html .ns-navigation .navigation__right .k-last .ns-button {
 
 .start-links__category {
     margin: 0 .94em;
-}
-
-.start-links__title {
-    font-size: 1.75em;
-    text-transform: uppercase;
-    font-weight: 600;
 }
 
 .start-links__container ul {
@@ -1640,6 +1640,10 @@ html .ns-page .-hidden {
     html {
         font-size: 13px;
     }
+
+    .ns-card {
+        flex: auto;
+    }
 }
 
 
@@ -1791,6 +1795,11 @@ html .-landing .gsc-control-cse {
     height: 31px;
 }
 
+.-landing .gsc-input-box table,
+.-landing .gsc-input-box tr {
+    height: 42px;
+}
+
 .gsc-input-box table,
 .gsc-input-box tbody,
 .gsc-input-box td {
@@ -1808,6 +1817,10 @@ html .gsc-input-box {
     box-shadow: none;
 }
 
+.gsc-input::-webkit-input-placeholder {
+    color: var(--transparent-dark-50);
+}
+
 html td.gsc-search-button {
     width: 36px;
     height: 100%;
@@ -1817,6 +1830,7 @@ html td.gsc-search-button {
     justify-content: center;
     left: 0;
     top: 0;
+    margin: 0;
 }
 
 td.gsc-search-button:before {
@@ -1825,7 +1839,6 @@ td.gsc-search-button:before {
     display: flex;
     line-height: inherit;
     font-size: 16px;
-    text-align: center;
     height: 100%;
     width: 100%;
     align-items: center;
