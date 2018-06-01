@@ -900,6 +900,75 @@ export function onLoginButtonTap(): void {
 
 You can find the complete source code [here](https://github.com/NativeScript/NativeScript/tree/master/apps/app/ui-tests-app/modal-view).
 
+#### Navigation in modal pages
+
+With NativeScript version 4.0.0 and above, we can navigate within the modal.
+
+
+**modal-page.xml**
+```JavaScript
+function onNavigate(args) {
+    const view = args.object;
+    const page = view.page;
+    page.frame.navigate("modal-second-page");
+}
+exports.onNavigate = onNavigate;
+```
+```TypeScript
+export function onNavigate(args: EventData) {
+    const view = args.object as View;
+    const page = view.page as Page;
+    page.frame.navigate("modal-second-page");
+}
+```
+```XML
+<Page backgroundColor="green" showingModally="onShowingModally" loaded="onLoaded">
+    <StackLayout backgroundColor="lightGreen">
+        <Button text="Navigate To Second Page" tap="onNavigate"/>
+    </StackLayout>
+</Page>
+```
+
+**modal-second-page.xml**
+```JavaScript
+function onGoBack(args) {
+    const view = args.object;
+    const page = view.page;
+
+    page.frame.goBack();
+}
+exports.onGoBack = onGoBack;
+
+function onCloseModal(args) {
+    args.object.closeModal();
+}
+exports.onCloseModal = onCloseModal;
+```
+```TypeScript
+import { Page } from "tns-core-modules/ui/page";
+import { View, EventData } from "tns-core-modules/ui/core/view";
+
+export function onGoBack(args: EventData) {
+    const view = args.object as View;
+    const page = view.page as Page;
+    page.frame.goBack();
+}
+
+export function onCloseModal(args: EventData) {
+    (args.object as View).closeModal();
+}
+```
+```XML
+<Page class="page">
+    <StackLayout>
+        <Label text="Second Page"/>
+        <Button text="Navigate Back" tap="onGoBack"/>
+        <Button text="Close Modal" tap="onCloseModal"/>
+    </StackLayout>
+</Page>
+```
+
+
 ## Supporting multiple screens
 Mobile applications are running on different devices with different screen sizes and form factors. NativeScript provides a way to define different files (.js, .css, .xml, etc.) to be loaded based on the screen's size, platform and orientation of the current device. The approach is somewhat similar to [multi screen support in Android](http://developer.android.com/guide/practices/screens_support.html). There is a set of *qualifiers* that can be added inside the file that will be respected when the file is loaded. Here is how the file should look:
 
