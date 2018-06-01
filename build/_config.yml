@@ -43,9 +43,6 @@ navigation:
     plugins:
         position: 70
         title: "PLUGINS"
-    cookbook:
-        position: 80
-        title: "COOKBOOK"  
     releases:
         position: 90
         title: "RELEASES"
