@@ -36,5 +36,5 @@ RUN cd /www \
 
 ENTRYPOINT [ "/start.sh" ]
 
-EXPOSE 9192
+EXPOSE 8080
 EXPOSE 35729

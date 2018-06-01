@@ -262,13 +262,14 @@ $(function(){
     seeAlso.remove();
 
     const apiReferences = $("article > p > a[href*=api-reference]");
+    const rightNavLinks = $(".right-nav__links");
 
     const rightNav = $(`
 <div class="right-nav__container">
     <input id="right-nav__toggle" class="right-nav__input" type="checkbox">
     <label for="right-nav__toggle" class="right-nav__label"></label>
     <div class="right-nav__tree">
-        <div>In this article</div>
+        <div class='-allcaps'>In this article</div>
         ${traverseAnchors($("article > h2 > a"), 2)}
     </div>
 </div>`)
@@ -277,7 +278,7 @@ $(function(){
 
     if (seeAlsoLinks[0]) {
         rightNav
-            .append($("<div>Related articles</div>"))
+            .append($("<div class='-allcaps'>Related articles</div>"))
             .append(seeAlsoLinks);
     }
 
@@ -285,11 +286,15 @@ $(function(){
         apiReferences.parent().remove();
 
         rightNav
-            .append($("<div>API Reference</div>"))
+            .append($("<div class='-allcaps'>API Reference</div>"))
             .append(apiReferences.wrap("<li></li>").parent().wrapAll("<ul></ul>").parent());
     }
 
-    rightNav.append($(".right-nav__links"));
+    if (rightNavLinks[0]) {
+        rightNav
+            .append($("<div>Not finding the help you need?</div>"))
+            .append(rightNavLinks);
+    }
 
     $(document.documentElement).on("click", () => {
         const toggle = $("#right-nav__toggle")[0];

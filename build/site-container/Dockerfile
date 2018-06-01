@@ -11,4 +11,4 @@ RUN rm /etc/nginx/conf.d/default.conf \
   && rm /usr/share/nginx/html/nginx.conf \
   && sed -i -e 's/\/www\/docs\/build\/bin\/site/\/usr\/share\/nginx\/html/g' /etc/nginx/nginx.conf
 
-EXPOSE 9192
+EXPOSE 8080
