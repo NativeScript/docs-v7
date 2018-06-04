@@ -238,22 +238,30 @@ $(function(){
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            const tocElement = $(`.right-nav__tree [href$=${entry.target.id}]`)[0];
-
             if (entry.intersectionRatio < 1) {
-                if (tocElement && visibleElements.length) {
-                    visibleElements[entry.intersectionRect.y < entry.rootBounds.height / 2 ? "shift" : "pop"]();
-                    $(`.right-nav__tree a`).removeClass("ns-state-selected");
-                }
-            } else if (tocElement) {
-                visibleElements[entry.intersectionRect.y < entry.rootBounds.height / 2 ? "unshift" : "push"](tocElement);
-                $(`.right-nav__tree a`).removeClass("ns-state-selected");
-            }
-
-            if (visibleElements[0]) {
-                visibleElements[0].classList.add("ns-state-selected");
+                delete visibleElements[visibleElements.indexOf(entry.target)];
+            } else {
+                visibleElements[entry.intersectionRect.y < entry.rootBounds.height ? "unshift" : "push"](entry.target);
             }
         });
+
+        if (visibleElements[0]) {
+            let topElement = { offsetTop: 9999999 };
+
+            visibleElements.forEach((element) => {
+                if (element.offsetTop < topElement.offsetTop) {
+                    topElement = element;
+                }
+            });
+
+            topElement = $(`.right-nav__tree [href$=${topElement.id}]`);
+
+            if (topElement[0]) {
+                $(`.right-nav__tree a`).removeClass("ns-state-selected");
+
+                topElement.addClass("ns-state-selected");
+            }
+        }
     }, options);
 
     const seeAlso = $("#see-also");
@@ -308,7 +316,7 @@ $(function(){
         e.stopPropagation();
     });
 
-    $("article > h1, article > h2, article > h3").each((index, node) => {
+    $("article > h2, article > h3").each((index, node) => {
         observer.observe(node);
     });
 
