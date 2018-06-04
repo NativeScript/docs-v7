@@ -958,15 +958,18 @@ html .ns-navigation .navigation__right .k-last .ns-button {
 }
 
 .footer__form > h4 {
-    margin: 1.25em 0 0;
+    margin: 3.24em 0 0;
 }
 
 .footer__form > div > div {
+    margin-bottom: 5.94em;
+}
+
+.footer__form > div > div > p {
     margin-bottom: 1.88em;
 }
 
 .footer__newsletter-frame {
-    margin-top: 0.63em;
     max-width: 100%;
     height: 35px;
     background: var(--background-light);
@@ -1018,11 +1021,15 @@ html .ns-navigation .navigation__right .k-last .ns-button {
     flex: 1;
 }
 
+.footer__links h5 {
+    margin-bottom: 1.83em;
+}
+
 .footer__links ul {
     list-style: none;
     padding: 0;
     font-size: 1.29em;
-    line-height: 2em;
+    line-height: 1.9em;
     margin-bottom: 2em;
 }
 
