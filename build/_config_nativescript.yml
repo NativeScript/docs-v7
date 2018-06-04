@@ -12,7 +12,13 @@ ngselected: ""
 
 
 flavour: "nativescript"
-
+navigation:
+## List your directory names and order here, like this:
+    cookbook:
+        position: 31
+        title: "COOKBOOK"
+        expanded: false
+        
 # The google services configuration
 google_tag_manager: GTM-W58JDD
 google_custom_search: '001595215763381649090:asl7kpbijam'
