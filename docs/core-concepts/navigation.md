@@ -840,7 +840,7 @@ topmost().goBack();
 Use the **showModal** method of the `View` class to show another view as a modal dialog. You must specify the location of the modal page module. You can provide a context and a callback function that will be called when the modal page is closed. You can also optionally specify whether to show the modal page in fullscreen or not. To close the modal page, you need to subscribe to its `shownModally` event and store a reference to a close callback function provided by the event arguments. Call this function when you are ready to close the modal page, optionally passing some results to the master page. Here is an example with two pages &mdash; the main page and a login page. The main page shows the login page modally; the user enters their username and password and when ready clicks the Login button. This closes the modal login page and returns the username/password to the main page which can then log the user in.
 
 > **TIP:** By design on iPhone, a modal page appears only in fullscreen.
- 
+
 **main-page**
 ``` JavaScript
 const modalPageModule = "./modal-views-demo/login-page";
@@ -902,23 +902,36 @@ You can find the complete source code [here](https://github.com/NativeScript/Nat
 
 #### Navigation in modal pages
 
-With NativeScript version 4.0.0 and above, we can navigate within the modal.
+With NativeScript version 4.0.0 and above, we can navigate within a modal page. We need a root frame defaulting to our first modal page. With the `Frame` instance, we can navigate within the modal and with the help of [`closeModal` method](https://docs.nativescript.org/api-reference/classes/_ui_core_view_base_.viewbase#closemodal), we can close the modal from any `View` instance.
 
+**modal-root.xml**
+```XML
+<Frame defaultPage="first-modal-page"/>
+```
 
-**modal-page.xml**
+**first-modal-page.xml**
 ```JavaScript
 function onNavigate(args) {
     const view = args.object;
     const page = view.page;
-    page.frame.navigate("modal-second-page");
+    page.frame.navigate("second-modal-page");
 }
 exports.onNavigate = onNavigate;
+
+function onShowingModally(args) {
+    console.log("onShowingModally");
+}
+exports.onShowingModally = onShowingModally;
 ```
 ```TypeScript
 export function onNavigate(args: EventData) {
     const view = args.object as View;
     const page = view.page as Page;
-    page.frame.navigate("modal-second-page");
+    page.frame.navigate("second-modal-page");
+}
+
+export function onShowingModally(args: ShownModallyData) {
+    console.log("onShowingModally");
 }
 ```
 ```XML
@@ -929,7 +942,7 @@ export function onNavigate(args: EventData) {
 </Page>
 ```
 
-**modal-second-page.xml**
+**second-modal-pag.xml**
 ```JavaScript
 function onGoBack(args) {
     const view = args.object;
