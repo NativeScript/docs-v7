@@ -837,7 +837,7 @@ topmost().goBack();
 
 ### Modal pages
 
-Use the **showModal** method of the `View` class to show another view as a modal dialog. You must specify the location of the modal page module. You can provide a context and a callback function that will be called when the modal page is closed. You can also optionally specify whether to show the modal page in fullscreen or not. To close the modal page, you need to subscribe to its `shownModally` event and store a reference to a close callback function provided by the event arguments. Call this function when you are ready to close the modal page, optionally passing some results to the master page. Here is an example with two pages &mdash; the main page and a login page. The main page shows the login page modally; the user enters their username and password and when ready clicks the Login button. This closes the modal login page and returns the username/password to the main page which can then log the user in.
+Use the [`showModal`](https://docs.nativescript.org/api-reference/classes/_ui_layouts_grid_layout_.gridlayout#showmodal) method of the `View` class to show another view as a modal dialog. You must specify the location of the modal page module. You can provide a context and a callback function that will be called when the modal page is closed. You can also optionally specify whether to show the modal page in fullscreen or not. To close the modal page, you need to subscribe to its [`shownModally`](https://docs.nativescript.org/api-reference/classes/_ui_layouts_grid_layout_.gridlayout#shownmodallyevent) event and store a reference to a close callback function provided by the event arguments. Call this function when you are ready to close the modal page, optionally passing some results to the master page. Here is an example with two pages &mdash; the main page and a login page. The main page shows the login page modally; the user enters their username and password and when ready clicks the Login button. This closes the modal login page and returns the username/password to the main page which can then log the user in.
 
 > **TIP:** By design on iPhone, a modal page appears only in fullscreen.
 
@@ -902,7 +902,30 @@ You can find the complete source code [here](https://github.com/NativeScript/Nat
 
 #### Navigation in modal pages
 
-With NativeScript version 4.0.0 and above, we can navigate within a modal page. We need a root frame defaulting to our first modal page. With the `Frame` instance, we can navigate within the modal and with the help of [`closeModal` method](https://docs.nativescript.org/api-reference/classes/_ui_core_view_base_.viewbase#closemodal), we can close the modal from any `View` instance.
+With NativeScript version 4.0.0 and above, we can navigate within a modal page. We need a root frame defaulting to our first modal page. With the `Frame` instance, we can navigate within the modal and with the help of [`closeModal`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_base_.viewbase#closemodal) method, we can close the modal from any `View` instance.
+
+**main-page**
+``` JavaScript
+const context = "some context";
+
+function onLoaded(args) {
+    const mainView = args.object;
+    mainView.showModal("./modal-root", context, () => {});
+}
+exports.onLoaded = onLoaded;
+```
+``` TypeScript
+import { EventData } from "tns-core-modules/data/observable";
+import { Page } from "tns-core-modules/ui/page";
+
+const context = "some  context";
+
+export function onPageLoaded(args: EventData) {
+    const mainPage = <Page>args.object;
+    mainPage.showModal("./modal-root", context, () => { });
+}
+```
+
 
 **modal-root.xml**
 ```XML
