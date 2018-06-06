@@ -239,7 +239,7 @@ $(function(){
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.intersectionRatio < 1) {
-                delete visibleElements[visibleElements.indexOf(entry.target)];
+                visibleElements.splice(visibleElements.indexOf(entry.target), 1);
             } else {
                 visibleElements[entry.intersectionRect.y < entry.rootBounds.height ? "unshift" : "push"](entry.target);
             }
