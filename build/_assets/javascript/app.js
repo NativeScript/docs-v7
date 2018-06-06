@@ -280,6 +280,7 @@ $(function(){
         <div class='-allcaps'>In this article</div>
         ${traverseAnchors($("article > h2 > a"), 2)}
     </div>
+    <div class="right-nav__sizer"></div>
 </div>`)
         .insertBefore($("article"))
         .children(".right-nav__tree");

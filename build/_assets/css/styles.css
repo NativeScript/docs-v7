@@ -1672,6 +1672,7 @@ html .ns-page .-hidden {
         position: absolute;
         left: 0;
         top: .94em;
+        z-index: 1;
     }
 
     .right-nav__container {
@@ -1689,12 +1690,18 @@ html .ns-page .-hidden {
     }
 
     .right-nav__tree {
+        overflow: hidden;
+        overflow-y: auto;
         margin-top: 0;
         width: 13.75em;
         height: 100%;
         background: var(--background-base);
+        transition: box-shadow .2s ease-out;
+    }
+
+    .right-nav__sizer {
         transition: width .2s ease-out;
-        transition-property: width, box-shadow;
+        width: 13.75em;
     }
 
     .right-nav__tree > div,
@@ -1702,8 +1709,12 @@ html .ns-page .-hidden {
         margin-left: 4.67em;
     }
 
-    .right-nav__input:checked ~ .right-nav__tree {
+    .right-nav__input:checked ~ .right-nav__sizer {
         width: 29em;
+    }
+
+    .right-nav__input:checked ~ .right-nav__tree {
+        width: 17.8em;
         box-shadow: -3px 0 6px var(--transparent-dark-15);
     }
 
