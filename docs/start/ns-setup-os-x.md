@@ -29,7 +29,7 @@ This page contains a list of all system requirements needed to build and run Nat
     * Latest official release of Android SDK
     * Android Support Repository
     * (Optional) Google Repository
-    * Android SDK Build-tools 27.0.3 or a later
+    * Android SDK Build-tools 27.0.3 or later
 
 You must also have the following two environment variables setup for Android development:
 
