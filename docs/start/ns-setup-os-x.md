@@ -16,7 +16,7 @@ This page contains a list of all system requirements needed to build and run Nat
 
 ## System Requirements
 
-* macOS Mavericks or later
+* macOS High Sierra or later
 * The latest stable official release of Node.js (LTS) [8.x](https://nodejs.org/dist/latest-v8.x/). 
 * (Optional) [Homebrew](https://brew.sh/) to simplify the installation of dependencies
 * For iOS development
@@ -24,13 +24,12 @@ This page contains a list of all system requirements needed to build and run Nat
     * Command-line tools for Xcode
     * xcodeproj ruby gem
     * CocoaPods
-    * (Optional) xcproj command line tool
 * For Android development
-    * JDK 8
-    * Android SDK 22 or a later stable official release
+    * JDK 8+
+    * Latest official release of Android SDK
     * Android Support Repository
     * (Optional) Google Repository
-    * Android SDK Build-tools 27.0.3 or a later stable official release
+    * Android SDK Build-tools 27.0.3 or a later
 
 You must also have the following two environment variables setup for Android development:
 
@@ -53,10 +52,28 @@ Complete the following steps to setup NativeScript on your macOS development mac
 
     <pre class="add-copy-button"><code class="language-terminal">brew install node@8
     </code></pre>
-
+     
+     1. After you run the command above you will see this on console:
+     ```
+     If you need to have this software first in your PATH run:
+     echo 'export PATH="/usr/local/opt/node@8/bin:$PATH"' >> ~/.bash_profile
+     ```
+     In order to make node available, please add it to path with this command:
+     ```
+     echo 'export PATH="/usr/local/opt/node@8/bin:$PATH"' >> ~/.bash_profile
+     ```      
+     Then restart the terminal or run `source ~/.bash_profile` command.
+     
 1. Install the dependencies for iOS development.
-    1. Run the App Store and download and install Xcode 5 or later.
-    1. Go to [Downloads for Apple Developers](https://developer.apple.com/downloads/index.action), log in and download and install the **Command Line Tools for Xcode** for your version of macOS and Xcode.
+    1. Run the App Store and download and install Xcode 9 or later.
+    1. Start Xcode and you will be prompted to install **Command Line Tools for Xcode**.
+        1. To verifify installation is correct please run
+         ```
+         xcodebuild -version
+         ```
+        If command above do not pass then build tools are eather not installed or not selected.
+        You can select build tools via `xcode-select` command or via Xcode (Preferences -> Locations -> Command Line Tools).
+        
     1. Install the [xcodeproj ruby gem](https://rubygems.org/gems/xcodeproj/versions/0.28.2) with the following command.
 
         <pre class="add-copy-button"><code class="language-terminal">sudo gem install xcodeproj
@@ -67,9 +84,9 @@ Complete the following steps to setup NativeScript on your macOS development mac
         <pre class="add-copy-button"><code class="language-terminal">sudo gem install cocoapods
         </code></pre>
 
-    1. (Optional) If you are using Xcode 7.3 as well as an older version of CocoaPods (0.39.0 or earlier), you must install the `xcproj` command-line tool by running `brew install xcproj` in your terminal. You can check your CocoaPods version with pod --version.
-
-        <pre class="add-copy-button"><code class="language-terminal">brew install xcproj
+    1. Setup [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
+    
+        <pre class="add-copy-button"><code class="language-terminal">pod setup
         </code></pre>
 
 1. Install the dependencies for Android development.
@@ -83,7 +100,7 @@ Complete the following steps to setup NativeScript on your macOS development mac
     
     1. Set the JAVA_HOME system environment variable.
 
-        <pre class="add-copy-button"><code class="language-terminal">export JAVA_HOME=$(/usr/libexec/java_home)
+        <pre class="add-copy-button"><code class="language-terminal">export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
         </code></pre>
 
     1. Install the [Android SDK](http://developer.android.com/sdk/index.html).
