@@ -1,6 +1,6 @@
 ---
-title: Chapter 7—Next Steps
-position: 8
+title: Next Steps
+position: 40
 guide: true
 environment: angular
 ---

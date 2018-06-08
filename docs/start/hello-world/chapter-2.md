@@ -1,6 +1,6 @@
 ---
 title: Chapter 2—Creating User Interfaces
-position: 3
+position: 2
 environment: nativescript
 ---
 

@@ -4,6 +4,7 @@ description: Known issues with NativeScript, and where to get help when you run 
 position: 80
 slug: troubleshooting
 previous_url: /troubleshooting
+publish: false
 ---
 
 # Troubleshooting

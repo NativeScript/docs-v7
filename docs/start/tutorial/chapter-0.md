@@ -6,6 +6,7 @@ previous_url: /start/getting-started
 slug: tutorial
 guide: true
 environment: nativescript
+publish: false
 ---
 
 # NativeScript Getting Started Guide

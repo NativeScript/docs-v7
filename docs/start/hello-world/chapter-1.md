@@ -1,6 +1,6 @@
 ---
 title: Chapter 1—Learning the NativeScript Basics
-position: 2
+position: 1
 environment: nativescript
 guide: true
 ---

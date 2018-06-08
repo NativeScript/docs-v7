@@ -4,6 +4,7 @@ description: Learn the basics of how NativeScript and Angular work, how to set u
 position: 1
 guide: true
 environment: angular
+publish: false
 ---
 
 # Building Apps with NativeScript and Angular

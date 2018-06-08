@@ -1,5 +1,5 @@
 ---
-title: How NativeScript Works
+title: Technical Overview
 description: A broad overview of the technologies that make NativeScript work.
 position: 15
 publish: true
