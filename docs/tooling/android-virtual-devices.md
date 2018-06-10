@@ -51,7 +51,7 @@ For example, the following command creates an AVD named `test` using the x86 sys
 avdmanager create avd -n test -k "system-images;android-25;google_apis;x86"
 ```
 
-> **Note:** The above command suggest that the system image is already downloaded.
+> **Note:** The above command suggest that the system image is already downloaded. To download an image use the `sdkmanager`. For example  `sdkmanager "system-images;android-25;google_apis;x86"`
 
 The following describes the usages for the other options:
 -c {path|size}: The path to the SD card image for this AVD or the size of a new SD card image to create for this AVD, in KB or MB, denoted with K or M. For example, -c path/to/sdcard/ or -c 1000M.
