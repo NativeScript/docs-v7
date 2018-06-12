@@ -8,12 +8,12 @@ position: 2
 # System Requirements
 The recommended ways to create NativeScript Applications is either through the [Command-Line Interface (CLI)](https://github.com/NativeScript/nativescript-cli) or through the [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick).
 
-# Supported API Levels
-The Android Runtime is built against [API level 17](http://developer.android.com/about/versions/android-4.2.html). The minimum supported compile SDK version is 22. Additionally, using the [metadata-generator](metadata/generator.md) tool you may generate your own metadata for any Android SDK available in the Android SDK Manager.
+## Supported API Levels
+The Android Runtime is built against [API level 17](http://developer.android.com/about/versions/android-4.2.html). The minimum supported compile SDK version is 22. For all supported API levels the metadata is created (mappings between JavaScript and Java/Android worlds). Detailed information about the NativeScript metadata can be found in the [Metadata Overview article](metadata/overview.md).
 
-> **Note:** You may not use APIs that are not present in the generated metadata from JavaScript. Still, you may build your application using higher API level given your code is compatible with the metadata API level.
+> **Note:** You can not use APIs that are not present in the generated metadata from JavaScript. Still, you may build your application using higher API level given your code is compatible with the metadata API level.
 
-# Supported Application Binary Interfaces (ABI)
+## Supported Application Binary Interfaces (ABI)
 Currently supported are the following CPU instruction sets:
 
 ## armeabi-v7a
