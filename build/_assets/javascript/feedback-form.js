@@ -88,8 +88,8 @@ $(document).ready(function () {
 		//FORM
 		//Init the form popup window
 		var win = $("#feedback-form-window").kendoWindow({
-			title: "Give article feedback",
-			actions: ["Close"],
+			title: "Article feedback",
+			actions: [],
 			draggable: true,
 			modal: true,
 			pinned: false,
