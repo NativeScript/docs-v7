@@ -431,14 +431,19 @@ html .k-treeview .k-group .k-icon {
     text-transform: capitalize;
 }
 
+html .k-treeview .k-icon:before,
 .k-treeview-lines .k-group .k-group .k-in:before {
     content: "\f15c";
     font-family: "Font Awesome 5 Pro";
     font-weight: 300;
     font-size: 14px;
     color: var(--color-secondary);
-    margin-left: -1em;
+    margin-left: -1.25em;
     margin-right: .5em;
+}
+
+.k-treeview-lines .k-group .k-group .k-icon + .k-in:before {
+    display: none;
 }
 
 html .k-treeview .k-in > a {
@@ -447,9 +452,9 @@ html .k-treeview .k-in > a {
 }
 
 html .k-treeview .k-icon:before {
-    font-family: 'Font Awesome 5 Pro';
     font-weight: 400;
     content: "\f105";
+    margin: 0;
     position: absolute;
     display: inline-flex;
     align-items: center;
@@ -490,12 +495,26 @@ html .k-treeview.k-treeview.k-treeview.k-treeview.k-treeview .k-state-selected {
     color: var(--color-green);
 }
 
+/* Page */
+
+#page-inner-content {
+    display: flex;
+}
+
+#page-article {
+    flex: 1;
+    min-width: 0;
+}
+
+html .ns-page .-hidden {
+    display: none;
+}
+
 /* Collapse button and container */
 
 .ns-side-nav {
-    float: left;
     font-size: .88em;
-    margin: -2.14em 0 0 -22.86em;
+    margin: -.71em 1.8em 0 -22.86em;
     overflow: hidden;
     padding: 1.43em;
 }
@@ -547,7 +566,7 @@ html body .side-nav__tree {
     transition: width .3s ease-out, max-height .3s ease-out;
     background: var(--color-light);
     box-shadow: 0 3px 20px var(--transparent-dark-15);
-    padding: 2.86em 1.72em 0 0;
+    padding: 1.4em 1.72em 0 0;
     width: 16.43em;
     margin-top: 0;
 }
@@ -851,7 +870,12 @@ html .ns-navigation .navigation__right > ul > .k-last .ns-button {
     margin: 0 -1.25em;
     position: relative;
     justify-content: space-between;
-    background: var(--background-purple);
+    background: var(--background-special);
+}
+
+.-landing .ns-footer {
+    width: auto;
+    margin-left: unset;
 }
 
 .ns-card {
@@ -946,7 +970,8 @@ html .ns-navigation .navigation__right > ul > .k-last .ns-button {
 
 .start-links__container li {
     font-size: 1.31em;
-    line-height: 2;
+    line-height: 1;
+    margin: 1em 0;
 }
 
 .start-links__container > * {
@@ -957,6 +982,10 @@ html .ns-navigation .navigation__right > ul > .k-last .ns-button {
     border: 0;
     background: none;
     height: .5em;
+}
+
+.start-links__title {
+    margin: 1.6em 0 .9em;
 }
 
 /* Footer */
@@ -1597,11 +1626,6 @@ article table td h5 {
 }
 
 
-html .ns-page .-hidden {
-    display: none;
-}
-
-
 /* Responsiveness */
 
 @media only screen and (max-width: 1800px) {
@@ -1637,6 +1661,7 @@ html .ns-page .-hidden {
         width: 1em;
         max-height: 0;
         margin-top: -2.86em;
+        padding: 2.86em 1.72em 0 0;
     }
 
     .side-nav__burger-input:checked ~ .side-nav__tree {
@@ -1646,10 +1671,6 @@ html .ns-page .-hidden {
 
     .side-nav__burger-input:checked + .side-nav__burger-menu:before {
         transform: rotate(45deg);
-    }
-
-    #page-inner-content {
-        display: flex;
     }
 
     .flavor-header__search > div {
@@ -1662,13 +1683,6 @@ html .ns-page .-hidden {
 
     .ns-side-nav {
         margin: -.71em 1.43em 0 -1.43em;
-        float: none;
-        overflow: hidden;
-    }
-
-    #page-article {
-        flex: 1;
-        min-width: 0;
     }
 
     .right-nav__label {
@@ -1773,6 +1787,20 @@ html .ns-page .-hidden {
 
 pre, code {
     font-size: 13px;
+}
+
+a code {
+    font-size: inherit;
+    font-family: inherit;
+}
+
+a code:after,
+a code:before {
+    content: "\"";
+}
+
+a strong {
+    font-weight: inherit;
 }
 
 code[class*="language-"],
