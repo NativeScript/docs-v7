@@ -344,6 +344,7 @@ html .ns-navigation .k-animation-container {
     min-width: 100%;
 }
 
+.ns-navigation [target=_blank]:after,
 html .ns-navigation .k-menu .k-item .k-menu-expand-arrow {
     font-family: "Font Awesome 5 Pro";
     margin: -.1em -.3em 0 .2em;
@@ -352,6 +353,14 @@ html .ns-navigation .k-menu .k-item .k-menu-expand-arrow {
 .ns-navigation .k-menu-expand-arrow:before {
     content: "\f0d7";
     font-weight: 600;
+}
+
+.ns-navigation [target=_blank]:after {
+    content: "\f08e";
+    font-weight: 300;
+    font-size: 11px;
+    position: absolute;
+    margin: -.5em 0 0 .5em;
 }
 
 /* Flavor Header */
