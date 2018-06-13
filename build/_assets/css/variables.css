@@ -36,6 +36,7 @@
     --transparent-dark-15: rgba(var(--dark), .15);
     --transparent-dark-20: rgba(var(--dark), .2);
     --transparent-dark-50: rgba(var(--dark), .5);
+    --transparent-dark-60: rgba(var(--dark), .6);
     --transparent-dark-70: rgba(var(--dark), .7);
     --transparent-dark-90: rgba(var(--dark), .9);
 

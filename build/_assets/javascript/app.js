@@ -276,14 +276,19 @@ $(function(){
 <div class="right-nav__container">
     <input id="right-nav__toggle" class="right-nav__input" type="checkbox">
     <label for="right-nav__toggle" class="right-nav__label"></label>
-    <div class="right-nav__tree">
-        <div class='-allcaps'>In this article</div>
-        ${traverseAnchors($("article > h2 > a"), 2)}
-    </div>
+    <div class="right-nav__tree"></div>
     <div class="right-nav__sizer"></div>
 </div>`)
         .insertBefore($("article"))
         .children(".right-nav__tree");
+
+    const articleAnchors = $(traverseAnchors($("article > h2 > a"), 2));
+
+    if (articleAnchors.children()[0]) {
+        rightNav
+            .append($("<div class='-allcaps'>In this article</div>"))
+            .append(articleAnchors);
+    }
 
     if (seeAlsoLinks[0]) {
         rightNav

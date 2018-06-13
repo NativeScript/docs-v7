@@ -143,6 +143,10 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
     margin-top: 0;
 }
 
+article {
+    padding-bottom: 1em;
+}
+
 article > hr {
     border: solid var(--border-purple);
     border-width: 0 0 1px;
@@ -726,6 +730,10 @@ div.right-nav__links .ns-button {
     display: block;
 }
 
+.right-nav__links a:not(.ns-button) > i {
+    margin-right: .2em;
+}
+
 /* Code Container */
 
 html .nd-code-container .k-loading {
@@ -1191,6 +1199,10 @@ html .ns-navigation .navigation__right > ul > .k-last .ns-button {
     overflow: hidden;
 }
 
+html .k-overlay {
+    background: var(--transparent-dark-60);
+}
+
 html div.k-window {
     border: 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, .4);
@@ -1211,26 +1223,37 @@ html .k-window-title {
     margin: 0 .3em;
 }
 
-#feedback-checkbox-area label {
-    display: block;
-    margin: 5px 0 10px;
-}
-
-#feedback-checkbox-area textarea {
-    width: 100%;
-}
-
 .feedback-extw__input,
 .feedback-extw__textarea {
     margin: 12px 0 30px;
     padding: 10px;
     width: 100%;
+    font-size: 14px;
+    color: var(--color-secondary);
     box-sizing: border-box;
     border: 1px solid var(--border-purple);
+    box-shadow: none;
+    outline: none;
 }
 
 .feedback-extw__textarea {
-    margin: 0;
+    margin: 10px 0 5px;
+    width: 100%;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--transparent-dark-50);
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--transparent-dark-50);
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--transparent-dark-50);
 }
 
 #send-feedback {
@@ -1240,13 +1263,13 @@ html .k-window-title {
 #feedback-form span.k-tooltip {
     position: absolute;
     display: inline-block;
-    right: 20px;
-    margin-top: 0;
+    right: 30px;
+    margin-top: 10px;
     font-size: 13px;
     color: var(--color-error);
     border-color: transparent transparent var(--border-purple) var(--border-purple);
     background: var(--background-light);
-    padding-top: 5px;
+    padding-top: 3px;
     background-clip: padding-box;
 }
 
@@ -1337,7 +1360,7 @@ html .k-window-title {
 
 .tp-checkbox,
 .tp-checkbox .checkbox__label {
-    display: block;
+    display: flex;
 }
 
 .tp-checkbox {
@@ -1357,6 +1380,8 @@ html .k-window-title {
 .tp-checkbox .checkbox__label,
 .tp-radio .radio__label {
     position: relative;
+    align-items: center;
+    padding: 8px 0;
     width: 100%;
     white-space: nowrap;
     cursor: pointer;
@@ -1379,7 +1404,7 @@ html .k-window-title {
     display: inline-block;
     vertical-align: middle;
     white-space: normal;
-    margin-left: 2px;
+    margin-left: 8px;
 }
 
 .tp-checkbox .checkbox__icon,
@@ -1401,6 +1426,9 @@ html .k-window-title {
     -webkit-transition: opacity .3s;
     transition: opacity .3s;
     opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .tp-checkbox.-ellipsis,
@@ -1451,8 +1479,9 @@ html .k-window-title {
 .tp-radio .radio__icon,
 .tp-checkbox .checkbox__icon,
 .tp-checkbox .checkbox__icon:before {
-    width: 14px;
-    height: 14px;
+    width: 1.2em;
+    height: 1.2em;
+    font-size: 11px;
 }
 
 .tp-checkbox .checkbox__icon {
@@ -1461,9 +1490,8 @@ html .k-window-title {
 }
 
 .tp-checkbox .checkbox__icon:before {
-    margin-top: -3px;
-    width: 12px;
-    height: 12px;
+    width: 1em;
+    height: 1em;
 }
 
 .tp-radio .radio__input:checked + label .checkbox__icon,
@@ -1496,11 +1524,10 @@ html .k-window-title {
 }
 
 html .tp-checkbox {
-    line-height: 16px;
+    line-height: 1em;
 }
 
 .tp-checkbox .checkbox__icon {
-    top: 1px;
     background: var(--background-light);
 }
 
