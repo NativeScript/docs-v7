@@ -9,7 +9,7 @@ navigation:
 ## List your directory names and order here, like this:
     start:
         position: 10
-        title: "Get Startted"
+        title: "Get Started"
         expanded: true
     "start/hello-world":
         position: 20
