@@ -639,7 +639,7 @@ html body .side-nav__tree {
 }
 
 .right-nav__tree > ul {
-    font-size: .94em;
+    font-size: .93em;
     font-weight: 600;
     width: 13.33em;
     margin: 0 0 3.13em;
@@ -650,6 +650,7 @@ html body .side-nav__tree {
 }
 
 .right-nav__tree ul ul {
+    font-size: .93em;
     font-weight: 400;
     padding: 0;
 }

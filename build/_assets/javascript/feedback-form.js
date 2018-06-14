@@ -20,8 +20,9 @@ $(document).ready(function () {
 
 		const checkboxArea = $("#feedback-checkbox-area");
 	
-		checkboxArea.click(function (e) {
-			$("span.k-tooltip-validation").remove();
+		checkboxArea.click(function () {
+			checkboxArea.find("span.k-tooltip-validation").remove();
+			checkboxArea.find("textarea").removeClass("k-invalid");
 		});
 	
 		var formIsProcessing = false;

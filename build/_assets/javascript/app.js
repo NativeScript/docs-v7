@@ -254,7 +254,7 @@ $(function(){
                 }
             });
 
-            topElement = $(`.right-nav__tree [href$=${topElement.id}]`);
+            topElement = $(`.right-nav__tree [href$="#${topElement.id}"]`);
 
             if (topElement[0]) {
                 $(`.right-nav__tree a`).removeClass("ns-state-selected");
