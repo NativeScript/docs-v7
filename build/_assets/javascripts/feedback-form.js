@@ -18,9 +18,12 @@ $(document).ready(function () {
 			textFeedback: "",
 			acceptFeedbackContact: false
 		};
-	
-		$("#feedback-checkbox-area").click(function (e) {
-			$("span.k-tooltip-validation").remove();
+
+		var checkboxArea = $("#feedback-checkbox-area");
+
+		checkboxArea.click(function () {
+			checkboxArea.find("span.k-tooltip-validation").remove();
+			checkboxArea.find("textarea").removeClass("k-invalid");
 		});
 	
 		var formIsProcessing = false;
@@ -66,7 +69,7 @@ $(document).ready(function () {
 		};
 	
 		//Feedback menu controls
-		var feedbackButtonsContainer = $("#helpful-buttons-container");
+		var feedbackButtonsContainer = $("#feedback-buttons-container");
 		var feedbackSubmittedContainer = $("#feedback-submitted-container");
 		var toggleFeedbackButtons = function (toggle) {
 			if (toggle) {
@@ -87,8 +90,8 @@ $(document).ready(function () {
 		//FORM
 		//Init the form popup window
 		var win = $("#feedback-form-window").kendoWindow({
-			title: "Give article feedback",
-			actions: ["Close"],
+			title: "Article feedback",
+			actions: [],
 			draggable: true,
 			modal: true,
 			pinned: false,
@@ -125,7 +128,7 @@ $(document).ready(function () {
 		//Bind model to form
 		kendo.bind($("div#feedback-form-window"), formModel);
 		//Attach to form submit to adjust variables and send request
-		var emptyFormValidator = $("#feedback-checkbox-area").kendoValidator({
+		var emptyFormValidator = checkboxArea.kendoValidator({
 			validateOnBlur: false,
 			messages: {
 				// defines a message for the custom validation rule
@@ -294,7 +297,7 @@ $(document).ready(function () {
 
 
 		var windowHeight = $window.height();
-		var headerHeight = $(".TK-Hat").outerHeight() + $("#page-header").outerHeight();
+		var headerHeight = $(".TK-Hat").outerHeight() + $(".ns-navigation").outerHeight();
 		var footerHeight = $("#feedback-section").outerHeight() + $("footer").outerHeight();
 		var articleHeight = windowHeight - (headerHeight + footerHeight);
 		var feedbackOffsetTop = document.body.scrollHeight - footerHeight;
@@ -305,7 +308,7 @@ $(document).ready(function () {
 	
 		function updateVariables() {
 			windowHeight = $window.height();
-			headerHeight = $(".TK-Hat").outerHeight() + $("#page-header").outerHeight();
+			headerHeight = $(".TK-Hat").outerHeight() + $(".ns-navigation").outerHeight();
 			footerHeight = $("#feedback-section").outerHeight() + $("footer").outerHeight();
 			articleHeight = windowHeight - (headerHeight + footerHeight);
 			feedbackOffsetTop = document.body.scrollHeight - footerHeight;
@@ -380,8 +383,8 @@ $(document).ready(function () {
 				if (!shouldOverlayFeedback || showingFeedbackBar) {
 					return;
 				}
-	
-				if (scrollFold - $("#feedback-section").outerHeight() < feedbackOffsetTop) {
+
+				if (scrollFold - $("#feedback-section").outerHeight() * 2 < feedbackOffsetTop) {
 					Feedback.pinFeedback();
 				}
 				else {

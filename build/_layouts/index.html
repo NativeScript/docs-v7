@@ -5,29 +5,41 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="google-site-verification" content="iwHdY_1KfeQbVLI-gtcAsI9pslqa2dLBsQD47d2E5To" />
         <title>{{page.title}}</title>
+        <link rel="preload" href="{{site.baseurl}}/{{page.category}}.json" as="script">
         <link rel="shortcut icon" href="{{site.headerbaseurl}}/favicon.ico"/>
         {% if page.description %}<meta name="description" content="{{page.description}}">{% endif %}
-        <link href="//da7xgjtj801h2.cloudfront.net/2014.2.716/styles/kendo.common.min.css" rel="stylesheet" />
-        <link href="https://d6vtbcy3ong79.cloudfront.net/fonts/1.1.0/css/geomanist.min.css" type="text/css" rel="stylesheet" media="all" />
+        <link href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.common.min.css" rel="stylesheet" />
+        {% stylesheet fontawesome-all %}
+        {% stylesheet variables %}
         {% stylesheet styles %}
-        <!--{% stylesheet theme %}-->
-        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="//da7xgjtj801h2.cloudfront.net/2014.2.716/js/kendo.web.min.js"></script>
+        <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2018.1.221/js/kendo.web.min.js"></script>
         <script src="https://da189i1jfloii.cloudfront.net/js/kinvey-html5-sdk-3.10.1.min.js"></script>
         <script src="https://cdn.cookielaw.org/consent/dc6bd370-357e-468e-916d-2c0b0f5fba8d.js" type="text/javascript" charset="UTF-8"></script> 
         {% javascript prism %}
         {% javascript app %}
     </head>
-    <body {% if page.guide %}class="guide"{% endif %}>
+    <body {% if page.guide %}class="guide" {% endif %}>
         <!-- Google Tag Manager -->
         <noscript>
             <iframe src="//www.googletagmanager.com/ns.html?id={{site.google_tag_manager}}" height="0" width="0" style="display: none; visibility: hidden"></iframe>
         </noscript>
         <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', '{{site.google_tag_manager}}');</script>
         <!-- End Google Tag Manager -->
-        <header id="page-header">
+        <header class="ns-navigation">
             {% include header.html %}
         </header>
+
+        <div class="ns-flavor-header">
+            <a class="flavor-header__navigation" href="/">
+                <h4 class="flavor-header__title">NativeScript & Angular</h4>
+            </a>
+            <div class="flavor-header__search">
+                {% include search.html %}
+            </div>
+        </div>
+
         {{ content }}
     </body>
 </html>
