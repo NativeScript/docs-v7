@@ -3,6 +3,7 @@ title: List View
 description: NativeScript for Angular Documentation - Using List View
 position: 70
 slug: listview
+publish: false
 previous_url: /listview
 environment: angular
 --- 

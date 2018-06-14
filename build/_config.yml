@@ -65,37 +65,82 @@ navigation:
     "core-concepts/ios-runtime/how-to":
         position: 40
         title: "How-To"
-    docs-cli:
-        position: 200
-        title: "COMMAND-LINE INTERFACE"
     integration-with-existing-ios-and-android-apps:
-        position: 21
+        position: 30
         title: "INTEGRATING EXISTING NATIVE APPS"
     best-practices:
-        position: 25
+        position: 40
         title: "BEST PRACTICES"
     ui:
-        position: 30
+        position: 20
         title: "USER INTERFACE"
         expanded: false
+    "ui/layouts":
+        position: 10
+        title: "Layouts"
+        expanded: false
+    "ui/ns-ui-widgets":
+        position: 20
+        title: "UI Widgets"
+        expanded: false
+    "ui/ns-framework-modules":
+        position: 30
+        title: "Framework modules"
+        expanded: false
+    "ui/ng-ui-widgets":
+        position: 20
+        title: "UI Widgets"
+        expanded: false
+    "ui/ng-framework-modules":
+        position: 30
+        title: "Framework modules"
+        expanded: false
     tooling:
-        position: 40
+        position: 50
         title: "TOOLING"
         expanded: false
-    publishing:
-        position: 50
-        title: "PUBLISHING"
-        expanded: false
+    "tooling/publishing":
+        position: 100
+        title: "Publishing"
+    "tooling/debugging":
+        position: 200
+        title: "Debugging"
+    "tooling/docs-cli":
+        position: 300
+        title: "COMMAND-LINE INTERFACE"
     hardware:
+        position: 60
+        title: "HARDWARE АCCESS"
+    ng-hardware-access:
         position: 60
         title: "HARDWARE АCCESS"
     plugins:
         position: 70
         title: "PLUGINS"
     releases:
-        position: 90
+        position: 80
         title: "RELEASES"
-
+    app-and-screen-templates:
+        position: 90
+        title: "App and Screen Templates"
+    "app-and-screen-templates/common-screens":
+        position: 10
+        title: "Common screens"
+    performance-optimizations:
+        position: 100
+        title: "Performance optimizations"
+    ns-framework-modules:
+        position: 110
+        title: "Framework modules"
+    ng-framework-modules:
+        position: 110
+        title: "Framework modules"
+    guides:
+        position: 120
+        title: "Guides"
+    sidekick:
+        position: 150
+        title: "SideKick"
 ## The product name
 productName: "NativeScript"
 

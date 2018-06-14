@@ -3,6 +3,7 @@ title: Components
 description: Get familiar with the default user interface elements (widgets) in NativeScript.
 position: 20
 slug: components
+publish: false
 previous_url: /ui-views,/ui/ui-views
 ---
 
