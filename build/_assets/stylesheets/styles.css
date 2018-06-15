@@ -266,6 +266,7 @@ html.ns-state-scrolled .ns-navigation:before {
 .navigation__right {
     flex: 1;
     text-align: right;
+    visibility: hidden;
 }
 
 .navigation__right,
@@ -913,14 +914,29 @@ html .ns-navigation .navigation__right > ul > .k-last .ns-button {
     margin: 1.88em .94em 0;
     box-sizing: border-box;
     flex: 1 1 16.5em;
+    cursor: default;
     transition: transform .2s ease-out;
     transition-property: transform, box-shadow;
 }
 
 .ns-card:hover {
-    cursor: pointer;
     transform: translateY(5px);
     box-shadow: 0 6px 12px var(--transparent-dark-15);
+}
+
+a.ns-card:hover {
+    cursor: pointer;
+}
+
+.ns-card span + a {
+    margin-top: 10px;
+}
+
+.ns-card a {
+    display: block;
+    text-transform: uppercase;
+    font-size: .88em;
+    font-weight: 600;
 }
 
 .card__icon {
@@ -936,9 +952,13 @@ html .ns-navigation .navigation__right > ul > .k-last .ns-button {
     margin: 0 0 .5em;
 }
 
+.card__title > span {
+    top: -2px;
+    position: relative;
+}
+
 .card__description {
     display: block;
-    padding-bottom: 1.88em;
 }
 
 .ns-page > h1 {
@@ -996,11 +1016,12 @@ html .ns-navigation .navigation__right > ul > .k-last .ns-button {
 .start-links__container hr {
     border: 0;
     background: none;
-    height: .5em;
+    height: 0;
+    margin: 0;
 }
 
 .start-links__title {
-    margin: 1.6em 0 .9em;
+    margin: 1.42em 0 .9em;
 }
 
 /* Footer */

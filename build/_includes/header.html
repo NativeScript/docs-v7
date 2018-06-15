@@ -26,7 +26,7 @@
                 <li><a href="https://play.nativescript.org">Playground</a></li>
                 <li><a href="https://market.nativescript.org/?tab=samples">Code Samples</a></li>
                 <li><a href="https://market.nativescript.org/?tab=templates">App Templates</a></li>
-                <!-- <li><a href="#">Books &amp; Videos</a></li> -->
+                <li><a href="{{site.headerbaseurl}}/books-and-videos">Books &amp; Videos</a></li>
                 <!-- <li><a href="#">API Reference</a></li> -->
                 <li><a href="https://github.com/NativeScript/NativeScript" target="_blank">GitHub</a></li>
             </ul>
@@ -47,10 +47,10 @@
             <ul>
                 <li><a href="https://discourse.nativescript.org">Community Forums</a></li>
                 <li><a href="http://tinyurl.com/nativeScriptSlack" target="_blank">Slack</a></li>
-                <!-- <li><a href="#">Developer Support</a></li> -->
+                <li><a href="{{site.headerbaseurl}}/developer-support">Developer Support</a></li>
                 <li><a href="{{site.headerbaseurl}}/roadmap-and-releases">Roadmap &amp; Release Notes</a></li>
                 <!-- <li><a href="#">Meetups & Events</a></li> -->
-                <!-- <li><a href="">Contact Us</a></li> -->
+                <li><a href="{{site.headerbaseurl}}/contact">Contact Us</a></li>
             </ul>
         </li>
         <li>
@@ -83,6 +83,8 @@
             duration: 100
         }}
     });
+
+    $(".navigation__right").css("visibility", "visible");
 </script>
 
 <!--

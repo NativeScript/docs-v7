@@ -41,6 +41,7 @@ jekyll build --config _config.yml
 cd $SCRIPT_PATH
 
 cp -r $SCRIPT_PATH"/_config_vuejs.yml" \
+	  $SCRIPT_PATH"/fonts" \
 	  $SCRIPT_PATH"/_assets" \
 	  $SCRIPT_PATH"/_layouts" \
 	  $SCRIPT_PATH"/_plugins" \
