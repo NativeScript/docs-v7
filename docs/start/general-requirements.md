@@ -8,7 +8,7 @@ slug: general-requirement
 
 #System requirements
 
-General system requirements, which are recomended for using NativeScript
+General system requirements, which are recommended for using NativeScript:
 
 * Android API Level 17+ 
 * iOS 9+
