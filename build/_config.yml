@@ -141,6 +141,51 @@ navigation:
     sidekick:
         position: 150
         title: "SideKick"
+    "sidekick/intro":
+        position: 10
+        title: Introduction
+    "sidekick/getting-started":
+        position: 20
+        title: Get Started
+    "sidekick/user-guide":
+        position: 30
+        title: User Guide
+    "sidekick/user-guide/logging-in":
+        position: 33
+        title: Logging in Sidekick
+    "sidekick/user-guide/sidekick-settings":
+        position: 35
+        title: Sidekick Settings
+    "sidekick/user-guide/create-app":
+        position: 40
+        title: Creating Your App 
+    "sidekick/user-guide/configure-app":
+        position: 45
+        title: Configuring Your App    
+    "sidekick/user-guide/add-page":
+        position: 50
+        title: Adding a New Page to Your App         
+    "sidekick/user-guide/code-signing":
+        position: 55
+        title: Code Signing Your App
+    "sidekick/user-guide/code-signing/code-signing-for-ios":
+        position: 60
+        title: Code Signing for iOS Apps
+    "sidekick/user-guide/build-app":
+        position: 65
+        title: Building Your App
+    "sidekick/user-guide/run-app":
+        position: 70
+        title: Running Your App on a Device
+    "sidekick/user-guide/publish-app":
+        position: 75
+        title: Publishing Your App
+    "sidekick/user-guide/enterprise-auth":
+        position: 80
+        title: Enterprise Auth
+    "sidekick/troubleshooting":
+        position: 85
+        title: Troubleshooting
 ## The product name
 productName: "NativeScript"
 

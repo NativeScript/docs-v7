@@ -13,7 +13,6 @@ MODULES_ROOT=$SCRIPT_PATH"/../../NativeScript"
 NG_ROOT=$SCRIPT_PATH"/../../nativescript-angular"
 SDK_ROOT_JS=$SCRIPT_PATH"/../../nativescript-sdk-examples-js"
 SDK_ROOT_NG=$SCRIPT_PATH"/../../nativescript-sdk-examples-ng"
-SIDEKICK_ROOT=$SCRIPT_PATH"/../../sidekick-docs"
 CLI_ROOT=$SCRIPT_PATH"/../../nativescript-cli"
 VUEJS_ROOT=$SCRIPT_PATH"/../../docs/vuejs-docs"
 
@@ -37,11 +36,8 @@ bundle config build.nokogiri --use-system-libraries
 cd $CLI_ROOT
 ./docs/build-jekyll-md.sh
 
-cd $SIDEKICK_ROOT
-bundle install
-jekyll build --config _config.yml
-
 cd $SCRIPT_PATH
+bundle install
 
 cp -r $SCRIPT_PATH"/_config_vuejs.yml" \
 	  $SCRIPT_PATH"/_assets" \
@@ -84,7 +80,6 @@ cp -R $DOCS_ROOT"/docs/./" \
 	  $SDK_ROOT_JS"/dist/cookbook/ns-framework-modules" \
 	  $MODULES_ROOT"/bin/dist/snippets" \
 	  $NG_ROOT"/bin/dist/snippets" \
-	  $SIDEKICK_ROOT"/sidekick" \
 	  $SDK_ROOT_NG"/dist/code-samples/ng-framework-modules" \
 	  $SDK_ROOT_NG"/dist/code-samples/ng-hardware-аccess" \
 	  $CONTENT_ROOT
