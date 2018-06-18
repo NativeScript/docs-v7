@@ -1,64 +1,93 @@
-<!-- Banner for promoting events  -->
+<!-- Banner for promoting events -->
 <div class="tip-container">
     <div class="container">
         <div class="tip u-tac">    
-        Webinar: NativeScript 4.1, Code Sharing for Angular and Vue.js, improved Android performance & more!
-        <a href="https://attendee.gotowebinar.com/register/5221651479657103362?source=yellow-strip" target="_blank">Register now.</a>
+            Have you seen all of the free code samples available on our 
+            <a href="https://market.nativescript.org/?tab=samples&framework=core&category=all_samples&source=yellow-strip" target="_blank">Marketplace</a>?
         </div>
     </div>
 </div>
 
-<div class="Nav">
-    <div class="container">
-        <div class="Nav-logo">
-            <div class="sf_colsIn"><button class="Nav-open-menu" type="button"></button>
-                <a href="/">
-                    <img alt="NativeScript" src="//d2odgkulk9w7if.cloudfront.net/images/default-source/logos/nativescript-logo.png?sfvrsn=2">
-                </a>
-            </div>
-        </div>
-        <div class="Nav-right">
-            <div class="Nav-menu">
-                <div class="sf_colsIn">
-                    <ul class="-fl">
-                        <li>
-                            <a href="https://docs.nativescript.org" target="_blank">Docs</a>
-                        </li>
-                        <li>
-                            <a href="{{site.headerbaseurl}}/showcases">Showcases</a>
-                        </li>
-                        <li>
-                            <a href="{{site.headerbaseurl}}/resources">Resources</a>
-                        </li>
-                        <li>
-                            <a href="{{site.headerbaseurl}}/blog">Blog</a>
-                        </li>
-                        <li>
-                            <a href="{{site.headerbaseurl}}/about">About</a>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li class="github">
-                            <a href="https://github.com/NativeScript/NativeScript" class="-i-github">
-                            </a>
-                        </li>
-                        <li>
-                            <button class="Search-open -i-search" type="button">
-                            </button>
-                        </li>
-                    </ul>
-                    <div class="Search-container" style="display: none;">
-                        {% include search.html %}
-                        <button type="button" name="" class="Btn--cancel">×</button>
-                    </div>
-                </div>
-            </div>
-            <div class="Nav-cta -vh">
-                <div class="sf_colsIn"><a href="https://play.nativescript.org/?utm_medium=website&utm_campaign=useownrealestate&utm_source=docsnativescriptdotcom&utm_content=topnavgreenbutton" class="Btn Btn--prim">Get Started</a></div>
-            </div>
-        </div>
-    </div>
+<a class="navigation__logo" href="/"></a>
+<div class="navigation__right">
+    <ul>
+        <li>
+            <span>Framework</span>
+            <ul>
+                <li><a href="https://docs.nativescript.org" class="k-state-selected">Docs</a></li>
+                <li><a href="{{site.headerbaseurl}}/showcases">Showcases</a></li>
+                <li><a href="{{site.headerbaseurl}}/nativescript-is-how-you-build-native-mobile-apps-with-angular">Angular Integration</a></li>
+                <li><a href="{{site.headerbaseurl}}/vue">Vue Integration</a></li>
+            </ul>
+        </li>
+        <li>
+            <span>Developers</span>
+            <ul>
+                <li><a href="https://play.nativescript.org">Playground</a></li>
+                <li><a href="https://market.nativescript.org/?tab=samples">Code Samples</a></li>
+                <li><a href="https://market.nativescript.org/?tab=templates">App Templates</a></li>
+                <li><a href="{{site.headerbaseurl}}/books-and-videos">Books &amp; Videos</a></li>
+                <!-- <li><a href="#">API Reference</a></li> -->
+                <li><a href="https://github.com/NativeScript/NativeScript" target="_blank">GitHub</a></li>
+            </ul>
+        </li>
+        <li>
+            <span>Tools</span>
+            <ul>
+                <li><a href="https://www.npmjs.com/package/nativescript" target="_blank">CLI</a></li>
+                <li><a href="{{site.headerbaseurl}}/nativescript-sidekick">Sidekick</a></li>
+                <li><a href="{{site.headerbaseurl}}/nativescript-for-visual-studio-code">VS Code Plugin</a></li>
+                <!--<li><a href="https://marketplace.visualstudio.com/items?itemName=Telerik.nativescript" target="_blank">Visual Studio Extension</a></li>-->
+                <li><a href="https://market.nativescript.org">Plugins</a></li>
+                <li><a href="{{site.headerbaseurl}}/ui-for-nativescript">NativeScript UI</a></li>
+            </ul>
+        </li>
+        <li>
+            <span>Support</span>
+            <ul>
+                <li><a href="https://discourse.nativescript.org">Community Forums</a></li>
+                <li><a href="http://tinyurl.com/nativeScriptSlack" target="_blank">Slack</a></li>
+                <li><a href="{{site.headerbaseurl}}/developer-support">Developer Support</a></li>
+                <li><a href="{{site.headerbaseurl}}/roadmap-and-releases">Roadmap &amp; Release Notes</a></li>
+                <!-- <li><a href="#">Meetups & Events</a></li> -->
+                <li><a href="{{site.headerbaseurl}}/contact">Contact Us</a></li>
+            </ul>
+        </li>
+        <li>
+            <span>Enterprise</span>
+            <ul>
+                <li><a href="{{site.headerbaseurl}}/enterprise">Enterprise Support</a></li>
+                <li><a href="{{site.headerbaseurl}}/ctos-guide">CTO&rsquo;s Guide</a></li>
+                <li><a href="{{site.headerbaseurl}}/preferred-partners">Preferred Partners</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="{{site.headerbaseurl}}/blog">Blogs</a>
+        </li>
+        <li class="k-separator"></li>
+        <li class="k-state-disabled">
+            <span class="k-link"><a href="https://github.com/NativeScript/NativeScript"><i class="fab fa-github"></i></a></span>
+        </li>
+        <li class="k-state-disabled">
+            <a class="ns-button -action" href="https://play.nativescript.org/?utm_medium=website&utm_campaign=useownrealestate&utm_source=docsnativescriptdotcom&utm_content=topnavgreenbutton">Play Now</a>
+        </li>
+    </ul>
 </div>
+<script>
+    $(".navigation__right > ul").kendoMenu({
+        openOnClick: {
+            rootMenuItems: true
+        },
+        closeOnClick: true,
+        animation: { open: {
+            duration: 100
+        }}
+    });
+
+    $(".navigation__right").css("visibility", "visible");
+</script>
+
+<!--
 <div class="Section -bg-darkpurple -pt7 -pb0 -s-oh">
     <div class="container">
         <h1>Documentation</h1>
@@ -71,3 +100,4 @@
         </div>
     </div>
 </div>
+-->

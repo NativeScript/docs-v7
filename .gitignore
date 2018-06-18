@@ -1,1 +1,10 @@
 **/.DS_Store
+.vscode
+vuejs-docs/_config_vuejs.yml
+vuejs-docs/vuejs
+vuejs-docs/fonts
+vuejs-docs/_assets
+vuejs-docs/_includes
+vuejs-docs/_layouts
+vuejs-docs/_plugins
+vuejs-docs/.asset-cache

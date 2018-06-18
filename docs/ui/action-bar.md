@@ -3,6 +3,7 @@ title: ActionBar
 description: Learn how to use and customize the ActionBar.
 position: 120
 slug: action-bar
+publish: false
 previous_url: /cookbook/ui/action-bar
 ---
 
