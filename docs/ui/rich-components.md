@@ -3,6 +3,7 @@ title: Professional UI Components
 description: Get familiar with the premium user interface elements (widgets) in NativeScript UI.
 position: 25
 slug: rich-components
+publish: false
 ---
 
 # Professional UI Components

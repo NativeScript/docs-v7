@@ -2,7 +2,7 @@
 title: General requirements
 description: NativeScript - system requirements.
 position: 10
-publish: true
+publish: false
 slug: general-requirement
 ---
 

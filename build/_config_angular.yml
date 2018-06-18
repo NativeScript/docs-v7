@@ -10,7 +10,7 @@ nsselected: ""
 ngselected: "selected"
 
 # Exclude files which should not be in the output
-exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, cookbook]
+exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, cookbook, ui/ns-ui-widgets, ns-framework-modules, hardware]
 
 # The google services configuration
 google_tag_manager: GTM-W58JDD
