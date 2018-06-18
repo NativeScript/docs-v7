@@ -25,7 +25,7 @@ This page contains a list of all system requirements needed to build and run Nat
     * xcodeproj ruby gem
     * CocoaPods
 * For Android development
-    * JDK 8+
+    * JDK 8 or later
     * Latest official release of Android SDK
     * Android Support Repository
     * (Optional) Google Repository
