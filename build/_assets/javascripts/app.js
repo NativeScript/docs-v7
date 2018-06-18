@@ -52,6 +52,22 @@ function preventParentSelection(e) {
     }
 }
 
+function traverseAnchors(elements, level) {
+    var html = "<ul>";
+
+    elements.each(function(index, anchor) {
+        if (!anchor.textContent.startsWith("Example")) {
+            html += '<li><a href="' + anchor.hash + '">' + anchor.textContent + '</a>';
+
+            html += traverseAnchors($(anchor.parentElement).nextUntil('h' + level, 'h' + (level + 1)).children("a"), level + 1);
+
+            html += "</li>";
+        }
+    });
+
+    return html + "</ul>";
+}
+
 $(function(){
 
     $("pre[lang]").each(function() {
@@ -72,7 +88,7 @@ $(function(){
 
        tabs[0].addClass("k-state-active");
 
-       var tabstrip = $("<div>")
+       var tabstrip = $("<div class='nd-code-container'>")
                        .insertBefore(this)
                        .append($("<ul>").append(tabs))
                        .append(langs);
@@ -80,7 +96,11 @@ $(function(){
        langs.wrap("<div>");
 
        tabstrip.kendoTabStrip({
-           animation: false
+           animation: {
+               open: {
+                   effects: "fadeIn"
+               }
+           }
        });
     });
 
@@ -203,22 +223,124 @@ $(function(){
 
         ul.appendTo(this);
     });
-});
 
-$(function() {
-    $(document.body)
-        .on("click", ".hamb", function(e) {
-            e.preventDefault();
-            $("#page-nav").toggleClass("expanded");
-        })
-        .kendoTouch({
-            tap: function(e) {
-                var navigation = $("#page-nav");
-                if (!$.contains(navigation[0], e.target)) {
-                    navigation.removeClass("expanded");
-                }
+    var options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 1.0
+    };
+
+    window.addEventListener("scroll", function(e) {
+        e.target.documentElement.classList[e.target.scrollingElement.scrollTop !== 0 ? "add" : "remove"]("ns-state-scrolled");
+    }, { passive: true });
+
+    var visibleElements = [];
+
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function(entry) {
+            if (entry.intersectionRatio < 1) {
+                visibleElements.splice(visibleElements.indexOf(entry.target), 1);
+            } else {
+                visibleElements[entry.intersectionRect.y < entry.rootBounds.height ? "unshift" : "push"](entry.target);
             }
         });
+
+        if (visibleElements[0]) {
+            var topElement = { offsetTop: 9999999 };
+
+            visibleElements.forEach(function (element) {
+                if (element.offsetTop < topElement.offsetTop) {
+                    topElement = element;
+                }
+            });
+
+            topElement = $('.right-nav__tree [href$="#' + topElement.id + '"]');
+
+            if (topElement[0]) {
+                $(".right-nav__tree a").removeClass("ns-state-selected");
+
+                topElement.addClass("ns-state-selected");
+            }
+        }
+    }, options);
+
+    var seeAlso = $("#see-also");
+    var seeAlsoLinks = seeAlso.next("ul");
+
+    seeAlso.remove();
+
+    var apiReferences = $("article > p > a[href*=api-reference]");
+    var rightNavLinks = $(".right-nav__links");
+
+    var rightNav = $('\
+<div class="right-nav__container">\
+    <input id="right-nav__toggle" class="right-nav__input" type="checkbox">\
+    <label for="right-nav__toggle" class="right-nav__label"></label>\
+    <div class="right-nav__tree"></div>\
+    <div class="right-nav__sizer"></div>\
+</div>')
+        .insertBefore($("article"))
+        .children(".right-nav__tree");
+
+    var articleAnchors = $(traverseAnchors($("article > h2 > a"), 2));
+
+    if (articleAnchors.children()[0]) {
+        rightNav
+            .append($("<div class='-allcaps'>In this article</div>"))
+            .append(articleAnchors);
+    }
+
+    if (seeAlsoLinks[0]) {
+        rightNav
+            .append($("<div class='-allcaps'>Related articles</div>"))
+            .append(seeAlsoLinks);
+    }
+
+    if (apiReferences[0]) {
+        apiReferences.parent().remove();
+
+        rightNav
+            .append($("<div class='-allcaps'>API Reference</div>"))
+            .append(apiReferences.wrap("<li></li>").parent().wrapAll("<ul></ul>").parent());
+    }
+
+    if (rightNavLinks[0]) {
+        rightNav
+            .append($("<div>Not finding the help you need?</div>"))
+            .append(rightNavLinks);
+    }
+
+    $(document.documentElement).on("click", function() {
+        var toggle = $("#right-nav__toggle")[0];
+
+        if (toggle) {
+            toggle.checked = false;
+        }
+    });
+
+    $(".right-nav__container").on("click", function(e) {
+        e.stopPropagation();
+    });
+
+    $("article > h2, article > h3").each(function(index, node) {
+        observer.observe(node);
+    });
+
+    var bodyObserver = new MutationObserver(function(entries) {
+        entries.forEach(function() {
+            if (document.body.classList.contains("gsc-overflow-hidden")) {
+                document.documentElement.classList.add("-overflow-hidden");
+            } else {
+                document.documentElement.classList.remove("-overflow-hidden");
+            }
+        });
+    });
+
+    bodyObserver.observe(document.body, {
+        attributes: true,
+        attributeOldValue: true,
+        attributeFilter: ["class"]
+    });
 });
 
 $(function() {
@@ -266,45 +388,5 @@ $(function() {
     }
 
     window.setTimeout(handleBanner, 1000);
-});
-
-$(function() {
-  'use strict';
-
-  var $searchBtn = $('.Search-open');
-  var $searchBar = $('.Search-container');
-  var $searchCancel = $('.Btn--cancel');
-  var $navLinks = $('.Nav-menu .-fl');
-  var $navLinksMobileToggle = $('.Nav-open-menu');
-
-  // improve menu
-  $navLinks.find('a').each(function() {
-    if ($(this).attr('href') === document.location.pathname) {
-      $(this).addClass('is-current');
-    }
-  });
-
-  // show search menu
-  $searchBtn.on('click', function() {
-    $searchBtn.toggleClass('is-active');
-    $searchBar.toggle();
-    $('[name=search]').first().focus();
-    // hide nav when opening search
-    $navLinks.removeClass('is-visible');
-    $navLinksMobileToggle.removeClass('is-active');
-  });
-  $searchCancel.on('click', function() {
-    $searchBar.toggle();
-    $searchBtn.toggleClass('is-active');
-  });
-
-  // show mobile menu
-  $navLinksMobileToggle.on('click', function() {
-    $(this).toggleClass('is-active');
-    $navLinks.toggleClass('is-visible');
-    // hide search when opening nav
-    $searchBar.hide();
-    $searchBtn.removeClass('is-active');
-  });
 });
 

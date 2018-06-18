@@ -177,12 +177,19 @@ module.exports.SourcesWatcher = class SourcesWatcher {
 		var filename = path.basename(f);
 		if (filename == "_config.yml" || filename == "_config_nativescript.yml" || filename == "_config_angular.yml") {
 			console.log(`${f} updated -> restarting jekyll service...`);
+			var destination;
+
 			if (f.toLowerCase().indexOf("sidekick-docs") < 0) {
-				fs.copySync(f, path.join(paths.binRoot, filename));
+				destination = path.join(paths.binRoot, filename);
 			} else {
-				fs.copySync(f, path.join(paths.sidekickRoot, filename));
+				destination = path.join(paths.sidekickRoot, filename);
 			}
-			this.jekyllService.restart();
+
+			if (f !== destination) {
+                fs.copySync(f, destination);
+                this.jekyllService.restart();
+            }
+
 			return;
 		}
 
@@ -194,8 +201,8 @@ module.exports.SourcesWatcher = class SourcesWatcher {
 			if (f.toLowerCase().indexOf("sidekick-docs") > -1) {
 				destination = path.join(paths.sidekickRoot, relativePath);
 			}
-
-			if (fs.existsSync(f)) {
+``
+			if (fs.existsSync(f) && f !== destination) {
 				console.log(`${destination} updated -> rebuilding site...`);
 				ensureDestPath(destination);
 				fs.copySync(f, destination);
@@ -207,7 +214,7 @@ module.exports.SourcesWatcher = class SourcesWatcher {
 		var relativePath = path.relative(paths.sourceFilesRoot, f);
 		var destFile = path.join(paths.wwwRoot, relativePath);
 
-		if (fs.existsSync(f)) {
+		if (fs.existsSync(f) && f !== destFile) {
 			ensureDestPath(destFile);
 			fs.copySync(f, destFile);
 			console.log(`${destFile} updated -> rebuilding site...`);

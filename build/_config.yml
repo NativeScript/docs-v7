@@ -111,6 +111,17 @@ improveThis:
             matchPattern: '.*'
             baseUrl: "https://github.com/NativeScript/docs/blob/master/docs/"
 
+## Current flavor
+flavor:
+    "NativeScript & Angular":
+        matchPattern: '^/angular/.*'
+    "NativeScript Sidekick":
+        matchPattern: '^/sidekick/.*'
+    "NativeScript & Vue.JS":
+        matchPattern: '^/vuejs/.*'
+    "API Reference":
+        matchPattern: '^/api-reference/.*'
+
 ## Assign layout and category per different paths
 defaults:
 -

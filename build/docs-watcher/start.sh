@@ -23,18 +23,6 @@ sigint_handler() {
 trap 'kill ${!}; sigterm_handler' SIGTERM
 trap 'sigint_handler' SIGINT
 
-mkdir /www
-echo "Start copying mounted folders..."
-rsync --relative -az --exclude node_modules/ \
-	/root/./docs \
-	/root/./NativeScript \
-	/root/./nativescript-angular \
-	/root/./nativescript-sdk-examples-ng \
-	/root/./nativescript-sdk-examples-js \
-	/root/./sidekick-docs \
-	/root/./nativescript-cli \
-	/www
-
 /www/docs/build/build-docs.sh
 /www/docs/build/nginx-setup.sh
 

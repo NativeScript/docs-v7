@@ -30,7 +30,7 @@ Ready to get started developing with NativeScript? We offer a set of comprehensi
   <a href="https://play.nativescript.org/?template=groceries-js&tutorial=groceries-js" class="Btn" id="js-start-button">Get Started with JavaScript</a>
 </div>
 
-<script>
+<script type="text/javascript">
   // Quick script to randomize the tutorial button order
   var container = document.getElementById("start-button-container");
   var ngButton = document.getElementById("ng-start-button");

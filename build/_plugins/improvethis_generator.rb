@@ -9,10 +9,10 @@ module Jekyll
                 pageImproveThisUrl = getPageImproveThisUrl(page)
                 if pageImproveThisUrl.nil? || pageImproveThisUrl.length == 0
                     page.data['improvethisurl'] = ''
-                    page.data['improvethisvisibilityclass'] = 'noimprovethis'
+                    page.data['improvethisvisibilityclass'] = '-hidden'
                 else
                     page.data['improvethisurl'] = pageImproveThisUrl
-                    page.data['improvethisvisibilityclass'] = 'activeimprovethis'
+                    page.data['improvethisvisibilityclass'] = ''
                 end
             end
         end
