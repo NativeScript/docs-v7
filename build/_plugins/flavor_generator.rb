@@ -24,6 +24,10 @@ module Jekyll
                 end
             end
 
+            if @site.config['flavour'] == 'angular'
+                page.data['flavor'] = 'NativeScript Angular'
+            end
+
             if (page.data['flavor'].nil?)
                 page.data['flavor'] = 'NativeScript Core'
             end
