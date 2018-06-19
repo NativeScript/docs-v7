@@ -65,7 +65,7 @@ describe("Facebook tests", async function () { // define test suite
     });
     ...
 ```
-Here, we define our suite and set a custom [timeout](https://mochajs.org/#timeouts) for each element to be found. The timeout setting for the whole execution is located in the [mocha.opts](https://github.com/NativeScript/nativescript-facebook/blob/master/demo/e2e/config/mocha.opts) configuration file so if needed it can be adjusted there. We use some bigger value as we run the tests in [Sauce Labs](https://saucelabs.com/) and it takes a bit more time than а local execution.
+Here, we define our suite and set a custom [timeout](https://mochajs.org/#timeouts) for each element to be found. The timeout setting for the whole execution is located in the [mocha.opts](https://github.com/NativeScript/nativescript-facebook/blob/master/demo/e2e/config/mocha.opts) configuration file so if needed it can be adjusted there. We use some bigger value as we run the tests in [Sauce Labs](https://saucelabs.com/) and it takes a bit more time than a local execution.
 
 [Sauce Labs](https://saucelabs.com/) is a cloud-based platform for automated testing of web and mobile applications. It provides us an access to mobile emulators and simulators needed for our test execution. This way we don't have to take care of a testing environment which is great. Additionally, our testing results are public and that increases the transparency of plugin's state and how it has been tested.
 

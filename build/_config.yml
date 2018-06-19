@@ -24,7 +24,7 @@ navigation:
         title: "CORE CONCEPTS"
         expanded: true
     "core-concepts/android-runtime":
-        position: 10
+        position: 200
         title: "Android Runtime"
     "core-concepts/android-runtime/getting-started":
         position: 10
@@ -51,7 +51,7 @@ navigation:
         position: 80
         title: "Advanced topics"
     "core-concepts/ios-runtime":
-        position: 20
+        position: 300
         title: "iOS Runtime"
     "core-concepts/ios-runtime/getting-started":
         position: 10
@@ -225,6 +225,10 @@ defaults:
 # Aliases available in the markdown template. The below will expand {{site.foo}} to Bar in the output
 # "foo": "Bar"
 "current-version": "2.0.0"
+"ns": "NativeScript"
+"sk": "Sidekick"
+"ns-sk": "NativeScript Sidekick"
+"ns-cli": "NativeScript CLI"
 
 # Assets pipeline configuration
 assets:

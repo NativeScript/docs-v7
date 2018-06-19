@@ -1,7 +1,7 @@
 ---
 title: Data Binding
 description: NativeScript Documentation - Data Binding
-position: 70
+position: 50
 slug: binding
 previous_url: /bindings,core-concepts/bindings
 environment: nativescript

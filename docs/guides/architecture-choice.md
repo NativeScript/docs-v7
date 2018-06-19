@@ -11,15 +11,15 @@ The open nature of NativeScript makes it possible to use popular JavaScript fram
 
 <table>
 <tr>
-<td align="center"><img style="vertical-align:middle" src="core.png" alt="nativescript core logo" /></td>
+<td align="center"><img style="vertical-align:middle" src="core-small.png" alt="nativescript core logo" /></td>
 <td>NativeScript Core (a.k.a. vanilla JavaScript/TypeScript)</td>
 </tr>
 <tr>
-<td align="center"><img style="vertical-align:middle" src="angular.png" alt="nativescript angular logo" /></td>
+<td align="center"><img style="vertical-align:middle" src="angular-small.png" alt="nativescript angular logo" /></td>
 <td>NativeScript + Angular</td>
 </tr>
 <tr>
-<td align="center"><img style="vertical-align:middle" src="vue.png" alt="nativescript vue logo" /></td>
+<td align="center"><img style="vertical-align:middle" src="vue-small.png" alt="nativescript vue logo" /></td>
 <td>NativeScript + Vue</td>
 </tr>
 </table>

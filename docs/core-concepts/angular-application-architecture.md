@@ -1,7 +1,7 @@
 ---
 title: Application Architecture
 description: Learn the core concepts of building Angular apps with NativeScript
-position: 10
+position: 30
 slug: architecture-angular
 environment: angular
 previous_url: /core-concepts/architecture-angular

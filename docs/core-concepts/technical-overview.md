@@ -1,7 +1,7 @@
 ---
 title: Technical Overview
 description: A broad overview of the technologies that make NativeScript work.
-position: 15
+position: 10
 publish: true
 slug: how-it-works
 ---

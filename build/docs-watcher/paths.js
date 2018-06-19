@@ -11,7 +11,6 @@ module.exports.modulesRoot = path.join(module.exports.root, "..", "..", "NativeS
 module.exports.nativescriptAngularRoot = path.join(module.exports.root, "..", "..", "nativescript-angular");
 module.exports.sdkExamplesRoot = path.join(module.exports.root, "..", "..", "nativescript-sdk-examples-ng");
 module.exports.sdkExamplesRootJS = path.join(module.exports.root, "..", "..", "nativescript-sdk-examples-js");
-module.exports.sidekickRoot = path.join(module.exports.root, "..", "..", "sidekick-docs");
 module.exports.cliRoot = path.join(module.exports.root, "..", "..", "nativescript-cli");
 module.exports.vuejsRoot = path.join(module.exports.root, "..", "vuejs-docs");
 
@@ -20,8 +19,4 @@ module.exports.assetsPaths = [
 	path.join(module.exports.sourceFilesRoot, "docs", "build", "_assets"),
 	path.join(module.exports.sourceFilesRoot, "docs", "build", "_layouts"),
 	path.join(module.exports.sourceFilesRoot, "docs", "build", "_includes"),
-
-	path.join(module.exports.sourceFilesRoot, "sidekick-docs", "_assets"),
-	path.join(module.exports.sourceFilesRoot, "sidekick-docs", "_layouts"),
-	path.join(module.exports.sourceFilesRoot, "sidekick-docs", "_includes")
 ];
