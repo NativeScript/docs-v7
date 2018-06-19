@@ -142,7 +142,7 @@ application.run({ moduleName: "app-root" });
 /*
 iOS calls UIApplication and triggers the application main event loop.
 */
-F
+
 import * as application from "tns-core-modules/application";
 application.run({ moduleName: "app-root" });
 ```
