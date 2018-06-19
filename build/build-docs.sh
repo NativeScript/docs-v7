@@ -81,7 +81,7 @@ cp -R $DOCS_ROOT"/docs/./" \
 	  $MODULES_ROOT"/bin/dist/snippets" \
 	  $NG_ROOT"/bin/dist/snippets" \
 	  $SDK_ROOT_NG"/dist/code-samples/ng-framework-modules" \
-	  $SDK_ROOT_NG"/dist/code-samples/ng-hardware-аccess" \
+	  $SDK_ROOT_NG"/dist/code-samples/ng-hardware-access" \
 	  $CONTENT_ROOT
 
 # cd $CONTENT_ROOT"/ui"
