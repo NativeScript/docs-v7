@@ -2,7 +2,7 @@
 nav-title: Using CommonJS Modules in NativeScript Apps
 title: "CommonJS Modules in NativeScript Apps"
 description: Learn how to use CommonJS Modules in NativeScript Apps
-position: 0
+position: 110
 ---
 
 # Using CommonJS Modules in NativeScript Apps

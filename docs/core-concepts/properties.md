@@ -1,7 +1,7 @@
 ---
 title: Property System
 description: NativeScript Property System.
-position: 80
+position: 95
 slug: properties
 publish: true
 previous_url: /properties

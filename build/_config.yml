@@ -24,7 +24,7 @@ navigation:
         title: "CORE CONCEPTS"
         expanded: true
     "core-concepts/android-runtime":
-        position: 10
+        position: 200
         title: "Android Runtime"
     "core-concepts/android-runtime/getting-started":
         position: 10
@@ -51,7 +51,7 @@ navigation:
         position: 80
         title: "Advanced topics"
     "core-concepts/ios-runtime":
-        position: 20
+        position: 300
         title: "iOS Runtime"
     "core-concepts/ios-runtime/getting-started":
         position: 10
