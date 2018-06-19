@@ -177,11 +177,8 @@ module.exports.SourcesWatcher = class SourcesWatcher {
 		var filename = path.basename(f);
 		if (filename == "_config.yml" || filename == "_config_nativescript.yml" || filename == "_config_angular.yml") {
 			console.log(`${f} updated -> restarting jekyll service...`);
-			if (f.toLowerCase().indexOf("sidekick-docs") < 0) {
-				fs.copySync(f, path.join(paths.binRoot, filename));
-			} else {
-				fs.copySync(f, path.join(paths.sidekickRoot, filename));
-			}
+			fs.copySync(f, path.join(paths.binRoot, filename));
+
 			this.jekyllService.restart();
 			return;
 		}
@@ -191,9 +188,6 @@ module.exports.SourcesWatcher = class SourcesWatcher {
 			var basePath = path.normalize(path.join(assetsPath, ".."));
 			var relativePath = path.relative(basePath, f);
 			var destination = path.join(paths.contentPath, relativePath);
-			if (f.toLowerCase().indexOf("sidekick-docs") > -1) {
-				destination = path.join(paths.sidekickRoot, relativePath);
-			}
 
 			if (fs.existsSync(f)) {
 				console.log(`${destination} updated -> rebuilding site...`);
@@ -220,9 +214,6 @@ module.exports.SourcesWatcher = class SourcesWatcher {
 			var basePath = path.normalize(path.join(assetsPath, ".."));
 			var relativePath = path.relative(basePath, f);
 			var destination = path.join(paths.contentPath, relativePath);
-			if (f.toLowerCase().indexOf("sidekick-docs") > -1) {
-				destination = path.join(paths.sidekickRoot, relativePath);
-			}
 
 			if (fs.existsSync(f)) {
 				console.log(`${destination} removed -> rebuilding site...`);

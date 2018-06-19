@@ -69,7 +69,6 @@ The NativeScript documentation is composed from multiple repositories:
 * [NativeScript Docs](https://github.com/NativeScript/docs)
 * [NativeScript Modules](https://github.com/NativeScript/NativeScript)
 * [NativeScript Angular](https://github.com/NativeScript/nativescript-angular)
-* [Sidekick Docs](https://github.com/NativeScript/sidekick-docs)
 * [NativeScript JavaScript SDK examples](https://github.com/NativeScript/nativescript-sdk-examples-js)
 * [NativeScript Angular SDK examples](https://github.com/NativeScript/nativescript-sdk-examples-ng)
 
@@ -85,7 +84,6 @@ cd ns-docs
 git clone https://github.com/NativeScript/docs.git
 git clone https://github.com/NativeScript/NativeScript.git
 git clone https://github.com/NativeScript/nativescript-angular.git
-git clone https://github.com/NativeScript/sidekick-docs.git
 git clone https://github.com/NativeScript/nativescript-sdk-examples-js.git
 git clone https://github.com/NativeScript/nativescript-sdk-examples-ng.git
 git clone https://github.com/NativeScript/nativescript-cli.git
