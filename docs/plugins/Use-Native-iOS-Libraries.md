@@ -2,7 +2,7 @@
 nav-title: "Using Native Libraries in iOS"
 title: "How To Use Native Libraries in iOS"
 description: "Describes all the possible approaches for using native iOS libraries in your NativeScript app."
-position: 1
+position: 110
 ---
 
 NativeScript for iOS lets you include native libraries and consume their APIs from JavaScript.
