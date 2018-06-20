@@ -1,213 +1,207 @@
 ---
-title: Chapter 5—Plugins and npm Modules
-position: 6
+title: Chapter 5—Accessing Native APIs
+position: 7
 environment: nativescript
 ---
 
-# Chapter 5—Plugins and npm Modules
+# Chapter 5—Accessing Native APIs
 
-As you build more complex apps, you'll likely run into functionality that is not implemented in the NativeScript modules. But no worries, as NativeScript lets you leverage [npm](https://www.npmjs.com/) (node package manager) to import npm modules into your apps. Alternately, you can install NativeScript plugins, which are simply npm modules that can access native code and use Android and iOS SDKs, if required. 
+The beauty of NativeScript is that you can write a native iOS or Android app in JavaScript, XML, and CSS without touching Swift, Objective-C, or Java, if you choose. But what if you want to present a different, more platform-specific UI to your users? Or if you want to access an iOS or Android API that NativeScript doesn't expose through a NativeScript module or plugin?
 
-In this chapter, you'll install and use an external email validator module to verify the format of email addresses as they are entered on the registration screen. Then, you'll add a NativeScript plugin, [NativeScript social share](https://www.npmjs.com/package/nativescript-social-share), to let users share their grocery lists using their device's native sharing widget.
+NativeScript gives you the option to dig into native code as needed, and to do so without leaving JavaScript. To show how this works in action, let's start by adding some color to the ActionBar in the iOS version of the Groceries app.
 
 ## Table of contents
 
-- [5.1: Using npm modules](#51-using-npm-modules)
-- [5.2: Using NativeScript plugins](#52-using-nativescript-plugins)
+- [5.1: Customize the ActionBar - iOS](#51-customize-the-actionbar---ios)
+- [5.2: Deleting from a list - Android](#52-deleting-from-a-list---android)
+- [5.3: Deleting from a list - iOS](#53-deleting-from-a-list---ios)
 
-## 5.1: Using npm modules
+## 5.1: Customize the ActionBar - iOS
 
-It would be nice to be able to make sure people are entering well-formatted email addresses into your app on the registration screen. You could write this functionality yourself, but validating email addresses is [surprisingly tricky](http://stackoverflow.com/questions/46155/validate-email-address-in-javascript), and it's a lot easier to use one of many npm modules that already provide this validation. For Groceries let's see how to add this [email-validator module](https://www.npmjs.com/package/email-validator) to test for valid addresses.
+When you use the ActionBar UI component, NativeScript is actually creating and managing an iOS `UINavigationController` for you. You can see this for yourself by digging into the implementation code, specifically `node_modules/tns-core-modules/ui/action-bar/action-bar.ios.js`, and `node_modules/tns-core-modules/ui/frame/frame.ios.js`.
 
-<h4 class="exercise-start">
-    <b>Exercise</b>: Install the email validator module
-</h4>
-
-Return to your terminal and make sure that you are working in the root directory in your Groceries project folder, a.k.a. here:
-
-<div class="no-copy-button"></div>
-
-```
-Groceries <----------------
-    ├── app
-    │   └── ...
-    ├── package.json
-    └── platforms
-        ├── android
-        └── ios
-```
-
-From the root directory install the email-validator module:
-
-```
-npm install email-validator --save
-```
-
-<div class="exercise-end"></div>
-
-The install process does a few things in the background. First, because you added the `--save` flag, npm records this dependency in your app's `package.json`. If you open your `package.json` you should see `"email-validator"` in your app's `"dependencies"` array.
-
-``` JavaScript
-"dependencies": {
-  "email-validator": "^1.0.4"
-}
-```
-
-The npm CLI also creates a `node_modules` folder in the root of your app. This folder contains the code for the email-validator module, which is a bit of validation logic in `node_modules/email_validator/index.js`. 
-
-> **TIP**: By saving your app's npm dependencies in your `package.json` file, you can always regenerate your `node_modules` folder by running `npm install`. Because of this, it's a common practice to exclude the `node_modules` folder from source control. The Groceries app uses git for source control, and as such includes `node_modules/` in its `.gitignore`.
-
-Now that you have the module installed let's look at how to use it.
+What you might not realize is that the code that you see in these NativeScript modules, the code that looks like Objective-C-ified or Java-ified JavaScript code, is available for you to use in your own JavaScript modules. For example, you can easily get a reference to the `UINavigationBar` and simply call its [documented methods](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UINavigationBar_Class/index.html) to change its look and feel. Let's look at how to do that.
 
 <h4 class="exercise-start">
-    <b>Exercise</b>: Use the email validator module
+    <b>Exercise</b>: Modify the ActionBar
 </h4>
 
-Open `/app/shared/view-models/user-view-model.js` and add the following line at the top of the file:
+Before you start tinkering with the `UINavigationBar` let's add an `<ActionBar>` to the login and register pages, so that the app's three pages all have a consistent look.
 
-``` JavaScript
-var validator = require("email-validator");
-```
-
-> **NOTE**: The NativeScript framework's `require()` method is configured to look at the `"main"` value in an npm module's `package.json` file. In the case of this module, the `"main"` value is `"index.js"`. Therefore, when you run `require("email-validator")`, you're actually requiring the file at `node_modules/email_validator/index.js`. You could also type `require("email-validator/index")` to retrieve the same file.
-
-To make use of this validator, add a function to `user-view-model.js`, right above the line `return viewModel`:
-
-``` JavaScript
-viewModel.isValidEmail = function() {
-    var email = this.get("email");
-    return validator.validate(email);
-};
-```
-
-Then, edit the registration function in `app/views/register/register.js` to trap any malformed email addresses:
-
-``` JavaScript
-exports.register = function() {
-    if (user.isValidEmail()) {
-        completeRegistration();
-    } else {
-        dialogsModule.alert({
-            message: "Enter a valid email address.",
-            okButtonText: "OK"
-        });
-    }
-};
-```
-
-<div class="exercise-end"></div>
-
-In this function, the user submits an email and password, and the value is sent to the view model for validation. If it passes, registration can proceed, otherwise you show an alert. However in order to test out this change you’ll need to do one more thing.
-
-<h4 class="exercise-start">
-    <b>Exercise</b>: Rebuild your app
-</h4>
-
-As we mentioned in chapter 1, although the `tns run` command is smart enough to reload your app for most changes you make to your app, certain changes require a full build—most notably, changes to native files in `app/App_Resources`, new modules installed with `npm install`, and new NativeScript plugins.
-
-For NativeScript to recognize this new email-validator npm module, type `Ctrl+C` in your terminal to kill the existing `tns run` watcher if it’s still running, and then use `tns run` to rebuild your application and deploy it to an emulator or device.
-
-```
-tns run ios
-```
-
-Or
-
-```
-tns run android
-```
-
-<div class="exercise-end"></div>
-
-After your app launches again, if you attempt to register with an invalid email address, you should see an alert that prevents the submission:
-
-![](/img/cli-getting-started/nativescript/chapter5/ios/1.png)
-![](/img/cli-getting-started/nativescript/chapter5/android/1.png)
-
-In general npm modules greatly expand the number of things you're able to do in your NativeScript apps. Need date and time formatting? Use [moment](https://www.npmjs.com/package/moment). Need utility functions for objects and arrays? Use [lodash](https://www.npmjs.com/package/lodash) or [underscore](https://www.npmjs.com/package/underscore). This code reuse benefit gets even more powerful when you bring NativeScript plugins into the picture.
-
-> **WARNING**: Not all npm modules work in NativeScript apps. Specifically, modules that depend on Node.js or browser APIs will not work, as those APIs do not exist in NativeScript. The NativeScript wiki contains a [list of some of the more popular npm modules that have been verified to work in NativeScript apps](https://github.com/NativeScript/NativeScript/wiki/supported-npm-modules).
-
-## 5.2: Using NativeScript plugins
-
-NativeScript plugins are npm modules that have the added ability to run native code and use iOS and Android frameworks. Because NativeScript plugins are just npm modules, a lot of the techniques you learned in the previous section still apply. The one big difference is in the command you use to install plugins. Let's look at how it works by installing the NativeScript social share plugin.
-
-<h4 class="exercise-start">
-    <b>Exercise</b>: Install the social sharing plugin
-</h4>
-
-Return to your terminal, make sure you're still in the root of your app, and run the following command:
-
-```
-tns plugin add nativescript-social-share
-```
-
-<div class="exercise-end"></div>
-
-The install process does the same thing that the `npm install` command does—including retrieving the module from npm, installing the module in `node_modules`, and saving the module as a dependency in your app's `package.json`—but the `tns plugin add` command additionally configures any native code that the plugin needs to use.
-
-For example the [NativeScript push plugin](https://github.com/NativeScript/push-plugin) uses both iOS and Android SDKs, and the `tns plugin add` command takes care of installing those. The [NativeScript flashlight plugin](https://github.com/tjvantoll/nativescript-flashlight) needs permissions to use the camera on Android, and the `tns plugin add` command takes care of setting that up too.
-
-Now that you've installed the social share plugin, let's look at how to use it.
-
-<h4 class="exercise-start">
-    <b>Exercise</b>: Use the social sharing plugin
-</h4>
-
-Open `app/views/list/list.js` and add the following line at the top of the file, which requires the social share module you just installed:
-
-``` JavaScript
-var socialShare = require("nativescript-social-share");
-```
-
-Next you have to build some UI that lets you share a grocery list. To do so, open `app/views/list/list.xml` and add the following code below the opening `<Page>` tag, and above the opening `<GridLayout>` tag.
+Open `app/views/register/register.xml` and paste the following code in directly after the opening `<Page>` tag:
 
 ``` XML
 <Page.actionBar>
-    <ActionBar title="Groceries">
-        <ActionBar.actionItems>
-            <ActionItem text="Share" tap="share" ios.position="right" />
-        </ActionBar.actionItems>
-    </ActionBar>
+    <ActionBar title="Sign up"></ActionBar>
 </Page.actionBar>
 ```
 
-This code defines an [ActionBar](/ui/action-bar), which is a UI component that includes various menu items, enclosed in the `<ActionBar.actionItems>` tag. The `title` of the ActionBar lets you show page-specific titles.
+Next, open `app/views/login/login.xml` and paste in the following code, again directly after the opening `<Page>` tag:
 
-> **NOTE**: On iOS devices, `<ActionItem>`s are placed from left to right in sequence; you can override that (as the code above does) by providing an `ios.position` attribute.
+``` XML
+<Page.actionBar>
+    <ActionBar title="Sign in"></ActionBar>
+</Page.actionBar>
+```
 
-With the module installed and required, and the UI in place, you can implement the `<ActionItem>`'s tap handler (`share()`) in the list page's code-behind file.
+Finally, open `app/app.css` and paste the following CSS to modify the ActionBar’s colors:
 
-To do so, return to `list.js` and paste the following code at the bottom of the file:
+``` CSS
+ActionBar {
+    color: white;
+    background-color: #2E6DAD;
+}
+```
+
+With the ActionBar in place, let's look at how to customize its look with some native iOS APIs. Open `app/views/login/login.js` and paste the following code in the `exports.loaded()` function, directly after the `var page = args.object;` assignment:
 
 ``` JavaScript
-exports.share = function() {
-    var list = [];
-    for (var i = 0, size = groceryList.length; i < size ; i++) {
-        list.push(groceryList.getItem(i).name);
-    }
-    var listString = list.join(", ").trim();
-    socialShare.shareText(listString);
+if (page.ios) {
+    var navigationBar = frameModule.topmost().ios.controller.navigationBar;
+    navigationBar.barStyle = UIBarStyle.UIBarStyleBlack;
+}
+```
+
+<div class="exercise-end"></div>
+
+Ok, let's break down what just happened, starting with the `if (page.ios)` check. NativeScript modules, in general, follow the pattern of exposing their native implementations through `ios` and `android` properties. You can see this in the if check (`page.ios`), and also on the first line within the if check, as `frameModule.topMost().ios` is used to retrieve a reference to the underlying `UINavigationController`. Testing for the existence of these properties (e.g. `if (page.ios)`) is a convenient way to fork your code, to ensure that iOS-specific code only runs on iOS, and Android-specific code only runs on Android.
+
+> **TIP**: As a best practice, testing for a platform with an if check is the way to go when you have a small number of platform-specific changes to make. If, on the contrary, you have big, entirely different chunks of code for iOS and Android, you might want to go with [platform-specific code-behind files](#platform-specific-files)—e.g. `login.ios.js` and `login.android.js`.
+
+Within the if block, you start by getting a reference to the `UINavigationBar`, and then you set its [`barStyle` property](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitDataTypesReference/index.html#//apple_ref/c/tdef/UIBarStyle) to `UIBarStyle.UIBarStyleBlack`, which (counter intuitively) makes the iOS status bar use white text. This produces the look shown below:
+
+![The iOS actionbar with updated colors](/img/cli-getting-started/nativescript/chapter6/ios/1.png)
+
+Learning how to transfer iOS and Android APIs into valid NativeScript code can take a little trial and error to get right. You can always refer to the NativeScript docs for detailed discussions of how to handle the code conversion. Here are the [docs for Android](/runtimes/android/marshalling/java-to-js.html), and here are the [docs for iOS](/runtimes/ios/marshalling/Marshalling-Overview.html).
+
+> **TIP**: NativeScript provides TypeScript declaration files for all iOS and Android APIs. If you're using TypeScript you can reference these declaration files to enable code completion in your editor. Even if you're not using TypeScript, these declaration files can be invaluable references when you're transferring native APIs to NativeScript code. For instance try searching for “UINavigationBar” in the iOS declaration file below to see which other properties are available.
+> - [iOS TypeScript declaration file](https://github.com/NativeScript/NativeScript/tree/master/tns-platform-declarations/ios/objc-i386)
+> - [Android TypeScript declaration file](https://raw.githubusercontent.com/NativeScript/NativeScript/master/tns-platform-declarations/android/android17.d.ts)
+
+Forking the user experience can entail more than just changing some colors. For example, sliding to delete list items is a common UI interaction on iOS, but not Android. But as you've seen, NativeScript makes it relatively easy to fork your code to provide a more platform-specific experience. So to allow a user to delete an item from a list, let's create a slide-to-delete UI for iOS, and use a more-Android-friendly trash can icon to let the user delete items from our Android app.
+
+## 5.2: Deleting from a list - Android
+
+For Android you're going to add tappable trash cans to each item in the grocery list; so the first challenge is figuring out how to show these images only for Android, as you'll be using a completely different UI on iOS.
+
+To do so you'll use a new bit of syntax in your XML. NativeScript allows you to set an attribute for only one platform using the `platform:attributeName` syntax. For example the following sets a button's text to “foo” on iOS, and “bar” on Android:
+
+``` XML
+<Button ios:text="foo" android:text="bar" />
+```
+
+This same syntax is available for all attributes for all UI components, and this mechanism is another convenient way NativeScript lets you fork your code for separate iOS and Android implementations. Let's use this technique to show a trash can only on Android.
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Add an Android-only UI element
+</h4>
+
+Open `app/views/list/list.xml`, find the `<ListView.itemTemplate>` tag, and replace it with the code below:
+
+``` XML
+<ListView.itemTemplate>
+    <GridLayout columns="*, auto">
+        <Label text="{% raw %}{{ name }}{% endraw %}"/>
+        <Image src="res://ic_menu_delete" ios:visibility="collapsed" col="1" tap="delete" />
+    </GridLayout>
+</ListView.itemTemplate>
+```
+
+<div class="exercise-end"></div>
+
+With this code you're primarily adding an `<Image>` to the existing ListView template. But now that you have multiple UI components in this template, you have to tell NativeScript how to layout these two components, which is what the `<GridLayout>` handles. By specifying `columns="*, auto"` you divide each item into two columns: the first containing the label and the second containing the new image.
+
+For the image itself, the `ios:visibility="collapsed"` attribute sets the image's `visibility` CSS property to `"collapsed"`, which hides it. Because the attribute was prefixed with `ios:`, that CSS property is only applied on iOS; therefore the button displays on Android devices, but not on iOS ones. The trash can image itself has already been placed in the app for you, and can be found in appropriate sizes in the four drawable folders in `/app/App_Resources/Android`. Here's what the trash can UI looks like on Android:
+
+![Trash can icons on Android](/img/cli-getting-started/nativescript/chapter6/android/1.png)
+
+Finally, make the trash actually delete items. To do that you'll need to implement the `tap="delete"` handler in the list code-behind file.
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Build the delete functions
+</h4>
+
+Open `app/views/list/list.js` and paste the following code at the bottom of the file:
+
+``` JavaScript
+exports.delete = function(args) {
+    var item = args.view.bindingContext;
+    var index = groceryList.indexOf(item);
+    groceryList.delete(index);
+};
+```
+
+This code gets the index of the grocery the user tapped, matches that to the corresponding item in the view model, and then passes that index to the view model's `delete()` method—which doesn't exist yet, so let's create it.
+
+Open `app/shared/view-models/grocery-list-view-model.js` and paste in the code below. Remember to add this function toward the end of the file, right above the `return viewModel` line:
+
+``` JavaScript
+viewModel.delete = function(index) {
+    return fetch(baseUrl + "/" + viewModel.getItem(index).id, {
+        method: "DELETE",
+        headers: getCommonHeaders()
+    })
+    .then(handleErrors)
+    .then(function() {
+        viewModel.splice(index, 1);
+    });
 };
 ```
 
 <div class="exercise-end"></div>
 
-This code takes the groceries from the grocery list view model, converts the data into a comma-separated string, and passes that string to the social share module's `shareText()` method.
+This code probably looks fairly familiar by now. You're again calling the fetch module's `fetch()` method, this time specifying a `method` of `"DELETE"` to delete a grocery from the backend. You again return a `Promise` so the calling function can handle successful and unsuccessful calls. Note again the power of using the MVVM approach for building your app. To update the grocery list UI, all you have to do is remove the item from the ObservableArray (`viewModel.splice(index, 1)`), and let the list's presentation take care of itself.
 
-> **WARNING**: Because this section had you install a NativeScript plugin, you’ll have to rebuild your app one last time in order to test your changes. If you don’t remember how refer back to [chapter 5](chapter-5) for instructions.
+If you run your app on Android you should be able to delete items from the list.
 
-Now when you run the app, you'll see a new button at the top of the screen. When you tap it, the native iOS or Android sharing widget will show to let you post your groceries to your social networks, or send them via email, message, or any other method you prefer.
+![deleting from a list on Android](/img/cli-getting-started/nativescript/chapter6/android/2.gif)
 
-![Social sharing widget on iOS](/img/cli-getting-started/nativescript/chapter5/ios/2.gif)
-![Social sharing widget on Android](/img/cli-getting-started/nativescript/chapter5/android/2.gif)
+Now that you have built the interface for Android's tappable icon, let's add a swipe delete interface for iOS.
 
-Pretty cool, huh? The ability to use npm modules greatly expands the number of things you're able to do in a NativeScript app. Need to compose emails in your app? Try out the [NativeScript email plugin](https://www.npmjs.com/package/nativescript-email). Need to use the clipboard in your app? Try out the [NativeScript clipboard plugin](https://www.npmjs.com/package/nativescript-clipboard).
+## 5.3: Deleting from a list - iOS
 
-If you're looking for NativeScript plugins start by searching [NativeScript Marketplace](https://market.nativescript.org) and our [community-curated list of plugins on npm](http://plugins.nativescript.rocks). If you don't find the plugin you need, you can [request the plugin on our forum](https://discourse.nativescript.org/c/plugins), or even better you can take a stab at [creating the plugin yourself](/plugins/building-plugins).
+If you're an iOS user you're probably familiar with the slide-to-delete gesture as it's common in a number of iOS applications. The code to implement the gesture is actually baked into the iOS SDK itself (see [`UITableViewCellEditingStyle`'s docs](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewCell_Class/#//apple_ref/c/tdef/UITableViewCellEditingStyle)), so you can directly use those APIs in your NativeScript apps.
 
-Between NativeScript modules, npm modules, and NativeScript plugins, the NativeScript framework provides a lot of functionality you can use to build your next app. However, we've yet to talk about NativeScript's most powerful feature: the ability to directly access iOS and Android APIs in JavaScript. Let's look at how it works.
+The code to do so is a little trickier than our previous example for Android, so we've provided a ready-built module to implement this functionality in the `shared/utils/ios-swipe-delete.js` file. In this file you'll find a custom implementation of a data source that adheres to the `UITableViewDataSource` protocol. The file exports a single `enable()` function, which takes a reference to a ListView, and injects that ListView with the custom data source behavior.
+
+Don't worry too much about exactly what this code is doing, as it involves a bit of understanding of how iOS APIs works. What is cool is that you *can* implement this relatively advanced iOS API in a few dozen lines of code, and that it's really easy to wrap this code with a very simple JavaScript API. This ease of use is exactly why NativeScript modules and NativeScript plugins are so easy to consume. Let's look at how to use this module.
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Edit the ListView
+</h4>
+
+Add the following line of code to the top of `app/views/list/list.js`:
+
+``` JavaScript
+var swipeDelete = require("../../shared/utils/ios-swipe-delete");
+```
+
+Then, add the following code to the `exports.loaded()` function, directly under the `page = args.object;` assignment:
+
+``` JavaScript
+if (page.ios) {
+    var listView = page.getViewById("groceryList");
+    swipeDelete.enable(listView, function(index) {
+        groceryList.delete(index);
+    });
+}
+```
+
+<div class="exercise-end"></div>
+
+This code gets a reference to the page's `<ListView>` id and then passes that reference to the swipe-to-delete module's `enable()` function. The `enable()` function also takes a callback, so you additionally pass an inline function that calls the view model's `delete()` function that you built in the previous section. Here's what the swipe-to-delete functionality looks like on iOS:
+
+![deleting from a list on iOS](/img/cli-getting-started/nativescript/chapter6/ios/2.gif)
+
+And... that's it! You've created a functional, cross-platform, backend-driven app to manage your grocery list. In the process you've created a unique UI for Android and iOS, leveraged NativeScript plugins and npm modules, learned how to log in and register, managed backend services, created a list with add and delete functionality, and more. 
+
+Congratulations! Feel free to [share your accomplishment on Twitter](https://twitter.com/intent/tweet?text=I%20just%20built%20an%20iOS%20and%20Android%20app%20using%20@NativeScript%20%F0%9F%8E%89.%20You%20can%20too!%20http://docs.nativescript.org/tutorial/chapter-0%20%23opensource) or [Facebook](https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdocs.nativescript.org%2Ftutorial%2Fchapter-0&p%5B) to impress your friends 😀.
+
+> **TIP**:
+> * If you're curious about how NativeScript makes it possible to directly invoke iOS and Android APIs, you can read about [“How NativeScript Works”](http://developer.telerik.com/featured/nativescript-works/) on our blog.
+> * Remember that the [Groceries app's “end” branch](https://github.com/NativeScript/sample-Groceries/tree/end) has the final state of this tutorial. Feel free to refer back to it at any time.
+> * Advanced ListView interactions like swipe-to-delete, pull-to-refresh, as well as other components such as calendars and charts are available out-of-the-box for free as part of [NativeScript UI](/ui/rich-components) suite.
 
 <div class="next-chapter-link-container">
-  <a href="/tutorial/chapter-6">Continue to Chapter 6—Accessing Native APIs</a>
+  <a href="../next-steps">Continue to Next Steps</a>
 </div>

@@ -1,25 +1,25 @@
 ---
-title: Chapter 2—Creating User Interfaces
+title: Chapter 1—Creating User Interfaces
 position: 2
 environment: nativescript
 ---
 
-# Chapter 2—Creating User Interfaces
+# Chapter 1—Creating User Interfaces
 
-In this chapter you’re going to learn how to build NativeScript user interfaces, including markup, styling, images, and more.
+In this guide you’re going to learn how to build NativeScript user interfaces, including markup, styling, images, and more.
 
 But to do that you’re going to start on a new app that you’ll continue building throughout the rest of the tutorial. Working on a real-world app will help teach concepts that are hard to show in simple examples, such as how to best organize your code. With that in mind let’s start by looking at what you’ll be building.
 
 ## Table of contents
 
-- [2.1: What you’re building](#21-what-youre-building)
-- [2.2: Directory structure](#22-directory-structure)
-- [2.3: Adding UI components](#23-adding-ui-components)
-- [2.4: Layouts](#24-layouts)
-- [2.5: CSS](#25-css)
-- [2.6: Images](#26-images)
+- [1.1: What you’re building](#11-what-youre-building)
+- [1.2: Directory structure](#12-directory-structure)
+- [1.3: Adding UI components](#13-adding-ui-components)
+- [1.4: Layouts](#14-layouts)
+- [1.5: CSS](#15-css)
+- [1.6: Images](#16-images)
 
-## 2.1: What you're building
+## 1.1: What you're building
 
 The rest of this guide will walk you through building [Groceries](https://github.com/NativeScript/sample-Groceries), a groceries management app that does the following things:
 
@@ -79,7 +79,7 @@ code .
 
 Now that you have the app locally, let’s take a look at the files that make up this application.
 
-## 2.2: Directory structure
+## 1.2: Directory structure
 
 To keep things simple, let's start by looking at the outer structure of the Groceries app:
 
@@ -131,7 +131,7 @@ Here's what these various files and folders do:
 - **App_Resources**: This folder contains platform-specific resources such as icons, splash screens, and configuration files. The NativeScript CLI takes care of injecting these resources into the appropriate places in the `platforms` folder when you execute `tns run`.
 - **shared**: This folder, specific to the Groceries app, contains any files you need to share across views in your app. In the Groceries app, you'll find a few view model objects and a `config.js` file used to share configuration variables like API keys.
 - **views**: This folder contains the code to build your app's views, each of which will have a subfolder in `views`. Each view is made up of an XML file, a JavaScript file, and an optional CSS file. The groceries app contains three folders for its three views.
-- **app.css**: This file contains global styles for your app. We'll dig into app styling in [chapter 2.4](#24-css).
+- **app.css**: This file contains global styles for your app. We'll dig into app styling in [chapter 1.4](#14-css).
 - **app.js**: This file sets up your application's starting module and initializes the app.
 
 Let's start with `app/app.js`, as it's the starting point for NativeScript apps. Your `app.js` contains the two lines below: 
@@ -147,7 +147,7 @@ Here, you're requiring, or importing, the [NativeScript application module]({%ns
 
 Now that your app is ready for development, let's add some UI components to make your login screen show more than some basic text.
 
-## 2.3: Adding UI components
+## 1.3: Adding UI components
 
 Let's dig into the files used to create your app's UI, which reside in the `app/views` folder. Each folder in `app/views` contains the code for one of the three pages in Groceries: `list`, `login`, and `register`. If you look in the `app/views/login` folder, you'll see three files: `login.css`, `login.js`, and `login.xml`. When you open `login.xml` you should see the following code:
 
@@ -195,7 +195,7 @@ Currently you only see a single button because you need to tell NativeScript how
 
 > **TIP**: The NativeScript docs include a [full list of the UI components and attributes](/ui/components) with which you can build your apps. You can even [build your own, custom UI components](/ui/basics#custom-components).
 
-## 2.4: Layouts 
+## 1.4: Layouts 
 
 NativeScript provides several different layout containers that allow you to place UI components precisely where you want them to appear. 
 
@@ -243,7 +243,7 @@ Although the UI components are in the correct order, they could use some spacing
 > * Refer to the NativeScript docs for a [look at how NativeScript layouts work](/layouts) and the various things you can do to configure them.
 > * Check out Jen Looper's article on [demystifying NativeScript layouts](https://www.nativescript.org/blog/demystifying-nativescript-layouts) for a thorough look at NativeScript layouts in action.
 
-## 2.5: CSS
+## 1.5: CSS
 
 NativeScript uses a [subset of CSS](/styling) to change the visual appearance of your app. You can use three mechanisms to add CSS properties to UI components: [application-wide CSS](/styling#application-wide-css) (`app.css`), [page-specific CSS](/styling#page-specific-css), and an [inline `style` attribute](/styling#inline-css).
 
@@ -338,7 +338,7 @@ With these changes in place, you'll notice that the app looks halfway decent now
 
 Feel free to take some time to play with the look of this app before moving on. You can try adding some additional CSS class names, or adding some page-specific styles in your `login.css` file. When you're ready, let's move on and add an image to this login screen.
 
-## 2.6: Images
+## 1.6: Images
 
 In NativeScript you use the `<Image>` UI component and its `src` attribute to add images to your pages. The `src` attribute lets you specify your image in three ways. The first (and simplest) way is to point at the URL of an image:
 
@@ -380,5 +380,5 @@ At this point your UI looks good, but the app still doesn't actually do anything
 > **TIP**: The community-written [NativeScript Image Builder](http://nsimage.brosteins.com/) can help you generate images in the appropriate resolutions for iOS and Android.
 
 <div class="next-chapter-link-container">
-  <a href="/tutorial/chapter-3">Continue to Chapter 3—Application Logic</a>
+  <a href="/tutorial/chapter-2">Continue to Chapter 2—Application Logic</a>
 </div>

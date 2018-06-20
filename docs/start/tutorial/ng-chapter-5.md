@@ -1,210 +1,264 @@
 ---
-title: Chapter 5—Plugins and npm Modules
-position: 6
+title: Chapter 5—Accessing Native APIs
+position: 7
 guide: true
 environment: angular
 ---
 
-# Chapter 5—Plugins and npm Modules
+# Chapter 5—Accessing Native APIs
 
-As you build more complex apps, you'll likely run into functionality that is not implemented in the NativeScript modules. But no worries, as NativeScript lets you leverage [npm](https://www.npmjs.com/) (node package manager) to import npm modules into your apps. Alternately, you can install NativeScript plugins, which are simply npm modules that can access native code and use Android and iOS SDKs, if required. 
+The beauty of NativeScript is that you can write a native iOS or Android app in TypeScript, XML, and CSS without touching Swift, Objective-C, or Java, if you choose. But what if you want to present a different, more platform-specific UI to your users? Or if you want to access an iOS or Android API that NativeScript doesn't expose through a NativeScript module or plugin?
 
-In this chapter, you'll install and use an external email validator module to verify the format of email addresses as they are entered on the registration screen. Then, you'll add a NativeScript plugin, [NativeScript social share](https://www.npmjs.com/package/nativescript-social-share), to let users share their grocery lists using their device's native sharing widget.
+NativeScript gives you the option to dig into native code as needed, and to do so without leaving TypeScript. To show how this works in action, let's tweak a few of the UI elements in your app using native code.
 
 ## Table of contents
 
-- [5.1: Using npm modules](#51-using-npm-modules)
-- [5.2: Using NativeScript plugins](#52-using-nativescript-plugins)
+- [5.1: Accessing iOS APIs](#51-accessing-ios-apis)
+- [5.2: Accessing Android APIs](#52-accessing-android-apis)
+- [5.3: Customizing the status bar](#53-customizing-the-status-bar)
 
-## 5.1: Using npm modules
+## 5.1: Accessing iOS APIs
 
-It would be nice to be able to make sure people are entering well-formatted email addresses into your app on the registration screen. You could write this functionality yourself, but validating email addresses is [surprisingly tricky](http://stackoverflow.com/questions/46155/validate-email-address-in-javascript), and it's a lot easier to use one of many npm modules that already provide this validation. For Groceries let's see how to add this [email-validator module](https://www.npmjs.com/package/email-validator) to test for valid addresses.
+You may recall from earlier chapters that the hint color on your sign up screen could use a little more contrast. Notice the unappealing black on brown color of the text in the images below (if you can see the text at all).
+
+![Bad contrast on Android](../img/cli-getting-started/angular/chapter6/android/1.png)
+![Bad contrast on iOS](../img/cli-getting-started/angular/chapter6/ios/1.png)
+
+You can achieve this by using the `placeholder-color` CSS property applied on the TextField. However, both iOS and Android have native ways to accomplish this task, and with NativeScript you have direct access to these native APIs.
+
+Let’s start with iOS. If you run a [generic search for “style iOS text field hint text”](https://www.google.com/#q=style%20ios%20text%20field%20hint%20text), the first result is a [Stack Overflow post](http://stackoverflow.com/questions/1340224/iphone-uitextfield-change-placeholder-text-color) that recommends setting a `UITextField`’s `attributedPlaceholder` property. Let’s look at how to do that.
 
 <h4 class="exercise-start">
-    <b>Exercise</b>: Install the email validator module
+    <b>Exercise</b>: Change hint colors on iOS
 </h4>
 
-Return to your terminal and make sure that you are working in the root directory in your Groceries project folder, a.k.a. here:
+Because there are multiple text fields in Groceries, we’ll write the functionality to change hint colors as a utility that lives in your app’s `utils` folder. Open `app/utils/hint-util.ts` and paste in the following code:
 
-<div class="no-copy-button"></div>
+``` TypeScript
+import { Color } from "color";
+import { TextField } from "ui/text-field";
 
+declare var NSAttributedString: any;
+declare var NSDictionary: any;
+declare var NSForegroundColorAttributeName: any;
+
+export function setHintColor(args: { view: TextField, color: Color }) {
+  let dictionary = new NSDictionary(
+    [args.color.ios],
+    [NSForegroundColorAttributeName]
+  );
+  args.view.ios.attributedPlaceholder = NSAttributedString.alloc().initWithStringAttributes(
+    args.view.hint, dictionary);
+}
 ```
-Groceries <----------------
-    ├── app
-    │   └── ...
-    ├── package.json
-    └── platforms
-        ├── android
-        └── ios
+
+This code creates a function called `setHintColor()` that accepts a `<TextField>` and `Color`. We’ll talk about the contents of this function momentarily; first let’s look at how to use it.
+
+First, open `app/pages/login/login.html` and switch the two `<TextField>`s to use the following code, which adds a local template variable to each element:
+
+``` XML
+<TextField #email hint="Email Address" keyboardType="email" [(ngModel)]="user.email"
+  autocorrect="false" autocapitalizationType="none"></TextField>
+<TextField #password hint="Password" secure="true" [(ngModel)]="user.password"></TextField>
 ```
 
-From the root directory install the email-validator module:
+Next, open up `app/pages/login/login.component.ts` and add the following two properties under the existing `@ViewChild("container")` line:
 
+``` TypeScript
+@ViewChild("email") email: ElementRef;
+@ViewChild("password") password: ElementRef;
 ```
-npm install email-validator --save
+
+After that, add the following two imports to the top of the file:
+
+``` TypeScript
+import { setHintColor } from "../../utils/hint-util";
+import { TextField } from "ui/text-field";
+```
+
+Then, add the following function to the file’s `LoginComponent` class:
+
+``` TypeScript
+setTextFieldColors() {
+  let emailTextField = <TextField>this.email.nativeElement;
+  let passwordTextField = <TextField>this.password.nativeElement;
+
+  let mainTextColor = new Color(this.isLoggingIn ? "black" : "#C4AFB4");
+  emailTextField.color = mainTextColor;
+  passwordTextField.color = mainTextColor;
+
+  let hintColor = new Color(this.isLoggingIn ? "#ACA6A7" : "#C4AFB4");
+  setHintColor({ view: emailTextField, color: hintColor });
+  setHintColor({ view: passwordTextField, color: hintColor });
+}
+```
+
+Finally, add a call to the new `setTextFieldColors()` in your `LoginComponent`’s existing `toggleDisplay()` method—ideally immediately after the existing `this.isLoggingIn = !this.isLoggingIn` line:
+
+``` TypeScript
+this.setTextFieldColors();
 ```
 
 <div class="exercise-end"></div>
 
-The install process does a few things in the background. First, because you added the `--save` flag, npm records this dependency in your app's `package.json`. If you open your `package.json` you should see `"email-validator"` in your app's `"dependencies"` array.
+After your app refreshes with this change, you should now see a far more readable hint color:
 
-``` JavaScript
-"dependencies": {
-  "email-validator": "^1.0.4"
-}
-```
+![Better contrast on iOS](../img/cli-getting-started/angular/chapter6/ios/2.png)
 
-The npm CLI also creates a `node_modules` folder in the root of your app. This folder contains the code for the email-validator module, which is a bit of validation logic in `node_modules/email_validator/index.js`. 
-
-> **TIP**: By saving your app's npm dependencies in your `package.json` file, you can always regenerate your `node_modules` folder by running `npm install`. Because of this, it's a common practice to exclude the `node_modules` folder from source control. The Groceries app uses git for source control, and as such includes `node_modules/` in its `.gitignore`.
-
-Now that you have the module installed let's look at how to use it.
-
-<h4 class="exercise-start">
-    <b>Exercise</b>: Use the email validator module
-</h4>
-
-Open `/app/shared/user/user.ts` and replace the existing contents of the file with the code below:
+Let’s back up to the contents of the `setHintColor()` function so we can discuss what’s going on here.
 
 ``` TypeScript
-var validator = require("email-validator");
+let dictionary = new NSDictionary(
+  [args.color.ios],
+  [NSForegroundColorAttributeName]
+);
+args.view.ios.attributedPlaceholder = NSAttributedString.alloc().initWithStringAttributes(
+  args.view.hint, dictionary);
+```
 
-export class User {
-  email: string;
-  password: string;
-  isValidEmail() {
-    return validator.validate(this.email);
+By convention, NativeScript controls make their iOS and Android native implementations available via `ios` and `android` properties, respectively. In this code that means that `args.color.ios` resolves to a [`UIColor`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/), and `args.view.ios` resolves to a [`UITextField`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/). Once you have a reference to these controls you can set native properties on them directly in TypeScript, which this code does with the `UITextField`’s [`attributedPlaceholder` property](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextField_Class/#//apple_ref/occ/instp/UITextField/attributedPlaceholder).
+
+The power with NativeScript is you can perform these customizations in TypeScript—there’s no need to jump into Xcode and write Objective-C or Swift. And this doesn’t apply just to attributes. Notice the global `NSDictionary`, `NSAttributedString`, and `NSForegroundColorAttributeName` attributes. In NativeScript, all iOS and Android APIs are globally available to use—again, directly in TypeScript code.
+
+Admittedly, this code can seem a bit arcane if you’ve never written an iOS app before, but the key here is that you’re never limited by the APIs that NativeScript provides out of the box. Most of the time you’ll be able to solve problems using the NativeScript module APIs or NativeScript plugins, but if you hit a scenario your app needs that NativeScript doesn’t provide a module for, you can always hit the native APIs directly.
+
+> **TIP**:
+> * NativeScript provides TypeScript declaration files (`.d.ts` files) for all iOS and Android APIs. You can download the files using the links below. One word of warning though: because the declaration files include the entirety of the iOS and Android SDKs, they’re quite large, and can slow TypeScript builds to a crawl because of their sheer size. Nevertheless, the files can be invaluable during development, as they make accessing native APIs a whole lot easier.
+>     * [iOS TypeScript declaration file](https://github.com/NativeScript/NativeScript/tree/master/tns-platform-declarations/ios/objc-i386)
+>     * [Android TypeScript declaration file](https://raw.githubusercontent.com/NativeScript/NativeScript/master/tns-platform-declarations/android/android17.d.ts)
+> * For detailed information on how NativeScript makes native APIs globally available, read about [“How NativeScript Works”](http://developer.telerik.com/featured/nativescript-works/) on our blog, and [“Accessing Native APIs with JavaScript”](http://docs.nativescript.org/core-concepts/accessing-native-apis-with-javascript) on our documentation.
+
+Let’s move onto how to accomplish this same hint color task on Android.
+
+## 5.2: Accessing Android APIs
+
+Much like with iOS, if you’re not a native Android developer, figuring out how to accomplish a task on Android often starts with a web search. If you run a [search for “style Android text field hint text”](https://www.google.com/#q=style%20android%20text%20field%20hint%20text), you’ll end up on a [Stack Overflow answer](http://stackoverflow.com/questions/6438478/sethinttextcolor-in-edittext) that recommends using a [`android.widget.TextView`’s `setTextHintColor()` method](http://developer.android.com/reference/android/widget/TextView.html#attr_android:textColorHint). Let’s alter our code to do that.
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Change hint colors on Android
+</h4>
+
+Open `app/utils/hint-util.ts` and replace the existing contents of the file with the following code:
+
+``` TypeScript
+import { Color } from "color";
+import { TextField } from "ui/text-field";
+
+declare var NSAttributedString: any;
+declare var NSDictionary: any;
+declare var NSForegroundColorAttributeName: any;
+
+export function setHintColor(args: { view: TextField, color: Color }) {
+  if (args.view.android) {
+    args.view.android.setHintTextColor(args.color.android);
+  }
+  if (args.view.ios) {
+    let dictionary = new NSDictionary(
+      [args.color.ios],
+      [NSForegroundColorAttributeName]
+    );
+    args.view.ios.attributedPlaceholder = NSAttributedString.alloc().initWithStringAttributes(
+      args.view.hint, dictionary);
   }
 }
 ```
 
-> **NOTE**: The NativeScript framework's `require()` method is configured to look at the `"main"` value in an npm module's `package.json` file. In the case of this module, the `"main"` value is `"index.js"`. Therefore, when you run `require("email-validator")`, you're actually requiring the file at `node_modules/email_validator/index.js`. You could also type `require("email-validator/index")` to retrieve the same file.
+<div class="exercise-end"></div>
 
-To make use of this validator, open `app/pages/login/login.component.ts` and paste the following code at the beginning of the existing `submit()` function:
+Remember from the previous section that NativeScript makes native objects available via a `android` property. In this case `args.view.android` refers to a [`TextView`](http://developer.android.com/reference/android/widget/TextView.html), and therefore has the `setHintTextColor()` method that the Stack Overflow post said to call.
+
+One other thing to notice are the `if` checks that you added around each of the native calls. Your TypeScript code runs across both platforms, and iOS APIs are not available on Android (and vice versa). Testing for the existence of the native object properties is a common way to fork your code in NativeScript to avoid errors. And with this change in place, your hint colors on Android are now far more legible.
+
+![Better contrast on Android](../img/cli-getting-started/angular/chapter6/android/2.png)
+
+Let’s look at one last way we can improve the look of this app with native code.
+
+## 5.3: Customizing the status bar
+
+At the time of this writing, NativeScript does not expose a way to make translucent status bars—aka status bars that you can see through. There is an [open issue requesting this feature](https://github.com/NativeScript/NativeScript/issues/601), but as with anything else when building with NativeScript, you don’t have to be limited by what NativeScript provides out of the box. Let’s look at how you can use that power to make your status bars look a little nicer.
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Making translucent status bars
+</h4>
+
+Sometimes accomplishing tasks with native code is simple, as it was with setting hint text on Android, and sometimes it takes a little more work. Because setting a status bar’s appearance is slightly more involved, the code has been prepopulated in `app/utils/status-bar-util.ts`. There are a few comments that link to detailed information on the techniques used, if you’re curious about how it all works.
+
+Because this code changes the appearance of the status bar, we’ll want to call this method as soon as possible, so that the status bar doesn’t awkwardly update after the app has already loaded. Therefore to use this new utility, open `app/main.ts` and first add the following import.
 
 ``` TypeScript
-if (!this.user.isValidEmail()) {
-  alert("Enter a valid email address.");
-  return;
+import { setStatusBarColors } from "./utils/status-bar-util";
+```
+
+Next, add a call to the `setStatusBarColors()` function you just imported directly _before_ the call to `platformNativeScriptDynamic()`.
+
+``` TypeScript
+setStatusBarColors();
+```
+
+Finally, there are a few last CSS tweaks you need to make to account for the now translucent status bars. On iOS a translucent status bar continues to take up space, so you need to adjust the content of the page to sit on top of the status bar’s location. To do so, open `app/platform.ios.css` and paste in the following code:
+
+``` CSS
+Page {
+  margin-top: -20;
 }
 ```
 
-<div class="exercise-end"></div>
+Next, open `app/pages/list/list.ios.css` and paste in the following code, which moves the add bar down from underneath the list page’s `<ActionBar>`:
 
-Now, if the user attempts to login or register with an invalid email address, they’ll see an alert that points out the error. However in order to test out this change you’ll need to do one more thing.
-
-<h4 class="exercise-start">
-    <b>Exercise</b>: Rebuild your app
-</h4>
-
-As we mentioned in chapter 1, although the `tns run` command is smart enough to reload your app for most changes you make to your app, certain changes require a full build—most notably, changes to native files in `app/App_Resources`, new modules installed with `npm install`, and new NativeScript plugins.
-
-For NativeScript to recognize this new email-validator npm module, type `Ctrl+C` in your terminal to kill the existing `tns run` watcher if it’s still running, and then use `tns run` to rebuild your application and deploy it to an emulator or device.
-
-```
-tns run ios
+``` CSS
+.add-bar {
+  margin-top: 20;
+}
 ```
 
-Or
-
-```
-tns run android
-```
-
-<div class="exercise-end"></div>
-
-After your app launches again, if you type an invalid email address and attempt to login, you should see an alert that prevents the submission:
-
-![Validation alert on Android](../img/cli-getting-started/angular/chapter5/android/1.png)
-![Validation alert on iOS](../img/cli-getting-started/angular/chapter5/ios/1.png)
-
-In general npm modules greatly expand the number of things you're able to do in your NativeScript apps. Need date and time formatting? Use [moment](https://www.npmjs.com/package/moment). Need utility functions for objects and arrays? Use [lodash](https://www.npmjs.com/package/lodash) or [underscore](https://www.npmjs.com/package/underscore). This code reuse benefit gets even more powerful when you bring NativeScript plugins into the picture.
-
-> **WARNING**: Not all npm modules work in NativeScript apps. Specifically, modules that depend on Node.js or browser APIs will not work, as those APIs do not exist in NativeScript. The NativeScript wiki contains a [list of some of the more popular npm modules that have been verified to work in NativeScript apps](https://github.com/NativeScript/NativeScript/wiki/supported-npm-modules).
-
-## 5.2: Using NativeScript plugins
-
-NativeScript plugins are npm modules that have the added ability to run native code and use iOS and Android frameworks. Because NativeScript plugins are just npm modules, a lot of the techniques you learned in the previous section still apply. The one big difference is in the command you use to install plugins. Let's look at how it works by installing the NativeScript social share plugin.
-
-<h4 class="exercise-start">
-    <b>Exercise</b>: Install the social sharing plugin
-</h4>
-
-Return to your terminal, make sure you're still in the root of your app, and run the following command:
-
-```
-tns plugin add nativescript-social-share
-```
-
-<div class="exercise-end"></div>
-
-The install process does the same thing that the `npm install` command does—including retrieving the module from npm, installing the module in `node_modules`, and saving the module as a dependency in your app's `package.json`—but the `tns plugin add` command additionally configures any native code that the plugin needs to use.
-
-For example the [NativeScript push plugin](https://github.com/NativeScript/push-plugin) uses both iOS and Android SDKs, and the `tns plugin add` command takes care of installing those. The [NativeScript flashlight plugin](https://github.com/tjvantoll/nativescript-flashlight) needs permissions to use the camera on Android, and the `tns plugin add` command takes care of setting that up too.
-
-Now that you've installed the social share plugin, let's look at how to use it.
-
-<h4 class="exercise-start">
-    <b>Exercise</b>: Use the social sharing plugin
-</h4>
-
-Open `app/pages/list/list.component.ts` and add the following line at the top of the file, which imports the social share module you just installed:
-
-``` TypeScript
-import * as SocialShare from "nativescript-social-share";
-```
-
-Next you have to build some UI that lets you share a grocery list. To do so, open `app/pages/list/list.html` and add the following code at the very top of the file:
-
-``` XML
-<ActionBar title="Groceries">
-  <ActionItem text="Share" (tap)="share()" android.systemIcon="ic_menu_share_holo_dark" ios.systemIcon="9" ios.position="right"></ActionItem>
-</ActionBar>
-```
-
-This code defines an [ActionBar](http://docs.nativescript.org/api-reference/classes/_ui_action_bar_.actionbar.html), which is a UI component that appears on the top of the screen, and which can optionally include menu items, or [`<ActionItem>`](http://docs.nativescript.org/api-reference/classes/_ui_action_bar_.actionitem.html) components.
-
-> **NOTE**: On iOS devices, `<ActionItem>`s are placed from left to right in sequence; you can override that (as the code above does) by providing an `ios.position` attribute.
-
-Next, to add a bit of styling to this new `<ActionBar>`, add the following CSS to the top of your `app/app.css` file:
+On Android a translucent status bar does not take up space, so you need to add a bit of padding to the top of the list page so the status bar and `<ActionBar>` don’t sit on top of one another. To do so, open `app/pages/list/list.android.css` and paste in the following code:
 
 ``` CSS
 ActionBar {
-  background-color: black;
-  color: white;
-}
-```
-
-Finally, now that you’ve installed and imported the plugin, and setup a UI to use it, your last step is implementing the `<ActionItem>`'s `tap` handler. Open `app/pages/list/list.component.ts` again and add the following function to the `ListComponent` class:
-
-
-``` TypeScript
-share() {
-  let listString = this.groceryList
-    .map(grocery => grocery.name)
-    .join(", ")
-    .trim();
-  SocialShare.shareText(listString);
+  padding-top: 24;
 }
 ```
 
 <div class="exercise-end"></div>
 
-This code takes the grocery data from the grocery list array, converts the data into a comma-separated string, and passes that string to the social share plugin’s `shareText()` method.
+And with that, your status bar is now translucent and properly spaced on iOS and Android:
 
-> **WARNING**: Because this section had you install a NativeScript plugin, you’ll have to rebuild your app one last time in order to test your changes. If you don’t remember how refer back to [the previous section](#51-using-npm-modules) for instructions.
+![Updated status bar on Android](../img/cli-getting-started/angular/chapter6/android/3.png)
+![Updated status bar on iOS](../img/cli-getting-started/angular/chapter6/ios/3.png)
 
-After you run the app, you'll see a new button at the top of the screen. When you tap it, the native iOS or Android sharing widget will show to let you post your groceries to your social networks, or send them via email, message, or any other method you prefer.
+And... that's it! You've created a functional, cross-platform, backend-driven app to manage your grocery list. In the process you've created a unique UI for Android and iOS, leveraged NativeScript plugins and npm modules, learned how to log in and register, managed backend services, created a list, and more. 
 
-![Social sharing on Android](../img/cli-getting-started/angular/chapter5/android/2.gif)
-![Social sharing on iOS](../img/cli-getting-started/angular/chapter5/ios/2.gif)
+Congratulations! Feel free to [share your accomplishment on Twitter](https://twitter.com/intent/tweet?text=I%20just%20built%20an%20iOS%20and%20Android%20app%20using%20@NativeScript%20%F0%9F%8E%89.%20You%20can%20too!%20http://docs.nativescript.org/angular/tutorial/ng-chapter-0%20%23opensource) or [Facebook](https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdocs.nativescript.org%2Fangular%2Ftutorial%2Fng-chapter-0&p%5B) to impress your friends 😀.
 
-Pretty cool, huh? The ability to use npm modules greatly expands the number of things you're able to do in a NativeScript app. Need to compose emails in your app? Try out the [NativeScript email plugin](https://www.npmjs.com/package/nativescript-email). Need to use the clipboard in your app? Try out the [NativeScript clipboard plugin](https://www.npmjs.com/package/nativescript-clipboard).
+<h4 class="exercise-start">
+    <b>Challenge</b>: Add the ability to delete groceries
+</h4>
 
-If you're looking for NativeScript plugins start by searching the [NativeScript Marketplace](https://market.nativescript.org). If you don't find the plugin you need, you can [request the plugin by posting in our forums](https://discourse.nativescript.org/c/plugins), or you can take a stab at [creating the plugin yourself](https://docs.nativescript.org/plugins).
+As cool as Groceries is, it’s currently missing one crucial feature for a grocery management app: the ability to delete groceries from the list.
 
-Between NativeScript modules, npm modules, and NativeScript plugins, the NativeScript framework provides a lot of functionality you can use to build your next app. However, we've yet to talk about NativeScript's most powerful feature: the ability to directly access iOS and Android APIs in TypeScript. Let's look at how it works.
+The Groceries backend already supports deleting, but it’s up to you to implement the feature in the app. You do get two hints though. First, below is a function you can use in the `GroceryListService` for performing the necessary HTTP call to delete a grocery:
+
+``` TypeScript
+delete(id: string) {
+  return this.http.delete(
+    this.baseUrl + "/" + id,
+    { headers: this.getCommonHeaders() }
+  )
+  .map(res => res.json())
+  .catch(this.handleErrors);
+}
+```
+
+Second, here’s an image you can use in your template for users to tap to delete items. One note though: the image is a white “X”, so you’ll have to find a way to create a non-white background in order to see the image.
+
+``` XML
+<Image src="res://delete"></Image>
+```
+
+If you get stuck, the Groceries app’s [“angular-end” branch](https://github.com/NativeScript/sample-Groceries/tree/angular-end) has a solution you can check.
+
+<div class="exercise-end"></div>
 
 <div class="next-chapter-link-container">
-  <a href="ng-chapter-6">Continue to Chapter 6—Accessing Native APIs</a>
+  <a href="../ng-next-steps">Continue to Next Steps</a>
 </div>
