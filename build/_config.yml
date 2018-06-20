@@ -116,7 +116,7 @@ navigation:
         title: "HARDWARE АCCESS"
     plugins:
         position: 70
-        title: "PLUGINS"
+        title: "PLUGINS DEVELOPMENT"
     releases:
         position: 80
         title: "RELEASES"
