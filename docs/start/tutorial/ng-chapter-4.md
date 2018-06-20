@@ -1,685 +1,210 @@
 ---
-title: Chapter 4—NativeScript Modules
-position: 5
+title: Chapter 4—Plugins and npm Modules
+position: 6
 guide: true
 environment: angular
 ---
 
-# Chapter 4—NativeScript Modules
+# Chapter 4—Plugins and npm Modules
 
-In this chapter you'll learn about NativeScript modules, which are the TypeScript modules in your app's `node_modules/tns-core-modules` folder. Whether you've realized it or not, you've already used several NativeScript modules, as all of the NativeScript UI elements are actually implemented with TypeScript code.
+As you build more complex apps, you'll likely run into functionality that is not implemented in the NativeScript modules. But no worries, as NativeScript lets you leverage [npm](https://www.npmjs.com/) (node package manager) to import npm modules into your apps. Alternately, you can install NativeScript plugins, which are simply npm modules that can access native code and use Android and iOS SDKs, if required. 
+
+In this chapter, you'll install and use an external email validator module to verify the format of email addresses as they are entered on the registration screen. Then, you'll add a NativeScript plugin, [NativeScript social share](https://www.npmjs.com/package/nativescript-social-share), to let users share their grocery lists using their device's native sharing widget.
 
 ## Table of contents
 
-- [4.1: UI elements](#41-ui-elements)
-- [4.2: Animations](#42-animations)
-- [4.3: ListView](#43-listview)
-- [4.4: GridLayout](#44-gridlayout)
-- [4.5: ActivityIndicator](#45-activityindicator)
+- [4.1: Using npm modules](#41-using-npm-modules)
+- [4.2: Using NativeScript plugins](#42-using-nativescript-plugins)
 
-If you dig into `node_modules/tns-core-modules` you can get an idea of how these modules work. Start by finding the `node_modules/tns-core-modules/color` folder, which includes the implementation of the color module. It includes:
+## 4.1: Using npm modules
 
-- a `package.json` file that sets the name of the module;
-- a file containing the module's Android implementation (`color.android.js`);
-- a file containing the module's iOS implementation (`color.ios.js`);
-- a file containing code shared by the Android and iOS implementations (`color-common.js`)
-- files containing TypeScript definitions for the Color module, to help with code completion (`color.d.ts` and `known-colors.d.ts`)
-
-> **NOTE**:
-> * You can refer to the [Node.js documentation on folders as modules](https://nodejs.org/api/modules.html#modules_folders_as_modules) for more detailed information on how NativeScript organizes its modules.
-> * The “tns-core-modules” package only includes compiled JavaScript code to cut down on file size. You can find the TypeScript code for each of these modules in the [main NativeScript GitHub repo](https://github.com/NativeScript/nativescript), for instance here’s the [color module’s source code](https://github.com/NativeScript/nativescript/tree/master/tns-core-modules/color).
-
-The `*.ios.*` and `*.android.*` naming convention should look familiar, as it’s the exact same convention we used to include Android- and iOS-specific styling in [chapter 2](ng-chapter-2). NativeScript uses this same convention to implement its modules on iOS and Android. Now that you know where these modules are, let's examine what else they can do for your app, starting with a closer look at what you can do with NativeScript’s UI elements.
-
-## 4.1: UI elements
-
-So far, you’ve only used NativeScript UI elements by including them in an Angular component’s `template`, but you can also programmaticly create and access UI elements, and each UI element has a set of properties and methods you can use to customize your app. To see how this works lets access the `<Page>` UI element and make some changes to it.
+It would be nice to be able to make sure people are entering well-formatted email addresses into your app on the registration screen. You could write this functionality yourself, but validating email addresses is [surprisingly tricky](http://stackoverflow.com/questions/46155/validate-email-address-in-javascript), and it's a lot easier to use one of many npm modules that already provide this validation. For Groceries let's see how to add this [email-validator module](https://www.npmjs.com/package/email-validator) to test for valid addresses.
 
 <h4 class="exercise-start">
-    <b>Exercise</b>: Customize the Page
+    <b>Exercise</b>: Install the email validator module
 </h4>
 
-Open `app/pages/login/login.component.ts`, and add the following import to the top of the file:
+Return to your terminal and make sure that you are working in the root directory in your Groceries project folder, a.k.a. here:
 
-``` TypeScript
-import { Page } from "ui/page";
+<div class="no-copy-button"></div>
+
+```
+Groceries <----------------
+    ├── app
+    │   └── ...
+    ├── package.json
+    └── platforms
+        ├── android
+        └── ios
 ```
 
-> **NOTE**: All of the imports you’ve seen to this point work because the TypeScript compiler resolves them against your project’s `node_modules` folder. For instance, `import { Component } from "@angular/core"` works because a `node_modules/@angular/core/core.d.ts` file exists. The `Page` class import above is a NativeScript module import, and it works because your project’s `tsconfig.json` file includes a path to TypeScript declarations (`.d.ts` files) that live in `node_modules/tns-core-modules`, which allow you to import modules from `node_modules/tns-core-modules` without any prefixes.
+From the root directory install the email-validator module:
 
-Next, alter the same file’s existing `"@angular/core"` import to include the `OnInit` interface:
-
-``` TypeScript
-import { Component, OnInit } from "@angular/core";
 ```
-
-`OnInit` is a [TypeScript class interface](http://www.typescriptlang.org/docs/handbook/interfaces.html#class-types). To see how it works, make the following change to the declaration of your `LoginComponent` class:
-
-``` TypeScript
-export class LoginComponent implements OnInit {
+npm install email-validator --save
 ```
-
-If you’re using an editor that supports TypeScript, you should see an error that says something like *“Class ‘LoginComponent’ incorrectly implements interface ‘OnInit’”*. When you implement a TypeScript class interface, you’re telling the TypeScript compiler that you must implement all methods that the interface requires. In the case of `OnInit`, Angular requires you to implement a single `ngOnInit()` method. To implement it, add the following code within the `LoginComponent` class:
-
-``` TypeScript
-ngOnInit() {
-  this.page.actionBarHidden = true;
-  this.page.backgroundImage = "res://bg_login";
-}
-```
-
-`ngOnInit` is one of several [component lifecycle hooks](https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html) that Angular provides. As its name implies, `ngOnInit` gets invoked when Angular initializes this component.
-
-We’ll discuss what the code within `ngOnInit()` does momentarily, but finally, to make these changes compile and run, change the `LoginComponent`’s existing `constructor()` declaration to use the code below.
-
-``` TypeScript
-constructor(private router: Router, private userService: UserService, private page: Page) {
-```
-
-> **NOTE**: Because the `Page` class is so commonly used in NativeScript apps, NativeScript provides this syntax as a shorthand for getting access to a component’s page.
 
 <div class="exercise-end"></div>
 
-Now that you have this code in place, let’s discuss what happens in these two lines:
+The install process does a few things in the background. First, because you added the `--save` flag, npm records this dependency in your app's `package.json`. If you open your `package.json` you should see `"email-validator"` in your app's `"dependencies"` array.
 
-``` TypeScript
-this.page.actionBarHidden = true;
-this.page.backgroundImage = "res://bg_login";
+``` JavaScript
+"dependencies": {
+  "email-validator": "^1.0.4"
+}
 ```
 
-This code uses an instance of the [`Page` class](https://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) from the [NativeScript page module](https://docs.nativescript.org/api-reference/modules/_ui_page_.html), and sets two properties on it—`actionBarHidden` and `backgroundImage`. Although you can peruse the [NativeScript API documentation](http://docs.nativescript.org/api-reference/globals.html) for a full list of these properties and what they do, if you’re using a TypeScript-friendly IDE, you can get a full list of these properties at any point.
+The npm CLI also creates a `node_modules` folder in the root of your app. This folder contains the code for the email-validator module, which is a bit of validation logic in `node_modules/email_validator/index.js`. 
 
-<img alt="TypeScript autocomplete" class="plain" src="../img/cli-getting-started/angular/chapter4/typescript.png" style="border: 1px solid black;">
+> **TIP**: By saving your app's npm dependencies in your `package.json` file, you can always regenerate your `node_modules` folder by running `npm install`. Because of this, it's a common practice to exclude the `node_modules` folder from source control. The Groceries app uses git for source control, and as such includes `node_modules/` in its `.gitignore`.
 
-If you run your app you should see that the action bar—the bar beneath the status bar that had previously displayed on Android—is now hidden, and the page uses a gorgeous new background image:
-
-![Background image on Android](../img/cli-getting-started/angular/chapter4/android/1.png)
-![Background image on iOS](../img/cli-getting-started/angular/chapter4/ios/1.png)
-
-Let’s look at a few other NativeScript modules you can use to help improve the look of this app.
-
-## 4.2: Animations
-
-The ability to run robust and performant animations is one of the biggest reasons people choose to build native mobile apps, and NativeScript makes running these animations simple. The NativeScript animation modules provides a [series of JavaScript APIs](https://docs.nativescript.org/angular/ui/animation) that let you perform a wide variety of animations to elements on the screen, including the following:
-
-- [Opacity](https://docs.nativescript.org/angular/ui/animation-examples#opacity)
-- [Background Color](https://docs.nativescript.org/angular/ui/animation-examples#background-color)
-- [Translations](https://docs.nativescript.org/angular/ui/animation-examples#translate)
-- [Scaling](https://docs.nativescript.org/angular/ui/animation-examples#scale)
-- [Rotating](https://docs.nativescript.org/angular/ui/animation-examples#rotate)
-
-Let’s add a simple animation so you can see how they work.
+Now that you have the module installed let's look at how to use it.
 
 <h4 class="exercise-start">
-    <b>Exercise</b>: Add a color animation
+    <b>Exercise</b>: Use the email validator module
 </h4>
 
-Open `app/pages/login/login.html` and add `#container` to the existing `<StackLayout>`:
-
-``` XML
-<StackLayout #container>
-```
-
-The “#” syntax is Angular’s way of creating [local template variables](https://angular.io/docs/ts/latest/guide/template-syntax.html#!#local-vars), and you’ll use this local variable to get a reference to the `<StackLayout>` element in TypeScript code momentarily.
-
-Next, open `app/pages/login/login.component.ts` and add the following two lines at the top, which import the [`Color` class](https://docs.nativescript.org/api-reference/classes/_color_.color.html) from the NativeScript color module, and the [`View` class](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html) from the NativeScript view module.
+Open `/app/shared/user/user.ts` and replace the existing contents of the file with the code below:
 
 ``` TypeScript
-import { Color } from "color";
-import { View } from "ui/core/view";
+var validator = require("email-validator");
+
+export class User {
+  email: string;
+  password: string;
+  isValidEmail() {
+    return validator.validate(this.email);
+  }
+}
 ```
 
-After that, change the existing “@angular/core” import to include a few more classes:
+> **NOTE**: The NativeScript framework's `require()` method is configured to look at the `"main"` value in an npm module's `package.json` file. In the case of this module, the `"main"` value is `"index.js"`. Therefore, when you run `require("email-validator")`, you're actually requiring the file at `node_modules/email_validator/index.js`. You could also type `require("email-validator/index")` to retrieve the same file.
+
+To make use of this validator, open `app/pages/login/login.component.ts` and paste the following code at the beginning of the existing `submit()` function:
 
 ``` TypeScript
-import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-```
-
-With these new imports in place, next, add the following property to the `LoginComponent` class. Place it right under the `isLoggingIn = true;` line:
-
-``` TypeScript
-@ViewChild("container") container: ElementRef;
-```
-
-This code uses Angular’s [`@ViewChild` decorator](https://angular.io/docs/ts/latest/api/core/index/ViewChild-decorator.html) to create a new property that points at the `<StackLayout>` element. To use that property, change the `LoginComponent`’s `toggleDisplay()` function in the same file to use this code:
-
-``` TypeScript
-toggleDisplay() {
-  this.isLoggingIn = !this.isLoggingIn;
-  let container = <View>this.container.nativeElement;
-  container.animate({
-    backgroundColor: this.isLoggingIn ? new Color("white") : new Color("#301217"),
-    duration: 200
-  });
+if (!this.user.isValidEmail()) {
+  alert("Enter a valid email address.");
+  return;
 }
 ```
 
 <div class="exercise-end"></div>
 
-All NativeScript UI elements inherit from a base [`View` class](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view.html), which contains a number of useful methods—including the `animate()` method you used in the previous example.
-
-Once you have a reference to a UI element, you can call any of the methods that element inherits from `View`. In this case, you call the `<StackLayout #container>` element’s `animate()` method to change its background color over a duration of `200`, or 2/10 of a second. The effect is a subtle color change that helps users differentiate between the “Sign In” and “Sign Up” functionality that your form provides.
-
-![Color animation on Android](../img/cli-getting-started/angular/chapter4/android/2.gif)
-![Color animation on iOS](../img/cli-getting-started/angular/chapter4/ios/2.gif)
-
-> **NOTE**: You may notice that the text color is off with the brown background. Don’t worry about that for now; we’ll address those colors in chapter 6.
-
-The animation module is a lot of fun to play with, and it’s easy to use too. All you need to do is get a reference to an element using `@ViewChild`, and then call that element’s `animate()` method. You may want to take a few minutes to look through our [animation samples](https://docs.nativescript.org/ui/animation#examples) and try a few of these animations for yourself in Groceries.
-
-For now, let’s move on to another commonly used NativeScript UI element: the `<ListView>`.
-
-## 4.3: ListView
-
-The ListView element lets you show a list of things on the screen, which is exactly what you need for showing a list of groceries. Before tying the grocery list to a backend API, let's start by seeing how to show a hardcoded list of items on the screen.
+Now, if the user attempts to login or register with an invalid email address, they’ll see an alert that points out the error. However in order to test out this change you’ll need to do one more thing.
 
 <h4 class="exercise-start">
-    <b>Exercise</b>: Build a list view
+    <b>Exercise</b>: Rebuild your app
 </h4>
 
-Open `app/pages/list/list.html` and replace its contents with the following code:
+As we mentioned in chapter 1, although the `tns run` command is smart enough to reload your app for most changes you make to your app, certain changes require a full build—most notably, changes to native files in `app/App_Resources`, new modules installed with `npm install`, and new NativeScript plugins.
 
-``` XML
-<GridLayout>
-  <ListView [items]="groceryList" class="small-spacing">
-    <ng-template let-item="item">
-      <Label [text]="item.name" class="medium-spacing"></Label>
-    </ng-template>
-  </ListView>
-</GridLayout>
+For NativeScript to recognize this new email-validator npm module, type `Ctrl+C` in your terminal to kill the existing `tns run` watcher if it’s still running, and then use `tns run` to rebuild your application and deploy it to an emulator or device.
+
+```
+tns run ios
 ```
 
-We’ll talk about the new syntax in a moment, but first let’s define the class names used in the previous example. Open `app/app.css` and paste the following code at the bottom of the file, which defines a few utility class names you can use throughout your app:
+Or
+
+```
+tns run android
+```
+
+<div class="exercise-end"></div>
+
+After your app launches again, if you type an invalid email address and attempt to login, you should see an alert that prevents the submission:
+
+![Validation alert on Android](../img/cli-getting-started/angular/chapter5/android/1.png)
+![Validation alert on iOS](../img/cli-getting-started/angular/chapter5/ios/1.png)
+
+In general npm modules greatly expand the number of things you're able to do in your NativeScript apps. Need date and time formatting? Use [moment](https://www.npmjs.com/package/moment). Need utility functions for objects and arrays? Use [lodash](https://www.npmjs.com/package/lodash) or [underscore](https://www.npmjs.com/package/underscore). This code reuse benefit gets even more powerful when you bring NativeScript plugins into the picture.
+
+> **WARNING**: Not all npm modules work in NativeScript apps. Specifically, modules that depend on Node.js or browser APIs will not work, as those APIs do not exist in NativeScript. The NativeScript wiki contains a [list of some of the more popular npm modules that have been verified to work in NativeScript apps](https://github.com/NativeScript/NativeScript/wiki/supported-npm-modules).
+
+## 4.2: Using NativeScript plugins
+
+NativeScript plugins are npm modules that have the added ability to run native code and use iOS and Android frameworks. Because NativeScript plugins are just npm modules, a lot of the techniques you learned in the previous section still apply. The one big difference is in the command you use to install plugins. Let's look at how it works by installing the NativeScript social share plugin.
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Install the social sharing plugin
+</h4>
+
+Return to your terminal, make sure you're still in the root of your app, and run the following command:
+
+```
+tns plugin add nativescript-social-share
+```
+
+<div class="exercise-end"></div>
+
+The install process does the same thing that the `npm install` command does—including retrieving the module from npm, installing the module in `node_modules`, and saving the module as a dependency in your app's `package.json`—but the `tns plugin add` command additionally configures any native code that the plugin needs to use.
+
+For example the [NativeScript push plugin](https://github.com/NativeScript/push-plugin) uses both iOS and Android SDKs, and the `tns plugin add` command takes care of installing those. The [NativeScript flashlight plugin](https://github.com/tjvantoll/nativescript-flashlight) needs permissions to use the camera on Android, and the `tns plugin add` command takes care of setting that up too.
+
+Now that you've installed the social share plugin, let's look at how to use it.
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Use the social sharing plugin
+</h4>
+
+Open `app/pages/list/list.component.ts` and add the following line at the top of the file, which imports the social share module you just installed:
+
+``` TypeScript
+import * as SocialShare from "nativescript-social-share";
+```
+
+Next you have to build some UI that lets you share a grocery list. To do so, open `app/pages/list/list.html` and add the following code at the very top of the file:
+
+``` XML
+<ActionBar title="Groceries">
+  <ActionItem text="Share" (tap)="share()" android.systemIcon="ic_menu_share_holo_dark" ios.systemIcon="9" ios.position="right"></ActionItem>
+</ActionBar>
+```
+
+This code defines an [ActionBar](http://docs.nativescript.org/api-reference/classes/_ui_action_bar_.actionbar.html), which is a UI component that appears on the top of the screen, and which can optionally include menu items, or [`<ActionItem>`](http://docs.nativescript.org/api-reference/classes/_ui_action_bar_.actionitem.html) components.
+
+> **NOTE**: On iOS devices, `<ActionItem>`s are placed from left to right in sequence; you can override that (as the code above does) by providing an `ios.position` attribute.
+
+Next, to add a bit of styling to this new `<ActionBar>`, add the following CSS to the top of your `app/app.css` file:
 
 ``` CSS
-.small-spacing {
-  margin: 5;
-}
-.medium-spacing {
-  margin: 10;
+ActionBar {
+  background-color: black;
+  color: white;
 }
 ```
 
-Next, open `app/pages/list/list.component.ts` and replace its contents with the code below:
+Finally, now that you’ve installed and imported the plugin, and setup a UI to use it, your last step is implementing the `<ActionItem>`'s `tap` handler. Open `app/pages/list/list.component.ts` again and add the following function to the `ListComponent` class:
+
 
 ``` TypeScript
-import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-
-@Component({
-  selector: "list",
-  moduleId: module.id,
-  templateUrl: "./list.html",
-  styleUrls: ["./list-common.css", "./list.css"]
-})
-export class ListComponent implements OnInit {
-  groceryList: Array<Object> = [];
-
-  ngOnInit() {
-    this.groceryList.push({ name: "Apples" });
-    this.groceryList.push({ name: "Bananas" });
-    this.groceryList.push({ name: "Oranges" });
-  }
+share() {
+  let listString = this.groceryList
+    .map(grocery => grocery.name)
+    .join(", ")
+    .trim();
+  SocialShare.shareText(listString);
 }
 ```
 
 <div class="exercise-end"></div>
 
-Your `ListComponent` class now has a `groceryList` property that you fill with three objects in an `ngOnInit` handler. If you run your app and login, you should see the same list of groceries on the screen:
+This code takes the grocery data from the grocery list array, converts the data into a comma-separated string, and passes that string to the social share plugin’s `shareText()` method.
 
-![List view on Android](../img/cli-getting-started/angular/chapter4/android/3.png)
-![List view on iOS](../img/cli-getting-started/angular/chapter4/ios/3.png)
+> **WARNING**: Because this section had you install a NativeScript plugin, you’ll have to rebuild your app one last time in order to test your changes. If you don’t remember how refer back to [the previous section](#41-using-npm-modules) for instructions.
 
-How does this work? Let’s return to this chunk of code:
+After you run the app, you'll see a new button at the top of the screen. When you tap it, the native iOS or Android sharing widget will show to let you post your groceries to your social networks, or send them via email, message, or any other method you prefer.
 
-``` XML
-<ListView [items]="groceryList" class="small-spacing">
-  <ng-template let-item="item">
-    <Label [text]="item.name" class="medium-spacing"></Label>
-  </ng-template>
-</ListView>
-```
+![Social sharing on Android](../img/cli-getting-started/angular/chapter5/android/2.gif)
+![Social sharing on iOS](../img/cli-getting-started/angular/chapter5/ios/2.gif)
 
-The [`<ListView>` UI element](https://docs.nativescript.org/api-reference/classes/_ui_list_view_.listview.html) requires an `items` property that points to an array of data—in this case, the `groceryList` array you added to your `ListComponent` class. The list view element requires a child `<ng-template>` element that specifies how to render each item in the `items` array.
+Pretty cool, huh? The ability to use npm modules greatly expands the number of things you're able to do in a NativeScript app. Need to compose emails in your app? Try out the [NativeScript email plugin](https://www.npmjs.com/package/nativescript-email). Need to use the clipboard in your app? Try out the [NativeScript clipboard plugin](https://www.npmjs.com/package/nativescript-clipboard).
 
-The `let-*` syntax is Angular’s way of creating template variables within loops. You can think of the syntax working like TypeScript’s `let` keyword. This gives you the ability to refer to each item in the array as `item` within the template. For this template, you render each item in the array with a single `<Label>` UI element, and because of the `[text]="item.name"` binding, those labels contain the text from the `name` property of each of the items in `groceryList` TypeScript array.
+If you're looking for NativeScript plugins start by searching the [NativeScript Marketplace](https://market.nativescript.org). If you don't find the plugin you need, you can [request the plugin by posting in our forums](https://discourse.nativescript.org/c/plugins), or you can take a stab at [creating the plugin yourself](https://docs.nativescript.org/plugins).
 
-Now that you have a hardcoded list displaying, let’s see how to swap that out with live data.
-
-<h4 class="exercise-start">
-    <b>Exercise</b>: Populate the list view
-</h4>
-
-Open `app/shared/grocery/grocery.ts` and paste in the following code:
-
-``` TypeScript
-export class Grocery {
-  constructor(public id: string, public name: string) {}
-}
-```
-
-This creates a simple `Grocery` model object that you can use throughout your app. Next, let’s create a simple service that reads grocery lists from our backend.  Open `app/shared/grocery/grocery-list.service.ts` and paste in the following code:
-
-``` TypeScript
-import { Injectable } from "@angular/core";
-import { Http, Headers, Response, URLSearchParams } from "@angular/http";
-import { Observable } from "rxjs/Observable";
-import "rxjs/add/operator/catch";
-import "rxjs/add/operator/map";
-
-import { Config } from "../config";
-import { Grocery } from "./grocery";
-
-@Injectable()
-export class GroceryListService {
-  baseUrl = Config.apiUrl + "appdata/" + Config.appKey + "/Groceries";
-
-  constructor(private http: Http) {}
-
-  load() {
-    // Kinvey-specific syntax to sort the groceries by last modified time. Don’t worry about the details here.
-    let params = new URLSearchParams();
-    params.append("sort", "{\"_kmd.lmt\": 1}");
-
-    return this.http.get(this.baseUrl, {
-      headers: this.getCommonHeaders(),
-      params: params
-    })
-    .map(res => res.json())
-    .map(data => {
-      let groceryList = [];
-      data.forEach((grocery) => {
-        groceryList.push(new Grocery(grocery._id, grocery.Name));
-      });
-      return groceryList;
-    })
-    .catch(this.handleErrors);
-  }
-
-  getCommonHeaders() {
-    let headers = new Headers();
-    headers.append("Content-Type", "application/json");
-    headers.append("Authorization", "Kinvey " + Config.token);
-    return headers;
-  }
-
-  handleErrors(error: Response) {
-    console.log(JSON.stringify(error.json()));
-    return Observable.throw(error);
-  }
-}
-```
-
-The code here is very similar to the code you used in the `UserService` earlier in this guide. You use the `Http` service’s `get()` method to load JSON data, and RxJS’s `map()` function to format the data into an array of `Grocery` objects.
-
-To use this service, open `app/pages/list/list.component.ts` and add the following two lines to the top of the file:
-
-``` TypeScript
-import { Grocery } from "../../shared/grocery/grocery";
-import { GroceryListService } from "../../shared/grocery/grocery-list.service";
-```
-
-Next, change the existing `groceryList` declaration to use the newly imported `Grocery` class instead of a generic `Object`:
-
-``` TypeScript
-groceryList: Array<Grocery> = [];
-```
-
-Then, add the following `constructor` function within the `ListComponent` class:
-
-``` TypeScript
-constructor(private groceryListService: GroceryListService) {}
-```
-
-Next, because you’re injecting a service into your constructor you must also include it as a provider within your component decorator. To do so, replace the existing `@Component` decorator with the code below:
-
-``` TypeScript
-@Component({
-  selector: "list",
-  moduleId: module.id,
-  templateUrl: "./list.html",
-  styleUrls: ["./list-common.css", "./list.css"],
-  providers: [GroceryListService]
-})
-```
-
-Finally, to kick off the call to `load()` when this page initializes, replace the existing `ngOnInit()` function with the code below:
-
-``` TypeScript
-ngOnInit() {
-  this.groceryListService.load()
-    .subscribe(loadedGroceries => {
-      loadedGroceries.forEach((groceryObject) => {
-        this.groceryList.unshift(groceryObject);
-      });
-    });
-}
-```
-
-The full version of your `app/pages/list/list.component.ts` file should now look like this:
-
-``` TypeScript
-import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-
-import { Grocery } from "../../shared/grocery/grocery";
-import { GroceryListService } from "../../shared/grocery/grocery-list.service";
-
-@Component({
-  selector: "list",
-  moduleId: module.id,
-  templateUrl: "./list.html",
-  styleUrls: ["./list-common.css", "./list.css"],
-  providers: [GroceryListService]
-})
-export class ListComponent implements OnInit {
-  groceryList: Array<Grocery> = [];
-
-  constructor(private groceryListService: GroceryListService) {}
-
-  ngOnInit() {
-    this.groceryListService.load()
-      .subscribe(loadedGroceries => {
-        loadedGroceries.forEach((groceryObject) => {
-          this.groceryList.unshift(groceryObject);
-        });
-      });
-  }
-}
-```
-
-<div class="exercise-end"></div>
-
-If you load the list page with the account you created earlier you’ll see a blank page, as your account is newly created, and therefore your grocery list is empty.
-
-To really test out these changes you’ll need to allow users to add groceries to their lists, so let’s look at how to do that next.
-
-## 4.4: GridLayout
-
-In order to allow users to add to their grocery lists, you need to add a few additional UI controls to the list page. While you could use a simple `<StackLayout>` to stack up the controls you need, let’s look at how to create a slightly more complex layout using the `<GridLayout>` element.
-
-<h4 class="exercise-start">
-    <b>Exercise</b>: Add a GridLayout
-</h4>
-
-Open `app/pages/list/list.html` and replace the contents of the file with the following code:
-
-``` XML
-<GridLayout rows="auto, *">
-
-  <GridLayout row="0" columns="*, auto" class="add-bar">
-    <TextField #groceryTextField hint="Enter a grocery item" col="0"></TextField>
-    <Image src="res://add" col="1"></Image>
-  </GridLayout>
-
-  <ListView [items]="groceryList" row="1" class="small-spacing">
-    <ng-template let-item="item">
-      <Label [text]="item.name" class="medium-spacing"></Label>
-    </ng-template>
-  </ListView>
-
-</GridLayout>
-```
-
-<div class="exercise-end"></div>
-
-When your app runs with these changes your UI should now look like this:
-
-![Updated view on Android](../img/cli-getting-started/angular/chapter4/android/5.png)
-![Updated view on  iOS](../img/cli-getting-started/angular/chapter4/ios/5.png)
-
-To break down how this layout works, let’s start with the outer structure of the markup:
-
-``` XML
-<GridLayout rows="auto, *">
-  <GridLayout row="0" class="add-bar">...</GridLayout>
-  <ListView row="1">...</ListView>
-</GridLayout>
-```
-
-The outer grid layout’s `rows` attribute divides the screen into two rows, the first auto-sized according to its childrens' height, and the other sized to take up *, or the remaining height of the screen. You place UI elements into these rows using the zero-based `row` attribute. The inner grid layout is in the top row because of its `row="0"` attribute, and the list view is in the bottom row because of its `row="1"` attribute.
-
-Grid layouts can also divide the screen into columns, which is what the inner grid layout does:
-
-``` XML
-<GridLayout columns="*, auto" class="add-bar">
-  <TextField col="0"></TextField>
-  <Image col="1"></Image>
-</GridLayout>
-```
-
-Here the `columns` attribute divides the top of the screen into two columns. The `col="0"` attribute puts the text field in the first column, and the `col="1"` attribute puts the “+” image in the last column. Grid layouts are the most commonly used NativeScript layout, so you may wish to take a minute to play around with the `columns` and `rows` attributes to figure out how they work.
-
-> **TIP**:
-> * You can nest any of the [NativeScript layouts](/ui/layout-containers.html)—not just grid layouts.
-> * You can pass numbers, percentages, and a variety of other values to create more complex grid layouts. Refer to the [grid layout docs](/ui/layout-containers.html#gridlayout) for more information.
-
-Now that we have the UI ready, let’s make the add button work.
-
-<h4 class="exercise-start">
-    <b>Exercise</b>: Allow users to add groceries
-</h4>
-
-Open `app/pages/list/list.html` and give the existing `<TextField>` a new `[(ngModel)]` attribute so that it looks like this:
-
-``` XML
-<TextField #groceryTextField [(ngModel)]="grocery" hint="Enter a grocery item" (returnPress)="add()" col="0"></TextField>
-```
-
-Note our new use of the `(returnPress)` binding. This will fire the `add()` method when the user hits return.
-
-Next, add a new `tap` event binding to the image, so that the full `<Image>` looks like this:
-
-``` XML
-<Image src="res://add" (tap)="add()" col="1"></Image>
-```
-
-With these attributes in place, your next steps are to define a new `grocery` property and `add()` method in your `ListComponent` class. To do that, open `app/pages/list/list.component.ts` and add the following two properties to the `ListComponent` class (right below the existing `groceryList` property):
-
-``` TypeScript
-grocery = "";
-@ViewChild("groceryTextField") groceryTextField: ElementRef;
-```
-
-Next, add the following import to the top of the `list.component.ts` file:
-
-``` TypeScript
-import { TextField } from "ui/text-field";
-```
-
-Then, add the following `add()` function to the existing `ListComponent` class:
-
-``` TypeScript
-add() {
-  if (this.grocery.trim() === "") {
-    alert("Enter a grocery item");
-    return;
-  }
-
-  // Dismiss the keyboard
-  let textField = <TextField>this.groceryTextField.nativeElement;
-  textField.dismissSoftInput();
-
-  this.groceryListService.add(this.grocery)
-    .subscribe(
-      groceryObject => {
-        this.groceryList.unshift(groceryObject);
-        this.grocery = "";
-      },
-      () => {
-        alert({
-          message: "An error occurred while adding an item to your list.",
-          okButtonText: "OK"
-        });
-        this.grocery = "";
-      }
-    )
-}
-```
-
-In this function you first ensure the user didn’t submit without typing a grocery. If the user did type something, you dismiss the device’s keyboard with the TextField element’s `dismissSoftInput()` method, and then call a new `add()` method on the `GroceryListService`.
-
-To finish this example you have to define that new `add()` method. To do so, open `app/shared/grocery/grocery-list.service.ts` and paste the following function into the `GroceryService` class:
-
-``` TypeScript
-add(name: string) {
-  return this.http.post(
-    this.baseUrl,
-    JSON.stringify({ Name: name }),
-    { headers: this.getCommonHeaders() }
-  )
-  .map(res => res.json())
-  .map(data => {
-    return new Grocery(data._id, name);
-  })
-  .catch(this.handleErrors);
-}
-```
-
-<div class="exercise-end"></div>
-
-The `add()` code should look familiar as you’re again using the `Http` service’s `post()` method to make an HTTP call to our backend, and then using RxJS’s `map()` function to convert the returned data into a `Grocery` object. You consume that object in the `ListComponent`’s `add()` method, which adds the grocery to the page’s list by calling `this.groceryList.unshift()`, and then empties that page’s text field by setting `this.grocery` equal to `""`.
-
-``` TypeScript
-this.groceryListService.add(this.grocery)
-  .subscribe(
-    groceryObject => {
-      this.groceryList.unshift(groceryObject);
-      this.grocery = "";
-    },
-    () => { ... }
-  );
-```
-
-The end result looks like this:
-
-![Adding to a list on Android](../img/cli-getting-started/angular/chapter4/android/6.gif)
-![Adding to a list on iOS](../img/cli-getting-started/angular/chapter4/ios/6.gif)
-
-At this point you can add a grocery item and it will appear immediately in your list—and, all of this is completely driven by a backend service. Pretty cool, huh?
-
-Let's look at how you can polish this page with a NativeScript module for showing activity indicators.
-
-## 4.5: ActivityIndicator
-
-Currently there's a bit of a delay when you first visit the list page before groceries appear. This delay could confuse a new user, who might think the app is stuck rather than retrieving data from a backend.
-
-In NativeScript apps you can use the [ActivityIndicator](https://docs.nativescript.org/api-reference/classes/_ui_activity_indicator_.activityindicator.html) module to show a spinner icon in your UI while your app is busy performing actions. The ActivityIndicator is a relatively simple UI element as it primarily uses one attribute—`busy`. When an ActivityIndicator's `busy` attribute is set to `true` the ActivityIndicator shows, and when its `busy` attribute is set to `false` it doesn't. Let's see how the module works by adding an ActivityIndicator to the list page.
-
-<h4 class="exercise-start">
-    <b>Exercise</b>: Add an ActivityIndicator
-</h4>
-
-Open up `app/pages/list/list.html` and paste the following line immediately before the final `</GridLayout>`:
-
-``` XML
-<ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" row="1" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
-```
-
-This binds the ActivityIndicator’s `busy` attribute to an `isLoading` property in the `ListComponent` component. To define that property, open `app/pages/list/list.component.ts` and add the following line of code immediately under `grocery = ""`:
-
-``` TypeScript
-isLoading = true;
-```
-
-Now that the property exists, your final step is to set this flag to `true` when the grocery data is loading. To do that, change the existing `ngOnInit()` function to use the code below:
-
-``` TypeScript
-ngOnInit() {
-  this.isLoading = true;
-  this.groceryListService.load()
-    .subscribe(loadedGroceries => {
-      loadedGroceries.forEach((groceryObject) => {
-        this.groceryList.unshift(groceryObject);
-      });
-      this.isLoading = false;
-    });
-}
-```
-
-<div class="exercise-end"></div>
-
-When you first visit the list page, you should now see the following loading indicators:
-
-![ActivityIndicator on Android](../img/cli-getting-started/angular/chapter4/android/7.png)
-![ActivityIndicator on iOS](../img/cli-getting-started/angular/chapter4/ios/7.png)
-
-> **TIP**: You can apply the same `row` or `column` attribute to multiple UI controls to have them take up the same space on the screen. The UI control that is defined last will appear on top, which is why the `<ActivityIndicator>` appears on top of the `<ListView>` in the previous example.
-> ``` XML
-> <ListView row="1">...</ListView>
-> <ActivityIndicator row="1"></ActivityIndicator>
-> ```
-
-To finish off this chapter, let’s look at how you can use another NativeScript CSS feature to add a final bit of polish to how the list page loads.
-
-In the following exercise you’ll use an animation to fade in the page’s `<ListView>` after your data loads. However this time, instead of getting a reference to the `<ListView>` UI element and calling its `animate()` method, you’ll instead use NativeScript’s CSS animations.
-
-<h4 class="exercise-start">
-    <b>Exercise</b>: Using CSS animations
-</h4>
-
- Start by opening `app/pages/list/list-common.css` and pasting in the following CSS at the top of the file:
-
-``` CSS
-ListView {
-  opacity: 0;
-}
-.visible {
-  animation-name: show;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
-@keyframes show {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-```
-
-This code sets the starting opacity value of the `<ListView>` to `0` so that the control is hidden when the page loads. The code also defines a `visible` class name that changes the `opacity` of an element from `0` to `1` over one full second.
-
-> **TIP**: For background on how the CSS animations syntax works, feel free to refer to the [NativeScript CSS animation documentation](https://docs.nativescript.org/angular/ui/animation-css), or [external CSS animation guides](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations).
-
-Now that you have the CSS in place, your next step is to add the previously defined `"visible"` class name to the `<ListView>` control after data has loaded. To do that, start by opening `app/pages/list/list.component.ts` and adding the following new property right below the existing `isLoading = true;` line:
-
-``` TypeScript
-listLoaded = false;
-```
-
-Next, in the same file, replace the existing `ngOnInit()` function with the following code, which sets the new `listLoaded` flag:
-
-``` TypeScript
-ngOnInit() {
-  this.isLoading = true;
-  this.groceryListService.load()
-    .subscribe(loadedGroceries => {
-      loadedGroceries.forEach((groceryObject) => {
-        this.groceryList.unshift(groceryObject);
-      });
-      this.isLoading = false;
-      this.listLoaded = true;
-    });
-}
-```
-
-Finally, open `app/pages/list/list.html` and replace the existing `<ListView>` tag with the following code:
-
-``` XML
-<ListView [items]="groceryList" row="1" class="small-spacing" [class.visible]="listLoaded">
-```
-
-<div class="exercise-end"></div>
-
-The key here is the list view’s `[class.visible]="listLoaded"` binding, which automatically applies the `visible` CSS class name based on the state of the `listLoaded` TypeScript property.
-
-The advantage of using CSS animations is that you avoid the need to reference specific UI elements in your TypeScript code; there was no need to create a local template variable. The CSS animation approach also helps to keep your code decoupled. Your TypeScript code can focus on logic, and leave styling concerns to your CSS code.
-
-If you try out your app you should now see a nice fade-in animation:
-
-![Loading animation on Android](../img/cli-getting-started/angular/chapter4/android/8.gif)
-![Loading animation on iOS](../img/cli-getting-started/angular/chapter4/ios/8.gif)
-
-Now that you have functional login and list pages, let’s enhance the app’s functionality as a grocery list management tool. In the next chapters you'll add functionality such as email validation, social sharing, and more. And you’ll use one of NativeScript's most useful features to do so: npm modules.
-
-> **TIP**: There are several modules that come out of the box with your NativeScript installation that we did not have time to cover in this guide—including a [file-system helper]({%ns_cookbook file-system%}), a [timer module]({%ns_cookbook timer%}), and a whole lot more. Make sure to peruse the “API Reference” of the NativeScript documentation, or just look around your `node_modules/tns-core-modules` folder to see all of what’s available.
+Between NativeScript modules, npm modules, and NativeScript plugins, the NativeScript framework provides a lot of functionality you can use to build your next app. However, we've yet to talk about NativeScript's most powerful feature: the ability to directly access iOS and Android APIs in TypeScript. Let's look at how it works.
 
 <div class="next-chapter-link-container">
-  <a href="ng-chapter-5">Continue to Chapter 5—Plugins and npm Modules</a>
+  <a href="ng-chapter-6">Continue to Chapter 5—Accessing Native APIs</a>
 </div>

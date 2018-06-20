@@ -1,28 +1,28 @@
 ---
-title: Chapter 2—Creating User Interfaces
+title: Chapter 1—Creating User Interfaces
 position: 3
 guide: true
 environment: angular
 ---
 
-# Chapter 2—Creating User Interfaces
+# Chapter 1—Creating User Interfaces
 
-In this chapter, you’re going to learn how to build NativeScript user interfaces, including markup, styling, images, and more.
+In this guide, you’re going to learn how to build NativeScript user interfaces, including markup, styling, images, and more.
 
 But to do that you’re going to start on a new app that you’ll continue building throughout the rest of the tutorial. Working on a real-world app will help teach concepts that are hard to show in simple examples, such as how to best organize your code. With that in mind, let’s start by looking at what you’ll be building.
 
 ## Table of contents
 
-- [2.1: What you’re building](#21-what-youre-building)
-- [2.2: Folder structure](#22-folder-structure)
-- [2.3: Starting up](#23-starting-up)
-- [2.4: Adding UI elements](#24-adding-ui-elements)
-- [2.5: Layouts](#25-layouts)
-- [2.6: Global CSS](#26-global-css)
-- [2.7: Component-specific CSS](#27-component-specific-css)
-- [2.8: Images](#28-images)
+- [1.1: What you’re building](#11-what-youre-building)
+- [1.2: Folder structure](#12-folder-structure)
+- [1.3: Starting up](#13-starting-up)
+- [1.4: Adding UI elements](#14-adding-ui-elements)
+- [1.5: Layouts](#15-layouts)
+- [1.6: Global CSS](#16-global-css)
+- [1.7: Component-specific CSS](#17-component-specific-css)
+- [1.8: Images](#18-images)
 
-## 2.1: What you're building
+## 1.1: What you're building
 
 The rest of this guide will walk you through building [Groceries](https://github.com/NativeScript/sample-Groceries), a groceries management app that does the following things:
 
@@ -82,7 +82,7 @@ code .
 
 Now that you have the app locally, let’s take a look at the files that make up this application.
 
-## 2.2: Folder structure
+## 1.2: Folder structure
 
 To keep things simple, let's start by looking at the outer structure of the Groceries app:
 
@@ -156,7 +156,7 @@ Here's what these various files and folders do:
 
 To get a sense of how a NativeScript app actually starts up, let’s explore the first few files.
 
-## 2.3: Starting up
+## 1.3: Starting up
 
 The first few files you run in a NativeScript app look almost identical to [the first few files you run in an Angular web app](https://angular.io/docs/ts/latest/quickstart.html). Let’s start with `main.ts` as that’s the first file executed. Open your `app/main.ts` file; you should see the code below:
 
@@ -218,7 +218,7 @@ However, this syntax may look a bit odd if you come from a web development backg
 
 > **NOTE**: Curious about the `@Component` decorator’s `selector` property? The property defines how a component can be used within another component’s template. For instance a component that defines its `selector` with `selector: "foo-bar"` can be used by another component as `template: "<foo-bar></foo-bar>"`. NativeScript is smart enough to use your first Angular component automatically; therefore, the `selector` property of this first component is irrelevant.
 
-## 2.4: Adding UI elements
+## 1.4: Adding UI elements
 
 The primary difference between building an Angular app for the web and an Angular app with NativeScript is in the UI elements that you use. NativeScript apps do not use a browser and do not have a DOM; therefore, elements like `<div>` and `<span>` simply do not work.
 
@@ -277,7 +277,7 @@ What went wrong? In NativeScript whenever you use more than one UI element, you 
 * The [code samples](https://docs.nativescript.org/angular/code-samples/overview.html) portion of the NativeScript documentation is a great place to find copy-and-paste friendly examples of the various NativeScript UI components. The [TextField](https://docs.nativescript.org/angular/code-samples/ui/text-field.html) and [Button](https://docs.nativescript.org/angular/code-samples/ui/button.html) code sample pages are great places to get started.
 * If you’re coming from a web or hybrid development background, you may find Nic Raboy’s guide for [Upgrading Hybrid Apps to Native with NativeScript](http://www.hybridtonative.com/) helpful, as it compares and contrasts web and native user interface implementations.
 
-## 2.5: Layouts
+## 1.5: Layouts
 
 NativeScript provides several different layout containers that allow you to place UI elements precisely where you want them to appear.
 
@@ -329,7 +329,7 @@ Although the UI elements are in the correct order, they could use some spacing a
 > * Refer to the NativeScript docs for [a discussion on how NativeScript layouts work](http://docs.nativescript.org/layouts), and the various attributes you can use to configure them.
 > * Check out Jen Looper's article on [demystifying NativeScript layouts](https://www.nativescript.org/blog/demystifying-nativescript-layouts) for a more thorough look at NativeScript layouts in action.
 
-## 2.6: Global CSS
+## 1.6: Global CSS
 
 NativeScript uses a [subset of CSS](http://docs.nativescript.org/styling) to change the visual appearance of your app. Why a subset? In NativeScript you’re building native iOS and Android apps, and some CSS properties either aren’t possible to replicate with native iOS and Android APIs, or would incur too great of a performance penalty. Don’t worry though; most common CSS properties are supported, and the CSS language syntax is the same—so styling native apps in NativeScript really does feel like styling web apps.
 
@@ -399,7 +399,7 @@ With these changes in place, you'll notice that the app has a bit more spacing, 
 
 Despite our changes the app still looks pretty ugly, and that’s because we’re going to apply another batch of styles at the component level. Let’s look at how that works.
 
-## 2.7: Component-specific CSS
+## 1.7: Component-specific CSS
 
 Much like on the web, sometimes in your NativeScript apps you want to write CSS rules that apply to your entire application, and sometimes you want to write CSS rules that apply to a specific portion of the interface. In the previous section you saw how to use NativeScript’s `app.css` file to write global rules, and in this section you’ll learn how to use a component’s `styleUrls` property to apply rules that are scoped to individual components.
 
@@ -485,7 +485,7 @@ As you can see, in NativeScript you have a lot of options for how you can apply 
 
 To continue polishing the visuals of this login screen, let’s look at how we can add an image of this app’s logo.
 
-## 2.8: Images
+## 1.8: Images
 
 In NativeScript you use the `<Image>` UI element and its `src` attribute to add images to your pages. The `src` attribute lets you specify your image in three ways. The first (and simplest) way is to point at the URL of an image:
 
@@ -527,5 +527,5 @@ At this point your UI looks better visually, but the app still doesn't actually 
 > **TIP**: The community-written [NativeScript Image Builder](http://nsimage.brosteins.com/) can help you generate images with the appropriate naming conventions and resolutions for iOS and Android.
 
 <div class="next-chapter-link-container">
-  <a href="ng-chapter-3">Continue to Chapter 3—Application Logic</a>
+  <a href="ng-chapter-2">Continue to Chapter 2—Application Logic</a>
 </div>

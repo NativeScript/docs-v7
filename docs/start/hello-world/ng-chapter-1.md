@@ -1,22 +1,22 @@
 ---
-title: Chapter 1—Learning the NativeScript Basics
+title: Creating, Running, and Debugging Apps
 position: 2
 guide: true
 environment: angular
 ---
 
-# Chapter 1—Learning the NativeScript Basics
+# Creating, Running, and Debugging Apps
 
-In this chapter you’re going to start with the basics, including creating new apps, getting those apps running on emulators, and setting up a development workflow that will allow you to build apps quickly.
+In this guide you’re going to start with the basics, including creating new apps, getting those apps running on emulators, and setting up a development workflow that will allow you to build apps quickly.
 
 ## Table of contents
 
-- [1.1: Creating apps](#11-creating-apps)
-- [1.2: Running apps](#12-running-apps)
-- [1.3: Debugging apps](#13-debugging-apps)
+- [Creating apps](#creating-apps)
+- [Running apps](#running-apps)
+- [Debugging apps](#debugging-apps)
 - [Appendix A: Choosing an editor](#appendix-a-choosing-an-editor)
 
-## 1.1: Creating apps
+## Creating apps
 
 In NativeScript you create and run apps using the NativeScript CLI. After [installation](/start/quick-setup), the NativeScript CLI is available on your terminal or command prompt as a `tns` command—which is short for <b>T</b>elerik <b>N</b>ative<b>S</b>cript.
 
@@ -50,7 +50,7 @@ Now that you have created an app, let’s look at how to get your new app up and
 
 > **TIP**: You can run the `tns help` command to view the NativeScript CLI’s help documentation in your web browser.
 
-## 1.2: Running apps
+## Running apps
 
 Now that you have an app scaffolded on your local computer and you have `cd`‘ed to the root of the app, you are ready to run your application on an emulator.
 
@@ -172,7 +172,7 @@ Overall, the NativeScript CLI’s livesync process makes native iOS and Android 
 
 > **WARNING**: There are situations where you’ll need to stop `tns run` and rebuild your app from scratch—for instance if need to install a new dependency from npm. In those cases you need to type `Ctrl + C` in your terminal to stop the current `tns run` process, and then re-execute `tns run android` or `tns run ios` to get your app up and running again. Don’t worry though; when situations that require a restart come up in this tutorial, those instructions will be explicitly listed.
 
-## 1.3: Debugging apps
+## Debugging apps
 
 You now know how to create and run NativeScript apps. Your next step is learning how to debug your apps when things go wrong. Let’s look at how debugging works in NativeScript.
 
@@ -295,10 +295,10 @@ The NativeScript CLI continues to watch the files in your application, even afte
 
 <div class="exercise-end"></div>
 
-Now that you’re familiar with how to create, run, and debug NativeScript app, let’s start building a real-world application. In the next chapter you’ll learn about how NativeScript apps are structured, and start building a new app from the ground up.
+Now that you’re familiar with how to create, run, and debug NativeScript app, let’s start building a real-world application. In the next guide you’ll learn about how NativeScript apps are structured, and start building a new app from the ground up.
 
 <div class="next-chapter-link-container">
-  <a href="ng-chapter-2">Continue to Chapter 2—Creating User Interfaces</a>
+  <a href="../tutorial/ng-chapter-1">Continue to Creating User Interfaces</a>
 </div>
 
 ## Appendix A: Choosing an editor
@@ -353,5 +353,5 @@ This tells Visual Studio Code to exclude `.js` files whenever there’s a corres
 This is one of many features that makes Visual Studio Code a powerful editor well suited for NativeScript development. You may wish to look through the [many configuration options](https://code.visualstudio.com/Docs/customization/userandworkspace) Visual Studio Code provides to customize the editor to match your personal preferences.
 
 <div class="next-chapter-link-container">
-  <a href="ng-chapter-2">Continue to Chapter 2—Creating User Interfaces</a>
+  <a href="../tutorial/ng-chapter-1">Continue to Creating User Interfaces</a>
 </div>
