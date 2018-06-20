@@ -107,7 +107,7 @@ navigation:
         title: "Debugging"
     "tooling/docs-cli":
         position: 300
-        title: "COMMAND-LINE INTERFACE"
+        title: "Command-line interface"
     hardware:
         position: 60
         title: "HARDWARE АCCESS"
