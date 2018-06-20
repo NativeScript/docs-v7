@@ -26,8 +26,8 @@ New to NativeScript? [Try out NativeScript on your phone](https://www.nativescri
 Ready to get started developing with NativeScript? We offer a set of comprehensive tutorials that walk you through installing NativeScript, and building a real-world iOS and Android app from scratch.
 
 <div id="start-button-container">
-  <a href="https://play.nativescript.org/?template=groceries-ng&tutorial=groceries-ng" class="Btn" id="ng-start-button">Get Started with TypeScript & Angular</a>
-  <a href="https://play.nativescript.org/?template=groceries-js&tutorial=groceries-js" class="Btn" id="js-start-button">Get Started with JavaScript</a>
+  <a href="https://play.nativescript.org/?template=groceries-ng&tutorial=groceries-ng" class="ns-button -action" id="ng-start-button">Get Started with TypeScript & Angular</a>
+  <a href="https://play.nativescript.org/?template=groceries-js&tutorial=groceries-js" class="ns-button -action" id="js-start-button">Get Started with JavaScript</a>
 </div>
 
 <script type="text/javascript">
@@ -38,11 +38,6 @@ Ready to get started developing with NativeScript? We offer a set of comprehensi
 
   if (Math.floor(Math.random() * 2) == 0) {
     container.insertBefore(jsButton, ngButton);
-    ngButton.style.marginTop = "1em";
-    ngButton.style.marginBottom = "1em";
-  } else {
-    jsButton.style.marginTop = "1em";
-    jsButton.style.marginBottom = "1em";
   }
 </script>
 

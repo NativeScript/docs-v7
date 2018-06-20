@@ -444,11 +444,13 @@ html .k-treeview .k-in {
 html .k-treeview .k-group .k-icon {
     margin: 0 -1.71em 0 .71em;
     font-size: .93em;
+    min-width: 1em;
 }
 
 .k-treeview .k-group .k-group .k-in {
     padding-top: .33em;
     padding-bottom: .33em;
+    padding-right: .5em;
     font-weight: 600;
     text-transform: capitalize;
 }
@@ -488,7 +490,7 @@ html .k-treeview .k-i-collapse:before {
 }
 
 html .k-treeview-lines > .k-item {
-    margin: 0 -.8em 1.33em;
+    margin: 0 -1.6em 1.33em -.8em;
     padding: 0;
 }
 
@@ -500,6 +502,7 @@ html .k-treeview-lines > .k-item > .k-group > .k-item {
     margin: 0 .3em;
     padding: 0 0 0 .8em;
     width: 100%;
+    box-sizing: border-box;
 }
 
 html .k-treeview-lines > .k-item > .k-group > .k-item > .k-group .k-in {
