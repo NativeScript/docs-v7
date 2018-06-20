@@ -5,7 +5,7 @@ destination: ./nativescript
 ## The application virtual path
 baseurl:  ""
 # Exclude files which should not be in the output
-exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, ng-framework-modules, ui/ng-ui-widgets, ng-hardware-access, "start/landing.md"]
+exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, ng-framework-modules, ui/ng-ui-widgets, ng-hardware-access]
 ## The highlighting in the header
 nsselected: "selected"
 ngselected: ""
