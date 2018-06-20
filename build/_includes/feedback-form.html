@@ -94,6 +94,16 @@
                         <input id="feedback-email-input" type="email" placeholder="email (optional)"
                                data-email-msg="Email format is not valid." class="feedback-extw__input input"
                                data-bind="value: email"/>
+                        <div class="tp-checkbox">
+                            <input id="feedback-email-consent" type="checkbox" data-bind="checked: acceptFeedbackContact"
+                                   data-email-msg="You need to agree first." class="checkbox__input"/>
+                            <label class="checkbox__label" for="feedback-email-consent">
+                                <span class="checkbox__icon"></span>
+                                <span class="checkbox__text">
+                                    By checking this box you consent to Progress contacting you by email about your response on this page.
+                                </span>
+                            </label>
+                        </div>
                     </div>
                 </form>
                 <div class="feedback-extw__foot">

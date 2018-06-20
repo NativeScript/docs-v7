@@ -53,13 +53,13 @@ function preventParentSelection(e) {
 }
 
 function traverseAnchors(elements, level) {
-    let html = "<ul>";
+    var html = "<ul>";
 
-    elements.each((index, anchor) => {
+    elements.each(function(index, anchor) {
         if (!anchor.textContent.startsWith("Example")) {
-            html += `<li><a href="${anchor.hash}">${anchor.textContent}</a>`;
+            html += '<li><a href="' + anchor.hash + '">' + anchor.textContent + '</a>';
 
-            html += traverseAnchors($(anchor.parentElement).nextUntil(`h${level}`, `h${level + 1}`).children("a"), level + 1);
+            html += traverseAnchors($(anchor.parentElement).nextUntil('h' + level, 'h' + (level + 1)).children("a"), level + 1);
 
             html += "</li>";
         }
@@ -224,20 +224,20 @@ $(function(){
         ul.appendTo(this);
     });
 
-    const options = {
+    var options = {
         root: null,
         rootMargin: "0px",
         threshold: 1.0
     };
 
-    window.addEventListener("scroll", (e) => {
+    window.addEventListener("scroll", function(e) {
         e.target.documentElement.classList[e.target.scrollingElement.scrollTop !== 0 ? "add" : "remove"]("ns-state-scrolled");
     }, { passive: true });
 
-    const visibleElements = [];
+    var visibleElements = [];
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function(entry) {
             if (entry.intersectionRatio < 1) {
                 visibleElements.splice(visibleElements.indexOf(entry.target), 1);
             } else {
@@ -246,43 +246,43 @@ $(function(){
         });
 
         if (visibleElements[0]) {
-            let topElement = { offsetTop: 9999999 };
+            var topElement = { offsetTop: 9999999 };
 
-            visibleElements.forEach((element) => {
+            visibleElements.forEach(function (element) {
                 if (element.offsetTop < topElement.offsetTop) {
                     topElement = element;
                 }
             });
 
-            topElement = $(`.right-nav__tree [href$="#${topElement.id}"]`);
+            topElement = $('.right-nav__tree [href$="#' + topElement.id + '"]');
 
             if (topElement[0]) {
-                $(`.right-nav__tree a`).removeClass("ns-state-selected");
+                $(".right-nav__tree a").removeClass("ns-state-selected");
 
                 topElement.addClass("ns-state-selected");
             }
         }
     }, options);
 
-    const seeAlso = $("#see-also");
-    const seeAlsoLinks = seeAlso.next("ul");
+    var seeAlso = $("#see-also");
+    var seeAlsoLinks = seeAlso.next("ul");
 
     seeAlso.remove();
 
-    const apiReferences = $("article > p > a[href*=api-reference]");
-    const rightNavLinks = $(".right-nav__links");
+    var apiReferences = $("article > p > a[href*=api-reference]");
+    var rightNavLinks = $(".right-nav__links");
 
-    const rightNav = $(`
-<div class="right-nav__container">
-    <input id="right-nav__toggle" class="right-nav__input" type="checkbox">
-    <label for="right-nav__toggle" class="right-nav__label"></label>
-    <div class="right-nav__tree"></div>
-    <div class="right-nav__sizer"></div>
-</div>`)
+    var rightNav = $('\
+<div class="right-nav__container">\
+    <input id="right-nav__toggle" class="right-nav__input" type="checkbox">\
+    <label for="right-nav__toggle" class="right-nav__label"></label>\
+    <div class="right-nav__tree"></div>\
+    <div class="right-nav__sizer"></div>\
+</div>')
         .insertBefore($("article"))
         .children(".right-nav__tree");
 
-    const articleAnchors = $(traverseAnchors($("article > h2 > a"), 2));
+    var articleAnchors = $(traverseAnchors($("article > h2 > a"), 2));
 
     if (articleAnchors.children()[0]) {
         rightNav
@@ -310,24 +310,24 @@ $(function(){
             .append(rightNavLinks);
     }
 
-    $(document.documentElement).on("click", () => {
-        const toggle = $("#right-nav__toggle")[0];
+    $(document.documentElement).on("click", function() {
+        var toggle = $("#right-nav__toggle")[0];
 
         if (toggle) {
             toggle.checked = false;
         }
     });
 
-    $(".right-nav__container").on("click", (e) => {
+    $(".right-nav__container").on("click", function(e) {
         e.stopPropagation();
     });
 
-    $("article > h2, article > h3").each((index, node) => {
+    $("article > h2, article > h3").each(function(index, node) {
         observer.observe(node);
     });
 
-    const bodyObserver = new MutationObserver((entries) => {
-        entries.forEach(() => {
+    var bodyObserver = new MutationObserver(function(entries) {
+        entries.forEach(function() {
             if (document.body.classList.contains("gsc-overflow-hidden")) {
                 document.documentElement.classList.add("-overflow-hidden");
             } else {

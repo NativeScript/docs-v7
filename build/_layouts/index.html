@@ -15,6 +15,8 @@
         <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
         <script src="https://kendo.cdn.telerik.com/2018.1.221/js/kendo.web.min.js"></script>
+        <script src="https://da189i1jfloii.cloudfront.net/js/kinvey-html5-sdk-3.10.1.min.js"></script>
+        <script src="https://cdn.cookielaw.org/consent/dc6bd370-357e-468e-916d-2c0b0f5fba8d.js" type="text/javascript" charset="UTF-8"></script>
         {% asset prism.js %}
         {% asset app.js %}
         <script>
@@ -34,7 +36,7 @@
 
         <div class="ns-flavor-header">
             <a class="flavor-header__navigation" href="/">
-                <h4 class="flavor-header__title">NativeScript & Angular</h4>
+                <h4 class="flavor-header__title">{{page.flavor}}</h4>
             </a>
             <div class="flavor-header__search">
                 {% include search.html %}

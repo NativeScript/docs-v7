@@ -1,9 +1,9 @@
 <!-- Banner for promoting events
 <div class="tip-container">
     <div class="container">
-        <div class="tip u-tac">    
-        Free Video Course: Easy Mobile Auth w/ OpenID, Active Directory, OAuth2 & SAML
-        <a href="https://courses.nativescripting.com/p/nativescript-enterprise-auth/?product_id=308158&amp;coupon_code=AUTH101&utm_source=nativescriptdotorg&utm_medium=yellowstrip&utm_campaign=nativescript-useownrealestate" target="_blank">Sign Up</a>
+        <div class="tip u-tac">
+            Have you seen all of the free code samples available on our
+            <a href="https://market.nativescript.org/?tab=samples&framework=core&category=all_samples&source=yellow-strip" target="_blank">Marketplace</a>?
         </div>
     </div>
 </div>-->
@@ -26,7 +26,7 @@
                 <li><a href="https://play.nativescript.org">Playground</a></li>
                 <li><a href="https://market.nativescript.org/?tab=samples">Code Samples</a></li>
                 <li><a href="https://market.nativescript.org/?tab=templates">App Templates</a></li>
-                <!-- <li><a href="#">Books &amp; Videos</a></li> -->
+                <li><a href="{{site.headerbaseurl}}/books-and-videos">Books &amp; Videos</a></li>
                 <!-- <li><a href="#">API Reference</a></li> -->
                 <li><a href="https://github.com/NativeScript/NativeScript" target="_blank">GitHub</a></li>
             </ul>
@@ -47,10 +47,10 @@
             <ul>
                 <li><a href="https://discourse.nativescript.org">Community Forums</a></li>
                 <li><a href="http://tinyurl.com/nativeScriptSlack" target="_blank">Slack</a></li>
-                <!-- <li><a href="#">Developer Support</a></li> -->
+                <li><a href="{{site.headerbaseurl}}/developer-support">Developer Support</a></li>
                 <li><a href="{{site.headerbaseurl}}/roadmap-and-releases">Roadmap &amp; Release Notes</a></li>
                 <!-- <li><a href="#">Meetups & Events</a></li> -->
-                <!-- <li><a href="">Contact Us</a></li> -->
+                <li><a href="{{site.headerbaseurl}}/contact">Contact Us</a></li>
             </ul>
         </li>
         <li>
@@ -66,7 +66,7 @@
         </li>
         <li class="k-separator"></li>
         <li class="k-state-disabled">
-            <span class="k-link"><a href="https://github.com/NativeScript/NativeScript"><i class="fab fa-github"></i></a></span>
+            <span class="k-link -github"><a href="https://github.com/NativeScript/NativeScript"><i class="fab fa-github"></i></a></span>
         </li>
         <li class="k-state-disabled">
             <a class="ns-button -action" href="https://play.nativescript.org/?utm_medium=website&utm_campaign=useownrealestate&utm_source=docsnativescriptdotcom&utm_content=topnavgreenbutton">Play Now</a>
@@ -83,6 +83,8 @@
             duration: 100
         }}
     });
+
+    $(".navigation__right").css("visibility", "visible");
 </script>
 
 <!--
@@ -94,7 +96,7 @@
             <a href="/angular/start/introduction" class="-pr -dib -pt2 -pb2 -s-db -s-ml0 -s-pt1 -s-pb1 -s-no-pseudo {{ site.ngselected }}">NativeScript with Angular</a>
             <a href="/vuejs" class="-pr -dib -pt2 -pb2 -s-db -s-ml0 -s-pt1 -s-pb1 -s-no-pseudo {{ site.vjsselected }}">NativeScript with Vue.js</a>
             <a href="/api-reference/globals" class="-pr -dib -pt2 -pb2 -s-db -s-ml0 -s-pt1 -s-pb1 -s-no-pseudo">API Reference</a>
-            <a href="/sidekick" class="-pr -dib -pt2 -pb2 -s-db -s-ml0 -s-pt1 -s-pb1 -s-no-pseudo">NativeScript Sidekick</a>            
+            <a href="/sidekick" class="-pr -dib -pt2 -pb2 -s-db -s-ml0 -s-pt1 -s-pb1 -s-no-pseudo">NativeScript Sidekick</a>
         </div>
     </div>
 </div>
