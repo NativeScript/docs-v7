@@ -59,5 +59,5 @@ In order to start this tutorial you need to have the NativeScript CLI (command-l
 With that out of the way, let’s get started building apps with NativeScript!
 
 <div class="next-chapter-link-container">
-  <a href="ng-chapter-1">Continue to Learn the NativeScript and Angular Basics</a>
+  <a href="ng-chapter-1">Continue to Creating, Running, and Debugging Apps</a>
 </div>
