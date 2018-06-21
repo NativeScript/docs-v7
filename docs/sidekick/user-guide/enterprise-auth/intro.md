@@ -24,11 +24,11 @@ Let’s look at how it works.
 
 As a first step, [create a new app]({% slug create-app-from-template %}) using the Enterprise Auth template.
 
-![](/images/enterprise-auth/sidekick-templates.png)
+![](../../img/enterprise-auth/sidekick-templates.png)
 
 Give your app a name, and click **Create**. Sidekick will take a minute to scaffold your app. When it finishes, click the **Configure** button in the blue bar to start setting up the connection to your enterprise auth provider.
 
-![](/images/enterprise-auth/blue-bar.png)
+![](../../img/enterprise-auth/blue-bar.png)
 
 <h2 id="step-2">Step 2. Select a protocol</h2>
 
@@ -36,7 +36,7 @@ Give your app a name, and click **Create**. Sidekick will take a minute to scaff
 
 On the Enterprise Auth screen the first thing you’ll see is a collection of radio buttons, asking you to choose between **SAML-Redirect**, **OpenID Connect**, and **OAuth 2**.
 
-![](/images/enterprise-auth/selecting-authentication-service.png)
+![](../../img/enterprise-auth/selecting-authentication-service.png)
 
 Knowing which service you need means knowing a little bit about your enterprise authentication provider. Some providers only support one of the above protocols, while others allow you to choose between the protocol you prefer.
 
@@ -58,11 +58,11 @@ After you’ve completed the authentication setup, your last step is to run your
 
 After Sidekick deploys your new app to your device(s) you should see an app that looks like this.
 
-![](/images/enterprise-auth/template-in-action.png)
+![](../../img/enterprise-auth/template-in-action.png)
 
 When you tap the **Log in** button, if all went well, you should be prompted to authenticate with your enterprise authentication provider. In the case of our Microsoft Azure-based example, the app prompts the user to authenticate with their Microsoft account.
 
-![](/images/enterprise-auth/app-auth-screen.png)
+![](../../img/enterprise-auth/app-auth-screen.png)
 
 > **NOTE**: Configuring enterprise authentication providers is very tricky. If you’re not seeing your auth screen as expected, or if you hit problems at any time throughout the process, feel free to [reach out on the NativeScript community forum](https://discourse.nativescript.org/c/Sidekick).
 
