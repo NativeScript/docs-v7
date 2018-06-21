@@ -14,7 +14,7 @@ NativeScript Sidekick gives you the ability to connect to enterprise authenticat
 
 The first thing you need to do to configure an OpenID connection is to visit the **Enterprise Auth** screen and select the **OpenID Connect** radio button. You should see a form that looks like this.
 
-![](/images/enterprise-auth/openid-form.png)
+![](../../img/enterprise-auth/openid-form.png)
 
 Let’s start by looking at the fields you need to provide to connect to your enterprise authentication provider. Then, as an example, we'll explore how we'd complete the form for a project using Azure Active Directory.
 
@@ -74,27 +74,27 @@ The following steps will walk you through creating a new Azure Active Directory 
 
 1. From within the [Azure portal](https://portal.azure.com), click on Azure Active Directory or click on **+New** and search for Azure Active Directory.
 
-	![Azure AD](/images/enterprise-auth/AzureAD.png)
+	![Azure AD](../../img/enterprise-auth/AzureAD.png)
 
 2. Choose the **App Registrations** option and **New Application Registration**.
 	
-	![App registrations](/images/enterprise-auth/new-app-registration.png)
+	![App registrations](../../img/enterprise-auth/new-app-registration.png)
 	
 3. Enter a name for the application (this can be any name you prefer), choose **Web app / API** and, for the Sign-on URL, enter `https://auth.kinvey.com`.
 
-	![new app registration](/images/enterprise-auth/create-application.png)
+	![new app registration](../../img/enterprise-auth/create-application.png)
 
 4. Once it is created, choose **Reply URLs**.
 
-	![application settings](/images/enterprise-auth/application-settings.png)
+	![application settings](../../img/enterprise-auth/application-settings.png)
 
 5. Enter `https://auth.kinvey.com/oidc/redirect` (see the [Kinvey docs](https://devcenter.kinvey.com/html5/guides/mobile-identity-connect#ConfiguringyourOpenIDConnectIdentityProvidertoacceptKinveyRequests) for additional details).
 
-	![Reply URLs](/images/enterprise-auth/reply-urls.png)
+	![Reply URLs](../../img/enterprise-auth/reply-urls.png)
 
 6. Back in the application settings, choose **Required Permissions** and then **Windows Azure Active Directory**.
 
-	![required permissions](/images/enterprise-auth/required-permissions.png)
+	![required permissions](../../img/enterprise-auth/required-permissions.png)
 
 7. Enable the following:
 
@@ -102,11 +102,11 @@ The following steps will walk you through creating a new Azure Active Directory 
 	* Read all users' basic profiles
 	* Sign in and read user profile
 
-	![enable access](/images/enterprise-auth/enable-access.png)
+	![enable access](../../img/enterprise-auth/enable-access.png)
 
 8. Back in the application settings again, choose **Keys** and create a new option under **Passwords**. Set the description (this can be any text you prefer) and expiration (for example, "never"). Click **Save**. Be sure to copy the key's value before leaving.
 
-	![client secret](/images/enterprise-auth/client-secret.png)
+	![client secret](../../img/enterprise-auth/client-secret.png)
 
 In order to test the log in process, Azure Active Directory will need a user. To add a user, go to Active Directory, click **Users and Groups**, then **All Users**, and finally **New User**. For testing purposes, you could add yourself.
 
@@ -123,20 +123,20 @@ Now that our Azure Active Directory is set up, let's look at the values within A
 
   The value of `{tenant}` is an identifier with Azure for your account. This information can be found by clicking on Azure Active Directory and choosing **Properties**. The value of `{tenant}` is the value listed for **Directory ID**.
 
-  ![Finding your tenant](/images/enterprise-auth/tenant.png)
+  ![Finding your tenant](../../img/enterprise-auth/tenant.png)
 
   Replace the value of `{tenant}` in the URL and navigate to it. This page will contain some JSON formatted values. The value for Provider URI is listed as `token_endpoint`. The value for Grant Endpoint is listed as `authorization_endpoint`. Finally, the value for Issuer Identifier is listed as `issuer`
 
 * **Client ID** is the application ID found by going to Azure Active Directory and then choosing **App registrations**.
 
-  ![Application ID](/images/enterprise-auth/applicationID.png)
+  ![Application ID](../../img/enterprise-auth/applicationID.png)
 
 * **Client Secret** is the value of the key created in step 8 above. If you did not copy the key during that step, it is hidden and you'll simply need to create a new key.
 * **Scope** should be set to `email` to give your app access to the user's email address.
 
 When you’re done, your form should look something like this in Sidekick.
 
-![](/images/enterprise-auth/openid-form-complete.png)
+![](../../img/enterprise-auth/openid-form-complete.png)
 
 Click the **Save Service** button and you are ready to move on to building and testing your NativeScript mobile app.
 

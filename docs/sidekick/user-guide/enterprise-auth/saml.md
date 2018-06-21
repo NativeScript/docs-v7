@@ -16,7 +16,7 @@ NativeScript Sidekick gives you the ability to connect to enterprise authenticat
 
 The first thing you need to do to configure a SAML-Redirect connection is to visit the **Enterprise Auth** screen and select the **SAML-Redirect** radio button. You should see a form that looks like this.
 
-![](/images/enterprise-auth/saml-form.png)
+![](../../img/enterprise-auth/saml-form.png)
 
 Let’s start by looking at the fields you need to provide to connect to your enterprise authentication provider. Then, as an example, we'll explore how we'd complete the form for a project using Azure Active Directory.
 
@@ -64,23 +64,23 @@ The following steps will walk you through creating a new Azure Active Directory 
 
 1. From within the [Azure portal](https://portal.azure.com), click on Azure Active Directory or click on +New and search for Azure Active Directory.
 
-	![Azure AD](/images/enterprise-auth/AzureAD.png)
+	![Azure AD](../../img/enterprise-auth/AzureAD.png)
 
 2. Choose the **App Registrations** option and **Enterprise applications**.
 	
-	![Enterprise applications](/images/enterprise-auth/enterprise-applications.png)
+	![Enterprise applications](../../img/enterprise-auth/enterprise-applications.png)
 
 3. Click **+ New application** and then choose **Non-gallery application**. Give your application a name (this can be whatever you like) and click **Add**.
 
-  ![Non-gallery application](/images/enterprise-auth/non-gallery-app.png)
+  ![Non-gallery application](../../img/enterprise-auth/non-gallery-app.png)
 
 4. Click on **Configure single sign-on**.
 
-![Configure single sign-on](/images/enterprise-auth/configure-single-sign-in.png)
+![Configure single sign-on](../../img/enterprise-auth/configure-single-sign-in.png)
 
 5. Choose **SAML-based Sign-on** from the drop down.
 
-  ![SAML-based sign-on](/images/enterprise-auth/saml-based.png)
+  ![SAML-based sign-on](../../img/enterprise-auth/saml-based.png)
 
 6. Fill in the following values:
 
@@ -89,11 +89,11 @@ The following steps will walk you through creating a new Azure Active Directory 
   * Click on **Show sdvanced URL settings**.
   * For **Sign on URL** enter `https://auth.kinvey.com/`.
 
-  ![Azure SAML settings](/images/enterprise-auth/saml-settings-azure.png)
+  ![Azure SAML settings](../../img/enterprise-auth/saml-settings-azure.png)
 
 7. Scroll down to the SAML Signing Certificate. If it is not active yet, enable it and then download the Base64 version. (More details about managing signing certificates within Azure can be found in their [documentation](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-sso-certs).)
 
-  ![Base64 signing certificate](/images/enterprise-auth/signing-certificate.png)
+  ![Base64 signing certificate](../../img/enterprise-auth/signing-certificate.png)
 
 8. Click the **Save** button to save your settings.
 
@@ -106,18 +106,18 @@ Now that our Azure Active Directory is set up, let's look at the values within A
 * **Name**: Any name you choose.
 * **Provider URI**: To get this value from within Azure, go to Azure Active Directory, choose **App registrations** and then **Endpoints**.
 
-  ![Choosing the endpoints](/images/enterprise-auth/endpoints1.png)
+  ![Choosing the endpoints](../../img/enterprise-auth/endpoints1.png)
 
   On the subsequent page, the Provider URI is the SAML-P Sign-on Endpoint value value.
 
-  ![Endpoints list](/images/enterprise-auth/saml-endpoints.png)
+  ![Endpoints list](../../img/enterprise-auth/saml-endpoints.png)
 
 * **Certificate text** is the contents of the Base64 signing certificate you downloaded. Open the file using a text editor and copy the contents between the `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` lines into the form field.
 * **Name ID Format URI** for Azure Active Directory should be `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`. (You can find more information about the various values Azure accepts here and what they mean in their [documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference#nameidpolicy).)
 
 When you’re done, your form should look something like this in Sidekick.
 
-![](/images/enterprise-auth/saml-form-complete.png)
+![](../../img/enterprise-auth/saml-form-complete.png)
 
 Click the **Save Service** button and you are ready to move on to building and testing your NativeScript mobile app.
 
