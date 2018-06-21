@@ -48,7 +48,7 @@ Dedicated documentation section covering the different measuring and position me
 
 The {% nativescript %}[Button]({%ns_cookbook ui/button%}){% endnativescript %} {% angular %}[Button]({%slug button%}){% endangular %} widget provides a standard button widget that reacts to a `tap` event.
 
-![button android](../img/gallery/android/buttonPage.png "button android")![button ios](../img/gallery/ios/buttonPage.png "button ios")
+![button android](./img/gallery/android/buttonPage.png "button android")![button ios](./img/gallery/ios/buttonPage.png "button ios")
 
 **Native Component**
 
@@ -60,7 +60,7 @@ The {% nativescript %}[Button]({%ns_cookbook ui/button%}){% endnativescript %} {
 
 The {% nativescript %}[Label]({%ns_cookbook ui/label%}){% endnativescript %} {% angular %}[Label]({%slug label%}){% endangular %} widget provides a text label that shows read-only text.
 
-![label android](../img/gallery/android/labelPage.png "label android")![label ios](../img/gallery/ios/labelPage.png "label ios")
+![label android](./img/gallery/android/labelPage.png "label android")![label ios](./img/gallery/ios/labelPage.png "label ios")
 
 **Native Component**
 
@@ -72,7 +72,7 @@ The {% nativescript %}[Label]({%ns_cookbook ui/label%}){% endnativescript %} {% 
 
 The {% nativescript %}[TextField]({%ns_cookbook ui/text-field%}){% endnativescript %} {% angular %}[TextField]({%slug text-field%}){% endangular %} widget provides an editable **single-line** text field.
 
-![text-field android](../img/gallery/android/textFieldPage.png "text-field android")![text-field ios](../img/gallery/ios/textFieldPage.png "text-field ios")
+![text-field android](./img/gallery/android/textFieldPage.png "text-field android")![text-field ios](./img/gallery/ios/textFieldPage.png "text-field ios")
 
 **Native Component**
 
@@ -86,7 +86,7 @@ The {% nativescript %}[TextView]({%ns_cookbook ui/text-view%}){% endnativescript
 
 You can use it to show multi-line text and implement text editing.
 
-![text-view android](../img/gallery/android/textViewPage.png "text-view android")![text-view ios](../img/gallery/ios/textViewPage.png "text-view ios")
+![text-view android](./img/gallery/android/textViewPage.png "text-view android")![text-view ios](./img/gallery/ios/textViewPage.png "text-view ios")
 
 **Native Component**
 
@@ -98,7 +98,7 @@ You can use it to show multi-line text and implement text editing.
 
 The {% nativescript %}[SearchBar]({%ns_cookbook ui/search-bar%}){% endnativescript %} {% angular %}[SearchBar]({%slug search-bar%}){% endangular %} widget provides a user interface for entering search queries and submitting requests to the search provider.
 
-![search-bar android](../img/gallery/android/searchBarPage.png "search-bar android")![search-bar ios](../img/gallery/ios/searchBarPage.png "search-bar ios")
+![search-bar android](./img/gallery/android/searchBarPage.png "search-bar android")![search-bar ios](./img/gallery/ios/searchBarPage.png "search-bar ios")
 
 **Native Component**
 
@@ -110,7 +110,7 @@ The {% nativescript %}[SearchBar]({%ns_cookbook ui/search-bar%}){% endnativescri
 
 The {% nativescript %}[Switch]({%ns_cookbook ui/switch%}){% endnativescript %} {% angular %}[Switch]({%slug switch%}){% endangular %} widget provides a two-state toggle switch from which you can choose between two options.
 
-![switch android](../img/gallery/android/switchPage.png "switch android")![switch ios](../img/gallery/ios/switchPage.png "switch ios")
+![switch android](./img/gallery/android/switchPage.png "switch android")![switch ios](./img/gallery/ios/switchPage.png "switch ios")
 
 **Native Component**
 
@@ -122,7 +122,7 @@ The {% nativescript %}[Switch]({%ns_cookbook ui/switch%}){% endnativescript %} {
 
 The {% nativescript %}[Slider]({%ns_cookbook ui/slider%}){% endnativescript %} {% angular %}[Slider]({%slug slider%}){% endangular %} widget provides a slider that you can use to pick a numeric value within a configurable range.
 
-![slider android](../img/gallery/android/sliderPage.png "slider android")![slider ios](../img/gallery/ios/sliderPage.png "slider ios")
+![slider android](./img/gallery/android/sliderPage.png "slider android")![slider ios](./img/gallery/ios/sliderPage.png "slider ios")
 
 **Native Component**
 
@@ -134,7 +134,7 @@ The {% nativescript %}[Slider]({%ns_cookbook ui/slider%}){% endnativescript %} {
 
 The {% nativescript %}[Progress]({%ns_cookbook ui/progress%}){% endnativescript %} {% angular %}[Progress]({%slug progress%}){% endangular %} widget is a visual bar indicator of a progress in a operation. It shows a bar representing the current progress of the operation.
 
-![progress android](../img/gallery/android/progressPage.png "progress android")![progress ios](../img/gallery/ios/progressPage.png "progress ios")
+![progress android](./img/gallery/android/progressPage.png "progress android")![progress ios](./img/gallery/ios/progressPage.png "progress ios")
 
 **Native Component**
 
@@ -146,7 +146,7 @@ The {% nativescript %}[Progress]({%ns_cookbook ui/progress%}){% endnativescript 
 
 The {% nativescript %}[ActivityIndicator]({%ns_cookbook ui/activity-indicator%}){% endnativescript %} {% angular %}[ActivityIndicator]({%slug activity-indicator%}){% endangular %} widget is a visual spinner indicator which shows that a task is in progress.
 
-![activity-indicator android](../img/gallery/android/activityIndicatorPage.png "activity-indicator android")![activity-indicator ios](../img/gallery/ios/activityIndicatorPage.png "activity-indicator ios")
+![activity-indicator android](./img/gallery/android/activityIndicatorPage.png "activity-indicator android")![activity-indicator ios](./img/gallery/ios/activityIndicatorPage.png "activity-indicator ios")
 
 **Native Component**
 
@@ -158,7 +158,7 @@ The {% nativescript %}[ActivityIndicator]({%ns_cookbook ui/activity-indicator%})
 
 The {% nativescript %}[Image]({%ns_cookbook ui/image%}){% endnativescript %} {% angular %}[Image]({%slug image%}){% endangular %} widget shows an image. You can load the image from an [`ImageSource`](http://docs.nativescript.org/api-reference/modules/_image_source_.html) or from a URL.
 
-![image android](../img/gallery/android/imagePage.png "image android")![image ios](../img/gallery/ios/imagePage.png "image ios")
+![image android](./img/gallery/android/imagePage.png "image android")![image ios](./img/gallery/ios/imagePage.png "image ios")
 
 **Native Component**
 
@@ -170,7 +170,7 @@ The {% nativescript %}[Image]({%ns_cookbook ui/image%}){% endnativescript %} {% 
 
 The {% nativescript %}[ListView]({%ns_cookbook ui/list-view%}){% endnativescript %} {% angular %}[ListView]({%slug listview%}){% endangular %} shows items in a vertically scrolling list. You can set an [`itemTemplate`](http://docs.nativescript.org/api-reference/modules/_ui_list_view_.knowntemplates.html) to specify how each item in the list should be displayed.
 
-![list-view android](../img/gallery/android/listViewPage.png "list-view android")![list-view ios](../img/gallery/ios/listViewPage.png "list-view ios")
+![list-view android](./img/gallery/android/listViewPage.png "list-view android")![list-view ios](./img/gallery/ios/listViewPage.png "list-view ios")
 
 **Native Component**
 
@@ -182,7 +182,7 @@ The {% nativescript %}[ListView]({%ns_cookbook ui/list-view%}){% endnativescript
 
 The {% nativescript %}[HtmlView]({%ns_cookbook ui/html-view%}){% endnativescript %} {% angular %}[HtmlView](https://docs.nativescript.org/angular/code-samples/ui/htmlview.html){% endangular %} represents a view with HTML content. Use this component instead of WebView when you want to show just static HTML content.
 
-![html-view android](../img/gallery/android/htmlViewPage.png "html-view android")![html-view ios](../img/gallery/ios/htmlViewPage.png "html-view ios")
+![html-view android](./img/gallery/android/htmlViewPage.png "html-view android")![html-view ios](./img/gallery/ios/htmlViewPage.png "html-view ios")
 
 **Native Component**
 
@@ -194,7 +194,7 @@ The {% nativescript %}[HtmlView]({%ns_cookbook ui/html-view%}){% endnativescript
 
 The {% nativescript %}[WebView]({%ns_cookbook ui/web-view%}){% endnativescript %} {% angular %}[WebView]({%slug web-view%}){% endangular %} shows web pages. You can load a page from a URL or by navigating back and forward.
 
-![web-view android](../img/gallery/android/webViewPage.png "web-view android")![web-view ios](../img/gallery/ios/webViewPage.png "web-view ios")
+![web-view android](./img/gallery/android/webViewPage.png "web-view android")![web-view ios](./img/gallery/ios/webViewPage.png "web-view ios")
 
 **Native Component**
 
@@ -206,7 +206,7 @@ The {% nativescript %}[WebView]({%ns_cookbook ui/web-view%}){% endnativescript %
 
 With the {% nativescript %}[TabView]({%ns_cookbook ui/tab-view%}){% endnativescript %} {% angular %}[TabView]({%slug tab-view%}){% endangular %} control, you can implement tab navigation.
 
-![tab-view android](../img/gallery/android/tabViewPage.png "tab-view android")![tab-view ios](../img/gallery/ios/tabViewPage.png "tab-view ios")
+![tab-view android](./img/gallery/android/tabViewPage.png "tab-view android")![tab-view ios](./img/gallery/ios/tabViewPage.png "tab-view ios")
 
 **Native Component**
 
@@ -218,7 +218,7 @@ With the {% nativescript %}[TabView]({%ns_cookbook ui/tab-view%}){% endnativescr
 
 With the {% nativescript %}[SegmentedBar]({%ns_cookbook ui/segmented-bar%}){% endnativescript %} {% angular %}[SegmentedBar]({%slug segmented-bar%}){% endangular %} control, you can implement discrete selection.
 
-![segmented-bar android](../img/gallery/android/segmentedBarPage.png "segmented-bar android")![segmented-bar ios](../img/gallery/ios/segmentedBarPage.png "segmented-bar ios")
+![segmented-bar android](./img/gallery/android/segmentedBarPage.png "segmented-bar android")![segmented-bar ios](./img/gallery/ios/segmentedBarPage.png "segmented-bar ios")
 
 **Native Component**
 
@@ -230,7 +230,7 @@ With the {% nativescript %}[SegmentedBar]({%ns_cookbook ui/segmented-bar%}){% en
 
 With the {% nativescript %}[DatePicker]({%ns_cookbook ui/date-picker%}){% endnativescript %} {% angular %}[DatePicker]({%slug date-picker%}){% endangular %} control, you can pick a date.
 
-![date-picker android](../img/gallery/android/datePickerPage.png "date-picker android")![date-picker ios](../img/gallery/ios/datePickerPage.png "date-picker ios")
+![date-picker android](./img/gallery/android/datePickerPage.png "date-picker android")![date-picker ios](./img/gallery/ios/datePickerPage.png "date-picker ios")
 
 **Native Component**
 
@@ -242,7 +242,7 @@ With the {% nativescript %}[DatePicker]({%ns_cookbook ui/date-picker%}){% endnat
 
 With the {% nativescript %}[TimePicker]({%ns_cookbook ui/time-picker%}){% endnativescript %} {% angular %}[TimePicker]({%slug time-picker%}){% endangular %} widget, you can pick a time.
 
-![time-picker android](../img/gallery/android/timePickerPage.png "time-picker android")![time-picker ios](../img/gallery/ios/timePickerPage.png "time-picker ios")
+![time-picker android](./img/gallery/android/timePickerPage.png "time-picker android")![time-picker ios](./img/gallery/ios/timePickerPage.png "time-picker ios")
 
 **Native Component**
 
@@ -254,7 +254,7 @@ With the {% nativescript %}[TimePicker]({%ns_cookbook ui/time-picker%}){% endnat
 
 With the {% nativescript %}[ListPicker]({%ns_cookbook ui/list-picker%}){% endnativescript %} {% angular %}[ListPicker](https://docs.nativescript.org/angular/code-samples/ui/listpicker.html){% endangular %} widget, you can pick a value from a list.
 
-![list-picker android](../img/gallery/android/listPickerPage.png "list-picker android")![list-picker ios](../img/gallery/ios/listPickerPage.png "list-picker ios")
+![list-picker android](./img/gallery/android/listPickerPage.png "list-picker android")![list-picker ios](./img/gallery/ios/listPickerPage.png "list-picker ios")
 
 **Native Component**
 
@@ -266,5 +266,5 @@ With the {% nativescript %}[ListPicker]({%ns_cookbook ui/list-picker%}){% endnat
 
 The [dialogs module]({%slug dialogs %}) lets you create and show dialog windows.
 
-![dialog-confirm android](../img/gallery/android/dialogsPage_confirm.png "dialog-confirm android")![dialog-confirm ios](../img/gallery/ios/dialogsPage_confirm.png "dialog-confirm ios")
+![dialog-confirm android](./img/gallery/android/dialogsPage_confirm.png "dialog-confirm android")![dialog-confirm ios](./img/gallery/ios/dialogsPage_confirm.png "dialog-confirm ios")
 

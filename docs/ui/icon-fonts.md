@@ -19,10 +19,10 @@ While bitmap images are great, they present challenges in designing mobile appli
 
 
 ## Icon Font
-![icomoon](../img/modules/icon-fonts/icomoon.png "Icomoon")
+![icomoon](./img/modules/icon-fonts/icomoon.png "Icomoon")
 
 ## Fonts Folder
-![icon-fonts](../img/modules/icon-fonts/fonts-folder.png "Fonts Folder")
+![icon-fonts](./img/modules/icon-fonts/fonts-folder.png "Fonts Folder")
 
 ## The Code
 {% nativescript %}
@@ -97,7 +97,7 @@ export function pageLoaded(args: EventData) {
 
 And the result is:
 
-![sample-app](../img/modules/icon-fonts/sample-app.png "Sample App")
+![sample-app](./img/modules/icon-fonts/sample-app.png "Sample App")
 
 {% nativescript %}
 Here you can find the complete sample: [Icon Font Sample Application](https://github.com/NativeScript/icon-fonts)

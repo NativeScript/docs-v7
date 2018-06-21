@@ -66,8 +66,8 @@ dialogs.alert({
 });
 ```
 
-![alert-ios](../img/modules/dialogs/alert-ios.png "alert-ios")
-![alert-android](../img/modules/dialogs/alert-android.png "alert-android")
+![alert-ios](./img/modules/dialogs/alert-ios.png "alert-ios")
+![alert-android](./img/modules/dialogs/alert-android.png "alert-android")
 
 ## Confirm
 
@@ -117,8 +117,8 @@ dialogs.confirm({
 
 > The dialog result argument is Boolean. The result is __true__ if the dialog is closed with the OK button. The result is __false__ if closed with the Cancel button. The result is undefined if closed with a neutral button.
 
-![confirm-ios](../img/modules/dialogs/confirm-ios.png "confirm-ios")
-![confirm-android](../img/modules/dialogs/confirm-android.png "confirm-android")
+![confirm-ios](./img/modules/dialogs/confirm-ios.png "confirm-ios")
+![confirm-android](./img/modules/dialogs/confirm-android.png "confirm-android")
 
 ## Prompt
 
@@ -173,8 +173,8 @@ dialogs.prompt({
 ```
 > The dialog result argument is an object with two properties: result and text (entered text). The result property is __true__ if the dialog is closed with the OK button, __false__ if closed with the Cancel button or undefined if closed with a neutral button.
 
-![prompt-ios](../img/modules/dialogs/prompt-ios.png "prompt-ios")
-![prompt-android](../img/modules/dialogs/prompt-android.png "prompt-android")
+![prompt-ios](./img/modules/dialogs/prompt-ios.png "prompt-ios")
+![prompt-android](./img/modules/dialogs/prompt-android.png "prompt-android")
 
 ## Login
 
@@ -228,8 +228,8 @@ dialogs.login({
 
 > The dialog result argument is an object with three properties: result, userName and password (entered user name and password). The result property is __true__ if the dialog is closed with the OK button, __false__ if closed with the Cancel button or undefined if closed with a neutral button.
 
-![login-ios](../img/modules/dialogs/login-ios.png "login-ios")
-![login-android](../img/modules/dialogs/login-android.png "login-android")
+![login-ios](./img/modules/dialogs/login-ios.png "login-ios")
+![login-android](./img/modules/dialogs/login-android.png "login-android")
 
 ## Action
 
@@ -292,8 +292,8 @@ dialogs.action({
 ```
 > The dialog result argument is a string (the text of the clicked option or the text of the cancel button).
 
-![action-ios](../img/modules/dialogs/action-ios.png "action-ios")
-![action-android](../img/modules/dialogs/action-android.png "action-android")
+![action-ios](./img/modules/dialogs/action-ios.png "action-ios")
+![action-android](./img/modules/dialogs/action-android.png "action-android")
 
 {% angular %}
 ## Custom dialog
