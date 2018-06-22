@@ -8,25 +8,6 @@ previous_url: /core-concepts/publishing-android-apps
 
 # Publishing a NativeScript Android App in Google Play
 
-0. [Overview](#overview)
-1. [Creating Android NativeScript app](#creating-android-nativescript-app)
-  1. [Application Id and Package Name](#application-id-and-package-name)
-  2. [App name](#app-name)
-  3. [App icons](#app-icons)
-  4. [Launch Screen](#launch-screen)
-2. [Certificates](#certificates)
-  1. [Debug certificate](#debug-certificate)
-  2. [Release certificate](#release-certificate)
-3. [Google Play Developer Console](#google-play-developer-console)
-  1. [Creating an app](#creating-an-app)
-  2. [Builds](#builds)
-    1. [Build versioning](#build-versioning)
-    2. [Build signed release APK](#build-signed-release-apk)
-    3. [APKs with ABI splits](#apks-with-abi-splits)
-    4. [Submit with the Google Play Developer Console](#submit-with-the-google-play-developer-console)
-    5. [Submission automation](#submission-automation)
-4. [Publish](#publish)
-
 ## Overview
 
 > **Tip:** Instead of the CLI, use [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick) for easy app store publishing to both the iOS App Store and Google Play. Sidekick also offers starter kits, plugin management, and cloud-based builds for iOS and Android.
@@ -66,7 +47,7 @@ You may need to delete `platforms/android` and rebuild using the CLI command `tn
 ### App name
 This is the display name for your app. It is purely cosmetic but highly important. For example, it appears under the app icon.
 The value can be stored in the `app/App_Resources/Android/values/strings.xml` file
-```
+```XML
 <resources>
     <string name="app_name">MyAppName</string>
     <string name="title_activity_kimera">MyAppName</string>
@@ -90,6 +71,8 @@ The actual .PNG icons stay at the Android resources in `app/App_Resource/Android
 | `drawable-xhdpi`  | 320 | Extra-high density screen             | 96px  x 96px  |
 | `drawable-xxhdpi` | 480 | Extra-extra-high density screen       | 144px x 144px |
 | `drawable-xxxhdpi`| 640 | Extra-extra-extra-high density screen | 192px x 192px |
+
+> Note: NativeScript supports adaptive icons on Android 8 and above (API 26+). No code changes are required - follow the [Android guidelines for creating adaptive icons](https://developer.android.com/guide/practices/ui_guidelines/icon_design_adaptive) for your application.
 
 ### Launch screen
 Android has no built-in mechanism to provide launch screen image.
