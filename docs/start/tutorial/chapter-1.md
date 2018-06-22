@@ -21,15 +21,15 @@ The rest of this guide will walk you through building [Groceries](https://github
 
 If you follow along to the end, here's what the finished app will look like on iOS:
 
-![login](/img/cli-getting-started/nativescript/chapter0/ios/1.png)
-![register](/img/cli-getting-started/nativescript/chapter0/ios/2.png)
-![list](/img/cli-getting-started/nativescript/chapter0/ios/3.png)
+![login](../img/cli-getting-started/nativescript/chapter0/ios/1.png)
+![register](../img/cli-getting-started/nativescript/chapter0/ios/2.png)
+![list](../img/cli-getting-started/nativescript/chapter0/ios/3.png)
 
 And here's what the app will look like on Android:
 
-![](/img/cli-getting-started/nativescript/chapter0/android/1.png)
-![](/img/cli-getting-started/nativescript/chapter0/android/2.png)
-![](/img/cli-getting-started/nativescript/chapter0/android/3.png)
+![](../img/cli-getting-started/nativescript/chapter0/android/1.png)
+![](../img/cli-getting-started/nativescript/chapter0/android/2.png)
+![](../img/cli-getting-started/nativescript/chapter0/android/3.png)
 
 Let’s get the starting point of this app so you can follow along with the rest of this guide.
 
@@ -179,8 +179,8 @@ NativeScript UI components provide attributes to let you configure their behavio
 
 After your app updates with this change, you may expect to see a polished login screen, but instead you will see a single `<Button>` element on the screen:
 
-![login 1](/img/cli-getting-started/nativescript/chapter2/ios/1.png)
-![login 1](/img/cli-getting-started/nativescript/chapter2/android/1.png)
+![login 1](../img/cli-getting-started/nativescript/chapter2/ios/1.png)
+![login 1](../img/cli-getting-started/nativescript/chapter2/android/1.png)
 
 Currently you only see a single button because you need to tell NativeScript how to layout your page’s UI components. Let's look at how to use NativeScript layouts to arrange these components on the screen.
 
@@ -225,8 +225,8 @@ The stack layout is a UI component, and as such, it has attributes just like the
 
 After you run your app with this change, you'll see that your login page's UI components stack up:
 
-![login 2](/img/cli-getting-started/nativescript/chapter2/ios/2.png)
-![login 2](/img/cli-getting-started/nativescript/chapter2/android/2.png)
+![login 2](../img/cli-getting-started/nativescript/chapter2/ios/2.png)
+![login 2](../img/cli-getting-started/nativescript/chapter2/android/2.png)
 
 Although the UI components are in the correct order, they could use some spacing and color to make the app look a bit nicer. To do that let's look at another NativeScript feature: CSS.
 
@@ -324,8 +324,8 @@ NativeScript uses the `class` attribute for adding CSS class names to UI compone
 
 With these changes in place, you'll notice that the app looks halfway decent now, and also has a distinctly different look on iOS and Android:
 
-![login 1](/img/cli-getting-started/nativescript/chapter2/ios/3.png)
-![login 1](/img/cli-getting-started/nativescript/chapter2/android/3.png)
+![login 1](../img/cli-getting-started/nativescript/chapter2/ios/3.png)
+![login 1](../img/cli-getting-started/nativescript/chapter2/android/3.png)
 
 Feel free to take some time to play with the look of this app before moving on. You can try adding some additional CSS class names, or adding some page-specific styles in your `login.css` file. When you're ready, let's move on and add an image to this login screen.
 
@@ -363,8 +363,8 @@ Although more complex than putting an image directly in the `app` folder, using 
 
 Once these files are in place the NativeScript framework knows how to pick the correct file; all you have to do is reference the image using `res://` and its base file name—i.e. `res://logo`. Here's what your login screen should look like on iOS and Android:
 
-![login 4](/img/cli-getting-started/nativescript/chapter2/ios/4.png)
-![login 4](/img/cli-getting-started/nativescript/chapter2/android/4.png)
+![login 4](../img/cli-getting-started/nativescript/chapter2/ios/4.png)
+![login 4](../img/cli-getting-started/nativescript/chapter2/android/4.png)
 
 At this point your UI looks good, but the app still doesn't actually do anything. Let's look at how you can use JavaScript to add some functionality.
 
