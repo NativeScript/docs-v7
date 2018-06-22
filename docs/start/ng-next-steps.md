@@ -9,13 +9,6 @@ environment: angular
 
 Sadly our tutorial is now complete, but your journey with NativeScript is just beginning. Let’s look at the some steps you can take to build your next app with NativeScript.
 
-## Table of contents
-
-- [Join the NativeScript community](#join-the-nativescript-community)
-- [Start your own app](#start-your-own-app)
-- [Bookmark NativeScript learning resources](#bookmark-nativescript-learning-resources)
-- [Let us know what you think](#let-us-know-what-you-think)
-
 ## Join the NativeScript community
 
 Regardless of what you choose to do next with NativeScript, joining the NativeScript community is a great way to keep up with the latest and greatest in the NativeScript world. Here are some ways you can get involved:

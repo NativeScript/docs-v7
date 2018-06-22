@@ -13,11 +13,6 @@ It is essential for the mobile developer to handle memory related issues and opt
 In this article, we will take a look at how the `Image` module works in NativeScript and 
 cover the techniques that will improve Android application performance.
 
-* [Handling large images and avoiding Out Of Memory exception](#handling-large-images-and-avoiding-out-of-memory-exception)
-* [Using `decodeHeight` and `decodeWidth` properties](#using-decodeheight-and-decodewidth-properties)
-* [Using `loadMode` property](#using-loadmode-property)
-* [Using `useCache` property](#using-usecache-property)
-
 ## Handling large images and avoiding Out Of Memory exception
 
 In some cases when working with multiple large images on devices with low memory, an `Out Of Memory` (OOM) exception can occur. To prevent that scenario, in NativeScript 2.5.x and above using the `src` property in Android will internally load the Bitmap in Java. Bitmap memory stays in Java world and it is reclaimed once the Bitmap is no longer in use (e.g., there is no need for the Javascript object to be collected). This way Bitmap memory management is not an issue.
@@ -46,7 +41,7 @@ Devices with higher pixel density displays will decode their images larger out o
 
 > **Important**: The `decodeWidth` and `decodeHeight` properties will work only for Android. Setting them for our iOS images will not change the application behaviour in any way.
 
-### Using `loadMode` property
+## Using `loadMode` property
 
 With [loadMode](http://docs.nativescript.org/api-reference/modules/_ui_image_.html#loadmode) set to `async`, the image will load asynchronously which means the UI won't block by the decoding and preloading operations. The developers can use `loadMode` on both iOS and Android.
 
@@ -61,7 +56,7 @@ With [loadMode](http://docs.nativescript.org/api-reference/modules/_ui_image_.ht
 
 > **Note**: When the `src` value starts with `http` it will be loaded asynchronously no matter what value is set to `loadMode`.
 
-### Using `useCache` property
+## Using `useCache` property
 
 The `Image` module will use internal memory and disk cache, so when loaded the module stores the images in the memory cache, and when they are not needed anymore, the `Image` module saves the images in the disk cache. This way the next time the application needs the same image NativeScript will load it from memory or the disk cache. Setting property `useCache` to `false` could be used to bypass image cache and load the image as it is on the first request to the specified URL.
 

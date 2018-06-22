@@ -22,13 +22,13 @@ var file = new java.io.File("somefile");
 it creates two objects - one in the JavaScript heap and another in the Java heap. The JavaScript object serves only as a proxy to the actual Java object. Thus the size of the JavaScript object is very small. Suppose the app has to execute the following line
 
 ```javascript
-var success = file.delete();
+let success = file.delete();
 ```
 
 The only information we need is some sort of `id` in order to find the corresponding Java object and call `delete()` on it. Currently we use `int32` for the `id`. So practically, we can think of `file` as
 
-```javascript
-var file = { javaObjectId: 123 };
+```JavaScript
+let file = { javaObjectId: 123 };
 ```
 
 if the actual `id` has value `123`. In other worlds, creating JavaScript objects is very cheap.

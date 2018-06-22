@@ -10,15 +10,6 @@ In this guide you’re going to learn how to build NativeScript user interfaces,
 
 But to do that you’re going to start on a new app that you’ll continue building throughout the rest of the tutorial. Working on a real-world app will help teach concepts that are hard to show in simple examples, such as how to best organize your code. With that in mind let’s start by looking at what you’ll be building.
 
-## Table of contents
-
-- [1.1: What you’re building](#11-what-youre-building)
-- [1.2: Directory structure](#12-directory-structure)
-- [1.3: Adding UI components](#13-adding-ui-components)
-- [1.4: Layouts](#14-layouts)
-- [1.5: CSS](#15-css)
-- [1.6: Images](#16-images)
-
 ## 1.1: What you're building
 
 The rest of this guide will walk you through building [Groceries](https://github.com/NativeScript/sample-Groceries), a groceries management app that does the following things:

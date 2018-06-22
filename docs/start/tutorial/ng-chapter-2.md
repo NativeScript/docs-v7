@@ -9,14 +9,6 @@ environment: angular
 
 In this chapter you’ll learn how to add TypeScript logic to your app, how to create services that talk to backend endpoints, and how to architect an app to share code with Angular web apps. There’s a lot to cover, so let’s start by discussing how to handle events and data binding.
 
-## Table of contents
-
-- [2.1: Events](#21-events)
-- [2.2: Data binding](#22-data-binding)
-- [2.3: Structuring your app](#23-structuring-your-app)
-- [2.4: Services](#24-services)
-- [2.5: Routing](#25-routing)
-
 ## 2.1: Events
 
 Most user interfaces are driven by events. In NativeScript apps, those events are usually some user action, such as tapping, swiping, or rotating—and NativeScript abstracts the iOS- and Android-specific code for handling such events into a handful of easy-to-use APIs. Let’s start with the most common event you’ll use in a NativeScript app: `tap`.

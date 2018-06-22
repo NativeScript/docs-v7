@@ -8,27 +8,11 @@ previous_url: /external-libs/jars,/external-libs/resource-libs
 
 > **IMPORTANT:** The CLI command `tns library add` is no longer supported. Use plugins to work with external libs.
 
-Android Plugins Infrastructure
-=========
-
-Starting with NativeScript CLI 1.1.0, you can develop or use plugins in your NativeScript projects.
-
-* [What Are NativeScript Plugins](#what-are-nativescript-plugins)
-* [Create a Plugin](#create-a-plugin)
-    * [Directory Structure](#directory-structure)
-    * [Android plugin elements](#android-plugin-elements)
-    * [Include.gradle Specification](#includegradle-specification)
-    * [Native Android plugin using V8 API](#using-v8)
-* [Rules of thumb](#rules-of-thumb)
-    * [What do I use?](#what-do-i-use)
-* [Plugin migration](#plugin-migration)
-
-## What Are NativeScript Plugins
+# Android Plugins Infrastructure
 
 A NativeScript plugin is any npm package, published or not, that exposes a native API via JavaScript and consists of the following elements. The plugin must have the directory structure, described in the [Directory Structure](#directory-structure) section.
 
 ## Create a Plugin
-
 
 If the NativeScript framework does not expose a native API that you need, you can develop a plugin which exposes the required functionality. When you develop a plugin, keep in mind the following requirements.
 
@@ -76,9 +60,9 @@ Every NativeScript plugin, which contains native Android dependencies, should al
 * Any native dependencies should be available in [jcenter](https://bintray.com/bintray/jcenter) or from the Android SDK installed on your machine if you want it to work out of the box. You can see an example of a compile dependency [here](https://github.com/NativeScript/nativescript-fresco/blob/master/platforms/android/include.gradle).
 * It can be used for any kind of native configuration. Find more information [here](http://developer.android.com/tools/building/configuring-gradle.html)
 
-#### Include.gradle Example
-```
-//optional elements
+_Include.gradle Example_
+```Java
+// optional elements
 dependencies {
     compile "groupName:pluginName:ver"
 }
@@ -87,7 +71,7 @@ dependencies {
 ### Native Android plugin using V8 API
 
 If for any reason you want to use V8 API in your plugin, you will need to specify that explicitly in the plugin's `package.json`, so that the respective symbols be exposed for use when the plugin is installed inside a NativeScript application.
-```javascript
+```JSON
 {
     "name": "plugin-name",
     "version": "0.1.0",
@@ -107,7 +91,7 @@ If for any reason you want to use V8 API in your plugin, you will need to specif
 
 We are concentrating on the "_native_" part of the plugin. When we talk about "_native_" part of the plugin we mean the `platforms/android` folder and its content. 
 
-#### What do I use?
+### What do I use?
 
 When you want to create an Android NativeScript plugin and you want to add some "_native_" functionality there are two main options. Use a `.jar` file, or use a `.aar` file. Keep in mind that `.aar` files are the recomended library form for NativeScript plugins. When we use a library in the form of a `.jar` file we want some functionality that doesn’t need any resources, just native implementation of some logic we need. For example, if we need to make some complicated calculation and there is an SDK in the form of a `.jar` file and requires **no** UI elements, we could use that library. This would only provide a couple of classes with some logic in them and **should not** declare activities or any other types of application components (http://www.tutorialspoint.com/android/android_application_components.htm).
 

@@ -6,7 +6,7 @@ slug: latest-code
 previous_url: /running-latest
 ---
 
-#Running the Latest Code
+# Running the Latest Code
 
 Often when working with open-source projects, one needs functionality that has not yet passed the full release cycle, or even functionality that is not yet fully implemented. We know that many of you are experimenters and want to try the latest and greatest features of NativeScript. That is why we tried to make this process simple and easy to follow. There are two ways to get the latest development code for NativeScript:
 

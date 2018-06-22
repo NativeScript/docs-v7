@@ -62,24 +62,29 @@ app/
 ...
 ```
 
-# Folder Description
+## Folder Description
 Following is a brief description of the content of each folder:
 
-### assets/app Folder
+- **assets/app** folder
+
 Contains the application's content, including JavaScript, XML and probably some device-independent resources (e.g. a pictures). A required file is bootstrap.js which will be loaded by the Runtime and will serve as the application's main entry point (see [Hello World](./hello-world.md)).
 
-### assets/internal Folder
+- **assets/internal** folder
+
 Contains the `prepareExtend.js` file, which adds TypeScript support on top of the Runtime's extend routine. This file is required.
 
-### assets/metadata Folder
+- **assets/metadata** folder
+
 Contains the pre-generated metadata used by the Runtime to map JavaScript calls to Java APIs. For more information see [Accessing APIs](../metadata/accessing-packages.md).
 
-### assets/tns_modules Folder
+- **assets/tns_modules** folder
+
 Contains the Runtime's JavaScript modules that may be used within the application. If you are familiar with the project structure of a [Node.js](http://nodejs.org/) application then you may think of `tns_modules` as the equivalent of the `node_modules` folder. A NativeScript application, initialized through its [CLI](https://github.com/NativeScript/nativescript-cli) will by default use the set of cross-platform modules as [described here](https://github.com/NativeScript/docs). The folder is not a prerequisite and is only used in case a module without a path hint is required. For more information see [Modules](./modules.md).
 
 >**Note:** We have plans to move the tns_modules folder within the app folder, which makes the structure consistent with the [Node.js](http://nodejs.org/) one.
 
-### libs Folder
+- **libs** Folder
+
 Contains the Runtime's native C++ implementation as well as the dependencies to other Android libraries. The location of the native C++ libraries differs depending on the IDE - they are located in the `jniLibs` in Android Studio.
 
 # See Also
