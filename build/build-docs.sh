@@ -44,6 +44,7 @@ cp -r $SCRIPT_PATH"/_config_vuejs.yml" \
 	  $SCRIPT_PATH"/_layouts" \
 	  $SCRIPT_PATH"/_plugins" \
 	  $SCRIPT_PATH"/_includes" \
+	  $SCRIPT_PATH"/fonts" \
 	  $VUEJS_ROOT
 	  
 rm $VUEJS_ROOT"/_plugins/redirect_generator.rb" \
