@@ -10,14 +10,6 @@ slug: gs-run
 
 In this final chapter, you are going to learn how to deploy your app on connected Android and iOS devices. You can use the same process to run your app in an Android emulator or the iOS simulator. We will also explain the LiveSync feature and how you can use it to sync changes made to your app across all connected devices without the need to rebuild it. Finally, you are going to see how to begin a debug session in {{ site.sk }}.
 
-## Table of contents
-
-* [3.1: Prerequisite to run your app on a device](#31-prerequisite-to-run-your-app-on-a-device)
-* [3.2: Run your app on an Android device](#32-run-your-app-on-an-android-device)
-* [3.3: Run your app on an iOS device](#33-run-your-app-on-an-ios-device)
-* [3.4: LiveSync your changes](#34-livesync-your-changes)
-* [3.5: Debug your app](#35-debug-your-app)
-
 ## 3.1: Prerequisite to run your app on a device
 
 There are a lot of similarities between **Build** and **Run on Device**. For example, you still need to provide a valid certificate and mobile provision to deploy your app on an iOS device. To avoid repetition with the previous chapter, we will focus only on the specific requirements needed to run your app on a device.

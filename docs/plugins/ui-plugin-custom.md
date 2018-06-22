@@ -9,14 +9,6 @@ slug: building-ui-plugins-custom-components
 
 Whenever needed UI can be shown by a plugin just by exposing a custom component, e.g. some platform-specific functionality that renders UI itself. To demonstrate that, this article explains how to create a simple button plugin.
 
-Contents:
-
-* [Prerequisites](#prerequisites)
-* [Bootstrap Your Plugin](#bootstrap-your-plugin)
-* [Add the UI bits](#add-the-ui-bits)
-    * [Common Code](#common-code)
-    * [Platform-specific Code](#platform-specific-code)
-* [Make Your Plugin Angular Compatible](#make-your-plugin-angular-compatible)
 
 ## Prerequisites
 
@@ -26,12 +18,11 @@ The article contains information applicable to apps built with NativeScript 3.x.
 
 First things first - you start off from a regular plugin. You can check the [Building Plugins article](%slug building-plugins%) for reference.
 
-## Add the UI bits
-### Common Code
+## Common Code
 
 Let's say you want to build a simple button which you can use like:
 
-```
+```XML
     <ui:MyButton text="MyButton1" tap="onTap" />
 ```
 
@@ -99,7 +90,7 @@ MyButtonBase.prototype.recycleNativeView = false;
 
 You see "text" and "myOpacity" properties are defined in this file and also recycleNativeView is set to "false". To read more how these declarations work refer the [Properties article]({%slug properties%}).
 
-### Platform-specific Code
+## Platform-specific Code
 
 Writing the platform-specific implementations, the following overrides need to be considered:
 - `createNativeView` - you override this method, create and return your nativeView 

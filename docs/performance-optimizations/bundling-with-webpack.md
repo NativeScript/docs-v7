@@ -8,32 +8,6 @@ previous_url: /core-concepts/bundling-with-webpack,/tooling/bundling-with-webpac
 
 # Using Webpack to Bundle Your Code
 
-* [Overview](#overview)
-* [Introducing Webpack](#introducing-webpack)
-* [Installation and Configuration](#installation-and-configuration)
-* [How nativescript-dev-webpack Works](#how-nativescript-dev-webpack-works)
-* [Usage](#usage)
-    * [NativeScript CLI commands](#nativescript-cli-commands)
-    * [Publishing Application](#publishing-application)
-* [Optimizations](#optimizations)
-    * [Uglify.js](#uglifyjs)
-    * [Angular and Ahead-of-Time Compilation](#angular-and-ahead-of-time-compilation)
-    * [V8 Heap Snapshot](#v8-heap-snapshot)
-        * [NativeScriptSnapshotPlugin configuration](#nativescriptsnapshotplugin-configuration)
-        * [Checking if snapshot is enabled](#checking-if-snapshot-is-enabled)
-* [Debugging Common Errors](#debugging-common-errors)
-    * [Javascript heap out of memory](#javascript-heap-out-of-memory)
-* [Inspecting Bundles](#inspecting-bundles)
-* [Generating Webpack Report](#generating-webpack-report)
-* [Recommendations for Plugin Authors](#recommendations-for-plugin-authors)
-    * [Referencing Platform-specific modules from "package.json"](#referencing-platform-specific-modules-from-packagejson)
-* [Emitting Helper Functions in TypeScript Plugins](#emitting-helper-functions-in-typescript-plugins)
-* [Bundling Background Workers](#bundling-background-workers)
-* [Webpack Resources](#webpack-resources)
-* [Showcase apps](#showcase-apps)
-
-## Overview
-
 JavaScript code and general asset bundling have been a member of the web developer toolbox for a long time. Tools like [Webpack](https://webpack.js.org) have been providing support for an enjoyable development experience that lets you assemble client-side code from various module sources and formats and then package it together. Most importantly, they allow for page load time optimizations that reduce or parallelize the number of requests a browser makes to the server.
 
 Why bundle scripts in a mobile app though? Aren't all files stored on the local device, so requesting them should be faster than an HTTP request?! Yes, that is the case, but bundling still has an important place in mobile app optimizations:

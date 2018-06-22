@@ -9,15 +9,9 @@ slug: nativescript-application-templates
 
 There are several available templates that can help you bootstrap your NativeScript application using the best coding practices, in all supported flavors, including Angular & TypeScript, Vanilla JavaScript or TypeScript.
 
-1. [Blank](#blank)
-2. [Navigation Drawer](#navigation-drawer)
-3. [Tabs](#tabs)
-4. [Master Detail with Firebase](#master-detail-with-firebase)
-4. [Master Detail with Kinvey](#master-detail-with-kinvey)
-
 To create a new app using one of the templates, you can use the following command:
 
-```bash
+```Bash
 $  tns create my-app-name --template tns-template-name
 ```
 

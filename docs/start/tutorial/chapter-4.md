@@ -10,11 +10,6 @@ As you build more complex apps, you'll likely run into functionality that is not
 
 In this chapter, you'll install and use an external email validator module to verify the format of email addresses as they are entered on the registration screen. Then, you'll add a NativeScript plugin, [NativeScript social share](https://www.npmjs.com/package/nativescript-social-share), to let users share their grocery lists using their device's native sharing widget.
 
-## Table of contents
-
-- [4.1: Using npm modules](#41-using-npm-modules)
-- [4.2: Using NativeScript plugins](#42-using-nativescript-plugins)
-
 ## 4.1: Using npm modules
 
 It would be nice to be able to make sure people are entering well-formatted email addresses into your app on the registration screen. You could write this functionality yourself, but validating email addresses is [surprisingly tricky](http://stackoverflow.com/questions/46155/validate-email-address-in-javascript), and it's a lot easier to use one of many npm modules that already provide this validation. For Groceries let's see how to add this [email-validator module](https://www.npmjs.com/package/email-validator) to test for valid addresses.

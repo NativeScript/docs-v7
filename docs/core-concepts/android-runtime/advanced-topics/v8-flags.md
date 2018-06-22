@@ -9,7 +9,7 @@ position: 5
 
 V8 comes with a set of controlling flags that may be useful for a fine-grained tuning. Currently, we use `--expose_gc` flag to expose global `gc()` function which comes handy in advanced memory management scenarios. You can set these flags in `package.json` configuration file.
 
-```
+```JSON
 {
 	...
 	"android": {

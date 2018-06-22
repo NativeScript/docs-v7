@@ -12,15 +12,6 @@ When you develop new features inside your app, you can ensure that they are work
 
 To run your unit tests, the NativeScript CLI uses [Karma](http://karma-runner.github.io/0.13/index.html).
 
-* [Before You Begin](#before-you-begin)
-* [Configure Your Project](#configure-your-project)
-* [Write Your Tests](#write-your-tests)
-* [Run Your Tests](#run-your-tests)
-	* [Requirements](#requirements)
-	* [Run the Tests](#run-the-tests)
-	* [Re-Run Tests on Code Change](#re-run-tests-on-code-change)
-	* [Configure the Karma Server](#configure-the-karma-server)
-* [Continuous Integration](#continuous-integration)
 
 ## Before You Begin
 

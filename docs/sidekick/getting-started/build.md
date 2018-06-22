@@ -10,12 +10,6 @@ slug: gs-build
 
 In this chapter, you are going to learn about the cloud and local builds and what are the most important difference between the two. You will also see what are the requirements and steps needed to build your app for Android and iOS.  
 
-## Table of contents
-
-* [2.1: Cloud builds or Local builds](#21-cloud-builds-or-local-builds)
-* [2.2: Build for Android](#22-build-for-android)
-* [2.3: Build for iOS](#23-build-for-ios)
-
 ## 2.1: Cloud builds or Local builds
 
 You might ask yourself what are the differences between the Cloud and Local builds?

@@ -10,10 +10,6 @@ previous_url: /debugging,/core-concepts/debugging
 
 You can debug apps developed with the NativeScript framework from both the NativeScript CLI and [Visual Studio Code](https://code.visualstudio.com/).
 
-* [Debugger Commands](#debugger-commands)
-* [Debugger Options](#debugger-options)
-* [Debugging with Visual Studio Code](#debugging-with-visual-studio-code)
-* [Debugging with Chrome DevTools](#debugging-with-chrome-devtools)
 
 ## Debugger Commands
 

@@ -8,17 +8,6 @@ previous_url: /core-concepts/visual-studio-code-extension
 
 # NativeScript Extension for Visual Studio Code
 
-1. [Installation](#installation)
-2. [Debugging](#debugging)
-  1. [Generate launch configurations](#generate-launch-configurations)
-  2. [Launch an application with debugger](#launch-an-application-with-debugger)
-  3. [Attach the debugger to an already running app](#attach-the-debugger-to-an-already-running-app)
-  4. [Debug TypeScript](#debug-typescript)
-  5. [Supply additional arguments to the debug command](#supply-additional-arguments-to-the-debug-command)
-  6. [Turn on debugging protocol diagnostic logging](#turn-on-diagnostic-logging)
-3. [Use NativeScript-specific commands](#use-nativescript-specific-commands)
-4. [NativeScript CLI version detection](#nativescript-cli-version-detection)
-
 ## Installation
 
 To install the [NativeScript extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=Telerik.nativescript) open the Command Palette (`F1` or `Cmd+Shift+P`) and run `Extensions: Install Extension` command, then search for 'NativeScript' and choose it from the list.
@@ -80,5 +69,7 @@ The extension depends on a globally installed NativeScript CLI. It will show an 
 > The extension requires a specific NativeScript CLI version and if you have another version installed, you will see a warning message. The extension is likely to work with the unsupported version but it is recommended to update the NativeScript CLI or the VS Code extension.
 
 ## Known issues
- * [The variables pane on Android doesn't work](https://github.com/NativeScript/nativescript-vscode-extension/issues/21). * [In order to be able to debug, the opened workspace must be the app root folder.](https://github.com/NativeScript/nativescript-vscode-extension/issues/104)
+ * [The variables pane on Android doesn't work](https://github.com/NativeScript/nativescript-vscode-extension/issues/21).
+ * [In order to be able to debug, the opened workspace must be the app root folder.](https://github.com/NativeScript/nativescript-vscode-extension/issues/104)
+
 

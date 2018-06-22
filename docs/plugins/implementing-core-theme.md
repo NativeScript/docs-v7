@@ -12,15 +12,6 @@ For plugins that use UI components, we highly recommend implementing the NativeS
 
 To review the working example, you can refer to [this branch](https://github.com/NativeScript/nativescript-ui-plugin-custom/tree/implement-core-themes/) of the [NativeScript Custom UI Plugin repository](https://github.com/NativeScript/nativescript-ui-plugin-custom).
 
-What this article covers:
-* [Prerequisites](#prerequisites)
-* [Plugin Code Changes](#plugin-code-changes)
-* [Implementation](#implementation)
-    * [Files Structure and Contents](#files-structure-and-contents) 
-    * [SCSS Compilation](#scss-compilation)
-* [Usage](#usage)
-* [Screenshots](#screenshots)
-
 ## Prerequisites
 
 This article is built on top of a [custom UI plugin](https://github.com/NativeScript/nativescript-ui-plugin-custom) which is an example for another article about [Building UI Plugin using Custom Components ]({ % building-ui-plugins-custom-components % }) in this documentation.

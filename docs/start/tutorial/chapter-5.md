@@ -10,12 +10,6 @@ The beauty of NativeScript is that you can write a native iOS or Android app in 
 
 NativeScript gives you the option to dig into native code as needed, and to do so without leaving JavaScript. To show how this works in action, let's start by adding some color to the ActionBar in the iOS version of the Groceries app.
 
-## Table of contents
-
-- [5.1: Customize the ActionBar - iOS](#51-customize-the-actionbar---ios)
-- [5.2: Deleting from a list - Android](#52-deleting-from-a-list---android)
-- [5.3: Deleting from a list - iOS](#53-deleting-from-a-list---ios)
-
 ## 5.1: Customize the ActionBar - iOS
 
 When you use the ActionBar UI component, NativeScript is actually creating and managing an iOS `UINavigationController` for you. You can see this for yourself by digging into the implementation code, specifically `node_modules/tns-core-modules/ui/action-bar/action-bar.ios.js`, and `node_modules/tns-core-modules/ui/frame/frame.ios.js`.

@@ -10,11 +10,6 @@ slug: gs-create-app
 
 In this chapter, you are going to learn how to create a {{ site.ns }} app in {{ site.sk }}. Then, you will see how easy it is to modify the settings of the newly created app. Finally, you are going to use {{ site.sk }} to find a {{ site.ns }} plugin and include it in your app. Let's get started.
 
-## Table of contents
-
-* [1.1: Create a new app](#11-create-a-new-app)
-* [1.2: Modify the app settings](#12-modify-the-app-settings)
-* [1.3: Include a plugin](#13-include-a-plugin)
 
 ## 1.1: Create a new app
 

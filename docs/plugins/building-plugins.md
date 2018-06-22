@@ -11,13 +11,6 @@ Building NativeScript plugins is a great way to learn more about how NativeScrip
 
 Let’s start by looking at the basics of how to structure a NativeScript plugin, and then move on to look at how you can generate that structure using the NativeScript plugin seed.
 
-* [Plugin Basics](#plugin-basics)
-* [The NativeScript Plugin Seed](#the-nativescript-plugin-seed)
-    * [Step 1: Start your plugin](#step-1-start-your-plugin)
-    * [Step 2: Set Up a Development Workflow](#step-2-set-up-a-development-workflow)
-    * [Step 3: Write your Plugin](#step-3-write-your-plugin)
-    * [Step 4: Publish Your Plugin](#step-4-publish-your-plugin)
-
 ## Plugin Basics
 
 At their basic level NativeScript plugins are simple JavaScript modules that use well established npm conventions. For example, here’s what the world’s simplest NativeScript plugin looks like.
@@ -34,7 +27,7 @@ nativescript-hello-world/
 
 And here is the simplest possible implementation of that plugin.
 
-``` JavaScript
+```JavaScript
 // index.js
 module.exports = {
   helloWorld: function() {
@@ -43,7 +36,7 @@ module.exports = {
 }
 ```
 
-``` JavaScript
+```JSON
 /* package.json */
 {
   "name": "nativescript-hello-world",
@@ -74,7 +67,7 @@ tns plugin add /path/to/nativescript-hello-world/src
 
 With the plugin installed, you can use the CommonJS `require()` method to import your plugin and use its  `helloWorld()` method.
 
-``` JavaScript
+```JavaScript
 var helloWorldModule = require("nativescript-hello-world");
 helloWorldModule.helloWorld();
 ```
@@ -161,7 +154,7 @@ If all went well, you should see the demo app start up and show one of the follo
 
 To show how the development process works, next, open your plugin’s `src/version-number.common.ts` file, find the line of code that contains the “Your plugin is working” string, and make a small change. For example you could change the entire line of code that sets the `msg` variable to the following.
 
-``` TypeScript
+```TypeScript
 let msg = `Your plugin is working on ${app.android ? 'Android' : 'iOS'}!!!!!!!!!!!!!!!!!!!!!!!!!!!`;
 ```
 
@@ -213,7 +206,7 @@ The NativeScript plugin seed automatically sets up the necessary TypeScript conf
 
 There are still a few more changes you need to make before your plugin is ready to test. Next, open your `src/version-number.android.ts` file and paste in the following code:
 
-``` TypeScript
+```TypeScript
 import * as application from "tns-core-modules/application";
 
 export class VersionNumber {
@@ -230,7 +223,7 @@ With this you have a functional plugin implementation for both iOS and Android, 
 
 Open your `src/index.d.ts` file and paste in the following code.
 
-``` TypeScript
+```TypeScript
 export declare class VersionNumber {
   get(): string;
 }
@@ -244,7 +237,7 @@ The NativeScript CLI does not generate your `index.d.ts` file, but in most situa
 
 With that, your plugin is completely functional and can retrieve your app’s version number on both iOS and Android. To test this out, head back to your demo app, open your `demo/app/main-view-model.ts` file, find the line of code that sets `this.message`, and change it to use the following line of code.
 
-``` TypeScript
+```TypeScript
 this.message = this.versionNumber.get();
 ```
 

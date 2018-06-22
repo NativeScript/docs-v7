@@ -9,14 +9,6 @@ environment: angular
 
 In this chapter you'll learn about NativeScript modules, which are the TypeScript modules in your app's `node_modules/tns-core-modules` folder. Whether you've realized it or not, you've already used several NativeScript modules, as all of the NativeScript UI elements are actually implemented with TypeScript code.
 
-## Table of contents
-
-- [3.1: UI elements](#31-ui-elements)
-- [3.2: Animations](#32-animations)
-- [3.3: ListView](#33-listview)
-- [3.4: GridLayout](#34-gridlayout)
-- [3.5: ActivityIndicator](#35-activityindicator)
-
 If you dig into `node_modules/tns-core-modules` you can get an idea of how these modules work. Start by finding the `node_modules/tns-core-modules/color` folder, which includes the implementation of the color module. It includes:
 
 - a `package.json` file that sets the name of the module;

@@ -27,7 +27,8 @@ In your project, the files for each module reside in a dedicated subdirectory in
 	* [Widgets](#widgets)
 * [WHATWG polyfills](#whatwg-polyfills)
 * 
-### Core modules
+
+## Core modules
 
 + [application]({%ns_cookbook application%}): Provides the application abstraction with all related methods.
 + [console]({%ns_cookbook console%}): Lets you print messages to the device console.
@@ -39,20 +40,20 @@ In your project, the files for each module reside in a dedicated subdirectory in
 + [ui/image-cache]({%ns_cookbook ui/image-cache%}): Provides the `Cache` class which handles image download requests and caches the already downloaded images.
 + [connectivity]({%ns_cookbook connectivity%}): Lets you check the type of Internet connection and monitor its state changes.
 
-### Device functionality modules
+## Device functionality modules
 
 + [platform]({%ns_cookbook platform%}): Provides information about the device, its operating system and software.
 + [fps-meter]({%ns_cookbook fps-meter%}): Lets you capture the frames-per-second metrics of your application.
 + [file-system]({%ns_cookbook file-system%}): Lets you work with the device file system. Provides high-level abstractions for file system entities such as files, folders, known folders, paths, separators, etc.
 + [ui/gestures]({%ns_cookbook ui/gestures%}): Provides the `GesturesObserver` class which lets you observe and respond to user gestures.
 
-### Data modules
+## Data modules
 
 + [data/observable]({%ns_cookbook data/observable%}): Provides the `Observable` class which represents an observable object or data in the MVVM paradigm.
 + [data/observable-array]({%ns_cookbook data/observable-array%}): Provides the `ObservableArray` class which detects and responds to changes in a collection of objects.
 + [data/virtual-array]({%ns_cookbook data/virtual-array%}): Provides the `VirtualArray` class which is an advanced array-like class that helps loading items on demand.
 
-### User interface modules
+## User interface modules
 
 + [ui/frame]({%ns_cookbook ui/frame%}): Provides the `Frame` class which represents the logical `View` unit that is responsible for navigation within an application.
 + [ui/page]({%ns_cookbook ui/page%}): Provides the `Page` class which represents a logical unit for navigation inside a `Frame`. NativeScript apps consist of pages.
@@ -63,7 +64,7 @@ In your project, the files for each module reside in a dedicated subdirectory in
 + [ui/animation]({%ns_cookbook ui/animation%}): Provides the `Animation` class which lets you animate view properties.
 
 
-#### Layouts
+### Layouts
 
 + [ui/layouts/stack-layout]({%ns_cookbook ui/layouts/stack-layout%}): Provides the `StackLayout` class which lets you arrange the children of the layout in a single line.
 + [ui/layouts/grid-layout]({%ns_cookbook ui/layouts/grid-layout%}): Provides the `GridLayout` class which lets you arrange the children of the layout in a flexible grid area with columns and rows.
@@ -71,7 +72,7 @@ In your project, the files for each module reside in a dedicated subdirectory in
 + [ui/layouts/wrap-layout]({%ns_cookbook ui/layouts/wrap-layout%}): Provides the `WrapLayout` class which lets you arrange the children of the layout at sequential positions from left to right and then wrap the lines of children from top to bottom.
 + [ui/layouts/dock-layout]({%ns_cookbook ui/layouts/dock-layout%}): Provides the `DockLayout` class which lets you arrange the children of the layout at top, bottom, left and right of the layout.
 
-#### Widgets
+### Widgets
 
 + [ui/activity-indicator]({%ns_cookbook ui/activity-indicator%}): Provides the `ActivityIndicator` class which represents a widget for showing that a service is currently busy.
 + [ui/button]({%ns_cookbook ui/button%}): Provides the `Button` class which is a standard button widget.
@@ -94,6 +95,6 @@ In your project, the files for each module reside in a dedicated subdirectory in
 + [ui/time-picker]({%ns_cookbook ui/time-picker%}): Provides the `TimePicker` class which represents a standard time picker component.
 + [ui/placeholder]({%slug placeholder %}): Provides the `Placeholder` class which lets you add a native widget to the visual tree.
 
-### WHATWG Polyfills
+## WHATWG Polyfills
 
 + [fetch]({%ns_cookbook fetch%}): The `Fetch` polyfill that provides requests, responses, and the process that binds them: fetching. https://fetch.spec.whatwg.org/

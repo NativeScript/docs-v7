@@ -8,14 +8,6 @@ previous_url: /debug-eclipse
 
 # Debugging the Android Runtime
 
-1. [Overview](#overview)
-1. [Setting up the project for native debugging](#setting-up-the-project-for-native-debugging)
-1. [Debugging with chrome-dev-tools and Android Studio](#debugging-with-chrome-dev-tools-and-android-studio)
-    1. [Adb Forward](#adb-forward)
-    1. [Open Google Chrome with debug url](#open-google-chrome-with-debug-url)
-1. [Known Issues](#known-issues)
-1. [See Also](#see-also)
-
 ## Overview
 
 The [Debug article](./debug-cli) shows how to debug the business logic of your application. But what happens when the problem is in the runtime? How do I debug the application and the runtime simultaneously?
