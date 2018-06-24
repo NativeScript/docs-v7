@@ -66,7 +66,7 @@ Complete the following steps to setup NativeScript on your macOS development mac
 1. Install the dependencies for iOS development.
     1. Run the App Store and download and install Xcode 9 or later.
     1. Start Xcode and you will be prompted to install **Command Line Tools for Xcode**.
-        1. To verifify installation is correct please run
+        1. To verify that the installation is correct please run
          ```
          xcodebuild -version
          ```
