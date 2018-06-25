@@ -22,7 +22,6 @@ navigation:
     core-concepts:
         position: 20
         title: "CORE CONCEPTS"
-        expanded: true
     "core-concepts/android-runtime":
         position: 200
         title: "Android Runtime"
