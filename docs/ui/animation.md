@@ -80,8 +80,9 @@ In every animation, you can control the following properties:
 - **delay**: The amount of time to delay starting the animation.
 - **iterations**: Specifies how many times the animation should be played. 
 - **timing function**: The speed curve of the animation. Available options are defined below.
+- **originX** and **originY**: The X and Y components of the origin point around which the view will be transformed.
 
-##Animation curves
+## Animation curves
 
 By default, an animation moves with a linear speed without acceleration or deceleration. This might look unnatural and different from the real world where objects need time to reach their top speed and can't stop immediately. The animation curve (sometimes called an easing function) is used to give animations an illusion of inertia. It controls the animation speed by modifying the fraction of the duration. NativeScript comes with a number of predefined animation curves.
 
@@ -145,6 +146,7 @@ __Example 4: How to create own animation curve via cubic Bezier__
 
 ``` JavaScript
 var enums = require("ui/enums");
+
 view.animate({
     translate: { x: 0, y: 100 },
     duration: 1000,
@@ -171,3 +173,28 @@ view.animate({
 ![bezier](./img/modules/animation/bezier.gif "Bezier")
 
 More detailed examples are available on the [Animation Examples](./animation-examples.md) page.
+
+## Rotation using originX and originY
+
+To create more complex animations, we might need to change the origin point around which the selected view will be transformed. This can be achieved using [`originX`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#originx) and [`originY`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#originy) properties of `View`.
+
+__Example 5: Rotating a view around its center. Center of viww is changed via `originX` and `originY` properties.__
+
+``` JavaScript
+view.originX = 1; // default 0.5 (center), 0 is most left, 1 is most right
+view.originY = 0.5; // default 0.5 (middle), 0 is top, 1 is bottom
+view.animate({
+	rotate: 360, // will take into account originX and originY
+    duration: 1000
+});
+```
+``` TypeScript
+view.originX = 1; // default 0.5 (center), 0 is most left, 1 is most right
+view.originY = 0.5; // default 0.5 (middle), 0 is top, 1 is bottom
+view.animate({
+	rotate: 360, // will take into account originX and originY
+    duration: 1000
+});
+```
+
+> Note: The properties `originX` and `originY` are JavaScript properties and can be assigned via code-behind only via a given `View` reference. We can still use them along with CSS animations, but the values for `originX` and `originY` must be set in the code-behind logic.

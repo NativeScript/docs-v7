@@ -372,4 +372,48 @@ animationSet.play().catch((e) => {
 // Call animationSet.cancel() to stop it;
 ```
 
+## Rotation using originX and originY
+
+git bran
+__Example 5: Rotating a view around its center. Center of viww is changed via `originX` and `originY` properties.__
+
+``` JavaScript
+const view = page.getViewById("myView");
+
+view.originX = 1; // default 0.5 (center), 0 is most left, 1 is most right
+view.originY = 0; // default 0.5 (middle), 0 is top, 1 is bottom
+view.animate({
+	rotate: 360, // will take into account originX and originY
+    duration: 1000
+}).then(() => {
+    view.originX = 0;
+    view.originY = 1;
+    view.rotate = 0;
+
+    view.animate({
+        rotate: -360,
+        duration: 1000
+    })
+})
+```
+``` TypeScript
+const view = page.getViewById("myView");
+
+view.originX = 1; // default 0.5 (center), 0 is most left, 1 is most right
+view.originY = 0; // default 0.5 (middle), 0 is top, 1 is bottom
+view.animate({
+	rotate: 360, // will take into account originX and originY
+    duration: 1000
+}).then(() => {
+    view.originX = 0;
+    view.originY = 1;
+    view.rotate = 0;
+
+    view.animate({
+        rotate: -360,
+        duration: 1000
+    })
+})
+```
+
 
