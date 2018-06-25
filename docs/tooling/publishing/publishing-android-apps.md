@@ -8,6 +8,8 @@ previous_url: /core-concepts/publishing-android-apps
 
 # Publishing a NativeScript Android App in Google Play
 
+## Overview
+
 > **Tip:** Instead of the CLI, use [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick) for easy app store publishing to both the iOS App Store and Google Play. Sidekick also offers starter kits, plugin management, and cloud-based builds for iOS and Android.
 
 You can publish a NativeScript app in *Google Play* the same way [you would release a purely native Android app](http://developer.android.com/tools/publishing/publishing_overview.html).
@@ -44,7 +46,7 @@ You may need to delete `platforms/android` and rebuild using the CLI command `tn
 ## App name
 This is the display name for your app. It is purely cosmetic but highly important. For example, it appears under the app icon.
 The value can be stored in the `app/App_Resources/Android/values/strings.xml` file
-```
+```XML
 <resources>
     <string name="app_name">MyAppName</string>
     <string name="title_activity_kimera">MyAppName</string>
@@ -69,7 +71,10 @@ The actual .PNG icons stay at the Android resources in `app/App_Resource/Android
 | `drawable-xxhdpi` | 480 | Extra-extra-high density screen       | 144px x 144px |
 | `drawable-xxxhdpi`| 640 | Extra-extra-extra-high density screen | 192px x 192px |
 
+> Note: NativeScript supports adaptive icons on Android 8 and above (API 26+). No code changes are required - follow the [Android guidelines for creating adaptive icons](https://developer.android.com/guide/practices/ui_guidelines/icon_design_adaptive) for your application.
+
 ## Launch screen
+
 Android has no built-in mechanism to provide launch screen image.
 [Here is a documentation article that describes how to implement a launch screen in the NativeScript framework.](http://docs.nativescript.org/angular/publishing/creating-launch-screens-android.html)
 
