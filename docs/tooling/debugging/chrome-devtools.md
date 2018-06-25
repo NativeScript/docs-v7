@@ -9,14 +9,6 @@ slug: chrome-devtools
 
 The following article is an overview of the features supported in Chrome DevTools when debugging NativeScript applications.
 
-The article will cover the following DevTools features, what they are good for, and how to use them:
--	[Debugger](#debugger)
--   [Console](#console)
--   [Resources](#resources)
--   [Network](#network)
--   [Elements](#elements)
--   [Plugin author's guide](#plugin-authors-guide)
-
 Table of supported features as of NativeScript version **3.4.0**
 
 |                            | Android Chrome DevTools | iOS Safari AppInspector | iOS Chrome DevTools | VSCode Extension |

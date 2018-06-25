@@ -10,12 +10,6 @@ The beauty of NativeScript is that you can write a native iOS or Android app in 
 
 NativeScript gives you the option to dig into native code as needed, and to do so without leaving JavaScript. To show how this works in action, let's start by adding some color to the ActionBar in the iOS version of the Groceries app.
 
-## Table of contents
-
-- [5.1: Customize the ActionBar - iOS](#51-customize-the-actionbar---ios)
-- [5.2: Deleting from a list - Android](#52-deleting-from-a-list---android)
-- [5.3: Deleting from a list - iOS](#53-deleting-from-a-list---ios)
-
 ## 5.1: Customize the ActionBar - iOS
 
 When you use the ActionBar UI component, NativeScript is actually creating and managing an iOS `UINavigationController` for you. You can see this for yourself by digging into the implementation code, specifically `node_modules/tns-core-modules/ui/action-bar/action-bar.ios.js`, and `node_modules/tns-core-modules/ui/frame/frame.ios.js`.
@@ -70,7 +64,7 @@ Ok, let's break down what just happened, starting with the `if (page.ios)` check
 
 Within the if block, you start by getting a reference to the `UINavigationBar`, and then you set its [`barStyle` property](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitDataTypesReference/index.html#//apple_ref/c/tdef/UIBarStyle) to `UIBarStyle.UIBarStyleBlack`, which (counter intuitively) makes the iOS status bar use white text. This produces the look shown below:
 
-![The iOS actionbar with updated colors](/img/cli-getting-started/nativescript/chapter6/ios/1.png)
+![The iOS actionbar with updated colors](../img/cli-getting-started/nativescript/chapter6/ios/1.png)
 
 Learning how to transfer iOS and Android APIs into valid NativeScript code can take a little trial and error to get right. You can always refer to the NativeScript docs for detailed discussions of how to handle the code conversion. Here are the [docs for Android](/runtimes/android/marshalling/java-to-js.html), and here are the [docs for iOS](/runtimes/ios/marshalling/Marshalling-Overview.html).
 
@@ -113,7 +107,7 @@ With this code you're primarily adding an `<Image>` to the existing ListView tem
 
 For the image itself, the `ios:visibility="collapsed"` attribute sets the image's `visibility` CSS property to `"collapsed"`, which hides it. Because the attribute was prefixed with `ios:`, that CSS property is only applied on iOS; therefore the button displays on Android devices, but not on iOS ones. The trash can image itself has already been placed in the app for you, and can be found in appropriate sizes in the four drawable folders in `/app/App_Resources/Android`. Here's what the trash can UI looks like on Android:
 
-![Trash can icons on Android](/img/cli-getting-started/nativescript/chapter6/android/1.png)
+![Trash can icons on Android](../img/cli-getting-started/nativescript/chapter6/android/1.png)
 
 Finally, make the trash actually delete items. To do that you'll need to implement the `tap="delete"` handler in the list code-behind file.
 
@@ -154,7 +148,7 @@ This code probably looks fairly familiar by now. You're again calling the fetch 
 
 If you run your app on Android you should be able to delete items from the list.
 
-![deleting from a list on Android](/img/cli-getting-started/nativescript/chapter6/android/2.gif)
+![deleting from a list on Android](../img/cli-getting-started/nativescript/chapter6/android/2.gif)
 
 Now that you have built the interface for Android's tappable icon, let's add a swipe delete interface for iOS.
 
@@ -191,7 +185,7 @@ if (page.ios) {
 
 This code gets a reference to the page's `<ListView>` id and then passes that reference to the swipe-to-delete module's `enable()` function. The `enable()` function also takes a callback, so you additionally pass an inline function that calls the view model's `delete()` function that you built in the previous section. Here's what the swipe-to-delete functionality looks like on iOS:
 
-![deleting from a list on iOS](/img/cli-getting-started/nativescript/chapter6/ios/2.gif)
+![deleting from a list on iOS](../img/cli-getting-started/nativescript/chapter6/ios/2.gif)
 
 And... that's it! You've created a functional, cross-platform, backend-driven app to manage your grocery list. In the process you've created a unique UI for Android and iOS, leveraged NativeScript plugins and npm modules, learned how to log in and register, managed backend services, created a list with add and delete functionality, and more. 
 

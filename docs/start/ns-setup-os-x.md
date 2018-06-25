@@ -11,9 +11,6 @@ previous_url: /setup/ns-cli-setup/ns-setup-os-x
 
 This page contains a list of all system requirements needed to build and run NativeScript apps on macOS, as well as a guided walkthrough for getting these requirements in place. On macOS systems, you can use the NativeScript CLI to develop Android and iOS apps.
 
-* [System Requirements](#system-requirements)
-* [Advanced Setup Steps](#advanced-setup-steps)
-
 ## System Requirements
 
 * macOS High Sierra or later

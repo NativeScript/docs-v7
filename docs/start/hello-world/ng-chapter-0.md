@@ -10,12 +10,6 @@ environment: angular
 
 Welcome to the NativeScript & Angular getting started guide. In this hands-on tutorial, you’ll build a cross-platform iOS and Android app from scratch.
 
-## Table of contents
-
-- [What is NativeScript? What is Angular?](#what-is-nativescript-what-is-angular)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-
 > **TIP**: If you’re a video learner, the third-party site NativeScripting has a [free video course](https://nativescripting.com/course/nativescript-with-angular-getting-started-guide) that walks you through this guide step by step.
 
 ## What is NativeScript? What is Angular?

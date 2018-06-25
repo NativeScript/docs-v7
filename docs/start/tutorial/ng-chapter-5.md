@@ -11,12 +11,6 @@ The beauty of NativeScript is that you can write a native iOS or Android app in 
 
 NativeScript gives you the option to dig into native code as needed, and to do so without leaving TypeScript. To show how this works in action, let's tweak a few of the UI elements in your app using native code.
 
-## Table of contents
-
-- [5.1: Accessing iOS APIs](#51-accessing-ios-apis)
-- [5.2: Accessing Android APIs](#52-accessing-android-apis)
-- [5.3: Customizing the status bar](#53-customizing-the-status-bar)
-
 ## 5.1: Accessing iOS APIs
 
 You may recall from earlier chapters that the hint color on your sign up screen could use a little more contrast. Notice the unappealing black on brown color of the text in the images below (if you can see the text at all).

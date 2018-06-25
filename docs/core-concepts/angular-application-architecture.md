@@ -13,14 +13,7 @@ In this article we are going to go through the core concepts of the Angular fram
 
 >**Note:** The best place to learn about Angular concepts is on [angular.io](https://angular.io/docs/ts/latest/). We are going to refer to it in many sections in this article.
 
-* [Components](#components)
-* [Template Syntax](#template-syntax)
-* [Data Binding](#data-binding)
-* [Directives](#directives)
-* [Dependency Injection](#dependency-injection)
-* [Navigation](#navigation)
-
-# Components
+## Components
 
 Components are the main building block of Angular applications. They define the application UI and the logic that controls it. Let's take look at the following component:
 
@@ -52,7 +45,7 @@ You can learn more about components on [angular.io](https://angular.io/docs/ts/l
 
 There are almost no differences between creating component classes in Angular web apps and NativeScript apps.
 
-# Template Syntax
+## Template Syntax
 The template defines the view of the component - what is actually rendered. 
 In NativeScript applications the template is defined with XML using [NativeScript UI elements]({% slug components %}). It is different from HTML. So instead of `<input>`, `<span>`, `<div>` etc. - we have `<text-field>`, `<label>` and layouts.
 
@@ -61,23 +54,23 @@ The important thing is that although the elements are different - all of the [An
 >When defining the template you can use both CamelCase and kebab-case. So, both `<StackLayout>` and `<stack-layout>` are valid inside a template definition. 
 
 There is no text-node element in NativeScript so the following template will render an empty `StackLayout`:
-``` XML
+```XML
 <StackLayout orientation="vertical">
     {%raw%} {{ message }} {%endraw%} 
 </StackLayout>
 ```
 
 To fix it, you can just use a `Label` to show the message:
-``` XML
+```XML
 <StackLayout orientation="vertical">
     {%raw%}<Label text="{{ message }}"></Label>{%endraw%} 
 </StackLayout>
 ```
 
-# Data Binding
+## Data Binding
 Data binding is a mechanism for connecting the parts of the view (template) with parts of the component class. There are several forms of data binding in an Angular app. 
 
-``` XML
+```XML
 <StackLayout orientation="vertical">
     <Label [text]="message"></Label>
     <Button text="tap me" (tap)="onTap()"></Button>
@@ -93,7 +86,7 @@ Let's examine:
     
 This topic is covered in depth in the [data binding article]({% slug data-binding %}).
 
-# Directives
+## Directives
 Directives allow you to create and attach behavior to the visual tree. There are three kinds of directives:
 
 * `Components` - We already talked about them. `Components` are actually directives which have their own template.
@@ -102,12 +95,12 @@ Directives allow you to create and attach behavior to the visual tree. There are
 
 When it comes to NativeScript specifics - there are again almost no differences as far as directives are concerned. You are free to use all the built-in Angular directives; you’re also free to write your own.
 
-# Dependency Injection
+## Dependency Injection
 
 Angular ships with its own dependency injection (DI for short) framework. It is extremely powerful and fully usable in NativeScript.
 You can read more about it on [angular.io](https://angular.io/docs/ts/latest/guide/dependency-injection.html).
 
-# Navigation
+## Navigation
 
 The navigation inside a NativeScript application is done with the [Angular Router](https://angular.io/docs/ts/latest/guide/router.html#). However, you can choose between two router-outlets:
 * `router-outlet` - the built in Angular router outlet. It replaces the content of the outlet with the templates of different component.

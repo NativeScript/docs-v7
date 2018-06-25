@@ -8,19 +8,6 @@ previous_url: /properties
 environment: nativescript
 ---
 
-# Property System 
-
-* [Prerequisites](#prerequisites)
-* [Property class](#property-class) 
-* [CssProperty class](#cssproperty-class)
-* [InheritedCssProperty class](#inheritedcssproperty-class) 
-* [Registering the Property](#registering-the-property) 
-* [Value Change Event](#value-change-event) 
-* [NativeView Property](#nativeview-property) 
-* [Views Lifecycle and Recycling](#views-lifecycle-and-recycling)
-* [Iterating Over View Children](#iterating-over-view-children) 
-* [View Class Common Methods](#view-class-common-methods)
-
 ## Prerequisites
 
 - NativeScript 3.x.x or newer version
@@ -79,13 +66,13 @@ export const myOpacityProperty = new CssProperty<Style, number>({
 ## Registering the Property
 
 After a property is defined it needs to be registered on a type like this: 
-```
+```JavaScript
 textProperty.register(MyButtonBase);
 ```
 
 The `CssProperties` should be registered on the `Style` class like this:
 
-```
+```JavaScript
 // Augmenting Style definition so it includes our myOpacity property
 declare module "tns-core-modules/ui/styling/style" {
     interface Style {

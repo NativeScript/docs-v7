@@ -12,7 +12,7 @@ previous_url: /camera
 
 Almost every mobile application needs the option to capture, save and share images. The NativeScript camera plugin was designed for the first two parts of the job (taking a picture and optionally saving to device storage).
 
-### Installation
+## Installation
 
 Navigate to project folder and run NativeScript-CLI command 
 ``` 
@@ -26,6 +26,6 @@ npm install nativescript-camera --save
 
 > Note: the `--save` flag will add the plugin as dependency in your package.json file
 
-### Usage
+## Usage
 
 For detailed information about plugin's usage, check the [plugin's README in GitHub](https://github.com/NativeScript/nativescript-camera#nativescript-camera-).

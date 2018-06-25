@@ -9,13 +9,6 @@ guide: true
 
 In this guide you’re going to start with the basics, including creating new apps, getting those apps running on emulators, and setting up a development workflow that will allow you to build apps quickly.
 
-## Table of contents
-
-- [Creating apps](#creating-apps)
-- [Running apps](#running-apps)
-- [Debugging apps](#debugging-apps)
-- [Appendix A: Choosing an editor](#appendix-a-choosing-an-editor)
-
 ## Creating apps
 
 In NativeScript you create and run apps using the NativeScript CLI. After [installation](/start/quick-setup), the NativeScript CLI is available on your terminal or command prompt as a `tns` command—which is short for <b>T</b>elerik <b>N</b>ative<b>S</b>cript.

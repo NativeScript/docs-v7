@@ -9,7 +9,7 @@ position: 5
 
 V8 comes with a set of controlling flags that may be useful for a fine-grained tuning. Currently, we use `--expose_gc` flag to expose global `gc()` function which comes handy in advanced memory management scenarios. You can set these flags in `package.json` configuration file.
 
-```
+```JSON
 {
 	...
 	"android": {
@@ -27,7 +27,7 @@ For improved performance V8 keeps a cache of various values used for date / time
 
 While this is not a common requirement for most applications, under some circumstances this be needed. To enable this scenario, you can set the `handleTimeZoneChanges` flag:
 
-```
+```JSON
 {
         ...
         "android": {
@@ -43,7 +43,7 @@ As a result, the application will register a [BroadcastReceiver](https://develop
 
 By default all messages sent to Logcat are limited to 1024 characters and larger messages are automatically truncated. This value can be controlled with the `maxLogcatObjectSize` field:
 
-```
+```JSON
 {
         ...
         "android": {

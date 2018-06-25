@@ -11,11 +11,6 @@ When you develop for iOS, you can quickly add third-party libraries to your Nati
 
 To work with such libraries, you need to wrap them as a custom NativeScript plugin and add them to your project.
 
- * [Install CocoaPods](#install-cocoapods)
- * [Create CLI Project](#create-cli-project)
- * [Wrap the Library as NativeScript Plugin](#wrap-the-library-as-nativescript-plugin)
- * [Build the Project](#build-the-project)
-
 ## Install CocoaPods
 You need to install CocoaPods. If you haven't yet, you can do so by running:
 
@@ -49,7 +44,7 @@ $ tns platform add ios
 
 For more information about working with NativeScript plugins, click [here](plugins.md).
 
-```bash
+```Bash
 cd ..
 mkdir my-plugin
 cd my-plugin
@@ -57,7 +52,7 @@ cd my-plugin
 
 Create a `package.json` file with the following content:
 
-```json
+```JSON
 {
   "name": "my-plugin",
   "version": "0.0.1",

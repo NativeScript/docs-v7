@@ -7,7 +7,7 @@ slug: docs-changelog
 
 2.5.0 (2017, February 01)
 ==
-### Thank you, community!
+## Thank you, community!
 
 - [<img src="https://avatars.githubusercontent.com/u/16624674?v=3" alt="JmOkay" width="30px" height="30px"/>](https://github.com/JmOkay) @JmOkay
     - [(# 671)](https://github.com/NativeScript/docs/pull/671) Update ng-chapter-4.md 

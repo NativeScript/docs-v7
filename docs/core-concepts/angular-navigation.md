@@ -10,20 +10,6 @@ previous_url: /core-concepts/navigation-angular
 # Navigation
 In this article we will cover how to do navigation in NativeScript application using Angular.
 
-* [Router](#router)
-* [Configuration](#configuration)
-* [Pages](#pages)
-* [Router Links](#router-links)
-* [Router Outlet](#router-outlet)
-* [Page Router Outlet](#page-router-outlet)
-* [Navigation Options](#navigation-options)
-    * [Navigating Back](#navigating-back)
-    * [Clearing Page Navigation History](#clearing-page-navigation-history)
-    * [Specifying Page Transitions](#specifying-page-transitions)
-* [Route Guards](#route-guards)
-* [Lifecycle Hooks And Component Caching](#lifecycle-hooks-and-component-caching)
-* [Passing Parameter](#passing-parameter)
-
 ## Router
 
 In an Angular application navigation is done using the **Angular Component Router**. You can check [this detailed guide on how to use the router](https://angular.io/docs/ts/latest/guide/router.html). From here on we are going to assume that you are familiar with the basic concepts and concentrate on the specifics when doing navigation with Angular inside a NativeScript app.

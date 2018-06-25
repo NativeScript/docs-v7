@@ -8,16 +8,6 @@ environment: nativescript
 
 In this chapter you'll learn about NativeScript modules, which are the JavaScript modules in your app's `node_modules/tns-core-modules` folder. Whether you've realized it or not, you've already used several NativeScript modules. This includes the modules you've brought in via `require()` (the view, frame and observable modules) and also the UI components you've been using in XML (the page, image, text field and button modules).
 
-## Table of contents
-
-- [3.1: Connecting to a backend](#31-connecting-to-a-backend)
-- [3.2: Dialog module](#32-dialog-module)
-- [3.3: ListView](#33-listview)
-- [3.4: Working with arrays](#34-working-with-arrays)
-- [3.5: GridLayout](#35-gridlayout)
-- [3.6: ActivityIndicator](#36-activityindicator)
-- [3.7: Animations](#37-animations)
-
 If you dig into `node_modules/tns-core-modules` you can get an idea of how these modules work. Start by finding the `node_modules/tns-core-modules/color` folder, which includes the implementation of the color module. It includes:
 
 - a `package.json` file that sets the name of the module;

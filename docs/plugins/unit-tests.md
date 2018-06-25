@@ -10,11 +10,6 @@ environment: nativescript
 
 Writing unit tests for a plugin that is developed using the [nativescript-plugin-seed](https://github.com/NativeScript/nativescript-plugin-seed) is as simple as building the plugin itself. Before we continue, take a look at [Building Plugins]({% slug building-plugins %}) topic if you have missed that.
 
-In this article you will find:
-- [Test Implementation](#test-implementation)
-- [Test Execution](#test-execution)
-- [Continuous Integration](#continuous-integration)
-
 ## Test Implementation
 
 You have completed your plugin and it works great, but how you can be sure that every other change applied to the code base will not break some functionality and how to easily check a plugin's state. Here, unit tests come to assistance with their best feature - 'fast execution'.
@@ -34,7 +29,7 @@ The [NativeScript plugin seed](https://github.com/NativeScript/nativescript-plug
 
 Let’s add a few additional tests to the `tests.js` file. We will continue from the point where [Building UI Plugins Using Composite Components]({% slug building-ui-plugins-composite-components %}) article left us so be sure you are aware of it. In order to test the three properties defined there we will write a test for each of them. Each test will be in a separate suite.
 
-```
+```JavaScript
 describe("topText property", function() {
     it("value is applied to top label", function() {
         uiPlugin.topText = "pain";
@@ -58,11 +53,11 @@ describe("bottomText property", function() {
 ```
 Every test assigns a value to the property in testing and verifies that the same value is applied to the element in the visual tree that uses it. The visual tree of the [nativescript-ui-plugin](https://github.com/NativeScript/nativescript-ui-plugin) in our example is pretty simple. It has a grid layout containing three elements which makes it easy to orientate in the structure. In case of more complicated plugin I would suggest that you use some of the [LayoutBase](https://docs.nativescript.org/api-reference/classes/_ui_layouts_layout_base_.layoutbase.html) class methods to explore the visual three. For example:
 
-```
-var UiPlugin = require("nativescript-ui-plugin").Meme;
-var uiPlugin = new UiPlugin();
+```JavaScript
+const UiPlugin = require("nativescript-ui-plugin").Meme;
+let uiPlugin = new UiPlugin();
 
-var uiElement = uiPlugin.getChildAt(0);
+let uiElement = uiPlugin.getChildAt(0);
 uiElement.eachChildView((view)=>{
     console.log("======START======");
     console.log("Index: " + uiElement.getChildIndex(view));

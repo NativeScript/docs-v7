@@ -10,7 +10,7 @@ previous_url: /upgrade-instructions
 
 To upgrade a NativeScript application you need to upgrade several things: NativeScript CLI Tooling, the iOS and Android runtimes and the cross-platform modules. In the steps below you will see how to do this. Please also keep in mind that you should read the [breaking changes]({% slug breaking-changes %}) for each release.
 
-### Upgrading the NativeScript tools
+## Upgrading the NativeScript tools
 
 You should first upgrade your `tns` (or `nativescript`) command, so go to a command prompt or bash/terminal prompt and type:
 
@@ -21,7 +21,7 @@ npm install -g nativescript
 This will automatically download needed files and will update your computer to the latest version of the NativeScript command line.
 You can type `tns --version` to verify that the new version is installed.
 
-### Upgrading the application
+## Upgrading the application
 
 You should execute the **update** command in the root folder of your project to upgrade it with the latest versions of iOS/Android runtimes and cross-platform modules.
 
@@ -43,7 +43,7 @@ You can also switch to specific version by passing it to the command:
 tns update 2.3.0
 ```
 
-### Upgrading platforms
+## Upgrading platforms
 
 Follow those steps in order to get the latest versions of Android and/or iOS runtimes. Navigate to the root level folder where your project is, and then if you are working on a Android project, type:
 
@@ -59,7 +59,7 @@ tns platform remove ios
 tns platform add ios
 ```
 
-### Upgrading TNS modules
+## Upgrading TNS modules
 
 The cross-platform modules are available as a npm package named [tns-core-modules](https://www.npmjs.com/package/tns-core-modules).
 

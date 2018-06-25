@@ -9,32 +9,14 @@ environment: nativescript
 
 # Architecture and Navigation
 
-NativeScript apps consist of pages that represent the separate application screens. Pages are instances of the [`page`](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) class of the [`Page`](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) module. To navigate between pages, you can use the methods of the [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class of the [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) module.
-
-> **TIP:** Instead of multiple pages, you can have a single page with a [tab view](http://docs.nativescript.org/api-reference/classes/_ui_tab_view_.tabview.html) and different user interfaces for each tab.
-
-
-* [Page management](#page-management)
-    * [Define page](#define-page)
-    * [Set home page](#set-home-page)
-* [Navigation](#navigation)
-    * [Getting Frame Reference](#getting-frame-reference)
-    * [Basic navigation](#basic-navigation)
-    * [Navigate by page name](#navigate-by-page-name)
-    * [Navigate using a function](#navigate-using-a-function)
-    * [Navigate and pass context](#navigate-and-pass-context)
-    * [Navigate and set bindingContext to the page](#navigate-and-set-bindingcontext-to-the-page)
-    * [Navigate without history](#navigate-without-history)
-    * [Clear history](#clear-history)
-    * [Navigation transitions](#navigation-transitions)
-    * [Navigate back](#navigate-back)
-    * [Modal pages](#modal-pages)
-* [Supporting multiple screens](#supporting-multiple-screens)
-    * [Screen size qualifiers](#screen-size-qualifiers)
-    * [Platform qualifiers](#platform-qualifiers)
-    * [Orientation qualifiers](#orientation-qualifiers)
 
 ## Page management
+
+NativeScript applications consist of pages that represent the separate application screens.
+
+Pages are instances of the `Page` class of the `tns-core-modules/ui/page` module. To navigate between pages, you can use the methods of the `Frame` class and the related methods of the `tns-core-modules/ui/frame` module.
+
+> **TIP:** Instead of multiple pages, you can have a single page with a [tab view](http://docs.nativescript.org/api-reference/classes/_ui_tab_view_.tabview.html) and different user interfaces for each tab.
 
 ### Define page
 

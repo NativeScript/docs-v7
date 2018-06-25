@@ -7,21 +7,23 @@ environment: angular
 previous_url: /core-concepts/DataBinding
 --- 
 
-#Data Binding
+# Overview
 
 DataBinding is a core concept for both NativeScript and Angular frameworks. By default `Data Binding` stands for a connection (`binding`) between `Data Model` (Model) and `User Interface` (UI). Since this `binding` involves mostly `data` we use the term `Data Binding` to denote such connection or relationship.
 
+## One-way vs Two-way data binding
+
 There are several ways of data flows (data bindings).
 
-* one-way data binding - this is the most popular way of binding from Model to UI. A good example of such binding is a text stored in Model and displayed on UI in a text area control.
-* one-way to source (to model) - this is a way of binding which updates Model due to some action on UI. The best example for this is an event like button click (tap).
-* two-way data binding - this is a way of binding that combines both previous ways of binding. A typical example is a text box field that reads its value from Model, but also changes the Model based on user input.
+* **One-way data binding** - The most popular way of binding from Model to UI. A good example of such binding is a text stored in Model and displayed on UI in a text area control.
+* **One-way to source (to model)** - Binding which updates Model due to some action on UI. The best example for this is an event like button click (tap).
+* **Two-way data binding** - Binding that combines both previous ways of binding. A typical example is a text box field that reads its value from Model, but also changes the Model based on user input.
 
-`NativeScript-Angular` plugin simplifies the way which data binding will be used. NativeScript part of the binding infrastructure is used to bind Model values to the real native elements (Android and iOS). Angular part is used to provide correct binding context, change detection and notifications. Using data binding within NativeScript-Angular application generally do not differ from a standard Angular web application.
+The `nativeScript-angular` plugin simplifies the way which data binding will be used. NativeScript part of the binding infrastructure is used to bind Model values to the real native elements (Android and iOS). Angular part is used to provide correct binding context, change detection and notifications. Using data binding within NativeScript-Angular application generally do not differ from a standard Angular web application.
 
-Let's see some examples how to use data binding with `NativeScript-Angular` plugin.
+Let's see some examples how to use data binding with `nativeScript-angular` plugin.
 
-* one-way data binding - surround target (UI) property with square brackets 
+* One-way data binding - surround target (UI) property with square brackets 
 ```XML
 <Label [text]='model.mytext' ></Label>
 ```
@@ -29,19 +31,20 @@ Let's see some examples how to use data binding with `NativeScript-Angular` plug
 this.model.mytext = 'Lorem ipsum ...';
 // this is the component where label is added
 ```
-* one-way to source data binding - surround source event with brackets
+* One-way to source data binding - surround source event with brackets
 ```XML
-<Button (tap)='onButtonTap()'></Button>
+<Button (tap)='onButtonTap($event)'></Button>
 ```
 ```TypeScript
-onButtonTap = function () {
+onButtonTap(args: EventData) {
+	const button = <Button>args.object;
 	console.log('Button tapped');
 }
 // onButtonTap is a function inside component class where Button is placed
 ```
-* two-way data binding - surround target property with square and normal brackets
+* Two-way data binding - surround target property with square and normal brackets
 
-> Before we can use the ngModel directive in a two-way data binding, we must import the NativeScriptFormsModule and add it to the Angular module's imports list:
+> Before we can use the ngModel directive in a two-way data binding, we must import the **NativeScriptFormsModule** and add it to the Angular module's imports list:
 > ```typescript
 import {NativeScriptFormsModule} from "nativescript-angular/forms"
 @NgModule({
@@ -65,7 +68,7 @@ There are some limitations when using two-way data binding with Angular. Two-way
 
 ```XML
 <TextField [(ngModel)]='model.mytext' ></TextField>
-// becomes
+<!-- becomes --> 
 <TextField [ngModel]='model.mytext' (ngModelChange)='model.mytext=$event' ></TextField>
 ```
 
@@ -78,7 +81,9 @@ This is the way Angular supports two-way data binding. It generally works in alm
 * Switch - checked property
 * Slider - value property
 
-Angular mustache (`{{ }}`) syntax for binding is also supported within a NativeScript-Angular application. It's just another way of one-way binding placed in the middle of a text.
+## Interpolation 
+
+Angular mustache (`{{ }}`) syntax for binding a.k.a. interpolation is also supported within a NativeScript-Angular application. It's just another way of one-way binding placed in the middle of a text.
 
 ```XML
 {%raw%}<Label text='{{model.deliveryHour}}:{{model.deliveryMinute}}'></Label>{%endraw%}
@@ -90,7 +95,7 @@ this.model.deliveryMinute = 25;
 
 > Note: Notice that property `text` of the Label element in previous example is not surrounded by any brackets.
 
-### Data converters
+## Data converters
 
 Often data within Data Model is stored in a way that is optimized for best performance of tasks like search, replace and so on. Unfortunately, the way computers store data differs a lot with a human readable format. Probably the best example is `Date object`. In JavaScript `Date` actually is a very big number that represents milliseconds from 01.01.1970 which does not speak much to any human. Here comes the use of data converters which basically are functions that formats the data (from Model) in a human readable format (display in UI). Angular uses the same concept and names it `pipe` (like UNIX pipe) - value is passed to the pipe function which transforms it and the final result is displayed to the user. Using `pipe` is simple and with the same syntax like UNIX pipe.
 

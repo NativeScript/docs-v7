@@ -8,34 +8,6 @@ previous_url: /core-concepts/releasing-apps,/core-concepts/publishing-ios-apps
 
 # Publishing a NativeScript iOS App in the App Store
 
-0. [Overview](#overview)
-1. [Creating iOS NativeScript app](#creating-ios-nativescript-app)
-  1. [Bundle ID](#bundle-id)
-  2. [App name](#app-name)
-  3. [App icons](#app-icons)
-  4. [Launch files](#launch-files)
-    1. [Launch screen images](#launch-screen-images)
-    2. [Launch Screen Storyboard](#launch-screen-storyboard)
-2. [Certificates, identifiers & profiles](#certificates-identifiers--profiles)
-  1. [Account with Apple ID](#account-with-apple-id)
-  2. [Development certificates](#development-certificates)
-  3. [Production certificates](#production-certificates)
-  4. [Identifiers - App IDs](#identifiers---app-ids)
-  5. [Devices](#devices)
-  6. [Development provisioning profiles](#development-provisioning-profiles)
-  7. [Distribution provisioning profiles](#distribution-provisioning-profiles)
-3. [iTunes Connect](#itunes-connect)
-  1. [Account](#account)
-  2. [Creating an app](#creating-an-app)
-  3. [Builds](#builds)
-    1. [Build versioning](#build-versioning)
-    2. [Submit from the NativeScript CLI](#submit-from-the-nativescript-cli)
-    3. [Submit from Xcode](#submit-from-xcode)
-    4. [Submission automation](#submission-automation)
-  4. [Send for approval and publish](#send-for-approval-and-publish)
-
-## Overview
-
 > **Tip:** Instead of the CLI, use [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick) for easy app store publishing to both the iOS App Store and Google Play. Sidekick also offers starter kits, plugin management, and cloud-based builds for iOS and Android.
 
 You can publish a NativeScript app in the *App Store* the same way you would [release a purely native iOS app](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html).

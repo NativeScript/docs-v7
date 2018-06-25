@@ -7,31 +7,15 @@ previous_url: /bindings,core-concepts/bindings
 environment: nativescript
 ---
 
-#Data Binding
+# Data Binding
 
 The purpose of this article is to explain what is Data Binding and how it is working in NativeScript. Also in the article could be found samples, which demonstrates different use cases of the data binding usage.
-
-
-* [Data flow direction](#data-flow-direction)
-* [Basic binding concepts](#basic-binding-concepts)
-* [How to create a binding](#how-to-create-a-binding)
-    * [Two-way binding in code](#two-way-binding-in-code)
-    * [Binding in XML](#binding-in-xml)
-* [Binding source](#binding-source)
-	* [Binding to a property](#binding-to-a-property)
-	* [Binding to an event in XML](#binding-to-an-event-in-xml)
-	* [Binding to a plain object](#binding-to-a-plain-object)
-	* [Binding to a parent binding context](#binding-to-a-parent-binding-context)
-* [Using expressions for bindings](#using-expressions-for-bindings)
-* [Using converters in bindings](#using-converters-in-bindings)
-* [Stop binding](#stop-binding)
-
 
 Data binding is the process of connecting application user interface (UI) to a data object (code). It enables changes propagation by reflecting UI modifications in the code and vice versa.
 
 > In the following article, **source** is used as any object in the code and **target** as any UI control (like TextField).
 
-##Data flow direction
+## Data flow direction
 
 Part of the data binding settings is the way data flows. NativeScript data binding supports the following data transmissions.
 
@@ -39,7 +23,7 @@ Part of the data binding settings is the way data flows. NativeScript data bindi
 
 * **Two-Way**: This setting ensures the reflection of changes in both directions &mdash; from target to source and source to target. You can use two-way data binding when you need to handle user input.
 
-##Basic binding concepts
+## Basic binding concepts
 
 Generally, almost every UI control could be bound to a data object (all NativeScript controls are created with data binding in mind). After your code has met the following requirements, you can use data-binding out of the box.
 
@@ -48,9 +32,9 @@ Generally, almost every UI control could be bound to a data object (all NativeSc
 * For **one-way** binding, using a plain property is sufficient.
 * The data object should raise a **propertyChange** event for every change in the value of its property in order to notify all of the listeners interested in the change.
 
-##How to create a binding
+## How to create a binding
 
-###Two-way binding in code
+### Two-way binding in code
 
 The example below consists of a `Label`, `TextField` and a source property to which the UI controls are bound. The purpose of the sample is to demonstrate how the `Label` text is changed, while editing the input of the `TextField`. 
 
@@ -93,7 +77,7 @@ const targetLabel = new Label();
 ```
 After that, the target objects bind to the source object. The TextField uses a two-way binding, so the user input could change the property in the code. And the binding of the Label is set to one-way in order to propagate changes only from the code to the UI.
 
-### Example 1: Binding label text property.
+ _Example 1: Binding label text property._
 ``` JavaScript
 // binding the TextField
 const textFieldBindingOptions = {
@@ -165,7 +149,7 @@ stackLayout.bindingContext = source;
 
 There is an option to bind a function to execute on a specific event (MVVM command like). This option is available only through an XML declaration. To implement such a functionality, the source object should have an event handler function.
 
-### Example 2: Binding function on button tap event.
+_Example 2: Binding function on button tap event._
 ``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
 	<StackLayout>{%raw%}
@@ -194,7 +178,7 @@ A very common case is to provide a list (array) of plain elements (numbers, date
 
 > You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=9pGhIY&v=2) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=pOnwov&v=2).
 
-### Example 3: Bind ListView to a property of the bindingContext .
+_Example 3: Bind ListView to a property of the bindingContext_
 ``` XML
 <Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
 	<StackLayout>{%raw%}
@@ -249,7 +233,7 @@ Another common case in working with bindings is requesting access to the parent 
 
 > You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=kfnG5j) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=FGkvTn).
 
-### Example 4: Creating ListView child items based on the itemTemplate.
+_Example 4: Creating ListView child items based on the itemTemplate._
 ``` XML
 <Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
 	<GridLayout rows="*" >{%raw%}
@@ -294,7 +278,7 @@ export function onNavigatingTo(args: EventData) {
     page.bindingContext = viewModel;
 }
 ```
-##Using expressions for bindings
+## Using expressions for bindings
 
 You can create a custom expression for bindings. Custom expressions could help in cases when a certain logic should be applied to the UI, while keeping the underlying business data and logic clear. To be more specific, let's see a basic binding expression example. The result should be a `TextField` element that will display the value of the `sourceProperty` followed by " some static text" string.
 
@@ -311,7 +295,7 @@ You can create a custom expression for bindings. Custom expressions could help i
 The full binding syntax contains three parameters - the first parameter is the source property, which will be listened to for changes. The second parameter is the expression that will be evaluated. The third parameter states whether the binding is two-way or not. As mentioned earlier, XML declaration creates a two-way binding by default, so in the example, the third parameter could be omitted. Keeping the other two properties means that the custom expression will be evaluated only when the sourceProperty changes. The first parameter could also be omitted; if you do that, then the custom expression will be evaluated every time the bindingContext changes. Thus, the recommended syntax is to include two parameters in the XML declaration, as in our example - the property of interest and the expression, which has to be evaluated.
 
 
-###Supported expressions
+### Supported expressions
 NativeScript supports different kind of expressions including:
 
 | Feature | Example | Description |
@@ -335,13 +319,13 @@ NativeScript supports different kind of expressions including:
 > - `>   &gt;`
 > - `&   &amp;`
 
-##Using converters in bindings
+## Using converters in bindings
 
 Speaking of a two-way binding, there is a common problem - having different ways of storing and displaying data. Probably the best example here is the date and time objects. Date and time information is stored as a number or a sequence of numbers (very useful for indexing, searching and other database operations), but this is not the best possible option for displaying date to the application user. Also there is another problem when the user inputs a date (in the example below, the user types into a TextField). The result of the user input will be a string, which will be formatted in accordance with the user's preferences. This string should be converted to a correct date object. Let's see how this could be handled with NativeScript binding.
 
 > You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=d7Eu2Z) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=qktQye).
 
-### Example 5: Handle textField date input and formatted in accordance preferences.
+_Example 5: Handle textField date input and formatted in accordance preferences._
 ``` XML
 <Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
 	<StackLayout>{%raw%}
@@ -432,7 +416,7 @@ Note the special operator (|) within the expression. The above code snippet (bot
 
 A converter can accept not only static custom parameters, but any value from the `bindingContext`. For example:
 
-### Example 6: Converting the new date input to a valid Date object.
+_Example 6: Converting the new date input to a valid Date object._
 ``` XML
 <Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
 	<StackLayout>{%raw%}
@@ -521,7 +505,7 @@ Setting a converter function and a parameter within the bindingContext is very u
 
 > You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=TbTyMK) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=hvvCkn).
 
-### Example 7: Adding converters in the application module resources.
+_Example 7: Adding converters in the application module resources._
 ``` XML
 <Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
 	<StackLayout>{%raw%}

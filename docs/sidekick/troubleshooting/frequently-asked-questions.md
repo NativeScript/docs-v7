@@ -8,7 +8,7 @@ slug: frequently-asked-questions
 
 # Frequently Asked Questions
 
-### Additional components are required to run {{ site.ns-sk }}
+## Additional components are required to run {{ site.ns-sk }}
 
 After updating the {{ site.ns-sk }} client, you might see the following error message on launch:
 
@@ -20,7 +20,7 @@ To resolve this issue, you need to update the {{ site.ns-cli }} to the required 
 
 After the installation process is complete, you will no longer see the error mentioned above when launching {{ site.sk }}.
 
-### CertificateStoreUtilities has stopped working
+## CertificateStoreUtilities has stopped working
 
 On a Windows machine, when you build in the cloud for iOS or Android with a certificate stored in the Windows Certificate Manager, you might encounter the following error:
 

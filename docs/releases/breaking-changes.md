@@ -10,14 +10,14 @@ previous_url: /breaking-changes
 
 This help article describes the critical breaking changes and suggested workarounds, if any, in the NativeScript framework. You can find the complete list with all the changes in the respective [GitHub repositories](#see-also).
 
-### 3.0 (2017, May 3)
+## 3.0 (2017, May 3)
 
 - Changes and migration advice is available in the NativeScript repository [here](https://github.com/NativeScript/NativeScript/blob/v3.0.0/Modules30Changes.md).
 
-### 1.6.0 (2016, February 17)
+## 1.6.0 (2016, February 17)
 - Up to v 1.6.0, the background drawable attribute of the buttons in Android was always replaced. To keep the consistency with the default platform-specific background, the attribute is not changed now and the button is only styled.
 
-### 1.5.0 (2015, November 24)
+## 1.5.0 (2015, November 24)
 - The XML namespace (xmlns) of the validator XSD schema changed from
     `xmlns="http://www.nativescript.org/tns.xsd"` to
     `xmlns="http://schemas.nativescript.org/tns.xsd"`.
@@ -25,7 +25,7 @@ This help article describes the critical breaking changes and suggested workarou
 - [Automatic memory management of CoreFoundation functions marked with `CF_IMPLICIT_BRIDGING_ENABLED`](https://github.com/NativeScript/ios-runtime/pull/351). You should delete any `CFRelease()` calls on the result of `Create`/`Copy` functions.
 - [Manual memory management of CoreFoundation functions not-marked with `CF_IMPLICIT_BRIDGING_ENABLED`](https://github.com/NativeScript/ios-runtime/pull/386). You should call `takeRetainedValue()`/`takeUnretainedValue()` on the result object of such functions. See the [docs](/runtimes/ios/marshalling/Marshalling-Overview#corefoundation-objects) for more info.
 
-### 1.4.0 (2015, October 12)
+## 1.4.0 (2015, October 12)
 -  [(#774)](https://github.com/NativeScript/NativeScript/issues/774) The Animation class no longer has a **finished** property because an animation can be played multiple times. The **play** method now returns a new Promise each time it is invoked. Use this to listen for the animation finishing or being cancelled. When upgrading to version 1.4.0 or above, simply remove **.finished** from your code.
 
 **Old Code (JavaScript)**:
@@ -45,7 +45,7 @@ animation1.play().finished.then(()=>console.log("Finished"));
 animation1.play().then(()=>console.log("Finished"));
 ```
 
-### 1.3.0 (2015, September 16)
+## 1.3.0 (2015, September 16)
 
 There are multiple breaking changes in this release.
 
@@ -63,11 +63,11 @@ You cannot create NativeScript plugins with Android native code using Eclipse pr
 
 - NSDecimalNumber is marshalled as an Objective-C object wrapper instead of JavaScript number.
 
-### 1.2.0 (2015, July 24)
+## 1.2.0 (2015, July 24)
 
 There are changes in how the **Android ActionBar/IOS NavigationBar** is configured. UI is now defined with `page.actionBar` instead of `page.optionsMenu`. [See an example...]({%ns_cookbook ui/action-bar%})
 
-### 0.10.0 (2015, April 17)
+## 0.10.0 (2015, April 17)
 
 This release introduces a new project directory structure. Projects from earlier releases have the following structure:
 
@@ -112,7 +112,7 @@ Starting with version 0.10, the inner app folder has been removed. Newly created
 >1. Manually move all files and folders from the inner app folder one level up inside the outer app folder.
 >2. Remove the now empty inner app folder.
 
-#See Also
+# See Also
 
 * [Changes]({%slug changes %})
 * [Upgrade Instructions]({%slug upgrade-instructions %})

@@ -8,7 +8,7 @@ position: 3
 # Modules
 The Module Design Pattern is an integral piece of any robust application and is used to keep units of code cleanly separated and organized. NativeScript has a simple module loading mechanism which strictly follows the [CommonJS Specification](http://www.commonjs.org/specs/modules/1.0/). Most of the functionality is similar with the [Node.js](http://nodejs.org/api/modules.html) implementation with some minor differences. A typical NativeScript application will use the [set of modules](https://github.com/NativeScript/docs) which add cross-platform abstraction layer on top of OS-specific APIs.
 
-# NativeScript Modules vs. Node Modules
+## NativeScript Modules vs. Node Modules
 Following are the differences between Node modules and NativeScript modules:
 
 ### Core Modules

@@ -16,13 +16,6 @@ The biggest benefit of separating models, views, and view models, is that you ar
 
 In Groceries, so far you've only touched the view (`login.xml`), and in this chapter you'll be creating a view model. To do so, we first need to introduce one other type of file: the code-behind.
 
-## Table of contents
-
-- [2.1: The code-behind](#21-the-code-behind)
-- [2.2: Navigating screens](#22-navigating-screens)
-- [2.3: Accessing UI components](#23-accessing-ui-components)
-- [2.4: Adding a view model](#24-adding-a-view-model)
-
 ## 2.1: The code-behind
 
 In NativeScript a code-behind file is a JavaScript file that shares the same name as the view. For example, the login page's view is named `login.xml`, so its code-behind file is named `login.js`. The code-behind file is where you put all code that interacts with the view itself.
