@@ -12,9 +12,27 @@ Mobile application run on different devices with different screen sizes and form
 
 `<file-name>[.<qualifier>]*.<extension>`
 
-We will go trough the list of supported qualifiers.
+NativeScript supports three different file qualifiers:
+- Platform qualifiers
+- Screen size qualifiers
+- Orienation qualifiers
+
+> **Note:** The Qualifiers for screen size and orientation are supported only in NativeScript Core applications. These qualifiers are not compatible with Angular and Webpack builds. The platform qualifiers can be used in both NativeScript Core and NativeScript Angular applicaitons (with or without Webpack).
+
+## Platform Qualifiers
+
+* `android` – android platform
+* `ios` – iOS platform
+
+*Example(platform specific files)*:
+
+* `app.android.css` - CSS styles for Android.
+* `app.ios.css` - CSS styles for iOS. 
+
+The platform qualifiers are executed during build time, while the others - during run time. For example, the app.ios.css file will not be taken in consideration when building for android platform. Contrary, the screen size qualifiers will be considered just after the application runs on a device with specific screen size.
 
 ## Screen Size Qualifiers
+
 All the values in screen size qualifiers are in density independent pixels(dp) - meaning it corresponds to the physical dimensions of the screen. The assumptions is that there are ~160 dp per inch. For example, according to android guidelines if the device's smaller dimension is more than 600dp(~3.75 inches) it is probably tablet.
 
 * `minWH<X>` - The smaller dimension(width or height) should be at least **X** dp.
@@ -26,20 +44,9 @@ All the values in screen size qualifiers are in density independent pixels(dp) -
 * `main-page.minWH600.xml` - XML file to be used for tablet devices.
 * `main-page.xml` - XML to be used for phones 
 
-## Platform Qualifiers
-
-* `android` – android platform
-* `ios` – iOS platform
-* `windows` (coming soon) – windows platform
-
-*Example(platform specific files)*:
-
-* `app.android.css` - CSS styles for Android.
-* `app.ios.css` - CSS styles for iOS. 
-
-The platform qualifiers are executed during build time, while the others - during run time. For example, the app.ios.css file will not be taken in consideration when building for android platform. Contrary, the screen size qualifiers will be considered just after the application runs on a device with specific screen size.
 
 ## Orientation Qualifiers
+
 * `land` - orientation is in landscape mode
 * `port` - orientation is in portrait mode
 
