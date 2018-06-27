@@ -342,7 +342,7 @@ $(document).ready(function () {
 			_events: function() {
 				$window.scroll(Feedback._window_scroll);
 				$window.resize(Feedback._window_resize);
-				$("#close-banner-button").click(Feedback._button_click);
+				$(".ns-feedback .close-banner-button").click(Feedback._button_click);
 			},
 			_window_scroll: function() {
 				updateVariables();
