@@ -22,7 +22,8 @@ This documentation is built using [Jekyll](https://jekyllrb.com/docs/home/). Mor
 
 ## Configuration
 
-There are two versions of the NativeScript documentation that generate similar output: `nativescript` and `angular`. The former builds the vanilla NativeScript docs at [docs.nativescript.org](https://docs.nativescript.org/), while the latter discusses Angular-specific topics at [docs.nativescript.org/angular](https://docs.nativescript.org/angular).
+There are two versions of the NativeScript documentation that generate similar output: `nativescript` and `angular`. The former builds the vanilla NativeScript docs at [docs.nativescript.org](https://docs.nativescript.org/), while the latter discusses Angular-specific topics at [docs.nativescript.org/angular/start/introduction](https://docs.nativescript.org/angular/start/introduction).
+
 
 Most of the content in this repository is shared between the two environments, but occasionally you may need to add environment-specific content. When you have this need you have a few options.
 
@@ -40,7 +41,7 @@ This paragraph appears in both environments.
 
 ## Tutorials
 
-The NativeScript documentation contains two full getting started tutorials, one for [using NativeScript with vanilla JavaScript](https://docs.nativescript.org/tutorial/chapter-0), and another for [using NativeScript with Angular](https://docs.nativescript.org/angular/tutorial/ng-chapter-0.html). The contents of these two tutorials are in [this repository’s `/tutorial` folder](https://github.com/NativeScript/docs/tree/master/tutorial).
+The NativeScript documentation contains two full getting started tutorials, one for [using NativeScript with vanilla JavaScript](https://docs.nativescript.org/start/tutorial/chapter-1), and another for [using NativeScript with Angular](https://docs.nativescript.org/angular/start/tutorial/ng-chapter-1). The contents of these two tutorials are in [this repository’s `/tutorial` folder](https://github.com/NativeScript/sample-Groceries).
 
 When making changes to either of these tutorials you might need to additional alter one of the four templates these tutorials use. Readers use these templates through the `tns create` command, for example `tns create HelloWorld --template nativescript-template-tutorial`.
 
