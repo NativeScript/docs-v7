@@ -87,18 +87,23 @@ In every animation, you can control the following properties:
 By default, an animation moves with a linear speed without acceleration or deceleration. This might look unnatural and different from the real world where objects need time to reach their top speed and can't stop immediately. The animation curve (sometimes called an easing function) is used to give animations an illusion of inertia. It controls the animation speed by modifying the fraction of the duration. NativeScript comes with a number of predefined animation curves.
 
 - **linear**: The simplest animation curve is linear. It maintains a constant speed while the animation is running:
+
 ![linear](./img/modules/animation/linear.gif "Linear")
 
 - **Ease-in**: The ease-in curve causes the animation to begin slowly, and then speed up as it progresses.
+
 ![easein](./img/modules/animation/easein.gif "EaseIn")
 
 - **Ease-out**: An ease-out curve causes the animation to begin quickly, and then slow down as it completes.
+
 ![easeout](./img/modules/animation/easeout.gif "EaseOut")
 
 - **Ease-in-out**: An ease-in ease-out curve causes the animation to begin slowly, accelerate through the middle of its duration, and then slow again before completing.
+
 ![easeinout](./img/modules/animation/easeinout.gif "EaseInOut")
 
 - **Spring**: A spring animation curve causes an animation to produce a spring (bounce) effect.
+
 ![spring](./img/modules/animation/spring.gif "Spring")
 
 In NativeScript, the animation curve is represented by the AnimationCurve enumeration and can be specified with the curve property of the animation. In CSS, the animation curve is defined by using the animation-timing-function property (see __Example 3__):
