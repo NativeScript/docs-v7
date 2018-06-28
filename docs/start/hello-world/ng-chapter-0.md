@@ -15,7 +15,7 @@ Welcome to the NativeScript & Angular getting started guide. In this hands-on tu
 ## What is NativeScript? What is Angular?
 
 <div class="intro-box">
-  <img src="/img/cli-getting-started/angular/chapter0/NativeScript_logo.png" class="plain" style="height: 100px;" alt="NativeScript logo">
+  <img src="../img/cli-getting-started/angular/chapter0/NativeScript_logo.png" class="plain" style="height: 100px;" alt="NativeScript logo">
   <p><a href="https://www.nativescript.org/">NativeScript</a> is a free and open source framework for building native iOS and Android apps using JavaScript and CSS. NativeScript renders UIs with the native platform’s rendering engine—no <a href="http://developer.telerik.com/featured/what-is-a-webview/">WebViews</a>—resulting in native-like performance and UX.</p>
 </div>
 
