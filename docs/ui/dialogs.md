@@ -283,7 +283,7 @@ dialogs.action({
     actions: ["Option1", "Option2"]
 }).then(result => {
     console.log("Dialog result: " + result);
-    if(result == "Options1"){
+    if(result == "Option1"){
         //Do action1
     }else if(result == "Option2"){
         //Do action2
