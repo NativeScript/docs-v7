@@ -26,11 +26,10 @@ The following steps are needed to create custom native `android.app.Application`
 2. Declare the extend:
 
     ```javascript
-    var application = require("application");
+    const superProto = android.app.Application.prototype;
 
-    var superProto = android.app.Application.prototype;
     // the first parameter of the `extend` call defines the package and the name for the native *.JAVA file generated. 
-    var Application = android.app.Application.extend("org.myApp.Application", {
+    android.app.Application.extend("org.myApp.Application", {
         onCreate: function() {
             superProto.onCreate.call(this);
             
@@ -46,12 +45,10 @@ The following steps are needed to create custom native `android.app.Application`
     });
     ```
     ```typescript
-    import * as application from "application";
-
     // the `JavaProxy` decorator specifies the package and the name for the native *.JAVA file generated. 
     @JavaProxy("org.myApp.Application")
     class Application extends android.app.Application {
-        protected onCreate(): void {
+        onCreate(): void {
             super.onCreate();
             
             // At this point modules have already been initialized
@@ -91,10 +88,10 @@ The core modules ship with a default `android.app.Activity` implementation, whic
 2.  Declare the extend:
 
     ```javascript
-    var frame = require("ui/frame");
+    const frame = require("ui/frame");
 
-    var superProto = android.app.Activity.prototype;
-    var Activity = android.app.Activity.extend("org.myApp.MainActivity", {
+    const superProto = android.app.Activity.prototype;
+    android.app.Activity.extend("org.myApp.MainActivity", {
         onCreate: function(savedInstanceState) {
             if(!this._callbacks) {
                 frame.setActivityCallbacks(this);
