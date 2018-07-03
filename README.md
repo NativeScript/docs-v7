@@ -24,7 +24,6 @@ This documentation is built using [Jekyll](https://jekyllrb.com/docs/home/). Mor
 
 There are two versions of the NativeScript documentation that generate similar output: `nativescript` and `angular`. The former builds the vanilla NativeScript docs at [docs.nativescript.org](https://docs.nativescript.org/), while the latter discusses Angular-specific topics at [docs.nativescript.org/angular/start/introduction](https://docs.nativescript.org/angular/start/introduction).
 
-
 Most of the content in this repository is shared between the two environments, but occasionally you may need to add environment-specific content. When you have this need you have a few options.
 
 1. If you would like a page to appear in a single environment, add an `environment: angular` or `environment: nativescript` property to that page's front matter. Pages marked with an `environment` property will appear in a single environment, and pages _not_ marked with an `environment` property will be shared across all environments.
