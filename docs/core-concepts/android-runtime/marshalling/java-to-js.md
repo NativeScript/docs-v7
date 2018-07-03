@@ -8,7 +8,7 @@ position: 2
 # Java to JavaScript Conversion
 The article lists the available types in Java and how they are projected to JavaScript.
 
-### String & Character
+## String & Character
 Both [java.lang.String](http://developer.android.com/reference/java/lang/String.html) and [java.lang.Character](http://docs.oracle.com/javase/7/docs/api/java/lang/Character.html) types are projected as JavaScript [String](http://www.w3schools.com/jsref/jsref_obj_string.asp):
 
 ```javascript
@@ -16,7 +16,7 @@ var file = new java.io.File("/path/to/file");
 var path = file.getPath(); // returns java.lang.String, converted to JS String
 ```
 
-### Boolean & Primitive boolean
+## Boolean & Primitive boolean
 Both the primitive [boolean](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) and reference [java.lang.Boolean](http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html) types are projected as JavaScript [Boolean](http://www.w3schools.com/jsref/jsref_obj_boolean.asp):
 
 ```javascript
@@ -25,7 +25,7 @@ var button = new android.widget.Button(context);
 var enabled = button.isEnabled(); // returns primitive boolean, converted to JS Boolean
 ```
 
-### Byte & Primitive byte
+## Byte & Primitive byte
 Both the primitive [byte](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) and reference [java.lang.Byte](http://docs.oracle.com/javase/7/docs/api/java/lang/Byte.html) types are projected as JavaScript [Number](http://www.w3schools.com/jsref/jsref_obj_number.asp):
 
 ```javascript
@@ -33,7 +33,7 @@ var byte = new java.lang.Byte("1");
 var jsByteValue = byte.byteValue(); // returns primitive byte, converted to Number
 ```
 
-### Short & Primitive short
+## Short & Primitive short
 Both the primitive [short](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) and reference [java.lang.Short](http://docs.oracle.com/javase/7/docs/api/java/lang/Short.html) types are projected as JavaScript [Number](http://www.w3schools.com/jsref/jsref_obj_number.asp):
 
 ```javascript
@@ -41,7 +41,7 @@ var short = new java.lang.Short("1");
 var jsShortValue = short.shortValue(); // returns primitive short, converted to Number
 ```
 
-### Integer & Primitive int
+## Integer & Primitive int
 Both the primitive [int](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) and reference [java.lang.Integer](http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html) types are projected as JavaScript [Number](http://www.w3schools.com/jsref/jsref_obj_number.asp):
 
 ```javascript
@@ -49,7 +49,7 @@ var int = new java.lang.Integer("1");
 var jsIntValue = int.intValue(); // returns primitive int, converted to Number
 ```
 
-### Float & Primitive float
+## Float & Primitive float
 Both the primitive [float](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) and reference [java.lang.Float](http://docs.oracle.com/javase/7/docs/api/java/lang/Float.html) types are projected as JavaScript [Number](http://www.w3schools.com/jsref/jsref_obj_number.asp):
 
 ```javascript
@@ -57,7 +57,7 @@ var float = new java.lang.Float("1.5");
 var jsFloatValue = float.floatValue(); // returns primitive float, converted to Number
 ```
 
-### Double & Primitive double
+## Double & Primitive double
 Both the primitive [double](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) and reference [java.lang.Double](http://docs.oracle.com/javase/7/docs/api/java/lang/Double.html) types are projected as JavaScript [Number](http://www.w3schools.com/jsref/jsref_obj_number.asp):
 
 ```javascript
@@ -65,7 +65,7 @@ var double = new java.lang.Double("1.5");
 var jsDoubleValue = double.doubleValue(); // returns primitive double, converted to Number
 ```
 
-### Long & Primitive long
+## Long & Primitive long
 [java.lang.Long](http://docs.oracle.com/javase/7/docs/api/java/lang/Long.html) and its primitive equivalent are special types which are projected to JavaScript by applying the following rules:
 
 * If the value is in the interval (-2^53, 2^53) then it is converted to [Number](http://www.w3schools.com/jsref/jsref_obj_number.asp)
@@ -92,7 +92,7 @@ var jsNumber = testClass.getLongNumber53Bits(); // result is JavaScript Number
 var specialObject = testClass.getLongNumber54Bits(); // result is the special object described above
 ```
 
-### Array
+## Array
 Array in Java is a special [java.lang.Object](http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html) that have an implicit Class associated. A Java Array is projected to JavaScript as a special JavaScript proxy object with the following characteristics:
 
 * Has length property
@@ -108,6 +108,7 @@ var singleFile = files[0]; // the indexed getter callback is triggered and a pro
 
 >**Note:** A Java Array is intentionally not converted to a JavaScript [Array](http://www.w3schools.com/jsref/jsref_obj_array.asp) for the sake of performance, especially when it comes to large arrays.
 
+### Array of Objects
 
 Occasionally you have to create Java arrays from JavaScript. For this scenario we added method `create` to built-in JavaScript [`Array` object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). Here are some examples how to use `Array.create` method:
 
@@ -178,7 +179,7 @@ arr[0] = elements;
 SomeObject.myMethod(arr); // assuming the method is accepting a two-dimensional array of primitive types
 ```
 
-### Null
+## Null
 The Java [null literal](http://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.10.7) (or null pointer) is projected to JavaScript [Null](http://www.w3schools.com/js/js_typeof.asp):
 
 ```javascript
@@ -187,7 +188,7 @@ var button = new android.widget.Button(context);
 var background = button.getBackground(); // if there is no background drawable method will return JS null
 ```
 
-### Android Types
+## Android Types
 All Android-declared types are projected to JavaScript using the Package and Class proxies as described in [Accessing APIs](../metadata/accessing-packages.md)
 
 # See Also
