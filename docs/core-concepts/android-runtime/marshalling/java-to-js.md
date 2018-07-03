@@ -126,7 +126,7 @@ Array.create(elementClassName, length)
 Array.create(javaClassCtorFunction, length)
 ```
 The first signature accepts `string` for `elementClassName`. This option is useful when you have to create Java array of primitive types (e.g. `char`, `boolean`, `byte`, `short`, `int`, `long`, `float` and `double`). It is also useful when you have to create Java jagged arrays. For this scenario `elementClassName` must be the standard JNI class notation. Here are some examples:
-```javascript
+```JavaScript
 // equivalent to int[][] jaggedIntArray2 = new int[10][];
 var jaggedIntArray2 = Array.create("[I", 10);
 
@@ -137,12 +137,45 @@ var jaggedBooleanArray3 = Array.create("[[Z", 10);
 var jaggedObjectArray4 = Array.create("[[[Ljava.lang.Object;", 10);
 ```
 The second signature uses `javaClassCtorFunction` which must the JavaScript constructor function for a given Java type. Here are some examples:
-```javascript
+```JavaScript
 // equivalent to String[] stringArr = new String[10];
 var stringArr = Array.create(java.lang.String, 10);
 
 // equivalent to Object[] objectArr = new Object[10];
 var objectArr = Array.create(java.lang.Object, 10);
+```
+
+### Array of Primitive Types
+The automatic marshalling works only for cases with arrays of objects. In cases where you have a method that takes an array of primitive types, we need to convert as follows:
+```Java
+public static void myMethod(int[] someParam)
+```
+Then we need to invoke it as follows:
+```JavaScript
+let arr = Array.create("int", 3);
+arr[0] = 1;
+arr[1] = 2;
+arr[2] = 3;
+
+SomeObject.myMethod(arr); // assuming the method is accepting an array of primitive types
+```
+
+### Two-Dimensional Arrays of Primitive Types
+
+The above scenario gets more tricky with two-dimensional arrays. Consider a Java method that accepts as an argument a two-dimensional array:
+```Java
+public static void myMethod(java.lang.Integer[][] someParam)
+```
+The JavaScritp marshaled code will look like this:
+```JavaScript
+let arr = Array.create("[Ljava.lang.Integer;", 2);
+let elements = Array.create("java.lang.Integer", 3);
+elements[0] = new java.lang.Integer(1);
+elements[1] = new java.lang.Integer(2);
+elements[2] = new java.lang.Integer(3);
+arr[0] = elements;
+
+SomeObject.myMethod(arr); // assuming the method is accepting a two-dimensional array of primitive types
 ```
 
 ### Null
