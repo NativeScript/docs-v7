@@ -26,12 +26,12 @@ After you've open the project in Android Studio find the `settings.gradle` file 
 rootProject.name = "com.example.yourprojectname"
 include ':app'//, ':runtime', ':runtime-binding-generator'
 
-//project(':runtime').projectDir = new File('path/to/runtime')
-//project(':runtime-binding-generator').projectDir = new File('path/to/runtime-binding-generator')
+//project(':runtime').projectDir = new File("${System.env.ANDROID_RUNTIME_HOME}/test-app/runtime")
+//project(':runtime-binding-generator').projectDir = new File("${System.env.ANDROID_RUNTIME_HOME}/test-app/runtime-binding-generator")
 
 file("google-services.json").renameTo(file("./app/google-services.json"))
 ```
-Uncomment the `:runtime` and `':runtime-binding-generator` sub-projects along with the absolute paths to them.
+Uncomment the `:runtime` and `':runtime-binding-generator` sub-projects. You can either define **ANDROID_RUNTIME_HOME** environment variable pointing to the path where you've cloned the [android runtime repository](https://github.com/NativeScript/android-runtime) or replace **${System.env.ANDROID_RUNTIME_HOME}** with that path.
 After all the changes the `settings.gradle` should look like this:
 
 ```
@@ -54,7 +54,7 @@ From Android Studio: Open the "Run" menu -> "Edit Configurations ..." -> The fol
 
 ![debug symbols screen](./debug-symbols-screen.png)
 
-Select the "Debugging" tab -> "Symbol Directories" -> Click on the "+" sign and add the path to the debug symbols. They should be at the following path, relative to the folder where the runtime is set up: "./android-runtime/test-app/runtime/build/intermediates/cmake/debug/obj".
+Select the "Debugging" tab -> "Symbol Directories" -> Click on the "+" sign and add the path to the debug symbols. They should be at the following path, relative to the folder where the runtime is set up: "./android-runtime/test-app/runtime/build/intermediates/cmake/release/obj".
 
 You can set a debug break point inside the c++ code and hit debug.
 
