@@ -14,8 +14,11 @@ To achieve this you need to enable ABI splits at **app/App_Resources/Android/app
 ```
 android {
 ....
-  ndk {
-    abiFilters.clear()
+  defaultConfig {
+    ....
+    ndk {
+      abiFilters.clear()
+    }
   }
   splits {
     abi {
