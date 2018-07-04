@@ -147,11 +147,11 @@ var objectArr = Array.create(java.lang.Object, 10);
 ```
 
 ### Array of Primitive Types
-The automatic marshalling works only for cases with arrays of objects. In cases where you have a method that takes an array of primitive types, we need to convert as follows:
+The automatic marshalling works only for cases with arrays of objects. In cases where you have a method that takes an array of primitive types, you need to convert it as follows:
 ```Java
 public static void myMethod(int[] someParam)
 ```
-Then we need to invoke it as follows:
+Then yoy need to invoke it as follows:
 ```JavaScript
 let arr = Array.create("int", 3);
 arr[0] = 1;
@@ -167,7 +167,7 @@ The above scenario gets more tricky with two-dimensional arrays. Consider a Java
 ```Java
 public static void myMethod(java.lang.Integer[][] someParam)
 ```
-The JavaScritp marshaled code will look like this:
+The marshalled JavaScript code will look like this:
 ```JavaScript
 let arr = Array.create("[Ljava.lang.Integer;", 2);
 let elements = Array.create("java.lang.Integer", 3);
