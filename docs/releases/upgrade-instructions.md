@@ -87,7 +87,7 @@ npm i nativescript-dev-typescript@latest --save-dev
 
 ## Upgrading Webpack
 
-The Webpack plugin is available as a npm package named [nativescript-dev-webpack](https://www.npmjs.com/package/nativescript-dev-webpack). To use the plugin in your project, you should explicitly install the package as `devDependency`.The initial installation of the plugin will install all related developer dependencies and will create the default `webpack.config.js` file. If the `webpack.config.js` file is already existing it won't be overwritten by the installation of `nativescript-dev-webpack`.
+The Webpack plugin is available as a npm package named [nativescript-dev-webpack](https://www.npmjs.com/package/nativescript-dev-webpack). To use the plugin in your project, you should explicitly install the package as `devDependency`.The initial installation of the plugin will install all related development dependencies and will create the default `webpack.config.js` file. If the `webpack.config.js` file is already existing it won't be overwritten by the installation of `nativescript-dev-webpack`.
 
 ```
 npm i nativescript-dev-webpack --save-dev
@@ -95,14 +95,13 @@ npm i nativescript-dev-webpack --save-dev
 
 ### Updating Webpack version and configuration
 
-When upgrading an existing version of the Webpack plugin, you should consider that the related developer dependencies also have to be updated accordingly. To ease the process, the plugin provides an automated script for that purpose called `ns-update-webpack` located in `<project-folder>/node_modules/.bin` folder. The script comes with two flags:
-- `--deps` - this flag will update all related developer dependencies.
+When upgrading an existing version of the Webpack plugin, you should consider that the related development dependencies also have to be updated accordingly. To ease the process, the plugin provides an automated script for that purpose called `update-ns-webpack` located in `<project-folder>/node_modules/.bin` folder. The script comes with two flags:
+- `--deps` - this flag will update all related development dependencies.
 - `--configs` - this flag will update the default `webpack.config.js` file.
 
 ```
 npm i nativescript-dev-webpack@latest --save-dev
 ./node_modules/.bin/update-ns-webpack --deps --configs
-npm i
 ```
 
 > **Important:** When using the `--configs` flag, any previous configuration will be overwritten and lost. Consider saving any custom code that you have introduced in your `webpack.config.js`.
