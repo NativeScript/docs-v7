@@ -71,6 +71,47 @@ npm install tns-core-modules@latest --save
 
 This installs the **tns-core-modules** package to the node_modules folder and adds it as a dependency to the package.json of the project.
 
-> **IMPORTANT:** The `tns create` command will create a new project, add the **tns-core-modules** package as a dependency to its package.json and install it. So each new project you create will have the **tns-core-modules** package installed and you do not have to install it explicitly.
+> **Important:** The `tns create` command will create a new project, add the **tns-core-modules** package as a dependency to its package.json and install it. So each new project you create will have the **tns-core-modules** package installed and you do not have to install it explicitly.
 
 Another place to find **tns-core-modules** package is [NativeScript Releases](https://github.com/NativeScript/NativeScript/releases/), where you can find a collection of the available tns-core-modules-\*.tgz packages for every release. You can download a selected release and install it by running: `npm install <path to tns-core-modules-*.tgz> --save`.
+
+## Upgrading TypeScript
+
+The TypeScript plugin is available as a npm package named [nativescript-dev-typescript](https://www.npmjs.com/package/nativescript-dev-typescript)/
+To use TypeScript, you will have to explicitly install the package as a `devDependency`. After instalation, a `tsconfig.json` file is created with that includes the base TypeScript configuration for a NativeScript project.
+
+```
+npm i nativescript-dev-typescript@latest --save-dev
+./node_modules/.bin/ns-upgrade-tsconfig
+```
+
+## Upgrading Webpack
+
+The Webpack plugin is available as a npm package named [nativescript-dev-webpack](https://www.npmjs.com/package/nativescript-dev-webpack). To use the plugin in your project, you should explicitly install the package as `devDependency`.The initial installation of the plugin will install all related development dependencies and will create the default `webpack.config.js` file. If the `webpack.config.js` file is already existing it won't be overwritten by the installation of `nativescript-dev-webpack`.
+
+```
+npm i nativescript-dev-webpack --save-dev
+```
+
+### Updating Webpack version and configuration
+
+When upgrading an existing version of the Webpack plugin, you should consider that the related development dependencies also have to be updated accordingly. To ease the process, the plugin provides an automated script for that purpose called `update-ns-webpack` located in `<project-folder>/node_modules/.bin` folder. The script comes with two flags:
+- `--deps` - this flag will update all related development dependencies.
+- `--configs` - this flag will update the default `webpack.config.js` file.
+
+```
+npm i nativescript-dev-webpack@latest --save-dev
+./node_modules/.bin/update-ns-webpack --deps --configs
+```
+
+> **Important:** When using the `--configs` flag, any previous configuration will be overwritten and lost. Consider saving any custom code that you have introduced in your `webpack.config.js`.
+
+## Upgrading Angular dependencies
+
+The Angular plugin is available as an npm package named [nativescript-angular](https://www.npmjs.com/package/nativescript-angular). To update the version of the plugin and the related dependency, the package should be explicitly installed, and the related Angular dependencies should be updated accordingly. To ease the update process, the plugin comes with an automated script `update-app-ng-deps` located in `<project-folder/node_modules/.bin>` folder.
+
+```
+npm i nativescript-angular@latest --save
+./node_modules/.bin/update-app-ng-deps
+npm i
+```
