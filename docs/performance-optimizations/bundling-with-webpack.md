@@ -38,12 +38,9 @@ $ npm install
 
 ## How nativescript-dev-webpack Works
 
-Installing the plugin adds several updates to your project:
+Installing the plugin adds a `webpack.config.js` file which contains sensible defaults, but it is designed to be as readable and easy to modify as possible.
 
-- The `webpack.config.js` file. It contains sensible defaults, but it is designed to be as readable and easy to modify as possible.
-- New `devDependencies` in your `package.json` for the required webpack plugins and loaders used when building the app.
-
-> Note: In case you need to update your project dependencies or pregenerate the configuration files, you can do that by running the `update-ns-webpack` script that comes with the plugin:
+> Note: In case you need to update your project dependencies or regenerate the configuration file, you can do that by running the `update-ns-webpack` script that comes with the plugin:
 
 ```
 $ ./node_modules/.bin/update-ns-webpack --configs --deps
