@@ -20,9 +20,6 @@ Why bundle scripts in a mobile app though? Aren't all files stored on the local 
 
 Webpack works by traversing your source tree starting from some "entry" modules and navigating through module imports. This makes it possible to collect just modules that are used in your program. Webpack is very extensible - you can customize every step of the bundling process and add support for all sorts of asset generation and manipulation procedures.
 
-Since bundling can be a slow and resource intensive operation, we do not enable it for every build. It is easiest to develop and debug your code without bundling, and use bundled code for QA/release builds.
-
-
 ## Installation and Configuration
 
 Since every project is unique and can have quite complex requirements for bundling, we tried to make Webpack configuration as simple as possible. After installation, the plugin will configure the bundling dependencies, and add a basic configuration that should work for most projects. Developers can (and should) extend that to fit their specific project needs.
