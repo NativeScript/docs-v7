@@ -759,6 +759,9 @@ div.right-nav__links .ns-button {
     margin-top: 1.56em;
     display: block;
 }
+.hide {
+    display: none !important;
+}
 
 .right-nav__links a:not(.ns-button) > i {
     margin-right: .2em;
