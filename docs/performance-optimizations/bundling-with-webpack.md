@@ -209,6 +209,41 @@ function logMessage(message) {
 }
 ```
 
+## Custom Application and Activity
+
+NativeScript provides a way to create custom `android.app.Application` and `android.app.Activity` implementations described in [this](https://docs.nativescript.org/core-concepts/android-runtime/advanced-topics/extend-application-activity) documentation article. In order to bundle such an application, it needs to be configured.
+
+### Extend Android Application
+
+If your project extends android application, it should be added as an [entry](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L71) to the `webpack.config.js` file.
+
+```
+entry: {
+    bundle: entryPath,
+    application: "./application.android",
+},
+```
+
+In this way, the source code of [`application.android.ts`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/app/application.android.ts) is bundled separately as `application.js` file which is loaded from the native `Application.java` class on launch.
+
+The `application.js` bundle file is independent of the `bundle.js` and `vendor.js` files and the reason for it is that they are not loaded so early in the application launch. That's why the logic in `application.android.ts` is needed to be bundled separately in order to be loaded by the native `Application.java` as early as needed on launch.
+
+> Note: This approach won't work if `aplication.android.ts` requires external modules.
+
+### Extend Android Activity
+
+If your project extends android activity, it should be added to the [`appComponents`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L19) array by an absolute path.
+
+```
+const appComponents = [
+    "tns-core-modules/ui/frame",
+    "tns-core-modules/ui/frame/activity",
+    resolve(__dirname, "app/activity.android.ts"),
+];
+```
+
+In this way and With the default config, these components [get](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L109-L116) in the common *vendor.js* chunk and are required by the [`android-app-comopnents-loader`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L146-L149).
+
 ## Debugging Common Errors
 
 Webpack bundling can fail for different reasons. It sometimes fails to resolve certain modules, or it generates code that breaks at runtime. We'll try to cover a few common failure reasons with steps to resolve them in the following sections.
