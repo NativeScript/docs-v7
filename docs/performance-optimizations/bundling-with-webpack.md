@@ -20,9 +20,6 @@ Why bundle scripts in a mobile app though? Aren't all files stored on the local 
 
 Webpack works by traversing your source tree starting from some "entry" modules and navigating through module imports. This makes it possible to collect just modules that are used in your program. Webpack is very extensible - you can customize every step of the bundling process and add support for all sorts of asset generation and manipulation procedures.
 
-Since bundling can be a slow and resource intensive operation, we do not enable it for every build. It is easiest to develop and debug your code without bundling, and use bundled code for QA/release builds.
-
-
 ## Installation and Configuration
 
 Since every project is unique and can have quite complex requirements for bundling, we tried to make Webpack configuration as simple as possible. After installation, the plugin will configure the bundling dependencies, and add a basic configuration that should work for most projects. Developers can (and should) extend that to fit their specific project needs.
@@ -41,12 +38,9 @@ $ npm install
 
 ## How nativescript-dev-webpack Works
 
-Installing the plugin adds several updates to your project:
+Installing the plugin adds a `webpack.config.js` file which contains sensible defaults, but it is designed to be as readable and easy to modify as possible.
 
-- The `webpack.config.js` file. It contains sensible defaults, but it is designed to be as readable and easy to modify as possible.
-- New `devDependencies` in your `package.json` for the required webpack plugins and loaders used when building the app.
-
-> Note: In case you need to update your project dependencies or pregenerate the configuration files, you can do that by running the `update-ns-webpack` script that comes with the plugin:
+> Note: In case you need to update your project dependencies or regenerate the configuration file, you can do that by running the `update-ns-webpack` script that comes with the plugin:
 
 ```
 $ ./node_modules/.bin/update-ns-webpack --configs --deps
@@ -150,9 +144,9 @@ $ tns build android|ios --bundle --env.aot
 
 ### V8 Heap Snapshot
 
-The Webpack configuration also includes the [`NativeScriptSnapshotPlugin`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/plugins/NativeScriptSnapshotPlugin.js). The plugin loads a single Webpack bundle in an empty V8 context, aka snapshotted context, and after its execution captures a snapshot of the produced V8 heap and saves it in a blob file. Next the blob file is included in the apk bundle and [is loaded by the Android Runtime](https://docs.nativescript.org/runtimes/android/advanced-topics/V8-heap-snapshots) on app initialization. This will obviate the need for loading, parsing and executing the script on app startup which can drastically decrease the starting time.
+The Webpack configuration also includes the [`NativeScriptSnapshotPlugin`](https://github.com/NativeScript/nativescript-dev-webpack/tree/master/plugins/NativeScriptSnapshotPlugin). The plugin loads a single Webpack bundle in an empty V8 context, a.k.a. snapshotted context, and after its execution captures a snapshot of the produced V8 heap and saves it in a `.blob` file. Next the `.blob` file is included in the `.apk` bundle and [is loaded by the Android Runtime on app initialization. This will obviate the need for loading, parsing and executing the script on app startup which can drastically decrease the starting time.
 
-You can use the snapshot plugin only for release builds. You need to provide the `--env.snapshot` flag along with the other release arguments:
+You can use the snapshot plugin only for **release** builds. You need to provide the `--env.snapshot` flag along with the other release arguments:
 ```
 $ tns build android --bundle --env.snapshot --release --keyStorePath ~/path/to/keystore --keyStorePassword your-pass --keyStoreAlias your-alias --keyStoreAliasPassword your-alias-pass
 ```
@@ -171,13 +165,14 @@ Known limitations:
 The `NativeScriptSnapshotPlugin` by default comes with the following configuration:
 
 ```JavaScript
-if (env.snapshot) {
+if (snapshot) {
     plugins.push(new nsWebpack.NativeScriptSnapshotPlugin({
         chunk: "vendor",
         requireModules: [
+            "tns-core-modules/bundle-entry-points",
             // ...
         ],
-        projectRoot: __dirname,
+        projectRoot,
         webpackConfig: config,
     }));
 }
@@ -198,13 +193,14 @@ if (env.snapshot) {
 
 #### Checking if snapshot is enabled
 If you want to toggle whether specific logic is executed only in snapshotted context you can use the `global.__snapshot` flag. Its value is `true` only if the current execution happens in the snapshotted context. Once the app is deployed on the device, the value of the flag is changed to `false`. There is also `global.__snapshotEnabled` flag. Its only difference compared to `global.__snapshot` is that its value is `true` in both snapshotted and runtime contexts, given that snapshot generation is enabled.
+
 ```JavaScript
 function logMessage(message) {
     if (global.__snapshotEnabled) {
         if (!global.__snapshot) {
-            console.log("The current execution is happening in runtime context when we have all {N} APIs available, including console.log, so this line of code won't fail.");
+            console.log("The current execution is happening in runtime context when we have all {N} APIs available, including console.log(), so this line of code won't fail.");
         }
-        console.log("This will fail if logMessage is called in snapshotted context because console.log is not available there.");
+        console.log("This will fail if logMessage is called in snapshotted context because console.log() is not available there.");
     }
 }
 ```
