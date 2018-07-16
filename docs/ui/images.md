@@ -9,14 +9,16 @@ previous_url: /ui-images,/ui/ui-images
 
 # Working with Images
 In this article, we will look at the different ways to show images in a NativeScript application.
-Images are added to an application either declaratively (XML) or with code (JS).
+Images are added to an application either declaratively (XML) or with code (JS). NativeScript supports images coded as `JPG` or as `PNG`.
+
+> **Note:** NativeScript supports images encoded as `PNG` or `JPG` files.
 
 {% nativescript %}
 ```XML
 <Image src="~/logo.png" />
 ```
 ```JavaScript
-var image = new imageModule.Image();
+let image = new imageModule.Image();
 image.src = "~/logo.png";
 dockLayout.addChild(image);
 ```
@@ -26,7 +28,7 @@ dockLayout.addChild(image);
 <Image src="~/logo.png" ></Image>
 ```
 ```JavaScript
-var image = new imageModule.Image();
+let image = new imageModule.Image();
 image.src = "~/logo.png";
 dockLayout.addChild(image);
 ```
@@ -41,8 +43,8 @@ The prefix of the `src` value specifies where the image will be loaded form. The
 You can also use the [image-source]({%ns_cookbook image-source%}) module to create an image source and manually set it to the image:
 
 ```JavaScript
-var image = new imageModule.Image();
-var imageSource = imageSourceModule.fromResource("logo");
+let image = new imageModule.Image();
+let imageSource = imageSourceModule.fromResource("logo");
 image.imageSource = imageSource;
 ```
 
@@ -120,4 +122,3 @@ For more information, see [Icon and Image Sizes](https://developer.apple.com/lib
 
 Once the NativeScript project is prepared (`tns prepare ios`) all the images will be copied to the `platforms\ios\<project-name>\Resources`.
 
-**iOS images must be `PNG` or `JPG` files.**
