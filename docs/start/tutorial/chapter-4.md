@@ -204,5 +204,5 @@ If you're looking for NativeScript plugins start by searching [NativeScript Mark
 Between NativeScript modules, npm modules, and NativeScript plugins, the NativeScript framework provides a lot of functionality you can use to build your next app. However, we've yet to talk about NativeScript's most powerful feature: the ability to directly access iOS and Android APIs in JavaScript. Let's look at how it works.
 
 <div class="next-chapter-link-container">
-  <a href="/tutorial/chapter-5">Continue to Chapter 5—Accessing Native APIs</a>
+  <a href="/start/tutorial/chapter-5">Continue to Chapter 5—Accessing Native APIs</a>
 </div>

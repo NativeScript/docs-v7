@@ -231,5 +231,5 @@ What's really cool is that the binding is two-way. Meaning, when the user types 
 To use these values, and to make this login functional by typing your app into a backend service, you're going to need the ability to make HTTP calls. And to make HTTP calls in NativeScript you use the NativeScript fetch module. Let's look at how NativeScript modules work.
 
 <div class="next-chapter-link-container">
-  <a href="/tutorial/chapter-3">Continue to Chapter 3—NativeScript Modules</a>
+  <a href="/start/tutorial/chapter-3">Continue to Chapter 3—NativeScript Modules</a>
 </div>

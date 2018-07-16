@@ -578,5 +578,5 @@ Now that you have the login, registration, and list pages complete, let’s enha
 > **TIP**: There are several modules that come out of the box with your NativeScript installation that we did not have time to cover in this guide—including a [file-system helper]({%ns_cookbook file-system%}), a [timer module]({%ns_cookbook timer%}), and a whole lot more. Make sure to peruse the “API Reference” of the NativeScript documentation, or just look around your `node_modules/tns-core-modules` folder to see all of what’s available.
 
 <div class="next-chapter-link-container">
-  <a href="/tutorial/chapter-4">Continue to Chapter 4—Plugins and npm Modules</a>
+  <a href="/start/tutorial/chapter-4">Continue to Chapter 4—Plugins and npm Modules</a>
 </div>

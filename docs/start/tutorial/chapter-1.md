@@ -371,5 +371,5 @@ At this point your UI looks good, but the app still doesn't actually do anything
 > **TIP**: The community-written [NativeScript Image Builder](http://nsimage.brosteins.com/) can help you generate images in the appropriate resolutions for iOS and Android.
 
 <div class="next-chapter-link-container">
-  <a href="/tutorial/chapter-2">Continue to Chapter 2—Application Logic</a>
+  <a href="/start/tutorial/chapter-2">Continue to Chapter 2—Application Logic</a>
 </div>
