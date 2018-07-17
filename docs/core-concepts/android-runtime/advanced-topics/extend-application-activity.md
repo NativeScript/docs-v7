@@ -78,14 +78,29 @@ The following steps are needed to create custom native `android.app.Application`
 
     >This modification is required by the native platform; it basically tells Android that your custom `Application` class will be used as the main entry point of the application.
 
+4. In order to build the project with [webpack bundling](../../../performance-optimizations/bundling-with-webpack.md) and [optimizations](../../../performance-optimizations/bundling-with-webpack.md#optimizations), the extended Android application should be added as an [entry](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L71) to the `webpack.config.js` file.
+
+    ```javascript
+        entry: {
+            bundle: entryPath,
+            application: "./application.android",
+        },
+    ```
+
+    In this way, the source code of [`application.android.ts`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/app/application.android.ts) is bundled separately as `application.js` file which is loaded from the native `Application.java` class on launch.
+
+    The `application.js` bundle file is independent of the `bundle.js` and `vendor.js` files and the reason for this is that they are not loaded so early in the application launch. That's why the logic in `application.android.ts` is needed to be bundled separately in order to be loaded by the native `Application.java` as early as needed on launch.
+
+    > Note: This approach won't work if `aplication.android.ts` requires external modules.
+
 ## Extending Activity
 The core modules ship with a default `android.app.Activity` implementation, which ensures they alone are sufficient to bootstrap an empty NativeScript application, without forcing users to declare their custom `Activity` in every project. When needed, however, users may still specify custom `Activity` implementation and use it to bootstrap the application. The following code demonstrates how this can be done:
 
-1.  Create a new JavaScript file in your `app` folder - name it `activity.android.js`
+1. Create a new JavaScript file in your `app` folder - name it `activity.android.js`
 
     >Note the `*.android` suffix - we want this file packaged for Android only.
 
-2.  Declare the extend:
+2. Declare the extend:
 
     ```javascript
     const frame = require("ui/frame");
@@ -179,6 +194,18 @@ The core modules ship with a default `android.app.Activity` implementation, whic
             android:label="@string/title_activity_kimera"
             android:configChanges="keyboardHidden|orientation|screenSize">
     ```
+
+4. In order to build the project with [webpack bundling](../../../performance-optimizations/bundling-with-webpack.md) and [optimizations](../../../performance-optimizations/bundling-with-webpack.md#optimizations), the extended Android activity should be added to the [`appComponents`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L19) array by an absolute path.
+
+    ```javascript
+        const appComponents = [
+            "tns-core-modules/ui/frame",
+            "tns-core-modules/ui/frame/activity",
+            resolve(__dirname, "app/activity.android.ts"),
+        ];
+    ```
+
+    In this way and with the default config, these components [get](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L109-L116) in the common *vendor.js* chunk and are required by the [`android-app-components-loader`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L146-L149).
 
 ## See Also
 * [How Extend Works](../generator/extend-class-interface.md)
