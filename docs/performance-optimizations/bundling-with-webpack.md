@@ -205,6 +205,10 @@ function logMessage(message) {
 }
 ```
 
+## Custom Application and Activity
+
+NativeScript provides a way to create custom `android.app.Application` and `android.app.Activity` implementations. Please, refer to [this](../core-concepts/android-runtime/advanced-topics/extend-application-activity) documentation article for a detail description of how to achieve these as well as how to configure and bundle such a project.
+
 ## Debugging Common Errors
 
 Webpack bundling can fail for different reasons. It sometimes fails to resolve certain modules, or it generates code that breaks at runtime. We'll try to cover a few common failure reasons with steps to resolve them in the following sections.
