@@ -78,7 +78,7 @@ The following steps are needed to create custom native `android.app.Application`
 
     >This modification is required by the native platform; it basically tells Android that your custom `Application` class will be used as the main entry point of the application.
 
-4. In order to build the project with [webpack bundling](../../../performance-optimizations/bundling-with-webpack.md) and [optimizations](../../../performance-optimizations/bundling-with-webpack.md#optimizations), the extended Android application should be added as an [entry](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L71) to the `webpack.config.js` file.
+4. In order to build the app with [webpack](../../../performance-optimizations/bundling-with-webpack.md), the extended Android application should be added as an [entry](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L71) to the `webpack.config.js` file.
 
     ```javascript
         entry: {
@@ -89,7 +89,7 @@ The following steps are needed to create custom native `android.app.Application`
 
     In this way, the source code of [`application.android.ts`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/app/application.android.ts) is bundled separately as `application.js` file which is loaded from the native `Application.java` class on launch.
 
-    The `application.js` bundle file is independent of the `bundle.js` and `vendor.js` files and the reason for this is that they are not loaded so early in the application launch. That's why the logic in `application.android.ts` is needed to be bundled separately in order to be loaded by the native `Application.java` as early as needed on launch.
+    The `bundle.js` and `vendor.js` files are not loaded early enough in the application launch. That's why the logic in `application.android.ts` is needed to be bundled separately in order to be loaded as early as needed in the application lifecycle.
 
     > Note: This approach won't work if `aplication.android.ts` requires external modules.
 
@@ -195,7 +195,7 @@ The core modules ship with a default `android.app.Activity` implementation, whic
             android:configChanges="keyboardHidden|orientation|screenSize">
     ```
 
-4. In order to build the project with [webpack bundling](../../../performance-optimizations/bundling-with-webpack.md) and [optimizations](../../../performance-optimizations/bundling-with-webpack.md#optimizations), the extended Android activity should be added to the [`appComponents`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L19) array by an absolute path.
+4. In order to build the app with [webpack](../../../performance-optimizations/bundling-with-webpack.md), the absolute path to the file where the Android activity is extended should be added to the [`appComponents`](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/webpack.config.js#L19) array.
 
     ```javascript
         const appComponents = [
