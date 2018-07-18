@@ -182,3 +182,13 @@ So, instead of:
 
 You do:
 {%snippet router-params-page-route%}
+
+## Application Without Page Router Outlet
+
+In some cases, you might want to create an application without using `page-router-outlet`. To achieve that with nativescript-angular version 6 and above an additional bootstrap parameter called `createFrameOnBootstrap` must be provided to create a `Frame` during the bootstrapping.
+
+app/main.ts
+```TypeScript
+platformNativeScriptDynamic({ createFrameOnBootstrap: true }).bootstrapModule(AppModule);
+
+```
