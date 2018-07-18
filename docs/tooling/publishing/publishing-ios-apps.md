@@ -34,7 +34,7 @@ The *Bundle ID* is used to precisely identify your app at various situations and
 For more information consider [the 'About Bundle IDs' section in the following article](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/ConfiguringYourApp/ConfiguringYourApp.html).
 
 ### App name
-This is the display name for your app. It is purely cosmetic but highly important. Fot example, it will appear under the app icon.
+This is the display name for your app. It is purely cosmetic but highly important. For example, it will appear under the app icon.
 The value is stored in the `app/App_Resources/iOS/Info.plist` file as the `CFBundleDisplayName` key.
 
 ### App icons
