@@ -115,17 +115,17 @@ This article will walk you through setting up an already existing Android Studio
 
 ---
 
-## **Sample app code:** 
+## **Sample app code** 
 [NativeScript](https://github.com/NativeScript/)/[sample-extend-android-app](https://github.com/NativeScript/sample-extend-android-app)
 
-## **Additional Notes:**
+## **Additional Notes**
  - Arbitrary JavaScript files can be executed using the `Runtime.runScript()` method like so:
     - ```Java
       nsRuntimeInstance.runScript(new File(context.getFilesDir(),"app/view.js"))
       ```
 
-## **Known Limitations**:
+## **Known Limitations**
  - JavaScript metadata for all available Android classes is prebuilt and cannot be generated from within the Android Studio project. Rebuild the NativeScript project with the respective Android plugins if their classes are going to be consumed from within JavaScript/TypeScript/Angular.
  
-## **Credits:** 
+## **Credits** 
 Original *CurrencyConversion* Android application and step-by-step tutorial courtesy of [The Polyglot Developer](https://www.thepolyglotdeveloper.com/2017/06/legacy-android-java-nativescript-angular/).
