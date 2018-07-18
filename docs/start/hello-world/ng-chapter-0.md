@@ -20,7 +20,7 @@ Welcome to the NativeScript & Angular getting started guide. In this hands-on tu
 </div>
 
 <div class="intro-box">
-  <img src="/img/cli-getting-started/angular/chapter0/Angular_logo.png" class="plain" style="height: 100px;" alt="Angular logo">
+  <img src="../img/cli-getting-started/angular/chapter0/Angular_logo.png" class="plain" style="height: 100px;" alt="Angular logo">
   <p><a href="https://angular.io/">Angular</a> is one of the most popular open source JavaScript frameworks for application development. The latest version of Angular makes it possible to use the framework outside of a web browser, and developers at <a href="https://www.progress.com/">Progress</a>—the company that created and maintains NativeScript—<a href="http://angularjs.blogspot.com/2015/12/building-mobile-apps-with-angular-2-and.html">worked closely with developers at Google for over a year</a> to make Angular in NativeScript a reality.</p>
 </div>
 
