@@ -158,14 +158,24 @@ Steps to install and enable
 
 - `npm install tns-platform-declarations --save-dev`
 
-- As of version 3.0.0 of NativeScript the newly created projects are shipped without `references.d.ts` file.
+ > **Note:** Always install the plugin as a `devDependency` (NPM install with `--save-dev` flag) to avoid bringing the enormously big declaration files in the output built file.
 
-Create `references.d.ts` in the root project directory and add the following:
+- As of version 3.0.0 of NativeScript the newly created projects are shipped without `reference.d.ts` file.
+
+Create `reference.d.ts` in the root project directory and add the following:
 ```
 /// <reference path="node_modules/tns-platform-declarations/android.d.ts" />
 /// <reference path="node_modules/tns-platform-declarations/ios.d.ts" />
 ```
 
+ By default, the file `android.d.ts` comes with typings generated for API level 17. As an Android developer, you might need access to a specific class, method or property introduced in a newer API level. The `tns-platform-declarations` plugin comes with generated typings for all API levels from 17 to 27 including the related typings from the respective support library. To use typings for a specific Android level replace the reference to the default declaration file with the preferred one. The files for each API level comes postfixed with a dash followed by the number of the API level (e.g. for API 21 the file is named `android-21.d.ts`).
+
+For example, let's assume you are developing an application for API 21+ and you need typings generated for that API level:
+ ```
+ /// <reference path="node_modules/tns-platform-declarations/android-21.d.ts" />
+ ```
+
+ > **Note:** Proceed with caution when using functionalities introduced in newer API level. If you attempt to use a class, method or property from a newer API level on a device with a lower API, the application will crash.
 
 - Modify `tsconfig.json` to contain the following settings:
 ```
@@ -182,8 +192,8 @@ Create `references.d.ts` in the root project directory and add the following:
   }
 }
 ```
-Note that d.ts files require a lot of memory and CPU. Consider adding skipLibCheck option to `tsconfig.json`.
-For more information: [tns-platform-declarations](https://github.com/NativeScript/NativeScript/tree/master/tns-platform-declarations)
+Note that `d.ts` files require a lot of memory and CPU. Consider adding **skipLibCheck** option to `tsconfig.json`.
+For more information visit the GitHub repository of [tns-platform-declarations](https://github.com/NativeScript/NativeScript/tree/master/tns-platform-declarations)
 
 
 # See Also
