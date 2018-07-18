@@ -373,7 +373,7 @@ const getFrameById = require("tns-core-modules/ui/frame").getFrameById;
 const mainViewModel = require("./main-view-model");
 // Navigate to page called “my-page” and provide "bindingContext"
 const frame = getFrameById("firstFrame");
-frame..navigate({ 
+frame.navigate({ 
   moduleName: "my-page", 
   bindingContext: new mainViewModel.HelloWorldModel() 
 });
