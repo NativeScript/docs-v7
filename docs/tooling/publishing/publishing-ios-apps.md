@@ -18,8 +18,8 @@ You can publish a NativeScript app in the *App Store* the same way you would [re
      ```
  2. Open the iOS native project in Xcode. Your native project is located at: `{app-name}/platforms/ios/{app-name}.xcodeproj`.
  3. [Configure the project for distribution](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/ConfiguringYourApp/ConfiguringYourApp.html).
- 4. [Upload the app to iTunes Connect](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/UploadingYourApptoiTunesConnect/UploadingYourApptoiTunesConnect.html).
- 5. [Submit it to the *App Store*](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/SubmittingTheApp.html).
+ 4. [Upload the app to App Store Connect](https://help.apple.com/xcode/mac/current/#/dev442d7f2ca).
+ 5. [Submit it to the *App Store*](https://help.apple.com/app-store-connect/#/dev301cb2b3e).
 
 ## Creating iOS NativeScript app
 ### Bundle ID
@@ -198,15 +198,15 @@ For *App Store* submissions, you must create an *App Store Distribution Provisio
 
 *Distribution provisioning profiles* invalidate rarely since they refer a single *Distribution Certificate*.
 
-## iTunes Connect
-While you manage your *provisioning profiles* and certificates at the *Apple Developer Member Center*, apps are registered and submitted at [iTunes Connect](https://itunesconnect.apple.com).
+## App Store Connect
+While you manage your *provisioning profiles* and certificates at the *Apple Developer Member Center*, apps are registered and submitted at [App Store Connect](https://appstoreconnect.apple.com) (former iTunes Connect).
 This is where you will be able to create new apps, prepare app screens, descriptions, manage app versions, etc.
 
 ### Account
-You will need your *Apple ID* added to your organization with sufficient rights at [https://itunesconnect.apple.com](https://itunesconnect.apple.com).
+You will need your *Apple ID* added to your organization with sufficient rights at [https://appstoreconnect.apple.com](https://appstoreconnect.apple.com).
 
 ### Creating an app
-To publish your app in the iOS *App Store* you will have to register your app. Log into [https://itunesconnect.apple.com](https://itunesconnect.apple.com) and go to 'My Apps'.
+To publish your app in the iOS *App Store* you will have to register your app. Log into [https://appstoreconnect.apple.com](https://appstoreconnect.apple.com) and go to 'My Apps'.
 There you can check the status and edit existing apps or create a new app.
 
 Click the '+' button at the top left corner. The 'New App' dialog should appear. There you have to fill the public *App Store* name of your app and primary language.
@@ -222,7 +222,7 @@ Failing to provide all necessary assets may prevent you from submitting your app
 >Note: Screenshots not matching the actual app may result in rejection of a new version sent for approval.
 
 ### Builds
-Once you have your app information registered at [https://itunesconnect.apple.com](https://itunesconnect.apple.com) it is time to build your NativeScript app for iOS and submit it.
+Once you have your app information registered at [https://appstoreconnect.apple.com](https://appstoreconnect.apple.com) it is time to build your NativeScript app for iOS and submit it.
 
 There are two main ways to submit an app to *iTunes Connect* — using Xcode or using *Application Loader*.
 
@@ -301,7 +301,7 @@ The Xcode Organizer displays a list with builds of your app. Pick the last build
 You should select a team again and whether to include app symbols for your app. Next, you can see a list with the binary information, entitlements, etc.
 Click `Upload`.
 
-If you upload successfully, you should be able to log in at [https://itunesconnect.apple.com](https://itunesconnect.apple.com) and see your build in 'Activities'. From there you can enable Test Flight beta testing or send it for approval.
+If you upload successfully, you should be able to log in at [https://appstoreconnect.apple.com](https://appstoreconnect.apple.com) and see your build in 'Activities'. From there you can enable Test Flight beta testing or send it for approval.
 
 <h4 id="submission-automation">Submission automation</h4>
 Automation can be achieved using the NativeScript CLI only. All of the parameters needed for publishing can be passed to the `publish` command directly:
@@ -325,6 +325,6 @@ Also, the previously mentioned *Application Loader* has a command line tool call
 which you may use to hack your own [shell scripts](https://gist.github.com/jedi4ever/b1f8b27d4a803d487fa4) around.
 
 ### Send for approval and publish
-Once you successfully submit a build at *iTunes Connect*, you can enable testing through *Test Flight*.
+Once you successfully submit a build at *App Store Connect*, you can enable testing through *Test Flight*.
 When you are ready, go to the 'Build' section of your iOS app, pick the build, and click 'Submit for Review' for that version.
-The app will pass through several [App Statuses](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/ChangingAppStatus.html#//apple_ref/doc/uid/TP40011225-CH30-SW23). If your app passes Apple review, it can go live at the *App Store*.
+The app will pass through several [App Statuses](https://help.apple.com/app-store-connect/#/dev18557d60e). If your app passes Apple review, it can go live at the *App Store*.
