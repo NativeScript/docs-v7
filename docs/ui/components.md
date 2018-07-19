@@ -11,28 +11,6 @@ previous_url: /ui-views,/ui/ui-views
 
 NativeScript ships with a set of user interface [`views`](http://docs.nativescript.org/api-reference/modules/_ui_core_view_.html) (also known as widgets) which you can use to build the user interface of a mobile application. Most of these views wrap the corresponding native view for each platform while providing a common API for working with it. For example, the `Button` view renders an [`android.widget.Button`](http://developer.android.com/reference/android/widget/Button.html) on Android and [`UIButton`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/) on iOS.
 
-
-* [Button](#button)
-* [Label](#label)
-* [TextField](#textfield)
-* [TextView](#textview)
-* [SearchBar](#searchbar)
-* [Switch](#switch)
-* [Slider](#slider)
-* [Progress ](#progress)
-* [ActivityIndicator](#activityindicator)
-* [Image](#image)
-* [ListView](#listview)
-* [HtmlView](#htmlview)
-* [WebView](#webview)
-* [TabView](#tabview)
-* [SegmentedBar](#segmentedbar)
-* [DatePicker](#datepicker)
-* [TimePicker](#timepicker)
-* [ListPicker](#listpicker)
-* [Dialogs](#dialogs)
-
-
 Defining the layout of the application is also an important part of the application development. For more information about the different layout containers that are available in NativeScript, see [The NativeScript Layout System]({%slug layouts %}).
 
 > **TIP:** You can access the underlying native widget for each view at runtime using the `nativeView` property:
