@@ -150,9 +150,9 @@ var button = new android.widget.Button(context);
 button.setOnClickListener(undefined); // the Java call will be made using the null keyword
 ```
 
-## Intellisense and access to native APIs via TypeScript
+## IntelliSense and Access to the Native APIs via TypeScript
 
-To have access and Intellisense for the native APIs with TypeScript enabled project, you have to add a dev dependency to `tns-platform-declarations` 
+To have access and Intellisense for the native APIs, you have to add a dev dependency to `tns-platform-declarations` 
 
 Steps to install and enable 
 
