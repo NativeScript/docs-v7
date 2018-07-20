@@ -10,12 +10,6 @@ slug: accessing-android-apis
 
 One of NativeScript's strongest capabilities is the access to Android (also referred to as __'Java'__ or __'native'__) APIs inside JavaScript/TypeScript. That's possible thanks to build-time generated [Metadata](./overview.md) chunks which hold the information about the public classes from the Android SDK, Android support libraries, and any other Android libraries which may be imported into your Android NativeScript project.
 
-- [Access Android Packages](#access-android-packages)
-- [Access Android Classes](#access-android-classes)
-- [Access Fields and Constants](#access-methods-fields-and-constants)
-- [Extend Classes and Interfaces](#extending-classes-and-interfaces)
-- [Example](#full-fledged-example)
-
 > Note: 'Android classes' and 'Java classes' are used interchangeably throughout the article to refer to classes in the Java programming language. 
 
 ## Access Android Packages

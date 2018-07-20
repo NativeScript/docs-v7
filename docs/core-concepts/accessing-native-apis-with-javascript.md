@@ -14,7 +14,7 @@ In this article we are going through the basic concepts of how native APIs are a
 
 NativeScript lets you access all native APIs from the underlying platform. To achieve this behaviour, many things happen under the hood. One of them is marshalling - the conversion between JavaScript and Objective-C data types for iOS and Java data types for Android.
 
-In this article, you will learn how to call native APIs from JavaScript with various data types parameters. For more information, see the platform-specific resources about data conversion in the [iOS Runtime](./../runtimes/ios/marshalling/Marshalling-Overview.md) and [Android Runtime](./../runtimes/android/marshalling/overview.md) sections.
+In this article, you will learn how to call native APIs from JavaScript with various data types parameters. For more information, see the platform-specific resources about data conversion in the [iOS Runtime](./ios-runtime/Marshalling-Overview.md) and [Android Runtime](./android-runtime/marshalling/overview.md) sections.
 
 ## Numeric Types
 
@@ -150,22 +150,33 @@ var button = new android.widget.Button(context);
 button.setOnClickListener(undefined); // the Java call will be made using the null keyword
 ```
 
-## Intellisense and access to native APIs via TypeScript
+## IntelliSense and Access to the Native APIs via TypeScript
 
-To have access and Intellisense for the native APIs with TypeScript enabled project, you have to add a dev dependency to `tns-platform-declarations` 
+To have access and Intellisense for the native APIs, you have to add a dev dependency to `tns-platform-declarations` 
 
 Steps to install and enable 
 
 - `npm install tns-platform-declarations --save-dev`
 
-- As of version 3.0.0 of NativeScript the newly created projects are shipped without `references.d.ts` file.
+ > **Note:** Always install the plugin as a `devDependency` (`npm i tns-platform-declarations --save-dev` flag) to avoid bringing the enormously big declaration files in the output built file.
 
-Create `references.d.ts` in the root project directory and add the following:
+- As of version 3.0.0 of NativeScript the newly created projects are shipped without `reference.d.ts` file.
+
+Create `reference.d.ts` in the root project directory and add the following:
 ```
 /// <reference path="node_modules/tns-platform-declarations/android.d.ts" />
 /// <reference path="node_modules/tns-platform-declarations/ios.d.ts" />
 ```
 
+ By default, the file `android.d.ts` comes with typings generated for API level 17. As an Android developer, you might need access to a specific class, method, or property introduced in a newer API level. The `tns-platform-declarations` plugin comes with generated typings for all API levels from 17 to 27 including the related typings from the respective support library. To use typings for a specific Android level replace the reference to the default declaration file with the preferred one. The files for each API level comes postfixed with a dash followed by the number of the API level (e.g. for API 21 the file is named `android-21.d.ts`).
+
+For example, let's assume you are developing an application for API 21+ and you need typings generated for that API level:
+ ```
+ /// <reference path="node_modules/tns-platform-declarations/android-21.d.ts" />
+ ```
+
+ > **Note:** Proceed with caution when using functionalities introduced in newer API level. If you attemp
+  to use a class, method, or property from a newer API level on a device with a lower API, the application will crash.
 
 - Modify `tsconfig.json` to contain the following settings:
 ```
@@ -182,8 +193,8 @@ Create `references.d.ts` in the root project directory and add the following:
   }
 }
 ```
-Note that d.ts files require a lot of memory and CPU. Consider adding skipLibCheck option to `tsconfig.json`.
-For more information: [tns-platform-declarations](https://github.com/NativeScript/NativeScript/tree/master/tns-platform-declarations)
+Note that `d.ts` files require a lot of memory and CPU. Consider adding **skipLibCheck** option to `tsconfig.json`.
+For more information visit the GitHub repository of [tns-platform-declarations](https://github.com/NativeScript/NativeScript/tree/master/tns-platform-declarations)
 
 
 # See Also
