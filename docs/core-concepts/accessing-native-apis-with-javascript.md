@@ -158,7 +158,7 @@ Steps to install and enable
 
 - `npm install tns-platform-declarations --save-dev`
 
- > **Note:** Always install the plugin as a `devDependency` (NPM install with `--save-dev` flag) to avoid bringing the enormously big declaration files in the output built file.
+ > **Note:** Always install the plugin as a `devDependency` (`npm i tns-platform-declarations --save-dev` flag) to avoid bringing the enormously big declaration files in the output built file.
 
 - As of version 3.0.0 of NativeScript the newly created projects are shipped without `reference.d.ts` file.
 
@@ -175,7 +175,8 @@ For example, let's assume you are developing an application for API 21+ and you 
  /// <reference path="node_modules/tns-platform-declarations/android-21.d.ts" />
  ```
 
- > **Note:** Proceed with caution when using functionalities introduced in newer API level. If you attempt to use a class, method, or property from a newer API level on a device with a lower API, the application will crash.
+ > **Note:** Proceed with caution when using functionalities introduced in newer API level. If you attemp
+  to use a class, method, or property from a newer API level on a device with a lower API, the application will crash.
 
 - Modify `tsconfig.json` to contain the following settings:
 ```
