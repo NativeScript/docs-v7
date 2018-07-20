@@ -1,7 +1,7 @@
 ---
-title: Quick Setup
-description: Set up your system to work with NativeScript.
-position: 10
+title: Command-Line Interface Setup
+description: Set up your system to work with NativeScript locally.
+position: 20
 slug: quick-start
 previous_url: /setup/quick-setup
 ---
@@ -114,5 +114,10 @@ To verify the setup, run the `tns doctor` command which will check for any issue
 
 ## What’s Next
 
-* [Return to the JavaScript tutorial](http://docs.nativescript.org/tutorial/chapter-1#11-install-nativescript-and-configure-your-environment)
-* [Return to the TypeScript & Angular tutorial](http://docs.nativescript.org/angular/tutorial/ng-chapter-1#11-install-nativescript-and-configure-your-environment)
+{% angular %}
+* [Learn the Basics of the NativeScript CLI](/angular/start/cli-basics)
+{% endangular %}
+
+{% nativescript %}
+* [Learn the Basics of the NativeScript CLI](/start/cli-basics)
+{% endnativescript %}
