@@ -11,14 +11,6 @@ navigation:
         position: 10
         title: "Get Started"
         expanded: true
-    "start/hello-world":
-        position: 20
-        title: "Hello World"
-        expanded: false
-    "start/tutorial":
-        position: 30
-        title: "Tutorial"
-        expanded: false
     core-concepts:
         position: 20
         title: "CORE CONCEPTS"

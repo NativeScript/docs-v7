@@ -98,5 +98,10 @@ If you see "No issues were detected" you are good to go!
 
 ## What’s Next
 
-* [Return to the JavaScript tutorial](http://docs.nativescript.org/tutorial/chapter-1#11-install-nativescript-and-configure-your-environment)
-* [Return to the TypeScript & Angular tutorial](http://docs.nativescript.org/angular/tutorial/ng-chapter-1#11-install-nativescript-and-configure-your-environment)
+{% angular %}
+* [Learn the Basics of the NativeScript CLI](/angular/start/cli-basics)
+{% endangular %}
+
+{% nativescript %}
+* [Learn the Basics of the NativeScript CLI](/start/cli-basics)
+{% endnativescript %}

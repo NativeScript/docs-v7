@@ -1,13 +1,13 @@
 ---
-title: Creating, Running, and Debugging Apps
-position: 2
+title: Command-Line Interface Basics
+position: 30
+environment: nativescript
 guide: true
-environment: angular
 ---
 
-# Creating, Running, and Debugging Apps
+# Basics of the NativeScript Command-Line Interface
 
-In this guide you’re going to start with the basics, including creating new apps, getting those apps running on emulators, and setting up a development workflow that will allow you to build apps quickly.
+In this article you’re going to learn the basics of the NativeScript command-line interface, including how to create new apps, how to get those apps running on emulators, and how to set up a development workflow that lets you iterate fast.
 
 ## Creating apps
 
@@ -21,13 +21,21 @@ In this section you’ll familiarize yourself with the NativeScript CLI, and use
 
 Open your terminal or command prompt and run the following command to create a new NativeScript application.
 
+{% nativescript %}
 ```
-tns create HelloWorld --template nativescript-template-ng-tutorial
+tns create HelloWorld --template tns-template-blank
 ```
+{% endnativescript %}
 
-Here you’re passing two things to the `create` command: `HelloWorld` which determines the name of the app you’re creating, and the `--template` option, which tells the NativeScript CLI to scaffold an app using a predefined template named “nativescript-template-ng-tutorial”.
+{% angular %}
+```
+tns create HelloWorld --template tns-template-blank-ng
+```
+{% endangular %}
 
-> **TIP**: You can use the `tns create` command to scaffold apps at a [variety of different starting points](https://github.com/NativeScript/NativeScript/wiki/Using-the-%60tns-create%60-command). The “nativescript-template-ng-tutorial” template creates a dead-simple app for the purposes of teaching the basics of NativeScript.
+Here you’re passing two things to the `create` command: `HelloWorld` which determines the name of the app you’re creating, and the `--template` option, which tells the NativeScript CLI to scaffold an app using a predefined template named “nativescript-template-tutorial”.
+
+> **TIP**: You can use the `tns create` command to scaffold apps at a [variety of different starting points](https://market.nativescript.org/?tab=templates&category=all_templates). The “tns-template-blank” template creates a dead-simple app for the purposes of teaching the basics of NativeScript.
 
 The `create` command will take a minute to complete, as the NativeScript CLI needs to download a few dependencies while setting up your new app.
 
@@ -65,7 +73,7 @@ tns run android
 
 The `run` command will take a few seconds to complete, as the NativeScript CLI will actually be building and deploying a native Android application. When the command finishes the native emulator will open and you will see your app:
 
-![Basic hello world app running on Android](../img/cli-getting-started/angular/chapter1/android/1.png)
+![Basic hello world app running on Android](/img/start/cli-basics/android/1.png)
 
 If you’re on macOS and would prefer to develop for iOS first, type `Ctrl` + `C` in your terminal to end the previous `tns run android` command, and then execute the following command instead.
 
@@ -77,13 +85,13 @@ tns run ios
 
 The `run` command will again take a few seconds, as the NativeScript CLI will be building and deploying a native iOS application. When the command finishes the native emulator will open and you will see your app:
 
-![Basic hello world app running on iOS](../img/cli-getting-started/angular/chapter1/ios/1.png)
+![Basic hello world app running on iOS](/img/start/cli-basics/ios/1.png)
 
 <div class="exercise-end"></div>
 
 You might have noticed that the `tns run` command never terminates. That is, you cannot type in your terminal or command prompt after your app starts up.
 
-<img src="../img/cli-getting-started/angular/chapter1/terminal-1.png" alt="Terminal display after executing tns run" class="plain">
+<img src="/img/start/cli-basics/terminal-1.png" alt="Terminal display after executing tns run" class="plain">
 
 This happens because the `tns run` command not only starts your apps, it also watches your code for changes. When the `tns run` command detects a code change, the command automatically refreshes, or _livesyncs_, your app so you can see those changes immediately. Let’s make some updates to your code so you can see this in action.
 
@@ -95,20 +103,19 @@ Open your new project in your favorite text editor or IDE.
 
 > **TIP**: You can use any editor to develop NativeScript apps, but we recommend Visual Studio Code. Feel free to [skip ahead to this chapter’s appendix](#appendix-a-choosing-an-editor) for more information.
 
-Let’s add a simple image to your app so you can see how livesync works. Open your app’s  `app/app.component.ts` file, and place the following line of code directly under the comment `<!-- Your UI components go here -->` :
+{% nativescript %}
+Let’s add a simple image to your app so you can see how livesync works. Open your app’s  `app/main-page.xml` file, and replace its contents with the following code:
 
 ``` XML
-<Image src="~/images/apple.jpg"></Image>
+<Page loaded="pageLoaded">
+    <ActionBar title="My App" class="action-bar"></ActionBar>
+    <Image src="https://user-images.githubusercontent.com/544280/42960643-66d498ac-8b5a-11e8-8946-7224eefea6a5.jpg"></Image>
+</Page>
 ```
+{% endnativescript %}
 
-> **NOTE**: Don’t worry about the specifics of how this code works yet. We’ll cover the details momentarily—for now just get comfortable with how livesync works.
-
-Your emulator should refresh and display the new image.
-
-![Apple on the iOS emulator](../img/cli-getting-started/angular/chapter1/ios/2.png)
-![Apple on the Android emulator](../img/cli-getting-started/angular/chapter1/android/2.png)
-
-Next, let’s animate the apple you just added. While still in `app/app.component.ts`, delete all the code in this file and replace it with the following code. Again don’t worry about the details right now.
+{% angular %}
+Let’s add a simple image to your app so you can see how livesync works. Open your app’s  `app/home/home.component.ts` file, and replace its contents with the following code:
 
 ``` TypeScript
 import { Component } from "@angular/core";
@@ -116,31 +123,46 @@ import { Component } from "@angular/core";
 @Component({
   selector: "my-app",
   template: `
-    <ActionBar title="My Apple" class="action-bar"></ActionBar>
-    <Image src="~/images/apple.jpg"></Image>
-  `,
-  styles: [`
-    @keyframes spin {
-      from { transform: rotate(0); } to { transform: rotate(360); }
-    }
-    Image {
-      animation-name: spin; animation-duration: 3s;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
-    }
-  `]
+    <ActionBar title="My App" class="action-bar"></ActionBar>
+    <Image src="https://user-images.githubusercontent.com/544280/42960643-66d498ac-8b5a-11e8-8946-7224eefea6a5.jpg"></Image>
+  `
 })
-export class AppComponent {}
+export class HomeComponent {
+  // Your TypeScript logic goes here
+}
+```
+{% endangular %}
+
+> **NOTE**: Don’t worry about the specifics of how this code works yet. We’ll cover the details momentarily—for now just get comfortable with how livesync works.
+
+Your emulator should refresh and display the new image.
+
+![Apple on the iOS emulator](/img/start/cli-basics/ios/2.png)
+![Apple on the Android emulator](/img/start/cli-basics/android/2.png)
+
+Next, open your app’s `app/app.css` and paste the following code in at the bottom of the file. Again don’t worry about the details of what this code is doing right now.
+
+``` CSS
+@keyframes spin {
+    from { transform: rotate(0); }
+    to { transform: rotate(360); }
+}
+Image {
+    animation-name: spin; 
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
 ```
 
 When your emulator refreshes, you should see a crazy spinning apple!
 
-![App with a blue action bar](../img/cli-getting-started/angular/chapter1/ios/3.gif)
-![Apple spinning on the Android emulator](../img/cli-getting-started/angular/chapter1/android/3.gif)
+![App with a blue action bar](/img/start/cli-basics/ios/3.gif)
+![Apple spinning on the Android emulator](/img/start/cli-basics/android/3.gif)
 
 Let’s make one final change.
 
-This time open your project’s `app/app.css` file. You can see that it’s blank, except for the import of a `core.light.css` file. This import tells NativeScript to use a “light” color scheme. Let’s change to the “sky” color scheme by replacing the existing line of code with the one shown below.
+Find the first line of your app’s `app/app.css` file, which imports a `core.light.css` file. This import tells NativeScript to use a “light” color scheme. Let’s change to the “sky” color scheme by replacing the existing line of code with the one shown below.
 
 ``` CSS
 @import "nativescript-theme-core/css/sky.css";
@@ -150,8 +172,8 @@ This time open your project’s `app/app.css` file. You can see that it’s blan
 
 The emulator should refresh and you should see a nice blue ActionBar color:
 
-![App with a blue action bar](../img/cli-getting-started/angular/chapter1/ios/4.png)
-![App with a blue action bar](../img/cli-getting-started/angular/chapter1/android/4.png)
+![iOS app with a blue action bar](/img/start/cli-basics/ios/4.png)
+![Android app with a blue action bar](/img/start/cli-basics/android/4.png)
 
 <h4 class="exercise-start">
     <b>Challenge</b>: Pick a different color scheme
@@ -185,7 +207,18 @@ You’ll want to check out the Chrome Dev Tools and the Visual Studio debugger a
 
 One of the easiest things you can do to debug apps in any environment is writing to the system’s log. In NativeScript logging works a lot like it does on the web, as most of the same `console` APIs that work on the web also work in NativeScript.
 
-To see this action open your app’s `app/app.component.ts` file and replace its contents with the code below.
+{% nativescript %}
+To see this action open your app’s `app/main-page.js` file and replace its contents with the code below.
+
+``` JavaScript
+exports.pageLoaded = function() {
+     console.log("Hello World");
+};
+```
+{% endnativescript %}
+
+{% angular %}
+To see this action open your app’s `app/home/home.component.ts` file and replace its contents with the code below.
 
 ``` TypeScript
 import { Component } from "@angular/core";
@@ -194,23 +227,38 @@ import { Component } from "@angular/core";
   selector: "my-app",
   template: `
     <ActionBar title="My Apple" class="action-bar"></ActionBar>
-    <Image src="~/images/apple.jpg"></Image>
+    <Image src="https://user-images.githubusercontent.com/544280/42960643-66d498ac-8b5a-11e8-8946-7224eefea6a5.jpg"></Image>
   `
 })
-export class AppComponent {
+export class HomeComponent {
   constructor() {
     console.log("Hello World");
   }
 }
 ```
+{% endangular %}
 
 After the NativeScript CLI refreshes your app, head back to your terminal or command prompt. You should see a “Hello World” message at the bottom that looks like something like this.
 
-<img src="../img/cli-getting-started/angular/chapter1/terminal-2.png" alt="Terminal display after running a console log" class="plain">
+<img src="/img/start/cli-basics/terminal-2.png" alt="Terminal display after running a console log" class="plain">
 
 The `console.log()` function is great for outputting primitive values such as strings, numbers, and booleans, but it doesn’t work so well for objects. For those situations you’ll want to use another of the `console` object’s methods intended for complex object output: `console.dir()`.
 
-To see this in action replace the contents of your `app/app.component.ts` file with the code below, which uses `console.log()` to log a simple object.
+{% nativescript %}
+To see this in action replace the contents of your `app/main-page.js` file with the code below, which uses `console.log()` to log a simple object.
+
+``` TypeScript
+exports.pageLoaded = function() {
+    console.log({
+      type: "Apple",
+      color: "Red"
+    });
+};
+```
+{% endnativescript %}
+
+{% angular %}
+To see this in action replace the contents of your `app/home/home.component.ts` file with the code below, which uses `console.log()` to log a simple object.
 
 ``` TypeScript
 import { Component } from "@angular/core";
@@ -219,10 +267,10 @@ import { Component } from "@angular/core";
   selector: "my-app",
   template: `
     <ActionBar title="My Apple" class="action-bar"></ActionBar>
-    <Image src="~/images/apple.jpg"></Image>
+    <Image src="https://user-images.githubusercontent.com/544280/42960643-66d498ac-8b5a-11e8-8946-7224eefea6a5.jpg"></Image>
   `
 })
-export class AppComponent {
+export class HomeComponent {
   constructor() {
     console.log({
       type: "Apple",
@@ -231,6 +279,7 @@ export class AppComponent {
   }
 }
 ```
+{% endangular %}
 
 If you look at your console you’ll see the following not-very-helpful output.
 
@@ -260,39 +309,55 @@ The `console.log()` and `console.dir()` functions are two of the many tools avai
 
 Errors happen, and when they do it’s important to know how to handle them. Let’s mess up a few things in your new app.
 
-Find the line of code that declares an `<ActionBar>` (line 6 of your `app/app.component.ts` file). Remove that line’s final `>` character so that the line looks like this.
+{% nativescript %}
+Find the line of code that declares an `<ActionBar>` (line 2 of your `app/main-page.xml` file). Remove that line’s final `>` character so that the line looks like this.
 
 ``` XML
 <ActionBar title="My Apple" class="action-bar"></ActionBar
 ```
+{% endnativescript %}
+
+{% angular %}
+Find the line of code that declares an `<ActionBar>` (line 6 of your `app/home/home.component.ts` file). Remove that line’s final `>` character so that the line looks like this.
+
+``` XML
+<ActionBar title="My Apple" class="action-bar"></ActionBar
+```
+{% endangular %}
 
 This is invalid markup, and as you might expect NativeScript is unable to render your user interface. What NativeScript does do, however, is log any relevant errors and stack traces to your console. If you return to your terminal and scroll up just a bit you’ll see following error logged that indicates exactly where the problem is.
 
+{% nativescript %}
 ```
-JS ERROR Error: Template parse errors:
-        Unexpected character "<" ("
-            <ActionBar title="My Apple" class="action-bar"></ActionBar
-            [ERROR ->]<Image src="~/images/apple.jpg"></Image>
-          "): AppComponent@2:4
+JS ERROR Error: Building UI from XML. @file:///app/main-page.xml:2:50
+	 > close tag
 ```
 
-Let’s fix the error now by adding the `>` back to line 6 in your `app.component.ts` file.
+Let’s fix the error now by adding the `>` back to line 2 in your `main-page.xml` file.
 
 ``` XML
 <ActionBar title="My Apple" class="action-bar"></ActionBar>
 ```
+{% endnativescript %}
+
+{% angular %}
+```
+JS: ERROR Error: Uncaught (in promise): Error: Template parse errors:
+JS: Unexpected character "<" ("
+JS:     <ActionBar title="My Apple" class="action-bar"></ActionBar
+JS:     [ERROR ->]<Image src="https://user-images.githubusercontent.com/544280/42960643-66d498ac-8b5a-11e8-8946-7224eef"): ng:///HomeModule/HomeComponent.html@2:4
+```
+
+Let’s fix the error now by adding the `>` back to line 6 in your `home.component.ts` file.
+
+``` XML
+<ActionBar title="My Apple" class="action-bar"></ActionBar>
+```
+{% endangular %}
 
 The NativeScript CLI continues to watch the files in your application, even after errors. As such, after you correct this problem, the CLI updates your app to its previous state.
 
-> **TIP**: Once you get started with real-world application development you’ll almost certainly hit problems that are outside the scope of this basic tutorial. When you do hit these issues the [NativeScript Community Forum](http://forum.nativescript.org/) is a great place to get help.
-
 <div class="exercise-end"></div>
-
-Now that you’re familiar with how to create, run, and debug NativeScript app, let’s start building a real-world application. In the next guide you’ll learn about how NativeScript apps are structured, and start building a new app from the ground up.
-
-<div class="next-chapter-link-container">
-  <a href="../tutorial/ng-chapter-1">Continue to Creating User Interfaces</a>
-</div>
 
 ## Appendix A: Choosing an editor
 
@@ -302,14 +367,13 @@ You can develop NativeScript apps in any text editor or IDE you wish. Therefore,
 
 However, if you’re not absolutely committed to an editor, or if you’re looking to try something new, the NativeScript team recommends using Microsoft’s Visual Studio Code to develop your NativeScript applications. Here’s why.
 
-- Visual Studio Code is open source.
-- Visual Studio Code has excellent support for TypeScript, which you’ll be using heavily as you code Angular apps in this tutorial.
+- Visual Studio Code has excellent support for [TypeScript](https://www.typescriptlang.org/), which you may wish to use as an alternative to JavaScript for your NativeScript development.
 - Visual Studio Code gives you the ability to debug JavaScript and TypeScript code directly in your editor. The NativeScript team maintains an official [NativeScript Visual Studio Code extension](https://www.nativescript.org/nativescript-for-visual-studio-code) that enables step debugging for NativeScript apps.
 - Visual Studio Code is a fast, modern editor that Microsoft [updates frequently](https://code.visualstudio.com/updates/).
 - Visual Studio Code is available for Windows, macOS, and Linux.
 - Visual Studio Code is backed by Microsoft; therefore, you can feel confident that the editor will continue to be supported in the future.
 
-If you do choose to [try Visual Studio Code](https://code.visualstudio.com/), let’s look at a few tips & tricks you might find useful as you develop NativeScript apps.
+If you do choose to [try Visual Studio Code](https://code.visualstudio.com/), let’s look at one tip you might find useful as you develop NativeScript apps.
 
 ### Tip #1: The `code` command
 
@@ -320,31 +384,7 @@ The `code` command runs in your command-line or terminal, and it works just like
 Once set up, you can type `code .` in your terminal to open the files in your current folder for editing. For example, you could use the following sequence of commands to create a new NativeScript app and open it for editing.
 
 ```
-tns create MyNewApp --ng
+tns create MyNewApp
 cd MyNewApp
 code .
 ```
-
-> **NOTE**: The `tns create` command’s `--ng` option is a shorthand for `tns create MyNewApp --template tns-template-hello-world-ng` , which creates a simple NativeScript app with Angular preconfigured.
-
-### Tip #2: Hiding generated code
-
-One thing you’ve likely noticed is that each `.ts` file in your `app` folder has a corresponding `.js` file. We’ll be going over TypeScript compilation and why these files are present throughout this tutorial, but for now just know that the `.js` files are generated from their corresponding `.ts` file; therefore, the `.js` files aren’t files you need to see in your editor during development. Luckily, Visual Studio Code has a handy little feature you can use to hide these files.
-
-Open your Visual Studio Code user settings by pressing `Command + ,` on macOS, or `Ctrl + ,` on Windows and Linux, and then paste in the following lines of code.
-
-``` JavaScript
-{
-    "files.exclude": {
-        "**/*.js": { "when": "$(basename).ts" }
-    }
-}
-```
-
-This tells Visual Studio Code to exclude `.js` files whenever there’s a corresponding `.ts` file. For example after you save these new settings, Visual Studio Code will no longer display your new app’s `app.component.js` file because a `app.component.ts` file exists.
-
-This is one of many features that makes Visual Studio Code a powerful editor well suited for NativeScript development. You may wish to look through the [many configuration options](https://code.visualstudio.com/Docs/customization/userandworkspace) Visual Studio Code provides to customize the editor to match your personal preferences.
-
-<div class="next-chapter-link-container">
-  <a href="../tutorial/ng-chapter-1">Continue to Creating User Interfaces</a>
-</div>
