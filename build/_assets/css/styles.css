@@ -547,7 +547,7 @@ html .k-treeview.k-treeview.k-treeview.k-treeview.k-treeview .k-state-selected {
     min-width: 0;
 }
 
-html .ns-page .-hidden {
+html.ns-root .-hidden {
     display: none;
 }
 

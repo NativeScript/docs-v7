@@ -335,11 +335,36 @@ $(function(){
         }
     });
 
+    window.initContextMenu = function () {
+        $(".ns-menu-trigger").removeClass("-hidden");
+
+        window.nsMenu.clone().kendoContextMenu({
+            target: ".ns-menu-trigger",
+            showOn: "click",
+            openOnClick: {
+                rootMenuItems: true
+            },
+            closeOnClick: true,
+            animation: { open: {
+                duration: 100
+            }}
+        });
+    };
+
     window.addEventListener("resize", function (e) {
-        var menu = $(".ns-navigation .k-menu");
+        var menu = $(".ns-menu");
+        var menuInstance = kendo.widgetInstance(menu);
 
-        if (!menu.hasClass(".k-vertical") && this.innerWidth < 1024) {
+        if (!menu.hasClass(".k-context-menu") && this.innerWidth < 1024) {
+            menuInstance && menuInstance.destroy();
+            menu.remove();
 
+            initContextMenu();
+        } else if (menu.hasClass(".k-context-menu") && this.innerWidth >= 1024) {
+            menuInstance && menuInstance.destroy();
+            menu.remove();
+
+            initNSMenu();
         }
     }, { passive: true });
 
