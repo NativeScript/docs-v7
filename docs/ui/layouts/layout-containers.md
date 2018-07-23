@@ -576,7 +576,7 @@ The FlexboxLayout is a non-conforming implementation of the [CSS Flexible Box La
 | alignItems | Gets or sets a value indicating how flex items are laid out along the cross axis on the current line. You can think of it as the justifyContent version for the cross-axis (perpendicular to the main-axis). The alignItems property accepts 5 different values: `flex-start` (cross-start margin edge of the items is placed on the cross-start line), `flex-end` (cross-end margin edge of the items is placed on the cross-end line), `center` (items are centered in the cross-axis), `baseline` (items are aligned such as their baselines align), `stretch` (stretch to fill the container but still respect min-width/max-width). The default value is `stretch`. |
 | alignContent | Gets or sets a value that helps aligning a flex container's lines within it when there is extra space in the cross-axis, similar to how justifyContent aligns individual items within the main-axis. The alignContent property accepts 6 different values: `flex-start` (lines packed to the start of the container), `flex-end` (lines packed to the end of the container), `center` (lines packed to the center of the container), `space-between` (lines evenly distributed; the first line is at the start of the container while the last one is at the end), `space-around` (lines evenly distributed with equal space between them), and `stretch` (lines stretch to take up the remaining space). The default value is `stretch`. This property has no effect when the flexbox has only a single line. |
 
-> **NOTE:** There is a limitation for `alignItems` in **iOS** the `baseline` option can **not** be used.
+> **NOTE:** On **iOS**, you **cannot set** `alignItems` to `baseline`.
 
 ### Child Properties
 | Property | Description |
@@ -587,7 +587,7 @@ The FlexboxLayout is a non-conforming implementation of the [CSS Flexible Box La
 | alignSelf | Gets or sets a value that makes it possible to override the alignItems value for specific flex items. This property accepts the same 5 values as the alignItems: `flex-start` (cross-start margin edge of the item is placed on the cross-start line), `flex-end` (cross-end margin edge of the item is placed on the cross-end line), `center` (item is centered in the cross-axis), `baseline` (items are aligned such as their baseline are aligned), and `stretch` (stretch to fill the container but still respect min-width / max-width). The default value is `stretch`. |
 | flexWrapBefore | Gets or sets a boolean value controlling item wrapping. Setting it to `true` on flexbox item will force it to wrap on a new line. The default value is `false`. This property is not part of the official flexbox specification.  
 
-> **NOTE:** There is a limitation for `alignSelf` in **iOS** the `baseline` option can **not** be used.
+> **NOTE:** On **iOS**, you **cannot set** `alignSelf` to `baseline`.
 
 ### Sample (flexDirection="row", alignItems="stretch" (default))
 {% nativescript %}
