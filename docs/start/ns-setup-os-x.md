@@ -70,7 +70,7 @@ Complete the following steps to setup NativeScript on your macOS development mac
          ```
          xcodebuild -version
          ```
-        If command above do not pass then build tools are eather not installed or not selected.
+        If command above do not pass then build tools are either not installed or not selected.
         You can select build tools via `xcode-select` command or via Xcode (Preferences -> Locations -> Command Line Tools).
         
     1. Install the [xcodeproj ruby gem](https://rubygems.org/gems/xcodeproj/versions/0.28.2) with the following command.
@@ -112,7 +112,7 @@ Complete the following steps to setup NativeScript on your macOS development mac
         </code></pre>
 
     1. Install the [Android SDK](http://developer.android.com/sdk/index.html).
-        1. In the terminal, run the following commands:
+        1. In the terminal, run the following command:
 
             <pre class="add-copy-button"><code class="language-terminal">brew cask install android-sdk
             </code></pre>
