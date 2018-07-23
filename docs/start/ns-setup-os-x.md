@@ -85,7 +85,7 @@ Complete the following steps to setup NativeScript on your macOS development mac
 
     1. Setup [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
     
-        <pre class="add-copy-button"><code class="language-terminal">pod setup
+        <pre class="add-copy-button"><code class="language-terminal">pod setup</code></pre>
 
     1. Install python `six` package
 
