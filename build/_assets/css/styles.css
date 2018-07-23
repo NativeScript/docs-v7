@@ -244,6 +244,7 @@ pre {
     background: var(--background-tip);
 }
 
+body.-landing .ns-tip-container,
 body.-landing .ns-navigation {
     width: auto;
     margin-left: unset;

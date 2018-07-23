@@ -335,6 +335,14 @@ $(function(){
         }
     });
 
+    window.addEventListener("resize", function (e) {
+        var menu = $(".ns-navigation .k-menu");
+
+        if (!menu.hasClass(".k-vertical") && this.innerWidth < 1024) {
+
+        }
+    }, { passive: true });
+
     $(".right-nav__container").on("click", function(e) {
         e.stopPropagation();
     });

@@ -31,13 +31,10 @@ if [ ! -d "$WWW_ROOT" ]; then
 	mkdir $WWW_ROOT
 fi
 
-bundle config build.nokogiri --use-system-libraries
-
 cd $CLI_ROOT
 ./docs/build-jekyll-md.sh
 
 cd $SCRIPT_PATH
-bundle install
 
 cp -r $SCRIPT_PATH"/_config_vuejs.yml" \
 	  $SCRIPT_PATH"/_assets" \

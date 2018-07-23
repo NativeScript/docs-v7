@@ -160,13 +160,13 @@ navigation:
         title: Sidekick Settings
     "sidekick/user-guide/create-app":
         position: 40
-        title: Creating Your App 
+        title: Creating Your App
     "sidekick/user-guide/configure-app":
         position: 45
-        title: Configuring Your App    
+        title: Configuring Your App
     "sidekick/user-guide/add-page":
         position: 50
-        title: Adding a New Page to Your App         
+        title: Adding a New Page to Your App
     "sidekick/user-guide/code-signing":
         position: 55
         title: Code Signing Your App
@@ -234,7 +234,7 @@ defaults:
 
 # Assets pipeline configuration
 assets:
-    cachebust: soft
+    digest: false
     js_compressor: uglifier
 
 ## Do not edit below this line
@@ -245,7 +245,9 @@ kramdown:
     smart_quotes: ["quot", "quot", "quot", "quot"]
     input: GFM
 
-gems:
-    - jekyll-unsanitize
+plugins:
+   - jekyll-assets
+   - jekyll-sitemap
+   - jekyll-unsanitize
 # Feedback Form Google Sheet ID
 ff-sheet-id: 1Njk-CD9m_mKw_jSRBV2p6quwEOAKRZnUPJgeUrA1ZFA

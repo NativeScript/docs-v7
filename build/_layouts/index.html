@@ -9,16 +9,19 @@
         <link rel="shortcut icon" href="{{site.headerbaseurl}}/favicon.ico"/>
         {% if page.description %}<meta name="description" content="{{page.description}}">{% endif %}
         <link href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.common.min.css" rel="stylesheet" />
-        {% stylesheet fontawesome-all %}
-        {% stylesheet variables %}
-        {% stylesheet styles %}
+        {% asset fontawesome-all.css %}
+        {% asset variables.css %}
+        {% asset styles.css %}
         <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
         <script src="https://kendo.cdn.telerik.com/2018.1.221/js/kendo.web.min.js"></script>
         <script src="https://da189i1jfloii.cloudfront.net/js/kinvey-html5-sdk-3.10.1.min.js"></script>
-        <script src="https://cdn.cookielaw.org/consent/dc6bd370-357e-468e-916d-2c0b0f5fba8d.js" type="text/javascript" charset="UTF-8"></script> 
-        {% javascript prism %}
-        {% javascript app %}
+        <script src="https://cdn.cookielaw.org/consent/dc6bd370-357e-468e-916d-2c0b0f5fba8d.js" type="text/javascript" charset="UTF-8"></script>
+        {% asset prism.js %}
+        {% asset app.js %}
+        <script>
+            document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+        </script>
     </head>
     <body {% if page.guide %}class="guide" {% endif %}>
         <!-- Google Tag Manager -->

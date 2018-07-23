@@ -42,7 +42,7 @@ defaults:
 
 # Assets pipeline configuration
 assets:
-    cachebust: soft
+    digest: false
     js_compressor: uglifier
 
 ## Improve This Article button-related:
@@ -64,7 +64,9 @@ kramdown:
     smart_quotes: ["quot", "quot", "quot", "quot"]
     input: GFM
 
-gems:
-    - jekyll-unsanitize
+plugins:
+   - jekyll-assets
+   - jekyll-sitemap
+   - jekyll-unsanitize
 # Feedback Form Google Sheet ID
 ff-sheet-id: 1Njk-CD9m_mKw_jSRBV2p6quwEOAKRZnUPJgeUrA1ZFA
