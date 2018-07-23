@@ -56,6 +56,7 @@ One thing you might have noticed in the code above is the `nsRouterLink` directi
 
 ## Router Outlet
 
+The `router-outlet` acts as a placeholder that Angular dynamically fills based on the current router state.
 Let's take a look at the following example that uses `<router-outlet>`:
 
 {%snippet router-outlet-example%}
@@ -64,6 +65,13 @@ The result is that with each navigation the content of the `router-outlet` is re
 
 ![router-outlet-ios](../img/navigation-angular/outlet-ios.gif "RouterOutlet IOS")
 ![router-outlet-Android](../img/navigation-angular/outlet-android.gif "RouterOutlet Android")
+
+> **Note:** In the context of NativeScript the `router-outlet` placeholder always needs to be wrapped in a native layout and can't be the root level element. For example:
+```HTML
+<GridLayout rows="*">
+    <router-outlet row="0"></router-outlet>
+</GridLayout>
+```
 
 ## Page Router Outlet
 
