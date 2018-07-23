@@ -4,17 +4,21 @@
     --dark: 0,39,52;
 
     --hs-neutral: 197,11%;
+    --hs-accent: 231, 99%;
+
     --gray: 0,0%;
 
     --color-light: rgb(var(--light));
     --color-dark: rgb(var(--dark));
 
     --color-secondary: #455B66;
-    --color-accent: #3D5AFE;
     --color-green: #11CC71;
     --color-source-green: #5DB240;
-    --color-purple: #EBEEFF;
     --color-error: red;
+
+    --color-accent: hsl(var(--hs-accent), 62%);
+    --color-purple: hsl(var(--hs-accent), 96%);
+    --background-tip: hsl(var(--hs-accent), 90%);
 
     --border-purple: #E1E4F8;
 

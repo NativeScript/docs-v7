@@ -221,7 +221,8 @@ pre {
 
 /* Navigation */
 
-.ns-navigation {
+.ns-navigation,
+.ns-tip-container {
     background: var(--background-dark);
     font-size: .88em;
     height: 4.71em;
@@ -234,6 +235,15 @@ pre {
     margin-left: -300px;
 }
 
+.ns-tip-container {
+    height: 3em;
+    font-size: 1.13em;
+    align-items: center;
+    letter-spacing: -.03em;
+    color: var(--color-secondary);
+    background: var(--background-tip);
+}
+
 body.-landing .ns-navigation {
     width: auto;
     margin-left: unset;
@@ -241,7 +251,8 @@ body.-landing .ns-navigation {
 
 .ns-page:before,
 .ns-start-links:before,
-.ns-navigation:before {
+.ns-navigation:before,
+.ns-tip-container:before {
     position: absolute;
     display: block;
     content: "\a0";
@@ -448,11 +459,13 @@ html .k-treeview .k-in {
 html .k-treeview .k-group .k-icon {
     margin: 0 -1.71em 0 .71em;
     font-size: .93em;
+    min-width: 1em;
 }
 
 .k-treeview .k-group .k-group .k-in {
     padding-top: .33em;
     padding-bottom: .33em;
+    padding-right: .5em;
     font-weight: 600;
     text-transform: capitalize;
 }
@@ -714,6 +727,10 @@ html body .side-nav__tree {
     position: relative;
 }
 
+.right-nav__tree .-references + ul a {
+    text-transform: capitalize;
+}
+
 .right-nav__tree .ns-state-selected:before {
     content: "\a0";
     position: absolute;
@@ -741,6 +758,9 @@ div.right-nav__links .ns-button {
 .right-nav__links a:not(.ns-button) {
     margin-top: 1.56em;
     display: block;
+}
+.hide {
+    display: none !important;
 }
 
 .right-nav__links a:not(.ns-button) > i {
@@ -892,6 +912,24 @@ html .ns-navigation .navigation__right > ul > .k-last .ns-button {
 .ns-button.-large {
     height: 42px;
     line-height: 42px;
+}
+
+/* Copy Button */
+
+.ns-copy-container {
+    position: relative;
+}
+
+.copy-button.ns-button {
+    font-size: 12px;
+    position: absolute;
+    right: 20px;
+    top: 14px;
+    display: none;
+}
+
+.ns-copy-container:hover .copy-button {
+    display: block;
 }
 
 /* Landing page */
@@ -1360,7 +1398,7 @@ textarea:-ms-input-placeholder {
     flex: 1;
 }
 
-#close-banner-button {
+.close-banner-button {
     width: 1.14em;
     height: 1.14em;
     position: fixed;
@@ -1371,7 +1409,7 @@ textarea:-ms-input-placeholder {
     justify-content: center;
 }
 
-#close-banner-button:before {
+.close-banner-button:before {
     font-family: "Font Awesome 5 Pro";
     font-weight: 300;
     font-size: .86em;
@@ -1379,6 +1417,11 @@ textarea:-ms-input-placeholder {
     align-items: center;
     justify-content: center;
     content: "\f00d";
+}
+
+.ns-tip-container .close-banner-button {
+    position: absolute;
+    right: 0;
 }
 
 /* Checkboxes and radios */
@@ -1692,6 +1735,7 @@ article table td h5 {
     }
 
     .ns-navigation,
+    .ns-tip-container,
     .ns-footer {
         width: auto;
         margin-left: unset;

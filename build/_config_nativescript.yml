@@ -5,13 +5,16 @@ destination: ./nativescript
 ## The application virtual path
 baseurl:  ""
 # Exclude files which should not be in the output
-exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, code-samples]
+exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, ng-framework-modules, ui/ng-ui-widgets, ng-hardware-access]
 ## The highlighting in the header
 nsselected: "selected"
 ngselected: ""
 
 
 flavour: "nativescript"
+navigation:
+## List your directory names and order here, like this:
+
 
 # The google services configuration
 google_tag_manager: GTM-W58JDD

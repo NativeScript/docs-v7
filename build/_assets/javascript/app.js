@@ -168,7 +168,10 @@ $(function(){
             if ($(this).prev().hasClass("no-copy-button")) {
                 return;
             }
-            $(this).prepend("<button class='copy-button' title='Copy to clipboard'>Copy</button>");
+
+            $(this)
+                .prepend("<button class='copy-button ns-button' title='Copy to clipboard'>Copy</button>")
+                .wrap("<div class='ns-copy-container'></div>");
         });
     }
 
@@ -270,6 +273,20 @@ $(function(){
     seeAlso.remove();
 
     var apiReferences = $("article > p > a[href*=api-reference]");
+
+    if (apiReferences[0]) {
+        apiReferences = $($.uniqueSort(
+            apiReferences
+                .clone()
+                .wrapAll("<div/>")
+                .parent()
+                .html()
+                .toString()
+                .trim()
+                .split(/(?=<\/a>)/i))
+            .join(""));
+    }
+
     var rightNavLinks = $(".right-nav__links");
 
     var rightNav = $('\
@@ -300,7 +317,7 @@ $(function(){
         apiReferences.parent().remove();
 
         rightNav
-            .append($("<div class='-allcaps'>API Reference</div>"))
+            .append($("<div class='-allcaps -references'>API Reference</div>"))
             .append(apiReferences.wrap("<li></li>").parent().wrapAll("<ul></ul>").parent());
     }
 
@@ -341,6 +358,8 @@ $(function(){
         attributeOldValue: true,
         attributeFilter: ["class"]
     });
+
+    $(".ns-tip-container .close-banner-button").click(function () { this.parentNode.remove(); });
 });
 
 $(function() {

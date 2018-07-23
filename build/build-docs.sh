@@ -13,7 +13,6 @@ MODULES_ROOT=$SCRIPT_PATH"/../../NativeScript"
 NG_ROOT=$SCRIPT_PATH"/../../nativescript-angular"
 SDK_ROOT_JS=$SCRIPT_PATH"/../../nativescript-sdk-examples-js"
 SDK_ROOT_NG=$SCRIPT_PATH"/../../nativescript-sdk-examples-ng"
-SIDEKICK_ROOT=$SCRIPT_PATH"/../../sidekick-docs"
 CLI_ROOT=$SCRIPT_PATH"/../../nativescript-cli"
 VUEJS_ROOT=$SCRIPT_PATH"/../../docs/vuejs-docs"
 
@@ -35,9 +34,6 @@ fi
 cd $CLI_ROOT
 ./docs/build-jekyll-md.sh
 
-cd $SIDEKICK_ROOT
-jekyll build --config _config.yml
-
 cd $SCRIPT_PATH
 
 cp -r $SCRIPT_PATH"/_config_vuejs.yml" \
@@ -45,6 +41,7 @@ cp -r $SCRIPT_PATH"/_config_vuejs.yml" \
 	  $SCRIPT_PATH"/_layouts" \
 	  $SCRIPT_PATH"/_plugins" \
 	  $SCRIPT_PATH"/_includes" \
+	  $SCRIPT_PATH"/fonts" \
 	  $VUEJS_ROOT
 	  
 rm $VUEJS_ROOT"/_plugins/redirect_generator.rb" \
@@ -78,12 +75,19 @@ for JEKYLL_DIR in {_assets,_includes,_layouts,_plugins,fonts,images}; do
 done
 
 cp -R $DOCS_ROOT"/docs/./" \
-	  $SDK_ROOT_JS"/dist/cookbook" \
+	  $SDK_ROOT_JS"/dist/cookbook/ns-framework-modules" \
 	  $MODULES_ROOT"/bin/dist/snippets" \
 	  $NG_ROOT"/bin/dist/snippets" \
-	  $SDK_ROOT_NG"/dist/code-samples" \
-	  $CLI_ROOT"/docs-cli" \
+	  $SDK_ROOT_NG"/dist/code-samples/ng-framework-modules" \
+	  $SDK_ROOT_NG"/dist/code-samples/ng-hardware-access" \
 	  $CONTENT_ROOT
+
+# cd $CONTENT_ROOT"/ui"
+cp -R $CLI_ROOT"/docs-cli" $CONTENT_ROOT"/tooling"
+cp -R $SDK_ROOT_JS"/dist/cookbook/ns-ui-widgets" $CONTENT_ROOT"/ui"
+cp -R $SDK_ROOT_NG"/dist/code-samples/ng-ui-widgets" $CONTENT_ROOT"/ui"
+cp -R $SDK_ROOT_NG"/dist/code-samples/common-screens" $CONTENT_ROOT"/app-and-screen-templates"
+# cd $ROOT
 
 cp $SCRIPT_PATH"/nginx.conf" $CONTENT_ROOT
 
@@ -102,7 +106,6 @@ export JEKYLL_ENV="angular"
 jekyll build --config _config_angular.yml,_config.yml
 
 cp -R $MODULES_ROOT"/bin/dist/api-reference" \
-	  $SIDEKICK_ROOT"/sidekick" \
 	  $VUEJS_ROOT"/vuejs" \
 	  $WWW_ROOT
 
