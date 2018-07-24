@@ -355,12 +355,14 @@ $(function(){
         var menu = $(".ns-menu");
         var menuInstance = kendo.widgetInstance(menu);
 
-        if (!menu.hasClass(".k-context-menu") && this.innerWidth < 1024) {
+        if (!menu.hasClass("k-context-menu") && this.innerWidth < 1024) {
             menuInstance && menuInstance.destroy();
             menu.remove();
 
-            initContextMenu();
-        } else if (menu.hasClass(".k-context-menu") && this.innerWidth >= 1024) {
+            return initContextMenu();
+        }
+
+        if (menu.hasClass("k-context-menu") && this.innerWidth >= 1024) {
             menuInstance && menuInstance.destroy();
             menu.remove();
 
