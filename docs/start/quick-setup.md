@@ -114,10 +114,4 @@ To verify the setup, run the `tns doctor` command which will check for any issue
 
 ## What’s Next
 
-{% angular %}
-* [Learn the Basics of the NativeScript CLI](/angular/start/cli-basics)
-{% endangular %}
-
-{% nativescript %}
-* [Learn the Basics of the NativeScript CLI](/start/cli-basics)
-{% endnativescript %}
+* [Learn the Basics of the NativeScript CLI](../start/cli-basics)

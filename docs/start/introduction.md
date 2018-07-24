@@ -25,36 +25,24 @@ Ready to get started developing with NativeScript? Here are your next steps.
 NativeScript Playground is a browser-based environment for getting started with NativeScript fast. Playground offers a set of comprehensive tutorials that walk you through building a real-world iOS and Android app from scratch.
 
 {% angular %}
-<p><a href="https://play.nativescript.org/?template=groceries-ng&tutorial=groceries-ng" class="ns-button -action">Get Started with NativeScript & Angular</a></p>
+<p><a href="https://play.nativescript.org/?template=groceries-ng&tutorial=groceries-ng" class="ns-button -action">Start Tutorial</a></p>
 {% endangular %}
 
 {% nativescript %}
-<p><a href="https://play.nativescript.org/?template=groceries-js&tutorial=groceries-js" class="ns-button -action">Get Started with JavaScript</a></p>
+<p><a href="https://play.nativescript.org/?template=groceries-js&tutorial=groceries-js" class="ns-button -action">Start Tutorial</a></p>
 {% endnativescript %}
 
 ## Step #2: Install the NativeScript Command-Line Interface
 
 Once you have the basics of NativeScript down in Playground, you need to set up a local development environment that lets you build and test your apps locally. To do that you’ll want to go through our documentation on installing the NativeScript command-line interface.
 
-{% angular %}
-<p><a href="/angular/start/quick-setup" class="ns-button -action">Install the NativeScript CLI</a></p>
-{% endangular %}
-
-{% nativescript %}
-<p><a href="/start/quick-setup" class="ns-button -action">Install the NativeScript CLI</a></p>
-{% endnativescript %}
+<p><a href="../start/quick-setup" class="ns-button -action">Install the NativeScript CLI</a></p>
 
 ## Step #3: Learn the NativeScript Command-Line Interface Basics
 
 Now that you have the NativeScript CLI installed, you’ll want to learn the basics of how the CLI works, including how to run, build, and debug your apps.
 
-{% angular %}
-<p><a href="/angular/start/cli-basics" class="ns-button -action">Learn the CLI Basics</a></p>
-{% endangular %}
-
-{% nativescript %}
-<p><a href="/start/cli-basics" class="ns-button -action">Learn the CLI Basics</a></p>
-{% endnativescript %}
+<p><a href="../start/cli-basics" class="ns-button -action">Learn the CLI Basics</a></p>
 
 ## Step #4: Join the NativeScript Community
 
