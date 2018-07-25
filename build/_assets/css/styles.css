@@ -365,8 +365,17 @@ html .ns-navigation .k-animation-container {
     min-width: 100%;
 }
 
+.ns-menu-trigger {
+    color: var(--color-light);
+    font-size: 1.5em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .ns-navigation [target=_blank]:after,
 .ns-start-links [target=_blank]:after,
+.ns-menu-trigger:after,
 html .ns-navigation .k-menu .k-item .k-menu-expand-arrow {
     font-family: "Font Awesome 5 Pro";
     margin: -.1em -.3em 0 .2em;
@@ -375,6 +384,11 @@ html .ns-navigation .k-menu .k-item .k-menu-expand-arrow {
 .ns-navigation .k-menu-expand-arrow:before {
     content: "\f0d7";
     font-weight: 600;
+}
+
+.ns-menu-trigger:after {
+    font-size: 1.5em;
+    content: "\f0c9";
 }
 
 .ns-navigation [target=_blank]:after,

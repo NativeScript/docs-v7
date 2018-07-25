@@ -68,6 +68,53 @@ function traverseAnchors(elements, level) {
     return html + "</ul>";
 }
 
+function initNSMenu() {
+    $(".ns-menu-trigger").addClass("-hidden");
+
+    window.nsMenu.clone().kendoMenu({
+        openOnClick: {
+            rootMenuItems: true
+        },
+        closeOnClick: true,
+        animation: { open: {
+            duration: 100
+        }}
+    }).appendTo($(".navigation__right"));
+}
+
+function initContextMenu() {
+    $(".ns-menu-trigger").removeClass("-hidden");
+
+    window.nsMenu.clone().kendoContextMenu({
+        target: ".navigation__right",
+        filter: ".ns-menu-trigger",
+        showOn: "click",
+        alignToAnchor: true,
+        openOnClick: {
+            rootMenuItems: true
+        },
+        closeOnClick: true,
+        animation: { open: {
+            duration: 100
+        }}
+    });
+}
+
+function initMenus() {
+    var menu = $(".ns-menu");
+    var menuInstance = kendo.widgetInstance(menu);
+    var isSmall = window.innerWidth < 1024;
+    var isContextMenu = menu.hasClass("k-context-menu");
+    var responsive = isContextMenu && !isSmall;
+
+    if (responsive || !isContextMenu && isSmall) {
+        menuInstance && menuInstance.destroy();
+        menu.remove();
+
+        window[responsive ? "initNSMenu" : "initContextMenu"]();
+    }
+}
+
 $(function(){
 
     $("pre[lang]").each(function() {
@@ -115,14 +162,14 @@ $(function(){
         'objective-c' : 'clike',
         'java' : 'clike',
         'xml' : 'markup'
-    }
+    };
 
     var codeSampleExtensionMapper = {
         '.xml': 'markup',
         '.css' : 'css',
         '.js' : 'javascript',
         '.ts' : 'javascript',
-    }
+    };
 
     // Enable Prism support by mapping the lang attributes to the language-* attribute Prim expects
     $("pre").each(function(index){
@@ -335,40 +382,7 @@ $(function(){
         }
     });
 
-    window.initContextMenu = function () {
-        $(".ns-menu-trigger").removeClass("-hidden");
-
-        window.nsMenu.clone().kendoContextMenu({
-            target: ".ns-menu-trigger",
-            showOn: "click",
-            openOnClick: {
-                rootMenuItems: true
-            },
-            closeOnClick: true,
-            animation: { open: {
-                duration: 100
-            }}
-        });
-    };
-
-    window.addEventListener("resize", function (e) {
-        var menu = $(".ns-menu");
-        var menuInstance = kendo.widgetInstance(menu);
-
-        if (!menu.hasClass("k-context-menu") && this.innerWidth < 1024) {
-            menuInstance && menuInstance.destroy();
-            menu.remove();
-
-            return initContextMenu();
-        }
-
-        if (menu.hasClass("k-context-menu") && this.innerWidth >= 1024) {
-            menuInstance && menuInstance.destroy();
-            menu.remove();
-
-            initNSMenu();
-        }
-    }, { passive: true });
+    window.addEventListener("resize", initMenus, { passive: true });
 
     $(".right-nav__container").on("click", function(e) {
         e.stopPropagation();
