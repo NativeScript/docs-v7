@@ -3,7 +3,9 @@ nav-title: "Custom Flags"
 title: "Custom Flags"
 description: "Tuning with custom flags"
 position: 5
+previous_url: /core-concepts/android-runtime/advanced-topics/v8-flags
 ---
+
 
 ## Tuning V8
 
@@ -52,3 +54,33 @@ By default all messages sent to Logcat are limited to 1024 characters and larger
         ...
 }
 ```
+
+## Force Log
+
+When you are using a release build there will be no logs to the console, so if you still want to have your console logs you need to enable the `forceLog` flag:
+
+```JSON
+{
+        ...
+        "android": {
+                "forceLog": true
+        }
+        ...
+}
+```
+
+## Аuto catching exceptions when calling JS method native
+
+By default if an exception is thrown when executing JavaScript code which is called from native api it will crash the application showing the stack trace. If you want the exception stack trace to be logged, but application not to crash you can enable the `autoCatchJSMethodNativeCalls` flag:
+
+```JSON
+{
+        ...
+        "android": {
+                "autoCatchJSMethodNativeCalls": true
+        }
+        ...
+}
+```
+
+
