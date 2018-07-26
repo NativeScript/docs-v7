@@ -61,7 +61,7 @@ This article will walk you through setting up an already existing Android Studio
 6. Copy the NativeScript Java files into the Android Studio project:
     **ns-stock-ticker/platforms/android/app/src/main/java** -> **android-project/app/src/main/java**
 
-7. Copy the NativeScript android runtime **aar** into the Android Studio project:
+7. Copy the NativeScript Android Runtime **aar** into the Android Studio project:
     **ns-stock-ticker/platforms/android/app/libs/runtime-libs/nativescript-optimized-with-inspector.aar** -> **android-project/app/lib**
     
 8. Copy the NativeScript core modules widgets **aar** into the Android Studio project:
