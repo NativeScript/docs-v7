@@ -30,7 +30,19 @@ This article will walk you through setting up an already existing Android Studio
     NativeScript with plain JavaScript:
     `tns create ns-stock-ticker`
 
-2. Implement the necessary functionality in NativeScript using your preferable language, style, or technology. 
+2. Copy the corresponding MyNativeScriptActivity file (.ts or .js depending on your NativeScript application type) from [the following location](https://github.com/NativeScript/sample-extend-android-app/tree/master/common) to your NativeScript application **app** folder. Change the Android Activity referenced in JavaProxy to match that of your actual project.
+
+3. If you are using webpack build add the MyNativeScriptActivity file to the **appComponents** array in your **webpack.config.js** file:
+
+    ```javascript
+        const appComponents = [
+            "tns-core-modules/ui/frame",
+            "tns-core-modules/ui/frame/activity",
+            resolve(__dirname, "app/MyNativeScriptActivity"),
+        ];
+    ```
+
+4. Implement the necessary functionality in NativeScript using your preferable language, style, or technology. 
 
     Build your NativeScript application for Android. Everything necessary to integrate with the existing Android app will be output inside `platforms/android`
 
@@ -39,21 +51,23 @@ This article will walk you through setting up an already existing Android Studio
     tns build android
     ```
 
-3. Copy the NativeScript assets dir into the Android Studio project main dir:
+5. Copy the NativeScript assets dir into the Android Studio project main dir:
     **ns-stock-ticker/platforms/android/app/src/main/assets** -> **android-project/app/src/main**
 
     ![Copy assets](../img/extend-existing-android-app/android-nativescript-1.png)
+    
 
-4. Copy the NativeScript Java files into the Android Studio project:
+
+6. Copy the NativeScript Java files into the Android Studio project:
     **ns-stock-ticker/platforms/android/app/src/main/java** -> **android-project/app/src/main/java**
 
-5. Copy the NativeScript android runtime **aar** into the Android Studio project:
+7. Copy the NativeScript android runtime **aar** into the Android Studio project:
     **ns-stock-ticker/platforms/android/app/libs/runtime-libs/nativescript-optimized-with-inspector.aar** -> **android-project/app/lib**
     
-6. Copy the NativeScript core modules widgets **aar** into the Android Studio project:
+8. Copy the NativeScript core modules widgets **aar** into the Android Studio project:
     **ns-stock-ticker/node_modules/tns-core-modules-widgets/platforms/android/runtime-libs/widgets-release.aar** -> **android-project/app/lib**
 
-7. Reference the runtime and widgets libraries in the Android Studio project:
+9. Reference the runtime and widgets libraries in the Android Studio project:
 
     Open **Gradle Scripts/build.gradle** for the **app** module and add the following:
 
@@ -66,27 +80,21 @@ This article will walk you through setting up an already existing Android Studio
         }
     ```
 
-8. Add both [Java classes](https://github.com/NativeScript/sample-extend-android-app/tree/master/common/main/java/org/nativescript/currencyconversion) and [JavaScript implementations](https://github.com/NativeScript/sample-extend-android-app/tree/master/common/main/assets/app) of **MyCustomNativeScriptActivity** and **MyCustomNativeScriptFragment** to your Android app:
-    
-    Java files - Make sure they match the proper package folder structure. Also make sure to match the package at the top of the two Java files to that of your actual package.
-
-    JavaScript files - Make sure that the Android Activity referenced in JavaProxy is changed to match that of your actual project. It is located at the bottom of the **MyCustomNativeScriptActivity.js** and **MyCustomNativeScriptFragment.js** files.
-
-9. Register the new activity in the AndroidManifest:
+10. Register the new activity in the AndroidManifest:
 
     Like with any Android Activity, it needs to be added to the AndroidManifest.xml file. The AndroidManifest.xml file should include the following line:
     ```xml
     <activity android:name=".MyCustomNativeScriptActivity" />
     ```
     
-10. Register com.tns.ErrorReportActivity in the AndroidManifest:
+11. Register com.tns.ErrorReportActivity in the AndroidManifest:
 
     It is used for showing any NativeScript errors during runtime. The AndroidManifest.xml file should include the following line:
     ```xml
     <activity android:name="com.tns.ErrorReportActivity" />
     ```
 
-11. Initialize the NativeScript Android runtime:
+12. Initialize the NativeScript Android runtime:
 
     Anywhere in your Activity place the following snippet:
     ```Java
@@ -109,7 +117,7 @@ This article will walk you through setting up an already existing Android Studio
     }
     ```
 
-12. Play the app:
+13. Play the app:
 
     Finally call `openNativeScriptActivity` to fire up the NS Android Runtime.
 
