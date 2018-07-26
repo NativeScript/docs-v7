@@ -279,6 +279,7 @@ html.ns-state-scrolled .ns-navigation:before {
     flex: 1;
     text-align: right;
     visibility: hidden;
+    position: relative;
 }
 
 .navigation__right,
@@ -294,7 +295,7 @@ html.ns-state-scrolled .ns-navigation:before {
     border: 0;
 }
 
-.ns-navigation .navigation__right > ul > .k-item {
+.ns-navigation .navigation__right > .k-menu > .k-item {
     height: 100%;
     border: 0;
     opacity: 1;
@@ -302,13 +303,13 @@ html.ns-state-scrolled .ns-navigation:before {
     align-items: center;
 }
 
-.ns-navigation .navigation__right > ul > .k-item .k-link {
+.ns-navigation .navigation__right > .k-menu > .k-item .k-link {
     color: inherit;
     padding: 0 1.1em;
     line-height: 4.72em;
 }
 
-.ns-navigation .navigation__right > ul .k-separator {
+.ns-navigation .navigation__right > .k-menu .k-separator {
     background: var(--transparent-white-50);
     font-size: inherit;
     width: 1px;
@@ -336,9 +337,10 @@ html .ns-navigation .navigation__right span.k-link.-github a:hover {
     opacity: 1;
 }
 
+.k-panelbar > .k-item,
 html .ns-navigation .k-menu-group,
-.navigation__right > ul > .k-item:not(.k-state-disabled) > .k-state-active,
-.navigation__right > ul > .k-item:not(.k-state-disabled) > .k-link:hover {
+.navigation__right > .k-menu > .k-item:not(.k-state-disabled) > .k-state-active,
+.navigation__right > .k-menu > .k-item:not(.k-state-disabled) > .k-link:hover {
     background: var(--background-secondary);
 }
 
@@ -355,8 +357,25 @@ html .ns-navigation .k-menu-group .k-item .k-link {
     padding: 0 1.1em;
 }
 
+html .k-panelbar .k-group,
+html .k-panelbar .k-item .k-link {
+    color: var(--color-light);
+    border: 0;
+}
+
+html .k-panelbar .k-item .k-state-hover,
+html .k-panelbar .k-item .k-item .k-state-selected,
 html .ns-navigation .k-menu-group .k-item .k-link:hover {
     color: var(--color-green);
+}
+
+html .k-panelbar .k-group {
+    background: var(--color-dark);
+}
+
+html .k-panelbar-collapse.k-icon,
+html .k-panelbar-expand.k-icon {
+    right: 8px;
 }
 
 html .ns-navigation .k-animation-container {
@@ -366,11 +385,20 @@ html .ns-navigation .k-animation-container {
 }
 
 .ns-menu-trigger {
+    position: absolute;
+    left: 3em;
+    width: 5em;
     color: var(--color-light);
-    font-size: 1.5em;
+    font-size: 1em;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+}
+
+.ns-menu-trigger.k-state-selected,
+.ns-menu-trigger:hover {
+    background: var(--color-secondary);
 }
 
 .ns-navigation [target=_blank]:after,
@@ -389,6 +417,7 @@ html .ns-navigation .k-menu .k-item .k-menu-expand-arrow {
 .ns-menu-trigger:after {
     font-size: 1.5em;
     content: "\f0c9";
+    margin: 0;
 }
 
 .ns-navigation [target=_blank]:after,
@@ -402,6 +431,20 @@ html .ns-navigation .k-menu .k-item .k-menu-expand-arrow {
 
 .ns-start-links [target=_blank]:after {
     margin-top: 0;
+}
+
+.k-panelbar {
+    position: absolute;
+    bottom: -100%;
+    left: 2.5em;
+    z-index: 10;
+    width: 40vw;
+    border: 0;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    font-weight: 600;
+    display: none;
 }
 
 /* Flavor Header */
@@ -888,7 +931,7 @@ blockquote > *:last-child {
 }
 
 .ns-button,
-html .ns-navigation .navigation__right ul .k-item .ns-button {
+html .ns-navigation .navigation__right .k-menu .k-item .ns-button {
     padding: 0 2.14em;
     height: 2.57em;
     line-height: 2.5em;
@@ -897,12 +940,12 @@ html .ns-navigation .navigation__right ul .k-item .ns-button {
     margin: 0 .36em;
 }
 
-html .ns-navigation .navigation__right ul .k-item .ns-button {
+html .ns-navigation .navigation__right .k-menu .k-item .ns-button {
     font-size: inherit;
 }
 
 .ns-button:last-of-type,
-html .ns-navigation .navigation__right > ul > .k-last .ns-button {
+html .ns-navigation .navigation__right > .k-menu > .k-last .ns-button {
     margin-right: 0;
 }
 

@@ -82,36 +82,38 @@ function initNSMenu() {
     }).appendTo($(".navigation__right"));
 }
 
-function initContextMenu() {
+function initPanelBar() {
     $(".ns-menu-trigger").removeClass("-hidden");
 
-    window.nsMenu.clone().kendoContextMenu({
-        target: ".navigation__right",
-        filter: ".ns-menu-trigger",
-        showOn: "click",
-        alignToAnchor: true,
-        openOnClick: {
-            rootMenuItems: true
-        },
-        closeOnClick: true,
-        animation: { open: {
-            duration: 100
-        }}
-    });
+    var menu = window.nsMenu.clone();
+
+    menu.children("li:nth-last-child(-n+2)")
+        .remove()
+        .wrapAll("<ul class='ns-menu'></ul>")
+        .parent()
+        .kendoMenu()
+        .appendTo(".navigation__right");
+
+    menu.kendoPanelBar({
+        expandMode: "single"
+    }).prependTo(".navigation__right");
 }
 
 function initMenus() {
     var menu = $(".ns-menu");
-    var menuInstance = kendo.widgetInstance(menu);
     var isSmall = window.innerWidth < 1024;
-    var isContextMenu = menu.hasClass("k-context-menu");
+    var isContextMenu = menu.hasClass("k-panelbar");
     var responsive = isContextMenu && !isSmall;
 
     if (responsive || !isContextMenu && isSmall) {
-        menuInstance && menuInstance.destroy();
-        menu.remove();
+        menu.each(function () {
+            var menuInstance = kendo.widgetInstance($(this));
 
-        window[responsive ? "initNSMenu" : "initContextMenu"]();
+            menuInstance && menuInstance.destroy();
+            menu.remove();
+        });
+
+        window[responsive ? "initNSMenu" : "initPanelBar"]();
     }
 }
 
@@ -383,6 +385,14 @@ $(function(){
     });
 
     window.addEventListener("resize", initMenus, { passive: true });
+
+    $(".ns-menu-trigger").on("click", function () {
+        var panelbar = $(".k-panelbar");
+        var isVisible = panelbar.is(":visible");
+
+        $(this).toggleClass("k-state-selected", !isVisible);
+        panelbar.toggle(!isVisible);
+    });
 
     $(".right-nav__container").on("click", function(e) {
         e.stopPropagation();
