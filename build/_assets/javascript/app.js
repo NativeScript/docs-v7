@@ -79,7 +79,7 @@ function initNSMenu() {
         animation: { open: {
             duration: 100
         }}
-    }).appendTo($(".navigation__right"));
+    }).appendTo(".navigation__right");
 }
 
 function initPanelBar() {
@@ -99,13 +99,14 @@ function initPanelBar() {
     }).prependTo(".navigation__right");
 }
 
-function initMenus() {
+function initMenus(loading) {
     var menu = $(".ns-menu");
+    var isLoading = loading === true;
     var isSmall = window.innerWidth < 1024;
     var isContextMenu = menu.hasClass("k-panelbar");
     var responsive = isContextMenu && !isSmall;
 
-    if (responsive || !isContextMenu && isSmall) {
+    if (isLoading || responsive || !isContextMenu && isSmall) {
         menu.each(function () {
             var menuInstance = kendo.widgetInstance($(this));
 
@@ -113,7 +114,7 @@ function initMenus() {
             menu.remove();
         });
 
-        window[responsive ? "initNSMenu" : "initPanelBar"]();
+        window[(isLoading ? !isSmall : responsive) ? "initNSMenu" : "initPanelBar"]();
     }
 }
 
