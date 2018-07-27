@@ -77,7 +77,7 @@ Complete the following steps to set up NativeScript on your Linux development ma
         For example: `ANDROID_HOME=/android/sdk`
         <blockquote><b>NOTE</b>: This is the directory that contains the <code>tools</code> (just installed) and <code>platform-tools</code> (installed by scripts in the next step) directories.</blockquote>
 
-1. Install all packages for the Android SDK Platform 25, Android SDK Build-Tools 27.0.3 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages.In oder to install SDK's go to Android Studio -> Settings -> System Settings -> Android SDK -> Mark all the android versions you would like to support within your project.
+1. Install all packages for the Android SDK Platform 25, Android SDK Build-Tools 27.0.3 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages.In oder to install SDK's go to Android Studio -> Settings -> System Settings -> Android SDK -> Mark all the android versions you would like to support within your project (The API Level column indicates the SDK Platform).
 
     <pre class="add-copy-button"><code class="language-terminal">sudo $ANDROID_HOME/tools/bin/sdkmanager "tools" "emulator" "platform-tools" "platforms;android-25" "build-tools;27.0.3" "extras;android;m2repository" "extras;google;m2repository"
     </code></pre>
