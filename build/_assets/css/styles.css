@@ -318,22 +318,22 @@ html.ns-state-scrolled .ns-navigation:before {
     margin-top: 1.43em;
 }
 
-html .ns-navigation .navigation__right span.k-link.-github {
+html .ns-navigation .navigation__right .k-menu .k-link.-github {
     line-height: normal;
 }
 
-html .ns-navigation .navigation__right span.k-link.-github:hover {
+html .ns-navigation .navigation__right .k-menu .k-link.-github:hover {
     background: none;
 }
 
-html .ns-navigation .navigation__right span.k-link.-github a {
+html .ns-navigation .navigation__right .k-menu .k-link.-github a {
     padding: 5px;
     display: inline-block;
     color: var(--color-light);
     opacity: .75;
 }
 
-html .ns-navigation .navigation__right span.k-link.-github a:hover {
+html .ns-navigation .navigation__right .k-menu .k-link.-github a:hover {
     opacity: 1;
 }
 
