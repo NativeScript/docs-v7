@@ -1961,6 +1961,30 @@ article table td h5 {
     .navigation__burger-menu {
         display: inline-block;
     }
+
+    #page-inner-content {
+        flex-direction: column;
+    }
+
+    .ns-page .ns-side-nav .side-nav__tree {
+        width: calc(100% - 1.43em);
+    }
+
+    .side-nav__burger-input + .side-nav__burger-menu:before {
+        transform: rotate(90deg);
+    }
+
+    .side-nav__burger-input:checked + .side-nav__burger-menu:before {
+        transform: rotate(270deg);
+    }
+
+    .side-nav__burger-menu {
+        box-shadow: none;
+    }
+
+    .ns-side-nav {
+        margin: -.71em -1.2em 0 -1.43em;
+    }
 }
 
 @media only screen and (max-width: 500px) {
