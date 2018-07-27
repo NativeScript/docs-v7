@@ -306,6 +306,9 @@ html.ns-state-scrolled .ns-navigation:before {
 .ns-navigation .navigation__right > .k-menu > .k-item .k-link {
     color: inherit;
     padding: 0 1.1em;
+}
+
+.ns-navigation .navigation__right > .k-menu > .k-item > .k-link {
     line-height: 4.72em;
 }
 
@@ -319,7 +322,8 @@ html.ns-state-scrolled .ns-navigation:before {
 }
 
 html .ns-navigation .navigation__right .k-menu .k-link.-github {
-    line-height: normal;
+    font-size: 1.2em;
+    line-height: 1.2em;
 }
 
 html .ns-navigation .navigation__right .k-menu .k-link.-github:hover {
@@ -337,7 +341,7 @@ html .ns-navigation .navigation__right .k-menu .k-link.-github a:hover {
     opacity: 1;
 }
 
-.k-panelbar > .k-item,
+.k-panelbar,
 html .ns-navigation .k-menu-group,
 .navigation__right > .k-menu > .k-item:not(.k-state-disabled) > .k-state-active,
 .navigation__right > .k-menu > .k-item:not(.k-state-disabled) > .k-link:hover {
@@ -348,7 +352,7 @@ html .ns-navigation .k-menu .k-menu-group {
     border: 0;
     padding: .5em 0 .7em;
     text-align: left;
-    min-width: calc(100% - 1.2em);
+    min-width: 12.8em;
     box-shadow: 0 3px 6px var(--transparent-dark-15);
 }
 
@@ -363,6 +367,14 @@ html .k-panelbar .k-item .k-link {
     border: 0;
 }
 
+html .k-panelbar > .k-item > .k-link {
+    line-height: 2.2em;
+}
+
+html .k-panelbar > .k-item .k-item .k-link {
+    line-height: 2.38em;
+}
+
 html .k-panelbar .k-item .k-state-hover,
 html .k-panelbar .k-item .k-item .k-state-selected,
 html .ns-navigation .k-menu-group .k-item .k-link:hover {
@@ -371,6 +383,8 @@ html .ns-navigation .k-menu-group .k-item .k-link:hover {
 
 html .k-panelbar .k-group {
     background: var(--color-dark);
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
 
 html .k-panelbar-collapse.k-icon,
@@ -386,7 +400,7 @@ html .ns-navigation .k-animation-container {
 
 .ns-menu-trigger {
     position: absolute;
-    left: 3em;
+    left: 1em;
     width: 5em;
     color: var(--color-light);
     font-size: 1em;
@@ -435,16 +449,31 @@ html .ns-navigation .k-menu .k-item .k-menu-expand-arrow {
 
 .k-panelbar {
     position: absolute;
-    bottom: -100%;
-    left: 2.5em;
+    top: 100%;
+    left: 0.8em;
     z-index: 10;
     width: 40vw;
+    min-width: 250px;
+    height: auto;
     border: 0;
     text-align: left;
     text-transform: uppercase;
     font-size: 1.2em;
     font-weight: 600;
     display: none;
+}
+
+.k-panelbar {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.k-panelbar .k-group > .k-item:first-child {
+    margin-top: 7px;
+}
+
+.k-panelbar .k-group > .k-item:last-child {
+    margin-bottom: 7px;
 }
 
 /* Flavor Header */
@@ -1931,6 +1960,22 @@ article table td h5 {
 
     .navigation__burger-menu {
         display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    html .navigation__right .k-menu .-github {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .navigation__logo {
+        width: 2.8em;
+        height: 2.8em;
+        background-size: cover;
+        background-position-x: 0;
+        align-self: center;
     }
 }
 

@@ -12,11 +12,14 @@ function expandNavigation(url) {
 
         for (var idx = 0; idx < segments.length; idx++) {
             node = dataSource.get(segments[idx]);
-            node.set("expanded", true);
-            dataSource = node.children;
+
+            if (node) {
+                node.set("expanded", true);
+                dataSource = node.children;
+            }
         }
 
-        node.set("selected", true);
+        node && node.set("selected", true);
 
         this.unbind("dataBound", arguments.callee);
     }
@@ -102,7 +105,7 @@ function initPanelBar() {
 function initMenus(loading) {
     var menu = $(".ns-menu");
     var isLoading = loading === true;
-    var isSmall = window.innerWidth < 1024;
+    var isSmall = Math.min(window.innerWidth, window.outerWidth) < 1024;
     var isContextMenu = menu.hasClass("k-panelbar");
     var responsive = isContextMenu && !isSmall;
 
