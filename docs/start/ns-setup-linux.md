@@ -72,10 +72,13 @@ Complete the following steps to set up NativeScript on your Linux development ma
     1. After the download completes, unpack the downloaded archive into a folder, such as `/android/sdk`
        * The archive you just extracted was the `tools` folder, so in this case it would be at: `/android/sdk/tools`
     1. Set the ANDROID_HOME system environment variable.
-        <pre><code class="language-terminal">export ANDROID_HOME=Path to Android installation directory
+        <pre><code class="language-terminal">sudo -H gedit /etc/environment
         </code></pre>
-        For example: `ANDROID_HOME=/android/sdk`
+    1. In a text file which was opened, paste in the path to your variable (at the new line).
+    
+    For example: `ANDROID_HOME=/android/sdk`
         <blockquote><b>NOTE</b>: This is the directory that contains the <code>tools</code> (just installed) and <code>platform-tools</code> (installed by scripts in the next step) directories.</blockquote>
+     1. Logout from current user and login again so environment variables changes take place.
 
 1. Install all packages for the Android SDK Platform 25, Android SDK Build-Tools 27.0.3 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages.
 
