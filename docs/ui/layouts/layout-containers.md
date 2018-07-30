@@ -7,12 +7,6 @@ previous_url: /layout-containers
 ---
 
 # Layout Containers
-* [AbsoluteLayout](#absolutelayout)
-* [DockLayout](#docklayout)
-* [GridLayout](#gridlayout)
-* [StackLayout](#stacklayout)
-* [WrapLayout](#wraplayout)
-* [FlexboxLayout](#flexboxlayout)
 
 ## [AbsoluteLayout]({%ns_cookbook ui/layouts/absolute-layout%})
 The AbsoluteLayout is the simplest layout in NativeScript. It uses absolute left-top coordinates to position its children. The AbsoluteLayout will not enforce any layout constraints on its children and will not resize them at runtime when its size changes.
@@ -26,7 +20,6 @@ None.
 | left     | Gets or sets the distance, in pixels, between the left edge of the child and the left edge of its parent AbsoluteLayout client area. |
 | top     | Gets or sets the distance, in pixels, between the top edge of the child and the top edge of its parent AbsoluteLayout client area. |
 
-### Sample
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -45,7 +38,6 @@ None.
 
 ![AbsoluteLayout](../img/modules/layouts/absolute-layout.png "AbsoluteLayout")
 
-### Sample (margin)
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -75,7 +67,7 @@ The DockLayout is a layout that provides a docking mechanism for child elements 
 | -------- | ------------|
 | dock     | Specifies the Dock position of a child element that is inside a DockLayout. Possible values are `left`, `top`, `right` and `bottom`. |
 
-### Sample (stretchLastChild="false")
+_Example for `stretchLastChild="false"`_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -94,7 +86,7 @@ The DockLayout is a layout that provides a docking mechanism for child elements 
 
 ![DockLayout](../img/modules/layouts/dock-layout1.png "DockLayout1")
 
-### Sample (stretchLastChild="true")
+_Example for `stretchLastChild="true"`_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -113,7 +105,7 @@ The DockLayout is a layout that provides a docking mechanism for child elements 
 
 ![DockLayout](../img/modules/layouts/dock-layout2.png "DockLayout1")
 
-### Sample (multiple child elements on one side)
+_Example for multiple child elements on one side_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -152,7 +144,7 @@ The GridLayout is a layout that arranges its child elements in a table structure
 | rowSpan  | Gets or sets a value that indicates the total number of rows that child content spans within a GridLayout. |
 | colSpan  | Gets or sets a value that indicates the total number of columns that child content spans within a GridLayout. |
 
-### Sample
+_Example for basic Grid usage_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -174,7 +166,7 @@ The GridLayout is a layout that arranges its child elements in a table structure
 
 ![GridLayout](../img/modules/layouts/grid-layout.png "GridLayout")
 
-### Sample (star-sizing)
+_Example for sizing with star (`*`)_
 - Columns: One star plus two stars is equal to three stars. (\* + 2\* = 3\*). Divide GridLayout width (300) by 3 to get 100. So first column is 1 x 100 = 100 pixels wide and second column is 2 x 100 = 200 pixels wide. 100 + 200 = 300.
 - Rows: Two stars plus three stars is equal to five stars. (2\* + 3\* = 5\*). Divide GridLayout height (300) by 5 to get 60. So first row is 2 x 60 = 120 pixels high and second row is 3 x 60 = 180 pixels high. 120 + 180 = 300.
 {% nativescript %}
@@ -195,7 +187,7 @@ The GridLayout is a layout that arranges its child elements in a table structure
 
 ![GridLayout](../img/modules/layouts/grid-layout1.png "GridLayout")
 
-### Sample (fixed and auto)
+_Example for fixed and auto sizing_
 - The first column and the first row are `auto`. This means that they are measured with infinite available space and then sized to their content.
 - The first column and the first row have fixed sizes of 100 and 100 respectively. They will be exactly this wide/high regardless of their children's dimensions. They would still be exactly this wide/high even if they don't have any children.
 {% nativescript %}
@@ -216,7 +208,7 @@ The GridLayout is a layout that arranges its child elements in a table structure
 
 ![GridLayout](../img/modules/layouts/grid-layout2.png "GridLayout")
 
-### Sample (no width and horizontalAlignment != stretch)
+_Example for no width and horizontalAlignment != stretch_
 When the GridLayout has no explicit `width` set and its `horizontalAlignment` is not `stretch`, the star columns will not occupy the entire available space (200 from parent StackLayout).
 
 {% nativescript %}
@@ -237,7 +229,7 @@ When the GridLayout has no explicit `width` set and its `horizontalAlignment` is
 
 ![GridLayout](../img/modules/layouts/grid-layout3.png "GridLayout")
 
-### Sample (column stretching)
+_Example for column stretching_
 Label 3 has a fixed width of 150 pixels. Label 1 is given more space than it actually needs, because Label 3 stretches the auto column.
 {% nativescript %}
 ```XML
@@ -256,7 +248,7 @@ Label 3 has a fixed width of 150 pixels. Label 1 is given more space than it act
 
 ![GridLayout](../img/modules/layouts/grid-layout4.png "GridLayout")
 
-### Sample (complex)
+_Example for complex structure
 `Image` has fixed width and height of 72 and span the both rows. For the first `Label` is given more space by using `colSpan="2"`. Third `Lable` is given more space than it actually needs, because fourth `Label` stretches the auto column.
 
 {% nativescript %}
@@ -278,7 +270,7 @@ Label 3 has a fixed width of 150 pixels. Label 1 is given more space than it act
 ![GridLayout](../img/modules/layouts/grid-layout5.png "GridLayout")
 
 
-### Sample (Create grid dynamically via code behind)
+_Example for creating grid dynamically via code behind_
 
 > You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=uxpI70) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=FHnThH).
 
@@ -419,7 +411,7 @@ The StackLayout stacks its child elements below or beside each other, depending 
 ### Child Properties
 None.
 
-### Sample (orientation="vertical")
+_Example for `orientation="vertical"`_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -438,7 +430,7 @@ None.
 
 ![StackLayout](../img/modules/layouts/stack-layout1.png "StackLayout")
 
-### Sample (orientation="horizontal")
+_Example for `orientation="horizontal"`_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -457,7 +449,7 @@ None.
 
 ![StackLayout](../img/modules/layouts/stack-layout2.png "StackLayout")
 
-### Sample (horizontal alignment of children)
+_Example for horizontal alignment of children_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -476,7 +468,7 @@ None.
 
 ![StackLayout](../img/modules/layouts/stack-layout3.png "StackLayout")
 
-### Sample (vertical alignment of children)
+_Example for vertical alignment of children_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -507,7 +499,7 @@ The WrapLayout is similar to the StackLayout, but it does not just stack all chi
 ### Child Properties
 None.
 
-### Sample (orientation="horizontal")
+_Example for `orientation="horizontal"`_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -526,7 +518,7 @@ None.
 
 ![WrapLayout](../img/modules/layouts/wrap-layout1.png "WrapLayout")
 
-### Sample (orientation="vertical")
+_Example for `orientation="vertical"`_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -589,7 +581,7 @@ The FlexboxLayout is a non-conforming implementation of the [CSS Flexible Box La
 
 > **NOTE:** There is a limitation for `alignSelf` in **iOS** the `baseline` option can **not** be used.
 
-### Sample (flexDirection="row", alignItems="stretch" (default))
+_Example for `flexDirection="row"`, `alignItems="stretch"` (default)_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -608,7 +600,7 @@ The FlexboxLayout is a non-conforming implementation of the [CSS Flexible Box La
 
 ![FlexboxLayout](../img/modules/layouts/flexbox-layout1.png "FlexboxLayout")
 
-### Sample (flexDirection="column", alignItems="stretch" (default))
+_Example for `flexDirection="column"`, `alignItems="stretch"` (default)_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -646,7 +638,7 @@ The FlexboxLayout is a non-conforming implementation of the [CSS Flexible Box La
 
 ![FlexboxLayout](../img/modules/layouts/flexbox-layout3.png "FlexboxLayout")
 
-### Sample (flexDirection="row", custom order)
+_Example for `flexDirection="row"`, custom order_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -665,7 +657,7 @@ The FlexboxLayout is a non-conforming implementation of the [CSS Flexible Box La
 
 ![FlexboxLayout](../img/modules/layouts/flexbox-layout4.png "FlexboxLayout")
 
-### Sample (flexWrap="wrap")
+_Example for `flexWrap="wrap"`_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -684,7 +676,7 @@ The FlexboxLayout is a non-conforming implementation of the [CSS Flexible Box La
 
 ![FlexboxLayout](../img/modules/layouts/flexbox-layout6.png "FlexboxLayout")
 
-### Sample (flexDirection="column-reverse", justifyContent="space-around", alignSelf)
+_Example for `flexDirection="column-reverse"`, `justifyContent="space-around"`, `alignSelf`_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">

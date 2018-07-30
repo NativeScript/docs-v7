@@ -23,18 +23,6 @@ As the first parameter, you pass an `on` or `off` method and the type of gesture
    - **type** - _Number_ | **name** - _String_ | **names** - Comma separated _String_
    - **callback** - _Function_(args _GestureEventData_)
 
-The next sections introduce you to all the gestures recognized by NativeScript:
-
-* [Tap](#tap)
-* [Double Tap](#double-tap)
-* [Long Press](#long-press)
-* [Swipe](#swipe)
-* [Pan](#pan)
-* [Pinch](#pinch)
-* [Rotation](#rotation)
-* [Touch](#touch)
-{% nativescript %}* [Subscribing to Multiple Gestures and Events](#subscribing-to-multiple-gestures-and-events)
-{% endnativescript %}
 ## Tap
 
 **Action: Briefly touch the screen.**

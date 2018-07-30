@@ -10,31 +10,6 @@ NativeScript’s [styling infrastructure](https://docs.nativescript.org/ui/styli
 
 The NativeScript project provides a core theme that you can add to any of your projects. The theme includes two color schemes, light and dark, as well as a series of convenience class names to help you build elegant user interfaces quickly.
 
-* [Installation](#installation)
-* [Color Schemes](#color-schemes)
-* [Class Names](#class-names)
-    - [Headings](#headings)
-    - [Text](#text)
-    - [Font](#font)
-    - [Padding and Margin](#padding-and-margin)
-    - [Dividers](#dividers)
-    - [Utilities](#utilities)
-    - [Contextual Colors](#contextual-colors)
-    - [Page](#page)
-    - [ActionBar](#actionbar)
-    - [Buttons](#buttons)
-    - [Forms](#forms)
-    - [Images](#images)
-    - [ListViews](#listviews)
-    - [Progress and Activity](#progress-and-activity)
-    - [SideDrawers](#sidedrawers)
-    - [Sliders](#sliders)
-    - [Switches](#switches)
-    - [TabViews](#tabviews)
-* [SASS Usage](#sass-usage)
-* [Status Bar Considerations](#status-bar-considerations)
-* [Uninstalling](#uninstalling)
-* [Contributing](#contributing)
 
 ## Installation
 

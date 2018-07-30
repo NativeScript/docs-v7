@@ -8,27 +8,16 @@ previous_url: /layouts
 
 # User Interface Layouts
 
-NativeScript provides a recursive layout system that sizes and positions [views][views] on the screen.
-
-* [Layout Process](#layout-process)
-	* [Measure Pass](#measure-pass)
-	* [Layout Pass](#layout-pass)
-	* [Alignment](#alignment)
-	* [Margins](#margins)
-* [Layouts](#layouts)
-	* [Layout Paddings](#layout-paddings)
-	* [Predefined Layouts](#predefined-layouts)
-* [Percent Support](#percentage-support)
-
 ## Layout Process
 
-Layout is the process of measuring and positioning the child views of a [Layout][Layout] container. Layout is an intensive process whose speed and performance depend on the count of the children and the complexity of the layout container. For example, a simple layout container such as [AbsoluteLayout][AbsoluteLayout] might perform better than a more complex layout container, such as [GridLayout][GridLayout].
+NativeScript provides a recursive layout system that sizes and positions views on the screen.
+Layout is the process of measuring and positioning the child views of a Layout container. Layout is an intensive process whose speed and performance depend on the count of the children and the complexity of the layout container. For example, a simple layout container such as `AbsoluteLayout` might perform better than a more complex layout container, such as `GridLayout`.
 
-Layout completes in two passes&mdash;a measure pass and a layout pass. Every layout container provides its own `onMeasure()` and `onLayout()` methods to achieve its own specific layout.
+Layout completes in two passes&mdash;a measure pass and a layout pass. Every layout container provides its own `onMeasure` and `onLayout` methods to achieve its own specific layout.
 
 ### Measure Pass
 
-During the measure pass, each [view][view] is measured to retrieve its desired size. The measure pass evaluates the following properties:
+During the measure pass, each `View` is measured to retrieve its desired size. The measure pass evaluates the following properties:
 
 * width
 * height
@@ -42,7 +31,7 @@ During the measure pass, each [view][view] is measured to retrieve its desired s
 
 ### Layout Pass
 
-During the layout pass, each [view][view] is placed in a specific layout slot. This slot is determined by the desired size of the view (retrieved from the measure pass) and the following properties:
+During the layout pass, each `View` is placed in a specific layout slot. This slot is determined by the desired size of the view (retrieved from the measure pass) and the following properties:
 
 - marginTop
 - marginRight
@@ -73,7 +62,7 @@ The following table shows the valid values of `verticalAlignment`.
 | bottom  | The view is aligned to the bottom of the layout slot of the parent element. |
 | stretch | The view is stretched to fill the layout slot of the parent element; `height` takes precedence, if set. |
 
-### Margins
+## Margins
 
 The four margin properties (`marginTop`, `marginRight`, `marginBottom` and `marginLeft`) describe the distance between a view and its parent.
 
@@ -87,7 +76,7 @@ When you set margins through XML, you can choose between the following approache
 
 `Layout` is the base class for all views that provide positioning of child elements.
 
-You can use the various layout containers to position elements. They evaluate the base properties of [view][view] such as `width`, `height`, `minWidth` and alignments, and expose additional properties for positioning child views (such as the four paddings).
+You can use the various layout containers to position elements. They evaluate the base properties of `View` such as `width`, `height`, `minWidth` and alignments, and expose additional properties for positioning child views (such as the four paddings).
 
 ### Layout Paddings
 
@@ -112,15 +101,6 @@ The following table shows predefined layouts that NativeScript provides.
 | [StackLayout][StackLayout] | This layout arranges its children horizontally or vertically. The direction is set with the orientation property. | ![StackLayout android](../img/gallery/android/stackLayoutPage.png "StackLayout android")|
 | [WrapLayout][WrapLayout] | This layout positions its children in rows or columns, based on the orientation property, until the space is filled and then wraps them on a new row or column. | ![WrapLayout android](../img/gallery/android/wrapLayoutPage.png "WrapLayout android")|
 
-[views]: {%slug components %}
-[View]: /api-reference/classes/_ui_core_view_.view.html
-[Layout]: /api-reference/classes/_ui_layouts_layout_.layout.html
-[FlexboxLayout]: {%ns_cookbook ui/layouts/flexbox-layout%}
-[AbsoluteLayout]: {%ns_cookbook ui/layouts/absolute-layout%}
-[DockLayout]: {%ns_cookbook ui/layouts/dock-layout%}
-[GridLayout]: {%ns_cookbook ui/layouts/grid-layout%}
-[StackLayout]: {%ns_cookbook ui/layouts/stack-layout%}
-[WrapLayout]: {%ns_cookbook ui/layouts/wrap-layout%}
 
 ### Percentage Support
 
