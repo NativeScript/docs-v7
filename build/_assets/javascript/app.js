@@ -121,6 +121,13 @@ function initMenus(loading) {
     }
 }
 
+function hidePanelBar() {
+    $(".k-panelbar").toggle(false);
+    $(".ns-menu-trigger").removeClass("k-state-selected");
+
+    $(document.documentElement).off("click", hidePanelBar);
+}
+
 $(function(){
 
     $("pre[lang]").each(function() {
@@ -392,10 +399,20 @@ $(function(){
 
     $(".ns-menu-trigger").on("click", function () {
         var panelbar = $(".k-panelbar");
-        var isVisible = panelbar.is(":visible");
+        var shouldBeVisible = !panelbar.is(":visible");
 
-        $(this).toggleClass("k-state-selected", !isVisible);
-        panelbar.toggle(!isVisible);
+        $(this).toggleClass("k-state-selected", shouldBeVisible);
+        panelbar.toggle(shouldBeVisible);
+
+        if (shouldBeVisible) {
+            setTimeout(function () {
+                $(document.documentElement).on("click", hidePanelBar);
+            });
+        }
+    });
+
+    $(".k-panelbar").click(function(e) {
+        e.stopPropagation();
     });
 
     $(".right-nav__container").on("click", function(e) {
