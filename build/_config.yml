@@ -131,7 +131,7 @@ navigation:
         title: "Guides"
     "guides/integration-with-existing-ios-and-android-apps":
         position: 100
-        title: "Integration with exisitng iOS and Android apps"
+        title: "Integration with existing iOS and Android apps"
     sidekick:
         position: 150
         title: "SideKick"
