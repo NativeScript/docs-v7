@@ -1,6 +1,7 @@
 <a class="navigation__logo" href="/"></a>
 <div class="navigation__right">
-    <ul>
+    <div class="ns-menu-trigger -hidden"></div>
+    <ul class="ns-menu">
         <li>
             <span>Framework</span>
             <ul>
@@ -65,15 +66,7 @@
     </ul>
 </div>
 <script>
-    $(".navigation__right > ul").kendoMenu({
-        openOnClick: {
-            rootMenuItems: true
-        },
-        closeOnClick: true,
-        animation: { open: {
-            duration: 100
-        }}
-    });
+    window.nsMenu = $(".ns-menu").remove();
 
     $(".navigation__right").css("visibility", "visible");
 </script>

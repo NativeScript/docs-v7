@@ -12,11 +12,14 @@ function expandNavigation(url) {
 
         for (var idx = 0; idx < segments.length; idx++) {
             node = dataSource.get(segments[idx]);
-            node.set("expanded", true);
-            dataSource = node.children;
+
+            if (node) {
+                node.set("expanded", true);
+                dataSource = node.children;
+            }
         }
 
-        node.set("selected", true);
+        node && node.set("selected", true);
 
         this.unbind("dataBound", arguments.callee);
     }
@@ -68,6 +71,70 @@ function traverseAnchors(elements, level) {
     return html + "</ul>";
 }
 
+function initNSMenu() {
+    hidePanelBar();
+    $(".ns-menu-trigger").addClass("-hidden");
+    $("#side-nav__toggle").prop("checked", true);
+
+    window.nsMenu.clone().kendoMenu({
+        openOnClick: {
+            rootMenuItems: true
+        },
+        closeOnClick: true,
+        animation: { open: {
+            duration: 100
+        }}
+    }).appendTo(".navigation__right");
+}
+
+function initPanelBar() {
+    $(".ns-menu-trigger").removeClass("-hidden");
+    $("#side-nav__toggle").prop("checked", false);
+
+    var menu = window.nsMenu.clone();
+
+    menu.children("li:nth-last-child(-n+2)")
+        .remove()
+        .wrapAll("<ul class='ns-menu'></ul>")
+        .parent()
+        .kendoMenu()
+        .appendTo(".navigation__right");
+
+    menu.kendoPanelBar({
+            expandMode: "single"
+        })
+        .prependTo(".navigation__right")
+        .click(function(e) {
+            e.stopPropagation();
+        });
+}
+
+function initMenus(loading) {
+    var menu = $(".ns-menu");
+    var isLoading = loading === true;
+    var isSmall = Math.min(window.innerWidth, window.outerWidth || 1024) < 1024;
+    var isContextMenu = menu.hasClass("k-panelbar");
+    var responsive = isContextMenu && !isSmall;
+
+    if (isLoading || responsive || !isContextMenu && isSmall) {
+        menu.each(function () {
+            var menuInstance = kendo.widgetInstance($(this));
+
+            menuInstance && menuInstance.destroy();
+            menu.remove();
+        });
+
+        window[(isLoading ? !isSmall : responsive) ? "initNSMenu" : "initPanelBar"]();
+    }
+}
+
+function hidePanelBar() {
+    $(".k-panelbar").toggle(false);
+    $(".ns-menu-trigger").removeClass("k-state-selected");
+
+    $(document.documentElement).off("click", hidePanelBar);
+}
+
 $(function(){
 
     $("pre[lang]").each(function() {
@@ -115,14 +182,14 @@ $(function(){
         'objective-c' : 'clike',
         'java' : 'clike',
         'xml' : 'markup'
-    }
+    };
 
     var codeSampleExtensionMapper = {
         '.xml': 'markup',
         '.css' : 'css',
         '.js' : 'javascript',
         '.ts' : 'javascript',
-    }
+    };
 
     // Enable Prism support by mapping the lang attributes to the language-* attribute Prim expects
     $("pre").each(function(index){
@@ -332,6 +399,22 @@ $(function(){
 
         if (toggle) {
             toggle.checked = false;
+        }
+    });
+
+    window.addEventListener("resize", initMenus, { passive: true });
+
+    $(".ns-menu-trigger").on("click", function () {
+        var panelbar = $(".k-panelbar");
+        var shouldBeVisible = !panelbar.is(":visible");
+
+        $(this).toggleClass("k-state-selected", shouldBeVisible);
+        panelbar.toggle(shouldBeVisible);
+
+        if (shouldBeVisible) {
+            setTimeout(function () {
+                $(document.documentElement).on("click", hidePanelBar);
+            });
         }
     });
 

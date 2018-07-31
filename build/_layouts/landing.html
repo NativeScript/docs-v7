@@ -1,8 +1,8 @@
 <!doctype html>
-<html>
+<html class="ns-root">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
         <meta name="google-site-verification" content="iwHdY_1KfeQbVLI-gtcAsI9pslqa2dLBsQD47d2E5To" />
         <title>{{page.title}}</title>
         <link rel="preload" href="{{site.baseurl}}/{{page.category}}.json" as="script">
@@ -27,6 +27,15 @@
         </noscript>
         <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', '{{site.google_tag_manager}}');</script>
         <!-- End Google Tag Manager -->
+        <!-- Banner for promoting events -->
+        <header class="ns-tip-container">
+            <div>
+                Have you seen all of the free code samples available on our
+                <a href="https://market.nativescript.org/?tab=samples&framework=core&category=all_samples&source=yellow-strip" target="_blank">Marketplace</a>?
+            </div>
+            <a class="close-banner-button"></a>
+        </header>
+
         <header class="ns-navigation">
             {% include header.html %}
         </header>
