@@ -16,7 +16,7 @@ You can publish a NativeScript app in the *App Store* the same way you would [re
      ```
      tns prepare ios --release
      ```
- 2. Open the iOS native project in Xcode. Your native project is located at: `{app-name}/platforms/ios/{app-name}.xcworkspace`(Or in `{app-name}/platforms/ios/{app-name}.xcodeproj` if the project does not contain any native iOS libraries).
+ 2. Open the iOS native project in Xcode. Your native project is located at: `{app-name}/platforms/ios/{app-name}.xcworkspace` (or in `{app-name}/platforms/ios/{app-name}.xcodeproj` if the project does not contain any native iOS libraries).
  3. [Configure the project for distribution](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/ConfiguringYourApp/ConfiguringYourApp.html).
  4. [Upload the app to App Store Connect](https://help.apple.com/xcode/mac/current/#/dev442d7f2ca).
  5. [Submit it to the *App Store*](https://help.apple.com/app-store-connect/#/dev301cb2b3e).
