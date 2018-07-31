@@ -72,6 +72,7 @@ function traverseAnchors(elements, level) {
 }
 
 function initNSMenu() {
+    hidePanelBar();
     $(".ns-menu-trigger").addClass("-hidden");
 
     window.nsMenu.clone().kendoMenu({
@@ -98,8 +99,12 @@ function initPanelBar() {
         .appendTo(".navigation__right");
 
     menu.kendoPanelBar({
-        expandMode: "single"
-    }).prependTo(".navigation__right");
+            expandMode: "single"
+        })
+        .prependTo(".navigation__right")
+        .click(function(e) {
+            e.stopPropagation();
+        });
 }
 
 function initMenus(loading) {
@@ -409,10 +414,6 @@ $(function(){
                 $(document.documentElement).on("click", hidePanelBar);
             });
         }
-    });
-
-    $(".k-panelbar").click(function(e) {
-        e.stopPropagation();
     });
 
     $(".right-nav__container").on("click", function(e) {
