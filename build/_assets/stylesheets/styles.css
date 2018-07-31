@@ -544,9 +544,10 @@ html .k-treeview .k-in {
 }
 
 html .k-treeview .k-group .k-icon {
-    margin: 0 -1.71em 0 .71em;
+    margin: .5em -1.71em 0 .71em;
     font-size: .93em;
     min-width: 1em;
+    align-self: flex-start;
 }
 
 .k-treeview .k-group .k-group .k-in {
@@ -734,6 +735,10 @@ html body .side-nav__tree {
     position: sticky;
     float: right;
     margin-right: -17em;
+}
+
+.ns-tip-container ~ .ns-page .right-nav__container {
+    top: 7.6em;
 }
 
 .right-nav__tree {

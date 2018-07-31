@@ -74,6 +74,7 @@ function traverseAnchors(elements, level) {
 function initNSMenu() {
     hidePanelBar();
     $(".ns-menu-trigger").addClass("-hidden");
+    $("#side-nav__toggle").prop("checked", true);
 
     window.nsMenu.clone().kendoMenu({
         openOnClick: {
@@ -88,6 +89,7 @@ function initNSMenu() {
 
 function initPanelBar() {
     $(".ns-menu-trigger").removeClass("-hidden");
+    $("#side-nav__toggle").prop("checked", false);
 
     var menu = window.nsMenu.clone();
 
@@ -110,7 +112,7 @@ function initPanelBar() {
 function initMenus(loading) {
     var menu = $(".ns-menu");
     var isLoading = loading === true;
-    var isSmall = Math.min(window.innerWidth, window.outerWidth) < 1024;
+    var isSmall = Math.min(window.innerWidth, window.outerWidth || 1024) < 1024;
     var isContextMenu = menu.hasClass("k-panelbar");
     var responsive = isContextMenu && !isSmall;
 
