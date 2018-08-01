@@ -1,3 +1,12 @@
+---
+title: Build Process
+description: NativeScript Documentation - Code Sharing - Build Process
+position: 40
+slug: code-sharing
+environment: angular
+previous_url: /migrating-a-web-project
+---
+
 # Build Process
 
 ![build-process](./img/build-process.png?raw=true)
@@ -7,11 +16,12 @@ The code sharing project comes with a build process that is capable of using the
 ## Web Build
 
 To build a web app, it is **Business as usual**, just use Angular CLI to do the job.
-When you call `ng serve` or `ng build`, Angular CLI will ignore all NativeScript specific files - as none of the web files would directly reference any `.tns` files.
+When you call **ng serve** or **ng build**, Angular CLI will ignore all NativeScript specific files - as none of the web files would directly reference any **.tns** files.
 
- > `ng serve` -> builds a web app from a code sharing project
+ > **ng serve** -> builds a web app from the code sharing project
 
-For AOT builds, you may need to give TypeScript a helping hand, by adding NativeScript extensions to `tsconfig.json` exclude list.
+<!--
+For AOT builds, you may need to give TypeScript a helping hand, by adding NativeScript extensions to **tsconfig.json** exclude list.
 
 ```ts
 "exclude": [
@@ -21,6 +31,7 @@ For AOT builds, you may need to give TypeScript a helping hand, by adding Native
   "**/*.ios.ts"
 ]
 ```
+-->
 
 ## Mobile Build
 
@@ -28,23 +39,21 @@ In order to build an iOS or an Android app with NativeScript, we need to use [Na
 
 To build a mobile app from a code sharing project run:
 
-**iOS**
-
-```bash
+```ios
 tns run ios --bundle
 ```
 
-**Android**
-
-```bash
+```Android
 tns run android --bundle
 ```
+
+> **--bundle**  notifies NativeScript Build to use **Webpack** to build a mobile app from the code sharing project
 
 ### Behind the scenes
 
 The build process consists of two major steps: bundling and building the native app.
 
-For bundling `nativescript-dev-webpack` prepares the project in a **Virtual File System**. The **VFS** is used to provide **NativeScript specific** files.
+For bundling **nativescript-dev-webpack** prepares the project in a **Virtual File System**. The **VFS** is used to provide **NativeScript specific** files.
 
 Every time a file is requested from the **File System**, like this import statement:
 
@@ -52,7 +61,7 @@ Every time a file is requested from the **File System**, like this import statem
 import { MyComponent } from './my/my.component';
 ```
 
-Webpack checks **VFS** for the `.tns` file first (in this case `my.component.tns.ts`) and serves the **NativeScript specific** file, if not it provides the shared file.
+Webpack checks **VFS** for the **.tns** file first (in this case **my.component.tns.ts**) and serves the **NativeScript specific** file, if not it provides the shared file.
 
 > This **virtually** replaces web files with NativeScript files.
 

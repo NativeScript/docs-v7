@@ -1,23 +1,31 @@
+---
+title: Platform Specific Components
+description: NativeScript Documentation - Code Sharing - Platform Specific Components
+position: 60
+slug: code-sharing
+environment: angular
+previous_url: /code-splitting
+---
 
 # Platform Specific Components
 
 Sometimes you may need to create a Component that is used only by the web app or NativeScript app.
-If you have a component that is not declared in any `Module`, will result in an error during **AOT build**. This can be avoided.
+If you have a component that is not declared in any **Module**, will result in an error during **AOT build**. This can be avoided.
 
 ## NativeScript Only Component
 
-To create a NativeScript only Component, all you need is to create the component class with `.tns` extension. For example: 
+To create a NativeScript only Component, all you need is to create the component class with **.tns** extension. For example: 
 
 ```
-|- my
-   | my.component.css
-   | my.component.html
-   | my.component.tns.ts
+└── my
+   ├── my.component.css
+   ├── my.component.html
+   └── my.component.tns.ts
 ```
 
-The **Web TypeScript config** (`tsconfig.app.json`) automatically excludes `.tns` files, as well as all `.android` and `.ios` files.
+The **Web TypeScript config** (**tsconfig.app.json**) automatically excludes **.tns** files, as well as all **.android** and **.ios** files.
 
-```json
+```JSON
 {
 ...
   "exclude": [
@@ -29,7 +37,7 @@ The **Web TypeScript config** (`tsconfig.app.json`) automatically excludes `.tns
 }
 ```
 
-In this case for all your imports you will need to use a path that includes `.tns`, for example:
+In this case for all your imports you will need to use a path that includes **.tns**, for example:
 
 ```TypeScript
 import { MyComponent } from './my/my.component.tns';
@@ -40,15 +48,15 @@ import { MyComponent } from './my/my.component.tns';
 To create a web only component, the component structure is the same as usual:
 
 ```
-|- my
-   | my.component.css
-   | my.component.html
-   | my.component.ts
+└── my
+    ├── my.component.css
+    ├── my.component.html
+    └── my.component.ts
 ```
 
-You just need to exclude the component from **NativeScript's AOT TypeScript Config** (`tsconfig.aot.json`), for example:
+You just need to exclude the component from **NativeScript's AOT TypeScript Config** (**tsconfig.aot.json**), for example:
 
-```json
+```JSON
 {
   ...
   "exclude": [
