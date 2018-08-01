@@ -40,7 +40,10 @@ And in order to use the dark scheme, add this line of code to your `app.css` ins
 @import '~nativescript-theme-core/css/core.dark.css';
 ```
 
-> **TIP**: When using the dark color scheme, make sure that you, 1) apply the [`page` class name](#page) to ensure your app’s text displays appropriately, and 2) [alter your app’s status bar colors](#status-bar-considerations).
+> **TIP**: When using the dark color scheme, make sure that you:
+> * apply the [`page` class name](#page) to ensure your app’s text displays appropriately;
+> * [alter your app’s status bar colors](#status-bar-considerations);
+> * use dark parent themes on Android. In `style.xml` files in the `App_Resources\Android\values[-v21]` folders remove `Light.` from “parent” attributes (e.g., `Theme.AppCompat.Light.NoActionBar` becomes `Theme.AppCompat.NoActionBar`).
 
 You may want to alternatively use one of the 11 other color schemes included in the NativeScript core theme. To do so, switch your `app.css` file to use one of the following imports.
 
