@@ -1,6 +1,6 @@
 ---
 title: Property System
-description: NativeScript provides own property system based on a wrapper around the well known JavaScript's `Object.defineProperty`. To deliver good developer experience in the context of mobile development with UI and CSS elements, we provided a number or extended classes known as Property System.
+description: NativeScript provides own property system based on a wrapper around the well known JavaScript's `Object.defineProperty`. To deliver good developer experience in the context of mobile development with UI and CSS elements, we provided a number of extended classes known as Property System.
 position: 95
 slug: properties
 publish: true
@@ -10,7 +10,7 @@ environment: nativescript
 
 # Property System
 
-NativeScript provides own property system based on a wrapper around the well known JavaScript's `Object.defineProperty`. To deliver good developer experience in the context of mobile development with UI and CSS elements, we provided extended classes of the `Property` class. This article will cover the provided property classes and the base techniques when working with views and properties including initialization, registering, views lifecycles and recycling and handling changed events. Some commontly used methods of `View` are demonstrated as well.
+NativeScript provides own property system based on a wrapper around the well known JavaScript's `Object.defineProperty`. To deliver good developer experience in the context of mobile development with UI and CSS elements, we provided extended classes of the `Property` class. This article will cover the provided property classes and the base techniques when working with views and properties including initialization, registering, views lifecycles and recycling and handling changed events. Some commonly used methods of `View` are demonstrated as well.
 
 ## Property System Classes
 
@@ -34,7 +34,7 @@ Looking at `textProperty: Property<MyButtonBase, string>` - the owning type is `
 The `valueChange` event is executed when the value of an property has changed. If the type of the property isn't `string` we will need to specify `valueConverter` and `equalityComparer`. The `valueConverter` is called if a string value is set to this property (for example from XML or CSS) and there you will have to convert that string to meaningful value if possible or throw exception if you can't. If `equalityComparer` is specified it will be called everytime a value is set to a property. There you can compare current and new value for equality. For example if your property is of type `Color` you can use `Color.equals` as `equalityComparer` function so even if new instance of `Color` is set the comparer will return `false` if current color and new color have the same `argb` value. 
 
 There is one more option in the `Property` constructor: `affectsLayout: boolean`. 
-When set to `true` setting new value to this property will trigger a new layout pass. This is done as performance optimization. Android has an integrated layout system so most of the time it will invalidate it self when needed. Thus we skip one native call by defining `affectsLayout` as `true` only for iOS for example using 'isIOS' boolean property. Because iOS doesn't have integrated layout system if you know that this property could affect the layout you should specify it in the `Property` constructor. 
+When set to `true` setting new value to this property will trigger a new layout pass. This is done as performance optimization. Android has an integrated layout system so most of the time it will invalidate itself when needed. Thus we skip one native call by defining `affectsLayout` as `true` only for iOS for example using 'isIOS' boolean property. Because iOS doesn't have integrated layout system if you know that this property could affect the layout you should specify it in the `Property` constructor. 
  
 The flag `affectsLayout` should be `true` *(mainly for iOS)* when setting that property will change the element size and/or position. For example in our case setting button text to something different will either widen or shorten the width of the button so this will affect the element dimension hence with specify it as `affectsLayout: isIOS`. If this property won't change element position/size then you don't have to specify `affectsLayout` at all. For example `background-color` property doesn't change element position/size. 
 
