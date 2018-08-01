@@ -2,14 +2,12 @@
 title: Creating a new project
 description: NativeScript Documentation - Code Sharing - Creating a new project
 position: 20
-slug: code-sharing
 environment: angular
-previous_url: /intro
 ---
 
 # Creating a new project
 
-Creating a code sharing project is a straight forwards process. You can use Angular CLI and NativeScript schematics to generate a brand new project with a code sharing setup.
+Creating a code sharing project is a straightforward process. You can use Angular CLI and NativeScript schematics to generate a brand new project with a code sharing setup.
 
 ## Prerequisites 
 
@@ -40,7 +38,7 @@ ng new -c=@nativescript/schematics project-name --shared
 By default, the project will be generated with **css** as the default format for styling. With the following style files:
 
  * **app.css** - stylesheet for the mobile app
- * **style.css** - stylesheet for the web app
+ * **styles.css** - stylesheet for the web app
 
 ### SASS
 
@@ -60,7 +58,9 @@ This will generate the following files:
  
 ### NativeScript Core Theme
  
-By default, all projects will be generated with **NativeScript Core Theme**.
+By default, all projects will be generated with [NativeScript Core Theme](../ui/theme)
+
+> **NativeScript Core Theme** is a CSS Theme for native applications.
 
 In case you don't want to use **NativeScript Core Theme** in your project, you can provide the **--no-theme** flag. Like this:
 

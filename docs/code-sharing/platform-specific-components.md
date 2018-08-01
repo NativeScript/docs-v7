@@ -2,9 +2,7 @@
 title: Platform Specific Components
 description: NativeScript Documentation - Code Sharing - Platform Specific Components
 position: 60
-slug: code-sharing
 environment: angular
-previous_url: /code-splitting
 ---
 
 # Platform Specific Components
@@ -42,6 +40,8 @@ In this case for all your imports you will need to use a path that includes **.t
 ```TypeScript
 import { MyComponent } from './my/my.component.tns';
 ```
+
+> You should also make sure **not** to import the `.tns` files in web specific `.spec` files.
 
 ## Web Only Components
 

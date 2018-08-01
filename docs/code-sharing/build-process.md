@@ -2,9 +2,7 @@
 title: Build Process
 description: NativeScript Documentation - Code Sharing - Build Process
 position: 40
-slug: code-sharing
 environment: angular
-previous_url: /migrating-a-web-project
 ---
 
 # Build Process

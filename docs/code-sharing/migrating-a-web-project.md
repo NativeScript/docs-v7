@@ -2,9 +2,7 @@
 title: Migrating a Web project
 description: NativeScript Documentation - Code Sharing - Migrating a Web project
 position: 30
-slug: code-sharing
 environment: angular
-previous_url: /creating-a-new-project
 ---
 
 # Migrating existing Angular Web projects
@@ -15,7 +13,13 @@ This can be done with Angular CLI's **ng add** command and NativeScript Schemati
 
 ## Project Requirements
 
+You need to use the latest version of **NativeScript CLI**
+
 Your project node modules need to be using Angular v6 or newer.
+
+### NativeScript CLI
+
+Follow the [installation instructions](../start/quick-setup) to install **NativeScript CLI**.
 
 ### Angular CLI
 
@@ -104,7 +108,7 @@ This is especially useful, while you migrate all web components into code sharin
 
 Also, if you expect your web app to have a different set of pages to your mobile app, then you could keep the **routes** separate. For example, your web app could have an admin screen, which might not be required in the mobile app. In this case it makes sense to have two sets of navigation configurations.
 
-The process here is that you should add navigation paths to **routes** array in **app-routing.module.ts**, as you migrate each of your components.
+The process here is that you should add navigation paths to **routes** array in **app-routing.module.tns.ts**, as you migrate each of your **page** components.
 
 #### Shared Routes
 
@@ -121,7 +125,7 @@ export const ROUTES: Routes = [
 ];
 ```
     
-2. Replace the routes configuration in **app-routing.module.ts** with the import of **ROUTES**
+1. Replace the routes configuration in **app-routing.module.ts** with the import of **ROUTES**
     ```TypeScript
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -134,7 +138,7 @@ import { ROUTES } from './app.routes';
 export class AppRoutingModule { }
 ```
 
-3. Replace the routes configuration in **app-routing.module.tns.ts** with the import of **ROUTES**
+1. Replace the routes configuration in **app-routing.module.tns.ts** with the import of **ROUTES**
     ```TypeScript
 import { NgModule } from '@angular/core';
 import { NativeScriptRouterModule } from 'nativescript-angular/router';
@@ -163,24 +167,6 @@ ng g migrate-component --name=component-name
 ```
 
 In the case where the component class contains web specific files, you will need to extract it into [helper files - read more here - link to code splitting]() and keep only shared code.
-
-### Migrating Modules
-
-You should also migrate your **NgModules** into a code sharing modules.
-
-Often the migration step will consist of these steps:
-
-* add the NativeScript version of the **@NgModule**- **module-name.component.tns.ts**
-* copy the providers from the web **@NgModule**
-* copy the imports from the web **@NgModule** - use NativeScript versions for those that are web specific (i.e. use **NativeScriptHttpClientModule** instead of **HttpClientModule**)
-convert all of modules' components, by using migrate-component schematic
-* migrate declared components and add them to **declarations**
-
-This task can be helped with the [module migration schematic](./migrating-a-web-project#schematic-migrate-module): 
-
-```bash
-ng g migrate-module --name=module-name
-```
 
 ### Schematic: migrate-component
 
@@ -323,6 +309,24 @@ Run the following code to achieve the same result.
 
 ```bash
 ng g migrate-component --name=dog --component-path=animals/dog/dog-cmp.ts --skip-module
+```
+
+### Migrating Modules
+
+You should also migrate your **NgModules** into code sharing modules.
+
+Often the migration step will consist of these steps:
+
+* add the NativeScript version of the **@NgModule**- **module-name.component.tns.ts**
+* copy the providers from the web **@NgModule**
+* copy the imports from the web **@NgModule** - use NativeScript versions for those that are web specific (i.e. use **NativeScriptHttpClientModule** instead of **HttpClientModule**)
+convert all of modules' components, by using migrate-component schematic
+* migrate declared components and add them to **declarations**
+
+This task can be helped with the [module migration schematic](./migrating-a-web-project#schematic-migrate-module): 
+
+```bash
+ng g migrate-module --name=module-name
 ```
 
 ### Schematic: migrate-module

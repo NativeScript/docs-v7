@@ -2,14 +2,12 @@
 title: Code Splitting
 description: NativeScript Documentation - Code Sharing - Code Splitting
 position: 50
-slug: code-sharing
 environment: angular
-previous_url: /build-process
 ---
 
 # Code Splitting
 
-When building a project with code sharing project you will share a big part of the code, however you will encounter situations where you need to provide different code for the web app and for the mobile app. The most common scenario is with Angular Components where the HTML to define the UI for the web and mobile should be different.
+When building code sharing app, you will share a big part of the code. However, you will encounter situations where you need to provide different code for the web app and for the mobile app. The most common scenario is with Angular Components where the HTML to define the UI for the web and mobile should be different.
 
 There is a simple a naming convention that allows you to provide two versions of the same file. All you need to do is create two files and add **.tns** before file extension to one of them, i.e.
 
@@ -25,9 +23,19 @@ The file with the **.tns** part, is designated as a NativeScript specific file, 
  * **file.tns.css**
  * **file.tns.scss**
 
-When you run **ng serve**, all **.tns** files should be **treeshaked** and as a result removed, so they won't affect the web app code.
+### Web build
 
-When you run **tns run [ios/android] --bundle** webpack will take all NativeScript specific files and rename them by removing the **.tns** part. For example: **name.component.tns.html** will become **name.component.html**. This way the web specific files will
+When you run **ng serve**, no **.tns** files will be bundled. 
+
+Or in different words:
+> **.tns** files will get excluded from the web build
+
+### NativeScript build
+
+When you run **tns run [ios/android] --bundle** all **.tns** files will be bundled instead of the web files.
+
+Or in different words:
+> **.tns** files will replace the web files in the NativeScript build
 
 ## iOS, Android, web files
 
