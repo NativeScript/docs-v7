@@ -51,4 +51,5 @@ Regardless of what you choose to do next with NativeScript, joining the NativeSc
 - **Follow [@nativescript](https://twitter.com/nativescript) on Twitter** for updates on all things NativeScript.
 - **Sign up for the [NativeScript newsletter](https://www.nativescript.org/nativescript-newsletter)**. The newsletter will deliver NativeScript articles, news, plugin updates, and more straight to your inbox.
 - **Join the [NativeScript Community Slack](http://developer.telerik.com/wp-login.php?action=slack-invitation)**. The community Slack is a great place to chat with others in the NativeScript community.
+- **Bookmark the [NativeScript tag on Stack Overflow](https://stackoverflow.com/questions/tagged/nativescript)**, as it’s a great place to ask questions when you need help.
 
