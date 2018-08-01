@@ -112,23 +112,17 @@ To convert your project to use a single (shared) navigation configuration, you n
 
 Here are the steps:
 
-1. Add a shared file with the routes configuration - let's call it:
-
-**app.routes.ts**
-
-```TypeScript
+1. Add a shared file with the routes configuration: **app.routes.ts**
+    ```TypeScript
 import { Routes } from '@angular/router';
 
 export const ROUTES: Routes = [
   { path: '', redirectTo: '/players', pathMatch: 'full' },
 ];
 ```
-
+    
 2. Replace the routes configuration in **app-routing.module.ts** with the import of **ROUTES**
-
-**app-routing.module.ts**
-
-```TypeScript
+    ```TypeScript
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
@@ -141,10 +135,7 @@ export class AppRoutingModule { }
 ```
 
 3. Replace the routes configuration in **app-routing.module.tns.ts** with the import of **ROUTES**
-
-**app-routing.module.tns.ts**
-
-```TypeScript
+    ```TypeScript
 import { NgModule } from '@angular/core';
 import { NativeScriptRouterModule } from 'nativescript-angular/router';
 import { ROUTES } from './app.routes';
