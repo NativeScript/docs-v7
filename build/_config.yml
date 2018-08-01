@@ -108,6 +108,9 @@ navigation:
     plugins:
         position: 70
         title: "PLUGINS DEVELOPMENT"
+    code-sharing:
+        position: 75
+        title: "CODE SHARING"
     releases:
         position: 80
         title: "RELEASES"
@@ -126,27 +129,6 @@ navigation:
     ng-framework-modules:
         position: 110
         title: "Framework modules"
-    code-sharing:
-        position: 115
-        title: "CODE SHARING"
-    "code-sharing/intro":
-        position: 10
-        title: "Intro"
-    "code-sharing/creating-a-new-project":
-        position: 20
-        title: "Creating a new project"
-    "code-sharing/migrating-a-web-project":
-        position: 30
-        title: "Migrating existing Angular Web projects"
-    "code-sharing/building-code-sharing-apps":
-        position: 40
-        title: "Building code sharing apps"
-    "code-sharing/code-splitting":
-        position: 50
-        title: "Code splitting"
-    "code-sharing/platform-specific-components":
-        position: 60
-        title: "Platform specific components"
     guides:
         position: 120
         title: "Guides"
