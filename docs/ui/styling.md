@@ -8,19 +8,6 @@ previous_url: /styling
 
 # Styling
 
-This article includes the following topics:
-
-* [Introduction](#introduction)
-* [Applying CSS Styles](#applying-css-styles)
-* [Supported Selectors](#supported-selectors)
-* [Supported CSS Properties](#supported-css-properties)
-* [Accessing NativeScript component properties with CSS](#accessing-nativescript-component-properties-with-css)
-* [Using Fonts](#using-fonts)
-* [Import External CSS](#import-external-css)
-* [Using SASS](#using-sass)
-
-## Introduction
-
 You change the looks and appearance of views (elements) in a NativeScript application similarly to how you do it in a web application&mdash;using Cascading Style Sheets (CSS) or changing the style object of the elements in JavaScript. Only a subset of the CSS language is supported.
 
 Similarly to the [DOM Style Object](http://www.w3schools.com/jsref/dom_obj_style.asp), each View instance exposes a **style** property, which holds all the style properties for the view. When the view is displayed, all its style properties are applied to the underlying native widget.
@@ -33,6 +20,7 @@ Similarly to the [DOM Style Object](http://www.w3schools.com/jsref/dom_obj_style
 {% endangular %}
 
 ## Applying CSS styles
+
 The CSS styles can be set on 3 different levels:
 
 * [Application-wide CSS](#application-wide-css): Applies to every application page
@@ -56,13 +44,13 @@ You can change the name of the file from which the application-wide CSS is loade
 
 {% nativescript %}
 ``` JavaScript
-var application = require("application");
+var application = require("tns-core-modules/application");
 application.setCssFileName("style.css");
 
 application.start({ moduleName: "main-page" });
 ```
 ``` TypeScript
-import { setCssFileName, start as applicationStart } from "application";
+import { setCssFileName, start as applicationStart } from "tns-core-modules/application";
 setCssFileName("style.css");
 
 applicationStart({ moduleName: "main-page" });
@@ -77,24 +65,22 @@ console.log(`fileName ${fileName}`);
 
 ```
 ``` TypeScript
-import { getCssFileName, start } from "application";
+import { getCssFileName, start as applicationStart } from "tns-core-modules/application";
 let fileName = getCssFileName();
 console.log(`fileName ${fileName}`);
 
-start({ moduleName: "main-page" });
+applicationStart({ moduleName: "main-page" });
 ```
-
 {% endnativescript %}
+
 {% angular %}
-
 ```TypeScript
-platformNativeScriptDynamic({bootInExistingPage:false, cssFile:"style.css"});
+platformNativeScriptDynamic({ bootInExistingPage:false, cssFile:"style.css" });
 ```
-
 {% endangular %}
 > The path to the CSS file is relative to the application root folder.
-
 {% nativescript %}
+
 ### Page-specific CSS
 
 When the page's XML declaration file is loaded, NativeScript looks for a CSS file with the same name (if such exists), reads any CSS styles that it finds, and automatically loads and applies them to the page. For example, a page named `mypage.xml` will automatically load any CSS in `mypage.css`. The CSS file must exist in the same folder as the XML file to be automatically applied.
@@ -110,10 +96,14 @@ If you import any [custom components](https://docs.nativescript.org/ui/basics#cu
 ```CSS
 /* myCustomComponent.css */
 /* GOOD: This will ONLY apply to the custom component */
-.mywidget .label { color: blue; }
+.mywidget .label { 
+    color: blue; 
+}
 
 /* BAD: This will apply to the custom component AND potentially to the page where the component is used */
-.label { color: blue; }
+.label { 
+    color: blue; 
+}
 ```
 
 For an example of how styles from custom components get applied, [try this project on the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=o87l19&v=3).
@@ -134,6 +124,7 @@ After you have set the default CSS for the page, you can add to it using two met
 
 {% endnativescript %}
 {% angular %}
+
 ### Component-specific CSS
 
 In an Angular application everything is a component, therefore, it is a very common task to add some CSS code that should only apply to one component. Adding component-specific CSS in a NativeScript-Angular app involves using a component’s `styles` or `styleUrls` property.
@@ -589,6 +580,31 @@ This list of properties can be set in CSS or through the style property of each 
 | `padding-left`        | `paddingLeft`         | Sets the left padding of a layout container. |
 | `visibility`          | `visibility`          | Sets the view visibility. Possible values: `visible`, `collapse` (or `collapsed`). |
 | `opacity`             | `opacity`             | Sets the view opacity. The value is in the [0, 1] range. |
+
+
+## Supported Measurment Units
+
+As a measurment units, NativeScript supports **DIPs** (Device Independent Pixels) , **pixels** (via postfix `px`) and **percentages** (partial support for `width`,`height` and `margin`).
+
+The NativeScript's recommended measurment unit is DIP. All measurable properties like `width`, `height`, `margin`, `paddings, border-width`, etc.) support device independent pixels. The font size are always measured in DIP. 
+
+```CSS
+.myLabel {
+    font-size: 28;
+    width: 200;
+    height: 30;
+}
+```
+
+> **Note:** The device independent pixels are equal to the current device screen's scale multiplied by the current device screen's width in pixels.
+```TypeScript
+import * as platformModule from "tns-core-modules/platform";
+let scale =  platformModule.screen.mainScreen.scale;
+let widthPixels = platformModule.screen.mainScreen.widthPixels;
+let DIPs = platformModule.screen.mainScreen.widthDIPs; // scale X widthPixels === DIPs
+```
+
+NativeScript supports **percentage** values for `width`, `height` and `margins`. When a layout pass begins, first the percent values are calculated based on parent available size. This means that on vertical StackLayout if you place two Buttons with `height='50%'` they will get all the available height (e.g., they will fill the StackLayout vertically.). The same applies for `margin`` properties. For example, if you set marginLeft='5%'`, the element will have a margin that corresponds to 5% of the parent's available width.
 
 ## Accessing NativeScript component properties with CSS
 
