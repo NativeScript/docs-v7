@@ -36,4 +36,4 @@ While, splitting the code for:
 
 ## What’s next?
 
-Read about [Creating a New Project](/angular/code-sharing/creating-a-new-project) to get started.
+Read about [Creating a New Project](./creating-a-new-project) to get started.
