@@ -76,11 +76,10 @@ By default if an exception is thrown when executing JavaScript code which is cal
 ```JSON
 {
         ...
-        "android": {
-                "discardUncaughtJsExceptions": true
-        }
+	"discardUncaughtJsExceptions": true
         ...
 }
 ```
 
+This flag works for iOS as well.
 
