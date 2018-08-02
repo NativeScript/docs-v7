@@ -1,18 +1,18 @@
 ---
-title: Platform Specific Components
-description: NativeScript Documentation - Code Sharing - Platform Specific Components
+title: Platform-Specific Components
+description: NativeScript Documentation - Code Sharing - Platform-Specific Components
 position: 60
 environment: angular
 ---
 
-# Platform Specific Components
+# Platform-Specific Components
 
-Sometimes you may need to create a Component that is used only by the web app or NativeScript app.
-If you have a component that is not declared in any **Module**, will result in an error during **AOT build**. This can be avoided.
+Sometimes you may need to create a component that is used only by your web app or NativeScript app.
+If you have a component that is not declared in any **Module**, that component will result in an error during **AOT builds**. This can be avoided.
 
-## NativeScript Only Component
+## NativeScript-Only Component
 
-To create a NativeScript only Component, all you need is to create the component class with **.tns** extension. For example: 
+To create a NativeScript-only component, all you need is to create the component class with a **.tns** extension. For example: 
 
 ```
 └── my
@@ -41,11 +41,11 @@ In this case for all your imports you will need to use a path that includes **.t
 import { MyComponent } from './my/my.component.tns';
 ```
 
-> You should also make sure **not** to import the `.tns` files in web specific `.spec` files.
+> You should also make sure **not** to import the `.tns` files in web-specific `.spec` files.
 
-## Web Only Components
+## Web-Only Components
 
-To create a web only component, the component structure is the same as usual:
+To create a web-only component, the component structure is the same as usual:
 
 ```
 └── my
