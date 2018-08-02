@@ -9,7 +9,7 @@ environment: angular
 
 When building a code-sharing app, you will share a big part of your code across all platforms. However, you will encounter situations where you need to provide different code for the web app and for the mobile app. The most common scenario is with Angular components, where you need to define different markup  for your web and mobile apps.
 
-There is a simple a naming convention that allows you to provide two versions of the same file. All you need to do is create two files and add a **.tns** before the file extension to one of them, i.e.
+There is a simple naming convention that allows you to provide two versions of the same file. All you need to do is create two files and add a **.tns** before the file extension to one of them, i.e.
 
  * **name.component.html** - web-specific file
  * **name.component.tns.html** - NativeScript-specific file
