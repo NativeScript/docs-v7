@@ -50,9 +50,19 @@ This command installs **@nativescript/schematics**, and then adds a NativeScript
 * The Main file - **main.ns.ts**, which bootstraps the NativeScript Entry Module,
 * the Entry Module file - by default this is **app.module.tns.ts**, which is based on the name of the module provided to **bootstrapModule** in your **main.ts**,
 * Entry Component file - by default this is **app.component.ts**, which is based on the name of the component provided to **bootstrap** in the web entry module,
-* and the App Routing file - **app-routing.module.ts**, which brings in **NativeScriptRouterModule**. It also provides a path to the sample module (**BarcelonaModule**).
+* and the App Routing file - **app-routing.module.ts**, which brings in **NativeScriptRouterModule**. It also provides a path to a sample component (**HomeComponent**).
 
-Additionally, the **ng add** command adds **BarcelonaModule**, which is a sample module to show how a code-sharing module should be constructed. It is also used for validation that the conversion of the project was successful.
+### Sample module
+
+You can also run the **ng add** command with a **--sample** flag.
+
+```bash
+ng add @nativescript/schematics --sample
+```
+
+
+This command adds a **BarcelonaModule**, which is a sample module to show how a code-sharing module should be constructed. It can also be used for validation that the conversion of the project was successful.
+
 
 ### Validating the project migration
 
@@ -61,8 +71,14 @@ The easiest way to validate that the migration worked is to build and run your a
 #### Validate the web project
 
 Run **ng serve -o** from your terminal or command prompt, and you should get the same app as before running **ng add**.
+ 
+#### Validate the web project with the sample module
 
-Next, assuming your app is configured with app navigation, add **BarcelonaModule** to your entry module (default: **app.module.ts**), and in your browser navigate to **/players** (i.e. **http://localhost:4200/players**). You should see a list of Barcelona players, and if you click on any name the app you should navigate to **/player/:id**.
+If you migrated your project with the **--sample** flag, you could also test the sample module in your web app.
+
+Assuming your app is configured with app navigation, add **BarcelonaModule** to your entry module (default: **app.module.ts**), run **ng serve**, and in your browser navigate to **/players** (i.e. **http://localhost:4200/players**). You should see a list of Barcelona players, and if you click on any name the app you should navigate to **/player/:id**.
+
+
 
 #### Validate the NativeScript project
 
