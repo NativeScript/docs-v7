@@ -7,50 +7,50 @@ environment: angular
 
 # Code Splitting
 
-When building code sharing app, you will share a big part of the code. However, you will encounter situations where you need to provide different code for the web app and for the mobile app. The most common scenario is with Angular Components where the HTML to define the UI for the web and mobile should be different.
+When building a code-sharing app, you will share a big part of your code across all platforms. However, you will encounter situations where you need to provide different code for the web app and for the mobile app. The most common scenario is with Angular components, where you need to define different markup  for your web and mobile apps.
 
-There is a simple a naming convention that allows you to provide two versions of the same file. All you need to do is create two files and add **.tns** before file extension to one of them, i.e.
+There is a simple naming convention that allows you to provide two versions of the same file. All you need to do is create two files and add a **.tns** before the file extension to one of them, i.e.
 
- * **name.component.html** - web specific file
- * **name.component.tns.html** - NativeScript specific file
+ * **name.component.html** - web-specific file
+ * **name.component.tns.html** - NativeScript-specific file
 
-The file with the **.tns** part, is designated as a NativeScript specific file, while the file without **.tns** is designated to be a web only file.
+The file with the **.tns** part, is designated as a NativeScript-specific file, while the file without **.tns** is designated to be a web-only file.
 
-> You can use the naming convention with any file extension:
+> **TIP**: You can use the naming convention with any file extension:
 > 
  * **file.tns.ts**
  * **file.tns.html**
  * **file.tns.css**
  * **file.tns.scss**
 
-### Web build
+## Web build
 
 When you run **ng serve**, no **.tns** files will be bundled. 
 
 Or in different words:
-> **.tns** files will get excluded from the web build
+> **.tns** files are excluded from web builds.
 
-### NativeScript build
+## NativeScript build
 
-When you run **tns run [ios/android] --bundle** all **.tns** files will be bundled instead of the web files.
+When you run **tns run [ios|android] --bundle**, all **.tns** files will be bundled instead of the web files.
 
 Or in different words:
-> **.tns** files will replace the web files in the NativeScript build
+> **.tns** files replace the web files in the NativeScript builds.
 
 ## iOS, Android, web files
 
-While **.tns** is used for NativeScript specific files, you can also create **Android** and **iOS** specific files. This is again done with a naming convention where **.android** is used for Android files and **ios** is used for iOS files.
+While **.tns** is used for NativeScript-specific files, you can also create **Android**- and **iOS**-specific files. This is again done with a naming convention where **.android** is used for Android files and **ios** is used for iOS files.
 
- * **file.ts** - **web** specific file
- * **file.android.ts** - **android** specific file
- * **file.ios.ts** - **iOS** specific file
+ * **file.ts** - **web**-specific file
+ * **file.android.ts** - **android**-specific file
+ * **file.ios.ts** - **iOS**-specific file
 
 
 ## Angular Components
 
-It is important to understand code splitting in the context of an Angular Component.
+It’s important to understand code splitting in the context of an Angular Component.
 
-The most common scenario would be to have a component with the following file structure:
+The most common scenario is a component with the following file structure:
 
  * **name.component.ts** - web + NativeScript shared file 
  * **name.component.html** - web UI file
@@ -76,13 +76,15 @@ This is because all **.tns** files are either ignored by the **Web Build** or th
 
 ## Ng Modules
 
-Code splitting comes useful when working with NgModules, as often we need to import web or NativeScript specific modules. 
+Code splitting is useful when working with NgModules, as often you need to import web- or NativeScript-specific modules. 
 
 ### HttpClient
 
+For example, when you want to use **HttpClient**, in a web project you need to import **HttpClientModule**, while in a NativeScript project you need to import **NativeScriptHttpClientModule**.
+
 ![module-splitting](./img/ngmodule-http.png?raw=true)
 
-For example when you want to use **HttpClient**, in a web project you need to import **HttpClientModule**, while in a NativeScript project you need to import **NativeScriptHttpClientModule**. To achieve that just create two files:
+ To achieve that create two files:
 
 **my.module.ts**
 
@@ -112,11 +114,11 @@ export class MyModule { }
 
 ### UI libraries
 
-Another example could be around using additional UI libraries. You could easily add **Kendo UI** and/or **Angular Material** to the web version of the NgModule, and separately you could add **NativeScript UI Pro** to the NativeScript version of the NgModule.
+Another example could be around using additional UI libraries. You could easily add **Kendo UI** and/or **Angular Material** to the web version of a NgModule, and separately, you could add **NativeScript UI Pro** to the NativeScript version of a NgModule.
 
 ## Partial differences
 
-Sometimes, you will be faced with situations where your component has multiple methods, of which one would require a platform specific piece of code. 
+Sometimes, you will be faced with situations where your component has multiple methods, of which one would require a platform-specific piece of code. 
 
 For example, you might need to add some code to grab an instance of **RadSideDrawer** and then show it or hide it.
 
@@ -137,15 +139,15 @@ export class NameComponent {
 }
 ```
 
-This code would make your web build to fail.
+This code would make your web build fail.
 
 ### Split components
 
-One solution would be to have two versions of the same file (**name.component.ts** and **name.component.tns.ts**). With this approach you could easily add the platform specific code to each file. However, this introduces unnecessary code duplication, which would make maintenance time consuming.
+One solution would be to have two versions of the same file (**name.component.ts** and **name.component.tns.ts**). With this approach you could easily add the platform-specific code to each file. However, this introduces unnecessary code duplication, which would make maintenance time consuming.
 
 ### Helper file
 
-A better solution is to create a helper pair of files, each with the platform specific code.
+A better solution is to create a helper pair of files, each with the platform-specific code.
 
 **drawer-helper.ts**
 

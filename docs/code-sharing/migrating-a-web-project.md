@@ -7,7 +7,7 @@ environment: angular
 
 # Migrating existing Angular Web projects
 
-It is possible to migrate an existing Angular Web project to a code sharing structure.
+It is possible to migrate an existing Angular Web project to a code-sharing structure.
 This can be done with Angular CLI's **ng add** command and NativeScript Schematics.
 
 
@@ -15,7 +15,7 @@ This can be done with Angular CLI's **ng add** command and NativeScript Schemati
 
 You need to use the latest version of **NativeScript CLI**
 
-Your project node modules need to be using Angular v6 or newer.
+Your project’s node modules need to be using Angular v6 or newer.
 
 ### NativeScript CLI
 
@@ -23,9 +23,9 @@ Follow the [installation instructions](../start/quick-setup) to install **Native
 
 ### Angular CLI
 
-**@angular/cli** should be at **6.1.0** or newer.
+Your **@angular/cli** install should be at **6.1.0** or newer.
 
-To update Angular CLI in your project, you can run:
+To update the Angular CLI version your project uses, you can run:
 
 ```bash
 npm i --save-dev @angular/cli
@@ -35,40 +35,40 @@ npm i --save-dev @angular/cli
 
 All remaining Angular Packages should be at **6.0.0** or newer.
 
-For an easy update instructions, use the interactive [Angular Update Guide](https://update.angular.io/).
+For easy update instructions, use the interactive [Angular Update Guide](https://update.angular.io/).
 
 ## Migrating Project Structure
 
-The first step is to convert the web project to a code sharing structure and add NativeScript to it. This is done with the following command:
+The first step is to convert your web project to a code-sharing structure is to add NativeScript. You can do this with the following command:
 
 ```bash
 ng add @nativescript/schematics
 ```
 
-This command installs **@nativescript/schematics**, and then adds a NativeScript specific copy of:
+This command installs **@nativescript/schematics**, and then adds a NativeScript-specific copy of:
 
-* the Main file - **main.ns.ts** file, which bootstraps the NativeScript Entry Module,
-* the Entry Module file - by default this is **app.module.tns.ts** (this is based on the name of the module provided to **bootstrapModule** in **main.ts**),
-* Entry Component file - by default this is **app.component.ts** (this is based on the name of the component provided to **bootstrap** in the web entry module**
-* the App Routing file - **app-routing.module.ts**, which brings in **NativeScriptRouterModule**. It also provides a path to the sample module (**BarcelonaModule**)
+* The Main file - **main.ns.ts**, which bootstraps the NativeScript Entry Module,
+* the Entry Module file - by default this is **app.module.tns.ts**, which is based on the name of the module provided to **bootstrapModule** in your **main.ts**,
+* Entry Component file - by default this is **app.component.ts**, which is based on the name of the component provided to **bootstrap** in the web entry module,
+* and the App Routing file - **app-routing.module.ts**, which brings in **NativeScriptRouterModule**. It also provides a path to the sample module (**BarcelonaModule**).
 
-Additionally, the **ng add** command adds **BarcelonaModule**, which is a sample module to show how a code sharing module should be constructed. It is also used for validation that the conversion of the project was successful.
+Additionally, the **ng add** command adds **BarcelonaModule**, which is a sample module to show how a code-sharing module should be constructed. It is also used for validation that the conversion of the project was successful.
 
 ### Validating the project migration
 
-The easiest way to validate that the migration worked is to build and run the apps.
+The easiest way to validate that the migration worked is to build and run your apps.
 
 #### Validate the web project
 
-Call **ng serve -o** and you should get the same app as before running **ng add**.
+Run **ng serve -o** from your terminal or command prompt, and you should get the same app as before running **ng add**.
 
-Next - assuming your app is configured with app navigation - add **BarcelonaModule** to your entry module (default: **app.module.ts**) and in browser navigate to **/players** (i.e. **http://localhost:4200/players**). You should see a list of Barcelona FC players, and if you click on any name the app should navigate to **/player/:id**.
+Next, assuming your app is configured with app navigation, add **BarcelonaModule** to your entry module (default: **app.module.ts**), and in your browser navigate to **/players** (i.e. **http://localhost:4200/players**). You should see a list of Barcelona players, and if you click on any name the app you should navigate to **/player/:id**.
 
 #### Validate the NativeScript project
 
-To validate the mobile setup you need to run the NativeScript build.
+To validate the mobile setup you need to run a NativeScript build.
 
-To build a NativeScript app, run the following command:
+To build a NativeScript app, run one of the following commands, depending on which platform you want to run your app on.
 
 ```iOS
 tns run ios --bundle
@@ -80,7 +80,7 @@ tns run android --bundle
 
 ## Migrating Project content
 
-The **ng add @nativescript/schematics** command converts the project to a code sharing structure, but it doesn't convert your app contents.
+The **ng add @nativescript/schematics** command converts the project to a code-sharing structure, but it doesn't convert your app contents.
 
 The next step from here is to migrate your:
 
@@ -104,7 +104,7 @@ At this stage you will work with two separate navigation configurations (**route
 * **app-routing.module.ts** - for web (this is the usual file name for it, but it might be different in your project),
 * **app-routing.module.tns.ts** - for mobile
 
-This is especially useful, while you migrate all web components into code sharing structure. Once, this is complete, you could switch to a singe **routes** configuration for both web and mobile.
+This is especially useful, while you migrate all web components into a code-sharing structure. Once this is complete, you could switch to a singe **routes** configuration for both web and mobile.
 
 Also, if you expect your web app to have a different set of pages to your mobile app, then you could keep the **routes** separate. For example, your web app could have an admin screen, which might not be required in the mobile app. In this case it makes sense to have two sets of navigation configurations.
 
@@ -153,12 +153,12 @@ export class AppRoutingModule { }
 
 ### Migrating Components
 
-The next task is to migrate individual components into a code sharing structure.
+Your next task is to migrate your individual components into a code-sharing structure.
 
 Often the migration step will consist of two steps:
 
 * add the component to a **.tns** version of the parent module
-* add **name.component.tns.html** file and provide NativeScript specific UI code
+* create a **name.component.tns.html** file, and provide NativeScript specific UI code
 
 This task can be helped with the [component migration schematic](./migrating-a-web-project#schematic-migrate-component): 
 
@@ -166,16 +166,16 @@ This task can be helped with the [component migration schematic](./migrating-a-w
 ng g migrate-component --name=component-name
 ```
 
-In the case where the component class contains web specific files, you will need to extract it into [helper files - read more here - link to code splitting]() and keep only shared code.
+In the case where the component class contains web-specific files, you will need to extract it into [helper files - read more here - link to code splitting]() and keep only shared code.
 
 ### Schematic: migrate-component
 
 The **migrate-component** schematic looks up the location of the **ComponentNameComponent** in **app.module.ts** and then performs the component migration steps, which involve:
 
 * adding the component to **app.module.tns.ts** and
-* create **component-name.component.tns.html** file.
+* creating a **component-name.component.tns.html** file.
 
-You can execute it using **Angular CLI**:
+You can execute it using the **Angular CLI**:
 
 ```bash
 ng g migrate-component --name=component-name
@@ -214,7 +214,7 @@ src
 
 #### Components not belonging to **AppModule**:
 
-It is important to understand that **migrate-component** uses the parent **NgModule** to locate the migrate component, so when we want to migrate a component that doesn't belong to **AppModule**, we need to provide the parent **NgModule**.
+It is important to understand that **migrate-component** uses the parent **NgModule** to locate the migrate component, so when you want to migrate a component that doesn't belong to **AppModule**, you need to provide the parent **NgModule**.
 
 ```bash
 ng g migrate-component --name=component-name --module=module-name
@@ -223,7 +223,7 @@ ng g migrate-component --name=component-name --module=module-name
 This schematic will find the location of the **ComponentNameComponent** in **module-name/module-name.module.ts** and then perform the component migration steps, which involves:
 
 * adding the component to **module-name/module-name.module.tns.ts** and
-* creating **module-name/component-name.component.tns.html ** file.
+* creating a **module-name/component-name.component.tns.html ** file.
 
 For example, to migrate:
 
@@ -260,7 +260,7 @@ src
 
 #### Modules with non-standard file names
 
-In the cases of modules with non-standard file names. You can provide a full path to the module by using the **--module-path** parameter.
+In the cases of modules with non-standard file names, you can provide a full path to the module by using the **--module-path** parameter.
 
 For example, to migrate:
 
@@ -317,11 +317,11 @@ You should also migrate your **NgModules** into code sharing modules.
 
 Often the migration step will consist of these steps:
 
-* add the NativeScript version of the **@NgModule**- **module-name.component.tns.ts**
-* copy the providers from the web **@NgModule**
-* copy the imports from the web **@NgModule** - use NativeScript versions for those that are web specific (i.e. use **NativeScriptHttpClientModule** instead of **HttpClientModule**)
-convert all of modules' components, by using migrate-component schematic
-* migrate declared components and add them to **declarations**
+* Add the NativeScript version of the **@NgModule**—**module-name.component.tns.ts**,
+* copy the providers from your web **@NgModule**,
+* copy the imports from your web **@NgModule** - use NativeScript versions for those that are web-specific (e.g. use **NativeScriptHttpClientModule** instead of **HttpClientModule**)
+* convert all of modules' components, by using migrate-component schematic,
+* and migrate declared components and add them to **declarations**
 
 This task can be helped with the [module migration schematic](./migrating-a-web-project#schematic-migrate-module): 
 
