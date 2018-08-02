@@ -116,6 +116,46 @@ export class MyModule { }
 
 Another example could be around using additional UI libraries. You could easily add **Kendo UI** and/or **Angular Material** to the web version of a NgModule, and separately, you could add **NativeScript UI Pro** to the NativeScript version of a NgModule.
 
+### Services
+
+You can also, use **NgModule splitting** to provide two different implementations of the same service.
+
+For example, you could have a **Logger** service, as the base class, and then two platform-specific versions of the **Logger** service: **WebLogger** and **NativeScriptLogger**.
+
+Then in each module you could **provide:** Logger , and **useClass:** platform-specific Logger, like this:
+
+**my.module.ts**
+
+```TypeScript
+@NgModule({
+  providers:[
+    {
+      provide: Logger,
+      useClass: WebLogger,
+    }  
+  ]
+})
+export class MyModule { }
+```
+
+**my.module.tns.ts**
+
+```TypeScript
+@NgModule({
+  providers:[
+    {
+      provide: Logger,
+      useClass: NativeScriptLogger,
+    }  
+  ]
+})
+export class MyModule { }
+```
+
+> **Note** that this is only necessary if the class names of your services are different.
+> 
+> You can achieve the same by using the naming convention, i.e. **my.service.ts** and **my.service.tns.ts**.
+
 ## Partial differences
 
 Sometimes, you will be faced with situations where your component has multiple methods, of which one would require a platform-specific piece of code. 
@@ -200,3 +240,70 @@ export class NameComponent {
   }
 }
 ```
+
+### Dependency Injection
+
+`The Angular way` would be to split the web and mobile functionality into two services:
+
+**drawer.service.ts**
+
+```TypeScript
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class DrawerService {
+  
+  public show() {
+    // do nothing or add web implementation here  
+  }
+
+  public hide() {
+    // do nothing or add web implementation here
+  }
+}
+```
+
+**drawer.service.tns.ts**
+
+```TypeScript
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class DrawerService {
+  
+  public show() {
+    const sideDrawer = <RadSideDrawer>getRootView();
+    drawer.showDrawer();
+  }
+
+  public hide() {
+    const sideDrawer = <RadSideDrawer>getRootView();
+    drawer.closeDrawer();
+  }
+}
+```
+
+And then in the component, add the **service** to the **providers**, and with the use of the **Dependency Injection** use the service to execute the platform-specific functionality:
+
+**name.component.ts**
+
+```TypeScript
+import { DrawerService } from "./drawer-service";
+@Component({
+  providers: [DrawerService]
+})
+export class NameComponent {
+  // a lot of shared code here
+  
+  constructor(drawerService: DrawerService) {}
+  
+  public showMenu() {
+    drawerService.show();
+  }
+
+  public hideMenu() {
+    drawerService.hide();
+  }
+}
+```
+
