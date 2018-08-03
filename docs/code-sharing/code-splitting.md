@@ -112,6 +112,25 @@ import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
 export class MyModule { }
 ```
 
+And then you will need only one version of the **http-service**, which will use the provided **HttpClient**:
+
+**my-http.service.ts**
+
+```TypeScript
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable()
+export class MyHttpService {
+
+  constructor(private http: HttpClient) { }
+  
+  public getData() {
+    return this.http.get('get-data-request');
+  }
+}
+```
+
 ### UI libraries
 
 Another example could be around using additional UI libraries. You could easily add **Kendo UI** and/or **Angular Material** to the web version of a NgModule, and separately, you could add **NativeScript UI Pro** to the NativeScript version of a NgModule.
