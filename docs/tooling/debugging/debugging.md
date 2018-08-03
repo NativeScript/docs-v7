@@ -15,9 +15,9 @@ You can debug apps developed with the NativeScript framework from both the Nativ
 
 The `debug` command builds and deploys a new package on a connected device or emulator. By default, it also starts to track for changes the `app` folder,  meaning that it will automatically livesync changes in code as soon as they are saved. In order to apply the changes, the CLI will automatically restart the application after each sync.
 
-> **Note** Changes inside `App_Resources` folder (e.g. `AndroidManifest.xml`, `Info.plist` or any of the resources folders) trigger a rebuild after which livesyncing is resumed.
+> **Note** Changes inside `App_Resources` folder (e.g. `AndroidManifest.xml`, `Info.plist` or any of the resources folders) trigger a rebuild after which live syncing is resumed.
 
-For security reasons the debugging agent **can't be started automatically** from the command-line. That's why NativeScript CLI generates a URL which is printed on the screen instead. **You need to manually copy it in Google Chrome's address bar to start debugging.**
+For security reasons, the debugging agent **can't be started automatically** from the command-line. That's why NativeScript CLI generates a URL which is printed on the screen instead. **You need to manually copy it in Google Chrome's address bar to start debugging.**
 
 To start the debugger for Android, run the following command:
 
@@ -31,6 +31,9 @@ To start the debugger for iOS, run the following command:
 tns debug ios
 ```
 
+> **Note:** With `nativescript-dev-webpack@0.15.0` and above, you can debug your Webpack bundled application by using the `--bundle` flag (e.g. `tns debug android --bundle`). 
+
+
 ## Debugger Options
 
 You can customize the `tns debug` command using any of the following options:
@@ -40,11 +43,11 @@ You can customize the `tns debug` command using any of the following options:
 * `--emulator` - Specifies that you want to debug the app in an emulator.
 * `--timeout` - Sets the number of seconds that the NativeScript CLI will wait for the debugger to boot. If not set, the default timeout is 90 seconds.
 * `--no-watch` - If set, changes in your code will not be livesynced.
-* `--clean` - If set, forces rebuilding the native application.
+* `--clean` - If set forces rebuilding the native application.
+* `--bundle` - Provides debugging functionality for Webpack bundled applications.
 
 ### iOS specific options
-* `--inspector` - flag to use the embedded Webkit Web Inspector debugger (default is Chrome DevTools)
-* `--chrome` - Deprecated (now default). Allows debugging in Chrome Developer Tools. If set, Safari Web Inspector is not started and debugging is attached to Chrome Developer Tools.
+* `--inspector` - Flag to use the embedded Webkit Web Inspector debugger (default is Chrome DevTools).
 
 For more information about Android debugging, run any of the following commands:
 
@@ -68,4 +71,4 @@ To debug iOS applications using the WebKit Web Inspector debugger use the `--ins
 
 ## Known Issues and Limitations
 
-- **[iOS]** The Chrome DevTools Inspector url is different after each application restart while running a debug session. You have to manually update it in the address bar each time.
+- **[iOS]** The Chrome DevTools Inspector URL is different after each application restart while running a debug session. You have to manually update it in the address bar each time.

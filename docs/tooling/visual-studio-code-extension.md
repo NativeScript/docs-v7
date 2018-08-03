@@ -28,11 +28,11 @@ Click the debugging icon ![VS Code debug panel](../img/visual-studio-code-extens
 
 ### Launch an application with the debugger
 
-Choose one of the launch configurations (e.g., `Launch on iOS`) and press the `Start Debugging` button next to the menu. This will trigger a NativeScript CLI command which will build, deploy and run your app in an iOS device or emulator and attach the Visual Studio Code debugger. If you want the execution to stop on the first JavaScript/TypeScript statement set the `stopOnEntry` flag to `true` in  your `launch.json` configuration.
+Choose one of the launch configurations (e.g., `Launch on iOS`) and press the `Start Debugging` button next to the menu. This will trigger a NativeScript CLI command which will build, deploy and run your app in an iOS device or emulator and attach the Visual Studio Code debugger. If you want the execution to stop on the first JavaScript/TypeScript statement,functionallity set the `stopOnEntry` flag to `true` in  your `launch.json` configuration.
 
 Once the debugger is attached you can inspect scope variables, set breakpoints, watch expressions, execute code while the app is paused on a breakpoint etc. You can find more information about the debugging support in Visual Studio Code in the [VS Code Debugging Guide](https://code.visualstudio.com/docs/editor/debugging).
 
-What's more awesome is that the default launch configurations take advantage of the NativeScript CLI watch functionallity. Therefore, while the VS Code debugger is attached, every change to the app's source will trigger a livesync (after saving the altered file) which will update and restart the target application while the VS Code debugger is automatically reattached to the new app instance preserving all breakpoints and watched expressions. The watching feature can be disabled by setting the `watch` flag to `false` in your `launch.json` configurations.
+What's more awesome is that the default launch configurations take advantage of the NativeScrfunctionality. Therefore, while the VS Code debugger is attached, every change to the app's source will trigger a livesync (after saving the altered file) which will update and restart the target application while the VS Code debugger is automatically reattached to the new app instance preserving all breakpoints and watched expressions. The watching feature can be disabled by setting the `watch` flag to `false` in your `launch.json` configurations.
 
 ### Attach the debugger to an already running app
 
@@ -44,17 +44,46 @@ If you are writing your app in TypeScript, you have fully functional debugging s
 
 > Using the [TypeScript plugin for NativeScript](https://github.com/NativeScript/nativescript-dev-typescript) is strongly recommended instead of manually setting up the TypeScript compiler options and build tasks. The plugin handles the creation of all the configuration settings and guarantees smooth integration with Visual Studio Code.
 
+### Debug Webpack
+
+When using Webpack to bundle your application, you can debug your app with VSCode and `nativescript-dev-webpack@0.15.0` and above. To enable debugging for Webpack bundled apps, you need the following setup:
+
+ - Update the VSCode extension (https://www.nativescript.org/nativescript-for-visual-studio-code) to the latest version.
+ - Make sure the version of `nativescript-dev-webpack` is **0.15.0 or above**.
+ - Run `npm i nativescript-dev-webpack@latest --save-dev` and if needed create/update the `webpack.config.js` (upgrade details [here](../releases/upgrade-instructions.md)). 
+ - Open the `launch.json` file in your VSCode and add the `--bundle` flag to the `tnsArgs` key for the desired debug option.
+
+Example configuration with `"tnsArgs":["--bundle"]`:
+```JSON
+{
+    "name": "Launch on Android",
+    "type": "nativescript",
+    "request": "launch",
+    "platform": "android",
+    "appRoot": "${workspaceRoot}",
+    "sourceMaps": true,
+    "watch": true,
+    "sourceMapPathOverrides": {
+        "webpack:///*": "${workspaceRoot}/app/*"
+    },
+    "tnsArgs":["--bundle"]
+},
+```
+Note that the `nativescript-dev-webpack` will autogenerate the `sourceMapPathOverrides` key.
+
+ - Start debugging with VSCode.
+
 ### Supply additional arguments to the debug command
 
 Under the hood, starting a particular debug configuration executes the `tns debug` command with various arguments. You can append additional arguments by supplying them in the `tnsArgs` property of a debug configuration definition in `launch.json`. For example, if you add `"tnsArgs": "--log=trace"` in the `Launch on iOS` configuration, in the background VS Code will execute the `tns debug ios --no-client --log=trace` command, which will give you more verbose information in the Debug Console.
 
 ### Turn on diagnostic logging
 
-If the `diagnosticLogging` flag for a particular debug configuration in `launch.json` file is set to `true` (its default value is `false`), diagnostic messages will be logged on the debugger console after attaching the debugger to the NativeScript application. This is useful for rough debugging of the extension itself, because all sent/received messages that are part of the communication between the frontend and the backend are logged.
+If the `diagnosticLogging` flag for a particular debug configuration in `launch.json` file is set to `true` (its default value is `false`), diagnostic messages will be logged on the debugger console after attaching the debugger to the NativeScript application. This is useful for rough debugging of the extension itself because all sent/received messages that are part of the communication between the frontend and the backend are logged.
 
 ## Use NativeScript-specific commands
 
-Type `nativescript` in the Command Palette and you will see all NativeScript-specific commands. Currently there are only two of them but the list will grow in the future.
+Type `nativescript` in the Command Palette, and you will see all NativeScript-specific commands. Currently,  there are only two of the, but the list will grow in the future.
 
 ![NativeScript commands](../img/visual-studio-code-extension/nativescript-commands.png)
 
@@ -66,10 +95,9 @@ The extension depends on a globally installed NativeScript CLI. It will show an 
 
 ![NativeScript not found](../img/visual-studio-code-extension/nativescript-not-found-error-message.png)
 
-> The extension requires a specific NativeScript CLI version and if you have another version installed, you will see a warning message. The extension is likely to work with the unsupported version but it is recommended to update the NativeScript CLI or the VS Code extension.
+> The extension requires a specific NativeScript CLI version and if you have another version installed, you will see a warning message. The extension is likely to work with the unsupported version, but it is recommended to update the NativeScript CLI or the VS Code extension.
 
 ## Known issues
  * [The variables pane on Android doesn't work](https://github.com/NativeScript/nativescript-vscode-extension/issues/21).
- * [In order to be able to debug, the opened workspace must be the app root folder.](https://github.com/NativeScript/nativescript-vscode-extension/issues/104)
-
+ * [To be able to debug, the opened workspace must be the app root folder.](https://github.com/NativeScript/nativescript-vscode-extension/issues/104)
 
