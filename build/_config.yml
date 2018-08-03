@@ -86,6 +86,9 @@ navigation:
         position: 30
         title: "Framework modules"
         expanded: false
+    code-sharing:
+        position: 45
+        title: "CODE SHARING"
     tooling:
         position: 50
         title: "TOOLING"
