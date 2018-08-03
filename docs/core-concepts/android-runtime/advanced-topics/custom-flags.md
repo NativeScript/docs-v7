@@ -71,7 +71,7 @@ When you are using a release build there will be no logs to the console, so if y
 
 ## Discarding JavaScript exceptions when called from native
 
-By default if an exception is thrown when executing JavaScript code which is called from native api it will crash the application showing the stack trace. If you want the exception stack trace to be logged, but application not to crash you can enable the `discardUncaughtJsExceptions` flag:
+By default, if an exception is thrown when executing JavaScript code which is called from native API it will crash the application showing the stack trace. If you want the exception stack trace to be logged, but application not to crash you can enable the `discardUncaughtJsExceptions` flag:
 
 ```JSON
 {
