@@ -86,6 +86,9 @@ navigation:
         position: 30
         title: "Framework modules"
         expanded: false
+    code-sharing:
+        position: 45
+        title: "CODE SHARING"
     tooling:
         position: 50
         title: "TOOLING"
@@ -108,9 +111,6 @@ navigation:
     plugins:
         position: 70
         title: "PLUGINS DEVELOPMENT"
-    code-sharing:
-        position: 75
-        title: "CODE SHARING"
     releases:
         position: 80
         title: "RELEASES"
