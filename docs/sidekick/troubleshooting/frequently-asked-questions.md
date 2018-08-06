@@ -8,17 +8,22 @@ slug: frequently-asked-questions
 
 # Frequently Asked Questions
 
-## Additional components are required to run {{ site.ns-sk }}
+## {{ site.ns-sk }} can't be opened because the identity of the developer cannot be confirmed 
 
-After updating the {{ site.ns-sk }} client, you might see the following error message on launch:
+After installing the {{ site.ns-sk }} client, you might see the following error message on launch:
 
-![](../img/troubleshooting/additional-components-required.png)
+![](../img/troubleshooting/cannot-open-sidekick.png)
 
-To resolve this issue, you need to update the {{ site.ns-cli }} to the required (in most cases, the latest available) version. To do this, you should open a command prompt (on Windows) or a terminal (on macOS and Linux) and run the following command:
+To resolve this issue, you need to follow the steps outlined below:
 
-<pre class="add-copy-button"><code class="language-terminal">npm install -g nativescript</code></pre>
+1. Click on the Apple icon in the left corner of your screen and select **System Preferences**.
+2. Select **Security & Privacy**. <br/>
+![](../img/troubleshooting/system-preferences.png)
 
-After the installation process is complete, you will no longer see the error mentioned above when launching {{ site.sk }}.
+1. On the bottom of the Security & Privacy dialog, you should be seeing the last app that was blocked from opening. Click on **Open Anyway**.<br/>
+![](../img/troubleshooting/security-and-privacy.png)
+
+> You may need to click on the **lock icon** in the lower left corner of the dialog and provide your username and password before you are able to edit settings or click buttons.
 
 ## CertificateStoreUtilities has stopped working
 
