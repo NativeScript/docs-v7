@@ -44,7 +44,7 @@ You can customize the `tns debug` command using any of the following options:
 * `--timeout` - Sets the number of seconds that the NativeScript CLI will wait for the debugger to boot. If not set, the default timeout is 90 seconds.
 * `--no-watch` - If set, changes in your code will not be livesynced.
 * `--clean` - If set forces rebuilding the native application.
-* `--bundle` - Provides debugging functionality for Webpack bundled applications.
+* `--bundle` - Builds the app with Webpack before starting the debugger.
 
 ### iOS specific options
 * `--inspector` - Flag to use the embedded Webkit Web Inspector debugger (default is Chrome DevTools).

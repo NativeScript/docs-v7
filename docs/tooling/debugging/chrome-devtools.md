@@ -35,11 +35,9 @@ To debug on iOS execute the following command:
 tns debug ios
 ```
 
-For security reasons,genearated the debugging agent **can't be started automatically** from the command-line. That's why NativeScript CLI **generates a URL** which is printed on the screen instead. 
+For security reasons, the generated debugging agent **can't be started automatically** from the command-line. That's why NativeScript CLI **generates a URL** which is printed on the screen instead. 
 
-Examplgenerated URL
 ```Shell
-# NativeScript Debugger started #
 To start debugging, open the following URL in Chrome:
 chrome-devtools://devtools/bundled/inspector.html?experiments=true&ws=localhost:40000
 ```

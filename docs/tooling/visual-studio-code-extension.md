@@ -28,7 +28,7 @@ Click the debugging icon ![VS Code debug panel](../img/visual-studio-code-extens
 
 ### Launch an application with the debugger
 
-Choose one of the launch configurations (e.g., `Launch on iOS`) and press the `Start Debugging` button next to the menu. This will trigger a NativeScript CLI command which will build, deploy and run your app in an iOS device or emulator and attach the Visual Studio Code debugger. If you want the execution to stop on the first JavaScript/TypeScript statement,functionallity set the `stopOnEntry` flag to `true` in  your `launch.json` configuration.
+Choose one of the launch configurations (e.g., `Launch on iOS`) and press the `Start Debugging` button next to the menu. This will trigger a NativeScript CLI command which will build, deploy and run your app in an iOS device or emulator and attach the Visual Studio Code debugger. If you want the execution to stop on the first JavaScript/TypeScript statement, functionality set the `stopOnEntry` flag to `true` in  your `launch.json` configuration.
 
 Once the debugger is attached you can inspect scope variables, set breakpoints, watch expressions, execute code while the app is paused on a breakpoint etc. You can find more information about the debugging support in Visual Studio Code in the [VS Code Debugging Guide](https://code.visualstudio.com/docs/editor/debugging).
 
@@ -69,7 +69,7 @@ Example configuration with `"tnsArgs":["--bundle"]`:
     "tnsArgs":["--bundle"]
 },
 ```
-Note that the `nativescript-dev-webpack` will autogenerate the `sourceMapPathOverrides` key.
+Note that the VSCode will autogenerate the `sourceMapPathOverrides` key.
 
  - Start debugging with VSCode.
 
