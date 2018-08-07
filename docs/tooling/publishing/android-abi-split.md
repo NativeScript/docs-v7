@@ -49,7 +49,6 @@ if (env.snapshot) {
         projectRoot: __dirname,
         webpackConfig: config,
         targetArchs: ["arm", "arm64", "ia32"],
-        tnsJavaClassesOptions: { packages: ["tns-core-modules" ] },
         useLibs: true,
         androidNdkPath: "/Library/android-sdk-macosx/ndk-bundle"
     }));
