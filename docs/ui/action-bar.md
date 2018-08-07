@@ -9,28 +9,7 @@ previous_url: /cookbook/ui/action-bar
 
 # Action Bar
 
-The article describes how to use the ActionBar component in a non-Angular NativeScript application as well as some iOS and Android specifics. All described scenarios are demonstrated with the appropriate code snippet.
-
-* [Defining The ActionBar](#defining-the-actionbar)
-* [Title](#title)
-  * [Setting the Title Text](#setting-the-title-text)
-  * [Using a Custom Title View](#using-a-custom-title-view)
-  * [Using Custom View in Action Items](#using-custom-view-in-action-items)
-  * [Setting the App Icon for Android](#setting-the-app-icon-for-android)
-* [Navigation Button](#navigation-button)
-  * [iOS Specifics](#ios-specifics)
-  * [Android Specifics](#android-specifics)
-* [Action Items](#action-items)
-  * [Positioning](#positioning)
-  * [Setting Icons](#setting-icons)
-* [How To](#how-to)
-  * [Showing or Hiding the ActionBar](#showing-or-hiding-the-actionbar)
-  * [Hiding Action Items](#hiding-action-items)
-  * [Styling](#styling)
-  * [Creating SideDrawer Button](#creating-sidedrawer-button)
-{% angular %}  * [Adding Actions To Existing ActionBar](#adding-actions-to-existing-actionbar){% endangular %}
-
-The `ActionBar` is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
+The article describes how to use the ActionBar component in a non-Angular NativeScript application as well as some iOS and Android specifics. All described scenarios are demonstrated with the appropriate code snippet. The `ActionBar` is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
 
 ## Defining The ActionBar
 {% nativescript %}
@@ -41,7 +20,7 @@ Here is how to define the ActionBar inside your page:
       <ActionBar title="My ActionBar"/>
   </Page.actionBar>
 
-  <!-- page content ... -->
+  <!-- Page content ... -->
 </Page>
 ```
 We will include only the `ActionBar` tag in the rest of the code-snippets in this article. 
@@ -53,11 +32,7 @@ To define the ActionBar include the `ActionBar` tag inside a component template:
 ```
 If more than one component defines an `ActionBar` - the last definition will be respected. You can also [add items to the current ActionBar](#adding-actions-to-existing-actionbar).
 
->Note: To show the ActionBar on the initial page of your application use the `startPageActionBarHidden: false` app option when bootstrapping the application.
-
-```TypeScript
-platformNativeScriptDynamic({startPageActionBarHidden: false}).bootstrapModule(AppModule);
-```
+>Note: To hide the ActionBar on the initial page of your Angular application use the `actionBarHidden` boolean property while accesing the current `Page` instance.
 
 {% endangular %}
 
@@ -337,8 +312,43 @@ Values for `ios.systemIcon` are numbers from the [`UIBarButtonSystemItem`](https
 ### Showing or Hiding the ActionBar
 
 You can explicitly control the visibility of the `ActionBar` by setting the `actionBarHidden` property of the `Page`.
+{% nativescript %}
+
+Hidng the `ActionBar` via XML.
+```XML
+<Page actionBarHidden="true" loaded="onPageLoaded">
+</Page>
+```
+Hidng the `ActionBar` via code-behind (TypeScript).
+```TS
+export function onPageLoaded(args: EventData) {
+    const page = <Page>args.object;
+    page.actionBarHidden = true;
+}
+
+```
+{% endnativescript %}
 {% angular %}
-You can inject a reference to the current `Page` in the constructor of your component using the Angular DI.
+You can inject a reference to the current `Page` in the constructor of your component using the Angular Dependency Injection (DI).
+```TypeScript
+import { Component } from "@angular/core";
+import { isAndroid } from "tns-core-modules/platform";
+import { Page } from "tns-core-modules/ui/page";
+
+@Component({
+    selector: "ns-items",
+    moduleId: module.id,
+    templateUrl: "./items.component.html",
+})
+export class ItemsComponent {
+
+    constructor(private page: Page) {
+        if (isAndroid) {
+            this.page.actionBarHidden = true;
+        }
+    }
+}
+```
 {% endangular %}
 
 In **Android**, the application bar is visible by default and shows the name of the application as title. The navigation button is visible only when it is explicitly defined in the application.
