@@ -29,7 +29,7 @@ Application options in NativeScript are configured at the time the application b
 * `cssFile`: overrides the path to the file containing global CSS rules that are applied to all visual objects in the application. The default path is `app.css`.
 * `createFrameOnBootstrap`: In cases where your application **don't use `page-router-outlet`** , you will not get the default `Page` and `Frame`, which means you will not be able to inject them in you components or show the `ActionBar`. There is special `createFrameOnBootstrap` boolean option you can pass on bootstrap to make things as before 4.0.0:
 
-```typescript
+```TS
 platformNativeScriptDynamic({ createFrameOnBootstrap: true });
 ```
 
