@@ -143,7 +143,7 @@ The core modules ship with a default `android.app.Activity` implementation, whic
     import {setActivityCallbacks, AndroidActivityCallbacks} from "ui/frame";
 
     @JavaProxy("org.myApp.MainActivity")
-    class Activity extends android.support.v7.app.AppCompatActivity {
+    class Activity extends android.app.Activity {
         private _callbacks: AndroidActivityCallbacks;
         
         public onCreate(savedInstanceState: android.os.Bundle): void {
@@ -174,7 +174,7 @@ The core modules ship with a default `android.app.Activity` implementation, whic
             this._callbacks.onBackPressed(this, super.onBackPressed);
         }
 
-        public onRequestPermissionsResult(requestCode: number, permissions: native.Array<String>, grantResults: native.Array<number>): void {
+        public onRequestPermissionsResult(requestCode: number, permissions: Array<string>, grantResults: Array<number>): void {
             this._callbacks.onRequestPermissionsResult(this, requestCode, permissions, grantResults, undefined /*TODO: Enable if needed*/);
         }
 
