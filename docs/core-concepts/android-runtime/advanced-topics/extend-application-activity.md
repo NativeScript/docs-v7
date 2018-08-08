@@ -48,7 +48,7 @@ The following steps are needed to create custom native `android.app.Application`
     // the `JavaProxy` decorator specifies the package and the name for the native *.JAVA file generated. 
     @JavaProxy("org.myApp.Application")
     class Application extends android.app.Application {
-        onCreate(): void {
+        public onCreate(): void {
             super.onCreate();
             
             // At this point modules have already been initialized
@@ -56,7 +56,7 @@ The following steps are needed to create custom native `android.app.Application`
             // Enter custom initialization code here
         }
 
-        protected attachBaseContext(baseContext: android.content.Context) {
+        public attachBaseContext(baseContext: android.content.Context) {
             super.attachBaseContext(baseContext);
 
             // This code enables MultiDex support for the application (if needed)
@@ -143,10 +143,10 @@ The core modules ship with a default `android.app.Activity` implementation, whic
     import {setActivityCallbacks, AndroidActivityCallbacks} from "ui/frame";
 
     @JavaProxy("org.myApp.MainActivity")
-    class Activity extends android.app.Activity {
+    class Activity extends android.support.v7.app.AppCompatActivity {
         private _callbacks: AndroidActivityCallbacks;
         
-        protected onCreate(savedInstanceState: android.os.Bundle): void {
+        public onCreate(savedInstanceState: android.os.Bundle): void {
             if (!this._callbacks) {
                 setActivityCallbacks(this);
             }
@@ -154,19 +154,19 @@ The core modules ship with a default `android.app.Activity` implementation, whic
             this._callbacks.onCreate(this, savedInstanceState, super.onCreate);
         }
 
-        protected onSaveInstanceState(outState: android.os.Bundle): void {
+        public onSaveInstanceState(outState: android.os.Bundle): void {
             this._callbacks.onSaveInstanceState(this, outState, super.onSaveInstanceState);
         }
 
-        protected onStart(): void {
+        public onStart(): void {
             this._callbacks.onStart(this, super.onStart);
         }
 
-        protected onStop(): void {
+        public onStop(): void {
             this._callbacks.onStop(this, super.onStop);
         }
 
-        protected onDestroy(): void {
+        public onDestroy(): void {
             this._callbacks.onDestroy(this, super.onDestroy);
         }
 
@@ -174,11 +174,11 @@ The core modules ship with a default `android.app.Activity` implementation, whic
             this._callbacks.onBackPressed(this, super.onBackPressed);
         }
 
-        public onRequestPermissionsResult(requestCode: number, permissions: Array<String>, grantResults: Array<number>): void {
+        public onRequestPermissionsResult(requestCode: number, permissions: native.Array<String>, grantResults: native.Array<number>): void {
             this._callbacks.onRequestPermissionsResult(this, requestCode, permissions, grantResults, undefined /*TODO: Enable if needed*/);
         }
 
-        protected onActivityResult(requestCode: number, resultCode: number, data: android.content.Intent): void {
+        public onActivityResult(requestCode: number, resultCode: number, data: android.content.Intent): void {
             this._callbacks.onActivityResult(this, requestCode, resultCode, data, super.onActivityResult);
         }
     }
