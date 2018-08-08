@@ -27,7 +27,7 @@ One of our major design goals here is to provide virtually the same interface as
 Application options in NativeScript are configured at the time the application boots. That could be problematic for Angular apps since the usual application start up process is hidden inside the `platformNativeScriptDynamic` black box. To allow for customizations, we introduced an additional `AppOptions` parameter to the platform initialization function that lets you preconfigure certain aspects of your application behavior. At the moment those are:
 
 * `cssFile`: overrides the path to the file containing global CSS rules that are applied to all visual objects in the application. The default path is `app.css`.
-* `createFrameOnBootstrap`: In cases where your application **don't use `page-router-outlet`** , you will not get the default `Page` and `Frame`, which means you will not be able to inject them in you components or show the `ActionBar`. There is special `createFrameOnBootstrap` boolean option you can pass on bootstrap to make things as before 4.0.0:
+* `createFrameOnBootstrap`: In cases where your application **don't use `page-router-outlet`** , you will not get the default `Page` and `Frame`, which means you will not be able to inject them in your components or show the `ActionBar`. There is special `createFrameOnBootstrap` boolean option you can pass on bootstrap to make things as before 4.0.0:
 
 ```TS
 platformNativeScriptDynamic({ createFrameOnBootstrap: true });
