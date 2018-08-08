@@ -25,15 +25,16 @@ Open your terminal or command prompt and run the following command to create a n
 ```
 tns create HelloWorld --template tns-template-blank
 ```
-{% endnativescript %}
 
+Here you’re passing two things to the `create` command: `HelloWorld` which determines the name of the app you’re creating, and the `--template` option, which tells the NativeScript CLI to scaffold an app using a predefined template named “tns-template-blank”.
+{% endnativescript %}
 {% angular %}
 ```
 tns create HelloWorld --template tns-template-blank-ng
 ```
-{% endangular %}
 
-Here you’re passing two things to the `create` command: `HelloWorld` which determines the name of the app you’re creating, and the `--template` option, which tells the NativeScript CLI to scaffold an app using a predefined template named “nativescript-template-tutorial”.
+Here you’re passing two things to the `create` command: `HelloWorld` which determines the name of the app you’re creating, and the `--template` option, which tells the NativeScript CLI to scaffold an app using a predefined template named “tns-template-blank-ng”.
+{% endangular %}
 
 > **TIP**: You can use the `tns create` command to scaffold apps at a [variety of different starting points](https://market.nativescript.org/?tab=templates&category=all_templates). The “tns-template-blank” template creates a dead-simple app for the purposes of teaching the basics of NativeScript.
 
