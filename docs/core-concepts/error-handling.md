@@ -39,7 +39,7 @@ The example demostrates, how we can use the `error` method inside of a plugin's 
 
 ### Defining custom error handler
 
-This API also introduces a technic, which allows the developers to define custom error handler logic.
+This API also introduces a technic, which allows the developers to define custom error handler logic. In this case, the `ErrorHandler` will be called whenever `trace.error(...)` is called. The default error handler, which will just `throw` the error as they come.
 
 Example:
 
