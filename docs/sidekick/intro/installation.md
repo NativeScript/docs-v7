@@ -25,6 +25,14 @@ To run {{ site.ns-sk }}, you need to have the latest version of the {{ site.ns-c
 	* [macOS 64-bit](https://www.nativescript.org/nativescript-sidekick/download-macos-latest)
 	* [Linux 64-bit](https://www.nativescript.org/nativescript-sidekick/download-linux-latest)
 2. Run the downloaded installable and complete the installation.
+	* The easiest way to install Sidekick on Ubuntu based distributions is to install the .deb package downloaded from the link above either through the graphical software center or through the command line by executing the following commands:
+  
+		```
+		sudo dpkg -i NativeScriptSidekick-amd64.deb
+		sudo apt-get install -f # Install dependencies
+		```
+
+> When you launch Sidekick on a macOS system, you might see the following error message: `{{ site.ns-sk }} can't be opened because the identity of the developer cannot be confirmed `. How to resolve this issue is explained in our [Frequently Asked Questions]({% slug frequently-asked-questions %}) section.
 
 ## Step 4 (Optional): Install iOS and Android Requirements for Local Builds
 

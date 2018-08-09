@@ -7,6 +7,8 @@ slug: chrome-devtools
 
 # Chrome DevTools Debugging
 
+## Overview
+
 The following article is an overview of the features supported in Chrome DevTools when debugging NativeScript applications.
 
 Table of supported features as of NativeScript version **3.4.0**
@@ -22,8 +24,39 @@ Table of supported features as of NativeScript version **3.4.0**
 | Memory Profiling           | ✘ | ✘ | ✘ | not applicable |
 | Timeline and CPU Profiling | ✘ | ✔ | ✘ | not applicable |
 
- > **Note:** To debug on Android: `tns debug android`;  
- To debug on iOS: `tns debug ios`
+### Debug CLI Builds
+
+To debug on Android execute the following command: 
+```Shell
+tns debug android
+```  
+To debug on iOS execute the following command: 
+```Shell
+tns debug ios
+```
+
+For security reasons, the generated debugging agent **can't be started automatically** from the command-line. That's why NativeScript CLI **generates a URL** which is printed on the screen instead. 
+
+```Shell
+To start debugging, open the following URL in Chrome:
+chrome-devtools://devtools/bundled/inspector.html?experiments=true&ws=localhost:40000
+```
+You need to manually copy it in Google Chrome's address bar to start debugging.
+
+### Debug Webpack Builds
+
+With `nativescript-dev-webpack@0.15.0` and above, you can debug your Webpack bundled application.
+
+To debug bundled application on Android execute the following command: 
+```Shell
+tns debug android --bundle
+```  
+To debug bundled application on iOS execute the following command: 
+```Shell
+tns debug ios --bundle
+```
+
+> **Note:** In Chrome DevTools choose the **Source** tab and you will see a project structure with a folder named **webpack://**. Expand the folder and you will find the application source files in the dot folder (" . "). You can start debugging the application by applying breakpoint on your behalf (more in the detailed Chrome Dev Tools article https://docs.nativescript.org/tooling/debugging/chrome-devtools ). The source files of the plugins are located in the **node_modules** folder and can also be debugged on the fly.
 
 -----
 
@@ -37,7 +70,7 @@ Very often you need to reproduce a bug many times to get to the root of the prob
     *Figure 2: Stepping over code*:
     ![Stepping over](https://developers.google.com/web/tools/chrome-devtools/javascript/imgs/step-over-outline.svg)
 
-    > **Note:** Sometimes when the code you want to debug executes too early, for example during application initilization, you will have to place a [Line-of-code breakpoint - 'debugger;'](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints#debugger) statement in your code and start the debugging process with the `--debug-brk` CLI flag to allow the DevTools enough time to connect and attach before your code is executed.
+    > **Note:** Sometimes when the code you want to debug executes too early, for example during application initialization, you will have to place a [Line-of-code breakpoint - 'debugger;'](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints#debugger) statement in your code and start the debugging process with the `--debug-brk` CLI flag to allow the DevTools enough time to connect and attach before your code is executed.
 
 - [Inspect local and global properties, and variables](https://developers.google.com/web/tools/chrome-devtools/javascript/reference#scope) - While paused on a line of code, use the Scope pane (_Figure 3_) to view and edit the values of properties and variables in the local, closure, and global scopes.  
 
@@ -56,7 +89,7 @@ Very often you need to reproduce a bug many times to get to the root of the prob
     *Figure 5: Call stack*:
     ![Call stack](https://developers.google.com/web/tools/chrome-devtools/javascript/imgs/call-stack.svg)
 
-> **Note:** In order to be able to debug code other than JavaScript, the transpiled sources should include [inlined source maps](https://www.typescriptlang.org/docs/handbook/compiler-options.html) for your code (default when developing NativeScript apps with TypeScript).
+> **Note:** To be able to debug code other than JavaScript, the transpiled sources should include [inlined source maps](https://www.typescriptlang.org/docs/handbook/compiler-options.html) for your code (default when developing NativeScript apps with TypeScript).
 
 ## Console
 The console complements the debugging experience in that it displays messages output from your code, allows you to execute arbitrary JavaScript expressions in the context of the NativeScript runtime, and even save the log to a file. The console feature consists of the following functionalities to make your debugging experience more smooth:
@@ -69,10 +102,10 @@ The console complements the debugging experience in that it displays messages ou
 
 - [Measure execution times](https://developers.google.com/web/tools/chrome-devtools/console/track-executions#measure_execution_times) - The `time()` method starts a new timer and is very useful to measure how long something took. Pass a string to the method to give the marker a name. When you want to stop the timer, call `timeEnd()` and pass it the same string passed to the initializer. The console then logs the label and time elapsed when the `timeEnd()` method fires.
 
-- Evaluate expressions - Explore the state of any object of your application global scope, or the paused local scope from the Console by evaluating an expression just by typing it.
+- Evaluate expressions - Explore the state of any object of your global application scope, or the paused local scope from the Console by evaluating an expression just by typing it.
 
 ## Resources
-Scripts loaded by the JavaScript Virtual Machine appear in the Sources panel, which you can then debug and place breakpoints in. Besides scripts all other text and image resources found in your application are also listed in the Sources panel, grouped by folder name by default. You can inspect and search inside the contents of xml, html, css, json, and image files. Text and image network responses are also stored there.
+Scripts loaded by the JavaScript Virtual Machine appear in the Sources panel, which you can then debug and place breakpoints in. Besides scripts all other text and image resources found in your application are also listed in the Sources panel, grouped by folder name by default. You can inspect and search inside the contents of XML, HTML, CSS, JSON, and image files. Text and image network responses are also stored there.
 
 ## Network
 DevTools shows **all*** network requests in the Network panel while the DevTools are open. In the panel you will find information about the requests made, whether they've completed, the response status and data.
@@ -81,7 +114,7 @@ DevTools shows **all*** network requests in the Network panel while the DevTools
     *Figure 7: The Requests table, outlined in blue*:
     ![Requests table](https://developers.google.com/web/tools/chrome-devtools/network-performance/imgs/requests-table.svg)
 
-    > **Note:** Time, Size, and Waterfall metrics may sometimes appear incorrectly or be missing altogether, if a Status Code is available however, that means a response has been received.    
+    > **Note:** Time, Size, and Waterfall metrics may sometimes appear incorrectly or be missing altogether if a Status Code is available, however, that means a response has been received.    
 
 - [View a preview of a response body](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#preview) - To view a preview of a response body: Click the URL of the request, Under the Name column of the Requests table. Click the Preview tab (_Figure 8_). This tab is mostly useful for viewing images.
 
@@ -103,7 +136,7 @@ DevTools shows **all*** network requests in the Network panel while the DevTools
  > **Note:** *This is currently available for the built-in [http module]({%ns_cookbook http%}). For third-party modules that do network requests, additional code must be implemented to populate the Network Tab. See [Plugin author's guide](#plugin-authors-guide) for details on how to do it for your plugin.
 
 ## Elements
-The Elements panel in DevTools displays information about the current view tree, the attributes of each individual child, and its computed styles.
+The Elements panel in DevTools displays information about the current view tree, the attributes of each child, and its computed styles.
 - Inspect the view tree - The DOM tree view (_Figure 11_) shows the current state of the tree; it may not match the XML that was originally loaded for different reasons.
 
     *Figure 11: The DOM tree view of a NativeScript application*:
@@ -124,7 +157,7 @@ The Elements panel in DevTools displays information about the current view tree,
 ## Plugin author’s guide
 Writing plugins is a great way to give back to the community by making application development ever easier by abstracting complex logic through a simple interface. What is even better is when your plugin can integrate almost seamlessly with the expanding arsenal of debugging tools provided by the platform. Following are the optional requirements and interfaces your plugin should comply to, to have your plugin's components/data shown in the respective DevTools panels.
 -	Elements panel (UI plugins) - The following content concerns only plugin authors who wrap and expose native Android/iOS views in their work. 
-    If you are a plugin author, or plan to be one, you can either:
+    If you are a plugin author or plan to be one, you can either:
 
     - A: start off with a nativescript plugin template, which provides you with an already well-established structure to wrap native UI views in. To get started head over to the official seed's repository and follow the README instructions - https://github.com/NativeScript/nativescript-plugin-seed
 
@@ -132,7 +165,7 @@ Writing plugins is a great way to give back to the community by making applicati
 
 
 -	Network requests in plugins - **Note**: __The following content concerns only plugin authors who wrap and expose **Android** (Network agent in DevTools not yet supported with a public API in the iOS runtime) http functionalities.__
-    To make your http functionality debuggable, there are callbacks you need to call at certain times of the lifecycle of the network request, following a [specific protocol](https://chromedevtools.github.io/devtools-protocol/tot/Network/). For your convenience we've exposed callbacks and [TypeScript interfaces](https://github.com/NativeScript/NativeScript/blob/8f621a0df0f5c5660ed784944470e47bd6133825/tns-core-modules/debugger/debugger.ts#L48) to facilitate sending information to the Network agent.
+    To make your http functionality debuggable, there are callbacks you need to call at certain times of the lifecycle of the network request, following a [specific protocol](https://chromedevtools.github.io/devtools-protocol/tot/Network/). For your convenience,In order to we've exposed callbacks and [TypeScript interfaces](https://github.com/NativeScript/NativeScript/blob/8f621a0df0f5c5660ed784944470e47bd6133825/tns-core-modules/debugger/debugger.ts#L48) to facilitate sending information to the Network agent.
 
     - Immediatelly before making the request:
         
@@ -161,7 +194,7 @@ Writing plugins is a great way to give back to the community by making applicati
         global.__inspector.dataForRequestId(successfulRequestData);
         ``` 
 
--	Debugging typescript-transpiled plugins - In order to debug your TypeScript plugin based on the original sources, and not the transpiled JS, it is enough to edit the respective `tsconfig.json` to output sources with inlined maps. That will ensure that the TypeScript sources will also show in the Sources pane, and allow you to debug it. Don't forget to transpile the sources without source maps prior to publishing the plugin.
+-	Debugging typescript-transpiledTo debug your TypeScript plugin based on the sources, and not the transpiled JS, it is enough to edit the respective `tsconfig.json` to output sources with inlined maps. That will ensure that the TypeScript sources will also show in the Sources pane, and allow you to debug it. Don't forget to transpile the sources without source maps before publishing the plugin.
 
 ## Credits
 > Portions of this page are modifications based on work created and [shared by Google](https://developers.google.com/terms/site-policies) and used according to terms described in the [Creative Commons 3.0 Attribution License](https://creativecommons.org/licenses/by/3.0/).
