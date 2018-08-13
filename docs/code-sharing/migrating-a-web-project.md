@@ -182,7 +182,7 @@ This task can be helped with the [component migration schematic](./migrating-a-w
 ng g migrate-component --name=component-name
 ```
 
-In the case where the component class contains web-specific files, you will need to extract it into [helper files - read more here - link to code splitting]() and keep only shared code.
+In the case where the component class contains web-specific code, you will need to extract the **platform-specific** code into a set of **helper files** of **services** and keep only the shared code. You can read more on handling [partial differences here]([read more here ](./code-splitting#partial-differences)).
 
 ### Schematic: migrate-component
 
