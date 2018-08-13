@@ -49,10 +49,10 @@ Like in this diagram:
 The **BasketService** - should allow you to:
 
 * **loadItems** - get items placed in the basket
-* **updateItemQuantity** - allows to change the quantity of a given item in the basket
+* **updateItemQuantity** - change the quantity of a given item in the basket
 * **remove** - remove a given item from the basket
 
-The **Basket Service** should be made of 100% shared code
+The **Basket Service** should be made of 100% shareable code
 
 **basket.service.ts**
 
@@ -87,7 +87,7 @@ The **PaymentService** - should allow you to:
 
 * **processOneClickPayment** - process a payment using user's default card
 
-Again, the **PaymentService** should be made of 100% shared code
+Again, the **PaymentService** should be made of 100% shareable code
 
 ```TypeScript
 import { Injectable } from '@angular/core';
@@ -100,7 +100,7 @@ export class PaymentService {
 }
 ```
 
-Next, you would need to create a component, that would consume the **Basket** and the **Payment** services, and allow users to:
+Next, you would need to create a component, that would inject the **Basket** and the **Payment** services, and allow users to:
 
 * see what is in the basket,
 * update the quantity of its contents and
@@ -154,7 +154,7 @@ Both, templates should:
 * remove an item and
 * allow to process the payment
 
-In this case the UI for the web and mobile apps is going to be different, and as a result the template code **cannot be shared**. However, everything underneath that drives it's behaviour is still shared.
+In this case the UI for the web and mobile apps is going to be different, and as a result the template code **cannot be shared**. However, everything underneath that drives its behaviour is still shared.
 
 <!-- NEED a mock of both web and {N} screens HERE!!!-->
 
@@ -200,7 +200,7 @@ To create two separate templates, you just need to use a naming convention. Simp
 </StackLayout>
 ```
 
-Even though, the contents of **basket.component.html** and **basket.component.tns.html** is not quite the same, you can see that in general they follow the same structure. Both use the **async pipe** to load the data from **items$** and both use the component methods (**increaseQuantity(item)**, **pay()**).
+Even though, the contents of **basket.component.html** and **basket.component.tns.html** are not quite the same, you can see that in general they follow the same structure. Both use the **async pipe** to load the data from **items$** and both use the component methods (**increaseQuantity(item)**, **pay()**).
 
 
 ## What’s next?
