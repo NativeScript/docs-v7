@@ -1024,3 +1024,65 @@ The platform qualifiers are executed during build time, while the others are exe
 * `port` - orientation is in portrait mode.
 
 > Note: All qualifiers are taken into account when the page is loading. However, changing the device orientation will not trigger a page reload and will not change the current page.
+
+## Navigation events
+NativeScript provides several event listeners(`navigatingTo`, `navigatedFrom`,`navigatedTo`,`navigatingFrom` ), which are executed while navigating forward or backwards. We can register for the needed event while using the Page. To do that we should set up the event name and the callback method. For example:
+
+```XML
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" navigatedFrom="navigatedFrom" navigatedTo="navigatedTo" navigatingFrom="navigatingFrom" class="page">
+
+    <Page.actionBar>
+        <ActionBar title="My App" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+
+    <StackLayout class="p-20">
+        <Label text="Tap the button" class="h1 text-center"/>
+        <Button text="TAP" tap="onTap" class="btn btn-primary btn-active"/>
+        <Label text="{{ message }}" class="h2 text-center" textWrap="true"/>
+    </StackLayout>
+</Page>
+```
+```TypeScript
+import { Page } from 'ui/page';
+
+export function navigatingTo(args) {
+    let page = <Page>args.object;
+    console.log("navigatingTo")
+}
+```
+```JavaScript
+function navigatingTo(args) {
+    var page = args.object;
+    console.log("navigatingTo");
+}
+exports.navigatingTo = navigatingTo;
+```
+In the article, we will review the order, which the events have been fired in the application.
+
+### On application startup
+
+On startup of the application we can setup we can set up `navigatingTo` and `navigatedTo` event listeners to the main page.
+The Events will be executed in the following order:
+1. `navigatingTo`
+2. `navigatedTo` 
+
+### On navigation
+
+We will review the following scenario. We have an app with two pages: MainPage and DetailedPages.
+
+* When we make forward navigation via `topmost().navigate('<page name>')` method from MainPage to DetailedPages the events will be fired in the following order:
+
+1. MainPage -> `navigatingFrom`
+2. DetailedPages -> `navigatingTo`
+3. MainPage -> `navigatedFrom`
+4. DetailedPages -> `navigatedTo`
+
+* When we make backwards navigation while tapping on back button the events will be fired as follows:
+
+1. DetailedPages -> `navigatingFrom`
+2. MainPage -> `navigatingTo`
+3. DetailedPages -> `navigatedFrom`
+4. MainPage -> `navigatedTo`
+
+> With the `navigatingTo` and `navigatedTo`, we can access also `isBackNavigation` property(e.g. `navigatedFrom(args){ console.log("Is back navigation " + args.isBackNavigation); }`). The property will return boolean value. The returned value will be `false`, while maing forward navigation and `true` on back navigation.
