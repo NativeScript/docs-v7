@@ -1078,11 +1078,15 @@ We will review the following scenario. We have an app with two pages: MainPage a
 3. MainPage -> `navigatedFrom`
 4. DetailedPages -> `navigatedTo`
 
+![navigation-events-forward](../img/navigation/navigation-events-forward.png?raw=true)
+
 * When we make backwards navigation while tapping on back button the events will be fired as follows:
 
 1. DetailedPages -> `navigatingFrom`
 2. MainPage -> `navigatingTo`
 3. DetailedPages -> `navigatedFrom`
 4. MainPage -> `navigatedTo`
+
+![navigation-events-backwards](../img/navigation/navigation-events-backwards.png?raw=true)
 
 > With the `navigatingTo` and `navigatedTo`, we can access also `isBackNavigation` property(e.g. `navigatedFrom(args){ console.log("Is back navigation " + args.isBackNavigation); }`). The property will return boolean value. The returned value will be `false`, while maing forward navigation and `true` on back navigation.
