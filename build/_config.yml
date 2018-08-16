@@ -137,7 +137,7 @@ navigation:
         title: "Integration with existing iOS and Android apps"
     sidekick:
         position: 150
-        title: "SideKick"
+        title: "Sidekick"
     "sidekick/intro":
         position: 10
         title: Introduction
