@@ -14,7 +14,7 @@ To run {{ site.ns-sk }}, you need to have Node.js installed on your machine. To 
 
 ## Step 2: Install the {{ site.ns-cli }}
 
-To run {{ site.ns-sk }}, you need to have the latest version of the {{ site.ns-cli }} (currently, 4.1.0) installed on your machine. To install the latest version of {{ site.ns-cli }} from npm, you should open a terminal or command prompt and run the following command:
+To run {{ site.ns-sk }}, you need to have the latest version of the {{ site.ns-cli }} installed on your machine. To install the latest version of {{ site.ns-cli }} from npm, you should open a terminal or command prompt and run the following command:
 
 <pre class="add-copy-button"><code class="language-terminal">npm install -g nativescript</code></pre>
 
