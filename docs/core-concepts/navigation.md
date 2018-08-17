@@ -1025,7 +1025,6 @@ The platform qualifiers are executed during build time, while the others are exe
 
 > Note: All qualifiers are taken into account when the page is loading. However, changing the device orientation will not trigger a page reload and will not change the current page.
 
-<<<<<<< HEAD
 ## Navigation events
 NativeScript provides several events(`navigatingTo`, `navigatedFrom`,`navigatedTo`,`navigatingFrom`), which are fired on the `Page` instances while navigating forward or backwards. We can register event handlers for the needed event while using the `Page` element. To do that we should set up the event name and the callback method. For example:
 
@@ -1089,7 +1088,7 @@ When we make backward navigation while tapping on the back button the events wil
 ![navigation-events-backwards](../img/navigation/navigation-events-backwards.png?raw=true)
 
 > With the `navigatingTo` and `navigatedTo`, we can access also `isBackNavigation` property(e.g. `navigatedFrom(args){ console.log("Is back navigation " + args.isBackNavigation); }`). The property will return boolean value. The returned value will be `false`, while maing forward navigation and `true` on back navigation.
-=======
+
 ## UI component's events
 The UI components support several events in NativeScript: `loaded`, `layoutChanged` and `unloaded`. They can be set up on every element, and in the description below we will review their specifics.
 
@@ -1197,4 +1196,3 @@ function onUnloaded(args) {
 }
 exports.onUnloaded = onUnloaded;
 ```
->>>>>>> loaded layoutChange unloaded events examples
