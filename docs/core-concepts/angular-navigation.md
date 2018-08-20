@@ -179,7 +179,7 @@ You might want to perform some cleanup actions (ex. unsubscribe from a service t
 
 ## Passing Parameter
 
-In Angular you can inject `ActivatedRoute` and read route parameters from it. Your component will be reused if you do a subsequent navigations to the same route while only changing the params. That's why `params` and `data` inside `ActivatedRoute` are observables. Using `ActivatedRoute` is covered in [angular route-parameters guide](https://angular.io/docs/ts/latest/guide/router.html#!#route-parameters).
+In Angular you can inject `ActivatedRoute` and read route parameters from it. Your component will be reused if you do a subsequent navigations to the same route while only changing the params. That's why `params` and `data` inside `ActivatedRoute` are observables. Using `ActivatedRoute` is covered in [angular route-parameters guide](https://angular.io/guide/router#route-parameters-in-the-activatedroute-service).
 
 As explained in previous chapter, with `<page-router-outlet>` when navigating **back** to an existing page, your component will **not** be re-created. Angular router will still create an **new instance** `ActivatedRoute` and put all params in it, but you cannot get hold of it through injection, as your component is revived from the cache and not constructed anew.
 
