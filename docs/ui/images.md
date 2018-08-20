@@ -105,7 +105,7 @@ You can manually create an [ImageSource instance from resource]({%ns_cookbook im
 The actual resource images should be added to the `App_Resources` folder in your application and should follow the platform guidelines.
 
 ### Adding Android resources
-Android resources should be added to the corresponding `drawable-XXX` folders inside the `App_Resources\Android` folder in your app:
+Android resources should be added to the corresponding `drawable-XXX` folders inside the `App_Resources\Android\src\main\res` folder in your app:
 
 ![android resources](../img/resources/android-resources.png "android resources")
 
