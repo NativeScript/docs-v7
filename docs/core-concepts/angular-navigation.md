@@ -90,6 +90,16 @@ Note that we can now use the **Back button** and the **NavigationBar** to naviga
 
 It is possible to nest `<router-outlet>` component inside `<page-router-outlet>` or another `<router-outlet>`.
 
+### Using router-outlet Instead of page-router-outlet
+
+In some cases, you might want to create an application without using `page-router-outlet`. To achieve that with nativescript-angular version 6 and above an additional bootstrap parameter called `createFrameOnBootstrap` must be provided to create a `Frame` during the bootstrapping.
+
+app/main.ts
+```TypeScript
+platformNativeScriptDynamic({ createFrameOnBootstrap: true }).bootstrapModule(AppModule);
+
+```
+
 ## Navigation Options
 
 You can define the trigger in your application declaratively - using the `nsRouterLink` directive in your markup. Or you can do it through code - by injecting  the `RouterExtensions` class and using its methods:
@@ -190,13 +200,3 @@ So, instead of:
 
 You do:
 {%snippet router-params-page-route%}
-
-## Application Without Page Router Outlet
-
-In some cases, you might want to create an application without using `page-router-outlet`. To achieve that with nativescript-angular version 6 and above an additional bootstrap parameter called `createFrameOnBootstrap` must be provided to create a `Frame` during the bootstrapping.
-
-app/main.ts
-```TypeScript
-platformNativeScriptDynamic({ createFrameOnBootstrap: true }).bootstrapModule(AppModule);
-
-```
