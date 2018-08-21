@@ -1025,6 +1025,7 @@ The platform qualifiers are executed during build time, while the others are exe
 
 > Note: All qualifiers are taken into account when the page is loading. However, changing the device orientation will not trigger a page reload and will not change the current page.
 
+<<<<<<< HEAD
 ## Navigation events
 NativeScript provides several events(`navigatingTo`, `navigatedFrom`,`navigatedTo`,`navigatingFrom`), which are fired on the `Page` instances while navigating forward or backwards. We can register event handlers for the needed event while using the `Page` element. To do that we should set up the event name and the callback method. For example:
 
@@ -1088,3 +1089,112 @@ When we make backward navigation while tapping on the back button the events wil
 ![navigation-events-backwards](../img/navigation/navigation-events-backwards.png?raw=true)
 
 > With the `navigatingTo` and `navigatedTo`, we can access also `isBackNavigation` property(e.g. `navigatedFrom(args){ console.log("Is back navigation " + args.isBackNavigation); }`). The property will return boolean value. The returned value will be `false`, while maing forward navigation and `true` on back navigation.
+=======
+## UI component's events
+The UI components support several events in NativeScript: `loaded`, `layoutChanged` and `unloaded`. They can be set up on every element, and in the description below we will review their specifics.
+
+### loaded 
+Component's loaded event will be fired in NativeScript when the native Android or iOS instance of the element is created. While firing the event, the component will still not be rendered, which makes it the perfect place for adding some further configurations to the ui component.
+
+```XML
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+    <StackLayout class="p-20">
+        <Button loaded="onLoaded" text="TAP" class="btn btn-primary btn-active"/>
+    </StackLayout>
+</Page>
+
+```
+```TypeScript
+import { Button } from "tns-core-modules/ui/button";
+
+export function onLoaded(args){
+    let btn:Button = <Button>args.object;
+    btn.on(Button.tapEvent, (arg)=>{
+        alert("Button tapEvent");
+    })
+}
+```
+```JavaScript
+var buttonModule = require("tns-core-modules/ui/button");
+
+function onLoaded(args) {
+    var btn = args.object;
+    btn.on(buttonModule.Button.tapEvent, function (arg) {
+        alert("Button tapEvent");
+    });
+}
+exports.onLoaded = onLoaded;
+```
+
+### layoutChanged
+The layoutChanged event will be fired when the UI component layout is set up. We can set a listener for this event to every UI element in NativeScript. This gives us an option to collect some information about the component after completing the layouting. (e.g. taking the component actual width and height).
+
+```XML
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+    <StackLayout layoutChanged="onLayoutChanged" class="p-20">
+        <!-- ......  -->
+    </StackLayout>
+</Page>
+
+```
+```TypeScript
+import {StackLayout} from "ui/layouts/stack-layout";
+
+export function onLayoutChanged(args){
+    let layout:StackLayout = <StackLayout>args.object;
+    console.log("StackLayout - actual width: "+layout.getActualSize().width);
+    console.log("StackLayout - actual height: "+layout.getActualSize().height);
+}
+```
+```JavaScript
+function onLayoutChanged(args) {
+    var layout = args.object;
+    console.log("StackLayout - actual width: " + layout.getActualSize().width);
+    console.log("StackLayout - actual height: " + layout.getActualSize().height);
+}
+exports.onLayoutChanged = onLayoutChanged;
+```
+
+### unloaded
+The unloaded event is fired when the UI component is no longer visible on the screen. This event will be fired when making backwards navigation from Detailed page to Mane page (`unloeded` will be fired for each UI component in the Detailed page) or when we suspend the app (in this case, `unloaded` will be fired for every UI element from the current page). Unloaded event is a perfect place, for example, when we need to unbind some specific event listener.
+
+```XML
+<Page xmlns="http://www.nativescript.org/tns.xsd">
+    <StackLayout >
+        <Button text="TAP" loaded="onLoaded" unloaded="onUnloaded" />
+    </StackLayout>
+</Page>
+```
+```TypeScript
+import { Button } from "tns-core-modules/ui/button";
+
+export function onLoaded(args){
+    let btn:Button = <Button> args.object;
+    btn.on(Button.tapEvent, (arg)=>{
+        alert("on tap");
+    })
+}
+
+export function onUnloaded(args){
+    let btn:Button = <Button> args.object;
+    btn.off(Button.tapEvent);
+}
+```
+```JavaScript
+var buttonModule = require("tns-core-modules/ui/button");
+
+function onLoaded(args) {
+    var btn = args.object;
+    btn.on(buttonModule.Button.tapEvent, function (arg) {
+        alert("on tap");
+    });
+}
+exports.onLoaded = onLoaded;
+
+function onUnloaded(args) {
+    var btn = args.object;
+    btn.off(buttonModule.Button.tapEvent);
+}
+exports.onUnloaded = onUnloaded;
+```
+>>>>>>> loaded layoutChange unloaded events examples
