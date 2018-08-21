@@ -1069,22 +1069,22 @@ The Events will be executed in the following order:
 
 ### On navigation
 
-We will review the following scenario. We have an app with two pages: MainPage and DetailedPages.
+We will review the following scenario. We have an app with two pages: MainPage and DetailedPage.
 
-* When we make forward navigation via `topmost().navigate('<page name>')` method from MainPage to DetailedPages the events will be fired in the following order:
+* When we make forward navigation via `topmost().navigate('<page name>')` method from MainPage to DetailedPage the events will be fired in the following order:
 
 1. MainPage -> `navigatingFrom`
-2. DetailedPages -> `navigatingTo`
+2. DetailedPage -> `navigatingTo`
 3. MainPage -> `navigatedFrom`
-4. DetailedPages -> `navigatedTo`
+4. DetailedPage -> `navigatedTo`
 
 ![navigation-events-forward](../img/navigation/navigation-events-forward.png?raw=true)
 
 * When we make backwards navigation while tapping on back button the events will be fired as follows:
 
-1. DetailedPages -> `navigatingFrom`
+1. DetailedPage -> `navigatingFrom`
 2. MainPage -> `navigatingTo`
-3. DetailedPages -> `navigatedFrom`
+3. DetailedPage -> `navigatedFrom`
 4. MainPage -> `navigatedTo`
 
 ![navigation-events-backwards](../img/navigation/navigation-events-backwards.png?raw=true)
