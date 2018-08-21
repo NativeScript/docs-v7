@@ -1132,3 +1132,5 @@ function onUnloaded(args) {
 }
 exports.onUnloaded = onUnloaded;
 ```
+
+![component-events](../img/events.png?raw=true)
