@@ -1026,10 +1026,10 @@ The platform qualifiers are executed during build time, while the others are exe
 > Note: All qualifiers are taken into account when the page is loading. However, changing the device orientation will not trigger a page reload and will not change the current page.
 
 ## Navigation events
-NativeScript provides several event listeners(`navigatingTo`, `navigatedFrom`,`navigatedTo`,`navigatingFrom` ), which are executed while navigating forward or backwards. We can register for the needed event while using the Page. To do that we should set up the event name and the callback method. For example:
+NativeScript provides several events(`navigatingTo`, `navigatedFrom`,`navigatedTo`,`navigatingFrom`), which are fired on the `Page` instances while navigating forward or backwards. We can register event handlers for the needed event while using the `Page` element. To do that we should set up the event name and the callback method. For example:
 
 ```XML
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" navigatedFrom="navigatedFrom" navigatedTo="navigatedTo" navigatingFrom="navigatingFrom" class="page">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" navigatedFrom="onNavigatedFrom" navigatedTo="onNavigatedTo" navigatingFrom="onNavigatingFrom" class="page">
 
     <Page.actionBar>
         <ActionBar title="My App" icon="" class="action-bar">
@@ -1046,24 +1046,28 @@ NativeScript provides several event listeners(`navigatingTo`, `navigatedFrom`,`n
 ```TypeScript
 import { Page } from 'ui/page';
 
-export function navigatingTo(args) {
+export function onNavigatingTo(args) {
     let page = <Page>args.object;
     console.log("navigatingTo")
 }
 ```
 ```JavaScript
-function navigatingTo(args) {
+function onNavigatingTo(args) {
     var page = args.object;
     console.log("navigatingTo");
 }
-exports.navigatingTo = navigatingTo;
+exports.onNavigatingTo = onNavigatingTo;
 ```
-In the article, we will review the order, which the events have been fired in the application.
+The event names themselves should be self explanatory, but it's important to point that they are fired on different `Page` instances and at different times. We can classify the navigation events in two groups:
+
+* To/From - The "To" events are fired on the page that is about to be navigated to, while the "From" events are fired on the page that is navigated away.
+* navigating/navigated - The "navigating" events are fired before the actual visible navigation is made, while the "navigated" events are fired once the navigation is finished.
+
+Below, we will review in more detail the order, in which the events are fired.
 
 ### On application startup
 
-On startup of the application we can setup we can set up `navigatingTo` and `navigatedTo` event listeners to the main page.
-The Events will be executed in the following order:
+On startup of the application there is no "from" page, so only the `navigatingTo` and `navigatedTo` events are fired on the first page. The events will be executed in the following order:
 1. `navigatingTo`
 2. `navigatedTo` 
 
@@ -1071,21 +1075,15 @@ The Events will be executed in the following order:
 
 We will review the following scenario. We have an app with two pages: MainPage and DetailedPage.
 
-* When we make forward navigation via `topmost().navigate('<page name>')` method from MainPage to DetailedPage the events will be fired in the following order:
+#### Forward navigation
 
-1. MainPage -> `navigatingFrom`
-2. DetailedPage -> `navigatingTo`
-3. MainPage -> `navigatedFrom`
-4. DetailedPage -> `navigatedTo`
+When we make forward navigation via `topmost().navigate('<page name>')` method from MainPage to DetailedPage the events will be fired in the following order:
 
 ![navigation-events-forward](../img/navigation/navigation-events-forward.png?raw=true)
 
-* When we make backwards navigation while tapping on back button the events will be fired as follows:
+#### Backward navigation
 
-1. DetailedPage -> `navigatingFrom`
-2. MainPage -> `navigatingTo`
-3. DetailedPage -> `navigatedFrom`
-4. MainPage -> `navigatedTo`
+When we make backward navigation while tapping on the back button the events will be fired as follows:
 
 ![navigation-events-backwards](../img/navigation/navigation-events-backwards.png?raw=true)
 
