@@ -347,21 +347,49 @@ Arrange your user interface components by left/top coordinates using `AbsoluteLa
 
 ## Custom Components
 
-You can define your own XML namespaces to create custom user interface components. The custom components can be created via XML files aor via code-behind JS/TS implementation.
+You can define your own XML namespaces to create custom user interface components. The custom components can be created via XML files or via code-behind JS/TS implementation.
 
 ### Code-only Custom Component
 
-This sample `main-page.xml` is using a custom component defined in separate declarations in the `xml-declaration/mymodule` directory.
+**The page using the custom component**
 
+The sample `main-page.xml` is using a custom component defined in separate declarations in the `app/components/my-control.ts` file (or `*.js` if using plain JavaScript).
 ```XML
-<Page xmlns:customControls="xml-declaration/mymodule">
-  <customControls:MyControl />
+<!-- app/main-page.xml -->
+<Page xmlns:customControls="components/my-control" navigatingTo="navigatingTo" class="page">
+    <customControls:MyControl />
 </Page>
 ```
 
-This sample custom component declared in `xml-declaration/mymodule.js` or `xml-declaration/mymodule.ts` exports the `MyControl` variable, which creates a simple counter inside your `main-page.xml` page.
+**The custom component implementation**
 
+This sample custom component declared in `app/components/my-control.ts` or `app/components/my-control.js` exports the `MyControl` variable, which creates a simple counter inside your `main-page.xml` page.
+
+```TypeScript
+// app/components/my-control.ts
+import { StackLayout } from "tns-core-modules/ui/layouts/stack-layout/stack-layout";
+import { Label } from "tns-core-modules/ui/label/label";
+import { Button } from "tns-core-modules/ui/button/button";
+
+export class MyControl extends StackLayout {
+    constructor() {
+        super();
+
+        let counter: number = 0;
+        const lbl = new Label();
+        const btn = new Button();
+        btn.text = "Tap me!";
+        btn.on("tap", (args) => {
+            lbl.text = "Tap " + counter++;
+        });
+
+        this.addChild(lbl);
+        this.addChild(btn);
+    }
+}
+```
 ```JavaScript
+// app/components/my-control.js
 var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -389,130 +417,199 @@ var MyControl = (function (_super) {
 })(stackLayout.StackLayout);
 exports.MyControl = MyControl;
 ```
-```TypeScript
-import { EventData } from "tns-core-modules/data/observable";
-import { StackLayout } from "tns-core-modules/ui/layouts/stack-layout";
-import { Label } from "tns-core-modules/ui/label";
-import { Button } from "tns-core-modules/ui/button";
 
-export class MyControl extends StackLayout {
-    constructor() {
-        super();
-
-        let counter: number = 0;
-
-        const lbl = new Label();
-        const btn = new Button();
-        btn.text = "Tap me!";
-        btn.on("tap", (args) => {
-            lbl.text = "Tap " + counter++;
-        });
-
-        this.addChild(lbl);
-        this.addChild(btn);
-    }
-}
-```
 
 When referring to code-only components in your pages with an `xmlns` declaration, you should point it either to the code file with the component implementation or to the folder containing the files. In the latter case, you will have to add a `package.json` file in the folder so that the file can be required properly.
 
 ### XML-based Custom Component with a Code File
 
-This sample `main-page.xml` uses a custom component defined in an `xml-declaration/mymodulewithxml/MyControl.xml` file together with `xml-declaration/mymodulewithxml/MyControl.js` or `xml-declaration/mymodulewithxml/MyControl.ts` code file.
+**The page using the custom component**
 
+The sample `main-page.xml` is using a custom component `my-control.xml` nad the `my-control.ts` code-behind defined as a separate files in the `app/components` folder.
 ```XML
-<Page
-    xmlns:customOtherControls="xml-declaration/mymodulewithxml">
-    <customOtherControls:MyControl />
+<!-- app/main-page.xml -->
+<Page xmlns:comps="components" navigatingTo="navigatingTo">
+  <comps:my-control />
 </Page>
 ```
+```TypeScript
+// app/main-page.ts
+import { EventData } from 'tns-core-modules/data/observable';
+import { Page } from 'tns-core-modules/ui/page';
+import { HelloWorldModel } from './main-view-model';
 
-The custom component in `xml-declaration/MyControl.xml` defines a button, a label and a `buttonTap` function, located in the code file, which changes the label on every tap of the button.
+export function navigatingTo(args: EventData) {
+    let page = <Page>args.object;
 
+    // the page binding context will be accerss in components/my-toolbar
+    page.bindingContext = new HelloWorldModel();
+}
+```
+```JavaScript
+// app/main-page.js
+var main_view_model_1 = require("./main-view-model");
+function navigatingTo(args) {
+    var page = args.object;
+    // the page binding context will be accerss in components/my-toolbar
+    page.bindingContext = new main_view_model_1.HelloWorldModel();
+}
+exports.navigatingTo = navigatingTo;
+```
+
+**The custom component implementation**
+
+The custom component in `app/components/my-control.xml` defines a Button, a Label with a related binding properties and tap function.
 ```XML
-<StackLayout>
-  <Label id="Label1" />
-  <Button text="Click!" tap="buttonTap" />
+<!-- app/components/my-control.xml -->
+<StackLayout class="p-20" loaded="onLoaded">
+    <Label text="This custom component binding is coming from the parent page" textWrap="true" />
+    <Label text="Tap the button (custom component)" class="h1 text-center"/>
+{%raw%}    <Button text="TAP" tap="{{ onTap }}" class="btn btn-primary btn-active"/>
+    <Label text="{{ message }}" class="h2 text-center" textWrap="true"/>{%endraw%}
 </StackLayout>
 ```
-
-```JavaScript
-let view = require("tns-core-modules/ui/core/view");
-let count = 0;
-function buttonTap(args) {
-    count++;
-    const parent = args.object.parent;
-    if (parent) {
-        var lbl = view.getViewById(parent, "Label1");
-        if (lbl) {
-            lbl.text = "You tapped " + count + " times!";
-        }
-    }
-}
-exports.buttonTap = buttonTap;
-```
 ```TypeScript
+// app/components/my-control.ts
 import { EventData } from "tns-core-modules/data/observable";
-import { Label } from "tns-core-modules/ui/label";
-import { View, getViewById } from "tns-core-modules/ui/core/view";
 
-let count = 0;
-export function buttonTap(args: EventData) {
-    count++;
+export function onLoaded(args: EventData) {
+    console.log("Custom Component Loaded");
 
-    const parent = (<View>args.object).parent;
-    if (parent) {
-        var lbl = <Label>getViewById(parent, "Label1");
-        if (lbl) {
-            lbl.text = "You tapped " + count + " times!";
+    // you could also extend the custom compoentn logi here e.g.:
+    // let stack = <StackLayout>args.view;
+    // stack.bindingContext = myCustomComponentViewModel;
+}
+```
+```JavaScript
+// app/components/my-control.js
+function onLoaded(args) {
+    console.log("Custom Component Loaded");
+
+    // you could also extend the custom compoentn logi here e.g.:
+    // let stack = args.view;
+    // stack.bindingContext = myCustomComponentViewModel;
+}
+exports.onLoaded = onLoaded;
+```
+
+**The View Model used for bindings**
+
+The `main-page` has a binding context set thought view model (MVVM pattern). The binding context can be accessed though the custom component as demonstrated.
+```TypeScript
+// app/main-view-model.ts
+import { Observable } from 'data/observable';
+
+export class HelloWorldModel extends Observable {
+
+    private _counter: number;
+    private _message: string;
+
+    constructor() {
+        super();
+
+        // Initialize default values.
+        this._counter = 42;
+        this.updateMessage();
+    }
+
+    get message(): string {
+        return this._message;
+    }
+    
+    set message(value: string) {
+        if (this._message !== value) {
+            this._message = value;
+            this.notifyPropertyChange('message', value)
+        }
+    }
+
+    public onTap() {
+        this._counter--;
+        this.updateMessage();
+    }
+
+    private updateMessage() {
+        if (this._counter <= 0) {
+            this.message = 'Hoorraaay! You unlocked the NativeScript clicker achievement!';
+        } else {
+            this.message = `${this._counter} taps left`;
         }
     }
 }
 ```
-### Dynamic Loading of Custom Components
-Load a pure JavaScript component by finding it in the exports of the module. The component is specified by a path and its name. Then the code from the JavaScript file is executed.
 ```JavaScript
-let builder = require("tns-core-modules/ui/builder");
-let myComponentInstance = builder.load({
-        path: "~/xml-declaration/mymodule",
-        name: "MyControl"
-});
+// app/main-view-model.js
+var Observable = require("data/observable").Observable;
+
+function getMessage(counter) {
+    if (counter <= 0) {
+        return "Hoorraaay! You unlocked the NativeScript clicker achievement!";
+    } else {
+        return counter + " taps left";
+    }
+}
+
+function createViewModel() {
+    var viewModel = new Observable();
+    viewModel.counter = 42;
+    viewModel.message = getMessage(viewModel.counter);
+
+    viewModel.onTap = function() {
+        this.counter--;
+        this.set("message", getMessage(this.counter));
+    }
+
+    return viewModel;
+}
+
+exports.createViewModel = createViewModel;
 ```
+
+### Dynamic Loading of Custom Components
+
+Load a pure JavaScript component by finding it in the exports of the module. The component is specified by a path and its name. Then the code from the JavaScript file is executed.
 ```TypeScript
 import * as builder from "tns-core-modules/ui/builder";
 let myComponentInstance = builder.load({
-        path: "~/xml-declaration/mymodule",
+        path: "~/components/my-control",
+        name: "MyControl"
+});
+```
+```JavaScript
+let builder = require("tns-core-modules/ui/builder");
+let myComponentInstance = builder.load({
+        path: "~/components/my-control",
         name: "MyControl"
 });
 ```
 
 Load the XML file with JavaScript code-behind by finding the specified XML filename through the specified path in the exports of the modules. JavaScript file with the same name will be required and served as code-behind of the XML.
-```JavaScript
-let builder = require("ui/builder");
-let myComponentInstance = builder.load({
-        path: "~/xml-declaration/mymodulewithxml",
-        name: "MyControl"
-});
-```
 ```TypeScript
 import * as builder from "tns-core-modules/ui/builder";
 let myComponentInstance = builder.load({
-        path: "~/xml-declaration/mymodulewithxml",
+        path: "~/components/my-control",
+        name: "MyControl"
+});
+```
+```JavaScript
+let builder = require("ui/builder");
+let myComponentInstance = builder.load({
+        path: "~/components/my-control",
         name: "MyControl"
 });
 ```
 
 > The UI builder will automatically load the CSS file with the same name as the component name and apply it to the specified page:
-```JavaScript
-let myComponentInstance = builder.load({
-        path: "~/xml-declaration/mymodulewithxml",
-        name: "MyControl",
-        page: yourPageInstance
-});
-```
 ```TypeScript
 let myComponentInstance = builder.load({
-        path: "~/xml-declaration/mymodulewithxml",
+        path: "~/components/my-control",
+        name: "MyControl",
+        page: yourPageInstancex
+});
+```
+```JavaScript
+let myComponentInstance = builder.load({
+        path: "~/components/my-control",
         name: "MyControl",
         page: yourPageInstance
 });
@@ -526,18 +623,18 @@ All [UI Gestures]({% slug gestures %})
   <Label text="Some text" tap="myTapHandler" />
 </Page>
 ```
-```JavaScript
-function myTapHandler(args) {
-    const context = args.view.bindingContext;
-}
-exports.myTapHandler = myTapHandler;
-```
 ```TypeScript
 import { GestureEventData } from "tns-core-modules/ui/gestures";
 
 export function myTapHandler(args: GestureEventData) {
     const context = args.view.bindingContext;
 }
+```
+```JavaScript
+function myTapHandler(args) {
+    const context = args.view.bindingContext;
+}
+exports.myTapHandler = myTapHandler;
 ```
 
 ## Bindings
@@ -639,7 +736,7 @@ In this sample `main-page.xml`, the ListView consists of labels and each item wi
 </Page>
 ```
 
-The sample `main-page.js` or `main-page.ts` populates the `bindingContext` for the page. In this case, the code sets values for the name property for each label. Note that because the `ListView` and the Label have different scopes, you can access ListView by ID from the page but you cannot access the Label by ID. The `ListView` creates a new `Label` for every item.
+The sample `main-page.js` or `main-page.ts` populates the `bindingContext` for the page. In this case, the code sets values for the name property for each label. Note that because the `ListView` and the Label have different scopes, you can access ListView by ID from the page, but you cannot access the Label by ID. The `ListView` creates a new `Label` for every item.
 
 ```JavaScript
 const view = require("tns-core-modules/ui/core/view");
@@ -761,7 +858,7 @@ To declare a platform-specific property value or platform-specific component in 
 > You cannot nest platform tags!
 
 ## Lowercase-dashed component declaration
-Since the release of NativeScript 1.3, you can declare your UI using lowercase-dashed syntax:
+Since the release of NativeScript 1.3, you can declare your UI using the lowercase-dashed syntax:
 ```XML
 <page>
   <scroll-view>
