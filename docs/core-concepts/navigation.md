@@ -1155,7 +1155,7 @@ exports.onLayoutChanged = onLayoutChanged;
 ```
 
 ### unloaded
-The unloaded event is fired when the UI component is no longer visible on the screen. This event will be fired when making backwards navigation from Detailed page to Mane page (`unloeded` will be fired for each UI component in the Detailed page) or when we suspend the app (in this case, `unloaded` will be fired for every UI element from the current page). Unloaded event is a perfect place, for example, when we need to unbind some specific event listener.
+The unloaded event is fired when the UI component is no longer visible on the screen. This event will be fired when making navigation in the app or when we suspend the it. Unloaded event is a perfect place, for example, when we need to unbind some specific event listener.
 
 ```XML
 <Page xmlns="http://www.nativescript.org/tns.xsd">
@@ -1198,3 +1198,5 @@ exports.onUnloaded = onUnloaded;
 ```
 
 ![component-events](../img/events.png?raw=true)
+
+> Note: In the image are shown the execution order of the events. The `loaded` event will be fired once when the component is created. The `layoutChanged` event will be triggered after the first layout of the component and on every visual change of the components on the currently loaded page. The `unloaded` is fired for each component, once when we leave the page. The event can be triggered by suspending the app, forward or backward navigation.
