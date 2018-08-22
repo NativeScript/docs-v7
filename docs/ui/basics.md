@@ -347,7 +347,7 @@ Arrange your user interface components by left/top coordinates using `AbsoluteLa
 
 ## Custom Components
 
-You can define your own XML namespaces to create custom user interface components. The custom components can be created via XML files aor via code-behind JS/TS implementation.
+You can define your own XML namespaces to create custom user interface components. The custom components can be created via XML files or via code-behind JS/TS implementation.
 
 ### Code-only Custom Component
 
@@ -604,7 +604,7 @@ let myComponentInstance = builder.load({
 let myComponentInstance = builder.load({
         path: "~/components/my-control",
         name: "MyControl",
-        page: yourPageInstance
+        page: yourPageInstancex
 });
 ```
 ```JavaScript
@@ -736,7 +736,7 @@ In this sample `main-page.xml`, the ListView consists of labels and each item wi
 </Page>
 ```
 
-The sample `main-page.js` or `main-page.ts` populates the `bindingContext` for the page. In this case, the code sets values for the name property for each label. Note that because the `ListView` and the Label have different scopes, you can access ListView by ID from the page but you cannot access the Label by ID. The `ListView` creates a new `Label` for every item.
+The sample `main-page.js` or `main-page.ts` populates the `bindingContext` for the page. In this case, the code sets values for the name property for each label. Note that because the `ListView` and the Label have different scopes, you can access ListView by ID from the page, but you cannot access the Label by ID. The `ListView` creates a new `Label` for every item.
 
 ```JavaScript
 const view = require("tns-core-modules/ui/core/view");
@@ -858,7 +858,7 @@ To declare a platform-specific property value or platform-specific component in 
 > You cannot nest platform tags!
 
 ## Lowercase-dashed component declaration
-Since the release of NativeScript 1.3, you can declare your UI using lowercase-dashed syntax:
+Since the release of NativeScript 1.3, you can declare your UI using the lowercase-dashed syntax:
 ```XML
 <page>
   <scroll-view>
