@@ -1088,3 +1088,113 @@ When we make backward navigation while tapping on the back button the events wil
 ![navigation-events-backwards](../img/navigation/navigation-events-backwards.png?raw=true)
 
 > With the `navigatingTo` and `navigatedTo`, we can access also `isBackNavigation` property(e.g. `navigatedFrom(args){ console.log("Is back navigation " + args.isBackNavigation); }`). The property will return boolean value. The returned value will be `false`, while maing forward navigation and `true` on back navigation.
+
+## UI component lifecycle events
+All NativeScript UI components provide a number of lifecycle events: `loaded`, `layoutChanged` and `unloaded`. The following chart displays the execution order of the events fired on each component on a given page. In the following sections, we will review each event in detail.
+
+![component-events](../img/events.png?raw=true)
+
+### loaded
+The `loaded` event will be fired after the component's Android or iOS native views are created, but before the component is laid out on the screen. The event ensures that the native UI view exists, which makes it the perfect place for adding some further configurations to the UI component. Typical application interactions that cause this event to fire are navigation, showing a modal view and resuming the app after it has been suspended.
+
+```XML
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+    <StackLayout class="p-20">
+        <Button loaded="onLoaded" text="TAP" class="btn btn-primary btn-active"/>
+    </StackLayout>
+</Page>
+
+```
+```TypeScript
+import { Button } from "tns-core-modules/ui/button";
+
+export function onLoaded(args){
+    let btn:Button = <Button>args.object;
+    btn.on(Button.tapEvent, (arg)=>{
+        alert("Button tapEvent");
+    })
+}
+```
+```JavaScript
+var buttonModule = require("tns-core-modules/ui/button");
+
+function onLoaded(args) {
+    var btn = args.object;
+    btn.on(buttonModule.Button.tapEvent, function (arg) {
+        alert("Button tapEvent");
+    });
+}
+exports.onLoaded = onLoaded;
+```
+
+### layoutChanged
+The `layoutChanged` event will be fired when the UI component layout is finished. This provides the opportinity to collect the actual size and position of the component. Changing the size or position of a component will force a fresh layout, which will cause the event ot fire again.
+
+```XML
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+    <StackLayout layoutChanged="onLayoutChanged" class="p-20">
+        <!-- ......  -->
+    </StackLayout>
+</Page>
+
+```
+```TypeScript
+import {StackLayout} from "ui/layouts/stack-layout";
+
+export function onLayoutChanged(args){
+    let layout:StackLayout = <StackLayout>args.object;
+    console.log("StackLayout - actual width: "+layout.getActualSize().width);
+    console.log("StackLayout - actual height: "+layout.getActualSize().height);
+}
+```
+```JavaScript
+function onLayoutChanged(args) {
+    var layout = args.object;
+    console.log("StackLayout - actual width: " + layout.getActualSize().width);
+    console.log("StackLayout - actual height: " + layout.getActualSize().height);
+}
+exports.onLayoutChanged = onLayoutChanged;
+```
+
+### unloaded
+The `unloaded` event is fired when the UI component is no longer visible on the screen. Note that this doesn't mean the component or its native view will be destroyed. This event is the perfect place, for example, when we need to unbind some specific event listener. Typical application interactions that cause this event to fire are navigation, hiding a modal view and suspending the app.
+
+```XML
+<Page xmlns="http://www.nativescript.org/tns.xsd">
+    <StackLayout >
+        <Button text="TAP" loaded="onLoaded" unloaded="onUnloaded" />
+    </StackLayout>
+</Page>
+```
+```TypeScript
+import { Button } from "tns-core-modules/ui/button";
+
+export function onLoaded(args){
+    let btn:Button = <Button> args.object;
+    btn.on(Button.tapEvent, (arg)=>{
+        alert("on tap");
+    })
+}
+
+export function onUnloaded(args){
+    let btn:Button = <Button> args.object;
+    btn.off(Button.tapEvent);
+}
+```
+```JavaScript
+var buttonModule = require("tns-core-modules/ui/button");
+
+function onLoaded(args) {
+    var btn = args.object;
+    btn.on(buttonModule.Button.tapEvent, function (arg) {
+        alert("on tap");
+    });
+}
+exports.onLoaded = onLoaded;
+
+function onUnloaded(args) {
+    var btn = args.object;
+    btn.off(buttonModule.Button.tapEvent);
+}
+exports.onUnloaded = onUnloaded;
+```
