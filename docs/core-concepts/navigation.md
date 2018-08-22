@@ -1089,11 +1089,13 @@ When we make backward navigation while tapping on the back button the events wil
 
 > With the `navigatingTo` and `navigatedTo`, we can access also `isBackNavigation` property(e.g. `navigatedFrom(args){ console.log("Is back navigation " + args.isBackNavigation); }`). The property will return boolean value. The returned value will be `false`, while maing forward navigation and `true` on back navigation.
 
-## UI component's events
-The UI components support several events in NativeScript: `loaded`, `layoutChanged` and `unloaded`. They can be set up on every element, and in the description below we will review their specifics.
+## UI component lifecycle events
+All NativeScript UI components provide a number of lifecycle events: `loaded`, `layoutChanged` and `unloaded`. The following chart displays the execution order of the events fired on each component on a given page. In the following sections, we will review each event in detail.
 
-### loaded 
-Component's loaded event will be fired in NativeScript when the native Android or iOS instance of the element is created. While firing the event, the component will still not be rendered, which makes it the perfect place for adding some further configurations to the ui component.
+![component-events](../img/events.png?raw=true)
+
+### loaded
+The `loaded` event will be fired after the component's Android or iOS native views are created, but before the component is laid out on the screen. The event ensures that the native UI view exists, which makes it the perfect place for adding some further configurations to the UI component. Typical application interactions that cause this event to fire are navigation, showing a modal view and resuming the app after it has been suspended.
 
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -1126,7 +1128,7 @@ exports.onLoaded = onLoaded;
 ```
 
 ### layoutChanged
-The layoutChanged event will be fired when the UI component layout is set up. We can set a listener for this event to every UI element in NativeScript. This gives us an option to collect some information about the component after completing the layouting. (e.g. taking the component actual width and height).
+The `layoutChanged` event will be fired when the UI component layout is finished. This provides the opportinity to collect the actual size and position of the component. Changing the size or position of a component will force a fresh layout, which will cause the event ot fire again.
 
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -1155,7 +1157,7 @@ exports.onLayoutChanged = onLayoutChanged;
 ```
 
 ### unloaded
-The unloaded event is fired when the UI component is no longer visible on the screen. This event will be fired when making navigation in the app or when we suspend the it. Unloaded event is a perfect place, for example, when we need to unbind some specific event listener.
+The `unloaded` event is fired when the UI component is no longer visible on the screen. Note that this doesn't mean the component or its native view will be destroyed. This event is the perfect place, for example, when we need to unbind some specific event listener. Typical application interactions that cause this event to fire are navigation, hiding a modal view and suspending the app.
 
 ```XML
 <Page xmlns="http://www.nativescript.org/tns.xsd">
@@ -1196,7 +1198,3 @@ function onUnloaded(args) {
 }
 exports.onUnloaded = onUnloaded;
 ```
-
-![component-events](../img/events.png?raw=true)
-
-> Note: In the image are shown the execution order of the events. The `loaded` event will be fired once when the component is created. The `layoutChanged` event will be triggered after the first layout of the component and on every visual change of the components on the currently loaded page. The `unloaded` is fired for each component, once when we leave the page. The event can be triggered by suspending the app, forward or backward navigation.
