@@ -105,7 +105,7 @@ On the other hand, any API that expects a `NSNull`, `NSNumber`, `NSString` or `N
 More information on how NativeScript deals with Objective-C classes is available [here](../types/ObjC-Classes.md).
 
 ## Objective-C Protocols
-Protocols in Objective-C are like interaces in other languages - they are blueprints of what members a class should contain, a sort of an API contract. Protocols are exposed as empty objects in JavaScript. Protocols are usually only referenced when [subclassing](../how-to/ObjC-Subclassing.md) an Objective-C class or when checking whether an object or class conforms to a protocol.
+Protocols in Objective-C are like interfaces in other languages - they are blueprints of what members a class should contain, a sort of an API contract. Protocols are exposed as empty objects in JavaScript. Protocols are usually only referenced when [subclassing](../how-to/ObjC-Subclassing.md) an Objective-C class or when checking whether an object or class conforms to a protocol.
 ```objective-c
 BOOL isCopying = [NSArray conformsToProtocol:@protocol(NSCopying)];
 ```
