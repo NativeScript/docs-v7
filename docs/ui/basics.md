@@ -567,6 +567,8 @@ exports.createViewModel = createViewModel;
 
 ### Dynamic Loading of Custom Components
 
+**Dynamic load of JavaScript/TypeScript component**
+
 Load a pure JavaScript component by finding it in the exports of the module. The component is specified by a path and its name. Then the code from the JavaScript file is executed.
 ```TypeScript
 import * as builder from "tns-core-modules/ui/builder";
@@ -582,6 +584,8 @@ let myComponentInstance = builder.load({
         name: "MyControl"
 });
 ```
+
+**Dynamic load of XML with JavaScript/TypeScript component**
 
 Load the XML file with JavaScript code-behind by finding the specified XML filename through the specified path in the exports of the modules. JavaScript file with the same name will be required and served as code-behind of the XML.
 ```TypeScript
@@ -614,6 +618,30 @@ let myComponentInstance = builder.load({
         page: yourPageInstance
 });
 ```
+
+**Dynamic load and passing additional attributes**
+
+The `attributes` option can be used to pass additional arguments.
+
+```TypeScript
+import * as builder from "tns-core-modules/ui/builder";
+let myComponentInstance = builder.load({
+        path: "~/components/my-control",
+        name: "MyControl",
+        attributes: {
+            bindingContext: myBindingModel
+        }
+});
+```
+```JavaScript
+let builder = require("tns-core-modules/ui/builder");
+let myComponentInstance = builder.load({
+        path: "~/components/my-control",
+        name: "MyControl",
+        attributes: {
+            bindingContext: myBindingModel
+        }
+});
 
 ## Gestures
 All [UI Gestures]({% slug gestures %})
