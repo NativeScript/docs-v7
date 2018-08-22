@@ -796,37 +796,38 @@ Android API levels 21+ (Lollipop and above) let you set the status bar to use an
 | Ruby         | #ff1744              |
 | Sky          | #30bcff              |
 
-Additionally, when using the light color scheme, include the following code in your `app.js` file. The code sets Android’s `SYSTEM_UI_FLAG_LIGHT_STATUS_BAR` flag, which makes all icons in the status bar use a color that’s visible on the light background.
+Additionally, when using the light color scheme, include the following code in your `app.ts` (or `app.js` if coding plain JavaScript) file. The code sets Android’s `SYSTEM_UI_FLAG_LIGHT_STATUS_BAR` flag, which makes all icons in the status bar use a color that’s visible on the light background.
 
-``` JavaScript
-var application = require("application");
-var platform = require("platform");
-
-if (platform.isAndroid && platform.device.sdkVersion >= "21") {
-  application.android.onActivityStarted = function() {
-    var window = application.android.startActivity.getWindow();
-    var decorView = window.getDecorView();
-    decorView.setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-  }
-}
-
-// Your application.start() call goes here.
-```
 ``` TypeScript
-import * as application from "application";
-import * as platform from "platform";
+import * as application from "tns-core-modules/application";
+import * as platform from "tns-core-modules/platform";
 declare var android: any;
 
 if (platform.isAndroid && platform.device.sdkVersion >= "21") {
-  application.android.onActivityStarted = function() {
-    let window = application.android.startActivity.getWindow();
-    let decorView = window.getDecorView();
-    decorView.setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-  }
-}
-
-// Your application.start() call goes here.
+    application.android.on(application.AndroidApplication.activityStartedEvent, function() {
+        let window = application.android.startActivity.getWindow();
+        let decorView = window.getDecorView();
+        decorView.setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+    })
+};
+ 
+// Your application.run() call follows here.
 ```
+``` JavaScript
+var application = require("tns-core-modules/application");
+var platform = require("tns-core-modules/platform");
+
+if (platform.isAndroid && platform.device.sdkVersion >= "21") {
+    application.android.on(application.AndroidApplication.activityStartedEvent, function () {
+        var window = application.android.startActivity.getWindow();
+        var decorView = window.getDecorView();
+        decorView.setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+    });
+}; 
+
+// Your application.run() call follows here.
+```
+
 
 ## Uninstalling
 
