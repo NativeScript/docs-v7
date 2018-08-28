@@ -121,7 +121,7 @@ const randomViewId = android.view.View.generateViewId(); // static method call t
 ```
 
 ## Extend Classes and Interfaces
-For a comprehensive guide on extending classes and implementing interfaces through JavaScript/TypeScript check out [the dedicated article](../generator/extend-class-interface.md).
+For a comprehensive guide on extending classes and implementing interfaces through JavaScript/TypeScript check out [the dedicated article](../binding-generator/extend-class-interface.md).
 
 ## Full-fledged Example
 Let's take a sample Android code, and transcribe it to JavaScript/TypeScript.
