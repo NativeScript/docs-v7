@@ -74,7 +74,7 @@ When you set margins through XML, you can choose between the following approache
 
 ## Layouts
 
-`Layout` is the base class for all views that provide positioning of child elements.
+`LayoutBase` is the base class for all views that provide positioning of child elements.
 
 You can use the various layout containers to position elements. They evaluate the base properties of `View` such as `width`, `height`, `minWidth` and alignments, and expose additional properties for positioning child views (such as the four paddings).
 
