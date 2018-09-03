@@ -19,7 +19,7 @@ To add an **event handler** means setting a function (method) that executes when
 
 ### Adding an Event Listener Using JavaScript/TypeScript
 
-The example below shows how to add an event listener by using the short (using `on`) and the full syntax (using `addEventListener`). There is a third optional parameter that represents the `this` argument. The code shows how to set a function that prints a "Hello World!" message in the console when a button is tapped. You can choose between the shorthand syntax and the full syntax or you can declare the event handler in XML.
+The example below shows how to add an event listener by using the short (using `on`) and the full syntax (using `addEventListener`). There is a third optional parameter that represents the `this` argument. The code shows how to set a function that prints a "Hello World!" message in the console when a button is tapped. You can choose between the shorthand syntax and the full syntax, or you can declare the event handler in XML.
 
 > **TIP**: All examples in this article are available for preview in NativeScript Playground. Run this example in [JavaScript](https://play.nativescript.org/?template=play-js&id=bo1JvH&v=55) or [TypeScript](https://play.nativescript.org/?template=play-tsc&id=y5hWfh&v=2).
 
@@ -82,7 +82,7 @@ export function onTouch(args: TouchGestureEventData) {
 
 ### Adding an Event Listener Using MVVM Pattern
 
-Often in NativeScript the MVVM pattern is used with a separate view model that provides the binding context for your views. In such cases, the event handles must be provided via the binding context syntax.
+Often in NativeScript, the MVVM pattern is used with a separate view model that provides the binding context for your views. In such cases, the event handles must be provided via the binding context syntax.
 
 _JavaScript example_
 ```JavaScript
@@ -153,13 +153,13 @@ export function pageLoaded(args: EventData) {
 
 ## Removing an Event Listener
 
-Usually you don't need to remove the event listener. However in some cases, you might need to do it when you want to receive the event just once or to free up resources.
+Usually, you don't need to remove the event listener. However, in some cases, you might need to do it when you want to receive the event just once or to free up resources.
 
 > **Note:** There is no syntax to remove an event listener through an XML declaration.
 
 ### Removing an Event Listener Using JavaScript/TypeScript
 
-The below example uses the shorthand and full syntax to remove all listeners for the tap event of the testButton instance. If more than one object are listening for events, you can set a second parameter with the name of the callback function. This way only the referenced event listener is removed. When multiple event listeners with different `this` arguments are available, a third optional parameter is used.
+The below example uses the shorthand and full syntax to remove all listeners for the tap event of the testButton instance. If more than one object is listening for events, you can set the second parameter with the name of the callback function. This way only the referenced event listener is removed. When multiple event listeners with different `this` arguments are available, a third optional parameter is used.
 
 _Removing a button tap event listener_
 ``` JavaScript
@@ -268,7 +268,7 @@ The code snippet in __Example 4__ fires the `propertyChange` event when the prop
 
 ### PropertyChangeData Interface
 
-The arguments received after the `propertyChange` event is raised are of type [PropertyChangeData](https://docs.nativescript.org/api-reference/interfaces/_data_observable_.propertychangedata). The interface provides five common properties:
+The arguments received after the `propertyChange` event is raised, are of type [PropertyChangeData](https://docs.nativescript.org/api-reference/interfaces/_data_observable_.propertychangedata). The interface provides five common properties:
 
 - `object` - The Observable instance that has raised the event.
 - `eventName` - The name of the raised event.
@@ -316,7 +316,7 @@ To prevent these memory leaks, it is a good practice to remove your event listen
 
 ## Working with Weak Events
 
-A weak event, as its name suggests, creates an weak reference to the listener object, which helps you release the listener object without removing the event listener pointer.
+A weak event, as its name suggests, creates a weak reference to the listener object, which helps you release the listener object without removing the event listener pointer.
 
 ### Adding a Weak Event Listener
 
