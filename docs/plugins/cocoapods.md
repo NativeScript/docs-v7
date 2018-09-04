@@ -101,4 +101,4 @@ This modifies the `MYCocoaPodsApp.xcodeproj` and creates a workspace with the sa
 
 ## Troubleshooting
 
-In case of post-build linker errors, you might need to resolve missing dependencies to native frameworks required by the installed CocoaPod. For more information about how to create the required links, see the [build.xcconfig specification](PLUGINS.md#buildxcconfig-specification).
+In case of post-build linker errors, you might need to resolve missing dependencies to native frameworks required by the installed CocoaPod. For more information about how to create the required links, see the [build.xcconfig specification](./plugin-reference#buildxcconfig-specification).
