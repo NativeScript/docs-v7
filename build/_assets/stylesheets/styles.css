@@ -2047,13 +2047,6 @@ td.gsc-input {
     flex: 1;
 }
 
-html input.gsc-input {
-    visibility: hidden;
-    background: none !important;
-    text-indent: 1em !important;
-    font-size: 1em;
-}
-
 html .gsc-search-box-tools .gsc-clear-button {
     display: none;
 }
