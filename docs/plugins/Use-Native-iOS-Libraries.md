@@ -17,8 +17,8 @@ For iOS, three types of library packages are available:
 
 You can use any of the following approaches to add and use a native library in your project:
 
-1. (Recommended) [Create a plugin containing a CocoaPod `Podfile`.](./../../../plugins/cocoapods.md)
-2. [Create a plugin containing the already built binary and headers.](./../../../plugins/plugins.md)
+1. (Recommended) [Create a plugin containing a CocoaPod `Podfile`.](./cocoapods.md)
+2. [Create a plugin containing the already built binary and headers.](./plugin-reference.md)
 3. (Not recommended) Don't create a plugin and manually change the Xcode project located in `{your-app}/platforms/ios/`.
 
 To consume a native library the iOS Runtime has to know about the following resources:
@@ -29,7 +29,7 @@ The only reason the runtime needs header files is to generate metadata. The meta
 
 ## Shared Frameworks
 
-Shared frameworks are the best option because only they have a well-known structure and a `module.modulemap` file which eliminates the need for manual work. [NativeScript plugins](./../../../plugins/plugins.md) support shared frameworks and you can add them with CocoaPods. 
+Shared frameworks are the best option because only they have a well-known structure and a `module.modulemap` file which eliminates the need for manual work. [NativeScript plugins](./plugin-reference.md) support shared frameworks and you can add them with CocoaPods. 
 
 With CocoaPods, you can remove the framework (with all the binary and header files in it) from your plugin repository and keep only a single `Podfile`. You also get all the benefits of using a package manager.
 
@@ -63,7 +63,7 @@ Most of the static frameworks don't contain `module.modulemap` file, so you have
 2. Only Objective-C APIs are exposed (no C functions and C constants) from static frameworks. To work around this limitation, you can manually edit the Xcode project file. However, this workaround is not recommended.
 
 ## Static Libraries
-The NativeScript CLI supports static libraries coming from plugins but the binary and headers must be ordered in a specific folder structure described in details [here](./../../../plugins/plugins.md). This is required because the NativeScript CLI generates a `module.modulemap` file for the library which works most of the time. However, in some cases you might need to wrap the library in a static framework with a `module.modulemap` file. 
+The NativeScript CLI supports static libraries coming from plugins but the binary and headers must be ordered in a specific folder structure described in details [here](./plugin-reference.md). This is required because the NativeScript CLI generates a `module.modulemap` file for the library which works most of the time. However, in some cases you might need to wrap the library in a static framework with a `module.modulemap` file. 
 
 > If you cannot wrap your static library in a static framework with a `module.modulemap`, in cases such as when using Cocoapods, take a look at the following sample for guidance: https://github.com/NativeScript/plugin-ios-modulemap-sample
 
@@ -88,7 +88,7 @@ As a rule of thumb, avoid manual changes to the Xcode project file in the `/plat
 
 ## Troubleshooting
 
-Starting with version 1.4 of NativeScript for iOS, you are able to generate [debug metadata](../Overview.md#metadata) and [TypeScript declarations](https://typescript.codeplex.com/wikipage?title=Writing%20Definition%20%28.d.ts%29%20Files) for third-party libraries. This way you are able to see exactly what APIs are exposed to JavaScript.
+Starting with version 1.4 of NativeScript for iOS, you are able to generate [debug metadata](../core-concepts/ios-runtime/Overview#metadata) and [TypeScript declarations](https://typescript.codeplex.com/wikipage?title=Writing%20Definition%20%28.d.ts%29%20Files) for third-party libraries. This way you are able to see exactly what APIs are exposed to JavaScript.
 
 > **NOTE:** Swift APIs that are not [exported to Objective-C](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID55) are not supported.
 
