@@ -54,7 +54,7 @@ $ tns
 NativeScript builds truly native iOS and Android apps, and as such, each target platform needs setting up on the development machine. To ease the pain of installing all of these requirements manually, the `tns` command provides quick-start scripts for Windows and macOS. Let’s look at how they work.
 
 > **TIP**:
-> * Setting up your machine for native development can be tricky, especially if you’re new to mobile development. If you get stuck, or if you have questions while going through these instructions, the [forum](https://discourse.nativescript.org/c/getting-started) is a great place to get help.
+> * Setting up your machine for native development can be tricky, especially if you’re new to mobile development. If you get stuck, or if you have questions while going through these instructions, [Stack Overflow](https://stackoverflow.com/questions/tagged/nativescript) is a great place to get help.
 > * If you’re not comfortable with a script automatically installing dependencies on your development machine, or if you’re on Linux, refer to one of the advanced setup guides below for details on manually installing the iOS and Android dependencies.
 >     * [Advanced setup: Windows](/start/ns-setup-win)
 >     * [Advanced setup: macOS](/start/ns-setup-os-x)
