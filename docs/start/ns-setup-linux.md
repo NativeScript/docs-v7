@@ -11,21 +11,18 @@ previous_url: /setup/ns-cli-setup/ns-setup-linux
 
 This page contains a list of all system requirements needed to build and run NativeScript apps on Linux, as well as a guided walkthrough for getting these requirements in place.
 
-* [System Requirements](#system-requirements)
-* [Advanced Setup Steps](#advanced-setup-steps)
-
 > **NOTE**: On Linux systems you can only use the NativeScript CLI to develop Android apps. This is because the NativeScript CLI uses Xcode to build iOS apps, which is only available on the macOS operating system. If you’re interested in building iOS apps on Linux, you may want to try out the public preview of [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick). NativeScript Sidekick provides robust tooling for NativeScript apps, including a service that performs iOS and Android builds in the cloud, removing the need to complete these system requirements, and allowing you to build for iOS on Linux.
 
 ## System Requirements
 
 * Ubuntu 14.04 LTS
-* The latest stable official release of Node.js (LTS) [6.x](https://nodejs.org/dist/latest-v6.x/) 
+* The latest stable official release of Node.js (LTS) [8.x](https://nodejs.org/dist/latest-v8.x/) 
 * G++ compiler
 * JDK 8
 * Android SDK 22 or a later stable official release
 * Android Support Repository
 * (Optional) Google Repository
-* Android SDK Build-tools 25.0.2 or a later stable official release
+* Android SDK Build-tools 27.0.3 or a later stable official release
 
 You must also have the following two environment variables setup for Android development:
 
@@ -36,7 +33,7 @@ You must also have the following two environment variables setup for Android dev
 
 Complete the following steps to set up NativeScript on your Linux development machine:
 
-1. Install the latest Node.js [6.x](https://nodejs.org/dist/latest-v6.x/) or [7.x](https://nodejs.org/dist/latest-v7.x/) stable official release. We recommend using Node.js v6.x.
+1. Install the latest Node.js [8.x](https://nodejs.org/dist/latest-v8.x/) stable official release. 
 
 1. If you are running on a 64-bit system, install the runtime libraries for the ia32/i386 architecture.
 
@@ -75,14 +72,17 @@ Complete the following steps to set up NativeScript on your Linux development ma
     1. After the download completes, unpack the downloaded archive into a folder, such as `/android/sdk`
        * The archive you just extracted was the `tools` folder, so in this case it would be at: `/android/sdk/tools`
     1. Set the ANDROID_HOME system environment variable.
-        <pre><code class="language-terminal">export ANDROID_HOME=Path to Android installation directory
+        <pre><code class="language-terminal">sudo -H gedit /etc/environment
         </code></pre>
-        For example: `ANDROID_HOME=/android/sdk`
+    1. In a text file which was opened, paste in the path to your variable (at the new line).
+    
+    For example: `ANDROID_HOME=/android/sdk`
         <blockquote><b>NOTE</b>: This is the directory that contains the <code>tools</code> (just installed) and <code>platform-tools</code> (installed by scripts in the next step) directories.</blockquote>
+     1. Logout from current user and login again so environment variables changes take place.
 
-1. Install all packages for the Android SDK Platform 25, Android SDK Build-Tools 25.0.2 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages.
+1. Install all packages for the Android SDK Platform 25, Android SDK Build-Tools 27.0.3 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages. In order to install SDK's go to Android Studio -> Settings -> System Settings -> Android SDK -> Mark all the Android versions you would like to support within your project (The API Level column indicates the SDK Platform).
 
-    <pre class="add-copy-button"><code class="language-terminal">sudo $ANDROID_HOME/tools/bin/sdkmanager "tools" "platform-tools" "platforms;android-25" "build-tools;25.0.2" "extras;android;m2repository" "extras;google;m2repository"
+    <pre class="add-copy-button"><code class="language-terminal">sudo $ANDROID_HOME/tools/bin/sdkmanager "tools" "emulator" "platform-tools" "platforms;android-25" "build-tools;27.0.3" "extras;android;m2repository" "extras;google;m2repository"
     </code></pre>
 
 1. Setup Android Emulators (AVD) by following the article [here]({%slug android-emulators%})
@@ -109,5 +109,10 @@ If you see "No issues were detected" you are good to go!
 
 ## What’s Next
 
-* [Return to the JavaScript tutorial](http://docs.nativescript.org/tutorial/chapter-1#11-install-nativescript-and-configure-your-environment)
-* [Return to the TypeScript & Angular tutorial](http://docs.nativescript.org/angular/tutorial/ng-chapter-1#11-install-nativescript-and-configure-your-environment)
+{% angular %}
+* [Learn the Basics of the NativeScript CLI](/angular/start/cli-basics)
+{% endangular %}
+
+{% nativescript %}
+* [Learn the Basics of the NativeScript CLI](/start/cli-basics)
+{% endnativescript %}

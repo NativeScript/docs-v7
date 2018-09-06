@@ -182,7 +182,7 @@ exports.buttonGetLocationTap = buttonGetLocationTap;
 
 With this method, location watching does not stop automatically until the `clearWatch` method is called. You might need to use this method in apps which require a GPS log or active location tracking. 
 
-> Example 3: How to handle location chnage event
+> Example 3: How to handle location change event
 
 {% nativescript %}
 ```XML

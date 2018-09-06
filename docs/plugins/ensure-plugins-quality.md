@@ -14,12 +14,6 @@ NativeScript plugins are the main building blocks for NativeScript applications.
 
 Ignoring any of these non-functional requirements could lead to an app that doesn’t work as expected. Throughout this article we'll be referring to the verification of those requirements as 'sanity checks' without writing a single line of test. 
 
-This article will cover:
-- [Prerequisites](#prerequisites)
-- [Checking for Readability, Maintainability, and Functionality Errors](#checking-for-readability-maintainability-and-functionality-errors)
-- [Checking in Bundled NativeScript Applications](#checking-in-bundled-nativescript-applications)
-- [Checking in Application Built for Android and iOS](#checking-in-application-built-for-android-and-ios)
-- [Automate All Checks with Travis CI](#automate-all-checks-with-travis-ci)
 
 ## Prerequisites
 

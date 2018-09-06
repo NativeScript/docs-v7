@@ -17,7 +17,7 @@ First things first - you start off from a regular plugin. You can check the [Bui
 
 Let's say you want to build a simple meme generator component with three properties, which you can use like:
 
-```xml
+```XML
     <ui:Meme imageSource="~/images/nativescript.png" topText="ROCK" bottomText="ROLL" />
 ```
 

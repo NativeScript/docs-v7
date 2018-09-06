@@ -91,7 +91,7 @@ view.animate({
 });
 ```
 
-![multiple-properties](../img/modules/animation/multiple-properties.gif "Multiple Properties")
+![multiple-properties](./img/modules/animation/multiple-properties.gif "Multiple Properties")
 
 ## Chaining animations with promises
 
@@ -132,4 +132,4 @@ view.animate({ opacity: 0 })
   });
 ```
 
-![chaining-with-promises](../img/modules/animation/chaining-with-promises.gif "Chaining with Promises")
+![chaining-with-promises](./img/modules/animation/chaining-with-promises.gif "Chaining with Promises")

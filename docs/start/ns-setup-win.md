@@ -55,9 +55,9 @@ Complete the following steps to set up NativeScript on your Windows development 
 
     - Restart the command prompt.
 
-6. Install all packages for the Android SDK Platform 25, Android SDK Build-Tools 25.0.2 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages.
+6. Install all packages for the Android SDK Platform 25, Android SDK Build-Tools 27.0.3 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages.
 
-    <pre class="add-copy-button"><code class="language-terminal">"%ANDROID_HOME%\tools\bin\sdkmanager" "platform-tools" "platforms;android-25" "build-tools;25.0.2" "extras;android;m2repository" "extras;google;m2repository"
+    <pre class="add-copy-button"><code class="language-terminal">"%ANDROID_HOME%\tools\bin\sdkmanager" "emulator" "platform-tools" "platforms;android-25" "build-tools;27.0.3" "extras;android;m2repository" "extras;google;m2repository"
     </code></pre>
 
 7. Install Android virtual devices (AVDs). There are multiple ways to do it so just choose one:
@@ -98,5 +98,10 @@ If you see "No issues were detected" you are good to go!
 
 ## What’s Next
 
-* [Return to the JavaScript tutorial](http://docs.nativescript.org/tutorial/chapter-1#11-install-nativescript-and-configure-your-environment)
-* [Return to the TypeScript & Angular tutorial](http://docs.nativescript.org/angular/tutorial/ng-chapter-1#11-install-nativescript-and-configure-your-environment)
+{% angular %}
+* [Learn the Basics of the NativeScript CLI](/angular/start/cli-basics)
+{% endangular %}
+
+{% nativescript %}
+* [Learn the Basics of the NativeScript CLI](/start/cli-basics)
+{% endnativescript %}

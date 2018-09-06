@@ -14,7 +14,7 @@ The full source code for all samples is located [here](https://github.com/Native
 
 ## Animated opacity
 
-![opacity](../img/modules/animation/opacity.gif "Opacity")
+![opacity](./img/modules/animation/opacity.gif "Opacity")
 
 ``` JavaScript
 view.animate({
@@ -43,7 +43,7 @@ view.animate({
 
 ## Animate background color
 
-![background-color](../img/modules/animation/background-color.gif "Background Color")
+![background-color](./img/modules/animation/background-color.gif "Background Color")
 
 ``` JavaScript
 view.animate({
@@ -72,7 +72,7 @@ view.animate({
 
 ## Animate position
 
-![translate](../img/modules/animation/translate.gif "Translate")
+![translate](./img/modules/animation/translate.gif "Translate")
 
 ``` JavaScript
 view.animate({
@@ -101,7 +101,7 @@ view.animate({
 
 ## Animate scale
 
-![scale](../img/modules/animation/scale.gif "Scale")
+![scale](./img/modules/animation/scale.gif "Scale")
 
 ``` JavaScript
 view.animate({
@@ -130,7 +130,7 @@ view.animate({
 
 ## Animate rotate
 
-![rotate](../img/modules/animation/rotate.gif "Rotate")
+![rotate](./img/modules/animation/rotate.gif "Rotate")
 
 ``` JavaScript
 view.animate({
@@ -159,7 +159,7 @@ view.animate({
 
 ## Chaining animations with AnimationSet
 
-![chaining-with-animation-set](../img/modules/animation/chaining-with-animation-set.gif "Chaining with Animation Set")
+![chaining-with-animation-set](./img/modules/animation/chaining-with-animation-set.gif "Chaining with Animation Set")
 
 ``` JavaScript
 var definitions = new Array();
@@ -194,7 +194,7 @@ animationSet.play().then(() => {
 
 ## Animating multiple views
 
-![multiple-views](../img/modules/animation/multiple-views.gif "Multiple Views")
+![multiple-views](./img/modules/animation/multiple-views.gif "Multiple Views")
 
 ``` JavaScript
 var definitions = new Array();
@@ -274,7 +274,7 @@ animationSet.play().then(() => {
 
 ## Reusing animations
 
-![reusing](../img/modules/animation/reusing.gif "Reusing Animations")
+![reusing](./img/modules/animation/reusing.gif "Reusing Animations")
 
 ``` JavaScript
 var animation1 = view.createAnimation({ opacity: 0 });
@@ -312,7 +312,7 @@ animation1.play()
 
 ## Slide-in effect
 
-![slide-in-effect](../img/modules/animation/slide-in-effect.gif "Slide-in Effect")
+![slide-in-effect](./img/modules/animation/slide-in-effect.gif "Slide-in Effect")
 
 ``` JavaScript
 var item = new imageModule.Image();
@@ -343,7 +343,7 @@ wrapLayout.addChild(item);
 
 ## Infinite animations
 
-![infinite](../img/modules/animation/infinite.gif "Infinite")
+![infinite](./img/modules/animation/infinite.gif "Infinite")
 
 ``` JavaScript
 animationSet = new animationModule.Animation([{
@@ -370,6 +370,50 @@ animationSet.play().catch((e) => {
     console.log("Animation stopped!");
 });
 // Call animationSet.cancel() to stop it;
+```
+
+## Rotation using originX and originY
+
+git bran
+__Example 5: Rotating a view around its center. Center of viww is changed via `originX` and `originY` properties.__
+
+``` JavaScript
+const view = page.getViewById("myView");
+
+view.originX = 1; // default 0.5 (center), 0 is most left, 1 is most right
+view.originY = 0; // default 0.5 (middle), 0 is top, 1 is bottom
+view.animate({
+	rotate: 360, // will take into account originX and originY
+    duration: 1000
+}).then(() => {
+    view.originX = 0;
+    view.originY = 1;
+    view.rotate = 0;
+
+    view.animate({
+        rotate: -360,
+        duration: 1000
+    })
+})
+```
+``` TypeScript
+const view = page.getViewById("myView");
+
+view.originX = 1; // default 0.5 (center), 0 is most left, 1 is most right
+view.originY = 0; // default 0.5 (middle), 0 is top, 1 is bottom
+view.animate({
+	rotate: 360, // will take into account originX and originY
+    duration: 1000
+}).then(() => {
+    view.originX = 0;
+    view.originY = 1;
+    view.rotate = 0;
+
+    view.animate({
+        rotate: -360,
+        duration: 1000
+    })
+})
 ```
 
 

@@ -1,104 +1,116 @@
-<div class="feedback-mark">
-  <div id="feedback-section">
-    {% javascript feedback-form %}
-    <span id="popupNotification"></span>
-    <div id="feedback-menu-container" class="container">
-      <div class="row">
-        <div class="col-3 -xl-col-4 -l-col-4"></div>
-        <div id="helpful-buttons-container" class="col-9 -xl-col-8 -l-col-8 -m-col-12">
-          <span class="side-title">Is this article helpful?</span>
-          <span class="-right">
-            <a class="Btn" id="yesButton">Yes</a> / <a class="Btn" id="noButton">No</a>
-          </span>
+<div class="ns-feedback">
+    <div id="feedback-section">
+        {% javascript feedback-form %}
+        <span id="popupNotification"></span>
+        <div id="feedback-menu-container" class="feedback__container">
+            <div id="feedback-buttons-container">
+                <span class="feedback__title">Is this article helpful?</span>
+                <span>
+                    <a id="yesButton">Yes</a> / <a id="noButton">No</a>
+                </span>
+            </div>
+            <div id="feedback-submitted-container">
+                <span>Thank you for your feedback!</span>
+            </div>
+            <a class="close-banner-button"></a>
         </div>
-        <div id="feedback-submitted-container" class="col-9 -xl-col-8 -l-col-8 -m-col-12">
-          <span class="-right">Thank you for your feedback!</span>
+        <div id="feedback-window-container">
+            <div id="feedback-form-window">
+                <p class="h5">Tell us how we can improve this article</p>
+                <span id="feedback-form-popup-container"></span>
+                <form id="feedback-form">
+                    <div id="feedback-checkbox-area">
+                        <input id="hidden-sheet-id" type="hidden" value="{{site.ff-sheet-id}}">
+                        <div class="tp-checkbox">
+                            <input class="checkbox__input" type="checkbox" data-bind="checked: outdatedSample" id="outdatedSample"/>
+                            <label class="checkbox__label" for="outdatedSample">
+                                <span class="checkbox__icon"></span>
+                                <span class="checkbox__text">
+                                    Code samples are inaccurate / outdated.
+                                </span>
+                            </label>
+                        </div>
+                        <span class="required-field" data-bind="visible: outdatedSample"></span>
+                        <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details..."
+                                  class="feedback-extw__textarea"
+                                  data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText, attr: { required: outdatedSample }">
+                        </textarea>
+                        <div class="tp-checkbox">
+                            <input class="checkbox__input" type="checkbox" data-bind="checked: otherMoreInformation"
+                                   id="otherMoreInformation"/>
+                            <label class="checkbox__label" for="otherMoreInformation">
+                                <span class="checkbox__icon"></span>
+                                <span class="checkbox__text">
+                                    I expected to find other / more information.
+                                </span>
+                            </label>
+                        </div>
+                        <span class="required-field" data-bind="visible: otherMoreInformation"></span>
+                        <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea"
+                                  placeholder="Please, specify what information can be added..."
+                                  data-bind="visible: otherMoreInformation, value: otherMoreInformationText, attr: { required: otherMoreInformation }">
+                        </textarea>
+                        <div class="tp-checkbox">
+                            <input class="checkbox__input" type="checkbox" data-bind="checked: textErrors" id="textErrors"/>
+                            <label class="checkbox__label" for="textErrors">
+                                <span class="checkbox__icon"></span>
+                                <span class="checkbox__text">
+                                    There are typos / broken links / broken page elements.
+                                </span>
+                            </label>
+                        </div>
+                        <span class="required-field" data-bind="visible: textErrors"></span>
+                        <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea"
+                                  placeholder="Please, specify what needs to be fixed..."
+                                  data-bind="visible: textErrors, value: typosLinksElementsText, attr: { required: textErrors }">
+                        </textarea>
+                        <div class="tp-checkbox">
+                            <input class="checkbox__input" type="checkbox" data-bind="checked: inaccurateContent" id="inaccurateContent"/>
+                            <label class="checkbox__label" for="inaccurateContent">
+                                <span class="checkbox__icon"></span>
+                                <span class="checkbox__text">
+                                    Content is inaccurate / outdated.
+                                </span>
+                            </label>
+                        </div>
+                        <span class="required-field" data-bind="visible: inaccurateContent"></span>
+                        <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea"
+                                  placeholder="Please, specify which conent..."
+                                  data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText, attr: { required: inaccurateContent }"></textarea>
+                        <div class="tp-checkbox">
+                            <input class="checkbox__input" type="checkbox" data-bind="checked: otherFeedback" id="otherFeedback"/>
+                            <label class="checkbox__label" for="otherFeedback">
+                                <span class="checkbox__icon"></span>
+                                <span class="checkbox__text">
+                                    Other
+                                </span>
+                            </label>
+                        </div>
+                        <span class="required-field" data-bind="visible: otherFeedback"></span>
+                        <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback..."
+                                  class="feedback-extw__textarea"
+                                  data-bind="visible: otherFeedback, value: textFeedback, attr: { required: otherFeedback }">
+                        </textarea>
+                        <input id="feedback-email-input" type="email" placeholder="email (optional)"
+                               data-email-msg="Email format is not valid." class="feedback-extw__input input"
+                               data-bind="value: email"/>
+                        <div class="tp-checkbox">
+                            <input id="feedback-email-consent" type="checkbox" data-bind="checked: acceptFeedbackContact"
+                                   data-email-msg="You need to agree first." class="checkbox__input"/>
+                            <label class="checkbox__label" for="feedback-email-consent">
+                                <span class="checkbox__icon"></span>
+                                <span class="checkbox__text">
+                                    By checking this box you consent to Progress contacting you by email about your response on this page.
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <div class="feedback-extw__foot">
+                    <button id="form-submit-button" class="ns-button -action feedback-extw__button">Send feedback</button>
+                    <button id="form-close-button" class="ns-button col-5 feedback-extw__button">Cancel</button>
+                </div>
+            </div>
         </div>
-      </div>
-      <a class="Btn" id="close-banner-button"></a>
     </div>
-    <div id="feedback-window-container">
-      <div id="feedback-form-window">
-        <p class="h5">Tell us how we can improve this article</p>
-        <span id="feedback-form-popup-container"></span>
-        <form id="feedback-form">
-          <div id="feedback-checkbox-area">
-            <input id="hidden-sheet-id" type="hidden" value="{{site.ff-sheet-id}}">
-            <div class="tp-checkbox">
-              <input class="checkbox__input" type="checkbox" data-bind="checked: outdatedSample" id="outdatedSample"/>
-              <label class="checkbox__label" for="outdatedSample">
-                <span class="checkbox__icon"></span>
-                <span class="checkbox__text">
-                  Code samples are inaccurate / outdated.
-                </span>
-              </label>
-            </div>
-            <span class="required-field" data-bind="visible: outdatedSample"></span>
-            <textarea id="feedback-code-sample-text-input" placeholder="Please, specify more details..." class="feedback-extw__textarea"
-              data-bind="visible: outdatedSample, value: inaccurateOutdatedCodeSamplesText, attr: { required: outdatedSample }">
-            </textarea>
-            <div class="tp-checkbox">
-              <input class="checkbox__input" type="checkbox" data-bind="checked: otherMoreInformation" id="otherMoreInformation"/>
-              <label class="checkbox__label" for="otherMoreInformation">
-                <span class="checkbox__icon"></span>
-                <span class="checkbox__text">
-                  I expected to find other / more information.
-                </span>
-              </label>
-            </div>
-            <span class="required-field" data-bind="visible: otherMoreInformation"></span>
-            <textarea id="feedback-more-information-text-input" class="feedback-extw__textarea" placeholder="Please, specify what information can be added..."
-              data-bind="visible: otherMoreInformation, value: otherMoreInformationText, attr: { required: otherMoreInformation }" >
-            </textarea>
-            <div class="tp-checkbox">
-              <input class="checkbox__input" type="checkbox" data-bind="checked: textErrors" id="textErrors"/>
-              <label class="checkbox__label" for="textErrors">
-                <span class="checkbox__icon"></span>
-                <span class="checkbox__text">
-                  There are typos / broken links / broken page elements.
-                </span>
-              </label>
-            </div>
-            <span class="required-field" data-bind="visible: textErrors"></span>
-            <textarea id="feedback-text-errors-text-input" class="feedback-extw__textarea" placeholder="Please, specify what needs to be fixed..."
-              data-bind="visible: textErrors, value: typosLinksElementsText, attr: { required: textErrors }">
-            </textarea>
-            <div class="tp-checkbox">
-              <input class="checkbox__input" type="checkbox" data-bind="checked: inaccurateContent" id="inaccurateContent"/>
-              <label class="checkbox__label" for="inaccurateContent">
-                <span class="checkbox__icon"></span>
-                <span class="checkbox__text">
-                  Content is inaccurate / outdated.
-                </span>
-              </label>
-            </div>
-            <span class="required-field" data-bind="visible: inaccurateContent"></span>
-            <textarea id="feedback-inaccurate-content-text-input" class="feedback-extw__textarea" placeholder="Please, specify which conent..."
-              data-bind="visible: inaccurateContent, value: inaccurateOutdatedContentText, attr: { required: inaccurateContent }"></textarea>
-            <div class="tp-checkbox">
-              <input class="checkbox__input" type="checkbox" data-bind="checked: otherFeedback" id="otherFeedback"/>
-              <label class="checkbox__label" for="otherFeedback">
-                <span class="checkbox__icon"></span>
-                <span class="checkbox__text">
-                  Other
-                </span>
-              </label>
-            </div>
-            <span class="required-field" data-bind="visible: otherFeedback"></span>
-            <textarea id="feedback-other-text-input" placeholder="Please, enter more details or not listed feedback..." class="feedback-extw__textarea"
-              data-bind="visible: otherFeedback, value: textFeedback, attr: { required: otherFeedback }">
-            </textarea>
-            <input id="feedback-email-input" type="email" placeholder="email (optional)" data-email-msg="Email format is not valid." class="feedback-extw__input input"
-              data-bind="value: email"/>
-          </div>
-        </form>
-        <div class="feedback-extw__foot">
-          <button id="form-submit-button" class="Btn col-5 feedback-extw__button button button--action">Send feedback</button>
-          <button id="form-close-button" class="Btn Btn--ghost col-5 feedback-extw__button button">Cancel</button>
-        </div>
-      </div>
-    </div>
-    <!-- <a id="close-button" class="button"><img src="{{site.baseurl}}/images/close-btn.svg" alt="close" /></a> -->
-  </div>
-  <!-- <div id="feedback-section-dummy">Dummy</div> -->
 </div>

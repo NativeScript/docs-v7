@@ -1,29 +1,10 @@
 ---
 title: Plugin Reference
 description: A collection of reference material for NativeScript plugin authors
-position: 90
+position: 10
 ---
 
-# Plugin Reference
-
-The following article is a reference for advanced NativeScript plugin creation and configuration.
-
-* [What Are NativeScript Plugins](#what-are-nativescript-plugins)
-* [Create a Plugin](#create-a-plugin)
-  * [Directory Structure](#directory-structure)
-  * [`package.json` Specification](#packagejson-specification)
-  * [`include.gradle` Specification](#includegradle-specification)
-  * [`build.xcconfig` Specification](#buildxcconfig-specification)
-* [Install a Plugin](#install-a-plugin)
-  * [Valid Plugin Sources](#valid-plugin-sources)
-  * [Installation Specifics](#installation-specifics)
-  * [Manual Steps After Installation](#manual-steps-after-installation)
-* [Use a Plugin](#use-a-plugin)
-* [Remove a Plugin](#remove-a-plugin)
-  * [Removal Specifics](#removal-specifics)
-  * [Manual Steps After Removal](#manual-steps-after-removal)
-
-## What Are NativeScript Plugins
+# What Are NativeScript Plugins
 
 A NativeScript plugin is any npm package, published or not, that exposes a native API via JavaScript and consists of the following elements.
 
@@ -131,7 +112,6 @@ Every NativeScript plugin should contain a valid `package.json` file in its root
 * It must contain a `nativescript` section which describes the supported NativeScript runtimes and their versions. This section can be empty. If you want to define supported platforms and runtimes, you can nest a `platforms` section. In this `platforms` section, you can nest `ios` and `android` key-value pairs. The values in these pairs must be valid runtime versions or ranges of values specified by a valid semver(7) syntax.
 * If the plugin depends on other npm modules, it must contain a `dependencies` section as described [here](https://docs.npmjs.com/files/package.json#dependencies).<br/>The NativeScript CLI will resolve the dependencies during the plugin installation.
 
-#### Package.json Example
 
 The following is an example of a `package.json` file for a NativeScript plugin which supports the 1.0.0 version or above of the iOS runtime and the 1.1.0 version or above of the Android runtime.
 
@@ -160,7 +140,7 @@ Every NativeScript plugin, which contains native Android dependencies, should al
 
 > **IMPORTANT:** If you don't have an `include.gradle` file, at build time, gradle will create a default one containing all default elements.
 
-#### Include.gradle Example
+_Include.gradle Example_
 ```gradle
 //default elements
 android {
@@ -180,7 +160,7 @@ dependencies {
 ### Build.xcconfig Specification
 Every NativeScript plugin, which contains native iOS dependencies, can also contain a [valid](https://pewpewthespells.com/blog/xcconfig_guide.html) `build.xcconfig` file in the root of its `platforms\ios` directory. This `build.xcconfig` file might contain native dependencies required to build the plugin properly.
 
-#### Build.xcconfig Example
+_Build.xcconfig Example_
 ```
 OTHER_LDFLAGS = $(inherited) -framework "QuartzCore" -l"sqlite3"
 ```

@@ -8,13 +8,6 @@ environment: angular
 
 # Supporting Angular Explained
 
-0. [Overview](#overview)
-1. [Simple Elements](#simple-elements)
-2. [Views and Templates](#views-and-templates)
-3. [Tips and Tricks](#tips-and-tricks)
-
-# Overview
-
 The standard NativeScript abstraction for a visual component is the `View` class in the "ui/core/view" package. It can be used to integrate with:
 
 * Native Android and iOS UI components. Plugins for those typically create a `View` facade for JavaScript code.
@@ -22,7 +15,7 @@ The standard NativeScript abstraction for a visual component is the `View` class
 
 Angular applications do not typically use NativeScript `View` objects directly since visual tree manipulations are best left to the "renderer" abstraction. The renderer provides great flexibility in building platform-independent UIs, but that comes with a price; using advanced NativeScript components may require some glue code.
 
-# Simple Elements
+## Simple Elements
 
 Angular templates look a lot like HTML. To extend the browser analogy, we can think of visual components as DOM elements that get parsed into a visual tree. Each element name is mapped to a `View` class. The renderer uses that mapping to create component instances and set their properties according to attribute values.
 
@@ -40,7 +33,7 @@ That maps the `SimpleTag` class to the "third-party-view" tag name. You can now 
 
 {%snippet third-party-simple-view-container%}
 
-# Views and Templates
+## Views and Templates
 
 Some advanced NativeScript components do not fit the HTML DOM metaphor. Usually those are components that allow you to customize their appearance or structure by passing preconfigured `View` instances or templates that get instantiated multiple times. The canonical example for that is a rich list view component that allows you to customize item templates.
 
@@ -65,11 +58,11 @@ Two things in the code above need mentioning:
 1. Instantiated Angular views have a collection of root nodes that usually contain whitespace "text" nodes. We ignore those and get the first "real" element.
 2. Since our parent component is higher in the component tree, we can use the DI system and inject a reference to it in the directive constructor.
 
-# Tips and Tricks
+## Tips and Tricks
 
 While the following two approaches are not usually the best solutions, they can help while debugging application issues and/or speed up prototyping.
 
-## Register a Wrapper Tag
+### Register a Wrapper Tag
 
 You can register any class for a given tag, and that gives you a valuable injection mechanism. You can wrap certain components in your own View instance and pass that to the `registerElement` API. (Hint: for easy wrapping, just inherit from the real view.) Here is what people have used that for:
 
@@ -77,12 +70,12 @@ You can register any class for a given tag, and that gives you a valuable inject
 * Stub missing or not-yet-implemented components.
 * Debug or mock component initialization by passing a recording object.
 
-## Attach a Directive
+### Attach a Directive
 
 This approach is similar to the wrapper tag one since it is aimed at doing all component customization in code. Any directive can get a reference to its host tag by declaring an `ElementRef` constructor parameter and get the NativeScript `View` from that via the `ElementRef.nativeElement` property.
 
 The directive approach is especially useful when trying to build a cross-platform solution that shares code with a web application since you can provide a different directive implementation in the web app. Directives compose really well too &mdash; you can split different parts of the integration code in different directives and apply more than one directive per component. 
 
-# Summary
+## Summary
 
 NativeScript UI plugins are not automatically integrated in Angular applications, but doing that is a straightforward task. Most libraries need a couple of `registerElement` calls and some of them conveniently ship a module that client code can `require` and have the registration happen automatically. Follow the steps in [this article]({% slug supporting-angular-in-ui-plugins %}) to provide Angular support for your UI plugin.

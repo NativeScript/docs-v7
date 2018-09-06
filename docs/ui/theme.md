@@ -10,41 +10,16 @@ NativeScript’s [styling infrastructure](https://docs.nativescript.org/ui/styli
 
 The NativeScript project provides a core theme that you can add to any of your projects. The theme includes two color schemes, light and dark, as well as a series of convenience class names to help you build elegant user interfaces quickly.
 
-* [Installation](#installation)
-* [Color Schemes](#color-schemes)
-* [SASS Usage](#sass-usage)
-* [Class Names](#class-names)
-    - [Headings](#headings)
-    - [Text](#text)
-    - [Font](#font)
-    - [Padding and Margin](#padding-and-margin)
-    - [Dividers](#dividers)
-    - [Utilities](#utilities)
-    - [Contextual Colors](#contextual-colors)
-    - [Page](#page)
-    - [ActionBar](#actionbar)
-    - [Buttons](#buttons)
-    - [Forms](#forms)
-    - [Images](#images)
-    - [ListViews](#listviews)
-    - [Progress and Activity](#progress-and-activity)
-    - [SideDrawers](#sidedrawers)
-    - [Sliders](#sliders)
-    - [Switches](#switches)
-    - [TabViews](#tabviews)
-* [Status Bar Considerations](#status-bar-considerations)
-* [Uninstalling](#uninstalling)
-* [Contributing](#contributing)
 
 ## Installation
 
-As of NativeScript version 2.4, the core theme is installed by default when you start an app using `tns create`. However, if you wish to add the theme to a NativeScript app built before 2.4, run the following command:
+All official NativeScript templates come with the NativeScript Core Theme prepackaged and ready to go, so manual installation is unnecessary. If for some reason you’re using an app that doesn’t have the theme pre-installed, you can add it with the following command:
 
 ```
 npm install nativescript-theme-core --save
 ```
 
-After you install the theme, you need to add a single `@import` CSS rule to your `app.css` file in order to include the theme in your app. But first you need to decide which of the theme’s color schemes you’d like to use.
+Your `app.css` file then needs a single `@import` CSS rule in order to include the theme in your app, which you'll learn about in the next section.
 
 ## Color Schemes
 
@@ -65,7 +40,10 @@ And in order to use the dark scheme, add this line of code to your `app.css` ins
 @import '~nativescript-theme-core/css/core.dark.css';
 ```
 
-> **TIP**: When using the dark color scheme, make sure that you, 1) apply the [`page` class name](#page) to ensure your app’s text displays appropriately, and 2) [alter your app’s status bar colors](#status-bar-considerations).
+> **TIP**: When using the dark color scheme, make sure that you:
+> * apply the [`page` class name](#page) to ensure your app’s text displays appropriately;
+> * [alter your app’s status bar colors](#status-bar-considerations);
+> * use dark parent themes on Android. In `style.xml` files in the `App_Resources\Android\values[-v21]` folders remove `Light.` from “parent” attributes (e.g., `Theme.AppCompat.Light.NoActionBar` becomes `Theme.AppCompat.NoActionBar`).
 
 You may want to alternatively use one of the 11 other color schemes included in the NativeScript core theme. To do so, switch your `app.css` file to use one of the following imports.
 
@@ -84,91 +62,6 @@ You may want to alternatively use one of the 11 other color schemes included in 
 ```
 
 > **TIP**: [This image](/img/theme/color-schemes-all.png) shows all 13 color schemes on iOS and Android, and can help you decide which color scheme is a good fit for your app.
-
-## SASS Usage
-
-The NativeScript core theme is written in SASS, and you can use the theme’s `.scss` files directly. Using SASS is a great way to customize the theme in a way that’s not possible in CSS, such as using the theme’s SASS variables to change your app’s appearance.
-
-To get started, first verify that your app has the [NativeScript SASS plugin](https://github.com/toddanglin/nativescript-dev-sass) installed by running the following command:
-
-```
-tns install sass
-```
-
-With SASS set up and ready to use, next you’ll need to import the theme’s `.scss` files into your own. Start by creating the following files in your app:
-
-```
-.
-├── _app-common.scss
-├── app.android.scss
-└── app.ios.scss
-```
-
-After that, paste the following code into your `app.android.scss` file.
-
-``` SCSS
-@import 'app-common';
-@import '~nativescript-theme-core/scss/platforms/index.android';
-
-// Place any CSS rules you want to apply only on Android here
-```
-
-> **TIP**: If you are using an older version of the `nativescript-dev-sass` plugin (before 1.0.0), the tilde ("`~`") in the `@import` is **not** required for referencing theme stylesheets. As of 1.0.0, the "~" is required to tell the node sass compiler to resolve the import file path relative to the `node_modules` directory.
-
-And the following code into your `app.ios.scss` file.
-
-``` SCSS
-@import 'app-common';
-@import '~nativescript-theme-core/scss/platforms/index.ios';
-
-// Place any CSS rules you want to apply only on iOS here
-```
-
-Finally, paste the following code into your `_app-common.scss` file.
-
-``` SCSS
-// Import the theme’s variables. If you’re using a color scheme
-// other than “light”, switch the path to the alternative scheme,
-// for example '~nativescript-theme-core/scss/dark'.
-@import '~nativescript-theme-core/scss/light';
-
-// Customize any of the theme’s variables here, for instance $btn-color: red;
-
-// Import the theme’s main ruleset.
-@import '~nativescript-theme-core/scss/index';
-
-// Place any CSS rules you want to apply on both iOS and Android here.
-// This is where the vast majority of your CSS code goes.
-```
-
-The power of this approach is you have the ability to customize the [theme’s SASS variables](https://github.com/NativeScript/theme/blob/master/app/scss/_variables.scss) directly. You also have separate files set up for iOS- and Android-specific code, should you need to style your app differently on each platform.
-
-### Using custom `.scss` file
-
-While using SASS in NativeScript Angular project and create custom `.scss` file for specific component, you should refer the path to the compiled CSS file in `styleUrls` in the component typescript file.
-For example:
-
-File structure:
-
-```
-.
-├── custom.scss
-├── custom.css
-└── app.component.ts
-```
-
-app.component.ts
-
-```
-import { Component } from "@angular/core";
-
-@Component({
-    selector: "ns-app",
-    templateUrl: "app.component.html",
-    styleUrls:['./custom.css']
-})
-export class AppComponent { }
-```
 
 ## Class Names
 
@@ -192,6 +85,8 @@ Here are a few examples for how you could use these class names.
 <Label class="h6" text="This is a small heading"></Label>
 ```
 
+![headings ios](/img/theme/headings-ios.png) ![headings android](/img/theme/headings-android.png)
+
 ### Text
 
 A number of utility class names are available for changing the display of text you use in your applications. Here’s what they do.
@@ -199,14 +94,19 @@ A number of utility class names are available for changing the display of text y
 * `body`: A class name for long-form content in your apps, such as paragraph text.
 
 ``` XML
-<Label class="body" text="I’m a longer sentence with instructions on how you use a particular feature"></Label>
+<Label class="body" text="I’m a longer sentence with instructions on how you use a particular feature" textWrap="true"></Label>
 ```
+
+![text body ios](/img/theme/text-body-ios.png) ![text body android](/img/theme/text-body-android.png)
 
 * `footnote`: A class name that decreases the text size of a given UI element. Useful for footnotes that describe images or other features in your apps.
 
 ``` XML
+<Image src="https://play.nativescript.org/dist/assets/img/NativeScript_logo.png" width="150" class="m-b-30"></Image>
 <Label class="footnote" text="The image above is the NativeScript logo"></Label>
 ```
+
+![text footnote ios](/img/theme/text-footnote-ios.png) ![text footnote android](/img/theme/text-footnote-android.png)
 
 * `text-left`: A class name that applies `text-align: left` to a UI element.
 * `text-right`: A class name that applies `text-align: right` to a UI element.
@@ -217,6 +117,8 @@ A number of utility class names are available for changing the display of text y
 <Label class="text-right" text="My text is right aligned"></Label>
 <Label class="text-center" text="My text is center aligned"></Label>
 ```
+
+![text align ios](/img/theme/text-align-ios.png) ![text align android](/img/theme/text-align-android.png)
 
 * `text-lowercase`: A class name to lowercase all characters in the text of a given UI element. For instance, `<Label class="text-lowercase" text="HI">` will display as “hi”.
 * `text-uppercase`: A class name to uppercase all characters in the text of a given UI element. For instance, `<Label class="text-uppercase" text="hi">` will display as “HI”.
@@ -244,6 +146,8 @@ The NativeScript core theme does not change the base font family you use to deve
 <Label class="font-italic" text="This text will appear italicized"></Label>
 ```
 
+![font ios](/img/theme/font-ios.png) ![font android](/img/theme/font-android.png)
+
 ### Padding and Margin
 
 A number of class names are available to control the spacing of UI components within your application. The first set of class names allow you to quickly add margin or padding to a given UI component.
@@ -268,14 +172,22 @@ A divider is a common way to separate areas of your user interface. The NativeSc
 * `hr-light`: Creates a light colored divider.
 
 ``` XML
-<StackLayout class="hr-light"></StackLayout>
+<Label text="Separate this UI widget..."></Label>
+<StackLayout class="hr-light m-10"></StackLayout>
+<Label text="...from this UI widget."></Label>
 ```
+
+![light dividers ios](/img/theme/dividers-light-ios.png) ![light dividers android](/img/theme/dividers-light-android.png)
 
 * `hr-dark`: Creates a dark colored divider.
 
 ``` XML
-<StackLayout class="hr-dark"></StackLayout>
+<Label text="Separate this UI widget..."></Label>
+<StackLayout class="hr-dark m-10"></StackLayout>
+<Label text="...from this UI widget."></Label>
 ```
+
+![dark dividers ios](/img/theme/dividers-dark-ios.png) ![dark dividers android](/img/theme/dividers-dark-android.png)
 
 ### Utilities
 
@@ -286,12 +198,14 @@ The NativeScript core theme provides a set of utility class names that can be ap
 
 ``` XML
 <StackLayout>
-  <Label class="pull-left" text="This text should appear on the left-hand side of the screen"></Label>
+  <Label class="pull-left font-weight-bold" text="Left!"></Label>
 </StackLayout>
 <StackLayout>
-  <Label class="pull-right" text="This text should appear on the right-hand side of the screen"></Label>
+  <Label class="pull-right font-weight-bold" text="Right!"></Label>
 </StackLayout>
 ```
+
+![utilities ios](/img/theme/utilities-ios.png) ![utilities android](/img/theme/utilities-android.png)
 
 ### Contextual Colors
 
@@ -302,10 +216,12 @@ You can convey meaning through color with a handful of utility classes that are 
 * `text-danger`: A class name that makes text stand out, for components such as errors.
 
 ``` XML
-<Label class="text-primary" text="https://nativescript.org" tap="{{ openUrl }}"></Label>
-<Label class="text-muted" text="This is a caption that the user can read, but it doesn’t need to stand out"></Label>
-<Label class="text-danger" text="This is an error message the user needs to notice"></Label>
+<Label class="text-primary" text="https://nativescript.org"></Label>
+<Label class="text-muted" text="This is a caption that the user can read, but it doesn’t need to stand out" textWrap="true"></Label>
+<Label class="text-danger" text="This is an error message the user needs to notice" textWrap="true"></Label>
 ```
+
+![contextual colors ios](/img/theme/contextual-colors-ios.png) ![contextual colors android](/img/theme/contextual-colors-android.png)
 
 * `bg-primary`: A class name that applies the theme’s primary background color.
 * `bg-danger`: A class name that applies the theme’s danger color.
@@ -319,6 +235,8 @@ You can convey meaning through color with a handful of utility classes that are 
 </StackLayout>
 ```
 
+![contextual colors background ios](/img/theme/contextual-colors-bg-ios.png) ![contextual colors background android](/img/theme/contextual-colors-bg-android.png)
+
 ### Page
 
 The NativeScript core theme includes a single class name to apply to Page UI components.
@@ -330,6 +248,8 @@ The NativeScript core theme includes a single class name to apply to Page UI com
   <Label class="body" text="I will show up in the dark color scheme."></Label>
 </Page>
 ```
+
+![dark page ios](/img/theme/page-dark-ios.png) ![dark page android](/img/theme/page-dark-android.png)
 
 * **NOTE**: You can also apply the `page` class name to a page’s top-level layout container, for instance `<GridLayout class="page">...</GridLayout>`. This is useful in Angular apps, where the `<Page>` component is not included in your component markup.
 
@@ -356,6 +276,8 @@ The NativeScript core theme includes a few class names to apply to ActionBar UI 
 ```
 {% endangular %}
 
+![action bar ios](/img/theme/action-bar-ios.png) ![action bar android](/img/theme/action-bar-android.png)
+
 * `action-bar-title`: A class name that applies the theme’s color scheme when using a [custom title view](/ui/action-bar#using-a-custom-title-view).
 
 {% nativescript %}
@@ -364,7 +286,7 @@ The NativeScript core theme includes a few class names to apply to ActionBar UI 
   <Page.actionBar>
     <ActionBar class="action-bar">
       <StackLayout class="action-bar-title">
-        <Label text="Your App"></Label>
+        <Label text="Your App" class="font-weight-bold" color="blue"></Label>
       </StackLayout>
     </ActionBar>
   </Page.actionBar>
@@ -375,11 +297,13 @@ The NativeScript core theme includes a few class names to apply to ActionBar UI 
 ``` XML
 <ActionBar class="action-bar">
   <StackLayout class="action-bar-title">
-    <Label text="Your App"></Label>
+    <Label text="Your App" class="font-weight-bold" color="blue"></Label>
   </StackLayout>
 </ActionBar>
 ```
 {% endangular %}
+
+![action bar title ios](/img/theme/action-bar-title-ios.png) ![action bar title android](/img/theme/action-bar-title-android.png)
 
 * `action-item`: A class name that applies the theme’s color scheme to custom ActionItem UI components.
 
@@ -410,6 +334,8 @@ The NativeScript core theme includes a few class names to apply to ActionBar UI 
 ```
 {% endangular %}
 
+![action item ios](/img/theme/action-item-ios.png) ![action item android](/img/theme/action-item-android.png)
+
 > **TIP**: You can use the various ActionBar class names to create an ActionBar-like look without actually using the ActionBar UI components. You may find this approach useful for using in [modal pages](/core-concepts/navigation#modal-pages), for instance.
 > ```
 > <GridLayout rows="auto" columns="75,*,75" class="action-bar p-10">
@@ -426,22 +352,28 @@ The NativeScript theme includes a handful of class names to change the look and 
 * `btn-primary`: A class name that applies the primary color pattern of the theme to the button.
 
 ``` XML
-<Button class="btn btn-primary" text="I use the theme’s primary color pattern"></Button>
+<Button class="btn btn-primary" text="Primary"></Button>
 ```
+
+![button primary ios](/img/theme/btn-primary-ios.png) ![button primary android](/img/theme/btn-primary-android.png)
 
 * `btn-outline`: A class name that makes a button appear with a border and a transparent background.
 
 ``` XML
-<Button class="btn btn-outline" text="I have a border! And a transparent background!"></Button>
+<Button class="btn btn-outline" text="Border + Transparent Background"></Button>
 ```
+
+![button outline ios](/img/theme/btn-outline-ios.png) ![button outline android](/img/theme/btn-outline-android.png)
 
 * `btn-rounded-sm`: A class names that makes a button appear with a small rounded corners.
 * `btn-rounded-lg`: A class name that makes a button appear with large rounded corners.
 
 ``` XML
-<Button class="btn btn-rounded-sm" text="Small rounded corners"></Button>
-<Button class="btn btn-rounded-lg" text="Large rounded corners"></Button>
+<Button class="btn btn-primary btn-rounded-sm" text="Small rounded corners"></Button>
+<Button class="btn btn-primary btn-rounded-lg" text="Large rounded corners"></Button>
 ```
+
+![button rounded ios](/img/theme/btn-rounded-ios.png) ![button rounded android](/img/theme/btn-rounded-android.png)
 
 * `btn-active`: A class name that makes a button appear highlighted when tapped.
 
@@ -501,10 +433,12 @@ Here’s a form with a number of different form control display options you can 
   <TextField hint="Option 4" class="input input-border" />
 
   <!-- Option 5: An input with a rounded border and no label -->
-  <TextField hint="Input rounded" class="input input-rounded" />
+  <TextField hint="Input rounded" class="input input-rounded m-t-10" />
 
 </StackLayout>
 ```
+
+![forms ios](/img/theme/forms-ios.png) ![forms android](/img/theme/forms-android.png)
 
 > **TIP** The NativeScript core theme handles styling disabled TextField components. To disable a TextField, set its `isEnabled` attribute to `false`. For example, `<TextField class="input" isEnabled="false"></TextField>`.
 
@@ -516,11 +450,13 @@ The NativeScript core theme provides a few CSS class names for altering the appe
 * `img-circle`: A class name that applies a large `border-radius` to Image UI components, making the image appear as a circle.
 
 ``` XML
-<Image src="~/path/to/image.png" height="20" width="20" class="img-rounded"></Image>
-<Image src="~/path/to/image.png" height="20" width="20" class="img-circle"></Image>
+<Image src="https://placem.at/people?w=150" width="150" class="img-rounded m-b-20"></Image>
+<Image src="https://placem.at/things?w=150" width="150" class="img-circle"></Image>
 ```
 
 > **NOTE**: You can only add `border-radius` to an image if it has an explicit `height` and `width` set.
+
+![images ios](/img/theme/images-ios.png) ![images android](/img/theme/images-android.png)
 
 ### ListViews
 
@@ -577,13 +513,16 @@ ListViews are a common UI component in mobile apps, and the NativeScript core th
 ``` XML
 <ListView class="list-group">
   <ListView.itemTemplate>
-    <StackLayout class="list-group-item">
-      <Label class="list-group-item-heading" text="A Heading"></Label>
-      <Label class="list-group-item-text" text="The rest of the content" textWrap="true"></Label>
-    </StackLayout>
+    <GridLayout class="list-group-item" rows="auto, *" columns="80, *">
+      <Image row="0" col="0" src="https://placem.at/people?w=80&txt=0" class="thumb img-circle" rowSpan="2"></Image>
+	  <Label row="0" col="1" text="{{ itemName }}" class="list-group-item-heading" />
+	  <Label row="1" col="1" text="{{ itemDesc }}" class="list-group-item-text" />
+    </GridLayout>
   </ListView.itemTemplate>
 </ListView>
 ```
+
+![listview ios](/img/theme/list-group-item-text-ios.png) ![listview android](/img/theme/list-group-item-text-android.png)
 
 ### Progress and Activity
 
@@ -593,13 +532,15 @@ You can use the following class names to apply the NativeScript core theme’s c
 * `activity-indicator`: A class name for applying the core theme’s color scheme to an ActivityIndicator UI component.
 
 ``` XML
-<Progress class="progress"></Progress>
-<ActivityIndicator class="activity-indicator"></ActivityIndicator>
+<Progress class="progress m-20" value="50"></Progress>
+<ActivityIndicator class="activity-indicator" busy="true"></ActivityIndicator>
 ```
+
+![progress and activity indicator ios](/img/theme/progress-activity-ios.png) ![progress and activity indicator android](/img/theme/progress-activity-android.png)
 
 ### SideDrawers
 
-SideDrawers are a common way to implement navigation in your NativeScript apps. The NativeScript core theme includes class names to help you style the free-to-use [RadSideDrawer](http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawer/overview) that’s a part of the [UI for NativeScript](http://www.telerik.com/nativescript-ui) component suite.
+SideDrawers are a common way to implement navigation in your NativeScript apps. The NativeScript core theme includes class names to help you style the free-to-use [RadSideDrawer](http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawer/overview) that’s a part of the [NativeScript UI](https://www.nativescript.org/ui-for-nativescript) component suite.
 
 > **NOTE**: The UI snippets you see below should be placed within a RadSideDrawer’s `drawerContent`. Refer to the [control’s documentation](http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawer/getting-started) for more information on how to structure drawers within your apps.
 
@@ -690,6 +631,8 @@ The NativeScript core theme includes a class name for styling Slider UI componen
 <Slider minValue="1" maxValue="100" value="50" class="slider" isEnabled="false"></Slider>
 ```
 
+![sliders ios](/img/theme/sliders-ios.png) ![sliders android](/img/theme/sliders-android.png)
+
 ### Switches
 
 The NativeScript core theme also includes a class name for styling Switch UI components.
@@ -697,10 +640,12 @@ The NativeScript core theme also includes a class name for styling Switch UI com
 * `switch`: A class name to apply the theme’s color scheme to switches. The class name handles styling disabled switch controls.
 
 ```XML
-<Switch checked="true" class="switch"></Switch>
-<Switch checked="false" class="switch"></Switch>
-<Switch checked="false" class="switch" isEnabled="false"></Switch>
+<Switch checked="true" class="switch" horizontalAlignment="center"></Switch>
+<Switch checked="false" class="switch" horizontalAlignment="center"></Switch>
+<Switch checked="false" class="switch" isEnabled="false" horizontalAlignment="center"></Switch>
 ```
+
+![switches ios](/img/theme/switches-ios.png) ![switches android](/img/theme/switches-android.png)
 
 ### TabViews
 
@@ -709,9 +654,118 @@ Finally, the NativeScript core theme includes a class name for styling TabView U
 * `tab-view`: A class name to apply the theme’s color scheme to TabViews.
 
 ``` XML
-<TabView class="tab-view">
-  <!-- The contents of the TabView -->
-</TabView>
+    <TabView>
+        <TabView.items>
+            <TabViewItem title="Tab One">
+                <TabViewItem.view>
+                    <StackLayout class="p-20">
+						<Label text="Hello NativeScript World!" class="font-weight-bold" />
+					</StackLayout>
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="Tab Two">
+				<TabViewItem.view>
+                    <StackLayout class="p-20">
+						<Label text="Hi! I'm Tab Two's Content!" class="font-weight-bold" />
+					</StackLayout>
+				</TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="Tab Three">
+				<TabViewItem.view>
+                    <StackLayout class="p-20">
+						<Label text="Howdy! Welcome to Tab Three!" class="font-weight-bold" />
+					</StackLayout>
+				</TabViewItem.view>
+            </TabViewItem>
+        </TabView.items>
+    </TabView>
+```
+
+![tabviews ios](/img/theme/tabviews-ios.png) ![tabviews android](/img/theme/tabviews-android.png)
+
+## SASS Usage
+
+The NativeScript core theme is written in SASS, and you can (optionally) use the theme’s `.scss` files directly. Using SASS is a great way to customize the theme in a way that’s not possible in CSS, such as using the theme’s SASS variables to change your app’s appearance.
+
+To get started, first verify that your app has the [NativeScript SASS plugin](https://github.com/toddanglin/nativescript-dev-sass) installed by running the following command:
+
+```
+tns install sass
+```
+
+With SASS set up and ready to use, next you’ll need to import the theme’s `.scss` files into your own. Start by creating the following files in your app:
+
+```
+.
+├── _app-common.scss
+├── app.android.scss
+└── app.ios.scss
+```
+
+After that, paste the following code into your `app.android.scss` file.
+
+``` CSS
+@import 'app-common';
+@import '~nativescript-theme-core/scss/platforms/index.android';
+
+// Place any CSS rules you want to apply only on Android here
+```
+
+> **TIP**: If you are using an older version of the `nativescript-dev-sass` plugin (before 1.0.0), the tilde ("`~`") in the `@import` is **not** required for referencing theme stylesheets. As of 1.0.0, the "~" is required to tell the node sass compiler to resolve the import file path relative to the `node_modules` directory.
+
+And the following code into your `app.ios.scss` file.
+
+``` CSS
+@import 'app-common';
+@import '~nativescript-theme-core/scss/platforms/index.ios';
+
+// Place any CSS rules you want to apply only on iOS here
+```
+
+Finally, paste the following code into your `_app-common.scss` file.
+
+``` CSS
+// Import the theme’s variables. If you’re using a color scheme
+// other than “light”, switch the path to the alternative scheme,
+// for example '~nativescript-theme-core/scss/dark'.
+@import '~nativescript-theme-core/scss/light';
+
+// Customize any of the theme’s variables here, for instance $btn-color: red;
+
+// Import the theme’s main ruleset.
+@import '~nativescript-theme-core/scss/index';
+
+// Place any CSS rules you want to apply on both iOS and Android here.
+// This is where the vast majority of your CSS code goes.
+```
+
+The power of this approach is you have the ability to customize the [theme’s SASS variables](https://github.com/NativeScript/theme/blob/master/app/scss/_variables.scss) directly. You also have separate files set up for iOS- and Android-specific code, should you need to style your app differently on each platform.
+
+### Using custom `.scss` file
+
+While using SASS in NativeScript Angular project and create custom `.scss` file for specific component, you should refer the path to the compiled CSS file in `styleUrls` in the component typescript file.
+For example:
+
+File structure:
+
+```
+.
+├── custom.scss
+├── custom.css
+└── app.component.ts
+```
+
+app.component.ts
+
+``` TypeScript
+import { Component } from "@angular/core";
+
+@Component({
+    selector: "ns-app",
+    templateUrl: "app.component.html",
+    styleUrls:['./custom.css']
+})
+export class AppComponent { }
 ```
 
 ## Status Bar Considerations
@@ -742,37 +796,38 @@ Android API levels 21+ (Lollipop and above) let you set the status bar to use an
 | Ruby         | #ff1744              |
 | Sky          | #30bcff              |
 
-Additionally, when using the light color scheme, include the following code in your `app.js` file. The code sets Android’s `SYSTEM_UI_FLAG_LIGHT_STATUS_BAR` flag, which makes all icons in the status bar use a color that’s visible on the light background.
+Additionally, when using the light color scheme, include the following code in your `app.ts` (or `app.js` if coding plain JavaScript) file. The code sets Android’s `SYSTEM_UI_FLAG_LIGHT_STATUS_BAR` flag, which makes all icons in the status bar use a color that’s visible on the light background.
 
-``` JavaScript
-var application = require("application");
-var platform = require("platform");
-
-if (platform.isAndroid && platform.device.sdkVersion >= "21") {
-  application.android.onActivityStarted = function() {
-    var window = application.android.startActivity.getWindow();
-    var decorView = window.getDecorView();
-    decorView.setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-  }
-}
-
-// Your application.start() call goes here.
-```
 ``` TypeScript
-import * as application from "application";
-import * as platform from "platform";
+import * as application from "tns-core-modules/application";
+import * as platform from "tns-core-modules/platform";
 declare var android: any;
 
 if (platform.isAndroid && platform.device.sdkVersion >= "21") {
-  application.android.onActivityStarted = function() {
-    let window = application.android.startActivity.getWindow();
-    let decorView = window.getDecorView();
-    decorView.setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-  }
-}
-
-// Your application.start() call goes here.
+    application.android.on(application.AndroidApplication.activityStartedEvent, function() {
+        let window = application.android.startActivity.getWindow();
+        let decorView = window.getDecorView();
+        decorView.setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+    })
+};
+ 
+// Your application.run() call follows here.
 ```
+``` JavaScript
+var application = require("tns-core-modules/application");
+var platform = require("tns-core-modules/platform");
+
+if (platform.isAndroid && platform.device.sdkVersion >= "21") {
+    application.android.on(application.AndroidApplication.activityStartedEvent, function () {
+        var window = application.android.startActivity.getWindow();
+        var decorView = window.getDecorView();
+        decorView.setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+    });
+}; 
+
+// Your application.run() call follows here.
+```
+
 
 ## Uninstalling
 

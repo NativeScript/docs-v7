@@ -15,11 +15,15 @@ $(document).ready(function () {
 			outdatedSample: false,
 			inaccurateOutdatedCodeSamplesText: "",
 			otherFeedback: false,
-			textFeedback: ""
+			textFeedback: "",
+			acceptFeedbackContact: false
 		};
-	
-		$("#feedback-checkbox-area").click(function (e) {
-			$("span.k-tooltip-validation").remove();
+
+		var checkboxArea = $("#feedback-checkbox-area");
+
+		checkboxArea.click(function () {
+			checkboxArea.find("span.k-tooltip-validation").remove();
+			checkboxArea.find("textarea").removeClass("k-invalid");
 		});
 	
 		var formIsProcessing = false;
@@ -65,7 +69,7 @@ $(document).ready(function () {
 		};
 	
 		//Feedback menu controls
-		var feedbackButtonsContainer = $("#helpful-buttons-container");
+		var feedbackButtonsContainer = $("#feedback-buttons-container");
 		var feedbackSubmittedContainer = $("#feedback-submitted-container");
 		var toggleFeedbackButtons = function (toggle) {
 			if (toggle) {
@@ -86,8 +90,8 @@ $(document).ready(function () {
 		//FORM
 		//Init the form popup window
 		var win = $("#feedback-form-window").kendoWindow({
-			title: "Give article feedback",
-			actions: ["Close"],
+			title: "Article feedback",
+			actions: [],
 			draggable: true,
 			modal: true,
 			pinned: false,
@@ -124,7 +128,7 @@ $(document).ready(function () {
 		//Bind model to form
 		kendo.bind($("div#feedback-form-window"), formModel);
 		//Attach to form submit to adjust variables and send request
-		var emptyFormValidator = $("#feedback-checkbox-area").kendoValidator({
+		var emptyFormValidator = checkboxArea.kendoValidator({
 			validateOnBlur: false,
 			messages: {
 				// defines a message for the custom validation rule
@@ -149,6 +153,24 @@ $(document).ready(function () {
 						var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 						return re.test(input.val());
 					}
+					return true;
+				}
+			}
+		}).data("kendoValidator");
+
+		var emailConsentValidator = $("#feedback-email-consent").kendoValidator({
+			validateOnBlur: false,
+			messages: {
+				consent: "You have to agree first."
+			},
+			rules: {
+				consent: function (input) {
+					var email = formModel["email"];
+					console.log("email: " + email + ", checked: ", formModel["acceptFeedbackContact"]);
+					if (email.length > 0) {
+						return formModel["acceptFeedbackContact"];
+					}
+
 					return true;
 				}
 			}
@@ -221,19 +243,31 @@ $(document).ready(function () {
 				(!formModel.textErrors || (formModel.textErrors && textAreaValidator("#feedback-text-errors-text-input", "textErrors").validate())) &&
 				(!formModel.inaccurateContent || (formModel.inaccurateContent && textAreaValidator("#feedback-inaccurate-content-text-input", "inaccurateContent").validate())) &&
 				(!formModel.otherFeedback || (formModel.otherFeedback && textAreaValidator("#feedback-other-text-input", "otherFeedback").validate())) &&
-				emailValidator.validate()) {
+				emailValidator.validate() &&
+				emailConsentValidator.validate()) {
 				win.close();
 				setCookieByName("submittingFeedback");
 				formModel.yesNoFeedback = getCookieByName("yesNoFeedback") || "Not submitted";
 				formModel.uuid = getCookieByName("uuid");
 				formModel.path = currentPath;
 				formModel.sheetId = $("#hidden-sheet-id").val();
-				$.post("https://api.everlive.com/v1/lzrla9wpuk636rdd/functions/saveFeedback", formModel.toJSON(), function () {
-					formIsProcessing = false;
-				});
-			} else {
-				formIsProcessing = false;
-			}
+				$.ajax({
+                url: "https://baas.kinvey.com/rpc/kid_Hk57KwIFf/custom/saveFeedback",
+                method: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(formModel),
+                crossDomain: true,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Authorization", "Basic " + btoa("feedback:feedback"));
+                },
+                success: function (data) {
+                    formIsProcessing = false;
+                }
+            });
+        } else {
+            formIsProcessing = false;
+        }
 		});
 	
 		//Attach to close button inside form window
@@ -263,7 +297,7 @@ $(document).ready(function () {
 
 
 		var windowHeight = $window.height();
-		var headerHeight = $(".TK-Hat").outerHeight() + $("#page-header").outerHeight();
+		var headerHeight = $(".TK-Hat").outerHeight() + $(".ns-navigation").outerHeight();
 		var footerHeight = $("#feedback-section").outerHeight() + $("footer").outerHeight();
 		var articleHeight = windowHeight - (headerHeight + footerHeight);
 		var feedbackOffsetTop = document.body.scrollHeight - footerHeight;
@@ -274,7 +308,7 @@ $(document).ready(function () {
 	
 		function updateVariables() {
 			windowHeight = $window.height();
-			headerHeight = $(".TK-Hat").outerHeight() + $("#page-header").outerHeight();
+			headerHeight = $(".TK-Hat").outerHeight() + $(".ns-navigation").outerHeight();
 			footerHeight = $("#feedback-section").outerHeight() + $("footer").outerHeight();
 			articleHeight = windowHeight - (headerHeight + footerHeight);
 			feedbackOffsetTop = document.body.scrollHeight - footerHeight;
@@ -308,7 +342,7 @@ $(document).ready(function () {
 			_events: function() {
 				$window.scroll(Feedback._window_scroll);
 				$window.resize(Feedback._window_resize);
-				$("#close-banner-button").click(Feedback._button_click);
+				$(".ns-feedback .close-banner-button").click(Feedback._button_click);
 			},
 			_window_scroll: function() {
 				updateVariables();
@@ -349,8 +383,8 @@ $(document).ready(function () {
 				if (!shouldOverlayFeedback || showingFeedbackBar) {
 					return;
 				}
-	
-				if (scrollFold - $("#feedback-section").outerHeight() < feedbackOffsetTop) {
+
+				if (scrollFold - $("#feedback-section").outerHeight() * 2 < feedbackOffsetTop) {
 					Feedback.pinFeedback();
 				}
 				else {

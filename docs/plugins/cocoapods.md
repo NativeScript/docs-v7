@@ -11,11 +11,6 @@ When you develop for iOS, you can quickly add third-party libraries to your Nati
 
 To work with such libraries, you need to wrap them as a custom NativeScript plugin and add them to your project.
 
- * [Install CocoaPods](#install-cocoapods)
- * [Create CLI Project](#create-cli-project)
- * [Wrap the Library as NativeScript Plugin](#wrap-the-library-as-nativescript-plugin)
- * [Build the Project](#build-the-project)
-
 ## Install CocoaPods
 You need to install CocoaPods. If you haven't yet, you can do so by running:
 
@@ -47,9 +42,9 @@ $ tns platform add ios
 
 ## Wrap the Library as NativeScript Plugin
 
-For more information about working with NativeScript plugins, click [here](PLUGINS.md).
+For more information about working with NativeScript plugins, click [here](plugins.md).
 
-```bash
+```Bash
 cd ..
 mkdir my-plugin
 cd my-plugin
@@ -57,7 +52,7 @@ cd my-plugin
 
 Create a `package.json` file with the following content:
 
-```json
+```JSON
 {
   "name": "my-plugin",
   "version": "0.0.1",
@@ -106,4 +101,4 @@ This modifies the `MYCocoaPodsApp.xcodeproj` and creates a workspace with the sa
 
 ## Troubleshooting
 
-In case of post-build linker errors, you might need to resolve missing dependencies to native frameworks required by the installed CocoaPod. For more information about how to create the required links, see the [build.xcconfig specification](PLUGINS.md#buildxcconfig-specification).
+In case of post-build linker errors, you might need to resolve missing dependencies to native frameworks required by the installed CocoaPod. For more information about how to create the required links, see the [build.xcconfig specification](./plugin-reference#buildxcconfig-specification).

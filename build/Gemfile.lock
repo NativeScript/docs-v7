@@ -53,7 +53,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.8.2)
     multi_json (1.11.2)
-    nokogiri (1.8.1)
+    nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     rack (1.6.4)
     rb-fsevent (0.9.7)

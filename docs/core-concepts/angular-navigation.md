@@ -1,7 +1,7 @@
 ---
 title: Navigation
 description: Learn the basic application structure of NativeScript apps and how to navigate inside your app.
-position: 20
+position: 42
 slug: navigation
 environment: angular
 previous_url: /core-concepts/navigation-angular
@@ -9,20 +9,6 @@ previous_url: /core-concepts/navigation-angular
 
 # Navigation
 In this article we will cover how to do navigation in NativeScript application using Angular.
-
-* [Router](#router)
-* [Configuration](#configuration)
-* [Pages](#pages)
-* [Router Links](#router-links)
-* [Router Outlet](#router-outlet)
-* [Page Router Outlet](#page-router-outlet)
-* [Navigation Options](#navigation-options)
-    * [Navigating Back](#navigating-back)
-    * [Clearing Page Navigation History](#clearing-page-navigation-history)
-    * [Specifying Page Transitions](#specifying-page-transitions)
-* [Route Guards](#route-guards)
-* [Lifecycle Hooks And Component Caching](#lifecycle-hooks-and-component-caching)
-* [Passing Parameter](#passing-parameter)
 
 ## Router
 
@@ -70,6 +56,7 @@ One thing you might have noticed in the code above is the `nsRouterLink` directi
 
 ## Router Outlet
 
+The `router-outlet` acts as a placeholder that Angular dynamically fills based on the current router state.
 Let's take a look at the following example that uses `<router-outlet>`:
 
 {%snippet router-outlet-example%}
@@ -78,6 +65,13 @@ The result is that with each navigation the content of the `router-outlet` is re
 
 ![router-outlet-ios](../img/navigation-angular/outlet-ios.gif "RouterOutlet IOS")
 ![router-outlet-Android](../img/navigation-angular/outlet-android.gif "RouterOutlet Android")
+
+> **Note:** In the context of NativeScript the `router-outlet` placeholder always needs to be wrapped in a native layout and can't be the root level element. For example:
+```HTML
+<GridLayout rows="*">
+    <router-outlet row="0"></router-outlet>
+</GridLayout>
+```
 
 ## Page Router Outlet
 
@@ -95,6 +89,16 @@ Here is the result:
 Note that we can now use the **Back button** and the **NavigationBar** to navigate.
 
 It is possible to nest `<router-outlet>` component inside `<page-router-outlet>` or another `<router-outlet>`.
+
+### Using router-outlet Instead of page-router-outlet
+
+In some cases, you might want to create an application without using `page-router-outlet`. To achieve that with nativescript-angular version 6 and above an additional bootstrap parameter called `createFrameOnBootstrap` must be provided to create a `Frame` during the bootstrapping.
+
+app/main.ts
+```TypeScript
+platformNativeScriptDynamic({ createFrameOnBootstrap: true }).bootstrapModule(AppModule);
+
+```
 
 ## Navigation Options
 
@@ -185,7 +189,7 @@ You might want to perform some cleanup actions (ex. unsubscribe from a service t
 
 ## Passing Parameter
 
-In Angular you can inject `ActivatedRoute` and read route parameters from it. Your component will be reused if you do a subsequent navigations to the same route while only changing the params. That's why `params` and `data` inside `ActivatedRoute` are observables. Using `ActivatedRoute` is covered in [angular route-parameters guide](https://angular.io/docs/ts/latest/guide/router.html#!#route-parameters).
+In Angular you can inject `ActivatedRoute` and read route parameters from it. Your component will be reused if you do a subsequent navigations to the same route while only changing the params. That's why `params` and `data` inside `ActivatedRoute` are observables. Using `ActivatedRoute` is covered in [angular route-parameters guide](https://angular.io/guide/router#route-parameters-in-the-activatedroute-service).
 
 As explained in previous chapter, with `<page-router-outlet>` when navigating **back** to an existing page, your component will **not** be re-created. Angular router will still create an **new instance** `ActivatedRoute` and put all params in it, but you cannot get hold of it through injection, as your component is revived from the cache and not constructed anew.
 

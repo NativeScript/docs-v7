@@ -7,7 +7,7 @@ previous_url: /changes
 ---
 
 
-#Changes
+# Changes
 
 NativeScript consists of several parts that ideally, would get released at their own pace each. Below are the links to the respective changelog articles.
 

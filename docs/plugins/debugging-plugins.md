@@ -10,15 +10,7 @@ publish: true
 
 Live sync debugging updates your demo/test app automatically in the simulator/device whenever you make a change in the plugin source code. Debugging a plugin is not much different than debugging a NativeScript app but needs some preparation to ease the plugin development. Before you continue, make sure you have covered the topics about [Debugging]({% slug debugging %}) and [NativeScript extension for Visual Studo Code]({% slug nativescript-extension-for-visual-studio-code %}). 
 
-What this article covers:
-
-* [Setup](#Setup)
-* [Enabling](#Enabling)
-* [Debugging](#Debugging)
-* [Disabling](#Disabling)
-* [Limitations](#Limitations)
-
-## <a name='Setup'></a>Setup
+## Setup
 
 Live sync debugging requires your plugin's source code to not be in the root of its home folder.
 
@@ -45,7 +37,7 @@ If you did not create your plugin using the [NativeScript plugin seed](https://g
 
 >If you are debugging an existing or third party plugin, many of them may not be updated and properly structured to support live sync debugging. If a plugin's source code is in the project's root folder and not in a subfolder then you will need to move its source code out of the root folder and in to a subfolder. We encourage you to fork the plugin's original repo and create a Pull Request of your changes back to the plugin's original repo.
 
-## <a name='Enabling'></a>Enabling
+## Enabling
 
 To enable local live sync debugging of your plugin in a demo/test app:
 
@@ -60,11 +52,11 @@ If you are using npm 4 then this will have copied your plugin's files instead of
 
 Now the files under `/your-demo-or-test-folder/node_modules/your-plugin` are physically the same files that are located under `your-plugin/src`. This means that you can edit either `/your-demo-or-test-folder/node_modules/your-plugin` or `your-plugin/src` and the changes will automatically update in the demo/test app. 
 
-## <a name='Debugging'></a>Debugging
+## Debugging
 
 Having the `npm link` set up, you can start debugging your demo project along with your plugin code in `node_modules` folder. Read more about [Debugging using `tns debug`]({% slug debugging %}) and [debugging using NativeScript extension for Visual Studo Code]({% slug nativescript-extension-for-visual-studio-code %}).
 
-## <a name='Disabling'></a>Disabling
+## Disabling
 
 You may want to disable debugging your local code if you are done developing or have published your plugin and want to test what the rest of the world will experience when they install your public plugin.
 
@@ -83,7 +75,7 @@ Now, add back the dependency to your public plugin:
 
 4. `tns plugin add your-plugin`
 
-## <a name='Limitations'></a>Limitations
+## Limitations
 
 Using `npm link` eases the development of your plugin when you do any kind of code changes to your page templates, typescript/javascript, css files. What it won't do for you is to apply plugin changes to your demo related to:
 

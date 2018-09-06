@@ -3,6 +3,7 @@ title: List View
 description: NativeScript for Angular Documentation - Using List View
 position: 70
 slug: listview
+publish: false
 previous_url: /listview
 environment: angular
 --- 
@@ -19,6 +20,7 @@ In this article we will cover the following topics:
 * [Using Multiple Item Templates](#using-multiple-item-templates)
 * [Using Async Pipe](#using-async-pipe)
 * [Using Load More Items](#load-more-items)
+* [Estimated Row Height](#estimated-row-height)
 
 ## Using the ListView Component
 
@@ -94,7 +96,7 @@ This is a typical usage of the ListView component, however if the business case 
 
 ## Customizing the ListView
 
-The most common customization of ListView control is customizing the item template. Everything inside the `<template>` tag will be used as the item template and will be generated for each item. Another possible customization is connected with the creation of a different item. Usually with a pure NativeScript application, the `itemLoading` event could be used to accomplish this customization. Unfortunately this event cannot be used with a NativeScript-Angular app, since the NativeScript-Angular plugin uses this event to create an Angular view which will be inserted into the Angular virtual dom. However, the NativeScript-Angular ListView component provides an option to customize the created Angular view before adding it to the visual tree. This option is available via the `setupItemView` event. Here is a small example how to use this event:
+The most common customization of ListView control is customizing the item template. Everything inside the `<ng-template>` tag will be used as the item template and will be generated for each item. Another possible customization is connected with the creation of a different item. Usually with a pure NativeScript application, the `itemLoading` event could be used to accomplish this customization. Unfortunately this event cannot be used with a NativeScript-Angular app, since the NativeScript-Angular plugin uses this event to create an Angular view which will be inserted into the Angular virtual dom. However, the NativeScript-Angular ListView component provides an option to customize the created Angular view before adding it to the visual tree. This option is available via the `setupItemView` event. Here is a small example how to use this event:
 
 ```XML
 <GridLayout rows="*">
@@ -287,3 +289,9 @@ export class ListTest {
     }
 }
 ```
+
+## Estimated Row Height
+
+The NativeScript property `iosEstimatedRowHeight` is used to improve the scrolling performance on lists with flexible row heights on the `iOS` platform. It comes with a default value so make sure to set it to something appropriate.
+
+In case you're using flexible row heights in conjunction with dynamic list contents (which is the case when providing load on demand functionality) you'll want to set the `iosEstimatedRowHeight` property to `0`. This will force a precise row height calculation of currently out of view cells. (Which fixes possible scroll position jumps)

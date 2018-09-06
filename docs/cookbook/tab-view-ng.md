@@ -12,13 +12,13 @@ environment: angular
 Using a `TabView` inside an Angular app requires some special attention about how to provide title, iconSource and content (view) of the TabItem. In a pure NativeScript application, `TabView` has an items property which could be set via XML to an array of TabViewItems (basically, an array of objects with `title` and `view` properties). However, NativeScript-Angular does not support nested properties in its HTML template, so adding `TabViewItem` to TabView is a little bit different. NativeScript-Angular provides a custom Angular directive that simplifies the way native `TabView` should be used. The following example shows how to add a `TabView` to your page (with some clarifications later):
 
 ```XML
-// tab-view-test.html
+<!-- tab-view-test.html -->
 <TabView>
     <StackLayout *tabItem="{title: 'Profile', iconSource: '~/icon.png'}" >
         <ListView [items]="items">
-            <template let-item="item">
+            <ng-template let-item="item">
                 <Label [text]="item.itemDesc"></Label>
-            </template>
+            </ng-template>
         </ListView>
     </StackLayout>
     <StackLayout *tabItem="{title: 'Stats'}">
@@ -62,13 +62,13 @@ This is a typical usage of the TabView directive; however, if further customizat
 The most common customization of TabView is customizing the background color of the selected tab item to use something other than the first tab item for start up. <Comment: Please review my changes to the previous sentence to verify I did not create a technical error.> The following example shows how to achieve that with a few modifications to the previous example.
 
 ```XML
-// tab-view-test.html
+<!-- tab-view-test.html -->
 <TabView selectedIndex="1" selectedColor="#FF0000">
     <StackLayout *tabItem="{title: 'Profile', iconSource: '~/icon.png'}" >
         <ListView [items]="items">
-            <template let-item="item">
+            <ng-template let-item="item">
                 <Label [text]="item.itemDesc"></Label>
-            </template>
+            </ng-template>
         </ListView>
     </StackLayout>
     <StackLayout *tabItem="{title: 'Stats'}">
@@ -87,13 +87,13 @@ The result is a TabView that selects the second tab at start up and uses the col
 You can use the NativeScript-Angular TabView `selectedIndex` property in two-way binding scenarios. Using this kind of binding is relatively simple. Just use the standard `ngModel` syntax to a data model property (for the sake of example, the TabViewTest class is used as binding context) and set the data model property `tabSelectedIndex` to the desired value. <Comment: Please review my changes to the previous sentence to verify I did not create a technical error. I think there is a word missing in the phrase, "syntax to a data model property".>
 
 ```XML
-// tab-view-test.html
+<!-- tab-view-test.html -->
 <TabView [(ngModel)]="tabSelectedIndex" selectedColor="#FF0000">
     <StackLayout *tabItem="{title: 'Profile', iconSource: '~/icon.png'}" >
         <ListView [items]="items">
-            <template let-item="item">
+            <ng-template let-item="item">
             	<Label [text]="item.itemDesc"></Label>
-            </template>
+            </ng-template>
         </ListView>
     </StackLayout>
     <StackLayout *tabItem="{title: 'Stats'}">

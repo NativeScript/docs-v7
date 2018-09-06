@@ -1,0 +1,53 @@
+/*noinspection CssInvalidFunction*/
+:root {
+    --light: 255,255,255;
+    --dark: 0,39,52;
+
+    --hs-neutral: 197,11%;
+    --hs-accent: 231, 99%;
+
+    --gray: 0,0%;
+
+    --color-light: rgb(var(--light));
+    --color-dark: rgb(var(--dark));
+
+    --color-secondary: #455B66;
+    --color-green: #11CC71;
+    --color-source-green: #5DB240;
+    --color-error: red;
+
+    --color-accent: hsl(var(--hs-accent), 62%);
+    --color-purple: hsl(var(--hs-accent), 96%);
+    --background-tip: hsl(var(--hs-accent), 90%);
+
+    --border-purple: #E1E4F8;
+
+    --color-progress-green: #5CE500;
+
+    --background-base: #F8FAFD;
+    --background-special: #F2F4FA;
+
+    --background-light: var(--color-light);
+    --background-accent: var(--color-accent);
+    --background-dark: var(--color-dark);
+    --background-secondary: var(--color-secondary);
+    --background-purple: var(--color-purple);
+    --background-green: var(--color-green);
+
+    --transparent-dark-02: rgba(var(--dark), .02);
+    --transparent-dark-05: rgba(var(--dark), .05);
+    --transparent-dark-10: rgba(var(--dark), .1);
+    --transparent-dark-15: rgba(var(--dark), .15);
+    --transparent-dark-20: rgba(var(--dark), .2);
+    --transparent-dark-50: rgba(var(--dark), .5);
+    --transparent-dark-60: rgba(var(--dark), .6);
+    --transparent-dark-70: rgba(var(--dark), .7);
+    --transparent-dark-90: rgba(var(--dark), .9);
+
+    --transparent-white-10: rgba(var(--light), .1);
+    --transparent-white-20: rgba(var(--light), .2);
+    --transparent-white-50: rgba(var(--light), .5);
+    --transparent-white-70: rgba(var(--light), .7);
+    --transparent-white-80: rgba(var(--light), .8);
+    --transparent-white-90: rgba(var(--light), .9);
+}

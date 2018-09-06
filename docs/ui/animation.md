@@ -23,7 +23,7 @@ In __Example 1__ we will change the background color of a button from "red" to "
 
 __Example 1: Changing background color animation with code.__
 
-![hello-world](../img/modules/animation/hello-world.gif "Hello world")
+![hello-world](./img/modules/animation/hello-world.gif "Hello world")
 
 ``` JavaScript
 // Import color module
@@ -80,25 +80,31 @@ In every animation, you can control the following properties:
 - **delay**: The amount of time to delay starting the animation.
 - **iterations**: Specifies how many times the animation should be played. 
 - **timing function**: The speed curve of the animation. Available options are defined below.
+- **originX** and **originY**: The X and Y components of the origin point around which the view will be transformed.
 
-##Animation curves
+## Animation curves
 
 By default, an animation moves with a linear speed without acceleration or deceleration. This might look unnatural and different from the real world where objects need time to reach their top speed and can't stop immediately. The animation curve (sometimes called an easing function) is used to give animations an illusion of inertia. It controls the animation speed by modifying the fraction of the duration. NativeScript comes with a number of predefined animation curves.
 
 - **linear**: The simplest animation curve is linear. It maintains a constant speed while the animation is running:
-![linear](../img/modules/animation/linear.gif "Linear")
+
+![linear](./img/modules/animation/linear.gif "Linear")
 
 - **Ease-in**: The ease-in curve causes the animation to begin slowly, and then speed up as it progresses.
-![easein](../img/modules/animation/easein.gif "EaseIn")
+
+![easein](./img/modules/animation/easein.gif "EaseIn")
 
 - **Ease-out**: An ease-out curve causes the animation to begin quickly, and then slow down as it completes.
-![easeout](../img/modules/animation/easeout.gif "EaseOut")
+
+![easeout](./img/modules/animation/easeout.gif "EaseOut")
 
 - **Ease-in-out**: An ease-in ease-out curve causes the animation to begin slowly, accelerate through the middle of its duration, and then slow again before completing.
-![easeinout](../img/modules/animation/easeinout.gif "EaseInOut")
+
+![easeinout](./img/modules/animation/easeinout.gif "EaseInOut")
 
 - **Spring**: A spring animation curve causes an animation to produce a spring (bounce) effect.
-![spring](../img/modules/animation/spring.gif "Spring")
+
+![spring](./img/modules/animation/spring.gif "Spring")
 
 In NativeScript, the animation curve is represented by the AnimationCurve enumeration and can be specified with the curve property of the animation. In CSS, the animation curve is defined by using the animation-timing-function property (see __Example 3__):
 
@@ -141,10 +147,11 @@ For help finding the `cubicBezier` values you need for your custom animation tim
 
 __Example 4: How to create own animation curve via cubic Bezier__
 
-![beziergraph](../img/modules/animation/bezier-graph.png "BezierGraph")
+![beziergraph](./img/modules/animation/bezier-graph.png "BezierGraph")
 
 ``` JavaScript
 var enums = require("ui/enums");
+
 view.animate({
     translate: { x: 0, y: 100 },
     duration: 1000,
@@ -168,6 +175,31 @@ view.animate({
 }
 ```
 
-![bezier](../img/modules/animation/bezier.gif "Bezier")
+![bezier](./img/modules/animation/bezier.gif "Bezier")
 
 More detailed examples are available on the [Animation Examples](./animation-examples.md) page.
+
+## Rotation using originX and originY
+
+To create more complex animations, we might need to change the origin point around which the selected view will be transformed. This can be achieved using [`originX`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#originx) and [`originY`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#originy) properties of `View`.
+
+__Example 5: Rotating a view around its center. Center of viww is changed via `originX` and `originY` properties.__
+
+``` JavaScript
+view.originX = 1; // default 0.5 (center), 0 is most left, 1 is most right
+view.originY = 0.5; // default 0.5 (middle), 0 is top, 1 is bottom
+view.animate({
+	rotate: 360, // will take into account originX and originY
+    duration: 1000
+});
+```
+``` TypeScript
+view.originX = 1; // default 0.5 (center), 0 is most left, 1 is most right
+view.originY = 0.5; // default 0.5 (middle), 0 is top, 1 is bottom
+view.animate({
+	rotate: 360, // will take into account originX and originY
+    duration: 1000
+});
+```
+
+> Note: The properties `originX` and `originY` are JavaScript properties and can be assigned via code-behind only via a given `View` reference. We can still use them along with CSS animations, but the values for `originX` and `originY` must be set in the code-behind logic.

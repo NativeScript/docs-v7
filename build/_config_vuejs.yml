@@ -52,6 +52,10 @@ improveThis:
             matchPattern: '.*'
             baseUrl: "https://github.com/NativeScript/docs/blob/master/vuejs-docs"
 
+flavor:
+    "NativeScript & Vue.JS":
+        matchPattern: '^/.*'
+
 ## Do not edit below this line
 safe: false
 markdown: MarkdownProcessor

@@ -9,95 +9,180 @@ navigation:
 ## List your directory names and order here, like this:
     start:
         position: 10
-        title: "INTRODUCTION"
+        title: "Get Started"
         expanded: true
-    tutorial:
-        position: 15
-        title: "TUTORIAL"
-        expanded: false
     core-concepts:
         position: 20
         title: "CORE CONCEPTS"
-        expanded: true
+    "core-concepts/android-runtime":
+        position: 200
+        title: "Android Runtime"
+    "core-concepts/android-runtime/getting-started":
+        position: 10
+        title: "Getting started"
+    "core-concepts/android-runtime/metadata":
+        position: 20
+        title: "Metadata"
+    "core-concepts/android-runtime/marshalling":
+        position: 30
+        title: "Marshalling"
+    "core-concepts/android-runtime/generator":
+        position: 40
+        title: "Generator"
+    "core-concepts/android-runtime/plugins":
+        position: 50
+        title: "Plugins"
+    "core-concepts/android-runtime/how-to":
+        position: 60
+        title: "How-To"
+    "core-concepts/android-runtime/debug":
+        position: 70
+        title: "Debug"
+    "core-concepts/android-runtime/advanced-topics":
+        position: 80
+        title: "Advanced topics"
+    "core-concepts/ios-runtime":
+        position: 300
+        title: "iOS Runtime"
+    "core-concepts/ios-runtime/getting-started":
+        position: 10
+        title: "Getting started"
+    "core-concepts/ios-runtime/types":
+        position: 20
+        title: "Types"
+    "core-concepts/ios-runtime/marshalling":
+        position: 30
+        title: "Marshalling"
+    "core-concepts/ios-runtime/how-to":
+        position: 40
+        title: "How-To"
     integration-with-existing-ios-and-android-apps:
-        position: 21
+        position: 30
         title: "INTEGRATING EXISTING NATIVE APPS"
     best-practices:
-        position: 25
+        position: 40
         title: "BEST PRACTICES"
     ui:
-        position: 30
+        position: 20
         title: "USER INTERFACE"
         expanded: false
+    "ui/layouts":
+        position: 10
+        title: "Layouts"
+        expanded: false
+    "ui/ns-ui-widgets":
+        position: 20
+        title: "UI Widgets"
+        expanded: false
+    "ui/ns-framework-modules":
+        position: 30
+        title: "Framework modules"
+        expanded: false
+    "ui/ng-ui-widgets":
+        position: 20
+        title: "UI Widgets"
+        expanded: false
+    "ui/ng-framework-modules":
+        position: 30
+        title: "Framework modules"
+        expanded: false
+    code-sharing:
+        position: 45
+        title: "CODE SHARING"
     tooling:
-        position: 40
+        position: 50
         title: "TOOLING"
         expanded: false
-    publishing:
-        position: 50
-        title: "PUBLISHING"
-        expanded: false
+    "tooling/publishing":
+        position: 100
+        title: "Publishing"
+    "tooling/debugging":
+        position: 200
+        title: "Debugging"
+    "tooling/docs-cli":
+        position: 300
+        title: "Command-line interface"
     hardware:
+        position: 60
+        title: "HARDWARE АCCESS"
+    ng-hardware-access:
         position: 60
         title: "HARDWARE АCCESS"
     plugins:
         position: 70
-        title: "PLUGINS"
-    cookbook:
-        position: 80
-        title: "COOKBOOK"  
+        title: "PLUGINS DEVELOPMENT"
     releases:
-        position: 90
-        title: "RELEASES"
-    runtimes:
-        position: 100
-        title: "RUNTIMES REFERENCE"
-    "runtimes/android":
-        position: 10
-        title: "Android"
-    "runtimes/android/getting-started":
-        position: 10
-        title: "Getting started"
-    "runtimes/android/metadata":
-        position: 20
-        title: "Metadata"
-    "runtimes/android/marshalling":
-        position: 30
-        title: "Marshalling"
-    "runtimes/android/generator":
-        position: 40
-        title: "Generator"
-    "runtimes/android/plugins":
-        position: 50
-        title: "Plugins"
-    "runtimes/android/how-to":
-        position: 60
-        title: "How-To"
-    "runtimes/android/debug":
-        position: 70
-        title: "Debug"
-    "runtimes/android/advanced-topics":
         position: 80
-        title: "Advanced topics"
-    "runtimes/ios":
-        position: 20
-        title: "iOS"
-    "runtimes/ios/getting-started":
+        title: "RELEASES"
+    app-and-screen-templates:
+        position: 90
+        title: "App and Screen Templates"
+    "app-and-screen-templates/common-screens":
         position: 10
-        title: "Getting started"
-    "runtimes/ios/types":
+        title: "Common screens"
+    performance-optimizations:
+        position: 100
+        title: "Performance optimizations"
+    ns-framework-modules:
+        position: 110
+        title: "Framework modules"
+    ng-framework-modules:
+        position: 110
+        title: "Framework modules"
+    guides:
+        position: 120
+        title: "Guides"
+    "guides/integration-with-existing-ios-and-android-apps":
+        position: 100
+        title: "Integration with existing iOS and Android apps"
+    sidekick:
+        position: 150
+        title: "Sidekick"
+    "sidekick/intro":
+        position: 10
+        title: Introduction
+    "sidekick/getting-started":
         position: 20
-        title: "Types"
-    "runtimes/ios/marshalling":
+        title: Get Started
+    "sidekick/user-guide":
         position: 30
-        title: "Marshalling"
-    "runtimes/ios/how-to":
+        title: User Guide
+    "sidekick/user-guide/logging-in":
+        position: 33
+        title: Logging in Sidekick
+    "sidekick/user-guide/sidekick-settings":
+        position: 35
+        title: Sidekick Settings
+    "sidekick/user-guide/create-app":
         position: 40
-        title: "How-To"
-    docs-cli:
-        position: 200
-        title: "COMMAND-LINE INTERFACE"
-
+        title: Creating Your App 
+    "sidekick/user-guide/configure-app":
+        position: 45
+        title: Configuring Your App    
+    "sidekick/user-guide/add-page":
+        position: 50
+        title: Adding a New Page to Your App         
+    "sidekick/user-guide/code-signing":
+        position: 55
+        title: Code Signing Your App
+    "sidekick/user-guide/code-signing/code-signing-for-ios":
+        position: 60
+        title: Code Signing for iOS Apps
+    "sidekick/user-guide/build-app":
+        position: 65
+        title: Building Your App
+    "sidekick/user-guide/run-app":
+        position: 70
+        title: Running Your App on a Device
+    "sidekick/user-guide/publish-app":
+        position: 75
+        title: Publishing Your App
+    "sidekick/user-guide/enterprise-auth":
+        position: 80
+        title: Enterprise Auth
+    "sidekick/troubleshooting":
+        position: 85
+        title: Troubleshooting
 ## The product name
 productName: "NativeScript"
 
@@ -114,6 +199,17 @@ improveThis:
             matchPattern: '.*'
             baseUrl: "https://github.com/NativeScript/docs/blob/master/docs/"
 
+## Current flavor
+flavor:
+    "NativeScript & Angular":
+        matchPattern: '^/angular/.*'
+    "NativeScript Sidekick":
+        matchPattern: '^/sidekick/.*'
+    "NativeScript & Vue.JS":
+        matchPattern: '^/vuejs/.*'
+    "API Reference":
+        matchPattern: '^/api-reference/.*'
+
 ## Assign layout and category per different paths
 defaults:
 -
@@ -126,6 +222,10 @@ defaults:
 # Aliases available in the markdown template. The below will expand {{site.foo}} to Bar in the output
 # "foo": "Bar"
 "current-version": "2.0.0"
+"ns": "NativeScript"
+"sk": "Sidekick"
+"ns-sk": "NativeScript Sidekick"
+"ns-cli": "NativeScript CLI"
 
 # Assets pipeline configuration
 assets:
