@@ -278,7 +278,7 @@ The arguments received after the `propertyChange` event is raised, are of type [
 
 ## Creating a Custom Event
 
-If your business logic demands it, you may want to fire (raise or emit) a custom event on a particular action. To do that, call the `Observable.notify()` method when the action is completed. This method takes any **implementer** of the `EventData` interface as event data. It includes basic information about an event&mdash;its name as `eventName` and an instance of the event sender as `object`).
+If your business logic demands it, you may want to fire (raise or emit) a custom event on a particular action. To do that, call the `Observable.notify()` method when the action is completed. This method takes any **implementer** of the `EventData` interface as event data. It includes basic information about an event&mdash;its name as `eventName` and an instance of the event sender as `object`.
 
 ``` JavaScript
 let eventData = {
