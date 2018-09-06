@@ -82,7 +82,7 @@ export function onTouch(args: TouchGestureEventData) {
 
 ### Adding an Event Listener Using MVVM Pattern
 
-Often in NativeScript, the MVVM pattern is used with a separate view model that provides the binding context for your views. In such cases, the event handles must be provided via the binding context syntax.
+Often in NativeScript, the MVVM pattern is used with a separate view model that provides the binding context for your views. In such cases, the event handlers must be provided via the binding context syntax.
 
 _JavaScript example_
 ```JavaScript
