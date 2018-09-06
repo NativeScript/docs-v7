@@ -179,7 +179,7 @@ testButton2.removeEventListener(buttonModule.Button.tapEvent);
 
 ## Event Data Types
 
-The base type of the event's arguments is of type [EventData](https://docs.nativescript.org/api-reference/interfaces/_data_observable_.eventdata). The `EventData` provides to common properties:
+The base type of the event's arguments is of type [EventData](https://docs.nativescript.org/api-reference/interfaces/_data_observable_.eventdata). The `EventData` provides two common properties:
 - `object` - The Observable instance that has raised the event.
 - `eventName` - The name of the raised event.
 ```JavaScript
