@@ -17,7 +17,7 @@ publish: true
 
 The NativeScript framework has a vibrant community that’s here to help when you run into problems.
 
-If you hit an issue, start by seeing if anyone else has reported the problem on [the NativeScript community forum](http://forum.nativescript.org/). If you can’t find any information, try creating a new forum topic with any details needed to recreate the issue.
+If you hit an issue, start by seeing if anyone else has reported the problem on [Stack Overflow](https://stackoverflow.com/questions/tagged/nativescript) or [the deprecated NativeScript community forum](https://discourse.nativescript.org/). If you can’t find any information, try creating a new question on Stack Overflow with any details needed to recreate the issue.
 
 If you’ve found an issue with the NativeScript framework itself, please report the problem in the appropriate GitHub repository.
 

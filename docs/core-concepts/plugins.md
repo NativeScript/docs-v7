@@ -18,7 +18,7 @@ Because NativeScript plugins are npm packages, you can find NativeScript plugins
 
 The NativeScript team also maintains an [official marketplace](http://market.nativescript.org/), which displays a filtered list of NativeScript-related plugins from npm. A search for “accelerometer” on the plugins marketplace will point you at the plugin you need.
 
-If you don’t find a plugin, you need to try asking for help on the [NativeScript community forum](https://discourse.nativescript.org/c/plugins). The NativeScript team and community may be able to help find what you’re looking for.
+If you can't find a plugin, try asking for help on [Stack Overflow](https://stackoverflow.com/questions/tagged/nativescript). The NativeScript team and community may be able to help find what you’re looking for.
 
 Also, make sure to look through the [NativeScript core modules](https://docs.nativescript.org/core-concepts/modules), which ship as a dependency of every NativeScript app. There’s a chance that the functionality you need is built in. If you’re still not finding what you need, you can request the plugin as an idea on the [NativeScript community forum](https://discourse.nativescript.org/c/plugins), or you can take a stab at [building the plugin yourself](/plugins/building-plugins/).
 

@@ -69,7 +69,7 @@ tns run android
 ```
 
 > **NOTE**:
-> * If you get an error at this point you likely haven’t completed the [NativeScript CLI installation instructions](/start/quick-setup). If you’ve gone through the instructions and are still stuck, try asking for help in the [NativeScript community forum](http://forum.nativescript.org/).
+> * If you get an error at this point you likely haven’t completed the [NativeScript CLI installation instructions](/start/quick-setup). If you’ve gone through the instructions and are still stuck, try asking for help on [Stack Overflow](https://stackoverflow.com/questions/tagged/nativescript).
 > * You must have at least one AVD (Android Virtual Device) configured on your development machine for this command to run your app up on an Android emulator. If you don’t have one installed currently go ahead and [set one up now](/tooling/android-virtual-devices).
 
 The `run` command will take a few seconds to complete, as the NativeScript CLI will actually be building and deploying a native Android application. When the command finishes the native emulator will open and you will see your app:
