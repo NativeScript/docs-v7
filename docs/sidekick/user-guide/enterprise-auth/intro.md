@@ -64,7 +64,7 @@ When you tap the **Log in** button, if all went well, you should be prompted to 
 
 ![](../../img/enterprise-auth/app-auth-screen.png)
 
-> **NOTE**: Configuring enterprise authentication providers is very tricky. If you’re not seeing your auth screen as expected, or if you hit problems at any time throughout the process, feel free to [reach out on the NativeScript community forum](https://discourse.nativescript.org/c/Sidekick).
+> **NOTE**: Configuring enterprise authentication providers is very tricky. If you’re not seeing your auth screen as expected, or if you hit problems at any time throughout the process, feel free to [reach out on Stack Overflow](https://stackoverflow.com/questions/tagged/nativescript).
 
 And that’s it! You’ve now successfully built an app that can connect to an enterprise authentication provider.
 

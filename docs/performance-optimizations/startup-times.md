@@ -52,7 +52,7 @@ Or
 tns run ios --bundle
 ```
 
-> **NOTE**: If you’re having trouble enabling webpack in your own apps, feel free to reach out for help on the [NativeScript community forum](https://discourse.nativescript.org/).
+> **NOTE**: If you’re having trouble enabling webpack in your own apps, feel free to reach out for help on [Stack Overflow](https://stackoverflow.com/questions/tagged/nativescript).
 
 To give you a sense of how big of a difference webpack makes, let’s look at some before and after videos of applying webpack builds to the [NativeScript Groceries sample](https://github.com/nativescript/sample-Groceries). Here’s what Groceries looks like if you start it _without_ using webpack.
 
