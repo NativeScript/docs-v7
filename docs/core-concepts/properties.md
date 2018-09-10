@@ -231,19 +231,19 @@ In this implementation, we use singleton listener (for Android - `clickListener`
 
 ### Iterating Over View Children
 
-There are two methods that allow you to traverse view-hierarchy:
+There are two methods that allow you to traverse view-hierarchy. Both of them accept a `callback` function that is called for each child. The callback should return a boolean value - if it is falsy the iteration will break. This is particularly useful if you are searching for a specific view and you want to stop iterating as soon as you have found it. 
 
 For getting View children use:
 ```
 public eachChildView(callback: (child: View) => boolean): void
 ```
-This method was previously known as `_eachChildView()`. It will return View descendants only. For example TabView returns the view of each TabViewItem because is TabViewItem is of type ViewBase.
+This method was previously known as `_eachChildView()`. It will return `View` descendants only. For example TabView returns the view of each TabViewItem because is TabViewItem is of type ViewBase.
 
 Getting ViewBase children use:
 ```
 public eachChild(callback: (child: ViewBase) => boolean): void;
 ```
-This method will return all views including ViewBase. It is used by the property system to apply native setters, propagate inherited properties, apply styles, etc. In the case of TabView – this method will return TabViewItems as well so that they could be styled through CSS.
+This method will return all views including `ViewBase`. It is used by the property system to apply native setters, propagate inherited properties, apply styles, etc. In the case of TabView – this method will return TabViewItems as well so that they could be styled through CSS.
 
 ### View Class Common Methods
 
