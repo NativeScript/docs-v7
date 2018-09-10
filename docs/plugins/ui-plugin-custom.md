@@ -16,7 +16,7 @@ The article contains information applicable to apps built with NativeScript 3.x.
 
 ## Bootstrap Your Plugin 
 
-First things first - you start off from a regular plugin. You can check the [Building Plugins article](%slug building-plugins%) for reference.
+First things first - you start off from a regular plugin. You can check the [Building Plugins article]({%slug building-plugins%}) for reference.
 
 ## Common Code
 
