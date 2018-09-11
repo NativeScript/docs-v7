@@ -10,7 +10,7 @@ The repository contains the raw content files. To see the HTML representation of
 * Metadata
 	* [Overview](./metadata/overview.md)
 	* [Accessing APIs](./metadata/accessing-packages.md)
-	* [Building Metadata](./metadata/generator.md)
+	* [Building Metadata](./metadata/generating-typescript-declarations.md)
 * Data Conversion (Marshalling)
 	* [Overview](./marshalling/overview.md)
 	* [JavaScript to Java](./marshalling/js-to-java.md)
