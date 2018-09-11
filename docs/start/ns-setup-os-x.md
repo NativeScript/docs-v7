@@ -1,6 +1,6 @@
 ---
 title: NativeScript Advanced Setup—macOS
-description: Configure your macOS system to create, develop and build projects locally with NativeScript.
+description: Learn how to configure your macOS system to create, develop and build apps with NativeScript.
 position: 40
 publish: false
 slug: osx

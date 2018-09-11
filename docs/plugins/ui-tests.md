@@ -1,6 +1,6 @@
 ---
 title: Plugin UI Tests
-description: A guide about writing JavaScript based UI tests for mobile app.
+description: A guide to writing JavaScript-based UI tests for your NativeScript plugins. Learn how to write and execute tests with the popular tool Appium.
 position: 70
 slug: plugin-ui-tests
 ---

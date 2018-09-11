@@ -1,6 +1,6 @@
 ---
 title: Implementing the NativeScript Theme in Plugins
-description: A guide to implement the NativeScript theme in plugins
+description: Learn how to build NativeScript plugins that integrate with the NativeScript core theme.
 position: 45
 slug: implementing-the-nativescript-theme-in-plugins
 environment: nativescript

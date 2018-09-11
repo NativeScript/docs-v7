@@ -1,6 +1,6 @@
 ---
 title: Supporting Angular in UI Plugins
-description: Supporting Angular in UI Plugins
+description: Learn how to write NativeScript user interface plugins that support the angular framework.
 position: 50
 slug: supporting-angular-in-ui-plugins
 environment: angular

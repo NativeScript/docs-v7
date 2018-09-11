@@ -1,6 +1,6 @@
 ---
 title: Ensure Plugins Quality
-description: A series of tips on how to sanity check a NativeScript plugin
+description: A series of tips on how to build NativeScript plugins that are readable, maintainable, and have automated tests.
 position: 60
 slug: ensure-plugins-quality
 ---

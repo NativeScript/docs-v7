@@ -1,6 +1,6 @@
 ---
 title: Plugin Reference
-description: A collection of reference material for NativeScript plugin authors
+description: A collection of reference material for NativeScript plugin authors, including a plugin’s required folder structure, npm configuration, and gradle specification.
 position: 10
 ---
 
