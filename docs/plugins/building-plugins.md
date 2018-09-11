@@ -150,7 +150,7 @@ npm run demo.android
 
 If all went well, you should see the demo app start up and show one of the following screens.
 
-![](../img/plugins/working-ios.png)
+![](./img/plugins/working-ios.png)
 
 To show how the development process works, next, open your plugin’s `src/version-number.common.ts` file, find the line of code that contains the “Your plugin is working” string, and make a small change. For example you could change the entire line of code that sets the `msg` variable to the following.
 
@@ -160,7 +160,7 @@ let msg = `Your plugin is working on ${app.android ? 'Android' : 'iOS'}!!!!!!!!!
 
 After you save this change a few things are going to happen. First, your `tscwatch` command will detect the TypeScript change and automatically compile the `version-number.common.ts` file to JavaScript. Next, your `demo` command will detect the change and automatically refresh your demo app to show your string update.
 
-![](../img/plugins/working-ios-2.png)
+![](./img/plugins/working-ios-2.png)
 
 > **NOTE**: Wondering how this works? The `npm run postclone` script you ran earlier uses the `npm link` command to connect the demo app to the source code you’re working on in the `src` folder. The link allows you to edit files in `src`, and see those changes in your demo immediately.
 
@@ -200,7 +200,7 @@ export class VersionNumber {
 
 The NativeScript plugin seed automatically sets up the necessary TypeScript configuration for working with native iOS and Android APIs, so as you develop your plugins you’ll get a little help working with these native APIs in TypeScript-friendly editors like Visual Studio Code. For example, if you start to type out `NSBundle`, Visual Studio Code helps you find the native iOS APIs that are available.
 
-![](../img/plugins/vs-code-intellisense.png)
+![](./img/plugins/vs-code-intellisense.png)
 
 > **TIP**: If you’re new to working with native APIs in NativeScript, check out our documentation on [accessing native APIs in JavaScript and TypeScript](https://docs.nativescript.org/core-concepts/accessing-native-apis-with-javascript). You might also want to dive into a few existing plugin’s source code just to see how they work. Almost every plugin on the [NativeScript marketplace](http://market.nativescript.org) is open source.
 
@@ -243,7 +243,7 @@ this.message = this.versionNumber.get();
 
 If you still have `npm run plugin.tscwatch` and `npm run demo.ios|android` watching your code, you should see your demo app update to show your app’s version number on the screen. (If not, refer back to step 2 and refamiliarize yourself with the plugin development workflow.)
 
-![](../img/plugins/ios-version-number.png)
+![](./img/plugins/ios-version-number.png)
 
 Now that you have a complete plugin, you’re ready to use your plugin in your apps, and to do that you’ll need to publish it.
 

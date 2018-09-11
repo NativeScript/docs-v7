@@ -302,7 +302,7 @@ The scripts (`ci.android.build` and `ci.ios.build`) that are executed to build f
 
 If everything is configured properly, the sanity checks will execute on every code change. The result, and whether the checks pass or not, will look like this:
 
-![](../img/plugins/travis-ci.png)
+![](./img/plugins/travis-ci.png)
 
 The main benefit of having sanity checks in place for your NativeScript plugins is that you can develop without spending additional time to ensure your changes don't break existing applications depending on your plugin.
 

@@ -23,7 +23,7 @@ Let's say you want to build a simple meme generator component with three propert
 
 ...and when used in an app it looks like:
 
-![](../img/plugins/ui-plugin-ns-preview.png)
+![](./img/plugins/ui-plugin-ns-preview.png)
 
 You can implement this by creating two files:
 - **meme.ts**: Contains properties, the implementation logic, and loads the UI.

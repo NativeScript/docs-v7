@@ -204,10 +204,10 @@ For light skin, just import the corresponding `light` files to `app.css`.
 ## Screenshots
 
 _Dark skin on Android_
-![](../img/plugins/dark-android.png) 
+![](./img/plugins/dark-android.png) 
 _Dark skin on iOS_
-![](../img/plugins/dark-ios.png)
+![](./img/plugins/dark-ios.png)
 _Light skin on Android_
-![](../img/plugins/light-android.png) 
+![](./img/plugins/light-android.png) 
 _Light skin on iOS_
-![](../img/plugins/light-ios.png)
+![](./img/plugins/light-ios.png)
