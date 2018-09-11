@@ -16,7 +16,7 @@ Here is the list of the four main blank templates depending on the coding langua
 
 - Plain JavaScript template at [https://github.com/NativeScript/template-blank](https://github.com/NativeScript/template-blank)
 - TypeScript template at [https://github.com/NativeScript/template-blank-ts](https://github.com/NativeScript/template-blank-ts)
-- Plain JavaScript template at [https://github.com/NativeScript/template-blank-ng](https://github.com/NativeScript/template-blank-ng)
+- Angular template at [https://github.com/NativeScript/template-blank-ng](https://github.com/NativeScript/template-blank-ng)
 - Vue.js template at [https://github.com/nativescript-vue/nativescript-vue-template](https://github.com/nativescript-vue/nativescript-vue-template)
 
 Creating your template is as simple as cloning the wanted template repository and modifying the source code to satisfy your business logic.
