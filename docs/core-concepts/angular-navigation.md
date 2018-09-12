@@ -12,7 +12,7 @@ In this article we will cover how to do navigation in NativeScript application u
 
 ## Router
 
-In an Angular application navigation is done using the **Angular Component Router**. You can check [this detailed guide on how to use the router](https://angular.io/docs/ts/latest/guide/router.html). From here on we are going to assume that you are familiar with the basic concepts and concentrate on the specifics when doing navigation with Angular inside a NativeScript app.
+In an Angular application navigation is done using the **Angular Component Router**. You can check [this detailed guide on how to use the router](https://angular.io/guide/router). From here on we are going to assume that you are familiar with the basic concepts and concentrate on the specifics when doing navigation with Angular inside a NativeScript app.
 
 ## Configuration
 
@@ -54,7 +54,7 @@ We are also going to use the following route configuration file (`app.routes.ts`
 
 ## Router Links
 
-One thing you might have noticed in the code above is the `nsRouterLink` directive. It is similar to [`routerLink`](https://angular.io/docs/ts/latest/guide/router.html#!#-routerlink-binding), but works with NativeScript navigation. To use it, you need to import `NativeScriptRouterModule` in your NgModule.
+One thing you might have noticed in the code above is the `nsRouterLink` directive. It is similar to [`routerLink`](https://angular.io/api/router/RouterLink), but works with NativeScript navigation. To use it, you need to import `NativeScriptRouterModule` in your NgModule.
 
 ## Router Outlet
 
@@ -191,7 +191,7 @@ You might want to perform some cleanup actions (ex. unsubscribe from a service t
 
 ## Passing Parameter
 
-In Angular you can inject `ActivatedRoute` and read route parameters from it. Your component will be reused if you do a subsequent navigations to the same route while only changing the params. That's why `params` and `data` inside `ActivatedRoute` are observables. Using `ActivatedRoute` is covered in [angular route-parameters guide](https://angular.io/guide/router#route-parameters-in-the-activatedroute-service).
+In Angular you can inject `ActivatedRoute` and read route parameters from it. Your component will be reused if you do a subsequent navigations to the same route while only changing the params. That's why `params` and `data` inside `ActivatedRoute` are observables. Using `ActivatedRoute` is covered in [angular route-parameters guide](https://angular.io/api/router/ActivatedRoute).
 
 As explained in previous chapter, with `<page-router-outlet>` when navigating **back** to an existing page, your component will **not** be re-created. Angular router will still create an **new instance** `ActivatedRoute` and put all params in it, but you cannot get hold of it through injection, as your component is revived from the cache and not constructed anew.
 
