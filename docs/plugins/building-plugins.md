@@ -1,6 +1,6 @@
 ---
 title: Building Plugins
-description: A guide to bulding your first NativeScript plugin using the NativeScript plugin seed
+description: An easy-to-follow guide for building your first NativeScript plugin using the NativeScript plugin seed.
 position: 20
 slug: building-plugins
 ---

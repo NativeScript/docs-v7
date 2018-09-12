@@ -1,6 +1,6 @@
 ---
 title: NativeScript Advanced Setup—Windows
-description: Configure your Windows system to create, develop and build projects locally with NativeScript.
+description: Learn how to configure your Windows system to create, develop and build apps with NativeScript.
 position: 30
 slug: windows
 publish: false

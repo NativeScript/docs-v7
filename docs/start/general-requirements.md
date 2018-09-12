@@ -1,6 +1,6 @@
 ---
 title: Requirements
-description: The system and software requirements your system needs to meet in order to develop NativeScript applications for iOS and Android.
+description: The software requirements your system needs to meet in order to develop NativeScript applications. The page includes instructions for Windows, macOS, and Linux environments.
 position: 10
 publish: true
 slug: general-requirements

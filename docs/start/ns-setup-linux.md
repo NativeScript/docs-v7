@@ -1,6 +1,6 @@
 ---
 title: NativeScript Advanced Setup—Linux
-description: Configure your Linux system to create, develop and build projects locally with NativeScript.
+description: Learn how to configure your Linux system to create, develop and build apps with NativeScript.
 position: 50
 slug: linux
 publish: false

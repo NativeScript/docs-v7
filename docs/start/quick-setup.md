@@ -1,6 +1,6 @@
 ---
 title: Command-Line Interface Setup
-description: Set up your system to work with NativeScript locally.
+description: Learn how to set up the NativeScript command-line interface on Windows, macOS, and Linux development machines.
 position: 20
 slug: quick-start
 previous_url: /setup/quick-setup

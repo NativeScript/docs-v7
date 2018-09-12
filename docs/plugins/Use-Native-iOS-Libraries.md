@@ -1,11 +1,11 @@
 ---
 nav-title: "Using Native Libraries in iOS"
 title: "How To Use Native Libraries in iOS"
-description: "Describes all the possible approaches for using native iOS libraries in your NativeScript app."
+description: "Learn how to use native iOS libraries in your NativeScript plugins, including how to use shared frameworks, static frameworks, and static libraries."
 position: 110
 ---
 
-# Overview
+# Using Native Libraries in iOS
 
 NativeScript for iOS lets you include native libraries and consume their APIs from JavaScript.
 

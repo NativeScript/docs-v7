@@ -1,6 +1,6 @@
 ---
 title: Debugging Plugins
-description: Debugging Plugins
+description: Learn workflows to debug NativeScript plugins, including the best way to set up your plugins during development.
 position: 25
 slug: debugging-plugins
 publish: true

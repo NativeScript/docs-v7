@@ -1,12 +1,12 @@
 ---
-title: Supporting Angular Explained
-description: Integrating vanilla NativeScript UI components in Angular Explained
+title: Integrating UI Components With Angular
+description: Learn how to build NativeScript plugins that support Angular, and that integrate with NativeScript’s standard set of user interface components.
 position: 55
 slug: supporting-angular-explained
 environment: angular
 ---
 
-# Supporting Angular Explained
+# Integrating UI Components With Angular
 
 The standard NativeScript abstraction for a visual component is the `View` class in the "ui/core/view" package. It can be used to integrate with:
 

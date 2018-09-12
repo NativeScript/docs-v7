@@ -1,6 +1,6 @@
 ---
 title: Android Plugins Infrastructure
-description: When the NativeScript modules do not provide the native device or platform capability that you need, you can use NativeScript plugins.
+description: Learn how to build NativeScript plugins that use native Android libraries, including how to structure your plugins, how to include gradle specifications, and more.
 position: 100
 slug: android-plugins-infrastructure
 previous_url: /external-libs/jars,/external-libs/resource-libs
