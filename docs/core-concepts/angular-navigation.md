@@ -14,8 +14,6 @@ In this article we will cover how to do navigation in NativeScript application u
 
 In an Angular application navigation is done using the **Angular Component Router**. You can check [this detailed guide on how to use the router](https://angular.io/docs/ts/latest/guide/router.html). From here on we are going to assume that you are familiar with the basic concepts and concentrate on the specifics when doing navigation with Angular inside a NativeScript app.
 
-> Note: This article covers usage of the @angular/router v3. For the `deprecated beta router` please import `nativescript-angular/router-deprecated`.
-
 ## Configuration
 
 The router configuration usually consists of the following steps:
@@ -30,6 +28,10 @@ Use the `NativeScriptRouterModule` API to import your routes:
 
 As usual, pass your module to the `bootstrapModule` function to start your app:
 {%snippet router-bootstrap%}
+
+### Lazy Loaded Modules
+
+To improve the bootstrap time and the in-app navigation in large applications, Angular has introduced **lazy loading** for modules. Refer to the [Lazy Loading in NativeScript](../performance-optimizations/lazy-loading.md) for detailed explanation and implementation steps.
 
 ## Pages
 
