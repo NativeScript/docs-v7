@@ -1,6 +1,6 @@
 ---
 title: Code Splitting
-description: NativeScript Documentation - Code Sharing - Code Splitting
+description: Learn how to do code splitting in an Angular and NativeScript code-sharing project - define different markup for your web and mobile apps
 position: 50
 environment: angular
 ---

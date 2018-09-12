@@ -1,6 +1,6 @@
 ---
 title: Build Process
-description: NativeScript Documentation - Code Sharing - Build Process
+description: Learn how to build the web and mobile parts of an Angular and NativeScript code-sharing project and how the build process works
 position: 40
 environment: angular
 ---

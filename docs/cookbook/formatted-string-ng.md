@@ -1,6 +1,6 @@
 ---
 title: Using formatted string
-description: How to use the FormattedString class in an Angular App
+description: Learn how to use the FormattedString class in an Angular app
 position: 2
 slug: formatted-string
 previous_url: /formatted-string
