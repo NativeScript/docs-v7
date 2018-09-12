@@ -1,6 +1,6 @@
 ---
 title: Platform-Specific Components
-description: NativeScript Documentation - Code Sharing - Platform-Specific Components
+description: Learn how to create platform-specific components in Angular and NativeScript code-sharing project
 position: 60
 environment: angular
 ---
