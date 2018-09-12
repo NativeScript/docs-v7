@@ -14,7 +14,7 @@ Use lazy loading to decrease the startup time of your NativeScript application.
 
 ## How does Lazy Loading work?
 
-With lazy loading, the application is split into multiple modules. There is the main modules which in the context of NativeScript application will hold the root components (usually called **_app.module.ts_** located in the **_app_** folder) and the featured modules which will be loaded "on demand" after user interaction. Each module can define multiple components, services, and routes.
+With lazy loading, the application is split into multiple modules. There is the main module which in the context of NativeScript application will hold the root components (usually called `app.module.ts` located in the `app` folder) and the featured modules which will be loaded "on demand" after user interaction. Each module can define multiple components, services, and routes.
 
 ![lazy loading example](../img/performance/lazy.png)
 
@@ -32,13 +32,13 @@ In the following sections, we will create a simple Angular application using the
 
 - Add a new folder to hold your `FeatureModule` along with all the components, services, routing tables of the module. 
 
-    A good practice is to use the name of the module as the name of the containing folder. For example, create a **`feature`** folder and add **`feature.module.ts`** and the needed components that will be part of the module (in our case **`feature.component.ts`**)
+    A good practice is to use the name of the module as the name of the containing folder. For example, create a `feature` folder and add `feature.module.ts` and the needed components that will be part of the module (in our case `feature.component.ts`)
     ```JS
     my-app
     --app
     ----feature
     ------feature.module.ts
-    ------feature.routes.ts
+    ------feature.routing.ts
     ------feature.component.ts
     ------feature.service.ts
     ```
@@ -48,15 +48,23 @@ In the following sections, we will create a simple Angular application using the
     _app/feature/feature.routing.ts_
     ```TypeScript
     // app/feature/feature.routing
-    import { FeatureComponent } from "./feature.component";
+    import { NgModule } from "@angular/core";
+    import { Routes } from "@angular/router";
+    import { NativeScriptRouterModule } from "nativescript-angular/router";
+    import { FeatureComponent } from "./feature/feature.component";
 
-    // export the routing table for the lazily loaded module
-    export const routes = [
+    export const routes: Routes = [
         {
             path: "",
             component: FeatureComponent
         }
     ];
+
+    @NgModule({
+        imports: [NativeScriptRouterModule.forChild(routes)],  // set the lazy loaded routes using forChild
+        exports: [NativeScriptRouterModule]
+    })
+    export class FeatureRoutingModule { }
     ```
 
     _app/feature/feature.module.ts_
@@ -64,18 +72,14 @@ In the following sections, we will create a simple Angular application using the
     // app/feature/feature.module.ts
     import { NativeScriptCommonModule } from "nativescript-angular/common";
     import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-    import { NativeScriptRouterModule } from "nativescript-angular/router";
-
     import { FeatureComponent } from "./feature.component";
-    import { FeatureService } from "./feature.service";
-    import { routes } from "./feature.routing"; // import the routing table
+    import { FeatureRoutingModule } from "./feature.routing"; // import the routing module
 
     @NgModule({
         schemas: [NO_ERRORS_SCHEMA],
         imports: [
-            NativeScriptRouterModule,
-            NativeScriptRouterModule.forChild(routes), // set the lazy loaded routes
             NativeScriptCommonModule,
+            FeatureRoutingModule
         ],
         declarations: [FeatureComponent], // declare all components that will be used within the module
         providers: [ FeatureService ] // provide all services that will be used within the module
@@ -115,7 +119,7 @@ In the following sections, we will create a simple Angular application using the
 >  loadChildren: "~/feature/feature.module#FeatureModule", 
 >  ```
 >  This way you will be able to create nested routes. The tilde alias is added in the `tsconfig.json` of all NativeScript 4.x.x projects. For older projects, you can update the tsconfig.json 
->  content by installing the latest **nativescript-dev-typescript** and executing
+>  content by installing the latest `nativescript-dev-typescript` and executing
 >  ```Shell
 >  ./node_modules/.bin/ns-upgrade-tsconfig
 >  ```
