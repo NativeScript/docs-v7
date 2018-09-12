@@ -34,7 +34,7 @@ let MyButton = android.widget.Button.extend({
 	},
 	
 	setEnabled: function(enabled) {
-		this.super.setEnable(enabled);
+		this.super.setEnabled(enabled);
 	}
 });
 
@@ -54,7 +54,7 @@ class MyButton extends android.widget.Button {
 	}
 
 	setEnabled(enabled : boolean): void {
-		this.super.setEnable(enabled);
+		this.super.setEnabled(enabled);
 	}
 }
 
@@ -156,6 +156,72 @@ button.setOnClickListener(new android.view.View.OnClickListener({
 		// Perform action on click
 	}
 }));
+```
+
+Alternatively you can use the following pattern for a named interface implementation:
+
+``` JavaScript
+let ClickListener;
+
+function initializeClickListener() {
+    if (ClickListener) {
+        return;
+    }
+
+    ClickListener = java.lang.Object.extend({
+        interfaces: [android.view.View.OnClickListener], /* the interfaces that will be inherited by the resulting class */
+        onClick: function() {
+            // Perform action on click
+        }
+    });
+}
+
+// [...]
+
+{
+	// [...]
+
+	initializeClickListener();
+	nativeView.setOnClickListener(new ClickListener());
+}
+```
+``` TypeScript
+interface ClickListener {
+    new(): android.view.View.OnClickListener;
+}
+
+let ClickListener: ClickListener;
+
+function initializeClickListener(): void {
+    if (ClickListener) {
+        return;
+    }
+
+	@Interfaces([android.view.View.OnClickListener])
+	class ClickListenerImpl extends java.lang.Object implements android.view.View.OnClickListener {
+		constructor() {
+			super();
+
+			// necessary when extending TypeScript constructors
+			return global.__native(this);
+		}
+
+		onClick(view: android.view.View): void {
+			// Perform action on click
+		}
+	}
+
+	ClickListener = ClickListenerImpl;
+}
+
+// [...]
+
+{
+	// [...]
+
+	initializeClickListener();
+	nativeView.setOnClickListener(new ClickListener());
+}
 ```
 
 ## Implementing multiple interfaces in NativeScript 
