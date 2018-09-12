@@ -1,16 +1,13 @@
 ---
-title: Accessing Native APIs
-description: Learn how to access native APIs in NativeScript
+title: Accessing Native APIs through JavaScript
+description: Learn how to access native iOS and Android APIs through JavaScript in a NativeScript App without writing any Objective-C/Swift or Java/Kotlin code
 position: 80
 slug: access-native-apis
 ---
 
-# Accessing Native APIs with JavaScript
+# Accessing native iOS and Android APIs through JavaScript
 
-In this article we are going through the basic concepts of how native APIs are accessed through JavaScript. Our focus is on how primitive types are mapped between JavaScript and the corresponding native platform. We then continue with explaining how complex objects are represented and accessed. At the end, we talk about TypeScript and the `tns-platform-declarations` add-on which gives you TypeScript definitions for the Android and iOS development platforms. The article is divided into the following sections:
-
-
-## Overview
+In this article we are going through the basic concepts of how native APIs are accessed through JavaScript. Our focus is on how primitive types are mapped between JavaScript and the corresponding native platform. We then continue with explaining how complex objects are represented and accessed. At the end, we talk about TypeScript and the `tns-platform-declarations` add-on which gives you TypeScript definitions for the Android and iOS development platforms.
 
 NativeScript lets you access all native APIs from the underlying platform. To achieve this behaviour, many things happen under the hood. One of them is marshalling - the conversion between JavaScript and Objective-C data types for iOS and Java data types for Android.
 

@@ -1,13 +1,13 @@
 ---
 title: Data Binding
-description: NativeScript Documentation - Data Binding
+description: Learn how to use one-way or two-way data binding in NativeScript with Angular apps
 position: 60
 slug: data-binding
 environment: angular
 previous_url: /core-concepts/DataBinding
 --- 
 
-# Overview
+# Data Binding
 
 DataBinding is a core concept for both NativeScript and Angular frameworks. By default `Data Binding` stands for a connection (`binding`) between `Data Model` (Model) and `User Interface` (UI). Since this `binding` involves mostly `data` we use the term `Data Binding` to denote such connection or relationship.
 

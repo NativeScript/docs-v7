@@ -1,6 +1,6 @@
 ---
 title: Project Structure
-description: Learn the basic project structure of NativeScript application.
+description: Learn the basic project structure of а NativeScript application - app, app resources, platforms
 position: 120
 slug: structure
 previous_url: /structure

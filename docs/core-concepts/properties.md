@@ -1,6 +1,6 @@
 ---
 title: Property System
-description: NativeScript provides own property system based on a wrapper around the well known JavaScript's `Object.defineProperty`. To deliver good developer experience in the context of mobile development with UI and CSS elements, we provided a number of extended classes known as Property System.
+description: Learn how to define your own UI and CSS properties by using NativeScript's own property system and classes like Property, CssProperty, InheritedCssProperty, ShorthandCssProperty, CoercibleProperty
 position: 95
 slug: properties
 publish: true
@@ -278,26 +278,24 @@ Each UI element extends the `View` class (e.g., like `StackLayout` or `Label`) a
 
 > **Angular Specific Note**: In Angular to use `getViewById` for root search, we might need to inject native `Page` object.
 > As an alternative, in Angular, we can get reference to the native elements using the `ViewChild` directive and the `nativeElement` property.
- ```HTML
- <StackLayout #myNgStack id="myStackId">
-    <Label text="Using ViewChild agains getViewById" />
-</StackLayout>
- ```
- ```TypeScript
- import { ViewChild, ElementRef } from "@angular/core";
- export class MyComponent {
-    @ViewChild("myNgStack") stackRef: ElementRef;
-    myNativeStack: StackLayout;
-
-    constructor(private _page: Page) { }
-
-    ngAfterViewInit() {
-        this._page.getViewById("myStackId");
-        this.myNativeStack = this.stackRef.nativeElement;
-        // this._page.getViewById("myStack") === this.myNativeStack
-    }
- }
- ```
+>  ```HTML
+> <StackLayout #myNgStack id="myStackId">
+>     <Label text="Using ViewChild agains getViewById" />
+> </StackLayout>
+>  ```
+>  ```TypeScript
+>  import { ViewChild, ElementRef } from "@angular/core";
+>  export class MyComponent {
+>     @ViewChild("myNgStack") stackRef: ElementRef;
+>    myNativeStack: StackLayout;
+>     constructor(private _page: Page) { }
+>     ngAfterViewInit() {
+>         this._page.getViewById("myStackId");
+>         this.myNativeStack = this.stackRef.nativeElement;
+>         // this._page.getViewById("myStack") === this.myNativeStack
+>     }
+>  }
+>  ```
 
  - [`getActualSize`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#getactualsize) - Returns the actual size of the view in device-independent pixels. The returned value is of type [`Size`](https://docs.nativescript.org/api-reference/interfaces/_ui_core_view_.size).
 

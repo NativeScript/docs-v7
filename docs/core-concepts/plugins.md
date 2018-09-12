@@ -1,6 +1,6 @@
 ---
 title: Using Plugins
-description: When the NativeScript modules do not provide the native device or platform capability that you need, you can use NativeScript plugins.
+description: Learn how to find, add and remove NativeScript plugins that provide native device and platform capabilities missing in the core NativeScript modules
 position: 70
 slug: plugins-infrastructure
 previous_url: /plugins
@@ -14,9 +14,9 @@ NativeScript plugins are npm packages with some added native functionality. Ther
 
 ## Finding plugins
 
-Because NativeScript plugins are npm packages, you can find NativeScript plugins on npm’s site by searching for “nativescript-plugin-name”. For example, a search of “nativescript accelerometer” would point you right at the [NativeScript accelerometer plugin](https://www.npmjs.com/package/nativescript-accelerometer).
+The NativeScript team maintains an [official marketplace](http://market.nativescript.org/), which displays a filtered list of NativeScript-related plugins from npm. All plugins listed in the marketplace are accompanied by a metadata describing their quality. A search for “accelerometer” on the plugins marketplace will point you at the plugin you need.
 
-The NativeScript team also maintains an [official marketplace](http://market.nativescript.org/), which displays a filtered list of NativeScript-related plugins from npm. A search for “accelerometer” on the plugins marketplace will point you at the plugin you need.
+Alternatively, since NativeScript plugins are npm packages, you can find NativeScript plugins on [npm’s site](https://www.npmjs.com/) by searching for “nativescript-plugin-name”. For example, a search of “nativescript accelerometer” would point you right at the [NativeScript accelerometer plugin](https://www.npmjs.com/package/nativescript-accelerometer).
 
 If you can't find a plugin, try asking for help on [Stack Overflow](https://stackoverflow.com/questions/tagged/nativescript). The NativeScript team and community may be able to help find what you’re looking for.
 

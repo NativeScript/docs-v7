@@ -1,6 +1,6 @@
 ---
 title: Utils
-description: Utils/Utils module
+description: Learn how to use different utils methods provided in the Utils core module
 position: 100
 slug: utils
 ---

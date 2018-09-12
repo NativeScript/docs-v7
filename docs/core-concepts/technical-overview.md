@@ -1,6 +1,6 @@
 ---
 title: Technical Overview
-description: A broad overview of the technologies that make NativeScript work.
+description: Learn how runtimes, core modules, CLI and Plugins work together to provide easy access to native APIs and help you build truly native mobile apps with NativeScript
 position: 10
 publish: true
 slug: how-it-works

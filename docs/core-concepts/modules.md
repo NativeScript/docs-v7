@@ -1,12 +1,12 @@
 ---
 title: Modules
-description: You can access the native device and platform capabilities of your target platform with the help of the NativeScript modules.
+description: Learn how to access the native device and platform capabilities by using the NativeScript modules - core, device functionality, data, layouts, widgets, WHATWG polyfills
 position: 20
 slug: modules
 previous_url: /modules
 ---
 
-# Modules
+# Using modules to access native device and platform capabilities
 
 To let you access the native device and platform capabilities of your target platform, NativeScript uses a modular design pattern. All device, platform or user interface functionalities reside in separate modules. To access the functionality provided by a module, you need to **require** the module.
 

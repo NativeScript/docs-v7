@@ -1,6 +1,6 @@
 ---
 title: Navigation
-description: Learn the basic application structure of NativeScript apps and how to navigate inside your app.
+description: Learn how to configure navigation between pages in NativeScript with Angular apps by using the Angular router
 position: 42
 slug: navigation
 environment: angular

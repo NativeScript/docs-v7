@@ -1,13 +1,13 @@
 ---
 title: Data Binding
-description: NativeScript Documentation - Data Binding
+description: Learn how to use one-way or two-way data binding in NativeScript apps
 position: 50
 slug: binding
 previous_url: /bindings,/core-concepts/bindings
 environment: nativescript
 ---
 
-# Data Binding
+# Data binding
 
 The purpose of this article is to explain what is Data Binding and how it is working in NativeScript. Also in the article could be found samples, which demonstrates different use cases of the data binding usage.
 
