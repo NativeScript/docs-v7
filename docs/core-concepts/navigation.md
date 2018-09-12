@@ -1,6 +1,6 @@
 ---
 title: Architecture and Navigation
-description: Learn the basic application structure of NativeScript apps and how to navigate inside your app.
+description: Learn how to configure navigation between pages, work with page context and data binding, navigate in modals, navigate back and configure navigation transitions 
 position: 20
 slug: architecture
 previous_url: /navigation

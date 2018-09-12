@@ -1,6 +1,6 @@
 ---
 title: Multithreading Model
-description: Learn how to offload heavy work on a non-UI thread to create a responsive UI without slowing down rendering.
+description: Learn how to use workers and multithreading to offload heavy work on a non-UI thread and create a responsive UI without slowing down rendering and blocking the UI thread
 position: 90
 ---
 
