@@ -1,7 +1,6 @@
 ---
 title: Integrating UI Components With Angular
-description: Learn how to build NativeScript plugins that support 
-Angular, and that integrate with NativeScript’s standard set of user interface components.
+description: Learn how to build NativeScript plugins that support Angular, and that integrate with NativeScript’s standard set of user interface components.
 position: 55
 slug: supporting-angular-explained
 environment: angular
