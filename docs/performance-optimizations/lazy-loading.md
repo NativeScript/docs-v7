@@ -8,13 +8,13 @@ slug: lazy-loading
 
 ## What is Lazy Loading (and why you should use it)?
 
-Lazy loading is an Angular technique that allows you to load featured components asynchronously when a specific route is activated. This can add some initial performance during application bootstrap, especially if you have many components with heavy UI and complex routing. 
+Lazy loading is an Angular technique that allows you to load feature components asynchronously when a specific route is activated. This can add some initial performance during application bootstrap, especially if you have many components with heavy UI and complex routing. 
 
-Use lazy loading to decrease the startup time of your NativeScript application. Additionally, when users interact with a loaded module, the Angular router will preload the other components in the background making in-app navigation faster.
+Use lazy loading to decrease the startup time of your NativeScript application.
 
 ## How does Lazy Loading work?
 
-With lazy loading, the application is split into multiple bundles. There is the main bundle which in the context of NativeScript application will hold the root module (usually called **_app.module.ts_** located in the **_app_** folder) and the featured modules which will be loaded "on demand" after user interaction. Each module can define multiple components, services, and routes.
+With lazy loading, the application is split into multiple modules. There is the main modules which in the context of NativeScript application will hold the root components (usually called **_app.module.ts_** located in the **_app_** folder) and the featured modules which will be loaded "on demand" after user interaction. Each module can define multiple components, services, and routes.
 
 ![lazy loading example](../img/performance/lazy.png)
 
@@ -30,9 +30,9 @@ In the following sections, we will create a simple Angular application using the
     cd my-app
     ```
 
-- Add folder to hold your `FeatureModule` along with all the components, services, routing tables of the module. 
+- Add a new folder to hold your `FeatureModule` along with all the components, services, routing tables of the module. 
 
-    A good practice is to use for the name of the module as the name of the containing folder. For example, create a **`feature`** folder and add **`feature.module.ts`** and the needed components that will be part of the module (in our case **`feature.component.ts`**)
+    A good practice is to use the name of the module as the name of the containing folder. For example, create a **`feature`** folder and add **`feature.module.ts`** and the needed components that will be part of the module (in our case **`feature.component.ts`**)
     ```JS
     my-app
     --app
@@ -45,9 +45,9 @@ In the following sections, we will create a simple Angular application using the
 
 -  Create the routing table and the lazily loaded module
 
-    _app/feature/feature.routes.ts_
+    _app/feature/feature.routing.ts_
     ```TypeScript
-    // app/home/home.routes.ts
+    // app/feature/feature.routing
     import { FeatureComponent } from "./feature.component";
 
     // export the routing table for the lazily loaded module
@@ -61,14 +61,14 @@ In the following sections, we will create a simple Angular application using the
 
     _app/feature/feature.module.ts_
     ```TypeScript
-    // app/home/home.module.ts
+    // app/feature/feature.module.ts
     import { NativeScriptCommonModule } from "nativescript-angular/common";
     import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
     import { NativeScriptRouterModule } from "nativescript-angular/router";
 
     import { FeatureComponent } from "./feature.component";
     import { FeatureService } from "./feature.service";
-    import { routes } from "./feature.routes"; // import the routing table
+    import { routes } from "./feature.routing"; // import the routing table
 
     @NgModule({
         schemas: [NO_ERRORS_SCHEMA],
@@ -99,7 +99,7 @@ In the following sections, we will create a simple Angular application using the
         { path: "", redirectTo: "/items", pathMatch: "full" },
         { path: "items", component: ItemsComponent },
         { path: "item/:id", component: ItemDetailComponent },
-        { path: "feature", loadChildren: "./feature/feature.module#FeatureModule", }, // lazy loaded module
+        { path: "feature", loadChildren: "~/feature/feature.module#FeatureModule" }, // lazy loaded module
     ];
 
     @NgModule({
@@ -109,6 +109,16 @@ In the following sections, we will create a simple Angular application using the
     export class AppRoutingModule { }
     ```
 
+> **Note:** Use the **tilde (`~`)** to set the route paths for the `loadChildren`. The tilde is an alias for the project's `app` folder.
+>  ```TS
+>  // Use tilde for construcing your route relative to project's app folder.
+>  loadChildren: "~/feature/feature.module#FeatureModule", 
+>  ```
+>  This way you will be able to create nested routes. The tilde alias is added in the `tsconfig.json` of all NativeScript 4.x.x projects. For older projects, you can update the tsconfig.json 
+>  content by installing the latest **nativescript-dev-typescript** and executing
+>  ```Shell
+>  ./node_modules/.bin/ns-upgrade-tsconfig
+>  ```
 
 -  Navigating to lazily loaded module
 
@@ -132,4 +142,4 @@ In the following sections, we will create a simple Angular application using the
 
 ## Benefits from using Lazy Loading
 
-A real-life NativeScript application with (like the [Angular SDK Examples](https://github.com/NativeScript/nativescript-sdk-examples-ng)) can have more hundreds of different components. Each component may have its route, services, and multiple featured components. Using lazy loading modules improves the startup time dramatically (in the case of SDK Examples app with up-to 5x better startup timings). Instead of having to load the hundreds of components at the application bootstrap, you can load just the landing module and load all other submodules lazily.
+A real-life NativeScript application (like the [Angular SDK Examples](https://github.com/NativeScript/nativescript-sdk-examples-ng)) can have hundreds of different components. Each component may have its route, services, and multiple featured components. Using lazy loading modules improves the startup time dramatically (in the case of SDK Examples app with up-to 5x better startup timings). Instead of having to load the hundreds of components at the application bootstrap, you can load just the landing module and load all other submodules lazily.

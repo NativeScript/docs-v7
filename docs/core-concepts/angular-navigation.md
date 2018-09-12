@@ -31,7 +31,7 @@ As usual, pass your module to the `bootstrapModule` function to start your app:
 
 ### Lazy Loaded Modules
 
-To improve the bootstrap time and the in-app navigation in large applicaitons, Angular has introduced the **lazy loading** for modules. Refer to the [Lazy Loading in NativeScript](../performance-optimizations/lazy-loading.md) for detailed explanation and implementation steps.
+To improve the bootstrap time and the in-app navigation in large applications, Angular has introduced **lazy loading** for modules. Refer to the [Lazy Loading in NativeScript](../performance-optimizations/lazy-loading.md) for detailed explanation and implementation steps.
 
 ## Pages
 
