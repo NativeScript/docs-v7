@@ -41,7 +41,7 @@ Each component has two parts - the **component class** and the **component templ
 
 The class and the view communicate with each other using data binding and events.
 
-You can learn more about components on [angular.io](https://angular.io/docs/ts/latest/guide/architecture.html#!#components).
+You can learn more about components on [angular.io](https://angular.io/api/core/Component).
 
 There are almost no differences between creating component classes in Angular web apps and NativeScript apps.
 
@@ -49,7 +49,7 @@ There are almost no differences between creating component classes in Angular we
 The template defines the view of the component - what is actually rendered. 
 In NativeScript applications the template is defined with XML using [NativeScript UI elements]({% slug components %}). It is different from HTML. So instead of `<input>`, `<span>`, `<div>` etc. - we have `<text-field>`, `<label>` and layouts.
 
-The important thing is that although the elements are different - all of the [Angular’s template syntax](https://angular.io/docs/ts/latest/guide/template-syntax.html) works exactly the same. So you can still use template expressions, bindings, templates as well as all the built-in directives.
+The important thing is that although the elements are different - all of the [Angular’s template syntax](https://angular.io/guide/template-syntax) works exactly the same. So you can still use template expressions, bindings, templates as well as all the built-in directives.
 
 >When defining the template you can use both CamelCase and kebab-case. So, both `<StackLayout>` and `<stack-layout>` are valid inside a template definition. 
 
@@ -90,19 +90,19 @@ This topic is covered in depth in the [data binding article]({% slug data-bindin
 Directives allow you to create and attach behavior to the visual tree. There are three kinds of directives:
 
 * `Components` - We already talked about them. `Components` are actually directives which have their own template.
-* [Structural Directives](https://angular.io/docs/ts/latest/guide/structural-directives.html) - alter the visual tree by adding, removing or replacing elements. The most commonly used structural directives are [`*ngIf`](https://angular.io/docs/ts/latest/guide/displaying-data.html#!#ngIf) and [`*ngFor`](https://angular.io/docs/ts/latest/guide/displaying-data.html#!#ngFor).
-* [Attribute Directive](https://angular.io/docs/ts/latest/guide/attribute-directives.html) - change the appearance or behavior of UI elements. One of the most commonly used attribute directives is [`ngClass`](https://angular.io/docs/ts/latest/guide/template-syntax.html#!#ngClass).
+* [Structural Directives](https://angular.io/guide/structural-directives) - alter the visual tree by adding, removing or replacing elements. The most commonly used structural directives are [`*ngIf`](https://angular.io/guide/template-syntax#ngIf) and [`*ngFor`](https://angular.io/guide/template-syntax#ngFor).
+* [Attribute Directive](https://angular.io/guide/attribute-directives) - change the appearance or behavior of UI elements. One of the most commonly used attribute directives is [`ngClass`](https://angular.io/guide/template-syntax#ngClass).
 
 When it comes to NativeScript specifics - there are again almost no differences as far as directives are concerned. You are free to use all the built-in Angular directives; you’re also free to write your own.
 
 ## Dependency Injection
 
 Angular ships with its own dependency injection (DI for short) framework. It is extremely powerful and fully usable in NativeScript.
-You can read more about it on [angular.io](https://angular.io/docs/ts/latest/guide/dependency-injection.html).
+You can read more about it on [angular.io](https://angular.io/guide/dependency-injection).
 
 ## Navigation
 
-The navigation inside a NativeScript application is done with the [Angular Router](https://angular.io/docs/ts/latest/guide/router.html#). However, you can choose between two router-outlets:
+The navigation inside a NativeScript application is done with the [Angular Router](https://angular.io/guide/router). However, you can choose between two router-outlets:
 * `router-outlet` - the built in Angular router outlet. It replaces the content of the outlet with the templates of different component.
 * `page-router-outlet` - uses NativeScript [page navigation]({% slug navigation %}#pages). 
 
