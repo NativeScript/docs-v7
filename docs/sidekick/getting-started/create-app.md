@@ -1,6 +1,6 @@
 ---
 title: Chapter 1 - Create and Configure Your App
-description: 
+description: Learn how to create a new app using NativeScript Sidekick. Configure app settings and add a plugin to extend the functionality of your app.
 position: 11
 publish: true
 slug: gs-create-app

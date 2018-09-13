@@ -1,6 +1,6 @@
 ---
 title: LiveSyncing Your Changes
-description: 
+description: During development, use NativeScript Sidekick to LiveSync your saved changes automatically to your device or emulator.
 position: 2
 publish: true
 slug: livesync-changes

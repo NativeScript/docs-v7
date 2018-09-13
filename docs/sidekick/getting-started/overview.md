@@ -1,6 +1,6 @@
 ---
 title: Sidekick Getting Started Guide
-description: 
+description: Learn how to use NativeScript Sidekick to create apps, build for iOS and Android in the cloud, deploy to a physical device, and debug on device.
 position: 10
 publish: true
 slug: gs-overview

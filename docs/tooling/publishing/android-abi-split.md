@@ -1,6 +1,6 @@
 ---
 title: Android ABI split
-description: How to reduce android apk sizes providing different apk for different architectures.
+description: Learn how to reduce Android apk sizes by providing a different apk for each architecture.
 position: 50
 slug: android-abi-split
 ---

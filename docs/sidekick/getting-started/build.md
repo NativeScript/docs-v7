@@ -1,6 +1,6 @@
 ---
 title: Chapter 2 - Build Your App
-description: 
+description: Learn how to build your app using NativeScript Sidekick, either locally or in the cloud using Sidekick's cloud build servers.
 position: 12
 publish: true
 slug: gs-build

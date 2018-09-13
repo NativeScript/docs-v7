@@ -1,6 +1,6 @@
 ---
 title: Create App From Template
-description: 
+description: NativeScript Sidekick provides numerous pre-built mobile app templates for easy iOS and Android app development.
 position: 1
 publish: true
 slug: create-app-from-template

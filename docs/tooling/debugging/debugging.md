@@ -1,6 +1,6 @@
 ---
 title: Debugging
-description: How to debug {N} applications.
+description: Learn how to properly debug NativeScript apps on iOS and Android using the debugger.
 position: 20
 slug: debugging
 previous_url: /debugging,/core-concepts/debugging
