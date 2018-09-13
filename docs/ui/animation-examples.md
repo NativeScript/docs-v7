@@ -1,6 +1,6 @@
 ---
 title: Animation Examples
-description: Examples demonstrating how to animate view properties.
+description: The article contains general examples demonstrating how to animate View via CSS and while using code-behind in NativeScript. 
 position: 100
 slug: animation-examples
 publish: false

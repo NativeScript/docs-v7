@@ -1,6 +1,6 @@
 ---
 title: Animations with Code
-description: Animated view properties by using code.
+description: The article describes how to animate a View via the code-behind and how to execute a single animation or collection of them. The article also provides an info about the AnimationDefinition interface and the properties that can be used.
 slug: animations-code
 position: 100
 publish: false

@@ -1,6 +1,6 @@
 ---
 title: Gestures
-description: Learn what touch gestures NativeScript supports and how to use them.
+description: Learn what touch gestures NativeScript supports and how to use them. The article demonstrates how to set up single or multiple gestures on a specific view in NativeScript core or NativeScript Angular project. The example shows how to set up them via code-behind for NativeScript core and via HTML for NativeScript Angular.
 position: 90
 slug: gestures
 previous_url: /gestures

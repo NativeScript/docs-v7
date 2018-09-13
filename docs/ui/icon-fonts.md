@@ -1,6 +1,6 @@
 ---
 title: Icon Fonts
-description: Learn how to use icon fonts to display icons instead of using images.
+description: Learn how to use icon fonts to display icons instead of using images. The article describes how to set up the needed font file and how to use the icons via XML and code-behind.
 position: 140
 slug: icon-fonts
 previous_url: /icon-fonts

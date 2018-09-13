@@ -1,6 +1,6 @@
 ---
 title: Images
-description: How to work with images in a NativeScript application.
+description: How to work with images in a NativeScript application. The examples demonstrate how to load an image via URL, image from a local file system and image from the resource folder. In the description can be found info how to add an image in the resource folders. 
 position: 60
 slug: images
 publish: false

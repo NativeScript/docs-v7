@@ -1,6 +1,6 @@
 ---
 title: Components
-description: Get familiar with the default user interface elements (widgets) in NativeScript.
+description: Get familiar with the default user interface elements (widgets) in NativeScript. The article provides a list of all UI components in NativeScript and the corresponding link with detailed info for each of them. 
 position: 20
 slug: components
 publish: false

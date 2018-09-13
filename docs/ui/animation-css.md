@@ -1,6 +1,6 @@
 ---
 title: Animations with CSS
-description: Animate view properties by using CSS stylesheets.
+description: The Article shows how to set up an animation via CSS. The examples demonstrate how to config the animated property the needed keyframe in a NativeScript app. In the description can be found info also about the animatable properties.
 slug: animation-css
 position: 100
 publish: false
