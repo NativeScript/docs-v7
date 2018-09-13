@@ -83,7 +83,7 @@ The component lifecycle is controlled by the Angular application. It creates, up
 * **ngDoCheck** - Detect and act upon changes that Angular can or won't detect on its own. Called every change detection run.
 * **ngOnDestroy** - Called just before Angular destroys the component.
 
-For a full list, see the official [Angular Lifecycle Hooks docs](https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html).
+For a full list, see the official [Angular Lifecycle Hooks docs](https://angular.io/guide/lifecycle-hooks).
 
 ## Start application
 
