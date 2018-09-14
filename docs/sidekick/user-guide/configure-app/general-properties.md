@@ -1,6 +1,6 @@
 ---
 title: General Properties
-description: In the General Properties tab you can quickly configure non-OS-specific options like app name, app identifier, app version and so on.
+description: In the General Properties tab you can quickly configure non-OS-specific options like app name, app identifier, and app version.
 position: 2
 publish: true
 slug: general-properties

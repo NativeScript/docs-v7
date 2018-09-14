@@ -1,6 +1,6 @@
 ---
 title: Plugins Management
-description: 
+description: With NativeScript Sidekick you can search for and install NativeScript plugins to extend the functionality of your app.
 position: 6
 publish: true
 slug: plugins-management

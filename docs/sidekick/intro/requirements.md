@@ -1,6 +1,6 @@
 ---
 title: System Requirements
-description: This article describes what are the system requirements to run NativeScript Sidekick on your development machine.
+description: This article describes the system requirements to run NativeScript Sidekick on your development machine.
 position: 2
 publish: true
 slug: requirements

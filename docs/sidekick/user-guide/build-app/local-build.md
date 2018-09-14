@@ -1,6 +1,6 @@
 ---
 title: Local Builds
-description: 
+description: Use your existing build tools like Xcode and the Android SDK with NativeScript Sidekick to create app builds locally.
 position: 2
 publish: true
 slug: local-build

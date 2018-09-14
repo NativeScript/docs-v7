@@ -1,6 +1,6 @@
 ---
 title: Configuring Your App
-description: With Sidekick, you can quickly modify the app version, add plugins or easily personalize your app for iOS and Android devices.
+description: With NativeScript Sidekick, you can quickly modify the app version, add plugins, or easily personalize your app for iOS and Android devices.
 position: 1
 publish: true
 slug: configuring-your-app

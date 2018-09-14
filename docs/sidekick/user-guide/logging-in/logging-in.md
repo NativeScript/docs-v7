@@ -1,6 +1,6 @@
 ---
 title: Log In or Log Out
-description: You need to authenticate before you can use NativeScript Sidekick and its cloud services.
+description: You need to authenticate yourself before you can use NativeScript Sidekick and its cloud services.
 position: 1
 publish: true
 slug: logging-in

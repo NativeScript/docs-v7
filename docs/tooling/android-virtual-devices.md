@@ -1,6 +1,6 @@
 ---
 title: Setup Android Emulators
-description: How to create, set up and use AVDs (Android emulators).
+description: Learn how to create, set up, and use AVDs (Android emulators) for NativeScript development.
 position: 60
 slug: android-emulators
 ---

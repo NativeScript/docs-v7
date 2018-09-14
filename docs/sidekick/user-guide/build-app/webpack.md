@@ -1,6 +1,6 @@
 ---
 title: Bundle Your Code with Webpack
-description: 
+description: Take advantage of modern bundling and optimization strategies with webpack and NativeScript Sidekick.
 position: 3
 publish: true
 slug: webpack
