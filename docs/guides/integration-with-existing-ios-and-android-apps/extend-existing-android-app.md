@@ -65,7 +65,7 @@ This article will walk you through setting up an already existing Android Studio
     **ns-stock-ticker/platforms/android/app/libs/runtime-libs/nativescript-optimized-with-inspector.aar** -> **android-project/app/lib**
     
 7. Copy the NativeScript core modules widgets **aar** into the Android Studio project:
-    **ns-stock-ticker/node_modules/tns-core-modules-widgets/platforms/android/runtime-libs/widgets-release.aar** -> **android-project/app/lib**
+    **ns-stock-ticker/node_modules/tns-core-modules-widgets/platforms/android/widgets-release.aar** -> **android-project/app/lib**
 
 8. Reference the runtime and widgets libraries in the Android Studio project:
 
@@ -92,7 +92,7 @@ This article will walk you through setting up an already existing Android Studio
             ```xml
             <activity android:name=".MyNativeScriptActivity" />
             ```
-    
+
 10. Register com.tns.ErrorReportActivity in the AndroidManifest:
 
     It is used for showing any NativeScript errors during runtime. The AndroidManifest.xml file should include the following line:
