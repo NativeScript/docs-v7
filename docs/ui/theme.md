@@ -1,6 +1,6 @@
 ---
 title: Theme
-description: Learn about the NativeScript core theme, and how to apply the theme’s class names to UI components in your applications
+description: Learn about the NativeScript core theme, and how to apply the theme’s class names to UI components in your applications. The article also describes how to change the entire app theme by using one of the available. 
 position: 55
 ---
 

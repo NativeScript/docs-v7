@@ -1,6 +1,6 @@
 ---
 title: Animations
-description: Learn how to animate view properties.
+description: The article shows, how to animate view's properties and covers some basic use case scenarios. The examples demonstrate the differences between the CSS animation definition and the one defined by a code. The article shows how to use animation curves and how to rotate View using originX and originY.
 position: 100
 slug: animations
 previous_url: /animation
@@ -183,7 +183,7 @@ More detailed examples are available on the [Animation Examples](./animation-exa
 
 To create more complex animations, we might need to change the origin point around which the selected view will be transformed. This can be achieved using [`originX`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#originx) and [`originY`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#originy) properties of `View`.
 
-__Example 5: Rotating a view around its center. Center of viww is changed via `originX` and `originY` properties.__
+__Example 5: Rotating a view around its center. Center of view is changed via `originX` and `originY` properties.__
 
 ``` JavaScript
 view.originX = 1; // default 0.5 (center), 0 is most left, 1 is most right
