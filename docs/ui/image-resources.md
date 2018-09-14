@@ -8,15 +8,15 @@ previous_url: /ui-images,/ui/ui-images,/ui/images
 ---
 
 # Working with Images from resource folders
-In this article, we will look at the specifics of adding a Images in the App_Resources folder for both platforms. 
+In this article, we will look at the specifics of adding Images in the App_Resources folder for both platforms. 
 
 > **Note:** NativeScript supports images encoded as `PNG` or `JPG` files.
 
-> **Note:**  Loading an image from the resource folders required using the `res://` prefix. This is the suggested approach, as it uses the native methods for loading the best image for the current device screen density. The file extension is not included when referencing resource images.
+> **Note:**  Loading an image from the resource folders requires using the `res://` prefix. This is the suggested approach, as it uses the native methods for loading the best image for the current device screen density. The file extension is not included when referencing resource images.
 
 ## Generating the icons via CLI 
 
-In the latest NativeScript versions we can use the CLI for generated all icons for Android and iOS based on the specified image and adding them automatically in the `App_Resources\Android\src\main\res\drawable-XXX` for Android and `App_Resources\iOS`  for iOS. For achieving this, we use the `tns resources generate icons <path to image>` command. 
+In the latest NativeScript versions we can use the CLI for generating all icons for Android and iOS based on the specified image and adding them automatically in the `App_Resources\Android\src\main\res\drawable-XXX` for Android and `App_Resources\iOS`  for iOS. For achieving this, we use the `tns resources generate icons <path to image>` command. 
 
 ## Generating the icon manually
 
@@ -33,8 +33,8 @@ The content of this directory will be copied inside the `platforms\android\res` 
 IOS resources should be added inside the `App_Resources\ios` folder in your app. You can use `@1x`, `@2x` and `@3x` suffixes to target devices with a specific screen scale. Here is a list of devices for each scale factor:
 
 * **@1x** - iPad 2 and iPad mini (1st Generation)
-* **@2x** - iPhone 4s, iPhone 5, iPhone 6, iPad (retina)
-* **@3x** - iPhone 6 Plus
+* **@2x** - iPhone 6, iPhone Xr, iPad (retina)
+* **@3x** - iPhone 6 Plus, iPhone X, iPhone Xs
 
 ![ios resources](../img/resources/ios-resources.png "ios resources")
 
