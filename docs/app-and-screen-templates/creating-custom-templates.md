@@ -1,6 +1,6 @@
 ---
 title: Create Custom Application Templates
-description: Guidelines for creating custom application templates
+description: Learn how to create your own template and the guidelines to follow
 position: 75
 slug: nativescript-create-custom-templates
 environment: nativescript

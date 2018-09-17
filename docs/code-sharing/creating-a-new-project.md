@@ -1,6 +1,6 @@
 ---
 title: Creating a New Project
-description: NativeScript Documentation - Code Sharing - Creating a new project
+description: Learn how to create a new Angular and NativeScript code-sharing project
 position: 20
 environment: angular
 ---
