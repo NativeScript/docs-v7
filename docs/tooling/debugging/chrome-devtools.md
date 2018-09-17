@@ -1,6 +1,6 @@
 ---
 title: Chrome DevTools Debugging
-description: Debugging {N} applications using Chrome DevTools.
+description: Learn how to debug NativeScript apps on iOS and Android using Chrome DevTools and Safari AppInspector.
 position: 21
 slug: chrome-devtools
 ---

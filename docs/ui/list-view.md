@@ -1,6 +1,6 @@
 ---
 title: List View
-description: NativeScript for Angular Documentation - Using List View
+description: NativeScript for Angular Documentation - Using ListView. In the article has been demonstrated some basic concepts for using this component in a NativeScript Angular project. The example shows how to customise the component and how to define single and multiple Item templates. The article also describes the usage of the async pipe and load more items functionality.
 position: 70
 slug: listview
 publish: false

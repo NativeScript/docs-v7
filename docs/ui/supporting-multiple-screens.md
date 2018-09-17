@@ -1,6 +1,6 @@
 ---
 title: Supporting Multiple Screens
-description: Learn how to tailor you application for different screen sizes.
+description: Learn how to tailor your application for different screen sizes. The examples in the article show how to define custom XML and CSS files depending on the device's screen sizes. The provided samples show how to determine the orientation and platform-specific XML and CSS files.
 position: 150
 slug: multiple-screen-sizes
 previous_url: /core-concepts/supporting-multiple-screens

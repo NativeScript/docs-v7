@@ -1,6 +1,6 @@
 ---
 title: Create New Page 
-description: 
+description: Learn how to use NativeScript Sidekick to add a new page, or view, to your app.
 position: 1
 publish: true
 slug: create-new-page

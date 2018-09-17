@@ -1,6 +1,6 @@
 ---
 title: NativeScript Extension for Visual Studio Code
-description: How to install, set up and use the NativeScript extension for Visual Studio Code.
+description: How to install, set up, and use the NativeScript extension for Visual Studio Code.
 position: 50
 slug: nativescript-extension-for-visual-studio-code
 previous_url: /core-concepts/visual-studio-code-extension

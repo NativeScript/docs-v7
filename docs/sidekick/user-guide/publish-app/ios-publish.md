@@ -1,6 +1,6 @@
 ---
 title: Publish to the App Store
-description: Use NativeScript Sidekick to publish your application to the App Store.
+description: Use NativeScript Sidekick to publish your application to the iOS App Store.
 position: 2
 publish: true
 slug: ios-publish

@@ -1,6 +1,6 @@
 ---
 title: Cloud Builds
-description: 
+description: Learn how to use the power of NativeScript Sidekick cloud builds to avoid installing and managing SDKs locally for iOS and Android.
 position: 1
 publish: true
 slug: cloud-build

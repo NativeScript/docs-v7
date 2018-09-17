@@ -1,6 +1,6 @@
 ---
 title: Open Existing App
-description: 
+description: NativeScript Sidekick allows you to open and configure a pre-existing NativeScript app.
 position: 2
 publish: true
 slug: open-existing-app

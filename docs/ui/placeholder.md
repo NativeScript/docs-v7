@@ -1,6 +1,6 @@
 ---
 title: Placeholder
-description: Learn how to use the Placeholder to add any native widget to the visual tree.
+description: Learn how to use the Placeholder to add any native widget to the visual tree. The samples show how to set up the Placeholder in the XML and how to define the native widget properly via code-behind.
 position: 110
 slug: placeholder
 publish: false

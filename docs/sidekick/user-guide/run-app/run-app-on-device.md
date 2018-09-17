@@ -1,6 +1,6 @@
 ---
 title: Deploying Your App on a Device
-description: 
+description: Use NativeScript Sidekick to deploy your app to a physical iOS or Android device.
 position: 1
 publish: true
 slug: deploy-on-device

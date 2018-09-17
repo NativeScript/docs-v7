@@ -1,6 +1,6 @@
 ---
 title: Publishing for Android
-description: Learn how to publish your app in the Play Store for Android users.
+description: Learn how to publish your NativeScript app in the Play Store for Android users.
 position: 40
 slug: publishing-android-apps
 previous_url: /core-concepts/publishing-android-apps

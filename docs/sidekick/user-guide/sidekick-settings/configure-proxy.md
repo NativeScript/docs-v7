@@ -1,6 +1,6 @@
 ---
 title: Configure Proxy
-description: Learn how to modify the proxy settings from within Sidekick
+description: Learn how to modify the proxy settings from within NativeScript Sidekick
 position: 0
 publish: true
 slug: proxy

@@ -1,6 +1,6 @@
 ---
 title: Assets Management
-description: 
+description: Create and manage your iOS and Android icons and splashscreens using NativeScript Sidekick.
 position: 5
 publish: true
 slug: assets-management

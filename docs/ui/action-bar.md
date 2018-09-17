@@ -1,6 +1,6 @@
 ---
 title: ActionBar
-description: Learn how to use and customize the ActionBar.
+description: The article provides basic knowledge, how to use and customise the ActionBar in NativeScript app. In the code snippets are demonstrated how to set up the available properties and the values that can be passed. The samples show as well, how to create custom ActionBar. 
 position: 120
 slug: action-bar
 publish: false

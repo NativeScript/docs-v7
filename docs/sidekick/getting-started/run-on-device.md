@@ -1,6 +1,6 @@
 ---
 title: Chapter 3 - Run Your App on a Device
-description: 
+description: Learn how to deploy your app to a physical iOS or Android device using NativeScript Sidekick. You can also LiveSync changes and use the built-in debugging features.
 position: 13
 publish: true
 slug: gs-run

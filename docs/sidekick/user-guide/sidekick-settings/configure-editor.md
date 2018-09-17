@@ -1,6 +1,6 @@
 ---
 title: Configure Code Editor
-description: Learn how to set which code editor will be opened when you click the "Open in Editor" button.
+description: Learn how to set which code editor will be opened when you click the "Open in Editor" button in NativeScript Sidekick.
 position: 1
 publish: true
 slug: code-editor

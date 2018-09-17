@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: 
+description: Learn how to properly download and install NativeScript Sidekick on Windows, macOS, and Linux.
 position: 3
 publish: true
 slug: installation

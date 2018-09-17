@@ -1,6 +1,6 @@
 ---
 title: Register Devices for Development and Distribution
-description: To run an app on a device during the development process, it needs to be code signed with a pair of matching certificate and provisioning profile that contain the device UDID. Register the device in the iOS Dev Center. 
+description: To run an app on a device during development, it needs to be signed with a matching certificate and provisioning profile that contain the device UDID. 
 position: 6
 publish: true
 slug: register-devices
