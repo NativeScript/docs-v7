@@ -29,7 +29,7 @@ The only reason the runtime needs header files is to generate metadata. The meta
 
 ## Shared Frameworks
 
-Shared frameworks are the best option because only they have a well-known structure and a `module.modulemap` file which eliminates the need for manual work. [NativeScript plugins](./plugin-reference.md) support shared frameworks and you can add them with CocoaPods. 
+Shared frameworks are the best option because only they have a well-known structure and a `module.modulemap` file which eliminates the need for manual work. [NativeScript plugins](./plugin-reference.md) support shared frameworks and you can add them with CocoaPods.
 
 With CocoaPods, you can remove the framework (with all the binary and header files in it) from your plugin repository and keep only a single `Podfile`. You also get all the benefits of using a package manager.
 
@@ -63,7 +63,7 @@ Most of the static frameworks don't contain `module.modulemap` file, so you have
 2. Only Objective-C APIs are exposed (no C functions and C constants) from static frameworks. To work around this limitation, you can manually edit the Xcode project file. However, this workaround is not recommended.
 
 ## Static Libraries
-The NativeScript CLI supports static libraries coming from plugins but the binary and headers must be ordered in a specific folder structure described in details [here](./plugin-reference.md). This is required because the NativeScript CLI generates a `module.modulemap` file for the library which works most of the time. However, in some cases you might need to wrap the library in a static framework with a `module.modulemap` file. 
+The NativeScript CLI supports static libraries coming from plugins but the binary and headers must be ordered in a specific folder structure described in details [here](./plugin-reference.md). This is required because the NativeScript CLI generates a `module.modulemap` file for the library which works most of the time. However, in some cases you might need to wrap the library in a static framework with a `module.modulemap` file.
 
 > If you cannot wrap your static library in a static framework with a `module.modulemap`, in cases such as when using Cocoapods, take a look at the following sample for guidance: https://github.com/NativeScript/plugin-ios-modulemap-sample
 
@@ -76,7 +76,7 @@ The NativeScript CLI supports static libraries coming from plugins but the binar
 - Cons
 
 1. Can't be included by a `Podfile`.
-2. In some cases, you must add a `module.modulemap` file manually. For example, when the 
+2. In some cases, you must add a `module.modulemap` file manually.
 3. You must wrap the library in a static framework if the automatic `module.modulemap` file generation does not succeed.
 4. Only Objective-C APIs are exposed (no C functions and C constants) from static libraries. To work around this limitation, you can manually edit the Xcode project file. However, this workaround is not recommended.
 
