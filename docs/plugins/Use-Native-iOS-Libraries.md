@@ -92,6 +92,8 @@ Starting with version 1.4 of NativeScript for iOS, you are able to generate [deb
 
 > **NOTE:** Swift APIs that are not [exported to Objective-C](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID55) are not supported.
 
+> **NOTE:** To be able to override a Swift method in its JavaScript inheritor it _**MUST**_ use the message dispatch calling mechanism. This is enforced by marking the method with the [`dynamic` keyword](https://docs.swift.org/swift-book/ReferenceManual/Declarations.html#ID381).
+
 Executing the following command from the root of your NativeScript app produces a `metadata` folder with a `.yaml` file for each Clang module:
 ```shell
 $ TNS_DEBUG_METADATA_PATH="$(pwd)/metadata" tns build ios [--for-device] [--release]
