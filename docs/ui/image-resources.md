@@ -14,13 +14,9 @@ In this article, we will look at the specifics of adding Images in the App_Resou
 
 > **Note:**  Loading an image from the resource folders requires using the `res://` prefix. This is the suggested approach, as it uses the native methods for loading the best image for the current device screen density. The file extension is not included when referencing resource images.
 
-## Generating the icons via CLI 
+## Generating the icon and adding them in the resources folders
 
-In the latest NativeScript versions we can use the CLI for generating all icons for Android and iOS based on the specified image and adding them automatically in the `App_Resources\Android\src\main\res\drawable-XXX` for Android and `App_Resources\iOS`  for iOS. For achieving this, we use the `tns resources generate icons <path to image>` command. 
-
-## Generating the icon manually
-
-Another way to achieve this is to generate the icons via [NativeScript Image Builder](http://nsimage.brosteins.com/) or some other tool, which can be used for image edit. After we created the images for the required device screen densities, we should add them in the required folders, described below.
+To achieve this, we should generate the icons via [NativeScript Image Builder](http://nsimage.brosteins.com/) or some other tool, which can be used for image edit. After we created the images for the required device screen densities, we should add them in the required folders, described below.
 
 ### Adding Android resources
 Android resources should be added to the corresponding `drawable-XXX` folders inside the `App_Resources\Android\src\main\res` folder in your app:
@@ -94,3 +90,9 @@ You can manually create an [ImageSource instance from resource]({%ns_cookbook im
 </TabView>
 ```
 {% endangular %}
+
+
+## Changing the application icon
+
+In the latest NativeScript versions we can use the CLI for generating the application icon for Android and iOS based on the specified image and adding them automatically in the appropriate resource folders (`App_Resources\Android\src\main\res\drawable-XXX` for Android and `App_Resources\iOS`  for iOS). For achieving this, we use the `tns resources generate icons <path to image>` command. 
+
