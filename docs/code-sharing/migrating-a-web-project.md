@@ -1,6 +1,6 @@
 ---
 title: Migrating a Web project
-description: NativeScript Documentation - Code Sharing - Migrating a Web project
+description: Learn how to migrate an existing Angular web project to and Angular and NativeScript code-sharing project
 position: 30
 environment: angular
 ---

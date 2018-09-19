@@ -1,6 +1,6 @@
 ---
 title: Tab View
-description: NativeScript for Angular Documentation - Using Tab View
+description: Learn how to use TabView class in an Angular app
 position: 5
 slug: tabview
 previous_url: /tabview

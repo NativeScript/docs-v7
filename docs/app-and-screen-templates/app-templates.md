@@ -1,6 +1,6 @@
 ---
 title: NativeScript Application Templates
-description: List of the available application and screen templates used as a blueprint for a NativeScript mobile application.
+description: Learn more about the available application templates used as a blueprint for a NativeScript mobile application - SideDrawer, Tabs, Master-Detail
 position: 70
 slug: nativescript-application-templates
 ---
