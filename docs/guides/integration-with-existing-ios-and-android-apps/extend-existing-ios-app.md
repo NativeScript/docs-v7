@@ -1,6 +1,6 @@
 ---
-title: Extend existing iOS app
-description: Learn how to extend your existing iOS app with NativeScript
+title: Extend Objective-C or Swift-based iOS App with NativeScript
+description: Learn how to add NativeScript to your existing traditional Objective-C or Swift-based iOS app
 position: 12
 slug: extend-existing-ios-app
 previous: /integration-with-existing-ios-and-android-apps/extend-existing-ios-app-with-ns-angular2

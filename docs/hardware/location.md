@@ -1,6 +1,6 @@
 ---
-title: Location
-description: How to work with geographical location data in NativeScript.
+title: Geographical Location Data in NativeScript
+description: Learn how to work with geographical location data in your NativeScript app.
 position: 10
 slug: location
 previous_url: /location

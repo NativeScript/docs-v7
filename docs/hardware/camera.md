@@ -1,6 +1,6 @@
 ---
-title: Camera
-description: "NativeScript Documentation: Camera"
+title: Using the Device Camera with NativeScript
+description: Learn how to use the device camera to take and store photos in your NativeScript app.
 position: 20
 slug: camera
 previous_url: /camera
