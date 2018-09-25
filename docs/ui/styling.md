@@ -615,7 +615,7 @@ StackLayout {
 }
 ```
 
-This feature is limited to properties with simple types like string, number and boolean, and will set a local property value similar to component markup declaration in XML. CSS cascading and inheritance are not supported. 
+This feature is limited to properties with simple types like string, number and boolean, and will set a local property value similar to component markup declaration in XML. CSS inheritance are not supported. 
 
 ## Using fonts
 The `font-family` property can hold several values. The first supported font in the list will be used. There is also support for the following generic font-families:
@@ -636,12 +636,10 @@ The NativeScript runtime will look for the font files under the `app/fonts/` dir
 > Note: In iOS your font file should be named **exactly** as the font name. 
 If you have doubt about the original font name use [Font Book](https://support.apple.com/en-us/HT201749) app to get the original font name.
 
-## Import external CSS
-The @import CSS rule allows you to import external CSS from local file, resource or url. These rules must precede all other types of rules.
+## Import CSS
+The @import CSS rule allows you to import CSS from local file. This rule must precede all other types of rules.
 
 ```CSS
-@import url('http://some-domain.com/your-style.css');
-@import url('res://your-style.css');
 @import url('~/your-style.css');
 ```
 
