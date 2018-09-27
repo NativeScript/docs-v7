@@ -48,7 +48,7 @@ exports.onPageLoaded = onPageLoaded;
 ```
 ``` TypeScript
 // main-page.ts
-import { EventData } from "data/observable";
+import { EventData } from "tns-core-modules/data/observable";
 
 export function onPageLoaded(args: EventData): void {
     console.log("Page Loaded");
@@ -102,12 +102,12 @@ Each application must have a single entry point. To load the entry point for you
 In the example below, the entry point is `app-root.xml`. The `app-root.xml` is using a `Frame` element and via its `defaultPage` property is navigating by default to `home/home-page.xml`.
 ``` JavaScript
 // app.js
-const application = require("application");
+const application = require("tns-core-modules/application");
 application.run({ moduleName: "app-root" });
 ```
 ``` TypeScript
 // app.ts
-import * as application from "application";
+import * as application from "tns-core-modules/application";
 application.run({ moduleName: "app-root" });
 ```
 ```XML
@@ -498,7 +498,7 @@ frame.navigate(navigationEntry);
 
 By default, all navigation will be animated and will use the default transition for the respective platform (UINavigationController transitions for iOS and Fragment transitions for Android). To change the transition type, set the `navigationTransition` property of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) to an object conforming to the [`NavigationTransition`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition.html) interface.
 ``` JavaScript
-const getFrameById = require("ui/frame").getFrameById;
+const getFrameById = require("tns-core-modules/ui/frame").getFrameById;
 
 const navigationEntry = {
     moduleName: "main-page",
@@ -514,7 +514,7 @@ const frame = getFrameById("firstFrame");
 frame.navigate(navigationEntry);
 ```
 ``` TypeScript
-import { getFrameById } from "ui/frame";
+import { getFrameById } from "tns-core-modules/ui/frame";
 
 const navigationEntry = {
     moduleName: "main-page",
@@ -809,11 +809,11 @@ topmost().navigate(navigationEntry);
 Each frame tracks the pages the user has visited in a navigation stack. To go back to a previous page, you need to use the **goBack** method of the topmost frame instance.
 
 ``` JavaScript
-const topmost = require("ui/frame").topmost;
+const topmost = require("tns-core-modules/ui/frame").topmost;
 topmost().goBack();
 ```
 ``` TypeScript
-import { topmost } from "ui/frame";
+import { topmost } from "tns-core-modules/ui/frame";
 topmost().goBack();
 ```
 
@@ -1044,7 +1044,7 @@ NativeScript provides several events(`navigatingTo`, `navigatedFrom`,`navigatedT
 </Page>
 ```
 ```TypeScript
-import { Page } from 'ui/page';
+import { Page } from "tns-core-modules/ui/page";
 
 export function onNavigatingTo(args) {
     let page = <Page>args.object;
@@ -1139,7 +1139,7 @@ The `layoutChanged` event will be fired when the UI component layout is finished
 
 ```
 ```TypeScript
-import {StackLayout} from "ui/layouts/stack-layout";
+import {StackLayout} from "tns-core-modules/ui/layouts/stack-layout";
 
 export function onLayoutChanged(args){
     let layout:StackLayout = <StackLayout>args.object;

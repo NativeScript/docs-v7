@@ -35,7 +35,7 @@ function creatingView(args) {
 exports.creatingView = creatingView;
 ```
 ```TypeScript
-import { CreateViewEventData } from "ui/placeholder";
+import { CreateViewEventData } from "tns-core-modules/ui/placeholder";
 
 export function creatingView(args: CreateViewEventData) {
     let nativeView = new android.widget.TextView(args.context);
@@ -57,7 +57,7 @@ function creatingView(args) {
 exports.creatingView = creatingView;
 ```
 ```TypeScript
-import { CreateViewEventData } from "ui/placeholder";
+import { CreateViewEventData } from "tns-core-modules/ui/placeholder";
 
 export function creatingView(args: CreateViewEventData) {
     let nativeView = new UILabel();

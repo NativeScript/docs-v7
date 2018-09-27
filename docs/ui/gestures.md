@@ -29,16 +29,16 @@ As the first parameter, you pass an `on` or `off` method and the type of gesture
 
 {% nativescript %}
 ``` JavaScript
-var gestures = require("ui/gestures");
-var labelModule = require("ui/label");
+var gestures = require("tns-core-modules/ui/gestures");
+var labelModule = require("tns-core-modules/ui/label");
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.tap, function (args) {
     console.log("Tap");
 });
 ```
 ``` TypeScript
-import { GestureTypes, GestureEventData } from "ui/gestures";
-import labelModule = require("ui/label");
+import { GestureTypes, GestureEventData } from "tns-core-modules/ui/gestures";
+import labelModule = require("tns-core-modules/ui/label");
 var label = new labelModule.Label();
 label.on(GestureTypes.tap, function (args: GestureEventData) {
     console.log("Tap");
@@ -55,16 +55,16 @@ label.on(GestureTypes.tap, function (args: GestureEventData) {
 
 {% nativescript %}
 ``` JavaScript
-var gestures = require("ui/gestures");
-var labelModule = require("ui/label");
+var gestures = require("tns-core-modules/ui/gestures");
+var labelModule = require("tns-core-modules/ui/label");
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.doubleTap, function (args) {
     console.log("Double Tap");
 });
 ```
 ``` TypeScript
-import { GestureTypes, GestureEventData } from "ui/gestures";
-import labelModule = require("ui/label");
+import { GestureTypes, GestureEventData } from "tns-core-modules/ui/gestures";
+import labelModule = require("tns-core-modules/ui/label");
 var label = new labelModule.Label();
 label.on(GestureTypes.doubleTap, function (args: GestureEventData) {
     console.log("Double Tap");
@@ -85,16 +85,16 @@ Possible implementation:
 
 {% nativescript %}
 ``` JavaScript
-var gestures = require("ui/gestures");
-var labelModule = require("ui/label");
+var gestures = require("tns-core-modules/ui/gestures");
+var labelModule = require("tns-core-modules/ui/label");
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.longPress, function (args) {
     console.log("Long Press");
 });
 ```
 ``` TypeScript
-import { GestureTypes, GestureEventData } from "ui/gestures";
-import labelModule = require("ui/label");
+import { GestureTypes, GestureEventData } from "tns-core-modules/ui/gestures";
+import labelModule = require("tns-core-modules/ui/label");
 var label = new labelModule.Label();
 label.on(GestureTypes.longPress, function (args: GestureEventData) {
     console.log("Long Press");
@@ -112,16 +112,16 @@ Possible implementation: Select one or more items in a view and act upon the dat
 
 {% nativescript %}
 ``` JavaScript
-var gestures = require("ui/gestures");
-var labelModule = require("ui/label");
+var gestures = require("tns-core-modules/ui/gestures");
+var labelModule = require("tns-core-modules/ui/label");
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.swipe, function (args) {
     console.log("Swipe Direction: " + args.direction);
 });
 ```
 ``` TypeScript
-import { GestureTypes, SwipeGestureEventData } from "ui/gestures";
-import labelModule = require("ui/label");
+import { GestureTypes, SwipeGestureEventData } from "tns-core-modules/ui/gestures";
+import labelModule = require("tns-core-modules/ui/label");
 var label = new labelModule.Label();
 label.on(GestureTypes.swipe, function (args: SwipeGestureEventData) {
     console.log("Swipe Direction: " + args.direction);
@@ -139,16 +139,16 @@ Possible implementation: Navigate between views in the same hierarchy.
 
 {% nativescript %}
 ``` JavaScript
-var gestures = require("ui/gestures");
-var labelModule = require("ui/label");
+var gestures = require("tns-core-modules/ui/gestures");
+var labelModule = require("tns-core-modules/ui/label");
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.pan, function (args) {
     console.log("Pan deltaX:" + args.deltaX + "; deltaY:" + args.deltaY + ";");
 });
 ```
 ``` TypeScript
-import { GestureTypes, PanGestureEventData } from "ui/gestures";
-import labelModule = require("ui/label");
+import { GestureTypes, PanGestureEventData } from "tns-core-modules/ui/gestures";
+import labelModule = require("tns-core-modules/ui/label");
 label.on(GestureTypes.pan, function (args: PanGestureEventData) {
     console.log("Pan deltaX:" + args.deltaX + "; deltaY:" + args.deltaY + ";");
 });
@@ -164,16 +164,16 @@ label.on(GestureTypes.pan, function (args: PanGestureEventData) {
 
 {% nativescript %}
 ``` JavaScript
-var gestures = require("ui/gestures");
-var labelModule = require("ui/label");
+var gestures = require("tns-core-modules/ui/gestures");
+var labelModule = require("tns-core-modules/ui/label");
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.pinch, function (args) {
     console.log("Pinch Scale: " + args.scale);
 });
 ```
 ``` TypeScript
-import { GestureTypes, PinchGestureEventData } from "ui/gestures";
-import labelModule = require("ui/label");
+import { GestureTypes, PinchGestureEventData } from "tns-core-modules/ui/gestures";
+import labelModule = require("tns-core-modules/ui/label");
 var label = new labelModule.Label();
 label.on(GestureTypes.pinch, function (args: PinchGestureEventData) {
     console.log("Pinch Scale: " + args.scale);
@@ -191,16 +191,16 @@ Possible implementation: Zoom into content or out of content.
 
 {% nativescript %}
 ``` JavaScript
-var gestures = require("ui/gestures");
-var labelModule = require("ui/label");
+var gestures = require("tns-core-modules/ui/gestures");
+var labelModule = require("tns-core-modules/ui/label");
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.rotation, function (args) {
     console.log("Rotation: " + args.rotation);
 });
 ```
 ``` TypeScript
-import { GestureTypes, RotationGestureEventData } from "ui/gestures";
-import labelModule = require("ui/label");
+import { GestureTypes, RotationGestureEventData } from "tns-core-modules/ui/gestures";
+import labelModule = require("tns-core-modules/ui/label");
 var label = new labelModule.Label();
 label.on(GestureTypes.rotation, function (args: RotationGestureEventData) {
     console.log("Rotation: " + args.rotation);
@@ -219,16 +219,16 @@ This is a general purpose gesture that is triggered whenever a pointer (usually 
 
 {% nativescript %}
 ``` JavaScript
-var gestures = require("ui/gestures");
-var labelModule = require("ui/label");
+var gestures = require("tns-core-modules/ui/gestures");
+var labelModule = require("tns-core-modules/ui/label");
 var label = new labelModule.Label();
 label.on(gestures.GestureTypes.touch, function (args) {
     console.log("Touch: x: " + args.getX() + " y: " + args.getY());
 });
 ```
 ``` TypeScript
-import { GestureTypes, TouchGestureEventData } from "ui/gestures";
-import labelModule = require("ui/label");
+import { GestureTypes, TouchGestureEventData } from "tns-core-modules/ui/gestures";
+import labelModule = require("tns-core-modules/ui/label");
 var label = new labelModule.Label();
 label.on(GestureTypes.touch, function (args: TouchGestureEventData) {
     console.log("Touch: x: " + args.getX() + " y: " + args.getY());
@@ -245,16 +245,16 @@ label.on(GestureTypes.touch, function (args: TouchGestureEventData) {
 Since the release of NativeScript 1.3, when subscribing you can use gestures names, comma separated gestures names and/or even mix with events.
 
 ``` JavaScript
-var gestures = require("ui/gestures");
-var labelModule = require("ui/label");
+var gestures = require("tns-core-modules/ui/gestures");
+var labelModule = require("tns-core-modules/ui/label");
 var label = new labelModule.Label();
 label.on("loaded, tap, doubleTap, longPress", function (args) {
     console.log("Event: " + args.eventName + ", sender: " + args.object);
 });
 ```
 ``` TypeScript
-import { GestureEventData } from "ui/gestures";
-import labelModule = require("ui/label");
+import { GestureEventData } from "tns-core-modules/ui/gestures";
+import labelModule = require("tns-core-modules/ui/label");
 var label = new labelModule.Label();
 label.on("loaded, tap, doubleTap, longPress", function (args: GestureEventData) {
     console.log("Event: " + args.eventName + ", sender: " + args.object);
