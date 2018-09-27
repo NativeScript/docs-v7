@@ -100,9 +100,6 @@ You'll learn about the file structure of your plugin momentarily, but first ther
 
 ```bash
 cd nativescript-version-number/src
-```
-
-```bash
 npm run postclone
 ```
 
