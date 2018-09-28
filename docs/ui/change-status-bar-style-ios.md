@@ -66,8 +66,8 @@ You should use the `frame` module to access the native instance of `UINavigation
 > Example 3: How to change UINavigationBar style using native code
 
 ``` JavaScript
-var frame = require("ui/frame");
-var platform = require("platform");
+var frame = require("tns-core-modules/ui/frame");
+var platform = require("tns-core-modules/platform");
 function loaded(args) {
     if (platform.isIOS) {
         var navigationBar = frame.topmost().ios.controller.navigationBar;
@@ -77,9 +77,9 @@ function loaded(args) {
 exports.loaded = loaded;
 ```
 ``` TypeScript
-import { EventData } from "data/observable";
-import { topmost } from "ui/frame";
-import { isIOS } from "platform";
+import { EventData } from "tns-core-modules/data/observable";
+import { topmost } from "tns-core-modules/ui/frame";
+import { isIOS } from "tns-core-modules/platform";
 
 export function loaded(args: EventData){
      if (isIOS) {

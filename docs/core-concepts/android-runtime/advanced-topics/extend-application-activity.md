@@ -103,7 +103,7 @@ The core modules ship with a default `android.app.Activity` implementation, whic
 2. Declare the extend:
 
     ```javascript
-    const frame = require("ui/frame");
+    const frame = require("tns-core-modules/ui/frame");
 
     const superProto = android.app.Activity.prototype;
     android.app.Activity.extend("org.myApp.MainActivity", {
@@ -140,7 +140,7 @@ The core modules ship with a default `android.app.Activity` implementation, whic
     });
     ```
     ```typescript
-    import {setActivityCallbacks, AndroidActivityCallbacks} from "ui/frame";
+    import {setActivityCallbacks, AndroidActivityCallbacks} from "tns-core-modules/ui/frame";
 
     @JavaProxy("org.myApp.MainActivity")
     class Activity extends android.app.Activity {

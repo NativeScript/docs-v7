@@ -13,7 +13,7 @@ To use the functionality provided by the `utils/utils` module, first require/imp
 var utilsModule = require("tns-core-modules/utils/utils");
 ```
 ```TypeScript
-import * as utils from "utils/utils";
+import * as utils from "tns-core-modules/utils/utils";
 ```
 
 ### isFileOrResourcePath() function
@@ -191,9 +191,9 @@ function showKeyboard(args) {
 exports.showKeyboard = showKeyboard;
 ```
 ```TypeScript
-import { Page } from 'ui/page';
-import { TextField } from "ui/text-field";
-import { Button } from "ui/button"
+import { Page } from "tns-core-modules/ui/page";
+import { TextField } from "tns-core-modules/ui/text-field";
+import { Button } from "tns-core-modules/ui/button"
 
 export function showKeyboard(args:EventData){
     var button: Button = <Button>args.object;

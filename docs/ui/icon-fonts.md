@@ -53,7 +53,7 @@ While bitmap images are great, they present challenges in designing mobile appli
 ```
 ``` JavaScript
 "use strict";
-var observable = require("data/observable");
+var observable = require("tns-core-modules/data/observable");
 function pageLoaded(args) {
     var page = args.object;
     var viewModel = new observable.Observable();
@@ -72,8 +72,8 @@ exports.pageLoaded = pageLoaded;
 //# sourceMappingURL=main-page.js.map
 ```
 ``` TypeScript
-import { EventData, Observable } from "data/observable";
-import { Page } from "ui/page";
+import { EventData, Observable } from "tns-core-modules/data/observable";
+import { Page } from "tns-core-modules/ui/page";
 
 export function pageLoaded(args: EventData) {
     let page = <Page>args.object;

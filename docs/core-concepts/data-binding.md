@@ -43,13 +43,13 @@ The example below consists of a `Label`, `TextField` and a source property to wh
 First, the **source** object is created with a **textSource** property. A constant flow of propagating changes from the source property to the Label is necessary. Thus, the property in the code has to raise a **propertyChange** event in order to notify the `Label` for the changes. To raise this event, a built-in class is used, which provides this functionality - `Observable`.
 
 ``` JavaScript
-const fromObject = require("data/observable").fromObject;
+const fromObject = require("tns-core-modules/data/observable").fromObject;
 const source = fromObject({
 	textSource: "Text set via twoWay binding"
 });
 ```
 ``` TypeScript
-import { fromObject } from "data/observable";
+import { fromObject } from "tns-core-modules/data/observable";
 const source = fromObject({
 	textSource: "Text set via twoWay binding"
 });
@@ -59,20 +59,20 @@ Next, **target** objects are created to bind to the source property. In this cas
 
 ``` JavaScript
 // create the TextField
-const TextField = require("ui/text-field").TextField;
+const TextField = require("tns-core-modules/ui/text-field").TextField;
 const targetTextField = new TextField();
 
 // create the Label
-const Label = require("ui/label").Label;
+const Label = require("tns-core-modules/ui/label").Label;
 const targetLabel = new Label();
 ```
 ``` TypeScript
 // create the TextField
-import { TextField } from "ui/text-field";
+import { TextField } from "tns-core-modules/ui/text-field";
 const targetTextField = new TextField();
 
 // create the Label
-import { Label } from "ui/label";
+import { Label } from "tns-core-modules/ui/label";
 const targetLabel = new Label();
 ```
 After that, the target objects bind to the source object. The TextField uses a two-way binding, so the user input could change the property in the code. And the binding of the Label is set to one-way in order to propagate changes only from the code to the UI.
@@ -96,7 +96,7 @@ targetTextField.bind(textFieldBindingOptions, source);
 targetLabel.bind(labelBindingOptions, source);
 ```
 ``` TypeScript
-import { BindingOptions } from "ui/core/bindable";
+import { BindingOptions } from "tns-core-modules/ui/core/bindable";
 // binding the TextField
 const textFieldBindingOptions: BindingOptions = {
 	sourceProperty: "textSource",
@@ -191,7 +191,7 @@ _Example 3: Bind ListView to a property of the bindingContext_
 </Page>
 ```
 ``` JavaScript
-const fromObject = require("data/observable").fromObject;
+const fromObject = require("tns-core-modules/data/observable").fromObject;
 
 function onNavigatingTo(args) {
     const list = [];
@@ -210,8 +210,8 @@ function onNavigatingTo(args) {
 }
 ```
 ``` TypeScript
-import { EventData, fromObject } from "data/observable";
-import { Page } from "ui/page";
+import { EventData, fromObject } from "tns-core-modules/data/observable";
+import { Page } from "tns-core-modules/ui/page";
 
 export function onNavigatingTo(args: EventData) {
     const list = [];
@@ -254,7 +254,7 @@ _Example 4: Creating ListView child items based on the itemTemplate._
 </Page>
 ```
 ``` JavaScript
-const fromObject = require("data/observable").fromObject;
+const fromObject = require("tns-core-modules/data/observable").fromObject;
 
 function onNavigatingTo(args) {
     const page = args.object;
@@ -268,8 +268,8 @@ function onNavigatingTo(args) {
 exports.onNavigatingTo = onNavigatingTo;
 ```
 ``` TypeScript
-import { EventData, fromObject } from "data/observable";
-import { Page } from "ui/page";
+import { EventData, fromObject } from "tns-core-modules/data/observable";
+import { Page } from "tns-core-modules/ui/page";
 
 export function onNavigatingTo(args: EventData) {
     const page = <Page>args.object;
@@ -337,7 +337,7 @@ _Example 5: Handle textField date input and formatted in accordance preferences.
 </Page>
 ```
 ``` JavaScript
-const fromObject = require("data/observable").fromObject;
+const fromObject = require("tns-core-modules/data/observable").fromObject;
 
 function onNavigatingTo(args) {
     const dateConverter = {
@@ -375,8 +375,8 @@ function onNavigatingTo(args) {
 exports.onNavigatingTo = onNavigatingTo;
 ```
 ``` TypeScript
-import { EventData, fromObject } from "data/observable";
-import { Page } from "ui/page";
+import { EventData, fromObject } from "tns-core-modules/data/observable";
+import { Page } from "tns-core-modules/ui/page";
 
 export function onNavigatingTo(args: EventData) {
     const dateConverter = {
@@ -428,7 +428,7 @@ _Example 6: Converting the new date input to a valid Date object._
 </Page>
 ```
 ``` JavaScript
-const fromObject = require("data/observable").fromObject;
+const fromObject = require("tns-core-modules/data/observable").fromObject;
 
 function onNavigatingTo(args) {
   const dateConverter = {
@@ -466,8 +466,8 @@ function onNavigatingTo(args) {
 }
 ```
 ``` TypeScript
-import { EventData, fromObject } from "data/observable";
-import { Page } from "ui/page";
+import { EventData, fromObject } from "tns-core-modules/data/observable";
+import { Page } from "tns-core-modules/ui/page";
 
 export function onNavigatingTo(args: EventData) {
     const dateConverter = {
@@ -521,8 +521,8 @@ _Example 7: Adding converters in the application module resources._
 </Page>
 ```
 ``` JavaScript
-const appModule = require("application");
-const fromObject = require("data/observable").fromObject;
+const appModule = require("tns-core-modules/application");
+const fromObject = require("tns-core-modules/data/observable").fromObject;
 
 function onNavigatingTo(args) {
     const list = [];
@@ -554,9 +554,9 @@ function onNavigatingTo(args) {
 exports.onNavigatingTo = onNavigatingTo;
 ```
 ``` TypeScript
-import * as application from "application";
-import { EventData, fromObject } from "data/observable";
-import { Page } from "ui/page";
+import * as application from "tns-core-modules/application";
+import { EventData, fromObject } from "tns-core-modules/data/observable";
+import { Page } from "tns-core-modules/ui/page";
 
 export function onNavigatingTo(args: EventData) {
     const list = [];

@@ -18,12 +18,12 @@ Each NativeScript app must have a home page that loads when you launch the app. 
 The NativeScript navigation framework looks for an `XML` file with the specified name, loads it and navigates to the respective page. If NativeScript discovers a `JavaScript` or `TypeScript` file with the same name, it executes the code inside it.
 
 ```JavaScript
-var application = require("application");
+var application = require("tns-core-modules/application");
 // Start the application. Don't place any code after this line as it will not be executed on iOS.
 application.run({ moduleName: "my-page" });
 ```
 ```TypeScript
-import application = require("application");
+import application = require("tns-core-modules/application");
 // Start the application. Don't place any code after this line as it will not be executed on iOS.
 application.run({ moduleName: "my-page" });
 ```
@@ -37,14 +37,14 @@ You can navigate between pages with the `navigate` method of the [`Frame`](http:
 When you trigger navigation, NativeScript looks for an `XML` file with the specified name, loads it and navigates to the respective page. If NativeScript discovers a `JavaScript` or `TypeScript` file with the same name, it executes the code inside it.
 
 ```JavaScript
-// To import the "ui/frame" module:
+// To import the "tns-core-modules/ui/frame" module:
 let getFrameById = require("tns-core-modules/ui/frame").getFrameById;
 const frame = getFrameById("myFrame");
 // Navigate to page called “my-page”
 frame.navigate("my-page");
 ```
 ```TypeScript
-// To import the "ui/frame" module:
+// To import the "tns-core-modules/ui/frame" module:
 import { getFrameById } from "tns-core-modules/ui/frame";
 const frame = getFrameById("myFrame");
 // Navigate to page called “my-page”
@@ -497,7 +497,7 @@ exports.onLoaded = onLoaded;
 The `main-page` has a binding context set thought view model (MVVM pattern). The binding context can be accessed though the custom component as demonstrated.
 ```TypeScript
 // app/main-view-model.ts
-import { Observable } from 'data/observable';
+import { Observable } from "tns-core-modules/data/observable";
 
 export class HelloWorldModel extends Observable {
 
@@ -539,7 +539,7 @@ export class HelloWorldModel extends Observable {
 ```
 ```JavaScript
 // app/main-view-model.js
-var Observable = require("data/observable").Observable;
+var Observable = require("tns-core-modules/data/observable").Observable;
 
 function getMessage(counter) {
     if (counter <= 0) {
@@ -596,7 +596,7 @@ let myComponentInstance = builder.load({
 });
 ```
 ```JavaScript
-let builder = require("ui/builder");
+let builder = require("tns-core-modules/ui/builder");
 let myComponentInstance = builder.load({
         path: "~/components/my-control",
         name: "MyControl"

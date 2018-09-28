@@ -59,7 +59,7 @@ applicationStart({ moduleName: "main-page" });
 You could also check the name of the application-wide CSS file by using `getCssFileName()` method as shown below:
 
 ``` JavaScript
-var application = require("application");
+var application = require("tns-core-modules/application");
 var fileName = application.getCssFileName();
 console.log(`fileName ${fileName}`);
 

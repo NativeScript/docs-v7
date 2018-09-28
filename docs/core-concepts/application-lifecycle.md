@@ -154,7 +154,7 @@ NativeScript applications have the following life cycle events.
 
 {% nativescript %}
 ``` JavaScript
-const application = require("application");
+const application = require("tns-core-modules/application");
 
 application.on(application.launchEvent, (args) => {
     if (args.android) {
@@ -227,7 +227,7 @@ application.run({ moduleName: "app-root" });
 import { displayedEvent, exitEvent, launchEvent, lowMemoryEvent, 
         orientationChangedEvent, resumeEvent, suspendEvent, uncaughtErrorEvent, 
         ApplicationEventData, LaunchEventData, OrientationChangedEventData, UnhandledErrorEventData,
-        on as applicationOn, run as applicationRun } from "application";
+        on as applicationOn, run as applicationRun } from "tns-core-modules/application";
 
 applicationOn(launchEvent, (args: LaunchEventData) => {
     if (args.android) {
@@ -299,7 +299,7 @@ applicationRun({ moduleName: "app-root" });
 ```TypeScript
 import { platformNativeScriptDynamic } from "nativescript-angular/platform";
 import { AppModule } from "./app.module";
-import { on as applicationOn, launchEvent, suspendEvent, resumeEvent, exitEvent, lowMemoryEvent, uncaughtErrorEvent, ApplicationEventData } from "application";
+import { on as applicationOn, launchEvent, suspendEvent, resumeEvent, exitEvent, lowMemoryEvent, uncaughtErrorEvent, ApplicationEventData } from "tns-core-modules/application";
 
 applicationOn(launchEvent, (args: ApplicationEventData) => {
     if (args.android) {
@@ -379,7 +379,7 @@ NativeScript applications have the following Android specific activity events:
 
 {% nativescript %}
 ``` JavaScript
-const application = require("application");
+const application = require("tns-core-modules/application");
 
 if (application.android) {
     application.android.on(application.AndroidApplication.activityCreatedEvent, function (args) {
@@ -424,7 +424,7 @@ if (application.android) {
 application.run({ moduleName: "app-root" });
 ```
 ``` TypeScript
-import { android, AndroidApplication, AndroidActivityBundleEventData } from "application";
+import { android, AndroidApplication, AndroidActivityBundleEventData } from "tns-core-modules/application";
 
 // Android activity events
 if (android) {
@@ -474,7 +474,7 @@ application.run({ moduleName: "app-root" });
 ```TypeScript
 import { platformNativeScriptDynamic } from "nativescript-angular/platform";
 import { AppModule } from "./app.module";
-import { android, AndroidApplication, AndroidActivityBundleEventData, AndroidActivityEventData, AndroidActivityResultEventData, AndroidActivityBackPressedEventData } from "application";
+import { android, AndroidApplication, AndroidActivityBundleEventData, AndroidActivityEventData, AndroidActivityResultEventData, AndroidActivityBackPressedEventData } from "tns-core-modules/application";
 
 // Android activity events
 if (android) {
@@ -526,7 +526,7 @@ In NativeScript, you can specify custom `UIApplicationDelegate` for the iOS appl
 
 {% nativescript %}
 ``` JavaScript
-const application = require("application");
+const application = require("tns-core-modules/application");
 const MyDelegate = (function (_super) {
     __extends(MyDelegate, _super);
     function MyDelegate() {
@@ -546,7 +546,7 @@ application.ios.delegate = MyDelegate;
 application.run({ moduleName: "app-root" });
 ```
 ``` TypeScript
-import { ios, run as applicationRun } from "application";
+import { ios, run as applicationRun } from "tns-core-modules/application";
 class MyDelegate extends UIResponder implements UIApplicationDelegate {
     public static ObjCProtocols = [UIApplicationDelegate];
 
@@ -570,7 +570,7 @@ import { platformNativeScriptDynamic } from "nativescript-angular/platform";
 
 import { AppModule } from "./app.module";
 
-import { ios } from "application";
+import { ios } from "tns-core-modules/application";
 class MyDelegate extends UIResponder implements UIApplicationDelegate {
     public static ObjCProtocols = [UIApplicationDelegate];
 
@@ -600,7 +600,7 @@ The setter methods have two required parameters: a key and value.
 
 {% nativescript %}
 ``` JavaScript
-const applicationSettings = require("application-settings");
+const applicationSettings = require("tns-core-modules/application-settings");
 // Event handler for Page "loaded" event attached in main-page.xml.
 function pageLoaded(args) {
     applicationSettings.setString("Name", "John Doe");
@@ -617,8 +617,8 @@ exports.pageLoaded = pageLoaded;
 ```
 {% endnativescript %}
 ``` TypeScript
-import { EventData } from "data/observable";
-import * as applicationSettings from "application-settings";
+import { EventData } from "tns-core-modules/data/observable";
+import * as applicationSettings from "tns-core-modules/application-settings";
 // Event handler for Page "loaded" event attached in main-page.xml.
 export function pageLoaded(args: EventData) {
     applicationSettings.setString("Name", "John Doe");

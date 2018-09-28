@@ -262,8 +262,8 @@ The built-in [loadMoreItemsEvent](http://docs.nativescript.org/api-reference/cla
 </ListView>
 ```
 ```TypeScript
-import { Component } from '@angular/core';
-import { EventData } from 'data/observable';
+import { Component } from "@angular/core";
+import { EventData } from "tns-core-modules/data/observable";
 
 @Component({
     selector: 'list-test',

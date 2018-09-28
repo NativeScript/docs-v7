@@ -372,7 +372,7 @@ Here is an example of showing different action items when the app is in "editing
 </ActionBar>
 ```
 ```JavaScript
-var observable = require("data/observable");
+var observable = require("tns-core-modules/data/observable");
 function onLoaded(args) {
     var page = args.object;
     page.bindingContext = new observable.Observable();
@@ -399,8 +399,8 @@ function onCancel(args) {
 exports.onCancel = onCancel;
 ```
 ```TypeScript
-import { EventData, Observable } from "data/observable";
-import { View } from "ui/core/view";
+import { EventData, Observable } from "tns-core-modules/data/observable";
+import { View } from "tns-core-modules/ui/core/view";
 
 export function onLoaded(args: EventData) {
     let page = <View>args.object;
@@ -556,7 +556,7 @@ ActionBar {
 ```
 ```TypeScript
 import { Component, OnInit } from "@angular/core";
-import { isAndroid, isIOS } from "platform";
+import { isAndroid, isIOS } from "tns-core-modules/platform";
 
 @Component({
     selector: "Home",

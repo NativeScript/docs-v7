@@ -280,10 +280,10 @@ _Example for creating grid dynamically via code behind_
 </Page>
 ```
 ```JavaScript
-const Color = require("color").Color;
-const Button = require("ui/button").Button;
-const Label = require("ui/label").Label;
-const layout = require("ui/layouts/grid-layout");
+const Color = require("tns-core-modules/color").Color;
+const Button = require("tns-core-modules/ui/button").Button;
+const Label = require("tns-core-modules/ui/label").Label;
+const layout = require("tns-core-modules/ui/layouts/grid-layout");
 const [GridLayout, GridUnitType, ItemSpec] = [layout.GridLayout, layout.GridUnitType, layout.ItemSpec];
 
 function onPageLoaded(args) {
@@ -340,12 +340,12 @@ function onPageLoaded(args) {
 exports.onPageLoaded = onPageLoaded;
 ```
 ```TypeScript
-import { Color } from "color";
-import { EventData } from "data/observable";
-import { Button } from "ui/button";
-import { Label } from "ui/label";
-import { GridLayout, GridUnitType, ItemSpec } from "ui/layouts/grid-layout";
-import { Page } from "ui/page";
+import { Color } from "tns-core-modules/color";
+import { EventData } from "tns-core-modules/data/observable";
+import { Button } from "tns-core-modules/ui/button";
+import { Label } from "tns-core-modules/ui/label";
+import { GridLayout, GridUnitType, ItemSpec } from "tns-core-modules/ui/layouts/grid-layout";
+import { Page } from "tns-core-modules/ui/page";
 
 export function onPageLoaded(args: EventData) {
     // Grid wrapper

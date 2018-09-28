@@ -87,7 +87,7 @@ Often in NativeScript, the MVVM pattern is used with a separate view model that 
 _JavaScript example_
 ```JavaScript
 // main-view-model.js
-var observableModule = require("data/observable");
+var observableModule = require("tns-core-modules/data/observable");
 
 function HomeViewModel() {
   var viewModel = observableModule.fromObject({
@@ -360,8 +360,8 @@ weakEL.addWeakEventListener(this.weakEventListenerOptions);
 ```
 ``` TypeScript
 import * as weakEventListenerModule from "tns-core-modules/ui/core/weak-event-listener";
-import { Button } from "ui/button";
-import { Observable } from "data/observable";
+import { Button } from "tns-core-modules/ui/button";
+import { Observable } from "tns-core-modules/data/observable";
 
 const testButton = new Button();
 testButton.text = "Test";

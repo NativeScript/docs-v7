@@ -45,7 +45,7 @@ Example:
 
 ```
 import "./bundle-config";
-import * as application from 'application';
+import * as application from "tns-core-modules/application";
 import * as traceModule from "tns-core-modules/trace"
 const errorHandler: traceModule.ErrorHandler = {
     handlerError(err){
