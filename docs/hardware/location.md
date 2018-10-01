@@ -132,6 +132,7 @@ Property | Type | Description
 `desiredAccuracy` | Number | (Optional) Specifies desired accuracy in meters. NativeScript has a special enum [Accuracy](http://docs.nativescript.org/api-reference/modules/_ui_enums_.accuracy.html) that helps to make code more readable. Defaults to `Accuracy.any`. Such accuracy could be achieved with only wifi and assist GPS from network provider, therefore does not put additional pressure on battery consumption. In order to use high accuracy (requires GPS sensor) set this option to `Accuracy.high`.
 `updateDistance` | Number | (Optional) Updates distance filter in meters. Specifies how often to update. Default on iOS is no filter, on Android it is 0 meters.
 `minimumUpdateTime` | Number | (Optional) Specifies the minimum time interval between location updates, in milliseconds. Ignored on iOS.
+`updateTime` | Number | (Optional) Interval between location updates, in milliseconds (ignored on iOS).
 `maximumAge` | Number | (Optional) Filters locations by how long ago they were received, in milliseconds. For example, if the `maximumAge` is 5000, you will get locations only from the last 5 seconds. 
 `timeout` | Number | (Optional) Specifies how long to wait for a location, in milliseconds.
 
