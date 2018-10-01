@@ -475,7 +475,7 @@ import { EventData } from "tns-core-modules/data/observable";
 export function onLoaded(args: EventData) {
     console.log("Custom Component Loaded");
 
-    // you could also extend the custom compoentn logi here e.g.:
+    // you could also extend the custom component logic here e.g.:
     // let stack = <StackLayout>args.view;
     // stack.bindingContext = myCustomComponentViewModel;
 }
@@ -485,7 +485,7 @@ export function onLoaded(args: EventData) {
 function onLoaded(args) {
     console.log("Custom Component Loaded");
 
-    // you could also extend the custom compoentn logi here e.g.:
+    // you could also extend the custom component logic here e.g.:
     // let stack = args.view;
     // stack.bindingContext = myCustomComponentViewModel;
 }
