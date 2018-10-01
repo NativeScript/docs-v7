@@ -246,7 +246,11 @@ _Example 4: Creating ListView child items based on the itemTemplate._
 				<GridLayout columns="auto, *">
 					<Label text="{{ $value }}" col="0"/>
 					<!--The TextField has a different bindingCotnext from the ListView, but has to use its properties. Thus the parents['ListView'] has to be used.-->
-					<TextField text="{{ $parents['ListView'].test, $parents['ListView'].test }}" col="1"/>
+					<!-- Parent binding to a string property -->
+                    <TextField text="{{ $parents['ListView'].test, $parents['ListView'].test }}" col="1"/>
+
+                    <!-- Parent binding to a method onTap -->
+                    <Button text="Tap me" tap="{{ $parents['ListView'].onTap,  $parents['ListView'].onTap }}" />
 				</GridLayout>
 			</ListView.itemTemplate>
 		</ListView>
@@ -260,7 +264,10 @@ function onNavigatingTo(args) {
     const page = args.object;
     const viewModel = fromObject({
         items: [1, 2, 3],
-        test: "Test for parent binding!"
+        test: "Test for parent binding!",
+        onTap: (args) => {
+            console.log('(func parent binding) Tapped ', args.object);
+        }
     });
 
     page.bindingContext = viewModel;
@@ -269,13 +276,18 @@ exports.onNavigatingTo = onNavigatingTo;
 ```
 ``` TypeScript
 import { EventData, fromObject } from "tns-core-modules/data/observable";
+import { Button } from "tns-core-modules/ui/button";
 import { Page } from "tns-core-modules/ui/page";
 
 export function onNavigatingTo(args: EventData) {
     const page = <Page>args.object;
     const viewModel = fromObject({
         items: [1, 2, 3],
-        test: "Test for parent binding!"
+        test: "Test for parent binding!",
+        onTap: (args: EventData) => {
+            const tappedButton = <Button>args.object;
+            console.log('Tapped ', tappedButton);
+        }
     });
 
     page.bindingContext = viewModel;
