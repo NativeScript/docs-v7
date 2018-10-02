@@ -596,12 +596,26 @@ The NativeScript's recommended measurment unit is DIP. All measurable properties
 }
 ```
 
-> **Note:** The device independent pixels are equal to the current device screen's scale multiplied by the current device screen's width in pixels.
+> **Note:** The device independent pixels (DIPs) are equal to the device screen's width in pixels divided by the device screen scale (density).
+```JavaScript
+const screen = require("tns-core-modules/platform").screen;
+
+// mainScreen is of type ScreenMetrics interface https://docs.nativescript.org/api-reference/interfaces/_platform_.screenmetrics
+let scale =  screen.mainScreen.scale; 
+let widthPixels = screen.mainScreen.widthPixels;
+let heightPixels = screen.mainScreen.heightPixels;
+let widthDIPsDIPs = screen.mainScreen.widthDIPs; // DIPs === pixels/scale (e.g 1024 pixels / 2x scale = 512 DIPs)
+let heightDIPs = screen.mainScreen.heightDIPs; 
+```
 ```TypeScript
-import * as platformModule from "tns-core-modules/platform";
-let scale =  platformModule.screen.mainScreen.scale;
-let widthPixels = platformModule.screen.mainScreen.widthPixels;
-let DIPs = platformModule.screen.mainScreen.widthDIPs; // scale X widthPixels === DIPs
+import { screen } from "tns-core-modules/platform";
+
+// mainScreen is of type ScreenMetrics interface https://docs.nativescript.org/api-reference/interfaces/_platform_.screenmetrics
+let scale =  screen.mainScreen.scale; 
+let widthPixels = screen.mainScreen.widthPixels;
+let heightPixels = screen.mainScreen.heightPixels;
+let widthDIPsDIPs = screen.mainScreen.widthDIPs; // DIPs === pixels/scale (e.g 1024 pixels / 2x scale = 512 DIPs)
+let heightDIPs = screen.mainScreen.heightDIPs; 
 ```
 
 NativeScript supports **percentage** values for `width`, `height` and `margins`. When a layout pass begins, first the percent values are calculated based on parent available size. This means that on vertical StackLayout if you place two Buttons with `height='50%'` they will get all the available height (e.g., they will fill the StackLayout vertically.). The same applies for `margin`` properties. For example, if you set marginLeft='5%'`, the element will have a margin that corresponds to 5% of the parent's available width.
