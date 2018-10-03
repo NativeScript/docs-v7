@@ -88,8 +88,10 @@ cp -R $DOCS_ROOT"/docs/./" \
 # cd $CONTENT_ROOT"/ui"
 cp -R $CLI_ROOT"/docs-cli" $CONTENT_ROOT"/tooling"
 cp -R $SDK_ROOT_JS"/dist/cookbook/ns-ui-widgets" $CONTENT_ROOT"/ui"
+cp -R $SDK_ROOT_JS"/dist/cookbook/ns-ui/." $CONTENT_ROOT"/ui"
 cp -R $SDK_ROOT_NG"/dist/code-samples/ng-ui-widgets" $CONTENT_ROOT"/ui"
 cp -R $SDK_ROOT_NG"/dist/code-samples/common-screens" $CONTENT_ROOT"/app-and-screen-templates"
+cp -R $SDK_ROOT_NG"/dist/code-samples/ng-ui/." $CONTENT_ROOT"/ui"
 # cd $ROOT
 
 cp $SCRIPT_PATH"/nginx.conf" $CONTENT_ROOT
