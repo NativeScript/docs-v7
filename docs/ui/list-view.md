@@ -4,7 +4,6 @@ description: NativeScript for Angular Documentation - Using ListView. In the art
 position: 70
 slug: listview
 publish: false
-previous_url: /listview
 environment: angular
 --- 
 
