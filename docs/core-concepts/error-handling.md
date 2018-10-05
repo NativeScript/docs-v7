@@ -35,7 +35,7 @@ function doSomething(arg) {
   // ... implementation using arg
 }
 ```
-The example demostrates, how we can use the `error` method inside of a plugin's code, inseed of throwing the error, which can cause a crash.
+The example demonstrates, how we can use the `error` method inside of a plugin's code, instead of throwing the error, which can cause a crash.
 
 ### Defining custom error handler
 
