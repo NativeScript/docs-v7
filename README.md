@@ -22,7 +22,7 @@ This documentation is built using [Jekyll](https://jekyllrb.com/docs/home/). Mor
 
 ## Configuration
 
-There are two versions of the NativeScript documentation that generate similar output: `nativescript` and `angular`. The former builds the vanilla NativeScript docs at [docs.nativescript.org](https://docs.nativescript.org/), while the latter discusses Angular-specific topics at [docs.nativescript.org/angular/start/introduction](https://docs.nativescript.org/angular/start/introduction).
+There are two versions of the NativeScript documentation that generate similar output: `nativescript` and `angular`. The former builds the vanilla NativeScript docs at [docs.nativescript.org/start/introduction](https://docs.nativescript.org/start/introduction), while the latter discusses Angular-specific topics at [docs.nativescript.org/angular/start/introduction](https://docs.nativescript.org/angular/start/introduction).
 
 Most of the content in this repository is shared between the two environments, but occasionally you may need to add environment-specific content. When you have this need you have a few options.
 
