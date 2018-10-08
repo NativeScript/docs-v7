@@ -32,7 +32,7 @@ In the following sections, we will create a simple Angular application using the
 
 - Add a new folder to hold your `FeatureModule` along with all the components, services, routing tables of the module. 
 
-    A good practice is to use the name of the module as the name of the containing folder. For example, create a `feature` folder and add `feature.module.ts` and the needed components that will be part of the module (in our case `feature.component.ts` wih the respective HTML and CSS files).
+    A good practice is to use the name of the module as the name of the containing folder. For example, create a `feature` folder and add `feature.module.ts` and the needed components that will be part of the module (in our case `feature.component.ts` with the respective HTML and CSS files).
     ```JS
     my-app
     --app
