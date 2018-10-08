@@ -32,14 +32,16 @@ In the following sections, we will create a simple Angular application using the
 
 - Add a new folder to hold your `FeatureModule` along with all the components, services, routing tables of the module. 
 
-    A good practice is to use the name of the module as the name of the containing folder. For example, create a `feature` folder and add `feature.module.ts` and the needed components that will be part of the module (in our case `feature.component.ts`)
+    A good practice is to use the name of the module as the name of the containing folder. For example, create a `feature` folder and add `feature.module.ts` and the needed components that will be part of the module (in our case `feature.component.ts` with the respective HTML and CSS files).
     ```JS
     my-app
     --app
     ----feature
+    ------feature.component.css
+    ------feature.component.html
+    ------feature.component.ts
     ------feature.module.ts
     ------feature.routing.ts
-    ------feature.component.ts
     ------feature.service.ts
     ```
 
@@ -51,7 +53,7 @@ In the following sections, we will create a simple Angular application using the
     import { NgModule } from "@angular/core";
     import { Routes } from "@angular/router";
     import { NativeScriptRouterModule } from "nativescript-angular/router";
-    import { FeatureComponent } from "./feature/feature.component";
+    import { FeatureComponent } from "./feature.component";
 
     export const routes: Routes = [
         {
@@ -72,7 +74,8 @@ In the following sections, we will create a simple Angular application using the
     // app/feature/feature.module.ts
     import { NativeScriptCommonModule } from "nativescript-angular/common";
     import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-    import { FeatureComponent } from "./feature.component";
+    import { FeatureComponent } from "./feature.component"; // Import all components that will be used in the lazy loaded module
+    import { FeatureService } from "./feature.service"; // Import all services that will be used in the lazy loaded module
     import { FeatureRoutingModule } from "./feature.routing"; // import the routing module
 
     @NgModule({
