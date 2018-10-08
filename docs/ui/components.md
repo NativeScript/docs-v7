@@ -178,7 +178,7 @@ The {% nativescript %}[WebView]({%slug web-view%}){% endnativescript %} {% angul
 
 | Android                | iOS      |
 |:-----------------------|:---------|
-| [android.webkit.WebView](http://developer.android.com/reference/android/webkit/WebView.html) | [UIWebView](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/) |
+| [android.webkit.WebView](http://developer.android.com/reference/android/webkit/WebView.html) | [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) |
 
 ## TabView
 
