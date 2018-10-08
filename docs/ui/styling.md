@@ -604,7 +604,7 @@ const screen = require("tns-core-modules/platform").screen;
 let scale =  screen.mainScreen.scale; 
 let widthPixels = screen.mainScreen.widthPixels;
 let heightPixels = screen.mainScreen.heightPixels;
-let widthDIPsDIPs = screen.mainScreen.widthDIPs; // DIPs === pixels/scale (e.g 1024 pixels / 2x scale = 512 DIPs)
+let widthDIPs = screen.mainScreen.widthDIPs; // DIPs === pixels/scale (e.g 1024 pixels / 2x scale = 512 DIPs)
 let heightDIPs = screen.mainScreen.heightDIPs; 
 ```
 ```TypeScript
@@ -614,7 +614,7 @@ import { screen } from "tns-core-modules/platform";
 let scale =  screen.mainScreen.scale; 
 let widthPixels = screen.mainScreen.widthPixels;
 let heightPixels = screen.mainScreen.heightPixels;
-let widthDIPsDIPs = screen.mainScreen.widthDIPs; // DIPs === pixels/scale (e.g 1024 pixels / 2x scale = 512 DIPs)
+let widthDIPs = screen.mainScreen.widthDIPs; // DIPs === pixels/scale (e.g 1024 pixels / 2x scale = 512 DIPs)
 let heightDIPs = screen.mainScreen.heightDIPs; 
 ```
 
