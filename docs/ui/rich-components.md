@@ -88,7 +88,7 @@ The DataForm component (known as RadDataForm in code) provides an easy and versa
 
 ## Gauges
 
-[{% nativescript %}[Documentation](http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/Gauges/overview){% endnativescript %}{% angular %}[Documentation](http://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/Gauges/overview){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/release/sdk/app/gauges){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/release/sdkAngular/app/gauges){% endangular %}][Download from npm](https://www.npmjs.com/package/nativescript-ui-gauge)
+[{% nativescript %}[Documentation](https://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/Gauge/overview){% endnativescript %}{% angular %}[Documentation](https://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/Gauge/overview){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/release/sdk/app/gauges){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/release/sdkAngular/app/gauges){% endangular %}][Download from npm](https://www.npmjs.com/package/nativescript-ui-gauge)
 
 The Gauges component (known as RadRadialGauge in code) allows you to display the current status of a value within a range of upper and lower bounds, illustrate progress towards a goal, or a summary of a fluctuating metric. With the gauges component you may:
 
