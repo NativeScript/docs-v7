@@ -87,9 +87,6 @@ git clone https://github.com/NativeScript/nativescript-angular.git
 git clone https://github.com/NativeScript/nativescript-sdk-examples-js.git
 git clone https://github.com/NativeScript/nativescript-sdk-examples-ng.git
 git clone https://github.com/NativeScript/nativescript-cli.git
-cd nativescript-cli
-git submodule update --init
-cd ..
 ```
 
 > **NOTE**: If you have these repositories locally from previous work with the documentation, be sure to delete them and start from scratch as some old files can cause problems with the current setup.
