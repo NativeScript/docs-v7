@@ -5,7 +5,6 @@ Home of the NativeScript documentation content that lives at <http://docs.native
 * [Contributing 🍺](#contributing)
 * [About Jekyll :nut_and_bolt:](#about-jekyll)
 * [Configuration ⚙️](#configuration)
-* [Tutorials 📖](#tutorials)
 * [Local Setup :computer:](#local-setup)
 * [Contributors ❤️](#contributors)
 
@@ -37,23 +36,6 @@ This paragraph appears in both environments.
 
 {% angular %}This appears only in the Angular NativeScript documentation{% endangular %}
  ```
-
-## Tutorials
-
-The NativeScript documentation contains two full getting started tutorials, one for [using NativeScript with vanilla JavaScript](https://docs.nativescript.org/start/tutorial/chapter-1), and another for [using NativeScript with Angular](https://docs.nativescript.org/angular/start/tutorial/ng-chapter-1). The contents of these two tutorials are in [this repository’s `/tutorial` folder](https://github.com/NativeScript/sample-Groceries).
-
-When making changes to either of these tutorials you might need to additional alter one of the four templates these tutorials use. Readers use these templates through the `tns create` command, for example `tns create HelloWorld --template nativescript-template-tutorial`.
-
-* JavaScript
-    * [nativescript-template-tutorial](https://github.com/tjvantoll/nativescript-template-tutorial)
-        * Hello world template used by the JavaScript tutorial.
-    * [nativescript-template-groceries](https://github.com/tjvantoll/nativescript-template-groceries)
-        * Starting point for the Groceries example used by the JavaScript tutorial.
-* Angular
-    * [nativescript-template-ng-tutorial](https://github.com/tjvantoll/nativescript-template-ng-tutorial)
-        * Hello world template used by the Angular tutorial.
-    * [nativescript-template-ng-groceries](https://github.com/tjvantoll/nativescript-template-ng-groceries)
-        * Starting point for the Groceries example used by the Angular tutorial.
 
 ## Local Setup
 
