@@ -82,6 +82,28 @@ The NativeScript CLI supports static libraries coming from plugins but the binar
 
 NativeScript plugins also support merging of `.plist` files. If a library requires changes in `Info.plist`, the plugin can handle that without you touching the `/platforms/ios/` folder. However, there are libraries which require more complex manipulations of the Xcode project file, which can't be achieved with plugins. In these cases, the only solution is to do it manually. Keep in mind that after updating the iOS platform, your manual changes might be lost.
 
+## APIs written in Swift
+
+CocoaPod libraries written in Swift can be called from NativeScript only if they are exposed to Objective-C. This means that the following conditions have to be met:
+1. The methods and types must have `public` or `open` access. For more information on Access Control read [this article](https://docs.swift.org/swift-book/LanguageGuide/AccessControl.html)
+2. Classes need to inherit from `NSObject` or some other Objective-C class in order to be exposed. Refs [Swift Migration Guide](https://developer.apple.com/documentation/swift/migrating_your_objective-c_code_to_swift)
+3. Starting from Swift 4.0, types and methods have to be explicitly marked with `@objc` or `@objcMembers` attributes. You can read more about them [here](https://docs.swift.org/swift-book/ReferenceManual/Attributes.html).
+
+> **NOTE:** To be able to override a Swift method in its JavaScript inheritor it _**MUST**_ use the message dispatch calling mechanism. This is enforced by marking the method with the [`dynamic` keyword](https://docs.swift.org/swift-book/ReferenceManual/Declarations.html#ID381).
+
+> **NOTE:** You can avoid adding `@objc` attribute for every member you'd like to expose by setting `SWIFT_SWIFT3_OBJC_INFERENCE` to `On`. This has the drawback that it will cause deprecation warnings during build and deprecation logs at runtime. Sample `Podfile`:
+```Ruby
+....
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_SWIFT3_OBJC_INFERENCE'] = 'On'
+    end
+  end
+end
+```
+
+
 ## Conclusion
 
 As a rule of thumb, avoid manual changes to the Xcode project file in the `/platforms/ios` folder. Always try to use CocoaPods with NativeScript plugins and shared frameworks. The second best option is a prebuilt static framework with manually added `module.modulemap` file, wrapped in a NativeScript plugin. Use the other options only as a last resort after making sure there is no better solution.
@@ -89,10 +111,6 @@ As a rule of thumb, avoid manual changes to the Xcode project file in the `/plat
 ## Troubleshooting
 
 Starting with version 1.4 of NativeScript for iOS, you are able to generate [debug metadata](../core-concepts/ios-runtime/Overview#metadata) and [TypeScript declarations](https://typescript.codeplex.com/wikipage?title=Writing%20Definition%20%28.d.ts%29%20Files) for third-party libraries. This way you are able to see exactly what APIs are exposed to JavaScript.
-
-> **NOTE:** Swift APIs that are not [exported to Objective-C](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID55) are not supported.
-
-> **NOTE:** To be able to override a Swift method in its JavaScript inheritor it _**MUST**_ use the message dispatch calling mechanism. This is enforced by marking the method with the [`dynamic` keyword](https://docs.swift.org/swift-book/ReferenceManual/Declarations.html#ID381).
 
 Executing the following command from the root of your NativeScript app produces a `metadata` folder with a `.yaml` file for each Clang module:
 ```shell
