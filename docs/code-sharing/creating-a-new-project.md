@@ -33,6 +33,8 @@ If you’d like, you can also use the `-c` shorthand instead of `--collection`. 
 ng new -c=@nativescript/schematics project-name --shared
 ```
 
+> **NOTE**: If the above command doesn't work, check that you don't have an invalid configuration file in your home directory (`/home/user-name/.angular.json`). Please delete the file and run the command again.
+
 ## Styling
 
 By default, the project will be generated with **CSS** as the default format for styling, with the following style files:
