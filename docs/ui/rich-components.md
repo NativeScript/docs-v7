@@ -3,7 +3,7 @@ title: Professional UI Components
 description: Get familiar with the premium user interface elements (widgets) in NativeScript UI. The article contains a general description of the premium UI widgets and links for the extended component's examples. 
 position: 25
 slug: rich-components
-publish: false
+publish: true
 ---
 
 # Professional UI Components
