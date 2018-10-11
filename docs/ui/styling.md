@@ -596,7 +596,8 @@ The NativeScript's recommended measurment unit is DIP. All measurable properties
 }
 ```
 
-> **Note:** The device independent pixels (DIPs) are equal to the device screen's width in pixels divided by the device screen scale (density).
+The device independent pixels (DIPs) are equal to the device screen's pixels divided by the device screen scale (density).
+
 ```JavaScript
 const screen = require("tns-core-modules/platform").screen;
 
