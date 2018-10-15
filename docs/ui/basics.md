@@ -58,7 +58,7 @@ frame.navigate("my-page");
 
 ## Passing Binding Context while Navigating
 
-You could provide `bindingContext` automatically while navigating to a page. This will give you a simple way to make the context become the `bindingContext` of the page on navigation. The way to do that is to set up the `bindingContext` property, which points to your custom view model, on `navigate` method. 
+You could provide `bindingContext` automatically while navigating to a page. This will give you a simple way to make the context become the `bindingContext` of the page on navigation. The way to do that is to set up the `bindingContext` property, which points to your custom view model, on `navigate` method.
 
 ```JavaScript
 // To import the "ui/frame" module and "main-view-model":
@@ -176,7 +176,7 @@ let count = 0;
 export function buttonTap(args: EventData) {
     count++;
     let button = <View>args.object;
-    let parent = butto.parent;
+    let parent = button.parent;
     if (parent) {
         let lbl = <Label>getViewById(parent, "Label1");
         if (lbl) {
@@ -515,7 +515,7 @@ export class HelloWorldModel extends Observable {
     get message(): string {
         return this._message;
     }
-    
+
     set message(value: string) {
         if (this._message !== value) {
             this._message = value;
