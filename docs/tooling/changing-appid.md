@@ -18,8 +18,8 @@ From NativeScript(v5.0.0) we can change the App ID using the project's `package.
 ```
 "nativescript": {
     "id": {
-        "ios": "{{appID1}}" ,
-        "android": "{{appID2}}"
+        "ios": "{appID1}" ,
+        "android": "{appID2}"
     }
   }
 ```
@@ -40,6 +40,19 @@ Example:
         }
     },
     .........
+}
+```
+
+> Note: The new structure is needed only if you need different app id for the platforms. If you use the same app id for both, you can change it as follows: 
+```
+"nativescript": {
+    "id": "{appID}"
+}
+```
+Example:
+```
+"nativescript": {
+    "id": "org.nativescript.myappid"
 }
 ```
 
