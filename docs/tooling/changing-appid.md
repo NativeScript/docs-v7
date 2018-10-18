@@ -7,7 +7,7 @@ slug: changing-appid
 
 # What is App identifier
 
-The App ID is a unique string, which contain two or more strings, separated by a dot. It is used to identify your app on the device and in the store(iTunes Store / Google Play Store), where it is published. The application identifier refers to the Bundle ID for iOS and application ID - Android based on the mobile OS the app is built for. Each string must start with a letter and should contain only letters and numbers. The app identifier must not begin with an uppercase letter. In NativeScript we will use the project name, which is set, while executing the create command (`tns create <project_name>`), for the initial App ID(e.g. `org.nativescript.{appName}`).  
+The App ID is a unique string, which contain two or more strings, separated by a dot. It is used to identify your app on the device and in the store(iTunes Store / Google Play Store), where it is published. The application identifier refers to the Bundle ID for iOS and application ID - Android based on the mobile OS the app is built for. Each string must start with a letter and should contain only letters and numbers. The app identifier must not begin with an uppercase letter or number. In NativeScript we will use the project name, which is set, while executing the create command (`tns create <project_name>`), for the initial App ID(e.g. `org.nativescript.{appName}`).  
 
 
 ## How to change the App ID
@@ -56,7 +56,7 @@ Example:
 }
 ```
 
-2.  If you are using old project, open `<project_name>/App_Resources/Android/app.gradle` file and remove the `applicationId` key.
+2.  If you are using project, created before NativeScript(v5.0.0), open `<project_name>/App_Resources/Android/app.gradle` file and remove the `applicationId` key.
 
 3. If you have opened the project in NS Sidekick remove the `<project_name>/App_Resources/Android/settings.json` file
 
