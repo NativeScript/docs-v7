@@ -12,7 +12,7 @@ The App ID is a unique string, which contain two or more strings, separated by a
 
 ## How to change the App ID
 
-From NativeScript(v5.0.0) we can change the App ID using the project's `package.json` file while specifying a unique string for iOS and Android. Follow the below-attached steps to change the identifier:
+From NativeScript (v5.0.0) we can change the App ID using the project's `package.json` file while specifying a unique string for iOS and Android. Follow the below-attached steps to change the identifier:
 
 1. Set in `package.json`
 ```
