@@ -763,7 +763,7 @@ import { Component } from "@angular/core";
 @Component({
     selector: "ns-app",
     templateUrl: "app.component.html",
-    styleUrls:['./custom.css']
+    styleUrls:['./custom.scss']
 })
 export class AppComponent { }
 ```
