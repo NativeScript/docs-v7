@@ -32,7 +32,7 @@ application.run({ moduleName: "my-page" });
 
 ## Navigate to a Page
 
-You can navigate between pages with the `navigate` method of the [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class. The [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. With NativeScript 4 and above each app can have on or more frames. To get a reference to a frame we can use [`getFrameById`](https://docs.nativescript.org/api-reference/modules/_ui_frame_#getframebyid) method. Detailed information about navigation can be found in the [dedicated article](#core-concepts/navigation#basic-navigation).
+You can navigate between pages with the `navigate` method of the [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class. The [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. With NativeScript 4 and above each app can have one or more frames. To get a reference to a frame we can use [`getFrameById`](https://docs.nativescript.org/api-reference/modules/_ui_frame_#getframebyid) method. Detailed information about navigation can be found in the [dedicated article](#core-concepts/navigation#basic-navigation).
 
 When you trigger navigation, NativeScript looks for an `XML` file with the specified name, loads it and navigates to the respective page. If NativeScript discovers a `JavaScript` or `TypeScript` file with the same name, it executes the code inside it.
 
