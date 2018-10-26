@@ -19,10 +19,10 @@ This page contains a list of all system requirements needed to build and run Nat
 * The latest stable official release of Node.js (LTS) [8.x](https://nodejs.org/dist/latest-v8.x/) 
 * G++ compiler
 * JDK 8
-* Android SDK 22 or a later stable official release
+* Android SDK
 * Android Support Repository
 * (Optional) Google Repository
-* Android SDK Build-tools 27.0.3 or a later stable official release
+* Android SDK Build-tools 28.0.3 or a later stable official release
 
 You must also have the following two environment variables setup for Android development:
 
@@ -80,9 +80,9 @@ Complete the following steps to set up NativeScript on your Linux development ma
         <blockquote><b>NOTE</b>: This is the directory that contains the <code>tools</code> (just installed) and <code>platform-tools</code> (installed by scripts in the next step) directories.</blockquote>
      1. Logout from current user and login again so environment variables changes take place.
 
-1. Install all packages for the Android SDK Platform 26, Android SDK Build-Tools 27.0.3 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages. In order to install SDK's go to Android Studio -> Settings -> System Settings -> Android SDK -> Mark all the Android versions you would like to support within your project (The API Level column indicates the SDK Platform).
+1. Install all packages for the Android SDK Platform 28, Android SDK Build-Tools 28.0.3 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages. In order to install SDK's go to Android Studio -> Settings -> System Settings -> Android SDK -> Mark all the Android versions you would like to support within your project (The API Level column indicates the SDK Platform).
 
-    <pre class="add-copy-button"><code class="language-terminal">sudo $ANDROID_HOME/tools/bin/sdkmanager "tools" "emulator" "platform-tools" "platforms;android-26" "build-tools;27.0.3" "extras;android;m2repository" "extras;google;m2repository"
+    <pre class="add-copy-button"><code class="language-terminal">sudo $ANDROID_HOME/tools/bin/sdkmanager "tools" "emulator" "platform-tools" "platforms;android-28" "build-tools;28.0.3" "extras;android;m2repository" "extras;google;m2repository"
     </code></pre>
 
 1. Setup Android Emulators (AVD) by following the article [here]({%slug android-emulators%})

@@ -82,10 +82,10 @@ After the installation the system setup should have:
 * The latest stable official release of Node.js (LTS) [8.x](https://nodejs.org/dist/latest-v8.x/) 
 * Google Chrome 
 * JDK 8
-* Android SDK 22 or a later stable official release
+* Android SDK
 * Android Support Repository
 * Google Repository
-* Android SDK Build-tools 27.0.3 or a later stable official release
+* Android SDK Build-tools 28.0.3 or a later stable official release
 * Android Studio
 * Set up Android virtual devices to expand your testing options 
 
