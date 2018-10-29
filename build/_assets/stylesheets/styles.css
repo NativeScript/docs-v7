@@ -127,7 +127,7 @@ body.-landing {
 a {
     cursor: pointer;
     text-decoration: none;
-    color: var(--color-accent);
+    color: var(--color-accent-light);
 }
 
 a:hover {
@@ -223,9 +223,9 @@ pre {
 
 .ns-navigation,
 .ns-tip-container {
-    background: var(--background-dark);
+    background: var(--background-accent);
     font-size: .88em;
-    height: 4.71em;
+    height: 5.68em;
     display: flex;
     position: -webkit-sticky;
     position: sticky;
@@ -270,7 +270,7 @@ html.ns-state-scrolled .ns-navigation:before {
 }
 
 .navigation__logo {
-    width: 14em;
+    width: 10.6em;
     background: transparent no-repeat center center url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASkAAAA4CAMAAACWuv46AAABOFBMVEUAAAD///////////////////////////////////////////88Wv3///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////88Wv3///////88Wv3///////////+Imf7///////////////////////88Wv3///88Wv08Wv3///////////////////////88Wv08Wv08Wv08Wv08Wv3///88Wv3///88Wv08Wv08Wv3///88Wv3DzP7P1/9WcP3v8f9DYP29x/7q7f+5w/6XqP49W/2Rov5IZP2TpP7z9f/d4//Z3/9yh/5uhf5kfP12jP50if6RZI/pAAAAUXRSTlMAoNCwUJCAQHDxMAMQ+/QJYBTWxBm9DzctBs3JI95U662IHwvTtGPhjIRYKXRq+vja2HxHOwO5qaSWZiXnmjMI5ZN5XEMy8s2VcFNMSp5bnHc4p+yiAAAH3ElEQVR42u2caVfaQBSGLxIUkkIIYd8EBWTR1qq1orWrdrPb0Fpbu+///x+UzNzMZIFm6Wl7TuH5RCYwSZ5M3rnxJILJlUf3790d/ZK79+4/ugIzzpUH10a+uPbgBswy1y+PfHP5OswuDy+OAnDxCcwqD9+OgjGrqq5fHAXk4mxegFcujwJzeSZj/cEoBM9g9rhyLYypazM4qB6NOO/fvXo+5vzMJeaN0f7q3XvR8hBmjvsjk2+vCeOVay58Tigvv/GWpzBz3OMjioqivHGbQlV8VF2GmYPf670jgi9OUy6HF2Hm4DbOieDj6RRTr3jTn4p0uXm4XwIP/sm2HDaQT2eTTb3gTRfgj3AnSQiprMLfALcV3hSm+j8xpSaIwRYERDvZ2FqMS9nQ2wpvirwJY6qZGFNbAcFewqAJU8nKBuZPdgglB0FQ0jpBFuIl8MT3tqqygeZhinwJYSrGdncVOFHaEoOpLBKDCDCKhNKAAAwWiIXaEvgEtxWFaeDOp71MfTwNa4q0lbCmlBZdrAcRtUxsJCXwg9hWeFMi1cOaIrGwpqBaISS1Doi/43VwaQB+ENsKb0qkelhTZCOEKWSl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");
     background-size: contain;
 }
@@ -291,7 +291,6 @@ html.ns-state-scrolled .ns-navigation:before {
     display: inline-block;
     color: var(--color-light);
     font-weight: 600;
-    text-transform: uppercase;
     border: 0;
 }
 
@@ -334,18 +333,18 @@ html .ns-navigation .navigation__right .k-menu .k-link.-github a {
     padding: 5px;
     display: inline-block;
     color: var(--color-light);
-    opacity: .75;
 }
 
-html .ns-navigation .navigation__right .k-menu .k-link.-github a:hover {
-    opacity: 1;
+html .ns-navigation .navigation__right .k-menu .k-link.-github a:hover,
+.navigation__right > .k-menu > .k-item:not(.k-state-disabled) > .k-state-active,
+.navigation__right > .k-menu > .k-item:not(.k-state-disabled) > .k-link:not(.ns-button):hover {
+    color: var(--color-menu-secondary);
 }
 
 .k-panelbar,
-html .ns-navigation .k-menu-group,
-.navigation__right > .k-menu > .k-item:not(.k-state-disabled) > .k-state-active,
-.navigation__right > .k-menu > .k-item:not(.k-state-disabled) > .k-link:hover {
-    background: var(--background-secondary);
+html .ns-navigation .k-menu-group {
+    color: var(--color-accent);
+    background: var(--background-light);
 }
 
 html .ns-navigation .k-menu .k-menu-group {
@@ -953,22 +952,23 @@ blockquote > *:last-child {
 
 .ns-button {
     display: inline-block;
-    color: var(--color-accent);
-    border: 1px solid currentColor;
-    background: var(--background-light);
+    color: var(--color-light);
+    background: var(--background-success);
+    border-radius: 4px;
     font-weight: 600;
     font-size: 14px;
-    text-transform: uppercase;
     min-width: 9.29em;
     white-space: nowrap;
     cursor: pointer;
+    box-shadow: 0 3px 7px var(--transparent-dark-50);
+    transition: background .2s ease-out;
 }
 
 .ns-button,
 html .ns-navigation .navigation__right .k-menu .k-item .ns-button {
     padding: 0 2.14em;
     height: 2.57em;
-    line-height: 2.5em;
+    line-height: 2.7em;
     cursor: pointer !important;
     box-sizing: border-box;
     margin: 0 .36em;
@@ -988,17 +988,18 @@ html .ns-navigation .navigation__right > .k-menu > .k-last .ns-button {
 }
 
 .ns-button:hover {
-    color: var(--background-secondary);
+    color: var(--color-light);
+    background: var(--background-success-hover);
 }
 
 .ns-button.-action {
     color: var(--color-light);
     border-color: transparent;
-    background: var(--background-accent);
+    background: var(--background-button);
 }
 
 .ns-button.-action:hover {
-    background: var(--background-secondary);
+    background: var(--background-button-hover);
 }
 
 .ns-button.-large {
@@ -1048,6 +1049,7 @@ html .ns-navigation .navigation__right > .k-menu > .k-last .ns-button {
     display: inline-block;
     margin: 1.88em .94em 0;
     box-sizing: border-box;
+    border-radius: 12px;
     flex: 1 1 16.5em;
     cursor: default;
     transition: transform .2s ease-out;
@@ -1069,7 +1071,6 @@ a.ns-card:hover {
 
 .ns-card a {
     display: block;
-    text-transform: uppercase;
     font-size: .88em;
     font-weight: 600;
 }
@@ -1179,7 +1180,7 @@ a.ns-card:hover {
     width: 100vw;
     height: 4.29em;
     left: calc((100% - 100vw) / 2);
-    background: var(--background-dark);
+    background: var(--background-accent);
     z-index: -1;
 }
 
@@ -1213,7 +1214,7 @@ a.ns-card:hover {
 
 .footer__newsletter-frame {
     max-width: 100%;
-    height: 35px;
+    height: 42px;
     background: var(--background-light);
     box-shadow: 0 3px 6px var(--transparent-dark-15);
 }
@@ -1292,10 +1293,6 @@ a.ns-card:hover {
 
 .footer__contribute.row {
     justify-content: center;
-}
-
-.footer__contribute .ns-button {
-    background: transparent;
 }
 
 .footer__contribute:before {
@@ -1475,7 +1472,7 @@ html.ns-root textarea:-ms-input-placeholder {
     align-items: center;
     width: 100%;
     height: inherit;
-    background: var(--background-dark);
+    background: var(--background-accent);
 }
 
 #feedback-section.-detached {
@@ -1724,7 +1721,7 @@ html .tp-checkbox.-disabled .checkbox__label .checkbox__text {
 }
 
 html .tp-radio .radio__icon:before {
-    background-color: var(--background-dark);
+    background-color: var(--background-accent);
 }
 
 .tp-radio .radio__input:disabled + label .checkbox__icon,
