@@ -14,6 +14,7 @@
 
     --color-secondary: #455B66;
     --color-green: #11CC71;
+    --color-success: #20C082;
     --color-source-green: #5DB240;
     --color-error: red;
     --color-menu-secondary: #81ADFE;
@@ -22,19 +23,22 @@
     --color-accent-light: hsl(var(--hs-accent-light), 62%);
     --color-purple: hsl(var(--hs-accent), 96%);
 
-    --border-purple: #E1E4F8;
+    --border-gray: var(--transparent-dark-40);
+    --border-light-blue: #DEE8F7;
 
     --color-progress-green: #5CE500;
 
     --background-base: #F8FAFD;
-    --background-special: #F2F4FA;
+    --background-special: #F2F7FF;
 
     --background-light: var(--color-light);
     --background-accent: var(--color-accent);
     --background-button: #5783FF;
     --background-button-hover: #3B6DFD;
-    --background-success: #20C082;
+    --background-success: var(--color-success);
     --background-success-hover: #00A082;
+    --background-footer-blue: #092B66;
+    --background-footer-gray: #ECEBE9;
     --background-dark: var(--color-dark);
     --background-secondary: var(--color-secondary);
     --background-purple: var(--color-purple);
@@ -46,6 +50,7 @@
     --transparent-dark-10: rgba(var(--dark), .1);
     --transparent-dark-15: rgba(var(--dark), .15);
     --transparent-dark-20: rgba(var(--dark), .2);
+    --transparent-dark-40: rgba(var(--dark), .4);
     --transparent-dark-50: rgba(var(--dark), .5);
     --transparent-dark-60: rgba(var(--dark), .6);
     --transparent-dark-70: rgba(var(--dark), .7);
