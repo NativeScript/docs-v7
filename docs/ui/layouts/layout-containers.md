@@ -8,7 +8,7 @@ previous_url: /layout-containers
 
 # Layout Containers
 
-## [AbsoluteLayout]({%ns_cookbook ui/layouts/absolute-layout%})
+## AbsoluteLayout
 The AbsoluteLayout is the simplest layout in NativeScript. It uses absolute left-top coordinates to position its children. The AbsoluteLayout will not enforce any layout constraints on its children and will not resize them at runtime when its size changes.
 
 ### AbsoluteLayout Properties
@@ -54,7 +54,7 @@ None.
 
 ![AbsoluteLayout](../img/modules/layouts/absolute-layout2.png "AbsoluteLayout")
 
-## [DockLayout]({%ns_cookbook ui/layouts/dock-layout%})
+## DockLayout
 The DockLayout is a layout that provides a docking mechanism for child elements to the left, right, top, bottom or center of the layout. To define the docking side of a child element, use its `dock` property. To dock a child element to the center of the DockLayout, it must be the last child of the DockLayout and the `stretchLastChild` property of the DockLayout must be set to `true`.
 
 ### DockLayout Properties
@@ -124,7 +124,7 @@ _Example for multiple child elements on one side_
 
 ![DockLayout](../img/modules/layouts/dock-layout3.png "DockLayout2")
 
-## [GridLayout]({%ns_cookbook ui/layouts/grid-layout%})
+## GridLayout
 The GridLayout is a layout that arranges its child elements in a table structure of rows and columns. A cell can contain multiple child elements, they can span over multiple rows and columns, and even overlap each other. The GridLayout has one column and one row by default. To add additional columns and rows, you have to specify column definition items (separated by commas) to the `columns` property and row definition items (separated by commas) to the `rows` property of the GridLayout. The width of a column and the height of a row can be specified as an absolute amount of pixels, as a percentage of the available space or automatically:
 - **Absolute**: Fixed size of pixels.
 - **Star (\*)**: Takes as much space as available (after filling all auto and fixed sized columns), proportionally divided over all star-sized columns. So 3*/7* means the same as 30*/70*.
@@ -248,7 +248,7 @@ Label 3 has a fixed width of 150 pixels. Label 1 is given more space than it act
 
 ![GridLayout](../img/modules/layouts/grid-layout4.png "GridLayout")
 
-_Example for complex structure
+_Example for complex structure_
 `Image` has fixed width and height of 72 and span the both rows. For the first `Label` is given more space by using `colSpan="2"`. Third `Lable` is given more space than it actually needs, because fourth `Label` stretches the auto column.
 
 {% nativescript %}
@@ -400,7 +400,7 @@ export function onPageLoaded(args: EventData) {
 }
 ```
 
-## [StackLayout]({%ns_cookbook ui/layouts/stack-layout%})
+## StackLayout
 The StackLayout stacks its child elements below or beside each other, depending on its orientation. It is very useful to create lists.
 
 ### StackLayout Properties
@@ -487,7 +487,7 @@ _Example for vertical alignment of children_
 
 ![StackLayout](../img/modules/layouts/stack-layout4.png "StackLayout")
 
-## [WrapLayout]({%ns_cookbook ui/layouts/wrap-layout%})
+## WrapLayout
 The WrapLayout is similar to the StackLayout, but it does not just stack all child elements to one column/row, it wraps them to new columns/rows if no space is left. The WrapLayout is often used with items of the same size, but this is not a requirement.
 ### WrapLayout Properties
 | Property    | Description |
@@ -537,7 +537,7 @@ _Example for `orientation="vertical"`_
 
 ![WrapLayout](../img/modules/layouts/wrap-layout2.png "WrapLayout")
 
-### Sample (itemWidth="30" itemHeight="30")
+_Example for `itemWidth="30"` and `itemHeight="30"`_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -556,7 +556,7 @@ _Example for `orientation="vertical"`_
 
 ![WrapLayout](../img/modules/layouts/wrap-layout3.png "WrapLayout")
 
-## [FlexboxLayout]({%ns_cookbook ui/layouts/flexbox-layout%})
+## FlexboxLayout
 The FlexboxLayout is a non-conforming implementation of the [CSS Flexible Box Layout](https://www.w3.org/TR/css-flexbox-1/) based on an existing Apache-2 licensed flexbox implementation hosted on [github.com/google/flexbox-layout](https://github.com/google/flexbox-layout).
 
 ### FlexboxLayout Properties
@@ -581,7 +581,7 @@ The FlexboxLayout is a non-conforming implementation of the [CSS Flexible Box La
 
 > **NOTE:** On **iOS**, you **cannot set** `alignSelf` to `baseline`.
 
-_Example for `flexDirection="row"`, `alignItems="stretch"` (default)_
+_Example for `flexDirection="row"` and `alignItems="stretch"` (default)_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -600,7 +600,7 @@ _Example for `flexDirection="row"`, `alignItems="stretch"` (default)_
 
 ![FlexboxLayout](../img/modules/layouts/flexbox-layout1.png "FlexboxLayout")
 
-_Example for `flexDirection="column"`, `alignItems="stretch"` (default)_
+_Example for `flexDirection="column"` and `alignItems="stretch"` (default)_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -619,7 +619,7 @@ _Example for `flexDirection="column"`, `alignItems="stretch"` (default)_
 
 ![FlexboxLayout](../img/modules/layouts/flexbox-layout2.png "FlexboxLayout")
 
-### Sample (flexDirection="row", alignItems="flex-start")
+_Example for `flexDirection="row"` and `alignItems="flex-start"`_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -676,7 +676,7 @@ _Example for `flexWrap="wrap"`_
 
 ![FlexboxLayout](../img/modules/layouts/flexbox-layout6.png "FlexboxLayout")
 
-_Example for `flexDirection="column-reverse"`, `justifyContent="space-around"`, `alignSelf`_
+_Example for `flexDirection="column-reverse"`, `justifyContent="space-around"` and `alignItems="stretch"`_
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
