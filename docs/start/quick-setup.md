@@ -15,6 +15,8 @@ The NativeScript CLI allows you to build apps in two different ways.
 * The [**Quick Setup**](#quick-setup) allows you to build and develop NativeScript apps without installing any iOS or Android dependencies on your local machine, and is perfect for getting started.
 * The [**Full Setup**](#full-setup) walks you through installing the dependencies you need to compile iOS and Android apps locally. You’ll eventually need to complete the full setup to use certain NativeScript plugins, and to build apps for the App Store and Google Play.
 
+> **TIP**: You can read about the limitations of the quick setup [below](#quick-setup-limitations).
+
 ## Quick Setup
 
 ### Step 1: Install Node.js
@@ -24,12 +26,12 @@ The NativeScript CLI is built on [Node.js](https://nodejs.org/en/), and as such 
 To check whether you have Node.js installed, open a terminal or command prompt and execute `node --version`. If there is an error, head to  <https://nodejs.org/> and download and install the latest “LTS” (long-term support) distribution and restart your terminal or command prompt.
 
 > **TIP**:
-> * If you’re on macOS and use [Homebrew](http://brew.sh/), you can alternatively install the Node.js LTS release by running `brew update` (to download the latest updates) and then `brew install node@10` in your terminal.
+> * If you’re on macOS and use [Homebrew](http://brew.sh/), you can alternatively install the Node.js LTS release by running `brew update` (to download the latest updates) and then `brew install node@8` in your terminal.
 > * The NativeScript CLI supports a wide variety of Node.js versions, so if you already have Node.js installed you should be good to go. If, by chance, you’re running an unsupported version, the `tns doctor` command will run momentarily and flag the problem so you can upgrade.
 
-> **NOTE**: Mac users, bear in mind that you might need to add the path to `node@10/bin` manually. If you execute `node --version` and get a “command not found” error, run `echo 'export PATH="/usr/local/opt/node@10/bin:$PATH"' >> ~/.bash_profile` and restart your terminal.
+> **NOTE**: Mac users, bear in mind that you might need to add the path to `node@8/bin` manually. If you execute `node --version` and get a “command not found” error, run `echo 'export PATH="/usr/local/opt/node@8/bin:$PATH"' >> ~/.bash_profile` and restart your terminal.
 
-## Step 2: Install the NativeScript CLI
+### Step 2: Install the NativeScript CLI
 
 Open your terminal or command prompt and execute the following command to install the NativeScript CLI from 
 [npm](https://www.npmjs.com/), which is the Node.js package manager:
@@ -53,22 +55,20 @@ $ tns
 └─────────┴─────────────────────────────────────────────────────────────────────┘
 ```
 
-## Step 3: Install the NativeScript Playground app
+### Step 3: Install the NativeScript Playground app
 
-The NativeScript CLI quick setup lets you develop your apps locally, and test them on a physical Android or iOS device.
+The NativeScript CLI quick setup lets you develop your apps locally, and test them on a physical Android or iOS device. This enables some pretty cool workflows, such as allowing you to develop iOS apps on Windows or Linux development machines.
 
-So to complete the setup, download and install the **NativeScript Playground** app on your mobile device. You can search for “NativeScript Playground” on the iOS App Store or Google Play, or, use the links below.
+To enable this workflow and complete your setup, download and install the **NativeScript Playground** app on your mobile device. You can search for “NativeScript Playground” on the iOS App Store or Google Play, or, use the links below.
 
 [![](/img/start/app-store.png)](https://itunes.apple.com/us/app/nativescript-playground/id1263543946?mt=8&ls=1)
 [![](/img/start/google-play.png)](https://play.google.com/store/apps/details?id=org.nativescript.play)
 
-At this point, you’re all set. As a next step, you’ll need to [**learn the basics of the NativeScript CLI**](../start/cli-basics).
-
-Once you’ve learned the basics, feel free to return to this page and perform the full setup below, which will let you compile your NativeScript apps locally.
+At this point, you’re all set. As a next step, you’ll need to [**learn the basics of the NativeScript CLI**]({% slug cli-basics %}).
 
 ## Full Setup
 
-## Step 1: Install iOS and Android requirements
+### Step 1: Install iOS and Android requirements
 
 NativeScript builds truly native iOS and Android apps, and as such, each target platform needs setting up on your development machine. To ease the pain of installing all of these requirements manually, the `tns` command provides quick-start scripts for Windows and macOS. Let’s look at how they work.
 
@@ -79,16 +79,16 @@ NativeScript builds truly native iOS and Android apps, and as such, each target 
 >     * [Advanced setup: macOS](/start/ns-setup-os-x)
 >     * [Advanced setup: Linux](/start/ns-setup-linux)
 
-### Windows
+#### Windows
 
-#### Prerequisites
+##### Prerequisites
 * Windows 7 Service Pack 1 or later
 
-#### Setup
+##### Setup
 
 If running OS is Windows; copy and paste the script below into your command prompt as an administrator and press Enter:
 
-Please be sure that you run this command in cmd as an administator (Windows key > type "cmd" > right click > Run as Administrator).
+Please be sure that you run this command in cmd as an administrator (Windows key > type "cmd" > right click > Run as Administrator).
 
 <pre class="add-copy-button"><code class="language-terminal">@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://www.nativescript.org/setup/win'))"</code></pre>
 
@@ -97,7 +97,7 @@ During installation you may need to accept a User Account Control prompt to gran
 > **NOTE**: On Windows and Linux systems you can only use the `tns` command to develop Android apps. This is because the NativeScript CLI uses Xcode to build iOS apps, which is only available on macOS. If you’re interested in building iOS apps on Windows or Linux, you should download [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick).
 
 After the installation the system setup should have:
-* The latest stable official release of Node.js (LTS) [10.x](https://nodejs.org/dist/latest-v10.x/) 
+* The latest stable official release of Node.js (LTS) [8.x](https://nodejs.org/dist/latest-v8.x/) 
 * Google Chrome 
 * JDK 8
 * Android SDK
@@ -109,7 +109,6 @@ After the installation the system setup should have:
 
 The two environment variables `JAVA_HOME` and `ANDROID_HOME` are required for Android development, which should have been automatically added as part of the installation:
 
-
 > **NOTE** To check if `JAVA_HOME` and `ANDROID_HOME` are set:
 - close any open Command Prompt windows,
 - open a new Command Prompt
@@ -118,7 +117,7 @@ The two environment variables `JAVA_HOME` and `ANDROID_HOME` are required for An
 
 > **Tip** You can [install and use custom Android Virtual Devices](https://docs.nativescript.org/tooling/android-virtual-devices) that are emulating different API levels and screens.
 
-### macOS
+#### macOS
 
 If you’re using macOS, copy and paste the script below into your terminal and press Enter:
 
@@ -126,6 +125,23 @@ If you’re using macOS, copy and paste the script below into your terminal and 
 
 The macOS script needs administrative access to run some commands using `sudo`; therefore, you may need to provide your password several times during execution. The macOS script also may take some time to complete, as it’s installing the dependencies for both iOS and Android development. When the script finishes, close and restart your terminal.
 
-## Step 2: Verify the setup
+### Step 2: Verify the setup
 
 To verify the setup, run the `tns doctor` command which will check for any issues with the installation. If you see “No issues were detected” you’re good to go!
+
+## Quick Setup Limitations
+
+The NativeScript CLI quick setup allows you to test your applications on a Preview app that runs on your iOS or Android device(s).
+
+Although this is great for getting started, there are some limitations to using the Preview app. If you hit any of the scenarios below, you need to complete the NativeScript CLI [full setup](#full-setup) to build and run your apps.
+
+* **Plugins**
+    * The Preview app comes with a predefined set of [NativeScript plugins](https://market.nativescript.org/). If your app needs to utilize a plugin that is not present in the Preview app, you will see a warning message and your app might not work as expected.
+* **Resources**
+    * The Preview app comes with predefined set of resources, such as app icons, splash screens, and image files. If you need to work with additional files in your application’s `App_Resources` folder, you need to switch to the full setup workflow.
+* **Debugging**
+    * The Preview app does not allow you to use many of NativeScript’s [debugging tools]({% slug cli-basics %}), such as NativeScript’s [integration with the Chrome DevTools](chrome-{% slug devtools %}).
+* **Unit Tests**
+    * The Preview app does not allow you to run use [NativeScript’s unit testing workflows](%{ slug unit-testing %}).
+* **Lazy Loading**
+    * The Preview app cannot run NativeScript apps that use [Angular’s lazy loading technique]({% slug lazy-loading %}) for loading modules.
