@@ -8,11 +8,21 @@ slug: general-requirements
 
 # System Requirements
 
-This page outlines the system compatibility for the NativeScript framework, as well as recommended development environment and SDK versions. NativeScript and its tooling rely upon the iOS and Android SDKs to build and package mobile applications, so for the most parts our system requirements match theirs. 
+The NativeScript CLI offers both a **Quick Setup** for getting started quickly, and a **Full Setup** that allows you to compile iOS and Android apps locally. This page outlines the system compatibility for both setup options.
 
-## Windows Requirements
+> **NOTE**: You can read more about the quick setup and full setup options on the [CLI setup page]({% slug quick-start %}).
 
-Using a Windows system for NativeScript development requires the following software/SDK versions. 
+For the full setup option, NativeScript and its tooling rely upon the iOS and Android SDKs to build and package mobile applications, so for the most parts our system requirements match theirs. 
+
+## Quick Setup Requirements
+
+The NativeScript quick setup only requires that your development machine can run [Node.js and npm (Node Package Manager)](https://nodejs.org/en/).
+
+* [Complete the NativeScript CLI quick setup]({% slug quick-start %})
+
+## Full Setup Requirements: Windows
+
+Using a Windows system for full NativeScript development requires the following software/SDK versions. 
 
 | Component          | Recommended                    | Notes |
 |:-------------------|:-------------------------------|:------|
@@ -26,9 +36,9 @@ You should follow the steps outlined in the [Command-Line Interface Setup]({% sl
 
 People who prefer to install and configure their environment manually should follow the [Advanced Setup for Windows guide]({% slug windows %}).
 
-## macOS Requirements
+## Full Setup Requirements: macOS
 
-Using a macOS system for NativeScript development requires the following software/SDK versions.
+Using a macOS system for full NativeScript development requires the following software/SDK versions.
 
 | Component          | Recommended                   | Notes |
 |:-------------------|:------------------------------|:------|
@@ -42,9 +52,9 @@ You should follow the steps outlined in the [Command-Line Interface Setup]({% sl
 
 People who prefer to install and configure their environment manually should follow the [Advanced Setup for macOS guide]({% slug osx %}).
 
-## Linux Requirements
+## Full Setup Requirements: Linux
 
-Using a Linux system for NativeScript development requires the following software/SDK versions.
+Using a Linux system for full NativeScript development requires the following software/SDK versions.
 
 | Component          | Recommended                   | Notes |
 |:-------------------|:------------------------------|:------|
@@ -57,6 +67,7 @@ Using a Linux system for NativeScript development requires the following softwar
 To install any additionally required components and configure your environment for local development, you should follow the [Advanced Setup for Linux]({% slug linux %}) guide.
 
 ## Next Steps
+
 * Follow the [Command-Line Interface Setup]({% slug quick-start %}) guide to configure your environment for local development
 * Check the [How NativeScript Works]({% slug how-it-works %}) article to gain a better understanding of the NativeScript framework
-* Install the [NativeScript Sidekick]({% slug installation %}) client and try the cloud build service
+* Install [NativeScript Sidekick]({% slug installation %}) client and try the cloud build service.
