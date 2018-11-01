@@ -1,5 +1,5 @@
 ---
-title: Command-Line Interface Setup
+title: CLI Setup
 description: Learn how to set up the NativeScript command-line interface on Windows, macOS, and Linux development machines.
 position: 20
 slug: quick-start

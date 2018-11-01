@@ -1,5 +1,5 @@
 ---
-title: Command-Line Interface Basics
+title: CLI Basics
 position: 30
 guide: true
 description: Learn the basics of the NativeScript CLI, including how to create, run, and debug NativeScript apps.
