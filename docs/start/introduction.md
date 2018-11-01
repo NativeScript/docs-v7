@@ -25,7 +25,7 @@ Ready to get started developing with NativeScript? Here are your next steps.
 NativeScript Playground is a browser-based environment for getting started with NativeScript fast. Playground offers a set of comprehensive tutorials that walk you through building a real-world iOS and Android app from scratch.
 
 {% angular %}
-<p><a href="https://play.nativescript.org/?template=groceries-ng&tutorial=groceries-ng" class="ns-button -action">Start Tutorial</a></p>
+<p><a href="https://play.nativescript.org/?template=play-ng&tutorial=getting-started-ng" class="ns-button -action">Start Tutorial</a></p>
 {% endangular %}
 
 {% nativescript %}
