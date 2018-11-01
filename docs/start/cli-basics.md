@@ -57,13 +57,13 @@ Now that you have created an app, let’s look at how to get your new app up and
 
 > **NOTE**: To complete this section you must finish the NativeScript [CLI full setup]({% slug quick-start %}).
 
-Now that you have an app scaffolded on your local computer and you have `cd`‘ed to the root of the app, you are ready to run your application on your device.
+Now that you have an app scaffolded on your local computer, you’re ready to run your application on your device.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Use the <code>tns preview</code> command
 </h4>
 
-In NativeScript you use the CLI’s `tns preview` command to link the app you’re developing locally, to the NativeScript Playground app for your iOS or Android device. Let’s looks at how it works.
+In NativeScript you use the CLI’s `tns preview` command to link the app you’re developing locally to the NativeScript Playground app for your iOS or Android device. Let’s looks at how it works.
 
 Execute the following command in your terminal or command prompt.
 
@@ -77,20 +77,20 @@ You’ll see a QR code in your terminal that looks a little something like this.
 
 Next, open the **NativeScript Playground** app on your iOS or Android device.
 
-> **NOTE**: If you don’t already have the NativeScript Playground app, go ahead and download it from the iOS App Store or Google Play.
+> **NOTE**: If you don’t already have the NativeScript Playground app installed on your device, go ahead and download it by searching for “NativeScript Playground” in the iOS App Store or Google Play.
 
-Within the Playground app on your device, tap the **Scan QR code** option, and scan the QR code that appears in your terminal or command prompt.
+In the Playground app, tap the **Scan QR code** option, and scan the QR code that appears in your terminal or command prompt.
 
 ![](/img/start/cli-basics/scan-qr-code.png)
 
-After scanning, you should now see your app on your device.
+After scanning, you should see your app on your device.
 
 ![](/img/start/cli-basics/android/1.png)
 ![](/img/start/cli-basics/ios/1.png)
 
 <div class="exercise-end"></div>
 
-You might have noticed that the `tns preview` command never terminates. That is, you cannot type in your terminal or command prompt after your app starts up.
+Now that you have the app on your device, you might notice that the `tns preview` command in your terminal or command prompt never finished. That is, you cannot type in your terminal.
 
 ![](/img/start/cli-basics/terminal-1.png)
 
@@ -116,7 +116,7 @@ Let’s add a simple image to your app so you can see how livesync works. Open y
 {% endnativescript %}
 
 {% angular %}
-Let’s add a simple image to your app so you can see how livesync works. Open your app’s  `app/home/home.component.ts` file, and replace its contents with the following code:
+Let’s add a simple image to your app so you can see how livesync works. Open your app’s `app/home/home.component.ts` file, and replace its contents with the following code:
 
 ``` TypeScript
 import { Component } from "@angular/core";
@@ -188,7 +188,7 @@ Overall, the NativeScript CLI’s livesync process makes native iOS and Android 
 
 ### Next steps
 
-Now that you have a preview workflow set up, check out our **Build a Full App** tutorials in NativeScript Playground. You can download your tutorial project from the Playground environment and complete the tutorial locally using the `tns preview` command.
+Now that you have a preview workflow set up, check out our **Build a Full App** tutorials in NativeScript Playground. If you prefer working in a CLI environment, you can download your tutorial project from Playground and complete the tutorial locally using the `tns preview` command.
 
 {% angular %}
 <p><a href="https://play.nativescript.org/?template=groceries-ng&tutorial=groceries-ng" class="ns-button -action">Start Tutorial</a></p>
@@ -210,7 +210,7 @@ After you complete the NativeScript CLI full setup, you have the ability to comp
     <b>Exercise</b>: Use the <code>tns run</code> command
 </h4>
 
-In NativeScript you use the CLI’s `tns run` command to build your apps locally and install them on iOS or Android devices. Let’s start with Android.
+In NativeScript, you use the CLI’s `tns run` command to build your apps locally and install them on iOS or Android devices. Let’s start with Android.
 
 Execute the following command in your terminal to run your app on an Android emulator.
 
@@ -235,7 +235,7 @@ tns run ios
 
 > **NOTE**: NativeScript uses Xcode under the hood to build and run iOS apps, and Xcode is only available on macOS; therefore, you can only run iOS apps on macOS.
 
-The `run` command will again take a few seconds, as the NativeScript CLI will be building and deploying a native iOS application. When the command finishes the native emulator will open and you will see your app:
+The `run` command will again take a few seconds, as the NativeScript CLI will be building and deploying a native iOS application. When the command finishes the native simulator will open and you will see your app:
 
 ![iOS app with a blue action bar](/img/start/cli-basics/ios/4.png)
 
