@@ -6,10 +6,10 @@ position: 2
 ---
 
 # Extending Application and Activity
-This article describes how to create custom `android.app.Application` and `android.app.Activity` implementations in a NativeScript application. Demo code below is taken from the [Android Extend Sample](https://github.com/NativeScript/sample-android-extend).
+This article describes how to create custom `android.app.Application` and `android.support.v7.app.AppCompatActivity` implementations in a NativeScript application. Demo code below is taken from the [Android Extend Sample](https://github.com/NativeScript/sample-android-extend).
 
 ## Philosophy
-Because NativeScript is a JavaScript-to-Native framework, our main goal is to make as much as possible from the underlying native platforms easy to implement in JavaScript. Initially we discussed the option where developers would write Java code to achieve some more special cases like custom `android.app.Activity` implementations but then we agreed that we should explore a JavaScript approach first and only if it is not possible to fallback to native code. It turned to be pretty easy, especially with the new [Static Binding Generator (SBG)](https://www.nativescript.org/blog/details/static-binding-generator---what-is-it-good-for) tool.
+Because NativeScript is a JavaScript-to-Native framework, our main goal is to make as much as possible from the underlying native platforms easy to implement in JavaScript. Initially we discussed the option where developers would write Java code to achieve some more special cases like custom `android.support.v7.app.AppCompatActivity` implementations but then we agreed that we should explore a JavaScript approach first and only if it is not possible to fallback to native code. It turned to be pretty easy, especially with the new [Static Binding Generator (SBG)](https://www.nativescript.org/blog/details/static-binding-generator---what-is-it-good-for) tool.
 
 ## Overview
 The SBG analyzes static JavaScript files and generates the corresponding Java files (or what we call bindings). Prior to the 2.1 release, the core modules provided custom `Activity` and `Application` implementations but these were tightly coupled with the other logic within the modules, making custom implementations close to impossible to achieve. For 2.1 we made some refactoring, with the solely purpose to shape the modules more as a library rather than a framework. In other words - to decouple the `Activity` implementation from the [frame.android.ts](https://github.com/NativeScript/NativeScript/blob/master/tns-core-modules/ui/frame/frame.android.ts) file and to completely remove the need for a custom `Application` class. With these changes, the modules can now work with custom `Activity` implementations.
@@ -94,7 +94,7 @@ The following steps are needed to create custom native `android.app.Application`
     > Note: This approach won't work if `aplication.android.ts` requires external modules.
 
 ## Extending Activity
-The core modules ship with a default `android.app.Activity` implementation, which ensures they alone are sufficient to bootstrap an empty NativeScript application, without forcing users to declare their custom `Activity` in every project. When needed, however, users may still specify custom `Activity` implementation and use it to bootstrap the application. The following code demonstrates how this can be done:
+The core modules ship with a default `android.support.v7.app.AppCompatActivity` implementation, which ensures they alone are sufficient to bootstrap an empty NativeScript application, without forcing users to declare their custom `Activity` in every project. When needed, however, users may still specify custom `Activity` implementation and use it to bootstrap the application. The following code demonstrates how this can be done:
 
 1. Create a new JavaScript file in your `app` folder - name it `activity.android.js`
 
@@ -105,8 +105,8 @@ The core modules ship with a default `android.app.Activity` implementation, whic
     ```javascript
     const frame = require("tns-core-modules/ui/frame");
 
-    const superProto = android.app.Activity.prototype;
-    android.app.Activity.extend("org.myApp.MainActivity", {
+    const superProto = android.support.v7.app.AppCompatActivity.prototype;
+    android.support.v7.app.AppCompatActivity.extend("org.myApp.MainActivity", {
         onCreate: function(savedInstanceState) {
             if(!this._callbacks) {
                 frame.setActivityCallbacks(this);
@@ -143,7 +143,7 @@ The core modules ship with a default `android.app.Activity` implementation, whic
     import {setActivityCallbacks, AndroidActivityCallbacks} from "tns-core-modules/ui/frame";
 
     @JavaProxy("org.myApp.MainActivity")
-    class Activity extends android.app.Activity {
+    class Activity extends android.support.v7.app.AppCompatActivity {
         private _callbacks: AndroidActivityCallbacks;
         
         public onCreate(savedInstanceState: android.os.Bundle): void {
