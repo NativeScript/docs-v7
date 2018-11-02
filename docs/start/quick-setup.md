@@ -59,18 +59,22 @@ $ tns
 
 The NativeScript CLI quick setup lets you develop your apps locally, and test them on a physical Android or iOS device. This enables some pretty cool workflows, such as allowing you to develop iOS apps on Windows or Linux development machines.
 
-To enable this workflow and complete your setup, download and install the **NativeScript Playground** app on your mobile device. You can search for “NativeScript Playground” on the iOS App Store or Google Play, or, use the links below.
+To enable this workflow and complete your setup, download and install the **NativeScript Playground** app on your mobile device. You can search for “NativeScript Playground” on the iOS App Store or Google Play, or use the links below.
 
 [![](/img/start/app-store.png)](https://itunes.apple.com/us/app/nativescript-playground/id1263543946?mt=8&ls=1)
 [![](/img/start/google-play.png)](https://play.google.com/store/apps/details?id=org.nativescript.play)
 
-At this point, you’re all set. As a next step, you’ll need to [**learn the basics of the NativeScript CLI**]({% slug cli-basics %}).
+### Step 4: Learn the basics
+
+At this point you’re all set to get started developing NativeScript apps. As a next step, read the article below to learn the basics of the NativeScript CLI.
+
+* [**Learn the basics of the NativeScript CLI**]({% slug cli-basics %}).
 
 ## Full Setup
 
 ### Step 1: Install iOS and Android requirements
 
-NativeScript builds truly native iOS and Android apps, and as such, each target platform needs setting up on your development machine. To ease the pain of installing all of these requirements manually, the `tns` command provides quick-start scripts for Windows and macOS. Let’s look at how they work.
+With the full setup, the NativeScript CLI builds truly native iOS and Android apps locally. As such, you need to set up each target platform on your development machine. To ease the pain of installing all of these requirements manually, the `tns` command provides quick-start scripts for Windows and macOS. Let’s look at how they work.
 
 > **TIP**:
 > * Setting up your machine for native development can be tricky, especially if you’re new to mobile development. If you get stuck, or if you have questions while going through these instructions, [Stack Overflow](https://stackoverflow.com/questions/tagged/nativescript) is a great place to get help.
@@ -86,7 +90,7 @@ NativeScript builds truly native iOS and Android apps, and as such, each target 
 
 ##### Setup
 
-If running OS is Windows; copy and paste the script below into your command prompt as an administrator and press Enter:
+If you’re running Windows, copy and paste the script below into your command prompt as an administrator and press Enter:
 
 Please be sure that you run this command in cmd as an administrator (Windows key > type "cmd" > right click > Run as Administrator).
 
@@ -115,7 +119,7 @@ The two environment variables `JAVA_HOME` and `ANDROID_HOME` are required for An
 - execute `echo %JAVA_HOME%` and make sure a valid path is returned
 - execute `echo %ANDROID_HOME%` and make sure a valid path is returned
 
-> **Tip** You can [install and use custom Android Virtual Devices](https://docs.nativescript.org/tooling/android-virtual-devices) that are emulating different API levels and screens.
+> **TIP**: You can [install and use custom Android Virtual Devices](https://docs.nativescript.org/tooling/android-virtual-devices) that are emulating different API levels and screens.
 
 #### macOS
 
@@ -140,8 +144,8 @@ Although this is great for getting started, there are some limitations to using 
 * **Resources**
     * The Preview app comes with predefined set of resources, such as app icons, splash screens, and image files. If you need to work with additional files in your application’s `App_Resources` folder, you need to switch to the full setup workflow.
 * **Debugging**
-    * The Preview app does not allow you to use many of NativeScript’s [debugging tools]({% slug cli-basics %}), such as NativeScript’s [integration with the Chrome DevTools](chrome-{% slug devtools %}).
+    * The Preview app does not allow you to use many of NativeScript’s [debugging tools]({% slug cli-basics %}), such as NativeScript’s [integration with the Chrome DevTools]({% slug chrome-devtools %}).
 * **Unit Tests**
-    * The Preview app does not allow you to run use [NativeScript’s unit testing workflows](%{ slug unit-testing %}).
+    * The Preview app does not allow you to run use [NativeScript’s unit testing workflows]({% slug unit-testing %}).
 * **Lazy Loading**
     * The Preview app cannot run NativeScript apps that use [Angular’s lazy loading technique]({% slug lazy-loading %}) for loading modules.

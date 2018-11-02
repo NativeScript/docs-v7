@@ -37,7 +37,7 @@ tns create HelloWorld --template tns-template-blank-ng
 Here you’re passing two things to the `create` command: `HelloWorld` which determines the name of the app you’re creating, and the `--template` option, which tells the NativeScript CLI to scaffold an app using a predefined template named “tns-template-blank-ng”.
 {% endangular %}
 
-> **TIP**: You can use the `tns create` command to scaffold apps at a [variety of different starting points](https://market.nativescript.org/?tab=templates&category=all_templates). To try other templates, run `tns create` _without_ the `--template` option; the NativeScript CLI will walk you through selecting a template through interactive prompts.
+> **TIP**: You can use the `tns create` command to scaffold apps at a [variety of different starting points](https://market.nativescript.org/?tab=templates&category=all_templates). To try other templates, run `tns create` _without_ the `--template` option; the NativeScript CLI will walk you through selecting a template using interactive prompts.
 
 The `create` command will take a minute to complete, as the NativeScript CLI needs to download a few dependencies while setting up your new app.
 
@@ -49,7 +49,7 @@ cd HelloWorld
 
 <div class="exercise-end"></div>
 
-Now that you have created an app, let’s look at how to get your new app up and running on your device.
+Now that you’ve created an app, let’s look at how to get your new app up and running on a device.
 
 > **TIP**: You can use the `tns help` command to view the NativeScript CLI’s help documentation in your web browser.
 
@@ -57,7 +57,7 @@ Now that you have created an app, let’s look at how to get your new app up and
 
 > **NOTE**: To complete this section you must finish the NativeScript [CLI quick setup]({% slug quick-start %}).
 
-Now that you have an app scaffolded on your local computer, you’re ready to run your application on your device.
+Now that you have an app scaffolded on your local computer, you’re ready to run your application on a device.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Use the <code>tns preview</code> command
@@ -224,7 +224,6 @@ tns run android
 
 The `run` command will take a few seconds to complete, as the NativeScript CLI will actually be building and deploying a native Android application. When the command finishes the native emulator will open and you will again see your app—only this time, the app is running on a local emulator.
 
-![iOS app with a blue action bar](/img/start/cli-basics/ios/4.png)
 ![Android app with a blue action bar](/img/start/cli-basics/android/4.png)
 
 If you’re on macOS and would prefer to develop for iOS first, type `Ctrl` + `C` in your terminal to end the previous `tns run android` command, and then execute the following command instead.

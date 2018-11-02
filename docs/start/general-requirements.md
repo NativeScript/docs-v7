@@ -12,13 +12,19 @@ The NativeScript CLI offers both a **Quick Setup** for getting started quickly, 
 
 > **NOTE**: You can read more about the quick setup and full setup options on the [CLI setup page]({% slug quick-start %}).
 
-For the full setup option, NativeScript and its tooling rely upon the iOS and Android SDKs to build and package mobile applications, so for the most parts our system requirements match theirs. 
-
 ## Quick Setup Requirements
 
 The NativeScript quick setup only requires that your development machine can run [Node.js and npm (Node Package Manager)](https://nodejs.org/en/).
 
 * [Complete the NativeScript CLI quick setup]({% slug quick-start %})
+
+## Full Setup Requirements
+
+For the full setup option, NativeScript and its tooling rely upon the iOS and Android SDKs to build and package mobile applications, so for the most part our system requirements match theirs. The specific requirements depend on the operating system you’re developing on.
+
+* [Windows](#full-setup-requirements-windows)
+* [macOS](#full-setup-requirements-macos)
+* [Linux](#full-setup-requirements-linux)
 
 ## Full Setup Requirements: Windows
 
