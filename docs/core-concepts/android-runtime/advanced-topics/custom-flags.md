@@ -1,41 +1,40 @@
 ---
-nav-title: "Custom Flags"
 title: "Custom Flags"
-description: "Tuning with custom flags"
+description: "Configure various V8 engine flags in order to improve the performance of your app, or to obtain more comprehensive information during debugging"
 position: 5
 previous_url: /core-concepts/android-runtime/advanced-topics/v8-flags
+slug: custom-flags
 ---
 
+# Custom Flags
 
-## Tuning V8
+The V8 engine comes with a set of controlling flags that may be useful for fine-grained tuning. You can set these flags in the [secondary package.json configuration file]({% slug structure %}#apppackagejson). This article contains some of the available flags and short explanation on how you can use them. For a complete list of all V8 flags, see the [Flag Definitions header file](https://github.com/v8/v8/blob/6.9.247/src/flag-definitions.h) in GitHub.
 
-V8 comes with a set of controlling flags that may be useful for a fine-grained tuning. Currently, we use `--expose_gc` flag to expose global `gc()` function which comes handy in advanced memory management scenarios. You can set these flags in `package.json` configuration file.
+## Expose Garbage Collector
+
+The `--expose_gc` flag exposes a global `gc()` function which can be helpful in [advanced memory management scenarios]({% slug memory-management %}).
 
 ```JSON
 {
-	...
-	"android": {
-		"v8Flags": "--expose_gc"
-	}
-	...
+    ...
+    "android": {
+        "v8Flags": "--expose_gc"
+    }
+    ...
 }
 ```
 
-For example, here are all the flags in V8 `6.6.346` [https://github.com/v8/v8/blob/6.6.346/src/flag-definitions.h](https://github.com/v8/v8/blob/6.6.346/src/flag-definitions.h)
-
 ## Timezone Changes
 
-For improved performance V8 keeps a cache of various values used for date / time computation. This may lead to a negative side effect for the application because changes made to the current timezone will not be reflected until the application is restarted.
-
-While this is not a common requirement for most applications, under some circumstances this be needed. To enable this scenario, you can set the `handleTimeZoneChanges` flag:
+For improved performance, V8 keeps a cache of various values used for date and time computation. This may lead to a negative side effect for the application because changes made to the current timezone will not be reflected until the application is restarted. While this is not a common requirement for most applications, there are some circumstances where this behavior might be needed. To enable this scenario, you can set the `handleTimeZoneChanges` flag:
 
 ```JSON
 {
-        ...
-        "android": {
-                "handleTimeZoneChanges": true
-        }
-        ...
+    ...
+    "android": {
+        "handleTimeZoneChanges": true
+    }
+    ...
 }
 ```
 
@@ -43,15 +42,15 @@ As a result, the application will register a [BroadcastReceiver](https://develop
 
 ## Maximum Log Message Size
 
-By default all messages sent to Logcat are limited to 1024 characters and larger messages are automatically truncated. This value can be controlled with the `maxLogcatObjectSize` field:
+By default, all messages sent to Logcat are limited to 1024 characters and larger messages are automatically truncated. This value can be controlled with the `maxLogcatObjectSize` field:
 
 ```JSON
 {
-        ...
-        "android": {
-                "maxLogcatObjectSize": 2048
-        }
-        ...
+    ...
+    "android": {
+        "maxLogcatObjectSize": 2048
+    }
+    ...
 }
 ```
 
@@ -61,11 +60,11 @@ When you are using a release build there will be no logs to the console, so if y
 
 ```JSON
 {
-        ...
-        "android": {
-                "forceLog": true
-        }
-        ...
+    ...
+    "android": {
+        "forceLog": true
+    }
+    ...
 }
 ```
 
@@ -75,11 +74,10 @@ By default, if an exception is thrown when executing JavaScript code which is ca
 
 ```JSON
 {
-        ...
-	"discardUncaughtJsExceptions": true
-        ...
+    ...
+    "discardUncaughtJsExceptions": true
+    ...
 }
 ```
 
-This flag works for iOS as well.
-
+> **NOTE:** The `discardUncaughtJsExceptions` works on iOS as well. This is why in the example above the flag is not assigned to the `android` object.

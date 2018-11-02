@@ -4,100 +4,179 @@ description: Learn the basic project structure of а NativeScript application - 
 position: 120
 slug: structure
 previous_url: /structure
-environment: nativescript
 ---
 
 # Project Structure
 
-The default structure of a NativeScript project consist of a project directory that contains: `app`, `platforms`, `node_modules` directories and the `package.json` of the project. The `app` folder contains the source of the application as well as the `App_Resources` folder. `App_Resources` folder contains the platform-specific resources of the application (icons, configuration files etc.).
+{% nativescript %}
+The default structure of a blank NativeScript project consists of a root folder that contains the `app`, `platforms` and `node_modules` directories, and a `package.json` configuration file. 
+
 ```
 myApplication/
 └── app
     ├── App_Resources
     └── ...
-└── node_modules
-└── platforms
+├── node_modules
+├── platforms
 └── package.json
 ```
+{% endnativescript %}
 
-## **app** folder
+{% angular %}
+The default structure of a blank NativeScript + Angular project consists of a root folder that contains the `src`, `platforms`, `node_modules` and `hooks` directories, and several configuration files amongs which the most important is the `package.json`. 
 
-The `app` directory in the root of the project is the development space for your project. **Place all your common and platform-specific code in this directory.** When the app is prepared for a build, the NativeScript tooling copies relevant content to the platform-specific folders for each target platform.
+```
+myApplication/
+├── App_Resources
+└── src
+    ├── app
+    └── ...
+├── hooks
+├── node_modules
+├── platforms
+├── package.json
+├── tsconfig.json
+└── ...
+```
+{% endangular%} 
 
-In the `app` directory, you can use **platform-specific files** to provide customized functionality and design for each target platform. To indicate that a file is platform-specific, make sure that the file name is in the following format: `name.ios.extension` or `name.android.extension`. For example: `main.ios.js` or `main.android.js`.
+There are several other directories and configuration files that can be present in your project based on the initial template, the programming language (JavaScript or TypeScript) or the plugins that you are using in your application. This article covers the files and folders that are always present in a NativeScript project, as well as some of the more common ones that you may encounter while developing your app.
+
+## The {% nativescript %}app/{% endnativescript %}{% angular %}src/{% endangular%} directory
+
+The {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular %} directory in the root of the project is the development space for your project. **Place all your common and platform-specific code in this directory.** When the app is prepared for a build, the NativeScript tooling copies relevant content to the platform-specific folders for each target platform.
+
+In the {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular %} directory, you can use **platform-specific files** to provide customized functionality and design for each target platform. To indicate that a file is platform-specific, make sure that the file name is in the following format: `name.ios.extension` or `name.android.extension`. For example: `main.ios.js` or `main.android.js`.
 
 You can develop shared functionality or design in common files. To indicate that a file is common, make sure that the file name does not contain a `.android.` or `.ios.` string.
 
-## **App_Resources** folder
+{% nativescript %}In the `app` folder, you will also find the `App_Resources` directory.{% endnativescript %}
 
-App_Resources folder contains the platform specific resources of the application (icons, configuration files etc.).
+### {% nativescript %}app{% endnativescript %}{% angular %}src{% endangular %}/package.json
 
-The configuration files that are respected by NativeScript tooling are respectively `app/App_Resources/AndroidManifest.xml` for Android and `app/App_Resources/Info.plist` for iOS.
+This is a secondary `package.json` file in which you can specify the entry point file of the application and also several [Android-specific custom flags]({% slug custom-flags %}). Below is an example of a basic secondary `package.json` file.
 
-Additionally, you can modify `app/App_Resources/build.xcconfig` and `app/App_Resources/app.gradle` for adding/removing additional build properties for iOS and Android, respectively.
-
-## **platforms** folder
-
-The `platforms` directory is created when you start a build or add a target platform to your project, the NativeScript tooling creates a new subdirectory with the platform name. These subdirectories have the platform-specific project structure required for native development with the native SDKs for the platform. When the project is prepared for build, the NativeScript tooling copies relevant content from the `app` directory to the platform-specific subdirectory for each target platform.
-
-**IMPORTANT:** Avoid editing files located in the `platforms` subdirectory because the NativeScript CLI overrides such files during the `prepare <Platform>` using the contents of the `app` directory.
-
-## **package.json** file
-
-This file contains a `nativescript.id` key that provides information about the application identifier. The `nativescript.tns-android.version` and `nativescript.tns-ios.version` provide the versions of the respective runtime (if the platform is targeted by the application). If these properties are missing NativeScript tooling will add them on the first run/build of the application.
-
-The package.json file also contains information about npm packages (including [NativeScript plugins]({%slug plugins-infrastructure %})) inside `dependencies` and `devDependencies` keys.
-
-## **nsconfig.json** file
-
-The `nsconfig.json` is an optional configuration file, located at the root project directory on the same level as the project's package.json file. This file makes it possible for users to modify the structure of their application. The available configurations are `appPath` and `appResourcesPath`. For example:
-
-```
+{% nativescript %}
+```JSON
 {
-    "appPath": "code/src",
-    "appResourcesPath": "resources"
+    "main": "app.js",
+    "android": {
+        "v8Flags": "--expose_gc",
+        "forceLog": true,
+        "discardUncaughtJsExceptions": true
+    }
+}
+```
+{% endnativescript %}
+{% angular %}
+```JSON
+{
+    "main": "main.js",
+    "android": {
+        "v8Flags": "--expose_gc",
+        "forceLog": true,
+        "discardUncaughtJsExceptions": true
+    }
+}
+```
+{% endangular %}
+
+##{% nativescript %}# app/{% endnativescript %}App_Resources
+
+The `App_Resources` folder contains the platform-specific resources of the application (icons, configuration files etc.). The configuration files that are respected by the NativeScript tooling are the `App_Resources/Android/src/main/AndroidManifest.xml` for Android, and the `App_Resources/iOS/Info.plist` for iOS.
+
+Additionally, you can modify the `App_Resources/iOS/build.xcconfig` or `App_Resources/Android/app.gradle` to add or remove additional build properties for the iOS and Android platforms, respectively.
+
+## The **platforms** directory
+
+The `platforms` directory is created when you start a build or add a target platform to your project. The NativeScript tooling creates a new subdirectory with the respective platform name. These subdirectories have the platform-specific project structure required for native development with the native SDKs of the platform. When the project is prepared for build, the NativeScript tooling copies relevant content from the {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} directory to the platform-specific subdirectory for each target platform.
+
+> **IMPORTANT:** Avoid editing files located in the `platforms` subdirectories because the NativeScript CLI overrides them with the content of the {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} directory during the `prepare <Platform>` process.
+
+## The **package.json** file
+
+The main `package.json`, which is located in the root directory of the project, contains details about the application, its dependencies and other helpful information. You can set [common npm package.json properties](https://docs.npmjs.com/files/package.json) like `author`, `description` and `version`, or specify the npm packages and [NativeScript plugins]({% slug plugins-infrastructure %}) on which your app depends by modifying the `dependencies` and `devDependencies` attributes.
+
+The root `package.json` also contains several NativeScript-specific properties which are placed inside the `nativescript` object:
+
+* **id** - Specifies the unique application identifier (App ID) of the app. To be able to build for both Android and iOS, your App ID must be unique and contain two or more strings, separated by a dot. Each string must start with a letter and should contain only letters and numbers. The app identifier must not start with an uppercase letter. (!!!!! LINK DOCUMENT ABOUT SEPARATE IDENTIFIERS -> NS 5.0 release)
+* **tns-android.version** - Specifies the version of the Android runtime. If the property is missing, the latest version of the runtime will be added on the first run or build for Android.
+* **tns-ios.version** - Specifies the version of the iOS runtime. If the property is missing, the latest version of the runtime will be added on the first run or build for iOS.
+
+Here is an example of a basic main `package.json` file:
+
+```JSON
+{
+    "nativescript": {
+        "id": "org.nativescript.myApplication",
+        "tns-android": {
+            "version": "5.0.0"
+        },
+        "tns-ios": {
+            "version": "5.0.0"
+        }
+    },
+    "description": "My NativeScript Application",
+    "license": "MIT",
+    "repository": "https://github.com/myApplication",
+    "dependencies": {
+        "nativescript-theme-core": "~1.0.4",
+        "tns-core-modules": "~5.0.0"
+    },
+    "devDependencies": {
+        "nativescript-dev-typescript": "~0.7.0",
+        "typescript": "~2.7.2"
+    },
+    "readme": "My NativeScript Application"
 }
 ```
 
-Both paths must be relative to the project root (where the "package.json" file and "platforms" directory are located) in order everything to work as expected.
+## The **hooks** directory
 
-If `appPath` is omitted CLI will assume the application files are located inside a folder called "app" inside the project folder.
+The `hooks` folder exists only when the project depends on plugins that require a hook to function properly. Hooks are executable pieces of code or Node.js scripts that are used to alter or augment the behavior of an extendable NativeScript CLI command. For more information about hooks and how to use them in NativeScript, see [Extending the CLI](https://github.com/NativeScript/nativescript-cli/blob/master/extending-cli.md).
 
-If `appResourcesPath` is omitted the CLI will assume that they are at their default location - folder called `App_Resources` inside the folder containing the rest of the app files.
+Some of the more common plugins that have hooks are `nativescript-dev-webpack`, `nativescript-dev-typescript` and `nativescript-dev-sass`.
 
-### Examples
-Let's assume the project is located at "/d/work/myApplication".
+## The **tsconfig.json** file
 
-1. The first option is to have only the app location specified:
+The `tsconfig.json` file is present only in projects that use TypeScript. The file works as a guide during the [transpilation]({% slug transpilers %}) of TypeScript to JavaScript. You can fine-tune the transpilation process by configuring the various [compiler options](https://www.typescriptlang.org/docs/handbook/compiler-options.html). For more information about `tsconfig.json`, see the official [TypeScript documentation](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
+
+## The **nsconfig.json** file
+
+The `nsconfig.json` is an optional configuration file, located at the root project directory on the same level as the main `package.json` file. This file makes it possible for users to modify the structure of their application. The available configurations are `appPath` and `appResourcesPath`.
+
+Both paths must be relative to the project root (where the `package.json` file and `platforms` directory are located) in order everything to work as expected. If `appPath` is omitted, the CLI will assume the application files are located inside a folder called {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} inside the project folder. If `appResourcesPath` is omitted, the CLI will assume that they are at their default location - a folder called `App_Resources` inside the folder containing the rest of the app files.
+
+> **Important:** To use an `nsconfig.json` file in your project, you must ensure that it meets the following requirements:
+* NativeScript CLI >= 4.0.0
+* Android Runtime >= 4.0.0
+* nativescript-dev-sass >= 1.3.6 (if used in the application)
+* nativescript-dev-webpack >= 0.10.1 (if used in the application)
+
+### **nsconfig.json** examples
+
+Let's assume the project is located at `/d/work/myApplication`.
+
+* The first and default option is to not have an `nsconfig.json` file inside your project. In this case, the app will be located at `/d/work/myApplication/app` and the resources at `/d/work/myApplication/app/App_Resources`.
+
+* The second option is to specify only the app directory. The example given below will result in an app located at `/d/work/myApplication/code/src` and resources at `/d/work/myApplication/code/src/App_Resources`.
     ```JSON
     {
         "appPath": "code/src"
     }
     ```
-    This will result in app located at `/d/work/myApplication/code/src` and resources located at `/d/work/myApplication/code/src/App_Resources`.
 
-2. The second option is to have only the app resources location specified:
+* The third option is to specify only the app resources directory. The exanple given below will result in an app located at `/d/work/myApplication/app` and resources at `/d/work/myApplication/resources`.
     ```JSON
     {
         "appResourcesPath": "resources"
     }
     ```
-    This will result in app located at `/d/work/myApplication/app` and resources located at `/d/work/myApplication/resources`.
 
-3. The third option is to have both the app folder and resources folder location specified:
+* The fourth option is to specify both the app folder and resources directories. The example given below will result in an app located at `/d/work/myApplication/code/src` and resources at `/d/work/myApplication/resources`.
     ```JSON
     {
         "appPath": "code/src",
         "appResourcesPath": "resources"
     }
     ```
-    This will result in app located at `/d/work/myApplication/code/src` and resources located at `/d/work/myApplication/resources`.
-
-4. The fourth option is to not have an `nsconfig.json` file inside your project. This is the default option when creating a new project. Тhe app will be located at `/d/work/myApplication/app` and resources at `/d/work/myApplication/app/App_Resources`
-
-### Requirements
-
-* nativescript >= 4.0.0
-* Android Runtime >= 4.0.0 (if the application targets Android platform)
-* nativescript-dev-sass >= 1.3.6 (if used by the application)
-* nativescript-dev-webpack >= 0.10.1 (if used by the application)
