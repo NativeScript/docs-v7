@@ -55,7 +55,7 @@ Now that you have created an app, let’s look at how to get your new app up and
 
 ## Running apps—quick setup
 
-> **NOTE**: To complete this section you must finish the NativeScript [CLI full setup]({% slug quick-start %}).
+> **NOTE**: To complete this section you must finish the NativeScript [CLI quick setup]({% slug quick-start %}).
 
 Now that you have an app scaffolded on your local computer, you’re ready to run your application on your device.
 
@@ -63,7 +63,7 @@ Now that you have an app scaffolded on your local computer, you’re ready to ru
     <b>Exercise</b>: Use the <code>tns preview</code> command
 </h4>
 
-In NativeScript you use the CLI’s `tns preview` command to link the app you’re developing locally to the NativeScript Playground app for your iOS or Android device. Let’s looks at how it works.
+In NativeScript you use the CLI’s `tns preview` command to link the app you’re developing locally to the NativeScript Playground app for your iOS or Android device. Let’s look at how it works.
 
 Execute the following command in your terminal or command prompt.
 
