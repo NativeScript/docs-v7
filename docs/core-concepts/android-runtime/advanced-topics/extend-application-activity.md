@@ -6,7 +6,9 @@ position: 2
 ---
 
 # Extending Application and Activity
-This article describes how to create custom `android.app.Application` and `android.support.v7.app.AppCompatActivity` implementations in a NativeScript application. Demo code below is taken from the [Android Extend Sample](https://github.com/NativeScript/sample-android-extend).
+This article describes how to create custom `android.app.Application` and `android.support.v7.app.AppCompatActivity` implementations in a NativeScript application. 
+
+> **Note**: Demo code below is taken from the Android Extend demos for [plain JavaScript](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/JavaScriptApp/app/activity.android.js), [TypeScript](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/TypeScriptApp/app/activity.android.ts) or [Angular](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/app/activity.android.ts) applications.
 
 ## Philosophy
 Because NativeScript is a JavaScript-to-Native framework, our main goal is to make as much as possible from the underlying native platforms easy to implement in JavaScript. Initially we discussed the option where developers would write Java code to achieve some more special cases like custom `android.support.v7.app.AppCompatActivity` implementations but then we agreed that we should explore a JavaScript approach first and only if it is not possible to fallback to native code. It turned to be pretty easy, especially with the new [Static Binding Generator (SBG)](https://www.nativescript.org/blog/details/static-binding-generator---what-is-it-good-for) tool.
