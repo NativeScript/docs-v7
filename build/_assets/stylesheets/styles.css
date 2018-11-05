@@ -156,7 +156,8 @@ article img {
     max-width: 100%;
 }
 
-h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
+h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a,
+h1 > a:hover, h2 > a:hover, h3 > a:hover, h4 > a:hover, h5 > a:hover, h6 > a:hover {
     top: 80px;
     width: auto;
     color: var(--color-dark);
@@ -302,7 +303,7 @@ html.ns-state-scrolled .ns-navigation:before {
     align-items: center;
 }
 
-.ns-navigation .navigation__right > .k-menu > .k-item .k-link {
+.navigation__right > .k-menu > .k-item .k-link {
     color: inherit;
     padding: 0 1.5em;
 }
@@ -353,12 +354,46 @@ html .ns-navigation .k-menu .k-menu-group {
     padding: .5em 0 .7em;
     text-align: left;
     min-width: 12.8em;
-    box-shadow: 0 3px 6px var(--transparent-dark-15);
+    box-shadow: 0 20px 40px var(--transparent-dark-20);
+    border-radius: 5px;
+}
+
+html .ns-navigation .k-menu .k-menu-group:before {
+    content: "";
+        display: block;
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        width: 80px;
+        height: 40px;
+        margin-left: -40px;
+        background: radial-gradient(circle at bottom left,transparent 0,transparent 68.5%,#fff 70.5%),
+                    radial-gradient(circle at bottom right,transparent 0,transparent 68.5%,#fff 70.5%);
+        background-position: 0 100%,100% 100%,100% 0,0 0;
+        background-size: 51% 100%;
+        background-repeat: no-repeat;
+        transform: scaleY(-1) scale(.35);
 }
 
 html .ns-navigation .k-menu-group .k-item .k-link {
-    line-height: 2.2em;
-    padding: 0 1.1em;
+    line-height: 3em;
+    font-size: .92em;
+    font-weight: 600;
+    color: var(--color-secondary);
+}
+
+html .ns-menu > .k-item {
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+html .ns-navigation .k-animation-container {
+    padding: 40px .71em .71em;
+    left: auto !important;
+    min-width: 100%;
+    text-align: left;
+    margin-top: -50px;
 }
 
 html .k-panelbar .k-group,
@@ -390,12 +425,6 @@ html .k-panelbar .k-group {
 html .k-panelbar-collapse.k-icon,
 html .k-panelbar-expand.k-icon {
     right: 8px;
-}
-
-html .ns-navigation .k-animation-container {
-    padding: 0 .71em .71em;
-    margin-left: -.71em;
-    min-width: 100%;
 }
 
 .ns-menu-trigger {
@@ -617,7 +646,7 @@ html .k-treeview-lines > .k-item > .k-group > .k-item > .k-group .k-in {
 }
 
 html .k-treeview-lines > .k-item > .k-group > .ns-state-expanded {
-    border: solid var(--border-gray);
+    border: solid var(--border-light-blue);
     border-width: 1px 0;
     background: var(--background-special);
 }
@@ -893,6 +922,10 @@ html .nd-code-container .k-link {
     padding: 5px 0;
     color: var(--color-accent);
     border-bottom: 3px solid transparent;
+}
+
+.nd-code-container .k-tabstrip-items {
+    margin-bottom: .5em;
 }
 
 html .nd-code-container .k-tabstrip-items .k-state-active .k-link {
@@ -1387,6 +1420,7 @@ html .fb_iframe_widget {
 
 
 .footer__newsletter-frame {
+    border: 0;
     max-width: 100%;
     height: 42px;
     background: var(--background-light);
@@ -1635,6 +1669,7 @@ html.ns-root textarea:-ms-input-placeholder {
     flex: 1;
     display: flex;
     align-items: center;
+    padding-right: 35px;
 }
 
 #feedback-section {
@@ -1994,7 +2029,8 @@ pre[class*="language-"] {
     padding: 20px;
     margin: 0 0 20px;
     overflow: auto;
-    border: 1px solid var(--border-gray);
+    background: var(--color-light);
+    border: 1px solid var(--border-light-blue);
 }
 
 /* Inline code */
@@ -2105,7 +2141,7 @@ html .-landing .gsc-control-cse {
 
 .gsc-input-box table,
 .gsc-input-box tr {
-    height: 31px;
+    height: 36px;
 }
 
 .-landing .gsc-input-box table,
@@ -2340,6 +2376,13 @@ html .gsc-result .gs-title {
     }
 }
 
+@media only screen and (min-width: 1450px) {
+    #feedback-buttons-container,
+    #feedback-submitted-container {
+        padding-right: 0;
+    }
+}
+
 @media only screen and (max-width: 1280px) {
     html {
         font-size: 14px;
@@ -2456,6 +2499,11 @@ html .gsc-result .gs-title {
 
     .right-nav__tree .ns-state-selected:before {
         left: -2.87em;
+    }
+
+    #feedback-buttons-container,
+    #feedback-submitted-container {
+        padding-right: 0;
     }
 }
 

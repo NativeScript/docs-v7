@@ -82,6 +82,7 @@ function initNSMenu() {
         },
         closeOnClick: true,
         animation: { open: {
+            effects: "fadeIn",
             duration: 100
         }}
     }).appendTo(".navigation__right");
