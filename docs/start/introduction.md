@@ -36,13 +36,13 @@ NativeScript Playground is a browser-based environment for getting started with 
 
 Once you have the basics of NativeScript down in Playground, you need to set up a local development environment that lets you build and test your apps locally. To do that you’ll want to go through our documentation on installing the NativeScript command-line interface.
 
-<p><a href="../start/quick-setup" class="ns-button -action">Install the NativeScript CLI</a></p>
+<p><a href="../start/quick-setup">Install the NativeScript CLI</a></p>
 
 ## Step #3: Learn the NativeScript Command-Line Interface Basics
 
 Now that you have the NativeScript CLI installed, you’ll want to learn the basics of how the CLI works, including how to run, build, and debug your apps.
 
-<p><a href="../start/cli-basics" class="ns-button -action">Learn the CLI Basics</a></p>
+<p><a href="../start/cli-basics">Learn the CLI Basics</a></p>
 
 ## Step #4: Join the NativeScript Community
 
