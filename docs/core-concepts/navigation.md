@@ -89,7 +89,7 @@ export function createPage(): Page {
 
     const page = new Page();
     // Each page can have a single root view set via the content property
-    page.content = label;
+    page.content = stack;
     return page;
 }
 ```
