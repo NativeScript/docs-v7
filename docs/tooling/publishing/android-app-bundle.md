@@ -49,7 +49,7 @@ if (env.snapshot) {
 }
 ```
 
-The 2 important switches to note here are `useLibs: true` (which instructs the plugin to produce a `.so` file) and `androidNdkPath` (make sure you point this to a folder containing Android NDK r12b).
+The two important switches to note here are `useLibs: true` (which instructs the plugin to produce a `.so` file) and `androidNdkPath` (make sure you point this to a folder containing Android NDK r12b).
 
 One final thing before building the application is to instruct gradle to actually include the resulting snapshot into the final apk. This can be done in your `App_Resources/Android/app.gradle`:
 
