@@ -36,6 +36,8 @@ However if you want to improve the performance of your application with the `nat
 
 The default file format that the `nativescript-dev-webpack` plugin produce when you execute `tns build  android --bundle --env.uglify --env.snapshot` is a `.blob` file.
 
+> Note: The snapshot generation feature is limited to macOS and Linux platforms due to inability to build `mksnapshot` tool running on Windows. Currently, the --env.snapshot flag is ignored on Windows.
+
 For each of the architectures that you specify in your `webpack.config.js`, the plugin will produce a `snapshot.blob` file inside `assets/snapshots/${target_arch}/snapshot.blob`. Those files are **not** subject to ABI splits and you will find a corresponding `blob` for each architecture in the resulting .apk split file. I suppose this is the behavior you are currently experiencing.
 
 If you want to take advantage of ABI splits you will need to instruct the `nativescript-dev-webpack` plugin to produce a `.so` snapshot. For this purpose you will need to have the Android NDK installed on your system. It is strongly recommended that the same version of the NDK is used to produce the snapshot file as the one used to compile the {N} runtime itself. Currently we use NDK r16b.
