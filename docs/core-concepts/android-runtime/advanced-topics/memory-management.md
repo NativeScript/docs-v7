@@ -1,11 +1,11 @@
 ---
-nav-title: "Memory Management"
 title: "Memory Management"
-description: "Advanced Memory Management"
+description: "Best practices and recommendations on how to improve the performance of your NativeScript mobile app by tuning the memory management"
 position: 4
+slug: memory-management
 ---
 
-> **Note:** This is an experimental feature and some details may change in future.
+> **NOTE:** This is an experimental feature and some details may change in future.
 
 # Introduction
 
