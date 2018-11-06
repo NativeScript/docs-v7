@@ -26,7 +26,7 @@ android {
 ## Additional optimizations
 If you want to improve the performance of your application with the `nativescript-dev-webpack` plugin you might want to make some additional changes.
 
-The default file format that the `nativescript-dev-webpack` plugin produce when you execute `tns build  android --bundle --env.uglify --env.snapshot --aab` is a `.blob` file.
+The default file format that the `nativescript-dev-webpack` plugin produces when you execute `tns build  android --bundle --env.uglify --env.snapshot --aab` is a `.blob` file.
 
 > Note: The snapshot generation feature is limited to macOS and Linux platforms due to inability to build `mksnapshot` tool running on Windows. Currently, the --env.snapshot flag is ignored on Windows.
 
