@@ -104,7 +104,7 @@ function initPanelBar() {
     menu.kendoPanelBar({
             expandMode: "single"
         })
-        .prependTo(".navigation__right")
+        .prependTo(".ns-navigation")
         .click(function(e) {
             e.stopPropagation();
         });
