@@ -139,7 +139,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.36em;
 }
 
-article h1, article h2, article h3, article h4, article h5, article h6 {
+article h1, article h4, article h5, article h6 {
     margin-top: 0;
 }
 
@@ -196,12 +196,13 @@ html .k-window-title {
 }
 
 h2 {
-    line-height: 1.5em;
+    margin: .6em 0 3em;
 }
 
 h3 {
     font-size: 1.75rem;
     line-height: 1.28em;
+    margin: .8em 0 3.7em;
 }
 
 h4 {
