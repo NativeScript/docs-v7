@@ -6,10 +6,10 @@ slug: android-app-bundle
 ---
 
 # Android App Bundle
-Android App Bundle is a new publishing format which makes it easier to reduce the size of application download from Google Play Store, without uploading multiple `.apk` files.
+An Android App Bundle is a new publishing format that contains all the compiled code and resources of your app, but leaves the actual APK generation and signing to Google Play. The store then uses the app bundle to generate and serve optimized APKs based on the device configuration of the specific user. In general, the benefit of using Android App Bundles is that you no longer have to build, sign, and manage multiple APKs to support different devices, and users get smaller, more optimized downloads. For more information about the Android App Bundle, see the About Android App Bundles article in the official [Android Developer documentation](https://developer.android.com/guide/app-bundle/).
 
 ## Available configurations
-By default 'arm64-v8a' CPU architecture is excluded from the build of NativeScript application. The following configuration will enable it, but there is a chance that on older devices with this architecture this might affect the startup times.
+By default, the 'arm64-v8a' CPU architecture is excluded from the build of NativeScript application. The following configuration will enable it, but there is a chance that on older devices with this architecture this might affect the startup times.
 
 ```
 android {
@@ -24,15 +24,15 @@ android {
 ```
 
 ## Additional optimizations
-If you want to improve the performance of your application with the `nativescript-dev-webpack` plugin you might want to make some additional changes.
+The performance and size of the application can be improved even further by configuring the `nativescript-dev-webpack` plugin.
 
 The default file format that the `nativescript-dev-webpack` plugin produces when you execute `tns build  android --bundle --env.uglify --env.snapshot --aab` is a `.blob` file.
 
-> Note: The snapshot generation feature is limited to macOS and Linux platforms due to inability to build `mksnapshot` tool running on Windows. Currently, the --env.snapshot flag is ignored on Windows.
+> Note: The snapshot generation feature is limited to macOS and Linux platforms due to inability to build the `mksnapshot` tool when running on Windows. Currently, the --env.snapshot flag is ignored on Windows.
 
 For each of the architectures that you specify in your `webpack.config.js`, the plugin will produce a `snapshot.blob` file inside `assets/snapshots/${target_arch}/snapshot.blob`. Those files are **not** subject to Android App Bundle and you will find a corresponding `blob` for each architecture in the resulting `.apks`. This will increase the size of the resulting `.apks`.
 
-If you want to take advantage of Android App Bundle you will need to instruct the `nativescript-dev-webpack` plugin to produce a `.so` snapshot. For this purpose you will need to have the Android NDK installed on your system. It is strongly recommended that the same version of the NDK is used to produce the snapshot file as the one used to compile the {N} runtime itself. Currently we use NDK r16b.
+If you want to take advantage of Android App Bundle you will need to instruct the `nativescript-dev-webpack` plugin to produce a `.so` snapshot. For this purpose, you will need to have the Android NDK installed on your system. It is strongly recommended that the same version of the NDK is used to produce the snapshot file as the one used to compile the {N} runtime itself. Currently we use NDK r16b.
 
 And here are the necessary changes that you need to do in your `webpack.config.js` in order to enable `.so` snapshot file generation:
 
