@@ -238,7 +238,7 @@ $(function(){
             }
 
             $(this)
-                .prepend("<button class='copy-button ns-button' title='Copy to clipboard'>Copy</button>")
+                .prepend("<button class='copy-button ns-button -hollow' title='Copy to clipboard'></button>")
                 .wrap("<div class='ns-copy-container'></div>");
         });
     }

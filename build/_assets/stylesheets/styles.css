@@ -840,6 +840,7 @@ html body .side-nav__tree {
     opacity: 1;
 }
 
+.copy-button.ns-button:before,
 .right-nav__label:before {
     content: "\f100";
     font-family: "Font Awesome 5 Pro";
@@ -997,14 +998,16 @@ blockquote > *:last-child {
     display: inline-block;
     color: var(--color-light);
     background: var(--background-success);
+    border: 0;
     border-radius: 4px;
     font: 14px Avenir;
     font-weight: 600;
     min-width: 9.29em;
     white-space: nowrap;
     height: 2.86em;
-    line-height: 3.2em;
+    line-height: 3.15em;
     cursor: pointer;
+    vertical-align: top;
     box-shadow: 0 3px 7px var(--transparent-dark-15);
     transition: background .2s ease-out;
 }
@@ -1019,13 +1022,13 @@ html .ns-navigation .navigation__right .k-menu .k-item .ns-button {
 
 .footer__contribute > .ns-button,
 html .ns-navigation .navigation__right .k-menu .k-item .ns-button {
-    height: 2.2em;
-    line-height: 2.5em;
+    height: 2.25em;
+    line-height: 2.45em;
 }
 
 html .ns-navigation .navigation__right .k-menu .k-item .ns-button {
     margin-left: 20px;
-    font-size: inherit;
+    font-size: 1.05em;
 }
 
 .ns-button:last-of-type,
@@ -1054,7 +1057,7 @@ html .ns-navigation .navigation__right > .k-menu > .k-last .ns-button {
 
 .ns-button.-large {
     height: 3em;
-    line-height: 3.3em;
+    line-height: 3.15em;
 }
 
 .ns-button.-hollow {
@@ -1064,6 +1067,11 @@ html .ns-navigation .navigation__right > .k-menu > .k-last .ns-button {
     box-shadow: none;
 }
 
+.ns-button.-hollow:hover {
+    color: var(--background-button-hover);
+    background: var(--background-special);
+}
+
 /* Copy Button */
 
 .ns-copy-container {
@@ -1071,11 +1079,20 @@ html .ns-navigation .navigation__right > .k-menu > .k-last .ns-button {
 }
 
 .copy-button.ns-button {
-    font-size: 12px;
+    font-size: 11px;
     position: absolute;
     right: 20px;
     top: 14px;
     display: none;
+    min-width: 0;
+    padding: 0 1em;
+}
+
+.copy-button.ns-button:before {
+    content: "\f0c5";
+    font-size: 1.4em;
+    line-height: 2.1em;
+    display: block;
 }
 
 .ns-copy-container:hover .copy-button {
@@ -1510,7 +1527,7 @@ html .fb_iframe_widget {
 }
 
 .footer__contribute .ns-button {
-    font-size: .95em;
+    font-size: .9em;
 }
 
 .footer__contribute > * {
@@ -1606,6 +1623,10 @@ html .k-window-title {
 .feedback-extw__textarea {
     margin: 10px 0 20px;
     width: 100%;
+}
+
+.feedback-extw__foot {
+    margin-top: 15px;
 }
 
 html.ns-root input::-webkit-input-placeholder,
@@ -1864,6 +1885,7 @@ html.ns-root textarea:-ms-input-placeholder {
 }
 
 .tp-checkbox .checkbox__icon {
+    align-self: flex-start;
     border: 1px solid var(--color-dark);
     border-radius: 3px;
 }
@@ -2288,7 +2310,7 @@ html .gsc-results-wrapper-overlay {
     background: var(--background-base);
     width: 100%;
     height: auto;
-    top: 4.6em;
+    top: 4.2em;
     left: 0;
     bottom: 0;
     padding: 0 50px;
