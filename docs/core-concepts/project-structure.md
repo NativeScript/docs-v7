@@ -23,7 +23,7 @@ myApplication/
 {% endnativescript %}
 
 {% angular %}
-The default structure of a blank NativeScript + Angular project consists of a root folder that contains the `src`, `platforms`, `node_modules` and `hooks` directories, and several configuration files amongs which the most important is the `package.json`. 
+The default structure of a blank NativeScript + Angular project consists of a root folder that contains the `src`, `platforms`, `node_modules` and `hooks` directories, and several configuration files amongst which the most important is the `package.json`. 
 
 ```
 myApplication/
@@ -166,7 +166,7 @@ Let's assume the project is located at `/d/work/myApplication`.
     }
     ```
 
-* The third option is to specify only the app resources directory. The exanple given below will result in an app located at `/d/work/myApplication/app` and resources at `/d/work/myApplication/resources`.
+* The third option is to specify only the app resources directory. The example given below will result in an app located at `/d/work/myApplication/app` and resources at `/d/work/myApplication/resources`.
     ```JSON
     {
         "appResourcesPath": "resources"

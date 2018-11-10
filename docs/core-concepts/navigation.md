@@ -1087,7 +1087,7 @@ When we make backward navigation while tapping on the back button the events wil
 
 ![navigation-events-backwards](../img/navigation/navigation-events-backwards.png?raw=true)
 
-> With the `navigatingTo` and `navigatedTo`, we can access also `isBackNavigation` property(e.g. `navigatedFrom(args){ console.log("Is back navigation " + args.isBackNavigation); }`). The property will return boolean value. The returned value will be `false`, while maing forward navigation and `true` on back navigation.
+> With the `navigatingTo` and `navigatedTo`, we can access also `isBackNavigation` property(e.g. `navigatedFrom(args){ console.log("Is back navigation " + args.isBackNavigation); }`). The property will return boolean value. The returned value will be `false`, while making forward navigation and `true` on back navigation.
 
 ## UI component lifecycle events
 All NativeScript UI components provide a number of lifecycle events: `loaded`, `layoutChanged` and `unloaded`. The following chart displays the execution order of the events fired on each component on a given page. In the following sections, we will review each event in detail.
@@ -1128,7 +1128,7 @@ exports.onLoaded = onLoaded;
 ```
 
 ### layoutChanged
-The `layoutChanged` event will be fired when the UI component layout is finished. This provides the opportinity to collect the actual size and position of the component. Changing the size or position of a component will force a fresh layout, which will cause the event ot fire again.
+The `layoutChanged` event will be fired when the UI component layout is finished. This provides the opportunity to collect the actual size and position of the component. Changing the size or position of a component will force a fresh layout, which will cause the event to fire again.
 
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
