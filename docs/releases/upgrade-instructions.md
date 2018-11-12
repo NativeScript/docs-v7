@@ -12,6 +12,7 @@ To upgrade a NativeScript application you need to upgrade several things: Native
 
 ## Upgrading the NativeScript tools
 
+The below command demonstrates how to upgrade your NativeScript tools known also as NativeScript CLI.
 You should first upgrade your `tns` (or `nativescript`) command, so go to a command prompt or bash/terminal prompt and type:
 
 ```
@@ -42,6 +43,8 @@ You can also switch to specific version by passing it to the command:
 ```
 tns update 2.3.0
 ```
+
+> **Note:** The command `tns update` is updating the `tns-core-modules` and the runtimes (`tns-android` and `tns-ios`). The command is combining the next two commands in this article (`tns platform add` and `npm i tns-core-modules`).
 
 ## Upgrading platforms
 
@@ -85,6 +88,16 @@ npm i nativescript-dev-typescript@latest --save-dev
 ./node_modules/.bin/ns-upgrade-tsconfig
 ```
 
+## Upgrading Angular dependencies
+
+The Angular plugin is available as an npm package named [nativescript-angular](https://www.npmjs.com/package/nativescript-angular). To update the version of the plugin and the related dependency, the package should be explicitly installed, and the related Angular dependencies should be updated accordingly. To ease the update process, the plugin comes with an automated script `update-app-ng-deps` located in `<project-folder/node_modules/.bin>` folder.
+
+```
+npm i nativescript-angular@latest --save
+./node_modules/.bin/update-app-ng-deps
+npm i
+```
+
 ## Upgrading Webpack
 
 The Webpack plugin is available as a npm package named [nativescript-dev-webpack](https://www.npmjs.com/package/nativescript-dev-webpack). To use the plugin in your project, you should explicitly install the package as `devDependency`.The initial installation of the plugin will install all related development dependencies and will create the default `webpack.config.js` file. If the `webpack.config.js` file is already existing it won't be overwritten by the installation of `nativescript-dev-webpack`.
@@ -104,14 +117,4 @@ npm i nativescript-dev-webpack@latest --save-dev
 ./node_modules/.bin/update-ns-webpack --deps --configs
 ```
 
-> **Important:** When using the `--configs` flag, any previous configuration will be overwritten and lost. Consider saving any custom code that you have introduced in your `webpack.config.js`.
-
-## Upgrading Angular dependencies
-
-The Angular plugin is available as an npm package named [nativescript-angular](https://www.npmjs.com/package/nativescript-angular). To update the version of the plugin and the related dependency, the package should be explicitly installed, and the related Angular dependencies should be updated accordingly. To ease the update process, the plugin comes with an automated script `update-app-ng-deps` located in `<project-folder/node_modules/.bin>` folder.
-
-```
-npm i nativescript-angular@latest --save
-./node_modules/.bin/update-app-ng-deps
-npm i
-```
+> **Important:** When using the `--configs` flag, any previous configuration will be overwritten and lost. Consider saving any custom code that you have introduced in your `webpack.config.js` and reapplying the code after using the `--configs` flag.
