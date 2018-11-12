@@ -82,6 +82,7 @@ function initNSMenu() {
         },
         closeOnClick: true,
         animation: { open: {
+            effects: "fadeIn",
             duration: 100
         }}
     }).appendTo(".navigation__right");
@@ -103,7 +104,7 @@ function initPanelBar() {
     menu.kendoPanelBar({
             expandMode: "single"
         })
-        .prependTo(".navigation__right")
+        .prependTo(".ns-navigation")
         .click(function(e) {
             e.stopPropagation();
         });
@@ -237,7 +238,7 @@ $(function(){
             }
 
             $(this)
-                .prepend("<button class='copy-button ns-button' title='Copy to clipboard'>Copy</button>")
+                .prepend("<button class='copy-button ns-button -hollow' title='Copy to clipboard'></button>")
                 .wrap("<div class='ns-copy-container'></div>");
         });
     }

@@ -1,58 +1,10 @@
 <div class="footer__container">
-    <div class="footer__form">
-        <h4>Stay connected with NativeScript</h4>
-        <div>
-            <div>
-                <p>Get the latest news and updates delivered straight to your inbox.</p>
-                <iframe width="500" height="36" class="footer__newsletter-frame"
-                        src="//telerik-media.s3.amazonaws.com/nativescript/newsletter-form.html" frameborder="0"></iframe>
-            </div>
-            <!--<div class="footer__social-links">
-                <div id="fb-root">&nbsp;</div>
-                <a href="https://github.com/NativeScript/NativeScript" class="github-button u-dib u-vab" target="_blank"
-                   data-count-api="/repos/NativeScript/NativeScript#stargazers_count"
-                   data-count-href="/NativeScript/NativeScript/stargazers">Star</a>
-                <div class="fb-follow -m1" data-href="https://www.facebook.com/TelerikNativeScript" data-layout="button_count"
-                     data-size="small" data-show-faces="false"></div>
-                <a href="https://twitter.com/nativescript" class="twitter-follow-button u-dib u-vab" target="_blank" data-dnt="true"
-                   data-show-count="true" data-show-screen-name="false">Follow @nativescript</a>
-            </div>-->
-        </div>
+    <div class="footer__contribute row">
+        <p>
+            If you see an area for improvement or have an idea for a new feature, we'd love to have your help!
+        </p>
+        <a class="ns-button" href="{{site.headerbaseurl}}/contribute">Contribute</a>
     </div>
-<!--
-    <script>
-        var networks = {
-                'facebook-jssdk': '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3',
-                'github-bjs': 'https://buttons.github.io/buttons.js',
-                'twitter-wjs': '//platform.twitter.com/widgets.js'
-            },
-            insertSocialNetworkToDOM = function (url, sdk) {
-                var script = document.createElement('script');
-
-                script.id = sdk || '';
-                script.async = true;
-                script.defer = true;
-                script.src = url;
-
-                document.body.appendChild(script);
-            },
-            loadSocialNetworks = function (urls) {
-                if (Object.keys(networks).length > 0) {
-                    for (var sdk in urls) {
-                        if (urls.hasOwnProperty(sdk)) {
-                            insertSocialNetworkToDOM(urls[sdk], sdk);
-                            delete networks[sdk];
-                        }
-                    }
-                } else {
-                    window.clearInterval(throttle);
-                }
-            },
-            throttle = setInterval(function () {
-                loadSocialNetworks(networks);
-            }, 2000 / 3);
-    </script>
--->
 </div>
 
 <div class="footer__sitemap">
@@ -63,64 +15,167 @@
                 <ul class="List0 HighlightList -ff-prim">
                     <li><a href="https://docs.nativescript.org" target="_blank">Docs</a></li>
                     <li><a href="{{site.headerbaseurl}}/showcases">Showcases</a></li>
-                    <li><a href="{{site.headerbaseurl}}/nativescript-is-how-you-build-native-mobile-apps-with-angular">Angular Integration</a></li>
+                    <li><a href="{{site.headerbaseurl}}/nativescript-is-how-you-build-native-mobile-apps-with-angular">Angular
+                                                                                                                       Integration</a></li>
                     <li><a href="{{site.headerbaseurl}}/vue">Vue Integration</a></li>
                 </ul>
             </div>
             <div>
                 <h5 class="-allcaps">Developers</h5>
                 <ul class="List0 HighlightList -ff-prim">
-                        <li><a href="https://play.nativescript.org">Playground</a></li>
-                        <li><a href="https://market.nativescript.org/?tab=samples&amp;framework=all_frameworks&amp;category=all_samples">Code Samples</a></li>
-                        <li><a href="{{site.headerbaseurl}}/books-and-videos">Books &amp; Videos</a></li>
-                        <li><a href="https://market.nativescript.org/?tab=templates">App Templates</a></li>
-                        <li><a href="https://github.com/NativeScript/NativeScript" target="_blank">GitHub</a></li>
+                    <li><a href="https://play.nativescript.org">Playground</a></li>
+                    <li><a href="https://market.nativescript.org/?tab=samples&amp;framework=all_frameworks&amp;category=all_samples">Code
+                                                                                                                                     Samples</a>
+                    </li>
+                    <li><a href="{{site.headerbaseurl}}/books-and-videos">Books &amp; Videos</a></li>
+                    <li><a href="https://market.nativescript.org/?tab=templates">App Templates</a></li>
+                    <li><a href="https://github.com/NativeScript/NativeScript" target="_blank">GitHub</a></li>
                 </ul>
             </div>
             <div>
                 <h5 class="-allcaps">Tools</h5>
                 <ul class="List0 HighlightList -ff-prim">
-                        <li><a href="https://www.npmjs.com/package/nativescript">CLI</a></li>
-                        <li><a href="{{site.headerbaseurl}}/nativescript-sidekick">Sidekick</a></li>
-                        <li><a href="{{site.headerbaseurl}}/nativescript-for-visual-studio-code">VS Code Plugin</a></li>
-                        <li><a href="https://market.nativescript.org">Plugins</a></li>
-                        <li><a href="{{site.headerbaseurl}}/ui-for-nativescript">NativeScript UI</a></li>
+                    <li><a href="https://www.npmjs.com/package/nativescript">CLI</a></li>
+                    <li><a href="{{site.headerbaseurl}}/nativescript-sidekick">Sidekick</a></li>
+                    <li><a href="{{site.headerbaseurl}}/nativescript-for-visual-studio-code">VS Code Plugin</a></li>
+                    <li><a href="https://market.nativescript.org">Plugins</a></li>
+                    <li><a href="{{site.headerbaseurl}}/ui-for-nativescript">NativeScript UI</a></li>
                 </ul>
             </div>
             <div>
                 <h5 class="-allcaps">Support</h5>
                 <ul class="List0 HighlightList -ff-prim">
-                        <li><a href="https://stackoverflow.com/questions/tagged/nativescript">Stack Overflow</a></li>
-                        <li><a href="{{site.headerbaseurl}}/faq">FAQs</a></li>
-                        <li><a href="http://tinyurl.com/nativeScriptSlack">Slack</a></li>
-                        <li><a href="{{site.headerbaseurl}}/support">Developer Support</a></li>
-                        <li><a href="{{site.headerbaseurl}}/roadmap-and-releases">Roadmap &amp; Release Notes</a></li>
-                        <li><a href="{{site.headerbaseurl}}/contact">Contact Us</a></li>
+                    <li><a href="https://stackoverflow.com/questions/tagged/nativescript">Stack Overflow</a></li>
+                    <li><a href="{{site.headerbaseurl}}/faq">FAQs</a></li>
+                    <li><a href="http://tinyurl.com/nativeScriptSlack">Slack</a></li>
+                    <li><a href="{{site.headerbaseurl}}/support">Developer Support</a></li>
+                    <li><a href="{{site.headerbaseurl}}/roadmap-and-releases">Roadmap &amp; Release Notes</a></li>
+                    <li><a href="{{site.headerbaseurl}}/contact">Contact Us</a></li>
                 </ul>
             </div>
             <div>
                 <h5 class="-allcaps">Enterprise</h5>
                 <ul class="List0 HighlightList -ff-prim">
-                        <li><a href="{{site.headerbaseurl}}/enterprise">Enterprise Support</a></li>
-                        <li><a href="{{site.headerbaseurl}}/ctos-guide">CTO&rsquo;s Guide</a></li>
-                        <li><a href="{{site.headerbaseurl}}/preferred-partners">Preferred Partners</a></li>
+                    <li><a href="{{site.headerbaseurl}}/enterprise">Enterprise Support</a></li>
+                    <li><a href="{{site.headerbaseurl}}/ctos-guide">CTO&rsquo;s Guide</a></li>
+                    <li><a href="{{site.headerbaseurl}}/preferred-partners">Preferred Partners</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer__contribute row">
-            <p>
-                If you see an area for improvement or have an idea for a new feature, we'd love to have your help!
-            </p>
-            <a class="ns-button" href="{{site.headerbaseurl}}/contribute">Contribute</a>
+        <div class="footer__form">
+            <div>
+                <h4>Stay connected with NativeScript</h4>
+                <iframe width="500" height="36" class="footer__newsletter-frame"
+                        src="//telerik-media.s3.amazonaws.com/nativescript/newsletter-form.html"></iframe>
+                <h5>Expect newsletter every 4-8 weeks.</h5>
+            </div>
+            <div class="footer__social-links">
+                <a class="footer__npm-link" href=""></a>
+                <div id="fb-root">&nbsp;</div>
+                <a href="https://github.com/NativeScript/NativeScript" class="github-button u-dib u-vab" target="_blank"
+                   data-count-api="/repos/NativeScript/NativeScript#stargazers_count"
+                   data-count-href="/NativeScript/NativeScript/stargazers">Star</a>
+                <div class="fb-like -dib -vab -m1" data-href="https://www.facebook.com/nativescript" data-layout="button_count"
+                     data-action="recommend" data-show-faces="false" data-share="false">&nbsp;
+                </div>
+                <a href="https://twitter.com/nativescript" class="twitter-follow-button u-dib u-vab" target="_blank" data-dnt="true"
+                   data-show-count="true" data-show-screen-name="false">Follow @nativescript</a>
+                <a href="#" class="slack-button -dib -pr -m-dn">
+                    <img alt="slack-button"
+                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAUCAMAAAAKqMsNAAAAilBMVEUqrXgqrXgqrXgqrXgqrXgqrXj///+j1b7p9O/U6t9WuY55xaK55NPz+ffg8ena8ei84M+Jyqxov5jp9/GQ1bmW0LXw+vXs+PPl9e/O7eDI5dey4s6s38vD6NlvyKRUvZM/tIM1soD1+/nT7uO75tWw28el3cac2cGY2L6K0rT0+/iE0LJ9za1hwptbQMr6AAAABXRSTlPm50pJ5NWGl3QAAAEnSURBVDjLxZTXbsMwDEWTtDxWvPfM3un4/9+rFKFBgLhAYD/0voggcI9IUdLkbSIjpO0TGSXtH6kHwDpf1mV0HQpYNVh1wwALgLIDWMmDXBx51Fz1Az4hXILkh5DaphzAeRmQwUEiX0cdrE0m0c6C5FUAfJz1spUlcLEAT+ToGYADoSupIvAMoFXpM6Bkoe014mcVjd2LuXM7A8MIjqLm0gYa4JD2VNCQRQthtxU5UdlcGgfKNe4WiF0Ki6Xta+EC7GWjo7xiZzLFffuERFScWsBfFazBN8Pciw+ZHYInyQ2gI4/YtBCbFjY6eAZITdhdBfwI8vsYY1PEJkSpULzfQyxwegArgFMF4A+7yj5W0dfQx5RHZdacvwe8xv/9EKaT2XSM/332A4uwIzWpkjPiAAAAAElFTkSuQmCC"
+                         data-displaymode="Original" title="slack-button">
+                    <div class="slack-wrap">
+                        <div class="slack-popup">
+                            <div class="login">
+                                <p>Join the NativeScript Community on Slack. Enter your email below to receive an invitation.</p>
+                                <p class="invite-another">Ask for another invitation?</p>
+                                <div>
+                                    <label>Email:</label>
+                                    <input class="slack-email" type="text" name="email" value="" title="Email address">
+                                    <input class="get-invitation" type="submit" value="Get an invitation" name="submit-button"
+                                           id="submit-button">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
+        <script>
+            $(".slack-button").on("click", function (e) {
+                e.preventDefault();
+                $(this).children().toggleClass("is-active");
+            });
+
+            $(".slack-wrap").on('click', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            });
+
+            $(".get-invitation").on("click", function () {
+                var that = this;
+                var email = $(that).siblings(".slack-email");
+                $.get("/webapi/slack/sendinvitation", {
+                        email: email.val(),
+                        group: "nativescriptcommunity"
+                    })
+                    .done(function (data) {
+                        var res = JSON.parse(data);
+                        if (res.ok || res.error === "already_invited" || res.error === "already_in_team") {
+                            $(that).parent().hide();
+                            $(that).parent().siblings(".invite-another").show();
+                        }
+
+                        email.val("");
+                    });
+            });
+
+            $(".invite-another").on("click", function () {
+                $(this).siblings("div").show();
+                $(this).hide();
+            });
+
+            var networks = {
+                    'facebook-jssdk': 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3',
+                    'github-bjs': 'https://buttons.github.io/buttons.js',
+                    'twitter-wjs': 'https://platform.twitter.com/widgets.js'
+                },
+                insertSocialNetworkToDOM = function (url, sdk) {
+                    var script = document.createElement('script');
+
+                    script.id = sdk || '';
+                    script.async = true;
+                    script.defer = true;
+                    script.src = url;
+
+                    document.body.appendChild(script);
+                },
+                loadSocialNetworks = function (urls) {
+                    if (Object.keys(networks).length > 0) {
+                        for (var sdk in urls) {
+                            insertSocialNetworkToDOM(urls[sdk], sdk);
+                            delete networks[sdk];
+                        }
+                    } else {
+                        window.clearInterval(throttle);
+                    }
+                },
+                throttle = setInterval(function () {
+                    loadSocialNetworks(networks);
+                }, 2000 / 3);
+        </script>
         <div class="footer__last-row row">
-            <div class="navigation__logo"></div>
+            <div class="navigation__logo">Sponsored by </div>
             <div class="footer__copyright">
                 <span>
-                    <span>NativeScript is licensed under the </span><a href="https://github.com/NativeScript/nativescript-cli/blob/master/LICENSE">Apache 2.0 license</a><span>.</span>
+                    <span>NativeScript is licensed under the </span>
+                    <span>
+                        <a href="https://github.com/NativeScript/nativescript-cli/blob/master/LICENSE">Apache 2.0 license</a>.
+                    </span>
                 </span>
                 <span>
-                    © <script>document.write(new Date().getFullYear())</script> Progress Software Corporation. All Rights Reserved.
+                    <span>© <script>document.write(new Date().getFullYear())</script> Progress Software Corporation. </span><span>All Rights Reserved.
+                    <a href="https://www.progress.com/legal/privacy-center" target="_blank" class="-dib -c-blue2 -xl-db">Privacy Center</a></span>
                 </span>
             </div>
         </div>
