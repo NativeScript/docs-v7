@@ -11,10 +11,19 @@ previous_url: /breaking-changes
 This help article describes the critical breaking changes and suggested workarounds, if any, in the NativeScript framework. You can find the complete list with all the changes in the respective [GitHub repositories](#see-also).
 
 ## 5.0 (2018, November 6)
- - Dropped support for XCode 8
- - Dropped support for macOS Sierra
- - Android SDK 28 or later is required to build for Android devices
- - Minimum supported version of nativescript-ui-sidedrawer is 5.0.0
+ - Dropped support for XCode 8.
+ - Dropped support for macOS Sierra.
+ - Android SDK 28 or later is required to build for Android devices.
+ - Minimum supported version of nativescript-ui-sidedrawer is 5.0.0.
+ - **Android**: NativeScript core framework now extends support library APIs versus native framework classes as per Google's latest guidelines (#6129) (cf034dd):
+     - NativeScript activities now extend android.support.v7.app.AppCompatActivity (vs android.app.Activity)
+     - NativeScript fragments now extend android.support.v4.app.Fragment (vs android.app.Fragment)
+     - NativeScript now works internally with android.support.v4.app.FragmentManager (vs android.app.FragmentManager)
+ - Layout class (tns-core-modules/ui/layouts/layout) is now removed as it is not used in {N} framework any more.
+ - **Android:** Change androidOffscreenTabLimit to 1 when using bottom tabs of tab-view ([#6476](https://github.com/NativeScript/NativeScript/issues/6476)) ([371fc9b](https://github.com/NativeScript/NativeScript/commit/371fc9b)).
+ - **iOS:** Widgets native view lifecycle refactoring - native view is now created right before they are added to visual tree ([#6102](https://github.com/NativeScript/NativeScript/issues/6102)) ([46705ee](https://github.com/NativeScript/NativeScript/commit/46705ee)).
+ - **iOS:** Widgets that inherit the `ContainerView` class now overflow the safe area by default ([#6230](https://github.com/NativeScript/NativeScript/issues/6230)) ([982acdc](https://github.com/NativeScript/NativeScript/commit/982acdc)).
+ 
  
 Migration steps can be found in the [NativeScript's GitHub Repository](https://github.com/NativeScript/NativeScript/wiki/Migration-Steps-to-NativeScript-5.0).
  
