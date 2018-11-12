@@ -10,6 +10,14 @@ previous_url: /breaking-changes
 
 This help article describes the critical breaking changes and suggested workarounds, if any, in the NativeScript framework. You can find the complete list with all the changes in the respective [GitHub repositories](#see-also).
 
+## 5.0 (2018, November 6)
+ - Dropped support for XCode 8
+ - Dropped support for macOS Sierra
+ - Android SDK 28 or later is required to build for Android devices
+ - Minimum supported version of nativescript-ui-sidedrawer is 5.0.0
+ 
+Migration steps can be found in the [NativeScript's GitHub Repository](https://github.com/NativeScript/NativeScript/wiki/Migration-Steps-to-NativeScript-5.0).
+ 
 ## 3.0 (2017, May 3)
 
 - Changes and migration advice is available in the NativeScript repository [here](https://github.com/NativeScript/NativeScript/blob/v3.0.0/Modules30Changes.md).
