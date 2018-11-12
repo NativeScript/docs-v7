@@ -128,7 +128,7 @@ marginBottomProperty.register(Style);
 
 ### CoercibleProperty Class
 
-The `CoercibleProperty` is a property that extends the base Property class by providing the capability to be coercible. For better illustration when a property might need to be coercible let's assume that we are working on `selectedIndex` property of some UI element that can hold different number of `items`. The base case would suggest that the `selectedIndex` would vary within the number of items, but what would cover the case where the items are changed dynamically (and the `selectedIndex` is not within the length range)? This is the case that can be handled by a property that can coerse the value.
+The `CoercibleProperty` is a property that extends the base Property class by providing the capability to be coercible. For better illustration when a property might need to be coercible let's assume that we are working on `selectedIndex` property of some UI element that can hold different number of `items`. The base case would suggest that the `selectedIndex` would vary within the number of items, but what would cover the case where the items are changed dynamically (and the `selectedIndex` is not within the length range)? This is the case that can be handled by a property that can coerce the value.
 
 
 Creating the `selectedIndex` as coercible property dependend on the number of items
@@ -163,7 +163,7 @@ export const selectedIndexProperty = new CoercibleProperty<SegmentedBarBase, num
 selectedIndexProperty.register(SegmentedBarBase);
 ```
 
-When setting the `items` property we will coerse the `selectedIndex`
+When setting the `items` property we will coerce the `selectedIndex`
 ```TypeScript
 [itemsProperty.setNative](value: SegmentedBarItem[]) {
     this.nativeViewProtected.clearAllTabs();

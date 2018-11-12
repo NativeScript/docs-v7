@@ -95,10 +95,10 @@ When I was trying to run an android emulator using AVD Manager, as Administrator
 2. Click on the Tools > Manage SDK...
 3. Make sure you have all API version 23 (at least I went for 23) mobile packets > Install the once you don't have.
 4. Download and install Intel HAXM (Link to Intel official site: **[here](https://software.intel.com/en-us/articles/intel-hardware-accelerated-execution-manager-intel-haxm)**).
-**Note:** You will notice HAXM is an actual option in AVD SDK Manager but it reads "Not Compatible with Windows"... dont worry, just download the executable from Intel's official website.
+**Note:** You will notice HAXM is an actual option in AVD SDK Manager but it reads "Not Compatible with Windows"... don't worry, just download the executable from Intel's official website.
 ![SDK manager](34570549-002620a2-f164-11e7-92ca-881a1c5c55ae.JPG)
 
-**Quick caviate:** If you do not install HAXM, you will see the following message when trying to run the emulator: "Please encure Intel HAXM is properly Installed and usable. CPU acceleration status: HAXM is not installed on this machine" 
+**Quick caveat:** If you do not install HAXM, you will see the following message when trying to run the emulator: "Please ensure Intel HAXM is properly Installed and usable. CPU acceleration status: HAXM is not installed on this machine" 
 
 ![AVD manager](34570758-a39bd4b6-f164-11e7-98ca-c83ac1f97fa4.JPG)
 
@@ -146,7 +146,7 @@ That being said, after using the workaround mentioned bellow, tns finds the emul
 **Note:** At this point you might find that the NativeScript is running to a **"Build Error"** and it is exiting. Now... that is documented here [#2092](https://github.com/NativeScript/nativescript-cli/issues/2092). I found that creating a fresh TNS project works best than amending package.json, but you are welcome to do either.
 ![build_error](34571332-19a317ae-f166-11e7-828a-fd50319cc474.JPG)
 4. Profit!
-![successfull build](34571454-86c04244-f166-11e7-8856-bd67ca8a2f6f.png)
+![successful build](34571454-86c04244-f166-11e7-8856-bd67ca8a2f6f.png)
 
 
 ### 4. Command gradlew.bat failed with exit code 1.
@@ -180,4 +180,4 @@ You will need to force install jdk8
 ### **Conclusion**
 The problem is with the development environment, that being said I hope my comment will help in the future others.
 
-![successfull build 1](34573002-e05e7e98-f16a-11e7-889d-622a584ae8e0.png)
+![successful build 1](34573002-e05e7e98-f16a-11e7-889d-622a584ae8e0.png)

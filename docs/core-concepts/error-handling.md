@@ -69,7 +69,7 @@ Further info about the error handing in NativeScript can be found [here](https:/
 
 ## Disabling exception's auto catching
 
-Since NativeScirpt 4.2,  a new property has been introduced called `discardUncaughtJsExceptions` and allows to config, whether the exceptions from `callJSMethodNative` will be caught or not. The flag is disabled by default, and we can enable it while setting up the `discardUncaughtJsExceptions` property to `true` inside the `app/package.json` file. If the property is enabled, the exceptions will be caught and logged without propagating them.
+Since NativeScript 4.2,  a new property has been introduced called `discardUncaughtJsExceptions` and allows to config, whether the exceptions from `callJSMethodNative` will be caught or not. The flag is disabled by default, and we can enable it while setting up the `discardUncaughtJsExceptions` property to `true` inside the `app/package.json` file. If the property is enabled, the exceptions will be caught and logged without propagating them.
 
 Example:
 
@@ -84,4 +84,4 @@ Example:
   "discardUncaughtJsExceptions":true
 }
 ```
-> Note: Enabling this property can lead to discarding an exception, which can lead to unexpected application behaviours. For the proper exception handling, it is recommended to keep auto cathing enabled.
+> Note: Enabling this property can lead to discarding an exception, which can lead to unexpected application behaviours. For the proper exception handling, it is recommended to keep auto catching enabled.
