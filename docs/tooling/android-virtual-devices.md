@@ -65,8 +65,7 @@ avdmanager list
 
 ## Using third-party emulators
 
-An applicable option is to use third-party emulators (like **GenyMotion** or **Visual Studio emulator**).
+An applicable option is to use third-party emulators (like **GenyMotion**).
 Visit the official sites for details on how to install and use these emulators.
 
 - [GenyMotion official site](https://www.genymotion.com)
-- [Visual Studio emulator](https://www.visualstudio.com/vs/msft-android-emulator/)
