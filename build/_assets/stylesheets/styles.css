@@ -707,6 +707,10 @@ html.ns-root .-hidden {
 }
 
 .side-nav__burger-menu {
+    border-radius: 4px;
+}
+
+.side-nav__burger-input:checked + .side-nav__burger-menu {
     border-radius: 12px;
 }
 
@@ -2596,6 +2600,11 @@ html .gsc-result .gs-title {
         margin-top: -2.6em;
         padding: 2.6em 1.72em 0 0;
         width: calc(100% - 1.66em);
+        border-radius: 4px;
+    }
+
+    .side-nav__burger-input:checked + .side-nav__burger-menu {
+        border-radius: 4px;
     }
 
     .side-nav__tree > .k-group:first-child {
