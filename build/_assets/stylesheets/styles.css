@@ -1025,6 +1025,7 @@ html .ns-navigation .navigation__right .k-menu .k-item .ns-button {
     margin: 0 .36em;
 }
 
+.ns-feedback .ns-button,
 .footer__contribute > .ns-button,
 html .ns-navigation .navigation__right .k-menu .k-item .ns-button {
     height: 2.25em;
@@ -1481,7 +1482,7 @@ html .fb_iframe_widget {
 }
 
 .ns-feedback .ns-button {
-    font-size: 1.2em;
+    font-size: 1.135em;
 }
 
 /* Sitemap */
@@ -1532,7 +1533,7 @@ html .fb_iframe_widget {
 }
 
 .footer__contribute .ns-button {
-    font-size: .9em;
+    font-size: .895em;
 }
 
 .footer__contribute > * {

@@ -325,7 +325,11 @@ $(function(){
                 }
             });
 
-            topElement = $('.right-nav__tree [href$="#' + topElement.id + '"]');
+            var prevParent = $(topElement).prevAll("h2")[0];
+
+            topElement = $('.right-nav__tree' +
+                (prevParent && topElement.nodeName !== "H2" ? ' [href$="#' + prevParent.id + '"] + ul' : '')  +
+                ' [href$="#' + topElement.id + '"]');
 
             if (topElement[0]) {
                 $(".right-nav__tree a").removeClass("ns-state-selected");
