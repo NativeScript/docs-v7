@@ -13,7 +13,7 @@ publish: true
 
 ## Get Started
 
-The NativeScript-Vue integration is a community-driven project and its documentation lives at [nativescript-vue.org](https://nativescript-vue.org/en/docs/introduction/).
+The NativeScript-Vue documentation lives at [nativescript-vue.org](https://nativescript-vue.org/en/docs/introduction/).
 
 <a href="https://nativescript-vue.org/en/docs/introduction/" class="ns-button -action" id="ng-start-button">Get Started with NativeScript-Vue</a>
 
