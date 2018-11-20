@@ -519,6 +519,14 @@ html .k-panelbar-expand.k-icon {
     height: 4.71em;
 }
 
+.ns-flavor-header a {
+    color: var(--color-dark);
+}
+
+.ns-flavor-header a:hover .flavor-header__title:after {
+    color: var(--color-success);
+}
+
 .flavor-header__search {
     flex: 1;
     padding-left: 3.57em;
@@ -973,6 +981,7 @@ blockquote {
     border: 1px solid var(--border-light-blue);
     padding: 1.25em 1.25em 1.25em 5.63em;
     min-height: 3em;
+    border-radius: 4px;
 }
 
 blockquote:before {
@@ -1981,10 +1990,11 @@ article table {
     width: 100%;
     margin: 1.25em 0;
     text-align: left;
-    border-collapse: collapse;
     border: 1px solid var(--border-light-blue);
     font-weight: 400;
     background: var(--color-light);
+    border-radius: 4px;
+    border-spacing: 0;
 }
 
 article table tr {
@@ -2073,6 +2083,7 @@ pre[class*="language-"] {
     overflow: auto;
     background: var(--color-light);
     border: 1px solid var(--border-light-blue);
+    border-radius: 4px;
 }
 
 /* Inline code */
