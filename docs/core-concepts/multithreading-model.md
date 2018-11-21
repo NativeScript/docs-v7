@@ -16,6 +16,7 @@ Workers API in NativeScript is loosely based on the [Dedicated Web Workers API](
     * [Worker Object](#worker-object-prototype)
     * [Worker Global Scope](#worker-global-scope)
 * [Sample Usage](#sample-usage)
+* [Usage with Webpack](#usage-with-webpack)
 * [Limitations](#limitations)
 
 ## Workers API
@@ -113,6 +114,22 @@ Workers API in NativeScript is loosely based on the [Dedicated Web Workers API](
     // to handle errors implement the global.onerror handler:
     // global.onerror = function(err) {}
  ```
+
+## Usage with Webpack
+
+The way to spawn a Worker with webpack differs from the way described in the Web Workers' specification (also followed by NativeScript).
+
+ main-view-model.js
+```JavaScript
+    ...
+
+   var workerScript = require("./workers/image-processor");
+   var worker = new WorkerScript();
+   worker.postMessage({ src: imageSource, mode: 'scale', options: options });
+   
+    ...
+  ```
+Check out the [nativescript-worker-loader](https://github.com/NativeScript/worker-loader).
 
 
 ## General Guidelines
