@@ -253,6 +253,8 @@ frame.navigate("second/second-page");
 <Frame id="firstFrame" defaultPage="home/home-page"/>
 ```
 
+> Paths are relative to the application root. In the example above, NativeScript looks for a `my-page.xml` file in the app directory of your project (e.g. `app/my-page.xml`).
+
 There are several ways to perform a navigation; which one you use depends on the needs of your app.
 
 ### Navigate by page name
