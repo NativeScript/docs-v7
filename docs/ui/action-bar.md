@@ -1,13 +1,14 @@
 ---
 title: ActionBar
-description: The article provides basic knowledge, how to use and customise the ActionBar in NativeScript app. In the code snippets are demonstrated how to set up the available properties and the values that can be passed. The samples show as well, how to create custom ActionBar. 
+description: The article describes how to use and customise the ActionBar component in a NativeScript app and how to handle some of its iOS and Android specifics.
 position: 120
+tags: actionbar, action bar, non angular application, nativescript application, ns actionbar examples
 slug: action-bar
 publish: false
 previous_url: /cookbook/ui/action-bar
 ---
 
-# Action Bar
+# User Interface Action Bar
 
 The article describes how to use the ActionBar component in a non-Angular NativeScript application as well as some iOS and Android specifics. All described scenarios are demonstrated with the appropriate code snippet. The `ActionBar` is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
 

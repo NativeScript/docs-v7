@@ -2,6 +2,7 @@
 title: Building Plugins That Use CocoaPods
 description: Learn how to build NativeScript plugins that use CocoaPods on iOS, including how to install CocoaPods, and how to configure your apps to use them.
 position: 40
+tags: cocoapods, plugin development, building plugins, creating plugins
 slug: cocoapods
 ---
 

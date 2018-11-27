@@ -1,12 +1,13 @@
 ---
 title: CLI Setup
-description: Learn how to set up the NativeScript command-line interface on Windows, macOS, and Linux development machines.
+description: Learn how to install and set up the NativeScript command-line interface for local development on Windows, macOS, and Linux development machines.
 position: 20
+tags: nativescript command line interface, command line interface setup, command line interface, configure nativescript development environment
 slug: quick-start
 previous_url: /setup/quick-setup
 ---
 
-# Set Up Your System
+# Command-Line Interface Setup
 
 With the open-source NativeScript command-line interface and an IDE or text editor of your choice, you can create, develop, store, and build your apps locally, free of charge and anonymously.
 

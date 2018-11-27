@@ -1,7 +1,8 @@
 ---
 title: Publishing for iOS
-description: Learn how to publish your app in the App Store for iOS users.
+description: Learn how to publish your NativeScript app in the App Store by following the same process used for publishing native iOS mobile apps. 
 position: 20
+tags: nativescript ios, nativescript iphone, nativescript app store, publish in the app store, publish an ios app
 slug: publishing-ios-apps
 previous_url: /core-concepts/releasing-apps,/core-concepts/publishing-ios-apps
 ---

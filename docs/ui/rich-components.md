@@ -1,7 +1,8 @@
 ---
 title: Professional UI Components
-description: Get familiar with the premium user interface elements (widgets) in NativeScript UI. The article contains a general description of the premium UI widgets and links for the extended component's examples. 
+description: Overview of the professional user interface elements (widgets) available in NativeScript UI, including AutoComplete, SideDrawer, ListView, Calendar, Chart, DataForm, and Gauges. 
 position: 25
+tags: ui components, user interface components, nativescript components, nativescript pro ui components
 slug: rich-components
 publish: true
 ---
@@ -13,16 +14,6 @@ NativeScript UI is a set of free* components that enable implementing rich-ui ap
 > Although the components are free, they are not open-source and their code is proprietry. [Read the components' license for details](https://github.com/telerik/nativescript-ui-feedback/blob/master/LICENSE.md).
 
 > Continue reading about each component below or take them for a spin with the {% nativescript %}[NativeScript UI sample app on GitHub](https://github.com/telerik/nativescript-ui-samples){% endnativescript %}{% angular %}[NativeScript UI sample app on GitHub](https://github.com/telerik/nativescript-ui-samples-angular){%  endangular %}.
-
-
-* [AutoCompleteTextView](#autocompletetextview)
-* [Calendar](#calendar)
-* [Chart](#chart)
-* [DataForm](#dataform)
-* [Gauges](#gauges)
-* [ListView](#listview)
-* [SideDrawer](#sidedrawer)
-
 
 ## AutoCompleteTextView
 

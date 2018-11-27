@@ -1,13 +1,14 @@
 ---
 title: The Basics
-description: Learn the basic principles of designing a user interface with NativeScript. In NativeScript, you can design the UI using XML and CSS. The article describes the usage of the Frame in NativeScript app as well as how to pass and receive context. The examples show how to navigate in the app, how to define custom component and how to load XML dynamically.
+description: Learn the basic principles of designing a user interface with NativeScript. In NativeScript, you can design the UI using XML and CSS.
 position: 10
+tags: nativescript user interface, nativescript basics, ns ui basics
 slug: ui-basics
 previous_url: /ui-with-xml,/ui/ui-with-xml
 environment: nativescript
 ---
 
-# The User Interface
+# User Interface Basics
 
 The user interface of NativeScript mobile apps consists of pages. Typically, the design of the user interface is developed and stored in `XML` files, styling is done via CSS and the business logic is developed and stored in `JavaScript` or `TypeScript` files. When you develop the user interface of your app, you can implement each application screen in a separate page or implement your application screens on a single page with a tab view. For each page, you need to have a separate `XML` file that holds the layout of the page. For each `XML` file that NativeScript parses, the framework also looks for a `JavaScript` or `TypeScript` file with the same name and executes the business logic inside it.
 

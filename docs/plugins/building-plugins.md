@@ -1,7 +1,8 @@
 ---
 title: Building Plugins
-description: An easy-to-follow guide for building your first NativeScript plugin using the NativeScript plugin seed.
+description: Learn how to use the plugin seed to create a new NativeScript plugin that introduces specific functionality, which then can easily be reused in different apps.
 position: 20
+tags: building plugins, nativescript plugins, plugins development
 slug: building-plugins
 ---
 

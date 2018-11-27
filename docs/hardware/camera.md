@@ -1,12 +1,13 @@
 ---
 title: Using the Device Camera with NativeScript
-description: Learn how to use the device camera to take and store photos in your NativeScript app.
+description: Learn how to use the nativescript-camera plugin to access the camera of the device so you can capture images and store them on the mobile device.
 position: 20
+tags: nativescript camera, nativescript access camera
 slug: camera
 previous_url: /camera
 ---
 
-# Camera
+# Using the Device Camera with NativeScript
 
 ## Overview
 

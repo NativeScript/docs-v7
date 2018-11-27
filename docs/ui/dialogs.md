@@ -1,7 +1,8 @@
 ---
 title: Dialogs
-description: Learn how to create alerts, confirmations, prompts, logins and other dialogs in your NativeScript apps. The examples show, how to define some of the available dialogs and the corresponding callback method.
+description: Learn how to add alerts, confirmations, prompts, logins and other types of dialogs to your NativeScript app.
 position: 80
+tags: user interface dialogs, nativescript dialogs, ns dialog examples
 slug: dialogs
 publish: false
 previous_url: /ui-dialogs,/ui/ui-dialogs

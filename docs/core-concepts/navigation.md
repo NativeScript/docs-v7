@@ -1,14 +1,14 @@
 ---
 title: Architecture and Navigation
-description: Learn how to configure navigation between pages, work with page context and data binding, navigate in modals, navigate back and configure navigation transitions 
+description: Learn about the basic application structure and page management of NativeScript apps, and how to navigate between pages or change the transition animations.
 position: 20
+tags: nativescript navigation, nativescript architecture, nativescript navigate back, nativescript page transitions, ns navigation examples
 slug: architecture
 previous_url: /navigation
 environment: nativescript
 ---
 
 # Architecture and Navigation
-
 
 ## Page management
 

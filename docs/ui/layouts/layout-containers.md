@@ -1,12 +1,13 @@
 ---
 title: Layout Containers
-description: Describes the available properties on each layout container and its children.
+description: View the available properties on each layout container in NativeScript, including AbsoluteLayout, DockLayout, GridLayout, StackLayout and WrapLayout.
 position: 40
+tags: nativescript layout, nativescript layout containers, layout containers examples
 slug: layout-containers
 previous_url: /layout-containers
 ---
 
-# Layout Containers
+# User Interface Layout Containers
 
 ## AbsoluteLayout
 The AbsoluteLayout is the simplest layout in NativeScript. It uses absolute left-top coordinates to position its children. The AbsoluteLayout will not enforce any layout constraints on its children and will not resize them at runtime when its size changes.

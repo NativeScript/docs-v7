@@ -1,7 +1,8 @@
 ---
 title: Events
-description: Learn how to use Observable to emit and handle events in NativeScript and how to prevent memory leaks by using weak event listeners 
+description: Learn how to use Observable to emit and handle events in NativeScript and how to prevent memory leaks by using weak event listeners. 
 position: 60
+tags: nativescript events, events core concepts
 slug: events
 environment: nativescript
 previous_url: /events
