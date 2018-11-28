@@ -37,7 +37,8 @@ By design, a `Page` can't be declared as a child of another component. It is use
 ``` XML
 <!-- item-page.xml-->
 <Page loaded="onPageLoaded">
-    <!-- Each page can have only a single root view -->
+    <ActionBar title="Item" class="action-bar"></ActionBar>
+
     <StackLayout>
         <Label text="Item Details"/>
     </StackLayout>
@@ -68,7 +69,7 @@ For the most basic forward navigation scenario, you need only these two features
 * defaultPage attribute - use this attribute to declare the initial page module that is displayed.
 * [navigate()](https://docs.nativescript.org/api-reference/classes/_ui_frame_.frame#navigate) method - use this method to force a navigation to another page module. 
 
-The following example demonstrates the implementation of the rest of the forward navigation diagram above. There is a `Frame` declared as root component in the `app-root` module. Upon load, the `Frame` will automatically navigate to the `featured-page` module. The `featured-page` module in turn has a button that navigates to the `item-page` module.
+The following example demonstrates the implementation of the rest of the forward navigation diagram above. There is a `Frame` declared as root component in the `app-root` module. Upon load, the `Frame` will automatically navigate to the `featured-page` module. The `featured-page` module in turn has a button that navigates to the `item-page` module. Check out the complete playground demo below the code sample.
 
 ```XML
 <!-- app-root.xml -->
@@ -77,8 +78,10 @@ The following example demonstrates the implementation of the rest of the forward
 ```XML
 <!-- featured-page.xml -->
 <Page>
+    <ActionBar title="Featured" class="action-bar"></ActionBar>
+
     <StackLayout>
-        <Button text="Navigate To Item" tap="onTap"/>
+        <Button text="navigate('item-page')" tap="onTap"/>
     </StackLayout>
 </Page>
 ```
@@ -98,24 +101,28 @@ import { Button } from "tns-core-modules/ui/button";
 import { Page } from "tns-core-modules/ui/page";
 
 export function onTap(args: EventData) {
-    const button: Button = args.object;
+    const button: Button = <Button>args.object;
     const page: Page = button.page;
     page.frame.navigate("item-page");
 }
 ```
 
+[Playground Demo](https://play.nativescript.org/?template=play-tsc&id=BEPBzQ&v=2)
+
 ## Backward Navigation
 
 ![navigation-schema-backward](../img/navigation/navigation-schema-backward.png?raw=true)
 
-It can also be called upward navigation since you are going up in your navigation hierarchy. This type of navigation represents the opposite direction of the forward navigation and is supported by the `Frame` API. To force a navigation back to the previous page module loaded in a `Frame` simply call its [goBack()](http://localhost:9192/api-reference/classes/_ui_frame_.frame#goback) method.
+It can also be called upward navigation since you are going up in your navigation hierarchy. This type of navigation represents the opposite direction of the forward navigation and is supported by the `Frame` API. To force a navigation back to the previous page module loaded in a `Frame` simply call its [goBack()](http://localhost:9192/api-reference/classes/_ui_frame_.frame#goback) method. Check out the complete playground demo below the code sample.
 
 ``` XML
 <!-- item-page.xml-->
 <Page loaded="onPageLoaded">
+    <ActionBar title="Item" class="action-bar"></ActionBar>
+
     <StackLayout>
         <Label text="Item Details"/>
-        <Button text="Navigate Back To Featured" tap="onTap"/>
+        <Button text="goBack()" tap="onTap"/>
     </StackLayout>
 </Page>
 ```
@@ -144,11 +151,13 @@ export function onPageLoaded(args: EventData): void {
 }
 
 export function onTap(args: EventData) {
-    const button: Button = args.object;
+    const button: Button = <Button>args.object;
     const page: Page = button.page;
     page.frame.goBack();
 }
 ```
+
+[Playground Demo](https://play.nativescript.org/?template=play-tsc&id=p6BrTP&v=3)
 
 > **Note:** Both the Android hardware button and the iOS back button in the `ActionBar` execute upward navigation. These platform specific navigation controls come out of the box and there is no need for you to implement them yourself.
 
@@ -173,7 +182,7 @@ Each UI component in NativeScript provides two methods for managing modal views:
 
 To open a modal view you should simply call the `showModal()` method of any UI component instance with a path to the modal root module as parameter. Take a look at the [Modal View]({%slug modal-page %}) article for more information.
 
-The following code sample demonstrates how you can implement the Search modal view and page from the diagram above:
+The following code sample demonstrates how you can implement the Search modal view and page from the diagram above. Check out the complete playground demo below the code sample.
 
 ```XML
 <!-- app-root.xml -->
@@ -182,8 +191,10 @@ The following code sample demonstrates how you can implement the Search modal vi
 ```XML
 <!-- featured-page.xml -->
 <Page>
+    <ActionBar title="Featured" class="action-bar"></ActionBar>
+
     <StackLayout>
-        <Button text="Navigate To Search" tap="openSearchModal"/>
+        <Button text="showModal('search-root', context, closeCallback, fullscreen)" tap="openSearchModal"/>
     </StackLayout>
 </Page>
 ```
@@ -191,7 +202,10 @@ The following code sample demonstrates how you can implement the Search modal vi
 // featured-page.js
 function openSearchModal(args) {
     const view = args.object;
-    view.showModal("search-root", null, null, true);
+    const context = null;
+    const closeCallback = null;
+    const fullscreen = true;
+    view.showModal("search-root", context, closeCallback, fullscreen);
 }
 exports.openSearchModal = openSearchModal;
 ```
@@ -201,8 +215,11 @@ import { EventData } from "tns-core-modules/data/observable";
 import { View } from "tns-core-modules/ui/core/view";
 
 export function openSearchModal(args: EventData) {
-    const view: View = args.object;
-    view.showModal("search-root", null, null, true);
+    const view: View = <View>args.object;
+    const context = null;
+    const closeCallback = null;
+    const fullscreen = true;
+    view.showModal("search-root", context, closeCallback, fullscreen);
 }
 ```
 ```XML
@@ -212,30 +229,33 @@ export function openSearchModal(args: EventData) {
 ```XML
 <!-- search-page.xml -->
 <Page>
+    <ActionBar title="Search" class="action-bar"></ActionBar>
+
     <StackLayout>
-        <Button text="Navigate To Featured" tap="closeSearchModal"/>
+        <Button text="closeModal()" tap="closeModal"/>
     </StackLayout>
 </Page>
 ```
 ``` JavaScript
 // search-page.js
-function closeSearchModal(args) {
+function closeModal(args) {
     const view = args.object;
     view.closeModal();
 }
-exports.closeSearchModal = closeSearchModal;
+exports.closeModal = closeModal;
 ```
 ``` TypeScript
 // search-page.ts
 import { EventData } from "tns-core-modules/data/observable";
 import { View } from "tns-core-modules/ui/core/view";
 
-export function closeSearchModal(args: EventData) {
-    const view: View = args.object;
+export function closeModal(args: EventData) {
+    const view: View = <View>args.object;
     view.closeModal();
 }
 ```
 
+[Playground Demo](https://play.nativescript.org/?template=play-tsc&id=tLAbdy&v=4)
 
 > **Note:** In the current scenario the Search feature has only one page and it's possible to implement it directly in the modal view without embedding a `Frame` in `search-root`. However, in this case there won't be a navigation controller in the modal view and therefore, no `ActionBar`. 
 
@@ -254,7 +274,7 @@ The `TabView` provides two important features connected to lateral navigation:
 
 Check out the [TabView]({%slug tab-view %}) article for a more detailed look on how you can use and customize the component.
 
-Here is a code sample of the `TabView` declaration that matches the diagram above.
+Here is a code sample of the `TabView` declaration that matches the diagram above. Check out the complete playground demo below the code sample.
 
 ```XML
 <!-- app-root.xml -->
@@ -286,6 +306,8 @@ export function onSelectedIndexChanged(args: SelectedIndexChangedEventData) {
 }
 ```
 
+[Playground Demo](https://play.nativescript.org/?template=play-tsc&id=q8XZfS&v=4)
+
 > **Note:** In the current scenario the Search feature has only one page and it's possible to implement it directly in the `TabViewItem` without embedding a `Frame`. However, in this case there won't be a navigation controller in the `TabViewItem` and therefore, no `ActionBar`. 
 
 ### SideDrawer Navigation
@@ -301,7 +323,7 @@ Below is a diagram of how you can implement the navigation schema using a `SideD
 
 A notable bonus of the component is that the drawer can be opened regardless of the navigation state of the main content. This means that the user can navigate laterally to another feature from either the Featured page or the Item page.
 
-The component itself doesn't provide navigation logic automatically like the `TabView`. Instead, it is built with more freedom in mind and lets you customize its content. It exposes two UI containers - the `drawerContent` container houses the UI of the hidden side view and the `mainContent` holds the UI that will be shown on the screen. To implement the diagram above, we will embed a `Frame` component holding the Featured navigation in the main content container and three buttons in the drawer content. Two of them open the Browse and Search features in modal views and the final one resets the embedded Featured navigation.
+The component itself doesn't provide navigation logic automatically like the `TabView`. Instead, it is built with more freedom in mind and lets you customize its content. It exposes two UI containers - the `drawerContent` container houses the UI of the hidden side view and the `mainContent` holds the UI that will be shown on the screen. To implement the diagram above, we will embed a `Frame` component holding the Featured navigation in the main content container and three buttons in the drawer content. Two of them open the Browse and Search features in modal views and the final one resets the embedded Featured navigation. Check out the complete playground demo below the code sample.
 
 ```XML
 <!-- app-root.xml -->
@@ -321,24 +343,37 @@ The component itself doesn't provide navigation logic automatically like the `Ta
 ```
 ``` JavaScript
 // app-root.js
+const appModule = require("tns-core-modules/application");
 const frameModule = require("tns-core-modules/ui/frame");
 
 function resetFeatured(args) {
+    const sideDrawer = appModule.getRootView();
     const featuredFrame = frameModule.getFrameById("featured");
     featuredFrame.navigate({
         moduleName: "featured-page",
         clearHistory: true
     });
+    sideDrawer.closeDrawer();
 }
 
 function openBrowseModal(args) {
+    const sideDrawer = appModule.getRootView();
     const view = args.object;
-    view.showModal("browse-root", null, null, true);
+    const context = null;
+    const closeCallback = null;
+    const fullscreen = true;
+    view.showModal("browse-root", context, closeCallback, fullscreen);
+    sideDrawer.closeDrawer();
 }
 
 function openSearchModal(args) {
+    const sideDrawer = appModule.getRootView();
     const view = args.object;
-    view.showModal("search-root", null, null, true);
+    const context = null;
+    const closeCallback = null;
+    const fullscreen = true;
+    view.showModal("search-root", context, closeCallback, fullscreen);
+    sideDrawer.closeDrawer();
 }
 
 exports.resetFeatured = resetFeatured;
@@ -347,27 +382,42 @@ exports.openSearchModal = openSearchModal;
 ```
 ``` TypeScript
 // app-root.ts
+import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import { EventData } from "tns-core-modules/data/observable";
 import { View } from "tns-core-modules/ui/core/view";
 import { getFrameById } from "tns-core-modules/ui/frame";
 
 export function resetFeatured(args: EventData) {
+    const sideDrawer: RadSideDrawer = <RadSideDrawer>getRootView();
     const featuredFrame = getFrameById("featured");
     featuredFrame.navigate({
         moduleName: "featured-page",
         clearHistory: true
     });
+    sideDrawer.closeDrawer();
 }
 
 export function openBrowseModal(args: EventData) {
-    const view: View = args.object;
+    const sideDrawer: RadSideDrawer = <RadSideDrawer>getRootView();
+    const view: View = <View>args.object;
+    const context = null;
+    const closeCallback = null;
+    const fullscreen = true;
     view.showModal("browse-root", null, null, true);
+    sideDrawer.closeDrawer();
 }
 
 export function openSearchModal(args: EventData) {
-    const view: View = args.object;
+    const sideDrawer: RadSideDrawer = <RadSideDrawer>getRootView();
+    const view: View = <View>args.object;
+    const context = null;
+    const closeCallback = null;
+    const fullscreen = true;
     view.showModal("search-root", null, null, true);
+    sideDrawer.closeDrawer();
 }
 ```
+
+[Playground Demo](https://play.nativescript.org/?template=play-tsc&id=wPS7ol&v=5)
 
 Take a look at the [SideDrawer](https://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawer/overview) docs for more information about the component.
