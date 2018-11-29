@@ -1,7 +1,8 @@
 ---
 title: Navigation
-description: Learn how to configure navigation between pages in NativeScript with Angular apps by using the Angular router
+description: Learn about the basic application structure of NativeScript apps, and how to navigate between pages with the help of the router links and outlet.
 position: 42
+tags: angular navigation, nativescript navigation, nativescript router outlet, nativescript angular navigate back, nativescript angular lifescycle hooks, angular page transitions
 slug: navigation
 environment: angular
 previous_url: /core-concepts/navigation-angular

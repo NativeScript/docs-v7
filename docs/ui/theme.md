@@ -1,10 +1,12 @@
 ---
 title: Theme
-description: Learn about the NativeScript core theme, and how to apply the theme’s class names to UI components in your applications. The article also describes how to change the entire app theme by using one of the available. 
+description: Learn about the NativeScript core theme, and how to apply the theme class names to user interface components in your native applications. 
 position: 55
+tags: nativescript theme, css theme, nativescript theming examples
+slug: theme
 ---
 
-# Theme
+# CSS Themes for NativeScript Apps
 
 NativeScript’s [styling infrastructure](https://docs.nativescript.org/ui/styling) makes it possible to create and use CSS themes for your native applications, much like you would use a framework like Bootstrap on the web.
 

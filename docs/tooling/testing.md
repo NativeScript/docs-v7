@@ -1,7 +1,8 @@
 ---
 title: Unit Testing
-description: Learn how to write and execute unit tests for your NativeScript app.
+description: Write and execute unit tests to ensure that newly added features are working correctly and no regressions are introduced in the mobile app.
 position: 10
+tags: unit testing, app unit testing, nativescript unit testing
 slug: unit-testing
 previous_url: /testing,/core-concepts/testing
 ---

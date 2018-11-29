@@ -1,7 +1,8 @@
 ---
 title: Accessing Native APIs through JavaScript
-description: Learn how to access native iOS and Android APIs through JavaScript in a NativeScript App without writing any Objective-C/Swift or Java/Kotlin code
+description: Learn how to access the native iOS and Android APIs through JavaScript in a NativeScript app without writing any Objective-C/Swift or Java/Kotlin code.
 position: 80
+tags: nativescript native apis, native apis, javascript native apis
 slug: access-native-apis
 ---
 

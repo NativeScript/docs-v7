@@ -1,7 +1,8 @@
 ---
-title: NativeScript Advanced Setup—Windows
-description: Learn how to configure your Windows system to create, develop and build apps with NativeScript.
+title: NativeScript Advanced Setup — Windows
+description: Follow this walkthrough to learn how to install the NativeScript requirements in order to start creating, developing and building mobile apps on Windows. 
 position: 30
+tags: nativescript setup, nativescript windows setup
 slug: windows
 publish: false
 previous_url: /setup/ns-cli-setup/ns-setup-win,/start/ns-setup-installer
@@ -11,7 +12,7 @@ previous_url: /setup/ns-cli-setup/ns-setup-win,/start/ns-setup-installer
 
 This page contains a guided walkthrough for installing NativeScript requirements and start building and running NativeScript apps on Windows.
 
-> **NOTE**: On Windows systems you can only use the NativeScript CLI to develop Android apps. This is because the NativeScript CLI uses Xcode to build iOS apps, which is only available on the macOS operating system. If you’re interested in building iOS apps on Windows, you may want to try out the public preview of [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick). NativeScript Sidekick provides robust tooling for NativeScript apps, including a service that performs iOS and Android builds in the cloud, removing the need to complete these system requirements, and allowing you to build for iOS on Windows.
+> **NOTE**: On Windows systems you can only use the NativeScript CLI to develop Android apps. This is because the NativeScript CLI uses Xcode to build iOS apps, which is only available on the macOS operating system. If you’re interested in building iOS apps on Windows, you may want to try out [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick). NativeScript Sidekick provides robust tooling for NativeScript apps, including a service that performs iOS and Android builds in the cloud, removing the need to complete these system requirements, and allowing you to build for iOS on Windows.
 
 ## Prerequisites
 * Windows 7 Service Pack 1 or later
@@ -79,7 +80,7 @@ Complete the following steps to set up NativeScript on your Windows development 
     
     c. Alternatively a [Visual Studio Emulator for Android](https://www.visualstudio.com/vs/msft-android-emulator/) can be used but have in mind it requires Windows 8+. 
 
-9. Install the NativeScript CLI.
+8. Install the NativeScript CLI.
     - Run the following command.
 
         <pre class="add-copy-button"><code class="language-terminal">npm i -g nativescript
@@ -87,7 +88,7 @@ Complete the following steps to set up NativeScript on your Windows development 
 
     - Restart the command prompt.
 
-10. To check if your system is configured properly, run the following command.
+9.  To check if your system is configured properly, run the following command.
 
     <pre class="add-copy-button"><code class="language-terminal">tns doctor
     </code></pre>

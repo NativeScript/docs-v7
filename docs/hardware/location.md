@@ -1,12 +1,13 @@
 ---
 title: Geographical Location Data in NativeScript
-description: Learn how to work with geographical location data in your NativeScript app.
+description: Learn how to use the nativescript-geolocation plugin to obtain accurate geographical location data in your NativeScript app. 
 position: 10
+tags: location hardware access, nativescript location, nativescript geolocation
 slug: location
 previous_url: /location
 ---
 
-# Location
+# Geographical Location Data in NativeScript
 
 > **IMPORTANT:** Starting with NativeScript 1.5.0, the built-in Location module is deprecated. To implement geolocation in your apps, use the `nativescript-geolocation` plugin, available via npm. This plugin provides an API similar to the [W3C Geolocation API](http://dev.w3.org/geo/api/spec-source.html). 
 
