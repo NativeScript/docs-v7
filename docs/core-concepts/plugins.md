@@ -60,7 +60,7 @@ npm i tns-platform-declarations --save-dev
 Once the plugin you need is installed, you can start using it in your project. Note that each plugin might have its configuration that needs to be satisfied so always check carefully the plugin's documentation and the README file. The below code snippet demonstrated the basic usage of **nativescript-camera** plugin.
 
 ```JavaScript
-const cameraModule = require("nativescript-camera"); // Requiring the plugin module 
+const camera = require("nativescript-camera"); // Requiring the plugin module 
 camera.requestPermissions();
 
 // Or import only a specific class/method/property  of the plugin
