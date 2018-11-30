@@ -2,11 +2,12 @@
 title: Styling
 description: How to use Cascading Style Sheets (CSS) in NativeScript to change the appearance of GUI elements. The article describes the specifics about the CSS files declarations, how to use platform-specific CSS files and info about the supported CSS properties. 
 position: 50
+tags: nativescript styling, nativescript css
 slug: styling
 previous_url: /styling
 ---
 
-# Styling
+# User Interface Styling
 
 You change the looks and appearance of views (elements) in a NativeScript application similarly to how you do it in a web application&mdash;using Cascading Style Sheets (CSS) or changing the style object of the elements in JavaScript. Only a subset of the CSS language is supported.
 

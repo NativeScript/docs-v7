@@ -519,6 +519,14 @@ html .k-panelbar-expand.k-icon {
     height: 4.71em;
 }
 
+.ns-flavor-header a {
+    color: var(--color-dark);
+}
+
+.ns-flavor-header a:hover .flavor-header__title:after {
+    color: var(--color-success);
+}
+
 .flavor-header__search {
     flex: 1;
     padding-left: 3.57em;
@@ -707,6 +715,10 @@ html.ns-root .-hidden {
 }
 
 .side-nav__burger-menu {
+    border-radius: 4px;
+}
+
+.side-nav__burger-input:checked + .side-nav__burger-menu {
     border-radius: 12px;
 }
 
@@ -969,6 +981,7 @@ blockquote {
     border: 1px solid var(--border-light-blue);
     padding: 1.25em 1.25em 1.25em 5.63em;
     min-height: 3em;
+    border-radius: 4px;
 }
 
 blockquote:before {
@@ -1021,6 +1034,7 @@ html .ns-navigation .navigation__right .k-menu .k-item .ns-button {
     margin: 0 .36em;
 }
 
+.ns-feedback .ns-button,
 .footer__contribute > .ns-button,
 html .ns-navigation .navigation__right .k-menu .k-item .ns-button {
     height: 2.25em;
@@ -1477,7 +1491,7 @@ html .fb_iframe_widget {
 }
 
 .ns-feedback .ns-button {
-    font-size: 1.2em;
+    font-size: 1.135em;
 }
 
 /* Sitemap */
@@ -1528,7 +1542,7 @@ html .fb_iframe_widget {
 }
 
 .footer__contribute .ns-button {
-    font-size: .9em;
+    font-size: .895em;
 }
 
 .footer__contribute > * {
@@ -1976,10 +1990,11 @@ article table {
     width: 100%;
     margin: 1.25em 0;
     text-align: left;
-    border-collapse: collapse;
     border: 1px solid var(--border-light-blue);
     font-weight: 400;
     background: var(--color-light);
+    border-radius: 4px;
+    border-spacing: 0;
 }
 
 article table tr {
@@ -2068,6 +2083,7 @@ pre[class*="language-"] {
     overflow: auto;
     background: var(--color-light);
     border: 1px solid var(--border-light-blue);
+    border-radius: 4px;
 }
 
 /* Inline code */
@@ -2596,6 +2612,11 @@ html .gsc-result .gs-title {
         margin-top: -2.6em;
         padding: 2.6em 1.72em 0 0;
         width: calc(100% - 1.66em);
+        border-radius: 4px;
+    }
+
+    .side-nav__burger-input:checked + .side-nav__burger-menu {
+        border-radius: 4px;
     }
 
     .side-nav__tree > .k-group:first-child {

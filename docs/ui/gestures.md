@@ -1,13 +1,13 @@
 ---
 title: Gestures
-description: Learn what touch gestures NativeScript supports and how to use them. The article demonstrates how to set up single or multiple gestures on a specific view in NativeScript core or NativeScript Angular project. The example shows how to set up them via code-behind for NativeScript core and via HTML for NativeScript Angular.
+description: Learn how to set up single or multiple gestures via HTML or code-behind files, and offer unique interactions within NativeScript apps.
 position: 90
+tags: nativescript gestures, user interface gestures, nativescript swipe, ns tap
 slug: gestures
 previous_url: /gestures
-
 ---
 
-# Overview
+# User Interface Gestures
 
 Gestures, such as tap, slide and pinch, allow users to interact with your app by manipulating UI elements on the screen.
 

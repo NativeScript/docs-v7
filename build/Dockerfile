@@ -12,6 +12,7 @@ RUN apk add --update \
   rsync \
   nginx \
   nodejs \
+  && npm config set unsafe-perm true \
   && rm -rf /var/cache/apk/* \
   && npm config set cache /var --global \
   && npm install -g grunt \

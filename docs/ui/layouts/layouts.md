@@ -1,12 +1,13 @@
 ---
 title: Layout Process
-description: Learn the basic principles of the NativeScript layout system, the layout properties, percentage support and iOS safe area support.
+description: Learn the basic principles of the NativeScript layout system - the layout properties, percentage support and iOS safe area support.
 position: 30
+tags: user interface layouts, nativescript layouts
 slug: layouts
 previous_url: /layouts
 ---
 
-# Layout Process
+# User Interface Layout Process
 
 NativeScript provides a recursive layout system that sizes and positions views on the screen.
 Layout is the process of measuring and positioning of Layout containers and their child views. Layout is an intensive process whose speed and performance depend on the count of the children and the complexity of the layout container. For example, a simple layout container such as `AbsoluteLayout` might perform better than a more complex layout container, such as `GridLayout`.

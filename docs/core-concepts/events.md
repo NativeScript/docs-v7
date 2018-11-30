@@ -1,7 +1,8 @@
 ---
 title: Events
-description: Learn how to use Observable to emit and handle events in NativeScript and how to prevent memory leaks by using weak event listeners 
+description: Learn how to use Observable to emit and handle events in NativeScript and how to prevent memory leaks by using weak event listeners. 
 position: 60
+tags: nativescript events, events core concepts
 slug: events
 environment: nativescript
 previous_url: /events
@@ -32,10 +33,10 @@ let onTap = function(args) {
   console.log("Hello World!");
 };
 // Adding a listener with the short syntax
-testButton.on(buttonModule.Button.tapEvent, onTap, this);
+testButton.on(Button.tapEvent, onTap, this);
 
 // Adding a listener with the full syntax
-testButton.addEventListener(buttonModule.Button.tapEvent, onTap, this);
+testButton.addEventListener(Button.tapEvent, onTap, this);
 ```
 ``` TypeScript
 import { Button } from "tns-core-modules/ui/button";
@@ -47,11 +48,11 @@ export function onTap(args: GestureEventData) {
   console.log("Tap arguments: ", args);
 };
 
-//Adding a listener with the short syntax
-testButton.on(buttonModule.Button.tapEvent, onTap, this);
+// Adding a listener with the short syntax
+testButton.on(Button.tapEvent, onTap, this);
 
-//Adding a lister with the full syntax
-testButton.addEventListener(buttonModule.Button.tapEvent, onTap, this);
+// Adding a lister with the full syntax
+testButton.addEventListener(Button.tapEvent, onTap, this);
 ```
 
 ### Adding an Event Listener Using an XML Declaration
@@ -87,7 +88,7 @@ Often in NativeScript, the MVVM pattern is used with a separate view model that 
 _JavaScript example_
 ```JavaScript
 // main-view-model.js
-var observableModule = require("tns-core-modules/data/observable");
+const observableModule = require("tns-core-modules/data/observable");
 
 function HomeViewModel() {
   var viewModel = observableModule.fromObject({
@@ -101,13 +102,13 @@ function HomeViewModel() {
 module.exports = HomeViewModel;
 ```
 ```JavaScript
-//main-page.js
+// main-page.js
 const HomeViewModel = require("./home-view-model");
 
 function pageLoaded(args) {
   const page = args.object;
 
-  let homeViewModel = new HomeViewModel();
+  const homeViewModel = new HomeViewModel();
   page.bindingContext = homeViewModel;
 }
 exports.pageLoaded = pageLoaded;
@@ -141,7 +142,7 @@ import { Page } from 'tns-core-modules/ui/page';
 import { HomeViewModel } from './home-view-model';
 
 export function pageLoaded(args: EventData) {
-    let page = <Page>args.object;
+    const page = <Page>args.object;
     page.bindingContext = new HomeViewModel();
 }
 ```
@@ -159,22 +160,26 @@ Usually, you don't need to remove the event listener. However, in some cases, yo
 
 ### Removing an Event Listener Using JavaScript/TypeScript
 
-The below example uses the shorthand and full syntax to remove all listeners for the tap event of the testButton instance. If more than one object is listening for events, you can set the second parameter with the name of the callback function. This way only the referenced event listener is removed. When multiple event listeners with different `this` arguments are available, a third optional parameter is used.
+The below example uses the shorthand and the full syntax to remove all listeners for the tap event of the testButton instance. If more than one object is listening for events, you can set the second parameter with the name of the callback function. This way only the referenced event listener is removed. When multiple event listeners with different `this` arguments are available, a third optional parameter is used.
 
 _Removing a button tap event listener_
 ``` JavaScript
-//Removing a listener with short syntax
-testButton.off(buttonModule.Button.tapEvent);
+const Button = require("tns-core-modules/ui/button").Button;
 
-//Removing a listener with short syntax
-testButton2.removeEventListener(buttonModule.Button.tapEvent);
+// Removing a listener with the short syntax
+testButton.off(Button.tapEvent);
+
+// Removing a listener with the full syntax
+testButton2.removeEventListener(Button.tapEvent);
 ```
 ``` TypeScript
-//Removing a listener with short syntax
-testButton.off(buttonModule.Button.tapEvent);
+import { Button } from "tns-core-modules/ui/button";
 
-//Removing a listener with short syntax
-testButton2.removeEventListener(buttonModule.Button.tapEvent);
+// Removing a listener with the short syntax
+testButton.off(Button.tapEvent);
+
+// Removing a listener with the full syntax
+testButton2.removeEventListener(Button.tapEvent);
 ```
 
 ## Event Data Types
@@ -329,7 +334,7 @@ var Observable = require("tns-core-modules/data/observable").Observable;
 
 var testButton = new Button();
 testButton.text = "Test";
-testButton.on(buttonModule.Button.tapEvent, function () {
+testButton.on(Button.tapEvent, function () {
   source.set("testProperty", "change" + counter);
 });
 
@@ -365,7 +370,7 @@ import { Observable } from "tns-core-modules/data/observable";
 
 const testButton = new Button();
 testButton.text = "Test";
-testButton.on(buttonModule.Button.tapEvent, function () {
+testButton.on(Button.tapEvent, function () {
   source.set("testProperty", "change" + counter);
 });
 

@@ -1,13 +1,14 @@
 ---
 title: Components
-description: Get familiar with the default user interface elements (widgets) in NativeScript. The article provides a list of all UI components in NativeScript and the corresponding link with detailed info for each of them. 
+description: Get familiar with the default user interface elements (widgets) that are used as building blocks for the UI of a NativeScript mobile app.
 position: 20
+tags: user interface widgets, nativescript widgets, nativescript ui components
 slug: components
 publish: false
 previous_url: /ui-views,/ui/ui-views
 ---
 
-# User Interface Widgets
+# User Interface Widget Components
 
 NativeScript ships with a set of user interface [`views`](http://docs.nativescript.org/api-reference/modules/_ui_core_view_.html) (also known as widgets) which you can use to build the user interface of a mobile application. Most of these views wrap the corresponding native view for each platform while providing a common API for working with it. For example, the `Button` view renders an [`android.widget.Button`](http://developer.android.com/reference/android/widget/Button.html) on Android and [`UIButton`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/) on iOS.
 

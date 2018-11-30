@@ -1,11 +1,13 @@
 ---
-nav-title: "JavaScript to Java"
-title: "JavaScript to Java"
-description: "NativeScript Android Runtime Data Conversion (Marshalling)"
+title: JavaScript to Java
+description: View the available types of JavaScript to Java conversions in NativeScript, including string, boolean, number, array types, undefined and null.
 position: 1
+tags: javascript java conversion, nativescript java, nativescript js to java
+slug: js-to-java
 ---
 
 # JavaScript to Java Conversion
+
 The article lists the available types in JavaScript and how they are projected to Java.
 
 ### String

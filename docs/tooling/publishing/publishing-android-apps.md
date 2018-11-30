@@ -1,7 +1,8 @@
 ---
 title: Publishing for Android
-description: Learn how to publish your NativeScript app in the Play Store for Android users.
+description: Learn how to publish your NativeScript app in the Google Play store by following the same process used for publishing native Android mobile apps. 
 position: 40
+tags: nativescript android, nativescript google play, publish an android app, publish ns app to google play
 slug: publishing-android-apps
 previous_url: /core-concepts/publishing-android-apps
 ---

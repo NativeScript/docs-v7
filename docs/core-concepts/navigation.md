@@ -1,14 +1,14 @@
 ---
 title: Architecture and Navigation
-description: Learn how to configure navigation between pages, work with page context and data binding, navigate in modals, navigate back and configure navigation transitions 
+description: Learn about the basic application structure and page management of NativeScript apps, and how to navigate between pages or change the transition animations.
 position: 20
+tags: nativescript navigation, nativescript architecture, nativescript navigate back, nativescript page transitions, ns navigation examples
 slug: architecture
 previous_url: /navigation
 environment: nativescript
 ---
 
 # Architecture and Navigation
-
 
 ## Page management
 
@@ -496,7 +496,7 @@ frame.navigate(navigationEntry);
 
 ### Navigation transitions
 
-By default, all navigation will be animated and will use the default transition for the respective platform (UINavigationController transitions for iOS and Fragment transitions for Android). To change the transition type, set the `navigationTransition` property of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) to an object conforming to the [`NavigationTransition`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition.html) interface.
+By default, all navigation will be animated and will use the default transition for the respective platform (UINavigationController transitions for iOS and Fragment transitions for Android). To change the transition type, set the `navigationTransition` property of the [`NavigationEntry`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationentry.html) to an object conforming to the [`NavigationTransition`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition.html) interface. (For android this requires at least API 25 [Android 5.0])
 ``` JavaScript
 const getFrameById = require("tns-core-modules/ui/frame").getFrameById;
 

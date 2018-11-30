@@ -13,13 +13,14 @@ Using a `ListView` control inside Angular app requires some special attention du
 
 In this article we will cover the following topics:
 
-* [Using the ListView Component](#using-the-listview-component)
-* [Customizing the ListView](#customizing-the-listview)
-* [Using an Item Template](#using-an-item-template)
-* [Using Multiple Item Templates](#using-multiple-item-templates)
-* [Using Async Pipe](#using-async-pipe)
-* [Using Load More Items](#load-more-items)
-* [Estimated Row Height](#estimated-row-height)
+- [List View](#list-view)
+    - [Using the ListView Component](#using-the-listview-component)
+    - [Customizing the ListView](#customizing-the-listview)
+    - [Using an Item Template](#using-an-item-template)
+    - [Using Multiple Item Templates](#using-multiple-item-templates)
+    - [Using Async Pipe](#using-async-pipe)
+    - [Load More Items](#load-more-items)
+    - [Estimated Row Height](#estimated-row-height)
 
 ## Using the ListView Component
 

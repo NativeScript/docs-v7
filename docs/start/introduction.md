@@ -1,7 +1,8 @@
 ---
 title: Getting Started
-description: Learn how to get started with NativeScript, a cross-platform framweork for building native iOS and Android apps using JavaScript, TypeScript, or Angular.
+description: Meet NativeScript - an open-source cross-platform framework for building native iOS and Android apps using JavaScript, TypeScript, Angular or Vue.
 position: 10
+tags: getting started with nativescript, about nativescript, nativescript get started
 slug: introduction
 previous_url: /index
 ---
