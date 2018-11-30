@@ -94,7 +94,7 @@ var array = new NSMutableArray();
 var buttonClass = UIButton;
 var button = new buttonClass();
 array.setObjectAtIndex(buttonClass, 0);
-array.setObjectAdIndex(button, 1);
+array.setObjectAtIndex(button, 1);
 ```
 
 ### Primitive Exceptions
