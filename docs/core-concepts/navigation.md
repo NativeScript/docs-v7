@@ -312,7 +312,7 @@ export function onSelectedIndexChanged(args: SelectedIndexChangedEventData) {
 
 ### SideDrawer Navigation
 
-The `SideDrawer` component is part of the [Professional UI Components]({%slug rich-components %}) suite. It enables the user to open a hidden view, i.e. drawer, containing navigation controls or settings from the sides of the screen. There are a lot of navigation patterns that can be implemented using a `SideDrawer`. A typical usage would be to add UI controls and have them do one of two things:
+The `SideDrawer` component is part of the [Professional UI Components]({%slug rich-components %}) suite. It enables the user to open a hidden view, i.e. drawer, containing navigation controls, or settings from the sides of the screen. There are a lot of navigation patterns that can be implemented using a `SideDrawer`. A typical usage would be to add UI controls and have them do one of two things:
 
 * Forward navigation - get a reference to a navigation `Frame` and navigate in it.
 * Lateral navigation - open a modal view.
