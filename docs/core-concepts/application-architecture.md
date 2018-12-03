@@ -107,7 +107,7 @@ export function onFrameLoaded(args: EventData): void {
 
 ### Page Modules
 
-These modules represent pages and are used by the `Frame` component to implement forward na backward navigation. You can pass these modules to the `Frame` in one of two ways:
+These modules represent pages and are used by the `Frame` component to implement forward and backward navigation. You can pass these modules to the `Frame` in one of two ways:
 
 * The `defaultPage` attribute - the page module set in this attribute will be initially shown by the `Frame`.
 * The `navigate()` method - this method forces the `Frame` to hide the currently navigated page module and to show the page module passed as parameter.
