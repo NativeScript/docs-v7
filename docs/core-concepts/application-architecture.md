@@ -1,6 +1,6 @@
 ---
 title: Application Architecture
-description: Learn the core concepts of building NativeScript apps
+description: Learn the core concepts of building NativeScript apps, entry point, application modules, global styling, platform qualifiers and data binding
 position: 30
 slug: architecture
 environment: nativescript
@@ -148,7 +148,7 @@ export function onPageLoaded(args: EventData): void {
 
 ## Global App Styling
 
-The core NativeScript framework also provides a way to set application wide styling. The default place to do that is in the `app.css` file in the app root folder. All css rules that are declared in this file will be applied to all application modules.
+The NativeScript Core framework also provides a way to set application wide styling. The default place to do that is in the `app.css` file in the app root folder. All css rules that are declared in this file will be applied to all application modules.
 
 You can change the name of the file from which the application-wide CSS is loaded. You need to do the change before the `application.run()` method is called as shown below:
 
