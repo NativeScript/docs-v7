@@ -9,7 +9,7 @@ previous_url: /architecture
 
 # Application Architecture
 
-In this article we are going to go through the core concepts of the core NativeScript framework.
+In this article we are going to review the architecture of a NativeScript application built with the Core Framework. It will cover the entry point of the app, the decomposition into modules, styling the application and data binding.
 
 ## Entry Point
 
