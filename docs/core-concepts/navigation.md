@@ -24,7 +24,7 @@ This article demonstrates how you can implement these in NativeScript and combin
 
 ![navigation-schema-forward](../img/navigation/navigation-schema-forward.png?raw=true)
 
-Can be also called downward navigation since you are going down in your navigation hierarchy. There are two navigation components in NativeScript that enable implementing forward navigation - `Frame` and `Page`. A `Frame` represents a navigation controller that navigates through `Page` instances.
+Forward navigation can be also called downward navigation since you are going down in your navigation hierarchy. There are two navigation components in NativeScript that enable implementing forward navigation - `Frame` and `Page`. A `Frame` represents a navigation controller that navigates through `Page` instances.
 
 ![navigation-diagram-forward](../img/navigation/navigation-diagram-forward.png?raw=true)
 
