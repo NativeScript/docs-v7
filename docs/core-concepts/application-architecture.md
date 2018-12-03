@@ -175,7 +175,7 @@ Mobile applications are running on different devices with different screen sizes
 In the next section, we will go through the list of supported qualifiers.
 
 ### Screen Size Qualifiers
-All the values in screen size qualifiers are in density independent pixels(DP) &mdash; meaning it corresponds to the physical dimensions of the screen. The assumptions are that there are ~160 DP per inch. For example, according to Android guidelines, if the device's smaller dimension is more than 600 dp (~3.75 inches), it is probably a tablet.
+All the values in screen size qualifiers are in density independent pixels (DP) &mdash; meaning it corresponds to the physical dimensions of the screen. The assumptions are that there are ~160 DP per inch. For example, according to Android guidelines, if the device's smaller dimension is more than 600 dp (~3.75 inches), it is probably a tablet.
 
 * `minWH<X>` - The smaller dimension (width or height) should be at least **X** dp.
 * `minW<X>` - Width should be at least **X** dp.
