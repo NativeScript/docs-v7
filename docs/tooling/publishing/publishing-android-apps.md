@@ -169,6 +169,16 @@ You can read more about these stages at ["Set up alpha/beta tests"](https://supp
 
 Once you upload your APK, it will go through a review. When approved, you can move it to production to make it available on *Google Play*.
 
+### Android App Bundle
+If you want to reduce the size of the application download from Google Play Store you can check how to achieve this in [Android App Bundle article](http://docs.nativescript.org/publishing/android-app-bundle.html).
+
+You can perform a full build and produce a signed AAB using the NativeScript CLI:
+```
+tns build android --release --key-store-path <path-to-your-keystore> --key-store-password <your-key-store-password> --key-store-alias <your-alias-name> --key-store-alias-password <your-alias-password> --aab --copy-to <aab-location>.aab
+```
+
+Then you can use the produced file to upload it to Google Play Developer Console following the steps described in [Google Android Developer Documentation](https://developer.android.com/studio/publish/upload-bundle).
+
 ### Submission automation
 
 Some tools allow the submission process to be automated - [MIT Licensed one: fastlane](https://github.com/fastlane/fastlane).
