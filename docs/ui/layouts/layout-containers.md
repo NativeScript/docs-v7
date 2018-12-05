@@ -189,8 +189,8 @@ _Example for sizing with star (`*`)_
 ![GridLayout](../img/modules/layouts/grid-layout1.png "GridLayout")
 
 _Example for fixed and auto sizing_
-- The first column and the first row are `auto`. This means that they are measured with infinite available space and then sized to their content.
 - The first column and the first row have fixed sizes of 100 and 100 respectively. They will be exactly this wide/high regardless of their children's dimensions. They would still be exactly this wide/high even if they don't have any children.
+- The second column and the second row are `auto`. This means that they are measured with infinite available space and then sized to their content.
 {% nativescript %}
 ```XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
@@ -210,7 +210,7 @@ _Example for fixed and auto sizing_
 ![GridLayout](../img/modules/layouts/grid-layout2.png "GridLayout")
 
 _Example for no width and horizontalAlignment != stretch_
-When the GridLayout has no explicit `width` set and its `horizontalAlignment` is not `stretch`, the star columns will not occupy the entire available space (200 from parent StackLayout).
+When the GridLayout has no explicit `width` set and its `horizontalAlignment` is set and is not `stretch`, the star columns will not occupy the entire available space (200 from parent StackLayout).
 
 {% nativescript %}
 ```XML
@@ -250,7 +250,7 @@ Label 3 has a fixed width of 150 pixels. Label 1 is given more space than it act
 ![GridLayout](../img/modules/layouts/grid-layout4.png "GridLayout")
 
 _Example for complex structure_
-`Image` has fixed width and height of 72 and span the both rows. For the first `Label` is given more space by using `colSpan="2"`. Third `Lable` is given more space than it actually needs, because fourth `Label` stretches the auto column.
+`Image` has fixed width and height of 72 and span the both rows. For the first `Label`, it's given more space by using `colSpan="2"`. Third `Lable` is given more space than it actually needs, because fourth `Label` stretches the auto column.
 
 {% nativescript %}
 ```XML
@@ -291,18 +291,18 @@ function onPageLoaded(args) {
     // Grid wrapper
     const grid = new GridLayout();
 
-    // Create title Label and add is as a child to our grid
+    // Create title Label and add it as a child to our grid
     const titleLabel = new Label();
     titleLabel.text = "NativeScript";
     grid.addChild(titleLabel);
 
-    // Create info Label and add is as a child to our grid
+    // Create info Label and add it as a child to our grid
     const infoLabel = new Label();
     infoLabel.text = "Truly native mobile apps";
     infoLabel.backgroundColor = new Color("gray");
     grid.addChild(infoLabel);
 
-    // Create the share button and add is as a child to our grid
+    // Create the share Button and add it as a child to our grid
     const shareButton = new Button();
     shareButton.text = "Share This!";
     grid.addChild(shareButton);
@@ -313,10 +313,10 @@ function onPageLoaded(args) {
     grid.addRow(new ItemSpec(1, GridUnitType.STAR));
 
     // 100 - fixed column width.
-    // If elements in this columns wants to be more - we will coerce their width to the column width.
+    // If elements in this row need more vertical space - we will coerce their height to the row height.
     grid.addRow(new ItemSpec(100, GridUnitType.PIXEL));
 
-    // auto - the column width will be the width of the widest element in that column.
+    // auto - the row height will be the height of the tallest element in that row.
     grid.addRow(new ItemSpec(1, GridUnitType.AUTO));
 
     grid.addColumn(new ItemSpec(250, GridUnitType.PIXEL));
@@ -352,18 +352,18 @@ export function onPageLoaded(args: EventData) {
     // Grid wrapper
     const grid = new GridLayout();
 
-    // Create title Label and add is as a child to our grid
+    // Create title Label and add it as a child to our grid
     const titleLabel = new Label();
     titleLabel.text = "NativeScript";
     grid.addChild(titleLabel);
 
-    // Create info Label and add is as a child to our grid
+    // Create info Label and add it as a child to our grid
     const infoLabel = new Label();
     infoLabel.text = "Truly native mobile apps";
     infoLabel.backgroundColor = new Color("gray");
     grid.addChild(infoLabel);
 
-    // Create the share button and add is as a child to our grid
+    // Create the share button and add it as a child to our grid
     const shareButton = new Button();
     shareButton.text = "Share This!";
     grid.addChild(shareButton);
@@ -374,10 +374,10 @@ export function onPageLoaded(args: EventData) {
     grid.addRow(new ItemSpec(1, GridUnitType.STAR));
 
     // 100 - fixed column width.
-    // If elements in this columns wants to be more - we will coerce their width to the column width.
+    // If elements in this row need more vertical space - we will coerce their height to the row height.
     grid.addRow(new ItemSpec(100, GridUnitType.PIXEL));
 
-    // auto - the column width will be the width of the widest element in that column.
+    // auto - the row height will be the height of the tallest element in that row.
     grid.addRow(new ItemSpec(1, GridUnitType.AUTO));
 
     grid.addColumn(new ItemSpec(250, GridUnitType.PIXEL));
