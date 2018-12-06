@@ -15,7 +15,7 @@ This page contains a list of all system requirements needed to build and run Nat
 ## System Requirements
 
 * macOS High Sierra or later
-* The latest stable official release of Node.js (LTS) [8.x](https://nodejs.org/dist/latest-v8.x/). 
+* The latest stable official release of Node.js (LTS) [10.x](https://nodejs.org/dist/latest-v8.x/). 
 * (Optional) [Homebrew](https://brew.sh/) to simplify the installation of dependencies
 * For iOS development
     * Latest Xcode
@@ -45,22 +45,22 @@ Complete the following steps to setup NativeScript on your macOS development mac
     <pre class="add-copy-button"><code class="language-terminal">ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     </code></pre>
 
-2. Install the latest Node.js (LTS) [8.x](https://nodejs.org/dist/latest-v8.x/).
+2. Install the latest Node.js (LTS) [10.x](https://nodejs.org/dist/latest-v10.x/).
 
     <pre class="add-copy-button"><code class="language-terminal">brew update
     </code></pre>
 
-    <pre class="add-copy-button"><code class="language-terminal">brew install node@8
+    <pre class="add-copy-button"><code class="language-terminal">brew install node@10
     </code></pre>
      
      1. After you run the command above you will see this on console:
      ```
      If you need to have this software first in your PATH run:
-     echo 'export PATH="/usr/local/opt/node@8/bin:$PATH"' >> ~/.bash_profile
+     echo 'export PATH="/usr/local/opt/node@10/bin:$PATH"' >> ~/.bash_profile
      ```
      In order to make node available, please add it to path with this command:
      ```
-     echo 'export PATH="/usr/local/opt/node@8/bin:$PATH"' >> ~/.bash_profile
+     echo 'export PATH="/usr/local/opt/node@10/bin:$PATH"' >> ~/.bash_profile
      ```      
      Then restart the terminal or run `source ~/.bash_profile` command.
      
@@ -107,12 +107,12 @@ Complete the following steps to setup NativeScript on your macOS development mac
     <pre class="add-copy-button"><code class="language-terminal">brew cask install java8
     </code></pre>
     
-    1. Set the JAVA_HOME system environment variable.
+    2. Set the JAVA_HOME system environment variable.
 
         <pre class="add-copy-button"><code class="language-terminal">export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
         </code></pre>
 
-    2. Install the [Android SDK](http://developer.android.com/sdk/index.html).
+    3. Install the [Android SDK](http://developer.android.com/sdk/index.html).
         1. In the terminal, run the following command:
 
             <pre class="add-copy-button"><code class="language-terminal">brew cask install android-sdk
