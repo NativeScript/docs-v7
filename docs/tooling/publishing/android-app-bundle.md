@@ -38,7 +38,7 @@ And here are the necessary changes that you need to do in your `webpack.config.j
 
 ```
 if (env.snapshot) {
-    plugins.push(new nsWebpack.NativeScriptSnapshotPlugin({
+    config.plugins.push(new nsWebpack.NativeScriptSnapshotPlugin({
         chunk: "vendor",
         projectRoot: __dirname,
         webpackConfig: config,
@@ -75,6 +75,9 @@ java -jar <toolPath>/bundletool.jar build-apks --bundle=<somePath>/app.aab  --ou
 ```
 
 Then you can install the application on a connected device by executing:
+
+> Note: Devices running Android 4.4 (API level 19) and lower don’t support downloading and installing split APKs. On such devices `bundletool` will not be able to deploy the application. When the bundle is released Google Play will serve a single multi-APK to such devices.
+
 ```
 java -jar <toolPath>/bundletool.jar install-apks --apks="somePath/my_app.apks" --device-id=<deviceId>
 ```

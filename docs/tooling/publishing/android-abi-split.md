@@ -46,7 +46,7 @@ And here are the necessary changes that you need to do in your `webpack.config.j
 
 ```
 if (env.snapshot) {
-    plugins.push(new nsWebpack.NativeScriptSnapshotPlugin({
+    config.plugins.push(new nsWebpack.NativeScriptSnapshotPlugin({
         chunk: "vendor",
         projectRoot: __dirname,
         webpackConfig: config,
