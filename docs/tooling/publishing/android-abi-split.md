@@ -40,13 +40,13 @@ The default file format that the `nativescript-dev-webpack` plugin produces when
 
 For each of the architectures that you specify in your `webpack.config.js`, the plugin will produce a `snapshot.blob` file inside `assets/snapshots/${target_arch}/snapshot.blob`. Those files are **not** subject to ABI splits and you will find a corresponding `blob` for each architecture in the resulting .apk split file. I suppose this is the behavior you are currently experiencing.
 
-If you want to take advantage of ABI splits you will need to instruct the `nativescript-dev-webpack` plugin to produce a `.so` snapshot. For this purpose, you will need to have the Android NDK installed on your system. It is strongly recommended that the same version of the NDK is used to produce the snapshot file as the one used to compile the {N} runtime itself. Currently we use NDK r16b.
+If you want to take advantage of ABI splits you will need to instruct the `nativescript-dev-webpack` plugin to produce a `.so` snapshot. For this purpose, you will need to have the Android NDK installed on your system. It is strongly recommended that the same version of the NDK is used to produce the snapshot file as the one used to compile the {N} runtime itself. Currently we use NDK r17c.
 
 And here are the necessary changes that you need to do in your `webpack.config.js` in order to enable `.so` snapshot file generation:
 
 ```
 if (env.snapshot) {
-    plugins.push(new nsWebpack.NativeScriptSnapshotPlugin({
+    config.plugins.push(new nsWebpack.NativeScriptSnapshotPlugin({
         chunk: "vendor",
         projectRoot: __dirname,
         webpackConfig: config,
@@ -57,7 +57,7 @@ if (env.snapshot) {
 }
 ```
 
-The two important switches to note here are `useLibs: true` (which instructs the plugin to produce a `.so` file) and `androidNdkPath` (make sure you point this to a folder containing Android NDK r12b).
+The two important switches to note here are `useLibs: true` (which instructs the plugin to produce a `.so` file) and `androidNdkPath` (make sure you point this to a folder containing Android NDK r17c).
 
 One final thing before building the application is to instruct gradle to actually include the resulting snapshot into the final apk. This can be done in your `App_Resources/Android/app.gradle`:
 
