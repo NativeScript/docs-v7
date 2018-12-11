@@ -188,7 +188,7 @@ application.on(application.resumeEvent, (args) => {
 });
 
 application.on(application.displayedEvent, (args) => {
-    // args is of type ApplicaitonEventData
+    // args is of type ApplicationEventData
     console.log("displayedEvent");
 });
 
