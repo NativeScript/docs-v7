@@ -14,6 +14,7 @@ Contains CSS and JavaScript files.
 
 #### _includes
 
+
 Contains common include files used by the layout pages. Not included in the final output in the `_site` directory.
 
 #### _layouts
