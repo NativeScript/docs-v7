@@ -154,7 +154,7 @@ You can then use the produced `<apk-location>.apk` for upload to *Google Play*.
 
 ### APKs with ABI splits
 
-If you want to reduce the apk sizes you can check how to achieve this in [Android ABI Split article](http://docs.nativescript.org/publishing/android-abi-split.html).
+If you want to reduce the apk sizes you can check how to achieve this in [Android ABI Split article]({% slug android-abi-split %}).
 
 <h4 id="submit-with-the-google-play-developer-console">Submit with the Google Play Developer Console</h4>
 
@@ -170,7 +170,7 @@ You can read more about these stages at ["Set up alpha/beta tests"](https://supp
 Once you upload your APK, it will go through a review. When approved, you can move it to production to make it available on *Google Play*.
 
 ### Android App Bundle
-If you want to reduce the size of the application download from Google Play Store you can check how to achieve this in [Android App Bundle article](http://docs.nativescript.org/publishing/android-app-bundle.html).
+If you want to reduce the size of the application download from Google Play Store you can check how to achieve this in [Android App Bundle article]({% slug android-app-bundle %}).
 
 You can perform a full build and produce a signed AAB using the NativeScript CLI:
 ```
