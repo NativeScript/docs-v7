@@ -35,6 +35,26 @@ if the actual `id` has value `123`. In other worlds, creating JavaScript objects
 
 Having said that, this could lead to some scenarios where there are unreachable JavaScript objects (e.g. effective garbage) for which the corresponding Java objects hold a lot of memory (think of `Bitmap`, `String`, `StringBuilder`, I/O buffers, etc.). But because there is little or no memory pressure in the JavaScript heap there is no reason for V8 GC to kick off. Therefore NativeScript for Android runtime doesn't have the chance to release the Java object handles (if any). This could cause `OutOfMemoryError`.
 
+## markingMode: "none"
+
+By default during a V8 GC pass the Android runtime performs an automatic traversal of alive JavaScript instances (a routing called `MarkReachableObjects`). In apps which create huge JavaScript instances graphs however this can cause significant delays in garbage collections, leading to unpleasant blocks of the UI thread.
+
+Basically, this algorithm makes sure that no Java instances will be prematurely collected by the Android Java GC, while they are still being used by the JavaScript side. JavaScript code, however, can be structured in such a way that this additional step becomes unneeded. The only case when it is required is when there are no other references to the Java instance than the scope and the scope is the only thing that takes care to keep it alive.
+
+There's a `app/package.json` option which apps can set in order to disable `MarkReachableObjects`:
+```JSON
+{
+  "android": {
+    "markingMode": "none"
+  }
+}
+```
+
+The code inside `tns-core-modules` and all plugins published by the NativeScript Team (since version 5.1.0) are written in such a way, that it does not depend on the scope to keep those Java instances alive. This makes apps using these plugins fully compatible with the a lot more performant `markingMode: "none"` option.
+
+> **WARNING**: Enabling this option if the JavaScript code dealing with native objects (either in the application or any plugins you are using) does not correctly take care of the lifetime of Java instances may cause unexpected and unpredictable crashes of the application due to Java instances being prematurely collected. Use caution when enabling it and make sure to thoroughly test your apps with different memory constrains and devices! The errors generated in such cases look like this:
+`Error: com.tns.NativeScriptException: Attempt to use cleared object reference id=<some-object-id-number>`
+
 ## Syncronizing Garabage Collectors
 
 In order to mitigate such issues we provide an experimental feature which tries to synchronize both garbage collectors. One option is to trigger GC for the JavaScript heap so it collect all unreachable JavaScript objects which can hold reference to potentially large Java objects. There are three possible approaches.
@@ -85,4 +105,4 @@ The described approaches are not mutually exclusive. You can combine them as it 
 * Avoid allocating many large objects at once
 * Avoid allocating objects in loops
 
-Be cautious when you write closures as it often hard to observe object retentions along all the reference chain. 
+Be cautious when you write closures as it often hard to observe object retentions along all the reference chain.
