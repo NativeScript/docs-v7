@@ -47,7 +47,7 @@ ng add @nativescript/schematics
 
 This command installs **@nativescript/schematics**, and then adds a NativeScript-specific copy of:
 
-* The Main file - **main.ns.ts**, which bootstraps the NativeScript Entry Module,
+* The Main file - **main.tns.ts**, which bootstraps the NativeScript Entry Module,
 * the Entry Module file - by default this is **app.module.tns.ts**, which is based on the name of the module provided to **bootstrapModule** in your **main.ts**,
 * Entry Component file - by default this is **app.component.ts**, which is based on the name of the component provided to **bootstrap** in the web entry module,
 * and the App Routing file - **app-routing.module.ts**, which brings in **NativeScriptRouterModule**. It also provides a path to a sample component (**HomeComponent**).
