@@ -26,7 +26,7 @@ The open nature of NativeScript makes it possible to use popular JavaScript fram
 
 <br />
 
-**1)** Do you already know Angular? Use ![angular](angular-small.png). Using Vue.js, and love it? You'll love ![vue](vue-small.png).
+**1)** Do you already know Angular? Use ![angular](angular-small.png). Using Vue.js, and like it? You'll love ![vue](vue-small.png).
 
 **2)** Is start up time and performance your top concern? Use ![nativescript core](core-small.png). (But you can make ![angular](angular-small.png) nearly as fast with some [optimizations](https://docs.nativescript.org/performance-optimizations/startup-times).)
 
