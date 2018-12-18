@@ -373,9 +373,9 @@ animationSet.play().catch((e) => {
 ```
 
 ## Rotation using originX and originY
+__Example 5: Rotating a view around its center. Center of view is changed via `originX` and `originY` properties.__
 
-git bran
-__Example 5: Rotating a view around its center. Center of viww is changed via `originX` and `originY` properties.__
+![rotation_origin_x_y](./img/modules/animation/rotation_origin_x_y.gif "Rotation originX / originY")
 
 ``` JavaScript
 const view = page.getViewById("myView");
