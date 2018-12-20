@@ -29,7 +29,7 @@ All widgets that inherit from [`EditableTextBase`](https://docs.nativescript.org
 - email
  - Android: [TYPE_CLASS_TEXT](http://developer.android.com/reference/android/text/InputType.html#TYPE_CLASS_TEXT) | [TYPE_TEXT_VARIATION_EMAIL_ADDRESS](http://developer.android.com/reference/android/text/InputType.html#TYPE_TEXT_VARIATION_EMAIL_ADDRESS)
  - iOS:  [UIKeyboardTypeEmailAddress](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/c/tdef/UIKeyboardType)
- - ![email](/img/modules/keyboard/email.png "email")
+ - ![email](./img/modules/keyboard/email.png "email")
 
 # Return Key Type
 All widgets that inherit from [`EditableTextBase`](https://docs.nativescript.org/api-reference/classes/_ui_editor_text_base_.editabletextbase), i.e., [`TextField`](http://docs.nativescript.org/api-reference/classes/_ui_text_field_.textfield.html) and [`TextView`](http://docs.nativescript.org/api-reference/classes/_ui_text_view_.textview.html), have a **returnKeyType** property that gets or sets the soft keyboard return key type. Possible values are contained in the [`ReturnKeyType`](http://docs.nativescript.org/api-reference/modules/_ui_enums_.returnkeytype.html) enumeration.
