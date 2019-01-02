@@ -362,7 +362,7 @@ $(function(){
     var rightNavLinks = $(".right-nav__links");
 
     var rightNav = $('\
-<div class="right-nav__container">\
+<div class="right-nav__container navigation__right__scroll">\
     <input id="right-nav__toggle" class="right-nav__input" type="checkbox">\
     <label for="right-nav__toggle" class="right-nav__label"></label>\
     <div class="right-nav__tree"></div>\
@@ -514,3 +514,26 @@ function NsSideScroll(){
 }
 
 setTimeout(NsSideScroll, 1500);
+
+// Handle Navigation Right Scroll 
+
+function handleScrollNav(){
+    const rightNavScroll = document.querySelector('.right-nav__container');
+    const pageContent = document.querySelector('#page-article article');
+    if(pageContent){
+        function handleRightScroll(e){
+            const distanceHeight = pageContent.getBoundingClientRect().y + 180;
+            if(distanceHeight < 115){
+                rightNavScroll.style.transform = "translateY(0px)";
+            }else{
+                rightNavScroll.style.transform = "translateY(150px)";
+            }
+        }
+
+        handleRightScroll();
+    };
+
+}
+window.addEventListener('load', handleScrollNav);
+setTimeout(window.addEventListener('scroll', handleScrollNav), 1500);
+

@@ -780,6 +780,7 @@ html body .side-nav__tree {
 /* Right TOC */
 
 .right-nav__container {
+    transition: all 0.5s ease;
     top: 6.25em;
     margin-left: 1.25em;
     position: -webkit-sticky;
@@ -787,7 +788,16 @@ html body .side-nav__tree {
     float: right;
     margin-right: -17em;
 }
+.navigation__right__scroll {
+    position: fixed !important;
+    right: 20.55em;
+    bottom: 0;
+    overflow-y: scroll;
+}
 
+.ns-tip-container ~ .ns-page .navigation__right__scroll{
+    top: 7.6em;
+}
 .ns-tip-container ~ .ns-page .right-nav__container {
     top: 7.6em;
 }
