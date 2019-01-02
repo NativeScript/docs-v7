@@ -2770,3 +2770,21 @@ html .gsc-result .gs-title {
         flex-direction: column;
     }
 }
+
+/* Styling for the NS Side navigation scroll */
+@media only screen and (min-width: 1024px){
+    #ns-side-scroll{
+        position: sticky !important;
+        top: 120px;
+        height: 78vh !important;
+        
+    }
+    .ns-side-nav-active: {
+        transform: translateY(90px);
+    }
+.ns-side-nav .side-nav__tree{
+    height: 95% !important;
+    overflow: scroll !important;
+    }
+}
+

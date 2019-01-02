@@ -497,3 +497,20 @@ $(function() {
     window.setTimeout(handleBanner, 1000);
 });
 
+// Handle ns-side-scroll
+function NsSideScroll(){
+    const leftNav = document.querySelector('.ns-side-nav');
+    
+    function handleSticky(){
+        if(window.scrollY >= 110){
+            leftNav.classList.add('ns-side-nav-active');
+        }else{
+            leftNav.classList.remove('ns-side-nav-active');
+        }
+    }
+
+    window.addEventListener('scroll', handleSticky);
+    
+}
+
+setTimeout(NsSideScroll, 1500);
