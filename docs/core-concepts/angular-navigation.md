@@ -16,21 +16,20 @@ The Angular way of doing navigation is using the **Angular Component Router**. Y
 
 ## NativeScript Router Module
 
-NativeScript provides its own `NativeScriptRouterModule` that extends the Angular `RouterModule`. It contains some extensions and additions that are essential for routing to work on mobile and also provide an option to bring the full native mobile navigation UX to Angular.
+NativeScript provides its own `NativeScriptRouterModule` that extends the Angular `RouterModule`. It contains some extensions and additions that are essential for routing to work in a mobile environment and also provide options to bring the full native mobile navigation UX to Angular.
 
 There are a number of UX specifics that are hard to replicate with the default Angular router alone:
 
-* Native and platform specific navigation transitions.
-* The `ActionBar` component.
-* Platform specific back navigation handling - the hardware back button on Android and the `ActionBar` back button on iOS.
-* Mobile specific navigation lifecycle - view state preservation when navigating back.
+* Native navigation transitions.
+* Back navigation handling - the hardware back button on Android and the navigation bar back button on iOS.
+* Mobile navigation lifecycle - view state preservation when navigating back.
 * Mobile specific history - keeping history per navigation controller instead of a global one.
-* Mobile specific navigation widgets - `TabView`, `SideDrawer`, `Modal View` and more.
+* Mobile lateral navigation widgets - `TabView`, `SideDrawer`, `Modal View` and more.
 
 NativeScript brings these to Angular with the following extensions, directives and strategies:
 
 * `page-router-outlet` - This is an alternative to the regular `router-outlet` that serves as a placeholder for where native mobile navigation will occur.
-* `nsRouterLink` - It's an alternative to the regular `routerLink` directive that works with NativeScript.
+* `nsRouterLink` - It's an alternative to the regular `routerLink` directive that works with mobile gestures.
 * `RouterExtensions` class - It provides a native mobile navigation API similar to the [``Router``](https://angular.io/api/router/Router) and [``Location``](https://angular.io/api/common/Location) classes.
 * Custom [``RouteReuseStrategy``](https://angular.io/api/router/RouteReuseStrategy) - This strategy forces Angular to cache and reuse components that were loaded in a `page-router-outlet` with accordance to the native navigation lifecycle.
 * Custom [``PlatformLocation``](https://angular.io/api/common/PlatformLocation) and [``LocationStrategy``](https://angular.io/api/common/LocationStrategy) - This strategy keeps history per outlet instead of one global linear history.
@@ -41,7 +40,7 @@ We will explore each of these in the following sections.
 
 NativeScript's `page-router-outlet` is the equivalent of Angular's [``router-outlet``](https://angular.io/api/router/RouterOutlet). It serves as a placeholder for native mobile navigations. Internally, each `page-router-outlet` creates a NativeScript `Frame` and each component that the router displays in the outlet is wrapped in a `Page` widget. This is the main integration point that brings native navigation to Angular. The `Frame` and `Page` combination also means you can use the `ActionBar` widget in these components. For more information on how NativeScript Core navigation works visit this [documentation article]({% slug navigation %}.
 
-We recommend that you use `page-router-outlet` for your major mobile navigation pattern and use the regular `router-outlet` for internal component navigations if needed, but you are also free to use the `router-outlet` only if this makes more sense for your scenario.
+We recommend that you use `page-router-outlet` for your major mobile navigation pattern and use the regular `router-outlet` for internal component navigations if needed. You are also free to use only the `router-outlet` if this makes more sense for your scenario.
 
 ### Router Link
 
@@ -50,18 +49,37 @@ In a NativeScript application you **cannot** use the Angular [`routerLink`](http
 * pageTransition - This attribute lets you specify the native transition for the `nsRouterLink` navigation. Accepted values are `true`, `false`, one of the predefined transitions listed [here](https://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition#name) or a custom [NavigationTransition](https://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition) object.
 * clearHistory - This attribute accepts a boolean value and indicates whether the navigation triggered by the `nsRouterLink` will clear the navigation history of the current outlet.
 
-> **Note:** The NativeScript specific attributes work only on a `page-router-outlet`.
+```HTML
+<Button text="Button" [nsRouterLink]="['/main']" pageTransition="slide" clearHistory="true"></Button>
+```
+
+> **Note:** The NativeScript specific attributes work only on routes loaded in a `page-router-outlet`.
 
 ### Router Extensions
 
-The `RouterExtensions` class provides methods for imperative navigation, similar to how you would navigate with the Angular `Router` and `Location` classes. Here is a list of the methods:
+The `RouterExtensions` class provides methods for imperative navigation, similar to how you would navigate with the Angular `Router` and `Location` classes. To use the class simply inject it in your component constructor:
 
-* navigate()
-* navigateByUrl()
-* back()
-* canGoBack()
-* backToPreviousPage()
-* canGoBackToPreviousPage()
+``` TypeScript
+import { RouterExtensions } from "nativescript-angular/router";
+
+@Component({
+	// ...
+})
+export class MainComponent {
+
+	constructor(private routerExtensions: RouterExtensions) {
+	}
+}
+```
+
+Here is a list of the available methods:
+
+* `navigate()` - This method is an alternative to the Angular `Router` [``navigate()``](https://angular.io/api/router/Router#navigate) method, but also supports navigations in a `page-router-outlet`.
+* `navigateByUrl()` - Like the above method, this is an alternative to the `Router` [``navigateByUrl()``](https://angular.io/api/router/Router#navigateByUrl) method that works with `page-router-outlet`.
+* `back()` - This method is an equivalent to the Angular `Location` [``back()``](https://angular.io/api/common/Location#back) method. It will navigate back in the last navigated outlet.
+* `canGoBack()` - This is a method introduced by NativeScript. It returns a boolean value indicating whether there is a route the user can navigate back to.
+* `backToPreviousPage()` - This method is similar to the `back()` method above, but it will skip navigations done in an Angular `router-outlet`.
+* `canGoBackToPreviousPage()` - This method returns a boolean value indicating whether there is a route that was loaded in a `page-router-outlet`, that the user can navigate back to.
 
 ### Custom Route Reuse Strategy
 
@@ -69,13 +87,13 @@ NativeScript also imports a custom [``RouteReuseStrategy``](https://angular.io/a
 
 In the Angular `router-outlet`, a component is destroyed when you navigate away from it and is re-created when you navigate back to it. There is no difference in lifecycle between forward and backward navigation.
 
-TODO: Add Schema for router-outlet
+![router-outlet-lifecycle](../img/navigation/router-outlet-lifecycle.png?raw=true)
 
 In a native mobile application the system will keep the navigated views alive, so that when you come back to them, their view state will be kept the same. In the native world views are destroyed only when you back away from them. The `page-router-outlet` houses native navigations, so its components lifecycle must match the lifecycle of the native views. This is done by the custom `NSRouteReuseStrategy`.
 
-TODO: Add Schema for page-router-outlet
+![page-router-outlet-lifecycle](../img/navigation/page-router-outlet-lifecycle.png?raw=true)
 
-You might want to perform some cleanup actions (e.g. unsubscribe from a service to stop updates) when you are navigating forward to a next page. If you are using `page-router-outlet` you cannot do that in the `ngOnDestroy()` hook, as this will not be called when you navigate forward. What you can do is inject `Page` inside your component and attach to page navigation events (for example `navigatedFrom`) and do the cleanup there. You can check all the available page events [here](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html#on).
+You might want to perform some cleanup actions (e.g. unsubscribe from a service to stop updates) when you are navigating forward to a next page. If you are using `page-router-outlet` you cannot do that in the `ngOnDestroy()` hook, as this will not be called when you navigate forward. What you can do is inject the `Page` instance inside your component and attach to page navigation events (for example `navigatedFrom`) and do the cleanup there. You can check all the available page events [here](https://docs.nativescript.org/ui/ns-ui-widgets/page#page-events).
 
 ### Passing Parameter
 
@@ -118,7 +136,7 @@ From a mobile navigation point of view and based on the schema, there are three 
 * Backward - refers to navigating back to a screen either on the previous level in the hierarchy or chronologically.
 * Lateral - refers to navigating between screens on the same level in the hierarchy.
 
-The combination of NativeScript and Angular is very powerful in terms of navigation options. Angular brings its own well known navigation mechanism with a router. NativeScript on the other hand provides access to the native mobile navigation patterns. Due to the nature of the integration between the two, you have a choice to use either of them or even a combination that suits your needs. In the following sections we will implementation examples to various mobile navigation patterns.
+The combination of NativeScript and Angular is very powerful in terms of navigation options. Angular brings its own well known navigation mechanism with a router. NativeScript on the other hand provides access to the native mobile navigation patterns. Due to the nature of the integration between the two, you have a choice to use either of them or even a combination that suits your needs. In the following sections we will provide implementation examples to various mobile navigation patterns.
 
 >**Note:** To improve the bootstrap time and the in-app navigation in large applications, Angular has introduced **lazy loading** for modules. Refer to the [Lazy Loading in NativeScript](../performance-optimizations/lazy-loading.md) for detailed explanation and implementation steps. We won't use this feature in the following examples for the sake of simplicity.
 
@@ -283,76 +301,6 @@ export class FeaturedComponent implements OnInit {
 
 [Playground Demo](https://play.nativescript.org/?template=play-ng&id=qhOxqB&v=4)
 
-<!-- NativeScript Angular Router Specifics
-
-====================================================
-
-NativeScript brings some mobile specific features to the Angular navigation:
-
-* Native mobile navigation transitions.
-* The `ActionBar` component.
-* Platform specific back navigation handling, i.e. the hardware back button on Android and the `ActionBar` back button on iOS.
-* Mobile specific navigation lifecycle, i.e. view state preservation when navigating back.
-* Mobile specific history manipulation.
-
-These are provided via the following extensions to the Angular `RouterModule`:
-
-* `page-router-outlet` that serves as a placeholder for where the native mobile navigation will occur.
-* `nsRouterLink` directive to work with the native mobile navigation.
-* `RouterExtensions` class that provides native mobile navigation API similar to the `Router` class.
-* Custom `NSRouteReuseStrategy` that reuses components on back navigation.
-* Custom `NativeScriptPlatformLocation` and `NSLocationStrategy` that keep history per outlet.
-
-All these are provided in a `NativeScriptRouterModule` that extends the Angular `RouterModule`. We will explore each extension in the next sections of this article.
-
-### Router Links
-
-One thing you might have noticed in the code above is the `nsRouterLink` directive. It is similar to [`routerLink`](https://angular.io/api/router/RouterLink), but works with NativeScript navigation. To use it, you need to import `NativeScriptRouterModule` in your NgModule.
-
-### Lazy Loaded Modules
-
-To improve the bootstrap time and the in-app navigation in large applications, Angular has introduced **lazy loading** for modules. Refer to the [Lazy Loading in NativeScript](../performance-optimizations/lazy-loading.md) for detailed explanation and implementation steps.
-
-# Navigation Options
-
-You can define the trigger in your application declaratively - using the `nsRouterLink` directive in your markup. Or you can do it through code - by injecting  the `RouterExtensions` class and using its methods:
-
-{%snippet router-extensions-import%}
-
-> Note: You can also use the stock Angular `Route` and `Location` classes to handle your navigation—`RouterExtensions` actually invokes those APIs internally. However, `RouterExtensions` provides access to some NativeScript-specific features like clearing navigation history or defining page transitions.
-
-### Clearing Page Navigation History
-
-In NativeScript's page navigation, you have the option to navigate to another page and clear the page navigation history. This means that the user will not be able to go back using the back button (or swipe back in iOS). This is useful in scenarios where you have a login page and you don't want users to be able to go back to it once logged in.
-
-You can specify `clearHistory` as an attribute on your `nsRouterLink` tag in the markup:
-
-{%snippet router-clear-history-link%}
-
-Or you can use `RouterExtensions` class:
-
-{%snippet router-clear-history-code%}
-
-### Specifying Page Transitions
-
-By default, all navigation will be animated and will use the default transition for the respective platform (UINavigationController transitions for iOS and Fragment transitions for Android). To change the transition type, set the `pageTransition` attribute on your `nsRouterLink` tag in the markup:
-
-{%snippet router-page-transition-link%}
-
-> Note: You can set `pageTransition="none"` to disable the transition.
-
-You can also do this through code using the `RouterExtensions` class:
-
-{%snippet router-page-transition-code%}
-
-> Note: You can pass `animated: false` in `NavigationOptions` to disable the transition.
-
-> Note: `transition` animation provided by NativeScript `routerExtensions` is supported only in cases when `page-router-outlet` is used.
-
-For other customization options check the [`NavigationTransition`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition.html) interface.
-
-======================================================== -->
-
 ## Forward Navigation
 
 ![navigation-schema-forward](../img/navigation/navigation-schema-forward.png?raw=true)
@@ -488,41 +436,6 @@ export class ItemComponent implements OnInit {
 ```
 
 [Playground Demo](https://play.nativescript.org/?template=play-ng&id=aTCQwn&v=6)
-
-<!-- #Outlets Differences
-
-======================================================
-
-## Lifecycle Hooks And Component Caching
-
-There is a difference in the component lifecycle when using `<page-router-outlet>` and `<router-outlet>`.
-
-With `<router-outlet>` new instance of the component is created with each navigation and is destroyed when you navigate to another component. The component's constructor and its **init** hooks will be called every time you navigate to the component and `ngOnDestroy()` will be called every time you navigate away from it.
-
-With `<page-router-outlet>` when you navigate **forward**, the current page and views are saved in the native navigation stack. The corresponding component is **not** destroyed. It is cached, so that it can be shown when you go back to the same page. It will still be connected to the views that were cached natively.
-
-Let's demonstrate with the following navigation example:
-
-```
-┌───────────────┐  --- 1. Forward ->  ┌─────────────┐  --- 2. Forward ->  ┌───────────────┐
-│ PrevComponent │                     │ MyComponent │                     │ NextComponent │
-└───────────────┘  <--- 4. Back ----  └─────────────┘  <--- 3. Back ----  └───────────────┘
-```
-
-Here is a comparison of what will happen with `MyComponent` using both outlets.
-
-| Action | `<router-outlet>` | `<page-router-outlet>` |
-|--------|-------------------|------------------------|
-| 1. Forward to MyComponent | New `MyComponent` instance is created. `Init` hooks are called.| New `MyComponent` instance is created. `Init` hooks are called. |
-| 2. Forward to NextComponent | `MyComponent` is destroyed. `ngOnDestroy()` is called. | `MyComponent` instance is cached. No hooks are called. |
-| 3. Back to MyComponent |  New `MyComponent` instance is created. `Init` hooks are called. | `MyComponent` is brought back from the cache and is shown. No hooks are called. |
-| 4. Back to PrevComponent |  `MyComponent` is destroyed. `ngOnDestroy()` is called. | `MyComponent` is destroyed. `ngOnDestroy()` is called.  |
-
-You might want to perform some cleanup actions (ex. unsubscribe from a service to stop updates) when you are navigating forward to a next page (step 2). If you are using `<page-router-outlet>` you cannot do that in the `ngOnDestroy()` hook, as this will not be called when you navigate forward. What you can do is inject `Page` inside your component and attach to page navigation events (for example `navigatedFrom`) and do the cleanup there. You can check all the available page events [here](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html#on).
-
- 
-
-======================================================== -->
 
 ## Backward Navigation
 
@@ -1389,173 +1302,3 @@ export class AppComponent {
 [Playground Demo](https://play.nativescript.org/?template=play-ng&id=F9mpFT&v=5)
 
 Take a look at the [SideDrawer](https://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/SideDrawer/overview) docs for more information about the component.
-
-<!-- ## Pages
-
-NativeScript apps consist of pages which represent the separate application screens. Pages are instances of the [`Page`](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) class. Page navigation integrates with the native navigation elements on the current platform (ex. the **Back** button in Android or the **NavigationBar** in iOS).
-
-> Note: You will rarely need to create Page instances manually. The framework creates pages automatically when bootstrapping or navigating the app. You can get a reference to the current page by injecting it into your component using the DI.
-
-In NativeScript you have a choice between two router outlets:
-* `router-outlet` - replaces the content of the outlet with different component. It is the default outlet that comes from Angular.
-* `page-router-outlet` - uses pages to navigate. The new components are shown in a new page.
-
-To show the difference between the two we are going to use the following components in the next examples:
-
-{%snippet router-content-components%}
-
-We are also going to use the following route configuration file (`app.routes.ts`):
-
-{%snippet router-config-all%}
-
-
-## Router Links
-
-One thing you might have noticed in the code above is the `nsRouterLink` directive. It is similar to [`routerLink`](https://angular.io/api/router/RouterLink), but works with NativeScript navigation. To use it, you need to import `NativeScriptRouterModule` in your NgModule.
-
-## Router Outlet
-
-The `router-outlet` acts as a placeholder that Angular dynamically fills based on the current router state.
-Let's take a look at the following example that uses `<router-outlet>`:
-
-{%snippet router-outlet-example%}
-
-The result is that with each navigation the content of the `router-outlet` is replaced with the new component:
-
-![router-outlet-ios](../img/navigation-angular/outlet-ios.gif "RouterOutlet IOS")
-![router-outlet-Android](../img/navigation-angular/outlet-android.gif "RouterOutlet Android")
-
-> **Note:** In the context of NativeScript the `router-outlet` placeholder always needs to be wrapped in a native layout and can't be the root level element. For example:
-```HTML
-<GridLayout rows="*">
-    <router-outlet row="0"></router-outlet>
-</GridLayout>
-```
-
-## Page Router Outlet
-
-Here is a similar example using the `page-router-outlet`:
-
-{%snippet page-outlet-example%}
-
-The main difference here is that when navigating - the new component will be loaded as a root view in a **new** `Page`. This means that any content *outside* the `page-router-outlet` will not be included in the new page. This is the reason why the `page-router-outlet` is usually the single root element in the application component.
-
-Here is the result:
-
-![page-outlet-ios](../img/navigation-angular/page-outlet-ios.gif "PageRouterOutlet IOS")
-![page-outlet-Android](../img/navigation-angular/page-outlet-android.gif "PageRouterOutlet Android")
-
-Note that we can now use the **Back button** and the **NavigationBar** to navigate.
-
-It is possible to nest `<router-outlet>` component inside `<page-router-outlet>` or another `<router-outlet>`.
-
-### Using router-outlet Instead of page-router-outlet
-
-In some cases, you might want to create an application without using `page-router-outlet`. To achieve that with nativescript-angular version 6 and above an additional bootstrap parameter called `createFrameOnBootstrap` must be provided to create a `Frame` during the bootstrapping.
-
-app/main.ts
-```TypeScript
-platformNativeScriptDynamic({ createFrameOnBootstrap: true }).bootstrapModule(AppModule);
-
-```
-
-## Navigation Options
-
-You can define the trigger in your application declaratively - using the `nsRouterLink` directive in your markup. Or you can do it through code - by injecting  the `RouterExtensions` class and using its methods:
-
-{%snippet router-extensions-import%}
-
-> Note: You can also use the stock Angular `Route` and `Location` classes to handle your navigation—`RouterExtensions` actually invokes those APIs internally. However, `RouterExtensions` provides access to some NativeScript-specific features like clearing navigation history or defining page transitions.
-
-### Navigating Back
-
-You can navigate back using `back()` method of the `RouterExtensions`:
-
-{%snippet router-back%}
-
-You can also navigate back to the previous page with `backToPreviousPage()`:
-
-{%snippet router-page-back%}
-
-The difference between the two methods is visible when there are nested(child) router-outlet(s) inside the current page:
-
-* `back()` - goes back to the previous router location even if the navigation occurred inside the child router outlet on the current page.
-* `backToPreviousPage()` - goes back to the previous page. The method skips all child router-outlet navigations inside the current page and goes directly to the previous one.
-
-
-### Clearing Page Navigation History
-
-In NativeScript's page navigation, you have the option to navigate to another page and clear the page navigation history. This means that the user will not be able to go back using the back button (or swipe back in iOS). This is useful in scenarios where you have a login page and you don't want users to be able to go back to it once logged in.
-
-You can specify `clearHistory` as an attribute on your `nsRouterLink` tag in the markup:
-
-{%snippet router-clear-history-link%}
-
-Or you can use `RouterExtensions` class:
-
-{%snippet router-clear-history-code%}
-
-### Specifying Page Transitions
-
-By default, all navigation will be animated and will use the default transition for the respective platform (UINavigationController transitions for iOS and Fragment transitions for Android). To change the transition type, set the `pageTransition` attribute on your `nsRouterLink` tag in the markup:
-
-{%snippet router-page-transition-link%}
-
-> Note: You can set `pageTransition="none"` to disable the transition.
-
-You can also do this through code using the `RouterExtensions` class:
-
-{%snippet router-page-transition-code%}
-
-> Note: You can pass `animated: false` in `NavigationOptions` to disable the transition.
-
-> Note: `transition` animation provided by NativeScript `routerExtensions` is supported only in cases when `page-router-outlet` is used.
-
-For other customization options check the [`NavigationTransition`](http://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition.html) interface.
-
-## Route Guards
-
-You can use Angular’s [route guards](https://angular.io/docs/ts/latest/guide/router.html#!#guards) for even more control over the navigation.
-
-> **Note**: Currently, there is no way to prevent user-initiated back navigation - trying to apply guards in such scenario is not supported.
-
-## Lifecycle Hooks And Component Caching
-
-There is a difference in the component lifecycle when using `<page-router-outlet>` and `<router-outlet>`.
-
-With `<router-outlet>` new instance of the component is created with each navigation and is destroyed when you navigate to another component. The component's constructor and its **init** hooks will be called every time you navigate to the component and `ngOnDestroy()` will be called every time you navigate away from it.
-
-With `<page-router-outlet>` when you navigate **forward**, the current page and views are saved in the native navigation stack. The corresponding component is **not** destroyed. It is cached, so that it can be shown when you go back to the same page. It will still be connected to the views that were cached natively.
-
-Let's demonstrate with the following navigation example:
-
-```
-┌───────────────┐  --- 1. Forward ->  ┌─────────────┐  --- 2. Forward ->  ┌───────────────┐
-│ PrevComponent │                     │ MyComponent │                     │ NextComponent │
-└───────────────┘  <--- 4. Back ----  └─────────────┘  <--- 3. Back ----  └───────────────┘
-```
-
-Here is a comparison of what will happen with `MyComponent` using both outlets.
-
-| Action | `<router-outlet>` | `<page-router-outlet>` |
-|--------|-------------------|------------------------|
-| 1. Forward to MyComponent | New `MyComponent` instance is created. `Init` hooks are called.| New `MyComponent` instance is created. `Init` hooks are called. |
-| 2. Forward to NextComponent | `MyComponent` is destroyed. `ngOnDestroy()` is called. | `MyComponent` instance is cached. No hooks are called. |
-| 3. Back to MyComponent |  New `MyComponent` instance is created. `Init` hooks are called. | `MyComponent` is brought back from the cache and is shown. No hooks are called. |
-| 4. Back to PrevComponent |  `MyComponent` is destroyed. `ngOnDestroy()` is called. | `MyComponent` is destroyed. `ngOnDestroy()` is called.  |
-
-You might want to perform some cleanup actions (ex. unsubscribe from a service to stop updates) when you are navigating forward to a next page (step 2). If you are using `<page-router-outlet>` you cannot do that in the `ngOnDestroy()` hook, as this will not be called when you navigate forward. What you can do is inject `Page` inside your component and attach to page navigation events (for example `navigatedFrom`) and do the cleanup there. You can check all the available page events [here](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html#on).
-
-## Passing Parameter
-
-In Angular you can inject `ActivatedRoute` and read route parameters from it. Your component will be reused if you do a subsequent navigations to the same route while only changing the params. That's why `params` and `data` inside `ActivatedRoute` are observables. Using `ActivatedRoute` is covered in [angular route-parameters guide](https://angular.io/api/router/ActivatedRoute).
-
-As explained in previous chapter, with `<page-router-outlet>` when navigating **back** to an existing page, your component will **not** be re-created. Angular router will still create a **new instance** `ActivatedRoute` and put all params in it, but you cannot get hold of it through injection, as your component is revived from the cache and not constructed anew.
-
-**The Solution**: In NativeScript you can inject `PageRoute` which has an `activatedRoute: Observable<ActivatedRoute>` field inside it. Each time a new `ActivatedRoute` instance is created for this reused component it will be pushed in this observable, so you can still get your params:
-
-So, instead of:
-{%snippet router-params-activated-route%}
-
-You do:
-{%snippet router-params-page-route%} -->
