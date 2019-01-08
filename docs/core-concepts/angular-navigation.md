@@ -12,7 +12,7 @@ previous_url: /core-concepts/navigation-angular
 
 In this article we will cover how to do navigation in a NativeScript application using Angular and will provide some practical examples of common mobile navigation patterns.
 
-The Angular way of doing navigation is using the **Angular Component Router**. You can check [this detailed guide on how to use the router](https://angular.io/guide/router). From here on we will assume that you are familiar with the basic concepts and will concentrate on the specifics with the implementation in a NativeScript app.
+The Angular way of doing navigation is using the **Angular Component Router**. You can check [this detailed guide on how to use the router](https://angular.io/guide/router). In this article we will assume that you are familiar with the basic concepts and will concentrate on the specifics with the implementation in a NativeScript app.
 
 ## NativeScript Router Module
 
@@ -85,11 +85,11 @@ Here is a list of the available methods:
 
 NativeScript also imports a custom [``RouteReuseStrategy``](https://angular.io/api/router/RouteReuseStrategy) that changes the lifecycle of components navigated in a `page-router-outlet`.
 
-In the Angular `router-outlet`, a component is destroyed when you navigate away from it and is re-created when you navigate back to it. There is no difference in lifecycle between forward and backward navigation.
+In the Angular `router-outlet`, a component is destroyed when you navigate away from it and is re-created when you navigate back to it. There is no difference in the component lifecycle between forward and backward navigation.
 
 ![router-outlet-lifecycle](../img/navigation/router-outlet-lifecycle.png?raw=true)
 
-In a native mobile application the system will keep the navigated views alive, so that when you come back to them, their view state will be kept the same. In the native world views are destroyed only when you back away from them. The `page-router-outlet` houses native navigations, so its components lifecycle must match the lifecycle of the native views. This is done by the custom `NSRouteReuseStrategy`.
+In a native mobile application the system will keep the navigated views alive, so that when you come back to them, their view state will be kept the same. Views are destroyed only when you back away from them. The `page-router-outlet` houses native navigations, so its components lifecycle must match the lifecycle of the native views. This is done by the custom `NSRouteReuseStrategy`.
 
 ![page-router-outlet-lifecycle](../img/navigation/page-router-outlet-lifecycle.png?raw=true)
 
