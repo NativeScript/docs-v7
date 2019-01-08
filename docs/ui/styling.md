@@ -39,7 +39,7 @@ It is also possible to apply [platform-specific CSS](#platform-specific-css).
 
 ### Application-wide CSS
 
-When the  application starts, NativeScript checks if the file `app.css` exists. If it does, any CSS styles that it contains are loaded and used across all application pages. This file is a convenient place to store styles that will be used on multiple pages.
+When the application starts, NativeScript checks if the file `app.css` exists. If it does, any CSS styles that it contains are loaded and used across all application pages. This file is a convenient place to store styles that will be used on multiple pages.
 
 You can change the name of the file from which the application-wide CSS is loaded. You need to do the change before the application is started, usually in the app.js or app.ts file as shown below:
 
@@ -189,9 +189,9 @@ Similarly to HTML, CSS can be defined inline for a UI view in the XML markup:
 ```
 {% endangular %}
 
-### Platform-Specific CSS
+### Platform-specific CSS
 
-NativeScript conventions make it easy to apply platform specific CSS, either via separate stylesheets or via in-line declarations. For an overview of NativeScript's convention-based file name rules for targeting files at specific platforms and screen sizes, [refer to this article in the docs](https://docs.nativescript.org/core-concepts/navigation#supporting-multiple-screens). {% angular %} **NOTE:** If you are using Angular, file name rules do not work for targeting specific screen sizes or orientations. JavaScript is required to target styles at different screens at runtime. [See this article](https://dzone.com/articles/tablet-support-for-nativescript-with-angular) for an example of targeting styles at tablets with Angular.{% endangular %}
+NativeScript conventions make it easy to apply platform-specific CSS, either via separate stylesheets or via in-line declarations. For an overview of NativeScript's convention-based file name rules for targeting files at specific platforms and screen sizes, [refer to this article in the docs](https://docs.nativescript.org/core-concepts/navigation#supporting-multiple-screens). {% angular %} **NOTE:** If you are using Angular, file name rules do not work for targeting specific screen sizes or orientations. JavaScript is required to target styles at different screens at runtime. [See this article](https://dzone.com/articles/tablet-support-for-nativescript-with-angular) for an example of targeting styles at tablets with Angular.{% endangular %}
 
 There are 4 primary ways to target styles at iOS or Android:
 
@@ -248,7 +248,7 @@ NativeScript supports a subset of the [CSS selector syntax](http://www.w3schools
 * [Type selector](#type-selector)
 * [Class selector](#class-selector)
 * [ID selector](#id-selector)
-* [Hierarchical selector](#hierachical-selector-css-combinators)
+* [Hierarchical selector](#hierarchical-selector-css-combinators)
 * [Attribute selector](#attribute-selector)
 * [Pseudo selector](#pseudo-selector)
 
@@ -261,7 +261,7 @@ button { background-color: gray }
 
 ### Class selector
 [Class selectors](http://www.w3schools.com/cssref/sel_class.asp) select all views with a given class.
-The class is set using the `className` property of the view.
+The class is set using the `className` property of the view.  **NOTE:**  To use `className` in JS/TS to add a class to an element, the class rule must be in a CSS file that is higher up the component tree than the element, such as `app.css`.
 
 {% nativescript %}
 ```CSS
@@ -333,7 +333,7 @@ btn.id = "login-button"
 ```
 {% endangular %}
 
-### Hierachical selector (CSS combinators)
+### Hierarchical selector (CSS combinators)
 
 A CSS selector could contain more than one simple selector, and between selectors a combinator symbol could be included.
 
@@ -434,7 +434,7 @@ The `background-color` rule will not be applied. In order to apply the selector,
     <Button text="Test Button"/>
     <Label text="Test Label"/>
     <Button text="Test Button"/>
-    <Label  text="Test Label"/>
+    <Label text="Test Label"/>
 </StackLayout>
 ```
 {% endnativescript %}
@@ -447,7 +447,7 @@ The `background-color` rule will not be applied. In order to apply the selector,
     <Button text="Test Button"></Button>
     <Label text="Test Label"></Label>
     <Button text="Test Button"></Button>
-    <Label  text="Test Label"></Label>
+    <Label text="Test Label"></Label>
 </StackLayout>
 ```
 {% endangular %}
@@ -583,11 +583,11 @@ This list of properties can be set in CSS or through the style property of each 
 | `opacity`             | `opacity`             | Sets the view opacity. The value is in the [0, 1] range. |
 
 
-## Supported Measurment Units
+## Supported Measurement Units
 
-As a measurment units, NativeScript supports **DIPs** (Device Independent Pixels) , **pixels** (via postfix `px`) and **percentages** (partial support for `width`,`height` and `margin`).
+NativeScript supports **DIPs** (Device Independent Pixels), **pixels** (via postfix `px`) and **percentages** (partial support for `width`, `height` and `margin`) as measurement units.
 
-The NativeScript's recommended measurment unit is DIP. All measurable properties like `width`, `height`, `margin`, `paddings, border-width`, etc.) support device independent pixels. The font size are always measured in DIP. 
+NativeScript's recommended measurement unit is DIP. All measurable properties like `width`, `height`, `margin`, `paddings, border-width`, etc.) support device independent pixels. The font sizes are always measured in DIPs. 
 
 ```CSS
 .myLabel {
@@ -616,11 +616,11 @@ import { screen } from "tns-core-modules/platform";
 let scale =  screen.mainScreen.scale; 
 let widthPixels = screen.mainScreen.widthPixels;
 let heightPixels = screen.mainScreen.heightPixels;
-let widthDIPs = screen.mainScreen.widthDIPs; // DIPs === pixels/scale (e.g 1024 pixels / 2x scale = 512 DIPs)
+let widthDIPs = screen.mainScreen.widthDIPs; // DIPs === pixels/scale (e.g. 1024 pixels / 2x scale = 512 DIPs)
 let heightDIPs = screen.mainScreen.heightDIPs; 
 ```
 
-NativeScript supports **percentage** values for `width`, `height` and `margins`. When a layout pass begins, first the percent values are calculated based on parent available size. This means that on vertical StackLayout if you place two Buttons with `height='50%'` they will get all the available height (e.g., they will fill the StackLayout vertically.). The same applies for `margin`` properties. For example, if you set marginLeft='5%'`, the element will have a margin that corresponds to 5% of the parent's available width.
+NativeScript supports **percentage** values for `width`, `height` and `margins`. When a layout pass begins, first the percent values are calculated based on parent available size. This means that on vertical StackLayout if you place two Buttons with `height='50%'` they will get all the available height (e.g., they will fill the StackLayout vertically.). The same applies for `margin` properties. For example, if you set `marginLeft = '5%'`, the element will have a margin that corresponds to 5% of the parent's available width.
 
 ## Accessing NativeScript component properties with CSS
 
@@ -631,7 +631,7 @@ StackLayout {
 }
 ```
 
-This feature is limited to properties with simple types like string, number and boolean, and will set a local property value similar to component markup declaration in XML. CSS inheritance are not supported. 
+This feature is limited to properties with simple types like string, number and boolean, and will set a local property value similar to component markup declaration in XML. CSS inheritance is not supported. 
 
 ## Using fonts
 The `font-family` property can hold several values. The first supported font in the list will be used. There is also support for the following generic font-families:
@@ -650,10 +650,10 @@ The NativeScript runtime will look for the font files under the `app/fonts/` dir
 ![Custom fonts setup"](../img/font-images/custom-fonts.png "Custom fonts setup")
 
 > Note: In iOS your font file should be named **exactly** as the font name. 
-If you have doubt about the original font name use [Font Book](https://support.apple.com/en-us/HT201749) app to get the original font name.
+If you have any doubt about the original font name, use the [Font Book](https://support.apple.com/en-us/HT201749) app to get the original font name.
 
 ## Import CSS
-The @import CSS rule allows you to import CSS from local file. This rule must precede all other types of rules.
+The @import CSS rule allows you to import CSS from a local file. This rule must precede all other types of rules.
 
 ```CSS
 @import url('~/your-style.css');
