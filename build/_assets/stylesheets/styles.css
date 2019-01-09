@@ -788,29 +788,34 @@ html body .side-nav__tree {
     float: right;
     margin-right: -17em;
 }
-.navigation__right__scroll {
-    position: fixed !important;
-    right: 20.55em;
-    bottom: 0;
-    overflow-y: scroll;
+
+.right-nav__tree::-webkit-scrollbar {
+  width: 10px;
+  transition: all 0.7s ease;
 }
 
-.ns-tip-container ~ .ns-page .navigation__right__scroll{
-    top: 7.6em;
+
+
+.right-nav__tree:hover::-webkit-scrollbar-thumb {
+  background: var(--border-light-blue);
+  border-radius: 10px;
+
 }
-/* To disable redundant scroll bar of navigation */
-.navigation__right__scroll::-webkit-scrollbar {
-    /*for webkit*/
- display: none;
+
+.right-nav__tree {
+  scrollbar-width: thin;
+  scrollbar-color: transparent;
 }
-.navigaiton__right__scroll {
-  /* This is the magic bit for Firefox */
-  scrollbar-width: none;
+
+.right-nav__tree:hover {
+  scrollbar-color:  var(--border-light-blue);
 }
+
 
 .ns-tip-container ~ .ns-page .right-nav__container {
     top: 7.6em;
 }
+
 
 .right-nav__tree {
     -webkit-user-select: none;
@@ -818,6 +823,8 @@ html body .side-nav__tree {
     -ms-user-select: none;
     user-select: none;
     border-left: 1px solid var(--color-purple);
+    height: calc(100vh - 12.76em);
+    overflow-y: auto;
 }
 
 .right-nav__tree ul {
@@ -2790,21 +2797,3 @@ html .gsc-result .gs-title {
         flex-direction: column;
     }
 }
-
-/* Styling for the NS Side navigation scroll */
-@media only screen and (min-width: 1024px){
-    #ns-side-scroll{
-        position: sticky !important;
-        top: 120px;
-        height: 78vh !important;
-        
-    }
-    .ns-side-nav-active: {
-        transform: translateY(90px);
-    }
-.ns-side-nav .side-nav__tree{
-    height: 95% !important;
-    overflow-y: scroll !important;
-    }
-}
-
