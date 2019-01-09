@@ -28,11 +28,11 @@ There are a number of UX specifics that are hard to replicate with the default A
 
 NativeScript brings these to Angular with the following extensions, directives and strategies:
 
-* `page-router-outlet` - This is an alternative to the regular `router-outlet` that serves as a placeholder for where native mobile navigation will occur.
-* `nsRouterLink` - It's an alternative to the regular `routerLink` directive that works with mobile gestures.
+* `page-router-outlet` - this is an alternative to the regular `router-outlet` that serves as a placeholder for where native mobile navigation will occur.
+* `nsRouterLink` - it's an alternative to the regular `routerLink` directive that works with mobile gestures.
 * `RouterExtensions` class - It provides a native mobile navigation API similar to the [``Router``](https://angular.io/api/router/Router) and [``Location``](https://angular.io/api/common/Location) classes.
-* Custom [``RouteReuseStrategy``](https://angular.io/api/router/RouteReuseStrategy) - This strategy forces Angular to cache and reuse components that were loaded in a `page-router-outlet` with accordance to the native navigation lifecycle.
-* Custom [``PlatformLocation``](https://angular.io/api/common/PlatformLocation) and [``LocationStrategy``](https://angular.io/api/common/LocationStrategy) - This strategy keeps history per outlet instead of one global linear history.
+* Custom [``RouteReuseStrategy``](https://angular.io/api/router/RouteReuseStrategy) - Ttis strategy forces Angular to cache and reuse components that were loaded in a `page-router-outlet` with accordance to the native navigation lifecycle.
+* Custom [``PlatformLocation``](https://angular.io/api/common/PlatformLocation) and [``LocationStrategy``](https://angular.io/api/common/LocationStrategy) - this strategy keeps history per outlet instead of one global linear history.
 
 We will explore each of these in the following sections.
 
@@ -74,12 +74,12 @@ export class MainComponent {
 
 Here is a list of the available methods:
 
-* `navigate()` - This method is an alternative to the Angular `Router` [``navigate()``](https://angular.io/api/router/Router#navigate) method, but also supports navigations in a `page-router-outlet`.
-* `navigateByUrl()` - Like the above method, this is an alternative to the `Router` [``navigateByUrl()``](https://angular.io/api/router/Router#navigateByUrl) method that works with `page-router-outlet`.
-* `back()` - This method is an equivalent to the Angular `Location` [``back()``](https://angular.io/api/common/Location#back) method. It will navigate back in the last navigated outlet.
-* `canGoBack()` - This is a method introduced by NativeScript. It returns a boolean value indicating whether there is a route the user can navigate back to.
-* `backToPreviousPage()` - This method is similar to the `back()` method above, but it will skip navigations done in an Angular `router-outlet`.
-* `canGoBackToPreviousPage()` - This method returns a boolean value indicating whether there is a route that was loaded in a `page-router-outlet`, that the user can navigate back to.
+* `navigate()` - this method is an alternative to the Angular `Router` [``navigate()``](https://angular.io/api/router/Router#navigate) method, but also supports navigations in a `page-router-outlet`.
+* `navigateByUrl()` - like the above method, this is an alternative to the `Router` [``navigateByUrl()``](https://angular.io/api/router/Router#navigateByUrl) method that works with `page-router-outlet`.
+* `back()` - this method is an equivalent to the Angular `Location` [``back()``](https://angular.io/api/common/Location#back) method. It will navigate back in the last navigated outlet.
+* `canGoBack()` - this is a method introduced by NativeScript. It returns a boolean value indicating whether there is a route the user can navigate back to.
+* `backToPreviousPage()` - this method is similar to the `back()` method above, but it will skip navigations done in an Angular `router-outlet`.
+* `canGoBackToPreviousPage()` - this method returns a boolean value indicating whether there is a route that was loaded in a `page-router-outlet`, that the user can navigate back to.
 
 ### Custom Route Reuse Strategy
 
@@ -94,20 +94,6 @@ In a native mobile application the system will keep the navigated views alive, s
 ![page-router-outlet-lifecycle](../img/navigation/page-router-outlet-lifecycle.png?raw=true)
 
 You might want to perform some cleanup actions (e.g. unsubscribe from a service to stop updates) when you are navigating forward to a next page. If you are using `page-router-outlet` you cannot do that in the `ngOnDestroy()` hook, as this will not be called when you navigate forward. What you can do is to inject the `Page` instance inside your component and attach to page navigation events (for example `navigatedFrom`) and do the cleanup there. You can check all the available page events [here](https://docs.nativescript.org/ui/ns-ui-widgets/page#page-events).
-
-### Passing Parameter
-
-In Angular you can inject `ActivatedRoute` and read route parameters from it. Your component will be reused if you do a subsequent navigation to the same route while only changing the params. That's why `params` and `data` inside `ActivatedRoute` are observables. Using `ActivatedRoute` is covered in [angular route-parameters guide](https://angular.io/api/router/ActivatedRoute).
-
-As explained in the previous section, with `page-router-outlet` when navigating **back** to an existing page, your component will **not** be re-created. However, Angular router will still create a **new instance** of `ActivatedRoute` and put all params in it. You cannot get hold of it through injection, as your component is revived from the cache and not constructed anew.
-
-**The Solution**: In NativeScript you can inject `PageRoute` which has an `activatedRoute: Observable<ActivatedRoute>` field inside it. Each time a new `ActivatedRoute` instance is created for this reused component it will be pushed in this observable, so you can still get your params:
-
-So, instead of:
-{%snippet router-params-activated-route%}
-
-You do:
-{%snippet router-params-page-route%}
 
 ### Configuration
 
