@@ -138,7 +138,7 @@ From a mobile navigation point of view and based on the schema, there are three 
 
 The combination of NativeScript and Angular is very powerful in terms of navigation options. Angular brings its own well known navigation mechanism with a router. NativeScript on the other hand provides access to the native mobile navigation patterns. Due to the nature of the integration between the two, you have a choice to use either of them or even a combination that suits your needs. In the following sections we will provide implementation examples to various mobile navigation patterns.
 
->**Note:** To improve the bootstrap time and the in-app navigation in large applications, Angular has introduced **lazy loading** for modules. Refer to the [Lazy Loading in NativeScript](../performance-optimizations/lazy-loading.md) for detailed explanation and implementation steps. We won't use this feature in the following examples for the sake of simplicity.
+>**Note:** To improve the bootstrap time and the in-app navigation in large applications, Angular has introduced **lazy loading** for modules. Refer to the [Lazy Loading in NativeScript](../performance-optimizations/lazy-loading) for detailed explanation and implementation steps. We won't use this feature in the following examples for the sake of simplicity.
 
 ## Angular Navigation
 
