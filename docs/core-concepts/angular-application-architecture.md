@@ -110,5 +110,5 @@ To use the Router you will have to import `NativeScriptRouterModule` into `AppMo
 
 {%snippet router-provider%}
 
-Navigation is covered in detail in the [navigation article]({% slug navigation %}).
+Navigation is covered in detail in the [navigation article]({% slug angular-navigation %}).
  
