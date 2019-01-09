@@ -38,7 +38,7 @@ We will explore each of these in the following sections.
 
 ### Page Router Outlet
 
-NativeScript's `page-router-outlet` is the equivalent of Angular's [``router-outlet``](https://angular.io/api/router/RouterOutlet). It serves as a placeholder for native mobile navigations. Internally, each `page-router-outlet` creates a NativeScript `Frame` and each component that the router displays in the outlet is wrapped in a `Page` widget. This is the main integration point that brings native navigation to Angular. The `Frame` and `Page` combination also means you can use the `ActionBar` widget in these components. For more information on how NativeScript Core navigation works visit this [documentation article]({% slug navigation %}.
+NativeScript's `page-router-outlet` is the equivalent of Angular's [``router-outlet``](https://angular.io/api/router/RouterOutlet). It serves as a placeholder for native mobile navigations. Internally, each `page-router-outlet` creates a NativeScript `Frame` and each component that the router displays in the outlet is wrapped in a `Page` widget. This is the main integration point that brings native navigation to Angular. The `Frame` and `Page` combination also means you can use the `ActionBar` widget in these components. For more information on how NativeScript Core navigation works visit this [documentation article]({% slug navigation %}).
 
 We recommend that you use `page-router-outlet` for your major mobile navigation pattern and use the regular `router-outlet` for internal component navigations if needed. You are also free to use only the `router-outlet` if this makes more sense for your scenario.
 
