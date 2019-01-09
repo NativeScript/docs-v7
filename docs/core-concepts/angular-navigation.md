@@ -93,7 +93,7 @@ In a native mobile application the system will keep the navigated views alive, s
 
 ![page-router-outlet-lifecycle](../img/navigation/page-router-outlet-lifecycle.png?raw=true)
 
-You might want to perform some cleanup actions (e.g. unsubscribe from a service to stop updates) when you are navigating forward to a next page. If you are using `page-router-outlet` you cannot do that in the `ngOnDestroy()` hook, as this will not be called when you navigate forward. What you can do is inject the `Page` instance inside your component and attach to page navigation events (for example `navigatedFrom`) and do the cleanup there. You can check all the available page events [here](https://docs.nativescript.org/ui/ns-ui-widgets/page#page-events).
+You might want to perform some cleanup actions (e.g. unsubscribe from a service to stop updates) when you are navigating forward to a next page. If you are using `page-router-outlet` you cannot do that in the `ngOnDestroy()` hook, as this will not be called when you navigate forward. What you can do is to inject the `Page` instance inside your component and attach to page navigation events (for example `navigatedFrom`) and do the cleanup there. You can check all the available page events [here](https://docs.nativescript.org/ui/ns-ui-widgets/page#page-events).
 
 ### Passing Parameter
 
