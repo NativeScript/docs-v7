@@ -20,7 +20,7 @@ Similarly to the [DOM Style Object](http://www.w3schools.com/jsref/dom_obj_style
 > **NOTE**: If you are **not** using Angular with NativeScript, refer to the [Styling docs for NativeScript Core](https://docs.nativescript.org/ui/styling).
 {% endangular %}
 
-## Applying CSS styles
+## Applying CSS Styles
 
 The CSS styles can be set on 3 different levels:
 
@@ -150,7 +150,7 @@ In each of these examples, the CSS rules will only apply to the declared compone
 
 {% endangular %}
 
-#### Adding CSS from a string
+#### Adding CSS String
 
 This snippet adds a new style to the current set of styles. This is quite useful when you need to add a small CSS chunk to an element (for example, for testing purposes):
 
@@ -161,7 +161,7 @@ page.addCss("button {background-color: blue}");
 page.addCss("button {background-color: blue}");
 ```
 
-#### Adding CSS from a file
+#### Adding CSS File
 
 This snippet adds new CSS styles to the current set. However, this method reads them from a file. It is useful for organizing styles in files and reusing them across multiple pages.
 
@@ -239,7 +239,7 @@ In both `home.component.ios.css` and `home.component.android.css` you then impor
 
 At build time, NativeScript will automatically import the common styles and choose the correct iOS or Android stylesheet depending on the target build platform.
 
-## Supported selectors
+## Supported Selectors
 
 > Currently the CSS support is limited only to the selectors and properties listed in the current article.
 
@@ -252,14 +252,14 @@ NativeScript supports a subset of the [CSS selector syntax](http://www.w3schools
 * [Attribute selector](#attribute-selector)
 * [Pseudo selector](#pseudo-selector)
 
-### Type selector
+### Type Selector
 Like [CSS element selectors](http://www.w3schools.com/cssref/sel_element.asp), type selectors in NativeScript select all views of a given type. Type selectors are case insensitive, so you can use both `button` and `Button`.
 
 ```CSS
 button { background-color: gray }
 ```
 
-### Class selector
+### Class Selector
 [Class selectors](http://www.w3schools.com/cssref/sel_class.asp) select all views with a given class.
 The class is set using the `className` property of the view.  **NOTE:**  To use `className` in JS/TS to add a class to an element, the class rule must be in a CSS file that is higher up the component tree than the element, such as `app.css`.
 
@@ -296,7 +296,7 @@ label.className = "title"
 ```
 {% endangular %}
 
-### ID selector
+### ID Selector
 [Id selectors](http://www.w3schools.com/cssref/sel_id.asp) select all views with a given id.
 The id is set using the `id` property of the view.
 
@@ -333,7 +333,7 @@ btn.id = "login-button"
 ```
 {% endangular %}
 
-### Hierarchical selector (CSS combinators)
+### Hierarchical Selector (CSS Combinators)
 
 A CSS selector could contain more than one simple selector, and between selectors a combinator symbol could be included.
 
@@ -373,7 +373,8 @@ StackLayout > Button { background-color: blue; }
 The `background-color` rule will not be applied. In order to apply the selector, the WrapLayout element would need to be removed so that the Button is a direct child of the StackLayout.
 
 * (+) - An adjacent sibling selector, allows to select all elements, which are siblings of a specified element.
-#### Direct sibling test by class
+
+#### Direct Sibling Test by Class
 {% nativescript %}
 ```XML
 <StackLayout class="layout-class">
@@ -398,7 +399,7 @@ The `background-color` rule will not be applied. In order to apply the selector,
   background-color: green;
 }
 ```
-#### Direct sibling test by id
+#### Direct Sibling Test by ID
 {% nativescript %}
 ```XML
 <StackLayout class="layout-class">
@@ -423,7 +424,7 @@ The `background-color` rule will not be applied. In order to apply the selector,
   background-color: green;
 }
 ```
-#### Direct sibling by type
+#### Direct Sibling by Type
 
 {% nativescript %}
 ```XML
@@ -459,7 +460,7 @@ StackLayout Button + Label{
 }
 ```
 
-### Attribute selector
+### Attribute Selector
 
 {% nativescript %}
 ```CSS
@@ -512,7 +513,7 @@ Attribute selectors could be used alone or could be combined with all type of CS
 ```
 {% endangular %}
 
-### Pseudo selector
+### Pseudo Selector
 A pseudo-selector or also pseudo-class is used to define a special state of an element.
 Currently, NativeScript supports only `:highlighted` pseudo-selector.
 
@@ -526,7 +527,7 @@ button:highlighted { background-color: red; color: gray;}
 ```
 {% endnativescript %}
 
-## Supported CSS properties
+## Supported CSS Properties
 
 This list of properties can be set in CSS or through the style property of each view:
 
@@ -582,6 +583,17 @@ This list of properties can be set in CSS or through the style property of each 
 | `visibility`          | `visibility`          | Sets the view visibility. Possible values: `visible`, `collapse` (or `collapsed`). |
 | `opacity`             | `opacity`             | Sets the view opacity. The value is in the [0, 1] range. |
 
+## NativeScript Specific CSS Properties
+
+In the context of mobile development, there are a number of properties that are mobile specific (and sometimes even platform specific e.g Android or iOS). In NativeScript, these featured properties are still accessible through both the code (inline, JavaScript, and TypeScript) but are also exposed as CSS properties. Apart from the API references, the below list is providing most of the non-common CSS properties in NativeScript.
+
+| CSS Property          | JavaScript Property   | Platform   | Compatibility  | Description | 
+|:----------------------|:----------------------|:-----------|:---------------|:------------|
+| `selected-tab-text-color`  | `selectedTabTextColor`     | Both       | `TabView`      | Sets the color of the text, while selecting some of the tabs. |
+| `tab-background-color`  | `tabBackgroundColor`     | Both       | `TabView`      | Sets the background color of the tabs. |
+| `tab-text-font-size`  | `tabTextFontSize`     | Both       | `TabView`      | Sets the tab titles font size, without changing the font size of all contents of the tab. |
+| `text-transform`  | `textTransform`     | Both       | `TabViewItem`      | Sets the text transform individually for every `TabViewItem`. Value options: `capitalize`, `lowercase`, `none`, and `uppercase`. |
+| `android-selected-tab-highlight-color`  | `androidSelectedTabHighlightColor`     | **Android**       | `TabView`      | Sets the underline color of the tabs in Android. |
 
 ## Supported Measurement Units
 
