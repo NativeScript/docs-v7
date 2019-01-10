@@ -270,8 +270,8 @@ In some scenarios, you would want to disable the user interaction or to create m
 
 - `isEnabled` - Gets or sets a boolean value indicating whether the view is enabled. This affects the appearance of the view.
 
-> **Note: **: There is a conceptual difference in how `isEnabled` is acting on Android and iOS. On Android, the `isEnabled` set to `false` (e.g., on Button) won't allow any events to pass through even when `isPassThroughParentEnabled` is set to true for its parent. On the contrary on iOS, the same setup will pass through the event to the parent.
-
 - `isPassThroughParentEnabled` - Gets or sets a value indicating whether touch events should pass through to a parent view of the layout container in case an interactive child view did not handle the event.
+
+> **Note: **: There is a conceptual difference in how `isEnabled` is acting on Android and iOS. On Android, the `isEnabled` set to `false` (e.g., on Button) won't allow any events to pass through even when `isPassThroughParentEnabled` is set to true for its parent. On the contrary on iOS, the same setup will pass through the event to the parent.
 
 Playground application demonstrating the usage of the three properties can be found [here](https://play.nativescript.org/?template=play-tsc&id=iixpoJ&v=2). 
