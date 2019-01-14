@@ -736,7 +736,9 @@ And the following code into your `app.ios.scss` file.
 Create `_app-variables.scss` with the following contents:
 
 ``` CSS
-// Import the theme’s variables
+// Import the theme’s variables. If you’re using a color scheme
+// other than “light”, switch the path to the alternative scheme,	
+// for example '~nativescript-theme-core/scss/dark'.
 @import '~nativescript-theme-core/scss/light';
 
 // Customize any of the theme’s variables here, for instance $btn-color: red;
