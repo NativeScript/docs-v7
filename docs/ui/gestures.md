@@ -240,7 +240,7 @@ label.on(GestureTypes.touch, function (args: TouchGestureEventData) {
 {% endangular %}
 
 {% nativescript %}
-# Subscribing to Multiple Gestures and Events
+## Subscribing to Multiple Gestures and Events
 
 Since the release of NativeScript 1.3, when subscribing you can use gestures names, comma separated gestures names and/or even mix with events.
 
@@ -261,3 +261,17 @@ label.on("loaded, tap, doubleTap, longPress", function (args: GestureEventData) 
 });
 ```
 {% endnativescript %}
+
+ ## Gestures Manipulations
+
+In some scenarios, you would want to disable the user interaction or to create more complex UI where some gestures are passing through the parents of the actual interactive zone. NativeScript provides some specific properties for handling similar cases as follows:
+
+- `isUserInteractionEnabled` - Gets or sets a boolean value indicating whether the user can interact with the view. Does not affect the appearance of the view. The default value is `true`.
+
+- `isEnabled` - Gets or sets a boolean value indicating whether the view is enabled. Affects the appearance of the view. The default value is `true`.
+
+- `isPassThroughParentEnabled` - Gets or sets a value indicating whether touch events should pass through to a parent view of the layout container in case an interactive child view did not handle the event. Does not affect the appearance of the view. The default value is `false`.
+
+> **Note: **: There is a conceptual difference in how `isEnabled` is acting on Android and iOS. On Android, the `isEnabled` set to `false` (e.g., on Button) won't allow any events to pass through even when `isPassThroughParentEnabled` is set to `true` for its parent. On the contrary on iOS, the same setup will pass through the event to the parent.
+
+Playground application demonstrating the usage of the three properties can be found [here](https://play.nativescript.org/?template=play-tsc&id=iixpoJ&v=2). 
