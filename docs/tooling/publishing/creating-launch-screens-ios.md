@@ -19,7 +19,7 @@ As described in [iOS Human Interface Guidelines](https://developer.apple.com/lib
 In NativeScript, your application comes with predefined template settings and images for these steps.
 In this article, we are going to introduce the workflow to create your own launch screens.
 
-> **WARNING**: Occasionally, the iOS operating system caches your application’s icons and launch screens. If you’re updating icons or launch screens and not seeing your changes, delete the application from your device or emulator and redeploy.
+> **WARNING**: Occasionally, the iOS operating system caches your application’s icons and launch screens. If you’re updating icons or launch screens and not seeing your changes, delete the application from your device or emulator and redeploy. If on a real device: remove `platforms` folder from your project, delete app, restart device, redeploy.
 
 ## Setting launch screen and App Icons
 
