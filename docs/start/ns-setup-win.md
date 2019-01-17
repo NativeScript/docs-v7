@@ -42,10 +42,10 @@ Complete the following steps to set up NativeScript on your Windows development 
         <pre class="add-copy-button"><code class="language-terminal">choco install nodejs-lts -y
         </code></pre>
 
-4. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+4. Set up [JDK 8](https://openjdk.java.net/install/)
     - In the command prompt, run the following command.
 
-        <pre class="add-copy-button"><code class="language-terminal">choco install jdk8 -y
+        <pre class="add-copy-button"><code class="language-terminal">choco install adoptopenjdk --version 8.192
         </code></pre>
 
 5. Install the [Android SDK](http://developer.android.com/sdk/index.html).
