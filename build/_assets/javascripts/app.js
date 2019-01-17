@@ -496,4 +496,3 @@ $(function() {
 
     window.setTimeout(handleBanner, 1000);
 });
-
