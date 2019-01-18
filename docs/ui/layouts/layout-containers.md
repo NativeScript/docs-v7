@@ -273,7 +273,7 @@ _Example for complex structure_
 
 _Example for creating grid dynamically via code behind_
 
-> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=uxpI70) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=FHnThH).
+> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=RTWLSH) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=IrIZ5I).
 
 ```XML
 <Page loaded="onPageLoaded" xmlns="http://schemas.nativescript.org/tns.xsd">

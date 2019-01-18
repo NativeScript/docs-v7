@@ -107,7 +107,7 @@ If you import any [custom components](https://docs.nativescript.org/ui/basics#cu
 }
 ```
 
-For an example of how styles from custom components get applied, [try this project on the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=o87l19&v=52).
+For an example of how styles from custom components get applied, [try this project on the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=obk2gB).
 
 You can also override CSS styles specified in the file by using the page's `css` property:
 
@@ -200,7 +200,7 @@ There are 4 primary ways to target styles at iOS or Android:
 3. Platform-specific attributes (`<Label ios:style="..." android:style="..."`)
 4. Platform-specific CSS rules (`.ios .mystyle { ... }`, `.android .mystyle { ... }`) _[*requires plugin](https://market.nativescript.org/plugins/nativescript-platform-css)_
 
-The most common and maintainable pattern for managing platform-agnostic and platform-specific styles in NativeScript is with multiple stylesheets and CSS imports. Use {% nativescript %}[this Playground demo](https://play.nativescript.org/?template=play-tsc&id=w9Lt96&v=2){% endnativescript %}{% angular %}[this Playground demo](https://play.nativescript.org/?template=play-ng&id=AlJP8U){% endangular %} to see this pattern in action.
+The most common and maintainable pattern for managing platform-agnostic and platform-specific styles in NativeScript is with multiple stylesheets and CSS imports. Use {% nativescript %}[this Playground demo](https://play.nativescript.org/?template=play-tsc&id=JY218G){% endnativescript %}{% angular %}[this Playground demo](https://play.nativescript.org/?template=play-ng&id=Z4d8A6){% endangular %} to see this pattern in action.
 
 {% nativescript %}
 With this pattern, a page has 3 separate stylesheets: common, iOS and Android. For example, for page `myPage.xml` you would have 3 stylesheets:

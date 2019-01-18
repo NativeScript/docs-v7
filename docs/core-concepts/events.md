@@ -22,7 +22,7 @@ To add an **event handler** means setting a function (method) that executes when
 
 The example below shows how to add an event listener by using the short (using `on`) and the full syntax (using `addEventListener`). There is a third optional parameter that represents the `this` argument. The code shows how to set a function that prints a "Hello World!" message in the console when a button is tapped. You can choose between the shorthand syntax and the full syntax, or you can declare the event handler in XML.
 
-> **TIP**: All examples in this article are available for preview in NativeScript Playground. Run this example in [JavaScript](https://play.nativescript.org/?template=play-js&id=bo1JvH&v=55) or [TypeScript](https://play.nativescript.org/?template=play-tsc&id=y5hWfh&v=2).
+> **TIP**: All examples in this article are available for preview in NativeScript Playground. Run this example in [JavaScript](https://play.nativescript.org/?template=play-js&id=kIs7uK) or [TypeScript](https://play.nativescript.org/?template=play-tsc&id=8Rhm07).
 
 ``` JavaScript
 const Button = require("tns-core-modules/ui/button").Button;

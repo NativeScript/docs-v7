@@ -39,7 +39,7 @@ Generally, almost every UI control could be bound to a data object (all NativeSc
 
 The example below consists of a `Label`, `TextField` and a source property to which the UI controls are bound. The purpose of the sample is to demonstrate how the `Label` text is changed, while editing the input of the `TextField`. 
 
-> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=4zwcfW&v=2) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=8gVPMi&v=4).
+> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=eK2hOo) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=8gVPMi&v=4).
 
 First, the **source** object is created with a **textSource** property. A constant flow of propagating changes from the source property to the Label is necessary. Thus, the property in the code has to raise a **propertyChange** event in order to notify the `Label` for the changes. To raise this event, a built-in class is used, which provides this functionality - `Observable`.
 
@@ -177,7 +177,7 @@ page.bindingContext = source;
 
 A very common case is to provide a list (array) of plain elements (numbers, dates, strings) to a `ListView` items collection. All examples above demonstrate how to bind a UI element to a property of the bindingContext. If there is only plain data, there is no property to bind, so the binding should be to the entire object. Here comes another feature of NativeScript binding - object or value binding. To refer to the entire object, which is Date() in the example, the keyword `$value` should be used.
 
-> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=9pGhIY&v=2) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=pOnwov&v=4).
+> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=lH8vY6) and for TypeScript [here](https:///?template=play-tsc&id=Jf8Kel).
 
 _Example 3: Bind ListView to a property of the bindingContext_
 ``` XML
@@ -235,7 +235,7 @@ export function onNavigatingTo(args: EventData) {
 
 Another common case in working with bindings is requesting access to the parent binding context. It is because it might be different from the bindingContext of the child and might contain information, which the child has to use. Generally, the bindingContext is inheritable, but not when the elements (items) are created dynamically based on some data source. For example, `ListView` creates its child items based on an `itemТemplate`, which describes what the `ListView` element will look like. When this element is added to the visual tree, it gets for binding context an element from a ListView `items` array (with the corresponding index). This process creates a new binding context chain for the child item and its inner UI elements. So, the inner UI element cannot access the binding context of the 'ListView'. In order to solve this problem, NativeScript binding infrastructure has two special keywords: `$parent` and `$parents`. While the first one denotes the binding context of the direct parent visual element, the second one can be used as an array (with a number or string index). This gives you the option to choose either `N` levels of UI nesting or get a parent UI element with a given type. Let's see how this works in a realistic example.
 
-> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=kfnG5j) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=FGkvTn).
+> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=X6lrBN) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=Zjfypk).
 
 _Example 4: Creating ListView child items based on the itemTemplate._
 ``` XML
@@ -340,7 +340,7 @@ NativeScript supports different kind of expressions including:
 
 Speaking of a two-way binding, there is a common problem - having different ways of storing and displaying data. Probably the best example here is the date and time objects. Date and time information is stored as a number or a sequence of numbers (very useful for indexing, searching and other database operations), but this is not the best possible option for displaying date to the application user. Also there is another problem when the user inputs a date (in the example below, the user types into a TextField). The result of the user input will be a string, which will be formatted in accordance with the user's preferences. This string should be converted to a correct date object. Let's see how this could be handled with NativeScript binding.
 
-> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=d7Eu2Z) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=qktQye).
+> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=UaYAiT) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=aqnOXs).
 
 _Example 5: Handle textField date input and formatted in accordance preferences._
 ``` XML
@@ -520,7 +520,7 @@ export function onNavigatingTo(args: EventData) {
 ```
 Setting a converter function and a parameter within the bindingContext is very useful for ensuring proper conversion of data. However, this is not the case when `listview` items should be bound. The problem comes from the fact that the bindingContext of a `listview` item is a data item, which is a part of `any` collection (array), and to apply a converter - the converter and its parameters should be added to the data item, which will result in multiple converter instances. Tackling this problem with NativeScript is fairly simple. Binding infrastructure seeks for an application level resources to find a proper converter and parameters. So you could add the converters in the resources in the application module. To be more clear, examine the following example (both XML and JavaScript):
 
-> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=TbTyMK) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=hvvCkn).
+> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=BQsFeq) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=GxXeCS).
 
 _Example 7: Adding converters in the application module resources._
 ``` XML
