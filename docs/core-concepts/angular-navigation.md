@@ -285,7 +285,7 @@ export class FeaturedComponent implements OnInit {
 </ScrollView>
 ```
 
-[Playground Demo](https://play.nativescript.org/?template=play-ng&id=qhOxqB&v=4)
+[Playground Demo](https://play.nativescript.org/?template=play-ng&id=MN31oP)
 
 ## Forward Navigation
 
@@ -421,7 +421,7 @@ export class ItemComponent implements OnInit {
 </ScrollView>
 ```
 
-[Playground Demo](https://play.nativescript.org/?template=play-ng&id=aTCQwn&v=6)
+[Playground Demo](https://play.nativescript.org/?template=play-ng&id=l4QQz2)
 
 ## Backward Navigation
 
@@ -464,7 +464,7 @@ export class ItemComponent implements OnInit {
 </ScrollView>
 ```
 
-[Playground Demo](https://play.nativescript.org/?template=play-ng&id=clseev&v=3)
+[Playground Demo](https://play.nativescript.org/?template=play-ng&id=QZhMf5)
 
 ## Lateral Navigation
 
@@ -625,7 +625,7 @@ export class FeaturedComponent implements OnInit {
 </ScrollView>
 ```
 
-[Playground Demo](https://play.nativescript.org/?template=play-ng&id=oO90NY&v=3)
+[Playground Demo](https://play.nativescript.org/?template=play-ng&id=lpCc2k)
 
 ### TabView Navigation
 
@@ -765,7 +765,7 @@ export class FeaturedComponent implements OnInit {
 </ScrollView>
 ```
 
-[Playground Demo](https://play.nativescript.org/?template=play-ng&id=KlVuYs&v=5)
+[Playground Demo](https://play.nativescript.org/?template=play-ng&id=U4Rmr9)
 
 > **Note:** In the current scenario the Search feature has only one page and it's possible to implement it directly in the `tabItem` tag without embedding a `page-router-outlet`. However, in this case there won't be a navigation controller in the `tabItem` container and therefore, no `ActionBar`.
 
@@ -995,7 +995,7 @@ export class SearchComponent implements OnInit {
 </ScrollView>
 ```
 
-[Playground Demo](https://play.nativescript.org/?template=play-ng&id=uqjRJN&v=5)
+[Playground Demo](https://play.nativescript.org/?template=play-ng&id=FP57db)
 
 > **Note:** In the current scenario the Search feature has only one page and it's possible to implement it directly in the modal view without embedding a `page-router-outlet`. However, in this case there won't be a navigation controller in the modal view and therefore, no `ActionBar`.
 
@@ -1132,7 +1132,7 @@ export class AppComponent {
 </RadSideDrawer>
 ```
 
-[Playground Demo](https://play.nativescript.org/?template=play-ng&id=oxKwcO&v=6)
+[Playground Demo](https://play.nativescript.org/?template=play-ng&id=MX1eUy)
 
 > **Note:** To implement the lateral navigation schema correctly in this case, we had to navigate to each side feature using the `clearHistory` option. This is to ensure that there will be no forward and backward navigation between features.
 
@@ -1285,6 +1285,6 @@ export class AppComponent {
 </RadSideDrawer>
 ```
 
-[Playground Demo](https://play.nativescript.org/?template=play-ng&id=F9mpFT&v=5)
+[Playground Demo](https://play.nativescript.org/?template=play-ng&id=NaR8jL)
 
 Take a look at the [SideDrawer](https://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/SideDrawer/overview) docs for more information about the component.

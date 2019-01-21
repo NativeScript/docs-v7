@@ -40,7 +40,7 @@ view.backgroundColor = new Color("red");
 view.animate({ backgroundColor: new Color("green"), duration: 2000 });
 ```
 
-[Try this animation in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=18)
+[Try this animation in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=h6g8J8)
 
 As _Example 2_ shows, you can express the same animation in CSS with the following definition:
 
@@ -64,7 +64,7 @@ __Example 2: Changing background color animation with CSS.__
 
 > CSS animations apply with lower precedence, like any other CSS settings, so any local values set in your element will cancel the animation.
 
-[Try this animation in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=19)
+[Try this animation in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=tQRe9Q)
 
 NativeScript lets you animate the following properties:
 
@@ -139,7 +139,7 @@ view.animate({
 }
 ```
 
-[Experiment with the different animation timing functions in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=16)
+[Experiment with the different animation timing functions in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=zt5sXZ)
 
 It is easy to create your own animation curve by passing in the X and Y components of two control points of a cubic Bezier curve (as shown in __Example 4__). Using Bezier curves is a common technique to create smooth curves in computer graphics and they are widely used in vector-based drawing tools. The values passed to the cubicBezier method control the curve shape. The animation speed will be adjusted based on the resulting path.
 
