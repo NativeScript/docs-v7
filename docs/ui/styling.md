@@ -657,7 +657,7 @@ Platform specifics:
 
 ### Custom fonts
 You can use custom fonts in your app (in .TTF or .OTF format). 
-The NativeScript runtime will look for the font files under the `app/fonts/` directory and load them automatically.
+The NativeScript runtime will look for the font files under the `app/fonts/` (or `src/fonts/` if you use Angular) directory and load them automatically.
 
 ![Custom fonts setup"](../img/font-images/custom-fonts.png "Custom fonts setup")
 
