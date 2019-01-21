@@ -46,8 +46,10 @@ You may need to delete `platforms/android` and rebuild using the CLI command `tn
 
 ## App name
 This is the display name for your app. It is purely cosmetic but highly important. For example, it appears under the app icon.
-The value can be stored in the `app/App_Resources/Android/values/strings.xml` file
+The value is set via `App_Resources/Android/src/main/res/values/strings.xml` file.  Create this file if it does not exist.
+
 ```XML
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MyAppName</string>
     <string name="title_activity_kimera">MyAppName</string>
