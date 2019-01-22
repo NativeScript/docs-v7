@@ -692,7 +692,7 @@ The NativeScript core theme is written in SASS, and you can (optionally) use the
 To get started, first verify that your app has the [NativeScript SASS plugin](https://github.com/toddanglin/nativescript-dev-sass) installed by running the following command:
 
 ```
-tns install sass
+npm install nativescript-dev-sass --save-dev
 ```
 
 With SASS set up and ready to use, next you’ll need to import the theme’s `.scss` files into your own. Start by creating the following files in your app:
@@ -707,9 +707,12 @@ With SASS set up and ready to use, next you’ll need to import the theme’s `.
 
 After that, paste the following code into your `app.android.scss` file.
 
-``` CSS
+``` SCSS
 // Import app variables
 @import 'app-variables';
+
+// Import the theme’s main ruleset - both index and platform specific.
+@import '~nativescript-theme-core/scss/index';
 @import '~nativescript-theme-core/scss/platforms/index.android';
 
 // Import common styles
@@ -722,9 +725,13 @@ After that, paste the following code into your `app.android.scss` file.
 
 And the following code into your `app.ios.scss` file.
 
-``` CSS
+``` SCSS
+
 // Import app variables
 @import 'app-variables';
+
+// Import the theme’s main ruleset - both index and platform specific.
+@import '~nativescript-theme-core/scss/index';
 @import '~nativescript-theme-core/scss/platforms/index.ios';
 
 // Import common styles
@@ -735,9 +742,9 @@ And the following code into your `app.ios.scss` file.
 
 Create `_app-variables.scss` with the following contents:
 
-``` CSS
+``` SCSS
 // Import the theme’s variables. If you’re using a color scheme
-// other than “light”, switch the path to the alternative scheme,	
+// other than “light”, switch the path to the alternative scheme,
 // for example '~nativescript-theme-core/scss/dark'.
 @import '~nativescript-theme-core/scss/light';
 
@@ -746,10 +753,7 @@ Create `_app-variables.scss` with the following contents:
 
 Finally, paste the following code into your `_app-common.scss` file.
 
-``` CSS
-// Import the theme’s main ruleset.
-@import '~nativescript-theme-core/scss/index';
-
+``` SCSS
 // Place any CSS rules you want to apply on both iOS and Android here.
 // This is where the vast majority of your CSS code goes.
 ```
@@ -758,7 +762,7 @@ The power of this approach is you have the ability to customize the [theme’s S
 
 ### Using custom `.scss` file
 
-While using SASS in NativeScript Angular project and create custom `.scss` file for a specific component, you should refer the path to the `.scss` file in `styleUrls` in the component typescript file as it is shown in the sample code snippet below.
+If you are using SASS in NativeScript Angular project and have a custom `.scss` file for a specific component, you should refer the path to the `.scss` file in `styleUrls` in the component typescript file as it is shown in the sample code snippet below.
 For example:
 
 File structure:
@@ -778,7 +782,7 @@ import { Component } from "@angular/core";
 @Component({
     selector: "ns-app",
     templateUrl: "app.component.html",
-    styleUrls:['./custom.scss']
+    styleUrls:["./custom.scss"]
 })
 export class AppComponent { }
 ```
