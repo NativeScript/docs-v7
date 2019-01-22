@@ -79,6 +79,8 @@ Then build the docker image by using the following command from the `ns-docs` fo
 sudo docker build -t ns-docs:1.0 docs/build
 ```
 
+> **NOTE**: If you received some unauthorized error, make sure you are logged into docker from the CLI. Just execute `docker login` and follow the instruction. One thing to have in mind is that docker username is your email, but docker ID is what you see on top right when you login to https://hub.docker.com. When executing `docker login` you need to enter your docker ID.
+
 ### Building the documentation
 
 Start the docker image created in the previous step from the **ns-docs** folder:
