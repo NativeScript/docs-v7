@@ -17,7 +17,7 @@ This page contains a list of all system requirements needed to build and run Nat
 ## System Requirements
 
 * Ubuntu 14.04 LTS
-* The latest stable official release of Node.js (LTS) [8.x](https://nodejs.org/dist/latest-v8.x/) 
+* The latest stable official release of Node.js (LTS) [10.x](https://nodejs.org/dist/latest-v10.x/) 
 * G++ compiler
 * JDK 8
 * Android SDK
@@ -34,7 +34,7 @@ You must also have the following two environment variables setup for Android dev
 
 Complete the following steps to set up NativeScript on your Linux development machine:
 
-1. Install the latest Node.js [8.x](https://nodejs.org/dist/latest-v8.x/) stable official release. 
+1. Install the latest Node.js [10.x](https://nodejs.org/dist/latest-v10.x/) stable official release. 
 
 2. If you are running on a 64-bit system, install the runtime libraries for the ia32/i386 architecture.
 
@@ -49,13 +49,11 @@ Complete the following steps to set up NativeScript on your Linux development ma
     <pre class="add-copy-button"><code class="language-terminal">sudo apt-get install g++
     </code></pre>
 
-4. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+4. Set up [JDK 8] [JDK 8](https://openjdk.java.net/install/).
     1. Run the following commands.
 
-        <pre class="add-copy-button"><code class="language-terminal">sudo apt-get install python-software-properties
-        sudo add-apt-repository ppa:webupd8team/java
-        sudo apt-get update
-        sudo apt-get install oracle-java8-installer
+        <pre class="add-copy-button"><code class="language-terminal">
+        sudo apt-get install openjdk-8-jdk
         </code></pre>
 
     2. After installation if you have multiple installations of java you can choose which to use:

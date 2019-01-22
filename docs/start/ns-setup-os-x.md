@@ -15,7 +15,7 @@ This page contains a list of all system requirements needed to build and run Nat
 ## System Requirements
 
 * macOS High Sierra or later
-* The latest stable official release of Node.js (LTS) [10.x](https://nodejs.org/dist/latest-v8.x/). 
+* The latest stable official release of Node.js (LTS) [10.x](https://nodejs.org/dist/latest-v10.x/). 
 * (Optional) [Homebrew](https://brew.sh/) to simplify the installation of dependencies
 * For iOS development
     * Latest Xcode
@@ -99,12 +99,12 @@ Complete the following steps to setup NativeScript on your macOS development mac
         </code></pre>
 
 4. Install the dependencies for Android development.
-    1. Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
+    1. Set up [JDK 8](https://openjdk.java.net/install/).
       
-    <pre class="add-copy-button"><code class="language-terminal">brew tap caskroom/versions
+    <pre class="add-copy-button"><code class="language-terminal">brew tap AdoptOpenJDK/openjdk
     </code></pre>
 
-    <pre class="add-copy-button"><code class="language-terminal">brew cask install java8
+    <pre class="add-copy-button"><code class="language-terminal">brew cask install adoptopenjdk8
     </code></pre>
     
     2. Set the JAVA_HOME system environment variable.

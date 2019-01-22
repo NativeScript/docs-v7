@@ -248,10 +248,10 @@ Then add the required stages:
 - stage: "Lint"
   language: node_js
   os: linux
-  node_js: "6"
+  node_js: "10"
   script: cd src && npm run ci.tslint && cd ../demo && npm run ci.tslint && cd ../demo-angular && npm run ci.tslint
 ```
-The machine that is going to be provisioned will be Linux with nodejs v6 installed on it as well as Oracle JDK v8. Finally the `ci.tslint` script will be executed for the plugin's code and for the demo apps.
+The machine that is going to be provisioned will be Linux with nodejs v10 installed on it as well as  OpenJDK v8. Finally the `ci.tslint` script will be executed for the plugin's code and for the demo apps.
 
 ### 2. WebPack and Build Demo Apps with Your Plugin Installed
 
@@ -262,14 +262,14 @@ The machine that is going to be provisioned will be Linux with nodejs v6 install
       - WebpackiOS="11"
     osx_image: xcode9.1
     language: node_js 
-    node_js: "6"
-    jdk: oraclejdk8
+    node_js: "10"
+    jdk: openjdk8
     script: cd demo && npm run build.plugin && npm i && npm run build-ios-bundle && cd ../demo-angular && npm run build.plugin && npm i && npm run build-ios-bundle
   - language: android
     os: linux
     env:
       - WebpackAndroid="26"
-    jdk: oraclejdk8
+    jdk: openjdk8
     before_install: nvm install 6.10.3
     script: cd demo && npm run build.plugin && npm i && npm run build-android-bundle && cd ../demo-angular && npm run build.plugin && npm i && npm run build-android-bundle
 ```
@@ -285,7 +285,7 @@ The scripts that are executed build the plugin (take a look at [package.json fil
     - BuildAndroid="26"
   language: android
   os: linux
-  jdk: oraclejdk8
+  jdk: openjdk8
   before_install: nvm install 6.10.3
   script: cd demo && npm run ci.android.build && cd ../demo-angular && npm run ci.android.build
 - os: osx
@@ -294,8 +294,8 @@ The scripts that are executed build the plugin (take a look at [package.json fil
     - Xcode="9.1"
   osx_image: xcode9.1
   language: node_js 
-  node_js: "6"
-  jdk: oraclejdk8
+  node_js: "10"
+  jdk: openjdk8
   script: cd demo && npm run ci.ios.build && cd ../demo-angular && npm run ci.ios.build
 ```
 The scripts (`ci.android.build` and `ci.ios.build`) that are executed to build for iOS and Android are located in [package.json](https://github.com/NativeScript/nativescript-facebook/blob/master/demo/package.json#L49) file of any of the demo apps.
