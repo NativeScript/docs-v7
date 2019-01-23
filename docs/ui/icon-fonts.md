@@ -23,7 +23,7 @@ While bitmap images are great, they present challenges in designing mobile appli
 
 ## Platform Specific Font Recognition
 
-There is a conceptual difference in how **.ttf** fonts are recognized on iOS and Android. On Android, the font is recognized by its **file name** while on iOS it is recognized by its **font name**. That means that fonts that are created with a font name which is different from the file name has to be registered with both names in your CSS rule.
+There is a conceptual difference in how **.ttf** fonts are recognized on iOS and Android. On Android, the font is recognized by its **file name** while on iOS it is recognized by its **font name**. This means that fonts that are created with a font name which is different from the file name has to be registered with both names in your CSS rule.
 
 ```CSS
 .fa-brands {
