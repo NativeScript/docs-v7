@@ -66,7 +66,6 @@ Notice that in the above example the **file** names are different, but the regis
 ```CSS
 .fa {
     font-family: "Font Awesome 5 Free", "fa-regular-400";
-    font-weight: 400;
 }
 ```
 {% endangular %}
