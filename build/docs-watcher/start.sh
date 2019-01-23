@@ -24,6 +24,13 @@ trap 'kill ${!}; sigterm_handler' SIGTERM
 trap 'sigint_handler' SIGINT
 
 mkdir /www
+
+if [ ! -d /root/./nativescript-ui ]; then
+	mkdir /root/./nativescript-ui \
+	/root/./nativescript-ui-samples \
+	/root/./nativescript-ui-samples-angular
+
+fi
 echo "Start copying mounted folders..."
 rsync --relative -az --exclude node_modules/ \
 	/root/./docs \
@@ -31,6 +38,9 @@ rsync --relative -az --exclude node_modules/ \
 	/root/./nativescript-angular \
 	/root/./nativescript-sdk-examples-ng \
 	/root/./nativescript-sdk-examples-js \
+	/root/./nativescript-ui \
+	/root/./nativescript-ui-samples \
+	/root/./nativescript-ui-samples-angular \
 	/root/./nativescript-cli \
 	/www
 

@@ -15,6 +15,8 @@ SDK_ROOT_JS=$SCRIPT_PATH"/../../nativescript-sdk-examples-js"
 SDK_ROOT_NG=$SCRIPT_PATH"/../../nativescript-sdk-examples-ng"
 CLI_ROOT=$SCRIPT_PATH"/../../nativescript-cli"
 VUEJS_ROOT=$SCRIPT_PATH"/../../docs/vuejs-docs"
+NS_UI_DOCS=$SCRIPT_PATH"/../nativescript-ui-docs"
+NS_UI=$SCRIPT_PATH"/../../nativescript-ui"
 
 
 if [ -d "$ROOT" ]; then
@@ -48,12 +50,49 @@ cp -r $SCRIPT_PATH"/_config_vuejs.yml" \
 	  $VUEJS_ROOT
 	  
 rm $VUEJS_ROOT"/_plugins/redirect_generator.rb" \
-   $VUEJS_ROOT"/_plugins/slug.rb" \
    $VUEJS_ROOT"/_plugins/snippet.rb" \
    $VUEJS_ROOT"/_plugins/ns_cookbook.rb"
 
-cd $VUEJS_ROOT
-jekyll build --config _config_vuejs.yml
+   #$VUEJS_ROOT"/_plugins/slug.rb" \
+# NativeScript UI Docs build
+if [ -d $NS_UI"/build" ]; then
+
+	cd $NS_UI"/nativescript-telerik-ui-pro"
+	npm install
+	npm install gulp
+	cd ..
+	cd helpbuild
+	npm install gulp
+	npm i gulp-typedoc
+	gulp
+	cp -r ./_ns_ui_api_reference/ ../../docs/docs/ns-ui/ns_ui_api-reference
+	# cd ../../nativescript-ui-docs
+	cd ../../nativescript-ui-samples
+	set +e
+	set -e
+	declare -a examples=("autocomplete" "calendar" "chart" "dataform" "gauge" "listview" "sidedrawer")
+	for i in "${examples[@]}"
+	do
+		cd $i
+		npm install markdown-snippet-injector
+		# cd app
+		# tsc
+		# cd ../
+		npm run inject
+		cd ../
+	done
+	cd ..
+	cd nativescript-ui-samples-angular
+	declare -a examples=("autocomplete" "calendar" "chart" "dataform" "gauge" "listview" "sidedrawer")
+	for i in "${examples[@]}"
+	do
+		cd $i
+		npm install markdown-snippet-injector
+		npm run inject
+		cd ../
+	done
+fi
+
 
 cd $SDK_ROOT_NG
 ./build-docs.sh
@@ -85,14 +124,28 @@ cp -R $DOCS_ROOT"/docs/./" \
 	  $SDK_ROOT_NG"/dist/code-samples/ng-hardware-access" \
 	  $CONTENT_ROOT
 
-# cd $CONTENT_ROOT"/ui"
 cp -R $CLI_ROOT"/docs-cli" $CONTENT_ROOT"/tooling"
 cp -R $SDK_ROOT_JS"/dist/cookbook/ns-ui-widgets" $CONTENT_ROOT"/ui"
 cp -R $SDK_ROOT_JS"/dist/cookbook/ns-ui/." $CONTENT_ROOT"/ui"
 cp -R $SDK_ROOT_NG"/dist/code-samples/ng-ui-widgets" $CONTENT_ROOT"/ui"
 cp -R $SDK_ROOT_NG"/dist/code-samples/common-screens" $CONTENT_ROOT"/app-and-screen-templates"
 cp -R $SDK_ROOT_NG"/dist/code-samples/ng-ui/." $CONTENT_ROOT"/ui"
-# cd $ROOT
+
+if [ -d $NS_UI_DOCS"/build" ]; then
+	cp -R $NS_UI_DOCS"/getting-started.md" $CONTENT_ROOT"/ns-ui"
+	cp -R $NS_UI_DOCS"/introduction.md" $CONTENT_ROOT"/ns-ui"
+	cp -R $NS_UI_DOCS"/migration.md" $CONTENT_ROOT"/ns-ui"
+	cp -R $NS_UI_DOCS"/release-notes.md" $CONTENT_ROOT"/ns-ui"
+	cp -R $NS_UI_DOCS"/Controls/NativeScript" $CONTENT_ROOT"/ns-ui/controls"
+	cp -R $NS_UI_DOCS"/Controls/Angular" $CONTENT_ROOT"/ns-ui/controls"
+	
+	cp -R $NS_UI_DOCS"/getting-started.md" $VUEJS_ROOT"/ns-ui"
+	cp -R $NS_UI_DOCS"/introduction.md" $VUEJS_ROOT"/ns-ui"
+	cp -R $NS_UI_DOCS"/migration.md" $VUEJS_ROOT"/ns-ui"
+	cp -R $NS_UI_DOCS"/release-notes.md" $VUEJS_ROOT"/ns-ui"
+	cp -R $NS_UI_DOCS"/Controls/Vue/." $VUEJS_ROOT"/ns-ui/controls"
+fi
+
 
 cp $SCRIPT_PATH"/nginx.conf" $CONTENT_ROOT
 
@@ -110,9 +163,20 @@ jekyll build --config _config_nativescript.yml,_config.yml
 export JEKYLL_ENV="angular"
 jekyll build --config _config_angular.yml,_config.yml
 
+
+cd $VUEJS_ROOT
+
+export JEKYLL_ENV="vuejs"
+jekyll build --config _config_vuejs.yml --trace
+
+cd $ROOT
+
 cp -R $MODULES_ROOT"/bin/dist/api-reference" \
 	  $VUEJS_ROOT"/vuejs" \
+	  $DOCS_ROOT"/docs/ns-ui/ns_ui_api-reference/." \
 	  $WWW_ROOT
+
 
 cp -R $NS_DIST_ROOT"/./" $WWW_ROOT
 cp -R $NG_DIST_ROOT"/./" $WWW_ROOT"/angular"
+
