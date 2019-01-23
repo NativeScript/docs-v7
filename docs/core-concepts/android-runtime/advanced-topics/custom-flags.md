@@ -3,7 +3,7 @@ title: "Custom Flags"
 description: "Configure various V8 engine flags in order to improve the performance of your app, or to obtain more comprehensive information during debugging"
 position: 5
 previous_url: /core-concepts/android-runtime/advanced-topics/v8-flags
-slug: custom-flags
+slug: android-custom-flags
 ---
 
 # Custom Flags
@@ -79,5 +79,7 @@ By default, if an exception is thrown when executing JavaScript code which is ca
     ...
 }
 ```
+
+The discarded exceptions can be processed in the app by subscribing to `application.discardedErrorEvent` or by assigning a one-argument function to `global.__onDiscardedError`.
 
 > **NOTE:** The `discardUncaughtJsExceptions` works on iOS as well. This is why in the example above the flag is not assigned to the `android` object.
