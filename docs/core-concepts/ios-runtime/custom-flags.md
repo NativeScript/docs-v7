@@ -60,3 +60,36 @@ By default, the application will crash if an exception is thrown when executing 
 The discarded exceptions can be processed in the app by subscribing to `application.discardedErrorEvent` or by assigning a one-argument function to `global.__onDiscardedError`.
 
 > **NOTE:** The `discardUncaughtJsExceptions` works on Android as well. This is why in the example above the flag is not assigned to the `ios` object.
+
+# Explicitly Triggering GC
+
+The iOS Runtime exposes a `__collect()` function which you may call whenever you consider there is effective garbage in the JavaScript heap which could pottentially hold references to large native objects.
+
+## Using `gcThrottleTime` parameter
+
+You can use `gcThrottleTime` parameter to configure the runtime to trigger GC in the JavaScript heap periodically. The value of this parameter is measured in milliseconds. The value of `0` is default and disables the periodic automatic GC triggering.
+
+```JSON
+{
+  "ios": {
+    "gcThrottleTime": 5000
+  }
+}
+```
+
+On each native function call from JS, the runtime checks whether the specified throttle time has elapsed from the last automatic GC and schedules an async full GC if it has. It is recommended to tune this parameter depending on the memory allocation pattern of your application.
+
+### Using `memoryCheckInterval` and `freeMemoryRatio` parameters
+
+The previous strategy (using `gcThrottleTime` parameter) may not work for all scenarios. For example, if your app allocates large native objects in a loop your app may be terminated due to a memory issue regardless of setting the previous parameter. For such scenarios we provide the pair `memoryCheckInterval` and `freeMemoryRatio` which may help. You can use it to increase the frequency of automatic GCs when memory usage on the device is high. The value of `memoryCheckInterval` parameter is measured in milliseconds and the value of `0` (zero) (which is the default) disables this approach. The value of `freeMemoryRatio` is measured in percentage (from `0.0` to `1.0`) where the value of `0.0` disables this approach.
+
+```JSON
+{
+  "ios": {
+    "memoryCheckInterval": 500,
+    "freeMemoryRatio": 0.50
+  }
+}
+```
+
+Again, on each native function call from JS the runtime checks whether the `memoryCheckInterval` has elapsed since the previous automatically triggered GC. If it has, the ratio of `free/total` memory on the device is calculated. When it is lower than `freeMemoryRatio`, the runtime schedules an async full GC. It is recommended to tune this parameter depending on the memory allocation pattern of your application.
