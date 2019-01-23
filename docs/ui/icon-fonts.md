@@ -42,6 +42,7 @@ In the above example, the `fa-brands-400.ttf` (as downloaded from the FontAwesom
 
 Notice that in the above example the **file** names are different, but the registered **font** name is the same (use the **Font Book** application on Mac to see the actual font name). While this is no issue on Android, it renders the second font unusable on iOS. To handle similar cases, manually change the font name (e.g., via a third-party tool like [FontForge](http://fontforge.github.io/).
 
+{% nativescript %}
 ## Icon Fonts via XML
 
 ```HTML
@@ -54,7 +55,6 @@ Notice that in the above example the **file** names are different, but the regis
     font-weight: 400;
 }
 ```
-
 {% endnativescript %}
 
 {% angular %}
