@@ -70,7 +70,7 @@ Notice that in the above example the **file** names are different, but the regis
     font-weight: 400;
 }
 ```
-{% endnangular %}
+{% endangular %}
 
 ## Icon Fonts via Code-Behind
 {% nativescript %}
