@@ -23,3 +23,9 @@ navigation:
     code-samples:
         position: 81
         title: "CODE SAMPLES"
+    ns-ui:
+        position: 150
+        title: "NativeScript UI"
+    "ns-ui/ng-controls":
+        position: 90
+        title: "Controls"

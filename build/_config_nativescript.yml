@@ -14,7 +14,12 @@ ngselected: ""
 flavour: "nativescript"
 navigation:
 ## List your directory names and order here, like this:
-    
+    ns-ui:
+        position: 150
+        title: "NativeScript UI"
+    "ns-ui/controls":
+        position: 90
+        title: "Controls"
         
 # The google services configuration
 google_tag_manager: GTM-W58JDD

@@ -68,7 +68,7 @@ To better illustrate the usage of styling properties, we will use a simple scena
 
 This is how the calendar looks like:
 
-![Calendar month view styling](/controls/NativeScript/Calendar/Styling/images/calendar_styling_month_ios.png "iOS")      ![Calendar month view styling](/controls/NativeScript/Calendar/Styling/images/calendar_styling_month_android.png "Android")
+![Calendar month view styling](../Styling/images/calendar_styling_month_ios.png "iOS")      ![Calendar month view styling](../Styling/images/calendar_styling_month_android.png "Android")
 
 ## References
 Want to see this scenario in action?

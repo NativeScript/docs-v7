@@ -19,13 +19,13 @@ Welcome to the official documentation of **Progress NativeScript UI**
 
 **Progress NativeScript UI** contains the following components:
 
-- [**Calendar**]({% slug calendar-overview %}): A calendar component that offers different view modes, animations, great performance and customization options.
-- [**Chart**]({% slug chart-overview %}): A versatile charting component that supports all major Cartesian series types, as well as Pie and Donut series.
-- [**ListView**]({% slug listview-overview %}): A powerful data list control implementing a bunch of features native to the mobile world as item animations, pull-to-refresh, item layouts, load-on-demand, swipe-to-execute, etc.
-- [**DataForm**]({% slug dataform-overview %}): A component that helps you edit the properties of a business object during runtime and build a mobile form fast and easy.
-- [**SideDrawer**]({% slug sidedrawer-overview %}): A customizable container component that can be used to implement a hidden view containing navigation UI or common settings &ndash; a pattern extremely popular with the best iOS and Android applications.
-- [**Gauge**]({% slug gauges-overview %}): A customizable component that allows you to show the current status of a value within a range of upper and lower bounds, illustrate progress towards a goal or a summary of a fluctuating metric.
-- [**AutoComplete**]({% slug autocomplete-overview %}): An extended Text View that can automatically complete user input string by comparing the text being entered to all strings in the associated data source.
+- [**Calendar**](/ns-ui/controls/Calendar/overview): A calendar component that offers different view modes, animations, great performance and customization options.
+- [**Chart**](/ns-ui/controls/Chart/overview): A versatile charting component that supports all major Cartesian series types, as well as Pie and Donut series.
+- [**ListView**](/ns-ui/controls/ListView/overview): A powerful data list control implementing a bunch of features native to the mobile world as item animations, pull-to-refresh, item layouts, load-on-demand, swipe-to-execute, etc.
+- [**DataForm**](/ns-ui/controls/DataForm/overview): A component that helps you edit the properties of a business object during runtime and build a mobile form fast and easy.
+- [**SideDrawer**](/ns-ui/controls/SideDrawer/overview): A customizable container component that can be used to implement a hidden view containing navigation UI or common settings &ndash; a pattern extremely popular with the best iOS and Android applications.
+- [**Gauge**](/ns-ui/controls/Gauge/overview): A customizable component that allows you to show the current status of a value within a range of upper and lower bounds, illustrate progress towards a goal or a summary of a fluctuating metric.
+- [**AutoComplete**](/ns-ui/controls/AutoCompleteTextView/overview): An extended Text View that can automatically complete user input string by comparing the text being entered to all strings in the associated data source.
 
 ## How is Progress NativeScript UI distributed
 **Progress NativeScript UI** is distributed via npm. You may download the package that contains the component that you want to use from the following locations:

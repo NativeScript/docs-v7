@@ -21,7 +21,7 @@ All properties of `CellStyle` class are applicable to these two cells:
 
 This is how the calendar looks like now:
 
-![Calendar year view styling](/controls/NativeScript/Calendar/Styling/images/calendar_styling_month_names_ios.png "iOS")      ![Calendar year view styling](/controls/NativeScript/Calendar/Styling/images/calendar_styling_month_names_android.png "Android")
+![Calendar year view styling](../Styling/images/calendar_styling_month_names_ios.png "iOS")      ![Calendar year view styling](../Styling/images/calendar_styling_month_names_android.png "Android")
 
 ## References
 Want to see this scenario in action?
