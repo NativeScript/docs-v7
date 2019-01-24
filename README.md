@@ -69,13 +69,17 @@ git clone https://github.com/NativeScript/nativescript-angular.git
 git clone https://github.com/NativeScript/nativescript-sdk-examples-js.git
 git clone https://github.com/NativeScript/nativescript-sdk-examples-ng.git
 git clone https://github.com/NativeScript/nativescript-cli.git
-git clone https://github.com/telerik/nativescript-ui-samples-angular
-git clone https://github.com/telerik/nativescript-ui-samples
 ```
 
 Optional:
 ```bash
-git clone https://github.com/telerik/nativescript-ui
+git clone https://github.com/NativeScript/nativescript-ui-listview
+git clone https://github.com/NativeScript/nativescript-ui-autocomplete
+git clone https://github.com/NativeScript/nativescript-ui-dataform
+git clone https://github.com/NativeScript/nativescript-ui-chart
+git clone https://github.com/NativeScript/nativescript-ui-calendar
+git clone https://github.com/NativeScript/nativescript-ui-gauge
+git clone https://github.com/NativeScript/nativescript-ui-sidedrawer
 ```
 
 > **NOTE**: `nativescript-ui` is private repository used for building the Api Reference for the NativeScript UI components.  

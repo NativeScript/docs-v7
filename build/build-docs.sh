@@ -15,9 +15,14 @@ SDK_ROOT_JS=$SCRIPT_PATH"/../../nativescript-sdk-examples-js"
 SDK_ROOT_NG=$SCRIPT_PATH"/../../nativescript-sdk-examples-ng"
 CLI_ROOT=$SCRIPT_PATH"/../../nativescript-cli"
 VUEJS_ROOT=$SCRIPT_PATH"/../../docs/vuejs-docs"
-NS_UI=$SCRIPT_PATH"/../../nativescript-ui"
-NS_UI_SAMPLES=$SCRIPT_PATH"/../nativescript-ui-samples"
-NS_UI_NG_SAMPLES=$SCRIPT_PATH"/../nativescript-ui-samples-angular"
+NS_UI_LV=$SCRIPT_PATH"/../../nativescript-ui-listview"
+NS_UI_AC=$SCRIPT_PATH"/../../nativescript-ui-autocomplete"
+NS_UI_DF=$SCRIPT_PATH"/../../nativescript-ui-dataform"
+NS_UI_CH=$SCRIPT_PATH"/../../nativescript-ui-chart"
+NS_UI_CA=$SCRIPT_PATH"/../../nativescript-ui-calendar"
+NS_UI_GA=$SCRIPT_PATH"/../../nativescript-ui-gauge"
+NS_UI_SD=$SCRIPT_PATH"/../../nativescript-ui-sidedrawer"
+NS_UI_API_REF=$DOCS_ROOT"/ns_ui_api-reference"
 
 if [ -d "$ROOT" ]; then
 	rm -rf $ROOT
@@ -53,48 +58,33 @@ rm $VUEJS_ROOT"/_plugins/redirect_generator.rb" \
    $VUEJS_ROOT"/_plugins/snippet.rb" \
    $VUEJS_ROOT"/_plugins/ns_cookbook.rb"
 
-# NativeScript UI Docs Api Reference build
-if [ -d $NS_UI"/build" ]; then
-
-	cd $NS_UI"/nativescript-telerik-ui-pro"
-	npm install
-	npm install gulp
-	cd ..
-	cd helpbuild
-	npm install gulp
+# NativeScript UI Docs Api Reference build. Docs snippet injecting
+if [ -f $NS_UI_LV"/README.md" ]; then
+	echo "inside if"
+	cd $NS_UI_API_REF
+	npm i gulp
 	npm i gulp-typedoc
+	npm i typedoc
+	echo "execute gulp"
 	gulp
-	cp -r ./_ns_ui_api_reference/ ../../docs/docs/ns-ui/ns_ui_api-reference
-fi
-# nativescript-ui-samples - docs snippet injecting
-if [ -f $NS_UI_SAMPLES"/README.md" ]; then
-	cd $NS_UI_SAMPLES
+
 	set +e
 	set -e
-	declare -a examples=("autocomplete" "calendar" "chart" "dataform" "gauge" "listview" "sidedrawer")
+	declare -a examples=($NS_UI_AC $NS_UI_CA $NS_UI_CH $NS_UI_DF $NS_UI_GA $NS_UI_LV $NS_UI_SD)
+	echo "echo examples list"
+	echo $examples;
 	for i in "${examples[@]}"
 	do
 		cd $i
+		cd "demo"
 		npm install markdown-snippet-injector
 		# cd app
 		# tsc
 		# cd ../
 		npm run inject
-		cd ../
-	done
-fi
-# nativescript-ui-samples-angular - docs snippet injecting
-if [ -f $NS_UI_NG_SAMPLES"/README.md" ]; then
-	cd $NS_UI_NG_SAMPLES
-	set +e
-	set -e
-	declare -a examples=("autocomplete" "calendar" "chart" "dataform" "gauge" "listview" "sidedrawer")
-	for i in "${examples[@]}"
-	do
-		cd $i
+		cd "../demo-angular"
 		npm install markdown-snippet-injector
 		npm run inject
-		cd ../
 	done
 fi
 
@@ -162,7 +152,7 @@ cd $ROOT
 
 cp -R $MODULES_ROOT"/bin/dist/api-reference" \
 	  $VUEJS_ROOT"/vuejs" \
-	  $DOCS_ROOT"/docs/ns-ui/ns_ui_api-reference/." \
+	  $NS_UI_API_REF"/ns-ui-api-reference" \
 	  $WWW_ROOT
 
 
