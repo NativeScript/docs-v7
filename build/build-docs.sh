@@ -61,9 +61,7 @@ rm $VUEJS_ROOT"/_plugins/redirect_generator.rb" \
 # NativeScript UI Docs Api Reference build. Docs snippet injecting
 if [ -f $NS_UI_LV"/README.md" ]; then
 	cd $NS_UI_API_REF
-	npm i gulp
-	npm i gulp-typedoc
-	npm i typedoc
+	npm i
 	gulp
 
 	set +e
