@@ -31,7 +31,7 @@ For detailed information on how to pass environment variables during a debug run
 
 ## Log garbage collection statistics
 
-`gcLogLevel` - debugging option to log GC activity (0 = None, 1 = Basic, 2 = Verbose)
+`logGC` - debugging option to log GC activity (0 = None, 1 = Basic, 2 = Verbose)
 
 ## Log module loading internals
 
