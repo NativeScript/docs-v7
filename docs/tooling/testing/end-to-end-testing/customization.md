@@ -1,5 +1,6 @@
 ---
 title: Customization
+titletag: End to End Testiing - Customization
 description: Write and execute UI E2E automation tests to ensure that newly added features are working correctly and no regressions are introduced in the mobile app.
 position: 40
 tags: ui testing, app ui testing, nativescript ui testing, automation testing, app automation testing, nativescript automation testing, appium, ui test automation, e2e testing
@@ -11,7 +12,7 @@ previous_url: /testing,/core-concepts/testing
 
 ## Custom Appium Capabilities
 
-When installed, the plugin creates `e2e` folder containing sample test file and configuration folder `config` where your custom capabilities reside. 
+When installed, the `nativescript-dev-appium` plugin creates `e2e` folder containing sample test file and configuration folder `config` where your custom capabilities reside. 
 The existence of such capabilities is a runner's requirement which comes from [Appium](https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/caps.md). Additional locations where the runner will search for the config file are:
 
 ```
@@ -73,7 +74,7 @@ Notice that once custom capabilities are provided you will be able to pick any o
 
 As you can see, the `app` property can be left an empty string which will force the plugin to search for an app package in `platforms` folder. However, this search functionality depends on `runType` option so if you think of using it add `android`, `device`, `sim` strings as part of your `runType` option which in fact is your capability key in the config file. E.g --runType android23, --runType sim.10iPhone6. Thus, the runner will manage to look in the right location in order to search for app package.
 
-**It is important to build your app in advance as explained in [Usage](#usage) section, because the runner expects to provide app package to it or such to exists in the search location.**
+**It is important to build your app in advance as explained in the [Getting Started]({% slug e2e-testing-getting-started%}#running-your-first-test) section, because the runner expects to provide app package to it or such to exists in the search location.**
 
 **For faster testsing when working on an app with livesync it would be better to use --devMode option or start a new session using --startSession option and run tests using --attachToDebug option and specify appium --port. Or simply start session with appium desktop application**
 

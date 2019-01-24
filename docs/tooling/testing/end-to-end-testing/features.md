@@ -1,5 +1,6 @@
 ---
 title: Features
+titletag: End to End Testiing - Features
 description: Write and execute UI E2E automation tests to ensure that newly added features are working correctly and no regressions are introduced in the mobile app.
 position: 30
 tags: ui testing, app ui testing, nativescript ui testing, automation testing, app automation testing, nativescript automation testing, appium, ui test automation, e2e testing
@@ -8,7 +9,7 @@ previous_url: /testing,/core-concepts/testing
 ---
 
 
-## E2E Testing - Features
+## Features
 
 1. Cross-platform [locators](https://github.com/NativeScript/nativescript-dev-appium/blob/master/lib/locators.ts)
 1. Find strategies: *findElementByText*, *findElementByClassName*, *findElementByAccessibilityId*, *findElementByXPath*
@@ -24,4 +25,4 @@ previous_url: /testing,/core-concepts/testing
 1. [WIP] Ability to verify animations/transitions through video/images; please refer to [frame-comparer](https://github.com/SvetoslavTsenov/frame-comparer)
 
 
-TODO: Describe each feature in details
+**TODO**: Describe each feature in details and give a simple example how to use it.

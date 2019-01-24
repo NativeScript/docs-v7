@@ -1,13 +1,14 @@
 ---
-title: End to End (E2E) Testing
+title: Overview
+titletag: End to End Testiing - Overview
 description: Write and execute UI E2E automation tests to ensure that newly added features are working correctly and no regressions are introduced in the mobile app.
 position: 10
 tags: ui testing, app ui testing, nativescript ui testing, automation testing, app automation testing, nativescript automation testing, appium, ui test automation, e2e testing
-slug: e2e-testing
+slug: e2e-testing-overview
 previous_url: /testing,/core-concepts/testing
 ---
 
-# End to End (E2E) Testing
+# Overview
 
 E2E testing allows to test your application workflows and make sure all the integration points are working as expected. You can literally test any screen and any workflow of your app. It differs from [Unit Testing]({% slug unit-testing %}) by the fact that unit testing is used to test an isolated piece of code usually in a mocked environment. 
 
@@ -72,63 +73,13 @@ As `telnet` is removed from *macOS High Sierra*, it could be installed as follow
 $ brew install telnet
 ```
 
-### Project Setup
-
-Once you have execute the steps above to setup your environment for testing with Appium, you are ready to setup your project.
-
-* Add the nativescript-dev-appium plugin as a *devDependency* to your project:
-
-```shell
-$ npm install -D nativescript-dev-appium
-```
-
-> After completion of the installation, if your project has a dependency to *TypeScript*, the plugin should have added an `e2e` folder containing predefined configs and samples.
- 
- #TODO: What if it doesn't have such dependency ???????????
-
-### Folder Structure
-
-After youve setup your project for E2E testing, it should have a structure similar to:
-
-        my-app
-        ├── app
-        ├── e2e
-            ├── config
-                ├── appium.capabilities.json
-                ├── mocha.opts
-            ├── sample.e2e-test.ts
-            ├── setup.ts
-            ├── tsconfig.json
-        ├── ...
-        ├── package.json
-        ├── tsconfig.json
-
-> To avoid any incompatibilities between the source of *e2e* tests (ES6) and the source of the application (ES5), we recommend to exclude the *e2e* folder from the application's *tsconfig.json* file: `exclude": [ "e2e" ]`.
-
-Here is more info about the E2E test specific files and configurations:
-
-|File                           |Purpose|
-|:-----------------------------|:-------------------|
-|config/appium.capabilities.json|Contains predefined configurations for test execution.|
-|config/mocha.opts              |A default mocha configuration file.                   |
-|sample.e2e-test.ts             |Contains a predefined ready-to-execute sample tests of the default [hello-world-ts](https://github.com/NativeScript/template-hello-world-ts) template.|
-|setup.ts                       |Defines the `before` and `after` test execution hooks responsible to start and stop the [Appium](http://appium.io/) server.|
-|tsconfig.json                  |TypeScript compiler configuration file for the `e2e` tests.|
-
-Generated tests are standard [Mocha](http://mochajs.org) tests.
-
-> Note - in case you want to execute image comparision while testing there are two more important folders to have in mind: 
-> * `e2e/reports` - it is created during test execution and stores the actual images from comparison
-> * `e2e/resources` - this folder aims to store the expected images for comparison
-
-
 ## What's Next?
 
-You have now learned the basics about doing E2E testing for mobile apps. You can now continue to the simple example provided in the [Getting Started]({% slug e2e-testing-getting-started %}) section.
+You have now learned the basics about what E2E testing is for mobile apps and what's the difference between unit and e2e testing. You can now continue to the simple example provided in the [Getting Started]({% slug e2e-testing-getting-started %}) section where you'll learn how to setup the nativescript-dev-appium plugin in your project and how to run your first test.
 
 Do not miss gaining more advanced knowledge about the usage of Appium by reviewing
 - [nativescript-dev-appium Features]({% slug e2e-testing-features %}) 
-- [How to do custom Appium capabilities and what options it provides]({% slug e2e-testing-customization %})?
+- [How to create custom Appium capabilities and what options it provides]({% slug e2e-testing-customization %})?
 - [How to troubleshoot any issues and what are some common issues]({% slug e2e-testing-troubleshooting %})?
 
-There are also nice blog posts and conference videos covering Appium which you can find in the [References section]({% slug e2e-testing-references %}) of this documentation.
+There are also nice blog posts and conference videos covering Appium and its usage in NativeScript apps which you can find in the [References section]({% slug e2e-testing-references %}) of this documentation.
