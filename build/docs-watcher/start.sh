@@ -26,10 +26,16 @@ trap 'sigint_handler' SIGINT
 mkdir /www
 
 if [ ! -d /root/./nativescript-ui ]; then
-	mkdir /root/./nativescript-ui \
-	/root/./nativescript-ui-samples \
-	/root/./nativescript-ui-samples-angular
+	mkdir /root/./nativescript-ui 
 
+fi
+if [ ! -d /root/./nativescript-ui-samples ]; then
+	mkdir /root/./nativescript-ui-samples
+
+fi
+if [ ! -d /root/./nativescript-ui-samples-angular ]; then
+	mkdir /root/./nativescript-ui-samples-angular
+	
 fi
 echo "Start copying mounted folders..."
 rsync --relative -az --exclude node_modules/ \

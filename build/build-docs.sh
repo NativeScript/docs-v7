@@ -15,9 +15,9 @@ SDK_ROOT_JS=$SCRIPT_PATH"/../../nativescript-sdk-examples-js"
 SDK_ROOT_NG=$SCRIPT_PATH"/../../nativescript-sdk-examples-ng"
 CLI_ROOT=$SCRIPT_PATH"/../../nativescript-cli"
 VUEJS_ROOT=$SCRIPT_PATH"/../../docs/vuejs-docs"
-NS_UI_DOCS=$SCRIPT_PATH"/../nativescript-ui-docs"
 NS_UI=$SCRIPT_PATH"/../../nativescript-ui"
-
+NS_UI_SAMPLES=$SCRIPT_PATH"/../nativescript-ui-samples"
+NS_UI_NG_SAMPLES=$SCRIPT_PATH"/../nativescript-ui-samples-angular"
 
 if [ -d "$ROOT" ]; then
 	rm -rf $ROOT
@@ -53,8 +53,7 @@ rm $VUEJS_ROOT"/_plugins/redirect_generator.rb" \
    $VUEJS_ROOT"/_plugins/snippet.rb" \
    $VUEJS_ROOT"/_plugins/ns_cookbook.rb"
 
-   #$VUEJS_ROOT"/_plugins/slug.rb" \
-# NativeScript UI Docs build
+# NativeScript UI Docs Api Reference build
 if [ -d $NS_UI"/build" ]; then
 
 	cd $NS_UI"/nativescript-telerik-ui-pro"
@@ -66,8 +65,10 @@ if [ -d $NS_UI"/build" ]; then
 	npm i gulp-typedoc
 	gulp
 	cp -r ./_ns_ui_api_reference/ ../../docs/docs/ns-ui/ns_ui_api-reference
-	# cd ../../nativescript-ui-docs
-	cd ../../nativescript-ui-samples
+fi
+# nativescript-ui-samples - docs snippet injecting
+if [ -f $NS_UI_SAMPLES"/README.md" ]; then
+	cd $NS_UI_SAMPLES
 	set +e
 	set -e
 	declare -a examples=("autocomplete" "calendar" "chart" "dataform" "gauge" "listview" "sidedrawer")
@@ -81,8 +82,12 @@ if [ -d $NS_UI"/build" ]; then
 		npm run inject
 		cd ../
 	done
-	cd ..
-	cd nativescript-ui-samples-angular
+fi
+# nativescript-ui-samples-angular - docs snippet injecting
+if [ -f $NS_UI_NG_SAMPLES"/README.md" ]; then
+	cd $NS_UI_NG_SAMPLES
+	set +e
+	set -e
 	declare -a examples=("autocomplete" "calendar" "chart" "dataform" "gauge" "listview" "sidedrawer")
 	for i in "${examples[@]}"
 	do
@@ -92,7 +97,6 @@ if [ -d $NS_UI"/build" ]; then
 		cd ../
 	done
 fi
-
 
 cd $SDK_ROOT_NG
 ./build-docs.sh
@@ -130,21 +134,6 @@ cp -R $SDK_ROOT_JS"/dist/cookbook/ns-ui/." $CONTENT_ROOT"/ui"
 cp -R $SDK_ROOT_NG"/dist/code-samples/ng-ui-widgets" $CONTENT_ROOT"/ui"
 cp -R $SDK_ROOT_NG"/dist/code-samples/common-screens" $CONTENT_ROOT"/app-and-screen-templates"
 cp -R $SDK_ROOT_NG"/dist/code-samples/ng-ui/." $CONTENT_ROOT"/ui"
-
-if [ -d $NS_UI_DOCS"/build" ]; then
-	cp -R $NS_UI_DOCS"/getting-started.md" $CONTENT_ROOT"/ns-ui"
-	cp -R $NS_UI_DOCS"/introduction.md" $CONTENT_ROOT"/ns-ui"
-	cp -R $NS_UI_DOCS"/migration.md" $CONTENT_ROOT"/ns-ui"
-	cp -R $NS_UI_DOCS"/release-notes.md" $CONTENT_ROOT"/ns-ui"
-	cp -R $NS_UI_DOCS"/Controls/NativeScript" $CONTENT_ROOT"/ns-ui/controls"
-	cp -R $NS_UI_DOCS"/Controls/Angular" $CONTENT_ROOT"/ns-ui/controls"
-	
-	cp -R $NS_UI_DOCS"/getting-started.md" $VUEJS_ROOT"/ns-ui"
-	cp -R $NS_UI_DOCS"/introduction.md" $VUEJS_ROOT"/ns-ui"
-	cp -R $NS_UI_DOCS"/migration.md" $VUEJS_ROOT"/ns-ui"
-	cp -R $NS_UI_DOCS"/release-notes.md" $VUEJS_ROOT"/ns-ui"
-	cp -R $NS_UI_DOCS"/Controls/Vue/." $VUEJS_ROOT"/ns-ui/controls"
-fi
 
 
 cp $SCRIPT_PATH"/nginx.conf" $CONTENT_ROOT
