@@ -34,8 +34,7 @@ The `Page` is NativeScript's most basic navigation component. It represents a sc
 
 By design, a `Page` can't be declared as a child of another component. It is used as a root component of a module, in which case the module becomes a page module. Here is an example of how you can implement the `item-page` module from the diagram above:
 
-``` XML
-<!-- item-page.xml-->
+``` item-page.xml
 <Page loaded="onPageLoaded">
     <ActionBar title="Item" class="action-bar"></ActionBar>
 
@@ -44,15 +43,13 @@ By design, a `Page` can't be declared as a child of another component. It is use
     </StackLayout>
 </Page>
 ```
-``` JavaScript
-// item-page.js
+``` item-page.js
 function onPageLoaded(args) {
     console.log("Page Loaded");
 }
 exports.onPageLoaded = onPageLoaded;
 ```
-``` TypeScript
-// item-page.ts
+``` item-page.ts
 import { EventData } from "tns-core-modules/data/observable";
 
 export function onPageLoaded(args: EventData): void {
@@ -71,12 +68,10 @@ For the most basic forward navigation scenario, you need only these two features
 
 The following example demonstrates the implementation of the rest of the forward navigation diagram above. There is a `Frame` declared as root component in the `app-root` module. Upon load, the `Frame` will automatically navigate to the `featured-page` module. The `featured-page` module in turn has a button that navigates to the `item-page` module. Check out the complete playground demo below the code sample.
 
-```XML
-<!-- app-root.xml -->
+```app-root.xml
 <Frame id="featured" defaultPage="featured-page" />
 ```
-```XML
-<!-- featured-page.xml -->
+```featured-page.xml
 <Page>
     <ActionBar title="Featured" class="action-bar"></ActionBar>
 
@@ -85,8 +80,7 @@ The following example demonstrates the implementation of the rest of the forward
     </StackLayout>
 </Page>
 ```
-``` JavaScript
-// featured-page.js
+``` featured-page.js
 function onTap(args) {
     const button = args.object;
     const page = button.page;
@@ -94,8 +88,7 @@ function onTap(args) {
 }
 exports.onTap = onTap;
 ```
-``` TypeScript
-// featured-page.ts
+``` featured-page.ts
 import { EventData } from "tns-core-modules/data/observable";
 import { Button } from "tns-core-modules/ui/button";
 import { Page } from "tns-core-modules/ui/page";
@@ -115,8 +108,7 @@ export function onTap(args: EventData) {
 
 It can also be called upward navigation since you are going up in your navigation hierarchy. This type of navigation represents the opposite direction of the forward navigation and is supported by the `Frame` API. To force a navigation back to the previous page module loaded in a `Frame` simply call its [goBack()](http://localhost:9192/api-reference/classes/_ui_frame_.frame#goback) method. Check out the complete playground demo below the code sample.
 
-``` XML
-<!-- item-page.xml-->
+``` item-page.xml
 <Page loaded="onPageLoaded">
     <ActionBar title="Item" class="action-bar"></ActionBar>
 
@@ -126,8 +118,7 @@ It can also be called upward navigation since you are going up in your navigatio
     </StackLayout>
 </Page>
 ```
-``` JavaScript
-// item-page.js
+``` item-page.js
 function onPageLoaded(args) {
     console.log("Page Loaded");
 }
@@ -140,8 +131,7 @@ function onTap(args) {
 exports.onTap = onTap;
 exports.onPageLoaded = onPageLoaded;
 ```
-``` TypeScript
-// item-page.ts
+``` item-page.ts
 import { EventData } from "tns-core-modules/data/observable";
 import { Button } from "tns-core-modules/ui/button";
 import { Page } from "tns-core-modules/ui/page";
@@ -173,8 +163,7 @@ The most simple and straight forward way to implement lateral navigation is the 
 
 ![navigation-diagram-hub](../img/navigation/navigation-diagram-hub.png?raw=true)
 
-``` XML
-<!-- hub-page.xml-->
+``` hub-page.xml
 <Page class="page">
     <ActionBar title="Hub" class="action-bar">
     </ActionBar>
@@ -186,8 +175,7 @@ The most simple and straight forward way to implement lateral navigation is the 
     </StackLayout>
 </Page>
 ```
-``` JavaScript
-// hub-page.js
+``` hub-page.js
 function navigateToFeatured(args) {
     const button = args.object;
     const page = button.page;
@@ -210,8 +198,7 @@ exports.navigateToFeatured = navigateToFeatured;
 exports.navigateToBrowse = navigateToBrowse;
 exports.navigateToSearch = navigateToSearch;
 ```
-``` TypeScript
-// hub-page.ts
+``` hub-page.ts
 import { EventData } from "tns-core-modules/data/observable";
 import { Button } from "tns-core-modules/ui/button";
 import { Page } from "tns-core-modules/ui/page";
@@ -254,8 +241,7 @@ Check out the [TabView]({%slug tab-view %}) article for a more detailed look on 
 
 Here is a code sample of the `TabView` declaration that matches the diagram above. Check out the complete playground demo below the code sample.
 
-```XML
-<!-- app-root.xml -->
+```app-root.xml
 <TabView androidTabsPosition="bottom" selectedIndex="0" selectedIndexChanged="onSelectedIndexChanged">
     <TabViewItem title="Featured">
         <Frame id="featured" defaultPage="featured-page" />
@@ -268,15 +254,13 @@ Here is a code sample of the `TabView` declaration that matches the diagram abov
     </TabViewItem>
 </TabView>
 ```
-``` JavaScript
-// app-root.js
+``` app-root.js
 function onSelectedIndexChanged(args) {
     console.log(`Selected index has changed ( Old index: ${args.oldIndex} New index: ${args.newIndex} )`);
 }
 exports.onSelectedIndexChanged = onSelectedIndexChanged;
 ```
-``` TypeScript
-// app-root.ts
+``` app-root.ts
 import { SelectedIndexChangedEventData } from "tns-core-modules/ui/tab-view";
 
 export function onSelectedIndexChanged(args: SelectedIndexChangedEventData) {
@@ -305,12 +289,10 @@ To open a modal view you should simply call the `showModal()` method of any UI c
 
 The following code sample demonstrates how you can implement the Search modal view and page from the diagram above. Check out the complete playground demo below the code sample.
 
-```XML
-<!-- app-root.xml -->
+```app-root.xml
 <Frame id="featured" defaultPage="featured-page" />
 ```
-```XML
-<!-- featured-page.xml -->
+```featured-page.xml
 <Page>
     <ActionBar title="Featured" class="action-bar"></ActionBar>
 
@@ -319,8 +301,7 @@ The following code sample demonstrates how you can implement the Search modal vi
     </StackLayout>
 </Page>
 ```
-``` JavaScript
-// featured-page.js
+``` featured-page.js
 function openSearchModal(args) {
     const view = args.object;
     const context = null;
@@ -330,8 +311,7 @@ function openSearchModal(args) {
 }
 exports.openSearchModal = openSearchModal;
 ```
-``` TypeScript
-// featured-page.ts
+``` featured-page.ts
 import { EventData } from "tns-core-modules/data/observable";
 import { View } from "tns-core-modules/ui/core/view";
 
@@ -343,12 +323,10 @@ export function openSearchModal(args: EventData) {
     view.showModal("search-root", context, closeCallback, fullscreen);
 }
 ```
-```XML
-<!-- search-root.xml -->
+```search-root.xml
 <Frame id="search" defaultPage="search-page" />
 ```
-```XML
-<!-- search-page.xml -->
+```search-page.xml
 <Page>
     <ActionBar title="Search" class="action-bar"></ActionBar>
 
@@ -357,16 +335,14 @@ export function openSearchModal(args: EventData) {
     </StackLayout>
 </Page>
 ```
-``` JavaScript
-// search-page.js
+``` search-page.js
 function closeModal(args) {
     const view = args.object;
     view.closeModal();
 }
 exports.closeModal = closeModal;
 ```
-``` TypeScript
-// search-page.ts
+``` search-page.ts
 import { EventData } from "tns-core-modules/data/observable";
 import { View } from "tns-core-modules/ui/core/view";
 
@@ -393,8 +369,7 @@ The simplest navigation pattern that you can implement is again the hub navigati
 
 The component itself doesn't provide navigation logic automatically like the `TabView`. Instead, it is built with more freedom in mind and lets you customize its content. It exposes two UI containers - the `drawerContent` container houses the UI of the hidden side view and the `mainContent` holds the UI that will be shown on the screen. To implement the diagram above, you can embed a `Frame` component in the main content container. In this case the hub screen will be hidden to the side, so you will have to show one of the features initially using the `defaultPage` property, e.g. the `featured-page` module. In the hidden drawer content you can have three buttons. Each of them will navigate to one of the three features. Check out the complete playground demo below the code sample.
 
-```XML
-<!-- app-root.xml -->
+```app-root.xml
 <nsDrawer:RadSideDrawer xmlns:nsDrawer="nativescript-ui-sidedrawer">
     <nsDrawer:RadSideDrawer.drawerContent>
         <StackLayout backgroundColor="gray">
@@ -409,8 +384,7 @@ The component itself doesn't provide navigation logic automatically like the `Ta
     </nsDrawer:RadSideDrawer.mainContent>
 </nsDrawer:RadSideDrawer>
 ```
-``` JavaScript
-// app-root.js
+``` app-root.js
 const appModule = require("tns-core-modules/application");
 const frameModule = require("tns-core-modules/ui/frame");
 
@@ -448,8 +422,7 @@ exports.navigateToFeatured = navigateToFeatured;
 exports.navigateToBrowse = navigateToBrowse;
 exports.navigateToSearch = navigateToSearch;
 ```
-``` TypeScript
-// app-root.ts
+``` app-root.ts
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import { getRootView } from "tns-core-modules/application";
 import { EventData } from "tns-core-modules/data/observable";
@@ -495,8 +468,7 @@ An alternative navigation pattern for the `SideDrawer` would be to have the main
 
 ![navigation-diagram-drawer](../img/navigation/navigation-diagram-drawer.png?raw=true)
 
-```XML
-<!-- app-root.xml -->
+```app-root.xml
 <nsDrawer:RadSideDrawer xmlns:nsDrawer="nativescript-ui-sidedrawer">
     <nsDrawer:RadSideDrawer.drawerContent>
         <StackLayout>
@@ -511,8 +483,7 @@ An alternative navigation pattern for the `SideDrawer` would be to have the main
     </nsDrawer:RadSideDrawer.mainContent>
 </nsDrawer:RadSideDrawer>
 ```
-``` JavaScript
-// app-root.js
+``` app-root.js
 const appModule = require("tns-core-modules/application");
 const frameModule = require("tns-core-modules/ui/frame");
 
@@ -550,8 +521,7 @@ exports.resetFeatured = resetFeatured;
 exports.openBrowseModal = openBrowseModal;
 exports.openSearchModal = openSearchModal;
 ```
-``` TypeScript
-// app-root.ts
+``` app-root.ts
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import { EventData } from "tns-core-modules/data/observable";
 import { View } from "tns-core-modules/ui/core/view";
