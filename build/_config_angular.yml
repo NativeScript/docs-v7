@@ -10,7 +10,7 @@ nsselected: ""
 ngselected: "selected"
 
 # Exclude files which should not be in the output
-exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, cookbook, ui/ns-ui-widgets, ns-framework-modules, hardware, ns-ui/controls]
+exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, cookbook, ui/ns-ui-widgets, ns-framework-modules, hardware, ui/professional-ui-components/controls]
 
 # The google services configuration
 google_tag_manager: GTM-W58JDD
@@ -23,9 +23,27 @@ navigation:
     code-samples:
         position: 81
         title: "CODE SAMPLES"
-    ns-ui:
-        position: 150
-        title: "NativeScript UI"
-    "ns-ui/ng-controls":
-        position: 90
+    "ui/professional-ui-components/ng-controls":
+        position: 40
         title: "Controls"
+    "ui/professional-ui-components/ng-controls/SideDrawer":
+        position: 10
+        title: "SideDrawer"
+    "ui/professional-ui-components/ng-controls/ListView":
+        position: 20
+        title: "ListView"
+    "ui/professional-ui-components/ng-controls/Calendar":
+        position: 30
+        title: "Calendar"
+    "ui/professional-ui-components/ng-controls/Chart":
+        position: 40
+        title: "Chart"
+    "ui/professional-ui-components/ng-controls/AutoCompleteTextView":
+        position: 50
+        title: "AutoCompleteTextView"
+    "ui/professional-ui-components/ng-controls/DataForm":
+        position: 60
+        title: "DataForm"
+    "ui/professional-ui-components/ng-controls/Gauge":
+        position: 70
+        title: "Gauge"

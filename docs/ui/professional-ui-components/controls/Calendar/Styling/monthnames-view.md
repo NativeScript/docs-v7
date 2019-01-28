@@ -1,14 +1,14 @@
 ---
-title: MonthNames view mode styling
+title: MonthNames view mode
 page_title: RadCalendar year view mode styling | Progress NativeScript UI Documentation
 description: A MonthNames view mode style customization guide page for RadCalendar for NativeScript.
 slug: calendar-monthnamesview-styling
-tags: radcalendar, cell, styling, MonthNames, calendar, cells
+tags: radcalendar, cell, styling, monthnames, month, calendar, cells, nativescript, professional
 position: 12
 publish: true
 ---
 
-# Styling: MonthNames view mode
+# Calendar MonthNames View Mode Styling
 
 In order to apply custom style for this mode, you need to initialize the `monthNamesViewStyle` property of `RadCalendar` with instance of `CalendarMonthNamesViewStyle`.
 In this view we have two cell types that can be customized: the title bar cell and the month name cell. To apply custom style to title you need to initialize the `titleCellStyle` with instance of `CellStyle` class. To apply custom style to title you need to initialize the `monthNameCellStyle` with instance of `CellStyle` class.

@@ -1,14 +1,14 @@
 ---
-title: Inline events styling
+title: Inline events
 page_title: RadCalendar inline events styling | Progress NativeScript UI Documentation
 description: Inline events customization guide page for RadCalendar for NativeScript.
 slug: calendar-inlineevents-styling
-tags: radcalendar, cell, styling, inline, events, calendar, cells
+tags: radcalendar, cell, styling, inline, events, calendar, cells, nativescript, professional
 position: 13
 publish: true
 ---
 
-# Styling: Inline events
+# Calendar Inline Events Styling
 When working with Inline events, specifying a color for the event's cell indicator (i.e. the color is used for the shape that visualizes the event in the corresponding day cell) is done by using the `eventColor` property of `CalendarEvent` class. If `CalendarEventsViewMode.Inline` is chosen for events view mode, you can apply additional styling options to the cells of the table view shown for inline events.
 
 Since events are available for Month and Week views you should initialize the `inlineEventCellStyle` member of `CalendarMonthViewStyle` or `CalendarWeekViewStyle` with instance of `InlineEventCellStyle` class.

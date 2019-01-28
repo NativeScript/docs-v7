@@ -1,14 +1,14 @@
 ---
-title: Day view mode styling
+title: Day view mode
 page_title: RadCalendar day view mode styling | Progress NativeScript UI Documentation
 description: A day view mode style customization guide page for RadCalendar for NativeScript.
 slug: calendar-dayview-styling
-tags: radcalendar, cell, styling, day, calendar, cells
+tags: radcalendar, cell, styling, day, calendar, cells, nativescript, professional
 position: 13
 publish: true
 ---
 
-# Styling: Day view
+# Calendar Day View Styling
 
 In order to apply custom style for this mode, you need to initialize the `dayViewStyle` property of `RadCalendar` with instance of `CalendarDayViewStyle`.
 To apply custom style to the cells that are displayed at the top you can use the same properties as in the [styling of the month view]({% slug calendar-monthview-styling %} "Read more about styling in Month view mode"). Additionally the `CalendarDayViewStyle` has `dayEventsViewStyle` and `allDayEventsViewStyle` .

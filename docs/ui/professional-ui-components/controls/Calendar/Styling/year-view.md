@@ -1,14 +1,14 @@
 ---
-title: Year view mode styling
+title: Year view mode
 page_title: RadCalendar year view mode styling | Progress NativeScript UI Documentation
 description: A year view mode style customization guide page for RadCalendar for NativeScript.
 slug: calendar-yearview-styling
-tags: radcalendar, cell, styling, year, calendar, cells
+tags: radcalendar, cell, styling, year, calendar, cells, nativescript, professional
 position: 11
 publish: true
 ---
 
-# Styling: Year view
+# Calendar Year View Styling
 
 In order to apply custom style for this mode, you need to initialize the `yearViewStyle` property of `RadCalendar` with instance of `CalendarYearViewStyle`.
 To apply custom style to title you need to initialize the `titleCellStyle` with instance of `CellStyle` class.

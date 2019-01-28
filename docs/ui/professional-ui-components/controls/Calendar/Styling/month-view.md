@@ -1,14 +1,14 @@
 ---
-title: Month view mode styling
+title: Month view mode
 page_title: RadCalendar month view mode styling | Progress NativeScript UI Documentation
 description: A month view mode style customization guide page for RadCalendar for NativeScript.
 slug: calendar-monthview-styling
-tags: radcalendar, cell, styling, month, calendar, cells
+tags: radcalendar, cell, styling, month, calendar, cells, nativescript, professional
 position: 9
 publish: true
 ---
 
-# Styling: Month view
+# Calendar Month View Styling
 
 The Month view mode has the most complicated styling since there are many different types of cells that are used to represent different information to the user.
 In order to apply custom style for this mode, you need to initialize the `monthViewStyle` property of `RadCalendar` with instance of `CalendarMonthViewStyle`.

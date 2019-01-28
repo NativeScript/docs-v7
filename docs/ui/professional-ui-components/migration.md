@@ -10,7 +10,7 @@ publish: true
 
 # Overview
 
-Some ago we [announced](https://www.nativescript.org/blog/nativescript-ui-whats-next) that each component from NativeScript UI was soon to be used as a standalone plugin. Now that the change is a fact, the [nativescript-pro-ui](https://www.npmjs.com/package/nativescript-pro-ui), [nativescript-telerik-ui](https://www.npmjs.com/package/nativescript-telerik-ui) and [nativescript-telerik-ui-pro](https://www.npmjs.com/package/nativescript-telerik-ui-pro) plugins are being deprecated in favor of the new plugins that contain only one component each. This article will guide you through the process of migrating your existing applications to the new plugins.
+Some time ago we [announced](https://www.nativescript.org/blog/nativescript-ui-whats-next) that each component from NativeScript UI was soon to be used as a standalone plugin. Now that the change is a fact, the [nativescript-pro-ui](https://www.npmjs.com/package/nativescript-pro-ui), [nativescript-telerik-ui](https://www.npmjs.com/package/nativescript-telerik-ui) and [nativescript-telerik-ui-pro](https://www.npmjs.com/package/nativescript-telerik-ui-pro) plugins are being deprecated in favor of the new plugins that contain only one component each. This article will guide you through the process of migrating your existing applications to the new plugins.
 
 # Migration Steps
 
