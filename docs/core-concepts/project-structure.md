@@ -9,7 +9,7 @@ previous_url: /structure
 # Project Structure
 
 {% nativescript %}
-The default structure of a blank NativeScript project consists of a root folder that contains the `app`, `platforms` and `node_modules` directories, and a `package.json` configuration file. 
+The default structure of a blank NativeScript project consists of a root folder that contains the `app`, `platforms` and `node_modules` directories, and a `package.json` configuration file.
 
 ```
 myApplication/
@@ -23,7 +23,7 @@ myApplication/
 {% endnativescript %}
 
 {% angular %}
-The default structure of a blank NativeScript + Angular project consists of a root folder that contains the `src`, `platforms`, `node_modules` and `hooks` directories, and several configuration files amongst which the most important is the `package.json`. 
+The default structure of a blank NativeScript + Angular project consists of a root folder that contains the `src`, `platforms`, `node_modules` and `hooks` directories, and several configuration files amongst which the most important is the `package.json`.
 
 ```
 myApplication/
@@ -38,7 +38,7 @@ myApplication/
 ├── tsconfig.json
 └── ...
 ```
-{% endangular%} 
+{% endangular%}
 
 There are several other directories and configuration files that can be present in your project based on the initial template, the programming language (JavaScript or TypeScript) or the plugins that you are using in your application. This article covers the files and folders that are always present in a NativeScript project, as well as some of the more common ones that you may encounter while developing your app.
 
@@ -54,16 +54,19 @@ You can develop shared functionality or design in common files. To indicate that
 
 ### {% nativescript %}app{% endnativescript %}{% angular %}src{% endangular %}/package.json
 
-This is a secondary `package.json` file in which you can specify the entry point file of the application and also several [Android-specific custom flags]({% slug custom-flags %}). Below is an example of a basic secondary `package.json` file.
+This is a secondary `package.json` file in which you can specify the entry point file of the application and also several [Android-specific]({% slug android-custom-flags %}) and [iOS-specific]({% slug ios-custom-flags %}) custom flags. Below is an example of a basic secondary `package.json` file.
 
 {% nativescript %}
 ```JSON
 {
     "main": "app.js",
+    "discardUncaughtJsExceptions": true,
     "android": {
         "v8Flags": "--expose_gc",
-        "forceLog": true,
-        "discardUncaughtJsExceptions": true
+        "forceLog": true
+    },
+    "ios": {
+        "jscFlags": "--dumpOptions=2 --validateOptions=1"
     }
 }
 ```
@@ -72,10 +75,13 @@ This is a secondary `package.json` file in which you can specify the entry point
 ```JSON
 {
     "main": "main.js",
+    "discardUncaughtJsExceptions": true,
     "android": {
         "v8Flags": "--expose_gc",
-        "forceLog": true,
-        "discardUncaughtJsExceptions": true
+        "forceLog": true
+    },
+    "ios": {
+        "jscFlags": "--dumpOptions=2 --validateOptions=1"
     }
 }
 ```
