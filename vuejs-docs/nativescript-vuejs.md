@@ -1,5 +1,5 @@
 ---
-title: NativeScript Vue.js Integration
+title: Getting Started
 description: Build truly native apps using Vue.js and NativeScript.
 position: 10
 publish: true
