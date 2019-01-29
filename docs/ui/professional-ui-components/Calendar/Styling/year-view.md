@@ -51,7 +51,7 @@ Here's an example of using the properties mentioned above:
 
 This is how the calendar looks like in that case:
 
-![Calendar year view styling](../Styling/images/calendar_styling_year_ios.png "iOS")      ![Calendar year view styling](../Styling/images/calendar_styling_year_android.png "Android")
+![Calendar year view styling](../../../img/ns_ui/calendar_styling_year_ios.png "iOS")      ![Calendar year view styling](../../../img/ns_ui/calendar_styling_year_android.png "Android")
 
 ## References
 Want to see this scenario in action?

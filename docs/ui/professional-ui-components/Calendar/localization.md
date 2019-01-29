@@ -18,7 +18,7 @@ Setting a locale different from the default can be achieved either in XML or pro
 
 The following two screenshots demonstrate how {% typedoc_link classes:RadCalendar %} looks like when a `ru-RU` is defined as a locale:
 
-![RadCalendar: Localization on Android](/controls/NativeScript/Calendar/images/calendar-localization-android.png "Android") ![RadCalendar: Localization on iOS](/controls/NativeScript/Calendar/images/calendar-localization-ios.png "iOS")
+![RadCalendar: Localization on Android](../../img/ns_ui/calendar-localization-android.png "Android") ![RadCalendar: Localization on iOS](../../img/ns_ui/calendar-localization-ios.png "iOS")
 
 ## References
 Want to see this scenario in action?

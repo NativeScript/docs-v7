@@ -34,7 +34,7 @@ Here's an example of using the properties mentioned above:
 
 This is how the calendar looks like in that case:
 
-![Calendar day view styling](../Styling/images/calendar_styling_day_ios.png "iOS")      ![Calendar day view styling](../Styling/images/calendar_styling_day_android.png "Android")
+![Calendar day view styling](../../../img/ns_ui/calendar_styling_day_ios.png "iOS")      ![Calendar day view styling](../../../img/ns_ui/calendar_styling_day_android.png "Android")
 
 ## References
 Want to see this scenario in action?

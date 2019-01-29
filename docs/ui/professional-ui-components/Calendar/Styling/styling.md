@@ -28,4 +28,4 @@ These classes have properties for different visual parts of RadCalendar in corre
 
 <snippet id='calenar-monthview-styling'/>
 
-![Calendar month view styling](../Styling/images/calendar_styling_month_ios.png "iOS")      ![Calendar month view styling](../Styling/images/calendar_styling_month_android.png "Android")
+![Calendar month view styling](../../../img/ns_ui/calendar_styling_month_ios.png "iOS")      ![Calendar month view styling](../../../img/ns_ui/calendar_styling_month_android.png "Android")

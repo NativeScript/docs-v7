@@ -16,7 +16,7 @@ previous_url: controls/calendar/overview
 - cells customization
 - selection
 
-![RadCalendar: Overview](/controls/NativeScript/Calendar/Images/calendar-overview_ios.png "iOS")     ![RadCalendar: Overview](/controls/NativeScript/Calendar/Images/calendar-overview_android.png "Android")
+![RadCalendar: Overview](../../img/ns_ui/calendar-overview_ios.png "iOS")     ![RadCalendar: Overview](../../img/ns_ui/calendar-overview_android.png "Android")
 
 ## Features
 ### View modes

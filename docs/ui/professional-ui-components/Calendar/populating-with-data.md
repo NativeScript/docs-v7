@@ -37,7 +37,7 @@ The `calendarEvents` property used at the end of this snippet is exposed by the 
 
 Running the application, the following is shown on iOS and Android:
 
-![TelerikUI-RadCalendar-Populating-With-Data](./images/calendar-populating-with-data_android.png "iOS") ![TelerikUI-RadCalendar-Populating-With-Data](./images/calendar-populating-with-data_ios.png "Android")
+![TelerikUI-RadCalendar-Populating-With-Data](../../img/ns_ui/calendar-populating-with-data_android.png "iOS") ![TelerikUI-RadCalendar-Populating-With-Data](../../img/ns_ui/calendar-populating-with-data_ios.png "Android")
 
 ## Event view modes
 By default, events for each date cell are shown as dots (iOS) or squares with a summary (Android). You can customize this behavior by choosing one of the following event view modes:
@@ -50,7 +50,7 @@ By default, events for each date cell are shown as dots (iOS) or squares with a 
 
 To change the events view mode you need to set the {% typedoc_link classes:RadCalendar,member:eventsViewMode %} property of {% typedoc_link classes:RadCalendar %} to one of these values. Here's how {% typedoc_link enums:CalendarEventsViewMode,member:Inline %} looks like:
 
-![TelerikUI-RadCalendar-Event-View-Modes](./images/calendar-event-view-modes_ios.png "iOS")  ![TelerikUI-RadCalendar-Event-View-Modes](./images/calendar-event-view-modes_android.png "Android")
+![TelerikUI-RadCalendar-Event-View-Modes](../../img/ns_ui/calendar-event-view-modes_ios.png "iOS")  ![TelerikUI-RadCalendar-Event-View-Modes](../../img/ns_ui/calendar-event-view-modes_android.png "Android")
 
 ## References
 Want to see this scenario in action?

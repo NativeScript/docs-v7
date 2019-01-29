@@ -52,11 +52,11 @@ This will produce a page showing a Chart with annotations that will look like:
 
 iOS:
 
-![TelerikUI-Chart-Annotations](/controls/NativeScript/Chart/Images/grid_line_annotations_ios.png "Grid line annotations sample.") 
+![TelerikUI-Chart-Annotations](../../../img/ns_ui/grid_line_annotations_ios.png "Grid line annotations sample.") 
 
 Android:
 
-![TelerikUI-Chart-Annotations](/controls/NativeScript/Chart/Images/grid_line_annotations_android.png "Grid line annotations sample.")
+![TelerikUI-Chart-Annotations](../../../img/ns_ui/grid_line_annotations_android.png "Grid line annotations sample.")
 
 
 ## Plot Band Annotations
@@ -75,11 +75,11 @@ This will produce a page showing a Chart with annotations that will look like:
 
 iOS:
 
-![TelerikUI-Chart-Annotations](/controls/NativeScript/Chart/Images/plot-band-annotation-ios.png "Plot band annotations sample.") 
+![TelerikUI-Chart-Annotations](../../../img/ns_ui/plot-band-annotation-ios.png "Plot band annotations sample.") 
 
 Android:
 
-![TelerikUI-Chart-Annotations](/controls/NativeScript/Chart/Images/plot-band-annotation-android.png "Plot band annotations sample.")
+![TelerikUI-Chart-Annotations](../../../img/ns_ui/plot-band-annotation-android.png "Plot band annotations sample.")
 
 ## References
 Want to see this scenario in action?

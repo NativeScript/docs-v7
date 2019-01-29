@@ -33,7 +33,7 @@ Here's an example of using the styling properties mentioned above:
 
 and the visual result:
 
-![Calendar year view styling](../Styling/images/calendar_styling_inline_events_ios.png "iOS")      ![Calendar year view styling](../Styling/images/calendar_styling_inline_events_android.png "Android")
+![Calendar year view styling](../../../img/ns_ui/calendar_styling_inline_events_ios.png "iOS")      ![Calendar year view styling](../../../img/ns_ui/calendar_styling_inline_events_android.png "Android")
 
 ## References
 Want to see this scenario in action?

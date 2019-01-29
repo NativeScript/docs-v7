@@ -20,7 +20,7 @@ previous_url: controls/calendar/view-modes
 
 #### Figure 1: RadCalendar when its viewMode is set to Day on Android (left) and iOS (right)
 
-![NativeScriptUI-Calendar-ViewMode-Day-Android](./images/calendar-viewmode-day-android.png "Day ViewMode of RadCalendar in Android") ![NativeScriptUI-Calendar-ViewMode-Day-iOS](./images/calendar-viewmode-day-ios.png "Day ViewMode of RadCalendar in iOS")
+![NativeScriptUI-Calendar-ViewMode-Day-Android](../../img/ns_ui/calendar-viewmode-day-android.png "Day ViewMode of RadCalendar in Android") ![NativeScriptUI-Calendar-ViewMode-Day-iOS](../../img/ns_ui/calendar-viewmode-day-ios.png "Day ViewMode of RadCalendar in iOS")
 
 ## References
 Want to see this scenario in action?

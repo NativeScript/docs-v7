@@ -24,7 +24,7 @@ Depending on your current setup, the trackball will display information about th
 
 
 #### Figure 1: Trackball shown in action on iOS and Android
-![TelerikUI-Chart-Behaviors-Trackball](/controls/Angular/Chart/Behaviors/Images/trackball_candlestick_ios.png "Trackball with Candlestick Series on iOS")![TelerikUI-Chart-Behaviors-Trackball](/controls/Angular/Chart/Behaviors/Images/trackball_candlestick_android.png "Trackball with Candlestick Series on Android")
+![TelerikUI-Chart-Behaviors-Trackball](../../../img/ns_ui/trackball_candlestick_ios.png "Trackball with Candlestick Series on iOS")![TelerikUI-Chart-Behaviors-Trackball](../../../img/ns_ui/trackball_candlestick_android.png "Trackball with Candlestick Series on Android")
 
 # Features
 

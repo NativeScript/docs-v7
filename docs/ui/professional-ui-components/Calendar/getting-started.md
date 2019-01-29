@@ -32,7 +32,7 @@ After defining the namespace adding a {% typedoc_link classes:RadCalendar %} ins
 
 This will initialize a new {% typedoc_link classes:RadCalendar %} instance and put it as a direct child of your page:
 
-![TelerikUI RadCalendar: Getting Started](./images/calendar-getting-started_android.png "Android")   ![TelerikUI RadCalendar: Getting Started](./images/calendar-getting-started_ios.png "iOS")
+![TelerikUI RadCalendar: Getting Started](../../img/ns_ui/calendar-getting-started_android.png "Android")   ![TelerikUI RadCalendar: Getting Started](../../img/ns_ui/calendar-getting-started_ios.png "iOS")
 
 ## References
 Want to see this scenario in action?
