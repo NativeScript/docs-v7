@@ -53,6 +53,10 @@ if [ ! -d /root/./nativescript-ui-sidedrawer ]; then
 	mkdir /root/./nativescript-ui-sidedrawer
 	
 fi
+if [ ! -d /root/./docs/ns_ui_api-reference/ns-ui-api-reference ]; then
+	mkdir /root/./docs/ns_ui_api-reference/ns-ui-api-reference 
+
+fi
 echo "Start copying mounted folders..."
 rsync --relative -az --exclude node_modules/ \
 	/root/./docs \
