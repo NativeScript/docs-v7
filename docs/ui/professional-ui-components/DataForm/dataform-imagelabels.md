@@ -4,7 +4,7 @@ page_title: RadDataForm Image Labels | Progress NativeScript UI Documentation
 description: An article which demonstrates how to add an image as label in RadDataForm for NativeScript.
 slug: dataform-imagelabels
 tags: raddataform, imagelabels, dataform, labels
-position: 5
+position: 60
 publish: true
 ---
 

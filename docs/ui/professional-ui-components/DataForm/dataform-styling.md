@@ -4,7 +4,7 @@ page_title: RadDataForm Styling | Progress NativeScript UI Documentation
 description: This article explains how the change the styling of the editors and groups in RadDataForm for NativeScript.
 slug: dataform-styling
 tags: raddataform, styling, dataform
-position: 7
+position: 80
 publish: true
 ---
 

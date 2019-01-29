@@ -4,7 +4,7 @@ page_title: RadDataForm Validation | Progress NativeScript UI Documentation
 description: This article explains how to use the validation in RadDataForm for NativeScript.
 slug: dataform-validation-overview-vue
 tags: raddataform, validation, dataform, vue
-position: 0
+position: 60
 publish: true
 ---
 

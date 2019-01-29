@@ -4,7 +4,7 @@ page_title: RadDataForm Overview  | Progress NativeScript UI Documentation
 description: An overview page of RadDataForm for NativeScript. This article explains the most important things you need to know before using RadDataForm.
 slug: dataform-overview-vue
 tags: raddataform, dataform, overview, Vue
-position: 0
+position: 10
 publish: true
 ---
 

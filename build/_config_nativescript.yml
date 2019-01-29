@@ -32,6 +32,15 @@ navigation:
     "ui/professional-ui-components/DataForm":
         position: 80
         title: "DataForm"
+    "ui/professional-ui-components/DataForm/GettingStarted":
+        position: 20
+        title: "Getting Started"
+    "ui/professional-ui-components/DataForm/Editors":
+        position: 30
+    "ui/professional-ui-components/DataForm/Validation":
+        position: 40
+    "ui/professional-ui-components/DataForm/Groups":
+        position: 50
     "ui/professional-ui-components/Gauge":
         position: 90
         title: "Gauge"

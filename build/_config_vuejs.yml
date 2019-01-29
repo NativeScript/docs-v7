@@ -65,30 +65,29 @@ kramdown:
     input: GFM
 navigation:
     "ns-ui":
-        position: 20
+        position: 30
         title: "NativeScript UI"
         expanded: true
-    ## List your directory names and order here, like this:
     "ns-ui/SideDrawer":
-        position: 30
+        position: 10
         title: "SideDrawer"
     "ns-ui/ListView":
-        position: 40
+        position: 20
         title: "ListView"
     "ns-ui/Calendar":
-        position: 50
+        position: 30
         title: "Calendar"
     "ns-ui/Chart":
-        position: 60
+        position: 40
         title: "Chart"
     "ns-ui/AutoCompleteTextView":
-        position: 70
+        position: 50
         title: "AutoCompleteTextView"
     "ns-ui/DataForm":
-        position: 80
+        position: 60
         title: "DataForm"
     "ns-ui/Gauge":
-        position: 90
+        position: 70
         title: "Gauge"
 gems:
     - jekyll-unsanitize

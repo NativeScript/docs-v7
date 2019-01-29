@@ -4,7 +4,7 @@ page_title: RadDataForm Value Providers | Progress NativeScript UI Documentation
 description: A page demonstrating usage of Value Providers in RadDataForm for NativeScript.
 slug: dataform-editors-providers-vue
 tags: raddataform, valueprovider, dataform, vue
-position: 2
+position: 50
 publish: true
 ---
 

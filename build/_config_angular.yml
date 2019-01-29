@@ -41,6 +41,15 @@ navigation:
     "ui/professional-ui-components/ng-DataForm":
         position: 80
         title: "DataForm"
+    "ui/professional-ui-components/ng-DataForm/GettingStarted":
+        position: 20
+        title: "Getting Started"
+    "ui/professional-ui-components/ng-DataForm/Editors":
+        position: 30
+    "ui/professional-ui-components/ng-DataForm/Validation":
+        position: 40
+    "ui/professional-ui-components/ng-DataForm/Groups":
+        position: 50
     "ui/professional-ui-components/ng-Gauge":
         position: 90
         title: "Gauge"

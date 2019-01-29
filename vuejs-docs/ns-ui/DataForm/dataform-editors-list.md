@@ -4,7 +4,7 @@ page_title: RadDataForm Editors List | Progress NativeScript UI Documentation
 description: An article which lists the editors supported by RadDataForm for NativeScript and demonstrates their usage.
 slug: dataform-editors-list-vue
 tags: raddataform, editors, dataform, vue
-position: 1
+position: 40
 publish: true
 ---
 

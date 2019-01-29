@@ -1,7 +1,9 @@
 ---
-title: NativeScript Vue.js Integration
+title: NativeScript with Vue.js
 description: Build truly native apps using Vue.js and NativeScript.
 position: 10
+slug: ns-vue
+tags: migration, nativescript-pro-ui, nativescript, free, plugin
 publish: true
 ---
 
@@ -22,3 +24,4 @@ The NativeScript-Vue documentation lives at [nativescript-vue.org](https://nativ
 The NativeScript Community Slack is a great place to chat with the NativeScript-Vue team and community. After joining, make sure to check out the #vue channel to connect with NativeScript-Vue users.
 
 <a href="https://developer.telerik.com/wp-login.php?action=slack-invitation" class="ns-button" id="ng-start-button">Join the NativeScript Community Slack</a>
+ 
