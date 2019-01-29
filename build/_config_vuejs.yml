@@ -64,10 +64,32 @@ kramdown:
     smart_quotes: ["quot", "quot", "quot", "quot"]
     input: GFM
 navigation:
-    "vuejs-docs/ns-ui":
+    "ns-ui":
         position: 20
         title: "NativeScript UI"
         expanded: true
+    ## List your directory names and order here, like this:
+    "ns-ui/SideDrawer":
+        position: 30
+        title: "SideDrawer"
+    "ns-ui/ListView":
+        position: 40
+        title: "ListView"
+    "ns-ui/Calendar":
+        position: 50
+        title: "Calendar"
+    "ns-ui/Chart":
+        position: 60
+        title: "Chart"
+    "ns-ui/AutoCompleteTextView":
+        position: 70
+        title: "AutoCompleteTextView"
+    "ns-ui/DataForm":
+        position: 80
+        title: "DataForm"
+    "ns-ui/Gauge":
+        position: 90
+        title: "Gauge"
 gems:
     - jekyll-unsanitize
 # Feedback Form Google Sheet ID

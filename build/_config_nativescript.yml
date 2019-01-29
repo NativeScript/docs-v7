@@ -5,7 +5,7 @@ destination: ./nativescript
 ## The application virtual path
 baseurl:  ""
 # Exclude files which should not be in the output
-exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, ng-framework-modules, ui/ng-ui-widgets, ng-hardware-access, ui/professional-ui-components/ng-controls]
+exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, ng-framework-modules, ui/ng-ui-widgets, ng-hardware-access, ui/professional-ui-components/ng-Gauge, ui/professional-ui-components/ng-DataForm, ui/professional-ui-components/ng-AutoCompleteTextView, ui/professional-ui-components/ng-Chart, ui/professional-ui-components/ng-Calendar, ui/professional-ui-components/ng-ListView, ui/professional-ui-components/ng-SideDrawer]
 ## The highlighting in the header
 nsselected: "selected"
 ngselected: ""
@@ -14,32 +14,26 @@ ngselected: ""
 flavour: "nativescript"
 navigation:
 ## List your directory names and order here, like this:
-    "ui/professional-ui-components/controls":
-        position: 40
-        title: "Controls"
-    "ui/professional-ui-components/controls":
-        position: 40
-        title: "Controls"
-    "ui/professional-ui-components/controls/SideDrawer":
-        position: 10
-        title: "SideDrawer"
-    "ui/professional-ui-components/controls/ListView":
-        position: 20
-        title: "ListView"
-    "ui/professional-ui-components/controls/Calendar":
+    "ui/professional-ui-components/SideDrawer":
         position: 30
-        title: "Calendar"
-    "ui/professional-ui-components/controls/Chart":
+        title: "SideDrawer"
+    "ui/professional-ui-components/ListView":
         position: 40
-        title: "Chart"
-    "ui/professional-ui-components/controls/AutoCompleteTextView":
+        title: "ListView"
+    "ui/professional-ui-components/Calendar":
         position: 50
-        title: "AutoCompleteTextView"
-    "ui/professional-ui-components/controls/DataForm":
+        title: "Calendar"
+    "ui/professional-ui-components/Chart":
         position: 60
-        title: "DataForm"
-    "ui/professional-ui-components/controls/Gauge":
+        title: "Chart"
+    "ui/professional-ui-components/AutoCompleteTextView":
         position: 70
+        title: "AutoCompleteTextView"
+    "ui/professional-ui-components/DataForm":
+        position: 80
+        title: "DataForm"
+    "ui/professional-ui-components/Gauge":
+        position: 90
         title: "Gauge"
 # The google services configuration
 google_tag_manager: GTM-W58JDD
