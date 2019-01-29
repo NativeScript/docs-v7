@@ -590,4 +590,4 @@ export function openSearchModal(args: EventData) {
 
 [Playground Demo](https://play.nativescript.org/?template=play-tsc&id=NIj8kN)
 
-Take a look at the [SideDrawer](https://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawer/overview) docs for more information about the component.
+Take a look at the [SideDrawer]({% slug sidedrawer-overview %}) docs for more information about the component.

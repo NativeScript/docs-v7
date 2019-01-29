@@ -57,7 +57,7 @@ These events provide event arguments which have a property {% typedoc_link class
 
 ## Add groups with JSON
 
-If you are using [JSON metadata](https://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/DataForm/GettingStarted/dataform-start-properties#adjust-editors-with-json) to setup the `RadDataForm`, you can also apply grouping to the properties. Just add `groupName` to each property inside the `propertyAnnotations` array.
+If you are using [JSON metadata]({% slug dataform-start-properties-angular %}#adjust-editors-with-json) to setup the `RadDataForm`, you can also apply grouping to the properties. Just add `groupName` to each property inside the `propertyAnnotations` array.
 
 #### Example 4: Sample JSON metadata for RadDataForm
 
