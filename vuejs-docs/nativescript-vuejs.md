@@ -1,5 +1,5 @@
 ---
-title: NativeScript with Vue.js
+title: Introduction
 description: Build truly native apps using Vue.js and NativeScript.
 position: 10
 slug: ns-vue
