@@ -1287,4 +1287,4 @@ export class AppComponent {
 
 [Playground Demo](https://play.nativescript.org/?template=play-ng&id=NaR8jL)
 
-Take a look at the [SideDrawer](https://docs.telerik.com/devtools/nativescript-ui/Controls/Angular/SideDrawer/overview) docs for more information about the component.
+Take a look at the [SideDrawer]({% slug sidedrawer-overview-angular %}) docs for more information about the component.
