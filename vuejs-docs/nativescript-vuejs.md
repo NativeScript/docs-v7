@@ -9,7 +9,7 @@ publish: true
 
 <a href="https://vuejs.org" target="_blank">Vue.js</a> is a lightweight, ‘progressive framework’ for building user interfaces. NativeScript integrates with Vue.js to offer a standard way for building cross-platform native mobile apps. If you have used Vue.js before you’ll feel right at home with NativeScript-Vue.
 
-![](/img/vue/nativescript-vue.png)
+![](https://docs.nativescript.org/img/vue/nativescript-vue.png)
 
 ## Get Started
 
