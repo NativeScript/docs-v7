@@ -3,12 +3,12 @@ title: Labels styling
 page_title: Labels Styling | Progress NativeScript UI Documentation
 description: This article explains how the visual appearance of Telerik Chart's labels for NativeScript can be customized.
 slug: chart-labels-styling-vue
-tags: chart, labels, styling, vue
+tags: chart, labels, styling, vue, nativescript, professional, ui
 position: 2
 publish: true
 ---
 
-# Styling point labels
+# RadChart Point Labels Styling
 In order to show series default labels you should set the {% typedoc_link classes:ChartSeries,member:showLabels %} property of each series to true. By default its value is false. If you want to style the point labels that are shown for series values you can initialize the {% typedoc_link classes:ChartSeries,member:labelStyle %} property of the series with instance of {% typedoc_link classes:PointLabelStyle %}.
 Supported properties are:
 - {% typedoc_link classes:PointLabelStyle,member:fillColor %}: the point label background fill color

@@ -3,11 +3,11 @@ title: Overview
 page_title: RadListView Overview | Progress NativeScript UI Documentation
 description: This article is a short description and summary of RadListView's features.
 slug: listview-overview-angular
-tags: radlistview, overview, listview, angular
+tags: radlistview, overview, listview, angular, nativescript, professional, ui
 position: 1
 publish: true
 ---
-# RadListView: Overview
+# RadListView Overview
 {% typedoc_link classes:RadListView %} for NativeScript is a virtualizing list component that provides the most popular features associated with scenarios where a list of items is used. All these features are embedded in one control with the idea to save developer time and provide better experience. The control's main features include:
 - item animations
 - different layouts and orientations
@@ -50,13 +50,13 @@ All layouts are virtualized and optimized for the mobile environment.
 ### Observable Array support
 {% typedoc_link classes:RadListView %} for NativeScript supports the core **ObservableArray** module part of the core NativeScript modules collection. Using an **ObservableArray** instance as a source for RadListView will ensure that changes in the source collection will be automatically taken care of by the control.
 
-# Angular directives
+## Angular directives
 
 When using the {% typedoc_link classes:RadListView %} with Angular you are going to work with multiple custom angular RadListView specific directives. In short these directives are used by the angular framework to enable 'linking' between separate HTML tags into one 'complex' element.
 
 Here is a full list of the available custom Angular {% typedoc_link classes:RadListView %} directives and components:
 
-## Components
+### Components
 Represent the major elements:
 
 | Selector          | Class (more details)                                  |
@@ -64,7 +64,7 @@ Represent the major elements:
 | RadListView | {% typedoc_link classes:RadListViewComponent %} |
 
 
-## Directives
+### Directives
 Represent the smaller elements that are visualized in {% typedoc_link classes:RadListView %}:
 
 | Selector          | Class (more details)                                  |
@@ -74,7 +74,7 @@ Represent the smaller elements that are visualized in {% typedoc_link classes:Ra
 | ListViewStaggeredLayout | {% typedoc_link classes:ListViewStaggeredLayoutDirective %} |
 | ReorderHandle | {% typedoc_link classes:ReorderHandleDirective %} |
 
-## Inline Directives
+### Inline Directives
 Represent the 'link' mechanism of the smaller with the major elements
 
 | Selector          | Class (more details)                                  |

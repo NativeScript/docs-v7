@@ -1,9 +1,9 @@
 ---
-title: Use as root of the application and show over navigation bar
+title: Use as application root and show over navigation bar
 page_title: RadSideDrawer Use as root of the application and show over navigation bar | Progress NativeScript UI Documentation
 description: This article explains how to use the RadSideDrawer as a root of the application making it appear over the navigation bar.
 slug: sidedrawer-show-over-nav-bar
-tags: sidedrawer, overnavigation, drawer, navigation, bar, root
+tags: sidedrawer, overnavigation, drawer, navigation, bar, root, nativescript, professional, ui
 position: 3
 publish: true
 ---
@@ -42,17 +42,17 @@ When using the {% typedoc_link classes:RadSideDrawer %} as a root element it wil
 #### Figure 1. RadSideDrawer as a root element and over navigation bar (ActionBar)
 ![NativeScriptUI-Getting-Started-iOS](../../img/ns_ui/drawer-over-nav-ios.png "RadSideDrawer in iOS") ![NativeScriptUI-Getting-Started-Android](../../img/ns_ui/drawer-over-nav-android.png "RadSideDrawer in Android") 
 
-# Migrating from versions 3.x.x to the latest version
+## Migrating from Versions 3.x.x to the Latest Version
 
 With the latest 4.x.x and above versions the {% typedoc_link classes:RadSideDrawer %} element has had a few changes to its API and usage. There have been two major changes:
 - The `showOverNavigation` property has been removed and replaced by a change in the way the element is utilized. More details can be found below in the "Showing the RadSideDrawer over the navigation bar" section. 
 - The {% typedoc_link classes:RadSideDrawer %} can be "shared" throughout the entire life cycle of the application
 
-## Showing the RadSideDrawer over the navigation bar 
+### Showing the RadSideDrawer over the Navigation Bar 
 
 With the latest versions in showing {% typedoc_link classes:RadSideDrawer %} element above or below the navigation bar has been re-designed and is no longer controlled by a property but rather by the way the element is utilized in the application. While hearing a lot of feedback from the community we noticed that the majority of it was changing the `showOverNavigation` property from its default value of `false` to `true` and also was duplicating the element on each `Page`. This is why we have introduced improvements in both cases by allowing the element to be persisted throughout the entire life cycle of the application which also by design will shown over the navigation bar. It is no longer necessary to set any property, simply set the {% typedoc_link classes:RadSideDrawer %} as a root of your application. More details can be found above in the "Share a single RadSideDrawer throughout the entire life cycle of the application" section
 
-## How to migrate from duplicated RadSideDrawer to a single root element
+### How to Migrate from Duplicated RadSideDrawer to a Single Root Element
 If you were using the {% typedoc_link classes:RadSideDrawer %} element in 3.x.x you may have ended with duplicating its declaration in each `Page` you have in your app. With 4.x.x this is no longer needed but it is backward compatible and should work as expected. You can now truly "share" one declaration in the entire application which is also the recommended approach performance wise. Simply follow this common steps for migrating from 3.x.x to 4.x.x:
 - Remove the duplicated `RadSideDrawer` declarations from your XML
 - In the XML of the bootstrapped `Page`, replace that tag declaration with:

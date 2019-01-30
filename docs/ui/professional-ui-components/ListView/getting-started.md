@@ -3,12 +3,11 @@ title: Getting Started
 page_title: RadListView Getting Started | Progress NativeScript UI Documentation
 description: This article is a short description and summary of RadListView's features.
 slug: listview-getting-started
-tags: listview, overview
+tags: listview, overview, nativescript, professional, ui
 position: 2
 publish: true
-previous_url: controls/listview/getting-started
 ---
-# RadListView: Getting Started
+# RadListView Getting Started
 This article will guide you through the process of adding a RadListView in your application, binding it to a data-source and visualizing the items by using an item template of your choice. For more information on how each separate feature of {% typedoc_link classes:RadListView %} is used, please refer to the dedicated articles which are using the same scenario and extend it further.
 
 ## Installation

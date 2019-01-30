@@ -3,12 +3,12 @@ title: Getting Started
 page_title: RadGauge Getting Started  | Progress NativeScript UI Documentation
 description: A getting started page of RadGauge for NativeScript. This article explains the steps to create RadRadialGauge from scratch.
 slug: gauges-gettingstarted-vue
-tags: radgauge, gauges, gettingstarted, Vue
+tags: radgauge, gauges, gettingstarted, Vue, nativescript, professional, ui
 position: 1
 publish: true
 ---
 
-# RadGauge: Getting Started
+# RadGauge Getting Started
 
 This article will guide you through the process of adding a {% typedoc_link classes:RadRadialGauge %} instance to a page in a {N} application and adding scales and indicators to it.
 

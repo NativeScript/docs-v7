@@ -3,16 +3,16 @@ title: Callbacks
 page_title: RadSideDrawer Callbacks| Progress NativeScript UI Documentation
 description: This article is a short description and summary of RadSideDrawer's callbacks used with Angular
 slug: sidedrawer-callbacks-angular
-tags: sidedrawer, angular, callbacks
+tags: sidedrawer, angular, callbacks, nativescript, professional, ui
 position: 6
 publish: true
 ---
 
-# RadSideDrawer: Callbacks
+# RadSideDrawer Callbacks
 
 This article explains how to use the events provided by the **RadSideDrawer** with Angular in order to receive information of the drawer's state.
 
-# Subscribing to events with Angular
+## Subscribing to events with Angular
 
 The **RadSideDrawer** allows you to receive events and execute code when sideDrawer's state is changed.
 There are four events that the drawer fires:

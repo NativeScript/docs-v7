@@ -3,12 +3,11 @@ title: Overview
 page_title: RadListView Overview | Progress NativeScript UI Documentation
 description: This article is a short description and summary of RadListView's features.
 slug: listview-overview
-tags: radlistview, overview, listview
+tags: radlistview, overview, listview, nativescript, professional, ui
 position: 1
 publish: true
-previous_url: controls/listview/overview
 ---
-# RadListView: Overview
+# RadListView Overview
 {% typedoc_link classes:RadListView %} for NativeScript is a virtualizing list component that provides the most popular features associated with scenarios where a list of items is used. All these features are embedded in one control with the idea to save developer time and provide better experience. The control's main features include:
 - item animations
 - different layouts and orientations

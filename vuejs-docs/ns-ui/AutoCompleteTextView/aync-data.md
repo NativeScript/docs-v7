@@ -8,7 +8,7 @@ position: 6
 publish: true
 ---
 
-# RadAutoCompleteTextView: Using Async Data Fetch
+# Using Async Data Fetch with RadAutoCompleteTextView
 
 There are multiple scenarios where we need to represent data loaded from remote provider like a web service.
 Dynamic loading of items, based on the user input, could be quite useful when we are working with sets of data that are not available locally.

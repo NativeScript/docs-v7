@@ -3,12 +3,12 @@ title: Editors
 page_title: RadDataForm Editors | Progress NativeScript UI Documentation
 description: An article which lists the editors supported by RadDataForm for NativeScript and demonstrates their usage.
 slug: dataform-editors-vue
-tags: raddataform, editors, dataform, vue
+tags: raddataform, editors, dataform, vue, nativescript, professional, ui
 position: 30
 publish: true
 ---
 
-# RadDataForm: Editors Overview
+# RadDataForm Editors
 
 If you followed the [getting started]({% slug dataform-gettingstarted-vue %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. This article will explain how to change the editor that is used for a property, what editors are supported by {% typedoc_link classes:RadDataForm %} and how to use them.
 

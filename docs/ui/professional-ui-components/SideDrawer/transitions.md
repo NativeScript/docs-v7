@@ -3,13 +3,12 @@ title: Transitions
 page_title: RadSideDrawer Transitions | Progress NativeScript UI Documentation
 description: This article is a short description and summary of RadSideDrawer's transitions.
 slug: sidedrawer-transitions
-tags: sidedrawer, transitions, drawer
+tags: sidedrawer, transitions, drawer, nativescript, professional, ui
 position: 5
 publish: true
-previous_url: controls/sidedrawer/transitions
 ---
 
-# RadSideDrawer: Transitions
+# RadSideDrawer Transitions
 {% typedoc_link classes:RadSideDrawer %} comes with several predefined transitions which are used to animate the drawer and main content panes when switching between open and closed states. The following list presents the predefined transitions:
 
 - {% typedoc_link classes:FadeTransition %} - provides a fading animation for the displayed drawer content.

@@ -3,12 +3,12 @@ title: Styling
 page_title: RadDataForm Styling | Progress NativeScript UI Documentation
 description: This article explains how the change the styling of the editors and groups in RadDataForm for NativeScript.
 slug: dataform-styling-angular
-tags: raddataform, styling, dataform, angular
+tags: raddataform, styling, dataform, angular, nativescript, professional, ui
 position: 80
 publish: true
 ---
 
-# RadDataForm: Styling
+# RadDataForm Styling
 
 If you followed the [getting started]({% slug dataform-start-source-angular %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. This article will show you how to change the style of each editor, its label or the groups if grouping is enabled. 
 

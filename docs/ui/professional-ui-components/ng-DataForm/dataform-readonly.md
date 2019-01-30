@@ -3,12 +3,12 @@ title: Read Only
 page_title: RadDataForm ReadOnly | Progress NativeScript UI Documentation
 description: An article which demonstrates how to disable editing in RadDataForm for NativeScript.
 slug: dataform-readonly-angular
-tags: raddataform, readonly, dataform, disabled, angular
+tags: raddataform, readonly, dataform, disabled, angular, nativescript, professional, ui
 position: 70
 publish: true
 ---
 
-# RadDataForm: Read Only
+# RadDataForm Read Only Editors
 
 If you followed the [getting started]({% slug dataform-start-source-angular %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. This article will explain how to disable editing in the editors.
 

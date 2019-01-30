@@ -3,12 +3,12 @@ title: Validation Modes
 page_title: RadDataForm Validation Modes | Progress NativeScript UI Documentation
 description: This article explains how to use the validation modes in RadDataForm for NativeScript.
 slug: dataform-validation-modes
-tags: raddataform, validationmodes, dataform
+tags: raddataform, validationmodes, dataform, nativescript, professional, ui
 position: 2
 publish: true
 ---
 
-# RadDataForm: Validation Modes
+# RadDataForm Validation Modes
 
 If you followed the [getting started]({% slug dataform-start-source %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. From the [validation overview]({% slug dataform-validation-overview %} "RadDataForm validation overview") you should have become acquainted with the validation feature in {% typedoc_link classes:RadDataForm %}. This article will show you the different validation modes so you will be able to choose the one that fits best in your requirements.
 

@@ -3,12 +3,12 @@ title: Selection modes
 page_title: RadCalendar selection modes | Progress NativeScript UI Documentation
 description: This article explains how to set the RadCalendar's selection mode  with Angular
 slug: calendar-selection-modes-angular
-tags: calendar, angular, selection, modes
+tags: calendar, angular, selection, modes, nativescript, professional, ui
 position: 4
 publish: true
 ---
 
-# RadCalendar: Selection modes
+# RadCalendar Selection Modes
 {% typedoc_link classes:RadCalendar %} supports the following selection modes exposed by the {% typedoc_link enums:CalendarSelectionMode %} enum:
 
 - {% typedoc_link modules:CalendarViewMode,member:None %} - disables the selection in {% typedoc_link classes:RadCalendar %}

@@ -3,12 +3,12 @@ title: Display modes
 page_title: RadAutoCompleteTextView Display Modes | Progress NativeScript UI Documentation
 description: This page is dedicated to the Display Modes provided by the RadAutoCompleteTextView control.
 slug: autocomplete-display-modes-vue
-tags: radautocompletetextview, displaymodes, vue
+tags: radautocompletetextview, displaymodes, vue, nativescript, professional, ui
 position: 3
 publish: true
 ---
 
-# RadAutoCompleteTextView: Display Modes
+# RadAutoCompleteTextView Display Modes
 
 **RadAutoCompleteTextView** has two predefined display modes.
 

@@ -3,10 +3,9 @@ title: Cartesian Chart Type
 page_title: RadCartesianChart | Progress NativeScript UI Documentation
 description: This article is a short description and summary of RadCartesianChart features.
 slug: chart-types-cartesian
-tags: chart, cartesian, overview, radcartesianchart
+tags: chart, cartesian, overview, radcartesianchart, nativescript, professional, ui
 position: 1
 publish: true
-previous_url: controls/chart/types/cartesian
 ---
 
 # RadCartesianChart

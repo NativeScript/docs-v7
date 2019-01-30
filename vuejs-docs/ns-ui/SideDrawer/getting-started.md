@@ -2,13 +2,13 @@
 title: Getting Started
 page_title: RadSideDrawer Getting Started | Progress NativeScript UI Documentation
 description: This article explains how RadSideDrawer is used with Vue.
-slug: sidedrawer-gettingstarted-vue
+slug: sidedrawer-gettingstarted-vue, nativescript, professional, ui
 tags: sidedrawer, Vue
 position: 2
 publish: true
 ---
 
-# RadSideDrawer: Getting Started
+# RadSideDrawer Getting Started
 This article explains how to create a simple RadSideDrawer with Vue.
 
 > By design the `RadSideDrawer` is designed to be placed as a single child in your component's HTML, this excludes the use of a `<ActionBar><ActionBar>` which is not treated as a simple element by NativeScript and can be used with `RadSideDrawer` by placing it in the beginning of the HTML.
@@ -20,7 +20,7 @@ Run the following command to add the plugin to your application:
 tns plugin add nativescript-ui-sidedrawer
 ```
 
-# Initialization
+## Initialization
 Before proceeding, make sure that the `nativescript-ui-sidedrawer/vue` module is required inside your application. This module handles the registration of the custom directives and elements required by [nativescript-vue](https://nativescript-vue.org/).
 
 The RadSideDrawer consists of two visual parts:

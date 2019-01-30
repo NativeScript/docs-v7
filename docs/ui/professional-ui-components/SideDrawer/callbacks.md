@@ -3,13 +3,12 @@ title: Events
 page_title: RadSideDrawer Events | Progress NativeScript UI Documentation
 description: This article discusses the events exposed by RadSideDrawer.
 slug: sidedrawer-callbacks
-tags: sidedrawer, events, drawer,
+tags: sidedrawer, events, drawer, nativescript, professional, ui
 position: 6
 publish: true
-previous_url: controls/sidedrawer/callbacks
 ---
 
-# SideDrawer: Events
+# RadSideDrawer Events
 {% typedoc_link classes:RadSideDrawer %} fires several events informing about changes in the component's state. The following events are exposed by {% typedoc_link classes:RadSideDrawer %}:
 - {% typedoc_link classes:RadSideDrawer,member:drawerOpeningEvent %} - fired when the drawer is about to open
 - {% typedoc_link classes:RadSideDrawer,member:drawerOpenedEvent %} - fired when the drawer has been opened

@@ -26,7 +26,7 @@ import * as chartModule from "nativescript-ui-chart";
 var chartModule = require("nativescript-ui-chart");
 ```
 
-## Getting started with Vue
+## Getting Started with Vue
 To use a plugin which is part from Progress NativeScript UI with Vue you need to first install the corresponding plugin by executing `tns plugin add nativescript-ui-<plugin-name>`, for example `tns plugin add nativescript-ui-chart`
 
 After installing a plugin simply request its `nativescript-ui-chart/vue` module:

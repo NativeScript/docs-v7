@@ -3,15 +3,15 @@ title: Populating with Data
 page_title: RadCalendar Populating with data | Progress NativeScript UI Documentation
 description: An data populating guide page for RadCalendar with Angular
 slug: calendar-populating-with-data-angular
-tags: radcalendar, data, populating, calendar, calendarevent
+tags: radcalendar, data, populating, calendar, calendarevent, nativescript, professional, ui
 position: 6
 publish: true
 ---
 
-# RadCalendar: Populating with data
+# RadCalendar - Populating with data
 {% typedoc_link classes:RadCalendar %} allows you to define a list of events for a particular date. This is done by using the {% typedoc_link classes:RadCalendar,member:eventSource %} property. This article describes the steps you need to take in order to feed {% typedoc_link classes:RadCalendar %} with your custom events using an events source.
 
-## The `CalendarEvent` class
+## The `CalendarEvent` Class
 Feeding events into {% typedoc_link classes:RadCalendar %} is done via instances of the {% typedoc_link CalendarEvent %} class. The {% typedoc_link CalendarEvent %} class is model describing a single event. It exposes properties allowing you to specify things like:
 
 - start time of the event
@@ -23,7 +23,7 @@ To create instances of the {% typedoc_link CalendarEvent %} class you need to im
 
 <snippet id='angular-calendar-require'/>
 
-## Create an events service and bind the events to `RadCalendar`
+## Create an Events Service and Bind the Events to `RadCalendar`
 Assuming we have imported the calendar module as instructed above, we can now create a service that will provide the events:
 
 <snippet id='angular-calendar-events-service'/>
@@ -33,7 +33,7 @@ We can then use the {% typedoc_link classes:RadCalendar,member:getCalendarEvents
 <snippet id='angular-calendar-populating-with-data-html' />
 <snippet id='angular-calenda-populating-with-data' />
 
-## Event view modes
+## Event View Modes
 By default, events for each date cell are shown as dots (iOS) or squares with a summary (Android). You can customize this behavior by choosing one of the following event view modes:
 
 - {% typedoc_link modules:CalendarEventsViewMode,member:None %} - the default option

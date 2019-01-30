@@ -3,12 +3,12 @@ title: Annotations
 page_title: Chart Annotations Overview | Progress NativeScript UI Documentation
 description: This article is a short description and summary of Charts annotations features.
 slug: chart-annotations-angular
-tags: chart, annotations, angular
+tags: chart, annotations, angular, nativescript, professional, ui
 position: 3
 publish: true
 ---
 
-# Chart: Annotations
+# RadChart Annotations
 
 In this article, you will learn how to use and customize the annotations in **Telerik Chart for NativeScript**.
 
@@ -41,7 +41,7 @@ The {% typedoc_link classes:ChartGridLineAnnotation %} represents a vertical or 
 
 
 
-### Example
+#### Example
 Here is an example that demonstrates how to define three horizontal one vertical grid line annotations assigned to bar series of the chart.  Different set of options determines the visual state and position of annotations and one of the annotations is hidden.
 
 
@@ -64,7 +64,7 @@ The {% typedoc_link classes:ChartPlotBandAnnotation %} represents a vertical or 
 There are two additional values that need to be provided along with {% typedoc_link classes:CartesianChartAnnotation,member:axisID %}, {% typedoc_link classes:ChartPlotBandAnnotation,member:minValue %} and {% typedoc_link classes:ChartPlotBandAnnotation,member:maxValue %} that will determine the range for the annotation. There is one additional property **fillColor** that determines the fill color of the band.
 
 
-### Example
+#### Example
 Here is an example that demonstrates how to define three horizontal one vertical grid line annotations assigned to bar series of the chart.  Different set of options determines the visual state and position of annotations and one of the annotations is hidden.
 
 

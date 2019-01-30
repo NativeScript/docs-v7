@@ -3,17 +3,17 @@ title: Item Customization
 page_title: How to RadListView Item customization | Progress NativeScript UI Documentation
 description: This article describes how to customize each item of the RadListView.
 slug: listview-howto-customization-angular
-tags: radlistview, customization, angular
+tags: radlistview, customization, angular, nativescript, professional, ui
 position: 2
 publish: true
 ---
-# Item customization: Introduction
+# RadListView Item Customization
 
 Providing item template for your **RadListView** with XML is quite easy and straightforward task. Even though this method allows you to create complicated and beautiful designs, it is not flexible enough if you want to have different design for some items.
 
 In this article we are going to use the {% typedoc_link classes:RadListView,member:itemLoading %} event in order to create a **RadListView** with different item designs.
 
-# The 'itemLoading' event
+## The 'itemLoading' Event
 
 The {% typedoc_link classes:RadListView,member:itemLoading %} event is called every time an item is about to be visualized in **RadListView**. It allows us to customize each item separately as it provides us with the NativeScript item view and the native view.
 In order to use this customization technique we need to register a handler for the {% typedoc_link classes:RadListView,member:itemLoading %} event in our HTML and implement a corresponding handler:

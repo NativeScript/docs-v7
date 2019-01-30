@@ -3,12 +3,12 @@ title: Programmatic control
 page_title: RadSideDrawer Programmatic control | Progress NativeScript UI Documentation
 description: This article discusses the API for programmatic control of RadSideDrawer.
 slug: sidedrawer-features-programmatic-angular
-tags: sidedrawer, features, drawer, programmatic, angular
+tags: sidedrawer, features, drawer, programmatic, angular, nativescript, professional, ui
 position: 7
 publish: true
 ---
 
-# SideDrawer: Programmatic control
+# RadSideDrawer Programmatic Control
 {% typedoc_link classes:RadSideDrawer %} exposes API for programmatic control of its state.
 
 ## The `showDrawer()`, `closeDrawer()` and `toggleDrawerState()` methods

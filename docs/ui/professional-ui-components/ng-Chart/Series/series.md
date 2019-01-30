@@ -7,7 +7,7 @@ tags: series, cartesian, pie, angular
 position: 1
 publish: true
 ---
-# Series overview
+# RadChart Series
 Telerik Chart for NativeScript comes with a bunch of series suitable for different types of data. There are two main chart types: `Cartesian` and `Pie`. Each of these chart types requires corresponding series types to be able to visualize the data. For {% typedoc_link classes:RadCartesianChart %} you need to use {% typedoc_link classes:CartesianSeries %}, and for {% typedoc_link classes:RadPieChart %} you need to use {% typedoc_link classes:PieSeries %}. `CartesianSeries` are represented by two main series types: scatter and categorical.
 
 All series expose the following properties:
@@ -23,7 +23,7 @@ The values are:
     - {% typedoc_link modules:SeriesSelectionMode,member:DataPoint%} - the touched data point will be selected only
 - {% typedoc_link classes:ChartSeries,member:labelStyle%} - property of type PointLabelsStyle defining the style of the point labels
 
-## Categorical series
+## Categorical Series
 The {% typedoc_link classes:CartesianSeries%} are used for visualizing data objects that can fit into a given category and expose a value assigned to that category. Examples for categorical series include:
 
 - {% typedoc_link classes:BarSeries%}

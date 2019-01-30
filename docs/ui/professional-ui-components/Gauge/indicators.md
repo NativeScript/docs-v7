@@ -3,12 +3,12 @@ title: Indicators
 page_title: RadGauge Indicators | Progress NativeScript UI Documentation
 description: An indicators page of RadGauge for NativeScript. This article explains how to use indicators in RadGauge.
 slug: gauges-indicators
-tags: radgauge, gauges, indicators
+tags: radgauge, gauges, indicators, nativescript, professional, ui
 position: 3
 publish: true
 ---
 
-# RadGauge: Indicators
+# RadGauge Indicators
 
 Indicators in {% typedoc_link classes:RadGauge %} are visual elements that point to value or visualize a range of values on a {% typedoc_link classes:GaugeScale %}. They should be added to a scale and their values are aligned to the scale the indicators belong to. Currently `RadGauge` supports bar and needle indicators.
 

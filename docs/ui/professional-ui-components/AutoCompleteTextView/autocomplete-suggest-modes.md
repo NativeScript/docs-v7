@@ -3,12 +3,12 @@ title: Suggest modes
 page_title: RadAutoCompleteTextView Suggest Modes | Progress NativeScript UI Documentation
 description: This page is dedicated to the Suggest Modes provided by the RadAutoCompleteTextView control.
 slug: autocomplete-suggest-modes
-tags: radautocompletetextview, suggestmodes
+tags: radautocompletetextview, suggestmodes, autocompletetextview, nativescript, professional, ui
 position: 4
 publish: true
 ---
 
-# RadAutoCompleteTextView: Suggest modes
+# RadAutoCompleteTextView Suggest Modes
 
 **RadAutoCompleteTextView** has three different modes for providing suggestions. 
 

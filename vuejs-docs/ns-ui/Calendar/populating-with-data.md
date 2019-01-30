@@ -8,7 +8,7 @@ position: 6
 publish: true
 ---
 
-# RadCalendar: Populating with data
+# RadCalendar - Populating with data
 {% typedoc_link classes:RadCalendar %} allows you to define a list of events for a particular date. This is done by using the {% typedoc_link classes:RadCalendar,member:eventSource %} property. This article describes the steps you need to take in order to feed {% typedoc_link classes:RadCalendar %} with your custom events using an events source.
 
 ## The `CalendarEvent` class

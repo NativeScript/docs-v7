@@ -3,12 +3,12 @@ title: Getting Started
 page_title: Angular Chart Legend Getting Started | Progress NativeScript UI Documentation
 description: A getting started page of Angular Chart Legend for NativeScript. This article explains how to utilize the Legend functionality of the Chart component for NativeScript Angular.
 slug: chart-legend-getting-started-vue
-tags: legend, getting started, chart legend, vue
+tags: legend, getting started, chart legend, vue, nativescript, professional, ui
 position: 1
 publish: true
 ---
 
-# Chart: Legend
+# RadChart Legend
 {% typedoc_link classes:RadCartesianChart %} and {% typedoc_link classes:RadPieChart %} both can display a legend annotating each of the series or datapoints within the chart. In this article you will learn how to show a legend in your chart and how to customize its behavior and appearance.
 
 ## Defining a Legend

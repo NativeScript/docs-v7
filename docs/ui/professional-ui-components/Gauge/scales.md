@@ -3,12 +3,12 @@ title: Scales
 page_title: RadGauge Scales | Progress NativeScript UI Documentation
 description: A scales page of RadGauge for NativeScript. This article explains how to use GaugeScale objects in RadGauge.
 slug: gauges-scales
-tags: radgauge, gauges, scales
+tags: radgauge, gauges, scales, nativescript, professional, ui
 position: 2
 publish: true
 ---
 
-# RadGauge: Scales
+# RadGauge Scales
 
 {% typedoc_link classes:GaugeScale %} is a base class for all scales in {% typedoc_link classes:RadGauge %}. It has range and a set of indicators that are rendered according to the range of the scale they belong to. The scale manages the count and appearance of its ticks and labels. {% typedoc_link classes:RadialScale %} instances also allow setting a start and sweep angle. It is possible to add more than one scale to a gauge as this example demonstrates.
 

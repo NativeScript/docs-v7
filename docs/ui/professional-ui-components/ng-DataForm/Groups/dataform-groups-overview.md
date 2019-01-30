@@ -3,12 +3,12 @@ title: Groups Overview
 page_title: RadDataForm Groups | Progress NativeScript UI Documentation
 description: This article explains how to show property values in groups and how to expand and collapse them.
 slug: dataform-groups-overview-angular
-tags: raddataform, groups, dataform, angular
+tags: raddataform, groups, dataform, angular, nativescript, professional, ui
 position: 0
 publish: true
 ---
 
-# RadDataForm: Groups Overview
+# RadDataForm Groups
 
 If you followed the [getting started]({% slug dataform-start-source-angular %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. If your source object contains a lot of properties, it may be useful to show them in groups and optionally allow these groups to be collapsed. This article explains how.
 

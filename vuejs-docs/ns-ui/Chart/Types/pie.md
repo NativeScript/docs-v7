@@ -3,7 +3,7 @@ title: Pie Chart Type
 page_title: RadPieChart | Progress NativeScript UI Documentation
 description: This article is a short description and summary of RadPieChart's features.
 slug: chart-types-pie-vue
-tags: chart, pie, overview, radpiechart, vue
+tags: chart, pie, overview, radpiechart, vue, nativescript, professional, ui
 position: 2
 publish: true
 ---

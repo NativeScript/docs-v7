@@ -3,13 +3,12 @@ title: Spline
 page_title: Spline series | Progress NativeScript UI Documentation
 description: This article gives a basic introduction of Spline series and continues with a sample scenario of how Spline series are used.
 slug: chart-series-spline
-tags: series, cartesian, spline
+tags: series, cartesian, spline, chart, nativescript, professional, ui
 position: 5
 publish: true
-previous_url: controls/chart/series/spline
 ---
 
-# Spline series: overview
+# RadChart Spline Series
 {% typedoc_link classes:SplineSeries %} are categorical type of series that visualize the data objects as a series of dots connected with a spline, i.e. a curved line segments. To use Spline series, you need to initialize a {% typedoc_link classes:RadCartesianChart %}, define a {% typedoc_link classes:CategoricalAxis %} and {% typedoc_link classes:LinearAxis %} and bind the series to a set of data objects.
 
 ## Example

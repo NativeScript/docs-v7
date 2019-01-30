@@ -3,13 +3,12 @@ title: Item Layouts
 page_title: 'RadListView Item Layouts | Progress NativeScript UI Documentation'
 description: This article gives insight how different item layouts are used with RadListView.
 slug: listview-features-item-layouts
-tags: radlistview, layouts
+tags: radlistview, layouts, nativescript, professional, ui
 position: 5
 publish: true
-previous_url: controls/listview/item-layouts
 ---
 
-# RadListView: Item Layouts
+# RadListView Item Layouts
 Often there are cases when you need to display your list of items in non-linear layout. For examples, you may want to have a grid of items. For that purpose, RadListView defines three types of item layouts which are fully UI virtualized and optimized for mobile. The following layout types are available:
 - **Linear layout** - this is the most common layout used with a RadListView component. Items are ordered horizontally or vertically one at a time.
 - **Grid layout** - this is a layout in which items are ordered in columns and rows. Depending on the scrolling orientation (vertical or horizontal), the amount of columns or rows is predefined.

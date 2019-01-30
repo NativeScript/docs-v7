@@ -25,22 +25,22 @@ navigation:
         title: "CODE SAMPLES"
     "ui/professional-ui-components/ng-SideDrawer":
         position: 30
-        title: "SideDrawer"
+        title: "RadSideDrawer"
     "ui/professional-ui-components/ng-ListView":
         position: 40
-        title: "ListView"
+        title: "RadListView"
     "ui/professional-ui-components/ng-Calendar":
         position: 50
-        title: "Calendar"
+        title: "RadCalendar"
     "ui/professional-ui-components/ng-Chart":
         position: 60
-        title: "Chart"
+        title: "RadChart"
     "ui/professional-ui-components/ng-AutoCompleteTextView":
         position: 70
-        title: "AutoCompleteTextView"
+        title: "RadAutoCompleteTextView"
     "ui/professional-ui-components/ng-DataForm":
         position: 80
-        title: "DataForm"
+        title: "RadDataForm"
     "ui/professional-ui-components/ng-DataForm/GettingStarted":
         position: 20
         title: "Getting Started"
@@ -52,4 +52,4 @@ navigation:
         position: 50
     "ui/professional-ui-components/ng-Gauge":
         position: 90
-        title: "Gauge"
+        title: "RadGauge"

@@ -3,15 +3,15 @@ title: Calendar transition modes
 page_title: RadCalendar transition modes | Progress NativeScript UI Documentation
 description: A transition modes usage guide page for RadCalendar with Angular
 slug: calendar-transition-modes-angular
-tags: radcalendar, transition, modes, calendar
+tags: radcalendar, transition, modes, calendar, nativescript, professional, ui
 position: 6
 publish: true
 ---
 
-# Transitions: Overview
+# RadCalendar Transition Modes
 {% typedoc_link classes:RadCalendar %} supports different animations when switching between months, weeks or years. These are also called *transitions*. Defining a transition is done by setting the {% typedoc_link classes:RadCalendar,member:transitionMode %} property to one of the values enlisted by the {% typedoc_link enums:CalendarTransitionModes %} enum.
 
-## Available transition modes:
+## Available Transition Modes
 -  {% typedoc_link modules:CalendarTransitionModes,member:None %} - Transitions with gestures are disabled and no animation is applied when transitioning programatically. Available in iOS and Android.
 - {% typedoc_link modules:CalendarTransitionModes,member:Slide %} - Slide animation is applied when transitioning between views in {% typedoc_link classes:RadCalendar %}. Available in iOS and Android.
 - {% typedoc_link modules:CalendarTransitionModes,member:Stack %} -  Stack animation is applied when transitioning between views in {% typedoc_link classes:RadCalendar %}. Available in iOS and Android.

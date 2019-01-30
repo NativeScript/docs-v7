@@ -3,16 +3,16 @@ title: Events
 page_title: RadAutoCompleteTextView Events | Progress NativeScript UI Documentation
 description: This page is dedicated to the events provided by the RadAutoCompleteTextView control.
 slug: autocomplete-events
-tags: radautocompletetextview, events
+tags: radautocompletetextview, events, autocompletetextview, nativescript, professional, ui
 position: 5
 publish: true
 ---
 
-# RadAutoCompleteTextView: Events
+# RadAutoCompleteTextView Events
 In this article you are going to learn about the **RadAutoCompleteTextView's** events.
 The event are designed to notify you whenever a particular action, in the workflow of the control, has happened. They are quite useful when it comes to executing logic based on the **RadAutoCompleteTextView's** state. 
 
-## Available events
+## Available Events
 The **RadAutoCompleteTextView** control exposes these events:
 
 * `tokenAdded` - triggered whenever a token is added.

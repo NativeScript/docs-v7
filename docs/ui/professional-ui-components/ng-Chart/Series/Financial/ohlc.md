@@ -3,19 +3,19 @@ title: OHLC Series
 page_title: OHLC series | Progress NativeScript UI Documentation
 description: This article gives a basic introduction of OHLC series and continues with a sample scenario of how OHLC series are used.
 slug: chart-ohlc-series-angular
-tags: series, OHLC, angular
+tags: series, OHLC, angular, nativescript, professional, ui
 position: 3
 publish: true
 ---
 
-## Ohlc series: overview
+# RadChart OHLC Series Overview
 This series operates with a special kind of data in the form of four parameters defining the stock market - open, high, low, and close. The high and low values show the price range (the highest and lowest prices) over one unit of time. The open and close values indicate the opening and closing price of the stock for the corresponding period. The width of the ohlc bar is determined by the period between 2 bars and the range of the axis
 
 ### Customization
 
 To present a better view over OHLC series we will take a look at the following example:
 
-### Example
+#### Example
 Just like with all angular 'pages' let's start with the `Component` in which we will place our {% typedoc_link classes:RadCartesianChart %} instance. We create a basic angular `Component` that contains a collection of objects provided by an custom service, which will be used by the chart to provide intuitive data visualization.
 
 The service is a simple 'mock' of an backend call that will return an array of objects:

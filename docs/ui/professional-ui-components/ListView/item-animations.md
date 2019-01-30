@@ -3,12 +3,11 @@ title: Item Animations
 page_title: RadListView Item Animations | Progress NativeScript UI Documentation
 description: This article gives insight into how item animations are used with RadListView.
 slug: listview-features-item-animations
-tags: radlistview, animations
+tags: radlistview, animations, nativescript, professional, ui
 position: 4
 publish: true
-previous_url: controls/listview/item-animations
 ---
-# RadListView: Item Animations
+# RadListView Item Animations
 RadListView supports animations for items being added or removed from the list. To be able to utilize this functionality, you will need to bind the module to an `ObservableArray` instance which makes sure any collection changes are reported to the RadListView module.
 
 ## Enabling Item Animations

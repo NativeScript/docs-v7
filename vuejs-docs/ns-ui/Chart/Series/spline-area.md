@@ -3,12 +3,12 @@ title: Spline Area
 page_title: Spline Area series | Progress NativeScript UI Documentation
 description: This article gives a basic introduction of Spline Area series and continues with a sample scenario of how Spline Area series are used.
 slug: chart-series-spline-area-vue
-tags: series, cartesian, spline, area, vue
+tags: series, cartesian, spline, area, vue, nativescript, professional, ui
 position: 6
 publish: true
 ---
 
-# Spline Area series: overview
+# RadChart Spline Area Series
 {% typedoc_link classes:SplineAreaSeries %} are categorical type of series that visualize the data objects as a series of dots connected with a spline, i.e. a curved line segments. To use Spline Area series, you need to initialize a {% typedoc_link classes:RadCartesianChart %}, define a {% typedoc_link classes:CategoricalAxis %} and {% typedoc_link classes:LinearAxis %} and bind the series to a set of data objects.
 
 ## Example

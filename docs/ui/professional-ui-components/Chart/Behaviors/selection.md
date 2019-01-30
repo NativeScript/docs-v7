@@ -3,13 +3,12 @@ title: Selection
 page_title: Chart Selection behavior | Progress NativeScript UI Documentation
 description: A page describing the selection behavior in Telerik Chart for NativeScript
 slug: chart-selection
-tags: chart, behavior, selection, series, datapoint
+tags: chart, behavior, selection, series, datapoint, nativescript, professional, ui
 position: 1
 publish: true
-previous_url: controls/chart/behaviors/selection
 ---
 
-# Selection
+# RadChart Selection
 
 You can make your charts more interactive by enabling selection. 
 When selection is enabled you can select, deselect and handle the selection events of either the data points or the series in [RadCartesianChart]({% slug chart-types-cartesian %} "Read more about RadCartesianChart") and 
@@ -27,7 +26,7 @@ For finer tuning of the selection behavior you can also set the {% typedoc_link 
 * *DataPointMultiple* - multiple data point selection		
 * *Series* - whole series selection
 
-## Handling selection events
+## Handling Selection Events
 
 To notify you when the selection state of an item is changed, **RadChartView** exposes the following events:
 - `seriesSelected` - fired after a series is selected. 

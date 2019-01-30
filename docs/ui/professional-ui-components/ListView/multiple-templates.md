@@ -3,12 +3,12 @@ title: Item Templates
 page_title: RadListView Item Templates | Progress NativeScript UI Documentation
 description: This article discusses the item templates feature of RadListView.
 slug: listview-multiple-templates
-tags: radlistview, multiple, template, templates
+tags: radlistview, multiple, template, templates, nativescript, professional, ui
 position: 6
 publish: true
 ---
 
-# RadListView: Item template/templates
+# RadListView Item Templates
 By default when using the {% typedoc_link classes:RadListView %} in order for the items from its data source to be visualized all that you need to do is declare your own {% typedoc_link classes:RadListView,member:itemTemplate%} and set it to the desired UI View. This will make sure that each of the business objects of the passed to the {% typedoc_link classes:RadListView,member:items%} property are visualized using that template, but there are scenarios where you may want to use different template for specific business objects (different sections, important business objects, more detailed objects etc.). IN such scenarios the the {% typedoc_link classes:RadListView,member:itemTemplates%} can be used.
 
 ## Using multiple item templates

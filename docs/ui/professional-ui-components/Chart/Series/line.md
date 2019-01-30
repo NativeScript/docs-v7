@@ -3,12 +3,11 @@ title: Line
 page_title: Line series | Progress NativeScript UI Documentation
 description: This article gives a basic introduction of Line series and continues with a sample scenario of how Line series are used.
 slug: chart-series-line
-tags: series, cartesian, line
+tags: series, cartesian, line, nativescript, professional, ui
 position: 4
 publish: true
-previous_url: controls/chart/series/line
 ---
-# Line series: overview
+# RadChart Line Series
 {% typedoc_link classes:LineSeries %} are categorical type of series that represent the objects from the data source as dots connected with a line. To use Line series, you need to initialize a {% typedoc_link classes:RadCartesianChart %}, define a {% typedoc_link classes:CategoricalAxis %} and {% typedoc_link classes:LinearAxis %} and bind the series to a set of data objects.
 
 ## Example

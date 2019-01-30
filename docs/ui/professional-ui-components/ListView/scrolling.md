@@ -3,12 +3,11 @@ title: Scrolling
 page_title: RadListView Scrolling | Progress NativeScript UI Documentation
 description: This article explains the Scrolling API of RadListView.
 slug: listview-features-scrolling
-tags: listview, scrolling, events
+tags: listview, scrolling, events, nativescript, professional, ui
 position: 12
 publish: true
-previous_url: controls/listview/scrolling
 ---
-# RadListView: Scrolling
+# RadListView Scrolling
 {% typedoc_link classes:RadListView %} provides API that allows developers to manually scroll to a particular item or with particular offset. It also exposes several events that can be used to detect changes in the scroll offset triggered by the end user. The following methods related to Scrolling are available:
 - {% typedoc_link classes:RadListView,member:scrollWithAmount() %} - scrolls the list with a given amount of pixels. If the `animate` parameter is `true` - the scrolling will be animated
 - {% typedoc_link classes:RadListView,member:scrollToIndex() %} - scrolls the list so that the data item at the particular index is brought to visibility. If the `animate` argument is `true` - the scrolling will be animated. The value of the `snapMode` argument determines the position of the target item when it is brought into view. The possible values for this argument are enlisted by the {% typedoc_link enums:ListViewItemSnapMode %} enum.

@@ -3,12 +3,11 @@ title: Load on Demand
 page_title: RadListView Load on Demand | Progress NativeScript UI Documentation
 description: This article gives insight into how the load-on-demand feature is used.
 slug: listview-features-load-on-demand
-tags: listview, load, demand
+tags: listview, load, demand, nativescript, professional, ui
 position: 8
 publish: true
-previous_url: controls/listview/load-on-demand
 ---
-# RadListView: Load on Demand
+# RadListView Load on Demand
 The load-on-demand feature is particularly useful in cases when data needs to be loaded in chunks (pages) to optimize bandwidth usage and improve the UX. There are two load-on-demand modes available:
 
 - {% typedoc_link enums:ListViewLoadOnDemandMode,member:Manual %} - in this mode the user needs to manually request the next data page

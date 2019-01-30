@@ -3,18 +3,18 @@ title: DateTimeContinuous
 page_title: Chart date time continuous axis | Progress NativeScript UI Documentation
 description: A page describing the DateTimeContinuousAxis in Telerik Chart for NativeScript. This article explains the most important things you need to know before using DateTimeContinuous axis.
 slug: chart-axes-datetimecontinuous-vue
-tags: chart, datetimecontinuous, axes, axis, vue
+tags: chart, datetimecontinuous, axes, axis, vue, nativescript, professional, ui
 position: 4
 publish: true
 ---
 
-# Chart Axes: DateTimeContinuousAxis
+# RadChart DateTimeContinuousAxis
 
 When [RadCartesianChart]({% slug chart-types-cartesian-vue %} "Read more about RadCartesianChart") visualizes {% typedoc_link classes:CategoricalSeries %}, it needs an axis that can represent the different categories. The {% typedoc_link classes:CategoricalAxis%} is used to displays a range of categories. Categories are built depending on the **Category** value of each **CategoricalDataPoint** present in the owning **CategoricalSeries** chart series. The axis is divided into discrete slots and each data point is visualized in the slot corresponding to its categorical value.
 
 {% typedoc_link classes:DateTimeContinuousAxis %} is a special axis that may be considered as a hybrid between a categorical and a value axis. DateTimeContinuousAxis works with categorical data but instead of categories, the axis builds time slots depending on its {% typedoc_link classes:DateTimeContinuousAxis,member:Minimum%}, {% typedoc_link classes:DateTimeContinuousAxis,member:Maximum%} and {% typedoc_link classes:DateTimeContinuousAxis,member:MajorStep%} values. {% typedoc_link classes:DateTimeContinuousAxis %} also expects valid Calendar values so that the data could be plotted correctly. Think of DateTimeContinuousAxis as a timeline where each data point has a certain position, depending on its Calendar value. The timeline range properties' values are automatically calculated if not set explicitly by the user: the default value of the major step is the smallest difference between any two Calendar values. Because this axis behaves like a numerical one, there might be empty time slots if no data falling into them is found.
 
-## Data binding specifics
+## Data Binding Specifics
 
 > When binding the chart to data that contains Date objects, developers need to convert these date objects to time in **milliseconds**.
 
@@ -73,24 +73,24 @@ export default {
 };
 ```
 
-### Features
+## Features
 
-#### Date Format
+### Date Format
 By using the {% typedoc_link classes:DateTimeContinuousAxis,member:dateFormat %} property you can specify the format used to parse the date values passed as parameters to the {% typedoc_link classes:DateTimeContinuousAxis,member:minimum %} and {% typedoc_link classes:DateTimeContinuousAxis,member:maximum %} properties. It is also used to format the date-labels on the axis.
 
-#### Maximum
+### Maximum
 
 Defines the maximum available value. To get or set the maximum use the {% typedoc_link classes:DateTimeContinuousAxis,member:minimum %} property.
 
-#### Minimum
+### Minimum
 
 Defines the minimum available value. To get or set the maximum use the {% typedoc_link classes:DateTimeContinuousAxis,member:maximum %} property.
 
-##### Major Step
+#### Major Step
 
 The major step represents the value difference between two visible ticks on the axis. The major step unit is used to determine what exactly the value of the major step represents. To get or set the major step use the **majorStep** property.
 
-##### Plot Mode
+#### Plot Mode
 
 The **CategoricalAxis** allows you to define how exactly the axis will be plotted on the viewport of the chart. The possible values are:
 

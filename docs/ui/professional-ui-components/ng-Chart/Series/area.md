@@ -3,15 +3,15 @@ title: Area
 page_title: Area series | Progress NativeScript UI Documentation
 description: This article gives a basic introduction of Area series and continues with a sample scenario of how Area series are used.
 slug: chart-series-area-angular
-tags: series, cartesian, area, angular
+tags: series, cartesian, area, angular, nativescript, professional, ui
 position: 6
 publish: true
 ---
 
-## Area series: overview
+# RadChart Area Series
 Area series work pretty much the same way as Line series with the only difference that the area between the categorical axis and the data points is filled with the corresponding color of the line. To use Area series, you need to initialize a {% typedoc_link classes:RadCartesianChart %}, define a {% typedoc_link classes:CategoricalAxis %} and {% typedoc_link classes:LinearAxis %} and bind the series to a set of data objects.
 
-### Example
+#### Example
 Just like with all angular 'pages' let's start with the `Component` in which we will place our {% typedoc_link classes:RadCartesianChart %} instance. We create a basic angular `Component` that contains a collection of objects provided by an custom service, which will be used by the chart to provide intuitive data visualization.
 
 The service is a simple 'mock' of an backend call that will return an array of objects:

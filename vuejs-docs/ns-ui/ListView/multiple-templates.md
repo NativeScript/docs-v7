@@ -3,15 +3,15 @@ title: Item Templates
 page_title: RadListView Item Templates | Progress NativeScript UI Documentation
 description: This article discusses the item templates feature of RadListView.
 slug: listview-multiple-templates-vue
-tags: radlistview, multiple, template, templates, vue
+tags: radlistview, multiple, template, templates, vue, nativescript, professional, ui
 position: 8
 publish: true
 ---
 
-# RadListView: Item template/templates
+# RadListView Item Templates
 By default when using the {% typedoc_link classes:RadListView %} in order for the items from its data source to be visualized all that you need to do is declare your own `<v-template>` in the Vue component template with the desired markup. This will make sure that each of the business objects of the passed to the {% typedoc_link classes:RadListView,member:items%} property are visualized using that template, but there are scenarios where you may want to use different template for specific business objects (different sections, important business objects, more detailed objects etc.). In such scenarios the multiple item templates is possible for fix the need.
 
-## Using multiple item templates
+## Using Multiple Item Templates
 In order to setup the {% typedoc_link classes:RadListView %} to use different templates for its items representation you will need to create multiple separate `<v-template name="somename">` elements.
 
 For choose what template is selected for rendering each item there are two different approaches:

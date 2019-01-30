@@ -3,13 +3,12 @@ title: Event Handling
 page_title: RadCalendar Event handling | Progress NativeScript UI Documentation
 description: An event handling page for RadCalendar for NativeScript.
 slug: calendar-event-handling
-tags: radcalendar, event, handling, calendar, callbacks
+tags: radcalendar, event, handling, calendar, callbacks, nativescript, professional, ui
 position: 4
 publish: true
-previous_url: controls/calendar/event-handling
 ---
 
-# RadCalendar: Event handling
+# RadCalendar Event Handling
 {% typedoc_link classes:RadCalendar %} exposes a set of events which inform you about changes in the state of the component coming as a result of user interactions. By handling these events you can perform actions when a date has been selected, the view mode has been changed, etc. The following events are currently exposed by {% typedoc_link classes:RadCalendar %}:
 
 - {% typedoc_link classes:RadCalendar,member:dateSelectedEvent %} - fired when a date has been selected - either programmatically or as a result of end-user interaction
@@ -21,7 +20,7 @@ previous_url: controls/calendar/event-handling
 - {% typedoc_link classes:RadCalendar,member:dayViewEventSelectedEvent %} - fired when an event, part the list of events in the day view area of the calendar, has been selected
 
 
-## Providing handlers
+## Providing Handlers
 Handling {% typedoc_link classes:RadCalendar %}'s events is done in the familiar {N} way. Here's a XML snippet demonstrating a scenario in which we're subscribing for all exposed events:
 
 <snippet id='calendar-handling-events-xml'/>
@@ -30,7 +29,7 @@ The event-handlers are defined in the code-behind file associated with the page 
 
 <snippet id='calendar-handling-events'/>
 
-## Event arguments
+## Event Arguments
 All events exposed by {% typedoc_link classes:RadCalendar %} provide additional information to their handlers that is needed to properly handle them. Here's a brief description of the event arguments coming with each of the events:
 
 - {% typedoc_link classes:RadCalendar,member:dateSelectedEvent %} and {% typedoc_link classes:RadCalendar,member:dateDeselectedEvent %} deliver their arguments in the form of an instance of {% typedoc_link classes:CalendarSelectionEventData %} class. This class exposes the following properties:

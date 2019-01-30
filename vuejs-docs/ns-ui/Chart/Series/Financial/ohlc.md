@@ -3,12 +3,12 @@ title: OHLC Series
 page_title: OHLC series | Progress NativeScript UI Documentation
 description: This article gives a basic introduction of OHLC series and continues with a sample scenario of how OHLC series are used.
 slug: chart-ohlc-series-vue
-tags: series, OHLC, vue
+tags: series, OHLC, vue, nativescript, professional, ui
 position: 3
 publish: true
 ---
 
-## Ohlc series: overview
+## RadChart OHLC series
 This series operates with a special kind of data in the form of four parameters defining the stock market - open, high, low, and close. The high and low values show the price range (the highest and lowest prices) over one unit of time. The open and close values indicate the opening and closing price of the stock for the corresponding period. The width of the ohlc bar is determined by the period between 2 bars and the range of the axis
 
 ### Customization

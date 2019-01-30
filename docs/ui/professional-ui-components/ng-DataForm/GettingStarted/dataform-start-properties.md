@@ -3,12 +3,12 @@ title: Describe the Properties
 page_title: RadDataForm Describe the Properties | Progress NativeScript UI Documentation
 description: A page demonstrating how to adjust the editors that are used by RadDataForm for NativeScript.
 slug: dataform-start-properties-angular
-tags: raddataform, gettingstarted, dataform, properties, describe, angular
+tags: raddataform, gettingstarted, dataform, properties, describe, angular, nativescript, professional, ui
 position: 1
 publish: true
 ---
 
-# RadDataForm: Describe the Properties
+# RadDataForm - Describe the Properties
 
 If you followed the article about [providing the source]({% slug dataform-start-source-angular %} "RadDataForm providing the source"), you now know how to edit the source object's properties with the default editors in `RadDataForm` for NativeScript. This article will explain how you can customize these editors and optionally change their type.
 

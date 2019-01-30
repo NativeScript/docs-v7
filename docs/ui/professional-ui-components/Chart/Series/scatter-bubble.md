@@ -3,13 +3,12 @@ title: Scatter Bubble
 page_title: Scatter Bubble series | Progress NativeScript UI Documentation
 description: This article gives a basic introduction of Scatter Bubble series and continues with a sample scenario of how Scatter Bubble series are used.
 slug: chart-series-scatter-bubble
-tags: series, cartesian, scatter, bubble
+tags: series, cartesian, scatter, bubble, chart, nativescript, professional, ui
 position: 9
 publish: true
-previous_url: controls/chart/series/scatter-bubble
 ---
 
-# Scatter Bubble series: Overview
+# RadChart Scatter Bubble Series
 Scatter Bubble series are {% typedoc_link classes:ScatterSeries %} and are used in the context of a {% typedoc_link classes:RadCartesianChart %}  and two {% typedoc_link classes:LinearAxis %} instances. Besides the setup requirements that come from {% typedoc_link classes:ScatterSeries %}, {% typedoc_link classes:BubbleSeries %} require an additional setup parameter which should come from the data source that defines the *bubble size*. The value for this parameter is supplied by defining the {% typedoc_link classes:ScatterBubbleSeries,member:bubbleSizeProperty%}.
 
 ## Customization

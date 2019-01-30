@@ -3,12 +3,12 @@ title: Validation Modes
 page_title: RadDataForm Validation Modes | Progress NativeScript UI Documentation
 description: This article explains how to use the validation modes in RadDataForm for NativeScript.
 slug: dataform-validation-modes-angular
-tags: raddataform, validationmodes, dataform, angular
+tags: raddataform, validationmodes, dataform, angular, nativescript, professional, ui
 position: 2
 publish: true
 ---
 
-# RadDataForm: Validation Modes
+# RadDataForm Validation Modes
 
 If you followed the [getting started]({% slug dataform-start-source-angular %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. From the [validation overview]({% slug dataform-validation-overview-angular %} "RadDataForm validation overview") you should have become acquainted with the validation feature in {% typedoc_link classes:RadDataForm %}. This article will show you the different validation modes so you will be able to choose the one that fits best in your requirements.
 
@@ -30,7 +30,7 @@ This is the default `validationMode` in {% typedoc_link classes:RadDataForm %}. 
 
 When the validation is {% typedoc_link enums:ValidationMode,member:OnLostFocus %} each field is validated when the focus moves to another editor. Since some editors (for example the {% typedoc_link enums:EditorType,member:Stepper %}) don't have a "focused state" their property changes will be validated immediately.
 
-## Manual validation
+## Manual Validation
 
 When the validation is {% typedoc_link enums:ValidationMode,member:Manual %}, {% typedoc_link classes:RadDataForm %} will not attempt to validate the current input automatically. Instead, you are expected to call some of the validation methods on a button tap for example.
 

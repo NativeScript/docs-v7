@@ -3,12 +3,12 @@ title: Getting started
 page_title: RadCalendar Getting started | Progress NativeScript UI Documentation
 description: This article is a short description and summary of RadCalendar's features and their usage with Angular
 slug: calendar-getting-started-angular
-tags: calendar, overview, angular
+tags: calendar, overview, angular, nativescript, professional, ui
 position: 2
 publish: true
 ---
 
-# RadCalendar for Angular: Getting Started
+# Getting Started with RadCalendar for Angular 
 This article will guide you through the process of adding a RadCalendar in your application. For more information on how each separate feature of {% typedoc_link classes:RadCalendar %} is used, please refer to the dedicated articles.
 
 ## Installation

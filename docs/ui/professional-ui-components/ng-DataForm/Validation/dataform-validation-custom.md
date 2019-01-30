@@ -3,12 +3,12 @@ title: Custom Validation
 page_title: RadDataForm Custom Validation | Progress NativeScript UI Documentation
 description: This article explains how to customize the validation in RadDataForm for NativeScript.
 slug: dataform-validation-custom-angular
-tags: raddataform, validation, dataform, custom, angular
+tags: raddataform, validation, dataform, custom, angular, nativescript, professional, ui
 position: 4
 publish: true
 ---
 
-# RadDataForm: Custom Validation
+# RadDataForm Custom Validation
 
 If you followed the [getting started]({% slug dataform-start-source-angular %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. From the [validation overview]({% slug dataform-validation-overview-angular %} "RadDataForm validation overview") you should have become acquainted with the validation feature in {% typedoc_link classes:RadDataForm %}. This article will show you how to use custom validation in {% typedoc_link classes:RadDataForm %}.
 

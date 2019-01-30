@@ -3,12 +3,12 @@ title: Swipe Actions
 page_title: RadListView Swipe Actions | Progress NativeScript UI Documentation
 description: This article gives insight how the Swipe Actions feature is used.
 slug: listview-features-swipe-actions-vue
-tags: listview, swipe-actions, swipe, vue
+tags: listview, swipe-actions, swipe, vue, nativescript, professional, ui
 position: 7
 publish: true
 ---
 
-# RadListView: Swipe Actions
+# RadListView Swipe Actions
 The "Swipe Actions" feature allows you to implement actions associated with list items which are triggered by swiping the item left or right. For examples, you can organize a TO-DO application and let your users complete or delete to-do items by swiping them. Similar scenarios are also to be found in famous e-mail client apps.
 The "Swipe Actions" feature supports the use of interactive elements within the item being swiped, i.e. the main content of the item.
 

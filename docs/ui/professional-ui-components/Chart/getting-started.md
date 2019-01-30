@@ -3,13 +3,12 @@ title: Getting Started
 page_title: Chart Getting Started | Progress NativeScript UI Documentation
 description: A getting started page of Chart for NativeScript. This article explains what are the steps to create a chart instance from scratch.
 slug: chart-getting-started
-tags: radchart, getting started, chart
+tags: radchart, getting started, chart, nativescript, professional, ui
 position: 2
 publish: true
-previous_url: controls/chart/getting-started
 ---
 
-# RadChart: Getting Started
+# RadChart Getting Started
 In this article, you will learn to get started with Telerik Chart for NativeScript: how to initialize the chart, how to create the data series and how to use the different axes.
 
 ## Installation

@@ -3,12 +3,12 @@ title: Scatter
 page_title: Scatter series | Progress NativeScript UI Documentation
 description: This article gives a basic introduction of Scatter series and continues with a sample scenario of how Scatter series are used.
 slug: chart-series-scatter-vue
-tags: series, cartesian, scatter, vue
+tags: series, cartesian, scatter, vue, nativescript, professional, ui
 position: 9
 publish: true
 ---
 
-# Scatter series: Overview
+# RadChart Scatter Series
 Scatter series are used in the context of a {% typedoc_link classes:RadCartesianChart %} and two {% typedoc_link classes:LinearAxis %} instances. Besides the setup requirements that come from {% typedoc_link classes:CartesianSeries %}, {% typedoc_link classes:ScatterSeries %} require an additional {% typedoc_link classes:ScatterSeries,member:xProperty%} and {% typedoc_link classes:ScatterSeries,member:yProperty%} parameters instead of {% typedoc_link classes:ScatterSeries,member:valueProperty%} and {% typedoc_link classes:ScatterSeries,member:categoryProperty%}.
 
 ## Example

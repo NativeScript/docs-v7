@@ -3,12 +3,12 @@ title: Validation Events
 page_title: RadDataForm Validation Events | Progress NativeScript UI Documentation
 description: This article explains how to use the validation events in RadDataForm for NativeScript.
 slug: dataform-validation-events
-tags: raddataform, validation, dataform, events
+tags: raddataform, validation, dataform, events, nativescript, professional, ui
 position: 3
 publish: true
 ---
 
-# RadDataForm: Validation Events
+# RadDataForm Validation Events
 
 If you followed the [getting started]({% slug dataform-start-source %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. From the [validation overview]({% slug dataform-validation-overview %} "RadDataForm validation overview") you should have become acquainted with the validation feature in {% typedoc_link classes:RadDataForm %}. This article will show you how to use the validation events in {% typedoc_link classes:RadDataForm %}.
 

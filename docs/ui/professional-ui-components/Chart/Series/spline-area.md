@@ -3,13 +3,12 @@ title: Spline Area
 page_title: Spline Area series | Progress NativeScript UI Documentation
 description: This article gives a basic introduction of Spline Area series and continues with a sample scenario of how Spline Area series are used.
 slug: chart-series-spline-area
-tags: series, cartesian, spline, area
+tags: series, cartesian, spline, area, chart, nativescript, professional, ui
 position: 6
 publish: true
-previous_url: controls/chart/series/spline-area
 ---
 
-# Spline Area Series: Overview
+# RadChart Spline Area Series
 {% typedoc_link classes:SplineAreaSeries %} are categorical type of series that visualize the data objects as a series of dots connected with a spline, i.e. a curved line segments. Additionally, the area between the X-axis and the spline is filled with a specific color - hence the Spline Area name. To use Spline Area series, you need to initialize a {% typedoc_link classes:RadCartesianChart %}, define a {% typedoc_link classes:CategoricalAxis %} and {% typedoc_link classes:LinearAxis %} and bind the series to a set of data objects.
 
 ## Example

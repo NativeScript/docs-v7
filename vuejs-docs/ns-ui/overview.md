@@ -49,7 +49,7 @@ Calendar for Vue exposes all of the familiar features already available through 
 
 For more information on setting up and using a particular feature, take a look at the dedicated [article]({% slug calendar-getting-started-vue %} "Read more about RadCalendar with Vue.") in RadCalendar's documentation section. The articles are extended with Vue snippets and explanations where needed.
 
-## Chart for Vue: overview
+## RadChart for Vue: overview
 Chart for Vue exposes all of the familiar features already available through the NativeScript UI APIs:
 
 - Series - LineSeries, SplineSeries, AreaSeries, BarSeries, RangeBarSeries, BubbleSeries, ScatterBubbleSeries, ScatterSeries, OhlcSeries, CandlestickSeries, PieSeries, DonutSeries

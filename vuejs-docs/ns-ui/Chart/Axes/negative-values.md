@@ -8,7 +8,7 @@ position: 7
 publish: false
 ---
 
-# Chart Axes: Negative Values
+# RadChart Axes: Negative Values
 
 By default the {% typedoc_link classes:LinearAxis %} supports the use of negative values. You can set the {% typedoc_link classes:LinearAxis,member:minimum%} minimum and/or the {% typedoc_link classes:LinearAxis,member:maximum%} to negative values
 

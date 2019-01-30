@@ -3,12 +3,12 @@ title: Value Providers
 page_title: RadDataForm Value Providers | Progress NativeScript UI Documentation
 description: A page demonstrating usage of Value Providers in RadDataForm for NativeScript.
 slug: dataform-editors-providers-angular
-tags: raddataform, valueprovider, dataform, angular
+tags: raddataform, valueprovider, dataform, angular, nativescript, professional, ui
 position: 2
 publish: true
 ---
 
-# RadDataForm: Values Providers
+# RadDataForm Values Providers
 
 If you followed the [getting started]({% slug dataform-start-source-angular %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. In the [editors overview]({% slug dataform-editors-overview-angular %} "Editors Overview in RadDataForm for NativeScript") article it was mentioned that some editors need a list with predefined values that they accept. This article will demonstrate the options to define this list through the {% typedoc_link classes:EntityProperty %}'s {% typedoc_link classes:EntityProperty,member:valuesProvider %}. First, let's bind the {% typedoc_link classes:EntityProperty,member:valuesProvider %} of one of our properties to a property of our binding context and then we'll review the different options for setting the value of that property:
 

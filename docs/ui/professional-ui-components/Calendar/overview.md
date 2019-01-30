@@ -3,13 +3,12 @@ title: Overview
 page_title: RadCalendar Overview | Progress NativeScript UI Documentation
 description: This article is a short description and summary of RadCalendar's features.
 slug: calendar-overview
-tags: radcalendar, overview, calendar
+tags: radcalendar, overview, calendar, nativescript, professional, ui
 position: 1
 publish: true
-previous_url: controls/calendar/overview
 ---
 
-# RadCalendar: Overview
+# RadCalendar Overview
 {% typedoc_link classes:RadCalendar %} for NativeScript is based on the corresponding native calendar components from the Progress UI for iOS and Progress UI for Android suites. It exposes a unified API covering all major features coming from the native components like:
 - inline events
 - different view modes

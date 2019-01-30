@@ -3,12 +3,11 @@ title: Header and Footer
 page_title: RadListView Header and Footer | Progress NativeScript UI Documentation
 description: This article explains how header and footer are configured in RadListView.
 slug: listview-header-footer
-tags: listview, header, footer
+tags: listview, header, footer, nativescript, professional, ui
 position: 11
 publish: true
-previous_url: controls/listview/header-footer
 ---
-# RadListView: Header and Footer
+# RadListView Header and Footer
 {% typedoc_link classes:RadListView %} can be configured to display two special kinds of elements at the beginning and at the end of the data item list: a header and a footer respectively. The contents of these elements are defined in a similar manner to the way content of standard list items is defined - via templates. For that purpose {% typedoc_link classes:RadListView %} exposes the following properties:
 
 - {% typedoc_link classes:RadListView,member:headerItemTemplate %}

@@ -3,13 +3,12 @@ title: Bar
 page_title: Bar series | Progress NativeScript UI Documentation
 description: This article gives a basic introduction of Bar series and continues with a sample scenario of how Bar series are used.
 slug: chart-series-bar
-tags: series, cartesian, bar
+tags: series, cartesian, bar, nativescript, professional, ui
 position: 2
 publish: true
-previous_url: controls/chart/series/bar
 ---
 
-## Bar series: Overview
+# RadChart Bar Series
 Bar Series are categorical type of series that represent the objects from the data source as bars with different length. To use Bar series, you need to initialize a {% typedoc_link classes:RadCartesianChart %}, define a {% typedoc_link classes:CategoricalAxis %} and {% typedoc_link classes:LinearAxis %} and bind the series to a set of data objects.
 
 ## Adjusting Bar Size

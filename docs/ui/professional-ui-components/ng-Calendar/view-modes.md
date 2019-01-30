@@ -3,12 +3,12 @@ title: View modes
 page_title: RadCalendar view modes | Progress NativeScript UI Documentation
 description: This article explains how to set the RadCalendar's view mode  with Angular
 slug: calendar-view-modes-angular
-tags: calendar, angular, view, modes
+tags: calendar, angular, view, modes, nativescript, professional, ui
 position: 5
 publish: true
 ---
 
-# RadCalendar: View modes
+# RadCalendar View Modes
 {% typedoc_link classes:RadCalendar %} supports 4 view modes exposed by the {% typedoc_link enums:CalendarViewMode %} enum. The following view modes are supported:
 
 - {% typedoc_link modules:CalendarViewMode,member:Week %}

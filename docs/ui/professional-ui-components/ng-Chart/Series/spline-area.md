@@ -3,15 +3,15 @@ title: Spline Area
 page_title: Spline Area series | Progress NativeScript UI Documentation
 description: This article gives a basic introduction of Spline Area series and continues with a sample scenario of how Spline Area series are used.
 slug: chart-series-spline-area-angular
-tags: series, cartesian, spline, area, angular
+tags: series, cartesian, spline, area, angular, nativescript, professional, ui
 position: 6
 publish: true
 ---
 
-# Spline Area series: overview
+# RadChart Spline Area Series
 {% typedoc_link classes:SplineAreaSeries %} are categorical type of series that visualize the data objects as a series of dots connected with a spline, i.e. a curved line segments. To use Spline Area series, you need to initialize a {% typedoc_link classes:RadCartesianChart %}, define a {% typedoc_link classes:CategoricalAxis %} and {% typedoc_link classes:LinearAxis %} and bind the series to a set of data objects.
 
-## Example
+#### Example
 Just like with all angular 'pages' let's start with the `Component` in which we will place our {% typedoc_link classes:RadCartesianChart %} instance. We create a basic angular `Component` that contains a collection of objects provided by an custom service, which will be used by the chart to provide intuitive data visualization.
 
 The service is a simple 'mock' of an backend call that will return an array of objects:

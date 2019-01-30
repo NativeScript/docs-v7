@@ -3,12 +3,11 @@ title: Pull to Refresh
 page_title: RadListView Pull to Refresh | Progress NativeScript UI Documentation
 description: This article gives insight how the Pull-to-refresh feature is used.
 slug: listview-features-pull-to-refresh
-tags: listview, pull-to-refresh
+tags: listview, pull-to-refresh, nativescript, professional, ui
 position: 3
 publish: true
-previous_url: controls/listview/pull-to-refresh
 ---
-# RadListView: Pull to Refresh
+# RadListView Pull to Refresh
 The **Pull-to-refresh** feature allows you to provide your users with the ability to request more data items once they reach the top end of the list. This is particularly useful in scenarios where a list of data items is regularly updated in the course of time. Consider a mail client which allows you to refresh the list of mail messages by pulling it down.
 
 > This scenario works when using an `ObservableArray` instance as a data source for the RadListView. `ObservableArray` is part of the core NativeScript framework and when used with RadListView it ensures that source collection changes are effectively reflected by the RadListView module.
