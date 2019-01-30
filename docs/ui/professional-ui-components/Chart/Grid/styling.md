@@ -38,11 +38,11 @@ This is how the chart looks like now:
 
 iOS:
 
-![Axis styling](images/grid_styling_ios.png "iOS")
+![Axis styling](../../../img/ns_ui/grid_styling_ios.png "iOS")
 
 Android:
 
-![Axis styling](images/grid_styling_android.png "Android") 
+![Axis styling](../../../img/ns_ui/grid_styling_android.png "Android") 
 
 ## References
 Want to see this scenario in action?

@@ -38,7 +38,7 @@ The following example demonstrates how to use the **propertyValidate** event to 
 
 #### Figure 1: Using `propertyValidate` event to check for matching passwords on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Validation-Events-Android](/controls/NativeScript/DataForm/images/dataform-validation-events-01-android.png "Validation Events in DataForm in Android") ![NativeScriptUI-DataForm-Validation-Events-iOS](/controls/NativeScript/DataForm/images/dataform-validation-events-01-ios.png "Validation Events in DataForm in iOS")
+![NativeScriptUI-DataForm-Validation-Events-Android](../../../img/ns_ui/dataform-validation-events-01-android.png "Validation Events in DataForm in Android") ![NativeScriptUI-DataForm-Validation-Events-iOS](../../../img/ns_ui/dataform-validation-events-01-ios.png "Validation Events in DataForm in iOS")
 
 This next example shows how to set the validation result to a `Promise` and validate the input asynchronously (for example to check whether a selected username is already used).
 
@@ -50,7 +50,7 @@ In this example, we are simulating a slow and (almost) random validation for a p
 
 #### Figure 2: Using `propertyValidate` event to make async validation of username on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Validation-Async-Android](/controls/NativeScript/DataForm/images/dataform-validation-events-02-android.png "Async Validation in DataForm in Android") ![NativeScriptUI-DataForm-Validation-Async-iOS](/controls/NativeScript/DataForm/images/dataform-validation-events-02-ios.png "Async Validation in DataForm in iOS")
+![NativeScriptUI-DataForm-Validation-Async-Android](../../../img/ns_ui/dataform-validation-events-02-android.png "Async Validation in DataForm in Android") ![NativeScriptUI-DataForm-Validation-Async-iOS](../../../img/ns_ui/dataform-validation-events-02-ios.png "Async Validation in DataForm in iOS")
 
 ## Validated
 

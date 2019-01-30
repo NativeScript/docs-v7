@@ -31,4 +31,4 @@ To better illustrate the usage of Axis properties, we will use a simple scenario
 <snippet id='chart-angular-axis-styling'/>
 
 This is how the chart looks like now:
-![Axis styling](images/axis_styling_android.png "Android") ![Axis styling](images/axis_styling_ios.png "iOS")
+![Axis styling](../../../img/ns_ui/axis_styling_android.png "Android") ![Axis styling](../../../img/ns_ui/axis_styling_ios.png "iOS")

@@ -15,7 +15,7 @@ previous_url: controls/listview/overview
 - smart defaults for many gestures - select on long press, execution of special action on swipe, reorder of items on long press and drag, refreshing the list on swipe or loading more items only when needed.
 
 #### __Figure 1: RadListView in action__
-![RadListView: Overview](/controls/NativeScript/ListView/Images/list-view-overview_2.png "iOS") ![RadListView: Overview](/controls/NativeScript/ListView/Images/list-view-overview_3.png "iOS")
+![RadListView: Overview](../../img/ns_ui/list-view-overview_2.png "iOS") ![RadListView: Overview](../../img/ns_ui/list-view-overview_3.png "iOS")
 
 ## Features
 
@@ -30,7 +30,7 @@ previous_url: controls/listview/overview
 All layouts are virtualized and optimized for the mobile environment.
 
 #### __Figure 1: RadListView layouts__
-![RadListView: Overview](/controls/NativeScript/ListView/Images/list-view-overview_1.png "Android")
+![RadListView: Overview](../../img/ns_ui/list-view-overview_1.png "Android")
 
 ### Selection
 {% typedoc_link classes:RadListView %} for NativeScript exposes API allowing you to enable item selection and track selection changes. You can choose between single and multiple selection, as well as track selection events. More information about selection can be found here: [**ListView: Item selection**]({% slug listview-features-item-selection %})

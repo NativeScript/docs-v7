@@ -18,4 +18,4 @@ By default the {% typedoc_link classes:LinearAxis %} supports the use of negativ
 
 This is how the chart will look like with negative values on the Y axis:
 
-![Cartesian chart: Negative Values](images/negative_values_android.png "Negative values in Android.") ![Cartesian chart: Negative Values](images/negative_values_ios.png "Negative values in iOS.")
+![Cartesian chart: Negative Values](../../../img/ns_ui/negative_values_android.png "Negative values in Android.") ![Cartesian chart: Negative Values](../../../img/ns_ui/negative_values_ios.png "Negative values in iOS.")

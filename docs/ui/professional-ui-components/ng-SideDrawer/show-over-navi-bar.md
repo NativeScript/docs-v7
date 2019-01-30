@@ -37,7 +37,7 @@ By design when navigation is executed in the NativeScript application that navig
 When using the {% typedoc_link classes:RadSideDrawer %} as a root element it will by design **always be shown over the navigation bar**. 
 
 #### Figure 1. RadSideDrawer as a root element and over navigation bar (ActionBar)
-![NativeScriptUI-Getting-Started-iOS](/controls/NativeScript/SideDrawer/images/drawer-over-nav-ios.png "RadSideDrawer in iOS") ![NativeScriptUI-Getting-Started-Android](/controls/NativeScript/SideDrawer/images/drawer-over-nav-android.png "RadSideDrawer in Android") 
+![NativeScriptUI-Getting-Started-iOS](../../img/ns_ui/drawer-over-nav-ios.png "RadSideDrawer in iOS") ![NativeScriptUI-Getting-Started-Android](../../img/ns_ui/drawer-over-nav-android.png "RadSideDrawer in Android") 
 
 # Migrating from versions 3.x.x to the latest version
 

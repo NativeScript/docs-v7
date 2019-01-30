@@ -25,7 +25,7 @@ In the code snippets bellow we are declaring multiple `<template></template>` in
 <snippet id='listview-multiple-templates-model'/>
 
 #### Figure 1: RadListView with multiple item templates:
-![RadListView: Multiple item templates](/controls/NativeScript/ListView/Images/list-view-multiple-templates-ios.png "iOS")  ![RadListView: Multiple item templates](/controls/NativeScript/ListView/Images/list-view-multiple-templates-android.png "Android")
+![RadListView: Multiple item templates](../../img/ns_ui/list-view-multiple-templates-ios.png "iOS")  ![RadListView: Multiple item templates](../../img/ns_ui/list-view-multiple-templates-android.png "Android")
 
 ## References
 Want to see this scenario in action?

@@ -34,7 +34,7 @@ In order to use your validator, you can add it to your `xml` just like the other
 
 #### Figure 1: Using a custom validator to validate input for username on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Validators-Custom-Android](/controls/NativeScript/DataForm/images/dataform-validation-custom-01-android.png "Custom Validator in DataForm in Android") ![NativeScriptUI-DataForm-Validators-Custom-iOS](/controls/NativeScript/DataForm/images/dataform-validation-custom-01-ios.png "Custom Validator in DataForm in iOS")
+![NativeScriptUI-DataForm-Validators-Custom-Android](../../../img/ns_ui/dataform-validation-custom-01-android.png "Custom Validator in DataForm in Android") ![NativeScriptUI-DataForm-Validators-Custom-iOS](../../../img/ns_ui/dataform-validation-custom-01-ios.png "Custom Validator in DataForm in iOS")
 
 ## Manual Validation
 
@@ -48,7 +48,7 @@ Let's walk through that implementation. First, we are getting each `EntityProper
 
 #### Figure 2: Using a custom validation on button tap on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Validation-Custom-Android](/controls/NativeScript/DataForm/images/dataform-validation-custom-02-android.png "Custom Validation in DataForm in Android") ![NativeScriptUI-DataForm-Validation-Custom-iOS](/controls/NativeScript/DataForm/images/dataform-validation-custom-02-ios.png "Custom Validation in DataForm in iOS")
+![NativeScriptUI-DataForm-Validation-Custom-Android](../../../img/ns_ui/dataform-validation-custom-02-android.png "Custom Validation in DataForm in Android") ![NativeScriptUI-DataForm-Validation-Custom-iOS](../../../img/ns_ui/dataform-validation-custom-02-ios.png "Custom Validation in DataForm in iOS")
 
 ## References
 

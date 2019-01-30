@@ -17,7 +17,7 @@ publish: true
 In this example we are going to create a gauge that shows temperature in celsius and fahrenheit scale. To achieve this goal we will need 2 scales that show celsius and fahrenheit degrees and few indicators that display the current temperature and temperature ranges. The end result should look like this:
 
 #### Figure 1. RadRadialGauge with multiple scales and indicators
-![NativeScriptUI-Scales-iOS](images/gauges-scales1-ios.png "RadRadialGauge with two scales and indicators in iOS") ![NativeScriptUI-Scales-Android](images/gauges-scales1-android.png "RadRadialGauge with two scales and indicators in Android") 
+![NativeScriptUI-Scales-iOS](../../img/ns_ui/gauges-scales1-ios.png "RadRadialGauge with two scales and indicators in iOS") ![NativeScriptUI-Scales-Android](../../img/ns_ui/gauges-scales1-android.png "RadRadialGauge with two scales and indicators in Android") 
 
 The first thing to do is to add the 2 scales to the gauge. We should also customize their radius, start and sweep angle, ticks and labels count and offsets. Note that the radius should be in absolute value - values near to 1 will draw the scale near the edge of the gauge while values near to 0 will draw it near the center. As we can see from the screenshot the labels in the inner scale should be drawn inside the scale and the labels of the outer scale should be outside. This is easy to do in xml.
 
@@ -27,7 +27,7 @@ The first thing to do is to add the 2 scales to the gauge. We should also custom
 This is what you should see when you run the app:
 
 #### Figure 2. RadRadialGauge with two scales
-![NativeScriptUI-Scales-iOS](images/gauges-scales2-ios.png "RadRadialGauge with two scales in iOS") ![NativeScriptUI-Scales-Android](images/gauges-scales2-android.png "RadRadialGauge with two scales in Android") 
+![NativeScriptUI-Scales-iOS](../../img/ns_ui/gauges-scales2-ios.png "RadRadialGauge with two scales in iOS") ![NativeScriptUI-Scales-Android](../../img/ns_ui/gauges-scales2-android.png "RadRadialGauge with two scales in Android") 
 
 ## Add indicators
 

@@ -39,4 +39,4 @@ All that is left is to declare the template of the angular component in which we
 <snippet id='chart-angular-candlestick-series-component'/>
 <snippet id='chart-angular-candlestick-series'/>
 
-![Cartesian chart: Scatter Bubble series](images/candlestick_series_android.png " Scatter Bubble series on Android.") ![Cartesian chart: Scatter Bubble series](images/candlestick_series_ios.png "Scatter Bubble series on iOS.")
+![Cartesian chart: Scatter Bubble series](../../../../img/ns_ui/candlestick_series_android.png " Scatter Bubble series on Android.") ![Cartesian chart: Scatter Bubble series](../../../../img/ns_ui/candlestick_series_ios.png "Scatter Bubble series on iOS.")

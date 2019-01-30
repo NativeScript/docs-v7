@@ -37,4 +37,4 @@ All that is left is to declare the template of the angular component in which we
 <snippet id='chart-angular-bubble-series-component'/>
 <snippet id='chart-angular-bubble-series'/>
 
-![Cartesian chart: Bubble series](images/bubble_series_android.png "Bubble series on Android.") ![Cartesian chart: Bubble series](images/bubble_series_ios.png "Bubble series on iOS.")
+![Cartesian chart: Bubble series](../../../img/ns_ui/bubble_series_android.png "Bubble series on Android.") ![Cartesian chart: Bubble series](../../../img/ns_ui/bubble_series_ios.png "Bubble series on iOS.")

@@ -47,7 +47,7 @@ Our palette consists of a single entry that defines values for {% typedoc_link c
 
 The images below demonstrates the result of applying this palette to the Bar series:
 
-![Chart styling: Bar series](/Controls/NativeScript/Chart/Series/images/series_styling_android.png "Android") ![Chart styling: Bar series](/Controls/NativeScript/Chart/Series/images/series_styling_ios.png "iOS")
+![Chart styling: Bar series](../../../img/ns_ui/series_styling_android.png "Android") ![Chart styling: Bar series](../../../img/ns_ui/series_styling_ios.png "iOS")
 
 In this example the second palette values will be used when the series or data point is selected. If palette for selected state is not explicitly defined the default colors will be used.
 
@@ -59,6 +59,6 @@ By default, the provided palettes (or the default colors) are applied per series
 
 And here's the result on android (on the left) and on iOS (on the right):
 
-![Chart styling: PaletteMode](/Controls/NativeScript/Chart/Series/images/series_styling_bar_android.png "Android") ![Chart styling: PaletteMode](/Controls/NativeScript/Chart/Series/images/series_styling_bar_ios.png "iOS")
+![Chart styling: PaletteMode](../../../img/ns_ui/series_styling_bar_android.png "Android") ![Chart styling: PaletteMode](../../../img/ns_ui/series_styling_bar_ios.png "iOS")
 
 > Note that the paletteMode is applicable only for series where it visually makes sense. LineSeries, SplineSeries, AreaSeries and SplineAreaSeries (where there are no separate items but only connections between them), the paletteMode is not supported.

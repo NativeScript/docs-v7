@@ -26,7 +26,7 @@ And finally, in the XML definition of the page we put two RadCartesianCharts, ad
 <snippet id='pie-series'/>
 
 This is how the example looks like:
-![Cartesian chart: Pie series](images/pie_series_android.png "Pie series on Android.") ![Cartesian chart: Pie series](images/pie_series_ios.png "Pie series on iOS.")
+![Cartesian chart: Pie series](../../../img/ns_ui/pie_series_android.png "Pie series on Android.") ![Cartesian chart: Pie series](../../../img/ns_ui/pie_series_ios.png "Pie series on iOS.")
 
 ## References
 Want to see this scenario in action?

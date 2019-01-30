@@ -33,4 +33,4 @@ All that is left is to declare the template of the angular component in which we
 <snippet id='chart-angular-pie-series'/>
 
 This is how the example looks like:
-![Cartesian chart: Pie series](images/pie_series_android.png "Pie series on Android.") ![Cartesian chart: Pie series](images/pie_series_ios.png "Pie series on iOS.")
+![Cartesian chart: Pie series](../../../img/ns_ui/pie_series_android.png "Pie series on Android.") ![Cartesian chart: Pie series](../../../img/ns_ui/pie_series_ios.png "Pie series on iOS.")

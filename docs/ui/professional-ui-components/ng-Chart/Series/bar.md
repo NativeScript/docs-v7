@@ -39,4 +39,4 @@ All that is left is to declare the template of the angular component in which we
 
 > Depending on the required Bar orientation, you can swap the axes' position and assign the {% typedoc_link classes:CategoricalAxis %} to the {% typedoc_link classes:RadCartesianChart,member:horizontalAxis%} property and the Linear to the {% typedoc_link classes:RadCartesianChart,member:verticalAxis%} property. This will change the orientation of the bars to vertical.
 
-![Cartesian chart: Bar series](images/bar_series_android.png "Bar series on Android.") ![Cartesian chart: Bar series](images/bar_series_ios.png "Bar series on iOS.")
+![Cartesian chart: Bar series](../../../img/ns_ui/bar_series_android.png "Bar series on Android.") ![Cartesian chart: Bar series](../../../img/ns_ui/bar_series_ios.png "Bar series on iOS.")

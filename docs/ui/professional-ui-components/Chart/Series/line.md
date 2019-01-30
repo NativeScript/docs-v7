@@ -26,7 +26,7 @@ And finally, in the XML definition of the page we put a {% typedoc_link classes:
 
 Here's how your Line chart should look like:
 
-![Cartesian chart: Line series](images/line_series_android.png "Bar series on Android.") ![Cartesian chart: Line series](images/line_series_ios.png "Bar series on iOS.")
+![Cartesian chart: Line series](../../../img/ns_ui/line_series_android.png "Bar series on Android.") ![Cartesian chart: Line series](../../../img/ns_ui/line_series_ios.png "Bar series on iOS.")
 
 ## References
 Want to see this scenario in action?

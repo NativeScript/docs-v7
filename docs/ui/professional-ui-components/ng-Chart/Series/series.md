@@ -62,7 +62,7 @@ All that is left is to declare the template of the angular component in which we
 
 The following images demonstrate how your 'page' looks like on iOS and Android:
 
-![Chart series overview](images/bar_series_android.png "Bar series on Android.") ![Chart series overview](images/bar_series_ios.png "Bar series on iOS.")
+![Chart series overview](../../../img/ns_ui/bar_series_android.png "Bar series on Android.") ![Chart series overview](../../../img/ns_ui/bar_series_ios.png "Bar series on iOS.")
 
 ### Stack mode
 There are scenarios in which a single Categorical chart can host multiple series. The {% typedoc_link classes:CategoricalSeries,member:stackMode%} property allows you to define how these series will interact with each other. The following options are available for the `stackMode` property:
@@ -98,7 +98,7 @@ All that is left is to declare the template of the angular component in which we
 
 The final result is shown in the two images (android and ios) below.
 
-![Cartesian chart: Area series](images/area_series_android.png "Area series on Android.") ![Cartesian chart: Area series](images/area_series_ios.png "Area series on iOS.")
+![Cartesian chart: Area series](../../../img/ns_ui/area_series_android.png "Area series on Android.") ![Cartesian chart: Area series](../../../img/ns_ui/area_series_ios.png "Area series on iOS.")
 
 ## Pie series
 Pie series are a separate type of series that are used in context with a {% typedoc_link classes:RadPieChart %}. There are two types of Pie series supported by Chart for NativeScript:

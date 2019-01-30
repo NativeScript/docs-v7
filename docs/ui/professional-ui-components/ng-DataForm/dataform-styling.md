@@ -31,7 +31,7 @@ The easiest way to change the styles in RadDataForm is to apply [css styles](htt
 
 #### Figure 1: RadDataForm with applied css on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Styling-04-Android](/controls/NativeScript/DataForm/images/dataform-styling-04-android.png "Styling of RadDataForm in Android") ![NativeScriptUI-DataForm-Styling-04-iOS](/controls/NativeScript/DataForm/images/dataform-styling-04-ios.png "Styling of RadDataForm in iOS")
+![NativeScriptUI-DataForm-Styling-04-Android](../../img/ns_ui/dataform-styling-04-android.png "Styling of RadDataForm in Android") ![NativeScriptUI-DataForm-Styling-04-iOS](../../img/ns_ui/dataform-styling-04-ios.png "Styling of RadDataForm in iOS")
 
 Here's the css that is used for the form in the above pictures:
 
@@ -107,7 +107,7 @@ Note how you can use `EntityProperty` with `name` to match only the editors for 
 
 #### Figure 2: RadDataForm with applied css on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Styling-05-Android](/controls/NativeScript/DataForm/images/dataform-styling-05-android.png "Styling of RadDataForm in Android") ![NativeScriptUI-DataForm-Styling-05-iOS](/controls/NativeScript/DataForm/images/dataform-styling-05-ios.png "Styling of RadDataForm in iOS")
+![NativeScriptUI-DataForm-Styling-05-Android](../../img/ns_ui/dataform-styling-05-android.png "Styling of RadDataForm in Android") ![NativeScriptUI-DataForm-Styling-05-iOS](../../img/ns_ui/dataform-styling-05-ios.png "Styling of RadDataForm in iOS")
 
 This is the list of supported css properties for the different selectors:
 
@@ -159,7 +159,7 @@ If you need to make changes to the styles runtime, you can get access the curren
 
 #### Figure 3: RadDataForm with some of the editor's styling properties changed on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Styling-01-Android](/controls/NativeScript/DataForm/images/dataform-styling-01-android.png "Styling of RadDataForm in Android") ![NativeScriptUI-DataForm-Styling-02-iOS](/controls/NativeScript/DataForm/images/dataform-styling-01-ios.png "Styling of RadDataForm in iOS")
+![NativeScriptUI-DataForm-Styling-01-Android](../../img/ns_ui/dataform-styling-01-android.png "Styling of RadDataForm in Android") ![NativeScriptUI-DataForm-Styling-02-iOS](../../img/ns_ui/dataform-styling-01-ios.png "Styling of RadDataForm in iOS")
 
 #### Example 3: Changing the fillColor of an editor
 
@@ -195,7 +195,7 @@ Note that in this example we make the change when `RadDataForm` is already loade
 
 #### Figure 3: RadDataForm with editors' colors updated independently on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Styling-02-Android](/controls/NativeScript/DataForm/images/dataform-styling-02-android.png "Advanced Styling of RadDataForm in Android") ![NativeScriptUI-DataForm-Styling-02-iOS](/controls/NativeScript/DataForm/images/dataform-styling-02-ios.png "Advanced Styling of RadDataForm in iOS")
+![NativeScriptUI-DataForm-Styling-02-Android](../../img/ns_ui/dataform-styling-02-android.png "Advanced Styling of RadDataForm in Android") ![NativeScriptUI-DataForm-Styling-02-iOS](../../img/ns_ui/dataform-styling-02-ios.png "Advanced Styling of RadDataForm in iOS")
 
 If you need to provide a more customized styling which is not covered by the above properties, you can always fine-tune the native editors for each platform. In order to do this, you can use the `editorUpdate` event in `RadDataForm`. First you can use the `propertyName` from the passed arguments with the events to determine if the currently updated editor is the one you want to customize:
 
@@ -242,7 +242,7 @@ Now that you know how to access the core editor view and what its type is you ca
 
 #### Figure 4: RadDataForm with editors' background updated manually on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Styling-03-Android](/controls/NativeScript/DataForm/images/dataform-styling-03-android.png "Editor Background Styling of RadDataForm in Android") ![NativeScriptUI-DataForm-Styling-03-iOS](/controls/NativeScript/DataForm/images/dataform-styling-03-ios.png "Editor Background Styling of RadDataForm in iOS")
+![NativeScriptUI-DataForm-Styling-03-Android](../../img/ns_ui/dataform-styling-03-android.png "Editor Background Styling of RadDataForm in Android") ![NativeScriptUI-DataForm-Styling-03-iOS](../../img/ns_ui/dataform-styling-03-ios.png "Editor Background Styling of RadDataForm in iOS")
 
 This is achieved again by using the `editorUpdate` event in `RadDataForm` and the native editor taken from the parameters of the event arguments:
 

@@ -44,7 +44,7 @@ This will produce the following UI with the filtered, sorted and grouped objects
 
 #### __Figure 1: Grouping, filtering and sorting enabled in RadListView:__
 
-![RadListView Data-Operations on iOS](/controls/NativeScript/ListView/Images/list-view-multiple-operations-ios.png "iOS") ![RadListView Data-Operations on Android](/controls/NativeScript/ListView/Images/list-view-multiple-operations-android.png "Android")
+![RadListView Data-Operations on iOS](../../img/ns_ui/list-view-multiple-operations-ios.png "iOS") ![RadListView Data-Operations on Android](../../img/ns_ui/list-view-multiple-operations-android.png "Android")
 
 ## References
 Want to see this scenario in action?

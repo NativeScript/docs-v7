@@ -14,7 +14,7 @@ If you followed the [getting started]({% slug dataform-start-source %} "RadDataF
 
 #### Figure 1: RadDataForm with custom editor
 
-![NativeScriptUI-DataForm-Custom-Editors-Android](/controls/NativeScript/DataForm/images/dataform-editors-custom-android.png "Custom Editors in RadDataForm in Android") ![NativeScriptUI-DataForm-Custom-Editors-iOS](/controls/NativeScript/DataForm/images/dataform-editors-custom-ios.png "Custom Editors in RadDataForm in iOS")
+![NativeScriptUI-DataForm-Custom-Editors-Android](../../../img/ns_ui/dataform-editors-custom-android.png "Custom Editors in RadDataForm in Android") ![NativeScriptUI-DataForm-Custom-Editors-iOS](../../../img/ns_ui/dataform-editors-custom-ios.png "Custom Editors in RadDataForm in iOS")
 
 ## Create a custom property editor
 

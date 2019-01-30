@@ -31,7 +31,7 @@ The {% typedoc_link classes:NonEmptyValidator %} can be used with fields that ar
 
 #### Figure 1: The `NonEmptyValidator` on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-NonEmptyValidator-Android](/controls/NativeScript/DataForm/images/dataform-validation-list-01-android.png "NonEmptyValidator in RadDataForm in Android") ![NativeScriptUI-DataForm-NonEmptyValidator-iOS](/controls/NativeScript/DataForm/images/dataform-validation-list-01-ios.png "NonEmptyValidator in RadDataForm in iOS")
+![NativeScriptUI-DataForm-NonEmptyValidator-Android](../../../img/ns_ui/dataform-validation-list-01-android.png "NonEmptyValidator in RadDataForm in Android") ![NativeScriptUI-DataForm-NonEmptyValidator-iOS](../../../img/ns_ui/dataform-validation-list-01-ios.png "NonEmptyValidator in RadDataForm in iOS")
 
 ## RangeValidator
 
@@ -39,7 +39,7 @@ The {% typedoc_link classes:RangeValidator %} can be used with numeric valus to 
 
 #### Figure 2: The `RangeValidator` on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-RangeValidator-Android](/controls/NativeScript/DataForm/images/dataform-validation-list-02-android.png "RangeValidator in RadDataForm in Android") ![NativeScriptUI-DataForm-RangeValidator-iOS](/controls/NativeScript/DataForm/images/dataform-validation-list-02-ios.png "RangeValidator in RadDataForm in iOS")
+![NativeScriptUI-DataForm-RangeValidator-Android](../../../img/ns_ui/dataform-validation-list-02-android.png "RangeValidator in RadDataForm in Android") ![NativeScriptUI-DataForm-RangeValidator-iOS](../../../img/ns_ui/dataform-validation-list-02-ios.png "RangeValidator in RadDataForm in iOS")
 
 ## MinimumLengthValidator
 
@@ -47,7 +47,7 @@ The {% typedoc_link classes:MinimumLengthValidator %} can be used with text valu
 
 #### Figure 3: The `MinimumLengthValidator` on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-MinimumLengthValidator-Android](/controls/NativeScript/DataForm/images/dataform-validation-list-03-android.png "MinimumLengthValidator in RadDataForm in Android") ![NativeScriptUI-DataForm-MinimumLengthValidator-iOS](/controls/NativeScript/DataForm/images/dataform-validation-list-03-ios.png "MinimumLengthValidator in RadDataForm in iOS")
+![NativeScriptUI-DataForm-MinimumLengthValidator-Android](../../../img/ns_ui/dataform-validation-list-03-android.png "MinimumLengthValidator in RadDataForm in Android") ![NativeScriptUI-DataForm-MinimumLengthValidator-iOS](../../../img/ns_ui/dataform-validation-list-03-ios.png "MinimumLengthValidator in RadDataForm in iOS")
 
 ## MaximumLengthValidator
 
@@ -55,7 +55,7 @@ The {% typedoc_link classes:MaximumLengthValidator %} can be used with text valu
 
 #### Figure 4: The `MaximumLengthValidator` on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-MaximumLengthValidator-Android](/controls/NativeScript/DataForm/images/dataform-validation-list-04-android.png "MaximumLengthValidator in RadDataForm in Android") ![NativeScriptUI-DataForm-MaximumLengthValidator-iOS](/controls/NativeScript/DataForm/images/dataform-validation-list-04-ios.png "MaximumLengthValidator in RadDataForm in iOS")
+![NativeScriptUI-DataForm-MaximumLengthValidator-Android](../../../img/ns_ui/dataform-validation-list-04-android.png "MaximumLengthValidator in RadDataForm in Android") ![NativeScriptUI-DataForm-MaximumLengthValidator-iOS](../../../img/ns_ui/dataform-validation-list-04-ios.png "MaximumLengthValidator in RadDataForm in iOS")
 
 ## EmailValidator
 
@@ -63,7 +63,7 @@ The {% typedoc_link classes:EmailValidator %} can be used with text values to de
 
 #### Figure 5: The `EmailValidator` on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-EmailValidator-Android](/controls/NativeScript/DataForm/images/dataform-validation-list-05-android.png "EmailValidator in RadDataForm in Android") ![NativeScriptUI-DataForm-EmailValidator-iOS](/controls/NativeScript/DataForm/images/dataform-validation-list-05-ios.png "EmailValidator in RadDataForm in iOS")
+![NativeScriptUI-DataForm-EmailValidator-Android](../../../img/ns_ui/dataform-validation-list-05-android.png "EmailValidator in RadDataForm in Android") ![NativeScriptUI-DataForm-EmailValidator-iOS](../../../img/ns_ui/dataform-validation-list-05-ios.png "EmailValidator in RadDataForm in iOS")
 
 ## PhoneValidator
 
@@ -71,7 +71,7 @@ The {% typedoc_link classes:PhoneValidator %} can be used with text values to de
 
 #### Figure 6: The `PhoneValidator` on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-PhoneValidator-Android](/controls/NativeScript/DataForm/images/dataform-validation-list-06-android.png "PhoneValidator in RadDataForm in Android") ![NativeScriptUI-DataForm-PhoneValidator-iOS](/controls/NativeScript/DataForm/images/dataform-validation-list-06-ios.png "PhoneValidator in RadDataForm in iOS")
+![NativeScriptUI-DataForm-PhoneValidator-Android](../../../img/ns_ui/dataform-validation-list-06-android.png "PhoneValidator in RadDataForm in Android") ![NativeScriptUI-DataForm-PhoneValidator-iOS](../../../img/ns_ui/dataform-validation-list-06-ios.png "PhoneValidator in RadDataForm in iOS")
 
 ## IsTrueValidator
 
@@ -79,7 +79,7 @@ The {% typedoc_link classes:IsTrueValidator %} can be used with boolean values t
 
 #### Figure 7: The `IsTrueValidator` on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-IsTrueValidator-Android](/controls/NativeScript/DataForm/images/dataform-validation-list-07-android.png "IsTrueValidator in RadDataForm in Android") ![NativeScriptUI-DataForm-IsTrueValidator-iOS](/controls/NativeScript/DataForm/images/dataform-validation-list-07-ios.png "IsTrueValidator in RadDataForm in iOS")
+![NativeScriptUI-DataForm-IsTrueValidator-Android](../../../img/ns_ui/dataform-validation-list-07-android.png "IsTrueValidator in RadDataForm in Android") ![NativeScriptUI-DataForm-IsTrueValidator-iOS](../../../img/ns_ui/dataform-validation-list-07-ios.png "IsTrueValidator in RadDataForm in iOS")
 
 ## RegExValidator
 
@@ -91,7 +91,7 @@ The {% typedoc_link classes:RegExValidator %} can be used with text values to de
 
 #### Figure 8: The `RegExValidator` on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-RegExValidator-Android](/controls/NativeScript/DataForm/images/dataform-validation-list-08-android.png "RegExValidator in RadDataForm in Android") ![NativeScriptUI-DataForm-RegExValidator-iOS](/controls/NativeScript/DataForm/images/dataform-validation-list-08-ios.png "RegExValidator in RadDataForm in iOS")
+![NativeScriptUI-DataForm-RegExValidator-Android](../../../img/ns_ui/dataform-validation-list-08-android.png "RegExValidator in RadDataForm in Android") ![NativeScriptUI-DataForm-RegExValidator-iOS](../../../img/ns_ui/dataform-validation-list-08-ios.png "RegExValidator in RadDataForm in iOS")
 
 ## Custom Validators
 

@@ -50,7 +50,7 @@ Setting a `ListViewStaggeredLayout` is done the following way in XML:
 Defining an explicit item size here is not needed since the essence of a staggered layout is that items are freely measured and positioned according to their desired size as shown on the pictures below. Also note the second Label in the {% typedoc_link classes:RadListView,member:itemTemplate %} which enables text-wrapping for its content to allow for arbitrary item size depending on the length of the text. The result is visible on the pictures below:
 
 #### __Figure 1: ListViewStaggeredLayout in action:__
-![RadListView: Staggered layout on iOS](/controls/NativeScript/ListView/Images/list-view-item-layouts_1.png "iOS") ![RadListView: Staggered layout on Android](/controls/NativeScript/ListView/Images/list-view-item-layouts_2.png "Android")
+![RadListView: Staggered layout on iOS](../../img/ns_ui/list-view-item-layouts_1.png "iOS") ![RadListView: Staggered layout on Android](../../img/ns_ui/list-view-item-layouts_2.png "Android")
 
 ## References
 Want to see this scenario in action?

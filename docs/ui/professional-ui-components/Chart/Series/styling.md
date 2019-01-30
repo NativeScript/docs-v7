@@ -29,7 +29,7 @@ Our palette consists of a single entry that defines values for {% typedoc_link c
 
 The images below demonstrates the result of applying this palette to the Bar series:
 
-![Chart styling: Bar series](images/series_styling_android.png "Android") ![Chart styling: Bar series](images/series_styling_ios.png "iOS")
+![Chart styling: Bar series](../../../img/ns_ui/series_styling_android.png "Android") ![Chart styling: Bar series](../../../img/ns_ui/series_styling_ios.png "iOS")
 
 If you want to specify additional style for selected state of the series you need to define a new Palette with the corresponding `seriesName` and `seriesState` property set to *Selected* value as it is shown in the following example: 
 
@@ -45,7 +45,7 @@ By default, the provided palettes (or the default colors) are applied per series
 
 And here's the result on android (on the left) and on iOS (on the right):
 
-![Chart styling: PaletteMode](images/series_styling_bar_android.png "Android") ![Chart styling: PaletteMode](images/series_styling_bar_ios.png "iOS")
+![Chart styling: PaletteMode](../../../img/ns_ui/series_styling_bar_android.png "Android") ![Chart styling: PaletteMode](../../../img/ns_ui/series_styling_bar_ios.png "iOS")
 
 > Note that the paletteMode is applicable only for series where it visually makes sense. LineSeries, SplineSeries, AreaSeries and SplineAreaSeries (where there are no separate items but only connections between them), the paletteMode is not supported.
 

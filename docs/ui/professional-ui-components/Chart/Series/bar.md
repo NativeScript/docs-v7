@@ -30,7 +30,7 @@ And finally, in the XML definition of the page we put a RadCartesianChart, add a
 
 > Depending on the required Bar orientation, you can swap the axes' position and assign the Categorical to the *horizontalAxis* property and the Linear to the *verticalAxis* property. This will change the orientation of the bars to vertical.
 
-![Cartesian chart: Bar series](images/bar_series_android.png "Bar series on Android.") ![Cartesian chart: Bar series](images/bar_series_ios.png "Bar series on iOS.")
+![Cartesian chart: Bar series](../../../img/ns_ui/bar_series_android.png "Bar series on Android.") ![Cartesian chart: Bar series](../../../img/ns_ui/bar_series_ios.png "Bar series on iOS.")
 
 ## References
 Want to see this scenario in action?

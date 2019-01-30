@@ -14,7 +14,7 @@ publish: true
 
 #### Figure 1: How RadDataForm can look on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Overview-Android](/controls/NativeScript/DataForm/images/dataform-overview-android.png "Overview of DataForm in Android") ![NativeScriptUI-DataForm-Overview-iOS](/controls/NativeScript/DataForm/images/dataform-overview-ios.png "Overview of DataForm in iOS")
+![NativeScriptUI-DataForm-Overview-Android](../../img/ns_ui/dataform-overview-android.png "Overview of DataForm in Android") ![NativeScriptUI-DataForm-Overview-iOS](../../img/ns_ui/dataform-overview-ios.png "Overview of DataForm in iOS")
 
 ## Getting Started
 

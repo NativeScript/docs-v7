@@ -35,8 +35,8 @@ This structure gives us complete freedom to change and customize the appearance 
 
 iOS:
 
-![TelerikUI-RadListView-Item-Customization](/controls/NativeScript/ListView/Images/item-loading-ios.png "iOS")
+![TelerikUI-RadListView-Item-Customization](../../../img/ns_ui/item-loading-ios.png "iOS")
 
 Android:
 
-![TelerikUI-RadListView-Item-Customization](/controls/NativeScript/ListView/Images/item-loading-android.png "Android")
+![TelerikUI-RadListView-Item-Customization](../../../img/ns_ui/item-loading-android.png "Android")

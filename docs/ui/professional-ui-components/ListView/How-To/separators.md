@@ -49,7 +49,7 @@ Item separators are lines displayed between the items to better designate the bo
 
 3. Run your application. The result should be as the following screenshot demonstrates:
 
-	![TelerikUI-RadListView-Getting-Started](/controls/NativeScript/ListView/Images/list-view-howto-separators_1.png "iOS")
+	![TelerikUI-RadListView-Getting-Started](../../../img/ns_ui/list-view-howto-separators_1.png "iOS")
 
 # Conclusion
 Item separators are easily implementable in {% typedoc_link classes:RadListView %} by adding an element within your template with the corresponding dimensions and color. Separation between items in {% typedoc_link classes:RadListView %} can also be implemented by using a margin as demonstrated below:

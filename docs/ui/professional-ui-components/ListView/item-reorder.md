@@ -40,7 +40,7 @@ As you can see a special {% typedoc_link classes:ReorderHandle %} element is use
 The following pictures demonstrate how {% typedoc_link classes:RadListView %} looks like in this case:
 
 #### __Figure 1: Item Reorder with a custom reorder handle in action:__
-![RadListView: Reorder with a handle](/controls/NativeScript/ListView/Images/list-view-item-reorder_2.png "Android")  ![RadListView: Reorder with a handle](/controls/NativeScript/ListView/Images/list-view-item-reorder_3.png "iOS")
+![RadListView: Reorder with a handle](../../img/ns_ui/list-view-item-reorder_2.png "Android")  ![RadListView: Reorder with a handle](../../img/ns_ui/list-view-item-reorder_3.png "iOS")
 
 ## Handling the Item Reorder Events
 {% typedoc_link classes:RadListView %} exposes two events related to the item reorder functionality:

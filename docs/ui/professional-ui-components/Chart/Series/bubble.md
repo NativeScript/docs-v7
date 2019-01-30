@@ -28,7 +28,7 @@ And finally, in the XML definition of the page we put a {% typedoc_link classes:
 
 <snippet id='bubble-series'/>
 
-![Cartesian chart: Bubble series](images/bubble_series_android.png "Bubble series on Android.") ![Cartesian chart: Bubble series](images/bubble_series_ios.png "Bubble series on iOS.")
+![Cartesian chart: Bubble series](../../../img/ns_ui/bubble_series_android.png "Bubble series on Android.") ![Cartesian chart: Bubble series](../../../img/ns_ui/bubble_series_ios.png "Bubble series on iOS.")
 
 ## References
 Want to see this scenario in action?

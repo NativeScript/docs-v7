@@ -17,7 +17,7 @@ If you followed the [getting started]({% slug dataform-start-source %} "RadDataF
 
 #### Figure 1: Show image labels instead of text labels in RadDataForm on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Image-Labels-Android](/controls/NativeScript/DataForm/images/dataform-imagelabels-android.png "Image Labels in RadDataForm in Android") ![NativeScriptUI-DataForm-Image-Labels-iOS](/controls/NativeScript/DataForm/images/dataform-imagelabels-ios.png "Image Labels in RadDataForm in iOS")
+![NativeScriptUI-DataForm-Image-Labels-Android](../../img/ns_ui/dataform-imagelabels-android.png "Image Labels in RadDataForm in Android") ![NativeScriptUI-DataForm-Image-Labels-iOS](../../img/ns_ui/dataform-imagelabels-ios.png "Image Labels in RadDataForm in iOS")
 
 ## Usage
 

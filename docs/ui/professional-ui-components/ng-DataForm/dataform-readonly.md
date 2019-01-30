@@ -26,7 +26,7 @@ If you followed the [getting started]({% slug dataform-start-source-angular %} "
 
 #### Figure 1: RadDataForm in read only mode on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-ReadOnly-Android](/controls/NativeScript/DataForm/images/dataform-readonly-android.png "ReadOnly mode of RadDataForm in Android") ![NativeScriptUI-DataForm-ReadOnly-iOS](/controls/NativeScript/DataForm/images/dataform-readonly-ios.png "ReadOnly mode of RadDataForm in iOS")
+![NativeScriptUI-DataForm-ReadOnly-Android](../../img/ns_ui/dataform-readonly-android.png "ReadOnly mode of RadDataForm in Android") ![NativeScriptUI-DataForm-ReadOnly-iOS](../../img/ns_ui/dataform-readonly-ios.png "ReadOnly mode of RadDataForm in iOS")
 
 ## Disable Specific Editors
 

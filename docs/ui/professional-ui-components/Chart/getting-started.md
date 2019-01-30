@@ -42,7 +42,7 @@ Then we set the `horizontalAxis` to an instance of a `CategoricalAxis` and the `
 
 This will produce a page showing a Chart that will look like:
 
-![TelerikUI-Chart-Getting-Started](/controls/NativeScript/Chart/Images/chart-getting-started-android.png "Android")  ![TelerikUI-Chart-Getting-Started](/controls/NativeScript/Chart/Images/chart-getting-started-ios.png "iOS")
+![TelerikUI-Chart-Getting-Started](../../img/ns_ui/chart-getting-started-android.png "Android")  ![TelerikUI-Chart-Getting-Started](../../img/ns_ui/chart-getting-started-ios.png "iOS")
 
 ## References
 Want to see more examples using **RadCartesianChart**?

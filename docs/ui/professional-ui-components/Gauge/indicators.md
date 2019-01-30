@@ -22,7 +22,7 @@ Bar indicators are used to visualize a range of values on a scale. Customization
 This is what you should see if you run the example now:
 
 #### Figure 1. Radial gauge with bar indicators
-![NativeScriptUI-Indicators-iOS](images/gauges-indicators1-ios.png "Bar indicators in iOS") ![NativeScriptUI-Indicators-Android](images/gauges-indicators1-android.png "Bar indicators in Android")
+![NativeScriptUI-Indicators-iOS](../../img/ns_ui/gauges-indicators1-ios.png "Bar indicators in iOS") ![NativeScriptUI-Indicators-Android](../../img/ns_ui/gauges-indicators1-android.png "Bar indicators in Android")
 
 We have set the `isAnimated` property to `true` to the opaque indicators. Next thing to do is to set their maximum value on the `navigatedTo` event handler and the indicators will animate to their new maximum value.
 
@@ -30,7 +30,7 @@ We have set the `isAnimated` property to `true` to the opaque indicators. Next t
 <snippet id='gauges-indicators-bars-animate' />
 
 #### Figure 2. Bar indicators after animation
-![NativeScriptUI-Indicators-iOS](images/gauges-indicators2-ios.png "Bar indicators in iOS") ![NativeScriptUI-Indicators-Android](images/gauges-indicators2-android.png "Bar indicators in Android")
+![NativeScriptUI-Indicators-iOS](../../img/ns_ui/gauges-indicators2-ios.png "Bar indicators in iOS") ![NativeScriptUI-Indicators-Android](../../img/ns_ui/gauges-indicators2-android.png "Bar indicators in Android")
 
 ## Needle Indicator
 
@@ -46,7 +46,7 @@ After the needle is added to a scale and we have set its `isAnimated` property t
 
 The example looks like this:
 #### Figure 3. Needle indicator
-![NativeScriptUI-Indicators-iOS](images/gauges-indicators3-ios.png "RadialNeedle in iOS") ![NativeScriptUI-Indicators-Android](images/gauges-indicators3-android.png "RadialNeedle in Android")
+![NativeScriptUI-Indicators-iOS](../../img/ns_ui/gauges-indicators3-ios.png "RadialNeedle in iOS") ![NativeScriptUI-Indicators-Android](../../img/ns_ui/gauges-indicators3-android.png "RadialNeedle in Android")
 
 ## References
 Want to see this scenario in action?

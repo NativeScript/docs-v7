@@ -33,7 +33,7 @@ Here's a full example of a chart with a legend set on it:
 
 The following images demonstrate how this setup looks like in a running application:
 
-![Chart Legend: Android](images/chart-legend-android.png "Chart Legend: Android") ![Chart Legend: iOS](images/chart-legend-ios.png "Chart Legend: iOS")
+![Chart Legend: Android](../../../img/ns_ui/chart-legend-android.png "Chart Legend: Android") ![Chart Legend: iOS](../../../img/ns_ui/chart-legend-ios.png "Chart Legend: iOS")
 
 ## Legend Selection
 {% typedoc_link classes:RadLegendView %} exposes the {% typedoc_link classes:RadLegendView,member:enableSelection %} property which can be used to turn off/on the automatic selection of Chart Series or Chart Datapoints when tapping on legend items.

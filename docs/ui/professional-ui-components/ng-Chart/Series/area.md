@@ -36,4 +36,4 @@ All that is left is to declare the template of the angular component in which we
 
 The final result is shown in the two images (android and ios) below.
 
-![Cartesian chart: Area series](images/area_series_android.png "Area series on Android.") ![Cartesian chart: Area series](images/area_series_ios.png "Area series on iOS.")
+![Cartesian chart: Area series](../../../img/ns_ui/area_series_android.png "Area series on Android.") ![Cartesian chart: Area series](../../../img/ns_ui/area_series_ios.png "Area series on iOS.")

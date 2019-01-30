@@ -28,7 +28,7 @@ And finally, in the XML definition of the page we put a {% typedoc_link classes:
 
 <snippet id='scatter-series'/>
 
-![Cartesian chart: Scatter series](images/scatter_series_android.png " Scatter series on Android.") ![Cartesian chart: Scatter series](images/scatter_series_ios.png "Scatter series on iOS.")
+![Cartesian chart: Scatter series](../../../img/ns_ui/scatter_series_android.png " Scatter series on Android.") ![Cartesian chart: Scatter series](../../../img/ns_ui/scatter_series_ios.png "Scatter series on iOS.")
 
 ## References
 Want to see this scenario in action?

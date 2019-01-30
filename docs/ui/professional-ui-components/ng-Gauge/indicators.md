@@ -27,13 +27,13 @@ First you will need to setup the RadRadialGauge as described in the [**Indicator
 
 This is what you should see if you run the example now:
 #### Figure 1. Radial gauge with bar indicators
-![NativeScriptUI-Indicators-iOS](/controls/NativeScript/Gauge/images/gauges-indicators1-ios.png "Bar indicators in iOS") ![NativeScriptUI-Indicators-Android](/controls/NativeScript/Gauge/images/gauges-indicators1-android.png "Bar indicators in Android")
+![NativeScriptUI-Indicators-iOS](../../img/ns_ui/gauges-indicators1-ios.png "Bar indicators in iOS") ![NativeScriptUI-Indicators-Android](../../img/ns_ui/gauges-indicators1-android.png "Bar indicators in Android")
 
 #### Example 2. Animating the bar indicators
 In order to animate the opaque indicators we have set the {% typedoc_link classes:GaugeIndicator,member:isAnimated %} property to `true`. The last thing to do is is to set their {% typedoc_link classes:BarIndicator,member:maximum %} value in the `ngAfterViewInit` handler and the indicators will animate to their new maximum value.
 
 #### Figure 2. Bar indicators after animation
-![NativeScriptUI-Indicators-iOS](/controls/NativeScript/Gauge/images/gauges-indicators2-ios.png "Bar indicators in iOS") ![NativeScriptUI-Indicators-Android](/controls/NativeScript/Gauge/images/gauges-indicators2-android.png "Bar indicators in Android")
+![NativeScriptUI-Indicators-iOS](../../img/ns_ui/gauges-indicators2-ios.png "Bar indicators in iOS") ![NativeScriptUI-Indicators-Android](../../img/ns_ui/gauges-indicators2-android.png "Bar indicators in Android")
 
 ## Needle Indicator
 
@@ -50,7 +50,7 @@ After the needle is added to a scale and we have set its {% typedoc_link classes
 
 The example looks like this:
 #### Figure 3. Needle indicator
-![NativeScriptUI-Indicators-iOS](/controls/NativeScript/Gauge/images/gauges-indicators3-ios.png "RadialNeedle in iOS") ![NativeScriptUI-Indicators-Android](/controls/NativeScript/Gauge/images/gauges-indicators3-android.png "RadialNeedle in Android")
+![NativeScriptUI-Indicators-iOS](../../img/ns_ui/gauges-indicators3-ios.png "RadialNeedle in iOS") ![NativeScriptUI-Indicators-Android](../../img/ns_ui/gauges-indicators3-android.png "RadialNeedle in Android")
 
 ## References
 Want to see this scenario in action?

@@ -13,7 +13,7 @@ publish: true
 {% typedoc_link classes:RadGauge %} is a highly customizable component that allows you to show the current status of a value within a range of upper and lower bounds, illustrate progress towards a goal or a summary of a fluctuating metric.
 #### Figure 1: Radial gauge with indicators
 
-![NativeScriptUI-Overview-iOS](images/gauges-gettingstarted-ios.png "RadRadialGauge in iOS") ![NativeScriptUI-Overview-Android](images/gauges-gettingstarted-android.png "RadRadialGauge in Android") 
+![NativeScriptUI-Overview-iOS](../../img/ns_ui/gauges-gettingstarted-ios.png "RadRadialGauge in iOS") ![NativeScriptUI-Overview-Android](../../img/ns_ui/gauges-gettingstarted-android.png "RadRadialGauge in Android") 
 
 ## Scales
 {% typedoc_link classes:RadGauge %} supports multiple {% typedoc_link classes:GaugeScale %} objects. The scale has range and a set of indicators that are rendered according to the scale's range.

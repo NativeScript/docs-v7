@@ -35,4 +35,4 @@ All that is left is to declare the template of the angular component in which we
 
 Here's how your Line chart should look like:
 
-![Cartesian chart: Line series](images/line_series_android.png "Bar series on Android.") ![Cartesian chart: Line series](images/line_series_ios.png "Bar series on iOS.")
+![Cartesian chart: Line series](../../../img/ns_ui/line_series_android.png "Bar series on Android.") ![Cartesian chart: Line series](../../../img/ns_ui/line_series_ios.png "Bar series on iOS.")

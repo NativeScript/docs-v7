@@ -34,4 +34,4 @@ All that is left is to declare the template of the angular component in which we
 <snippet id='chart-angular-spline-series-component'/>
 <snippet id='chart-angular-spline-series'/>
 
-![Cartesian chart: Spline series](images/spline_series_android.png "Spline series on Android.") ![Cartesian chart: Spline series](images/spline_series_ios.png "Spline series on iOS.")
+![Cartesian chart: Spline series](../../../img/ns_ui/spline_series_android.png "Spline series on Android.") ![Cartesian chart: Spline series](../../../img/ns_ui/spline_series_ios.png "Spline series on iOS.")

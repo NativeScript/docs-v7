@@ -30,7 +30,7 @@ This is the default layout. If you declare each {% typedoc_link classes:Property
 
 #### Figure 1: This is how the editors in Stack Layout Group look in RadDataForm on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Stack-Layout-Android](/controls/NativeScript/DataForm/images/dataform-groups-layouts-01-android.png "DataFormStackLayout in Android") ![NativeScriptUI-DataForm-Stack-Layout-iOS](/controls/NativeScript/DataForm/images/dataform-groups-layouts-01-ios.png "DataFormStackLayout in iOS")
+![NativeScriptUI-DataForm-Stack-Layout-Android](../../../img/ns_ui/dataform-groups-layouts-01-android.png "DataFormStackLayout in Android") ![NativeScriptUI-DataForm-Stack-Layout-iOS](../../../img/ns_ui/dataform-groups-layouts-01-ios.png "DataFormStackLayout in iOS")
 
 ## Grid Layout
 
@@ -44,7 +44,7 @@ In order to specify where each editor is placed in the {% typedoc_link classes:D
 
 #### Figure 2: This is how the editors in Grid Layout Group look in RadDataForm on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Stack-Layout-Android](/controls/NativeScript/DataForm/images/dataform-groups-layouts-02-android.png "DataFormStackLayout in Android") ![NativeScriptUI-DataForm-Stack-Layout-iOS](/controls/NativeScript/DataForm/images/dataform-groups-layouts-02-ios.png "DataFormStackLayout in iOS")
+![NativeScriptUI-DataForm-Stack-Layout-Android](../../../img/ns_ui/dataform-groups-layouts-02-android.png "DataFormStackLayout in Android") ![NativeScriptUI-DataForm-Stack-Layout-iOS](../../../img/ns_ui/dataform-groups-layouts-02-ios.png "DataFormStackLayout in iOS")
 
 ## References
 

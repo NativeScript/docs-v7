@@ -60,7 +60,7 @@ The following editors can be used for properties of type `string`:
 
 #### Figure 1: Text editor on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Editors-Text-Android](/controls/NativeScript/DataForm/images/dataform-editors-list-01-android.png "Text Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Text-iOS](/controls/NativeScript/DataForm/images/dataform-editors-list-01-ios.png "Text Editor in DataForm in iOS")
+![NativeScriptUI-DataForm-Editors-Text-Android](../../../img/ns_ui/dataform-editors-list-01-android.png "Text Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Text-iOS](../../../img/ns_ui/dataform-editors-list-01-ios.png "Text Editor in DataForm in iOS")
 
 
 
@@ -69,7 +69,7 @@ The following editors can be used for properties of type `string`:
 
 #### Figure 2: Password editor on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Editors-Password-Android](/controls/NativeScript/DataForm/images/dataform-editors-list-02-android.png "Password Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Password-iOS](/controls/NativeScript/DataForm/images/dataform-editors-list-02-ios.png "Password Editor in DataForm in iOS")
+![NativeScriptUI-DataForm-Editors-Password-Android](../../../img/ns_ui/dataform-editors-list-02-android.png "Password Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Password-iOS](../../../img/ns_ui/dataform-editors-list-02-ios.png "Password Editor in DataForm in iOS")
 
 
 
@@ -78,7 +78,7 @@ The following editors can be used for properties of type `string`:
 
 #### Figure 3: Phone editor on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Editors-Phone-Android](/controls/NativeScript/DataForm/images/dataform-editors-list-03-android.png "Phone Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Phone-iOS](/controls/NativeScript/DataForm/images/dataform-editors-list-03-ios.png "Phone Editor in DataForm in iOS")
+![NativeScriptUI-DataForm-Editors-Phone-Android](../../../img/ns_ui/dataform-editors-list-03-android.png "Phone Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Phone-iOS](../../../img/ns_ui/dataform-editors-list-03-ios.png "Phone Editor in DataForm in iOS")
 
 
 
@@ -87,7 +87,7 @@ The following editors can be used for properties of type `string`:
 
 #### Figure 4: Email editor on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Editors-Email-Android](/controls/NativeScript/DataForm/images/dataform-editors-list-04-android.png "Email Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Email-iOS](/controls/NativeScript/DataForm/images/dataform-editors-list-04-ios.png "Email Editor in DataForm in iOS")
+![NativeScriptUI-DataForm-Editors-Email-Android](../../../img/ns_ui/dataform-editors-list-04-android.png "Email Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Email-iOS](../../../img/ns_ui/dataform-editors-list-04-ios.png "Email Editor in DataForm in iOS")
 
 
 
@@ -96,7 +96,7 @@ The following editors can be used for properties of type `string`:
 
 #### Figure 5: MultilineText editor on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Editors-Multiline-Android](/controls/NativeScript/DataForm/images/dataform-editors-list-05-android.png "Multiline Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Multiline-iOS](/controls/NativeScript/DataForm/images/dataform-editors-list-05-ios.png "Multiline Editor in DataForm in iOS")
+![NativeScriptUI-DataForm-Editors-Multiline-Android](../../../img/ns_ui/dataform-editors-list-05-android.png "Multiline Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Multiline-iOS](../../../img/ns_ui/dataform-editors-list-05-ios.png "Multiline Editor in DataForm in iOS")
 
 ### Numeric
 
@@ -106,7 +106,7 @@ The following editors can be used for properties of type `number`:
 
 #### Figure 6: Number editor on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Editors-Number-Android](/controls/NativeScript/DataForm/images/dataform-editors-list-06-android.png "Number Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Number-iOS](/controls/NativeScript/DataForm/images/dataform-editors-list-06-ios.png "Number Editor in DataForm in iOS")
+![NativeScriptUI-DataForm-Editors-Number-Android](../../../img/ns_ui/dataform-editors-list-06-android.png "Number Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Number-iOS](../../../img/ns_ui/dataform-editors-list-06-ios.png "Number Editor in DataForm in iOS")
 
 
 
@@ -115,7 +115,7 @@ The following editors can be used for properties of type `number`:
 
 #### Figure 7: Decimal editor on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Editors-Decimal-Android](/controls/NativeScript/DataForm/images/dataform-editors-list-07-android.png "Decimal Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Decimal-iOS](/controls/NativeScript/DataForm/images/dataform-editors-list-07-ios.png "Decimal Editor in DataForm in iOS")
+![NativeScriptUI-DataForm-Editors-Decimal-Android](../../../img/ns_ui/dataform-editors-list-07-android.png "Decimal Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Decimal-iOS](../../../img/ns_ui/dataform-editors-list-07-ios.png "Decimal Editor in DataForm in iOS")
 
 
 
@@ -124,7 +124,7 @@ The following editors can be used for properties of type `number`:
 
 #### Figure 8: Stepper editor on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Editors-Stepper-Android](/controls/NativeScript/DataForm/images/dataform-editors-list-08-android.png "Stepper Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Stepper-iOS](/controls/NativeScript/DataForm/images/dataform-editors-list-08-ios.png "Stepper Editor in DataForm in iOS")
+![NativeScriptUI-DataForm-Editors-Stepper-Android](../../../img/ns_ui/dataform-editors-list-08-android.png "Stepper Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Stepper-iOS](../../../img/ns_ui/dataform-editors-list-08-ios.png "Stepper Editor in DataForm in iOS")
 
 
 
@@ -133,7 +133,7 @@ The following editors can be used for properties of type `number`:
 
 #### Figure 9: Slider editor on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Editors-Slider-Android](/controls/NativeScript/DataForm/images/dataform-editors-list-09-android.png "Slider Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Slider-iOS](/controls/NativeScript/DataForm/images/dataform-editors-list-09-ios.png "Slider Editor in DataForm in iOS")
+![NativeScriptUI-DataForm-Editors-Slider-Android](../../../img/ns_ui/dataform-editors-list-09-android.png "Slider Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Slider-iOS](../../../img/ns_ui/dataform-editors-list-09-ios.png "Slider Editor in DataForm in iOS")
 
 ### True or False
 
@@ -141,7 +141,7 @@ The following editors can be used for properties of type `number`:
 
 #### Figure 10: Switch editor on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Editors-Switch-Android](/controls/NativeScript/DataForm/images/dataform-editors-list-10-android.png "Switch Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Switch-iOS](/controls/NativeScript/DataForm/images/dataform-editors-list-10-ios.png "Switch Editor in DataForm in iOS")
+![NativeScriptUI-DataForm-Editors-Switch-Android](../../../img/ns_ui/dataform-editors-list-10-android.png "Switch Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Switch-iOS](../../../img/ns_ui/dataform-editors-list-10-ios.png "Switch Editor in DataForm in iOS")
 
 > Note that on Android the default editor for `boolean` properties is **CheckBox** which is not supported on iOS.
 
@@ -153,7 +153,7 @@ These editors internally convert date/time input and save it to a `string` prope
 
 #### Figure 11: DatePicker editor on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Editors-DatePicker-Android](/controls/NativeScript/DataForm/images/dataform-editors-list-11-android.png "DatePicker Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-DatePicker-iOS](/controls/NativeScript/DataForm/images/dataform-editors-list-11-ios.png "DatePicker Editor in DataForm in iOS")
+![NativeScriptUI-DataForm-Editors-DatePicker-Android](../../../img/ns_ui/dataform-editors-list-11-android.png "DatePicker Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-DatePicker-iOS](../../../img/ns_ui/dataform-editors-list-11-ios.png "DatePicker Editor in DataForm in iOS")
 
 
 
@@ -162,7 +162,7 @@ These editors internally convert date/time input and save it to a `string` prope
 
 #### Figure 12: TimePicker editor on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Editors-TimePicker-Android](/controls/NativeScript/DataForm/images/dataform-editors-list-12-android.png "TimePicker Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-TimePicker-iOS](/controls/NativeScript/DataForm/images/dataform-editors-list-12-ios.png "TimePicker Editor in DataForm in iOS")
+![NativeScriptUI-DataForm-Editors-TimePicker-Android](../../../img/ns_ui/dataform-editors-list-12-android.png "TimePicker Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-TimePicker-iOS](../../../img/ns_ui/dataform-editors-list-12-ios.png "TimePicker Editor in DataForm in iOS")
 
 ### Input from Predefined Lists
 
@@ -172,7 +172,7 @@ The following editors can be used for properties of any type but they need to ha
 
 #### Figure 13: Picker editor on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Editors-Picker-Android](/controls/NativeScript/DataForm/images/dataform-editors-list-13-android.png "Picker Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Picker-iOS](/controls/NativeScript/DataForm/images/dataform-editors-list-13-ios.png "Picker Editor in DataForm in iOS")
+![NativeScriptUI-DataForm-Editors-Picker-Android](../../../img/ns_ui/dataform-editors-list-13-android.png "Picker Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Picker-iOS](../../../img/ns_ui/dataform-editors-list-13-ios.png "Picker Editor in DataForm in iOS")
 
 
 
@@ -181,7 +181,7 @@ The following editors can be used for properties of any type but they need to ha
 
 #### Figure 14: SegmentedEditor editor on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Editors-SegmentedEditor-Android](/controls/NativeScript/DataForm/images/dataform-editors-list-14-android.png "SegmentedEditor Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-SegmentedEditor-iOS](/controls/NativeScript/DataForm/images/dataform-editors-list-14-ios.png "SegmentedEditor Editor in DataForm in iOS")
+![NativeScriptUI-DataForm-Editors-SegmentedEditor-Android](../../../img/ns_ui/dataform-editors-list-14-android.png "SegmentedEditor Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-SegmentedEditor-iOS](../../../img/ns_ui/dataform-editors-list-14-ios.png "SegmentedEditor Editor in DataForm in iOS")
 
 
 
@@ -190,7 +190,7 @@ The following editors can be used for properties of any type but they need to ha
 
 #### Figure 15: List editor on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Editors-List-Android](/controls/NativeScript/DataForm/images/dataform-editors-list-15-android.png "List Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-List-iOS](/controls/NativeScript/DataForm/images/dataform-editors-list-15-ios.png "List Editor in DataForm in iOS")
+![NativeScriptUI-DataForm-Editors-List-Android](../../../img/ns_ui/dataform-editors-list-15-android.png "List Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-List-iOS](../../../img/ns_ui/dataform-editors-list-15-ios.png "List Editor in DataForm in iOS")
 
 ### Input with AutoComplete Suggestions
 
@@ -198,7 +198,7 @@ The following editors can be used for properties of any type but they need to ha
 
 #### Figure 16: AutoCompleteInline editor in Tokens mode on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Editors-AutoCompleteInline-Android](/controls/NativeScript/DataForm/images/dataform-editors-list-16-android.png "AutoCompleteInline Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-AutoCompleteInline-iOS](/controls/NativeScript/DataForm/images/dataform-editors-list-16-ios.png "AutoCompleteInline Editor in DataForm in iOS")
+![NativeScriptUI-DataForm-Editors-AutoCompleteInline-Android](../../../img/ns_ui/dataform-editors-list-16-android.png "AutoCompleteInline Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-AutoCompleteInline-iOS](../../../img/ns_ui/dataform-editors-list-16-ios.png "AutoCompleteInline Editor in DataForm in iOS")
 
 This editor also uses a predefined list with values, but they are not the only acceptable values, but rather they are suggestions that are displayed when the user starts typing for the keyboard. There are two modes: {% typedoc_link enums:AutoCompleteDisplayMode,member:Plain %} and {% typedoc_link enums:AutoCompleteDisplayMode,member:Tokens %}. The desired mode should be set to the {% typedoc_link classes:EntityProperty,member:autoCompleteDisplayMode %} property of the `EntityProperty`. The `Plain` mode can be used for `string` properties, while the `Tokens` mode can be used for properties of type `string[]`. The next code snippet shows how you can setup the `AutoCompleteInline` editor. The source object is of type `Booking` and has two properties: `from` and `to`. The `from` property is of type `Array<String>` and we use the `AutoCompleteInline` editor with `Tokens` display mode, which allows us to select multiple items from our suggestions. The `to` property is of type `string` and we use the `AutoCompleteInline` editor with `Plain` display mode which allows us to type a simple text.
 
@@ -208,7 +208,7 @@ This editor also uses a predefined list with values, but they are not the only a
 
 #### Figure 17: AutoCompleteInline editor in Plain mode on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Editors-AutoCompleteInline-Android](/controls/NativeScript/DataForm/images/dataform-editors-list-17-android.png "AutoCompleteInline Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-AutoCompleteInline-iOS](/controls/NativeScript/DataForm/images/dataform-editors-list-17-ios.png "AutoCompleteInline Editor in DataForm in iOS")
+![NativeScriptUI-DataForm-Editors-AutoCompleteInline-Android](../../../img/ns_ui/dataform-editors-list-17-android.png "AutoCompleteInline Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-AutoCompleteInline-iOS](../../../img/ns_ui/dataform-editors-list-17-ios.png "AutoCompleteInline Editor in DataForm in iOS")
 
 ### View Only
 
@@ -216,7 +216,7 @@ This editor also uses a predefined list with values, but they are not the only a
 
 #### Figure 18: Label editor on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Editors-Label-Android](/controls/NativeScript/DataForm/images/dataform-editors-list-18-android.png "Label Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Label-iOS](/controls/NativeScript/DataForm/images/dataform-editors-list-18-ios.png "Label Editor in DataForm in iOS")
+![NativeScriptUI-DataForm-Editors-Label-Android](../../../img/ns_ui/dataform-editors-list-18-android.png "Label Editor in DataForm in Android") ![NativeScriptUI-DataForm-Editors-Label-iOS](../../../img/ns_ui/dataform-editors-list-18-ios.png "Label Editor in DataForm in iOS")
 
 ## Custom Editors
 

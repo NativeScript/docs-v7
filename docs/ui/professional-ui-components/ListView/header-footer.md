@@ -29,7 +29,7 @@ Assuming that we're using the following view-model setup:
 Here's how the list looks like:
 
 #### __Fugure 1: RadListView's header and footer in action:__
-![RadListView header and footer on Android](/controls/NativeScript/ListView/Images/list-view-header-footer_1.png "iOS") ![RadListView header and footer on iOS](/controls/NativeScript/ListView/Images/list-view-header-footer_2.png "Android")
+![RadListView header and footer on Android](../../img/ns_ui/list-view-header-footer_1.png "iOS") ![RadListView header and footer on iOS](../../img/ns_ui/list-view-header-footer_2.png "Android")
 
 ## References
 Want to see this scenario in action?

@@ -25,7 +25,7 @@ And finally, in the XML definition of the page we put a {% typedoc_link classes:
 
 <snippet id='spline-area-series-xml'/>
 
-![Cartesian chart: Spline Area series](images/chart_series_spline_area_android.png "Spline Area series on Android.") ![Cartesian chart: Spline Area series](images/chart_series_spline_area_ios.png "Spline Area series on iOS.")
+![Cartesian chart: Spline Area series](../../../img/ns_ui/chart_series_spline_area_android.png "Spline Area series on Android.") ![Cartesian chart: Spline Area series](../../../img/ns_ui/chart_series_spline_area_ios.png "Spline Area series on iOS.")
 
 ## References
 Want to see this scenario in action?

@@ -39,7 +39,7 @@ publish: true
 - **Contains** - Shows suggestions which contain the typed text.
 
 #### Figure 1. RadAutoCompleteTextView (iOS/Android)
-![RadAutoCompleteTextView: Overview](/controls/NativeScript/AutoCompleteTextView/images/autocomplete-overview-ios.png "RadAutoCompleteTextView in iOS") ![RadAutoCompleteTextView: Overview](/controls/NativeScript/AutoCompleteTextView/images/autocomplete-overview-android.png "RadAutoCompleteTextView in Android") 
+![RadAutoCompleteTextView: Overview](../../img/ns_ui/autocomplete-overview-ios.png "RadAutoCompleteTextView in iOS") ![RadAutoCompleteTextView: Overview](../../img/ns_ui/autocomplete-overview-android.png "RadAutoCompleteTextView in Android") 
 
 # Angular directives
 

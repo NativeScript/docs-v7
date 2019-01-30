@@ -20,7 +20,7 @@ If you followed the article about [providing the source]({% slug dataform-start-
 
 #### Figure 1: How RadDataForm can look if we describe the editors that will be used on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Getting-Started-Android](/controls/NativeScript/DataForm/images/dataform-start-properties-android.png "RadDataForm in Android") ![NativeScriptUI-DataForm-Getting-Started-iOS](/controls/NativeScript/DataForm/images/dataform-start-properties-ios.png "RadDataForm in iOS")
+![NativeScriptUI-DataForm-Getting-Started-Android](../../../img/ns_ui/dataform-start-properties-android.png "RadDataForm in Android") ![NativeScriptUI-DataForm-Getting-Started-iOS](../../../img/ns_ui/dataform-start-properties-ios.png "RadDataForm in iOS")
 
 ## Entity Property
 

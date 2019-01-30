@@ -59,7 +59,7 @@ And in the XML definition of the page we put an instance of `RadCartesianChart`,
 
 The following screenshots demonstrate how your page looks like on iOS and Android:
 
-![Chart series overview](images/bar_series_android.png "Bar series on Android.") ![Chart series overview](images/bar_series_ios.png "Bar series on iOS.")
+![Chart series overview](../../../img/ns_ui/bar_series_android.png "Bar series on Android.") ![Chart series overview](../../../img/ns_ui/bar_series_ios.png "Bar series on iOS.")
 
 ### Stack Mode
 There are scenarios in which a single Categorical chart can host multiple series. The {% typedoc_link classes:CategoricalSeries,member:stackMode%} property allows you to define how these series will interact with each other. The following options are available for the `stackMode` property:
@@ -80,7 +80,7 @@ The following XML snippet demonstrates combining three Area series in a single c
 
 Here's how your chart will look like with {% typedoc_link classes:CategoricalSeries,member:stackMode%} set to `Stack100`:
 
-![Chart series overview](images/stacked_area_series_android.png "Bar series on Android.") ![Chart series overview](images/stacked_area_series_ios.png "Bar series on iOS.")
+![Chart series overview](../../../img/ns_ui/stacked_area_series_android.png "Bar series on Android.") ![Chart series overview](../../../img/ns_ui/stacked_area_series_ios.png "Bar series on iOS.")
 
 ## Pie series
 Pie series are a separate type of series that are used in context with a Pie chart. There are two types of Pie series supported by Chart for NativeScript:

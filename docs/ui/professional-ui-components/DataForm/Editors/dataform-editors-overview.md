@@ -20,7 +20,7 @@ If you followed the [getting started]({% slug dataform-start-source %} "RadDataF
 
 #### Figure 1: Some of the editors supported by RadDataForm on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Editors-Android](/controls/NativeScript/DataForm/images/dataform-editors-overview-android.png "Editors in DataForm in Android") ![NativeScriptUI-DataForm-Editors-iOS](/controls/NativeScript/DataForm/images/dataform-editors-overview-ios.png "Editors in DataForm in iOS")
+![NativeScriptUI-DataForm-Editors-Android](../../../img/ns_ui/dataform-editors-overview-android.png "Editors in DataForm in Android") ![NativeScriptUI-DataForm-Editors-iOS](../../../img/ns_ui/dataform-editors-overview-ios.png "Editors in DataForm in iOS")
 
 ## Usage
 

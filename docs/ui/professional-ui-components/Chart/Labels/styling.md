@@ -31,11 +31,11 @@ This is how the chart looks like now:
 
 iOS:
 
-![Axis styling](images/labels_styling_ios.png "iOS")
+![Axis styling](../../../img/ns_ui/labels_styling_ios.png "iOS")
 
 Android:
 
-![Axis styling](images/labels_styling_android.png "Android")
+![Axis styling](../../../img/ns_ui/labels_styling_android.png "Android")
 
 ### Axes Labels
 

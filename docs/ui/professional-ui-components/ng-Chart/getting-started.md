@@ -56,4 +56,4 @@ The `DataService` and `Country` are custom modules used for example purposes so 
 
 This will produce a page showing a Chart that will look like:
 
-![TelerikUI-Chart-Getting-Started](/controls/Angular/Chart/Images/chart-getting-started-android.png "Android")  ![TelerikUI-Chart-Getting-Started](/controls/Angular/Chart/Images/chart-getting-started-ios.png "iOS")
+![TelerikUI-Chart-Getting-Started](../../img/ns_ui/chart-getting-started-android.png "Android")  ![TelerikUI-Chart-Getting-Started](../../img/ns_ui/chart-getting-started-ios.png "iOS")

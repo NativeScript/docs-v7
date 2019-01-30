@@ -16,7 +16,7 @@ The "Swipe Actions" feature supports the use of interactive elements within the 
 Here's an example of how the Swipe Actions behavior looks on Android and iOS:
 
 #### __Figure 1: SwipeActions feature in action on Android and iOS:__
-![RadListView: Swipe Actions](/controls/NativeScript/ListView/images/list-view-swipe-actions_1.png) ![RadListView: Swipe Actions](/controls/NativeScript/ListView/images/list-view-swipe-actions_2.png)
+![RadListView: Swipe Actions](../../img/ns_ui/list-view-swipe-actions_1.png) ![RadListView: Swipe Actions](../../img/ns_ui/list-view-swipe-actions_2.png)
 
 > Please note that the items in this example have an explicitly set white background. When using swipe actions, your items should not be transparent, because otherwise the swipe content would be visible through them.
 
@@ -123,7 +123,7 @@ What we do here is check which swipe direction the user has chosen and trigger a
 Here are two screenshots demonstrating the behavior on Android and iOS:
 
 #### __Figure 2: Multiple swipe actions visualized:__
- ![RadListView: Swipe Actions](/controls/NativeScript/ListView/images/list-view-swipe-actions_1.png) ![RadListView: Swipe Actions](/controls/NativeScript/ListView/images/list-view-swipe-actions_2.png)
+ ![RadListView: Swipe Actions](../../img/ns_ui/list-view-swipe-actions_1.png) ![RadListView: Swipe Actions](../../img/ns_ui/list-view-swipe-actions_2.png)
 
 
 ## References

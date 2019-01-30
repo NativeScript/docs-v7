@@ -21,7 +21,7 @@ Continue reading about each component below or take them for a spin with the {% 
 
 ### SideDrawer
 
-[{% nativescript %}[Documentation]({% slug sidedrawer-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug sidedrawer-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/release/sdk/app/sidedrawer){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/release/sdkAngular/app/sidedrawer){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-sidedrawer)]
+[{% nativescript %}[Documentation]({% slug sidedrawer-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug sidedrawer-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/master/sidedrawer){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/release/sdkAngular/app/sidedrawer){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-sidedrawer)]
 
 The SideDrawer component (known as RadSideDrawer in code) allows you to follow a popular application pattern and show a hidden view which contains navigation UI or common settings. With SideDrawer you may:
 
@@ -36,7 +36,7 @@ The SideDrawer component (known as RadSideDrawer in code) allows you to follow a
 
 ### ListView
 
-[{% nativescript %}[Documentation]({% slug listview-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug listview-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/release/sdk/app/listview){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/release/sdkAngular/app/listview){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-listview)]
+[{% nativescript %}[Documentation]({% slug listview-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug listview-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/master/listview){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/release/sdkAngular/app/listview){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-listview)]
 
 > **NOTE**: The professional ListView component is different from the ListView built in to the core NativeScript modules. Use the professional ListView if you need to take advantage of the advanced functionality listed below.
 

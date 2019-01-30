@@ -29,7 +29,7 @@ And finally, in the XML definition of the page we put a RadCartesianChart, add a
 
 <snippet id='candlestick-series'/>
 
-![Cartesian chart: Scatter Bubble series](images/candlestick_series_android.png " Scatter Bubble series on Android.") ![Cartesian chart: Scatter Bubble series](images/candlestick_series_ios.png "Scatter Bubble series on iOS.")
+![Cartesian chart: Scatter Bubble series](../../../../img/ns_ui/candlestick_series_android.png " Scatter Bubble series on Android.") ![Cartesian chart: Scatter Bubble series](../../../../img/ns_ui/candlestick_series_ios.png "Scatter Bubble series on iOS.")
 
 ## References
 Want to see this scenario in action?

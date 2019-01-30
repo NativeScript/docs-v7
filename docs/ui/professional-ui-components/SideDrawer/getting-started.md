@@ -40,11 +40,11 @@ Content defined in the drawer and main sections has access to the same `bindingC
 The following screenshots demonstrate how the drawer looks like in that case:
 
 #### Figure 1. RadSideDrawer's 'tkMainContent'
-![TelerikUI-SideDrawer-Getting-Started](images/drawer-getting-started-ios-1.png "Side drawer main content on iOS.") ![TelerikUI-SideDrawer-Getting-Started](images/drawer-getting-started-android-1.png "Side drawer main content on Android.")
+![TelerikUI-SideDrawer-Getting-Started](../../img/ns_ui/drawer-getting-started-ios-1.png "Side drawer main content on iOS.") ![TelerikUI-SideDrawer-Getting-Started](../../img/ns_ui/drawer-getting-started-android-1.png "Side drawer main content on Android.")
 
 
 #### Figure 2. RadSideDrawer's 'tkDrawerContent'
-![TelerikUI-SideDrawer-Getting-Started](images/drawer-getting-started-ios-2.png "Drawer content on iOS.") ![TelerikUI-SideDrawer-Getting-Started](images/drawer-getting-started-android-2.png "Drawer content on Android.")
+![TelerikUI-SideDrawer-Getting-Started](../../img/ns_ui/drawer-getting-started-ios-2.png "Drawer content on iOS.") ![TelerikUI-SideDrawer-Getting-Started](../../img/ns_ui/drawer-getting-started-android-2.png "Drawer content on Android.")
 
 ## References
 Want to see this scenario in action?

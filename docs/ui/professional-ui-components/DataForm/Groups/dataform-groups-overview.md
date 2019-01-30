@@ -20,7 +20,7 @@ If you followed the [getting started]({% slug dataform-start-source %} "RadDataF
 
 #### Figure 1: Show the editors in groups in RadDataForm on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Groups-Android](/controls/NativeScript/DataForm/images/dataform-groups-overview-android.png "Groups in RadDataForm in Android") ![NativeScriptUI-DataForm-Groups-iOS](/controls/NativeScript/DataForm/images/dataform-groups-overview-ios.png "Groups in RadDataForm in iOS")
+![NativeScriptUI-DataForm-Groups-Android](../../../img/ns_ui/dataform-groups-overview-android.png "Groups in RadDataForm in Android") ![NativeScriptUI-DataForm-Groups-iOS](../../../img/ns_ui/dataform-groups-overview-ios.png "Groups in RadDataForm in iOS")
 
 ## Add groups with XML
 

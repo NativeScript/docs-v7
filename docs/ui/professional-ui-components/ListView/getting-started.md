@@ -51,7 +51,7 @@ Building and running the application will produce the following result:
 
 #### __Figure 1: Getting started with RadListView for NativeScript:__
 
-![TelerikUI-RadListView-Getting-Started](/controls/NativeScript/ListView/Images/list-view-getting-started_1.png "iOS") ![TelerikUI-RadListView-Getting-Started](/controls/NativeScript/ListView/Images/list-view-getting-started_2.png "Android")
+![TelerikUI-RadListView-Getting-Started](../../img/ns_ui/list-view-getting-started_1.png "iOS") ![TelerikUI-RadListView-Getting-Started](../../img/ns_ui/list-view-getting-started_2.png "Android")
 
 ## References
 Want to see this scenario in action?
