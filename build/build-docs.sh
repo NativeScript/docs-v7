@@ -147,10 +147,11 @@ cd $ROOT
 
 cp -R $MODULES_ROOT"/bin/dist/api-reference" \
 	  $VUEJS_ROOT"/vuejs" \
-	  $NS_UI_API_REF"/ns-ui-api-reference" \
 	  $WWW_ROOT
-
-
+if [ -f $NS_UI_LV"/README.md" ]; then
+	cp -R $NS_UI_API_REF"/ns-ui-api-reference" \
+	  $WWW_ROOT
+fi
 cp -R $NS_DIST_ROOT"/./" $WWW_ROOT
 cp -R $NG_DIST_ROOT"/./" $WWW_ROOT"/angular"
 
