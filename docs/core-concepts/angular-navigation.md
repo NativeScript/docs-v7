@@ -31,7 +31,7 @@ NativeScript brings these to Angular with the following extensions, directives a
 * `page-router-outlet` - this is an alternative to the regular `router-outlet` that serves as a placeholder for where native mobile navigation will occur.
 * `nsRouterLink` - it's an alternative to the regular `routerLink` directive that works with mobile gestures.
 * `RouterExtensions` class - It provides a native mobile navigation API similar to the [``Router``](https://angular.io/api/router/Router) and [``Location``](https://angular.io/api/common/Location) classes.
-* Custom [``RouteReuseStrategy``](https://angular.io/api/router/RouteReuseStrategy) - Ttis strategy forces Angular to cache and reuse components that were loaded in a `page-router-outlet` with accordance to the native navigation lifecycle.
+* Custom [``RouteReuseStrategy``](https://angular.io/api/router/RouteReuseStrategy) - this strategy forces Angular to cache and reuse components that were loaded in a `page-router-outlet` with accordance to the native navigation lifecycle.
 * Custom [``PlatformLocation``](https://angular.io/api/common/PlatformLocation) and [``LocationStrategy``](https://angular.io/api/common/LocationStrategy) - this strategy keeps history per outlet instead of one global linear history.
 
 We will explore each of these in the following sections.
