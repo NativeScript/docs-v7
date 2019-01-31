@@ -99,4 +99,4 @@ export default {
 
 The following images demonstrate how this setup looks like in a running application:
 
-![Chart Legend: Android](images/chart-legend-android.png "Chart Legend: Android") ![Chart Legend: iOS](images/chart-legend-ios.png "Chart Legend: iOS")
+![Chart Legend: Android](../../../../ui/img/ns_ui/chart-legend-android.png "Chart Legend: Android") ![Chart Legend: iOS](../../../../ui/img/ns_ui/chart-legend-ios.png "Chart Legend: iOS")

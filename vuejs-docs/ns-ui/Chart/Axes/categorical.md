@@ -79,4 +79,4 @@ You can get and set the current value with the {% typedoc_link classes:Categoric
 Defines the step at which major ticks are generated. This property also affects axis labels as they are generated on a per major tick basis. You can get or set the value with the **majorTickInterval** property. For example, if you don't want to display all ticks, but instead only half of them (display the first, third, fifth, etc. ticks), you should set the major tick interval to 2.
 
 This is how the axis in this example looks like:
-![Cartesian chart: Pie series](images/categorical_axis_android.png "CategoricalAxis on Android.") ![Cartesian chart: Pie series](images/categorical_axis_ios.png "CategoricalAxis on iOS.")
+![Cartesian chart: Pie series](../../../../ui/img/ns_ui/categorical_axis_android.png "CategoricalAxis on Android.") ![Cartesian chart: Pie series](../../../../ui/img/ns_ui/categorical_axis_ios.png "CategoricalAxis on iOS.")

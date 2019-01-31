@@ -70,4 +70,4 @@ export default {
 };
 ```
 
-![Cartesian chart: Scatter Bubble series](images/candlestick_series_android.png " Scatter Bubble series on Android.") ![Cartesian chart: Scatter Bubble series](images/candlestick_series_ios.png "Scatter Bubble series on iOS.")
+![Cartesian chart: Scatter Bubble series](../../../../../ui/img/ns_ui/candlestick_series_android.png " Scatter Bubble series on Android.") ![Cartesian chart: Scatter Bubble series](../../../../../ui/img/ns_ui/candlestick_series_ios.png "Scatter Bubble series on iOS.")

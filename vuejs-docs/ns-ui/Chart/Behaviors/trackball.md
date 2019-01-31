@@ -41,7 +41,7 @@ To define a trackball on your {% typedoc_link classes:RadCartesianChart %} you n
 Depending on your current setup, the trackball will display information about the datapoints within the chart in a different manner. For example, in a {% typedoc_link classes:RangeBarSeries %} the trackball will display the range values alongside with the current category value. In a {% typedoc_link classes:OhlcSeries %} or {% typedoc_link classes:CandlestickSeries %} the trackball will display the Open, High, Low and Close values alongside with the current category value. Here's an example:
 
 #### Figure 1: Trackball shown in action on iOS and Android
-![TelerikUI-Chart-Behaviors-Trackball](/controls/Angular/Chart/Behaviors/Images/trackball_candlestick_ios.png "Trackball with Candlestick Series on iOS")![TelerikUI-Chart-Behaviors-Trackball](/controls/Angular/Chart/Behaviors/Images/trackball_candlestick_android.png "Trackball with Candlestick Series on Android")
+![TelerikUI-Chart-Behaviors-Trackball](../../../../ui/img/ns_ui/trackball_candlestick_ios.png "Trackball with Candlestick Series on iOS")![TelerikUI-Chart-Behaviors-Trackball](../../../../ui/img/ns_ui/trackball_candlestick_android.png "Trackball with Candlestick Series on Android")
 
 # Features
 

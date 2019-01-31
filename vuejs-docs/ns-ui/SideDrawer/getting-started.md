@@ -83,8 +83,8 @@ const MyComponent = {
 ```
 
 #### Figure 1. RadSideDrawer's '~mainContent'
-![TelerikUI-SideDrawer-Getting-Started](/controls/NativeScript/SideDrawer/images/drawer-getting-started-ios-1.png "Side drawer main content on iOS.") ![TelerikUI-SideDrawer-Getting-Started](/controls/NativeScript/SideDrawer/images/drawer-getting-started-android-1.png "Side drawer main content on Android.")
+![TelerikUI-SideDrawer-Getting-Started](../../../ui/img/ns_ui/drawer-getting-started-ios-1.png "Side drawer main content on iOS.") ![TelerikUI-SideDrawer-Getting-Started](../../../ui/img/ns_ui/drawer-getting-started-android-1.png "Side drawer main content on Android.")
 
 
 #### Figure 2. RadSideDrawer's '~drawerContent'
-![TelerikUI-SideDrawer-Getting-Started](/controls/NativeScript/SideDrawer/images/drawer-getting-started-ios-2.png "Drawer content on iOS.") ![TelerikUI-SideDrawer-Getting-Started](/controls/NativeScript/SideDrawer/images/drawer-getting-started-android-2.png "Drawer content on Android.")
+![TelerikUI-SideDrawer-Getting-Started](../../../ui/img/ns_ui/drawer-getting-started-ios-2.png "Drawer content on iOS.") ![TelerikUI-SideDrawer-Getting-Started](../../../ui/img/ns_ui/drawer-getting-started-android-2.png "Drawer content on Android.")

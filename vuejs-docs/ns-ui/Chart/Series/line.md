@@ -63,4 +63,4 @@ export default {
 
 Here's how your Line chart should look like:
 
-![Cartesian chart: Line series](images/line_series_android.png "Bar series on Android.") ![Cartesian chart: Line series](images/line_series_ios.png "Bar series on iOS.")
+![Cartesian chart: Line series](../../../../ui/img/ns_ui/line_series_android.png "Bar series on Android.") ![Cartesian chart: Line series](../../../../ui/img/ns_ui/line_series_ios.png "Bar series on iOS.")

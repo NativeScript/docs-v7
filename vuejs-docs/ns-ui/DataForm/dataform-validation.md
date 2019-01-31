@@ -21,7 +21,7 @@ If you followed the [getting started]({% slug dataform-gettingstarted-vue %} "Ra
 
 #### Figure 1: How validated field looks on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Validation-Android](/controls/NativeScript/DataForm/images/dataform-validation-overview-android.png "Validation in DataForm in Android") ![NativeScriptUI-DataForm-Validation-iOS](/controls/NativeScript/DataForm/images/dataform-validation-overview-ios.png "Validation in DataForm in iOS")
+![NativeScriptUI-DataForm-Validation-Android](../../../ui/img/ns_ui/dataform-validation-overview-android.png "Validation in DataForm in Android") ![NativeScriptUI-DataForm-Validation-iOS](../../../ui/img/ns_ui/dataform-validation-overview-ios.png "Validation in DataForm in iOS")
 
 ## JSON Metadata
 

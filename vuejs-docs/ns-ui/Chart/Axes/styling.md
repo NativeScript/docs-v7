@@ -58,4 +58,4 @@ export default {
 ```
 
 This is how the chart looks like now:
-![Axis styling](images/axis_styling_android.png "Android") ![Axis styling](images/axis_styling_ios.png "iOS")
+![Axis styling](../../../../ui/img/ns_ui/axis_styling_android.png "Android") ![Axis styling](../../../../ui/img/ns_ui/axis_styling_ios.png "iOS")

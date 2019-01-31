@@ -87,4 +87,4 @@ export default {
 ```
 
 This is how the example looks like:
-![Cartesian chart: Pie series](images/pie_series_android.png "Pie series on Android.") ![Cartesian chart: Pie series](images/pie_series_ios.png "Pie series on iOS.")
+![Cartesian chart: Pie series](../../../../ui/img/ns_ui/pie_series_android.png "Pie series on Android.") ![Cartesian chart: Pie series](../../../../ui/img/ns_ui/pie_series_ios.png "Pie series on iOS.")

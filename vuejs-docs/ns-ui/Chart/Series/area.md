@@ -65,4 +65,4 @@ export default {
 
 The final result is shown in the two images (android and ios) below.
 
-![Cartesian chart: Area series](images/area_series_android.png "Area series on Android.") ![Cartesian chart: Area series](images/area_series_ios.png "Area series on iOS.")
+![Cartesian chart: Area series](../../../../ui/img/ns_ui/area_series_android.png "Area series on Android.") ![Cartesian chart: Area series](../../../../ui/img/ns_ui/area_series_ios.png "Area series on iOS.")

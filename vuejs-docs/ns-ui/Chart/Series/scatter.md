@@ -69,4 +69,4 @@ export default {
 };
 ```
 
-![Cartesian chart: Scatter series](images/scatter_series_android.png " Scatter series on Android.") ![Cartesian chart: Scatter series](images/scatter_series_ios.png "Scatter series on iOS.")
+![Cartesian chart: Scatter series](../../../../ui/img/ns_ui/scatter_series_android.png " Scatter series on Android.") ![Cartesian chart: Scatter series](../../../../ui/img/ns_ui/scatter_series_ios.png "Scatter series on iOS.")

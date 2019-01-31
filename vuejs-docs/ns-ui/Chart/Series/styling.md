@@ -107,6 +107,6 @@ Our palette consists of a single entry that defines values for {% typedoc_link c
 
 The images below demonstrates the result of applying this palette to the Bar series:
 
-![Chart styling: Bar series](images/series_styling_android.png "Android") ![Chart styling: Bar series](images/series_styling_ios.png "iOS")
+![Chart styling: Bar series](../../../../ui/img/ns_ui/series_styling_android.png "Android") ![Chart styling: Bar series](../../../../ui/img/ns_ui/series_styling_ios.png "iOS")
 
 In this example the second palette values will be used when the series or data point is selected. If palette for selected state is not explicitly defined the default colors will be used.

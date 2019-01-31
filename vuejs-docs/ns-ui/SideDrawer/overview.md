@@ -15,7 +15,7 @@ The hidden view can be displayed with a flick gesture and can be shown from any 
 
 The next screenshots showcase how the {% typedoc_link classes:RadSideDrawer %} could look on both iOS and Android:
 
-![TelerikUI-SideDrawer-Overview](../../../docs/docs/ui/img/ns_ui/drawer-overview-android.png "Side drawer overview.") ![TelerikUI-SideDrawer-Overview](../../../docs/docs/ui/img/ns_ui/drawer-overview-ios.png "Side drawer overview.")
+![TelerikUI-SideDrawer-Overview](../../../ui/img/ns_ui/drawer-overview-android.png "Side drawer overview.") ![TelerikUI-SideDrawer-Overview](../../../ui/img/ns_ui/drawer-overview-ios.png "Side drawer overview.")
 
 ## Elements
 Represent the major elements:

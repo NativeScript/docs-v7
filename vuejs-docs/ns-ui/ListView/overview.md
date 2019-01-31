@@ -13,7 +13,7 @@ publish: true
 - different layouts and orientations
 - smart defaults for many gestures - select on long press, execution of special action on swipe, reorder of items on long press and drag, refreshing the list on swipe or loading more items only when needed.
 
-![RadListView: Overview](/controls/NativeScript/ListView/Images/list-view-overview_2.png "iOS") ![RadListView: Overview](/controls/NativeScript/ListView/Images/list-view-overview_3.png "iOS")
+![RadListView: Overview](../../../ui/img/ns_ui/list-view-overview_2.png "iOS") ![RadListView: Overview](../../../ui/img/ns_ui/list-view-overview_3.png "iOS")
 
 ## Features
 
@@ -27,7 +27,7 @@ publish: true
 
 All layouts are virtualized and optimized for the mobile environment.
 
-![RadListView: Overview](/controls/NativeScript/ListView/Images/list-view-overview_1.png "Android")
+![RadListView: Overview](../../../ui/img/ns_ui/list-view-overview_1.png "Android")
 
 ### Load on demand
 **Load on demand** is a behavior in which items from the source are loaded on demand depending on the scrolling position of the RadListView. This feature is particularly useful in situations where data is downloaded and visualized from a service in portions upon request from your end users. Consider a list of apps in a mobile app store where new items are continuously added when scrolling down the list. Read more about load-on-demand here: [**ListView: Item Load on Demand**]({% slug listview-features-load-on-demand-vue %})

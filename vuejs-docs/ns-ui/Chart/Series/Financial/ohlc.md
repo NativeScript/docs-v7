@@ -71,4 +71,4 @@ export default {
 };
 ```
 
-![Cartesian chart: OHLC series](images/ohlc_series_anroid.png " Scatter Bubble series on Android.") ![Cartesian chart: OHLC series](images/ohlc_series_ios.png "Scatter Bubble series on iOS.")
+![Cartesian chart: OHLC series](../../../../../ui/img/ns_ui/ohlc_series_anroid.png " Scatter Bubble series on Android.") ![Cartesian chart: OHLC series](../../../../../ui/img/ns_ui/ohlc_series_ios.png "Scatter Bubble series on iOS.")

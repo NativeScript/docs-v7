@@ -46,4 +46,4 @@ export default {
 
 The following two screenshots demonstrate how {% typedoc_link classes:RadCalendar %} looks like when a `ru-RU` is defined as a locale:
 
-![RadCalendar: Localization on Android](/controls/Vue/Calendar/images/calendar-localization-android.png "Android") ![RadCalendar: Localization on iOS](/controls/Vue/Calendar/images/calendar-localization-ios.png "iOS")
+![RadCalendar: Localization on Android](../../../ui/img/ns_ui/calendar-localization-android.png "Android") ![RadCalendar: Localization on iOS](../../../ui/img/ns_ui/calendar-localization-ios.png "iOS")

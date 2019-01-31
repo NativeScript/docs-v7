@@ -107,4 +107,4 @@ export default {
 };
 ```
 
-![Cartesian chart: Bubble series](images/bubble_series_android.png "Bubble series on Android.") ![Cartesian chart: Bubble series](images/bubble_series_ios.png "Bubble series on iOS.")
+![Cartesian chart: Bubble series](../../../../ui/img/ns_ui/bubble_series_android.png "Bubble series on Android.") ![Cartesian chart: Bubble series](../../../../ui/img/ns_ui/bubble_series_ios.png "Bubble series on iOS.")

@@ -65,4 +65,4 @@ export default {
 
 This will produce a page showing a Chart that will look like:
 
-![TelerikUI-Chart-Getting-Started](/controls/angular/Chart/Images/chart-getting-started-android.png "Android")  ![TelerikUI-Chart-Getting-Started](/controls/angular/Chart/Images/chart-getting-started-ios.png "iOS")
+![TelerikUI-Chart-Getting-Started](../../../ui/img/ns_ui/chart-getting-started-android.png "Android")  ![TelerikUI-Chart-Getting-Started](../../../ui/img/ns_ui/chart-getting-started-ios.png "iOS")

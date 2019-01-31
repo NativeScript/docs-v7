@@ -83,4 +83,4 @@ If you run the application now, you should see the default editor for each prope
 
 #### Figure 1: The basic RadDataForm on Android (left) and iOS (right)
 
-![NativeScriptUI-DataForm-Getting-Started-Android](/controls/NativeScript/DataForm/images/dataform-start-source-android.png "DataForm in Android") ![NativeScriptUI-DataForm-Getting-Started-iOS](/controls/NativeScript/DataForm/images/dataform-start-source-ios.png "DataForm in iOS")
+![NativeScriptUI-DataForm-Getting-Started-Android](../../../ui/img/ns_ui/dataform-start-source-android.png "DataForm in Android") ![NativeScriptUI-DataForm-Getting-Started-iOS](../../../ui/img/ns_ui/dataform-start-source-ios.png "DataForm in iOS")

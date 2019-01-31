@@ -21,7 +21,7 @@ Continue reading about each component below or take them for a spin with the {% 
 
 ### SideDrawer
 
-[{% nativescript %}[Documentation]({% slug sidedrawer-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug sidedrawer-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/master/sidedrawer){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/release/sdkAngular/app/sidedrawer){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-sidedrawer)]
+[{% nativescript %}[Documentation]({% slug sidedrawer-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug sidedrawer-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/master/sidedrawer){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/sidedrawer){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-sidedrawer)]
 
 The SideDrawer component (known as RadSideDrawer in code) allows you to follow a popular application pattern and show a hidden view which contains navigation UI or common settings. With SideDrawer you may:
 
@@ -36,7 +36,7 @@ The SideDrawer component (known as RadSideDrawer in code) allows you to follow a
 
 ### ListView
 
-[{% nativescript %}[Documentation]({% slug listview-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug listview-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/master/listview){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/release/sdkAngular/app/listview){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-listview)]
+[{% nativescript %}[Documentation]({% slug listview-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug listview-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/master/listview){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/listview){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-listview)]
 
 > **NOTE**: The professional ListView component is different from the ListView built in to the core NativeScript modules. Use the professional ListView if you need to take advantage of the advanced functionality listed below.
 
@@ -55,7 +55,7 @@ The ListView component (known as RadListView in code) is a virtualizing list com
 
 ### Calendar
 
-[{% nativescript %}[Documentation]({% slug calendar-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug calendar-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/release/sdk/app/calendar){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/release/sdkAngular/app/calendar){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-calendar)]
+[{% nativescript %}[Documentation]({% slug calendar-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug calendar-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/master/calendar){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/calendar){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-calendar)]
 
 The Calendar component (known as RadCalendar in code) is a highly customizable native calendar abstraction that exposes a unified API, covering:
 
@@ -69,7 +69,7 @@ The Calendar component (known as RadCalendar in code) is a highly customizable n
 
 ### Chart
 
-[{% nativescript %}[Documentation]({% slug chart-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug chart-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/release/sdk/app/chart){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/release/sdkAngular/app/chart){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-chart)]
+[{% nativescript %}[Documentation]({% slug chart-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug chart-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/master/chart){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/chart){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-chart)]
 
 The Chart component (known as RadChart in code) can be used to visualize data in a human-readable way through lines, areas, bars, pies, and more. Some features include:
 
@@ -89,7 +89,7 @@ The Chart component (known as RadChart in code) can be used to visualize data in
 
 ### AutoCompleteTextView
 
-[{% nativescript %}[Documentation]({% slug autocomplete-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug autocomplete-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/release/sdk/app/autocomplete){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/release/sdkAngular/app/autocomplete){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-autocomplete)]
+[{% nativescript %}[Documentation]({% slug autocomplete-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug autocomplete-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/master/autocomplete){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/autocomplete){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-autocomplete)]
 
 The AutoCompleteTextView component (known as RadAutoCompleteTextView in code) offers suggested options to your users based on characters they type. It provides multiple means for easy customization and data management, including:
 
@@ -103,7 +103,7 @@ The AutoCompleteTextView component (known as RadAutoCompleteTextView in code) of
 
 ### DataForm
 
-[{% nativescript %}[Documentation]({% slug dataform-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug dataform-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/release/sdk/app/dataform){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/release/sdkAngular/app/dataform){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-dataform)]
+[{% nativescript %}[Documentation]({% slug dataform-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug dataform-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/dataform){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-dataform)]
 
 The DataForm component (known as RadDataForm in code) provides an easy and versatile approach for building mobile forms based on a provided data object's public members. Use DataForm to:
 
@@ -118,7 +118,7 @@ The DataForm component (known as RadDataForm in code) provides an easy and versa
 
 ### Gauges
 
-[{% nativescript %}[Documentation]({% slug gauges-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug gauges-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/release/sdk/app/gauges){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/release/sdkAngular/app/gauges){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-gauge)]
+[{% nativescript %}[Documentation]({% slug gauges-overview %}){% endnativescript %}{% angular %}[Documentation]({% slug gauges-overview-angular %}){% endangular %}] [{% nativescript %}[Sample Code](https://github.com/telerik/nativescript-ui-samples/tree/master/gauge){% endnativescript %}{% angular %}[Sample Code](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/gauge){% endangular %}][[Download from npm](https://www.npmjs.com/package/nativescript-ui-gauge)]
 
 The Gauges component (known as RadRadialGauge in code) allows you to display the current status of a value within a range of upper and lower bounds, illustrate progress towards a goal, or a summary of a fluctuating metric. With the gauges component you may:
 

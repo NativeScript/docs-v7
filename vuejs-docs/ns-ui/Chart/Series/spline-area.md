@@ -61,4 +61,4 @@ export default {
 };
 ```
 
-![Cartesian chart: Spline series](images/chart_series_spline_area_android.png "Spline Area series on Android.") ![Cartesian chart: Spline Area series](images/chart_series_spline_area_ios.png "Spline series on iOS.")
+![Cartesian chart: Spline series](../../../../ui/img/ns_ui/chart_series_spline_area_android.png "Spline Area series on Android.") ![Cartesian chart: Spline Area series](../../../../ui/img/ns_ui/chart_series_spline_area_ios.png "Spline series on iOS.")
