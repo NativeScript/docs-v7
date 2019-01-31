@@ -70,25 +70,25 @@ navigation:
         expanded: true
     "ns-ui/SideDrawer":
         position: 10
-        title: "SideDrawer"
+        title: "RadSideDrawer"
     "ns-ui/ListView":
         position: 20
-        title: "ListView"
+        title: "RadListView"
     "ns-ui/Calendar":
         position: 30
-        title: "Calendar"
+        title: "RadCalendar"
     "ns-ui/Chart":
         position: 40
-        title: "Chart"
+        title: "RadChart"
     "ns-ui/AutoCompleteTextView":
         position: 50
-        title: "AutoCompleteTextView"
+        title: "RadAutoCompleteTextView"
     "ns-ui/DataForm":
         position: 60
-        title: "DataForm"
+        title: "RadDataForm"
     "ns-ui/Gauge":
         position: 70
-        title: "Gauge"
+        title: "RadGauge"
 gems:
     - jekyll-unsanitize
 # Feedback Form Google Sheet ID

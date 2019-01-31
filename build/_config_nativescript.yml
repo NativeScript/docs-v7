@@ -16,22 +16,22 @@ navigation:
 ## List your directory names and order here, like this:
     "ui/professional-ui-components/SideDrawer":
         position: 30
-        title: "SideDrawer"
+        title: "RadSideDrawer"
     "ui/professional-ui-components/ListView":
         position: 40
-        title: "ListView"
+        title: "RadListView"
     "ui/professional-ui-components/Calendar":
         position: 50
-        title: "Calendar"
+        title: "RadCalendar"
     "ui/professional-ui-components/Chart":
         position: 60
-        title: "Chart"
+        title: "RadChart"
     "ui/professional-ui-components/AutoCompleteTextView":
         position: 70
-        title: "AutoCompleteTextView"
+        title: "RadAutoCompleteTextView"
     "ui/professional-ui-components/DataForm":
         position: 80
-        title: "DataForm"
+        title: "RadDataForm"
     "ui/professional-ui-components/DataForm/GettingStarted":
         position: 20
         title: "Getting Started"
@@ -43,7 +43,7 @@ navigation:
         position: 50
     "ui/professional-ui-components/Gauge":
         position: 90
-        title: "Gauge"
+        title: "RadGauge"
 # The google services configuration
 google_tag_manager: GTM-W58JDD
 google_custom_search: '001595215763381649090:asl7kpbijam'

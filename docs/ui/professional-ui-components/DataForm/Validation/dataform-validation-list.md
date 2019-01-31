@@ -3,12 +3,12 @@ title: Validators List
 page_title: RadDataForm Validators List | Progress NativeScript UI Documentation
 description: This article explains how to use the validators in RadDataForm for NativeScript.
 slug: dataform-validation-list
-tags: raddataform, validation, dataform, validators
+tags: raddataform, validation, dataform, validators, nativescript, professional, ui
 position: 1
 publish: true
 ---
 
-# RadDataForm: Validators List
+# RadDataForm Validators List
 
 If you followed the [getting started]({% slug dataform-start-source %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. From the [validation overview]({% slug dataform-validation-overview %} "RadDataForm validation overview") you should have become acquainted with the validation feature in {% typedoc_link classes:RadDataForm %}. This article will present you with the validators that you can use to validate your fields.
 

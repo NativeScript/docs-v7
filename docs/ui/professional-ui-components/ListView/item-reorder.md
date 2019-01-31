@@ -3,12 +3,11 @@ title: Item Reorder
 page_title: RadListView Item Reorder | Progress NativeScript UI Documentation
 description: This article discusses the item reorder feature of RadListView.
 slug: listview-features-item-reorder
-tags: radlistview, reorder
+tags: radlistview, reorder, nativescript, professional, ui
 position: 7
 publish: true
-previous_url: controls/listview/item-reorder
 ---
-# RadListView: Item Reorder
+# RadListView Item Reorder
 Reordering items in a list is a common scenario in mobile apps. For example, a list view visualizing tasks can allow reordering the tasks to specify their priority. RadListView allows you to enable this functionality by setting a single property.
 
 ## Enabling Item Reorder

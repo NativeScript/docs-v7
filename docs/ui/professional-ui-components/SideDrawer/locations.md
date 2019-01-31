@@ -3,12 +3,11 @@ title: Location
 page_title: RadSideDrawer Location | Progress NativeScript UI Documentation
 description: This article discusses how drawer location is set on RadSideDrawer.
 slug: sidedrawer-features-location
-tags: sidedrawer, features, drawer, location
+tags: sidedrawer, features, drawer, location, nativescript, professional, ui
 position: 4
 publish: true
-previous_url: controls/sidedrawer/locations
 ---
-# RadSideDrawer: Location
+# RadSideDrawer Location
 Depending on the application scenario, {% typedoc_link classes:RadSideDrawer %} can be configured to display at a specific location on the screen. This also changes the way the transition animation is applied. There are four available drawer locations:
 
 - {% typedoc_link enums:SideDrawerLocation,member:Top %}

@@ -3,12 +3,12 @@ title: Аxis styling
 page_title: Axis Styling | Progress NativeScript UI Documentation
 description: This article explains how the visual appearance of Telerik Chart's axis for NativeScript can be customized.
 slug: axis-styling-angular
-tags: chart, overview, styling, angular
+tags: chart, overview, styling, angular, nativescript, professional, ui
 position: 8
 publish: true
 ---
 
-### Styling: Axes
+# RadChart Axes Styling
 Styling the chart axes is done by using the corresponding customization properties exposed by the axes. All axes used in Telerik Chart for NativeScript define the following properties:
 
 - {% typedoc_link classes:CartesianAxis,member:lineColor%} - defines the color of the axis' line

@@ -3,12 +3,12 @@ title: Editors Overview
 page_title: RadDataForm Editors Overview | Progress NativeScript UI Documentation
 description: An article which lists the editors supported by RadDataForm for NativeScript and demonstrates their usage.
 slug: dataform-editors-overview
-tags: raddataform, editors, dataform
+tags: raddataform, editors, dataform, nativescript, professional, ui
 position: 0
 publish: true
 ---
 
-# RadDataForm: Editors Overview
+# RadDataForm Editors Overview
 
 If you followed the [getting started]({% slug dataform-start-source %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. This article will explain how to change the editor that is used for a property, what editors are supported by {% typedoc_link classes:RadDataForm %} and how to use them.
 

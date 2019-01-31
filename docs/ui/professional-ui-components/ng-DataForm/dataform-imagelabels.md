@@ -3,12 +3,12 @@ title: Image Labels
 page_title: RadDataForm Image Labels | Progress NativeScript UI Documentation
 description: An article which demonstrates how to add an image as label in RadDataForm for NativeScript.
 slug: dataform-imagelabels-angular
-tags: raddataform, imagelabels, dataform, labels, angular
+tags: raddataform, imagelabels, dataform, labels, angular, nativescript, professional, ui
 position: 60
 publish: true
 ---
 
-# RadDataForm: Image Labels
+# RadDataForm Image Labels
 
 If you followed the [getting started]({% slug dataform-start-source-angular %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. This article will explain how to remove the text labels of the editors and add appropriate images instead.
 

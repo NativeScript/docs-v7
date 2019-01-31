@@ -3,15 +3,15 @@ title: Pie
 page_title: Pie series | Progress NativeScript UI Documentation
 description: This article gives a basic introduction of Pie series and continues with a sample scenario of how Pie series are used.
 slug: chart-series-pie-angular
-tags: series, cartesian, pie, angular
+tags: series, cartesian, pie, angular, nativescript, professional, ui
 position: 10
 publish: true
 ---
 
-# Pie series: Overview
+# RadChart Pie Series
 Unlike all other series, {% typedoc_link classes:PieSeries %} do not require axes. They visualize each data point as pie slices with arc size directly proportional to the magnitude of the raw data point's value. Pie slices represent data in one direction contrasting with the other series which represent data in two dimensions.
 
-## Example
+#### Example
 Just like with all angular 'pages' let's start with the `Component` in which we will place our {% typedoc_link classes:RadPieChart %} instance. We create a basic angular `Component` that contains a collection of objects provided by an custom service, which will be used by the chart to provide intuitive data visualization.
 
 The service is a simple 'mock' of an backend call that will return an array of objects:

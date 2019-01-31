@@ -3,13 +3,12 @@ title: Calendar view modes
 page_title: RadCalendar view modes | Progress NativeScript UI Documentation
 description: A view modes usage guide page for RadCalendar for NativeScript.
 slug: calendar-view-modes
-tags: radcalendar, view, modes, calendar, cells
+tags: radcalendar, view, modes, calendar, cells, nativescript, professional, ui
 position: 5
 publish: true
-previous_url: controls/calendar/view-modes
 ---
 
-# View modes: Overview
+# RadCalendar View Modes
 {% typedoc_link classes:RadCalendar %} supports four view mode types that are useful in different application scenarios. Setting a view mode is done via the {% typedoc_link classes:RadCalendar,member:viewMode %} property. This property accepts values defined in the {% typedoc_link modules:CalendarViewMode %} enum. The following view modes are available:
 
 - {% typedoc_link modules:CalendarViewMode,member:Week %} - displays the dates within one week

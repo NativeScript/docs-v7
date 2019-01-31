@@ -3,12 +3,12 @@ title: Provide the Source
 page_title: RadDataForm Provide the Source | Progress NativeScript UI Documentation
 description: A getting started page of RadDataForm for NativeScript. This article explains what are the steps to create a RadDataForm instance from scratch and provide the source object that will be edited
 slug: dataform-gettingstarted-vue
-tags: raddataform, gettingstarted, dataform, source, Vue
+tags: raddataform, gettingstarted, dataform, source, Vue, nativescript, professional, ui
 position: 20
 publish: true
 ---
 
-# RadDataForm: Provide the Source
+# RadDataForm Provide the Source
 
 This article will guide you through the process of adding a {% typedoc_link classes:RadDataForm %} instance to a page in a {N} + Vue application and using it to edit the properties of a business object.
 

@@ -3,16 +3,15 @@ title: Populating with Data
 page_title: RadCalendar Populating with data | Progress NativeScript UI Documentation
 description: An data populating guide page for RadCalendar for NativeScript.
 slug: calendar-populating-with-data
-tags: radcalendar, data, populating, calendar, calendarevent
+tags: radcalendar, data, populating, calendar, calendarevent, nativescript, professional, ui
 position: 3
 publish: true
-previous_url: controls/calendar/populating-with-data
 ---
 
-# RadCalendar: Populating with data
+# Populating RadCalendar with Data
 RadCalendar allows you to define a list of events for a particular date. This is done by using the `eventSource` property. This article describes the steps you need to take in order to feed {% typedoc_link classes:RadCalendar %} with your custom events using a events source.
 
-## The {% typedoc_link classes:CalendarEvent %} class
+### The CalendarEvent Class
 Feeding events into {% typedoc_link classes:RadCalendar %} is done via instances of the {% typedoc_link classes:CalendarEvent %} class. The {% typedoc_link classes:CalendarEvent %} class is model describing a single event. It exposes properties allowing you to specify things like:
 
 - start time of the event
@@ -24,7 +23,7 @@ To create instances of the {% typedoc_link classes:CalendarEvent %} class you ne
 
 <snippet id='calendar-calendar-require'/>
 
-## Define a list of events and bind them to `RadCalendar`
+## Define a List of Events and Bind Them to `RadCalendar`
 Assuming we have imported the calendar module as instructed above, we can now create an `Array` of events and assign it to the {% typedoc_link classes:RadCalendar,member:eventSource %} property of {% typedoc_link classes:RadCalendar %}:
 
 <snippet id='calendar-calendar-event-instance'/>
@@ -39,7 +38,7 @@ Running the application, the following is shown on iOS and Android:
 
 ![TelerikUI-RadCalendar-Populating-With-Data](../../img/ns_ui/calendar-populating-with-data_android.png "iOS") ![TelerikUI-RadCalendar-Populating-With-Data](../../img/ns_ui/calendar-populating-with-data_ios.png "Android")
 
-## Event view modes
+## Event View Modes
 By default, events for each date cell are shown as dots (iOS) or squares with a summary (Android). You can customize this behavior by choosing one of the following event view modes:
 
 - {% typedoc_link modules:CalendarEventsViewMode,member:None %} - the default option

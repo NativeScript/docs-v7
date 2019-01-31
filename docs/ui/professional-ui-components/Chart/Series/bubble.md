@@ -3,13 +3,12 @@ title: Bubble
 page_title: Bubble series | Progress NativeScript UI Documentation
 description: This article gives a basic introduction of Bubble series and continues with a sample scenario of how Bubble series are used.
 slug: chart-series-bubble
-tags: series, cartesian, bubble
+tags: series, cartesian, bubble, nativescript, professional, ui
 position: 8
 publish: true
-previous_url: controls/chart/series/bubble
 ---
 
-# Bubble series: Overview
+# RadChart Bubble Series
 Bubble series are {% typedoc_link classes:CategoricalSeries %} and are used in the context of a {% typedoc_link classes:RadCartesianChart %}, {% typedoc_link classes:CategoricalAxis %} and {% typedoc_link classes:LinearAxis %}. On top of the requirements for a {% typedoc_link classes:CategoricalAxis %}, {% typedoc_link classes:BubbleSeries %} require an additional setup parameter which should come from the data source that defines the *bubble size*. The value for this parameter is supplied by defining the {% typedoc_link classes:BubbleSeries,member:bubbleSizeProperty%}.
 
 ## Customization

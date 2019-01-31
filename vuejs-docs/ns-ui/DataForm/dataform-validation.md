@@ -3,12 +3,12 @@ title: Validation
 page_title: RadDataForm Validation | Progress NativeScript UI Documentation
 description: This article explains how to use the validation in RadDataForm for NativeScript.
 slug: dataform-validation-overview-vue
-tags: raddataform, validation, dataform, vue
+tags: raddataform, validation, dataform, vue, nativescript, professional, ui
 position: 60
 publish: true
 ---
 
-# RadDataForm: Validation Overview
+# RadDataForm Validation Overview
 
 If you followed the [getting started]({% slug dataform-gettingstarted-vue %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. Sometimes you may need to validate if the user's input follows some requirements - for example, not leave an empty field in a registration form or provide a valid email. This article will present you the validation feature in {% typedoc_link classes:RadDataForm %} and show you how you can use the existing validators and create custom ones.
 

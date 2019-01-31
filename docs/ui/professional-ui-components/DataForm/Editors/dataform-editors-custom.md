@@ -3,12 +3,12 @@ title: Custom Editors
 page_title: RadDataForm Custom Editors | Progress NativeScript UI Documentation
 description: An article which explains how to create a custom editor for RadDataForm for NativeScript.
 slug: dataform-editors-custom
-tags: raddataform, editors, dataform, custom
+tags: raddataform, editors, dataform, custom, nativescript, professional, ui
 position: 3
 publish: true
 ---
 
-# RadDataForm: Custom Editors
+# RadDataForm Custom Editors
 
 If you followed the [getting started]({% slug dataform-start-source %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. The [editors list]({% slug dataform-editors-list %} "Editors List in RadDataForm for NativeScript") article demonstrated the available editors. This article will show you what to do if the editor you would like to use is not on the list with available editors. For example, if we wanted to have a `Button` to change the value of the property age in this example, we could use <a href="https://developer.android.com/reference/android/widget/Button.html" target="_blank">android.widget.Button</a> in Android and <a href="https://developer.apple.com/reference/uikit/uiview" target="_blank">UIButton</a> in iOS. 
 

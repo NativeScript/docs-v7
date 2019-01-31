@@ -3,12 +3,12 @@ title: Group Layouts
 page_title: RadDataForm Group Layouts | Progress NativeScript UI Documentation
 description: This article explains how the change the layout of the groups in RadDataForm for NativeScript.
 slug: dataform-groups-layouts
-tags: raddataform, styling, dataform, layout
+tags: raddataform, styling, dataform, layout, nativescript, professional, ui
 position: 1
 publish: true
 ---
 
-# RadDataForm: Group Layouts
+# RadDataForm Group Layouts
 
 If you followed the [getting started]({% slug dataform-start-source %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. The [Groups Overview]({% slug dataform-groups-overview %} "RadDataForm Groups Overview") article demonstrated how to show the editors in groups. This article will show you how to change the layout of each group in the {% typedoc_link classes:RadDataForm,member:groups%}.
 

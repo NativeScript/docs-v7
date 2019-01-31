@@ -3,12 +3,11 @@ title: Item Selection
 page_title: RadListView Item Selection | Progress NativeScript UI Documentation
 description: This article gives insight how RadListView item selection works.
 slug: listview-features-item-selection
-tags: listview, selection, multiselect
+tags: listview, selection, multiselect, nativescript, professional, ui
 position: 10
 publish: true
-previous_url: controls/listview/selection
 ---
-# RadListView: Item Selection
+# RadListView Item Selection
 {% typedoc_link classes:RadListView %} implements a mechanism for selecting or deselecting items. When using the selection mechanism, two selection modes are available:
 - Single selection
 - Multiple selection

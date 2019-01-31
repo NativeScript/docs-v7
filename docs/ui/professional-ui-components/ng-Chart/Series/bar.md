@@ -3,18 +3,18 @@ title: Bar
 page_title: Bar series | Progress NativeScript UI Documentation
 description: This article gives a basic introduction of Bar series and continues with a sample scenario of how Bar series are used.
 slug: chart-series-bar-angular
-tags: series, cartesian, bar, angular
+tags: series, cartesian, bar, angular, nativescript, professional, ui
 position: 2
 publish: true
 ---
 
-## Bar series: Overview
+# RadChart Bar Series
 Bar Series are categorical type of series that represent the objects from the data source as bars with different length. To use Bar series, you need to initialize a {% typedoc_link classes:RadCartesianChart %}, define a {% typedoc_link classes:CategoricalAxis %} and {% typedoc_link classes:LinearAxis %} and bind the series to a set of data objects.
 
 ## Adjusting Bar Size
 By default, the size of a bar is calculated based on the axis plot mode and the count of the categories from the data source. There are cases in which the automatically calculated size does not meet the specific application scenarios. By using the {% typedoc_link classes:BarSeries,member:minBarSize %} and {% typedoc_link classes:BarSeries,member:maxBarSize %} properties you can adjust the size of a single bar within the series. The properties accept values in device independent pixels. These properties define boundaries for the size of a bar.
 
-### Example
+#### Example
 Just like with all angular 'pages' let's start with the `Component` in which we will place our {% typedoc_link classes:RadCartesianChart %} instance. We create a basic angular `Component` that contains a collection of objects provided by an custom service, which will be used by the chart to provide intuitive data visualization.
 
 The service is a simple 'mock' of an backend call that will return an array of objects:

@@ -3,11 +3,11 @@ title: Overview
 page_title: Series overview | Progress NativeScript UI Documentation
 description: An overeview of all series supported by Telerik Chart for NativeScript
 slug: chart-series-overview-vue
-tags: series, cartesian, pie, vue
+tags: series, cartesian, pie, vue, nativescript, professional, ui
 position: 1
 publish: true
 ---
-# Series overview
+# RadChart Series
 Telerik Chart for NativeScript comes with a bunch of series suitable for different types of data. There are two main chart types: `Cartesian` and `Pie`. Each of these chart types requires corresponding series types to be able to visualize the data. For {% typedoc_link classes:RadCartesianChart %} you need to use {% typedoc_link classes:CartesianSeries %}, and for {% typedoc_link classes:RadPieChart %} you need to use {% typedoc_link classes:PieSeries %}. `CartesianSeries` are represented by two main series types: scatter and categorical.
 
 All series expose the following properties:

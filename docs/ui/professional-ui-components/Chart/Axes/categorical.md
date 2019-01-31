@@ -3,21 +3,20 @@ title: Categorical
 page_title: Chart categorical axis | Progress NativeScript UI Documentation
 description: A page describing the CategoricalAxis in Telerik Chart for NativeScript
 slug: chart-axes-categorical
-tags: chart, categorical, axes, axis
+tags: chart, categorical, axes, axis, nativescript, professional, ui
 position: 2
 publish: true
-previous_url: controls/chart/axes/categorical
 ---
 
-# Chart Axes: CategoricalAxis
+# RadChart CategoricalAxis
 
 When [RadCartesianChart]({% slug chart-types-cartesian %} "Read more about RadCartesianChart") visualizes **CategoricalSeries**, it needs an axis that can represent the different categories. The {% typedoc_link classes:CategoricalAxis %} is used to displays a range of categories. Categories are built depending on the **Category** value of each **CategoricalDataPoint** present in the owning **CategoricalSeries** chart series. The axis is divided into discrete slots and each data point is visualized in the slot corresponding to its categorical value.
 
 <snippet id='categorical-axis-example'/>
 
-### Features
+## Features
 
-##### Plot Mode
+### Plot Mode
 
 The {% typedoc_link classes:CategoricalAxis %} allows you to define how exactly the axis will be plotted on the viewport of the chart. The possible values are:
 
@@ -26,7 +25,7 @@ The {% typedoc_link classes:CategoricalAxis %} allows you to define how exactly 
 
 You can get and set the current value with the {% typedoc_link classes:CategoricalAxis,member:plotMode%} property.
 
-##### Major Tick Interval
+### Major Tick Interval
 
 Defines the step at which major ticks are generated. This property also affects axis labels as they are generated on a per major tick basis. You can get or set the value with the {% typedoc_link classes:CategoricalAxis,member:majorTickInterval %} property. For example, if you don't want to display all ticks, but instead only half of them (display the first, third, fifth, etc. ticks), you should set the major tick interval to 2.
 

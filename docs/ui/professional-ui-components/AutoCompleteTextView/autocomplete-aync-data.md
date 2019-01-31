@@ -3,12 +3,12 @@ title: Async data fetch
 page_title: RadAutoCompleteTextView Display Modes | Progress NativeScript UI Documentation
 description: This page is dedicated to the async data fetch API provided by the RadAutoCompleteTextView control.
 slug: autocomplete-async-data
-tags: radautocompletetextview, asyncdata
+tags: radautocompletetextview, asyncdata, AutoCompleteTextView, nativescript, professional, ui
 position: 6
 publish: true
 ---
 
-# RadAutoCompleteTextView: Using Async Data Fetch
+# Using Async Data Fetch with RadAutoCompleteTextView
 
 There are multiple scenarios where we need to represent data loaded from remote provider like a web service.
 Dynamic loading of items, based on the user input, could be quite useful when we are working with sets of data that are not available locally.

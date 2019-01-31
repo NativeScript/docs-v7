@@ -3,12 +3,12 @@ title: Pan & Zoom
 page_title: Chart Pan & Zoom behavior | Progress NativeScript UI Documentation
 description: A page describing the Pan & Zoom behavior in Telerik Chart for NativeScript
 slug: chart-pan-and-zoom-angular
-tags: chart, behavior, pan, zoom, axes, axis, angular
+tags: chart, behavior, pan, zoom, axes, axis, angular, nativescript, professional, ui
 position: 2
 publish: true
 ---
 
-# Pan & Zoom
+# RadChart Pan & Zoom
 
 If you need a [RadCartesianChart]({% slug chart-types-cartesian %} "Read more about RadCartesianChart") that allows you to zoom in/out to more granular values you should enable this feature setting the
 corresponding property of the horizontal or vertical axis.
@@ -33,7 +33,7 @@ The event data argument provides information about the event name and the chart 
 The event data argument provides information about the event name and the chart that is panned.
 
 
-## Example 
+#### Example 
 With the following example you can see that pan & zoom properties could be used for any axis assigned to a series or to the chart along with events handling.
 
 Just like with all angular 'pages' let's start with the `Component` in which we will place our {% typedoc_link classes:RadCartesianChart %} instance. We create a basic angular `Component` that contains a collection of objects provided by an custom service, which will be used by the chart to provide intuitive data visualization.

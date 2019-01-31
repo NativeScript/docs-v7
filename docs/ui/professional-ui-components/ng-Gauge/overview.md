@@ -3,12 +3,12 @@ title: Overview
 page_title: RadGauge Overview  | Progress NativeScript UI Documentation
 description: An overview page of RadGauge for NativeScript. This article explains the most important things you need to know before using RadGauge.
 slug: gauges-overview-angular
-tags: radgauge, gauges, overview, angular
+tags: radgauge, gauges, overview, angular, nativescript, professional, ui
 position: 0
 publish: true
 ---
 
-# RadGauge: Overview
+# RadGauge Overview
 
 {% typedoc_link classes:RadGauge %} is a highly customizable component that allows you to show the current status of a value within a range of upper and lower bounds, illustrate progress towards a goal or a summary of a fluctuating metric.
 #### Figure 1: Radial gauge with indicators

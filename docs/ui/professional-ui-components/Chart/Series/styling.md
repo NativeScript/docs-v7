@@ -3,13 +3,12 @@ title: Series styling
 page_title: Series Styling | Progress NativeScript UI Documentation
 description: This article explains how the visual appearance of Telerik Chart's series for NativeScript can be customized.
 slug: series-styling
-tags: chart, overview, styling
+tags: chart, overview, styling, palettes, nativescript, professional, ui
 position: 12
 publish: true
-previous_url: controls/chart/series/styling
 ---
 
-# Styling series: Palettes
+# RadChart Series Styling Palettes
 Telerik Chart for NativeScript uses Palettes to enable the customization of series. Depending on the count of series you have defined in your chart, you can add as many palettes as needed and change several visual parameters of the series. A single palette defines an *entries* property which contains {% typedoc_link classes:PaletteEntry %} instances. A **`PaletteEntry`** is essentially a property bag which holds the values that are used to style the associated series. The following properties are exposed by a `PaletteEntry` object:
 
 - {% typedoc_link classes:PaletteEntry,member:fillColor%}

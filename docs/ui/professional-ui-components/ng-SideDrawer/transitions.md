@@ -3,16 +3,16 @@ title: Transitions
 page_title: RadSideDrawer Transitions| Progress NativeScript UI Documentation
 description: This article is a short description and summary of RadSideDrawer's transitions used with Angular
 slug: sidedrawer-transitions-angular
-tags: sidedrawer, angular, transitions
+tags: sidedrawer, angular, transitions, nativescript, professional, ui
 position: 5
 publish: true
 ---
 
-# RadSideDrawer: Transitions
+# RadSideDrawer Transitions
 
 This article explains how to set the transition type of the **RadSideDrawer** with Angular.
 
-# Set transition with Angular
+## Set Transition with Angular
 
 RadSideDrawer offers the following transition options:
 

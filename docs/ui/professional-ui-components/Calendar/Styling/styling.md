@@ -3,12 +3,12 @@ title: Overview
 page_title: RadCalendar styling overview | Progress NativeScript UI Documentation
 description: A cell style customization guide page for RadCalendar for NativeScript.
 slug: calendar-styling-overview
-tags: radcalendar, cell, styling, calendar, cells, nativescript, professional
+tags: radcalendar, cell, styling, calendar, cells, nativescript, professional, ui
 position: 8
 publish: true
 ---
 
-# Calendar Styling Overview
+# RadCalendar Styling
 Telerik Calendar for NativeScript has four different view modes which can be easily customized to meet your application's visual requirements.
 Every one of the calendar view modes has its visual representation and different visual items that could be styled.
 You can define and combine styles for any of the view modes for single calendar instance and if you navigate from one view to another different styles will be applied for visual items.

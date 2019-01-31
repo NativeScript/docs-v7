@@ -3,15 +3,15 @@ title: Scatter
 page_title: Scatter series | Progress NativeScript UI Documentation
 description: This article gives a basic introduction of Scatter series and continues with a sample scenario of how Scatter series are used.
 slug: chart-series-scatter-angular
-tags: series, cartesian, scatter, angular
+tags: series, cartesian, scatter, angular, nativescript, professional, ui
 position: 9
 publish: true
 ---
 
-# Scatter series: Overview
+# RadChart Scatter Series
 Scatter series are used in the context of a {% typedoc_link classes:RadCartesianChart %} and two {% typedoc_link classes:LinearAxis %} instances. Besides the setup requirements that come from {% typedoc_link classes:CartesianSeries %}, {% typedoc_link classes:ScatterSeries %} require an additional {% typedoc_link classes:ScatterSeries,member:xProperty%} and {% typedoc_link classes:ScatterSeries,member:yProperty%} parameters instead of {% typedoc_link classes:ScatterSeries,member:valueProperty%} and {% typedoc_link classes:ScatterSeries,member:categoryProperty%}.
 
-## Example
+#### Example
 Just like with all angular 'pages' let's start with the `Component` in which we will place our {% typedoc_link classes:RadCartesianChart %} instance. We create a basic angular `Component` that contains a collection of objects provided by an custom service, which will be used by the chart to provide intuitive data visualization.
 
 The service is a simple 'mock' of an backend call that will return an array of objects:

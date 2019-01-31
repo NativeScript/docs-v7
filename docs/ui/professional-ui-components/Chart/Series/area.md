@@ -3,16 +3,15 @@ title: Area
 page_title: Area series | Progress NativeScript UI Documentation
 description: This article gives a basic introduction of Area series and continues with a sample scenario of how Area series are used.
 slug: chart-series-area
-tags: series, cartesian, area
+tags: series, cartesian, area, nativescript, professional, ui
 position: 7
 publish: true
-previous_url: controls/chart/series/area
 ---
 
-## Area series: overview
+# RadChart Area Series
 Area series work pretty much the same way as Line series with the only difference that the area between the categorical axis and the data points is filled with the corresponding color of the line. To use Area series, you need to initialize a {% typedoc_link classes:RadCartesianChart %}, define a {% typedoc_link classes:CategoricalAxis %} and {% typedoc_link classes:LinearAxis %} and bind the series to a set of data objects.
 
-### Example
+## Example
 The following definition represents the data context that will be used to populate the Area series with data:
 
 <snippet id='categorical-source'/>

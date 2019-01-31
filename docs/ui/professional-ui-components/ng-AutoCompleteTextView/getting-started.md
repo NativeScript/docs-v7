@@ -3,12 +3,12 @@ title: Getting Started
 page_title: RadAutoCompleteTextView Getting Started | Progress NativeScript UI Documentation
 description: A getting started page for RadAutoCompleteTextView for Android. This article explains what are the steps to create a RadAutoCompleteTextView instance from scratch.
 slug: autocomplete-gettingstarted-angular
-tags: radautocompletetextview, gettingstarted, autocomplete, list, angular
+tags: radautocompletetextview, gettingstarted, autocomplete, list, angular, nativescript, professional, ui
 position: 1
 publish: true
 ---
 
-# RadAutoCompleteTextView: Getting Started
+# RadAutoCompleteTextView Getting Started
 
 In this article, you will learn how to initialize **RadAutoCompleteTextView** and use it with it's basic configuration inside an NativeScript + Angular applications. 
 

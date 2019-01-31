@@ -3,13 +3,12 @@ title: Overview
 page_title: Chart Labels Overview | Progress NativeScript UI Documentation
 description: This article is a short description and summary of Charts labels features.
 slug: chart-labels
-tags: radchart, label, labels, chart
+tags: radchart, label, labels, chart, nativescript, professional, ui
 position: 1
 publish: true
-previous_url: controls/chart/labels/labels
 ---
 
-# Chart: Labels
+# RadChart Labels
 
 In this article, you will learn to use the labels in **Telerik Chart for NativeScript**: how to use the labels for the series and for the axes and how to customize them.
 

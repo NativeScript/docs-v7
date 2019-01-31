@@ -3,12 +3,12 @@ title: Completion modes
 page_title: RadAutoCompleteTextView Completion Modes | Telerik UI NativeScript
 description: This page is dedicated to the Completion Modes provided by the RadAutoCompleteTextView control.
 slug: autocomplete-completion-modes
-tags: radautocompletetextview, completionmodes
+tags: radautocompletetextview, completionmodes, autocompletetextview, nativescript, professional, ui
 position: 2
 publish: true
 ---
 
-# RadAutoCompleteTextView: Completion modes
+# RadAutoCompleteTextView Completion Modes
 
 **RadAutoCompleteTextView** has two modes for filtering suggestions. 
 

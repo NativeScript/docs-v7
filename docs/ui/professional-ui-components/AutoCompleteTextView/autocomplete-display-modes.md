@@ -3,12 +3,12 @@ title: Display modes
 page_title: RadAutoCompleteTextView Display Modes | Progress NativeScript UI Documentation
 description: This page is dedicated to the Display Modes provided by the RadAutoCompleteTextView control.
 slug: autocomplete-display-modes
-tags: radautocompletetextview, displaymodes
+tags: radautocompletetextview, displaymodes, autocompletetextview , nativescript, professional, ui
 position: 3
 publish: true
 ---
 
-# RadAutoCompleteTextView: Display Modes
+# RadAutoCompleteTextView Display Modes
 
 **RadAutoCompleteTextView** has two predefined display modes.
 
@@ -19,10 +19,10 @@ Display mode can be changed with the `displayMode` property of the **RadAutoComp
 
 <snippet id='autocomplete-display-mode'/>
 
-## Plain mode
+## Plain Mode
 In plain mode **RadAutoCompleteTextView** displays chosen item as plain text. When this mode only one item can be chosen.
 
-## Tokens mode
+## Tokens Mode
 Tokens mode allows multiple choice of items. Chosen items are displayed as tokens which can be modified or completely changed with custom ones.
 
 When **RadAutoCompleteTextView** is working in DisplayMode.Tokens mode, you can apply two different behaviors for token arrangement.
@@ -35,10 +35,10 @@ The default value is `Wrap`.
 
 <snippet id='autocomplete-layout-mode'/>
 
-## Wrap layout
+## Wrap Layout
 In wrap mode tokens are arranged on multiple lines. Every  time a new line is started the **RadAutoCompleteTextView** is expanding in order to show all tokens.
 
-## Horizontal layout
+## Horizontal Layout
 In horizontal layout tokens are displayed on single line which can be scrolled horizontally in order to display all tokens.
 
 ## References

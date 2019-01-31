@@ -3,12 +3,12 @@ title: Validation Events
 page_title: RadDataForm Validation Events | Progress NativeScript UI Documentation
 description: This article explains how to use the validation events in RadDataForm for NativeScript.
 slug: dataform-validation-events-angular
-tags: raddataform, validation, dataform, events, angular
+tags: raddataform, validation, dataform, events, angular, nativescript, professional, ui
 position: 3
 publish: true
 ---
 
-# RadDataForm: Validation Events
+# RadDataForm Validation Events
 
 If you followed the [getting started]({% slug dataform-start-source-angular %} "RadDataForm getting started") section, you now know how to edit an object's properties with `RadDataForm` for NativeScript. From the [validation overview]({% slug dataform-validation-overview-angular %} "RadDataForm validation overview") you should have become acquainted with the validation feature in {% typedoc_link classes:RadDataForm %}. This article will show you how to use the validation events in {% typedoc_link classes:RadDataForm %}.
 
@@ -24,7 +24,7 @@ There are two validation events that you can use to get notified when a property
 * **propertyValidate**: This event is fired while the value is validating and allows you to interfere and change the validation result.
 * **propertyValidated**: This event is fired after the validation has finished and you can use it to check the final result from the validation.
 
-## Validate
+## Validate Property
 
 The **propertyValidate** event gives you an opportunity to change the validation result through {% typedoc_link classes:DataFormEventData, member:returnValue %} of the method's event args, for example for custom validation. You can also use it for asynchronous validation by setting the validation result to a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promise</a> which will be later resolved with the result from the validation.
 
@@ -52,7 +52,7 @@ In this example, we are simulating a slow and (almost) random validation for a p
 
 ![NativeScriptUI-DataForm-Validation-Async-Android](../../../img/ns_ui/dataform-validation-events-02-android.png "Async Validation in DataForm in Android") ![NativeScriptUI-DataForm-Validation-Async-iOS](../../../img/ns_ui/dataform-validation-events-02-ios.png "Async Validation in DataForm in iOS")
 
-## Validated
+## Validated Property
 
 The **propertyValidated** event gives you an opportunity to get notified that a property is validated and check what is the result from the validation. Here's an example:
 

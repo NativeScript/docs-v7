@@ -3,12 +3,12 @@ title: Getting started
 page_title: RadListView Getting started | Progress NativeScript UI Documentation
 description: This article is a short description and summary of RadListView's features and their usage with Angular
 slug: listview-getting-started-angular
-tags: listview, overview, angular
+tags: listview, overview, angular, nativescript, professional, ui
 position: 2
 publish: true
 ---
 
-# RadListView for Angular: Getting started
+# RadListView for Angular - Getting started
 {% typedoc_link classes:RadListView %} for Angular is exposed through the {% typedoc_link classes:RadListViewComponent %} class. This article will guide you through the process of adding a {% typedoc_link classes:RadListViewComponent %} in your application, binding it to a data-source and visualizing the items by using an item template of your choice. For more information on how each separate feature of {% typedoc_link classes:RadListViewComponent %} is used, please refer to the dedicated articles which are using the same scenario and extend it further.
 
 ## Installation

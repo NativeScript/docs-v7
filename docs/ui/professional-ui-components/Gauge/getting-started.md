@@ -3,12 +3,12 @@ title: Getting Started
 page_title: RadGauge Getting Started  | Progress NativeScript UI Documentation
 description: A getting started page of RadGauge for NativeScript. This article explains the steps to create RadRadialGauge from scratch.
 slug: gauges-gettingstarted
-tags: radgauge, gauges, gettingstarted
+tags: radgauge, gauges, gettingstarted, nativescript, professional, ui
 position: 1
 publish: true
 ---
 
-# RadGauge: Getting Started
+# RadGauge Getting Started
 
 This article will guide you through the process of adding a {% typedoc_link classes:RadRadialGauge %} instance to a page in a {N} application and adding scales and indicators to it.
 
@@ -22,7 +22,7 @@ Run the following command to add the plugin to your application:
 tns plugin add nativescript-ui-gauge
 ```
 
-## Adding a RadRadialGauge to your page
+## Adding a RadRadialGauge to Your Page
 
 Then, in order to add a {% typedoc_link classes:RadRadialGauge %} instance in a page of your application, you need to define the following XML namespace:
 
@@ -33,7 +33,7 @@ Here's how to add a {% typedoc_link classes:RadGauge %} instance to your page:
 #### Example 1: Add a RadRadialGauge to your page.
 <snippet id='gauges-getting-started-add' />
 
-## Adding scale with indicators
+## Adding Scale with Indicators
 
 To display data the {% typedoc_link classes:RadRadialGauge %} instance is not enough. We should add also add a scale with at least on indicator. In this example we are going to add a {% typedoc_link classes:RadialScale %} with several {% typedoc_link classes:RadialBarIndicator %} instances and one {% typedoc_link classes:RadialNeedle %}. To add a scale to the {% typedoc_link classes:RadRadialGauge %} we should use its {% typedoc_link classes:RadGauge,member:scales%} property. Adding indicators to the scale is similar - we are using {% typedoc_link classes:RadialScale %}'s {% typedoc_link classes:GaugeScale,member:indicators%} property.
 

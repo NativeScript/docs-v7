@@ -3,12 +3,12 @@ title: Get the Result
 page_title: RadDataForm Get the Result | Progress NativeScript UI Documentation
 description: This article explains how to get the result from the edits of the source object made by the RadDataForm editors
 slug: dataform-start-result
-tags: raddataform, gettingstarted, dataform, result, commit
+tags: raddataform, gettingstarted, dataform, result, commit, nativescript, professional, ui
 position: 2
 publish: true
 ---
 
-# RadDataForm: Get the Result
+# RadDataForm - Get the Result
 
 If you followed the articles about [providing the source]({% slug dataform-start-source %} "RadDataForm provide source") and [describing the properties]({% slug dataform-start-properties %} "RadDataForm describe properties"), you now know how to edit an object's properties with `RadDataForm` for NativeScript. Now to get the result of these modifications, you need to commit the modifications and get the updated object.
 

@@ -3,12 +3,12 @@ title: Overview
 page_title: RadAutoCompleteTextView Overview | Progress NativeScript UI Documentation
 description: This article is a short description and summary of RadAutoCompleteTextView's features and their usage with Vue.
 slug: autocomplete-overview-vue
-tags: autocomplete, overview, vue
+tags: autocomplete, overview, vue, nativescript, professional, ui
 position: 0
 publish: true
 ---
 
-# RadAutoCompleteTextView: Overview
+# RadAutoCompleteTextView Overview
 
 **RadAutoCompleteTextView** can automatically complete user input string by comparing the text being entered to all strings in the associated data source. The control provides means for easy customization and data management.
 

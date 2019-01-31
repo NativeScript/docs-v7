@@ -3,14 +3,14 @@ title: Item Animations
 page_title: RadListView Item animations | Progress NativeScript UI Documentation
 description: This article gives insight into how item animations are used with RadListView.
 slug: listview-features-item-animations-angular
-tags: radlistview, animations, angular
+tags: radlistview, animations, angular, nativescript, professional, ui
 position: 4
 publish: true
 ---
-# RadListView: Item animations
+# RadListView Item Animations
 RadListView supports animations for items being added or removed from the list. To be able to utilize this functionality, you will need to bind the module to an `ObservableArray` instance which makes sure any collection changes are reported to the RadListView module.
 
-## Enabling item animations
+## Enabling Item Animations
 To enable item animations you first need to explicitly define item layout. More information about item layouts is available in the dedicated article: [Item Layouts Animations]({% slug listview-features-item-layouts-angular %} "RadListView item layouts"). The code snippet below demonstrates how a {% typedoc_link classes:ListViewLinearLayout %} is set, simply declare an ListViewLinearLayout instance and set the **`tkListViewLayout`** directive on it:
 
 <snippet id='angular-listview-item-animations-html'/>

@@ -3,13 +3,12 @@ title: Negative Values
 page_title: Negative values| Progress NativeScript UI Documentation
 description: A page describing the LogarithmicAxis in Telerik Chart for NativeScript. This article explains the usage of negative values in an axis.
 slug: negative-values-axis
-tags: chart, negative, values, axes, axis
+tags: chart, negative, values, axes, axis, nativescript, professional, ui
 position: 7
 publish: true
-previous_url: controls/chart/axes/negative-values
 ---
 
-# Chart Axes: Negative Values
+# RadChart Negative Values
 
 By default the {% typedoc_link classes:LinearAxis %} supports the use of negative values. You can set the {% typedoc_link classes:LinearAxis,member:minimum%} minimum and/or the {% typedoc_link classes:LinearAxis,member:maximum%} to negative values
 

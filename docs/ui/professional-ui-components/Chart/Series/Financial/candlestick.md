@@ -3,13 +3,12 @@ title: Candlestick series
 page_title: Candlestick series | Progress NativeScript UI Documentation
 description: This article gives a basic introduction of Candlestick series and continues with a sample scenario of how Candlestick series are used.
 slug: chart-series-candlestick
-tags: series, cartesian, candlestick
+tags: series, cartesian, candlestick, nativescript, professional, ui
 position: 2
 publish: true
-previous_url: controls/chart/series/financial/candlestick
 ---
 
-# CandleStick series: overview
+# RadChart CandleStick Series
  This series operates with a special kind of data in the form of four parameters defining the stock market - open, high, low, and close. The high and low values show the price range (the highest and lowest prices) over one unit of time. The open and close values indicate the opening and closing price of the stock for the corresponding period. Candlestick series have body, which has a different color depending on the value of open and close prices of the financial data point. The width of the candlestick body is determined by the period between 2 candlesticks and the range of the axis. You should use the {% typedoc_link classes:LinearAxis,member:majorStep%} property of {% typedoc_link classes:LinearAxis %} to change the period between 2 candlesticks. Here is how to set up Candlestick series:
 
 ## Customization

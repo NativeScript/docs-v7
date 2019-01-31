@@ -3,12 +3,12 @@ title: Annotations
 page_title: Chart Annotations Overview | Progress NativeScript UI Documentation
 description: This article is a short description and summary of Charts annotations features.
 slug: chart-annotations-vue
-tags: chart, annotations, vue
+tags: chart, annotations, vue, nativescript, professional, ui
 position: 3
 publish: true
 ---
 
-# Chart: Annotations
+# RadChart Annotations
 
 In this article, you will learn how to use and customize the annotations in **Telerik Chart for NativeScript**.
 

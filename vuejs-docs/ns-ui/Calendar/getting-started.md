@@ -3,12 +3,12 @@ title: Getting started
 page_title: RadCalendar Getting started | Progress NativeScript UI Documentation
 description: This article is a short description and summary of RadCalendar's features and their usage with Vue
 slug: calendar-getting-started-vue
-tags: calendar, overview, vue
+tags: calendar, overview, vue, nativescript, professional, ui
 position: 2
 publish: true
 ---
 
-# RadCalendar for Vue: Getting Started
+# RadCalendar for Vue - Getting Started
 This article will guide you through the process of adding a RadCalendar in your application. For more information on how each separate feature of {% typedoc_link classes:RadCalendar %} is used, please refer to the dedicated articles.
 
 ## Installation

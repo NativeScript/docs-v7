@@ -3,12 +3,12 @@ title: Getting Started
 page_title: RadSideDrawer Getting Started | Progress NativeScript UI Documentation
 description: This article explains how RadSideDrawer is used with Angular.
 slug: sidedrawer-gettingstarted-angular
-tags: sidedrawer, angular
+tags: sidedrawer, angular, nativescript, professional, ui
 position: 2
 publish: true
 ---
 
-# RadSideDrawer: Getting Started
+# RadSideDrawer Getting Started
 This article explains how to create a simple RadSideDrawer with Angular.
 
 > By design the `RadSideDrawer` is designed to be placed as a single child in your component's HTML, this excludes the use of a `<ActionBar><ActionBar>` which is not treated as a simple element by NativeScript and can be used with `RadSideDrawer` by placing it in the beginning of the HTML.
@@ -20,7 +20,7 @@ Run the following command to add the plugin to your application:
 tns plugin add nativescript-ui-sidedrawer
 ```
 
-# Initialization
+## Initialization
 Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUISideDrawerModule %} from the *nativescript-ui-sidedrawer* plugin has been imported in an `ngModule` in your app as explained [here]({% slug getting-started-angular %}).
 
 The RadSideDrawer consists of two visual parts:

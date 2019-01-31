@@ -8,7 +8,7 @@ position: 20
 publish: true
 ---
 
-# Getting Started
+# NativeScript UI Components Getting Started
 The following article assumes that you already have the latest version of NativeScript and have [created a NativeScript application]({% slug introduction %}).
 
 ## Installation

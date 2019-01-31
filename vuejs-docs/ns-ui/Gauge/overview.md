@@ -3,12 +3,12 @@ title: Overview
 page_title: RadGauge Overview  | Progress NativeScript UI Documentation
 description: An overview page of RadGauge for NativeScript. This article explains the most important things you need to know before using RadGauge.
 slug: gauges-overview-vue
-tags: radgauge, gauges, overview, Vue
+tags: radgauge, gauges, overview, Vue, nativescript, professional, ui
 position: 0
 publish: true
 ---
 
-# RadGauge: Overview
+# RadGauge Overview
 
 {% typedoc_link classes:RadGauge %} is a highly customizable component that allows you to show the current status of a value within a range of upper and lower bounds, illustrate progress towards a goal or a summary of a fluctuating metric.
 #### Figure 1: Radial gauge with indicators
@@ -21,13 +21,13 @@ publish: true
 ## Indicators
 {% typedoc_link classes:GaugeIndicator %} is a visual element that points to or visualizes a range of values on a scale. Multiple indicators can be added to a scale. Indicators can be animated when their value is changed.
 
-# Vue directives
+## Vue directives
 
 When using the {% typedoc_link classes:RadGauge %} with Vue you are going to work with multiple custom Vue RadGauge specific directives. In short these directives are used by the Vue framework to enable 'linking' between separate HTML tags into one 'complex' element.
 
 Here is a full list of the available custom Vue {% typedoc_link classes:RadGauge %} directives and components:
 
-## Components
+### Components
 Represent the major elements:
 
 | Selector          | Class (more details)                                  |
@@ -35,7 +35,7 @@ Represent the major elements:
 | RadRadialGauge | {% typedoc_link classes:RadRadialGaugeComponent %} |
 
 
-## Directives
+### Directives
 Represent the smaller elements that are visualized in {% typedoc_link classes:RadListView %}:
 
 | Selector          | Class (more details)                                  |
@@ -45,7 +45,7 @@ Represent the smaller elements that are visualized in {% typedoc_link classes:Ra
 | RadialBarIndicator | The indicator instance |
 | RadialNeedle | The needle instance |
 
-## Directives
+### Directives
 Represent the 'link' mechanism of the smaller with the major elements
 
 | Selector          | Class (more details)                                  |

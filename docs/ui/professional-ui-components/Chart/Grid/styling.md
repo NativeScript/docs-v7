@@ -3,13 +3,12 @@ title: Grid Styling
 page_title: Grid Styling | Progress NativeScript UI Documentation
 description: This article explains how the visual appearance of Telerik Chart's grid for NativeScript can be customized.
 slug: grid-styling
-tags: chart, grid, styling
+tags: chart, grid, styling, nativescript, professional, ui
 position: 3
 publish: true
-previous_url: controls/chart/grid/styling
 ---
 
-### Styling: Grid
+# RadChart Grid Styling
 
 Styling the chart grid is done by using the corresponding customization properties exposed by the Grid object. Here is a list of the properties that can be used to customized:
 

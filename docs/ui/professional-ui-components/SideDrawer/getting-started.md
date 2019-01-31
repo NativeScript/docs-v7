@@ -3,13 +3,12 @@ title: Getting Started
 page_title: RadSideDrawer Getting Started | Progress NativeScript UI Documentation
 description: A getting started page for SideDrawer for NativeScript. This article explains what are the steps to create a RadSideDrawer instance from scratch.
 slug: sidedrawer-gettingstarted
-tags: sidedrawer, gettingstarted, drawer
+tags: sidedrawer, gettingstarted, drawer, nativescript, professional, ui
 position: 2
 publish: true
-previous_url: controls/sidedrawer/getting-started
 ---
 
-# RadSideDrawer : Getting Started
+# RadSideDrawer Getting Started
 This article will guide you through the process of adding a {% typedoc_link classes:RadSideDrawer %} instance to a page in your NativeScript application and initializing its content. 
 > By design the `RadSideDrawer` is designed to be placed as a single child to your `Page`.
 

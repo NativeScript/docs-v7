@@ -3,13 +3,12 @@ title: Pie
 page_title: Pie series | Progress NativeScript UI Documentation
 description: This article gives a basic introduction of Pie series and continues with a sample scenario of how Pie series are used.
 slug: chart-series-pie
-tags: series, cartesian, pie
+tags: series, cartesian, pie, chart, nativescript, professional, ui
 position: 11
 publish: true
-previous_url: controls/chart/series/pie
 ---
 
-# Pie series: Overview
+# RadChart Pie series
 Unlike all other series, {% typedoc_link classes:PieSeries %} do not require axes. They visualize each data point as pie slices with arc size directly proportional to the magnitude of the raw data point's value. Pie slices represent data in one direction contrasting with the other series which represent data in two dimensions.
 
 ## Example

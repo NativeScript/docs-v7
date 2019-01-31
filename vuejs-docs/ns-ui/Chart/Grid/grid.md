@@ -3,12 +3,12 @@ title: Overview
 page_title: Chart Grid Overview | Progress NativeScript UI Documentation
 description: This article is a short description and summary of Charts Grid's features.
 slug: chart-grid-vue
-tags: chart, grid, vue
+tags: chart, grid, vue, nativescript, professional, ui
 position: 1
 publish: true
 ---
 
-# Chart: Grid
+# RadChart Grid
 
 In this article, you will learn how to display the grid lines in `Telerik Chart for NativeScript`.
 

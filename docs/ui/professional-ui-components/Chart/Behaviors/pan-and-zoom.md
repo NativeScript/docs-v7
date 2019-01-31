@@ -3,13 +3,12 @@ title: Pan & Zoom
 page_title: Chart Pan & Zoom behavior | Progress NativeScript UI Documentation
 description: A page describing the Pan & Zoom behavior in Telerik Chart for NativeScript
 slug: chart-pan-and-zoom
-tags: chart, behavior, pan, zoom, axes, axis
+tags: chart, behavior, pan, zoom, axes, axis, nativescript, professional, ui
 position: 2
 publish: true
-previous_url: controls/chart/behaviors/pan-and-zoom
 ---
 
-# Pan & Zoom
+# RadChart Pan & Zoom
 If you need a [RadCartesianChart]({% slug chart-types-cartesian %} "Read more about RadCartesianChart") that allows you to zoom in/out to more granular values you should enable this feature setting the
 corresponding property of the horizontal or vertical axis.
 

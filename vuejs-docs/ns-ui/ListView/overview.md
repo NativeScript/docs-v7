@@ -3,11 +3,11 @@ title: Overview
 page_title: RadListView Overview | Progress NativeScript UI Documentation
 description: This article is a short description and summary of RadListView's features.
 slug: listview-overview-vue
-tags: radlistview, overview, listview, vue
+tags: radlistview, overview, listview, vue, nativescript, professional, ui
 position: 1
 publish: true
 ---
-# RadListView: Overview
+# RadListView Overview
 {% typedoc_link classes:RadListView %} for NativeScript is a virtualizing list component that provides the most popular features associated with scenarios where a list of items is used. All these features are embedded in one control with the idea to save developer time and provide better experience. The control's main features include:
 - item animations
 - different layouts and orientations
@@ -38,13 +38,13 @@ All layouts are virtualized and optimized for the mobile environment.
 ### Swipe to execute
 **Swipe to execute** is a popular UX pattern that allows you to perform an arbitrary action on a RadListView item when the end user swipes it to the right or to the left. For example, popular Mail client mobile applications implement this pattern allowing the user to mark messages as read or to delete them. Read more about swipe-to-execute here: [**ListView: Swipe to execute**]({% slug listview-features-swipe-to-execute-vue %})
 
-# Vue directives
+## Vue directives
 
 When using the {% typedoc_link classes:RadListView %} with Vue you are going to work with multiple custom Vue RadListView specific directives. In short these directives are used by the Vue framework to enable 'linking' between separate HTML tags into one 'complex' element.
 
 Here is a full list of the available custom Vue {% typedoc_link classes:RadListView %} directives and components:
 
-## Components
+### Components
 Represent the major elements:
 
 | Selector             | Class (more details)                                     |
@@ -53,7 +53,7 @@ Represent the major elements:
 | ListViewLinearLayout | {% typedoc_link classes:ListViewLinearLayoutDirective %} |
 | ListViewGridLayout   | {% typedoc_link classes:ListViewGridLayoutDirective %}   |
 
-## Inline Directives
+### Inline Directives
 Represent the 'link' mechanism of the smaller with the major elements
 
 | Selector          | Class (more details)                                  |

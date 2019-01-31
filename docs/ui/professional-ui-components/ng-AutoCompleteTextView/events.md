@@ -3,12 +3,12 @@ title: Events
 page_title: RadAutoCompleteTextView Events | Progress NativeScript UI Documentation
 description: This page is dedicated to the events provided by the RadAutoCompleteTextView control.
 slug: autocomplete-events-angular
-tags: radautocompletetextview, events, angular
+tags: radautocompletetextview, events, angular, nativescript, professional, ui
 position: 5
 publish: true
 ---
 
-# RadAutoCompleteTextView: Events
+# RadAutoCompleteTextView Events
 In this article you are going to learn about the {% typedoc_link classes:RadAutoCompleteTextView %} events.
 The events are designed to notify you whenever a particular action, in the workflow of the control, has happened. They are quite useful when it comes to executing logic based on the {% typedoc_link classes:RadAutoCompleteTextView %} state. 
 

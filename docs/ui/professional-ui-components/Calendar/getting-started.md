@@ -3,13 +3,12 @@ title: Getting Started
 page_title: RadCalendar Getting started | Progress NativeScript UI Documentation
 description: A getting started page for RadCalendar for NativeScript. This article explains what are the steps to create a RadCalendar instance from scratch.
 slug: calendar-getting-started
-tags: radcalendar, getting, started, calendar
+tags: radcalendar, getting, started, calendar, nativescript, professional, ui
 position: 2
 publish: true
-previous_url: controls/calendar/getting-started
 ---
 
-# RadCalendar: Getting Started
+# RadCalendar Getting Started
 This article will guide you through the process of adding a {% typedoc_link classes:RadCalendar %} instance to a page in a **{N}** application.
 
 ## Installation

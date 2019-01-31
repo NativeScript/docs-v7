@@ -3,17 +3,16 @@ title: Item Separators
 page_title: How to RadListView Item separators | Progress NativeScript UI Documentation
 description: This article describes how Item Separators are implemented with RadListView.
 slug: listview-howto-separators
-tags: radlistview, separators
+tags: radlistview, separators, listview, nativescript, professional, ui
 position: 1
 publish: true
-previous_url: controls/listview/how-to/separators
 ---
-# Item separators: Introduction
+# RadListView Item Separators
 This tutorial describes how to add separators between the items in RadListView.
 
 Item separators are lines displayed between the items to better designate the bounds each item occupies within the scrollable list. Item separators are currently not supported as an out-of-the-box feature by RadListView but there is an easy way to implement this behavior which is described in this article.
 
-# Implementing item separators in RadListView
+## Implementing Item Separators in RadListView
 
 1. Create a page in your NativeScript application and put a {% typedoc_link classes:RadListView %} instance bound to a source of data items:
 
