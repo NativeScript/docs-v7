@@ -251,7 +251,7 @@ exports.buttonStopTap = buttonStopTap;
 
 This method lets you measure the distance between two locations in meters.
 
-> Example 4: How to get distance between to too location
+> Example 4: How to get distance between to two location
 
 {% nativescript %}
 ```JavaScript
