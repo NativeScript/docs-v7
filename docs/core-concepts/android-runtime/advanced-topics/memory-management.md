@@ -50,7 +50,7 @@ There's a `app/package.json` option which apps can set in order to disable `Mark
 }
 ```
 
-The code inside `tns-core-modules` and all plugins published by the NativeScript Team (since version 5.1.0) are written in such a way, that it does not depend on the scope to keep those Java instances alive. This makes apps using these plugins fully compatible with the a lot more performant `markingMode: "none"` option.
+The code inside `tns-core-modules` and all plugins published by the NativeScript Team (since version 5.1.0) are written in such a way, that it does not depend on the scope to keep those Java instances alive. This makes apps using these plugins fully compatible with the much more performant `markingMode: "none"` option. [More information on `markingMode:none`](./marking-mode-none).
 
 > **WARNING**: Enabling this option if the JavaScript code dealing with native objects (either in the application or any plugins you are using) does not correctly take care of the lifetime of Java instances may cause unexpected and unpredictable crashes of the application due to Java instances being prematurely collected. Use caution when enabling it and make sure to thoroughly test your apps with different memory constrains and devices! The errors generated in such cases look like this:
 `Error: com.tns.NativeScriptException: Attempt to use cleared object reference id=<some-object-id-number>`
