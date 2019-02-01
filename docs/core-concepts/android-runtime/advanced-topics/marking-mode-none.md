@@ -10,7 +10,7 @@ slug: marking-mode-none
 
 # Introduction
 
-Starting with NativeScript 3.2, a new (experimental at the time) feature was added to the Android runtime called `markingMode`. Its purpose is to speed up garbage collection in the V8 engine. In some cases, a GC pass could take from 0.5 to 1 second and since it runs on the main UI thread, the user would experience a frozen app until GC is done. Setting “markingMode” to “none” will speed up the garbage collection greatly, so it would be less noticeable (if at all) to the app user. The downside of this is that some JavaScript objects would be garbage collected while still in use, because they are referenced only from native code and the eyes of the V8 GC, no JS object holds reference to them. In other words – the objects are no longer “marked” as used and the V8 GC might collect them too early.
+Starting with NativeScript 3.2, a new (experimental at the time) feature was added to the Android runtime called `markingMode`. Its purpose is to speed up garbage collection in the V8 engine. In some cases, a GC pass could take from 0.5 to 1 second and since it runs on the main UI thread, the user would experience a frozen app until GC is done. Setting “markingMode” to “none” will speed up the garbage collection greatly, so it would be less noticeable (if at all) to the app user. The downside of this approach is that some JavaScript objects could be collected while they are still in use. This could happen when JavaScript objects are referenced only from native code and in the eyes of the V8 GC no JS object holds reference to them. In other words – the objects are no longer “marked” as used and the V8 GC might collect them too early.
 
 The code inside `tns-core-modules` and all plugins published by the NativeScript Team (since version 5.1.0) are written in such a way, that it does not depend on the scope to keep those Java instances alive. This makes apps using these plugins fully compatible with the much more performant `markingMode: "none"` option.
 
@@ -19,7 +19,7 @@ The code inside `tns-core-modules` and all plugins published by the NativeScript
 
 The biggest benefit of setting `markingMode` to `none` is a more responsive app – an app that does not slow down if you use it for an extended amount of time. 
 The main drawbacks are:
-- It is up to the plugin developer to manage the plugin-related memory correctly. Not all plugins support the feature and might crash the app with an "cleared reference" exception.
+- It is up to the plugin developer to manage the plugin-related memory correctly. There might be plugins that do not support the feature and could crash the app with a "cleared reference" exception.
 - It is up to the app developer to manage the app memory correctly. The app code itself might also need to be updated in order to keep JS object references and prevent unwanted collection.
 
 ## Updating an app or a plugin to support `markingMode: none`
@@ -49,7 +49,7 @@ The implementor is enclosed by the callback implementation, but with `markingMod
 
 ### Solution
 
-To fix the previous example you must keep implementor from being GC'ed, by attaching it to the global object (or some other long-lasting object, exported module or wherever you see fit) which is not being GC'ed ever. Below, the `implementor` is attached to `global` for the sake of the example:
+To fix the previous example you must keep implementor from being GC'ed, by attaching it to the global object (or some other long-lasting object, exported module or wherever you see fit) which will ensure it will not be GC'ed prematurely. Below, the `implementor` is attached to `global` for the sake of the example:
 
 ```javascript
 var implementor = new native.Implementor();
@@ -71,11 +71,11 @@ global.implementor = null;
 ## Testing an app for `markingMode: none` related issues
 
 `markingMode: none` applies to Android only, so testing for issues implies testing your app in Android Emulator or real Android device. Because bugs of this kind occur pretty randomly, there is not a single and universal way to find them. Below are some general tips on how to test/maintain an app:
-- look for code fragments where native Java instances are created and ones in which these instances are used from inside event handlers, callbacks, functions of extended classes. Have in mind that in such cases if the JS instance reference becomes weak (i.e. garbage collectable), this can be a source of a problem. In such case make sure you make it strong, i.e. not collectable. Also make sure to dispose it when no longer needed.
+- Look for code fragments where native Java instances are created and ones in which these instances are used from inside event handlers, callbacks, functions of extended classes. Have in mind that in such cases if the JS instance reference becomes weak (i.e. garbage collectable), this can be a source of a problem. In such case make sure you make it strong, i.e. not collectable. Also make sure to dispose it when no longer needed.
 Below are 2 possible solutions for some common cases:
     - {N} View classes - any native views or listeners should be kept in private properties on your View class so the lifetime of its native objects will be tied to the JavaScript View instance.
-    - listeners - like the example above - store any native instances in the global scope if you need it to be accessed from callbacks, closures, etc.
-- [monkey testing](https://developer.android.com/studio/test/monkey) - this is a CLI-based way of testing your apps by generating random events like clicks, gestures, etc. It is best to pin your app before starting the monkey test. Thus "the monkey" will interact only with the app and not with the whole OS.
+    - Listeners - like the example above - store any native instances in the global scope if you need it to be accessed from callbacks, closures, etc.
+- [Monkey testing](https://developer.android.com/studio/test/monkey) - this is a CLI-based way of testing your apps by generating random events like clicks, gestures, etc. It is best to pin your app before starting the monkey test. Thus "the monkey" will interact only with the app and not with the whole OS.
 Example command to start testing:
 ```sh
 adb shell monkey --throttle 200 40000
