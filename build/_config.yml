@@ -78,6 +78,9 @@ navigation:
         position: 30
         title: "Framework modules"
         expanded: false
+    "ui/professional-ui-components":
+        position: 40
+        title: "Professional UI Components"
     "ui/ng-ui-widgets":
         position: 20
         title: "UI Widgets"

@@ -9,6 +9,8 @@ module.exports.WatcherService = class WatcherService {
 		this.sourcePaths = [{
 			basePath: path.normalize(paths.docsRoot)
 		}, {
+			basePath: path.normalize(paths.vuejsRoot)
+		}, {
 			basePath: path.normalize(paths.modulesRoot),
 			distPaths: [
 				`${paths.modulesRoot}/bin/dist/./snippets`,

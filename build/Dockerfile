@@ -16,6 +16,8 @@ RUN apk add --update \
   && rm -rf /var/cache/apk/* \
   && npm config set cache /var --global \
   && npm install -g grunt \
+  && npm install -g gulp \
+  && npm install -g gulp-typedoc \
   && mkdir /run/nginx \
   && chmod +x /start.sh
 

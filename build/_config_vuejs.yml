@@ -1,7 +1,7 @@
+headerbaseurl: //www.nativescript.org
 # The public documentation URL, used for sitemap.xml
-url: "https://docs.nativescript.org"
+url: "https://docs.nativescript.org/vuejs"
 destination: ./vuejs
-
 ## The application virtual path
 baseurl:  "/vuejs"
 # Exclude files which should not be in the output
@@ -22,10 +22,9 @@ source: ./
 # Release date in the format of: YYYY-MM-DD
 release_date: "2016-11-16"
 
-sideBarHidden: "hidden"
 
 ## The product name
-productName: "NativeScript"
+productName: "NativeScript VueJS"
 
 ## Assign layout and category per different paths
 defaults:
@@ -58,12 +57,38 @@ flavor:
 
 ## Do not edit below this line
 safe: false
+highlighter: true
 markdown: MarkdownProcessor
 kramdown:
     toc_levels: 2..3
     smart_quotes: ["quot", "quot", "quot", "quot"]
     input: GFM
-
+navigation:
+    "ns-ui":
+        position: 30
+        title: "NativeScript UI"
+        expanded: true
+    "ns-ui/SideDrawer":
+        position: 10
+        title: "RadSideDrawer"
+    "ns-ui/ListView":
+        position: 20
+        title: "RadListView"
+    "ns-ui/Calendar":
+        position: 30
+        title: "RadCalendar"
+    "ns-ui/Chart":
+        position: 40
+        title: "RadChart"
+    "ns-ui/AutoCompleteTextView":
+        position: 50
+        title: "RadAutoCompleteTextView"
+    "ns-ui/DataForm":
+        position: 60
+        title: "RadDataForm"
+    "ns-ui/Gauge":
+        position: 70
+        title: "RadGauge"
 gems:
     - jekyll-unsanitize
 # Feedback Form Google Sheet ID

@@ -10,7 +10,7 @@ nsselected: ""
 ngselected: "selected"
 
 # Exclude files which should not be in the output
-exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, cookbook, ui/ns-ui-widgets, ns-framework-modules, hardware]
+exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, cookbook, ui/ns-ui-widgets, ns-framework-modules, hardware, ui/professional-ui-components/Gauge, ui/professional-ui-components/DataForm, ui/professional-ui-components/AutoCompleteTextView, ui/professional-ui-components/Chart, ui/professional-ui-components/Calendar, ui/professional-ui-components/ListView, ui/professional-ui-components/SideDrawer]
 
 # The google services configuration
 google_tag_manager: GTM-W58JDD
@@ -23,3 +23,33 @@ navigation:
     code-samples:
         position: 81
         title: "CODE SAMPLES"
+    "ui/professional-ui-components/ng-SideDrawer":
+        position: 30
+        title: "RadSideDrawer"
+    "ui/professional-ui-components/ng-ListView":
+        position: 40
+        title: "RadListView"
+    "ui/professional-ui-components/ng-Calendar":
+        position: 50
+        title: "RadCalendar"
+    "ui/professional-ui-components/ng-Chart":
+        position: 60
+        title: "RadChart"
+    "ui/professional-ui-components/ng-AutoCompleteTextView":
+        position: 70
+        title: "RadAutoCompleteTextView"
+    "ui/professional-ui-components/ng-DataForm":
+        position: 80
+        title: "RadDataForm"
+    "ui/professional-ui-components/ng-DataForm/GettingStarted":
+        position: 20
+        title: "Getting Started"
+    "ui/professional-ui-components/ng-DataForm/Editors":
+        position: 30
+    "ui/professional-ui-components/ng-DataForm/Validation":
+        position: 40
+    "ui/professional-ui-components/ng-DataForm/Groups":
+        position: 50
+    "ui/professional-ui-components/ng-Gauge":
+        position: 90
+        title: "RadGauge"

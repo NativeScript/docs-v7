@@ -71,6 +71,19 @@ git clone https://github.com/NativeScript/nativescript-sdk-examples-ng.git
 git clone https://github.com/NativeScript/nativescript-cli.git
 ```
 
+Optional:
+```bash
+git clone https://github.com/NativeScript/nativescript-ui-listview
+git clone https://github.com/NativeScript/nativescript-ui-autocomplete
+git clone https://github.com/NativeScript/nativescript-ui-dataform
+git clone https://github.com/NativeScript/nativescript-ui-chart
+git clone https://github.com/NativeScript/nativescript-ui-calendar
+git clone https://github.com/NativeScript/nativescript-ui-gauge
+git clone https://github.com/NativeScript/nativescript-ui-sidedrawer
+```
+
+> **NOTE**: `nativescript-ui` is private repository used for building the Api Reference for the NativeScript UI components.  
+
 > **NOTE**: If you have these repositories locally from previous work with the documentation, be sure to delete them and start from scratch as some old files can cause problems with the current setup.
 
 Then build the docker image by using the following command from the `ns-docs` folder:

@@ -1,0 +1,10 @@
+{
+  "name": "nativescript-ui-build-environment",
+  "version": "1.0.0",
+  "author": "Progress AD",
+  "dependencies": {
+    "gulp": "4.0.0",
+    "gulp-typedoc": "2.2.1",
+    "typedoc": "0.14.2"
+  }
+}
