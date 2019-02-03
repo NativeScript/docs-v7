@@ -90,5 +90,5 @@ Solution provided by [KristiyanFxy](https://github.com/KristiyanFxy) a member of
 
 **Solution:** The 3rd party library that iOS Runtime uses to make native calls ([libffi/libffi](https://github.com/libffi/libffi/)) does
 not support SIMD vectors for these 2 architectures. If your app needs to support 32-bit iOS devices and you want to consume such functions you
-must do so from the native part of a plugin in your app. Visit [Building Plugins](./building-plugins.md) for more information on how to create one.
+must do so from the native part of a plugin in your app. Visit [Building Plugins](./plugins/building-plugins.md) for more information on how to create one.
 
