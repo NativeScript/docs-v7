@@ -10,7 +10,7 @@ slug: cli-basics
 
 In this article you’re going to learn the basics of the NativeScript command-line interface, including how to create new apps, how to get those apps running on devices, and how to set up a development workflow that lets you iterate fast.
 
-## Creating apps
+## Creating Applications
 
 In NativeScript you create and run apps using the NativeScript CLI. After [installation](/start/quick-setup), the NativeScript CLI is available on your terminal or command prompt as a `tns` command—which is short for <b>T</b>elerik <b>N</b>ative<b>S</b>cript.
 
@@ -53,7 +53,15 @@ Now that you’ve created an app, let’s look at how to get your new app up and
 
 > **TIP**: You can use the `tns help` command to view the NativeScript CLI’s help documentation in your web browser.
 
-## Running apps—quick setup
+## Running Applications 
+
+Once your NativeScript mobile project is created, you can start the application in two different ways:
+
+- Using a cloud build via the `preview` command. This options allows you to test NativeScript with a quick setup. See the [quick setup section](#quick-setup-using-preview) for details).
+
+- Using a local build via the `run` command. This options allows you to experience the full developer experience (building and deploying on local emulators and devices). See the [full setup section](#full-setup-using-run) for details.
+
+### Quick Setup Using PREVIEW
 
 > **NOTE**: To complete this section you must finish the NativeScript [CLI quick setup]({% slug quick-start %}).
 
@@ -186,19 +194,7 @@ Looking for a little more fun? NativeScript has several color schemes available 
 
 Overall, the NativeScript CLI’s livesync process makes native iOS and Android development feel a lot like web development. You have the ability to change your CSS, markup, and JavaScript code, and see those changes reflected on the fly—all in a completely native mobile app.
 
-### Next steps
-
-Now that you have a preview workflow set up, check out our **Build a Full App** tutorials in NativeScript Playground. If you prefer working in a CLI environment, you can download your tutorial project from Playground and complete the tutorial locally using the `tns preview` command.
-
-{% angular %}
-<p><a href="https://play.nativescript.org/?template=groceries-ng&tutorial=groceries-ng" class="ns-button -action">Start Tutorial</a></p>
-{% endangular %}
-
-{% nativescript %}
-<p><a href="https://play.nativescript.org/?template=groceries-js&tutorial=groceries-js" class="ns-button -action">Start Tutorial</a></p>
-{% endnativescript %}
-
-## Running apps—full setup
+### Full Setup Using RUN
 
 > **NOTE**: To complete this section you must finish the NativeScript [CLI full setup]({% slug quick-start %}).
 
@@ -242,16 +238,28 @@ The `run` command will again take a few seconds, as the NativeScript CLI will be
 
 Now that you have a full setup in place for developing your apps, let’s look at a few additional things you can do.
 
-## Debugging apps
+### Next steps
+
+Now that you have a preview workflow set up, check out our **Build a Full App** tutorials in NativeScript Playground. If you prefer working in a CLI environment, you can download your tutorial project from Playground and complete the tutorial locally using the `tns preview` command.
+
+{% angular %}
+<p><a href="https://play.nativescript.org/?template=groceries-ng&tutorial=groceries-ng" class="ns-button -action">Start Tutorial</a></p>
+{% endangular %}
+
+{% nativescript %}
+<p><a href="https://play.nativescript.org/?template=groceries-js&tutorial=groceries-js" class="ns-button -action">Start Tutorial</a></p>
+{% endnativescript %}
+
+## Debugging Applications
 
 You now know how to create and run NativeScript apps. Your next step is learning how to debug your apps when things go wrong. Let’s look at how debugging works in NativeScript.
 
-There are three main paths you can take when you want to debug a NativeScript application:
+There are two main paths you can take when you want to debug a NativeScript application:
 
-**Chrome**
+- **Chrome**
 The default way of debugging a NativeScript application is by using the integration with Chrome. You can find more information on the actual steps [here](http://docs.nativescript.org/tooling/debugging).
 
-**Visual Studio Code**
+- **Visual Studio Code**
 One of the preferred ways of debugging a NativeScript application is with the [NativeScript extension for Visual Studio Code](http://docs.nativescript.org/tooling/debugging#debugging-with-visual-studio-code).
 
 You’ll want to check out the Chrome Dev Tools and the Visual Studio debugger as you have the need to step through your JavaScript code or TypeScript code, but for the moment let’s look at how to do some simple logging in your apps.
@@ -425,11 +433,9 @@ Now that you have a full NativeScript CLI setup in place, and you know how to cr
 * [NativeScripting](https://nativescripting.com/)
     * The third-party NativeScripting site has a number of video courses to teach you everything you need to know about NativeScript, including a collection of free courses to help you get started.
 
-## Appendix A: Choosing an editor
+## Choosing An Editor
 
 You can develop NativeScript apps in any text editor or IDE you wish. Therefore, if you’re deeply committed to an editor, by all means continue to use your editor of choice as you build applications with NativeScript.
-
-> TIP: If you’re a WebStorm user, check out this [popular community-written plugin](https://plugins.jetbrains.com/webstorm/plugin/8588-nativescript) that adds a number of NativeScript-related features.
 
 However, if you’re not absolutely committed to an editor, or if you’re looking to try something new, the NativeScript team recommends using Microsoft’s Visual Studio Code to develop your NativeScript applications. Here’s why.
 
@@ -441,7 +447,12 @@ However, if you’re not absolutely committed to an editor, or if you’re looki
 
 If you do choose to [try Visual Studio Code](https://code.visualstudio.com/), let’s look at one tip you might find useful as you develop NativeScript apps.
 
-### Tip #1: The `code` command
+> Note: If you’re a WebStorm user, check out this [popular community-written plugin](https://plugins.jetbrains.com/webstorm/plugin/8588-nativescript) that adds a number of NativeScript-related features.
+
+
+### Tip & Tricks 
+
+- The `code` command
 
 After you install Visual Studio Code you can open projects using the editor’s `File` → `Open` menu option, but there’s an alternative option that works far better for command-line-based projects like NativeScript: the `code` command.
 
