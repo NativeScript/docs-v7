@@ -893,6 +893,6 @@ Since the release of NativeScript 1.3, you can declare your UI using the lowerca
   <scroll-view>
     <stack-layout>
       <label ctext="Label" />
-      <utton text="Button" tap="tap" />
+      <button text="Button" tap="tap" />
       ...
 ```
