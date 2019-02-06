@@ -26,7 +26,7 @@ The `--expose_gc` flag exposes a global `gc()` function which can be helpful in 
 
 ## Marking Mode
 
-Starting with NativeScript 3.2 a flag has been added to enable NativeScript apps to use different mode for garbage collection, providing significant performance boost. To enable this, you can set the `markingMode` flag to `none`:
+The `markingMode: none` flag instructs NativeScript apps to use a different mode for garbage collection, providing significant performance boost. To enable it:
 
 ```JSON
 {
@@ -38,7 +38,7 @@ Starting with NativeScript 3.2 a flag has been added to enable NativeScript apps
 }
 ```
 
-> **NOTE:** Use `markingMode: none` with caution. Unexpected errors related to premature objects collection may occur. [More information on `markingMode:none`](./marking-mode-none).
+> **NOTE:** Use `markingMode: none` with caution. Unexpected errors related to premature objects collection may occur. [More information on proper memory management using `markingMode:none`](./marking-mode-none).
 
 ## Timezone Changes
 

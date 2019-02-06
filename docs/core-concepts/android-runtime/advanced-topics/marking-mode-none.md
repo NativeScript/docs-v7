@@ -1,6 +1,6 @@
 ---
 title: "Optimizing Performance Using markingMode: none"
-description: "How to enable markingMode:none in your NativeScript mobile app and test for potential problems"
+description: "How to enable markingMode:none in your NativeScript mobile app and prevent potential problems"
 position: 4
 slug: marking-mode-none
 ---
