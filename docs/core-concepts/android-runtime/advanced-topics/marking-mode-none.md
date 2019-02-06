@@ -5,12 +5,6 @@ position: 4
 slug: marking-mode-none
 ---
 
-> **WARNING**:  Use caution when enabling this option and make sure to thoroughly test your apps with different memory constrains and devices! In this mode NativeScript does not take care of the lifetime of Java instances and unexpected and unpredictable crashes can occur due to Java instances being prematurely collected. The errors generated in such cases look like this:
-`Error: com.tns.NativeScriptException: Attempt to use cleared object reference id=<some-object-id-number>`
-... or like:
-`The JavaScript instance no longer has available Java instance counterpart`
-
-
 # Optimizing Performance Using markingMode: none
 
 Starting with NativeScript 3.2, a new (experimental at the time) feature was added to the Android runtime called `markingMode`. Its purpose is to speed up garbage collection in the V8 engine. In some cases, a GC pass could take from 0.5 to 1 second and since it runs on the main UI thread, the user would experience a frozen app until GC is done. Setting “markingMode” to “none” will speed up the garbage collection greatly, so it would be less noticeable (if at all) to the app user. The downside of this approach is that some objects could be collected while their counterparts (in V8 or Android) are still in use. Such case is when JavaScript objects are referenced only from native code and in the eyes of the V8 GC no JS object holds reference to them. In other words – the objects are no longer “marked” as used and the V8 GC might collect them too early.
@@ -33,7 +27,11 @@ First, to instruct any app to use this feature we need to add the following in t
   "markingMode": "none",
 }
 ```
-If the app behaves correctly after this change - great. If, however, some sporadic errors occur, especially related to memory management ("Attempt to use cleared object reference" etc), additional work has to be done. Have in mind the problem could be either in the app code, or in some plugin(s) used by the app. In both cases the resolution is identical.
+If the app behaves correctly after this change - great. Sometimes, however, some sporadic errors/crashes occur, especially related to memory management, like any of the following:
+- `Error: com.tns.NativeScriptException: Attempt to use cleared object reference id=<some-object-id-number>`
+- `The JavaScript instance no longer has available Java instance counterpart`  
+
+In such cases additional work has to be done. Have in mind the problem could be either in the app code, or in some plugin(s) used by the app. In both cases the resolution is identical.
 
 ### Let’s start with an example
 
@@ -47,7 +45,7 @@ var callback = new android.native.NCallback({           // native interface
 android.native.Executor.printWithDelay(callback, 3s);
 ```
 
-The implementor is enclosed by the callback implementation, but with `markingMode: none` enabled the framework longer takes care of finding out that connection. So, when GC happens in V8 or in Android the `implementor` instance (or its native representation) is GC'ed. This can result in either Java or JavaScript instance missing and upon calling of the `callback` an "Attempt to use cleared object reference" or "JavaScript instance no longer has available Java counterpart" error is very likely to occur. 
+The implementor is enclosed by the callback implementation, but with `markingMode: none` enabled the framework no longer takes care of finding out that connection. So, when GC happens in V8 or in Android the `implementor` instance (or its native representation) is GC'ed. This can result in either Java or JavaScript instance missing and upon calling of the `callback` an "Attempt to use cleared object reference" or "JavaScript instance no longer has available Java counterpart" error is very likely to occur. 
 
 ### Solution
 
