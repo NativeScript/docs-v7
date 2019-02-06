@@ -7,7 +7,7 @@ slug: memory-management
 
 > **NOTE:** This is an experimental feature and some details may change in future.
 
-# Introduction
+# Memory Management
 
 The current implementaion of NativeScript for Android utilizes both V8 and Dalvik/ART garbage collectors. Having two garbage collectors may provide challenges for memory management in some scenarios. This articles describes an experimental feature that allows you better fine control for memory management.
 
