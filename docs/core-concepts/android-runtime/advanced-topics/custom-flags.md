@@ -24,6 +24,22 @@ The `--expose_gc` flag exposes a global `gc()` function which can be helpful in 
 }
 ```
 
+## Marking Mode
+
+Starting with NativeScript 3.2 a flag has been added to enable NativeScript apps to use different mode for garbage collection, providing significant performance boost. To enable this, you can set the `markingMode` flag to `none`:
+
+```JSON
+{
+    ...
+    "android": {
+        "markingMode": "none"
+    }
+    ...
+}
+```
+
+> **NOTE:** Use `markingMode: none` with caution. Unexpected errors related to premature objects collection may occur. [More information on `markingMode:none`](./marking-mode-none).
+
 ## Timezone Changes
 
 For improved performance, V8 keeps a cache of various values used for date and time computation. This may lead to a negative side effect for the application because changes made to the current timezone will not be reflected until the application is restarted. While this is not a common requirement for most applications, there are some circumstances where this behavior might be needed. To enable this scenario, you can set the `handleTimeZoneChanges` flag:

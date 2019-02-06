@@ -1,21 +1,23 @@
 ---
-title: "markingMode:none"
-description: "Things to consider when using markingMode:none in your NativeScript mobile app"
+title: "Optimizing Performance Using markingMode: none"
+description: "How to enable markingMode:none in your NativeScript mobile app and test for potential problems"
 position: 4
 slug: marking-mode-none
 ---
 
 > **WARNING**:  Use caution when enabling this option and make sure to thoroughly test your apps with different memory constrains and devices! In this mode NativeScript does not take care of the lifetime of Java instances and unexpected and unpredictable crashes can occur due to Java instances being prematurely collected. The errors generated in such cases look like this:
 `Error: com.tns.NativeScriptException: Attempt to use cleared object reference id=<some-object-id-number>`
+... or like:
+`The JavaScript instance no longer has available Java instance counterpart`
 
-# Introduction
 
-Starting with NativeScript 3.2, a new (experimental at the time) feature was added to the Android runtime called `markingMode`. Its purpose is to speed up garbage collection in the V8 engine. In some cases, a GC pass could take from 0.5 to 1 second and since it runs on the main UI thread, the user would experience a frozen app until GC is done. Setting “markingMode” to “none” will speed up the garbage collection greatly, so it would be less noticeable (if at all) to the app user. The downside of this approach is that some JavaScript objects could be collected while they are still in use. This could happen when JavaScript objects are referenced only from native code and in the eyes of the V8 GC no JS object holds reference to them. In other words – the objects are no longer “marked” as used and the V8 GC might collect them too early.
+# Optimizing Performance Using markingMode: none
+
+Starting with NativeScript 3.2, a new (experimental at the time) feature was added to the Android runtime called `markingMode`. Its purpose is to speed up garbage collection in the V8 engine. In some cases, a GC pass could take from 0.5 to 1 second and since it runs on the main UI thread, the user would experience a frozen app until GC is done. Setting “markingMode” to “none” will speed up the garbage collection greatly, so it would be less noticeable (if at all) to the app user. The downside of this approach is that some objects could be collected while their counterparts (in V8 or Android) are still in use. Such case is when JavaScript objects are referenced only from native code and in the eyes of the V8 GC no JS object holds reference to them. In other words – the objects are no longer “marked” as used and the V8 GC might collect them too early.
 
 The code inside `tns-core-modules` and all plugins published by the NativeScript Team (since version 5.1.0) are written in such a way, that it does not depend on the scope to keep those Java instances alive. This makes apps using these plugins fully compatible with the much more performant `markingMode: "none"` option.
 
-
-## Benefits and drawbacks of setting markingMode to none
+## Benefits and drawbacks of using markingMode: none
 
 The biggest benefit of setting `markingMode` to `none` is a more responsive app – an app that does not slow down if you use it for an extended amount of time. 
 The main drawbacks are:
@@ -37,7 +39,7 @@ If the app behaves correctly after this change - great. If, however, some sporad
 
 ```javascript
 var implementor = new android.native.Implementor();     // native class
-  var callback = new android.native.NCallback({         // native interface
+var callback = new android.native.NCallback({           // native interface
     getMessage: function () {
         implementor.getMessage();
     }
@@ -45,7 +47,7 @@ var implementor = new android.native.Implementor();     // native class
 android.native.Executor.printWithDelay(callback, 3s);
 ```
 
-The implementor is enclosed by the callback implementation, but with `markingMode: none` enabled we no longer take care of finding that connection out. So, when GC happens in V8 the `implementor` instance is GC'ed. This can cause its Java counterpart instance to be collected too early and upon calling of the `callback` an "Attempt to use cleared object reference" error is very likely to occur. 
+The implementor is enclosed by the callback implementation, but with `markingMode: none` enabled the framework longer takes care of finding out that connection. So, when GC happens in V8 or in Android the `implementor` instance (or its native representation) is GC'ed. This can result in either Java or JavaScript instance missing and upon calling of the `callback` an "Attempt to use cleared object reference" or "JavaScript instance no longer has available Java counterpart" error is very likely to occur. 
 
 ### Solution
 
@@ -67,6 +69,8 @@ Naturally, you must manage the lifecycle of the implementor and release it when 
 ```javascript
 global.implementor = null;
 ```
+
+> **NOTE** To see a more concrete example of the above scenario using `markingMode: none`, run [this example](https://github.com/NativeScript/marking-mode-example)
 
 ## Testing an app for `markingMode: none` related issues
 
