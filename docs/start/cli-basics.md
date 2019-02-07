@@ -57,7 +57,7 @@ Now that you’ve created an app let’s look at how to get your new app up and 
 
 Once your NativeScript mobile project is created, you can start the application in two different ways:
 
-- Using a cloud build via the `preview` command. This option allows you to test NativeScript with a quick setup. See the [quick setup section](#quick-setup-using-preview) for details).
+- Using a preview build via the `preview` command. This option allows you to test NativeScript with a quick setup. See the [quick setup section](#quick-setup-using-preview) for details).
 
 - Using a local build via the `run` command. This option allows you to experience the full developer experience (building and deploying on local emulators and devices). See the [full setup section](#full-setup-using-run) for details.
 
@@ -443,7 +443,7 @@ However, if you’re not committed to an editor, or if you’re looking to try s
 - Visual Studio Code gives you the ability to debug JavaScript and TypeScript code directly in your editor. The NativeScript team maintains an official [NativeScript Visual Studio Code extension](https://www.nativescript.org/nativescript-for-visual-studio-code) that enables step debugging for NativeScript apps.
 - Visual Studio Code is a fast, modern editor that Microsoft [updates frequently](https://code.visualstudio.com/updates/).
 - Visual Studio Code is available for Windows, macOS, and Linux.
-- Microsoft backs visual Studio Code; therefore, you can feel confident that the editor will continue to be supported in the future.
+- Microsoft backs Visual Studio Code; therefore, you can feel confident that the editor will continue to be supported in the future.
 
 If you do choose to [try Visual Studio Code](https://code.visualstudio.com/), let’s look at one tip you might find useful as you develop NativeScript apps.
 
@@ -458,7 +458,7 @@ After you install Visual Studio Code, you can open projects using the editor’s
 
 The `code` command runs in your command-line or terminal, and it works just like the `tns` command does for NativeScript apps. Visual Studio Code installs the `code` command by default on Windows on Linux, but on macOS, there’s [one manual step](https://code.visualstudio.com/docs/setup/mac) you must perform.
 
-Once set up, you can type `code .` in your terminal to open the files in your current folder for editing. For example, you could use the following sequence of commands to create a new NativeScript app and open it for editing.
+Once set up, you can type `code .` in your terminal to open the files in your current folder for editing. For example, you could use the following sequence of command to create a new NativeScript app and open it for editing.
 
 ```
 tns create MyNewApp
