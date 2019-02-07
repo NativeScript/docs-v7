@@ -426,7 +426,7 @@ When referring to code-only components in your pages with an `xmlns` declaration
 
 **The page using the custom component**
 
-The sample `main-page.xml` is using a custom component `my-control.xml` nad the `my-control.ts` code-behind defined as a separate files in the `app/components` folder.
+The sample `main-page.xml` is using a custom component `my-control.xml` and the `my-control.ts` code-behind defined as a separate files in the `app/components` folder.
 ```XML
 <!-- app/main-page.xml -->
 <Page xmlns:comps="components" navigatingTo="navigatingTo">
@@ -495,7 +495,7 @@ exports.onLoaded = onLoaded;
 
 **The View Model used for bindings**
 
-The `main-page` has a binding context set thought view model (MVVM pattern). The binding context can be accessed though the custom component as demonstrated.
+The `main-page` has a binding context set thought view model (MVVM pattern). The binding context can be accessed through the custom component as demonstrated.
 ```TypeScript
 // app/main-view-model.ts
 import { Observable } from "tns-core-modules/data/observable";
