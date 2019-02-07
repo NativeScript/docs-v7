@@ -128,7 +128,7 @@ A number of utility class names are available for changing the display of text y
 
 ### Font
 
-The NativeScript core theme does not change the base font family you use to develop your apps, however, the theme does provide a series of font-related class names.
+The NativeScript core theme does not change the base font family you use to develop your apps; however, the theme does provide a series of font-related class names.
 
 * `font-weight-normal`: A class name to display a font in its normal `font-weight`.
 
@@ -399,7 +399,7 @@ You can use the following form-related class names to improve the look of forms 
 
 There are a few different ways you may want to display individual form fields within your form. Look over the list of class names below, and then review the subsequent examples to see those class names in action.
 
-* `input`: A class name that applies the base stying to TextField UI components.
+* `input`: A class name that applies the base styling to TextField UI components.
 * `input-border`: A class name that adds a border to a TextField UI component.
 * `input-rounded`: A class name that adds a rounded border to a TextField UI component.
 * `label`: A class name that applies the base styling to Label UI components.
