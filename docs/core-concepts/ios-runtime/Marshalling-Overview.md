@@ -102,7 +102,7 @@ NativeScript considers instances of `NSNull`, `NSNumber`, `NSString` and `NSDate
 
 On the other hand, any API that expects a `NSNull`, `NSNumber`, `NSString` or `NSDate` instance in Objective-C can be called either with a wrapper object or a JavaScript value - `null`, `number` or `boolean`, `string` or `Date`, in JavaScript. The conversion is automatically handled by NativeScript.
 
-More information on how NativeScript deals with Objective-C classes is available [here](../types/ObjC-Classes.md).
+More information on how NativeScript deals with Objective-C classes is available [here](types/ObjC-Classes.md).
 
 ## Objective-C Protocols
 Protocols in Objective-C are like interfaces in other languages - they are blueprints of what members a class should contain, a sort of an API contract. Protocols are exposed as empty objects in JavaScript. Protocols are usually only referenced when [subclassing](../how-to/ObjC-Subclassing.md) an Objective-C class or when checking whether an object or class conforms to a protocol.
