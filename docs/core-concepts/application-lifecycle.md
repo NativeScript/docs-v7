@@ -81,7 +81,7 @@ The component lifecycle is controlled by the Angular application. It creates, up
 
 * **ngOnInit** - Called after all data-bound input methods are initialized.
 * **ngOnChanges** - Called after a data-bound property has been changed.
-* **ngDoCheck** - Detect and act upon changes that Angular can or won't detect on its own. Called every change detection run.
+* **ngDoCheck** - Detect and act upon changes that Angular can't or won't detect on its own. Called every change detection run.
 * **ngOnDestroy** - Called just before Angular destroys the component.
 
 For a full list, see the official [Angular Lifecycle Hooks docs](https://angular.io/guide/lifecycle-hooks).
