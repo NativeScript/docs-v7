@@ -190,7 +190,6 @@ All the values in screen size qualifiers are in density independent pixels (DP) 
 
 * `android` – Android platform
 * `ios` – iOS platform
-* `windows` (coming soon) – Windows platform
 
 *Example (platform specific files)*:
 
