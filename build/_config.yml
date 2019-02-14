@@ -44,17 +44,11 @@ navigation:
     "core-concepts/ios-runtime":
         position: 300
         title: "iOS Runtime"
-    "core-concepts/ios-runtime/getting-started":
-        position: 10
-        title: "Getting started"
     "core-concepts/ios-runtime/types":
-        position: 20
+        position: 90
         title: "Types"
-    "core-concepts/ios-runtime/marshalling":
-        position: 30
-        title: "Marshalling"
     "core-concepts/ios-runtime/how-to":
-        position: 40
+        position: 100
         title: "How-To"
     integration-with-existing-ios-and-android-apps:
         position: 30
@@ -158,13 +152,13 @@ navigation:
         title: Sidekick Settings
     "sidekick/user-guide/create-app":
         position: 40
-        title: Creating Your App 
+        title: Creating Your App
     "sidekick/user-guide/configure-app":
         position: 45
-        title: Configuring Your App    
+        title: Configuring Your App
     "sidekick/user-guide/add-page":
         position: 50
-        title: Adding a New Page to Your App         
+        title: Adding a New Page to Your App
     "sidekick/user-guide/code-signing":
         position: 55
         title: Code Signing Your App
