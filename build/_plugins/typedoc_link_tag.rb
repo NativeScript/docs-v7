@@ -13,10 +13,6 @@ class TypeDocLinkTag < Liquid::Tag
         localSite = context['site']
        
         apiRefUrl = localSite['apirefurl']
-        puts "apiRefUrl"
-        puts apiRefUrl
-        puts "page_url";
-        puts page_url;
 
         moduleInfo = @arguments[0].split(":")
         if moduleInfo.count < 2
