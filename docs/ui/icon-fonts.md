@@ -15,7 +15,7 @@ While bitmap images are great, they present challenges in designing mobile appli
 
 1. Choose or generate an icon font that best matches your needs. Two popular icon fonts are [IcoMoon](https://icomoon.io/) and [Font Awesome](https://fontawesome.com/how-to-use/on-the-web/setup/hosting-font-awesome-yourself).
 2. Once you have downloaded the icon font to your machine, locate the [TrueType](https://en.wikipedia.org/wiki/TrueType) font file with extension **.ttf**.
-3. In your NativeScript application **app** folder (for Angular 6+ **src** folder), create a folder called **fonts** and place the **.ttf** there.
+3. In your root application folder (This is the **app** folder for NativeScript Core, and the **src** folder for Angular 6+), create a folder called **fonts** and place the **.ttf** there.
 4. Follow the instructions on the icon font webpage to determine the hex codes of each font glyph, i.e., icon. Add a **Label** component to your NativeScript app and bind the Label's **text** property to a one-letter string generated from the character code of the icon you want to show, i.e., `String.fromCharCode(0xe903)`.
 
 > **Note:** While this documentation article is focused on icon fonts, the above workflow is a hundred percent applicable for both **text fonts** and **icon fonts**.
