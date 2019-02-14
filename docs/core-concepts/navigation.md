@@ -106,7 +106,7 @@ export function onTap(args: EventData) {
 
 ![navigation-schema-backward](../img/navigation/navigation-schema-backward.png?raw=true)
 
-It can also be called upward navigation since you are going up in your navigation hierarchy. This type of navigation represents the opposite direction of the forward navigation and is supported by the `Frame` API. To force a navigation back to the previous page module loaded in a `Frame` simply call its [goBack()](http://localhost:9192/api-reference/classes/_ui_frame_.frame#goback) method. Check out the complete playground demo below the code sample.
+It can also be called upward navigation since you are going up in your navigation hierarchy. This type of navigation represents the opposite direction of the forward navigation and is supported by the `Frame` API. To force a navigation back to the previous page module loaded in a `Frame` simply call its [goBack()](https://docs.nativescript.org/api-reference/modules/_ui_frame_#goback) method. Check out the complete playground demo below the code sample.
 
 ``` item-page.xml
 <Page loaded="onPageLoaded">
