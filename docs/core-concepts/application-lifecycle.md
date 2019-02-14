@@ -137,7 +137,7 @@ import * as application from "tns-core-modules/application";
 application.run({ moduleName: "app-root" });
 ```
 
-> **Note:** Prior to version 4.0.0 all NativeScript application had single topmost `Frame` implicitly created by the `application.start()` method. With NativeScript 4.x.x and above the root `Frame` is no longer implicitly created. Instead you can specify any `View` to be the root of your application while using `application.run({ moduleName: "app-root"})` where `app-root` is the file containing your root `View`. More about the `Frame` API and navigation could be found in the [application lifecycle article](https://docs.nativescript.org/core-concepts/navigation)
+> **Note:** Prior to version 4.0.0 all NativeScript application had single topmost `Frame` implicitly created by the `application.start()` method. With NativeScript 4.x.x and above the root `Frame` is no longer implicitly created. Instead you can specify any `View` to be the root of your application while using `application.run({ moduleName: "app-root"})` where `app-root` is the file containing your root `View`. More about the `Frame` API and navigation could be found in the [navigation article](https://docs.nativescript.org/core-concepts/navigation)
 
 {% endnativescript %}
 
