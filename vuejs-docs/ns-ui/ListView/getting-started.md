@@ -65,6 +65,52 @@ export default {
 };
 ```
 
+## Using `ObservableArray`
+
+ There are some caveats as the inner `RadListView` object does not know about Vue and does not observe the re-active Vue data. So, in order to fix the problem and update the list if some item changes, the Vue plugin does automatically refresh the control entirely if it detects any changes on the list.
+
+ This may cause some minor UI issues as scrolling to the first position when list changes, and this may not be a desired behavior.
+
+ If you want to get rid of this minor caveats, you can use `ObservableArray` instead of regular arrays. Using an **ObservableArray** instance as a source for `RadListView` will ensure that changes in the source collection will be automatically taken care of by the control
+
+ The previous code would be like this:
+
+ ```
+import { ObservableArray } from 'tns-core-modules/data/observable-array';
+ export default {
+  template: `
+  <Page>
+    <StackLayout>
+      <RadListView ref="listView"
+                   for="item in itemList"
+                   @itemTap="onItemTap">
+        <v-template>
+          <StackLayout orientation="vertical">
+            <Label :text="item.name"></Label>
+            <Label :text="item.description"></Label>
+          </StackLayout>
+        </v-template>
+      </RadListView>
+    </StackLayout>
+  </Page>
+  `,
+  data() {
+    return {
+      itemList: ObservableArray([
+        {name: 'Item 1', description: 'Item 1 description'},
+        {name: 'Item 2', description: 'Item 2 description'},
+        {name: 'Item 3', description: 'Item 3 description'},
+      ]),
+    };
+  },
+  methods: {
+    onItemTap({ item }) {
+      console.log(`Tapped on ${item.name}`);
+    },
+  }
+};
+```
+
 ## References
 
 Related articles you might find useful:

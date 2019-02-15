@@ -57,8 +57,8 @@ const MyComponent = {
                     <Label text="Close Drawer" color="lightgray" padding="10" style="horizontal-align: center" @tap="onCloseDrawerTap"></Label>
                 </StackLayout>
                 <StackLayout ~mainContent>
-                    <Label textWrap="true" class="drawerContentText">{{ mainContentText }}</Label>
-                    <Button text="OPEN DRAWER" @tap="openDrawer()" class="drawerContentButton"></Button>
+                    <Label textWrap="true">{{ mainContentText }}</Label>
+                    <Button text="Open Drawer" @tap="openDrawer()"></Button>
                 </StackLayout>
             </RadSideDrawer>
         </Page>
@@ -68,10 +68,10 @@ const MyComponent = {
     },
     methods: {
         openDrawer() {
-            this.$refs.drawer.nativeView.showDrawer();
+            this.$refs.drawer.showDrawer();
         },
         onCloseDrawerTap() {
-            this.$refs.drawer.nativeView.closeDrawer();
+            this.$refs.drawer.closeDrawer();
         }
     },
     data() {
