@@ -29,18 +29,50 @@ var chartModule = require("nativescript-ui-chart");
 ## Getting Started with Vue
 To use a plugin which is part from Progress NativeScript UI with Vue you need to first install the corresponding plugin by executing `tns plugin add nativescript-ui-<plugin-name>`, for example `tns plugin add nativescript-ui-chart`
 
-After installing a plugin simply request its `nativescript-ui-chart/vue` module:
+After installing the NPM package, we only need to install the Vue plugin by importing the `nativescript-ui-chart/vue` module and calling `Vue.use()`:
 
 ```
-const ChartVue = require('nativescript-ui-chart/vue');
+import Vue from 'nativescript-vue';
+import RadChartPlugin from 'nativescript-ui-chart/vue';
+
+Vue.use(RadChartPlugin);
 ```
 
-Once the module is required inside the NativeScript + Vue application you can take advantage of its contents by utilizing the RadCartesianChart:
+Once the module is required inside the NativeScript + Vue application you can take advantage of its contents by utilizing the RadCartesianChart. See this example of `App.vue` file:
 
 ```
-<RadCartesianChart>
-    <LineSeries v-tkCartesianSeries :items="categoricalSource" categoryProperty="Country" valueProperty="Amount" />
-    <CategoricalAxis v-tkCartesianHorizontalAxis />
-    <LinearAxis v-tkCartesianVerticalAxis />
-</RadCartesianChart>
+<template>
+  <Page>
+    <RadCartesianChart>
+      <BarSeries v-tkCartesianSeries
+                 categoryProperty="Country"
+                 valueProperty="Amount"
+                 :items="items" />
+      <CategoricalAxis v-tkCartesianHorizontalAxis />
+      <LinearAxis v-tkCartesianVerticalAxis />
+    </RadCartesianChart>
+  </Page>
+</template>
+
+<script>
+  import { ObservableArray } from 'tns-core-modules/data/observable-array'
+
+  export const getCountriesData = () => {
+    return new ObservableArray([
+      { Country: 'Germany', Amount: 15 },
+      { Country: 'France', Amount: 13 },
+      { Country: 'Bulgaria', Amount: 24 },
+      { Country: 'Spain', Amount: 11 },
+      { Country: 'USA', Amount: 18 }
+    ])
+  }
+
+  export default {
+    data() {
+      return {
+        items: getCountriesData(),
+      }
+    }
+  }
+</script>
 ```

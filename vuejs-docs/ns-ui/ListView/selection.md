@@ -31,6 +31,8 @@ To notify you when the selection state of an item is changed, `RadListView` expo
 The following snippets demonstrate how item selection is used.
 
 ```
+import { ObservableArray } from 'tns-core-modules/data/observable-array';
+
 export default {
   template: `
   <Page>
@@ -42,7 +44,7 @@ export default {
                    @itemSelected="onItemSelected"
                    @itemDeselected="onItemDeselected">
         <v-template>
-          <StackLayout class="item" :class="getItemClass(item)" orientation="vertical">
+          <StackLayout class="item" :class="item.class" orientation="vertical">
             <Label :text="item.name"></Label>
           </StackLayout>
         </v-template>
@@ -52,33 +54,25 @@ export default {
   `,
   data () {
     return {
-      itemList: [
-        {name: 'Item 1'},
-        {name: 'Item 2'},
-        {name: 'Item 3'},
-      ],
-      selectedItems: [],
+      itemList: new ObservableArray([
+        {name: 'Item 1', class: ''},
+        {name: 'Item 2', class: ''},
+        {name: 'Item 3', class: ''},
+      ]),
     };
   },
   methods: {
     onItemSelected({ index, object }) {
-      const itemSelected = this.itemList[index]
+      const itemSelected = this.itemList.getItem(index);
       console.log(`Item selected: ${itemSelected.name}`);
-      this.setSelectedItems();
+      itemSelected.class = 'selected';
+      this.itemList.setItem(index, itemSelected);
     },
     onItemDeselected({ index, object }) {
-      const itemSelected = this.itemList[index]
+      let itemSelected = this.itemList.getItem(index);
       console.log(`Item deselected ${itemSelected.name}`);
-      this.setSelectedItems();
+      itemSelected.class = '';
     },
-    setSelectedItems() {
-      this.isSelected = !this.isSelected;
-      this.selectedItems = this.$refs.listView.getSelectedItems();
-      this.$refs.listView.refresh(); // refresh will recalculate items' CSS classes
-    },
-    getItemClass(item) {
-      return this.selectedItems.indexOf(item) >= 0 ? 'selected' : ''
-    }
   }
 };
 ```
