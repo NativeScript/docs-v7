@@ -127,7 +127,7 @@ and `AppTheme` (used for your main application).
 ![Setting styles in values folders](../img/launch-screen/android/launch-android-004.png "Setting styles in values folders")
 
 > **Note:** If your project comes with no folders **values**, **values-v21** and/or **drawable-xxx**, you can create
-them manually and add the files needed accordingly. Or you can use [the default set of styles and themes used in NativeScript](https://github.com/NativeScript/nativescript-marketplace-demo/tree/production/app/App_Resources/Android). 
+them manually and add the files needed accordingly. Or you can use [the default set of styles and themes used in NativeScript](https://github.com/NativeScript/nativescript-marketplace-demo/tree/master/app/App_Resources/Android). 
 
 Notice that you can **NOT** have custom folders inside your App_Resources.
 Only folders that are required by the Android convention <Comment: convention seems like the wrong word. Do you mean operating system?> are allowed and they must be created with the exact names
