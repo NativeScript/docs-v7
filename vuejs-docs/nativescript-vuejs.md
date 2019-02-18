@@ -15,9 +15,13 @@ publish: true
 
 ## Get Started
 
-The NativeScript-Vue documentation lives at [nativescript-vue.org](https://nativescript-vue.org/en/docs/introduction/).
+The easiest place to learn NativeScript-Vue is with the interactive tutorials in [NativeScript Playground](https://play.nativescript.org/), our browser-based NativeScript development environment.
 
-<a href="https://nativescript-vue.org/en/docs/introduction/" class="ns-button -action" id="ng-start-button">Get Started with NativeScript-Vue</a>
+<a href="https://play.nativescript.org" class="ns-button -action" id="ng-start-button">Get Started with NativeScript-Vue</a>
+
+When you need to take the next step, head to the [NativeScript-Vue documentation hub](https://nativescript-vue.org/en/docs/introduction/) for information on setting up a local environment, NativeScript-Vue UI components, and more.
+
+<a href="https://nativescript-vue.org/en/docs/introduction/" class="ns-button -action" id="ng-start-button">Visit the NativeScript-Vue documentation</a>
 
 ## Join the NativeScript-Vue Community
 
