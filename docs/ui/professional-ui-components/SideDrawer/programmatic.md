@@ -30,5 +30,5 @@ Check our SDK examples repository on GitHub. You will find this and a lot more p
 
 Related articles you mind find useful:
 
-* [**Locations**]({% slug sidedrawer-features-locations %})
-* [**Transitions**]({% slug sidedrawer-features-transitions %})
+* [**Locations**]({% slug sidedrawer-features-location %})
+* [**Transitions**]({% slug sidedrawer-transitions %})
