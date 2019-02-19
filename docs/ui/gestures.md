@@ -262,7 +262,7 @@ label.on("loaded, tap, doubleTap, longPress", function (args: GestureEventData) 
 ```
 {% endnativescript %}
 
- ## Gestures Manipulations
+## Gestures Manipulations
 
 In some scenarios, you would want to disable the user interaction or to create more complex UI where some gestures are passing through the parents of the actual interactive zone. NativeScript provides some specific properties for handling similar cases as follows:
 
