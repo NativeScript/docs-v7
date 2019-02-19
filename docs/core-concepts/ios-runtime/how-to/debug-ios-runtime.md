@@ -1,7 +1,7 @@
 ---
 title: Debugging the iOS Runtime within your app's XCode project
 description: Add the iOS Runtime .xcodeproj to an existing app
-position: 0
+position: 10
 slug: debug-ios-runtime
 ---
 
@@ -16,15 +16,15 @@ In certain scenarios where runtime errors occur, the debug info provided by the 
 ### 1. Create a new NativeScript application using one of the following commands depending on your platform preference:
 #### *You can skip this step if you want to use some of your existing apps*
 
-NativeScript with Angular: 
+NativeScript with Angular:
 
 `tns create debug-ios-runtime --ng`
 
-NativeScript with TypeScript: 
+NativeScript with TypeScript:
 
 `tns create debug-ios-runtime --tsc`
 
-NativeScript with plain JavaScript: 
+NativeScript with plain JavaScript:
 
 `tns create debug-ios-runtime`
 
@@ -42,7 +42,7 @@ NativeScript with plain JavaScript:
 
 > **WARNING**: Make sure your environment fulfills all the requirements mentioned in [ios-runtime](https://github.com/NativeScript/ios-runtime)'s README.
 
-### 1. Create a `cmake-build` folder in the already cloned ios-runtime repository 
+### 1. Create a `cmake-build` folder in the already cloned ios-runtime repository
 
 `cd ios-runtime`
 
@@ -60,7 +60,7 @@ NativeScript with plain JavaScript:
 
 ## Add the iOS Runtime .xcodeproj to your application's one and start debugging
 
-### 1. Close *Nativescript.xcodeproj* and drag it into your application's .xcodeproj 
+### 1. Close *Nativescript.xcodeproj* and drag it into your application's .xcodeproj
 ![Drag xcodeproj](drag-runtime-proj.png)
 
 > **IMPORTANT**: If you drag it from the Runtime's xcodeproj you will get an error, thus drag it from Finder after closing *Nativescript.xcodeproj*
@@ -76,6 +76,6 @@ NativeScript with plain JavaScript:
 ### 3. Let's try to change a function's implementation and set a breakpoint there:
 ![Set breakpoint](set-breakpoint.png)
 
-### 4. If you run the application project you should hit the breakpoint and see the printed text in the console: 
+### 4. If you run the application project you should hit the breakpoint and see the printed text in the console:
 
 ![Hit breakpoint](hit-breakpoint.png)

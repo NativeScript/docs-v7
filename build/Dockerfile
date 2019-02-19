@@ -1,7 +1,5 @@
 FROM ruby:2.3.5-alpine3.4
 
-COPY docs-watcher/start.sh /
-
 RUN apk add --update \
   bash \
   bash-completion \
@@ -17,9 +15,12 @@ RUN apk add --update \
   && npm config set cache /var --global \
   && npm install -g grunt \
   && npm install -g gulp \
-  && npm install -g gulp-typedoc \
-  && mkdir /run/nginx \
-  && chmod +x /start.sh
+  && npm install -g gulp-typedoc typedoc\
+  && mkdir /run/nginx
+
+COPY docs-watcher/start.sh /
+
+RUN chmod +x /start.sh
 
 ENTRYPOINT [ "/start.sh" ]
 

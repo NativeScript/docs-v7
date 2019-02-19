@@ -2,7 +2,7 @@
 nav-title: "Background Execution"
 title: "Background Execution"
 description: "Describing how to execute code while your application is in background mode."
-position: 10
+position: 50
 ---
 
 # Background Execution
@@ -37,7 +37,7 @@ import * as LocalNotifications from "nativescript-local-notifications";
 
 export class CustomAppDelegate extends UIResponder implements UIApplicationDelegate {
     public static ObjCProtocols = [UIApplicationDelegate];
-    
+
     private bgTask;
     private timer;
     private timerCounter;
@@ -67,8 +67,8 @@ export class CustomAppDelegate extends UIResponder implements UIApplicationDeleg
             // Otherwise, let the OS know there is no new data and complete the task
             completionHandler(UIBackgroundFetchResult.NoData);
         }
-        
-    }  
+
+    }
 }
 ```
 

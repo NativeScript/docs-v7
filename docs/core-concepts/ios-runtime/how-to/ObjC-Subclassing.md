@@ -2,7 +2,7 @@
 nav-title: "Subclassing Objective-C Classes"
 title: "Subclassing Objective-C Classes"
 description: "How to extend Objective-C classes and implement protocol from JavaScript."
-position: 0
+position: 30
 ---
 
 # Subclassing Objective-C Classes
@@ -184,7 +184,7 @@ There should be no TypeScript constructor, because it will not be executed. Inst
 
 ## TypeScript Delegate Example
 
-When working with native APIs, you'll find yourself having to setup delegates in order to recieve results or callbacks. For this example, we'll setup a delegate for the [Tesseract-OCR-iOS](https://github.com/gali8/Tesseract-OCR-iOS/wiki/Using-Tesseract-OCR-iOS/6510b29bbf18655f29a26f484b00a24cc66ed88b) API. 
+When working with native APIs, you'll find yourself having to setup delegates in order to recieve results or callbacks. For this example, we'll setup a delegate for the [Tesseract-OCR-iOS](https://github.com/gali8/Tesseract-OCR-iOS/wiki/Using-Tesseract-OCR-iOS/6510b29bbf18655f29a26f484b00a24cc66ed88b) API.
 
 Let's first take a look at what the delegate typescript declarations look like:
 ```typescript
