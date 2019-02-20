@@ -1,6 +1,6 @@
 ---
 title: Styling
-description: How to use Cascading Style Sheets (CSS) in NativeScript to change the appearance of GUI elements. The article describes the specifics about the CSS files declarations, how to use platform-specific CSS files and info about the supported CSS properties. 
+description: How to use Cascading Style Sheets (CSS) in NativeScript to change the appearance of GUI elements. The article describes the specifics about the CSS files declarations, how to use platform-specific CSS files and info about the supported CSS properties.
 position: 50
 tags: nativescript styling, nativescript css
 slug: styling
@@ -97,13 +97,13 @@ If you import any [custom components](https://docs.nativescript.org/ui/basics#cu
 ```CSS
 /* myCustomComponent.css */
 /* GOOD: This will ONLY apply to the custom component */
-.mywidget .label { 
-    color: blue; 
+.mywidget .label {
+    color: blue;
 }
 
 /* BAD: This will apply to the custom component AND potentially to the page where the component is used */
-.label { 
-    color: blue; 
+.label {
+    color: blue;
 }
 ```
 
@@ -490,7 +490,7 @@ Also, some more advanced scenarios are supported:
 * button[testAttr$='flower'] {...} - Selects all buttons with a `testAttr` property value that ends with "flower". The value does not have to be a whole word.
 * button[testAttr*='flo'] {...} - Selects all buttons with a `testAttr` property value that contains "flo". The value does not have to be a whole word.
 
-Attribute selectors could be used alone or could be combined with all type of CSS selectors. 
+Attribute selectors could be used alone or could be combined with all type of CSS selectors.
 
 {% nativescript %}
 ```CSS
@@ -587,7 +587,7 @@ This list of properties can be set in CSS or through the style property of each 
 
 In the context of mobile development, there are a number of properties that are mobile specific (and sometimes even platform specific e.g Android or iOS). In NativeScript, these featured properties are still accessible through both the code (inline, JavaScript, and TypeScript) but are also exposed as CSS properties. Apart from the API references, the below list is providing most of the non-common CSS properties in NativeScript.
 
-| CSS Property          | JavaScript Property   | Platform   | Compatibility  | Description | 
+| CSS Property          | JavaScript Property   | Platform   | Compatibility  | Description |
 |:----------------------|:----------------------|:-----------|:---------------|:------------|
 | `selected-tab-text-color`  | `selectedTabTextColor`     | Both       | `TabView`      | Sets the color of the text, while selecting some of the tabs. |
 | `tab-background-color`  | `tabBackgroundColor`     | Both       | `TabView`      | Sets the background color of the tabs. |
@@ -599,7 +599,7 @@ In the context of mobile development, there are a number of properties that are 
 
 NativeScript supports **DIPs** (Device Independent Pixels), **pixels** (via postfix `px`) and **percentages** (partial support for `width`, `height` and `margin`) as measurement units.
 
-NativeScript's recommended measurement unit is DIP. All measurable properties like `width`, `height`, `margin`, `paddings, border-width`, etc.) support device independent pixels. The font sizes are always measured in DIPs. 
+NativeScript's recommended measurement unit is DIP. All measurable properties like `width`, `height`, `margin`, `paddings, border-width`, etc.) support device independent pixels. The font sizes are always measured in DIPs.
 
 ```CSS
 .myLabel {
@@ -614,22 +614,22 @@ The device independent pixels (DIPs) are equal to the device screen's pixels div
 ```JavaScript
 const screen = require("tns-core-modules/platform").screen;
 
-// mainScreen is of type ScreenMetrics interface https://docs.nativescript.org/api-reference/interfaces/_platform_.screenmetrics
-let scale =  screen.mainScreen.scale; 
+// mainScreen is of type ScreenMetrics interface /api-reference/interfaces/_platform_.screenmetrics
+let scale =  screen.mainScreen.scale;
 let widthPixels = screen.mainScreen.widthPixels;
 let heightPixels = screen.mainScreen.heightPixels;
 let widthDIPs = screen.mainScreen.widthDIPs; // DIPs === pixels/scale (e.g 1024 pixels / 2x scale = 512 DIPs)
-let heightDIPs = screen.mainScreen.heightDIPs; 
+let heightDIPs = screen.mainScreen.heightDIPs;
 ```
 ```TypeScript
 import { screen } from "tns-core-modules/platform";
 
-// mainScreen is of type ScreenMetrics interface https://docs.nativescript.org/api-reference/interfaces/_platform_.screenmetrics
-let scale =  screen.mainScreen.scale; 
+// mainScreen is of type ScreenMetrics interface /api-reference/interfaces/_platform_.screenmetrics
+let scale =  screen.mainScreen.scale;
 let widthPixels = screen.mainScreen.widthPixels;
 let heightPixels = screen.mainScreen.heightPixels;
 let widthDIPs = screen.mainScreen.widthDIPs; // DIPs === pixels/scale (e.g. 1024 pixels / 2x scale = 512 DIPs)
-let heightDIPs = screen.mainScreen.heightDIPs; 
+let heightDIPs = screen.mainScreen.heightDIPs;
 ```
 
 NativeScript supports **percentage** values for `width`, `height` and `margins`. When a layout pass begins, first the percent values are calculated based on parent available size. This means that on vertical StackLayout if you place two Buttons with `height='50%'` they will get all the available height (e.g., they will fill the StackLayout vertically.). The same applies for `margin` properties. For example, if you set `marginLeft = '5%'`, the element will have a margin that corresponds to 5% of the parent's available width.
@@ -643,7 +643,7 @@ StackLayout {
 }
 ```
 
-This feature is limited to properties with simple types like string, number and boolean, and will set a local property value similar to component markup declaration in XML. CSS inheritance is not supported. 
+This feature is limited to properties with simple types like string, number and boolean, and will set a local property value similar to component markup declaration in XML. CSS inheritance is not supported.
 
 ## Using fonts
 The `font-family` property can hold several values. The first supported font in the list will be used. There is also support for the following generic font-families:
@@ -656,12 +656,12 @@ Platform specifics:
 * iOS: There are more than 30 default fonts available on iOS. You can check the [supported fonts for specific iOS versions and devices](http://iosfonts.com). To use a built-in font, simply specify the font name in the `font-family` property, such as `font-family: "American Typewriter";`. Adjust the font variant using the [`font-weight`](#supported-css-properties) property.
 
 ### Custom fonts
-You can use custom fonts in your app (in .TTF or .OTF format). 
+You can use custom fonts in your app (in .TTF or .OTF format).
 The NativeScript runtime will look for the font files under the `app/fonts/` (or `src/fonts/` if you use Angular) directory and load them automatically.
 
 ![Custom fonts setup"](../img/font-images/custom-fonts.png "Custom fonts setup")
 
-> Note: In iOS your font file should be named **exactly** as the font name. 
+> Note: In iOS your font file should be named **exactly** as the font name.
 If you have any doubt about the original font name, use the [Font Book](https://support.apple.com/en-us/HT201749) app to get the original font name.
 
 ## Import CSS

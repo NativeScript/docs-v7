@@ -78,7 +78,7 @@ In every animation, you can control the following properties:
 
 - **duration**: The length of the animation.
 - **delay**: The amount of time to delay starting the animation.
-- **iterations**: Specifies how many times the animation should be played. 
+- **iterations**: Specifies how many times the animation should be played.
 - **timing function**: The speed curve of the animation. Available options are defined below.
 - **originX** and **originY**: The X and Y components of the origin point around which the view will be transformed.
 
@@ -113,7 +113,7 @@ __Example 3: How to customize the animation timing function__
 ``` JavaScript
 var enums = require("tns-core-modules/ui/enums");
 view.animate({
-	translate: { x: 0, y: 100},    
+	translate: { x: 0, y: 100},
 	duration: 1000,
 	curve: enums.AnimationCurve.easeIn
 });
@@ -121,7 +121,7 @@ view.animate({
 ``` TypeScript
 import {AnimationCurve} from "tns-core-modules/ui/enums";
 view.animate({
-	translate: { x: 0, y: 100},    
+	translate: { x: 0, y: 100},
 	duration: 1000,
 	curve: AnimationCurve.easeIn
 });
@@ -181,7 +181,7 @@ More detailed examples are available on the [Animation Examples](./animation-exa
 
 ## Rotation using originX and originY
 
-To create more complex animations, we might need to change the origin point around which the selected view will be transformed. This can be achieved using [`originX`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#originx) and [`originY`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#originy) properties of `View`.
+To create more complex animations, we might need to change the origin point around which the selected view will be transformed. This can be achieved using [`originX`](/api-reference/classes/_ui_core_view_.view#originx) and [`originY`](/api-reference/classes/_ui_core_view_.view#originy) properties of `View`.
 
 __Example 5: Rotating a view around its center. Center of view is changed via `originX` and `originY` properties.__
 

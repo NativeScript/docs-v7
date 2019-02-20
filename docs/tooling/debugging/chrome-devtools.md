@@ -26,16 +26,16 @@ Table of supported features as of NativeScript version **3.4.0**
 
 ### Debug CLI Builds
 
-To debug on Android execute the following command: 
+To debug on Android execute the following command:
 ```Shell
 tns debug android
-```  
-To debug on iOS execute the following command: 
+```
+To debug on iOS execute the following command:
 ```Shell
 tns debug ios
 ```
 
-For security reasons, the generated debugging agent **can't be started automatically** from the command-line. That's why NativeScript CLI **generates a URL** which is printed on the screen instead. 
+For security reasons, the generated debugging agent **can't be started automatically** from the command-line. That's why NativeScript CLI **generates a URL** which is printed on the screen instead.
 
 ```Shell
 To start debugging, open the following URL in Chrome:
@@ -47,11 +47,11 @@ You need to manually copy it in Google Chrome's address bar to start debugging.
 
 With `nativescript-dev-webpack@0.15.0` and above, you can debug your Webpack bundled application.
 
-To debug bundled application on Android execute the following command: 
+To debug bundled application on Android execute the following command:
 ```Shell
 tns debug android --bundle
-```  
-To debug bundled application on iOS execute the following command: 
+```
+To debug bundled application on iOS execute the following command:
 ```Shell
 tns debug ios --bundle
 ```
@@ -63,7 +63,7 @@ tns debug ios --bundle
 ## Debugger
 Very often you need to reproduce a bug many times to get to the root of the problem. The debugger feature can help you find and diagnose the bugs occurring at runtime using the following techniques:
 - [Pause code with breakpoints](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints#loc) -  Set a breakpoint so that you can pause your code in the middle of its execution. Once your code is paused (_Figure 1_), you can [step through it (_Figure 2_) to investigate the control flow and property values]( https://developers.google.com/web/tools/chrome-devtools/javascript/reference#stepping)
-    
+
     *Figure 1: A line-of-code breakpoint set on line 29*:
     ![Setting breakpoints](https://developers.google.com/web/tools/chrome-devtools/javascript/imgs/loc-breakpoint.png)
 
@@ -72,7 +72,7 @@ Very often you need to reproduce a bug many times to get to the root of the prob
 
     > **Note:** Sometimes when the code you want to debug executes too early, for example during application initialization, you will have to place a [Line-of-code breakpoint - 'debugger;'](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints#debugger) statement in your code and start the debugging process with the `--debug-brk` CLI flag to allow the DevTools enough time to connect and attach before your code is executed.
 
-- [Inspect local and global properties, and variables](https://developers.google.com/web/tools/chrome-devtools/javascript/reference#scope) - While paused on a line of code, use the Scope pane (_Figure 3_) to view and edit the values of properties and variables in the local, closure, and global scopes.  
+- [Inspect local and global properties, and variables](https://developers.google.com/web/tools/chrome-devtools/javascript/reference#scope) - While paused on a line of code, use the Scope pane (_Figure 3_) to view and edit the values of properties and variables in the local, closure, and global scopes.
 
     *Figure 3: The Scope pane*:
     ![Scope pane](https://developers.google.com/web/tools/chrome-devtools/javascript/imgs/scope.svg)
@@ -114,7 +114,7 @@ DevTools shows **all*** network requests in the Network panel while the DevTools
     *Figure 7: The Requests table, outlined in blue*:
     ![Requests table](https://developers.google.com/web/tools/chrome-devtools/network-performance/imgs/requests-table.svg)
 
-    > **Note:** Time, Size, and Waterfall metrics may sometimes appear incorrectly or be missing altogether if a Status Code is available, however, that means a response has been received.    
+    > **Note:** Time, Size, and Waterfall metrics may sometimes appear incorrectly or be missing altogether if a Status Code is available, however, that means a response has been received.
 
 - [View a preview of a response body](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#preview) - To view a preview of a response body: Click the URL of the request, Under the Name column of the Requests table. Click the Preview tab (_Figure 8_). This tab is mostly useful for viewing images.
 
@@ -144,10 +144,10 @@ The Elements panel in DevTools displays information about the current view tree,
 
 - View node modifications - Changes made to the view tree through code will be reflected immediately in the Elements panel. Adding, removing child views, navigating to another page, or changing view properties are some of the events that trigger an update.
 
-- Live edit attributes - Examine and add, edit, or remove the current element's attributes. 
+- Live edit attributes - Examine and add, edit, or remove the current element's attributes.
 
     - To add a new attribute: Right-click the element. Select add attribute. Set the attribute as a text: `my-custom-attr="42"`. Press Enter.
-    
+
     - To remove an attribute: Click the element. Double-click the attribute text, select the text value, and press Backspace/Delete.
 
     - To change the value of an attribute: Click the element. Hover over an attribute and right-click it. Select "Edit attribute", edit accordingly, and press Enter.
@@ -156,19 +156,19 @@ The Elements panel in DevTools displays information about the current view tree,
 
 ## Plugin author’s guide
 Writing plugins is a great way to give back to the community by making application development ever easier by abstracting complex logic through a simple interface. What is even better is when your plugin can integrate almost seamlessly with the expanding arsenal of debugging tools provided by the platform. Following are the optional requirements and interfaces your plugin should comply to, to have your plugin's components/data shown in the respective DevTools panels.
--	Elements panel (UI plugins) - The following content concerns only plugin authors who wrap and expose native Android/iOS views in their work. 
+-	Elements panel (UI plugins) - The following content concerns only plugin authors who wrap and expose native Android/iOS views in their work.
     If you are a plugin author or plan to be one, you can either:
 
     - A: start off with a nativescript plugin template, which provides you with an already well-established structure to wrap native UI views in. To get started head over to the official seed's repository and follow the README instructions - https://github.com/NativeScript/nativescript-plugin-seed
 
-    - B: extend the `tns-core-modules`'s [View](http://docs.nativescript.org/api-reference/modules/_ui_core_view_.html) base class. Detailed information and tutorial on doing that coming soon!
+    - B: extend the `tns-core-modules`'s [View](/api-reference/modules/_ui_core_view_.html) base class. Detailed information and tutorial on doing that coming soon!
 
 
 -	Network requests in plugins - **Note**: __The following content concerns only plugin authors who wrap and expose **Android** (Network agent in DevTools not yet supported with a public API in the iOS runtime) http functionalities.__
     To make your http functionality debuggable, there are callbacks you need to call at certain times of the lifecycle of the network request, following a [specific protocol](https://chromedevtools.github.io/devtools-protocol/tot/Network/). For your convenience,In order to we've exposed callbacks and [TypeScript interfaces](https://github.com/NativeScript/NativeScript/blob/8f621a0df0f5c5660ed784944470e47bd6133825/tns-core-modules/debugger/debugger.ts#L48) to facilitate sending information to the Network agent.
 
     - Immediatelly before making the request:
-        
+
         Check if the `global.__inspector` object is available, and whether the DevTools are connected:
         ```JavaScript
         if (global.__inspector && global.__inspector.isConnected) { .. }
@@ -185,20 +185,20 @@ Writing plugins is a great way to give back to the community by making applicati
 
         Build a [LoadingFinishedData-compliant](https://github.com/NativeScript/NativeScript/blob/8f621a0df0f5c5660ed784944470e47bd6133825/tns-core-modules/debugger/debugger.ts#L87) object, as declared in the `debugger module`. The object notifies the Network agent that a request has completed, as well as the time spent.
 
-        Build a [SuccessfulRequestData-compliant](https://github.com/NativeScript/NativeScript/blob/8f621a0df0f5c5660ed784944470e47bd6133825/tns-core-modules/debugger/debugger.ts#L81) object, as declared in the `debugger module`. The object contains the response data, in a string format, the Id of the original request the response data corresponds to, and information whether the content should be base64-encoded, or not. 
+        Build a [SuccessfulRequestData-compliant](https://github.com/NativeScript/NativeScript/blob/8f621a0df0f5c5660ed784944470e47bd6133825/tns-core-modules/debugger/debugger.ts#L81) object, as declared in the `debugger module`. The object contains the response data, in a string format, the Id of the original request the response data corresponds to, and information whether the content should be base64-encoded, or not.
 
         Finally call the following runtime-exposed callbacks:
         ```JavaScript
         global.__inspector.responseReceived(responseData);
         global.__inspector.loadingFinished({ requestId: requestIdStr, timestamp: getTimeStamp() });
         global.__inspector.dataForRequestId(successfulRequestData);
-        ``` 
+        ```
 
 -	Debugging typescript-transpiledTo debug your TypeScript plugin based on the sources, and not the transpiled JS, it is enough to edit the respective `tsconfig.json` to output sources with inlined maps. That will ensure that the TypeScript sources will also show in the Sources pane, and allow you to debug it. Don't forget to transpile the sources without source maps before publishing the plugin.
 
 ## Credits
 > Portions of this page are modifications based on work created and [shared by Google](https://developers.google.com/terms/site-policies) and used according to terms described in the [Creative Commons 3.0 Attribution License](https://creativecommons.org/licenses/by/3.0/).
- 
+
 
 ## See also
  - [Building plugins]({%slug building-plugins%})

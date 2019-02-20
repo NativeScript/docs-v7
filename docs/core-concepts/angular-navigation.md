@@ -46,7 +46,7 @@ We recommend that you use `page-router-outlet` for your major mobile navigation 
 
 In a NativeScript application you **cannot** use the Angular [`routerLink`](https://angular.io/api/router/RouterLink) directive. NativeScript provides its own `nsRouterLink` directive that is working much in the same way. Additionally, it supports two NativeScript specific attributes that you can add to your `nsRouterLink` tag in the markup.
 
-* pageTransition - This attribute lets you specify the native transition for the `nsRouterLink` navigation. Accepted values are `true`, `false`, one of the predefined transitions listed [here](https://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition#name) or a custom [NavigationTransition](https://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition) object.
+* pageTransition - This attribute lets you specify the native transition for the `nsRouterLink` navigation. Accepted values are `true`, `false`, one of the predefined transitions listed [here](/api-reference/interfaces/_ui_frame_.navigationtransition#name) or a custom [NavigationTransition](/api-reference/interfaces/_ui_frame_.navigationtransition) object.
 * clearHistory - This attribute accepts a boolean value and indicates whether the navigation triggered by the `nsRouterLink` will clear the navigation history of the current outlet.
 
 ```HTML
@@ -400,7 +400,7 @@ export class ItemComponent implements OnInit {
 
 <ScrollView class="page">
     <StackLayout class="home-panel">
-        
+
     </StackLayout>
 </ScrollView>
 ```
@@ -611,8 +611,8 @@ The `TabView` container provides its lateral navigation logic automatically by p
 
 The `TabView` widget also provides two important features connected to lateral navigation:
 
-* [selectedIndex](https://docs.nativescript.org/api-reference/classes/_ui_tab_view_.tabview#selectedindex) property - use this property to programmatically navigate between the tabs.
-* [selectedIndexChanged](https://docs.nativescript.org/api-reference/classes/_ui_tab_view_.tabview#selectedindexchangedevent) event - use this event to handle navigations between tabs done by the user.
+* [selectedIndex](/api-reference/classes/_ui_tab_view_.tabview#selectedindex) property - use this property to programmatically navigate between the tabs.
+* [selectedIndexChanged](/api-reference/classes/_ui_tab_view_.tabview#selectedindexchangedevent) event - use this event to handle navigations between tabs done by the user.
 
 Check out the [TabView]({%slug tab-view %}) article for a more detailed look on how you can use and customize the component.
 

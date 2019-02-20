@@ -5,11 +5,11 @@ position: 70
 slug: listview
 publish: false
 environment: angular
---- 
+---
 
 # List View
 
-Using a `ListView` control inside Angular app requires some special attention due to the complexity of the NativeScript control like custom item template, bindings and so on. 
+Using a `ListView` control inside Angular app requires some special attention due to the complexity of the NativeScript control like custom item template, bindings and so on.
 
 In this article we will cover the following topics:
 
@@ -225,7 +225,7 @@ export class ListTestAsync {
         for (var i = 0; i < 3; i++) {
             items.push(new DataItem(i, "data item " + i));
         }
-        
+
         var subscr;
         this.myItems = RxObservable.create(subscriber => {
             subscr = subscriber;
@@ -241,7 +241,7 @@ export class ListTestAsync {
             items.push(new DataItem(counter, "data item " + counter));
             subscr.next(items);
         }, 1000);
-        
+
         setTimeout(() => {
             clearInterval(intervalId);
         }, 15000);
@@ -251,7 +251,7 @@ export class ListTestAsync {
 
 ## Load More Items
 
-The built-in [loadMoreItemsEvent](http://docs.nativescript.org/api-reference/classes/_ui_list_view_.listview.html#loadmoreitemsevent) can be used to implement infinite scrolling in your application. Infinite scrolling allows you to load content on demand without the need for pagination.
+The built-in [loadMoreItemsEvent](/api-reference/classes/_ui_list_view_.listview.html#loadmoreitemsevent) can be used to implement infinite scrolling in your application. Infinite scrolling allows you to load content on demand without the need for pagination.
 
 ```HTML
 // list-test.html

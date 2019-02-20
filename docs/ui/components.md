@@ -10,7 +10,7 @@ previous_url: /ui-views,/ui/ui-views
 
 # User Interface Widget Components
 
-NativeScript ships with a set of user interface [`views`](http://docs.nativescript.org/api-reference/modules/_ui_core_view_.html) (also known as widgets) which you can use to build the user interface of a mobile application. Most of these views wrap the corresponding native view for each platform while providing a common API for working with it. For example, the `Button` view renders an [`android.widget.Button`](http://developer.android.com/reference/android/widget/Button.html) on Android and [`UIButton`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/) on iOS.
+NativeScript ships with a set of user interface [`views`](/api-reference/modules/_ui_core_view_.html) (also known as widgets) which you can use to build the user interface of a mobile application. Most of these views wrap the corresponding native view for each platform while providing a common API for working with it. For example, the `Button` view renders an [`android.widget.Button`](http://developer.android.com/reference/android/widget/Button.html) on Android and [`UIButton`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIButton_Class/) on iOS.
 
 Defining the layout of the application is also an important part of the application development. For more information about the different layout containers that are available in NativeScript, see [The NativeScript Layout System]({%slug layouts %}).
 
@@ -61,7 +61,7 @@ The {% nativescript %}[TextField]({%slug text-field%}){% endnativescript %} {% a
 
 ## TextView
 
-The {% nativescript %}[TextView]({%slug text-view%}){% endnativescript %} {% angular %}[TextView]({%slug text-view-ng%}){% endangular %} widget provides an editable **multi-line** text view. 
+The {% nativescript %}[TextView]({%slug text-view%}){% endnativescript %} {% angular %}[TextView]({%slug text-view-ng%}){% endangular %} widget provides an editable **multi-line** text view.
 
 You can use it to show multi-line text and implement text editing.
 
@@ -135,7 +135,7 @@ The {% nativescript %}[ActivityIndicator]({%slug activity-indicator%}){% endnati
 
 ## Image
 
-The {% nativescript %}[Image]({%slug image%}){% endnativescript %} {% angular %}[Image]({%slug image-ng%}){% endangular %} widget shows an image. You can load the image from an [`ImageSource`](http://docs.nativescript.org/api-reference/modules/_image_source_.html) or from a URL.
+The {% nativescript %}[Image]({%slug image%}){% endnativescript %} {% angular %}[Image]({%slug image-ng%}){% endangular %} widget shows an image. You can load the image from an [`ImageSource`](/api-reference/modules/_image_source_.html) or from a URL.
 
 ![image android](./img/gallery/android/imagePage.png "image android")![image ios](./img/gallery/ios/imagePage.png "image ios")
 
@@ -147,7 +147,7 @@ The {% nativescript %}[Image]({%slug image%}){% endnativescript %} {% angular %}
 
 ## ListView
 
-The {% nativescript %}[ListView]({%slug list-view%}){% endnativescript %} {% angular %}[ListView]({%slug list-view-ng%}){% endangular %} shows items in a vertically scrolling list. You can set an [`itemTemplate`](http://docs.nativescript.org/api-reference/modules/_ui_list_view_.knowntemplates.html) to specify how each item in the list should be displayed.
+The {% nativescript %}[ListView]({%slug list-view%}){% endnativescript %} {% angular %}[ListView]({%slug list-view-ng%}){% endangular %} shows items in a vertically scrolling list. You can set an [`itemTemplate`](/api-reference/modules/_ui_list_view_.knowntemplates.html) to specify how each item in the list should be displayed.
 
 ![list-view android](./img/gallery/android/listViewPage.png "list-view android")![list-view ios](./img/gallery/ios/listViewPage.png "list-view ios")
 

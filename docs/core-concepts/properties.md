@@ -16,27 +16,27 @@ NativeScript provides own property system based on a wrapper around the well kno
 
 The implementation of all property classes can be found under `tns-core-modules/ui/core/properties` module. Below, we are going to look at all exposed classes from that module.
 
-### Property class 
+### Property class
 
 `Property` is a simple wrapper around [`Object.defineProperty`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty) with some additional callbacks like `valueChange`, `valueConverter` and `equalityComparer`. When you define property you specify the owning type and the type of the property:
 
 ```TypeScript
-export const textProperty = new Property<MyButtonBase, string>({ 
-    name: "text", 
-    defaultValue: "", 
-    affectsLayout: true 
+export const textProperty = new Property<MyButtonBase, string>({
+    name: "text",
+    defaultValue: "",
+    affectsLayout: true
 });
 textProperty.register(MyButtonBase);
 ```
 
-Looking at `textProperty: Property<MyButtonBase, string>` - the owning type is `MyButtonBase` meaning that this property will be defined on instances of `MyButtonBase`. The type of the property is `string` so it will accept any text. 
+Looking at `textProperty: Property<MyButtonBase, string>` - the owning type is `MyButtonBase` meaning that this property will be defined on instances of `MyButtonBase`. The type of the property is `string` so it will accept any text.
 
-The `valueChange` event is executed when the value of a property has changed. If the type of the property isn't `string` we will need to specify `valueConverter` and `equalityComparer`. The `valueConverter` is called if a string value is set to this property (for example from XML or CSS) and there you will have to convert that string to meaningful value if possible or throw exception if you can't. If `equalityComparer` is specified it will be called everytime a value is set to a property. There you can compare current and new value for equality. For example, if your property is of type `Color` you can use `Color.equals` as `equalityComparer` function so even if new instance of `Color` is set the comparer will return `false` if current color and new color have the same `argb` value. 
+The `valueChange` event is executed when the value of a property has changed. If the type of the property isn't `string` we will need to specify `valueConverter` and `equalityComparer`. The `valueConverter` is called if a string value is set to this property (for example from XML or CSS) and there you will have to convert that string to meaningful value if possible or throw exception if you can't. If `equalityComparer` is specified it will be called everytime a value is set to a property. There you can compare current and new value for equality. For example, if your property is of type `Color` you can use `Color.equals` as `equalityComparer` function so even if new instance of `Color` is set the comparer will return `false` if current color and new color have the same `argb` value.
 
-There is one more option in the `Property` constructor: `affectsLayout: boolean`. 
-When set to `true` setting new value to this property will trigger a new layout pass. This is done as performance optimization. Android has an integrated layout system so most of the time it will invalidate itself when needed. Thus we skip one native call by defining `affectsLayout` as `true` only for iOS for example using 'isIOS' boolean property. Because iOS doesn't have integrated layout system if you know that this property could affect the layout you should specify it in the `Property` constructor. 
- 
-The flag `affectsLayout` should be `true` *(mainly for iOS)* when setting that property will change the element size and/or position. For example in our case setting button text to something different will either widen or shorten the width of the button so this will affect the element dimension hence with specify it as `affectsLayout: isIOS`. If this property won't change element position/size then you don't have to specify `affectsLayout` at all. For example `background-color` property doesn't change element position/size. 
+There is one more option in the `Property` constructor: `affectsLayout: boolean`.
+When set to `true` setting new value to this property will trigger a new layout pass. This is done as performance optimization. Android has an integrated layout system so most of the time it will invalidate itself when needed. Thus we skip one native call by defining `affectsLayout` as `true` only for iOS for example using 'isIOS' boolean property. Because iOS doesn't have integrated layout system if you know that this property could affect the layout you should specify it in the `Property` constructor.
+
+The flag `affectsLayout` should be `true` *(mainly for iOS)* when setting that property will change the element size and/or position. For example in our case setting button text to something different will either widen or shorten the width of the button so this will affect the element dimension hence with specify it as `affectsLayout: isIOS`. If this property won't change element position/size then you don't have to specify `affectsLayout` at all. For example `background-color` property doesn't change element position/size.
 
 > **Note**: In the platform specific implementation use `getDefault` and `setNative` symbols from the property object (example: textProperty), to define how this property is applied to native views.
 > The `getDefault` method is called just once before the first call to `setNative` so that we know what is the default native value for this property. The value that you return will be passed to `setNative` method when we decide to recycle the native view. Recycling the native view of control is done only if `recycleNativeView` field is set to true.
@@ -44,15 +44,15 @@ The flag `affectsLayout` should be `true` *(mainly for iOS)* when setting that p
 
 ### CssProperty Class
 
-The `CssProperty` is very similar to `Property` type with two small differences: 
-- you have to additionally specify `cssName` which will be used to set this property through CSS  
-- its value can be set from inline styles, page CSS or application CSS 
+The `CssProperty` is very similar to `Property` type with two small differences:
+- you have to additionally specify `cssName` which will be used to set this property through CSS
+- its value can be set from inline styles, page CSS or application CSS
 
 ```TypeScript
 export const myOpacityProperty = new CssProperty<Style, number>({
-    name: "myOpacity", 
-    cssName: "my-opacity", 
-    defaultValue: 1, 
+    name: "myOpacity",
+    cssName: "my-opacity",
+    defaultValue: 1,
     valueConverter: (v) => {
         const x = parseFloat(v);
         if (x < 0 || x > 1) {
@@ -72,11 +72,11 @@ myOpacityProperty.register(Style);
 The `InheritedCssProperty` is a property defined on Style type. These are inheritable CSS properties that could be set in CSS and propagates value on its children. These are properties like FontSize, FontWeight, Color, etc.
 
 ```TypeScript
-export const selectedBackgroundColorProperty = new InheritedCssProperty<Style, Color>({ 
-    name: "selectedBackgroundColor", 
-    cssName: "selected-background-color", 
-    equalityComparer: Color.equals, 
-    valueConverter: (v) => new Color(v) 
+export const selectedBackgroundColorProperty = new InheritedCssProperty<Style, Color>({
+    name: "selectedBackgroundColor",
+    cssName: "selected-background-color",
+    equalityComparer: Color.equals,
+    valueConverter: (v) => new Color(v)
 });
 selectedBackgroundColorProperty.register(Style);
 ```
@@ -99,7 +99,7 @@ margin: 0 10 0 10;
 Creating the shorthand `margin` property would require to have all CSS properties defined. This way, you could use them to set the syntax rule in our shorthand property getter.
 ```TypeScript
 const marginProperty = new ShorthandProperty<Style, string | PercentLength>({
-    name: "margin", 
+    name: "margin",
     cssName: "margin",
     getter: function (this: Style) {
         if (PercentLength.equals(this.marginTop, this.marginRight) &&
@@ -179,7 +179,7 @@ When setting the `items` property we will coerce the `selectedIndex`
 
 ### Registering the Property
 
-After a property is defined it needs to be registered on a type like this: 
+After a property is defined it needs to be registered on a type like this:
 ```JavaScript
 textProperty.register(MyButtonBase);
 ```
@@ -198,7 +198,7 @@ declare module "tns-core-modules/ui/styling/style" {
 myOpacityProperty.register(Style);
 ```
 
-The registration defines that property for the type passed on to `register` method. 
+The registration defines that property for the type passed on to `register` method.
 
 > Note: Make sure that put your `register` call **after** your class definition or you will get an exception.
 
@@ -221,17 +221,17 @@ NativeScript 3.0 introduced nativeView recycling. With nativeView recycling is a
 
 We have method that gets the default value for a property which is get the first time a property value is changed. Once we know that our View is not needed anymore we will reset the native view to its original state and put it in a map where some future Views of the same type could reuse it. There are 3 new important methods:
 
-- `createNativeView` - you override this method, create and return your nativeView 
-- `initNativeView` - in this method you setup listeners/handlers to the nativeView 
+- `createNativeView` - you override this method, create and return your nativeView
+- `initNativeView` - in this method you setup listeners/handlers to the nativeView
 - `disposeNativeView` - in this method you clear the reference between nativeView and javascript object to avoid memory leaks as well as reset the native view to its initial state if you want to reuse that native view later.
 
 In Android, avoid access to native types in the root of the module (note that `ClickListener` is declared and implemented in a function which is called at runtime). This is specific for the V8 snapshot feature which is generated on a host machine where android runtime is not running. What is important is that if you access native types, methods, fields, namespaces, etc. at the root of your module (e.g. not in a function) your code won't be compatible with V8 snapshot feature. The easiest workaround is to wrap it in a function like in the above `initializeClickListener` function.
- 
+
 In this implementation, we use singleton listener (for Android - `clickListener`) and handler (for iOS - `handler`) to reduce the need to instantiate native classes and to reduce memory usage. If possible, it is recommended to use such techniques to reduce native calls.
 
 ### Iterating Over View Children
 
-There are two methods that allow you to traverse view-hierarchy. Both of them accept a `callback` function that is called for each child. The callback should return a boolean value - if it is falsy the iteration will break. This is particularly useful if you are searching for a specific view and you want to stop iterating as soon as you have found it. 
+There are two methods that allow you to traverse view-hierarchy. Both of them accept a `callback` function that is called for each child. The callback should return a boolean value - if it is falsy the iteration will break. This is particularly useful if you are searching for a specific view and you want to stop iterating as soon as you have found it.
 
 For getting View children use:
 ```
@@ -249,7 +249,7 @@ This method will return all views including `ViewBase`. It is used by the proper
 
 Each UI element extends the `View` class (e.g., like `StackLayout` or `Label`) and comes with a set of methods created to ease the UI development. Methods related to measuring and positioning should be called in `navigatedTo` event of the current `Page` to ensure that all layout measuring has passed.
 
- - [`getViewById`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#getviewbyid) - Returns the child view with the specified id.
+ - [`getViewById`](/api-reference/classes/_ui_core_view_.view#getviewbyid) - Returns the child view with the specified id.
 
  ```XML
  <Page navigatedTo="onNavigatedTo">
@@ -297,7 +297,7 @@ Each UI element extends the `View` class (e.g., like `StackLayout` or `Label`) a
 >  }
 >  ```
 
- - [`getActualSize`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#getactualsize) - Returns the actual size of the view in device-independent pixels. The returned value is of type [`Size`](https://docs.nativescript.org/api-reference/interfaces/_ui_core_view_.size).
+ - [`getActualSize`](/api-reference/classes/_ui_core_view_.view#getactualsize) - Returns the actual size of the view in device-independent pixels. The returned value is of type [`Size`](/api-reference/interfaces/_ui_core_view_.size).
 
  ```TypeScript
  let stackSize: Size = stack.getActualSize();
@@ -310,7 +310,7 @@ Each UI element extends the `View` class (e.g., like `StackLayout` or `Label`) a
  let stackHeight = stackSize.height;
  ```
 
- - [`getLocationInWindow`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#getlocationinwindow) - Returns the location of this view in the window coordinate system. The returned value is of type [`Point`](https://docs.nativescript.org/api-reference/interfaces/_ui_core_view_.point).
+ - [`getLocationInWindow`](/api-reference/classes/_ui_core_view_.view#getlocationinwindow) - Returns the location of this view in the window coordinate system. The returned value is of type [`Point`](/api-reference/interfaces/_ui_core_view_.point).
  ```TypeScript
  let locationInWindow: Point = stack.getLocationInWindow();
  let locationWindowX = locationInWindow.x; // e.g. 10
@@ -322,7 +322,7 @@ Each UI element extends the `View` class (e.g., like `StackLayout` or `Label`) a
  let locationWindowY = locationInWindow.y;
  ```
 
-  - [`getLocationOnScreen`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#getlocationonscreen) - Returns the location of this view in the screen coordinate system. The returned value is of type [`Point`](https://docs.nativescript.org/api-reference/interfaces/_ui_core_view_.point).
+  - [`getLocationOnScreen`](/api-reference/classes/_ui_core_view_.view#getlocationonscreen) - Returns the location of this view in the screen coordinate system. The returned value is of type [`Point`](/api-reference/interfaces/_ui_core_view_.point).
  ```TypeScript
  let locationOnScreen : Point = stack.getLocationOnScreen();
  let locScreenX = locationOnScreen.x; // e.g. 10
@@ -334,7 +334,7 @@ Each UI element extends the `View` class (e.g., like `StackLayout` or `Label`) a
  var locScreenY = locationOnScreen.y;
  ```
 
-  - [`getLocationRelativeTo`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#getlocationrelativeto) - Returns the location of this view against another view's coordinate system. The returned value is of type [`Point`](https://docs.nativescript.org/api-reference/interfaces/_ui_core_view_.point).
+  - [`getLocationRelativeTo`](/api-reference/classes/_ui_core_view_.view#getlocationrelativeto) - Returns the location of this view against another view's coordinate system. The returned value is of type [`Point`](/api-reference/interfaces/_ui_core_view_.point).
  ```TypeScript
  let labelLocationRelativeToStack: Point = label.getLocationRelativeTo(stack);
  let labelRelativeX = labelLocationRelativeToStack.x;
@@ -346,12 +346,12 @@ Each UI element extends the `View` class (e.g., like `StackLayout` or `Label`) a
  let labelRelativeY = labelLocationRelativeToStack.y;
  ```
 
-[View](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view)
-[Properties module](https://docs.nativescript.org/api-reference/modules/_ui_core_properties_.html)
-[Property](http://docs.nativescript.org/api-reference/classes/_ui_core_properties_.property.html)
-[CssProperty](http://docs.nativescript.org/api-reference/classes/_ui_core_properties_.cssproperty.html)
-[CssAnimationProperty](https://docs.nativescript.org/api-reference/classes/_ui_core_properties_.cssanimationproperty.html)
-[InheritedCssProperty](http://docs.nativescript.org/api-reference/classes/_ui_core_properties_.inheritedcssproperty.html)
-[ShorthandProperty](https://docs.nativescript.org/api-reference/classes/_ui_core_properties_.shorthandproperty.html)
-[CoercibleProperty](https://docs.nativescript.org/api-reference/classes/_ui_core_properties_.coercibleproperty.html)
-[isIOS](http://docs.nativescript.org/api-reference/modules/_platform_.html#isios)
+[View](/api-reference/classes/_ui_core_view_.view)
+[Properties module](/api-reference/modules/_ui_core_properties_.html)
+[Property](/api-reference/classes/_ui_core_properties_.property.html)
+[CssProperty](/api-reference/classes/_ui_core_properties_.cssproperty.html)
+[CssAnimationProperty](/api-reference/classes/_ui_core_properties_.cssanimationproperty.html)
+[InheritedCssProperty](/api-reference/classes/_ui_core_properties_.inheritedcssproperty.html)
+[ShorthandProperty](/api-reference/classes/_ui_core_properties_.shorthandproperty.html)
+[CoercibleProperty](/api-reference/classes/_ui_core_properties_.coercibleproperty.html)
+[isIOS](/api-reference/modules/_platform_.html#isios)

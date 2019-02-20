@@ -1,6 +1,6 @@
 ---
 title: Navigation
-description: Learn how to configure your application navigation architecture, navigate forward and backward and use TabView, Modal View and SideDrawer 
+description: Learn how to configure your application navigation architecture, navigate forward and backward and use TabView, Modal View and SideDrawer
 position: 42
 slug: navigation
 previous_url: /navigation
@@ -64,7 +64,7 @@ To display a `Page` on the screen, you need to navigate to it using the `Frame` 
 For the most basic forward navigation scenario, you need only these two features:
 
 * defaultPage attribute - use this attribute to declare the initial page module that is displayed.
-* [navigate()](https://docs.nativescript.org/api-reference/classes/_ui_frame_.frame#navigate) method - use this method to force a navigation to another page module. 
+* [navigate()](/api-reference/classes/_ui_frame_.frame#navigate) method - use this method to force a navigation to another page module.
 
 The following example demonstrates the implementation of the rest of the forward navigation diagram above. There is a `Frame` declared as root component in the `app-root` module. Upon load, the `Frame` will automatically navigate to the `featured-page` module. The `featured-page` module in turn has a button that navigates to the `item-page` module. Check out the complete playground demo below the code sample.
 
@@ -106,7 +106,7 @@ export function onTap(args: EventData) {
 
 ![navigation-schema-backward](../img/navigation/navigation-schema-backward.png?raw=true)
 
-It can also be called upward navigation since you are going up in your navigation hierarchy. This type of navigation represents the opposite direction of the forward navigation and is supported by the `Frame` API. To force a navigation back to the previous page module loaded in a `Frame` simply call its [goBack()](https://docs.nativescript.org/api-reference/modules/_ui_frame_#goback) method. Check out the complete playground demo below the code sample.
+It can also be called upward navigation since you are going up in your navigation hierarchy. This type of navigation represents the opposite direction of the forward navigation and is supported by the `Frame` API. To force a navigation back to the previous page module loaded in a `Frame` simply call its [goBack()](/api-reference/modules/_ui_frame_#goback) method. Check out the complete playground demo below the code sample.
 
 ``` item-page.xml
 <Page loaded="onPageLoaded">
@@ -234,8 +234,8 @@ The `TabView` container provides its lateral navigation logic automatically by p
 
 The `TabView` provides two important features connected to lateral navigation:
 
-* [selectedIndex](https://docs.nativescript.org/api-reference/classes/_ui_tab_view_.tabview#selectedindex) property - use this property to programmatically navigate between the tabs.
-* [selectedIndexChanged](https://docs.nativescript.org/api-reference/classes/_ui_tab_view_.tabview#selectedindexchangedevent) event - use this event to handle navigations between tabs done by the user.
+* [selectedIndex](/api-reference/classes/_ui_tab_view_.tabview#selectedindex) property - use this property to programmatically navigate between the tabs.
+* [selectedIndexChanged](/api-reference/classes/_ui_tab_view_.tabview#selectedindexchangedevent) event - use this event to handle navigations between tabs done by the user.
 
 Check out the [TabView]({%slug tab-view %}) article for a more detailed look on how you can use and customize the component.
 
@@ -270,7 +270,7 @@ export function onSelectedIndexChanged(args: SelectedIndexChangedEventData) {
 
 [Playground Demo](https://play.nativescript.org/?template=play-tsc&id=NMB8eF)
 
-> **Note:** In the current scenario the Search feature has only one page and it's possible to implement it directly in the `TabViewItem` without embedding a `Frame`. However, in this case there won't be a navigation controller in the `TabViewItem` and therefore, no `ActionBar`. 
+> **Note:** In the current scenario the Search feature has only one page and it's possible to implement it directly in the `TabViewItem` without embedding a `Frame`. However, in this case there won't be a navigation controller in the `TabViewItem` and therefore, no `ActionBar`.
 
 ### Modal View Navigation
 
@@ -282,8 +282,8 @@ Opening a new `Frame` as a full screen modal view is a very common mobile naviga
 
 Each UI component in NativeScript provides two methods for managing modal views:
 
-* [showModal()](https://docs.nativescript.org/api-reference/classes/_ui_core_view_base_.viewbase#showmodal) - opens a modal view on top of the `Page` the UI component is part of.
-* [closeModal()](https://docs.nativescript.org/api-reference/classes/_ui_core_view_base_.viewbase#closemodal) - closes the modal view that the UI component is part of.
+* [showModal()](/api-reference/classes/_ui_core_view_base_.viewbase#showmodal) - opens a modal view on top of the `Page` the UI component is part of.
+* [closeModal()](/api-reference/classes/_ui_core_view_base_.viewbase#closemodal) - closes the modal view that the UI component is part of.
 
 To open a modal view you should simply call the `showModal()` method of any UI component instance with a path to the modal root module as parameter. Take a look at the [Modal View]({%slug modal-page %}) article for more information.
 
@@ -354,7 +354,7 @@ export function closeModal(args: EventData) {
 
 [Playground Demo](https://play.nativescript.org/?template=play-tsc&id=B1l1kg)
 
-> **Note:** In the current scenario the Search feature has only one page and it's possible to implement it directly in the modal view without embedding a `Frame` in `search-root`. However, in this case there won't be a navigation controller in the modal view and therefore, no `ActionBar`. 
+> **Note:** In the current scenario the Search feature has only one page and it's possible to implement it directly in the modal view without embedding a `Frame` in `search-root`. However, in this case there won't be a navigation controller in the modal view and therefore, no `ActionBar`.
 
 ### SideDrawer Navigation
 

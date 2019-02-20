@@ -10,7 +10,7 @@ slug: images-performance
 One of the most common scenarios for modern mobile applications is to work with multiple images often in high definition formats.
 It is essential for the mobile developer to handle memory related issues and optimize an application so it can process large data (for example, a web request that downloads hundreds of photos and alike).
 
-In this article, we will take a look at how the `Image` module works in NativeScript and 
+In this article, we will take a look at how the `Image` module works in NativeScript and
 cover the techniques that will improve Android application performance.
 
 ## Handling large images and avoiding Out Of Memory exception
@@ -23,14 +23,14 @@ In contrast, when using `ImageSource` or Base64 encoded string, the Bitmap is tr
 
 ### Using `decodeHeight` and `decodeWidth` properties
 
-As an additional feature for Android, NativeScript supports `decodeWidth` and `decodeHeight`. These properties will **downsample** your image so that it will take less memory. 
-The goal is to avoid as much as possible out of memory exceptions caused by images being loaded into memory and at the same time display crispy images. 
+As an additional feature for Android, NativeScript supports `decodeWidth` and `decodeHeight`. These properties will **downsample** your image so that it will take less memory.
+The goal is to avoid as much as possible out of memory exceptions caused by images being loaded into memory and at the same time display crispy images.
 
-> **Note:** Use `decodeWidth` and `decodeHeight` only when working with large photos and there are `Out of Memory` exceptions issues. With NativeScript 3.x.x and above, image optimizations were implemented and in the common scenarios, you should not worry about hitting OOM. 
+> **Note:** Use `decodeWidth` and `decodeHeight` only when working with large photos and there are `Out of Memory` exceptions issues. With NativeScript 3.x.x and above, image optimizations were implemented and in the common scenarios, you should not worry about hitting OOM.
 
 When working with the decode properties, the following considerations should be taken:
 
-- The `decodeWidth` and `decodeHeight` properties accept **DIP** (device independent pixels) as measurement units. This means that image decoding will happen based on the device DPI. 
+- The `decodeWidth` and `decodeHeight` properties accept **DIP** (device independent pixels) as measurement units. This means that image decoding will happen based on the device DPI.
 Devices with higher pixel density displays will decode their images larger out of the box so that they appear crispy. You can still set the properties in px if you so choose.
 
 - The `decodeWidth` and `decodeHeight` properties will now respect the `stretch` property value. If you set `stretch` to `aspectFill` or `aspectFit`, NativeScript will keep the aspect ratio while shrinking the image.
@@ -43,7 +43,7 @@ Devices with higher pixel density displays will decode their images larger out o
 
 ## Using `loadMode` property
 
-With [loadMode](http://docs.nativescript.org/api-reference/modules/_ui_image_.html#loadmode) set to `async`, the image will load asynchronously which means the UI won't block by the decoding and preloading operations. The developers can use `loadMode` on both iOS and Android.
+With [loadMode](/api-reference/modules/_ui_image_.html#loadmode) set to `async`, the image will load asynchronously which means the UI won't block by the decoding and preloading operations. The developers can use `loadMode` on both iOS and Android.
 
 > **Tip**: Use `loadMode="async"` to prevent blocking of the UI while the image is loading.
 
@@ -63,7 +63,7 @@ The `Image` module will use internal memory and disk cache, so when loaded the m
 > **Note**: The property `useCache` will work only for Android. Setting it for our iOS images will not change the application behaviour in any way.
 
 
-**API Reference for** [Image Module](http://docs.nativescript.org/api-reference/modules/_ui_image_.html)
+**API Reference for** [Image Module](/api-reference/modules/_ui_image_.html)
 
 **NativeScript Core Examples**  [Cookbook](http://docs.nativescript.org/cookbook/ui/image)
 
