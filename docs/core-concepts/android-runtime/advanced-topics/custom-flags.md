@@ -84,5 +84,7 @@ When you are using a release build there will be no logs to the console, so if y
 }
 ```
 
+## Configuring automatic garbage collection
 
+There are three parameters used for configuring the frequency and conditions of automatic triggerring of garbage collections in the JavaScript world. These are `gcThrottleTime`, `memoryCheckInterval` and `freeMemoryRatio`. For detailed explanation of their behavior please refer to the `Syncronizing Garabage Collectors` section in [Memory Management]({% slug android-memory-management %}#syncronizing-garabage-collectors)
 
