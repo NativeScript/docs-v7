@@ -45,22 +45,6 @@ For detailed information on how to pass environment variables during a debug run
 
 > **NOTE:** This section contains only a small portion of the available flags. For a complete list of all JSC flags, see [JSC_OPTIONS macro definition in Options.h in GitHub](https://github.com/NativeScript/webkit/blob/ios/Source/JavaScriptCore/runtime/Options.h#L115). Have in mind that flags marked with `Restricted` cannot be configured in NativeScript because the supplied **JavaScriptCore** is built in **Release** configuration.
 
-# Discarding JavaScript exceptions when called from native
-
-By default, the application will crash if an exception is thrown when executing JavaScript code which is called from some native API. If you want to suppress the crash you can enable the `discardUncaughtJsExceptions` flag:
-
-```JSON
-{
-    ...
-    "discardUncaughtJsExceptions": true
-    ...
-}
-```
-
-The discarded exceptions can be processed in the app by subscribing to `application.discardedErrorEvent` or by assigning a one-argument function to `global.__onDiscardedError`.
-
-> **NOTE:** The `discardUncaughtJsExceptions` works on Android as well. This is why in the example above the flag is not assigned to the `ios` object.
-
 # Explicitly Triggering GC
 
 The iOS Runtime exposes a `__collect()` function which you may call whenever you consider there is effective garbage in the JavaScript heap which could pottentially hold references to large native objects.
