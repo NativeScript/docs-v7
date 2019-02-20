@@ -12,7 +12,7 @@ The V8 engine comes with a set of controlling flags that may be useful for fine-
 
 ## Expose Garbage Collector
 
-The `--expose_gc` flag exposes a global `gc()` function which can be helpful in [advanced memory management scenarios]({% slug memory-management %}).
+The `--expose_gc` flag exposes a global `gc()` function which can be helpful in [advanced memory management scenarios]({% slug android-memory-management %}).
 
 ```JSON
 {
