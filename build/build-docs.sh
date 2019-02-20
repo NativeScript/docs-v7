@@ -80,6 +80,12 @@ if [ -f $NS_UI_LV"/README.md" ]; then
 		cd "../demo-angular"
 		npm install markdown-snippet-injector
 		npm run inject
+		
+		# Generating Angular d.ts
+		cd "../src"
+		npm i --ignore-scripts
+		cd "angular"
+		tsc
 	done
 fi
 
