@@ -15,6 +15,7 @@ RUN apk add --update \
   && npm config set cache /var --global \
   && npm install -g grunt \
   && npm install -g gulp \
+  && npm install -g typescript \
   && npm install -g gulp-typedoc typedoc\
   && mkdir /run/nginx
 
