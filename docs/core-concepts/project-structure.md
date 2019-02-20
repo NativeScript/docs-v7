@@ -52,6 +52,8 @@ You can develop shared functionality or design in common files. To indicate that
 
 {% nativescript %}In the `app` folder, you will also find the `App_Resources` directory.{% endnativescript %}
 
+> **NOTE** The location of the `{% nativescript %}app{% endnativescript %}{% angular %}src{% endangular%}` directory can be overridden in the [nsconfig.json file](#the-nsconfigjson-file).
+
 ### {% nativescript %}app{% endnativescript %}{% angular %}src{% endangular %}/package.json
 
 This is a secondary `package.json` file in which you can specify the entry point file of the application and also several [Android-specific]({% slug android-custom-flags %}) and [iOS-specific]({% slug ios-custom-flags %}) custom flags. Below is an example of a basic secondary `package.json` file.
