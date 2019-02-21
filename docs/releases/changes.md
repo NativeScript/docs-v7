@@ -1,7 +1,7 @@
 ---
 title: Changes
 description: NativeScript Documentation - Changes
-position: 1
+position: 10
 slug: changes
 previous_url: /changes
 ---
