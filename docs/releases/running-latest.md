@@ -1,7 +1,7 @@
 ---
 title: Running Latest Code
 description: NativeScript Documentation - Running Latest Code
-position: 8
+position: 40
 slug: latest-code
 previous_url: /running-latest
 ---

@@ -1,7 +1,7 @@
 ---
 title: Upgrade Instructions
 description: Follow these steps to upgrade a NativeScript application, which includes updating the CLI tooling, the iOS and Android runtimes and the cross-platform modules.
-position: 3
+position: 30
 tags: upgrade nativescript, nativescript update instructions
 slug: upgrade-instructions
 previous_url: /upgrade-instructions
