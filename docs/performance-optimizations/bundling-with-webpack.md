@@ -10,7 +10,7 @@ previous_url: /core-concepts/bundling-with-webpack,/tooling/bundling-with-webpac
 
 JavaScript code and general asset bundling have been a member of the web developer toolbox for a long time. Tools like [Webpack](https://webpack.js.org) have been providing support for an enjoyable development experience that lets you assemble client-side code from various module sources and formats and then package it together. Most importantly, they allow for page load time optimizations that reduce or parallelize the number of requests a browser makes to the server.
 
-Why bundle scripts in a mobile app though? Aren't all files stored on the local device, so requesting them should be faster than an HTTP request?! Yes, that is the case, but bundling still has an important place in mobile app optimizations:
+Why bundle scripts in a mobile app though? Aren't all files stored on the local device, so requesting them should be faster than an HTTP request? Yes, that is the case, but bundling still has an essential place in mobile app optimizations:
 
 * Fewer filesystem operations on app startup since all code is loaded from a single bundle file. Mobile file storage is not known for being very performant.
 * Smaller code size. Bundlers traverse the module import graph and do not bundle unused modules. Not using that obscure feature in module X? Don't make your users pay for it then.
@@ -22,7 +22,7 @@ Webpack works by traversing your source tree starting from some "entry" modules 
 
 ## Installation and Configuration
 
-Since every project is unique and can have quite complex requirements for bundling, we tried to make Webpack configuration as simple as possible. After installation, the plugin will configure the bundling dependencies, and add a basic configuration that should work for most projects. Developers can (and should) extend that to fit their specific project needs.
+Since every project is unique and can have quite complex requirements for bundling, we tried to make Webpack configuration as simple as possible. After installation, the plugin configures the bundling dependencies, and add a basic configuration that should work for most projects. Developers can (and should) extend that to fit their specific project needs.
 
 The easiest way to enable Webpack support for your application is to install the `nativescript-dev-webpack` plugin. To do that, run this in your application folder:
 
@@ -52,32 +52,45 @@ $ ./node_modules/.bin/update-ns-webpack --configs --deps
 
 `nativescript-dev-webpack` expands the usual workflow of working with your project. Given that you have your project running in its non-bundled state, you can test the bundled version with the following commands:
 
+- **Run with Webpack**
+
+Build, deploy and run an application on a device or emulator.
 ```
 $ tns run android --bundle
 ```
-
-or
-
+alternatively, (iOS)
 ```
 $ tns run ios --bundle
 ```
 
+- **Run with Webpack and HMR**
+
+The Hot Module Replacement feature is a must for good developer experience. The `--hmr` flag is internally calling `--bundle` and executing Webpack bundling. More about HMR [here](#hot-module-replacement).
+
+```
+tns run android --hmr
+```
+or
+```
+tns run ios --hmr
+```
+
+- **Build with Webpack**
+
 If you want to package your application, you need the `build` commands:
 
+Build an application for Android - produces an Android `.apk` archive
 ```
-$ tns build android --bundle
+$ tns build android --bundle 
 ```
-
-or
-
+Build an application for  iOS - creates an  `.app` or `.ipa` package.
 ```
 $ tns build ios --bundle
 ```
 
-The former will produce an android `.apk` archive, while the latter will create an `.app` or `.ipa` package.
+- **Pass Environment Variables**
 
 You can also provide environmental variables to the Webpack build:
-
 ```
 $ tns build android --bundle --env.development --env.property=value
 ```
@@ -90,6 +103,38 @@ module.exports = env => {
     console.dir(env); // { development: true, property: 'value' }
 }
 ```
+
+### Hot Module Replacement
+
+With NativeScript 5.x.x and above, the development process with Webpack was significantly improved by introducing the **Hot Module Replacement** a.k.a. **HMR**.
+The HMR exchanges, adds or removes modules while an application is running without having to do a full reload (except for some cases - see the comparison chart below for details). 
+
+Start the hot module replacement with the `--hmr` flag (the `--bundle` flag can be omitted as the HMR is bundling with Webpack by design)
+
+```
+tns run android --hmr
+```
+or
+```
+tns run ios --hmr
+```
+
+Comparison chart for the HMR capabilities versus no-HMR versus no Webpack (pure NativeScript LiveSync)
+
+| **JS/TS only projects** | Without webpack | With webpack (no HMR) | With webpack (HMR) | 
+| :--------------     | :-------------- | :-------------------- | :----------------- | 
+| Native file changed | <span style="color:red">Rebuild</span>         |  <span style="color:red">Rebuild</span>              | <span style="color:red">Rebuild</span>            | 
+| JS/TS file changed  | <span style="color:orange">Restart</span>         |  <span style="color:orange">Restart</span>               | <span style="color:lightgreen">**Reload**</span>             | 
+| Style file changed  | <span style="color:lightgreen">**Reload**</span>           |  <span style="color:orange">Restart</span>               | <span style="color:lightgreen">**Reload**</span>             | 
+| XML file changed    | <span style="color:lightgreen">**Reload**</span>          |  <span style="color:orange">Restart</span>               | <span style="color:lightgreen">**Reload**</span>             |  
+
+| **Angular projects**    | Without webpack | With webpack (no HMR) | With webpack (HMR) | 
+| :--------------     | :-------------- | :-------------------- | :----------------- | 
+| Native file changed | <span style="color:red">Rebuild</span>         |  <span style="color:red">Rebuild</span>              | <span style="color:red">Rebuild</span>            | 
+| JS/TS file changed  | <span style="color:orange">Restart</span>          |  <span style="color:orange">Restart</span>               | <span style="color:lightgreen">**Bootstrap**</span>           | 
+| Style file changed  | <span style="color:lightgreen">**Bootstrap**</span>        |  <span style="color:orange">Restart</span>               | <span style="color:lightgreen">**Bootstrap**</span>           |  
+| HTML file changed   | <span style="color:lightgreen">**Bootstrap**</span>        |  <span style="color:orange">Restart</span>               | <span style="color:lightgreen">**Bootstrap**</span>     
+      |   
 
 ### Publishing Application
 
@@ -107,7 +152,7 @@ You can build a bundled version of the application for iOS in release with this 
 $ tns build ios --bundle --release --forDevice --teamId TEAM_ID
 ```
 
-Note  that if `--teamId` flag is emmited, the NativeScript CLI will prompt for team ID during the build process.
+Note that if `--teamId` flag is emitted, the NativeScript CLI will prompt for team ID during the build process.
 
 Once the release build is ready, you have two options:
 
@@ -135,7 +180,7 @@ $ tns build android|ios --bundle --env.uglify
 
 ### Angular and Ahead-of-Time Compilation
 
-The NativeScript Angular projects will have the [`@ngtools/webpack`](https://www.npmjs.com/package/@ngtools/webpack) plugin added by the `nativescript-dev-webpack` plugin. The `@ngtools/webpack` plugin performs Ahead-of-Time compilation and code splitting for lazily loaded modules. If your application is Ahead-of-Time compiled, you don't need the Angular compiler included in your app bundle which results in smaller application size and improved start up time. 
+The NativeScript Angular projects have the [`@ngtools/webpack`](https://www.npmjs.com/package/@ngtools/webpack) plugin added by the `nativescript-dev-webpack` plugin. The `@ngtools/webpack` plugin performs Ahead-of-Time compilation and code splitting for lazily loaded modules. If your application is Ahead-of-Time compiled, you don't need the Angular compiler included in your app bundle which results in smaller application size and improved startup time. 
 
 To build with Ahead-of-Time compilation provide the `--env.aot` flag:
 ```
@@ -144,7 +189,7 @@ $ tns build android|ios --bundle --env.aot
 
 ### V8 Heap Snapshot
 
-The Webpack configuration also includes the [`NativeScriptSnapshotPlugin`](https://github.com/NativeScript/nativescript-dev-webpack/tree/master/plugins/NativeScriptSnapshotPlugin). The plugin loads a single Webpack bundle in an empty V8 context, a.k.a. snapshotted context, and after its execution captures a snapshot of the produced V8 heap and saves it in a `.blob` file. Next the `.blob` file is included in the `.apk` bundle and [is loaded by the Android Runtime on app initialization. This will obviate the need for loading, parsing and executing the script on app startup which can drastically decrease the starting time.
+The Webpack configuration also includes the [`NativeScriptSnapshotPlugin`](https://github.com/NativeScript/nativescript-dev-webpack/tree/master/plugins/NativeScriptSnapshotPlugin). The plugin loads a single Webpack bundle in an empty V8 context, a.k.a. snapshotted context, and after its execution captures a snapshot of the produced V8 heap and saves it in a `.blob` file. Next the `.blob` file is included in the `.apk` bundle and is loaded by the Android Runtime on app initialization. This obviates the need for loading, parsing and executing the script on app startup which can drastically decrease the starting time.
 
 You can use the snapshot plugin only for **release** builds. You need to provide the `--env.snapshot` flag along with the other release arguments:
 ```
@@ -184,15 +229,15 @@ if (snapshot) {
 * `webpackConfig` - Webpack configurations object. The snapshot generation modifies the Webpack config object to ensure that the specified bundle will be snapshotted successfully.
 
 #### Other options:
-* `targetArchs` - Since the serialization format of the V8 heap is architecture-specific, we need a different blob file for each V8 library target architecture. The Android Runtime library contains 3 architecture slices - `ia32` (for emulators), `arm` and `arm64` (for devices). However, [if not explicitly specified](https://github.com/NativeScript/android-runtime/issues/614), the `arm` slice will be used even on `arm64` devices. In other words, generating heap snapshot for all supported architectures (`arm`, `arm64`, `ia32`) will guarantee that the snapshotted heap will be available on every device/emulator. However, when building for the release, you can leave only `arm` (and `arm64` in case you have [explicitly enabled `arm64` support](https://github.com/NativeScript/android-runtime/issues/614)) in the `targetArchs` array which will decrease the size of the produced APK file.
+* `targetArchs` - Since the serialization format of the V8 heap is architecture-specific, we need a different blob file for each V8 library target architecture. The Android Runtime library contains 3 architecture slices - `ia32` (for emulators), `arm` and `arm64` (for devices). However, [if not explicitly specified](https://github.com/NativeScript/android-runtime/issues/614), the `arm` slice is used even on `arm64` devices. In other words, generating a heap snapshot for all supported architectures (`arm`, `arm64`, `ia32`) will guarantee that the snapshotted heap is available on every device/emulator. However, when building for the release, you can leave only `arm` (and `arm64` in case you have [explicitly enabled `arm64` support](https://github.com/NativeScript/android-runtime/issues/614)) in the `targetArchs` array which decreases the size of the produced APK file.
 * `v8Version` - Specify the v8 engine version that should be used. By default, the value is determined based on the Android runtime version that the project is using.
 
 #### [ABI split](https://docs.nativescript.org/publishing/android-abi-split) options:
 * `useLibs` - Instructs the plugin to produce `.so` instead of `.blob` files.
 * `androidNdkPath` - Path to a local installation of Android NDK.
 
-#### Checking if snapshot is enabled
-If you want to toggle whether specific logic is executed only in snapshotted context you can use the `global.__snapshot` flag. Its value is `true` only if the current execution happens in the snapshotted context. Once the app is deployed on the device, the value of the flag is changed to `false`. There is also `global.__snapshotEnabled` flag. Its only difference compared to `global.__snapshot` is that its value is `true` in both snapshotted and runtime contexts, given that snapshot generation is enabled.
+#### Checking if the snapshot is enabled
+If you want to toggle whether specific logic is executed only in the snapshotted context you can use the `global.__snapshot` flag. Its value is `true` only if the current execution happens in the snapshotted context. Once the app is deployed on the device, the value of the flag is changed to `false`. There is also `global.__snapshotEnabled` flag. Its only difference compared to `global.__snapshot` is that its value is `true` in both snapshotted and runtime contexts, given that snapshot generation is enabled.
 
 ```JavaScript
 function logMessage(message) {
@@ -235,7 +280,7 @@ The default webpack configuration includes the [webpack-bundle-analyzer](https:/
 $ tns build android|ios --bundle --env.report
 ```
 
-The report will be generated inside `your-project/report`.
+The report is generated inside `your-project/report`.
 The `report/report.html` page shows the application chunks. 
 
 ![Android report](../img/webpack/android-report.png)
@@ -244,11 +289,11 @@ For analyzing the dependency graph between the modules, use [webpack.github.ui/a
 
 ## Recommendations for Plugin Authors
 
-Most third party packages are problem free, and get picked up by Webpack without any issues. Some libraries though require a bit of tweaking. When you encounter a library that does not get recognized by your Webpack configuration, please open up an issue on that library's GitHub repository.
+Most third-party packages are problem-free and get picked up by Webpack without any issues. Some libraries though require a bit of tweaking. When you encounter a library that does not get recognized by your Webpack configuration, please open up an issue on that library's GitHub repository.
 
 ### Referencing Platform-specific modules from "package.json"
 
-This is the most common problem with third party plugins. Most plugins provide two platform-specific implementations stored in modules named like `my-plugin.android.js` and `my-plugin.ios.js`. The `package.json` file for the plugin looks like this:
+This is the most common problem with third-party plugins. Most plugins provide two platform-specific implementations stored in modules named like `my-plugin.android.js` and `my-plugin.ios.js`. The `package.json` file for the plugin looks like this:
 
 ```JSON
 {
@@ -256,7 +301,7 @@ This is the most common problem with third party plugins. Most plugins provide t
 }
 ```
 
-Webpack will read the `package.json` file and try to find a `my-plugin.js` module and will fail. The correct way to reference a platform-specific module would be to remove the `.js` extension:
+Webpack reads the `package.json` file and try to find a `my-plugin.js` module and fails. The correct way to reference a platform-specific module would be to remove the `.js` extension:
 
 ```JSON
 {
@@ -264,11 +309,11 @@ Webpack will read the `package.json` file and try to find a `my-plugin.js` modul
 }
 ```
 
-That will allow Webpack to correctly reference `my-plugin.android.js` or `my-plugin.ios.js`.
+That allows Webpack to reference `my-plugin.android.js` or `my-plugin.ios.js` correctly.
 
 ## Emitting Helper Functions in TypeScript Plugins
 
-The TypeScript compiler implements class inheritance, decorators and other features using a set of helper functions that get emitted at compile time. NativeScript ships with its own implementations of those helpers to allow features like extending platform native classes. That is why you need to configure the TypeScript compiler **NOT** to emit helpers. The easiest way is to edit the `tsconfig.json` file and set the `noEmitHelpers` option to `true`:
+The TypeScript compiler implements class inheritance, decorators and other features using a set of helper functions that get emitted at compile time. NativeScript ships with its implementations of those helpers to allow features like extending platform native classes. That is why you need to configure the TypeScript compiler **NOT** to emit helpers. The easiest way is to edit the `tsconfig.json` file and set the `noEmitHelpers` option to `true`:
 
 ```JSON
 {
@@ -283,7 +328,7 @@ The TypeScript compiler implements class inheritance, decorators and other featu
 
 ## Bundling Background Workers
 
-When the application is implementing workers some additional steps are required to make the project Webpack compatible.
+When the application is implementing workers, some additional steps are required to make the project Webpack compatible.
 Check out the [`nativescript-worker-loader`](https://github.com/nativescript/worker-loader).
 
 ## Webpack Resources
