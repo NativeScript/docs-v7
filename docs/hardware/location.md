@@ -1,6 +1,6 @@
 ---
 title: Geographical Location Data in NativeScript
-description: Learn how to use the nativescript-geolocation plugin to obtain accurate geographical location data in your NativeScript app. 
+description: Learn how to use the nativescript-geolocation plugin to obtain accurate geographical location data in your NativeScript app.
 position: 10
 tags: location hardware access, nativescript location, nativescript geolocation
 slug: location
@@ -9,7 +9,7 @@ previous_url: /location
 
 # Geographical Location Data in NativeScript
 
-> **IMPORTANT:** Starting with NativeScript 1.5.0, the built-in Location module is deprecated. To implement geolocation in your apps, use the `nativescript-geolocation` plugin, available via npm. This plugin provides an API similar to the [W3C Geolocation API](http://dev.w3.org/geo/api/spec-source.html). 
+> **IMPORTANT:** Starting with NativeScript 1.5.0, the built-in Location module is deprecated. To implement geolocation in your apps, use the `nativescript-geolocation` plugin, available via npm. This plugin provides an API similar to the [W3C Geolocation API](http://dev.w3.org/geo/api/spec-source.html).
 
 The most important difference between the deprecated module and the new plugin is that location monitoring via the plugin returns an `id` that you can use to stop location monitoring. The `nativescript-geolocation` plugin also uses an accuracy criteria approach to deliver geolocation. This means that getting a location is powered by the most accurate location provider that is available. For example, if a GPS signal is available and the GPS provider is enabled, the plugin uses GPS; if GPS is not connected, the device falls back to other available providers such as Wi-Fi networks or cell towers).
 
@@ -41,13 +41,13 @@ NativeScript has a universal way to check if location services are turned on&mda
 
 ## Requesting permissions to use location services
 
-By default, the `nativescript-geolocation` plugin adds the required permissions in `AndroidManiest.xml` for Android and `Info.plist` for iOS. For iOS, the plugin adds two dummy string values which serve as the message when the platform asks for permission to use location services. You can edit this message later. 
+By default, the `nativescript-geolocation` plugin adds the required permissions in `AndroidManiest.xml` for Android and `Info.plist` for iOS. For iOS, the plugin adds two dummy string values which serve as the message when the platform asks for permission to use location services. You can edit this message later.
 
 After you install the plugin, you can request to use location services in the app with the code in __Example 1__:
 > Example 1: How to enable location service on a device
 {% nativescript %}
 ```XML
-<Page> 
+<Page>
     <StackLayout>
         <Button text="enable Location" tap="enableLocationTap"/>
     </StackLayout>
@@ -77,7 +77,7 @@ exports.enableLocationTap = enableLocationTap;
 ```
 {% endangular %}
 ```TypeScript
-{% nativescript %}export function {% endnativescript %}public {% angular %}{% endangular %}enableLocationTap() { 
+{% nativescript %}export function {% endnativescript %}public {% angular %}{% endangular %}enableLocationTap() {
     geolocation.isEnabled().then(function (isEnabled) {
         if (!isEnabled) {
             geolocation.enableLocationRequest().then(function () {
@@ -101,11 +101,11 @@ You can get location with `getCurrentLocation` or with `watchLocation`. Using `d
 
 ### `getCurrentLocation`
 
-This method gets a single location. It accepts the `location options` parameter. 
+This method gets a single location. It accepts the `location options` parameter.
 
 `getCurrentLocation` returns a `Promise<Location>` where `Location` and `location options` are defined as follows.
 
-#### Class: location  
+#### Class: location
 A data class that encapsulates common properties for a geolocation.
 
 ##### Instance properties
@@ -123,18 +123,18 @@ Property | Type | Description
 `android` | Object | The Android-specific [location](http://developer.android.com/reference/android/location/Location.html) object.
  `ios` | CLLocation | The iOS-specific [CLLocation](https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocation_Class/) object.
 
-#### Interface: options  
+#### Interface: options
 Provides options for location monitoring.
 
 ##### Properties
 
 Property | Type | Description
 ---|---|---
-`desiredAccuracy` | Number | (Optional) Specifies desired accuracy in meters. NativeScript has a special enum [Accuracy](http://docs.nativescript.org/api-reference/modules/_ui_enums_.accuracy.html) that helps to make code more readable. Defaults to `Accuracy.any`. Such accuracy could be achieved with only wifi and assist GPS from network provider, therefore does not put additional pressure on battery consumption. In order to use high accuracy (requires GPS sensor) set this option to `Accuracy.high`.
+`desiredAccuracy` | Number | (Optional) Specifies desired accuracy in meters. NativeScript has a special enum [Accuracy](/api-reference/modules/_ui_enums_.accuracy.html) that helps to make code more readable. Defaults to `Accuracy.any`. Such accuracy could be achieved with only wifi and assist GPS from network provider, therefore does not put additional pressure on battery consumption. In order to use high accuracy (requires GPS sensor) set this option to `Accuracy.high`.
 `updateDistance` | Number | (Optional) Updates distance filter in meters. Specifies how often to update. Default on iOS is no filter, on Android it is 0 meters.
 `minimumUpdateTime` | Number | (Optional) Specifies the minimum time interval between location updates, in milliseconds. Ignored on iOS.
 `updateTime` | Number | (Optional) Interval between location updates, in milliseconds (ignored on iOS).
-`maximumAge` | Number | (Optional) Filters locations by how long ago they were received, in milliseconds. For example, if the `maximumAge` is 5000, you will get locations only from the last 5 seconds. 
+`maximumAge` | Number | (Optional) Filters locations by how long ago they were received, in milliseconds. For example, if the `maximumAge` is 5000, you will get locations only from the last 5 seconds.
 `timeout` | Number | (Optional) Specifies how long to wait for a location, in milliseconds.
 
 > Example 2: How to get current location
@@ -182,7 +182,7 @@ exports.buttonGetLocationTap = buttonGetLocationTap;
 
 ### `watchLocation`
 
-With this method, location watching does not stop automatically until the `clearWatch` method is called. You might need to use this method in apps which require a GPS log or active location tracking. 
+With this method, location watching does not stop automatically until the `clearWatch` method is called. You might need to use this method in apps which require a GPS log or active location tracking.
 
 > Example 3: How to handle location change event
 
@@ -202,10 +202,10 @@ function buttonStartTap() {
 		if (loc) {
 			console.log("Received location: " + loc);
 		}
-	}, 
+	},
 	function(e){
 		console.log("Error: " + e.message);
-	}, 
+	},
 	{desiredAccuracy: 3, updateDistance: 10, minimumUpdateTime : 1000 * 20}); // should update every 20 sec according to google documentation this is not so sure.
 }
 exports.buttonStartTap = buttonStartTap;
@@ -233,10 +233,10 @@ exports.buttonStopTap = buttonStopTap;
 		if (loc) {
 			console.log("Received location: " + loc);
 		}
-	}, 
+	},
 	function(e){
 		console.log("Error: " + e.message);
-	}, 
+	},
 	{desiredAccuracy: 3, updateDistance: 10, minimumUpdateTime : 1000 * 20}); // Should update every 20 seconds according to Googe documentation. Not verified.
 }
 
@@ -269,5 +269,5 @@ function getDistance(loc1, loc2) {
 ## See Also
 
 * [NativeScript Plugins](http://docs.nativescript.org/plugins/plugins)
-* [Location Module (Deprecated)](http://docs.nativescript.org/api-reference/modules/_location_.html)
+* [Location Module (Deprecated)](/api-reference/modules/_location_.html)
 * [NativeScript-Geolocation in NPM](https://www.npmjs.com/package/nativescript-geolocation)

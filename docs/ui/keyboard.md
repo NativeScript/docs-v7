@@ -8,7 +8,7 @@ previous_url: /keyboard
 ---
 
 # Keyboard Type
-All widgets that inherit from [`EditableTextBase`](https://docs.nativescript.org/api-reference/classes/_ui_editor_text_base_.editabletextbase), i.e., [`TextField`](http://docs.nativescript.org/api-reference/classes/_ui_text_field_.textfield.html) and [`TextView`](http://docs.nativescript.org/api-reference/classes/_ui_text_view_.textview.html), have a **keyboardType** property that gets or sets the soft keyboard type that will be shown while in edit mode. Possible values are contained in the [`KeyboardType`](http://docs.nativescript.org/api-reference/modules/_ui_enums_.keyboardtype.html) enumeration.
+All widgets that inherit from [`EditableTextBase`](/api-reference/classes/_ui_editor_text_base_.editabletextbase), i.e., [`TextField`](/api-reference/classes/_ui_text_field_.textfield.html) and [`TextView`](/api-reference/classes/_ui_text_view_.textview.html), have a **keyboardType** property that gets or sets the soft keyboard type that will be shown while in edit mode. Possible values are contained in the [`KeyboardType`](/api-reference/modules/_ui_enums_.keyboardtype.html) enumeration.
 
 - datetime
  - Android: [TYPE_CLASS_DATETIME](http://developer.android.com/reference/android/text/InputType.html#TYPE_CLASS_DATETIME) | [TYPE_DATETIME_VARIATION_NORMAL](http://developer.android.com/reference/android/text/InputType.html#TYPE_DATETIME_VARIATION_NORMAL)
@@ -32,7 +32,7 @@ All widgets that inherit from [`EditableTextBase`](https://docs.nativescript.org
  - ![email](./img/modules/keyboard/email.png "email")
 
 # Return Key Type
-All widgets that inherit from [`EditableTextBase`](https://docs.nativescript.org/api-reference/classes/_ui_editor_text_base_.editabletextbase), i.e., [`TextField`](http://docs.nativescript.org/api-reference/classes/_ui_text_field_.textfield.html) and [`TextView`](http://docs.nativescript.org/api-reference/classes/_ui_text_view_.textview.html), have a **returnKeyType** property that gets or sets the soft keyboard return key type. Possible values are contained in the [`ReturnKeyType`](http://docs.nativescript.org/api-reference/modules/_ui_enums_.returnkeytype.html) enumeration.
+All widgets that inherit from [`EditableTextBase`](/api-reference/classes/_ui_editor_text_base_.editabletextbase), i.e., [`TextField`](/api-reference/classes/_ui_text_field_.textfield.html) and [`TextView`](/api-reference/classes/_ui_text_view_.textview.html), have a **returnKeyType** property that gets or sets the soft keyboard return key type. Possible values are contained in the [`ReturnKeyType`](/api-reference/modules/_ui_enums_.returnkeytype.html) enumeration.
 
 - done
  - Android: [IME_ACTION_DONE](http://developer.android.com/reference/android/view/inputmethod/EditorInfo.html#IME_ACTION_DONE)

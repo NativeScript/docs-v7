@@ -52,9 +52,11 @@ You can develop shared functionality or design in common files. To indicate that
 
 {% nativescript %}In the `app` folder, you will also find the `App_Resources` directory.{% endnativescript %}
 
+> **NOTE** The location of the `{% nativescript %}app{% endnativescript %}{% angular %}src{% endangular%}` directory can be overridden in the [nsconfig.json file](#the-nsconfigjson-file).
+
 ### {% nativescript %}app{% endnativescript %}{% angular %}src{% endangular %}/package.json
 
-This is a secondary `package.json` file in which you can specify the entry point file of the application and also several [Android-specific]({% slug android-custom-flags %}) and [iOS-specific]({% slug ios-custom-flags %}) custom flags. Below is an example of a basic secondary `package.json` file.
+This is a secondary `package.json` file in which you can specify the entry point file of the app and to configure the behavior of the NativeScript runtimes. Below is an example of a basic secondary `package.json` file.
 
 {% nativescript %}
 ```JSON
@@ -86,6 +88,37 @@ This is a secondary `package.json` file in which you can specify the entry point
 }
 ```
 {% endangular %}
+
+
+#### Discarding JavaScript exceptions when called from native
+
+Normally, an unhandled exception from JavaScript code called from a native API will crash the application showing the stack trace. If you want to prevent such crashes you can override this behavior using the `discardUncaughtJsExceptions` flag.
+
+All discarded exceptions can be processed in the app by either subscribing to the [application.discardedErrorEvent](/api-reference/modules/_application_#discardederrorevent) and using the received [DiscardedErrorEventData instance](/api-reference/interfaces/_application_.discardederroreventdata), or by assigning a one-argument function to `global.__onDiscardedError` which will receive the exception as a [NativeScriptError instance](/api-reference/interfaces/_nativescript_error_d_.nativescripterror). Usually you would want to log and/or report the exception to analytics.
+
+For example:
+
+```JS
+var application = require("application");
+
+application.on(application.discardedErrorEvent, function (args) {
+    const error = args.error;
+
+    console.log("Received discarded exception: ");
+    console.log(error.message);
+    console.log(error.stackTrace);
+    console.log(error.nativeException);
+    //report the exception in your analytics solution here
+});
+```
+
+#### Android runtime configuration
+
+For desciption of the flags which are specific to the Android runtime see the [Android custom flags article]({% slug android-custom-flags %}).
+
+#### iOS runtime configuration
+
+For description of the flags which are specific to the iOS runtime see the [iOS custom flags article]({% slug ios-custom-flags %}).
 
 ##{% nativescript %}# app/{% endnativescript %}App_Resources
 

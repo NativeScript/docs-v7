@@ -12,7 +12,7 @@ The V8 engine comes with a set of controlling flags that may be useful for fine-
 
 ## Expose Garbage Collector
 
-The `--expose_gc` flag exposes a global `gc()` function which can be helpful in [advanced memory management scenarios]({% slug memory-management %}).
+The `--expose_gc` flag exposes a global `gc()` function which can be helpful in [advanced memory management scenarios]({% slug android-memory-management %}).
 
 ```JSON
 {
@@ -84,18 +84,7 @@ When you are using a release build there will be no logs to the console, so if y
 }
 ```
 
-## Discarding JavaScript exceptions when called from native
+## Configuring automatic garbage collection
 
-By default, if an exception is thrown when executing JavaScript code which is called from native API it will crash the application showing the stack trace. If you want the exception stack trace to be logged, but application not to crash you can enable the `discardUncaughtJsExceptions` flag:
+There are three parameters used for configuring the frequency and conditions of automatic triggerring of garbage collections in the JavaScript world. These are `gcThrottleTime`, `memoryCheckInterval` and `freeMemoryRatio`. For detailed explanation of their behavior please refer to the `Syncronizing Garabage Collectors` section in [Memory Management]({% slug android-memory-management %}#syncronizing-garabage-collectors)
 
-```JSON
-{
-    ...
-    "discardUncaughtJsExceptions": true
-    ...
-}
-```
-
-The discarded exceptions can be processed in the app by subscribing to `application.discardedErrorEvent` or by assigning a one-argument function to `global.__onDiscardedError`.
-
-> **NOTE:** The `discardUncaughtJsExceptions` works on iOS as well. This is why in the example above the flag is not assigned to the `android` object.

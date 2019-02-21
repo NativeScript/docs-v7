@@ -37,7 +37,7 @@ Generally, almost every UI control could be bound to a data object (all NativeSc
 
 ### Two-way binding in code
 
-The example below consists of a `Label`, `TextField` and a source property to which the UI controls are bound. The purpose of the sample is to demonstrate how the `Label` text is changed, while editing the input of the `TextField`. 
+The example below consists of a `Label`, `TextField` and a source property to which the UI controls are bound. The purpose of the sample is to demonstrate how the `Label` text is changed, while editing the input of the `TextField`.
 
 > You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=eK2hOo) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=8gVPMi&v=4).
 
@@ -613,7 +613,7 @@ targetTextField.unbind("text");
 targetTextField.unbind("text");
 ```
 
-**API Reference for** [Binding](http://docs.nativescript.org/api-reference/classes/_ui_core_bindable_.bindable.html). 
+**API Reference for** [Binding](/api-reference/classes/_ui_core_bindable_.bindable.html).
 
 
 ### See also

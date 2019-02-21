@@ -14,7 +14,7 @@ The user interface of NativeScript mobile apps consists of pages. Typically, the
 
 ## Declare the Home Page
 
-Each NativeScript app must have a home page that loads when you launch the app. You need to explicitly set the home page for your app by calling the `run` method of the [`Application`](http://docs.nativescript.org/api-reference/modules/_application_.html) module and pass `NavigationEntry` with the desired `moduleName`.
+Each NativeScript app must have a home page that loads when you launch the app. You need to explicitly set the home page for your app by calling the `run` method of the [`Application`](/api-reference/modules/_application_.html) module and pass `NavigationEntry` with the desired `moduleName`.
 
 The NativeScript navigation framework looks for an `XML` file with the specified name, loads it and navigates to the respective page. If NativeScript discovers a `JavaScript` or `TypeScript` file with the same name, it executes the code inside it.
 
@@ -33,7 +33,7 @@ application.run({ moduleName: "my-page" });
 
 ## Navigate to a Page
 
-You can navigate between pages with the `navigate` method of the [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class. The [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. With NativeScript 4 and above each app can have one or more frames. To get a reference to a frame we can use [`getFrameById`](https://docs.nativescript.org/api-reference/modules/_ui_frame_#getframebyid) method. Detailed information about navigation can be found in the [dedicated article](#core-concepts/navigation#basic-navigation).
+You can navigate between pages with the `navigate` method of the [`Frame`](/api-reference/classes/_ui_frame_.frame.html) class. The [`Frame`](/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. With NativeScript 4 and above each app can have one or more frames. To get a reference to a frame we can use [`getFrameById`](/api-reference/modules/_ui_frame_#getframebyid) method. Detailed information about navigation can be found in the [dedicated article](#core-concepts/navigation#basic-navigation).
 
 When you trigger navigation, NativeScript looks for an `XML` file with the specified name, loads it and navigates to the respective page. If NativeScript discovers a `JavaScript` or `TypeScript` file with the same name, it executes the code inside it.
 
@@ -88,7 +88,7 @@ frame.navigate({
 
 ## Passing and Receiving Custom Context
 
-In cases where we want to pass a specific context and need more control than the automated `bindingContext`, you could use the `context` property in the `navigatedEntry` object. The navigated page can obtain the passed context via the `navigatedTo` event and the [`navigaitonContext`](https://docs.nativescript.org/api-reference/classes/_ui_page_.page#navigationcontext) property.
+In cases where we want to pass a specific context and need more control than the automated `bindingContext`, you could use the `context` property in the `navigatedEntry` object. The navigated page can obtain the passed context via the `navigatedTo` event and the [`navigaitonContext`](/api-reference/classes/_ui_page_.page#navigationcontext) property.
 
 Sending binding context from the main page.
 ```JavaScript
@@ -207,7 +207,7 @@ The top-level user interface components are content components like pages and la
 
 ### Page
 
-Your application pages (or screens) are instances of the [`page`](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) class of the [`Page`](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) module. Typically, an app will consist of multiple application screens.
+Your application pages (or screens) are instances of the [`page`](/api-reference/classes/_ui_page_.page.html) class of the [`Page`](/api-reference/classes/_ui_page_.page.html) module. Typically, an app will consist of multiple application screens.
 
 You can execute some business logic when your page loads using the `pageLoaded` event. You need to set the `loaded` attribute for your page in your `main-page.xml`.
 ```XML
@@ -236,7 +236,7 @@ export function pageLoaded(args: EventData) {
 
 ### TabView
 
-With a [`tabview`](http://docs.nativescript.org/api-reference/classes/_ui_tab_view_.tabview.html), you can avoid spreading your user interface across multiple pages. Instead, you can have one page with multiple tabs.
+With a [`tabview`](/api-reference/classes/_ui_tab_view_.tabview.html), you can avoid spreading your user interface across multiple pages. Instead, you can have one page with multiple tabs.
 
 The following sample `main-page.xml` contains two tabs with labels.
 ```XML
@@ -745,7 +745,7 @@ export function navigatingTo(args: EventData) {
 
 ### ListView Binding
 
-You can use the double curly brackets syntax to bind the items to a [`listView`](http://docs.nativescript.org/api-reference/classes/_ui_list_view_.listview.html). You can also define a template with the `itemTemplate` property from which NativeScript will create the items for your `listView`.
+You can use the double curly brackets syntax to bind the items to a [`listView`](/api-reference/classes/_ui_list_view_.listview.html). You can also define a template with the `itemTemplate` property from which NativeScript will create the items for your `listView`.
 
 > Avoid accessing components by ID, especially when the component is part of a template. It is recommended that you use bindings to specify component properties.
 

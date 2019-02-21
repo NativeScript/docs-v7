@@ -23,7 +23,7 @@ sigint_handler() {
 trap 'kill ${!}; sigterm_handler' SIGTERM
 trap 'sigint_handler' SIGINT
 
-mkdir /www
+mkdir -p /www
 
 if [ ! -d /root/./nativescript-ui-listview ]; then
 	mkdir /root/./nativescript-ui-listview 

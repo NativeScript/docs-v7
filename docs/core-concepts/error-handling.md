@@ -8,7 +8,7 @@ slug: error-handling
 
 ## Handling errors in NativeScript core modules
 
-A big difference between web and NativeScript applications is the way the Errors have been handled. Currently, when an unhandled exception is thrown in NativeScript (e.g. inside `tns-core-modules`, plugin, used in the app, or application code) the app will crash, and an Error with the corresponding stack trace will be shown. 
+A big difference between web and NativeScript applications is the way the Errors have been handled. Currently, when an unhandled exception is thrown in NativeScript (e.g. inside `tns-core-modules`, plugin, used in the app, or application code) the app will crash, and an Error with the corresponding stack trace will be shown.
 In some cases, this seems to be the expected behaviour when the app is in `development` mode. You would want to have the stack trace of the exact location the unexpected error has occurred so that you can more easily understand what happened and allows you to fix the issue. However, when the app is in a `production` similar application crashes can seriously hurt your application credibility and drive away customers. In many cases, you might prefer anything else (e.g. app freeze, blank screen, failed navigation) to an actual crash with an error log.
 
 Regarding that, new API is introduced in NativeScript, which provides functionality for handling errors in different ways while the app is in development and production. While creating the API, the following three scenarios have been taken in mind.
@@ -18,14 +18,14 @@ Regarding that, new API is introduced in NativeScript, which provides functional
 3. (production mode) Send an error report to your analytics/error-report server but continue app execution. Maybe triggers some recover logic that will handle the app without a crash.
 
 
-### Using Error method 
-With the API the `trace` module is extended with a new method called `error()`. The method can be used, for example, in the plugins and allows the JavaScript error to be passed up and to be handled in the application code. 
+### Using Error method
+With the API the `trace` module is extended with a new method called `error()`. The method can be used, for example, in the plugins and allows the JavaScript error to be passed up and to be handled in the application code.
 
 Example:
 
 ```
 function doSomething(arg) {
-  // Instead of throwing the error 
+  // Instead of throwing the error
   // **if(!arg) throw new Error("Arg not provided in "doSomething");**
   // we can use the new **trace.error()**
   if(!arg) {
@@ -39,7 +39,7 @@ The example demonstrates, how we can use the `error` method inside of a plugin's
 
 ### Defining custom error handler
 
-This API also introduces a technic, which allows the developers to define custom error handler logic. In this case, the `ErrorHandler` will be called whenever `trace.error(...)` is called. The default error handler, which will just `throw` the error as they come.
+This API also introduces a technique, which allows the developers to define custom error handler logic. In this case, the `ErrorHandler` will be called whenever `trace.error(...)` is called. The default error handler will just `throw` the errors as they come.
 
 Example:
 
@@ -52,8 +52,8 @@ const errorHandler: traceModule.ErrorHandler = {
         //option 1 (development) - throw the error
         throw err;
 
-        //option 2 (development) - logging the error via write method provided from trace module 
-        traceModule.write(err, "unhandlede-error", type.error);
+        //option 2 (development) - logging the error via write method provided from trace module
+        traceModule.write(err, "unhandled-error", type.error);
 
         //(production) - custom functionality for error handling
         //reportToAnalytics(err)
@@ -63,25 +63,14 @@ const errorHandler: traceModule.ErrorHandler = {
 traceModule.setErrorHandler(errorHandler)
 application.run({ moduleName: 'app-root' });
 ```
-The example shows how to define custom handler and three possible options for handling the error via [trace]({%slug trace%}) module or while using custom functionality.
+The example shows how to define a custom handler and three possible options for handling the error via [trace]({%slug trace%}) module or while using custom functionality.
 
 Further info about the error handing in NativeScript can be found [here](https://github.com/NativeScript/NativeScript/blob/master/HandlingErrors.md).
 
-## Disabling exception's auto catching
+## Disabling rethrowing of uncaught JS exceptions to native
 
-Since NativeScript 4.2,  a new property has been introduced called `discardUncaughtJsExceptions` and allows to config, whether the exceptions from `callJSMethodNative` will be caught or not. The flag is disabled by default, and we can enable it while setting up the `discardUncaughtJsExceptions` property to `true` inside the `app/package.json` file. If the property is enabled, the exceptions will be caught and logged without propagating them.
+A property called `discardUncaughtJsExceptions` was introduced with NativeScript 4.2. It allows you to configure whether unhandled exceptions coming from JavaScript code which has been called from native should be caught or not. This option is disabled by default and to enable it you have to set the `discardUncaughtJsExceptions` property to `true` inside the `app/package.json` file.
 
-Example:
+Switching it on will cause JS exceptions to be caught without being propagated to the native world, effectively protecting the app from crashing. All exceptions that have been discarded will be reported to the app via the `application.discardedErrorEvent`. For more information on this feature refer to `Discarding JavaScript exceptions when called from native section` [here]({% slug structure %}#apppackagejson).
 
-```
-{
-  "android": {
-    "v8Flags": "--expose_gc"
-  },
-  "main": "app.js",
-  "name": "tns-template-hello-world-ts",
-  "version": "4.1.0",
-  "discardUncaughtJsExceptions":true
-}
-```
-> Note: Enabling this property can lead to discarding an exception, which can lead to unexpected application behaviours. For the proper exception handling, it is recommended to keep auto catching enabled.
+> **Note:** Enabling this property can lead to the discarding a fatal exception, which can destabilize the application and result in unexpected behavior and hard to track and debug unrelated to the original issue crashes. For proper exception handling, it is recommended to keep the default setting and ensure that no uncaught JS exceptions escape to top-level native code.

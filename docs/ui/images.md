@@ -1,6 +1,6 @@
 ---
 title: Images
-description: How to work with images in a NativeScript application. The examples demonstrate how to load an image via URL, image from a local file system and image from the resource folder. In the description can be found info how to add an image in the resource folders. 
+description: How to work with images in a NativeScript application. The examples demonstrate how to load an image via URL, image from a local file system and image from the resource folder. In the description can be found info how to add an image in the resource folders.
 position: 60
 slug: images
 publish: false
@@ -48,7 +48,7 @@ let imageSource = imageSourceModule.fromResource("logo");
 image.imageSource = imageSource;
 ```
 
-You can also use the [image-source API](http://docs.nativescript.org/api-reference/classes/_image_source_.imagesource.html) to save and load images from a base64 encoded string.
+You can also use the [image-source API](/api-reference/classes/_image_source_.imagesource.html) to save and load images from a base64 encoded string.
 
 ## Load images from URL
 Web images have an `http://` or `https://` prefix. When such an image is loaded, an asynchronous http request will be sent and the image will be shown if the request is successful.
@@ -89,12 +89,12 @@ Using the `res://` prefix you can load a resource image. This is the suggested a
 
 {% nativescript %}
 ```XML
-<Image src="res://logo" stretch="none" /> 
+<Image src="res://logo" stretch="none" />
 ```
 {% endnativescript %}
 {% angular %}
 ```XML
-<Image src="res://logo" stretch="none" ></Image> 
+<Image src="res://logo" stretch="none" ></Image>
 ```
 {% endangular %}
 
