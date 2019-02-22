@@ -71,7 +71,13 @@ if [ -f $NS_UI_LV"/README.md" ]; then
 	for i in "${examples[@]}"
 	do
 		cd $i
-		cd "demo"
+		# Generating Angular d.ts
+		cd "src"
+		npm i --ignore-scripts
+		cd "angular"
+		tsc
+
+		cd "../../demo"
 		npm install markdown-snippet-injector
 		# cd app
 		# tsc
@@ -81,11 +87,7 @@ if [ -f $NS_UI_LV"/README.md" ]; then
 		npm install markdown-snippet-injector
 		npm run inject
 		
-		# Generating Angular d.ts
-		cd "../src"
-		npm i --ignore-scripts
-		cd "angular"
-		tsc
+		
 	done
 fi
 
