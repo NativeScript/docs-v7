@@ -18,7 +18,7 @@ The **RadSideDrawer** allows you to receive events and execute code when sideDra
 There are four events that the drawer fires:
 
 - `drawerOpening`
-- `drawerClosed`
+- `drawerOpened`
 - `drawerClosing`
 - `drawerClosed` 
 
