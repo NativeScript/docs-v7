@@ -100,7 +100,9 @@ export function onTap(args: EventData) {
 }
 ```
 
-[Playground Demo](https://play.nativescript.org/?template=play-tsc&id=o41kGU)
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=o41kGU)
+
+[Playground Demo JavaScript](https://play.nativescript.org/?template=play-js&id=YwE1kV)
 
 ## Backward Navigation
 
@@ -147,7 +149,9 @@ export function onTap(args: EventData) {
 }
 ```
 
-[Playground Demo](https://play.nativescript.org/?template=play-tsc&id=jXeFKX)
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=jXeFKX)
+
+[Playground Demo JavaScript](https://play.nativescript.org/?template=play-js&id=1Zxc93)
 
 > **Note:** Both the Android hardware button and the iOS back button in the `ActionBar` execute upward navigation. These platform specific navigation controls come out of the box and there is no need for you to implement them yourself.
 
@@ -222,7 +226,9 @@ export function navigateToSearch(args: EventData) {
 }
 ```
 
-[Playground Demo](https://play.nativescript.org/?template=play-tsc&id=ibkvdW)
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=ibkvdW)
+
+[Playground Demo JavaScript](https://play.nativescript.org/?template=play-js&id=62FMxH)
 
 ### TabView Navigation
 
@@ -268,7 +274,9 @@ export function onSelectedIndexChanged(args: SelectedIndexChangedEventData) {
 }
 ```
 
-[Playground Demo](https://play.nativescript.org/?template=play-tsc&id=NMB8eF)
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=NMB8eF)
+
+[Playground Demo JavaScript](https://play.nativescript.org/?template=play-js&id=GZE2Rg)
 
 > **Note:** In the current scenario the Search feature has only one page and it's possible to implement it directly in the `TabViewItem` without embedding a `Frame`. However, in this case there won't be a navigation controller in the `TabViewItem` and therefore, no `ActionBar`.
 
@@ -352,7 +360,9 @@ export function closeModal(args: EventData) {
 }
 ```
 
-[Playground Demo](https://play.nativescript.org/?template=play-tsc&id=B1l1kg)
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=B1l1kg)
+
+[Playground Demo JavaScript](https://play.nativescript.org/?template=play-js&id=PDsp86)
 
 > **Note:** In the current scenario the Search feature has only one page and it's possible to implement it directly in the modal view without embedding a `Frame` in `search-root`. However, in this case there won't be a navigation controller in the modal view and therefore, no `ActionBar`.
 
@@ -460,7 +470,9 @@ export function navigateToSearch(args: EventData) {
 }
 ```
 
-[Playground Demo](https://play.nativescript.org/?template=play-tsc&id=qk6ACL)
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=qk6ACL)
+
+[Playground Demo JavaScript](https://play.nativescript.org/?template=play-js&id=0TwmvN)
 
 > **Note:** To implement the lateral navigation schema correctly in this case, we had to navigate to each side feature using the `clearHistory` option. This is to ensure that there will be no forward and backward navigation between features.
 
@@ -558,6 +570,8 @@ export function openSearchModal(args: EventData) {
 }
 ```
 
-[Playground Demo](https://play.nativescript.org/?template=play-tsc&id=NIj8kN)
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=NIj8kN)
+
+[Playground Demo JavaScript](https://play.nativescript.org/?template=play-js&id=Z8skma)
 
 Take a look at the [SideDrawer]({% slug sidedrawer-overview %}) docs for more information about the component.
