@@ -166,10 +166,10 @@ page.addCss("button {background-color: blue}");
 This snippet adds new CSS styles to the current set. However, this method reads them from a file. It is useful for organizing styles in files and reusing them across multiple pages.
 
 ``` JavaScript
-page.addCssFile(cssFileName);
+page.addCssFile(cssFileName.css);
 ```
 ``` TypeScript
-page.addCssFile(cssFileName);
+page.addCssFile(cssFileName.css);
 ```
 
 > The path to the CSS file is relative to the application root folder.
