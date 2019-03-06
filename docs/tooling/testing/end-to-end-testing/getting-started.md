@@ -23,9 +23,7 @@ The following steps will guide you through the process of setting up your projec
 $ npm install -D nativescript-dev-appium
 ```
 
-> After completion of the installation, if your project has a dependency to *TypeScript*, the plugin should have added an `e2e` folder containing predefined configs and samples.
- 
- # TODO: What if it doesn't have such dependency ???????????
+> After completion of the installation, the plugin should have added an `e2e` folder containing predefined configs and samples.
 
 ### Folder Structure
 
@@ -37,7 +35,7 @@ After you've setup your project for E2E testing, it should have a structure simi
             ├── config
                 ├── appium.capabilities.json
                 ├── mocha.opts
-            ├── sample.e2e-test.ts
+            ├── sample.e2e-spec.ts
             ├── setup.ts
             ├── tsconfig.json
         ├── ...
@@ -52,7 +50,7 @@ Here is more info about the E2E test specific files and configurations:
 |:-----------------------------|:-------------------|
 |config/appium.capabilities.json|Contains predefined configurations for test execution.|
 |config/mocha.opts              |A default mocha configuration file.                   |
-|sample.e2e-test.ts             |Contains a predefined ready-to-execute sample tests of the default [hello-world-ts](https://github.com/NativeScript/template-hello-world-ts) template.|
+|sample.e2e-spec.ts             |Contains a predefined ready-to-execute sample tests of the default [hello-world-ts](https://github.com/NativeScript/template-hello-world-ts) template.|
 |setup.ts                       |Defines the `before` and `after` test execution hooks responsible to start and stop the [Appium](http://appium.io/) server.|
 |tsconfig.json                  |TypeScript compiler configuration file for the `e2e` tests.|
 

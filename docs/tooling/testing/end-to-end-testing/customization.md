@@ -76,7 +76,7 @@ As you can see, the `app` property can be left an empty string which will force 
 
 **It is important to build your app in advance as explained in the [Getting Started]({% slug e2e-testing-getting-started%}#running-your-first-test) section, because the runner expects to provide app package to it or such to exists in the search location.**
 
-**For faster testsing when working on an app with livesync it would be better to use --devMode option or start a new session using --startSession option and run tests using --attachToDebug option and specify appium --port. Or simply start session with appium desktop application**
+**For faster testing when working on an app with livesync it would be better to use --devMode option or start a new session using --startSession option and run tests using --attachToDebug option and specify appium --port. Or simply start session with appium desktop application**
 
 ## Options
 
@@ -84,6 +84,7 @@ As you can see, the `app` property can be left an empty string which will force 
 |---|---|---|
 |runType| Select the capabilities from your config file `appium.capabilities.json`| Consider using `android`, `device`, `sim` strings as part of your `runType` option if you haven't provided `app` capability. Thus, the runner will look for app package in the right location for the current run. <br/> e.g. --runType ios-device10iPhone6|
 |appPath| Provide location of the app package to be tested. This will overwrite all provided capabilities for app| Possible values are:<br/> - app build package name (in case `--sauceLab` option is set it will prepend `sauce-storage:` in front of the app name so app has to be [uploaded to Sauce Labs](https://wiki.saucelabs.com/display/DOCS/Uploading+Mobile+Applications+to+Sauce+Storage+for+Testing) before execution starts)<br/> - path e.g. `platforms/android/build/outputs/apk/demo.apk`.<br/> Example: --appPath demo-debug.apk|
+| imagesPath | Provide the relative path to e2e/resources/images folder of the images location required by the image comparison feature | --imagesPath "osPlatformName/iPhone X"
 | reuseDevice | Reuse the device specified in the `runType` capabilities. If the emulator/simulator is not running, it will launch, execute tests and remain running. The next execution of `npm run e2e` with the `reuseDevice` option will attach to the already running emulator/simulator, execute tests and keep it running. | e.g. --reuseDevice |
 | devMode | `devMode` capabilities. Skipping application instalation and will automatically reuse device. | e.g. --devMode |
 |sauceLab| Enable tests execution in [Sauce Labs](https://saucelabs.com/). As a prerequisite you will have to define `SAUCE_USER` and `SAUCE_KEY` as [environment variable](https://wiki.saucelabs.com/display/DOCS/Best+Practice%3A+Use+Environment+Variables+for+Authentication+Credentials)| e.g. --sauceLab|
@@ -91,8 +92,8 @@ As you can see, the `app` property can be left an empty string which will force 
 |port| Appium server port|
 |storage| Specify remote image storage |
 |ignoreDeviceController| Setting this option you will use default appium device controller which is recommended when tests are executed on cloud based solutions |
-|sessionId| In oreder to attach to already started session|Option --port is mendatory in this case. It will automatically set --devMode to true. Provides ability nativescript-dev-appium to be used with [appium desktop client](https://github.com/appium/appium-desktop/releases)|
-|attachToDebug| Same as sessionId but no need to porvide session id.|Option --port is mendatory in this case. It will automatically resolve --sessionId. Provides ability nativescript-dev-appium to be used with [appium desktop client](https://github.com/appium/appium-desktop/releases)|
+|sessionId| In order to attach to already started session|Option --port is mandatory in this case. It will automatically set --devMode to true. Provides the ability to nativescript-dev-appium to be used with [appium desktop client](https://github.com/appium/appium-desktop/releases)|
+|attachToDebug| Same as sessionId but no need to provide session id.|Option --port is mendatory in this case. It will automatically resolve --sessionId. Provides ability nativescript-dev-appium to be used with [appium desktop client](https://github.com/appium/appium-desktop/releases)|
 |startSession|Start new appium server and initialize appium driver.|
 |cleanApp| Remove application from device on server quit.|
 
@@ -107,7 +108,7 @@ Let say that we have a script in package.json like this
 
  ```
 
-Run tests in sauceLab
+Run tests in SauceLabs. Before that you have to upload the package in test specified by *--appPath* option to SauceLab
 ```
 $ npm run e2e -- --runType android25 --sauceLab --appPath demo.apk
 ```

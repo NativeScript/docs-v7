@@ -18,8 +18,12 @@ $ npm run e2e -- --runType android25 --verbose
 
 ## Common Problems
 
-1. Missing installed appium
-2. Misleading appPath or capabilities location. Please make sure that the path to the app or capabilities location is correct.
-3. Misleading detials for device specified in appium config
+Most of them provide error/warning and suggest an action.
 
-**TODO**: Add more info about the common problem - what do they mean and how to solve them
+1. Missing installed appium. To resolve it install appium globally.
+
+    ```
+    npm i -g appium
+    ```
+2. Misleading appPath or capabilities location. Please make sure that the path to the app or capabilities location is correct.
+3. Misleading details for device specified in appium config. If the plugin fails to find the emulator/simulator you have, check that the *avd*, *platformName*, *deviceName* or any other related capability is properly set.
