@@ -70,8 +70,9 @@ export default {
     },
     onItemDeselected({ index, object }) {
       let itemSelected = this.itemList.getItem(index);
-      console.log(`Item deselected ${itemSelected.name}`);
+      console.log(`Item deselected: ${itemSelected.name}`);
       itemSelected.class = '';
+      this.itemList.setItem(index, itemSelected);
     },
   }
 };
