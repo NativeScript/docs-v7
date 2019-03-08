@@ -42,7 +42,7 @@ GEM
     jekyll-unsanitize (0.4)
     jekyll-watch (1.4.0)
       listen (~> 3.0, < 3.1)
-    json (1.8.3)
+    json (1.8.6)
     kramdown (1.11.1)
     liquid (3.0.6)
     listen (3.0.8)
@@ -90,6 +90,7 @@ DEPENDENCIES
   jekyll-assets
   jekyll-sitemap
   jekyll-unsanitize (= 0.4)
+  json (= 1.8.6)
   uglifier
 
 BUNDLED WITH

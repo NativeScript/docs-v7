@@ -1,4 +1,4 @@
-FROM ruby:2.3.5-alpine3.4
+FROM ruby:2.6.1-alpine3.9
 
 RUN apk add --update \
   bash \
@@ -10,6 +10,7 @@ RUN apk add --update \
   rsync \
   nginx \
   nodejs \
+  npm \
   && npm config set unsafe-perm true \
   && rm -rf /var/cache/apk/* \
   && npm config set cache /var --global \

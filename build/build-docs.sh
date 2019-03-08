@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -ex
 
 SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
 ROOT=$SCRIPT_PATH"/bin"
@@ -53,7 +53,7 @@ cp -r $SCRIPT_PATH"/_config_vuejs.yml" \
 	  $SCRIPT_PATH"/_includes" \
 	  $SCRIPT_PATH"/fonts" \
 	  $VUEJS_ROOT
-	  
+
 rm $VUEJS_ROOT"/_plugins/redirect_generator.rb" \
    $VUEJS_ROOT"/_plugins/snippet.rb" \
    $VUEJS_ROOT"/_plugins/ns_cookbook.rb"
@@ -83,8 +83,8 @@ if [ -f $NS_UI_LV"/README.md" ]; then
 		cd "../demo-angular"
 		npm install markdown-snippet-injector
 		npm run inject
-		
-		
+
+
 	done
 
 	cd $NS_UI_API_REF
