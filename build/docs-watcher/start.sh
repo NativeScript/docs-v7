@@ -26,7 +26,7 @@ trap 'sigint_handler' SIGINT
 mkdir -p /www
 
 if [ ! -d /root/./nativescript-ui-listview ]; then
-	mkdir /root/./nativescript-ui-listview 
+	mkdir /root/./nativescript-ui-listview
 
 fi
 if [ ! -d /root/./nativescript-ui-autocomplete ]; then
@@ -35,10 +35,10 @@ if [ ! -d /root/./nativescript-ui-autocomplete ]; then
 fi
 if [ ! -d /root/./nativescript-ui-dataform ]; then
 	mkdir /root/./nativescript-ui-dataform
-	
+
 fi
 if [ ! -d /root/./nativescript-ui-chart ]; then
-	mkdir /root/./nativescript-ui-chart 
+	mkdir /root/./nativescript-ui-chart
 
 fi
 if [ ! -d /root/./nativescript-ui-calendar ]; then
@@ -47,18 +47,18 @@ if [ ! -d /root/./nativescript-ui-calendar ]; then
 fi
 if [ ! -d /root/./nativescript-ui-gauge ]; then
 	mkdir /root/./nativescript-ui-gauge
-	
+
 fi
 if [ ! -d /root/./nativescript-ui-sidedrawer ]; then
 	mkdir /root/./nativescript-ui-sidedrawer
-	
+
 fi
 if [ ! -d /root/./docs/ns_ui_api-reference/ns-ui-api-reference ]; then
-	mkdir /root/./docs/ns_ui_api-reference/ns-ui-api-reference 
+	mkdir /root/./docs/ns_ui_api-reference/ns-ui-api-reference
 
 fi
 echo "Start copying mounted folders..."
-rsync --relative -az --exclude node_modules/ \
+rsync --relative -az --exclude node_modules/ --exclude .git \
 	/root/./docs \
 	/root/./NativeScript \
 	/root/./nativescript-angular \
