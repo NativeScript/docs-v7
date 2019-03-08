@@ -3,23 +3,32 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="iwHdY_1KfeQbVLI-gtcAsI9pslqa2dLBsQD47d2E5To" />
     <title>{{#ifCond model.name '==' project.name}}{{project.name}}{{else}}{{model.name}} | {{project.name}}{{/ifCond}}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="{{relativeURL "assets/css/main.css"}}">
+    <link rel="shortcut icon" href="//www.nativescript.org/favicon.ico" />
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="{{relativeURL "assets/js/modernizr.js"}}"></script>
+    <script src="https://cdn.cookielaw.org/consent/dc6bd370-357e-468e-916d-2c0b0f5fba8d.js" type="text/javascript" charset="UTF-8"></script> 
 </head>
 <body>
+<!-- Google Tag Manager -->
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-W58JDD" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+</noscript>
+<script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-W58JDD');</script>
+<!-- End Google Tag Manager -->
 
 {{> header}}
+{{> toolbar}}
+{{> pageTitle}}
 
 <div class="container container-main">
     <div class="row">
-        <div class="col-8 col-content">
-            {{{contents}}}
-        </div>
-        <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+        <div class="col-4 col-menu menu-highlight">
             <nav class="tsd-navigation primary">
                 <ul>
                     {{#each navigation.children}}
@@ -28,7 +37,7 @@
                 </ul>
             </nav>
 
-            <nav class="tsd-navigation secondary menu-sticky">
+            <nav class="tsd-navigation secondary">
                 <ul class="before-current">
                     {{#each toc.children}}
                         {{> toc.root}}
@@ -36,8 +45,13 @@
                 </ul>
             </nav>
         </div>
+        <div class="col-8 col-content">
+            {{{contents}}}
+        </div>
     </div>
 </div>
+
+{{> legend}}
 
 {{> footer}}
 

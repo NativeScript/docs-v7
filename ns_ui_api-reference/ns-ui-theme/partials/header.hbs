@@ -1,69 +1,63 @@
-<header>
-    <div class="tsd-page-toolbar">
-        <div class="container">
-            <div class="table-wrap">
-                <div class="table-cell" id="tsd-search" data-index="{{relativeURL "assets/js/search.js"}}" data-base="{{relativeURL "./"}}">
-                    <div class="field">
-                        <label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-                        <input id="tsd-search-field" type="text" />
-                    </div>
+<header id="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="ns-btn-mobile">
+                <span class="ns-sandwich-icon">&nbsp;</span>
+            </div>
+            <div class="col-1 left-col">
+                <a href="//www.nativescript.org/" class="ns-logo ns-icon ns-icon-ns"></a>
+            </div>
 
-                    <ul class="results">
-                        <li class="state loading">Preparing search index...</li>
-                        <li class="state failure">The search index is not available</li>
-                    </ul>
-
-                    <a href="{{relativeURL "index.html"}}" class="title">{{project.name}}</a>
-                </div>
-
-                <div class="table-cell" id="tsd-widgets">
-                    <div id="tsd-filter">
-                        <a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
-                        <div class="tsd-filter-group">
-                            <div class="tsd-select" id="tsd-filter-visibility">
-                                <span class="tsd-select-label">All</span>
-                                <ul class="tsd-select-list">
-                                    <li data-value="public">Public</li>
-                                    <li data-value="protected">Public/Protected</li>
-                                    <li data-value="private" class="selected">All</li>
-                                </ul>
-                            </div>
-
-                            <input type="checkbox" id="tsd-filter-inherited" checked />
-                            <label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-
-                            {{#unless settings.excludeExternals}}
-                                <input type="checkbox" id="tsd-filter-externals" checked />
-                                <label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-                            {{/unless}}
-
-                            <input type="checkbox" id="tsd-filter-only-exported" />
-                            <label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
-                        </div>
-                    </div>
-
-                    <a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
-                </div>
+            <div class="col-9 center-col" id="main-nav">
+                <ul>
+                    <li>
+                        <a href="/start/introduction">
+                            NativeScript Core
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/angular/start/introduction">
+                            NativeScript with Angular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/vuejs">
+                            NativeScript with Vue.js
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/api-reference/globals">
+                            API Reference - Core Modules
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/ns-ui-api-reference/globals" class="selected">
+                            API Reference - NativeScript UI
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/sidekick">
+                            NativeScript Sidekick
+                        </a>
+                    </li>
+                </ul>
+                <h4>Article title</h4>
+            </div>
+            <div class="col-2 right-col">
+                <a href="https://github.com/nativescript" target="_blank" class="ns-btn ns-btn-git ns-icon ns-icon-git">view in github</a>
             </div>
         </div>
     </div>
-    <div class="tsd-page-title">
-        <div class="container">
-            <ul class="tsd-breadcrumb">
-                {{#with model}}{{> breadcrumb}}{{/with}}
-            </ul>
-            <h1>{{#compact}}
-                {{model.kindString}}&nbsp;
-                {{model.name}}
-                {{#if model.typeParameters}}
-                    &lt;
-                    {{#each model.typeParameters}}
-                        {{#if @index}},&nbsp;{{/if}}
-                        {{name}}
-                    {{/each}}
-                    &gt;
-                {{/if}}
-            {{/compact}}</h1>
-        </div>
-    </div>
 </header>
+
+<!--TEMPORARY-->
+<script>
+    window.onload = function onload() {
+        var mobileBtn = document.getElementsByClassName('ns-btn-mobile')[0];
+        var menu = document.querySelector('#main-nav > ul');
+
+        mobileBtn.addEventListener('click', function(e) {
+            menu.classList.toggle('active');
+        }, false);
+    };
+</script>

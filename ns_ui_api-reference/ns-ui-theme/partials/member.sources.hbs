@@ -11,7 +11,11 @@
     {{#if sources}}
         <ul>
             {{#each sources}}
-                <li>Defined in {{fileName}}:{{line}}</li>
+                {{#if url}}
+                    <li>Defined in <a href="{{url}}">{{fileName}}:{{line}}</a></li>
+                {{else}}
+                    <li>Defined in {{fileName}}:{{line}}</li>
+                {{/if}}
             {{/each}}
         </ul>
     {{/if}}
