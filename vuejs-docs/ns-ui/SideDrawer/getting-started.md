@@ -68,10 +68,10 @@ const MyComponent = {
     },
     methods: {
         openDrawer() {
-            this.$refs.drawer.showDrawer();
+            this.$refs.drawer.nativeView.showDrawer();
         },
         onCloseDrawerTap() {
-            this.$refs.drawer.closeDrawer();
+            this.$refs.drawer.nativeView.closeDrawer();
         }
     },
     data() {
