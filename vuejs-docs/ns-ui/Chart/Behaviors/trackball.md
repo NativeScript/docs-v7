@@ -46,7 +46,7 @@ Depending on your current setup, the trackball will display information about th
 ## Features
 
 ### SnapMode
-By using the {% typedoc_link classes:Trackball,member:snapMode %} property you can control how the trackball is positioned relative to the series and the datapoints within. Possible values are defined by the {% typedoc_link modules:TrackballSnapMode %} enum.
+By using the {% typedoc_link classes:Trackball,member:snapMode %} property you can control how the trackball is positioned relative to the series and the datapoints within. Possible values are defined by the {% typedoc_link enums:ChartTrackballSnapMode %} enum.
 
 ### Intersection Points
 By using the {% typedoc_link classes:Trackball,member:showIntersectionPoints %} property you can determine whether information about all of the relevant datapoints will be shown in the trackball. This behavior is dependent on the {% typedoc_link classes:Trackball,member:snapMode %} property setting.

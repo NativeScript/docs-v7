@@ -29,6 +29,8 @@ By default, {% typedoc_link classes:RadDataForm %} will load a default editor de
 #### Example 1: Change the editor that is used for a property
 
 ```
+import { DataFormEditorType, DataFormValidationMode, DataFormCommitMode } from 'nativescript-ui-dataform';
+
 export default {
   template: `
   <Page>
@@ -48,21 +50,21 @@ export default {
       },
       ticketMetadata: {
         'isReadOnly': false,
-        'commitMode': 'Immediate',
-        'validationMode': 'Immediate',
+        'commitMode': DataFormCommitMode.Immediate,
+        'validationMode': DataFormValidationMode.Immediate,
         'propertyAnnotations':
         [
           {
             'name': 'date',
             'displayName': 'Date',
             'index': 0,
-            'editor': 'DatePicker',
+            'editor': DataFormEditorType.DatePicker,
           },
           {
             'name': 'type',
             'displayName': 'Ticket Type',
             'index': 3,
-            'editor': 'SegmentedEditor',
+            'editor': DataFormEditorType.SegmentedEditor,
             'valuesProvider': ['2D', '3D'],
           },
         ],
@@ -72,7 +74,7 @@ export default {
 }
 ```
 
-Note that the {% typedoc_link classes:EntityProperty,member:valuesProvider %} property will be taken into consideration only for editors that support predefined list of values. These editors are {% typedoc_link enums:EditorType,member:Picker %}, {% typedoc_link enums:EditorType,member:SegmentedEditor %}, {% typedoc_link enums:EditorType,member:List %} and {% typedoc_link enums:EditorType,member:AutoCompleteInline %}. You can read more about the providers [here]({% slug dataform-editors-providers-vue %} "RadDataForm value providers").
+Note that the {% typedoc_link classes:EntityProperty,member:valuesProvider %} property will be taken into consideration only for editors that support predefined list of values. These editors are {% typedoc_link enums:DataFormEditorType,member:Picker %}, {% typedoc_link enums:DataFormEditorType,member:SegmentedEditor %}, {% typedoc_link enums:DataFormEditorType,member:List %} and {% typedoc_link enums:DataFormEditorType,member:AutoCompleteInline %}. You can read more about the providers [here]({% slug dataform-editors-providers-vue %} "RadDataForm value providers").
 
 ## Converters
 
@@ -83,7 +85,7 @@ In the example in the beginning of the article the {% typedoc_link classes:Entit
 The following example is written in TypeScript:
 
 ```
-import { PropertyConverter } from 'nativescript-ui-dataform';
+import { PropertyConverter, DataFormEditorType, DataFormValidationMode, DataFormCommitMode } from 'nativescript-ui-dataform';
 
 export class Movie {
   public id: number;
@@ -134,15 +136,15 @@ export default {
       },
       ticketMetadata: {
         'isReadOnly': false,
-        'commitMode': 'Immediate',
-        'validationMode': 'Immediate',
+        'commitMode': DataFormCommitMode.Immediate,
+        'validationMode': DataFormValidationMode.Immediate,
         'propertyAnnotations':
         [
           {
             'name': 'movie',
             'displayName': 'Movie Name',
             'index': 0,
-            'editor': 'Picker',
+            'editor': DataFormEditorType.Picker,
             'valuesProvider': movies.map((value: Movie) => value.name),
             'converter': new MovieConverter(movies),
           },
@@ -158,11 +160,13 @@ As you can see in the `Movie` model you can have a property of type `number` whi
 
 ## Additional Parameters
 
-The {% typedoc_link enums:EditorType,member:Stepper %} and {% typedoc_link enums:EditorType,member:Slider %} editors have additional properties which you can be setup through {% typedoc_link classes:PropertyEditorParams %}. The following example of the {% typedoc_link enums:EditorType,member:Stepper %} editor shows how to limit its bounds and define its step:
+The {% typedoc_link enums:DataFormEditorType,member:Stepper %} and {% typedoc_link enums:DataFormEditorType,member:Slider %} editors have additional properties which you can be setup through {% typedoc_link classes:PropertyEditorParams %}. The following example of the {% typedoc_link enums:DataFormEditorType,member:Stepper %} editor shows how to limit its bounds and define its step:
 
 #### Example 4: Use editor params to adjust an editor
 
 ```
+import { DataFormEditorType, DataFormValidationMode, DataFormCommitMode } from 'nativescript-ui-dataform';
+
 export default {
   template: `
   <Page>
@@ -182,21 +186,21 @@ export default {
       },
       ticketMetadata: {
         'isReadOnly': false,
-        'commitMode': 'Immediate',
-        'validationMode': 'Immediate',
+        'commitMode': DataFormCommitMode.Immediate,
+        'validationMode': DataFormValidationMode.Immediate,
         'propertyAnnotations':
         [
           {
             'name': 'date',
             'displayName': 'Date',
             'index': 0,
-            'editor': 'DatePicker',
+            'editor': DataFormEditorType.DatePicker,
           },
           {
             'name': 'number',
             'displayName': 'Number Of Tickets',
             'index': 1,
-            'editor': 'Stepper',
+            'editor': DataFormEditorType.Stepper,
             'editorParams': {
               'minimum': 0,
               'maximum': 10,

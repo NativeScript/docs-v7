@@ -19,8 +19,8 @@ Styling the chart axes is done by using the corresponding customization properti
 - {% typedoc_link classes:CartesianAxis,member:labelFormat%} - defines the format used to display the axis' labels
 - {% typedoc_link classes:CartesianAxis,member:labelMargin%} - defines the margin for the labels
 - {% typedoc_link classes:CartesianAxis,member:labelRotationAngle%} - defines the angle of rotation for labels. Requires *Rotate* value for *labelFitMode* property
-- {% typedoc_link classes:CartesianAxis,member:labelFitMode%} - defines the fit mode for labels. By default labels are positioned on single line but there are {% typedoc_link modules:AxisLabelFitMode,member:Multiline%} and {% typedoc_link modules:AxisLabelFitMode,member:Rotate%} options too.
-- {% typedoc_link classes:CartesianAxis,member:labelLayoutMode%} - defines the layout mode for axis labels. With this property you can position labels in the {% typedoc_link modules:AxisLabelFitMode,member:Inner%} or {% typedoc_link modules:AxisLabelFitMode,member:Outer%} side of chart.
+- {% typedoc_link classes:CartesianAxis,member:labelFitMode%} - defines the fit mode for labels. The default value is {% typedoc_link enums:ChartAxisLabelFitMode,member:None%} which means the labels are positioned on single line but there are {% typedoc_link enums:ChartAxisLabelFitMode,member:Multiline%} and {% typedoc_link enums:ChartAxisLabelFitMode,member:Rotate%} options too.
+- {% typedoc_link classes:CartesianAxis,member:labelLayoutMode%} - defines the layout mode for axis labels. With this property you can position labels in the {% typedoc_link enums:ChartAxisLabelLayoutMode,member:Inner%} or {% typedoc_link enums:ChartAxisLabelLayoutMode,member:Outer%} side of chart.
 
 For the properties not specified exclusively the default values from the chart palette are used.
 

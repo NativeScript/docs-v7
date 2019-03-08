@@ -11,14 +11,14 @@ publish: true
 # RadListView Item Selection
 The Item Selection feature allows the end users to select items. A couple of selection modes are available, as well as events which are fired when the selection state of an item changes.
 
-There are two _selection behaviors_ which define how item selection works:
-- `None` - items cannot be selected
-- `Press` - items are selected by tapping on them
-- `LongPress` - items are selected by holding them
+The value of the {% typedoc_link classes:RadListView,member:selectionBehavior %} property determines how the item selection works. It accepts the values from the {% typedoc_link enums:ListViewSelectionBehavior %} enumeration:
+- {% typedoc_link enums:ListViewSelectionBehavior,member:None %} - items cannot be selected
+- {% typedoc_link enums:ListViewSelectionBehavior,member:Press %} - items are selected by tapping on them
+- {% typedoc_link enums:ListViewSelectionBehavior,member:LongPress %} - items are selected by holding them
 
-There are two main selection modes:
-- _multiple selection_ - allows for selecting multiple items. `RadListView` keeps track of which items are selected and exposes them through a `getSelectedItems()` method. Multiple selection is enabled by setting the `multipleSelection` property to `true`.
-- _single selection_ - only one item can be selected at a time. This mode is enabled by setting the `multipleSelection` property to `false`.
+Additionally, the value of the {% typedoc_link classes:RadListView,member:multipleSelection %} property determines which selection mode will be used. The available options are:
+- _multiple selection mode_ - allows for selecting multiple items. `RadListView` keeps track of which items are selected and exposes them through a `getSelectedItems()` method. Multiple selection is enabled by setting the `multipleSelection` property to `true`.
+- _single selection mode_ - only one item can be selected at a time. This mode is enabled by setting the `multipleSelection` property to `false`.
 
 ## Selection Events
 To notify you when the selection state of an item is changed, `RadListView` exposes the following events:

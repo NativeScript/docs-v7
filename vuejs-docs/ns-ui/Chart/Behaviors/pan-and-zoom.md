@@ -62,7 +62,7 @@ All that is left is to declare the template of the vue component in which we:
 - After that set the **`tkCartesianHorizontalAxis`** directive to the CategoricalAxis and set its {% typedoc_link classes:CategoricalAxis,member:allowZoom%} to **`true`**. The **`verticalAxis`** will be series sepcific and is set on both BarSeries and LineSeries via binding.
 
 ```
-import { LinearAxis } from 'nativescript-ui-chart';
+import { LinearAxis, ChartAxisHorizontalLocation } from 'nativescript-ui-chart';
 import { getCountriesData } from '../data';
 
 export default {
@@ -95,12 +95,12 @@ export default {
   `,
   data () {
     let linearAxisZoom = new LinearAxis();
-    linearAxisZoom.horizontalLocation = 'Left';
+    linearAxisZoom.horizontalLocation = ChartAxisHorizontalLocation.Left;
     linearAxisZoom.allowZoom = true;
 
     let linearAxisZoomPan = new LinearAxis();
     linearAxisZoomPan = new LinearAxis();
-    linearAxisZoomPan.horizontalLocation = 'Right';
+    linearAxisZoomPan.horizontalLocation = ChartAxisHorizontalLocation.Right;
     linearAxisZoomPan.allowZoom = true;
     linearAxisZoomPan.allowPan = true;
 

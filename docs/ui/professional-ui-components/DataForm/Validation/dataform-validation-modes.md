@@ -18,21 +18,21 @@ If you followed the [getting started]({% slug dataform-start-source %} "RadDataF
 * [References](#references)
 
 You should have in mind that the {% typedoc_link classes:RadDataForm,member:validationMode %} property is dependent on the value of the {% typedoc_link classes:RadDataForm,member:commitMode %} property, meaning that {% typedoc_link classes:RadDataForm %} will not let you commit property changes before you validate them. In other words:
-* If `commitMode` is {% typedoc_link enums:CommitMode,member:Immediate %}, validation is also immediate disregarding the value of the `validationMode` property.
-* If `commitMode` is {% typedoc_link enums:CommitMode,member:OnLostFocus %}, validation is immediate, if `validationMode` is {% typedoc_link enums:ValidationMode,member:Immediate %}, or {% typedoc_link enums:ValidationMode,member:OnLostFocus %} otherwise.
-* If `commitMode` is {% typedoc_link enums:CommitMode,member:Manual %}, validation will follow the value of `validationMode`.
+* If `commitMode` is {% typedoc_link enums:DataFormCommitMode,member:Immediate %}, validation is also immediate disregaring the value of the `validationMode` property
+* If `commitMode` is {% typedoc_link enums:DataFormCommitMode,member:OnLostFocus %}, validation is immediate, if `validationMode` is {% typedoc_link enums:DataFormValidationMode,member:Immediate %}, or {% typedoc_link enums:DataFormValidationMode,member:OnLostFocus %} otherwise
+* If `commitMode` is {% typedoc_link enums:DataFormCommitMode,member:Manual %}, validation will follow the value of `validationMode`.
 
 ## Immediate Validation
 
-This is the default `validationMode` in {% typedoc_link classes:RadDataForm %}. When the validation is {% typedoc_link enums:ValidationMode,member:Immediate %} each field will be validated as soon as its value is changed.
+This is the default `validationMode` in {% typedoc_link classes:RadDataForm %}. When the validation is {% typedoc_link enums:DataFormValidationMode,member:Immediate %} each field will be validated as soon as its value is changed.
 
 ## Validation on Lost Focus
 
-When the validation is {% typedoc_link enums:ValidationMode,member:OnLostFocus %} each field is validated when the focus moves to another editor. Since some editors (for example the {% typedoc_link enums:EditorType,member:Stepper %}) don't have a "focused state" their property changes will be validated immediately.
+When the validation is {% typedoc_link enums:DataFormValidationMode,member:OnLostFocus %} each field is validated when the focus moves to another editor. Since some editors (for example the {% typedoc_link enums:DataFormEditorType,member:Stepper %}) don't have a "focused state" their property changes will be validated immediately.
 
 ## Manual Validation
 
-When the validation is {% typedoc_link enums:ValidationMode,member:Manual %}, {% typedoc_link classes:RadDataForm %} will not attempt to validate the current input automatically. Instead, you are expected to call some of the validation methods on a button tap for example.
+When the validation is {% typedoc_link enums:DataFormValidationMode,member:Manual %}, {% typedoc_link classes:RadDataForm %} will not attempt to validate the current input automatically. Instead, you are expected to call some of the validation methods on a button tap for example.
 
 In order to manually start the validation in {% typedoc_link classes:RadDataForm %} you can use the methods `validateAll` or `validateAndCommitAll`. As their names imply, the difference between them is that if the validation is successful, the later will also [commit]({% slug dataform-start-result %} "RadDataForm Get the Result") the changes. Both methods return a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promise</a> which will be resolved with a boolean value which is the result from the validation. The following example demonstrates how to validate the input when a button is tapped and handle the result when its available.
 

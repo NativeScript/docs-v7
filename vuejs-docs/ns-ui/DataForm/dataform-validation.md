@@ -32,6 +32,7 @@ You can declare the validators in the JSON Metadata through the `validators` key
 ```
 import * as frameModule from 'tns-core-modules/ui/frame';
 import { RegisteringUser } from '../data';
+import { DataFormEditorType, DataFormValidationMode, DataFormCommitMode } from 'nativescript-ui-dataform';
 
 export default {
   template: `
@@ -66,15 +67,15 @@ export default {
       },
       personMetadata: {
         'isReadOnly': false,
-        'commitMode': 'Immediate',
-        'validationMode': 'Immediate',
+        'commitMode': DataFormCommitMode.Immediate,
+        'validationMode': DataFormValidationMode.Immediate,
         'propertyAnnotations':
         [
           {
             'name': 'email',
             'displayName': 'E-Mail',
             'index': 1,
-            'editor': 'Email',
+            'editor': DataFormEditorType.Email,
             'validators': [{
               'name': 'RegEx',
               'params': {
@@ -115,7 +116,7 @@ export default {
 You can choose when the validation of the changes happens by changing the data form's {% typedoc_link classes:RadDataForm,member:validationMode %} property.
 
 ```
-import { ValidationMode } from 'nativescript-ui-dataform';
+import { DataFormValidationMode } from 'nativescript-ui-dataform';
 
 export default {
   template: `
@@ -143,7 +144,7 @@ export default {
   data () {
     return {
       text: '',
-      validationMode: ValidationMode.Immediate,
+      validationMode: DataFormValidationMode.Immediate,
       person: {
         username: '',
         password: '',
@@ -177,13 +178,13 @@ export default {
   },
   methods: {
     onImmediateTap() {
-      this.validationMode = ValidationMode.Immediate;
+      this.validationMode = DataFormValidationMode.Immediate;
     },
     onOnLostFocusTap() {
-      this.validationMode = ValidationMode.OnLostFocus;
+      this.validationMode = DataFormValidationMode.OnLostFocus;
     },
     onManualTap() {
-      this.validationMode = ValidationMode.Manual;
+      this.validationMode = DataFormValidationMode.Manual;
     },
     onValidateTap() {
       this.$refs.dataform.validateAll()
@@ -203,7 +204,7 @@ You can use the validation events to get notified when {% typedoc_link classes:R
 
 ```
 import * as frameModule from 'tns-core-modules/ui/frame';
-import { ValidationMode } from 'nativescript-ui-dataform';
+import { DataFormValidationMode, DataFormCommitMode } from 'nativescript-ui-dataform';
 import { BaseUser } from '../data';
 
 const description = 'Validation Events';
@@ -238,8 +239,8 @@ export default {
       },
       personMetadata: {
         'isReadOnly': false,
-        'commitMode': 'Immediate',
-        'validationMode': 'Immediate',
+        'commitMode': DataFormCommitMode.Immediate,
+        'validationMode': DataFormValidationMode.Immediate,
         'propertyAnnotations':
         [
           {

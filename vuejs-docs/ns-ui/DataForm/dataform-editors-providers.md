@@ -30,7 +30,7 @@ You can pass your list as a simple `Array`.
 #### Example 3: Value Provider from a simple array of values
 
 ```
-import { AutoCompleteDisplayMode } from 'nativescript-ui-dataform'
+import { AutoCompleteDisplayMode, DataFormEditorType, DataFormValidationMode, DataFormCommitMode } from 'nativescript-ui-dataform'
 
 export default {
   template: `
@@ -51,15 +51,15 @@ export default {
       },
       bookingMetadata: {
         'isReadOnly': false,
-        'commitMode': 'Immediate',
-        'validationMode': 'Immediate',
+        'commitMode': DataFormCommitMode.Immediate,
+        'validationMode': DataFormValidationMode.Immediate,
         'propertyAnnotations':
         [
           {
             'name': 'to',
             'displayName': 'To:',
             'index': 1,
-            'editor': 'AutoCompleteInline',
+            'editor': DataFormEditorType.AutoCompleteInline,,
             'autoCompleteDisplayMode': AutoCompleteDisplayMode.Plain,
             'valuesProvider': ['New York', 'Washington', 'Los Angeles'],
           },

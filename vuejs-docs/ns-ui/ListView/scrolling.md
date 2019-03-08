@@ -30,6 +30,8 @@ All scrolling events provide an instance of the {% typedoc_link classes:ListView
 The following code snippet demonstrates how to play with scrolling:
 
 ```
+import { ListViewItemSnapMode } from "nativescript-ui-listview";
+
 export const getItemList = (count: Number) => {
   let itemList = [];
   for (let i = 1; i <= count; i++) {
@@ -78,10 +80,11 @@ export default {
       console.log(`Tapped on ${item.name}`);
     },
     onLoaded () {
-      setTimeout(() => {
-        console.log('Programatic scrolling...')
-        this.$refs.listView.scrollToIndex(50);
-      }, 500);
+      this.$nextTick(() => {
+        const indexToScroll = 49;
+        console.log('Programmatic scrolling to ' + this.itemList[indexToScroll].name + '... ');
+        this.$refs.listView.scrollToIndex(indexToScroll, false, ListViewItemSnapMode.Start);
+      });
     },
     onScrolled ({ scrollOffset }) {
       this.scrollOffset = scrollOffset;

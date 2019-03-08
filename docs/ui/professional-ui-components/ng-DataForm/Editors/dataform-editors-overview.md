@@ -34,7 +34,7 @@ By default, {% typedoc_link classes:RadDataForm %} will load a default editor de
 
 <snippet id='angular-dataform-editors-code'/>
 
-Note that the {% typedoc_link classes:EntityProperty,member:valuesProvider %} property will be taken into consideration only for editors that support predefined list of values. These editors are {% typedoc_link enums:EditorType,member:Picker %}, {% typedoc_link enums:EditorType,member:SegmentedEditor %}, {% typedoc_link enums:EditorType,member:List %} and {% typedoc_link enums:EditorType,member:AutoCompleteInline %}. You can read more about the providers [here]({% slug dataform-editors-providers-angular %} "RadDataForm value providers").
+Note that the {% typedoc_link classes:EntityProperty,member:valuesProvider %} property will be taken into consideration only for editors that support predefined list of values. These editors are {% typedoc_link enums:DataFormEditorType,member:Picker %}, {% typedoc_link enums:DataFormEditorType,member:SegmentedEditor %}, {% typedoc_link enums:DataFormEditorType,member:List %} and {% typedoc_link enums:DataFormEditorType,member:AutoCompleteInline %}. You can read more about the providers [here]({% slug dataform-editors-providers-angular %} "RadDataForm value providers").
 
 ## Converters
 
@@ -48,7 +48,7 @@ As you can see in your model you can have a property of type `number` which repr
 
 ## Additional Parameters
 
-The {% typedoc_link enums:EditorType,member:Stepper %} and {% typedoc_link enums:EditorType,member:Slider %} editors have additional properties which you can be setup through {% typedoc_link classes:PropertyEditorParams %}. The following example of the {% typedoc_link enums:EditorType,member:Stepper %} editor shows how to limit its bounds and define its step:
+The {% typedoc_link enums:DataFormEditorType,member:Stepper %} and {% typedoc_link enums:DataFormEditorType,member:Slider %} editors have additional properties which you can be setup through {% typedoc_link classes:PropertyEditorParams %}. The following example of the {% typedoc_link enums:DataFormEditorType,member:Stepper %} editor shows how to limit its bounds and define its step:
 
 #### Example 4: Use editor params to adjust an editor
 

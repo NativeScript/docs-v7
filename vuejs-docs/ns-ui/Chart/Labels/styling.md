@@ -18,7 +18,7 @@ Supported properties are:
 - {% typedoc_link classes:PointLabelStyle,member:textColor %}: the label font color
 - {% typedoc_link classes:PointLabelStyle,member:textSize %}: the size of label font
 - {% typedoc_link classes:PointLabelStyle,member:fontName %}: the font name. If it is missing from the OS the default font is used instead.
-- {% typedoc_link classes:PointLabelStyle,member:fontStyle %}: specify the style of font. *Bold* , *Italic* , *BoldItalic* and *Normal* values can be used. Defaults to *Normal*
+- {% typedoc_link classes:PointLabelStyle,member:fontStyle %}: specify the style of font. {% typedoc_link enums:ChartFontStyle,member:Bold%}, {% typedoc_link enums:ChartFontStyle,member:Italic%}, {% typedoc_link enums:ChartFontStyle,member:BoldItalic%} and {% typedoc_link enums:ChartFontStyle,member:Normal%} values can be used. Defaults to {% typedoc_link enums:ChartFontStyle,member:Normal%}.
 
 ## Example
 

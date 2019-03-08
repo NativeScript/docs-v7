@@ -12,15 +12,15 @@ publish: true
 
 **RadAutoCompleteTextView** has two modes for filtering suggestions.
 
-- {% typedoc_link enums:CompletionMode,member:StartsWith %}
-- {% typedoc_link enums:CompletionMode,member:Contains %}
+- {% typedoc_link enums:AutoCompleteCompletionMode,member:StartsWith %}
+- {% typedoc_link enums:AutoCompleteCompletionMode,member:Contains %}
 
-The completion mode can be changed with the `completionMode` property of the **RadAutoCompleteTextView**. The default value is `StartsWith`.
+The completion mode can be changed with the {% typedoc_link classes:RadAutoCompleteTextView,member:completionMode %} property of the **RadAutoCompleteTextView**. The default value is {% typedoc_link enums:AutoCompleteCompletionMode,member:StartsWith %}.
 
-The next code snippet shows how to change that default value to `StartsWith`:
+The next code snippet shows how you can change the `completionMode`:
 
 ```
-import { CompletionMode } from 'nativescript-ui-autocomplete';
+import { AutoCompleteCompletionMode } from 'nativescript-ui-autocomplete';
 import { getCountries } from './data';
 
 export default {
@@ -53,15 +53,15 @@ export default {
   data () {
     return {
       dataItems: getCountries(),
-      completionMode: CompletionMode.Horizontal,
+      completionMode: AutoCompleteCompletionMode.Contains,
     };
   },
   methods: {
     onStartsWithSelected(args) {
-      this.completionMode = CompletionMode.StartsWith;
+      this.completionMode = AutoCompleteCompletionMode.StartsWith;
     },
     onContainsSelected(args) {
-      this.completionMode = CompletionMode.Contains;
+      this.completionMode = AutoCompleteCompletionMode.Contains;
     },
   },
 };
@@ -73,9 +73,9 @@ In `StartsWith` mode the autocomplete shows only suggestions that start with the
 
 ## Contains Mode
 
-In `Contains` mode the autocomplete shows only suggestions that contain the typed phrase.
-`Contains` mode is not intended to work with the `Append` and  `SuggestAppend` modes.
- Since both these modes append the rest of the suggestion to the typed text, the combination between them and `Contains` won't be helpful but rather confusing.
+In `Contains` mode the autocomplete shows the suggestions that contain the typed phrase, but not necessarily in the beginning.
+The completion mode `Contains` is not intended to work with the `Append` and  `SuggestAppend`  suggest modes.
+Since these suggest modes append the rest of the suggestion to the typed text, the combination between them and `Contains` won't be helpful but rather confusing.
 
 ## References
 

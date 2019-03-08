@@ -24,7 +24,7 @@ Before that, we would create a basic JS or TS module that contains a collection 
 ```
 import { ObservableArray } from 'tns-core-modules/data/observable-array';
 
-export const getFinantialData = () => {
+export const getFinancialData = () => {
   return new ObservableArray([
     { Date: '01/6/2015', Open: 100, Close: 85, Low: 50, High: 139 },
     { Date: '27/7/2015', Open: 60, Close: 150, Low: 40, High: 159 },
@@ -42,7 +42,7 @@ All that is left is to declare the template of the vue component in which we:
 - Finally declare a {% typedoc_link classes:CandlestickSeries %} instance to it, bind the {% typedoc_link classes:CandlestickSeries,member:items%} to the source of data and set the **`tkCartesianSeries`** directive
 
 ```
-import { getFinantialData } from '../data';
+import { getFinancialData } from '../data';
 
 export default {
   template: `
@@ -64,7 +64,7 @@ export default {
   `,
   data () {
     return {
-      items: getFinantialData()
+      items: getFinancialData()
     };
   },
 };

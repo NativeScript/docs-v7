@@ -42,8 +42,8 @@ The major step represents the value difference between two visible ticks on the 
 
 {% typedoc_link classes:DateTimeContinuousAxis %} allows you to define how exactly the axis will be plotted on the viewport of the chart. The possible values are:
 
-* {% typedoc_link modules:AxisPlotMode,member:BetweenTicks%}: Points are plotted in the middle of the range, defined between each two ticks.
-* {% typedoc_link modules:AxisPlotMode,member:OnTicks%}: Points are plotted over each tick.
+* {% typedoc_link enums:ChartAxisPlotMode,member:BetweenTicks%}: Points are plotted in the middle of the range, defined between each two ticks.
+* {% typedoc_link enums:ChartAxisPlotMode,member:OnTicks%}: Points are plotted over each tick.
 
 You can get and set the current value with the {% typedoc_link classes:CategoricalAxis,member:plotMode%} property.
 
