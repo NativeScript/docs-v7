@@ -40,19 +40,7 @@ In the above example, the `fa-brands-400.ttf` (as downloaded from the FontAwesom
 |**fa-solid-900** | Font Awesome 5 Free
 |**fa-regular-400** | Font Awesome 5 Free
 
-Notice that in the above example the **file** names are different, but the registered **font** name is the same (use the **Font Book** application on Mac or the **Control Panel Fonts** section on Windows to see the actual font name). While this is no issue on Android, it renders the second font unusable on iOS. To handle similar cases additional CSS font properties, such as for example `font-weight`, must be added.
-
-```CSS
-.far {
-    font-family: "Font Awesome 5 Free", "fa-regular-400";
-    font-weight: 400;
-}
-
-.fas {
-    font-family: "Font Awesome 5 Free", "fa-solid-900";
-    font-weight: 900;
-}
-```
+Notice that in the above example the **file** names are different, but the registered **font** name is the same (use the **Font Book** application on Mac or the **Control Panel Fonts** section on Windows to see the actual font name). While this is no issue on Android, it renders the second font unusable on iOS. To handle similar cases, manually change the font name (e.g., via a third-party tool like [FontForge](http://fontforge.github.io/).
 
 {% nativescript %}
 ## Icon Fonts via XML
