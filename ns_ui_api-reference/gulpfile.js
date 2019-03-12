@@ -24,7 +24,7 @@ gulp.task("default", function() {
             // TypeDoc options (see typedoc docs)
             name: "Progress NativeScript UI API",
             ignoreCompilerErrors: true,
-            theme: "./ns-ui-theme",
+            theme: "./node_modules/nativescript-typedoc-theme",
             readme: "./README.md"
         }));
 });

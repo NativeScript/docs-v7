@@ -5,6 +5,7 @@
   "dependencies": {
     "gulp": "4.0.0",
     "gulp-typedoc": "2.2.1",
+    "nativescript-typedoc-theme": "git://github.com/NativeScript/nativescript-typedoc-theme.git#master",
     "typedoc": "0.14.2"
   }
 }
