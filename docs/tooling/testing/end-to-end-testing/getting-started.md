@@ -5,7 +5,6 @@ description: Write and execute UI E2E automation tests to ensure that newly adde
 position: 20
 tags: ui testing, app ui testing, nativescript ui testing, automation testing, app automation testing, nativescript automation testing, appium, ui test automation, e2e testing
 slug: e2e-testing-getting-started
-previous_url: /testing,/core-concepts/testing
 ---
 
 # Getting Started
