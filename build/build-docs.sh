@@ -104,6 +104,9 @@ cd $NG_ROOT
 cd $MODULES_ROOT
 ./build-docs.sh
 
+cd $NG_ROOT
+./build-docs.sh
+
 cp $SCRIPT_PATH"/_config_angular.yml" \
    $SCRIPT_PATH"/_config_nativescript.yml" \
    $SCRIPT_PATH"/_config.yml" \
@@ -155,6 +158,7 @@ jekyll build --config _config_vuejs.yml --trace
 cd $ROOT
 
 cp -R $MODULES_ROOT"/bin/dist/api-reference" \
+	  $NG_ROOT"/nativescript-angular/bin/dist/ng-api-reference" \
 	  $VUEJS_ROOT"/vuejs" \
 	  $WWW_ROOT
 if [ -f $NS_UI_LV"/README.md" ]; then
