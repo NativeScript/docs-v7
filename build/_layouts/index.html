@@ -20,7 +20,7 @@
         })(window,document.documentElement,'async-hide','dataLayer',4000, 
         {'GTM-W58JDD':true});</script> 
         <!-- end Optimize Page Hiding Snippet -->
-        <title>{{page.title}} - NativeScript Docs</title>
+        <title>{% if page.titletag %}{{page.titletag}}{% else %}{{page.title}}{% endif %} - NativeScript Docs</title>
         <link rel="preload" href="{{site.baseurl}}/{{page.category}}.json" as="script">
         <link rel="shortcut icon" href="{{site.headerbaseurl}}/favicon.ico"/>
         {% if page.description %}<meta name="description" content="{{page.description}}">{% endif %}
