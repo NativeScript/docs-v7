@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting
-titletag: End to End Testiing - Troubleshooting
+titletag: End to End Testing - Troubleshooting
 description: Write and execute UI E2E automation tests to ensure that newly added features are working correctly and no regressions are introduced in the mobile app.
 position: 90
 tags: ui testing, app ui testing, nativescript ui testing, automation testing, app automation testing, nativescript automation testing, appium, ui test automation, e2e testing

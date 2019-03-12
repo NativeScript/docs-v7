@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-titletag: End to End Testiing - Getting Started
+titletag: End to End Testing - Getting Started
 description: Write and execute UI E2E automation tests to ensure that newly added features are working correctly and no regressions are introduced in the mobile app.
 position: 20
 tags: ui testing, app ui testing, nativescript ui testing, automation testing, app automation testing, nativescript automation testing, appium, ui test automation, e2e testing
