@@ -99,6 +99,9 @@ navigation:
     "tooling/testing":
         position: 150
         title: "Testing"
+    "tooling/testing/end-to-end-testing":
+        position: 100
+        title: "End To End Testing"
     "tooling/debugging":
         position: 200
         title: "Debugging"
