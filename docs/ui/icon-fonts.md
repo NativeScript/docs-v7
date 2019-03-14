@@ -37,17 +37,25 @@ In the above example, the `fa-brands-400.ttf` (as downloaded from the FontAwesom
 
 |file name    | font name     |
 |-----------|---------------|
-|**fa-solid-900** | Font Awesome 5 Free
-|**fa-regular-400** | Font Awesome 5 Free
+|**fa-solid-900.ttf** | Font Awesome 5 Free
+|**fa-regular-400.ttf** | Font Awesome 5 Free
 
 Notice that in the above example the **file** names are different, but the registered **font** name is the same (use the **Font Book** application on Mac or the **Control Panel Fonts** section on Windows to see the actual font name). While this is no issue on Android, it renders the second font unusable on iOS. To handle similar cases additional CSS font properties, such as for example `font-weight`, must be added.
 
 ```CSS
+/* 
+    File name: fa-regular-400.ttf 
+    Font name: Font Awesome 5 Free
+*/
 .far {
     font-family: "Font Awesome 5 Free", "fa-regular-400";
     font-weight: 400;
 }
 
+/* 
+    File name: fa-solid-900.ttf 
+    Font name: Font Awesome 5 Free
+*/
 .fas {
     font-family: "Font Awesome 5 Free", "fa-solid-900";
     font-weight: 900;
@@ -62,8 +70,9 @@ Notice that in the above example the **file** names are different, but the regis
 <Label text="&#xf108;" class="fa"></Label>
 ```
 ```CSS
-.fa {
+.far {
     font-family: "Font Awesome 5 Free", "fa-regular-400";
+    font-weight: 400;
 }
 ```
 {% endnativescript %}
@@ -76,8 +85,9 @@ Notice that in the above example the **file** names are different, but the regis
 <Label text="&#xf108;" class="fa"></Label>
 ```
 ```CSS
-.fa {
+.far {
     font-family: "Font Awesome 5 Free", "fa-regular-400";
+    font-weight: 400;
 }
 ```
 {% endangular %}
@@ -85,14 +95,18 @@ Notice that in the above example the **file** names are different, but the regis
 ## Icon Fonts via Code-Behind
 {% nativescript %}
 ``` CSS
-.icon {
-   font-family: 'icomoon';
+/*
+  File name: IcoMoon-Free.ttf
+  Font name: IcoMoon-Free
+*/
+.ico {
+   font-family: 'IcoMoon-Free';
    font-size: 48;
 }
 
-/* only for reference, is NOT working in this example (wrong codes) 
+/* only for reference, is NOT working in this example (due to wrong glyph codes) 
 .fa {
-   font-family: 'FontAwesome', 'fontawesome-webfont';
+   font-family: "Font Awesome 5 Free", "fa-regular-400";
    font-size: 48;
 }
 */
@@ -102,7 +116,7 @@ Notice that in the above example the **file** names are different, but the regis
   <ListView items="{%raw%}{{ glyphs }}{%endraw%}">
         <ListView.itemTemplate>
             <StackLayout orientation="horizontal">
-                <Label text="{%raw%}{{ icon }}{%endraw%}" class="icon"/>
+                <Label text="{%raw%}{{ icon }}{%endraw%}" class="ico"/>
                 <Label text="{%raw%}{{ code }}{%endraw%}" />
             </StackLayout>
         </ListView.itemTemplate>
