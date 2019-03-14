@@ -172,7 +172,7 @@ page.addCssFile(cssFileName);
 page.addCssFile(cssFileName);
 ```
 
-> The path to the CSS file is relative to the application root folder.
+> The path to the CSS file is relative to the application root folder, and must include the `.css` file extension.
 
 ### Inline CSS
 
