@@ -35,6 +35,29 @@ You can implement this by creating four files:
 - **my-button.ios.ts** - holds the iOS-specific logic for creation of the native view (UIButton)
 - **my-button.android.ts** - holds the Android-specific logic for creation of the native view (android.widget.Button)
 
+This file holds type definitions for the common logic that will be imported in the app that is using the plugin.
+_my-button.d.ts_
+```TypeScript
+import { View, Style, Property, CssProperty, EventData } from "tns-core-modules/ui/core/view";
+
+export class MyButton extends View {
+    // static field used from component-builder module to find events on controls.
+    static tapEvent: string; 
+
+    // Defines the text property.
+    text: string;
+
+    // Overload 'on' method so that it provides intellisense for 'tap' event.
+    on(event: "tap", callback: (args: EventData) => void, thisArg?: any);
+
+    // Needed when 'on' method is overriden.
+    on(eventNames: string, callback: (data: EventData) => void, thisArg?: any);
+}
+
+export const textProperty: Property<MyButton, string>;
+export const myOpacityProperty: CssProperty<Style, number>;
+```
+
 In the following way you create the common logic:
 _my-button.common.ts_
 ```TypeScript
