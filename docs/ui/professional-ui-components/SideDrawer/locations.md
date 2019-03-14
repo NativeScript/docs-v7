@@ -8,7 +8,7 @@ position: 4
 publish: true
 ---
 # RadSideDrawer Location
-Depending on the application scenario, {% typedoc_link classes:RadSideDrawer %} can be configured to display at a specific location on the screen. This also changes the way the transition animation is applied. There are four available drawer locations:
+Depending on the application scenario, {% typedoc_link classes:RadSideDrawer %} can be configured to display at a specific location on the screen. This also changes the way the transition animation is applied. Setting the location can be done by setting the **drawerLocation** property to a value from the {% typedoc_link enums:SideDrawerLocation %} enumeration:
 
 - {% typedoc_link enums:SideDrawerLocation,member:Top %}
 - {% typedoc_link enums:SideDrawerLocation,member:Right %}

@@ -21,12 +21,14 @@ publish: true
 - {% typedoc_link classes:RadListView,member:getSelectedItems() %} - returns an array of the items currently selected
 
 ## Enabling Selection in RadListView
-To enable the selection mechanism for {% typedoc_link classes:RadListView %} you need to use the {% typedoc_link classes:RadListView,member:selectionBehavior %} property and set it to one of the following values:
+The value of the {% typedoc_link classes:RadListView,member:selectionBehavior %} property determines how the item selection works. It accepts the values from the {% typedoc_link enums:ListViewSelectionBehavior %} enumeration:
 - {% typedoc_link enums:ListViewSelectionBehavior,member:None %} - items cannot be selected
-- {% typedoc_link enums:ListViewSelectionBehavior,member:Press %} - items are selected on simple press/tap
-- {% typedoc_link enums:ListViewSelectionBehavior,member:LongPress %} - items are selected by pressing and holding them
+- {% typedoc_link enums:ListViewSelectionBehavior,member:Press %} - items are selected by tapping on them
+- {% typedoc_link enums:ListViewSelectionBehavior,member:LongPress %} - items are selected by holding them
 
-Additionally, to enable **multiple selection** you need to use the {% typedoc_link classes:RadListView,member:multipleSelection %} property:
+Additionally, the value of the {% typedoc_link classes:RadListView,member:multipleSelection %} property determines which selection mode will be used. The available options are:
+- _multiple selection mode_ - allows for selecting multiple items. `RadListView` keeps track of which items are selected and exposes them through a `getSelectedItems()` method. Multiple selection is enabled by setting the `multipleSelection` property to `true`.
+- _single selection mode_ - only one item can be selected at a time. This mode is enabled by setting the `multipleSelection` property to `false`.
 
 #### __Example 1: Enabling multiple selection on RadListView in XML:__
 <snippet id='listview-multiple-selection-xml'/>

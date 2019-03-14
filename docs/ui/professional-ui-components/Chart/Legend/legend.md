@@ -18,10 +18,10 @@ To define a legend in your chart you need to set the {% typedoc_link classes:Rad
 
 The {% typedoc_link classes:RadChartBase,member:legend %} property expects an instance of the {% typedoc_link classes:RadLegendView %} class which exposes several properties that can be used to customize the size, position and offset of the legend:
 
-- {% typedoc_link classes:RadLegendView,member:position %} - used to define the position of the legend. Possible values for this property are defined by the {% typedoc_link modules:ChartLegendPosition %} enum
+- {% typedoc_link classes:RadLegendView,member:position %} - used to define the position of the legend. Possible values for this property are defined by the {% typedoc_link enums:ChartLegendPosition %} enum
 - {% typedoc_link classes:RadLegendView,member:horizontalOffset %} - used to define a horizontal offset for the legend. This offset is calculated considering the currently set {% typedoc_link classes:RadLegendView,member:offsetOrigin %}
 - {% typedoc_link classes:RadLegendView,member:verticalOffset %} - used to define a vertical offset for the legend. This offset is calculated considering the currently set {% typedoc_link classes:RadLegendView,member:offsetOrigin %}
-- {% typedoc_link classes:RadLegendView,member:offsetOrigin %} - used to define the point relative to which the offsets are calculated. Possible values for this property are defined by the {% typedoc_link modules:ChartLegendOffsetOrigin %} enum
+- {% typedoc_link classes:RadLegendView,member:offsetOrigin %} - used to define the point relative to which the offsets are calculated. Possible values for this property are defined by the {% typedoc_link enums:ChartLegendOffsetOrigin %} enum
 - {% typedoc_link classes:RadLegendView,member:title %} - used to define a title for the legend
 - {% typedoc_link classes:RadLegendView,member:titleColor %} - used to define the text color of the legend title
 - {% typedoc_link classes:RadLegendView,member:titleSize %} - used to define the text size of the legend title

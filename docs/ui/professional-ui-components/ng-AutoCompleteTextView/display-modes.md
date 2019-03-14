@@ -12,28 +12,28 @@ publish: true
 
 **RadAutoCompleteTextView** has two predefined display modes.
 
-- {% typedoc_link enums:DisplayMode,member:Plain %}
-- {% typedoc_link enums:DisplayMode,member:Tokens %}
+- {% typedoc_link enums:AutoCompleteDisplayMode,member:Plain %}
+- {% typedoc_link enums:AutoCompleteDisplayMode,member:Tokens %}
 
-Display mode can be changed with the `displayMode` property of the **RadAutoCompleteTextView**. The default value is `Plain`.
+Display mode can be changed with the {% typedoc_link classes:RadAutoCompleteTextView,member:displayMode %} property of the **RadAutoCompleteTextView**. The default value is {% typedoc_link enums:AutoCompleteDisplayMode,member:Plain %}.
 
-The next code snippet shows how to change that default value to `Tokens`:
+The next code snippet shows how to change that default value to {% typedoc_link enums:AutoCompleteDisplayMode,member:Tokens %}:
 
 <snippet id='angular-autocomplete-tokens-mode-html'/>
 <snippet id='angular-autocomplete-tokens-mode'/>
 
 ## Plain mode
-In plain mode the {% typedoc_link classes:RadAutoCompleteTextView %} displays chosen item as plain text. When this mode only one item can be chosen.
+In plain mode the {% typedoc_link classes:RadAutoCompleteTextView %} displays chosen item as plain text. With this mode only one item can be chosen.
 
 ## Tokens mode
 Tokens mode allows multiple choice of items. Chosen items are displayed as tokens which can be modified or completely changed with custom ones.
 
-When **RadAutoCompleteTextView** is working in DisplayMode.Tokens mode, you can apply two different behaviors for token arrangement.
+When **RadAutoCompleteTextView**'s `displayMode` is `Tokens`, you can apply two different behaviors for token arrangement.
 
-- {% typedoc_link enums:LayoutMode,member:Horizontal %}
-- {% typedoc_link enums:LayoutMode,member:Wrap %}
+- {% typedoc_link enums:AutoCompleteLayoutMode,member:Horizontal %}
+- {% typedoc_link enums:AutoCompleteLayoutMode,member:Wrap %}
 
-The layout mode of the tokens can be changed with the {% typedoc_link enums:RadAutoCompleteTextView,member:layoutMode %} property. The default value is of this property is `Wrap`.
+The layout mode of the tokens can be changed with the {% typedoc_link enums:RadAutoCompleteTextView,member:layoutMode %} property. The default value of this property is {% typedoc_link enums:AutoCompleteLayoutMode,member:Wrap %}.
 
 <snippet id='angular-autocomplete-layouts-wrap-html'/>
 <snippet id='angular-autocomplete-layouts-wrap'/>
@@ -42,7 +42,7 @@ The layout mode of the tokens can be changed with the {% typedoc_link enums:RadA
 In wrap mode tokens are arranged on multiple lines. Every time a new line is started the {% typedoc_link classes:RadAutoCompleteTextView %} is expanding in order to show all tokens.
 
 ## Horizontal layout
-In horizontal layout tokens are displayed on single line which can be scrolled horizontally in order to display all tokens.
+In horizontal mode tokens are displayed on single line which can be scrolled horizontally in order to display all tokens.
 
 ## References
 Want to see more examples using **RadAutoCompleteTextView**?

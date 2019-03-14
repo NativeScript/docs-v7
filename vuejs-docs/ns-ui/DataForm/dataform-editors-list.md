@@ -30,23 +30,23 @@ If you followed the [getting started]({% slug dataform-gettingstarted-vue %} "Ra
 
 Here's the full list of the editors supported in {% typedoc_link classes:RadDataForm %}:
 
-* **Text**: Simple text input.
-* **MultilineText**: Text input, which supports more than one line.
-* **Email**: Again for text input, with email optimized keyboard.
-* **Password**: Masks the entered text.
-* **Phone**: Again for text input, with phone optimized keyboard.
-* **Number**: For input of numbers from the keyboard.
-* **Decimal**: For input of numbers from the keyboard, supports decimal values.
-* **Switch**: For boolean values.
-* **Stepper**: For choosing a number by tapping on buttons to increase or decrease it.
-* **Slider**: For choosing a number by sliding between the minimum and maximum values.
-* **Picker**: For picking a value from a predefined list (drop-down list).
-* **SegmentedEditor**: For picking a value from a predefined list (horizontal list).
-* **List**: For picking a value from a predefined list (vertical list).
-* **DatePicker**: For picking a date from a calendar.
-* **TimePicker**: For picking a time from a clock.
-* **AutoCompleteInline**: For picking single or multiple items from a suggestion list.
-* **Label**: For simply displaying the property value inside a non-editable label.
+* {% typedoc_link enums:DataFormEditorType,member:Text %}: Simple text input.
+* {% typedoc_link enums:DataFormEditorType,member:MultilineText %}: Text input, which supports more than one line.
+* {% typedoc_link enums:DataFormEditorType,member:Email %}: Again for text input, with email optimized keyboard.
+* {% typedoc_link enums:DataFormEditorType,member:Password %}: Masks the entered text.
+* {% typedoc_link enums:DataFormEditorType,member:Phone %}: Again for text input, with phone optimized keyboard.
+* {% typedoc_link enums:DataFormEditorType,member:Number %}: For input of numbers from the keyboard.
+* {% typedoc_link enums:DataFormEditorType,member:Decimal %}: For input of numbers from the keyboard, supports decimal values.
+* {% typedoc_link enums:DataFormEditorType,member:Switch %}: For boolean values.
+* {% typedoc_link enums:DataFormEditorType,member:Stepper %}: For choosing a number by tapping on buttons to increase or decrease it.
+* {% typedoc_link enums:DataFormEditorType,member:Slider %}: For choosing a number by sliding between the minimum and maximum values.
+* {% typedoc_link enums:DataFormEditorType,member:Picker %}: For picking a value from a predefined list (drop-down list).
+* {% typedoc_link enums:DataFormEditorType,member:SegmentedEditor %}: For picking a value from a predefined list (horizontal list).
+* {% typedoc_link enums:DataFormEditorType,member:List %}: For picking a value from a predefined list (vertical list).
+* {% typedoc_link enums:DataFormEditorType,member:DatePicker %}: For picking a date from a calendar.
+* {% typedoc_link enums:DataFormEditorType,member:TimePicker %}: For picking a time from a clock.
+* {% typedoc_link enums:DataFormEditorType,member:AutoCompleteInline %}: For picking single or multiple items from a suggestion list.
+* {% typedoc_link enums:DataFormEditorType,member:Label %}: For simply displaying the property value inside a non-editable label.
 
 ## Editors by Usage
 
@@ -175,7 +175,7 @@ This editor also uses a predefined list with values, but they are not the only a
 #### Example 1: Use the AutoCompletInline editor in Plain and in Token modes
 
 ```
-import { AutoCompleteDisplayMode } from 'nativescript-ui-dataform'
+import { AutoCompleteDisplayMode, DataFormEditorType, DataFormValidationMode, DataFormCommitMode } from 'nativescript-ui-dataform'
 
 export default {
   template: `
@@ -196,15 +196,15 @@ export default {
       },
       bookingMetadata: {
         'isReadOnly': false,
-        'commitMode': 'Immediate',
-        'validationMode': 'Immediate',
+        'commitMode': DataFormCommitMode.Immediate,
+        'validationMode': DataFormValidationMode.Immediate,
         'propertyAnnotations':
         [
           {
             'name': 'from',
             'displayName': 'From:',
             'index': 0,
-            'editor': 'AutoCompleteInline',
+            'editor': DataFormEditorType.AutoCompleteInline,
             'editorParams': {
               'autoCompleteDisplayMode': AutoCompleteDisplayMode.Tokens
             },
@@ -214,7 +214,7 @@ export default {
             'name': 'to',
             'displayName': 'To:',
             'index': 1,
-            'editor': 'AutoCompleteInline',
+            'editor': DataFormEditorType.AutoCompleteInline,
             'editorParams': {
               'autoCompleteDisplayMode': AutoCompleteDisplayMode.Plain
             },

@@ -146,7 +146,7 @@ Here's what you can update in editor through its style:
 * {% typedoc_link classes:DataFormStyleBase,member:separatorColor %}: The color of the line separator of the editor /iOS only/.
 * {% typedoc_link classes:DataFormStyleBase,member:labelTextSize %}: The size of the text of the editor's label.
 * {% typedoc_link classes:DataFormStyleBase,member:labelFontName %}: The name of the font that is used for the text of the editor's label.
-* {% typedoc_link classes:DataFormStyleBase,member:labelFontStyle %}: The {% typedoc_link enums:FontStyle %} for the text of the editor's label.
+* {% typedoc_link classes:DataFormStyleBase,member:labelFontStyle %}: The {% typedoc_link enums:DataFormFontStyle %} for the text of the editor's label.
 * {% typedoc_link classes:PropertyEditorStyle,member:editorHorizontalOffset %}: Horizontal offset to be applied to the editor.
 * {% typedoc_link classes:PropertyEditorStyle,member:editorVerticalOffset %}: Vertical offset to be applied to the editor.
 * {% typedoc_link classes:PropertyEditorStyle,member:labelHorizontalOffset %}: Horizontal offset to be applied to the editor's label.
@@ -177,7 +177,7 @@ In order to change the style of the header of a group, you need to create an ins
 * {% typedoc_link classes:DataFormStyleBase,member:separatorColor %}: The color of the line separator of the group header /iOS only/.
 * {% typedoc_link classes:DataFormStyleBase,member:labelTextSize %}: The size of the text of the group header.
 * {% typedoc_link classes:DataFormStyleBase,member:labelFontName %}: The name of the font that is used for the text of the group header.
-* {% typedoc_link classes:DataFormStyleBase,member:labelFontStyle %}: The {% typedoc_link enums:FontStyle %} for the text of the group header.
+* {% typedoc_link classes:DataFormStyleBase,member:labelFontStyle %}: The {% typedoc_link enums:DataFormFontStyle %} for the text of the group header.
 
 If you need to make changes to the styles runtime, you can get access the current style of a group title through the {% typedoc_link classes:PropertyGroup %}. Here's an example of how to change the `labelTextColor` for the group `Main Info`.
 
@@ -209,7 +209,7 @@ If you want the customization to reflect all editors of specific editor type you
 
 <snippet id='dataform-styling-editortype'/>
 
-If the currently updating editor is the one we want to customize we can access the native editor through the {% typedoc_link classes:DataFormEventArgs,member:editor %} property of the arguments passed with the event. Then depending on the platform, we can access the actual view of the editor with the `getEditorView()` method on Android and with the `editor` property on iOS. Here's an example of changing the style of the {% typedoc_link enums:EditorType,member:Slider %} editor independently on each platform:
+If the currently updating editor is the one we want to customize we can access the native editor through the {% typedoc_link classes:DataFormEventArgs,member:editor %} property of the arguments passed with the event. Then depending on the platform, we can access the actual view of the editor with the `getEditorView()` method on Android and with the `editor` property on iOS. Here's an example of changing the style of the {% typedoc_link enums:DataFormEditorType,member:Slider %} editor independently on each platform:
 
 #### Example 8: Change the colors of native Slider editor on each platform
 

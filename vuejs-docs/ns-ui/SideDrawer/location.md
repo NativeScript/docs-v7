@@ -11,12 +11,12 @@ publish: true
 # RadSideDrawer: Location
 
 **RadSideDrawer** can be can be located at each side of the screen (top, bottom, right, left).
-Setting the location can be done by setting the **drawerLocation** property to one of the following value:
+Setting the location can be done by setting the **drawerLocation** property to a value from the {% typedoc_link enums:SideDrawerLocation %} enumeration:
 
-- `Top`
-- `Bottom`
-- `Left`
-- `Right`
+- {% typedoc_link enums:SideDrawerLocation,member:Top %}
+- {% typedoc_link enums:SideDrawerLocation,member:Bottom %}
+- {% typedoc_link enums:SideDrawerLocation,member:Left %}
+- {% typedoc_link enums:SideDrawerLocation,member:Right %}
 
 ```
 import { SideDrawerLocation } from 'nativescript-ui-sidedrawer';
@@ -70,19 +70,19 @@ export default {
       this.$refs.drawer.closeDrawer();
     },
     onRightLocationTap() {
-      this.currentLocation = SideDrawerLocation.Right; // or 'Right' value
+      this.currentLocation = SideDrawerLocation.Right;
       this.repaintAndOpenDrawer();
     },
     onLeftLocationTap() {
-      this.currentLocation = SideDrawerLocation.Left; // or 'Left' value
+      this.currentLocation = SideDrawerLocation.Left;
       this.repaintAndOpenDrawer();
     },
     onBottomLocationTap() {
-      this.currentLocation = SideDrawerLocation.Bottom; // or 'Bottom' value
+      this.currentLocation = SideDrawerLocation.Bottom;
       this.repaintAndOpenDrawer();
     },
     onTopLocationTap() {
-      this.currentLocation = SideDrawerLocation.Top; // or 'Top' value
+      this.currentLocation = SideDrawerLocation.Top;
       this.repaintAndOpenDrawer();
     }
   },

@@ -41,9 +41,9 @@ Running the application, the following is shown on iOS and Android:
 ## Event View Modes
 By default, events for each date cell are shown as dots (iOS) or squares with a summary (Android). You can customize this behavior by choosing one of the following event view modes:
 
-- {% typedoc_link modules:CalendarEventsViewMode,member:None %} - the default option
-- {% typedoc_link modules:CalendarEventsViewMode,member:Inline %} - event details are displayed in a list that appears in the calendar
-- {% typedoc_link modules:CalendarEventsViewMode,member:Popover %} - event details are displayed in a popup over the calendar
+- {% typedoc_link enums:CalendarEventsViewMode,member:None %} - the default option
+- {% typedoc_link enums:CalendarEventsViewMode,member:Inline %} - event details are displayed in a list that appears in the calendar
+- {% typedoc_link enums:CalendarEventsViewMode,member:Popover %} - event details are displayed in a popup over the calendar
 
 > All of these values are exposed by the {% typedoc_link enums:CalendarEventsViewMode %} enum defined in the calendar module.
 

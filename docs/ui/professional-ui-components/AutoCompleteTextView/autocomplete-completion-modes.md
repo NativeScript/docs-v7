@@ -12,10 +12,10 @@ publish: true
 
 **RadAutoCompleteTextView** has two modes for filtering suggestions. 
 
-- {% typedoc_link enums:CompletionMode,member:StartsWith %}
-- {% typedoc_link enums:CompletionMode,member:Contains %}
+- {% typedoc_link enums:AutoCompleteCompletionMode,member:StartsWith %}
+- {% typedoc_link enums:AutoCompleteCompletionMode,member:Contains %}
 
-The completion mode can be changed with the `completionMode` property of the RadAutoCompleteTextView. The default value is `StartsWith`.
+The completion mode can be changed with the {% typedoc_link classes:RadAutoCompleteTextView,member:completionMode %} property of the RadAutoCompleteTextView. The default value is {% typedoc_link enums:AutoCompleteCompletionMode,member:StartsWith %}.
 
 <snippet id='autocomplete-completion-mode'/>
 
@@ -24,9 +24,9 @@ The completion mode can be changed with the `completionMode` property of the Rad
 In `StartsWith` mode the autocomplete shows only suggestions that start with the typed phrase.
 
 ## Contains Mode
-In `Contains` mode the autocomplete shows only suggestions that contain the typed phrase.
-`Contains` mode is not intended to work with the `Append` and  `SuggestAppend` modes.
- Since both these modes append the rest of the suggestion to the typed text, the combination between them and `Contains` won't be helpful but rather confusing. 
+In `Contains` mode the autocomplete shows the suggestions that contain the typed phrase, but not necessarily in the beginning.
+The completion mode `Contains` is not intended to work with the `Append` and  `SuggestAppend`  suggest modes.
+ Since these suggest modes append the rest of the suggestion to the typed text, the combination between them and `Contains` won't be helpful but rather confusing. 
 
 ## References
 Want to see more examples using **RadAutoCompleteTextView**?

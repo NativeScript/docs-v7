@@ -38,7 +38,7 @@ In this example the second palette values will be used when the series or data p
 
 ## PaletteMode
 
-By default, the provided palettes (or the default colors) are applied per series, i.e. the first PaletteEntry from a palette will be applied to each of the items in the series. The `paletteMode` property can be used to change the way the palette is applied, i.e. the first PaletteEntry from the palette to be applied to the first item in the series, the second PaletteEntry to the second item, etc. You can choose from the following `paletteMode` values: `Series` or `Item` depending on how you want the palette to be applied. Here's how to change the `paletteMode` for `BarSeries`:
+By default, the provided palettes (or the default colors) are applied per series, i.e. the first PaletteEntry from a palette will be applied to each of the items in the series. The {% typedoc_link classes:CartesianSeries,member:paletteMode%} property can be used to change the way the palette is applied, i.e. the first PaletteEntry from the palette to be applied to the first item in the series, the second PaletteEntry to the second item, etc. You can choose from the following `paletteMode` values: {% typedoc_link enums:ChartSeriesPaletteMode,member:Series%} or {% typedoc_link enums:ChartSeriesPaletteMode,member:Item%} depending on how you want the palette to be applied. Here's how to change the `paletteMode` for `BarSeries`:
 
 <snippet id='chart-styling-bars'/>
 

@@ -12,16 +12,16 @@ publish: true
 
 {% typedoc_link classes:RadAutoCompleteTextView %} has three different modes for providing suggestions.
 
-- {% typedoc_link enums:SuggestMode,member:Suggest %}
-- {% typedoc_link enums:SuggestMode,member:Append %}
-- {% typedoc_link enums:SuggestMode,member:SuggestAppend %}
+- {% typedoc_link enums:AutoCompleteSuggestMode,member:Suggest %}
+- {% typedoc_link enums:AutoCompleteSuggestMode,member:Append %}
+- {% typedoc_link enums:AutoCompleteSuggestMode,member:SuggestAppend %}
 
-The suggest mode can be changed with the `suggestionMode` property of the **RadAutoCompleteTextView**. The default value is `Suggest`.
+The suggest mode can be changed with the {% typedoc_link classes:RadAutoCompleteTextView,member:suggestionMode %} property of the RadAutoCompleteTextView. The default value is {% typedoc_link enums:AutoCompleteSuggestMode,member:Suggest %}.
 
 The next code snippet shows how to change that default value:
 
 ```
-import { SuggestMode } from 'nativescript-ui-autocomplete';
+import { AutoCompleteSuggestMode } from 'nativescript-ui-autocomplete';
 import { getCountries } from './data';
 
 export default {
@@ -55,18 +55,18 @@ export default {
   data () {
     return {
       dataItems: getCountries(),
-      suggestMode: SuggestMode.Suggest,
+      suggestMode: AutoCompleteSuggestMode.Suggest,
     };
   },
   methods: {
     onSuggestSelected(args) {
-      this.suggestMode = SuggestMode.Suggest;
+      this.suggestMode = AutoCompleteSuggestMode.Suggest;
     },
     onAppendSelected(args) {
-      this.suggestMode = SuggestMode.Append;
+      this.suggestMode = AutoCompleteSuggestMode.Append;
     },
     onSuggestAppendSelected(args) {
-      this.suggestMode = SuggestMode.SuggestAppend;
+      this.suggestMode = AutoCompleteSuggestMode.SuggestAppend;
     },
   },
 };

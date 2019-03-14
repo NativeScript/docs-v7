@@ -18,9 +18,11 @@ All series expose the following properties:
 - {% typedoc_link classes:ChartSeries,member:items%} - used to bind the series with a source of data items
 - {% typedoc_link classes:ChartSeries,member:selectionMode%} - responsible for the selection mode of the series.
 The values are:
-    - {% typedoc_link modules:SeriesSelectionMode,member:None%} - the series cannot be selected
-    - {% typedoc_link modules:SeriesSelectionMode,member:Series%} - the whole series will be selected
-    - {% typedoc_link modules:SeriesSelectionMode,member:DataPoint%} - the touched data point will be selected only
+    - {% typedoc_link enums:ChartSeriesSelectionMode,member:None%} - the series cannot be selected
+    - {% typedoc_link enums:ChartSeriesSelectionMode,member:NotSet%} - the series selection is not set, the selection mode set to chart will be used
+    - {% typedoc_link enums:ChartSeriesSelectionMode,member:Series%} - the whole series will be selected
+    - {% typedoc_link enums:ChartSeriesSelectionMode,member:DataPoint%} - the touched data point will be selected only
+    - {% typedoc_link enums:ChartSeriesSelectionMode,member:DataPointMultiple%} - multiple touched data points will be selected
 - {% typedoc_link classes:ChartSeries,member:labelStyle%} - property of type PointLabelsStyle defining the style of the point labels
 
 ## Categorical series
@@ -97,9 +99,9 @@ The following images demonstrate how your 'page' looks like on iOS and Android:
 ### Stack mode
 There are scenarios in which a single Categorical chart can host multiple series. The {% typedoc_link classes:CategoricalSeries,member:stackMode%} property allows you to define how these series will interact with each other. The following options are available for the `stackMode` property:
 
-- `None` - series are displayed on top of each other in the order they are added in the chart
-- `Stack` - separate data points which reside in the same category are stacked on top of each other in the order they are added in the chart
-- `Stack100` - separate data points which reside in the same category are stacked on top of each other and positioned proportionally so that the whole plot-area of the chart is filled
+- {% typedoc_link enums:ChartSeriesStackMode,member:None%} - series are displayed on top of each other in the order they are added in the chart
+- {% typedoc_link enums:ChartSeriesStackMode,member:Stack%} - separate data points which reside in the same category are stacked on top of each other in the order they are added in the chart
+- {% typedoc_link enums:ChartSeriesStackMode,member:Stack100%} - separate data points which reside in the same category are stacked on top of each other and positioned proportionally so that the whole plot-area of the chart is filled
 
 This is the data with which we will populate our series:
 
@@ -112,6 +114,7 @@ This is the data with which we will populate our series:
 
 ```
 import { getCountriesData } from '../../data';
+import { ChartSeriesStackMode } from "nativescript-ui-chart";
 
 export default {
   template: `
@@ -131,18 +134,18 @@ export default {
   data () {
     return {
       items: getCountriesData(),
-      stackMode: 'Stack',
+      stackMode: ChartSeriesStackMode.Stack,
     };
   },
   methods: {
     onStack100ModeSelected () {
-      this.stackMode = 'Stack100';
+      this.stackMode = ChartSeriesStackMode.Stack100;
     },
     onStackModeSelected () {
-      this.stackMode = 'Stack';
+      this.stackMode = ChartSeriesStackMode.Stack;
     },
     onNoneStackModeSelected () {
-      this.stackMode = 'None';
+      this.stackMode = ChartSeriesStackMode.None;
     },
   }
 };

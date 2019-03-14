@@ -20,7 +20,7 @@ The {% typedoc_link classes:DateTimeCategoricalAxis %} extends {% typedoc_link c
 
 ### Date Time Component
 
-Defines the component of each Calendar structure that participates in the grouping process. The possible values: Second, Minute, Hour, Day, Week, Month, Year. To get or set the component use the {% typedoc_link classes:DateTimeCategoricalAxis,member:dateTimeComponent%} property.
+Defines the component of each Calendar structure that participates in the grouping process. The possible values are from the {% typedoc_link enums:ChartAxisDateTimeComponent %} enumeration. To get or set the component use the {% typedoc_link classes:DateTimeCategoricalAxis,member:dateTimeComponent%} property.
 
 ### Date Time Format
 

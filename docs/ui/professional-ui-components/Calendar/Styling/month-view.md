@@ -20,8 +20,8 @@ There are some properties that change the month view :
 - `showTitle` - determines if title should be shown
 - `showWeekNumbers` - determines if week numbers should be shown
 - `showDayNames` - determines if day names should be shown
-- {% typedoc_link classes:CalendarMonthViewStyle,member:selectionShape %} - defines the decoration shape drawn in the center of a selected cell within the month view. Accepts values from the {% typedoc_link modules:SelectionShape %} module
-- {% typedoc_link classes:CalendarMonthViewStyle,member:selectionShapeSize %} - defines the size of the decoration shape drawn in the center of a selected cell within the month view. In case the shape is {% typedoc_link modules:SelectionShape,member:Square %} the property determines the side of the square draw. If the shape is {% typedoc_link modules:SelectionShape,member:Round %} the size determines the radius of the circle drawn
+- {% typedoc_link classes:CalendarMonthViewStyle,member:selectionShape %} - defines the decoration shape drawn in the center of a selected cell within the month view. Accepts values from the {% typedoc_link enums:CalendarSelectionShape %} enumeration
+- {% typedoc_link classes:CalendarMonthViewStyle,member:selectionShapeSize %} - defines the size of the decoration shape drawn in the center of a selected cell within the month view. In case the shape is {% typedoc_link enums:CalendarSelectionShape,member:Square %} the property determines the side of the square draw. If the shape is {% typedoc_link enums:CalendarSelectionShape,member:Round %} the size determines the radius of the circle drawn
 - {% typedoc_link classes:CalendarMonthViewStyle,member:selectionShapeColor %} - determines the color of the selection shape
 
 In order to style any type of the available cell in calendar you need to initialize the corresponding style property of `CalendarMonthViewStyle` class, that is used for this view mode:

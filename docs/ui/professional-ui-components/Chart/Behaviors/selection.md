@@ -15,16 +15,16 @@ When selection is enabled you can select, deselect and handle the selection even
 [RadPieChart]({% slug chart-types-pie %} "Read more about RadPieChart"). 
 
 The selection can be set on the whole chart with the {% typedoc_link classes:RadChartBase,member:seriesSelectionMode %} and {% typedoc_link classes:RadChartBase,member:pointSelectionMode %} properties. The values for these properties can be:
-* *None* - disable selection
-* *Single* - single selection
-* *Multiple* - multiple selection
+* {% typedoc_link enums:ChartSelectionMode,member:None %} - disable selection
+* {% typedoc_link enums:ChartSelectionMode,member:Single%} - single selection
+* {% typedoc_link enums:ChartSelectionMode,member:Multiple%} - multiple selection
 
 For finer tuning of the selection behavior you can also set the {% typedoc_link classes:ChartSeries,member:selectionMode %} property of each series. The individual series selection mode enables you to specify multiple data point selection for one series, single data point selection for another series and even disable selection for a third series all the same time. With the combination of the chart selection properties and series selectionMode property, any selection scenario can be implemented. The series selectionMode property can have the following values:
-* *None* - disable selection for the series
-* *NotSet* - fall back to the global chart selection properties
-* *DataPoint* -  single data point selection
-* *DataPointMultiple* - multiple data point selection		
-* *Series* - whole series selection
+* {% typedoc_link enums:ChartSeriesSelectionMode,member:None%} - disable selection for the series
+* {% typedoc_link enums:ChartSeriesSelectionMode,member:NotSet%} - fall back to the global chart selection properties
+* {% typedoc_link enums:ChartSeriesSelectionMode,member:DataPoint%} -  single data point selection
+* {% typedoc_link enums:ChartSeriesSelectionMode,member:DataPointMultiple%} - multiple data point selection
+* {% typedoc_link enums:ChartSeriesSelectionMode,member:Series%} - whole series selection
 
 ## Handling Selection Events
 

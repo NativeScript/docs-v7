@@ -9,13 +9,13 @@ publish: true
 ---
 
 # RadCalendar View Modes
-{% typedoc_link classes:RadCalendar %} supports four view mode types that are useful in different application scenarios. Setting a view mode is done via the {% typedoc_link classes:RadCalendar,member:viewMode %} property. This property accepts values defined in the {% typedoc_link modules:CalendarViewMode %} enum. The following view modes are available:
+{% typedoc_link classes:RadCalendar %} supports view mode types that can be useful in different application scenarios. Setting a view mode is done via the {% typedoc_link classes:RadCalendar,member:viewMode %} property. This property accepts values defined in the {% typedoc_link enums:CalendarViewMode %} enum. The following view modes are available:
 
-- {% typedoc_link modules:CalendarViewMode,member:Week %} - displays the dates within one week
-- {% typedoc_link modules:CalendarViewMode,member:Month %} - displays the dates within one month
-- {% typedoc_link modules:CalendarViewMode,member:MonthNames %} - displays the months within a year
-- {% typedoc_link modules:CalendarViewMode,member:Year %} - displays a whole year
-- {% typedoc_link modules:CalendarViewMode,member:Day %} - displays a timeline for a day with its events
+- {% typedoc_link enums:CalendarViewMode,member:Week %} - displays the dates within one week
+- {% typedoc_link enums:CalendarViewMode,member:Month %} - displays the dates within one month
+- {% typedoc_link enums:CalendarViewMode,member:MonthNames %} - displays the months within a year
+- {% typedoc_link enums:CalendarViewMode,member:Year %} - displays a whole year
+- {% typedoc_link enums:CalendarViewMode,member:Day %} - displays a timeline for a day with its events
 
 #### Figure 1: RadCalendar when its viewMode is set to Day on Android (left) and iOS (right)
 

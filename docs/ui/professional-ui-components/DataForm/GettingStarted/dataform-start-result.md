@@ -25,9 +25,9 @@ When you set the `source` property of `RadDataForm`, an editor is created for ea
 
 The commit modes in `RadDataForm` define when the changes in the editors will be reflected in the source object. You can set your preferred value to the {% typedoc_link classes:RadDataForm,member:commitMode %} property. Here are the options:
 
-* **Immediate**: This is the default mode. All changes are committed immediately when the editor's value is changed.
-* **OnLostFocus**: The changes are committed when another editor gets focused.
-* **Manual**: The changes are committed only when the {% typedoc_link classes:RadDataForm,member:commitAll %} or the {% typedoc_link classes:RadDataForm,member:validateAndCommitAll %} methods is called.
+* {% typedoc_link enums:DataFormCommitMode,member:Immediate %}: This is the default mode. All changes are committed immediately when the editor's value is changed.
+* {% typedoc_link enums:DataFormCommitMode,member:OnLostFocus %}: The changes are committed when another editor gets focused.
+* {% typedoc_link enums:DataFormCommitMode,member:Manual %}: The changes are committed only when the {% typedoc_link classes:RadDataForm,member:commitAll %} or the {% typedoc_link classes:RadDataForm,member:validateAndCommitAll %} methods is called.
 
 Once the modifications are committed the source object will be updated so you can use it to check the result. You can also use the {% typedoc_link classes:RadDataForm,member:editedObject %} property of `RadDataForm` which returns a stringified JSON representation of the modified object.
 When the commit is **Manual**, the commit happens when one of the {% typedoc_link classes:RadDataForm,member:commitAll %} or {% typedoc_link classes:RadDataForm,member:validateAndCommitAll %} methods is called. The first is of type `void` while the second returns a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promise</a> which will be resolved with a boolean value which is the result from the validation. When there is no validation, the two methods do not differ significantly. When there is validation, you need to ensure that the values are validated before calling `commitAll` or you can use `validateAndCommitAll` which will do the both. You can read more about the validation in `RadDataForm` [here]({% slug dataform-validation-overview %} "Validation in RadDataForm for NativeScript").

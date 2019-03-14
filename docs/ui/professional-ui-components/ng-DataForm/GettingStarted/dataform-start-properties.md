@@ -138,7 +138,7 @@ Here's a list with the acceptable keys inside the `propertyAnnotations` array:
 * **hintText**: A text that will be shown inside the editor when the its value is `null`.
 * **valuesProvider**: A comma-separated list with values that are acceptable for values of the editor of this property. 
 * **editor**: A {% typedoc_link classes:PropertyEditor %} that allows you to specify the type of the editor that will be used for this property. More information in the [article about editors]({% slug dataform-editors-overview-angular %} "Editors in Data Form for NS").
-* **editorParams**: A list of key-value pairs that allows you to setup the editor that is used. The acceptable keys are `step` (used when the editor is of type {% typedoc_link enums:EditorType,member:Stepper %}), `min` and `max` (used when the editor is of type {% typedoc_link enums:EditorType,member:Stepper %} or {% typedoc_link enums:EditorType,member:Slider %}).
+* **editorParams**: A list of key-value pairs that allows you to setup the editor that is used. The acceptable keys are `step` (used when the editor is of type {% typedoc_link enums:DataFormEditorType,member:Stepper %}), `min` and `max` (used when the editor is of type {% typedoc_link enums:DataFormEditorType,member:Stepper %} or {% typedoc_link enums:DataFormEditorType,member:Slider %}).
 
 Our next step is to determine the values of the source object reflecting the changes made through the editors. [Here]({% slug dataform-start-result-angular %})'s how.
 

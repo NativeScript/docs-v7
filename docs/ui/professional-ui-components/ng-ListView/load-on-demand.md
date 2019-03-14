@@ -9,10 +9,11 @@ publish: true
 ---
 
 # RadListView Load on Demand
-The load-on-demand feature is particularly useful in cases when data needs to be loaded in chunks (pages) to optimize bandwidth usage and improve the UX. There are two load-on-demand modes available:
+The load-on-demand feature is particularly useful in cases when data needs to be loaded in chunks (pages) to optimize bandwidth usage and improve the UX. The value of the {% typedoc_link classes:RadListView,member:loadOnDemandMode %} property determines the mode that will be used for loading on demand. It accepts the values from the {% typedoc_link enums:ListViewLoadOnDemandMode %} enumeration:
 
 - {% typedoc_link enums:ListViewLoadOnDemandMode,member:Manual %} - in this mode the user needs to manually request the next data page
 - {% typedoc_link enums:ListViewLoadOnDemandMode,member:Auto %} - in this mode the next data page is automatically requested as the user approaches the end of the scrollable list
+- {% typedoc_link enums:ListViewLoadOnDemandMode,member:None %} - in this mode load on demand is disabled
 
 When more items need to be loaded, **RadListView** fires the `loadMoreDataRequested` event. That event will continue to be fired until you set the `returnValue` of the arguments to `false` and call the {% typedoc_link classes:RadListView,member:notifyLoadOnDemandFinished(disableLoadOnDemand) %} with a `true` parameter, you can use this when you have reached the end of your data stream and there will no longer be any data to be loaded.
 
