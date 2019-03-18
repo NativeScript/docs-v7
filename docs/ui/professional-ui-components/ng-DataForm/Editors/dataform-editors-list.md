@@ -147,7 +147,7 @@ The following editors can be used for properties of type `number`:
 
 ### Date and Time
 
-These editors internally convert date/time input and save it to a `string` property of the source object in the following format: `yyyy-MM-dd` for dates and `HH:mm` for times. The initial value of the property should also follow these formats.
+The **DatePicker** and **TimePicker** editors can be used to pick a date or time. They support values of type `Date` and values of type `string` in the following formats: `yyyy-MM-dd` for `DatePicker` and `HH:mm` for `TimePicker`. The value that is committed when edited with these editors will be in the same format as the initial value of the edited property. If the initial value is `null` or is of type `Date`, then the committed value will be of type `Date`. If the initial value is `””` (empty string or string in the supported formats), the committed value will be `string` in the supported formats.
 
 * **DatePicker**: For picking a date from a calendar.
 
