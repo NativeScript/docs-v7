@@ -108,7 +108,7 @@ If you see "No issues were detected" you are good to go!
 ## What’s Next
 
 {% angular %}
-* [Learn the Basics of the NativeScript CLI](/angular/start/cli-basics)
+* [Learn the Basics of the NativeScript CLI](/start/cli-basics)
 {% endangular %}
 
 {% nativescript %}

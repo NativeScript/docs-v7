@@ -129,7 +129,7 @@ DevTools shows **all*** network requests in the Network panel while the DevTools
 - [View HTTP headers](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#headers) - To view HTTP header data about a request: Click the URL of the request, under the Name column of the Requests table. Click the Headers tab (_Figure 10_).
 
     *Figure 10: The Headers tab, outlined in blue*:
-    ![Headers tab](https://developers.google.com/web/tools/chrome-devtools/network-performance/imgs/headers.svg)
+    ![Headers tab](https://developers.google.com/web/tools/chrome-devtools/images/headers.svg)
 
 - [View query string parameters](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#query-string) - To view the query string parameters of a URL in a human-readable format: Open the Headers tab for the request you're interested in. Go to the Query String Parameters section.
 
@@ -140,7 +140,7 @@ The Elements panel in DevTools displays information about the current view tree,
 - Inspect the view tree - The DOM tree view (_Figure 11_) shows the current state of the tree; it may not match the XML that was originally loaded for different reasons.
 
     *Figure 11: The DOM tree view of a NativeScript application*:
-    ![DOM tree view](../img/debugger/elements-dom-tree-view.png)
+    ![DOM tree view](../../img/debugger/elements-dom-tree-view.png)
 
 - View node modifications - Changes made to the view tree through code will be reflected immediately in the Elements panel. Adding, removing child views, navigating to another page, or changing view properties are some of the events that trigger an update.
 

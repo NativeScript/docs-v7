@@ -2,8 +2,8 @@
 title: Getting Started
 page_title: RadSideDrawer Getting Started | Progress NativeScript UI Documentation
 description: This article explains how RadSideDrawer is used with Vue.
-slug: sidedrawer-gettingstarted-vue, nativescript, professional, ui
-tags: sidedrawer, Vue
+slug: sidedrawer-getting-started-vue
+tags: sidedrawer, Vue, nativescript, professional, ui
 position: 2
 publish: true
 ---

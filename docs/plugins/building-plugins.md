@@ -154,12 +154,12 @@ If all went well, you should see the demo app start up and show one of the follo
 To show how the development process works, next, open your plugin's `src/version-number.common.ts` file, find the line of code that contains the "Your plugin is working" string, and make a small change. For example you could change the entire line of code that sets the `msg` variable to the following.
 
 ```TypeScript
-let msg = `Your plugin is working on ${app.android ? 'Android' : 'iOS'}!!!!!!!!!!!!!!!!!!!!!!!!!!!`;
+let msg = `Your plugin is working on ${app.android ? 'Android' : 'iOS'}!`;
 ```
 
 After you save this change a few things are going to happen. First, your `tscwatch` command will detect the TypeScript change and automatically compile the `version-number.common.ts` file to JavaScript. Next, your `demo` command will detect the change and automatically refresh your demo app to show your string update.
 
-![Your plugin is working on iOS!!!!!!!!!!!!!!!!!!!!!!!!!!!](./img/plugins/working-ios-2.png)
+![Your plugin is working on iOS!](./img/plugins/working-ios-2.png)
 
 > **NOTE**: Wondering how this works? The demo application's `package.json` file is set to reference the plugin's source code in the `src` folder directly. This link allows you to edit files in `src`, and see those changes in your demo immediately.
 

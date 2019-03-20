@@ -8,7 +8,7 @@ position: 2
 publish: true
 ---
 # Getting Started
-The following article assumes that you already have the latest version of NativeScript and have [created a NativeScript application]({% slug introduction %}).
+The following article assumes that you already have the latest version of NativeScript and have [created a NativeScript application]({% slug ns-vue %}).
 
 ## Installation
 
