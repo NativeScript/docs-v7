@@ -181,6 +181,19 @@ class JSObject extends NSObject implements NSCoding {
 
 There should be no TypeScript constructor, because it will not be executed. Instead override one of the `init` methods.
 
+> **IMPORTANT NOTICE** Currently this syntax is unsupported when using TypeScript with **ES6 modules**. As a workaround you can
+> use the [JavaScript approach](#calling-base-methods-Subclass) by casting the base class to `any` and calling the [extend function](#extend)
+> like this:
+> ```typescript
+const AppDelegate = (UIResponder as any).extend({
+    applicationDidBecomeActive(application: UIApplication): void {
+        console.log("applicationDidBecomeActive", application);
+    }
+}, {
+    protocols: [UIApplicationDelegate]
+});
+> ```
+> For updates regarding this issue you can check [here](https://github.com/NativeScript/ios-runtime/issues/818)
 
 ## TypeScript Delegate Example
 
