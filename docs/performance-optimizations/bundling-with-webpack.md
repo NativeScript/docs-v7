@@ -137,6 +137,10 @@ Comparison chart for the HMR capabilities versus no-HMR versus no Webpack (pure 
 
 > Note: version 5.2 applies changes in application styles at runtime on the current page, thereby it avoids page reloading/navigation and preserves the application state and navigation history.
 
+### Enabling HMR by Default
+
+With NativeScript 5.3 and above the HMR (Hot Module Replacement) can be enabled by default (no need to pass `--hmr` flag). Achieve the above via the `nsconfig.json` file and the `useLegacyWorkflow` property set to `false.` Refer to the [CLI basics article](/start/cli-basics#using-run-with-hmr-by-default) for detailed instruction on this feature.
+
 ### Publishing Application
 
 A bundled version of the application for Android can be built in release with this script:

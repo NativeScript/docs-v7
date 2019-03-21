@@ -61,6 +61,7 @@ Once your NativeScript mobile project is created, you can start the application 
 
 - Using a local build via the `run` command. This option allows you to experience the full developer experience (building and deploying on local emulators and devices). See the [full setup section](#full-setup-using-run) for details.
 
+
 ### Quick Setup Using PREVIEW
 
 > **NOTE**: To complete this section you must finish the NativeScript [CLI quick setup]({% slug quick-start %}).
@@ -237,6 +238,49 @@ The `run` command will again take a few seconds, as the NativeScript CLI will be
 <div class="exercise-end"></div>
 
 Now that you have a full setup in place for developing your apps let’s look at a few additional things you can do.
+
+### Using RUN with HMR
+
+The developer experience significantly improves by using the [HMR (Hot Module Replacement)](/performance-optimizations/bundling-with-webpack#hot-module-replacement) feature introduced in NativeScript 5. The option requires Webpack (enabled by default in all NativeScript 5.x.x templates) and behind the scene is creating Webpack bundle with the enhancement of Hot Module Replacement developer experience.
+
+To enable HMR during your development pass the `--hmr` flag (you can emit the `--bundle` which is automatically triggered).
+
+For example:
+```Shell
+tns run --hmr
+```
+
+### Using RUN with HMR by default
+
+With NativeScript 5.3 and above, the CLI provides the option to enable the HMR developer experience by default. This can be achieved by creating a `nsconfig.json` (see the detailed article about [nsconfig file and options](/core-concepts/project-structure#nsconfigjson-examples)) and passing the `useLegacyWorkflow` boolean property.
+
+For example:
+
+_nsconfig.json_
+```JSON
+{
+    "useLegacyWorkflow": false
+}
+```
+
+Then execute the RUN command, and the HMR is enabled.
+```Shell
+tns run
+```
+
+- `useLegacyWorkflow` is set to `false`: The option disables the default livesync, in favor of the enhanced HMR (no need to pass additional flag).
+- `useLegacyWorkflow` is set to `true`(default value): The option enables the default livesync experience (explicit enabling of HMR via `--hmr` flag is still possible).
+
+
+> **Note:** There are conceptual differences when the `useLegacyWorkflow` is used in **debug** build versus when used in **release** builds. When the flag is enabled against a debug build, the extended HMR experience is enabled. However, in cases where the `--release` flag is passed (release build) then only the `--bundle` is executed in the background (No HMR). The reason for this is to avoid bringing additional HMR logic and files into production. For details about the differences between Webpack livesync and HMR refer to [the comparative table](/performance-optimizations/bundling-with-webpack#hot-module-replacement).
+
+In case, when you have enabled the default HMR via the `useLegacyWorkflow` option, but you need to test without using HMR you can pass the `--no-hmr` flag to disable the feature for the current build.
+
+For example:
+```Shell
+tns run --no-hmr
+```
+Using `--no-hmr` will effectively provide the default livesync experience.
 
 ### Next steps
 
