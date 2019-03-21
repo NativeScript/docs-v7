@@ -37,8 +37,8 @@ Check our SDK examples repo on GitHub. You will find this and many other practic
 
 Related articles you might find useful:
 
-* [**Logarithmic Axis**]({% slug chart-features-logarithmic %})
-* [**Negative Values Axis**]({% slug chart-features-negative-values %})
-* [**DateTime Continuous Axis**]({% slug chart-features-datetimecontinuous %})
-* [**Categorical Axis**]({% slug chart-features-categorical %})
-* [**DateTime Categorical Axis**]({% slug chart-features-datetimecategorical %})
+* [**Logarithmic Axis**]({% slug chart-axes-logarithmic %})
+* [**Negative Values Axis**]({% slug negative-values-axis %})
+* [**DateTime Continuous Axis**]({% slug chart-axes-datetimecontinuous %})
+* [**Categorical Axis**]({% slug chart-axes-categorical %})
+* [**DateTime Categorical Axis**]({% slug chart-axes-datetimecategorical %})

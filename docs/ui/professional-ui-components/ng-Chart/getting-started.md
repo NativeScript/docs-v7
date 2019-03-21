@@ -19,7 +19,7 @@ tns plugin add nativescript-ui-chart
 ```
 
 ## Adding a RadCartesianChart to Your Component's template
-Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUIChartModule %} from the *nativescript-ui-chart* plugin has been imported in an `ngModule` in your app as explained [here]({% slug getting-started-angular %}).
+Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUIChartModule %} from the *nativescript-ui-chart* plugin has been imported in an `ngModule` in your app as explained [here]({% slug ns-ui-getting-started %}#usage-in-angular).
 
 Let's start with the `Component` in which we will place our RadChart instance. We create a basic angular `Component` that contains a collection of objects provided by an custom service, which has two properties that will be used by the chart to provide intuitive data visualization.
 

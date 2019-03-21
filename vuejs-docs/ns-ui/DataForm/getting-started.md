@@ -47,7 +47,7 @@ After that simply add the {% typedoc_link classes:RadDataForm %} tag to the HTML
 
 - Add RadDataForm to a page
 
-Note the [data binding](https://docs.nativescript.org/Vue/core-concepts/Vue-data-binding.html) of the `source` property of `RadDataForm` to the `person` property of our component.
+Note the [data binding](https://nativescript-vue.org/en/docs/introduction/#why-would-you-use-this) of the `source` property of `RadDataForm` to the `person` property of our component.
 
 - Define the property used for binding
 

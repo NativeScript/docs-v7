@@ -66,7 +66,7 @@ animation1.play().then(()=>console.log("Finished"));
 
 There are multiple breaking changes in this release.
 
-- NativeScript modules use and depend on the app-compatibility library (android-support-v7-appcompat) for Android. To work properly, the theme of the application should be based on **Theme.AppCompat.Light.NoActionBar**. If you have defined custom Android `style.xml` files in the `App_Resources\Android\values[-v21]` folders, you will have to change the parent theme of the `AppTheme` (or `AppThemeBase` if you have such) to **Theme.AppCompat.Light.NoActionBar** (in both `values` and `values-v21` folders). For reference, the default content of those files can be found in the [default project template for Android](https://github.com/NativeScript/android-runtime/tree/master/build/project-template-gradle/src/main/res).
+- NativeScript modules use and depend on the app-compatibility library (android-support-v7-appcompat) for Android. To work properly, the theme of the application should be based on **Theme.AppCompat.Light.NoActionBar**. If you have defined custom Android `style.xml` files in the `App_Resources\Android\values[-v21]` folders, you will have to change the parent theme of the `AppTheme` (or `AppThemeBase` if you have such) to **Theme.AppCompat.Light.NoActionBar** (in both `values` and `values-v21` folders). For reference, the default content of those files can be found in the [default project template for Android](https://github.com/NativeScript/android-runtime/tree/master/build-artifacts/project-template-gradle/app/src/main/res).
 
 - Core NativeScript modules are published as a separate [package](https://www.npmjs.com/package/tns-core-modules) in [npmjs.com](https://www.npmjs.com).
 

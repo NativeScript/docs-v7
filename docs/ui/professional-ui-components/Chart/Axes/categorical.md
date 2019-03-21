@@ -30,7 +30,7 @@ You can get and set the current value with the {% typedoc_link classes:Categoric
 Defines the step at which major ticks are generated. This property also affects axis labels as they are generated on a per major tick basis. You can get or set the value with the {% typedoc_link classes:CategoricalAxis,member:majorTickInterval %} property. For example, if you don't want to display all ticks, but instead only half of them (display the first, third, fifth, etc. ticks), you should set the major tick interval to 2.
 
 This is how the axis in this example looks like:
-![Cartesian chart: Pie series](../../img/ns_ui/categorical_axis_android.png "CategoricalAxis on Android.") ![Cartesian chart: Pie series](../../img/ns_ui/categorical_axis_ios.png "CategoricalAxis on iOS.")
+![Cartesian chart: Pie series](../../../img/ns_ui/categorical_axis_android.png "CategoricalAxis on Android.") ![Cartesian chart: Pie series](../../../img/ns_ui/categorical_axis_ios.png "CategoricalAxis on iOS.")
 
 ## References
 Want to see this scenario in action?
@@ -40,8 +40,8 @@ Check our SDK examples repo on GitHub. You will find this and many other practic
 
 Related articles you might find useful:
 
-* [**Linear Axis**]({% slug chart-features-linear %})
-* [**Logarithmic Axis**]({% slug chart-features-logarithmic %})
-* [**Negative Values Axis**]({% slug chart-features-negative-value %})
-* [**DateTime Categorical Axis**]({% slug chart-features-datetimecategorical %})
-* [**DateTime Continuous Axis**]({% slug chart-features-datetimecontinuous %})
+* [**Linear Axis**]({% slug chart-axes-linear %})
+* [**Logarithmic Axis**]({% slug chart-axes-logarithmic %})
+* [**Negative Values Axis**]({% slug negative-values-axis %})
+* [**DateTime Continuous Axis**]({% slug chart-axes-datetimecontinuous %})
+* [**DateTime Categorical Axis**]({% slug chart-axes-datetimecategorical %})

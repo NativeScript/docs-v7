@@ -31,7 +31,7 @@ Check our SDK examples repo on GitHub. You will find this and many other practic
 
 Related articles you might find useful:
 
-* [**Styling Inline Events**]({% slug calendar-features-styling-inlineevents %})
-* [**Styling Year View**]({% slug calendar-features-styling-year-view %})
-* [**Styling Week View**]({% slug calendar-features-styling-week-view %})
-* [**Styling Month View**]({% slug calendar-features-styling-month-view %})
+* [**Styling Inline Events**]({% slug calendar-inlineevents-styling %})
+* [**Styling Year View**]({% slug calendar-yearview-styling %})
+* [**Styling Week View**]({% slug calendar-weekview-styling %})
+* [**Styling Month View**]({% slug calendar-monthview-styling %})
