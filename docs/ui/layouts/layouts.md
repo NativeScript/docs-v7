@@ -14,6 +14,8 @@ Layout is the process of measuring and positioning of Layout containers and thei
 
 Layout completes in two passes&mdash;a measure pass and a layout pass. To this end, each `View` provides a `measure` and `layout` methods. Additionally, each layout container provides its own `onMeasure` and `onLayout` to achieve its own specific layout.
 
+> Looking for a fun and easy way to learn about NativeScript layout containers? Try the interactive tutorials available at [nslayouts.com](https://www.nslayouts.com/)!
+
 ## Measure Pass
 
 During the measure pass, each `View` is measured to retrieve its desired size. The measure pass evaluates the following properties:
