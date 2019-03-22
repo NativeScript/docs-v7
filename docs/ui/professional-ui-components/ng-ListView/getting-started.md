@@ -19,7 +19,7 @@ tns plugin add nativescript-ui-listview
 ```
 
 ## Adding a RadListView to your template
-Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUIListViewModule %} from the *nativescript-ui-listview* plugin has been imported in an `ngModule` in your app as explained [here]({% slug getting-started-angular %}).
+Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUIListViewModule %} from the *nativescript-ui-listview* plugin has been imported in an `ngModule` in your app as explained [here]({% slug ns-ui-getting-started %}#usage-in-angular).
 
 To add an instance of {% typedoc_link classes:RadListViewComponent %} in an Angular template you need to use the `<RadListView></RadListView>` tag. You will also need to bind the control to a source of items and define an item template which will determine how each business object from the source collection will be visualized. The following snippet demonstrates this:
 

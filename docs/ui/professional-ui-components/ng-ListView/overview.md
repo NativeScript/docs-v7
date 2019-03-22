@@ -42,7 +42,7 @@ All layouts are virtualized and optimized for the mobile environment.
 **Pull to refresh** allows the end users to request more data by pulling the list once they reach the end. By default, a progress indicator is shown and an event is fired which you can use to make a new data request. Read more about pull-to-refresh here: [**ListView: Pull to refresh**]({% slug listview-features-pull-to-refresh-angular %})
 
 ### Swipe to execute
-**Swipe to execute** is a popular UX pattern that allows you to perform an arbitrary action on a RadListView item when the end user swipes it to the right or to the left. For example, popular Mail client mobile applications implement this pattern allowing the user to mark messages as read or to delete them. Read more about swipe-to-execute here: [**ListView: Swipe to execute**]({% slug listview-features-swipe-to-execute-angular %})
+**Swipe to execute** is a popular UX pattern that allows you to perform an arbitrary action on a RadListView item when the end user swipes it to the right or to the left. For example, popular Mail client mobile applications implement this pattern allowing the user to mark messages as read or to delete them. Read more about swipe-to-execute here: [**ListView: Swipe to execute**]({% slug listview-features-swipe-actions-angular %})
 
 ### Item reorder
 {% typedoc_link classes:RadListView %} for NativeScript supports reordering an item by holding and dragging it. By default, an event is fired which informs you about a reorder action thus allowing you to also modify the source collection. Read more about this feature here: [**ListView: Item reorder**]({% slug listview-features-item-reorder-angular %})

@@ -18,7 +18,7 @@ publish: true
 - [DonutSeries]({% slug chart-series-pie-angular %} "Read more about DonutSeries"): extend {% typedoc_link classes:PieSeries %} and work in pretty much the same way besides having an empty segment in the center compared to `PieSeries`
 
 ## Create RadPieChart from scratch
-Creating a new pie chart is very similar to creating a new Cartesian chart. For more information and guidance, take a look at the dedicated article: [Pie and Donut series]({% slug chart-series-pie %}).
+Creating a new pie chart is very similar to creating a new Cartesian chart. For more information and guidance, take a look at the dedicated article: [Pie and Donut series]({% typedoc_link chart-series-pie %}).
 
 ## Additional customization
 -  {% typedoc_link classes:PieSeries,member:outerRadiusFactor %}: this property can increase and decrease the diameter of the series. By default, it occupies the whole plot area and is equal to 1.

@@ -180,7 +180,7 @@ SomeObject.myMethod(arr); // assuming the method is accepting a two-dimensional 
 ```
 
 ## Null
-The Java [null literal](http://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.10.7) (or null pointer) is projected to JavaScript [Null](http://www.w3schools.com/js/js_typeof.asp):
+The Java [null literal](http://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.10.7) (or null pointer) is projected to JavaScript [Null](https://www.w3schools.com/js/js_type_conversion.asp):
 
 ```javascript
 var context = ...

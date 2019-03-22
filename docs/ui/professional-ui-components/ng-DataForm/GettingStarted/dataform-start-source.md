@@ -33,7 +33,7 @@ tns plugin add nativescript-ui-dataform
 
 ## Add RadDataForm to the Page
 
-Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUIDataFormModule %} from the *nativescript-ui-dataform* plugin has been imported in an `ngModule` in your app as explained [here]({% slug getting-started-angular %}).
+Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUIDataFormModule %} from the *nativescript-ui-dataform* plugin has been imported in an `ngModule` in your app as explained [here]({% slug dataform-overview-angular %}).
 
 After that simply add the {% typedoc_link classes:RadDataForm %} tag to the HTML and set its {% typedoc_link classes:RadDataForm,member:source%} accordingly:
 

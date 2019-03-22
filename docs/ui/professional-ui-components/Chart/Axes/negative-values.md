@@ -28,8 +28,8 @@ Check our SDK examples repo on GitHub. You will find this and many other practic
 
 Related articles you might find useful:
 
-* [**Linear Axis**]({% slug chart-features-linear %})
-* [**Logarithmic Axis**]({% slug chart-features-logarithmic %})
-* [**DateTime Continuous Axis**]({% slug chart-features-datetimecontinuous %})
-* [**Categorical Axis**]({% slug chart-features-categorical %})
-* [**DateTime Categorical Axis**]({% slug chart-features-datetimecategorical %})
+* [**Linear Axis**]({% slug chart-axes-linear %})
+* [**Logarithmic Axis**]({% slug chart-axes-logarithmic %})
+* [**DateTime Continuous Axis**]({% slug chart-axes-datetimecontinuous %})
+* [**Categorical Axis**]({% slug chart-axes-categorical %})
+* [**DateTime Categorical Axis**]({% slug chart-axes-datetimecategorical %})

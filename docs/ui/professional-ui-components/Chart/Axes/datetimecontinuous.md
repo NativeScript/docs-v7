@@ -10,7 +10,7 @@ publish: true
 
 # RadChart DateTimeContinuousAxis
 
-When [RadCartesianChart]({% slug chart-types-cartesian-angular %} "Read more about RadCartesianChart") visualizes {% typedoc_link classes:CategoricalSeries %}, it needs an axis that can represent the different categories. The {% typedoc_link classes:CategoricalAxis%} is used to displays a range of categories. Categories are built depending on the **Category** value of each **CategoricalDataPoint** present in the owning **CategoricalSeries** chart series. The axis is divided into discrete slots and each data point is visualized in the slot corresponding to its categorical value.
+When [RadCartesianChart]({% slug chart-types-cartesian-angular%}) visualizes {% typedoc_link classes:CategoricalSeries %}, it needs an axis that can represent the different categories. The {% typedoc_link classes:CategoricalAxis%} is used to displays a range of categories. Categories are built depending on the **Category** value of each **CategoricalDataPoint** present in the owning **CategoricalSeries** chart series. The axis is divided into discrete slots and each data point is visualized in the slot corresponding to its categorical value.
 
 {% typedoc_link classes:DateTimeContinuousAxis %} is a special axis that may be considered as a hybrid between a categorical and a value axis. DateTimeContinuousAxis works with categorical data but instead of categories, the axis builds time slots depending on its {% typedoc_link classes:DateTimeContinuousAxis,member:Minimum%}, {% typedoc_link classes:DateTimeContinuousAxis,member:Maximum%} and {% typedoc_link classes:DateTimeContinuousAxis,member:MajorStep%} values. {% typedoc_link classes:DateTimeContinuousAxis %} also expects valid Calendar values so that the data could be plotted correctly. Think of DateTimeContinuousAxis as a timeline where each data point has a certain position, depending on its Calendar value. The timeline range properties' values are automatically calculated if not set explicitly by the user: the default value of the major step is the smallest difference between any two Calendar values. Because this axis behaves like a numerical one, there might be empty time slots if no data falling into them is found.
 
@@ -55,8 +55,8 @@ Check our SDK examples repo on GitHub. You will find this and many other practic
 
 Related articles you might find useful:
 
-* [**Linear Axis**]({% slug chart-features-linear %})
-* [**Logarithmic Axis**]({% slug chart-features-logarithmic %})
-* [**Negative Values Axis**]({% slug chart-features-negative-value %})
-* [**Categorical Axis**]({% slug chart-features-categorical %})
-* [**DateTime Categorical Axis**]({% slug chart-features-datetimecategorical %})
+* [**Linear Axis**]({% slug chart-axes-linear %})
+* [**Logarithmic Axis**]({% slug chart-axes-logarithmic %})
+* [**Negative Values Axis**]({% slug negative-values-axis %})
+* [**Categorical Axis**]({% slug chart-axes-categorical %})
+* [**DateTime Categorical Axis**]({% slug chart-axes-datetimecategorical %})

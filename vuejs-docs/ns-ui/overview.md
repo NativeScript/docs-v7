@@ -14,7 +14,7 @@ publish: true
 If you are comfortable with using vue for your NativeScript development purposes we are happy to let you know that Progress NativeScript UI exposes its components through Vue directives as well. Here are the components NativeScript UI supports with vue:
 
 - [ListView]({% slug listview-getting-started-vue %} "Read more about the ListView plugin")
-- [SideDrawer]({% slug sidedrawer-gettingstarted-vue %} "Read more about the SideDrawer plugin")
+- [SideDrawer]({% slug sidedrawer-getting-started-vue %} "Read more about the SideDrawer plugin")
 - [Calendar]({% slug calendar-getting-started-vue %} "Read more about the Calendar plugin")
 - [Chart]({% slug chart-getting-started-vue %} "Read more about the Chart plugin")
 - [DataForm]({% slug dataform-gettingstarted-vue %} "Read more about the DataForm plugin")
@@ -37,7 +37,7 @@ SideDrawer for Vue brings the familiar experience to your Vue based NativeScript
 - Drawer location
 - Drawer state events
 
-For more information on setting up and using a particular feature, take a look at the dedicated [article]({% slug sidedrawer-gettingstarted-vue %} "Read more about RadListView with vue.") in RadSideDrawer's documentation section. The articles are extended with vue snippets and explanations where needed.
+For more information on setting up and using a particular feature, take a look at the dedicated [article]({% slug sidedrawer-getting-started-vue %} "Read more about RadListView with vue.") in RadSideDrawer's documentation section. The articles are extended with vue snippets and explanations where needed.
 
 ## Calendar for Vue: overview
 Calendar for Vue exposes all of the familiar features already available through the NativeScript UI APIs:

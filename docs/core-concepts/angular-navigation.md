@@ -614,7 +614,7 @@ The `TabView` widget also provides two important features connected to lateral n
 * [selectedIndex](/api-reference/classes/_ui_tab_view_.tabview#selectedindex) property - use this property to programmatically navigate between the tabs.
 * [selectedIndexChanged](/api-reference/classes/_ui_tab_view_.tabview#selectedindexchangedevent) event - use this event to handle navigations between tabs done by the user.
 
-Check out the [TabView]({%slug tab-view %}) article for a more detailed look on how you can use and customize the component.
+Check out the [TabView]({%slug tab-view-ng %}) article for a more detailed look on how you can use and customize the component.
 
 Here is a code sample of the `TabView` declaration that matches the diagram above. Check out the complete playground demo below the code sample.
 

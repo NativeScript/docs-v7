@@ -542,9 +542,9 @@ You can use the following class names to apply the NativeScript core theme’s c
 
 ### SideDrawers
 
-SideDrawers are a common way to implement navigation in your NativeScript apps. The NativeScript core theme includes class names to help you style the free-to-use [RadSideDrawer]({% slug sidedrawer-overview %}) that’s a part of the [NativeScript UI](https://www.nativescript.org/ui-for-nativescript) component suite.
+SideDrawers are a common way to implement navigation in your NativeScript apps. The NativeScript core theme includes class names to help you style the free-to-use {% nativescript %}[RadSideDrawer](/ui/professional-ui-components/SideDrawer/overview){% endnativescript %}{% angular %}[RadSideDrawer](/angular/ui/professional-ui-components/ng-SideDrawer/overview) {% endangular %} that’s a part of the [NativeScript UI](https://www.nativescript.org/ui-for-nativescript) component suite.
 
-> **NOTE**: The UI snippets you see below should be placed within a RadSideDrawer’s `drawerContent`. Refer to the [control’s documentation]({% slug sidedrawer-overview %}) for more information on how to structure drawers within your apps.
+> **NOTE**: The UI snippets you see below should be placed within a RadSideDrawer’s `drawerContent`. Refer to the {% nativescript %}[control’s documentation](/ui/professional-ui-components/SideDrawer/overview){% endnativescript %}{% angular %}[control’s documentation](/angular/ui/professional-ui-components/ng-SideDrawer/overview) {% endangular %} for more information on how to structure drawers within your apps.
 
 The first two sidedrawer class names control the alignment of content within the sidedrawer.
 
