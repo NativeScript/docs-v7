@@ -1,7 +1,7 @@
 ---
 title: Debugging the Android Runtime within your app's Android Studio project
 description: Add the Android Runtime library module to an existing app
-position: 0
+position: 6
 slug: debug-android-runtime
 ---
 
@@ -21,15 +21,15 @@ In certain scenarios where runtime errors occur, the debug info provided by the 
 
 ### 1. Create a new NativeScript application using one of the following commands depending on your language/technology preference:
 
-NativeScript with Angular: 
+NativeScript with Angular:
 
 `tns create debug-android-runtime --ng`
 
-NativeScript with TypeScript: 
+NativeScript with TypeScript:
 
 `tns create debug-android-runtime --tsc`
 
-NativeScript with plain JavaScript: 
+NativeScript with plain JavaScript:
 
 `tns create debug-android-runtime`
 
@@ -116,7 +116,7 @@ The symbols can be found in the cloned android runtime repo in: `<android-runtim
 
 ![Set CPP Breakpoint](set-cpp-runtime-breakpoint.png)
 
-* Run Debug 
+* Run Debug
 
 ![Run In Debug](hit-debug.png)
 
