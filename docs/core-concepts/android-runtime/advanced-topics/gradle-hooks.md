@@ -9,11 +9,11 @@ slug: gradle-hooks
 
 NativeScript uses gradle to build android applications. The gradle build files are part of the application template that comes from the android runtime package. Sometimes, if you want to use any external plugins or libraries you need to add some code to the gradle files. There are several locations for gradle files that can be used for adding your code. They are applied in the build process in the following order:
 
-`App_Resources/Android/buildscript.gradle`  
-plugins' `buildscript.gradle`  
-`App_Resources/Android/before-plugins.gradle`  
-plugins' `include.gradle`  
-`App_Resources/Android/app.gradle`  
+1. `App_Resources/Android/buildscript.gradle`
+2. plugins' `buildscript.gradle`
+3. `App_Resources/Android/before-plugins.gradle`
+4. plugins' `include.gradle`
+5. `App_Resources/Android/app.gradle`
 
 ## app.gradle
 
