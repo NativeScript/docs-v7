@@ -2,11 +2,11 @@
 nav-title: "Extending Application and Activity"
 title: "Extending Application and Activity"
 description: "Extending Application and Activity for Android"
-position: 2
+position: 1
 ---
 
 # Extending Application and Activity
-This article describes how to create custom `android.app.Application` and `android.support.v7.app.AppCompatActivity` implementations in a NativeScript application. 
+This article describes how to create custom `android.app.Application` and `android.support.v7.app.AppCompatActivity` implementations in a NativeScript application.
 
 > **Note**: Demo code below is taken from the Android Extend demos for [plain JavaScript](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/JavaScriptApp/app/activity.android.js), [TypeScript](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/TypeScriptApp/app/activity.android.ts) or [Angular](https://github.com/NativeScript/nativescript-dev-webpack/blob/master/demo/AngularApp/app/activity.android.ts) applications.
 
@@ -30,11 +30,11 @@ The following steps are needed to create custom native `android.app.Application`
     ```javascript
     const superProto = android.app.Application.prototype;
 
-    // the first parameter of the `extend` call defines the package and the name for the native *.JAVA file generated. 
+    // the first parameter of the `extend` call defines the package and the name for the native *.JAVA file generated.
     android.app.Application.extend("org.myApp.Application", {
         onCreate: function() {
             superProto.onCreate.call(this);
-            
+
             // At this point modules have already been initialized
 
             // Enter custom initialization code here
@@ -47,12 +47,12 @@ The following steps are needed to create custom native `android.app.Application`
     });
     ```
     ```typescript
-    // the `JavaProxy` decorator specifies the package and the name for the native *.JAVA file generated. 
+    // the `JavaProxy` decorator specifies the package and the name for the native *.JAVA file generated.
     @JavaProxy("org.myApp.Application")
     class Application extends android.app.Application {
         public onCreate(): void {
             super.onCreate();
-            
+
             // At this point modules have already been initialized
 
             // Enter custom initialization code here
@@ -152,7 +152,7 @@ The core modules ship with a default `android.support.v7.app.AppCompatActivity` 
         public isNativeScriptActivity;
 
         private _callbacks: AndroidActivityCallbacks;
-        
+
         public onCreate(savedInstanceState: android.os.Bundle): void {
             // Set the isNativeScriptActivity in onCreate (as done in the original NativeScript activity code)
             // The JS constructor might not be called because the activity is created from Android.

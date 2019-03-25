@@ -1,7 +1,7 @@
 ---
 title: "Optimizing Performance Using markingMode: none"
 description: "How to enable markingMode:none in your NativeScript mobile app and prevent potential problems"
-position: 4
+position: 3
 slug: marking-mode-none
 ---
 
@@ -13,7 +13,7 @@ The code inside `tns-core-modules` and all plugins published by the NativeScript
 
 ## Benefits and drawbacks of using markingMode: none
 
-The biggest benefit of setting `markingMode` to `none` is a more responsive app – an app that does not slow down if you use it for an extended amount of time. 
+The biggest benefit of setting `markingMode` to `none` is a more responsive app – an app that does not slow down if you use it for an extended amount of time.
 The main drawbacks are:
 - It is up to the plugin developer to manage the plugin-related memory correctly. There might be plugins that do not support the feature and could crash the app with a "cleared reference" exception.
 - It is up to the app developer to manage the app memory correctly. The app code itself might also need to be updated in order to keep JS object references and prevent unwanted collection.
@@ -29,7 +29,7 @@ First, to instruct any app to use this feature we need to add the following in t
 ```
 If the app behaves correctly after this change - great. Sometimes, however, some sporadic errors/crashes occur, especially related to memory management, like any of the following:
 - `Error: com.tns.NativeScriptException: Attempt to use cleared object reference id=<some-object-id-number>`
-- `The JavaScript instance no longer has available Java instance counterpart`  
+- `The JavaScript instance no longer has available Java instance counterpart`
 
 In such cases additional work has to be done. Have in mind the problem could be either in the app code, or in some plugin(s) used by the app. In both cases the resolution is identical.
 
@@ -45,7 +45,7 @@ var callback = new android.native.NCallback({           // native interface
 android.native.Executor.printWithDelay(callback, 3s);
 ```
 
-The implementor is enclosed by the callback implementation, but with `markingMode: none` enabled the framework no longer takes care of finding out that connection. So, when GC happens in V8 or in Android the `implementor` instance (or its native representation) is GC'ed. This can result in either Java or JavaScript instance missing and upon calling of the `callback` an "Attempt to use cleared object reference" or "JavaScript instance no longer has available Java counterpart" error is very likely to occur. 
+The implementor is enclosed by the callback implementation, but with `markingMode: none` enabled the framework no longer takes care of finding out that connection. So, when GC happens in V8 or in Android the `implementor` instance (or its native representation) is GC'ed. This can result in either Java or JavaScript instance missing and upon calling of the `callback` an "Attempt to use cleared object reference" or "JavaScript instance no longer has available Java counterpart" error is very likely to occur.
 
 ### Solution
 

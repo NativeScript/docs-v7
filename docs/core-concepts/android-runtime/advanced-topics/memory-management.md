@@ -1,7 +1,7 @@
 ---
 title: "Memory Management"
 description: "Best practices and recommendations on how to improve the performance of your NativeScript mobile app by tuning the memory management"
-position: 4
+position: 5
 slug: android-memory-management
 ---
 

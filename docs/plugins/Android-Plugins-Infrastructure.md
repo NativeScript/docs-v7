@@ -46,27 +46,10 @@ my-plugin/
 ### Android plugin elements
 
 You can find more information on the common parts of the NativeScript plugins like the `package.json` and js modules [here]({% slug plugins-infrastructure %}).
-* `platforms\android`: This directory contains any native Android libraries packaged as `*.jar` and `*.aar` packages. These native libraries can reside in the root of this directory or in a user-created sub-directory. 
-* `platforms\android\include.gradle`: This file modifies the native Android configuration of your NativeScript project such as native dependencies, build types and configurations. For more information about the format of `include.gradle`, see [include.gradle file](#includegradle-specification).
+* `platforms\android`: This directory contains any native Android libraries packaged as `*.jar` and `*.aar` packages. These native libraries can reside in the root of this directory or in a user-created sub-directory.
+* `platforms\android\include.gradle`: This file modifies the native Android configuration of your NativeScript project such as native dependencies, build types and configurations. For more information about the format of `include.gradle`, see [include.gradle file]({% slug gradle-hooks%}#plugins-includegradle).
 * `platforms\android\MyLibrary.aar` is an Android library. You can read more about the `.aar` format [here](http://tools.android.com/tech-docs/new-build-system/aar-format).
 * `platforms\android\MyLibrary.jar` is a library. You can read more about the `.jar` format [here](https://en.wikipedia.org/wiki/JAR_(file_format))
-
-### Include.gradle Specification
-
-Every NativeScript plugin, which contains native Android dependencies, should also contain a valid `include.gradle` file in the root of its `platforms\android` directory. This `include.gradle` file must meet the following requirements.
-
-* It must contain its own [configuration](http://developer.android.com/tools/building/configuring-gradle.html).
-* It might contain native dependencies required to build the plugin properly.
-* Any native dependencies should be available in [jcenter](https://bintray.com/bintray/jcenter) or from the Android SDK installed on your machine if you want it to work out of the box. You can see an example of a compile dependency [here](https://github.com/NativeScript/nativescript-fresco/blob/master/platforms/android/include.gradle).
-* It can be used for any kind of native configuration. Find more information [here](http://developer.android.com/tools/building/configuring-gradle.html)
-
-_Include.gradle Example_
-```Java
-// optional elements
-dependencies {
-    compile "groupName:pluginName:ver"
-}
-```
 
 ### Native Android plugin using V8 API
 
@@ -89,7 +72,7 @@ If for any reason you want to use V8 API in your plugin, you will need to specif
 
 ## Rules of thumb
 
-We are concentrating on the "_native_" part of the plugin. When we talk about "_native_" part of the plugin we mean the `platforms/android` folder and its content. 
+We are concentrating on the "_native_" part of the plugin. When we talk about "_native_" part of the plugin we mean the `platforms/android` folder and its content.
 
 ### What do I use?
 
