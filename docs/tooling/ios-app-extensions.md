@@ -51,7 +51,7 @@ Where:
 
 Example for creating the same group for both the extension and the application
      
-Create `TestExtension.entitlments` file inside `TestExtension` folder and add the specific group.
+    Create `TestExtension.entitlments` file inside `TestExtension` folder and add the specific group.
  ```plist
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -65,7 +65,7 @@ Create `TestExtension.entitlments` file inside `TestExtension` folder and add th
 </plist>
  ```
 
-Create the `app.entitlements` file in `<project-name>/app/App_Resources/iOS/` and make sure it contains the same group used by the extension
+    Create the `app.entitlements` file in `<project-name>/app/App_Resources/iOS/` and make sure it contains the same group used by the extension
  ```plist
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
