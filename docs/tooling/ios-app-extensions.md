@@ -42,7 +42,9 @@ Steps to include the App Extension
 ```
 
 Where:
+
  `frameworks` key - the value is an array of framework names.
+
  `assetcatalogCompilerAppiconName` key - the value is the icon file name located in `.xcassets` catalog with `AppIconExtension.appiconset` inside the extension folder. 
 
 4. Create an application group.
