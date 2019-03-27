@@ -29,7 +29,7 @@ Most of the content in this repository is shared between the two environments, b
 
 2. If you have a page that should be appear in both environments but has different content for certain sections, you can use our built-in environment block tags. The blocks are  named `angular` and `nativescript`, respectively, and can be used like this:
 
-```
+```md
 {% nativescript %}This paragraph appears only in the vanilla NativeScript documentation{% endnativescript %}
 
 This paragraph appears in both environments.
@@ -44,6 +44,7 @@ If you plan to work on a non-trivial change, you will most probably want to run 
 ### Prerequisites
 
 Docker should be installed on your machine:
+
 * Open the [official Docker install page](https://docs.docker.com/engine/installation/) and follow the instructions.
 
 The NativeScript documentation is composed from multiple repositories:
@@ -64,15 +65,17 @@ Open a console box (**Windows users should run a Git bash session!**) and clone 
 mkdir ns-docs
 cd ns-docs
 git clone https://github.com/NativeScript/docs.git
-git clone https://github.com/NativeScript/NativeScript.git
 git clone https://github.com/NativeScript/nativescript-angular.git
-git clone https://github.com/NativeScript/nativescript-sdk-examples-js.git
-git clone https://github.com/NativeScript/nativescript-sdk-examples-ng.git
-git clone https://github.com/NativeScript/nativescript-cli.git
 ```
 
 Optional:
+
 ```bash
+git clone https://github.com/NativeScript/NativeScript.git
+git clone https://github.com/NativeScript/nativescript-sdk-examples-js.git
+git clone https://github.com/NativeScript/nativescript-sdk-examples-ng.git
+git clone https://github.com/NativeScript/nativescript-cli.git
+
 git clone https://github.com/NativeScript/nativescript-ui-listview
 git clone https://github.com/NativeScript/nativescript-ui-autocomplete
 git clone https://github.com/NativeScript/nativescript-ui-dataform
@@ -82,8 +85,7 @@ git clone https://github.com/NativeScript/nativescript-ui-gauge
 git clone https://github.com/NativeScript/nativescript-ui-sidedrawer
 ```
 
-> **NOTE**: `nativescript-ui` is private repository used for building the Api Reference for the NativeScript UI components.  
-
+> **NOTE**: `nativescript-ui-...` are private repositories used for building the Api Reference for the NativeScript UI components.  
 > **NOTE**: If you have these repositories locally from previous work with the documentation, be sure to delete them and start from scratch as some old files can cause problems with the current setup.
 
 Then build the docker image by using the following command from the `ns-docs` folder:

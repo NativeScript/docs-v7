@@ -24,49 +24,38 @@ NS_UI_GA=$SCRIPT_PATH"/../../nativescript-ui-gauge"
 NS_UI_SD=$SCRIPT_PATH"/../../nativescript-ui-sidedrawer"
 NS_UI_API_REF=$DOCS_ROOT"/ns_ui_api-reference"
 
-if [ -d "$ROOT" ]; then
-	rm -rf $ROOT
-fi
+[ ! -d "$ROOT" ] && rm -rf $ROOT
 
 mkdir $ROOT
 
-if [ ! -d "$CONTENT_ROOT" ]; then
-	mkdir $CONTENT_ROOT
-fi
-
-if [ ! -d "$WWW_ROOT" ]; then
-	mkdir $WWW_ROOT
-fi
+[ -d "$CONTENT_ROOT" ] || mkdir $CONTENT_ROOT
+[ -d "$WWW_ROOT" ] || mkdir $WWW_ROOT
 
 bundle config build.nokogiri --use-system-libraries
 
-cd $CLI_ROOT
-./docs/build-jekyll-md.sh
+[ ! -d $CLI_ROOT ] || (cd $CLI_ROOT && ./docs/build-jekyll-md.sh)
 
 cd $SCRIPT_PATH
 bundle install
 
 cp -r $SCRIPT_PATH"/_config_vuejs.yml" \
-	  $SCRIPT_PATH"/_assets" \
-	  $SCRIPT_PATH"/_layouts" \
-	  $SCRIPT_PATH"/_plugins" \
-	  $SCRIPT_PATH"/_includes" \
-	  $SCRIPT_PATH"/fonts" \
-	  $VUEJS_ROOT
+	$SCRIPT_PATH"/_assets" \
+	$SCRIPT_PATH"/_layouts" \
+	$SCRIPT_PATH"/_plugins" \
+	$SCRIPT_PATH"/_includes" \
+	$SCRIPT_PATH"/fonts" \
+	$VUEJS_ROOT
 
 rm $VUEJS_ROOT"/_plugins/redirect_generator.rb" \
-   $VUEJS_ROOT"/_plugins/snippet.rb" \
-   $VUEJS_ROOT"/_plugins/ns_cookbook.rb"
+$VUEJS_ROOT"/_plugins/snippet.rb" \
+$VUEJS_ROOT"/_plugins/ns_cookbook.rb"
 
 # NativeScript UI Docs Api Reference build. Docs snippet injecting
-if [ -f $NS_UI_LV"/README.md" ]; then
+declare -a examples=($NS_UI_AC $NS_UI_CA $NS_UI_CH $NS_UI_DF $NS_UI_GA $NS_UI_LV $NS_UI_SD)
 
-	set +e
-	set -e
-	declare -a examples=($NS_UI_AC $NS_UI_CA $NS_UI_CH $NS_UI_DF $NS_UI_GA $NS_UI_LV $NS_UI_SD)
-
-	for i in "${examples[@]}"
-	do
+for i in "${examples[@]}"
+do
+	if [ -d $i ]; then
 		cd $i
 		# Generating Angular d.ts
 		cd "src"
@@ -83,29 +72,21 @@ if [ -f $NS_UI_LV"/README.md" ]; then
 		cd "../demo-angular"
 		npm install markdown-snippet-injector
 		npm run inject
+		atLeastOneNSUIExists=1
+	fi
+done
 
-
-	done
-
+if [ -n "$atLeastOneNSUIExists" -a -d $NS_UI_API_REF ]; then
 	cd $NS_UI_API_REF
 	npm i
 	gulp
 fi
 
-cd $SDK_ROOT_NG
-./build-docs.sh
-
-cd $SDK_ROOT_JS
-./build-docs.sh
-
-cd $NG_ROOT
-./build-doc-snippets.sh
-
-cd $MODULES_ROOT
-./build-docs.sh
-
-cd $NG_ROOT
-./build-docs.sh
+[ ! -d $SDK_ROOT_NG ] || (cd $SDK_ROOT_NG && ./build-docs.sh)
+[ ! -d $SDK_ROOT_JS ] || (cd $SDK_ROOT_JS && ./build-docs.sh)
+[ ! -d $NG_ROOT ] || (cd $NG_ROOT && ./build-doc-snippets.sh)
+[ ! -d $MODULES_ROOT ] || (cd $MODULES_ROOT && ./build-docs.sh)
+[ ! -d $NG_ROOT ] || (cd $NG_ROOT && ./build-docs.sh)
 
 cp $SCRIPT_PATH"/_config_angular.yml" \
    $SCRIPT_PATH"/_config_nativescript.yml" \
@@ -117,21 +98,19 @@ for JEKYLL_DIR in {_assets,_includes,_layouts,_plugins,fonts,images}; do
 	rsync -a --delete $JEKYLL_DIR $CONTENT_ROOT
 done
 
-cp -R $DOCS_ROOT"/docs/./" \
-	  $SDK_ROOT_JS"/dist/cookbook/ns-framework-modules" \
-	  $MODULES_ROOT"/bin/dist/snippets" \
-	  $NG_ROOT"/bin/dist/snippets" \
-	  $SDK_ROOT_NG"/dist/code-samples/ng-framework-modules" \
-	  $SDK_ROOT_NG"/dist/code-samples/ng-hardware-access" \
-	  $CONTENT_ROOT
+cp -R $DOCS_ROOT"/docs/./" $CONTENT_ROOT
 
-cp -R $CLI_ROOT"/docs-cli" $CONTENT_ROOT"/tooling"
-cp -R $SDK_ROOT_JS"/dist/cookbook/ns-ui-widgets" $CONTENT_ROOT"/ui"
-cp -R $SDK_ROOT_JS"/dist/cookbook/ns-ui/." $CONTENT_ROOT"/ui"
-cp -R $SDK_ROOT_NG"/dist/code-samples/ng-ui-widgets" $CONTENT_ROOT"/ui"
-cp -R $SDK_ROOT_NG"/dist/code-samples/common-screens" $CONTENT_ROOT"/app-and-screen-templates"
-cp -R $SDK_ROOT_NG"/dist/code-samples/ng-ui/." $CONTENT_ROOT"/ui"
+[ ! -d $SDK_ROOT_JS ] || cp -R $SDK_ROOT_JS"/dist/cookbook/ns-framework-modules" $CONTENT_ROOT
+[ ! -d $SDK_ROOT_NG ] || cp -R $SDK_ROOT_NG"/dist/code-samples/ng-framework-modules" \
+		$SDK_ROOT_NG"/dist/code-samples/ng-hardware-access" \
+		$CONTENT_ROOT
 
+[ ! -d $MODULES_ROOT ] || cp -R $MODULES_ROOT"/bin/dist/snippets" $CONTENT_ROOT
+[ ! -d $NG_ROOT ] || cp -R $NG_ROOT"/bin/dist/snippets" $CONTENT_ROOT
+[ ! -d $CLI_ROOT ] || cp -R $CLI_ROOT"/docs-cli" $CONTENT_ROOT"/tooling"
+[ ! -d $SDK_ROOT_JS ] || cp -R $SDK_ROOT_JS"/dist/cookbook/ns-ui-widgets" $SDK_ROOT_JS"/dist/cookbook/ns-ui/." $CONTENT_ROOT"/ui"
+[ ! -d $SDK_ROOT_NG ] || cp -R $SDK_ROOT_NG"/dist/code-samples/ng-ui-widgets" $SDK_ROOT_NG"/dist/code-samples/ng-ui/." $CONTENT_ROOT"/ui"
+[ ! -d $SDK_ROOT_NG ] || cp -R $SDK_ROOT_NG"/dist/code-samples/common-screens" $CONTENT_ROOT"/app-and-screen-templates"
 
 cp $SCRIPT_PATH"/nginx.conf" $CONTENT_ROOT
 
@@ -146,25 +125,27 @@ fi
 
 export JEKYLL_ENV="nativescript"
 jekyll build --config _config_nativescript.yml,_config.yml
-export JEKYLL_ENV="angular"
-jekyll build --config _config_angular.yml,_config.yml
 
+[ ! -d $NG_ROOT ] || (export JEKYLL_ENV="angular" && jekyll build --config _config_angular.yml,_config.yml)
 
 cd $VUEJS_ROOT
 
 export JEKYLL_ENV="vuejs"
 jekyll build --config _config_vuejs.yml --trace
 
+cp -R $VUEJS_ROOT"/vuejs" $WWW_ROOT
+
 cd $ROOT
 
-cp -R $MODULES_ROOT"/bin/dist/api-reference" \
-	  $NG_ROOT"/nativescript-angular/bin/dist/ng-api-reference" \
-	  $VUEJS_ROOT"/vuejs" \
-	  $WWW_ROOT
-if [ -f $NS_UI_LV"/README.md" ]; then
-	cp -R $NS_UI_API_REF"/ns-ui-api-reference" \
-	  $WWW_ROOT
-fi
-cp -R $NS_DIST_ROOT"/./" $WWW_ROOT
-cp -R $NG_DIST_ROOT"/./" $WWW_ROOT"/angular"
+[ ! -d $MODULES_ROOT ] || cp -R $MODULES_ROOT"/bin/dist/api-reference" $WWW_ROOT
+[ ! -d $NG_ROOT ] || cp -R $NG_ROOT"/nativescript-angular/bin/dist/ng-api-reference" $WWW_ROOT
 
+if [ -d $NS_UI_LV ]; then
+	if [ -d $NS_UI_API_REF"/ns-ui-api-reference" ]; then
+		cp -R $NS_UI_API_REF"/ns-ui-api-reference" \
+		$WWW_ROOT
+	fi
+fi
+
+cp -R $NS_DIST_ROOT"/./" $WWW_ROOT
+[ ! -d $NG_ROOT ] || cp -R $NG_DIST_ROOT"/./" $WWW_ROOT"/angular"
