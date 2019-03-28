@@ -90,7 +90,7 @@ This is a secondary `package.json` file in which you can specify the entry point
 {% endangular %}
 
 
-#### Discarding JavaScript exceptions when called from native
+#### Discarding JavaScript Exceptions Called from Native
 
 Normally, an unhandled exception from JavaScript code called from a native API will crash the application showing the stack trace. If you want to prevent such crashes you can override this behavior using the `discardUncaughtJsExceptions` flag.
 
@@ -112,11 +112,11 @@ application.on(application.discardedErrorEvent, function (args) {
 });
 ```
 
-#### Android runtime configuration
+#### Android Runtime Configuration
 
 For desciption of the flags which are specific to the Android runtime see the [Android custom flags article]({% slug android-custom-flags %}).
 
-#### iOS runtime configuration
+#### iOS Runtime Configuration
 
 For description of the flags which are specific to the iOS runtime see the [iOS custom flags article]({% slug ios-custom-flags %}).
 
@@ -126,13 +126,13 @@ The `App_Resources` folder contains the platform-specific resources of the appli
 
 Additionally, you can modify the `App_Resources/iOS/build.xcconfig` or `App_Resources/Android/app.gradle` to add or remove additional build properties for the iOS and Android platforms, respectively.
 
-## The **platforms** directory
+## The **platforms** Directory
 
 The `platforms` directory is created when you start a build or add a target platform to your project. The NativeScript tooling creates a new subdirectory with the respective platform name. These subdirectories have the platform-specific project structure required for native development with the native SDKs of the platform. When the project is prepared for build, the NativeScript tooling copies relevant content from the {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} directory to the platform-specific subdirectory for each target platform.
 
 > **IMPORTANT:** Avoid editing files located in the `platforms` subdirectories because the NativeScript CLI overrides them with the content of the {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} directory during the `prepare <Platform>` process.
 
-## The **package.json** file
+## The **package.json** File
 
 The main `package.json`, which is located in the root directory of the project, contains details about the application, its dependencies and other helpful information. You can set [common npm package.json properties](https://docs.npmjs.com/files/package.json) like `author`, `description` and `version`, or specify the npm packages and [NativeScript plugins]({% slug plugins-infrastructure %}) on which your app depends by modifying the `dependencies` and `devDependencies` attributes.
 
@@ -170,29 +170,30 @@ Here is an example of a basic main `package.json` file:
 }
 ```
 
-## The **hooks** directory
+## The **hooks** Directory
 
 The `hooks` folder exists only when the project depends on plugins that require a hook to function properly. Hooks are executable pieces of code or Node.js scripts that are used to alter or augment the behavior of an extendable NativeScript CLI command. For more information about hooks and how to use them in NativeScript, see [Extending the CLI](https://github.com/NativeScript/nativescript-cli/blob/master/extending-cli.md).
 
 Some of the more common plugins that have hooks are `nativescript-dev-webpack`, `nativescript-dev-typescript` and `nativescript-dev-sass`.
 
-## The **tsconfig.json** file
+## The **tsconfig.json** File
 
 The `tsconfig.json` file is present only in projects that use TypeScript. The file works as a guide during the [transpilation]({% slug transpilers %}) of TypeScript to JavaScript. You can fine-tune the transpilation process by configuring the various [compiler options](https://www.typescriptlang.org/docs/handbook/compiler-options.html). For more information about `tsconfig.json`, see the official [TypeScript documentation](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
 
-## The **nsconfig.json** file
+## The **nsconfig.json** File
 
-The `nsconfig.json` is an optional configuration file, located at the root project directory on the same level as the main `package.json` file. This file makes it possible for users to modify the structure of their application. The available configurations are `appPath` and `appResourcesPath`.
+The `nsconfig.json` is an optional configuration file, located at the root project directory on the same level as the main `package.json` file. This file makes it possible for users to modify the structure of their application and to enable/disable the HMR developer experience. The available configurations are `appPath`, `appResourcesPath`, and `useLegacyWorkflow`.
 
-Both paths must be relative to the project root (where the `package.json` file and `platforms` directory are located) in order everything to work as expected. If `appPath` is omitted, the CLI will assume the application files are located inside a folder called {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} inside the project folder. If `appResourcesPath` is omitted, the CLI will assume that they are at their default location - a folder called `App_Resources` inside the folder containing the rest of the app files.
+The paths (`appPath` and `appResourcesPath`) must be relative to the project root (where the `package.json` file and `platforms` directory are located) in order everything to work as expected. If `appPath` is omitted, the CLI will assume the application files are located inside a folder called {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} inside the project folder. If `appResourcesPath` is omitted, the CLI will assume that they are at their default location - a folder called `App_Resources` inside the folder containing the rest of the app files.
 
 > **Important:** To use an `nsconfig.json` file in your project, you must ensure that it meets the following requirements:
 * NativeScript CLI >= 4.0.0
+* The `useLegacyWorkflow` option requires NativeScript CLI >= 5.3.0
 * Android Runtime >= 4.0.0
 * nativescript-dev-sass >= 1.3.6 (if used in the application)
 * nativescript-dev-webpack >= 0.10.1 (if used in the application)
 
-### **nsconfig.json** examples
+### **nsconfig.json** Path examples
 
 Let's assume the project is located at `/d/work/myApplication`.
 
@@ -217,5 +218,14 @@ Let's assume the project is located at `/d/work/myApplication`.
     {
         "appPath": "code/src",
         "appResourcesPath": "resources"
+    }
+    ```
+
+### **nsconfig.json** enabling HMR example
+
+Enable the HMR developer experience by default. By setting `useLegacyWorkflow` to `false`, you will enable the HMR by default (no need to pass additional flags to have HMR). When omitted, the default value is` true` (default livesync experience without the enhanced HMR).
+    ```JSON
+    {
+        "useLegacyWorkflow": false
     }
     ```
