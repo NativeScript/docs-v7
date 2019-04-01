@@ -32,7 +32,7 @@ Steps to include the App Extension
 
  1. Open `<project-name>/app/App_Resources/iOS/` and create folder named [`extensions`](https://github.com/NativeScript/nativescript-today-extension-app/tree/master/app/App_Resources/iOS/extensions)
 
- 2. In the `extensions` folder create the main folder that will contain the extension files. For example, create the [`TestExtension` folder](https://github.com/NativeScript/nativescript-today-extension-app/tree/master/app/App_Resources/iOS/extensions/TestExtension) containing all the extension files.
+ 2. In the `extensions` folder create the main folder that contains the extension files. For example, create the [`TestExtension` folder](https://github.com/NativeScript/nativescript-today-extension-app/tree/master/app/App_Resources/iOS/extensions/TestExtension) containing all the extension files.
 
  3. In the `TestExtension` folder (where the extension files resides), create a [file called `extension.json`](https://github.com/NativeScript/nativescript-today-extension-app/blob/master/app/App_Resources/iOS/extensions/TestExtension/extension.json). This configuration file describes the SDK frameworks used in the extension (via `frameworks` key) and the optional image resources used for extension icon (via `assetcatalogCompilerAppiconName` key).
  
@@ -56,6 +56,6 @@ A sample project demonstrating the above can be found [here](https://github.com/
 
 ### Adding App Extension in Plugin
 
-The workflow to adding an App Extension to plugin is the same as the one described above with the difference of where the extension is actually placed. Create the `extensions` folder (along with all included files) inside `platforms/ios` folder of your plugin. Then follow steps 2-4 from [the previos section](#adding-app-extension-in-existing-application)
+The workflow to adding an App Extension to a plugin is the same as the one described above with the difference of where the extension is placed. Create the `extensions` folder (along with all included files) inside `platforms/ios` folder of your plugin. Then follow steps 2-4 from [the previous section](#adding-app-extension-in-existing-application)
 
 A sample plugin demonstrating the above can be found [here](https://github.com/NativeScript/nativescript-today-extension-plugin). More information for creating NativeScript plugins can be found [here](../plugins/building-plugins.md).
