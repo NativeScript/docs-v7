@@ -50,7 +50,7 @@ Where:
 
  `assetcatalogCompilerAppiconName` key - the value is the icon file name located in `.xcassets` catalog with `AppIconExtension.appiconset` inside the extension folder. 
 
-4. Create a clean build (remove `platforms` folder), and your extension is good to go.
+4. Rebuild the application and your extension is good to go.
 
 A sample project demonstrating the above can be found [here](https://github.com/NativeScript/nativescript-today-extension-app).
 
