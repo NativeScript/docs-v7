@@ -11,14 +11,17 @@ iOS App extensions give users access to the app’s functionality and content th
 
 ## App Extensions in NativeScript
 
-NativeScript CLI 5.3.0 introduced built-in support for the iOS App Extensions. While the extension itself should be created and developed via Xcode (using Objective-C), the produced files can be integrated into existing NativeScript app by using a plugin (that contains the extension) or directly by introducing the extension file in folder particular folder `<project-name>/App_Resources/iOS/extensions`.  The following sections describe the steps needed to integrate the **created** App Extension into your existing NativeScript application.
+NativeScript CLI 5.3.0 introduced Beta support for the iOS App Extensions. While the extension itself should be created and developed via Xcode (using Objective-C), the produced files can be integrated into existing NativeScript app by using a plugin (that contains the extension) or directly by introducing the extension files in separate folder named as the extension inside `<project-name>/App_Resources/iOS/extensions/`.  
 
+For example, assuming we have an extension called [**TestExtension**](https://github.com/NativeScript/nativescript-today-extension-app/blob/master/app/App_Resources/iOS/extensions/TestExtension/Info.plist#L8) then the extension files should be placed in [**<project-name>/App_Resources/iOS/extensions/TestExtension**](https://github.com/NativeScript/nativescript-today-extension-app/tree/master/app/App_Resources/iOS/extensions/TestExtension).
+
+The following sections describe the steps needed to integrate the **created** App Extension into your existing NativeScript application.
 
 ### Adding App Extension in Existing Application
 
 Prerequisites
 
-- The created App Extensions (**add a link here**)
+- The created App Extension.
 - Existing NativeScript application. For testing purposes, you can build a base application using the `create` command
 
 ```
@@ -27,11 +30,11 @@ tns create today-extension --tsc
 
 Steps to include the App Extension
 
- 1. Open `<project-name>/app/App_Resources/iOS/` and create folder named `extensions` (**add link here**)
+ 1. Open `<project-name>/app/App_Resources/iOS/` and create folder named [`extensions`](https://github.com/NativeScript/nativescript-today-extension-app/tree/master/app/App_Resources/iOS/extensions)
 
- 2. In the `extensions` folder paste the main folder that contains the extension files. For example, paste the `TestExtension` folder containing all the extension files. (**add link here**)
+ 2. In the `extensions` folder create the main folder that will contain the extension files. For example, create the [`TestExtension` folder](https://github.com/NativeScript/nativescript-today-extension-app/tree/master/app/App_Resources/iOS/extensions/TestExtension) containing all the extension files.
 
- 3. In the `TestExtension` folder (where the extension files reside), create a file called `extension.json`. This configuration file describes the SDK frameworks used in the extension (via `frameworks` key) and the optional image resources used for extension icon (via `assetcatalogCompilerAppiconName` key).
+ 3. In the `TestExtension` folder (where the extension files resides), create a [file called `extension.json`](https://github.com/NativeScript/nativescript-today-extension-app/blob/master/app/App_Resources/iOS/extensions/TestExtension/extension.json). This configuration file describes the SDK frameworks used in the extension (via `frameworks` key) and the optional image resources used for extension icon (via `assetcatalogCompilerAppiconName` key).
  
  For example:
 ```JSON
@@ -47,42 +50,12 @@ Where:
 
  `assetcatalogCompilerAppiconName` key - the value is the icon file name located in `.xcassets` catalog with `AppIconExtension.appiconset` inside the extension folder. 
 
-4. Create an application group.
+4. Create a clean build (remove `platforms` folder), and your extension is good to go.
 
- In typical cases, the App Extensions are used to pass/receive data and actions from and to your iOS application. In iOS to enable this functionality, both the application and the App Extension must be part of the same [**application group**](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_security_application-groups?language=objc). 
-
-Example for creating the same group for both the extension and the application
-     
-    Create `TestExtension.entitlments` file inside `TestExtension` folder and add the specific group.
- ```plist
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>com.apple.security.application-groups</key>
-    <array>
-        <string>group.org.nativescript.extensionClient</string>
-    </array>
-</dict>
-</plist>
- ```
-
-    Create the `app.entitlements` file in `<project-name>/app/App_Resources/iOS/` and make sure it contains the same group used by the extension
- ```plist
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>com.apple.security.application-groups</key>
-    <array>
-        <string>group.org.nativescript.extensionClient</string>
-    </array>
-</dict>
-</plist>
- ```
-
-5. Create a clean build (remove `platforms` folder), and your extension is good to go.
-
-A sample project demonstrating the above can be found here (**add a link here**).
+A sample project demonstrating the above can be found [here](https://github.com/NativeScript/nativescript-today-extension-app).
 
 ### Adding App Extension in Plugin
+
+The workflow to adding an App Extension to plugin is the same as the one described above with the difference of where the extension is actually placed. Create the `extensions` folder (along with all included files) inside `platforms/ios` folder of your plugin. Then follow steps 2-4 from [the previos section](#adding-app-extension-in-existing-application)
+
+A sample plugin demonstrating the above can be found [here](https://github.com/NativeScript/nativescript-today-extension-plugin). More information for creating NativeScript plugins can be found [here](../plugins/building-plugins.md).
