@@ -148,7 +148,7 @@ android {
 
 //optional elements
 dependencies {
-    compile "groupName:pluginName:ver"
+    implementation "groupName:pluginName:ver"
 }
 ```
 

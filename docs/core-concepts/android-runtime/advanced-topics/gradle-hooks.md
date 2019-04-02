@@ -40,14 +40,14 @@ Every NativeScript plugin, which contains native Android dependencies, should al
 
 * It must contain its own [configuration](http://developer.android.com/tools/building/configuring-gradle.html).
 * It may contain native dependencies required to build the plugin properly.
-* Any native dependencies should be available in [jcenter](https://bintray.com/bintray/jcenter) or in the Android SDK installed on your machine, if you want it to work out of the box. You can see an example of a compile dependency [here](https://github.com/NativeScript/nativescript-fresco/blob/master/platforms/android/include.gradle).
+* Any native dependencies should be available in [jcenter](https://bintray.com/bintray/jcenter) or in the Android SDK installed on your machine, if you want it to work out of the box. You can see an example of an implementation dependency [here](https://github.com/NativeScript/nativescript-facebook/blob/master/src/platforms/android/include.gradle).
 
 This file can be used for many kinds of native project configuration, depending on the purpose of the plugin. You can find more information [here](http://developer.android.com/tools/building/configuring-gradle.html)
 
 ```Groovy
 // optional elements
 dependencies {
-    compile "groupName:pluginName:ver"
+    implementation "groupName:pluginName:ver"
 }
 ```
 
