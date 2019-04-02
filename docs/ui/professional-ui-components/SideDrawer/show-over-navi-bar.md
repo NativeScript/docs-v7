@@ -37,7 +37,7 @@ For example:
 
 By design when navigation is executed in the NativeScript application that navigation will be executed inside the `Frame` instance which means that the {% typedoc_link classes:RadSideDrawer %} instance will be persisted during that navigation.
 
-When using the {% typedoc_link classes:RadSideDrawer %} as a root element it will by design **always be shown over the navigation bar**. 
+When using the {% typedoc_link classes:RadSideDrawer %} as a root element it will by design **always be shown over the navigation bar**. Also please be aware that using {% typedoc_link classes:RadSideDrawer %} as a root element is **not compatible with HMR builds.**
 
 #### Figure 1. RadSideDrawer as a root element and over navigation bar (ActionBar)
 ![NativeScriptUI-Getting-Started-iOS](../../img/ns_ui/drawer-over-nav-ios.png "RadSideDrawer in iOS") ![NativeScriptUI-Getting-Started-Android](../../img/ns_ui/drawer-over-nav-android.png "RadSideDrawer in Android") 
