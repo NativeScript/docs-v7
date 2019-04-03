@@ -149,6 +149,7 @@ NativeScript applications have the following life cycle events.
 + `suspend`: This event is raised when the application is suspended.
 + `resume`: This event is raised when the application is resumed after it has been suspended.
 + `displayed`: This event is raised when the UIelements are rendered.
++ `orientationChanged`: This event is raised when the device changes orientation.
 + `exit`: This event is raised when the application is about to exit.
 + `lowMemory`: This event is raised when the memory on the target device is low.
 + `uncaughtError`: This event is raised when an uncaught application error is present.
