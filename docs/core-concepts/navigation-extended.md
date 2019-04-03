@@ -49,10 +49,10 @@ TabView with nested Frames - classic scenario
 ## Nesting Lateral in Lateral (6)
  TabView in a TabView (bottom/top) or TabView in a RadSidedrawer.
 
- [Playground Demo TypeScript]()
+ [Playground Demo TypeScript]() (in progress)
 
 
 ## Multiple Navigation Scenarios
 Make an example where lots of these are combined. For example, RadSidedrawer + Login leading to a Page with TabView and in one TabView there is another TabView. In another there might be a Frame that has a secondary Frame navigation.
 
-[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=fyNqnr&v=5)
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=fyNqnr&v=6)
