@@ -23,6 +23,7 @@ Simple lateral navigation nesting - nesting a TabView in a Layout, for example t
 
 [Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=DrwJ2o&_ga=2.243685441.533655497.1554097996-1456678682.1516707790&v=8)
 
+
 ## Nesting Forward in Forward Navigation (3)
 Nesting a Frame inside a Page/Frame, for example a secondary navigation level.
 
@@ -36,15 +37,18 @@ Nesting a TabView inside a Page/Frame, for example in a Login -> Page with a Tab
 
 [Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=1UMjJZ&v=2)
 
+
 ## Forward in Lateral nesting (5)
 TabView with nested Frames - classic scenario
 
 [Playground Demo TypeScript]()
 
+
 ## Lateral in Lateral nesting (6)
  TabView in a TabView (bottom/top) or TabView in a RadSidedrawer.
 
  [Playground Demo TypeScript]()
+
 
 ## More Advanced Scenarios (Navigaiton Combinations)
 Make an example where lots of these are combined. For example, RadSidedrawer + Login leading to a Page with TabView and in one TabView there is another TabView. In another there might be a Frame that has a secondary Frame navigation.
