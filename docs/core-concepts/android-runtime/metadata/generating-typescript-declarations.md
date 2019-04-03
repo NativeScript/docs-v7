@@ -111,9 +111,9 @@ If you want to generate typings of a package but you are not sure how you can ge
 - Add as a testCompileOnly dependency the one that you want to generate typings for:
 ```java
 dependencies {
-    compile 'org.apache.bcel:bcel:6.2'
-    compile 'commons-io:commons-io:2.6'
-    compile 'com.google.code.findbugs:findbugs:3.0.1'
+    implementation 'org.apache.bcel:bcel:6.2'
+    implementation 'commons-io:commons-io:2.6'
+    implementation 'com.google.code.findbugs:findbugs:3.0.1'
 
     // add your dependency bellow
     testCompileOnly  "com.android.support:support-v4:27.0.1"
