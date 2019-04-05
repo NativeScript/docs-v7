@@ -118,7 +118,7 @@ The way to spawn a Worker with webpack differs from the way described in the Web
 ```JavaScript
     ...
 
-   var workerScript = require("./workers/image-processor");
+   var WorkerScript = require("nativescript-worker-loader!./worker-script.js");
    var worker = new WorkerScript();
    worker.postMessage({ src: imageSource, mode: 'scale', options: options });
    
