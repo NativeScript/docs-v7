@@ -236,23 +236,28 @@ It is important to note that the `propertyChange` event is critical for the enti
 
 ``` JavaScript
 const observableModule = require("tns-core-modules/data/observable");
+
 var MyClass = (function (_super) {
   __extends(MyClass, _super);
+  
   function MyClass() {
     _super.apply(this, arguments);
   }
+  
   Object.defineProperty(MyClass.prototype, "myProperty", {
     get: function () {
       return this._myProperty;
-      },
-      set: function (value) {
-        this._myProperty = value;
-      },
-      enumerable: true,
-      configurable: true
-    });
-    return MyClass;
-  })(observableModule.Observable);
+    },
+    set: function (value) {
+      this._myProperty = value;
+    },
+    enumerable: true,
+    configurable: true
+  });
+  
+  return MyClass;
+})(observableModule.Observable);
+
 exports.MyClass = MyClass;
 ```
 ``` TypeScript
