@@ -64,6 +64,9 @@ TabView > Frames >> Pages
 
 
 ## Nesting Lateral in Lateral (6)
+
+![navigation-schema-backward](../img/navigation-extended/navigation-examples-page-6.png?raw=true)
+
 TabView in a TabView (bottom/top).
 
 [Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=soFhmN&v=6) (in progress)
