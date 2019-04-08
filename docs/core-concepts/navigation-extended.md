@@ -78,6 +78,9 @@ TabView > TabView (>> Frames | Pages) + Pages (>> Frames)
 > **TODO** iosOverflowSafeArea="false" for the nested TaBvIEW
 
  ## Multiple Navigation Scenarios
+
+![navigation-schema-backward](../img/navigation-extended/navigation-examples-page-7.png?raw=true)
+
 Make an example where lots of these are combined. For example, RadSidedrawer + Login leading to a Page with TabView and in one TabView there is another TabView. In another there might be a Frame that has a secondary Frame navigation.
 
 [Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=fyNqnr&v=6)
