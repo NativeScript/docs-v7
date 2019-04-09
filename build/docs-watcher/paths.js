@@ -11,13 +11,8 @@ module.exports.modulesRoot = path.join(module.exports.root, "..", "..", "NativeS
 module.exports.nativescriptAngularRoot = path.join(module.exports.root, "..", "..", "nativescript-angular");
 module.exports.sdkExamplesRootNG = path.join(module.exports.root, "..", "..", "nativescript-sdk-examples-ng");
 module.exports.sdkExamplesRootJS = path.join(module.exports.root, "..", "..", "nativescript-sdk-examples-js");
-module.exports.nsUIListView = path.join(module.exports.root, "..", "..", "nativescript-ui-listview");
-module.exports.nsUIAutoComplete = path.join(module.exports.root, "..", "..", "nativescript-ui-autocomplete");
-module.exports.nsUIDataForm = path.join(module.exports.root, "..", "..", "nativescript-ui-dataform");
-module.exports.nsUIChart = path.join(module.exports.root, "..", "..", "nativescript-ui-chart");
-module.exports.nsUICalendar = path.join(module.exports.root, "..", "..", "nativescript-ui-calendar");
-module.exports.nsUIGauge = path.join(module.exports.root, "..", "..", "nativescript-ui-gauge");
-module.exports.nsUISideDrawer = path.join(module.exports.root, "..", "..", "nativescript-ui-sidedrawer");
+module.exports.nsUISamples = path.join(module.exports.root, "..", "..", "nativescript-ui-samples");
+module.exports.nsUISamplesAngular = path.join(module.exports.root, "..", "..", "nativescript-ui-samples-angular");
 module.exports.cliRoot = path.join(module.exports.root, "..", "..", "nativescript-cli");
 module.exports.vuejsRoot = path.join(module.exports.root, "..", "vuejs-docs");
 
@@ -35,11 +30,6 @@ module.exports.sourcePathsInImage = [
     `${module.exports.sourceFilesRoot}/nativescript-cli`,
     `${module.exports.sourceFilesRoot}/nativescript-sdk-examples-js`,
     `${module.exports.sourceFilesRoot}/nativescript-sdk-examples-ng`,
-    `${module.exports.sourceFilesRoot}/nativescript-ui-autocomplete`,
-    `${module.exports.sourceFilesRoot}/nativescript-ui-calendar`,
-    `${module.exports.sourceFilesRoot}/nativescript-ui-chart`,
-    `${module.exports.sourceFilesRoot}/nativescript-ui-dataform`,
-    `${module.exports.sourceFilesRoot}/nativescript-ui-gauge`,
-    `${module.exports.sourceFilesRoot}/nativescript-ui-listview`,
-    `${module.exports.sourceFilesRoot}/nativescript-ui-sidedrawer`,
+    `${module.exports.sourceFilesRoot}/nativescript-ui-samples`,
+    `${module.exports.sourceFilesRoot}/nativescript-ui-sidedrawer-angular`,
 ];
