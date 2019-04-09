@@ -21,7 +21,7 @@ In this article, we are explaining the life cycle of JavaScript and native insta
 
 **native instance** - Objective-C class instance (iOS) or Java class instance (Android).
 
-**reference counting** - the Objective-C runtime in iOS uses reference counting for lifetime management. Instances keep an internal counter which can be incremented and decremented. Each time a strong reference is set to point to an instance, the instance's reference count is incremented. Each time a strong reference is changed, the previous instance it pointed to, has its reference count decremented. When the count reaches 0, the instance is deallocated.
+**reference counting** - the Objective-C runtime in iOS uses reference counting for lifetime management. Instances keep an internal counter which can be incremented and decremented. Each time a strong reference is set to point to an instance, the instance's reference count is incremented. Each time a strong reference is changed, the previous instance it pointed to has its reference count decremented. When the count reaches 0, the instance is deallocated.
 
 **GC** - garbage collection in general. When GC runs, it first block the threads to find all strong instances from the stack. Then resumes execution until the GC marks all reachable objects in a separate thread. Then blocks again the threads to complete the marking. And in the end finalizes and deallocates the detected unreachable instances. While the actual GC implementation may be much more sophisticated, all implementations in virtual machines used for UI aim at minimizing the time the main thread is blocked. The Android Java VM, Android's V8 and iOS's JavaScriptCore are the three state of the art virtual machines used by NativeScript, which have garbage collectors.
 
@@ -39,7 +39,7 @@ The splices exhibit the following behavior:
  - Retrieve the native instance from a given JavaScript instance
  - Retrieve the JavaScript instance from a given native instance
  - Synchronize the life-cycle of the two instances
- - Proxy method calls, to and fro, the JavaScript and native instances
+ - Proxy method calls, to and from, the JavaScript and native instances
  - Throw exceptions, when methods are called, while in half-dead state
 
 A splice is created:
@@ -165,4 +165,4 @@ Here are some of the problems that still need to be addressed in the order of im
  - During a GC, the extra work required to traverse the JavaScript heap causes relatively big pauses on the main thread. E.g. for an Angular + {N} app with snapshot, each V8 GC can take up to half a second on a modern phone. We have introduced the `markingMode: "none"` option that involves no object graph traversing but has its pitfalls. For details see [the documentation article](./android-runtime/advanced-topics/memory-management.md#markingMode-none).
  - The cases of half-dead splices, although rare, are very hard to reproduce, track, debug, and fix.
  - Big objects take several V8 and Android VM GC passes to release, we could provide API to explicitly state that such objects will no longer be used and the reference to the Java instance will be made weak.
- - Regular splice objects, with no implementation object, cannot to extended with simple JavaScript properties. It would be useful if we could extend their lifetime to match the lifetime of the Java object.
+ - Regular splice objects, with no implementation object, cannot be extended with simple JavaScript properties. It would be useful if we could extend their lifetime to match the lifetime of the Java object.
