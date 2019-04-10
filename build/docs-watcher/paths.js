@@ -13,6 +13,7 @@ module.exports.sdkExamplesRootNG = path.join(module.exports.root, "..", "..", "n
 module.exports.sdkExamplesRootJS = path.join(module.exports.root, "..", "..", "nativescript-sdk-examples-js");
 module.exports.nsUISamples = path.join(module.exports.root, "..", "..", "nativescript-ui-samples");
 module.exports.nsUISamplesAngular = path.join(module.exports.root, "..", "..", "nativescript-ui-samples-angular");
+module.exports.nsUISamplesVue = path.join(module.exports.root, "..", "..", "nativescript-ui-samples-vue");
 module.exports.cliRoot = path.join(module.exports.root, "..", "..", "nativescript-cli");
 module.exports.vuejsRoot = path.join(module.exports.root, "..", "vuejs-docs");
 
@@ -32,4 +33,5 @@ module.exports.sourcePathsInImage = [
     `${module.exports.sourceFilesRoot}/nativescript-sdk-examples-ng`,
     `${module.exports.sourceFilesRoot}/nativescript-ui-samples`,
     `${module.exports.sourceFilesRoot}/nativescript-ui-sidedrawer-angular`,
+    `${module.exports.sourceFilesRoot}/nativescript-ui-sidedrawer-vue`,
 ];

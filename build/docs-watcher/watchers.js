@@ -37,6 +37,8 @@ module.exports.WatcherService = class WatcherService {
 			basePath: path.normalize(paths.nsUISamples)
 		}, {
 			basePath: path.normalize(paths.nsUISamplesAngular)
+		}, {
+			basePath: path.normalize(paths.nsUISamplesVue)
 		}];
 	}
 
@@ -52,6 +54,7 @@ module.exports.WatcherService = class WatcherService {
 					`${paths.sdkExamplesRootJS}/dist/**`,
 					`${paths.nsUISamples}/dist/**`,
 					`${paths.nsUISamplesAngular}/dist/**`,
+					`${paths.nsUISamplesVue}/dist/**`,
 					"**/node_modules/**",
 					"**/.*",
 					"**/.git/**"
