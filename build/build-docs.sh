@@ -15,14 +15,9 @@ SDK_ROOT_JS=$SCRIPT_PATH"/../../nativescript-sdk-examples-js"
 SDK_ROOT_NG=$SCRIPT_PATH"/../../nativescript-sdk-examples-ng"
 CLI_ROOT=$SCRIPT_PATH"/../../nativescript-cli"
 VUEJS_ROOT=$SCRIPT_PATH"/../../docs/vuejs-docs"
-NS_UI_LV=$SCRIPT_PATH"/../../nativescript-ui-listview"
-NS_UI_AC=$SCRIPT_PATH"/../../nativescript-ui-autocomplete"
-NS_UI_DF=$SCRIPT_PATH"/../../nativescript-ui-dataform"
-NS_UI_CH=$SCRIPT_PATH"/../../nativescript-ui-chart"
-NS_UI_CA=$SCRIPT_PATH"/../../nativescript-ui-calendar"
-NS_UI_GA=$SCRIPT_PATH"/../../nativescript-ui-gauge"
-NS_UI_SD=$SCRIPT_PATH"/../../nativescript-ui-sidedrawer"
-NS_UI_API_REF=$DOCS_ROOT"/ns_ui_api-reference"
+NS_UI_SM=$SCRIPT_PATH"/../../nativescript-ui-samples"
+NS_UI_SM_NG=$SCRIPT_PATH"/../../nativescript-ui-samples-angular"
+NS_UI_DOCS=$DOCS_ROOT"/ns_ui_docs"
 
 [ ! -d "$ROOT" ] && rm -rf $ROOT
 
@@ -51,33 +46,8 @@ $VUEJS_ROOT"/_plugins/snippet.rb" \
 $VUEJS_ROOT"/_plugins/ns_cookbook.rb"
 
 # NativeScript UI Docs Api Reference build. Docs snippet injecting
-declare -a examples=($NS_UI_AC $NS_UI_CA $NS_UI_CH $NS_UI_DF $NS_UI_GA $NS_UI_LV $NS_UI_SD)
-
-for i in "${examples[@]}"
-do
-	if [ -d $i ]; then
-		cd $i
-		# Generating Angular d.ts
-		cd "src"
-		npm i --ignore-scripts
-		cd "angular"
-		tsc
-
-		cd "../../demo"
-		npm install markdown-snippet-injector
-		# cd app
-		# tsc
-		# cd ../
-		npm run inject
-		cd "../demo-angular"
-		npm install markdown-snippet-injector
-		npm run inject
-		atLeastOneNSUIExists=1
-	fi
-done
-
-if [ -n "$atLeastOneNSUIExists" -a -d $NS_UI_API_REF ]; then
-	cd $NS_UI_API_REF
+if [ -d $NS_UI_DOCS ] && [ -d $NS_UI_SM ] && [ -d $NS_UI_SM_NG ]; then
+	cd $NS_UI_DOCS
 	npm i
 	gulp
 fi
@@ -140,9 +110,9 @@ cd $ROOT
 [ ! -d $MODULES_ROOT ] || cp -R $MODULES_ROOT"/bin/dist/api-reference" $WWW_ROOT
 [ ! -d $NG_ROOT ] || cp -R $NG_ROOT"/nativescript-angular/bin/dist/ng-api-reference" $WWW_ROOT
 
-if [ -d $NS_UI_LV ]; then
-	if [ -d $NS_UI_API_REF"/ns-ui-api-reference" ]; then
-		cp -R $NS_UI_API_REF"/ns-ui-api-reference" \
+if [ -d $NS_UI_DOCS ] && [ -d $NS_UI_SM ] && [ -d $NS_UI_SM_NG ]; then
+	if [ -d $NS_UI_DOCS"/ns-ui-api-reference" ]; then
+		cp -R $NS_UI_DOCS"/ns-ui-api-reference" \
 		$WWW_ROOT
 	fi
 fi

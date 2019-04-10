@@ -34,19 +34,9 @@ module.exports.WatcherService = class WatcherService {
 			distPaths: [`${paths.cliRoot}/./docs-cli`],
 			buildScript: `${paths.cliRoot}/docs/build-jekyll-md.sh`
 		}, {
-			basePath: path.normalize(paths.nsUIListView)
+			basePath: path.normalize(paths.nsUISamples)
 		}, {
-			basePath: path.normalize(paths.nsUIAutoComplete)
-		}, {
-			basePath: path.normalize(paths.nsUIDataForm)
-		}, {
-			basePath: path.normalize(paths.nsUIChart)
-		}, {
-			basePath: path.normalize(paths.nsUICalendar)
-		}, {
-			basePath: path.normalize(paths.nsUIGauge)
-		}, {
-			basePath: path.normalize(paths.nsUISideDrawer)
+			basePath: path.normalize(paths.nsUISamplesAngular)
 		}];
 	}
 
@@ -60,13 +50,8 @@ module.exports.WatcherService = class WatcherService {
 					`${paths.nativescriptAngularRoot}/bin/dist/**`,
 					`${paths.sdkExamplesRootNG}/dist/**`,
 					`${paths.sdkExamplesRootJS}/dist/**`,
-					`${paths.nsUIListView}/dist/**`,
-					`${paths.nsUIAutoComplete}/dist/**`,
-					`${paths.nsUIDataForm}/dist/**`,
-					`${paths.nsUIChart}/dist/**`,
-					`${paths.nsUICalendar}/dist/**`,
-					`${paths.nsUIGauge}/dist/**`,
-					`${paths.nsUISideDrawer}/dist/**`,
+					`${paths.nsUISamples}/dist/**`,
+					`${paths.nsUISamplesAngular}/dist/**`,
 					"**/node_modules/**",
 					"**/.*",
 					"**/.git/**"

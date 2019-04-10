@@ -36,13 +36,8 @@ rsync --relative -az --exclude node_modules/ --exclude .git \
 [ ! -d /root/./nativescript-sdk-examples-ng ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-sdk-examples-ng /www
 [ ! -d /root/./nativescript-sdk-examples-js ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-sdk-examples-js /www
 [ ! -d /root/./nativescript-cli ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-cli /www
-[ ! -d /root/./nativescript-ui-listview ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-ui-listview /www
-[ ! -d /root/./nativescript-ui-autocomplete ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-ui-autocomplete /www
-[ ! -d /root/./nativescript-ui-dataform ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-ui-dataform /www
-[ ! -d /root/./nativescript-ui-chart ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-ui-chart /www
-[ ! -d /root/./nativescript-ui-calendar ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-ui-calendar /www
-[ ! -d /root/./nativescript-ui-gauge ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-ui-gauge /www
-[ ! -d /root/./nativescript-ui-sidedrawer ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-ui-sidedrawer /www
+[ ! -d /root/./nativescript-ui-samples ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-ui-samples /www
+[ ! -d /root/./nativescript-ui-samples-angular ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-ui-samples-angular /www
 
 /www/docs/build/build-docs.sh
 /www/docs/build/nginx-setup.sh
