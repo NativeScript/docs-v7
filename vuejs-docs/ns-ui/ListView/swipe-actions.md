@@ -28,78 +28,7 @@ To enable the "Swipe Actions" functionality in {% typedoc_link classes:RadListVi
 
 Here is a complete example of `Swipe Actions`:
 
-```
-export default {
-  template: `
-  <Page>
-    <GridLayout orientation="vertical" rows="auto, *">
-      <RadListView ref="listView"
-                   for="item in itemList"
-                   swipeActions="true"
-                   @loaded="onLoaded"
-                   @itemSwipeProgressStarted="onSwipeStarted">
-        <v-template>
-          <StackLayout class="item" orientation="vertical">
-            <Label class="big" :text="item.name"></Label>
-            <Label :text="item.description"></Label>
-          </StackLayout>
-        </v-template>
-
-        <v-template name="itemswipe">
-          <GridLayout columns="auto, *, auto" backgroundColor="White">
-            <StackLayout id="mark-view" col="0" class="swipe-item left"
-                         orientation="horizontal" @tap="onLeftSwipeClick">
-              <Label text="mark" verticalAlignment="center" horizontalAlignment="center"/>
-            </StackLayout>
-            <StackLayout id="delete-view" col="2" class="swipe-item right"
-                         orientation="horizontal" @tap="onRightSwipeClick">
-              <Label text="delete" verticalAlignment="center" horizontalAlignment="center" />
-            </StackLayout>
-          </GridLayout>
-        </v-template>
-      </RadListView>
-    </GridLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      itemList: [
-        {name: 'Item 1', description: 'Item 1 description'},
-        {name: 'Item 2', description: 'Item 2 description'},
-        {name: 'Item 3', description: 'Item 3 description'},
-      ],
-    };
-  },
-
-  methods: {
-    onSwipeStarted ({ data, object }) {
-      console.log(`Swipe started`);
-      const swipeLimits = data.swipeLimits;
-      const swipeView = object;
-      const leftItem = swipeView.getViewById('mark-view');
-      const rightItem = swipeView.getViewById('delete-view');
-      swipeLimits.left = leftItem.getMeasuredWidth();
-      swipeLimits.right = rightItem.getMeasuredWidth();
-      swipeLimits.threshold = leftItem.getMeasuredWidth() / 2;
-    },
-    onLeftSwipeClick (event) {
-      console.log('left action tapped');
-      this.$refs.listView.notifySwipeToExecuteFinished();
-    },
-    onRightSwipeClick ({ object }) {
-      console.log('right action tapped');
-      // remove item
-      this.itemList.splice(this.itemList.indexOf(object.bindingContext), 1);
-      this.$refs.listView.notifySwipeToExecuteFinished();
-    },
-    onLoaded () {
-      setTimeout(() => {
-        this.itemList = getItemList(20);
-      }, 0);
-    }
-  }
-};
-```
+<snippet id='listview-swipeactions-vue'/>
 
 ### Swipe actions
 In this scenario the user needs to swipe and release the item to execute the corresponding action. The item must be swiped at a given distance over the provided threshold so that the associated action is executed. To implement this approach you need to handle the following {% typedoc_link classes:RadListView %} events:

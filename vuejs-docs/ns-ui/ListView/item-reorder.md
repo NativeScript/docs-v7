@@ -14,38 +14,4 @@ The item reorder feature allows the end users to change the position of an item 
 # Example
 The following simple scenario demonstrates how the item-reorder feature is used. A handler for the `itemReordered` event is provided which prints out the indices of the item being reordered.
 
-```
-export default {
-  template: `
-  <Page>
-    <StackLayout>
-      <RadListView ref="listView"
-                   for="item in itemList"
-                   itemReorder="true"
-                   @itemReordered="onItemReordered">
-        <v-template>
-          <StackLayout>
-            <Label :text="item.name"></Label>
-          </StackLayout>
-        </v-template>
-      </RadListView>
-    </StackLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      itemList: [
-        {name: 'Item 1'},
-        {name: 'Item 2'},
-        {name: 'Item 3'},
-      ],
-      selectedItems: [],
-    };
-  },
-  methods: {
-    onItemReordered({ index, data, object }) {
-      console.log(`Item reordered from index ${index} to ${data.targetIndex}`);
-    },
-  }
-};
-```
+<snippet id='listview-itemreorder-vue'/>

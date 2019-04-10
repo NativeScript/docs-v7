@@ -29,69 +29,7 @@ All scrolling events provide an instance of the {% typedoc_link classes:ListView
 
 The following code snippet demonstrates how to play with scrolling:
 
-```
-import { ListViewItemSnapMode } from "nativescript-ui-listview";
-
-export const getItemList = (count: Number) => {
-  let itemList = [];
-  for (let i = 1; i <= count; i++) {
-    itemList.push({
-      id: i,
-      name: `Item ${i}`,
-      description: `Item ${i} description`,
-    });
-  }
-  return itemList;
-};
-
-export default {
-  template: `
-  <Page>
-    <StackLayout>
-      <Label :text="scrollText"></Label>
-      <RadListView ref="listView"
-                   for="item in itemList"
-                   @itemTap="onItemTap"
-                   @loaded="onLoaded"
-                   @scrolled="onScrolled">
-        <v-template>
-          <StackLayout orientation="vertical">
-            <Label :text="item.name"></Label>
-            <Label :text="item.description"></Label>
-          </StackLayout>
-        </v-template>
-      </RadListView>
-    </StackLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      scrollOffset: 0,
-      itemList: getItemList(100),
-    };
-  },
-  computed: {
-    scrollText () {
-      return `Scrolled to ${this.scrollOffset} offset`;
-    },
-  },
-  methods: {
-    onItemTap ({ item }) {
-      console.log(`Tapped on ${item.name}`);
-    },
-    onLoaded () {
-      this.$nextTick(() => {
-        const indexToScroll = 49;
-        console.log('Programmatic scrolling to ' + this.itemList[indexToScroll].name + '... ');
-        this.$refs.listView.scrollToIndex(indexToScroll, false, ListViewItemSnapMode.Start);
-      });
-    },
-    onScrolled ({ scrollOffset }) {
-      this.scrollOffset = scrollOffset;
-    },
-  }
-};
-```
+<snippet id='listview-scrolling-vue'/>
 
 ## Horizontal Scrolling
 
