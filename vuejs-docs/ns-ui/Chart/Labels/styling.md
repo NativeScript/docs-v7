@@ -27,31 +27,7 @@ To better illustrate styling of point label let's look at the following example:
 - Declare the {% typedoc_link classes:LineSeries %} instances, bind their {% typedoc_link classes:AreaSeries,member:items%} to the source of data and set the **`tkCartesianSeries`** directive
 - In order to customize the `labelStyle` open and close an **`PointLabelStyle`** tag between the **`LineSeries`** tags and set the **`tkLineLabelStyle`** directive on it
 
-```
-  <LineSeries v-tkCartesianSeries
-              legendTitle="Financial data"
-              showLabels="true"
-              seriesName="Bar"
-              valueProperty="Amount"
-              categoryProperty="Country"
-              :items="items">
-      <PointLabelStyle v-tkLineLabelStyle margin="10" fontStyle="Bold"
-                       fillColor="#60B3FC" textSize="10"
-                       textColor="White"></PointLabelStyle>
-  </LineSeries>
-
-  <LineSeries v-tkCartesianSeries
-              legendTitle="Financial data"
-              showLabels="true"
-              seriesName="Bar"
-              valueProperty="SecondVal"
-              categoryProperty="Country"
-              :items="items">
-      <PointLabelStyle v-tkLineLabelStyle margin="10" fontStyle="Bold"
-                       fillColor="#FC6060" textSize="10"
-                       textColor="White"></PointLabelStyle>
-  </LineSeries>
-```
+<snippet id='chart-styling-vue'/>
 
 This is how the chart looks like now:
 

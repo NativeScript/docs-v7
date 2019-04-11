@@ -44,20 +44,7 @@ Just like with all vue 'pages' let's start with the `Component` in which we will
 
 Before that, we would create a basic JS or TS module that contains a collection of objects, which will be used by the chart to provide intuitive data visualization.
 
-```
-import { ObservableArray } from 'tns-core-modules/data/observable-array';
-
-export const getCountriesData = () => {
-  return new ObservableArray([
-    { Country: 'Germany', Amount: 15, SecondVal: 14, ThirdVal: 24, Impact: 0, Year: 0 },
-    { Country: 'France', Amount: 13, SecondVal: 23, ThirdVal: 25, Impact: 0, Year: 0 },
-    { Country: 'Bulgaria', Amount: 24, SecondVal: 17, ThirdVal: 23, Impact: 0, Year: 0 },
-    { Country: 'Spain', Amount: 11, SecondVal: 19, ThirdVal: 24, Impact: 0, Year: 0 },
-    { Country: 'USA', Amount: 18, SecondVal: 8, ThirdVal: 21, Impact: 0, Year: 0 }
-  ]);
-};
-
-```
+<snippet id='chart-get-countries-data-vue'/>
 
 All that is left is to declare the template of the vue component in which we:
 
@@ -66,31 +53,7 @@ All that is left is to declare the template of the vue component in which we:
 - After that set the **`cartesianHorizontalAxis`** and **`cartesianVerticalAxis`** directive to the axes
 - Finally declare a {% typedoc_link classes:BarSeries %} instance to it, bind the {% typedoc_link classes:BarSeries,member:items%} to the source of data and set the **`cartesianSeries`** directive
 
-```
-import { getCountriesData } from '../../data';
-
-export default {
-  template: `
-  <Page>
-    <StackLayout>
-      <RadCartesianChart>
-        <BarSeries v-tkCartesianSeries
-                   categoryProperty="Country"
-                   valueProperty="Amount"
-                   :items="items" />
-        <CategoricalAxis v-tkCartesianHorizontalAxis />
-        <LinearAxis v-tkCartesianVerticalAxis />
-      </RadCartesianChart>
-    </StackLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      items: getCountriesData(),
-    };
-  }
-};
-```
+<snippet id='chart-bar-series-vue'/>
 
 The following images demonstrate how your 'page' looks like on iOS and Android:
 
@@ -112,44 +75,7 @@ This is the data with which we will populate our series:
 - After that set the **`tkCartesianHorizontalAxis`** and **`tkCartesianVerticalAxis`** directive to the axes
 - Declare a {% typedoc_link classes:AreaSeries %} instance to it, bind the {% typedoc_link classes:AreaSeries,member:items%} to the source of data and set the **`tkCartesianSeries`** directive
 
-```
-import { getCountriesData } from '../../data';
-import { ChartSeriesStackMode } from "nativescript-ui-chart";
-
-export default {
-  template: `
-  <Page>
-    <StackLayout>
-      <RadCartesianChart>
-        <CategoricalAxis v-tkCartesianHorizontalAxis verticalLocation="Bottom" labelSize="11"></CategoricalAxis>
-        <LinearAxis v-tkCartesianVerticalAxis horizontalLocation="Left" labelSize="11"></LinearAxis>
-
-        <BarSeries v-tkCartesianSeries :items="items" :stackMode="stackMode" categoryProperty="Country" valueProperty="Amount"></BarSeries>
-        <BarSeries v-tkCartesianSeries :items="items" :stackMode="stackMode" categoryProperty="Country" valueProperty="Amount"></BarSeries>
-        <BarSeries v-tkCartesianSeries :items="items" :stackMode="stackMode" categoryProperty="Country" valueProperty="Amount"></BarSeries>
-      </RadCartesianChart>
-    </StackLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      items: getCountriesData(),
-      stackMode: ChartSeriesStackMode.Stack,
-    };
-  },
-  methods: {
-    onStack100ModeSelected () {
-      this.stackMode = ChartSeriesStackMode.Stack100;
-    },
-    onStackModeSelected () {
-      this.stackMode = ChartSeriesStackMode.Stack;
-    },
-    onNoneStackModeSelected () {
-      this.stackMode = ChartSeriesStackMode.None;
-    },
-  }
-};
-```
+<snippet id='chart-stacked-bar-series-vue'/>
 
 The final result is shown in the two images (android and ios) below.
 

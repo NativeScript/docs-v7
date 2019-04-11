@@ -19,42 +19,4 @@ publish: true
 
 To change the view mode of {% typedoc_link classes:RadCalendar %} you should use its {% typedoc_link classes:RadCalendar,member:viewMode %} property and set it to one of the aforementioned values.
 
-```
-import { CalendarViewMode } from 'nativescript-ui-calendar';
-
-export default {
-  name: 'ViewModes',
-  description: description,
-  template: `
-  <Page>
-    <StackLayout>
-      <RadCalendar
-        :viewMode="viewMode">
-      </RadCalendar>
-    </StackLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      viewMode: CalendarViewMode.Month,
-    };
-  },
-  methods: {
-    onWeekTap() {
-      this.viewMode = CalendarViewMode.Week;
-    },
-    onMonthTap() {
-      this.viewMode = CalendarViewMode.Month;
-    },
-    onMonthNamesTap() {
-      this.viewMode = CalendarViewMode.MonthNames;
-    },
-    onYearTap() {
-      this.viewMode = CalendarViewMode.Year;
-    },
-    onDayTap() {
-      this.viewMode = CalendarViewMode.Day;
-    },
-  },
-};
-```
+<snippet id='calendar-viewmodes-vue'/>

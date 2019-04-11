@@ -21,23 +21,8 @@ tns plugin add nativescript-ui-calendar
 ## Adding a RadCalendar to Your Template
 Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUICalendarModule %} from the *nativescript-ui-calendar* plugin has been imported in the main JS in your app with the following sentences:
 
-```
-import Vue from 'nativescript-vue';
-import RadCalendarPlugin from 'nativescript-ui-calendar/vue';
-
-Vue.use(RadCalendarPlugin);
-
-...
-```
+<snippet id='calendar-import-vue'/>
 
 To add a {% typedoc_link classes:RadCalendar %} in an Vue template you need to use `<RadCalendar></RadCalendar>` tag. The following code snippet demonstrates how to display a {% typedoc_link classes:RadCalendar %} in your application:
 
-```
-export default {
-  template: `
-  <Page>
-    <RadCalendar></RadCalendar>
-  </Page>
-  `,
-};
-```
+<snippet id='calendar-gettingstarted-vue'/>

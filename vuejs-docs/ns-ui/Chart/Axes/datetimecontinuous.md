@@ -23,55 +23,9 @@ parses back the string to a native Android or iOS object. This call to stringify
 
 See this example:
 
-```
-const getDateTimeData = () => {
-  return new ObservableArray([
-      { TimeStamp: new Date(2015, 1, 11).getTime(), Amount: 10 },
-      { TimeStamp: new Date(2015, 2, 11).getTime(), Amount: 10 },
-      { TimeStamp: new Date(2015, 3, 1).getTime(), Amount: 1 },
-      { TimeStamp: new Date(2015, 4, 3).getTime(), Amount: 3 },
-      { TimeStamp: new Date(2015, 5, 11).getTime(), Amount: 18 },
-      { TimeStamp: new Date(2015, 6, 1).getTime(), Amount: 7 },
-      { TimeStamp: new Date(2015, 7, 3).getTime(), Amount: 5 },
-      { TimeStamp: new Date(2015, 8, 11).getTime(), Amount: 4 },
-      { TimeStamp: new Date(2015, 9, 1).getTime(), Amount: 2 },
-      { TimeStamp: new Date(2015, 10, 3).getTime(), Amount: 6 },
-  ]);
-};
+<snippet id='chart-datetimecontinuous-data-vue'/>
 
-export default {
-  template: `
-  <Page>
-    <ActionBar :title="title">
-      <NavigationButton text="Back" android.systemIcon="ic_menu_back" @tap="onNavigationButtonTap"></NavigationButton>
-    </ActionBar>
-    <RadCartesianChart>
-      <DateTimeContinuousAxis v-tkCartesianHorizontalAxis
-                              minimum="01/02/2015"
-                              maximum="01/10/2015"
-                              majorStep="Month"
-                              dateFormat="MMM-dd"
-                              labelFitMode="Rotate"
-                              labelRotationAngle="1.2">
-      </DateTimeContinuousAxis>
-
-      <LinearAxis v-tkCartesianVerticalAxis></LinearAxis>
-      <LineSeries v-tkCartesianSeries
-                  categoryProperty="TimeStamp"
-                  valueProperty="Amount"
-                  :items="items">
-      </LineSeries>
-
-    </RadCartesianChart>
-  </Page>
-  `,
-  data () {
-    return {
-      items: getDateTimeData(),
-    };
-  },
-};
-```
+<snippet id='chart-datetimecontinuous-vue'/>
 
 ## Features
 

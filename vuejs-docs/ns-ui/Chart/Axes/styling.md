@@ -28,34 +28,7 @@ For the properties not specified exclusively the default values from the chart p
 
 To better illustrate the usage of Axis properties, we will use a simple scenario in which the Axes are customized:
 
-```
-import { getCountriesData } from '../data';
-
-export default {
-  template: `
-  <Page>
-    <StackLayout>
-      <RadCartesianChart>
-        <LinearAxis v-tkCartesianHorizontalAxis labelTextColor="Green"></LinearAxis>
-        <CategoricalAxis v-tkCartesianVerticalAxis
-                         labelTextColor="#cb4b16" labelSize="10"
-                         lineThickness="3" lineColor="Red"></CategoricalAxis>
-        <BarSeries v-tkCartesianSeries
-                   :items="items"
-                   categoryProperty="Country"
-                   valueProperty="Amount"
-                   :items="items" />
-      </RadCartesianChart>
-    </StackLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      items: getCountriesData(),
-    };
-  }
-};
-```
+<snippet id='chart-styling-axes-vue'/>
 
 This is how the chart looks like now:
 ![Axis styling](../../../../ui/img/ns_ui/axis_styling_android.png "Android") ![Axis styling](../../../../ui/img/ns_ui/axis_styling_ios.png "iOS")

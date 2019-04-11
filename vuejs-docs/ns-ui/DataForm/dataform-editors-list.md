@@ -174,58 +174,7 @@ This editor also uses a predefined list with values, but they are not the only a
 
 #### Example 1: Use the AutoCompletInline editor in Plain and in Token modes
 
-```
-import { AutoCompleteDisplayMode, DataFormEditorType, DataFormValidationMode, DataFormCommitMode } from 'nativescript-ui-dataform'
-
-export default {
-  template: `
-  <Page>
-    <StackLayout>
-      <RadDataForm
-        :source="booking"
-        :metadata="bookingMetadata">
-      </RadDataForm>
-    </StackLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      booking: {
-        'from': '',
-        'to': '',
-      },
-      bookingMetadata: {
-        'isReadOnly': false,
-        'commitMode': DataFormCommitMode.Immediate,
-        'validationMode': DataFormValidationMode.Immediate,
-        'propertyAnnotations':
-        [
-          {
-            'name': 'from',
-            'displayName': 'From:',
-            'index': 0,
-            'editor': DataFormEditorType.AutoCompleteInline,
-            'editorParams': {
-              'autoCompleteDisplayMode': AutoCompleteDisplayMode.Tokens
-            },
-            'valuesProvider': ['Barcelona', 'London', 'Rome'],
-          },
-          {
-            'name': 'to',
-            'displayName': 'To:',
-            'index': 1,
-            'editor': DataFormEditorType.AutoCompleteInline,
-            'editorParams': {
-              'autoCompleteDisplayMode': AutoCompleteDisplayMode.Plain
-            },
-            'valuesProvider': ['New York', 'Washington', 'Los Angeles'],
-          },
-        ]
-      }
-    };
-  }
-};
-```
+<snippet id='dataform-autocomplete-vue'/>
 
 #### Figure 17: AutoCompleteInline editor in Plain mode on Android (left) and iOS (right)
 

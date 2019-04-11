@@ -22,21 +22,7 @@ To define a trackball on your {% typedoc_link classes:RadCartesianChart %} you n
 
 #### Example 2: A Cartesian Chart with a Trackball defined on it:
 
-```
-  <RadCartesianChart>
-    <DateTimeCategoricalAxis v-tkCartesianHorizontalAxis dateFormat="yyyy-MM-dd" verticalLocation="Bottom"></DateTimeCategoricalAxis>
-    <LinearAxis v-tkCartesianVerticalAxis></LinearAxis>
-    <Trackball v-tkCartesianTrackball></Trackball>
-    <CandlestickSeries v-tkCartesianSeries
-                       categoryProperty="Date"
-                       openPropertyName="Open"
-                       highPropertyName="High"
-                       lowPropertyName="Low"
-                       closePropertyName="Close"
-                       :items="items">
-    </CandlestickSeries>
-  </RadCartesianChart>
-```
+<snippet id='chart-trackball-vue'/>
 
 Depending on your current setup, the trackball will display information about the datapoints within the chart in a different manner. For example, in a {% typedoc_link classes:RangeBarSeries %} the trackball will display the range values alongside with the current category value. In a {% typedoc_link classes:OhlcSeries %} or {% typedoc_link classes:CandlestickSeries %} the trackball will display the Open, High, Low and Close values alongside with the current category value. Here's an example:
 

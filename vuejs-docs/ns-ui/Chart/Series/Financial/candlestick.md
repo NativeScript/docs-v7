@@ -21,18 +21,7 @@ Just like with all vue 'pages' let's start with the `Component` in which we will
 
 Before that, we would create a basic JS or TS module that contains a collection of objects, which will be used by the chart to provide intuitive data visualization.
 
-```
-import { ObservableArray } from 'tns-core-modules/data/observable-array';
-
-export const getFinancialData = () => {
-  return new ObservableArray([
-    { Date: '01/6/2015', Open: 100, Close: 85, Low: 50, High: 139 },
-    { Date: '27/7/2015', Open: 60, Close: 150, Low: 40, High: 159 },
-    { Date: '18/8/2015', Open: 120, Close: 81, Low: 45, High: 141 },
-    { Date: '19/9/2015', Open: 105, Close: 200, Low: 55, High: 250 }
-  ]);
-};
-```
+<snippet id='chart-get-financial-data'/>
 
 All that is left is to declare the template of the vue component in which we:
 
@@ -41,33 +30,6 @@ All that is left is to declare the template of the vue component in which we:
 - After that set the **`tkCartesianHorizontalAxis`** and **`tkCartesianVerticalAxis`** directive to the axes
 - Finally declare a {% typedoc_link classes:CandlestickSeries %} instance to it, bind the {% typedoc_link classes:CandlestickSeries,member:items%} to the source of data and set the **`tkCartesianSeries`** directive
 
-```
-import { getFinancialData } from '../data';
-
-export default {
-  template: `
-  <Page>
-    <RadCartesianChart>
-      <CandleStickSeries v-tkCartesianSeries
-                          categoryProperty="Date"
-                          openPropertyName="Open"
-                          closePropertyName="Close"
-                          highPropertyName="High"
-                          lowPropertyName="Low"
-                          :items="items" />
-      <DateTimeCategoricalAxis v-tkCartesianHorizontalAxis
-                               dateFormat="yyyy-MM-dd"
-                               verticalLocation="Bottom"></DateTimeCategoricalAxis>
-      <LinearAxis v-tkCartesianVerticalAxis></LinearAxis>
-    </RadCartesianChart>
-  </Page>
-  `,
-  data () {
-    return {
-      items: getFinancialData()
-    };
-  },
-};
-```
+<snippet id='chart-candlestick-vue'/>
 
 ![Cartesian chart: Scatter Bubble series](../../../../../ui/img/ns_ui/candlestick_series_android.png " Scatter Bubble series on Android.") ![Cartesian chart: Scatter Bubble series](../../../../../ui/img/ns_ui/candlestick_series_ios.png "Scatter Bubble series on iOS.")

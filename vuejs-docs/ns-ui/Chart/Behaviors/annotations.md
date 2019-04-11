@@ -44,22 +44,7 @@ The {% typedoc_link classes:ChartGridLineAnnotation %} represents a vertical or 
 ### Example
 Here is an example that demonstrates how to define three horizontal one vertical grid line annotations assigned to bar series of the chart.  Different set of options determines the visual state and position of annotations and one of the annotations is hidden.
 
-```
-  <ChartGridLineAnnotation v-tkCartesianAnnotations axisId="hAxis"
-                           hidden="false" value="50" zPosition="AboveSeries"
-                           strokeWidth="1" strokeColor="#EB916580"></ChartGridLineAnnotation>
-  <ChartGridLineAnnotation v-tkCartesianAnnotations axisId="vAxis"
-                           hidden="false" value="10000" zPosition="AboveSeries"
-                           strokeWidth="1" strokeColor="#65BFEB80"></ChartGridLineAnnotation>
-  <ChartPlotBandAnnotation v-tkCartesianAnnotations axisId="hAxis"
-                           hidden="false" value="20" zPosition="AboveSeries"
-                           minValue="60" maxValue="70" fillColor="#A1FAC980"
-                           strokeColor="#A1FAC980"></ChartPlotBandAnnotation>
-  <ChartPlotBandAnnotation v-tkCartesianAnnotations axisId="vAxis"
-                           hidden="false" value="20000" zPosition="AboveSeries"
-                           minValue="2500" maxValue="5000" fillColor="#AC74E880"
-                           strokeColor="#AC74E880"></ChartPlotBandAnnotation>
-```
+<snippet id='chart-plotband-annotation-vue'/>
 
 This will produce a page showing a Chart with annotations that will look like:
 
@@ -81,12 +66,7 @@ There are two additional values that need to be provided along with {% typedoc_l
 ### Example
 Here is an example that demonstrates how to define three horizontal one vertical grid line annotations assigned to bar series of the chart.  Different set of options determines the visual state and position of annotations and one of the annotations is hidden.
 
-```
-    <ChartPlotBandAnnotation v-tkCartesianAnnotations axisId="verBarAxis"
-                             minValue="2" maxValue="4" zPosition="AboveSeries"
-                             strokeWidth="2" fillColor="#DDFFFF00" strokeColor="Red"
-                             strokeDashPattern="3,3,5,5"></ChartPlotBandAnnotation>
-```
+<snippet id='chart-gridline-annotation-vue'/>
 
 This will produce a page showing a Chart with annotations that will look like:
 

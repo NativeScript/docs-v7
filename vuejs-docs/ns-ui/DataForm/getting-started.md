@@ -33,12 +33,7 @@ tns plugin add nativescript-ui-dataform
 
 Add this to the main Javascript or Typescript file, usually called `main.js` or `main.ts`:
 
-```
-import RadDataFormPlugin from 'nativescript-ui-dataform/vue';
-
-Vue.use(RadDataFormPlugin);
-...
-```
+<snippet id='dataform-imports-vue'/>
 
 ## Add RadDataForm to the Page
 Before proceeding, make sure that the `nativescript-ui-dataform/vue` module is required inside your application. This module handles the registration of the custom directives and elements required by [nativescript-vue](https://nativescript-vue.org/).
@@ -53,31 +48,7 @@ Note the [data binding](https://nativescript-vue.org/en/docs/introduction/#why-w
 
 See the following minimalist example:
 
-```
-export default {
-  template: `
-  <Page>
-    <StackLayout>
-      <RadDataForm
-        :source="person">
-      </RadDataForm>
-    </StackLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      person: {
-        name: 'John',
-        age: 23,
-        email: 'john@company.com',
-        city: 'New York',
-        street: '5th Avenue',
-        streetNumber: 11,
-      }
-    };
-  }
-};
-```
+<snippet id='dataform-getting-started-vue'/>
 
 If you run the application now, you should see the default editor for each property of the provided source object.
 

@@ -21,47 +21,11 @@ tns plugin add nativescript-ui-chart
 ## Adding a RadCartesianChart to Your Component's template
 Before proceeding, make sure that the `nativescript-ui-chart/vue` plugin is instaled in your main application file (usually `main.js` or `main.ts`). This plugin handles the registration of the custom directives and elements required by [nativescript-vue](https://nativescript-vue.org/).
 
-```
-import Vue from 'nativescript-vue';
-import RadChartPlugin from 'nativescript-ui-chart/vue';
-
-Vue.use(RadChartPlugin);
-```
+<snippet id='chart-imports-vue'/>
 
 Now, you can use all the chart components and directives, as the `RadCartesianChart`, `RadPieChart`, etc. Look at this example component:
 
-```
-export const getCountriesData = () => {
-  return new ObservableArray([
-    { Country: 'Germany', Amount: 15 },
-    { Country: 'France', Amount: 13 },
-    { Country: 'Bulgaria', Amount: 24 },
-    { Country: 'Spain', Amount: 11 },
-    { Country: 'USA', Amount: 18 }
-  ])
-};
-
-export default {
-  template: `
-  <Page>
-    <RadCartesianChart>
-      <LineSeries v-tkCartesianSeries
-                  categoryProperty="Country"
-                  valueProperty="Amount"
-                  :items="items" />
-      <CategoricalAxis v-tkCartesianHorizontalAxis />
-      <LinearAxis v-tkCartesianVerticalAxis />
-    </RadCartesianChart>
-  </Page>
-  `,
-  data () {
-    return {
-      items: getCountriesData(),
-    };
-  }
-};
-
-```
+<snippet id='chart-getting-started-vue'/>
 
 This will produce a page showing a Chart that will look like:
 

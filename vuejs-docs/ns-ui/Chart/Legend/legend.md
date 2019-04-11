@@ -32,70 +32,7 @@ The {% typedoc_link classes:RadChartBase,member:legend %} property expects an in
 
 Here's a full example of a chart with a legend set on it:
 
-```
-import { getCountriesData } from '../data';
-
-export default {
-  template: `
-  <Page>
-    <StackLayout>
-      <RadCartesianChart seriesSelectionMode="Single">
-        <CategoricalAxis v-tkCartesianHorizontalAxis></CategoricalAxis>
-        <LinearAxis v-tkCartesianVerticalAxis maximum="50"></LinearAxis>
-
-        <BarSeries v-tkCartesianSeries
-                   seriesName="Bar"
-                   legendTitle="Bar series"
-                   categoryProperty="Country"
-                   valueProperty="ThirdVal"
-                   legendLabel="Series type"
-                   :items="items">
-        </BarSeries>
-
-        <LineSeries v-tkCartesianSeries
-                    seriesName="Line"
-                    legendTitle="Line series"
-                    categoryProperty="Country"
-                    valueProperty="Amount"
-                    legendLabel="Series type"
-                    :items="items">
-        </LineSeries>
-
-        <AreaSeries v-tkCartesianSeries
-                    seriesName="Area"
-                    legendTitle="Area series"
-                    categoryProperty="Country"
-                    valueProperty="SecondVal"
-                    legendLabel="Series type"
-                    :items="items">
-        </AreaSeries>
-
-        <RadLegendView v-tkCartesianLegend position="Top" title="Series type"
-                       height="150" enableSelection="true"></RadLegendView>
-
-        <Palette v-tkCartesianPalette seriesName="Bar">
-          <PaletteEntry v-tkCartesianPaletteEntry fillColor="#ff6699" strokeColor="#ff6699"></PaletteEntry>
-        </Palette>
-
-        <Palette v-tkCartesianPalette seriesName="Line">
-          <PaletteEntry v-tkCartesianPaletteEntry fillColor="#4d88ff" strokeColor="#4d88ff"></PaletteEntry>
-        </Palette>
-
-        <Palette v-tkCartesianPalette seriesName="Area">
-          <PaletteEntry v-tkCartesianPaletteEntry fillColor="#8033cc33" strokeColor="#33cc33"></PaletteEntry>
-        </Palette>
-
-      </RadCartesianChart>
-    </StackLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      items: getCountriesData(),
-    };
-  },
-};
-```
+<snippet id='chart-legend-vue'/>
 
 The following images demonstrate how this setup looks like in a running application:
 

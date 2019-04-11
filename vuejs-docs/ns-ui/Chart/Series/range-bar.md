@@ -16,18 +16,7 @@ Just like with all vue 'pages' let's start with the `Component` in which we will
 
 Before that, we would create a basic JS or TS module that contains a collection of objects, which will be used by the chart to provide intuitive data visualization.
 
-```
-import { ObservableArray } from 'tns-core-modules/data/observable-array';
-
-export const getRangeBarData = () => {
-  return new ObservableArray([
-    { Name: 'Groceries', High: 30, Low: 12, Sales: 0, Margin: 0 },
-    { Name: 'Tools', High: 135, Low: 124, Sales: 0, Margin: 0 },
-    { Name: 'Electronics', High: 55, Low: 12, Sales: 0, Margin: 0 },
-    { Name: 'Gardening', High: 50, Low: 29, Sales: 0, Margin: 0 }
-  ]);
-};
-```
+<snippet id='chart-get-range-bar-data-vue'/>
 
 All that is left is to declare the template of the vue component in which we:
 
@@ -36,35 +25,7 @@ All that is left is to declare the template of the vue component in which we:
 - After that set the **`tkCartesianHorizontalAxis`** and **`tkCartesianVerticalAxis`** directive to the axes
 - Finally declare a {% typedoc_link classes:RangeBarSeries %} instance to it, bind the {% typedoc_link classes:RangeBarSeries,member:items%} to the source of data and set the **`tkCartesianSeries`** directive
 
-```
-import { getRangeBarData } from '../../data';
-
-export default {
-  name: 'RangeBarSeriesExample',
-  template: `
-  <Page>
-    <StackLayout>
-      <RadCartesianChart>
-        <RangeBarSeries v-tkCartesianSeries
-                        showLabels="true"
-                        legendTitle="Ranges"
-                        categoryProperty="Name"
-                        lowPropertyName="Low"
-                        highPropertyName="High"
-                        :items="items" />
-        <CategoricalAxis v-tkCartesianHorizontalAxis />
-        <LinearAxis v-tkCartesianVerticalAxis />
-      </RadCartesianChart>
-    </StackLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      items: getRangeBarData(),
-    };
-  }
-};
-```
+<snippet id='chart-range-bar-vue'/>
 
 Depending on the required Bar orientation, you can swap the axes' position and assign the {% typedoc_link classes:CategoricalAxis %} to the {% typedoc_link classes:RadCartesianChart,member:horizontalAxis%} property and the Linear to the {% typedoc_link classes:RadCartesianChart,member:verticalAxis%} property. This will change the orientation of the bars to vertical.
 

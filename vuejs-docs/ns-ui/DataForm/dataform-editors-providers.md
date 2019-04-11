@@ -29,46 +29,7 @@ You can pass your list as a simple `Array`.
 
 #### Example 3: Value Provider from a simple array of values
 
-```
-import { AutoCompleteDisplayMode, DataFormEditorType, DataFormValidationMode, DataFormCommitMode } from 'nativescript-ui-dataform'
-
-export default {
-  template: `
-  <Page>
-    <StackLayout>
-      <RadDataForm
-        :source="booking"
-        :metadata="bookingMetadata">
-      </RadDataForm>
-    </StackLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      title: description,
-      booking: {
-        'to': '',
-      },
-      bookingMetadata: {
-        'isReadOnly': false,
-        'commitMode': DataFormCommitMode.Immediate,
-        'validationMode': DataFormValidationMode.Immediate,
-        'propertyAnnotations':
-        [
-          {
-            'name': 'to',
-            'displayName': 'To:',
-            'index': 1,
-            'editor': DataFormEditorType.AutoCompleteInline,,
-            'autoCompleteDisplayMode': AutoCompleteDisplayMode.Plain,
-            'valuesProvider': ['New York', 'Washington', 'Los Angeles'],
-          },
-        ]
-      }
-    };
-  },
-};
-```
+<snippet id='dataform-autocomplete-vue'/>
 
 ## Map with Values and the Labels for Them
 

@@ -16,19 +16,7 @@ Just like with all vue 'pages' let's start with the `Component` in which we will
 
 Before that, we would create a basic JS or TS module that contains a collection of objects, which will be used by the chart to provide intuitive data visualization.
 
-```
-import { ObservableArray } from 'tns-core-modules/data/observable-array';
-
-export const getCountriesData = () => {
-  return new ObservableArray([
-    { Country: 'Germany', Amount: 15, SecondVal: 14, ThirdVal: 24, Impact: 0, Year: 0 },
-    { Country: 'France', Amount: 13, SecondVal: 23, ThirdVal: 25, Impact: 0, Year: 0 },
-    { Country: 'Bulgaria', Amount: 24, SecondVal: 17, ThirdVal: 23, Impact: 0, Year: 0 },
-    { Country: 'Spain', Amount: 11, SecondVal: 19, ThirdVal: 24, Impact: 0, Year: 0 },
-    { Country: 'USA', Amount: 18, SecondVal: 8, ThirdVal: 21, Impact: 0, Year: 0 }
-  ]);
-};
-```
+<snippet id='chart-get-countries-data-vue'/>
 
 All that is left is to declare the template of the vue component in which we:
 
@@ -37,28 +25,6 @@ All that is left is to declare the template of the vue component in which we:
 - After that set the **`tkCartesianHorizontalAxis`** and **`tkCartesianVerticalAxis`** directive to the axes
 - Finally declare a {% typedoc_link classes:SplineAreaSeries %} instance to it, bind the {% typedoc_link classes:SplineAreaSeries,member:items%} to the source of data and set the **`tkCartesianSeries`** directive
 
-```
-import { getCountriesData } from '../../data';
-
-export default {
-  template: `
-  <Page>
-    <RadCartesianChart>
-      <SplineAreaSeries v-tkCartesianSeries
-                        categoryProperty="Country"
-                        valueProperty="Amount"
-                        :items="items" />
-      <CategoricalAxis v-tkCartesianHorizontalAxis />
-      <LinearAxis v-tkCartesianVerticalAxis />
-    </RadCartesianChart>
-  </Page>
-  `,
-  data () {
-    return {
-      items: getCountriesData(),
-    };
-  }
-};
-```
+<snippet id='chart-spline-area-series'/>
 
 ![Cartesian chart: Spline series](../../../../ui/img/ns_ui/chart_series_spline_area_android.png "Spline Area series on Android.") ![Cartesian chart: Spline Area series](../../../../ui/img/ns_ui/chart_series_spline_area_ios.png "Spline series on iOS.")
