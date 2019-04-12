@@ -39,7 +39,86 @@ You can declare the validators in the JSON Metadata through the `validators` key
 
 You can choose when the validation of the changes happens by changing the data form's {% typedoc_link classes:RadDataForm,member:validationMode %} property.
 
-<snippet id='dataform-validation-modes-vue'/>
+```
+import { DataFormValidationMode } from 'nativescript-ui-dataform';
+
+export default {
+  template: `
+  <Page>
+    <ActionBar>
+      <ActionItem text="Immediate" android.position="popup" @tap="onImmediateTap"></ActionItem>
+      <ActionItem text="OnLostFocus" android.position="popup" @tap="onOnLostFocusTap"></ActionItem>
+      <ActionItem text="Manual" android.position="popup" @tap="onManualTap"></ActionItem>
+    </ActionBar>
+    <StackLayout>
+      <RadDataForm
+        ref="dataform"
+        :source="person"
+        :metadata="personMetadata"
+        :validationMode="validationMode"
+        commitMode="Manual">
+      </RadDataForm>
+      <Button
+        text="Validate manually"
+        horizontalAlignment="stretch"
+        @tap="onValidateTap()"></Button>
+    </StackLayout>
+  </Page>
+  `,
+  data () {
+    return {
+      text: '',
+      validationMode: DataFormValidationMode.Immediate,
+      person: {
+        username: '',
+        password: '',
+      },
+      personMetadata: {
+        'isReadOnly': false,
+        'propertyAnnotations':
+        [
+          {
+            'name': 'username',
+            'displayName': 'Nick',
+            'index': 0,
+            'validators': [
+              { 'name': 'NonEmpty' },
+              { 'name': 'MaximumLength', 'params': { 'length': 10 } }
+            ]
+          },
+          {
+            'name': 'password',
+            'displayName': 'Password',
+            'index': 2,
+            'validators': [
+              {
+                'name': 'NonEmpty',
+              }
+            ]
+          },
+        ]
+      }
+    };
+  },
+  methods: {
+    onImmediateTap() {
+      this.validationMode = DataFormValidationMode.Immediate;
+    },
+    onOnLostFocusTap() {
+      this.validationMode = DataFormValidationMode.OnLostFocus;
+    },
+    onManualTap() {
+      this.validationMode = DataFormValidationMode.Manual;
+    },
+    onValidateTap() {
+      this.$refs.dataform.validateAll()
+        .then(result => {
+          console.log(`Validation result: ${result}`);
+        });
+    },
+  }
+};
+```
 
 You can read more about the different modes in [this article]({% slug dataform-validation-modes-angular %} "RadDataForm validation modes").
 
