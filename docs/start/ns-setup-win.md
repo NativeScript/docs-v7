@@ -61,24 +61,7 @@ Complete the following steps to set up NativeScript on your Windows development 
     <pre class="add-copy-button"><code class="language-terminal">"%ANDROID_HOME%\tools\bin\sdkmanager" "emulator" "platform-tools" "platforms;android-28" "build-tools;28.0.3" "extras;android;m2repository" "extras;google;m2repository"
     </code></pre>
 
-7. Install Android virtual devices (AVDs). There are multiple ways to do it so just choose one:
-    
-    a. Execute the following command in Command Prompt as Administrator:
-        <pre class="add-copy-button"><code class="language-terminal">@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://nativescript.org/setup/win-avd'))"</code></pre>
-
-    b. Use [Android Studio](https://developer.android.com/studio/index.html) and [install Android virtual devices (AVDs)](https://developer.android.com/studio/run/managing-avds.html) from there:
-        
-    * Install the Android Studio by running the following command in the command prompt as Administrator:
-
-        <pre class="add-copy-button"><code class="language-terminal">choco install androidstudio -y</code></pre>
-
-    * Restart the command prompt.
-    * Open Android Studio
-        > NOTE: If you see a gradle error like "Failed to find Build Tools revision 25.0.2", make sure to click on the install link and fix this error. Otherwise Tools->Android->AVD Manager might not be available.
-    * Go to [Create and Manage Virtual Devices](https://developer.android.com/studio/run/managing-avds.html) 
-    * Follow the steps to create and start AVD with enabled HAXM.
-    
-    c. Alternatively a [Visual Studio Emulator for Android](https://www.visualstudio.com/vs/msft-android-emulator/) can be used but have in mind it requires Windows 8+. 
+7. Setup Android Emulators (AVD) by following the article [here]({%slug android-emulators%})
 
 8. Install the NativeScript CLI.
     - Run the following command.
