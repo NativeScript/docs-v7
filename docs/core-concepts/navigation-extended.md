@@ -82,7 +82,7 @@ Frame > LoginPage > MainPage (>> TabView (>>> Frames) )
 {% endnativescript %}
 
 {% angular %}
-[Playground Demo Angular]()
+[Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=HzFEFL)
 {% endangular %}
 
 ## Nesting Forward in Lateral Navigation (5)
@@ -97,7 +97,7 @@ TabView > Frames >> Pages
 {% endnativescript %}
 
 {% angular %}
-[Playground Demo Angular]()
+[Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=0qyGbe)
 {% endangular %}
 
 ## Nesting Lateral in Lateral (6)
@@ -110,14 +110,12 @@ TabView in a TabView (bottom/top).
 [Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=soFhmN&v=6) (in progress)
 TabView > TabView (>> Frames | Pages) + Pages (>> Frames)
 
-
-> **TODO** The Second TabView is not appearing on iOS
 > **TODO** Check if `tabTextFontSize` works for iOS
 > **TODO** iosOverflowSafeArea="false" for the nested TaBvIEW
 {% endnativescript %}
 
 {% angular %}
-[Playground Demo Angular]()
+[Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=ObeDAp)
 {% endangular %}
 
 
