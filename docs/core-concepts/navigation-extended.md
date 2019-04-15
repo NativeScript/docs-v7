@@ -11,25 +11,33 @@ environment: nativescript
 ## Nesting Simple Forward Navigation (1)
 
 {% nativescript %}
-![navigation-schema-backward](../img/navigation-extended/navigation-examples-page-1.png?raw=true)
+![nested-forward-navigation](../img/navigation-extended/navigation-examples-page-1.png?raw=true)
 
-Simple forward navigation nesting - nesting a Frame in a Layout, for example to show an ad banner on top/bottom.
+Example for nesting simple forward navigation: a `Frame` in a layout, for example to show an advertisment banner on top/bottom.
 
-[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=65Uk0F)
+```
 GridLayout  
     > Frame (forward navigation)
         >> Pages
     > Another Layout
+```
+
+Code: [Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=65Uk0F)
 {% endnativescript %}
 
 {% angular %}
-[Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=O9Hbts)
+![nested-forward-navigation](../img/navigation-extended/ng-navigation-examples-page-1.png?raw=true)
+
+Example for nesting simple forward navigation: A `page-router-outlet` (mentioned in this article also as *P-R-O*) in a layout, for example to show an advertisment banner on top/bottom.
+
 ```
 GridLayout  
     > P-R-O (forward navigation)
         >> Components
     > Another Layout (static place)
 ```
+
+Code: [Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=O9Hbts)
 {% endangular %}
 
 ## Nesting Simple Lateral Navigation (2)
@@ -37,18 +45,28 @@ GridLayout
 {% nativescript %}
 ![navigation-schema-backward](../img/navigation-extended/navigation-examples-page-2.png?raw=true)
 
-Simple lateral navigation nesting - nesting a TabView in a Layout, for example to show an ad banner on top/bottom.
-
-[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=IeOEzc)
+Example for nesting simple lateral navigation: a TabView in a layoutt, for example to show an advertisment banner on top/bottom.
 ```
 GridLayout  
     > TabView (lateral navigation)
         >> Pages | Layouts
     > Another Layout (static place)
 ```
+
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=IeOEzc)
+
 {% endnativescript %}
 
 {% angular %}
+![nested-lateral-navigation](../img/navigation-extended/ng-navigation-examples-page-2.png?raw=true)
+
+Example for nesting simple lateral navigation: a TabView in a layoutt, for example to show an advertisment banner on top/bottom.
+```
+GridLayout  
+    > TabView (lateral navigation)
+        >> Layouts | P-R-Os
+    > Another Layout (static place)
+```
 [Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=hBdlPB)
 {% endangular %}
 
