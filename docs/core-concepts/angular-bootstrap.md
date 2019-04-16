@@ -14,7 +14,7 @@ This article will cover in detail the process of bootstrapping an Angular applic
 
 ## The Bootstrap Process
 
-A traditional NativeScript application starts by initializing global objects, setting up global CSS rules, creating, and navigating to the main page. Angular does not care about any of that -- all it needs is a place in the DOM to attach to. Of course, Angular applications need to take care of their own initialization: modules, components, directives, routes, DI providers. A NativeScript Angular app needs to make both paradigms work together, so we provide a wrapper platform object, `nativeScriptPlatformDynamic`, that sets up a NativeScript application and can bootstrap the Angular framework in a default location on the main UI page.
+A traditional NativeScript application starts by initializing global objects, setting up global CSS rules, creating, and navigating to the main page. Angular does not care about any of that -- all it needs is a place in the DOM to attach to. Of course, Angular applications need to take care of their own initialization: modules, components, directives, routes, DI providers. A NativeScript Angular app needs to make both paradigms work together, so we provide a wrapper platform object, `platformNativeScriptDynamic`, that sets up a NativeScript application and can bootstrap the Angular framework in a default location on the main UI page.
 
 ```typescript
 platformNativeScriptDynamic().bootstrapModule(AppModule);
