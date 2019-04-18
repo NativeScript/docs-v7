@@ -27,5 +27,5 @@ When you need to take the next step, head to the [NativeScript-Vue documentation
 
 The NativeScript Community Slack is a great place to chat with the NativeScript-Vue team and community. After joining, make sure to check out the #vue channel to connect with NativeScript-Vue users.
 
-<a href="https://developer.telerik.com/wp-login.php?action=slack-invitation" class="ns-button" id="ng-start-button">Join the NativeScript Community Slack</a>
+<a href="https://www.nativescript.org/slack-invitation-form" class="ns-button" id="ng-start-button">Join the NativeScript Community Slack</a>
  
