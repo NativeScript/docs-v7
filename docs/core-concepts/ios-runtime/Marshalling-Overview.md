@@ -186,7 +186,7 @@ var rect = {
 var view = UIView.alloc().initWithFrame(rect);
 ```
 
-More information on how NativeScript deals with structures is available [here](../types/C-Structures.md).
+More information on how NativeScript deals with structures is available [here](./types/C-Structures.md).
 
 ## `NSError **` marshalling
 ### Native to JavaScript
