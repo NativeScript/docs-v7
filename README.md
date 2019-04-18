@@ -12,7 +12,7 @@ Home of the NativeScript documentation content that lives at <http://docs.native
 
 The NativeScript documentation is completely open source and we love contributions. Whether you want to fix a typo, or write an entire article, the NativeScript documentation is a great way to get started contributing to an open source project.
 
-Don’t know where to start? Check out the [list of issues with the “help wanted” label](https://github.com/NativeScript/docs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22). New to git or GitHub? [Join our community Slack chat](http://developer.telerik.com/wp-login.php?action=slack-invitation) and we’ll be happy to help get you up and running.
+Don’t know where to start? Check out the [list of issues with the “help wanted” label](https://github.com/NativeScript/docs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22). New to git or GitHub? [Join our community Slack chat](https://www.nativescript.org/slack-invitation-form) and we’ll be happy to help get you up and running.
 
 The `master` branch contains the most up-to-date version of the NativeScript documentation and its contents are uploaded to [docs.nativescript.org](https://docs.nativescript.org/). When contributing to the documentation, always create a branch for your work from `master` as this will facilitate easier pull request management.
 
