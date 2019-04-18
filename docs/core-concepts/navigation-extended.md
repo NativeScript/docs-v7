@@ -8,12 +8,14 @@ environment: nativescript
 
 # Navigation Examples
 
-## Nesting Simple Forward Navigation (1)
+The main goal of the following article is to demonstrate some good practices for creating nested navigation structure. The article does not aim to be a strict guide, but will help you to understand how you could create complex navigation structures while using forward (e.g., frames or outlets) & lateral navigation (e.g., drawers, tab views, etc.). In each of the article sections, you can find visual guides along with corresponding Playground demos.
+
+## Nesting Simple Forward Navigation
 
 {% nativescript %}
 ![nested-forward-navigation](../img/navigation-extended/navigation-examples-page-1.png?raw=true)
 
-Example for nesting simple forward navigation: a `Frame` in a layout, for example to show an advertisment banner on top/bottom.
+Nesting simple forward navigation: a `Frame` in a layout, for example to show an advertisment banner on top/bottom (static place).
 
 ```
 GridLayout  
@@ -26,9 +28,9 @@ Code: [Playground Demo TypeScript](https://play.nativescript.org/?template=play-
 {% endnativescript %}
 
 {% angular %}
-![nested-forward-navigation](../img/navigation-extended/ng-navigation-examples-page-1.png?raw=true)
+![ng-nested-forward-navigation](../img/navigation-extended/ng-navigation-examples-page-1.png?raw=true)
 
-Example for nesting simple forward navigation: A `page-router-outlet` (mentioned in this article also as *P-R-O*) in a layout, for example to show an advertisment banner on top/bottom.
+Nesting simple forward navigation: A `page-router-outlet` (mentioned in this article also as *P-R-O*) in a layout, for example to show an advertisment banner on top/bottom (static place).
 
 ```
 GridLayout  
@@ -40,12 +42,12 @@ GridLayout
 Code: [Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=O9Hbts)
 {% endangular %}
 
-## Nesting Simple Lateral Navigation (2)
+## Nesting Simple Lateral Navigation
 
 {% nativescript %}
-![navigation-schema-backward](../img/navigation-extended/navigation-examples-page-2.png?raw=true)
+![nested-lateral-navigation](../img/navigation-extended/navigation-examples-page-2.png?raw=true)
 
-Example for nesting simple lateral navigation: a TabView in a layoutt, for example to show an advertisment banner on top/bottom.
+Nesting simple lateral navigation: a TabView in a layoutt, for example to show an advertisment banner on top/bottom.
 ```
 GridLayout  
     > TabView (lateral navigation)
@@ -58,9 +60,9 @@ GridLayout
 {% endnativescript %}
 
 {% angular %}
-![nested-lateral-navigation](../img/navigation-extended/ng-navigation-examples-page-2.png?raw=true)
+![ng-nested-lateral-navigation](../img/navigation-extended/ng-navigation-examples-page-2.png?raw=true)
 
-Example for nesting simple lateral navigation: a TabView in a layoutt, for example to show an advertisment banner on top/bottom.
+Nesting simple lateral navigation: a TabView in a layoutt, for example to show an advertisment banner on top/bottom.
 ```
 GridLayout  
     > TabView (lateral navigation)
@@ -70,36 +72,71 @@ GridLayout
 [Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=hBdlPB)
 {% endangular %}
 
-## Nesting Forward in Forward Navigation (3)
+## Nesting Forward in Forward Navigation
 
 {% nativescript %}
-![navigation-schema-backward](../img/navigation-extended/navigation-examples-page-3.png?raw=true)
+![nested-forward-in-forward-navigation](../img/navigation-extended/navigation-examples-page-3.png?raw=true)
 
 Nesting a Frame inside a Page/Frame, for example a secondary navigation level.
-
+```
+Frame (root forward navigation)
+    > Page (login)
+    > Page (home)
+        >> Frame (secondary forward navigaiton)
+            >>> Page
+```
 [Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=LMV24L) 
-Frame > Page > Page (>> Frame (>>> Page) )
 {% endnativescript %}
 
 {% angular %}
+![ng-nested-forward-in-forward-navigation](../img/navigation-extended/ng-navigation-examples-page-3.png?raw=true)
+
+
+Nesting a P-R-O inside a layout, for example ro create a secondary navigation level.
+
+```
+P-R-O (root forward navigation)
+    > login.component
+    > home.component
+        >> P-R-O (secondary forward navigaiton)
+            >>> featured.component
+            >>> item.component
+```
+
 [Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=VlXzEW)
 {% endangular %}
 
 
-## Nesting Lateral in Forward Navigation (4)
+## Nesting Lateral in Forward Navigation
 
 {% nativescript %}
-![navigation-schema-backward](../img/navigation-extended/navigation-examples-page-4.png?raw=true)
+![navigation-lateral-in-forward](../img/navigation-extended/navigation-examples-page-4.png?raw=true)
 
-Nesting a TabView inside a Page/Frame, for example in a Login -> Page with a TabView scenario.
+Nesting a TabView inside a Page/Frame. Ffor example in a Login page wtih forward navigaiton to a page with a nested TabView.
 
-> **TODO**: Check the browse-page.xml for a specific iOS issue with non-hidden ActionBar on nested Frame.
+```
+Frame 
+    > LoginPage 
+    > MainPage 
+        >> TabView
+```
 
 [Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=1UMjJZ)
-Frame > LoginPage > MainPage (>> TabView (>>> Frames) )
+
 {% endnativescript %}
 
 {% angular %}
+![ng-navigation-lateral-in-forward](../img/navigation-extended/ng-navigation-examples-page-4.png?raw=true)
+
+Nesting a TabView (lateral navigaiton) inside a layout. For example in a Login component wtih forward navigaiton to a component with a nested TabView.
+
+```
+P-R-O (forward navigation)
+    > login.component
+    > home.component
+        >> TabView (lateral navigaiton)
+```
+
 [Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=HzFEFL)
 {% endangular %}
 
