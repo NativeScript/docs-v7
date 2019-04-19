@@ -19,6 +19,10 @@ The easiest place to learn NativeScript-Vue is with the interactive tutorials in
 
 <a href="https://play.nativescript.org" class="ns-button -action" id="ng-start-button">Get Started with NativeScript-Vue</a>
 
+Extend your knowledge of NativeScript-Vue with this [comprehensive workshop](https://nsvue-workshop.netlify.com/) that dives deep into Vue.js concepts and helps you to build a complete app from beginning to end.
+
+<a href="https://nsvue-workshop.netlify.com/" class="ns-button -action" id="ng-start-button">Try the NativeScript-Vue Workshop</a>
+
 When you need to take the next step, head to the [NativeScript-Vue documentation hub](https://nativescript-vue.org/en/docs/introduction/) for information on setting up a local environment, NativeScript-Vue UI components, and more.
 
 <a href="https://nativescript-vue.org/en/docs/introduction/" class="ns-button -action" id="ng-start-button">Visit the NativeScript-Vue documentation</a>
@@ -28,4 +32,4 @@ When you need to take the next step, head to the [NativeScript-Vue documentation
 The NativeScript Community Slack is a great place to chat with the NativeScript-Vue team and community. After joining, make sure to check out the #vue channel to connect with NativeScript-Vue users.
 
 <a href="https://www.nativescript.org/slack-invitation-form" class="ns-button" id="ng-start-button">Join the NativeScript Community Slack</a>
- 
+
