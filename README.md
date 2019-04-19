@@ -78,6 +78,7 @@ git clone https://github.com/NativeScript/nativescript-cli.git
 
 git clone https://github.com/telerik/nativescript-ui-samples.git
 git clone https://github.com/telerik/nativescript-ui-samples-angular.git
+git clone https://github.com/telerik/nativescript-ui-samples-vue.git
 ```
 
 > **NOTE**: `nativescript-ui-...` are private repositories used for building the Api Reference for the NativeScript UI components.  
