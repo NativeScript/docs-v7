@@ -92,3 +92,5 @@ Solution provided by [KristiyanFxy](https://github.com/KristiyanFxy) a member of
 not support SIMD vectors for these 2 architectures. If your app needs to support 32-bit iOS devices and you want to consume such functions you
 must do so from the native part of a plugin in your app. Visit [Building Plugins](./plugins/building-plugins.md) for more information on how to create one.
 
+### Using XCode with alternate linkers
+In order to create metadata for Swift classes the Metadata Generator needs to run between the compilation and linking phase (*appname*-Swift.h is created after the Swift files are compiled). As XCode doesn't provide a Build Phase for such purpose, the *LD* setting is pointing to the *nsld.sh* script which does the necessary work for creating the metadata and then calls the default Clang linker (if *NS_LD* is not set) with the arguments provided. Therefore, **if you need to use an alternate linker yourself, define the *NS_LD* variable instead of LD**.
