@@ -145,13 +145,31 @@ P-R-O (forward navigation)
 {% nativescript %}
 ![navigation-schema-backward](../img/navigation-extended/navigation-examples-page-5.png?raw=true)
 
-TabView with nested Frames - classic scenario
+Root TabView with multiple nested Frames.
+
+```
+TabView (lateral navigation)
+    > Frame (id="featured" defaultPage="featured-page")
+    > Frame (id="browse" defaultPage="browse-page")
+    > Frame (id="search" defaultPage="search-page")
+```
 
 [Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=DrwJ2o)
 TabView > Frames >> Pages
 {% endnativescript %}
 
 {% angular %}
+![ng-navigation-lateral-in-forward](../img/navigation-extended/ng-navigation-examples-page-4.png?raw=true)
+
+Root TabView with multiple nested page router outlets. Each outlet in each tab should be navigated through its unique outlet name.
+
+```
+TabView (lateral navigation)
+    > P-R-O (outlet name: "featured")
+    > P-R-O (outlet name: "browse")
+    > P-R-O (outlet name: "search")
+```
+
 [Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=0qyGbe)
 {% endangular %}
 
