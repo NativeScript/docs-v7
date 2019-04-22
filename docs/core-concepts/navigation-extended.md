@@ -15,8 +15,8 @@ The main goal of the following article is to demonstrate some good practices for
 {% nativescript %}
 ![nested-forward-navigation](../img/navigation-extended/navigation-examples-page-1.png?raw=true)
 
-Nesting simple forward navigation: a `Frame` in a layout, for example to show an advertisment banner on top/bottom (static place).
-
+Nesting simple forward navigation: a `Frame` in a layout, for example, to show an advertisement banner on the top/bottom (static place).
+The root page is using a layout (e.g., a `GridLayout`) as a wrapper for the nested forward navigation (`Frame`) and for the static place (layout).
 ```
 GridLayout  
     > Frame (forward navigation)
@@ -30,8 +30,7 @@ Code: [Playground Demo TypeScript](https://play.nativescript.org/?template=play-
 {% angular %}
 ![ng-nested-forward-navigation](../img/navigation-extended/ng-navigation-examples-page-1.png?raw=true)
 
-Nesting simple forward navigation: A `page-router-outlet` (mentioned in this article also as *P-R-O*) in a layout, for example to show an advertisment banner on top/bottom (static place).
-
+Nesting simple forward navigation: A `page-router-outlet` (mentioned in this article also as *P-R-O*) in a layout, for example, to show an advertisement banner on the top/bottom (static place).
 ```
 GridLayout  
     > P-R-O (forward navigation)
@@ -47,7 +46,7 @@ Code: [Playground Demo Angular](https://play.nativescript.org/?template=play-ng&
 {% nativescript %}
 ![nested-lateral-navigation](../img/navigation-extended/navigation-examples-page-2.png?raw=true)
 
-Nesting simple lateral navigation: a TabView in a layoutt, for example to show an advertisment banner on top/bottom.
+Nesting simple lateral navigation: a TabView in a layout, for example, to show an advertisement banner on the top/bottom.
 ```
 GridLayout  
     > TabView (lateral navigation)
@@ -62,7 +61,7 @@ GridLayout
 {% angular %}
 ![ng-nested-lateral-navigation](../img/navigation-extended/ng-navigation-examples-page-2.png?raw=true)
 
-Nesting simple lateral navigation: a TabView in a layoutt, for example to show an advertisment banner on top/bottom.
+Nesting simple lateral navigation: a TabView in a layout, for example, to show an advertisement banner on the top/bottom.
 ```
 GridLayout  
     > TabView (lateral navigation)
@@ -77,12 +76,12 @@ GridLayout
 {% nativescript %}
 ![nested-forward-in-forward-navigation](../img/navigation-extended/navigation-examples-page-3.png?raw=true)
 
-Nesting a Frame inside a Page/Frame, for example a secondary navigation level.
+Nesting a Frame inside a Page/Frame, for example, a secondary navigation level.
 ```
 Frame (root forward navigation)
     > Page (login)
     > Page (home)
-        >> Frame (secondary forward navigaiton)
+        >> Frame (secondary forward navigation)
             >>> Page
 ```
 [Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=LMV24L) 
@@ -92,13 +91,12 @@ Frame (root forward navigation)
 ![ng-nested-forward-in-forward-navigation](../img/navigation-extended/ng-navigation-examples-page-3.png?raw=true)
 
 
-Nesting a P-R-O inside a layout, for example ro create a secondary navigation level.
-
+Nesting a P-R-O inside a layout, for example, to create a secondary navigation level.
 ```
 P-R-O (root forward navigation)
     > login.component
     > home.component
-        >> P-R-O (secondary forward navigaiton)
+        >> P-R-O (secondary forward navigation)
             >>> featured.component
             >>> item.component
 ```
@@ -112,8 +110,7 @@ P-R-O (root forward navigation)
 {% nativescript %}
 ![navigation-lateral-in-forward](../img/navigation-extended/navigation-examples-page-4.png?raw=true)
 
-Nesting a TabView inside a Page/Frame. Ffor example in a Login page wtih forward navigaiton to a page with a nested TabView.
-
+Nesting a TabView inside a Page/Frame. For example in a Login page with forward navigation to a page with a nested TabView.
 ```
 Frame 
     > LoginPage 
@@ -128,25 +125,23 @@ Frame
 {% angular %}
 ![ng-navigation-lateral-in-forward](../img/navigation-extended/ng-navigation-examples-page-4.png?raw=true)
 
-Nesting a TabView (lateral navigaiton) inside a layout. For example in a Login component wtih forward navigaiton to a component with a nested TabView.
-
+Nesting a TabView (lateral navigation) inside a layout. For example in a Login component with forward navigation to a component with a nested TabView.
 ```
 P-R-O (forward navigation)
     > login.component
     > home.component
-        >> TabView (lateral navigaiton)
+        >> TabView (lateral navigation)
 ```
 
 [Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=HzFEFL)
 {% endangular %}
 
-## Nesting Forward in Lateral Navigation (5)
+## Nesting Forward in Lateral Navigation
 
 {% nativescript %}
-![navigation-schema-backward](../img/navigation-extended/navigation-examples-page-5.png?raw=true)
+![navigation-lateral-in-forward-schema](../img/navigation-extended/navigation-examples-page-5.png?raw=true)
 
 Root TabView with multiple nested Frames.
-
 ```
 TabView (lateral navigation)
     > Frame (id="featured" defaultPage="featured-page")
@@ -159,9 +154,16 @@ TabView > Frames >> Pages
 {% endnativescript %}
 
 {% angular %}
-![ng-navigation-lateral-in-forward](../img/navigation-extended/ng-navigation-examples-page-4.png?raw=true)
+![ng-navigation-lateral-in-forward-schema](../img/navigation-extended/ng-navigation-examples-page-4.png?raw=true)
 
-Root TabView with multiple nested page router outlets. Each outlet in each tab should be navigated through its unique outlet name.
+Example of a root TabView with multiple nested page router outlets. Each outlet in each tab should be navigated through its unique outlet name.
+Notice that in the routing module, you should set a default route for each outlet used within the lateral navigation.
+
+```TypeScript
+// default route example
+{ path: "", redirectTo: "/(featured:featured//browse:browse//search:search)", pathMatch: "full" },
+```
+In the above route, we are setting the **feature** outlet to default to *featured* component, the **browse** outlet to default to *browse* component, and the **search** outlet to default to *search* component.
 
 ```
 TabView (lateral navigation)
@@ -173,21 +175,34 @@ TabView (lateral navigation)
 [Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=0qyGbe)
 {% endangular %}
 
-## Nesting Lateral in Lateral (6)
+## Nesting Lateral in Lateral
 
 {% nativescript %}
-![navigation-schema-backward](../img/navigation-extended/navigation-examples-page-6.png?raw=true)
+![navigation-lateral-in-lateral-schema](../img/navigation-extended/navigation-examples-page-6.png?raw=true)
 
-TabView in a TabView (bottom/top).
+In this example, the root TabView is explicitly set to bottom for Android (by design the tabs are always placed at the bottom on iOS, but on Android, we can change the placement).
+
+```
+TabView (lateral navigation)
+    TabViewItem > TabView (lateral navigation)
+                    >> another content (e.g. layout or Frame)
+    TabViewItem > another content (e.g. layout or Frame)
+    TabViewItem > another content (e.g. layout or Frame)
+```
 
 [Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=soFhmN&v=6) (in progress)
-TabView > TabView (>> Frames | Pages) + Pages (>> Frames)
-
-> **TODO** Check if `tabTextFontSize` works for iOS
-> **TODO** iosOverflowSafeArea="false" for the nested TaBvIEW
 {% endnativescript %}
 
 {% angular %}
+![ng-navigation-lateral-in-lateral-schema](../img/navigation-extended/ng-navigation-examples-page-6.png?raw=true)
+
+```
+TabView (lateral navigation)
+    tabItem > TabView (lateral navigation)
+                >> another content (e.g. layout or P-R-O)
+    tabItem > another content (e.g. layout or P-R-O)
+    tabItem > another content (e.g. layout or P-R-O)
+```
 [Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=ObeDAp)
 {% endangular %}
 
@@ -197,7 +212,7 @@ TabView > TabView (>> Frames | Pages) + Pages (>> Frames)
 {% nativescript %}
 ![navigation-schema-backward](../img/navigation-extended/navigation-examples-page-7.png?raw=true)
 
-Make an example where lots of these are combined. For example, RadSidedrawer + Login leading to a Page with TabView and in one TabView there is another TabView. In another there might be a Frame that has a secondary Frame navigation.
+Make an example where lots of these are combined. For example, RadSidedrawer + Login leading to a Page with TabView and in one TabView there is another TabView. In another, there might be a Frame that has secondary Frame navigation.
 
 [Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=fyNqnr&v=6)
 RadSideDrawer > Frame 
@@ -206,7 +221,3 @@ RadSideDrawer > Frame
 > **TODO** Check if `tabTextFontSize` works for iOS
 > **TODO** iosOverflowSafeArea="false" for the nested TabView
 {% endnativescript %}
-
-{% angular %}
-[Playground Demo Angular]()
-{% endangular %}
