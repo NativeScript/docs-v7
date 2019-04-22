@@ -41,21 +41,9 @@ The event data argument provides information about the event name, the chart tha
 ## Example
 The following example demonstrates how to enable data point selection
 
-```
-  <PieSeries v-tkPieSeries selectionMode="DataPoint"
-             outerRadiusFactor="0.8" expandRadius="0.2"
-             showLabels="true" valueProperty="Sales"
-             :items="items">
-      <PointLabelStyle v-tkPieLabelStyle margin="15"></PointLabelStyle>
-  </PieSeries>
-```
+<snippet id='chart-pieseries-selection-vue'/>
 
 ## Example
 The following example demonstrates how to enable series selection
 
-```
-  <LineSeries v-tkCartesianSeries selectionMode="Series"
-              showLabels="true" seriesName="Line" stackMode="Stack"
-              categoryProperty="Country" valueProperty="Amount"
-              :items="items"></LineSeries>
-```
+<snippet id='chart-seriesselection-vue'/>

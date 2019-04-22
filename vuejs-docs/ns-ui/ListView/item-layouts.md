@@ -27,82 +27,8 @@ This is the way to change the list layout. The `layout` property can have `linea
 
 The following code snippet demonstrates how to define a grid `RadListView` instance:
 
-```
-export default {
-  template: `
-  <Page>
-    <StackLayout>
-      <RadListView for="item in itemList"
-                   layout="grid"
-                   itemHeight="100">
-        <v-template>
-          <StackLayout orientation="vertical">
-            <Label :text="item.name"></Label>
-          </StackLayout>
-        </v-template>
-      </RadListView>
-    </StackLayout>
-  </Page>
-  `,
-  data() {
-    return {
-      itemList: [
-        {name: 'Item 1', description: 'Item 1 description'},
-        {name: 'Item 2', description: 'Item 2 description'},
-        {name: 'Item 3', description: 'Item 3 description'},
-      ],
-    };
-  },
-};
-```
+<snippet id='listvue-gridlayout-vue'/>
 
 Example of staggered layout:
 
-```
-const words = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
-
-const getRandomString = () => {
-  const length = Math.round((Math.random() * 15));
-  let result = words[0];
-  for (let i = 0; i < length; i++) {
-      result += (words[i % words.length] + ' ');
-  }
-  return result;
-}
-
-const getRandomItems = (size: number) => {
-  let items = [];
-
-  for (let i=0 ; i<size; i++) {
-    items.push({
-      name: `Item ${i}`,
-      description: getRandomString(),
-    });
-  }
-  return items;
-}
-
-export default {
-  template: `
-  <Page>
-    <StackLayout>
-      <RadListView for="item in itemList"
-                   layout="staggered"
-                   gridSpanCount="3">
-        <v-template>
-          <StackLayout class="item" orientation="vertical">
-            <Label :text="item.name"></Label>
-            <Label :text="item.description" textWrap="true"></Label>
-          </StackLayout>
-        </v-template>
-      </RadListView>
-    </StackLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      itemList: getRandomItems(20),
-    };
-  },
-};
-```
+<snippet id='listview-staggeredlayout-vue'/>

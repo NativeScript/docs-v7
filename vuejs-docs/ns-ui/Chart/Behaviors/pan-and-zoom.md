@@ -40,20 +40,7 @@ Just like with all vue 'pages' let's start with the `Component` in which we will
 
 Before that, we would create a basic JS or TS module that contains a collection of objects, which will be used by the chart to provide intuitive data visualization.
 
-```
-import { ObservableArray } from 'tns-core-modules/data/observable-array';
-
-export const getCountriesData = () => {
-  return new ObservableArray([
-    { Country: 'Germany', Amount: 15, SecondVal: 14, ThirdVal: 24, Impact: 0, Year: 0 },
-    { Country: 'France', Amount: 13, SecondVal: 23, ThirdVal: 25, Impact: 0, Year: 0 },
-    { Country: 'Bulgaria', Amount: 24, SecondVal: 17, ThirdVal: 23, Impact: 0, Year: 0 },
-    { Country: 'Spain', Amount: 11, SecondVal: 19, ThirdVal: 24, Impact: 0, Year: 0 },
-    { Country: 'USA', Amount: 18, SecondVal: 8, ThirdVal: 21, Impact: 0, Year: 0 }
-  ]);
-};
-
-```
+<snippet id='chart-get-countries-data-vue'/>
 
 All that is left is to declare the template of the vue component in which we:
 
@@ -61,54 +48,4 @@ All that is left is to declare the template of the vue component in which we:
 - Declare the {% typedoc_link classes:CategoricalAxis %} between the {% typedoc_link classes:RadCartesianChart %} open and close tags.
 - After that set the **`tkCartesianHorizontalAxis`** directive to the CategoricalAxis and set its {% typedoc_link classes:CategoricalAxis,member:allowZoom%} to **`true`**. The **`verticalAxis`** will be series sepcific and is set on both BarSeries and LineSeries via binding.
 
-```
-import { LinearAxis, ChartAxisHorizontalLocation } from 'nativescript-ui-chart';
-import { getCountriesData } from '../data';
-
-export default {
-  template: `
-  <Page>
-    <StackLayout>
-      <RadCartesianChart>
-        <BarSeries v-tkCartesianSeries
-                   seriesName="Bar"
-                   stackMode="Stack"
-                   categoryProperty="Country"
-                   valueProperty="SecondVal"
-                   :items="items"
-                   :verticalAxis="linearAxisZoomPan">
-        </BarSeries>
-
-        <LineSeries v-tkCartesianSeries
-                    seriesName="Line"
-                    stackMode="Stack"
-                    categoryProperty="Country"
-                    valueProperty="Amount"
-                    :items="items"
-                    :verticalAxis="linearAxisZoom">
-        </LineSeries>
-
-        <CategoricalAxis v-tkCartesianHorizontalAxis allowPan="true" allowZoom="true"></CategoricalAxis>
-      </RadCartesianChart>
-    </StackLayout>
-  </Page>
-  `,
-  data () {
-    let linearAxisZoom = new LinearAxis();
-    linearAxisZoom.horizontalLocation = ChartAxisHorizontalLocation.Left;
-    linearAxisZoom.allowZoom = true;
-
-    let linearAxisZoomPan = new LinearAxis();
-    linearAxisZoomPan = new LinearAxis();
-    linearAxisZoomPan.horizontalLocation = ChartAxisHorizontalLocation.Right;
-    linearAxisZoomPan.allowZoom = true;
-    linearAxisZoomPan.allowPan = true;
-
-    return {
-      items: getCountriesData(),
-      linearAxisZoom: linearAxisZoom,
-      linearAxisZoomPan: linearAxisZoomPan,
-    };
-  }
-};
-```
+<snippet id='chart-pan-zoom-vue'/>

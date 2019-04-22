@@ -22,14 +22,7 @@ tns plugin add nativescript-ui-autocomplete
 ## Initialization
 Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUIAutoCompleteTextViewModule %} from the *nativescript-ui-autocomplete* plugin has been imported in the main JS in your app with the following sentences:
 
-```
-import Vue from 'nativescript-vue';
-import RadAutoCompletePlugin from 'nativescript-ui-autocomplete/vue';
-
-Vue.use(RadAutoCompletePlugin);
-
-...
-```
+<snippet id='autocomplete-import-vue'/>
 
 To create a functional **RadAutoCompleteTextView** you should:
 - Place the RadAutoCompleteTextView tag in your component's template
@@ -37,60 +30,13 @@ To create a functional **RadAutoCompleteTextView** you should:
 - Next you would like to specify the the suggestion list of the **RadAutoCompleteTextView** by adding an `SuggestionView` between the `RadAutoCompleteTextView` tags and setting the `~suggestionView` inline directive to it.
 - All that is left is to specify the `v-template` of the of the {% typedoc_link classes:SuggestionView %} by adding an default Vue template structural directive between the `SuggestionView` tags.
 
-First, lets create a `data.js` file that generate the items used for autocompletion:
+First, lets create a `data.ts` file that generate the items used for autocompletion:
 
-```
-import { ObservableArray } from 'data/observable-array';
-import { TokenModel } from 'nativescript-ui-autocomplete';
-
-export const getCountries = () => {
-  let countries = new ObservableArray();
-  countries.push(
-    new TokenModel('Australia', 'res://australia'),
-  );
-  countries.push(
-    new TokenModel('Spain', 'res://spain'),
-  );
-  countries.push(
-    new TokenModel('USA', 'res://usa'),
-  );
-  return countries;
-};
-```
+<snippet id='autocomplete-gettingstarted-data-vue'/>
 
 So, if you create a new `MyPageWithAutocomplete.js` component which renders the whole page, you would need to add a code like this:
 
-```
-import { getCountries } from './data';
-
-export default {
-  template: `
-    <Page>
-      <StackLayout ios:backgroundColor="#CDCECE" padding="5">
-        <Label text="Select country"></Label>
-        <RadAutoCompleteTextView ref="autocmp"
-                                 hint="select country"
-                                 suggestMode="Suggest"
-                                 displayMode="Tokens"                                 :items="dataItems">
-          <SuggestionView ~suggestionView suggestionViewHeight="300">
-            <StackLayout v-suggestionItemTemplate
-                         orientation="vertical" padding="10">
-              <v-template scope="item">
-                <Label :text="item.text" />
-              </v-template>
-            </StackLayout>
-          </SuggestionView>
-        </RadAutoCompleteTextView>
-      </StackLayout>
-    </Page>
-  `,
-  data() {
-    return {
-      dataItems: getCountries(),
-    };
-  }
-}
-```
+<snippet id='autocomplete-gettingstarted-vue'/>
 
 The {% typedoc_link classes:SuggestionView,member:suggestionViewHeight%} property allows you to have control over the height of the suggestion view.
 The `hint` property allows you to provide a text that will be displayed when there is no input.

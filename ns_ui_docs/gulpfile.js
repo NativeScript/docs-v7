@@ -4,6 +4,7 @@ var run = require('gulp-run-command').default;
 
 gulp.task("snippet-mdinject", run('mdinject --root=./../../nativescript-ui-samples --docsroot=./../docs/ui/professional-ui-components --sourceext=".ts|.js|.xml|.css" --snippettitles="TypeScript|JavaScript|XML|CSS"'));
 gulp.task("snippet-mdinject-ng", run('mdinject --root=./../../nativescript-ui-samples-angular --docsroot=./../docs/ui/professional-ui-components --sourceext=".ts|.js|.xml|.css" --snippettitles="TypeScript|JavaScript|XML|CSS"'));
+gulp.task("snippet-mdinject-vue", run('mdinject --root=./../../nativescript-ui-samples-vue --docsroot=./../vuejs-docs/ns-ui --sourceext=".ts|.js|.xml|.css" --snippettitles="TypeScript|JavaScript|XML|CSS"'));
 
 gulp.task("ns-ui-api-ref-build", function () {
     return gulp
@@ -32,4 +33,4 @@ gulp.task("ns-ui-api-ref-build", function () {
         }));
 });
 
-gulp.task("default", gulp.series("snippet-mdinject", "snippet-mdinject-ng", "ns-ui-api-ref-build"));
+gulp.task("default", gulp.series("snippet-mdinject", "snippet-mdinject-ng", "snippet-mdinject-vue", "ns-ui-api-ref-build"));

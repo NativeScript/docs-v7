@@ -19,56 +19,7 @@ Display mode can be changed with the {% typedoc_link classes:RadAutoCompleteText
 
 The next code snippet shows how to change that default value to {% typedoc_link enums:AutoCompleteDisplayMode,member:Tokens %}:
 
-```
-import { AutoCompleteDisplayMode } from 'nativescript-ui-autocomplete';
-import { getCountries } from './data';
-
-export default {
-  template: `
-  <Page>
-    <StackLayout>
-      <RadAutoCompleteTextView ref="autocomplete"
-                               hint="select country"
-                               :displayMode="displayMode"
-                               :items="dataItems">
-        <SuggestionView ~suggestionView suggestionViewHeight="300">
-          <StackLayout v-suggestionItemTemplate orientation="vertical" padding="10">
-            <v-template>
-              <StackLayout orientation="horizontal">
-                <Image :src="item.image" width="50"></Image>
-                <Label :text="item.text" marginLeft="5" android:marginTop="15"></Label>
-              </StackLayout>
-            </v-template>
-          </StackLayout>
-        </SuggestionView>
-      </RadAutoCompleteTextView>
-      <Label text="DISPLAY MODES"></Label>
-      <StackLayout orientation="horizontal">
-        <Button margin="5" text="Plain" @tap="onPlainSelected()"></Button>
-        <Button margin="5" text="Tokens" @tap="onTokensSelected()"></Button>
-      </StackLayout>
-    </StackLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      dataItems: getCountries(),
-      displayMode: AutoCompleteDisplayMode.Tokens,
-    };
-  },
-  methods: {
-    onPlainSelected(args) {
-      this.displayMode = AutoCompleteDisplayMode.Plain;
-      this.$refs.autocomplete.resetAutoComplete();
-    },
-    onTokensSelected(args) {
-      this.displayMode = AutoCompleteDisplayMode.Tokens;
-      this.$refs.autocomplete.resetAutoComplete();
-    },
-  },
-};
-
-```
+<snippet id='autocomplete-token-vue'/>
 
 ## Plain mode
 In plain mode the {% typedoc_link classes:RadAutoCompleteTextView %} displays chosen item as plain text. With this mode only one item can be chosen.

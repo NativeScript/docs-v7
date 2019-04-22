@@ -18,46 +18,6 @@ publish: true
 
 To change the selection mode of {% typedoc_link classes:RadCalendar %} you should use the {% typedoc_link classes:RadCalendar,member:selectionMode %} property and set it to one of the aforementioned values.
 
-```
-import { CalendarSelectionMode } from 'nativescript-ui-calendar';
-
-export default {
-  template: `
-  <Page>
-    <ActionBar>
-      <ActionItem text="None" android.position="popup" @tap="onNoneTap"></ActionItem>
-      <ActionItem text="Single" android.position="popup" @tap="onSingleTap"></ActionItem>
-      <ActionItem text="Multiple" android.position="popup" @tap="onMultipleTap"></ActionItem>
-      <ActionItem text="Range" android.position="popup" @tap="onRangeTap"></ActionItem>
-    </ActionBar>
-    <StackLayout>
-      <RadCalendar
-        :selectionMode="selectionMode">
-      </RadCalendar>
-    </StackLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      selectionMode: CalendarSelectionMode.None,
-    };
-  },
-  methods: {
-    onNoneTap() {
-      this.selectionMode = CalendarSelectionMode.None;
-    },
-    onSingleTap() {
-      this.selectionMode = CalendarSelectionMode.Single;
-    },
-    onMultipleTap() {
-      this.selectionMode = CalendarSelectionMode.Multiple;
-    },
-    onRangeTap() {
-      this.selectionMode = CalendarSelectionMode.Range;
-    },
-  },
-};
-
-```
+<snippet id='calendar-selectionmode-vue'/>
 
 > The Selection mode functionality could be used in the cases while we use `Month` or `Week` `viewMode`

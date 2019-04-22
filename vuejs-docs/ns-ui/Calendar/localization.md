@@ -15,34 +15,7 @@ publish: true
 
 The following snippet demonstrates how a locale can be set in the Vue instance:
 
-```
-export default {
-  template: `
-  <Page>
-    <GridLayout
-      orientation="vertical" rows="*, auto">
-      <RadCalendar ref="calendar" :locale="locale"></RadCalendar>
-      <StackLayout orientation="horizontal" row="1">
-        <Button text="en-EN" @tap="changeLocale('en-EN')"></Button>
-        <Button text="es-ES" @tap="changeLocale('es-ES')"></Button>
-        <Button text="ru-RU" @tap="changeLocale('ru-RU')"></Button>
-        <Button text="fr-FR" @tap="changeLocale('fr-FR')"></Button>
-      </StackLayout>
-    </GridLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      locale: 'en-EN',
-    };
-  },
-  methods: {
-    changeLocale(locale: String) {
-      this.locale = locale;
-    },
-  }
-};
-```
+<snippet id='calendar-localization-vue'/>
 
 The following two screenshots demonstrate how {% typedoc_link classes:RadCalendar %} looks like when a `ru-RU` is defined as a locale:
 

@@ -35,52 +35,7 @@ Defining `mainContent` and `drawerContent`  with Vue is done using the `~` synta
 
 The following code snippet is a simple template with a basic setup for RadSideDrawer.
 
-```
-const MyComponent = {
-    template: `
-        <Page>
-            <RadSideDrawer ref="drawer">
-                <StackLayout ~drawerContent class="sideStackLayout">
-                    <StackLayout class="sideTitleStackLayout">
-                        <Label text="Navigation Menu"></Label>
-                    </StackLayout>
-                    <StackLayout class="sideStackLayout">
-                        <Label text="Primary" class="sideLabel sideLightGrayLabel"></Label>
-                        <Label text="Social" class="sideLabel"></Label>
-                        <Label text="Promotions" class="sideLabel"></Label>
-                        <Label text="Labels" class="sideLabel sideLightGrayLabel"></Label>
-                        <Label text="Important" class="sideLabel"></Label>
-                        <Label text="Starred" class="sideLabel"></Label>
-                        <Label text="Sent Mail" class="sideLabel"></Label>
-                        <Label text="Drafts" class="sideLabel"></Label>
-                    </StackLayout>
-                    <Label text="Close Drawer" color="lightgray" padding="10" style="horizontal-align: center" @tap="onCloseDrawerTap"></Label>
-                </StackLayout>
-                <StackLayout ~mainContent>
-                    <Label textWrap="true">{{ mainContentText }}</Label>
-                    <Button text="Open Drawer" @tap="openDrawer()"></Button>
-                </StackLayout>
-            </RadSideDrawer>
-        </Page>
-    `,
-    created() {
-        this.mainContentText = "SideDrawer for NativeScript can be easily setup in the HTML definition of your page by defining tkDrawerContent and tkMainContent. The component has a default transition and position and also exposes notifications related to changes in its state. Swipe from left to open side drawer.";
-    },
-    methods: {
-        openDrawer() {
-            this.$refs.drawer.nativeView.showDrawer();
-        },
-        onCloseDrawerTap() {
-            this.$refs.drawer.nativeView.closeDrawer();
-        }
-    },
-    data() {
-        return {
-            mainContentText: ""
-        };
-    }
-}
-```
+<snippet id='sidedrawer-getting-started-vue'/>
 
 #### Figure 1. RadSideDrawer's '~mainContent'
 ![TelerikUI-SideDrawer-Getting-Started](../../../ui/img/ns_ui/drawer-getting-started-ios-1.png "Side drawer main content on iOS.") ![TelerikUI-SideDrawer-Getting-Started](../../../ui/img/ns_ui/drawer-getting-started-android-1.png "Side drawer main content on Android.")

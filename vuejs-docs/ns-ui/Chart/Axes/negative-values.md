@@ -14,44 +14,10 @@ By default the {% typedoc_link classes:LinearAxis %} supports the use of negativ
 
 ## Example
 
-```
-const getNegativeValues = () => {
-  return new ObservableArray([
-      { Period: 1, Amount: 10 },
-      { Period: 2, Amount: -10 },
-      { Period: 3, Amount: 20 },
-      { Period: 4, Amount: -20 },
-      { Period: 5, Amount: 30 },
-      { Period: 6, Amount: -30 },
-      { Period: 7, Amount: 40 },
-      { Period: 8, Amount: -40 },
-      { Period: 9, Amount: 50 },
-      { Period: 10, Amount: -50 }
-  ]);
-};
+<snippet id='chart-negative-values-data-vue'/>
 
-export default {
-  template: `
-  <Page>
-    <RadCartesianChart>
-      <LinearAxis v-tkCartesianVerticalAxis allowZoom="true" minimum="-50" maximum="50"></LinearAxis>
-      <CategoricalAxis v-tkCartesianHorizontalAxis allowZoom="true"></CategoricalAxis>
+<snippet id='chart-negative-values-vue'/>
 
-      <SplineAreaSeries v-tkCartesianSeries
-                        seriesName="SplineArea"
-                        categoryProperty="Period"
-                        valueProperty="Amount"
-                        :items="items"></SplineAreaSeries>
-    </RadCartesianChart>
-  </Page>
-  `,
-  data () {
-    return {
-      items: getNegativeValues(),
-    };
-  }
-};
-```
 
 This is how the chart will look like with negative values on the Y axis:
 

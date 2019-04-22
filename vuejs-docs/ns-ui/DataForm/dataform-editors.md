@@ -28,51 +28,7 @@ By default, {% typedoc_link classes:RadDataForm %} will load a default editor de
 
 #### Example 1: Change the editor that is used for a property
 
-```
-import { DataFormEditorType, DataFormValidationMode, DataFormCommitMode } from 'nativescript-ui-dataform';
-
-export default {
-  template: `
-  <Page>
-    <StackLayout>
-      <RadDataForm
-        :source="ticket"
-        :metadata="ticketMetadata">
-      </RadDataForm>
-    </StackLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      ticket: {
-        'date': new Date(),
-        'type': '',
-      },
-      ticketMetadata: {
-        'isReadOnly': false,
-        'commitMode': DataFormCommitMode.Immediate,
-        'validationMode': DataFormValidationMode.Immediate,
-        'propertyAnnotations':
-        [
-          {
-            'name': 'date',
-            'displayName': 'Date',
-            'index': 0,
-            'editor': DataFormEditorType.DatePicker,
-          },
-          {
-            'name': 'type',
-            'displayName': 'Ticket Type',
-            'index': 3,
-            'editor': DataFormEditorType.SegmentedEditor,
-            'valuesProvider': ['2D', '3D'],
-          },
-        ],
-      },
-    }
-  }
-}
-```
+<snippet id='dataform-editor-vue'/>
 
 Note that the {% typedoc_link classes:EntityProperty,member:valuesProvider %} property will be taken into consideration only for editors that support predefined list of values. These editors are {% typedoc_link enums:DataFormEditorType,member:Picker %}, {% typedoc_link enums:DataFormEditorType,member:SegmentedEditor %}, {% typedoc_link enums:DataFormEditorType,member:List %} and {% typedoc_link enums:DataFormEditorType,member:AutoCompleteInline %}. You can read more about the providers [here]({% slug dataform-editors-providers-vue %} "RadDataForm value providers").
 
@@ -84,77 +40,9 @@ In the example in the beginning of the article the {% typedoc_link classes:Entit
 
 The following example is written in TypeScript:
 
-```
-import { PropertyConverter, DataFormEditorType, DataFormValidationMode, DataFormCommitMode } from 'nativescript-ui-dataform';
+<snippet id='dataform-data-converter-vue'/>
 
-export class Movie {
-  public id: number;
-  public name: string;
-
-  constructor(id: number, name: string) {
-      this.id = id;
-      this.name = name;
-  }
-}
-
-export class MovieConverter implements PropertyConverter {
-  constructor(private _movies: Array<Movie>) { }
-
-  convertFrom(id: number) {
-      return this._movies.filter((movie: Movie) => movie.id === id)[0].name;
-  }
-
-  convertTo(name: string) {
-      return this._movies.filter((movie: Movie) => movie.name === name)[0].id;
-  }
-}
-
-const movies = new Array<Movie>();
-
-movies.push(new Movie(123, 'Zootopia'));
-movies.push(new Movie(217, 'Captain America'));
-movies.push(new Movie(324, 'The Jungle Book'));
-
-export default {
-  template: `
-  <Page>
-    <StackLayout>
-      <RadDataForm
-        :source="ticket"
-        :metadata="ticketMetadata">
-      </RadDataForm>
-    </StackLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      ticket: {
-        'movie': 123,
-        'date': new Date(),
-        'number': 1,
-        'type': '',
-      },
-      ticketMetadata: {
-        'isReadOnly': false,
-        'commitMode': DataFormCommitMode.Immediate,
-        'validationMode': DataFormValidationMode.Immediate,
-        'propertyAnnotations':
-        [
-          {
-            'name': 'movie',
-            'displayName': 'Movie Name',
-            'index': 0,
-            'editor': DataFormEditorType.Picker,
-            'valuesProvider': movies.map((value: Movie) => value.name),
-            'converter': new MovieConverter(movies),
-          },
-          ... // rest of the metadata
-        ],
-      },
-    }
-  }
-}
-```
+<snippet id='dataform-editor-vue'/>
 
 As you can see in the `Movie` model you can have a property of type `number` which represents the `id` of a movie which gets converted to the `name` of the movie with the same `id`. Similarly, when an item is selected from the list, its `name` is converted to the `id` which is the value that gets committed to the source object. An instance of the created converter has to be set to the {% typedoc_link classes:EntityProperty,member:converter %} property of the `EntityProperty` object.
 
@@ -164,56 +52,7 @@ The {% typedoc_link enums:DataFormEditorType,member:Stepper %} and {% typedoc_li
 
 #### Example 4: Use editor params to adjust an editor
 
-```
-import { DataFormEditorType, DataFormValidationMode, DataFormCommitMode } from 'nativescript-ui-dataform';
-
-export default {
-  template: `
-  <Page>
-    <StackLayout>
-      <RadDataForm
-        :source="ticket"
-        :metadata="ticketMetadata">
-      </RadDataForm>
-    </StackLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      ticket: {
-        'date': new Date(),
-        'number': 1,
-      },
-      ticketMetadata: {
-        'isReadOnly': false,
-        'commitMode': DataFormCommitMode.Immediate,
-        'validationMode': DataFormValidationMode.Immediate,
-        'propertyAnnotations':
-        [
-          {
-            'name': 'date',
-            'displayName': 'Date',
-            'index': 0,
-            'editor': DataFormEditorType.DatePicker,
-          },
-          {
-            'name': 'number',
-            'displayName': 'Number Of Tickets',
-            'index': 1,
-            'editor': DataFormEditorType.Stepper,
-            'editorParams': {
-              'minimum': 0,
-              'maximum': 10,
-              'step': 1,
-            }
-          },
-        ],
-      },
-    }
-  }
-}
-```
-
+<snippet id='dataform-editor-vue'/>
 
 ## Editors List
 

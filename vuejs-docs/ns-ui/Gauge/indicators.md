@@ -21,84 +21,7 @@ First you will need to setup the RadRadialGauge as described in the [**Indicator
 
 - Declare the `<RadialBarIndicator></RadialBarIndicator>` and set the custom `tkRadialScaleIndicators` inline directive to it. That inline directive is making the 'link' between the {% typedoc_link classes:RadialBarIndicator %} object and the {% typedoc_link classes:RadialScale %}
 
-```
-import { RadialScale, RadialBarIndicator } from "nativescript-ui-gauge";
-
-export default {
-  template: `
-  <Page>
-    <GridLayout>
-      <RadRadialGauge class="gauge">
-        <RadialScale ref="myScale" v-tkRadialGaugeScales startAngle="0"
-                     sweepAngle="360" minimum="0" maximum="100" radius="0.9">
-          <ScaleStyle v-tkRadialScaleStyle ticksVisible="false"
-                      labelsVisible="false" lineThickness="0"></ScaleStyle>
-
-          <RadialBarIndicator v-tkRadialScaleIndicators minimum="0"
-                              maximum="100" location="0.5">
-            <BarIndicatorStyle v-tkRadialBarIndicatorStyle
-                               fillColor="rgba(224,151,36,0.5)"
-                               barWidth="0.2"></BarIndicatorStyle>
-          </RadialBarIndicator>
-
-          <RadialBarIndicator v-tkRadialScaleIndicators
-                              minimum="0" maximum="0"
-                              location="0.5" isAnimated="true">
-            <BarIndicatorStyle v-tkRadialBarIndicatorStyle cap="Round"
-                               fillColor="rgba(224,151,36,1)"
-                               barWidth="0.2"></BarIndicatorStyle>
-          </RadialBarIndicator>
-
-          <RadialBarIndicator v-tkRadialScaleIndicators
-                              minimum="0" maximum="100"
-                              location="0.75">
-            <BarIndicatorStyle v-tkRadialBarIndicatorStyle
-                               fillColor="rgba(196,241,57,0.5)"
-                               barWidth="0.2"></BarIndicatorStyle>
-          </RadialBarIndicator>
-
-          <RadialBarIndicator v-tkRadialScaleIndicators
-                              minimum="0" maximum="0"
-                              location="0.75" isAnimated="true">
-            <BarIndicatorStyle v-tkRadialBarIndicatorStyle
-                               cap="Round" fillColor="rgba(196,241,57,1)"
-                               barWidth="0.2"></BarIndicatorStyle>
-          </RadialBarIndicator>
-
-          <RadialBarIndicator v-tkRadialScaleIndicators
-                              minimum="0" maximum="100" location="1">
-            <BarIndicatorStyle v-tkRadialBarIndicatorStyle
-                               fillColor="rgba(132,235,247,0.5)"
-                               barWidth="0.2"></BarIndicatorStyle>
-          </RadialBarIndicator>
-
-          <RadialBarIndicator v-tkRadialScaleIndicators
-                              minimum="0" maximum="0"
-                              location="1" isAnimated="true">
-            <BarIndicatorStyle v-tkRadialBarIndicatorStyle
-                               cap="Round" fillColor="rgba(132,235,247,1)"
-                               barWidth="0.2"></BarIndicatorStyle>
-          </RadialBarIndicator>
-        </RadialScale>
-      </RadRadialGauge>.
-    </GridLayout>
-  </Page>
-  `,
-  data () {
-    return {
-    };
-  },
-  mounted () {
-    let scale = this.$refs.myScale.nativeView as RadialScale;
-    for (let i = 0; i < scale.indicators.length; i++) {
-        let barIndicator = scale.indicators.getItem(i) as RadialBarIndicator;
-        if (barIndicator.maximum === 0) {
-            barIndicator.maximum = i * 15;
-        }
-    }
-  },
-};
-```
+<snippet id='gauge-customization-vue'/>
 
 This is what you should see if you run the example now:
 #### Figure 1. Radial gauge with bar indicators
@@ -106,6 +29,8 @@ This is what you should see if you run the example now:
 
 #### Example 2. Animating the bar indicators
 In order to animate the opaque indicators we have set the {% typedoc_link classes:GaugeIndicator,member:isAnimated %} property to `true`. The last thing to do is is to set their {% typedoc_link classes:BarIndicator,member:maximum %} value in the `mounted` handler and the indicators will animate to their new maximum value.
+
+<snippet id='gauge-animations-vue'/>
 
 #### Figure 2. Bar indicators after animation
 ![NativeScriptUI-Indicators-iOS](../../../ui/img/ns_ui/gauges-indicators2-ios.png "Bar indicators in iOS") ![NativeScriptUI-Indicators-Android](../../../ui/img/ns_ui/gauges-indicators2-android.png "Bar indicators in Android")
@@ -116,77 +41,7 @@ The needle indicator is used to point to a specific value. You can easily custom
 
 #### Example 3. Add needle to a scale
 
-```
-export default {
-  template: `
-  <Page>
-    <GridLayout rows="*, auto">
-      <RadRadialGauge id="gaugeView" title="km/h" row="0" margin="10">
-        <TitleStyle v-tkRadialGaugeTitleStyle textColor="black"
-                    ios:verticalOffset="20"
-                    android:verticalOffset="50"></TitleStyle>
-
-        <RadialScale v-tkRadialGaugeScales
-                     minimum="0" maximum="180"
-                     radius="0.98">
-          <ScaleStyle v-tkRadialScaleStyle
-                      lineThickness="0" labelsCount="10"
-                      majorTicksCount="19" minorTicksCount="1"
-                      ticksOffset="0.1"
-                      majorTicksStrokeWidth="2"
-                      majorTicksStrokeColor="rgb(132, 132, 132)"></ScaleStyle>
-          <RadialBarIndicator v-tkRadialScaleIndicators
-                              minimum="0" maximum="60">
-            <BarIndicatorStyle v-tkRadialBarIndicatorStyle
-                               fillColor="rgb(132, 132, 132)"
-                               barWidth="0.02"></BarIndicatorStyle>
-          </RadialBarIndicator>
-
-          <RadialBarIndicator v-tkRadialScaleIndicators
-                              minimum="61" maximum="120">
-            <BarIndicatorStyle v-tkRadialBarIndicatorStyle
-                               fillColor="rgb(54, 54, 54)"
-                               barWidth="0.02"></BarIndicatorStyle>
-          </RadialBarIndicator>
-
-          <RadialBarIndicator v-tkRadialScaleIndicators
-                              minimum="121" maximum="180">
-            <BarIndicatorStyle v-tkRadialBarIndicatorStyle
-                               fillColor="rgb(198, 85, 90)"
-                               barWidth="0.02"></BarIndicatorStyle>
-          </RadialBarIndicator>
-
-          <RadialNeedle ref="needle" v-tkRadialScaleIndicators
-                        isAnimated="true" animationDuration="500">
-            <NeedleStyle v-tkRadialNeedleStyle
-                         length="0.8"
-                         android:topWidth="8" android:bottomWidth="8"
-                         ios:topWidth="2" ios:bottomWidth="2"></NeedleStyle>
-          </RadialNeedle>
-        </RadialScale>
-      </RadRadialGauge>
-
-      <StackLayout row="1" orientation="horizontal" horizontalAlignment="center">
-          <Button v-for="value of values"
-                  verticalAlignment="center"
-                  :text="value"
-                  @tap="onValueChange(value)"></Button>
-      </StackLayout>
-    </GridLayout>
-  </Page>
-  `,
-  data () {
-    return {
-      values: [60, 80, 120, 160],
-    };
-  },
-  methods: {
-    onValueChange(value: number) {
-      this.$refs.needle.nativeView.value = value;
-    }
-  },
-};
-```
+<snippet id='gauge-style-vue'/>
 
 #### Example 4. Animated the needle on button tap
 

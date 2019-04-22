@@ -31,40 +31,7 @@ Styling the chart grid is done by using the corresponding customization properti
 
 To better illustrate the Grid customization, we will show a code snippet where its properties have been used for customizing it:
 
-```
-import { getCountriesData } from '../../data';
-
-export default {
-  template: `
-  <Page>
-    <RadCartesianChart>
-      <CategoricalAxis v-tkCartesianHorizontalAxis></CategoricalAxis>
-      <LinearAxis v-tkCartesianVerticalAxis></LinearAxis>
-
-      <BarSeries v-tkCartesianSeries
-                 categoryProperty="Country"
-                 valueProperty="Amount"
-                 :items="items"></BarSeries>
-      <RadCartesianChartGrid v-tkCartesianGrid
-                             horizontalLinesVisible="true"
-                             verticalLinesVisible="true"
-                             horizontalStripLinesVisible="true"
-                             verticalStripLinesVisible="true"
-                             verticalStrokeColor="#804d0026"
-                             horizontalStrokeColor="#ffffcc80"
-                             horizontalStrokeWidth="2"
-                             verticalStrokeWidth="3"
-                             horizontalStripLineColor="#8059005c, #804d0026"></RadCartesianChartGrid>
-    </RadCartesianChart>
-  </Page>
-  `,
-  data () {
-    return {
-      items: getCountriesData(),
-    };
-  }
-};
-```
+<snippet id='chart-grid-style-vue'/>
 
 This is how the chart looks like now:
 
