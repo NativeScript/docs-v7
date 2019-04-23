@@ -1,27 +1,42 @@
 ---
 title: Navigation (extended examples)
-description: Learn how to configure your application navigation architecture, navigate forward and backward and use TabView, Modal View and SideDrawer
+description: Learn how to nest navigation widgets and implement complex navigation scenarios
 position: 44
 slug: extended-navigation
 environment: nativescript
 ---
 
-# Navigation Examples
+# Nested Navigation
 
 The main goal of the following article is to demonstrate some good practices for creating nested navigation structure. The article does not aim to be a strict guide, but will help you to understand how you could create complex navigation structures while using forward (e.g., frames or outlets) & lateral navigation (e.g., drawers, tab views, etc.). In each of the article sections, you can find visual guides along with corresponding Playground demos.
+
+#Simple Rule
+
+There is one simple rule when it comes to nesting navigation widgets.
+
+{% nativescript %}
+> **Important:** When nesting a frame or a tab-view, they should never have direct siblings in the markup. Instead, wrap them in a layout and nest this layout.
+{% endnativescript %}
+{% angular %}
+> **Important:** When nesting an outlet or a tab-view, they should never have direct siblings in the markup. Instead, wrap them in a layout and nest this layout.
+{% endangular %}
+
+If these components have siblings, they will span over them in most scenarios. The reason for this is on iOS the navigation controllers always take all the space provided by their parent regardless of their own layout parameters.
+
+You can check out how this is done in the examples below.
 
 ## Nesting Simple Forward Navigation
 
 {% nativescript %}
 ![nested-forward-navigation](../img/navigation-extended/navigation-examples-page-1.png?raw=true)
 
-Nesting simple forward navigation: a `Frame` in a layout, for example, to show an advertisement banner on the top/bottom (static place).
+Nesting simple forward navigation: a `Frame` in a layout, for example, to show an advertisement banner on the top/bottom (static content).
 The root page is using a layout (e.g., a `GridLayout`) as a wrapper for the nested forward navigation (`Frame`) and for the static place (layout).
 ```
 GridLayout  
     > Frame (forward navigation)
         >> Pages
-    > Another Layout
+    > Static Content
 ```
 
 Code: [Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=65Uk0F)
@@ -35,7 +50,7 @@ Nesting simple forward navigation: A `page-router-outlet` (mentioned in this art
 GridLayout  
     > P-R-O (forward navigation)
         >> Components
-    > Another Layout (static place)
+    > Static Content
 ```
 
 Code: [Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=O9Hbts)
@@ -51,7 +66,7 @@ Nesting simple lateral navigation: a TabView in a layout, for example, to show a
 GridLayout  
     > TabView (lateral navigation)
         >> Pages | Layouts
-    > Another Layout (static place)
+    > Static Content
 ```
 
 [Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=IeOEzc)
@@ -66,7 +81,7 @@ Nesting simple lateral navigation: a TabView in a layout, for example, to show a
 GridLayout  
     > TabView (lateral navigation)
         >> Layouts | P-R-Os
-    > Another Layout (static place)
+    > Static Content
 ```
 [Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=hBdlPB)
 {% endangular %}
@@ -77,6 +92,8 @@ GridLayout
 ![nested-forward-in-forward-navigation](../img/navigation-extended/navigation-examples-page-3.png?raw=true)
 
 Nesting a Frame inside a Page/Frame, for example, a secondary navigation level.
+
+> **Note:** Each `Frame` comes with its own `ActionBar` by default. It's typical that you want to keep one `ActionBar` on top of the screen when nesting navigations. Set the `actionBarVisibility` property of the `Frame` to `never` to hide the `ActionBar` where needed.
 ```
 Frame (root forward navigation)
     > Page (login)
@@ -92,6 +109,8 @@ Frame (root forward navigation)
 
 
 Nesting a page router outlet inside another page router outlet, for example, to create a secondary navigation level.
+
+> **Note:** Each page router outlet comes with its own `ActionBar` by default. It's typical that you want to keep one `ActionBar` on top of the screen when nesting outlets. Set the `actionBarVisibility` property of the page router outlet to `never` to hide the `ActionBar` where needed.
 ```
 P-R-O (root forward navigation)
     > login.component
