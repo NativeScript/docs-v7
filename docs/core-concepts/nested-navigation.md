@@ -208,7 +208,7 @@ TabView (lateral navigation)
     TabViewItem > another content (e.g. layout or Frame)
 ```
 
-[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=soFhmN&v=6) (in progress)
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=soFhmN&v=6)
 {% endnativescript %}
 
 {% angular %}
