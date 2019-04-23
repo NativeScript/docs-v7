@@ -3,14 +3,12 @@ title: Nested Navigation
 description: Learn how to nest navigation widgets and implement complex navigation scenarios
 position: 44
 slug: nested-navigation
-environment: nativescript
 ---
 
-# Nested Navigation
 
 The main goal of the following article is to demonstrate some good practices for creating nested navigation structure. The article does not aim to be a strict guide, but will help you to understand how you could create complex navigation structures while using forward (e.g., frames or outlets) & lateral navigation (e.g., drawers, tab views, etc.). In each of the article sections, you can find visual guides along with corresponding Playground demos.
 
-#Simple Rule
+## Simple Rule
 
 There is one simple rule when it comes to nesting navigation widgets.
 
