@@ -91,7 +91,7 @@ Frame (root forward navigation)
 ![ng-nested-forward-in-forward-navigation](../img/navigation-extended/ng-navigation-examples-page-3.png?raw=true)
 
 
-Nesting a P-R-O inside a layout, for example, to create a secondary navigation level.
+Nesting a page router outlet inside another page router outlet, for example, to create a secondary navigation level.
 ```
 P-R-O (root forward navigation)
     > login.component
@@ -125,7 +125,7 @@ Frame
 {% angular %}
 ![ng-navigation-lateral-in-forward](../img/navigation-extended/ng-navigation-examples-page-4.png?raw=true)
 
-Nesting a TabView (lateral navigation) inside a layout. For example in a Login component with forward navigation to a component with a nested TabView.
+Nesting a TabView (lateral navigation) inside a page router outlet. For example in a Login component with forward navigation to a component with a nested TabView.
 ```
 P-R-O (forward navigation)
     > login.component
@@ -207,7 +207,7 @@ TabView (lateral navigation)
 {% endangular %}
 
 
- ## Multiple Navigation Scenarios
+ ## Combining Nested Navigation Scenarios
 
 {% nativescript %}
 ![navigation-schema-backward](../img/navigation-extended/navigation-examples-page-7.png?raw=true)
@@ -216,8 +216,4 @@ Make an example where lots of these are combined. For example, RadSidedrawer + L
 
 [Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=fyNqnr&v=6)
 RadSideDrawer > Frame 
-
-> **TODO** The Second TabView is not appearing on iOS
-> **TODO** Check if `tabTextFontSize` works for iOS
-> **TODO** iosOverflowSafeArea="false" for the nested TabView
 {% endnativescript %}
