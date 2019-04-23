@@ -1,8 +1,8 @@
 ---
-title: Navigation (extended examples)
+title: Nested Navigation
 description: Learn how to nest navigation widgets and implement complex navigation scenarios
 position: 44
-slug: extended-navigation
+slug: nested-navigation
 environment: nativescript
 ---
 
@@ -31,7 +31,7 @@ You can check out how this is done in the examples below.
 ![nested-forward-navigation](../img/navigation-extended/navigation-examples-page-1.png?raw=true)
 
 Nesting simple forward navigation: a `Frame` in a layout, for example, to show an advertisement banner on the top/bottom (static content).
-The root page is using a layout (e.g., a `GridLayout`) as a wrapper for the nested forward navigation (`Frame`) and for the static place (layout).
+The root page is using a layout (e.g., a `GridLayout`) as a wrapper for the nested forward navigation (`Frame`) and for the static content (layout).
 ```
 GridLayout  
     > Frame (forward navigation)
@@ -45,7 +45,7 @@ Code: [Playground Demo TypeScript](https://play.nativescript.org/?template=play-
 {% angular %}
 ![ng-nested-forward-navigation](../img/navigation-extended/ng-navigation-examples-page-1.png?raw=true)
 
-Nesting simple forward navigation: A `page-router-outlet` (mentioned in this article also as *P-R-O*) in a layout, for example, to show an advertisement banner on the top/bottom (static place).
+Nesting simple forward navigation: A `page-router-outlet` (mentioned in this article also as *P-R-O*) in a layout, for example, to show an advertisement banner on the top/bottom (static content).
 ```
 GridLayout  
     > P-R-O (forward navigation)
