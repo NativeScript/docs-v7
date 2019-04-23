@@ -1,6 +1,6 @@
 ---
 title: Navigation (extended examples)
-description: Learn how to configure your application navigation architecture, navigate forward and backward and use TabView, Modal View and SideDrawer
+description: Learn how to nest navigation widgets and implement complex navigation scenarios
 position: 44
 slug: extended-navigation
 environment: nativescript
