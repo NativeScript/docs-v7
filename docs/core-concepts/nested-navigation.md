@@ -92,6 +92,7 @@ GridLayout
 Nesting a Frame inside a Page/Frame, for example, a secondary navigation level.
 
 > **Note:** Each `Frame` comes with its own `ActionBar` by default. It's typical that you want to keep one `ActionBar` on top of the screen when nesting navigations. Set the `actionBarVisibility` property of the `Frame` to `never` to hide the `ActionBar` where needed.
+
 ```
 Frame (root forward navigation)
     > Page (login)
@@ -224,7 +225,7 @@ TabView (lateral navigation)
 {% endangular %}
 
 
- ## Combining Nested Navigation Scenarios
+## Combining Nested Navigation Scenarios
 
 {% nativescript %}
 ![navigation-schema-backward](../img/navigation-extended/navigation-examples-page-7.png?raw=true)
