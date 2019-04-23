@@ -21,7 +21,7 @@ The root page is using a layout (e.g., a `GridLayout`) as a wrapper for the nest
 GridLayout  
     > Frame (forward navigation)
         >> Pages
-    > Another Layout
+    > Static Content
 ```
 
 Code: [Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=65Uk0F)
