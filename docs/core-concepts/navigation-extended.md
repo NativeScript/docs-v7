@@ -2,7 +2,7 @@
 title: Nested Navigation
 description: Learn how to nest navigation widgets and implement complex navigation scenarios
 position: 44
-slug: extended-navigation
+slug: nested-navigation
 environment: nativescript
 ---
 
