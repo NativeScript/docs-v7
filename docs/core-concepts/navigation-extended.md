@@ -45,7 +45,7 @@ Code: [Playground Demo TypeScript](https://play.nativescript.org/?template=play-
 {% angular %}
 ![ng-nested-forward-navigation](../img/navigation-extended/ng-navigation-examples-page-1.png?raw=true)
 
-Nesting simple forward navigation: A `page-router-outlet` (mentioned in this article also as *P-R-O*) in a layout, for example, to show an advertisement banner on the top/bottom (static place).
+Nesting simple forward navigation: A `page-router-outlet` (mentioned in this article also as *P-R-O*) in a layout, for example, to show an advertisement banner on the top/bottom (static content).
 ```
 GridLayout  
     > P-R-O (forward navigation)
