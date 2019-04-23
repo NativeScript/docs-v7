@@ -66,7 +66,7 @@ Nesting simple lateral navigation: a TabView in a layout, for example, to show a
 GridLayout  
     > TabView (lateral navigation)
         >> Layouts | P-R-Os
-    > Another Layout (static place)
+    > Static Content
 ```
 [Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=hBdlPB)
 {% endangular %}
