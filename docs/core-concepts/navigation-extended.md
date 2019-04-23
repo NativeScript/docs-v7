@@ -10,6 +10,21 @@ environment: nativescript
 
 The main goal of the following article is to demonstrate some good practices for creating nested navigation structure. The article does not aim to be a strict guide, but will help you to understand how you could create complex navigation structures while using forward (e.g., frames or outlets) & lateral navigation (e.g., drawers, tab views, etc.). In each of the article sections, you can find visual guides along with corresponding Playground demos.
 
+#Simple Rule
+
+There is one simple rule when it comes to nesting navigation widgets.
+
+{% nativescript %}
+> **Important:** When nesting a frame or a tab-view, they should never have direct siblings in the markup. Instead, wrap them in a layout and nest this layout.
+{% endnativescript %}
+{% angular %}
+> **Important:** When nesting an outlet or a tab-view, they should never have direct siblings in the markup. Instead, wrap them in a layout and nest this layout.
+{% endangular %}
+
+If these components have siblings, they will span over them in most scenarios. The reason for this is on iOS the navigation controllers always take all the space provided by their parent regardless of their own layout parameters.
+
+You can check out how this is done in the examples below.
+
 ## Nesting Simple Forward Navigation
 
 {% nativescript %}
