@@ -35,7 +35,7 @@ Nesting simple forward navigation: A `page-router-outlet` (mentioned in this art
 GridLayout  
     > P-R-O (forward navigation)
         >> Components
-    > Another Layout (static place)
+    > Static Content
 ```
 
 Code: [Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=O9Hbts)
