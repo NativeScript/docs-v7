@@ -51,7 +51,7 @@ Nesting simple lateral navigation: a TabView in a layout, for example, to show a
 GridLayout  
     > TabView (lateral navigation)
         >> Pages | Layouts
-    > Another Layout (static place)
+    > Static Content
 ```
 
 [Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=IeOEzc)
