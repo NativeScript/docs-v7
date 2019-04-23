@@ -109,6 +109,8 @@ Frame (root forward navigation)
 
 
 Nesting a page router outlet inside another page router outlet, for example, to create a secondary navigation level.
+
+> **Note:** Each page router outlet comes with its own `ActionBar` by default. It's typical that you want to keep one `ActionBar` on top of the screen when nesting outlets. Set the `actionBarVisibility` property of the page router outlet to `never` to hide the `ActionBar` where needed.
 ```
 P-R-O (root forward navigation)
     > login.component
