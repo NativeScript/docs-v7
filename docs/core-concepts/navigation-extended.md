@@ -6,7 +6,7 @@ slug: extended-navigation
 environment: nativescript
 ---
 
-# Navigation Examples
+# Nested Navigation
 
 The main goal of the following article is to demonstrate some good practices for creating nested navigation structure. The article does not aim to be a strict guide, but will help you to understand how you could create complex navigation structures while using forward (e.g., frames or outlets) & lateral navigation (e.g., drawers, tab views, etc.). In each of the article sections, you can find visual guides along with corresponding Playground demos.
 
