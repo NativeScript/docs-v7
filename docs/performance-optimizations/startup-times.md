@@ -38,7 +38,6 @@ npm install
 
 When the `install` command finishes, you’ll have a series of scripts you can use to build your NativeScript apps with webpack optimizations enabled.
 
-> **NOTE**: Webpack is not enabled by default as it slows down NativeScript’s build processes. Although you’re welcome to use webpack for all your builds, we recommend using webpack only for benchmarking and release builds.
 
 You can go ahead and run one of the following two commands to see how much faster your apps run with the default webpack configuration in place.
 
