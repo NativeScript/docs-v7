@@ -230,8 +230,30 @@ TabView (lateral navigation)
 {% nativescript %}
 ![navigation-schema-backward](../img/navigation-extended/navigation-examples-page-7.png?raw=true)
 
-Make an example where lots of these are combined. For example, RadSidedrawer + Login leading to a Page with TabView and in one TabView there is another TabView. In another, there might be a Frame that has secondary Frame navigation.
+The following example demonstrates a scenario where we have combined several nested navigations (both lateral and forward navigations on different nested levels). For example, a `RadSidedrawer` + Login page leading to a page with a `TabView` and in one `TabView` there are inner forward navigations in each tab item. There is also a modal page with its own forward navigation.
 
+```
+RadSideDrawer (lateral navigation)
+    drawer content 
+        > Frame id="root-frame" (forward navigation)
+            >> Page (e.g. login-page)
+            >> Page (e.g. main-page) with TabView (lateral navigation)
+                 tabItem >>> Frame (featured)
+                            >>>> Page (featured-page)
+                 tabItem >>> Frame (browse)
+                            >>>> Page (browse-page)
+                 tabItem >>> Frame (search)
+                            >>>> Page (search-page)
+
+    drawer link 
+        > Modal page root (Frame - forward navigation)
+            >> Modal Page 
+
+    drawer link        
+        >> Page (e.g. info-page loaded via "root-frame")
+
+```
 [Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=fyNqnr&v=6)
-RadSideDrawer > Frame 
+
+
 {% endnativescript %}
