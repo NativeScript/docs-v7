@@ -124,9 +124,9 @@ Comparison chart for the HMR capabilities versus no-HMR versus no Webpack (pure 
 | **JS/TS only projects** | Without webpack | With webpack (no HMR) | With webpack (HMR) | 
 | :--------------     | :-------------- | :-------------------- | :----------------- | 
 | Native file changed | <span style="color:red">Rebuild</span>         |  <span style="color:red">Rebuild</span>              | <span style="color:red">Rebuild</span>            | 
-| JS/TS file changed  | <span style="color:orange">Restart</span>         |  <span style="color:orange">Restart</span>               | <span style="color:lightgreen">**Reload**</span>             | 
-| Style file changed  | <span style="color:lightgreen">**Reload**</span>           |  <span style="color:orange">Restart</span>               | <span style="color:lightgreen">**Reload**</span>             | 
-| XML file changed    | <span style="color:lightgreen">**Reload**</span>          |  <span style="color:orange">Restart</span>               | <span style="color:lightgreen">**Reload**</span>             |  
+| JS/TS file changed  | <span style="color:orange">Restart</span>         |  <span style="color:orange">Restart</span>               | <span style="color:lightgreen">**Apply**</span>             | 
+| Style file changed  | <span style="color:lightgreen">**Reload**</span>           |  <span style="color:orange">Restart</span>               | <span style="color:lightgreen">**Apply**</span>             | 
+| XML file changed    | <span style="color:lightgreen">**Reload**</span>          |  <span style="color:orange">Restart</span>               | <span style="color:lightgreen">**Apply**</span>             |  
 
 | **Angular projects**    | Without webpack | With webpack (no HMR) | With webpack (HMR) | 
 | :--------------     | :-------------- | :-------------------- | :----------------- | 
@@ -134,6 +134,14 @@ Comparison chart for the HMR capabilities versus no-HMR versus no Webpack (pure 
 | JS/TS file changed  | <span style="color:orange">Restart</span>          |  <span style="color:orange">Restart</span>               | <span style="color:lightgreen">**Bootstrap**</span>           | 
 | Style file changed  | <span style="color:lightgreen">**Bootstrap**</span>        |  <span style="color:orange">Restart</span>               | <span style="color:lightgreen">**Bootstrap**</span>           |  
 | HTML file changed   | <span style="color:lightgreen">**Bootstrap**</span>        |  <span style="color:orange">Restart</span>               | <span style="color:lightgreen">**Bootstrap**</span>           |
+
+**Legend:**
+
+- Rebuild - rebuilds the application
+- Restart - restarts the application
+- Reload - reloads the current page of the application
+- Bootstrap - bootstraps the angular application
+- Apply - apply changes preserving application state; if application root module changed then set application content
 
 > Note: version 5.2 applies changes in application styles at runtime on the current page, thereby it avoids page reloading/navigation and preserves the application state and navigation history.
 
