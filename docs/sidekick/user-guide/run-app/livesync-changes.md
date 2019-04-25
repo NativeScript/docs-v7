@@ -1,7 +1,7 @@
 ---
 title: LiveSyncing Your Changes
 description: During development, use NativeScript Sidekick to LiveSync your saved changes automatically to your device or emulator.
-position: 2
+position: 4
 publish: true
 slug: livesync-changes
 ---
@@ -37,4 +37,4 @@ Based on the type of the modified files, the LiveSync will behave differently:
 
 ## Next Steps
 
-Learn how you can [start a debugging session](debug-app) that will help you to identify and correct various issues.
+Learn how you can [start a debugging session]({% slug debug-app %}) that will help you to identify and correct various issues.

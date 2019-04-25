@@ -1,7 +1,7 @@
 ---
 title: Deploying Your App on a Device
 description: Use NativeScript Sidekick to deploy your app to a physical iOS or Android device.
-position: 1
+position: 3
 publish: true
 slug: deploy-on-device
 ---
@@ -22,7 +22,7 @@ With {{ site.ns-sk }}, you can deploy your app on multiple connected devices sim
 ## Procedure
 
 1. Launch {{ site.ns-sk }} and open your app.
-1. From the left toolbar, select **Devices**.
+1. From the left toolbar, select **Devices** and then **Connected**.
 1. Under **Connected Devices**, select one or more devices.
 1. Click on the settings button (cogwheel icon) of each selected device and choose a valid certificate. For iOS devices, you need to provide a valid mobile provision as well.  
 1. Select a **Build Type**.
@@ -36,6 +36,3 @@ With {{ site.ns-sk }}, you can deploy your app on multiple connected devices sim
 ## Next Steps
 
 Learn how you can [LiveSync changes]({% slug livesync-changes %}) made to the code directly on the device, without the need to rebuild and redeploy your application.
-
-
-

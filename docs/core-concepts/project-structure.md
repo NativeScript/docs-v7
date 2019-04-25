@@ -114,7 +114,7 @@ application.on(application.discardedErrorEvent, function (args) {
 
 #### Android Runtime Configuration
 
-For desciption of the flags which are specific to the Android runtime see the [Android custom flags article]({% slug android-custom-flags %}).
+For description of the flags which are specific to the Android runtime see the [Android custom flags article]({% slug android-custom-flags %}).
 
 #### iOS Runtime Configuration
 
@@ -138,7 +138,7 @@ The main `package.json`, which is located in the root directory of the project, 
 
 The root `package.json` also contains several NativeScript-specific properties which are placed inside the `nativescript` object:
 
-* **id** - Specifies the unique application identifier (App ID) of the app. To be able to build for both Android and iOS, your App ID must be unique and contain two or more strings, separated by a dot. Each string must start with a letter and should contain only letters and numbers. The app identifier must not start with an uppercase letter. (!!!!! LINK DOCUMENT ABOUT SEPARATE IDENTIFIERS -> NS 5.0 release)
+* **id** - Specifies the unique application identifier (App ID) of the app. To be able to build for both Android and iOS, your App ID must be unique and contain two or more strings, separated by a dot. Each string must start with a letter and should contain only letters and numbers. The app identifier must not start with an uppercase letter. For more information about the App ID and how to specify different identifiers for iOS and Android, see [What is App identifier]({% slug changing-appid %}).  
 * **tns-android.version** - Specifies the version of the Android runtime. If the property is missing, the latest version of the runtime will be added on the first run or build for Android.
 * **tns-ios.version** - Specifies the version of the iOS runtime. If the property is missing, the latest version of the runtime will be added on the first run or build for iOS.
 
