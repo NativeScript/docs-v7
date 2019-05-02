@@ -4,17 +4,17 @@
   "author": "Progress AD",
   "dependencies": {
     "gulp": "4.0.0",
+    "gulp-shell": "^0.7.0",
     "gulp-typedoc": "2.2.1",
     "markdown-snippet-injector": "^0.2.2",
-    "gulp-run-command": "0.0.9",
     "nativescript-typedoc-theme": "git://github.com/NativeScript/nativescript-typedoc-theme.git#master",
-    "typedoc": "0.14.2",
-    "nativescript-ui-listview":"*",
-    "nativescript-ui-autocomplete":"*",
-    "nativescript-ui-dataform":"*",
-    "nativescript-ui-chart":"*",
-    "nativescript-ui-calendar":"*",
-    "nativescript-ui-gauge":"*",
-    "nativescript-ui-sidedrawer":"*"
+    "nativescript-ui-autocomplete": "*",
+    "nativescript-ui-calendar": "*",
+    "nativescript-ui-chart": "*",
+    "nativescript-ui-dataform": "*",
+    "nativescript-ui-gauge": "*",
+    "nativescript-ui-listview": "*",
+    "nativescript-ui-sidedrawer": "*",
+    "typedoc": "0.14.2"
   }
 }
