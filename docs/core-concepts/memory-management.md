@@ -173,7 +173,7 @@ Here are some of the problems that still need to be addressed in the order of im
 
 Due to the internal memory management of objects in the runtimes, there are cases where big native objects might live longer than necessary. This might happen if the JS garbage collector does not run for a long time after the object has become eligible for GC. As a result a strong reference for this object will remain on the native side. 
 
-One way to solve this issue is to trigger multiple garbage collections - in JS/TS and in the native side (in case of running on Android). This however is not a cheap operation. Triggering garbage collections by hand is not only slow but can disrupt normal garbage management. 
+One way to solve this issue is to trigger multiple garbage collections - in JS/TS and in the native side (in case of running on Android). This, however, is not a cheap operation. Triggering garbage collections by hand is not only slow but can disrupt normal garbage management. 
 
 Another way to solve the issue is by using the `releaseNativeCounterpart` function which takes as an argument an instance of a native class and removes its strong reference in the runtimes. By doing this, the native garbage collector in Android can remove the possibly heavy native object on its next run if it considers it dead. In iOS, as there is no garbage collector, using this function, the reference count of the native object would be decreased by one and if there are no other usages of this object - it would be deleted. 
 
