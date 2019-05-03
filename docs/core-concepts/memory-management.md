@@ -181,6 +181,6 @@ If after using the releaseNativeCounterpart function you try to use the native o
 
 Example usage of the releaseNativeCounterpart function in JS/TS:
 ```
-let heavyNativeObject = new com.native.HeavyObject();
+const heavyNativeObject = new com.native.HeavyObject();
 releaseNativeCounterpart(heavyNativeObject); // all usages of heavyNativeObject after this line would have undefined behaviour
 ```
