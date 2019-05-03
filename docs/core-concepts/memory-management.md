@@ -179,7 +179,7 @@ Another way to solve the issue is by using the `releaseNativeCounterpart` functi
 
 If after using the releaseNativeCounterpart function you try to use the native object in JS/TS, the behaviour is undefined, so use this function if you are sure the object would not be used again.
 
-Example usage of the releaseNativeCounterpart function in JS/TS:
+Example usage of the `releaseNativeCounterpart` function in JS/TS:
 ```
 const heavyNativeObject = new com.native.HeavyObject();
 releaseNativeCounterpart(heavyNativeObject); // all usages of heavyNativeObject after this line would have undefined behaviour
