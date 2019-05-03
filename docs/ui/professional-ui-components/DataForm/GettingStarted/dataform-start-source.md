@@ -52,6 +52,8 @@ If you run the application now, you should see the default editor for each prope
 
 ![NativeScriptUI-DataForm-Getting-Started-Android](../../../img/ns_ui/dataform-start-source-android.png "DataForm in Android") ![NativeScriptUI-DataForm-Getting-Started-iOS](../../../img/ns_ui/dataform-start-source-ios.png "DataForm in iOS")
 
+If you find that a specific field is missing from your form, you should check that the field has been assigned a value in the source object. Fields without a value in the source object will not be displayed.
+
 Our next step is to adjust the editors that are used for each of the source object's properties. [Here]({% slug dataform-start-properties %})'s how.
 
 ## References
