@@ -171,7 +171,7 @@ Here are some of the problems that still need to be addressed in the order of im
 
 ## Common tips
 
-Due to the internal memory management of objects in the runtimes, there are cases where big native objects might live longer than necessary. This might happen if the JS garbage collector does not run for a long time after the object has become eligible for GC. As a result a strong reference for this object will remain on the native side. 
+Due to the internal memory management of objects in the runtimes, there are cases where big native objects might live longer than necessary. This might happen if the JS garbage collector does not run for a long time after the object has become eligible for GC. As a result, a strong reference for this object will remain on the native side. 
 
 One way to solve this issue is to trigger multiple garbage collections - in JS/TS and in the native side (in case of running on Android). This, however, is not a cheap operation. Triggering garbage collections by hand is not only slow but can disrupt normal garbage management. 
 
