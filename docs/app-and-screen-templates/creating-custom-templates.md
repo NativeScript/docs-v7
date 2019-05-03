@@ -316,7 +316,7 @@ Do follow a pattern that describes the custom component's feature. The recommend
     
     <!-- ... -->
 	
-    <nsDrawer:RadSideDrawer id="sideDrawer" showOverNavigation="true">
+    <nsDrawer:RadSideDrawer id="sideDrawer" >
         
 		<!-- ... -->
 
