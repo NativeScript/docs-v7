@@ -58,7 +58,7 @@ import { ObservableArray } from 'tns-core-modules/data/observable-array';
   `,
   data() {
     return {
-      itemList: ObservableArray([
+      itemList: new ObservableArray([
         {name: 'Item 1', description: 'Item 1 description'},
         {name: 'Item 2', description: 'Item 2 description'},
         {name: 'Item 3', description: 'Item 3 description'},
