@@ -16,8 +16,3 @@ The {% typedoc_link classes:RadSideDrawer,member:showDrawer() %} method is used 
 
 ## The `gesturesEnabled` property
 Using the {% typedoc_link classes:RadSideDrawer,member:gesturesEnabled %} property you can prevent the end users from opening or closing the {% typedoc_link classes:RadSideDrawer %} using gestures.
-
-## The `showOverNavigation` property
-Using the {% typedoc_link classes:RadSideDrawer,member:showOverNavigation %} property you can make {% typedoc_link classes:RadSideDrawer %} position its {% typedoc_link classes:RadSideDrawer,member:drawerContent %} view over or below the `ActionBar`.
-
-{% typedoc_link classes:RadSideDrawer %}'s {% typedoc_link classes:RadSideDrawer,member:drawerContent %} can be displayed above or under the action bar setting its {% typedoc_link classes:RadSideDrawer,member:showOverNavigation %} property.
