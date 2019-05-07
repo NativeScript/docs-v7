@@ -84,6 +84,20 @@ When you are using a release build there will be no logs to the console, so if y
 }
 ```
 
+## Use V8 Symbols
+
+If you want to use V8 API in your application code or you want to have the V8 symbols included in the `libNativeScript.so` file inside the application when built in **release** mode, you will need to enable the `useB8Symbols` flag:
+
+```JSON
+{
+    ...
+    "android": {
+        "useV8Symbols": true
+    }
+    ...
+}
+```
+
 ## Configuring automatic garbage collection
 
 There are three parameters used for configuring the frequency and conditions of automatic triggerring of garbage collections in the JavaScript world. These are `gcThrottleTime`, `memoryCheckInterval` and `freeMemoryRatio`. For detailed explanation of their behavior please refer to the `Syncronizing Garabage Collectors` section in [Memory Management]({% slug android-memory-management %}#syncronizing-garabage-collectors)
