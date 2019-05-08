@@ -10,7 +10,16 @@ publish: true
 
 # RadSideDrawer Getting Started
 This article will guide you through the process of adding a {% typedoc_link classes:RadSideDrawer %} instance to a page in your NativeScript application and initializing its content. 
-> By design the `RadSideDrawer` is designed to be placed as a single child to your `Page`.
+> By design the `RadSideDrawer` is designed to be placed as a single child to your `Page`. For example:
+```XML
+<Page>
+    <!-- RadSideDrawer should be either the absolute root element (instead Page) or a single child of the Page -->
+    <RadSideDrawer>
+        <!-- drawer menu and content follows here-->
+    </RadSideDrawer>
+    <!-- <StackLayout></StackLayout>  NOT Allowed! (can't have other layouts on the same level the drawer)-->
+</Page>
+```
 
 ## Installation
 Run the following command to add the plugin to your application:
