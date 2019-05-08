@@ -15,9 +15,9 @@ This article will guide you through the process of adding a {% typedoc_link clas
 <Page>
     <!-- RadSideDrawer should be either the absolute root element (instead Page) or a single child of the Page -->
     <RadSideDrawer>
-        <!-- menu and content follows here-->
+        <!-- drawer menu and content follows here-->
     </RadSideDrawer>
-    <!-- <StackLayout></StackLayout>  NOT Allowed! (can't have other layouts on the same level s the drawer)-->
+    <!-- <StackLayout></StackLayout>  NOT Allowed! (can't have other layouts on the same level the drawer)-->
 </Page>
 ```
 
