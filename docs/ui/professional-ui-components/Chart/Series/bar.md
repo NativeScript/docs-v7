@@ -19,6 +19,8 @@ The following definition represents the data context that will be used to popula
 
 <snippet id='categorical-source'/>
 
+Note that since the bar chart shows categories, each category must be unique. In the above example, the category is 'Country'. Including the same category more than once would result in some data not being displayed.
+
 We use an instance of this model to assign it as the `bindingContext` of the page we have put our Bar series on:
 
 <snippet id='binding-context-bar-series'/>
