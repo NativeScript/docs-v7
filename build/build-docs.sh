@@ -19,7 +19,7 @@ NS_UI_SM=$SCRIPT_PATH"/../../nativescript-ui-samples"
 NS_UI_SM_NG=$SCRIPT_PATH"/../../nativescript-ui-samples-angular"
 NS_UI_DOCS=$DOCS_ROOT"/ns_ui_docs"
 
-[ ! -d "$ROOT" ] && rm -rf $ROOT
+[ ! -d "$ROOT" ] || rm -rf $ROOT
 
 mkdir $ROOT
 
