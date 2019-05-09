@@ -42,40 +42,41 @@ NativeScript with plain JavaScript:
 
 > **WARNING**: Make sure your environment fulfills all the requirements mentioned in [ios-runtime](https://github.com/NativeScript/ios-runtime)'s README.
 
-### 1. Create a `cmake-build` folder in the already cloned ios-runtime repository
+### 1. Enter the cloned ios-runtime directory
 
 `cd ios-runtime`
 
-`mkdir cmake-build && cd cmake-build`
-
 ### 2. Generate the XCode project
 
-> **WARNING**: By default the generated XCode project builds the Runtime as a static library. In order to build it as a dynamic library you should pass the `BUILD_SHARED_LIBS=1` flag to CMake.
+`./cmake-gen.sh`
 
-`cmake .. -GXcode -DBUILD_SHARED_LIBS=1`
-
-### 3. Build the Nativescript.xcodeproj *Nativescript* target
+### 3. Build the NativeScript.xcodeproj *NativeScript* target
 
 ![Build NS](build-dynamic-target.png)
 
 ## Add the iOS Runtime .xcodeproj to your application's one and start debugging
 
-### 1. Close *Nativescript.xcodeproj* and drag it into your application's .xcodeproj
+### 1. Close *NativeScript.xcodeproj* and drag it into your application's .xcodeproj
 ![Drag xcodeproj](drag-runtime-proj.png)
 
-> **IMPORTANT**: If you drag it from the Runtime's xcodeproj you will get an error, thus drag it from Finder after closing *Nativescript.xcodeproj*
+> **IMPORTANT**: If you drag it from Xcode where the Runtime's xcodeproj is currently open you will
+get an error, thus drag it from Finder after closing *NativeScript.xcodeproj*
 
 ### 2. Connect the framework you've just built to the application:
 
-##### Select your app target and go to General tab. Then under *Embedded binaries* select the `+`  button and add `Nativescript.framework`
+##### Select your app target and go to General tab. Then under *Embedded binaries* select the `+`  button and add `NativeScript.framework`
 
 ![Go to General](general-embed-binaries.png)
 
 ![Select NS Framework](select-ns-framework.png)
 
-### 3. Let's try to change a function's implementation and set a breakpoint there:
+### 3. Disable the NativeScript PostBuild build step which embeds the original NativeScript.framework
+Open the **Build Phases** tab, expand the ***NativeScript PostBuild*** section and comment the
+script invocation by changing **`$SRCROOT/internal/nativescript-post-build`** to ***`# $SRCROOT/internal/nativescript-post-build`***
+
+### 4. Let's try to change a function's implementation and set a breakpoint there:
 ![Set breakpoint](set-breakpoint.png)
 
-### 4. If you run the application project you should hit the breakpoint and see the printed text in the console:
+### 5. If you run the application project you should hit the breakpoint and see the printed text in the console:
 
 ![Hit breakpoint](hit-breakpoint.png)
