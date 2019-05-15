@@ -7,7 +7,7 @@ slug: ios-watch-apps
 
 # iOS WatchOS Applications
 
-From version 5.4 of the NativeScript CLI, an integration of [WatchOS](https://developer.apple.com/watchos/) application supports for your iOS mobile app created with NativeScript.
+With version 5.4 the NativeScript CLI introduces a Beta support for integrating a [WatchOS](https://developer.apple.com/watchos/) application in your iOS mobile app created with NativeScript.
 
 ## Prerequisites
 
@@ -59,3 +59,4 @@ To integrate your existing WatchOS application into your NativeScript project, e
 
 **10.** The application will be deployed and started on your iOS device/simulator. Make sure that the test iPhone is already paired with the testing iWatch. Once the iOS app starts, the Watch app will be automatically deployed on the testing iWatch device.
 
+> **Note:** As of May 2019 the feature is still in _BETA_. Please report all issues, bugs and features related to the WatchOS feature in [the tracking issue](https://github.com/NativeScript/nativescript-cli/issues/4541#issue-433686622).
