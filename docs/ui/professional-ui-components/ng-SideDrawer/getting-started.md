@@ -11,7 +11,17 @@ publish: true
 # RadSideDrawer Getting Started
 This article explains how to create a simple RadSideDrawer with Angular.
 
-> By design the `RadSideDrawer` is designed to be placed as a single child in your component's HTML, this excludes the use of a `<ActionBar><ActionBar>` which is not treated as a simple element by NativeScript and can be used with `RadSideDrawer` by placing it in the beginning of the HTML.
+> The `RadSideDrawer` is designed to be placed as a single child in your component's HTML.
+ This rule excludes the use of a `<ActionBar>` which is not treated as a simple element by NativeScript and can be used with `RadSideDrawer` by placing it at the beginning of the HTML. 
+ For example:
+ ```HTML
+ <ActionBar></ActionBar> <!-- ActionBar can be used with RadSideDrawer on the root level -->
+ <RadSideDrawer></RadSideDrawer> <!-- RadSideDrawer should be single child (not counting ActionBar)-->
+ <!-- 
+    It is NOT allowed to have other elements on the root level with RadSideDrawer
+    <StackLayout></StsckLayout>
+ -->    
+ ```
 
 ## Installation
 Run the following command to add the plugin to your application:
