@@ -1,13 +1,13 @@
 ---
 title: iOS WatchOS Applications
-description: Use NativeScript to build your WatchOS apps that will bring users timely information and provide them with way to interact on the go.
+description: Use NativeScript to build your WatchOS apps that will bring users timely information and provide them with a way to interact on the go.
 position: 90
 slug: ios-watch-apps
 ---
 
 # iOS WatchOS Applications
 
-From version 5.4 of the NativeScript CLI, an integration of [WatchOS](https://developer.apple.com/watchos/) applicaiton is now supported for your iOS mobile application created with NativeScript.
+From version 5.4 of the NativeScript CLI, an integration of [WatchOS](https://developer.apple.com/watchos/) application supports for your iOS mobile app created with NativeScript.
 
 ## Prerequisites
 
@@ -17,15 +17,15 @@ From version 5.4 of the NativeScript CLI, an integration of [WatchOS](https://de
 - Paired devices or simulators (iPhone with iWatch 4.x/5.x and above).
 - WatchOS app created with Objective-C (Swift code [is **not** supported yet](https://github.com/NativeScript/nativescript-cli/issues/4541#issuecomment-491202270)).
 
-## Integrating WatchOS application in NativeScript.
+## WatchOS application in NativeScript.
 
-To integrate your existing WatchOS application into your NativeScript project execute the following steps:
+To integrate your existing WatchOS application into your NativeScript project, execute the following steps:
 
 1. Create **_Single View App_** from Xcode.
 
 2. Add watch app target through **_File > New > Target > WatchKit App_**.
 
-3. Add a name to your watch app, for example **_MyFirstWatchApp_**.
+3. Add a name to your watch app, for example, **_MyFirstWatchApp_**.
 
 4. Copy the generated **_MyFirstWatchApp_** and **_MyFirstWatchAppExtension_** to **_.../apps/MyApp/app/App_Resources/iOS/watchapp/MyFirstWatchApp_** and **_.../apps/MyApp/app/App_Resources/iOS/watchextension/MyFirstWatchAppExtension_** respectively.
 
@@ -54,5 +54,5 @@ To integrate your existing WatchOS application into your NativeScript project ex
 tns run ios
 ```
 
-10. The application will be deployed and started on your iOS device/simulator. Make sure that the test iPhone is already paired with the testing iWatch. Once the app is deployed its Watch app will be automatically deployed on the testing iWatch device.
+10. The application will be deployed and started on your iOS device/simulator. Make sure that the test iPhone is already paired with the testing iWatch. Once the iOS app starts, the Watch app will be automatically deployed on the testing iWatch device.
 
