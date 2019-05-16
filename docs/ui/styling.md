@@ -596,6 +596,47 @@ In the context of mobile development, there are a number of properties that are 
 | `android-selected-tab-highlight-color`  | `androidSelectedTabHighlightColor`     | **Android**       | `TabView`      | Sets the underline color of the tabs in Android. |
 | `android-elevation`  | `androidElevation`     | **Android**       | `View`      | Sets the elevation of the View in Android. |
 
+### Using the androidElevation property <sub>Android</sub>
+
+Since {N} 5.4, a new Android-specific property, called `androidElevation`, is introduced. View's elevation is represented by Zproperty and determines the visual appearance of its shadow. With higher elevation value larger, softer shadows will be set to the View and smaller shadow while using lower elevation.
+
+Example:
+{% nativescript %}
+```CSS
+.tvElevation{
+    android-elevation:5;
+}
+```
+```XML
+<StackLayout class="home-panel">
+    <TextView class="tvElevation" editable="false" textWrap="true" text="TextView" />
+    <Label androidElevation="5" class="sampleLabel" textWrap="true" text="Label" />
+    <Button androidElevation="7" class="sampleButton" text="Button" />
+</StackLayout>
+```
+
+[Demo](https://play.nativescript.org/?template=play-tsc&id=ZraiEJ)
+{% endnativescript %}
+{% angular %}
+```CSS
+.tvElevation{
+    android-elevation:5;
+}
+```
+```XML
+<StackLayout class="home-panel">
+    <TextView class="tvElevation" editable="false" textWrap="true" text="TextView" ></TextView>
+    <Label androidElevation="5" class="sampleLabel" textWrap="true" text="Label" ></Label>
+    <Button androidElevation="7" class="sampleButton" text="Button" ></Button>
+</StackLayout>
+```
+
+[Demo](https://play.nativescript.org/?template=play-ng&id=hfogBI)
+{% endangular %}
+
+More info about this property can be found in [Create Shadows and Clip Views](https://developer.android.com/training/material/shadows-clipping) article.
+
+
 ## Supported Measurement Units
 
 NativeScript supports **DIPs** (Device Independent Pixels), **pixels** (via postfix `px`) and **percentages** (partial support for `width`, `height` and `margin`) as measurement units.
