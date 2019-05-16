@@ -30,6 +30,8 @@ To integrate your existing WatchOS application into your NativeScript project, e
 
 3. Add a name to your watch app, for example, **_MyFirstWatchApp_**. In the same screen verify that **Objective-C** is selected as your language.
 
+> **Note** You can skip steps 1-3 if your Watch app is already created.
+
 4. Copy the generated **_MyFirstWatchApp_** and **_MyFirstWatchAppExtension_** to **_.../apps/MyApp/app/App_Resources/iOS/watchapp/MyFirstWatchApp_** and **_.../apps/MyApp/app/App_Resources/iOS/watchextension/MyFirstWatchAppExtension_** respectively.
 
 5. Inside the **_Info.plist_** of the Watch App replace the value of **_`WKCompanionAppBundleIdentifier`_** with **_`$(WK_APP_BUNDLE_IDENTIFIER)`_**.
@@ -37,7 +39,7 @@ To integrate your existing WatchOS application into your NativeScript project, e
 6. Inside the **_Info.plist_** of the Watch Extension replace the 
  of **_`WKAppBundleIdentifier`_** with **_`$(WK_APP_BUNDLE_IDENTIFIER)`_**.
 
-7. You can populate the **_Assets.xcassets_** of the Watch App and the Watch Extension and add the name of the **_`appiconset`_** to the **_.../apps/MyApp/app/App_Resources/iOS/watchapp/MyFirstWatchApp/watchapp.json_**:
+7. You can populate the **_Assets.xcassets_** of the Watch App and add the name of the **_`appiconset`_** to the **_.../apps/MyApp/app/App_Resources/iOS/watchapp/MyFirstWatchApp/watchapp.json_**:
 
     ```JSON
     {
@@ -63,4 +65,4 @@ To integrate your existing WatchOS application into your NativeScript project, e
 
 10. The application will be deployed and started on your iOS device/simulator. Make sure that the test iPhone is already paired with the testing iWatch. Once the iOS app starts, the Watch app will be automatically deployed on the testing iWatch device.
 
-> **Note:** As of May 2019 the feature is still in _BETA_. Please report all issues, bugs and features related to the WatchOS feature in [the tracking issue](https://github.com/NativeScript/nativescript-cli/issues/4541#issue-433686622).
+> **Note:** As of May 2019 the feature is still in _BETA_. Please report all issues, bugs and features related to the WatchOS functionality in [the tracking issue](https://github.com/NativeScript/nativescript-cli/issues/4541#issue-433686622).
