@@ -101,6 +101,13 @@ array.setObjectAtIndex(button, 1);
 
 In the below-given code sample, you can see, how to convert a JavaScript array to a `CGFloat` array.
 In the tabs, you will find the Objective-C code for a function accepting a `CGFloat` array as an argument and the JavaScript code for calling this native function. 
+
+```JavaScript
+const CGFloatArray = interop.sizeof(interop.types.id) == 4 ? Float32Array : Float64Array;
+const jsArray = [4.5, 0, 1e-5, -1242e10, -4.5, 34, -34, -1e-6];
+
+FloatArraySample.dumpFloats(CGFloatArray.from(jsArray), jsArray.length);
+```
 ```objective-c
 @interface FloatArraySample
 + (void)dumpFloats:(CGFloat*) arr withCount:(int)cnt;
@@ -115,12 +122,7 @@ In the tabs, you will find the Objective-C code for a function accepting a `CGFl
 }
 @end
 ```
-```JavaScript
-const CGFloatArray = interop.sizeof(interop.types.id) == 4 ? Float32Array : Float64Array;
-const jsArray = [4.5, 0, 1e-5, -1242e10, -4.5, 34, -34, -1e-6];
 
-FloatArraySample.dumpFloats(CGFloatArray.from(jsArray), jsArray.length);
-```
 > Note: Keep in mind that `CGFloat` is architecture dependent. On 32-bit devices, we need to use `Float32Array` and `Float64Array` -- on 64-bit ones. A straightforward way to verify the device/emulator architecture is to check the pointer size via `interop.sizeof(interop.types.id)`. The return value for the pointer size will be 4 bytes for 32-bit architectures and 8 bytes - for 64-bit ones. For further info, check out [CGFloat's documentation](https://developer.apple.com/documentation/coregraphics/cgfloat).
 
 ### Primitive Exceptions
