@@ -7,7 +7,7 @@ slug: utils
 
 # Utils
 
-To use the functionality provided by the `utils/utils` and `utils/mainthread-helper` modules, first require/import the modules:
+To use the functionality provided by the `utils/utils` module, first require/import the module:
 
 ```JavaScript
 const utilsModule = require("tns-core-modules/utils/utils");
