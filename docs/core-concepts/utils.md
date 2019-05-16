@@ -7,10 +7,10 @@ slug: utils
 
 # Utils
 
-To use the functionality provided by the `utils/utils` module, first require/import the module:
+To use the functionality provided by the `utils/utils` and `utils/mainthread-helper` modules, first require/import the modules:
 
 ```JavaScript
-var utilsModule = require("tns-core-modules/utils/utils");
+const utilsModule = require("tns-core-modules/utils/utils");
 ```
 ```TypeScript
 import * as utils from "tns-core-modules/utils/utils";
@@ -134,6 +134,36 @@ var value = utilsModule.layout.round(<number_value>);
 var value = utils.layout.round(<number_value>);
 ```
 > If we set `123.56px` as a input the returned value will be `124px`. 
+
+### executeOnMainThread() method
+
+The method checks if the current thread is the main thread. It will directly call the passed function if it is, or dispatches it to the main thread otherwise.
+
+```JavaScript
+utilsModule.executeOnMainThread(()=>{
+      //......     
+})
+```
+```TypeScript
+utilsModule.executeOnMainThread(()=>{
+      //......     
+})
+```
+
+### mainThreadify() method
+
+The method returns a function wrapper which executes the supplied function on the main thread. The wrapper behaves like the original function and passes all of its arguments BUT discards its return value.
+
+```JavaScript
+utilsModule.mainThreadify(()=>{
+      //......     
+})
+```
+```TypeScript
+utilsModule.mainThreadify(()=>{
+      //......     
+})
+```
 
 ## Platform specific methods
 
