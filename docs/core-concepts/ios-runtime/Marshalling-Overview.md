@@ -96,23 +96,16 @@ var button = new buttonClass();
 array.setObjectAtIndex(buttonClass, 0);
 array.setObjectAtIndex(button, 1);
 ```
+
 ## Converting JavaScript array to CGFloat array
 
-In the below-given code sample, you will find, how to convert  JavaScript array to CGFloat array.
-In the tabs, you will find the Objective-C code for generating a CGFloat array and its JavaScript equivalent. 
+In the below-given code sample, you can see, how to convert a JavaScript array to a `CGFloat` array.
+In the tabs, you will find the Objective-C code for a function accepting a `CGFloat` array as an argument and the JavaScript code for calling this native function. 
 ```objective-c
-CGFloat CGFloatArray[] = { 4.5, 0, 1e-5, -1242e10, -4.5, 34, -34, -1e-6 };
-```
-```JavaScript
-const CGFloatArray = interop.sizeof(interop.types.id) == 4 ? Float32Array : Float64Array;
-const CGFloatArray = [4.5, 0, 1e-5, -1242e10, -4.5, 34, -34, -1e-6];
-const length = CGFloatArray.length;
-```
-Note: Keep in mind that CGFloat is architecture dependent. On 32-bit devices, we need to use `Float32Array` and `Float64Array` for 64-bit ones, while creating the CGFloat array. A straightforward way to verify the device/emulator architecture is to check the pointer size via `interop.sizeof(interop.types.id)`. The return value for the pointer size will be 4 bytes for 32-bit devices/emulators and  8 bytes - 64-bit devices/emulators. For further info, check out apple documentation [here](https://developer.apple.com/documentation/coregraphics/cgfloat).
+@interface FloatArraySample
++ (void)dumpFloats:(CGFloat*) arr withCount:(int)cnt;
+@end
 
-Ones, the CGFloat array is generated, we can dump its content while using the `dumpFloats` method shown below.
-
-```objective-c
 @implementation TNSBaseInterface
 
 + (void)dumpFloats:(CGFloat*) arr withCount:(int)cnt {
@@ -120,12 +113,15 @@ Ones, the CGFloat array is generated, we can dump its content while using the `d
         NSLog(@"arr[%d] = %f", i, arr[i]);
     }
 }
+@end
 ```
+```JavaScript
+const CGFloatArray = interop.sizeof(interop.types.id) == 4 ? Float32Array : Float64Array;
+const jsArray = [4.5, 0, 1e-5, -1242e10, -4.5, 34, -34, -1e-6];
 
-``
-
-TNSBaseInterface.dumpFloats(CGFloatArray.from(lengths), length);`
-``
+FloatArraySample.dumpFloats(CGFloatArray.from(jsArray), jsArray.length);
+```
+Note: Keep in mind that `CGFloat` is architecture dependent. On 32-bit devices, we need to use `Float32Array` and `Float64Array` -- on 64-bit ones. A straightforward way to verify the device/emulator architecture is to check the pointer size via `interop.sizeof(interop.types.id)`. The return value for the pointer size will be 4 bytes for 32-bit architectures and 8 bytes - for 64-bit ones. For further info, check out [CGFloat's documentation](https://developer.apple.com/documentation/coregraphics/cgfloat).
 
 ### Primitive Exceptions
 NativeScript considers instances of `NSNull`, `NSNumber`, `NSString` and `NSDate` to be "primitives". This means that instances of these classes won't be exposed in JavaScript via a wrapper exotic object, instead they will be converted to the equivalent JavaScript data type: `NSNull` becomes `null`, `NSNumber` becomes `number` or `boolean`, `NSString` becomes `string` and `NSDate` becomes `Date`. The exception to this are the methods on those classes declared as returning `instancetype` - init methods and factory methods. This means that a call to `NSString.stringWithString` whose return type in Objective-C is `instancetype` will return a wrapper around an `NSString` instance, rather than a JavaScript string. This applies for all methods on `NSNull`, `NSNumber`, `NSString` and `NSDate` returning `instancetype`.
