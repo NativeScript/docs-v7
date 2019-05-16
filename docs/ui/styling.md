@@ -594,6 +594,7 @@ In the context of mobile development, there are a number of properties that are 
 | `tab-text-font-size`  | `tabTextFontSize`     | Both       | `TabView`      | Sets the tab titles font size, without changing the font size of all contents of the tab. |
 | `text-transform`  | `textTransform`     | Both       | `TabViewItem`      | Sets the text transform individually for every `TabViewItem`. Value options: `capitalize`, `lowercase`, `none`, and `uppercase`. |
 | `android-selected-tab-highlight-color`  | `androidSelectedTabHighlightColor`     | **Android**       | `TabView`      | Sets the underline color of the tabs in Android. |
+| `android-elevation`  | `androidElevation`     | **Android**       | `View`      | Sets the elevation of the View in Android. |
 
 ## Supported Measurement Units
 
