@@ -30,11 +30,11 @@ tns create today-extension --tsc
 
 Steps to include the App Extension
 
- **1.** Open **_<project-name>/app/App_Resources/iOS/_** and create folder named **_[extensions](https://github.com/NativeScript/nativescript-today-extension-app/tree/master/app/App_Resources/iOS/extensions)_**
+ 1. Open **_<project-name>/app/App_Resources/iOS/_** and create folder named **_[extensions](https://github.com/NativeScript/nativescript-today-extension-app/tree/master/app/App_Resources/iOS/extensions)_**
 
- **2.** In the **_extensions_** folder create the main folder that contains the extension files. For example, create the [**_TestExtension_** folder](https://github.com/NativeScript/nativescript-today-extension-app/tree/master/app/App_Resources/iOS/extensions/TestExtension) containing all the extension files.
+ 2. In the **_extensions_** folder create the main folder that contains the extension files. For example, create the [**_TestExtension_** folder](https://github.com/NativeScript/nativescript-today-extension-app/tree/master/app/App_Resources/iOS/extensions/TestExtension) containing all the extension files.
 
- **3.** In the **_TestExtension_** folder (where the extension files resides), create a [file called **_extension.json_**](https://github.com/NativeScript/nativescript-today-extension-app/blob/master/app/App_Resources/iOS/extensions/TestExtension/extension.json). This configuration file describes the SDK frameworks used in the extension (via `frameworks` key) and the optional image resources used for extension icon (via `assetcatalogCompilerAppiconName` key).
+ 3. In the **_TestExtension_** folder (where the extension files resides), create a [file called **_extension.json_**](https://github.com/NativeScript/nativescript-today-extension-app/blob/master/app/App_Resources/iOS/extensions/TestExtension/extension.json). This configuration file describes the SDK frameworks used in the extension (via `frameworks` key) and the optional image resources used for extension icon (via `assetcatalogCompilerAppiconName` key).
  
     For example:
     ```JSON
@@ -45,10 +45,10 @@ Steps to include the App Extension
     ```
     **_`frameworks`_** key - the value is an array of framework names.
 
-    **_`assetcatalogCompilerAppiconName`_** key - the value is the icon file name located in `.xcassets` catalog with `AppIconExtension.appiconset` inside the extension folder.
+    **_`assetcatalogCompilerAppiconName`_** key - the value is the name of the `.appiconset` you want to use from the `.xcassets` catalog inside the extension folder -(**_AppIconExtension.appiconset_** in the example above).
 
 
- **4.** Rebuild the application and your extension is good to go.
+ 4. Rebuild the application and your extension is good to go.
 
 A sample project demonstrating the above can be found [here](https://github.com/NativeScript/nativescript-today-extension-app).
 
