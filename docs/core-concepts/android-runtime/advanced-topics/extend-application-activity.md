@@ -117,7 +117,7 @@ The core modules ship with a default `android.support.v7.app.AppCompatActivity` 
                 frame.setActivityCallbacks(this);
             }
             // Modules will take care of calling super.onCreate, do not call it here
-            this._callbacks.onCreate(this, savedInstanceState, superProto.getIntent.call(this), superProto.onCreate);
+            this._callbacks.onCreate(this, savedInstanceState, this.getIntent(), superProto.onCreate);
 
             // Add custom initialization logic here
         },
@@ -161,7 +161,7 @@ The core modules ship with a default `android.support.v7.app.AppCompatActivity` 
                 setActivityCallbacks(this);
             }
 
-            this._callbacks.onCreate(this, savedInstanceState, super.onCreate);
+            this._callbacks.onCreate(this, savedInstanceState, this.getIntent(), super.onCreate);
         }
 
         public onSaveInstanceState(outState: android.os.Bundle): void {
