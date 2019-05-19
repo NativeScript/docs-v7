@@ -53,4 +53,5 @@ Regardless of what you choose to do next with NativeScript, joining the NativeSc
 - **Sign up for the [NativeScript newsletter](https://www.nativescript.org/nativescript-newsletter)**. The newsletter will deliver NativeScript articles, news, plugin updates, and more straight to your inbox.
 - **Join the [NativeScript Community Slack](https://www.nativescript.org/slack-invitation-form)**. The community Slack is a great place to chat with others in the NativeScript community.
 - **Bookmark the [NativeScript tag on Stack Overflow](https://stackoverflow.com/questions/tagged/nativescript)**, as it’s a great place to ask questions when you need help.
+- **Consider contributing to the [NativeScript repository on Github](https://github.com/NativeScript/docs/blob/master/CONTRIBUTING.md)**. Fixing a bug or adding to the documentation is always welcome and very appreciated.
 
