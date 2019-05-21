@@ -61,10 +61,10 @@ You can find the list with all available editors [here]({% slug dataform-editors
 ## References
 
 Want to see these scenarios in action?
-Check our [SDK Examples](https://github.com/telerik/nativescript-ui-samples) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
+Check our [SDK Examples](https://github.com/NativeScript/nativescript-ui-samples) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
 
-* [Editors Common Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/editors)
-* [Runtime Updates Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/runtime-updates)
+* [Editors Common Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/editors)
+* [Runtime Updates Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/runtime-updates)
 
 Related articles you might find useful:
 

@@ -22,7 +22,7 @@ If you are comfortable with using vue for your NativeScript development purposes
 - [Gauge]({% slug gauges-gettingstarted-vue %} "Read more about the Gauge plugin")
 
 ## ListView for Vue: overview
-ListView for Vue exposes all of the familiar features already available through the NativeScript UI APIs:
+ListView for Vue (distributed through the `nativescript-ui-listview` package on npmjs) exposes all of the familiar features already available through the NativeScript UI APIs:
 
 - Pull to refresh
 - Swipe to execute
@@ -31,7 +31,7 @@ ListView for Vue exposes all of the familiar features already available through 
 For more information on setting up and using a particular feature, take a look at the dedicated [article]({% slug listview-getting-started-vue %} "Read more about RadListView with Vue.") in RadListView's documentation section. The articles are extended with Vue snippets and explanations where needed.
 
 ## SideDrawer for Vue: overview
-SideDrawer for Vue brings the familiar experience to your Vue based NativeScript application of separating the main menu from home page content via animated views. The following features are supported:
+SideDrawer for Vue (distributed through the `nativescript-ui-sidedrawer` package on npmjs) brings the familiar experience to your Vue based NativeScript application of separating the main menu from home page content via animated views. The following features are supported:
 
 - Transitions
 - Drawer location
@@ -40,7 +40,7 @@ SideDrawer for Vue brings the familiar experience to your Vue based NativeScript
 For more information on setting up and using a particular feature, take a look at the dedicated [article]({% slug sidedrawer-getting-started-vue %} "Read more about RadListView with vue.") in RadSideDrawer's documentation section. The articles are extended with vue snippets and explanations where needed.
 
 ## Calendar for Vue: overview
-Calendar for Vue exposes all of the familiar features already available through the NativeScript UI APIs:
+Calendar for Vue (distributed through the `nativescript-ui-calendar` package on npmjs) exposes all of the familiar features already available through the NativeScript UI APIs:
 
 - Inline events
 - Different view modes
@@ -49,8 +49,8 @@ Calendar for Vue exposes all of the familiar features already available through 
 
 For more information on setting up and using a particular feature, take a look at the dedicated [article]({% slug calendar-getting-started-vue %} "Read more about RadCalendar with Vue.") in RadCalendar's documentation section. The articles are extended with Vue snippets and explanations where needed.
 
-## RadChart for Vue: overview
-Chart for Vue exposes all of the familiar features already available through the NativeScript UI APIs:
+## Chart for Vue: overview
+Chart for Vue (distributed through the `nativescript-ui-chart` package on npmjs) exposes all of the familiar features already available through the NativeScript UI APIs:
 
 - Series - LineSeries, SplineSeries, AreaSeries, BarSeries, RangeBarSeries, BubbleSeries, ScatterBubbleSeries, ScatterSeries, OhlcSeries, CandlestickSeries, PieSeries, DonutSeries
 - Axes - LinearAxis, CategoricalAxis, DateTimeCategoricalAxis
@@ -60,7 +60,7 @@ Chart for Vue exposes all of the familiar features already available through the
 For more information on setting up and using a particular feature, take a look at the dedicated [article]({% slug chart-getting-started-vue %} "Read more about RadCartesianChart with Vue.") in RadChart's documentation section. The articles are extended with Vue snippets and explanations where needed.
 
 ## DataForm for Vue: overview
-DataForm for Vue exposes all of the familiar features already available through the NativeScript UI APIs:
+DataForm for Vue (distributed through the `nativescript-ui-dataform` package on npmjs) exposes all of the familiar features already available through the NativeScript UI APIs:
 
 - Properties
 - Groups
@@ -70,7 +70,7 @@ DataForm for Vue exposes all of the familiar features already available through 
 For more information on setting up and using a particular feature, take a look at the dedicated [article]({% slug dataform-gettingstarted-vue %} "Read more about RadDataForm with Vue.") in RadDataForm's documentation section. The articles are extended with Vue snippets and explanations where needed.
 
 ## AutoComplete for Vue: overview
-AutoComplete for Vue exposes all of the familiar features already available through the NativeScript UI APIs:
+AutoComplete for Vue (distributed through the `nativescript-ui-autocomplete` package on npmjs) exposes all of the familiar features already available through the NativeScript UI APIs:
 
 - Suggest modes - Suggest, Append and SuggestAppend
 - Display modes - Plain and Tokens
@@ -80,7 +80,7 @@ AutoComplete for Vue exposes all of the familiar features already available thro
 For more information on setting up and using a particular feature, take a look at the dedicated [article]({% slug autocomplete-gettingstarted-vue%} "Read more about RadAutoComplete with Vue.") in RadAutoComplete's documentation section. The articles are extended with Vue snippets and explanations where needed.
 
 ## Gauge for Vue: overview
-Gauge for Vue exposes all of the familiar features already available through the NativeScript UI APIs:
+Gauge for Vue (distributed through the `nativescript-ui-gauge` package on npmjs) exposes all of the familiar features already available through the NativeScript UI APIs:
 
 - Scales
 - Indicators

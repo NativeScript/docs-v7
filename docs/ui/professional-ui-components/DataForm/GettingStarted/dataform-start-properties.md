@@ -145,11 +145,11 @@ Our next step is to determine the values of the source object reflecting the cha
 ## References
 
 Want to see these scenarios in action?
-Check our [SDK Examples](https://github.com/telerik/nativescript-ui-samples) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
+Check our [SDK Examples](https://github.com/NativeScript/nativescript-ui-samples) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
 
-* [Properties Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/adjustment)
-* [Runtime Updates Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/runtime-updates)
-* [Properties JSON Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/metadata)
+* [Properties Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/adjustment)
+* [Runtime Updates Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/runtime-updates)
+* [Properties JSON Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/metadata)
 
 Related articles you might find useful:
 

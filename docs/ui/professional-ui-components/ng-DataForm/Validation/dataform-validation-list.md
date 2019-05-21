@@ -101,9 +101,9 @@ If the provided list doesn't fulfil your requirements, you can define your own v
 ## References
 
 Want to see this scenario in action?
-Check our [SDK examples for Angular](https://github.com/telerik/nativescript-ui-samples-angular) repo on GitHub. You will find many practical examples with NativeScript UI.
+Check our [SDK examples for Angular](https://github.com/NativeScript/nativescript-ui-samples-angular) repo on GitHub. You will find many practical examples with NativeScript UI.
 
-* [Validation Example](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/dataform/app/examples/validation)
+* [Validation Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/dataform/app/examples/validation)
 
 Related articles you might find useful:
 

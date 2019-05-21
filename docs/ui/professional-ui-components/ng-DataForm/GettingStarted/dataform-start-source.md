@@ -58,10 +58,10 @@ Our next step is to adjust the editors that are used for each of the source obje
 ## References
 
 Want to see these scenarios in action?
-Check our [SDK Examples for Angular](https://github.com/telerik/nativescript-ui-samples-angular) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
+Check our [SDK Examples for Angular](https://github.com/NativeScript/nativescript-ui-samples-angular) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
 
-* [Getting Started Example](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/dataform/app/examples/getting-started)
-* [Getting Started JSON Example](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/dataform/app/examples/getting-started-json)
+* [Getting Started Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/dataform/app/examples/getting-started)
+* [Getting Started JSON Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/dataform/app/examples/getting-started-json)
 
 Related articles you might find useful:
 

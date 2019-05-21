@@ -64,5 +64,5 @@ The following code snippet demonstrates and example of a {% typedoc_link classes
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Item Reorder Example](https://github.com/telerik/nativescript-ui-samples/tree/master/listview/app/examples/item-reorder)
+* [Item Reorder Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/listview/app/examples/item-reorder)
 

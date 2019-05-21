@@ -29,4 +29,4 @@ The currently available item animation types are defined by the {% typedoc_link 
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Item Animations Example](https://github.com/telerik/nativescript-ui-samples/tree/master/listview/app/examples/item-animations)
+* [Item Animations Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/listview/app/examples/item-animations)

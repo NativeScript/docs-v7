@@ -358,6 +358,6 @@ Apps using the nativescript-dev-webpack plugin:
 
 * [Groceries](https://github.com/NativeScript/sample-Groceries)
 * [NativeScript SDK Examples](https://github.com/NativeScript/nativescript-sdk-examples-ng)
-* [NativeScript-UI SDK Examples](https://github.com/telerik/nativescript-ui-samples-angular)
+* [NativeScript-UI SDK Examples](https://github.com/NativeScript/nativescript-ui-samples-angular)
 * [Cosmos Databank](https://github.com/NickIliev/nativescript-ng-cosmos)
 * [Tests app NG](https://github.com/NativeScript/tests-app-ng)

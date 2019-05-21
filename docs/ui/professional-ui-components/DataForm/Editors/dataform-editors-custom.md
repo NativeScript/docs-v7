@@ -58,9 +58,9 @@ We have created a helper class which exposes a `handleTap` method that will be e
 ## References
 
 Want to see this scenario in action?
-Check our [SDK examples](https://github.com/telerik/nativescript-ui-samples) repo on GitHub. You will find this and many other practical examples with NativeScript UI.
+Check our [SDK examples](https://github.com/NativeScript/nativescript-ui-samples) repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Custom Editors Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/editors/custom-editors)
+* [Custom Editors Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/editors/custom-editors)
 
 Related articles you might find useful:
 

@@ -55,5 +55,5 @@ To change the events view mode you need to set the {% typedoc_link classes:RadCa
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Populating With Data Example](https://github.com/telerik/nativescript-ui-samples/tree/master/calendar/app/calendar/populating-with-data)
+* [Populating With Data Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/calendar/app/calendar/populating-with-data)
 

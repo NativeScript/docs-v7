@@ -74,7 +74,7 @@ This is how the calendar looks like:
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Styling Example](https://github.com/telerik/nativescript-ui-samples/tree/master/calendar/app/calendar/cell-styling)
+* [Styling Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/calendar/app/calendar/cell-styling)
 
 Related articles you might find useful:
 

@@ -53,10 +53,10 @@ Let's walk through that implementation. First, we are getting each `EntityProper
 ## References
 
 Want to see this scenario in action?
-Check our [SDK Examples](https://github.com/telerik/nativescript-ui-samples) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
+Check our [SDK Examples](https://github.com/NativeScript/nativescript-ui-samples) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
 
-* [Custom Validator Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/validation/custom-validator)
-* [Custom Validation Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/validation/custom-validation)
+* [Custom Validator Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/validation/custom-validator)
+* [Custom Validation Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/validation/custom-validation)
 
 Related articles you might find useful:
 

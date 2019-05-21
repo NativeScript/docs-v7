@@ -39,10 +39,10 @@ If you need to disable only a specific editor, you can use {% typedoc_link class
 ## References
 
 Want to see these scenarios in action?
-Check our [SDK Examples for Angular](https://github.com/telerik/nativescript-ui-samples-angular) repository on GitHub. You will find these and many other practical examples with NativeScript UI.
+Check our [SDK Examples for Angular](https://github.com/NativeScript/nativescript-ui-samples-angular) repository on GitHub. You will find these and many other practical examples with NativeScript UI.
 
-* [ReadOnly Example](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/dataform/app/examples/editors/readonly)
-* [Editors Common Example](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/dataform/app/examples/editors)
+* [ReadOnly Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/dataform/app/examples/editors/readonly)
+* [Editors Common Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/dataform/app/examples/editors)
 
 Related articles you might find useful:
 

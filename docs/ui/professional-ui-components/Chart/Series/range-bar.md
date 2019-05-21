@@ -32,7 +32,7 @@ Depending on the required Bar orientation, you can swap the axes' position and a
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Series Examples](https://github.com/telerik/nativescript-ui-samples/tree/master/chart/app/examples/series)
+* [Series Examples](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples/series)
 
 Related articles you might find useful:
 

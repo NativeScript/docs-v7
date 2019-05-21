@@ -49,9 +49,9 @@ In order to specify where each editor is placed in the {% typedoc_link classes:D
 ## References
 
 Want to see this scenario in action?
-Check our [SDK Examples](https://github.com/telerik/nativescript-ui-samples) repo on GitHub. You will find this and many other practical examples with NativeScript UI.
+Check our [SDK Examples](https://github.com/NativeScript/nativescript-ui-samples) repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Layouts Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/layouts)
+* [Layouts Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/layouts)
 
 Related articles you might find useful:
 

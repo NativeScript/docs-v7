@@ -63,10 +63,10 @@ The **propertyValidated** event gives you an opportunity to get notified that a 
 ## References
 
 Want to see these scenarios in action?
-Check our [SDK examples](https://github.com/telerik/nativescript-ui-samples) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
+Check our [SDK examples](https://github.com/NativeScript/nativescript-ui-samples) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
 
-* [Validation Events Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/validation/validation-events)
-* [Async Validation Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/validation/async-validation)
+* [Validation Events Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/validation/validation-events)
+* [Async Validation Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/validation/async-validation)
 
 Related articles you might find useful:
 

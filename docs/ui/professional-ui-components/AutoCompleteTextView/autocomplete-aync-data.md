@@ -44,5 +44,5 @@ it will use the returned items to complete it's population.
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Remote Data Fetch Example](https://github.com/telerik/nativescript-ui-samples/tree/master/autocomplete/app/examples/remote-data-fetch)
+* [Remote Data Fetch Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/autocomplete/app/examples/remote-data-fetch)
 

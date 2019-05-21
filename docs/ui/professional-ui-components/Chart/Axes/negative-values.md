@@ -24,7 +24,7 @@ This is how the chart will look like with negative values on the Y axis:
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Negative Values Example](https://github.com/telerik/nativescript-ui-samples/tree/master/chart/app/examples/axes/negative-values)
+* [Negative Values Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples/axes/negative-values)
 
 Related articles you might find useful:
 

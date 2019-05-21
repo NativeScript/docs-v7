@@ -31,5 +31,5 @@ The axes that can be used to visualize the value of a data point extend the Nume
 Want to see more examples using **RadCartesianChart**?
 Check our SDK examples repository on GitHub. You will find this and a lot more practical examples with NativeScript UI.
 
-* [Axes Examples](https://github.com/telerik/nativescript-ui-samples/tree/master/chart/app/examples/axes)
+* [Axes Examples](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples/axes)
  

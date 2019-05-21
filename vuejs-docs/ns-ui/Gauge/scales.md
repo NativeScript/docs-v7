@@ -39,7 +39,7 @@ This is what you should see when you run the app:
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Scales Example](https://github.com/telerik/nativescript-ui-samples/tree/master/gauge/app/examples/scales)
+* [Scales Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/gauge/app/examples/scales)
 
 Related articles you might find useful:
 

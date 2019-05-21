@@ -47,4 +47,4 @@ This will produce a page showing a Chart that will look like:
 Want to see more examples using **RadCartesianChart**?
 Check our SDK examples repository on GitHub. You will find this and a lot more practical examples with NativeScript UI.
 
-* [Chart Examples](https://github.com/telerik/nativescript-ui-samples/tree/master/chart/app/examples)
+* [Chart Examples](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples)

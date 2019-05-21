@@ -39,7 +39,7 @@ In order to setup an `RadRadialGauge` in your Component HTML you will need to fo
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Getting Started Example](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/gauge/app/examples/getting-started)
+* [Getting Started Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/gauge/app/examples/getting-started)
 
 Related articles you might find useful:
 
