@@ -42,4 +42,4 @@ You can customize the content within the trackball by using the {% typedoc_link 
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Trackball Example](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/chart/app/examples/behaviors)
+* [Trackball Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/chart/app/examples/behaviors)

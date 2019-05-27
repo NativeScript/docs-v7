@@ -46,11 +46,11 @@ The other event - **propertyCommitted** - is called after the property is commit
 ## References
 
 Want to see these scenarios in action?
-Check our [SDK Examples](https://github.com/telerik/nativescript-ui-samples) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
+Check our [SDK Examples](https://github.com/NativeScript/nativescript-ui-samples) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
 
-* [Commit Modes Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/commit-modes)
-* [Events Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/events)
-* [Scrollable Form Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/scrolling)
+* [Commit Modes Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/commit-modes)
+* [Events Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/events)
+* [Scrollable Form Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/scrolling)
 
 Related articles you might find useful:
 

@@ -24,4 +24,4 @@ The following two screenshots demonstrate how {% typedoc_link classes:RadCalenda
 Want to see this scenario in action?
 Check our SDK examples repository on GitHub. You will find this and a lot more practical examples with NativeScript UI.
 
-* [RadCalendar Localization Example](https://github.com/telerik/nativescript-ui-samples/tree/master/calendar/app/calendar/calendar-localization)
+* [RadCalendar Localization Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/calendar/app/calendar/calendar-localization)

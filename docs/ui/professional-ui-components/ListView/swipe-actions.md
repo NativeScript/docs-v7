@@ -129,4 +129,4 @@ Here are two screenshots demonstrating the behavior on Android and iOS:
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Swipe Actions Example](https://github.com/telerik/nativescript-ui-samples/tree/master/listview/app/examples/swipe-actions)
+* [Swipe Actions Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/listview/app/examples/swipe-actions)

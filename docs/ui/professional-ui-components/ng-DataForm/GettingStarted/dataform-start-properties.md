@@ -145,11 +145,11 @@ Our next step is to determine the values of the source object reflecting the cha
 ## References
 
 Want to see these scenarios in action?
-Check our [SDK Examples for Angular](https://github.com/telerik/nativescript-ui-samples-angular) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
+Check our [SDK Examples for Angular](https://github.com/NativeScript/nativescript-ui-samples-angular) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
 
-* [Properties Example](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/dataform/app/examples/adjustment)
-* [Runtime Updates Example](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/dataform/app/examples/runtime-updates)
-* [Properties JSON Example](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/dataform/app/examples/properties-json)
+* [Properties Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/dataform/app/examples/adjustment)
+* [Runtime Updates Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/dataform/app/examples/runtime-updates)
+* [Properties JSON Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/dataform/app/examples/properties-json)
 
 Related articles you might find useful:
 

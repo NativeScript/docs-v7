@@ -39,7 +39,7 @@ Here's a XML sample of how you can customize the indicator in your XML definitio
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Pull To Refresh Example](https://github.com/telerik/nativescript-ui-samples/tree/master/listview/app/examples/pull-to-refresh)
+* [Pull To Refresh Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/listview/app/examples/pull-to-refresh)
 
 Related articles you might find useful:
 

@@ -250,12 +250,12 @@ This is achieved again by using the `editorUpdate` event in `RadDataForm` and th
 ## References
 
 Want to see these scenarios in action?
-Check our [SDK Examples](https://github.com/telerik/nativescript-ui-samples) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
+Check our [SDK Examples](https://github.com/NativeScript/nativescript-ui-samples) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
 
-* [Styling Common Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/styling)
-* [Styling Advanced Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/styling/advanced)
-* [Platform Adjustments Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/platform-specifics)
-* [Editor Background Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/styling/editor-background)
+* [Styling Common Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/styling)
+* [Styling Advanced Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/styling/advanced)
+* [Platform Adjustments Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/platform-specifics)
+* [Editor Background Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/styling/editor-background)
 
 Related articles you might find useful:
 

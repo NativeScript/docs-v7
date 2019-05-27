@@ -25,5 +25,5 @@ You can subscribe for {% typedoc_link classes:RadSideDrawer %}'s events in the c
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Callbacks Example](https://github.com/telerik/nativescript-ui-samples/tree/master/sidedrawer/app/examples/callbacks)
+* [Callbacks Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/sidedrawer/app/examples/callbacks)
 

@@ -61,7 +61,7 @@ The following code snippet is a simple template with a basic setup for RadSideDr
 Want to see this scenario in action?
 Check our SDK examples repository on GitHub. You will find this and a lot more practical examples with NativeScript UI.
 
-* [Getting Started Example](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/sidedrawer/app/examples/getting-started)
+* [Getting Started Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/sidedrawer/app/examples/getting-started)
 
 Related articles you might find useful:
 

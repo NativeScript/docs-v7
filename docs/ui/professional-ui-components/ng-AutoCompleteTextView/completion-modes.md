@@ -35,7 +35,7 @@ Since these suggest modes append the rest of the suggestion to the typed text, t
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [RadAutoCompleteTextView Examples](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/autocomplete/app/examples/)
+* [RadAutoCompleteTextView Examples](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/autocomplete/app/examples/)
 
 Related articles you might find useful:
 

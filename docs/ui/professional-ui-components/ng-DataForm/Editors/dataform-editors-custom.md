@@ -61,9 +61,9 @@ We have also created a helper class `ButtonEditorHelper` with an `updateEditorVa
 ## References
 
 Want to see this scenario in action?
-Check our [SDK examples for Angular](https://github.com/telerik/nativescript-ui-samples-angular) repo on GitHub. You will find this and many other practical examples with NativeScript UI.
+Check our [SDK examples for Angular](https://github.com/NativeScript/nativescript-ui-samples-angular) repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Custom Editors Example](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/dataform/app/examples/editors/custom-editors)
+* [Custom Editors Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/dataform/app/examples/editors/custom-editors)
 
 Related articles you might find useful:
 

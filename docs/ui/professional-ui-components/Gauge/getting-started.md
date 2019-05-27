@@ -44,7 +44,7 @@ To display data the {% typedoc_link classes:RadRadialGauge %} instance is not en
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Getting Started Example](https://github.com/telerik/nativescript-ui-samples/tree/master/gauge/app/examples/getting-started)
+* [Getting Started Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/gauge/app/examples/getting-started)
 
 Related articles you might find useful:
 

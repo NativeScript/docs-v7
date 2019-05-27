@@ -30,9 +30,9 @@ By default {% typedoc_link classes:RadDataForm %} will load a label for each edi
 ## References
 
 Want to see this scenario in action?
-Check our [SDK Examples for Angular](https://github.com/telerik/nativescript-ui-samples-angular) repository on GitHub. You will find this and a lot more practical examples with NativeScript UI.
+Check our [SDK Examples for Angular](https://github.com/NativeScript/nativescript-ui-samples-angular) repository on GitHub. You will find this and a lot more practical examples with NativeScript UI.
 
-* [Image Labels Example](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/dataform/app/examples/image-labels)
+* [Image Labels Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/dataform/app/examples/image-labels)
 
 Related articles you might find useful:
 

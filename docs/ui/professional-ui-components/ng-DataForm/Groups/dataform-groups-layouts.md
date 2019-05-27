@@ -54,9 +54,9 @@ First we need to declare the `RadDataForm` and each of its `TKPropertyGroup` as 
 ## References
 
 Want to see this scenario in action?
-Check our [SDK Examples for Angular](https://github.com/telerik/nativescript-ui-samples-angular) repo on GitHub. You will find this and many other practical examples with NativeScript UI.
+Check our [SDK Examples for Angular](https://github.com/NativeScript/nativescript-ui-samples-angular) repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Layouts Example](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/dataform/app/examples/layouts)
+* [Layouts Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/dataform/app/examples/layouts)
 
 Related articles you might find useful:
 

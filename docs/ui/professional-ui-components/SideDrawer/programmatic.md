@@ -21,7 +21,7 @@ Using the {% typedoc_link classes:RadSideDrawer,member:gesturesEnabled %} proper
 Want to see more examples using **RadSideDrawer**?
 Check our SDK examples repository on GitHub. You will find this and a lot more practical examples with NativeScript UI.
 
-* [RadSideDrawer Examples](https://github.com/telerik/nativescript-ui-samples/tree/master/sidedrawer/app/examples)
+* [RadSideDrawer Examples](https://github.com/NativeScript/nativescript-ui-samples/tree/master/sidedrawer/app/examples)
 
 Related articles you mind find useful:
 

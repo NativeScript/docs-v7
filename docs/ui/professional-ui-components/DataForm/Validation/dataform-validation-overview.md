@@ -102,10 +102,10 @@ If the existing validators don't provide the required validation, you can create
 ## References
 
 Want to see these scenarios in action?
-Check our [SDK Examples](https://github.com/telerik/nativescript-ui-samples) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
+Check our [SDK Examples](https://github.com/NativeScript/nativescript-ui-samples) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
 
-* [Validation Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/validation)
-* [Validators JSON Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/validation/metadata)
+* [Validation Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/validation)
+* [Validators JSON Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/validation/metadata)
 
 Related articles you might find useful:
 

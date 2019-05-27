@@ -36,4 +36,4 @@ In order to get notified when one of the above-mentioned events occur, you shoul
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Events Examples](https://github.com/telerik/nativescript-ui-samples/tree/master/autocomplete/app/examples/events)
+* [Events Examples](https://github.com/NativeScript/nativescript-ui-samples/tree/master/autocomplete/app/examples/events)

@@ -45,7 +45,7 @@ In horizontal mode tokens are displayed on single line which can be scrolled hor
 Want to see more examples using **RadAutoCompleteTextView**?
 Check our SDK examples repository on GitHub. You will find this and a lot more practical examples with NativeScript UI.
 
-* [RadAutoCompleteTextView Examples](https://github.com/telerik/nativescript-ui-samples/tree/master/autocomplete/app/examples/)
+* [RadAutoCompleteTextView Examples](https://github.com/NativeScript/nativescript-ui-samples/tree/master/autocomplete/app/examples/)
 
 Related articles you might find useful:
 

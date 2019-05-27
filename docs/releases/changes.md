@@ -26,10 +26,10 @@ NativeScript consists of several parts that ideally, would get released at their
 ## Professional UI Components - NativeScript UI
 Since version 3.5.0, `nativescript-pro-ui` is deperecated and each component has been moved to its [own plugin](https://www.nativescript.org/blog/professional-components-from-nativescript-ui-the-big-breakup). Below are the links for the release notes of each of the plugins. In case you need to migrate, read the relevant [migration documentation]({% slug nativescript-ui-migration %}).
 
--  [AutoComplete](https://github.com/telerik/nativescript-ui-feedback/blob/master/releases/autocomplete.md)
--  [Calendar](https://github.com/telerik/nativescript-ui-feedback/blob/master/releases/calendar.md)
--  [Chart](https://github.com/telerik/nativescript-ui-feedback/blob/master/releases/chart.md)
--  [DataForm](https://github.com/telerik/nativescript-ui-feedback/blob/master/releases/dataform.md)
--  [Gauge](https://github.com/telerik/nativescript-ui-feedback/blob/master/releases/gauge.md)
--  [ListView](https://github.com/telerik/nativescript-ui-feedback/blob/master/releases/listview.md)
--  [SideDrawer](https://github.com/telerik/nativescript-ui-feedback/blob/master/releases/sidedrawer.md)
+-  [AutoComplete](https://github.com/NativeScript/nativescript-ui-feedback/blob/master/releases/autocomplete.md)
+-  [Calendar](https://github.com/NativeScript/nativescript-ui-feedback/blob/master/releases/calendar.md)
+-  [Chart](https://github.com/NativeScript/nativescript-ui-feedback/blob/master/releases/chart.md)
+-  [DataForm](https://github.com/NativeScript/nativescript-ui-feedback/blob/master/releases/dataform.md)
+-  [Gauge](https://github.com/NativeScript/nativescript-ui-feedback/blob/master/releases/gauge.md)
+-  [ListView](https://github.com/NativeScript/nativescript-ui-feedback/blob/master/releases/listview.md)
+-  [SideDrawer](https://github.com/NativeScript/nativescript-ui-feedback/blob/master/releases/sidedrawer.md)

@@ -51,7 +51,7 @@ This will produce the following UI with the filtered, sorted and grouped objects
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Multiple Data Operations Example](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/listview/app/examples/multiple-operations)
+* [Multiple Data Operations Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/listview/app/examples/multiple-operations)
 
 Related articles you might find useful:
 

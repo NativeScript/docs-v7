@@ -69,10 +69,10 @@ If you want to use an `Array` with your custom objects and they don't have `key`
 ## References
 
 Want to see these scenarios in action?
-Check our [SDK Examples](https://github.com/telerik/nativescript-ui-samples) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
+Check our [SDK Examples](https://github.com/NativeScript/nativescript-ui-samples) repo on GitHub. You will find these and many other practical examples with NativeScript UI.
 
-* [Value Providers Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/value-providers)
-* [Editors Common Example](https://github.com/telerik/nativescript-ui-samples/tree/master/dataform/app/examples/editors)
+* [Value Providers Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/value-providers)
+* [Editors Common Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/dataform/app/examples/editors)
 
 Related articles you might find useful:
 

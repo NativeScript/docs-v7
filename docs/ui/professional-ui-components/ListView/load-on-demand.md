@@ -44,7 +44,7 @@ The {% typedoc_link classes:RadListView,member:loadOnDemandItemTemplate %} prope
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Load On Demand Example](https://github.com/telerik/nativescript-ui-samples/tree/master/listview/app/examples/load-on-demand)
+* [Load On Demand Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/listview/app/examples/load-on-demand)
 
 Related articles you might find useful:
 

@@ -39,4 +39,4 @@ The following images demonstrate how this setup looks like in a running applicat
 Want to see this scenario in action?
 Check our Angular SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Legend Examples](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/chart/app/examples/legend)
+* [Legend Examples](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/chart/app/examples/legend)

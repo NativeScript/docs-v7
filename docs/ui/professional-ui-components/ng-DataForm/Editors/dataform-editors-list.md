@@ -225,11 +225,11 @@ If an editor that you would like to use is not included in the list with predefi
 ## References
 
 Want to see this scenario in action?
-Check our [SDK Examples for Angular](https://github.com/telerik/nativescript-ui-samples-angular) repo on GitHub. You will find theis and many other practical examples with NativeScript UI.
+Check our [SDK Examples for Angular](https://github.com/NativeScript/nativescript-ui-samples-angular) repo on GitHub. You will find theis and many other practical examples with NativeScript UI.
 
-* [Editors Common Example](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/dataform/app/examples/editors)
-* [Editors AutoComplete Example](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/dataform/app/examples/editors/autocomplete)
-* [Editors Labels Example](https://github.com/telerik/nativescript-ui-samples-angular/tree/master/dataform/app/examples/editors/labels)
+* [Editors Common Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/dataform/app/examples/editors)
+* [Editors AutoComplete Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/dataform/app/examples/editors/autocomplete)
+* [Editors Labels Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/dataform/app/examples/editors/labels)
 
 Related articles you might find useful:
 

@@ -37,4 +37,4 @@ This will initialize a new {% typedoc_link classes:RadCalendar %} instance and p
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Getting Started Example](https://github.com/telerik/nativescript-ui-samples/tree/master/calendar/app/calendar/getting-started)
+* [Getting Started Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/calendar/app/calendar/getting-started)

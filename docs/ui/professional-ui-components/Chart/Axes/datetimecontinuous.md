@@ -19,7 +19,7 @@ When [RadCartesianChart]({% slug chart-types-cartesian-angular%}) visualizes {% 
 > When binding the chart to data that contains Date objects, developers need to convert these date objects to time in **milliseconds**. 
 
 This is necessary because the Telerik UI library calls JSON.stringify() on the data objects before they are passed to the underlying native implementation. Then, the native implementation
-parses back the string to a native Android or iOS object. This call to stringify may produce incorrect results when called on a Date object. To be safe, convert the Date data beforehand to time in milliseconds. For more details take a look at our "Date time axis" example from our sdk repository [here](https://github.com/telerik/nativescript-ui-samples/tree/master/chart/app/examples/axes/date-time-axes)
+parses back the string to a native Android or iOS object. This call to stringify may produce incorrect results when called on a Date object. To be safe, convert the Date data beforehand to time in milliseconds. For more details take a look at our "Date time axis" example from our sdk repository [here](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples/axes/date-time-axes)
 
 ### Features
 
@@ -51,7 +51,7 @@ You can get and set the current value with the {% typedoc_link classes:Categoric
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [DateTime Continuous Axis Examples](https://github.com/telerik/nativescript-ui-samples/tree/master/chart/app/examples/axes/date-time-axes)
+* [DateTime Continuous Axis Examples](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples/axes/date-time-axes)
 
 Related articles you might find useful:
 

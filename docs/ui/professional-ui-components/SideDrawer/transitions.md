@@ -28,4 +28,4 @@ To use a specific transition, you need to set an instance of it to the {% typedo
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [Transitions Example](https://github.com/telerik/nativescript-ui-samples/tree/master/sidedrawer/app/examples/transitions)
+* [Transitions Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/sidedrawer/app/examples/transitions)
