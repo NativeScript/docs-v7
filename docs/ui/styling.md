@@ -621,7 +621,7 @@ Example:
 {% angular %}
 ```CSS
 .tvElevation{
-    android-elevation:5;
+    android-elevation: 5;
 }
 ```
 ```XML
@@ -635,7 +635,15 @@ Example:
 [Demo](https://play.nativescript.org/?template=play-ng&id=hfogBI)
 {% endangular %}
 
+> **Note:** Since NativeScript 5.4, the buttons on Android have default elevation (shadow) of 2, due to the new elevation support. Removing the shadow will allow you to create transparent button. To explicitly remove the elevation, set the `android-elevation` property to 0 as shown below:
+```CSS
+.btn-no-elevation {
+    android-elevation: 0;
+}
+```
+
 More info about this property can be found in [Create Shadows and Clip Views](https://developer.android.com/training/material/shadows-clipping) article.
+
 
 ### Using the androidDynamicElevationOffset property <sup>Android</sup>
 
