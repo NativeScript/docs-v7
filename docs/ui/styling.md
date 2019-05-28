@@ -594,6 +594,90 @@ In the context of mobile development, there are a number of properties that are 
 | `tab-text-font-size`  | `tabTextFontSize`     | Both       | `TabView`      | Sets the tab titles font size, without changing the font size of all contents of the tab. |
 | `text-transform`  | `textTransform`     | Both       | `TabViewItem`      | Sets the text transform individually for every `TabViewItem`. Value options: `capitalize`, `lowercase`, `none`, and `uppercase`. |
 | `android-selected-tab-highlight-color`  | `androidSelectedTabHighlightColor`     | **Android**       | `TabView`      | Sets the underline color of the tabs in Android. |
+| `android-elevation`  | `androidElevation`     | **Android**       | `View`      | Sets the elevation of the View in Android. |
+| `android-dynamic-elevation-offset `  | `androidDynamicElevationOffset`     | **Android**       | `View`      | Sets the elevation of the View in Android, which will be shown when an action was performed(e.g. `tap`, `touch`). |
+
+### Using the androidElevation property <sup>Android</sup>
+
+Since {N} 5.4, a new Android-specific property, called `androidElevation`, is introduced. View's elevation is represented by Zproperty and determines the visual appearance of its shadow. With higher elevation value larger, softer shadows will be set to the View and smaller shadow while using lower elevation.
+
+Example:
+{% nativescript %}
+```CSS
+.tvElevation{
+    android-elevation:5;
+}
+```
+```XML
+<StackLayout class="home-panel">
+    <TextView class="tvElevation" editable="false" textWrap="true" text="TextView" />
+    <Label androidElevation="5" class="sampleLabel" textWrap="true" text="Label" />
+    <Button androidElevation="7" class="sampleButton" text="Button" />
+</StackLayout>
+```
+
+[Demo](https://play.nativescript.org/?template=play-tsc&id=ZraiEJ)
+{% endnativescript %}
+{% angular %}
+```CSS
+.tvElevation{
+    android-elevation:5;
+}
+```
+```XML
+<StackLayout class="home-panel">
+    <TextView class="tvElevation" editable="false" textWrap="true" text="TextView" ></TextView>
+    <Label androidElevation="5" class="sampleLabel" textWrap="true" text="Label" ></Label>
+    <Button androidElevation="7" class="sampleButton" text="Button" ></Button>
+</StackLayout>
+```
+
+[Demo](https://play.nativescript.org/?template=play-ng&id=hfogBI)
+{% endangular %}
+
+More info about this property can be found in [Create Shadows and Clip Views](https://developer.android.com/training/material/shadows-clipping) article.
+
+### Using the androidDynamicElevationOffset property <sup>Android</sup>
+
+Another property introduced with {N} 5.4 is `androidDynamicElevationOffset`. This property allows setting an elevation, which will be shown when an action was performed. Those actions can be, for example, `tap`, `touch` etc.
+
+Example:
+{% nativescript %}
+```CSS
+.sampleButton2{
+    background-color: lightcyan;
+    android-elevation:7;
+    android-dynamic-elevation-offset:7;
+}
+```
+```XML
+<StackLayout class="home-panel">
+    <Button androidElevation="7" androidDynamicElevationOffset="8"
+        class="sampleButton" text="Button" tap="{{ onButtonTap }}" />
+    <Button class="sampleButton2" text="Button" tap="{{ onButtonTap }}" />
+</StackLayout>
+```
+
+[Demo](https://play.nativescript.org/?template=play-tsc&id=bs0Urg)
+{% endnativescript %}
+{% angular %}
+```CSS
+.sampleButton2{
+    background-color: lightcyan;
+    android-elevation:7;
+    android-dynamic-elevation-offset:7;
+}
+```
+```XML
+<StackLayout class="home-panel">
+    <Button androidElevation="7" androidDynamicElevationOffset="8" class="sampleButton"
+        text="Button"></Button>
+    <Button class="sampleButton2" text="Button"></Button>
+</StackLayout>
+```
+
+[Demo](https://play.nativescript.org/?template=play-ng&id=yYml7U)
+{% endangular %}
 
 ## Supported Measurement Units
 
