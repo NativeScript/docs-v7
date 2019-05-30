@@ -32,6 +32,8 @@ For example:
 </RadSideDrawer>
 ```
 
+[Demo Source](https://github.com/NativeScript/nativescript-ui-samples-angular/blob/master/sidedrawer/app/navigation/app.component.html)
+
 By design when navigation is executed in the NativeScript application that navigation will be executed inside the `page-router-outlet` instance which means that the {% typedoc_link classes:RadSideDrawer %} instance will be persisted during that navigation.
 
 When using the {% typedoc_link classes:RadSideDrawer %} as a root element it will by design **always be shown over the navigation bar**. 
