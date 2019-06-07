@@ -72,7 +72,7 @@ Another option to set an event handler is to use an XML declaration. You need a 
 function onTouch(args) {
   console.log("Touch arguments: ", args);
 }
-exports.onTap = onTap;
+exports.onTouch = onTouch;
 ```
 ```TypeScript
 // main-page.ts
