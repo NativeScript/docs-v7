@@ -35,6 +35,8 @@ For example:
 </nsDrawer:RadSideDrawer> 
 ```
 
+[Demo Source](https://github.com/NativeScript/nativescript-ui-samples/blob/master/sidedrawer/app/navigation/category-list-page.xml)
+
 By design when navigation is executed in the NativeScript application that navigation will be executed inside the `Frame` instance which means that the {% typedoc_link classes:RadSideDrawer %} instance will be persisted during that navigation.
 
 When using the {% typedoc_link classes:RadSideDrawer %} as a root element it will by design **always be shown over the navigation bar**. 
