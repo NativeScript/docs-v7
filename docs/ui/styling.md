@@ -589,6 +589,7 @@ In the context of mobile development, there are a number of properties that are 
 
 | CSS Property          | JavaScript Property   | Platform   | Compatibility  | Description |
 |:----------------------|:----------------------|:-----------|:---------------|:------------|
+| `tab-text-color`  | `tabTextColor`     | Both       | `TabView`      | Sets the text color of the tabs titles. |
 | `selected-tab-text-color`  | `selectedTabTextColor`     | Both       | `TabView`      | Sets the color of the text, while selecting some of the tabs. |
 | `tab-background-color`  | `tabBackgroundColor`     | Both       | `TabView`      | Sets the background color of the tabs. |
 | `tab-text-font-size`  | `tabTextFontSize`     | Both       | `TabView`      | Sets the tab titles font size, without changing the font size of all contents of the tab. |
