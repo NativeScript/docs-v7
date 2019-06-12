@@ -597,6 +597,7 @@ In the context of mobile development, there are a number of properties that are 
 | `android-selected-tab-highlight-color`  | `androidSelectedTabHighlightColor`     | **Android**       | `TabView`      | Sets the underline color of the tabs in Android. |
 | `android-elevation`  | `androidElevation`     | **Android**       | `View`      | Sets the elevation of the View in Android. |
 | `android-dynamic-elevation-offset `  | `androidDynamicElevationOffset`     | **Android**       | `View`      | Sets the elevation of the View in Android, which will be shown when an action was performed(e.g. `tap`, `touch`). |
+| `off-background-color`  | `offBackgroundColor`     | Both       | `Switch`      | Sets the background color of the Switch when it is turned off. |
 
 ### Using the androidElevation property <sup>Android</sup>
 
