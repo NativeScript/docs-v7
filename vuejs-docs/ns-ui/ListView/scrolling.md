@@ -33,4 +33,4 @@ The following code snippet demonstrates how to play with scrolling:
 
 ## Horizontal Scrolling
 
-Just set `<RadListView orientation="vertical" ...>` and the scroll will be horizontal.
+Just set `<RadListView orientation="horizontal" ...>` and the scroll will be horizontal.
