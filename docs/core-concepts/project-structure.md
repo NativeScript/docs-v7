@@ -223,9 +223,9 @@ Let's assume the project is located at `/d/work/myApplication`.
 
 ### **nsconfig.json** enabling HMR example
 
-Enable the HMR developer experience by default. By setting `useLegacyWorkflow` to `false`, you will enable the HMR by default (no need to pass additional flags to have HMR). When omitted, the default value is` true` (default livesync experience without the enhanced HMR).
-    ```JSON
-    {
-        "useLegacyWorkflow": false
-    }
-    ```
+Enable the HMR developer experience by default. By setting `useLegacyWorkflow` to `false`, you will enable the HMR by default (no need to pass additional flags to have HMR). When omitted, the default value is `true` (default livesync experience without the enhanced HMR).
+```JSON
+{
+    "useLegacyWorkflow": false
+}
+```
