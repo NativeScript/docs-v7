@@ -11,7 +11,7 @@ publish: true
 # Populating RadCalendar with Data
 RadCalendar allows you to define a list of events for a particular date. This is done by using the `eventSource` property. This article describes the steps you need to take in order to feed {% typedoc_link classes:RadCalendar %} with your custom events using a events source.
 
-### The CalendarEvent Class
+## The CalendarEvent Class
 Feeding events into {% typedoc_link classes:RadCalendar %} is done via instances of the {% typedoc_link classes:CalendarEvent %} class. The {% typedoc_link classes:CalendarEvent %} class is model describing a single event. It exposes properties allowing you to specify things like:
 
 - start time of the event
@@ -38,8 +38,17 @@ Running the application, the following is shown on iOS and Android:
 
 ![TelerikUI-RadCalendar-Populating-With-Data](../../img/ns_ui/calendar-populating-with-data_android.png "iOS") ![TelerikUI-RadCalendar-Populating-With-Data](../../img/ns_ui/calendar-populating-with-data_ios.png "Android")
 
+## Extending the CalendarEvent
+If you need, you can extend the `CalendarEvent` with an id to track more easily the selected items or any other information that you need that is missing from the default event. Here's an example:
+
+<snippet id='calendar-custom-event-model-ts'/>
+
+Then you can use the new type to populate the list of items that will be bound to  **RadCalendar**'s `eventSource` property:
+
+<snippet id='calendar-custom-event-items-ts'/>
+
 ## Event View Modes
-By default, events for each date cell are shown as dots (iOS) or squares with a summary (Android). You can customize this behavior by choosing one of the following event view modes:
+The events for each date cell are shown as dots (iOS) or squares with a summary (Android). **RadCalendar** allows you to show more information about the events by changing the **eventsViewMode** property. The default value is **None** meaning that there will be no additional event reperesentation coming out-of-the-box and the detailed information about events could be added through an additional **ListView** added below the **RadCalendar** and populated with information about events in a selected date. There are other event modes - **Inline** and **Popover** that present similar information within the calendar. Here are the available event view modes:
 
 - {% typedoc_link enums:CalendarEventsViewMode,member:None %} - the default option
 - {% typedoc_link enums:CalendarEventsViewMode,member:Inline %} - event details are displayed in a list that appears in the calendar

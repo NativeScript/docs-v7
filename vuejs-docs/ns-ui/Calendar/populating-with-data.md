@@ -34,8 +34,17 @@ We can then use the {% typedoc_link classes:RadCalendar,member:getEvents() %} me
 
 <snippet id='calendar-populate-vue'/>
 
+## Extending the CalendarEvent
+If you need, you can extend the `CalendarEvent` with an id to track more easily the selected items or any other information that you need that is missing from the default event. Here's an example:
+
+<snippet id='calendar-custom-event-model-vue'/>
+
+Then you can use the new type to populate the list of items that will be bound to  **RadCalendar**'s `eventSource` property:
+
+<snippet id='calendar-populate-custom-event-vue'/>
+
 ## Event view modes
-By default, events for each date cell are shown as dots (iOS) or squares with a summary (Android). You can customize this behavior by choosing one of the following event view modes:
+The events for each date cell are shown as dots (iOS) or squares with a summary (Android). **RadCalendar** allows you to show more information about the events by changing the **eventsViewMode** property. The default value is **None** meaning that there will be no additional event representation coming out-of-the-box and the detailed information about events could be added through an additional **ListView** added below the **RadCalendar** and populated with information about events in a selected date. There are other event modes - **Inline** and **Popover** that present similar information within the calendar. Here are the available event view modes:
 
 - {% typedoc_link enums:CalendarEventsViewMode,member:None %} - the default option
 - {% typedoc_link enums:CalendarEventsViewMode,member:Inline %} - event details are displayed in a list that appears in the calendar
