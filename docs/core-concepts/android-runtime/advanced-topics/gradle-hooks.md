@@ -22,15 +22,16 @@ In this file you can set the default Android configurations like `minSdkVersion`
 ```Groovy
 android {
   defaultConfig {
-    minSdkVersion 17
+    minSdkVersion 21
     generatedDensities = []
+    targetSdkVersion 28
   }
   aaptOptions {
     additionalParameters "--no-version-vectors"
   }
 }
 dependencies {
-  implementation 'com.android.support:recyclerview-v7:+'
+  implementation 'androidx.recyclerview:recyclerview:1.1.0-alpha06'
 }
 ```
 

@@ -75,7 +75,7 @@ This article will walk you through setting up an already existing Android Studio
         dependencies {
             ...
             implementation fileTree(dir: 'libs', include: ['*.aar'])
-            implementation "com.android.support:multidex:1.0.2"
+            implementation "androidx.multidex:multidex:2.0.0"
             ...
         }
     ```

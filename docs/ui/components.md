@@ -191,7 +191,7 @@ With the {% nativescript %}[TabView]({%slug tab-view%}){% endnativescript %} {% 
 
 | Android                | iOS      |
 |:-----------------------|:---------|
-| [android.support.v4.view.ViewPager](http://developer.android.com/reference/android/support/v4/view/ViewPager.html) | [UITabBarController](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/) |
+| [androidx.viewpager.widget.ViewPager](https://developer.android.com/reference/kotlin/androidx/viewpager/widget/ViewPager) | [UITabBarController](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/) |
 
 ## SegmentedBar
 
