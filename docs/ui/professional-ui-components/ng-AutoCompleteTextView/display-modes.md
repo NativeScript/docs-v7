@@ -26,7 +26,7 @@ The next code snippet shows how to change that default value to {% typedoc_link 
 In plain mode the {% typedoc_link classes:RadAutoCompleteTextView %} displays chosen item as plain text. With this mode only one item can be chosen.
 
 ## Tokens mode
-Tokens mode allows multiple choice of items. Chosen items are displayed as tokens which can be modified or completely changed with custom ones.
+Tokens mode allows multiple choice of items, which are displayed as tokens.
 
 When **RadAutoCompleteTextView**'s `displayMode` is `Tokens`, you can apply two different behaviors for token arrangement.
 
@@ -38,10 +38,10 @@ The layout mode of the tokens can be changed with the {% typedoc_link enums:RadA
 <snippet id='angular-autocomplete-layouts-wrap-html'/>
 <snippet id='angular-autocomplete-layouts-wrap'/>
 
-## Wrap layout
-In wrap mode tokens are arranged on multiple lines. Every time a new line is started the {% typedoc_link classes:RadAutoCompleteTextView %} is expanding in order to show all tokens.
+### Wrap Layout
+In wrap mode tokens are arranged on multiple lines. Every time a new line is started the **RadAutoCompleteTextView** is expanding in order to show all tokens.
 
-## Horizontal layout
+### Horizontal Layout
 In horizontal mode tokens are displayed on single line which can be scrolled horizontally in order to display all tokens.
 
 ## References

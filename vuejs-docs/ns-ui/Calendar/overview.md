@@ -9,7 +9,7 @@ publish: true
 ---
 
 # RadCalendar for Vue
-{% typedoc_link classes:RadCalendar %} for NativeScript is based on the corresponding native calendar components from the Progress UI for iOS and Progress UI for Android suites. It exposes a unified API covering all major features coming from the native components like:
+{% typedoc_link classes:RadCalendar %} for NativeScript is a highly customizable native calendar abstraction that exposes a unified API, covering:
 - inline events
 - different view modes
 - cells customization
@@ -18,7 +18,7 @@ publish: true
 ## Features
 
 ### View modes
-{% typedoc_link classes:RadCalendar %} supports four different view modes that are suitable for different application scenarios:
+{% typedoc_link classes:RadCalendar %} supports different view modes that are suitable for different application scenarios:
 
 - {% typedoc_link enums:CalendarViewMode,member:Week %} - displays the dates within one week
 - {% typedoc_link enums:CalendarViewMode,member:Month %} - displays the dates within one month

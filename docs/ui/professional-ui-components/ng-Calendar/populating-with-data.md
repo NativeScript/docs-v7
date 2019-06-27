@@ -33,6 +33,15 @@ We can then use the {% typedoc_link classes:RadCalendar,member:getCalendarEvents
 <snippet id='angular-calendar-populating-with-data-html' />
 <snippet id='angular-calenda-populating-with-data' />
 
+## Extending the CalendarEvent
+If you need, you can extend the `CalendarEvent` with an id to track more easily the selected items or any other information that you need that is missing from the default event. Here's an example:
+
+<snippet id='angular-calendar-custom-event-model-ts'/>
+
+Then you can use the new type to populate the list of items that will be bound to  **RadCalendar**'s `eventSource` property:
+
+<snippet id='angular-calendar-custom-event-items-ts'/>
+
 ## Event View Modes
 By default, events for each date cell are shown as dots (iOS) or squares with a summary (Android). You can customize this behavior by choosing one of the following event view modes:
 

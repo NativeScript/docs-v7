@@ -18,6 +18,7 @@ publish: true
 - {% typedoc_link classes:RadCalendar,member:navigatingToDateStartedEvent %} - fired when navigation to a given date is about to happen
 - {% typedoc_link classes:RadCalendar,member:viewModeChangedEvent %} - fired when the view-mode changes to one of the modes described in [view modes]({% slug calendar-view-modes %})
 - {% typedoc_link classes:RadCalendar,member:dayViewEventSelectedEvent %} - fired when an event, part the list of events in the day view area of the calendar, has been selected
+- {% typedoc_link classes:RadCalendar,member:cellTapEvent %} - fired when a cell is tapped
 
 
 ## Providing Handlers
@@ -48,6 +49,10 @@ All events exposed by {% typedoc_link classes:RadCalendar %} provide additional 
 	- `eventName` - the name of the event
 	- `object` - the sender of the event
 	- `eventData` - an instance of the {% typedoc_link classes:CalendarEvent %} class representing the selected event
+- {% typedoc_link classes:RadCalendar,member:cellTapEvent %} delivers its data by providing an instance of the {% typedoc_link classes:CalendarCellTapEventData %}. This class defines the following properties:
+	- `eventName` - the name of the event
+	- `object` - the sender of the event
+	- `date` - the date of the cell that is tapped
 	
 ## References
 Want to see this scenario in action?

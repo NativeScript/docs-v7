@@ -20,4 +20,15 @@ To change the selection mode of {% typedoc_link classes:RadCalendar %} you shoul
 
 <snippet id='calendar-selectionmode-vue'/>
 
+Depending on the currect selection mode, you can use the following properties to get/set the selected dates:
+
+- Single selection - {% typedoc_link classes:RadCalendar,member:selectedDate%}, which accepts values of type `Date`.
+- Multiple selection - {% typedoc_link classes:RadCalendar,member:selectedDates%}, which accepts values of type `Date` array.
+- Range selection - {% typedoc_link classes:RadCalendar,member:selectedDateRange%}, which accepts values of type {% typedoc_link classes:DateRange %}.
+
+To programmatically clear the selection, you can either set `null` to the relevant property, or call {% typedoc_link classes:RadCalendar,member:clearSelection %}.
+Here's an example:
+
+<snippet id='calendar-programmatic-selection-vue' />
+
 > The Selection mode functionality could be used in the cases while we use `Month` or `Week` `viewMode`
