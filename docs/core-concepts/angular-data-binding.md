@@ -83,7 +83,7 @@ This is the way Angular supports two-way data binding. It generally works in alm
 
 ## Interpolation 
 
-Angular mustache (`{{ }}`) syntax for binding a.k.a. interpolation is also supported within a NativeScript-Angular application. It's just another way of one-way binding placed in the middle of a text.
+Angular mustache {%raw%}(`{{ }}`){%endraw%} syntax for binding a.k.a. interpolation is also supported within a NativeScript-Angular application. It's just another way of one-way binding placed in the middle of a text.
 
 ```XML
 {%raw%}<Label text='{{model.deliveryHour}}:{{model.deliveryMinute}}'></Label>{%endraw%}
