@@ -31,7 +31,7 @@ tns migrate
 ```
 This command will perform all the required updates of packages and changes in the project that are required to adjust a 6.0 project with the latest requirements.
 
-> Node: The migrate command will update {N} core packages and the below-listed plugins to their 6.0 compatible versions:
+> Node: The migrate command will update {N} core packages and the below-listed plugins to their 6.0 compatible version:
 ```
  node-sass
  typescript
@@ -58,7 +58,7 @@ This command will perform all the required updates of packages and changes in th
  nativescript-cardview
 ```
 
-> Note: As soon as you find a problem with the core dependencies - please open an issue in the respective GitHub repository. If unsure, you can open it in the (nativescript/nativescript)[https://github.com/nativescript/nativescript/issues] repository. If the problem is related to some of the external plugins, please contact the author by opening a new issue in the plugin's repository.
+> Note: As soon as you find a problem with the core dependencies - please open an issue in the respective GitHub repository. If unsure, you can open it in the [nativescript/nativescript](https://github.com/nativescript/nativescript/issues) repository. If the problem is related to some of the external plugins, please contact the author by opening a new issue in the plugin's repository.
 
 ## Upgrading the application
 
