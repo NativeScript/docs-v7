@@ -175,7 +175,7 @@ Let’s make one final change.
 Find the first line of your app’s `app/app.css` file, which imports a `core.light.css` file. This import tells NativeScript to use a “light” color scheme. Let’s change to the “sky” color scheme by replacing the existing line of code with the one shown below.
 
 ``` CSS
-@import "nativescript-theme-core/css/sky.css";
+@import '~nativescript-theme-core/css/sky.css';
 ```
 
 <div class="exercise-end"></div>
