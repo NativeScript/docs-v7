@@ -62,8 +62,67 @@
             -->
             <a class="ns-button -action" href="https://www.nativescript.org/getting-started-with-nativescript?utm_medium=website&utm_campaign=useownrealestate&utm_source=docsnativescriptdotcom&utm_content=topnavgreenbutton">Get Started</a>
         </li>
+        <li>
+            <span id="current-version"></span>
+            <ul id="versions-list">
+                <!-- <li><a href="http://localhost:9192">Version 5.4</a></li>
+                <li><a href="http://localhost:9194">Version 6.0</a></li> -->
+            </ul>
+        </li>
     </ul>
+    
 </div>
+<script>
+    $.getJSON( "https://raw.githubusercontent.com/tsonevn/docstest/master/versions.json", function( data ) {
+        var baseUrl = document.location.origin;
+        data["versions"].forEach( function( val ) {
+            if(baseUrl.indexOf(val['url']) >= 0){
+                $('#current-version').text("Current version "+val['version']);
+                $('#versions-list').append("<li class='k-item k-state-active k-first'><a class='k-link' id='" + val['url'] + "'>Version "+val['version']+"</a></li>")
+            } else{
+                $('#versions-list').append("<li class='k-item k-state-default k-first'><a class='k-link' id='" + val['url'] + "'>Version "+val['version']+"</a></li>")
+            }
+        });
+        $('#versions-list a').click(function(ev) {
+            ev.preventDefault();
+            var url = window.location.href;
+            var baseUrlPattern = /^https?:\/\/[a-z\:0-9.]+/;
+            var result = "";
+        
+            var match = baseUrlPattern.exec(url);
+            if (match != null) {
+                result = match[0];
+            }
+            var targetURL = undefined;
+            if ((result.length > 0) && (event.target.id) && (result != event.target.id)) {
+                targetURL = event.target.id;
+                url = url.replace(result, targetURL);
+                // debugger;
+                // $.ajax({
+                //     type: 'HEAD',
+                //     url: url,
+                //     success: function(){
+                        window.location.replace(url);
+                //     },
+                //     error: function(err) {
+                //         console.log("request error");
+                //         console.log(err);
+                //         console.log("---------------");
+                //         console.log(err.toString());
+                //         debugger;
+                //         window.location.replace(targetURL);
+                //     }
+                // });
+            } else {
+                console.log("Error: no targetURL")
+            }
+            
+            // document.getElementById(divId).className = '';
+
+        });
+    })
+    
+</script>
 <script>
     window.nsMenu = $(".ns-menu").remove();
 
