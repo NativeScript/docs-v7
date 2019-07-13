@@ -1,6 +1,6 @@
 # NativeScript Documentation
 
-Home of the NativeScript documentation content that lives at <http://docs.nativescript.org>. Start [contributing](#contributing) today!
+Home of the NativeScript documentation content that lives at [DOCS](<http://docs.nativescript.org>). Start [contributing](#contributing) today!
 
 * [Contributing 🍺](#contributing)
 * [About Jekyll :nut_and_bolt:](#about-jekyll)
@@ -12,7 +12,7 @@ Home of the NativeScript documentation content that lives at <http://docs.native
 
 The NativeScript documentation is completely open source and we love contributions. Whether you want to fix a typo, or write an entire article, the NativeScript documentation is a great way to get started contributing to an open source project.
 
-Don’t know where to start? Check out the [list of issues with the “help wanted” label](https://github.com/NativeScript/docs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22). New to git or GitHub? [Join our community Slack chat](https://www.nativescript.org/slack-invitation-form) and we’ll be happy to help get you up and running.
+Don’t know where to start? Check out the [list of issues with the “help wanted” label](https://github.com/NativeScript/docs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22). New to git or GitHub? [Join our Slack Community](https://www.nativescript.org/slack-invitation-form) and we’ll be happy to help get you up and running.
 
 The `master` branch contains the most up-to-date version of the NativeScript documentation and its contents are uploaded to [docs.nativescript.org](https://docs.nativescript.org/). When contributing to the documentation, always create a branch for your work from `master` as this will facilitate easier pull request management.
 
@@ -21,7 +21,7 @@ This documentation is built using [Jekyll](https://jekyllrb.com/docs/home/). Mor
 
 ## Configuration
 
-There are two versions of the NativeScript documentation that generate similar output: `nativescript` and `angular`. The former builds the vanilla NativeScript docs at [docs.nativescript.org/start/introduction](https://docs.nativescript.org/start/introduction), while the latter discusses Angular-specific topics at [docs.nativescript.org/angular/start/introduction](https://docs.nativescript.org/angular/start/introduction).
+There are two versions of the NativeScript documentation that generate similar output: `nativescript` and `angular`. The former builds the vanilla NativeScript docs at [docs.nativescript.org/start/introduction](https://docs.nativescript.org/start/introduction), while the latter discusses Angular-specific topics at [Angular Introduction](https://docs.nativescript.org/angular/start/introduction).
 
 Most of the content in this repository is shared between the two environments, but occasionally you may need to add environment-specific content. When you have this need you have a few options.
 
