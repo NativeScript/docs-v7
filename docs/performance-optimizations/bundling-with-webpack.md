@@ -24,9 +24,9 @@ Webpack works by traversing your source tree starting from some "entry" modules 
 
 ## Installation and Configuration
 
-With NativeScript 6 and above, the framework is automatically adding `nativescript-dev-webpack` (as a `devDependency`) and creating a default `webpack.config.js` configuration file. The Webpack application bundling and developer workflow are enabled by default and no further setup steps are required.
+With NativeScript 6 and above, the framework is automatically adding `nativescript-dev-webpack` (as a `devDependency`) and creating a default `webpack.config.js` configuration file. The Webpack application bundling and developer workflow are enabled by default, and no further setup steps are required.
 
-> **Note:** For projects created with older version of NativeScript (version 5.x.x and prior), you can run the `tns migrate` command to add the Webpack dependencies and configuration files.
+> **Note:** For projects created with an older version of NativeScript (version 5.x.x and prior), you can run the `tns migrate` command to add the Webpack dependencies and configuration files.
 
 ## How nativescript-dev-webpack Works
 
@@ -58,9 +58,9 @@ or
 tns build
 ```
 
-Both command will execute your project with Webpack and HMR enabled.
+Both commands will execute your project with Webpack and HMR enabled.
 
-> Note: If you need to disable the HMR experience, you can achive that by adding the `--no-hmr` flag. With NativeScript 6.0.0 and above, Webpack is the primary developer workflow and can't be disabled.
+> Note: If you need to disable the HMR experience, you can achieve that by adding the `--no-hmr` flag. With NativeScript 6.0.0 and above, Webpack is the primary developer workflow and can't be disabled.
 
 - **Pass Environment Variables**
 
@@ -80,7 +80,7 @@ module.exports = env => {
 
 ### Publishing Application
 
-A bundled version of the application for Android can be built in release with the known release commnand - no additional flags are needed:
+Create a bundled version of the application for Android  in release with the known release command - no additional flags are needed:
 
 ```
 $ tns build android --release --keyStorePath ~/path/to/keystore --keyStorePassword your-pass --keyStoreAlias your-alias --keyStoreAliasPassword your-alias-pass
@@ -107,7 +107,7 @@ $ tns publish ios --ipa ipa-file-path-here
 
 More options for publishing an iOS application can be found in the ["Publishing for iOS article"](https://docs.nativescript.org/publishing/publishing-ios-apps) article.
 
-> If there are multiple mobile provisioning profiles for the selected development team available on the machine, it is not guaranteed that Xcode will select the desired one and publishing using the command line will be successful. Therefore, in such cases, we recommend manually configuring and uploading the project from Xcode.
+> If there are multiple mobile provisioning profiles for the selected development team available on the machine, it is not guaranteed that Xcode will choose the desired one and publishing using the command line will be successful. Therefore, in such cases, we recommend manually configuring and uploading the project from Xcode.
 
 ## Optimizations
 
@@ -131,7 +131,7 @@ $ tns build android|ios --env.aot
 
 ### V8 Heap Snapshot
 
-The Webpack configuration also includes the [`NativeScriptSnapshotPlugin`](https://github.com/NativeScript/nativescript-dev-webpack/tree/master/plugins/NativeScriptSnapshotPlugin). The plugin loads a single Webpack bundle in an empty V8 context, a.k.a. snapshotted context, and after its execution captures a snapshot of the produced V8 heap and saves it in a `.blob` file. Next the `.blob` file is included in the `.apk` bundle and is loaded by the Android Runtime on app initialization. This obviates the need for loading, parsing and executing the script on app startup which can drastically decrease the starting time.
+The Webpack configuration also includes the [`NativeScriptSnapshotPlugin`](https://github.com/NativeScript/nativescript-dev-webpack/tree/master/plugins/NativeScriptSnapshotPlugin). The plugin loads a single Webpack bundle in an empty V8 context, a.k.a. snapshotted context, and after its execution captures a snapshot of the produced V8 heap and saves it in a `.blob` file. The `.blob` file is included in the `.apk` bundle and is loaded by the Android Runtime on app initialization. This prevents the need for loading, parsing, and executing the script on app startup, which can drastically decrease the starting time.
 
 You can use the snapshot plugin only for **release** builds. You need to provide the `--env.snapshot` flag along with the other release arguments:
 ```
@@ -139,7 +139,7 @@ $ tns build android --env.snapshot --release --keyStorePath ~/path/to/keystore -
 ```
 
 Known limitations:
-* No iOS support. Heap snapshot is a V8 feature which is the engine used in the Android Runtime. Providing `--env.snapshot` flag on the iOS bundling commands will have no effect.
+* No iOS support. Heap snapshot is a V8 feature which is the engine used in the Android Runtime. Providing `--env.snapshot` flag on the iOS bundling commands will not affect.
 * No Windows support. Providing `--env.snapshot` flag on the Android bundling command will not affect Windows machines.
 * Only one Webpack bundle can be snapshotted. By default, this is the `vendor.js` chunk. It contains all external packages used by the application.
 
@@ -169,7 +169,7 @@ if (snapshot) {
 * `webpackConfig` - Webpack configurations object. The snapshot generation modifies the Webpack config object to ensure that the specified bundle will be snapshotted successfully.
 
 #### Other options:
-* `targetArchs` - Since the serialization format of the V8 heap is architecture-specific, we need a different blob file for each V8 library target architecture. The Android Runtime library contains 3 architecture slices - `ia32` (for emulators), `arm` and `arm64` (for devices). However, [if not explicitly specified](https://github.com/NativeScript/android-runtime/issues/614), the `arm` slice is used even on `arm64` devices. In other words, generating a heap snapshot for all supported architectures (`arm`, `arm64`, `ia32`) will guarantee that the snapshotted heap is available on every device/emulator. However, when building for the release, you can leave only `arm`and `arm64` in the `targetArchs` array which decreases the size of the produced APK file.
+* `targetArchs` - Since the serialization format of the V8 heap is architecture-specific, we need a different blob file for each V8 library target architecture. The Android Runtime library contains 3 architecture slices - `ia32` (for emulators), `arm` and `arm64` (for devices). However, [if not explicitly specified](https://github.com/NativeScript/android-runtime/issues/614), the `arm` slice is used even on `arm64` devices. In other words, generating a heap snapshot for all supported architectures (`arm`, `arm64`, `ia32`) will guarantee that the snapshotted heap is available on every device/emulator. However, when building for the release, you can leave only `arm`and `arm64` in the `targetArchs` array, which decreases the size of the produced APK file.
 * `v8Version` - Specify the v8 engine version that should be used. By default, the value is determined based on the Android runtime version that the project is using.
 
 #### [ABI split](https://docs.nativescript.org/publishing/android-abi-split) options:
@@ -210,7 +210,7 @@ The `report/report.html` page shows the application chunks.
 
 ![Android report](../img/webpack/android-report.png)
 
-For analyzing the dependency graph between the modules, use [webpack.github.ui/analyse](http://webpack.github.io/analyse/) and open the `stats.json` file.
+For analyzing the dependency graph between the modules, use [webpack.github.ui/analyze](http://webpack.github.io/analyse/) and open the `stats.json` file.
 
 ## Recommendations for Plugin Authors
 
