@@ -22,7 +22,7 @@ The content in this document describes how to create a NativeScript Application 
 * Locate the already installed `tns-android` package on the file system and:
 	* Copy the content of the `./framework/assets` folder and paste it in the project's assets folder.
 	* Within the `./libs` folder:
-		* Copy all the JAR files (except the xxx.support.xxx one) and paste them to the project's `libs` folder.
+		* Copy all the JAR files and paste them to the project's `libs` folder.
 		* Copy the `armeabi-v7a` and `x86` folders and paste them in the project's `jniLibs` folder.
 * Within the project's `assets` folder create a new folder named `app`.
 * Create a new `bootstrap.js` file within the `app` folder.

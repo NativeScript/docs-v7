@@ -95,7 +95,7 @@ java -jar build/libs/dts-generator.jar -input classes.jar dependency-of-classes-
 
 Generating the typings corresponding to the Android and android-support jar files is a bit tricky operation, so here's a detailed explanation how to do it. There are different Android support versions and they depend on main Android classes. The workflow is to generate a big `*.d.ts` file with all the libraries inside. The downside of this approach is that you have to generate a big file for every API level and if the Android support version is changed all those `*.d.ts` files need to be regenerated. To avoid this, there's some functionality in the tool for passing dependencies when generating typings. There are two type of dependencies that can be passed:
 
-- **Super class jars**- this is needed when the current jar has classes which are extending classes from another jar file, but we don't want to have all that jar files' typings in a single output file. To achieve this, we can provide the super class jar with the super argument (which works the same way as input for multiple files). For instance, if we want to generate typings for `android.support.v4.view.ViewPager` and we don't pass the super classes jar the generated typings won't extend any class as there's no information in the jar that contains the `ViewPager`. However, this class extends `android.view.ViewGroup` class which is a part of the Android jar file (any of the API levels). So if we pass one of the android.jar files as a super class jar file the generated typing will contain `extends android.view.ViewGroup`.
+- **Super class jars**- this is needed when the current jar has classes which are extending classes from another jar file, but we don't want to have all that jar files' typings in a single output file. To achieve this, we can provide the super class jar with the super argument (which works the same way as input for multiple files). For instance, if we want to generate typings for `androidx.viewpager.widget.ViewPager` and we don't pass the super classes jar the generated typings won't extend any class as there's no information in the jar that contains the `ViewPager`. However, this class extends `android.view.ViewGroup` class which is a part of the Android jar file (any of the API levels). So if we pass one of the android.jar files as a super class jar file the generated typing will contain `extends android.view.ViewGroup`.
 - **Input generics** - When trying to get the type of a parameter which is a generic class we cannot really get the generic types of that class, so we cannot generate working typings. To fix this we are adding information about the generics of each package at the end of the file with comments starting with `//Generics information:`. So to fix this we need to provide a file with all the generic information for the packages the current jar relies on. You need to create a file and copy all the generic informations of the related packages and provide it in the **input-generics** argument. This will make all the generic classes referenced without passing types to pass any so that the ouput will be valid.
 
 ### Adding all implements for generic types
@@ -116,7 +116,7 @@ dependencies {
     implementation 'com.google.code.findbugs:findbugs:3.0.1'
 
     // add your dependency bellow
-    testCompileOnly  "com.android.support:support-v4:27.0.1"
+    testCompileOnly  "com.google.android.material:material:1.0.0"
 }
 ```
 
@@ -137,6 +137,8 @@ dependencies {
 - Run the dts-generator tool passing as input arguments the path to the output `jars` folder
 
 ### Android Support Specifics
+
+> **Important** This section describes specifics related to the Android Support libraries, and used in NativeScript 5 and older versions. NativeScript 6 uses the AndroidX library which is replacing the Support libraries. AndroidX and Androud SUpport libraries are not compatible.
 
 To get all the jar files for Android support library, follow the steps above. You can find the jar files for Android support 27.0.1 [in the current repository](https://github.com/NativeScript/android-dts-generator/tree/master/libs/android-support/27.0.1) As the android support needs the base Android jar file to create its typings you need to pass the android.jar file as a super parameter to the generator. To avoid having typings for every different API level you can reuse typings built with API level 17 for all API levels until 23. It's quite easy to test this:
 
