@@ -26,7 +26,7 @@ Webpack works by traversing your source tree starting from some "entry" modules 
 
 With NativeScript 6 and above, the framework is automatically adding `nativescript-dev-webpack` (as a `devDependency`) and creating a default `webpack.config.js` configuration file. The Webpack application bundling and developer workflow are enabled by default, and no further setup steps are required.
 
-> **Note:** For projects created with an older version of NativeScript (version 5.x.x and prior), you can run the `tns migrate` command to add the Webpack dependencies and configuration files.
+> **Note:** For projects created with an older version of NativeScript (version 5.x.x and prior), you can run the `tns migrate` command to add the Webpack dependencies and configuration files. Detailed instructions for installing, configuring and using Webpack with NativeScript CLI 5.x and below can be found [here](https://github.com/NativeScript/docs/blob/5.4/docs/performance-optimizations/bundling-with-webpack.md)
 
 ## How nativescript-dev-webpack Works
 
@@ -263,3 +263,4 @@ Bundling JavaScript code can get complex quickly, and encountering Webpack for t
 * [Introduction](https://webpack.js.org/guides/getting-started/)
 * [Tutorial](https://webpack.js.org/concepts/)
 * [Webpack CLI Reference](https://webpack.js.org/api/cli/#components/sidebar/sidebar.jsx)
+* [Using Webpack with older NativeScript versions (5 and below)](https://github.com/NativeScript/docs/blob/5.4/docs/performance-optimizations/bundling-with-webpack.md)
