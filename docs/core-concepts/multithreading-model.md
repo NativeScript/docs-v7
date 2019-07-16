@@ -50,7 +50,8 @@ Workers API in NativeScript is loosely based on the [Dedicated Web Workers API](
  ```JavaScript
     ...
 
-    var worker = new Worker('./workers/image-processor');
+    const WorkerScript = require("nativescript-worker-loader!./worker-script.js");
+    const worker = new WorkerScript();
     worker.postMessage({ src: imageSource, mode: 'scale', options: options });
 
     worker.onmessage = function(msg) {
@@ -110,21 +111,8 @@ Workers API in NativeScript is loosely based on the [Dedicated Web Workers API](
     // global.onerror = function(err) {}
  ```
 
-## Usage with Webpack
 
-The way to spawn a Worker with webpack differs from the way described in the Web Workers' specification (also followed by NativeScript).
-
- main-view-model.js
-```JavaScript
-    ...
-
-   var WorkerScript = require("nativescript-worker-loader!./worker-script.js");
-   var worker = new WorkerScript();
-   worker.postMessage({ src: imageSource, mode: 'scale', options: options });
-   
-    ...
-  ```
-Check out the [nativescript-worker-loader](https://github.com/NativeScript/worker-loader).
+For details on the worker plugin check out the [nativescript-worker-loader](https://github.com/NativeScript/worker-loader) repository.
 
 
 ## General Guidelines
@@ -148,7 +136,5 @@ There are certain limitations to keep in mind when working with workers:
 ## Demo projects
 
 The below-attached projects demonstrate, how we could use the multithreading functionality in non-Angular NativeScript project as well as NativeScript Angular one.
-
-[non-Angular NativeScript Demo](https://github.com/NativeScript/demo-workers)
 
 [NativeScript Angular Demo](https://github.com/NativeScript/worker-loader)
