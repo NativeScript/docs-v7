@@ -23,6 +23,43 @@ npm install -g nativescript
 This will automatically download needed files and will update your computer to the latest version of the NativeScript command line.
 You can type `tns --version` to verify that the new version is installed.
 
+## Migrate an existing project to {N} 6.0
+To migrate an existing NativeScript project to 6.0, you need just to run:
+
+```
+tns migrate
+```
+This command will perform all the required updates of packages and changes in the project that are required to adjust a 6.0 project with the latest requirements.
+
+> Node: The migrate command will update {N} core packages and the below-listed plugins to their 6.0 compatible version:
+```
+ node-sass
+ typescript
+ less
+ nativescript-dev-sass
+ nativescript-dev-typescript
+ nativescript-dev-less
+ nativescript-camera
+ nativescript-geolocation
+ nativescript-imagepicker
+ nativescript-social-share
+ nativescript-ui-chart
+ nativescript-ui-dataform
+ nativescript-ui-gauge
+ nativescript-ui-listview
+ nativescript-ui-sidedrawer
+ nativescript-ui-calendar
+ nativescript-ui-autocomplete
+ nativescript-datetimepicker
+ kinvey-nativescript-sdk
+ nativescript-plugin-firebase
+ nativescript-vue
+ nativescript-permissions
+ nativescript-cardview
+```
+
+> Note: As soon as you find a problem with the core dependencies - please open an issue in the respective GitHub repository. If unsure, you can open it in the [nativescript/nativescript](https://github.com/nativescript/nativescript/issues) repository. If the problem is related to some of the external plugins, please contact the author by opening a new issue in the plugin's repository.
+
 ## Upgrading the application
 
 You should execute the **update** command in the root folder of your project to upgrade it with the latest versions of iOS/Android runtimes and cross-platform modules.
