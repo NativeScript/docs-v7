@@ -149,7 +149,7 @@ To show how the development process works, next, open your plugin's `src/version
 let msg = `Your plugin is working on ${app.android ? 'Android' : 'iOS'}!`;
 ```
 
-After you save this change a few things are going to happen. The CLI will detect the TypeScript change and `version-number.common.ts` file will be compiled to JavaScript. Next, your `demo` command (`tns run`) will detect the change and automatically refresh your demo app to show your string update.
+After you save this change a few things are going to happen. Next, your `demo` command (`tns run`) will detect the change and automatically refresh your demo app to show your string update.
 
 ![Your plugin is working on iOS!](./img/plugins/working-ios-2.png)
 
