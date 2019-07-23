@@ -94,23 +94,17 @@
             if ((result.length > 0) && (event.target.id) && (result != event.target.id)) {
                 targetURL = event.target.id;
                 url = url.replace(result, targetURL);
-                // debugger;
-                // $.ajax({
-                //     type: 'HEAD',
-                //     url: url,
-                //     success: function(){
-                        // window.location.replace(url);
+                $.ajax({
+                    type: 'HEAD',
+                    url: url,
+                    success: function(){
+                        window.location.replace(url);
                         window.location.href = url;
-                //     },
-                //     error: function(err) {
-                //         console.log("request error");
-                //         console.log(err);
-                //         console.log("---------------");
-                //         console.log(err.toString());
-                //         debugger;
-                //         window.location.replace(targetURL);
-                //     }
-                // });
+                    },
+                    error: function(err) {
+                        window.location.href=targetURL;
+                    }
+                });
             } else {
                 console.log("Error: no targetURL")
             }
