@@ -338,7 +338,6 @@ import { Page } from "tns-core-modules/ui/page";
 
 @Component({
     selector: "ns-items",
-    moduleId: module.id,
     templateUrl: "./items.component.html",
 })
 export class ItemsComponent {
@@ -561,7 +560,6 @@ import { isAndroid, isIOS } from "tns-core-modules/platform";
 
 @Component({
     selector: "Home",
-    moduleId: module.id,
     templateUrl: "./home.component.html",
     styleUrls: ['./home.component.css']
 })

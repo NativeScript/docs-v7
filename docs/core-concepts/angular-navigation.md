@@ -221,7 +221,6 @@ import { Component, OnInit } from "@angular/core";
 
 @Component({
 	selector: "Hub",
-	moduleId: module.id,
 	templateUrl: "./hub.component.html",
 	styleUrls: ['./hub.component.css']
 })
@@ -250,7 +249,6 @@ import { Location } from "@angular/common";
 
 @Component({
 	selector: "Featured",
-	moduleId: module.id,
 	templateUrl: "./featured.component.html",
 	styleUrls: ['./featured.component.css']
 })
@@ -355,7 +353,6 @@ import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
 	selector: "Featured",
-	moduleId: module.id,
 	templateUrl: "./featured.component.html",
 	styleUrls: ['./featured.component.css']
 })
@@ -382,7 +379,6 @@ import { Component, OnInit } from "@angular/core";
 
 @Component({
 	selector: "Item",
-	moduleId: module.id,
 	templateUrl: "./item.component.html",
 	styleUrls: ['./item.component.css']
 })
@@ -419,7 +415,6 @@ import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
 	selector: "Item",
-	moduleId: module.id,
 	templateUrl: "./item.component.html",
 	styleUrls: ['./item.component.css']
 })
@@ -541,7 +536,6 @@ import { Component, OnInit } from "@angular/core";
 
 @Component({
 	selector: "Hub",
-	moduleId: module.id,
 	templateUrl: "./hub.component.html",
 	styleUrls: ['./hub.component.css']
 })
@@ -571,7 +565,6 @@ import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
 	selector: "Featured",
-	moduleId: module.id,
 	templateUrl: "./featured.component.html",
 	styleUrls: ['./featured.component.css']
 })
@@ -710,7 +703,6 @@ import { Component, OnInit } from "@angular/core";
 
 @Component({
 	selector: "Featured",
-	moduleId: module.id,
 	templateUrl: "./featured.component.html",
 	styleUrls: ['./featured.component.css']
 })
@@ -855,7 +847,6 @@ import { SearchRootComponent } from "./search-root.component";
 
 @Component({
 	selector: "Featured",
-	moduleId: module.id,
 	templateUrl: "./featured.component.html",
 	styleUrls: ['./featured.component.css']
 })
@@ -904,7 +895,6 @@ import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
 	selector: "SearchRoot",
-	moduleId: module.id,
 	templateUrl: "./search-root.component.html"
 })
 export class SearchRootComponent implements OnInit {
@@ -926,7 +916,6 @@ import { View } from "tns-core-modules/ui/core/view"
 
 @Component({
 	selector: "Search",
-	moduleId: module.id,
 	templateUrl: "./search.component.html",
 	styleUrls: ['./search.component.css']
 })
