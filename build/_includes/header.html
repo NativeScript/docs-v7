@@ -5,7 +5,8 @@
         <li>
             <span>Framework</span>
             <ul>
-                <li><a href="{{site.headerbaseurl}}/nativescript-is-how-you-build-native-mobile-apps-with-angular">Angular Integration</a></li>
+                <li><a href="{{site.headerbaseurl}}/nativescript-is-how-you-build-native-mobile-apps-with-angular">Angular
+                        Integration</a></li>
                 <li><a href="{{site.headerbaseurl}}/vue">Vue.js Integration</a></li>
                 <li><a href="{{site.headerbaseurl}}/showcases">Customer Showcases</a></li>
                 <li><a href="{{site.headerbaseurl}}/roadmap-and-releases">Roadmap &amp; Release Notes</a></li>
@@ -16,9 +17,12 @@
             <span>Developers</span>
             <ul>
                 <li><a href="https://play.nativescript.org">Playground</a></li>
-                <li><a href="https://market.nativescript.org/?tab=samples&framework=all_frameworks&category=all_samples">Code Samples</a></li>
+                <li><a
+                        href="https://market.nativescript.org/?tab=samples&framework=all_frameworks&category=all_samples">Code
+                        Samples</a></li>
                 <li><a href="{{site.headerbaseurl}}/books-and-videos">Books &amp; Videos</a></li>
-                <li><a href="https://market.nativescript.org/?tab=templates&category=all_templates">App Templates</a></li>
+                <li><a href="https://market.nativescript.org/?tab=templates&category=all_templates">App Templates</a>
+                </li>
             </ul>
         </li>
         <li>
@@ -34,7 +38,8 @@
         <li>
             <span>Support</span>
             <ul>
-                <li><a href="https://stackoverflow.com/questions/tagged/nativescript" target="_blank">Stack Overflow</a></li>
+                <li><a href="https://stackoverflow.com/questions/tagged/nativescript" target="_blank">Stack Overflow</a>
+                </li>
                 <li><a href="{{site.headerbaseurl}}/faq">FAQs</a></li>
                 <li><a href="{{site.headerbaseurl}}/slack-invitation-form">Slack</a></li>
                 <li><a href="{{site.headerbaseurl}}/developer-support">Professional Support</a></li>
@@ -54,13 +59,13 @@
             <a href="{{site.headerbaseurl}}/blog">Blogs</a>
         </li>
         <li>
-            <span class="k-link -github"><a href="https://github.com/NativeScript/NativeScript"><i class="fab fa-github"></i></a></span>
+            <span class="k-link -github"><a href="https://github.com/NativeScript/NativeScript"><i
+                        class="fab fa-github"></i></a></span>
         </li>
         <li>
-            <!--
+            
             <a class="ns-button -action" href="https://play.nativescript.org/?utm_medium=website&utm_campaign=useownrealestate&utm_source=docsnativescriptdotcom&utm_content=topnavgreenbutton">Get Started</a>
-            -->
-            <a class="ns-button -action" href="https://www.nativescript.org/getting-started-with-nativescript?utm_medium=website&utm_campaign=useownrealestate&utm_source=docsnativescriptdotcom&utm_content=topnavgreenbutton">Get Started</a>
+           
         </li>
         <li>
             <span id="current-version"></span>
@@ -70,49 +75,56 @@
     </ul>
 </div>
 <script>
-    $.getJSON( "https://raw.githubusercontent.com/tsonevn/docstest/master/versions.json", function( data ) {
-        var baseUrl = document.location.origin;
-        data["versions"].forEach( function( val ) {
-            if(baseUrl.indexOf(val['url']) >= 0){
-                $('#current-version').text("Current version "+val['version']);
-                $('#versions-list').append("<li class='k-item k-state-active k-first'><a class='k-link' id='" + val['url'] + "'>Version "+val['version']+"</a></li>")
-            } else{
-                $('#versions-list').append("<li class='k-item k-state-default k-first'><a class='k-link' id='" + val['url'] + "'>Version "+val['version']+"</a></li>")
+    function getCookie(n) { for (var t = n + "=", e = document.cookie.split(";"), r = 0; r < e.length; r++) { for (var i = e[r]; " " === i.charAt(0);)i = i.substring(1, i.length); if (0 === i.indexOf(t)) return i.substring(t.length, i.length) } return null }
+    function setCookie(e, t, i) { var o; if (i) { var n = new Date; n.setTime(n.getTime() + 24 * i * 60 * 60 * 1e3), o = "; expires=" + n.toGMTString() } else o = ""; document.cookie = e + "=" + t + o + "; path=/" }
+    $.getJSON("https://raw.githubusercontent.com/tsonevn/docstest/master/versions.json", function (data) {
+        var varray = data[`versions`].sort((a, b) => parseFloat(a[`version`]) - parseFloat(b[`version`]));
+        var docsUrl = window.location.href;
+        var baseUrl = window.location.origin;
+        var currentvfound = false;
+        var name = "ns-current-base-url";
+        for (var i = 0; i < varray.length-1; i++) {
+            var currentversion = (varray[i]['version'].replace(/\s/g, "")).replace(".", "_");
+            var itemUrl = baseUrl + "/" + currentversion;
+            if ((docsUrl.indexOf(currentversion) >= 0) && (!currentvfound)) {
+                currentvfound = true
+                $('#current-version').text("Current version " + varray[i]['version']);
+                setCookie(name, itemUrl, 1);
+
             }
-        });
-        $('#versions-list a').click(function(ev) {
+            $('#versions-list').append("<li class='k-item k-state-default k-first'><a class='k-link' id='" + itemUrl + "'>Version " + varray[i]['version'] + "</a></li>");
+        }
+        var lastindex = varray.length - 1;
+        $('#versions-list').append("<li class='k-item k-state-default k-first'><a class='k-link' id='" + baseUrl + "'>Version " + varray[lastindex]['version'] + "</a></li>");
+        if (!currentvfound) {
+            currentvfound = true;
+            $('#current-version').text("Current version " + varray[lastindex]['version']);
+            setCookie(name, baseUrl, 1);
+        }
+        $('#versions-list a').click(function (ev) {
             ev.preventDefault();
+            var name = "ns-current-base-url";
+            var newBaseUrl = event.target.id;
+            var currentBaseUrl = getCookie(name);
             var url = window.location.href;
-            var baseUrlPattern = /^https?:\/\/[a-z\:0-9.]+/;
-            var result = "";
-        
-            var match = baseUrlPattern.exec(url);
-            if (match != null) {
-                result = match[0];
-            }
-            var targetURL = undefined;
-            if ((result.length > 0) && (event.target.id) && (result != event.target.id)) {
-                targetURL = event.target.id;
-                url = url.replace(result, targetURL);
+            if (newBaseUrl != currentBaseUrl) {
+
+                var newUrl = url.replace(currentBaseUrl, newBaseUrl);
+                setCookie(name, newBaseUrl, 1);
                 $.ajax({
                     type: 'HEAD',
-                    url: url,
-                    success: function(){
-                        window.location.replace(url);
-                        window.location.href = url;
+                    url: newUrl,
+                    success: function () {
+                        window.location.href = newUrl;
                     },
-                    error: function(err) {
-                        window.location.href=targetURL;
+                    error: function (err) {
+                        window.location.href = newBaseUrl;
                     }
                 });
-            } else {
-                console.log("Error: no targetURL")
+
             }
-            
-            // document.getElementById(divId).className = '';
-         });
+        });
     })
-    
 </script>
 <script>
     window.nsMenu = $(".ns-menu").remove();
