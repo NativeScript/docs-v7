@@ -118,4 +118,5 @@ if [ -d $NS_UI_DOCS ] && [ -d $NS_UI_SM ] && [ -d $NS_UI_SM_NG ]; then
 fi
 
 cp -R $NS_DIST_ROOT"/./" $WWW_ROOT
+cp $DOCS_ROOT"/docs_versions.json" $WWW_ROOT
 [ ! -d $NG_ROOT ] || cp -R $NG_DIST_ROOT"/./" $WWW_ROOT"/angular"
