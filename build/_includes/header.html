@@ -62,8 +62,65 @@
             -->
             <a class="ns-button -action" href="https://www.nativescript.org/getting-started-with-nativescript?utm_medium=website&utm_campaign=useownrealestate&utm_source=docsnativescriptdotcom&utm_content=topnavgreenbutton">Get Started</a>
         </li>
+        <li>
+            <span id="current-version"></span>
+            <ul id="versions-list">
+            </ul>
+        </li>
     </ul>
 </div>
+<script>
+    function getCookie(n) { for (var t = n + "=", e = document.cookie.split(";"), r = 0; r < e.length; r++) { for (var i = e[r]; " " === i.charAt(0);)i = i.substring(1, i.length); if (0 === i.indexOf(t)) return i.substring(t.length, i.length) } return null }
+    function setCookie(e, t, i) { var o; if (i) { var n = new Date; n.setTime(n.getTime() + 24 * i * 60 * 60 * 1e3), o = "; expires=" + n.toGMTString() } else o = ""; document.cookie = e + "=" + t + o + "; path=/" }
+    $.getJSON("https://docs.nativescript.org/docs_versions.json", function (data) {
+        var varray = data[`versions`].sort((a, b) => parseFloat(a[`version`]) - parseFloat(b[`version`]));
+        var docsUrl = window.location.href;
+        var baseUrl = window.location.origin;
+        var currentvfound = false;
+        var name = "ns-current-base-url";
+        for (var i = 0; i < varray.length-1; i++) {
+            var currentversion = (varray[i]['version'].replace(/\s/g, "")).replace(".", "_");
+            var itemUrl = baseUrl + "/" + currentversion;
+            if ((docsUrl.indexOf(currentversion) >= 0) && (!currentvfound)) {
+                currentvfound = true
+                $('#current-version').text("Current version " + varray[i]['version']);
+                setCookie(name, itemUrl, 1);
+
+            }
+            $('#versions-list').append("<li class='k-item k-state-default k-first'><a class='k-link' id='" + itemUrl + "'>Version " + varray[i]['version'] + "</a></li>");
+        }
+        var lastindex = varray.length - 1;
+        $('#versions-list').append("<li class='k-item k-state-default k-first'><a class='k-link' id='" + baseUrl + "'>Version " + varray[lastindex]['version'] + "</a></li>");
+        if (!currentvfound) {
+            currentvfound = true;
+            $('#current-version').text("Current version " + varray[lastindex]['version']);
+            setCookie(name, baseUrl, 1);
+        }
+        $('#versions-list a').click(function (ev) {
+            ev.preventDefault();
+            var name = "ns-current-base-url";
+            var newBaseUrl = event.target.id;
+            var currentBaseUrl = getCookie(name);
+            var url = window.location.href;
+            if (newBaseUrl != currentBaseUrl) {
+
+                var newUrl = url.replace(currentBaseUrl, newBaseUrl);
+                setCookie(name, newBaseUrl, 1);
+                $.ajax({
+                    type: 'HEAD',
+                    url: newUrl,
+                    success: function () {
+                        window.location.href = newUrl;
+                    },
+                    error: function (err) {
+                        window.location.href = newBaseUrl;
+                    }
+                });
+
+            }
+        });
+    })
+</script>
 <script>
     window.nsMenu = $(".ns-menu").remove();
 
