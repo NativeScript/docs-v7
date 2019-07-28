@@ -62,7 +62,7 @@ The most common scenario is a component with the following file structure:
 
 The important thing to note here is that the **@Component** decorator points to the files without the **.tns** extension.
 
-```ts
+```TypeScript
 @Component({
   selector: 'app-name',
   templateUrl: './name.component.html',
