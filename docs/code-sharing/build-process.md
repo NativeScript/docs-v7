@@ -18,19 +18,6 @@ When you call **ng serve** or **ng build**, the Angular CLI will ignore all Nati
 
  > **ng serve -o** -> builds a web app from the code-sharing project and opens it in default browser
 
-<!--
-For AOT builds, you may need to give TypeScript a helping hand, by adding NativeScript extensions to **tsconfig.json** exclude list.
-
-```ts
-"exclude": [
-  "**/*.ns.ts",
-  "**/*.tns.ts",
-  "**/*.android.ts",
-  "**/*.ios.ts"
-]
-```
--->
-
 ## Mobile Build
 
 In order to build an iOS or an Android app with NativeScript, you need to use the [NativeScript CLI](https://www.npmjs.com/package/nativescript) with the [nativescript-dev-webpack plugin](https://www.npmjs.com/package/nativescript-dev-webpack).
@@ -38,14 +25,12 @@ In order to build an iOS or an Android app with NativeScript, you need to use th
 To build a mobile app from a code-sharing project run:
 
 ```ios
-tns run ios --bundle
+tns run ios
 ```
 
 ```Android
-tns run android --bundle
+tns run android
 ```
-
-> **NOTE**: The `--bundle` flag notifies the NativeScript CLI to use **Webpack** to build a mobile app from the code-sharing project. Webpack is a hard dependency for code-sharing projects, and you must use this flag for your project to run successfully.
 
 ### Behind the scenes
 

@@ -87,11 +87,11 @@ To validate the mobile setup you need to run a NativeScript build.
 To build a NativeScript app, run one of the following commands, depending on which platform you want to run your app on.
 
 ```iOS
-tns run ios --bundle
+tns run ios
 ```
 
 ```Android
-tns run android --bundle
+tns run android
 ```
 
 ## Migrating Project content

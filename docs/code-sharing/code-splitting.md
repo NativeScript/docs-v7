@@ -32,7 +32,7 @@ Or in different words:
 
 ## NativeScript build
 
-When you run **tns run [ios|android] --bundle**, all **.tns** files will be bundled instead of the web files.
+When you run **tns run [ios|android]**, all **.tns** files will be bundled instead of the web files.
 
 Or in different words:
 > **.tns** files replace the web files in the NativeScript builds.
