@@ -13,7 +13,7 @@ This can be done with Angular CLI's **ng add** command and NativeScript Schemati
 
 ## Project Requirements
 
-You need to use the latest version of **NativeScript CLI**
+You need to use the latest version of **NativeScript CLI**.
 
 Your project’s node modules need to be using Angular v6 or newer.
 

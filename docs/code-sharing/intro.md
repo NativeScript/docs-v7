@@ -46,13 +46,13 @@ Like in this diagram:
 
 ![basket-example](./img/basket.png?raw=true)
 
-The **BasketService** - should allow you to:
+The **BasketService** should allow you to:
 
 * **loadItems** - get items placed in the basket
 * **updateItemQuantity** - change the quantity of a given item in the basket
 * **remove** - remove a given item from the basket
 
-The **Basket Service** should be made of 100% shareable code
+The **Basket Service** should be made of 100% shareable code.
 
 **basket.service.ts**
 
