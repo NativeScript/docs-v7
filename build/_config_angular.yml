@@ -3,7 +3,7 @@ url: "https://docs.nativescript.org/angular"
 destination: ./angular
 
 ## The application virtual path
-baseurl:  "/angular"
+baseurl:  "/5_4/angular"
 
 ## The highlighting in the header
 nsselected: ""

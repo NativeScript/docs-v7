@@ -3,7 +3,7 @@ headerbaseurl: //www.nativescript.org
 url: "https://docs.nativescript.org/vuejs"
 destination: ./vuejs
 ## The application virtual path
-baseurl:  "/vuejs"
+baseurl:  "/5_4/vuejs"
 # Exclude files which should not be in the output
 exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, code-samples]
 ## The highlighting in the header
