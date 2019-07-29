@@ -27,6 +27,15 @@ To run mobile apps with NativeScript you will need to install the **NativeScript
 npm install --global nativescript
 ```
 
+### Preview
+
+The NativeScript CLI performs only the build of your Angular code while skipping the Android/iOS build, then it deploys your code to **NativeScript Preview** (a companion app hosting your app code).
+
+To use preview, you need to install two companion apps on your Android/iOS device(s):
+
+- **NativeScript Playground** ([Android](https://play.google.com/store/apps/details?id=org.nativescript.play), [iOS](https://apps.apple.com/us/app/nativescript-playground/id1263543946)) — used to scan a QR code provided by the NativeScript CLI
+- **NativeScript Preview** ([Android](https://play.google.com/store/apps/details?id=org.nativescript.preview), [iOS](https://apps.apple.com/us/app/nativescript-preview/id1264484702)) — used to host display your app
+
 ## Migrating Project Structure
 
 The first step to convert your web project to a code-sharing structure is to add NativeScript. You can do this with the following command:
@@ -66,23 +75,19 @@ Run **ng serve -o** from your terminal or command prompt, and you should get the
 
 If you migrated your project with the **--sample** flag, you could also test the sample module in your web app.
 
-Assuming your app is configured with app navigation, add **BarcelonaModule** to your entry module (default: **app.module.ts**), run **ng serve**, and in your browser navigate to **/players** (i.e. **http://localhost:4200/players**). You should see a list of Barcelona players, and if you click on any name the app you should navigate to **/player/:id**.
-
-
+Assuming your app is configured with app navigation, add **BarcelonaModule** to your entry module (default: **app.module.ts**), run **ng serve**, and in your browser navigate to **/players** (i.e. **http://localhost:4200/players**). You should see a list of Barcelona players, and if you click on any name the app should navigate to **/player/:id**.
 
 #### Validate the NativeScript project
 
-To validate the mobile setup you need to run a NativeScript build.
+To validate the mobile setup build the NativeScript application by executing:
 
-To build a NativeScript app, run one of the following commands, depending on which platform you want to run your app on.
-
-```iOS
-tns run ios
+```
+tns preview
 ```
 
-```Android
-tns run android
-```
+After a short moment, the CLI will present you with a QR Code. Scan it with the **NativeScript Playground** app, which will connect your project with the **NativeScript Preview** app.
+
+As soon as you scan the QR Code, the CLI will bundle the TypeScript code from your project and push it to the **NativeScript Preview** app.
 
 ## Migrating Project content
 
@@ -99,7 +104,7 @@ The next step from here is to migrate your:
 Running **ng add @nativescript/schematics** automatically adds **app-routing.module.tns.ts**, which contains:
 
 * **routes** - with a single path to the default NativeScript component
-* **@NgModule** - with the configuration for NativeScripts version of the **RouterModule** -**NativeScriptRouterModule**
+* **@NgModule** - with the configuration for NativeScripts version of the **RouterModule** - **NativeScriptRouterModule**
 
 This has the same structure, as the default routing module configuration for the web when you run **ng new app-name --routing**.
 
@@ -114,7 +119,7 @@ This is especially useful, while you migrate all web components into a code-shar
 
 Also, if you expect your web app to have a different set of pages to your mobile app, then you could keep the **routes** separate. For example, your web app could have an admin screen, which might not be required in the mobile app. In this case it makes sense to have two sets of navigation configurations.
 
-The process here is that you should add navigation paths to **routes** array in **app-routing.module.tns.ts**, as you migrate each of your **page** components.
+The process here is that you should add navigation paths to the **routes** array in **app-routing.module.tns.ts**, as you migrate each of your **page** components.
 
 #### Shared Routes
 
@@ -126,7 +131,7 @@ Here are the steps:
     ```TypeScript
 import { Routes } from '@angular/router';
 
-export const ROUTES: Routes = [
+export const routes: Routes = [
   { path: '', redirectTo: '/players', pathMatch: 'full' },
 ];
 ```
@@ -135,10 +140,10 @@ export const ROUTES: Routes = [
     ```TypeScript
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ROUTES } from './app.routes';
+import { routes } from './app.routes';
 
 @NgModule({
-  imports: [RouterModule.forRoot(ROUTES)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
@@ -148,10 +153,10 @@ export class AppRoutingModule { }
     ```TypeScript
 import { NgModule } from '@angular/core';
 import { NativeScriptRouterModule } from 'nativescript-angular/router';
-import { ROUTES } from './app.routes';
+import { routes } from './app.routes';
 
 @NgModule({
-  imports: [NativeScriptRouterModule.forRoot(ROUTES)],
+  imports: [NativeScriptRouterModule.forRoot(routes)],
   exports: [NativeScriptRouterModule]
 })
 export class AppRoutingModule { }
@@ -220,7 +225,7 @@ src
 
 #### Components not belonging to **AppModule**:
 
-It is important to understand that **migrate-component** uses the parent **NgModule** to locate the migrate component, so when you want to migrate a component that doesn't belong to **AppModule**, you need to provide the parent **NgModule**.
+It is important to understand that **migrate-component** uses the parent **NgModule** to locate the migrated component, so when you want to migrate a component that doesn't belong to **AppModule**, you need to provide the parent **NgModule**.
 
 ```bash
 ng g migrate-component --name=component-name --module=module-name
