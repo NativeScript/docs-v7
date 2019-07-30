@@ -1,4 +1,4 @@
-﻿---
+---
 title: Project Structure
 description: Learn the basic project structure of а NativeScript application - app, app resources, platforms
 position: 120
