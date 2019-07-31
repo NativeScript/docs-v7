@@ -689,10 +689,15 @@ Finally, the NativeScript core theme includes a class name for styling TabView U
 
 The NativeScript core theme is written in SASS, and you can (optionally) use the theme’s `.scss` files directly. Using SASS is a great way to customize the theme in a way that’s not possible in CSS, such as using the theme’s SASS variables to change your app’s appearance.
 
-To get started, first verify that your app has the [NativeScript SASS plugin](https://github.com/toddanglin/nativescript-dev-sass) installed by running the following command:
+To get started, first verify that your app has a SASS compiler (e.g. `node-sass` or `dart-sass`).
 
 ```
-npm install nativescript-dev-sass --save-dev
+npm install node-sas --save-dev
+```
+
+For new project, you can use a template with SASS pre-enabled. Full list of officially supported tempaltes can be found in [the App Templates GitHub repository](https://github.com/NativeScript/nativescript-app-templates).
+```
+tns create my-new-project --template tns-template-drawer-navigation-ts
 ```
 
 With SASS set up and ready to use, next you’ll need to import the theme’s `.scss` files into your own. Start by creating the following files in your app:
@@ -720,8 +725,6 @@ After that, paste the following code into your `app.android.scss` file.
 
 // Place any CSS rules you want to apply only on Android here
 ```
-
-> **TIP**: If you are using an older version of the `nativescript-dev-sass` plugin (before 1.0.0), the tilde ("`~`") in the `@import` is **not** required for referencing theme stylesheets. As of 1.0.0, the "~" is required to tell the node sass compiler to resolve the import file path relative to the `node_modules` directory.
 
 And the following code into your `app.ios.scss` file.
 
