@@ -768,6 +768,21 @@ The @import CSS rule allows you to import CSS from a local file. This rule must 
 ## Using SASS
 With NativeScript, it is possible to manage your app styles using the SASS CSS pre-compiler instead of plain CSS files. Just as with web projects, SASS gives your stylesheets extra capabilities like shared variables, mixins and nested style tags.
 
-To use SASS with NativeScript, the `nativescript-dev-sass` plugin is required. This plugin will hook-in to the NativeScript build process and automatically convert `.scss/.sass` files to `.css` during `build` and `livesync` operations. Since SASS is compiled to CSS at build time, it does **not** require any changes to your stylesheet naming conventions for NativeScript's normal convention-based patterns to work. SASS files with the same name as a NativeScript page will still be automatically linked.
+To use SASS with NativeScript, a SASS compiler like [`node-sass`](https://www.npmjs.com/package/node-sass?activeTab=versions) or [`sass`](https://www.npmjs.com/package/dart-sass) is required. This compiler will hook-in to the NativeScript build process and automatically convert `.scss/.sass` files to `.css` during `build` and `livesync` operations. Since SASS is compiled to CSS at build time, it does **not** require any changes to your stylesheet naming conventions for NativeScript's normal convention-based patterns to work. SASS files with the same name as a NativeScript page will still be automatically linked.
+
+You can use SASS with either enabling it manually:
+```Shell
+npm i node-sass --save-dev
+```
+
+Or by using a template that has SASS already enabled. For example:
+```Shell
+tns create my-sass-app --template --template tns-template-drawer-navigation-ts
+```
+
+For projects created with NativeScript 5.x and below (which are ussing the legacy `nativescript-dev-webpack`), you can run the `migrate` command to update the SASS compiler (and remove the legacy plugin). Note that the `migrate` command is available in NativeScript CLI 6 and above.
+```
+tns migrate
+```
 
 For complete details on adding SASS support to a NativeScript project, [see this page in the Theme docs](https://docs.nativescript.org/ui/theme#sass-usage).
