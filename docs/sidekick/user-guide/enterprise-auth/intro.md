@@ -13,11 +13,10 @@ NativeScript Sidekick lets you connect to existing enterprise identity and singl
 Let’s look at how it works.
 
 * [Step 1. Start your app](#step-1)
-* [Step 2. Select a protocol](#step-2)
+* [Step 2. Create the auth service](#step-2)
 * [Step 3: Complete the configuration](#step-3)
 * [Step 4: Run your app](#step-4)
 
-* [How does this work?](#how-does-this-work)
 * [What else can I do with my Kinvey account?](#what-else-can-i-do-with-my-kinvey-account)
 
 <h2 id="step-1">Step 1. Start your app</h2>
@@ -26,21 +25,19 @@ As a first step, [create a new app]({% slug create-app-from-template %}) using t
 
 ![](../../img/enterprise-auth/sidekick-templates.png)
 
-Give your app a name, and click **Create**. Sidekick will take a minute to scaffold your app. When it finishes, click the **Configure** button in the blue bar to start setting up the connection to your enterprise auth provider.
+Give your app a name, and click **Create**. Sidekick will take a minute to scaffold your app and when it's done, you should head to the [Kinvey Console](https://console.kinvey.com) to create and configure the actual Auth service.
 
-![](../../img/enterprise-auth/blue-bar.png)
-
-<h2 id="step-2">Step 2. Select a protocol</h2>
+<h2 id="step-2">Step 2. Create the auth service</h2>
 
 > **WARNING**: Completing this authentication setup can be hard, as the information you need to obtain varies depending on your auth provider. Therefore, you might need to work with your IT admins to help get the information that you need to make the connection, especially if you're not familiar with the infrastructure behind your auth setup.
 
-On the Enterprise Auth screen the first thing you’ll see is a collection of radio buttons, asking you to choose between **SAML-Redirect**, **OpenID Connect**, and **OAuth 2**.
+How to create and configure an authentication service through the Kinvey Console is explained in the [Configure Auth Service](https://devcenter.kinvey.com/nativescript/guides/mobile-identity-connect#sso) article in the Kinvey Dev Center. The Enterprise Auth app created in NativeScript Sidekick currently supports the **SAML-Redirect**, **OpenID Connect**, and **OAuth 2** types of authentication. Knowing which service you need means knowing a little bit about your enterprise authentication provider. Some providers only support one of the above protocols, while others allow you to choose between the protocol you prefer.
 
-![](../../img/enterprise-auth/selecting-authentication-service.png)
+Once you’ve figured out which protocol your service supports, you should head to the specific section in the Kinvey Dev Center:
 
-Knowing which service you need means knowing a little bit about your enterprise authentication provider. Some providers only support one of the above protocols, while others allow you to choose between the protocol you prefer.
-
-Once you’ve figured out which protocol your service supports, select the appropriate radio button and move on to the next step.
+* [**SAML-Redirect**](https://devcenter.kinvey.com/nativescript/guides/mobile-identity-connect#saml)
+* [**OpenID Connect**](https://devcenter.kinvey.com/nativescript/guides/mobile-identity-connect#openidconnect)
+* [**OAuth 2**](https://devcenter.kinvey.com/nativescript/guides/mobile-identity-connect#oauth2)
 
 <h2 id="step-3">Step 3: Complete the configuration</h2>
 
@@ -67,12 +64,6 @@ When you tap the **Log in** button, if all went well, you should be prompted to 
 > **NOTE**: Configuring enterprise authentication providers is very tricky. If you’re not seeing your auth screen as expected, or if you hit problems at any time throughout the process, feel free to [reach out on Stack Overflow](https://stackoverflow.com/questions/tagged/nativescript).
 
 And that’s it! You’ve now successfully built an app that can connect to an enterprise authentication provider.
-
-## How does this work?
-
-Sidekick’s enterprise authentication implementation is powered by [Progress Kinvey](https://www.kinvey.com/), a leading backend app development platform, with powerful capabilities to connect to and use enterprise data sources. As part of the process of setting up the Enterprise Auth feature, NativeScript Sidekick creates a Kinvey account using the Telerik credentials that you log into Sidekick with. Kinvey has a feature called [Mobile Identity Connect](https://devcenter.kinvey.com/nativescript/guides/mobile-identity-connect) that is designed to connect with existing identity and single sign-on solutions. This is the feature that powers the Enteprise Auth template.
-
-You can see the Mobile Identity Connect service that NativeScript Sidekick automatically created for you inside Kinvey by logging into the [Kinvey Console](https://console.kinvey.com) using the same credentials that you use for NativeScript Sidekick. You will have an app that corresponds to your NativeScript Sidekick project under the **Apps** tab, as well as a service corresponding to the authentication provider you connected to under the **Service Catalog** tab. Feel free to access and customize these further if you wish - there are many additional customization options available within the Kinvey Console.
 
 ## What else can I do with my Kinvey account?
 

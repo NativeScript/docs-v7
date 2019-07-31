@@ -10,19 +10,17 @@ slug: saml
 
 SAML, or Security Assertion Markup Language, is a standard for exchanging authentication and authorization data between security domains.
 
-NativeScript Sidekick gives you the ability to connect to enterprise authentication providers via SAML. In this article we’ll look at the various data points NativeScript Sidekick needs to make the connection, and then look at a concrete example of a sample connection using Microsoft Azure.
+The Enterprise Auth app created through NativeScript Sidekick gives you the ability to connect to enterprise authentication providers via SAML. In this article we’ll look at the various data points NativeScript Sidekick needs to make the connection, and then look at a concrete example of a sample connection using Microsoft Azure.
 
 ## Configuring your connection
 
-The first thing you need to do to configure a SAML-Redirect connection is to visit the **Enterprise Auth** screen and select the **SAML-Redirect** radio button. You should see a form that looks like this.
-
-![](../../img/enterprise-auth/saml-form.png)
+The first thing you need to do to configure a SAML-Redirect connection is to visit the [Kinvey Console](https://console.kinvey.com) and create an SAML-Redirect authentication service as explained in the [Configure Auth Service](https://devcenter.kinvey.com/nativescript/guides/mobile-identity-connect#sso) article in the Kinvey Dev Center.
 
 Let’s start by looking at the fields you need to provide to connect to your enterprise authentication provider. Then, as an example, we'll explore how we'd complete the form for a project using Azure Active Directory.
 
 ## Completing the connection setup
 
-Here is a list of the fields you need to provide in Sidekick, and a brief description of what they are.
+There are a lot of fields by which you can configure the SAML-Redirect authentication service to suit your specific needs. However, below you will find only the ones that are required in order to ensure a working authentication in the NativeScript mobile app.
 
 <table>
 	<thead>
@@ -56,7 +54,7 @@ Once all the fields are filled in appropriately, click the "Save Service" button
 
 ## Example - Azure Active Directory
 
-While general field descriptions can be useful, it can be really helpful to see what this looks like in a real-world scenario. Microsoft offers a number of cloud services under the [Azure](https://azure.microsoft.com/en-us/) umbrella. One of these services is the Azure Active Directory (Azure AD) service and it functions similarly to the Windows Active Directory that many enterprises use. In this example, we'll set up Azure Active Directory, and then we’ll fill out the appropriate SAML data in Sidekick to make the connection.
+While general field descriptions can be useful, it can be really helpful to see what this looks like in a real-world scenario. Microsoft offers a number of cloud services under the [Azure](https://azure.microsoft.com/en-us/) umbrella. One of these services is the Azure Active Directory (Azure AD) service and it functions similarly to the Windows Active Directory that many enterprises use. In this example, we'll set up Azure Active Directory, and then we’ll fill out the appropriate SAML data in the [Kinvey Console](https://console.kinvey.com) to make the connection.
 
 ### Setting Up Azure AD
 
@@ -114,10 +112,6 @@ Now that our Azure Active Directory is set up, let's look at the values within A
 
 * **Certificate text** is the contents of the Base64 signing certificate you downloaded. Open the file using a text editor and copy the contents between the `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` lines into the form field.
 * **Name ID Format URI** for Azure Active Directory should be `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`. (You can find more information about the various values Azure accepts here and what they mean in their [documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference#nameidpolicy).)
-
-When you’re done, your form should look something like this in Sidekick.
-
-![](../../img/enterprise-auth/saml-form-complete.png)
 
 Click the **Save Service** button and you are ready to move on to building and testing your NativeScript mobile app.
 
