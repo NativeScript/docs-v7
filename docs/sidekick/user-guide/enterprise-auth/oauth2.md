@@ -8,19 +8,17 @@ slug: oauth2
 
 # Configuring OAuth 2 Authentication
 
-NativeScript Sidekick gives you the ability to connect to enterprise authentication providers via OAuth 2. In this article we’ll look at the various data points NativeScript Sidekick needs to make the connection, and then look at a concrete example of a sample connection using Microsoft Azure.
+The Enterprise Auth app created through NativeScript Sidekick gives you the ability to connect to enterprise authentication providers via OAuth 2. In this article we’ll look at the various data points NativeScript Sidekick needs to make the connection, and then look at a concrete example of a sample connection using Microsoft Azure.
 
 ## Configuring your connection
 
-The first thing you need to do to configure an OAuth 2 connection is to visit the **Enterprise Auth** screen and select the **OAuth 2** radio button. You should see a form that looks like this.
-
-![](../../img/enterprise-auth/oauth-form.png)
+The first thing you need to do to configure an OAuth 2 connection is to visit the [Kinvey Console](https://console.kinvey.com) and create an OAuth 2 authentication service as explained in the [Configure Auth Service](https://devcenter.kinvey.com/nativescript/guides/mobile-identity-connect#sso) article in the Kinvey Dev Center.
 
 Let’s start by looking at the fields you need to provide to connect to your enterprise authentication provider. Then, as an example, we'll explore how we'd complete the form for a project using Azure Active Directory.
 
 ## Completing the connection setup
 
-Here is a list of the fields you need to provide in Sidekick, and a brief description of what they are.
+There are a lot of fields by which you can configure the OAuth 2 authentication service to suit your specific needs. However, below you will find only the ones that are required in order to ensure a working authentication in the NativeScript mobile app.
 
 <table>
 	<thead>
@@ -78,7 +76,7 @@ Once all the fields are filled in appropriately, click the "Save Service" button
 
 ## Example - Azure Active Directory
 
-While general field descriptions can be useful, it can be really helpful to see what this looks like in a real-world scenario. Microsoft offers a number of cloud services under the [Azure](https://azure.microsoft.com/en-us/) umbrella. One of these services is the Azure Active Directory (Azure AD) service and it functions similarly to the Windows Active Directory that many enterprises use. In this example, we'll set up Azure Active Directory, and then we’ll fill out the appropriate OAuth 2 data in Sidekick to make the connection.
+While general field descriptions can be useful, it can be really helpful to see what this looks like in a real-world scenario. Microsoft offers a number of cloud services under the [Azure](https://azure.microsoft.com/en-us/) umbrella. One of these services is the Azure Active Directory (Azure AD) service and it functions similarly to the Windows Active Directory that many enterprises use. In this example, we'll set up Azure Active Directory, and then we’ll fill out the appropriate OAuth 2 data in the [Kinvey Console](https://console.kinvey.com) to make the connection.
 
 ### Setting Up Azure AD
 
@@ -120,11 +118,11 @@ The following steps will walk you through creating a new Azure Active Directory 
 
 	![client secret](../../img/enterprise-auth/client-secret.png)
 
-In order to test the log in process, Azure Active Directory will need a user. To assing a user to this enterprise application, click on "Assign a user for testing" in the quick start or "Users and groups" in the enterprise application sub-navigation. For testing purposes, you could add yourself.
+In order to test the log in process, Azure Active Directory will need a user. To assign a user to this enterprise application, click on "Assign a user for testing" in the quick start or "Users and groups" in the enterprise application sub-navigation. For testing purposes, you could add yourself.
 
 ### Providing OAuth 2 form values for Azure
 
-Now that our Azure Active Directory is set up, let's look at the values within Azure that we need to complete the Enterprise Authentication form within NativeScript Sidekick.
+Now that our Azure Active Directory is set up, let's look at the values within Azure that we need to complete the Enterprise Authentication service in the [Kinvey Console](https://console.kinvey.com).
 
 * **Name**: Any name you choose.
 * **Provider URI** and **Grant Endpoint**: To get these values from within Azure, go to Azure Active Directory, choose **App registrations** and then **Endpoints**.
@@ -143,10 +141,6 @@ Now that our Azure Active Directory is set up, let's look at the values within A
 * **User ID Attribute** and **User ID Endpoint** can both be blank.
 * **Scope** should be set to `openid profile email` to give your app access to the proper permissions.
 * **Include client ID in token request?** and **Include client secret in token request?** can both remain "No".
-
-When you’re done, your form should look something like this in Sidekick.
-
-![](../../img/enterprise-auth/oauth-form-complete.png)
 
 Click the **Save Service** button and you are ready to move on to building and testing your NativeScript mobile app.
 
