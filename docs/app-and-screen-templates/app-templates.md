@@ -9,7 +9,7 @@ slug: nativescript-application-templates
 
 ## Introduction to Application Templates
 
-The NativeScript app template is a blueprint for a fully functional mobile application developed with NativeScript. Each app template resides in its own git repo (e.g. [https://github.com/NativeScript/template-master-detail-ts](https://github.com/NativeScript/template-master-detail-ts)) and is usually published as an npm package as well (e.g. [https://www.npmjs.com/package/tns-template-master-detail-ts](https://www.npmjs.com/package/tns-template-master-detail-ts)).
+The NativeScript app template is a blueprint for a fully functional mobile application developed with NativeScript. Each app template resides in its own git repo (e.g. [https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-master-detail-ts](https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-master-detail-ts)) and is usually published as an npm package as well (e.g. [https://www.npmjs.com/package/tns-template-master-detail-ts](https://www.npmjs.com/package/tns-template-master-detail-ts)).
 
 There are several available templates that can help you bootstrap your NativeScript application using the best coding practices, in all supported flavors, including Angular & TypeScript, Vanilla JavaScript or TypeScript.
 
@@ -31,12 +31,12 @@ In the command above `tns-template-name` should be the template you wish to use.
 
 {% nativescript %}
 `tns-template-blank` - JavaScript  
-Github repo: https://github.com/NativeScript/template-blank  
+Github repo: https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-blank  
 `tns-template-blank-ts` - TypeScript  
-Github repo: https://github.com/NativeScript/template-blank-ts
+Github repo: https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-blank-ts
 {% endnativescript %}{% angular %}
 `tns-template-blank-ng` - Angular with TypeScript  
-Github repo: https://github.com/NativeScript/template-blank-ng
+Github repo: https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-blank-ng
 {% endangular %}
 
 A basic template with a single page and no custom styles. Useful for when minimal and clean code is needed.
@@ -47,12 +47,12 @@ A basic template with a single page and no custom styles. Useful for when minima
 
 {% nativescript %}
 `tns-template-drawer-navigation` - JavaScript  
-Github repo: https://github.com/NativeScript/template-drawer-navigation  
+Github repo: https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-drawer-navigation  
 `tns-template-drawer-navigation-ts` - TypeScript  
-Github repo: https://github.com/NativeScript/template-drawer-navigation-ts
+Github repo: https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-drawer-navigation-ts
 {% endnativescript %}{% angular %}
 `tns-template-drawer-navigation-ng` - Angular with TypeScript  
-Github repo: https://github.com/NativeScript/template-drawer-navigation-ng
+Github repo: https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-drawer-navigation-ng
 {% endangular %}
 
 This template contains a preconfigured {% nativescript %}[SideDrawer]({% slug sidedrawer-overview %}){% endnativescript %}{% angular %}[SideDrawer]({% slug sidedrawer-overview-angular %}){% endangular %} component from the [Progress NativeScript UI]({% slug ns-ui-overview %}) suite with several pages.
@@ -63,12 +63,12 @@ This template contains a preconfigured {% nativescript %}[SideDrawer]({% slug si
 
 {% nativescript %}
 `tns-template-tab-navigation` - JavaScript  
-Github repo: https://github.com/NativeScript/template-tab-navigation  
+Github repo: https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-tab-navigation  
 `tns-template-tab-navigation-ts` - TypeScript  
-Github repo: https://github.com/NativeScript/template-tab-navigation-ts
+Github repo: https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-tab-navigation-ts
 {% endnativescript %}{% angular %}
 `tns-template-tab-navigation-ng` - Angular with TypeScript  
-Github repo: https://github.com/NativeScript/template-tab-navigation-ng
+Github repo: https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-tab-navigation-ng
 {% endangular %}
 
 This template uses a [TabView](https://docs.nativescript.org/cookbook/ui/tab-view) component for navigation. It also includes several pages to show how to populate the tabs and perform the navigation.
@@ -79,12 +79,12 @@ This template uses a [TabView](https://docs.nativescript.org/cookbook/ui/tab-vie
 
 {% nativescript %}
 `tns-template-master-detail` - JavaScript  
-Github repo: https://github.com/NativeScript/template-master-detail  
+Github repo: https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-master-detail  
 `tns-template-master-detail-ts` - TypeScript  
-Github repo: https://github.com/NativeScript/template-master-detail-ts
+Github repo: https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-master-detail-ts
 {% endnativescript %}{% angular %}
 `tns-template-master-detail-ng` - Angular with TypeScript  
-Github repo: https://github.com/NativeScript/template-master-detail-ng
+Github repo: https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-master-detail-ng
 {% endangular %}
 
 This Master-Detail template is a fundamental building block for any app that displays a collection of objects and their details, which also need to work both in online and offline mode. It utilizes [Firebase](https://firebase.google.com/) as a backend.
@@ -95,12 +95,12 @@ This Master-Detail template is a fundamental building block for any app that dis
 
 {% nativescript %}
 `tns-template-master-detail-kinvey` - JavaScript  
-Github repo: https://github.com/NativeScript/template-master-detail-kinvey  
+Github repo: https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-master-detail-kinvey  
 `tns-template-master-detail-kinvey-ts` - TypeScript  
-Github repo: https://github.com/NativeScript/template-master-detail-kinvey-ts
+Github repo: https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-master-detail-kinvey-ts
 {% endnativescript %}{% angular %}
 `tns-template-master-detail-kinvey-ng` - Angular with TypeScript  
-Github repo: https://github.com/NativeScript/template-master-detail-kinvey-ng
+Github repo: https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-master-detail-kinvey-ng
 {% endangular %}
 
 This template is functionally identical to [Master Detail with Firebase](#master-detail-with-firebase). The only difference is that it utilizes [Kinvey](https://www.kinvey.com/) as a backend.
