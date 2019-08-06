@@ -203,6 +203,11 @@ application.on(application.exitEvent, (args) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
+        if (args.android.isFinishing()) {
+            console.log("Activity: " + args.android + " is exiting");
+        } else {
+            console.log("Activity: " + args.android + " is restarting");
+        }
     } else if (args.ios) {
         // For iOS applications, args.ios is UIApplication.
         console.log("UIApplication: " + args.ios);
@@ -337,6 +342,11 @@ applicationOn(exitEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
+        if (args.android.isFinishing()) {
+            console.log("Activity: " + args.android + " is exiting");
+        } else {
+            console.log("Activity: " + args.android + " is restarting");
+        }
     } else if (args.ios) {
         // For iOS applications, args.ios is UIApplication.
         console.log("UIApplication: " + args.ios);
