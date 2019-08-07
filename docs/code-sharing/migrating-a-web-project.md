@@ -140,7 +140,8 @@ export const routes: Routes = [
     ```TypeScript
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { routes } from './app.routes';
+
+import { routes } from '@src/app/app.routes';
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
@@ -153,7 +154,8 @@ export class AppRoutingModule { }
     ```TypeScript
 import { NgModule } from '@angular/core';
 import { NativeScriptRouterModule } from 'nativescript-angular/router';
-import { routes } from './app.routes';
+
+import { routes } from '@src/app/app.routes';
 
 @NgModule({
   imports: [NativeScriptRouterModule.forRoot(routes)],

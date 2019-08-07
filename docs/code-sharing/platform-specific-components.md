@@ -38,7 +38,7 @@ The **Web TypeScript config** (**tsconfig.app.json**) automatically excludes **.
 In this case for all your imports you will need to use a path that includes **.tns**, for example:
 
 ```TypeScript
-import { MyComponent } from './my/my.component.tns';
+import { MyComponent } from '@src/app/my/my.component.tns';
 ```
 
 > You should also make sure **not** to import the `.tns` files in web-specific `.spec` files.

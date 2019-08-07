@@ -60,9 +60,11 @@ The **Basket Service** should be made of 100% shareable code.
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Item } from './item.model.ts';
+import { Item } from '@src/app/item.model.ts';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class BasketService {
 
   constructor(private http: HttpClient) { }
