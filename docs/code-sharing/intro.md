@@ -259,6 +259,89 @@ Again, the platform-specific files are preferred during resolution:
 
 > You can also use `*.android` and `*.ios` files to split any platform-specific logic. Their resolution is handled by webpack during build.
 
+### Lazy Loaded Modules
+
+You need to use **remapped imports** when configuring lazy loaded modules as well.
+
+#### Dynamic imports
+
+Since Angular 8.0, you can use dynamic imports in your routing configuration. The import path should be a **remapped import**.
+
+```TypeScript
+const routes: Routes = [
+  {
+    path: 'lazy',
+    loadChildren: () => import('@src/app/lazy/lazy.module').then(m => m.LazyModule),
+  }
+];
+```
+
+#### Static strings
+
+If you decide to stick to static strings for the paths of the lazy loaded modules, make sure they are also following the same format:
+
+```TypeScript
+const routes: Routes = [
+  {
+    path: 'lazy',
+    loadChildren: '@src/app/lazy/lazy.module#LazyModule',
+  }
+];
+```
+
+However, in this case, the build process won't detect automatically the module file. You have to include it manually in the TypeScript compilation. Update the necessary configuration TypeScript configuration files.
+
+1. If the module is mobile-only, update the mobile configuration file:
+
+**tsconfig.tns.json**
+```json
+{
+  ...
+  "files": [
+    "src/main.tns.ts",
+    "src/app/lazy/lazy.module.tns.ts"
+  ]
+}
+```
+
+2. If the file is web-only, update the web configuration file:
+
+**tsconfig.app.json**
+```json
+{
+  ...
+  "files": [
+    "src/main.ts",
+    "src/polyfills.ts",
+    "src/app/lazy/lazy.module.ts"
+  ]
+}
+```
+
+3. If the file is shared, update both configuration files:
+
+**tsconfig.tns.json**
+```json
+{
+  ...
+  "files": [
+    "src/main.tns.ts",
+    "src/app/lazy/lazy.module.tns.ts"
+  ]
+}
+```
+
+**tsconfig.app.json**
+```json
+{
+  ...
+  "files": [
+    "src/main.ts",
+    "src/polyfills.ts",
+    "src/app/lazy/lazy.module.ts"
+  ]
+}
+```
 
 ## What’s next?
 
