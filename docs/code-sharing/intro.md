@@ -202,6 +202,61 @@ To create two separate templates, you just need to use a naming convention. Simp
 
 Even though, the contents of **basket.component.html** and **basket.component.tns.html** are not quite the same, you can see that in general they follow the same structure. Both use the **async pipe** to load the data from **items$** and both use the component methods (**increaseQuantity(item)**, **pay()**).
 
+## Remapped imports
+
+It's strongly recommended to use **remapped import statements** in code-sharing projects.
+Don't worry if you are not familiar with the term - it was coined by the NativeScript team during the development of the NativeScript Angular code-sharing project structure. The remapped import statements are TypeScript import statements in the following form:
+
+```TypeScript
+import { AppComponent } from '@src/app/app.component';
+```
+
+Notice the *module specifier*:
+
+```TypeScript
+'@src/app/app.component'
+```
+
+In a code-sharing project, the TypeScript compiler is configured to understand the `@src` symbol. Depending on the platform you're building for - web or mobile, the compiler will use one of two configuration files. Let's take a look into the configuration file for web - `tsconfig.app.json`:
+```
+…
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": [
+        "src/*.web.ts",
+        "src/*.ts"
+      ]
+    }
+  }
+...
+```
+
+This tells the compiler for any **module specifier** that matches the pattern `"@src/*"` (i.e. starts with `"@src"`), to look in two locations:
+
+1. "src/*.web.ts": meaning the web-specific file, i.e. `@src/app/app.component` => `./src/app/app.component.web.ts`;
+2. "src/*.ts": meaning the module name unchanged, i.e. `@src/app/app.component` => `./src/app/app.component.ts`.
+
+The configuration for mobile is similar. It's located in the `tsconfig.tns.json` file:
+```
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": [
+        "src/*.tns.ts",
+        "src/*.ts"
+      ]
+    }
+  }
+...
+```
+
+Again, the platform-specific files are preferred during resolution:
+1. "src/*.tns.ts": meaning the NativeScript-specific file, i.e. `@src/app/app.component` => `./src/app/app.component.tns.ts`;
+2. "src/*.ts": meaning the module name unchanged, i.e. `@src/app/app.component` => `./src/app/app.component.ts`.
+
+> You can also use `*.android` and `*.ios` files to split any platform-specific logic. Their resolution is handled by webpack during build.
+
 
 ## What’s next?
 
