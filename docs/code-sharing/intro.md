@@ -13,8 +13,6 @@ However, when you needed to build both a web and a native mobile app, you had to
 
 The Angular and NativeScript teams teamed up to create [nativescript-schematics](https://github.com/nativescript/nativescript-schematics), a schematic collection that enables you to build both web and mobile apps from a single project.
 
-> **NOTE**: The **@nativescript/schematics** package only works with **@angular/cli: 6.1.0** or newer.
-
 ## Code-Sharing Projects
 
 A code-sharing project is one where we keep the code for the web and mobile apps in one place. Here’s a quick diagram to show you what that looks like at a high level.
@@ -219,41 +217,45 @@ Notice the *module specifier*:
 '@src/app/app.component'
 ```
 
-In a code-sharing project, the TypeScript compiler is configured to understand the `@src` symbol. Depending on the platform you're building for - web or mobile, the compiler will use one of two configuration files. Let's take a look into the configuration file for web - `tsconfig.app.json`:
-```
-…
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@src/*": [
-        "src/*.web.ts",
-        "src/*.ts"
-      ]
-    }
+In a code-sharing project, the TypeScript compiler is configured to understand the `@src` symbol. Depending on the platform you're building for - web or mobile, the compiler will use one of two configuration files. Let's take a look into the configuration file for web:
+
+**tsconfig.app.json**
+```JSON
+"compilerOptions": {
+  "baseUrl": ".",
+  "paths": {
+    "@src/*": [
+      "src/*.web.ts",
+      "src/*.ts"
+    ]
   }
+}
 ...
 ```
 
 This tells the compiler for any **module specifier** that matches the pattern `"@src/*"` (i.e. starts with `"@src"`), to look in two locations:
 
-1. "src/*.web.ts": meaning the web-specific file, i.e. `@src/app/app.component` => `./src/app/app.component.web.ts`;
-2. "src/*.ts": meaning the module name unchanged, i.e. `@src/app/app.component` => `./src/app/app.component.ts`.
+1. `"src/*.web.ts"`: meaning the web-specific file, i.e. `@src/app/app.component` => `./src/app/app.component.web.ts`;
+2. `"src/*.ts"`: meaning the module name unchanged, i.e. `@src/app/app.component` => `./src/app/app.component.ts`.
 
-The configuration for mobile is similar. It's located in the `tsconfig.tns.json` file:
-```
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@src/*": [
-        "src/*.tns.ts",
-        "src/*.ts"
-      ]
-    }
+The configuration for mobile is similar:
+
+**tsconfig.tns.json**
+```JSON
+"compilerOptions": {
+  "baseUrl": ".",
+  "paths": {
+    "@src/*": [
+      "src/*.tns.ts",
+      "src/*.ts"
+    ]
   }
+}
 ...
 ```
 
 Again, the platform-specific files are preferred during resolution:
+
 1. "src/*.tns.ts": meaning the NativeScript-specific file, i.e. `@src/app/app.component` => `./src/app/app.component.tns.ts`;
 2. "src/*.ts": meaning the module name unchanged, i.e. `@src/app/app.component` => `./src/app/app.component.ts`.
 
@@ -291,57 +293,57 @@ const routes: Routes = [
 
 However, in this case, the build process won't detect automatically the module file. You have to include it manually in the TypeScript compilation. Update the necessary configuration TypeScript configuration files.
 
-1. If the module is mobile-only, update the mobile configuration file:
+1. If the module is mobile-only, update the mobile configuration:
 
-**tsconfig.tns.json**
-```json
-{
-  ...
-  "files": [
-    "src/main.tns.ts",
-    "src/app/lazy/lazy.module.tns.ts"
-  ]
-}
-```
+  **tsconfig.tns.json**
+  ```json
+  {
+    ...
+    "files": [
+      "src/main.tns.ts",
+      "src/app/lazy/lazy.module.tns.ts"
+    ]
+  }
+  ```
 
-2. If the file is web-only, update the web configuration file:
+2. If the module is web-only, update the web configuration file:
 
-**tsconfig.app.json**
-```json
-{
-  ...
-  "files": [
-    "src/main.ts",
-    "src/polyfills.ts",
-    "src/app/lazy/lazy.module.ts"
-  ]
-}
-```
+  **tsconfig.app.json**
+  ```json
+  {
+    ...
+    "files": [
+      "src/main.ts",
+      "src/polyfills.ts",
+      "src/app/lazy/lazy.module.ts"
+    ]
+  }
+  ```
 
-3. If the file is shared, update both configuration files:
+3. If the module is shared, update both configuration files:
 
-**tsconfig.tns.json**
-```json
-{
-  ...
-  "files": [
-    "src/main.tns.ts",
-    "src/app/lazy/lazy.module.tns.ts"
-  ]
-}
-```
+  **tsconfig.tns.json**
+  ```json
+  {
+    ...
+    "files": [
+      "src/main.tns.ts",
+      "src/app/lazy/lazy.module.ts"
+    ]
+  }
+  ```
 
-**tsconfig.app.json**
-```json
-{
-  ...
-  "files": [
-    "src/main.ts",
-    "src/polyfills.ts",
-    "src/app/lazy/lazy.module.ts"
-  ]
-}
-```
+  **tsconfig.app.json**
+  ```json
+  {
+    ...
+    "files": [
+      "src/main.ts",
+      "src/polyfills.ts",
+      "src/app/lazy/lazy.module.ts"
+    ]
+  }
+  ```
 
 ## What’s next?
 

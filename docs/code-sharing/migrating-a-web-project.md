@@ -388,3 +388,14 @@ src
         ├── animals.module.tns.ts           <= create
         └── animals.module.ts
 ```
+
+## Migrating to Remapped Imports
+
+[Remapped imports](https://docs.nativescript.org/angular/code-sharing/intro#remapped-imports) are preferred over relative imports in code-sharing projects. The `ng add @nativescript/schematics` command extends your project TSLint configuration with the `prefer-mapped-imports` rule. The rule enforces the use of **remapped imports** and also provides a fix for existing relative imports. To convert the relative imports in your project, execute:
+
+```
+ng lint --fix
+```
+
+The `prefer-mapped-imports` rule is part of the `@nativescript/tslint-rules` package. To learn more about it, refer to the official [GitHub repository](https://github.com/nativescript/nativescript-tslint-rules#nativescript-tslint-rules).
+
