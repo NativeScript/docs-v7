@@ -613,7 +613,7 @@ targetTextField.unbind("text");
 targetTextField.unbind("text");
 ```
 
-**API Reference for** [Binding](/api-reference/classes/_ui_core_bindable_.bindable.html).
+**API Reference for** [Binding](/api-reference/classes/_ui_core_bindable_.binding).
 
 
 ### See also
