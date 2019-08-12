@@ -19,7 +19,7 @@ NativeScript has a special class called [FormattedString](/api-reference/classes
 </Label>
 ```
 
-This syntax differs from the FormattedString’s full syntax used in NativeScript Core, shown below, which does not work in Angular apps:
+This syntax differs from the full syntax of FormattedString used in NativeScript Core, shown below, which does not work in Angular apps:
 
 ```HTML
 <Label>
