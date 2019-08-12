@@ -2797,3 +2797,7 @@ html .gsc-result .gs-title {
         flex-direction: column;
     }
 }
+
+.optanon-alert-box-wrapper{
+	width: auto!important;
+}
