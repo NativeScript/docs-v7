@@ -77,7 +77,8 @@
 <script>
     function getCookie(n) { for (var t = n + "=", e = document.cookie.split(";"), r = 0; r < e.length; r++) { for (var i = e[r]; " " === i.charAt(0);)i = i.substring(1, i.length); if (0 === i.indexOf(t)) return i.substring(t.length, i.length) } return null }
     function setCookie(e, t, i) { var o; if (i) { var n = new Date; n.setTime(n.getTime() + 24 * i * 60 * 60 * 1e3), o = "; expires=" + n.toGMTString() } else o = ""; document.cookie = e + "=" + t + o + "; path=/" }
-    $.getJSON("https://docs.nativescript.org/docs_versions.json", function (data) {
+    var urlJSON = window.location.origin.concat("/docs_versions.json");
+    $.getJSON(urlJSON, function (data) {
         var varray = data[`versions`].sort((a, b) => parseFloat(a[`version`]) - parseFloat(b[`version`]));
         var docsUrl = window.location.href;
         var baseUrl = window.location.origin;
