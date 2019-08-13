@@ -16,6 +16,7 @@ module.exports.nsUISamplesAngular = path.join(module.exports.root, "..", "..", "
 module.exports.nsUISamplesVue = path.join(module.exports.root, "..", "..", "nativescript-ui-samples-vue");
 module.exports.cliRoot = path.join(module.exports.root, "..", "..", "nativescript-cli");
 module.exports.vuejsRoot = path.join(module.exports.root, "..", "vuejs-docs");
+module.exports.docsVersions = path.join(module.exports.root, "..", "docs_versions");
 
 module.exports.sourceFilesRoot = "/root";
 module.exports.assetsPaths = [
@@ -34,4 +35,5 @@ module.exports.sourcePathsInImage = [
     `${module.exports.sourceFilesRoot}/nativescript-ui-samples`,
     `${module.exports.sourceFilesRoot}/nativescript-ui-sidedrawer-angular`,
     `${module.exports.sourceFilesRoot}/nativescript-ui-sidedrawer-vue`,
+    `${module.exports.sourceFilesRoot}/docs_versions`,
 ];

@@ -11,6 +11,7 @@ NG_DIST_ROOT=$ROOT"/angular"
 DOCS_ROOT=$SCRIPT_PATH"/../../docs"
 MODULES_ROOT=$SCRIPT_PATH"/../../NativeScript"
 NG_ROOT=$SCRIPT_PATH"/../../nativescript-angular"
+NS_DOCS_VERSIONS=$SCRIPT_PATH"/../../docs_versions"
 SDK_ROOT_JS=$SCRIPT_PATH"/../../nativescript-sdk-examples-js"
 SDK_ROOT_NG=$SCRIPT_PATH"/../../nativescript-sdk-examples-ng"
 CLI_ROOT=$SCRIPT_PATH"/../../nativescript-cli"
@@ -119,3 +120,4 @@ fi
 
 cp -R $NS_DIST_ROOT"/./" $WWW_ROOT
 [ ! -d $NG_ROOT ] || cp -R $NG_DIST_ROOT"/./" $WWW_ROOT"/angular"
+[ ! -d $NS_DOCS_VERSIONS ] || cp -R $NS_DOCS_VERSIONS"/./" $WWW_ROOT

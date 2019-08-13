@@ -39,6 +39,7 @@ rsync --relative -az --exclude node_modules/ --exclude .git \
 [ ! -d /root/./nativescript-ui-samples ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-ui-samples /www
 [ ! -d /root/./nativescript-ui-samples-angular ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-ui-samples-angular /www
 [ ! -d /root/./nativescript-ui-samples-vue ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-ui-samples-vue /www
+[ ! -d /root/./docs_versions ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./docs_versions /www
 
 /www/docs/build/build-docs.sh
 /www/docs/build/nginx-setup.sh
