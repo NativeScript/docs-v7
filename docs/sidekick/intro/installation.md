@@ -10,7 +10,7 @@ slug: installation
 
 ## Step 1: Install Node.js
 
-To run {{ site.ns-sk }}, you need to have Node.js installed on your machine. To check whether Node.js is installed on your development machine, you should open a terminal or command prompt and run the `node --version` command. If you get an error, head to [https://nodejs.org/](https://nodejs.org/en/) and download and install the latest [Node.js LTS](https://github.com/nodejs/LTS#lts-schedule) version. We recommend using [Node.js 8.x](https://nodejs.org/dist/latest-v8.x/).
+To run {{ site.ns-sk }}, you need to have Node.js installed on your machine. To check whether Node.js is installed on your development machine, you should open a terminal or command prompt and run the `node --version` command. If you get an error, head to [https://nodejs.org/](https://nodejs.org/en/) and download and install the latest [Node.js LTS](https://github.com/nodejs/LTS#lts-schedule) version. We recommend using [Node.js 10.x](https://nodejs.org/dist/latest-v10.x/).
 
 ## Step 2: Install the {{ site.ns-cli }}
 
