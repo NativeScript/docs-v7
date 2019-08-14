@@ -3,7 +3,7 @@ url: "https://docs.nativescript.org"
 destination: ./nativescript
 
 ## The application virtual path
-baseurl:  "/5_4"
+baseurl:  "/5-4"
 # Exclude files which should not be in the output
 exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, ng-framework-modules, ui/ng-ui-widgets, ng-hardware-access, ui/professional-ui-components/ng-Gauge, ui/professional-ui-components/ng-DataForm, ui/professional-ui-components/ng-AutoCompleteTextView, ui/professional-ui-components/ng-Chart, ui/professional-ui-components/ng-Calendar, ui/professional-ui-components/ng-ListView, ui/professional-ui-components/ng-SideDrawer]
 ## The highlighting in the header
