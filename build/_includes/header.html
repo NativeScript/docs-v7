@@ -81,7 +81,7 @@
         var currentvfound = false;
         var name = "ns-current-base-url";
         for (var i = 0; i < varray.length-1; i++) {
-            var currentversion = (varray[i]['version'].replace(/\s/g, "")).replace(".", "_");
+            var currentversion = (varray[i]['version'].replace(/\s/g, "")).replace(".", "-");
             var itemUrl = baseUrl + "/" + currentversion;
             if ((docsUrl.indexOf(currentversion) >= 0) && (!currentvfound)) {
                 currentvfound = true
