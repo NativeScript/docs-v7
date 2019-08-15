@@ -88,7 +88,7 @@ frame.navigate({
 
 ## Passing and Receiving Custom Context
 
-In cases where we want to pass a specific context and need more control than the automated `bindingContext`, you could use the `context` property in the `navigatedEntry` object. The navigated page can obtain the passed context via the `navigatedTo` event and the [`navigaitonContext`](/api-reference/classes/_ui_page_.page#navigationcontext) property.
+In cases where we want to pass a specific context and need more control than the automated `bindingContext`, you could use the `context` property in the `navigatedEntry` object. The navigated page can obtain the passed context via the `navigatedTo` event and the [`navigationContext`](/api-reference/classes/_ui_page_.page#navigationcontext) property.
 
 Sending binding context from the main page.
 ```JavaScript
