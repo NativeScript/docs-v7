@@ -4,8 +4,6 @@ nscookbookurl: "/cookbook/"
 source: ./Content
 # Release date in the format of: YYYY-MM-DD
 release_date: "2016-11-16"
-## The application virtual path
-baseurl:  ""
 navigation:
 ## List your directory names and order here, like this:
     start:
