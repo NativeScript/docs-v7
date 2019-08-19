@@ -728,6 +728,59 @@ let heightDIPs = screen.mainScreen.heightDIPs;
 
 NativeScript supports **percentage** values for `width`, `height` and `margins`. When a layout pass begins, first the percent values are calculated based on parent available size. This means that on vertical StackLayout if you place two Buttons with `height='50%'` they will get all the available height (e.g., they will fill the StackLayout vertically.). The same applies for `margin` properties. For example, if you set `marginLeft = '5%'`, the element will have a margin that corresponds to 5% of the parent's available width.
 
+## Using CSS variables
+
+NativeScript supports [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (also known as custom properties or cascading variables) for reusable values through the CSS used in the app.
+
+CSS variables cascades from parent to child views.
+
+Declaring a variable:
+```CSS
+element {
+    --my-custom-color: black; 
+}
+```
+
+Using a variable:
+```CSS
+child-element {
+    color: var(--my-custom-color);
+}
+```
+
+Using a fallback value:
+```CSS
+child-element {
+    color: var(--my-undefined-value, yellow);
+}
+```
+
+Using a nested fallback value:
+```CSS
+child-element {
+    color: var(--my-undefined-value, var(--my-custom-color, yellow));
+}
+```
+
+## Using CSS calc()
+
+NativeScript supports `CSS calc()` functions for performing simple calculations on CSS values.
+
+Syntax:
+```CSS
+element {
+    width: calc(100% * 1.25); /* width: 125% */
+}
+```
+
+Used with `CSS variables`:
+```CSS
+element {
+    --my-variable: 10:
+    width: calc(100% * var(--my-variable)); /* width: 125% */
+}
+```
+
 ## Accessing NativeScript component properties with CSS
 
 You can set NativeScript component properties value that are not part of the CSS specification. For example:
