@@ -196,7 +196,9 @@ improveThis:
         1:
             matchPattern: '^/code-samples/.*'
         2:
-            matchPattern: '^/docs-cli/.*'
+            matchPattern: '^/tooling/docs-cli/.*'
+            trimRootPath: "/tooling/docs-cli"
+            baseUrl: "https://github.com/NativeScript/nativescript-cli/tree/master/docs/man_pages"
         3:
             matchPattern: '.*'
             baseUrl: "https://github.com/NativeScript/docs/blob/master/docs/"

@@ -34,6 +34,9 @@ module Jekyll
                         pagePath = pagePath.gsub(updater, "")
                     end
                     if entry["baseUrl"]
+                        if entry["trimRootPath"]
+                            pagePath.sub!(entry["trimRootPath"], "")
+                        end
                         # Ensure the baseUrl ends with a slash:
                         baseUrl = File.join(entry["baseUrl"], "")
                         resultUrl = "#{baseUrl}#{pagePath}"
