@@ -734,30 +734,46 @@ NativeScript supports [CSS variables](https://developer.mozilla.org/en-US/docs/W
 
 CSS variables cascades from parent to child views.
 
-Declaring a variable:
+Declaring variables:
 ```CSS
-element {
+/* Define --my-custom-color as a global value */
+.ns-root {
     --my-custom-color: black; 
+}
+
+/* In landscape mode change the value to blue */
+.ns-landscape {
+    --my-custom-color: blue; 
+}
+```
+
+Overriding a variable from a child-element:
+```CSS
+/* Change --my-custom-color to green for elements below */
+.ns-root .override-color {
+    --my-custom-color: green; 
 }
 ```
 
 Using a variable:
 ```CSS
-child-element {
+.using-variable {
     color: var(--my-custom-color);
 }
 ```
+The default value of `--my-undefined-value` will be `black`. In landscape mode it will be `blue`. If a parent element have the class `override-color` the value will be `green`.
 
 Using a fallback value:
 ```CSS
-child-element {
+.using-variable {
     color: var(--my-undefined-value, yellow);
 }
 ```
+The color of `--my-undefined-value` will fallback to `yellow`, because `--my-undefined-value` is not defined.
 
 Using a nested fallback value:
 ```CSS
-child-element {
+.using-variable {
     color: var(--my-undefined-value, var(--my-custom-color, yellow));
 }
 ```
