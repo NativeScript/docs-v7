@@ -13,8 +13,6 @@ However, when you needed to build both a web and a native mobile app, you had to
 
 The Angular and NativeScript teams teamed up to create [nativescript-schematics](https://github.com/nativescript/nativescript-schematics), a schematic collection that enables you to build both web and mobile apps from a single project.
 
-> **NOTE**: The **@nativescript/schematics** package only works with **@angular/cli: 6.1.0** or newer.
-
 ## Code-Sharing Projects
 
 A code-sharing project is one where we keep the code for the web and mobile apps in one place. Here’s a quick diagram to show you what that looks like at a high level.
@@ -46,13 +44,13 @@ Like in this diagram:
 
 ![basket-example](./img/basket.png?raw=true)
 
-The **BasketService** - should allow you to:
+The **BasketService** should allow you to:
 
 * **loadItems** - get items placed in the basket
 * **updateItemQuantity** - change the quantity of a given item in the basket
 * **remove** - remove a given item from the basket
 
-The **Basket Service** should be made of 100% shareable code
+The **Basket Service** should be made of 100% shareable code.
 
 **basket.service.ts**
 
@@ -60,9 +58,11 @@ The **Basket Service** should be made of 100% shareable code
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Item } from './item.model.ts';
+import { Item } from '@src/app/item.model.ts';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class BasketService {
 
   constructor(private http: HttpClient) { }
@@ -202,6 +202,148 @@ To create two separate templates, you just need to use a naming convention. Simp
 
 Even though, the contents of **basket.component.html** and **basket.component.tns.html** are not quite the same, you can see that in general they follow the same structure. Both use the **async pipe** to load the data from **items$** and both use the component methods (**increaseQuantity(item)**, **pay()**).
 
+## Remapped imports
+
+It's strongly recommended to use **remapped import statements** in code-sharing projects.
+Don't worry if you are not familiar with the term - it was coined by the NativeScript team during the development of the NativeScript Angular code-sharing project structure. The remapped import statements are TypeScript import statements in the following form:
+
+```TypeScript
+import { AppComponent } from '@src/app/app.component';
+```
+
+Notice the *module specifier*:
+
+```TypeScript
+'@src/app/app.component'
+```
+
+In a code-sharing project, the TypeScript compiler is configured to understand the `@src` symbol. Depending on the platform you're building for - web or mobile, the compiler will use one of two configuration files. Let's take a look into the configuration file for web:
+
+**tsconfig.app.json**
+```JSON
+"compilerOptions": {
+  "baseUrl": ".",
+  "paths": {
+    "@src/*": [
+      "src/*.web.ts",
+      "src/*.ts"
+    ]
+  }
+}
+...
+```
+
+This tells the compiler for any **module specifier** that matches the pattern `"@src/*"` (i.e. starts with `"@src"`), to look in two locations:
+
+1. `"src/*.web.ts"`: meaning the web-specific file, i.e. `@src/app/app.component` => `./src/app/app.component.web.ts`;
+2. `"src/*.ts"`: meaning the module name unchanged, i.e. `@src/app/app.component` => `./src/app/app.component.ts`.
+
+The configuration for mobile is similar:
+
+**tsconfig.tns.json**
+```JSON
+"compilerOptions": {
+  "baseUrl": ".",
+  "paths": {
+    "@src/*": [
+      "src/*.tns.ts",
+      "src/*.ts"
+    ]
+  }
+}
+...
+```
+
+Again, the platform-specific files are preferred during resolution:
+
+1. "src/*.tns.ts": meaning the NativeScript-specific file, i.e. `@src/app/app.component` => `./src/app/app.component.tns.ts`;
+2. "src/*.ts": meaning the module name unchanged, i.e. `@src/app/app.component` => `./src/app/app.component.ts`.
+
+> You can also use `*.android` and `*.ios` files to split any platform-specific logic. Their resolution is handled by webpack during build.
+
+### Lazy Loaded Modules
+
+You need to use **remapped imports** when configuring lazy loaded modules as well.
+
+#### Dynamic imports
+
+Since Angular 8.0, you can use dynamic imports in your routing configuration. The import path should be a **remapped import**.
+
+```TypeScript
+const routes: Routes = [
+  {
+    path: 'lazy',
+    loadChildren: () => import('@src/app/lazy/lazy.module').then(m => m.LazyModule),
+  }
+];
+```
+
+#### Static strings
+
+If you decide to stick to static strings for the paths of the lazy loaded modules, make sure they are also following the same format:
+
+```TypeScript
+const routes: Routes = [
+  {
+    path: 'lazy',
+    loadChildren: '@src/app/lazy/lazy.module#LazyModule',
+  }
+];
+```
+
+However, in this case, the build process won't detect automatically the module file. You have to include it manually in the TypeScript compilation. Update the necessary configuration TypeScript configuration files.
+
+1. If the module is mobile-only, update the mobile configuration:
+
+  **tsconfig.tns.json**
+  ```json
+  {
+    ...
+    "files": [
+      "src/main.tns.ts",
+      "src/app/lazy/lazy.module.tns.ts"
+    ]
+  }
+  ```
+
+2. If the module is web-only, update the web configuration file:
+
+  **tsconfig.app.json**
+  ```json
+  {
+    ...
+    "files": [
+      "src/main.ts",
+      "src/polyfills.ts",
+      "src/app/lazy/lazy.module.ts"
+    ]
+  }
+  ```
+
+3. If the module is shared, update both configuration files:
+
+  **tsconfig.tns.json**
+  ```json
+  {
+    ...
+    "files": [
+      "src/main.tns.ts",
+      "src/app/lazy/lazy.module.ts"
+    ]
+  }
+  ```
+
+  **tsconfig.app.json**
+  ```json
+  {
+    ...
+    "files": [
+      "src/main.ts",
+      "src/polyfills.ts",
+      "src/app/lazy/lazy.module.ts"
+    ]
+  }
+  ```
 
 ## What’s next?
 
