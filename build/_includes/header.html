@@ -85,7 +85,7 @@
             var itemUrl = baseUrl + "/" + currentversion;
             if ((docsUrl.indexOf(currentversion) >= 0) && (!currentvfound)) {
                 currentvfound = true
-                $('#current-version').text("Current version " + varray[i]['version']);
+                $('#current-version').text("v " + varray[i]['version']);
                 setCookie(name, itemUrl, 1);
 
             }
@@ -95,7 +95,7 @@
         $('#versions-list').append("<li class='k-item k-state-default k-first'><a class='k-link' id='" + baseUrl + "'>Version " + varray[lastindex]['version'] + "</a></li>");
         if (!currentvfound) {
             currentvfound = true;
-            $('#current-version').text("Current version " + varray[lastindex]['version']);
+            $('#current-version').text("v " + varray[lastindex]['version']);
             setCookie(name, baseUrl, 1);
         }
         $('#versions-list a').click(function (ev) {
