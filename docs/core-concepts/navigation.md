@@ -290,7 +290,7 @@ export function onSelectedIndexChanged(args: SelectedIndexChangedEventData) {
 }
 ```
 
-[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=NMB8eF&v=6)
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=NMB8eF&v=7)
 
 [Playground Demo JavaScript](https://play.nativescript.org/?template=play-js&id=GZE2Rg&v=5)
 

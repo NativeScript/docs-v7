@@ -67,7 +67,7 @@ GridLayout
     > Static Content
 ```
 
-[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=IeOEzc&v=4)
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=IeOEzc&v=5)
 
 {% endnativescript %}
 
@@ -167,7 +167,7 @@ BottomNavigation (lateral navigation)
     > Frame (id="search" defaultPage="search-page")
 ```
 
-[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=DrwJ2o)
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=DrwJ2o&v=13)
 TabView > Frames >> Pages
 {% endnativescript %}
 
@@ -201,14 +201,14 @@ TabView (lateral navigation)
 In this example, the root TabView is explicitly set to bottom for Android (by design the tabs are always placed at the bottom on iOS, but on Android, we can change the placement).
 
 ```
-TabView (lateral navigation)
-    TabViewItem > TabView (lateral navigation)
+BottomNavigation (lateral navigation)
+    TabContentItem > Tabs (lateral navigation)
                     >> another content (e.g. layout or Frame)
-    TabViewItem > another content (e.g. layout or Frame)
-    TabViewItem > another content (e.g. layout or Frame)
+    TabContentItem > another content (e.g. layout or Frame)
+    TabContentItem > another content (e.g. layout or Frame)
 ```
 
-[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=soFhmN&v=6)
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=soFhmN&v=14)
 {% endnativescript %}
 
 {% angular %}
@@ -237,12 +237,12 @@ RadSideDrawer (lateral navigation)
     drawer content 
         > Frame id="root-frame" (forward navigation)
             >> Page (e.g. login-page)
-            >> Page (e.g. main-page) with TabView (lateral navigation)
-                 tabItem >>> Frame (featured)
+            >> Page (e.g. main-page) with BottomNavigation (lateral navigation)
+                 TabContentItem >>> Frame (featured)
                             >>>> Page (featured-page)
-                 tabItem >>> Frame (browse)
+                 TabContentItem >>> Frame (browse)
                             >>>> Page (browse-page)
-                 tabItem >>> Frame (search)
+                 TabContentItem >>> Frame (search)
                             >>>> Page (search-page)
 
     drawer link 
@@ -253,7 +253,7 @@ RadSideDrawer (lateral navigation)
         >> Page (e.g. info-page loaded via "root-frame")
 
 ```
-[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=fyNqnr&v=6)
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=fyNqnr&v=8)
 
 
 {% endnativescript %}
