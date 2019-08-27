@@ -242,8 +242,8 @@ The `BottomNavigation` container provides its lateral navigation logic automatic
 
 The `BottomNavigation` provides two important features connected to lateral navigation:
 
-* [selectedIndex](/api-reference/classes/_ui_tabs_.tabs#selectedindex) property - use this property to programmatically navigate between the tabs.
-* [selectedIndexChanged](/api-reference/classes/_ui_tabs_.tabs#selectedindexchangedevent) event - use this event to handle navigations between tabs done by the user.
+* [selectedIndex](/api-reference/classes/_ui_tab_navigation_bottom_navigation_.bottomnavigation#selectedindex) property - use this property to programmatically navigate between the tabs.
+* [selectedIndexChanged](/api-reference/classes/_ui_tab_navigation_bottom_navigation_.bottomnavigation#selectedindexchangedevent) event - use this event to handle navigations between tabs done by the user.
 
 Check out the [BottomNavigation]({%slug bottom-navigation %}) article for a more detailed look on how you can use and customize the component.
 
