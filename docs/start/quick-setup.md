@@ -73,7 +73,11 @@ At this point you’re all set to get started developing NativeScript apps. As a
 
 ## Full Setup
 
-### Step 1: Install iOS and Android requirements
+### Step 1: Install Node.js and NativeScript CLI
+
+If you haven't already, complete the [Quick Setup](Quick-Setup) above.
+
+### Step 2: Install iOS and Android requirements
 
 With the full setup, the NativeScript CLI builds truly native iOS and Android apps locally. As such, you need to set up each target platform on your development machine. To ease the pain of installing all of these requirements manually, the `tns` command provides quick-start scripts for Windows and macOS. Let’s look at how they work.
 
@@ -130,7 +134,7 @@ If you’re using macOS, copy and paste the script below into your terminal and 
 
 The macOS script needs administrative access to run some commands using `sudo`; therefore, you may need to provide your password several times during execution. The macOS script also may take some time to complete, as it’s installing the dependencies for both iOS and Android development. When the script finishes, close and restart your terminal.
 
-### Step 2: Verify the setup
+### Step 3: Verify the setup
 
 To verify the setup, run the `tns doctor` command which will check for any issues with the installation. If you see “No issues were detected” you’re good to go!
 
