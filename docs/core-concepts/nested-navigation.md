@@ -6,17 +6,17 @@ slug: nested-navigation
 ---
 
 
-The main goal of the following article is to demonstrate some good practices for creating nested navigation structure. The article does not aim to be a strict guide, but will help you to understand how you could create complex navigation structures while using forward (e.g., frames or outlets) & lateral navigation (e.g., drawers, tab views, etc.). In each of the article sections, you can find visual guides along with corresponding Playground demos.
+The main goal of the following article is to demonstrate some good practices for creating nested navigation structure. The article does not aim to be a strict guide, but will help you to understand how you could create complex navigation structures while using forward (e.g., frames or outlets) & lateral navigation (e.g., drawers, tabs, bottom navigation, etc.). In each of the article sections, you can find visual guides along with corresponding Playground demos.
 
 ## Simple Rule
 
 There is one simple rule when it comes to nesting navigation widgets.
 
 {% nativescript %}
-> **Important:** When nesting a frame or a tab-view, they should never have direct siblings in the markup. Instead, wrap them in a layout and nest this layout.
+> **Important:** When nesting a frame or a tabs/bottom-navigation, they should never have direct siblings in the markup. Instead, wrap them in a layout and nest this layout.
 {% endnativescript %}
 {% angular %}
-> **Important:** When nesting an outlet or a tab-view, they should never have direct siblings in the markup. Instead, wrap them in a layout and nest this layout.
+> **Important:** When nesting an outlet or a tabs/bottom-navigation, they should never have direct siblings in the markup. Instead, wrap them in a layout and nest this layout.
 {% endangular %}
 
 If these components have siblings, they will span over them in most scenarios. The reason for this is on iOS the navigation controllers always take all the space provided by their parent regardless of their own layout parameters.
@@ -59,15 +59,15 @@ Code: [Playground Demo Angular](https://play.nativescript.org/?template=play-ng&
 {% nativescript %}
 ![nested-lateral-navigation](../img/navigation-extended/navigation-examples-page-2.png?raw=true)
 
-Nesting simple lateral navigation: a TabView in a layout, for example, to show an advertisement banner on the top/bottom.
+Nesting simple lateral navigation: a BottomNavigation in a layout, for example, to show an advertisement banner on the top/bottom.
 ```
 GridLayout  
-    > TabView (lateral navigation)
+    > BottomNavigation (lateral navigation)
         >> Pages | Layouts
     > Static Content
 ```
 
-[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=IeOEzc)
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=IeOEzc&v=5)
 
 {% endnativescript %}
 
@@ -128,30 +128,30 @@ P-R-O (root forward navigation)
 {% nativescript %}
 ![navigation-lateral-in-forward](../img/navigation-extended/navigation-examples-page-4.png?raw=true)
 
-Nesting a TabView inside a Page/Frame. For example in a Login page with forward navigation to a page with a nested TabView.
+Nesting a BottomNavigation inside a Page/Frame. For example in a Login page with forward navigation to a page with a nested BottomNavigation.
 ```
 Frame 
     > LoginPage 
     > MainPage 
-        >> TabView
+        >> BottomNavigation
 ```
 
-[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=1UMjJZ)
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=1UMjJZ&v=9)
 
 {% endnativescript %}
 
 {% angular %}
 ![ng-navigation-lateral-in-forward](../img/navigation-extended/ng-navigation-examples-page-4.png?raw=true)
 
-Nesting a TabView (lateral navigation) inside a page router outlet. For example in a Login component with forward navigation to a component with a nested TabView.
+Nesting a BottomNavigation (lateral navigation) inside a page router outlet. For example in a Login component with forward navigation to a component with a nested BottomNavigation.
 ```
 P-R-O (forward navigation)
     > login.component
     > home.component
-        >> TabView (lateral navigation)
+        >> BottomNavigation (lateral navigation)
 ```
 
-[Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=HzFEFL)
+[Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=HzFEFL&v=6)
 {% endangular %}
 
 ## Nesting Forward in Lateral Navigation
@@ -159,15 +159,15 @@ P-R-O (forward navigation)
 {% nativescript %}
 ![navigation-lateral-in-forward-schema](../img/navigation-extended/navigation-examples-page-5.png?raw=true)
 
-Root TabView with multiple nested Frames.
+Root BottomNavigation with multiple nested Frames.
 ```
-TabView (lateral navigation)
+BottomNavigation (lateral navigation)
     > Frame (id="featured" defaultPage="featured-page")
     > Frame (id="browse" defaultPage="browse-page")
     > Frame (id="search" defaultPage="search-page")
 ```
 
-[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=DrwJ2o)
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=DrwJ2o&v=13)
 TabView > Frames >> Pages
 {% endnativescript %}
 
@@ -201,14 +201,14 @@ TabView (lateral navigation)
 In this example, the root TabView is explicitly set to bottom for Android (by design the tabs are always placed at the bottom on iOS, but on Android, we can change the placement).
 
 ```
-TabView (lateral navigation)
-    TabViewItem > TabView (lateral navigation)
+BottomNavigation (lateral navigation)
+    TabContentItem > Tabs (lateral navigation)
                     >> another content (e.g. layout or Frame)
-    TabViewItem > another content (e.g. layout or Frame)
-    TabViewItem > another content (e.g. layout or Frame)
+    TabContentItem > another content (e.g. layout or Frame)
+    TabContentItem > another content (e.g. layout or Frame)
 ```
 
-[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=soFhmN&v=6)
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=soFhmN&v=14)
 {% endnativescript %}
 
 {% angular %}
@@ -237,12 +237,12 @@ RadSideDrawer (lateral navigation)
     drawer content 
         > Frame id="root-frame" (forward navigation)
             >> Page (e.g. login-page)
-            >> Page (e.g. main-page) with TabView (lateral navigation)
-                 tabItem >>> Frame (featured)
+            >> Page (e.g. main-page) with BottomNavigation (lateral navigation)
+                 TabContentItem >>> Frame (featured)
                             >>>> Page (featured-page)
-                 tabItem >>> Frame (browse)
+                 TabContentItem >>> Frame (browse)
                             >>>> Page (browse-page)
-                 tabItem >>> Frame (search)
+                 TabContentItem >>> Frame (search)
                             >>>> Page (search-page)
 
     drawer link 
@@ -253,7 +253,7 @@ RadSideDrawer (lateral navigation)
         >> Page (e.g. info-page loaded via "root-frame")
 
 ```
-[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=fyNqnr&v=6)
+[Playground Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=fyNqnr&v=8)
 
 
 {% endnativescript %}

@@ -24,7 +24,7 @@ There are a number of UX specifics that are hard to replicate with the default A
 * Back navigation handling - the hardware back button on Android and the navigation bar back button on iOS.
 * Mobile navigation lifecycle - view state preservation when navigating back.
 * Mobile specific history - keeping history per navigation controller instead of a global one.
-* Mobile lateral navigation widgets - `TabView`, `SideDrawer`, `Modal View` and more.
+* Mobile lateral navigation widgets - `BottomNavigation`, `Tabs`, `SideDrawer`, `Modal View` and more.
 
 NativeScript brings these to Angular with the following extensions, directives and strategies:
 
@@ -447,7 +447,7 @@ export class ItemComponent implements OnInit {
 
 ![navigation-schema-lateral](../img/navigation/navigation-schema-lateral.png?raw=true)
 
-Implementing lateral navigation in NativeScript usually means to implement sibling router outlets in your navigation and provide means to the user to switch between them. This is usually enabled through specific navigation components. These include `TabView`, `SideDrawer`, `Modal View`, and even the `page-router-outlet` each providing a unique mobile navigation pattern.
+Implementing lateral navigation in NativeScript usually means to implement sibling router outlets in your navigation and provide means to the user to switch between them. This is usually enabled through specific navigation components. These include `BottomNavigation`, `Tabs`, `SideDrawer`, `Modal View`, and even the `page-router-outlet` each providing a unique mobile navigation pattern.
 
 ### Hub Navigation
 
@@ -594,22 +594,20 @@ export class FeaturedComponent implements OnInit {
 
 [Playground Demo](https://play.nativescript.org/?template=play-ng&id=lpCc2k)
 
-### TabView Navigation
+### BottomNavigation & Tabs Navigation
 
-The `TabView` component enables the user to arbitrarily navigate between several UI containers at the same level. A key feature of this component is that it keeps the state of the containers that are not visible. This means that when the user comes back to a previous tab, the data, scroll position and navigation state should be like they left them. Here is a diagram that demonstrates how the navigation schema can be implemented with a `TabView`.
+The `TabView` component enables the user to arbitrarily navigate between several UI containers at the same level. A key feature of this component is that it keeps the state of the containers that are not visible. This means that when the user comes back to a previous tab, the data, scroll position and navigation state should be like they left them. Here is a diagram that demonstrates how the navigation schema can be implemented with a `BottomNavigation` (or alternatively with `Tabs`).
 
 ![navigation-diagram-ng-tab](../img/navigation/navigation-diagram-ng-tab.png?raw=true)
 
-The `TabView` container provides its lateral navigation logic automatically by providing the user with tabs which they can select. To set up a `TabView` you need to simply declare the UI of each container and the title and icon you want to be shown in its representing tab. Each separate UI container is represented by the `tabItem` directive tag. As with other containers, you can enable forward and backward navigation inside each of them by embedding a `page-router-outlet` in it. In this case we need to use three sibling outlets. The way to do this with the Angular router is to use [named outlets](https://angular.io/guide/router#displaying-multiple-routes-in-named-outlets). Each of our outlets will be named with the name of the feature that it represents.
+The `BottomNavigation` container provides its lateral navigation logic automatically by providing the user with tabs which they can select. To set up a `BottomNavigation` you need to simply declare the UI of each container via a `TabItemContent` and set the title and icon via coresponding `tabStripItem` (details on the basic structure [here](http://localhost:9192/angular/ui/ng-ui-widgets/bottom-navigation#usage)). Each separate UI container is represented by the `TabContentItem` component. As with other containers, you can enable forward and backward navigation inside each of them by embedding a `page-router-outlet` in it. In this case we need to use three sibling outlets. The way to do this with the Angular router is to use [named outlets](https://angular.io/guide/router#displaying-multiple-routes-in-named-outlets). Each of our outlets will be named with the name of the feature that it represents.
 
-The `TabView` widget also provides two important features connected to lateral navigation:
+The `BottomNavigation` widget also provides two important features connected to lateral navigation:
 
-* [selectedIndex](/api-reference/classes/_ui_tab_view_.tabview#selectedindex) property - use this property to programmatically navigate between the tabs.
-* [selectedIndexChanged](/api-reference/classes/_ui_tab_view_.tabview#selectedindexchangedevent) event - use this event to handle navigations between tabs done by the user.
+* [selectedIndex](/api-reference/classes/_ui_tab_navigation_bottom_navigation_.bottomnavigation#selectedindex) property - use this property to programmatically navigate between the tabs.
+* [selectedIndexChanged](/api-reference/classes/_ui_tab_navigation_bottom_navigation_.bottomnavigation#selectedindexchangedevent) event - use this event to handle navigations between tabs done by the user.
 
-Check out the [TabView]({%slug tab-view-ng %}) article for a more detailed look on how you can use and customize the component.
-
-Here is a code sample of the `TabView` declaration that matches the diagram above. Check out the complete playground demo below the code sample.
+Here is a code sample of the `BottomNavigation` declaration that matches the diagram above. Check out the complete playground demo below the code sample.
 
 ``` app-routing.module.ts
 import { NgModule } from "@angular/core";
@@ -692,11 +690,38 @@ export class AppComponent {
 }
 ```
 ```app.component.html
-<TabView androidTabsPosition="bottom" selectedIndex="0" (selectedIndexChanged)="onSelectedIndexChanged($event)">
-    <page-router-outlet *tabItem="{title: 'Featured'}" name="featured"></page-router-outlet>
-    <page-router-outlet *tabItem="{title: 'Browse'}" name="browse"></page-router-outlet>
-    <page-router-outlet *tabItem="{title: 'Search'}" name="search"></page-router-outlet>
-</TabView>
+<BottomNavigation selectedIndex="1">
+
+    <!-- The bottom tab UI is created via TabStrip (the containier) and TabStripItem (for each tab)-->
+    <TabStrip>
+        <TabStripItem>
+            <Label text="Home"></Label>
+            <!-- <Image src="font://&#xf015;" class="fas"></Image> -->
+        </TabStripItem>
+
+        <TabStripItem class="special">
+            <Label text="Account"></Label>
+            <!-- <Image src="font://&#xf007;" class="fas"></Image> -->
+        </TabStripItem>
+
+        <TabStripItem class="special">
+            <Label text="Search"></Label>
+            <!-- <Image src="font://&#xf00e;" class="fas"></Image> -->
+        </TabStripItem>
+    </TabStrip>
+
+    <!-- The number of TabContentItem components should corespond to the number of TabStripItem components -->
+    <TabContentItem>
+        <page-router-outlet name="featured"></page-router-outlet>
+    </TabContentItem>
+    <TabContentItem>
+        <page-router-outlet name="browse"></page-router-outlet>
+    </TabContentItem>
+    <TabContentItem>
+        <page-router-outlet  name="search"></page-router-outlet>
+    </TabContentItem>
+
+</BottomNavigation>
 ```
 ``` featured.component.ts
 import { Component, OnInit } from "@angular/core";
@@ -725,15 +750,16 @@ export class FeaturedComponent implements OnInit {
 </ScrollView>
 ```
 
-[Playground Demo](https://play.nativescript.org/?template=play-ng&id=U4Rmr9)
+[Playground Demo](https://play.nativescript.org/?template=play-ng&id=U4Rmr9&v=2)
 
-> **Note:** In the current scenario the Search feature has only one page and it's possible to implement it directly in the `tabItem` tag without embedding a `page-router-outlet`. However, in this case there won't be a navigation controller in the `tabItem` container and therefore, no `ActionBar`.
+
+> **Note:** In the current scenario the Search feature has only one page and it's possible to implement it directly in the `TabContentItem` tag without embedding a `page-router-outlet`. However, in this case there won't be a navigation controller in the `TabContentItem` container and therefore, no `ActionBar`.
 
 ### Modal View Navigation
 
 Opening a new navigation controller as a full screen modal view is a very common mobile navigation pattern. In this context opening the modal view represents lateral navigation to a new feature. You can then leverage the embedded `page-router-outlet` to navigate forward and backward in this feature. Closing the modal will navigate laterally back to where the modal view was opened from. Below is a diagram that displays how the navigation schema can be implemented using modal views.
 
-> **Note:** Unlike the `TabView` component, the state of the modal view isn't kept when navigating away, i.e. closing the modal.
+> **Note:** Unlike the `BottomNavigation` component, the state of the modal view isn't kept when navigating away, i.e. closing the modal.
 
 ![navigation-diagram-ng-modal](../img/navigation/navigation-diagram-ng-modal.png?raw=true)
 
@@ -826,7 +852,7 @@ export class AppModule { }
 ```
 ``` app.component.ts
 import { Component } from "@angular/core";
-import { SelectedIndexChangedEventData } from "tns-core-modules/ui/tab-view";
+import { SelectedIndexChangedEventData } from "tns-core-modules/ui/bottom-navigation";
 
 @Component({
     selector: "ns-app",
@@ -957,7 +983,7 @@ The simplest navigation pattern that you can implement is again the hub navigati
 
 ![navigation-diagram-ng-drawer-hub](../img/navigation/navigation-diagram-ng-drawer-hub.png?raw=true)
 
-The component itself doesn't provide navigation logic automatically like the `TabView`. Instead, it is built with more freedom in mind and lets you customize its content. It exposes two UI containers with two directives - `tkDrawerContent` houses the UI of the hidden side view and the `tkMainContent` holds the UI that will be shown on the screen. To implement the diagram above, you can embed a `page-router-outlet` in the main content container. In the hidden drawer content you can have three buttons. Each of them will navigate to one of the three features. Check out the complete playground demo below the code sample.
+The component itself doesn't provide navigation logic automatically like the `BottomNavigation`. Instead, it is built with more freedom in mind and lets you customize its content. It exposes two UI containers with two directives - `tkDrawerContent` houses the UI of the hidden side view and the `tkMainContent` holds the UI that will be shown on the screen. To implement the diagram above, you can embed a `page-router-outlet` in the main content container. In the hidden drawer content you can have three buttons. Each of them will navigate to one of the three features. Check out the complete playground demo below the code sample.
 
 ``` app-routing.module.ts
 import { NgModule } from "@angular/core";
