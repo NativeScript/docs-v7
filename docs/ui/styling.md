@@ -728,6 +728,75 @@ let heightDIPs = screen.mainScreen.heightDIPs;
 
 NativeScript supports **percentage** values for `width`, `height` and `margins`. When a layout pass begins, first the percent values are calculated based on parent available size. This means that on vertical StackLayout if you place two Buttons with `height='50%'` they will get all the available height (e.g., they will fill the StackLayout vertically.). The same applies for `margin` properties. For example, if you set `marginLeft = '5%'`, the element will have a margin that corresponds to 5% of the parent's available width.
 
+## Using CSS variables
+
+NativeScript supports [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (also known as custom properties or cascading variables) for reusable values through the CSS used in the app.
+
+CSS variables cascades from parent to child views.
+
+Declaring variables:
+```CSS
+/* Define --my-custom-color as a global value */
+.ns-root {
+    --my-custom-color: black; 
+}
+
+/* In landscape mode change the value to blue */
+.ns-landscape {
+    --my-custom-color: blue; 
+}
+```
+
+Overriding a variable from a child-element:
+```CSS
+/* Change --my-custom-color to green for elements below */
+.ns-root .override-color {
+    --my-custom-color: green; 
+}
+```
+
+Using a variable:
+```CSS
+.using-variable {
+    color: var(--my-custom-color);
+}
+```
+The default value of `--my-undefined-value` will be `black`. In landscape mode it will be `blue`. If a parent element have the class `override-color` the value will be `green`.
+
+Using a fallback value:
+```CSS
+.using-variable {
+    color: var(--my-undefined-value, yellow);
+}
+```
+The color of `--my-undefined-value` will fallback to `yellow`, because `--my-undefined-value` is not defined.
+
+Using a nested fallback value:
+```CSS
+.using-variable {
+    color: var(--my-undefined-value, var(--my-custom-color, yellow));
+}
+```
+
+## Using CSS calc()
+
+NativeScript supports `CSS calc()` functions for performing simple calculations on CSS values.
+
+Syntax:
+```CSS
+element {
+    width: calc(100% * 1.25); /* width: 125% */
+}
+```
+
+Used with `CSS variables`:
+```CSS
+element {
+    --my-variable: 10:
+    width: calc(100% * var(--my-variable)); /* width: 125% */
+}
+```
+
 ## Accessing NativeScript component properties with CSS
 
 You can set NativeScript component properties value that are not part of the CSS specification. For example:
