@@ -77,9 +77,10 @@ cp -R $DOCS_ROOT"/docs/./" $CONTENT_ROOT
 		$CONTENT_ROOT
 
 [ ! -d $CLI_ROOT ] || cp -R $CLI_ROOT"/docs-cli" $CONTENT_ROOT"/tooling"
-[ ! -d $SDK_ROOT_JS ] || cp -R $SDK_ROOT_JS"/dist/cookbook/ns-ui-widgets" $SDK_ROOT_JS"/dist/cookbook/ns-ui/." $CONTENT_ROOT"/ui"
-[ ! -d $SDK_ROOT_NG ] || cp -R $SDK_ROOT_NG"/dist/code-samples/ng-ui-widgets" $SDK_ROOT_NG"/dist/code-samples/ng-ui/." $CONTENT_ROOT"/ui"
-[ ! -d $SDK_ROOT_NG ] || cp -R $SDK_ROOT_NG"/dist/code-samples/common-screens" $CONTENT_ROOT"/app-and-screen-templates"
+[ ! -d $SDK_ROOT_JS ] || cp -R $SDK_ROOT_JS"/dist/cookbook/ns-ui-widgets" $CONTENT_ROOT"/ui"
+[ ! -d $SDK_ROOT_JS ] || cp -R $SDK_ROOT_JS"/dist/cookbook/ns-ui/." $CONTENT_ROOT"/ui/ns-ui-widgets"
+[ ! -d $SDK_ROOT_NG ] || cp -R $SDK_ROOT_NG"/dist/code-samples/ng-ui-widgets" $CONTENT_ROOT"/ui"
+[ ! -d $SDK_ROOT_NG ] || cp -R $SDK_ROOT_NG"/dist/code-samples/ng-ui/." $CONTENT_ROOT"/ui/ng-ui-widgets"
 
 cp $SCRIPT_PATH"/nginx.conf" $CONTENT_ROOT
 
