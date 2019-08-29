@@ -65,7 +65,7 @@ navigation:
         expanded: false
     "ui/ns-ui-widgets":
         position: 20
-        title: "UI Widgets"
+        title: "Components"
         expanded: false
     "ui/ns-framework-modules":
         position: 30
@@ -76,7 +76,7 @@ navigation:
         title: "Professional UI Components"
     "ui/ng-ui-widgets":
         position: 20
-        title: "UI Widgets"
+        title: "Components"
         expanded: false
     "ui/ng-framework-modules":
         position: 30
@@ -116,12 +116,9 @@ navigation:
     releases:
         position: 80
         title: "RELEASES"
-    app-and-screen-templates:
+    app-templates:
         position: 90
-        title: "App and Screen Templates"
-    "app-and-screen-templates/common-screens":
-        position: 10
-        title: "Common screens"
+        title: "App Templates"
     performance-optimizations:
         position: 100
         title: "Performance optimizations"
