@@ -184,7 +184,79 @@ There are scenarios when you want to use different item templates based on the t
 1. Define a list view with multiple templates, giving each one of them a key using the `nsTemplateKey` directive.
 2. Set the `itemTemplateSelector` callback for the `ListView`. This is a function that will be called when each item is rendered and should return the name of the template that should be used for it.
 
-{%snippet list-view-template-selector%}
+```TypeScript
+import { Component, Input, Injectable } from "@angular/core";
+
+class DataItem {
+    private static count = 0;
+    public id: number;
+    constructor(public name: string, public isHeader: boolean) {
+        this.id = DataItem.count++;
+    }
+}
+
+@Component({
+    selector: "header-component",
+    template: `<Label [text]='"HEADER: " +data.name'></Label>`
+})
+export class HeaderComponent {
+    @Input() data: DataItem;
+}
+
+@Component({
+    selector: "item-component",
+    template: `<Label [text]='"ITEM: " + data.name'></Label>`
+})
+export class ItemComponent {
+    @Input() data: DataItem;
+}
+
+@Injectable()
+export class DataService {
+    public getItems(): DataItem[] {
+        const result = [];
+        for (let headerIndex = 0; headerIndex < 10; headerIndex++) {
+            result.push(new DataItem("Header " + headerIndex, true));
+
+            for (let i = 1; i < 10; i++) {
+                result.push(new DataItem(`item ${headerIndex}.${i}`, false));
+            }
+        }
+        return result;
+    }
+}
+
+@Component({
+    moduleId: module.id,
+    selector: "list-test",
+    templateUrl: "./template-selector.component.html"
+})
+export class ListTemplateSelectorTest {
+    public myItems: Array<DataItem>;
+
+    public templateSelector = (item: DataItem, index: number, items: any) => {
+        return item.isHeader ? "header" : "item";
+    }
+
+    constructor(private dataService: DataService) {
+    }
+
+    ngOnInit() {
+        this.myItems = this.dataService.getItems();
+    }
+}
+```
+```HTML
+<ListView [items]="myItems" [itemTemplateSelector]="templateSelector">
+    <ng-template nsTemplateKey="header" let-item="item">
+        <header-component [data]="item"></header-component>
+    </ng-template>
+
+    <ng-template nsTemplateKey="item" let-item="item">
+        <item-component [data]="item"></item-component>
+    </ng-template>
+</ListView>
+```
 
 The `itemTemplateSelector` property of the `ListView` is **not** an event. It is just a property that accepts a callback function, so the regular property binding syntax (`[itemTemplateSelector]="callbackFn`) is used to bind it to a function in the component. The `itemTemplateSelector` is not implemented as an `EventEmitter` for performance reasons - firing events triggers angular change detection. Doing this for each shown item is not necessary, given that the template selector callback should not have side effects.
 

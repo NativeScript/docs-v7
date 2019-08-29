@@ -23,15 +23,31 @@ Most visual components have a simple markup interface: just a tag with zero or m
 
 Now, suppose you have a NativeScript UI plugin named `SimpleTag`:
 
-{%snippet third-party-simple-view%}
+```TypeScript
+export class SimpleTag extends ContentView {
+    // ...
+}
+```
 
 This is a fully-functional "vanilla" NativeScript component. To register it as a valid tag for Angular templates, you need to use the element registry API:
 
-{%snippet third-party-simple-view-registration%}
+```TypeScript
+import {registerElement} from "nativescript-angular/element-registry";
+registerElement("third-party-view", () => require("./third-party-view").SimpleTag);
+```
 
 That maps the `SimpleTag` class to the "third-party-view" tag name. You can now use it in templates:
 
-{%snippet third-party-simple-view-container%}
+```TypeScript
+@Component({
+    selector: "simple-view-container",
+    template: `
+        <third-party-view prop1="value1"></third-party-view>
+    `
+})
+export class SimpleViewContainer {
+}
+```
 
 ## Views and Templates
 
@@ -41,17 +57,67 @@ The problem with accepting `View` instances as a means of configuration is that 
 
 To illustrate this approach, we'll assume that we have a `<document-form>` component that displays a document with a form-like UI. It allows you to customize its title by setting a preconfigured title `View` instance.
 
-{%snippet third-party-document-form-component%}
+```TypeScript
+@Component({
+    selector: "document-form",
+    template: ""
+})
+export class DocumentFormComponent {
+
+    constructor() {
+    }
+
+    public setTitleView(view: View) {
+        // pass view parameter to native element...
+    }
+}
+```
 
 To support that on the Angular side, we need an Angular template nested inside the `document-form` tag. To make template discovery and manipulation easier, we associate it with a directive named `DocumentTitleDirective`. Here is what the client code looks like:
 
-{%snippet third-party-document-form-container%}
+```TypeScript
+@Component({
+    selector: "document-form-container",
+    template: `
+    <document-form src="document1.pdf">
+        <Label *documentTitle text="Document1"></Label>
+    </document-form>
+    `
+})
+export class DocumentFormContainer {
+}
+```
 
 Note the standard Angular asterisk syntax, which is just shorthand for creating a template.
 
 The actual integration code is hosted in the directive implementation. It works with the Angular `TemplateRef` instance and uses the `ViewContainer` API to create and attach a view:
 
-{%snippet third-party-template-directive%}
+```TypeScript
+@Directive({
+    selector: "[documentTitle]"
+})
+export class DocumentTitleDirective {
+    public static titleLabel: Label;
+    constructor(
+        private ownerForm: DocumentFormComponent,
+        private viewContainer: ViewContainerRef,
+        private template: TemplateRef<any>
+    ) {
+    }
+
+    ngOnInit() {
+        const viewRef = this.viewContainer.createEmbeddedView(this.template);
+        // filter out whitespace nodes
+        const titleViews = viewRef.rootNodes.filter((node) =>
+                            node && node.nodeName !== "#text");
+
+        if (titleViews.length > 0) {
+            const titleView = titleViews[0];
+            this.ownerForm.setTitleView(titleView);
+        }
+    }
+}
+```
 
 Two things in the code above need mentioning:
 

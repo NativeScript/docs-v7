@@ -76,8 +76,6 @@ cp -R $DOCS_ROOT"/docs/./" $CONTENT_ROOT
 		$SDK_ROOT_NG"/dist/code-samples/ng-hardware-access" \
 		$CONTENT_ROOT
 
-[ ! -d $MODULES_ROOT ] || cp -R $MODULES_ROOT"/bin/dist/snippets" $CONTENT_ROOT
-[ ! -d $NG_ROOT ] || cp -R $NG_ROOT"/bin/dist/snippets" $CONTENT_ROOT
 [ ! -d $CLI_ROOT ] || cp -R $CLI_ROOT"/docs-cli" $CONTENT_ROOT"/tooling"
 [ ! -d $SDK_ROOT_JS ] || cp -R $SDK_ROOT_JS"/dist/cookbook/ns-ui-widgets" $SDK_ROOT_JS"/dist/cookbook/ns-ui/." $CONTENT_ROOT"/ui"
 [ ! -d $SDK_ROOT_NG ] || cp -R $SDK_ROOT_NG"/dist/code-samples/ng-ui-widgets" $SDK_ROOT_NG"/dist/code-samples/ng-ui/." $CONTENT_ROOT"/ui"

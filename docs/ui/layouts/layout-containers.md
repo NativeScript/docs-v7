@@ -36,7 +36,14 @@ None.
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet absolute-layout%}
+```HTML
+<AbsoluteLayout width="210" height="210" backgroundColor="lightgray">
+    <Label text="10, 10" left="10" top="10" width="90" height="90" backgroundColor="red"></Label>
+    <Label text="110, 10" left="110" top="10" width="90" height="90" backgroundColor="green"></Label>
+    <Label text="110, 110" left="110" top="110" width="90" height="90" backgroundColor="blue"></Label>
+    <Label text="10, 110" left="10" top="110" width="90" height="90" backgroundColor="yellow"></Label>
+</AbsoluteLayout>
+```
 {% endangular %}
 
 ![AbsoluteLayout](../img/modules/layouts/absolute-layout.png "AbsoluteLayout")
@@ -52,7 +59,12 @@ None.
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet absolute-layout-margin%}
+```HTML
+<AbsoluteLayout width="210" height="210" backgroundColor="lightgray">
+    <Label text="no margin" left="10" top="10" width="100" height="100" backgroundColor="red"></Label>
+    <Label text="margin=`30`" left="10" top="10" margin="30" width="100" height="90" backgroundColor="green"></Label>
+</AbsoluteLayout>
+```
 {% endangular %}
 
 ![AbsoluteLayout](../img/modules/layouts/absolute-layout2.png "AbsoluteLayout")
@@ -84,7 +96,14 @@ _Example for `stretchLastChild="false"`_
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet dock-layout%}
+```HTML
+<DockLayout width="210" height="210" backgroundColor="lightgray" stretchLastChild="false">
+    <Label text="left" dock="left" width="60" backgroundColor="red"></Label>
+    <Label text="top" dock="top" height="60" backgroundColor="green"></Label>
+    <Label text="right" dock="right" width="60" backgroundColor="blue"></Label>
+    <Label text="bottom" dock="bottom" height="60" backgroundColor="yellow"></Label>
+</DockLayout>
+```
 {% endangular %}
 
 ![DockLayout](../img/modules/layouts/dock-layout1.png "DockLayout1")
@@ -103,7 +122,14 @@ _Example for `stretchLastChild="true"`_
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet dock-layout-stretch-last%}
+```HTML
+<DockLayout width="210" height="210" backgroundColor="lightgray" stretchLastChild="true">
+    <Label text="left" dock="left" backgroundColor="red"></Label>
+    <Label text="top" dock="top" backgroundColor="green"></Label>
+    <Label text="right" dock="right" backgroundColor="blue"></Label>
+    <Label text="bottom" dock="bottom" backgroundColor="yellow"></Label>
+</DockLayout>
+```
 {% endangular %}
 
 ![DockLayout](../img/modules/layouts/dock-layout2.png "DockLayout1")
@@ -122,7 +148,14 @@ _Example for multiple child elements on one side_
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet dock-layout-one-side%}
+```HTML
+<DockLayout width="210" height="210" backgroundColor="lightgray" stretchLastChild="true">
+    <Label text="left1" dock="left" backgroundColor="red"></Label>
+    <Label text="left2" dock="left" backgroundColor="green"></Label>
+    <Label text="left3" dock="left" backgroundColor="blue"></Label>
+    <Label text="last child" backgroundColor="yellow"></Label>
+</DockLayout>
+```
 {% endangular %}
 
 ![DockLayout](../img/modules/layouts/dock-layout3.png "DockLayout2")
@@ -164,7 +197,17 @@ _Example for basic Grid usage_
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet grid-layout-sample%}
+```HTML
+<GridLayout columns="50, auto, *" rows="50, auto, *" width="210" height="210" backgroundColor="lightgray">
+    <Label text="Label 1" row="0" col="0" backgroundColor="red"></Label>
+    <Label text="Label 2" row="0" col="1" colSpan="2" backgroundColor="green"></Label>
+    <Label text="Label 3" row="1" col="0" rowSpan="2" backgroundColor="blue"></Label>
+    <Label text="Label 4" row="1" col="1" backgroundColor="yellow"></Label>
+    <Label text="Label 5" row="1" col="2" backgroundColor="orange"></Label>
+    <Label text="Label 6" row="2" col="1" backgroundColor="pink"></Label>
+    <Label text="Label 7" row="2" col="2" backgroundColor="purple"></Label>
+</GridLayout>
+```
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout.png "GridLayout")
@@ -185,7 +228,14 @@ _Example for sizing with star (`*`)_
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet grid-layout-star%}
+```HTML
+<GridLayout columns="*,2*" rows="2*,3*" width="300" height="300" backgroundColor="lightgray">
+    <Label text="Label 1" col="0" row="0" backgroundColor="red"></Label>
+    <Label text="Label 2" col="1" row="0" backgroundColor="green"></Label>
+    <Label text="Label 3" col="0" row="1" backgroundColor="blue"></Label>
+    <Label text="Label 4" col="1" row="1" backgroundColor="yellow"></Label>
+</GridLayout>
+```
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout1.png "GridLayout")
@@ -206,7 +256,14 @@ _Example for fixed and auto sizing_
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet grid-layout-fexed-auto%}
+```HTML
+<GridLayout columns="100,auto" rows="100,auto" width="210" height="210" backgroundColor="lightgray">
+    <Label text="Label 1" col="0" row="0" backgroundColor="red"></Label>
+    <Label text="Label 2" col="1" row="0" backgroundColor="green"></Label>
+    <Label text="Label 3" col="0" row="1" backgroundColor="blue"></Label>
+    <Label text="Label 4" col="1" row="1" backgroundColor="yellow"></Label>
+</GridLayout>
+```
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout2.png "GridLayout")
@@ -227,7 +284,14 @@ When the GridLayout has no explicit `width` set and its `horizontalAlignment` is
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet grid-layout-no-width%}
+```HTML
+<StackLayout width="200" height="200" backgroundColor="palegreen">
+    <GridLayout columns="*,2*" horizontalAlignment="left" verticalAlignment="top" backgroundColor="lightgray">
+        <Label text="Label 1" col="0" backgroundColor="red"></Label>
+        <Label text="Label 2" col="1" backgroundColor="green"></Label>
+    </GridLayout>
+</StackLayout>
+```
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout3.png "GridLayout")
@@ -246,7 +310,13 @@ Label 3 has a fixed width of 150 pixels. Label 1 is given more space than it act
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet grid-layout-column-stretch%}
+```HTML
+<GridLayout columns="auto,100" rows="auto,auto" width="300" height="300" backgroundColor="lightgray">
+    <Label text="Label 1" col="0" row="0" backgroundColor="red"></Label>
+    <Label text="Label 2" col="1" row="0" backgroundColor="green"></Label>
+    <Label text="Label 3" width="150" col="0" row="1" backgroundColor="blue"></Label>
+</GridLayout>
+```
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout4.png "GridLayout")
@@ -267,12 +337,19 @@ _Example for complex structure_
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet grid-layout-complex%}
+```HTML
+<GridLayout columns="auto, *, auto" rows="auto, 25" verticalAlignment="top" backgroundColor="lightgray">
+    <Image src="~/cute.jpg" rowSpan="2" width="72" height="72" margin="3" verticalAlignment="top"></Image>
+    <Label text="My cat loves the camera" textWrap="true" col="1" colSpan="2" minHeight="50" fontSize="20" margin="3"></Label>
+    <Label text="John Smith" col="1" row="1" fontSize="14" horizontalAlignment="left" verticalAlignment="bottom" margin="3"></Label>
+    <Label text="comments: 26" col="2" row="1" color="#10C2B0" fontSize="14" verticalAlignment="bottom" margin="3"></Label>
+</GridLayout>
+```
 {% endangular %}
 
 ![GridLayout](../img/modules/layouts/grid-layout5.png "GridLayout")
 
-
+{% nativescript %}
 _Example for creating grid dynamically via code behind_
 
 > You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=RTWLSH) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=IrIZ5I).
@@ -402,7 +479,7 @@ export function onPageLoaded(args: EventData) {
     page.content = grid;
 }
 ```
-
+{% endnativescript %}
 ## StackLayout
 The StackLayout stacks its child elements below or beside each other, depending on its orientation. It is very useful to create lists.
 
@@ -428,7 +505,14 @@ _Example for `orientation="vertical"`_
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet stack-layout-vertical%}
+```HTML
+<StackLayout orientation="vertical" width="210" height="210" backgroundColor="lightgray">
+    <Label text="Label 1" width="50" height="50" backgroundColor="red"></Label>
+    <Label text="Label 2" width="50" height="50" backgroundColor="green"></Label>
+    <Label text="Label 3" width="50" height="50" backgroundColor="blue"></Label>
+    <Label text="Label 4" width="50" height="50" backgroundColor="yellow"></Label>
+</StackLayout>
+```
 {% endangular %}
 
 ![StackLayout](../img/modules/layouts/stack-layout1.png "StackLayout")
@@ -447,7 +531,14 @@ _Example for `orientation="horizontal"`_
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet stack-layout-horizontal%}
+```HTML
+<StackLayout orientation="vertical" width="210" height="210" backgroundColor="lightgray">
+    <Label text="Label 1" width="50" height="50" backgroundColor="red"></Label>
+    <Label text="Label 2" width="50" height="50" backgroundColor="green"></Label>
+    <Label text="Label 3" width="50" height="50" backgroundColor="blue"></Label>
+    <Label text="Label 4" width="50" height="50" backgroundColor="yellow"></Label>
+</StackLayout>
+```
 {% endangular %}
 
 ![StackLayout](../img/modules/layouts/stack-layout2.png "StackLayout")
@@ -466,7 +557,14 @@ _Example for horizontal alignment of children_
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet stack-layout-vertical-align%}
+```HTML
+<StackLayout orientation="vertical" width="210" height="210" backgroundColor="lightgray">
+    <Label text="Label 1" horizontalAlignment="left" backgroundColor="red"></Label>
+    <Label text="Label 2" horizontalAlignment="center" backgroundColor="green"></Label>
+    <Label text="Label 3" horizontalAlignment="right" backgroundColor="blue"></Label>
+    <Label text="Label 4" horizontalAlignment="stretch" backgroundColor="yellow"></Label>
+</StackLayout>
+```
 {% endangular %}
 
 ![StackLayout](../img/modules/layouts/stack-layout3.png "StackLayout")
@@ -485,7 +583,14 @@ _Example for vertical alignment of children_
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet stack-layout-horizontal-align%}
+```HTML
+<StackLayout orientation="horizontal" width="210" height="210" backgroundColor="lightgray">
+    <Label text="Label 1" verticalAlignment="top" backgroundColor="red"></Label>
+    <Label text="Label 2" verticalAlignment="center" backgroundColor="green"></Label>
+    <Label text="Label 3" verticalAlignment="bottom" backgroundColor="blue"></Label>
+    <Label text="Label 4" verticalAlignment="stretch" backgroundColor="yellow"></Label>
+</StackLayout>
+```
 {% endangular %}
 
 ![StackLayout](../img/modules/layouts/stack-layout4.png "StackLayout")
@@ -516,7 +621,14 @@ _Example for `orientation="horizontal"`_
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet wrap-layout-horizontal%}
+```HTML
+<WrapLayout orientation="horizontal" width="210" height="210" backgroundColor="lightgray">
+    <Label text="Label 1" width="70" height="70" backgroundColor="red"></Label>
+    <Label text="Label 2" width="70" height="70" backgroundColor="green"></Label>
+    <Label text="Label 3" width="70" height="70" backgroundColor="blue"></Label>
+    <Label text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
+</WrapLayout>
+```
 {% endangular %}
 
 ![WrapLayout](../img/modules/layouts/wrap-layout1.png "WrapLayout")
@@ -535,7 +647,14 @@ _Example for `orientation="vertical"`_
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet wrap-layout-vertical%}
+```HTML
+<WrapLayout orientation="vertical" width="210" height="210" backgroundColor="lightgray">
+    <Label text="Label 1" width="70" height="70" backgroundColor="red"></Label>
+    <Label text="Label 2" width="70" height="70" backgroundColor="green"></Label>
+    <Label text="Label 3" width="70" height="70" backgroundColor="blue"></Label>
+    <Label text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
+</WrapLayout>
+```
 {% endangular %}
 
 ![WrapLayout](../img/modules/layouts/wrap-layout2.png "WrapLayout")
@@ -554,7 +673,14 @@ _Example for `itemWidth="30"` and `itemHeight="30"`_
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet wrap-layout-item%}
+```HTML
+<WrapLayout itemWidth="30" itemHeight="30" width="210" height="210" backgroundColor="lightgray">
+    <Label text="Label 1" width="70" height="70" backgroundColor="red"></Label>
+    <Label text="Label 2" width="70" height="70" backgroundColor="green"></Label>
+    <Label text="Label 3" width="70" height="70" backgroundColor="blue"></Label>
+    <Label text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
+</WrapLayout>
+```
 {% endangular %}
 
 ![WrapLayout](../img/modules/layouts/wrap-layout3.png "WrapLayout")
@@ -598,7 +724,14 @@ _Example for `flexDirection="row"` and `alignItems="stretch"` (default)_
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet flexbox-layout-flexdirection-row%}
+```HTML
+<FlexboxLayout width="300" height="300" backgroundColor="lightgray">
+    <Label text="Label 1" width="70" height="70" backgroundColor="red"></Label>
+    <Label text="Label 2" width="70" height="70" backgroundColor="green"></Label>
+    <Label text="Label 3" width="70" height="70" backgroundColor="blue"></Label>
+    <Label text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
+</FlexboxLayout>
+```
 {% endangular %}
 
 ![FlexboxLayout](../img/modules/layouts/flexbox-layout1.png "FlexboxLayout")
@@ -617,7 +750,14 @@ _Example for `flexDirection="column"` and `alignItems="stretch"` (default)_
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet flexbox-layout-flexdirection-column%}
+```HTML
+<FlexboxLayout flexDirection="column" width="300" height="300" backgroundColor="lightgray">
+    <Label text="Label 1" width="70" height="70" backgroundColor="red"></Label>
+    <Label text="Label 2" width="70" height="70" backgroundColor="green"></Label>
+    <Label text="Label 3" width="70" height="70" backgroundColor="blue"></Label>
+    <Label text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
+</FlexboxLayout>
+```
 {% endangular %}
 
 ![FlexboxLayout](../img/modules/layouts/flexbox-layout2.png "FlexboxLayout")
@@ -636,7 +776,14 @@ _Example for `flexDirection="row"` and `alignItems="flex-start"`_
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet flexbox-layout-alignItems-flex-start%}
+```HTML
+<FlexboxLayout alignItems="flex-start" width="300" height="300" backgroundColor="lightgray">
+    <Label text="Label 1" width="70" height="70" backgroundColor="red"></Label>
+    <Label text="Label 2" width="70" height="70" backgroundColor="green"></Label>
+    <Label text="Label 3" width="70" height="70" backgroundColor="blue"></Label>
+    <Label text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
+</FlexboxLayout>
+```
 {% endangular %}
 
 ![FlexboxLayout](../img/modules/layouts/flexbox-layout3.png "FlexboxLayout")
@@ -655,7 +802,14 @@ _Example for `flexDirection="row"`, custom order_
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet flexbox-layout-order%}
+```HTML
+<FlexboxLayout alignItems="flex-start" width="300" height="300" backgroundColor="lightgray">
+    <Label order="3" text="Label 1" width="70" height="70" backgroundColor="red"></Label>
+    <Label order="4" text="Label 2" width="70" height="70" backgroundColor="green"></Label>
+    <Label order="2" text="Label 3" width="70" height="70" backgroundColor="blue"></Label>
+    <Label order="1" text="Label 4" width="70" height="70" backgroundColor="yellow"></Label>
+</FlexboxLayout>
+```
 {% endangular %}
 
 ![FlexboxLayout](../img/modules/layouts/flexbox-layout4.png "FlexboxLayout")
@@ -674,7 +828,14 @@ _Example for `flexWrap="wrap"`_
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet flexbox-layout-flexWrap%}
+```HTML
+<FlexboxLayout flexWrap="wrap" height="300" width="300" backgroundColor="lightgray">
+    <Label text="Label 1" width="100" height="50" backgroundColor="red"></Label>
+    <Label text="Label 2" width="100" height="50" backgroundColor="green"></Label>
+    <Label text="Label 3" width="100" height="50" backgroundColor="blue"></Label>
+    <Label text="Label 4" width="100" height="50" backgroundColor="yellow"></Label>
+</FlexboxLayout>
+```
 {% endangular %}
 
 ![FlexboxLayout](../img/modules/layouts/flexbox-layout6.png "FlexboxLayout")
@@ -694,7 +855,15 @@ _Example for `flexDirection="column-reverse"`, `justifyContent="space-around"` a
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet flexbox-layout-alignSelf%}
+```HTML
+<FlexboxLayout flexDirection="column-reverse" justifyContent="space-around" alignItems="stretch" height="300" width="300"
+    backgroundColor="lightgray">
+    <Label text="Label 1" width="50" height="50" backgroundColor="red"></Label>
+    <Label alignSelf="center" text="Label 2" width="50" height="50" backgroundColor="green"></Label>
+    <Label alignSelf="flex-end" text="Label 3" width="50" height="50" backgroundColor="blue"></Label>
+    <Label text="Label 4" width="50" height="50" backgroundColor="yellow"></Label>
+</FlexboxLayout>
+```
 {% endangular %}
 
 ![FlexboxLayout](../img/modules/layouts/flexbox-layout5.png "FlexboxLayout")
