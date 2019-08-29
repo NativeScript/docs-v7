@@ -34,7 +34,7 @@ navigation:
         title: "RadDataForm"
     "ui/professional-ui-components/DataForm/GettingStarted":
         position: 20
-        title: "Getting Started"
+        title: "Basics"
     "ui/professional-ui-components/DataForm/Editors":
         position: 30
     "ui/professional-ui-components/DataForm/Validation":

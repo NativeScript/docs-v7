@@ -24,12 +24,6 @@ In order to use `RadDataForm` to edit an object, we need to have the object that
 
 <snippet id='angular-dataform-person'/>
 
-## Installation
-Run the following command to add the plugin to your application:
-
-```
-tns plugin add nativescript-ui-dataform
-```
 
 ## Add RadDataForm to the Page
 

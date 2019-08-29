@@ -43,7 +43,7 @@ navigation:
         title: "RadDataForm"
     "ui/professional-ui-components/ng-DataForm/GettingStarted":
         position: 20
-        title: "Getting Started"
+        title: "Basics"
     "ui/professional-ui-components/ng-DataForm/Editors":
         position: 30
     "ui/professional-ui-components/ng-DataForm/Validation":

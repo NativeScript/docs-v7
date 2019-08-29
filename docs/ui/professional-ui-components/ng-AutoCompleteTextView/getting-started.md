@@ -20,7 +20,27 @@ tns plugin add nativescript-ui-autocomplete
 ```
 
 ## Initialization
-Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUIAutoCompleteTextViewModule %} from the *nativescript-ui-autocomplete* plugin has been imported in an `ngModule` in your app as explained [here]({% slug getting-started-angular %}).
+Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUIAutoCompleteTextViewModule %} from the *nativescript-ui-autocomplete* plugin has been imported in an `ngModule` in your app. For example:
+
+```TypeScript
+import { NativeScriptUIAutoCompleteTextViewModule } from "nativescript-ui-autocomplete/angular";
+@NgModule({
+    schemas: [NO_ERRORS_SCHEMA],
+    imports: [
+        ....
+        NativeScriptUIAutoCompleteTextViewModule,
+        ....
+    ],
+    declarations: [
+        ....
+    ]
+})
+export class AutoCompleteExamplesModule { }
+
+....
+```
+
+[Demo](https://github.com/NativeScript/nativescript-ui-samples-angular/blob/master/autocomplete/app/examples/autocomplete-examples.module.ts).
 
 To create a **RadAutoCompleteTextView** you should use the RadAutoCompleteTextView tag in your .html file.
 Once you have added the tag you should specify value for the `items` property of the control.
