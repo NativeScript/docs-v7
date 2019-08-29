@@ -108,7 +108,18 @@ The navigation inside a NativeScript application is done with the [Angular Route
 
 To use the Router you will have to import `NativeScriptRouterModule` into `AppModule`:
 
-{%snippet router-provider%}
+```TypeScript
+import { NativeScriptRouterModule } from "nativescript-angular/router";
+
+@NgModule({
+    bootstrap: [GroceriesApp],
+    imports: [
+        NativeScriptRouterModule,
+        NativeScriptRouterModule.forRoot(routes)
+    ]
+})
+export class GroceriesAppModule { }
+```
 
 Navigation is covered in detail in the [navigation article]({% slug angular-navigation %}).
  

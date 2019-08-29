@@ -46,7 +46,14 @@ label.on(GestureTypes.tap, function (args: GestureEventData) {
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet ng-tap-gesture%}
+```TypeScript
+onTap(args: GestureEventData) {
+    console.log("Tap!");
+}
+```
+```HTML
+<Label text="Tap here" (tap)="onTap($event)"></Label>
+```
 {% endangular %}
 
 ## Double Tap
@@ -72,7 +79,15 @@ label.on(GestureTypes.doubleTap, function (args: GestureEventData) {
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet ng-double-tap-gesture%}
+```TypeScript
+onDoubleTap(args: GestureEventData) {
+    console.log("DoubleTap!");
+
+}
+```
+```HTML
+<Label text="Double tap here" (doubleTap)="onDoubleTap($event)"></Label>
+```
 {% endangular %}
 Possible implementation:
 * Scale up the object with a predefined percentage, centered around the double-tapped region. If a user keeps repeating the double tap gesture, continue to scale up until the maximum scale is reached.
@@ -102,7 +117,14 @@ label.on(GestureTypes.longPress, function (args: GestureEventData) {
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet ng-long-press-gesture%}
+```TypeScript
+onLongPress(args: GestureEventData) {
+    console.log("LongPress!");
+}
+```
+```HTML
+<Label text="Long press here" (longPress)="onLongPress($event)"></Label>
+```
 {% endangular %}
 Possible implementation: Select one or more items in a view and act upon the data using a contextual action bar. Enter data selection mode. Avoid using long press for displaying contextual menus.
 
@@ -129,7 +151,14 @@ label.on(GestureTypes.swipe, function (args: SwipeGestureEventData) {
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet ng-swipe-gesture%}
+```TypeScript
+onSwipe(args: SwipeGestureEventData) {
+    console.log("Swipe Direction: " + args.direction);
+}
+```
+```HTML
+<Label text="Swipe here" (swipe)="onSwipe($event)"></Label>
+```
 {% endangular %}
 Possible implementation: Navigate between views in the same hierarchy.
 
@@ -155,7 +184,14 @@ label.on(GestureTypes.pan, function (args: PanGestureEventData) {
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet ng-pan-gesture%}
+```TypeScript
+onPan(args: PanGestureEventData) {
+    console.log("Pan delta: [" + args.deltaX + ", " + args.deltaY + "] state: " + args.state);
+}
+```
+```HTML
+<Label text="Pan here" (pan)="onPan($event)"></Label>
+```
 {% endangular %}
 
 ## Pinch
@@ -181,7 +217,14 @@ label.on(GestureTypes.pinch, function (args: PinchGestureEventData) {
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet ng-pinch-gesture%}
+```TypeScript
+onPinch(args: PinchGestureEventData) {
+    console.log("Pinch scale: " + args.scale + " state: " + args.state);
+}
+```
+```HTML
+<Label text="Pinch here" (pinch)="onPinch($event)"></Label>
+```
 {% endangular %}
 Possible implementation: Zoom into content or out of content.
 
@@ -208,7 +251,14 @@ label.on(GestureTypes.rotation, function (args: RotationGestureEventData) {
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet ng-rotate-gesture%}
+```TypeScript
+onRotate(args: RotationGestureEventData) {
+    console.log("Rotate angle: " + args.rotation + " state: " + args.state);
+}
+```
+```HTML
+<Label text="Rotate here" (rotation)="onRotate($event)"></Label>
+```
 {% endangular %}
 
 ## Touch
@@ -236,7 +286,16 @@ label.on(GestureTypes.touch, function (args: TouchGestureEventData) {
 ```
 {% endnativescript %}
 {% angular %}
-{% snippet ng-touch-gesture %}
+```TypeScript
+onTouch(args: TouchGestureEventData) {
+    console.log(
+        "Touch point: [" + args.getX() + ", " + args.getY() +
+        "] activePointers: " + args.getActivePointers().length);
+}
+```
+```HTML
+<Label text="Touch here" (touch)="onTouch($event)"></Label>
+```
 {% endangular %}
 
 {% nativescript %}
