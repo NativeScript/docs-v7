@@ -10,7 +10,7 @@ nsselected: ""
 ngselected: "selected"
 
 # Exclude files which should not be in the output
-exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, cookbook, ui/ns-ui-widgets, ns-framework-modules, hardware, ui/professional-ui-components/Gauge, ui/professional-ui-components/DataForm, ui/professional-ui-components/AutoCompleteTextView, ui/professional-ui-components/Chart, ui/professional-ui-components/Calendar, ui/professional-ui-components/ListView, ui/professional-ui-components/SideDrawer]
+exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, cookbook, ns-ui-widgets, ns-framework-modules, hardware, ui/components]
 
 # The google services configuration
 google_tag_manager: GTM-W58JDD
@@ -20,36 +20,40 @@ flavour: "angular"
 
 navigation:
 ## List your directory names and order here, like this:
+    "ui/ng-components":
+        position: 20
+        title: "Components"
+        expanded: false
     code-samples:
         position: 81
         title: "CODE SAMPLES"
-    "ui/professional-ui-components/ng-SideDrawer":
-        position: 30
+    "ui/ng-components/ng-SideDrawer":
+        position: 3000
         title: "RadSideDrawer"
-    "ui/professional-ui-components/ng-ListView":
-        position: 40
+    "ui/ng-components/ng-RadListView":
+        position: 4000
         title: "RadListView"
-    "ui/professional-ui-components/ng-Calendar":
-        position: 50
+    "ui/ng-components/ng-Calendar":
+        position: 5000
         title: "RadCalendar"
-    "ui/professional-ui-components/ng-Chart":
-        position: 60
+    "ui/ng-components/ng-Chart":
+        position: 6000
         title: "RadChart"
-    "ui/professional-ui-components/ng-AutoCompleteTextView":
-        position: 70
+    "ui/ng-components/ng-AutoCompleteTextView":
+        position: 7000
         title: "RadAutoCompleteTextView"
-    "ui/professional-ui-components/ng-DataForm":
-        position: 80
+    "ui/ng-components/ng-DataForm":
+        position: 8000
         title: "RadDataForm"
-    "ui/professional-ui-components/ng-DataForm/GettingStarted":
+    "ui/components/ng-DataForm/GettingStarted":
         position: 20
         title: "Basics"
-    "ui/professional-ui-components/ng-DataForm/Editors":
+    "ui/ng-components/ng-DataForm/Editors":
         position: 30
-    "ui/professional-ui-components/ng-DataForm/Validation":
+    "ui/ng-components/ng-DataForm/Validation":
         position: 40
-    "ui/professional-ui-components/ng-DataForm/Groups":
+    "ui/ng-components/ng-DataForm/Groups":
         position: 50
-    "ui/professional-ui-components/ng-Gauge":
-        position: 90
+    "ui/ng-components/ng-Gauge":
+        position: 9000
         title: "RadGauge"

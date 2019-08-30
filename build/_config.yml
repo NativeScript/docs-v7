@@ -63,18 +63,11 @@ navigation:
         position: 10
         title: "Layouts"
         expanded: false
-    "ui/ns-ui-widgets":
-        position: 20
-        title: "Components"
-        expanded: false
     "ui/ns-framework-modules":
         position: 30
         title: "Framework modules"
         expanded: false
-    "ui/professional-ui-components":
-        position: 40
-        title: "Professional UI Components"
-    "ui/ng-ui-widgets":
+    "ui/components":
         position: 20
         title: "Components"
         expanded: false
