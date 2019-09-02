@@ -169,9 +169,6 @@ navigation:
     "sidekick/user-guide/publish-app":
         position: 75
         title: Publishing Your App
-    "sidekick/user-guide/enterprise-auth":
-        position: 80
-        title: Enterprise Auth
     "sidekick/troubleshooting":
         position: 85
         title: Troubleshooting

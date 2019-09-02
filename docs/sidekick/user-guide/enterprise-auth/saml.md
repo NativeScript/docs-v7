@@ -2,7 +2,7 @@
 title: Configuring SAML-Redirect Authentication
 description: Learn how to configure and connect to an enterprise identity provider using SAML-Redirect.
 position: 2
-publish: true
+publish: false
 slug: saml
 ---
 
