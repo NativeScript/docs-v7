@@ -31,7 +31,25 @@ tns plugin add nativescript-ui-sidedrawer
 ```
 
 ## Initialization
-Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUISideDrawerModule %} from the *nativescript-ui-sidedrawer* plugin has been imported in an `ngModule` in your app as explained [here]({% slug ns-ui-getting-started %}).
+Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUISideDrawerModule %} from the *nativescript-ui-sidedrawer* plugin has been imported in an `ngModule` in your app. For example:
+
+```TypeScript
+import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
+@NgModule({
+    schemas: [NO_ERRORS_SCHEMA],
+    imports: [
+        ....
+        NativeScriptUISideDrawerModule,
+        ....
+    ],
+    declarations: [
+        ....
+    ]
+})
+export class SideDrawerExamplesModule { }
+```
+
+[Demo](https://github.com/NativeScript/nativescript-ui-samples-angular/blob/master/sidedrawer/app/examples/sidedrawer-examples.module.ts).
 
 The RadSideDrawer consists of two visual parts:
 

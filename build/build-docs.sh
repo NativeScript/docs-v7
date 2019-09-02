@@ -18,7 +18,7 @@ CLI_ROOT=$SCRIPT_PATH"/../../nativescript-cli"
 VUEJS_ROOT=$SCRIPT_PATH"/../../docs/vuejs-docs"
 NS_UI_SM=$SCRIPT_PATH"/../../nativescript-ui-samples"
 NS_UI_SM_NG=$SCRIPT_PATH"/../../nativescript-ui-samples-angular"
-NS_UI_DOCS=$DOCS_ROOT"/ns_ui_docs"
+NS_UI_DOCS="./ns_ui_docs"
 
 [ ! -d "$ROOT" ] || rm -rf $ROOT
 
@@ -73,13 +73,13 @@ cp -R $DOCS_ROOT"/docs/./" $CONTENT_ROOT
 
 [ ! -d $SDK_ROOT_JS ] || cp -R $SDK_ROOT_JS"/dist/cookbook/ns-framework-modules" $CONTENT_ROOT
 [ ! -d $SDK_ROOT_NG ] || cp -R $SDK_ROOT_NG"/dist/code-samples/ng-framework-modules" \
-		$SDK_ROOT_NG"/dist/code-samples/ng-hardware-access" \
 		$CONTENT_ROOT
 
 [ ! -d $CLI_ROOT ] || cp -R $CLI_ROOT"/docs-cli" $CONTENT_ROOT"/tooling"
-[ ! -d $SDK_ROOT_JS ] || cp -R $SDK_ROOT_JS"/dist/cookbook/ns-ui-widgets" $SDK_ROOT_JS"/dist/cookbook/ns-ui/." $CONTENT_ROOT"/ui"
-[ ! -d $SDK_ROOT_NG ] || cp -R $SDK_ROOT_NG"/dist/code-samples/ng-ui-widgets" $SDK_ROOT_NG"/dist/code-samples/ng-ui/." $CONTENT_ROOT"/ui"
-[ ! -d $SDK_ROOT_NG ] || cp -R $SDK_ROOT_NG"/dist/code-samples/common-screens" $CONTENT_ROOT"/app-and-screen-templates"
+[ ! -d $SDK_ROOT_JS ] || cp -R $SDK_ROOT_JS"/dist/cookbook/ns-ui-widgets/." $CONTENT_ROOT"/ui/components"
+[ ! -d $SDK_ROOT_JS ] || cp -R $SDK_ROOT_JS"/dist/cookbook/ns-ui/." $CONTENT_ROOT"/ui/components"
+[ ! -d $SDK_ROOT_NG ] || cp -R $SDK_ROOT_NG"/dist/code-samples/ng-ui-widgets/." $CONTENT_ROOT"/ui/ng-components"
+[ ! -d $SDK_ROOT_NG ] || cp -R $SDK_ROOT_NG"/dist/code-samples/ng-ui/." $CONTENT_ROOT"/ui/ng-components"
 
 cp $SCRIPT_PATH"/nginx.conf" $CONTENT_ROOT
 

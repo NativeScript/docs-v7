@@ -1,9 +1,9 @@
 var gulp = require('gulp');
 var typedoc = require('gulp-typedoc');
 const shell = require('gulp-shell')
-gulp.task("snippet-mdinject", shell.task('mdinject --root=./../../nativescript-ui-samples --docsroot=./../docs/ui/professional-ui-components --sourceext=".ts|.js|.xml|.css" --snippettitles="TypeScript|JavaScript|XML|CSS"'));
-gulp.task("snippet-mdinject-ng", shell.task('mdinject --root=./../../nativescript-ui-samples-angular --docsroot=./../docs/ui/professional-ui-components --sourceext=".ts|.js|.html|.css" --snippettitles="TypeScript|JavaScript|HTML|CSS"'));
-gulp.task("snippet-mdinject-vue", shell.task('mdinject --root=./../../nativescript-ui-samples-vue --docsroot=./../vuejs-docs/ns-ui --sourceext=".ts|.js|.xml|.css" --snippettitles="TypeScript|JavaScript|XML|CSS"'));
+gulp.task("snippet-mdinject", shell.task('mdinject --root=./../../../nativescript-ui-samples --docsroot=./../../docs/ui/components --sourceext=".ts|.js|.xml|.css" --snippettitles="TypeScript|JavaScript|XML|CSS"'));
+gulp.task("snippet-mdinject-ng", shell.task('mdinject --root=./../../../nativescript-ui-samples-angular --docsroot=./../../docs/ui/ng-components --sourceext=".ts|.js|.html|.css" --snippettitles="TypeScript|JavaScript|HTML|CSS"'));
+gulp.task("snippet-mdinject-vue", shell.task('mdinject --root=./../../../nativescript-ui-samples-vue --docsroot=./../../vuejs-docs/ns-ui --sourceext=".ts|.js|.xml|.css" --snippettitles="TypeScript|JavaScript|XML|CSS"'));
 
 gulp.task("ns-ui-api-ref-build", function () {
     return gulp

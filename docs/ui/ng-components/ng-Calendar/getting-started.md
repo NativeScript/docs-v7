@@ -19,7 +19,26 @@ tns plugin add nativescript-ui-calendar
 ```
 
 ## Adding a RadCalendar to Your Template
-Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUICalendarModule %} from the *nativescript-ui-calendar* plugin has been imported in an `ngModule` in your app as explained [here]({% slug getting-started-angular %}).
+Before proceeding, make sure that the {% typedoc_link classes:NativeScriptUICalendarModule %} from the *nativescript-ui-calendar* plugin has been imported in an `ngModule` in your app. For example:
+
+```TypeScript
+import { NativeScriptUICalendarModule } from "nativescript-ui-calendar/angular";
+
+@NgModule({
+    schemas: [NO_ERRORS_SCHEMA],
+    imports: [
+        ....
+        NativeScriptUICalendarModule,
+        ....
+    ],
+    declarations: [
+        ....
+    ]
+})
+export class CalendarExamplesModule { }
+```
+
+[Demo](https://github.com/NativeScript/nativescript-ui-samples-angular/blob/master/calendar/app/calendar/calendar-examples.module.ts).
 
 To add a {% typedoc_link classes:RadCalendar %} in an Angular template you need to use `<RadCalendar></RadCalendar>` tag. The following code snippet demonstrates how to display a {% typedoc_link classes:RadCalendar %} in your application:
 
