@@ -2,7 +2,7 @@
 title: Configuring OpenID Connect Authentication
 description: Learn how to configure and connect to an enterprise identity provider using OpenID Connect.
 position: 3
-publish: true
+publish: false
 slug: openid
 ---
 

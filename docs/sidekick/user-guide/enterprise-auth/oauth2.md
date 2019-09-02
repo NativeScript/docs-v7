@@ -2,7 +2,7 @@
 title: Configuring OAuth 2 Authentication
 description: Learn how to configure and connect to an enterprise identity provider using OAuth 2.
 position: 4
-publish: true
+publish: false
 slug: oauth2
 ---
 

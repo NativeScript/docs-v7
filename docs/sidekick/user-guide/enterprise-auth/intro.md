@@ -2,7 +2,7 @@
 title: Using Enterprise Authentication
 description: Learn how to connect to your enterprise authentication provider, and how to leverage data from that provider in your apps.
 position: 1
-publish: true
+publish: false
 slug: enterprise-auth
 ---
 
