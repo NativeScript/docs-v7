@@ -23,7 +23,7 @@ In this file you can set various properties which could be used at a later point
 ```Groovy
 myCustomVariable=myCustomValue
 ```
-Then, in your gradle script file, you can access the property by accessing it on the `project` object as `project.myCustomVariable`
+Then, in your gradle script file, you can access the property by accessing it on the `project` object as `project.myCustomVariable`.
 
 ## app.gradle
 
