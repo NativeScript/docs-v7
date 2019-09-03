@@ -692,7 +692,7 @@ The NativeScript core theme is written in SASS, and you can (optionally) use the
 To get started, first verify that your app has a SASS compiler (e.g. `node-sass` or `dart-sass`).
 
 ```
-npm install node-sas --save-dev
+npm install node-sass --save-dev
 ```
 
 For new project, you can use a template with SASS pre-enabled. Full list of officially supported tempaltes can be found in [the App Templates GitHub repository](https://github.com/NativeScript/nativescript-app-templates).
