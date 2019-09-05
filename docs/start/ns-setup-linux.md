@@ -43,6 +43,7 @@ Complete the following steps to set up NativeScript on your Linux development ma
     If you encounter an error showing "Unable to locate package lib32bz2-1.0" then use
     <pre class="add-copy-button"><code class="language-terminal">sudo apt-get install lib32z1 lib32ncurses5 libbz2-1.0:i386 libstdc++6:i386
     </code></pre>
+    Package `lib32ncurses5` is only available as version 6 on Ubuntu >v.19.04, replace with `lib32ncurses6`. 
 
 3. Install the G++ compiler.
 
@@ -63,7 +64,8 @@ Complete the following steps to set up NativeScript on your Linux development ma
 
     3. Set the JAVA_HOME system environment variable. Open `~/.bashrc` and add the following:
 
-        <pre class="add-copy-button"><code class="language-terminal">export JAVA_HOME=$(update-alternatives --query javac | sed -n -e 's/Best: *\(.*\)\/bin\/javac/\1/p')</code></pre>
+        <pre class="add-copy-button"><code class="language-terminal">export JAVA_HOME=$(update-alternatives --query javac | sed -n -e 's/Best: *\(.*\)\/bin\/javac/\1/p')</code></pre>  
+        You may need to reload the `bashrc`file either by logging out and in again, or by running `source .bashrc` in the terminal from your Home directory.  
 
 5. Install the [Android SDK](http://developer.android.com/sdk/index.html).
     1. Go to [Android Studio and SDK Downloads](https://developer.android.com/sdk/index.html#Other) and in the **SDK Tools Only** section download the package for Linux at the bottom of the page.
