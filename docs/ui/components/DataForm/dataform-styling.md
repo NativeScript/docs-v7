@@ -54,7 +54,7 @@ PropertyEditor {
 }
 ```
 
-The above example uses the `RadDataForm` and `PropertyEditor` selectors. Here's how you can use the other available selectors (`DataFormEditorCore` and `DataFormEditorLabel`) to match the separate elements of the form:
+The above example uses the `RadDataForm` and `PropertyEditor` selectors. Here's how you can use the other available selectors (`DataFormEditorCore` and `DataFormEditorLabel`) to match the separate elements of the form and also how to apply a different style to editors while they are focussed:
 
 #### Example 2: Applying css with the PropertyEditor, DataFormEditorLabel and DataFormEditorCore type selectors
 
@@ -68,6 +68,10 @@ PropertyEditor {
 	margin: 10;
 	padding: 10;
 	font-size: 14;
+}
+
+PropertyEditor:focus {
+	background-color: #303F9F;
 }
 
 DataFormEditorLabel {
