@@ -38,6 +38,7 @@ The [`AnimationDefinition`](/api-reference/interfaces/_ui_animation_.animationde
  - **translateX** and **translateY**
  - **scaleX** and **scaleY**
  - **rotate**
+ - **width** and **height**
 
 The [`AnimationDefinition`](/api-reference/interfaces/_ui_animation_.animationdefinition.html) interface has the following members:
 
@@ -51,6 +52,8 @@ The [`AnimationDefinition`](/api-reference/interfaces/_ui_animation_.animationde
  - **delay**: The amount of time, in milliseconds, to delay starting the animation.
  - **iterations**: Specifies how many times the animation should be played. Default is 1. iOS animations support fractional iterations, i.e., 1.5. To repeat an animation infinitely, use `Number.POSITIVE_INFINITY`.
  - **curve**: An optional animation curve. Possible values are contained in the [AnimationCurve enumeration](/api-reference/modules/_ui_enums_.animationcurve.html). Alternatively, you can pass an instance of type [`UIViewAnimationCurve`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/#//apple_ref/c/tdef/UIViewAnimationCurve) for iOS or [`android.animation.TimeInterpolator`](http://developer.android.com/reference/android/animation/TimeInterpolator.html) for Android.
+ - **width**: Animates view's width.
+ - **height**: Animates view's height.
 
  All members of the interface are **optional** and have default values with the following exceptions:
 
