@@ -110,7 +110,6 @@ cd $ROOT
 [ ! -d $NG_ROOT ] || cp -R $NG_ROOT"/nativescript-angular/bin/dist/ng-api-reference" $WWW_ROOT
 
 if [ -d $NS_UI_DOCS"/ns-ui-api-reference" ] && [ -d $NS_UI_SM ] && [ -d $NS_UI_SM_NG ]; then
-echo ">>>>>>>>>>>>>>>>>>>>>HERE<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
 	cp -R $NS_UI_DOCS"/ns-ui-api-reference" $WWW_ROOT
 
 fi
