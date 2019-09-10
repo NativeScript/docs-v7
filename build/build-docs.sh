@@ -18,7 +18,7 @@ CLI_ROOT=$SCRIPT_PATH"/../../nativescript-cli"
 VUEJS_ROOT=$SCRIPT_PATH"/../../docs/vuejs-docs"
 NS_UI_SM=$SCRIPT_PATH"/../../nativescript-ui-samples"
 NS_UI_SM_NG=$SCRIPT_PATH"/../../nativescript-ui-samples-angular"
-NS_UI_DOCS="./ns_ui_docs"
+NS_UI_DOCS=$SCRIPT_PATH"/ns_ui_docs"
 
 [ ! -d "$ROOT" ] || rm -rf $ROOT
 
@@ -109,11 +109,10 @@ cd $ROOT
 [ ! -d $MODULES_ROOT ] || cp -R $MODULES_ROOT"/bin/dist/api-reference" $WWW_ROOT
 [ ! -d $NG_ROOT ] || cp -R $NG_ROOT"/nativescript-angular/bin/dist/ng-api-reference" $WWW_ROOT
 
-if [ -d $NS_UI_DOCS ] && [ -d $NS_UI_SM ] && [ -d $NS_UI_SM_NG ]; then
-	if [ -d $NS_UI_DOCS"/ns-ui-api-reference" ]; then
-		cp -R $NS_UI_DOCS"/ns-ui-api-reference" \
-		$WWW_ROOT
-	fi
+if [ -d $NS_UI_DOCS"/ns-ui-api-reference" ] && [ -d $NS_UI_SM ] && [ -d $NS_UI_SM_NG ]; then
+echo ">>>>>>>>>>>>>>>>>>>>>HERE<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
+	cp -R $NS_UI_DOCS"/ns-ui-api-reference" $WWW_ROOT
+
 fi
 
 cp -R $NS_DIST_ROOT"/./" $WWW_ROOT
