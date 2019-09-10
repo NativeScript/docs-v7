@@ -303,3 +303,76 @@ animation.play(view).then(() => {
     console.log("Played with code!");
 });
 ```
+__Example 1: How to animate view's width and height.__
+{% nativescript %}
+```XML
+<GridLayout rows="* *" columns="*" class="home-panel">
+        <StackLayout row="0">
+            <Label text="{N}" class="big-label first-view" textWrap="true" />
+        </StackLayout>
+        <StackLayout row="1">
+            <Label text="{N}" class="big-label second-view" textWrap="true" />
+        </StackLayout>
+</GridLayout>
+```
+```CSS
+.first-view {
+    animation-name: example-width;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+.second-view {
+    animation-name: example-height;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes example-width {
+    from { width:140; }
+    to { width:200; }
+}
+
+@keyframes example-height {
+    from { height:140; }
+    to { height:200; }
+}
+```
+[Demo](https://play.nativescript.org/?template=play-js&id=xe3lMf)
+{% endnativescript %}
+{% angular %}
+```HTML
+<GridLayout rows="* *" columns="*" class="home-panel">
+    <StackLayout row="0">
+        <Label text="{N}" class="big-label first-view" textWrap="true" ></Label>
+    </StackLayout>
+    <StackLayout row="1">
+        <Label text="{N}" class="big-label second-view" textWrap="true" ></Label>
+    </StackLayout>
+</GridLayout>
+```
+```CSS
+.first-view {
+    animation-name: example-width;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+.second-view {
+    animation-name: example-height;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes example-width {
+    from { width:140; }
+    to { width:200; }
+}
+
+@keyframes example-height {
+    from { height:140; }
+    to { height:200; }
+}
+```
+[Demo](https://play.nativescript.org/?template=play-ng&id=NMM4I5)
+{% endangular %}
