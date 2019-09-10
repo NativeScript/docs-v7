@@ -416,4 +416,105 @@ view.animate({
 })
 ```
 
+## Animation -  View's Width and Height
+{% nativescript %}
+### Width
+```JavaScript
+let label = page.getViewById("lblNS");
+let animation = new Animation([
+    {
+      width: 200,
+      duration: 2000,
+      target: label,
+      delay: 200
+    }
 
+  ]);
+animation.play();
+```
+```TypeScript
+let label: Label = <Label>page.getViewById("lblNS");
+let animation = new Animation([
+        {
+            width: 200,
+            duration: 2000,
+            target: label,
+            delay: 200
+        }
+
+    ]);
+animation.play();
+```
+### Height
+```JavaScript
+let label = page.getViewById("lblNS");
+let animation = new Animation([
+    {
+      height: 200,
+      duration: 2000,
+      target: label,
+      delay: 200
+    }
+
+  ]);
+animation.play();
+```
+```TypeScript
+let label: Label = <Label>page.getViewById("lblNS");
+let animation = new Animation([
+        {
+            height: 200,
+            duration: 2000,
+            target: label,
+            delay: 200
+        }
+
+    ]);
+animation.play();
+```
+[Demo JavaScript](https://play.nativescript.org/?template=play-js&id=mOZv68)
+[Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=ckdYDS)
+{% endnativescript %}
+{% angular %}
+### Width
+```TypeScript
+@ViewChild("lblNS", { read: ElementRef, static: false }) labelRef: ElementRef;
+private label: Label;
+...
+ngAfterViewInit(): void {
+    this.label = this.labelRef.nativeElement;
+}
+...
+let animation = new Animation([
+    {
+        width: 200,
+        duration: 2000,
+        target: this.label,
+        delay: 200
+    }
+
+]);
+animation.play();
+```
+### Height
+```TypeScript
+@ViewChild("lblNS", { read: ElementRef, static: false }) labelRef: ElementRef;
+private label: Label;
+...
+ngAfterViewInit(): void {
+    this.label = this.labelRef.nativeElement;
+}
+...
+let animation = new Animation([
+    {
+        height: 200,
+        duration: 2000,
+        target: this.label,
+        delay: 200
+    }
+
+]);
+animation.play();
+```
+[Demo](https://play.nativescript.org/?template=play-ng&id=cWAc2j)
+{% endangular %}
