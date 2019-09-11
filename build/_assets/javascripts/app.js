@@ -176,12 +176,13 @@ $(function(){
         'c#': 'clike',
         'appbuilder' : 'javascript',
         'javascript' : 'javascript',
-        'typescript' : 'javascript',
+        'typescript' : 'typescript',
+        'kotlin': 'kotlin',
+        'java':'java',
         'c++' : 'clike',
         'c' : 'clike',
         'css' : 'css',
-        'objective-c' : 'clike',
-        'java' : 'clike',
+        'objective-c' : 'objectivec',
         'xml' : 'markup'
     };
 
@@ -189,7 +190,9 @@ $(function(){
         '.xml': 'markup',
         '.css' : 'css',
         '.js' : 'javascript',
-        '.ts' : 'javascript',
+        '.ts' : 'typescript',
+        '.kt':'kotlin',
+        '.java':'java'
     };
 
     // Enable Prism support by mapping the lang attributes to the language-* attribute Prim expects

@@ -2155,6 +2155,8 @@ pre[class*="language-"] {
 .token.control,
 .token.function,
 .token.directive,
+.token.annotation.punctuation,
+.token.class-name,
 .token.unit {
     color: var(--color-source-green);
 }
