@@ -81,6 +81,8 @@ You can also switch to specific version by passing it to the command:
 ```
 tns update 2.3.0
 ```
+> **Note:** The command `tns update` is updating the `tns-core-modules`, `nativescript-dev-webpack`, and the runtimes (`tns-android` and `tns-ios`). The command is combining the next three commands in this article (`tns platform add`, `npm i tns-core-modules` and `npm i nativescript-dev-webpack --save-dev`). 
+
 
 > **Note:** After updating the `nativescript-dev-webpack`, we must update our `webpack.config.js` as well. To do that we can execute the `update-ns-webpack`  automated script with the following line: 
 ```
@@ -88,7 +90,6 @@ tns update 2.3.0
 ```
 **Important:** When using the `--configs` flag, any previous configuration will be overwritten and lost. Consider saving any custom code that you have introduced in your `webpack.config.js` and reapplying the code after using the `--configs` flag.
 
-> **Note:** The command `tns update` is updating the `tns-core-modules`, `nativescript-dev-webpack`, and the runtimes (`tns-android` and `tns-ios`). The command is combining the next three commands in this article (`tns platform add`, `npm i tns-core-modules` and `npm i nativescript-dev-webpack --save-dev`).
 
 ## Upgrading platforms
 
@@ -129,6 +130,9 @@ The Webpack plugin is available as a npm package named [nativescript-dev-webpack
 ```
 npm i nativescript-dev-webpack --save-dev
 ```
+
+> **Note:** From NativeScript 6.0, all project should be webpack compatible.
+
 
 ### Updating Webpack version and configuration
 
