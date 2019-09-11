@@ -262,48 +262,9 @@ __Example 13: How to trigger animation on element special state__
 
 > As of version 2.0, only the **Button** component has a built-in special state "highlighted" to indicate that it is touched by the user.
 
-## Access CSS animations from code
+## Animations - width and height
 
-The simplest way to trigger a CSS animation is by changing the element **className** property:
-
-__Example 14: How to trigger CSS animation__
-
-```JavaScript
-var view = page.getViewById("view");
-view.className = "transparent";
-```
-```TypeScript
-let view = page.getViewById<viewModule.View>("view");
-view.className = "transparent";
-```
-
-All keyframes defined in CSS can be accessed with code by using the **getKeyframeAnimationWithName** method. This allows further customization of animation properties:
-
-__Example 15: Accessing CSS defined keyframe in the code via **getKeyframeAnimationWithName** method__
-
-``` JavaScript
-var keyframeAnimation = require("tns-core-modules/ui/animation/keyframe-animation");
-
-var view = page.getViewById("view");
-var animationInfo = page.getKeyframeAnimationWithName("bounce");
-animationInfo.duration = 2000;
-var animation = keyframeAnimation.KeyframeAnimation.keyframeAnimationFromInfo(animationInfo);
-animation.play(view).then(() => {
-    console.log("Played with code!");
-});
-```
-``` TypeScript
-import {KeyframeAnimation} from "tns-core-modules/ui/animation/keyframe-animation";
-
-let view = page.getViewById<viewModule.View>("view");
-let animationInfo = page.getKeyframeAnimationWithName("bounce");
-animationInfo.duration = 2000;
-let animation = KeyframeAnimation.keyframeAnimationFromInfo(animationInfo);
-animation.play(view).then(() => {
-    console.log("Played with code!");
-});
-```
-__Example 1: How to animate view's width and height.__
+__Example 14: How to animate view's width and height.__
 {% nativescript %}
 ```XML
 <GridLayout rows="* *" columns="*" class="home-panel">
@@ -376,3 +337,46 @@ __Example 1: How to animate view's width and height.__
 ```
 [Demo](https://play.nativescript.org/?template=play-ng&id=NMM4I5)
 {% endangular %}
+
+## Access CSS animations from code
+
+The simplest way to trigger a CSS animation is by changing the element **className** property:
+
+__Example 15: How to trigger CSS animation__
+
+```JavaScript
+var view = page.getViewById("view");
+view.className = "transparent";
+```
+```TypeScript
+let view = page.getViewById<viewModule.View>("view");
+view.className = "transparent";
+```
+
+All keyframes defined in CSS can be accessed with code by using the **getKeyframeAnimationWithName** method. This allows further customization of animation properties:
+
+
+__Example 16: Accessing CSS defined keyframe in the code via **getKeyframeAnimationWithName** method__
+
+``` JavaScript
+var keyframeAnimation = require("tns-core-modules/ui/animation/keyframe-animation");
+
+var view = page.getViewById("view");
+var animationInfo = page.getKeyframeAnimationWithName("bounce");
+animationInfo.duration = 2000;
+var animation = keyframeAnimation.KeyframeAnimation.keyframeAnimationFromInfo(animationInfo);
+animation.play(view).then(() => {
+    console.log("Played with code!");
+});
+```
+``` TypeScript
+import {KeyframeAnimation} from "tns-core-modules/ui/animation/keyframe-animation";
+
+let view = page.getViewById<viewModule.View>("view");
+let animationInfo = page.getKeyframeAnimationWithName("bounce");
+animationInfo.duration = 2000;
+let animation = KeyframeAnimation.keyframeAnimationFromInfo(animationInfo);
+animation.play(view).then(() => {
+    console.log("Played with code!");
+});
+```
