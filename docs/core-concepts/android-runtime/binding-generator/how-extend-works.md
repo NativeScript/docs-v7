@@ -96,9 +96,12 @@ public class android_view_ViewGroup_myFile_l10_c20 extends android.view.ViewGrou
 }
 ```
 
->**Note:** The arguments in the above example are converted to JavaScript data types as described in the [Java to JavaScript](../marshalling/java-to-js.md) data conversion article
+>**Note:** The arguments in the above example are converted to JavaScript data types as described in the [Java to JavaScript](../marshalling/java-to-js.md) and the [Kotlin to JavaScript](../marshalling/kotlin-to-js.md) data conversion article
 
 # See Also
 * [Gotchas](./gotchas.md)
 * [Data Conversion Overview](../marshalling/overview.md)
 * [JavaScript to Java Data Conversion](../marshalling/js-to-java.md)
+* [JavaScript to Kotlin Data Conversion](../marshalling/js-to-kotlin.md)
+* [JavaScript to Kotlin Data Conversion](./js-to-kotlin.md)
+* [Kotlin to JavaScript Data Conversion](./kotlin-to-js.md)
