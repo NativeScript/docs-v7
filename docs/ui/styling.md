@@ -527,6 +527,18 @@ button:highlighted { background-color: red; color: gray;}
 ```
 {% endnativescript %}
 
+## Root Views CSS Classes
+
+To allow flexible styling and theming, NativeScript adds a CSS class to the root views in the application for specific states.
+
+The application root view CSS classes are:
+- `.ns-root` - a default class
+- `.ns-android`, `.ns-ios` - classes that specify the application platform
+- `.ns-phone`, `.ns-tablet` - classes that specify the device type
+- `.ns-portrait`, `.ns-landscape`, `.ns-unknown` - classes that specify the application orientation
+
+In addition, a default CSS class is assigned to the root view of any modal view: `.ns-modal`.
+
 ## Supported CSS Properties
 
 This list of properties can be set in CSS or through the style property of each view:
@@ -738,12 +750,12 @@ Declaring variables:
 ```CSS
 /* Define --my-custom-color as a global value */
 .ns-root {
-    --my-custom-color: black; 
+    --my-custom-color: black;
 }
 
 /* In landscape mode change the value to blue */
 .ns-landscape {
-    --my-custom-color: blue; 
+    --my-custom-color: blue;
 }
 ```
 
@@ -751,7 +763,7 @@ Overriding a variable from a child-element:
 ```CSS
 /* Change --my-custom-color to green for elements below */
 .ns-root .override-color {
-    --my-custom-color: green; 
+    --my-custom-color: green;
 }
 ```
 
