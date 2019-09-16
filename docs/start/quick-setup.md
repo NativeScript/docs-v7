@@ -75,7 +75,7 @@ At this point you’re all set to get started developing NativeScript apps. As a
 
 ### Step 1: Install Node.js and NativeScript CLI
 
-If you haven't already, complete the [Quick Setup](Quick-Setup) above.
+If you haven't already, complete the [Quick Setup](#quick-setup) above.
 
 ### Step 2: Install iOS and Android requirements
 
