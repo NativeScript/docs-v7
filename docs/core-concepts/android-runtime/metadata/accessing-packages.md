@@ -8,9 +8,9 @@ slug: accessing-android-apis
 
 # Overview
 
-One of NativeScript's strongest capabilities is the access to Android (also referred to as __'Java'__ or __'native'__) APIs inside JavaScript/TypeScript. That's possible thanks to build-time generated [Metadata](./overview.md) chunks which hold the information about the public classes from the Android SDK, Android support libraries, and any other Android libraries which may be imported into your Android NativeScript project.
+One of NativeScript's strongest capabilities is the access to Android (also referred to as __'Java/Kotlin'__ or __'native'__) APIs inside JavaScript/TypeScript. That's possible thanks to build-time generated [Metadata](./overview.md) chunks which hold the information about the public classes from the Android SDK, Android support libraries, and any other Android libraries which may be imported into your Android NativeScript project.
 
-> Note: 'Android classes' and 'Java classes' are used interchangeably throughout the article to refer to classes in the Java programming language. 
+> Note: 'Android classes' and 'Java/Kotlin classes' are used interchangeably throughout the article to refer to classes in the Java/Kotlin programming language. 
 
 ## Access Android Packages
 
@@ -52,9 +52,9 @@ For example, if you need to work with the Google API for Google Maps, after foll
 > **Note:** You cannot use APIs that are not present in the metadata. By default, if `--compileSdk` argument isn't provided while building, metadata will be built against the latest Android [Platform SDK](https://developer.android.com/about/versions/nougat/index.html) installed on the workstation. See [metadata limitations](./overview.md).
 
 ## Access Android Classes
-Classes ([See OOP](https://docs.oracle.com/javase/tutorial/java/concepts/)) are the schematics to producing building blocks (Objects) in Android, as such, they are used to represent almost everything you see, as well as what you don't see, in an Android application - the Android layouts are objects built from classes, the buttons and text views also have class representations. Classes in Android (Java) have unique identifiers denoted by the full package name (see above), followed by the actual class name (usually capitalized - see above - 'View')
+Classes ([See OOP](https://docs.oracle.com/javase/tutorial/java/concepts/)) are the schematics to producing building blocks (Objects) in Android, as such, they are used to represent almost everything you see, as well as what you don't see, in an Android application - the Android layouts are objects built from classes, the buttons and text views also have class representations. Classes in Java and Kotlin have unique identifiers denoted by the full package name (see above), followed by the actual class name (usually capitalized - see above - 'View')
 
-Accessing classes in Android you would normally add an `import` statement at the beginning of the Java file, to allow referring to the class only by its name. If the developer decides, they may be as expressive as possible by using the full class identifier too:
+Accessing classes in Android you would normally add an `import` statement at the beginning of the Java/Kotlin file, to allow referring to the class only by its name. If the developer decides, they may be as expressive as possible by using the full class identifier too:
 
 ```Java
 package my.awesome.application;
@@ -95,7 +95,7 @@ Represents a thin wrapper over a class or an interface and provides access to it
 The result of the constructor calls (`new ...()`) will create native `android.view.View` instances on the Android side and a special hollow Object on the JavaScript side. This special object knows how to invoke methods and access fields on the corresponding native instance. For example we may retrieve the path value of the above created `File` using the corresponding `File` class API like:
 
 ## Access Methods, Fields and Constants
-Thanks to the 'proxying' system, Java methods and fields can be accessed through the JavaScript wrappers of Java instances. For example, you may retrieve the result of a method call to the Java instance:
+Thanks to the 'proxying' system, Java/Kotlin methods and fields can be accessed through the JavaScript wrappers of the native instances. For example, you may retrieve the result of a method call to the Java instance:
 
 ```javascript
 const javaObj = new java.lang.Object();
@@ -104,7 +104,7 @@ const javaObjHashCode = javaObj.hashCode(); // result is `int` in Java, marshall
 console.log(javaObjHashCode); // prints out the hashCode number
 ```
 
-Public and Private member, as well as static fields of an instance, or Java class can also be accessed. The [android.view.View](https://developer.android.com/reference/android/view/View.html) class will be used below:
+Public and private members, as well as static fields of an instance, or Java/Kotlin classes can also be accessed. The [android.view.View](https://developer.android.com/reference/android/view/View.html) class will be used below:
 ```javascript
 const context = ...; // retrieve context
 const newView = new android.view.View(context);
@@ -170,6 +170,50 @@ public class MainActivity extends Activity {
         Button btn2 = new Button(this);
         btn2.setText("Button2");
         linLayout.addView(btn2, rightGravityParams);
+    }
+}
+```
+```kotlin
+class MainKotlinActivity: Activity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // creating LinearLayout
+        val linLayout = LinearLayout(this)
+        // specifying vertical orientation
+        linLayout.orientation = LinearLayout.VERTICAL
+        // creating LayoutParams
+        val linLayoutParam = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
+        // set LinearLayout as a root element of the screen
+        setContentView(linLayout, linLayoutParam)
+
+        val lpView = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
+
+        val tv = TextView(this)
+        tv.text = "TextView"
+        tv.layoutParams = lpView
+        linLayout.addView(tv)
+
+        val btn = Button(this)
+        btn.text = "Button"
+        linLayout.addView(btn, lpView)
+
+
+        val leftMarginParams = LayoutParams(
+                LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
+        leftMarginParams.leftMargin = 50
+
+        val btn1 = Button(this)
+        btn1.text = "Button1"
+        linLayout.addView(btn1, leftMarginParams)
+
+
+        val rightGravityParams = LayoutParams(
+                LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
+        rightGravityParams.gravity = Gravity.RIGHT
+
+        val btn2 = Button(this)
+        btn2.text = "Button2"
+        linLayout.addView(btn2, rightGravityParams)
     }
 }
 ```

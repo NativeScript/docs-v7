@@ -136,3 +136,6 @@ myObject.myMethod(items); // will convert to Java array of java.lang.String obje
 
 # See Also
 * [Java to JavaScript](./java-to-js.md)
+* [JavaScript to Kotlin](./js-to-kotlin.md)
+* [Kotlin to JavaScript](./kotlin-to-js.md)
+* [Accessing APIs](../metadata/accessing-packages.md)

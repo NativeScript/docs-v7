@@ -10,7 +10,7 @@ slug: generating-typescript-declarations
 
 ## Overview
 
-One of the main advantages of TypeScript is the type checking. TypeScript uses declaration files (a.k.a definitions) to "recognize" the types and function signatures of a given module. In the context of NativeScript mobile development, a developer may need to access the native Android SDK via data conversion (a.k.a. [marshalling](../marshalling/overview.md)) which is converting Java to JavaScript (or vice-versa). When working with TypeScript (or with Angular where the first-class citizen language is also TypeScript), the developer would also need to explicitly declare all namespaces, classes, properties, etc. that are used from the native Java or Objective-C APIs.
+One of the main advantages of TypeScript is the type checking. TypeScript uses declaration files (a.k.a definitions) to "recognize" the types and function signatures of a given module. In the context of NativeScript mobile development, a developer may need to access the native Android SDK via data conversion (a.k.a. [marshalling](../marshalling/overview.md)) which is converting Java/Kotlin to JavaScript (or vice-versa). When working with TypeScript (or with Angular where the first-class citizen language is also TypeScript), the developer would also need to explicitly declare all namespaces, classes, properties, etc. that are used from the native Java/Kotlin or Objective-C APIs.
 
 ### The Bad Practice
 

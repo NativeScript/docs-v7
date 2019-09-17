@@ -193,4 +193,6 @@ All Android-declared types are projected to JavaScript using the Package and Cla
 
 # See Also
 * [JavaScript to Java](./js-to-java.md)
+* [JavaScript to Kotlin](./js-to-kotlin.md)
+* [Kotlin to JavaScript](./kotlin-to-js.md)
 * [Accessing APIs](../metadata/accessing-packages.md)
