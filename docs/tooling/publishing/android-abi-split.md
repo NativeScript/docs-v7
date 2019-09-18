@@ -62,19 +62,23 @@ The two important switches to note here are `useLibs: true` (which instructs the
 One final thing before building the application is to instruct gradle to actually include the resulting snapshot into the final apk. This can be done in your `App_Resources/Android/app.gradle`:
 
 ```
-splits {
-    abi {
-        enable true
-        reset()
-        include 'arm64-v8a', 'armeabi-v7a', 'x86'
-        universalApk true
-    }
-}
+android {
+...
+  splits {
+      abi {
+          enable true
+          reset()
+          include 'arm64-v8a', 'armeabi-v7a', 'x86'
+          universalApk true
+      }
+  }
 
-sourceSets {
-    main {
-        jniLibs.srcDirs = ["$projectDir/libs/jni", "$projectDir/snapshot-build/build/ndk-build/libs"]
-    }
+  sourceSets {
+      main {
+          jniLibs.srcDirs = ["$projectDir/libs/jni", "$projectDir/snapshot-build/build/ndk-build/libs"]
+      }
+  }
+...
 }
 ```
 
