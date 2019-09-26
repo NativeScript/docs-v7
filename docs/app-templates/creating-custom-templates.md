@@ -14,10 +14,12 @@ This article aims to give you the common steps needed to create your custom appl
 
 Here is the list of the four main blank templates depending on the coding language preferences.
 
-- Plain JavaScript template at [https://github.com/NativeScript/template-blank](https://github.com/NativeScript/template-blank)
-- TypeScript template at [https://github.com/NativeScript/template-blank-ts](https://github.com/NativeScript/template-blank-ts)
-- Angular template at [https://github.com/NativeScript/template-blank-ng](https://github.com/NativeScript/template-blank-ng)
-- Vue.js template at [https://github.com/nativescript-vue/nativescript-vue-template](https://github.com/nativescript-vue/nativescript-vue-template)
+https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-blank-ng
+
+- Plain JavaScript template at [https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-blank](https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-blank)
+- TypeScript template at [https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-blank-ts](https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-blank-ts)
+- Angular template at [https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-blank-ng](https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-blank-ng)
+- Vue.js template at [https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-blank-vue](https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-blank-vue)
 
 Creating your template is as simple as cloning the wanted template repository and modifying the source code to satisfy your business logic.
 
