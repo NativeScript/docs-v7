@@ -238,7 +238,7 @@ The `BottomNavigation` and `Tabs` components enable the user to arbitrarily navi
 
 ![navigation-diagram-tab](../img/navigation/navigation-diagram-tab.png?raw=true)
 
-The `BottomNavigation` container provides its lateral navigation logic automatically by providing the user with tabs which they can select. To set up a `BottomNavigation` you need to simply declare the UI of each container (within a `TabContentItem`) and the title and icon you want to be shown in its representing tab (within a ``TabStripItem`). Each separate UI container is represented by a `TabContentItem`. A `TabContentItem` can have one root component. As with other containers, you can enable forward and backward navigation inside each `TabContentItem` by embedding a `Frame` in it.
+The `BottomNavigation` container provides its lateral navigation logic automatically by providing the user with tabs which they can select. To set up a `BottomNavigation` you need to simply declare the UI of each container (within a `TabContentItem`) and the title and icon you want to be shown in its representing tab (within a `TabStripItem`). Each separate UI container is represented by a `TabContentItem`. A `TabContentItem` can have one root component. As with other containers, you can enable forward and backward navigation inside each `TabContentItem` by embedding a `Frame` in it.
 
 The `BottomNavigation` provides two important features connected to lateral navigation:
 
