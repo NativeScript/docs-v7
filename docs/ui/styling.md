@@ -610,10 +610,10 @@ In the context of mobile development, there are a number of properties that are 
 | `android-elevation`  | `androidElevation`     | **Android**       | `View`      | Sets the elevation of the View in Android. |
 | `android-dynamic-elevation-offset `  | `androidDynamicElevationOffset`     | **Android**       | `View`      | Sets the elevation of the View in Android, which will be shown when an action was performed(e.g. `tap`, `touch`). |
 | `off-background-color`  | `offBackgroundColor`     | Both       | `Switch`      | Sets the background color of the Switch when it is turned off. |
-| `highlight-color`  | `highlightColor`     | Both       | `TabStrip`      | Gets or sets the inderline color of the selected `TabStripItem`. |
+| `highlight-color`  | `highlightColor`     | Both       | `TabStrip`      | Gets or sets the underline color of the selected `TabStripItem`. |
 
 
-> **Note:** Currently, we can set only the `backgroundColor`, `color`, `fontFamily`, `fontSize`, `fontStyle`, `fontWeight` and `textTrasnform` CSS properties to the `Label` and `Image` components inside the TabStripItem. 
+> **Note:** Currently, we can set only the `backgroundColor`, `color`, `fontFamily`, `fontSize`, `fontStyle`, `fontWeight` and `textTransform` CSS properties to the `Label` and `Image` components inside the TabStripItem. More about the usage of those CSS properties can be found in the [Supported CSS Properties](#supported-css-properties) section. 
 
 > **Note:** On iOS, the TabStripItems can not be stylied individually.
 
