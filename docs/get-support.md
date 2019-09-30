@@ -8,9 +8,6 @@ publish: true
 
 # Get support
 
-* [Where to get help](#where-to-get-help)
-* [How to obtain diagnostic reports](#how-to-obtain-diagnostic-reports)
-
 > **Installation Problems?** Try [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick) for a one-click setup experience for macOS, Windows, and Linux. Sidekick installs the NativeScript CLI and required dependencies for macOS and Windows - and offers starter kits, cloud-based builds for iOS and Android, and app store publishing.
 
 ## Where to get help
