@@ -9,9 +9,9 @@ slug: nativescript-application-templates
 
 ## Introduction to Application Templates
 
-The NativeScript app template is a blueprint for a fully functional mobile application developed with NativeScript. Each app template resides in its own git repo (e.g. [https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-master-detail-ts](https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-master-detail-ts)) and is usually published as an npm package as well (e.g. [https://www.npmjs.com/package/tns-template-master-detail-ts](https://www.npmjs.com/package/tns-template-master-detail-ts)).
+The NativeScript app template is a blueprint for a fully functional mobile application developed with NativeScript. The templates maintained by the NativeScript team reside in [GitHub](https://github.com/nativescript/nativescript-app-templates). Each template is also published as an npm package (e.g. [NativeScript Core with TypeScript Master Detail Template](https://www.npmjs.com/package/tns-template-master-detail-ts)).
 
-There are several available templates that can help you bootstrap your NativeScript application using the best coding practices, in all supported flavors, including Angular & TypeScript, Vanilla JavaScript or TypeScript.
+There are several available templates that can help you bootstrap your NativeScript application using the best coding practices, in all supported flavors, including Angular & TypeScript, Vue, Vanilla JavaScript or TypeScript.
 
 To create a new app using one of the templates, you can use the following command:
 
