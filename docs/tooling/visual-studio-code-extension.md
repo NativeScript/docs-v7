@@ -33,7 +33,7 @@ Choose one of the launch configurations (e.g., `Launch on iOS`) and press the `S
 
 Once the debugger is attached you can inspect scope variables, set breakpoints, watch expressions, execute code while the app is paused on a breakpoint etc. You can find more information about the debugging support in Visual Studio Code in the [VS Code Debugging Guide](https://code.visualstudio.com/docs/editor/debugging).
 
-What's more awesome is that the default launch configurations take advantage of the NativeScrfunctionality. Therefore, while the VS Code debugger is attached, every change to the app's source will trigger a livesync (after saving the altered file) which will update and restart the target application while the VS Code debugger is automatically reattached to the new app instance preserving all breakpoints and watched expressions. The watching feature can be disabled by setting the `watch` flag to `false` in your `launch.json` configurations.
+What's more awesome is that the default launch configurations take advantage of the NativeScript CLI functionality. Therefore, while the VS Code debugger is attached, every change to the app's source will trigger a livesync (after saving the altered file) which will update and restart the target application while the VS Code debugger is automatically reattached to the new app instance preserving all breakpoints and watched expressions. The watching feature can be disabled by setting the `watch` flag to `false` in your `launch.json` configurations.
 
 ### Attach the debugger to an already running app
 
