@@ -16,6 +16,22 @@ Don’t know where to start? Check out the [list of issues with the “help want
 
 The `master` branch contains the most up-to-date version of the NativeScript documentation and its contents are uploaded to [docs.nativescript.org](https://docs.nativescript.org/). When contributing to the documentation, always create a branch for your work from `master` as this will facilitate easier pull request management.
 
+### Are my contributions limited to this repo only?
+
+No, my friend. There are many other code repositories in the NativeScript world you might also be interested in contributing to:
+
+- [nativescript-cli](https://github.com/NativeScript/nativescript-cli) - This repo contains the NativeScript command-line interface, which lets you create, build, and run apps using the NativeScript framework. The CLI is written in TypeScript.
+
+- [nativescript-angular](https://github.com/NativeScript/nativescript-angular) - This repository contains the TypeScript code that integrates Angular with NativeScript.
+
+- [nativescript-vue](https://github.com/nativescript-vue) - This community-run project allows NativeScript to integrate with Vue.js.
+
+- [ios-runtime](https://github.com/NativeScript/ios-runtime) - This repo contains the NativeScript iOS runtime—the code that hosts NativeScript iOS apps, and allows JavaScript code to be executed on iOS devices. The iOS runtime is written in a fun mix of C++, Objective-C, and more.
+
+- [android-runtime](https://github.com/NativeScript/android-runtime) - This repo contains the NativeScript Android—the code that hosts NativeScript Android apps, and allows JavaScript code to be executed on Android devices. The Android runtime is written in a fun mix of C++ and Java.
+
+You can go check them out and help to expand their docs, add plugins to it and even fix bugs.
+
 ## About Jekyll
 This documentation is built using [Jekyll](https://jekyllrb.com/docs/home/). More info on how to control the template, table of content and the project structure in general can be found in the [Build README](build/README.md)
 
