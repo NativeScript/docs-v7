@@ -996,7 +996,7 @@ export class SearchComponent implements OnInit {
 
 The `SideDrawer` component is part of the [Professional UI Components]({%slug ns-ui-overview %}) suite. It enables the user to open a hidden view, i.e. drawer, containing navigation controls, or settings from the sides of the screen. There are a lot of navigation patterns that can be implemented using a `SideDrawer`. A typical usage would be to add UI controls and have them do one of two things:
 
-* Forward navigation - navigate in a `pager-router-outlet`.
+* Forward navigation - navigate in a `page-router-outlet`.
 * Lateral navigation - open a modal view.
 
 The simplest navigation pattern that you can implement is again the hub navigation pattern, but this time with the `SideDrawer` serving as the hub.
