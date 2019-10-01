@@ -17,7 +17,7 @@ NativeScript supports three different file qualifiers:
 - Screen size qualifiers
 - Orientation qualifiers
 
-> **Important:** The qualifiers for screen size and orientation are supported only in NativeScript Core applications. These qualifiers are not compatible with Angular and Webpack builds. The platform qualifiers can be used in both NativeScript Core and NativeScript Angular applicaitons (with or without Webpack).
+> **Important:** The qualifiers for screen size and orientation are supported only in NativeScript Core applications. These qualifiers are not compatible with Angular. The platform qualifiers can be used in both NativeScript Core and NativeScript Angular applicaitons.
 
 ## Platform Qualifiers
 
@@ -44,12 +44,13 @@ All the values in screen size qualifiers are in density independent pixels(dp) -
 * `main-page.minWH600.xml` - XML file to be used for tablet devices.
 * `main-page.xml` - XML to be used for phones 
 
-> **Note:** Not supported by Angular and Webpack builds
+> **Note:** Screen size qualifiers are not supported by Angular.
 
 ## Orientation Qualifiers
 
 * `land` - orientation is in landscape mode
 * `port` - orientation is in portrait mode
 
-> **Note:** Not supported by Angular and Webpack builds
+> **Note:** Orientation qualifiers are not supported by Angular.
+
 > **Note:** All qualifiers are taken into account when the page is loading. However, changing the device orientation will not trigger page reload and will not change the current page.
