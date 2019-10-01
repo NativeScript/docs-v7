@@ -10,7 +10,7 @@ Home of the NativeScript documentation content that lives at <http://docs.native
 
 ## Contributing
 
-The NativeScript documentation is completely open source and we love contributions. Whether you want to fix a typo, or write an entire article, the NativeScript documentation is a great way to get started contributing to an open source project.
+The NativeScript documentation is completely open source and we love contributions. Whether it involves fixing typos, or writing entire articles, the NativeScript documentation is a great way to get started contributing to an open source project.
 
 Don’t know where to start? Check out the [list of issues with the “help wanted” label](https://github.com/NativeScript/docs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22). New to git or GitHub? [Join our community Slack chat](https://www.nativescript.org/slack-invitation-form) and we’ll be happy to help get you up and running.
 
@@ -39,11 +39,11 @@ This documentation is built using [Jekyll](https://jekyllrb.com/docs/home/). Mor
 
 There are two versions of the NativeScript documentation that generate similar output: `nativescript` and `angular`. The former builds the vanilla NativeScript docs at [docs.nativescript.org/start/introduction](https://docs.nativescript.org/start/introduction), while the latter discusses Angular-specific topics at [docs.nativescript.org/angular/start/introduction](https://docs.nativescript.org/angular/start/introduction).
 
-Most of the content in this repository is shared between the two environments, but occasionally you may need to add environment-specific content. When you have this need you have a few options.
+Most of the content in this repository is shared between the two environments, but occasionally you may need to add environment-specific content. When you face this situation, you have a few options.
 
 1. If you would like a page to appear in a single environment, add an `environment: angular` or `environment: nativescript` property to that page's front matter. Pages marked with an `environment` property will appear in a single environment, and pages _not_ marked with an `environment` property will be shared across all environments.
 
-2. If you have a page that should be appear in both environments but has different content for certain sections, you can use our built-in environment block tags. The blocks are  named `angular` and `nativescript`, respectively, and can be used like this:
+2. If you have a page that should appear in both environments but have different content for certain sections, you can use our built-in environment block tags. The blocks are  named `angular` and `nativescript`, respectively, and can be used like this:
 
 ```md
 {% nativescript %}This paragraph appears only in the vanilla NativeScript documentation{% endnativescript %}
@@ -55,7 +55,7 @@ This paragraph appears in both environments.
 
 ## Local Setup
 
-If you plan to work on a non-trivial change, you will most probably want to run the documentation locally in order to give your change a try before submitting a pull request. To provide you with this opportunity without installing a ton of libraries and loose time in configuration, we have prepared a virtual environment based on a docker image, where everything is prepared for you in advance.
+If you plan to work on non-trivial changes, you will most probably want to run the documentation locally in order to give your change a try before submitting a pull request. To provide you with this opportunity without having to install a ton of libraries and lose time in configuration, we have prepared a virtual environment based on a docker image, where everything is prepared for you in advance.
 
 ### Prerequisites
 
@@ -63,7 +63,7 @@ Docker should be installed on your machine:
 
 * Open the [official Docker install page](https://docs.docker.com/engine/installation/) and follow the instructions.
 
-The NativeScript documentation is composed from multiple repositories:
+The NativeScript documentation is composed of multiple repositories:
 
 * [NativeScript Docs](https://github.com/NativeScript/docs)
 * [NativeScript Modules](https://github.com/NativeScript/NativeScript)
