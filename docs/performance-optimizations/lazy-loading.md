@@ -106,7 +106,7 @@ In the following sections, we will create a simple Angular application using the
         { path: "", redirectTo: "/items", pathMatch: "full" },
         { path: "items", component: ItemsComponent },
         { path: "item/:id", component: ItemDetailComponent },
-        { path: "feature", loadChildren: "~/feature/feature.module#FeatureModule" }, // lazy loaded module
+        { path: "feature", loadChildren: () => import("./feature/feature.module").then(m => m.FeatureModule) }, // lazy loaded module
     ];
 
     @NgModule({
@@ -116,16 +116,6 @@ In the following sections, we will create a simple Angular application using the
     export class AppRoutingModule { }
     ```
 
-> **Note:** Use the **tilde (`~`)** to set the route paths for the `loadChildren`. The tilde is an alias for the project's `app` folder.
->  ```TS
->  // Use tilde for construcing your route relative to project's app folder.
->  loadChildren: "~/feature/feature.module#FeatureModule", 
->  ```
->  This way you will be able to create nested routes. The tilde alias is added in the `tsconfig.json` of all NativeScript 4.x.x projects. For older projects, you can update the tsconfig.json 
->  content by installing the latest `nativescript-dev-typescript` and executing
->  ```Shell
->  ./node_modules/.bin/ns-upgrade-tsconfig
->  ```
 
 -  Navigating to lazily loaded module
 
