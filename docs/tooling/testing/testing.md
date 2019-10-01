@@ -11,7 +11,7 @@ previous_url: /testing,/core-concepts/testing
 
 When you develop new features inside your app, you can ensure that they are working properly and that past functionality has not regressed by writing and executing unit tests on a regular basis. With the NativeScript CLI, you can write and execute unit tests using [Jasmine](http://jasmine.github.io/), [Mocha](https://mochajs.org/) with [Chai](http://chaijs.com/) or [QUnit](https://qunitjs.com/).
 
-To run your unit tests, the NativeScript CLI uses [Karma](http://karma-runner.github.io/0.13/index.html).
+To run your unit tests, the NativeScript CLI uses [Karma](http://karma-runner.github.io/latest/index.html).
 
 
 ## Before You Begin
