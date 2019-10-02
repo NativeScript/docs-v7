@@ -12,7 +12,9 @@ To help you get started with mobile app development, {{ site.ns-sk }} provides a
 
 In the **General** templates tab, you can find the **Blank**, **Drawer Navigation**, **Tab Navigation**, **Master-Detail with Firebase** and **Master-Detail with Kinvey** templates. Each of the templates is available for all of the three flavors - **JavaScript**, **TypeScript** and **Angular & TypeScript**. We recommend the Master-Detail with Kinvey or Firebase templates because they use an actual back-end service and offer a more complete experience.
 
+<!--
 The **Angular & TypeScript** flavor also contains the **Enterprise Auth** template. For more information about the enterprise authentication and how to configure it, see [Using Enterprise Authentication]({% slug enterprise-auth %}). 
+-->
 
 Under the **Industry** templates tab, you can find industry specific templates. Currently, you can choose between two apps that leverage the Progress Health Cloud - **Patient Care** and **Health Survey**.  
 
