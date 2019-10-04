@@ -2,6 +2,8 @@
 
 Home of the NativeScript documentation content that lives at <http://docs.nativescript.org>. Start [contributing](#contributing) today!
 
+## What’s In This Document
+
 * [Contributing 🍺](#contributing)
 * [About Jekyll :nut_and_bolt:](#about-jekyll)
 * [Configuration ⚙️](#configuration)
