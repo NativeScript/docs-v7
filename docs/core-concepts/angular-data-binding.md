@@ -46,7 +46,7 @@ onButtonTap(args: EventData) {
 
 > Before we can use the ngModel directive in a two-way data binding, we must import the **NativeScriptFormsModule** and add it to the Angular module's imports list:
 > ```typescript
-import {NativeScriptFormsModule} from "nativescript-angular/forms"
+import { NativeScriptFormsModule } from "nativescript-angular/forms"
 @NgModule({
 	imports: [
 		NativeScriptModule,

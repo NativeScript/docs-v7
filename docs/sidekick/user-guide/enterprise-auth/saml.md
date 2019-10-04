@@ -84,7 +84,7 @@ The following steps will walk you through creating a new Azure Active Directory 
 
   * For **Identifier** enter `https://auth.kinvey.com/kinvey-mobile-identity-connect`.
   * For **Reply URL** enter `https://auth.kinvey.com/v3/saml/assertion`.
-  * Click on **Show sdvanced URL settings**.
+  * Click on **Show advanced URL settings**.
   * For **Sign on URL** enter `https://auth.kinvey.com/`.
 
   ![Azure SAML settings](../../img/enterprise-auth/saml-settings-azure.png)

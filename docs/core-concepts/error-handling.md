@@ -43,26 +43,28 @@ This API also introduces a technique, which allows the developers to define cust
 
 Example:
 
-```
+```javascript
 import "./bundle-config";
 import * as application from "tns-core-modules/application";
-import * as traceModule from "tns-core-modules/trace"
+import * as traceModule from "tns-core-modules/trace";
+
 const errorHandler: traceModule.ErrorHandler = {
-    handlerError(err){
-        //option 1 (development) - throw the error
+    handlerError(err) {
+        // Option 1 (development) - throw the error
         throw err;
 
-        //option 2 (development) - logging the error via write method provided from trace module
+        // Option 2 (development) - logging the error via write method provided from trace module
         traceModule.write(err, "unhandled-error", type.error);
 
-        //(production) - custom functionality for error handling
-        //reportToAnalytics(err)
+        // (production) - custom functionality for error handling
+        // reportToAnalytics(err)
     }
 }
 
 traceModule.setErrorHandler(errorHandler)
 application.run({ moduleName: 'app-root' });
 ```
+
 The example shows how to define a custom handler and three possible options for handling the error via [trace]({%slug trace%}) module or while using custom functionality.
 
 Further info about the error handing in NativeScript can be found [here](https://github.com/NativeScript/NativeScript/blob/master/HandlingErrors.md).

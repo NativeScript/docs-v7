@@ -50,7 +50,7 @@ There are a lot of fields by which you can configure the OpenID authentication s
 		</tr>
 		<tr>
 			<td><code>Issuer identifier</code></td>
-			<td align="center">This is a case-sensistive URL that identifies the issuer of the response.</td>
+			<td align="center">This is a case-sensitive URL that identifies the issuer of the response.</td>
 		</tr>
 		<tr>
 			<td><code>Scope</code></td>

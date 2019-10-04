@@ -240,22 +240,22 @@ Another common case in working with bindings is requesting access to the parent 
 _Example 4: Creating ListView child items based on the itemTemplate._
 ``` XML
 <Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
-	<GridLayout rows="*" >{%raw%}
-		<ListView items="{{ items }}">
-			<!--Describing how the element will look like-->
-			<ListView.itemTemplate>
-				<GridLayout columns="auto, *">
-					<Label text="{{ $value }}" col="0"/>
-					<!--The TextField has a different bindingCotnext from the ListView, but has to use its properties. Thus the parents['ListView'] has to be used.-->
-					<!-- Parent binding to a string property -->
+    <GridLayout rows="*" >{%raw%}
+        <ListView items="{{ items }}">
+            <!--Describing how the element will look like-->
+            <ListView.itemTemplate>
+                <GridLayout columns="auto, *">
+                    <Label text="{{ $value }}" col="0"/>
+                    <!--The TextField has a different bindingCotnext from the ListView, but has to use its properties. Thus the parents['ListView'] has to be used.-->
+                    <!-- Parent binding to a string property -->
                     <TextField text="{{ $parents['ListView'].test, $parents['ListView'].test }}" col="1"/>
 
                     <!-- Parent binding to a method onTap -->
                     <Button text="Tap me" tap="{{ $parents['ListView'].onTap,  $parents['ListView'].onTap }}" />
-				</GridLayout>
-			</ListView.itemTemplate>
-		</ListView>
-	{%endraw%}</GridLayout>
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    {%endraw%}</GridLayout>
 </Page>
 ```
 ``` JavaScript
@@ -301,9 +301,9 @@ You can create a custom expression for bindings. Custom expressions could help i
 
 ``` XML
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-	<StackLayout>{%raw%}
-		<TextField text="{{ sourceProperty, sourceProperty + ' some static text' }}" />
-{%endraw%}	</StackLayout>
+    <StackLayout>{%raw%}
+        <TextField text="{{ sourceProperty, sourceProperty + ' some static text' }}" />
+    {%endraw%}</StackLayout>
 </Page>
 ```
 
