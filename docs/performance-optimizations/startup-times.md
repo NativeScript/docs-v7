@@ -42,13 +42,13 @@ When the `install` command finishes, you’ll have a series of scripts you can u
 You can go ahead and run one of the following two commands to see how much faster your apps run with the default webpack configuration in place.
 
 ```
-tns run android --bundle
+tns run android
 ```
 
 Or
 
 ```
-tns run ios --bundle
+tns run ios
 ```
 
 > **NOTE**: If you’re having trouble enabling webpack in your own apps, feel free to reach out for help on [Stack Overflow](https://stackoverflow.com/questions/tagged/nativescript).
@@ -88,13 +88,13 @@ For NativeScript apps there are two advantages to using UglifyJS. First, because
 Using UglifyJS is easy too. To use UglifyJS as part of your NativeScript builds, all you need to do is add a `--env.uglify` flag to the scripts you ran earlier. That is, run one of the following commands.
 
 ```
-tns run android --bundle --env.uglify
+tns run android --env.uglify
 ```
 
 Or
 
 ```
-tns run ios --bundle --env.uglify
+tns run ios --env.uglify
 ```
 
 If you open your `vendor.js` and `bundle.js` files, you should now see compressed code that looks something like this.
@@ -127,7 +127,7 @@ What V8 lets you do, however, is provide a so-called heap snapshot, or a previou
 In NativeScript we’re integrated this process directly within our webpack build process; therefore, running a build with V8 heap snapshots enabled is as simple as adding a `--env.snapshot` flag to the previous step.
 
 ```
-tns run android --bundle --env.uglify --env.snapshot
+tns run android --env.uglify --env.snapshot
 ```
 
 There are two important things to note:
@@ -160,11 +160,11 @@ npm install
 3) Run on iOS with webpack, UglifyJS, and Angular Ahead-of-Time enabled.
 
 ```
-tns run ios --bundle --env.uglify --env.aot 
+tns run ios --env.uglify --env.aot 
 ```
 
 4) Run on Android with webpack, UglifyJS, Angular Ahead-of-Time (if using Angular), and V8 heap snapshot builds enabled.
 
 ```
-tns run android --bundle --env.uglify --env.aot --env.snapshot
+tns run android --env.uglify --env.aot --env.snapshot
 ```
