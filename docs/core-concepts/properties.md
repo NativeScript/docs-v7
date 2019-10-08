@@ -131,7 +131,7 @@ marginBottomProperty.register(Style);
 The `CoercibleProperty` is a property that extends the base Property class by providing the capability to be coercible. For better illustration when a property might need to be coercible let's assume that we are working on `selectedIndex` property of some UI element that can hold different number of `items`. The base case would suggest that the `selectedIndex` would vary within the number of items, but what would cover the case where the items are changed dynamically (and the `selectedIndex` is not within the length range)? This is the case that can be handled by a property that can coerce the value.
 
 
-Creating the `selectedIndex` as coercible property dependend on the number of items
+Creating the `selectedIndex` as coercible property dependent on the number of items
 ```TypeScript
 export const selectedIndexProperty = new CoercibleProperty<SegmentedBarBase, number>({
     name: "selectedIndex", defaultValue: -1,
@@ -139,8 +139,8 @@ export const selectedIndexProperty = new CoercibleProperty<SegmentedBarBase, num
         target.notify(<SelectedIndexChangedEventData>{ eventName: SegmentedBarBase.selectedIndexChangedEvent, object: target, oldIndex: oldValue, newIndex: newValue });
     },
 
-    // in this case the coerse value will change depending on whether the actual number of items
-    // is more or less than the value we want to appl for selectedIndex
+    // in this case the coerce value will change depending on whether the actual number of items
+    // is more or less than the value we want to apply for selectedIndex
     coerceValue: (target, value) => {
         let items = target.items;
         if (items) {
@@ -280,7 +280,7 @@ Each UI element extends the `View` class (e.g., like `StackLayout` or `Label`) a
 > As an alternative, in Angular, we can get reference to the native elements using the `ViewChild` directive and the `nativeElement` property.
 >  ```HTML
 > <StackLayout #myNgStack id="myStackId">
->     <Label text="Using ViewChild agains getViewById" />
+>     <Label text="Using ViewChild against getViewById" />
 > </StackLayout>
 >  ```
 >  ```TypeScript

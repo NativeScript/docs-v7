@@ -55,7 +55,7 @@ Here is more info about the E2E test specific files and configurations:
 
 Generated tests are standard [Mocha](http://mochajs.org) tests.
 
-> Note - in case you want to execute image comparision while testing there are two more important folders to have in mind: 
+> Note - in case you want to execute image comparison while testing there are two more important folders to have in mind: 
 > * `e2e/reports` - it is created during test execution and stores the actual images from comparison
 > * `e2e/resources` - this folder aims to store the expected images for comparison
 
@@ -69,7 +69,7 @@ $ tns build ios
 ```
 
 The command that will run the tests should specify the targeted capabilities configuration using the `runType` option as shown below. This way a capabilities configuration will be selected from the [capabilities]({% slug e2e-testing-customization %}#custom-appium-capabilities) configuration file.
-> Appium capabilities are a JSON object describing how to run your test - what plarform to use, which version, where your app is located, etc. Read more about [capabilities in the official Appium documentaion](http://appium.io/docs/en/writing-running-appium/caps/).
+> Appium capabilities are a JSON object describing how to run your test - what plarform to use, which version, where your app is located, etc. Read more about [capabilities in the official Appium documentation](http://appium.io/docs/en/writing-running-appium/caps/).
 
 > To understand more about how to create custom capabilities, you can refer to the [Customization section in this documentation]({% slug e2e-testing-customization %}).
 
@@ -80,7 +80,7 @@ $ npm run e2e -- --runType <capability-name>
 
 where `<capability-name>` is defined in `<your-app-folder>/e2e/config/appium.capabilities.json`. You can choose any of the predefined ones or [create new ones](({% slug e2e-testing-customization %}#custom-appium-capabilities)) before running the tests. This will asure you that you are executing the tests against the platform and version you want to.
 
-For Android, make sure that the `deviceName` and `avd` match the name of an existing AVD. We recommend using underscrores as separators in the name i.e. `Pixel_API_28`.
+For Android, make sure that the `deviceName` and `avd` match the name of an existing AVD. We recommend using underscores as separators in the name i.e. `Pixel_API_28`.
 
 For iOS, you also need to make sure that the `deviceName` and `platformVersion` are configured in the Simulator app.
 

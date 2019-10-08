@@ -67,8 +67,8 @@ import { RouterExtensions } from "nativescript-angular/router";
 })
 export class MainComponent {
 
-	constructor(private routerExtensions: RouterExtensions) {
-	}
+    constructor(private routerExtensions: RouterExtensions) {
+    }
 }
 ```
 
@@ -240,17 +240,17 @@ export class AppComponent { }
 import { Component, OnInit } from "@angular/core";
 
 @Component({
-	selector: "Hub",
-	templateUrl: "./hub.component.html",
-	styleUrls: ['./hub.component.css']
+    selector: "Hub",
+    templateUrl: "./hub.component.html",
+    styleUrls: ['./hub.component.css']
 })
 export class HubComponent implements OnInit {
 
-	constructor() {
-	}
+    constructor() {
+    }
 
-	ngOnInit(): void {
-	}
+    ngOnInit(): void {
+    }
 }
 ```
 ```hub.component.html
@@ -268,21 +268,21 @@ import { Component, OnInit } from "@angular/core";
 import { Location } from "@angular/common";
 
 @Component({
-	selector: "Featured",
-	templateUrl: "./featured.component.html",
-	styleUrls: ['./featured.component.css']
+    selector: "Featured",
+    templateUrl: "./featured.component.html",
+    styleUrls: ['./featured.component.css']
 })
 export class FeaturedComponent implements OnInit {
 
-	constructor(private location: Location) {
-	}
+    constructor(private location: Location) {
+    }
 
-	ngOnInit(): void {
-	}
+    ngOnInit(): void {
+    }
 
-	goBack(): void {
-		this.location.back();
-	}
+    goBack(): void {
+        this.location.back();
+    }
 }
 ```
 ```featured.component.html
@@ -372,17 +372,17 @@ import { Component, OnInit } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
-	selector: "Featured",
-	templateUrl: "./featured.component.html",
-	styleUrls: ['./featured.component.css']
+    selector: "Featured",
+    templateUrl: "./featured.component.html",
+    styleUrls: ['./featured.component.css']
 })
 export class FeaturedComponent implements OnInit {
 
-	constructor(private routerExtensions: RouterExtensions) {
-	}
+    constructor(private routerExtensions: RouterExtensions) {
+    }
 
-	ngOnInit(): void {
-	}
+    ngOnInit(): void {
+    }
 }
 ```
 ```featured.component.html
@@ -398,17 +398,17 @@ export class FeaturedComponent implements OnInit {
 import { Component, OnInit } from "@angular/core";
 
 @Component({
-	selector: "Item",
-	templateUrl: "./item.component.html",
-	styleUrls: ['./item.component.css']
+    selector: "Item",
+    templateUrl: "./item.component.html",
+    styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
 
-	constructor() {
-	}
+    constructor() {
+    }
 
-	ngOnInit(): void {
-	}
+    ngOnInit(): void {
+    }
 }
 ```
 ```item.component.html
@@ -434,21 +434,21 @@ import { Component, OnInit } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
-	selector: "Item",
-	templateUrl: "./item.component.html",
-	styleUrls: ['./item.component.css']
+    selector: "Item",
+    templateUrl: "./item.component.html",
+    styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
 
-	constructor(private routerExtensions: RouterExtensions) {
-	}
+    constructor(private routerExtensions: RouterExtensions) {
+    }
 
-	ngOnInit(): void {
-	}
+    ngOnInit(): void {
+    }
 
-	goBack(): void {
-		this.routerExtensions.back();
-	}
+    goBack(): void {
+        this.routerExtensions.back();
+    }
 }
 ```
 ```item.component.html
@@ -561,11 +561,11 @@ import { Component, OnInit } from "@angular/core";
 })
 export class HubComponent implements OnInit {
 
-	constructor() {
-	}
+    constructor() {
+    }
 
-	ngOnInit(): void {
-	}
+    ngOnInit(): void {
+    }
 }
 ```
 ```hub.component.html
@@ -620,7 +620,7 @@ The `TabView` component enables the user to arbitrarily navigate between several
 
 ![navigation-diagram-ng-tab](../img/navigation/navigation-diagram-ng-tab.png?raw=true)
 
-The `BottomNavigation` container provides its lateral navigation logic automatically by providing the user with tabs which they can select. To set up a `BottomNavigation` you need to simply declare the UI of each container via a `TabItemContent` and set the title and icon via coresponding `tabStripItem` (details on the basic structure [here](http://localhost:9192/angular/ui/ng-ui-widgets/bottom-navigation#usage)). Each separate UI container is represented by the `TabContentItem` component. As with other containers, you can enable forward and backward navigation inside each of them by embedding a `page-router-outlet` in it. In this case we need to use three sibling outlets. The way to do this with the Angular router is to use [named outlets](https://angular.io/guide/router#displaying-multiple-routes-in-named-outlets). Each of our outlets will be named with the name of the feature that it represents.
+The `BottomNavigation` container provides its lateral navigation logic automatically by providing the user with tabs which they can select. To set up a `BottomNavigation` you need to simply declare the UI of each container via a `TabItemContent` and set the title and icon via corresponding `tabStripItem` (details on the basic structure [here](http://localhost:9192/angular/ui/ng-ui-widgets/bottom-navigation#usage)). Each separate UI container is represented by the `TabContentItem` component. As with other containers, you can enable forward and backward navigation inside each of them by embedding a `page-router-outlet` in it. In this case we need to use three sibling outlets. The way to do this with the Angular router is to use [named outlets](https://angular.io/guide/router#displaying-multiple-routes-in-named-outlets). Each of our outlets will be named with the name of the feature that it represents.
 
 The `BottomNavigation` widget also provides two important features connected to lateral navigation:
 
@@ -712,7 +712,7 @@ export class AppComponent {
 ```app.component.html
 <BottomNavigation selectedIndex="1">
 
-    <!-- The bottom tab UI is created via TabStrip (the containier) and TabStripItem (for each tab)-->
+    <!-- The bottom tab UI is created via TabStrip (the container) and TabStripItem (for each tab)-->
     <TabStrip>
         <TabStripItem>
             <Label text="Home"></Label>
@@ -747,17 +747,17 @@ export class AppComponent {
 import { Component, OnInit } from "@angular/core";
 
 @Component({
-	selector: "Featured",
-	templateUrl: "./featured.component.html",
-	styleUrls: ['./featured.component.css']
+    selector: "Featured",
+    templateUrl: "./featured.component.html",
+    styleUrls: ['./featured.component.css']
 })
 export class FeaturedComponent implements OnInit {
 
-	constructor() {
-	}
+    constructor() {
+    }
 
-	ngOnInit(): void {
-	}
+    ngOnInit(): void {
+    }
 }
 ```
 ```featured.component.html

@@ -216,7 +216,7 @@ export class MyButton extends MyButtonBase {
     // Alpha could be controlled from Android theme.
     // Thus we take the default native value from the nativeView.
     // If view is recycled the value returned from this method
-    // will be passed to [myOppacityProperty.setNative]
+    // will be passed to [myOpacityProperty.setNative]
     [myOpacityProperty.getDefault](): number {
         return this.nativeView.getAlpha()
     }
@@ -303,7 +303,7 @@ export class MyButton extends MyButtonBase {
 
     // gets the default native value for opacity property.
     // If view is recycled the value returned from this method
-    // will be passed to [myOppacityProperty.setNative]
+    // will be passed to [myOpacityProperty.setNative]
     [myOpacityProperty.getDefault](): number {
         return this.nativeView.alpha;
     }

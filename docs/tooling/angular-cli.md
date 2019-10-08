@@ -1,6 +1,6 @@
 ---
 title: Angular CLI
-description: Learn how to use the Angular CLI in your NativeScript app with @nativescript/schematics. The extension to Angular Schematisc allows you to use the Angular CLI in both NativeScript Angular projects and web+mobile code-sharing projects.
+description: Learn how to use the Angular CLI in your NativeScript app with @nativescript/schematics. The extension to Angular Schematics allows you to use the Angular CLI in both NativeScript Angular projects and web+mobile code-sharing projects.
 position: 80
 environment: angular
 ---

@@ -76,7 +76,7 @@ We are concentrating on the "_native_" part of the plugin. When we talk about "_
 
 ### What do I use?
 
-When you want to create an Android NativeScript plugin and you want to add some "_native_" functionality there are two main options. Use a `.jar` file, or use a `.aar` file. Keep in mind that `.aar` files are the recomended library form for NativeScript plugins. When we use a library in the form of a `.jar` file we want some functionality that doesn’t need any resources, just native implementation of some logic we need. For example, if we need to make some complicated calculation and there is an SDK in the form of a `.jar` file and requires **no** UI elements, we could use that library. This would only provide a couple of classes with some logic in them and **should not** declare activities or any other types of application components (http://www.tutorialspoint.com/android/android_application_components.htm).
+When you want to create an Android NativeScript plugin and you want to add some "_native_" functionality there are two main options. Use a `.jar` file, or use a `.aar` file. Keep in mind that `.aar` files are the recommended library form for NativeScript plugins. When we use a library in the form of a `.jar` file we want some functionality that doesn’t need any resources, just native implementation of some logic we need. For example, if we need to make some complicated calculation and there is an SDK in the form of a `.jar` file and requires **no** UI elements, we could use that library. This would only provide a couple of classes with some logic in them and **should not** declare activities or any other types of application components (http://www.tutorialspoint.com/android/android_application_components.htm).
 
 * In what cases should we prefer `.jar` files?
     * when we don’t have any need for using android application components
@@ -84,7 +84,7 @@ When you want to create an Android NativeScript plugin and you want to add some 
     * when we don’t need resources connected to the `.jar` file like drawables, layouts, etc.
 
 * In what cases should we prefer `.aar` files:
-    * when we want to use some kind of an interactive SDK like facebook, dropbox, youtube, etc.
+    * when we want to use some kind of an interactive SDK like Facebook, Dropbox, YouTube, etc.
     * when we need to use application components like activities, services, resources, etc.
 
 > **IMPORTANT:**  The recommended way of using AAR files inside a NativeScript plugin is to add it as a dependency in the `include.gradle` file inside the `platforms/android` folder of the plugin.

@@ -36,7 +36,7 @@ my-plugin
 ```
 Thus, the same configuration can be used by both apps without duplication of files.
 
-If you wish to use another location of the capapabilities file instead default ones, you can specify it with `--appiumCapsLocation` option. Remember that the path provided has to be relative to the root directory.
+If you wish to use another location of the capabilities file instead default ones, you can specify it with `--appiumCapsLocation` option. Remember that the path provided has to be relative to the root directory.
 
 Notice that once custom capabilities are provided you will be able to pick any of them using the `--runType` option (e.g. `--runType android25`). See sample content of `appium.capabilities.json` file below. For more details regarding the Appium Capabilities read [Appium documentation about Desired Capabilities](https://appium.io/docs/en/writing-running-appium/caps/):
 
