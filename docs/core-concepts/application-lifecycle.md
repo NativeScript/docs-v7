@@ -7,6 +7,22 @@ slug: lifecycle
 previous_url: /application-management,/core-concepts/application-management
 ---
 {% angular %}
+
+# Table of Contents
+- [Nativescript application architecture and lifecycle](#nativescript-application-architecture-and-lifecycle)
+  - [Modules](#modules)
+  - [Components](#components)
+  - [Component metadata](#component-metadata)
+  - [Component lifecycle](#component-lifecycle)
+  - [Start application](#start-application)
+- [Application Management](#application-management)
+  - [Application Run](#application-run)
+  - [Use Application Events](#use-application-events)
+  - [Android Activity Events](#android-activity-events)
+  - [iOS UIApplicationDelegate](#ios-uiapplicationdelegate)
+  - [Persist and Restore Application Settings](#persist-and-restore-application-settings)
+
+
 # NativeScript application architecture and lifecycle
 
 The main building blocks of NativeScript applications with Angular are modules and components. The `application` module lets you manage the life cycle of your NativeScript apps from starting the application to storing user-defined settings.
