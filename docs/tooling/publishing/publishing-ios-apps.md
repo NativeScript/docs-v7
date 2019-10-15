@@ -176,7 +176,7 @@ If you are making a new one, or adding a new app to an existing one, make sure t
 
 Unlike the certificates, *provisioning profiles* are files that can be easily updated and downloaded from the Member Center (in .mobileprovision files) and installed in Xcode by double-clicking that file.
 
-Xcode is also capable of obtaining these automatically. Open Xcode and from the menu go to  `Xcode > Preferences... > Accounts > (select your apple ID) > (select your Team Name) > View Details...`.
+Xcode is also capable of obtaining these automatically. Open Xcode and from the menu go to  `Xcode > Preferences... > Accounts > (select your apple ID) > (double-click on your Team Name)`.
 There you can check all signing identities (developer and *production certificates*) available to Xcode as well as `Download All` *provisioning profiles*.
 
 When you run an app on a device, Xcode will sign the app with your development certificate and add a provisioning profile that has your certificate, device ID and App ID.
@@ -223,9 +223,7 @@ Failing to provide all necessary assets may prevent you from submitting your app
 >Note: Screenshots not matching the actual app may result in rejection of a new version sent for approval.
 
 ### Builds
-Once you have your app information registered at [https://appstoreconnect.apple.com](https://appstoreconnect.apple.com) it is time to build your NativeScript app for iOS and submit it.
-
-There are two main ways to submit an app to *iTunes Connect* — using Xcode or using *Application Loader*.
+Once you have your app information registered at [https://appstoreconnect.apple.com](https://appstoreconnect.apple.com) it is time to build your NativeScript app for iOS and submit it to *iTunes Connect* — using Xcode.
 
 <h4 id="build-versioning">Build versioning</h4>
 We have already explained how the *Bundle ID* is set in your project, how the launch screen (or storyboard) and images are added to your app, and how you can set the display name.
@@ -290,8 +288,8 @@ Rebuilds may erase your changes and you should add changed files to source contr
 
 A common pitfall, if you are using CocoaPods, is to open the Xcode project instead of the workspace, so be sure to open the workspace.
 
-Once you have it open in Xcode, you have to go to your target's General settings and pick a team.
-In 'Build Settings' there should be a suitable 'iOS Developer' and 'Code Signing Identity'.
+Once you have it open in Xcode, you have to go to your target's `Signing & Capabilities` and pick a team.
+In `Build Settings` there should be a suitable 'iOS Developer' and 'Code Signing Identity'.
 
 From the top drop-down, select your target, and from the devices and emulators, pick 'Generic iOS Device'.
 
@@ -322,8 +320,6 @@ tns publish ios my-apple-id my-password --ipa /tmp/build/myIpa.ipa
 ```
 
 Some tools that allow the submission process to be automated - [MIT Licensed one: fastlane](https://github.com/fastlane/fastlane). 
-Also, the previously mentioned *Application Loader* has a command line tool called *iTMSTransporter* in its package,
-which you may use to hack your own [shell scripts](https://gist.github.com/jedi4ever/b1f8b27d4a803d487fa4) around.
 
 ### Send for approval and publish
 Once you successfully submit a build at *App Store Connect*, you can enable testing through *Test Flight*.
