@@ -22,7 +22,7 @@ Help us keep a healthy and open community. We expect all participants in this pr
 
 1. Always update to the most recent master release; the bug may already be resolved.
 2. Search for similar issues in the issues list for this repo; it may already be an identified problem.
-3. If this is a bug or problem that is clear, simple, and is unlikely to require any discussion -- it is OK to open an issue on GitHub with a reproduction of the bug and screenshots. If possible, submit a Pull Request and fix the bug yourself (jump down to the [Submitting a PR](#submitting-a-pr) section).
+3. If this is a bug or problem that is clear, simple and is unlikely to require any discussion -- it is OK to open an issue on GitHub with a reproduction of the bug and screenshots. If possible, submit a Pull Request and fix the bug yourself (jump down to the [Submitting a PR](#submitting-a-pr) section).
 
 ## Requesting Features
 
@@ -36,7 +36,7 @@ Before you begin:
 * Read and sign the [NativeScript Contribution License Agreement](http://www.nativescript.org/cla).
 * Make sure there is an issue for the bug or feature you will be working on.
 
-Following these steps is the best way to get you code included in the project:
+Following these steps is the best way to get your code included in the project:
 
 1. Fork and clone the docs repo:
 ```bash
@@ -71,4 +71,4 @@ It's our turn from there on! We will review the PR and discuss changes you might
 
 ## Where to Start
 
-If you want to contribute, but you are not sure where to start - look for [issues labeled `help wanted`](https://github.com/NativeScript/docs/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22).
+If you want to contribute, but you are not sure where to start - look for [issues labelled `help wanted`](https://github.com/NativeScript/docs/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22).
