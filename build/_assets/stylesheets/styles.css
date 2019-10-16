@@ -1281,7 +1281,7 @@ a.ns-card:hover {
 /* Footer */
 
 .ns-footer {
-    z-index: 2;
+    z-index: 0;
     font-size: .88em;
     position: relative;
     width: calc(100% + 600px);
