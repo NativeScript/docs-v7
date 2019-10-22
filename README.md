@@ -12,7 +12,7 @@ Home of the NativeScript documentation content that lives at <http://docs.native
 
 ## Contributing
 
-The NativeScript documentation is completely open source and we love contributions. Whether you want to fix a typo, or write an entire article, the NativeScript documentation is a great way to get started contributing to an open source project.
+The NativeScript documentation is completely open-source and we love contributions. Whether you want to fix a typo, or write an entire article, the NativeScript documentation is a great way to get started contributing to an open-source project.
 
 Don’t know where to start? Check out the [list of issues with the “help wanted” label](https://github.com/NativeScript/docs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22). New to git or GitHub? [Join our community Slack chat](https://www.nativescript.org/slack-invitation-form) and we’ll be happy to help get you up and running.
 
@@ -28,9 +28,9 @@ No, my friend. There are many other code repositories in the NativeScript world 
 
 - [nativescript-vue](https://github.com/nativescript-vue) - This community-run project allows NativeScript to integrate with Vue.js.
 
-- [ios-runtime](https://github.com/NativeScript/ios-runtime) - This repo contains the NativeScript iOS runtime—the code that hosts NativeScript iOS apps, and allows JavaScript code to be executed on iOS devices. The iOS runtime is written in a fun mix of C++, Objective-C, and more.
+- [ios-runtime](https://github.com/NativeScript/ios-runtime) - This repo contains the NativeScript iOS runtime — the code that hosts NativeScript iOS apps, and allows JavaScript code to be executed on iOS devices. The iOS runtime is written in a fun mix of C++, Objective-C, and more.
 
-- [android-runtime](https://github.com/NativeScript/android-runtime) - This repo contains the NativeScript Android—the code that hosts NativeScript Android apps, and allows JavaScript code to be executed on Android devices. The Android runtime is written in a fun mix of C++ and Java.
+- [android-runtime](https://github.com/NativeScript/android-runtime) - This repo contains the NativeScript Android — the code that hosts NativeScript Android apps, and allows JavaScript code to be executed on Android devices. The Android runtime is written in a fun mix of C++ and Java.
 
 You can go check them out and help to expand their docs, add plugins to it and even fix bugs.
 
@@ -99,10 +99,10 @@ git clone https://github.com/NativeScript/nativescript-ui-samples-angular.git
 git clone https://github.com/NativeScript/nativescript-ui-samples-vue.git
 ```
 
-> **NOTE**: `nativescript-ui-...` are private repositories used for building the Api Reference for the NativeScript UI components.  
+> **NOTE**: `nativescript-ui-...` are private repositories used for building the API Reference for the NativeScript UI components.  
 > **NOTE**: If you have these repositories locally from previous work with the documentation, be sure to delete them and start from scratch as some old files can cause problems with the current setup.
 
-Then build the docker image by using the following command from the `ns-docs` folder:
+Then, build the docker image by using the following command from the `ns-docs` folder:
 
 ```bash
 sudo docker build -t ns-docs:1.0 docs/build
@@ -131,7 +131,7 @@ Edit an article in some of the repositories and navigate to http://localhost:919
 ### Making changes
 
 * Edit some files.
-* Refresh your browser (depending on which files have been modified it might take more or less time for the changes to take effect).
+* Refresh your browser (depending on which files have been modified, it might take more or less time for the changes to take effect).
 
 ## Contributors
 
