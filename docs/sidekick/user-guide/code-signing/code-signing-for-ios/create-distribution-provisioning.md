@@ -21,12 +21,11 @@ You can create a distribution provisioning profile in the [iOS Dev Center](https
 
 1. Open [iOS Dev Center](https://developer.apple.com/membercenter) in your favorite browser and log in.
 1. Click **Certificates, Identifiers &amp; Profiles**.
-1. In the drop-down menu in the top left corner, verify that **iOS, tvOS, watchOS** is selected.
-1. In the left-hand sidebar, select **Provisioning&nbsp;Profiles** &#8594; **App Store**.
-1. Click **+**.
+1. In the left-hand sidebar, select **Profiles**.
+1. Click **+** blue button next to subtitle bar **Profiles** to add a new Profile.
 1. Select **App&nbsp;Store** and click **Continue**.
 1. Select an **App ID** to associate with the provisioning profile and click **Continue**.
-1. Select one or more certificates for distribution to include in the provisioning profile and click **Continue**.<br/>Only certificates for distribution are listed.
+1. Select a certificate for distribution to include in the provisioning profile and click **Continue**.<br/>Only certificates for distribution are listed.
 1. Enter a name for the profile and click **Continue**.
 1. (Optional) Click **Download** to download the provisioning profile.
 
