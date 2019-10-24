@@ -23,9 +23,8 @@ You can create a development provisioning profile in the [iOS Dev Center](https:
 ## Procedure
 1. Open [iOS Dev Center](https://developer.apple.com/membercenter) in your favorite browser and log in.
 1. Click **Certificates, Identifiers &amp; Profiles**.
-1. In the drop-down menu in the top left corner, verify that **iOS, tvOS, watchOS** is selected.
-1. In the left-hand sidebar, select **Provisioning&nbsp;Profiles** &#8594; **Development**.
-1. Click **+**.
+1. In the left-hand sidebar, select **Profiles**.
+1. Click **+** blue button next to the subtitle bar **Profiles** to add a new Profile.
 1. Select **iOS&nbsp;App&nbsp;Development** and click **Continue**.
 1. Select an App ID to associate with the provisioning profile and click **Continue**.<br/>To be able to use one development provisioning profile across multiple apps, select a wildcard App ID, if available.
 1. Select one or more certificates for development to include in the provisioning profile and click **Continue**.<br/>Only certificates for development are listed.
