@@ -8,25 +8,51 @@ position: 2
 publish: true
 ---
 
-# RadChart Getting Started
-In this article, you will learn to get started with the Chart plugin for NativeScript: how to initialize the chart, how to create the data series and how to use the different axes.
+# Chart Getting Started
 
-## Installation
+In this article, you will learn to start using NativeScript UI Chart: how to initialize the chart, how to create the data series and how to use the different axes.
+
+* [Plugin Installation](#plugin-installation)
+* [Add Chart to Component Template](#add-chart-to-component-template)
+* [References](#references)
+
+## Plugin Installation
+
 Run the following command to add the plugin to your application:
 
 ```
 tns plugin add nativescript-ui-chart
 ```
 
-## Adding a RadCartesianChart to Your Component's template
-Before proceeding, make sure that the `nativescript-ui-chart/vue` plugin is instaled in your main application file (usually `main.js` or `main.ts`). This plugin handles the registration of the custom directives and elements required by [nativescript-vue](https://nativescript-vue.org/).
+## Add Chart to Component Template
+
+Before proceeding, make sure that the `nativescript-ui-chart/vue` plugin is installed in your main application file (usually `main.js` or `main.ts`). This plugin handles the registration of the custom directives and elements required by [nativescript-vue](https://nativescript-vue.org/).
+
+#### Example 1: Register Chat Vue component
 
 <snippet id='chart-imports-vue'/>
 
 Now, you can use all the chart components and directives, as the `RadCartesianChart`, `RadPieChart`, etc. Look at this example component:
 
-<snippet id='chart-getting-started-vue'/>
+#### Example 2: Code of component:
 
-This will produce a page showing a Chart that will look like:
+<snippet id='chart-bar-series-vue'/>
 
-![TelerikUI-Chart-Getting-Started](../../../ui/img/ns_ui/chart-getting-started-android.png "Android")  ![TelerikUI-Chart-Getting-Started](../../../ui/img/ns_ui/chart-getting-started-ios.png "iOS")
+#### Figure 1: Chart with BarSeries on Android (left) and iOS (right)
+
+![Cartesian chart: Bar series](../../img/ns_ui/bar_series_android.png "Bar series on Android.") ![Cartesian chart: Bar series](../../img/ns_ui/bar_series_ios.png "Bar series on iOS.")
+
+## References
+
+Want to see this scenario in action?
+Check our [SDK Examples](https://github.com/NativeScript/nativescript-ui-samples-vue) repository on GitHub. You will find this and many other practical examples with NativeScript UI.
+
+Examples used in this article:
+
+* [Chart Bar Series Example](https://github.com/NativeScript/nativescript-ui-samples-vue/tree/master/chart/app/examples/series)
+
+Related articles you might find useful:
+
+* [**Bar Series**]({% slug chart-series-bar-vue %})
+* [**Line Series**]({% slug chart-series-line-vue %})
+* [**Axes Overview**]({% slug chart-axes-overview-vue %})

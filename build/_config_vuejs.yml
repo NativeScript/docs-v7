@@ -80,6 +80,14 @@ navigation:
     "ns-ui/Chart":
         position: 40
         title: "RadChart"
+    "ns-ui/Chart/Series":
+        position: 3
+    "ns-ui/Chart/Series/Types":
+        position: 2
+    "ns-ui/Chart/Axes":
+        position: 4
+    "ns-ui/Chart/Axes/Types":
+        position: 2
     "ns-ui/AutoCompleteTextView":
         position: 50
         title: "RadAutoCompleteTextView"

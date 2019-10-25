@@ -8,43 +8,67 @@ position: 2
 publish: true
 ---
 
-# RadChart Getting Started
-In this article, you will learn to get started with Telerik Chart for NativeScript: how to initialize the chart, how to create the data series and how to use the different axes.
+# Chart Getting Started
 
-## Installation
+In this article, you will learn to start using NativeScript UI Chart: how to initialize the chart, how to create the data series and how to use the different axes.
+
+* [Plugin Installation](#plugin-installation)
+* [Data Model](#data-model)
+* [Initialization](#initialization)
+* [References](#references)
+
+## Plugin Installation
+
 Run the following command to add the plugin to your application:
 
 ```
 tns plugin add nativescript-ui-chart
 ```
 
-## DataModel
-Let's start with the DataModel that we will use for our RadChart instance. We will create a basic Data Model that will contain a collection of objects, which will have two properties that will be used by the chart to provide intuitive data visualization.
+## Data Model
+
+Let's start with the DataModel that we will use for our Chart instance. We will create a basic Data Model that will contain a collection of objects, which will have two properties that will be used by the chart to provide intuitive data visualization.
+
+#### Example 1: Define a source with data
 
 <snippet id='categorical-source'/>
 
 ## Initialization
-We will start by creating a new page where we will put the RadChart instance. First we will need to ensure that the Chart will be able to show any data, so we will create a page loaded event handler that will set the page's binding context.  
 
-Then, in order to add a {% typedoc_link classes:RadCartesianChart %} instance in a page of your application, you need to define the following XML namespace:
+Now we can create a new page where we will put the Chart instance. First we will need to ensure that the Chart will be able to show any data, so we will create a page loaded event handler that will set the page's binding context.
+
+Then, in order to add a chart instance in a page of the application, you need to define the following XML namespace:
 
 - `xmlns:chart="nativescript-ui-chart"`.
 
-The next step is to add the chart to the page. In this case we will use the [RadCartesianChart]({% slug chart-types-cartesian %} "Read more about RadCartesianChart.") type.
+The next step is to add the chart to the page. In this case we will use the **RadCartesianChart** type. For an example with **RadPieChart** you can refer to the PieSeries [article]({% slug chart-series-pie %} "Read more about PieSeries")
 
 > Charts must be put in a parent layout panel that does not require from its children to have their own desired size. You should not therefore put your chart in a `StackLayout` or an auto-sized row within a `GridLayout`.
 
-After adding the chart to the page we need to add the series we will use in order to show the chart. In this case we will use the [LineSeries]({% slug chart-series-line %} "Read more about LineSeries") in combination with a [Categorical]({% slug chart-axes-categorical %} "Read more about Categorical axis.") and a [Linear axes]({% slug chart-axes-linear %} "Read more about Linear axis."). We set the `categoryProperty` of the series to the `Country` property in the objects from our data model and the `valueProperty` to the `Amount` property.
+After adding the chart to the page we need to add the series we will use in order to show the chart. In this case we will use the [BarSeries]({% slug chart-series-bar %} "Read more about BarSeries") in combination with a [Categorical axis]({% slug chart-axes-categorical %} "Read more about Categorical axis.") and a [Linear axis]({% slug chart-axes-linear %} "Read more about Linear axis."). We set the `categoryProperty` of the series to the `Country` property in the objects from our data model and the `valueProperty` to the `Amount` property.
 Then we set the `horizontalAxis` to an instance of a `CategoricalAxis` and the `verticalAxis` to an instance of a `LinearAxis`.
 
-<snippet id='line-series'/>
+#### Example 2: Add chart to page's markup
 
-This will produce a page showing a Chart that will look like:
+<snippet id='bar-series'/>
 
-![TelerikUI-Chart-Getting-Started](../../img/ns_ui/chart-getting-started-android.png "Android")  ![TelerikUI-Chart-Getting-Started](../../img/ns_ui/chart-getting-started-ios.png "iOS")
+This will produce a page showing a Chart that will look like this:
+
+#### Figure 1: Chart with BarSeries on Android (left) and iOS (right)
+
+![Cartesian chart: Bar series](../../img/ns_ui/bar_series_android.png "Bar series on Android.") ![Cartesian chart: Bar series](../../img/ns_ui/bar_series_ios.png "Bar series on iOS.")
 
 ## References
-Want to see more examples using **RadCartesianChart**?
-Check our SDK examples repository on GitHub. You will find this and a lot more practical examples with NativeScript UI.
 
-* [Chart Examples](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples)
+Want to see this scenario in action?
+Check our [SDK Examples](https://github.com/NativeScript/nativescript-ui-samples) repository on GitHub. You will find this and many other practical examples with NativeScript UI.
+
+Examples used in this article:
+
+* [Chart Bar Series Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples/series/bar)
+
+Related articles you might find useful:
+
+* [**Bar Series**]({% slug chart-series-bar %})
+* [**Line Series**]({% slug chart-series-line %})
+* [**Axes Overview**]({% slug chart-axes-overview %})
