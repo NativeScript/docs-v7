@@ -12,6 +12,10 @@ publish: true
 
 The NativeScript UI Chart is a charting component designed for the mobile environment. It offers great performance in loading time, drawing capabilities and real-time updates. Its intuitive object model and public API allow you to easily setup complex chart objects and integrate them into your application. The plugin provides two views that can be placed in a NativeScript layout - {% typedoc_link classes:RadCartesianChart %} - used to visualize (or plot) data on a cartesian coordinate system and {% typedoc_link classes:RadPieChart %} - used to visualize data in a way that resembles slices of a pie. An intuitive data binding mechanism transforms the raw data to appropriate data points. The plugin is distributed through the **nativescript-ui-chart** package on npmjs.
 
+#### Figure 1: Some of the available chart series - LineSeries (left), DonutSeries (right) 
+
+![NativeScriptUI-Chart-Overview-LineSeries](../../img/ns_ui/chart-css-line-01-ios.png "Line Series in Chart for iOS") ![NativeScriptUI-Chart-Overview-DonutSeries](../../img/ns_ui/chart-css-donut-01-ios.png "Donut Series in Chart for iOS")
+
 ## Getting Started
 
 [This article]({% slug chart-getting-started-angular %} "Chart Getting Started") contains the basic steps to start using the nativescript-ui-chart plugin - how to create a list of items and visualize them with one of the available chart series and appropriate axes.

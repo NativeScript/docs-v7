@@ -13,6 +13,7 @@ publish: true
 If you followed the [axes overview]({% slug chart-axes-overview-angular %} "Chart Axes Overview") section, you know what type of axis is most suitable for the chart you need to created. This article will show you how to change the style of these axes including their lines, ticks and labels. 
 
 * [Using Axis Properties](#using-axis-properties)
+* [Styling with CSS](#styling-with-css)
 * [Styling Axis Labels](#styling-axis-labels)
 * [References](#references)
 
@@ -49,6 +50,27 @@ This is how the chart looks like now:
 #### Figure 1: Axis styles on Android (left) and iOS (right)
 
 ![Axis styling](../../../img/ns_ui/axis_styling_android.png "Android") ![Axis styling](../../../img/ns_ui/axis_styling_ios.png "iOS")
+
+## Styling with CSS
+
+All of the above properties can also be applied through [css](https://docs.nativescript.org/angular/ui/styling). Here's how to apply the styles from the previous example through CSS:
+
+#### Example 2: Apply axis styles through css
+```CSS
+LinearAxis {
+    label-text-color: green;
+    line-hidden: false;
+    label-size: 10;
+    line-thickness: 3;
+    line-color: green;
+}
+CategoricalAxis {
+    label-text-color: #cb4b16;
+    label-size: 10;
+    line-thickness: 3;
+    line-color: red;
+}
+```
 
 ## Styling Axis Labels
 

@@ -13,6 +13,7 @@ publish: true
 If you followed the [getting started]({% slug chart-getting-started-angular %} "Chart Getting Started") article, you now know how to create a chart and add it to a NativeScript page. In this article, you will learn how to control the series labels and customize their appearance. All series have their default labels. In order to display them, you simply need to set the showLabels property of the series to `true`.
 
 * [Styling with Label Style](#styling-with-label-style)
+* [Styling with CSS](#styling-with-css)
 * [References](#references)
 
 ## Styling with Label Style
@@ -40,10 +41,40 @@ This is how the chart looks like now:
 
 ![Axis styling](../../../img/ns_ui//labels_styling_android.png "Labels Styling on Android") ![Axis styling](../../../img/ns_ui//labels_styling_ios.png "Labels Styling on iOS")
 
+## Styling with CSS
+
+Another option to style all of the labels for the series of a chart is to use the label's CSS type selector - **ChartSeriesLabel**. Here's the list of values that are supported: 
+* **color** - The color used for the text of the labels.
+* **background-color** - The color used for the background of the label.
+* **border-color** - The color used for the background of the label. Note that the labels only support a single value that is applied for the border of its four sides.
+* **border-width** - The width used for the background of the label. Note that the labels only support a single value that is applied for the border of its four sides.
+* **margin** - A single numeric value representing the device independent pixels between the label and the related data point.
+* **padding** - The space between the label's text and its border.
+* **font**-related properties (font-size, font-family, etc.)
+* **format** -  The format used to display the series' labels. For example to format values to one symbol after decimal point and append the text `seconds`, you can use the following format: `%.1f seconds`.
+
+Here's how to apply the styles from the previous example through CSS:
+
+#### Example 2: Apply series label styles through css
+
+```CSS
+ChartSeriesLabel {
+    margin: 10;
+    font-weight: bold;
+    background-color: #60B3FC;
+    font-size: 10;
+    color: white;
+}
+```
+
 ## References
 
 Want to see this scenario in action?
 Check our [SDK Examples](https://github.com/NativeScript/nativescript-ui-samples-angular) repository on GitHub. You will find this and many other practical examples with NativeScript UI.
+
+Examples used in this article:
+
+* [Bar CSS Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/chart/app/examples/css)
 
 Related articles you might find useful:
 

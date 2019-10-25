@@ -46,7 +46,7 @@ The axes support panning and zooming. [This article]({% slug chart-axes-pan-and-
 
 ## Styling
 
-[This article]({% slug chart-axes-styling-angular %} "Chart Axes Styling") contains more information about how to use the axis' properties to customize their appearance.
+[This article]({% slug chart-axes-styling-angular %} "Chart Axes Styling") contains more information about how to use CSS or the axis' properties to customize their appearance.
 
 ## Axes Labels
 

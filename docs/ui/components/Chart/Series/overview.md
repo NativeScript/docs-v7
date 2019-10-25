@@ -64,17 +64,37 @@ The **ChartSeries** is the base class for all series and provides the following 
 ### CategoricalSeries Presenting Discrete Data
 Some of the **CategoricalSeries** are generally used to display relation between values in discrete categories, but they can also be used to visualize change over a period of time. These series are [BarSeries]({% slug chart-series-bar %} "Chart BarSeries"), [RangeBarSeries]({% slug chart-series-range-bar %} "Chart RangeBarSeries"), [BubbleSeries]({% slug chart-series-bubble %} "Chart BubbleSeries").
 
+#### Figure 1: Categorical Chart with discrete data on Android (left) and iOS (right)
+
+![Chart series](../../../img/ns_ui/chart-css-bar-01-android.png "Discrete Data on Android.") ![Chart series](../../../img/ns_ui/chart-css-bar-01-ios.png "Discrete Data on iOS.")
+
 ### CategoricalSeries Presenting Continuous Data
 Some of the **CategoricalSeries** are generally used to display how values change over a period of time, but they can also be used to connect the values in discrete categories. These series are [LineSeries]({% slug chart-series-line %} "Chart LineSeries"), [SplineSeries]({% slug chart-series-spline %} "Chart SplineSeries"), [AreaSeries]({% slug chart-series-area %} "Chart AreaSeries"), [SplineAreaSeries]({% slug chart-series-spline-area %} "Chart SplineAreaSeries").
+
+#### Figure 2: Categorical Chart with continuous data on Android (left) and iOS (right)
+
+![Chart series](../../../img/ns_ui/chart-css-line-01-android.png "Continuous Data on Android.") ![Chart series](../../../img/ns_ui/chart-css-line-01-ios.png "Continuous Data on iOS.")
 
 ### CategoricalSeries Presenting Financial Data
 Some of the **CategoricalSeries** are used to display financial data, such as stock prices, etc. These series are [OhlcSeries]({% slug chart-series-ohlc %} "Chart OhlcSeries") and [CandlesctickSeries]({% slug chart-series-candlestick %} "Chart CandlesctickSeries").
 
+#### Figure 3: Categorical Chart with financial data on Android (left) and iOS (right)
+
+![Chart series](../../../img/ns_ui/chart-css-candlestick-01-android.png "Financial Data on Android.") ![Chart series](../../../img/ns_ui/chart-css-candlestick-01-ios.png "Financial Data on iOS.")
+
 ### CartesianSeries Presenting Two Continous Variables
 **ScatterSeries** is a subtype **CartesianSeries**. They require that the **RadCartesianChart** they are added to, has two axes that are value axes. These series are [ScatterSeries]({% slug chart-series-scatter %} "Chart ScatterSeries") and [ScatterBubbleSeries]({% slug chart-series-scatter-bubble %} "Chart ScatterBubbleSeries").
 
+#### Figure 4: Scatter Chart on Android (left) and iOS (right)
+
+![Chart series](../../../img/ns_ui/chart-css-scatter-01-android.png "Scatter Chart on Android.") ![Chart series](../../../img/ns_ui/chart-css-scatter-01-ios.png "Scatter Chart on iOS.")
+
 ### ChartSeries Presenting Numerical Proportion
 **CartesianSeries** is a subtype of **ChartSeries** and draw the data from the source in a way that resembles pie slices. They can be used only with **RadPieChart**. They are generally useful to display how some value relates to the whole value. These series are [PieSeries]({% slug chart-series-pie %} "Chart PieSeries") and [DonutSeries]({% slug chart-series-donut %} "Chart DonutSeries").
+
+#### Figure 5: Donut Chart on Android (left) and iOS (right)
+
+![Chart series](../../../img/ns_ui/chart-css-donut-01-android.png "Donut Chart on Android.") ![Chart series](../../../img/ns_ui/chart-css-donut-01-ios.png "Donut Chart on iOS.")
 
 ## Selection
 
@@ -86,7 +106,7 @@ When more than one series is added to a RadCartesianChart they can be stacked to
 
 ## Styling
 
-[This article]({% slug chart-series-styling %} "Chart Series Styling") contains more information about how to use palettes to customize the series' appearance.
+[This article]({% slug chart-series-styling %} "Chart Series Styling") contains more information about how to use CSS or palettes to customize the series' appearance.
 
 ## Series Labels
 
@@ -96,6 +116,14 @@ The drawing of labels can be controlled through axis' `showLabels` property. Mor
 
 Want to see this scenario in action?
 Check our [SDK Examples](https://github.com/NativeScript/nativescript-ui-samples) repository on GitHub. You will find this and many other practical examples with NativeScript UI.
+
+Examples used in this article:
+
+* [Bar CSS Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples/css)
+* [Line CSS Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples/css)
+* [Candlestick CSS Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples/css)
+* [Scatter CSS Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples/css)
+* [Donut CSS Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples/css)
 
 Related articles you might find useful:
 

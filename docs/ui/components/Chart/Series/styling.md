@@ -12,6 +12,8 @@ publish: true
 
 If you followed the [series overview]({% slug chart-series-overview %} "Chart Series Overview") section, you know what type of series is most suitable for the chart you need to create. This article will show you how to change the style of these series including their stroke, fill and labels. 
 
+* [Using Series Properties](#using-series-properties)
+* [Styling with CSS](#styling-with-css)
 * [Styling Series Labels](#styling-series-labels)
 * [Styling with Palettes](#styling-with-palettes)
 * [Styling Selected State](#styling-selected-state)
@@ -19,13 +21,66 @@ If you followed the [series overview]({% slug chart-series-overview %} "Chart Se
 * [References](#references)
 
 
+## Using Series Properties
+
+The chart has its predefined palettes that provide an automatic selection of colors for the different series that are used. When you need to change these colors you can set the corresponding properties of each series:
+
+- **fillColor** - Determines the color used to fill the series. Applicable for series which use only one color for fill: BarSeries, RangeBarSeries, BubbleSeries, AreaSeries, SplineAreaSeries, ScatterSeries, ScatterBubbleSeries
+- **strokeColor** - Determines the color used to fill the series. Applicable for series which use only one color for stroke:  BarSeries, RangeBarSeries, BubbleSeries, LineSeries, SplineSeries, AreaSeries, SplineAreaSeries, ScatterSeries, ScatterBubbleSeries
+- **strokeWidth** - Determines the color used to fill the series. Applicable for all series
+- **fillColors** - Determines the color used to fill the series. Applicable for series which use more than one color for fill: CandlestickSeries, PieSeries, DonutSeries
+- **strokeColors** - Determines the color used to fill the series. Applicable for series which use more than one color for fill: OhlcSeries, CandlestickSeries, PieSeries, DonutSeries
+
+> Note that the PieSeries and DonutSeries will draw their slices by using consecutive colors from the provided list, while the OhlcSeries and CandlestickSeries will only use the first two colors from the provided list. The first to draw the bullish points (whose close value is higher than their open value) and the second to draw the bearish points (whose close value is lower than their open value).
+
+
+## Styling with CSS
+
+All of the above properties can also be applied through [css](https://docs.nativescript.org/ui/styling). Here's an example to style a chart with BarSeries:
+
+#### Example 1: Apply BarSeries styles through CSS
+```CSS
+BarSeries {
+    fill-color: #C8A1FF;
+    stroke-color: white;
+    stroke-width: 4;
+}
+
+BarSeries[index=1] {
+    fill-color: #6215EE;
+}
+```
+
+Here's how the chart from this example looks:
+
+#### Figure 1: Bar Series styles on Android (left) and iOS (right)
+
+![Chart styling: Candlestick series](../../../img/ns_ui/chart-css-bar-01-android.png "Android") ![Chart styling: Candlestick series](../../../img/ns_ui/chart-css-bar-01-ios.png "iOS")
+
+Here's another example that demonstrate how to apply a list of colors to a chart with CandlestickSeries:
+
+#### Example 2: Apply CandlestickSeries styles through CSS
+```CSS
+CandlestickSeries {
+    stroke-width: 1;
+    stroke-colors: #464D57,#464D57;
+    fill-colors: #00B061,#FF3030;
+}
+```
+
+Here's how the chart from this example looks:
+
+#### Figure 2: Candlestick Series styles on Android (left) and iOS (right)
+
+![Chart styling: Candlestick series](../../../img/ns_ui/chart-css-candlestick-01-android.png "Android") ![Chart styling: Candlestick series](../../../img/ns_ui/chart-css-candlestick-01-ios.png "iOS")
+
 ## Styling Series Labels
 
 Information about styling the labels of the series in NativeScript UI Chart is available [here]({% slug chart-series-labels %} "Chart Series Labels").
 
 ## Styling with Palettes
 
-You can style the chart series is to use Palettes. Depending on the count of series you have defined in your chart, you can add as many palettes as needed and change several visual parameters of the series. A single palette defines an *entries* property which contains {% typedoc_link classes:PaletteEntry %} instances. A **`PaletteEntry`** is essentially a property bag which holds the values that are used to style the associated series. The following properties are exposed by a `PaletteEntry` object:
+Another option for styling of the chart series is to use Palettes. Depending on the count of series you have defined in your chart, you can add as many palettes as needed and change several visual parameters of the series. A single palette defines an *entries* property which contains {% typedoc_link classes:PaletteEntry %} instances. A **`PaletteEntry`** is essentially a property bag which holds the values that are used to style the associated series. The following properties are exposed by a `PaletteEntry` object:
 
 - {% typedoc_link classes:PaletteEntry,member:fillColor%}
 - {% typedoc_link classes:PaletteEntry,member:strokeColor%}
@@ -79,6 +134,8 @@ Want to see this scenario in action?
 Check our [SDK Examples](https://github.com/NativeScript/nativescript-ui-samples) repository on GitHub. You will find this and many other practical examples with NativeScript UI.
 
 * [Styling Examples](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples/styling)
+* [Bar CSS Examples](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples/css)
+* [Candlestick CSS Examples](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples/css)
 
 Related articles you might find useful:
 
