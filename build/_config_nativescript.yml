@@ -30,6 +30,14 @@ navigation:
     "ui/components/Chart":
         position: 6000
         title: "RadChart"
+    "ui/components/Chart/Series":
+        position: 3
+    "ui/components/Chart/Series/Types":
+        position: 2
+    "ui/components/Chart/Axes":
+        position: 4
+    "ui/components/Chart/Axes/Types":
+        position: 2
     "ui/components/AutoCompleteTextView":
         position: 7000
         title: "RadAutoCompleteTextView"

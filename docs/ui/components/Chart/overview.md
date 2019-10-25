@@ -8,13 +8,38 @@ position: 1
 publish: true
 ---
 
-# RadChart Overview
-`RadChart` for NativeScript is a charting component that has been designed for the mobile environment. It offers great performance in loading time, drawing capabilities and real-time updates. Its intuitive object model and public API allow you to easily setup complex chart objects and integrate them into your application. The control supports different chart types (and series) organized in hierarchies, depending on the coordinate system, used to plot the data points — for example Cartesian ({% typedoc_link classes:RadCartesianChart %}) and radial ({% typedoc_link classes:RadPieChart %}) coordinate systems.
+# Chart Overview
 
-A charting component in general is used to visualize (or plot) some data in a human-readable way through different representations like lines, areas, bars, pies, etc. Each series has a collection of data points—the data equivalent of a 2D point—and knows how to visualize them. Different series types may process certain types of data points—for example categorical series may contain categorical data points. An intuitive data binding mechanism transforms the raw data to appropriate data points depending on the chosen series.
+The NativeScript UI Chart is a charting component designed for the mobile environment. It offers great performance in loading time, drawing capabilities and real-time updates. Its intuitive object model and public API allow you to easily setup complex chart objects and integrate them into your application. The plugin provides two views that can be placed in a NativeScript layout - {% typedoc_link classes:RadCartesianChart %} - used to visualize (or plot) data on a cartesian coordinate system and {% typedoc_link classes:RadPieChart %} - used to visualize data in a way that resembles slices of a pie. An intuitive data binding mechanism transforms the raw data to appropriate data points. The plugin is distributed through the **nativescript-ui-chart** package on npmjs.
 
-## RadChart Types
-Depending on the coordinate system that you want to use for visualization of the data points, you can use the following chart types:
+#### Figure 1: Some of the available chart series - LineSeries (left), DonutSeries (right) 
 
-- [RadCartesianChart]({% slug chart-types-cartesian %} "Read more about RadCartesianChart"): As the name hints, this concrete chart control uses the Cartesian coordinate system to plot the data points in its chart series. The X and Y axes define how each point’s coordinates in the plot area are calculated.
-- [RadPieChart]({% slug chart-types-pie %} "Read more about RadPieChart"): This concrete chart control visualizes its data points using radial coordinate system. Each data point is represented as a slice from a pie. The ratio between the space consumed by each slice and the space consumed by the whole chart is the same as the ratio between the value of the data point that it represents and the total value of all data points in the series.
+![NativeScriptUI-Chart-Overview-LineSeries](../../img/ns_ui/chart-css-line-01-ios.png "Line Series in Chart for iOS") ![NativeScriptUI-Chart-Overview-DonutSeries](../../img/ns_ui/chart-css-donut-01-ios.png "Donut Series in Chart for iOS")
+
+## Getting Started
+
+[This article]({% slug chart-getting-started %} "Chart Getting Started") contains the basic steps to start using the nativescript-ui-chart plugin - how to create a list of items and visualize them with one of the available chart series and appropriate axes.
+
+## Series
+
+The series are one of the main components of the chart and determine how the data will be presented. The chart supports over 10 different series types, some of the most popular being BarSeries, LineSeries and PieSeries. [This article]({% slug chart-series-overview %} "Chart Series Overview") contains an overview of the different types and suggests the most appropriate depending on the data that has to be presented.
+
+## Axes
+
+When using Series that plot the data in Cartesian coordinates, the **RadCartesianChart** has to be used. It also requires two axes that determine what the horizontal and vertical coordinates represent. More information about the available axis types and examples for their usage is available in the [axes article]({% slug chart-axes-overview %} "Chart Axes Overview").
+
+## Grid
+
+The RadCartesianChart can draw lines and stripes (the fill between the lines) behind the visualized series to illustrate better how the data relates to the values in the axes. This is controlled by the **RadCartesianChartGrid** which is demonstrated in [this article]({% slug chart-grid %} "Chart Grid").
+
+## Annotations
+
+The RadCartesianChart can also show linear and rectangular shapes over its series in order to annotate specific values on the chart. This can be achieved by adding instances of **ChartGridLineAnnotation** and/or **ChartPlotBandAnnotation**. These types are demonstrated in [this article]({% slug chart-annotations %} "Chart Annotations").
+
+## Trackball
+
+The trackball is another feature availalbe for RadCartesianChart. When it is enabled users are able to display information about a point on the chart by hold and drag gesture. More information is available in [this article]({% slug chart-trackball %} "Chart Trackball").
+
+## Legend
+
+Both RadCartesianChart and RadPieChart support adding a **RadLegendView** which will contain information about the presented series. In the context of RadCartesianChart, the legend will contain information about the different series, while in the context of RadPieChart it will contain information about the different slices for the presented series. More information is available in [this article]({% slug chart-legend %} "Chart Legend").
