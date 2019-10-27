@@ -24,7 +24,7 @@ NativeScript consists of several parts that ideally, would get released at their
 [NativeScript Android Runtime Changelog](https://github.com/NativeScript/android-runtime/releases)
 
 ## Professional UI Components - NativeScript UI
-Since version 3.5.0, `nativescript-pro-ui` is deperecated and each component has been moved to its [own plugin](https://www.nativescript.org/blog/professional-components-from-nativescript-ui-the-big-breakup). Below are the links for the release notes of each of the plugins. In case you need to migrate, read the relevant [migration documentation]({% slug nativescript-ui-migration %}).
+Since version 3.5.0, `nativescript-pro-ui` is deprecated and each component has been moved to its [own plugin](https://www.nativescript.org/blog/professional-components-from-nativescript-ui-the-big-breakup). Below are the links for the release notes of each of the plugins. In case you need to migrate, read the relevant [migration documentation](/5-4/ui/professional-ui-components/migration).
 
 -  [AutoComplete](https://github.com/NativeScript/nativescript-ui-feedback/blob/master/releases/autocomplete.md)
 -  [Calendar](https://github.com/NativeScript/nativescript-ui-feedback/blob/master/releases/calendar.md)
