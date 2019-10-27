@@ -29,7 +29,3 @@ It is the command-line interface that lets you create, build, and run apps using
 ## NativeScript Plugins
 
 The NativeScript plugins are building blocks that encapsulate some functionality and help developers build apps faster (just like the NativeScript Core Modules, which is a plugin). Most are community-built, written in TypeScript/JavaScript. Some can include native libraries, which are called from the TS/JS code thanks to the Runtimes. You can find more information in the [Plugins documentation](../plugins/plugins.md).
-
-## See also
-* [How NativeScript Works article on developer.telerik.com](https://developer.telerik.com/featured/nativescript-works/)
-
