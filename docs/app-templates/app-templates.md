@@ -56,7 +56,7 @@ Github repo: https://github.com/NativeScript/nativescript-app-templates/tree/mas
 Github repo: https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-drawer-navigation-ng
 {% endangular %}
 
-This template contains a preconfigured {% nativescript %}[SideDrawer]({% slug sidedrawer-overview %}){% endnativescript %}{% angular %}[SideDrawer]({% slug sidedrawer-overview-angular %}){% endangular %} component from the [Progress NativeScript UI]({% slug ns-ui-overview %}) suite with several pages.
+This template contains a preconfigured {% nativescript %}[SideDrawer]({% slug sidedrawer-overview %}){% endnativescript %}{% angular %}[SideDrawer]({% slug sidedrawer-overview-angular %}){% endangular %} component from [NativeScript UI's built-in components]({% slug components %}) with several pages.
 
 ## Tabs
 
