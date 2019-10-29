@@ -12,7 +12,7 @@ Home of the NativeScript documentation content that lives at <http://docs.native
 
 ## Contributing
 
-The NativeScript documentation is completely open source and we love contributions. Whether you want to fix a typo, or write an entire article, the NativeScript documentation is a great way to get started contributing to an open source project.
+The NativeScript documentation is completely open-source and we love contributions. Whether you want to fix a typo or write an entire article, the NativeScript documentation is a great way to get started contributing to an open-source project.
 
 Don’t know where to start? Check out the [list of issues with the “help wanted” label](https://github.com/NativeScript/docs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22). New to git or GitHub? [Join our community Slack chat](https://www.nativescript.org/slack-invitation-form) and we’ll be happy to help get you up and running.
 
@@ -35,7 +35,7 @@ No, my friend. There are many other code repositories in the NativeScript world 
 You can go check them out and help to expand their docs, add plugins to it and even fix bugs.
 
 ## About Jekyll
-This documentation is built using [Jekyll](https://jekyllrb.com/docs/home/). More info on how to control the template, table of content and the project structure in general can be found in the [Build README](build/README.md)
+This documentation is built using [Jekyll](https://jekyllrb.com/docs/home/). More info on how to control the template, table of content and the project structure, in general, can be found in the [Build README](build/README.md)
 
 ## Configuration
 
@@ -45,7 +45,7 @@ Most of the content in this repository is shared between the two environments, b
 
 1. If you would like a page to appear in a single environment, add an `environment: angular` or `environment: nativescript` property to that page's front matter. Pages marked with an `environment` property will appear in a single environment, and pages _not_ marked with an `environment` property will be shared across all environments.
 
-2. If you have a page that should be appear in both environments but has different content for certain sections, you can use our built-in environment block tags. The blocks are  named `angular` and `nativescript`, respectively, and can be used like this:
+2. If you have a page that should appear in both environments but has different content for certain sections, you can use our built-in environment block tags. The blocks are  named `angular` and `nativescript`, respectively, and can be used like this:
 
 ```md
 {% nativescript %}This paragraph appears only in the vanilla NativeScript documentation{% endnativescript %}
@@ -108,7 +108,7 @@ Then build the docker image by using the following command from the `ns-docs` fo
 sudo docker build -t ns-docs:1.0 docs/build
 ```
 
-> **NOTE**: If you received some unauthorized error, make sure you are logged into docker from the CLI. Just execute `docker login` and follow the instruction. One thing to have in mind is that docker username is your email, but docker ID is what you see on top right when you login to https://hub.docker.com. When executing `docker login` you need to enter your docker ID.
+> **NOTE**: If you received some unauthorized error, make sure you are logged into docker from the CLI. Just execute `docker login` and follow the instruction. One thing to have in mind is that docker username is your email, but docker ID is what you see on the top right when you log in to https://hub.docker.com. When executing `docker login` you need to enter your Docker ID.
 
 ### Building the documentation
 
