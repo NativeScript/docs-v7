@@ -33,11 +33,20 @@ You can declare the validators in the JSON Metadata through the `validators` key
 
 ## Validators List
 
-[This article]({% slug dataform-validation-list-angular %} "RadDataForm validators") contains the list with all built-in validators that you can use with {% typedoc_link classes:RadDataForm %} for NativeScript.
+Here's the list with supported validators:
+
+* **TKNonEmptyValidator**
+* **TKRangeValidator**
+* **TKMinimumLengthValidator**
+* **TKMaximumLengthValidator**
+* **TKEmailValidator**
+* **TKPhoneValidator**
+* **TKIsTrueValidator**
+* **TKRegExValidator**
 
 ## Validation Modes
 
-You can choose when the validation of the changes happens by changing the data form's {% typedoc_link classes:RadDataForm,member:validationMode %} property.
+You can choose when the validation of the changes happens by changing the data form's {% typedoc_link classes:RadDataForm,member:validationMode %} property. It accepts values from the {% typedoc_link enums:DataFormValidationMode %} enumeration.
 
 ```
 import { DataFormValidationMode } from 'nativescript-ui-dataform';
@@ -120,7 +129,10 @@ export default {
 };
 ```
 
-You can read more about the different modes in [this article]({% slug dataform-validation-modes-angular %} "RadDataForm validation modes").
+You should have in mind that the {% typedoc_link classes:RadDataForm,member:validationMode %} property is dependent on the value of the {% typedoc_link classes:RadDataForm,member:commitMode %} property, meaning that {% typedoc_link classes:RadDataForm %} will not let you commit property changes before you validate them. In other words:
+* If `commitMode` is {% typedoc_link enums:DataFormCommitMode,member:Immediate %}, validation is also immediate disregarding the value of the `validationMode` property
+* If `commitMode` is {% typedoc_link enums:DataFormCommitMode,member:OnLostFocus %}, validation is immediate, if `validationMode` is {% typedoc_link enums:DataFormValidationMode,member:Immediate %}, or {% typedoc_link enums:DataFormValidationMode,member:OnLostFocus %} otherwise
+* If `commitMode` is {% typedoc_link enums:DataFormCommitMode,member:Manual %}, validation will follow the value of `validationMode`.
 
 ## Validation Events
 
@@ -128,11 +140,14 @@ You can use the validation events to get notified when {% typedoc_link classes:R
 
 <snippet id='dataform-validation-event-vue'/>
 
-You can read more about the validation events in [this article]({% slug dataform-validation-events-angular %} "RadDataForm validation events").
+There are two validation events that you can use to get notified when a property in {% typedoc_link classes:RadDataForm %} gets validated:
+
+* **propertyValidate**: This event is fired while the value is validating and allows you to interfere and change the validation result.
+* **propertyValidated**: This event is fired after the validation has finished and you can use it to check the final result from the validation.
 
 ## References
 
 Related articles you might find useful:
 
-* [**Validators List**]({% slug dataform-validation-list-angular %})
-* [**Validation Modes**]({% slug dataform-validation-modes-angular %})
+* [**Editors List**]({% slug dataform-editors-list-vue %})
+* [**Value Providers**]({% slug dataform-editors-providers-vue %})

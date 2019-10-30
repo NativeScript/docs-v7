@@ -44,10 +44,10 @@ Check our SDK examples repo on GitHub. You will find this and many other practic
 
 Examples used in this article:
 
-* [Candlestick Series Example](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/chart/app/examples/series)
+* [Candlestick Series Example](https://github.com/NativeScript/nativescript-ui-samples-vue/tree/master/chart/app/examples/series)
 
 Related articles you might find useful:
 
-* [**Bar Series**]({% slug chart-series-bar-angular %})
-* [**Range Bar Series**]({% slug chart-series-range-bar-angular %})
-* [**Ohlc Series**]({% slug chart-series-ohlc-angular %})
+* [**Bar Series**]({% slug chart-series-bar-vue %})
+* [**Range Bar Series**]({% slug chart-series-range-bar-vue %})
+* [**Ohlc Series**]({% slug chart-series-ohlc-vue %})

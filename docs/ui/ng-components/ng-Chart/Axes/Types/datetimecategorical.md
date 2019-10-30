@@ -18,7 +18,7 @@ If you followed the [getting started]({% slug chart-getting-started-angular %} "
 
 ## Getting Started
 
-When [RadCartesianChart]({% slug chart-types-cartesian %} "Read more about RadCartesianChart") visualizes {% typedoc_link classes:CategoricalSeries %}, it needs an axis that can represent the different categories. The {% typedoc_link classes:CategoricalAxis%} is used to displays a range of categories. Categories are built depending on the **Category** value of each **CategoricalDataPoint** present in the owning **CategoricalSeries** chart series. The axis is divided into discrete slots and each data point is visualized in the slot corresponding to its categorical value.
+When {% typedoc_link classes:RadCartesianChart %} visualizes {% typedoc_link classes:CategoricalSeries %}, it needs an axis that can represent the different categories. The {% typedoc_link classes:CategoricalAxis%} is used to displays a range of categories. Categories are built depending on the **Category** value of each **CategoricalDataPoint** present in the owning **CategoricalSeries** chart series. The axis is divided into discrete slots and each data point is visualized in the slot corresponding to its categorical value.
 
 The {% typedoc_link classes:DateTimeCategoricalAxis %} is a special axis that works with the CategoricalSeries and expects each CategoricalDataPoint to provide a valid date time value as its Category. Once built, the groups are sorted in chronological order.
 

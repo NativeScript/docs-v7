@@ -58,4 +58,4 @@ Related articles you might find useful:
 
 * [**Series Overview**]({% slug chart-series-overview-vue %})
 * [**Axes Overview**]({% slug chart-axes-overview-vue %})
-* [**Selection**]({% slug chart-features-behaviors-selection-vue %})
+* [**Selection**]({% slug chart-series-selection-vue %})

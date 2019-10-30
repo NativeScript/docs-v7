@@ -18,7 +18,7 @@ If you followed the [getting started]({% slug chart-getting-started-angular %} "
 
 ## Getting Started
 
-When [RadCartesianChart]({% slug chart-types-cartesian %} "Read more about RadCartesianChart") visualizes **CategoricalSeries**, it needs an axis that can represent the different categories. The {% typedoc_link classes:CategoricalAxis %} is used to displays a range of categories. Categories are built depending on the **Category** value of the **CategoricalSeries**'s items. The axis is divided into discrete slots and each data point is visualized in the slot corresponding to its categorical value.
+When {% typedoc_link classes:RadCartesianChart %} visualizes **CategoricalSeries**, it needs an axis that can represent the different categories. The {% typedoc_link classes:CategoricalAxis %} is used to displays a range of categories. Categories are built depending on the **Category** value of the **CategoricalSeries**'s items. The axis is divided into discrete slots and each data point is visualized in the slot corresponding to its categorical value.
 
 #### Example 1: Categorical Axis
 

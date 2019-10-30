@@ -59,4 +59,4 @@ Related articles you might find useful:
 
 * [**Series Overview**]({% slug chart-series-overview-angular %})
 * [**Axes Overview**]({% slug chart-axes-overview-angular %})
-* [**Selection**]({% slug chart-features-behaviors-selection-angular %})
+* [**Selection**]({% slug chart-series-selection-angular %})
