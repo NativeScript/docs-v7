@@ -40,7 +40,7 @@ Now, you can use all the chart components and directives, as the `RadCartesianCh
 
 #### Figure 1: Chart with BarSeries on Android (left) and iOS (right)
 
-![Cartesian chart: Bar series](../../img/ns_ui/bar_series_android.png "Bar series on Android.") ![Cartesian chart: Bar series](../../img/ns_ui/bar_series_ios.png "Bar series on iOS.")
+![Cartesian chart: Bar series](../../../ui/img/ns_ui/bar_series_android.png "Bar series on Android.") ![Cartesian chart: Bar series](../../../ui/img/ns_ui/bar_series_ios.png "Bar series on iOS.")
 
 ## References
 

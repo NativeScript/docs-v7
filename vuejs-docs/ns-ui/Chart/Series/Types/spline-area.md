@@ -35,7 +35,7 @@ To illustrate this setup, let's create an example. Just like with all vue 'pages
 
 #### Figure 1: Chart with SplineAreaSeries on Android (left) and iOS (right)
 
-![Cartesian chart: Spline Area series](../../../../../docs/ui/img/ns_ui/chart_series_spline_area_android.png "Spline Area series on Android.") ![Cartesian chart: Spline Area series](../../../../../docs/ui/img/ns_ui/chart_series_spline_area_ios.png "Spline Area series on iOS.")
+![Cartesian chart: Spline Area series](../../../../../ui/img/ns_ui/chart_series_spline_area_android.png "Spline Area series on Android.") ![Cartesian chart: Spline Area series](../../../../../ui/img/ns_ui/chart_series_spline_area_ios.png "Spline Area series on iOS.")
 
 ## References
 

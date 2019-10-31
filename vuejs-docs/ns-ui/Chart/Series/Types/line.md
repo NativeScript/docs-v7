@@ -35,7 +35,7 @@ To illustrate this setup, let's create an example. Just like with all vue 'pages
 
 #### Figure 1: Chart with LineSeries on Android (left) and iOS (right)
 
-![Cartesian chart: Line series](../../../../../docs/ui/img/ns_ui/line_series_android.png "Line series on Android.") ![Cartesian chart: Line series](../../../../../docs/ui/img/ns_ui/line_series_ios.png "Line series on iOS.")
+![Cartesian chart: Line series](../../../../../ui/img/ns_ui/line_series_android.png "Line series on Android.") ![Cartesian chart: Line series](../../../../../ui/img/ns_ui/line_series_ios.png "Line series on iOS.")
 
 ## References
 

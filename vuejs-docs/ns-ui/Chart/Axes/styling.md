@@ -19,7 +19,7 @@ If you followed the [axes overview]({% slug chart-axes-overview-vue %} "Chart Ax
 
 ## Using Axis Properties
 
-Styling the chart axes is done by using the corresponding customization properties exposed by the axes. [All axes]({% slug chart-axes-overview %} "Chart Axes Overview") used in NativeScript UI Chart have the following properties:
+Styling the chart axes is done by using the corresponding customization properties exposed by the axes. [All axes]({% slug chart-axes-overview-vue %} "Chart Axes Overview") used in NativeScript UI Chart have the following properties:
 
 - {% typedoc_link classes:CartesianAxis,member:horizontalLocation%} - Determines the horizontal location of the axis if it is vertical. Can be one of the values of the {% typedoc_link enums:ChartAxisHorizontalLocation %} enum.
 - {% typedoc_link classes:CartesianAxis,member:verticalLocation%} - Determines the vertical location of the axis if it is horizontal. Can be one of the values of the {% typedoc_link enums:ChartAxisVerticalLocation %} enum.
@@ -49,7 +49,7 @@ This is how the chart looks like now:
 
 #### Figure 1: Axis styles on Android (left) and iOS (right)
 
-![Axis styling](../../../../docs/ui/img/ns_ui/axis_styling_android.png "Android") ![Axis styling](../../../../docs/ui/img/ns_ui/axis_styling_ios.png "iOS")
+![Axis styling](../../../../ui/img/ns_ui/axis_styling_android.png "Android") ![Axis styling](../../../../ui/img/ns_ui/axis_styling_ios.png "iOS")
 
 ## Styling with CSS
 

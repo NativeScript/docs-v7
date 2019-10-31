@@ -35,7 +35,7 @@ To illustrate this setup, let's create an example. Just like with all vue 'pages
 
 #### Figure 1: Chart with OhlcSeries on Android (left) and iOS (right)
 
-![Cartesian chart: OHLC series](../../../../../docs/ui/img/ns_ui/ohlc_series_android.png " Ohlc series on Android.") ![Cartesian chart: OHLC series](../../../../../docs/ui/img/ns_ui/ohlc_series_ios.png "Ohlc series on iOS.")
+![Cartesian chart: OHLC series](../../../../../ui/img/ns_ui/ohlc_series_android.png " Ohlc series on Android.") ![Cartesian chart: OHLC series](../../../../../ui/img/ns_ui/ohlc_series_ios.png "Ohlc series on iOS.")
 
 ## References
 

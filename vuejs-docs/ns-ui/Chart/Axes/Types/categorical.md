@@ -18,7 +18,7 @@ If you followed the [getting started]({% slug chart-getting-started-vue %} "Char
 
 ## Getting Started
 
-When [RadCartesianChart]({% slug chart-types-cartesian %} "Read more about RadCartesianChart") visualizes **CategoricalSeries**, it needs an axis that can represent the different categories. The {% typedoc_link classes:CategoricalAxis %} is used to displays a range of categories. Categories are built depending on the **Category** value of the **CategoricalSeries**'s items. The axis is divided into discrete slots and each data point is visualized in the slot corresponding to its categorical value.
+When {% typedoc_link classes:RadCartesianChart %} visualizes {% typedoc_link classes:CategoricalSeries %}, it needs an axis that can represent the different categories. The {% typedoc_link classes:CategoricalAxis %} is used to displays a range of categories. Categories are built depending on the **Category** value of the **CategoricalSeries**'s items. The axis is divided into discrete slots and each data point is visualized in the slot corresponding to its categorical value.
 
 #### Example 1: Categorical Axis
 
@@ -41,7 +41,7 @@ Defines the step at which major ticks are generated. This property also affects 
 
 #### Figure 1: This is how the axis in this example looks like on Android (left) and iOS (right)
 
-![Cartesian chart: Pie series](../../../../../docs/ui/img/ns_ui/categorical_axis_android.png "CategoricalAxis on Android.") ![Cartesian chart: Pie series](../../../../../docs/ui/img/ns_ui/categorical_axis_ios.png "CategoricalAxis on iOS.")
+![Cartesian chart: Pie series](../../../../../ui/img/ns_ui/categorical_axis_android.png "CategoricalAxis on Android.") ![Cartesian chart: Pie series](../../../../../ui/img/ns_ui/categorical_axis_ios.png "CategoricalAxis on iOS.")
 
 ## References
 

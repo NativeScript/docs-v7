@@ -14,7 +14,7 @@ The NativeScript UI Chart is a charting component designed for the mobile enviro
 
 #### Figure 1: Some of the available chart series - LineSeries (left), DonutSeries (right) 
 
-![NativeScriptUI-Chart-Overview-LineSeries](../../../docs/ui/img/ns_ui/chart-css-line-01-ios.png "Line Series in Chart for iOS") ![NativeScriptUI-Chart-Overview-DonutSeries](../../../docs/img/ns_ui/chart-css-donut-01-ios.png "Donut Series in Chart for iOS")
+![NativeScriptUI-Chart-Overview-LineSeries](../../../ui/img/ns_ui/chart-css-line-01-ios.png "Line Series in Chart for iOS") ![NativeScriptUI-Chart-Overview-DonutSeries](../../../ui/img/ns_ui/chart-css-donut-01-ios.png "Donut Series in Chart for iOS")
 
 ## Getting Started
 

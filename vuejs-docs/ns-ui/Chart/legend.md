@@ -26,7 +26,7 @@ To define a legend in your chart you need to use the {% typedoc_link classes:Rad
 
 #### Figure 1: Legend shown in action on Android (left) and iOS (right)
 
-![Chart Legend: Android](../../../docs/ui/img/ns_ui/chart-legend-android.png "Chart Legend: Android") ![Chart Legend: iOS](../../../docs/ui/img/ns_ui/chart-legend-ios.png "Chart Legend: iOS")
+![Chart Legend: Android](../../../ui/img/ns_ui/chart-legend-android.png "Chart Legend: Android") ![Chart Legend: iOS](../../../ui/img/ns_ui/chart-legend-ios.png "Chart Legend: iOS")
 
 The {% typedoc_link classes:RadChartBase,member:legend %} property expects an instance of the {% typedoc_link classes:RadLegendView %} class which exposes several properties that can be used to customize the size, position and offset of the legend:
 

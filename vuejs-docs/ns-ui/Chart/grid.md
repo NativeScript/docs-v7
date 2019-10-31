@@ -45,7 +45,7 @@ To better illustrate the Grid capabilities, let's add the following properties t
 
 #### Figure 1: Chart with a customized grid on Android (left) and iOS (right)
 
-![Axis styling](../../../docs/ui/img/ns_ui/grid_styling_android.png "Grid Styling on Android.") ![Cartesian chart: Bar series](../../../docs/ui/img/ns_ui/grid_styling_ios.png "Grid Styling on iOS.")
+![Axis styling](../../../ui/img/ns_ui/grid_styling_android.png "Grid Styling on Android.") ![Cartesian chart: Bar series](../../../ui/img/ns_ui/grid_styling_ios.png "Grid Styling on iOS.")
 
 ## References
 

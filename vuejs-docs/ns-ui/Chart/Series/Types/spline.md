@@ -35,7 +35,7 @@ To display a Spline Chart, you will need to:
 
 #### Figure 1: Chart with SplineSeries on Android (left) and iOS (right)
 
-![Cartesian chart: Spline series](../../../../../docs/ui/img/ns_ui/spline_series_android.png "Spline series on Android.") ![Cartesian chart: Spline series](../../../../../docs/ui/img/ns_ui/spline_series_ios.png "Spline series on iOS.")
+![Cartesian chart: Spline series](../../../../../ui/img/ns_ui/spline_series_android.png "Spline series on Android.") ![Cartesian chart: Spline series](../../../../../ui/img/ns_ui/spline_series_ios.png "Spline series on iOS.")
 
 ## References
 
