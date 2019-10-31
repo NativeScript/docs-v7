@@ -43,23 +43,6 @@ chrome-devtools://devtools/bundled/inspector.html?experiments=true&ws=localhost:
 ```
 You need to manually copy it in Google Chrome's address bar to start debugging.
 
-### Debug Webpack Builds
-
-With `nativescript-dev-webpack@0.15.0` and above, you can debug your Webpack bundled application.
-
-To debug bundled application on Android execute the following command:
-```Shell
-tns debug android --bundle
-```
-To debug bundled application on iOS execute the following command:
-```Shell
-tns debug ios --bundle
-```
-
-> **Note:** In Chrome DevTools choose the **Source** tab and you will see a project structure with a folder named **webpack://**. Expand the folder and you will find the application source files in the dot folder (" . "). You can start debugging the application by applying breakpoint on your behalf (more in the detailed Chrome Dev Tools article https://docs.nativescript.org/tooling/debugging/chrome-devtools ). The source files of the plugins are located in the **node_modules** folder and can also be debugged on the fly.
-
------
-
 ## Debugger
 Very often you need to reproduce a bug many times to get to the root of the problem. The debugger feature can help you find and diagnose the bugs occurring at runtime using the following techniques:
 - [Pause code with breakpoints](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints#loc) -  Set a breakpoint so that you can pause your code in the middle of its execution. Once your code is paused (_Figure 1_), you can [step through it (_Figure 2_) to investigate the control flow and property values]( https://developers.google.com/web/tools/chrome-devtools/javascript/reference#stepping)
