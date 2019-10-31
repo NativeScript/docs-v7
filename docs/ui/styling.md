@@ -536,8 +536,16 @@ The application root view CSS classes are:
 - `.ns-android`, `.ns-ios` - classes that specify the application platform
 - `.ns-phone`, `.ns-tablet` - classes that specify the device type
 - `.ns-portrait`, `.ns-landscape`, `.ns-unknown` - classes that specify the application orientation
+- `.ns-light`, `.ns-dark` - classes that specify the system appearance.
 
 In addition, a default CSS class is assigned to the root view of any modal view: `.ns-modal`.
+
+<!--
+TODOs:
+- Android and iOS versions
+- refer to a Dark Mode article
+- add state classes for modals
+-->
 
 ## Supported CSS Properties
 
@@ -613,7 +621,7 @@ In the context of mobile development, there are a number of properties that are 
 | `highlight-color`  | `highlightColor`     | Both       | `TabStrip`      | Gets or sets the underline color of the selected `TabStripItem`. |
 
 
-> **Note:** Currently, we can set only the `backgroundColor`, `color`, `fontFamily`, `fontSize`, `fontStyle`, `fontWeight` and `textTransform` styling properties to the `Label` and `Image` components inside the TabStripItem. More about the usage of those properties can be found in the [Supported CSS Properties](#supported-css-properties) section. 
+> **Note:** Currently, we can set only the `backgroundColor`, `color`, `fontFamily`, `fontSize`, `fontStyle`, `fontWeight` and `textTransform` styling properties to the `Label` and `Image` components inside the TabStripItem. More about the usage of those properties can be found in the [Supported CSS Properties](#supported-css-properties) section.
 
 > **Note:** On iOS, the TabStripItems can not be stylied individually.
 
