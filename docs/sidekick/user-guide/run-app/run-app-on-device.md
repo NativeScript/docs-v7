@@ -28,7 +28,6 @@ With {{ site.ns-sk }}, you can deploy your app on multiple connected devices sim
 1. Select a **Build Type**.
 1. Select a **Configuration**.
 1. (Optional) Enable **Clean Build**. Available only for **Cloud** builds. When you enable this option, any previously cached data will be ignored and your app will undergo a complete rebuild. Initiating a clean build might help you resolve sporadic build failures or other unexpected behavior.
-1. (Optional) Enable **Webpack**. For more information, see [Bundle Your Code with Webpack]({% slug webpack %}). 
 1. (Optional) Enable **Start Debugger**. When you enable this option, a to begin a debug session as soon as the app is deployed on the device. Start Debugger is available only in Debug Configuration.
 1. (Optional) If any issues are present, resolve them before you continue.
 1. Click **Run on Device** and wait for the app to be deployed on the device.

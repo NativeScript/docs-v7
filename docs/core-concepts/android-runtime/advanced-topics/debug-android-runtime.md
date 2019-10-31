@@ -39,8 +39,6 @@ NativeScript with plain JavaScript:
 
 `tns prepare android`
 
-> After you have prepared the project, make sure the `tns-android` version is at least 3.4.0, because that's the version the Android Studio support is introduced. You can check the version by running `tns info` inside the project folder.
-
 ### 3. Open the Android Studio project:
 
 * Open Android Studio

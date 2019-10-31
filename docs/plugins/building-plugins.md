@@ -129,8 +129,6 @@ In short, the process can be summarized with the following steps:
 1. Run the demo app (which references the plugin), e.g. using `npm run demo ios|android`.
 2. Update the plugin code and see the result in the refreshed app.
 
-> **NOTE**: Before the Webpack development workflow was introduced, there was an additional step in order to have a smooth plugin development workflow. The `npm run plugin.tscwatch` had to be executed in the plugin's `src` folder. Along with that, the `npm run demo ios|android` commands had to call the `--syncAllFiles` flag on the `tns run` command. After {N} 6.0 this is no longer needed as it works with Webpack development workflow by default and the CLI does this internally.
-
 Let's run your plugin in the demo app so you can see your plugin in action. Start by opening a new terminal window or command prompt on your development machine. Next, run either `npm run demo.ios` or `npm run demo.android`, to start up the demo app on iOS or Android.
 
 ```bash

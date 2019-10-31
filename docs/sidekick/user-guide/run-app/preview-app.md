@@ -28,8 +28,6 @@ The Preview app has several limitations, which you can overcome by [building and
 
 1. Launch {{ site.ns-sk }} and open your app.
 1. From the left toolbar, select **Devices** and then **Preview App**.
-1. (Optional) Enable **Webpack**. For more information, see [Bundle Your Code with Webpack]({% slug webpack %}).
-1. (Optional) Enable **Hot module replacement** (Beta). For more information, see [A Deep Dive into Hot Module Replacement with Webpack](https://www.nativescript.org/blog/deep-dive-into-hot-module-replacement-with-webpack-part-one-the-basics).
 1. Click **Start Preview** to generate a QR code.
 1. Scan the produced QR code with the NativeScript Playground app to run your app on the device.
 

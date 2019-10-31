@@ -8,24 +8,7 @@ previous_url: /transpilers,/core-concepts/transpilers
 
 # Using transpilers in NativeScript
 
-Transpilers allow you to develop your application in languages other than JavaScript, CSS and XML. NativeScript applications can be developed more comfortably when transpilers are used in the project. NativeScript projects support two transpilers out-of-the-box - TypeScript and Babel, although any other transpiler can be integrated through the necessary hooks.
-
-## Installing TypeScript
-
-Run the following command to install TypeScript support into your project:
-
-```Shell
-tns install typescript
-```
-
-The above command installs the TypeScript compiler and the `nativescript-dev-typescript` npm module as dev dependencies. The latter installs the necessary `prepare` and `livesync` hooks into your project, so that the TypeScript files in your project are automatically transpiled during build and when live-syncing.
-
-> Note: When working in TypeScript enabled project, the user should make code behind changes in `*.ts` files. Any changes made in the respective `*.js` files will be dismissed when the app is transpiled.
-The same rule applies to all NativeScript + Angular-2 projects as they have TypeScript transpiler installed by default.
-
-It also creates a `tsconfig.json` file in the root of your project that contains the compiler configuration. You can edit it to change the configuration.
-
-If you want to change the version of the TypeScript compiler used in your project, simply install the version you want into your project through npm.
+Transpilers allow you to develop your application in languages other than JavaScript, CSS and XML. NativeScript applications can be developed more comfortably when transpilers are used in the project. NativeScript projects support the Babel transpiler out of the box, although any other transpiler can be integrated through the necessary hooks.
 
 ## Installing Babel
 

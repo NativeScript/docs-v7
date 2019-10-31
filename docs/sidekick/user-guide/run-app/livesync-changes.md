@@ -30,8 +30,7 @@ Based on the type of the modified files, the LiveSync will behave differently:
 1. Click on the settings button (cogwheel icon) of each selected device and choose a valid certificate. For iOS devices, you need to provide a valid mobile provision as well. 
 1. Select a **Build Type**.
 1. Under **Configuration**, select **Debug**. LiveSync is enabled only for apps built in debug configuration.
-1. (Optional) Enable **Clean Build**. Available only for **Cloud** builds. When you enable this option, any previously cached data will be ignored and your app will undergo a complete rebuild. Initiating a clean build may help you to resolve sporadic build failures.
-1. (Optional) Enable **Webpack**. For more information, see [Bundle Your Code with Webpack]({% slug webpack %}). 
+1. (Optional) Enable **Clean Build**. Available only for **Cloud** builds. When you enable this option, any previously cached data will be ignored and your app will undergo a complete rebuild. Initiating a clean build may help you to resolve sporadic build failures. 
 1. (Optional) Enable **Start Debugger** to begin a debug session as soon as the app is deployed on the device. Start Debugger is available only in Debug Configuration.
 1. Click **Run on Device** and wait for the app to be deployed on the device.
 

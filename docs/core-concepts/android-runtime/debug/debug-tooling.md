@@ -10,8 +10,6 @@ previous_url: /debug-eclipse
 
 The ![previous article](./debug-native.md) shows how to debug the runtime and the application, but what if the problem is at build time?
 
-Since {N} version 4.0 you can easily debug the tools used for building a {N} application.
-
 # Debugging the metadata generator
 
 * Open the android-runtime `test-app` in Android Studio. `/your/path/android-runtime/test-app`
