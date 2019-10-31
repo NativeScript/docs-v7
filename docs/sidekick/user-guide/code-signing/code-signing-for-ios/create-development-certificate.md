@@ -22,16 +22,14 @@ You can create a development certificate in the [iOS Dev Center](https://develop
 
 1. Open [iOS Dev Center](https://developer.apple.com/membercenter) in your favorite browser and log in.
 1. Click **Certificates, Identifiers &amp; Profiles**.
-1. In the drop-down menu in the top left corner, verify that **iOS, tvOS, watchOS** is selected.
-1. In the left-hand sidebar, select **Certificates** &#8594; **Development**.
-1. Click **+**.
+1. In the left-hand sidebar, select **Certificates**.
+1. Click **+** blue button next to the subtitle bar **Certificates** to add a new Profile.
 1. Select **iOS App Development** and click **Continue**.
-1. On the About Creating a Certificate Signing Request (CSR) page, click **Continue**.
-1. On the Generate your certificate page, click **Choose File**.
+1. On the Upload a Certificate Signing Request page, click **Choose File**.
 1. Browse to the location where the `CSR` file for your code signing request is stored, select it and confirm the upload.
 1. Click **Continue**.
 1. (Optional) Click **Download** to download your certificate.
-1. Click **Done**.
+1. Click **All Certificates**.
 
 ## Next Steps
 
