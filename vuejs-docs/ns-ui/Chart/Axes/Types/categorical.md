@@ -41,7 +41,7 @@ Defines the step at which major ticks are generated. This property also affects 
 
 #### Figure 1: This is how the axis in this example looks like on Android (left) and iOS (right)
 
-![Cartesian chart: Pie series](../../../../../docs/ui/img/ns_ui/categorical_axis_android.png "CategoricalAxis on Android.") ![Cartesian chart: Pie series](../../../../../docs/ui/img/ns_ui/categorical_axis_ios.png "CategoricalAxis on iOS.")
+![Cartesian chart: Pie series](../../../../../ui/img/ns_ui/categorical_axis_android.png "CategoricalAxis on Android.") ![Cartesian chart: Pie series](../../../../../ui/img/ns_ui/categorical_axis_ios.png "CategoricalAxis on iOS.")
 
 ## References
 

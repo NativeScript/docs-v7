@@ -35,7 +35,7 @@ To illustrate this setup, let's create an example. Just like with all vue 'pages
 
 #### Figure 1: Chart with ScatterSeries on Android (left) and iOS (right)
 
-![Cartesian chart: Scatter series](../../../../../docs/ui/img/ns_ui/scatter_series_android.png " Scatter series on Android.") ![Cartesian chart: Scatter series](../../../../../docs/ui/img/ns_ui/scatter_series_ios.png "Scatter series on iOS.")
+![Cartesian chart: Scatter series](../../../../../ui/img/ns_ui/scatter_series_android.png " Scatter series on Android.") ![Cartesian chart: Scatter series](../../../../../ui/img/ns_ui/scatter_series_ios.png "Scatter series on iOS.")
 
 ## References
 

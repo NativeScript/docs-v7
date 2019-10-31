@@ -34,7 +34,7 @@ To illustrate this setup, let's create an example. Just like with all vue 'pages
 
 #### Figure 1: Chart with RangeBarSeries on Android (left) and iOS (right)
 
-![Cartesian chart: Range bar series](../../../../../docs/ui/img/ns_ui/range_bar_series_android.png "Range bar series on Android.") ![Cartesian chart: Range bar series](../../../../../docs/ui/img/ns_ui/range_bar_series_ios.png "Range bar series on iOS.")
+![Cartesian chart: Range bar series](../../../../../ui/img/ns_ui/range_bar_series_android.png "Range bar series on Android.") ![Cartesian chart: Range bar series](../../../../../ui/img/ns_ui/range_bar_series_ios.png "Range bar series on iOS.")
 
 ## References
 

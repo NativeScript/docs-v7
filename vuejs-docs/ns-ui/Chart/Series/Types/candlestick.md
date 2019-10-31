@@ -35,7 +35,7 @@ To illustrate this setup, let's create an example. Just like with all vue 'pages
 
 #### Figure 1: Chart with CandlestickSeries on Android (left) and iOS (right)
 
-![Cartesian chart: Candlestick series](../../../../../docs/ui/img/ns_ui/candlestick_series_android.png " Candlestick Series on Android.") ![Cartesian chart: Candlestick series](../../../../../docs/ui/img/ns_ui/candlestick_series_ios.png "Candlestick Series on iOS.")
+![Cartesian chart: Candlestick series](../../../../../ui/img/ns_ui/candlestick_series_android.png " Candlestick Series on Android.") ![Cartesian chart: Candlestick series](../../../../../ui/img/ns_ui/candlestick_series_ios.png "Candlestick Series on iOS.")
 
 ## References
 

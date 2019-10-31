@@ -36,7 +36,7 @@ To illustrate this setup, let's create an example. Just like with all vue 'pages
 
 #### Figure 1: Chart with BubbleSeries on Android (left) and iOS (right)
 
-![Cartesian chart: Bubble series](../../../../../docs/ui/img/ns_ui/bubble_series_android.png "Bubble series on Android.") ![Cartesian chart: Bubble series](../../../../../docs/ui/img/ns_ui/bubble_series_ios.png "Bubble series on iOS.")
+![Cartesian chart: Bubble series](../../../../../ui/img/ns_ui/bubble_series_android.png "Bubble series on Android.") ![Cartesian chart: Bubble series](../../../../../ui/img/ns_ui/bubble_series_ios.png "Bubble series on iOS.")
 
 ## Bubble Scale
 

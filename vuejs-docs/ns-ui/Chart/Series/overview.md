@@ -66,35 +66,35 @@ Here is a complete list of all series types:
 
   #### Figure 1: Categorical Chart with discrete data on Android (left) and iOS (right)
 
-  ![Chart series](../../../../docs/ui/img/ns_ui/chart-css-bar-01-android.png "Discrete Data on Android.") ![Chart series](../../../../docs/ui/img/ns_ui/chart-css-bar-01-ios.png "Discrete Data on iOS.")
+  ![Chart series](../../../../ui/img/ns_ui/chart-css-bar-01-android.png "Discrete Data on Android.") ![Chart series](../../../../ui/img/ns_ui/chart-css-bar-01-ios.png "Discrete Data on iOS.")
   
   ### CategoricalSeries Presenting Continuous Data
   Some of the **CategoricalSeries** are generally used to display how values change over a period of time, but they can also be used to connect the values in discrete categories. These series are [LineSeries]({% slug chart-series-line-vue %} "Chart LineSeries"), [SplineSeries]({% slug chart-series-spline-vue %} "Chart SplineSeries"), [AreaSeries]({% slug chart-series-area-vue %} "Chart AreaSeries"), [SplineAreaSeries]({% slug chart-series-spline-area-vue %} "Chart SplineAreaSeries").
 
   #### Figure 2: Categorical Chart with continuous data on Android (left) and iOS (right)
 
-  ![Chart series](../../../../docs/ui/img/ns_ui/chart-css-line-01-android.png "Continuous Data on Android.") ![Chart series](../../../../docs/ui/img/ns_ui/chart-css-line-01-ios.png "Continuous Data on iOS.")
+  ![Chart series](../../../../ui/img/ns_ui/chart-css-line-01-android.png "Continuous Data on Android.") ![Chart series](../../../../ui/img/ns_ui/chart-css-line-01-ios.png "Continuous Data on iOS.")
 
   ### CategoricalSeries Presenting Financial Data
   Some of the **CategoricalSeries** are used to display financial data, such as stock prices, etc. These series are [OhlcSeries]({% slug chart-series-ohlc-vue %} "Chart OhlcSeries") and [CandlesctickSeries]({% slug chart-series-candlestick-vue %} "Chart CandlesctickSeries").
 
   #### Figure 3: Categorical Chart with financial data on Android (left) and iOS (right)
 
-  ![Chart series](../../../../docs/ui/img/ns_ui/chart-css-candlestick-01-android.png "Financial Data on Android.") ![Chart series](../../../../docs/ui/img/ns_ui/chart-css-candlestick-01-ios.png "Financial Data on iOS.")
+  ![Chart series](../../../../ui/img/ns_ui/chart-css-candlestick-01-android.png "Financial Data on Android.") ![Chart series](../../../../ui/img/ns_ui/chart-css-candlestick-01-ios.png "Financial Data on iOS.")
 
   ### CartesianSeries Presenting Two Continous Variables
   **ScatterSeries** is a subtype **CartesianSeries**. They require that the **RadCartesianChart** they are added to, has two axes that are value axes. These series are [ScatterSeries]({% slug chart-series-scatter-vue %} "Chart ScatterSeries") and [ScatterBubbleSeries]({% slug chart-series-scatter-bubble-vue %} "Chart ScatterBubbleSeries").
 
   #### Figure 4: Scatter Chart on Android (left) and iOS (right)
 
-  ![Chart series](../../../../docs/ui/img/ns_ui/chart-css-scatter-01-android.png "Scatter Chart on Android.") ![Chart series](../../../../docs/ui/img/ns_ui/chart-css-scatter-01-ios.png "Scatter Chart on iOS.")
+  ![Chart series](../../../../ui/img/ns_ui/chart-css-scatter-01-android.png "Scatter Chart on Android.") ![Chart series](../../../../ui/img/ns_ui/chart-css-scatter-01-ios.png "Scatter Chart on iOS.")
 
   ### ChartSeries Presenting Numerical Proportion
   **CartesianSeries** is a subtype of **ChartSeries** and draw the data from the source in a way that resembles pie slices. They can be used only with **RadPieChart**. They are generally useful to display how some value relates to the whole value. These series are [PieSeries]({% slug chart-series-pie-vue %} "Chart PieSeries") and [DonutSeries]({% slug chart-series-donut-vue %} "Chart DonutSeries").
 
   #### Figure 5: Donut Chart on Android (left) and iOS (right)
 
-  ![Chart series](../../../../docs/ui/img/ns_ui/chart-css-donut-01-android.png "Donut Chart on Android.") ![Chart series](../../../../docs/ui/img/ns_ui/chart-css-donut-01-ios.png "Donut Chart on iOS.")
+  ![Chart series](../../../../ui/img/ns_ui/chart-css-donut-01-android.png "Donut Chart on Android.") ![Chart series](../../../../ui/img/ns_ui/chart-css-donut-01-ios.png "Donut Chart on iOS.")
   
   ## Selection
 

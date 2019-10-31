@@ -54,7 +54,7 @@ Here's how the chart from this example looks:
 
 #### Figure 1: Bar Series styles on Android (left) and iOS (right)
 
-![Chart styling: Candlestick series](../../../../docs/ui/img/ns_ui/chart-css-bar-01-android.png "Android") ![Chart styling: Candlestick series](../../../../docs/ui/img/ns_ui/chart-css-bar-01-ios.png "iOS")
+![Chart styling: Candlestick series](../../../../ui/img/ns_ui/chart-css-bar-01-android.png "Android") ![Chart styling: Candlestick series](../../../../ui/img/ns_ui/chart-css-bar-01-ios.png "iOS")
 
 Here's another example that demonstrate how to apply a list of colors to a chart with CandlestickSeries:
 
@@ -72,7 +72,7 @@ Here's how the chart from this example looks:
 
 #### Figure 2: Candlestick Series styles on Android (left) and iOS (right)
 
-![Chart styling: Candlestick series](../../../../docs/ui/img/ns_ui/chart-css-candlestick-01-android.png "Android") ![Chart styling: Candlestick series](../../../../docs/ui/img/ns_ui/chart-css-candlestick-01-ios.png "iOS")
+![Chart styling: Candlestick series](../../../../ui/img/ns_ui/chart-css-candlestick-01-android.png "Android") ![Chart styling: Candlestick series](../../../../ui/img/ns_ui/chart-css-candlestick-01-ios.png "iOS")
 
 ## Styling Series Labels
 
@@ -98,7 +98,7 @@ The images below demonstrates the result of applying this palette to the Bar ser
 
 #### Figure 3: Bar Series styles on Android (left) and iOS (right)
 
-![Chart styling: Bar series](../../../../docs/ui/img/ns_ui/series_styling_android.png "Android") ![Chart styling: Bar series](../../../../docs/ui/img/ns_ui/series_styling_ios.png "iOS")
+![Chart styling: Bar series](../../../../ui/img/ns_ui/series_styling_android.png "Android") ![Chart styling: Bar series](../../../../ui/img/ns_ui/series_styling_ios.png "iOS")
 
 ## Styling Selected State
 
@@ -110,7 +110,7 @@ By default, the provided palettes (or the default colors) are applied per series
 
 #### Figure 4: Bar Series styles on Android (left) and iOS (right)
 
-![Chart styling: PaletteMode](../../../../docs/ui/img/ns_ui/series_styling_bar_android.png "Android") ![Chart styling: PaletteMode](../../../../docs/ui/img/ns_ui/series_styling_bar_ios.png "iOS")
+![Chart styling: PaletteMode](../../../../ui/img/ns_ui/series_styling_bar_android.png "Android") ![Chart styling: PaletteMode](../../../../ui/img/ns_ui/series_styling_bar_ios.png "iOS")
 
 > Note that the paletteMode is applicable only for series where it visually makes sense. LineSeries, SplineSeries, AreaSeries and SplineAreaSeries (where there are no separate items but only connections between them), the paletteMode is not supported.
 

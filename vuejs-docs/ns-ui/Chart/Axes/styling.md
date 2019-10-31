@@ -49,7 +49,7 @@ This is how the chart looks like now:
 
 #### Figure 1: Axis styles on Android (left) and iOS (right)
 
-![Axis styling](../../../../docs/ui/img/ns_ui/axis_styling_android.png "Android") ![Axis styling](../../../../docs/ui/img/ns_ui/axis_styling_ios.png "iOS")
+![Axis styling](../../../../ui/img/ns_ui/axis_styling_android.png "Android") ![Axis styling](../../../../ui/img/ns_ui/axis_styling_ios.png "iOS")
 
 ## Styling with CSS
 

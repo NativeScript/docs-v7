@@ -34,7 +34,7 @@ To illustrate this setup, let's create an example. Just like with all vue 'pages
 
 #### Figure 1: Chart with PieSeries on Android (left) and iOS (right)
 
-![Cartesian chart: Pie series](../../../../../docs/ui/img/ns_ui/pie_series_android.png "Pie series on Android.") ![Cartesian chart: Pie series](../../../../../docs/ui/img/ns_ui/pie_series_ios.png "Pie series on iOS.")
+![Cartesian chart: Pie series](../../../../../ui/img/ns_ui/pie_series_android.png "Pie series on Android.") ![Cartesian chart: Pie series](../../../../../ui/img/ns_ui/pie_series_ios.png "Pie series on iOS.")
 
 ## Properties
 

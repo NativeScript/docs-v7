@@ -27,7 +27,7 @@ Here's how your chart will look like with {% typedoc_link classes:CategoricalSer
 
 #### Figure 1: Chart with stacked AreaSeries on Android (left) and iOS (right)
 
-![Chart series overview](../../../../docs/ui/img/ns_ui/stacked_area_series_android.png "Bar series on Android.") ![Chart series overview](../../../../docs/ui/img/ns_ui/stacked_area_series_ios.png "Bar series on iOS.")
+![Chart series overview](../../../../ui/img/ns_ui/stacked_area_series_android.png "Bar series on Android.") ![Chart series overview](../../../../ui/img/ns_ui/stacked_area_series_ios.png "Bar series on iOS.")
 
 
 ## References
