@@ -47,9 +47,9 @@ The opt-in to Force Dark happens by setting `android:forceDarkAllowed` to `true`
 
 For iOS, the Dark mode is opt-in by default and every application built with Xcode 11 or above tooling, automatically support both Light and Dark system appearances.
 
-The support in NativeScript framework has come since version 6.2 where the complete set of native widgets has been adapted to work out of the box for the.
+The support in NativeScript framework has come since version 6.2 where the complete set of native widgets has been adapted to work out of the box for both modes.
 
-However, if the your application need extra time to work on its dark Mode support, you can opt out by including the `UIUserInterfaceStyle` key in the application's the `<project>/app/App_Recoures/iOS/Info.plist` file:
+However, if you need extra time to work on your application's dark Mode support, you can opt out by including the `UIUserInterfaceStyle` key in the application's the `<project>/app/App_Recoures/iOS/Info.plist` file:
 
 ```xml
     ...
@@ -66,7 +66,7 @@ However, if the your application need extra time to work on its dark Mode suppor
 
 Since version 6.2, NativeScript detects the system appearance of the running mobile operating system and applies a respective CSS class to the application's [root view](https://docs.nativescript.org/ui/styling#root-views-css-classes). In particular, if you run the application on iOS 13.0 in Light mode, a `.ns-light` CSS class will be assign to the root view of your application. In analogy, if you change the system appearance from Light to Dark, the `.ns-light` class will be replaced with `.ns-dark` and vice verse.
 
-To illustrate this behavior, the sample CSS styles below will apint the Pages of your application in *light blue* color on Light system appearance and in *dark blue* on dark system appearance:
+To illustrate this behavior, the sample CSS styles below will paint the Pages of your application in *light blue* color on Light system appearance and in *dark blue* on dark system appearance:
 
 ```css
 .ns-light Page {
