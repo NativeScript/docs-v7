@@ -125,6 +125,87 @@ QUnit.test("Hello World Sample Test:", function (assert) {
 });
 ```
 
+## TestBed Integration
+
+To use TestBed you have to alter your `karma.conf.js` to:
+```
+    // list of files / patterns to load in the browser
+    files: [
+      'src/tests/setup.ts',
+      'src/tests/**/*.spec.ts'
+    ],
+
+```
+
+The file `src/tests/setup.ts` should look like this for jasmine:
+
+```
+import "nativescript-angular/zone-js/testing.jasmine";
+import {nsTestBedInit} from "nativescript-angular/testing";
+nsTestBedInit();
+
+```
+
+or if using mocha:
+```
+import "nativescript-angular/zone-js/testing.mocha";
+import {nsTestBedInit} from "nativescript-angular/testing";
+nsTestBedInit();
+
+```
+Then you can use it within the spec files, e.g. `example.spec.ts`:
+
+```
+import { Component, ElementRef, NgZone, Renderer2 } from '@angular/core';
+import { ComponentFixture, async } from '@angular/core/testing';
+import { StackLayout } from 'tns-core-modules/ui/layouts/stack-layout';
+import {
+    nsTestBedAfterEach,
+    nsTestBedBeforeEach,
+    nsTestBedRender
+} from 'nativescript-angular/testing';
+
+@Component({
+    template: `
+        <StackLayout><Label text="Layout"></Label></StackLayout>
+    `
+})
+export class ZonedRenderer {
+    constructor(public elementRef: ElementRef, public renderer: Renderer2) {}
+}
+
+describe('Renderer E2E', () => {
+    beforeEach(nsTestBedBeforeEach([ZonedRenderer]));
+    afterEach(nsTestBedAfterEach(false));
+
+    it('executes events inside NgZone when listen is called outside NgZone', async(() => {
+        const eventName = 'someEvent';
+        const view = new StackLayout();
+        const eventArg = { eventName, object: view };
+        const callback = arg => {
+            expect(arg).toEqual(eventArg);
+            expect(NgZone.isInAngularZone()).toBeTruthy();
+        };
+        nsTestBedRender(ZonedRenderer).then(
+            (fixture: ComponentFixture<ZonedRenderer>) => {
+                fixture.ngZone.runOutsideAngular(() => {
+                    fixture.componentInstance.renderer.listen(
+                        view,
+                        eventName,
+                        callback
+                    );
+
+                    view.notify(eventArg);
+                });
+            }
+        );
+    }));
+});
+
+```
+
+
+
 ## Run Your Tests
 
 After you have completed your test suite, you can run it on physical devices or in the native emulators.
