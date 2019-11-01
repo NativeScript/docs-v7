@@ -39,7 +39,7 @@ android {
 ## Testing the produced `.aab` file
 Starting from NativeScript CLI 6.2.0, the Android App Bundle is supported out of the box by the `tns run` command:
 ```
-tns run android --key-store-path <path-to-your-keystore> --key-store-password <your-key-store-password> --key-store-alias <your-alias-name> --key-store-alias-password <your-alias-password> --aab --copy-to <aab-location>.aab
+tns run android --key-store-path <path-to-your-keystore> --key-store-password <your-key-store-password> --key-store-alias <your-alias-name> --key-store-alias-password <your-alias-password> --aab
 ``` 
 
 ## Testing the produced `.aab` file before NativeScript 6.2
