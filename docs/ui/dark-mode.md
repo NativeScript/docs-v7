@@ -12,6 +12,8 @@ Android 10 (API level 29) and iOS 13 introduce system-wide dark appearance for a
 
 ## Dark Theme for Android
 
+By default, existing NativeScript applications won't be affected by the Dark theme for Android. With no changes, they will look the same way as on Light theme.
+
 In order to support Dark theme for Android, the application's theme must inherit from a `DayNight` theme as explained [here](https://developer.android.com/guide/topics/ui/look-and-feel/darktheme#supporting_dark_theme_in_your_app).
 
 However, Android 10 (API level 29) provides a feature for developers to quickly implement a Dark theme without explicitly setting a `DayNight` theme as mentioned. This features is called [Force Dark](https://developer.android.com/guide/topics/ui/look-and-feel/darktheme#force_dark).
@@ -41,7 +43,7 @@ Force Dark is enabled by setting `android:forceDarkAllowed` to `true` in the act
 
 > Important: Make sure to test your application carefully and thoroughly on both Light and Dark system appearance.
 
-> Note: If you want to update your project to opt-in to Force Dark, it is needed to put the following line in the `<project>/app/App_Recoures/Android/src/main/res/values/styles.xml` file as shown above: `<item name="android:forceDarkAllowed">true</item>`.
+If you want to update your project to opt in to Force Dark, it is needed to put the following line `<item name="android:forceDarkAllowed">true</item>` in the `<project>/app/App_Recoures/Android/src/main/res/values/styles.xml` file as shown above.
 
 ## Dark Mode for iOS
 
