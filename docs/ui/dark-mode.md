@@ -45,7 +45,7 @@ Force Dark is enabled by setting `android:forceDarkAllowed` to `true` in the act
 
 ## Dark Mode for iOS
 
-For iOS, the Dark mode is opt-in by default and every application built with Xcode 11 or above tooling, automatically support both Light and Dark system appearances.
+For iOS, the Dark mode is enabled by default and every application built with Xcode 11 or above tooling, automatically reacts to system appearance changes.
 
 The support in NativeScript framework has come since version 6.2 where the complete set of native widgets has been adapted to work out of the box for both modes.
 
@@ -64,7 +64,7 @@ However, if you need extra time to work on your application's dark Mode support,
 
 ## How Does It Work
 
-Since version 6.2, NativeScript detects the system appearance of the running mobile operating system and applies a respective CSS class to the application's [root view](https://docs.nativescript.org/ui/styling#root-views-css-classes). In particular, if you run the application on iOS 13.0 in Light mode, a `.ns-light` CSS class will be assign to the root view of your application. In analogy, if you change the system appearance from Light to Dark, the `.ns-light` class will be replaced with `.ns-dark` and vice verse.
+Since version 6.2, NativeScript detects the system appearance of the running mobile operating system and applies a respective CSS class to the application's [root view](https://docs.nativescript.org/ui/styling#root-views-css-classes). In particular, if you run the application on iOS 13.0 in Light mode, a `.ns-light` CSS class will be assign to the root view of your application. In analogy, if you change the system appearance from Light to Dark, the `.ns-light` class will be replaced with `.ns-dark` and vice versa.
 
 To illustrate this behavior, the sample CSS styles below will paint the Pages of your application in *light blue* color on Light system appearance and in *dark blue* on dark system appearance:
 
