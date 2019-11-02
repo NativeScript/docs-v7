@@ -16,7 +16,7 @@ In order to support Dark theme for Android, the application's theme must inherit
 
 However, Android 10 (API level 29) provides a feature for developers to quickly implement a Dark theme without explicitly setting a `DayNight` theme as mentioned. This features is called [Force Dark](https://developer.android.com/guide/topics/ui/look-and-feel/darktheme#force_dark).
 
-Since release 6.2, NativeScript creates new applications with opt-in Force Dark functionality by default to provide support for Dark theme out of the box.
+Since release 6.2, NativeScript creates new applications with Force Dark functionality enabled by default to provide support for Dark theme out of the box.
 
 The opt-in to Force Dark happens by setting `android:forceDarkAllowed` to `true` in the activity's theme. In particular, every project created by the NativeScript CLI 6.2 or later, contains the snippet below in the `<project>/app/App_Recoures/Android/src/main/res/values/styles.xml` file:
 
