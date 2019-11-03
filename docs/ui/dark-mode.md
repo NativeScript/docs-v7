@@ -49,11 +49,13 @@ If you want to update your project to opt in to Force Dark, it is needed to put 
 
 ## Dark Mode for iOS
 
-For iOS, the Dark mode is enabled by default and every application built with Xcode 11 or above tooling, automatically reacts to system appearance changes.
+Existing NativeScript applications built with version pre-6.2 won't be affected by the Dark mode for iOS - they will continue to look the same way in both modes.
 
-The support in NativeScript framework has come since version 6.2 where the complete set of native widgets has been adapted to work out of the box for both modes.
+Since iOS 13, the Dark mode is enabled by default and every application built with Xcode 11 or above tooling, automatically reacts to system appearance changes.
 
-However, if you need extra time to work on your application's dark Mode support, you can opt out by including the `UIUserInterfaceStyle` key in the application's the `<project>/app/App_Recoures/iOS/Info.plist` file:
+The support in NativeScript framework has come since version 6.2 where the complete set of native widgets has been adapted to work out of the box for both Light and Dark system appearance. Accordingly, if so far your application looked the same way in both modes, with an update to 6.2 its look might change in Dark mode and could appear to be broken.
+
+However, if you need extra time to work on your application's Dark mode support, you can opt out by including the `UIUserInterfaceStyle` key in the application's the `<project>/app/App_Recoures/iOS/Info.plist` file:
 
 ```xml
     ...
