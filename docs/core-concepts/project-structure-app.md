@@ -181,7 +181,7 @@ The `tsconfig.json` file is present only in projects that use TypeScript. The fi
 
 The `nsconfig.json` is an optional configuration file, located at the root project directory on the same level as the main `package.json` file. This file makes it possible for users to modify the structure of their application and to enable/disable the HMR developer experience. The available configurations are `appPath` and `appResourcesPath`.
 
-The paths (`appPath` and `appResourcesPath`) must be relative to the project root (where the `package.json` file and `platforms` directory are located) in order everything to work as expected. If `appPath` is omitted, the CLI will assume the application files are located inside a folder called {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} inside the project folder. If `appResourcesPath` is omitted, the CLI will assume that they are at their default location - a folder called `App_Resources` inside the folder containing the rest of the app files.
+The paths (`appPath` and `appResourcesPath`) must be relative to the project root (where the `package.json` file and `platforms` directory are located) in order for everything to work as expected. If `appPath` is omitted, the CLI will assume the application files are located inside a folder called {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} inside the project folder. If `appResourcesPath` is omitted, the CLI will assume that they are at their default location - a folder called `App_Resources` inside the folder containing the rest of the app files.
 
 ### **nsconfig.json** Path examples
 
