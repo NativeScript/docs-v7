@@ -32,7 +32,7 @@ This article will walk you through setting up an already existing Android Studio
 
 2. You can either use the NativeScriptActivity which is part of the NativeScript framework or you can do the following if you want to override or add new functionality to the NativeScriptActivity:  
     1. Copy the corresponding MyNativeScriptActivity file (.ts or .js depending on your NativeScript application type) from [the following location](https://github.com/NativeScript/sample-extend-android-app/tree/master/common) to your NativeScript application **app** folder. Change the Android Activity referenced in JavaProxy to match that of your actual project.
-    2. If you are using webpack build add the MyNativeScriptActivity file to the **appComponents** array in your **webpack.config.js** file:
+    2. Add the MyNativeScriptActivity file to the **appComponents** array in your **webpack.config.js** file:
 
         ```javascript
             const appComponents = [

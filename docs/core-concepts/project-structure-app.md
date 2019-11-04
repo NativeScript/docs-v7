@@ -149,22 +149,21 @@ Here is an example of a basic main `package.json` file:
     "nativescript": {
         "id": "org.nativescript.myApplication",
         "tns-android": {
-            "version": "5.0.0"
+            "version": "6.1.2"
         },
         "tns-ios": {
-            "version": "5.0.0"
+            "version": "6.1.0"
         }
     },
     "description": "My NativeScript Application",
     "license": "MIT",
     "repository": "https://github.com/myApplication",
     "dependencies": {
-        "nativescript-theme-core": "~1.0.4",
-        "tns-core-modules": "~5.0.0"
+        "nativescript-theme-core": "~1.0.6",
+        "tns-core-modules": "~6.1.0"
     },
     "devDependencies": {
-        "nativescript-dev-typescript": "~0.7.0",
-        "typescript": "~2.7.2"
+        "nativescript-dev-webpack": "~1.2.0"
     },
     "readme": "My NativeScript Application"
 }
@@ -174,24 +173,15 @@ Here is an example of a basic main `package.json` file:
 
 The `hooks` folder exists only when the project depends on plugins that require a hook to function properly. Hooks are executable pieces of code or Node.js scripts that are used to alter or augment the behavior of an extendable NativeScript CLI command. For more information about hooks and how to use them in NativeScript, see [Extending the CLI](https://github.com/NativeScript/nativescript-cli/blob/master/extending-cli.md).
 
-Some of the more common plugins that have hooks are `nativescript-dev-webpack`, `nativescript-dev-typescript` and `nativescript-dev-sass`.
-
 ## The **tsconfig.json** File
 
 The `tsconfig.json` file is present only in projects that use TypeScript. The file works as a guide during the [transpilation]({% slug transpilers %}) of TypeScript to JavaScript. You can fine-tune the transpilation process by configuring the various [compiler options](https://www.typescriptlang.org/docs/handbook/compiler-options.html). For more information about `tsconfig.json`, see the official [TypeScript documentation](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
 
 ## The **nsconfig.json** File
 
-The `nsconfig.json` is an optional configuration file, located at the root project directory on the same level as the main `package.json` file. This file makes it possible for users to modify the structure of their application and to enable/disable the HMR developer experience. The available configurations are `appPath`, `appResourcesPath`, and `useLegacyWorkflow`.
+The `nsconfig.json` is an optional configuration file, located at the root project directory on the same level as the main `package.json` file. This file makes it possible for users to modify the structure of their application and to enable/disable the HMR developer experience. The available configurations are `appPath` and `appResourcesPath`.
 
-The paths (`appPath` and `appResourcesPath`) must be relative to the project root (where the `package.json` file and `platforms` directory are located) in order everything to work as expected. If `appPath` is omitted, the CLI will assume the application files are located inside a folder called {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} inside the project folder. If `appResourcesPath` is omitted, the CLI will assume that they are at their default location - a folder called `App_Resources` inside the folder containing the rest of the app files.
-
-> **Important:** To use an `nsconfig.json` file in your project, you must ensure that it meets the following requirements:
-* NativeScript CLI >= 4.0.0
-* The `useLegacyWorkflow` option requires NativeScript CLI >= 5.3.0
-* Android Runtime >= 4.0.0
-* nativescript-dev-sass >= 1.3.6 (if used in the application)
-* nativescript-dev-webpack >= 0.10.1 (if used in the application)
+The paths (`appPath` and `appResourcesPath`) must be relative to the project root (where the `package.json` file and `platforms` directory are located) in order for everything to work as expected. If `appPath` is omitted, the CLI will assume the application files are located inside a folder called {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} inside the project folder. If `appResourcesPath` is omitted, the CLI will assume that they are at their default location - a folder called `App_Resources` inside the folder containing the rest of the app files.
 
 ### **nsconfig.json** Path examples
 
@@ -220,12 +210,3 @@ Let's assume the project is located at `/d/work/myApplication`.
         "appResourcesPath": "resources"
     }
     ```
-
-### **nsconfig.json** enabling HMR example
-
-Enable the HMR developer experience by default. By setting `useLegacyWorkflow` to `false`, you will enable the HMR by default (no need to pass additional flags to have HMR). When omitted, the default value is `true` (default livesync experience without the enhanced HMR).
-```JSON
-{
-    "useLegacyWorkflow": false
-}
-```

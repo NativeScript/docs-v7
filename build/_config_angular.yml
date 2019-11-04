@@ -39,13 +39,21 @@ navigation:
     "ui/ng-components/ng-Chart":
         position: 6000
         title: "RadChart"
+    "ui/ng-components/ng-Chart/Series":
+        position: 3
+    "ui/ng-components/ng-Chart/Series/Types":
+        position: 2
+    "ui/ng-components/ng-Chart/Axes":
+        position: 4
+    "ui/ng-components/ng-Chart/Axes/Types":
+        position: 2
     "ui/ng-components/ng-AutoCompleteTextView":
         position: 7000
         title: "RadAutoCompleteTextView"
     "ui/ng-components/ng-DataForm":
         position: 8000
         title: "RadDataForm"
-    "ui/components/ng-DataForm/GettingStarted":
+    "ui/ng-components/ng-DataForm/GettingStarted":
         position: 20
         title: "Basics"
     "ui/ng-components/ng-DataForm/Editors":

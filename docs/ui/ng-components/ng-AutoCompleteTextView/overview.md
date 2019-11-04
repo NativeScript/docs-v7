@@ -36,7 +36,7 @@ When **RadAutoCompleteTextView**'s `displayMode` is **Tokens** and all selected 
 - **Wrap** - When a row is filled, another row is added to accommodate new tokens.
 - **Horizontal** - Tokens are added in a long scrollable row.
 
-The layout modes are also listed in the [article about tokens]({% slug autocomplete-display-modes %} "Describe the layout modes in RadAutoCompleteTextView in NS").
+The layout modes are also listed in the [article about tokens]({% slug autocomplete-display-modes-angular %} "Describe the layout modes in RadAutoCompleteTextView in NS").
 
 ### Completion Modes
 There are two ways that **RadAutoCompleteTextView** can search for a matching suggestion for the input text - for items that start with the provided text or for items that contain the provided text but not necessarily in the beginning. This can be controlled with the `completionMode` property.

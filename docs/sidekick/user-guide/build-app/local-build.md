@@ -28,7 +28,6 @@ Build your apps locally on your machine with the help of previously installed de
 1. Close the **Manage Android Certificates** dialog.
 1. Under **Build Type**, select **Local Build**.
 1. Select a **Configuration**.
-1. (Optional) Enable **Webpack**. For more information, see [Bundle Your Code with Webpack]({% slug webpack %}). 
 1. (Optional) If any issues are present, resolve them before you continue.
 1. Click on **Build**.
 1. If you have provided a certificate stored on the file system (step 5), you will be prompted to enter its password on every build. Certificates stored in the Certificate Manager or Keychain do not require password validation. 
@@ -47,7 +46,6 @@ Build your apps locally on your machine with the help of previously installed de
 1. Close the **Manage Android Certificates** dialog.
 1. Under **Build Type**, select **Local Build**.
 1. Select a **Configuration**.
-1. (Optional) Enable **Webpack**. For more information, see [Bundle Your Code with Webpack]({% slug webpack %}). 
 1. (Optional) If any issues are present, resolve them before you continue.
 1. Click on **Build**.
 1. When the build process is complete, you will be presented with a path to the produced `IPA` file.

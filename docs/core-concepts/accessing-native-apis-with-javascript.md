@@ -231,8 +231,6 @@ Steps to install and enable
 
  > **Note:** Always install the plugin as a `devDependency` (`npm i tns-platform-declarations --save-dev` flag) to avoid bringing the enormously big declaration files in the output built file.
 
-- As of version 3.0.0 of NativeScript the newly created projects are shipped without `reference.d.ts` file.
-
 Create `reference.d.ts` in the root project directory and add the following:
 ```
 /// <reference path="node_modules/tns-platform-declarations/android.d.ts" />

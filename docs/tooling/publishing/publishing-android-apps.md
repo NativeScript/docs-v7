@@ -157,7 +157,7 @@ You can then use the produced `<apk-location>.apk` for upload to *Google Play*.
 
 ### APKs with ABI splits
 
-If you want to reduce the apk sizes you can check how to achieve this in [Android ABI Split article]({% slug android-abi-split %}).
+If you want to reduce the apk sizes you can check how to achieve this in [Android App Bundle article]({% slug android-app-bundle %}).
 
 <h4 id="submit-with-the-google-play-developer-console">Submit with the Google Play Developer Console</h4>
 

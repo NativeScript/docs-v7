@@ -1,88 +1,132 @@
 ---
 title: Overview
-page_title: Series overview | Progress NativeScript UI Documentation
+page_title: Series Overview | Progress NativeScript UI Documentation
 description: An overview of all series supported by Telerik Chart for NativeScript
 slug: chart-series-overview
 tags: series, cartesian, pie, chart, nativescript, professional, ui
 position: 1
 publish: true
 ---
-# RadChart Series
-Progress NativeScript UI Chart comes with a bunch of series suitable for different types of data. There are two main chart types: `Cartesian` and `Pie`. Each of these chart types requires corresponding series types to be able to visualize the data. For {% typedoc_link classes:RadCartesianChart %} you need to use {% typedoc_link classes:CartesianSeries %}, and for {% typedoc_link classes:RadPieChart %} you need to use {% typedoc_link classes:PieSeries %}. `CartesianSeries` are represented by two main series types: scatter and categorical.
 
-All series expose the following properties:
+# Chart Series Overview
 
-- {% typedoc_link classes:ChartSeries,member:showLabels %} - determines whether labels are shown for each data point
-- {% typedoc_link classes:ChartSeries,member:legendTitle %} - determines the title which will be displayed in the legend for the current series
-- {% typedoc_link classes:ChartSeries,member:valueProperty %} - determines the name of the property on the source object that will provide the value used to plot the object in the chart
-- {% typedoc_link classes:ChartSeries,member:items %} - used to bind the series with a source of data items
-- {% typedoc_link classes:ChartSeries,member:selectionMode %} - responsible for the selection mode of the series.
-The values are:
-    - {% typedoc_link enums:ChartSeriesSelectionMode,member:None %} - the series cannot be selected
-    - {% typedoc_link enums:ChartSeriesSelectionMode,member:NotSet %} - series selection is not set and the series selection mode set to chart will be used.
-    - {% typedoc_link enums:ChartSeriesSelectionMode,member:Series %} - the whole series will be selected
-    - {% typedoc_link enums:ChartSeriesSelectionMode,member:DataPoint %} - the touched data point will be selected only
-    - {% typedoc_link enums:ChartSeriesSelectionMode,member:DataPointMultiple %} - multiple data point will be selected
-- {% typedoc_link classes:ChartSeries,member:labelStyle %} - property of type PointLabelsStyle defining the style of the point labels
+If you followed the [getting started]({% slug chart-getting-started %} "Chart Getting Started") article, you now know how to create a chart and add it to a NativeScript page. In this article, you will learn which are the available series and how to choose the most appropriate depending on the data that you want to plot. The NativeScript UI Chart comes with a bunch of series suitable for different types of data. When the data has be visualized on a cartesian coordinate system, the {% typedoc_link classes:RadCartesianChart %} should be used along with an instance of one of the {% typedoc_link classes:CartesianSeries %} subtypes. The other option is to use {% typedoc_link classes:RadPieChart %} with an instance of the {% typedoc_link classes:PieSeries %}. The `CartesianSeries` are additionally divided into two types: {% typedoc_link classes:ScatterSeries %} and  {% typedoc_link classes:CategoricalSeries %}. 
 
-## Cartesian Series
-The {% typedoc_link classes:CartesianSeries %} draw the data from the source in a Cartesian Coordinate System. Examples of Cartesian Series are:
+* [Series Types](#series-types)
+* [Selection](#selection)
+* [Stack Mode](#stack-mode)
+* [Styling](#styling)
+* [Series Labels](#series-labels)
+* [References](#references)
 
-- {% typedoc_link classes:BarSeries %}
-- {% typedoc_link classes:LineSeries %}
-- {% typedoc_link classes:AreaSeries %}
-- {% typedoc_link classes:SplineSeries %}, etc.
+## Series Types
+Here is a complete list of all series types:
 
-All cartesian series can be divided into two groups depending on the axes they can play with:
-- Linear series
-- Categorical series
+* CategoricalSeries Presenting Discrete Data
+  * **BarSeries**
+  * **RangeBarSeries**
+  * **BubbleSeries**
+* CategoricalSeries Presenting Continuous Data
+  * **LineSeries**
+  * **SplineSeries**
+  * **AreaSeries**
+  * **SplineAreaSeries**
+* CategoricalSeries Presenting Financial Data
+  * **OhlcSeries**
+  * **CandlesctickSeries**
+* CartesianSeries Presenting Two Continuous Variables
+  * **ScatterSeries**
+  * **ScatterBubbleSeries**
+* ChartSeries Presenting Numerical Proportion
+  * **PieSeries**
+  * **DonutSeries**
 
-**Categorical Series** require a combination of a linear axis and a categorical axis, whereas **Linear Series** require both axes to be linear. In other words, **Categorical Series** plot the X or the Y value of the data object on a categorical axis, i.e. they fit the X or Y value into a particular category. The **Linear Series** plot the data objects on two linear axes, i.e. both X and Y are values that belong to a given linear range.
+### ChartSeries Type
+The **ChartSeries** is the base class for all series and provides the following properties:
+- {% typedoc_link classes:ChartSeries,member:showLabels %} - Determines whether labels are shown for each data point.
+- {% typedoc_link classes:ChartSeries,member:legendTitle %} - Determines the title which will be displayed in the legend for the current series.
+- {% typedoc_link classes:ChartSeries,member:valueProperty %} - Determines the name of the property on the source object that will provide the value used to plot the object in the chart.
+- {% typedoc_link classes:ChartSeries,member:items %} - Used to bind the series with a source of data items.
+- {% typedoc_link classes:ChartSeries,member:selectionMode %} - Responsible for the selection mode of the series.
+- {% typedoc_link classes:ChartSeries,member:labelStyle %} - Property of type PointLabelsStyle defining the style of the point labels.
 
-As `CartesianSeries` all categorical series share the base cartesian series API and provide a couple of additional properties needed for their proper initialization. The following properties are part of this object and are needed for correctly setting up a categorical chart:
+### CartesianSeries Type
+**CartesianSeries** is a subtype of **ChartSeries** and draw the data from the source in a Cartesian Coordinate System. The cartesian series can be used only with **RadCartesianChart**. Along with all **ChartSeries**'s properties, **CartesianSeries** also provide the following:
+- {% typedoc_link classes:CartesianSeries,member:horizontalAxis %} -  Defines the horizontal axis used to setup the chart.
+- {% typedoc_link classes:CartesianSeries,member:verticalAxis %} - Defines the vertical axis used to setup the chart.
+- {% typedoc_link classes:CartesianSeries,member:paletteMode %} - Defines the mode for applying palettes.
 
-- {% typedoc_link classes:CategoricalSeries,member:categoryProperty %} - defines the name of the property on the data object which will be used to plot the object into the right category
-- {% typedoc_link classes:CategoricalSeries,member:stackMode %} - defines how separate series are combined within a single chart
+### CategoricalSeries Type
+**CategoricalSeries** is a subtype of **CartesianSeries**. They require that the **RadCartesianChart** they are added to, has one axis that is category axis and shows the specific categories being compared and one axis that is a value axis and represents a measured value. Along with all **CartesianSeries**'s properties, **CategoricalSeries** also provide the following:
+- {% typedoc_link classes:CategoricalSeries,member:categoryProperty %} - Defines the name of the property on the data object which will be used to plot the object into the right category.
+- {% typedoc_link classes:CategoricalSeries,member:stackMode %} - Defines how separate series are combined within a single chart.
 
-Here's a simple scenario using Bar series. In our NativeScript application we define an object that exposes a collection which we will use as a data source for our chart. The collection is exposed by the `categoricalSource` property. We additionally define a page with a chart in it and set the `bindingContext` of the page to point to an instance of a data-model object:
+### CategoricalSeries Presenting Discrete Data
+Some of the **CategoricalSeries** are generally used to display relation between values in discrete categories, but they can also be used to visualize change over a period of time. These series are [BarSeries]({% slug chart-series-bar %} "Chart BarSeries"), [RangeBarSeries]({% slug chart-series-range-bar %} "Chart RangeBarSeries"), [BubbleSeries]({% slug chart-series-bubble %} "Chart BubbleSeries").
 
-<snippet id='categorical-source'/>
+#### Figure 1: Categorical Chart with discrete data on Android (left) and iOS (right)
 
-In our page definition, we set the `bindingContext` of the page to point to a `CategoricalDataModel` object:
+![Chart series](../../../img/ns_ui/chart-css-bar-01-android.png "Discrete Data on Android.") ![Chart series](../../../img/ns_ui/chart-css-bar-01-ios.png "Discrete Data on iOS.")
 
-<snippet id='binding-context-bar-series'/>
+### CategoricalSeries Presenting Continuous Data
+Some of the **CategoricalSeries** are generally used to display how values change over a period of time, but they can also be used to connect the values in discrete categories. These series are [LineSeries]({% slug chart-series-line %} "Chart LineSeries"), [SplineSeries]({% slug chart-series-spline %} "Chart SplineSeries"), [AreaSeries]({% slug chart-series-area %} "Chart AreaSeries"), [SplineAreaSeries]({% slug chart-series-spline-area %} "Chart SplineAreaSeries").
 
-And in the XML definition of the page we put an instance of `RadCartesianChart`, define the `BarSeries` and bind them to the `categoricalSource` exposed by the data model:
+#### Figure 2: Categorical Chart with continuous data on Android (left) and iOS (right)
 
-<snippet id='bar-series'/>
+![Chart series](../../../img/ns_ui/chart-css-line-01-android.png "Continuous Data on Android.") ![Chart series](../../../img/ns_ui/chart-css-line-01-ios.png "Continuous Data on iOS.")
 
-The following screenshots demonstrate how your page looks like on iOS and Android:
+### CategoricalSeries Presenting Financial Data
+Some of the **CategoricalSeries** are used to display financial data, such as stock prices, etc. These series are [OhlcSeries]({% slug chart-series-ohlc %} "Chart OhlcSeries") and [CandlesctickSeries]({% slug chart-series-candlestick %} "Chart CandlesctickSeries").
 
-![Chart series overview](../../../img/ns_ui/bar_series_android.png "Bar series on Android.") ![Chart series overview](../../../img/ns_ui/bar_series_ios.png "Bar series on iOS.")
+#### Figure 3: Categorical Chart with financial data on Android (left) and iOS (right)
 
-### Stack Mode
-There are scenarios in which a single Categorical chart can host multiple series. The {% typedoc_link classes:CategoricalSeries,member:stackMode%} property allows you to define how these series will interact with each other. The following options are available for the `stackMode` property:
+![Chart series](../../../img/ns_ui/chart-css-candlestick-01-android.png "Financial Data on Android.") ![Chart series](../../../img/ns_ui/chart-css-candlestick-01-ios.png "Financial Data on iOS.")
 
-- {% typedoc_link enums:ChartSeriesStackMode,member:None%} - series are displayed on top of each other in the order they are added in the chart
-- {% typedoc_link enums:ChartSeriesStackMode,member:Stack%} - separate data points which reside in the same category are stacked on top of each other in the order they are added in the chart
-- {% typedoc_link enums:ChartSeriesStackMode,member:Stack100%} - separate data points which reside in the same category are stacked on top of each other and positioned proportionally so that the whole plot-area of the chart is filled
+### CartesianSeries Presenting Two Continous Variables
+**ScatterSeries** is a subtype **CartesianSeries**. They require that the **RadCartesianChart** they are added to, has two axes that are value axes. These series are [ScatterSeries]({% slug chart-series-scatter %} "Chart ScatterSeries") and [ScatterBubbleSeries]({% slug chart-series-scatter-bubble %} "Chart ScatterBubbleSeries").
 
-This is the data with which we will populate our series:
+#### Figure 4: Scatter Chart on Android (left) and iOS (right)
 
-<snippet id='stacked-series-model'/>
-In our page definition, we set the `bindingContext` of the page to point to a `stackedSeriesModel` object:
+![Chart series](../../../img/ns_ui/chart-css-scatter-01-android.png "Scatter Chart on Android.") ![Chart series](../../../img/ns_ui/chart-css-scatter-01-ios.png "Scatter Chart on iOS.")
 
-<snippet id='stacked-series-binding-context'/>
-The following XML snippet demonstrates combining three Area series in a single chart and defining a stack mode:
+### ChartSeries Presenting Numerical Proportion
+**CartesianSeries** is a subtype of **ChartSeries** and draw the data from the source in a way that resembles pie slices. They can be used only with **RadPieChart**. They are generally useful to display how some value relates to the whole value. These series are [PieSeries]({% slug chart-series-pie %} "Chart PieSeries") and [DonutSeries]({% slug chart-series-donut %} "Chart DonutSeries").
 
-<snippet id='stacked-series'/>
+#### Figure 5: Donut Chart on Android (left) and iOS (right)
 
-Here's how your chart will look like with {% typedoc_link classes:CategoricalSeries,member:stackMode%} set to `Stack100`:
+![Chart series](../../../img/ns_ui/chart-css-donut-01-android.png "Donut Chart on Android.") ![Chart series](../../../img/ns_ui/chart-css-donut-01-ios.png "Donut Chart on iOS.")
 
-![Chart series overview](../../../img/ns_ui/stacked_area_series_android.png "Bar series on Android.") ![Chart series overview](../../../img/ns_ui/stacked_area_series_ios.png "Bar series on iOS.")
+## Selection
 
-## Pie series
-Pie series are a separate type of series that are used in context with a Pie chart. There are two types of Pie series supported by Chart for NativeScript:
+The chart support selection of series and selection of data points. More information about this feature is available in [this article]({% slug chart-series-selection %} "Chart Series Selection").
 
-- `Pie` - data is represented in the form of a pie where separate data-points are visualized as a slice of the pie
-- `Donut` - the Pie series principles apply here with the only difference that there is a 'hole' in the middle of the pie which makes it look like a donut
+## Stack Mode
+
+When more than one series is added to a RadCartesianChart they can be stacked together. [Here's]({% slug chart-series-stack-mode %} "Chart Series Stack Mode") more about this feature.
+
+## Styling
+
+[This article]({% slug chart-series-styling %} "Chart Series Styling") contains more information about how to use CSS or palettes to customize the series' appearance.
+
+## Series Labels
+
+The drawing of labels can be controlled through axis' `showLabels` property. More information about the labels is available in their dedicated [article]({% slug chart-series-labels %} "Chart Series Labels").
+
+## References
+
+Want to see this scenario in action?
+Check our [SDK Examples](https://github.com/NativeScript/nativescript-ui-samples) repository on GitHub. You will find this and many other practical examples with NativeScript UI.
+
+Examples used in this article:
+
+* [Bar CSS Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples/css)
+* [Line CSS Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples/css)
+* [Candlestick CSS Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples/css)
+* [Scatter CSS Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples/css)
+* [Donut CSS Example](https://github.com/NativeScript/nativescript-ui-samples/tree/master/chart/app/examples/css)
+
+Related articles you might find useful:
+
+* [**Line Series**]({% slug chart-series-line %})
+* [**Pie Series**]({% slug chart-series-pie %})
+* [**Series Styling**]({% slug chart-series-styling %})
