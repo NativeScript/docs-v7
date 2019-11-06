@@ -64,7 +64,7 @@ The example below shows how to combine an image and label for a `titleView` (the
     ios:horizontalAlignment="center"
     android:horizontalAlignment="left">
     <Image src="res://nativescript_logo" class="action-image"></Image>
-    <Label text="ativeScript"  class="action-label"></Label>
+    <Label text="ativeScript" class="action-label"></Label>
   </StackLayout>
 </ActionBar>
 ```
