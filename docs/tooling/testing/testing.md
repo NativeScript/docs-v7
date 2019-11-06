@@ -124,7 +124,7 @@ QUnit.test("Hello World Sample Test:", function (assert) {
 	assert.equal( mainViewModel.createViewModel().message, "42 taps left", "Message, 42 taps left; equal succeeds." ); //Assert that the message is "42 taps left".
 });
 ```
-
+{% angular %} 
 ## TestBed Integration
 
 To use TestBed you have to alter your `karma.conf.js` to:
@@ -204,7 +204,7 @@ describe('Renderer E2E', () => {
 
 ```
 
-
+{% endangular%}
 
 ## Run Your Tests
 
