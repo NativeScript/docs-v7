@@ -94,11 +94,11 @@ To illustrate this behavior, the sample CSS styles below will paint the elements
 
 ```css
 .my-class {
-    background-color: lightgreen;
+    background-color: lightblue;
 }
 
 :host-context(.ns-dark) .my-class {
-    background-color: darkgreen;
+    background-color: lightblue;
 }
 ```
 
