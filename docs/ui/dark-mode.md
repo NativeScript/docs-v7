@@ -88,8 +88,6 @@ In addition, the application module provides `systemAppearance` property and `sy
 
 ## NativeScript Theme Integration
 
-The NativeScript Theme provides beautiful look and feel of your application for both Light and Dark system appearances. Please, refer to the Theme article for more information.
-
-<!-- TODO: add a link to the theme article -->
+The NativeScript Theme provides beautiful look and feel of your application for both Light and Dark system appearances. Please, refer to the Theme [repository](https://github.com/NativeScript/theme) for more information.
 
 > Note: make sure to use `@nativescript/theme` package version 2.2.0 or above.
