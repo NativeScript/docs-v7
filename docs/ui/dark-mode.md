@@ -72,6 +72,8 @@ However, if you need extra time to work on your application's Dark mode support,
 
 Since version 6.2, NativeScript detects the system appearance of the running mobile operating system and applies a respective CSS class to the application's [root view](https://docs.nativescript.org/ui/styling#root-views-css-classes). In particular, if you run the application on iOS 13.0 in Light mode, a `.ns-light` CSS class will be assign to the root view of your application. In analogy, if you change the system appearance from Light to Dark, the `.ns-light` class will be replaced with `.ns-dark` and vice versa.
 
+{% nativescript %}
+
 To illustrate this behavior, the sample CSS styles below will paint the Pages of your application in *light blue* color on Light system appearance and in *dark blue* on dark system appearance:
 
 ```css
@@ -83,6 +85,26 @@ To illustrate this behavior, the sample CSS styles below will paint the Pages of
     background-color: darkblue;
 }
 ```
+
+{% endnativescript %}
+
+{% angular %}
+
+To illustrate this behavior, the sample CSS styles below will paint the elements with assigned `.my-class` class of your application in *light blue* color on Light system appearance and in *dark blue* on dark system appearance:
+
+```css
+.my-class {
+    background-color: lightgreen;
+}
+
+:host-context(.ns-dark) .my-class {
+    background-color: darkgreen;
+}
+```
+
+> Note: as the `.ns-light` and `.ns-dark` classes are assigned the to the root view of the application, have in mind to use the [host-context](https://angular.io/guide/component-styles#host-context) selector.
+
+{% endangular %}
 
 In addition, the application module provides `systemAppearance` property and `systemAppearanceChanged` event. Through, them you could easily detect the current system appearance mode and update application behavior or style on a change.
 
