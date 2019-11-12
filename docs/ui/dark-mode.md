@@ -98,7 +98,7 @@ To illustrate this behavior, the sample CSS styles below will paint the elements
 }
 
 :host-context(.ns-dark) .my-class {
-    background-color: lightblue;
+    background-color: darkblue;
 }
 ```
 
