@@ -531,21 +531,19 @@ button:highlighted { background-color: red; color: gray;}
 
 To allow flexible styling and theming, NativeScript adds a CSS class to the root views in the application for specific states.
 
-The application root view CSS classes are:
-- `.ns-root` - a default class
+The deafult CSS classes are are:
+
+- `.ns-root` - a class assigned to the application root view
+- `.ns-modal` - a class assigned to the modal root view
+
+The CSS classes for each application and modal root view are:
+
 - `.ns-android`, `.ns-ios` - classes that specify the application platform
 - `.ns-phone`, `.ns-tablet` - classes that specify the device type
 - `.ns-portrait`, `.ns-landscape`, `.ns-unknown` - classes that specify the application orientation
 - `.ns-light`, `.ns-dark` - classes that specify the system appearance.
 
-In addition, a default CSS class is assigned to the root view of any modal view: `.ns-modal`.
-
-<!--
-TODOs:
-- Android and iOS versions
-- refer to a Dark Mode article
-- add state classes for modals
--->
+For additional information on the Dark Mode support, refer to [this](https://docs.nativescript.org/ui/dark-mode) documentation article.
 
 ## Supported CSS Properties
 
