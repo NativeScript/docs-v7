@@ -18,49 +18,39 @@ The NativeScript project provides a core theme that you can add to any of your p
 All official NativeScript templates come with the NativeScript Core Theme prepackaged and ready to go, so manual installation is unnecessary. If for some reason you’re using an app that doesn’t have the theme pre-installed, you can add it with the following command:
 
 ```
-npm install nativescript-theme-core --save
+npm install @nativescript/theme --save
 ```
 
-Your `app.css` file then needs a single `@import` CSS rule in order to include the theme in your app, which you'll learn about in the next section.
+Your `app.css` file then needs two `@import` CSS rules in order to include the theme in your app, which you'll learn about in the next section.
 
 ## Color Schemes
 
-The NativeScript core theme includes two standard color schemes, light and dark. Here’s what they look like on Android (left) and iOS (right).
+The NativeScript core theme comes with a default color scheme which supports light/dark modes (for both Android and iOS) by design.
 
-![Light and dark color schemes](/img/theme/color-schemes-light-and-dark.png)
+<!-- ![Light and dark color schemes](/img/theme/color-schemes-light-and-dark.png) -->
 
-To use the light color scheme, add the following line of code to the top of your `app.css` file:
+To use the default color scheme (with main color blue), add the following lines of code to the top of your `app.css` file:
 
 ``` CSS
-@import '~nativescript-theme-core/css/core.light.css';
+@import '~@nativescript/theme/css/core.css';
+@import '~@nativescript/theme/css/default.css';
 ```
 
-And in order to use the dark scheme, add this line of code to your `app.css` instead:
 
-
-``` CSS
-@import '~nativescript-theme-core/css/core.dark.css';
-```
-
-> **TIP**: When using the dark color scheme, make sure that you:
-> * apply the [`page` class name](#page) to ensure your app’s text displays appropriately;
-> * [alter your app’s status bar colors](#status-bar-considerations);
-> * use dark parent themes on Android. In `style.xml` files in the `App_Resources\Android\values[-v21]` folders remove `Light.` from “parent” attributes (e.g., `Theme.AppCompat.Light.NoActionBar` becomes `Theme.AppCompat.NoActionBar`).
-
-You may want to alternatively use one of the 11 other color schemes included in the NativeScript core theme. To do so, switch your `app.css` file to use one of the following imports.
+You may want to alternatively use one of the 11 other color schemes included in the NativeScript core theme. To do so, switch the **second** import in your `app.css` file to use one of the following imports.
 
 ``` CSS
-@import '~nativescript-theme-core/css/aqua.css';
-@import '~nativescript-theme-core/css/blue.css';
-@import '~nativescript-theme-core/css/brown.css';
-@import '~nativescript-theme-core/css/forest.css';
-@import '~nativescript-theme-core/css/grey.css';
-@import '~nativescript-theme-core/css/lemon.css';
-@import '~nativescript-theme-core/css/lime.css';
-@import '~nativescript-theme-core/css/orange.css';
-@import '~nativescript-theme-core/css/purple.css';
-@import '~nativescript-theme-core/css/ruby.css';
-@import '~nativescript-theme-core/css/sky.css';
+@import '~@nativescript/theme/css/aqua.css';
+@import '~@nativescript/theme/css/blue.css'; /* same as default.css */
+@import '~@nativescript/theme/css/brown.css';
+@import '~@nativescript/theme/css/forest.css';
+@import '~@nativescript/theme/css/grey.css';
+@import '~@nativescript/theme/css/lemon.css';
+@import '~@nativescript/theme/css/lime.css';
+@import '~@nativescript/theme/css/orange.css';
+@import '~@nativescript/theme/css/purple.css';
+@import '~@nativescript/theme/css/ruby.css';
+@import '~@nativescript/theme/css/sky.css';
 ```
 
 > **TIP**: [This image](/img/theme/color-schemes-all.png) shows all 13 color schemes on iOS and Android, and can help you decide which color scheme is a good fit for your app.
