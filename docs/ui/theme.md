@@ -193,25 +193,15 @@ Note that for each of these rules the “m” can be swapped with a “p” to a
 
 A divider is a common way to separate areas of your user interface. The NativeScript provides two class names that can be applied to empty `<StackLayout>` elements to create a simple divider with a height of `1`.
 
-* `hr-light`: Creates a light colored divider.
+* `hr`: Creates a colored divider.
 
 ``` XML
 <Label text="Separate this UI widget..."></Label>
-<StackLayout class="hr-light m-10"></StackLayout>
+<StackLayout class="hr m-10"></StackLayout>
 <Label text="...from this UI widget."></Label>
 ```
 
 ![light dividers ios](/img/theme/dividers-light-ios.png) ![light dividers android](/img/theme/dividers-light-android.png)
-
-* `hr-dark`: Creates a dark colored divider.
-
-``` XML
-<Label text="Separate this UI widget..."></Label>
-<StackLayout class="hr-dark m-10"></StackLayout>
-<Label text="...from this UI widget."></Label>
-```
-
-![dark dividers ios](/img/theme/dividers-dark-ios.png) ![dark dividers android](/img/theme/dividers-dark-android.png)
 
 ### Utilities
 
@@ -222,10 +212,10 @@ The NativeScript core theme provides a set of utility class names that can be ap
 
 ``` XML
 <StackLayout>
-  <Label class="pull-left font-weight-bold" text="Left!"></Label>
+    <Label class="pull-left" text="Left!"></Label>
 </StackLayout>
 <StackLayout>
-  <Label class="pull-right font-weight-bold" text="Right!"></Label>
+    <Label class="pull-right" text="Right!"></Label>
 </StackLayout>
 ```
 
@@ -252,160 +242,118 @@ You can convey meaning through color with a handful of utility classes that are 
 
 ``` XML
 <StackLayout class="bg-primary">
-  <Label text="I want to draw your attention here."></Label>
+    <Label text="I want to draw your attention here."></Label>
 </StackLayout>
 <StackLayout class="bg-danger">
-  <Label text="A critical error has occurred!"></Label>
+    <Label text="A critical error has occurred!"></Label>
 </StackLayout>
 ```
 
 ![contextual colors background ios](/img/theme/contextual-colors-bg-ios.png) ![contextual colors background android](/img/theme/contextual-colors-bg-android.png)
 
-### Page
-
-The NativeScript core theme includes a single class name to apply to Page UI components.
-
-* `page`: A class name that alters text colors when using the dark color scheme.
-
-``` XML
-<Page class="page">
-  <Label class="body" text="I will show up in the dark color scheme."></Label>
-</Page>
-```
-
-![dark page ios](/img/theme/page-dark-ios.png) ![dark page android](/img/theme/page-dark-android.png)
-
-* **NOTE**: You can also apply the `page` class name to a page’s top-level layout container, for instance `<GridLayout class="page">...</GridLayout>`. This is useful in Angular apps, where the `<Page>` component is not included in your component markup.
-
 ### ActionBar
 
-The NativeScript core theme includes a few class names to apply to ActionBar UI components.
+The theme styles for `ActionBar` are applied via Element (Type) selector. In the common case, no additional classes are needed but for custom scenarios, the theme provides [BEM classes](#actionbar-bem-classes). 
 
-* `action-bar`: A class name that applies the theme’s color scheme to ActionBar components.
+``` XML
+<!-- The theme styles are applied via the type selectors ActionBar & ActionItem -->
+<ActionBar title="My App">
+    <NavigationButton></NavigationButton>
+    <ActionItem ios:position="right">
+        <Button text="My Action"></Button>
+    </ActionItem>
+</ActionBar>
+```
+
+#### ActionBar BEM Classes
+
+The NativeScript theme includes a few [BEM](http://getbem.com) class names to apply to `ActionBar` UI components.
+
+> **Note:** BEM — Block Element Modifier is a methodology that helps you to create reusable components.
+
+* `nt-action-bar`: A class name that applies the theme’s color scheme to `ActionBar` components.
 
 {% nativescript %}
 ``` XML
-<Page class="page">
-  <Page.actionBar>
-    <ActionBar class="action-bar" title="My App">
+<Page>
+    <ActionBar class="nt-action-bar" title="My App">
     </ActionBar>
-  </Page.actionBar>
 </Page>
 ```
 {% endnativescript %}
 {% angular %}
 ``` XML
-<ActionBar class="action-bar" title="My App">
+<ActionBar class="nt-action-bar" title="My App">
 </ActionBar>
 ```
 {% endangular %}
 
 ![action bar ios](/img/theme/action-bar-ios.png) ![action bar android](/img/theme/action-bar-android.png)
 
-* `action-bar-title`: A class name that applies the theme’s color scheme when using a [custom title view](/ui/action-bar#using-a-custom-title-view).
+* `nt-action-bar__item`: A class name that applies the theme’s color scheme when using action bar item (e.g., an `ActionItem` or custom layout).
 
 {% nativescript %}
 ``` XML
-<Page class="page">
-  <Page.actionBar>
-    <ActionBar class="action-bar">
-      <StackLayout class="action-bar-title">
-        <Label text="Your App" class="font-weight-bold" color="blue"></Label>
-      </StackLayout>
+<Page>
+    <ActionBar class="nt-action-bar">
+        <StackLayout class="nt-action-bar__item">
+            <Label text="Your App" color="orangered"></Label>
+        </StackLayout>
     </ActionBar>
-  </Page.actionBar>
 </Page>
 ```
 {% endnativescript %}
 {% angular %}
 ``` XML
-<ActionBar class="action-bar">
-  <StackLayout class="action-bar-title">
-    <Label text="Your App" class="font-weight-bold" color="blue"></Label>
-  </StackLayout>
+<ActionBar class="nt-action-bar">
+    <StackLayout class="nt-action-bar__item">
+        <Label text="Your App" color="orangered"></Label>
+    </StackLayout>
 </ActionBar>
 ```
 {% endangular %}
 
 ![action bar title ios](/img/theme/action-bar-title-ios.png) ![action bar title android](/img/theme/action-bar-title-android.png)
 
-* `action-item`: A class name that applies the theme’s color scheme to custom ActionItem UI components.
-
-{% nativescript %}
-``` XML
-<Page class="page">
-  <Page.actionBar>
-    <ActionBar class="action-bar" title="My App">
-      <ActionBar.actionItems>
-        <ActionItem>
-          <ActionItem.actionView>
-            <Button text="Action" class="action-item"></Button>
-          </ActionItem.actionView>
-        </ActionItem>
-      </ActionBar.actionItems>
-    </ActionBar>
-  </Page.actionBar>
-</Page>
-```
-{% endnativescript %}
-{% angular %}
-``` XML
-<ActionBar class="action-bar" title="My App">
-  <ActionItem>
-    <Button text="Action" class="action-item"></Button>
-  </ActionItem>
-</ActionBar>
-```
-{% endangular %}
-
-![action item ios](/img/theme/action-item-ios.png) ![action item android](/img/theme/action-item-android.png)
-
-> **TIP**: You can use the various ActionBar class names to create an ActionBar-like look without actually using the ActionBar UI components. You may find this approach useful for using in [modal pages](/core-concepts/navigation#modal-pages), for instance.
-> ```
-> <GridLayout rows="auto" columns="75,*,75" class="action-bar p-10">
->  <Button text="Close" class="text-left action-item" row="0" col="0"></Button> 
->  <Label text="My Modal" class="text-center action-bar-title" row="0" col="1"></Label>
-> </GridLayout>
-> ```
-
 ### Buttons
 
-The NativeScript theme includes a handful of class names to change the look and feel of buttons in your applications.
+The theme styles for `Button` are applied via Element (Type) selector. In the common case, no additional CSS classes are required but for custom scenarios, the theme provides the BEM class `nt-button`. The NativeScript theme includes a handful of class names to change the look and feel of buttons in your applications.
 
-* `btn`: A class name that applies the base styles of the NativeScript core theme, including dimensions and spacing.
-* `btn-primary`: A class name that applies the primary color pattern of the theme to the button.
+
+* `-primary`: A class name that applies the primary color pattern of the theme to the button.
 
 ``` XML
-<Button class="btn btn-primary" text="Primary"></Button>
+<Button class="-primary" text="Primary"></Button>
 ```
 
 ![button primary ios](/img/theme/btn-primary-ios.png) ![button primary android](/img/theme/btn-primary-android.png)
 
-* `btn-outline`: A class name that makes a button appear with a border and a transparent background.
+* `-outline`: A class name that makes a button appear with a border and a transparent background.
 
 ``` XML
-<Button class="btn btn-outline" text="Border + Transparent Background"></Button>
+<Button class="-outline" text="Border + Transparent Background"></Button>
 ```
 
 ![button outline ios](/img/theme/btn-outline-ios.png) ![button outline android](/img/theme/btn-outline-android.png)
 
-* `btn-rounded-sm`: A class names that makes a button appear with a small rounded corners.
-* `btn-rounded-lg`: A class name that makes a button appear with large rounded corners.
+* `-rounded-sm`: A class names that makes a button appear with a small rounded corners.
+* `-rounded-lg`: A class name that makes a button appear with large rounded corners.
 
 ``` XML
-<Button class="btn btn-primary btn-rounded-sm" text="Small rounded corners"></Button>
-<Button class="btn btn-primary btn-rounded-lg" text="Large rounded corners"></Button>
+<Button class="-primary -rounded-sm" text="Small rounded corners"></Button>
+<Button class="-primary -rounded-lg" text="Large rounded corners"></Button>
 ```
 
 ![button rounded ios](/img/theme/btn-rounded-ios.png) ![button rounded android](/img/theme/btn-rounded-android.png)
 
-* `btn-active`: A class name that makes a button appear highlighted when tapped.
+* `-active`: A class name that makes a button appear highlighted when tapped.
 
 ``` XML
-<Button class="btn btn-active" text="I’m highlighted when tapped"></Button>
+<Button class="-active" text="I’m highlighted when tapped"></Button>
 ```
 
-> **WARNING**: By default, iOS uses a delay before highlighting buttons used within ScrollView controls. Therefore, use caution when applying the `btn-active` class name to `<Button>` elements that are children of `<ScrollView>`s. For more detail see [this Stack Overflow thread](http://stackoverflow.com/questions/7541159/is-it-possible-to-remove-the-delay-of-uibuttons-highlighted-state-inside-a-uisc).
+> **WARNING**: By default, iOS uses a delay before highlighting buttons used within ScrollView controls. Therefore, use caution when applying the `-active` class name to `<Button>` elements that are children of `<ScrollView>`s. For more detail see [this Stack Overflow thread](http://stackoverflow.com/questions/7541159/is-it-possible-to-remove-the-delay-of-uibuttons-highlighted-state-inside-a-uisc).
+
 
 ### Forms
 
