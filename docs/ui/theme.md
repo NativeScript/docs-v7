@@ -23,23 +23,28 @@ npm install @nativescript/theme --save
 
 Your `app.css` file then needs two `@import` CSS rules in order to include the theme in your app, which you'll learn about in the next section.
 
+> **Note:** NativeScript 6.2 shifted to using scoped packages while deprecating the old packages(e.g., the `tns-core-modukes` is now published as the scoped `@nativescript/core` ). The previously known `nativescript-theme-core` package is now published as the scoped `@nativescript/theme`. The new `@nativescript/theme` introduced a number of breaking changes related to instalation and usage (imports, classes, etc.). A detailed migration guide can be found [here](https://github.com/NativeScript/theme/blob/master/MIGRATION-GUIDE.md). In case, you need information on how to use the old `nativescript-theme-core` refer to [this article](https://docs.nativescript.org/5-4/ui/theme). If prefer to use the old clasess with `@nativescript/theme` then you could use the compat styling.
+
 ## Color Schemes
 
 The NativeScript core theme comes with a default color scheme which supports light/dark modes (for both Android and iOS) by design.
 
-<!-- ![Light and dark color schemes](/img/theme/color-schemes-light-and-dark.png) -->
+![Light and dark color schemes](/img/theme/color-schemes-light-and-dark.png)
+
+> **Note:** The dark mode support was introduced natively with Android 10 and above and with iOS 13 and above.
+
+### CSS Imports
 
 To use the default color scheme (with main color blue), add the following lines of code to the top of your `app.css` file:
 
-``` CSS
+```CSS
 @import '~@nativescript/theme/css/core.css';
 @import '~@nativescript/theme/css/default.css';
 ```
 
-
 You may want to alternatively use one of the 11 other color schemes included in the NativeScript core theme. To do so, switch the **second** import in your `app.css` file to use one of the following imports.
 
-``` CSS
+```CSS
 @import '~@nativescript/theme/css/aqua.css';
 @import '~@nativescript/theme/css/blue.css'; /* same as default.css */
 @import '~@nativescript/theme/css/brown.css';
@@ -53,7 +58,34 @@ You may want to alternatively use one of the 11 other color schemes included in 
 @import '~@nativescript/theme/css/sky.css';
 ```
 
-> **TIP**: [This image](/img/theme/color-schemes-all.png) shows all 13 color schemes on iOS and Android, and can help you decide which color scheme is a good fit for your app.
+### SASS Imports
+
+To load **SCSS** with `@nativescript/thenme` the imports are as follows.
+
+```CSS
+@import "~@nativescript/theme/core";
+@import "~@nativescript/theme/blue";
+```
+
+The files are now located in the root of the Theme package as opposed to Theme v1, where they were in a special _scss_ folder.
+
+### Compatibility Imports
+
+If you prefer to use the old classes for styling(from `nativescript-theme-core`), you can import .compat core theme and skin in order to do so.
+
+CSS compatibility imports
+```CSS
+@import "~@nativescript/theme/css/core.compat.css";
+@import "~@nativescript/theme/css/blue.compat.css";
+```
+
+SCSS compatibility imports
+```CSS
+@import "~@nativescript/theme/core.compat";
+@import "~@nativescript/theme/blue.compat";
+```
+
+> **Note**: [This image](/img/theme/color-schemes-all.png) shows all 13 color schemes on iOS and Android, and can help you decide which color scheme is a good fit for your app.
 
 ## Class Names
 
