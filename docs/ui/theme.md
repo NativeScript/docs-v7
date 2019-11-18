@@ -253,7 +253,7 @@ You can convey meaning through color with a handful of utility classes that are 
 
 ### ActionBar
 
-The theme styles for `ActionBar` are applied via Element (Type) selector. In the common case, no additional classes are needed but for custom scenarios, the theme provides [BEM classes](#actionbar-bem-classes). 
+The theme styles for `ActionBar` are applied via Element (Type) selector. In the common case, no additional CSS classes are needed but for custom scenarios, the theme provides [BEM classes](#bem-classes). 
 
 ``` XML
 <!-- The theme styles are applied via the type selectors ActionBar & ActionItem -->
@@ -265,59 +265,9 @@ The theme styles for `ActionBar` are applied via Element (Type) selector. In the
 </ActionBar>
 ```
 
-#### ActionBar BEM Classes
-
-The NativeScript theme includes a few [BEM](http://getbem.com) class names to apply to `ActionBar` UI components.
-
-> **Note:** BEM — Block Element Modifier is a methodology that helps you to create reusable components.
-
-* `nt-action-bar`: A class name that applies the theme’s color scheme to `ActionBar` components.
-
-{% nativescript %}
-``` XML
-<Page>
-    <ActionBar class="nt-action-bar" title="My App">
-    </ActionBar>
-</Page>
-```
-{% endnativescript %}
-{% angular %}
-``` XML
-<ActionBar class="nt-action-bar" title="My App">
-</ActionBar>
-```
-{% endangular %}
-
-![action bar ios](/img/theme/action-bar-ios.png) ![action bar android](/img/theme/action-bar-android.png)
-
-* `nt-action-bar__item`: A class name that applies the theme’s color scheme when using action bar item (e.g., an `ActionItem` or custom layout).
-
-{% nativescript %}
-``` XML
-<Page>
-    <ActionBar class="nt-action-bar">
-        <StackLayout class="nt-action-bar__item">
-            <Label text="Your App" color="orangered"></Label>
-        </StackLayout>
-    </ActionBar>
-</Page>
-```
-{% endnativescript %}
-{% angular %}
-``` XML
-<ActionBar class="nt-action-bar">
-    <StackLayout class="nt-action-bar__item">
-        <Label text="Your App" color="orangered"></Label>
-    </StackLayout>
-</ActionBar>
-```
-{% endangular %}
-
-![action bar title ios](/img/theme/action-bar-title-ios.png) ![action bar title android](/img/theme/action-bar-title-android.png)
-
 ### Buttons
 
-The theme styles for `Button` are applied via Element (Type) selector. In the common case, no additional CSS classes are required but for custom scenarios, the theme provides the BEM class `nt-button`. The NativeScript theme includes a handful of class names to change the look and feel of buttons in your applications.
+The theme styles for `Button` are applied via Element (Type) selector. In the common case, no additional CSS classes are needed but for custom scenarios, the theme provides [BEM classes](#bem-classes). The NativeScript theme includes a handful of class names to change the look and feel of buttons in your applications.
 
 
 * `-primary`: A class name that applies the primary color pattern of the theme to the button.
@@ -359,60 +309,57 @@ The theme styles for `Button` are applied via Element (Type) selector. In the co
 
 You can use the following form-related class names to improve the look of forms in your NativeScript apps.
 
-* `form`: A class name that adds spacing to a layout container that will act as the main container for your form.
+* `nt-form`: A class name that adds spacing to a layout container that will act as the main container for your form.
 
 ``` XML
-<StackLayout class="form">
+<StackLayout class="nt-form">
   <!-- The contents of the form -->
 </StackLayout>
 ```
 
 There are a few different ways you may want to display individual form fields within your form. Look over the list of class names below, and then review the subsequent examples to see those class names in action.
 
-* `input`: A class name that applies the base styling to TextField UI components.
-* `input-border`: A class name that adds a border to a TextField UI component.
-* `input-rounded`: A class name that adds a rounded border to a TextField UI component.
-* `label`: A class name that applies the base styling to Label UI components.
-* `input-field`: A class name that can be applied to a parent container to align labels with their corresponding TextField UI controls.
-* `input-sides`: A class name that helps align a label and text field side by side.
+* `nt-input`: A BEM class name that applies the base styling to the input block.
+* `-border`: A BEM class name that adds a border to a TextField UI component.
+* `-rounded`: A BEM class name that adds a rounded border to a TextField UI component.
+* `nt-label`: A BEM class name that applies the base styling to Label UI components.
+* `-sides`: A BEM class name that helps align a label and text field side by side.
 
 Here’s a form with a number of different form control display options you can experiment with.
 
 ``` XML
-<StackLayout class="form">
+<StackLayout class="nt-form">
+    <!-- Option 1: An input with no label, and a bottom border -->
+    <StackLayout class="nt-input">
+        <TextField hint="Option 1"/>
+        <StackLayout class="hr"></StackLayout>
+    </StackLayout>
 
-  <!-- Option 1: An input with no label, and a bottom border -->
-  <StackLayout class="input-field">
-    <TextField hint="Option 1" class="input" />
-    <StackLayout class="hr-light"></StackLayout>
-  </StackLayout>
+    <!-- Option 2: An input with a label on top, and a bottom border -->
+    <StackLayout class="nt-input">
+        <Label text="Option 2" class="nt-label font-weight-bold m-b-5" />
+        <TextField/>
+        <StackLayout class="hr"></StackLayout>
+    </StackLayout>
 
-  <!-- Option 2: An input with a label on top, and a bottom border -->
-  <StackLayout class="input-field">
-    <Label text="Option 2" class="label font-weight-bold m-b-5" />
-    <TextField class="input" />
-    <StackLayout class="hr-light"></StackLayout>
-  </StackLayout>
+    <!-- Option 3: An label and input—positioned side by side -->
+    <GridLayout class="nt-input -sides" rows="auto, auto" columns="*,*">
+        <Label text="Option 3" class="nt-label font-weight-bold" row="0" col="0" />
+        <TextField row="0" col="1"/>
+        <StackLayout class="hr" row="1" colSpan="2"></StackLayout>
+    </GridLayout>
 
-  <!-- Option 3: An label and input—positioned side by side -->
-  <GridLayout class="input-field input-sides" rows="auto, auto" columns="*,*">
-    <Label text="Option 3" class="label font-weight-bold" row="0" col="0" />
-    <TextField class="input right" row="0" col="1" />
-    <StackLayout class="hr-light" row="1" colSpan="2"></StackLayout>
-  </GridLayout>
+    <!-- Option 4: An input with a simple border and no label -->
+    <TextField hint="Option 4" class="nt-input -border" />
 
-  <!-- Option 4: An input with a simple border and no label -->
-  <TextField hint="Option 4" class="input input-border" />
-
-  <!-- Option 5: An input with a rounded border and no label -->
-  <TextField hint="Input rounded" class="input input-rounded m-t-10" />
-
+    <!-- Option 5: An input with a rounded border and no label -->
+    <TextField hint="Rounded" class="nt-input -rounded m-t-10" />
 </StackLayout>
 ```
 
-![forms ios](/img/theme/forms-ios.png) ![forms android](/img/theme/forms-android.png)
+<!-- ![forms ios](/img/theme/forms-ios.png) ![forms android](/img/theme/forms-android.png) -->
 
-> **TIP** The NativeScript core theme handles styling disabled TextField components. To disable a TextField, set its `isEnabled` attribute to `false`. For example, `<TextField class="input" isEnabled="false"></TextField>`.
+> **TIP** The NativeScript theme handles styling disabled TextField components. To disable a TextField, set its `isEnabled` attribute to `false`. For example, `<TextField class="nt-input" isEnabled="false"></TextField>`.
 
 ### Images
 
