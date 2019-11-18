@@ -201,7 +201,7 @@ A divider is a common way to separate areas of your user interface. The NativeSc
 <Label text="...from this UI widget."></Label>
 ```
 
-![light dividers ios](/img/theme/dividers-light-ios.png) ![light dividers android](/img/theme/dividers-light-android.png)
+![light dividers ios](/img/theme/dividers-light-ios.png)
 
 ### Utilities
 
@@ -319,11 +319,11 @@ You can use the following form-related class names to improve the look of forms 
 
 There are a few different ways you may want to display individual form fields within your form. Look over the list of class names below, and then review the subsequent examples to see those class names in action.
 
-* `nt-input`: A BEM class name that applies the base styling to the input block.
-* `-border`: A BEM class name that adds a border to a TextField UI component.
-* `-rounded`: A BEM class name that adds a rounded border to a TextField UI component.
-* `nt-label`: A BEM class name that applies the base styling to Label UI components.
-* `-sides`: A BEM class name that helps align a label and text field side by side.
+* `nt-input`: A class name that applies the base styling to the input block.
+* `-border`: A class name that adds a border to a TextField UI component.
+* `-rounded`: A class name that adds a rounded border to a TextField UI component.
+* `nt-label`: A class name that applies the base styling to Label UI components.
+* `-sides`: A class name that helps align a label and text field side by side.
 
 Here’s a form with a number of different form control display options you can experiment with.
 
@@ -357,7 +357,7 @@ Here’s a form with a number of different form control display options you can 
 </StackLayout>
 ```
 
-<!-- ![forms ios](/img/theme/forms-ios.png) ![forms android](/img/theme/forms-android.png) -->
+![forms ios](/img/theme/forms-ios.png)
 
 > **TIP** The NativeScript theme handles styling disabled TextField components. To disable a TextField, set its `isEnabled` attribute to `false`. For example, `<TextField class="nt-input" isEnabled="false"></TextField>`.
 
