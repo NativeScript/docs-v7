@@ -253,7 +253,7 @@ You can convey meaning through color with a handful of utility classes that are 
 
 ### ActionBar
 
-The theme styles for `ActionBar` are applied via Element (Type) selector. In the common case, no additional CSS classes are needed but for custom scenarios, the theme provides [BEM classes](#bem-classes). 
+The theme styles for `ActionBar` are applied via its element (type) selector. In the common case, no additional CSS classes are needed but for custom scenarios, the theme provides [BEM classes](#bem-classes). 
 
 ``` XML
 <!-- The theme styles are applied via the type selectors ActionBar & ActionItem -->
@@ -267,7 +267,7 @@ The theme styles for `ActionBar` are applied via Element (Type) selector. In the
 
 ### Buttons
 
-The theme styles for `Button` are applied via Element (Type) selector. In the common case, no additional CSS classes are needed but for custom scenarios, the theme provides [BEM classes](#bem-classes). The NativeScript theme includes a handful of class names to change the look and feel of buttons in your applications.
+The theme styles for `Button` are applied via its element (type) selector. In the common case, no additional CSS classes are needed but for custom scenarios, the theme provides [BEM classes](#bem-classes). The NativeScript theme includes a handful of class names to change the look and feel of buttons in your applications.
 
 
 * `-primary`: A class name that applies the primary color pattern of the theme to the button.
@@ -363,7 +363,7 @@ Here’s a form with a number of different form control display options you can 
 
 ### Images
 
-The NativeScript core theme provides a few CSS class names for altering the appearance of images.
+The NativeScript theme provides a few CSS class names for altering the appearance of images.
 
 * `img-rounded`: A class name that applies a small `border-radius` to Image UI components.
 * `img-circle`: A class name that applies a large `border-radius` to Image UI components, making the image appear as a circle.
@@ -375,73 +375,23 @@ The NativeScript core theme provides a few CSS class names for altering the appe
 
 > **NOTE**: You can only add `border-radius` to an image if it has an explicit `height` and `width` set.
 
-![images ios](/img/theme/images-ios.png) ![images android](/img/theme/images-android.png)
+![images ios](/img/theme/images-ios.png)
 
 ### ListViews
 
-ListViews are a common UI component in mobile apps, and the NativeScript core theme provides a series of class names to make your listviews look great.
-
-* `list-group`: A class name that should be applied to ListView UI components that you wish to style with any of the subsequent class names.
+The theme styles for `ListView` are applied via its element (type) selector. Additional classes are available for styling the cell separator lines (via `-separator` CSS class) and images in the item templates (via `-thumb` CSS class).
 
 ``` XML
-<ListView class="list-group">
-  <!-- The contents of the ListView -->
+<ListView items="{{ myItems }}">
+    <ListView.itemTemplate>
+        <StackLayout class="-separator">
+            <Image src="https://placem.at/things?w=150" class="-thumb img-circle"></Image>
+        </StackLayout>
+    </ListView.itemTemplate>
 </ListView>
 ```
 
-* `list-group-item`: A class name that should be applied to the container of each item template—usually a stack or grid layout. The class name adds a bit of spacing and the theme’s color scheme.
-
-``` XML
-<ListView class="list-group">
-  <ListView.itemTemplate>
-    <GridLayout class="list-group-item">
-      <!-- The contents of the template -->
-    </GridLayout>
-  </ListView.itemTemplate>
-</ListView>
-```
-
-* `list-group-item.active`: Apply the `active` class name to any list view item that you want to stand out to the user. You will likely want to conditionally apply this class name.
-
-``` XML
-<ListView class="list-group">
-  <ListView.itemTemplate>
-    <GridLayout class="list-group-item active">
-      <!-- The contents of the template -->
-    </GridLayout>
-  </ListView.itemTemplate>
-</ListView>
-```
-
-* `list-group-item.thumb`: Use the `thumb` class name to add thumbnail images to list view items.
-
-``` XML
-<ListView class="list-group">
-  <ListView.itemTemplate>
-    <GridLayout class="list-group-item" rows="*" columns="auto, *">
-      <Image row="0" col="0" src="..." class="thumb img-circle"></Image>
-      <Label row="0" col="1" text="Your text"></Label>
-    </GridLayout>
-  </ListView.itemTemplate>
-</ListView>
-```
-
-* `list-group-item-heading`: A class name to apply to elements that should appear as headings in multi-line item templates. Used in combination with the `list-group-item-text` class name.
-* `list-group-item-text`: A class name to apply to body text within a multi-line item template.
-
-``` XML
-<ListView class="list-group">
-  <ListView.itemTemplate>
-    <GridLayout class="list-group-item" rows="auto, *" columns="80, *">
-      <Image row="0" col="0" src="https://placem.at/people?w=80&txt=0" class="thumb img-circle" rowSpan="2"></Image>
-	  <Label row="0" col="1" text="{{ itemName }}" class="list-group-item-heading" />
-	  <Label row="1" col="1" text="{{ itemDesc }}" class="list-group-item-text" />
-    </GridLayout>
-  </ListView.itemTemplate>
-</ListView>
-```
-
-![listview ios](/img/theme/list-group-item-text-ios.png) ![listview android](/img/theme/list-group-item-text-android.png)
+![listview ios](/img/theme/list-group-item-text-ios.png) 
 
 ### Progress and Activity
 
