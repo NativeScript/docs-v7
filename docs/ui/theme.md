@@ -1,8 +1,8 @@
 ---
 title: Theme
-description: Learn about the NativeScript core theme, and how to apply the theme class names to user interface components in your native applications. 
+description: Learn about the NativeScript theme, and how to apply the theme color schemes to user interface components in your native applications. Choose baetween plain CSS or SASS themes and use advanced techniques like custom themes, variables and mixins. 
 position: 55
-tags: nativescript theme, css theme, nativescript theming examples
+tags: nativescript theme, CSS theme, SASS, NativeScript theming examples, styles
 slug: theme
 ---
 
@@ -21,13 +21,13 @@ All official NativeScript templates come with the NativeScript Core Theme prepac
 npm install @nativescript/theme --save
 ```
 
-Your `app.css` file then needs two `@import` CSS rules in order to include the theme in your app, which you'll learn about in the next section.
+Your `app.css` file then needs two `@import` CSS rules to include the theme in your app, which you'll learn about in the next section.
 
-> **Note:** NativeScript 6.2 shifted to using scoped packages while deprecating the old packages(e.g., the `tns-core-modukes` is now published as the scoped `@nativescript/core` ). The previously known `nativescript-theme-core` package is now published as the scoped `@nativescript/theme`. The new `@nativescript/theme` introduced a number of breaking changes related to instalation and usage (imports, classes, etc.). A detailed migration guide can be found [here](https://github.com/NativeScript/theme/blob/master/MIGRATION-GUIDE.md). In case, you need information on how to use the old `nativescript-theme-core` refer to [this article](https://docs.nativescript.org/5-4/ui/theme). If prefer to use the old clasess with `@nativescript/theme` then you could use the compat styling.
+> **Note:** NativeScript 6.2 shifted to using scoped packages while deprecating the old packages(e.g., the `tns-core-modules` is now published as the scoped `@nativescript/core` ). The previously known `nativescript-theme-core` package is now published as the scoped `@nativescript/theme`. The new `@nativescript/theme` introduced several breaking changes related to installation and usage (imports, classes, etc.). A detailed migration guide can be found [here](https://github.com/NativeScript/theme/blob/master/MIGRATION-GUIDE.md). In case you need information on how to use the old `nativescript-theme-core`, refer to [this article](https://docs.nativescript.org/5-4/ui/theme). If you prefer to use the old classes with `@nativescript/theme`, then you could use the compat styling.
 
 ## Color Schemes
 
-The NativeScript core theme comes with a default color scheme which supports light/dark modes (for both Android and iOS) by design.
+The NativeScript core theme comes with a default color scheme that supports light/dark modes (for both Android and iOS) by design.
 
 ![Light and dark color schemes](/img/theme/color-schemes-light-and-dark.png)
 
@@ -35,7 +35,7 @@ The NativeScript core theme comes with a default color scheme which supports lig
 
 ### CSS Imports
 
-To use the default color scheme (with main color blue), add the following lines of code to the top of your `app.css` file:
+To use the default color scheme (with primary color blue), add the following lines of code to the top of your `app.css` file:
 
 ```CSS
 @import '~@nativescript/theme/css/core.css';
@@ -60,18 +60,18 @@ You may want to alternatively use one of the 11 other color schemes included in 
 
 ### SASS Imports
 
-To load **SCSS** with `@nativescript/thenme` the imports are as follows.
+To load **SCSS** with `@nativescript/theme`, the imports are as follows.
 
 ```CSS
 @import "~@nativescript/theme/core";
 @import "~@nativescript/theme/blue";
 ```
 
-The files are now located in the root of the Theme package as opposed to Theme v1, where they were in a special _scss_ folder.
+The files are now located in the root of the theme package as opposed to `nativescript-theme-core`, where they were in a particular _scss_ folder.
 
 ### Compatibility Imports
 
-If you prefer to use the old classes for styling(from `nativescript-theme-core`), you can import .compat core theme and skin in order to do so.
+If you prefer to use the old classes for styling(from `nativescript-theme-core`), you can import the .compat core theme and skin to do so.
 
 CSS compatibility imports
 ```CSS
@@ -89,7 +89,7 @@ SCSS compatibility imports
 
 ## Class Names
 
-The NativeScript core theme contains a wide variety of CSS class names you can use to quickly style your applications. Here’s a complete list of the class names and what they do.
+The NativeScript core theme contains a wide variety of CSS class names you can use to style your applications quickly. Here’s a complete list of the class names and what they do.
 
 ### Headings
 
@@ -102,7 +102,7 @@ The following heading class names can be used to create headings, much like you 
 * `h5`
 * `h6`
 
-Here are a few examples for how you could use these class names.
+Here are a few examples of how you could use these class names.
 
 ``` XML
 <Label class="h1" text="This is a big heading"></Label>
@@ -113,7 +113,7 @@ Here are a few examples for how you could use these class names.
 
 ### Text
 
-A number of utility class names are available for changing the display of text you use in your applications. Here’s what they do.
+Several utility class names are available for changing the display of text you use in your applications. Here’s what they do.
 
 * `body`: A class name for long-form content in your apps, such as paragraph text.
 
@@ -164,7 +164,7 @@ The NativeScript core theme does not change the base font family you use to deve
 <Label class="font-weight-bold" text="This text will appear bold"></Label>
 ```
 
-* `font-italic`: A class name to display a font in italic text.
+* `font-italic`: A class name to display font in italic text.
 
 ``` XML
 <Label class="font-italic" text="This text will appear italicized"></Label>
@@ -174,7 +174,7 @@ The NativeScript core theme does not change the base font family you use to deve
 
 ### Padding and Margin
 
-A number of class names are available to control the spacing of UI components within your application. The first set of class names allow you to quickly add margin or padding to a given UI component.
+Several class names are available to control the spacing of UI components within your application. The first set of class names allows you to add margin or padding to a given UI component quickly.
 
 The class names follow a convention of `margin/padding` - `top/bottom/left/right` - `amount`. So for example, `<Button class="m-t-2">` renders a button with a `margin-top` of `2`, and `<Button class="p-b-5">` renders a button with a `padding-bottom` of `5`. Below is a full list of the class names available, along with the rules that they output.
 
@@ -253,7 +253,7 @@ You can convey meaning through color with a handful of utility classes that are 
 
 ## Element Selectors
 
-The old `nativescript-theme-core` was using specific CSS classes that the user had to add on every element in order to get it styled. The new `@nativescript/theme` takes a very different approach - all elements are styled by default using **Element selectors** (like `ActionBar` or `RadListView` for instance) and adding classes is not required. This brings us to something you may hit along the way - since all elements are already styled, you may need to override some of their styling. And since NativeScript doesn't support !important, you can do this with a CSS feature called specificity (see [this article](https://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/) for details).
+The old `nativescript-theme-core` was using specific CSS classes that the user had to add on every element to get it styled. The new `@nativescript/theme` takes a very different approach - all elements are styled by default using **Element selectors** (like `ActionBar` or `RadListView` for instance) and adding classes is not required. This brings us to something you may hit along the way - since all elements are already styled, you may need to override some of their stylings. And since NativeScript doesn't support !important, you can do this with a CSS feature called specificity (see [this article](https://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/) for details).
 
 
 ### ActionBar
@@ -270,14 +270,14 @@ The theme styles for `ActionBar` are applied via its element (type) selector.
 </ActionBar>
 ```
 
-> **Note:** In most cases no additional CSS classes are needed for theming the NativeScript components. Still for custom scenarios, the theme provides [BEM classes](#bem-classes).
+> **Note:** In most cases, no additional CSS classes are needed for theming the NativeScript components. Still, for custom scenarios, the theme provides [BEM classes](#bem-classes).
 
 ### Buttons
 
 The main theme styles for NativeScript's buttons are applied via their element selector `Button`. The NativeScript theme also includes a handful of class names to change the look and feel of buttons in your applications.
 
 
-* `-primary`: A class name that applies the primary color pattern of the theme to the button.
+* `-primary`: A class name that applies the original color pattern of the theme to the button.
 
 ``` XML
 <Button class="-primary" text="Primary"></Button>
@@ -293,7 +293,7 @@ The main theme styles for NativeScript's buttons are applied via their element s
 
 ![button outline ios](/img/theme/btn-outline-ios.png) ![button outline android](/img/theme/btn-outline-android.png)
 
-* `-rounded-sm`: A class names that makes a button appear with a small rounded corners.
+* `-rounded-sm`: A class names that make a button appear with small rounded corners.
 * `-rounded-lg`: A class name that makes a button appear with large rounded corners.
 
 ``` XML
@@ -309,7 +309,7 @@ The main theme styles for NativeScript's buttons are applied via their element s
 <Button class="-active" text="I’m highlighted when tapped"></Button>
 ```
 
-> **WARNING**: By default, iOS uses a delay before highlighting buttons used within ScrollView controls. Therefore, use caution when applying the `-active` class name to `<Button>` elements that are children of `<ScrollView>`s. For more detail see [this Stack Overflow thread](http://stackoverflow.com/questions/7541159/is-it-possible-to-remove-the-delay-of-uibuttons-highlighted-state-inside-a-uisc).
+> **WARNING**: By default, iOS uses a delay before highlighting buttons used within ScrollView controls. Therefore, use caution when applying the `-active` class name to `<Button>` elements that are children of `<ScrollView>`s. For more details, see [this Stack Overflow thread](http://stackoverflow.com/questions/7541159/is-it-possible-to-remove-the-delay-of-uibuttons-highlighted-state-inside-a-uisc).
 
 
 ### Forms
@@ -324,7 +324,7 @@ You can use the following form-related class names to improve the look of forms 
 </StackLayout>
 ```
 
-There are a few different ways you may want to display individual form fields within your form. Look over the list of class names below, and then review the subsequent examples to see those class names in action.
+There are a few different ways you may want to display individual form fields within your form. Look over the list of class names below, and then review the following examples to see those class names in action.
 
 * `nt-input`: A class name that applies the base styling to the input block.
 * `-border`: A class name that adds a border to a TextField UI component.
@@ -332,7 +332,7 @@ There are a few different ways you may want to display individual form fields wi
 * `nt-label`: A class name that applies the base styling to Label UI components.
 * `-sides`: A class name that helps align a label and text field side by side.
 
-Here’s a form with a number of different form control display options you can experiment with.
+Here’s a form with several different form control display options you can experiment with.
 
 ``` XML
 <StackLayout class="nt-form">
@@ -386,7 +386,7 @@ The NativeScript theme provides a few CSS class names for altering the appearanc
 
 ### ListViews
 
-The theme styles for NativeScript's list views are applied via their element selector (e.g. `ListView` or `RadListView`). Additional classes are available for styling the cell separator lines (via `-separator` CSS class) and images in the item templates (via `-thumb` CSS class).
+The theme styles for NativeScript's list views are applied via their element selector (e.g., `ListView` or `RadListView`). Additional classes are available for styling the cell separator lines (via `-separator` CSS class) and images in the item templates (via `-thumb` CSS class).
 
 ``` XML
 <ListView items="{{ myItems }}">
@@ -402,7 +402,7 @@ The theme styles for NativeScript's list views are applied via their element sel
 
 ### Progress and Activity
 
-The theme styles for NativeScript's progress and activity indicators are applied via their element selector (e.g. `Progress` or `ActivityIndicator`).
+The theme styles for NativeScript's progress and activity indicators are applied via their element selector (e.g., `Progress` or `ActivityIndicator`).
 
 ``` XML
 <Progress class="m-20" value="50"></Progress>
@@ -467,7 +467,7 @@ The first two sidedrawer class names control the alignment of content within the
 </StackLayout>
 ```
 
-* `sidedrawer-list-item`: A class name to apply to each individual item, or link, that appears within your sidedrawer’s content.
+* `sidedrawer-list-item`: A class name to apply to each item, or link, that appears within your sidedrawer’s content.
 * `sidedrawer-list-item-text`: A class name to apply to the text used within each sidedrawer’s list item.
 * `sidedrawer-list-item-icon`: A class name you can use to show an icon next to each list item’s text.
 
@@ -541,7 +541,7 @@ The theme styles for NativeScript's tabular based components are applied via the
 
 ## BEM classes
 
-The old theme classes (from `nativescript-theme-core@1.x.x`) are gone (except in compat mode), but there are new classes in their place that use a namespaced modified **BEM** methodology. These are left for the cases in which you want a custom component or for instance Label to look like the original ones. For instance the old `.action-bar` class is now called `.nt-action-bar` and the old `.action-item` is now `.nt-action-bar__item` where **nt-** is the NativeScript Theme namespace. The only difference from a standard BEM methodology is that instead of coupling modifiers to the blocks, in Theme v2 modifiers are decoupled and start with a dash.
+The old theme classes (from `nativescript-theme-core@1.x.x`) are gone (except in compat mode), but there are new classes in their place that use a namespaced modified **BEM** methodology. These are left for the cases in which you want a custom component or for instance, Label to look like the original ones. For instance the old `.action-bar` class is now called `.nt-action-bar` and the old `.action-item` is now `.nt-action-bar__item` where **nt-** is the NativeScript Theme namespace. The only difference from a standard BEM methodology is that instead of coupling modifiers to the blocks, in `@nativescript/theme` modifiers are decoupled and start with a dash.
 
 A list of the new blocks follows:
 
@@ -596,13 +596,13 @@ The NativeScript core theme is written in SASS, and you can (optionally) use the
 
 ### Installation
 
-To get started, first verify that your app has a SASS compiler (e.g. `node-sass` or `dart-sass`).
+To get started, first, verify that your app has a SASS compiler (e.g., `node-sass` or `dart-sass`).
 
 ```
 npm install node-sass --save-dev
 ```
 
-For new project, you can use a template with SASS pre-enabled. Full list of officially supported tempaltes can be found in [the App Templates GitHub repository](https://github.com/NativeScript/nativescript-app-templates).
+For a new project, you can use a template with SASS pre-enabled. A full list of officially supported templates can be found in [the App Templates GitHub repository](https://github.com/NativeScript/nativescript-app-templates).
 ```
 tns create my-new-project --template tns-template-drawer-navigation-ts
 ```
@@ -665,7 +665,7 @@ $complementary: fuchsia;
 
 The code above is enough to create a custom skin with blue accent and a pink `ActionBar`.
 
-> **Note:** When creating a custom skin you don't need to import any other file than `~@nativescript/theme/index` and it should be imported after you make changes to the variables!
+> **Note:** When creating custom skin you don't need to import any other file than `~@nativescript/theme/index` and it should be introduced after you make changes to the variables!
 
 Here is a list of all variables that can be changed.
 
@@ -699,7 +699,7 @@ Here is a list of all variables that can be changed.
 | $complementary-dark | color | $complementary | Dark second accent color (depends on {N} skin)
 | $complementary-color-dark | color | 100% negative $complementary-dark | Text color on $complementary-dark background (depends on {N} skin)
 
-In addition, several variables are mapped to the Theme variables in order to support Kendo skins or old Theme vars.
+Also, several variables are mapped to the theme variables to support Kendo skins or old theme vars.
 
 | Kendo Default | Kendo Bootstrap | Kendo Material | Theme v1 | Theme v2
 |---|---|---|---|---
@@ -743,7 +743,7 @@ $series-f: #d9534f;
 
 ### Loading Variables and Mixins
 
-In order to load all core theme variables and mixins, you only need this import:
+To load all core theme variables and mixins, you only need this import:
 
 ```CSS
 @import '~@nativescript/theme/scss/variables';
@@ -754,7 +754,7 @@ In addition, you can load the Theme variables and mixins for every skin.
 @import '~@nativescript/theme/scss/variables/blue';
 ```
 
-By using special functions that retrieve the variable from its place in the internal map you can access SASS variables. There are 3 such function `const()`, `light()` and `dark()`. The `const()` function is used to retrieve general variables, like colors or border-radius, for instance. The other two can be used to retrieve specific light/dark variable.
+By using special functions that retrieve the variable from its place in the internal map, you can access SASS variables. There are 3 such function `const()`, `light()` and `dark()`. The `const()` function is used to retrieve general variables, like colors or border-radius, for instance. The other two can be used to retrieve specific light/dark variable.
 
 _Retrieving `color` variable_
 ```CSS
@@ -763,7 +763,7 @@ _Retrieving `color` variable_
 }
 ```
 
-_Using skin specific color_
+_Using skin-specific color_
 ```CSS
 .my-label {
     background: light(background);
@@ -814,7 +814,7 @@ When using the NativeScript core theme, you may wish to alter the colors you use
 
 ### iOS
 
-On iOS you can set the status bar colors to one of two values: `UIBarStyleDefault`, the default which uses black text, or `UIBarStyleBlack`, an alternative option that uses white text. For the purposes of the NativeScript core theme, **you only need to change your status bar colors on iOS if you’re using the dark color scheme**. If you are, [refer to our docs](/ui/change-status-bar-style-ios) on how to change your status bar colors to `UIBarStyleBlack`.
+On iOS, you can set the status bar colors to one of two values: `UIBarStyleDefault`, the default which uses black text, or `UIBarStyleBlack`, an alternative option that uses white text. For the NativeScript core theme, **you only need to change your status bar colors on iOS if you’re using the dark color scheme**. If you are, [refer to our docs](/ui/change-status-bar-style-ios) on how to change your status bar colors to `UIBarStyleBlack`.
 
 ### Android
 
