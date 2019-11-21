@@ -253,7 +253,7 @@ You can convey meaning through color with a handful of utility classes that are 
 
 ### ActionBar
 
-The theme styles for `ActionBar` are applied via its element (type) selector. In the common case, no additional CSS classes are needed but for custom scenarios, the theme provides [BEM classes](#bem-classes). 
+The theme styles for `ActionBar` are applied via its element (type) selector.
 
 ``` XML
 <!-- The theme styles are applied via the type selectors ActionBar & ActionItem -->
@@ -265,9 +265,11 @@ The theme styles for `ActionBar` are applied via its element (type) selector. In
 </ActionBar>
 ```
 
+> **Note:** In most cases no additional CSS classes are needed for theming the NativeScript components. Still for custom scenarios, the theme provides [BEM classes](#bem-classes).
+
 ### Buttons
 
-The theme styles for `Button` are applied via its element (type) selector. In the common case, no additional CSS classes are needed but for custom scenarios, the theme provides [BEM classes](#bem-classes). The NativeScript theme includes a handful of class names to change the look and feel of buttons in your applications.
+The theme styles for NativeScript's buttons are applied via their element selector `Button`. In the common case, no additional CSS classes are needed but for custom scenarios, the theme provides [BEM classes](#bem-classes). The NativeScript theme includes a handful of class names to change the look and feel of buttons in your applications.
 
 
 * `-primary`: A class name that applies the primary color pattern of the theme to the button.
@@ -379,7 +381,7 @@ The NativeScript theme provides a few CSS class names for altering the appearanc
 
 ### ListViews
 
-The theme styles for `ListView` are applied via its element (type) selector. Additional classes are available for styling the cell separator lines (via `-separator` CSS class) and images in the item templates (via `-thumb` CSS class).
+The theme styles for NativeScript's list views are applied via their element selector (e.g. `ListView` or `RadListView`). Additional classes are available for styling the cell separator lines (via `-separator` CSS class) and images in the item templates (via `-thumb` CSS class).
 
 ``` XML
 <ListView items="{{ myItems }}">
@@ -395,23 +397,20 @@ The theme styles for `ListView` are applied via its element (type) selector. Add
 
 ### Progress and Activity
 
-You can use the following class names to apply the NativeScript core theme’s color scheme to your Progress and ActivityIndicator UI components.
-
-* `progress`: A class name for applying the core theme’s color scheme to a Progress UI component.
-* `activity-indicator`: A class name for applying the core theme’s color scheme to an ActivityIndicator UI component.
+The theme styles for NativeScript's progress and activity indicators are applied via their element selector (e.g. `Progress` or `ActivityIndicator`).
 
 ``` XML
-<Progress class="progress m-20" value="50"></Progress>
-<ActivityIndicator class="activity-indicator" busy="true"></ActivityIndicator>
+<Progress class="m-20" value="50"></Progress>
+<ActivityIndicator busy="true"></ActivityIndicator>
 ```
 
-![progress and activity indicator ios](/img/theme/progress-activity-ios.png) ![progress and activity indicator android](/img/theme/progress-activity-android.png)
+![progress and activity indicator ios](/img/theme/progress-activity-ios.png)
 
 ### SideDrawers
 
-SideDrawers are a common way to implement navigation in your NativeScript apps. The NativeScript core theme includes class names to help you style the free-to-use {% nativescript %}[RadSideDrawer](/ui/professional-ui-components/SideDrawer/overview){% endnativescript %}{% angular %}[RadSideDrawer](/angular/ui/professional-ui-components/ng-SideDrawer/overview) {% endangular %} that’s a part of the [NativeScript UI](https://www.nativescript.org/ui-for-nativescript) component suite.
+SideDrawers are a common way to implement navigation in your NativeScript apps. The NativeScript core theme includes class names to help you style the free-to-use {% nativescript %}[RadSideDrawer](/ui/professional-ui-components/SideDrawer/overview){% endnativescript %}{% angular %}[RadSideDrawer](/angular/ui/professional-ui-components/ng-SideDrawer/overview) {% endangular %}.
 
-> **NOTE**: The UI snippets you see below should be placed within a RadSideDrawer’s `drawerContent`. Refer to the {% nativescript %}[control’s documentation](/ui/professional-ui-components/SideDrawer/overview){% endnativescript %}{% angular %}[control’s documentation](/angular/ui/professional-ui-components/ng-SideDrawer/overview) {% endangular %} for more information on how to structure drawers within your apps.
+> **NOTE**: The UI snippets you see below should be placed within a RadSideDrawer’s `drawerContent` (themed example [here](https://github.com/NativeScript/theme/blob/25ac30139f43ff01b9c3d21e2a021ff814cccbee/app-compat/app-root/app-root.xml)). Refer to the {% nativescript %}[control’s documentation](/ui/professional-ui-components/SideDrawer/overview){% endnativescript %}{% angular %}[control’s documentation](/angular/ui/professional-ui-components/ng-SideDrawer/overview) {% endangular %} for more information on how to structure drawers within your apps.
 
 The first two sidedrawer class names control the alignment of content within the sidedrawer.
 
@@ -491,66 +490,100 @@ The first two sidedrawer class names control the alignment of content within the
 
 ### Sliders
 
-The NativeScript core theme includes a class name for styling Slider UI components.
-
-* `slider`: A class name to apply the theme’s color scheme to sliders. The class name handles styling disabled slider controls.
+The theme styles for NativeScript's sliders are applied via their element selector `Slider`.
 
 ```XML
-<Slider minValue="1" maxValue="100" value="50" class="slider"></Slider>
-<Slider minValue="1" maxValue="100" value="50" class="slider" isEnabled="false"></Slider>
+<Slider minValue="1" maxValue="100" value="50"></Slider>
+<Slider minValue="1" maxValue="100" value="50" isEnabled="false"></Slider>
 ```
 
-![sliders ios](/img/theme/sliders-ios.png) ![sliders android](/img/theme/sliders-android.png)
+![sliders ios](/img/theme/sliders-ios.png)
 
 ### Switches
 
-The NativeScript core theme also includes a class name for styling Switch UI components.
-
-* `switch`: A class name to apply the theme’s color scheme to switches. The class name handles styling disabled switch controls.
+The theme styles for NativeScript's switches are applied via their element selector `Switch`.
 
 ```XML
-<Switch checked="true" class="switch" horizontalAlignment="center"></Switch>
-<Switch checked="false" class="switch" horizontalAlignment="center"></Switch>
-<Switch checked="false" class="switch" isEnabled="false" horizontalAlignment="center"></Switch>
+<Switch checked="true" horizontalAlignment="center"></Switch>
+<Switch checked="false" horizontalAlignment="center"></Switch>
+<Switch checked="false" isEnabled="false" horizontalAlignment="center"></Switch>
 ```
 
-![switches ios](/img/theme/switches-ios.png) ![switches android](/img/theme/switches-android.png)
+![switches ios](/img/theme/switches-ios.png)
 
-### TabViews
+### Tabs & BottomNavigation
 
-Finally, the NativeScript core theme includes a class name for styling TabView UI controls.
-
-* `tab-view`: A class name to apply the theme’s color scheme to TabViews.
+The theme styles for NativeScript's tabular based components are applied via their element selector (`BottomNavigation`, `Tabs` and `TabView`).
 
 ``` XML
-    <TabView>
-        <TabView.items>
-            <TabViewItem title="Tab One">
-                <TabViewItem.view>
-                    <StackLayout class="p-20">
-						<Label text="Hello NativeScript World!" class="font-weight-bold" />
-					</StackLayout>
-                </TabViewItem.view>
-            </TabViewItem>
-            <TabViewItem title="Tab Two">
-				<TabViewItem.view>
-                    <StackLayout class="p-20">
-						<Label text="Hi! I'm Tab Two's Content!" class="font-weight-bold" />
-					</StackLayout>
-				</TabViewItem.view>
-            </TabViewItem>
-            <TabViewItem title="Tab Three">
-				<TabViewItem.view>
-                    <StackLayout class="p-20">
-						<Label text="Howdy! Welcome to Tab Three!" class="font-weight-bold" />
-					</StackLayout>
-				</TabViewItem.view>
-            </TabViewItem>
-        </TabView.items>
-    </TabView>
+<BottomNavigation>
+    <TabStrip>
+        <TabStripItem iconSource="font://&#xF10B;" title="First" class="fa" />
+        <TabStripItem iconSource="font://&#xF10C;" title="Second" class="fa" />
+    </TabStrip>
+
+    <TabContentItem>
+        <HtmlView html="{{ tab1 }}" class="p-20" />
+    </TabContentItem>
+
+    <TabContentItem>
+        <TextView text="{{ tab2 }}" class="p-20" editable="false"/>
+    </TabContentItem>
+</BottomNavigation>
 ```
 
-![tabviews ios](/img/theme/tabviews-ios.png) ![tabviews android](/img/theme/tabviews-android.png)
+> **Note:** There are some conceptual differences in the way the tab based controls are looking on Android and iOS.
+
+## BEM classes
+
+The old theme classes (from `nativescript-theme-core@1.x.x`) are gone (except in compat mode), but there are new classes in their place that use a namespaced modified **BEM** methodology. These are left for the cases in which you want a custom component or for instance Label to look like the original ones. For instance the old `.action-bar` class is now called `.nt-action-bar` and the old `.action-item` is now `.nt-action-bar__item` where **nt-** is the NativeScript Theme namespace. The only difference from a standard BEM methodology is that instead of coupling modifiers to the blocks, in Theme v2 modifiers are decoupled and start with a dash.
+
+A list of the new blocks follows:
+
+| Blocks and Elements | Compat (Theme v1) class | {N} Elements
+|---|---|---
+| .nt-action-bar | .action-bar | ActionBar
+| .nt-action-bar__item | .action-item | ActionItem 
+| .nt-button | .btn | Button 
+| .nt-label | .label | Label 
+| .nt-page | .page | Page  
+| .nt-activity-indicator | .activity-indicator | ActivityIndicator 
+| .nt-segmented-bar | .segmented-bar | SegmentedBar 
+| .nt-progress | .progress | Progress 
+| .nt-slider | .slider | Slider 
+| .nt-search-bar | .search-bar | SearchBar
+| .nt-switch | .switch | Switch 
+| .nt-tab-view | .tab-view | TabView 
+| .nt-list-view | .list-group | ListView, RadListView
+| .nt-form | .form | A group of form elements 
+| .nt-input | .input-field | A block of a TextField with a Label
+| .nt-drawer | .side-drawer | RadSideDrawer
+| .nt-drawer__header | .sidedrawer-header | RadSideDrawer header area
+| .nt-drawer__header-image | .sidedrawer-header-image | RadSideDrawer header image (user thumb)
+| .nt-drawer__list-item | .sidedrawer-list-item | RadSideDrawer list item
+| .nt-drawer__content | | RadSideDrawer content area
+| .nt-icon | | An icon
+| .nt-bottom-navigation | | BottomNavigation
+| .nt-tab-strip | | TabStrip
+| .nt-tab-strip__item | | TabStripItem 
+| .nt-tab-content__item | | TabContentItem 
+
+Here is a list of modifiers and where they work:
+
+| Modifiers | Compat (Theme v1) class | Elements they Work on | What it Does
+|---|---|---|---
+| .-primary | .btn-primary | Buttons | Specifies a primary (accent colored) button
+| .-outline | .btn-outline | Buttons | Specifies an outlined button
+| .-simple | .btn-simple | Buttons | Specifies a simple (transparent) button 
+| .-active | .btn-active | Buttons | Specifies activated by default button (as if pressed) 
+| .-rounded-sm | .btn-rounded-sm | Buttons, TextFields | Specifies a small border radius for the element (default 4)
+| .-rounded-lg | .btn-rounded-lg / .input-rounded | Buttons, TextFields | Specifies a large border radius for the element (default 50%)
+| .-{skin} | .btn-{skin} | Buttons | Specifies a skin accent colored button - like `.-ruby`, `.-forest`, etc.
+| .-border | .input-border | TextFields | Specifies a TextField with border on all sides
+| .-sides | .input-sides | TextFields | Specifies an .nt-input/.input-field with Label on the left side
+| .-left | .sidedrawer-left | RadSideDrawer header | Aligns RadSideDrawer header left (default center)
+| .-thumb | .thumb | Image in ListView | Specifies that the image should be a small thumbnail 
+| .-separator | | row in ListView | Adds a bottom border to a row
 
 ## SASS Usage
 
