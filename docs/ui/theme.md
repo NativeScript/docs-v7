@@ -251,6 +251,11 @@ You can convey meaning through color with a handful of utility classes that are 
 
 ![contextual colors background ios](/img/theme/contextual-colors-bg-ios.png) ![contextual colors background android](/img/theme/contextual-colors-bg-android.png)
 
+## Element Selectors
+
+The old `nativescript-theme-core` was using specific CSS classes that the user had to add on every element in order to get it styled. The new `@nativescript/theme` takes a very different approach - all elements are styled by default using **Element selectors** (like `ActionBar` or `RadListView` for instance) and adding classes is not required. This brings us to something you may hit along the way - since all elements are already styled, you may need to override some of their styling. And since NativeScript doesn't support !important, you can do this with a CSS feature called specificity (see [this article](https://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/) for details).
+
+
 ### ActionBar
 
 The theme styles for `ActionBar` are applied via its element (type) selector.
@@ -269,7 +274,7 @@ The theme styles for `ActionBar` are applied via its element (type) selector.
 
 ### Buttons
 
-The theme styles for NativeScript's buttons are applied via their element selector `Button`. In the common case, no additional CSS classes are needed but for custom scenarios, the theme provides [BEM classes](#bem-classes). The NativeScript theme includes a handful of class names to change the look and feel of buttons in your applications.
+The main theme styles for NativeScript's buttons are applied via their element selector `Button`. The NativeScript theme also includes a handful of class names to change the look and feel of buttons in your applications.
 
 
 * `-primary`: A class name that applies the primary color pattern of the theme to the button.
@@ -589,6 +594,8 @@ Here is a list of modifiers and where they work:
 
 The NativeScript core theme is written in SASS, and you can (optionally) use the theme’s `.scss` files directly. Using SASS is a great way to customize the theme in a way that’s not possible in CSS, such as using the theme’s SASS variables to change your app’s appearance.
 
+### Installation
+
 To get started, first verify that your app has a SASS compiler (e.g. `node-sass` or `dart-sass`).
 
 ```
@@ -605,7 +612,6 @@ With SASS set up and ready to use, next you’ll need to import the theme’s `.
 ```
 .
 ├── _app-common.scss
-├── _app-variables.scss
 ├── app.android.scss
 └── app.ios.scss
 ```
@@ -613,13 +619,6 @@ With SASS set up and ready to use, next you’ll need to import the theme’s `.
 After that, paste the following code into your `app.android.scss` file.
 
 ``` SCSS
-// Import app variables
-@import 'app-variables';
-
-// Import the theme’s main ruleset - both index and platform specific.
-@import '~nativescript-theme-core/scss/index';
-@import '~nativescript-theme-core/scss/platforms/index.android';
-
 // Import common styles
 @import 'app-common';
 
@@ -629,41 +628,160 @@ After that, paste the following code into your `app.android.scss` file.
 And the following code into your `app.ios.scss` file.
 
 ``` SCSS
-
-// Import app variables
-@import 'app-variables';
-
-// Import the theme’s main ruleset - both index and platform specific.
-@import '~nativescript-theme-core/scss/index';
-@import '~nativescript-theme-core/scss/platforms/index.ios';
-
 // Import common styles
 @import 'app-common';
 
 // Place any CSS rules you want to apply only on iOS here
 ```
 
-Create `_app-variables.scss` with the following contents:
-
-``` SCSS
-// Import the theme’s variables. If you’re using a color scheme
-// other than “light”, switch the path to the alternative scheme,
-// for example '~nativescript-theme-core/scss/dark'.
-@import '~nativescript-theme-core/scss/light';
-
-// Customize any of the theme’s variables here, for instance $btn-color: red;
-```
 
 Finally, paste the following code into your `_app-common.scss` file.
 
 ``` SCSS
+@import "~@nativescript/theme/core";
+@import "~@nativescript/theme/blue"; // Or any other color theme (default === blue)
+
 // Place any CSS rules you want to apply on both iOS and Android here.
 // This is where the vast majority of your CSS code goes.
 ```
 
-The power of this approach is you have the ability to customize the [theme’s SASS variables](https://github.com/NativeScript/theme/blob/master/app/scss/_variables.scss) directly. You also have separate files set up for iOS- and Android-specific code, should you need to style your app differently on each platform.
 
-### Using custom `.scss` file
+### Custom skin using variables
+
+As `nativescript-theme-core!1.x.x` before it, the `@nativescript/theme` also allows customization through SCSS variables. However, due to changing its internals to use maps, you can change the variables only **before** the rest of the theme is loaded.
+
+_app-common.scss_ 
+
+```CSS
+/* Colors */
+$accent: #369;
+
+/* This color was named $ab-background in Theme v1 */
+$complementary: fuchsia;
+
+/* The variables are loaded bofire the Core styles */
+@import '~@nativescript/theme/index';
+```
+
+The code above is enough to create a custom skin with blue accent and a pink `ActionBar`.
+
+> **Note:** When creating a custom skin you don't need to import any other file than `~@nativescript/theme/index` and it should be imported after you make changes to the variables!
+
+Here is a list of all variables that can be changed.
+
+| SCSS variable | Type | Default | Usage
+|---|---|---|---
+| $compat | boolean | false | Specifies that compat styling should be generated
+| $font-size | length | 12 | Initial font size in dip
+| $btn-font-size | length | $font-size + 2 | Button font size
+| $btn-min-width | length | 64 | Button min-width
+| $btn-height | length | 52 | Button height
+| $btn-padding-x | length | 5 | Horizontal button padding
+| $btn-padding-y | length | 0 | Vertical button padding 
+| $btn-margin-x | length | 16 | Horizontal button margin
+| $btn-margin-y | length | 8 | Vertical button margin
+| $border-width | length | 1 | Border width wherever it is used (buttons if `$enable-rounded` is on, inputs, `.hr`)
+| $border-radius | length | null | General Border radius, could be in px, dip, % or rem/em (latter converts to dip), forces `$enable-rounded` to true
+| $border-radius-sm | length | 4 | Small border radius, used for `.-rounded-sm` modifier 
+| $border-radius-lg | length | 50% | Large border radius, used for `.-rounded-lg` modifier
+| $disabled-opacity | 0 - 1 | 0.5 | Opacity of the disabled components 
+| | | |
+| $background| color | white | Light background 
+| $primary | color | 85% negative $background | Light text color
+| $secondary | color | 30% darker $primary | Light secondary text color
+| $background-dark | color | #303030 | Dark background
+| $primary-dark | color | 85% negative $background-dark | Dark text color
+| $secondary-dark | color | 30% darker $primary-dark | Dark secondary text color
+| $accent | color | #30bcff | Light main accent color (depends on {N} skin)
+| $accent-dark | color | 10% lighter $accent | Dark main accent color (depends on {N} skin)
+| $complementary | color | white | Light second accent color - used mainly for ActionBar (depends on {N} skin)
+| $complementary-color | color | 100% negative $complementary | Text color on $complementary background (depends on {N} skin)
+| $complementary-dark | color | $complementary | Dark second accent color (depends on {N} skin)
+| $complementary-color-dark | color | 100% negative $complementary-dark | Text color on $complementary-dark background (depends on {N} skin)
+
+In addition, several variables are mapped to the Theme variables in order to support Kendo skins or old Theme vars.
+
+| Kendo Default | Kendo Bootstrap | Kendo Material | Theme v1 | Theme v2
+|---|---|---|---|---
+| $accent | $accent | $primary-palette-name, base hue 500 | $accent | $accent
+| $accent | $card-cap-bg | $secondary-palette-name, base hue 500 | $ab-background | $complementary
+| $bg-color | $body-bg | | $background | $background
+| $text-color | $body-color | | $primary | $primary
+| | | $material-dark-complimentary, base-bg | $btn-color | $btn-color  
+| | | | $ab-color | $complementary-color
+
+So now, you can export a skin from [Kendo UI ThemeBuilder](https://themebuilder.telerik.com), get the contents of 
+variables.scss in the skin zip file (you don't need the big CSS file in there) and easily create a skin by the same 
+single import underneath.
+
+```scss
+$base-theme:Bootstrap;
+$skin-name:indigo;
+$swatch-name:Indigo;
+$border-radius: 0.25rem;
+$accent: #25c55b;
+$secondary: #465372;
+$info: #5bc0de;
+$success: #5cb85c;
+$warning: #f0ad4e;
+$error: #d9534f;
+$body-bg: #5c7091;
+$body-color: #ffffff;
+$component-bg: #536182;
+$component-color: #ffffff;
+$card-cap-bg: #465372;
+$card-cap-color: #ffffff;
+$series-a: #25c55b;
+$series-b: #5bc0de;
+$series-c: #0275d8;
+$series-d: #f0ad4e;
+$series-e: #e67d4a;
+$series-f: #d9534f;
+
+@import '~@nativescript/theme/index';
+```
+
+### Loading Variables and Mixins
+
+In order to load all core theme variables and mixins, you only need this import:
+
+```CSS
+@import '~@nativescript/theme/scss/variables';
+```
+
+In addition, you can load the Theme variables and mixins for every skin.
+```CSS
+@import '~@nativescript/theme/scss/variables/blue';
+```
+
+By using special functions that retrieve the variable from its place in the internal map you can access SASS variables. There are 3 such function `const()`, `light()` and `dark()`. The `const()` function is used to retrieve general variables, like colors or border-radius, for instance. The other two can be used to retrieve specific light/dark variable.
+
+_Retrieving `color` variable_
+```CSS
+.my-label {
+    color: const(ruby);
+}
+```
+
+_Using skin specific color_
+```CSS
+.my-label {
+    background: light(background);
+}
+```
+
+_Example for supporting dark mode with SASS_
+```CSS
+.my-label {
+    background-color: light(background);
+
+    @at-root .ns-dark & {
+        background-color: dark(background);    
+    }
+}
+```
+
+### Using custom SASS file
 
 If you are using SASS in NativeScript Angular project and have a custom `.scss` file for a specific component, you should refer the path to the `.scss` file in `styleUrls` in the component typescript file as it is shown in the sample code snippet below.
 For example:
@@ -756,7 +874,7 @@ if (platform.isAndroid && platform.device.sdkVersion >= "21") {
 If you wish to remove the NativeScript core theme from your application, you can do so using the following command:
 
 ```
-npm uninstall nativescript-theme-core --save
+npm uninstall @nativescript/theme --save
 ```
 
 This command removes the core theme as a dependency in your `package.json` file.
