@@ -35,7 +35,7 @@ The NativeScript core theme comes with a default color scheme that supports ligh
 
 ### CSS Imports
 
-To use the default color scheme (with primary color blue), add the following lines of code to the top of your `app.css` file:
+To use the default color scheme (with accent color blue), add the following lines of code to the top of your `app.css` file:
 
 ```CSS
 @import '~@nativescript/theme/css/core.css';
