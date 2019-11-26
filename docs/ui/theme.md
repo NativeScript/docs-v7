@@ -46,7 +46,7 @@ You may want to alternatively use one of the 11 other color schemes included in 
 
 ```CSS
 @import '~@nativescript/theme/css/aqua.css';
-@import '~@nativescript/theme/css/blue.css'; /* same as default.css */
+@import '~@nativescript/theme/css/blue.css';
 @import '~@nativescript/theme/css/brown.css';
 @import '~@nativescript/theme/css/forest.css';
 @import '~@nativescript/theme/css/grey.css';
