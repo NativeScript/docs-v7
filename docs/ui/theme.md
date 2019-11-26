@@ -193,7 +193,7 @@ Note that for each of these rules the “m” can be swapped with a “p” to a
 
 A divider is a common way to separate areas of your user interface. The NativeScript provides two class names that can be applied to empty `<StackLayout>` elements to create a simple divider with a height of `1`.
 
-* `hr`: Creates a colored divider.
+* `hr`: Creates a colored divider (will vary depending on the chosen light/dark mode).
 
 ``` XML
 <Label text="Separate this UI widget..."></Label>
@@ -337,30 +337,26 @@ Here’s a form with several different form control display options you can expe
 ``` XML
 <StackLayout class="nt-form">
     <!-- Option 1: An input with no label, and a bottom border -->
-    <StackLayout class="nt-input">
-        <TextField hint="Option 1"/>
-        <StackLayout class="hr"></StackLayout>
-    </StackLayout>
+    <TextField hint="Option 1"/>
+    <StackLayout class="hr"></StackLayout>
 
     <!-- Option 2: An input with a label on top, and a bottom border -->
-    <StackLayout class="nt-input">
-        <Label text="Option 2" class="nt-label font-weight-bold m-b-5" />
-        <TextField/>
-        <StackLayout class="hr"></StackLayout>
-    </StackLayout>
+    <Label text="Option 2" class="font-weight-bold m-b-5" />
+    <TextField/>
+    <StackLayout class="hr"></StackLayout>
 
     <!-- Option 3: An label and input—positioned side by side -->
-    <GridLayout class="nt-input -sides" rows="auto, auto" columns="*,*">
-        <Label text="Option 3" class="nt-label font-weight-bold" row="0" col="0" />
+    <GridLayout class="-sides" rows="auto, auto" columns="*,*">
+        <Label text="Option 3" class="font-weight-bold" row="0" col="0" />
         <TextField row="0" col="1"/>
         <StackLayout class="hr" row="1" colSpan="2"></StackLayout>
     </GridLayout>
 
     <!-- Option 4: An input with a simple border and no label -->
-    <TextField hint="Option 4" class="nt-input -border" />
+    <TextField hint="Option 4" class="-border" />
 
     <!-- Option 5: An input with a rounded border and no label -->
-    <TextField hint="Rounded" class="nt-input -rounded m-t-10" />
+    <TextField hint="Rounded" class="-rounded m-t-10" />
 </StackLayout>
 ```
 
@@ -417,79 +413,53 @@ SideDrawers are a common way to implement navigation in your NativeScript apps. 
 
 > **NOTE**: The UI snippets you see below should be placed within a RadSideDrawer’s `drawerContent` (themed example [here](https://github.com/NativeScript/theme/blob/25ac30139f43ff01b9c3d21e2a021ff814cccbee/app-compat/app-root/app-root.xml)). Refer to the {% nativescript %}[control’s documentation](/ui/professional-ui-components/SideDrawer/overview){% endnativescript %}{% angular %}[control’s documentation](/angular/ui/professional-ui-components/ng-SideDrawer/overview) {% endangular %} for more information on how to structure drawers within your apps.
 
-The first two sidedrawer class names control the alignment of content within the sidedrawer.
+* `nt-drawer__content`: A class name to apply the drawer menu content styles.
 
-* `sidedrawer-center`: A class name that aligns content in the center.
-* `sidedrawer-left`: A class name that aligns content on the left-hand side of the screen.
-
-``` XML
-<StackLayout class="sidedrawer-center">
-<!-- Contents of the sidedrawer -->
-</StackLayout>
-```
-
----
-
-``` XML
-<StackLayout class="sidedrawer-left">
-  <!-- Contents of the sidedrawer -->
-</StackLayout>
-```
-
-* `sidedrawer-header`: A class name to designate a section of your sidedrawer as the header. Useful if you want to show an image or logo above your app’s drawer navigation.
-
-``` XML
-<StackLayout class="sidedrawer-left">
-  <StackLayout class="sidedrawer-header">
-    <!-- The contents of the header -->
-  </StackLayout>
-</StackLayout>
-```
-
-* `sidedrawer-header-image`: A class name to apply to an image or logo that you show within the sidedrawer header. The theme takes care of aligning the image for you. 
-* `sidedrawer-header-brand`: A class name to apply to text heading that appears in your sidedrawer’s header.
-
-``` XML
-<StackLayout class="sidedrawer-left">
-  <StackLayout class="sidedrawer-header">
-    <Image class="sidedrawer-header-image img-circle" src="~/my-app-logo.png"></Image>
-    <Label class="sidedrawer-header-brand" text="Name of My App"></Label>
-  </StackLayout>
-</StackLayout>
-```
-
-* `sidedrawer-content`: A class name used to designate a section of your sidedrawer as the main content. This section is commonly used to display a list of navigation links.
-
-``` XML
-<StackLayout class="sidedrawer-left">
-  <StackLayout class="sidedrawer-header">...</StackLayout>
-  <StackLayout class="sidedrawer-content">...</StackLayout>
-</StackLayout>
-```
-
-* `sidedrawer-list-item`: A class name to apply to each item, or link, that appears within your sidedrawer’s content.
-* `sidedrawer-list-item-text`: A class name to apply to the text used within each sidedrawer’s list item.
-* `sidedrawer-list-item-icon`: A class name you can use to show an icon next to each list item’s text.
-
-``` XML
-<StackLayout class="sidedrawer-left">
-  <StackLayout class="sidedrawer-header">
-    <!-- The contents of the header -->
-  </StackLayout>
-  <StackLayout class="sidedrawer-content">
-
-    <!-- A list item with no icon -->
-    <GridLayout class="sidedrawer-list-item" rows="*" columns="*">
-      <Label row="0" col="0" text="A Link"></Label>
+_Example (NativeScript Core)_
+```XML
+<drawer:RadSideDrawer.drawerContent>
+    <GridLayout rows="auto, *" class="nt-drawer__content">
+        <!-- The drawer menu content follows here -->
     </GridLayout>
+</drawer:RadSideDrawer.drawerContent>
+```
 
-    <!-- A list item with an icon -->
-    <GridLayout class="sidedrawer-list-item" rows="auto" columns="auto, *">
-      <Image class="sidedrawer-list-item-icon" row="0" col="0" src="~/path/to/icon.png"></Image>
-      <Label class="sidedrawer-list-item-text" row="0" col="1" text="A Link"></Label>
+* `nt-drawer__header`: A class name to designate a section of your sidedrawer as the header. Useful if you want to show an image or logo above your app’s drawer navigation.
+
+_Example (NativeScript Core)_
+``` XML
+<drawer:RadSideDrawer.drawerContent>
+    <GridLayout rows="auto, *" class="nt-drawer__content">
+        <StackLayout class="nt-drawer__header">
+            <Image src="~/assets/images/N.png" tap="{{ viewHome }}" class="nt-drawer__header-image"/>
+            <Label text="NativeScript Theme Project" textWrap="true" class="nt-drawer__header-brand" />
+        </StackLayout>
+        <!-- Drawer menu layouts goes here -->
     </GridLayout>
+</drawer:RadSideDrawer.drawerContent>
+```
 
-  </StackLayout>
+* `-left`: By default, the drawer menu content is centered. The `-left` modifier aligns the content to the left.
+
+_Example (NativeScript Core)_
+``` XML
+<drawer:RadSideDrawer.drawerContent>
+    <GridLayout rows="auto, *" class="nt-drawer__content">
+        <StackLayout class="nt-drawer__header -left">
+          <!-- The header content will be aligned to the left -->
+        </StackLayout>
+        <!-- Drawer menu layouts goes here -->
+    </GridLayout>
+</drawer:RadSideDrawer.drawerContent>
+```
+
+* `nt-drawer__header-image`: A class name to apply to an image or logo that you show within the sidedrawer header. The theme takes care of aligning the image for you. 
+* `nt-drawer__header-brand`: A class name to apply to text heading that appears in your sidedrawer’s header.
+
+```XML
+<StackLayout class="nt-drawer__header -left">
+    <Image src="~/assets/images/N.png" tap="{{ viewHome }}" class="nt-drawer__header-image"></Image>
+    <Label text="NativeScript Theme Project" textWrap="true" class="nt-drawer__header-brand"></Label>
 </StackLayout>
 ```
 
@@ -659,7 +629,7 @@ $accent: #369;
 /* This color was named $ab-background in Theme v1 */
 $complementary: fuchsia;
 
-/* The variables are loaded bofire the Core styles */
+/* The variables are loaded before the Core styles */
 @import '~@nativescript/theme/index';
 ```
 
