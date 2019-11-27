@@ -337,16 +337,18 @@ Here’s a form with several different form control display options you can expe
 ``` XML
 <StackLayout class="nt-form">
     <!-- Option 1: An input with no label, and a bottom border -->
-    <TextField hint="Option 1"/>
-    <StackLayout class="hr"></StackLayout>
+    <StackLayout class="nt-input">
+        <TextField hint="Option 1"></TextField>
+    </StackLayout>
 
     <!-- Option 2: An input with a label on top, and a bottom border -->
-    <Label text="Option 2" class="font-weight-bold m-b-5" />
-    <TextField/>
-    <StackLayout class="hr"></StackLayout>
+    <StackLayout class="nt-input">
+        <Label text="Option 2" class="font-weight-bold m-b-5" />
+        <TextField></TextField>
+    </StackLayout>
 
     <!-- Option 3: An label and input—positioned side by side -->
-    <GridLayout class="-sides" rows="auto, auto" columns="*,*">
+    <GridLayout class="nt-input -sides" rows="auto, auto" columns="*,*">
         <Label text="Option 3" class="font-weight-bold" row="0" col="0" />
         <TextField row="0" col="1"/>
         <StackLayout class="hr" row="1" colSpan="2"></StackLayout>
