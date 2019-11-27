@@ -109,7 +109,7 @@ Here are a few examples of how you could use these class names.
 <Label class="h6" text="This is a small heading"></Label>
 ```
 
-![headings ios](/img/theme/headings-ios.png) ![headings android](/img/theme/headings-android.png)
+![headings ios](/img/theme/headings-ios.png)
 
 ### Text
 
@@ -121,7 +121,7 @@ Several utility class names are available for changing the display of text you u
 <Label class="body" text="I’m a longer sentence with instructions on how you use a particular feature" textWrap="true"></Label>
 ```
 
-![text body ios](/img/theme/text-body-ios.png) ![text body android](/img/theme/text-body-android.png)
+![text body ios](/img/theme/text-body-ios.png)
 
 * `footnote`: A class name that decreases the text size of a given UI element. Useful for footnotes that describe images or other features in your apps.
 
@@ -130,7 +130,7 @@ Several utility class names are available for changing the display of text you u
 <Label class="footnote" text="The image above is the NativeScript logo"></Label>
 ```
 
-![text footnote ios](/img/theme/text-footnote-ios.png) ![text footnote android](/img/theme/text-footnote-android.png)
+![text footnote ios](/img/theme/text-footnote-ios.png)
 
 * `text-left`: A class name that applies `text-align: left` to a UI element.
 * `text-right`: A class name that applies `text-align: right` to a UI element.
@@ -142,7 +142,7 @@ Several utility class names are available for changing the display of text you u
 <Label class="text-center" text="My text is center aligned"></Label>
 ```
 
-![text align ios](/img/theme/text-align-ios.png) ![text align android](/img/theme/text-align-android.png)
+![text align ios](/img/theme/text-align-ios.png)
 
 * `text-lowercase`: A class name to lowercase all characters in the text of a given UI element. For instance, `<Label class="text-lowercase" text="HI">` will display as “hi”.
 * `text-uppercase`: A class name to uppercase all characters in the text of a given UI element. For instance, `<Label class="text-uppercase" text="hi">` will display as “HI”.
@@ -170,7 +170,7 @@ The NativeScript core theme does not change the base font family you use to deve
 <Label class="font-italic" text="This text will appear italicized"></Label>
 ```
 
-![font ios](/img/theme/font-ios.png) ![font android](/img/theme/font-android.png)
+![font ios](/img/theme/font-ios.png)
 
 ### Padding and Margin
 
@@ -219,7 +219,7 @@ The NativeScript core theme provides a set of utility class names that can be ap
 </StackLayout>
 ```
 
-![utilities ios](/img/theme/utilities-ios.png) ![utilities android](/img/theme/utilities-android.png)
+![utilities ios](/img/theme/utilities-ios.png)
 
 ### Contextual Colors
 
@@ -235,7 +235,7 @@ You can convey meaning through color with a handful of utility classes that are 
 <Label class="text-danger" text="This is an error message the user needs to notice" textWrap="true"></Label>
 ```
 
-![contextual colors ios](/img/theme/contextual-colors-ios.png) ![contextual colors android](/img/theme/contextual-colors-android.png)
+![contextual colors ios](/img/theme/contextual-colors-ios.png)
 
 * `bg-primary`: A class name that applies the theme’s primary background color.
 * `bg-danger`: A class name that applies the theme’s danger color.
@@ -249,7 +249,7 @@ You can convey meaning through color with a handful of utility classes that are 
 </StackLayout>
 ```
 
-![contextual colors background ios](/img/theme/contextual-colors-bg-ios.png) ![contextual colors background android](/img/theme/contextual-colors-bg-android.png)
+![contextual colors background ios](/img/theme/contextual-colors-bg-ios.png)
 
 ## Element Selectors
 
@@ -283,7 +283,7 @@ The main theme styles for NativeScript's buttons are applied via their element s
 <Button class="-primary" text="Primary"></Button>
 ```
 
-![button primary ios](/img/theme/btn-primary-ios.png) ![button primary android](/img/theme/btn-primary-android.png)
+![button primary ios](/img/theme/btn-primary-ios.png)
 
 * `-outline`: A class name that makes a button appear with a border and a transparent background.
 
@@ -291,7 +291,7 @@ The main theme styles for NativeScript's buttons are applied via their element s
 <Button class="-outline" text="Border + Transparent Background"></Button>
 ```
 
-![button outline ios](/img/theme/btn-outline-ios.png) ![button outline android](/img/theme/btn-outline-android.png)
+![button outline ios](/img/theme/btn-outline-ios.png)
 
 * `-rounded-sm`: A class names that make a button appear with small rounded corners.
 * `-rounded-lg`: A class name that makes a button appear with large rounded corners.
@@ -301,7 +301,7 @@ The main theme styles for NativeScript's buttons are applied via their element s
 <Button class="-primary -rounded-lg" text="Large rounded corners"></Button>
 ```
 
-![button rounded ios](/img/theme/btn-rounded-ios.png) ![button rounded android](/img/theme/btn-rounded-android.png)
+![button rounded ios](/img/theme/btn-rounded-ios.png)
 
 * `-active`: A class name that makes a button appear highlighted when tapped.
 
