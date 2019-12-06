@@ -17,7 +17,7 @@ The AbsoluteLayout is the simplest layout in NativeScript. It uses absolute left
 ### AbsoluteLayout Properties
 None.
 
-### Child Properties
+### AbsoluteLayout Child Properties
 | Property | Description |
 | -------- | ------------|
 | left     | Gets or sets the distance, in pixels, between the left edge of the child and the left edge of its parent AbsoluteLayout client area. |
@@ -77,7 +77,7 @@ The DockLayout is a layout that provides a docking mechanism for child elements 
 | -------- | ------------|
 | stretchLastChild | Gets or sets a value that indicates whether the last child element within a DockLayout stretches to fill the remaining available space. The default value is `true`. |
 
-### Child Properties
+### DockLayout Child Properties
 | Property | Description |
 | -------- | ------------|
 | dock     | Specifies the Dock position of a child element that is inside a DockLayout. Possible values are `left`, `top`, `right` and `bottom`. |
@@ -172,7 +172,7 @@ The GridLayout is a layout that arranges its child elements in a table structure
 | columns  | A string value representing column widths delimited with commas. Column widths can be either an absolute `number`, `auto` or `*`. A `number` indicates an absolute column width, `auto` makes the column as wide as its widest child, and `*` makes the column occupy all available horizontal space. |
 | rows  | A string value representing row heights delimited with commas. Row heights can be either an absolute `number`, `auto` or `*`. A `number` indicates an absolute row height, `auto` makes the row as high as its highest child, and `*` makes the row occupy all available vertical space. |
 
-### Child Properties
+### GridLayout Child Properties
 | Property | Description |
 | -------- | ------------|
 | row      | Gets or sets a value that indicates which row child content within a GridLayout it should appear in. |
@@ -488,7 +488,7 @@ The StackLayout stacks its child elements below or beside each other, depending 
 | ----------- | ------------|
 | orientation | Gets or sets a value indicating whether the child items should be stacked in the horizontal or vertical direction. Possible values are `vertical` and `horizontal`. The default value is `vertical`. |
 
-### Child Properties
+### StackLayout Child Properties
 None.
 
 _Example for `orientation="vertical"`_
@@ -604,7 +604,7 @@ The WrapLayout is similar to the StackLayout, but it does not just stack all chi
 | itemWidth   | Gets or sets the width used to measure and layout each child. Default value is Number.NaN, which does not restrict children. |
 | itemHeight  | Gets or sets the height used to measure and layout each child. Default value is Number.NaN, which does not restrict children. |
 
-### Child Properties
+### WrapLayout Child Properties
 None.
 
 _Example for `orientation="horizontal"`_
@@ -699,7 +699,7 @@ The FlexboxLayout is a non-conforming implementation of the [CSS Flexible Box La
 
 > **NOTE:** On **iOS**, you **cannot set** `alignItems` to `baseline`.
 
-### Child Properties
+### FlexboxLayout Child Properties
 | Property | Description |
 | -------- | ------------|
 | order         | Gets or sets a value that changes the default ordering of flex items. |
