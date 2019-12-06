@@ -25,34 +25,33 @@ The example below shows how to add an event listener by using the short (using `
 > **TIP**: All examples in this article are available for preview in NativeScript Playground. Run this example in [JavaScript](https://play.nativescript.org/?template=play-js&id=kIs7uK) or [TypeScript](https://play.nativescript.org/?template=play-tsc&id=8Rhm07).
 
 ``` JavaScript
-const Button = require("tns-core-modules/ui/button").Button;
-const testButton = new Button();
-testButton.text = "Test";
+const Label = require("tns-core-modules/ui/label").Label;
+const testLabel = new Label();
+testLabel.text = "Test";
 
 let onTap = function(args) {
   console.log("Hello World!");
 };
 // Adding a listener with the short syntax
-testButton.on(Button.tapEvent, onTap, this);
+testLabel.on("tap", onTap, this);
 
 // Adding a listener with the full syntax
-testButton.addEventListener(Button.tapEvent, onTap, this);
+testLabel.addEventListener("tap", onTap, this);
 ```
 ``` TypeScript
-import { Button } from "tns-core-modules/ui/button";
-import { GestureEventData } from "tns-core-modules/ui/gestures";
-const testButton = new Button();
-testButton.text = "Test";
+import { Label, EventData } from "tns-core-modules/ui/label";
+const testLabel = new Label();
+testLabel.text = "Test";
 
-export function onTap(args: GestureEventData) {
+export function onTap(args: EventData) {
   console.log("Tap arguments: ", args);
 };
 
 // Adding a listener with the short syntax
-testButton.on(Button.tapEvent, onTap, this);
+testLabel.on("tap", onTap, this);
 
 // Adding a lister with the full syntax
-testButton.addEventListener(Button.tapEvent, onTap, this);
+testLabel.addEventListener("tap", onTap, this);
 ```
 
 ### Adding an Event Listener Using an XML Declaration
@@ -63,7 +62,7 @@ Another option to set an event handler is to use an XML declaration. You need a 
 <!-- main-page.xml -->
 <Page>
   <StackLayout>
-    <Label touch="onTouch" />
+    <Label touch="onTouch"></Label>
   </StackLayout>
 </Page>
 ```
@@ -92,8 +91,8 @@ const observableModule = require("tns-core-modules/data/observable");
 
 function HomeViewModel() {
   var viewModel = observableModule.fromObject({
-    onButtonTap: function (args) {
-      console.log("Button was pressed");
+    onnTap: function (args) {
+      console.log("Label was pressed");
     },
   });
 
@@ -114,8 +113,8 @@ function pageLoaded(args) {
 exports.pageLoaded = pageLoaded;
 ```
 ```XML
-<StackLayout class="home-panel">
-   <Button text="Button" tap="{{ onButtonTap }}" />
+<StackLayout>
+   <Label text="Tappable Label" tap="{{ onTap }}"></Label>
 </StackLayout>
 ```
 
@@ -126,8 +125,8 @@ import { Observable } from 'tns-core-modules/data/observable';
 import { GestureEventData } from "tns-core-modules/ui/gestures";
 
 export class HomeViewModel extends Observable {
-    onButtonTap(args: GestureEventData): void {
-        console.log("Button was pressed");
+    onTap(args: GestureEventData): void {
+        console.log("Label was pressed");
     }
 
     constructor() {
@@ -147,8 +146,8 @@ export function pageLoaded(args: EventData) {
 }
 ```
 ```XML
-<StackLayout class="home-panel">
-   <Button text="Button" tap="{{ onButtonTap }}" />
+<StackLayout>
+   <Label text="Tappable Label" tap="{{ onTap }}"></Label>
 </StackLayout>
 ```
 
