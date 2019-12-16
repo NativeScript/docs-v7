@@ -113,9 +113,11 @@ function pageLoaded(args) {
 exports.pageLoaded = pageLoaded;
 ```
 ```XML
+{%raw%}
 <StackLayout>
    <Label text="Tappable Label" tap="{{ onTap }}"></Label>
 </StackLayout>
+{%endraw%}
 ```
 
 _TypeScript example_
@@ -146,9 +148,11 @@ export function pageLoaded(args: EventData) {
 }
 ```
 ```XML
+{%raw%}
 <StackLayout>
    <Label text="Tappable Label" tap="{{ onTap }}"></Label>
 </StackLayout>
+{%endraw%}
 ```
 
 ## Removing an Event Listener
