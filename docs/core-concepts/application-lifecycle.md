@@ -529,8 +529,11 @@ if (android) {
     });
 }
 platformNativeScriptDynamic().bootstrapModule(AppModule);
-
 ```
+
+> **Note:** The native callbacks (Android or iOS) are executed outside the [Angular zone](https://angular.io/api/core/NgZone). That means that if, for example, the application UI is depending on changes in a native callback, then an explicit wrapping in the `NgZone` would be needed (to trigger the Angular change detection). An example of using the `NgZone` with a native callback can be found [here](https://github.com/NativeScript/nativescript-sdk-examples-ng/blob/24df6d31cf488b0dda8772e6ba1de76141727f01/app/ng-framework-modules-category/fps-meter/usage/usage.component.ts#L13-L23).
+
+
 {% endangular %}
 ## iOS UIApplicationDelegate
 
