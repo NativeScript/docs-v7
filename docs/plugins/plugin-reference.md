@@ -18,11 +18,12 @@ The plugin must have the directory structure, described in the [Directory Struct
 
 ## Create a Plugin
 
-If the NativeScript framework does not expose a native API that you need, you can develop a plugin which exposes the required functionality. When you develop a plugin, keep in mind the following requirements.
+If the NativeScript framework does not expose a native API that you need, you can develop a plugin which exposes the required functionality. When you develop a NativeScript plugin, keep in mind the following requirements.
 
 * The plugin must be a valid npm package.
 * The plugin must expose a built-in native API or a native API available via custom native libraries.
 * The plugin must be written in JavaScript and must comply with the CommonJS specification. If you are using a transpiler (e.g. from TypeScript), make sure to include the transpiled JavaScript files in your plugin.
+* The plugin name should be postfixed with `nativescript`, `tns`, or the `ns` keywords (e.g., like `nativescript-camera` or `tns-core-modules`).
 * The plugin directory structure must comply with the specification described below.
 * The plugin must contain a valid `package.json` which complies with the specification described below.
 * If the plugin requires any permissions, features or other configuration specifics, it must contain an `Info.plist` for iOS or a compiled library with an `AndroidManifest.xml` file for Android which describe them. For more information about Android native libraries, see the [Android permissions and resources](#android-permissions-and-resources) section.
@@ -33,13 +34,13 @@ If the NativeScript framework does not expose a native API that you need, you ca
 NativeScript plugins which consist of one CommonJS module might have the following directory structure.
 
 ```text
-my-plugin/
+nativescript-my-plugin/
 └── src
     ├── index.js
     ├── package.json
     └── platforms/
         ├── android/
-        │   └── my-plugin.aar (containing custom resources or permissions)
+        │   └── nativescript-my-plugin.aar (containing custom resources or permissions)
         └── ios/
             └── Info.plist
 ```
@@ -47,7 +48,7 @@ my-plugin/
 NativeScript plugins which consist of multiple CommonJS modules might have the following directory structure.
 
 ```text
-my-plugin/
+nativescript-my-plugin/
 └── src
     ├── index.js
     ├── package.json
@@ -59,7 +60,7 @@ my-plugin/
     │   └── package.json
     └── platforms/
         ├── android/
-        │   └── my-plugin.aar (containing custom resources or permissions)
+        │   └── nativescript-my-plugin.aar (containing custom resources or permissions)
         └── ios/
             └── Info.plist
 ```
@@ -73,7 +74,7 @@ my-plugin/
 NativeScript plugins which contain both native Android and iOS libraries might have the following directory structure.
 
 ```text
-my-plugin/
+nativescript-my-plugin/
 └── src
     ├── ...
     └── platforms/
@@ -110,7 +111,7 @@ The following is an example of a `package.json` file for a NativeScript plugin w
 
 ```JSON
 {
-  "name": "myplugin",
+  "name": "nativescript-my-plugin",
   "version": "0.0.1",
   "nativescript": {
     "platforms": {
@@ -140,8 +141,8 @@ _Include.gradle Example_
 //default elements
 android {
   productFlavors {
-    "my-plugin" {
-      dimension "my-plugin"
+    "nativescript-my-plugin" {
+      dimension "nativescript-my-plugin"
     }
   }
 }
