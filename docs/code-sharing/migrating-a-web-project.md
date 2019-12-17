@@ -128,7 +128,7 @@ To convert your project to use a single (shared) navigation configuration, you n
 Here are the steps:
 
 1. Add a shared file with the routes configuration: **app.routes.ts**
-    ```TypeScript
+```TypeScript
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
@@ -137,7 +137,7 @@ export const routes: Routes = [
 ```
     
 1. Replace the routes configuration in **app-routing.module.ts** with the import of **ROUTES**
-    ```TypeScript
+```TypeScript
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
@@ -151,7 +151,7 @@ export class AppRoutingModule { }
 ```
 
 1. Replace the routes configuration in **app-routing.module.tns.ts** with the import of **ROUTES**
-    ```TypeScript
+```TypeScript
 import { NgModule } from '@angular/core';
 import { NativeScriptRouterModule } from 'nativescript-angular/router';
 
@@ -162,6 +162,24 @@ import { routes } from '@src/app/app.routes';
   exports: [NativeScriptRouterModule]
 })
 export class AppRoutingModule { }
+```
+
+### Migrating Modules
+
+You should also migrate your **NgModules** into code sharing modules.
+
+Often the migration step will consist of these steps:
+
+* Add the NativeScript version of the **@NgModule**—**module-name.component.tns.ts**,
+* copy the providers from your web **@NgModule**,
+* copy the imports from your web **@NgModule** - use NativeScript versions for those that are web-specific (e.g. use **NativeScriptHttpClientModule** instead of **HttpClientModule**)
+* convert all of modules' components, by using migrate-component schematic,
+* and migrate declared components and add them to **declarations**
+
+This task can be helped with the [module migration schematic](./migrating-a-web-project#schematic-migrate-module): 
+
+```bash
+ng g migrate-module --name=module-name
 ```
 
 ### Migrating Components
@@ -179,7 +197,7 @@ This task can be helped with the [component migration schematic](./migrating-a-w
 ng g migrate-component --name=component-name
 ```
 
-In the case where the component class contains web-specific code, you will need to extract the **platform-specific** code into a set of **helper files** of **services** and keep only the shared code. You can read more on handling [partial differences here]([read more here ](./code-splitting#partial-differences)).
+In the case where the component class contains web-specific code, you will need to extract the **platform-specific** code into a set of **helper files** of **services** and keep only the shared code. You can read more on handling [partial differences here](./code-splitting#partial-differences).
 
 ### Schematic: migrate-component
 
@@ -322,24 +340,6 @@ Run the following code to achieve the same result.
 
 ```bash
 ng g migrate-component --name=dog --component-path=animals/dog/dog-cmp.ts --skip-module
-```
-
-### Migrating Modules
-
-You should also migrate your **NgModules** into code sharing modules.
-
-Often the migration step will consist of these steps:
-
-* Add the NativeScript version of the **@NgModule**—**module-name.component.tns.ts**,
-* copy the providers from your web **@NgModule**,
-* copy the imports from your web **@NgModule** - use NativeScript versions for those that are web-specific (e.g. use **NativeScriptHttpClientModule** instead of **HttpClientModule**)
-* convert all of modules' components, by using migrate-component schematic,
-* and migrate declared components and add them to **declarations**
-
-This task can be helped with the [module migration schematic](./migrating-a-web-project#schematic-migrate-module): 
-
-```bash
-ng g migrate-module --name=module-name
 ```
 
 ### Schematic: migrate-module

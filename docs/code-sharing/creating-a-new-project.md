@@ -14,13 +14,11 @@ Creating a code-sharing project is a straightforward process. You can use Angula
 You need to use the following versions of npm modules:
 
  * **Angular CLI** - v6.1.0 or newer
-     ```
-	 npm i -g @angular/cli
-     ``` 
+ 
  * The latest version of **NativeScript Schematics** 
-     ```
-	 npm i -g @nativescript/schematics
-     ```
+```
+npm i -g @nativescript/schematics
+```
 
 ## Using the Angular CLI
 
