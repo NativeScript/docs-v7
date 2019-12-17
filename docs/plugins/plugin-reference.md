@@ -226,10 +226,10 @@ Finally, the CLI merges the plugin `Info.plist` file with `platforms\ios\Info.pl
 To use a plugin inside your project, you need to add a `require` in your app.
 
 ```JavaScript
-var myPlugin = require("myplugin");
+var myPlugin = require("nativescript-my-plugin");
 ```
 
-This will look for a `myplugin` module with a valid `package.json` file in the `tns_modules` directory. Note that you must require the plugin with the value for the `name` key in the plugin `package.json` file.
+This will look for a `nativescript-my-plugin` module with a valid `package.json` file in the `tns_modules` directory. Note that you must require the plugin with the value for the `name` key in the plugin `package.json` file.
 
 ## Remove a Plugin
 
