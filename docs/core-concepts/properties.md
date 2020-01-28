@@ -249,7 +249,7 @@ This method will return all views including `ViewBase`. It is used by the proper
 
 Each UI element extends the `View` class (e.g., like `StackLayout` or `Label`) and comes with a set of methods created to ease the UI development. Methods related to measuring and positioning should be called in `navigatedTo` event of the current `Page` to ensure that all layout measuring has passed.
 
- - [`getViewById`](/api-reference/classes/_ui_core_view_.view#getviewbyid) - Returns the child view with the specified id.
+ - [`getViewById`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#getviewbyid) - Returns the child view with the specified id.
 
  ```XML
  <Page navigatedTo="onNavigatedTo">
@@ -297,7 +297,7 @@ Each UI element extends the `View` class (e.g., like `StackLayout` or `Label`) a
 >  }
 >  ```
 
- - [`getActualSize`](/api-reference/classes/_ui_core_view_.view#getactualsize) - Returns the actual size of the view in device-independent pixels. The returned value is of type [`Size`](/api-reference/interfaces/_ui_core_view_.size).
+ - [`getActualSize`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#getactualsize) - Returns the actual size of the view in device-independent pixels. The returned value is of type [`Size`](https://docs.nativescript.org/api-reference/interfaces/_ui_core_view_.size).
 
  ```TypeScript
  let stackSize: Size = stack.getActualSize();
@@ -310,7 +310,7 @@ Each UI element extends the `View` class (e.g., like `StackLayout` or `Label`) a
  let stackHeight = stackSize.height;
  ```
 
- - [`getLocationInWindow`](/api-reference/classes/_ui_core_view_.view#getlocationinwindow) - Returns the location of this view in the window coordinate system. The returned value is of type [`Point`](/api-reference/interfaces/_ui_core_view_.point).
+ - [`getLocationInWindow`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#getlocationinwindow) - Returns the location of this view in the window coordinate system. The returned value is of type [`Point`](https://docs.nativescript.org/api-reference/interfaces/_ui_core_view_.point).
  ```TypeScript
  let locationInWindow: Point = stack.getLocationInWindow();
  let locationWindowX = locationInWindow.x; // e.g. 10
@@ -322,7 +322,7 @@ Each UI element extends the `View` class (e.g., like `StackLayout` or `Label`) a
  let locationWindowY = locationInWindow.y;
  ```
 
-  - [`getLocationOnScreen`](/api-reference/classes/_ui_core_view_.view#getlocationonscreen) - Returns the location of this view in the screen coordinate system. The returned value is of type [`Point`](/api-reference/interfaces/_ui_core_view_.point).
+  - [`getLocationOnScreen`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#getlocationonscreen) - Returns the location of this view in the screen coordinate system. The returned value is of type [`Point`](https://docs.nativescript.org/api-reference/interfaces/_ui_core_view_.point).
  ```TypeScript
  let locationOnScreen : Point = stack.getLocationOnScreen();
  let locScreenX = locationOnScreen.x; // e.g. 10
@@ -334,7 +334,7 @@ Each UI element extends the `View` class (e.g., like `StackLayout` or `Label`) a
  var locScreenY = locationOnScreen.y;
  ```
 
-  - [`getLocationRelativeTo`](/api-reference/classes/_ui_core_view_.view#getlocationrelativeto) - Returns the location of this view against another view's coordinate system. The returned value is of type [`Point`](/api-reference/interfaces/_ui_core_view_.point).
+  - [`getLocationRelativeTo`](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view#getlocationrelativeto) - Returns the location of this view against another view's coordinate system. The returned value is of type [`Point`](https://docs.nativescript.org/api-reference/interfaces/_ui_core_view_.point).
  ```TypeScript
  let labelLocationRelativeToStack: Point = label.getLocationRelativeTo(stack);
  let labelRelativeX = labelLocationRelativeToStack.x;
@@ -346,12 +346,12 @@ Each UI element extends the `View` class (e.g., like `StackLayout` or `Label`) a
  let labelRelativeY = labelLocationRelativeToStack.y;
  ```
 
-[View](/api-reference/classes/_ui_core_view_.view)
-[Properties module](/api-reference/modules/_ui_core_properties_.html)
-[Property](/api-reference/classes/_ui_core_properties_.property.html)
-[CssProperty](/api-reference/classes/_ui_core_properties_.cssproperty.html)
-[CssAnimationProperty](/api-reference/classes/_ui_core_properties_.cssanimationproperty.html)
-[InheritedCssProperty](/api-reference/classes/_ui_core_properties_.inheritedcssproperty.html)
-[ShorthandProperty](/api-reference/classes/_ui_core_properties_.shorthandproperty.html)
-[CoercibleProperty](/api-reference/classes/_ui_core_properties_.coercibleproperty.html)
-[isIOS](/api-reference/modules/_platform_.html#isios)
+[View](https://docs.nativescript.org/api-reference/classes/_ui_core_view_.view)
+[Properties module](https://docs.nativescript.org/api-reference/modules/_ui_core_properties_.html)
+[Property](https://docs.nativescript.org/api-reference/classes/_ui_core_properties_.property.html)
+[CssProperty](https://docs.nativescript.org/api-reference/classes/_ui_core_properties_.cssproperty.html)
+[CssAnimationProperty](https://docs.nativescript.org/api-reference/classes/_ui_core_properties_.cssanimationproperty.html)
+[InheritedCssProperty](https://docs.nativescript.org/api-reference/classes/_ui_core_properties_.inheritedcssproperty.html)
+[ShorthandProperty](https://docs.nativescript.org/api-reference/classes/_ui_core_properties_.shorthandproperty.html)
+[CoercibleProperty](https://docs.nativescript.org/api-reference/classes/_ui_core_properties_.coercibleproperty.html)
+[isIOS](https://docs.nativescript.org/api-reference/modules/_platform_.html#isios)

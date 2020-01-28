@@ -46,7 +46,7 @@ We recommend that you use `page-router-outlet` for your major mobile navigation 
 
 In a NativeScript application you **cannot** use the Angular [`routerLink`](https://angular.io/api/router/RouterLink) directive. NativeScript provides its own `nsRouterLink` directive that is working much in the same way. Additionally, it supports two NativeScript specific attributes that you can add to your `nsRouterLink` tag in the markup.
 
-* pageTransition - This attribute lets you specify the native transition for the `nsRouterLink` navigation. Accepted values are `true`, `false`, one of the predefined transitions listed [here](/api-reference/interfaces/_ui_frame_.navigationtransition#name) or a custom [NavigationTransition](/api-reference/interfaces/_ui_frame_.navigationtransition) object.
+* pageTransition - This attribute lets you specify the native transition for the `nsRouterLink` navigation. Accepted values are `true`, `false`, one of the predefined transitions listed [here](https://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition#name) or a custom [NavigationTransition](https://docs.nativescript.org/api-reference/interfaces/_ui_frame_.navigationtransition) object.
 * clearHistory - This attribute accepts a boolean value and indicates whether the navigation triggered by the `nsRouterLink` will clear the navigation history of the current outlet.
 
 ```HTML

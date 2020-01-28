@@ -23,7 +23,7 @@ Keep in mind that some of Kotlin's fundamental types are translated to a Java ty
 |kotlin.Float                  | float             | kotlin.Float?            | java.lang.Float       |
 
 
-Although the conversion of Kotlin types in NativeScript is quite the same as the [Java conversion]((./java-to-js.md)), let's take a look at some examples.
+Although the conversion of Kotlin types in NativeScript is quite the same as the [Java conversion](./java-to-js.md), let's take a look at some examples.
 
 ## String & Character
 Both [kotlin.String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) and [kotlin.Char](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char/index.html) types are projected as JavaScript [String](http://www.w3schools.com/jsref/jsref_obj_string.asp):
@@ -184,7 +184,7 @@ class KotlinClassWithStringArrayProperty {
 
 ### Creating arrays
 
-Occasionally you have to create Kotlin arrays from JavaScript. Because of the translation of the fundamental Kotlin types to Java types in Android, creating Kotlin array could be done the same way Java arrays are created. This is described in [Java to JavaScript](./java-to-js.md#L111)
+Occasionally you have to create Kotlin arrays from JavaScript. Because of the translation of the fundamental Kotlin types to Java types in Android, creating Kotlin array could be done the same way Java arrays are created. This is described in [Java to JavaScript](./java-to-js.md)
 
 ## Null
 The Kotlin null literal (or null pointer) is projected to JavaScript [Null](https://www.w3schools.com/js/js_type_conversion.asp):
