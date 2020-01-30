@@ -75,7 +75,7 @@ The command that will run the tests should specify the targeted capabilities con
 
 
 ```
-$ npm run e2e -- --runType <capability-name>
+$ npm run e2e -- --runType=<capability-name>
 ```
 
 where `<capability-name>` is defined in `<your-app-folder>/e2e/config/appium.capabilities.json`. You can choose any of the predefined ones or [create new ones](({% slug e2e-testing-customization %}#custom-appium-capabilities)) before running the tests. This will asure you that you are executing the tests against the platform and version you want to.
@@ -112,8 +112,8 @@ $ tns build android
 
 // Run the sample tests for Android and/or iOS
 // Make sure the used capabilities are defined in `<your-app-folder>/e2e/config/appium.capabilities.json`
-$ npm run e2e -- --runType android25
-$ npm run e2e -- --runType sim.iPhone8.iOS110
+$ npm run e2e -- --runType=android25
+$ npm run e2e -- --runType=sim.iPhone8.iOS110
 
 ```
 
