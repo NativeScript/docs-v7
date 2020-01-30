@@ -39,7 +39,7 @@ Generally, almost every UI control could be bound to a data object (all NativeSc
 
 The example below consists of a `Label`, `TextField` and a source property to which the UI controls are bound. The purpose of the sample is to demonstrate how the `Label` text is changed, while editing the input of the `TextField`.
 
-> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=eK2hOo) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=8gVPMi&v=4).
+> You can find a runnable version of this example in NativeScript Playground for JavaScript [here](https://play.nativescript.org/?template=play-js&id=lpiGYy&v=2) and for TypeScript [here](https://play.nativescript.org/?template=play-tsc&id=8gVPMi&v=4).
 
 First, the **source** object is created with a **textSource** property. A constant flow of propagating changes from the source property to the Label is necessary. Thus, the property in the code has to raise a **propertyChange** event in order to notify the `Label` for the changes. To raise this event, a built-in class is used, which provides this functionality - `Observable`.
 
