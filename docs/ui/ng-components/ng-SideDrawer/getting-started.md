@@ -19,7 +19,7 @@ This article explains how to create a simple RadSideDrawer with Angular.
  <RadSideDrawer></RadSideDrawer> <!-- RadSideDrawer should be single child (not counting ActionBar)-->
  <!-- 
     It is NOT allowed to have other elements on the root level with RadSideDrawer
-    <StackLayout></StsckLayout>
+    <StackLayout></StackLayout>
  -->    
  ```
 
