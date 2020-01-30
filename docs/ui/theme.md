@@ -411,7 +411,7 @@ The theme styles for NativeScript's progress and activity indicators are applied
 
 ### SideDrawers
 
-SideDrawers are a common way to implement navigation in your NativeScript apps. The NativeScript core theme includes class names to help you style the free-to-use {% nativescript %}[RadSideDrawer](/ui/professional-ui-components/SideDrawer/overview){% endnativescript %}{% angular %}[RadSideDrawer](/angular/ui/professional-ui-components/ng-SideDrawer/overview) {% endangular %}.
+SideDrawers are a common way to implement navigation in your NativeScript apps. The NativeScript core theme includes class names to help you style the free-to-use {% nativescript %}[RadSideDrawer](./components/SideDrawer/overview){% endnativescript %}{% angular %}[RadSideDrawer](./ng-components/ng-SideDrawer/overview) {% endangular %}.
 
 > **NOTE**: The UI snippets you see below should be placed within a RadSideDrawer’s `drawerContent` (themed example [here](https://github.com/NativeScript/theme/blob/25ac30139f43ff01b9c3d21e2a021ff814cccbee/app-compat/app-root/app-root.xml)). Refer to the {% nativescript %}[control’s documentation](/ui/professional-ui-components/SideDrawer/overview){% endnativescript %}{% angular %}[control’s documentation](/angular/ui/professional-ui-components/ng-SideDrawer/overview) {% endangular %} for more information on how to structure drawers within your apps.
 
