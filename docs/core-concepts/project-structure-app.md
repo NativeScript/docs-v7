@@ -122,9 +122,15 @@ For description of the flags which are specific to the iOS runtime see the [iOS 
 
 ##{% nativescript %}# app/{% endnativescript %}App_Resources
 
-The `App_Resources` folder contains the platform-specific resources of the application (icons, configuration files etc.). The configuration files that are respected by the NativeScript tooling are the `App_Resources/Android/src/main/AndroidManifest.xml` for Android, and the `App_Resources/iOS/Info.plist` for iOS.
+The `App_Resources` folder contains the platform-specific resources of the application (icons, configuration files etc.):
 
-Additionally, you can modify the `App_Resources/iOS/build.xcconfig` or `App_Resources/Android/app.gradle` to add or remove additional build properties for the iOS and Android platforms, respectively.
+* The configuration files that are respected by the NativeScript tooling are the `App_Resources/Android/src/main/AndroidManifest.xml` for Android, and the `App_Resources/iOS/Info.plist` for iOS.
+
+* The `App_Resources/iOS/build.xcconfig` or `App_Resources/Android/app.gradle` files can be used to add or remove additional build properties for the iOS and Android platforms, respectively.
+
+* Native Android source code can be dropped in at `App_Resources/Android/src/main/java` (after creating the proper package subdirectory structure), while native iOS source code – at `App_Resources/iOS/src/` (more info can be found [here]({% slug ios-source %}))
+
+* Metadata filtering rules can be specified in `App_Resources/Android/native-api-usage.json` and `App_Resources/iOS/native-api-usage.json` respectively. For more detailed description of this feature read [this article]({% slug metadata%})
 
 ## The **platforms** Directory
 
@@ -138,7 +144,7 @@ The main `package.json`, which is located in the root directory of the project, 
 
 The root `package.json` also contains several NativeScript-specific properties which are placed inside the `nativescript` object:
 
-* **id** - Specifies the unique application identifier (App ID) of the app. To be able to build for both Android and iOS, your App ID must be unique and contain two or more strings, separated by a dot. Each string must start with a letter and should contain only letters and numbers. The app identifier must not start with an uppercase letter. For more information about the App ID and how to specify different identifiers for iOS and Android, see [What is App identifier]({% slug changing-appid %}).  
+* **id** - Specifies the unique application identifier (App ID) of the app. To be able to build for both Android and iOS, your App ID must be unique and contain two or more strings, separated by a dot. Each string must start with a letter and should contain only letters and numbers. The app identifier must not start with an uppercase letter. For more information about the App ID and how to specify different identifiers for iOS and Android, see [What is App identifier]({% slug changing-appid %}).
 * **tns-android.version** - Specifies the version of the Android runtime. If the property is missing, the latest version of the runtime will be added on the first run or build for Android.
 * **tns-ios.version** - Specifies the version of the iOS runtime. If the property is missing, the latest version of the runtime will be added on the first run or build for iOS.
 
