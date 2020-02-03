@@ -71,8 +71,18 @@
     </ul>
 </div>
 <script>
-    function getCookie(n) { for (var t = n + "=", e = document.cookie.split(";"), r = 0; r < e.length; r++) { for (var i = e[r]; " " === i.charAt(0);)i = i.substring(1, i.length); if (0 === i.indexOf(t)) return i.substring(t.length, i.length) } return null }
-    function setCookie(e, t, i) { var o; if (i) { var n = new Date; n.setTime(n.getTime() + 24 * i * 60 * 60 * 1e3), o = "; expires=" + n.toGMTString() } else o = ""; document.cookie = e + "=" + t + o + "; path=/" }
+    // categories:
+    // 1 - strictly neccessary
+    // 2 - performance cookies
+    // 3 - targeting cookies
+    // 4 - functional cookies
+    function isCategoryActive(category) {
+        if (!window.OptanonActiveGroups) return false;
+        const groupMatchKey = ',' + category + ',';
+        return window.OptanonActiveGroups.indexOf(groupMatchKey) !== -1;
+    }
+    function getCookie(n) { if(!isCategoryActive(1)){ return null; }  for (var t = n + "=", e = document.cookie.split(";"), r = 0; r < e.length; r++) { for (var i = e[r]; " " === i.charAt(0);)i = i.substring(1, i.length); if (0 === i.indexOf(t)) return i.substring(t.length, i.length) } return null }
+    function setCookie(e, t, i) { if(!isCategoryActive(1)){ return; } var o; if (i) { var n = new Date; n.setTime(n.getTime() + 24 * i * 60 * 60 * 1e3), o = "; expires=" + n.toGMTString() } else o = ""; document.cookie = e + "=" + t + o + "; path=/" }
     var urlJSON = window.location.origin.concat("/docs_versions.json");
     $.getJSON(urlJSON, function (data) {
         var varray = data[`versions`].sort((a, b) => parseFloat(a[`version`]) - parseFloat(b[`version`]));
