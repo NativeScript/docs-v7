@@ -187,6 +187,10 @@ _Build.xcconfig Example_
 OTHER_LDFLAGS = $(inherited) -framework "QuartzCore" -l"sqlite3"
 ```
 
+### Metadata filtering usage specifications
+
+Application author can opt-in for native metadata filtering. Plugins should supply their metadata filtering rules in `platforms/android/native-api-usage.json` and `platforms/ios/native-api-usage.json` files respectively. For more detailed description of this feature read [this article]({% slug metadata%})
+
 ## Install a Plugin
 
 To install a plugin for your project, inside your project, run the following command.
