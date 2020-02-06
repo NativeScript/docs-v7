@@ -185,15 +185,16 @@ The `tsconfig.json` file is present only in projects that use TypeScript. The fi
 
 ## The **nsconfig.json** File
 
-The `nsconfig.json` is an optional configuration file, located at the root project directory on the same level as the main `package.json` file. This file makes it possible for users to modify the structure of their application and to enable/disable the HMR developer experience. The available configurations are `appPath` and `appResourcesPath`.
+The `nsconfig.json` is an optional configuration file, located at the root project directory on the same level as the main `package.json` file. This file makes it possible for users to modify the structure of their application. The available configurations are `appPath`, `appResourcesPath`, `overridePods` and `webpackConfigPath`.
 
-The paths (`appPath` and `appResourcesPath`) must be relative to the project root (where the `package.json` file and `platforms` directory are located) in order for everything to work as expected. If `appPath` is omitted, the CLI will assume the application files are located inside a folder called {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} inside the project folder. If `appResourcesPath` is omitted, the CLI will assume that they are at their default location - a folder called `App_Resources` inside the folder containing the rest of the app files.
+The paths (`appPath`, `appResourcesPath`, `webpackConfigPath`) must be relative to the project root (where the `package.json` file and `platforms` directory are located) in order for everything to work as expected. If `appPath` is omitted, the CLI will assume the application files are located inside a folder called {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} inside the project folder. If `appResourcesPath` is omitted, the CLI will assume that they are at their default location - a folder called `App_Resources` inside the folder containing the rest of the app files. The `webpackConfigPath` option allows you to specify the location of your webpack configuration file. If the value is not set, the CLI will use `webpack.config.js` file located at the root of the application. More information for `webpackConfigPath` option is available in [custom webpack configuration article](./tooling/custom-webpack-configuration).
+The `overridePods` option tells the CLI to use the Cocoapods defined in the project's Podfile (inside `App_Resources/iOS/Podfile`) as a resolution in case pluginstry to use different versions of the same pod. For example, in case plugin A wants to use version 2.7 of `AFNetworking` pod and another plugin wants version 3.0 of the same pod, the build operation will fail. In this case, you can set the `overridePods` to true in your `nsconfig.json` and set version of the `AFNetworking` in your `App_Resources/iOS/Podfile`. CLI will use only this version of the pod and will omit the occurences from the plugins. All other pods from plugins will still be included in the application.
 
 ### **nsconfig.json** Path examples
 
 Let's assume the project is located at `/d/work/myApplication`.
 
-* The first and default option is to not have an `nsconfig.json` file inside your project. In this case, the app will be located at `/d/work/myApplication/app` and the resources at `/d/work/myApplication/app/App_Resources`.
+* The first and default option is to not have an `nsconfig.json` file inside your project. In this case, the app will be located at `/d/work/myApplication/app` and the resources at `/d/work/myApplication/app/App_Resources`. CLI will look for `webpack.config.js` file as the `webpackConfigPath` is not set and it will not override any pods versions as `overridePods` is false by default.
 
 * The second option is to specify only the app directory. The example given below will result in an app located at `/d/work/myApplication/code/src` and resources at `/d/work/myApplication/code/src/App_Resources`.
     ```JSON
@@ -214,5 +215,14 @@ Let's assume the project is located at `/d/work/myApplication`.
     {
         "appPath": "code/src",
         "appResourcesPath": "resources"
+    }
+    ```
+* You can set all of the properties:
+    ```JSON
+    {
+        "appPath": "code/src",
+        "appResourcesPath": "resources",
+        "webpackConfigPath": "my-custom.webpack.config.js",
+        "overridePods": true
     }
     ```
