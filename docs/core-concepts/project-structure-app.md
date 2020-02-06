@@ -122,9 +122,15 @@ For description of the flags which are specific to the iOS runtime see the [iOS 
 
 ##{% nativescript %}# app/{% endnativescript %}App_Resources
 
-The `App_Resources` folder contains the platform-specific resources of the application (icons, configuration files etc.). The configuration files that are respected by the NativeScript tooling are the `App_Resources/Android/src/main/AndroidManifest.xml` for Android, and the `App_Resources/iOS/Info.plist` for iOS.
+The `App_Resources` folder contains the platform-specific resources of the application (icons, configuration files etc.):
 
-Additionally, you can modify the `App_Resources/iOS/build.xcconfig` or `App_Resources/Android/app.gradle` to add or remove additional build properties for the iOS and Android platforms, respectively.
+* The configuration files that are respected by the NativeScript tooling are the `App_Resources/Android/src/main/AndroidManifest.xml` for Android, and the `App_Resources/iOS/Info.plist` for iOS.
+
+* The `App_Resources/iOS/build.xcconfig` or `App_Resources/Android/app.gradle` files can be used to add or remove additional build properties for the iOS and Android platforms, respectively.
+
+* Native Android source code can be dropped in at `App_Resources/Android/src/main/java` (after creating the proper package subdirectory structure), while native iOS source code – at `App_Resources/iOS/src/` (more info can be found [here]({% slug ios-source %}))
+
+* Metadata filtering rules can be specified in `App_Resources/Android/native-api-usage.json` and `App_Resources/iOS/native-api-usage.json` respectively. For more detailed description of this feature read [this article]({% slug metadata%})
 
 ## The **platforms** Directory
 
@@ -138,7 +144,7 @@ The main `package.json`, which is located in the root directory of the project, 
 
 The root `package.json` also contains several NativeScript-specific properties which are placed inside the `nativescript` object:
 
-* **id** - Specifies the unique application identifier (App ID) of the app. To be able to build for both Android and iOS, your App ID must be unique and contain two or more strings, separated by a dot. Each string must start with a letter and should contain only letters and numbers. The app identifier must not start with an uppercase letter. For more information about the App ID and how to specify different identifiers for iOS and Android, see [What is App identifier]({% slug changing-appid %}).  
+* **id** - Specifies the unique application identifier (App ID) of the app. To be able to build for both Android and iOS, your App ID must be unique and contain two or more strings, separated by a dot. Each string must start with a letter and should contain only letters and numbers. The app identifier must not start with an uppercase letter. For more information about the App ID and how to specify different identifiers for iOS and Android, see [What is App identifier]({% slug changing-appid %}).
 * **tns-android.version** - Specifies the version of the Android runtime. If the property is missing, the latest version of the runtime will be added on the first run or build for Android.
 * **tns-ios.version** - Specifies the version of the iOS runtime. If the property is missing, the latest version of the runtime will be added on the first run or build for iOS.
 
@@ -179,15 +185,16 @@ The `tsconfig.json` file is present only in projects that use TypeScript. The fi
 
 ## The **nsconfig.json** File
 
-The `nsconfig.json` is an optional configuration file, located at the root project directory on the same level as the main `package.json` file. This file makes it possible for users to modify the structure of their application and to enable/disable the HMR developer experience. The available configurations are `appPath` and `appResourcesPath`.
+The `nsconfig.json` is an optional configuration file, located at the root project directory on the same level as the main `package.json` file. This file makes it possible for users to modify the structure of their application. The available configurations are `appPath`, `appResourcesPath`, `overridePods` and `webpackConfigPath`.
 
-The paths (`appPath` and `appResourcesPath`) must be relative to the project root (where the `package.json` file and `platforms` directory are located) in order for everything to work as expected. If `appPath` is omitted, the CLI will assume the application files are located inside a folder called {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} inside the project folder. If `appResourcesPath` is omitted, the CLI will assume that they are at their default location - a folder called `App_Resources` inside the folder containing the rest of the app files.
+The paths (`appPath`, `appResourcesPath`, `webpackConfigPath`) must be relative to the project root (where the `package.json` file and `platforms` directory are located) in order for everything to work as expected. If `appPath` is omitted, the CLI will assume the application files are located inside a folder called {% nativescript %}`app`{% endnativescript %}{% angular %}`src`{% endangular%} inside the project folder. If `appResourcesPath` is omitted, the CLI will assume that they are at their default location - a folder called `App_Resources` inside the folder containing the rest of the app files. The `webpackConfigPath` option allows you to specify the location of your webpack configuration file. If the value is not set, the CLI will use `webpack.config.js` file located at the root of the application. More information for `webpackConfigPath` option is available in [custom webpack configuration article](./tooling/custom-webpack-configuration).
+The `overridePods` option tells the CLI to use the Cocoapods defined in the project's Podfile (inside `App_Resources/iOS/Podfile`) as a resolution in case pluginstry to use different versions of the same pod. For example, in case plugin A wants to use version 2.7 of `AFNetworking` pod and another plugin wants version 3.0 of the same pod, the build operation will fail. In this case, you can set the `overridePods` to true in your `nsconfig.json` and set version of the `AFNetworking` in your `App_Resources/iOS/Podfile`. CLI will use only this version of the pod and will omit the occurences from the plugins. All other pods from plugins will still be included in the application.
 
 ### **nsconfig.json** Path examples
 
 Let's assume the project is located at `/d/work/myApplication`.
 
-* The first and default option is to not have an `nsconfig.json` file inside your project. In this case, the app will be located at `/d/work/myApplication/app` and the resources at `/d/work/myApplication/app/App_Resources`.
+* The first and default option is to not have an `nsconfig.json` file inside your project. In this case, the app will be located at `/d/work/myApplication/app` and the resources at `/d/work/myApplication/app/App_Resources`. CLI will look for `webpack.config.js` file as the `webpackConfigPath` is not set and it will not override any pods versions as `overridePods` is false by default.
 
 * The second option is to specify only the app directory. The example given below will result in an app located at `/d/work/myApplication/code/src` and resources at `/d/work/myApplication/code/src/App_Resources`.
     ```JSON
@@ -208,5 +215,14 @@ Let's assume the project is located at `/d/work/myApplication`.
     {
         "appPath": "code/src",
         "appResourcesPath": "resources"
+    }
+    ```
+* You can set all of the properties:
+    ```JSON
+    {
+        "appPath": "code/src",
+        "appResourcesPath": "resources",
+        "webpackConfigPath": "my-custom.webpack.config.js",
+        "overridePods": true
     }
     ```

@@ -4,6 +4,7 @@ title: "Metadata Overview"
 description: "NativeScript Android Runtime Metadata Overview"
 position: 0
 previous_url: /generator,/metadata-limitations
+slug: android-metadata-overview
 ---
 
 # Metadata Overview
