@@ -187,6 +187,26 @@ improveThis:
             trimRootPath: "/tooling/docs-cli"
             baseUrl: "https://github.com/NativeScript/nativescript-cli/tree/master/docs/man_pages"
         3:
+            matchPattern: '^/ui/ng-components/(icon-fonts|modal-view-ng).*'
+            trimRootPath: "/ui/ng-components/"
+            pathUpdatePattern: ".md$"
+            baseUrl: "https://github.com/NativeScript/nativescript-sdk-examples-ng/tree/master/app/ng-ui-category/"
+        4:
+            matchPattern: '^/ui/ng-components/.*'
+            trimRootPath: "/ui/ng-components/"
+            pathUpdatePattern: ".md$"
+            baseUrl: "https://github.com/NativeScript/nativescript-sdk-examples-ng/tree/master/app/ng-ui-widgets-category/"
+        5:
+            matchPattern: '^/ui/components/(icon-fonts|modal-view).*'
+            trimRootPath: "/ui/components/"
+            pathUpdatePattern: ".md$"
+            baseUrl: "https://github.com/NativeScript/nativescript-sdk-examples-js/tree/master/app/ns-ui-category"
+        6:
+            matchPattern: '^/ui/components/.*'
+            trimRootPath: "/ui/components/"
+            pathUpdatePattern: ".md$"
+            baseUrl: "https://github.com/NativeScript/nativescript-sdk-examples-js/tree/master/app/ns-ui-widgets-category/"
+        7:
             matchPattern: '.*'
             baseUrl: "https://github.com/NativeScript/docs/blob/master/docs/"
 
