@@ -85,6 +85,7 @@ NativeScript plugins also support merging of `.plist` files. If a library requir
 ## APIs written in Swift
 
 CocoaPod libraries written in Swift can be called from NativeScript only if they are exposed to Objective-C. This means that the following conditions have to be met:
+
 1. The methods and types must have `public` or `open` access. For more information on Access Control read [this article](https://docs.swift.org/swift-book/LanguageGuide/AccessControl.html)
 2. Classes need to inherit from `NSObject` or some other Objective-C class in order to be exposed. Refs [Swift Migration Guide](https://developer.apple.com/documentation/swift/migrating_your_objective-c_code_to_swift)
 3. Starting from Swift 4.0, types and methods have to be explicitly marked with `@objc` or `@objcMembers` attributes. You can read more about them [here](https://docs.swift.org/swift-book/ReferenceManual/Attributes.html).
