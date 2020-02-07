@@ -21,7 +21,7 @@ With lazy loading, the application is split into multiple modules. There is the 
 
 ## Implementing Lazy Loading in NativeScript
 
-In the following sections, we will create a simple Angular application using the [Hello World template](https://github.com/NativeScript/template-hello-world-ng) which by default has no lazy loaded modules. Then, we will add the featured lazy loaded **HomeModule**.
+In the following sections, we will create a simple Angular application using the [Hello World template](https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-hello-world-ng) which by default has no lazy loaded modules. Then, we will add the featured lazy loaded **HomeModule**.
 
 - Create the Hello World Angular template
 

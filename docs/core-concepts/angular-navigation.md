@@ -93,7 +93,7 @@ In a native mobile application the system will keep the navigated views alive, s
 
 ![page-router-outlet-lifecycle](../img/navigation/page-router-outlet-lifecycle.png?raw=true)
 
-You might want to perform some cleanup actions (e.g. unsubscribe from a service to stop updates) when you are navigating forward to a next page. If you are using `page-router-outlet` you cannot do that in the `ngOnDestroy()` hook, as this will not be called when you navigate forward. What you can do is to inject the `Page` instance inside your component and attach to page navigation events (for example `navigatedFrom`) and do the cleanup there. You can check all the available page events [here](https://docs.nativescript.org/ui/ns-ui-widgets/page#page-events).
+You might want to perform some cleanup actions (e.g. unsubscribe from a service to stop updates) when you are navigating forward to a next page. If you are using `page-router-outlet` you cannot do that in the `ngOnDestroy()` hook, as this will not be called when you navigate forward. What you can do is to inject the `Page` instance inside your component and attach to page navigation events (for example `navigatedFrom`) and do the cleanup there. You can check all the available page events [here](https://docs.nativescript.org/ui/components/page#page-events).
 
 ### Configuration
 
@@ -620,7 +620,7 @@ The `TabView` component enables the user to arbitrarily navigate between several
 
 ![navigation-diagram-ng-tab](../img/navigation/navigation-diagram-ng-tab.png?raw=true)
 
-The `BottomNavigation` container provides its lateral navigation logic automatically by providing the user with tabs which they can select. To set up a `BottomNavigation` you need to simply declare the UI of each container via a `TabItemContent` and set the title and icon via corresponding `tabStripItem` (details on the basic structure [here](http://localhost:9192/angular/ui/ng-ui-widgets/bottom-navigation#usage)). Each separate UI container is represented by the `TabContentItem` component. As with other containers, you can enable forward and backward navigation inside each of them by embedding a `page-router-outlet` in it. In this case we need to use three sibling outlets. The way to do this with the Angular router is to use [named outlets](https://angular.io/guide/router#displaying-multiple-routes-in-named-outlets). Each of our outlets will be named with the name of the feature that it represents.
+The `BottomNavigation` container provides its lateral navigation logic automatically by providing the user with tabs which they can select. To set up a `BottomNavigation` you need to simply declare the UI of each container via a `TabItemContent` and set the title and icon via corresponding `tabStripItem` (details on the basic structure [here](/ui/ng-components/bottom-navigation#usage)). Each separate UI container is represented by the `TabContentItem` component. As with other containers, you can enable forw.ard and backward navigation inside each of them by embedding a `page-router-outlet` in it. In this case we need to use three sibling outlets. The way to do this with the Angular router is to use [named outlets](https://angular.io/guide/router#displaying-multiple-routes-in-named-outlets). Each of our outlets will be named with the name of the feature that it represents.
 
 The `BottomNavigation` widget also provides two important features connected to lateral navigation:
 
@@ -791,7 +791,7 @@ Once the modal view is opened it will render the component's UI. To implement th
 
 Closing a modal view can be done either by calling the `closeCallback()` method of the injected params or by getting a NativeScript `View` and calling its `closeModal()` method.
 
-Take a look at the [Modal View]({%slug modal-page %}) article for more information.
+Take a look at the [Modal View](/ui/ng-components/modal-view-ng) article for more information.
 
 The following code sample demonstrates how you can implement the Search modal view and page from the diagram above. Check out the complete playground demo below the code sample.
 
