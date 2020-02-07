@@ -177,6 +177,7 @@ export class ZonedRenderer {
 describe('Renderer E2E', () => {
     beforeEach(nsTestBedBeforeEach([ZonedRenderer]));
     afterEach(nsTestBedAfterEach(false));
+    afterAll(() => {});
 
     it('executes events inside NgZone when listen is called outside NgZone', async(() => {
         const eventName = 'someEvent';
