@@ -375,9 +375,6 @@ The Gauge component (known as RadRadialGauge in code and distributed through the
 
 You can explore the Progress NativeScript UI getting started application, which is [publicly available on GitHub]{% nativescript %}(https://www.github.com/NativeScript/nativescript-ui-samples){% endnativescript %}{% angular %}(https://www.github.com/NativeScript/nativescript-ui-samples-angular){% endangular %}. It contains various examples of the usage of the components. More information about how to run the application is available in its README.
 
-### AppStore/PlayStore sample app
-In case you want to experience the native side of NativeScript and Progress NativeScript UI to the fullest, you can refer to the official sample NativeScript application. Its source code is located in [this GitHub repo](https://github.com/NativeScript/nativescript-marketplace-demo). You can easily check how the app works on your device by getting it from [AppStore](https://itunes.apple.com/us/app/examples-nativescript/id1046772499?ls=1&mt=8) or [PlayStore](https://play.google.com/store/apps/details?id=org.nativescript.examples).
-
 ## Feedback
 Your feedback will be highly appreciated and will directly influence the development of **Progress NativeScript UI**.
 
