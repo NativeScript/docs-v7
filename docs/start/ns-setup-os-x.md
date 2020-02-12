@@ -123,7 +123,7 @@ Complete the following steps to setup NativeScript on your macOS development mac
             <blockquote><b>NOTE</b>: : If you are installing via Android SDK Manager, then the path for ANDROID_HOME would be '/Users/$userid/Library/Android/sdk/' .</blockquote>
 
             <blockquote><b>NOTE</b>: This is the directory that contains the <code>tools</code> and <code>platform-tools</code> directories.</blockquote>
-            <blockquote><b>NOTE</b>: In order to persist these variables after your terminal session is closed, they have to be persisted in your shell profile file (e.g. <code>~/.bash_profile</code> if you are using Bash, <code>~/.zprofile if you are using Zsh)</blockquote>            
+            <blockquote><b>NOTE</b>: In order to persist these variables after your terminal session is closed, they have to be persisted in your shell profile file (e.g. <code>~/.bash_profile</code> if you are using Bash, <code>~/.zprofile</code> if you are using Zsh)</blockquote>            
 
         3. In addition, install all packages for the Android SDK Platform 28, Android SDK Build-Tools 28.0.3 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages.
 
