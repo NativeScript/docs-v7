@@ -128,41 +128,36 @@ To convert your project to use a single (shared) navigation configuration, you n
 Here are the steps:
 
 1. Add a shared file with the routes configuration: **app.routes.ts**
-```TypeScript
-import { Routes } from '@angular/router';
-
-export const routes: Routes = [
-  { path: '', redirectTo: '/players', pathMatch: 'full' },
-];
-```
+    ```TypeScript
+    import { Routes } from '@angular/router';
     
+    export const routes: Routes = [
+      { path: '', redirectTo: '/players', pathMatch: 'full' },
+    ];
+    ```    
 1. Replace the routes configuration in **app-routing.module.ts** with the import of **ROUTES**
-```TypeScript
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-
-import { routes } from '@src/app/app.routes';
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
-```
+    ```TypeScript
+    import { NgModule } from '@angular/core';
+    import { RouterModule } from '@angular/router';
+    import { routes } from '@src/app/app.routes';
+    @NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+    })
+    export class AppRoutingModule { }
+    ```
 
 1. Replace the routes configuration in **app-routing.module.tns.ts** with the import of **ROUTES**
-```TypeScript
-import { NgModule } from '@angular/core';
-import { NativeScriptRouterModule } from 'nativescript-angular/router';
-
-import { routes } from '@src/app/app.routes';
-
-@NgModule({
-  imports: [NativeScriptRouterModule.forRoot(routes)],
-  exports: [NativeScriptRouterModule]
-})
-export class AppRoutingModule { }
-```
+    ```TypeScript
+    import { NgModule } from '@angular/core';
+    import { NativeScriptRouterModule } from 'nativescript-angular/router';
+    import { routes } from '@src/app/app.routes';
+    @NgModule({
+    imports: [NativeScriptRouterModule.forRoot(routes)],
+    exports: [NativeScriptRouterModule]
+    })
+    export class AppRoutingModule { }
+    ```
 
 ### Migrating Modules
 
