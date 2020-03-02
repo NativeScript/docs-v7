@@ -25,7 +25,7 @@ Complete the following steps to set up NativeScript on your Windows development 
     - Run the command prompt as an Administrator.
     - Copy and paste the following script in the command prompt.
 
-        <pre class="add-copy-button"><code class="language-terminal">@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
+        <pre class="add-copy-button"><code class="language-terminal">Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
         </code></pre>
     - Restart the command prompt.
 
