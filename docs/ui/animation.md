@@ -203,3 +203,7 @@ view.animate({
 ```
 
 > Note: The properties `originX` and `originY` are JavaScript properties and can be assigned via code-behind only via a given `View` reference. We can still use them along with CSS animations, but the values for `originX` and `originY` must be set in the code-behind logic.
+
+## Limitations
+
+- `Span` and `FormattedString` can not be animated. `Span` and `FormattedString` elements are not extending the [`View`](https://docs.nativescript.org/api-reference/classes/__nativescript_core_.view) class, but only [`ViewBase`](https://docs.nativescript.org/api-reference/classes/__nativescript_core_.viewbase). Because of this, neither `Span` nor `FormattedString` are ui elements, making it impossible to animate them and causing a crash on iOS.
