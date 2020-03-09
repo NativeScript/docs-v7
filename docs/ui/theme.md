@@ -585,7 +585,7 @@ If using sass (dart-sass), you need to modify your webpack configuration to use 
     ]
 }
 ```
-Replace this with
+Replace this with following code
 ```
 {
     test: /\.scss$/,
