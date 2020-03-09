@@ -1,6 +1,6 @@
 ---
 title: Theme
-description: Learn about the NativeScript theme, and how to apply the theme color schemes to user interface components in your native applications. Choose baetween plain CSS or SASS themes and use advanced techniques like custom themes, variables and mixins. 
+description: Learn about the NativeScript theme, and how to apply the theme color schemes to user interface components in your native applications. Choose baetween plain CSS or SASS themes and use advanced techniques like custom themes, variables and mixins.
 position: 55
 tags: nativescript theme, CSS theme, SASS, NativeScript theming examples, styles
 slug: theme
@@ -396,7 +396,7 @@ The theme styles for NativeScript's list views are applied via their element sel
 </ListView>
 ```
 
-![listview ios](/img/theme/list-group-item-text-ios.png) 
+![listview ios](/img/theme/list-group-item-text-ios.png)
 
 ### Progress and Activity
 
@@ -455,7 +455,7 @@ _Example (NativeScript Core)_
 </drawer:RadSideDrawer.drawerContent>
 ```
 
-* `nt-drawer__header-image`: A class name to apply to an image or logo that you show within the sidedrawer header. The theme takes care of aligning the image for you. 
+* `nt-drawer__header-image`: A class name to apply to an image or logo that you show within the sidedrawer header. The theme takes care of aligning the image for you.
 * `nt-drawer__header-brand`: A class name to apply to text heading that appears in your sidedrawer’s header.
 
 ```XML
@@ -520,19 +520,19 @@ A list of the new blocks follows:
 | Blocks and Elements | Compat (Theme v1) class | {N} Elements
 |---|---|---
 | .nt-action-bar | .action-bar | ActionBar
-| .nt-action-bar__item | .action-item | ActionItem 
-| .nt-button | .btn | Button 
-| .nt-label | .label | Label 
-| .nt-page | .page | Page  
-| .nt-activity-indicator | .activity-indicator | ActivityIndicator 
-| .nt-segmented-bar | .segmented-bar | SegmentedBar 
-| .nt-progress | .progress | Progress 
-| .nt-slider | .slider | Slider 
+| .nt-action-bar__item | .action-item | ActionItem
+| .nt-button | .btn | Button
+| .nt-label | .label | Label
+| .nt-page | .page | Page
+| .nt-activity-indicator | .activity-indicator | ActivityIndicator
+| .nt-segmented-bar | .segmented-bar | SegmentedBar
+| .nt-progress | .progress | Progress
+| .nt-slider | .slider | Slider
 | .nt-search-bar | .search-bar | SearchBar
-| .nt-switch | .switch | Switch 
-| .nt-tab-view | .tab-view | TabView 
+| .nt-switch | .switch | Switch
+| .nt-tab-view | .tab-view | TabView
 | .nt-list-view | .list-group | ListView, RadListView
-| .nt-form | .form | A group of form elements 
+| .nt-form | .form | A group of form elements
 | .nt-input | .input-field | A block of a TextField with a Label
 | .nt-drawer | .side-drawer | RadSideDrawer
 | .nt-drawer__header | .sidedrawer-header | RadSideDrawer header area
@@ -542,8 +542,8 @@ A list of the new blocks follows:
 | .nt-icon | | An icon
 | .nt-bottom-navigation | | BottomNavigation
 | .nt-tab-strip | | TabStrip
-| .nt-tab-strip__item | | TabStripItem 
-| .nt-tab-content__item | | TabContentItem 
+| .nt-tab-strip__item | | TabStripItem
+| .nt-tab-content__item | | TabContentItem
 
 Here is a list of modifiers and where they work:
 
@@ -551,15 +551,15 @@ Here is a list of modifiers and where they work:
 |---|---|---|---
 | .-primary | .btn-primary | Buttons | Specifies a primary (accent colored) button
 | .-outline | .btn-outline | Buttons | Specifies an outlined button
-| .-simple | .btn-simple | Buttons | Specifies a simple (transparent) button 
-| .-active | .btn-active | Buttons | Specifies activated by default button (as if pressed) 
+| .-simple | .btn-simple | Buttons | Specifies a simple (transparent) button
+| .-active | .btn-active | Buttons | Specifies activated by default button (as if pressed)
 | .-rounded-sm | .btn-rounded-sm | Buttons, TextFields | Specifies a small border radius for the element (default 4)
 | .-rounded-lg | .btn-rounded-lg / .input-rounded | Buttons, TextFields | Specifies a large border radius for the element (default 50%)
 | .-{skin} | .btn-{skin} | Buttons | Specifies a skin accent colored button - like `.-ruby`, `.-forest`, etc.
 | .-border | .input-border | TextFields | Specifies a TextField with border on all sides
 | .-sides | .input-sides | TextFields | Specifies an .nt-input/.input-field with Label on the left side
 | .-left | .sidedrawer-left | RadSideDrawer header | Aligns RadSideDrawer header left (default center)
-| .-thumb | .thumb | Image in ListView | Specifies that the image should be a small thumbnail 
+| .-thumb | .thumb | Image in ListView | Specifies that the image should be a small thumbnail
 | .-separator | | row in ListView | Adds a bottom border to a row
 
 ## SASS Usage
@@ -568,11 +568,39 @@ The NativeScript core theme is written in SASS, and you can (optionally) use the
 
 ### Installation
 
-To get started, first, verify that your app has a SASS compiler (e.g., `node-sass` or `dart-sass`).
+To get started, first, verify that your app has a SASS compiler e.g., `node-sass` or `sass` (formerly `dart-sass`).
 
 ```
 npm install node-sass --save-dev
+// or
+npm install sass --save-dev
 ```
+If using sass (dart-sass), you need to modify your webpack configuration to use that instead of default node-sass loader. In config.module.rules of webpack.config.js file you should have the following code:
+```
+{
+    test: /\.scss$/,
+    use: [
+        "nativescript-dev-webpack/css2json-loader",
+        "sass-loader"
+    ]
+}
+```
+Replace this with
+```
+{
+    test: /\.scss$/,
+    use: [
+        "nativescript-dev-webpack/css2json-loader",
+        {
+            loader: "sass-loader",
+            options: {
+                implementation: require("sass")
+            }
+        }s
+    ]
+},
+```
+> **Note:** Webpack configuration file may get overwritten when updating `nativescript-dev-webpack`. Use [custom webpack configuration](https://docs.nativescript.org/tooling/custom-webpack-configuration) to make changes.
 
 For a new project, you can use a template with SASS pre-enabled. A full list of officially supported templates can be found in [the App Templates GitHub repository](https://github.com/NativeScript/nativescript-app-templates).
 ```
@@ -622,7 +650,7 @@ Finally, paste the following code into your `_app-common.scss` file.
 
 As `nativescript-theme-core!1.x.x` before it, the `@nativescript/theme` also allows customization through SCSS variables. However, due to changing its internals to use maps, you can change the variables only **before** the rest of the theme is loaded.
 
-_app-common.scss_ 
+_app-common.scss_
 
 ```CSS
 /* Colors */
@@ -649,16 +677,16 @@ Here is a list of all variables that can be changed.
 | $btn-min-width | length | 64 | Button min-width
 | $btn-height | length | 52 | Button height
 | $btn-padding-x | length | 5 | Horizontal button padding
-| $btn-padding-y | length | 0 | Vertical button padding 
+| $btn-padding-y | length | 0 | Vertical button padding
 | $btn-margin-x | length | 16 | Horizontal button margin
 | $btn-margin-y | length | 8 | Vertical button margin
 | $border-width | length | 1 | Border width wherever it is used (buttons if `$enable-rounded` is on, inputs, `.hr`)
 | $border-radius | length | null | General Border radius, could be in px, dip, % or rem/em (latter converts to dip), forces `$enable-rounded` to true
-| $border-radius-sm | length | 4 | Small border radius, used for `.-rounded-sm` modifier 
+| $border-radius-sm | length | 4 | Small border radius, used for `.-rounded-sm` modifier
 | $border-radius-lg | length | 50% | Large border radius, used for `.-rounded-lg` modifier
-| $disabled-opacity | 0 - 1 | 0.5 | Opacity of the disabled components 
+| $disabled-opacity | 0 - 1 | 0.5 | Opacity of the disabled components
 | | | |
-| $background| color | white | Light background 
+| $background| color | white | Light background
 | $primary | color | 85% negative $background | Light text color
 | $secondary | color | 30% darker $primary | Light secondary text color
 | $background-dark | color | #303030 | Dark background
@@ -679,11 +707,11 @@ Also, several variables are mapped to the theme variables to support Kendo skins
 | $accent | $card-cap-bg | $secondary-palette-name, base hue 500 | $ab-background | $complementary
 | $bg-color | $body-bg | | $background | $background
 | $text-color | $body-color | | $primary | $primary
-| | | $material-dark-complimentary, base-bg | $btn-color | $btn-color  
+| | | $material-dark-complimentary, base-bg | $btn-color | $btn-color
 | | | | $ab-color | $complementary-color
 
-So now, you can export a skin from [Kendo UI ThemeBuilder](https://themebuilder.telerik.com), get the contents of 
-variables.scss in the skin zip file (you don't need the big CSS file in there) and easily create a skin by the same 
+So now, you can export a skin from [Kendo UI ThemeBuilder](https://themebuilder.telerik.com), get the contents of
+variables.scss in the skin zip file (you don't need the big CSS file in there) and easily create a skin by the same
 single import underneath.
 
 ```scss
@@ -748,7 +776,7 @@ _Example for supporting dark mode with SASS_
     background-color: light(background);
 
     @at-root .ns-dark & {
-        background-color: dark(background);    
+        background-color: dark(background);
     }
 }
 ```
@@ -822,7 +850,7 @@ if (platform.isAndroid && platform.device.sdkVersion >= "21") {
         decorView.setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
     })
 };
- 
+
 // Your application.run() call follows here.
 ```
 ``` JavaScript
@@ -835,7 +863,7 @@ if (platform.isAndroid && platform.device.sdkVersion >= "21") {
         var decorView = window.getDecorView();
         decorView.setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
     });
-}; 
+};
 
 // Your application.run() call follows here.
 ```
