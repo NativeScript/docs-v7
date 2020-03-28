@@ -224,10 +224,10 @@ TabView (lateral navigation)
 [Playground Demo Angular](https://play.nativescript.org/?template=play-ng&id=ObeDAp)
 {% endangular %}
 
-
+{% nativescript %}
 ## Combining Nested Navigation Scenarios
 
-{% nativescript %}
+
 ![navigation-schema-backward](../img/navigation-extended/navigation-examples-page-7.png?raw=true)
 
 The following example demonstrates a scenario where we have combined several nested navigations (both lateral and forward navigations on different nested levels). For example, a `RadSidedrawer` + Login page leading to a page with a `TabView` and in one `TabView` there are inner forward navigations in each tab item. There is also a modal page with its own forward navigation.
