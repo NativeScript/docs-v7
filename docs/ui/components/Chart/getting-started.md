@@ -10,7 +10,7 @@ publish: true
 
 # Chart Getting Started
 
-In this article, you will learn to start using NativeScript UI Chart: how to initialize the chart, how to create the data series and how to use the different axes.
+In this article, you will learn to start using NativeScript UI Chart: how to initialize the chart, how to create the data series and how to use the different axes. The code snippets from this section are available as [a standalone demo application](https://github.com/NativeScript/nativescript-ui-samples).
 
 * [Plugin Installation](#plugin-installation)
 * [Data Model](#data-model)

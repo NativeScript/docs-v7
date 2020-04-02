@@ -10,7 +10,7 @@ publish: true
 
 # RadGauge Getting Started
 
-This article will guide you through the process of adding a {% typedoc_link classes:RadRadialGauge %} instance to a page in a {N} application and adding scales and indicators to it.
+This article will guide you through the process of adding a {% typedoc_link classes:RadRadialGauge %} instance to a page in a {N} application and adding scales and indicators to it. The code snippets from this section are available as [a standalone demo application](https://github.com/NativeScript/nativescript-ui-samples).
 
 #### Figure 1. Radial gauge with needle and bar indicators
 ![NativeScriptUI-Getting-Started-iOS](../../img/ns_ui/gauges-gettingstarted-ios.png "RadRadialGauge in iOS") ![NativeScriptUI-Getting-Started-Android](../../img/ns_ui/gauges-gettingstarted-android.png "RadRadialGauge in Android") 

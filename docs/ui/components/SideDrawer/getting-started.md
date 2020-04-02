@@ -9,7 +9,8 @@ publish: true
 ---
 
 # RadSideDrawer Getting Started
-This article will guide you through the process of adding a {% typedoc_link classes:RadSideDrawer %} instance to a page in your NativeScript application and initializing its content. 
+This article will guide you through the process of adding a {% typedoc_link classes:RadSideDrawer %} instance to a page in your NativeScript application and initializing its content. The code snippets from this section are available as [a standalone demo application](https://github.com/NativeScript/nativescript-ui-samples).
+
 > By design the `RadSideDrawer` is designed to be placed as a single child to your `Page`. For example:
 ```XML
 <Page>
