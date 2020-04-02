@@ -9,7 +9,7 @@ publish: true
 ---
 
 # RadListView for Angular - Getting started
-{% typedoc_link classes:RadListView %} for Angular is exposed through the {% typedoc_link classes:RadListViewComponent %} class. This article will guide you through the process of adding a {% typedoc_link classes:RadListViewComponent %} in your application, binding it to a data-source and visualizing the items by using an item template of your choice. For more information on how each separate feature of {% typedoc_link classes:RadListViewComponent %} is used, please refer to the dedicated articles which are using the same scenario and extend it further.
+{% typedoc_link classes:RadListView %} for Angular is exposed through the {% typedoc_link classes:RadListViewComponent %} class. This article will guide you through the process of adding a {% typedoc_link classes:RadListViewComponent %} in your application, binding it to a data-source and visualizing the items by using an item template of your choice. For more information on how each separate feature of {% typedoc_link classes:RadListViewComponent %} is used, please refer to the dedicated articles which are using the same scenario and extend it further. The code snippets from this section are available as [a standalone demo application](https://github.com/NativeScript/nativescript-ui-samples-angular).
 
 ## Installation
 Run the following command to add the plugin to your application:

@@ -8,7 +8,7 @@ position: 2
 publish: true
 ---
 # RadListView Getting Started
-This article will guide you through the process of adding a RadListView in your application, binding it to a data-source and visualizing the items by using an item template of your choice. For more information on how each separate feature of {% typedoc_link classes:RadListView %} is used, please refer to the dedicated articles which are using the same scenario and extend it further.
+This article will guide you through the process of adding a RadListView in your application, binding it to a data-source and visualizing the items by using an item template of your choice. For more information on how each separate feature of {% typedoc_link classes:RadListView %} is used, please refer to the dedicated articles which are using the same scenario and extend it further. The code snippets from this section are available as [a standalone demo application](https://github.com/NativeScript/nativescript-ui-samples).
 
 ## Installation
 Run the following command to add the plugin to your application:

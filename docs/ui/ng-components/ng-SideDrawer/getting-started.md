@@ -9,7 +9,7 @@ publish: true
 ---
 
 # RadSideDrawer Getting Started
-This article explains how to create a simple RadSideDrawer with Angular.
+This article explains how to create a simple RadSideDrawer with Angular. The code snippets from this section are available as [a standalone demo application](https://github.com/NativeScript/nativescript-ui-samples-angular).
 
 > The `RadSideDrawer` is designed to be placed as a single child in your component's HTML.
  This rule excludes the use of a `<ActionBar>` which is not treated as a simple element by NativeScript and can be used with `RadSideDrawer` by placing it at the beginning of the HTML. 

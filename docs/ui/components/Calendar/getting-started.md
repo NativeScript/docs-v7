@@ -9,7 +9,7 @@ publish: true
 ---
 
 # RadCalendar Getting Started
-This article will guide you through the process of adding a {% typedoc_link classes:RadCalendar %} instance to a page in a **{N}** application.
+This article will guide you through the process of adding a {% typedoc_link classes:RadCalendar %} instance to a page in a **{N}** application. The code snippets from this section are available as [a standalone demo application](https://github.com/NativeScript/nativescript-ui-samples).
 
 ## Installation
 Run the following command to add the plugin to your application:

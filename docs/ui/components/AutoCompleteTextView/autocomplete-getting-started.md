@@ -10,7 +10,7 @@ publish: true
 
 # RadAutoCompleteTextView Getting Started
 
-In this article, you will learn how to initialize **RadAutoCompleteTextView** and use it with its basic configuration.
+In this article, you will learn how to initialize **RadAutoCompleteTextView** and use it with its basic configuration. The code snippets from this section are available as [a standalone demo application](https://github.com/NativeScript/nativescript-ui-samples).
 
 ## Installation
 **RadAutoCompleteTextView** is distributed through the `nativescript-ui-autocomplete` package, so before using it, you need to run the following command to add the plugin to your application:

@@ -9,7 +9,7 @@ publish: true
 ---
 
 # Getting Started with RadCalendar for Angular 
-This article will guide you through the process of adding a RadCalendar in your application. For more information on how each separate feature of {% typedoc_link classes:RadCalendar %} is used, please refer to the dedicated articles.
+This article will guide you through the process of adding a RadCalendar in your application. For more information on how each separate feature of {% typedoc_link classes:RadCalendar %} is used, please refer to the dedicated articles. The code snippets from this section are available as [a standalone demo application](https://github.com/NativeScript/nativescript-ui-samples-angular).
 
 ## Installation
 Run the following command to add the plugin to your application:

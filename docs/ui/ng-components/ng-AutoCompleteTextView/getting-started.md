@@ -10,7 +10,7 @@ publish: true
 
 # RadAutoCompleteTextView Getting Started
 
-In this article, you will learn how to initialize **RadAutoCompleteTextView** and use it with its basic configuration inside an NativeScript + Angular applications. 
+In this article, you will learn how to initialize **RadAutoCompleteTextView** and use it with its basic configuration inside an NativeScript + Angular applications. The code snippets from this section are available as [a standalone demo application](https://github.com/NativeScript/nativescript-ui-samples-angular).
 
 ## Installation
 **RadAutoCompleteTextView** is distributed through the `nativescript-ui-autocomplete` package, so before using it, you need to run the following command to add the plugin to your application:
@@ -141,5 +141,5 @@ And here's how RadAutoCompleteTextView looks when the above CSS is applied:
 Want to see this scenario in action?
 Check our SDK examples repo on GitHub. You will find this and many other practical examples with NativeScript UI.
 
-* [RadAutoCompleteTextView Examples](https://github.com/NativeScript/nativescript-ui-samples/tree/master/autocomplete/app/examples/getting-started)
+* [RadAutoCompleteTextView Examples](https://github.com/NativeScript/nativescript-ui-samples-angular/tree/master/autocomplete/app/examples/getting-started)
 
