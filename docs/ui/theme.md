@@ -596,7 +596,7 @@ Replace this with following code
             options: {
                 implementation: require("sass")
             }
-        }s
+        }
     ]
 },
 ```
