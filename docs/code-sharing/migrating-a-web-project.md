@@ -165,7 +165,7 @@ You should also migrate your **NgModules** into code sharing modules.
 
 Often the migration step will consist of these steps:
 
-* Add the NativeScript version of the **@NgModule**—**module-name.component.tns.ts**,
+* Add the NativeScript version of the **@NgModule**—**module-name.module.tns.ts**,
 * copy the providers from your web **@NgModule**,
 * copy the imports from your web **@NgModule** - use NativeScript versions for those that are web-specific (e.g. use **NativeScriptHttpClientModule** instead of **HttpClientModule**)
 * convert all of modules' components, by using migrate-component schematic,
