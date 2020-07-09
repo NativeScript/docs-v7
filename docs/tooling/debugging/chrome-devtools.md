@@ -39,7 +39,7 @@ For security reasons, the generated debugging agent **can't be started automatic
 
 ```Shell
 To start debugging, open the following URL in Chrome:
-chrome-devtools://devtools/bundled/inspector.html?experiments=true&ws=localhost:40000
+devtools://devtools/bundled/inspector.html?experiments=true&ws=localhost:40000
 ```
 You need to manually copy it in Google Chrome's address bar to start debugging.
 
