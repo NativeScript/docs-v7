@@ -75,6 +75,7 @@ export class AppComponent implements OnInit {
     }
 }
 ```
+> Note: This snippet shows an Angular sample, if you are using plain JS, VueJS or React, please adopt the line after `try {` and the import to you codebase.
 
 ## Dark Mode for iOS
 
