@@ -47,6 +47,36 @@ If you want to update your project to opt in to Force Dark, it is needed to put 
 
 > Note: Make sure that `uiMode` value is included in the `android:configChanges` attribute of the main application activity in the `<project>/app/App_Recoures/Android/src/main/AndroidManifest.xml` file. Ohterwise, application will crash on interacting after changing the system appearance. A complete values string would look like: `android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|locale|uiMode"`.
 
+### Hint
+
+Some experience that a DarkMode gets applied even though the app is not configured for dark mode nor "forceDarkAllowed" was enabled as described above.
+A workaround to this is to set the Theme to LightMode explicitly on startup:
+
+```
+...
+import Theme from "@nativescript/theme";
+...
+
+@Component({
+    selector: "ns-app",
+    templateUrl: "app.component.html",
+})
+
+export class AppComponent implements OnInit {
+
+    public ngOnInit(): void {
+        if (application.android) {
+            try {
+                Theme.setMode(Theme.Light);
+            } catch (e) {
+                console.log("Error setting Theme to light mode", e);
+            }
+        }
+    }
+}
+```
+> Note: This snippet shows an Angular sample, if you are using plain JS, VueJS or React, please adopt the line after `try {` and the import to you codebase.
+
 ## Dark Mode for iOS
 
 Existing NativeScript applications built with version pre-6.2 won't be affected by the Dark mode for iOS - they will continue to look the same way in both modes.
