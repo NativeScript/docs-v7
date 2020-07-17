@@ -70,9 +70,11 @@ NativeScript lets you animate the following properties:
 
 - **opacity**
 - **backgroundColor**
-- **translateX** and **translateY**
-- **scaleX** and **scaleY**
+- **translate**
+- **scale**
 - **rotate**
+
+> To use `translate` or `scale` you must preceed with an object declaring both x and y values, for example `translate: { x: 100, y: 250 }` or `scale: { x: 1.5, y: 0 }`.
 
 In every animation, you can control the following properties:
 
