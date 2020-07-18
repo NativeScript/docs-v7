@@ -101,6 +101,9 @@ Please be sure that you run this command in cmd as an administrator (Windows key
 
 <pre class="add-copy-button"><code class="language-terminal">@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://www.nativescript.org/setup/win'))"</code></pre>
 
+> **NOTE**: On some windows systems depending on the configuration, you may receive the following error: "The splatting operator '@' cannot be used to reference variables in an expression. '@powershell' can be used only as
+an argument to a command. To reference variables in an expression use '$powershell'." If this is the case, remove the '@' at the beginning of '@powershell' in the above command to proceed without errors.
+
 During installation you may need to accept a User Account Control prompt to grant the script administrative privileges. Also, be aware that the script downloads and installs some big dependencies—so it’s common for the script to take a while to complete. When the script finishes, close and reopen your command prompt.
 
 > **NOTE**: On Windows and Linux systems you can only use the `tns` command to develop Android apps. This is because the NativeScript CLI uses Xcode to build iOS apps, which is only available on macOS. If you’re interested in building iOS apps on Windows or Linux, you should download [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick).
