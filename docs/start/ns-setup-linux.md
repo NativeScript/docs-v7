@@ -128,13 +128,6 @@ Complete the following steps to set up NativeScript on your Linux development ma
     Please note this is the recommended, safest and most secure method to install any NPM packages globally.
     <pre class="add-copy-button"><code class="language-terminal">sudo npm install nativescript -g --unsafe-perm
     </code></pre>
-    
-    However; if you are on your own non-shared machine, you can disable some of the security to simplify future configuration and eliminate a whole class of npm errors when dealing with npm on your local workstation, by doing this:
-    sudo chown $(whoami) /usr/local/lib/node_modules
-    What this does is give your account user rights to the directory; so then you can do 
-    
-
-    1. Restart the command prompt.
 
 9. To check if your system is configured properly, run the following command.
 
