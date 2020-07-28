@@ -16,7 +16,9 @@ In this article, we will look at the specifics of adding Images in the App_Resou
 
 ## Generating the icon and adding them in the resources folders
 
-To achieve this, we should generate the icons via [NativeScript Image Builder](http://nsimage.brosteins.com/) or some other tool, which can be used for image edit. After we created the images for the required device screen densities, we should add them in the required folders, described below.
+To achieve this, we should generate the icons via [NativeScript Image Builder](http://images.nativescript.rocks/) or via the NativeScript command line tool using the command `tns resources generate icons`.
+
+After we created the images for the required device screen densities, we should add them in the required folders, described below.
 
 ### Adding Android resources
 Android resources should be added to the corresponding `drawable-XXX` folders inside the `App_Resources\Android\src\main\res` folder in your app:
