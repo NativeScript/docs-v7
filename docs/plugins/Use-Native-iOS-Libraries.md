@@ -35,14 +35,14 @@ With CocoaPods, you can remove the framework (with all the binary and header fil
 
 If there is no CocoaPod for the current library you can still use a plugin, but the framework must be dropped in the plugin folder (`{your-plugin}/platforms/ios/{MyFramework}.framework`) and you lose all the benefits of using a package manager.
 
-- Pros
+### Pros
 
 1. Can be included by NativeScript plugin.
 2. Can be included in the plugin by a `Podfile` (if a `pod` for the library exists).
 3. There is no need to manually edit the library before adding it.
 4. There is no need to manually edit the app after adding the library.
 
-- Cons
+### Cons
 
 * Shared frameworks can be used only in iOS 8 and above. This limitation is valid for pure native applications, too. If you are targeting iOS versions lower than 8.0 you must use static frameworks.
 
@@ -67,13 +67,13 @@ The NativeScript CLI supports static libraries coming from plugins but the binar
 
 > If you cannot wrap your static library in a static framework with a `module.modulemap`, in cases such as when using Cocoapods, take a look at the following sample for guidance: https://github.com/NativeScript/plugin-ios-modulemap-sample
 
-- Pros
+### Pros
 
 1. Can be included by NativeScript plugin.
 2. It works without manual changes but not in all cases.
 3. It is trivial to wrap a static library in a static framework. Just put all the headers and binary files in the proper folder structure, add a `module.modulemap` and you have a static framework which works in all cases.
 
-- Cons
+### Cons
 
 1. Can't be included by a `Podfile`.
 2. In some cases, you must add a `module.modulemap` file manually.
