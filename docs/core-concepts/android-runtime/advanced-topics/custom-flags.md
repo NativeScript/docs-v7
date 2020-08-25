@@ -86,7 +86,7 @@ When you are using a release build there will be no logs to the console, so if y
 
 ## Use V8 Symbols
 
-If you want to use V8 API in your application code or you want to have the V8 symbols included in the `libNativeScript.so` file inside the application when built in **release** mode, you will need to enable the `useB8Symbols` flag:
+If you want to use V8 API in your application code or you want to have the V8 symbols included in the `libNativeScript.so` file inside the application when built in **release** mode, you will need to enable the `useV8Symbols` flag:
 
 ```JSON
 {
