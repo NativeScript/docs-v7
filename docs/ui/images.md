@@ -80,7 +80,7 @@ Using the `~/` prefix, you can load images relative to the `App` folder inside y
 ```
 {% endangular %}
 
-The actual mapping of the `~/` to this `app` folder is configured in the `tsconfig.json` file under the `compilerOptions` property.
+The actual mapping between the `~/` to this `app` folder is configured in the `tsconfig.json` file under the `compilerOptions` property.
 
 ```yaml
 "paths": {
