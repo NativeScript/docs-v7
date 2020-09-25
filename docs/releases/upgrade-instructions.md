@@ -31,7 +31,7 @@ tns migrate
 ```
 This command will perform all the required updates of packages and changes in the project that are required to adjust a 6.0 project with the latest requirements.
 
-> Node: The migrate command will update {N} core packages and the below-listed plugins to their 6.0 compatible version:
+> Note: The migrate command will update {N} core packages and the below-listed plugins to their 6.0 compatible version:
 ```
  node-sass
  typescript
