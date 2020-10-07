@@ -189,9 +189,9 @@ To create two separate templates, you just need to use a naming convention. Simp
       <GridLayout columns="*, auto, auto, auto, auto">
         <Label [text]="item.name"></Label>
         <Label [text]="item.quantity" col="1"></Label>
-        <Button [text]="➕" (tap)="increaseQuantity(item)"></Button>
-        <Button [text]="➖" (tap)="decreaseQuantity(item)"></Button>
-        <Button [text]="🗑" (tap)="removeItem(item)"></Button>
+        <Button text="➕" (tap)="increaseQuantity(item)"></Button>
+        <Button text="➖" (tap)="decreaseQuantity(item)"></Button>
+        <Button text="🗑" (tap)="removeItem(item)"></Button>
       </GridLayout>
     </ng-template>
   </ListView>
