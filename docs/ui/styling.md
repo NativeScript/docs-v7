@@ -126,27 +126,6 @@ After you have set the default CSS for the page, you can add to it using two met
 {% endnativescript %}
 {% angular %}
 
-### Ternary operator
-
-```HTML
-<Button text="Tap me!" [class]="changeColor ? 'text-blue' : 'text-red'" (tap)="onChangeColor($event)"></Button>
-```
-```CSS
-/* myCustomComponent.css */
-.text-blue {
-    color: blue;
-}
-.text-red {
-    color: red;
-}
-```
-```TypeScript
-public changeColor  = true;
-onChangeColor(args: EventData) {
-    this.changeColor = !this.changeColor;
-}
-```
-
 ### Component-specific CSS
 
 In an Angular application everything is a component, therefore, it is a very common task to add some CSS code that should only apply to one component. Adding component-specific CSS in a NativeScript-Angular app involves using a component’s `styles` or `styleUrls` property.
