@@ -1,7 +1,8 @@
 ---
 title: Building Plugins
-description: An easy-to-follow guide for building your first NativeScript plugin using the NativeScript plugin seed.
+description: Learn how to use the plugin seed to create a new NativeScript plugin that introduces specific functionality, which then can easily be reused in different apps.
 position: 20
+tags: building plugins, nativescript plugins, plugins development
 slug: building-plugins
 ---
 
@@ -65,7 +66,7 @@ tns plugin add /path/to/nativescript-hello-world/src
 
 > **TIP**: The `tns plugin add` command lets you install plugins from non-npm locations, such as GitHub repos, local folders, or .tgz archives. For details, run `tns plugin add --help` from your command line.
 
-With the plugin installed, you can use the CommonJS `require()` method to import your plugin and use its  `helloWorld()` method.
+With the plugin installed, you can use the CommonJS `require()` method to import your plugin and use its `helloWorld()` method.
 
 ```JavaScript
 var helloWorldModule = require("nativescript-hello-world");
@@ -124,21 +125,11 @@ During development, the NativeScript plugin seed allows you to work on your plug
 
 ### Step 2: Set Up a Development Workflow
 
-Setting up a robust development workflow lets you develop plugins quickly. With the NativeScript plugin seed your development workflow involves two scripts - `npm run demo ios|android`, and `npm run plugin.tscwatch`. Let's talk about the `tscwatch` script first.
+In short, the process can be summarized with the following steps:
+1. Run the demo app (which references the plugin), e.g. using `npm run demo ios|android`.
+2. Update the plugin code and see the result in the refreshed app.
 
-First of all, the "tsc" part of `tscwatch` refers to TypeScript. (The TypeScript CLI is called `tsc`.) The NativeScript seed generates a plugin written in TypeScript, and that TypeScript code needs to be compiled to JavaScript code for NativeScript to use the plugin at runtime. This is where the the `npm run plugin.tscwatch` script comes in.
-
-> **NOTE**: While you can write NativeScript plugins in JavaScript, using TypeScript is highly recommended as it makes dealing with native iOS and Android APIs much easier. You'll see this in action in a minute. Don't worry if you're new to TypeScript. The plugin seed automates every TypeScript-related thing you need to do as part of your plugin development process.
-
-While still in your `src` folder, go ahead and execute the `npm run plugin.tscwatch` command.
-
-```bash
-npm run plugin.tscwatch
-```
-
-The command compiles your plugin's TypeScript code, and then remains running to watch for any subsequent changes you make to your plugin's source code. When the command detects changes, it'll compile your plugin's TypeScript to JavaScript automatically.
-
-Next, let's run your plugin in the demo app so you can see your plugin in action. Start by opening a new terminal window or command prompt on your development machine. Next, run either `npm run demo.ios` or `npm run demo.android`, to start up the demo app on iOS or Android.
+Let's run your plugin in the demo app so you can see your plugin in action. Start by opening a new terminal window or command prompt on your development machine. Next, run either `npm run demo.ios` or `npm run demo.android`, to start up the demo app on iOS or Android.
 
 ```bash
 # Pick one of these commands and run it while still in the src folder.
@@ -153,12 +144,12 @@ If all went well, you should see the demo app start up and show one of the follo
 To show how the development process works, next, open your plugin's `src/version-number.common.ts` file, find the line of code that contains the "Your plugin is working" string, and make a small change. For example you could change the entire line of code that sets the `msg` variable to the following.
 
 ```TypeScript
-let msg = `Your plugin is working on ${app.android ? 'Android' : 'iOS'}!!!!!!!!!!!!!!!!!!!!!!!!!!!`;
+let msg = `Your plugin is working on ${app.android ? 'Android' : 'iOS'}!`;
 ```
 
-After you save this change a few things are going to happen. First, your `tscwatch` command will detect the TypeScript change and automatically compile the `version-number.common.ts` file to JavaScript. Next, your `demo` command will detect the change and automatically refresh your demo app to show your string update.
+After you save this change a few things are going to happen. Next, your `demo` command (`tns run`) will detect the change and automatically refresh your demo app to show your string update.
 
-![Your plugin is working on iOS!!!!!!!!!!!!!!!!!!!!!!!!!!!](./img/plugins/working-ios-2.png)
+![Your plugin is working on iOS!](./img/plugins/working-ios-2.png)
 
 > **NOTE**: Wondering how this works? The demo application's `package.json` file is set to reference the plugin's source code in the `src` folder directly. This link allows you to edit files in `src`, and see those changes in your demo immediately.
 
@@ -243,7 +234,7 @@ With that, your plugin is completely functional and can retrieve your app's vers
 this.message = this.versionNumber.get();
 ```
 
-If you still have `npm run plugin.tscwatch` and `npm run demo.ios|android` watching your code, you should see your demo app update to show your app's version number on the screen. (If not, refer back to step 2 and refamiliarize yourself with the plugin development workflow.)
+If you still have `npm run demo.ios|android` running, you should see your demo app update to show your app's version number on the screen. (If not, refer back to step 2 and refamiliarize yourself with the plugin development workflow.)
 
 ![1.0](./img/plugins/ios-version-number.png)
 
@@ -298,4 +289,4 @@ And these are just the basics. The plugin seed supports more advanced workflows 
 * [Adding unit tests]({% slug plugin-unit-tests %})
 * [Setting up Travis CI](https://github.com/NativeScript/nativescript-plugin-seed#travisci)
 
-If you run into any problems during your plugin development, reach out on [Stack Overflow](https://stackoverflow.com/questions/tagged/nativescript). And if you'd like to chat with other NativeScript plugin authors, sign up for the [NativeScript slack](http://developer.telerik.com/wp-login.php?action=slack-invitation) and join us in the #plugins channel.
+If you run into any problems during your plugin development, reach out on [Stack Overflow](https://stackoverflow.com/questions/tagged/nativescript). And if you'd like to chat with other NativeScript plugin authors, sign up for the [NativeScript slack](https://www.nativescript.org/slack-invitation-form) and join us in the #plugins channel.

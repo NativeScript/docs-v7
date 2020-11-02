@@ -262,11 +262,87 @@ __Example 13: How to trigger animation on element special state__
 
 > As of version 2.0, only the **Button** component has a built-in special state "highlighted" to indicate that it is touched by the user.
 
+## Animations - width and height
+
+__Example 14: How to animate view's width and height.__
+{% nativescript %}
+```XML
+<GridLayout rows="* *" columns="*" class="home-panel">
+        <StackLayout row="0">
+            <Label text="{N}" class="big-label first-view" textWrap="true" />
+        </StackLayout>
+        <StackLayout row="1">
+            <Label text="{N}" class="big-label second-view" textWrap="true" />
+        </StackLayout>
+</GridLayout>
+```
+```CSS
+.first-view {
+    animation-name: example-width;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+.second-view {
+    animation-name: example-height;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes example-width {
+    from { width:140; }
+    to { width:200; }
+}
+
+@keyframes example-height {
+    from { height:140; }
+    to { height:200; }
+}
+```
+[Demo](https://play.nativescript.org/?template=play-js&id=xe3lMf)
+{% endnativescript %}
+{% angular %}
+```HTML
+<GridLayout rows="* *" columns="*" class="home-panel">
+    <StackLayout row="0">
+        <Label text="{N}" class="big-label first-view" textWrap="true" ></Label>
+    </StackLayout>
+    <StackLayout row="1">
+        <Label text="{N}" class="big-label second-view" textWrap="true" ></Label>
+    </StackLayout>
+</GridLayout>
+```
+```CSS
+.first-view {
+    animation-name: example-width;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+.second-view {
+    animation-name: example-height;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes example-width {
+    from { width:140; }
+    to { width:200; }
+}
+
+@keyframes example-height {
+    from { height:140; }
+    to { height:200; }
+}
+```
+[Demo](https://play.nativescript.org/?template=play-ng&id=NMM4I5)
+{% endangular %}
+
 ## Access CSS animations from code
 
 The simplest way to trigger a CSS animation is by changing the element **className** property:
 
-__Example 14: How to trigger CSS animation__
+__Example 15: How to trigger CSS animation__
 
 ```JavaScript
 var view = page.getViewById("view");
@@ -279,7 +355,8 @@ view.className = "transparent";
 
 All keyframes defined in CSS can be accessed with code by using the **getKeyframeAnimationWithName** method. This allows further customization of animation properties:
 
-__Example 15: Accessing CSS defined keyframe in the code via **getKeyframeAnimationWithName** method__
+
+__Example 16: Accessing CSS defined keyframe in the code via **getKeyframeAnimationWithName** method__
 
 ``` JavaScript
 var keyframeAnimation = require("tns-core-modules/ui/animation/keyframe-animation");

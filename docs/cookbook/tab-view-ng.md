@@ -112,8 +112,8 @@ export class DataItem {
 }
 
 @Component({
-	selector: "tab-view-test",
-	templateUrl: "tab-view-test.html"
+    selector: "tab-view-test",
+    templateUrl: "tab-view-test.html"
 })
 export class TabViewTest {
     public items: Array<DataItem>;

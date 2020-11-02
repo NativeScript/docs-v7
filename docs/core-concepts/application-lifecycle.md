@@ -1,7 +1,8 @@
 ---
 title: Application Lifecycle
-description: Learn how to manage the life cycle of NativeScript applications from application start to storing user-defined settings
+description: Learn how to manage the life cycle of NativeScript applications from launching or closing the mobile app to storing user-defined settings.
 position: 40
+tags: application management, nativescript app management, nativescript life cycles
 slug: lifecycle
 previous_url: /application-management,/core-concepts/application-management
 ---
@@ -80,7 +81,7 @@ The component lifecycle is controlled by the Angular application. It creates, up
 
 * **ngOnInit** - Called after all data-bound input methods are initialized.
 * **ngOnChanges** - Called after a data-bound property has been changed.
-* **ngDoCheck** - Detect and act upon changes that Angular can or won't detect on its own. Called every change detection run.
+* **ngDoCheck** - Detect and act upon changes that Angular can't or won't detect on its own. Called every change detection run.
 * **ngOnDestroy** - Called just before Angular destroys the component.
 
 For a full list, see the official [Angular Lifecycle Hooks docs](https://angular.io/guide/lifecycle-hooks).
@@ -136,7 +137,7 @@ import * as application from "tns-core-modules/application";
 application.run({ moduleName: "app-root" });
 ```
 
-> **Note:** Prior to version 4.0.0 all NativeScript application had single topmost `Frame` implicitly created by the `application.start()` method. With NativeScript 4.x.x and above the root `Frame` is no longer implicitly created. Instead you can specify any `View` to be the root of your application while using `application.run({ moduleName: "app-root"})` where `app-root` is the file containing your root `View`. More about the `Frame` API and navigation could be found in the [application lifecycle article](https://docs.nativescript.org/core-concepts/navigation)
+> **Note:** Prior to version 4.0.0 all NativeScript application had single topmost `Frame` implicitly created by the `application.start()` method. With NativeScript 4.x.x and above the root `Frame` is no longer implicitly created. Instead you can specify any `View` to be the root of your application while using `application.run({ moduleName: "app-root"})` where `app-root` is the file containing your root `View`. More about the `Frame` API and navigation could be found in the [navigation article](https://docs.nativescript.org/core-concepts/navigation)
 
 {% endnativescript %}
 
@@ -148,6 +149,7 @@ NativeScript applications have the following life cycle events.
 + `suspend`: This event is raised when the application is suspended.
 + `resume`: This event is raised when the application is resumed after it has been suspended.
 + `displayed`: This event is raised when the UIelements are rendered.
++ `orientationChanged`: This event is raised when the device changes orientation.
 + `exit`: This event is raised when the application is about to exit.
 + `lowMemory`: This event is raised when the memory on the target device is low.
 + `uncaughtError`: This event is raised when an uncaught application error is present.
@@ -187,7 +189,7 @@ application.on(application.resumeEvent, (args) => {
 });
 
 application.on(application.displayedEvent, (args) => {
-    // args is of type ApplicaitonEventData
+    // args is of type ApplicationEventData
     console.log("displayedEvent");
 });
 
@@ -201,6 +203,11 @@ application.on(application.exitEvent, (args) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
+        if (args.android.isFinishing()) {
+            console.log("Activity: " + args.android + " is exiting");
+        } else {
+            console.log("Activity: " + args.android + " is restarting");
+        }
     } else if (args.ios) {
         // For iOS applications, args.ios is UIApplication.
         console.log("UIApplication: " + args.ios);
@@ -335,6 +342,11 @@ applicationOn(exitEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
+        if (args.android.isFinishing()) {
+            console.log("Activity: " + args.android + " is exiting");
+        } else {
+            console.log("Activity: " + args.android + " is restarting");
+        }
     } else if (args.ios) {
         // For iOS applications, args.ios is UIApplication.
         console.log("UIApplication: " + args.ios);
@@ -517,8 +529,11 @@ if (android) {
     });
 }
 platformNativeScriptDynamic().bootstrapModule(AppModule);
-
 ```
+
+> **Note:** The native callbacks (Android or iOS) are executed outside the [Angular zone](https://angular.io/api/core/NgZone). That means that if, for example, the application UI is depending on changes in a native callback, then an explicit wrapping in the `NgZone` would be needed (to trigger the Angular change detection). An example of using the `NgZone` with a native callback can be found [here](https://github.com/NativeScript/nativescript-sdk-examples-ng/blob/24df6d31cf488b0dda8772e6ba1de76141727f01/app/ng-framework-modules-category/fps-meter/usage/usage.component.ts#L13-L23).
+
+
 {% endangular %}
 ## iOS UIApplicationDelegate
 

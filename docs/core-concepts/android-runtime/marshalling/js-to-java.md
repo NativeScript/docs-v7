@@ -1,11 +1,13 @@
 ---
-nav-title: "JavaScript to Java"
-title: "JavaScript to Java"
-description: "NativeScript Android Runtime Data Conversion (Marshalling)"
+title: JavaScript to Java
+description: View the available types of JavaScript to Java conversions in NativeScript, including string, boolean, number, array types, undefined and null.
 position: 1
+tags: javascript java conversion, nativescript java, nativescript js to java
+slug: js-to-java
 ---
 
 # JavaScript to Java Conversion
+
 The article lists the available types in JavaScript and how they are projected to Java.
 
 ### String
@@ -29,7 +31,7 @@ button.setEnabled(enabled); // enabled is converted to Java primitive boolean
 ```
 
 ### Undefined & Null
-JavaScript [Undefined](http://www.w3schools.com/jsref/jsref_undefined.asp) & [Null](http://www.w3schools.com/js/js_typeof.asp) maps to Java [null literal](http://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.10.7) (or null pointer).
+JavaScript [Undefined](http://www.w3schools.com/jsref/jsref_undefined.asp) & [Null](https://www.w3schools.com/js/js_type_conversion.asp) maps to Java [null literal](http://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.10.7) (or null pointer).
 
 ```javascript
 var context = ...;
@@ -134,3 +136,6 @@ myObject.myMethod(items); // will convert to Java array of java.lang.String obje
 
 # See Also
 * [Java to JavaScript](./java-to-js.md)
+* [JavaScript to Kotlin](./js-to-kotlin.md)
+* [Kotlin to JavaScript](./kotlin-to-js.md)
+* [Accessing APIs](../metadata/accessing-packages.md)

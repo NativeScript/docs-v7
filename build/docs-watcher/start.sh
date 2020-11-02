@@ -23,16 +23,23 @@ sigint_handler() {
 trap 'kill ${!}; sigterm_handler' SIGTERM
 trap 'sigint_handler' SIGINT
 
-mkdir /www
+mkdir -p /www
+
 echo "Start copying mounted folders..."
-rsync --relative -az --exclude node_modules/ \
+
+rsync --relative -az --exclude node_modules/ --exclude .git \
 	/root/./docs \
-	/root/./NativeScript \
 	/root/./nativescript-angular \
-	/root/./nativescript-sdk-examples-ng \
-	/root/./nativescript-sdk-examples-js \
-	/root/./nativescript-cli \
 	/www
+
+[ ! -d /root/./NativeScript ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./NativeScript /www
+[ ! -d /root/./nativescript-sdk-examples-ng ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-sdk-examples-ng /www
+[ ! -d /root/./nativescript-sdk-examples-js ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-sdk-examples-js /www
+[ ! -d /root/./nativescript-cli ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-cli /www
+[ ! -d /root/./nativescript-ui-samples ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-ui-samples /www
+[ ! -d /root/./nativescript-ui-samples-angular ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-ui-samples-angular /www
+[ ! -d /root/./nativescript-ui-samples-vue ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./nativescript-ui-samples-vue /www
+[ ! -d /root/./docs_versions ] || rsync --relative -az --exclude node_modules/ --exclude .git /root/./docs_versions /www
 
 /www/docs/build/build-docs.sh
 /www/docs/build/nginx-setup.sh

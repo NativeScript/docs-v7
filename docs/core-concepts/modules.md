@@ -26,7 +26,6 @@ In your project, the files for each module reside in a dedicated subdirectory in
 	* [Layouts](#layouts)
 	* [Widgets](#widgets)
 * [WHATWG polyfills](#whatwg-polyfills)
-* 
 
 ## Core modules
 

@@ -1,13 +1,13 @@
 ---
 title: Gestures
-description: Learn what touch gestures NativeScript supports and how to use them. The article demonstrates how to set up single or multiple gestures on a specific view in NativeScript core or NativeScript Angular project. The example shows how to set up them via code-behind for NativeScript core and via HTML for NativeScript Angular.
+description: Learn how to set up single or multiple gestures via HTML or code-behind files, and offer unique interactions within NativeScript apps.
 position: 90
+tags: nativescript gestures, user interface gestures, nativescript swipe, ns tap
 slug: gestures
 previous_url: /gestures
-
 ---
 
-# Overview
+# User Interface Gestures
 
 Gestures, such as tap, slide and pinch, allow users to interact with your app by manipulating UI elements on the screen.
 
@@ -46,7 +46,14 @@ label.on(GestureTypes.tap, function (args: GestureEventData) {
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet ng-tap-gesture%}
+```TypeScript
+onTap(args: GestureEventData) {
+    console.log("Tap!");
+}
+```
+```HTML
+<Label text="Tap here" (tap)="onTap($event)"></Label>
+```
 {% endangular %}
 
 ## Double Tap
@@ -72,7 +79,15 @@ label.on(GestureTypes.doubleTap, function (args: GestureEventData) {
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet ng-double-tap-gesture%}
+```TypeScript
+onDoubleTap(args: GestureEventData) {
+    console.log("DoubleTap!");
+
+}
+```
+```HTML
+<Label text="Double tap here" (doubleTap)="onDoubleTap($event)"></Label>
+```
 {% endangular %}
 Possible implementation:
 * Scale up the object with a predefined percentage, centered around the double-tapped region. If a user keeps repeating the double tap gesture, continue to scale up until the maximum scale is reached.
@@ -102,7 +117,14 @@ label.on(GestureTypes.longPress, function (args: GestureEventData) {
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet ng-long-press-gesture%}
+```TypeScript
+onLongPress(args: GestureEventData) {
+    console.log("LongPress!");
+}
+```
+```HTML
+<Label text="Long press here" (longPress)="onLongPress($event)"></Label>
+```
 {% endangular %}
 Possible implementation: Select one or more items in a view and act upon the data using a contextual action bar. Enter data selection mode. Avoid using long press for displaying contextual menus.
 
@@ -129,7 +151,14 @@ label.on(GestureTypes.swipe, function (args: SwipeGestureEventData) {
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet ng-swipe-gesture%}
+```TypeScript
+onSwipe(args: SwipeGestureEventData) {
+    console.log("Swipe Direction: " + args.direction);
+}
+```
+```HTML
+<Label text="Swipe here" (swipe)="onSwipe($event)"></Label>
+```
 {% endangular %}
 Possible implementation: Navigate between views in the same hierarchy.
 
@@ -155,7 +184,14 @@ label.on(GestureTypes.pan, function (args: PanGestureEventData) {
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet ng-pan-gesture%}
+```TypeScript
+onPan(args: PanGestureEventData) {
+    console.log("Pan delta: [" + args.deltaX + ", " + args.deltaY + "] state: " + args.state);
+}
+```
+```HTML
+<Label text="Pan here" (pan)="onPan($event)"></Label>
+```
 {% endangular %}
 
 ## Pinch
@@ -181,7 +217,14 @@ label.on(GestureTypes.pinch, function (args: PinchGestureEventData) {
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet ng-pinch-gesture%}
+```TypeScript
+onPinch(args: PinchGestureEventData) {
+    console.log("Pinch scale: " + args.scale + " state: " + args.state);
+}
+```
+```HTML
+<Label text="Pinch here" (pinch)="onPinch($event)"></Label>
+```
 {% endangular %}
 Possible implementation: Zoom into content or out of content.
 
@@ -208,7 +251,14 @@ label.on(GestureTypes.rotation, function (args: RotationGestureEventData) {
 ```
 {% endnativescript %}
 {% angular %}
-{%snippet ng-rotate-gesture%}
+```TypeScript
+onRotate(args: RotationGestureEventData) {
+    console.log("Rotate angle: " + args.rotation + " state: " + args.state);
+}
+```
+```HTML
+<Label text="Rotate here" (rotation)="onRotate($event)"></Label>
+```
 {% endangular %}
 
 ## Touch
@@ -236,11 +286,20 @@ label.on(GestureTypes.touch, function (args: TouchGestureEventData) {
 ```
 {% endnativescript %}
 {% angular %}
-{% snippet ng-touch-gesture %}
+```TypeScript
+onTouch(args: TouchGestureEventData) {
+    console.log(
+        "Touch point: [" + args.getX() + ", " + args.getY() +
+        "] activePointers: " + args.getActivePointers().length);
+}
+```
+```HTML
+<Label text="Touch here" (touch)="onTouch($event)"></Label>
+```
 {% endangular %}
 
 {% nativescript %}
-# Subscribing to Multiple Gestures and Events
+## Subscribing to Multiple Gestures and Events
 
 Since the release of NativeScript 1.3, when subscribing you can use gestures names, comma separated gestures names and/or even mix with events.
 
@@ -261,3 +320,17 @@ label.on("loaded, tap, doubleTap, longPress", function (args: GestureEventData) 
 });
 ```
 {% endnativescript %}
+
+## Gestures Manipulations
+
+In some scenarios, you would want to disable the user interaction or to create more complex UI where some gestures are passing through the parents of the actual interactive zone. NativeScript provides some specific properties for handling similar cases as follows:
+
+- `isUserInteractionEnabled` - Gets or sets a boolean value indicating whether the user can interact with the view. Does not affect the appearance of the view. The default value is `true`.
+
+- `isEnabled` - Gets or sets a boolean value indicating whether the view is enabled. Affects the appearance of the view. The default value is `true`.
+
+- `isPassThroughParentEnabled` - Gets or sets a value indicating whether touch events should pass through to a parent view of the layout container in case an interactive child view did not handle the event. Does not affect the appearance of the view. The default value is `false`.
+
+> **Note: **: There is a conceptual difference in how `isEnabled` is acting on Android and iOS. On Android, the `isEnabled` set to `false` (e.g., on Button) won't allow any events to pass through even when `isPassThroughParentEnabled` is set to `true` for its parent. On the contrary on iOS, the same setup will pass through the event to the parent.
+
+Playground application demonstrating the usage of the three properties can be found [here](https://play.nativescript.org/?template=play-tsc&id=6c9GA0). 

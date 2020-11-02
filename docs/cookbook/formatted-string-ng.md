@@ -9,7 +9,7 @@ environment: angular
 
 # How to use the FormattedString class in text
 
-NativeScript has a special class called [FormattedString](http://docs.nativescript.org/api-reference/classes/_text_formatted_string_.formattedstring.html) to support various text transformations and decorations. The `FormattedString` class can be used with all text-related components like Label, TextView, TextField and even Button. Using `FormattedString` within an NativeScript-Angular app requires using a special syntax because of how Angular views get added to the native visual tree. Here’s what the correct syntax looks like:
+NativeScript has a special class called [FormattedString](/api-reference/classes/_text_formatted_string_.formattedstring.html) to support various text transformations and decorations. The `FormattedString` class can be used with all text-related components like Label, TextView, TextField and even Button. Using `FormattedString` within an NativeScript-Angular app requires using a special syntax because of how Angular views get added to the native visual tree. Here’s what the correct syntax looks like:
 
 ```HTML
 <Label>
@@ -19,7 +19,7 @@ NativeScript has a special class called [FormattedString](http://docs.nativescri
 </Label>
 ```
 
-This syntax differs from the FormattedString’s full syntax used in NativeScript Core, shown below, which does not work in Angular apps:
+This syntax differs from the full syntax of FormattedString used in NativeScript Core, shown below, which does not work in Angular apps:
 
 ```HTML
 <Label>

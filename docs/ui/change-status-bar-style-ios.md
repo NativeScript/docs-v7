@@ -57,11 +57,11 @@ __Figure 2__ shows the result.
  
 ![adding-action-bar-set-backgroundcolor](../img/change-status-bar-style-ios/status-bar-style-via-actionbar-set-backgroundcolor.png "adding-action-bar-set-backgroundcolor")
 
-In iOS there are two possible styles that you could set to the `UINavigationBar`: `UIBarStyleDefault` and `UIBarStyleBlack`. Changing the `UINavigationBar` style will change the style of the status bar automatically. By default, the `UINavigationBar` style in iOS is `UIBarStyleDefault`, which means that the letters will be black and the background color will be white. 
+In iOS there are two possible styles that you could set to the `UINavigationBar`: `Default` and `Black`. Changing the `UINavigationBar` style will change the style of the status bar automatically. By default, the `UINavigationBar` style in iOS is `Default`, which means that the letters will be black and the background color will be white. 
 
 - Changing the style of UINavigationBar 
 
-You should use the `frame` module to access the native instance of `UINavigationBar`. Then you can use its `barStyle` property to change its style to `UIBarStyleBlack`.
+You should use the `frame` module to access the native instance of `UINavigationBar`. Then you can use its `barStyle` property to change its style to `Black`.
 
 > Example 3: How to change UINavigationBar style using native code
 
@@ -71,7 +71,7 @@ var platform = require("tns-core-modules/platform");
 function loaded(args) {
     if (platform.isIOS) {
         var navigationBar = frame.topmost().ios.controller.navigationBar;
-        navigationBar.barStyle = UIBarStyle.UIBarStyleBlack;
+        navigationBar.barStyle = UIBarStyle.Black;
     }
 }
 exports.loaded = loaded;
@@ -84,13 +84,13 @@ import { isIOS } from "tns-core-modules/platform";
 export function loaded(args: EventData){
      if (isIOS) {
         let navigationBar = topmost().ios.controller.navigationBar;
-        navigationBar.barStyle = UIBarStyle.UIBarStyleBlack;
+        navigationBar.barStyle = UIBarStyle.Black;
     }
 }
 ```
 
 __Figure 3__ shows the result.
-> Figure 3: Changing the default UINavigationBar style to UIBarStyleBlack
+> Figure 3: Changing the default UINavigationBar style to Black
 
 ![adding-action-bar-black-style](../img/change-status-bar-style-ios/status-bar-style-via-actionbar-black-style.png "adding-action-bar-black-style")
 

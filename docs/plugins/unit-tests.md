@@ -22,7 +22,7 @@ my-plugin
 |   └── app
 |       └── tests
 └── src
-     
+
 ```
 
 The [NativeScript plugin seed](https://github.com/NativeScript/nativescript-plugin-seed) builds this structure automatically when you initialize your plugin, so don’t worry about creating these files and folders manually.
@@ -51,7 +51,7 @@ describe("bottomText property", function() {
     });
 });
 ```
-Every test assigns a value to the property in testing and verifies that the same value is applied to the element in the visual tree that uses it. The visual tree of the [nativescript-ui-plugin](https://github.com/NativeScript/nativescript-ui-plugin) in our example is pretty simple. It has a grid layout containing three elements which makes it easy to orientate in the structure. In case of more complicated plugin I would suggest that you use some of the [LayoutBase](https://docs.nativescript.org/api-reference/classes/_ui_layouts_layout_base_.layoutbase.html) class methods to explore the visual three. For example:
+Every test assigns a value to the property in testing and verifies that the same value is applied to the element in the visual tree that uses it. The visual tree of the [nativescript-ui-plugin](https://github.com/NativeScript/nativescript-ui-plugin) in our example is pretty simple. It has a grid layout containing three elements which makes it easy to orientate in the structure. In case of more complicated plugin I would suggest that you use some of the [LayoutBase](/api-reference/classes/_ui_layouts_layout_base_.layoutbase.html) class methods to explore the visual three. For example:
 
 ```JavaScript
 const UiPlugin = require("nativescript-ui-plugin").Meme;
@@ -66,7 +66,7 @@ uiElement.eachChildView((view)=>{
     console.log(" ");
 });
 ```
-In this example, we use [getChildAt()](https://docs.nativescript.org/api-reference/classes/_ui_layouts_layout_base_.layoutbase.html#getchildat) function to select the one and only layout in our plugin at index zero. This function returns the `View` class - the base class for all UI components. Then we traverse all elements in the layout using [eachChildView()](https://docs.nativescript.org/api-reference/classes/_ui_layouts_layout_base_.layoutbase.html#eachchildview), get their index with [getChildIndex()](https://docs.nativescript.org/api-reference/classes/_ui_layouts_layout_base_.layoutbase.html#getchildindex) and print all that information.
+In this example, we use [getChildAt()](/api-reference/classes/_ui_layouts_layout_base_.layoutbase.html#getchildat) function to select the one and only layout in our plugin at index zero. This function returns the `View` class - the base class for all UI components. Then we traverse all elements in the layout using [eachChildView()](/api-reference/classes/_ui_layouts_layout_base_.layoutbase.html#eachchildview), get their index with [getChildIndex()](/api-reference/classes/_ui_layouts_layout_base_.layoutbase.html#getchildindex) and print all that information.
 
 You can find the complete `tests.js` file [here](https://github.com/NativeScript/nativescript-ui-plugin/blob/master/demo/app/tests/tests.js).
 

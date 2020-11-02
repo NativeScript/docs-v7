@@ -4,23 +4,23 @@ description: NativeScript for Angular Documentation - Using ListView. In the art
 position: 70
 slug: listview
 publish: false
-previous_url: /listview
 environment: angular
---- 
+---
 
 # List View
 
-Using a `ListView` control inside Angular app requires some special attention due to the complexity of the NativeScript control like custom item template, bindings and so on. 
+Using a `ListView` control inside Angular app requires some special attention due to the complexity of the NativeScript control like custom item template, bindings and so on.
 
 In this article we will cover the following topics:
 
-* [Using the ListView Component](#using-the-listview-component)
-* [Customizing the ListView](#customizing-the-listview)
-* [Using an Item Template](#using-an-item-template)
-* [Using Multiple Item Templates](#using-multiple-item-templates)
-* [Using Async Pipe](#using-async-pipe)
-* [Using Load More Items](#load-more-items)
-* [Estimated Row Height](#estimated-row-height)
+- [List View](#list-view)
+    - [Using the ListView Component](#using-the-listview-component)
+    - [Customizing the ListView](#customizing-the-listview)
+    - [Using an Item Template](#using-an-item-template)
+    - [Using Multiple Item Templates](#using-multiple-item-templates)
+    - [Using Async Pipe](#using-async-pipe)
+    - [Load More Items](#load-more-items)
+    - [Estimated Row Height](#estimated-row-height)
 
 ## Using the ListView Component
 
@@ -184,7 +184,79 @@ There are scenarios when you want to use different item templates based on the t
 1. Define a list view with multiple templates, giving each one of them a key using the `nsTemplateKey` directive.
 2. Set the `itemTemplateSelector` callback for the `ListView`. This is a function that will be called when each item is rendered and should return the name of the template that should be used for it.
 
-{%snippet list-view-template-selector%}
+```TypeScript
+import { Component, Input, Injectable } from "@angular/core";
+
+class DataItem {
+    private static count = 0;
+    public id: number;
+    constructor(public name: string, public isHeader: boolean) {
+        this.id = DataItem.count++;
+    }
+}
+
+@Component({
+    selector: "header-component",
+    template: `<Label [text]='"HEADER: " +data.name'></Label>`
+})
+export class HeaderComponent {
+    @Input() data: DataItem;
+}
+
+@Component({
+    selector: "item-component",
+    template: `<Label [text]='"ITEM: " + data.name'></Label>`
+})
+export class ItemComponent {
+    @Input() data: DataItem;
+}
+
+@Injectable()
+export class DataService {
+    public getItems(): DataItem[] {
+        const result = [];
+        for (let headerIndex = 0; headerIndex < 10; headerIndex++) {
+            result.push(new DataItem("Header " + headerIndex, true));
+
+            for (let i = 1; i < 10; i++) {
+                result.push(new DataItem(`item ${headerIndex}.${i}`, false));
+            }
+        }
+        return result;
+    }
+}
+
+@Component({
+    moduleId: module.id,
+    selector: "list-test",
+    templateUrl: "./template-selector.component.html"
+})
+export class ListTemplateSelectorTest {
+    public myItems: Array<DataItem>;
+
+    public templateSelector = (item: DataItem, index: number, items: any) => {
+        return item.isHeader ? "header" : "item";
+    }
+
+    constructor(private dataService: DataService) {
+    }
+
+    ngOnInit() {
+        this.myItems = this.dataService.getItems();
+    }
+}
+```
+```HTML
+<ListView [items]="myItems" [itemTemplateSelector]="templateSelector">
+    <ng-template nsTemplateKey="header" let-item="item">
+        <header-component [data]="item"></header-component>
+    </ng-template>
+
+    <ng-template nsTemplateKey="item" let-item="item">
+        <item-component [data]="item"></item-component>
+    </ng-template>
+</ListView>
+```
 
 The `itemTemplateSelector` property of the `ListView` is **not** an event. It is just a property that accepts a callback function, so the regular property binding syntax (`[itemTemplateSelector]="callbackFn`) is used to bind it to a function in the component. The `itemTemplateSelector` is not implemented as an `EventEmitter` for performance reasons - firing events triggers angular change detection. Doing this for each shown item is not necessary, given that the template selector callback should not have side effects.
 
@@ -225,7 +297,7 @@ export class ListTestAsync {
         for (var i = 0; i < 3; i++) {
             items.push(new DataItem(i, "data item " + i));
         }
-        
+
         var subscr;
         this.myItems = RxObservable.create(subscriber => {
             subscr = subscriber;
@@ -241,7 +313,7 @@ export class ListTestAsync {
             items.push(new DataItem(counter, "data item " + counter));
             subscr.next(items);
         }, 1000);
-        
+
         setTimeout(() => {
             clearInterval(intervalId);
         }, 15000);
@@ -251,7 +323,7 @@ export class ListTestAsync {
 
 ## Load More Items
 
-The built-in [loadMoreItemsEvent](http://docs.nativescript.org/api-reference/classes/_ui_list_view_.listview.html#loadmoreitemsevent) can be used to implement infinite scrolling in your application. Infinite scrolling allows you to load content on demand without the need for pagination.
+The built-in [loadMoreItemsEvent](/api-reference/classes/_ui_list_view_.listview.html#loadmoreitemsevent) can be used to implement infinite scrolling in your application. Infinite scrolling allows you to load content on demand without the need for pagination.
 
 ```HTML
 // list-test.html

@@ -82,6 +82,7 @@ function initNSMenu() {
         },
         closeOnClick: true,
         animation: { open: {
+            effects: "fadeIn",
             duration: 100
         }}
     }).appendTo(".navigation__right");
@@ -103,7 +104,7 @@ function initPanelBar() {
     menu.kendoPanelBar({
             expandMode: "single"
         })
-        .prependTo(".navigation__right")
+        .prependTo(".ns-navigation")
         .click(function(e) {
             e.stopPropagation();
         });
@@ -175,12 +176,13 @@ $(function(){
         'c#': 'clike',
         'appbuilder' : 'javascript',
         'javascript' : 'javascript',
-        'typescript' : 'javascript',
+        'typescript' : 'typescript',
+        'kotlin': 'kotlin',
+        'java':'java',
         'c++' : 'clike',
         'c' : 'clike',
         'css' : 'css',
-        'objective-c' : 'clike',
-        'java' : 'clike',
+        'objective-c' : 'objectivec',
         'xml' : 'markup'
     };
 
@@ -188,7 +190,9 @@ $(function(){
         '.xml': 'markup',
         '.css' : 'css',
         '.js' : 'javascript',
-        '.ts' : 'javascript',
+        '.ts' : 'typescript',
+        '.kt':'kotlin',
+        '.java':'java'
     };
 
     // Enable Prism support by mapping the lang attributes to the language-* attribute Prim expects
@@ -237,7 +241,7 @@ $(function(){
             }
 
             $(this)
-                .prepend("<button class='copy-button ns-button' title='Copy to clipboard'>Copy</button>")
+                .prepend("<button class='copy-button ns-button -hollow' title='Copy to clipboard'></button>")
                 .wrap("<div class='ns-copy-container'></div>");
         });
     }
@@ -324,7 +328,11 @@ $(function(){
                 }
             });
 
-            topElement = $('.right-nav__tree [href$="#' + topElement.id + '"]');
+            var prevParent = $(topElement).prevAll("h2")[0];
+
+            topElement = $('.right-nav__tree' +
+                (prevParent && topElement.nodeName !== "H2" ? ' [href$="#' + prevParent.id + '"] + ul' : '')  +
+                ' [href$="#' + topElement.id + '"]');
 
             if (topElement[0]) {
                 $(".right-nav__tree a").removeClass("ns-state-selected");
@@ -491,4 +499,3 @@ $(function() {
 
     window.setTimeout(handleBanner, 1000);
 });
-

@@ -46,7 +46,7 @@ onButtonTap(args: EventData) {
 
 > Before we can use the ngModel directive in a two-way data binding, we must import the **NativeScriptFormsModule** and add it to the Angular module's imports list:
 > ```typescript
-import {NativeScriptFormsModule} from "nativescript-angular/forms"
+import { NativeScriptFormsModule } from "nativescript-angular/forms"
 @NgModule({
 	imports: [
 		NativeScriptModule,
@@ -83,7 +83,7 @@ This is the way Angular supports two-way data binding. It generally works in alm
 
 ## Interpolation 
 
-Angular mustache (`{{ }}`) syntax for binding a.k.a. interpolation is also supported within a NativeScript-Angular application. It's just another way of one-way binding placed in the middle of a text.
+Angular mustache {%raw%}(`{{ }}`){%endraw%} syntax for binding a.k.a. interpolation is also supported within a NativeScript-Angular application. It's just another way of one-way binding placed in the middle of a text.
 
 ```XML
 {%raw%}<Label text='{{model.deliveryHour}}:{{model.deliveryMinute}}'></Label>{%endraw%}

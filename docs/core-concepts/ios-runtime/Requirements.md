@@ -2,7 +2,7 @@
 nav-title: "Requirements"
 title: "Requirements"
 description: "NativeScript iOS Runtime Requirements"
-position: 1
+position: 20
 ---
 
 # System Requirements

@@ -21,7 +21,7 @@ With lazy loading, the application is split into multiple modules. There is the 
 
 ## Implementing Lazy Loading in NativeScript
 
-In the following sections, we will create a simple Angular application using the [Hello World template](https://github.com/NativeScript/template-hello-world-ng) which by default has no lazy loaded modules. Then, we will add the featured lazy loaded **HomeModule**.
+In the following sections, we will create a simple Angular application using the [Hello World template](https://github.com/NativeScript/nativescript-app-templates/tree/master/packages/template-hello-world-ng) which by default has no lazy loaded modules. Then, we will add the featured lazy loaded **HomeModule**.
 
 - Create the Hello World Angular template
 
@@ -32,14 +32,16 @@ In the following sections, we will create a simple Angular application using the
 
 - Add a new folder to hold your `FeatureModule` along with all the components, services, routing tables of the module. 
 
-    A good practice is to use the name of the module as the name of the containing folder. For example, create a `feature` folder and add `feature.module.ts` and the needed components that will be part of the module (in our case `feature.component.ts`)
+    A good practice is to use the name of the module as the name of the containing folder. For example, create a `feature` folder and add `feature.module.ts` and the needed components that will be part of the module (in our case `feature.component.ts` with the respective HTML and CSS files).
     ```JS
     my-app
     --app
     ----feature
+    ------feature.component.css
+    ------feature.component.html
+    ------feature.component.ts
     ------feature.module.ts
     ------feature.routing.ts
-    ------feature.component.ts
     ------feature.service.ts
     ```
 
@@ -51,7 +53,7 @@ In the following sections, we will create a simple Angular application using the
     import { NgModule } from "@angular/core";
     import { Routes } from "@angular/router";
     import { NativeScriptRouterModule } from "nativescript-angular/router";
-    import { FeatureComponent } from "./feature/feature.component";
+    import { FeatureComponent } from "./feature.component";
 
     export const routes: Routes = [
         {
@@ -72,7 +74,8 @@ In the following sections, we will create a simple Angular application using the
     // app/feature/feature.module.ts
     import { NativeScriptCommonModule } from "nativescript-angular/common";
     import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-    import { FeatureComponent } from "./feature.component";
+    import { FeatureComponent } from "./feature.component"; // Import all components that will be used in the lazy loaded module
+    import { FeatureService } from "./feature.service"; // Import all services that will be used in the lazy loaded module
     import { FeatureRoutingModule } from "./feature.routing"; // import the routing module
 
     @NgModule({
@@ -103,7 +106,7 @@ In the following sections, we will create a simple Angular application using the
         { path: "", redirectTo: "/items", pathMatch: "full" },
         { path: "items", component: ItemsComponent },
         { path: "item/:id", component: ItemDetailComponent },
-        { path: "feature", loadChildren: "~/feature/feature.module#FeatureModule" }, // lazy loaded module
+        { path: "feature", loadChildren: () => import("./feature/feature.module").then(m => m.FeatureModule) }, // lazy loaded module
     ];
 
     @NgModule({
@@ -113,16 +116,6 @@ In the following sections, we will create a simple Angular application using the
     export class AppRoutingModule { }
     ```
 
-> **Note:** Use the **tilde (`~`)** to set the route paths for the `loadChildren`. The tilde is an alias for the project's `app` folder.
->  ```TS
->  // Use tilde for construcing your route relative to project's app folder.
->  loadChildren: "~/feature/feature.module#FeatureModule", 
->  ```
->  This way you will be able to create nested routes. The tilde alias is added in the `tsconfig.json` of all NativeScript 4.x.x projects. For older projects, you can update the tsconfig.json 
->  content by installing the latest `nativescript-dev-typescript` and executing
->  ```Shell
->  ./node_modules/.bin/ns-upgrade-tsconfig
->  ```
 
 -  Navigating to lazily loaded module
 

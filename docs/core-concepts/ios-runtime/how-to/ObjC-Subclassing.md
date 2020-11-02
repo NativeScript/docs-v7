@@ -2,7 +2,7 @@
 nav-title: "Subclassing Objective-C Classes"
 title: "Subclassing Objective-C Classes"
 description: "How to extend Objective-C classes and implement protocol from JavaScript."
-position: 0
+position: 30
 ---
 
 # Subclassing Objective-C Classes
@@ -181,10 +181,23 @@ class JSObject extends NSObject implements NSCoding {
 
 There should be no TypeScript constructor, because it will not be executed. Instead override one of the `init` methods.
 
+> **IMPORTANT NOTICE** Currently this syntax is unsupported when using TypeScript with **ES6 modules**. As a workaround you can
+> use the [JavaScript approach](#calling-base-methods-Subclass) by casting the base class to `any` and calling the [extend function](#extend)
+> like this:
+> ```typescript
+const AppDelegate = (UIResponder as any).extend({
+    applicationDidBecomeActive(application: UIApplication): void {
+        console.log("applicationDidBecomeActive", application);
+    }
+}, {
+    protocols: [UIApplicationDelegate]
+});
+> ```
+> For updates regarding this issue you can check [here](https://github.com/NativeScript/ios-runtime/issues/818)
 
 ## TypeScript Delegate Example
 
-When working with native APIs, you'll find yourself having to setup delegates in order to recieve results or callbacks. For this example, we'll setup a delegate for the [Tesseract-OCR-iOS](https://github.com/gali8/Tesseract-OCR-iOS/wiki/Using-Tesseract-OCR-iOS/6510b29bbf18655f29a26f484b00a24cc66ed88b) API. 
+When working with native APIs, you'll find yourself having to setup delegates in order to recieve results or callbacks. For this example, we'll setup a delegate for the [Tesseract-OCR-iOS](https://github.com/gali8/Tesseract-OCR-iOS/wiki/Using-Tesseract-OCR-iOS/6510b29bbf18655f29a26f484b00a24cc66ed88b) API.
 
 Let's first take a look at what the delegate typescript declarations look like:
 ```typescript

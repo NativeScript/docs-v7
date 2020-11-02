@@ -15,6 +15,8 @@ The repository contains the raw content files. To see the HTML representation of
 	* [Overview](./marshalling/overview.md)
 	* [JavaScript to Java](./marshalling/js-to-java.md)
 	* [Java to JavaScript](./marshalling/java-to-js.md)
+	* [JavaScript to Kotlin](./js-to-kotlin.md)
+	* [Kotlin to JavaScript](./kotlin-to-js.md)
 * Binding (Dynamic Type) Generator
 	* [Overview](./generator/overview.md)	
 	* [Extending Classes and Interfaces](./generator/extend-class-interface.md)

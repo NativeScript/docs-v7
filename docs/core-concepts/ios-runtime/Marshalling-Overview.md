@@ -2,7 +2,7 @@
 nav-title: "Marshalling"
 title: "Marshalling "
 description: "Describes how JavaScript objects are marshalled to Objective-C and back."
-position: 0
+position: 40
 ---
 
 # Marshalling
@@ -94,15 +94,43 @@ var array = new NSMutableArray();
 var buttonClass = UIButton;
 var button = new buttonClass();
 array.setObjectAtIndex(buttonClass, 0);
-array.setObjectAdIndex(button, 1);
+array.setObjectAtIndex(button, 1);
 ```
+
+## Converting JavaScript array to CGFloat array
+
+In the below-given code sample, you can see, how to convert a JavaScript array to a `CGFloat` array.
+In the tabs, you will find the Objective-C code for a function accepting a `CGFloat` array as an argument and the JavaScript code for calling this native function. 
+
+```JavaScript
+const CGFloatArray = interop.sizeof(interop.types.id) == 4 ? Float32Array : Float64Array;
+const jsArray = [4.5, 0, 1e-5, -1242e10, -4.5, 34, -34, -1e-6];
+
+FloatArraySample.dumpFloats(CGFloatArray.from(jsArray), jsArray.length);
+```
+```objective-c
+@interface FloatArraySample
++ (void)dumpFloats:(CGFloat*) arr withCount:(int)cnt;
+@end
+
+@implementation TNSBaseInterface
+
++ (void)dumpFloats:(CGFloat*) arr withCount:(int)cnt {
+    for(int i = 0; i < cnt; i++) {
+        NSLog(@"arr[%d] = %f", i, arr[i]);
+    }
+}
+@end
+```
+
+> Note: Keep in mind that `CGFloat` is architecture dependent. On 32-bit devices, we need to use `Float32Array` and `Float64Array` -- on 64-bit ones. A straightforward way to verify the device/emulator architecture is to check the pointer size via `interop.sizeof(interop.types.id)`. The return value for the pointer size will be 4 bytes for 32-bit architectures and 8 bytes - for 64-bit ones. For further info, check out [CGFloat's documentation](https://developer.apple.com/documentation/coregraphics/cgfloat).
 
 ### Primitive Exceptions
 NativeScript considers instances of `NSNull`, `NSNumber`, `NSString` and `NSDate` to be "primitives". This means that instances of these classes won't be exposed in JavaScript via a wrapper exotic object, instead they will be converted to the equivalent JavaScript data type: `NSNull` becomes `null`, `NSNumber` becomes `number` or `boolean`, `NSString` becomes `string` and `NSDate` becomes `Date`. The exception to this are the methods on those classes declared as returning `instancetype` - init methods and factory methods. This means that a call to `NSString.stringWithString` whose return type in Objective-C is `instancetype` will return a wrapper around an `NSString` instance, rather than a JavaScript string. This applies for all methods on `NSNull`, `NSNumber`, `NSString` and `NSDate` returning `instancetype`.
 
 On the other hand, any API that expects a `NSNull`, `NSNumber`, `NSString` or `NSDate` instance in Objective-C can be called either with a wrapper object or a JavaScript value - `null`, `number` or `boolean`, `string` or `Date`, in JavaScript. The conversion is automatically handled by NativeScript.
 
-More information on how NativeScript deals with Objective-C classes is available [here](../types/ObjC-Classes.md).
+More information on how NativeScript deals with Objective-C classes is available [here](types/ObjC-Classes.md).
 
 ## Objective-C Protocols
 Protocols in Objective-C are like interfaces in other languages - they are blueprints of what members a class should contain, a sort of an API contract. Protocols are exposed as empty objects in JavaScript. Protocols are usually only referenced when [subclassing](../how-to/ObjC-Subclassing.md) an Objective-C class or when checking whether an object or class conforms to a protocol.
@@ -186,7 +214,7 @@ var rect = {
 var view = UIView.alloc().initWithFrame(rect);
 ```
 
-More information on how NativeScript deals with structures is available [here](../types/C-Structures.md).
+More information on how NativeScript deals with structures is available [here](./types/C-Structures.md).
 
 ## `NSError **` marshalling
 ### Native to JavaScript

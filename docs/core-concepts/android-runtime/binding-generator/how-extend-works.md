@@ -26,7 +26,7 @@ var myViewGroup = android.view.ViewGroup.extend({
 })
 ```
 
-At a low level, the Runtime adds the `extend` function on each Android [Class Proxy](../metadata/accessing-packages.md). The function is associated with a [V8 method callback](http://izs.me/v8-docs/namespacev8.html#a2084c6d4a8bbd7cb65af83251aa59d04), which, when triggered, will first validate the arguments passed and then the [Binding (Proxy) generator](../generator/overview.md) will attempt to create a new dynamic Android Type. This type will allow the JavaScript defined method overrides to be properly called. 
+At a low level, the Runtime adds the `extend` function on each Android [Class Proxy](../metadata/accessing-packages.md). The function is associated with a [V8 method callback](https://v8docs.nodesource.com/node-10.6/d2/dc3/namespacev8.html), which, when triggered, will first validate the arguments passed and then the [Binding (Proxy) generator](../generator/overview.md) will attempt to create a new dynamic Android Type. This type will allow the JavaScript defined method overrides to be properly called. 
 
 # Extend Function Syntax
 The full `extend` syntax is as follows:
@@ -96,9 +96,12 @@ public class android_view_ViewGroup_myFile_l10_c20 extends android.view.ViewGrou
 }
 ```
 
->**Note:** The arguments in the above example are converted to JavaScript data types as described in the [Java to JavaScript](../marshalling/java-to-js.md) data conversion article
+>**Note:** The arguments in the above example are converted to JavaScript data types as described in the [Java to JavaScript](../marshalling/java-to-js.md) and the [Kotlin to JavaScript](../marshalling/kotlin-to-js.md) data conversion article
 
 # See Also
 * [Gotchas](./gotchas.md)
 * [Data Conversion Overview](../marshalling/overview.md)
 * [JavaScript to Java Data Conversion](../marshalling/js-to-java.md)
+* [JavaScript to Kotlin Data Conversion](../marshalling/js-to-kotlin.md)
+* [JavaScript to Kotlin Data Conversion](./js-to-kotlin.md)
+* [Kotlin to JavaScript Data Conversion](./kotlin-to-js.md)

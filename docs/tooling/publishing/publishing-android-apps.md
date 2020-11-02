@@ -1,7 +1,8 @@
 ---
 title: Publishing for Android
-description: Learn how to publish your NativeScript app in the Play Store for Android users.
+description: Learn how to publish your NativeScript app in the Google Play store by following the same process used for publishing native Android mobile apps. 
 position: 40
+tags: nativescript android, nativescript google play, publish an android app, publish ns app to google play
 slug: publishing-android-apps
 previous_url: /core-concepts/publishing-android-apps
 ---
@@ -45,13 +46,16 @@ You may need to delete `platforms/android` and rebuild using the CLI command `tn
 
 ## App name
 This is the display name for your app. It is purely cosmetic but highly important. For example, it appears under the app icon.
-The value can be stored in the `app/App_Resources/Android/values/strings.xml` file
+The value can be set via the `App_Resources/Android/src/main/res/values/strings.xml` file. Creating your own `strings.xml`  will require population of the `app_name` and `title_activity_kimera` attributes explictly, like so:
+
 ```XML
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MyAppName</string>
     <string name="title_activity_kimera">MyAppName</string>
 </resources>
 ```
+
 By default (or if the project lacks the values above) your application name is generated with the `create` command (e.g. `tns create testApp` will have app name **testApp**)
 
 You can check out more information about [the elements you can define in the `AndroidManifest.xml` here](http://developer.android.com/guide/topics/manifest/application-element.html).
@@ -153,7 +157,7 @@ You can then use the produced `<apk-location>.apk` for upload to *Google Play*.
 
 ### APKs with ABI splits
 
-If you want to reduce the apk sizes you can check how to achieve this in [Android ABI Split article](http://docs.nativescript.org/publishing/android-abi-split.html).
+If you want to reduce the apk sizes you can check how to achieve this in [Android App Bundle article]({% slug android-app-bundle %}).
 
 <h4 id="submit-with-the-google-play-developer-console">Submit with the Google Play Developer Console</h4>
 
@@ -167,6 +171,16 @@ To submit your app to the *Google Play Developer Console*:
 You can read more about these stages at ["Set up alpha/beta tests"](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en).
 
 Once you upload your APK, it will go through a review. When approved, you can move it to production to make it available on *Google Play*.
+
+### Android App Bundle
+If you want to reduce the size of the application download from Google Play Store you can check how to achieve this in [Android App Bundle article]({% slug android-app-bundle %}).
+
+You can perform a full build and produce a signed AAB using the NativeScript CLI:
+```
+tns build android --release --key-store-path <path-to-your-keystore> --key-store-password <your-key-store-password> --key-store-alias <your-alias-name> --key-store-alias-password <your-alias-password> --aab --copy-to <aab-location>.aab
+```
+
+Then you can use the produced file to upload it to Google Play Developer Console following the steps described in [Google Android Developer Documentation](https://developer.android.com/studio/publish/upload-bundle).
 
 ### Submission automation
 

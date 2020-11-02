@@ -10,16 +10,15 @@ slug: ensure-plugins-quality
 NativeScript plugins are the main building blocks for NativeScript applications. These building blocks should work properly installed into applications:
 - built for Android
 - built for iOS
-- bundled with webpack
 
 Ignoring any of these non-functional requirements could lead to an app that doesn’t work as expected. Throughout this article we'll be referring to the verification of those requirements as 'sanity checks' without writing a single line of test. 
 
 
 ## Prerequisites
 
-NativeScript apps can be written in both Angular, or just plain JavaScript/TypeScript and they can also take advantage of the [webpack bundling]({% slug bundling-with-webpack %}) to cut off the excess code. In order to ensure that your plugin runs reliably in any NativeScript application, there are certain prerequisites you may need to complete.
+In order to ensure that your plugin runs reliably in any NativeScript application, there are certain prerequisites you may need to complete.
 
-All plugins should have a demo folder that contains a demo application showing how the plugin works. If you use the [NativeScript plugin seed](https://github.com/NativeScript/nativescript-plugin-seed) you will have this folder by default. If your plugin is a user interface plugin, and you need to test the plugin in both Angular and non-Angular apps, you should have an additional demo-angular folder containing an Angular app you can test your plugin in. Refer to the article ["Supporting Angular in UI Plugins"]({% slug supporting-angular-in-ui-plugins %}) for more details.
+All plugins should have a demo folder that contains a demo application showing how the plugin works. If your plugin is a user interface plugin, and you need to test the plugin in both Angular and non-Angular apps, you should have an additional demo-angular folder containing an Angular app you can test your plugin in. Refer to the article ["Supporting Angular in UI Plugins"]({% slug supporting-angular-in-ui-plugins %}) for more details.
 
 ```
 my-plugin
@@ -36,6 +35,7 @@ In order to ease the process add the following scripts in your `package.json` fi
 ```
 "ngc": "node --max-old-space-size=8192 ./node_modules/.bin/ngc"
 ```
+>**NOTE** In case the ngc command is not found, you need to install it: `npm install @angular/compiler-cli --save-dev`
 
 This script will initiate Ahead of Time (AOT) compilation. The parameter `max-old-space-size` is a workaround to fix heap out of memory errors when running node binaries. It's a common issue when using TypeScript 2.1+ and the Angular compiler (ngc). Check out this issue for more information - https://github.com/angular/angular-cli/issues/5618.
 
@@ -93,61 +93,6 @@ Having `tslint.json` on root level allows using the same TSLint rules for both d
 
 Now the command `npm run ci.tslint` will start a static analysis.
 
-## Checking in Bundled NativeScript Applications
-
-Key benefits of using webpack to bundle a NativeScript app are:
-- improve the app startup time
-- decrease the size of the app
-
-> **NOTE**: You can read more details about the benefits of bundling NativeScript apps in the [“Using Webpack to Bundle Your Code”]({% slug bundling-with-webpack %}) article.
-
-NativeScript plugins should work seamlessly in bundled app. This could be verified by testing the bundled demo apps. In order to enable the app for bundling, there is some configuration required. The entire setup is defined in [“Using Webpack to Bundle Your Code”]({% slug bundling-with-webpack %}). 
-
-Once the `nativescript-dev-webpack` plugin is installed in the demo app(s), several scripts will be added into apps' package.json files.
-
-```
-  "scripts": {
-    "ns-bundle": "ns-bundle",
-    "publish-ios-bundle": "npm run ns-bundle --ios --publish-app",
-    "start-android-bundle": "npm run ns-bundle --android --run-app",
-    "start-ios-bundle": "npm run ns-bundle --ios --run-app",
-    "build-android-bundle": "npm run ns-bundle --android --build-app",
-    "build-ios-bundle": "npm run ns-bundle --ios --build-app"
-  }
-```
-
-To minify your JavaScript files, it is handy to use `--uglify` flag:
-
-```
-"build-ios-bundle": "npm run ns-bundle --ios --build-app --uglify"
-```
-You have to assure that your plugin doesn't break successful bundling of the application with `--uglify` flag.
-
-[Generation of V8 heap snapshots](http://docs.nativescript.org/best-practices/bundling-with-webpack#v8-heap-snapshot) is another optimization that you have to assure is supported by your plugin. When you build your application using the default configuration from the `nativescript-dev-webpack` plugin, two assets are generated - `bundle.js` and `vendor.js`. The first one contains the application code and the second one - every node package that is required in the `./app/vendor.ts|js` file. You need to add your plugin to the list of required ones in `./app/vendor.ts|js`:
-
-```js
-// app/vendor.ts|js
-
-require("./vendor-platform");
-// ...
-
-require("my-awesome-plugin");
-```
-
-You can enable the generation of V8 snapshots by providing the `--snapshot`:
-
-```
-"build-android-bundle": "npm run ns-bundle --android --build-app --uglify --snapshot"
-
-```
-
-
-Now the command `npm run build-android-bundle` will bundle the minified and 'snapshotted' NativeScript application and build it for Android. The result is an optimized Android application that uses the plugin.
-
-Refer to the nativescript-facebook [demo app](https://github.com/NativeScript/nativescript-facebook/tree/doc/demo) which is configured and webpack ready. Notice the [package.json](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/package.json#L41-L42), [vendor.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/vendor.ts), [vendor-platform.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/vendor-platform.ts) ([vendor-platform.android.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/vendor-platform.android.ts) and [vendor-platform.ios.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/vendor-platform.ios.ts)) and [bundle-config.ts](https://github.com/NativeScript/nativescript-facebook/blob/doc/demo/app/bundle-config.ts)
-
-That same sample’s demo-angular app shows how to set up and test webpack in NativeScript apps that use Angular. 
-
 ## Checking in Application Built for Android and iOS
 
 Perhaps the most important sanity checks is whether the demo application consuming the plugin can actually be built. NativeScript supports Android and iOS so both platforms should be covered. The recommendation is to build with latest SDK for Android and iOS.
@@ -178,8 +123,7 @@ my-plugin
 
 This sample uses [Build Matrix](https://docs.travis-ci.com/user/customizing-the-build#Build-Matrix) to initiate several runs as a result of one and [Build Stages](https://docs.travis-ci.com/user/build-stages) to separate the execution into stages. The flow will be as follows:
 1.    Test for Readability, Maintainability and Functionality Errors
-2.    WebPack and Build Demo Apps with Your Plugin Installed
-3.    Build Demo Apps with Your Plugin Installed
+2.    Build Demo Apps with Your Plugin Installed
 
 Each step starts after successful completion of the previous one. In this way, if there is a functional error, for example, the entire run will be terminated after the fall of the first step and the rest of the steps will not be executed. This behavior is controlled by [Build Stages](https://docs.travis-ci.com/user/build-stages).
 
@@ -248,36 +192,12 @@ Then add the required stages:
 - stage: "Lint"
   language: node_js
   os: linux
-  node_js: "6"
+  node_js: "10"
   script: cd src && npm run ci.tslint && cd ../demo && npm run ci.tslint && cd ../demo-angular && npm run ci.tslint
 ```
-The machine that is going to be provisioned will be Linux with nodejs v6 installed on it as well as Oracle JDK v8. Finally the `ci.tslint` script will be executed for the plugin's code and for the demo apps.
+The machine that is going to be provisioned will be Linux with nodejs v10 installed on it as well as  OpenJDK v8. Finally the `ci.tslint` script will be executed for the plugin's code and for the demo apps.
 
-### 2. WebPack and Build Demo Apps with Your Plugin Installed
-
-```
-- stage: "WebPack"
-    os: osx
-    env:
-      - WebpackiOS="11"
-    osx_image: xcode9.1
-    language: node_js 
-    node_js: "6"
-    jdk: oraclejdk8
-    script: cd demo && npm run build.plugin && npm i && npm run build-ios-bundle && cd ../demo-angular && npm run build.plugin && npm i && npm run build-ios-bundle
-  - language: android
-    os: linux
-    env:
-      - WebpackAndroid="26"
-    jdk: oraclejdk8
-    before_install: nvm install 6.10.3
-    script: cd demo && npm run build.plugin && npm i && npm run build-android-bundle && cd ../demo-angular && npm run build.plugin && npm i && npm run build-android-bundle
-```
-This stage includes two builds that run in parallel — one for Android, and one for iOS. Note that the nodejs on the Linux machine is installed because it is not included in the image. 
-The environment variables defined under `env` are used for informational purposes. These variables are not used anywhere in the code.
-The scripts that are executed build the plugin (take a look at [package.json file](https://github.com/NativeScript/nativescript-facebook/blob/master/demo/package.json) of the demo apps) and then bundle and build each of the demo apps.
-
-### 3. Build Demo Apps with Your Plugin Installed
+### 2. Build Demo Apps with Your Plugin Installed
 
 ```
 - stage: "Build"
@@ -285,7 +205,7 @@ The scripts that are executed build the plugin (take a look at [package.json fil
     - BuildAndroid="26"
   language: android
   os: linux
-  jdk: oraclejdk8
+  jdk: openjdk8
   before_install: nvm install 6.10.3
   script: cd demo && npm run ci.android.build && cd ../demo-angular && npm run ci.android.build
 - os: osx
@@ -294,8 +214,8 @@ The scripts that are executed build the plugin (take a look at [package.json fil
     - Xcode="9.1"
   osx_image: xcode9.1
   language: node_js 
-  node_js: "6"
-  jdk: oraclejdk8
+  node_js: "10"
+  jdk: openjdk8
   script: cd demo && npm run ci.ios.build && cd ../demo-angular && npm run ci.ios.build
 ```
 The scripts (`ci.android.build` and `ci.ios.build`) that are executed to build for iOS and Android are located in [package.json](https://github.com/NativeScript/nativescript-facebook/blob/master/demo/package.json#L49) file of any of the demo apps.

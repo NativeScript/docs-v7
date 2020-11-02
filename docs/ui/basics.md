@@ -1,19 +1,20 @@
 ---
 title: The Basics
-description: Learn the basic principles of designing a user interface with NativeScript. In NativeScript, you can design the UI using XML and CSS. The article describes the usage of the Frame in NativeScript app as well as how to pass and receive context. The examples show how to navigate in the app, how to define custom component and how to load XML dynamically.
+description: Learn the basic principles of designing a user interface with NativeScript. In NativeScript, you can design the UI using XML and CSS.
 position: 10
+tags: nativescript user interface, nativescript basics, ns ui basics
 slug: ui-basics
 previous_url: /ui-with-xml,/ui/ui-with-xml
 environment: nativescript
 ---
 
-# The User Interface
+# User Interface Basics
 
 The user interface of NativeScript mobile apps consists of pages. Typically, the design of the user interface is developed and stored in `XML` files, styling is done via CSS and the business logic is developed and stored in `JavaScript` or `TypeScript` files. When you develop the user interface of your app, you can implement each application screen in a separate page or implement your application screens on a single page with a tab view. For each page, you need to have a separate `XML` file that holds the layout of the page. For each `XML` file that NativeScript parses, the framework also looks for a `JavaScript` or `TypeScript` file with the same name and executes the business logic inside it.
 
 ## Declare the Home Page
 
-Each NativeScript app must have a home page that loads when you launch the app. You need to explicitly set the home page for your app by calling the `run` method of the [`Application`](http://docs.nativescript.org/api-reference/modules/_application_.html) module and pass `NavigationEntry` with the desired `moduleName`.
+Each NativeScript app must have a home page that loads when you launch the app. You need to explicitly set the home page for your app by calling the `run` method of the [`Application`](/api-reference/modules/_application_.html) module and pass `NavigationEntry` with the desired `moduleName`.
 
 The NativeScript navigation framework looks for an `XML` file with the specified name, loads it and navigates to the respective page. If NativeScript discovers a `JavaScript` or `TypeScript` file with the same name, it executes the code inside it.
 
@@ -32,7 +33,7 @@ application.run({ moduleName: "my-page" });
 
 ## Navigate to a Page
 
-You can navigate between pages with the `navigate` method of the [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class. The [`Frame`](http://docs.nativescript.org/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. With NativeScript 4 and above each app can have on or more frames. To get a reference to a frame we can use [`getFrameById`](https://docs.nativescript.org/api-reference/modules/_ui_frame_#getframebyid) method. Detailed information about navigation can be found in the [dedicated article](#core-concepts/navigation#basic-navigation).
+You can navigate between pages with the `navigate` method of the [`Frame`](/api-reference/classes/_ui_frame_.frame.html) class. The [`Frame`](/api-reference/classes/_ui_frame_.frame.html) class represents the logical unit that is responsible for navigation between different pages. With NativeScript 4 and above each app can have one or more frames. To get a reference to a frame we can use [`getFrameById`](/api-reference/modules/_ui_frame_#getframebyid) method. Detailed information about navigation can be found in the [dedicated article](#core-concepts/navigation#basic-navigation).
 
 When you trigger navigation, NativeScript looks for an `XML` file with the specified name, loads it and navigates to the respective page. If NativeScript discovers a `JavaScript` or `TypeScript` file with the same name, it executes the code inside it.
 
@@ -58,7 +59,7 @@ frame.navigate("my-page");
 
 ## Passing Binding Context while Navigating
 
-You could provide `bindingContext` automatically while navigating to a page. This will give you a simple way to make the context become the `bindingContext` of the page on navigation. The way to do that is to set up the `bindingContext` property, which points to your custom view model, on `navigate` method. 
+You could provide `bindingContext` automatically while navigating to a page. This will give you a simple way to make the context become the `bindingContext` of the page on navigation. The way to do that is to set up the `bindingContext` property, which points to your custom view model, on `navigate` method.
 
 ```JavaScript
 // To import the "ui/frame" module and "main-view-model":
@@ -87,7 +88,7 @@ frame.navigate({
 
 ## Passing and Receiving Custom Context
 
-In cases where we want to pass a specific context and need more control than the automated `bindingContext`, you could use the `context` property in the `navigatedEntry` object. The navigated page can obtain the passed context via the `navigatedTo` event and the [`navigaitonContext`](https://docs.nativescript.org/api-reference/classes/_ui_page_.page#navigationcontext) property.
+In cases where we want to pass a specific context and need more control than the automated `bindingContext`, you could use the `context` property in the `navigatedEntry` object. The navigated page can obtain the passed context via the `navigatedTo` event and the [`navigationContext`](/api-reference/classes/_ui_page_.page#navigationcontext) property.
 
 Sending binding context from the main page.
 ```JavaScript
@@ -176,7 +177,7 @@ let count = 0;
 export function buttonTap(args: EventData) {
     count++;
     let button = <View>args.object;
-    let parent = butto.parent;
+    let parent = button.parent;
     if (parent) {
         let lbl = <Label>getViewById(parent, "Label1");
         if (lbl) {
@@ -206,7 +207,7 @@ The top-level user interface components are content components like pages and la
 
 ### Page
 
-Your application pages (or screens) are instances of the [`page`](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) class of the [`Page`](http://docs.nativescript.org/api-reference/classes/_ui_page_.page.html) module. Typically, an app will consist of multiple application screens.
+Your application pages (or screens) are instances of the [`page`](/api-reference/classes/_ui_page_.page.html) class of the [`Page`](/api-reference/classes/_ui_page_.page.html) module. Typically, an app will consist of multiple application screens.
 
 You can execute some business logic when your page loads using the `pageLoaded` event. You need to set the `loaded` attribute for your page in your `main-page.xml`.
 ```XML
@@ -235,7 +236,7 @@ export function pageLoaded(args: EventData) {
 
 ### TabView
 
-With a [`tabview`](http://docs.nativescript.org/api-reference/classes/_ui_tab_view_.tabview.html), you can avoid spreading your user interface across multiple pages. Instead, you can have one page with multiple tabs.
+With a [`tabview`](/api-reference/classes/_ui_tab_view_.tabview.html), you can avoid spreading your user interface across multiple pages. Instead, you can have one page with multiple tabs.
 
 The following sample `main-page.xml` contains two tabs with labels.
 ```XML
@@ -425,7 +426,7 @@ When referring to code-only components in your pages with an `xmlns` declaration
 
 **The page using the custom component**
 
-The sample `main-page.xml` is using a custom component `my-control.xml` nad the `my-control.ts` code-behind defined as a separate files in the `app/components` folder.
+The sample `main-page.xml` is using a custom component `my-control.xml` and the `my-control.ts` code-behind defined as a separate files in the `app/components` folder.
 ```XML
 <!-- app/main-page.xml -->
 <Page xmlns:comps="components" navigatingTo="navigatingTo">
@@ -494,7 +495,7 @@ exports.onLoaded = onLoaded;
 
 **The View Model used for bindings**
 
-The `main-page` has a binding context set thought view model (MVVM pattern). The binding context can be accessed though the custom component as demonstrated.
+The `main-page` has a binding context set thought view model (MVVM pattern). The binding context can be accessed through the custom component as demonstrated.
 ```TypeScript
 // app/main-view-model.ts
 import { Observable } from "tns-core-modules/data/observable";
@@ -515,7 +516,7 @@ export class HelloWorldModel extends Observable {
     get message(): string {
         return this._message;
     }
-    
+
     set message(value: string) {
         if (this._message !== value) {
             this._message = value;
@@ -744,7 +745,7 @@ export function navigatingTo(args: EventData) {
 
 ### ListView Binding
 
-You can use the double curly brackets syntax to bind the items to a [`listView`](http://docs.nativescript.org/api-reference/classes/_ui_list_view_.listview.html). You can also define a template with the `itemTemplate` property from which NativeScript will create the items for your `listView`.
+You can use the double curly brackets syntax to bind the items to a [`listView`](/api-reference/classes/_ui_list_view_.listview.html). You can also define a template with the `itemTemplate` property from which NativeScript will create the items for your `listView`.
 
 > Avoid accessing components by ID, especially when the component is part of a template. It is recommended that you use bindings to specify component properties.
 
@@ -892,6 +893,6 @@ Since the release of NativeScript 1.3, you can declare your UI using the lowerca
   <scroll-view>
     <stack-layout>
       <label ctext="Label" />
-      <utton text="Button" tap="tap" />
+      <button text="Button" tap="tap" />
       ...
 ```

@@ -82,26 +82,82 @@ The NativeScript CLI supports static libraries coming from plugins but the binar
 
 NativeScript plugins also support merging of `.plist` files. If a library requires changes in `Info.plist`, the plugin can handle that without you touching the `/platforms/ios/` folder. However, there are libraries which require more complex manipulations of the Xcode project file, which can't be achieved with plugins. In these cases, the only solution is to do it manually. Keep in mind that after updating the iOS platform, your manual changes might be lost.
 
+## APIs written in Swift
+
+CocoaPod libraries written in Swift can be called from NativeScript only if they are exposed to Objective-C. This means that the following conditions have to be met:
+
+1. The methods and types must have `public` or `open` access. For more information on Access Control read [this article](https://docs.swift.org/swift-book/LanguageGuide/AccessControl.html)
+2. Classes need to inherit from `NSObject` or some other Objective-C class in order to be exposed. Refs [Swift Migration Guide](https://developer.apple.com/documentation/swift/migrating_your_objective-c_code_to_swift)
+3. Starting from Swift 4.0, types and methods have to be explicitly marked with `@objc` or `@objcMembers` attributes. You can read more about them [here](https://docs.swift.org/swift-book/ReferenceManual/Attributes.html).
+
+> **NOTE:** To be able to override a Swift method in its JavaScript inheritor it _**MUST**_ use the message dispatch calling mechanism. This is enforced by marking the method with the [`dynamic` keyword](https://docs.swift.org/swift-book/ReferenceManual/Declarations.html#ID381).
+
+> **NOTE:** You can avoid adding `@objc` attribute for every member you'd like to expose by setting `SWIFT_SWIFT3_OBJC_INFERENCE` to `On`. This has the drawback that it will cause deprecation warnings during build and deprecation logs at runtime. Sample `Podfile`:
+```Ruby
+....
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_SWIFT3_OBJC_INFERENCE'] = 'On'
+    end
+  end
+end
+```
+
+
 ## Conclusion
 
 As a rule of thumb, avoid manual changes to the Xcode project file in the `/platforms/ios` folder. Always try to use CocoaPods with NativeScript plugins and shared frameworks. The second best option is a prebuilt static framework with manually added `module.modulemap` file, wrapped in a NativeScript plugin. Use the other options only as a last resort after making sure there is no better solution.
 
 ## Troubleshooting
 
+### Metadata in human readable format
 Starting with version 1.4 of NativeScript for iOS, you are able to generate [debug metadata](../core-concepts/ios-runtime/Overview#metadata) and [TypeScript declarations](https://typescript.codeplex.com/wikipage?title=Writing%20Definition%20%28.d.ts%29%20Files) for third-party libraries. This way you are able to see exactly what APIs are exposed to JavaScript.
-
-> **NOTE:** Swift APIs that are not [exported to Objective-C](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithObjective-CAPIs.html#//apple_ref/doc/uid/TP40014216-CH4-ID55) are not supported.
-
-> **NOTE:** To be able to override a Swift method in its JavaScript inheritor it _**MUST**_ use the message dispatch calling mechanism. This is enforced by marking the method with the [`dynamic` keyword](https://docs.swift.org/swift-book/ReferenceManual/Declarations.html#ID381).
 
 Executing the following command from the root of your NativeScript app produces a `metadata` folder with a `.yaml` file for each Clang module:
 ```shell
 $ TNS_DEBUG_METADATA_PATH="$(pwd)/metadata" tns build ios [--for-device] [--release]
 ```
 
+### Generating TypeScript typings
 Executing the following command from the root of your NativeScript app produces a `typings` folder with a `.d.ts` file for each Clang module:
 ```shell
 $ TNS_TYPESCRIPT_DECLARATIONS_PATH="$(pwd)/typings" tns build ios [--for-device] [--release]
 ```
 
-If you have downloaded the [documentation set for iOS](https://developer.apple.com/library/ios/recipes/xcode_help-documentation_preferences/DownloadingandInstallingXcodeComponents/DownloadingandInstallingXcodeComponents.html), the command above will also include brief description in the form of a comment above every symbol in the generated `typings` (currently not supported for Xcode 8). Most IDEs which support typescript IntelliSense will make use of these comments. Furthermore, you can generate structured documentation from these comments with tools like [TypeDoc](http://typedoc.io).
+If you have downloaded the [documentation set for iOS](https://developer.apple.com/library/ios/recipes/xcode_help-documentation_preferences/DownloadingandInstallingXcodeComponents/DownloadingandInstallingXcodeComponents.html), the command above will also include brief description in the form of a comment above every symbol in the generated `typings` (currently not supported for Xcode 8+). Most IDEs which support typescript IntelliSense will make use of these comments. Furthermore, you can generate structured documentation from these comments with tools like [TypeDoc](http://typedoc.io).
+
+### Metadata generator's parsing errors and warnings
+The `stderr` output of the metadata generator (including all errors and warnings emitted by the Objective-C parser) is redirected
+to a separate log file. It is located in **`platforms/ios/build/<configuration>-<target>/metadata-generation-stderr-<arch>.txt`**
+under the main project dir.
+
+The reason behind this decision is that sometimes projects or plugins may have dependencies which are not
+designed to be fed to an Objective-C compiler. When attempting to generate the metadata for such projects, the metadata
+generator's error output would pollute Xcode's build output with lines which would look like compilation errors/warnings and
+would confuse both users and IDE parsers that the compiler emitted them. One example for such library is the [LevelDB CocoaPod](https://cocoapods.org/pods/leveldb-library)
+which is meant to be used in C++ context only. It is included in all projects using the [NativeScript Firebase plugin](https://www.npmjs.com/package/nativescript-plugin-firebase)
+because it's a dependency of the [FirebaseDatabase CocoaPod](https://cocoapods.org/pods/FirebaseDatabase). Generating metadata
+from this CocoaPod is expected to fail as the iOS Runtime doesn't parse and expose C++ entities to JS. So it's preferable to
+keep all these errors away from the actual application build output.
+
+> **IMPORTANT:** In cases where the metadata for some native entities is missing, this log file can turn out to be invaluable
+> in tracking down the reasons. It should be the first place to start looking for clues about what might have gone wrong.
+>
+> Sometimes the reason may be an incorrect `#include` statement. In such cases, in order to see the real error you will
+> also have to run the metadata generator in [strict includes mode](#enabling-strict-includes-mode)
+
+
+### Enabling strict includes mode
+
+Starting with version 5.4 of {N} you can set the `TNS_DEBUG_METADATA_STRICT_INCLUDES` environment variable to diagnose the reasons for missing
+metadata entities when no errors related to their respective source files can be found in [metadata generator's *stderr* log]
+(#metadata-generators-parsing-errors-and-warnings).
+
+When this setting is enabled, `#include` errors will be caught and logged in the *stderr* output ***but some Pod libraries might cause significantly less metadata
+being parsed and generated, so it really should be used only when debugging issues with missing metadata***.
+
+```shell
+$ TNS_DEBUG_METADATA_STRICT_INCLUDES="true" tns build ios [--for-device] [--release]
+```
+

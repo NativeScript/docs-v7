@@ -2,7 +2,7 @@
 nav-title: "AppInspector"
 title: "AppInspector"
 description: "Describing AppInspector and its features."
-position: 2
+position: 40
 ---
 
 # AppInspector
@@ -14,7 +14,7 @@ AppInspector for iOS supports the following core functionalities:
      - The **Code Coverage Profiler**: Shows you exactly which parts of your program have run and which haven't.
      - The **Type Profiler**: Shows you type annotations next to important variables and function return types
      ![Resources Tab](resources_tab.png).
- - **Timelines**<br/>Timelines are a graphical representation of all JavaScript activities that occur during the lifetime of your application. You can start recording timelines in two ways: 
+ - **Timelines**<br/>Timelines are a graphical representation of all JavaScript activities that occur during the lifetime of your application. You can start recording timelines in two ways:
      - By clicking the **Start Recording** button. This shows all activities that have occurred since the record button was clicked. To stop the profile, click the record button again. ![Start recording](start_recording.png)
      - By including a `console.profile()` in your script. To stop profiling, include `console.profileEnd()` in your script or evaluate it in the Console.
 
@@ -22,4 +22,4 @@ AppInspector for iOS supports the following core functionalities:
 
  - **Debugger**<br/>If you are getting JavaScript errors on your webpage, you can use the Debugger navigation sidebar to assist you in finding the cause of the problem. By setting breakpoints throughout your code, you can inspect the values of your variables and observe the call stack during runtime.<br/>Even if your JavaScript is minified, Web Inspector pretty-prints or expands all of your scripts, allowing you to set breakpoints on minified content.
 
- - **Console**<br/>The console offers a way to log diagnostic information to help debug your application. 
+ - **Console**<br/>The console offers a way to log diagnostic information to help debug your application.

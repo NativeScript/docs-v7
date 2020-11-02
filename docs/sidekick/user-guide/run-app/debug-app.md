@@ -1,7 +1,7 @@
 ---
 title: Debugging Your App
 description: Use NativeScript Sidekick and the Chrome DevTools to deploy and debug your apps on-device.
-position: 3
+position: 5
 publish: true
 slug: debug-app
 ---

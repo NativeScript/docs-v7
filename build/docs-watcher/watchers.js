@@ -9,6 +9,8 @@ module.exports.WatcherService = class WatcherService {
 		this.sourcePaths = [{
 			basePath: path.normalize(paths.docsRoot)
 		}, {
+			basePath: path.normalize(paths.vuejsRoot)
+		}, {
 			basePath: path.normalize(paths.modulesRoot),
 			distPaths: [
 				`${paths.modulesRoot}/bin/dist/./snippets`,
@@ -20,13 +22,23 @@ module.exports.WatcherService = class WatcherService {
 			distPaths: [`${paths.nativescriptAngularRoot}/bin/dist/./snippets`],
 			buildScript: `${paths.nativescriptAngularRoot}/build-doc-snippets.sh`
 		}, {
-			basePath: path.normalize(paths.sdkExamplesRoot),
-			distPaths: [`${paths.sdkExamplesRoot}/dist/./code-samples`],
-			buildScript: `${paths.sdkExamplesRoot}/build-docs.sh`
+			basePath: path.normalize(paths.sdkExamplesRootNG),
+			distPaths: [`${paths.sdkExamplesRootNG}/dist/./code-samples`],
+			buildScript: `${paths.sdkExamplesRootNG}/build-docs.sh`
+		}, {
+			basePath: path.normalize(paths.sdkExamplesRootJS),
+			distPaths: [`${paths.sdkExamplesRootJS}/dist/./code-samples`],
+			buildScript: `${paths.sdkExamplesRootJS}/build-docs.sh`
 		}, {
 			basePath: path.normalize(`${paths.cliRoot}/docs`),
 			distPaths: [`${paths.cliRoot}/./docs-cli`],
 			buildScript: `${paths.cliRoot}/docs/build-jekyll-md.sh`
+		}, {
+			basePath: path.normalize(paths.nsUISamples)
+		}, {
+			basePath: path.normalize(paths.nsUISamplesAngular)
+		}, {
+			basePath: path.normalize(paths.nsUISamplesVue)
 		}];
 	}
 
@@ -38,8 +50,11 @@ module.exports.WatcherService = class WatcherService {
 				ignoreInitial: true,
 				ignored: [
 					`${paths.nativescriptAngularRoot}/bin/dist/**`,
-					`${paths.sdkExamplesRoot}/dist/**`,
+					`${paths.sdkExamplesRootNG}/dist/**`,
 					`${paths.sdkExamplesRootJS}/dist/**`,
+					`${paths.nsUISamples}/dist/**`,
+					`${paths.nsUISamplesAngular}/dist/**`,
+					`${paths.nsUISamplesVue}/dist/**`,
 					"**/node_modules/**",
 					"**/.*",
 					"**/.git/**"
@@ -149,7 +164,7 @@ module.exports.SourcesWatcher = class SourcesWatcher {
 			return;
 		}
 
-		this.watcher = chokidar.watch([paths.sourceFilesRoot], {
+		this.watcher = chokidar.watch(paths.sourcePathsInImage, {
 			persistent: true,
 			ignoreInitial: true,
 			usePolling: true,

@@ -1,7 +1,8 @@
 ---
 title: Getting Started
-description: Learn how to get started with NativeScript, a cross-platform framweork for building native iOS and Android apps using JavaScript, TypeScript, or Angular.
+description: Meet NativeScript - an open-source cross-platform framework for building native iOS and Android apps using JavaScript, TypeScript, Angular or Vue.
 position: 10
+tags: getting started with nativescript, about nativescript, nativescript get started
 slug: introduction
 previous_url: /index
 ---
@@ -25,7 +26,7 @@ Ready to get started developing with NativeScript? Here are your next steps.
 NativeScript Playground is a browser-based environment for getting started with NativeScript fast. Playground offers a set of comprehensive tutorials that walk you through building a real-world iOS and Android app from scratch.
 
 {% angular %}
-<p><a href="https://play.nativescript.org/?template=groceries-ng&tutorial=groceries-ng" class="ns-button -action">Start Tutorial</a></p>
+<p><a href="https://play.nativescript.org/?template=play-ng&tutorial=getting-started-ng" class="ns-button -action">Start Tutorial</a></p>
 {% endangular %}
 
 {% nativescript %}
@@ -36,13 +37,13 @@ NativeScript Playground is a browser-based environment for getting started with 
 
 Once you have the basics of NativeScript down in Playground, you need to set up a local development environment that lets you build and test your apps locally. To do that you’ll want to go through our documentation on installing the NativeScript command-line interface.
 
-<p><a href="../start/quick-setup" class="ns-button -action">Install the NativeScript CLI</a></p>
+<p><a href="../start/quick-setup">Install the NativeScript CLI</a></p>
 
 ## Step #3: Learn the NativeScript Command-Line Interface Basics
 
 Now that you have the NativeScript CLI installed, you’ll want to learn the basics of how the CLI works, including how to run, build, and debug your apps.
 
-<p><a href="../start/cli-basics" class="ns-button -action">Learn the CLI Basics</a></p>
+<p><a href="../start/cli-basics">Learn the CLI Basics</a></p>
 
 ## Step #4: Join the NativeScript Community
 
@@ -50,6 +51,7 @@ Regardless of what you choose to do next with NativeScript, joining the NativeSc
 
 - **Follow [@nativescript](https://twitter.com/nativescript) on Twitter** for updates on all things NativeScript.
 - **Sign up for the [NativeScript newsletter](https://www.nativescript.org/nativescript-newsletter)**. The newsletter will deliver NativeScript articles, news, plugin updates, and more straight to your inbox.
-- **Join the [NativeScript Community Slack](http://developer.telerik.com/wp-login.php?action=slack-invitation)**. The community Slack is a great place to chat with others in the NativeScript community.
+- **Join the [NativeScript Community Slack](https://www.nativescript.org/slack-invitation-form)**. The community Slack is a great place to chat with others in the NativeScript community.
 - **Bookmark the [NativeScript tag on Stack Overflow](https://stackoverflow.com/questions/tagged/nativescript)**, as it’s a great place to ask questions when you need help.
+- **Consider contributing to the [NativeScript repository on Github](https://github.com/NativeScript/docs/blob/master/CONTRIBUTING.md)**. Fixing a bug or adding to the documentation is always welcome and very appreciated.
 

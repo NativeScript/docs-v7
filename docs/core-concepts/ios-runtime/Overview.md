@@ -2,7 +2,8 @@
 nav-title: "Overview"
 title: "Overview"
 description: "NativeScript iOS Runtime Overview"
-position: 0
+position: 10
+slug: ios-runtime-overview
 ---
 
 # What is iOS Runtime for NativeScript?

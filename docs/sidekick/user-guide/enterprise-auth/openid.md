@@ -2,25 +2,23 @@
 title: Configuring OpenID Connect Authentication
 description: Learn how to configure and connect to an enterprise identity provider using OpenID Connect.
 position: 3
-publish: true
+publish: false
 slug: openid
 ---
 
 # Configuring OpenID Connect Authentication
 
-NativeScript Sidekick gives you the ability to connect to enterprise authentication providers via OpenID. In this article we’ll look at the various data points NativeScript Sidekick needs to make the connection, and then look at a concrete example of a sample connection using Microsoft Azure.
+The Enterprise Auth app created through NativeScript Sidekick gives you the ability to connect to enterprise authentication providers via OpenID. In this article we’ll look at the various data points NativeScript Sidekick needs to make the connection, and then look at a concrete example of a sample connection using Microsoft Azure.
 
 ## Configuring your connection
 
-The first thing you need to do to configure an OpenID connection is to visit the **Enterprise Auth** screen and select the **OpenID Connect** radio button. You should see a form that looks like this.
-
-![](../../img/enterprise-auth/openid-form.png)
+The first thing you need to do to configure an OpenID connection is to visit the [Kinvey Console](https://console.kinvey.com) and create an OpenID authentication service as explained in the [Configure Auth Service](https://devcenter.kinvey.com/nativescript/guides/mobile-identity-connect#sso) article in the Kinvey Dev Center.
 
 Let’s start by looking at the fields you need to provide to connect to your enterprise authentication provider. Then, as an example, we'll explore how we'd complete the form for a project using Azure Active Directory.
 
 ## Completing the connection setup
 
-Here is a list of the fields you need to provide in Sidekick, and a brief description of what they are.
+There are a lot of fields by which you can configure the OpenID authentication service to suit your specific needs. However, below you will find only the ones that are required in order to ensure a working authentication in the NativeScript mobile app.
 
 <table>
 	<thead>
@@ -52,7 +50,7 @@ Here is a list of the fields you need to provide in Sidekick, and a brief descri
 		</tr>
 		<tr>
 			<td><code>Issuer identifier</code></td>
-			<td align="center">This is a case-sensistive URL that identifies the issuer of the response.</td>
+			<td align="center">This is a case-sensitive URL that identifies the issuer of the response.</td>
 		</tr>
 		<tr>
 			<td><code>Scope</code></td>
@@ -66,7 +64,7 @@ Once all the fields are filled in appropriately, click the **Save Service** butt
 
 ## Example - Azure Active Directory
 
-While general field descriptions can be useful, it can be really helpful to see what this looks like in a real-world scenario. Microsoft offers a number of cloud services under the [Azure](https://azure.microsoft.com/en-us/) umbrella. One of these services is the Azure Active Directory (Azure AD) service and it functions similarly to the Windows Active Directory that many enterprises use. In this example, we'll set up Azure Active Directory, and then we’ll fill out the appropriate OpenID Connect data in Sidekick to make the connection.
+While general field descriptions can be useful, it can be really helpful to see what this looks like in a real-world scenario. Microsoft offers a number of cloud services under the [Azure](https://azure.microsoft.com/en-us/) umbrella. One of these services is the Azure Active Directory (Azure AD) service and it functions similarly to the Windows Active Directory that many enterprises use. In this example, we'll set up Azure Active Directory, and then we’ll fill out the appropriate OpenID Connect data in the [Kinvey Console](https://console.kinvey.com) to make the connection.
 
 ### Setting Up Azure AD
 
@@ -133,10 +131,6 @@ Now that our Azure Active Directory is set up, let's look at the values within A
 
 * **Client Secret** is the value of the key created in step 8 above. If you did not copy the key during that step, it is hidden and you'll simply need to create a new key.
 * **Scope** should be set to `email` to give your app access to the user's email address.
-
-When you’re done, your form should look something like this in Sidekick.
-
-![](../../img/enterprise-auth/openid-form-complete.png)
 
 Click the **Save Service** button and you are ready to move on to building and testing your NativeScript mobile app.
 

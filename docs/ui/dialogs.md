@@ -1,7 +1,8 @@
 ---
 title: Dialogs
-description: Learn how to create alerts, confirmations, prompts, logins and other dialogs in your NativeScript apps. The examples show, how to define some of the available dialogs and the corresponding callback method.
+description: Learn how to add alerts, confirmations, prompts, logins and other types of dialogs to your NativeScript app.
 position: 80
+tags: user interface dialogs, nativescript dialogs, ns dialog examples
 slug: dialogs
 publish: false
 previous_url: /ui-dialogs,/ui/ui-dialogs
@@ -24,7 +25,7 @@ NativeScript lets you create dialogs in your app in a manner similar to the web 
 
 > **NOTE**: You can call dialog functions with parameters similar to the web browser API or the `options` object. All dialog functions return a `Promise` object. **In both iOS and Android, dialogs will not block your code execution!**
 
-> **TIP**: You can try [this NativeScript Playground project](https://play.nativescript.org/?template=play-ng&id=dWQhV7) to see all of this article’s examples in action on your device.
+> **TIP**: You can try [this NativeScript Playground project](https://play.nativescript.org/?template=play-ng&id=zJ51uY) to see all of this article’s examples in action on your device.
 
 ## Alert
 

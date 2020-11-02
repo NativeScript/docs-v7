@@ -1,13 +1,16 @@
 ---
-nav-title: "Extending Classes And Interfaces"
-title: "Extending Classes And Interfaces"
-description: "NativeScript Android Runtime Extending Classes And Interfaces"
+title: Extending Classes And Interfaces
+description: Learn how NativeScript supports the native Android development scenarios which involve inheriting and extending existing classes or implementing interfaces. 
 position: 2
+tags: extending classes, nativescript android, nativescript interfaces
+slug: extending-classes
 ---
+
+# Extending Classes And Interfaces
 
 As part of the native Android development you often have to inherit from classes and/or implement interfaces. NativeScript supports these scenarios as well.
 
-# Classes
+## Classes
 
 ```Java
 public class MyButton extends android.widget.Button {
@@ -20,7 +23,17 @@ public class MyButton extends android.widget.Button {
 		super.setEnabled(enabled);
 	}
 }
+
 MyButton btn = new MyButton(context);
+```
+```kotlin
+class MyButton(context: Context) : android.widget.Button(context) {
+    override fun setEnabled(enabled: Boolean) {
+        super.setEnabled(enabled)
+    }
+}
+
+val btn = MyButton(context)
 ```
 
 Here is how the above is done in NativeScript:
@@ -96,7 +109,7 @@ class MyClass extends java.lang.Object {
 let myClassInstance: any | java.lang.Object = new MyClass();
 ```
 
-Creating a named Java class which extends from the base Java `java.lang.Object` class will allow referring to the class by its full package name (in AndroidManifest.xml, for example):
+Creating a named Java class which extends from the `java.lang.Object` class will allow referring to the class by its full package name (in AndroidManifest.xml, for example):
 ``` JavaScript
 let MyClass = java.lang.Object("my.application.name.MyClass", {
 	// constructor
@@ -132,8 +145,8 @@ let myClassInstance3: any = new (<any>my).application.name.MyClass(); // TypeScr
 
 > One important thing to note when dealing with extending classes and implementing interfaces in NativeScript is that, unlike in Java - where you can extend an **Abstract** class with a **new java.arbitrary.abstract.Class() { }**, in NativeScript the class needs to be extended as per the previous examples - using the `extend` function on the `java.arbitrary.abstract.Class`, or using the `extends` class syntax in TypeScript.
 
-# Interfaces
-The next example shows how to implement an interface in Java and NativeScript. The main difference between inheriting classes and implementing interfaces in NativeScript is the use of the `extend` keyword. Basically, you implement an interface by passing the *implementation* object to the interface constructor function. The syntax is identical to the [Java Anonymous Classes](http://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html).
+## Interfaces
+The next example shows how to implement an interface in Java/Kotlin and NativeScript. The main difference between inheriting classes and implementing interfaces in NativeScript is the use of the `extend` keyword. Basically, you implement an interface by passing the *implementation* object to the interface constructor function. The syntax is identical to the [Java Anonymous Classes](http://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html).
 
 ```Java
 button.setOnClickListener(new View.OnClickListener() {
@@ -141,6 +154,11 @@ button.setOnClickListener(new View.OnClickListener() {
 		// Perform action on click
 	}
 });
+```
+```Kotlin
+button.setOnClickListener {
+    // Perform action on click
+}
 ```
 
 ``` JavaScript
@@ -224,9 +242,9 @@ function initializeClickListener(): void {
 }
 ```
 
-## Implementing multiple interfaces in NativeScript 
+### Implementing multiple interfaces in NativeScript 
 
-Suppose you have the following interfaces in Java:
+Suppose you have the following interfaces in Java/Kotlin:
 
 ```Java
 public interface Printer {
@@ -243,6 +261,21 @@ public interface Writer {
 	void writeLine(Object[] arr)
 }
 ```
+```Kotlin
+interface Printer {
+    fun print(content: String)
+    fun print(content: String, offset: Int)
+}
+
+interface Copier {
+    fun copy(content: String): String
+}
+
+interface Writer {
+    fun write(arr: Array<Any>)
+    fun writeLine(arr: Array<Any>)
+}
+```
 
 Implementing the interfaces is as easy in Java as writing:
 
@@ -257,6 +290,20 @@ public class MyVersatileCopywriter implements Printer, Copier, Writer {
 	public void write(Object[] arr) { ... }
 
 	public void writeLine(Object[] arr) { ... }
+}
+```
+```Kotlin
+class MyVersatileCopywriter: Printer, Copier, Writer{
+    
+    override fun print(content: String) { ... }
+
+    override fun print(content: String, offset: Int) { ... }
+
+    override fun copy(content: String): String { ... }
+
+    override fun write(arr: Array<Any>) { ... }
+
+    override fun writeLine(arr: Array<Any>) { ... }
 }
 ```
 
@@ -292,16 +339,13 @@ class MyVersatileCopyWriter extends java.lang.Object {
 }
 ```
 
-> When implementing Java interfaces in NativeScript, it is necessary to provide implementation (declare the methods - `print`, `copy`, `write`, `writeLine`) for **every** method present in the interfaces, otherwise compilation will fail. If you do not want to fully implement an interface you need to declare empty functions. Functions with empty bodies are considered valid method implementations (`print: function() {}`).
 
-
-## Limitations
+### Limitations
 * Implementing two interfaces with the same method signature will generate just 1 method. It is the implementor's responsibility to define how the method will behave for both interfaces
 * Implementing two interfaces with the same *method name*, *parameter number*, but **different return type** (`void a()` vs `boolean a()`) will result in a compilation error
 
-
 ### Notes
-> Java method overloads are handled by the developer by explicitly checking the `arguments` count of the invoked function
+> Java/Kotlin method overloads are handled by the developer by explicitly checking the `arguments` count of the invoked function
 
 ``` JavaScript
 let MyVersatileCopyWriter = ...extend({
@@ -344,11 +388,8 @@ class MyVersatileCopyWriter extends ... {
 }
 ```
 
-
-
 > In addition to implementing interface methods, you can override methods of the extended class, and also declare your own methods that the new class should have.
 
-
-# See Also
+## See Also
 * [How Extend Works](./how-extend-works.md)
 * [Gotchas](./gotchas.md)

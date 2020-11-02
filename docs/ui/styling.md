@@ -1,12 +1,13 @@
 ---
 title: Styling
-description: How to use Cascading Style Sheets (CSS) in NativeScript to change the appearance of GUI elements. The article describes the specifics about the CSS files declarations, how to use platform-specific CSS files and info about the supported CSS properties. 
+description: How to use Cascading Style Sheets (CSS) in NativeScript to change the appearance of GUI elements. The article describes the specifics about the CSS files declarations, how to use platform-specific CSS files and info about the supported CSS properties.
 position: 50
+tags: nativescript styling, nativescript css
 slug: styling
 previous_url: /styling
 ---
 
-# Styling
+# User Interface Styling
 
 You change the looks and appearance of views (elements) in a NativeScript application similarly to how you do it in a web application&mdash;using Cascading Style Sheets (CSS) or changing the style object of the elements in JavaScript. Only a subset of the CSS language is supported.
 
@@ -19,7 +20,7 @@ Similarly to the [DOM Style Object](http://www.w3schools.com/jsref/dom_obj_style
 > **NOTE**: If you are **not** using Angular with NativeScript, refer to the [Styling docs for NativeScript Core](https://docs.nativescript.org/ui/styling).
 {% endangular %}
 
-## Applying CSS styles
+## Applying CSS Styles
 
 The CSS styles can be set on 3 different levels:
 
@@ -38,7 +39,7 @@ It is also possible to apply [platform-specific CSS](#platform-specific-css).
 
 ### Application-wide CSS
 
-When the  application starts, NativeScript checks if the file `app.css` exists. If it does, any CSS styles that it contains are loaded and used across all application pages. This file is a convenient place to store styles that will be used on multiple pages.
+When the application starts, NativeScript checks if the file `app.css` exists. If it does, any CSS styles that it contains are loaded and used across all application pages. This file is a convenient place to store styles that will be used on multiple pages.
 
 You can change the name of the file from which the application-wide CSS is loaded. You need to do the change before the application is started, usually in the app.js or app.ts file as shown below:
 
@@ -96,17 +97,17 @@ If you import any [custom components](https://docs.nativescript.org/ui/basics#cu
 ```CSS
 /* myCustomComponent.css */
 /* GOOD: This will ONLY apply to the custom component */
-.mywidget .label { 
-    color: blue; 
+.mywidget .label {
+    color: blue;
 }
 
 /* BAD: This will apply to the custom component AND potentially to the page where the component is used */
-.label { 
-    color: blue; 
+.label {
+    color: blue;
 }
 ```
 
-For an example of how styles from custom components get applied, [try this project on the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=o87l19&v=3).
+For an example of how styles from custom components get applied, [try this project on the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=obk2gB).
 
 You can also override CSS styles specified in the file by using the page's `css` property:
 
@@ -149,7 +150,7 @@ In each of these examples, the CSS rules will only apply to the declared compone
 
 {% endangular %}
 
-#### Adding CSS from a string
+#### Adding CSS String
 
 This snippet adds a new style to the current set of styles. This is quite useful when you need to add a small CSS chunk to an element (for example, for testing purposes):
 
@@ -160,7 +161,7 @@ page.addCss("button {background-color: blue}");
 page.addCss("button {background-color: blue}");
 ```
 
-#### Adding CSS from a file
+#### Adding CSS File
 
 This snippet adds new CSS styles to the current set. However, this method reads them from a file. It is useful for organizing styles in files and reusing them across multiple pages.
 
@@ -171,7 +172,7 @@ page.addCssFile(cssFileName);
 page.addCssFile(cssFileName);
 ```
 
-> The path to the CSS file is relative to the application root folder.
+> The path to the CSS file is relative to the application root folder, and must include the `.css` file extension.
 
 ### Inline CSS
 
@@ -188,18 +189,18 @@ Similarly to HTML, CSS can be defined inline for a UI view in the XML markup:
 ```
 {% endangular %}
 
-### Platform-Specific CSS
+### Platform-specific CSS
 
-NativeScript conventions make it easy to apply platform specific CSS, either via separate stylesheets or via in-line declarations. For an overview of NativeScript's convention-based file name rules for targeting files at specific platforms and screen sizes, [refer to this article in the docs](https://docs.nativescript.org/core-concepts/navigation#supporting-multiple-screens). {% angular %} **NOTE:** If you are using Angular, file name rules do not work for targeting specific screen sizes or orientations. JavaScript is required to target styles at different screens at runtime. [See this article](https://dzone.com/articles/tablet-support-for-nativescript-with-angular) for an example of targeting styles at tablets with Angular.{% endangular %}
+NativeScript conventions make it easy to apply platform-specific CSS, either via separate stylesheets or via in-line declarations. For an overview of NativeScript's convention-based file name rules for targeting files at specific platforms and screen sizes, [refer to this article in the docs](https://docs.nativescript.org/core-concepts/navigation#supporting-multiple-screens). {% angular %} **NOTE:** If you are using Angular, file name rules do not work for targeting specific screen sizes or orientations. JavaScript is required to target styles at different screens at runtime. [See this article](https://dzone.com/articles/tablet-support-for-nativescript-with-angular) for an example of targeting styles at tablets with Angular.{% endangular %}
 
 There are 4 primary ways to target styles at iOS or Android:
 
 1. Platform-specific stylesheets {% nativescript %}(`styles.ios.css`, `styles.android.css`){% endnativescript %}{% angular %}(`styles.component.ios.css`, `styles.component.android.css`){% endangular %}
 2. Platform-specific markup blocks (`<ios> ... </ios>`, `<android> ... </android>`)
 3. Platform-specific attributes (`<Label ios:style="..." android:style="..."`)
-4. Platform-specific CSS rules (`.ios .mystyle { ... }`, `.android .mystyle { ... }`) _[*requires plugin](https://market.nativescript.org/plugins/nativescript-platform-css)_
+4. Platform-specific CSS rules {% nativescript %}(`.ns-ios .mystyle { ... }`, `.ns-android .mystyle { ... }`){% endnativescript %}{% angular %}(`:host-content(.ns-ios) .mystyle { ... }`, `:host-context(.ns-android) .mystyle { ... }`){% endangular %}
 
-The most common and maintainable pattern for managing platform-agnostic and platform-specific styles in NativeScript is with multiple stylesheets and CSS imports. Use {% nativescript %}[this Playground demo](https://play.nativescript.org/?template=play-tsc&id=w9Lt96&v=2){% endnativescript %}{% angular %}[this Playground demo](https://play.nativescript.org/?template=play-ng&id=AlJP8U){% endangular %} to see this pattern in action.
+The most common and maintainable pattern for managing platform-agnostic and platform-specific styles in NativeScript is with multiple stylesheets and CSS imports. Use {% nativescript %}[this Playground demo](https://play.nativescript.org/?template=play-tsc&id=JY218G){% endnativescript %}{% angular %}[this Playground demo](https://play.nativescript.org/?template=play-ng&id=Z4d8A6){% endangular %} to see this pattern in action.
 
 {% nativescript %}
 With this pattern, a page has 3 separate stylesheets: common, iOS and Android. For example, for page `myPage.xml` you would have 3 stylesheets:
@@ -238,7 +239,7 @@ In both `home.component.ios.css` and `home.component.android.css` you then impor
 
 At build time, NativeScript will automatically import the common styles and choose the correct iOS or Android stylesheet depending on the target build platform.
 
-## Supported selectors
+## Supported Selectors
 
 > Currently the CSS support is limited only to the selectors and properties listed in the current article.
 
@@ -247,20 +248,20 @@ NativeScript supports a subset of the [CSS selector syntax](http://www.w3schools
 * [Type selector](#type-selector)
 * [Class selector](#class-selector)
 * [ID selector](#id-selector)
-* [Hierarchical selector](#hierachical-selector-css-combinators)
+* [Hierarchical selector](#hierarchical-selector-css-combinators)
 * [Attribute selector](#attribute-selector)
 * [Pseudo selector](#pseudo-selector)
 
-### Type selector
+### Type Selector
 Like [CSS element selectors](http://www.w3schools.com/cssref/sel_element.asp), type selectors in NativeScript select all views of a given type. Type selectors are case insensitive, so you can use both `button` and `Button`.
 
 ```CSS
 button { background-color: gray }
 ```
 
-### Class selector
+### Class Selector
 [Class selectors](http://www.w3schools.com/cssref/sel_class.asp) select all views with a given class.
-The class is set using the `className` property of the view.
+The class is set using the `className` property of the view.  **NOTE:**  To use `className` in JS/TS to add a class to an element, the class rule must be in a CSS file that is higher up the component tree than the element, such as `app.css`.
 
 {% nativescript %}
 ```CSS
@@ -295,7 +296,7 @@ label.className = "title"
 ```
 {% endangular %}
 
-### ID selector
+### ID Selector
 [Id selectors](http://www.w3schools.com/cssref/sel_id.asp) select all views with a given id.
 The id is set using the `id` property of the view.
 
@@ -332,7 +333,7 @@ btn.id = "login-button"
 ```
 {% endangular %}
 
-### Hierachical selector (CSS combinators)
+### Hierarchical Selector (CSS Combinators)
 
 A CSS selector could contain more than one simple selector, and between selectors a combinator symbol could be included.
 
@@ -372,7 +373,8 @@ StackLayout > Button { background-color: blue; }
 The `background-color` rule will not be applied. In order to apply the selector, the WrapLayout element would need to be removed so that the Button is a direct child of the StackLayout.
 
 * (+) - An adjacent sibling selector, allows to select all elements, which are siblings of a specified element.
-#### Direct sibling test by class
+
+#### Direct Sibling Test by Class
 {% nativescript %}
 ```XML
 <StackLayout class="layout-class">
@@ -397,7 +399,7 @@ The `background-color` rule will not be applied. In order to apply the selector,
   background-color: green;
 }
 ```
-#### Direct sibling test by id
+#### Direct Sibling Test by ID
 {% nativescript %}
 ```XML
 <StackLayout class="layout-class">
@@ -422,7 +424,7 @@ The `background-color` rule will not be applied. In order to apply the selector,
   background-color: green;
 }
 ```
-#### Direct sibling by type
+#### Direct Sibling by Type
 
 {% nativescript %}
 ```XML
@@ -433,7 +435,7 @@ The `background-color` rule will not be applied. In order to apply the selector,
     <Button text="Test Button"/>
     <Label text="Test Label"/>
     <Button text="Test Button"/>
-    <Label  text="Test Label"/>
+    <Label text="Test Label"/>
 </StackLayout>
 ```
 {% endnativescript %}
@@ -446,7 +448,7 @@ The `background-color` rule will not be applied. In order to apply the selector,
     <Button text="Test Button"></Button>
     <Label text="Test Label"></Label>
     <Button text="Test Button"></Button>
-    <Label  text="Test Label"></Label>
+    <Label text="Test Label"></Label>
 </StackLayout>
 ```
 {% endangular %}
@@ -458,7 +460,7 @@ StackLayout Button + Label{
 }
 ```
 
-### Attribute selector
+### Attribute Selector
 
 {% nativescript %}
 ```CSS
@@ -488,7 +490,7 @@ Also, some more advanced scenarios are supported:
 * button[testAttr$='flower'] {...} - Selects all buttons with a `testAttr` property value that ends with "flower". The value does not have to be a whole word.
 * button[testAttr*='flo'] {...} - Selects all buttons with a `testAttr` property value that contains "flo". The value does not have to be a whole word.
 
-Attribute selectors could be used alone or could be combined with all type of CSS selectors. 
+Attribute selectors could be used alone or could be combined with all type of CSS selectors.
 
 {% nativescript %}
 ```CSS
@@ -511,7 +513,7 @@ Attribute selectors could be used alone or could be combined with all type of CS
 ```
 {% endangular %}
 
-### Pseudo selector
+### Pseudo Selector
 A pseudo-selector or also pseudo-class is used to define a special state of an element.
 Currently, NativeScript supports only `:highlighted` pseudo-selector.
 
@@ -525,7 +527,25 @@ button:highlighted { background-color: red; color: gray;}
 ```
 {% endnativescript %}
 
-## Supported CSS properties
+## Root Views CSS Classes
+
+To allow flexible styling and theming, NativeScript adds a CSS class to the root views in the application for specific states.
+
+The deafult CSS classes are are:
+
+- `.ns-root` - a class assigned to the application root view
+- `.ns-modal` - a class assigned to the modal root view
+
+The CSS classes for each application and modal root view are:
+
+- `.ns-android`, `.ns-ios` - classes that specify the application platform
+- `.ns-phone`, `.ns-tablet` - classes that specify the device type
+- `.ns-portrait`, `.ns-landscape`, `.ns-unknown` - classes that specify the application orientation
+- `.ns-light`, `.ns-dark` - classes that specify the system appearance.
+
+For additional information on the Dark Mode support, refer to [this](https://docs.nativescript.org/ui/dark-mode) documentation article.
+
+## Supported CSS Properties
 
 This list of properties can be set in CSS or through the style property of each view:
 
@@ -581,12 +601,123 @@ This list of properties can be set in CSS or through the style property of each 
 | `visibility`          | `visibility`          | Sets the view visibility. Possible values: `visible`, `collapse` (or `collapsed`). |
 | `opacity`             | `opacity`             | Sets the view opacity. The value is in the [0, 1] range. |
 
+## NativeScript Specific CSS Properties
 
-## Supported Measurment Units
+In the context of mobile development, there are a number of properties that are mobile specific (and sometimes even platform specific e.g Android or iOS). In NativeScript, these featured properties are still accessible through both the code (inline, JavaScript, and TypeScript) but are also exposed as CSS properties. Apart from the API references, the below list is providing most of the non-common CSS properties in NativeScript.
 
-As a measurment units, NativeScript supports **DIPs** (Device Independent Pixels) , **pixels** (via postfix `px`) and **percentages** (partial support for `width`,`height` and `margin`).
+| CSS Property          | JavaScript Property   | Platform   | Compatibility  | Description |
+|:----------------------|:----------------------|:-----------|:---------------|:------------|
+| `tab-text-color`  | `tabTextColor`     | Both       | `TabView`      | Sets the text color of the tabs titles. |
+| `selected-tab-text-color`  | `selectedTabTextColor`     | Both       | `TabView`      | Sets the color of the text, while selecting some of the tabs. |
+| `tab-background-color`  | `tabBackgroundColor`     | Both       | `TabView`      | Sets the background color of the tabs. |
+| `tab-text-font-size`  | `tabTextFontSize`     | Both       | `TabView`      | Sets the tab titles font size, without changing the font size of all contents of the tab. |
+| `text-transform`  | `textTransform`     | Both       | `TabViewItem`      | Sets the text transform individually for every `TabViewItem`. Value options: `capitalize`, `lowercase`, `none`, and `uppercase`. |
+| `android-selected-tab-highlight-color`  | `androidSelectedTabHighlightColor`     | **Android**       | `TabView`      | Sets the underline color of the tabs in Android. |
+| `android-elevation`  | `androidElevation`     | **Android**       | `View`      | Sets the elevation of the View in Android. |
+| `android-dynamic-elevation-offset `  | `androidDynamicElevationOffset`     | **Android**       | `View`      | Sets the elevation of the View in Android, which will be shown when an action was performed(e.g. `tap`, `touch`). |
+| `off-background-color`  | `offBackgroundColor`     | Both       | `Switch`      | Sets the background color of the Switch when it is turned off. |
+| `highlight-color`  | `highlightColor`     | Both       | `TabStrip`      | Gets or sets the underline color of the selected `TabStripItem`. |
 
-The NativeScript's recommended measurment unit is DIP. All measurable properties like `width`, `height`, `margin`, `paddings, border-width`, etc.) support device independent pixels. The font size are always measured in DIP. 
+
+> **Note:** Currently, we can set only the `backgroundColor`, `color`, `fontFamily`, `fontSize`, `fontStyle`, `fontWeight` and `textTransform` styling properties to the `Label` and `Image` components inside the TabStripItem. More about the usage of those properties can be found in the [Supported CSS Properties](#supported-css-properties) section.
+
+> **Note:** On iOS, the TabStripItems can not be stylied individually.
+
+### Using the androidElevation property <sup>Android</sup>
+
+Since {N} 5.4, a new Android-specific property, called `androidElevation`, is introduced. View's elevation is represented by Zproperty and determines the visual appearance of its shadow. With higher elevation value larger, softer shadows will be set to the View and smaller shadow while using lower elevation.
+
+Example:
+{% nativescript %}
+```CSS
+.tvElevation{
+    android-elevation:5;
+}
+```
+```XML
+<StackLayout class="home-panel">
+    <TextView class="tvElevation" editable="false" textWrap="true" text="TextView" />
+    <Label androidElevation="5" class="sampleLabel" textWrap="true" text="Label" />
+    <Button androidElevation="7" class="sampleButton" text="Button" />
+</StackLayout>
+```
+
+[Demo](https://play.nativescript.org/?template=play-tsc&id=ZraiEJ)
+{% endnativescript %}
+{% angular %}
+```CSS
+.tvElevation{
+    android-elevation: 5;
+}
+```
+```XML
+<StackLayout class="home-panel">
+    <TextView class="tvElevation" editable="false" textWrap="true" text="TextView" ></TextView>
+    <Label androidElevation="5" class="sampleLabel" textWrap="true" text="Label" ></Label>
+    <Button androidElevation="7" class="sampleButton" text="Button" ></Button>
+</StackLayout>
+```
+
+[Demo](https://play.nativescript.org/?template=play-ng&id=hfogBI)
+{% endangular %}
+
+> **Note:** Since NativeScript 5.4, the buttons on Android have default elevation (shadow) of 2, due to the new elevation support. Removing the shadow will allow you to create transparent button. To explicitly remove the elevation, set the `android-elevation` property to 0 as shown below:
+```CSS
+.btn-no-elevation {
+    android-elevation: 0;
+}
+```
+
+More info about this property can be found in [Create Shadows and Clip Views](https://developer.android.com/training/material/shadows-clipping) article.
+
+
+### Using the androidDynamicElevationOffset property <sup>Android</sup>
+
+Another property introduced with {N} 5.4 is `androidDynamicElevationOffset`. This property allows setting an elevation, which will be shown when an action was performed. Those actions can be, for example, `tap`, `touch` etc.
+
+Example:
+{% nativescript %}
+```CSS
+.sampleButton2{
+    background-color: lightcyan;
+    android-elevation:7;
+    android-dynamic-elevation-offset:7;
+}
+```
+```XML
+<StackLayout class="home-panel">
+    <Button androidElevation="7" androidDynamicElevationOffset="8"
+        class="sampleButton" text="Button" tap="{{ onButtonTap }}" />
+    <Button class="sampleButton2" text="Button" tap="{{ onButtonTap }}" />
+</StackLayout>
+```
+
+[Demo](https://play.nativescript.org/?template=play-tsc&id=bs0Urg)
+{% endnativescript %}
+{% angular %}
+```CSS
+.sampleButton2{
+    background-color: lightcyan;
+    android-elevation:7;
+    android-dynamic-elevation-offset:7;
+}
+```
+```XML
+<StackLayout class="home-panel">
+    <Button androidElevation="7" androidDynamicElevationOffset="8" class="sampleButton"
+        text="Button"></Button>
+    <Button class="sampleButton2" text="Button"></Button>
+</StackLayout>
+```
+
+[Demo](https://play.nativescript.org/?template=play-ng&id=yYml7U)
+{% endangular %}
+
+## Supported Measurement Units
+
+NativeScript supports **DIPs** (Device Independent Pixels), **pixels** (via postfix `px`) and **percentages** (partial support for `width`, `height` and `margin`) as measurement units.
+
+NativeScript's recommended measurement unit is DIP. All measurable properties like `width`, `height`, `margin`, `paddings, border-width`, etc.) support device independent pixels. The font sizes are always measured in DIPs.
 
 ```CSS
 .myLabel {
@@ -596,15 +727,99 @@ The NativeScript's recommended measurment unit is DIP. All measurable properties
 }
 ```
 
-> **Note:** The device independent pixels are equal to the current device screen's scale multiplied by the current device screen's width in pixels.
+The device independent pixels (DIPs) are equal to the device screen's pixels divided by the device screen scale (density).
+
+```JavaScript
+const screen = require("tns-core-modules/platform").screen;
+
+// mainScreen is of type ScreenMetrics interface /api-reference/interfaces/_platform_.screenmetrics
+let scale =  screen.mainScreen.scale;
+let widthPixels = screen.mainScreen.widthPixels;
+let heightPixels = screen.mainScreen.heightPixels;
+let widthDIPs = screen.mainScreen.widthDIPs; // DIPs === pixels/scale (e.g 1024 pixels / 2x scale = 512 DIPs)
+let heightDIPs = screen.mainScreen.heightDIPs;
+```
 ```TypeScript
-import * as platformModule from "tns-core-modules/platform";
-let scale =  platformModule.screen.mainScreen.scale;
-let widthPixels = platformModule.screen.mainScreen.widthPixels;
-let DIPs = platformModule.screen.mainScreen.widthDIPs; // scale X widthPixels === DIPs
+import { screen } from "tns-core-modules/platform";
+
+// mainScreen is of type ScreenMetrics interface /api-reference/interfaces/_platform_.screenmetrics
+let scale =  screen.mainScreen.scale;
+let widthPixels = screen.mainScreen.widthPixels;
+let heightPixels = screen.mainScreen.heightPixels;
+let widthDIPs = screen.mainScreen.widthDIPs; // DIPs === pixels/scale (e.g. 1024 pixels / 2x scale = 512 DIPs)
+let heightDIPs = screen.mainScreen.heightDIPs;
 ```
 
-NativeScript supports **percentage** values for `width`, `height` and `margins`. When a layout pass begins, first the percent values are calculated based on parent available size. This means that on vertical StackLayout if you place two Buttons with `height='50%'` they will get all the available height (e.g., they will fill the StackLayout vertically.). The same applies for `margin`` properties. For example, if you set marginLeft='5%'`, the element will have a margin that corresponds to 5% of the parent's available width.
+NativeScript supports **percentage** values for `width`, `height` and `margins`. When a layout pass begins, first the percent values are calculated based on parent available size. This means that on vertical StackLayout if you place two Buttons with `height='50%'` they will get all the available height (e.g., they will fill the StackLayout vertically.). The same applies for `margin` properties. For example, if you set `marginLeft = '5%'`, the element will have a margin that corresponds to 5% of the parent's available width.
+
+## Using CSS variables
+
+NativeScript supports [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (also known as custom properties or cascading variables) for reusable values through the CSS used in the app.
+
+CSS variables cascades from parent to child views.
+
+Declaring variables:
+```CSS
+/* Define --my-custom-color as a global value */
+.ns-root {
+    --my-custom-color: black;
+}
+
+/* In landscape mode change the value to blue */
+.ns-landscape {
+    --my-custom-color: blue;
+}
+```
+
+Overriding a variable from a child-element:
+```CSS
+/* Change --my-custom-color to green for elements below */
+.ns-root .override-color {
+    --my-custom-color: green;
+}
+```
+
+Using a variable:
+```CSS
+.using-variable {
+    color: var(--my-custom-color);
+}
+```
+The default value of `--my-undefined-value` will be `black`. In landscape mode it will be `blue`. If a parent element have the class `override-color` the value will be `green`.
+
+Using a fallback value:
+```CSS
+.using-variable {
+    color: var(--my-undefined-value, yellow);
+}
+```
+The color of `--my-undefined-value` will fallback to `yellow`, because `--my-undefined-value` is not defined.
+
+Using a nested fallback value:
+```CSS
+.using-variable {
+    color: var(--my-undefined-value, var(--my-custom-color, yellow));
+}
+```
+
+## Using CSS calc()
+
+NativeScript supports `CSS calc()` functions for performing simple calculations on CSS values.
+
+Syntax:
+```CSS
+element {
+    width: calc(100% * 1.25); /* width: 125% */
+}
+```
+
+Used with `CSS variables`:
+```CSS
+element {
+    --my-variable: 10:
+    width: calc(100% * var(--my-variable)); /* width: 125% */
+}
+```
 
 ## Accessing NativeScript component properties with CSS
 
@@ -615,7 +830,7 @@ StackLayout {
 }
 ```
 
-This feature is limited to properties with simple types like string, number and boolean, and will set a local property value similar to component markup declaration in XML. CSS inheritance are not supported. 
+This feature is limited to properties with simple types like string, number and boolean, and will set a local property value similar to component markup declaration in XML. CSS inheritance is not supported.
 
 ## Using fonts
 The `font-family` property can hold several values. The first supported font in the list will be used. There is also support for the following generic font-families:
@@ -628,16 +843,16 @@ Platform specifics:
 * iOS: There are more than 30 default fonts available on iOS. You can check the [supported fonts for specific iOS versions and devices](http://iosfonts.com). To use a built-in font, simply specify the font name in the `font-family` property, such as `font-family: "American Typewriter";`. Adjust the font variant using the [`font-weight`](#supported-css-properties) property.
 
 ### Custom fonts
-You can use custom fonts in your app (in .TTF or .OTF format). 
-The NativeScript runtime will look for the font files under the `app/fonts/` directory and load them automatically.
+You can use custom fonts in your app (in .TTF or .OTF format).
+The NativeScript runtime will look for the font files under the `app/fonts/` (or `src/fonts/` if you use Angular) directory and load them automatically.
 
 ![Custom fonts setup"](../img/font-images/custom-fonts.png "Custom fonts setup")
 
-> Note: In iOS your font file should be named **exactly** as the font name. 
-If you have doubt about the original font name use [Font Book](https://support.apple.com/en-us/HT201749) app to get the original font name.
+> Note: In iOS your font file should be named **exactly** as the font name.
+If you have any doubt about the original font name, use the [Font Book](https://support.apple.com/en-us/HT201749) app to get the original font name.
 
 ## Import CSS
-The @import CSS rule allows you to import CSS from local file. This rule must precede all other types of rules.
+The @import CSS rule allows you to import CSS from a local file. This rule must precede all other types of rules.
 
 ```CSS
 @import url('~/your-style.css');
@@ -646,6 +861,21 @@ The @import CSS rule allows you to import CSS from local file. This rule must pr
 ## Using SASS
 With NativeScript, it is possible to manage your app styles using the SASS CSS pre-compiler instead of plain CSS files. Just as with web projects, SASS gives your stylesheets extra capabilities like shared variables, mixins and nested style tags.
 
-To use SASS with NativeScript, the `nativescript-dev-sass` plugin is required. This plugin will hook-in to the NativeScript build process and automatically convert `.scss/.sass` files to `.css` during `build` and `livesync` operations. Since SASS is compiled to CSS at build time, it does **not** require any changes to your stylesheet naming conventions for NativeScript's normal convention-based patterns to work. SASS files with the same name as a NativeScript page will still be automatically linked.
+To use SASS with NativeScript, a SASS compiler like [`node-sass`](https://www.npmjs.com/package/node-sass?activeTab=versions) or [`sass`](https://www.npmjs.com/package/dart-sass) is required. This compiler will hook-in to the NativeScript build process and automatically convert `.scss/.sass` files to `.css` during `build` and `livesync` operations. Since SASS is compiled to CSS at build time, it does **not** require any changes to your stylesheet naming conventions for NativeScript's normal convention-based patterns to work. SASS files with the same name as a NativeScript page will still be automatically linked.
+
+You can use SASS with either enabling it manually:
+```Shell
+npm i node-sass --save-dev
+```
+
+Or by using a template that has SASS already enabled. For example:
+```Shell
+tns create my-sass-app --template --template tns-template-drawer-navigation-ts
+```
+
+For projects created with NativeScript 5.x and below (which are ussing the legacy `nativescript-dev-webpack`), you can run the `migrate` command to update the SASS compiler (and remove the legacy plugin). Note that the `migrate` command is available in NativeScript CLI 6 and above.
+```
+tns migrate
+```
 
 For complete details on adding SASS support to a NativeScript project, [see this page in the Theme docs](https://docs.nativescript.org/ui/theme#sass-usage).

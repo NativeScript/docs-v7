@@ -10,7 +10,7 @@ slug: utils
 To use the functionality provided by the `utils/utils` module, first require/import the module:
 
 ```JavaScript
-var utilsModule = require("tns-core-modules/utils/utils");
+const utilsModule = require("tns-core-modules/utils/utils");
 ```
 ```TypeScript
 import * as utils from "tns-core-modules/utils/utils";
@@ -64,12 +64,12 @@ utils.openUrl("https://docs.nativescript.org/core-concepts/utils")
  Escapes special regex symbols (., *, ^, $, etc.) in string in order to create a valid regex from it.
 
  ```JavaScript
-var samplestring = "All of these should be escaped: ^ $ * ";
-var newString = utilsModule.escapeRegexSymbols(samplestring);
+var sampleString = "All of these should be escaped: ^ $ * ";
+var newString = utilsModule.escapeRegexSymbols(sampleString);
 ```
 ```TypeScript
-var samplestring: string = "All of these should be escaped: ^ $ * ";
-var newString: string = utils.escapeRegexSymbols(samplestring);
+var sampleString: string = "All of these should be escaped: ^ $ * ";
+var newString: string = utils.escapeRegexSymbols(sampleString);
 ```
 
 ### convertString() function
@@ -135,6 +135,36 @@ var value = utils.layout.round(<number_value>);
 ```
 > If we set `123.56px` as a input the returned value will be `124px`. 
 
+### executeOnMainThread() method
+
+The method checks if the current thread is the main thread. It will directly call the passed function if it is, or dispatches it to the main thread otherwise.
+
+```JavaScript
+utilsModule.executeOnMainThread(() => {
+    // ...
+})
+```
+```TypeScript
+utilsModule.executeOnMainThread(() => {
+    // ...
+})
+```
+
+### mainThreadify() method
+
+The method returns a function wrapper which executes the supplied function on the main thread. The wrapper behaves like the original function and passes all of its arguments BUT discards its return value.
+
+```JavaScript
+utilsModule.mainThreadify(() => {
+    // ...
+})
+```
+```TypeScript
+utilsModule.mainThreadify(() => {
+    // ...
+})
+```
+
 ## Platform specific methods
 
 ### Android
@@ -185,8 +215,8 @@ Show keyboard for a specific element.
 function showKeyboard(args) {
     var button = args.object;
     var page = button.page;
-    var textfield = page.getViewById("textfieldid");
-    utilsModule.ad.showSoftInput(textfield.android);
+    var textField = page.getViewById("textfieldid");
+    utilsModule.ad.showSoftInput(textField.android);
 }
 exports.showKeyboard = showKeyboard;
 ```
@@ -195,11 +225,11 @@ import { Page } from "tns-core-modules/ui/page";
 import { TextField } from "tns-core-modules/ui/text-field";
 import { Button } from "tns-core-modules/ui/button"
 
-export function showKeyboard(args:EventData){
+export function showKeyboard(args: EventData) {
     var button: Button = <Button>args.object;
     var page: Page = <Page>button.page;
-    var textfield: TextField = <TextField> page.getViewById("textfieldid");
-    utils.ad.showSoftInput(textfield.android);
+    var textField: TextField = <TextField> page.getViewById("textfieldid");
+    utils.ad.showSoftInput(textField.android);
 }
 ```
 
@@ -218,7 +248,7 @@ function dismissSoftInput(args) {
 exports.dismissSoftInput = dismissSoftInput;
 ```
 ```TypeScript
-export function dismissSoftInput(args: EventData){
+export function dismissSoftInput(args: EventData) {
     utils.ad.dismissSoftInput();
 }
 ```
@@ -241,28 +271,28 @@ const stringSet = utils.ad.collections.stringArrayToStringSet(stringArr);
 Converts a string hash set into array of strings
 
 ```JavaScript
-var hashset = new java.util.HashSet();
+var hashSet = new java.util.HashSet();
 var string1 = new java.lang.String("item1");
 var string2 = new java.lang.String("item2");
 var string3 = new java.lang.String("item3");
     
-hashset.add(string1);
-hashset.add(string2);
-hashset.add(string3);
+hashSet.add(string1);
+hashSet.add(string2);
+hashSet.add(string3);
 
-var stringArray = utilsModule.ad.collections.stringSetToStringArray(hashset);
+var stringArray = utilsModule.ad.collections.stringSetToStringArray(hashSet);
 ```
 ```TypeScript
-const hashset = new java.util.HashSet();
+const hashSet = new java.util.HashSet();
 const string1 = new java.lang.String("item1");
 const string2 = new java.lang.String("item2");
 const string3 = new java.lang.String("item3");
     
-hashset.add(string1);
-hashset.add(string2);
-hashset.add(string3);
+hashSet.add(string1);
+hashSet.add(string2);
+hashSet.add(string3);
 
-var stringArray = utils.ad.collections.stringSetToStringArray(hashset);
+var stringArray = utils.ad.collections.stringSetToStringArray(hashSet);
 ```
 
 #### getDrawableId() function
@@ -273,7 +303,7 @@ Returns the drawable id from a given resource name
 var drawableId = utilsModule.ad.resources.getDrawableId("icon");
 ```
 ```TypeScript
-const drawableId:number = utils.ad.resources.getDrawableId("icon");
+const drawableId: number = utils.ad.resources.getDrawableId("icon");
 ```
 
 #### getStringId() function
@@ -319,11 +349,11 @@ Converts a JavaScript array to a [NSArray](https://developer.apple.com/library/i
 
 ```JavaScript
 var jsArray = ["item1", "item2", "item3"];
-var nsarray = utilsModule.ios.collections.jsArrayToNSArray(jsArray);
+var nsArray = utilsModule.ios.collections.jsArrayToNSArray(jsArray);
 ```
 ```TypeScript
-const jsArray:Array<string> = ["item1", "item2", "item3"];
-const nsarray = utils.ios.collections.jsArrayToNSArray(jsArray);
+const jsArray: Array<string> = ["item1", "item2", "item3"];
+const nsArray = utils.ios.collections.jsArrayToNSArray(jsArray);
 ```
 
 #### nsArrayToJSArray() function
@@ -331,12 +361,12 @@ const nsarray = utils.ios.collections.jsArrayToNSArray(jsArray);
 Converts a NSArray to a JavaScript array.
 
 ```JavaScript
-var nsarray = new NSArray(["item1", "item2", "item3"]);
-var jsarray = utilsModule.ios.collections.nsArrayToJSArray(nsarray);
+var nsArray = new NSArray(["item1", "item2", "item3"]);
+var jsArray = utilsModule.ios.collections.nsArrayToJSArray(nsArray);
 ```
 ```TypeScript
-const nsarray = new NSArray(["item1", "item2", "item3"]);
-const jsarray: Array<any> = utils.ios.collections.nsArrayToJSArray(nsarray);
+const nsArray = new NSArray(["item1", "item2", "item3"]);
+const jsArray: Array<any> = utils.ios.collections.nsArrayToJSArray(nsArray);
 ```
 
 #### isLandscape() function

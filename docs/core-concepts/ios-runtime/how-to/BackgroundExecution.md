@@ -2,7 +2,7 @@
 nav-title: "Background Execution"
 title: "Background Execution"
 description: "Describing how to execute code while your application is in background mode."
-position: 10
+position: 50
 ---
 
 # Background Execution
@@ -33,42 +33,42 @@ The first things you need to do is to modify your Info.plist file that is locate
 After that you need to create a custom application delegate, similar to the one in the sample application, but instead of using ```applicationDidEnterBackground```, you need the ```applicationPerformFetchWithCompletionHandler```, which can look like this:
 
 ``` TypeScript
-import * as LocalNotifications from "nativescript-local-notifications";
+import { LocalNotifications } from 'nativescript-local-notifications';
 
 export class CustomAppDelegate extends UIResponder implements UIApplicationDelegate {
     public static ObjCProtocols = [UIApplicationDelegate];
-    
+
     private bgTask;
     private timer;
     private timerCounter;
 
     public applicationPerformFetchWithCompletionHandler(application: UIApplication, completionHandler: any) {
-        console.log("App is running in background");
+        console.log('App is running in background');
 
         // Check for new data
         const newData = this.getNewData();
 
         // If new data exists, initiate a local notification
         if (newData) {
-            LocalNotification.schedule([{
+            LocalNotifications.schedule([{
             title: 'Title of the notification'
           }]).then(
               function() {
-                console.log("Notification scheduled");
+                console.log('Notification scheduled');
               },
               function(error) {
-                console.log("scheduling error: " + error);
+                console.log('scheduling error: ' + error);
               }
           );
 
             // Let the OS know that there were new data and complete the task
-            completionHandler(UIBackgroundFetchResult.newData)
+            completionHandler(UIBackgroundFetchResult.NewData)
         } else {
             // Otherwise, let the OS know there is no new data and complete the task
             completionHandler(UIBackgroundFetchResult.NoData);
         }
-        
-    }  
+
+    }
 }
 ```
 

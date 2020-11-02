@@ -1,41 +1,56 @@
 ---
-nav-title: "Custom Flags"
 title: "Custom Flags"
-description: "Tuning with custom flags"
-position: 5
+description: "Configure various V8 engine flags in order to improve the performance of your app, or to obtain more comprehensive information during debugging"
+position: 4
 previous_url: /core-concepts/android-runtime/advanced-topics/v8-flags
+slug: android-custom-flags
 ---
 
+# Custom Flags
 
-## Tuning V8
+The V8 engine comes with a set of controlling flags that may be useful for fine-grained tuning. You can set these flags in the [secondary package.json configuration file]({% slug structure %}#apppackagejson). This article contains some of the available flags and short explanation on how you can use them. For a complete list of all V8 flags, see the [Flag Definitions header file](https://github.com/v8/v8/blob/6.9.247/src/flag-definitions.h) in GitHub.
 
-V8 comes with a set of controlling flags that may be useful for a fine-grained tuning. Currently, we use `--expose_gc` flag to expose global `gc()` function which comes handy in advanced memory management scenarios. You can set these flags in `package.json` configuration file.
+## Expose Garbage Collector
+
+The `--expose_gc` flag exposes a global `gc()` function which can be helpful in [advanced memory management scenarios]({% slug android-memory-management %}).
 
 ```JSON
 {
-	...
-	"android": {
-		"v8Flags": "--expose_gc"
-	}
-	...
+    ...
+    "android": {
+        "v8Flags": "--expose_gc"
+    }
+    ...
 }
 ```
 
-For example, here are all the flags in V8 `6.6.346` [https://github.com/v8/v8/blob/6.6.346/src/flag-definitions.h](https://github.com/v8/v8/blob/6.6.346/src/flag-definitions.h)
+## Marking Mode
 
-## Timezone Changes
-
-For improved performance V8 keeps a cache of various values used for date / time computation. This may lead to a negative side effect for the application because changes made to the current timezone will not be reflected until the application is restarted.
-
-While this is not a common requirement for most applications, under some circumstances this be needed. To enable this scenario, you can set the `handleTimeZoneChanges` flag:
+The `markingMode: none` flag instructs NativeScript apps to use a different mode for garbage collection, providing significant performance boost. To enable it:
 
 ```JSON
 {
-        ...
-        "android": {
-                "handleTimeZoneChanges": true
-        }
-        ...
+    ...
+    "android": {
+        "markingMode": "none"
+    }
+    ...
+}
+```
+
+> **NOTE:** Use `markingMode: none` with caution. Unexpected errors related to premature objects collection may occur. [More information on proper memory management using `markingMode:none`](./marking-mode-none).
+
+## Timezone Changes
+
+For improved performance, V8 keeps a cache of various values used for date and time computation. This may lead to a negative side effect for the application because changes made to the current timezone will not be reflected until the application is restarted. While this is not a common requirement for most applications, there are some circumstances where this behavior might be needed. To enable this scenario, you can set the `handleTimeZoneChanges` flag:
+
+```JSON
+{
+    ...
+    "android": {
+        "handleTimeZoneChanges": true
+    }
+    ...
 }
 ```
 
@@ -43,15 +58,15 @@ As a result, the application will register a [BroadcastReceiver](https://develop
 
 ## Maximum Log Message Size
 
-By default all messages sent to Logcat are limited to 1024 characters and larger messages are automatically truncated. This value can be controlled with the `maxLogcatObjectSize` field:
+By default, all messages sent to Logcat are limited to 1024 characters and larger messages are automatically truncated. This value can be controlled with the `maxLogcatObjectSize` field:
 
 ```JSON
 {
-        ...
-        "android": {
-                "maxLogcatObjectSize": 2048
-        }
-        ...
+    ...
+    "android": {
+        "maxLogcatObjectSize": 2048
+    }
+    ...
 }
 ```
 
@@ -61,25 +76,29 @@ When you are using a release build there will be no logs to the console, so if y
 
 ```JSON
 {
-        ...
-        "android": {
-                "forceLog": true
-        }
-        ...
+    ...
+    "android": {
+        "forceLog": true
+    }
+    ...
 }
 ```
 
-## Discarding JavaScript exceptions when called from native
+## Use V8 Symbols
 
-By default, if an exception is thrown when executing JavaScript code which is called from native API it will crash the application showing the stack trace. If you want the exception stack trace to be logged, but application not to crash you can enable the `discardUncaughtJsExceptions` flag:
+If you want to use V8 API in your application code or you want to have the V8 symbols included in the `libNativeScript.so` file inside the application when built in **release** mode, you will need to enable the `useV8Symbols` flag:
 
 ```JSON
 {
-        ...
-	"discardUncaughtJsExceptions": true
-        ...
+    ...
+    "android": {
+        "useV8Symbols": true
+    }
+    ...
 }
 ```
 
-This flag works for iOS as well.
+## Configuring automatic garbage collection
+
+There are three parameters used for configuring the frequency and conditions of automatic triggerring of garbage collections in the JavaScript world. These are `gcThrottleTime`, `memoryCheckInterval` and `freeMemoryRatio`. For detailed explanation of their behavior please refer to the `Syncronizing Garabage Collectors` section in [Memory Management]({% slug android-memory-management %}#syncronizing-garabage-collectors)
 

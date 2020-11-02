@@ -1,6 +1,4 @@
-FROM ruby:2.3.5-alpine3.4
-
-COPY docs-watcher/start.sh /
+FROM ruby:2.6.1-alpine3.9
 
 RUN apk add --update \
   bash \
@@ -12,11 +10,19 @@ RUN apk add --update \
   rsync \
   nginx \
   nodejs \
+  npm \
+  && npm config set unsafe-perm true \
   && rm -rf /var/cache/apk/* \
   && npm config set cache /var --global \
   && npm install -g grunt \
-  && mkdir /run/nginx \
-  && chmod +x /start.sh
+  && npm install -g gulp \
+  && npm install -g typescript \
+  && npm install -g gulp-typedoc typedoc\
+  && mkdir /run/nginx
+
+COPY docs-watcher/start.sh /
+
+RUN chmod +x /start.sh
 
 ENTRYPOINT [ "/start.sh" ]
 

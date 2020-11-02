@@ -1,7 +1,7 @@
 ---
 title: Running Latest Code
 description: NativeScript Documentation - Running Latest Code
-position: 8
+position: 40
 slug: latest-code
 previous_url: /running-latest
 ---
@@ -15,7 +15,7 @@ Often when working with open-source projects, one needs functionality that has n
 
 ## Getting the latest development version via npm
 
-As an open-source project NativeScript keeps not only its source code but its build infrastructure open. That is why we choose [Travis CI](https://travis-ci.org/) for our nighly builds. Every commit in the master branch of all major NativeScript repos triggers a [Travis CI](https://travis-ci.org/) build which publishes an npm package that can be used directly. Follow those simple steps to get the latest development version of NativeScript:
+As an open-source project NativeScript keeps not only its source code but its build infrastructure open. That is why we choose [Travis CI](https://travis-ci.org/) for our nightly builds. Every commit in the master branch of all major NativeScript repos triggers a [Travis CI](https://travis-ci.org/) build which publishes an npm package that can be used directly. Follow those simple steps to get the latest development version of NativeScript:
 
 - Uninstall any existing NativeScript versions:
 
@@ -80,9 +80,9 @@ Building the source code is essential when one wants to contribute to an open so
 4. `tns run android/ios` : The NativeScript CLI copies the files under the `app` folder to the `platforms/[android/ios]/.../app` folder following a specific logic so that these get used later by a native build tool (*gradle*/*xcode-build*). As a next step, the NativeScript CLI executes compilation, deployment and run commands of *gradle* or *xcode-build*.
 5. Any JavaScript code gets executed in a V8 or JavaScriptCore engine and embedded in the NativeScript runtimes. Each call to an actual native object gets marshalled via the runtimes to the underlying platform and vice-versa. The runtimes provide JavaScript handles to the native objects.
 
-### Contents of the [NativeScript](https://github.com/NativeScript/NativeScript) repo
+### Contents of the NativeScript repo
 
-The NativeScript framework is built using TypeScript. For that, one of the build steps is TypeScript compilation, which uses TypeScript declarations of the underlying native objects. These are really large files ([android17.d.ts](https://github.com/NativeScript/NativeScript/blob/master/android17.d.ts) and [ios.d.ts](https://github.com/NativeScript/NativeScript/blob/master/ios.d.ts)). The TypeScript compilation with these two files loaded in memory takes a lot of time. To save development time and have as quick and stable feature output, the NativeScript team decided to keep several important applications inside the same repository so that all of them get compiled in a single pass.
+The [NativeScript framework](https://github.com/NativeScript/NativeScript)  is built using TypeScript. For that, one of the build steps is TypeScript compilation, which uses TypeScript declarations of the underlying native objects. These are really large files ([android17.d.ts](https://github.com/NativeScript/NativeScript/blob/master/android17.d.ts) and [ios.d.ts](https://github.com/NativeScript/NativeScript/blob/master/ios.d.ts)). The TypeScript compilation with these two files loaded in memory takes a lot of time. To save development time and have as quick and stable feature output, the NativeScript team decided to keep several important applications inside the same repository so that all of them get compiled in a single pass.
 
 Having said that, each subfolder of the [apps](https://github.com/NativeScript/NativeScript/tree/master/apps) subfolder of the repo represents a single application.
 

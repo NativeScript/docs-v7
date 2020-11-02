@@ -31,7 +31,9 @@ The initial build might take longer to complete because the app is undergoing a 
 
 While you are waiting, you might want to inspect the log produced during build. To access it, click on the **Output** button located in the bottom right corner of the client.  Under the **All** tab, you will see unfiltered information about the build, including  the build steps, warnings and errors. The **Errors** tab will show only errors that have caused the build to fail.
 
-When the build process is complete, you will be presented with a QR code and a local path to the produced application package (`APK`). You can install the `APK` manually or use an Android device with installed barcode scanner app to scan the QR code. This will download your app directly on the device. 
+For Local Build, when the build process is complete, you can install the `APK` manually or start the android emulator and verify if the Devices section displays your device and click on Run on Device. This will restart the build process and deploys the app to emulator device. The **Device Console** tab will show logs from the device.
+
+For Cloud Build, when the build process is complete, you will be presented with a QR code and a local path to the produced application package (`APK`). You can install the `APK` manually or use an Android device with installed barcode scanner app to scan the QR code. This will download your app directly on the device. 
 
 ## 2.3: Build for iOS
 

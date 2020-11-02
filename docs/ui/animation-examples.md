@@ -39,7 +39,7 @@ view.animate({
 }
 ```
 
-[Try this in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=8)
+[Try this in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=q9nY9l)
 
 ## Animate background color
 
@@ -68,7 +68,7 @@ view.animate({
 }
 ```
 
-[Try this in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=9)
+[Try this in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=aLjBQg)
 
 ## Animate position
 
@@ -97,7 +97,7 @@ view.animate({
 }
 ```
 
-[Try this in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=10)
+[Try this in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=egSanf)
 
 ## Animate scale
 
@@ -126,7 +126,7 @@ view.animate({
 }
 ```
 
-[Try this in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=11)
+[Try this in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=4Ni5sU)
 
 ## Animate rotate
 
@@ -155,7 +155,7 @@ view.animate({
 }
 ```
 
-[Try this in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=12)
+[Try this in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=2vpfgV)
 
 ## Chaining animations with AnimationSet
 
@@ -270,7 +270,7 @@ animationSet.play().then(() => {
 });
 ```
 
-[Try this in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=RE7NqF&v=13)
+[Try this in the NativeScript Playground](https://play.nativescript.org/?template=play-tsc&id=rgm744)
 
 ## Reusing animations
 
@@ -373,9 +373,9 @@ animationSet.play().catch((e) => {
 ```
 
 ## Rotation using originX and originY
+__Example 5: Rotating a view around its center. Center of view is changed via `originX` and `originY` properties.__
 
-git bran
-__Example 5: Rotating a view around its center. Center of viww is changed via `originX` and `originY` properties.__
+![rotation_origin_x_y](./img/modules/animation/rotation_origin_x_y.gif "Rotation originX / originY")
 
 ``` JavaScript
 const view = page.getViewById("myView");
@@ -416,4 +416,105 @@ view.animate({
 })
 ```
 
+## Animation -  View's Width and Height
+{% nativescript %}
+### Width
+```JavaScript
+let label = page.getViewById("lblNS");
+let animation = new Animation([
+    {
+      width: 200,
+      duration: 2000,
+      target: label,
+      delay: 200
+    }
 
+  ]);
+animation.play();
+```
+```TypeScript
+let label: Label = <Label>page.getViewById("lblNS");
+let animation = new Animation([
+        {
+            width: 200,
+            duration: 2000,
+            target: label,
+            delay: 200
+        }
+
+    ]);
+animation.play();
+```
+### Height
+```JavaScript
+let label = page.getViewById("lblNS");
+let animation = new Animation([
+    {
+      height: 200,
+      duration: 2000,
+      target: label,
+      delay: 200
+    }
+
+  ]);
+animation.play();
+```
+```TypeScript
+let label: Label = <Label>page.getViewById("lblNS");
+let animation = new Animation([
+        {
+            height: 200,
+            duration: 2000,
+            target: label,
+            delay: 200
+        }
+
+    ]);
+animation.play();
+```
+[Demo JavaScript](https://play.nativescript.org/?template=play-js&id=mOZv68)
+[Demo TypeScript](https://play.nativescript.org/?template=play-tsc&id=ckdYDS)
+{% endnativescript %}
+{% angular %}
+### Width
+```TypeScript
+@ViewChild("lblNS", { read: ElementRef, static: false }) labelRef: ElementRef;
+private label: Label;
+...
+ngAfterViewInit(): void {
+    this.label = this.labelRef.nativeElement;
+}
+...
+let animation = new Animation([
+    {
+        width: 200,
+        duration: 2000,
+        target: this.label,
+        delay: 200
+    }
+
+]);
+animation.play();
+```
+### Height
+```TypeScript
+@ViewChild("lblNS", { read: ElementRef, static: false }) labelRef: ElementRef;
+private label: Label;
+...
+ngAfterViewInit(): void {
+    this.label = this.labelRef.nativeElement;
+}
+...
+let animation = new Animation([
+    {
+        height: 200,
+        duration: 2000,
+        target: this.label,
+        delay: 200
+    }
+
+]);
+animation.play();
+```
+[Demo](https://play.nativescript.org/?template=play-ng&id=cWAc2j)
+{% endangular %}

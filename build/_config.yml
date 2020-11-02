@@ -4,7 +4,6 @@ nscookbookurl: "/cookbook/"
 source: ./Content
 # Release date in the format of: YYYY-MM-DD
 release_date: "2016-11-16"
-
 navigation:
 ## List your directory names and order here, like this:
     start:
@@ -44,17 +43,11 @@ navigation:
     "core-concepts/ios-runtime":
         position: 300
         title: "iOS Runtime"
-    "core-concepts/ios-runtime/getting-started":
-        position: 10
-        title: "Getting started"
     "core-concepts/ios-runtime/types":
-        position: 20
+        position: 90
         title: "Types"
-    "core-concepts/ios-runtime/marshalling":
-        position: 30
-        title: "Marshalling"
     "core-concepts/ios-runtime/how-to":
-        position: 40
+        position: 100
         title: "How-To"
     integration-with-existing-ios-and-android-apps:
         position: 30
@@ -70,17 +63,13 @@ navigation:
         position: 10
         title: "Layouts"
         expanded: false
-    "ui/ns-ui-widgets":
-        position: 20
-        title: "UI Widgets"
-        expanded: false
     "ui/ns-framework-modules":
         position: 30
         title: "Framework modules"
         expanded: false
-    "ui/ng-ui-widgets":
+    "ui/components":
         position: 20
-        title: "UI Widgets"
+        title: "Components"
         expanded: false
     "ui/ng-framework-modules":
         position: 30
@@ -96,6 +85,12 @@ navigation:
     "tooling/publishing":
         position: 100
         title: "Publishing"
+    "tooling/testing":
+        position: 150
+        title: "Testing"
+    "tooling/testing/end-to-end-testing":
+        position: 100
+        title: "End To End Testing"
     "tooling/debugging":
         position: 200
         title: "Debugging"
@@ -114,12 +109,9 @@ navigation:
     releases:
         position: 80
         title: "RELEASES"
-    app-and-screen-templates:
+    app-templates:
         position: 90
-        title: "App and Screen Templates"
-    "app-and-screen-templates/common-screens":
-        position: 10
-        title: "Common screens"
+        title: "App Templates"
     performance-optimizations:
         position: 100
         title: "Performance optimizations"
@@ -155,13 +147,13 @@ navigation:
         title: Sidekick Settings
     "sidekick/user-guide/create-app":
         position: 40
-        title: Creating Your App 
+        title: Creating Your App
     "sidekick/user-guide/configure-app":
         position: 45
-        title: Configuring Your App    
+        title: Configuring Your App
     "sidekick/user-guide/add-page":
         position: 50
-        title: Adding a New Page to Your App         
+        title: Adding a New Page to Your App
     "sidekick/user-guide/code-signing":
         position: 55
         title: Code Signing Your App
@@ -177,9 +169,6 @@ navigation:
     "sidekick/user-guide/publish-app":
         position: 75
         title: Publishing Your App
-    "sidekick/user-guide/enterprise-auth":
-        position: 80
-        title: Enterprise Auth
     "sidekick/troubleshooting":
         position: 85
         title: Troubleshooting
@@ -194,8 +183,30 @@ improveThis:
         1:
             matchPattern: '^/code-samples/.*'
         2:
-            matchPattern: '^/docs-cli/.*'
+            matchPattern: '^/tooling/docs-cli/.*'
+            trimRootPath: "/tooling/docs-cli"
+            baseUrl: "https://github.com/NativeScript/nativescript-cli/tree/master/docs/man_pages"
         3:
+            matchPattern: '^/ui/ng-components/(icon-fonts|modal-view-ng).*'
+            trimRootPath: "/ui/ng-components/"
+            pathUpdatePattern: ".md$"
+            baseUrl: "https://github.com/NativeScript/nativescript-sdk-examples-ng/tree/master/app/ng-ui-category/"
+        4:
+            matchPattern: '^/ui/ng-components/.*'
+            trimRootPath: "/ui/ng-components/"
+            pathUpdatePattern: ".md$"
+            baseUrl: "https://github.com/NativeScript/nativescript-sdk-examples-ng/tree/master/app/ng-ui-widgets-category/"
+        5:
+            matchPattern: '^/ui/components/(icon-fonts|modal-view).*'
+            trimRootPath: "/ui/components/"
+            pathUpdatePattern: ".md$"
+            baseUrl: "https://github.com/NativeScript/nativescript-sdk-examples-js/tree/master/app/ns-ui-category"
+        6:
+            matchPattern: '^/ui/components/.*'
+            trimRootPath: "/ui/components/"
+            pathUpdatePattern: ".md$"
+            baseUrl: "https://github.com/NativeScript/nativescript-sdk-examples-js/tree/master/app/ns-ui-widgets-category/"
+        7:
             matchPattern: '.*'
             baseUrl: "https://github.com/NativeScript/docs/blob/master/docs/"
 

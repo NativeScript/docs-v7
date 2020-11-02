@@ -32,7 +32,7 @@ Or in different words:
 
 ## NativeScript build
 
-When you run **tns run [ios|android] --bundle**, all **.tns** files will be bundled instead of the web files.
+When you run **tns run [ios|android]**, all **.tns** files will be bundled instead of the web files.
 
 Or in different words:
 > **.tns** files replace the web files in the NativeScript builds.
@@ -62,7 +62,7 @@ The most common scenario is a component with the following file structure:
 
 The important thing to note here is that the **@Component** decorator points to the files without the **.tns** extension.
 
-```ts
+```TypeScript
 @Component({
   selector: 'app-name',
   templateUrl: './name.component.html',
@@ -120,7 +120,9 @@ And then you will need only one version of the **http-service**, which will use 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class MyHttpService {
 
   constructor(private http: HttpClient) { }
@@ -245,7 +247,8 @@ And then call its functions from your component:
 **name.component.ts**
 
 ```TypeScript
-import { DrawerHelper } from "./drawer-helper";
+import { DrawerHelper } from "@src/app/drawer-helper";
+
 @Component({...})
 export class NameComponent {
   // a lot of shared code here
@@ -307,7 +310,8 @@ And then in the component, add the **service** to the **providers**, and with th
 **name.component.ts**
 
 ```TypeScript
-import { DrawerService } from "./drawer-service";
+import { DrawerService } from "@src/app/drawer-service";
+
 @Component({
   providers: [DrawerService]
 })

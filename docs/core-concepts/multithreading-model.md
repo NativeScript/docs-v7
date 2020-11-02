@@ -1,7 +1,9 @@
 ---
 title: Multithreading Model
-description: Learn how to use workers and multithreading to offload heavy work on a non-UI thread and create a responsive UI without slowing down rendering and blocking the UI thread
+description: Learn how to use workers and multithreading to offload heavy work on a non-UI thread, and create a responsive UI without slowing or blocking the UI thread. 
 position: 90
+tags: multithreading model, nativescript multithreading
+slug: multithreading-model
 ---
 
 # Multithreading Model
@@ -11,12 +13,6 @@ One of NativeScript's benefits is that it allows fast and efficient access to al
 To tackle issues with slowness where UI sharpness and high performance are critical, developers can use NativeScript's solution to multithreading - worker threads. Workers are scripts executing on a background thread in an absolutely isolated context. Tasks that could take long to execute should be offloaded on to a worker thread. 
 
 Workers API in NativeScript is loosely based on the [Dedicated Web Workers API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) and the [Web Workers Specification](https://www.w3.org/TR/workers/)
-
-* [Workers API](#workers-api)
-    * [Worker Object](#worker-object-prototype)
-    * [Worker Global Scope](#worker-global-scope)
-* [Sample Usage](#sample-usage)
-* [Limitations](#limitations)
 
 ## Workers API
 
@@ -54,7 +50,8 @@ Workers API in NativeScript is loosely based on the [Dedicated Web Workers API](
  ```JavaScript
     ...
 
-    var worker = new Worker('./workers/image-processor');
+    const WorkerScript = require("nativescript-worker-loader!./worker-script.js");
+    const worker = new WorkerScript();
     worker.postMessage({ src: imageSource, mode: 'scale', options: options });
 
     worker.onmessage = function(msg) {
@@ -115,6 +112,9 @@ Workers API in NativeScript is loosely based on the [Dedicated Web Workers API](
  ```
 
 
+For details on the worker plugin check out the [nativescript-worker-loader](https://github.com/NativeScript/worker-loader) repository.
+
+
 ## General Guidelines
 
  For optimal results when using the Workers API, follow these guidelines:
@@ -136,7 +136,5 @@ There are certain limitations to keep in mind when working with workers:
 ## Demo projects
 
 The below-attached projects demonstrate, how we could use the multithreading functionality in non-Angular NativeScript project as well as NativeScript Angular one.
-
-[non-Angular NativeScript Demo](https://github.com/NativeScript/demo-workers)
 
 [NativeScript Angular Demo](https://github.com/NativeScript/worker-loader)

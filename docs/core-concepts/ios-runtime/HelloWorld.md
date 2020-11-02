@@ -2,12 +2,12 @@
 nav-title: "Hello World Application"
 title: "Hello World Application"
 description: "A simple hello-world application"
-position: 0
+position: 30
 ---
 
 # Hello World Application
 
-In `index.js`:
+Here is a sample iOS native application's implementation in Objective-C versus NativeScript:
 
 ```objective-c
 #import <UIKit/UIKit.h>

@@ -26,6 +26,13 @@ public class MyObject { // implicit base class is java.lang.Object
 	}
 }
 ```
+```kotlin
+class MyObject { // implicit base class is kotlin.Any
+    override fun hashCode(): Int {
+        return 10
+    }
+}
+```
 
 When a class is inherited in Android, the compiler creates a new class, containing the user-defined logic. But what about NativeScript where the JavaScript code is processed at runtime, meaning this happens **after** the Compiler step?
 

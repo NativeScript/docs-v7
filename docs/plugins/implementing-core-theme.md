@@ -50,7 +50,7 @@ Review [NativeScript Core Theme supported skins] ({ % https://github.com/NativeS
 
 ### Files Structure and Contents
 
-Add folder `scss` to your plugin soucre folder having the following structure:
+Add folder `scss` to your plugin source folder having the following structure:
 
 ```
 scss
@@ -130,7 +130,7 @@ $mybtn-background-color: $lime;
 $mybtn-color: $black;
 ```
 
-`platforms\_mybutton.android.scss` and `platforms\_mybutton.ios.scss` override some of the variables depending on the platfom - iOS or Android.
+`platforms\_mybutton.android.scss` and `platforms\_mybutton.ios.scss` override some of the variables depending on the platform - iOS or Android.
 
 platforms\_mybutton.android.scss:
 ````

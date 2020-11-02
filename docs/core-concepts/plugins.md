@@ -53,14 +53,14 @@ As shown above the command **tns plugin add <plugin-name>** is actually doing **
 npm i tns-platform-declarations --save-dev
 ```
 
-> **Note:** The difference between dependencies and developer dependencies is that **dependencies** are required to run, while **devDependencies** are needed only during development. Example for dependency is the **nativescript-camera** plugin which is required runtime so you could use the hardware camera. On the other hand, the **tns-platform-declarations** is a developer dependency required only for intelliSense during the development process. The `devDependncies` should not be installed as `dependencies` to avoid large output build files (large application size). Example `package.json` file using both `dependencies` and `devDependencies` can be found [here](https://github.com/NativeScript/nativescript-sdk-examples-js/blob/master/package.json#L31-L44).
+> **Note:** The difference between dependencies and developer dependencies is that **dependencies** are required to run, while **devDependencies** are needed only during development. Example for dependency is the **nativescript-camera** plugin which is required runtime so you could use the hardware camera. On the other hand, the **tns-platform-declarations** is a developer dependency required only for intelliSense during the development process. The `devDependencies` should not be installed as `dependencies` to avoid large output build files (large application size). Example `package.json` file using both `dependencies` and `devDependencies` can be found [here](https://github.com/NativeScript/nativescript-sdk-examples-js/blob/master/package.json#L31-L44).
 
 ## Importing and Using Plugins 
 
 Once the plugin you need is installed, you can start using it in your project. Note that each plugin might have its configuration that needs to be satisfied so always check carefully the plugin's documentation and the README file. The below code snippet demonstrated the basic usage of **nativescript-camera** plugin.
 
 ```JavaScript
-const cameraModule = require("nativescript-camera"); // Requiring the plugin module 
+const camera = require("nativescript-camera"); // Requiring the plugin module 
 camera.requestPermissions();
 
 // Or import only a specific class/method/property  of the plugin
