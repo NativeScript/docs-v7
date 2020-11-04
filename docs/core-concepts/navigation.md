@@ -234,7 +234,7 @@ export function navigateToSearch(args: EventData) {
 
 The `BottomNavigation` and `Tabs` components enable the user to arbitrarily navigate between several UI containers at the same level. A key feature of these components is that they keep the state of the containers that are not visible. This means that when the user comes back to a previous tab, the data, scroll position and navigation state should be like they left them. Here is a diagram that demonstrates how the navigation schema can be implemented with a `BottomNavigation` or `Tabs`.
 
-> **Note:** The example below utilizes the `BottomNavigation` component but you can use the same structure with the `Tabs` component. For detailed information about these components, see the dedicated articles - [`BottomNavigation`](/ui/components/bottom-navigation) and [`Tabs`](/ui/components/tabs).
+> **Note:** The example below utilizes the `BottomNavigation` component but you can use the same structure with the `Tabs` component. For detailed information about these components, see the dedicated articles - [`BottomNavigation`](https://docs.nativescript.org/ui/components/bottom-navigation) and [`Tabs`](https://docs.nativescript.org/ui/components/tabs).
 
 ![navigation-diagram-tab](../img/navigation/navigation-diagram-tab.png?raw=true)
 
