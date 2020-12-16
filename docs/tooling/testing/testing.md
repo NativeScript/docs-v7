@@ -124,8 +124,8 @@ QUnit.test("Hello World Sample Test:", function (assert) {
 	assert.equal( mainViewModel.createViewModel().message, "42 taps left", "Message, 42 taps left; equal succeeds." ); //Assert that the message is "42 taps left".
 });
 ```
-{% angular %} 
-## TestBed Integration
+
+## Angular TestBed Integration
 
 To use TestBed you have to alter your `karma.conf.js` to:
 ```
@@ -205,7 +205,6 @@ describe('Renderer E2E', () => {
 
 ```
 
-{% endangular%}
 
 ## Run Your Tests
 
@@ -246,6 +245,12 @@ To execute your test suite in the iOS Simulator, run the following command.
 
 ```Shell
 tns test ios --emulator
+```
+
+To execute your test suite in CI make sure to add `--justlaunch`. This parameter will exit the simulator.
+
+```Shell
+tns test ios --emulator --justlaunch
 ```
 
 Each execution of `$ tns test` consists of the following steps, performed automatically.
