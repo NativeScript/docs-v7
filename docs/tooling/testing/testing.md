@@ -287,3 +287,4 @@ When you modify `karma.conf.js`, make sure that your changes meet the specificat
 ## Continuous Integration
 
 To integrate the NativeScript unit test runner into a continuous integration process, you need to configure a Karma reporter, for example, the [JUnit reporter](https://github.com/karma-runner/karma-junit-reporter).
+
