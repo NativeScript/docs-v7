@@ -96,7 +96,7 @@ In the following sections, we will create a simple Angular application using the
     ```TypeScript
     // app/app.routing.ts
     import { NgModule } from "@angular/core";
-    import { NativeScriptRouterModule } from "nativescript-angular/router";
+    import { NativeScriptRouterModule } from '@nativescript/angular';
     import { Routes } from "@angular/router";
 
     import { ItemsComponent } from "./item/items.component";
