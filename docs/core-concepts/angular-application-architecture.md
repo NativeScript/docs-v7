@@ -9,7 +9,7 @@ previous_url: /core-concepts/architecture-angular
 
 # Application Architecture
 
-In this article we are going to go through the core concepts of the Angular framework, with an an emphasis on the specifics of using Angular with NativeScript.
+In this article we are going to go through the core concepts of the Angular framework, with an emphasis on the specifics of using Angular with NativeScript.
 
 >**Note:** The best place to learn about Angular concepts is on [angular.io](https://angular.io/docs/ts/latest/). We are going to refer to it in many sections in this article.
 
