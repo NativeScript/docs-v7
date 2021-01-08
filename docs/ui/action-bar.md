@@ -627,5 +627,5 @@ class MyTextEditorComponent {
 
 ## See also
 
-* [Layout Containers](https://docs.nativescript.org/ui/layout-containers)
+* [Layout Containers](https://docs.nativescript.org/ui/layouts/layout-containers)
 * [Architecture and Navigation](https://docs.nativescript.org/core-concepts/navigation)
