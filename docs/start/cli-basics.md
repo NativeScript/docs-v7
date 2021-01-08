@@ -22,20 +22,20 @@ In this section, you’ll familiarize yourself with the NativeScript CLI, and us
 
 Open your terminal or command prompt and run the following command to create a new NativeScript application.
 
-{% nativescript %}
+[//]: # (nativescript)
 ```
 tns create HelloWorld --template tns-template-blank
 ```
 
 Here you’re passing two things to the `create` command: `HelloWorld` which determines the name of the app you’re creating, and the `--template` option, which tells the NativeScript CLI to scaffold an app using a predefined template named “tns-template-blank”.
-{% endnativescript %}
-{% angular %}
+[//]: # (endnativescript)
+[//]: # (angular)
 ```
 tns create HelloWorld --template tns-template-blank-ng
 ```
 
 Here you’re passing two things to the `create` command: `HelloWorld` which determines the name of the app you’re creating, and the `--template` option, which tells the NativeScript CLI to scaffold an app using a predefined template named “tns-template-blank-ng”.
-{% endangular %}
+[//]: # (endangular)
 
 > **TIP**: You can use the `tns create` command to scaffold apps at a [variety of different starting points](https://market.nativescript.org/?tab=templates&category=all_templates). To try other templates, run `tns create` _without_ the `--template` option; the NativeScript CLI will walk you through selecting a template using interactive prompts.
 
@@ -57,7 +57,7 @@ Now that you’ve created an app let’s look at how to get your new app up and 
 
 Once your NativeScript mobile project is created, you can start the application in two different ways:
 
-- Using a preview build via the `preview` command. This option allows you to test NativeScript with a quick setup. See the [quick setup section](#quick-setup-using-preview) for details).
+- Using a preview build via the `preview` command. This option allows you to test NativeScript with a quick setup. See the [quick setup section](#quick-setup-using-preview) for details.
 
 - Using a local build via the `run` command. This option allows you to experience the full developer experience (building and deploying on local emulators and devices). See the [full setup section](#full-setup-using-run) for details.
 
@@ -113,7 +113,7 @@ Open your new project in your favorite text editor or IDE.
 
 > **TIP**: You can use any editor to develop NativeScript apps, but we recommend Visual Studio Code. Feel free to [skip ahead to this chapter’s appendix](#appendix-a-choosing-an-editor) for more information.
 
-{% nativescript %}
+[//]: # (nativescript)
 Let’s add a simple image to your app so you can see how livesync works. Open your app’s  `app/main-page.xml` file, and replace its contents with the following code:
 
 ``` XML
@@ -122,9 +122,9 @@ Let’s add a simple image to your app so you can see how livesync works. Open y
     <Image src="https://user-images.githubusercontent.com/544280/42960643-66d498ac-8b5a-11e8-8946-7224eefea6a5.jpg"></Image>
 </Page>
 ```
-{% endnativescript %}
+[//]: # (endnativescript)
 
-{% angular %}
+[//]: # (angular)
 Let’s add a simple image to your app so you can see how livesync works. Open your app’s `app/home/home.component.ts` file, and replace its contents with the following code:
 
 ``` TypeScript
@@ -141,7 +141,7 @@ export class HomeComponent {
   // Your TypeScript logic goes here
 }
 ```
-{% endangular %}
+[//]: # (endangular)
 
 > **NOTE**: Don’t worry about the specifics of how this code works yet. We’ll cover the details momentarily—for now get comfortable with how livesync works.
 
@@ -243,13 +243,13 @@ Now that you have a full setup in place for developing your apps let’s look at
 
 Now that you have a preview workflow set up check out our **Build a Full App** tutorials in NativeScript Playground. If you prefer working in a CLI environment, you can download your tutorial project from Playground and complete the tutorial locally using the `tns preview` command.
 
-{% angular %}
+[//]: # (angular)
 <p><a href="https://play.nativescript.org/?template=groceries-ng&tutorial=groceries-ng" class="ns-button -action">Start Tutorial</a></p>
-{% endangular %}
+[//]: # (endangular)
 
-{% nativescript %}
+[//]: # (nativescript)
 <p><a href="https://play.nativescript.org/?template=groceries-js&tutorial=groceries-js" class="ns-button -action">Start Tutorial</a></p>
-{% endnativescript %}
+[//]: # (endnativescript)
 
 ## Debugging Applications
 
@@ -271,7 +271,7 @@ You’ll want to check out the Chrome Dev Tools and the Visual Studio debugger a
 
 One of the most natural things you can do to debug apps in any environment is writing to the system’s log. In NativeScript logging works a lot as it does on the web, as most of the same `console` APIs that work on the web also work in NativeScript.
 
-{% nativescript %}
+[//]: # (nativescript)
 To see this action open your app’s `app/main-page.js` file and replace its contents with the code below.
 
 ``` JavaScript
@@ -279,9 +279,9 @@ exports.pageLoaded = function() {
      console.log("Hello World");
 };
 ```
-{% endnativescript %}
+[//]: # (endnativescript)
 
-{% angular %}
+[//]: # (angular)
 To see this action open your app’s `app/home/home.component.ts` file and replace its contents with the code below.
 
 ``` TypeScript
@@ -300,7 +300,7 @@ export class HomeComponent {
   }
 }
 ```
-{% endangular %}
+[//]: # (endangular)
 
 After the NativeScript CLI refreshes your app, head back to your terminal or command prompt. You should see a “Hello World” message at the bottom that looks like something like this.
 
@@ -308,7 +308,7 @@ After the NativeScript CLI refreshes your app, head back to your terminal or com
 
 The `console.log()` function is great for outputting primitive values such as strings, numbers, and booleans, but it doesn’t work so well for objects. For those situations you’ll want to use another of the `console` object’s methods intended for complex object output: `console.dir()`.
 
-{% nativescript %}
+[//]: # (nativescript)
 To see this in action replace the contents of your `app/main-page.js` file with the code below, which uses `console.log()` to log a simple object.
 
 ``` TypeScript
@@ -319,9 +319,9 @@ exports.pageLoaded = function() {
     });
 };
 ```
-{% endnativescript %}
+[//]: # (endnativescript)
 
-{% angular %}
+[//]: # (angular)
 To see this in action replace the contents of your `app/home/home.component.ts` file with the code below, which uses `console.log()` to log a simple object.
 
 ``` TypeScript
@@ -373,25 +373,25 @@ The `console.log()` and `console.dir()` functions are two of the many tools avai
 
 Errors happen, and when they do, it’s important to know how to handle them. Let’s mess up a few things in your new app.
 
-{% nativescript %}
+[//]: # (nativescript)
 Find the line of code that declares an `<ActionBar>` (line 2 of your `app/main-page.xml` file). Remove that line’s final `>` character so that the line looks like this.
 
 ``` XML
 <ActionBar title="My Apple" class="action-bar"></ActionBar
 ```
-{% endnativescript %}
+[//]: # (endnativescript)
 
-{% angular %}
+[//]: # (angular)
 Find the line of code that declares an `<ActionBar>` (line 6 of your `app/home/home.component.ts` file). Remove that line’s final `>` character so that the line looks like this.
 
 ``` XML
 <ActionBar title="My Apple" class="action-bar"></ActionBar
 ```
-{% endangular %}
+[//]: # (endangular)
 
 This is invalid markup, and as you might expect NativeScript is unable to render your user interface. What NativeScript does do, however, is log any relevant errors and stack traces to your console. If you return to your terminal and scroll up just a bit, you’ll see the following error logged that indicates precisely where the problem is.
 
-{% nativescript %}
+[//]: # (nativescript)
 ```
 JS ERROR Error: Building UI from XML. @file:///app/main-page.xml:2:50
      > close tag
@@ -402,9 +402,9 @@ Let’s fix the error now by adding the `>` back to line 2 in your `main-page.xm
 ``` XML
 <ActionBar title="My Apple" class="action-bar"></ActionBar>
 ```
-{% endnativescript %}
+[//]: # (endnativescript)
 
-{% angular %}
+[//]: # (angular)
 ```
 JS: ERROR Error: Uncaught (in promise): Error: Template parse errors:
 JS: Unexpected character "<" ("
@@ -417,7 +417,7 @@ Let’s fix the error now by adding the `>` back to line 6 in your `home.compone
 ``` XML
 <ActionBar title="My Apple" class="action-bar"></ActionBar>
 ```
-{% endangular %}
+[//]: # (endangular)
 
 The NativeScript CLI continues to watch the files in your application, even after errors. As such, after you correct this problem, the CLI updates your app to its previous state.
 
