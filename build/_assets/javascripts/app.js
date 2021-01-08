@@ -455,7 +455,22 @@ $(function(){
 
 $(function() {
     'use strict';
+
+    // categories:
+    // 1 - strictly neccessary
+    // 2 - performance cookies
+    // 3 - targeting cookies
+    // 4 - functional cookies
+    function isCategoryActive(category) {
+        if (!window.OptanonActiveGroups) return false;
+        const groupMatchKey = ',' + category + ',';
+        return window.OptanonActiveGroups.indexOf(groupMatchKey) !== -1;
+    }
+
     function createCookie(name,value,days) {
+        if(!isCategoryActive(3)) {
+            return;
+        }
         if (days) {
             var date = new Date();
             date.setTime(date.getTime()+(days*24*60*60*1000));
@@ -468,6 +483,9 @@ $(function() {
     }
 
     function readCookie(name) {
+        if(!isCategoryActive(3)) {
+            return null;
+        }
         var nameEQ = name + "=";
         var ca = document.cookie.split(';');
 
