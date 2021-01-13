@@ -19,6 +19,33 @@ NativeScript has a special class called [FormattedString](/api-reference/classes
 </Label>
 ```
 
+Binding (Two-way)
+
+```HTML
+<Label>
+    <FormattedString>
+        <Span [text]="title" fontWeight="Bold" textDecoration="underline"></Span>
+    </FormattedString>
+</Label>
+```
+```TypeScript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'ns-main',
+  moduleId: module.id,
+  templateUrl: './main.component.html',
+})
+export class MainComponent {
+    public title: string;
+
+    constructor() {
+    	this.title = "Hello Word";
+    }
+}
+```
+
+
 This syntax differs from the full syntax of FormattedString used in NativeScript Core, shown below, which does not work in Angular apps:
 
 ```HTML
