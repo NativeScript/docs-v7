@@ -45,32 +45,32 @@ You can change the name of the file from which the application-wide CSS is loade
 
 {% nativescript %}
 ``` JavaScript
-var application = require("tns-core-modules/application");
-application.setCssFileName("style.css");
+import { Application } from "@nativescript/core";
+Application.setCssFileName("style.css");
 
-application.start({ moduleName: "main-page" });
+Application.run({ moduleName: "main-page" });
 ```
 ``` TypeScript
-import { setCssFileName, start as applicationStart } from "tns-core-modules/application";
-setCssFileName("style.css");
+import { Application } from "@nativescript/core";
+Application.setCssFileName("style.css");
 
-applicationStart({ moduleName: "main-page" });
+Application.run({ moduleName: "main-page" });
 ```
 
 You could also check the name of the application-wide CSS file by using `getCssFileName()` method as shown below:
 
 ``` JavaScript
-var application = require("tns-core-modules/application");
-var fileName = application.getCssFileName();
+import { Application } from "@nativescript/core";
+const fileName = Application.getCssFileName();
 console.log(`fileName ${fileName}`);
 
 ```
 ``` TypeScript
-import { getCssFileName, start as applicationStart } from "tns-core-modules/application";
-let fileName = getCssFileName();
+import { Application } from "@nativescript/core";
+const fileName = Application.getCssFileName();
 console.log(`fileName ${fileName}`);
 
-applicationStart({ moduleName: "main-page" });
+Application.run({ moduleName: "main-page" });
 ```
 {% endnativescript %}
 

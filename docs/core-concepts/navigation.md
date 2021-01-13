@@ -50,7 +50,7 @@ function onPageLoaded(args) {
 exports.onPageLoaded = onPageLoaded;
 ```
 ``` item-page.ts
-import { EventData } from "tns-core-modules/data/observable";
+import { EventData } from "@nativescript/core";
 
 export function onPageLoaded(args: EventData): void {
     console.log("Page Loaded");
@@ -89,9 +89,7 @@ function onTap(args) {
 exports.onTap = onTap;
 ```
 ``` featured-page.ts
-import { EventData } from "tns-core-modules/data/observable";
-import { Button } from "tns-core-modules/ui/button";
-import { Page } from "tns-core-modules/ui/page";
+import { EventData, Button, Page } from "@nativescript/core";
 
 export function onTap(args: EventData) {
     const button: Button = <Button>args.object;
@@ -134,9 +132,7 @@ exports.onTap = onTap;
 exports.onPageLoaded = onPageLoaded;
 ```
 ``` item-page.ts
-import { EventData } from "tns-core-modules/data/observable";
-import { Button } from "tns-core-modules/ui/button";
-import { Page } from "tns-core-modules/ui/page";
+import { EventData, Button, Page } from "@nativescript/core";
 
 export function onPageLoaded(args: EventData): void {
     console.log("Page Loaded");
@@ -203,9 +199,7 @@ exports.navigateToBrowse = navigateToBrowse;
 exports.navigateToSearch = navigateToSearch;
 ```
 ``` hub-page.ts
-import { EventData } from "tns-core-modules/data/observable";
-import { Button } from "tns-core-modules/ui/button";
-import { Page } from "tns-core-modules/ui/page";
+import { EventData, Button, Page } from "@nativescript/core";
 
 export function navigateToFeatured(args: EventData) {
     const button: Button = <Button>args.object;
@@ -336,7 +330,7 @@ function openSearchModal(args) {
 exports.openSearchModal = openSearchModal;
 ```
 ``` featured-page.ts
-import { EventData } from "tns-core-modules/data/observable";
+import { EventData } from "@nativescript/core";
 import { View } from "tns-core-modules/ui/core/view";
 
 export function openSearchModal(args: EventData) {
@@ -367,7 +361,7 @@ function closeModal(args) {
 exports.closeModal = closeModal;
 ```
 ``` search-page.ts
-import { EventData } from "tns-core-modules/data/observable";
+import { EventData } from "@nativescript/core";
 import { View } from "tns-core-modules/ui/core/view";
 
 export function closeModal(args: EventData) {
@@ -411,12 +405,11 @@ The component itself doesn't provide navigation logic automatically like the `Ta
 </nsDrawer:RadSideDrawer>
 ```
 ``` app-root.js
-const appModule = require("tns-core-modules/application");
-const frameModule = require("tns-core-modules/ui/frame");
+import { Application, Frame } from "@nativescript/core";
 
-function navigateToFeatured(args) {
-    const sideDrawer = appModule.getRootView();
-    const featuredFrame = frameModule.getFrameById("root");
+export function navigateToFeatured(args) {
+    const sideDrawer = Application.getRootView();
+    const featuredFrame = Frame.getFrameById("root");
     featuredFrame.navigate({
         moduleName: "featured-page",
         clearHistory: true
@@ -424,9 +417,9 @@ function navigateToFeatured(args) {
     sideDrawer.closeDrawer();
 }
 
-function navigateToBrowse(args) {
-    const sideDrawer = appModule.getRootView();
-    const featuredFrame = frameModule.getFrameById("root");
+export function navigateToBrowse(args) {
+    const sideDrawer = Application.getRootView();
+    const featuredFrame = Frame.getFrameById("root");
     featuredFrame.navigate({
         moduleName: "browse-page",
         clearHistory: true
@@ -434,26 +427,19 @@ function navigateToBrowse(args) {
     sideDrawer.closeDrawer();
 }
 
-function navigateToSearch(args) {
-    const sideDrawer = appModule.getRootView();
-    const featuredFrame = frameModule.getFrameById("root");
+export function navigateToSearch(args) {
+    const sideDrawer = Application.getRootView();
+    const featuredFrame = Frame.getFrameById("root");
     featuredFrame.navigate({
         moduleName: "search-page",
         clearHistory: true
     });
     sideDrawer.closeDrawer();
 }
-
-exports.navigateToFeatured = navigateToFeatured;
-exports.navigateToBrowse = navigateToBrowse;
-exports.navigateToSearch = navigateToSearch;
 ```
 ``` app-root.ts
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
-import { getRootView } from "tns-core-modules/application";
-import { EventData } from "tns-core-modules/data/observable";
-import { View } from "tns-core-modules/ui/core/view";
-import { getFrameById } from "tns-core-modules/ui/frame";
+import { Application, Frame, View, EventData } from "@nativescript/core";
 
 export function navigateToFeatured(args: EventData) {
     const sideDrawer: RadSideDrawer = <RadSideDrawer>getRootView();
@@ -512,12 +498,11 @@ An alternative navigation pattern for the `SideDrawer` would be to have the main
 </nsDrawer:RadSideDrawer>
 ```
 ``` app-root.js
-const appModule = require("tns-core-modules/application");
-const frameModule = require("tns-core-modules/ui/frame");
+import { Application, Frame } from "@nativescript/core";
 
-function resetFeatured(args) {
-    const sideDrawer = appModule.getRootView();
-    const featuredFrame = frameModule.getFrameById("featured");
+export function resetFeatured(args) {
+    const sideDrawer = Application.getRootView();
+    const featuredFrame = Frame.getFrameById("featured");
     featuredFrame.navigate({
         moduleName: "featured-page",
         clearHistory: true
@@ -525,8 +510,8 @@ function resetFeatured(args) {
     sideDrawer.closeDrawer();
 }
 
-function openBrowseModal(args) {
-    const sideDrawer = appModule.getRootView();
+export function openBrowseModal(args) {
+    const sideDrawer = Application.getRootView();
     const view = args.object;
     const context = null;
     const closeCallback = null;
@@ -535,8 +520,8 @@ function openBrowseModal(args) {
     sideDrawer.closeDrawer();
 }
 
-function openSearchModal(args) {
-    const sideDrawer = appModule.getRootView();
+export function openSearchModal(args) {
+    const sideDrawer = Application.getRootView();
     const view = args.object;
     const context = null;
     const closeCallback = null;
@@ -544,20 +529,14 @@ function openSearchModal(args) {
     view.showModal("search-root", context, closeCallback, fullscreen);
     sideDrawer.closeDrawer();
 }
-
-exports.resetFeatured = resetFeatured;
-exports.openBrowseModal = openBrowseModal;
-exports.openSearchModal = openSearchModal;
 ```
 ``` app-root.ts
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
-import { EventData } from "tns-core-modules/data/observable";
-import { View } from "tns-core-modules/ui/core/view";
-import { getFrameById } from "tns-core-modules/ui/frame";
+import { Application, Frame, View, EventData } from "@nativescript/core";
 
 export function resetFeatured(args: EventData) {
-    const sideDrawer: RadSideDrawer = <RadSideDrawer>getRootView();
-    const featuredFrame = getFrameById("featured");
+    const sideDrawer: RadSideDrawer = <RadSideDrawer>Application.getRootView();
+    const featuredFrame = Frame.getFrameById("featured");
     featuredFrame.navigate({
         moduleName: "featured-page",
         clearHistory: true
@@ -566,7 +545,7 @@ export function resetFeatured(args: EventData) {
 }
 
 export function openBrowseModal(args: EventData) {
-    const sideDrawer: RadSideDrawer = <RadSideDrawer>getRootView();
+    const sideDrawer: RadSideDrawer = <RadSideDrawer>Application.getRootView();
     const view: View = <View>args.object;
     const context = null;
     const closeCallback = null;
@@ -576,7 +555,7 @@ export function openBrowseModal(args: EventData) {
 }
 
 export function openSearchModal(args: EventData) {
-    const sideDrawer: RadSideDrawer = <RadSideDrawer>getRootView();
+    const sideDrawer: RadSideDrawer = <RadSideDrawer>Application.getRootView();
     const view: View = <View>args.object;
     const context = null;
     const closeCallback = null;

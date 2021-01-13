@@ -333,8 +333,7 @@ export function onPageLoaded(args: EventData) {
 You can inject a reference to the current `Page` in the constructor of your component using the Angular Dependency Injection (DI).
 ```TypeScript
 import { Component } from "@angular/core";
-import { isAndroid } from "tns-core-modules/platform";
-import { Page } from "tns-core-modules/ui/page";
+import { isAndroid, Page } from "@nativescript/core";
 
 @Component({
     selector: "ns-items",
@@ -372,35 +371,30 @@ Here is an example of showing different action items when the app is in "editing
 </ActionBar>
 ```
 ```JavaScript
-var observable = require("tns-core-modules/data/observable");
-function onLoaded(args) {
+import { Observable } from "@nativescript/core";
+export function onLoaded(args) {
     var page = args.object;
-    page.bindingContext = new observable.Observable();
+    page.bindingContext = new Observable();
     page.bindingContext.set("isEditing", false);
 }
-exports.onLoaded = onLoaded;
-function onEdit(args) {
+export function onEdit(args) {
     console.log("Edit item tapped.");
     var btn = args.object;
     btn.bindingContext.set("isEditing", true);
 }
-exports.onEdit = onEdit;
-function onSave(args) {
+export function onSave(args) {
     console.log("Save item tapped.");
     var btn = args.object;
     btn.bindingContext.set("isEditing", false);
 }
-exports.onSave = onSave;
-function onCancel(args) {
+export function onCancel(args) {
     console.log("Cancel item tapped.");
     var btn = args.object;
     btn.bindingContext.set("isEditing", false);
 }
-exports.onCancel = onCancel;
 ```
 ```TypeScript
-import { EventData, Observable } from "tns-core-modules/data/observable";
-import { View } from "tns-core-modules/ui/core/view";
+import { Observable, View, EventData } from "@nativescript/core";
 
 export function onLoaded(args: EventData) {
     let page = <View>args.object;
@@ -408,19 +402,19 @@ export function onLoaded(args: EventData) {
     page.bindingContext.set("isEditing", false);
 }
 
-export function onEdit(args: observable.EventData) {
+export function onEdit(args: EventData) {
     console.log("Edit item tapped.");
     let btn = <view.View>args.object;
     btn.bindingContext.set("isEditing", true);
 }
 
-export function onSave(args: observable.EventData) {
+export function onSave(args: EventData) {
     console.log("Save item tapped.");
     let btn = <view.View>args.object;
     btn.bindingContext.set("isEditing", false);
 }
 
-export function onCancel(args: observable.EventData) {
+export function onCancel(args: EventData) {
     console.log("Cancel item tapped.");
     let btn = <view.View>args.object;
     btn.bindingContext.set("isEditing", false);

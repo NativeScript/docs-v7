@@ -99,9 +99,9 @@ All discarded exceptions can be processed in the app by either subscribing to th
 For example:
 
 ```JS
-var application = require("application");
+import { Application } from "@nativescript/core";
 
-application.on(application.discardedErrorEvent, function (args) {
+Application.on(Application.discardedErrorEvent, function (args) {
     const error = args.error;
 
     console.log("Received discarded exception: ");

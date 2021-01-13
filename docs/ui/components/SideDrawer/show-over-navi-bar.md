@@ -84,8 +84,8 @@ app.run({ moduleName: "main-page" });
 If you find yourself in the need to access the {% typedoc_link classes:RadSideDrawer %} from one of your Pages you can use the new `application` module's `getRootView()` function:
 
 ```
-import * as app from "tns-core-modules/application";
+import { Application } from "@nativescript/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 
-let sideDrawer = <RadSideDrawer>app.getRootView();
+let sideDrawer = <RadSideDrawer>Application.getRootView();
 ```

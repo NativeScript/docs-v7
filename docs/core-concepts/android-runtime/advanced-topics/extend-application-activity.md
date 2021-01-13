@@ -105,19 +105,19 @@ The core modules ship with a default `androidx.appcompat.app.AppCompatActivity` 
 2. Declare the extend:
 
     ```javascript
-    const frame = require("tns-core-modules/ui/frame");
+    import { Frame, Application, setActivityCallbacks } from "@nativescript/core";
 
     const superProto = androidx.appcompat.app.AppCompatActivity.prototype;
     androidx.appcompat.app.AppCompatActivity.extend("org.myApp.MainActivity", {
           onCreate: function(savedInstanceState) {
               // Used to make sure the App is inited in case onCreate is called before the rest of the framework
-              appModule.android.init(this.getApplication());
+              Application.android.init(this.getApplication());
 
              // Set the isNativeScriptActivity in onCreate (as done in the original NativeScript activity code)
              // The JS constructor might not be called because the activity is created from Android.
              this.isNativeScriptActivity = true;
              if(!this._callbacks) {
-                 frame.setActivityCallbacks(this);
+                 setActivityCallbacks(this);
              }
              // Modules will take care of calling super.onCreate, do not call it here
              this._callbacks.onCreate(this, savedInstanceState, this.getIntent(), superProto.onCreate);
@@ -155,7 +155,7 @@ The core modules ship with a default `androidx.appcompat.app.AppCompatActivity` 
     });
     ```
     ```typescript
-    import {setActivityCallbacks, AndroidActivityCallbacks} from "tns-core-modules/ui/frame";
+    import { Frame, Application, setActivityCallbacks, AndroidActivityCallbacks } from "@nativescript/core";
 
     @JavaProxy("org.myApp.MainActivity")
     class Activity extends androidx.appcompat.app.AppCompatActivity {

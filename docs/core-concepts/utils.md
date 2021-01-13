@@ -221,9 +221,7 @@ function showKeyboard(args) {
 exports.showKeyboard = showKeyboard;
 ```
 ```TypeScript
-import { Page } from "tns-core-modules/ui/page";
-import { TextField } from "tns-core-modules/ui/text-field";
-import { Button } from "tns-core-modules/ui/button"
+import { Page, TextField, Button } from "@nativescript/core";
 
 export function showKeyboard(args: EventData) {
     var button: Button = <Button>args.object;

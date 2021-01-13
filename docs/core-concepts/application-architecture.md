@@ -13,20 +13,20 @@ In this article we are going to review the architecture of a NativeScript applic
 
 ## Entry Point
 
-The entry point for a core NativeScript application is declared in the app root folder's `package.json` file under the property `main`. This is usually declared as `app.js` or `app.ts` in case you have created a TypeScript project. You can use this file to perform app-level initializations, but the primary purpose of the file is to pass control to the app's root module. To do this, you need to call the `application.run()` method and pass a `NavigationEntry` with the desired `moduleName` as the path to the root module relative to your `/app` folder.
+The entry point for a core NativeScript application is declared in the app root folder's `package.json` file under the property `main`. This is usually declared as `app.js` or `app.ts` in case you have created a TypeScript project. You can use this file to perform app-level initializations, but the primary purpose of the file is to pass control to the app's root module. To do this, you need to call the `Application.run()` method and pass a `NavigationEntry` with the desired `moduleName` as the path to the root module relative to your `/app` folder.
 
 ``` JavaScript
 // app.js
-const application = require("tns-core-modules/application");
-application.run({ moduleName: "app-root" });
+import { Application } from "@nativescript/core";
+Application.run({ moduleName: "app-root" });
 ```
 ``` TypeScript
 // app.ts
-import * as application from "tns-core-modules/application";
-application.run({ moduleName: "app-root" });
+import { Application } from "@nativescript/core";
+Application.run({ moduleName: "app-root" });
 ```
 
-> **Important:** Do not place any code after the `application.run()` method call as it will not be executed on iOS.
+> **Important:** Do not place any code after the `Application.run()` method call as it will not be executed on iOS.
 
 > **Important:** Prior to NativeScript 4.0.0 the `start()` method automatically created an underlying root `Frame` instance that wrapped your pages. The new `run()` method will set up the root element of the provided module as the application root element. This effectively means that apart from `Page` you can now have other roots of your app like `TabView` and `SideDrawer`. The `start()` method is now marked as deprecated.
 
@@ -57,7 +57,7 @@ exports.onPageLoaded = onPageLoaded;
 ```
 ``` TypeScript
 // home-page.ts
-import { EventData } from "tns-core-modules/data/observable";
+import { EventData } from "@nativescript/core";
 
 export function onPageLoaded(args: EventData): void {
     console.log("Page Loaded");
@@ -76,7 +76,7 @@ export function onPageLoaded(args: EventData): void {
 
 These modules are used as the root for UI containers. Currently, there are only two types of UI containers in a NativeScript app:
 
-* The app container - it is only one. You set its root module by passing it to the `application.run()` method.
+* The app container - it is only one. You set its root module by passing it to the `Application.run()` method.
 * Modal view containers - You can have a lot of these. You set a modal view's root module by passing it to the `showModal()` method of any UI component.
 
 A root module can have only one component at the root of its content. You can put virtually any UI component as a root, but the most commonly used components are the one that can have children - the layouts, `TabView`, `SideDrawer` or `Frame`. The `Frame` component can't have children, but it can display and navigate between page modules.
@@ -98,7 +98,7 @@ exports.onFrameLoaded = onFrameLoaded;
 ```
 ``` TypeScript
 // app-root.ts
-import { EventData } from "tns-core-modules/data/observable";
+import { EventData } from "@nativescript/core";
 
 export function onFrameLoaded(args: EventData): void {
     console.log("Frame Loaded");
@@ -133,7 +133,7 @@ exports.onPageLoaded = onPageLoaded;
 ```
 ``` TypeScript
 // home-page.ts
-import { EventData } from "tns-core-modules/data/observable";
+import { EventData } from "@nativescript/core";
 
 export function onPageLoaded(args: EventData): void {
     console.log("Page Loaded");
@@ -150,19 +150,19 @@ export function onPageLoaded(args: EventData): void {
 
 The NativeScript Core framework also provides a way to set application wide styling. The default place to do that is in the `app.css` file in the app root folder. All css rules that are declared in this file will be applied to all application modules.
 
-You can change the name of the file from which the application-wide CSS is loaded. You need to do the change before the `application.run()` method is called as shown below:
+You can change the name of the file from which the application-wide CSS is loaded. You need to do the change before the `Application.run()` method is called as shown below:
 
 ``` JavaScript
-var application = require("tns-core-modules/application");
-application.setCssFileName("style.css");
+import { Application } from "@nativescript/core";
+Application.setCssFileName("style.css");
 
-application.run({ moduleName: "main-page" });
+Application.run({ moduleName: "main-page" });
 ```
 ``` TypeScript
-import * as application from "tns-core-modules/application";
-application.setCssFileName("style.css");
+import { Application } from "@nativescript/core";
+Application.setCssFileName("style.css");
 
-application.run({ moduleName: "main-page" });
+Application.run({ moduleName: "main-page" });
 ```
 
 Styling is covered in detail in the [styling article]({% slug styling %}).
@@ -220,19 +220,17 @@ In the following example we set the `bindingContext` of the `Page` in its `loade
 ```
 ``` JavaScript
 // home-page.js
-const fromObject = require("tns-core-modules/data/observable").fromObject;
+import { fromObject } from "@nativescript/core";
 
-function onPageLoaded(args) {
+export function onPageLoaded(args) {
     const page = args.object;
     const source = fromObject({ text: "Hooray! Home Page loaded!" });
     page.bindingContext = source;
 }
-exports.onPageLoaded = onPageLoaded;
 ```
 ``` TypeScript
 // home-page.ts
-import { EventData, fromObject } from "tns-core-modules/data/observable";
-import { Page } from "tns-core-modules/ui/page";
+import { Page, EventData, fromObject } from "@nativescript/core";
 
 export function onPageLoaded(args: EventData): void {
     const page: Page = args.object;

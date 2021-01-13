@@ -25,7 +25,7 @@ The example below shows how to add an event listener by using the short (using `
 > **TIP**: All examples in this article are available for preview in NativeScript Playground. Run this example in [JavaScript](https://play.nativescript.org/?template=play-js&id=kIs7uK) or [TypeScript](https://play.nativescript.org/?template=play-tsc&id=8Rhm07).
 
 ``` JavaScript
-const Label = require("tns-core-modules/ui/label").Label;
+import { Label } from "@nativescript/core";
 const testLabel = new Label();
 testLabel.text = "Test";
 
@@ -39,7 +39,7 @@ testLabel.on("tap", onTap, this);
 testLabel.addEventListener("tap", onTap, this);
 ```
 ``` TypeScript
-import { Label, EventData } from "tns-core-modules/ui/label";
+import { Label, EventData } from "@nativescript/core";
 const testLabel = new Label();
 testLabel.text = "Test";
 
@@ -87,10 +87,10 @@ Often in NativeScript, the MVVM pattern is used with a separate view model that 
 _JavaScript example_
 ```JavaScript
 // main-view-model.js
-const observableModule = require("tns-core-modules/data/observable");
+import { fromObject } from "@nativescript/core";
 
-function HomeViewModel() {
-  var viewModel = observableModule.fromObject({
+export function HomeViewModel() {
+  var viewModel = fromObject({
     onnTap: function (args) {
       console.log("Label was pressed");
     },
@@ -98,19 +98,17 @@ function HomeViewModel() {
 
   return viewModel;
 }
-module.exports = HomeViewModel;
 ```
 ```JavaScript
 // main-page.js
-const HomeViewModel = require("./home-view-model");
+import { HomeViewModel } from "./home-view-model";
 
-function pageLoaded(args) {
+export function pageLoaded(args) {
   const page = args.object;
 
   const homeViewModel = new HomeViewModel();
   page.bindingContext = homeViewModel;
 }
-exports.pageLoaded = pageLoaded;
 ```
 ```XML
 {%raw%}
@@ -123,7 +121,7 @@ exports.pageLoaded = pageLoaded;
 _TypeScript example_
 ```TypeScript
 // main-view-model.ts
-import { Observable } from 'tns-core-modules/data/observable';
+import { Observable } from '@nativescript/core';
 import { GestureEventData } from "tns-core-modules/ui/gestures";
 
 export class HomeViewModel extends Observable {
@@ -138,8 +136,7 @@ export class HomeViewModel extends Observable {
 ```
 ```TypeScript
 // main-page.ts
-import { EventData } from 'tns-core-modules/data/observable';
-import { Page } from 'tns-core-modules/ui/page';
+import { EventData, Page } from '@nativescript/core';
 import { HomeViewModel } from './home-view-model';
 
 export function pageLoaded(args: EventData) {
@@ -217,7 +214,7 @@ The `Observable` class provides a built-in event called `propertyChange` that is
 The demo below shows how to subscribe to the `propertyChange` event.
 
 ``` JavaScript
-const Observable = require("tns-core-modules/data/observable").Observable;
+import { Observable } from "@nativescript/core";
 const observableObject = new Observable();
 
 observableObject.on(Observable.propertyChangeEvent, function(propertyChangeData){
@@ -225,7 +222,7 @@ observableObject.on(Observable.propertyChangeEvent, function(propertyChangeData)
 });
 ```
 ``` TypeScript
-import { Observable } from "tns-core-modules/data/observable";
+import { Observable } from "@nativescript/core";
 const observableObject = new Observable();
 
 observableObject.on(Observable.propertyChangeEvent, function(propertyChangeData: PropertyChangeData){
@@ -238,9 +235,9 @@ observableObject.on(Observable.propertyChangeEvent, function(propertyChangeData:
 It is important to note that the `propertyChange` event is critical for the entire [data binding]({% slug binding %}) system. To take advantage of the data binding mechanism, all you have to do is make your business object **inherit** the `Observable` class.
 
 ``` JavaScript
-const observableModule = require("tns-core-modules/data/observable");
+import { Observable } from "@nativescript/core";
 
-var MyClass = (function (_super) {
+export const MyClass = (function (_super) {
   __extends(MyClass, _super);
   
   function MyClass() {
@@ -259,12 +256,10 @@ var MyClass = (function (_super) {
   });
   
   return MyClass;
-})(observableModule.Observable);
-
-exports.MyClass = MyClass;
+})(Observable);
 ```
 ``` TypeScript
-import { Observable } from "tns-core-modules/data/observable";
+import { Observable } from "@nativescript/core";
 
 export class MyClass extends Observable {
   private _myProperty:number;
@@ -336,9 +331,7 @@ A weak event, as its name suggests, creates a weak reference to the listener obj
 Using weak event listeners is very similar to normal events. The demo below shows how to add a weak event listener (code comments are included for clarity):
 
 ``` JavaScript
-var weakEventListenerModule = require("tns-core-modules/ui/core/weak-event-listener");
-var Button = require("tns-core-modules/ui/button").Button;
-var Observable = require("tns-core-modules/data/observable").Observable;
+import { Observable, Button, addWeakEventListener } from "@nativescript/core";
 
 var testButton = new Button();
 testButton.text = "Test";
@@ -354,7 +347,6 @@ let handlePropertyChange = function () {
   this.text = counter + "";
 };
 
-let weakEL = weakEventListenerModule.WeakEventListener;
 let weakEventListenerOptions: weakEventListenerModule.WeakEventListenerOptions = {
   // create a weak reference to the event listener object
   targetWeakRef: new WeakRef(this),
@@ -369,12 +361,10 @@ let weakEventListenerOptions: weakEventListenerModule.WeakEventListenerOptions =
   // (optional) set a specialized property used for extra event recognition
   key: this.options.targetProperty
 }
-weakEL.addWeakEventListener(this.weakEventListenerOptions);
+addWeakEventListener(this.weakEventListenerOptions);
 ```
 ``` TypeScript
-import * as weakEventListenerModule from "tns-core-modules/ui/core/weak-event-listener";
-import { Button } from "tns-core-modules/ui/button";
-import { Observable } from "tns-core-modules/data/observable";
+import { Observable, Button, addWeakEventListener } from "@nativescript/core";
 
 const testButton = new Button();
 testButton.text = "Test";
@@ -390,7 +380,6 @@ let handlePropertyChange = function () {
   this.text = counter + "";
 };
 
-let weakEL = weakEventListenerModule.WeakEventListener;
 let weakEventListenerOptions: weakEventListenerModule.WeakEventListenerOptions = {
   // create a weak reference to the event listener object
   targetWeakRef: new WeakRef(this),
@@ -405,7 +394,7 @@ let weakEventListenerOptions: weakEventListenerModule.WeakEventListenerOptions =
   // (optional) set the context in which to execute the handler
   handlerContext: testButton
 }
-weakEL.addWeakEventListener(this.weakEventListenerOptions);
+addWeakEventListener(this.weakEventListenerOptions);
 ```
 
 __Example 6__ shows how to attach a weak event listener to an observable object instance. A closer look at the `handlePropertyChange` function shows that `text` property of the `this` object is changed when the `propertyChange` event is raised (via the button tap event). The function demonstrates how to use the `handlerContext` property&mdash;its value is taken as an argument to `this` inside the event handler function.
@@ -415,8 +404,10 @@ __Example 6__ shows how to attach a weak event listener to an observable object 
 The `targetWeakRef` and `key` properties are optional when invoking a function on an event. However, they allow for removing an event listener. The properties are used as keys for a key-value pair that stores weak event listeners.
 
 ``` JavaScript
-weakEL.removeWeakEventListener(this.weakEventListenerOptions);
+import { removeWeakEventListener } from "@nativescript/core";
+removeWeakEventListener(this.weakEventListenerOptions);
 ```
 ``` TypeScript
-weakEL.removeWeakEventListener(this.weakEventListenerOptions);
+import { removeWeakEventListener } from "@nativescript/core";
+removeWeakEventListener(this.weakEventListenerOptions);
 ```

@@ -68,11 +68,11 @@ If you were using the {% typedoc_link classes:RadSideDrawer %} element in 3.x.x 
 <page-router-outlet tkMainContent></page-router-outlet>
 ```
 
-If you find yourself in the need to access the {% typedoc_link classes:RadSideDrawer %} from one of your Pages you can use the new `application` module's `getRootView()` function:
+If you find yourself in the need to access the {% typedoc_link classes:RadSideDrawer %} from one of your Pages you can use the `Application.getRootView()` function:
 
 ```
-import * as app from "tns-core-modules/application";
+import { Application } from "@nativescript/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 
-let sideDrawer = <RadSideDrawer>app.getRootView();
+let sideDrawer = <RadSideDrawer>Application.getRootView();
 ```

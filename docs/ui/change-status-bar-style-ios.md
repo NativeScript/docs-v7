@@ -61,29 +61,25 @@ In iOS there are two possible styles that you could set to the `UINavigationBar`
 
 - Changing the style of UINavigationBar 
 
-You should use the `frame` module to access the native instance of `UINavigationBar`. Then you can use its `barStyle` property to change its style to `Black`.
+You should use the `Frame` class to access the native instance of `UINavigationBar`. Then you can use its `barStyle` property to change its style to `Black`.
 
 > Example 3: How to change UINavigationBar style using native code
 
 ``` JavaScript
-var frame = require("tns-core-modules/ui/frame");
-var platform = require("tns-core-modules/platform");
-function loaded(args) {
-    if (platform.isIOS) {
-        var navigationBar = frame.topmost().ios.controller.navigationBar;
+import { isIOS, Frame } from "@nativescript/core";
+export function loaded(args) {
+    if (isIOS) {
+        var navigationBar = Frame.topmost().ios.controller.navigationBar;
         navigationBar.barStyle = UIBarStyle.Black;
     }
 }
-exports.loaded = loaded;
 ```
 ``` TypeScript
-import { EventData } from "tns-core-modules/data/observable";
-import { topmost } from "tns-core-modules/ui/frame";
-import { isIOS } from "tns-core-modules/platform";
+import { isIOS, Frame, EventData } from "@nativescript/core";
 
 export function loaded(args: EventData){
      if (isIOS) {
-        let navigationBar = topmost().ios.controller.navigationBar;
+        let navigationBar = Frame.topmost().ios.controller.navigationBar;
         navigationBar.barStyle = UIBarStyle.Black;
     }
 }
