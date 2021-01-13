@@ -44,10 +44,9 @@ By design, a `Page` can't be declared as a child of another component. It is use
 </Page>
 ```
 ``` item-page.js
-function onPageLoaded(args) {
+export function onPageLoaded(args) {
     console.log("Page Loaded");
 }
-exports.onPageLoaded = onPageLoaded;
 ```
 ``` item-page.ts
 import { EventData } from "@nativescript/core";
@@ -81,12 +80,11 @@ The following example demonstrates the implementation of the rest of the forward
 </Page>
 ```
 ``` featured-page.js
-function onTap(args) {
+export function onTap(args) {
     const button = args.object;
     const page = button.page;
     page.frame.navigate("item-page");
 }
-exports.onTap = onTap;
 ```
 ``` featured-page.ts
 import { EventData, Button, Page } from "@nativescript/core";
@@ -119,17 +117,15 @@ It can also be called upward navigation since you are going up in your navigatio
 </Page>
 ```
 ``` item-page.js
-function onPageLoaded(args) {
+export function onPageLoaded(args) {
     console.log("Page Loaded");
 }
 
-function onTap(args) {
+export function onTap(args) {
     const button = args.object;
     const page = button.page;
     page.frame.goBack();
 }
-exports.onTap = onTap;
-exports.onPageLoaded = onPageLoaded;
 ```
 ``` item-page.ts
 import { EventData, Button, Page } from "@nativescript/core";
@@ -176,27 +172,23 @@ The most simple and straight forward way to implement lateral navigation is the 
 </Page>
 ```
 ``` hub-page.js
-function navigateToFeatured(args) {
+export function navigateToFeatured(args) {
     const button = args.object;
     const page = button.page;
     page.frame.navigate("featured-page");
 }
 
-function navigateToBrowse(args: EventData) {
+export function navigateToBrowse(args: EventData) {
     const button = args.object;
     const page = button.page;
     page.frame.navigate("browse-page");
 }
 
-function navigateToSearch(args: EventData) {
+export function navigateToSearch(args: EventData) {
     const button = args.object;
     const page = button.page;
     page.frame.navigate("search-page");
 }
-
-exports.navigateToFeatured = navigateToFeatured;
-exports.navigateToBrowse = navigateToBrowse;
-exports.navigateToSearch = navigateToSearch;
 ```
 ``` hub-page.ts
 import { EventData, Button, Page } from "@nativescript/core";
@@ -271,13 +263,12 @@ Here is a code sample of the `BottomNavigation` declaration that matches the dia
 </BottomNavigation>
 ```
 ``` app-root.js
-function onSelectedIndexChanged(args) {
+export function onSelectedIndexChanged(args) {
     console.log(`Selected index has changed ( Old index: ${args.oldIndex} New index: ${args.newIndex} )`);
 }
-exports.onSelectedIndexChanged = onSelectedIndexChanged;
 ```
 ``` app-root.ts
-import { SelectedIndexChangedEventData } from "tns-core-modules/ui/bottom-navigation";
+import { SelectedIndexChangedEventData } from "@nativescript/core";
 
 export function onSelectedIndexChanged(args: SelectedIndexChangedEventData) {
     console.log(`Selected index has changed ( Old index: ${args.oldIndex} New index: ${args.newIndex} )`);
@@ -320,18 +311,16 @@ The following code sample demonstrates how you can implement the Search modal vi
 </Page>
 ```
 ``` featured-page.js
-function openSearchModal(args) {
+export function openSearchModal(args) {
     const view = args.object;
     const context = null;
     const closeCallback = null;
     const fullscreen = true;
     view.showModal("search-root", context, closeCallback, fullscreen);
 }
-exports.openSearchModal = openSearchModal;
 ```
 ``` featured-page.ts
-import { EventData } from "@nativescript/core";
-import { View } from "tns-core-modules/ui/core/view";
+import { EventData, View } from "@nativescript/core";
 
 export function openSearchModal(args: EventData) {
     const view: View = <View>args.object;
@@ -354,15 +343,13 @@ export function openSearchModal(args: EventData) {
 </Page>
 ```
 ``` search-page.js
-function closeModal(args) {
+export function closeModal(args) {
     const view = args.object;
     view.closeModal();
 }
-exports.closeModal = closeModal;
 ```
 ``` search-page.ts
-import { EventData } from "@nativescript/core";
-import { View } from "tns-core-modules/ui/core/view";
+import { EventData, View } from "@nativescript/core";
 
 export function closeModal(args: EventData) {
     const view: View = <View>args.object;

@@ -38,7 +38,7 @@ You can implement this by creating four files:
 This file holds type definitions for the common logic that will be imported in the app that is using the plugin.
 _my-button.d.ts_
 ```TypeScript
-import { View, Style, Property, CssProperty, EventData } from "tns-core-modules/ui/core/view";
+import { View, Style, Property, CssProperty, EventData } from "@nativescript/core";
 
 export class MyButton extends View {
     // static field used from component-builder module to find events on controls.
@@ -62,11 +62,11 @@ In the following way you create the common logic:
 _my-button.common.ts_
 ```TypeScript
 import { MyButton as ButtonDefinition } from "./my-button";
-import { View, Style, Property, CssProperty, isIOS } from "tns-core-modules/ui/core/view";
+import { View, Style, Property, CssProperty, isIOS } from "@nativescript/core";
 
 export const textProperty = new Property<MyButtonBase, string>({ name: "text", defaultValue: "", affectsLayout: isIOS });
 
-// using myOpacity instead of opacity as it will override the one defined in `tns-core-modules`
+// using myOpacity instead of opacity as it will override the one defined in `@nativescript/core`
 export const myOpacityProperty = new CssProperty<Style, number>({
     name: "myOpacity", cssName: "my-opacity", defaultValue: 1, valueConverter: (v) => {
         const x = parseFloat(v);
@@ -93,7 +93,7 @@ export abstract class MyButtonBase extends View implements ButtonDefinition {
 }
 
 // Augmenting Style definition so it includes our myOpacity property
-declare module "tns-core-modules/ui/styling/style" {
+declare module "@nativescript/core/ui/styling/style" {
     interface Style {
         myOpacity: number;
     }
@@ -235,6 +235,7 @@ _my-button.ios.ts_
 import { MyButtonBase, textProperty, myOpacityProperty } from "./my-button.common";
 
 // class that handles all native 'tap' callbacks
+@NativeClass()
 class TapHandler extends NSObject {
 
     public tap(nativeButton: UIButton, nativeEvent: _UIEvent) {

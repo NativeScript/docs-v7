@@ -158,7 +158,7 @@ Then you can use it within the spec files, e.g. `example.spec.ts`:
 ```
 import { Component, ElementRef, NgZone, Renderer2 } from '@angular/core';
 import { ComponentFixture, async } from '@angular/core/testing';
-import { StackLayout } from 'tns-core-modules/ui/layouts/stack-layout';
+import { StackLayout } from '@nativescript/core';
 import {
     nsTestBedAfterEach,
     nsTestBedBeforeEach,

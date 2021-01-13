@@ -35,6 +35,7 @@ After that you need to create a custom application delegate, similar to the one 
 ``` TypeScript
 import { LocalNotifications } from 'nativescript-local-notifications';
 
+@NativeClass()
 export class CustomAppDelegate extends UIResponder implements UIApplicationDelegate {
     public static ObjCProtocols = [UIApplicationDelegate];
 

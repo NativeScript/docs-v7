@@ -162,6 +162,7 @@ You can use TypeScript to inherit from native classes.
 
 ```typescript
 // A native class with the name "JSObject" will be registered, so it should be unique
+@NativeClass()
 class JSObject extends NSObject implements NSCoding {
     public encodeWithCoder(aCoder) { /* ... */ }
 
@@ -210,6 +211,7 @@ interface G8TesseractDelegate extends NSObjectProtocol {
 
 What we want to do is define a class `G8TesseractDelegateImpl` that extends `NSObject` and implements `G8TesseractDelegate` which looks like this:
 ```typescript
+@NativeClass()
 class G8TesseractDelegateImpl
 	extends NSObject // native delegates mostly always extend NSObject
 	implements G8TesseractDelegate {

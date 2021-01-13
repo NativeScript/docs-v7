@@ -29,14 +29,14 @@ The above is a bad practice for two reasons:
 
 ### The Good Practice
 
-To resolve the above, in NativeScript, there is a developer dependency called [tns-platform-declarations].(https://preview.npmjs.com/package/tns-platform-declarations) After the intial instalation and setup, you could directly access the `android` namespace from the Android SDK.
+To resolve the above, in NativeScript, there is a developer dependency called [@nativescript/types].(https://preview.npmjs.com/package/@nativescript/types) After the intial instalation and setup, you could directly access the `android` namespace from the Android SDK.
 ```TypeScript
-// npm i tns-platform-declarations --save-dev
-// follow the setup instructions at https://preview.npmjs.com/package/tns-platform-declarations
+// npm i @nativescript/types --save-dev
+// follow the setup instructions at https://preview.npmjs.com/package/@nativescript/types
 let androidContext = android.content.Context;
 ```
 
-The `tns-platform-declarations` plugin is providing access to the Android SDK. The plugin comes with pre-generated TypeScript declaration files for all API levels from 17 to 27 exclusive (detailed usage instructions in [this documentation section](../../accessing-native-apis-with-javascript#intellisense-and-access-to-the-native-apis-via-typescript)). In cases, where we need a declaration file for a third-party library or newer API (e.g. API 28) we can generate our own definitions using the **[Android DTS generator](#android-dts-generator)**.
+The `@nativescript/types` plugin is providing access to the Android SDK. The plugin comes with pre-generated TypeScript declaration files for all API levels from 17 to 27 exclusive (detailed usage instructions in [this documentation section](../../accessing-native-apis-with-javascript#intellisense-and-access-to-the-native-apis-via-typescript)). In cases, where we need a declaration file for a third-party library or newer API (e.g. API 28) we can generate our own definitions using the **[Android DTS generator](#android-dts-generator)**.
 
 ## Android DTS Generator
 
@@ -154,4 +154,4 @@ By repeating the steps above, we've found that:
 - Android support 23 typings(built with super jar from Android API 23) can be reused until Android API 25
 - Android support 26 typings(built with super jar from Android API 26) can be reused for API 26 and 27
 
-The corresponding typings files can be found in the `tns-platform-declarations` package. The repo's [Makefile](https://github.com/NativeScript/android-dts-generator/blob/master/Makefile) can be used as a reference for creating these typings files.
+The corresponding typings files can be found in the `@nativescript/types` package. The repo's [Makefile](https://github.com/NativeScript/android-dts-generator/blob/master/Makefile) can be used as a reference for creating these typings files.

@@ -580,7 +580,7 @@ If using sass (dart-sass), you need to modify your webpack configuration to use 
 {
     test: /\.scss$/,
     use: [
-        "nativescript-dev-webpack/css2json-loader",
+        "@nativescript/webpack/css2json-loader",
         "sass-loader"
     ]
 }
@@ -590,7 +590,7 @@ Replace this with following code
 {
     test: /\.scss$/,
     use: [
-        "nativescript-dev-webpack/css2json-loader",
+        "@nativescript/webpack/css2json-loader",
         {
             loader: "sass-loader",
             options: {
@@ -600,7 +600,7 @@ Replace this with following code
     ]
 },
 ```
-> **Note:** Webpack configuration file may get overwritten when updating `nativescript-dev-webpack`. Use [custom webpack configuration](https://docs.nativescript.org/tooling/custom-webpack-configuration) to make changes.
+> **Note:** Webpack configuration file may get overwritten when updating `@nativescript/webpack`. Use [custom webpack configuration](https://docs.nativescript.org/tooling/custom-webpack-configuration) to make changes.
 
 For a new project, you can use a template with SASS pre-enabled. A full list of officially supported templates can be found in [the App Templates GitHub repository](https://github.com/NativeScript/nativescript-app-templates).
 ```

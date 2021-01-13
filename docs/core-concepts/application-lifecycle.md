@@ -91,7 +91,7 @@ For a full list, see the official [Angular Lifecycle Hooks docs](https://angular
 The starting point of an Angular application is the `platformNativeScriptDynamic().bootstrapModule()` method. It takes the root module as an argument:
 
 ``` TypeScript
-import { platformNativeScriptDynamic } from "nativescript-angular/platform";
+import { platformNativeScriptDynamic } from "@nativescript/angular";
 import { AppModule } from "./app.module";
 
 platformNativeScriptDynamic().bootstrapModule(AppModule).then(() => {
@@ -388,43 +388,43 @@ NativeScript applications have the following Android specific activity events:
 
 {% nativescript %}
 ``` JavaScript
-import { Application } from "@nativescript/core";
+import { Application, isAndroid } from "@nativescript/core";
 
-if (application.android) {
-    application.android.on(application.AndroidApplication.activityCreatedEvent, function (args) {
+if (isAndroid) {
+    Application.android.on(AndroidApplication.activityCreatedEvent, function (args) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
     });
     
-    application.android.on(application.AndroidApplication.activityDestroyedEvent, function (args) {
+    Application.android.on(AndroidApplication.activityDestroyedEvent, function (args) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
     
-    application.android.on(application.AndroidApplication.activityStartedEvent, function (args) {
+    Application.android.on(AndroidApplication.activityStartedEvent, function (args) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
     
-    application.android.on(application.AndroidApplication.activityPausedEvent, function (args) {
+    Application.android.on(AndroidApplication.activityPausedEvent, function (args) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
     
-    application.android.on(application.AndroidApplication.activityResumedEvent, function (args) {
+    Application.android.on(AndroidApplication.activityResumedEvent, function (args) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
     
-    application.android.on(application.AndroidApplication.activityStoppedEvent, function (args) {
+    Application.android.on(AndroidApplication.activityStoppedEvent, function (args) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
     
-    application.android.on(application.AndroidApplication.saveActivityStateEvent, function (args) {
+    Application.android.on(AndroidApplication.saveActivityStateEvent, function (args) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
     });
     
-    application.android.on(application.AndroidApplication.activityResultEvent, function (args) {
+    Application.android.on(AndroidApplication.activityResultEvent, function (args) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity +
             ", requestCode: " + args.requestCode + ", resultCode: " + args.resultCode + ", Intent: " + args.intent);
     });
     
-    application.android.on(application.AndroidApplication.activityBackPressedEvent, function (args) {
+    Application.android.on(AndroidApplication.activityBackPressedEvent, function (args) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
         // Set args.cancel = true to cancel back navigation and do something custom.
     });
@@ -481,7 +481,7 @@ Application.run({ moduleName: "app-root" });
 {% endnativescript %}
 {% angular %}
 ```TypeScript
-import { platformNativeScriptDynamic } from "nativescript-angular/platform";
+import { platformNativeScriptDynamic } from "@nativescript/angular";
 import { AppModule } from "./app.module";
 import { isAndroid, Application, AndroidApplication, AndroidActivityBundleEventData, AndroidActivityBackPressedEventData, AndroidActivityResultEventData, AndroidActivityEventData, AndroidActivityBundleEventData } from "@nativescript/core";
 
@@ -559,6 +559,8 @@ Application.run({ moduleName: "app-root" });
 ```
 ``` TypeScript
 import { Application } from "@nativescript/core";
+
+@NativeClass()
 class MyDelegate extends UIResponder implements UIApplicationDelegate {
     public static ObjCProtocols = [UIApplicationDelegate];
 
@@ -601,7 +603,7 @@ platformNativeScriptDynamic().bootstrapModule(AppModule);
 
 ```
 {% endangular %}
-> **Note**: If you’re using TypeScript in your NativeScript apps, you need to install the [tns-platform-declarations plugin](https://www.npmjs.com/package/tns-platform-declarations) to add typings for native iOS APIs such as `UIApplicationDelegate`.
+> **Note**: If you’re using TypeScript in your NativeScript apps, you need to install the [@nativescript/types plugin](https://www.npmjs.com/package/@nativescript/types) to add typings for native iOS APIs such as `UIApplicationDelegate`.
 
 ## Persist and Restore Application Settings
 

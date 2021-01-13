@@ -9,7 +9,7 @@ slug: marking-mode-none
 
 Starting with NativeScript 3.2, a new (experimental at the time) feature was added to the Android runtime called `markingMode`. Its purpose is to speed up garbage collection in the V8 engine. In some cases, a GC pass could take from 0.5 to 1 second and since it runs on the main UI thread, the user would experience a frozen app until GC is done. Setting “markingMode” to “none” will speed up the garbage collection greatly, so it would be less noticeable (if at all) to the app user. The downside of this approach is that some objects could be collected while their counterparts (in V8 or Android) are still in use. Such case is when JavaScript objects are referenced only from native code and in the eyes of the V8 GC no JS object holds reference to them. In other words – the objects are no longer “marked” as used and the V8 GC might collect them too early.
 
-The code inside `tns-core-modules` and all plugins published by the NativeScript Team (since version 5.1.0) are written in such a way, that it does not depend on the scope to keep those Java/Kotlin instances alive. This makes apps using these plugins fully compatible with the much more performant `markingMode: "none"` option.
+The code inside `@nativescript/core` and all plugins published by the NativeScript Team (since version 5.1.0) are written in such a way, that it does not depend on the scope to keep those Java/Kotlin instances alive. This makes apps using these plugins fully compatible with the much more performant `markingMode: "none"` option.
 
 ## Benefits and drawbacks of using markingMode: none
 

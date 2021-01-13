@@ -68,10 +68,9 @@ Another option to set an event handler is to use an XML declaration. You need a 
 ```
 ```JavaScript
 // main-page.js
-function onTouch(args) {
+export function onTouch(args) {
   console.log("Touch arguments: ", args);
 }
-exports.onTouch = onTouch;
 ```
 ```TypeScript
 // main-page.ts
@@ -121,8 +120,7 @@ export function pageLoaded(args) {
 _TypeScript example_
 ```TypeScript
 // main-view-model.ts
-import { Observable } from '@nativescript/core';
-import { GestureEventData } from "tns-core-modules/ui/gestures";
+import { Observable, GestureEventData } from '@nativescript/core';
 
 export class HomeViewModel extends Observable {
     onTap(args: GestureEventData): void {
@@ -164,7 +162,7 @@ The below example uses the shorthand and the full syntax to remove all listeners
 
 _Removing a button tap event listener_
 ``` JavaScript
-const Button = require("tns-core-modules/ui/button").Button;
+import { Button } from "@nativescript/core";
 
 // Removing a listener with the short syntax
 testButton.off(Button.tapEvent);
@@ -173,7 +171,7 @@ testButton.off(Button.tapEvent);
 testButton2.removeEventListener(Button.tapEvent);
 ```
 ``` TypeScript
-import { Button } from "tns-core-modules/ui/button";
+import { Button } from "@nativescript/core";
 
 // Removing a listener with the short syntax
 testButton.off(Button.tapEvent);
@@ -189,7 +187,7 @@ The base type of the event's arguments is of type [EventData](/api-reference/int
 - `eventName` - The name of the raised event.
 ```JavaScript
 // example for using EventData interface
-exports.onPageLoaded = function(args) {
+export function onPageLoaded = function(args) {
     let page = args.object;
 }
 ```

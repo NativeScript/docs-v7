@@ -14,7 +14,7 @@ NativeScript provides own property system based on a wrapper around the well kno
 
 ## Property System Classes
 
-The implementation of all property classes can be found under `tns-core-modules/ui/core/properties` module. Below, we are going to look at all exposed classes from that module.
+The implementation of all property classes can be found under `@nativescript/core` module. Below, we are going to look at all exposed classes from that module.
 
 ### Property class
 
@@ -188,7 +188,7 @@ The `CssProperties` should be registered on the `Style` class like this:
 
 ```JavaScript
 // Augmenting Style definition so it includes our myOpacity property
-declare module "tns-core-modules/ui/styling/style" {
+declare module "@nativescript/core/ui/styling/style" {
     interface Style {
         myOpacity: number;
     }
@@ -268,12 +268,11 @@ Each UI element extends the `View` class (e.g., like `StackLayout` or `Label`) a
  }
  ```
  ```JavaScript
- function onNavigatedTo(args) {
+ export function onNavigatedTo(args) {
     const page = args.object;
     let stack = page.getViewById("myStack"); // e.g. StackLayout<myStack>@file:///app/page.xml:2:5;
     let label = stack.getViewById("myLabel"); // e.g. Label<myLabel>@file:///app/main-page.xml:5:9;
  }
- exports.onNavigatedTo = onNavigatedTo;
  ```
 
 > **Angular Specific Note**: In Angular to use `getViewById` for root search, we might need to inject native `Page` object.

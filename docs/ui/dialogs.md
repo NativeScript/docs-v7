@@ -32,14 +32,14 @@ NativeScript lets you create dialogs in your app in a manner similar to the web 
 **Web browser style**
 
 ```JavaScript
-var dialogs = require("tns-core-modules/ui/dialogs");
-dialogs.alert("Your message").then(function() {
+import { Dialogs } from "@nativescript/core";
+Dialogs.alert("Your message").then(function() {
     console.log("Dialog closed!");
 });
 ```
 ```TypeScript
-import * as dialogs from "tns-core-modules/ui/dialogs";
-dialogs.alert("Your message").then(()=> {
+import { Dialogs } from "@nativescript/core";
+Dialogs.alert("Your message").then(()=> {
     console.log("Dialog closed!");
 });
 ```
@@ -47,8 +47,8 @@ dialogs.alert("Your message").then(()=> {
 **Using an options object**
 
 ```JavaScript
-var dialogs = require("tns-core-modules/ui/dialogs");
-dialogs.alert({
+import { Dialogs } from "@nativescript/core";
+Dialogs.alert({
     title: "Your title",
     message: "Your message",
     okButtonText: "Your button text"
@@ -57,8 +57,8 @@ dialogs.alert({
 });
 ```
 ```TypeScript
-import * as dialogs from "tns-core-modules/ui/dialogs";
-dialogs.alert({
+import { Dialogs } from "@nativescript/core";
+Dialogs.alert({
     title: "Your title",
     message: "Your message",
     okButtonText: "Your button text"
@@ -75,14 +75,14 @@ dialogs.alert({
 **Web browser style**
 
 ```JavaScript
-var dialogs = require("tns-core-modules/ui/dialogs");
-dialogs.confirm("Your message").then(function (result) {
+import { Dialogs } from "@nativescript/core";
+Dialogs.confirm("Your message").then(function (result) {
     console.log("Dialog result: " + result);
 });
 ```
 ```TypeScript
-import * as dialogs from "tns-core-modules/ui/dialogs";
-dialogs.confirm("Your message").then(result => {
+import { Dialogs } from "@nativescript/core";
+Dialogs.confirm("Your message").then(result => {
     console.log("Dialog result: " + result);
 });
 ```
@@ -90,8 +90,8 @@ dialogs.confirm("Your message").then(result => {
 **Using an options object**
 
 ```JavaScript
-var dialogs = require("tns-core-modules/ui/dialogs");
-dialogs.confirm({
+import { Dialogs } from "@nativescript/core";
+Dialogs.confirm({
     title: "Your title",
     message: "Your message",
     okButtonText: "Your button text",
@@ -103,8 +103,8 @@ dialogs.confirm({
 });
 ```
 ```TypeScript
-import * as dialogs from "tns-core-modules/ui/dialogs";
-dialogs.confirm({
+import { Dialogs } from "@nativescript/core";
+Dialogs.confirm({
     title: "Your title",
     message: "Your message",
     okButtonText: "Your button text",
@@ -126,16 +126,16 @@ dialogs.confirm({
 **Web browser style**
 
 ```JavaScript
-var dialogs = require("tns-core-modules/ui/dialogs");
+import { Dialogs } from "@nativescript/core";
 // Second argument is optional.
-dialogs.prompt("Your message", "Default text").then(function (r) {
+Dialogs.prompt("Your message", "Default text").then(function (r) {
     console.log("Dialog result: " + r.result + ", text: " + r.text);
 });
 ```
 ```TypeScript
-import * as dialogs from "tns-core-modules/ui/dialogs";
+import { Dialogs } from "@nativescript/core";
 // Second argument is optional.
-dialogs.prompt("Your message", "Default text").then(r => {
+Dialogs.prompt("Your message", "Default text").then(r => {
     console.log("Dialog result: " + r.result + ", text: " + r.text);
 });
 ```
@@ -143,31 +143,31 @@ dialogs.prompt("Your message", "Default text").then(r => {
 **Using an options object**
 
 ```JavaScript
-var dialogs = require("tns-core-modules/ui/dialogs");
-// inputType property can be dialogs.inputType.password, dialogs.inputType.text, or dialogs.inputType.email.
-dialogs.prompt({
+import { Dialogs } from "@nativescript/core";
+// inputType property can be Dialogs.inputType.password, Dialogs.inputType.text, or Dialogs.inputType.email.
+Dialogs.prompt({
     title: "Your title",
     message: "Your message",
     okButtonText: "Your button text",
     cancelButtonText: "Cancel text",
     neutralButtonText: "Neutral text",
     defaultText: "Default text",
-    inputType: dialogs.inputType.password
+    inputType: Dialogs.inputType.password
 }).then(function (r) {
     console.log("Dialog result: " + r.result + ", text: " + r.text);
 });
 ```
 ```TypeScript
-import * as dialogs from "tns-core-modules/ui/dialogs";
-// inputType property can be dialogs.inputType.password, dialogs.inputType.text, or dialogs.inputType.email.
-dialogs.prompt({
+import { Dialogs, inputType } from "@nativescript/core";
+// inputType property can be inputType.password, inputType.text, or inputType.email.
+Dialogs.prompt({
     title: "Your title",
     message: "Your message",
     okButtonText: "Your button text",
     cancelButtonText: "Cancel text",
     neutralButtonText: "Neutral text",
     defaultText: "Default text",
-    inputType: dialogs.inputType.password
+    inputType: inputType.password
 }).then(r => {
     console.log("Dialog result: " + r.result + ", text: " + r.text);
 });
@@ -182,16 +182,16 @@ dialogs.prompt({
 **Web browser style**
 
 ```JavaScript
-var dialogs = require("tns-core-modules/ui/dialogs");
+import { Dialogs } from "@nativescript/core";
 // User name and password arguments are optional.
-dialogs.login("Your message", "User name label text", "Password label text").then(function (r) {
+Dialogs.login("Your message", "User name label text", "Password label text").then(function (r) {
     console.log("Dialog result: " + r.result + ", user: " + r.userName + ", pwd: " + r.password);
 });
 ```
 ```TypeScript
-import * as dialogs from "tns-core-modules/ui/dialogs";
+import { Dialogs } from "@nativescript/core";
 // User name and password arguments are optional.
-dialogs.login("Your message", "User name label text", "Password label text").then(r => {
+Dialogs.login("Your message", "User name label text", "Password label text").then(r => {
     console.log("Dialog result: " + r.result + ", user: " + r.userName + ", pwd: " + r.password);
 });
 ```
@@ -199,8 +199,8 @@ dialogs.login("Your message", "User name label text", "Password label text").the
 **Using an options object**
 
 ```JavaScript
-var dialogs = require("tns-core-modules/ui/dialogs");
-dialogs.login({
+import { Dialogs } from "@nativescript/core";
+Dialogs.login({
     title: "Your title",
     message: "Your message",
     okButtonText: "Your button text",
@@ -213,8 +213,8 @@ dialogs.login({
 });
 ```
 ```TypeScript
-import * as dialogs from "tns-core-modules/ui/dialogs";
-dialogs.login({
+import { Dialogs } from "@nativescript/core";
+Dialogs.login({
     title: "Your title",
     message: "Your message",
     okButtonText: "Your button text",
@@ -237,8 +237,8 @@ dialogs.login({
 **Web browser style**
 
 ```JavaScript
-var dialogs = require("tns-core-modules/ui/dialogs");
-dialogs.action("Your message", "Cancel button text", ["Option1", "Option2"]).then(function (result) {
+import { Dialogs } from "@nativescript/core";
+Dialogs.action("Your message", "Cancel button text", ["Option1", "Option2"]).then(function (result) {
     console.log("Dialog result: " + result);
     if(result == "Options1"){
         //Do action1
@@ -248,8 +248,8 @@ dialogs.action("Your message", "Cancel button text", ["Option1", "Option2"]).the
 });
 ```
 ```TypeScript
-import * as dialogs from "tns-core-modules/ui/dialogs";
-dialogs.action("Your message", "Cancel button text", ["Option1", "Option2"]).then(result => {
+import { Dialogs } from "@nativescript/core";
+Dialogs.action("Your message", "Cancel button text", ["Option1", "Option2"]).then(result => {
     console.log("Dialog result: " + result);
     if(result == "Options1"){
         //Do action1
@@ -262,8 +262,8 @@ dialogs.action("Your message", "Cancel button text", ["Option1", "Option2"]).the
 **Using an options object**
 
 ```JavaScript
-var dialogs = require("tns-core-modules/ui/dialogs");
-dialogs.action({
+import { Dialogs } from "@nativescript/core";
+Dialogs.action({
     message: "Your message",
     cancelButtonText: "Cancel text",
     actions: ["Option1", "Option2"]
@@ -277,8 +277,8 @@ dialogs.action({
 });
 ```
 ```TypeScript
-import * as dialogs from "tns-core-modules/ui/dialogs";
-dialogs.action({
+import { Dialogs } from "@nativescript/core";
+Dialogs.action({
     message: "Your message",
     cancelButtonText: "Cancel text",
     actions: ["Option1", "Option2"]
@@ -309,7 +309,7 @@ We are also injecting the `ViewContainerRef` of this component &mdash; we are go
 
 ``` TypeScript
 import { Component, ViewContainerRef } from "@angular/core";
-import { ModalDialogService, ModalDialogOptions } from "nativescript-angular/modal-dialog";
+import { ModalDialogService, ModalDialogOptions } from "@nativescript/angular";
 
 @Component({
   template: `
@@ -365,7 +365,7 @@ Inside the `DialogContent` component, you can get the parameters by injecting a 
 
 ``` Typescript
 import { Component } from "@angular/core";
-import { ModalDialogParams } from "nativescript-angular/modal-dialog";
+import { ModalDialogParams } from "@nativescript/angular";
 
 @Component({
     selector: "modal-content",

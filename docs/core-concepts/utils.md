@@ -7,13 +7,13 @@ slug: utils
 
 # Utils
 
-To use the functionality provided by the `utils/utils` module, first require/import the module:
+To use the functionality provided by `Utils`:
 
 ```JavaScript
-const utilsModule = require("tns-core-modules/utils/utils");
+import { Utils } from "@nativescript/core";
 ```
 ```TypeScript
-import * as utils from "tns-core-modules/utils/utils";
+import { Utils } from "@nativescript/core";
 ```
 
 ### isFileOrResourcePath() function
@@ -25,11 +25,11 @@ Verify if the specified `path` points to a resource or a local file. The functio
 
 ```JavaScript
 var path = "res://icon";
-var value = utilsModule.isFileOrResourcePath(path);
+var value = Utils.isFileOrResourcePath(path);
 ```
 ```TypeScript
 const path: string  = "res://icon";
-const value: boolean = utils.isFileOrResourcePath(path);
+const value: boolean = Utils.isFileOrResourcePath(path);
 ```
 
 ### isDataURI() function
@@ -40,11 +40,11 @@ Checks if the specified URI is a [data URI](http://en.wikipedia.org/wiki/Data_UR
 
 ```JavaScript
 var url = "<url>";
-var value = utilsModule.isDataURI(url);
+var value = Utils.isDataURI(url);
 ```
 ```TypeScript
 const url: string = "<url>"; 
-const value:boolean = utils.isDataURI(url);
+const value:boolean = Utils.isDataURI(url);
 ```
 
 ### openUrl() function
@@ -52,10 +52,10 @@ const value:boolean = utils.isDataURI(url);
 Open an URL on device with the default browser
 
 ```JavaScript
-utilsModule.openUrl("https://docs.nativescript.org/core-concepts/utils")
+Utils.openUrl("https://docs.nativescript.org/core-concepts/utils")
 ```
 ```TypeScript
-utils.openUrl("https://docs.nativescript.org/core-concepts/utils")
+Utils.openUrl("https://docs.nativescript.org/core-concepts/utils")
 ```
 
 
@@ -65,11 +65,11 @@ utils.openUrl("https://docs.nativescript.org/core-concepts/utils")
 
  ```JavaScript
 var sampleString = "All of these should be escaped: ^ $ * ";
-var newString = utilsModule.escapeRegexSymbols(sampleString);
+var newString = Utils.escapeRegexSymbols(sampleString);
 ```
 ```TypeScript
 var sampleString: string = "All of these should be escaped: ^ $ * ";
-var newString: string = utils.escapeRegexSymbols(sampleString);
+var newString: string = Utils.escapeRegexSymbols(sampleString);
 ```
 
 ### convertString() function
@@ -78,27 +78,27 @@ Converts a string value to a number or boolean;
 
  ```JavaScript
 var stringToBoolean = "true";
-var booleanValue = utilsModule.convertString(stringToBoolean);
+var booleanValue = Utils.convertString(stringToBoolean);
 
 var stringToNumber = "23";
-var numberValue = utilsModule.convertString(stringToNumber);
+var numberValue = Utils.convertString(stringToNumber);
 ```
 ```TypeScript
 const stringToBoolean :string = "true";
-const booleanValue :boolean = utils.convertString(stringToBoolean);
+const booleanValue :boolean = Utils.convertString(stringToBoolean);
 
 const stringToNumber: string = "23";
-const numberValue :number = utils.convertString(stringToNumber);
+const numberValue :number = Utils.convertString(stringToNumber);
 ```
 ### getDisplayDensity() function
 
 Returns the display density of the device.
 
 ```JavaScript
-var displayDensity = utilsModule.layout.getDisplayDensity();
+var displayDensity = Utils.layout.getDisplayDensity();
 ```
 ```TypeScript
-const displayDensity = utils.layout.getDisplayDensity();
+const displayDensity = Utils.layout.getDisplayDensity();
 ```
 
 ### toDevicePixels() function
@@ -106,10 +106,10 @@ const displayDensity = utils.layout.getDisplayDensity();
 Converts value from device independent pixels to device pixels.
 
 ```JavaScript
-var devicePixels = utilsModule.layout.toDevicePixels(<dip>);
+var devicePixels = Utils.layout.toDevicePixels(<dip>);
 ```
 ```TypeScript
-const devicePixels = utils.layout.toDevicePixels(<dip>);
+const devicePixels = Utils.layout.toDevicePixels(<dip>);
 ```
 
 ### toDeviceIndependentPixels() function
@@ -117,10 +117,10 @@ const devicePixels = utils.layout.toDevicePixels(<dip>);
 Convert value to device independent pixels.
 
 ```JavaScript
-var deviceIndependentPixels = utilsModule.layout.toDeviceIndependentPixels(<px>);
+var deviceIndependentPixels = Utils.layout.toDeviceIndependentPixels(<px>);
 ```
 ```TypeScript
-const deviceIndependentPixels = utils.layout.toDeviceIndependentPixels(<px>);
+const deviceIndependentPixels = Utils.layout.toDeviceIndependentPixels(<px>);
 ```
 
 ### round() method
@@ -128,10 +128,10 @@ const deviceIndependentPixels = utils.layout.toDeviceIndependentPixels(<px>);
 Rounds value used in layout.
 
 ```JavaScript
-var value = utilsModule.layout.round(<number_value>);
+var value = Utils.layout.round(<number_value>);
 ```
 ```TypeScript
-var value = utils.layout.round(<number_value>);
+var value = Utils.layout.round(<number_value>);
 ```
 > If we set `123.56px` as a input the returned value will be `124px`. 
 
@@ -140,12 +140,12 @@ var value = utils.layout.round(<number_value>);
 The method checks if the current thread is the main thread. It will directly call the passed function if it is, or dispatches it to the main thread otherwise.
 
 ```JavaScript
-utilsModule.executeOnMainThread(() => {
+Utils.executeOnMainThread(() => {
     // ...
 })
 ```
 ```TypeScript
-utilsModule.executeOnMainThread(() => {
+Utils.executeOnMainThread(() => {
     // ...
 })
 ```
@@ -155,12 +155,12 @@ utilsModule.executeOnMainThread(() => {
 The method returns a function wrapper which executes the supplied function on the main thread. The wrapper behaves like the original function and passes all of its arguments BUT discards its return value.
 
 ```JavaScript
-utilsModule.mainThreadify(() => {
+Utils.mainThreadify(() => {
     // ...
 })
 ```
 ```TypeScript
-utilsModule.mainThreadify(() => {
+Utils.mainThreadify(() => {
     // ...
 })
 ```
@@ -174,10 +174,10 @@ utilsModule.mainThreadify(() => {
 Returns an instance of native Android application The returned value will be of type [`android.app.Application`](https://developer.android.com/reference/android/app/Application.html).
 
  ```JavaScript
-var application = utilsModule.ad.getApplication();
+var application = Utils.android.getApplication();
 ```
 ```TypeScript
-const application = utils.ad.getApplication();
+const application = Utils.android.getApplication();
 ```
 
 #### getApplicationContext() function
@@ -185,10 +185,10 @@ const application = utils.ad.getApplication();
 Returns the Android application context. The returned value will be of type [`android.content.Context`](https://developer.android.com/reference/android/content/Context.html).
 
  ```JavaScript
-var context = utilsModule.ad.getApplicationContext();
+var context = Utils.android.getApplicationContext();
 ```
 ```TypeScript
-const context = utils.ad.getApplicationContext();
+const context = Utils.android.getApplicationContext();
 ```
 
 #### getInputMethodManager() function
@@ -197,10 +197,10 @@ Returns an instance of native Android input method manager. The returned value w
 [`android.view.inputmethod.InputMethodManager`](https://developer.android.com/reference/android/view/inputmethod/InputMethodManager.html)
 
  ```JavaScript
-var inputMethodManager = utilsModule.ad.getInputMethodManager();
+var inputMethodManager = Utils.android.getInputMethodManager();
 ```
 ```TypeScript
-const inputMethodManager = utils.ad.getInputMethodManager();
+const inputMethodManager = Utils.android.getInputMethodManager();
 ```
 
 #### showSoftInput() function
@@ -212,22 +212,21 @@ Show keyboard for a specific element.
 <Button text="Show keyboard" tap="showKeyboard" class="btn btn-primary btn-active"/>
 ```
 ```JavaScript
-function showKeyboard(args) {
+export function showKeyboard(args) {
     var button = args.object;
     var page = button.page;
     var textField = page.getViewById("textfieldid");
-    utilsModule.ad.showSoftInput(textField.android);
+    Utils.android.showSoftInput(textField.android);
 }
-exports.showKeyboard = showKeyboard;
 ```
 ```TypeScript
-import { Page, TextField, Button } from "@nativescript/core";
+import { Page, TextField, Button, Utils } from "@nativescript/core";
 
 export function showKeyboard(args: EventData) {
     var button: Button = <Button>args.object;
     var page: Page = <Page>button.page;
     var textField: TextField = <TextField> page.getViewById("textfieldid");
-    utils.ad.showSoftInput(textField.android);
+    Utils.android.showSoftInput(textField.android);
 }
 ```
 
@@ -240,14 +239,13 @@ Hides the soft input method, usually a soft keyboard.
 <Button text="Hide keyboard" tap="dismissSoftInput" class="btn btn-primary btn-active"/>
 ```
 ```JavaScript
-function dismissSoftInput(args) {
-    utilsModule.ad.dismissSoftInput();
+export function dismissSoftInput(args) {
+    Utils.android.dismissSoftInput();
 }
-exports.dismissSoftInput = dismissSoftInput;
 ```
 ```TypeScript
 export function dismissSoftInput(args: EventData) {
-    utils.ad.dismissSoftInput();
+    Utils.android.dismissSoftInput();
 }
 ```
 
@@ -257,11 +255,11 @@ Converts a string array into a String [hash set](http://developer.android.com/re
 
 ```JavaScript
 var stringArr = ["a", "b", "c"]
-var stringSet = utilsModule.ad.collections.stringArrayToStringSet(stringArr);
+var stringSet = Utils.android.collections.stringArrayToStringSet(stringArr);
 ```
 ```TypeScript
 const stringArr = ["a", "b", "c"]
-const stringSet = utils.ad.collections.stringArrayToStringSet(stringArr);
+const stringSet = Utils.android.collections.stringArrayToStringSet(stringArr);
 ```
 
 #### stringSetToStringArray() function
@@ -278,7 +276,7 @@ hashSet.add(string1);
 hashSet.add(string2);
 hashSet.add(string3);
 
-var stringArray = utilsModule.ad.collections.stringSetToStringArray(hashSet);
+var stringArray = Utils.android.collections.stringSetToStringArray(hashSet);
 ```
 ```TypeScript
 const hashSet = new java.util.HashSet();
@@ -290,7 +288,7 @@ hashSet.add(string1);
 hashSet.add(string2);
 hashSet.add(string3);
 
-var stringArray = utils.ad.collections.stringSetToStringArray(hashSet);
+var stringArray = Utils.android.collections.stringSetToStringArray(hashSet);
 ```
 
 #### getDrawableId() function
@@ -298,10 +296,10 @@ var stringArray = utils.ad.collections.stringSetToStringArray(hashSet);
 Returns the drawable id from a given resource name
 
 ```JavaScript
-var drawableId = utilsModule.ad.resources.getDrawableId("icon");
+var drawableId = Utils.android.resources.getDrawableId("icon");
 ```
 ```TypeScript
-const drawableId: number = utils.ad.resources.getDrawableId("icon");
+const drawableId: number = Utils.android.resources.getDrawableId("icon");
 ```
 
 #### getStringId() function
@@ -309,10 +307,10 @@ const drawableId: number = utils.ad.resources.getDrawableId("icon");
 Returns the id of the string from the resources, while using its `name`
 
 ```JavaScript
-var stringId = utilsModule.ad.resources.getStringId("resource_string_name");
+var stringId = Utils.android.resources.getStringId("resource_string_name");
 ```
 ```TypeScript
-const stringId: string = utils.ad.resources.getStringId("resource_string_name");
+const stringId: string = Utils.android.resources.getStringId("resource_string_name");
 ```
 
 #### getId() function
@@ -320,10 +318,10 @@ const stringId: string = utils.ad.resources.getStringId("resource_string_name");
 Returns the id from a resource, while passing string with resource type and name. eg: `:drawable/<resource_name>`, `:string/<resource_name>`
 
 ```JavaScript
-var id = utilsModule.ad.resources.getId("resource_name");
+var id = Utils.android.resources.getId("resource_name");
 ```
 ```TypeScript
-const id: number = utils.ad.resources.getId("resource_name");
+const id: number = Utils.android.resources.getId("resource_name");
 ```
 
 #### getPalleteColor() function
@@ -331,12 +329,12 @@ const id: number = utils.ad.resources.getId("resource_name");
 Returns a color from the current theme using the resource color name.
 
 ```JavaScript
-var context = utilsModule.ad.getApplicationContext();
-var currentThemeColor = utilsModule.ad.resources.getPalleteColor("resource_color_name", context);
+var context = Utils.android.getApplicationContext();
+var currentThemeColor = Utils.android.resources.getPalleteColor("resource_color_name", context);
 ```
 ```TypeScript
-const context = utils.ad.getApplicationContext();
-const currentThemeColor: number = utils.ad.resources.getPalleteColor("resource_color_name", context);
+const context = Utils.android.getApplicationContext();
+const currentThemeColor: number = Utils.android.resources.getPalleteColor("resource_color_name", context);
 ```
 
 ### iOS
@@ -347,11 +345,11 @@ Converts a JavaScript array to a [NSArray](https://developer.apple.com/library/i
 
 ```JavaScript
 var jsArray = ["item1", "item2", "item3"];
-var nsArray = utilsModule.ios.collections.jsArrayToNSArray(jsArray);
+var nsArray = Utils.ios.collections.jsArrayToNSArray(jsArray);
 ```
 ```TypeScript
 const jsArray: Array<string> = ["item1", "item2", "item3"];
-const nsArray = utils.ios.collections.jsArrayToNSArray(jsArray);
+const nsArray = Utils.ios.collections.jsArrayToNSArray(jsArray);
 ```
 
 #### nsArrayToJSArray() function
@@ -360,22 +358,11 @@ Converts a NSArray to a JavaScript array.
 
 ```JavaScript
 var nsArray = new NSArray(["item1", "item2", "item3"]);
-var jsArray = utilsModule.ios.collections.nsArrayToJSArray(nsArray);
+var jsArray = Utils.ios.collections.nsArrayToJSArray(nsArray);
 ```
 ```TypeScript
 const nsArray = new NSArray(["item1", "item2", "item3"]);
-const jsArray: Array<any> = utils.ios.collections.nsArrayToJSArray(nsArray);
-```
-
-#### isLandscape() function
-
-Returns `true` if current orientation is Landscape.
- 
-```JavaScript
-var value = utilsModule.ios.isLandscape();
-```
-```TypeScript
-const value: boolean = utils.ios.isLandscape()
+const jsArray: Array<any> = Utils.ios.collections.nsArrayToJSArray(nsArray);
 ```
 
 #### MajorVersion() function
@@ -383,10 +370,10 @@ const value: boolean = utils.ios.isLandscape()
 Returns a `number` with the iOS device major version(eg 8.1 will return 8). 
 
 ```JavaScript
-console.log("iOS MajorVersion "+ utilsModule.ios.MajorVersion);
+console.log("iOS MajorVersion "+ Utils.ios.MajorVersion);
 ```
 ```TypeScript
-console.log("iOS MajorVersion "+ utils.ios.MajorVersion);
+console.log("iOS MajorVersion "+ Utils.ios.MajorVersion);
 ```
 
 #### openFile() function
@@ -394,8 +381,8 @@ console.log("iOS MajorVersion "+ utils.ios.MajorVersion);
 Opens file with associated application, while using file path.
 
 ```JavaScript
-utilsModule.ios.openFile(<file_path>);
+Utils.ios.openFile(<file_path>);
 ```
 ```TypeScript
-utils.ios.openFile(<file_path>);
+Utils.ios.openFile(<file_path>);
 ```

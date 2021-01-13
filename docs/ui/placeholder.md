@@ -25,17 +25,16 @@ The Placeholder allows you to add any native widget to your application. To do t
 ## main-page.**android**.js\main-page.**android**.ts
 
 ```JavaScript
-function creatingView(args) {
+export function creatingView(args) {
     var nativeView = new android.widget.TextView(args.context);
     nativeView.setSingleLine(true);
     nativeView.setEllipsize(android.text.TextUtils.TruncateAt.END);
     nativeView.setText("Native");
     args.view = nativeView;
 }
-exports.creatingView = creatingView;
 ```
 ```TypeScript
-import { CreateViewEventData } from "tns-core-modules/ui/placeholder";
+import { CreateViewEventData } from "@nativescript/core";
 
 export function creatingView(args: CreateViewEventData) {
     let nativeView = new android.widget.TextView(args.context);
@@ -49,15 +48,14 @@ export function creatingView(args: CreateViewEventData) {
 ## main-page.**ios**.js\main-page.**ios**.ts
 
 ```JavaScript
-function creatingView(args) {
+export function creatingView(args) {
     var nativeView = new UILabel();
     nativeView.text = "Native";
     args.view = nativeView;
 }
-exports.creatingView = creatingView;
 ```
 ```TypeScript
-import { CreateViewEventData } from "tns-core-modules/ui/placeholder";
+import { CreateViewEventData } from "@nativescript/core";
 
 export function creatingView(args: CreateViewEventData) {
     let nativeView = new UILabel();

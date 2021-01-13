@@ -50,10 +50,9 @@ All functions that are exported by the business logic file are available for bin
 ```
 ``` JavaScript
 // home-page.js
-function onPageLoaded(args) {
+export function onPageLoaded(args) {
     console.log("Page Loaded");
 }
-exports.onPageLoaded = onPageLoaded;
 ```
 ``` TypeScript
 // home-page.ts
@@ -91,10 +90,9 @@ Here is an example of an app root module:
 ```
 ``` JavaScript
 // app-root.js
-function onFrameLoaded(args) {
+export function onFrameLoaded(args) {
     console.log("Frame Loaded");
 }
-exports.onFrameLoaded = onFrameLoaded;
 ```
 ``` TypeScript
 // app-root.ts
@@ -126,10 +124,9 @@ Page modules must always have the `Page` component at the root of their content.
 ```
 ``` JavaScript
 // home-page.js
-function onPageLoaded(args) {
+export function onPageLoaded(args) {
     console.log("Page Loaded");
 }
-exports.onPageLoaded = onPageLoaded;
 ```
 ``` TypeScript
 // home-page.ts

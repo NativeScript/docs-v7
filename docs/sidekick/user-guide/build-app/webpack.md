@@ -16,7 +16,7 @@ Webpack is also highly configurable and extensible - you can customize every ste
 
 Since every project is unique and can have quite complex requirements for bundling we tried to make webpack configuration as simple as possible. After installation, the plugin will configure the bundling dependencies, and add a basic configuration that should work for most projects. Developers can (and should) extend that to fit their specific project needs. 
 
-To enable the webpack option for your application, you need to install the latest version of the [nativescript-dev-webpack](https://github.com/NativeScript/nativescript-dev-webpack) plugin as a `devDependency`. How to install a plugin as a `devDependency` is explained in [Plugins Management]({% slug plugins-management %}).
+To enable the webpack option for your application, you need to install the latest version of the [@nativescript/webpack](https://github.com/NativeScript/NativeScript/packages/webpack) plugin as a `devDependency`. How to install a plugin as a `devDependency` is explained in [Plugins Management]({% slug plugins-management %}).
 
 After you install the plugin and its dependencies, you can enable webpack for [Local]({% slug local-build %}) and [Cloud]({% slug cloud-build %}) builds.
 

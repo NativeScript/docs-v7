@@ -24,11 +24,11 @@ Webpack works by traversing your source tree starting from some "entry" modules 
 
 ## Installation and Configuration
 
-With NativeScript 6 and above, the framework is automatically adding `nativescript-dev-webpack` (as a `devDependency`) and creating a default `webpack.config.js` configuration file. The Webpack application bundling and developer workflow are enabled by default, and no further setup steps are required.
+With NativeScript 6 and above, the framework is automatically adding `@nativescript/webpack` (as a `devDependency`) and creating a default `webpack.config.js` configuration file. The Webpack application bundling and developer workflow are enabled by default, and no further setup steps are required.
 
 > **Note:** For projects created with an older version of NativeScript (version 5.x.x and prior), you can run the `tns migrate` command to add the Webpack dependencies and configuration files. Detailed instructions for installing, configuring and using Webpack with NativeScript CLI 5.x and below can be found [here](https://github.com/NativeScript/docs/blob/5.4/docs/performance-optimizations/bundling-with-webpack.md)
 
-## How nativescript-dev-webpack Works
+## How @nativescript/webpack Works
 
 Installing the plugin adds a `webpack.config.js` file which contains sensible defaults, but it is designed to be as readable and easy to modify as possible.
 
@@ -122,7 +122,7 @@ $ tns build android|ios --env.uglify
 
 ### Angular and Ahead-of-Time Compilation
 
-The NativeScript Angular projects have the [`@ngtools/webpack`](https://www.npmjs.com/package/@ngtools/webpack) plugin added by the `nativescript-dev-webpack` plugin. The `@ngtools/webpack` plugin performs Ahead-of-Time compilation and code splitting for lazily loaded modules. If your application is Ahead-of-Time compiled, you don't need the Angular compiler included in your app bundle which results in smaller application size and improved startup time. 
+The NativeScript Angular projects have the [`@ngtools/webpack`](https://www.npmjs.com/package/@ngtools/webpack) plugin added by the `@nativescript/webpack` plugin. The `@ngtools/webpack` plugin performs Ahead-of-Time compilation and code splitting for lazily loaded modules. If your application is Ahead-of-Time compiled, you don't need the Angular compiler included in your app bundle which results in smaller application size and improved startup time. 
 
 To build with Ahead-of-Time compilation provide the `--env.aot` flag:
 ```
@@ -159,7 +159,7 @@ if (snapshot) {
     config.plugins.push(new nsWebpack.NativeScriptSnapshotPlugin({
         chunk: "vendor",
         requireModules: [
-            "tns-core-modules/bundle-entry-points",
+            "@nativescript/core/bundle-entry-points",
         ],
         projectRoot,
         webpackConfig: config,

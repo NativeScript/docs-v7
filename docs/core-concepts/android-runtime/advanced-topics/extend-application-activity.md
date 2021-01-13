@@ -219,8 +219,8 @@ The core modules ship with a default `androidx.appcompat.app.AppCompatActivity` 
 
     ```javascript
         const appComponents = [
-            "tns-core-modules/ui/frame",
-            "tns-core-modules/ui/frame/activity",
+            "@nativescript/core/ui/frame",
+            "@nativescript/core/ui/frame/activity",
             resolve(__dirname, "app/activity.android.ts"),
         ];
     ```

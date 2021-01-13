@@ -19,7 +19,7 @@ Angular applications do not typically use NativeScript `View` objects directly s
 
 Angular templates look a lot like HTML. To extend the browser analogy, we can think of visual components as DOM elements that get parsed into a visual tree. Each element name is mapped to a `View` class. The renderer uses that mapping to create component instances and set their properties according to attribute values.
 
-Most visual components have a simple markup interface: just a tag with zero or more attribute values. NativeScript already provides mappings for frameworks classes shipped with the `tns-core-modules` package, and lets you register additional mappings for other components.
+Most visual components have a simple markup interface: just a tag with zero or more attribute values. NativeScript already provides mappings for frameworks classes shipped with the `@nativescript/core` package, and lets you register additional mappings for other components.
 
 Now, suppose you have a NativeScript UI plugin named `SimpleTag`:
 

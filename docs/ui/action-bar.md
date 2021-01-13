@@ -156,11 +156,10 @@ The `NavigationButton` component is a common abstraction over the iOS back butto
 </ActionBar>
 ```
 ```JavaScript
-function onNavBtnTap() {
+export function onNavBtnTap() {
     // This code will be called only in Android.
     console.log("Navigation button tapped!");
 }
-exports.onNavBtnTap = onNavBtnTap;
 ```
 ```TypeScript
 export function onNavBtnTap(){
@@ -219,14 +218,12 @@ You can define additional action buttons using the `actionItems` collection:
 </ActionBar>
 ```
 ```JavaScript
-function onShare(args) {
+export function onShare(args) {
     console.log("Share action item tapped.");
 }
-exports.onShare = onShare;
-function onDelete(args) {
+export function onDelete(args) {
     console.log("Delete action item tapped.");
 }
-exports.onDelete = onDelete;
 ```
 ```TypeScript
 export function onShare(args: observable.EventData) {
@@ -521,11 +518,10 @@ For iOS, this code adds a regular `ActionItem` with `position` set to `left`. Us
 </ActionBar>
 ```
 ```JavaScript
-function showSideDrawer(args) {
+export function showSideDrawer(args) {
     console.log("Show SideDrawer tapped.");
     // Show sidedrawer ...
 }
-exports.showSideDrawer = showSideDrawer;
 ```
 ```TypeScript
 export function showSideDrawer(args: observable.EventData) {
@@ -550,7 +546,7 @@ ActionBar {
 ```
 ```TypeScript
 import { Component, OnInit } from "@angular/core";
-import { isAndroid, isIOS } from "tns-core-modules/platform";
+import { isAndroid, isIOS } from "@nativescript/core";
 
 @Component({
     selector: "Home",

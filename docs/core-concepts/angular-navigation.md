@@ -126,7 +126,7 @@ export class GroceriesAppModule { }
 
 As usual, pass your module to the `bootstrapModule` function to start your app:
 ```TypeScript
-import { platformNativeScriptDynamic } from "nativescript-angular/platform";
+import { platformNativeScriptDynamic } from "@nativescript/angular";
 platformNativeScriptDynamic().bootstrapModule(GroceriesAppModule);
 ```
 
@@ -695,7 +695,7 @@ export class AppModule { }
 ```
 ``` app.component.ts
 import { Component } from "@angular/core";
-import { SelectedIndexChangedEventData } from "tns-core-modules/ui/tab-view";
+import { SelectedIndexChangedEventData } from "@nativescript/core";
 
 @Component({
     selector: "ns-app",
@@ -872,7 +872,7 @@ export class AppModule { }
 ```
 ``` app.component.ts
 import { Component } from "@angular/core";
-import { SelectedIndexChangedEventData } from "tns-core-modules/ui/bottom-navigation";
+import { SelectedIndexChangedEventData } from "@nativescript/core";
 
 @Component({
     selector: "ns-app",
@@ -958,7 +958,7 @@ export class SearchRootComponent implements OnInit {
 ```
 ``` search.component.ts
 import { Component, OnInit } from "@angular/core";
-import { View } from "tns-core-modules/ui/core/view"
+import { View } from "@nativescript/core"
 
 @Component({
 	selector: "Search",

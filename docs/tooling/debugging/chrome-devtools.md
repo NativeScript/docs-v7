@@ -142,7 +142,7 @@ Writing plugins is a great way to give back to the community by making applicati
 -	Elements panel (UI plugins) - The following content concerns only plugin authors who wrap and expose native Android/iOS views in their work.
     If you are a plugin author or plan to be one, you can either:
 
-    - A: start off with a nativescript plugin template, which provides you with an already well-established structure to wrap native UI views in. To get started head over to the official seed's repository and follow the README instructions - https://github.com/NativeScript/nativescript-plugin-seed
+    - A: start off with a nativescript plugin template, which provides you with an already well-established structure to wrap native UI views in. To get started head over to the official seed's repository and follow the README instructions - https://github.com/NativeScript/plugin-seed
 
     - B: extend the `tns-core-modules`'s [View](/api-reference/modules/_ui_core_view_.html) base class. Detailed information and tutorial on doing that coming soon!
 
