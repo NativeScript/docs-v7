@@ -388,7 +388,7 @@ NativeScript applications have the following Android specific activity events:
 
 {% nativescript %}
 ``` JavaScript
-import { Application, isAndroid } from "@nativescript/core";
+import { Application, AndroidApplication, isAndroid } from "@nativescript/core";
 
 if (isAndroid) {
     Application.android.on(AndroidApplication.activityCreatedEvent, function (args) {
