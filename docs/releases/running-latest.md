@@ -37,10 +37,10 @@ npm install -g nativescript@next
 	"dependencies": {
 		"@nativescript/core": "next"
 	},
-  "devDependencies": {
-    "@nativescript/android": "next",
-    "@nativescript/ios": "next"
-  }
+	"devDependencies": {
+		"@nativescript/android": "next",
+		"@nativescript/ios": "next"
+	}
 }
 ```
 
