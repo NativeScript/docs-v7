@@ -15,10 +15,6 @@ module.exports = class JekyllService {
 			cmd: "jekyll build --config _config_angular.yml,_config.yml --watch --incremental",
 			env: { JEKYLL_ENV: "angular" },
 			cleanFolder: path.normalize(`${paths.binRoot}/angular/*`)
-		}, {
-			workDir: paths.sidekickRoot,
-			cmd: "jekyll build --config _config.yml --watch --incremental",
-			cleanFolder: path.normalize(`${paths.sidekickRoot}/sidekick/*`)
 		}];
 	}
 

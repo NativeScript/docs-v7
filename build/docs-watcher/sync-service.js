@@ -6,7 +6,6 @@ module.exports = class SyncService {
 		this.watchService = watchService;
 		this.silentSyncFolders = [
 			`${paths.modulesRoot}/bin/dist/./api-reference`,
-			`${paths.sidekickRoot}/./sidekick`,
 			`${paths.vuejsRoot}/./vuejs`,
 			`${paths.root}/bin/./angular`,
 			`${paths.root}/bin/nativescript/./`

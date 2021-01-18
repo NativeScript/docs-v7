@@ -19,8 +19,6 @@ To create a new app using one of the templates, you can use the following comman
 $  tns create my-app-name --template tns-template-name
 ```
 
-> **Tip:** All of the app templates listed here are also available in [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick). In addition, Sidekick offers cloud-based builds for iOS and Android, plugin management, app store publishing, and single page templates.
-
 In the command above `tns-template-name` should be the template you wish to use. See bellow for the name of each template. 
 
 > Different versions of NativeScript can have different code in the application templates. If you create an app using an older version of the framework you might get less features from the ones included in the current NativeScript release.

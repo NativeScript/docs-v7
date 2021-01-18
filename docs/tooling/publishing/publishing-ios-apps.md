@@ -9,8 +9,6 @@ previous_url: /core-concepts/releasing-apps,/core-concepts/publishing-ios-apps
 
 # Publishing a NativeScript iOS App in the App Store
 
-> **Tip:** Instead of the CLI, use [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick) for easy app store publishing to both the iOS App Store and Google Play. Sidekick also offers starter kits, plugin management, and cloud-based builds for iOS and Android.
-
 You can publish a NativeScript app in the *App Store* the same way you would [release a purely native iOS app](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html).
 
  1. Verify that the iOS native project inside your app contains your latest changes and resources by running the following command.

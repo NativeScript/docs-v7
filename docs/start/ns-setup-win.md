@@ -12,7 +12,7 @@ previous_url: /setup/ns-cli-setup/ns-setup-win,/start/ns-setup-installer
 
 This page contains a guided walkthrough for installing NativeScript requirements and start building and running NativeScript apps on Windows.
 
-> **NOTE**: On Windows systems you can only use the NativeScript CLI to develop Android apps. This is because the NativeScript CLI uses Xcode to build iOS apps, which is only available on the macOS operating system. If you’re interested in building iOS apps on Windows, you may want to try out [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick). NativeScript Sidekick provides robust tooling for NativeScript apps, including a service that performs iOS and Android builds in the cloud, removing the need to complete these system requirements, and allowing you to build for iOS on Windows.
+> **NOTE**: On Windows systems you can only use the NativeScript CLI to develop Android apps. This is because the NativeScript CLI uses Xcode to build iOS apps, which is only available on the macOS operating system. If you’re interested in building iOS apps on Windows, you may want to try out [NativeScript Remote Builds](https://github.com/NativeScript/nativescript-remote-builds).
 
 ## Prerequisites
 * Windows 7 Service Pack 1 or later

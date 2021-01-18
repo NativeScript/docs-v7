@@ -6,7 +6,7 @@ position: 20
 ---
 
 # System Requirements
-The recommended ways to create NativeScript Applications is either through the [Command-Line Interface (CLI)](https://github.com/NativeScript/nativescript-cli) or through the [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick).
+The recommended ways to create NativeScript Applications is through the [Command-Line Interface (CLI)](https://github.com/NativeScript/nativescript-cli).
 
 # Supported iOS Versions
 The iOS Runtime supports officially iOS 9+. The metadata however is generated with the latest SDK. The metadata contains information about API availability so NativeScript allows you to both use the latest APIs, and if necessary, detect and degrade gracefully on lower iOS versions.
