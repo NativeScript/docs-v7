@@ -1,10 +1,12 @@
 {
     "versions": [
         {
-            "version": "5.4"
+            "version": "6.x",
+            "url": "https://v6.docs.nativescript.org"
         },
         {
-            "version": "6.0"
+            "version": "7.x",
+            "url": "https://docs.nativescript.org"
         }
     ]
 }
