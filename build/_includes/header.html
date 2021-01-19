@@ -85,26 +85,12 @@
                 const versionsJSON = window.location.origin.concat("/docs_versions.json");
                 const versionJSON = window.location.origin.concat("/version.json");
 
-                // const versions = {
-                //     "versions": [
-                //         {
-                //             "version": "7.0",
-                //             "url": "https://docs.nativescript.org"
-                //         },
-                //         {
-                //             "version": "6.0",
-                //             "url": "https://v6.docs.nativescript.org"
-                //         },
-                //     ]
-                // }
-                // this.versions = versions.versions;
-
                 $.getJSON(versionsJSON, function (data) {
                     this.versions = data.versions;
-                })
+                }.bind(this))
                 $.getJSON(versionJSON, function (data) {
                     this.current = data.current
-                })
+                }.bind(this))
             },
 
             // data
