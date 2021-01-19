@@ -67,7 +67,7 @@ application.run({ moduleName: 'app-root' });
 
 The example shows how to define a custom handler and three possible options for handling the error via [trace]({%slug trace%}) module or while using custom functionality.
 
-Further info about the error handing in NativeScript can be found [here](https://github.com/NativeScript/NativeScript/blob/master/HandlingErrors.md).
+Further info about the error handing in NativeScript can be found [here](https://github.com/NativeScript/NativeScript/blob/master/tools/notes/HandlingErrors.md).
 
 ## Disabling rethrowing of uncaught JS exceptions to native
 
