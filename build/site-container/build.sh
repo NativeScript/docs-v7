@@ -12,5 +12,5 @@ docker run --rm -v $(pwd):/root --entrypoint "/bin/bash" -t ns-docs-build:$VER -
 docker rmi ns-docs-build:$VER
 
 docker build -t $DOCKER_IMAGE_URL docs/build/bin
-docker push $DOCKER_IMAGE_URL
-docker rmi $DOCKER_IMAGE_URL
+# docker push $DOCKER_IMAGE_URL
+# docker rmi $DOCKER_IMAGE_URL
