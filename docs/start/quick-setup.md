@@ -106,7 +106,7 @@ an argument to a command. To reference variables in an expression use '$powershe
 
 During installation you may need to accept a User Account Control prompt to grant the script administrative privileges. Also, be aware that the script downloads and installs some big dependencies—so it’s common for the script to take a while to complete. When the script finishes, close and reopen your command prompt.
 
-> **NOTE**: On Windows and Linux systems you can only use the `tns` command to develop Android apps. This is because the NativeScript CLI uses Xcode to build iOS apps, which is only available on macOS. If you’re interested in building iOS apps on Windows or Linux, you should download [NativeScript Sidekick](https://www.nativescript.org/nativescript-sidekick).
+> **NOTE**: On Windows and Linux systems you can only use the `tns` command to develop Android apps. This is because the NativeScript CLI uses Xcode to build iOS apps, which is only available on macOS. If you’re interested in building iOS apps on Windows or Linux, you should try [NativeScript Remote Builds](https://github.com/NativeScript/nativescript-remote-builds).
 
 After the installation the system setup should have:
 * The latest stable official release of Node.js (LTS) [8.x](https://nodejs.org/dist/latest-v8.x/) 

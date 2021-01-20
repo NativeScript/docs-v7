@@ -56,7 +56,7 @@ fi
 [ ! -d $SDK_ROOT_NG ] || (cd $SDK_ROOT_NG && ./build-docs.sh)
 [ ! -d $SDK_ROOT_JS ] || (cd $SDK_ROOT_JS && ./build-docs.sh)
 [ ! -d $NG_ROOT ] || (cd $NG_ROOT && ./build-doc-snippets.sh)
-[ ! -d $MODULES_ROOT ] || (cd $MODULES_ROOT && ./build-docs.sh)
+[ ! -d $MODULES_ROOT ] || (cd $MODULES_ROOT && cp ./tools/scripts/build-docs.sh . && ./build-docs.sh)
 [ ! -d $NG_ROOT ] || (cd $NG_ROOT && ./build-docs.sh)
 
 cp $SCRIPT_PATH"/_config_angular.yml" \

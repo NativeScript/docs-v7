@@ -58,6 +58,4 @@ Example:
 
 2.  If you are using project, created before NativeScript (v5.0.0), open `<project_name>/App_Resources/Android/app.gradle` file and remove the `applicationId` key.
 
-3. If you have opened the project in NS Sidekick remove the `<project_name>/App_Resources/Android/settings.json` file
-
-4. Run the build
+3. Run the build

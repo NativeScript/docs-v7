@@ -16,16 +16,15 @@
             <span>Developers</span>
             <ul>
                 <li><a href="https://play.nativescript.org">Playground</a></li>
-                <li><a href="https://market.nativescript.org/?tab=samples&framework=all_frameworks&category=all_samples">Code Samples</a></li>
+                <!-- <li><a href="https://market.nativescript.org/?tab=samples&framework=all_frameworks&category=all_samples">Code Samples</a></li> -->
                 <li><a href="{{site.headerbaseurl}}/books-and-videos">Books &amp; Videos</a></li>
-                <li><a href="https://market.nativescript.org/?tab=templates&category=all_templates">App Templates</a></li>
+                <!-- <li><a href="https://market.nativescript.org/?tab=templates&category=all_templates">App Templates</a></li> -->
             </ul>
         </li>
         <li>
             <span>Tools</span>
             <ul>
                 <li><a href="https://www.npmjs.com/package/nativescript" target="_blank">CLI</a></li>
-                <li><a href="{{site.headerbaseurl}}/nativescript-sidekick">Sidekick</a></li>
                 <li><a href="{{site.headerbaseurl}}/nativescript-for-visual-studio-code">VS Code Plugin</a></li>
                 <li><a href="https://market.nativescript.org">Plugins</a></li>
                 <li><a href="{{site.headerbaseurl}}/ui-for-nativescript">NativeScript UI</a></li>
@@ -37,11 +36,11 @@
                 <li><a href="https://stackoverflow.com/questions/tagged/nativescript" target="_blank">Stack Overflow</a></li>
                 <li><a href="{{site.headerbaseurl}}/faq">FAQs</a></li>
                 <li><a href="{{site.headerbaseurl}}/slack-invitation-form">Slack</a></li>
-                <li><a href="{{site.headerbaseurl}}/developer-support">Professional Support</a></li>
+                <li><a href="{{site.headerbaseurl}}/preferred-partners">Preferred Partners</a></li>
                 <li><a href="{{site.headerbaseurl}}/contact">Contact Us</a></li>
             </ul>
         </li>
-        <li>
+        <!-- <li>
             <span>Enterprise</span>
             <ul>
                 <li><a href="{{site.headerbaseurl}}/enterprise">Enterprise Support</a></li>
@@ -50,7 +49,7 @@
                 <li><a href="{{site.headerbaseurl}}/preferred-partners">Preferred Partners</a></li>
                 <li><a href="https://www.progress.com/kinvey" target="_blank">Progress Kinvey</a></li>
             </ul>
-        </li>
+        </li> -->
         <li>
             <a href="{{site.headerbaseurl}}/blog">Blogs</a>
         </li>
@@ -63,65 +62,93 @@
             -->
             <a class="ns-button -action" href="https://www.nativescript.org/getting-started-with-nativescript?utm_medium=website&utm_campaign=useownrealestate&utm_source=docsnativescriptdotcom&utm_content=topnavgreenbutton">Get Started</a>
         </li>
-        <li>
-            <span id="current-version"></span>
+        <li x-data="alp_Versions()" x-init="init()">
+            <span id="current-version" x-text="`Current Version ${current}`"></span>
             <ul id="versions-list">
+                <template x-for="v in versions">
+                    <li class="k-item k-state-default k-first">
+                        <a  class="k-link"
+                            x-bind:href="v.url"
+                            x-text="`Version ${v.version}`"
+                        ></a>
+                    </li>
+                </template>
             </ul>
         </li>
     </ul>
 </div>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
 <script>
-    function getCookie(n) { for (var t = n + "=", e = document.cookie.split(";"), r = 0; r < e.length; r++) { for (var i = e[r]; " " === i.charAt(0);)i = i.substring(1, i.length); if (0 === i.indexOf(t)) return i.substring(t.length, i.length) } return null }
-    function setCookie(e, t, i) { var o; if (i) { var n = new Date; n.setTime(n.getTime() + 24 * i * 60 * 60 * 1e3), o = "; expires=" + n.toGMTString() } else o = ""; document.cookie = e + "=" + t + o + "; path=/" }
-    var urlJSON = window.location.origin.concat("/docs_versions.json");
-    $.getJSON(urlJSON, function (data) {
-        var varray = data[`versions`].sort((a, b) => parseFloat(a[`version`]) - parseFloat(b[`version`]));
-        var docsUrl = window.location.href;
-        var baseUrl = window.location.origin;
-        var currentvfound = false;
-        var name = "ns-current-base-url";
-        for (var i = 0; i < varray.length-1; i++) {
-            var currentversion = (varray[i]['version'].replace(/\s/g, "")).replace(".", "-");
-            var itemUrl = baseUrl + "/" + currentversion;
-            if ((docsUrl.indexOf(currentversion) >= 0) && (!currentvfound)) {
-                currentvfound = true
-                $('#current-version').text("Current version " + varray[i]['version']);
-                setCookie(name, itemUrl, 1);
+    function alp_Versions() {
+        return {
+            init() {
+                const versionsJSON = window.location.origin.concat("/docs_versions.json");
+                const versionJSON = window.location.origin.concat("/version.json");
 
-            }
-            $('#versions-list').append("<li class='k-item k-state-default k-first'><a class='k-link' id='" + itemUrl + "'>Version " + varray[i]['version'] + "</a></li>");
+                $.getJSON(versionsJSON, function (data) {
+                    this.versions = data.versions;
+                }.bind(this))
+                $.getJSON(versionJSON, function (data) {
+                    this.current = data.current
+                }.bind(this))
+            },
+
+            // data
+            versions: [],
+            current: 'x.x',
         }
-        var lastindex = varray.length - 1;
-        $('#versions-list').append("<li class='k-item k-state-default k-first'><a class='k-link' id='" + baseUrl + "'>Version " + varray[lastindex]['version'] + "</a></li>");
-        if (!currentvfound) {
-            currentvfound = true;
-            $('#current-version').text("Current version " + varray[lastindex]['version']);
-            setCookie(name, baseUrl, 1);
-        }
-        $('#versions-list a').click(function (ev) {
-            ev.preventDefault();
-            var name = "ns-current-base-url";
-            var newBaseUrl = event.target.id;
-            var currentBaseUrl = getCookie(name);
-            var url = window.location.href;
-            if (newBaseUrl != currentBaseUrl) {
+    }
+    // function getCookie(n) { for (var t = n + "=", e = document.cookie.split(";"), r = 0; r < e.length; r++) { for (var i = e[r]; " " === i.charAt(0);)i = i.substring(1, i.length); if (0 === i.indexOf(t)) return i.substring(t.length, i.length) } return null }
+    // function setCookie(e, t, i) { var o; if (i) { var n = new Date; n.setTime(n.getTime() + 24 * i * 60 * 60 * 1e3), o = "; expires=" + n.toGMTString() } else o = ""; document.cookie = e + "=" + t + o + "; path=/" }
+    // var urlJSON = window.location.origin.concat("/docs_versions.json");
+    // $.getJSON(urlJSON, function (data) {
+    //     var varray = data[`versions`].sort((a, b) => parseFloat(a[`version`]) - parseFloat(b[`version`]));
+    //     var docsUrl = window.location.href;
+    //     var baseUrl = window.location.origin;
+    //     var currentvfound = false;
+    //     var name = "ns-current-base-url";
+    //     for (var i = 0; i < varray.length-1; i++) {
+    //         var currentversion = (varray[i]['version'].replace(/\s/g, "")).replace(".", "-");
+    //         var itemUrl = baseUrl + "/" + currentversion;
+    //         if ((docsUrl.indexOf(currentversion) >= 0) && (!currentvfound)) {
+    //             currentvfound = true
+    //             $('#current-version').text("Current version " + varray[i]['version']);
+    //             setCookie(name, itemUrl, 1);
 
-                var newUrl = url.replace(currentBaseUrl, newBaseUrl);
-                setCookie(name, newBaseUrl, 1);
-                $.ajax({
-                    type: 'HEAD',
-                    url: newUrl,
-                    success: function () {
-                        window.location.href = newUrl;
-                    },
-                    error: function (err) {
-                        window.location.href = newBaseUrl;
-                    }
-                });
+    //         }
+    //         $('#versions-list').append("<li class='k-item k-state-default k-first'><a class='k-link' id='" + itemUrl + "'>Version " + varray[i]['version'] + "</a></li>");
+    //     }
+    //     var lastindex = varray.length - 1;
+    //     $('#versions-list').append("<li class='k-item k-state-default k-first'><a class='k-link' id='" + baseUrl + "'>Version " + varray[lastindex]['version'] + "</a></li>");
+    //     if (!currentvfound) {
+    //         currentvfound = true;
+    //         $('#current-version').text("Current version " + varray[lastindex]['version']);
+    //         setCookie(name, baseUrl, 1);
+    //     }
+    //     $('#versions-list a').click(function (ev) {
+    //         ev.preventDefault();
+    //         var name = "ns-current-base-url";
+    //         var newBaseUrl = event.target.id;
+    //         var currentBaseUrl = getCookie(name);
+    //         var url = window.location.href;
+    //         if (newBaseUrl != currentBaseUrl) {
 
-            }
-        });
-    })
+    //             var newUrl = url.replace(currentBaseUrl, newBaseUrl);
+    //             setCookie(name, newBaseUrl, 1);
+    //             $.ajax({
+    //                 type: 'HEAD',
+    //                 url: newUrl,
+    //                 success: function () {
+    //                     window.location.href = newUrl;
+    //                 },
+    //                 error: function (err) {
+    //                     window.location.href = newBaseUrl;
+    //                 }
+    //             });
+
+    //         }
+    //     });
+    // })
 </script>
 <script>
     window.nsMenu = $(".ns-menu").remove();
@@ -138,7 +165,6 @@
             <a href="/angular/start/introduction" class="-pr -dib -pt2 -pb2 -s-db -s-ml0 -s-pt1 -s-pb1 -s-no-pseudo {{ site.ngselected }}">NativeScript with Angular</a>
             <a href="/vuejs" class="-pr -dib -pt2 -pb2 -s-db -s-ml0 -s-pt1 -s-pb1 -s-no-pseudo {{ site.vjsselected }}">NativeScript with Vue.js</a>
             <a href="/api-reference/globals" class="-pr -dib -pt2 -pb2 -s-db -s-ml0 -s-pt1 -s-pb1 -s-no-pseudo">API Reference</a>
-            <a href="/sidekick" class="-pr -dib -pt2 -pb2 -s-db -s-ml0 -s-pt1 -s-pb1 -s-no-pseudo">NativeScript Sidekick</a>
         </div>
     </div>
 </div>
