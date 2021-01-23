@@ -106,7 +106,7 @@ Complete the following steps to set up NativeScript on your Linux development ma
         and add the following:
         <pre><code class="language-terminal">export ANDROID_HOME="/usr/local/android/sdk/"
        export ANDROID_SDK_ROOT="/usr/local/android/sdk/"
-       export PATH="${PATH}:${ANDROID_SDK_ROOT}cmdline-tools/tools/:${ANDROID_SDK_ROOT}platform-tools/"</code></pre>
+       export PATH="${PATH}:${ANDROID_SDK_ROOT}cmdline-tools/cmdline-tools/:${ANDROID_SDK_ROOT}platform-tools/"</code></pre>
         
      5. Update your current session variables by running:
      <pre><code class="language-terminal">source ~/.bashrc</code></pre>
@@ -114,7 +114,7 @@ Complete the following steps to set up NativeScript on your Linux development ma
 
 6. Install all packages for the Android SDK Platform 28, Android SDK Build-Tools 28.0.3 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages. In order to install SDK's go to Android Studio -> Settings -> System Settings -> Android SDK -> Mark all the Android versions you would like to support within your project (The API Level column indicates the SDK Platform).
 
-    <pre class="add-copy-button"><code class="language-terminal">sudo $ANDROID_SDK_ROOT/cmdline-tools/tools/bin/sdkmanager "tools" "emulator" "platform-tools" "platforms;android-28" "build-tools;28.0.3" "extras;android;m2repository" "extras;google;m2repository"
+    <pre class="add-copy-button"><code class="language-terminal">sudo $ANDROID_SDK_ROOT/cmdline-tools/cmdline-tools/bin/sdkmanager "tools" "emulator" "platform-tools" "platforms;android-28" "build-tools;28.0.3" "extras;android;m2repository" "extras;google;m2repository"
     </code></pre>
 
 7. Setup Android Emulators (AVD) by following the article [here]({%slug android-emulators%})
