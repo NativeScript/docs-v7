@@ -85,7 +85,7 @@ Determines the text displayed in the TOC navigation (the treeview in the left).
 
 #### page_title (optional but recommended)
 
-The contents of the `<title>` in the final output. If `page_title` is not set the value of `title` is usded. Blade name was `meta_title`.
+The contents of the `<title>` in the final output. If `page_title` is not set the value of `title` is used. Blade name was `meta_title`.
 
 #### description (optional but recommended)
 

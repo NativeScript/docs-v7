@@ -14,7 +14,7 @@ The NativeScript technology can be presented as built upon several major parts -
 
 ## Runtimes
 
-The runtimes enable you to call APIs in the Android and iOS frameworks using JavaScript code. To do that they use JavaScript Virtual Machines - Google’s V8 for Android and WebKit’s JavaScriptCore implementation distributed with iOS 7.0+. Find more information in [Android Runtime Overview](../runtimes/android/overview.md) and [iOS Runtime Overview](../runtimes/ios/Overview.md).
+The runtimes enable you to call APIs in the Android and iOS frameworks using JavaScript code. To do that they use JavaScript Virtual Machines - Google’s V8 for Android and WebKit’s JavaScriptCore implementation distributed with iOS 7.0+. Find more information in [Android Runtime Overview](./android-runtime/overview.md) and [iOS Runtime Overview](./ios-runtime/Overview.md).
 
 ## Core Modules
 
@@ -28,4 +28,4 @@ It is the command-line interface that lets you create, build, and run apps using
 
 ## NativeScript Plugins
 
-The NativeScript plugins are building blocks that encapsulate some functionality and help developers build apps faster (just like the NativeScript Core Modules, which is a plugin). Most are community-built, written in TypeScript/JavaScript. Some can include native libraries, which are called from the TS/JS code thanks to the Runtimes. You can find more information in the [Plugins documentation](../plugins/plugins-reference.md).
+The NativeScript plugins are building blocks that encapsulate some functionality and help developers build apps faster (just like the NativeScript Core Modules, which is a plugin). Most are community-built, written in TypeScript/JavaScript. Some can include native libraries, which are called from the TS/JS code thanks to the Runtimes. You can find more information in the [Plugins documentation](../plugins/plugin-reference.md).
