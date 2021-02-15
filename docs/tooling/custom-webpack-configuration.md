@@ -8,13 +8,13 @@ slug: custom-webpack-config
 ## What is webpack configuration
 
 The webpack configuration file `webpack.config.js` is the file that contains all the configuration, plugins, loaders, etc. to build the JavaScript part of the NativeScript application. The file is located at the root of the NativeScript application. For each flavor (Angular, Vue.js, React, TypeScript, JavaScript) the content of the file is different as the way to process the files in the application differs.
-Currently the content is under user's control, but the default configuration file comes from `nativescript-dev-webpack` plugin during its postinstall step (or when you run the `update-ns-webpack --configs` script located in your `<project dir>/node_modules/.bin/` directory).
-We are constantly trying to improve the content of the default `webpack.config.js` files, so during update of the `nativescript-dev-webpack`, we've added a check to see if the content of your application's `webpack.config.js` file differs from the new default one and show warning in such case.
-However, in many cases you need to add some custom logic in your `webpack.config.js` file, for example in case you have some assets that you need to copy or you have a custom Android activity. In this case, whenever you update `nativescript-dev-webpack` you will see the mentioned warning. Also, in case you want to be sure you've got all of the required changes from the default `webpack.config.js` coming with the new version of `nativescript-dev-webpack`, you have to merge the two webpack configurations manually.
+Currently the content is under user's control, but the default configuration file comes from `@nativescript/webpack` plugin during its postinstall step (or when you run the `update-ns-webpack --configs` script located in your `<project dir>/node_modules/.bin/` directory).
+We are constantly trying to improve the content of the default `webpack.config.js` files, so during update of the `@nativescript/webpack`, we've added a check to see if the content of your application's `webpack.config.js` file differs from the new default one and show warning in such case.
+However, in many cases you need to add some custom logic in your `webpack.config.js` file, for example in case you have some assets that you need to copy or you have a custom Android activity. In this case, whenever you update `@nativescript/webpack` you will see the mentioned warning. Also, in case you want to be sure you've got all of the required changes from the default `webpack.config.js` coming with the new version of `@nativescript/webpack`, you have to merge the two webpack configurations manually.
 
 ## How to use custom webpack configuration
 
-From NativeScript v6.4.0 and nativescript-dev-webpack v1.5.0 you can use a custom path to webpack configuration. To achieve this you need to set `webpackConfigPath` property in your `nsconfig.json` file:
+From NativeScript v6.4.0 and @nativescript/webpack v1.5.0 you can use a custom path to webpack configuration. To achieve this you need to set `webpackConfigPath` property in your `nsconfig.json` file:
 
 1. Set in `nsconfig.json`
 ```
@@ -44,7 +44,7 @@ module.exports = (env) => {
 $ tns run <platform>
 ```
 
-4. [Optional] Remove the `webpack.config.js` from your application and add it to `.gitignore` - in case you do not want to see the warnings for different webpack configurations anymore, you can safely remove the `webpack.config.js` and add it to your `.gitignore` file, so noone will commit it. This way, during dependency installation, the postinstall script of `nativescript-dev-webpack` will always place the current default configuration file.
+4. [Optional] Remove the `webpack.config.js` from your application and add it to `.gitignore` - in case you do not want to see the warnings for different webpack configurations anymore, you can safely remove the `webpack.config.js` and add it to your `.gitignore` file, so noone will commit it. This way, during dependency installation, the postinstall script of `@nativescript/webpack` will always place the current default configuration file.
 In case you prefer to check all the changes when you update the `webpack.config.js` file, you can still commit it in your repository with the default content and skip this step.
 
 ## Examples

@@ -8,7 +8,7 @@ slug: error-handling
 
 ## Handling errors in NativeScript core modules
 
-A big difference between web and NativeScript applications is the way the Errors have been handled. Currently, when an unhandled exception is thrown in NativeScript (e.g. inside `tns-core-modules`, plugin, used in the app, or application code) the app will crash, and an Error with the corresponding stack trace will be shown.
+A big difference between web and NativeScript applications is the way the Errors have been handled. Currently, when an unhandled exception is thrown in NativeScript (e.g. inside `@nativescript/core`, plugin, used in the app, or application code) the app will crash, and an Error with the corresponding stack trace will be shown.
 In some cases, this seems to be the expected behaviour when the app is in `development` mode. You would want to have the stack trace of the exact location the unexpected error has occurred so that you can more easily understand what happened and allows you to fix the issue. However, when the app is in a `production` similar application crashes can seriously hurt your application credibility and drive away customers. In many cases, you might prefer anything else (e.g. app freeze, blank screen, failed navigation) to an actual crash with an error log.
 
 Regarding that, new API is introduced in NativeScript, which provides functionality for handling errors in different ways while the app is in development and production. While creating the API, the following three scenarios have been taken in mind.
@@ -44,25 +44,23 @@ This API also introduces a technique, which allows the developers to define cust
 Example:
 
 ```javascript
-import "./bundle-config";
-import * as application from "tns-core-modules/application";
-import * as traceModule from "tns-core-modules/trace";
+import { Application, Trace, TraceErrorHandler } from "@nativescript/core";
 
-const errorHandler: traceModule.ErrorHandler = {
+const errorHandler: TraceErrorHandler = {
     handlerError(err) {
         // Option 1 (development) - throw the error
         throw err;
 
         // Option 2 (development) - logging the error via write method provided from trace module
-        traceModule.write(err, "unhandled-error", type.error);
+        Trace.write(err, "unhandled-error", type.error);
 
         // (production) - custom functionality for error handling
         // reportToAnalytics(err)
     }
 }
 
-traceModule.setErrorHandler(errorHandler)
-application.run({ moduleName: 'app-root' });
+Trace.setErrorHandler(errorHandler)
+Application.run({ moduleName: 'app-root' });
 ```
 
 The example shows how to define a custom handler and three possible options for handling the error via [trace]({%slug trace%}) module or while using custom functionality.

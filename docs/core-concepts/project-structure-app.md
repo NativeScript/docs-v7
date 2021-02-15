@@ -99,9 +99,9 @@ All discarded exceptions can be processed in the app by either subscribing to th
 For example:
 
 ```JS
-var application = require("application");
+import { Application } from "@nativescript/core";
 
-application.on(application.discardedErrorEvent, function (args) {
+Application.on(Application.discardedErrorEvent, function (args) {
     const error = args.error;
 
     console.log("Received discarded exception: ");
@@ -152,24 +152,15 @@ Here is an example of a basic main `package.json` file:
 
 ```JSON
 {
-    "nativescript": {
-        "id": "org.nativescript.myApplication",
-        "tns-android": {
-            "version": "6.1.2"
-        },
-        "tns-ios": {
-            "version": "6.1.0"
-        }
-    },
     "description": "My NativeScript Application",
     "license": "MIT",
     "repository": "https://github.com/myApplication",
     "dependencies": {
-        "nativescript-theme-core": "~1.0.6",
-        "tns-core-modules": "~6.1.0"
+        "@nativescript/core": "~7.0.0",
+        "@nativescript/theme": "~3.0.0"
     },
     "devDependencies": {
-        "nativescript-dev-webpack": "~1.2.0"
+        "@nativescript/webpack": "~3.0.0"
     },
     "readme": "My NativeScript Application"
 }

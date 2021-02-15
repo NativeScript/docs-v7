@@ -73,7 +73,7 @@ Overall the implementation is really Objective-C friendly and predictable. When 
 #### Deep Hierarchies Die Hard
 The number of GC cycles needed to collect a linked list exposed from Obj-C to JavaScript is linear based on the numbers of nodes in the list.
 
-Take the following scenario (which is actually a real problem that has been solved in tns-core-modules):
+Take the following scenario (which is actually a real problem that has been solved in @nativescript/core):
 ```
 Page       ->       StackPanel -> Button
 |.ios               |.ios         |.ios

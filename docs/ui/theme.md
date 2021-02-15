@@ -580,7 +580,7 @@ If using sass (dart-sass), you need to modify your webpack configuration to use 
 {
     test: /\.scss$/,
     use: [
-        "nativescript-dev-webpack/css2json-loader",
+        "@nativescript/webpack/css2json-loader",
         "sass-loader"
     ]
 }
@@ -590,7 +590,7 @@ Replace this with following code
 {
     test: /\.scss$/,
     use: [
-        "nativescript-dev-webpack/css2json-loader",
+        "@nativescript/webpack/css2json-loader",
         {
             loader: "sass-loader",
             options: {
@@ -600,7 +600,7 @@ Replace this with following code
     ]
 },
 ```
-> **Note:** Webpack configuration file may get overwritten when updating `nativescript-dev-webpack`. Use [custom webpack configuration](https://docs.nativescript.org/tooling/custom-webpack-configuration) to make changes.
+> **Note:** Webpack configuration file may get overwritten when updating `@nativescript/webpack`. Use [custom webpack configuration](https://docs.nativescript.org/tooling/custom-webpack-configuration) to make changes.
 
 For a new project, you can use a template with SASS pre-enabled. A full list of officially supported templates can be found in [the App Templates GitHub repository](https://github.com/NativeScript/nativescript-app-templates).
 ```
@@ -839,33 +839,32 @@ Android API levels 21+ (Lollipop and above) let you set the status bar to use an
 Additionally, when using the light color scheme, include the following code in your `app.ts` (or `app.js` if coding plain JavaScript) file. The code sets Android’s `SYSTEM_UI_FLAG_LIGHT_STATUS_BAR` flag, which makes all icons in the status bar use a color that’s visible on the light background.
 
 ``` TypeScript
-import * as application from "tns-core-modules/application";
-import * as platform from "tns-core-modules/platform";
-declare var android: any;
+import { Application, AndroidApplication, isAndroid, Device } from "@nativescript/core";
 
-if (platform.isAndroid && platform.device.sdkVersion >= "21") {
-    application.android.on(application.AndroidApplication.activityStartedEvent, function() {
-        let window = application.android.startActivity.getWindow();
-        let decorView = window.getDecorView();
+if (isAndroid && Device.sdkVersion >= "21") {
+    Application.android.on(AndroidApplication.activityStartedEvent, function() {
+        const win = (Application.android.foregroundActivity ||
+            Application.android.startActivity).getWindow();
+        const decorView = win.getDecorView();
         decorView.setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
     })
 };
 
-// Your application.run() call follows here.
+// Your Application.run() call follows here.
 ```
 ``` JavaScript
-var application = require("tns-core-modules/application");
-var platform = require("tns-core-modules/platform");
+import { Application, AndroidApplication, Device, isAndroid } from "@nativescript/core";
 
-if (platform.isAndroid && platform.device.sdkVersion >= "21") {
-    application.android.on(application.AndroidApplication.activityStartedEvent, function () {
-        var window = application.android.startActivity.getWindow();
-        var decorView = window.getDecorView();
+if (isAndroid && Device.sdkVersion >= "21") {
+    Application.android.on(AndroidApplication.activityStartedEvent, function () {
+        const win = (Application.android.foregroundActivity ||
+            Application.android.startActivity).getWindow();
+        const decorView = win.getDecorView();
         decorView.setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
     });
 };
 
-// Your application.run() call follows here.
+// Your Application.run() call follows here.
 ```
 
 

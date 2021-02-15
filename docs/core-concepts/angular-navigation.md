@@ -126,7 +126,7 @@ export class GroceriesAppModule { }
 
 As usual, pass your module to the `bootstrapModule` function to start your app:
 ```TypeScript
-import { platformNativeScriptDynamic } from "nativescript-angular/platform";
+import { platformNativeScriptDynamic } from "@nativescript/angular";
 platformNativeScriptDynamic().bootstrapModule(GroceriesAppModule);
 ```
 
@@ -188,7 +188,7 @@ export class AppRoutingModule { }
 ```
 ``` app.module.ts
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+import { NativeScriptModule } from "@nativescript/angular";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -329,7 +329,7 @@ export class AppRoutingModule { }
 ```
 ``` app.module.ts
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+import { NativeScriptModule } from "@nativescript/angular";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -505,7 +505,7 @@ export class AppRoutingModule { }
 ```
 ``` app.module.ts
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+import { NativeScriptModule } from "@nativescript/angular";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -661,7 +661,7 @@ export class AppRoutingModule { }
 ```
 ``` app.module.ts
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+import { NativeScriptModule } from "@nativescript/angular";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -695,7 +695,7 @@ export class AppModule { }
 ```
 ``` app.component.ts
 import { Component } from "@angular/core";
-import { SelectedIndexChangedEventData } from "tns-core-modules/ui/tab-view";
+import { SelectedIndexChangedEventData } from "@nativescript/core";
 
 @Component({
     selector: "ns-app",
@@ -829,7 +829,7 @@ export class AppRoutingModule { }
 ```
 ``` app.module.ts
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+import { NativeScriptModule } from "@nativescript/angular";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -872,7 +872,7 @@ export class AppModule { }
 ```
 ``` app.component.ts
 import { Component } from "@angular/core";
-import { SelectedIndexChangedEventData } from "tns-core-modules/ui/bottom-navigation";
+import { SelectedIndexChangedEventData } from "@nativescript/core";
 
 @Component({
     selector: "ns-app",
@@ -958,7 +958,7 @@ export class SearchRootComponent implements OnInit {
 ```
 ``` search.component.ts
 import { Component, OnInit } from "@angular/core";
-import { View } from "tns-core-modules/ui/core/view"
+import { View } from "@nativescript/core"
 
 @Component({
 	selector: "Search",
@@ -1033,7 +1033,7 @@ export class AppRoutingModule { }
 ```
 ``` app.module.ts
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+import { NativeScriptModule } from "@nativescript/angular";
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -1160,7 +1160,7 @@ export class AppRoutingModule { }
 ```
 ``` app.module.ts
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+import { NativeScriptModule } from "@nativescript/angular";
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
 
 import { AppRoutingModule } from "./app-routing.module";

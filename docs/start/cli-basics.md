@@ -275,7 +275,7 @@ One of the most natural things you can do to debug apps in any environment is wr
 To see this action open your app’s `app/main-page.js` file and replace its contents with the code below.
 
 ``` JavaScript
-exports.pageLoaded = function() {
+export function pageLoaded = function() {
      console.log("Hello World");
 };
 ```
@@ -312,7 +312,7 @@ The `console.log()` function is great for outputting primitive values such as st
 To see this in action replace the contents of your `app/main-page.js` file with the code below, which uses `console.log()` to log a simple object.
 
 ``` TypeScript
-exports.pageLoaded = function() {
+export function pageLoaded = function() {
     console.log({
       type: "Apple",
       color: "Red"

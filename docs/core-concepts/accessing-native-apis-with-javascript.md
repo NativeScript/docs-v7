@@ -8,7 +8,7 @@ slug: access-native-apis
 
 # Accessing native iOS and Android APIs through JavaScript
 
-In this article we are going through the basic concepts of how native APIs are accessed through JavaScript. Our focus is on how primitive types are mapped between JavaScript and the corresponding native platform. We then continue with explaining how complex objects are represented and accessed. At the end, we talk about TypeScript and the `tns-platform-declarations` add-on which gives you TypeScript definitions for the Android and iOS development platforms.
+In this article we are going through the basic concepts of how native APIs are accessed through JavaScript. Our focus is on how primitive types are mapped between JavaScript and the corresponding native platform. We then continue with explaining how complex objects are represented and accessed. At the end, we talk about TypeScript and the `@nativescript/types` add-on which gives you TypeScript definitions for the Android and iOS development platforms.
 
 NativeScript lets you access all native APIs from the underlying platform. To achieve this behaviour, many things happen under the hood. One of them is marshalling - the conversion between JavaScript and Objective-C data types for iOS and Java data types for Android.
 
@@ -223,25 +223,24 @@ button.setOnClickListener(undefined); // the Java call will be made using the nu
 
 ## IntelliSense and Access to the Native APIs via TypeScript
 
-To have access and Intellisense for the native APIs, you have to add a developer dependency to `tns-platform-declarations`.
+To have access and Intellisense for the native APIs, you have to add a developer dependency to `@nativescript/types`.
 
 Steps to install and enable 
 
-- `npm install tns-platform-declarations --save-dev`
+- `npm install @nativescript/types --save-dev`
 
- > **Note:** Always install the plugin as a `devDependency` (`npm i tns-platform-declarations --save-dev` flag) to avoid bringing the enormously big declaration files in the output built file.
+ > **Note:** Always install the plugin as a `devDependency` (`npm i @nativescript/types --save-dev` flag) to avoid bringing the enormously big declaration files in the output built file.
 
 Create `reference.d.ts` in the root project directory and add the following:
 ```
-/// <reference path="node_modules/tns-platform-declarations/android.d.ts" />
-/// <reference path="node_modules/tns-platform-declarations/ios.d.ts" />
+/// <reference path="node_modules/@nativescript/types/index.d.ts" />
 ```
 
- By default, the file `android.d.ts` comes with typings generated for API level 17. As an Android developer, you might need access to a specific class, method, or property introduced in a newer API level. The `tns-platform-declarations` plugin comes with generated typings for all API levels from 17 to 27 including the related typings from the respective support library. To use typings for a specific Android level replace the reference to the default declaration file with the preferred one. The files for each API level comes postfixed with a dash followed by the number of the API level (e.g. for API 21 the file is named `android-21.d.ts`).
+ By default, the file `android.d.ts` comes with typings generated for API level 17. As an Android developer, you might need access to a specific class, method, or property introduced in a newer API level. The `@nativescript/types` plugin comes with generated typings for all API levels from 17 to 27 including the related typings from the respective support library. To use typings for a specific Android level replace the reference to the default declaration file with the preferred one. The files for each API level comes postfixed with a dash followed by the number of the API level (e.g. for API 21 the file is named `android-21.d.ts`).
 
 For example, let's assume you are developing an application for API 21+ and you need typings generated for that API level:
  ```
- /// <reference path="node_modules/tns-platform-declarations/android-21.d.ts" />
+ /// <reference path="node_modules/@nativescript/types-android/lib/android-21.d.ts" />
  ```
 
  > **Note:** Proceed with caution when using functionalities introduced in newer API level. If you attempt
@@ -252,18 +251,13 @@ For example, let's assume you are developing an application for API 21+ and you 
 {
   "compilerOptions": {
     ...
-    "lib": ["es6", "dom"],
-    "baseUrl": ".",
-    "paths": {
-        "*": [
-            "./node_modules/tns-core-modules/*",
-            "./node_modules/*"
-        ]
-  }
+    "module": "esnext",
+    "target": "es2015",
+    "moduleResolution": "node",
+    "lib": ["es2018", "dom"],
 }
 ```
 Note that `d.ts` files require a lot of memory and CPU. Consider adding **skipLibCheck** option to `tsconfig.json`.
-For more information visit the GitHub repository of [tns-platform-declarations](https://github.com/NativeScript/NativeScript/tree/master/tns-platform-declarations)
 
 
 # See Also

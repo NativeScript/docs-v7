@@ -365,8 +365,7 @@ Community contributors in [https://github.com/nativescript/nativescript-geolocat
 [manojdcoder](https://github.com/manojdcoder) |[bradmartin](https://github.com/bradmartin) |[nsndeck](https://github.com/nsndeck) |
 
 
-## tns-core-modules-widgets
-Community contributors in [https://github.com/nativescript/tns-core-modules-widgets](https://github.com/nativescript/tns-core-modules-widgets)
+## @nativescript/ui-mobile-base
  
 [<img alt="DickSmith" src="https://avatars0.githubusercontent.com/u/6675511?v=4&s=117" width="117">](https://github.com/DickSmith) |[<img alt="hamdiwanis" src="https://avatars2.githubusercontent.com/u/11708544?v=4&s=117" width="117">](https://github.com/hamdiwanis) |[<img alt="NathanWalker" src="https://avatars2.githubusercontent.com/u/457187?v=4&s=117" width="117">](https://github.com/NathanWalker) |[<img alt="reinaldorauch" src="https://avatars2.githubusercontent.com/u/2676370?v=4&s=117" width="117">](https://github.com/reinaldorauch) |[<img alt="tzraikov" src="https://avatars1.githubusercontent.com/u/3244426?v=4&s=117" width="117">](https://github.com/tzraikov) |
 :---: |:---: |:---: |:---: |:---: |

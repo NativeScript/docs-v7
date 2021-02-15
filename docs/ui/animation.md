@@ -27,14 +27,14 @@ __Example 1: Changing background color animation with code.__
 
 ``` JavaScript
 // Import color module
-var colorModule = require("tns-core-modules/color");
+import { Color } from "@nativescript/core";
 
-view.backgroundColor = new colorModule.Color("red");
-view.animate({ backgroundColor: new colorModule.Color("green"), duration: 2000 });
+view.backgroundColor = new Color("red");
+view.animate({ backgroundColor: new Color("green"), duration: 2000 });
 ```
 ``` TypeScript
 // Import color module
-import { Color } from "tns-core-modules/color";
+import { Color } from "@nativescript/core";
 
 view.backgroundColor = new Color("red");
 view.animate({ backgroundColor: new Color("green"), duration: 2000 });
@@ -113,19 +113,19 @@ In NativeScript, the animation curve is represented by the AnimationCurve enumer
 __Example 3: How to customize the animation timing function__
 
 ``` JavaScript
-var enums = require("tns-core-modules/ui/enums");
+import { Enums } from "@nativescript/core";
 view.animate({
 	translate: { x: 0, y: 100},
 	duration: 1000,
-	curve: enums.AnimationCurve.easeIn
+	curve: Enums.AnimationCurve.easeIn
 });
 ```
 ``` TypeScript
-import {AnimationCurve} from "tns-core-modules/ui/enums";
+import { Enums } from "@nativescript/core";
 view.animate({
 	translate: { x: 0, y: 100},
 	duration: 1000,
-	curve: AnimationCurve.easeIn
+	curve: Enums.AnimationCurve.easeIn
 });
 ```
 ``` CSS
@@ -152,20 +152,20 @@ __Example 4: How to create own animation curve via cubic Bezier__
 ![beziergraph](./img/modules/animation/bezier-graph.png "BezierGraph")
 
 ``` JavaScript
-var enums = require("tns-core-modules/ui/enums");
+import { Enums } from "@nativescript/core";
 
 view.animate({
     translate: { x: 0, y: 100 },
     duration: 1000,
-    curve: enums.AnimationCurve.cubicBezier(0.1, 0.1, 0.1, 1)
+    curve: Enums.AnimationCurve.cubicBezier(0.1, 0.1, 0.1, 1)
 });
 ```
 ``` TypeScript
-import {AnimationCurve} from "tns-core-modules/ui/enums";
+import { Enums } from "@nativescript/core";
 view.animate({
     translate: { x: 0, y: 100 },
     duration: 1000,
-    curve: AnimationCurve.cubicBezier(0.1, 0.1, 0.1, 1)
+    curve: Enums.AnimationCurve.cubicBezier(0.1, 0.1, 0.1, 1)
 });
 ```
 ``` CSS

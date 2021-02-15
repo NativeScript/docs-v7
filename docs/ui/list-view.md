@@ -335,7 +335,7 @@ The built-in [loadMoreItemsEvent](/api-reference/classes/_ui_list_view_.listview
 ```
 ```TypeScript
 import { Component } from "@angular/core";
-import { EventData } from "tns-core-modules/data/observable";
+import { EventData } from "@nativescript/core";
 
 @Component({
     selector: 'list-test',

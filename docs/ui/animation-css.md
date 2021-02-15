@@ -359,20 +359,20 @@ All keyframes defined in CSS can be accessed with code by using the **getKeyfram
 __Example 16: Accessing CSS defined keyframe in the code via **getKeyframeAnimationWithName** method__
 
 ``` JavaScript
-var keyframeAnimation = require("tns-core-modules/ui/animation/keyframe-animation");
+import { KeyframeAnimation } from "@nativescript/core";
 
 var view = page.getViewById("view");
 var animationInfo = page.getKeyframeAnimationWithName("bounce");
 animationInfo.duration = 2000;
-var animation = keyframeAnimation.KeyframeAnimation.keyframeAnimationFromInfo(animationInfo);
+var animation = KeyframeAnimation.keyframeAnimationFromInfo(animationInfo);
 animation.play(view).then(() => {
     console.log("Played with code!");
 });
 ```
 ``` TypeScript
-import {KeyframeAnimation} from "tns-core-modules/ui/animation/keyframe-animation";
+import { KeyframeAnimation, View } from "@nativescript/core";
 
-let view = page.getViewById<viewModule.View>("view");
+let view = page.getViewById<View>("view");
 let animationInfo = page.getKeyframeAnimationWithName("bounce");
 animationInfo.duration = 2000;
 let animation = KeyframeAnimation.keyframeAnimationFromInfo(animationInfo);

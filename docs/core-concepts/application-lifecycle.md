@@ -91,7 +91,7 @@ For a full list, see the official [Angular Lifecycle Hooks docs](https://angular
 The starting point of an Angular application is the `platformNativeScriptDynamic().bootstrapModule()` method. It takes the root module as an argument:
 
 ``` TypeScript
-import { platformNativeScriptDynamic } from "nativescript-angular/platform";
+import { platformNativeScriptDynamic } from "@nativescript/angular";
 import { AppModule } from "./app.module";
 
 platformNativeScriptDynamic().bootstrapModule(AppModule).then(() => {
@@ -125,19 +125,19 @@ The method `run` from the `application` module is required to start the applicat
 iOS calls UIApplication and triggers the application main event loop.
 */
 
-const application = require("tns-core-modules/application");
-application.run({ moduleName: "app-root" });
+import { Application } from "@nativescript/core";
+Application.run({ moduleName: "app-root" });
 ```
 ``` TypeScript
 /*
 iOS calls UIApplication and triggers the application main event loop.
 */
 
-import * as application from "tns-core-modules/application";
-application.run({ moduleName: "app-root" });
+import { Application } from "@nativescript/core";
+Application.run({ moduleName: "app-root" });
 ```
 
-> **Note:** Prior to version 4.0.0 all NativeScript application had single topmost `Frame` implicitly created by the `application.start()` method. With NativeScript 4.x.x and above the root `Frame` is no longer implicitly created. Instead you can specify any `View` to be the root of your application while using `application.run({ moduleName: "app-root"})` where `app-root` is the file containing your root `View`. More about the `Frame` API and navigation could be found in the [navigation article](https://docs.nativescript.org/core-concepts/navigation)
+> **Note:** Prior to version 4.0.0 all NativeScript application had single topmost `Frame` implicitly created by the `application.start()` method. With NativeScript 4.x.x and above the root `Frame` is no longer implicitly created. Instead you can specify any `View` to be the root of your application while using `Application.run({ moduleName: "app-root"})` where `app-root` is the file containing your root `View`. More about the `Frame` API and navigation could be found in the [navigation article](https://docs.nativescript.org/core-concepts/navigation)
 
 {% endnativescript %}
 
@@ -156,9 +156,9 @@ NativeScript applications have the following life cycle events.
 
 {% nativescript %}
 ``` JavaScript
-const application = require("tns-core-modules/application");
+import { Application } from "@nativescript/core";
 
-application.on(application.launchEvent, (args) => {
+Application.on(Application.launchEvent, (args) => {
     if (args.android) {
         // For Android applications, args.android is an android.content.Intent class.
         console.log("Launched Android application with the following intent: " + args.android + ".");
@@ -168,7 +168,7 @@ application.on(application.launchEvent, (args) => {
     }
 });
 
-application.on(application.suspendEvent, (args) => {
+Application.on(Application.suspendEvent, (args) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -178,7 +178,7 @@ application.on(application.suspendEvent, (args) => {
     }
 });
 
-application.on(application.resumeEvent, (args) => {
+Application.on(Application.resumeEvent, (args) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -188,18 +188,18 @@ application.on(application.resumeEvent, (args) => {
     }
 });
 
-application.on(application.displayedEvent, (args) => {
+Application.on(Application.displayedEvent, (args) => {
     // args is of type ApplicationEventData
     console.log("displayedEvent");
 });
 
-application.on(application.orientationChangedEvent, (args) => {
+Application.on(Application.orientationChangedEvent, (args) => {
     // args is of type OrientationChangedEventData
     console.log(args.newValue); // "portrait", "landscape", "unknown"
 });
 
 
-application.on(application.exitEvent, (args) => {
+Application.on(Application.exitEvent, (args) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -214,7 +214,7 @@ application.on(application.exitEvent, (args) => {
     }
 });
 
-application.on(application.lowMemoryEvent, (args) => {
+Application.on(Application.lowMemoryEvent, (args) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -224,19 +224,16 @@ application.on(application.lowMemoryEvent, (args) => {
     }
 });
 
-application.on(application.uncaughtErrorEvent, (args) => {
+Application.on(Application.uncaughtErrorEvent, (args) => {
     console.log("Error: " + args.error);
 });
 
-application.run({ moduleName: "app-root" });
+Application.run({ moduleName: "app-root" });
 ```
 ``` TypeScript
-import { displayedEvent, exitEvent, launchEvent, lowMemoryEvent, 
-        orientationChangedEvent, resumeEvent, suspendEvent, uncaughtErrorEvent, 
-        ApplicationEventData, LaunchEventData, OrientationChangedEventData, UnhandledErrorEventData,
-        on as applicationOn, run as applicationRun } from "tns-core-modules/application";
+import { Application, ApplicationEventData, LaunchEventData, OrientationChangedEventData, UnhandledErrorEventData } from "@nativescript/core";
 
-applicationOn(launchEvent, (args: LaunchEventData) => {
+Application.on(Application.launchEvent, (args: LaunchEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android.content.Intent class.
         console.log("Launched Android application with the following intent: " + args.android + ".");
@@ -246,7 +243,7 @@ applicationOn(launchEvent, (args: LaunchEventData) => {
     }
 });
 
-applicationOn(suspendEvent, (args: ApplicationEventData) => {
+Application.on(Application.suspendEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -256,7 +253,7 @@ applicationOn(suspendEvent, (args: ApplicationEventData) => {
     }
 });
 
-applicationOn(resumeEvent, (args: ApplicationEventData) => {
+Application.on(Application.resumeEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -266,16 +263,16 @@ applicationOn(resumeEvent, (args: ApplicationEventData) => {
     }
 });
 
-applicationOn(displayedEvent, (args: ApplicationEventData) => {
+Application.on(Application.displayedEvent, (args: ApplicationEventData) => {
     console.log("displayedEvent");
 });
 
-applicationOn(orientationChangedEvent, (args: OrientationChangedEventData) => {
+Application.on(Application.orientationChangedEvent, (args: OrientationChangedEventData) => {
     // "portrait", "landscape", "unknown"
     console.log(args.newValue)
 });
 
-applicationOn(exitEvent, (args: ApplicationEventData) => {
+Application.on(Application.exitEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -285,7 +282,7 @@ applicationOn(exitEvent, (args: ApplicationEventData) => {
     }
 });
 
-applicationOn(lowMemoryEvent, (args: ApplicationEventData) => {
+Application.on(Application.lowMemoryEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -295,20 +292,20 @@ applicationOn(lowMemoryEvent, (args: ApplicationEventData) => {
     }
 });
 
-applicationOn(uncaughtErrorEvent, function (args: UnhandledErrorEventData) {
+Application.on(Application.uncaughtErrorEvent, function (args: UnhandledErrorEventData) {
     console.log("Error: " + args.error);
 });
 
-applicationRun({ moduleName: "app-root" });
+Application.run({ moduleName: "app-root" });
 ```
 {% endnativescript %}
 {% angular %}
 ```TypeScript
-import { platformNativeScriptDynamic } from "nativescript-angular/platform";
+import { platformNativeScriptDynamic } from "@nativescript/angular";
 import { AppModule } from "./app.module";
-import { on as applicationOn, launchEvent, suspendEvent, resumeEvent, exitEvent, lowMemoryEvent, uncaughtErrorEvent, ApplicationEventData } from "tns-core-modules/application";
+import { Application, ApplicationEventData } from "@nativescript/core";
 
-applicationOn(launchEvent, (args: ApplicationEventData) => {
+Application.on(Application.launchEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android.content.Intent class.
         console.log("Launched Android application with the following intent: " + args.android + ".");
@@ -318,7 +315,7 @@ applicationOn(launchEvent, (args: ApplicationEventData) => {
     }
 });
 
-applicationOn(suspendEvent, (args: ApplicationEventData) => {
+Application.on(Application.suspendEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -328,7 +325,7 @@ applicationOn(suspendEvent, (args: ApplicationEventData) => {
     }
 });
 
-applicationOn(resumeEvent, (args: ApplicationEventData) => {
+Application.on(Application.resumeEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -338,7 +335,7 @@ applicationOn(resumeEvent, (args: ApplicationEventData) => {
     }
 });
 
-applicationOn(exitEvent, (args: ApplicationEventData) => {
+Application.on(Application.exitEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -353,7 +350,7 @@ applicationOn(exitEvent, (args: ApplicationEventData) => {
     }
 });
 
-applicationOn(lowMemoryEvent, (args: ApplicationEventData) => {
+Application.on(Application.lowMemoryEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an android activity class.
         console.log("Activity: " + args.android);
@@ -363,7 +360,7 @@ applicationOn(lowMemoryEvent, (args: ApplicationEventData) => {
     }
 });
 
-applicationOn(uncaughtErrorEvent, (args: ApplicationEventData) => {
+Application.on(Application.uncaughtErrorEvent, (args: ApplicationEventData) => {
     if (args.android) {
         // For Android applications, args.android is an NativeScriptError.
         console.log("NativeScriptError: " + args.android);
@@ -391,139 +388,139 @@ NativeScript applications have the following Android specific activity events:
 
 {% nativescript %}
 ``` JavaScript
-const application = require("tns-core-modules/application");
+import { Application, AndroidApplication, isAndroid } from "@nativescript/core";
 
-if (application.android) {
-    application.android.on(application.AndroidApplication.activityCreatedEvent, function (args) {
+if (isAndroid) {
+    Application.android.on(AndroidApplication.activityCreatedEvent, function (args) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
     });
     
-    application.android.on(application.AndroidApplication.activityDestroyedEvent, function (args) {
+    Application.android.on(AndroidApplication.activityDestroyedEvent, function (args) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
     
-    application.android.on(application.AndroidApplication.activityStartedEvent, function (args) {
+    Application.android.on(AndroidApplication.activityStartedEvent, function (args) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
     
-    application.android.on(application.AndroidApplication.activityPausedEvent, function (args) {
+    Application.android.on(AndroidApplication.activityPausedEvent, function (args) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
     
-    application.android.on(application.AndroidApplication.activityResumedEvent, function (args) {
+    Application.android.on(AndroidApplication.activityResumedEvent, function (args) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
     
-    application.android.on(application.AndroidApplication.activityStoppedEvent, function (args) {
+    Application.android.on(AndroidApplication.activityStoppedEvent, function (args) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
     
-    application.android.on(application.AndroidApplication.saveActivityStateEvent, function (args) {
+    Application.android.on(AndroidApplication.saveActivityStateEvent, function (args) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
     });
     
-    application.android.on(application.AndroidApplication.activityResultEvent, function (args) {
+    Application.android.on(AndroidApplication.activityResultEvent, function (args) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity +
             ", requestCode: " + args.requestCode + ", resultCode: " + args.resultCode + ", Intent: " + args.intent);
     });
     
-    application.android.on(application.AndroidApplication.activityBackPressedEvent, function (args) {
+    Application.android.on(AndroidApplication.activityBackPressedEvent, function (args) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
         // Set args.cancel = true to cancel back navigation and do something custom.
     });
 }
 
-application.run({ moduleName: "app-root" });
+Application.run({ moduleName: "app-root" });
 ```
 ``` TypeScript
-import { android, AndroidApplication, AndroidActivityBundleEventData } from "tns-core-modules/application";
+import { isAndroid, Application, AndroidApplication, AndroidActivityBundleEventData } from "@nativescript/core";
 
 // Android activity events
-if (android) {
-    android.on(AndroidApplication.activityCreatedEvent, function (args: AndroidActivityBundleEventData) {
+if (isAndroid) {
+    Application.android.on(AndroidApplication.activityCreatedEvent, function (args: AndroidActivityBundleEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
     });
 
-    android.on(AndroidApplication.activityDestroyedEvent, function (args: AndroidActivityEventData) {
+    Application.android.on(AndroidApplication.activityDestroyedEvent, function (args: AndroidActivityEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
 
-    android.on(AndroidApplication.activityStartedEvent, function (args: AndroidActivityEventData) {
+    Application.android.on(AndroidApplication.activityStartedEvent, function (args: AndroidActivityEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
 
-    android.on(AndroidApplication.activityPausedEvent, function (args: AndroidActivityEventData) {
+    Application.android.on(AndroidApplication.activityPausedEvent, function (args: AndroidActivityEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
 
-    android.on(AndroidApplication.activityResumedEvent, function (args: AndroidActivityEventData) {
+    Application.android.on(AndroidApplication.activityResumedEvent, function (args: AndroidActivityEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
 
-    android.on(AndroidApplication.activityStoppedEvent, function (args: AndroidActivityEventData) {
+    Application.android.on(AndroidApplication.activityStoppedEvent, function (args: AndroidActivityEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
 
-    android.on(AndroidApplication.saveActivityStateEvent, function (args: AndroidActivityBundleEventData) {
+    Application.android.on(AndroidApplication.saveActivityStateEvent, function (args: AndroidActivityBundleEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
     });
 
-    android.on(AndroidApplication.activityResultEvent, function (args: AndroidActivityResultEventData) {
+    Application.android.on(AndroidApplication.activityResultEvent, function (args: AndroidActivityResultEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity +
             ", requestCode: " + args.requestCode + ", resultCode: " + args.resultCode + ", Intent: " + args.intent);
     });
 
-    android.on(AndroidApplication.activityBackPressedEvent, function (args: AndroidActivityBackPressedEventData) {
+    Application.android.on(AndroidApplication.activityBackPressedEvent, function (args: AndroidActivityBackPressedEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
         // Set args.cancel = true to cancel back navigation and do something custom.
     });
 }
 
-application.run({ moduleName: "app-root" });
+Application.run({ moduleName: "app-root" });
 ```
 {% endnativescript %}
 {% angular %}
 ```TypeScript
-import { platformNativeScriptDynamic } from "nativescript-angular/platform";
+import { platformNativeScriptDynamic } from "@nativescript/angular";
 import { AppModule } from "./app.module";
-import { android, AndroidApplication, AndroidActivityBundleEventData, AndroidActivityEventData, AndroidActivityResultEventData, AndroidActivityBackPressedEventData } from "tns-core-modules/application";
+import { isAndroid, Application, AndroidApplication, AndroidActivityBundleEventData, AndroidActivityBackPressedEventData, AndroidActivityResultEventData, AndroidActivityEventData, AndroidActivityBundleEventData } from "@nativescript/core";
 
 // Android activity events
-if (android) {
-    android.on(AndroidApplication.activityCreatedEvent, function (args: AndroidActivityBundleEventData) {
+if (isAndroid) {
+    Application.android.on(AndroidApplication.activityCreatedEvent, function (args: AndroidActivityBundleEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
     });
 
-    android.on(AndroidApplication.activityDestroyedEvent, function (args: AndroidActivityEventData) {
+    Application.android.on(AndroidApplication.activityDestroyedEvent, function (args: AndroidActivityEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
 
-    android.on(AndroidApplication.activityStartedEvent, function (args: AndroidActivityEventData) {
+    Application.android.on(AndroidApplication.activityStartedEvent, function (args: AndroidActivityEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
 
-    android.on(AndroidApplication.activityPausedEvent, function (args: AndroidActivityEventData) {
+    Application.android.on(AndroidApplication.activityPausedEvent, function (args: AndroidActivityEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
 
-    android.on(AndroidApplication.activityResumedEvent, function (args: AndroidActivityEventData) {
+    Application.android.on(AndroidApplication.activityResumedEvent, function (args: AndroidActivityEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
 
-    android.on(AndroidApplication.activityStoppedEvent, function (args: AndroidActivityEventData) {
+    Application.android.on(AndroidApplication.activityStoppedEvent, function (args: AndroidActivityEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
     });
 
-    android.on(AndroidApplication.saveActivityStateEvent, function (args: AndroidActivityBundleEventData) {
+    Application.android.on(AndroidApplication.saveActivityStateEvent, function (args: AndroidActivityBundleEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
     });
 
-    android.on(AndroidApplication.activityResultEvent, function (args: AndroidActivityResultEventData) {
+    Application.android.on(AndroidApplication.activityResultEvent, function (args: AndroidActivityResultEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity +
             ", requestCode: " + args.requestCode + ", resultCode: " + args.resultCode + ", Intent: " + args.intent);
     });
 
-    android.on(AndroidApplication.activityBackPressedEvent, function (args: AndroidActivityBackPressedEventData) {
+    Application.android.on(AndroidApplication.activityBackPressedEvent, function (args: AndroidActivityBackPressedEventData) {
         console.log("Event: " + args.eventName + ", Activity: " + args.activity);
         // Set args.cancel = true to cancel back navigation and do something custom.
     });
@@ -541,7 +538,7 @@ In NativeScript, you can specify custom `UIApplicationDelegate` for the iOS appl
 
 {% nativescript %}
 ``` JavaScript
-const application = require("tns-core-modules/application");
+import { Application } from "@nativescript/core";
 const MyDelegate = (function (_super) {
     __extends(MyDelegate, _super);
     function MyDelegate() {
@@ -557,11 +554,13 @@ const MyDelegate = (function (_super) {
     MyDelegate.ObjCProtocols = [UIApplicationDelegate];
     return MyDelegate;
 })(UIResponder);
-application.ios.delegate = MyDelegate;
-application.run({ moduleName: "app-root" });
+Application.ios.delegate = MyDelegate;
+Application.run({ moduleName: "app-root" });
 ```
 ``` TypeScript
-import { ios, run as applicationRun } from "tns-core-modules/application";
+import { Application } from "@nativescript/core";
+
+@NativeClass()
 class MyDelegate extends UIResponder implements UIApplicationDelegate {
     public static ObjCProtocols = [UIApplicationDelegate];
 
@@ -575,17 +574,17 @@ class MyDelegate extends UIResponder implements UIApplicationDelegate {
         console.log("applicationDidBecomeActive: " + application)
     }
 }
-ios.delegate = MyDelegate;
-applicationRun({ moduleName: "main-page" });
+Application.ios.delegate = MyDelegate;
+Application.run({ moduleName: "main-page" });
 ```
 {% endnativescript %}
 {% angular %}
 ```TypeScript
-import { platformNativeScriptDynamic } from "nativescript-angular/platform";
-
+import { platformNativeScriptDynamic } from "@nativescript/angular";
+import { Application } from "@nativescript/core";
 import { AppModule } from "./app.module";
 
-import { ios } from "tns-core-modules/application";
+@NativeClass()
 class MyDelegate extends UIResponder implements UIApplicationDelegate {
     public static ObjCProtocols = [UIApplicationDelegate];
 
@@ -599,12 +598,12 @@ class MyDelegate extends UIResponder implements UIApplicationDelegate {
         console.log("applicationDidBecomeActive: " + application)
     }
 }
-ios.delegate = MyDelegate;
+Application.ios.delegate = MyDelegate;
 platformNativeScriptDynamic().bootstrapModule(AppModule);
 
 ```
 {% endangular %}
-> **Note**: If you’re using TypeScript in your NativeScript apps, you need to install the [tns-platform-declarations plugin](https://www.npmjs.com/package/tns-platform-declarations) to add typings for native iOS APIs such as `UIApplicationDelegate`.
+> **Note**: If you’re using TypeScript in your NativeScript apps, you need to install the [@nativescript/types plugin](https://www.npmjs.com/package/@nativescript/types) to add typings for native iOS APIs such as `UIApplicationDelegate`.
 
 ## Persist and Restore Application Settings
 
@@ -615,35 +614,33 @@ The setter methods have two required parameters: a key and value.
 
 {% nativescript %}
 ``` JavaScript
-const applicationSettings = require("tns-core-modules/application-settings");
+import { ApplicationSettings } from "@nativescript/core";
 // Event handler for Page "loaded" event attached in main-page.xml.
-function pageLoaded(args) {
-    applicationSettings.setString("Name", "John Doe");
-    console.log(applicationSettings.getString("Name")); // Prints "John Doe".
-    applicationSettings.setBoolean("Married", false);
-    console.log(applicationSettings.getBoolean("Married")); // Prints false.
-    applicationSettings.setNumber("Age", 42);
-    console.log(applicationSettings.getNumber("Age")); // Prints 42.
-    console.log(applicationSettings.hasKey("Name")); // Prints true.
-    applicationSettings.remove("Name"); // Removes the Name entry.
-    console.log(applicationSettings.hasKey("Name")); // Prints false.
+export function pageLoaded(args) {
+    ApplicationSettings.setString("Name", "John Doe");
+    console.log(ApplicationSettings.getString("Name")); // Prints "John Doe".
+    ApplicationSettings.setBoolean("Married", false);
+    console.log(ApplicationSettings.getBoolean("Married")); // Prints false.
+    ApplicationSettings.setNumber("Age", 42);
+    console.log(ApplicationSettings.getNumber("Age")); // Prints 42.
+    console.log(ApplicationSettings.hasKey("Name")); // Prints true.
+    ApplicationSettings.remove("Name"); // Removes the Name entry.
+    console.log(ApplicationSettings.hasKey("Name")); // Prints false.
 }
-exports.pageLoaded = pageLoaded;
 ```
 {% endnativescript %}
 ``` TypeScript
-import { EventData } from "tns-core-modules/data/observable";
-import * as applicationSettings from "tns-core-modules/application-settings";
+import { EventData, ApplicationSettings } from "@nativescript/core";
 // Event handler for Page "loaded" event attached in main-page.xml.
 export function pageLoaded(args: EventData) {
-    applicationSettings.setString("Name", "John Doe");
-    console.log(applicationSettings.getString("Name"));// Prints "John Doe".
-    applicationSettings.setBoolean("Married", false);
-    console.log(applicationSettings.getBoolean("Married"));// Prints false.
-    applicationSettings.setNumber("Age", 42);
-    console.log(applicationSettings.getNumber("Age"));// Prints 42.
-    console.log(applicationSettings.hasKey("Name"));// Prints true.
-    applicationSettings.remove("Name");// Removes the Name entry.
-    console.log(applicationSettings.hasKey("Name"));// Prints false.
+    ApplicationSettings.setString("Name", "John Doe");
+    console.log(ApplicationSettings.getString("Name"));// Prints "John Doe".
+    ApplicationSettings.setBoolean("Married", false);
+    console.log(ApplicationSettings.getBoolean("Married"));// Prints false.
+    ApplicationSettings.setNumber("Age", 42);
+    console.log(ApplicationSettings.getNumber("Age"));// Prints 42.
+    console.log(ApplicationSettings.hasKey("Name"));// Prints true.
+    ApplicationSettings.remove("Name");// Removes the Name entry.
+    console.log(ApplicationSettings.hasKey("Name"));// Prints false.
 }
 ```

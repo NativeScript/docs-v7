@@ -35,6 +35,7 @@ After that you need to create a custom application delegate, similar to the one 
 ``` TypeScript
 import { LocalNotifications } from 'nativescript-local-notifications';
 
+@NativeClass()
 export class CustomAppDelegate extends UIResponder implements UIApplicationDelegate {
     public static ObjCProtocols = [UIApplicationDelegate];
 
@@ -77,7 +78,7 @@ Finally, in your main.ts set your custom app delegate:
 ``` TypeScript
 import { CustomAppDelegate } from "./custom-app-delegate";
 
-application.ios.delegate = CustomAppDelegate;
+Application.ios.delegate = CustomAppDelegate;
 ```
 
 In order to test and debug this functionality, you will need to open your project in Xcode, as currently this is the only way to simulate the "fetch" operation in a simulator. To do this, run the project and from the 'Debug' menu choose the 'Simulate Background Fetch' option.

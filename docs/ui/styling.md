@@ -45,32 +45,32 @@ You can change the name of the file from which the application-wide CSS is loade
 
 {% nativescript %}
 ``` JavaScript
-var application = require("tns-core-modules/application");
-application.setCssFileName("style.css");
+import { Application } from "@nativescript/core";
+Application.setCssFileName("style.css");
 
-application.start({ moduleName: "main-page" });
+Application.run({ moduleName: "main-page" });
 ```
 ``` TypeScript
-import { setCssFileName, start as applicationStart } from "tns-core-modules/application";
-setCssFileName("style.css");
+import { Application } from "@nativescript/core";
+Application.setCssFileName("style.css");
 
-applicationStart({ moduleName: "main-page" });
+Application.run({ moduleName: "main-page" });
 ```
 
 You could also check the name of the application-wide CSS file by using `getCssFileName()` method as shown below:
 
 ``` JavaScript
-var application = require("tns-core-modules/application");
-var fileName = application.getCssFileName();
+import { Application } from "@nativescript/core";
+const fileName = Application.getCssFileName();
 console.log(`fileName ${fileName}`);
 
 ```
 ``` TypeScript
-import { getCssFileName, start as applicationStart } from "tns-core-modules/application";
-let fileName = getCssFileName();
+import { Application } from "@nativescript/core";
+const fileName = Application.getCssFileName();
 console.log(`fileName ${fileName}`);
 
-applicationStart({ moduleName: "main-page" });
+Application.run({ moduleName: "main-page" });
 ```
 {% endnativescript %}
 
@@ -730,24 +730,24 @@ NativeScript's recommended measurement unit is DIP. All measurable properties li
 The device independent pixels (DIPs) are equal to the device screen's pixels divided by the device screen scale (density).
 
 ```JavaScript
-const screen = require("tns-core-modules/platform").screen;
+import { Screen } from "@nativescript/core";
 
 // mainScreen is of type ScreenMetrics interface /api-reference/interfaces/_platform_.screenmetrics
-let scale =  screen.mainScreen.scale;
-let widthPixels = screen.mainScreen.widthPixels;
-let heightPixels = screen.mainScreen.heightPixels;
-let widthDIPs = screen.mainScreen.widthDIPs; // DIPs === pixels/scale (e.g 1024 pixels / 2x scale = 512 DIPs)
-let heightDIPs = screen.mainScreen.heightDIPs;
+let scale =  Screen.mainScreen.scale;
+let widthPixels = Screen.mainScreen.widthPixels;
+let heightPixels = Screen.mainScreen.heightPixels;
+let widthDIPs = Screen.mainScreen.widthDIPs; // DIPs === pixels/scale (e.g 1024 pixels / 2x scale = 512 DIPs)
+let heightDIPs = Screen.mainScreen.heightDIPs;
 ```
 ```TypeScript
-import { screen } from "tns-core-modules/platform";
+import { Screen } from "@nativescript/core";
 
 // mainScreen is of type ScreenMetrics interface /api-reference/interfaces/_platform_.screenmetrics
-let scale =  screen.mainScreen.scale;
-let widthPixels = screen.mainScreen.widthPixels;
-let heightPixels = screen.mainScreen.heightPixels;
-let widthDIPs = screen.mainScreen.widthDIPs; // DIPs === pixels/scale (e.g. 1024 pixels / 2x scale = 512 DIPs)
-let heightDIPs = screen.mainScreen.heightDIPs;
+let scale =  Screen.mainScreen.scale;
+let widthPixels = Screen.mainScreen.widthPixels;
+let heightPixels = Screen.mainScreen.heightPixels;
+let widthDIPs = Screen.mainScreen.widthDIPs; // DIPs === pixels/scale (e.g. 1024 pixels / 2x scale = 512 DIPs)
+let heightDIPs = Screen.mainScreen.heightDIPs;
 ```
 
 NativeScript supports **percentage** values for `width`, `height` and `margins`. When a layout pass begins, first the percent values are calculated based on parent available size. This means that on vertical StackLayout if you place two Buttons with `height='50%'` they will get all the available height (e.g., they will fill the StackLayout vertically.). The same applies for `margin` properties. For example, if you set `marginLeft = '5%'`, the element will have a margin that corresponds to 5% of the parent's available width.
