@@ -1,0 +1,208 @@
+## The base url of the header links
+headerbaseurl: //www.nativescript.org
+nscookbookurl: "/cookbook/"
+source: ./Content
+# Release date in the format of: YYYY-MM-DD
+release_date: "2016-11-16"
+navigation:
+## List your directory names and order here, like this:
+    start:
+        position: 10
+        title: "Get Started"
+        expanded: true
+    core-concepts:
+        position: 20
+        title: "CORE CONCEPTS"
+    "core-concepts/android-runtime":
+        position: 200
+        title: "Android Runtime"
+    "core-concepts/android-runtime/getting-started":
+        position: 10
+        title: "Getting started"
+    "core-concepts/android-runtime/metadata":
+        position: 20
+        title: "Metadata"
+    "core-concepts/android-runtime/marshalling":
+        position: 30
+        title: "Marshalling"
+    "core-concepts/android-runtime/generator":
+        position: 40
+        title: "Generator"
+    "core-concepts/android-runtime/plugins":
+        position: 50
+        title: "Plugins"
+    "core-concepts/android-runtime/how-to":
+        position: 60
+        title: "How-To"
+    "core-concepts/android-runtime/debug":
+        position: 70
+        title: "Debug"
+    "core-concepts/android-runtime/advanced-topics":
+        position: 80
+        title: "Advanced topics"
+    "core-concepts/ios-runtime":
+        position: 300
+        title: "iOS Runtime"
+    "core-concepts/ios-runtime/types":
+        position: 90
+        title: "Types"
+    "core-concepts/ios-runtime/how-to":
+        position: 100
+        title: "How-To"
+    integration-with-existing-ios-and-android-apps:
+        position: 30
+        title: "INTEGRATING EXISTING NATIVE APPS"
+    best-practices:
+        position: 40
+        title: "BEST PRACTICES"
+    ui:
+        position: 20
+        title: "USER INTERFACE"
+        expanded: false
+    "ui/layouts":
+        position: 10
+        title: "Layouts"
+        expanded: false
+    "ui/ns-framework-modules":
+        position: 30
+        title: "Framework modules"
+        expanded: false
+    "ui/components":
+        position: 20
+        title: "Components"
+        expanded: false
+    "ui/ng-framework-modules":
+        position: 30
+        title: "Framework modules"
+        expanded: false
+    code-sharing:
+        position: 45
+        title: "CODE SHARING"
+    tooling:
+        position: 50
+        title: "TOOLING"
+        expanded: false
+    "tooling/publishing":
+        position: 100
+        title: "Publishing"
+    "tooling/testing":
+        position: 150
+        title: "Testing"
+    "tooling/testing/end-to-end-testing":
+        position: 100
+        title: "End To End Testing"
+    "tooling/debugging":
+        position: 200
+        title: "Debugging"
+    "tooling/docs-cli":
+        position: 300
+        title: "Command-line interface"
+    hardware:
+        position: 60
+        title: "HARDWARE АCCESS"
+    ng-hardware-access:
+        position: 60
+        title: "HARDWARE АCCESS"
+    plugins:
+        position: 70
+        title: "PLUGINS DEVELOPMENT"
+    releases:
+        position: 80
+        title: "RELEASES"
+    app-templates:
+        position: 90
+        title: "App Templates"
+    performance-optimizations:
+        position: 100
+        title: "Performance optimizations"
+    ns-framework-modules:
+        position: 110
+        title: "Framework modules"
+    ng-framework-modules:
+        position: 110
+        title: "Framework modules"
+    guides:
+        position: 120
+        title: "Guides"
+    "guides/integration-with-existing-ios-and-android-apps":
+        position: 100
+        title: "Integration with existing iOS and Android apps"
+## The product name
+productName: "NativeScript"
+
+## Improve This Article button-related:
+improveThis:
+    mapOfBaseUrls:
+        0:
+            matchPattern: '^/cookbook/.*'
+        1:
+            matchPattern: '^/code-samples/.*'
+        2:
+            matchPattern: '^/tooling/docs-cli/.*'
+            trimRootPath: "/tooling/docs-cli"
+            baseUrl: "https://github.com/NativeScript/nativescript-cli/tree/master/docs/man_pages"
+        3:
+            matchPattern: '^/ui/ng-components/(icon-fonts|modal-view-ng).*'
+            trimRootPath: "/ui/ng-components/"
+            pathUpdatePattern: ".md$"
+            baseUrl: "https://github.com/NativeScript/nativescript-sdk-examples-ng/tree/master/app/ng-ui-category/"
+        4:
+            matchPattern: '^/ui/ng-components/.*'
+            trimRootPath: "/ui/ng-components/"
+            pathUpdatePattern: ".md$"
+            baseUrl: "https://github.com/NativeScript/nativescript-sdk-examples-ng/tree/master/app/ng-ui-widgets-category/"
+        5:
+            matchPattern: '^/ui/components/(icon-fonts|modal-view).*'
+            trimRootPath: "/ui/components/"
+            pathUpdatePattern: ".md$"
+            baseUrl: "https://github.com/NativeScript/nativescript-sdk-examples-js/tree/master/app/ns-ui-category"
+        6:
+            matchPattern: '^/ui/components/.*'
+            trimRootPath: "/ui/components/"
+            pathUpdatePattern: ".md$"
+            baseUrl: "https://github.com/NativeScript/nativescript-sdk-examples-js/tree/master/app/ns-ui-widgets-category/"
+        7:
+            matchPattern: '.*'
+            baseUrl: "https://github.com/NativeScript/docs/blob/master/docs/"
+
+## Current flavor
+flavor:
+    "NativeScript & Angular":
+        matchPattern: '^/angular/.*'
+    "NativeScript & Vue.JS":
+        matchPattern: '^/vuejs/.*'
+    "API Reference":
+        matchPattern: '^/api-reference/.*'
+
+## Assign layout and category per different paths
+defaults:
+-
+    scope:
+        path: ""
+    values:
+        layout: "page"
+        category: "default"
+
+# Aliases available in the markdown template. The below will expand {{site.foo}} to Bar in the output
+# "foo": "Bar"
+"current-version": "2.0.0"
+"ns": "NativeScript"
+"ns-cli": "NativeScript CLI"
+
+# Assets pipeline configuration
+assets:
+    cachebust: soft
+    js_compressor: uglifier
+
+## Do not edit below this line
+safe: false
+markdown: MarkdownProcessor
+kramdown:
+    toc_levels: 2..3
+    smart_quotes: ["quot", "quot", "quot", "quot"]
+    input: GFM
+
+gems:
+    - jekyll-unsanitize
+# Feedback Form Google Sheet ID
+ff-sheet-id: 1Njk-CD9m_mKw_jSRBV2p6quwEOAKRZnUPJgeUrA1ZFA

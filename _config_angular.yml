@@ -1,0 +1,67 @@
+# The public documentation URL, used for sitemap.xml
+url: "https://docs.nativescript.org/angular"
+destination: ./angular
+
+## The application virtual path
+baseurl:  "/angular"
+
+## The highlighting in the header
+nsselected: ""
+ngselected: "selected"
+
+# Exclude files which should not be in the output
+exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, cookbook, ns-ui-widgets, ns-framework-modules, hardware, ui/components]
+
+# The google services configuration
+google_tag_manager: GTM-W58JDD
+google_custom_search: '001595215763381649090:asl7kpbijam'
+
+flavour: "angular"
+
+navigation:
+## List your directory names and order here, like this:
+    "ui/ng-components":
+        position: 20
+        title: "Components"
+        expanded: false
+    code-samples:
+        position: 81
+        title: "CODE SAMPLES"
+    "ui/ng-components/ng-SideDrawer":
+        position: 3000
+        title: "RadSideDrawer"
+    "ui/ng-components/ng-RadListView":
+        position: 4000
+        title: "RadListView"
+    "ui/ng-components/ng-Calendar":
+        position: 5000
+        title: "RadCalendar"
+    "ui/ng-components/ng-Chart":
+        position: 6000
+        title: "RadChart"
+    "ui/ng-components/ng-Chart/Series":
+        position: 3
+    "ui/ng-components/ng-Chart/Series/Types":
+        position: 2
+    "ui/ng-components/ng-Chart/Axes":
+        position: 4
+    "ui/ng-components/ng-Chart/Axes/Types":
+        position: 2
+    "ui/ng-components/ng-AutoCompleteTextView":
+        position: 7000
+        title: "RadAutoCompleteTextView"
+    "ui/ng-components/ng-DataForm":
+        position: 8000
+        title: "RadDataForm"
+    "ui/ng-components/ng-DataForm/GettingStarted":
+        position: 20
+        title: "Basics"
+    "ui/ng-components/ng-DataForm/Editors":
+        position: 30
+    "ui/ng-components/ng-DataForm/Validation":
+        position: 40
+    "ui/ng-components/ng-DataForm/Groups":
+        position: 50
+    "ui/ng-components/ng-Gauge":
+        position: 9000
+        title: "RadGauge"

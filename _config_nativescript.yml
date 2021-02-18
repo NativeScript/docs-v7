@@ -1,0 +1,61 @@
+# The public documentation URL, used for sitemap.xml
+url: "https://docs.nativescript.org"
+destination: ./nativescript
+
+## The application virtual path
+baseurl:  ""
+# Exclude files which should not be in the output
+exclude: [Gemfile,Gemfile.lock,README.md,node_modules,dist, ng-framework-modules, ns-ui-widgets, ng-hardware-access, ui/ng-components]
+## The highlighting in the header
+nsselected: "selected"
+ngselected: ""
+
+
+flavour: "nativescript"
+navigation:
+## List your directory names and order here, like this:
+    "ui/components":
+        position: 20
+        title: "Components"
+        expanded: false
+    "ui/components/SideDrawer":
+        position: 3000
+        title: "RadSideDrawer"
+    "ui/components/RadListView":
+        position: 4000
+        title: "RadListView"
+    "ui/components/Calendar":
+        position: 5000
+        title: "RadCalendar"
+    "ui/components/Chart":
+        position: 6000
+        title: "RadChart"
+    "ui/components/Chart/Series":
+        position: 3
+    "ui/components/Chart/Series/Types":
+        position: 2
+    "ui/components/Chart/Axes":
+        position: 4
+    "ui/components/Chart/Axes/Types":
+        position: 2
+    "ui/components/AutoCompleteTextView":
+        position: 7000
+        title: "RadAutoCompleteTextView"
+    "ui/components/DataForm":
+        position: 8000
+        title: "RadDataForm"
+    "ui/components/DataForm/GettingStarted":
+        position: 20
+        title: "Basics"
+    "ui/components/DataForm/Editors":
+        position: 30
+    "ui/components/DataForm/Validation":
+        position: 40
+    "ui/components/DataForm/Groups":
+        position: 50
+    "ui/components/Gauge":
+        position: 9000
+        title: "RadGauge"
+# The google services configuration
+google_tag_manager: GTM-W58JDD
+google_custom_search: '001595215763381649090:asl7kpbijam'
