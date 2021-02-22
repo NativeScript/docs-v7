@@ -102,7 +102,7 @@ Complete the following steps to setup NativeScript on your macOS development mac
     <pre class="add-copy-button"><code class="language-terminal">brew tap AdoptOpenJDK/openjdk
     </code></pre>
 
-    <pre class="add-copy-button"><code class="language-terminal">brew cask install adoptopenjdk8
+    <pre class="add-copy-button"><code class="language-terminal">brew install --cask adoptopenjdk8
     </code></pre>
     
     2. Set the JAVA_HOME system environment variable.
@@ -113,7 +113,7 @@ Complete the following steps to setup NativeScript on your macOS development mac
     3. Install the [Android SDK](http://developer.android.com/sdk/index.html).
         1. In the terminal, run the following command:
 
-            <pre class="add-copy-button"><code class="language-terminal">brew cask install android-sdk
+            <pre class="add-copy-button"><code class="language-terminal">brew install --cask android-sdk
             </code></pre>
 
         2. Next, run the following command to set the ANDROID_HOME system environment variable:
