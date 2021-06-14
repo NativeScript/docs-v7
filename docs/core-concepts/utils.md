@@ -10,8 +10,7 @@ slug: utils
 To use the functionality provided by `Utils`:
 
 ```JavaScript
-import { Utils } from "@nativescript/core";
-```
+const Core = require("@nativescript/core");```
 ```TypeScript
 import { Utils } from "@nativescript/core";
 ```
@@ -25,7 +24,7 @@ Verify if the specified `path` points to a resource or a local file. The functio
 
 ```JavaScript
 var path = "res://icon";
-var value = Utils.isFileOrResourcePath(path);
+var value = Core.Utils.isFileOrResourcePath(path);
 ```
 ```TypeScript
 const path: string  = "res://icon";
@@ -40,7 +39,7 @@ Checks if the specified URI is a [data URI](http://en.wikipedia.org/wiki/Data_UR
 
 ```JavaScript
 var url = "<url>";
-var value = Utils.isDataURI(url);
+var value = Core.Utils.isDataURI(url);
 ```
 ```TypeScript
 const url: string = "<url>"; 
@@ -52,7 +51,7 @@ const value:boolean = Utils.isDataURI(url);
 Open an URL on device with the default browser
 
 ```JavaScript
-Utils.openUrl("https://docs.nativescript.org/core-concepts/utils")
+Core.Utils.openUrl("https://docs.nativescript.org/core-concepts/utils")
 ```
 ```TypeScript
 Utils.openUrl("https://docs.nativescript.org/core-concepts/utils")
@@ -65,7 +64,7 @@ Utils.openUrl("https://docs.nativescript.org/core-concepts/utils")
 
  ```JavaScript
 var sampleString = "All of these should be escaped: ^ $ * ";
-var newString = Utils.escapeRegexSymbols(sampleString);
+var newString = Core.Utils.escapeRegexSymbols(sampleString);
 ```
 ```TypeScript
 var sampleString: string = "All of these should be escaped: ^ $ * ";
@@ -78,10 +77,10 @@ Converts a string value to a number or boolean;
 
  ```JavaScript
 var stringToBoolean = "true";
-var booleanValue = Utils.convertString(stringToBoolean);
+var booleanValue = Core.Utils.convertString(stringToBoolean);
 
 var stringToNumber = "23";
-var numberValue = Utils.convertString(stringToNumber);
+var numberValue = Core.Utils.convertString(stringToNumber);
 ```
 ```TypeScript
 const stringToBoolean :string = "true";
@@ -95,7 +94,7 @@ const numberValue :number = Utils.convertString(stringToNumber);
 Returns the display density of the device.
 
 ```JavaScript
-var displayDensity = Utils.layout.getDisplayDensity();
+var displayDensity = Core.Utils.layout.getDisplayDensity();
 ```
 ```TypeScript
 const displayDensity = Utils.layout.getDisplayDensity();
@@ -106,7 +105,7 @@ const displayDensity = Utils.layout.getDisplayDensity();
 Converts value from device independent pixels to device pixels.
 
 ```JavaScript
-var devicePixels = Utils.layout.toDevicePixels(<dip>);
+var devicePixels = Core.Utils.layout.toDevicePixels(<dip>);
 ```
 ```TypeScript
 const devicePixels = Utils.layout.toDevicePixels(<dip>);
@@ -117,7 +116,7 @@ const devicePixels = Utils.layout.toDevicePixels(<dip>);
 Convert value to device independent pixels.
 
 ```JavaScript
-var deviceIndependentPixels = Utils.layout.toDeviceIndependentPixels(<px>);
+var deviceIndependentPixels = Core.Utils.layout.toDeviceIndependentPixels(<px>);
 ```
 ```TypeScript
 const deviceIndependentPixels = Utils.layout.toDeviceIndependentPixels(<px>);
@@ -128,7 +127,7 @@ const deviceIndependentPixels = Utils.layout.toDeviceIndependentPixels(<px>);
 Rounds value used in layout.
 
 ```JavaScript
-var value = Utils.layout.round(<number_value>);
+var value = Core.Utils.layout.round(<number_value>);
 ```
 ```TypeScript
 var value = Utils.layout.round(<number_value>);
@@ -140,7 +139,7 @@ var value = Utils.layout.round(<number_value>);
 The method checks if the current thread is the main thread. It will directly call the passed function if it is, or dispatches it to the main thread otherwise.
 
 ```JavaScript
-Utils.executeOnMainThread(() => {
+Core.Utils.executeOnMainThread(() => {
     // ...
 })
 ```
@@ -155,7 +154,7 @@ Utils.executeOnMainThread(() => {
 The method returns a function wrapper which executes the supplied function on the main thread. The wrapper behaves like the original function and passes all of its arguments BUT discards its return value.
 
 ```JavaScript
-Utils.mainThreadify(() => {
+Core.Utils.mainThreadify(() => {
     // ...
 })
 ```
