@@ -1,5 +1,5 @@
 #Default GitHub
 Host github.com
-  HostName github.com
-  User git
-  IdentityFile ~/.ssh/id_rsa_COMPANY
+   HostName github.com
+   User git
+   IdentityFile ~/.ssh/id_rsa_COMPANY
