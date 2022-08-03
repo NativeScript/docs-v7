@@ -221,7 +221,9 @@ Dialogs.login({
     cancelButtonText: "Cancel button text",
     neutralButtonText: "Neutral button text",
     userName: "User name label text",
-    password: "Password label text"
+    userNameHint: "Enter username",
+    password: "Password label text",
+    passwordHint: "Enter password"
 }).then(r => {
     console.log("Dialog result: " + r.result + ", user: " + r.userName + ", pwd: " + r.password);
 });
