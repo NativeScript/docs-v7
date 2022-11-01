@@ -1,0 +1,25 @@
+{
+  "name": "docs-watcher",
+  "version": "0.0.1",
+  "description": "Retrieves external files for the NativeScript documentation",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/telerik/nativescript-docs.git"
+  },
+  "keywords": [
+    "nativescript",
+    "documentation",
+    "watcher"
+  ],
+  "author": "Telerik <support@telerik.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/telerik/nativescript-docs/issues"
+  },
+  "homepage": "https://github.com/telerik/nativescript-docs#readme",
+  "dependencies": {
+    "chokidar": "1.7.0",
+    "fs-extra": "5.0.0"
+  }
+}
