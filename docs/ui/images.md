@@ -80,6 +80,24 @@ Using the `~/` prefix, you can load images relative to the `App` folder inside y
 ```
 {% endangular %}
 
+The actual mapping between the `~/` to this `app` folder is configured in the `tsconfig.json` file under the `compilerOptions` property.
+
+```yaml
+"paths": {
+  "~/*": [
+    "app/*"
+  ]
+```
+
+For images to be available in the app they need to be included in the build process. To include the files make sure they are copied during the build. This is done by adding a additional target to the `copyTargets` in the `webpack.config.js`.
+
+```JavaScript
+  const copyTargets = [
+    ...
+    { from: 'images/**', noErrorOnMissing: false, globOptions: { dot: false, ...copyIgnore } },
+  ];
+```
+
 You can manually create an [ImageSource instance from local file]({%ns_cookbook image-source#load-image-from-a-local-file%}).
 
 > Currently, loading images from the file system does not respect filename qualifiers as described [here]({% slug architecture %}#supporting-multiple-screens). We have plans to implement that along with [density-specific qualifiers support](https://github.com/NativeScript/NativeScript/issues/276).
