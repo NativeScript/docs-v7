@@ -19,9 +19,9 @@ Towards this end, certain behaviors and practices will not be tolerated.
 
 ## Scope
 
-We expect all members of the NativeScript community, including administrators, users, facilitators, and vendors to abide by this Code of Conduct at all times in our community venues, online and in person, and in one-on-one communications pertaining to NativeScript affairs.
+We expect all members of the NativeScript community, including administrators, users, facilitators, and vendors to abide by this Code of Conduct at all times in our community venues, online and in-person, and in one-on-one communications pertaining to NativeScript affairs.
 
-This policy covers the usage of the NativeScript Slack community, as well as the NativeScript support forums, NativeScript GitHub repositories, the NativeScript website, and any NativeScript-related events. This Code of Conduct is in addition to, and does not in any way nullify or invalidate, any other terms or conditions related to use of NativeScript.
+This policy covers the usage of the NativeScript Slack community, as well as the NativeScript support forums, NativeScript GitHub repositories, the NativeScript website, and any NativeScript-related events. This Code of Conduct is in addition to and does not in any way nullify or invalidate, any other terms or conditions related to the use of NativeScript.
 
 The definitions of various subjective terms such as "discriminatory", "hateful", or "confusing" will be decided at the sole discretion of the NativeScript administrators.
 
@@ -29,9 +29,9 @@ The definitions of various subjective terms such as "discriminatory", "hateful",
 
 We are committed to providing a friendly, safe, and welcoming environment for all, regardless of gender identity, sexual orientation, disability, ethnicity, religion, age, physical appearance, body size, race, or similar personal characteristics.
 
-We ask that you please respect that people have differences of opinion regarding technical choices, and acknowledge that every design or implementation choice carries a trade-off and numerous costs. There is seldom a single right answer. A difference of technology preferences is never a license to be rude.
+We ask that you please respect that people have differences of opinion regarding technical choices, and acknowledge that every design or implementation choice carries a trade-off and numerous costs. There is seldom a single right answer. A difference in technology preferences is never a license to be rude.
 
-Any spamming, trolling, flaming, baiting, or other attention-stealing behaviour is not welcome, and will not be tolerated.
+Any spamming, trolling, flaming, baiting, or other attention-stealing behavior is not welcome, and will not be tolerated.
 
 Harassing other users of NativeScript is never tolerated, whether via public or private media.
 
@@ -41,7 +41,7 @@ Harassment includes, but is not limited to: harmful or prejudicial verbal or wri
 
 ## Acceptable Content
 
-The NativeScript administrators reserve the right to make judgement calls about what is and isn't appropriate in published content. These are guidelines to help you be successful in our community.
+The NativeScript administrators reserve the right to make judgment calls about what is and aren't appropriate in published content. These are guidelines to help you be successful in our community.
 
 Content must contain something applicable to the previously stated goals of the NativeScript community. "Spamming", that is, publishing any form of content that is not applicable, is not allowed.
 
