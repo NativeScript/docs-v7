@@ -1,4 +1,4 @@
-# NativeScript Documentation
+# NativeScript Documentation (v7 and below)
 
 Home of the NativeScript documentation content that lives at <http://docs.nativescript.org>. Start [contributing](#contributing) today!
 
