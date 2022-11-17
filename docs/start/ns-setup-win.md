@@ -54,7 +54,8 @@ Complete the following steps to set up NativeScript on your Windows development 
         <pre class="add-copy-button"><code class="language-terminal">choco install android-sdk -y
         </code></pre>
 
-    - Restart the command prompt.
+        <pre class="add-copy-button"><code class="language-terminal">refreshenv
+        </code></pre>
 
 6. Install all packages for the Android SDK Platform 28, Android SDK Build-Tools 28.0.3 or later, Android Support Repository, Google Repository and any other SDKs that you may need. You can alternatively use the following command, which will install all required packages.
 
