@@ -78,7 +78,7 @@ These modules are used as the root for UI containers. Currently, there are only 
 * The app container - it is only one. You set its root module by passing it to the `Application.run()` method.
 * Modal view containers - You can have a lot of these. You set a modal view's root module by passing it to the `showModal()` method of any UI component.
 
-A root module can have only one component at the root of its content. You can put virtually any UI component as a root, but the most commonly used components are the one that can have children - the layouts, `TabView`, `SideDrawer` or `Frame`. The `Frame` component can't have children, but it can display and navigate between page modules.
+A root module can have only one component at the root of its content. You can put virtually any UI component as a root, but the most commonly used components are the ones that can have children - the layouts, `TabView`, `SideDrawer` or `Frame`. The `Frame` component can't have children, but it can display and navigate between page modules.
 
 Note that the root module will be loaded regardless of navigations until its UI container disappears. This basically means that the app root module will always be loaded. A modal view root module will be unloaded when the modal view is closed.
 
