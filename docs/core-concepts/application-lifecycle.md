@@ -153,6 +153,7 @@ NativeScript applications have the following life cycle events.
 + `exit`: This event is raised when the application is about to exit.
 + `lowMemory`: This event is raised when the memory on the target device is low.
 + `uncaughtError`: This event is raised when an uncaught application error is present.
++ `systemAppearanceChangedEvent`: This event is raised when the theme has changed (light/dark)
 
 {% nativescript %}
 ``` JavaScript
